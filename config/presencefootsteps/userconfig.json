@@ -1,0 +1,12 @@
+{
+  "volume": 100,
+  "clientPlayerVolume": 60,
+  "otherPlayerVolume": 20,
+  "runningVolumeIncrease": 10,
+  "wetSoundsVolume": 50,
+  "maxSteppingEntities": 50,
+  "stance": "BIPED",
+  "multiplayer": true,
+  "global": true,
+  "targetEntities": "ALL"
+}

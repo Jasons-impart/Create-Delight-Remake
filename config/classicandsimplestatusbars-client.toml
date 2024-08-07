@@ -1,0 +1,212 @@
+
+[All_On]
+	#在修改任何功能后都建议重启游戏以便正确生效。
+	#It is advisable to restart the game after any feature has been modified for it to take effect correctly。
+	#我不是很推荐关闭功能，因为某种情况下无法解决冲突，比如本模组的图片高度是5像素点，但原版图标是9像素点，如果你有兼容性的问题建议联系我。
+	#因需要保持显示内容正常显示，大部分联动渲染功能关闭后仍然被阻止此模组的渲染.
+	#I don't really recommend turning off the function, because there is no way to resolve the conflict in some cases, for example, the image height of this module is 5 pixels, but the original icon is 9 pixels, if you have compatibility problems, please contact me.
+	#Due to the need to keep the display content displayed normally, the rendering of they Mods is still blocked after most of the linkage rendering function is turned off.
+	#If you can help me, feel free to make a merge request.
+	#你可以在网络上查找你需要的颜色代码，其中之一: https://www.ysdaima.com/hexbiao
+	#You can check the color code you need on the web. (HEXADECIMAL)
+	#
+	#启用本模组。
+	#Turn All Features On Or Off | what-a-painful-realization.
+	#默认值(Default)：true
+	All-functional-status = true
+
+	[All_On.EasyMode]
+		#如果设置true,在你关闭全部功能时生效，会在健康值左侧/饱食度右侧显示文本.如果设置为false则什么都不做。
+		#If set to true, it will take effect when you turn off all functions or turn off the left/right test function separately, and the text will be displayed to the left of the health value/to the right of satiety. If set to false, nothing is done.
+		#默认值(Default)：true
+		EasyMode-status = true
+
+[Interval_1]
+	#定义'当前值和最大值'间隔所使用的符号。
+	#Defines the symbol used for the 'Current' and 'Maximum' intervals.
+	#默认值(Default)：Interval_String_1="/"
+	Interval_String_1 = "/"
+	#
+	#符号'/'的颜色。
+	#The color of the symbol '/'.
+	#默认值(Default)："#5A5A5A"
+	Color_Interval_String_1 = "#5A5A5A"
+
+[Interval_2]
+	#定义'当前值'附加内容所使用的符号，如：+16伤害吸收。
+	#"Defines the symbol used for 'Current Value Add-on'.
+	#默认值(Default)：Interval_String_2="+"
+	Interval_String_2 = "+"
+	#
+	#符号'+'的颜色。
+	#The color of the symbol '+'.
+	#默认值(Default)："#F6E58D"
+	Color_Interval_String_2 = "#F6E58D"
+
+[linkage_function]
+
+	[linkage_function.Vampires]
+		#如果设置false,当玩家被感染成吸血鬼时，关闭本模组的饱食度显示。如果为ture，将代替吸血鬼模组的血条进行显示。
+		#If set to false, when the player is infected as a vampire, the saturation display of this mod will be turned off. If it is TURE, it will be displayed in place of the Vampires mod's health bar.
+		#默认值(Default)：true
+		Vampires-functional-status = true
+		#
+		#吸血鬼血量文本颜色。
+		#Vampires Blood value text color.
+		#默认值(Default)："#AC2019"
+		Color_Vampires_Blood = "#AC2019"
+		#
+		#吸血鬼最大血量文本颜色。
+		#Vampires Max Blood value text color.
+		#默认值(Default)："#600000"
+		Color_Vampires_MaxBlood = "#600000"
+
+	[linkage_function.Thirst]
+		#如果设置为false，将关闭对于模组'口渴'/'意志坚定'、'稳态'的水分值渲染覆盖。
+		#If set to false, the rendering override of the moisture value for the mod's 'thirst' and 'toughasnails' or 'homeostatic' will be turned off.
+		#默认值(Default)：true
+		Thirst-functional-status = true
+		#
+		#水分值文本颜色。
+		#Thirst Value text color.
+		#默认值(Default)："#0048AD"
+		Color_Thirst = "#0048AD"
+		#
+		#止渴水分值文本颜色。
+		#Thirst Quenched value text color.
+		#默认值(Default)："#82DAFD"
+		Color_Thirst_Quenched = "#82DAFD"
+
+	[linkage_function.Origins]
+		#如果设置为false,将关闭起源能力槽的显示。
+		#If set to false, the display of Origins Power values will be turned off.
+		#默认值(Default)：true
+		Origins-functional-status = true
+		#
+		#起源能力文本颜色。
+		#Origins Power value text color.
+		#默认值(Default)："#EBE994"
+		Color_Origins = "#EBE994"
+		#
+		#符号'%'文本颜色。
+		#Symbol value text color.
+		#默认值(Default)："#D2DAA4"
+		Color_Origins_Symbol = "#D2DAA4"
+
+	[linkage_function.Artifacts]
+		#如果设置为false,将关闭奇异饰品模组-火烈鸟泳圈的显示。
+		#If set to false, the display of the Artifacts Mod, Flamingo Swimming Ring, will be turned off.
+		#默认值(Default)：true
+		Artifacts-functional-status = true
+		#
+		#火烈鸟饰品飞行时间文本颜色。
+		#Flamingo ornament flight time text color.
+		#默认值(Default)："#BE3D6F"
+		Color_Artifacts = "#BE3D6F"
+		#
+		#符号'%'文本颜色。
+		#Symbol value text color.
+		#默认值(Default)："#DC6788"
+		Color_Artifacts_Symbol = "#DC6788"
+
+[FEATURES]
+
+	[FEATURES.RIGHT_SIDE_FEATURES]
+		#如果设置false,将关闭以经验等级右侧的所有功能修改。
+		#If set to false, all feature modifications to the right of the experience level will be turned off.
+		#默认值(Default)：true
+		Food-functional-status = true
+		#
+		#如果设置为'0',将在最大饱食度大于20时自动渲染、如果设置为'1',将始终显示最大饱食度、如果设置为'2',将始终隐藏最大饱食度。
+		#If set to '0', auto the maximum satiety greater than 20 will be displayed, if set to '1', the maximum satiety will always be displayed, and if set to '2', the maximum satiety will always be hidden.
+		#默认值(Default)：0
+		#Range: 0 ~ 2
+		MaxFood-functional-status = 0
+		#
+		#如果设置为false,将关闭食物消耗(疲劳度)的显示。
+		#If set to false, the display of Food ExhaustionLevel values is turned off
+		#默认值(Default)：true
+		Food_ExhaustionLevel-functional-status = true
+		#
+		#如果设置为false,将关闭盔甲韧性的显示。
+		#If set to false, the display of armor toughness values is turned off
+		#默认值(Default)：true
+		Armor_Toughness-functional-status = true
+		#
+		#如果设置为false,将关闭氧气值的显示。
+		#If Set To false The Displayed Of Oxygen Value Is Turned Off | I can't breathe, but I seem to be alive.
+		#默认值(Default)：true
+		Air-functional-status = true
+		#
+		#如果设置为false,将关闭坐骑健康值的显示。
+		#If set to false, the display of mount health values will be turned off.
+		#默认值(Default)：true
+		Mounts-functional-status = true
+
+	[FEATURES.LEFT_SIDE_FEATURES]
+		#如果设置false,将关闭以经验等级左侧的所有功能修改。
+		#If set to false, all feature modifications to the left of the experience level will be turned off.
+		#默认值(Default)：true
+		Health-functional-status = true
+		#
+		#如果设置为false,将关闭盔甲值的显示。 
+		#If set to false, the display of armor values is turned off
+		#默认值(Default)：true
+		Armour-functional-status = true
+
+[Color]
+	#血量值文本颜色。
+	#Health value text color.
+	#默认值(Default)："#B3473C"
+	Color_Health = "#B3473C"
+	#
+	#伤害吸收文本颜色。
+	#Health Absorb value text color.
+	#默认值(Default)："#BAB363"
+	Color_Health_Absorb = "#BAB363"
+	#
+	#最大血量文本颜色。
+	#Max Health value text color.
+	#默认值(Default)："#FF1313"
+	Color_Health_Tail = "#FF1313"
+	#
+	#饱食度文本颜色。
+	#Food value text color.
+	#默认值(Default)："#C6C677"
+	Color_Food = "#C6C677"
+	#
+	#饱和度文本颜色。
+	#Saturation value text color.
+	#默认值(Default)："#C1805D"
+	Color_Food_Saturation = "#C1805D"
+	#
+	#最大饱食度文本颜色。
+	#Max Food value text color.
+	#默认值(Default)："#DFB18F"
+	Color_Food_Tail = "#DFB18F"
+	#
+	#盔甲文本颜色。
+	#Armor value text color.
+	#默认值(Default)："#DDEBEB"
+	Color_Armor = "#DDEBEB"
+	#
+	#盔甲韧性文本颜色。
+	#Armor Toughness value text color.
+	#默认值(Default)："#BDECFC"
+	Color_Armor_Toughness = "#BDECFC"
+	#
+	#氧气文本颜色。
+	#Air value text color.
+	#默认值(Default)："#0094FF"
+	Color_Air = "#0094FF"
+	#
+	#氧气符号'%'文本颜色。
+	#Air Symbol value text color.
+	#默认值(Default)："#D1EBFF"
+	Color_Air_Symbol = "#D1EBFF"
+	#
+	#食物消耗进度（疲劳值）的文本颜色。
+	#Food ExhaustionLevel value text color.
+	#默认值(Default)："#66C3CC"
+	Color_Food_ExhaustionLevel = "#66C3CC"
+

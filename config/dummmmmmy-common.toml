@@ -1,0 +1,34 @@
+
+[scarecrow]
+	#Equip a dummy with a pumpkin to make hit act as a scarecrow
+	#All animal entities will be scared. add here additional ones that are not included
+	mobs_whitelist = [""]
+	#Animal entities that will not be scared
+	mobs_blacklist = [""]
+	#Scaring radius
+	#Range: 0 ~ 100
+	scare_radius = 12
+
+[general]
+	#Does dps message update dynamically or will it only appear after each parse? 
+	#Allowed Values: DYNAMIC, STATIC, OFF
+	DPS_mode = "DYNAMIC"
+	#Enable this to prevent your equipment from getting damaged when attacking the dummy
+	disable_equipment_damage = true
+	#Time in ticks that it takes for a dummy to be considered out of combat after having recieved damage
+	#Range: 20 ~ 1000
+	maximum_out_of_combat_interval = 120
+	#Makes monsters target a dummy that is wearing a player head
+	dummy_decoy = false
+	#Makes dummy drop xp when hit. Training yay! Depends on damage done
+	#Range: 0.0 ~ 100.0
+	xp_per_damage_on_hit = 0.0
+
+[mobs_damage_numbers]
+	#Show damage taken form
+	#Allowed Values: ALL_ENTITIES, ALL_PLAYERS, LOCAL_PLAYER, NONE
+	damage_mode = "NONE"
+	#Show healing taken for
+	#Allowed Values: ALL_ENTITIES, ALL_PLAYERS, LOCAL_PLAYER, NONE
+	healing_mode = "NONE"
+

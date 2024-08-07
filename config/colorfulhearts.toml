@@ -1,0 +1,40 @@
+
+[health]
+	#Render vanilla hearts
+	#Default: true
+	vanillaHearts = true
+	#Colors for every 10 hearts (not counting the default red)
+	#All values are written as hexadecimal RGB color in '#RRGGBB' format
+	#Default: ["#F06E14", "#F5DC23", "#2DB928", "#1EAFBE", "#7346E1", "#FA7DEB", "#EB375A", "#FF8278", "#AAFFFA", "#EBEBFF"]
+	colors = ["#F06E14", "#F5DC23", "#2DB928", "#1EAFBE", "#7346E1", "#FA7DEB", "#EB375A", "#FF8278", "#AAFFFA", "#EBEBFF"]
+	#Two alternating colors while poisoned
+	#There can be one color in case vanilla poisoned heart is wanted
+	#Default: ["#739B00"]
+	poisonedColors = ["#739B00"]
+	#Two alternating colors while withered
+	#There can be one color in case vanilla withered heart is wanted
+	#Default: ["#0F0F0F"]
+	witheredColors = ["#0F0F0F"]
+	#Two alternating colors while freezing
+	#There can be one color in case vanilla frozen heart is wanted
+	#Default: ["#3E70E6"]
+	frozenColors = ["#3E70E6"]
+
+[absorption]
+	#Render vanilla hearts
+	#Default: true
+	vanillaHearts = true
+	#Colors for every 10 hearts (not counting the default red)
+	#All values are written as hexadecimal RGB color in '#RRGGBB' format
+	#Default: ["#E1FA9B", "#A0FFAF", "#AAFFFA", "#AACDFF", "#D7B4FF", "#FAA5FF", "#FFB4B4", "#FFAA7D", "#D7F0FF", "#EBFFFA"]
+	colors = ["#E1FA9B", "#A0FFAF", "#AAFFFA", "#AACDFF", "#D7B4FF", "#FAA5FF", "#FFB4B4", "#FFAA7D", "#D7F0FF", "#EBFFFA"]
+	#Two alternating colors while poisoned
+	#Default: ["#BFF230", "#7AA15A"]
+	poisonedColors = ["#BFF230", "#7AA15A"]
+	#Two alternating colors while withered
+	#Default: ["#787061", "#73625C"]
+	witheredColors = ["#787061", "#73625C"]
+	#Two alternating colors while freezing
+	#Default: ["#90D136", "#36D183"]
+	frozenColors = ["#90D136", "#36D183"]
+

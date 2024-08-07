@@ -1,0 +1,23 @@
+{
+	id: "5A02489A40F4E8C1"
+	loot_size: 1
+	order_index: 2
+	rewards: [
+		{ item: "createcafe:oreo_milk_tea" }
+		{ item: "createcafe:banana_milk_tea" }
+		{ item: "createcafe:vanilla_milk_tea" }
+		{ item: "createcafe:watermelon_milk_tea" }
+		{ item: "createcafe:sweetberry_milk_tea" }
+		{ item: "createcafe:pumpkin_milk_tea" }
+		{ item: "createcafe:apple_milk_tea" }
+		{ item: "createcafe:blood_orange_milk_tea" }
+		{ item: "createcafe:strawberry_milk_tea" }
+		{ item: "createcafe:banana_iced_coffee" }
+		{ item: "createcafe:caramel_iced_coffee" }
+		{ item: "createcafe:vanilla_iced_coffee" }
+		{ item: "createcafe:strawberry_iced_coffee" }
+		{ item: "createcafe:iced_coffee_milk" }
+		{ item: "createcafe:iced_coffee" }
+	]
+	title: "奶茶！"
+}

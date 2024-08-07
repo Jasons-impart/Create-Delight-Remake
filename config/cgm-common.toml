@@ -1,0 +1,130 @@
+
+[common]
+
+	#Properties relating to gameplay
+	[common.gameplay]
+		#The extra amount to expand an entity's bounding box when checking for projectile collision. Setting this value higher will make it easier to hit entities
+		#Range: 0.0 ~ 1.0
+		growBoundingBoxAmount = 0.3
+		#Enables the check for head shots for players. Projectiles that hit the head of a player will have increased damage.
+		enableHeadShots = true
+		#The value to multiply the damage by if projectile hit the players head
+		#Range: 1.0 ~ 1.7976931348623157E308
+		headShotDamageMultiplier = 1.25
+		#The value to multiply the damage by if projectile is a critical hit
+		#Range: 1.0 ~ 1.7976931348623157E308
+		criticalDamageMultiplier = 1.5
+		#If true, projectiles will ignore leaves when checking for collision
+		ignoreLeaves = true
+		#If true, projectiles will cause knockback when an entity is hit. By default this is set to true to match the behaviour of Minecraft.
+		enableKnockback = true
+		#Sets the strengthof knockback when shot by a bullet projectile. Knockback must be enabled for this to take effect. If value is equal to zero, knockback will use default minecraft value
+		#Range: 0.0 ~ 1.0
+		knockbackStrength = 0.15
+		#If true, improves the accuracy of weapons by considering the ping of the player. This has no affect on singleplayer. This will add a little overhead if enabled.
+		improvedHitboxes = false
+
+		#Properties related to gun griefing
+		[common.gameplay.griefing]
+			#If enabled, allows block removal on explosions
+			enableBlockRemovalOnExplosions = true
+			#If enabled, allows guns to shoot out glass and other fragile objects
+			enableGlassBreaking = true
+			#If enabled, fragile blocks will drop their loot when broken
+			fragileBlockDrops = true
+			#The base chance that a fragile block is broken when impacted by a bullet. The hardness of a block will scale this value; the harder the block, the lower the final calculated chance will be.
+			#Range: 0.0 ~ 1.0
+			fragileBlockBreakChance = 1.0
+			#If true, allows guns enchanted with Fire Starter to light and spread fires on blocks
+			setFireToBlocks = true
+
+	#Properties relating to network
+	[common.network]
+		#The distance players need to be within to be able to track new projectiles trails. Higher values means you can see projectiles from that start from further away.
+		#Range: 1.0 ~ 1.7976931348623157E308
+		projectileTrackingRange = 200.0
+
+	#Properties relating to mob aggression
+	[common.aggro_mobs]
+		#If true, nearby mobs are angered and/or scared by the firing of guns.
+		enabled = true
+		#If true, in addition to causing peaceful mobs to panic, firing a gun will also cause nearby hostile mobs to target the shooter.
+		angerHostileMobs = true
+		#Any mobs within a sphere of this radius will aggro on the shooter of an unsilenced gun.
+		#Range: 0.0 ~ 1.7976931348623157E308
+		unsilencedRange = 20.0
+		#Any mobs of defined will not aggro on shooters
+		exemptMobs = []
+
+	#Properties relating to missiles
+	[common.missiles]
+		#The max distance which the explosion is effective to
+		#Range: 0.0 ~ 1.7976931348623157E308
+		explosionRadius = 5.0
+
+	#Properties relating to grenades
+	[common.grenades]
+		#The max distance which the explosion is effective to
+		#Range: 0.0 ~ 1.7976931348623157E308
+		explosionRadius = 5.0
+
+	#Properties relating to stun grenades
+	[common.stun_grenades]
+
+		#Blinding properties of stun grenades
+		[common.stun_grenades.blind]
+			#If true, hostile mobs will be unable to target entities while they are blinded by a stun grenade.
+			blindMobs = true
+
+			[common.stun_grenades.blind.effect_criteria]
+				#Grenade must be no more than this many meters away to have an effect.
+				#Range: 0.0 ~ 1.7976931348623157E308
+				radius = 15.0
+				#Effect will have this duration (in ticks) if the grenade is directly at the player's eyes while looking directly at it.
+				#Range: > 0
+				durationMax = 220
+				#Effect will have this duration (in ticks) if the grenade is the maximum distance from the player's eyes while looking directly at it.
+				#Range: > 0
+				durationMin = 10
+				#Angle between the eye/looking direction and the eye/grenade direction must be no more than half this many degrees to have an effect.
+				#Range: 0.0 ~ 360.0
+				angleEffect = 170.0
+				#After duration is attenuated by distance, it will be further attenuated depending on the angle (in degrees) between the eye/looking direction and the eye/grenade direction. This is done by multiplying it by 1 (no attenuation) if the angle is 0; and by this value if the angle is the maximum within the angle of effect.
+				#Range: 0.0 ~ 1.0
+				angleAttenuationMax = 0.75
+				#If true, the effect is only applied if the line between the eyes and the grenade does not intersect any non-liquid blocks with an opacity greater than 0.
+				raytraceOpaqueBlocks = true
+
+		#Deafening properties of stun grenades
+		[common.stun_grenades.deafen]
+			#If true, peaceful mobs will panic upon being deafened by a stun grenade.
+			panicMobs = true
+
+			[common.stun_grenades.deafen.effect_criteria]
+				#Grenade must be no more than this many meters away to have an effect.
+				#Range: 0.0 ~ 1.7976931348623157E308
+				radius = 15.0
+				#Effect will have this duration (in ticks) if the grenade is directly at the player's eyes while looking directly at it.
+				#Range: > 0
+				durationMax = 280
+				#Effect will have this duration (in ticks) if the grenade is the maximum distance from the player's eyes while looking directly at it.
+				#Range: > 0
+				durationMin = 100
+				#Angle between the eye/looking direction and the eye/grenade direction must be no more than half this many degrees to have an effect.
+				#Range: 0.0 ~ 360.0
+				angleEffect = 360.0
+				#After duration is attenuated by distance, it will be further attenuated depending on the angle (in degrees) between the eye/looking direction and the eye/grenade direction. This is done by multiplying it by 1 (no attenuation) if the angle is 0; and by this value if the angle is the maximum within the angle of effect.
+				#Range: 0.0 ~ 1.0
+				angleAttenuationMax = 0.75
+				#If true, the effect is only applied if the line between the eyes and the grenade does not intersect any non-liquid blocks with an opacity greater than 0.
+				raytraceOpaqueBlocks = false
+
+	#Properties relating to projectile spread
+	[common.projectile_spread]
+		#The amount of time in milliseconds before logic to apply spread is skipped. The value indicates a reasonable amount of time before a weapon is considered stable again.
+		#Range: 0 ~ 1000
+		spreadThreshold = 300
+		#The amount of times a player has to shoot within the spread threshold before the maximum amount of spread is applied. Setting the value higher means it will take longer for the spread to be applied.
+		#Range: > 1
+		maxCount = 10
+

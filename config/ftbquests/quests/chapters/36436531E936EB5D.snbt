@@ -1,0 +1,1074 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "36436531E936EB5D"
+	group: "14CFC96B5B37F10B"
+	icon: {
+		Count: 1b
+		id: "minecraft:stone_pickaxe"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "36436531E936EB5D"
+	order_index: 0
+	progression_mode: "linear"
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["3D7427876018E5D5"]
+			description: [""]
+			id: "3CF4C402145AF2B9"
+			rewards: [{
+				count: 16
+				id: "34577CE3B8D49E78"
+				item: "minecraft:oak_log"
+				type: "item"
+			}]
+			subtitle: "用你的小手手去采集第一棵树吧，这将会是跨越性的一步"
+			tasks: [{
+				count: 4L
+				id: "768E3C505359488C"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				title: "木头！"
+				type: "item"
+			}]
+			title: "要致富还得是先撸树"
+			x: 10.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3CF4C402145AF2B9"]
+			dependency_requirement: "all_started"
+			icon: "minecraft:crafting_table"
+			id: "77ECF5D5E59B874F"
+			rewards: [{
+				id: "72AAD9875280F282"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "这总不用我教你吧"
+			tasks: [{
+				id: "117AA51246578955"
+				item: "minecraft:crafting_table"
+				type: "item"
+			}]
+			title: "万恶之祖"
+			x: 12.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["77ECF5D5E59B874F"]
+			description: [""]
+			id: "0F04193DFE08130E"
+			rewards: [{
+				id: "3BBDB882CC28F727"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "事实上耐久只有3的稿子"
+			tasks: [{
+				id: "010F10BAF70E014D"
+				item: {
+					Count: 1b
+					id: "minecraft:wooden_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "现在是时候来做一把镐子了"
+			x: 14.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			description: [""]
+			id: "5378B8523968F007"
+			rewards: [{
+				id: "4C3DDFA020FEFA11"
+				item: "minecraft:cobblestone"
+				random_bonus: 63
+				type: "item"
+			}]
+			subtitle: "只需要挖8个就可以造熔炉啦！"
+			tasks: [{
+				count: 8L
+				id: "4D7052DC3DBB8731"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			title: "这就是！！石粒！！"
+			x: 16.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["0F04193DFE08130E"]
+			description: [""]
+			id: "08ECAB95A3D6E981"
+			rewards: [{
+				count: 8
+				id: "4A32343AAB3A7967"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			subtitle: "做一把剑来自♂卫♂吧"
+			tasks: [{
+				id: "5BE561E2379D3E65"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:swords"
+					}
+				}
+				title: "开始杀戮吧"
+				type: "item"
+			}]
+			x: 14.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["5378B8523968F007"]
+			id: "7B3771D9729E61A2"
+			subtitle: " 热门话题"
+			tasks: [{
+				id: "24F9C1A71E7F9B40"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "31FCDE1EB7C614B8"
+			rewards: [{
+				id: "6EBFDC33FC3A2BC4"
+				item: "minecraft:raw_iron"
+				random_bonus: 5
+				type: "item"
+			}]
+			subtitle: "粗粗的"
+			tasks: [{
+				id: "44474B75599046D1"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "0532D3A0BE22E925"
+			rewards: [{
+				id: "1BDA2292129A2D07"
+				item: "minecraft:coal"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "来自山西的黑金！"
+			tasks: [{
+				id: "73DCC006A075A3AF"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			x: 17.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "19C4EC6F3980ED9A"
+			rewards: [{
+				id: "022D0C3294774770"
+				item: "minecraft:raw_copper"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "整个MC中最没用的矿物"
+			tasks: [{
+				id: "5A74B82C41946F89"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			x: 15.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0F04193DFE08130E"]
+			description: ["呜呜呜呜呜呜呜呜呜令人感伤的故事（大家可以去查一下这个梗的由来，“哥哥我们家有钱了”）"]
+			id: "59EB8216D9A91914"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "06EB53FC2EA63362"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "哥哥，我们家有石稿啦！！！"
+			tasks: [{
+				id: "56848055EF8A035B"
+				item: {
+					Count: 1b
+					id: "minecraft:stone_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"7B3771D9729E61A2"
+				"31FCDE1EB7C614B8"
+			]
+			id: "7A3709D4B50FDB64"
+			rewards: [{
+				id: "198D9BBAB935F692"
+				item: "minecraft:raw_iron_block"
+				type: "item"
+			}]
+			subtitle: "硬硬的"
+			tasks: [{
+				id: "4291D69533A033CD"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			x: 19.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "0B20E731C8BC4961"
+			rewards: [{
+				id: "43761EF36E2D4F5E"
+				item: "create:raw_zinc"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "葡萄糖酸锌口服液，酸酸甜甜我最爱"
+			tasks: [{
+				id: "37E75DB2831DE06B"
+				item: "create:raw_zinc"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"59EB8216D9A91914"
+				"7A3709D4B50FDB64"
+				"31FCDE1EB7C614B8"
+			]
+			description: [""]
+			id: "4144F362E5458112"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7EDD7EC1AF9763D8"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "让我们做一把铁镐来收集更多资源吧"
+			tasks: [{
+				id: "23C4D701E1D75A55"
+				item: {
+					Count: 1b
+					id: "minecraft:iron_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "终于可以挖钻石啦"
+			x: 19.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "6ABD2D5713580576"
+			rewards: [{
+				id: "5E5125B09CBFD8F3"
+				item: "minecraft:emerald"
+				random_bonus: 7
+				type: "item"
+			}]
+			subtitle: "别给奸商都霍霍了（）"
+			tasks: [{
+				id: "1E0F63630505E83B"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			x: 19.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "1B0ADB0243EEAD47"
+			rewards: [{
+				id: "58320D1C9304652F"
+				item: "minecraft:redstone"
+				random_bonus: 31
+				type: "item"
+			}]
+			subtitle: "生电大佬快来，我找到红石啦"
+			tasks: [{
+				id: "5F3420B17F6687B6"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			x: 21.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "0FFA12C63E14396C"
+			rewards: [{
+				id: "6AA1977982E07955"
+				item: "minecraft:lapis_lazuli"
+				random_bonus: 7
+				type: "item"
+			}]
+			subtitle: "神奇的魔法力量"
+			tasks: [{
+				id: "0C631867D19F0F83"
+				item: "minecraft:lapis_lazuli"
+				type: "item"
+			}]
+			x: 18.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7A3709D4B50FDB64"]
+			id: "2B06C9F73DF923F5"
+			rewards: [
+				{
+					count: 2
+					id: "5FAA2493330A0D96"
+					item: "minecraft:oak_leaves"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5447E425EE6A462F"
+					item: "minecraft:white_wool"
+					type: "item"
+				}
+			]
+			subtitle: "青青草原的小羊们终于不用被杀羊取毛啦！"
+			tasks: [{
+				id: "277EBFFA4523ECE8"
+				item: {
+					Count: 1b
+					id: "minecraft:shears"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 21.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["77ECF5D5E59B874F"]
+			id: "25D7CEE93389160E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "76E83AD379AB9CD8"
+				table_id: 3754320624781338086L
+				type: "random"
+			}]
+			subtitle: "永远刻在骨子里的种田的欲望！"
+			tasks: [{
+				id: "6D9B874AD652364D"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:hoes"
+					}
+				}
+				type: "item"
+			}]
+			title: "开始种田吧"
+			x: 12.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7A3709D4B50FDB64"]
+			id: "7EE833D19CE76C4F"
+			subtitle: "是的，我很能装，超能装"
+			tasks: [{
+				id: "6BC6457998047B0A"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
+			x: 19.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["3D7427876018E5D5"]
+			description: ["可以用来标记家的位置，注意：&e太远了会消耗经验"]
+			icon: "waystones:waystone"
+			id: "0082C5BEB96B1114"
+			rewards: [{
+				id: "00D3F2F86D28DEE6"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			subtitle: "好耶！我可以传送了！"
+			tasks: [{
+				id: "333F068D4B5273B9"
+				title: "指路石"
+				type: "checkmark"
+			}]
+			x: 6.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["3D7427876018E5D5"]
+			icon: "ends_delight:bubble_tea"
+			id: "0826A7B25117A46A"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6F0BA3E5CC81E5DE"
+				table_id: 6167605175036859481L
+				type: "random"
+			}]
+			subtitle: "喂！三点几嚟，做、做卵工啊做，饮茶先啦！"
+			tasks: [{
+				id: "26EB9B06AEC25934"
+				type: "checkmark"
+			}]
+			title: "多喝热水"
+			x: 10.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["08ECAB95A3D6E981"]
+			icon: "minecraft:rotten_flesh"
+			id: "0E531BD70B2A75EE"
+			rewards: [{
+				count: 10
+				id: "7A13239038CB2CC0"
+				item: "minecraft:rotten_flesh"
+				type: "item"
+			}]
+			subtitle: "你现在可以杀掉他们了！"
+			tasks: [{
+				entity: "minecraft:zombie"
+				id: "62716298840FBFC8"
+				type: "kill"
+				value: 1L
+			}]
+			title: "怪物猎人"
+			x: 14.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["7A3709D4B50FDB64"]
+			id: "211F945EDB8A43BF"
+			subtitle: "整装上阵！"
+			tasks: [
+				{
+					id: "18A5E0E9ADF0A199"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5DD801A46036A3E8"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7FD1E6AA83C56721"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7C4F80CBD7C0BB0C"
+					item: {
+						Count: 1b
+						id: "minecraft:iron_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "铁套！"
+			x: 21.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0082C5BEB96B1114"]
+			hide_details_until_startable: false
+			hide_text_until_complete: false
+			id: "2011D407A38D2F5C"
+			invisible: true
+			rewards: [{
+				id: "4F1FC0E5F6368427"
+				item: {
+					Count: 1b
+					id: "waystones:warp_stone"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "月球上也有旷野之塔？"
+			tasks: [{
+				icon: "ad_astra:moon_globe"
+				id: "11CFF46E78C9D385"
+				secret: true
+				structure: "totw_modded:moon"
+				type: "structure"
+			}]
+			title: "wwwwwhat???"
+			x: 6.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2011D407A38D2F5C"]
+			id: "23693D7EA18689DE"
+			rewards: [{
+				count: 10
+				id: "0EA968A7DD5586BF"
+				item: "waystones:warp_scroll"
+				type: "item"
+			}]
+			tasks: [{
+				icon: "ad_astra:mars_globe"
+				id: "675D9DC1B39BB27E"
+				structure: "totw_modded:mars"
+				type: "structure"
+			}]
+			title: "这里也有啊？"
+			x: 6.5d
+			y: -6.5d
+		}
+		{
+			dependencies: ["23693D7EA18689DE"]
+			id: "0456C4B8F4C85AB7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "29D104DC6347006D"
+				table_id: 7772018159856264947L
+				type: "random"
+			}]
+			tasks: [{
+				icon: "ad_astra:venus_globe"
+				id: "06FB1B91B84D4239"
+				structure: "totw_modded:venus"
+				title: "难道它到处都是？"
+				type: "structure"
+			}]
+			x: 5.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["0456C4B8F4C85AB7"]
+			id: "1566F201ABC5F723"
+			rewards: [{
+				count: 2
+				id: "531816C9E8AEFB03"
+				item: "ad_astra:cheese_block"
+				type: "item"
+			}]
+			tasks: [{
+				icon: "ad_astra:mercury_globe"
+				id: "51634ADAE4F234DA"
+				structure: "totw_modded:mercury"
+				type: "structure"
+			}]
+			title: "原来真的到处都有啊"
+			x: 5.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["25D7CEE93389160E"]
+			id: "501D225CCE7B711C"
+			invisible: true
+			rewards: [
+				{
+					id: "64E7F70FAA339831"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+				{
+					count: 10
+					id: "07E62658B2F33C17"
+					item: "minecraft:ancient_debris"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "711D4FD9280DA244"
+					table_id: 6485826240718891201L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "61609E568A74432F"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+			]
+			subtitle: "这也是爱到极致的表现了，奖励你！"
+			tasks: [{
+				id: "33EB6C684D1A130F"
+				item: {
+					Count: 1b
+					id: "minecraft:netherite_hoe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "终！极！奉！献！"
+			x: 12.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "7EDEA3C57AA0F20A"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "37D7D57E81FD24A1"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+				{
+					id: "225DA5C46DC56B32"
+					item: "create:wrench"
+					type: "item"
+				}
+				{
+					id: "06A5D9AECCC79B0D"
+					item: "create:goggles"
+					type: "item"
+				}
+			]
+			subtitle: "机械动力，启动！"
+			tasks: [{
+				id: "33A4A7B1ECC5A658"
+				item: "minecraft:andesite"
+				type: "item"
+			}]
+			title: "快看我发现了什么！"
+			x: 14.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["3D7427876018E5D5"]
+			id: "05D6B228BA11656D"
+			rewards: [
+				{
+					id: "7D25F82C2EF50879"
+					item: "minecraft:horse_spawn_egg"
+					type: "item"
+				}
+				{
+					id: "20467FDFFDFAF955"
+					item: "minecraft:saddle"
+					type: "item"
+				}
+				{
+					id: "17B4FC8865A84152"
+					item: "minecraft:iron_horse_armor"
+					type: "item"
+				}
+			]
+			subtitle: "顶针的小马珍珠我也想要！"
+			tasks: [{
+				icon: "minecraft:horse_spawn_egg"
+				id: "6B439399C415F881"
+				observe_type: 5
+				timer: 0L
+				to_observe: "minecraft:horse"
+				type: "observation"
+			}]
+			title: "风驰电掣~"
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0082C5BEB96B1114"]
+			id: "6505B4F50F20682C"
+			invisible: true
+			rewards: [{
+				count: 10
+				id: "002C920F0CCDA9BA"
+				item: "waystones:warp_scroll"
+				type: "item"
+			}]
+			subtitle: "塞尔达入侵我的世界"
+			tasks: [{
+				icon: "minecraft:netherrack"
+				id: "74FEA69433C02805"
+				structure: "totw_modded:nether"
+				type: "structure"
+			}]
+			title: "你咋哪里都有!!!∑(ﾟДﾟノ)ノ"
+			x: 5.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["6505B4F50F20682C"]
+			id: "7BB1BFFB5B368992"
+			rewards: [
+				{
+					count: 5
+					id: "5FE3A857F5D4039E"
+					item: {
+						Count: 1b
+						id: "waystones:warp_stone"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 20
+					id: "2AC5B0AC9C3FB67C"
+					item: "waystones:warp_scroll"
+					type: "item"
+				}
+			]
+			tasks: [{
+				icon: "minecraft:end_stone"
+				id: "213A959BB00EAA0D"
+				structure: "totw_modded:end"
+				type: "structure"
+			}]
+			title: "给您跪了orz"
+			x: 3.5d
+			y: -3.5d
+		}
+		{
+			description: [""]
+			icon: "minecraft:grass_block"
+			id: "3D7427876018E5D5"
+			rewards: [{
+				id: "2C0ADEADD3386D58"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: " &5&m太美丽了，家人们，但还是看看远处的风景吧&r"
+			tasks: [{
+				id: "6349D8B322720B37"
+				title: "到达世界巅峰！理塘！"
+				type: "checkmark"
+			}]
+			x: 8.5d
+			y: -2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["3D7427876018E5D5"]
+			icon: "ftbquests:book"
+			id: "54E5D285A4300964"
+			optional: true
+			rewards: [{
+				id: "7B3B009F64264C00"
+				item: "ftbquests:book"
+				type: "item"
+			}]
+			size: 2.0d
+			subtitle: "看我多大方，任务书随便拿！"
+			tasks: [{
+				id: "5237AD30A9B874EA"
+				title: "点击获得任务书！"
+				type: "checkmark"
+			}]
+			title: "什么？任务书丢了？不知道合成表？"
+			x: 8.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["77ECF5D5E59B874F"]
+			description: ["选择3×3的空地，将合成蓝图右键放置，共有九个位置，空手或者机械动力扳手右键设置合成配方（可以JEI拖入或者直接点击小加号，点击小加号可以使用tag进行合成），设置完成后右键直接合成一次，蹲下右键可一次合成一组（没有一组就全都消耗掉），设置完成后千万不要用机械动力扳手右键（会直接消除合成配方）"]
+			id: "60B88C2A6488DC81"
+			subtitle: "霍！这不是植物魔法的工厂环吗"
+			tasks: [{
+				id: "64BF60DCF2763E29"
+				item: "create:crafting_blueprint"
+				type: "item"
+			}]
+			title: "另类合成"
+			x: 12.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["325FEB93D62142EE"]
+			id: "7DD6AE3D040FB1AE"
+			rewards: [{
+				id: "1B9C60BFB14C6219"
+				item: {
+					Count: 1b
+					id: "supplementaries:bubble_blower"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "446015A99AE27594"
+					item: "immersive_paintings:painting"
+					type: "item"
+				}
+				{
+					id: "049DEA23DCF33C1B"
+					item: "immersive_paintings:graffiti"
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3D7427876018E5D5"]
+			icon: "supplementaries:globe"
+			id: "325FEB93D62142EE"
+			tasks: [{
+				id: "3DEEDCEC337E2AB2"
+				type: "checkmark"
+			}]
+			title: "实用小玩意"
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["325FEB93D62142EE"]
+			description: [" &l具体操作方法详见&4https://www.mcmod.cn/post/3679.html&r"]
+			id: "7D65EC61C0EDC6D7"
+			rewards: [{
+				id: "1B5354565B111566"
+				item: {
+					Count: 1b
+					id: "supplementaries:flute"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "可以让朋友听到你的网易云音乐歌单！"
+			tasks: [
+				{
+					id: "03AB8D012E0A416C"
+					item: "netmusic:computer"
+					type: "item"
+				}
+				{
+					id: "32E337C247C2468B"
+					item: "netmusic:cd_burner"
+					type: "item"
+				}
+				{
+					id: "073D688CD1DA79D1"
+					item: "netmusic:music_player"
+					type: "item"
+				}
+				{
+					id: "6FB063DB4FB39174"
+					item: "netmusic:music_cd"
+					type: "item"
+				}
+			]
+			title: "音乐大师"
+			x: 8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["325FEB93D62142EE"]
+			id: "6DACD46450CD6DFD"
+			rewards: [{
+				id: "02B62F82E52A2E06"
+				item: {
+					Count: 1b
+					id: "supplementaries:bubble_blower"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "14EE4000084D36A9"
+					item: "sereneseasons:calendar"
+					type: "item"
+				}
+				{
+					id: "07478C11C7FDD9B5"
+					item: "sereneseasons:season_sensor"
+					type: "item"
+				}
+			]
+			title: "季节变换"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"325FEB93D62142EE"
+				"05D6B228BA11656D"
+			]
+			id: "11584A30A7E1004D"
+			rewards: [{
+				id: "32D5ED5DAAF30976"
+				item: {
+					Count: 1b
+					id: "supplementaries:slingshot"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "开了光影非常惬意！"
+			tasks: [{
+				id: "13DC070521D92E6E"
+				item: "astikorcarts:supply_cart"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["325FEB93D62142EE"]
+			id: "6EA2CC5B89935877"
+			rewards: [{
+				id: "2B6F9F770B05A493"
+				item: {
+					Count: 1b
+					id: "supplementaries:bubble_blower"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "104D8D8F7FCD9F7B"
+				item: "quark:trowel"
+				type: "item"
+			}]
+			title: "铺路小能手"
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["325FEB93D62142EE"]
+			id: "2983A2F4EF48C2EC"
+			rewards: [{
+				id: "4802D1FCD078C6EE"
+				item: "quark:abacus"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6C0A4800B9155FAA"
+				item: "dummmmmmy:target_dummy"
+				type: "item"
+			}]
+			title: "试验伤害（未来也许会加入武器系统吧）"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7DD6AE3D040FB1AE"]
+			id: "1BE43F6D6EF3FE1E"
+			tasks: [
+				{
+					id: "693A77DD22C6304D"
+					item: "immersive_paintings:glow_painting"
+					type: "item"
+				}
+				{
+					id: "4FA34B3B090668B6"
+					item: "immersive_paintings:glow_graffiti"
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3D7427876018E5D5"]
+			id: "73CEB2D8D907517C"
+			rewards: [{
+				id: "35371B7E24B3591E"
+				item: "minecraft:red_bed"
+				type: "item"
+			}]
+			subtitle: "送你张床！"
+			tasks: [{
+				advancement: "minecraft:adventure/sleep_in_bed"
+				criterion: ""
+				id: "27A8C55D70B8486A"
+				type: "advancement"
+			}]
+			title: "睡个好觉~"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "0F9A325B7651DE3D"
+			rewards: [{
+				id: "4B2D9B08D0964ACD"
+				item: "minecraft:raw_gold"
+				random_bonus: 3
+				type: "item"
+			}]
+			subtitle: "金子！！！请多多多多挖"
+			tasks: [{
+				id: "2E17E8C5AEB879C1"
+				item: "minecraft:raw_gold"
+				type: "item"
+			}]
+			x: 21.0d
+			y: -2.0d
+		}
+	]
+	title: "&f初来乍到"
+}

@@ -1,0 +1,18 @@
+{
+	// The duration of the roll ability, expressed as a number of ticks, during which the player cannot use item/attack/jump etc...
+	"roll_duration": 8,
+	// Allows Vanilla Minecraft auto jump feature to work while rolling
+	"allow_auto_jump_while_rolling": true,
+	// Allows jumping while rolling. WARNING! Setting this to `true` breaks roll distance attribute and enchantment
+	"allow_jump_while_rolling": false,
+	// Allows combat roll while the player has its weapon on cooldown
+	"allow_rolling_while_weapon_cooldown": false,
+	// Allows combat roll while the player is in the air. WARNING! Setting this to `true` breaks roll distance attribute and enchantment
+	"allow_rolling_while_airborn": false,
+	// The amount of exhaust (hunger) to be added to the player on every roll
+	"exhaust_on_roll": 0.10000000149011612,
+	// The cooldown duration of the combat roll ability expressed in seconds
+	"roll_cooldown": 4.0,
+	// Default roll distance attribute is `3`. Settings this to `1` will make it `4`. Warning! Attribute based scaling does not effect this.
+	"additional_roll_distance": 0.0
+}

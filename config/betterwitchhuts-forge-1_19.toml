@@ -1,0 +1,12 @@
+
+["YUNG's Better Witch Huts"]
+
+	###########################################################################################################
+	## General settings.
+	###########################################################################################################
+	["YUNG's Better Witch Huts".General]
+		# Whether or not vanilla witch huts should be disabled.
+		# Default: true
+		#
+		"Disable Vanilla Witch Huts" = true
+

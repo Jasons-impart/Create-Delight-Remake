@@ -1,0 +1,36 @@
+
+[chopping]
+	#Default setting for whether or not the user wishes to chop (can be toggled in-game)
+	choppingEnabled = true
+	#Default setting for whether or not the user wishes to fell tree when chopping (can be toggled in-game)
+	fellingEnabled = true
+	#Default setting for the effect that sneaking has on chopping (can be cycled in-game)
+	#Allowed Values: NONE, INVERT_CHOPPING, INVERT_FELLING
+	sneakBehavior = "INVERT_CHOPPING"
+	#Ignore trees without connected leaves (can be toggled in-game)
+	treesMustHaveLeaves = true
+	#Enable chopping in creative mode (even when false, sneaking can still enable chopping) (can be toggled in-game)
+	chopInCreativeMode = false
+
+[visuals]
+	#Visually replace the interior sides of logs with a chopped texture instead of bark
+	removeBarkOnInteriorLogs = true
+
+	[visuals.choppingIndicator]
+		#Show an on-screen indicator when a block will be chopped instead of broken (can be toggled in-game)
+		enabled = true
+		#Horizontal location of the indicator relative to the player's crosshairs; positive values move the indicator to the right
+		#Range: -256 ~ 256
+		xOffset = 16
+		#Vertical location of the indicator relative to the player's crosshairs; positive values move the indicator down
+		#Range: -256 ~ 256
+		yOffset = 0
+
+[settingsScreen]
+	#Show in-game options for enabling and disable felling (can be toggled in-game)
+	showFellingOptions = false
+	#Show chat confirmations when using hotkeys to change chop settings (can be toggled in-game)
+	showFeedbackMessages = true
+	#Show tooltips in the settings screen (can be toggled in-game)
+	showTooltips = true
+

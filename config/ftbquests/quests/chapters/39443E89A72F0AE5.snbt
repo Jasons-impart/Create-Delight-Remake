@@ -1,0 +1,1341 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "39443E89A72F0AE5"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "minecraft:dragon_head"
+	id: "39443E89A72F0AE5"
+	images: [{
+		alpha: 100
+		click: ""
+		corner: false
+		dev: false
+		height: 10.0d
+		hover: [ ]
+		image: "minecraft:item/dragon_breath"
+		rotation: 0.0d
+		width: 10.0d
+		x: 9.0d
+		y: -0.5d
+	}]
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"19EF00824FE97164"
+				"7C07CC6B1C3B0A56"
+				"6078AD6BEF15BC42"
+				"755EC32AE743A83D"
+				"0994DEB70DEBAD86"
+				"18A964D09D82498B"
+				"7BA61F553E25FC07"
+				"15B639BE79C87D11"
+				"491511887828B2AC"
+				"44AE00BC07D1EEB9"
+				"12ED4BBAB4B0503C"
+				"28B933178C34DDC7"
+				"590D6093AB4FDFC3"
+			]
+			id: "0373F30B09F3C827"
+			tasks: [{
+				dimension: "minecraft:the_end"
+				disable_toast: true
+				id: "2A966FC67BFE26F0"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: -0.5d
+		}
+		{
+			id: "0994DEB70DEBAD86"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "47B32792990F99CA"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "从埋藏的箱子中找到。"
+			tasks: [{
+				id: "46EC59C53919161A"
+				item: {
+					Count: 1b
+					id: "endrem:black_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			id: "18A964D09D82498B"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "66F2EA82A718D1BE"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "在雪屋中找到。"
+			tasks: [{
+				id: "42A9CDC2E84BA79D"
+				item: {
+					Count: 1b
+					id: "endrem:cold_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			id: "19EF00824FE97164"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "257315329A3810BC"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "在下界要塞里找到。"
+			tasks: [{
+				id: "5D0BF62D158D403A"
+				item: {
+					Count: 1b
+					id: "endrem:nether_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			id: "755EC32AE743A83D"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "300AF9C0123A27DE"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "在从林神殿中找到"
+			tasks: [{
+				id: "01689CD9A8EF05FB"
+				item: {
+					Count: 1b
+					id: "endrem:rogue_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.0d
+		}
+		{
+			id: "7BA61F553E25FC07"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6C2D18B3B310201D"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "在猪灵堡垒宝箱中找到。"
+			tasks: [{
+				id: "4D94746074A56494"
+				item: {
+					Count: 1b
+					id: "endrem:cursed_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			id: "44AE00BC07D1EEB9"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "07A143C6C8488A77"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "从大师级牧师村民手中购买"
+			tasks: [{
+				id: "0B309E0A946D42CB"
+				item: {
+					Count: 1b
+					id: "endrem:evil_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"7DCA2C89A556E2DD"
+				"41F017E692B74F71"
+			]
+			id: "15B639BE79C87D11"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "74BA501A23E82D18"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "重现焕发新机的魔力之眼会给予你力量"
+			tasks: [{
+				id: "5E2A6AF4453C7262"
+				item: {
+					Count: 1b
+					id: "endrem:magical_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"34FE4BFC79F8CD0E"
+				"64697394745F589E"
+			]
+			id: "28B933178C34DDC7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "470BF1C4FAD4787D"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "激活后的凋零之眼会见证你的凋亡"
+			tasks: [{
+				id: "09F205258623CC22"
+				item: {
+					Count: 1b
+					id: "endrem:wither_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			id: "491511887828B2AC"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2EEEE03ADF602446"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "使用原版未影之眼与巫师之瞳以及以太晶片合成。"
+			tasks: [{
+				id: "6FB3E43727B3802F"
+				item: {
+					Count: 1b
+					id: "endrem:witch_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			id: "7C07CC6B1C3B0A56"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "057746C06876432C"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "使用亡灵物品合成，合成所需的不死灵魂需要击杀骸马获得."
+			tasks: [{
+				id: "460F72CE468ED3A9"
+				item: {
+					Count: 1b
+					id: "endrem:undead_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			id: "6078AD6BEF15BC42"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0EA5C6A2F8080149"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "使用水产物品制作。"
+			tasks: [{
+				id: "7B617A1ADFB61760"
+				item: {
+					Count: 1b
+					id: "endrem:exotic_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0373F30B09F3C827"]
+			icon: "minecraft:dragon_head"
+			id: "5CBF811F55377620"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3374563D2321EA04"
+					table_id: 6485826240718891201L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "602CD73B8AE698F0"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "156C4039D4CCD3C5"
+					table_id: 1586327015374942043L
+					type: "random"
+				}
+			]
+			subtitle: "击杀末影龙"
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				id: "018A29490168C2B1"
+				type: "kill"
+				value: 1L
+			}]
+			title: "解放末地"
+			x: 6.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["5CBF811F55377620"]
+			id: "738BC614D426E271"
+			rewards: [{
+				id: "36DAB458439BE91F"
+				item: "minecraft:dragon_head"
+				type: "item"
+			}]
+			subtitle: "龙鳞可以复制鞘翅！鞘翅可再生！"
+			tasks: [
+				{
+					id: "3E8520B0BEAB9FF3"
+					item: "quark:dragon_scale"
+					type: "item"
+				}
+				{
+					count: 10L
+					id: "71E52C01F91F55EC"
+					item: "minecraft:dragon_breath"
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5CBF811F55377620"]
+			id: "1A993919FD9D953A"
+			size: 2.0d
+			subtitle: "当玩家进入杀死末影龙所生成的末地折跃门时，他们立即会被传送到距离主岛1000格虚空以外的外岛。进入仅有一格高的末地折跃门的途径很多，使用末影珍珠进入末地折跃门是最简单的方式。"
+			tasks: [{
+				advancement: "minecraft:end/enter_end_gateway"
+				criterion: ""
+				id: "6105F09817990660"
+				type: "advancement"
+			}]
+			title: "进入末地外岛"
+			x: 11.92857142857143d
+			y: -0.4642857142857224d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: ["用剪刀修建紫颂花可以获得紫颂花瓣"]
+			id: "67AD45E7651C6B17"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "57018B7FAD54446F"
+				table_id: 1586327015374942043L
+				type: "random"
+			}]
+			subtitle: "传送！传送！不停的传送！"
+			tasks: [
+				{
+					id: "1C95A6264FA0C6CA"
+					item: "minecraft:chorus_fruit"
+					type: "item"
+				}
+				{
+					id: "758738330748B62D"
+					item: "minecraft:chorus_flower"
+					type: "item"
+				}
+				{
+					id: "2B67C3F1C0AFDD0E"
+					item: "unusualend:ender_stew"
+					type: "item"
+				}
+				{
+					id: "725E5E40015586F8"
+					item: "unusualend:chorus_petal"
+					type: "item"
+				}
+			]
+			title: "好吃又好玩"
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			id: "12ED4BBAB4B0503C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "46263EA328B79ECD"
+				table_id: 1586327015374942043L
+				type: "random"
+			}]
+			subtitle: "找到末地要塞"
+			tasks: [{
+				advancement: "minecraft:story/follow_ender_eye"
+				criterion: ""
+				id: "3009970917788821"
+				type: "advancement"
+			}]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["75A42237E8F6E806"]
+			id: "26C8619E020794CD"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "53A8DA6E99FCA086"
+				table_id: 1586327015374942043L
+				type: "random"
+			}]
+			tasks: [{
+				id: "2BC9B22D2E400E28"
+				item: "minecraft:shulker_shell"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["26C8619E020794CD"]
+			id: "1FE74F896B65DC77"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6D4689BBE3C79B36"
+				table_id: 1586327015374942043L
+				type: "random"
+			}]
+			tasks: [{
+				id: "0DE98D85470F0D58"
+				item: "minecraft:shulker_box"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			id: "75A42237E8F6E806"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "13B814B974C107F6"
+				table_id: 1586327015374942043L
+				type: "random"
+			}]
+			tasks: [
+				{
+					entity: "minecraft:shulker"
+					icon: "minecraft:shulker_spawn_egg"
+					id: "52E79F63FB4D11E7"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "4A63803C558B8343"
+					item: "quark:music_disc_endermosh"
+					type: "item"
+				}
+			]
+			x: 13.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			icon: "alexsmobs:spawn_egg_mimicube"
+			id: "1CD55560C45E53F6"
+			subtitle: "复刻怪是史莱姆和岩浆怪的亲戚，这些怪物经常被发现守卫着末地城"
+			tasks: [{
+				entity: "alexsmobs:mimicube"
+				id: "368FC6F0B7A46EF0"
+				type: "kill"
+				value: 1L
+			}]
+			title: "啊？他怎么会复制我的攻击方式啊！"
+			x: 10.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1CD55560C45E53F6"]
+			id: "43C81B7FAD6768F0"
+			subtitle: "玩家可以在工作台上合成任何可损坏的物品加上8个复刻凝胶来创造出一个复刻的物品。复刻的物品几乎拥有原物品的所有属性，包括附魔。需要注意的是，这个复刻品的耐久度为零，需要修复才能使用。复刻凝胶也可以被喂给拟态章鱼以增强它的拟态能力。"
+			tasks: [{
+				id: "576E91D6F0C82092"
+				item: "alexsmobs:mimicream"
+				type: "item"
+			}]
+			title: "芜湖，复制大法启动！"
+			x: 10.5d
+			y: -3.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["5CBF811F55377620"]
+			id: "641E478AABDF36BE"
+			rewards: [
+				{
+					id: "0CCFAB8CB4C4D70E"
+					item: "ends_delight:dragon_tooth"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "47D701D40082F5D1"
+					item: "ends_delight:dragon_leg"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "413B179D6C711BE6"
+					item: "ends_delight:raw_dragon_meat"
+					type: "item"
+				}
+				{
+					id: "64413574294A448B"
+					item: "minecraft:dragon_breath"
+					random_bonus: 7
+					type: "item"
+				}
+				{
+					id: "42FDC097290D1D4F"
+					item: "ends_delight:raw_dragon_meat_cuts"
+					type: "item"
+				}
+			]
+			subtitle: "不用农夫乐事的刀也可以获得龙肉啦~"
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				icon: "ends_delight:smoked_dragon_leg"
+				id: "3988CD75795E732A"
+				type: "kill"
+				value: 1L
+			}]
+			title: "末影龙屠杀机就是你吧（"
+			x: 6.5d
+			y: 1.0d
+		}
+		{
+			id: "34FE4BFC79F8CD0E"
+			subtitle: "凋零掉落"
+			tasks: [{
+				id: "22E897B6D974599E"
+				item: "createdelight:unactivated_wither_eye"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			icon: {
+				Count: 1b
+				id: "createdelight:dusty_magical_eye"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7DCA2C89A556E2DD"
+			subtitle: "唤魔者掉落"
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "createdelight:dusty_magical_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "40A6F283C2C214D4"
+				item: {
+					Count: 1b
+					id: "createdelight:dusty_magical_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -3.5d
+		}
+		{
+			id: "590D6093AB4FDFC3"
+			subtitle: "在某次探险中，铁匠不小心把他掉在了废弃矿井中"
+			tasks: [{
+				id: "3DAB2FD724BE5CD4"
+				item: {
+					Count: 1b
+					id: "endrem:lost_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0373F30B09F3C827"]
+			id: "39A1EB2388A1AA37"
+			rewards: [{
+				count: 3
+				id: "5175B1B8515088BC"
+				item: "ends_delight:end_mixed_salad"
+				type: "item"
+			}]
+			tasks: [{
+				entity: "unusualend:endstone_trapper"
+				id: "129341575D967BC8"
+				type: "kill"
+				value: 1L
+			}]
+			title: "你是真该死啊！"
+			x: 5.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"37C9939BF1F309BA"
+				"1A993919FD9D953A"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"存在在末地古城顶端的祭坛，可以用龙息激活，并在数道闪电落下之后召唤一个末地石傀儡。"
+				""
+				"末地石傀儡会掉落一个免疫漂浮的饰品，在锻造台使用下界之星可为其添加防火效果"
+			]
+			id: "69A2A6DFADC8C4DF"
+			rewards: [
+				{
+					id: "16C980168E9F9892"
+					item: "unusualend:ancient_shard"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "0A769B2F8B72A7F2"
+					table_id: 1586327015374942043L
+					type: "random"
+				}
+			]
+			size: 2.0d
+			subtitle: "这家伙有1000滴血？"
+			tasks: [
+				{
+					icon: "unusualend:golem_altar"
+					id: "67BDFC17F6183585"
+					observe_type: 0
+					timer: 0L
+					title: "末地石傀儡"
+					to_observe: "unusualend:golem_altar"
+					type: "observation"
+				}
+				{
+					id: "3BE501A8F74FD659"
+					item: "unusualend:golem_orb"
+					type: "item"
+				}
+			]
+			x: 18.30952380952381d
+			y: -0.4761904761904816d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: ["右键漂浮袋会被抛向空中"]
+			id: "14DD930DFAD8EB03"
+			tasks: [
+				{
+					id: "202131C18086FC37"
+					item: "unusualend:bottled_shulker_bullet"
+					type: "item"
+				}
+				{
+					id: "567FFBA52A26BE37"
+					item: {
+						Count: 1b
+						id: "unusualend:floating_pouch"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 13.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"末影灵亡魂是末地中飞行的亡灵生物，是末地先民的鬼魂，游荡在末地各处。"
+				""
+				"攻击方式为飞向玩家近战攻击，在即将靠近玩家时，有几率突然加速。"
+				""
+				"其在受击时会进入3秒的隐身状态，但其发光的眼睛和嘴巴仍然可见。"
+				""
+				"和末影人不一样，它们并不怕水，但它们并不会瞬移，也无法像末影人一样免受弹射物伤害。"
+				""
+				"本mod中的方块——颂黏石灯，可以在半径64格的范围内阻止这种生物的生成。"
+				""
+				"击杀会掉落末影灵残片"
+			]
+			id: "61A035E6F220D82F"
+			subtitle: "“末地先民的鬼魂”"
+			tasks: [
+				{
+					entity: "unusualend:undead_enderling"
+					icon: "unusualend:undead_enderling_spawn_egg"
+					id: "46BD9DF04B0BD98E"
+					title: "漂浮的末影亡灵"
+					type: "kill"
+					value: 10L
+				}
+				{
+					id: "1685865F83D761BF"
+					item: "unusualend:gloopstone_lamp"
+					type: "item"
+				}
+				{
+					id: "3E2B7CECDC8189B4"
+					item: "unusualend:enderling_scrap"
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"末影萤火虫是一种会在末地高地的萤火虫巢附近生成的友好生物。"
+				""
+				"末影萤火虫可以用末影黏液球驯服。"
+				""
+				"末影萤火虫会捕食末影螨和大型末影螨（一口毙命），在捕食大型末影螨之后末影萤火虫会获得15秒的生命恢复II效果。"
+				""
+				"在末影萤火虫捕食大型末影螨后，除了大型末影螨本身的掉落物，还有几率掉落末影萤火虫卵和萤腺泡（而且幼年萤火虫也做得到）。"
+				""
+				"你可以用空桶装起一只末影萤火虫，末影萤火虫尾部自发光。"
+			]
+			id: "45F3F16FF78C1C27"
+			tasks: [
+				{
+					icon: "unusualend:enderfirefly_bucket"
+					id: "5192D3FE3ED644DC"
+					observe_type: 5
+					timer: 0L
+					title: "末影萤火虫"
+					to_observe: "unusualend:ender_firefly"
+					type: "observation"
+				}
+				{
+					id: "68645140124DFB2D"
+					item: "unusualend:ender_firefly_egg"
+					type: "item"
+				}
+				{
+					id: "568624F57F62F9A4"
+					item: "unusualend:firefly_bulb"
+					type: "item"
+				}
+				{
+					id: "495115BA68587C51"
+					item: "unusualend:chorus_pie"
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"末影设陷者是一种出现在末地主岛和末地外岛的地面上的生物，自然状态下是不可见的。"
+				""
+				"末地主岛和末地外岛的末地石地面上会掺杂着设陷末地石，这种末地石被末影设陷者盘踞着，当不处于隐身状态的玩家以非潜行状态走到设陷末地石上面，末影设陷者就会从中冒出来伤害玩家，伤害固定为2点。"
+				""
+				"末影设陷者本身的生命值为100点，但即使玩家在它冒出来的那一刻对它造成了伤害，其再从设陷末地石里冒出来时仍会是满血状态，因此玩家没法通过常规手段杀死它。"
+				""
+				"正确应对方法是用末地石右击冒出来的末影设陷者，这将活捉它并把手上的末地石转化为设陷末地石。"
+			]
+			id: "5E9556777B25A0AA"
+			tasks: [{
+				icon: "unusualend:endstone_trapper_spawn_egg"
+				id: "1AC2503A865F9725"
+				observe_type: 5
+				timer: 0L
+				title: "末影设陷者"
+				to_observe: "unusualend:endstone_trapper"
+				type: "observation"
+			}]
+			x: 13.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"能力1"
+				"高举双臂重击地面进行范围攻击，"
+				""
+				"该攻击将为受到伤害的玩家附加2秒的沉重II和缓慢V，并强行冷却玩家受击瞬间的主副手物品（包括武器、盾牌、食物、药水等）"
+				""
+				"困难模式下伤害：32点"
+				"普通模式下伤害：23点"
+				"简单模式下伤害：14点"
+				""
+				"能力2在玩家攻击末地石傀儡时，末地石傀儡有几率让玩家飞向空中"
+				"能力3随机地召唤闪电"
+				"能力4给予玩家飘浮效果，但这往往和沉重效果相加而产生类似缓降的效果，然后被击飞出平台的你就会绝望地从古城上慢慢飘下去"
+				"能力5给予玩家无力III的效果，这使得玩家每放置一个方块就会承受一定的伤害并需要等待较长的冷却时间"
+			]
+			hide_dependency_lines: true
+			icon: "unusualend:golem_altar"
+			id: "37C9939BF1F309BA"
+			tasks: [{
+				id: "6D46FF2DA05AD827"
+				title: "攻击方式"
+				type: "checkmark"
+			}]
+			x: 19.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["69A2A6DFADC8C4DF"]
+			id: "5FC6CA7BFEFED6E1"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "75CA3EE68786EAD4"
+				table_id: 5347970608351672481L
+				type: "choice"
+			}]
+			subtitle: "果然末地还是对眼球情有独钟"
+			tasks: [
+				{
+					id: "23206D5B42F33F2B"
+					item: "unusualend:wither_orb"
+					type: "item"
+				}
+				{
+					id: "5701A19264432255"
+					item: "unusualend:shulker_orb"
+					type: "item"
+				}
+				{
+					id: "237EA3B678A76922"
+					item: "unusualend:nether_orb"
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["69A2A6DFADC8C4DF"]
+			description: [""]
+			id: "0D765FB23118978D"
+			rewards: [{
+				count: 2
+				id: "02C8A04CE78E88F5"
+				item: "minecraft:chest"
+				type: "item"
+			}]
+			subtitle: "一个更比两个强，火腿我要王中王（相当于两个箱子的容量-9格）"
+			tasks: [{
+				id: "21D1BADFA8116FEC"
+				item: "unusualend:purpur_tank"
+				type: "item"
+			}]
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["67AD45E7651C6B17"]
+			description: [
+				"会把你传送到落点附近的安全地点,击败潜影贝有概率掉落"
+				""
+				"紫颂头盔可以让你在被攻击时传送到附近的一个地方"
+			]
+			id: "7C310C5E16B8FE47"
+			subtitle: "更实用的珍珠"
+			tasks: [
+				{
+					id: "5D86DF1C578C7AB3"
+					item: "unusualend:wandering_pearl"
+					type: "item"
+				}
+				{
+					id: "04AA07E35A8F87FA"
+					item: {
+						Count: 1b
+						id: "unusualend:chorus_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 12.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["0373F30B09F3C827"]
+			description: ["你可以用绿宝石与生成在末地的流浪商人交易（没错流浪商人在末地也有业务了）在一个小屋里，吃了它你会回到主世界的重生点"]
+			hide_dependency_lines: true
+			id: "6F2D4C54F6493EE1"
+			invisible: true
+			shape: "square"
+			size: 2.0d
+			subtitle: "回家喽~"
+			tasks: [{
+				id: "6CBD585521F429A2"
+				item: "unusualend:wandering_stew"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: ["击杀末影螨掉落末影黏液球,九个可以合成末影粘液块，有着不会削减的弹力，你可以一直弹"]
+			id: "18134B6D9E2C92F8"
+			subtitle: "弹弹弹！！！"
+			tasks: [
+				{
+					id: "623989B9485214AC"
+					item: "unusualend:end_blob"
+					type: "item"
+				}
+				{
+					id: "1DE13A2EA7307C63"
+					item: "unusualend:enderblob_block"
+					type: "item"
+				}
+			]
+			x: 9.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["61A035E6F220D82F"]
+			description: ["穿上后下蹲可以隐身并且获得缓降效果，蹲着在空中飘"]
+			id: "52B3C671AD65DF30"
+			subtitle: "缓降隐身裤"
+			tasks: [{
+				id: "17A2198989FA9BE1"
+				item: {
+					Count: 1b
+					id: "unusualend:enderling_scrap_leggings"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["69A2A6DFADC8C4DF"]
+			description: [
+				"击败末地石傀儡后在旁边箱子里拿到古代碎片，用于合成末地重生锚"
+				""
+				"龙息可以激活它，激活后再次右键设置重生点"
+				""
+				"重现方块，嗯？"
+			]
+			id: "69421BAA6C3DD677"
+			rewards: [
+				{
+					id: "61821E84BA12E192"
+					item: "unusualend:ancient_shard"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "1592BC2E47117DC1"
+					table_id: 5347970608351672481L
+					type: "loot"
+				}
+			]
+			subtitle: "没错你的重生点被设置在了末地"
+			tasks: [
+				{
+					id: "4507D48A2481F686"
+					item: "unusualend:ancient_shard"
+					type: "item"
+				}
+				{
+					id: "11E5F2978E40F911"
+					item: "unusualend:ender_respawn_altar"
+					type: "item"
+				}
+				{
+					id: "029A3EB81B18C99A"
+					item: "unusualend:fading_block"
+					type: "item"
+				}
+			]
+			x: 19.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7C310C5E16B8FE47"]
+			description: ["配合合金传送锚使用，下蹲右键绑定合金传送锚，再右键可以传送至传送锚上方,但使用以后会有5分钟冷却，虽然镀金末影珍珠可以堆叠，但是你可以把他分开绑定在不同的传送锚上"]
+			id: "43E70CB13F19E919"
+			rewards: [{
+				count: 5
+				id: "41DDE322D735BDA7"
+				item: "unusualend:wandering_pearl"
+				type: "item"
+			}]
+			subtitle: "金色传说？"
+			tasks: [
+				{
+					id: "6294C76DC36688D7"
+					item: "unusualend:gilded_pearl"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "6CC5947331DF04E5"
+					item: "unusualend:teleportation_anchor"
+					type: "item"
+				}
+			]
+			x: 12.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["18134B6D9E2C92F8"]
+			description: ["可以击退妄图想伤害你的敌人"]
+			id: "7E4D0C7563551618"
+			subtitle: "粘液球做的盾牌？反弹？"
+			tasks: [{
+				id: "676F0A80B425D04F"
+				item: {
+					Count: 1b
+					id: "unusualend:blob_shield"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: ["可以在长满诡异苔藓的末地船上开箱子获得"]
+			id: "2599C8366ABBC9BA"
+			invisible: true
+			shape: "square"
+			size: 1.5d
+			subtitle: "手持虚空图腾可以在落入虚空时，从虚空把你抛向高处并获得缓降效果让你安全着陆，但首先你得瞄准好"
+			tasks: [{
+				id: "26AF4E9B2A4F598A"
+				item: "unusualend:void_totem"
+				type: "item"
+			}]
+			title: "虚空也不过如此..."
+			x: 8.0d
+			y: 0.75d
+		}
+		{
+			dependencies: ["61A035E6F220D82F"]
+			description: ["右键后会获得1分钟的隐身效果"]
+			id: "0F2774EA67648D81"
+			subtitle: "隐身实现了"
+			tasks: [{
+				id: "46F73D225430856A"
+				item: "unusualend:scrape_cloth"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			id: "14274D1E45AFA569"
+			tasks: [
+				{
+					id: "290A7976F31EE662"
+					item: "unusualend:disc_fragment_flying_ships"
+					type: "item"
+				}
+				{
+					id: "4C883B93A039432F"
+					item: "unusualend:music_disc_flying_ships"
+					type: "item"
+				}
+			]
+			x: 15.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["14274D1E45AFA569"]
+			id: "0522169381FA0614"
+			tasks: [{
+				id: "65CC2C574B82719C"
+				item: "unusualend:music_disc_endstone_golem_theme"
+				type: "item"
+			}]
+			x: 17.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["67AD45E7651C6B17"]
+			id: "245BC3EE657C0B74"
+			subtitle: "“美汁汁儿”"
+			tasks: [
+				{
+					id: "0D0BEE069890C60D"
+					item: "unusualend:chorus_juice"
+					type: "item"
+				}
+				{
+					id: "79AF72E077C91766"
+					item: "unusualend:chorus_tea"
+					type: "item"
+				}
+			]
+			x: 11.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["18134B6D9E2C92F8"]
+			id: "21A1289B71E1003C"
+			subtitle: "自带节肢杀手的刀"
+			tasks: [{
+				id: "5332DC7663F15B37"
+				item: {
+					Count: 1b
+					id: "unusualend:moult_dagger"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"挖掘耀晶颂黏石(存在于末地空中的粉色小岛)或与流浪商人兑换获得耀晶"
+				""
+				"对亡灵伤害提高"
+				""
+				"但是蹲下打会给对方回复生命"
+			]
+			id: "022154528F56A2B2"
+			subtitle: "忍者匕首"
+			tasks: [
+				{
+					id: "4E939953D2F2A6BB"
+					item: "unusualend:shiny_crystal"
+					type: "item"
+				}
+				{
+					id: "1427EA0B9D7BE8D2"
+					item: {
+						Count: 1b
+						id: "unusualend:shiny_dagger"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 9.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["14DD930DFAD8EB03"]
+			description: ["一个用来发射潜影贝导弹的方块，每1.5秒发射一次"]
+			id: "509F9FD42DCDF0B3"
+			tasks: [{
+				id: "654EB9E05D47F8D0"
+				item: "unusualend:shulker_shooter"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["45F3F16FF78C1C27"]
+			description: ["红石激活，会给附近生物施加发光效果"]
+			id: "58F17BAAAE767DC8"
+			tasks: [{
+				id: "63ACC8ACFFD70423"
+				item: "unusualend:dragon_lamp"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"幻翼方块：看不见的方块"
+				"幽灵方块：虽然是方块但是可是穿过去，并施加失明效果，可以用来困住小动物"
+			]
+			id: "15B544BF433D6977"
+			subtitle: "两种神奇方块"
+			tasks: [
+				{
+					id: "6DAA3DE31D61B78C"
+					item: "unusualend:phantom_membrane_block"
+					type: "item"
+				}
+				{
+					id: "7FD2D0A2E49C9E15"
+					item: "unusualend:phantom_block"
+					type: "item"
+				}
+			]
+			x: 14.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["1A993919FD9D953A"]
+			description: [
+				"在地图中会发现一些诡异小岛岛上会有奇怪的浮游鱼鲌络克，喂食诡异菌可以繁殖他们,而喂食耀晶会使其收到凋零效果而死"
+				""
+				"鲌络克可以进行“交易”（它们会消化一些物品，并在过程中转化），玩家可以用它们将任何“可扭曲”的资源转换成其诡异版本（包括末地植物类的东西，像末地石或下界岩、下界疣、等等），并且可以将未经加工的紫珀块转换为片岩块。相反的过程可以通过耀晶的再生特性来实现。只有通过与鲌络克“交易”才能获得扭曲的诡异疣等物品。"
+			]
+			id: "75A0EB4DD2BC63D0"
+			rewards: [
+				{
+					id: "65A331726C445283"
+					item: {
+						Count: 1b
+						id: "unusualend:bolok_scale_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "35F62617FCF961CC"
+					item: "unusualend:warped_potion"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					icon: "unusualend:bolok_bucket"
+					id: "2C0AC5046A2D2055"
+					observe_type: 5
+					timer: 0L
+					title: "鱼之炼金术"
+					to_observe: "unusualend:bolok"
+					type: "observation"
+				}
+				{
+					id: "0009D0911C31E270"
+					item: "minecraft:warped_roots"
+					type: "item"
+				}
+				{
+					id: "2A3B90B5370B23E5"
+					item: "unusualend:warped_wart"
+					type: "item"
+				}
+			]
+			x: 14.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["15B544BF433D6977"]
+			description: [""]
+			id: "664EDDD724C4FFF9"
+			subtitle: "指哪打哪（不受重力影响的箭）"
+			tasks: [{
+				id: "7A7D172CD06BBDDA"
+				item: "unusualend:phantom_arrow"
+				type: "item"
+			}]
+			x: 16.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0373F30B09F3C827"]
+			hide_dependency_lines: true
+			id: "4C983C583B34DAEC"
+			invisible: true
+			shape: "square"
+			size: 2.0d
+			tasks: [{
+				advancement: "minecraft:end/elytra"
+				criterion: ""
+				id: "2940DBE54B4179E1"
+				type: "advancement"
+			}]
+			title: "&e天空才不能成为我的极限"
+			x: 6.5d
+			y: -4.0d
+		}
+	]
+	title: "&e终末之旅"
+}

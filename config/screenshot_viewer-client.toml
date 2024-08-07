@@ -1,0 +1,41 @@
+#Shows a button to access screenshots directly in the pause menu.
+showButtonInGamePauseMenu = true
+#Shows a button to access screenshots directly on the title screen.
+showButtonOnTitleScreen = true
+#Whether a growing animation should play when a screenshot on the screen is clicked to be enlarged.
+enableScreenshotEnlargementAnimation = true
+#Warns you with a confirmation screen when trying to delete a screenshot.
+promptWhenDeletingScreenshot = true
+#Number of screenshots to be displayed per row when the screen is opened (from 2 to 8).
+#Range: 2 ~ 8
+initialScreenshotAmountPerRow = 4
+#Scroll speed of the screen (from 1 to 50).
+#Range: 1 ~ 50
+screenScrollSpeed = 10
+#Opacity of the background that appears when the screenshot elements are hovered (from 0 to 100).
+#Range: 0 ~ 100
+screenshotElementBackgroundOpacity = 100
+#If a font shadow should be rendered under the screenshot elements text.
+renderScreenshotElementFontShadow = true
+#Color of the texts describing the screenshots elements.
+screenshotElementTextColor = "#66CCFF"
+#The ordering of the screenshots when the screen is opened.
+#Allowed Values: ASCENDING, DESCENDING
+defaultListOrder = "ASCENDING"
+#The offset in pixels of the screenshot manager button if shown in the pause menu (from 0 to how much you want).
+#Range: > 0
+pauseMenuButtonOffset = 4
+#The path to the folder containing the screenshots images that will be displayed in the screen.
+screenshotsFolder = "E:\\Create Dimension Relics\\.minecraft\\versions\\Create Delight Remake\\screenshots"
+#If enabled, clicking on the link printed in the chat when taking a screenshot will open it directly in the screenshot manager.
+redirectScreenshotChatLinks = false
+#The visibility state of the screenshots names.
+#Allowed Values: VISIBLE, SHOW_ON_HOVER, HIDDEN
+screenshotElementTextVisibility = "VISIBLE"
+#If enabled, it inverts the scroll direction during zoom in the Screenshot Viewer menu
+invertZoomDirection = false
+#Controls whether a tooltip giving useful info should appear when hovering a screenshot for a prolonged period.
+displayHintTooltip = true
+#Whether the properties buttons should be rendered wide or square.
+renderWidePropertiesButton = true
+

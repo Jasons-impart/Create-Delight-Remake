@@ -1,0 +1,49 @@
+
+#General mod settings
+[general]
+	#Sends relative mouse position and clicking
+	sendMouseInfo = true
+	#Sends a calculated rate of typing. If off, uses a default value on server
+	sendTypingSpeed = true
+	#Sends when you open a Gui, and what Gui
+	sendActiveGui = true
+	#Sends when you go idle / return
+	sendIdleState = true
+	#Enables or disables idle visual in the server player list tab screen
+	showIdleStatesInPlayerList = true
+	#Enables or disables idle visual above player head
+	showIdleStatesInPlayerAboveHead = true
+	#Setting false disables all animations
+	showPlayerAnimations = true
+	#Plays a sound when a player opens some Guis
+	playScreenOpenSounds = true
+	#Plays a sutble sound when a player clicks their mouse in a Gui
+	playMouseClickSounds = true
+	#Enables or disables typing animation
+	showPlayerAnimation_Typing = true
+	#Enables or disables idle animation
+	showPlayerAnimation_Idle = true
+	#Enables or disables the non typing animations used when showing the open Gui, such as head looking, arms moving up, arms pointing and clicking
+	showPlayerAnimation_Gui = true
+	#Show any Gui they're using that isn't chat typing related in world
+	showPlayerActiveNonChatGui = true
+	#Show the chat typing Gui in world
+	showPlayerActiveChatGui = true
+	#If there isnt an exact Gui available for what the player is using, it will show the Chest Gui. If this is false, it will show nothing, lots of modded Guis will use this for now
+	showPlayerActiveGuiIfNotExactMatch = true
+	#Show 'Player is typing...' on the chat screen
+	screenTypingVisible = true
+	#Adjust the X position where the 'Player is typing...' text shows in the chat Gui
+	#Range: > -2147483648
+	screenTypingRelativePosition_X = 0
+	#Adjust the Y position where the 'Player is typing...' text shows in the chat Gui
+	#Range: > -2147483648
+	screenTypingRelativePosition_Y = 0
+	#Max characters allowed before it switches to using string set in screenTypingMultiplePlayersText
+	#Range: > -2147483648
+	screenTypingCharacterLimit = 50
+	#String to use when too many people are typing determined by screenTypingCharacterLimit
+	screenTypingMultiplePlayersText = "Several people are typing"
+	#String to use next to the typing player(s) name
+	screenTypingText = " is typing"
+

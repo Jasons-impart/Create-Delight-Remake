@@ -1,0 +1,31 @@
+{
+  "armouryItems": {
+    "entries": {
+      "golden_axe": 0.1,
+      "name_tag": 0.05,
+      "golden_sword": 0.1,
+      "arrow": 0.05,
+      "stone_axe": 0.05,
+      "stone_sword": 0.05,
+      "shield": 0.1,
+      "bow": 0.1
+    },
+    "defaultItem": "air"
+  },
+  "storageItems": {
+    "entries": {
+      "honey_bottle": 0.1,
+      "melon_seeds": 0.025,
+      "potato": 0.2,
+      "slime_ball": 0.05,
+      "cookie": 0.1,
+      "cake": 0.1,
+      "wheat_seeds": 0.025,
+      "bread": 0.2,
+      "beetroot_seeds": 0.025,
+      "pumpkin_seeds": 0.025,
+      "rabbit_foot": 0.01
+    },
+    "defaultItem": "air"
+  }
+}

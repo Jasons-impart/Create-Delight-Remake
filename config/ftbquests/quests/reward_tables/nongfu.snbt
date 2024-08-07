@@ -1,0 +1,43 @@
+{
+	icon: {
+		Count: 1b
+		id: "minecraft:golden_hoe"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "467863873CF4CF6D"
+	loot_size: 1
+	order_index: 8
+	rewards: [
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:iron_hoe"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:fishing_rod"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{ count: 5, item: "vinery:red_grape_seeds" }
+		{
+			item: {
+				Count: 1b
+				id: "farmersdelight:iron_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+	]
+	title: "农夫初始奖励"
+}

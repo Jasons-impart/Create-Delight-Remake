@@ -1,0 +1,11 @@
+
+#The modded biome slice sizes for dimensions
+#Blueprint's Modded Biome Slice System allows for datapacks and mods to add new biome areas to any dimension
+#Changing the size values will affect the size of all modded biome areas in their respected dimension
+#If a slice size isn't a positive integer, it will get ignored and the default slice size will get used instead
+[modded_biome_slice_sizes]
+	#If the slice size for a dimension isn't defined, this value will get used for that dimension
+	default = 8
+	#For example, the overworld's slice size would be formatted like this
+	"minecraft:overworld" = 8
+

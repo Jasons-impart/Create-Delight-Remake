@@ -1,0 +1,20 @@
+#Scale for screen shake effects
+#Range: 0.0 ~ 1.0
+screenShakeScale = 1.0
+#Max amount of sources that can contribute to screen shaking, adjustable for performance and preference reasons. 0 will disable the addition of shake sources
+#Range: > 0
+maxScreenShakers = 256
+#Determines if the experimental settings screen should be disabled
+disableExperimentalSettingsScreen = true
+
+#Slabfish patron hat settings.
+[slabfishSettings]
+	#If the slabfish hat should be enabled
+	enabled = true
+	#If the slabfish hat's backpack should be enabled
+	backpackEnabled = true
+	#If the slabfish hat's sweater should be enabled
+	sweaterEnabled = true
+	#If the slabfish hat's custom type should be enabled. If false, the default swamp slabfish appears
+	typeEnabled = true
+

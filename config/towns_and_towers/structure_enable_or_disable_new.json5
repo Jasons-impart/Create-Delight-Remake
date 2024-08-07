@@ -1,0 +1,88 @@
+/*
+This config file makes it possible to switch off any structure from Towns and Towers. Big thanks to Cristelknight for making this all possible.
+To disable a structure, simply set the value of that structure to "false".
+o change the rarity of a structure category, use the other file in the config.
+
+LINKS
+=====
+Curseforge link: https://www.curseforge.com/minecraft/mc-mods/towns-and-towers
+Modrinth link: https://modrinth.com/mod/towns-and-towers
+PMC link: https://www.planetminecraft.com/data-pack/towns-amp-towers-structure-overhaul/
+GitHub Repository: [NEED TO MAKE ONE]
+*/
+{
+	// Here you can find all pillager outposts.
+	"towers": {
+		"pillager_outpost_badlands": true,
+		"pillager_outpost_beach": true,
+		"pillager_outpost_birch_forest": true,
+		"pillager_outpost_desert": true,
+		"pillager_outpost_flower_forest": true,
+		"pillager_outpost_forest": true,
+		"pillager_outpost_grove": true,
+		"pillager_outpost_jungle": true,
+		"pillager_outpost_meadow": true,
+		"pillager_outpost_mushroom_fields": true,
+		"pillager_outpost_ocean": true,
+		"pillager_outpost_old_growth_taiga": true,
+		"pillager_outpost_savanna": true,
+		"pillager_outpost_savanna_plateau": true,
+		"pillager_outpost_snowy_beach": true,
+		"pillager_outpost_snowy_plains": true,
+		"pillager_outpost_snowy_slopes": true,
+		"pillager_outpost_sparse_jungle": true,
+		"pillager_outpost_sunflower_plains": true,
+		"pillager_outpost_swamp": true,
+		"pillager_outpost_taiga": true,
+		"pillager_outpost_snowy_taiga": true,
+		"pillager_outpost_wooded_badlands": true,
+		// Here you can find all pillager outposts which are exclusive to other worldgen mods (ex.: WWOO, Terralith, BoP, BYG, etc.).
+		"exclusives": {
+			"pillager_outpost_mediterranean": true,
+			"pillager_outpost_tudor": true,
+			"pillager_outpost_classic": true,
+			"pillager_outpost_oriental": true,
+			"pillager_outpost_swedish": true,
+			"pillager_outpost_iberian": true,
+			"pillager_outpost_rustic": true
+		}
+	},
+	// Here you can find all structures that aren't villages or outposts.
+	"other": {
+		"mimic_desert": true,
+		"wreckage_ocean": true
+	},
+	// Here you can find all villages.
+	"towns": {
+		"village_badlands": true,
+		"village_beach": true,
+		"village_birch_forest": true,
+		"village_flower_forest": true,
+		"village_forest": true,
+		"village_snowy_slopes": true,
+		"village_jungle": true,
+		"village_meadow": true,
+		"village_mushroom_fields": true,
+		"village_ocean": true,
+		"village_old_growth_taiga": true,
+		"village_grove": true,
+		"village_savanna_plateau": true,
+		"village_sunflower_plains": true,
+		"village_snowy_taiga": true,
+		"village_sparse_jungle": true,
+		"village_swamp": true,
+		"village_wooded_badlands": true,
+		// Here you can find all villages which are exclusive to other worldgen mods (ex.: WWOO, Terralith, BoP, BYG, etc.).
+		"exclusives": {
+			"village_mediterranean": true,
+			"village_swedish": true,
+			"village_tudor": true,
+			"village_wandering_trader_camp": true,
+			"village_classic": true,
+			"village_rustic": true,
+			"village_iberian": true,
+			"village_nilotic": true,
+			"village_piglin": true
+		}
+	}
+}

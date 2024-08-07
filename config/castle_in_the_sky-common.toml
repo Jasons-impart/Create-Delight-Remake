@@ -1,0 +1,53 @@
+
+#NOTE: as of 1.18.2, castle_avg_dist_chunk and castle_min_dist_chunk are no longer in the config file. You need to use datapacks (https://minecraft.fandom.com/wiki/Custom_world_generation) to config them
+[behaviours]
+	#The height of generated castle, recommended value is below $WORLD_HEIGHT - 144
+	#Range: > -2147483648
+	castle_height = 174
+	#the minimum distance between castle and 0,0
+	#Range: > 0
+	castle_spawn_proof = 10000
+	#Levitation can only be used when the user is bigger than this percent of spawn_proof. This is to prevent lag.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	levitation_stone_use_percent = 0.8
+	#Effect Range of Laputa Core
+	#Range: > 0
+	laputa_core_effect_range = 100
+	#Range: 0.0 ~ 1.0
+	yellow_key_dro_rate = 0.3
+	#Range: 0.0 ~ 1.0
+	blue_key_dro_rate = 0.1
+	#Range: 0.0 ~ 1.0
+	red_key_dro_rate = 0.05
+	#Player cannot place or destroy blocks in the castle
+	no_grief_in_castle = true
+	#Disable destruction incantation
+	disable_incantation = false
+	#Do not say the incantation (eg. BALSE) to public chat.
+	silent_incantation = true
+	#Destruction drop items
+	destruction_drops = false
+
+#Trading configuration: use the correct item id by pressing F3+H in game. Set 'null' to disable this slot, set both price1 and price2 to 'null' to disable the trading
+[tradings]
+
+	[tradings."castle_in_the_sky:levitation_stone"]
+		"castle_in_the_sky:levitation_stone_price1" = "minecraft:elytra"
+		"castle_in_the_sky:levitation_stone_price2" = "minecraft:recovery_compass"
+		"castle_in_the_sky:levitation_stone_output" = "castle_in_the_sky:levitation_stone"
+		"castle_in_the_sky:levitation_stone_profession" = "cartographer"
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_price1_min" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_price1_max" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_price2_min" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_price2_max" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_output_min" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_output_max" = 1
+		#Range: 1 ~ 64
+		"castle_in_the_sky:levitation_stone_level" = 5
+

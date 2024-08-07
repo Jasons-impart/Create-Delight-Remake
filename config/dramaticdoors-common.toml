@@ -1,0 +1,12 @@
+
+#Dramatic Doors
+[Experimental]
+	#Development mode ensures that all compat doors are always registered regardless of whether mods are installed or not, for development purposes.  Default: false
+	dev_mode = false
+
+[Mixins]
+	#Allow doors to be waterlogged. Enable to allow waterlogging. Disable for compatibility with certain mods. Requires restart after changing.  Default: true
+	waterloggable_doors = true
+	#Allow fence gates to be waterlogged. Enable to allow waterlogging. Disable for compatibility with certain mods. Requires restart after changing.  Default: true
+	waterloggable_fence_gates = true
+

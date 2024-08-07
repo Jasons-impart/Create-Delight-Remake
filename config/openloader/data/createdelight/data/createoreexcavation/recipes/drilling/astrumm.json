@@ -1,0 +1,22 @@
+{
+    "type": "createoreexcavation:drilling",
+    "amountMax": 8,
+    "amountMin": 3,
+    "biomeWhitelist": "createdelight:has_astrumm",
+    "drill": {
+        "item": "createoreexcavation:netherite_drill"
+    },
+    "name": "{\"translate\":\"item.ulterlands.astrumm\"}",
+    "output": [
+        {
+            "item": "ulterlands:astrumm"
+        },
+        {
+            "chance": 0.1,
+            "item": "ulterlands:astrumm"
+        }
+    ],
+    "stress": 256,
+    "ticks": 600,
+    "weight": 10
+}

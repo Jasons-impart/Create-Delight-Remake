@@ -1,0 +1,227 @@
+{
+	id: "68C0C21E2EE6FB93"
+	loot_size: 1
+	order_index: 6
+	rewards: [
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:night_vision"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:awkward"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:thick"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:mundane"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:water"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:long_strength"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:regeneration"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:healing"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:water_breathing"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:slowness"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:swiftness"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:fire_resistance"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:leaping"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:invisibility"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "alexsmobs:bug_pheromones"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "alexsmobs:poison_resistance"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "alexsmobs:lava_vision"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "alexsmobs:knockback_resistance"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:luck"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:slow_falling"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "minecraft:potion"
+				tag: {
+					Potion: "ulterlands:inferno_potions"
+				}
+			}
+		}
+		{
+			command: "/effect give @p blindness 10 255"
+			silent: true
+			type: "command"
+			weight: 5.0f
+		}
+		{
+			command: "/effect give @p minecraft:hunger 10 255"
+			silent: true
+			type: "command"
+			weight: 3.0f
+		}
+		{
+			command: "/effect give @p nausea 10 255"
+			silent: true
+			type: "command"
+			weight: 3.0f
+		}
+		{
+			command: "/effect give @p poison 10 255"
+			silent: true
+			type: "command"
+			weight: 3.0f
+		}
+		{
+			command: "/effect give @p wither 10 255"
+			silent: true
+			type: "command"
+			weight: 3.0f
+		}
+	]
+	title: "药水福袋！"
+}

@@ -1,0 +1,54 @@
+
+["Server Configs"]
+	#Maximum width of Oil Barrels
+	"Max Oil Barrel Width" = 3
+	#Canister Capacity in mB
+	"Capacity of Canisters" = 4000
+	#Canister Capacity Enchantment Capacity Addition in mB
+	"Capacity Addition of Capacity Enchantment in Canisters" = 1000
+	#Canister can be filled by spouts
+	"Canister can be filled by spouts" = true
+	#Capacity of Tools requiring Fluids in mB
+	"Capacity of Tools requiring Fluids" = 200
+	#Tool Capacity Enchantment Capacity Addition in mB
+	"Capacity Addition of Tools with Capacity Enchantment" = 10
+	#Combustibles do boom boom when on fire
+	"Combustibles blow up" = true
+
+	["Server Configs"."Diesel Engines"]
+		#Turbocharged Diesel Engine Speed Multiplier
+		"Turbocharged Diesel Engine Speed Multiplier" = 2.0
+		#Turbocharged Diesel Engine Burn Rate Multiplier
+		"Turbocharged Diesel Engine Burn Rate Multiplier" = 1.0
+		#Whenever Normal Diesel Engines are enabled
+		"Normal Diesel Engines" = true
+		#Whenever Modular Diesel Engines are enabled
+		"Modular Diesel Engines" = true
+		#Whenever Huge Diesel Engines are enabled
+		"Huge Diesel Engines" = true
+		#Whenever Diesel Engines can be filled with an Item
+		"Engines can be filled with a bucket" = true
+
+	["Server Configs"."Oil Config"]
+		#Whenever crude oil deposits are infinite
+		"Infinite oil deposits" = false
+		#Normal oil chunks oil amount multiplier
+		"Normal oil chunks oil amount multiplier" = 1.0
+		#High oil chunks oil amount multiplier
+		"High oil chunks oil amount multiplier" = 3.0
+		#Max Oil Scanner Level
+		"Max Oil Scanner Level" = 10000
+		#Normal oil chunks percentage
+		#Range: 0.0 ~ 100.0
+		"Normal oil chunks percentage" = 30.0
+		#High oil chunks percentage
+		#Range: 0.0 ~ 100.0
+		"High oil chunks percentage" = 10.0
+
+		["Server Configs"."Oil Config".Distillation]
+			#Whenever wide Distillation Towers go faster than the thin ones
+			"Wide Distillation Tower Distill Faster" = true
+			#Height of Distillation Tower level
+			#Range: 1 ~ 3
+			"Height of Distillation Tower level" = 1
+

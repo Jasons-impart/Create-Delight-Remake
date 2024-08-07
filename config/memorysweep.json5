@@ -1,0 +1,36 @@
+{
+	// Whether to enable MemorySweep.
+	"memorySweep": true,
+	/* 
+	   Base Config.
+	*/
+	"baseCfg": {
+		/* 
+		   Whether to enable smart GC.
+		   If enabled, when cleaning memory, it will judge whether to perform GC according to various conditions.
+		   Otherwise, as long as any memory cleaning condition is reached, GC will be performed.
+		*/
+		"smartGC": true,
+		/* 
+		   Whether to enable auto memory cleaning.
+		*/
+		"autoSweep": true,
+		/* 
+		   The interval time of memory cleaning.
+		   Unit: seconds.
+		*/
+		"sweepInterval": 600,
+		/* 
+		   The minimum memory occupancy rate that triggers memory cleaning.
+		   Calculated based on the average value in ten seconds.
+		   Unit: percentage.
+		*/
+		"minMemoryUsage": 75,
+		/* 
+		   Silent memory cleaning.
+		   This will not display memory cleaning information.
+		   But it will still be displayed in the log.
+		*/
+		"silent": false
+	}
+}

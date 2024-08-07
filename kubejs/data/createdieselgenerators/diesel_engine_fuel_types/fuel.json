@@ -1,0 +1,19 @@
+{
+  "fluid": "ad_astra:fuel",
+  "sound_speed": 0.5,
+  "normal": {
+    "speed": 192.0,
+    "strength": 24576.0,
+    "burn_rate": 2
+  },
+  "modular": {
+    "speed": 256.0,
+    "strength": 32768.0,
+    "burn_rate": 2
+  },
+  "huge": {
+    "speed": 256.0,
+    "strength": 40960.0,
+    "burn_rate": 2
+  }
+}

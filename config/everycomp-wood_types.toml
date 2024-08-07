@@ -1,0 +1,170 @@
+
+[types]
+
+	[types.wood_type]
+
+		[types.wood_type.quark]
+			bamboo = true
+			azalea = true
+			ancient = true
+			blossom = true
+
+		[types.wood_type.deeperdarker]
+			echo = true
+
+		[types.wood_type.ulterlands]
+			cedar = true
+
+		[types.wood_type.aether]
+			skyroot = true
+
+		[types.wood_type.ad_astra]
+			aeronos = true
+			strophar = true
+			glacian = true
+
+		[types.wood_type.vinery]
+			cherry = true
+
+		[types.wood_type.extradelight]
+			cinnamon = true
+
+		[types.wood_type.createdieselgenerators]
+			chip_wood = true
+
+	[types.leaves_type]
+
+		[types.leaves_type.deeperdarker]
+			echo = true
+
+		[types.leaves_type.quark]
+			ancient = true
+			blue_blossom = true
+			lavender_blossom = true
+			orange_blossom = true
+			pink_blossom = true
+			yellow_blossom = true
+			red_blossom = true
+
+		[types.leaves_type.ulterlands]
+			souldrained = true
+			cedar = true
+			frax = true
+
+		[types.leaves_type.aether]
+			skyroot = true
+			golden_oak = true
+			crystal = true
+			crystal_fruit = true
+			holiday = true
+			decorated_holiday = true
+
+		[types.leaves_type.ad_astra]
+			glacian = true
+
+		[types.leaves_type.vinery]
+			grapevine = true
+			cherry = true
+			apple = true
+
+		[types.leaves_type.fruitsdelight]
+			pear = true
+			hawberry = true
+			lychee = true
+			mango = true
+			persimmon = true
+			peach = true
+			orange = true
+			apple = true
+			mangosteen = true
+			bayberry = true
+			kiwi = true
+			fig = true
+			durian = true
+
+		[types.leaves_type.extradelight]
+			cinnamon = true
+
+		[types.leaves_type.culturaldelights]
+			avocado = true
+			fruiting_avocado = true
+
+[entries]
+
+	[entries.wood_type]
+
+		[entries.wood_type.cfm]
+			stripped_kitchen_sink_light = true
+			table = true
+			kitchen_counter = true
+			coffee_table = true
+			upgraded_gate = true
+			park_bench = true
+			stripped_park_bench = true
+			cabinet = true
+			stripped_kitchen_counter = true
+			stripped_table = true
+			mail_box = true
+			stripped_cabinet = true
+			kitchen_drawer = true
+			desk = true
+			stripped_bedside_cabinet = true
+			blinds = true
+			desk_cabinet = true
+			stripped_kitchen_drawer = true
+			stripped_chair = true
+			upgraded_fence = true
+			crate = true
+			chair = true
+			stripped_mail_box = true
+			stripped_blinds = true
+			kitchen_sink_dark = true
+			stripped_kitchen_sink_dark = true
+			bedside_cabinet = true
+			stripped_upgraded_fence = true
+			stripped_desk_cabinet = true
+			stripped_desk = true
+			kitchen_sink_light = true
+			stripped_coffee_table = true
+			stripped_crate = true
+			stripped_upgraded_gate = true
+
+		[entries.wood_type.create]
+			window = true
+			window_pane = true
+
+		[entries.wood_type.farmersdelight]
+			cabinet = true
+
+		[entries.wood_type.quark]
+			hollow_log = true
+			vertical_planks = true
+			post = true
+			trapped_chest = true
+			bookshelf = true
+			chest = true
+			stripped_post = true
+			ladder = true
+
+		[entries.wood_type.dramaticdoors]
+			short_door = true
+			tall_door = true
+
+		[entries.wood_type.storagedrawers]
+			half_drawers_1 = true
+			half_drawers_4 = true
+			half_drawers_2 = true
+			trim = true
+			full_drawers_2 = true
+			full_drawers_4 = true
+			full_drawers_1 = true
+
+	[entries.leaves_type]
+
+		[entries.leaves_type.quark]
+			hedge = true
+			leaf_carpet = true
+
+		[entries.leaves_type.cfm]
+			hedge = true
+

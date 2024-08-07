@@ -1,0 +1,42 @@
+{
+	id: "6BDBC156A61E26F3"
+	loot_size: 1
+	order_index: 1
+	rewards: [
+		{ count: 10, item: "farmersdelight:dog_food" }
+		{ count: 2, item: "corn_delight:corn_soup" }
+		{ count: 2, item: "corn_delight:nachos_bowl" }
+		{ count: 5, item: "corn_delight:taco" }
+		{ count: 5, item: "corn_delight:cornbread_stuffing" }
+		{ count: 2, item: "ends_delight:ender_congee" }
+		{ count: 2, item: "ends_delight:dragon_breath_and_chorus_soup" }
+		{ item: "oceansdelight:bowl_of_guardian_soup" }
+		{ count: 5, item: "farmersdelight:stuffed_potato" }
+		{ count: 10, item: "farmersdelight:dumplings" }
+		{ count: 5, item: "farmersdelight:mutton_wrap" }
+		{ count: 5, item: "farmersdelight:bacon_sandwich" }
+		{ count: 5, item: "farmersdelight:hamburger" }
+		{ count: 5, item: "farmersdelight:chicken_sandwich" }
+		{ count: 2, item: "farmersdelight:barbecue_stick" }
+		{ count: 2, item: "farmersdelight:smoked_ham" }
+		{ item: "farmersdelight:mushroom_rice" }
+		{ item: "farmersdelight:roasted_mutton_chops" }
+		{ item: "farmersdelight:pasta_with_mutton_chop" }
+		{ item: "farmersdelight:pasta_with_meatballs" }
+		{ item: "farmersdelight:bacon_and_eggs" }
+		{ count: 5, item: "farmersdelight:kelp_roll" }
+		{ count: 5, item: "farmersdelight:cod_roll" }
+		{ count: 5, item: "farmersdelight:salmon_roll" }
+		{ count: 5, item: "farmersdelight:cabbage_rolls" }
+		{ item: "farmersdelight:shepherds_pie" }
+		{ item: "farmersdelight:honey_glazed_ham" }
+		{ item: "farmersdelight:stuffed_pumpkin" }
+		{ item: "farmersdelight:roast_chicken" }
+		{ item: "farmersdelight:grilled_salmon" }
+		{ item: "farmersdelight:squid_ink_pasta" }
+		{ item: "farmersdelight:ratatouille" }
+		{ item: "farmersdelight:steak_and_potatoes" }
+		{ item: "farmersdelight:vegetable_noodles" }
+	]
+	title: "美味食物！"
+}

@@ -1,0 +1,17 @@
+{
+	id: "0220A1CEA70197CE"
+	loot_size: 1
+	order_index: 9
+	rewards: [
+		{ item: "extradelight:oak_knife_block" }
+		{ item: "extradelight:dark_oak_knife_block" }
+		{ item: "extradelight:spruce_knife_block" }
+		{ item: "extradelight:birch_knife_block" }
+		{ item: "extradelight:jungle_knife_block" }
+		{ item: "extradelight:acacia_knife_block" }
+		{ item: "extradelight:crimson_knife_block" }
+		{ item: "extradelight:warped_knife_block" }
+		{ item: "extradelight:mangrove_knife_block" }
+	]
+	title: "刀具架"
+}

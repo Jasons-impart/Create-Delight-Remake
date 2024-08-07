@@ -1,0 +1,94 @@
+
+[SeasonHUD]
+	#Enable the mod?
+	#(true/false)
+	#Default is true.
+	enable_mod = true
+
+	[SeasonHUD.HUD]
+		#Where to display the Hud when no minimap is installed.
+		#Default is TOP_LEFT.
+		#Allowed Values: TOP_LEFT, TOP_CENTER, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+		hud_location = "TOP_LEFT"
+		#The horizontal offset of the HUD when no minimap is installed (in pixels)
+		#Default is 2.
+		hud_x_position = 0
+		#The vertical offset of the HUD when no minimap is installed (in pixels)
+		#Default is 2.
+		hud_y_position = 0
+
+		[SeasonHUD.HUD.Colors]
+			#Display the season name in a color?
+			#(true/false)
+			season_name_color = true
+			#The RGB color (decimal) for spring.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 16753595.
+			#Range: 0 ~ 16777215
+			spring_color = 16753595
+			#The RGB color (decimal) for summer.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 16705834.
+			#Range: 0 ~ 16777215
+			summer_color = 16705834
+			#The RGB color (decimal) for autumn.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 12344871.
+			#Range: 0 ~ 16777215
+			autumn_color = 12344871
+			#The RGB color (decimal) for winter.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 14679292.
+			#Range: 0 ~ 16777215
+			winter_color = 14679292
+			# The RGB color (decimal) for dry tropical season.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 16745216.
+			#Range: 0 ~ 16777215
+			dry_color = 16745216
+			#The RGB color (decimal) for wet tropical season.
+			#(256 * 256 * r) + (256 * g) + (b) is the formula.
+			#Default is 2068975.
+			#Range: 0 ~ 16777215
+			wet_color = 2068975
+
+	[SeasonHUD.Season]
+		#Require the calendar item to be in the players inventory to show the HUD?
+		#(true/false)
+		#Default is false.
+		need_calendar = false
+		#Show the Tropical seasons (Wet/Dry) in Tropical Biomes.
+		#Will not change the season behavior in the biomes.
+		#(true/false)
+		#Default is true.
+		enable_show_tropical_season = true
+		#Show sub-season (i.e. Early Winter, Mid Autumn, Late Spring) instead of basic season?
+		#(true/false)
+		# Default is true.
+		enable_show_sub_season = true
+		#Show the day of the current Season/Sub-Season?
+		#Default is SHOW_DAY.
+		#Allowed Values: NONE, SHOW_DAY, SHOW_WITH_TOTAL_DAYS
+		enable_show_day = "SHOW_DAY"
+
+	[SeasonHUD.Minimap]
+		#Show the default SeasonHUD display when the minimap is hidden?
+		#(true/false)
+		#Default is false.
+		enable_show_minimap_hidden = false
+		#Enable integration with minimap mods?
+		#(true/false)
+		#Default is true.
+		enable_minimap_integration = true
+
+		[SeasonHUD.Minimap.Journeymap]
+			#Display the season above the JourneyMap minimap, instead of below.
+			#(true/false)
+			#Default is false.
+			enable_above_map = false
+			#Toggle for macOS retina display scaling when using JourneyMap.
+			#Enable if the season line is rendering around the halfway point of the screen.
+			#(true/false)
+			#Default is false.
+			enable_macOS = false
+

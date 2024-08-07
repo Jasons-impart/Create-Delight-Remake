@@ -1,0 +1,27 @@
+{
+    "type": "createoreexcavation:drilling",
+    "amountMax": 8,
+    "amountMin": 3,
+    "biomeWhitelist": "minecraft:is_nether",
+    "drill": {
+        "item": "createoreexcavation:netherite_drill"
+    },
+    "fluid": {
+        "amount": 1000,
+        "fluid": "minecraft:lava",
+        "nbt": {}
+    },
+    "name": "{\"translate\":\"ore.coe.ancient_debris\"}",
+    "output": [
+        {
+            "item": "minecraft:ancient_debris"
+        },
+        {
+            "chance": 0.1,
+            "item": "minecraft:ancient_debris"
+        }
+    ],
+    "stress": 1024,
+    "ticks": 3000,
+    "weight": 2
+}

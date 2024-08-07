@@ -1,0 +1,32 @@
+{
+	id: "5D685EFDA23FFE14"
+	loot_size: 1
+	order_index: 3
+	rewards: [
+		{ item: "create:mechanical_mixer" }
+		{ item: "create:mechanical_press" }
+		{ item: "create:water_wheel" }
+		{ item: "create:large_water_wheel" }
+		{ count: 4, item: "create:gearbox" }
+		{ count: 4, item: "create:belt_connector" }
+		{ count: 32, item: "create:shaft" }
+		{ count: 8, item: "create:large_cogwheel" }
+		{ count: 16, item: "create:cogwheel" }
+		{ item: "create:schematic_table" }
+		{ item: "create:schematicannon" }
+		{ item: "create:encased_fan" }
+		{ item: "create:encased_fan" }
+		{ item: "create:mechanical_saw" }
+		{ item: "create:mechanical_drill" }
+		{ item: "create:depot" }
+		{ item: "create:basin" }
+		{ count: 16, item: "create:andesite_casing" }
+		{ item: "create:empty_schematic" }
+		{ count: 4, item: "create:andesite_tunnel" }
+		{ count: 8, item: "create:andesite_funnel" }
+		{ item: "create:mechanical_plough" }
+		{ item: "create:mechanical_harvester" }
+		{ item: "create:millstone" }
+	]
+	title: "机械动力初级物品"
+}

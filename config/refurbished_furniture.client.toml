@@ -1,0 +1,21 @@
+# If enabled, displays a toast notification when another player rings one of your doorbells.
+# Valid values: true, false
+doorbellNotification = true
+# The maximum distance that electricity nodes and connections can be seen by the camera.
+# Valid range: 1 to 128 (inclusive)
+electricityViewDistance = 48
+# If enabled, shows an overlay on the HUD to help with cutting board slicing and combining recipes.
+# Note: This is an experimental feature.
+# Valid values: true, false
+showCuttingBoardHelper = false
+
+# Experimental options
+[experimental]
+	# This config option is only if you have a shaders mod install, like Iris or Optifine.
+	# If enabled, this will fix an issue where if an entity with the glow effect is in view
+	# that it prevents electricity links and nodes from rendering. It may not fix 100% for
+	# every shader pack.
+	# WARNING: This will break the entity glow effect, this may or may not be a problem for you.
+	# Valid values: true, false
+	electricityShadersFix = false
+

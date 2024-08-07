@@ -1,0 +1,31 @@
+
+["Entity Splash"]
+	#Generates Entity Splashes.
+	splashes = true
+	#Defines Water Splash Transparent Channel.
+	#Range: 0.0 ~ 1.0
+	splashAlpha = 0.6
+
+[Cascades]
+	#Processes Cascades
+	cascades = true
+	#Defines Cascade Sound Volume.
+	#Range: 0.0 ~ 100.0
+	"cascade volume" = 1.0
+	#Defines Cascade Sound Reach, Measured By Blocks.
+	#Range: 0.0 ~ 256.0
+	"cascade sound range" = 30.0
+	#Defines Cascade Particle Amount.
+	#Range: 0.0 ~ 100.0
+	"cascade particles" = 1.0
+
+["Water Effects"]
+	#Defines Ripple Particle Amount Display On Calm Water.
+	#Zero Means No Ripple Particles.
+	#Range: 0 ~ 256
+	"ripple abundance" = 1
+	#Defines Splash Particle Display Amount Around Flowing Water.
+	#Zero Means No Splash Particles.
+	#Range: 0 ~ 65536
+	"splash abundance" = 50
+

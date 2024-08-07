@@ -1,0 +1,10 @@
+
+[general]
+	#Whether stereo playback is enabled
+	EnableStereo = true
+	#Proxy Type, http and socks are supported
+	#Allowed Values: DIRECT, HTTP, SOCKS
+	ProxyType = "DIRECT"
+	#Proxy Address, such as 127.0.0.1:1080, empty is no proxy
+	ProxyAddress = ""
+

@@ -1,0 +1,94 @@
+{
+  "comment1": "These filters and adjustments affect all watut animations in the same way",
+  "comment2": "filters support @ for mod id, and * at the start or end of the match for partial matches",
+  "comment3": "in adjustments section, you can specify 'DISABLED' to outright disable any animation on that hand and axis, or use degrees to adjust by a certain amount",
+  "comment4": "matchingHandX and matchingHandY are probably all you need, for watuts animations, X is the main up/down, and Y is left/right, Z is available but usually not needed",
+  "comment5": "matchingHand is for adjusting the hand that actually has the item, otherHand is for adjusting the other hand if matchingHand matched something",
+  "comment6": "using otherHand along with matchingHand is useful for disabling or adjusting movement when using items that change both hands, like gun mods or 2 handed weapons",
+  "comment7": "you can make a rule only active if a specfic mod is installed by using 'only_if_mod_installed' with a mod id, see its use below for an example",
+  "comment8": "matching priority order is first to last, so in this file, highest to lowest, higher overrides lower if both match",
+  "comment9": "use '/watut reloadJSON' (forge builds only) to reload this config in game to see your changes instantly",
+  "held_item_arm_adjustments": [
+    {
+      "comment1": "example1",
+      "filters": [
+        "themodid:someitem"
+      ],
+      "adjustment": {
+        "matchingHandX": "-90",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED"
+      }
+    },
+    {
+      "comment1": "example2",
+      "filters": [
+        "themodid:ingot_*"
+      ],
+      "adjustment": {
+        "matchingHandX": "45"
+      }
+    },
+    {
+      "comment1": "example3",
+      "filters": [
+        "*_wacky_tornado_item_*"
+      ],
+      "adjustment": {
+        "matchingHandX": "DISABLED",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED",
+        "otherHandX": "DISABLED",
+        "otherHandY": "DISABLED",
+        "otherHandZ": "DISABLED"
+      }
+    },
+    {
+      "filters": [
+        "artifacts:umbrella"
+      ],
+      "adjustment": {
+        "matchingHandX": "DISABLED",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED"
+      }
+    },
+    {
+      "filters": [
+        "tacz:modern_kinetic_gun"
+      ],
+      "adjustment": {
+        "matchingHandX": "DISABLED",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED",
+        "otherHandX": "-90",
+        "otherHandY": "60"
+      }
+    },
+    {
+      "only_if_mod_installed": "notenoughanimations",
+      "filters": [
+        "minecraft:compass", "minecraft:recovery_compass", "minecraft:torch", "minecraft:soul_torch"
+      ],
+      "adjustment": {
+        "matchingHandX": "DISABLED",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED"
+      }
+    },
+    {
+      "only_if_mod_installed": "notenoughanimations",
+      "filters": [
+        "minecraft:filled_map"
+      ],
+      "adjustment": {
+        "matchingHandX": "DISABLED",
+        "matchingHandY": "DISABLED",
+        "matchingHandZ": "DISABLED",
+        "otherHandX": "DISABLED",
+        "otherHandY": "DISABLED",
+        "otherHandZ": "DISABLED"
+      }
+    }
+  ]
+}

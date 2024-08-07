@@ -1,0 +1,270 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "37C42029C3527BCD"
+	group: "445171CC29E98940"
+	icon: "createoreexcavation:drilling_machine"
+	id: "37C42029C3527BCD"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["00AF35D832509CB8"]
+			id: "532B2FC7E0826D5E"
+			tasks: [{
+				id: "674772936F202FE0"
+				item: "createoreexcavation:extractor"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["00AF35D832509CB8"]
+			hide_dependent_lines: true
+			id: "13761553F15A2C1A"
+			rewards: [{
+				id: "2C4B6AFD7A8E6B04"
+				item: "createoreexcavation:drill"
+				type: "item"
+			}]
+			tasks: [{
+				id: "06BEEC5B7EA482E4"
+				item: "createoreexcavation:drilling_machine"
+				type: "item"
+			}]
+			title: "虚空挖矿机！"
+			x: 3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"4A19D3EB3E47BFDF"
+				"00AF35D832509CB8"
+			]
+			description: [
+				""
+				"{image:createdelight:textures/gui/how_to_use.png width:250 height:150 align:1 fit:true}"
+			]
+			id: "7DC98E34AECFBB5C"
+			subtitle: "使用探矿杖来寻找矿物痕迹"
+			tasks: [{
+				id: "2F2832039C2FE873"
+				item: "createoreexcavation:vein_finder"
+				type: "item"
+			}]
+			title: "让我看看你在哪~"
+			x: 1.0d
+			y: -1.5d
+		}
+		{
+			id: "00AF35D832509CB8"
+			tasks: [{
+				id: "1D7AB28B86CF3039"
+				title: "矿物再生科技！"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["532B2FC7E0826D5E"]
+			id: "4915822A31209AE5"
+			tasks: [{
+				id: "7774F169ED6E6548"
+				item: "createdieselgenerators:crude_oil_bucket"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["532B2FC7E0826D5E"]
+			id: "5C1DDAA96EA89DE6"
+			tasks: [{
+				id: "0914C42E86B4B1E4"
+				item: "ad_astra:cryo_fuel_bucket"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "488172BBB1562C8A"
+			tasks: [{
+				id: "6136A5D8DF152959"
+				item: "createoreexcavation:raw_diamond"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "170EE2F6F665AFD2"
+			tasks: [{
+				id: "33EEBC232233211C"
+				item: "createoreexcavation:raw_redstone"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "22612D1AD9D6060B"
+			tasks: [{
+				id: "4D835676B32CC81E"
+				item: "createoreexcavation:raw_emerald"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "03AE084DBE0BDE50"
+			tasks: [{
+				id: "1EDBFCF614A9B447"
+				item: "minecraft:raw_gold"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "37F2A6BD7DD6D49A"
+			tasks: [{
+				id: "58B759B643EADF55"
+				item: "minecraft:glowstone_dust"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "6887633B93501B5B"
+			tasks: [{
+				id: "5E62E769EDC8ED22"
+				item: "minecraft:quartz"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "47AFB0616CF90D9E"
+			tasks: [{
+				id: "4300119D34F55C1A"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "55E4268E3DB49FE5"
+			tasks: [{
+				id: "3B2C0E912176B599"
+				item: "minecraft:ancient_debris"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "50F9538CF5ECC7A4"
+			tasks: [{
+				id: "06156B28F8C01B64"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: 7.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "589223D704875652"
+			tasks: [{
+				id: "2675CF9BD743DD9C"
+				item: "create:raw_zinc"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "0E6E61681507431C"
+			tasks: [{
+				id: "42C421F336B6FA70"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "17675FEFDD5314FA"
+			tasks: [{
+				id: "606CE56CAC06075A"
+				item: "ad_astra:raw_desh"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "3BD3D20732F7C589"
+			tasks: [{
+				id: "7A17E40EB2DE8A29"
+				item: "ad_astra:raw_calorite"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "50F3B771B04DA8AC"
+			tasks: [{
+				id: "0704BDC2621CC5CE"
+				item: "ad_astra:raw_ostrum"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "6834EE3CBBA045F3"
+			tasks: [{
+				id: "11274012D2A21CD1"
+				item: "ulterlands:astrumm"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "0A4E75FEB16DDA8A"
+			tasks: [{
+				id: "4554D969B601AC4E"
+				item: "minecraft:lapis_lazuli"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 0.0d
+		}
+	]
+	title: "&e矿物再生！"
+}

@@ -1,0 +1,15 @@
+/*
+Do Api Config
+
+=======
+Links:
+CurseForge: https://www.curseforge.com/minecraft/mc-mods/do-api
+Modrinth: https://modrinth.com/mod/do-api
+GitHub: https://github.com/Cristelknight999/DoAPI
+*/
+{
+	// Is the recipe book open
+	"recipe_book_open": true,
+	// Only show craftable items
+	"craftable_toggle": false
+}

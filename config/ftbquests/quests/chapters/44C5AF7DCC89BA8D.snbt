@@ -1,0 +1,539 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "44C5AF7DCC89BA8D"
+	group: "7D0A1432AAAD0EBA"
+	icon: "brewinandchewin:keg"
+	id: "44C5AF7DCC89BA8D"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "06BDD56301ADCC3E"
+			rewards: [{
+				id: "7B09B0B2F367FC5F"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "注意温度哦~"
+			tasks: [{
+				id: "4FA8C2ACCD1B2236"
+				item: "brewinandchewin:keg"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["341D340EC7B0A00A"]
+			id: "5574DA2E53EE7240"
+			rewards: [{
+				id: "2B9431745F523CEF"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "43476285695F9170"
+				item: "brewinandchewin:unripe_flaxen_cheese_wheel"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["341D340EC7B0A00A"]
+			id: "0B825FD0CE046C04"
+			rewards: [{
+				id: "7490F07D61215B82"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1FA8A50636F189B9"
+				item: "brewinandchewin:unripe_scarlet_cheese_wheel"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0B825FD0CE046C04"]
+			id: "7F91D1F37AD0DF0A"
+			rewards: [{
+				id: "354F7CFA9F60EEBA"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "43AC3CC6F269BBCD"
+				item: "brewinandchewin:scarlet_cheese_wheel"
+				type: "item"
+			}]
+			title: "&4时间的魅力"
+			x: -1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["5574DA2E53EE7240"]
+			id: "534424B99205A122"
+			rewards: [{
+				id: "3F20228D8FAB5AFB"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6F75291B58657E2E"
+				item: "brewinandchewin:flaxen_cheese_wheel"
+				type: "item"
+			}]
+			title: "&e时间的魅力"
+			x: 1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["341D340EC7B0A00A"]
+			id: "3930B69E94FDAD60"
+			rewards: [{
+				id: "2608D5415F2AFE79"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4B660C14250EE9C9"
+				item: "brewinandchewin:cocoa_fudge"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3D7AFDD7630D7962"]
+			id: "4B3F0A77FB4C6950"
+			rewards: [{
+				id: "2C2B15728AE4D915"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "697678508CF6A2BA"
+				item: "brewinandchewin:kimchi"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["3D7AFDD7630D7962"]
+			id: "36C1002A4A5934C5"
+			rewards: [{
+				id: "628D723C9AF23FA7"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0C8CCAB03F1EF5F5"
+				item: "brewinandchewin:jerky"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["3D7AFDD7630D7962"]
+			id: "4BABCEBB12637134"
+			rewards: [{
+				id: "33FE95C060C83262"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4EB328784449D667"
+				item: "brewinandchewin:pickled_pickles"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3D7AFDD7630D7962"]
+			id: "26598318FC999CE1"
+			rewards: [{
+				id: "6E2E9340BD8EF12A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "386DC1B9C7730D38"
+				item: "brewinandchewin:kippers"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["06BDD56301ADCC3E"]
+			disable_toast: true
+			icon: "ad_astra:cheese"
+			id: "341D340EC7B0A00A"
+			rewards: [{
+				id: "64567DF1BDC04539"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "香香甜甜我最爱！"
+			tasks: [{
+				id: "47E86CB710C3C41A"
+				item: "brewinandchewin:keg"
+				type: "item"
+			}]
+			title: "&e奶制品"
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["534424B99205A122"]
+			id: "2BC7F2E1A93E05E3"
+			rewards: [{
+				id: "258A7F6516FE1F1E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "2747D7E3D56957A0"
+				item: "ad_astra:cheese"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["7F91D1F37AD0DF0A"]
+			id: "652FD24350D67AE7"
+			rewards: [{
+				id: "1C05D9B768E3B3BA"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "08D4B2CAA6E29859"
+				item: "brewinandchewin:scarlet_cheese_wedge"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["06BDD56301ADCC3E"]
+			icon: "brewinandchewin:kimchi"
+			id: "3D7AFDD7630D7962"
+			rewards: [{
+				id: "55A9746AB90BC50D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "32C9FED1824876DF"
+				item: "brewinandchewin:keg"
+				type: "item"
+			}]
+			title: "&2腌渍食物！"
+			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["06BDD56301ADCC3E"]
+			hide_dependent_lines: true
+			id: "2562BB4A6963CD35"
+			rewards: [{
+				id: "170F92EDF886951D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "385AFC70E1BE2EB2"
+				item: "brewinandchewin:tankard"
+				type: "item"
+			}]
+			title: "酿酒！"
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "25288820DD417644"
+			rewards: [{
+				id: "587A3F7443E199C7"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "78D7273899244481"
+				item: "brewinandchewin:beer"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "3BC54C091CD117C3"
+			rewards: [{
+				id: "771EE737C8ED45A1"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "138688B17D611539"
+				item: "brewinandchewin:vodka"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "0255CD8BE10F1E4D"
+			rewards: [{
+				id: "3BC010FA66BBE1DC"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7611B9C9FB9EA1DD"
+				item: "brewinandchewin:mead"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "1CAA824161ACDE9C"
+			rewards: [{
+				id: "56B173F0DAB1F2D3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "61E5956D327726CC"
+				item: "brewinandchewin:rice_wine"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "4B6EE4ADB9FF89BE"
+			rewards: [{
+				id: "7E74FD87827B97F1"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1D7730B2E4AFFADC"
+				item: "brewinandchewin:egg_grog"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "5E5E30A0265FA937"
+			rewards: [{
+				id: "30455349AF47A0BC"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5B1D4A4969540DF4"
+				item: "brewinandchewin:strongroot_ale"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "48D6F59EB13ADE07"
+			rewards: [{
+				id: "52922FA16D28B22B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0264D5502EA2449A"
+				item: "brewinandchewin:saccharine_rum"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "3987E1360E9A3537"
+			rewards: [{
+				id: "08FECDD8139FD0F5"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7DEAA3844A38E09B"
+				item: "brewinandchewin:pale_jane"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "4BBF667BBF214050"
+			rewards: [{
+				id: "14248FAE63C08559"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "29AE2EFD128BE0A9"
+				item: "brewinandchewin:dread_nog"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "5B1F59AF45CDEDAA"
+			rewards: [{
+				id: "413C5CDBB1E79B48"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6C54FBF221ECA3C7"
+				item: "brewinandchewin:salty_folly"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "530817E6FB1F97F4"
+			rewards: [{
+				id: "5011913CE86B5D6C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "2DD52FBEAEF603C6"
+				item: "brewinandchewin:steel_toe_stout"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "7CCC4A7C1ACF4108"
+			rewards: [{
+				id: "63DC98EDC2DFF7C3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1D41B3517FD2BB48"
+				item: "brewinandchewin:glittering_grenadine"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "2FC54E7B3895DF00"
+			rewards: [{
+				id: "7616F155F5F76F21"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0CA2D8846D16D9DA"
+				item: "brewinandchewin:bloody_mary"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "661CF7A5763B2575"
+			rewards: [{
+				id: "7CC86A1854D2BE6E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "488836310D1096D3"
+				item: "brewinandchewin:red_rum"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "2C4AAD50804FA69B"
+			rewards: [{
+				id: "5AED2579A207CEB3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0E5D4757AFF04C44"
+				item: "brewinandchewin:kombucha"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["06BDD56301ADCC3E"]
+			id: "06B9A5FE0C2E81ED"
+			rewards: [{
+				id: "12FB9365B222E0B5"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7CC44118F8012CB2"
+				item: "brewinandchewin:item_coaster"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2562BB4A6963CD35"]
+			id: "2ADB8879C6C244A8"
+			rewards: [{
+				id: "3A202DAF377D9D21"
+				type: "xp"
+				xp: 100
+			}]
+			secret: true
+			size: 3.0d
+			subtitle: "这都是什么shit效果..."
+			tasks: [{
+				id: "5EE1DBFA60ECBB3B"
+				item: "brewinandchewin:withering_dross"
+				type: "item"
+			}]
+			title: "&0你无敌了()"
+			x: 4.011904761904752d
+			y: -4.13095238095238d
+		}
+	]
+	title: "&e发酵工艺"
+}

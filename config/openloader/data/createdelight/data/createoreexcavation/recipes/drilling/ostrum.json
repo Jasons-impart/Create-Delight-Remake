@@ -1,0 +1,22 @@
+{
+    "type": "createoreexcavation:drilling",
+    "amountMax": 8,
+    "amountMin": 3,
+    "biomeWhitelist": "createdelight:has_ostrum",
+    "drill": {
+        "item": "createoreexcavation:netherite_drill"
+    },
+    "name": "{\"translate\":\"item.ad_astra.raw_ostrum\"}",
+    "output": [
+        {
+            "item": "ad_astra:raw_ostrum"
+        },
+        {
+            "chance": 0.1,
+            "item": "ad_astra:raw_ostrum"
+        }
+    ],
+    "stress": 256,
+    "ticks": 3000,
+    "weight": 10
+}

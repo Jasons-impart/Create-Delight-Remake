@@ -1,0 +1,75 @@
+{
+	id: "5597BC3AB4EED459"
+	loot_size: 1
+	order_index: 12
+	rewards: [
+		{
+			item: {
+				Count: 1b
+				id: "vinery:noir_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{ item: "createcafe:mango_milk_tea" }
+		{
+			item: {
+				Count: 1b
+				id: "vinery:stal_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "vinery:kelp_cider"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "vinery:strad_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "vinery:magnetic_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "vinery:chorus_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "vinery:aegis_wine"
+				tag: {
+					Year: 0
+				}
+			}
+		}
+		{ item: "createcafe:blood_orange_milk_tea" }
+		{ item: "createcafe:orange_milk_tea" }
+		{ item: "createcafe:vanilla_milk_tea" }
+	]
+	title: "酒与奶茶"
+}

@@ -1,0 +1,1048 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "1872D574A69C3F64"
+	group: "7D0A1432AAAD0EBA"
+	icon: "vinery:wine_press"
+	id: "1872D574A69C3F64"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["5958FC6B58D52BEE"]
+			id: "0295DFC67A8CF4B9"
+			rewards: [{
+				id: "01EDFDE6C62257B2"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "美味无需多盐"
+			tasks: [{
+				id: "7DB29DC913A767D5"
+				item: "vinery:grapevine_lattice"
+				type: "item"
+			}]
+			title: "让我们开始吧"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			description: ["至少放入 6 个葡萄才可进行，方式是跳起来在 榨汁盆上踩三次。干净又卫生啊兄弟们 踩中时会有独特的音效。"]
+			id: "7943F4B92BD73CC3"
+			rewards: [{
+				id: "46FD39AF82B76CB5"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "用于压榨葡萄的木制容器"
+			tasks: [{
+				id: "314858CAB5D462CA"
+				item: "vinery:grapevine_pot"
+				type: "item"
+			}]
+			title: "&4干净又卫生啊兄弟们"
+			x: 0.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			hide_dependent_lines: true
+			id: "13C898B81498C177"
+			rewards: [{
+				id: "437410B49B4986B3"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			subtitle: "配方请右击陈酿桶在左侧查看"
+			tasks: [{
+				id: "415ECF20A2F1C9BB"
+				item: "vinery:fermentation_barrel"
+				type: "item"
+			}]
+			title: "陈年葡萄酒！"
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "64F78B51354A75ED"
+			rewards: [{
+				id: "72476C2CB7179577"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "3A465800295C8308"
+				item: "vinery:wine_press"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "186C8F9674316FC2"
+			rewards: [{
+				id: "01779D9B4581330F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [
+				{
+					id: "474049F27A9EDD72"
+					item: "vinery:oak_wine_rack_big"
+					type: "item"
+				}
+				{
+					id: "7EF4E7D8059BBEF2"
+					item: "vinery:oak_wine_rack_small"
+					type: "item"
+				}
+				{
+					id: "057B837B4F6AAD7A"
+					item: "vinery:oak_wine_rack_mid"
+					type: "item"
+				}
+			]
+			title: "储藏酒的好东西"
+			x: -2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["5EA0D911ED1989E6"]
+			id: "5C8A33D8AF216ECC"
+			rewards: [{
+				id: "18EB03794979C96F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6949FD3F000136D2"
+				item: "vinery:apple_juice"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["64F78B51354A75ED"]
+			id: "5EA0D911ED1989E6"
+			rewards: [{
+				id: "01BDBD7954FE1D9B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "09CF3E7185B50D79"
+				item: "vinery:apple_mash"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5EA0D911ED1989E6"]
+			id: "260CBF5661D1008B"
+			rewards: [{
+				id: "69A74425D570290D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "52A1E3CD82131A28"
+				item: {
+					Count: 1b
+					id: "vinery:apple_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "611495D361621A62"
+			rewards: [{
+				id: "5F43111B4069E3BE"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "装酒的玩意儿"
+			tasks: [{
+				id: "57F308E0B601D196"
+				item: "vinery:wine_bottle"
+				type: "item"
+			}]
+			title: "总感觉里面装了酒"
+			x: -0.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5EA0D911ED1989E6"]
+			id: "0F4EFB9B55CFFBF9"
+			rewards: [{
+				id: "5184D2ECED86C489"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5AA0AE81DD2D9FBE"
+				item: {
+					Count: 1b
+					id: "vinery:apple_cider"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"611495D361621A62"
+				"7943F4B92BD73CC3"
+			]
+			description: [""]
+			id: "522C959D15ACAA3E"
+			rewards: [{
+				id: "5E4D371EBCC4A71E"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "手持酒瓶右键踩好的榨汁盆获得葡萄汁"
+			tasks: [{
+				id: "6B8394E32227E69E"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "vinery:grapejuice"
+					}
+				}
+				title: "Any #vinery:grapejuice"
+				type: "item"
+			}]
+			title: "&e我的葡萄汁啊~飞啊飞~飞到了瓶子里~"
+			x: 0.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "41BDA4219B4FEEC3"
+			rewards: [{
+				id: "44041BBC871DF19D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [
+				{
+					id: "358BF5530B626344"
+					item: {
+						Count: 1b
+						id: "vinery:straw_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "54BE8B19FDC43641"
+					item: {
+						Count: 1b
+						id: "vinery:vinemaker_apron"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4724F8FF9B152EA9"
+					item: {
+						Count: 1b
+						id: "vinery:vinemaker_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7793F6179BB3BCBB"
+					item: {
+						Count: 1b
+						id: "vinery:vinemaker_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5C8907ABFB6C5858"
+					item: "vinery:calendar"
+					type: "item"
+				}
+			]
+			title: "酿酒师"
+			x: -2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "7B7304F9500BC81A"
+			rewards: [{
+				id: "3C97204606E3E398"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "50012B7E0BE0A495"
+				item: {
+					Count: 1b
+					id: "vinery:stal_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "65DB4690273F88DB"
+			rewards: [{
+				id: "0552645D815076BE"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "43594FC28E567F5A"
+				item: {
+					Count: 1b
+					id: "vinery:kelp_cider"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "1A4CD8075ED4283A"
+			rewards: [{
+				id: "0063656C61AE38C4"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6C170DF0A49CC33C"
+				item: {
+					Count: 1b
+					id: "vinery:strad_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "0E4F556290E2173A"
+			rewards: [{
+				id: "0A317703D7D18E08"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "08F6648E2497A609"
+				item: {
+					Count: 1b
+					id: "vinery:magnetic_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "77372C34971F993B"
+			rewards: [{
+				id: "635251DD85016E4E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0D5528D5F13E25C0"
+				item: {
+					Count: 1b
+					id: "vinery:chorus_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "422D0B14EFA2F759"
+			rewards: [{
+				id: "505161B03335E550"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "3FA730CE1F63DA65"
+				item: {
+					Count: 1b
+					id: "vinery:aegis_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "436A7C2C7D43C66F"
+			rewards: [{
+				id: "1E505511C8300E27"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "59323C4FED28C367"
+				item: {
+					Count: 1b
+					id: "vinery:solaris_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "4ACE44B98DC97BF5"
+			rewards: [{
+				id: "05C46338212FFFB8"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "676C5C75B3B28212"
+				item: {
+					Count: 1b
+					id: "vinery:noir_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "63DAD3CF52408157"
+			rewards: [{
+				id: "2F20DD018047EDB3"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "23DF215AAF70E732"
+				item: {
+					Count: 1b
+					id: "vinery:bolvar_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			dependency_requirement: "all_started"
+			id: "4DE9F7869D224684"
+			rewards: [{
+				id: "20DF7C68F1D19302"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "14A69EF1320BD7B5"
+				item: {
+					Count: 1b
+					id: "vinery:cherry_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "4DD2D5F95A0F8ECB"
+			rewards: [{
+				id: "798DB6B45F315FC5"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "223E9CBFE035FE65"
+				item: {
+					Count: 1b
+					id: "vinery:clark_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "35943235122034FD"
+			rewards: [{
+				id: "4F8611B4EAB873FE"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "064B4A53519CD8EA"
+				item: {
+					Count: 1b
+					id: "vinery:jellie_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "4313943A9877A015"
+			rewards: [{
+				id: "41912952D3274E9A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5D96AAADD86CCEEE"
+				item: {
+					Count: 1b
+					id: "vinery:red_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "689FF2457F30971B"
+			rewards: [{
+				id: "340C882EA8234CED"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "74F3D37805AB8F93"
+				item: {
+					Count: 1b
+					id: "vinery:chenet_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "59CC19CF73488852"
+			rewards: [{
+				id: "135A8781C84E379E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "42DA2420E773DE02"
+				item: {
+					Count: 1b
+					id: "vinery:mellohi_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "35B7C73907D25336"
+			rewards: [{
+				id: "76299CDB845BB56C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "2EEB6907629F629F"
+				item: {
+					Count: 1b
+					id: "vinery:jo_special_mixture"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "5DA9885F0652ADF0"
+			rewards: [{
+				id: "06D6335FE6466367"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "405023104734C174"
+				item: {
+					Count: 1b
+					id: "vinery:cristel_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "2E328CB7A4E5F638"
+			rewards: [{
+				id: "3ED483800BCDDD9C"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "29F97D7257A4D23D"
+				item: {
+					Count: 1b
+					id: "vinery:glowing_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "27B12C7294D4BF3E"
+			rewards: [{
+				id: "33CB424A017ECCD7"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "50023E6AF7DC26B4"
+				item: {
+					Count: 1b
+					id: "vinery:mead"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "0AE7061A3F6E72FA"
+			rewards: [{
+				id: "5CFD6F91DC82843B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1D0196B5F629EF89"
+				item: {
+					Count: 1b
+					id: "vinery:eiswein"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "6FE4A0181929AF5D"
+			rewards: [{
+				id: "64457D3B225BE66E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "41CDC7AC8FECD355"
+				item: {
+					Count: 1b
+					id: "vinery:creepers_crush"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "5B4F1E7A5A50C2C8"
+			rewards: [{
+				id: "3DDA560B7893B60F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1F1FCDCDC2EE06D1"
+				item: {
+					Count: 1b
+					id: "vinery:bottle_mojang_noir"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "602510F89494FBC1"
+			rewards: [{
+				id: "5774CE525C8DF9DD"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "神奇的名字..."
+			tasks: [{
+				id: "49B06E7BECB7448F"
+				item: {
+					Count: 1b
+					id: "vinery:villagers_fright"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "2AF39D37AB5ABFE4"
+			rewards: [{
+				id: "35BC973719572D82"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "2EA4CD2A110DF9F2"
+				item: {
+					Count: 1b
+					id: "nethervinery:lava_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"2AF39D37AB5ABFE4"
+				"13C898B81498C177"
+			]
+			id: "5ABD8948EB3B9E16"
+			rewards: [{
+				id: "2314453BC53ED96D"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "63BECF65BBEA3E36"
+				item: {
+					Count: 1b
+					id: "nethervinery:improved_lava_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "3016158AD4A52FFF"
+			rewards: [{
+				id: "410130295319F531"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "152B82B94D0548D9"
+				item: {
+					Count: 1b
+					id: "nethervinery:nether_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"3016158AD4A52FFF"
+				"13C898B81498C177"
+			]
+			id: "5D5783C474042145"
+			rewards: [{
+				id: "1B4DC7AD2595E01A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5F9E3E76D1812159"
+				item: {
+					Count: 1b
+					id: "nethervinery:improved_nether_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "736A1C65FF6DA138"
+			rewards: [{
+				id: "4ABBEE6EE7B36398"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "3FC8E6EAAE6210C9"
+				item: {
+					Count: 1b
+					id: "vinery:king_danis_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "0D4A628B0B7CF742"
+			rewards: [{
+				id: "3E9CEC39D6939AAB"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "20277ADC5DCE455C"
+				item: {
+					Count: 1b
+					id: "nethervinery:ghastly_grenache"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13C898B81498C177"]
+			id: "0321BFD1060D2856"
+			rewards: [{
+				id: "1F6F33E9FBE94B12"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "250F0F7C1AA317DF"
+				item: {
+					Count: 1b
+					id: "vinery:praetorian_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "21491709810AEF12"
+			rewards: [{
+				id: "0A93C584219DBD3F"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "可两个摞在一起成为大型篝火"
+			tasks: [{
+				count: 2L
+				id: "6A57687718DCD6A8"
+				item: "vinery:stackable_log"
+				type: "item"
+			}]
+			title: "改良篝火"
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "02569B0F869C3FBE"
+			rewards: [{
+				id: "26B24673955DF011"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "用于放葡萄，shift右键可取出"
+			tasks: [{
+				id: "2D5E9EDB42C30373"
+				item: "vinery:basket"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "326977490BC20488"
+			rewards: [{
+				id: "43D8B7BA6AFB227C"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "可以装两种不同的东西，但总体上限为64"
+			tasks: [
+				{
+					id: "6740DFF92A10E7E5"
+					item: "nethervinery:crimson_nether_bag"
+					type: "item"
+				}
+				{
+					id: "01EAECF63B5AFD09"
+					item: "nethervinery:warped_nether_bag"
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["186C8F9674316FC2"]
+			id: "3437E6EB0861F20D"
+			rewards: [{
+				id: "7DDAB10822EE416E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "485A07B3A4C52473"
+				item: "vinery:wine_box"
+				type: "item"
+			}]
+			title: "珍藏你的名酒！"
+			x: -4.0d
+			y: -1.5d
+		}
+	]
+	title: "&e酿酒大师"
+}

@@ -1,0 +1,21 @@
+#Checking every tick is not efficient, how about check once every several tick?
+#Range: > 1
+checkInterval = 2
+#Matched screens would disable your IME
+screenBlacklist = []
+#Matched screens would enable your IME
+screenWhitelist = ["net.minecraft.client.gui.screens.inventory.BookEditScreen", "net.minecraft.client.gui.screens.inventory.SignEditScreen", "journeymap.client.ui.waypoint.WaypointEditor", "com.ldtteam.blockout.BOScreen"]
+#Matched input box would disable your IME
+inputBlacklist = []
+#Matched input box would enable your IME
+inputWhitelist = []
+#Do we output recoveredScreens? because it may cause lag
+enableScreenRecovering = false
+#Here lists all Screens that is not in whitelist nor blacklist, 
+#so you may easily add those to whitelist/blacklist.
+recoveredScreens = []
+#Disable this and let me know if input or control is messed up
+useExperimental = true
+#Disable IME when typing commands
+checkCommandChat = true
+

@@ -1,0 +1,6 @@
+
+#Client configuration settings
+[client]
+	#Draws the collision shape rather than the selection shape when hovering blocks. Used for debugging collisions.
+	drawCollisionShapes = false
+

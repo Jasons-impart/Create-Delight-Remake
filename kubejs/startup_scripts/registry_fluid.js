@@ -1,0 +1,15 @@
+StartupEvents.registry("fluid", e => {
+    e.create("createdelight:fuel_mixtures")
+        .thinTexture(0X8470FF)
+        .bucketColor(0X8470FF)
+        .translationKey("fluid.createdelight.fuel_mixtures")
+        .translationKey("block.createdelight.fuel_mixtures")
+        .translationKey("item.createdelight.fuel_mixtures_bucket")
+    e.create("createdelight:whipped_cream")
+        .thinTexture(0XF0FFFF)
+        .bucketColor(0XF0FFFF)
+        .translationKey("fluid.createdelight.whipped_cream")
+        .translationKey("block.createdelight.whipped_cream")
+        .translationKey("item.createdelight.whipped_cream_bucket")
+
+})

@@ -1,0 +1,26 @@
+{
+	id: "4F5CE4518DA99C69"
+	loot_size: 1
+	order_index: 13
+	rewards: [
+		{
+			item: {
+				Count: 1b
+				id: "extradelight:pestle_amethyst"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1b
+				id: "extradelight:pestle_gilded_blackstone"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+	]
+	title: "研钵"
+}

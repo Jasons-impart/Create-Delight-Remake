@@ -1,0 +1,74 @@
+{
+	/* Upswing (aka windup) is the first phase of the attack (between clicking and performing the damage).
+	   Typical duration of upswing is `weapon cooldown * 0.5`. (Weapon specific upswing values can be defined in weapon attributes)
+	   This config allows you to change upswing duration.
+	   Example values:
+	   - `0.5` (default, fast paced attack initiation) upswing typically lasts 25% of the attack cooldown
+	   - `1.0` (classic setting, realistic attack initiation) upswing typically lasts 50% of the attack cooldown
+	*/
+	"upswing_multiplier": 0.5,
+	// Bypass damage receive throttling of LivingEntity from player attacks.
+	"allow_fast_attacks": true,
+	// Allows client-side target search and server-side attack request execution against currently mounted entity of the player
+	"allow_attacking_mount": false,
+	// The minimum number of ticks between two attacks
+	"attack_interval_cap": 2,
+	/* Blacklist for entities that are acting as vehicle but should not be treated as protected mounts.
+	   Classical example is an alexsmobs:crocodile attempting a death spin.
+	   (Note all hostile mobs hittable by default, this config is to fix faulty mobs)
+	*/
+	"hostile_player_vehicles": [
+		"alexsmobs:crocodile"
+	],
+	// Allows vanilla sweeping mechanic to work and Sweeping Edge enchantment
+	"allow_vanilla_sweeping": false,
+	// Allows new sweeping mechanic (by Better Combat) to work, including Sweeping Edge enchantment
+	"allow_reworked_sweeping": true,
+	/* The more additional targets a weapon swing hits, the weaker it will get.
+	   Entities struck (+1) in a swing more than this, won't get weakened any further.
+	*/
+	"reworked_sweeping_extra_target_count": 4,
+	/* Determines how weak the attack becomes when striking `reworked_sweeping_extra_target_count + 1` targets.
+	   Example values:
+	   - `0.5` -50% damage
+	*/
+	"reworked_sweeping_maximum_damage_penalty": 0.5,
+	/* The maximum level Sweeping Edge enchantment applied to the attackers weapon will restore this amount of penalty.
+	   Example values:
+	   - `0.5` restores 50% damage penalty when 3 levels are applied, so 16.66% when 1 level is applied
+	*/
+	"reworked_sweeping_enchant_restores": 0.5,
+	"reworked_sweeping_plays_sound": true,
+	"reworked_sweeping_emits_particles": true,
+	"reworked_sweeping_sound_and_particles_only_for_swords": true,
+	// Allows client-side target search to ignore obstacles. WARNING! Setting this to `false` significantly increases the load on clients.
+	"allow_attacking_thru_walls": false,
+	// Applies movement speed multiplier while attacking. (Min: 0, Max: 1). Use `0` for a full stop while attacking. Use `1` for no movement speed penalty
+	"movement_speed_while_attacking": 0.5,
+	// Determines if applying the movement speed multiplier while attacking is done smoothly or instantly
+	"movement_speed_applied_smoothly": true,
+	// Determines whether or not to apply movement speed reduction while attacking mounted
+	"movement_speed_effected_while_mounting": false,
+	// Attacks faster than a vanilla sword will do smaller knockback, proportionally.
+	"knockback_reduced_for_fast_attacks": true,
+	// Combo is reset after idling `combo_reset_rate * weapon_cooldown`
+	"combo_reset_rate": 3.0,
+	// Multiplier for `attack_range`, during target lookup on both sides. Large sized entities may be colliding with weapon hitbox, but center of entities can have bigger distance than `attack_range`
+	"target_search_range_multiplier": 2.0,
+	// Total multiplier, (examples: +30% = 1.3, -30% = 0.7)
+	"dual_wielding_attack_speed_multiplier": 1.2000000476837158,
+	// Total multiplier, (examples: +30% = 1.3, -30% = 0.7)
+	"dual_wielding_main_hand_damage_multiplier": 1.0,
+	// Total multiplier, (examples: +30% = 1.3, -30% = 0.7)
+	"dual_wielding_off_hand_damage_multiplier": 1.0,
+	// Entities with `HOSTILE` relation will be hit by undirected weapon swings. NOTE: Vanilla sweeping will still happen, if not disabled via `allow_sweeping`
+	"player_relation_to_teamless_players": "NEUTRAL",
+	"player_relation_to_villagers": "NEUTRAL",
+	"player_relation_to_passives": "HOSTILE",
+	"player_relation_to_hostiles": "HOSTILE",
+	"player_relation_to_other": "HOSTILE",
+	// Try to guess and apply a preset for items without weapon attributes data file
+	"fallback_compatibility_enabled": true,
+	// Allow printing the content of weapon attributes registry
+	"weapon_registry_logging": false
+}

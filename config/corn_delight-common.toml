@@ -1,0 +1,8 @@
+
+#General settings
+[general]
+	#Should this mod add some of its items (CORN!!!) as extra chest loot across Minecraft?
+	genCornLootModifier = true
+	#Should Novice and Apprentice Farmers trade this mod's crops? (May reduce chances of other trades appearing)
+	villagersTradeCorn = true
+

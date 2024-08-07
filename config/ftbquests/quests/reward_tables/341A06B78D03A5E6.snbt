@@ -1,0 +1,28 @@
+{
+	id: "341A06B78D03A5E6"
+	loot_size: 1
+	order_index: 16
+	rewards: [
+		{ item: "minecraft:wheat_seeds" }
+		{ item: "minecraft:pumpkin_seeds" }
+		{ item: "minecraft:melon_seeds" }
+		{ item: "minecraft:beetroot_seeds" }
+		{ item: "fruitsdelight:durian_sapling" }
+		{ item: "fruitsdelight:lemon_seeds" }
+		{ item: "createcafe:cassava_seeds" }
+		{ item: "farmersdelight:cabbage_seeds" }
+		{ item: "farmersdelight:tomato_seeds" }
+		{ item: "culturaldelights:cucumber_seeds" }
+		{ item: "culturaldelights:eggplant_seeds" }
+		{ item: "culturaldelights:eggplant_seeds" }
+		{ item: "festival_delicacies:chinese_cabbage_seeds" }
+		{ item: "festival_delicacies:eggplant_seeds" }
+		{ item: "festival_delicacies:garlic_chive_seeds" }
+		{ item: "festival_delicacies:fennel_seeds" }
+		{ item: "quark:seed_pouch" }
+		{ item: "supplementaries:flax_seeds" }
+		{ item: "extradelight:sunflower_seeds" }
+		{ item: "extradelight:roasted_pumpkin_seeds" }
+	]
+	title: "种子"
+}
