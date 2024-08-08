@@ -25,6 +25,10 @@ ServerEvents.tags("item", e => {
     e.add('mynethersdelight:curry_meats', [
         'ratatouille:raw_sausage'
     ])
+    e.add("forge:cheese", [
+        'ad_astra:cheese',
+        'casualness_delight:cheese_wheel_slice'
+    ])
     e.removeAllTagsFrom([
         'mynethersdelight:hoglin_sausage',
         'butchercraft:sausage',

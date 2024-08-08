@@ -60,7 +60,7 @@ function crushing_ore(event, input, output, number, stone) {
 }
 
 /**
- * @param { Internal.RecipesEventJS} event 
+ * @param { Internal.RecipesEventJS } event 
  * @param { Item_ } item 
  * @param { Item_ } storage_block 
  * @param { number } package_item_number 
@@ -68,4 +68,25 @@ function crushing_ore(event, input, output, number, stone) {
 function package_item(event, item, storage_block, package_item_number) {
     event.recipes.kubejs.shapeless(storage_block, `${package_item_number}x ${item}`).id(`createdelight:${item.split(":")[1]}_2_${storage_block.split(":")[1]}`)
     event.recipes.kubejs.shapeless(`${package_item_number}x ${item}`, storage_block).id(`createdelight:${storage_block.split(":")[1]}_2_${item.split(":")[1]}`)
+}
+/**
+ * 
+ * @param { Internal.RecipesEventJS } event 
+ * @param { InputItem_[] } inputs //No tags!!!
+ * @param { OutputItem_ } output 
+ * @param { number } count 
+ */
+function combination(event, inputs, output, count) {
+    let recipe = {
+        type: "refurbished_furniture:cutting_board_combining",
+        count: count,
+        ingredients: [],
+        result: output
+    }
+    inputs.forEach(input => {
+        recipe.ingredients.push({
+            item: input
+        })
+    });
+    event.custom(recipe).id(`refurbished_furniture:combining/${output.split(":")[1]}`)
 }
