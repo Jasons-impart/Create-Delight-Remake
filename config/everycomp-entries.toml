@@ -35,6 +35,21 @@
 			yellow_blossom = true
 			red_blossom = true
 
+		[types.leaves_type.fruitsdelight]
+			pear = true
+			hawberry = true
+			lychee = true
+			mango = true
+			persimmon = true
+			peach = true
+			orange = true
+			apple = true
+			mangosteen = true
+			bayberry = true
+			kiwi = true
+			fig = true
+			durian = true
+
 	[types.wood_type]
 
 		[types.wood_type.mynethersdelight]

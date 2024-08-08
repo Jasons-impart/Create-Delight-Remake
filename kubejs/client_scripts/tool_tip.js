@@ -12,6 +12,7 @@ let tooltips = [
     ['createdieselgenerators:distillation_controller', "§a每个储罐都需要一个", "§aOne is needed for each tank"],
     ['farmersdelight:ham', "§4目前只能通过用刀杀死疣猪兽来获得,或人工制作一个", "§4Currently it can only be obtained by killing a hoglin with a knife, or crafting one"],
     ['vintageimprovements:belt_grinder', "§aRPM≤16为低转速,§616≤RPM≤64为中转速,§4RPM≥64为高转速", "§aRPM≤16 is low rotational speed,§616≤ RPM≤64 is medium rotational speed and §4RPM≥64 is high rotational speed"]
+    ["ad_astra:nasa_workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"]
 ]
 tooltips.forEach (([key, zh_cn, en_us]) => {
     // 添加 key

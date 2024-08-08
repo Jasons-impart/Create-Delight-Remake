@@ -21,45 +21,20 @@ ServerEvents.recipes(e => {
     )
     .id("culturaldelights:pufferfish_roll")
     // 河豚水饺
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "ingredients": [
-            {
-                "item": 'crabbersdelight:pufferfish_slice'
-            },
-            {
-                "tag": 'forge:dough'
-            },
-            {
-                "tag": 'forge:crops/greenonion'
-            }
-        ],
-        "result": {
-            "item": 'festival_delicacies:pufferfish_boiled_dumpling',
-            "count": 2
-        },
-        "cookingtime": 200
-    })
+    e.recipes.farmersdelight.cooking(
+        [
+            "crabbersdelight:pufferfish_slice",
+            "#forge:dough",
+            "#forge:vegetables/greenonion"
+        ], '2x festival_delicacies:pufferfish_boiled_dumpling', 1.0, 200
+    )
     .id("festival_delicacies:dumpling_fd/fd_pufferfish_boiled_dumpling_recipe")
     // 鱿鱼须相关
-    e.custom({
-        "type": "farmersdelight:cutting",
-        "ingredients": [
-            {
-                "item": 'culturaldelights:raw_calamari'
-            }
-        ],
-        "result": [
-            {
-                "count": 3,
-                "item": 'oceansdelight:cut_tentacles'
-            }
-        ],
-        "tool": {
-            "tag": "forge:tools/knives"
-        }
-    })
-    .id("oceansdelight:cutting/tentacles")
+    e.recipes.farmersdelight.cutting(
+        'culturaldelights:raw_calamari',
+        "#farmersdelight:tools/knives",
+        "3x oceansdelight:cut_tentacles"
+    ).id("oceansdelight:cutting/tentacles")
     e.custom({
         "type": "casualness_delight:deep_frying",
         "ingredient": {

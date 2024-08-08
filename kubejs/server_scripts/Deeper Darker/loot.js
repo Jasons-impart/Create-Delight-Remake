@@ -7,4 +7,5 @@ LootJS.modifiers(e => {
             Item.of("minecraft:sculk")
                 .withChance(50)
         ])
+        .removeLoot('silentsdelight:warden_heart')
 })

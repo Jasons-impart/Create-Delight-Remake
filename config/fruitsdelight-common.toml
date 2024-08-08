@@ -27,4 +27,6 @@ peachDecayChance = 0.1
 alienatingEffectRange = 12
 #Enable cauldron jam and jello recipe
 enableCauldronRecipe = true
+#Enable Thirst Compat
+enableThirstCompat = true
 

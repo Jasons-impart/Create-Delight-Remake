@@ -19,27 +19,15 @@ ServerEvents.recipes(e => {
         "ad_astra:nasa_workbench/tier_2_rocket",
         "ad_astra:nasa_workbench/tier_3_rocket",
         "ad_astra:nasa_workbench/tier_4_rocket",
-        "alloyed:mixing/steel_ingot",
         "ad_astra:recipes/steel_ingot_from_blasting_iron_ingot",
         "ad_astra:recipes/steel_ingot_from_nuggets",
-        "ad_astra:recipes/steel_block",
-        "ad_astra:recipes/steel_ingot",
         "ad_astra:recipes/engine_frame",
         "ad_astra:recipes/ostrum_tank",
         "ad_astra:recipes/ostrum_engine",
         "ad_astra:recipes/calorite_tank",
-        "ad_astra:recipes/calorite_engine",
-        "ad_astra:conversion/cryo_fuel_from_packed_ice",
-        "ad_astra:conversion/cryo_fuel_from_blue_ice",
-        "ad_astra:conversion/cryo_fuel_from_ice",
+        "ad_astra:recipes/calorite_engine"
     ])
 
-    // 新增配方：银河系漫游指南
-    e.shapeless("ad_astra:astrodux", [
-        "alloyed:steel_ingot",
-        "minecraft:book"
-    ])
-        .id("ad_astra:recipes/astrodux")
     // 新增配方：霜原木
     e.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
@@ -65,7 +53,7 @@ ServerEvents.recipes(e => {
     })
         .id("ad_astra:recipes/jet_suit")
     //替换配方：氧气罐
-    e.shaped('ad_astra:oxygen_tank', [
+    e.shaped('ad_astra:gas_tank', [
         'ABA',
         'ACA',
         'AAA'
@@ -73,7 +61,7 @@ ServerEvents.recipes(e => {
         A: 'alloyed:steel_sheet',
         B: 'createaddition:iron_rod',
         C: 'create:fluid_tank'
-    }).id('ad_astra:recipes/oxygen_tank')
+    }).id('ad_astra:gas_tank')
     //替换配方：引擎框架
     e.shaped('ad_astra:engine_frame', [
         'AAA',
@@ -84,14 +72,14 @@ ServerEvents.recipes(e => {
         B: 'create:precision_mechanism'
     }).id('ad_astra:recipes/engine_frame')
     //替换配方：引擎风扇
-    e.shaped('ad_astra:engine_fan', [
+    e.shaped('ad_astra:fan', [
         ' A ',
         'ABA',
         ' A '
     ], {
         A: 'alloyed:steel_sheet',
         B: 'create:propeller'
-    }).id('ad_astra:recipes/engine_fan')
+    }).id('ad_astra:fan')
     //替换配方：钢燃料储罐
     e.shaped('ad_astra:steel_tank', [
         'AA ',
@@ -224,10 +212,4 @@ ServerEvents.recipes(e => {
             Fluid.of('createdieselgenerators:biodiesel', 30)
         ]
     ).id("ad_astra:sub_recipes/fuel_mixtures")
-    e.custom({
-        "type": "ad_astra:fuel_conversion",
-        "input": "createdelight:fuel_mixtures",
-        "output": "ad_astra:fuel",
-        "conversion_ratio": 2.0
-    }).id("ad_astra:conversion/fuel_from_oil")
 })

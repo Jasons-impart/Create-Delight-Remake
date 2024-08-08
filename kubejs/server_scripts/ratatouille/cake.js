@@ -7,7 +7,6 @@ ServerEvents.recipes(e => {
         "aether:skyroot_milk_bucket_cake",
         "aether:moa_egg_cake",
         "minecraft:cake",
-        "extradelight:oven/cake",
         "farmersdelight:cake_from_slices",
         "farmersdelight:cake_from_milk_bottle",
         "create_central_kitchen:crafting/chocolate_cake_from_slices",
@@ -15,7 +14,6 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:crafting/coffee_cake_from_dough",
         "create_central_kitchen:mixing/coffee_cake",
         "farmersrespite:coffee_cake_from_slices",
-        "extradelight:coffee_cake_from_slice"
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(
@@ -41,13 +39,6 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem("ratatouille:cake_base")
         .loops(1)
-    e.recipes.create.sequenced_assembly('extradelight:coffe_cake_feast', 'ratatouille:cake_base', [
-        e.recipes.create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("minecraft:milk", 1000)]),
-        e.recipes.create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", 'extradelight:ground_cinnamon'])
-    ])
-        .transitionalItem("ratatouille:cake_base")
-        .loops(1)
-        .id("extradelight:oven/coffe_cake_feast")
 })
 
 ServerEvents.tags("item", e => {

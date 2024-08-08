@@ -50,35 +50,16 @@ ServerEvents.recipes(e => {
         }
     })
     .id("farmersdelight:cooking/noodle_soup")
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "ingredients": [
-            {
-                "item": 'butchercraft:cubed_beef'
-            },
-            {
-                "item": 'butchercraft:cubed_beef'
-            },
-            {
-                "item": 'createdelight:board_noodles'
-            },
-            {
-                "tag": "forge:vegetables/carrot"
-            },
-            {
-                "tag": "forge:crops/cabbage"
-            },
-            {
-                "tag": "forge:vegetables/onion"
-            }
-        ],
-        "result": {
-            "item": "casualness_delight:beef_noodles"
-        },
-        "container": {
-            "item": "minecraft:bowl"
-        },
-        "cookingtime": 200
-    })
+    e.recipes.farmersdelight.cooking(
+        [
+            'butchercraft:cubed_beef',
+            'butchercraft:cubed_beef',
+            'createdelight:board_noodles',
+            "#forge:vegetables/carrot",
+            "#forge:vegetables/cabbage",
+            "#forge:vegetables/onion"
+        ], 'casualness_delight:beef_noodles', 1.0, 200
+    )
     .id("casualness_delight:cooking/beef_noodles")
+    .container("bowl")
 })

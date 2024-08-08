@@ -206,7 +206,7 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 10. [搬运（Carry On）](https://www.mcmod.cn/class/1081.html)aa
 11. [不死图腾插槽(Curio of Undying/Trinket of Undying/Charm of Undying)](https://www.mcmod.cn/class/2236.html)aa
 12. [聊天头像(Chat Heads)](https://www.mcmod.cn/class/4523.html)aa
-13. [更美观的血条(Health Overlay / Colorful Hearts)](https://www.mcmod.cn/class/1871.html)aa
+13. [更美观的血条(Health Overlay / Colorful Hearts)](https://www.mcmod.cn/class/1871.html)删除
     * [经典且简易的状态栏(Classic And Simple Status Bars)](https://www.mcmod.cn/class/12121.html)新加aa
 14. [战斗翻滚(Combat Roll)](https://www.mcmod.cn/class/7671.html)删除
 15. [键位冲突显示(Controlling)](https://www.mcmod.cn/class/1191.html)aa
@@ -260,7 +260,7 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 47. [优化向，Iris ](https://www.mcmod.cn/class/7283.html)​[&amp; Oculus Flywheel Compat](https://www.mcmod.cn/class/7283.html)aa
 48. [优化向，Oculus](https://www.mcmod.cn/class/5741.html)aa
 49. [优化向，开放式加载 (Open Loader)](https://www.mcmod.cn/class/3002.html)aa
-50. [护甲上限突破 (Overloaded Armor Bar)](https://www.mcmod.cn/class/3131.html)aa
+50. [护甲上限突破 (Overloaded Armor Bar)](https://www.mcmod.cn/class/3131.html)删除
 51. [优化向，数据包异常修复（Packet Fixer）](https://www.mcmod.cn/class/12625.html)aa
 52. [Path Under Gates ](https://www.mcmod.cn/class/15097.html)删除
 53. [多态合成 (Polymorph)](https://www.mcmod.cn/class/2895.html)aa
@@ -303,6 +303,8 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
    * [掉落物(LootJS)](https://www.mcmod.cn/class/6327.html)aa
    * [村民交易，附魔，经验(MoreJS)](https://www.mcmod.cn/class/8760.html)非正式aa
+   * [vintage kubejs](https://www.mcmod.cn/class/15938.html)新加aa
+   * [kubejs farmerdelight](https://www.mcmod.cn/class/10454.html)新加aa
 
 7. [[MUI]现代化 UI (Modern UI)](https://www.mcmod.cn/class/2454.html)aa
 8. [ProbeJS](https://www.mcmod.cn/class/6486.html)aa

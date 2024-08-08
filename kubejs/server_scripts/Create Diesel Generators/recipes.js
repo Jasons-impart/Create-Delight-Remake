@@ -66,15 +66,15 @@ ServerEvents.recipes(e => {
   .transitionalItem(iner2)
   .loops(3)
   .id("createdieselgenerators:crafting/large_diesel_engine")
-  let iner3 = 'createdelight:incomplete_huge_diesel_engine'
-  e.recipes.create.sequenced_assembly('createdieselgenerators:huge_diesel_engine', 'alloyed:bronze_block', [
-    e.recipes.create.pressing(iner3, iner3),
-    e.recipes.create.deploying(iner3, [iner3, "create:fluid_pipe"]),
-    e.recipes.create.deploying(iner3, [iner3, "minecraft:flint_and_steel"]),
-    e.recipes.create.deploying(iner3, [iner3, "alloyed:steel_ingot"]),
-    e.recipes.create.pressing(iner3, iner3) 
-  ])
-  .transitionalItem(iner3)
-  .loops(2)
-  .id("createdieselgenerators:crafting/huge_diesel_engine")
+  // let iner3 = 'createdelight:incomplete_huge_diesel_engine'
+  // e.recipes.create.sequenced_assembly('createdieselgenerators:huge_diesel_engine', 'alloyed:bronze_block', [
+  //   e.recipes.create.pressing(iner3, iner3),
+  //   e.recipes.create.deploying(iner3, [iner3, "create:fluid_pipe"]),
+  //   e.recipes.create.deploying(iner3, [iner3, "minecraft:flint_and_steel"]),
+  //   e.recipes.create.deploying(iner3, [iner3, "alloyed:steel_ingot"]),
+  //   e.recipes.create.pressing(iner3, iner3) 
+  // ])
+  // .transitionalItem(iner3)
+  // .loops(2)
+  // .id("createdieselgenerators:crafting/huge_diesel_engine")
 })
