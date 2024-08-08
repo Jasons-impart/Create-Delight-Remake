@@ -1,46 +1,33 @@
 ServerEvents.tags("item", e => {
-    // 给各类刀提供农夫乐事兼容
-    e.add("farmersdelight:tools/knives", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
-    e.add("sliceanddice:allowed_tools", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
-    e.add("farmersdelight:straw_harvesters", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
-    e.add("create:upright_on_deployer", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
-    e.add("forge:tools/knives", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
-    e.add("forge:tools", [
-        "nethersdelight:iron_machete",
-        "nethersdelight:golden_machete",
-        "nethersdelight:diamond_machete",
-        "nethersdelight:netherite_machete"
-    ])
     // 西蓝花兼容沙拉
     e.add("forge:salad_ingredients", [
         "candlelight:broccoli"
     ])
     e.add("forge:salad_ingredients/cabbage", [
         "candlelight:broccoli"
+    ])
+    // 疣猪兽兼容
+    e.add("forge:meat/raw", [
+        'mynethersdelight:hoglin_loin',
+        'minecraft:beef',
+        'minecraft:mutton',
+        'minecraft:chicken',
+        'minecraft:rabbit',
+        'alexsdelight:bison_mince',
+        'alexsdelight:bison_mince',
+        'alexsdelight:bison_mince',
+        'farmersdelight:minced_beef',
+        'silentsdelight:warden_heart',
+        'silentsdelight:minced_warden_heart',
+        'silentsdelight:minced_warden_heart',
+        'casualness_delight:raw_donkey_meat'        
+    ])
+    e.add('mynethersdelight:curry_meats', [
+        'ratatouille:raw_sausage'
+    ])
+    e.removeAllTagsFrom([
+        'mynethersdelight:hoglin_sausage',
+        'butchercraft:sausage',
+        'butchercraft:cooked_sausage'
     ])
 })

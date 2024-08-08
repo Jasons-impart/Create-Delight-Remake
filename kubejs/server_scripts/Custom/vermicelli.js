@@ -1,55 +1,26 @@
 ServerEvents.recipes(e => {
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-            {
-                "item": "minecraft:carrot"
-            },
-            {
-                "item": "minecraft:brown_mushroom"
-            },
-            {
-                "item": 'createdelight:vermicelli'
-            },
-            {
-                "tag": "forge:salad_ingredients"
-            },
-            {
-                "tag": "forge:vegetables"
-            }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-            "item": "farmersdelight:vegetable_noodles"
-        }
-    })
+    // 挂面相关
+    e.recipes.farmersdelight.cooking(
+        [
+            "minecraft:carrot",
+            "minecraft:brown_mushroom",
+            'createdelight:vermicelli',
+            "#forge:salad_ingredients",
+            "#forge:vegetables"
+        ], "farmersdelight:vegetable_noodles", 1.0, 200
+    )
     .id("farmersdelight:cooking/vegetable_noodles")
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-            {
-                "item": 'createdelight:vermicelli'
-            },
-            {
-                "tag": "forge:cooked_eggs"
-            },
-            {
-                "item": "minecraft:dried_kelp"
-            },
-            {
-                "tag": "forge:raw_pork"
-            }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-            "item": "farmersdelight:noodle_soup"
-        }
-    })
+    .container("bowl")
+    e.recipes.farmersdelight.cooking(
+        [
+            'createdelight:vermicelli',
+            "#forge:cooked_eggs",
+            "minecraft:dried_kelp",
+            "forge:raw_pork"
+        ], "farmersdelight:noodle_soup", 1.0, 200
+    )
     .id("farmersdelight:cooking/noodle_soup")
+    .container("bowl")
     e.recipes.farmersdelight.cooking(
         [
             'butchercraft:cubed_beef',
@@ -62,4 +33,12 @@ ServerEvents.recipes(e => {
     )
     .id("casualness_delight:cooking/beef_noodles")
     .container("bowl")
+    // 板面相关
+    e.recipes.create.sequenced_assembly('2x createdelight:board_noodles', 'create:dough', [
+        e.recipes.create.pressing('create:dough', 'create:dough'),
+        e.recipes.create.cutting('create:dough', 'create:dough')
+    ])
+    .transitionalItem('create:dough')
+    .loops(2)
+    .id("createdelight:recipes/board_noodles")
 })

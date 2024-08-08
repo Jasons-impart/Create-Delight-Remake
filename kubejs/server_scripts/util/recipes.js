@@ -58,3 +58,14 @@ function crushing_ore(event, input, output, number, stone) {
         Item.of(stone).withChance(0.12)
     ], input).id(`createdelight:crushing_${input.split(":")[1]}`)
 }
+
+/**
+ * @param { Internal.RecipesEventJS} event 
+ * @param { Item_ } item 
+ * @param { Item_ } storage_block 
+ * @param { number } package_item_number 
+ */
+function package_item(event, item, storage_block, package_item_number) {
+    event.recipes.kubejs.shapeless(storage_block, `${package_item_number}x ${item}`).id(`createdelight:${item.split(":")[1]}_2_${storage_block.split(":")[1]}`)
+    event.recipes.kubejs.shapeless(`${package_item_number}x ${item}`, storage_block).id(`createdelight:${storage_block.split(":")[1]}_2_${item.split(":")[1]}`)
+}

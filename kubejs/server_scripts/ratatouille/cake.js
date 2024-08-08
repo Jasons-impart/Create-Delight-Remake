@@ -20,7 +20,7 @@ ServerEvents.recipes(e => {
         Fluid.of("ratatouille:mince_meat", 250),
         [
             '#forge:meat/raw',
-            ,
+            "#forge:salt",
             'butchercraft:fat'
         ]
     )
@@ -39,8 +39,4 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem("ratatouille:cake_base")
         .loops(1)
-})
-
-ServerEvents.tags("item", e => {
-    e.add("forge:salt", "ratatouille:salt")
 })
