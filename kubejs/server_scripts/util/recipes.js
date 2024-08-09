@@ -93,7 +93,7 @@ function combination(event, inputs, output, count) {
 
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { Ingredient_ } input 
+ * @param { InputItem_ } input 
  * @param { OutputItem_ } output
  * @param { number } count  
  * @param { String } category // "misc", "food"
@@ -102,4 +102,21 @@ function combination(event, inputs, output, count) {
 function baking(event, input, output, count, category, time) {
     event.custom({type: "refurbished_furniture:oven_baking", category: category, ingredient: {item: input}, result: {count: count, item: output}, time: time})
         .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
+}
+
+/**
+ * @param { Internal.RecipesEventJS } event 
+ * @param { InputItem_ } input 
+ * @param { OutputItem_[] } outputs // [output, count] | [output, count, chance]
+ * @param { number } time // defult 200 ticks
+ */
+function threshing(event, input, outputs, time) {
+    let recipe = {type: "ratatouille:threshing", ingredients: [{item: input}], processingTime: time, results: []}
+    let results = []
+    outputs.forEach(output => {
+        if (output.length > 2) {recipe.results.push({item: output[0], count: output[1], chance: output[2]})} 
+        else {recipe.results.push({item: output[0], count: output[1]}); results.push(`${output[1]}x ${output[0]}`)}
+    });
+    event.custom(recipe).id(`ratatouille:threshing/${outputs[0][0].split(":")[1]}`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", results).id(`farmersdelight:cutting/${input.split(":")[1]}`)
 }

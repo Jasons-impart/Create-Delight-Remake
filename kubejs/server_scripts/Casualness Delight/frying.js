@@ -75,7 +75,7 @@ ServerEvents.recipes(e => {
         'createdelight:raw_hoglin_chop',
         [
             'mynethersdelight:hoglin_loin',
-            'create:dough',
+            "#forge:dough",
             '#forge:milk',
             '#forge:eggs',
             'mynethersdelight:bullet_pepper',

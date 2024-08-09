@@ -236,6 +236,15 @@ StartupEvents.registry('item', e => {
     e.create("createdelight:raw_cheese_pizza")
         .maxStackSize(64)
         .translationKey("item.createdelight.raw_cheese_pizza")
+    // 燕麦面包
+    e.create("createdelight:oat_bread")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.oat_bread")
+        .food(food => {
+            food.hunger(2)
+            .saturation(1)
+            .effect("minecraft:regeneration", 60, 1, 1.0)
+        })
     // 未完成相关
     e.create("createdelight:incomplete_alternator")
         .maxStackSize(64)

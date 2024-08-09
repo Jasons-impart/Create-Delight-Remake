@@ -1,7 +1,9 @@
 {
-    "item.createdelight.raw_cheese_pizza": "生奶酪匹萨",
+    "item.createdelight.oat_bread": "燕麦面包",
+    "item.createdelight.raw_cheese_pizza": "生奶酪披萨",
     "item.createdelight.raw_empanada": "生恩潘纳达饺",
     "item.createdelight.raw_hoglin_chop": "生暴辣疣猪兽排",
+    "item.mynethersdelight.fried_hoglin_chop": "炸暴辣疣猪兽排",
     "item.createdelight.french_fries": "薯条",
     "item.createdelight.potato_sticks": "土豆条",
     "entity.minecraft.villager.butchercraft.slaughter_profession": "屠户",

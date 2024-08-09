@@ -13,4 +13,19 @@ ItemEvents.modification(e => {
             food.saturation(0.7)
         }
     })
+    e.modify('culturaldelights:squid', item => {
+        item.foodProperties = food => {
+            food.effect("minecraft:darkness", 120, 1, 1.0)
+        }
+    })
+    e.modify('culturaldelights:glow_squid', item => {
+        item.foodProperties = food => {
+            food.effect("minecraft:glowing", 120, 1, 1.0)
+        }
+    })
+    e.modify('mynethersdelight:ghast_dough', item => {
+        item.foodProperties = food => {
+            food.effect("minecraft:levitation", 120, 1, 1)
+        }
+    })
 })
