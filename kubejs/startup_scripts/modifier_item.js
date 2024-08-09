@@ -7,4 +7,10 @@ ItemEvents.modification(e => {
             food.effect("minecraft:nausea", 1200, 2, 1.0)
         }
     })
+    e.modify('vintagedelight:cheese_pizza_slice', item => {
+        item.foodProperties = food => {
+            food.hunger(5)
+            food.saturation(0.7)
+        }
+    })
 })

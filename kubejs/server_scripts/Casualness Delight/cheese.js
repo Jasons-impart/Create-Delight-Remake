@@ -1,6 +1,19 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "refurbished_furniture:cheese"
+        "refurbished_furniture:cheese",
+        "refurbished_furniture:slicing/vegetable_pizza_slice_from_cooked_vegetable_pizza",
+        "refurbished_furniture:slicing/meatlovers_pizza_slice_from_cooked_meatlovers_pizza",
+        "vintagedelight:cheese_pizza",
+        "vintagedelight:cheese_pizza_from_slices",
+        "vintagedelight:cutting/cheese_pizza_from_cutting"
+    ])
+    remove_recipes_input(e, [
+        'vintagedelight:meat_pizza',
+        'vintagedelight:meat_pizza_slice'
+    ])
+    remove_recipes_output(e, [
+        'vintagedelight:meat_pizza',
+        'vintagedelight:meat_pizza_slice'
     ])
     // 幻翼泡芙
     e.recipes.farmersdelight.cooking(
@@ -27,6 +40,35 @@ ServerEvents.recipes(e => {
         "minecraft:potato",
         "ad_astra:cheese"
     ], 'refurbished_furniture:raw_vegetable_pizza', 1)
+    e.recipes.farmersdelight.cutting(
+        'refurbished_furniture:cooked_meatlovers_pizza',
+        "#forge:tools/knives",
+        '6x refurbished_furniture:meatlovers_pizza_slice'
+    ).id("refurbished_furniture:cutting/cooked_meatlovers_pizza")
+    e.recipes.farmersdelight.cutting(
+        'refurbished_furniture:cooked_vegetable_pizza',
+        "#forge:tools/knives",
+        '6x refurbished_furniture:vegetable_pizza_slice'
+    ).id("refurbished_furniture:cutting/cooked_vegetable_pizza")
+    e.recipes.farmersdelight.cutting(
+        'vintagedelight:cheese_pizza',
+        "#forge:tools/knives",
+        '6x vintagedelight:cheese_pizza_slice'
+    ).id("refurbished_furniture:cutting/cheese_pizza")
+    combination(e, [
+        'create:dough',
+        'butchercraft:cooked_cubed_beef',
+        'farmersdelight:cooked_chicken_cuts',
+        'butchercraft:cooked_cubed_pork',
+    ], 'refurbished_furniture:raw_meatlovers_pizza', 1)
+    combination(e, [
+        'create:dough',
+        'ad_astra:cheese',
+        'ad_astra:cheese',
+        'ad_astra:cheese',
+        'ad_astra:cheese'
+    ], 'createdelight:raw_cheese_pizza', 1)
+    baking(e, 'createdelight:raw_cheese_pizza', 'vintagedelight:cheese_pizza', 1, "food", 1200)
 })
 
 BlockEvents.rightClicked(e => {

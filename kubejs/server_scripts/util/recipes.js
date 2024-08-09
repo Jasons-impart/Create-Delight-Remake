@@ -90,3 +90,16 @@ function combination(event, inputs, output, count) {
     });
     event.custom(recipe).id(`refurbished_furniture:combining/${output.split(":")[1]}`)
 }
+
+/**
+ * @param { Internal.RecipesEventJS } event 
+ * @param { Ingredient_ } input 
+ * @param { OutputItem_ } output
+ * @param { number } count  
+ * @param { String } category // "misc", "food"
+ * @param { number } time // defult 1200 ticks
+ */
+function baking(event, input, output, count, category, time) {
+    event.custom({type: "refurbished_furniture:oven_baking", category: category, ingredient: {item: input}, result: {count: count, item: output}, time: time})
+        .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
+}

@@ -232,6 +232,10 @@ StartupEvents.registry('item', e => {
             .saturation(1)
             .effect("mynethersdelight:b_pungent", 1200, 1, 1.0)
         })
+    // 生奶酪披萨
+    e.create("createdelight:raw_cheese_pizza")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_cheese_pizza")
     // 未完成相关
     e.create("createdelight:incomplete_alternator")
         .maxStackSize(64)
