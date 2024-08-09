@@ -1,6 +1,6 @@
 # A Leisurely Retirement ModPack !
 
-![image](https://gitee.com/Jasons-impart/Create-Delight-Remake/raw/main/images_for_readme/%E5%8D%B7%E9%A6%96.png)
+![image](https://gitee.com/Jasons-impart/Create-Delight-Remake/raw/main/images_for_readme/卷首.png)
 
 -------------------------------------------------------------------------
 
