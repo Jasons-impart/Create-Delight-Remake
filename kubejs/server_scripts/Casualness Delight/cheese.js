@@ -69,6 +69,13 @@ ServerEvents.recipes(e => {
         'ad_astra:cheese'
     ], 'createdelight:raw_cheese_pizza', 1)
     baking(e, 'createdelight:raw_cheese_pizza', 'vintagedelight:cheese_pizza', 1, "food", 1200)
+    e.recipes.farmersdelight.cooking([
+        'minecraft:sweet_berries',
+        "#forge:cheese",
+        'minecraft:sweet_berries',
+        "farmersdelight:pie_crust"
+    ], "farmersdelight:sweet_berry_cheesecake", 1.0, 200)
+        .id("farmersdelight:sweet_berry_cheesecake")
 })
 
 BlockEvents.rightClicked(e => {
