@@ -14,6 +14,7 @@ ServerEvents.tags("item", e => {
     ])
 })
 ServerEvents.recipes(e => {
+    e.recipes.createme
     remove_recipes_id(e, [
         "create:milling/wheat",
         "create_central_kitchen:crafting/dough_4",
