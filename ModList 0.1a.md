@@ -51,6 +51,7 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
       任务线：添加钢和青铜
     * [机械动力：合金枪械（Create: Alloyed Guns）](https://www.mcmod.cn/class/8537.html) >需要MrCrayfish的枪，机械动力，Framework，机械动力：合金作为前置 未更新
+    * [机械动力：冶金学 (Create: metallury)](https://www.mcmod.cn/class/15052.html)新加aa
 
       任务线：生活小技巧－枪械大师
     * [[SnR]机械动力：汽鸣铁道 (Create: Steam &apos;n&apos; Rails)](https://www.mcmod.cn/class/8230.html)aa
