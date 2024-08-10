@@ -111,12 +111,9 @@ function baking(event, input, output, count, category, time) {
  * @param { number } time // defult 200 ticks
  */
 function threshing(event, input, outputs, time) {
-    let recipe = {type: "ratatouille:threshing", ingredients: [{item: input}], processingTime: time, results: []}
-    let results = []
-    outputs.forEach(output => {
-        if (output.length > 2) {recipe.results.push({item: output[0], count: output[1], chance: output[2]})} 
-        else {recipe.results.push({item: output[0], count: output[1]}); results.push(`${output[1]}x ${output[0]}`)}
-    });
-    event.custom(recipe).id(`ratatouille:threshing/${outputs[0][0].split(":")[1]}`)
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", results).id(`farmersdelight:cutting/${input.split(":")[1]}`)
+    const [first, second] = outputs
+    event.recipes.ratatouille.threshing(outputs, input)
+        .id(`ratatouille:threshing/${input.split(":")[1]}`).processingTime(time)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", [first, second])
+        .id(`farmersdelight:cutting/${input.split(":")[1]}`)
 }

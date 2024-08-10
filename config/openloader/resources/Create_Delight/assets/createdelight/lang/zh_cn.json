@@ -1,4 +1,6 @@
 {
+    "item.createdelight.whipped_cream_bowl": "鲜奶油",
+    "item.createdelight.butter": "黄油",
     "item.createdelight.oat_bread": "燕麦面包",
     "item.createdelight.raw_cheese_pizza": "生奶酪披萨",
     "item.createdelight.raw_empanada": "生恩潘纳达饺",
@@ -27,9 +29,10 @@
     "item.createdelight.raw_silicon": "生硅",
     "text.createdelight.eat_potato_stew_beef": "厨子不偷，五谷不收？!",
     "item.createdelight.vermicelli": "挂面",
+    "item.createdelight.chocolate_cookie_dough": "巧克力曲奇面团",
     "item.createdelight.persimmon_cookie_dough": "柿曲奇面团",
     "item.createdelight.lemon_cookie_dough": "柠檬曲奇面团",
-    "item.createdelight.chorus_cookie_dough": "紫颂曲奇面团",
+    "item.createdelight.oatmeal_cookie_dough": "燕麦曲奇面团",
     "item.createdelight.green_tea_cookie_dough": "绿茶曲奇面团",
     "item.createdelight.cranberry_cookie_dough": "蔓越莓曲奇面团",
     "item.createdelight.bayberry_cookie_dough": "杨梅曲奇面团",

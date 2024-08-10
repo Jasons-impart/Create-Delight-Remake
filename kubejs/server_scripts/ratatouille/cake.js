@@ -14,6 +14,7 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:crafting/coffee_cake_from_dough",
         "create_central_kitchen:mixing/coffee_cake",
         "farmersrespite:coffee_cake_from_slices",
+        "mynethersdelight:magma_cake"
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(Fluid.of("ratatouille:mince_meat", 250), [

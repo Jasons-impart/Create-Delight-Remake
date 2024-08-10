@@ -1,7 +1,7 @@
 #Early window height
 earlyWindowHeight = 480
 #Enable forge global version checking
-versionCheck = true
+versionCheck = false
 #Should we control the window. Disabling this disables new GL features and can be bad for mods that rely on them.
 earlyWindowControl = true
 #Early window framebuffer scale
@@ -12,16 +12,16 @@ earlyWindowProvider = "fmlearlywindow"
 earlyWindowWidth = 854
 #Early window starts maximized
 earlyWindowMaximized = false
-#Disables Optimized DFU client-side - already disabled on servers
-disableOptimizedDFU = true
 #Default config path for servers
 defaultConfigPath = "defaultconfigs"
+#Disables Optimized DFU client-side - already disabled on servers
+disableOptimizedDFU = true
 #Skip specific GL versions, may help with buggy graphics card drivers
 earlyWindowSkipGLVersions = []
 #Max threads for early initialization parallelism,  -1 is based on processor count
 maxThreads = -1
 #Squir?
-earlyWindowSquir = false
+earlyWindowSquir = true
 #Whether to show CPU usage stats in early window
 earlyWindowShowCPU = false
 

@@ -1,4 +1,18 @@
 ServerEvents.recipes(e => {
+    // 挂面合成
+    e.custom({
+        type: "ratatouille:squeezing",
+        ingredients: [
+            {
+                item: "create:dough"
+            }
+        ],
+        results: [
+            {
+                item: "createdelight:vermicelli"
+            }
+        ]
+    }).id("ratatouille:squeezing/vermicelli")
     // 挂面相关
     e.recipes.farmersdelight.cooking(
         [
