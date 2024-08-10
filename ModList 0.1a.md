@@ -285,7 +285,8 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
     * [[XWM]Xaero的世界地图 (Xaero](https://www.mcmod.cn/class/1483.html)​['s World Map)](https://www.mcmod.cn/class/1483.html)aa
 
 70. [禁用实验性设置弹出（Yeetus Experimentus）](https://www.mcmod.cn/class/11062.html)aa
-71. [Zume](https://www.mcmod.cn/class/13754.html)aa
+71. [Zume](https://www.mcmod.cn/class/13754.html)aa  
+72. [望远镜改进](https://www.mcmod.cn/class/9323.html)非正式
 
 ## ExtraConfig
 
