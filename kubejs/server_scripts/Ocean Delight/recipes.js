@@ -21,14 +21,11 @@ ServerEvents.recipes(e => {
     )
     .id("culturaldelights:pufferfish_roll")
     // 河豚水饺
-    e.recipes.farmersdelight.cooking(
-        [
-            "crabbersdelight:pufferfish_slice",
-            "#forge:dough",
-            "#forge:vegetables/greenonion"
-        ], '2x festival_delicacies:pufferfish_boiled_dumpling', 1.0, 200
-    )
-    .id("festival_delicacies:dumpling_fd/fd_pufferfish_boiled_dumpling_recipe")
+    dumpling(e, [
+        "crabbersdelight:pufferfish_slice",
+        "#forge:dough",
+        "#forge:vegetables/onion"
+    ], '2x festival_delicacies:pufferfish_boiled_dumpling', 1.0, 200)
     // 鱿鱼须相关
     e.recipes.farmersdelight.cutting(
         'culturaldelights:raw_calamari',
