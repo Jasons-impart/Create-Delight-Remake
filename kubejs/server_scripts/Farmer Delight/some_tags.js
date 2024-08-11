@@ -32,10 +32,28 @@ ServerEvents.tags("item", e => {
         'ad_astra:cheese',
         'casualness_delight:cheese_wheel_slice'
     ])
+    e.add('culturaldelights:cucumbers', [
+        'vintagedelight:cucumber'
+    ])
+    e.add("forge:crops", [
+        'vintagedelight:cucumber'
+    ])
+    e.add("forge:vegetables/cucumber", [
+        'culturaldelights:cut_cucumber'
+    ])
+    e.add("forge:cucumber", [
+        'culturaldelights:cut_cucumber'
+    ])
+    e.add("forge:pickle", [
+        'culturaldelights:pickle',
+        'culturaldelights:cut_pickle'
+    ])
     e.removeAllTagsFrom([
         'mynethersdelight:hoglin_sausage',
         'butchercraft:sausage',
         'butchercraft:cooked_sausage',
-        'festival_delicacies:rice'
+        'festival_delicacies:rice',
+        'culturaldelights:cucumber',
+        "culturaldelights:cucumber_seeds"
     ])
 })

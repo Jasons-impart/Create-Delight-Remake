@@ -14,7 +14,9 @@ let tooltips = [
     ['farmersdelight:ham', "§4目前只能通过用刀杀死疣猪兽来获得,或人工制作一个", "§4Currently it can only be obtained by killing a hoglin with a knife, or crafting one"],
     ['vintageimprovements:belt_grinder', "§aRPM≤16为低转速,§616≤RPM≤64为中转速,§4RPM≥64为高转速", "§aRPM≤16 is low rotational speed,§616≤ RPM≤64 is medium rotational speed and §4RPM≥64 is high rotational speed"],
     ['createdelight:oat_bread', "§9生命恢复（00:03）", "§9Regeneration(00:03)"],
-    ['createmetallurgy:wolframite_ore', "§6常见于地狱30-36层", "§6Commonly found in nether 30-36 floors"]
+    ['createmetallurgy:wolframite_ore', "§6常见于地狱30-36层", "§6Commonly found in nether 30-36 floors"],
+    ['culturaldelights:pickle', "§9滋养（00::30）", "§9Nourishment(00:30)"],
+    ['culturaldelights:cut_pickle', "§9滋养（00::15）", "§9Nourishment(00:15)"]
 ]
 tooltips.forEach (([key, zh_cn, en_us]) => {
     // 添加 key
