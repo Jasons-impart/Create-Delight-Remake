@@ -10,4 +10,16 @@ ServerEvents.recipes(e => {
         '4x vintagedelight:salt_dust',
         'vintagedelight:salt_bucket'
     ).id("vintagedelight:salt_bucket_to_salt")
+    // 腌制
+    e.recipes.vintagedelight.fermenting(
+        '5x festival_delicacies:preserved_meat',
+        [
+            "#forge:raw_pork",
+            "#forge:raw_pork",
+            "#forge:raw_pork",
+            "#forge:raw_pork",
+            "#forge:raw_pork",
+            "#forge:salt"
+        ], 5000
+    )
 })

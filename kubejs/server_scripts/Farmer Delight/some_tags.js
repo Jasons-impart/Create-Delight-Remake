@@ -35,6 +35,7 @@ ServerEvents.tags("item", e => {
     e.removeAllTagsFrom([
         'mynethersdelight:hoglin_sausage',
         'butchercraft:sausage',
-        'butchercraft:cooked_sausage'
+        'butchercraft:cooked_sausage',
+        'festival_delicacies:rice'
     ])
 })
