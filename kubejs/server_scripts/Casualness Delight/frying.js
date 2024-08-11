@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
             A:"minecraft:brick",
             B:"minecraft:iron_bars",
             C:'#forge:plates/iron',
-            D:"butchercraft:lard"
+            D:"#forge:animal_oil"
         }
     ).id("casualness_delight:crafting_shaped_animal/deep_frying_pan")
     e.recipes.minecraft.crafting_shaped(

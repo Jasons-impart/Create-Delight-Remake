@@ -1,7 +1,4 @@
 ServerEvents.recipes(e => {
-    remove_recipes_output(e, [
-        "candlelight:butter"
-    ])
 })
 LootJS.modifiers(e => {
     e.addLootTableModifier("minecraft:chests/village/village_plains_house")

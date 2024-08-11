@@ -6,8 +6,11 @@ ServerEvents.tags("item", e => {
     e.add("forge:salad_ingredients/cabbage", [
         "candlelight:broccoli"
     ])
-    // 疣猪兽兼容
+    // 肉类标签
     e.add("forge:meat/raw", [
+        'farmersdelight:chicken_cuts',
+        'farmersdelight:mutton_chops',
+        'farmersdelight:bacon',
         'mynethersdelight:hoglin_loin',
         'minecraft:beef',
         'minecraft:mutton',

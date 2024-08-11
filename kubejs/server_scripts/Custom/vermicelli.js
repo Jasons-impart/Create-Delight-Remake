@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
     .id("casualness_delight:cooking/beef_noodles")
     .container("bowl")
     // 板面相关
-    e.recipes.create.sequenced_assembly('2x createdelight:board_noodles', 'create:dough', [
+    e.recipes.create.sequenced_assembly('4x createdelight:board_noodles', 'create:dough', [
         e.recipes.create.pressing('create:dough', 'create:dough'),
         e.recipes.create.cutting('create:dough', 'create:dough')
     ])

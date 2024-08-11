@@ -1,0 +1,6 @@
+new Schema("festival_delicacies:stove")
+    .simpleKey("ingredients", "inputItemArray")
+    .simpleKey("result", "outputItem")
+    .simpleKey("experience", "doubleNumber")
+    .simpleKey("cookingtime", "doubleNumber")
+    .simpleKey("needpot", "bool", true)

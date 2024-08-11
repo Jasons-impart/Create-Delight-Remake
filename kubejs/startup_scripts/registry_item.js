@@ -167,6 +167,26 @@ StartupEvents.registry('item', e => {
                 .fastToEat()
                 .effect("minecraft:hunger", 200, 1, 1.0)
         })
+    e.create("createdelight:honey_cookie_dough")
+        .tag("forge:cookie_dough")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.honey_cookie_dough")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .fastToEat()
+                .effect("minecraft:hunger", 200, 1, 1.0)
+        })
+    e.create("createdelight:sweet_berry_cookie_dough")
+        .tag("forge:cookie_dough")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.sweet_berry_cookie_dough")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .fastToEat()
+                .effect("minecraft:hunger", 200, 1, 1.0)
+        })
 
     // 开酥相关
     e.create("createdelight:butter")

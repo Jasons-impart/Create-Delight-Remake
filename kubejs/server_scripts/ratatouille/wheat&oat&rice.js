@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
         "ratatouille:threshing/rice_panicle",
         "vintagedelight:oat_bread",
         "ratatouille:threshing/wheat_kernels",
-        "vintagedelight:oatmeal_cookie"
+        "vintagedelight:oatmeal_cookie",
     ])
     // 脱粒
     threshing(e, "minecraft:wheat", [
@@ -152,7 +152,6 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "vintagedelight:chocolate_granola_bar"}, 'vintagedelight:raw_oats', 'vintagedelight:oat_dough')
     e.replaceInput({id: "vintagedelight:deluxe_granola_bar"}, 'minecraft:cocoa_beans', '#forge:bars/chocolate')
     e.replaceInput({id: "vintagedelight:chocolate_granola_bar"}, 'minecraft:cocoa_beans', '#forge:bars/chocolate')
-    baking(e, 'createdelight:oatmeal_cookie_dough', 'vintagedelight:oatmeal_cookie', 4, "food", 200)
     // 山竹糕合成
     e.recipes.farmersdelight.cooking(
         [
