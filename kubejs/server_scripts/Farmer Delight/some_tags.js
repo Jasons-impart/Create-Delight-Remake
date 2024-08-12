@@ -62,6 +62,12 @@ ServerEvents.tags("item", e => {
     e.add("forge:sausage/raw", [
         'ratatouille:raw_sausage'
     ])
+    e.remove("forge:vegetables/ghost_pepper", [
+        'vintagedelight:ghost_pepper'
+    ])
+    e.add("mynethersdelight:hot_spice", [
+        'vintagedelight:ghost_pepper'
+    ])
     e.removeAllTagsFrom([
         'mynethersdelight:hoglin_sausage',
         'butchercraft:sausage',

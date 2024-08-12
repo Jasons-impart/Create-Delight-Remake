@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    e.replaceInput({id: "mynethersdelight:cooking/spicy_noodle_soup"}, "mynethersdelight:ghasta", "createdelight:vermicelli")
     // 挂面合成
     e.custom({
         type: "ratatouille:squeezing",

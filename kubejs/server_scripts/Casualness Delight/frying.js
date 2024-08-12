@@ -78,7 +78,7 @@ ServerEvents.recipes(e => {
             "#forge:dough",
             '#forge:milk',
             '#forge:eggs',
-            'mynethersdelight:bullet_pepper',
+            "#mynethersdelight:hot_spice",
             "minecraft:bowl"
         ]
     ).id("mynethersdelight:cooking/fried_hoglin_chop")

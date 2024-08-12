@@ -24,6 +24,7 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "corn_delight:corn_seeds"
     ])
+    e.replaceInput({id: "vintagedelight:stuffed_burrito"}, "#forge:bread", "culturaldelights:tortilla")
     e.replaceInput({mod: "corn_delight"}, 'corn_delight:cornbread_batter', 'culturaldelights:corn_dough')
     e.replaceInput({mod: "corn_delight"}, 'corn_delight:corn', 'culturaldelights:corn_cob')
     e.replaceInput({mod: "corn_delight"}, 'corn_delight:tortilla_chip', 'culturaldelights:tortilla_chips')
