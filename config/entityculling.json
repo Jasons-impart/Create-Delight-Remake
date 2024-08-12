@@ -1,0 +1,38 @@
+{
+  "configVersion": 6,
+  "renderNametagsThroughWalls": true,
+  "blockEntityWhitelist": [
+    "create:rope_pulley",
+    "botania:flame_ring",
+    "minecraft:beacon",
+    "create:hose_pulley",
+    "betterend:eternal_pedestal",
+    "botania:magic_missile",
+    "botania:falling_star"
+  ],
+  "entityWhitelist": [
+    "botania:mana_burst",
+    "drg_flares:drg_flares"
+  ],
+  "tracingDistance": 128,
+  "debugMode": false,
+  "sleepDelay": 10,
+  "hitboxLimit": 50,
+  "skipMarkerArmorStands": true,
+  "tickCulling": true,
+  "tickCullingWhitelist": [
+    "create:contraption",
+    "create:stationary_contraption",
+    "create:gantry_contraption",
+    "minecraft:boat",
+    "mts:builder_seat",
+    "minecraft:firework_rocket",
+    "create:carriage_contraption",
+    "mts:builder_rendering",
+    "drg_flares:drg_flares",
+    "mts:builder_existing"
+  ],
+  "disableF3": false,
+  "skipEntityCulling": false,
+  "skipBlockEntityCulling": false
+}

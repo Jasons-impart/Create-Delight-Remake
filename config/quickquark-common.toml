@@ -1,0 +1,32 @@
+
+#QuickQuark Settings
+[general]
+	#Fully disable quark's fetching contributor list,
+	#a slapdash way to solve the problem.
+	disableFetching = true
+
+[timeout]
+	#The max allowed milliseconds for connecting to https://raw.githubusercontent.com.
+	#Range: > 0
+	maxConnectTimeout = 10000
+	#The max allowed milliseconds for reading the file from https://raw.githubusercontent.com.
+	#Range: > 0
+	maxReadTimeout = 10000
+
+[proxy]
+	#Whether we should use proxy to boost the fetching.
+	useProxy = false
+	#The host of the proxy server.
+	proxyHost = "127.0.0.1"
+	#The port number of the proxy server.
+	#Range: 0 ~ 65535
+	proxyPort = 7890
+
+	[proxy.authentication]
+		#Whether the proxy server needs authentication.
+		needsAuthentication = false
+		#The username used in authentication.
+		proxyUsername = "Username"
+		#The password used in authentication.
+		proxyPassword = "PASSWORD"
+
