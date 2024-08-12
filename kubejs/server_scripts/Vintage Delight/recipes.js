@@ -1,4 +1,16 @@
 ServerEvents.recipes(e => {
+    // 腊肠
+    e.recipes.vintagedelight.fermenting(
+        '5x createdelight:salami',
+        [
+            'ratatouille:raw_sausage',
+            'ratatouille:raw_sausage',
+            'ratatouille:raw_sausage',
+            'ratatouille:raw_sausage',
+            'ratatouille:raw_sausage',
+            "#forge:salt"
+        ], 5000
+    ).id("vintagedelight:fermenting/salami")
     // 黄瓜
     remove_recipes_id(e, [
         "culturaldelights:cucumber_crate",
