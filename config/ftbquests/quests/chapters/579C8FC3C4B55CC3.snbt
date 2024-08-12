@@ -7,11 +7,7 @@
 	id: "579C8FC3C4B55CC3"
 	images: [{
 		alpha: 100
-		click: ""
-		corner: false
-		dev: false
 		height: 10.0d
-		hover: [ ]
 		image: "createaddition:textures/mob_effect/shocking.png"
 		rotation: 0.0d
 		width: 10.0d

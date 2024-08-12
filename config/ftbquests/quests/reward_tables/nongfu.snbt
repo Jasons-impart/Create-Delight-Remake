@@ -1,6 +1,6 @@
 {
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:golden_hoe"
 		tag: {
 			Damage: 0
@@ -12,7 +12,7 @@
 	rewards: [
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:iron_hoe"
 				tag: {
 					Damage: 0
@@ -21,7 +21,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:fishing_rod"
 				tag: {
 					Damage: 0
@@ -31,7 +31,7 @@
 		{ count: 5, item: "vinery:red_grape_seeds" }
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "farmersdelight:iron_knife"
 				tag: {
 					Damage: 0

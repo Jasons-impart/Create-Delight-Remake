@@ -8,11 +8,7 @@
 	images: [
 		{
 			alpha: 100
-			click: ""
-			corner: false
-			dev: false
 			height: 10.0d
-			hover: [ ]
 			image: "create:item/andesite_alloy"
 			rotation: 0.0d
 			width: 10.0d
@@ -21,11 +17,7 @@
 		}
 		{
 			alpha: 100
-			click: ""
-			corner: false
-			dev: false
 			height: 10.0d
-			hover: [ ]
 			image: "create:item/brass_ingot"
 			rotation: 0.0d
 			width: 10.0d
@@ -34,11 +26,7 @@
 		}
 		{
 			alpha: 100
-			click: ""
-			corner: false
-			dev: false
 			height: 10.0d
-			hover: [ ]
 			image: "create:item/sturdy_sheet"
 			rotation: 0.0d
 			width: 10.0d
@@ -76,7 +64,7 @@
 			tasks: [{
 				id: "4A1935D35B48C3FF"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_pickaxe"
 					tag: {
 						Damage: 0
@@ -153,7 +141,7 @@
 				{
 					id: "2223BC3A8634A488"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:enchanted_book"
 						tag: {
 							StoredEnchantments: [{
@@ -221,7 +209,7 @@
 			tasks: [{
 				id: "79E1FEDC48CA8639"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:flint_and_steel"
 					tag: {
 						Damage: 0
@@ -247,7 +235,7 @@
 			tasks: [{
 				id: "258060ABC2C218C0"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_shovel"
 					tag: {
 						Damage: 0
@@ -342,7 +330,7 @@
 			rewards: [{
 				id: "7994B7BD927D3A74"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:copper_diving_boots"
 					tag: {
 						Damage: 0
@@ -788,7 +776,7 @@
 				{
 					id: "56E3EAAF4B249D20"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:diamond_helmet"
 						tag: {
 							Damage: 0
@@ -799,7 +787,7 @@
 				{
 					id: "0EF95EB35EB2D3BE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:diamond_chestplate"
 						tag: {
 							Damage: 0
@@ -810,7 +798,7 @@
 				{
 					id: "246E98DB732EC323"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:diamond_leggings"
 						tag: {
 							Damage: 0
@@ -821,7 +809,7 @@
 				{
 					id: "619C5DCE7251C4ED"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:diamond_boots"
 						tag: {
 							Damage: 0
@@ -847,7 +835,7 @@
 			tasks: [{
 				id: "3B65F1C34D6D5594"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_sword"
 					tag: {
 						Damage: 0
@@ -871,7 +859,7 @@
 			tasks: [{
 				id: "30DED35F0C21D31F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_axe"
 					tag: {
 						Damage: 0
@@ -894,7 +882,7 @@
 			tasks: [{
 				id: "3D6187D745E8B338"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:diamond_hoe"
 					tag: {
 						Damage: 0
@@ -911,7 +899,7 @@
 			rewards: [{
 				id: "0D01400A314BAC15"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "minecraft:long_water_breathing"
@@ -923,7 +911,7 @@
 			tasks: [{
 				id: "0A8458B4B312F070"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:copper_backtank"
 					tag: {
 						Air: 900
@@ -947,7 +935,7 @@
 			tasks: [{
 				id: "5B76EEDACC558365"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:copper_diving_helmet"
 					tag: {
 						Damage: 0
@@ -1455,7 +1443,7 @@
 			tasks: [{
 				id: "4A886A93E0722856"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:potato_cannon"
 					tag: {
 						Damage: 0
@@ -1579,7 +1567,7 @@
 			tasks: [{
 				id: "5ACA4A0E13570813"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create:extendo_grip"
 					tag: {
 						Damage: 0

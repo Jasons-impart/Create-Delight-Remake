@@ -7,11 +7,7 @@
 	id: "520866F943C63324"
 	images: [
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "aether:item/miscellaneous/aether_portal_frame_inside"
 			rotation: 0.0d
 			width: 0.03125d
@@ -19,11 +15,7 @@
 			y: 5.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "aether:item/miscellaneous/aether_portal_frame_inside"
 			rotation: 0.0d
 			width: 0.03125d
@@ -32,11 +24,7 @@
 		}
 		{
 			alpha: 100
-			click: ""
-			corner: false
-			dev: false
 			height: 10.0d
-			hover: [ ]
 			image: "aether:item/miscellaneous/aether_portal_frame"
 			rotation: 0.0d
 			width: 10.0d
@@ -44,11 +32,7 @@
 			y: 0.5d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "aether:item/miscellaneous/aether_portal_frame_inside"
 			rotation: 0.0d
 			width: 0.03125d
@@ -56,11 +40,7 @@
 			y: -3.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "aether:item/miscellaneous/aether_portal_frame_inside"
 			rotation: 0.0d
 			width: 0.03125d
@@ -69,12 +49,8 @@
 		}
 		{
 			alpha: 100
-			click: ""
 			color: 6737151
-			corner: false
-			dev: false
 			height: 3.5d
-			hover: [ ]
 			image: "#FFFFFF"
 			rotation: 0.0d
 			width: 2.5d
@@ -91,7 +67,7 @@
 			rewards: [{
 				id: "0381C74F1B29BB5E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "aether:golden_parachute"
 					tag: {
 						Damage: 0
@@ -251,7 +227,7 @@
 			tasks: [{
 				id: "41830B4C43691FC7"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "aether:skyroot_pickaxe"
 					tag: {
 						Damage: 0
@@ -269,7 +245,7 @@
 			tasks: [{
 				id: "360C7A82678227CD"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "aether:holystone_pickaxe"
 					tag: {
 						Damage: 0
@@ -287,7 +263,7 @@
 			tasks: [{
 				id: "65327EA3B58F97E8"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "aether:zanite_pickaxe"
 					tag: {
 						Damage: 0

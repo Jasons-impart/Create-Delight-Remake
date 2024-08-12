@@ -103,7 +103,7 @@
 				{
 					id: "4A8756E748E0A516"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -127,7 +127,7 @@
 				{
 					id: "662FC193EC4C717D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -152,7 +152,7 @@
 				{
 					id: "006D7714E74FBD5D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -177,7 +177,7 @@
 				{
 					id: "5FE7428B42B4993F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -202,7 +202,7 @@
 				{
 					id: "4E02990E5DFC6280"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -227,7 +227,7 @@
 				{
 					id: "33FD34B5A03CF83C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -266,7 +266,7 @@
 				{
 					id: "5FA3072386B78900"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -291,7 +291,7 @@
 				{
 					id: "43BA01F5CF079E2F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -316,7 +316,7 @@
 				{
 					id: "3182EB266D29CABD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {

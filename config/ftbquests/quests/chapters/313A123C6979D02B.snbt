@@ -311,22 +311,6 @@
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
-			id: "64CDDE24403C35CD"
-			rewards: [{
-				id: "4A8D83E9A400E7CB"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5BFF4B3575AF45A5"
-				item: "createdelight:oil_dough"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["2FDFCAF57DDEAEC8"]
 			id: "30B6F298F2BE3B14"
 			rewards: [{
 				id: "5CC3E7E37EE6467B"
@@ -340,29 +324,6 @@
 			}]
 			x: -2.5d
 			y: 0.5d
-		}
-		{
-			dependencies: ["64CDDE24403C35CD"]
-			id: "1B79E4FE61E10E0F"
-			rewards: [{
-				id: "0E8A03C7844D8240"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "5607EB4D6704E3A1"
-					item: "createdelight:oil_dough_with_butter"
-					type: "item"
-				}
-				{
-					id: "105B7A1B00150BC5"
-					item: "createdelight:puff_pastry"
-					type: "item"
-				}
-			]
-			x: -6.0d
-			y: 1.5d
 		}
 		{
 			icon: "ratatouille:thresher"
@@ -435,8 +396,8 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "58C60821611FD156"
-				item: "extradelight:corn_meal"
+				id: "194F3A4EBA52C835"
+				item: "createdelight:corn_flour"
 				type: "item"
 			}]
 			x: 3.5d
@@ -590,54 +551,6 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["3F12893EE9340D60"]
-			id: "1EEB07023C8C3996"
-			rewards: [{
-				id: "25976082B844EDAB"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3DA57F9435C7B5FA"
-				item: "extradelight:bread_slice"
-				type: "item"
-			}]
-			x: -7.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["1EEB07023C8C3996"]
-			id: "7EC1D2C71277D76F"
-			rewards: [{
-				id: "2ECCB0E2D0E230B7"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2090C304300AA06D"
-				item: "extradelight:toast"
-				type: "item"
-			}]
-			x: -9.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["7EC1D2C71277D76F"]
-			id: "699C21E2180279DF"
-			rewards: [{
-				id: "4A4ED4BAF862F268"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4033B862D4AA5A66"
-				item: "extradelight:croque_monsieur"
-				type: "item"
-			}]
-			x: -10.0d
-			y: -2.5d
-		}
-		{
 			dependencies: ["731029D680D12421"]
 			id: "6DCE50E42762DAA9"
 			rewards: [{
@@ -694,64 +607,6 @@
 			title: "可~带劲了！"
 			x: 0.5d
 			y: -4.0d
-		}
-		{
-			dependencies: ["1B79E4FE61E10E0F"]
-			id: "0B6D406928EB414C"
-			rewards: [{
-				id: "7D50A31CF94FAA6F"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "可以吃派了！！"
-			tasks: [{
-				id: "4FF7C9D269627CC2"
-				item: "farmersdelight:pie_crust"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["0B6D406928EB414C"]
-			id: "6F12BBAF7B480F73"
-			rewards: [{
-				id: "7000D5FAE7A8CF22"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "087ACC308BF27225"
-				item: "casualness_delight:stargazy_pie"
-				type: "item"
-			}]
-			title: "&e死不瞑目"
-			x: -6.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0B6D406928EB414C"]
-			id: "5519949967CD9D98"
-			rewards: [{
-				id: "43F429A16262215C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "5B8F271D1D044A4E"
-					item: "farmersdelight:sweet_berry_cheesecake"
-					type: "item"
-				}
-				{
-					id: "254D7B8E54E16C3C"
-					item: "extradelight:glow_berry_pie"
-					type: "item"
-				}
-			]
-			title: "浆果芝士派！"
-			x: -8.5d
-			y: 2.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -848,63 +703,6 @@
 			}]
 			x: 4.5d
 			y: 7.0d
-		}
-		{
-			dependencies: ["0B6D406928EB414C"]
-			id: "6BBC9EEAD2E89489"
-			rewards: [{
-				id: "3F80A0FF31E7766C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "27C4BD42888722C3"
-					item: "brewinandchewin:quiche"
-					type: "item"
-				}
-				{
-					id: "07302CFF64D55B57"
-					item: "casualness_delight:quiche_lorraine"
-					type: "item"
-				}
-				{
-					id: "5FB5F3A1D53F1BF2"
-					item: "extradelight:quiche"
-					type: "item"
-				}
-			]
-			x: -8.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0B6D406928EB414C"]
-			id: "08015997AD5D8B1A"
-			rewards: [{
-				id: "3E9FBF6B982A7EC5"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "66FFB9EBEF5BD392"
-					item: "fruitsdelight:lemon_tart"
-					type: "item"
-				}
-				{
-					id: "3C9463C973EB21F5"
-					item: "fruitsdelight:fig_tart"
-					type: "item"
-				}
-				{
-					id: "7AA653B33448DCB1"
-					item: "extradelight:milk_tart_feast"
-					type: "item"
-				}
-			]
-			title: "挞！挞！挞！"
-			x: -7.5d
-			y: 3.5d
 		}
 		{
 			dependencies: ["5C89C920A90424EB"]
@@ -1028,7 +826,7 @@
 				{
 					id: "050048103BDD0982"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ratatouille:chocolate_mold_filled"
 						tag: { }
 					}
@@ -1037,7 +835,7 @@
 				{
 					id: "18EDD0AB702BC0CD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "createdelightcore:black_chocolate_mold_filled"
 						tag: { }
 					}
@@ -1046,7 +844,7 @@
 				{
 					id: "22A77C7DBA581397"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "createdelightcore:white_chocolate_mold_filled"
 						tag: { }
 					}
@@ -1055,7 +853,7 @@
 				{
 					id: "0100D4CF9CDBEA45"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "createdelightcore:ruby_chocolate_mold_filled"
 						tag: { }
 					}
@@ -1100,7 +898,7 @@
 			tasks: [{
 				id: "51300D627064FDF7"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_confectionery:full_chocolate_bar"
 					tag: {
 						Damage: 0
@@ -1126,38 +924,6 @@
 			}]
 			x: 14.0d
 			y: -2.5d
-		}
-		{
-			dependencies: ["7EC1D2C71277D76F"]
-			id: "7412BC9B3AB7C61A"
-			rewards: [{
-				id: "1B7FB03420AE93BF"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "57E64C86E153868D"
-				item: "extradelight:croque_madame"
-				type: "item"
-			}]
-			x: -10.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["7EC1D2C71277D76F"]
-			id: "491948485FB5E3D8"
-			rewards: [{
-				id: "7AB100CF9B579002"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3597C5B19DB131A2"
-				item: "extradelight:french_toast"
-				type: "item"
-			}]
-			x: -10.5d
-			y: -1.5d
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
@@ -1238,162 +1004,6 @@
 			}]
 			x: -3.5d
 			y: -5.5d
-		}
-		{
-			dependencies: ["2FDFCAF57DDEAEC8"]
-			id: "098E81F55F98EAC3"
-			rewards: [{
-				id: "1E125A2D05555E8A"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1E6E548A13A638BA"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:cookie_dough"
-					}
-				}
-				title: "Any #forge:cookie_dough"
-				type: "item"
-			}]
-			title: "曲奇面团"
-			x: -1.0d
-			y: 0.5d
-		}
-		{
-			dependencies: ["098E81F55F98EAC3"]
-			icon: "extradelight:sugar_cookie_steve"
-			id: "295E941670BC3631"
-			rewards: [{
-				id: "06D9900034C4A0F8"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7CF660B45B157431"
-				title: "曲奇小人~"
-				type: "checkmark"
-			}]
-			x: 0.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["098E81F55F98EAC3"]
-			id: "57E703191C784984"
-			rewards: [{
-				id: "7F1D54623FC8AB00"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3835516A17D47F9F"
-				item: "extradelight:sugar_cookie_diamond"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["098E81F55F98EAC3"]
-			id: "18CC16BA98D06D81"
-			rewards: [{
-				id: "45C69385F7E2FCDD"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "square"
-			size: 3.0d
-			tasks: [
-				{
-					id: "3725D68909569000"
-					item: "fruitsdelight:lemon_cookie"
-					type: "item"
-				}
-				{
-					id: "5F31CD3B0C682BBA"
-					item: "fruitsdelight:persimmon_cookie"
-					type: "item"
-				}
-				{
-					id: "504BDFEF7205C719"
-					item: "extradelight:apple_cookie"
-					type: "item"
-				}
-				{
-					id: "731AC19199B01659"
-					item: "extradelight:glow_berry_cookie"
-					type: "item"
-				}
-				{
-					id: "029FED324591D318"
-					item: "extradelight:pumpkin_cookie"
-					type: "item"
-				}
-				{
-					id: "75A69B0D784E86F9"
-					item: "farmersdelight:honey_cookie"
-					type: "item"
-				}
-				{
-					id: "5B8FB7BC08433816"
-					item: "farmersdelight:sweet_berry_cookie"
-					type: "item"
-				}
-				{
-					id: "4C87827FACEB98E8"
-					item: "ends_delight:chorus_cookie"
-					type: "item"
-				}
-				{
-					id: "43BA9B4B95EA43B4"
-					item: "minecraft:cookie"
-					type: "item"
-				}
-				{
-					id: "4DD6E98F040A5F0B"
-					item: "fruitsdelight:bayberry_cookie"
-					type: "item"
-				}
-				{
-					id: "040232AF7BDA11D7"
-					item: "fruitsdelight:cranberry_cookie"
-					type: "item"
-				}
-				{
-					id: "39F215EE23ED2857"
-					item: "farmersrespite:green_tea_cookie"
-					type: "item"
-				}
-			]
-			title: "&e曲奇收藏家！"
-			x: 0.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["098E81F55F98EAC3"]
-			id: "1EA32CBE501447EA"
-			rewards: [{
-				id: "13572D25D490FC2B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "0DF946098B312EF9"
-					item: "extradelight:cookie_dough_ice_cream"
-					type: "item"
-				}
-				{
-					id: "3A176AB7D02D4E92"
-					item: "extradelight:cookie_dough_milkshake"
-					type: "item"
-				}
-			]
-			x: -1.5d
-			y: 2.0d
 		}
 		{
 			dependencies: ["24CF527B4E34E599"]

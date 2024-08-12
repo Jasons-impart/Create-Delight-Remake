@@ -5,11 +5,16 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "vinery:wine_press"
 	id: "1872D574A69C3F64"
-	order_index: 4
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["5958FC6B58D52BEE"]
+			description: [
+				"共四种葡萄：红葡萄,白葡萄,绯红葡萄和诡异葡萄。"
+				"红白葡萄在四种群系下有对应品种，而后两者为地狱专属葡萄。"
+				"葡萄葡萄葡萄，是不是感觉认不出这个词了？"
+			]
 			id: "0295DFC67A8CF4B9"
 			rewards: [{
 				id: "01EDFDE6C62257B2"
@@ -20,9 +25,9 @@
 			size: 2.0d
 			subtitle: "美味无需多盐"
 			tasks: [{
-				id: "7DB29DC913A767D5"
-				item: "vinery:grapevine_lattice"
-				type: "item"
+				id: "01F8E2E3D032B2B2"
+				title: "获得任意一种葡萄"
+				type: "checkmark"
 			}]
 			title: "让我们开始吧"
 			x: 0.0d
@@ -75,9 +80,10 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "但为什么只是变成了苹果碎？"
 			tasks: [{
-				id: "3A465800295C8308"
-				item: "vinery:wine_press"
+				id: "1147A2BD84100B28"
+				item: "vinery:apple_press"
 				type: "item"
 			}]
 			x: 0.0d
@@ -155,7 +161,7 @@
 			tasks: [{
 				id: "52A1E3CD82131A28"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:apple_wine"
 					tag: {
 						Year: 0
@@ -195,7 +201,7 @@
 			tasks: [{
 				id: "5AA0AE81DD2D9FBE"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:apple_cider"
 					tag: {
 						Year: 0
@@ -237,17 +243,24 @@
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
+			description: ["身穿酿酒师套装时使用骨粉不再消耗，而是消耗套装耐久。"]
 			id: "41BDA4219B4FEEC3"
 			rewards: [{
 				id: "44041BBC871DF19D"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "至少看起来挺像那么回事的"
 			tasks: [
 				{
-					id: "358BF5530B626344"
+					id: "5C8907ABFB6C5858"
+					item: "vinery:calendar"
+					type: "item"
+				}
+				{
+					id: "4FFBBB834B958763"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "vinery:straw_hat"
 						tag: {
 							Damage: 0
@@ -256,10 +269,10 @@
 					type: "item"
 				}
 				{
-					id: "54BE8B19FDC43641"
+					id: "138F6AC55A70A4D1"
 					item: {
-						Count: 1b
-						id: "vinery:vinemaker_apron"
+						Count: 1
+						id: "vinery:winemaker_apron"
 						tag: {
 							Damage: 0
 						}
@@ -267,10 +280,10 @@
 					type: "item"
 				}
 				{
-					id: "4724F8FF9B152EA9"
+					id: "7AB5C1FAAF1CA52F"
 					item: {
-						Count: 1b
-						id: "vinery:vinemaker_leggings"
+						Count: 1
+						id: "vinery:winemaker_leggings"
 						tag: {
 							Damage: 0
 						}
@@ -278,19 +291,14 @@
 					type: "item"
 				}
 				{
-					id: "7793F6179BB3BCBB"
+					id: "3B0BBDC1525B3167"
 					item: {
-						Count: 1b
-						id: "vinery:vinemaker_boots"
+						Count: 1
+						id: "vinery:winemaker_boots"
 						tag: {
 							Damage: 0
 						}
 					}
-					type: "item"
-				}
-				{
-					id: "5C8907ABFB6C5858"
-					item: "vinery:calendar"
 					type: "item"
 				}
 			]
@@ -309,7 +317,7 @@
 			tasks: [{
 				id: "50012B7E0BE0A495"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:stal_wine"
 					tag: {
 						Year: 0
@@ -331,7 +339,7 @@
 			tasks: [{
 				id: "43594FC28E567F5A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:kelp_cider"
 					tag: {
 						Year: 0
@@ -353,7 +361,7 @@
 			tasks: [{
 				id: "6C170DF0A49CC33C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:strad_wine"
 					tag: {
 						Year: 0
@@ -375,7 +383,7 @@
 			tasks: [{
 				id: "08F6648E2497A609"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:magnetic_wine"
 					tag: {
 						Year: 0
@@ -397,7 +405,7 @@
 			tasks: [{
 				id: "0D5528D5F13E25C0"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:chorus_wine"
 					tag: {
 						Year: 0
@@ -419,7 +427,7 @@
 			tasks: [{
 				id: "3FA730CE1F63DA65"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:aegis_wine"
 					tag: {
 						Year: 0
@@ -441,7 +449,7 @@
 			tasks: [{
 				id: "59323C4FED28C367"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:solaris_wine"
 					tag: {
 						Year: 0
@@ -463,7 +471,7 @@
 			tasks: [{
 				id: "676C5C75B3B28212"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:noir_wine"
 					tag: {
 						Year: 0
@@ -485,7 +493,7 @@
 			tasks: [{
 				id: "23DF215AAF70E732"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:bolvar_wine"
 					tag: {
 						Year: 0
@@ -508,7 +516,7 @@
 			tasks: [{
 				id: "14A69EF1320BD7B5"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:cherry_wine"
 					tag: {
 						Year: 0
@@ -530,7 +538,7 @@
 			tasks: [{
 				id: "223E9CBFE035FE65"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:clark_wine"
 					tag: {
 						Year: 0
@@ -552,7 +560,7 @@
 			tasks: [{
 				id: "064B4A53519CD8EA"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:jellie_wine"
 					tag: {
 						Year: 0
@@ -574,7 +582,7 @@
 			tasks: [{
 				id: "5D96AAADD86CCEEE"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:red_wine"
 					tag: {
 						Year: 0
@@ -596,7 +604,7 @@
 			tasks: [{
 				id: "74F3D37805AB8F93"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:chenet_wine"
 					tag: {
 						Year: 0
@@ -618,7 +626,7 @@
 			tasks: [{
 				id: "42DA2420E773DE02"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:mellohi_wine"
 					tag: {
 						Year: 0
@@ -640,7 +648,7 @@
 			tasks: [{
 				id: "2EEB6907629F629F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:jo_special_mixture"
 					tag: {
 						Year: 0
@@ -662,7 +670,7 @@
 			tasks: [{
 				id: "405023104734C174"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:cristel_wine"
 					tag: {
 						Year: 0
@@ -684,7 +692,7 @@
 			tasks: [{
 				id: "29F97D7257A4D23D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:glowing_wine"
 					tag: {
 						Year: 0
@@ -706,7 +714,7 @@
 			tasks: [{
 				id: "50023E6AF7DC26B4"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:mead"
 					tag: {
 						Year: 0
@@ -728,7 +736,7 @@
 			tasks: [{
 				id: "1D0196B5F629EF89"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:eiswein"
 					tag: {
 						Year: 0
@@ -750,7 +758,7 @@
 			tasks: [{
 				id: "41CDC7AC8FECD355"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:creepers_crush"
 					tag: {
 						Year: 0
@@ -772,7 +780,7 @@
 			tasks: [{
 				id: "1F1FCDCDC2EE06D1"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:bottle_mojang_noir"
 					tag: {
 						Year: 0
@@ -795,7 +803,7 @@
 			tasks: [{
 				id: "49B06E7BECB7448F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "vinery:villagers_fright"
 					tag: {
 						Year: 0
@@ -817,7 +825,7 @@
 			tasks: [{
 				id: "2EA4CD2A110DF9F2"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "nethervinery:lava_fizz"
 					tag: {
 						Year: 0
@@ -842,7 +850,7 @@
 			tasks: [{
 				id: "63BECF65BBEA3E36"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "nethervinery:improved_lava_fizz"
 					tag: {
 						Year: 0
@@ -864,7 +872,7 @@
 			tasks: [{
 				id: "152B82B94D0548D9"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "nethervinery:nether_fizz"
 					tag: {
 						Year: 0
@@ -889,7 +897,7 @@
 			tasks: [{
 				id: "5F9E3E76D1812159"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "nethervinery:improved_nether_fizz"
 					tag: {
 						Year: 0
@@ -909,10 +917,10 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "3FC8E6EAAE6210C9"
+				id: "6911402DC46B0640"
 				item: {
-					Count: 1b
-					id: "vinery:king_danis_wine"
+					Count: 1
+					id: "vinery:lilitu_wine"
 					tag: {
 						Year: 0
 					}
@@ -933,7 +941,7 @@
 			tasks: [{
 				id: "20277ADC5DCE455C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "nethervinery:ghastly_grenache"
 					tag: {
 						Year: 0
@@ -953,10 +961,10 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "250F0F7C1AA317DF"
+				id: "741311292F2001AF"
 				item: {
-					Count: 1b
-					id: "vinery:praetorian_wine"
+					Count: 1
+					id: "nethervinery:netherite_nectar"
 					tag: {
 						Year: 0
 					}

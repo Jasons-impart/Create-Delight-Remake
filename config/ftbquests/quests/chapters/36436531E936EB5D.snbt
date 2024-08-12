@@ -4,7 +4,7 @@
 	filename: "36436531E936EB5D"
 	group: "14CFC96B5B37F10B"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:stone_pickaxe"
 		tag: {
 			Damage: 0
@@ -76,7 +76,7 @@
 			tasks: [{
 				id: "010F10BAF70E014D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:wooden_pickaxe"
 					tag: {
 						Damage: 0
@@ -215,7 +215,7 @@
 			tasks: [{
 				id: "56848055EF8A035B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:stone_pickaxe"
 					tag: {
 						Damage: 0
@@ -282,7 +282,7 @@
 			tasks: [{
 				id: "23C4D701E1D75A55"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:iron_pickaxe"
 					tag: {
 						Damage: 0
@@ -369,7 +369,7 @@
 			tasks: [{
 				id: "277EBFFA4523ECE8"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:shears"
 					tag: {
 						Damage: 0
@@ -484,7 +484,7 @@
 				{
 					id: "18A5E0E9ADF0A199"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:iron_helmet"
 						tag: {
 							Damage: 0
@@ -495,7 +495,7 @@
 				{
 					id: "5DD801A46036A3E8"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:iron_chestplate"
 						tag: {
 							Damage: 0
@@ -506,7 +506,7 @@
 				{
 					id: "7FD1E6AA83C56721"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:iron_leggings"
 						tag: {
 							Damage: 0
@@ -517,7 +517,7 @@
 				{
 					id: "7C4F80CBD7C0BB0C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:iron_boots"
 						tag: {
 							Damage: 0
@@ -539,7 +539,7 @@
 			rewards: [{
 				id: "4F1FC0E5F6368427"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "waystones:warp_stone"
 					tag: {
 						Damage: 0
@@ -649,7 +649,7 @@
 			tasks: [{
 				id: "33EB6C684D1A130F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:netherite_hoe"
 					tag: {
 						Damage: 0
@@ -754,7 +754,7 @@
 					count: 5
 					id: "5FE3A857F5D4039E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "waystones:warp_stone"
 						tag: {
 							Damage: 0
@@ -841,7 +841,7 @@
 			rewards: [{
 				id: "1B9C60BFB14C6219"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "supplementaries:bubble_blower"
 					tag: {
 						Damage: 0
@@ -883,7 +883,7 @@
 			rewards: [{
 				id: "1B5354565B111566"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "supplementaries:flute"
 					tag: {
 						Damage: 0
@@ -924,7 +924,7 @@
 			rewards: [{
 				id: "02B62F82E52A2E06"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "supplementaries:bubble_blower"
 					tag: {
 						Damage: 0
@@ -957,7 +957,7 @@
 			rewards: [{
 				id: "32D5ED5DAAF30976"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "supplementaries:slingshot"
 					tag: {
 						Damage: 0
@@ -980,7 +980,7 @@
 			rewards: [{
 				id: "2B6F9F770B05A493"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "supplementaries:bubble_blower"
 					tag: {
 						Damage: 0

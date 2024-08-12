@@ -26,7 +26,7 @@
 				{
 					id: "502F90FD6FDACEAE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "farmersdelight:iron_knife"
 						tag: {
 							Damage: 0
@@ -45,32 +45,18 @@
 				}
 			]
 			subtitle: "来做一把厨师刀吧"
-			tasks: [
-				{
-					id: "002D712262DD9B99"
-					item: {
-						Count: 1b
-						id: "itemfilters:tag"
-						tag: {
-							value: "farmersdelight:straw_harvesters"
-						}
-					}
-					title: "Any #farmersdelight:straw_harvesters"
-					type: "item"
-				}
-				{
-					id: "2ED3506D3D32A99F"
-					item: "farmersdelight:cutting_board"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "2ED3506D3D32A99F"
+				item: "farmersdelight:cutting_board"
+				type: "item"
+			}]
 			title: "成为厨师的第一步"
 			x: -5.0d
 			y: 3.0d
 		}
 		{
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "farmersdelight:golden_knife"
 				tag: {
 					Damage: 0
@@ -114,7 +100,7 @@
 				{
 					id: "279C5B5A2E93B439"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:flint_and_steel"
 						tag: {
 							Damage: 0
@@ -144,7 +130,7 @@
 				{
 					id: "2CA30668956A624A"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "farmersdelight:skillet"
 						tag: {
 							Damage: 0
@@ -341,7 +327,7 @@
 		{
 			dependencies: ["34D9D292CE6F683E"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:netherite_hoe"
 				tag: {
 					Damage: 0
@@ -1164,30 +1150,6 @@
 			y: 11.5d
 		}
 		{
-			dependencies: ["40EBFAF6221F7BC2"]
-			id: "3E779E8C0E67CA7D"
-			rewards: [
-				{
-					count: 3
-					id: "54DD7F20BC0B9BF1"
-					item: "minecraft:rabbit_foot"
-					type: "item"
-				}
-				{
-					id: "5A66BFE30EC5AC7B"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "610AB27B4825A3FB"
-				item: "extradelight:hasenpfeffer"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 10.0d
-		}
-		{
 			dependencies: ["7AB702E0298F4A91"]
 			id: "05282CE0DCD9BE28"
 			rewards: [
@@ -1347,7 +1309,7 @@
 				{
 					id: "066B5658EA574E95"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "farmersdelight:flint_knife"
 						tag: {
 							Damage: 120
@@ -1397,36 +1359,6 @@
 			}]
 			x: -7.0d
 			y: 1.0d
-		}
-		{
-			dependencies: ["236182632D72C634"]
-			description: [
-				"烤炉下方需要热源，需要和烤盘一起才能完成烹饪，不同的菜谱烹饪时间不同。"
-				"带烤盘槽位的 3x3 合成网格。只要下方有火，就可以随时间烹饪菜谱。菜谱需要 8 种烘焙烤盘之一才能完成。"
-			]
-			id: "502BE877910FB7D5"
-			rewards: [
-				{
-					count: 3
-					id: "5C5D9C8D80BD7A8D"
-					item: "waystones:return_scroll"
-					type: "item"
-				}
-				{
-					id: "63EE5E04818982BF"
-					type: "xp"
-					xp: 100
-				}
-			]
-			size: 1.5d
-			tasks: [{
-				id: "7E650FC18A2E8A78"
-				item: "extradelight:oven"
-				type: "item"
-			}]
-			title: "额外乐事"
-			x: 6.5d
-			y: 3.0d
 		}
 		{
 			dependencies: ["60FB6AB94FAB23A6"]
@@ -1748,7 +1680,7 @@
 			rewards: [
 				{
 					id: "1098CD8F8C4E2B22"
-					item: "vinery:cherry_sapling"
+					item: "vinery:dark_cherry_sapling"
 					type: "item"
 				}
 				{
@@ -1767,505 +1699,19 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["502BE877910FB7D5"]
-			id: "5FAEF19DDA51244F"
-			rewards: [
-				{
-					count: 9
-					id: "3ECA23D2A9B22EF6"
-					item: "minecraft:iron_ingot"
-					type: "item"
-				}
-				{
-					id: "19FCCDA2E386AFD7"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "067A140CEFBE6790"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "extradelight:baking_trays"
-					}
-				}
-				title: "Any #extradelight:baking_trays"
-				type: "item"
-			}]
-			title: "烤盘"
-			x: 5.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			description: ["需放置在方块上使用，右键可打开界面，将面团放入，即可做出对应数量的千层面面条、通心粉、生意面。"]
-			id: "396DD3A49DACE642"
-			rewards: [
-				{
-					count: 9
-					id: "42B375C63DAC622A"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
-				{
-					id: "56952D41B73F0B4E"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "7BFE9E65DD52B24B"
-				item: "extradelight:dough_shaping"
-				type: "item"
-			}]
-			x: 7.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			description: ["搅拌碗 一 大木碗，可以让用户将物品搅拌成新的东西。 需要和勺子配合使用"]
-			icon: "extradelight:mixing_bowl"
-			id: "6460195C0E8DE5F7"
-			rewards: [
-				{
-					id: "4B6957A25297B7B2"
-					item: {
-						Count: 1b
-						id: "extradelight:iron_spoon"
-						tag: {
-							Damage: 0
-							Enchantments: [{
-								id: "minecraft:unbreaking"
-								lvl: 3
-							}]
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "4D4E2D5A8777C561"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [
-				{
-					id: "26A8BD1BFB949CD3"
-					item: "extradelight:mixing_bowl"
-					type: "item"
-				}
-				{
-					id: "31320EF184D61D92"
-					item: {
-						Count: 1b
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:spoons"
-						}
-					}
-					title: "Any #forge:spoons"
-					type: "item"
-				}
-			]
-			x: 6.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			description: ["研磨碗 ，用于将物品压碎并研磨成新的东西。 需要和研杵一起使用。"]
-			id: "374268CCFFD07879"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "7040D14DAA674139"
-					table_id: 895804223245351078L
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "504F213A5C7BAE10"
-					table_id: 5718696665773874281L
-					type: "choice"
-				}
-				{
-					id: "08C6FBCABE0B2199"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [
-				{
-					id: "70EBFB1435E30EF1"
-					item: {
-						Count: 1b
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:mortars"
-						}
-					}
-					title: "Any #forge:mortars"
-					type: "item"
-				}
-				{
-					id: "3A1335F7ABB688A9"
-					item: {
-						Count: 1b
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:pestles"
-						}
-					}
-					title: "Any #forge:pestles"
-					type: "item"
-				}
-			]
-			title: "研磨"
-			x: 8.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			description: ["刨丝器 一 与站板一起使用，将食物创成细丝"]
-			id: "30E9CD833C7F8E75"
-			rewards: [
-				{
-					id: "12EE48B867EEC71D"
-					item: "minecraft:bread"
-					type: "item"
-				}
-				{
-					id: "61A16361F938418B"
-					item: "minecraft:potato"
-					type: "item"
-				}
-				{
-					id: "69AD451BF1EE53C8"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "013760BC4E7FA3A2"
-				item: {
-					Count: 1b
-					id: "extradelight:grater"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 9.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			description: [""]
-			id: "4779337826B8BEE4"
-			rewards: [
-				{
-					count: 9
-					id: "779BACB57FBBDAA3"
-					item: "extradelight:seaweed_paste"
-					type: "item"
-				}
-				{
-					id: "7A4F882C470193D2"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "可以晾干一些食物"
-			tasks: [{
-				id: "56B3157AA78D2CBE"
-				item: "extradelight:drying_rack_item"
-				type: "item"
-			}]
-			x: 5.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["396DD3A49DACE642"]
-			id: "5E9DA6574FB1E6B6"
-			rewards: [
-				{
-					id: "696E2E93456681F8"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
-				{
-					id: "1B7F7315E28AE93E"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "2735CE537E78C3AC"
-				item: "farmersdelight:raw_pasta"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["396DD3A49DACE642"]
-			id: "586FAE4183332DC0"
-			rewards: [
-				{
-					id: "51E00F7FEF03EC9F"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
-				{
-					id: "24E9DF9525C7454B"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "6B6C17DCAB4A2FC5"
-				item: "extradelight:macaroni"
-				type: "item"
-			}]
-			x: 7.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["396DD3A49DACE642"]
-			id: "50D66C7DCF84046D"
-			rewards: [
-				{
-					id: "2B1E43C58E50B369"
-					item: "farmersdelight:wheat_dough"
-					type: "item"
-				}
-				{
-					id: "02F6D0A129D0D8E1"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "437E3FC0B36F8B9D"
-				item: "extradelight:lasagna_noodles"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["30E9CD833C7F8E75"]
-			id: "6066E45DF45E549B"
-			rewards: [
-				{
-					id: "59E760924C5A4EA5"
-					item: "farmersrespite:gamblers_tea"
-					type: "item"
-				}
-				{
-					id: "66BE7E78776D3B59"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "28B37E7C79E84438"
-				item: "extradelight:breadcrumbs"
-				type: "item"
-			}]
-			x: 10.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["30E9CD833C7F8E75"]
-			id: "754D960ACCBBBC77"
-			rewards: [
-				{
-					id: "68D20B5A2E76FB9D"
-					item: "farmersrespite:gamblers_tea"
-					type: "item"
-				}
-				{
-					id: "6B496FBE8FF6466A"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "5935AB0C45D17BA1"
-				item: "extradelight:grated_potato"
-				type: "item"
-			}]
-			x: 10.5d
-			y: 4.5d
-		}
-		{
-			dependencies: [
-				"6066E45DF45E549B"
-				"4BF5D56BF3883EDA"
-			]
-			id: "395E7DB5ED9D326E"
-			rewards: [{
-				id: "3039EEE2685FEB81"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "449087F9F29AA443"
-				item: "extradelight:breading_misanplas"
-				type: "item"
-			}]
-			x: 12.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["374268CCFFD07879"]
-			id: "4BF5D56BF3883EDA"
-			rewards: [
-				{
-					count: 3
-					id: "4FCFE7B92F3567AE"
-					item: "extradelight:cooking_oil"
-					type: "item"
-				}
-				{
-					id: "7470B77E3DF03030"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "3A27ED5F968C1390"
-				item: "extradelight:cooking_oil"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["6460195C0E8DE5F7"]
-			id: "1FCE3D33A08F37E9"
-			rewards: [
-				{
-					count: 16
-					id: "3BCEA3ACA0573606"
-					item: "corn_delight:popcorn"
-					type: "item"
-				}
-				{
-					id: "52ACCACF4DEF01DE"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "15224541521177FE"
-				item: "extradelight:egg_mix"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["6460195C0E8DE5F7"]
-			id: "17EBC8E9E9A9D04D"
-			rewards: [
-				{
-					count: 16
-					id: "08FCC436B0456BD3"
-					item: "corn_delight:popcorn"
-					type: "item"
-				}
-				{
-					id: "557D53B921411987"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "278B2A3744B172DB"
-				item: "extradelight:whipped_cream"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["17EBC8E9E9A9D04D"]
-			id: "532C8FDE301864A5"
-			rewards: [
-				{
-					id: "69372FA1B5B01240"
-					item: "corn_delight:popcorn_box"
-					type: "item"
-				}
-				{
-					id: "1F0D8717EDE6A97A"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "5D4AC05141601508"
-				item: "extradelight:butter"
-				type: "item"
-			}]
-			x: 6.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["374268CCFFD07879"]
-			id: "08FD1A2B6D4733AE"
-			rewards: [
-				{
-					count: 9
-					id: "5B594CD6D020E9F1"
-					item: "extradelight:corn_seeds"
-					type: "item"
-				}
-				{
-					id: "6D67A08867EEF3A8"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "17CB74110D3F9A26"
-				item: "extradelight:corn_meal"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 0.0d
-		}
-		{
 			dependencies: ["7F9674CC778A157C"]
-			description: [""]
+			description: ["右键牲畜获得尸体"]
 			id: "39D73D0E0410E5C9"
-			rewards: [{
-				id: "6DCAA2CBEE744661"
-				type: "xp"
-				xp: 100
-			}]
-			size: 1.5d
-			subtitle: "利用屠刀对原版牲畜击即可获得死掉的牲畜,一定要右击."
-			tasks: [
+			rewards: [
 				{
-					id: "7AF368C25056875F"
-					item: {
-						Count: 1b
-						id: "butchercraft:butcher_knife"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
+					id: "6DCAA2CBEE744661"
+					type: "xp"
+					xp: 100
 				}
 				{
-					id: "0AECEA9B7F185AAC"
+					id: "3757D93DAB3F48C2"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:skinning_knife"
 						tag: {
 							Damage: 0
@@ -2274,9 +1720,9 @@
 					type: "item"
 				}
 				{
-					id: "1472EFE0FAA09C93"
+					id: "507FD83DD968BB55"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:bone_saw"
 						tag: {
 							Damage: 0
@@ -2285,9 +1731,9 @@
 					type: "item"
 				}
 				{
-					id: "064B566A8088E7C4"
+					id: "59C965595F41D9E8"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:gut_knife"
 						tag: {
 							Damage: 0
@@ -2296,175 +1742,22 @@
 					type: "item"
 				}
 			]
+			size: 1.5d
+			subtitle: "来一场酣畅淋漓的屠宰"
+			tasks: [{
+				id: "7AF368C25056875F"
+				item: {
+					Count: 1
+					id: "butchercraft:butcher_knife"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			title: "不素之客"
 			x: -5.0d
 			y: 5.0d
-		}
-		{
-			dependencies: [
-				"374268CCFFD07879"
-				"5CB83854D678741B"
-			]
-			id: "375F11D3C310F0A3"
-			rewards: [
-				{
-					count: 3
-					id: "79BBADBB27FABA2E"
-					item: "extradelight:agar_agar"
-					type: "item"
-				}
-				{
-					id: "0E6F9BFC9E606505"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "179F6CA6237B7F2F"
-				item: "extradelight:agar_agar"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["375F11D3C310F0A3"]
-			id: "4B1184FD713F8A87"
-			rewards: [{
-				id: "54E7E65B2A19656F"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "43C7907B030CF829"
-				item: "extradelight:jelly_magenta_block_item"
-				type: "item"
-			}]
-			x: 10.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			id: "0377D98DD11C3C42"
-			rewards: [
-				{
-					id: "4365AB2F345B3207"
-					item: "minecraft:glass_bottle"
-					type: "item"
-				}
-				{
-					id: "7DC8B6C5A8E9C89C"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "将醋壶放在地上，等里面冒泡后用玻璃瓶右键"
-			tasks: [{
-				id: "1B9DCF6E0ADC5560"
-				item: "extradelight:vinegar_pot"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["502BE877910FB7D5"]
-			id: "3A9C53F765AB3188"
-			rewards: [
-				{
-					id: "24534C67633F8D1B"
-					item: "minecraft:glass_bottle"
-					type: "item"
-				}
-				{
-					id: "46EFF0511430FEEC"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "将酵母放在地上，等里面冒泡后用玻璃瓶右键"
-			tasks: [{
-				id: "3658C9C08CD73A02"
-				item: "extradelight:yeast_pot"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["0377D98DD11C3C42"]
-			description: ["在世界中右击冒泡的醋壶获得。"]
-			id: "23A0D65694502BBE"
-			rewards: [
-				{
-					id: "4C715A57046293C5"
-					item: "extradelight:vinegar_pot"
-					title: "再来一次"
-					type: "item"
-				}
-				{
-					id: "4C4E486DBE886A78"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "3357C86BA7521EAF"
-				item: "extradelight:vinegar"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["3A9C53F765AB3188"]
-			description: ["在酵母罐冒泡时，用瓶子右击酵母罐获得。"]
-			id: "1BB8C84ED17E6175"
-			rewards: [
-				{
-					id: "671AD587818C4F1B"
-					item: "extradelight:yeast_pot"
-					title: "再来一次!"
-					type: "item"
-				}
-				{
-					id: "1999C94740C0AC17"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "6A94432CE857EEB9"
-				item: "extradelight:yeast"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["4779337826B8BEE4"]
-			hide_dependent_lines: true
-			id: "5CB83854D678741B"
-			rewards: [
-				{
-					count: 9
-					id: "14051FEDAE18D532"
-					item: "extradelight:agar_sheets"
-					type: "item"
-				}
-				{
-					id: "1363AE30D79379CF"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "401933403A1AEE05"
-				item: "extradelight:agar_sheets"
-				type: "item"
-			}]
-			x: 5.0d
-			y: 6.0d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -2473,7 +1766,7 @@
 				{
 					id: "02F8AB73D7C23A3F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:enchanted_book"
 						tag: {
 							StoredEnchantments: [{
@@ -2537,30 +1830,6 @@
 			}]
 			x: -16.0d
 			y: 1.0d
-		}
-		{
-			dependencies: ["3C036D58B281C3AD"]
-			id: "5DBA75D8ABCD5AD7"
-			rewards: [{
-				id: "3CAE549089357073"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5695267299DA2772"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:fishes"
-					}
-				}
-				title: "Any #minecraft:fishes"
-				type: "item"
-			}]
-			title: "鱼"
-			x: -12.0d
-			y: -3.0d
 		}
 		{
 			dependencies: ["4C5DB06DC3540875"]
@@ -2668,22 +1937,6 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["5DBA75D8ABCD5AD7"]
-			id: "1FC83356B4388550"
-			rewards: [{
-				id: "210B17708138C9BA"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6D2680200A0151AA"
-				item: "extradelight:fish_stew_feast"
-				type: "item"
-			}]
-			x: -12.0d
-			y: -4.0d
-		}
-		{
 			dependencies: ["3C036D58B281C3AD"]
 			id: "20220744AEF253DA"
 			rewards: [{
@@ -2715,90 +1968,6 @@
 			}]
 			x: -14.0d
 			y: -5.0d
-		}
-		{
-			dependencies: ["395E7DB5ED9D326E"]
-			id: "4D5F9B0DF8C9D1B0"
-			rewards: [{
-				id: "07378C1A58F28433"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "26A3CF5603377B83"
-				item: "extradelight:french_fries"
-				type: "item"
-			}]
-			x: 11.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["395E7DB5ED9D326E"]
-			id: "5BF6232067B3F1B7"
-			rewards: [{
-				id: "774760ABA184843B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6E2A2BF44EE37BF2"
-				item: "extradelight:chicken_fried_steak"
-				type: "item"
-			}]
-			x: 13.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["395E7DB5ED9D326E"]
-			id: "7A3707CEB78A2417"
-			rewards: [{
-				id: "34D0C2F153D8AFB9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3FF1C4EDF7B44946"
-				item: "extradelight:fried_chicken"
-				type: "item"
-			}]
-			x: 13.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["395E7DB5ED9D326E"]
-			id: "101ADEEB0C3C4709"
-			rewards: [{
-				id: "2EC2F617F3B35C3D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7F6BF4010AAD7C56"
-				item: "extradelight:fried_mushrooms"
-				type: "item"
-			}]
-			x: 12.0d
-			y: 4.0d
-		}
-		{
-			dependencies: [
-				"4D5F9B0DF8C9D1B0"
-				"1F484FE223357E32"
-			]
-			id: "3363DA76F147ADF2"
-			rewards: [{
-				id: "67E49B2DC5174894"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "嗯！那叫一个地地地地道的老伦敦范~"
-			tasks: [{
-				id: "55D43913450C6DD9"
-				item: "casualness_delight:fish_and_chips"
-				type: "item"
-			}]
-			x: 12.0d
-			y: 0.5d
 		}
 		{
 			dependencies: ["78E572AC3FBB1F7D"]
@@ -2843,7 +2012,6 @@
 				"3DE3B1D469147E41"
 				"45343A38F7B9CD1A"
 				"663D41A82205B3E3"
-				"5DBA75D8ABCD5AD7"
 				"2CFB0734FCBA02CF"
 				"26E955F487E8570B"
 			]
@@ -2991,19 +2159,11 @@
 			dependencies: ["39D73D0E0410E5C9"]
 			icon: "butchercraft:cow_carcass"
 			id: "187103E9D7BA6BEB"
-			rewards: [
-				{
-					id: "22E37030CC7A12CD"
-					item: "butchercraft:cooked_beef_roast"
-					random_bonus: 5
-					type: "item"
-				}
-				{
-					id: "26BA529EE94E87EF"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "1AC84A92F6AFE42E"
+				type: "xp"
+				xp: 777
+			}]
 			tasks: [
 				{
 					id: "6BF537D6BF8FA61A"
@@ -3031,37 +2191,57 @@
 					type: "item"
 				}
 				{
-					id: "54BF7C1240964DE7"
-					item: {
-						Count: 1b
-						id: "itemfilters:tag"
-						tag: {
-							value: "butchercraft:rabbit_carcass"
-						}
-					}
-					title: "Any #butchercraft:rabbit_carcass"
+					id: "738A5189B3E3CF06"
+					item: "butchercraft:black_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "6E1FFDCD5E8031AA"
+					item: "butchercraft:brown_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "6B9E5F942920AD84"
+					item: "butchercraft:splotched_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "198E409A83B0B995"
+					item: "butchercraft:gold_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "3133ACFCA574EB41"
+					item: "butchercraft:white_rabbit_carcass"
 					type: "item"
 				}
 			]
-			title: "尸体大聚会("
+			title: "尸体派对"
 			x: -3.5d
 			y: 6.5d
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
-			description: ["喝牛奶并不会消除效果，并且僵尸似乎喜欢你身上的血迹斑斑,也可以用肥皂搓一下身子去除"]
+			description: ["套装能够避免“血迹斑斑”。喝牛奶并不会消除效果，并且僵尸似乎喜欢你身上的血腥味,也可以用肥皂搓一下身子去除"]
 			id: "17A67CA404197B97"
-			rewards: [{
-				id: "771C95BBEF1CC0E7"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "建议屠宰牲畜时，穿上套装，可以防止血迹效果"
+			rewards: [
+				{
+					id: "771C95BBEF1CC0E7"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4130DB9228E81E5A"
+					item: "butchercraft:soap"
+					type: "item"
+				}
+			]
+			subtitle: "冷酷，精准，高效，且专业。"
 			tasks: [
 				{
 					id: "1B8179805C31EC47"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:mask"
 						tag: {
 							Damage: 0
@@ -3072,7 +2252,7 @@
 				{
 					id: "3E2FCAC349D987CB"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:paper_hat"
 						tag: {
 							Damage: 0
@@ -3083,7 +2263,7 @@
 				{
 					id: "2BEA60C2316ED80E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:apron"
 						tag: {
 							Damage: 0
@@ -3094,7 +2274,7 @@
 				{
 					id: "0DFAF204BF238DB1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:gloves"
 						tag: {
 							Damage: 0
@@ -3105,17 +2285,12 @@
 				{
 					id: "2CCD536CBA149A7C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:boots"
 						tag: {
 							Damage: 0
 						}
 					}
-					type: "item"
-				}
-				{
-					id: "6F8CE9AA49102D6F"
-					item: "butchercraft:soap"
 					type: "item"
 				}
 			]
@@ -3125,14 +2300,14 @@
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
-			description: ["挂肉勾用于大型牲畜，案板用于小型牲畜也可用于某些肉类的加工"]
+			description: ["挂肉勾用于大型牲畜，案板用于小型牲畜也可用于某些肉类的加工，任何肉类都可以用它试一试能不能剁得再碎一点。"]
 			id: "5EB3B636A6FEA921"
 			rewards: [{
 				id: "2D8490DDBEC0A43C"
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "加工你的食材"
+			subtitle: "加工，然后加工。"
 			tasks: [
 				{
 					id: "2FC965A8FCD1D5BA"
@@ -3152,7 +2327,7 @@
 		{
 			dependencies: ["39D73D0E0410E5C9"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "butchercraft:cow_hood"
 				tag: {
 					Damage: 0
@@ -3169,7 +2344,7 @@
 				{
 					id: "791FC39DC0349A50"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:cow_hood"
 						tag: {
 							Damage: 0
@@ -3180,7 +2355,7 @@
 				{
 					id: "0E8B2162FC493AF0"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:pig_hood"
 						tag: {
 							Damage: 0
@@ -3191,7 +2366,7 @@
 				{
 					id: "3C30F0D3814103CA"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:sheep_hood"
 						tag: {
 							Damage: 0
@@ -3202,7 +2377,7 @@
 				{
 					id: "2DE489103F002192"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:goat_hood"
 						tag: {
 							Damage: 0
@@ -3213,7 +2388,7 @@
 				{
 					id: "327F9681C24EEFCA"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:chicken_mask"
 						tag: {
 							Damage: 0
@@ -3224,7 +2399,7 @@
 				{
 					id: "6CB5D8E72D50C1D1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:white_bunny_ears"
 						tag: {
 							Damage: 0
@@ -3586,141 +2761,6 @@
 			}]
 			x: 1.0d
 			y: 5.5d
-		}
-		{
-			dependencies: ["532C8FDE301864A5"]
-			id: "01D031A53EAC8069"
-			rewards: [{
-				id: "695C6001AD74157C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "526B749F7222C65C"
-				item: "extradelight:caramel_sauce"
-				type: "item"
-			}]
-			x: 6.5d
-			y: -3.0d
-		}
-		{
-			dependencies: ["01D031A53EAC8069"]
-			id: "2A1F7200CE13EADE"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "528CC9CCBA3325E2"
-					table_id: 6485826240718891201L
-					type: "loot"
-				}
-				{
-					id: "6CCC45E0A586D58A"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [
-				{
-					id: "099545DE774F35C9"
-					item: "extradelight:caramel_apple"
-					type: "item"
-				}
-				{
-					id: "6172C938E5B503F0"
-					item: "extradelight:caramel_golden_apple"
-					type: "item"
-				}
-			]
-			x: 8.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["01D031A53EAC8069"]
-			id: "69C32A3F488170A4"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "11A063ED281D0C70"
-					table_id: 6485826240718891201L
-					type: "loot"
-				}
-				{
-					id: "0619F00869E3BA79"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "6793AE61AFFF2D31"
-				item: "extradelight:caramel_popsicle"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["01D031A53EAC8069"]
-			id: "50C7A915A81F5100"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "25736AC534864701"
-					table_id: 6485826240718891201L
-					type: "loot"
-				}
-				{
-					id: "02EA04698B95BF19"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "2EE50E56915597E5"
-				item: "extradelight:caramel_cheesecake_item"
-				type: "item"
-			}]
-			x: 6.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["01D031A53EAC8069"]
-			id: "0AEB08A4F4B954C0"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "5CF0845A902C0283"
-					table_id: 6485826240718891201L
-					type: "loot"
-				}
-				{
-					id: "584F8D81C06F0784"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "62EC0A564B589572"
-				item: "extradelight:caramel_custard"
-				type: "item"
-			}]
-			x: 5.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["395E7DB5ED9D326E"]
-			id: "1F484FE223357E32"
-			rewards: [{
-				id: "408F887B4B54DFE0"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "69AB06E9118AFB1B"
-				item: "casualness_delight:fried_fish"
-				type: "item"
-			}]
-			x: 13.0d
-			y: 1.5d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]

@@ -7,18 +7,14 @@
 	id: "39443E89A72F0AE5"
 	images: [{
 		alpha: 100
-		click: ""
-		corner: false
-		dev: false
 		height: 10.0d
-		hover: [ ]
 		image: "minecraft:item/dragon_breath"
 		rotation: 0.0d
 		width: 10.0d
 		x: 9.0d
 		y: -0.5d
 	}]
-	order_index: 5
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -186,10 +182,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"7DCA2C89A556E2DD"
-				"41F017E692B74F71"
-			]
+			dependencies: ["7DCA2C89A556E2DD"]
 			id: "15B639BE79C87D11"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -213,10 +206,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"34FE4BFC79F8CD0E"
-				"64697394745F589E"
-			]
+			dependencies: ["34FE4BFC79F8CD0E"]
 			id: "28B933178C34DDC7"
 			rewards: [{
 				exclude_from_claim_all: true

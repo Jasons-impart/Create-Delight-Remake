@@ -5,7 +5,7 @@
 	rewards: [
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:noir_wine"
 				tag: {
 					Year: 0
@@ -15,7 +15,7 @@
 		{ item: "createcafe:mango_milk_tea" }
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:stal_wine"
 				tag: {
 					Year: 0
@@ -24,7 +24,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:kelp_cider"
 				tag: {
 					Year: 0
@@ -33,7 +33,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:strad_wine"
 				tag: {
 					Year: 0
@@ -42,7 +42,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:magnetic_wine"
 				tag: {
 					Year: 0
@@ -51,7 +51,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:chorus_wine"
 				tag: {
 					Year: 0
@@ -60,7 +60,7 @@
 		}
 		{
 			item: {
-				Count: 1b
+				Count: 1
 				id: "vinery:aegis_wine"
 				tag: {
 					Year: 0

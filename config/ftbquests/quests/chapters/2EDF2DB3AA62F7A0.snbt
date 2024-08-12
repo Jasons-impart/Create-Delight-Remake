@@ -4,7 +4,7 @@
 	filename: "2EDF2DB3AA62F7A0"
 	group: "445171CC29E98940"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:elytra"
 		tag: {
 			Damage: 0
@@ -290,7 +290,7 @@
 			tasks: [{
 				id: "02B5B77F52AD24D4"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:large_fueling_tank"
 					tag: { }
 				}
@@ -310,7 +310,7 @@
 			tasks: [{
 				id: "4C99C42057DF87D6"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:medium_fueling_tank"
 					tag: { }
 				}
@@ -330,7 +330,7 @@
 			tasks: [{
 				id: "5C83585D863F36A4"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:small_fueling_tank"
 					tag: { }
 				}
@@ -382,7 +382,7 @@
 			tasks: [{
 				id: "6C1E4FAAD921C97B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:brass_exoskeleton_chestplate"
 					tag: {
 						Damage: 0
@@ -413,7 +413,7 @@
 			tasks: [{
 				id: "7CC7D7A885A81C7A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:andesite_jetpack_chestplate"
 					tag: {
 						Damage: 0
@@ -439,7 +439,7 @@
 			tasks: [{
 				id: "4D75DE983D0917D3"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:andesite_exoskeleton_chestplate"
 					tag: {
 						Damage: 0
@@ -465,7 +465,7 @@
 			tasks: [{
 				id: "47F375F3B49B541E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:grapplin_whisk"
 					tag: { }
 				}
@@ -524,7 +524,7 @@
 			tasks: [{
 				id: "6B724B9CA33802F1"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:brass_jetpack_chestplate"
 					tag: {
 						Damage: 0
@@ -542,7 +542,7 @@
 			tasks: [{
 				id: "32229E6063255A14"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:elytra"
 					tag: {
 						Damage: 0
@@ -563,7 +563,7 @@
 			tasks: [{
 				id: "0F2403327055AF5C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:tarantula_hawk_elytra"
 					tag: {
 						Damage: 0
@@ -580,7 +580,7 @@
 			tasks: [{
 				id: "3CA5C06B9F985B49"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "deeperdarker:soul_elytra"
 					tag: {
 						Damage: 0
@@ -652,7 +652,7 @@
 			tasks: [{
 				id: "427E8221A84132DA"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:small_filling_tank"
 					tag: { }
 				}
@@ -668,7 +668,7 @@
 			tasks: [{
 				id: "3D704E7BD0461AC5"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:medium_filling_tank"
 					tag: { }
 				}
@@ -686,7 +686,7 @@
 			tasks: [{
 				id: "336BD3B045C62DBE"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:large_filling_tank"
 					tag: { }
 				}
@@ -734,7 +734,7 @@
 			tasks: [{
 				id: "7DBB0F0669D2EDBA"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:copper_jetpack_chestplate"
 					tag: {
 						Damage: 0
@@ -760,7 +760,7 @@
 			tasks: [{
 				id: "0282053DDEEB7B60"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:copper_exoskeleton_chestplate"
 					tag: {
 						Damage: 0

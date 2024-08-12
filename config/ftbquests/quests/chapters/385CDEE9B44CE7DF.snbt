@@ -207,7 +207,7 @@
 			rewards: [{
 				id: "20D4AE0BC06F7606"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:sombrero"
 					tag: {
 						Damage: 0
@@ -834,7 +834,7 @@
 				{
 					id: "37172F6EE8B6669E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:frontier_cap"
 						tag: {
 							Damage: 0
@@ -1755,7 +1755,7 @@
 				{
 					id: "2BA56732F5EF4986"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:pupfish_locator"
 						tag: {
 							Damage: 0
@@ -1854,7 +1854,7 @@
 				{
 					id: "50032E0DE1F1DE3E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:flying_fish_boots"
 						tag: {
 							Damage: 0
@@ -1947,7 +1947,7 @@
 				{
 					id: "034202F9303C0B42"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:roadrunner_boots"
 						tag: {
 							Damage: 0
@@ -2129,7 +2129,7 @@
 				{
 					id: "521D9A2DE28B8836"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:emu_leggings"
 						tag: {
 							Damage: 0
@@ -2392,7 +2392,7 @@
 				{
 					id: "718109899A3364ED"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:crocodile_chestplate"
 						tag: {
 							Damage: 0
@@ -2539,7 +2539,7 @@
 				{
 					id: "758303DEB25195CD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:spiked_turtle_shell"
 						tag: {
 							Damage: 0
@@ -2772,7 +2772,7 @@
 				{
 					id: "21CEB1C75A1E5BEE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:centipede_leggings"
 						tag: {
 							Damage: 0
@@ -2895,7 +2895,7 @@
 				{
 					id: "786D6E4DB4A26EA1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:froststalker_helmet"
 						tag: {
 							Damage: 0
@@ -2998,7 +2998,7 @@
 				{
 					id: "509393342D3AA90E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:rocky_chestplate"
 						tag: {
 							Damage: 0
@@ -3077,7 +3077,7 @@
 				{
 					id: "2D0851980A92AB01"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:novelty_hat"
 						tag: {
 							Damage: 0
@@ -3096,7 +3096,7 @@
 				{
 					id: "00FA434D01D8A099"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:skelewag_sword"
 						tag: {
 							Damage: 0
@@ -3318,7 +3318,7 @@
 				{
 					id: "27D65BB40B9358FD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:ghostly_pickaxe"
 						tag: {
 							Damage: 0
@@ -3445,7 +3445,7 @@
 				{
 					id: "04359A206964D600"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:blood_sprayer"
 						tag: {
 							Damage: 0
@@ -3590,7 +3590,7 @@
 			tasks: [{
 				id: "47C38FDE0A2CFC4C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:tendon_whip"
 					tag: {
 						Damage: 0
@@ -3648,7 +3648,7 @@
 			tasks: [{
 				id: "0C87A6367A9DF8C1"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:straddleboard"
 					tag: {
 						Damage: 0
@@ -3746,7 +3746,7 @@
 				{
 					id: "225DBFE0A4898899"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:hemolymph_blaster"
 						tag: {
 							Damage: 0
@@ -4180,7 +4180,7 @@
 			tasks: [{
 				id: "20AE9B7BAF4B4AE3"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:dimensional_carver"
 					tag: {
 						Damage: 0
@@ -4212,7 +4212,7 @@
 			tasks: [{
 				id: "7FCEEB59602B754E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:squid_grapple"
 					tag: {
 						Damage: 0
@@ -4242,7 +4242,7 @@
 				{
 					id: "22BC82B38717AA9E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:echolocator"
 						tag: {
 							Damage: 0
@@ -4253,7 +4253,7 @@
 				{
 					id: "1EC713779B2B99C9"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "alexsmobs:endolocator"
 						tag: {
 							Damage: 0
@@ -4356,7 +4356,7 @@
 			tasks: [{
 				id: "44DA85D7864F3A42"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:pocket_sand"
 					tag: {
 						Damage: 0
@@ -4384,7 +4384,7 @@
 			tasks: [{
 				id: "3C2CBA18BB56AD92"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:shield_of_the_deep"
 					tag: {
 						Damage: 0
@@ -4400,7 +4400,7 @@
 			tasks: [{
 				id: "47ACEF368AF890C3"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "alexsmobs:lava_vision"
@@ -4416,7 +4416,7 @@
 			tasks: [{
 				id: "7477ECBE911EABBC"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "alexsmobs:soulsteal"
@@ -4432,7 +4432,7 @@
 			tasks: [{
 				id: "7E92CFD6AE82FA4D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "alexsmobs:knockback_resistance"
@@ -4448,7 +4448,7 @@
 			tasks: [{
 				id: "2F095AA05F7BEE9C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "alexsmobs:poison_resistance"
@@ -4471,7 +4471,7 @@
 			tasks: [{
 				id: "2DE3594456D0022B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:moose_headgear"
 					tag: {
 						Damage: 0
@@ -4501,7 +4501,7 @@
 			tasks: [{
 				id: "5DD62A067CF96C41"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:fedora"
 					tag: {
 						Damage: 0
@@ -4876,7 +4876,7 @@
 			tasks: [{
 				id: "7D27CED1DCFD7814"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:shattered_dimensional_carver"
 					tag: {
 						Damage: 0
