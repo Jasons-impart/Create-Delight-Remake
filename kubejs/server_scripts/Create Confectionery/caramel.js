@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.filling(
         'corn_delight:caramel_popcorn',
         [
-            "corn_delight:popcorn",
+            "culturaldelights:popcorn",
             Fluid.of("create_confectionery:caramel", 250)
         ]
     ).id("corn_delight:caramel_popcorn")

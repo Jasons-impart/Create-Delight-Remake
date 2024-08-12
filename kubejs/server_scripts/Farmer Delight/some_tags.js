@@ -48,12 +48,25 @@ ServerEvents.tags("item", e => {
         'culturaldelights:pickle',
         'culturaldelights:cut_pickle'
     ])
+    e.add("forge:seeds/corn", [
+        'culturaldelights:corn_kernels'
+    ])
+    e.add("forge:sausage/cooked", [
+        'ratatouille:sausage',
+        'createdelight:salami'
+    ])
+    e.add("forge:sausage/raw", [
+        'ratatouille:raw_sausage'
+    ])
     e.removeAllTagsFrom([
         'mynethersdelight:hoglin_sausage',
         'butchercraft:sausage',
         'butchercraft:cooked_sausage',
         'festival_delicacies:rice',
         'culturaldelights:cucumber',
-        "culturaldelights:cucumber_seeds"
+        "culturaldelights:cucumber_seeds",
+        'corn_delight:corn_seeds',
+        "corn_delight:corn",
+        "corn_delight:tortilla"
     ])
 })

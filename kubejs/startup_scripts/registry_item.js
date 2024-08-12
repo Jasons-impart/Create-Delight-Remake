@@ -289,6 +289,19 @@ StartupEvents.registry('item', e => {
             .saturation(1)
             .effect("minecraft:regeneration", 60, 1, 1.0)
         })
+    // 玉米粉
+    e.create("createdelight:corn_flour")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.corn_flour")
+    // 腊肠
+    e.create("createdelight:salami")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.salami")
+        .food(food => {
+            food.hunger(6)
+            .saturation(0.7)
+            .effect("farmersdelight:nourishment", 600, 1, 1.0)
+        })
     // 未完成相关
     e.create("createdelight:incomplete_alternator")
         .maxStackSize(64)
