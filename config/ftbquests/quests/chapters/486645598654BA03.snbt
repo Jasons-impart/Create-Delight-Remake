@@ -670,7 +670,7 @@
 			tasks: [{
 				id: "081508E9AF2E7728"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "create:sandpaper"

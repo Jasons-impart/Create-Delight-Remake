@@ -245,17 +245,6 @@
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
-			id: "6834EE3CBBA045F3"
-			tasks: [{
-				id: "11274012D2A21CD1"
-				item: "ulterlands:astrumm"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
 			id: "0A4E75FEB16DDA8A"
 			tasks: [{
 				id: "4554D969B601AC4E"

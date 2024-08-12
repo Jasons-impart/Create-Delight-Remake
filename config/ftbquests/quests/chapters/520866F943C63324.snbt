@@ -309,7 +309,7 @@
 			tasks: [{
 				id: "380FCE4F898FB702"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "aether:moa_eggs"

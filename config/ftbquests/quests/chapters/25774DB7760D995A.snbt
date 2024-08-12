@@ -428,7 +428,7 @@
 			tasks: [{
 				id: "25264C271CA1F12A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:seeds"

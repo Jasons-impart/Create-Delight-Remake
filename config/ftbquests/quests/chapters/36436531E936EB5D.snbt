@@ -28,9 +28,10 @@
 			subtitle: "用你的小手手去采集第一棵树吧，这将会是跨越性的一步"
 			tasks: [{
 				count: 4L
+				icon: "minecraft:oak_log"
 				id: "768E3C505359488C"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "minecraft:logs"
@@ -121,9 +122,16 @@
 			}]
 			subtitle: "做一把剑来自♂卫♂吧"
 			tasks: [{
+				icon: {
+					Count: 1
+					id: "minecraft:iron_sword"
+					tag: {
+						Damage: 0
+					}
+				}
 				id: "5BE561E2379D3E65"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:swords"
@@ -391,9 +399,16 @@
 			}]
 			subtitle: "永远刻在骨子里的种田的欲望！"
 			tasks: [{
+				icon: {
+					Count: 1
+					id: "minecraft:iron_hoe"
+					tag: {
+						Damage: 0
+					}
+				}
 				id: "6D9B874AD652364D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:hoes"
@@ -438,7 +453,7 @@
 		}
 		{
 			dependencies: ["3D7427876018E5D5"]
-			icon: "ends_delight:bubble_tea"
+			icon: "farmersrespite:green_tea"
 			id: "0826A7B25117A46A"
 			rewards: [{
 				exclude_from_claim_all: true

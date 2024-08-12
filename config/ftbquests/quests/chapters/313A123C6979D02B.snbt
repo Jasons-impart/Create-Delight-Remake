@@ -121,7 +121,7 @@
 			tasks: [{
 				id: "11918BFEA3A215E5"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:dough"
@@ -874,7 +874,7 @@
 			tasks: [{
 				id: "08646549F563E249"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "forge:bars/chocolate"

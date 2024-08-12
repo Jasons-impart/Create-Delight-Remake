@@ -2493,7 +2493,7 @@
 				{
 					id: "1DB15C0E2ECB8D15"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "forge:iron_series"
@@ -2505,7 +2505,7 @@
 				{
 					id: "69087E0F65E6629D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "itemfilters:tag"
 						tag: {
 							value: "minecraft:coals"

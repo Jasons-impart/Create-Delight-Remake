@@ -226,9 +226,10 @@
 			}]
 			subtitle: "手持酒瓶右键踩好的榨汁盆获得葡萄汁"
 			tasks: [{
+				icon: "vinery:red_grapejuice"
 				id: "6B8394E32227E69E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "vinery:grapejuice"

@@ -1447,7 +1447,7 @@
 			tasks: [{
 				id: "7AC07294A9672A7B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "farmersrespite:tea_leaves"
@@ -1626,7 +1626,7 @@
 			tasks: [{
 				id: "36CCFF63149B1CAA"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "vinery:red_grape"
@@ -1658,7 +1658,7 @@
 			tasks: [{
 				id: "6C0EDDE43261E39F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "itemfilters:tag"
 					tag: {
 						value: "vinery:white_grape"
