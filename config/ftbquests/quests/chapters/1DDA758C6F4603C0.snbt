@@ -4,14 +4,14 @@
 	filename: "1DDA758C6F4603C0"
 	group: "0E7AEC0D0D9C1B1C"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "ad_astra:tier_4_rocket"
 		tag: {
 			BotariumData: { }
 		}
 	}
 	id: "1DDA758C6F4603C0"
-	order_index: 6
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -97,7 +97,7 @@
 		{
 			dependencies: ["65C8753C15473A60"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ad_astra:space_helmet"
 				tag: {
 					Damage: 0
@@ -113,7 +113,7 @@
 				{
 					id: "55FD0DAD31E95905"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:space_suit"
 						tag: {
 							BotariumData: { }
@@ -125,7 +125,7 @@
 				{
 					id: "40B704BC1D9D4855"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:space_helmet"
 						tag: {
 							Damage: 0
@@ -136,7 +136,7 @@
 				{
 					id: "2F0B4121D540EA22"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:space_pants"
 						tag: {
 							Damage: 0
@@ -147,7 +147,7 @@
 				{
 					id: "0AE7BFA9031AF3A6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:space_boots"
 						tag: {
 							Damage: 0
@@ -219,7 +219,7 @@
 			tasks: [{
 				id: "0E5C6E185D52F32F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ad_astra:tier_1_rocket"
 					tag: {
 						BotariumData: { }
@@ -409,7 +409,7 @@
 			tasks: [{
 				id: "48900A0937C9BEDE"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ad_astra:tier_2_rocket"
 					tag: {
 						BotariumData: { }
@@ -560,7 +560,7 @@
 				{
 					id: "1392BD2C44C38782"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:netherite_space_helmet"
 						tag: {
 							Damage: 0
@@ -571,7 +571,7 @@
 				{
 					id: "453B2E3465ACD920"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:netherite_space_suit"
 						tag: {
 							BotariumData: { }
@@ -583,7 +583,7 @@
 				{
 					id: "563A69A45C2F4008"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:netherite_space_pants"
 						tag: {
 							Damage: 0
@@ -594,7 +594,7 @@
 				{
 					id: "43BFD33481757182"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:netherite_space_boots"
 						tag: {
 							Damage: 0
@@ -625,7 +625,7 @@
 			tasks: [{
 				id: "6870417650AA7A8D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ad_astra:tier_3_rocket"
 					tag: {
 						BotariumData: { }
@@ -798,7 +798,7 @@
 				{
 					id: "792F2E210552AC89"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:jet_suit_helmet"
 						tag: {
 							Damage: 0
@@ -809,7 +809,7 @@
 				{
 					id: "25F66E66E6551457"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:jet_suit"
 						tag: {
 							BotariumData: { }
@@ -821,7 +821,7 @@
 				{
 					id: "2D64EBEEDA52F3EA"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:jet_suit_pants"
 						tag: {
 							Damage: 0
@@ -832,7 +832,7 @@
 				{
 					id: "3FCBD471588C8F17"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:jet_suit_boots"
 						tag: {
 							Damage: 0
@@ -863,7 +863,7 @@
 			tasks: [{
 				id: "3243ED1F05B5794B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "ad_astra:tier_4_rocket"
 					tag: {
 						BotariumData: { }
@@ -1068,7 +1068,6 @@
 		{
 			dependencies: [
 				"2EF38D620B4E1664"
-				"41F017E692B74F71"
 				"7DC98E34AECFBB5C"
 			]
 			hide_dependent_lines: true
@@ -1090,7 +1089,6 @@
 		{
 			dependencies: [
 				"2EF38D620B4E1664"
-				"41F017E692B74F71"
 				"7DC98E34AECFBB5C"
 			]
 			hide_dependent_lines: true
@@ -1415,7 +1413,7 @@
 				{
 					id: "0830075346B3E6EE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ad_astra:tier_1_rocket"
 						tag: {
 							BotariumData: { }

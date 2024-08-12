@@ -970,7 +970,7 @@
 			tasks: [{
 				id: "40975FB38C43B923"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "refinedstorage:portable_grid"
 					tag: { }
 				}

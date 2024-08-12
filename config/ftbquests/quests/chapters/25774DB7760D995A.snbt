@@ -7,11 +7,7 @@
 	id: "25774DB7760D995A"
 	images: [{
 		alpha: 100
-		click: ""
-		corner: false
-		dev: false
 		height: 10.0d
-		hover: [ ]
 		image: "createdieselgenerators:item/crude_oil_bucket"
 		rotation: 0.0d
 		width: 10.0d
@@ -489,7 +485,7 @@
 				"01803FDA4CC252E4"
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ad_astra:tier_1_rocket"
 				tag: {
 					BotariumData: { }

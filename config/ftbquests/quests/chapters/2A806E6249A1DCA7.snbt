@@ -347,9 +347,10 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["08FD4AD67AD3D19E"]
+			dependencies: ["2B823CFAF4514D32"]
+			dependency_requirement: "one_started"
 			description: [
-				"利用糖、黄柠檬片和若干对应水果，在厨锅中进行烹煮获得。"
+				"利用糖、黄柠檬片（有的不需要）和若干对应水果，在厨锅中进行烹煮获得。"
 				""
 				"食用后恢复饥饿值6点和饱和度3点，并获得对应Buff效果。"
 				""
@@ -361,16 +362,10 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "诱人的粘稠物"
 			tasks: [{
-				id: "331CBBF109AB2D20"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "fruitsdelight:jelly"
-					}
-				}
-				title: "任意果酱"
+				id: "55EBFED51D1FD4A3"
+				item: "fruitsdelight:lemon_slice"
 				type: "item"
 			}]
 			title: "果酱"
@@ -378,7 +373,7 @@
 			y: -5.0d
 		}
 		{
-			dependencies: ["08FD4AD67AD3D19E"]
+			dependencies: ["58B030E19968924C"]
 			description: ["将果酱放在加热的炼药锅（下面放热源方块）内，用粘液球点击将其转化为对应的果冻"]
 			id: "077CC191544E19C9"
 			rewards: [{
@@ -387,17 +382,11 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "5F3A8FB8009AAF8D"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "fruitsdelight:jello"
-					}
-				}
-				title: "任意果冻~"
-				type: "item"
+				id: "7B2B103B9B8DFA00"
+				title: "制作出果冻"
+				type: "checkmark"
 			}]
+			title: "果冻"
 			x: -2.0d
 			y: -6.0d
 		}
@@ -443,24 +432,60 @@
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
+			description: [
+				"苹果汁拥有不同于其他果汁的合成方式。为什么？因为它是高贵的原版水果！"
+				"至于这两个西瓜汁......确实是不一样的物品哦。"
+			]
 			id: "2B823CFAF4514D32"
 			rewards: [{
 				id: "0338601E6DB30902"
 				type: "xp"
-				xp: 100
+				xp: 777
 			}]
-			tasks: [{
-				id: "65998E9FFC1C388F"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "fruitsdelight:juice"
-					}
+			subtitle: "与它们奇异的buff"
+			tasks: [
+				{
+					id: "1BA21C80B3C658D5"
+					item: "farmersrespite:strong_melon_juice"
+					type: "item"
 				}
-				title: "任意果汁"
-				type: "item"
-			}]
+				{
+					id: "6B92DBF7E079BEC8"
+					item: "fruitsdelight:hamimelon_juice"
+					type: "item"
+				}
+				{
+					id: "24733E5C59EB0F35"
+					item: "fruitsdelight:orange_juice"
+					type: "item"
+				}
+				{
+					id: "57DFD5D93A3721EB"
+					item: "fruitsdelight:orange_juice"
+					type: "item"
+				}
+				{
+					id: "769DF8413E1DD555"
+					item: "fruitsdelight:pear_juice"
+					type: "item"
+				}
+				{
+					id: "421B45086F1619C8"
+					item: "fruitsdelight:bayberry_soup"
+					type: "item"
+				}
+				{
+					id: "585FC13C837E84BC"
+					item: "vintagedelight:apple_sauce_mason_jar"
+					type: "item"
+				}
+				{
+					id: "0784C14C3F5D6C24"
+					item: "farmersdelight:melon_juice"
+					type: "item"
+				}
+			]
+			title: "果汁"
 			x: -2.0d
 			y: -4.0d
 		}
@@ -501,7 +526,7 @@
 		{
 			dependencies: ["58B030E19968924C"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "fruitsdelight:jelly_bread"
 				tag: {
 					JellyEffectRoot: [""]

@@ -7,18 +7,14 @@
 	id: "028B14323B1C41A2"
 	images: [{
 		alpha: 100
-		click: ""
-		corner: false
-		dev: false
 		height: 10.0d
-		hover: [ ]
 		image: "deeperdarker:item/heart_of_the_deep"
 		rotation: 0.0d
 		width: 10.0d
 		x: 0.0d
 		y: 0.0d
 	}]
-	order_index: 4
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -173,7 +169,7 @@
 			tasks: [{
 				id: "18EE7F66A27A0C8D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "deeperdarker:warden_helmet"
 					tag: {
 						Damage: 0

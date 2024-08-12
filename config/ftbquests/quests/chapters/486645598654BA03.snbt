@@ -7,11 +7,7 @@
 	id: "486645598654BA03"
 	images: [{
 		alpha: 100
-		click: ""
-		corner: false
-		dev: false
 		height: 9.0d
-		hover: [ ]
 		image: "endrem:items/nether_eye"
 		rotation: 0.0d
 		width: 9.0d
@@ -37,7 +33,7 @@
 			tasks: [{
 				id: "245562B2323EDF0E"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:hemolymph_blaster"
 					tag: {
 						Damage: 0
@@ -87,7 +83,7 @@
 			tasks: [{
 				id: "1ACFDCAEC6037F0A"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "alexsmobs:blood_sprayer"
 					tag: {
 						Damage: 0
@@ -471,7 +467,7 @@
 			rewards: [{
 				id: "00DEE66469EBA0AC"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:enchanted_book"
 					tag: {
 						StoredEnchantments: [{
@@ -537,7 +533,7 @@
 			rewards: [{
 				id: "5A248A5DB347B7DB"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "minecraft:strong_regeneration"
@@ -653,7 +649,7 @@
 				block_type: 0
 				checkItem: false
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:potion"
 					tag: {
 						Potion: "minecraft:mundane"
@@ -740,7 +736,7 @@
 			tasks: [{
 				id: "16BCE32BA9DFF786"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "create_sa:rose_quartz_pickaxe"
 					tag: {
 						Damage: 0
