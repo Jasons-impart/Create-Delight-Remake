@@ -31,9 +31,9 @@
 			]
 			subtitle: "开启你的星际旅途吧！(书中内容不准确不要完全相信)"
 			tasks: [{
-				id: "36943D18052D9C81"
-				item: "ad_astra:astrodux"
-				type: "item"
+				id: "2EA2188667CCC5E9"
+				title: "星际探索"
+				type: "checkmark"
 			}]
 			x: 5.0d
 			y: 9.5d
@@ -1042,7 +1042,7 @@
 			}]
 			tasks: [{
 				id: "6C3C044670B70BBC"
-				item: "ad_astra:engine_fan"
+				item: "ad_astra:fan"
 				type: "item"
 			}]
 			x: 3.5d

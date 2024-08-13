@@ -9,7 +9,6 @@ ServerEvents.tags("item", e => {
     ])
     e.removeAllTagsFrom([
         "ad_astra:steel_ingot",
-        "ad_astra:steel_nugget",
         "ad_astra:steel_rod",
         "ad_astra:steel_block"
     ])
@@ -27,7 +26,16 @@ ServerEvents.recipes(e => {
         "ad_astra:steel_ingot_from_steel_block",
         "ad_astra:steel_ingot",
         "ad_astra:steel_rod",
-        "ad_astra:steel_nugget"
+        "ad_astra:steel_nugget",
+        "createmetallurgy:melting/melting_steel",
+        "createmetallurgy:steel_ingots_from_block",
+        "createmetallurgy:steel_block_from_steel_ingots",
+        "createmetallurgy:melting/melting_brass",
+        "create:crafting/materials/brass_block_from_compacting",
+        "create:crafting/materials/brass_ingot_from_compacting",
+        "create:crafting/materials/brass_ingot_from_decompacting",
+        "create:crafting/materials/brass_nugget_from_decompacting",
+        "createmetallurgy:casting_in_table/brass_plate"
     ])
     e.remove({type: "createbigcannons:melting"})
     e.replaceInput({mod: "createmetallurgy"}, 'create:andesite_alloy', 'createbigcannons:cast_iron_ingot')

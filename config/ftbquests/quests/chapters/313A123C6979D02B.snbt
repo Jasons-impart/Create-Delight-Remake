@@ -119,6 +119,7 @@
 				xp: 100
 			}]
 			tasks: [{
+				icon: "farmersdelight:wheat_dough"
 				id: "11918BFEA3A215E5"
 				item: {
 					Count: 1
@@ -148,8 +149,8 @@
 				item: "minecraft:cake"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -5.5d
+			x: -1.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["19B378842DDB3477"]
@@ -378,8 +379,13 @@
 					type: "item"
 				}
 				{
-					id: "34A74ED71FB78742"
-					item: "extradelight:caramel_popcorn"
+					id: "6891C8950A77DF13"
+					item: "corn_delight:caramel_popcorn"
+					type: "item"
+				}
+				{
+					id: "584590F6A5755C63"
+					item: "corn_delight:popcorn_box"
 					type: "item"
 				}
 			]
@@ -959,22 +965,6 @@
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]
-			id: "6CF138BED23C2903"
-			rewards: [{
-				id: "061297162DAD9B9E"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "16E20A4008F0058A"
-				item: "extradelight:coffe_cake_feast"
-				type: "item"
-			}]
-			x: -1.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["3119FC900915CDC9"]
 			id: "3F154C08C98B21CB"
 			rewards: [{
 				id: "6A3185CF73B239D7"
@@ -986,8 +976,8 @@
 				item: "createaddition:chocolate_cake"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -6.0d
+			x: -1.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]

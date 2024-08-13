@@ -904,7 +904,7 @@
 				type: "item"
 			}]
 			x: -21.0d
-			y: 3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -1556,30 +1556,6 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["7E653A0F03BEE5A2"]
-			id: "39C3CE4A60A3E29C"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "25989026B5EF2B77"
-					table_id: 6485826240718891201L
-					type: "random"
-				}
-				{
-					id: "1D20112ACCC191CD"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "3FE1BB8B4F1C6A0D"
-				item: "brewinandchewin:kombucha"
-				type: "item"
-			}]
-			x: 4.0d
-			y: -1.0d
-		}
-		{
 			dependencies: ["7F9674CC778A157C"]
 			description: [""]
 			id: "2F2596CBA5D65075"
@@ -1624,6 +1600,7 @@
 				}
 			]
 			tasks: [{
+				icon: "vinery:red_grape"
 				id: "36CCFF63149B1CAA"
 				item: {
 					Count: 1
@@ -1632,7 +1609,7 @@
 						value: "vinery:red_grape"
 					}
 				}
-				title: "Any #vinery:red_grape"
+				title: "任意红葡萄"
 				type: "item"
 			}]
 			title: "红葡萄"
@@ -1656,6 +1633,7 @@
 				}
 			]
 			tasks: [{
+				icon: "vinery:white_grape"
 				id: "6C0EDDE43261E39F"
 				item: {
 					Count: 1
@@ -1664,7 +1642,7 @@
 						value: "vinery:white_grape"
 					}
 				}
-				title: "Any #vinery:white_grape"
+				title: "任意白葡萄"
 				type: "item"
 			}]
 			title: "白葡萄"
@@ -3250,38 +3228,6 @@
 			}]
 			x: -9.0d
 			y: 1.0d
-		}
-		{
-			dependencies: ["50602D5E64D63267"]
-			id: "20B4C44D1BB75279"
-			rewards: [{
-				id: "01F8CF495E488E2B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7C7C54A0AE26A0E3"
-				item: "extradelight:sliced_potato"
-				type: "item"
-			}]
-			x: -21.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["20B4C44D1BB75279"]
-			id: "4696249C2E4B7E07"
-			rewards: [{
-				id: "21F30F0B4F4511BD"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1215D8E3664FB52D"
-				item: "extradelight:potato_chips"
-				type: "item"
-			}]
-			x: -22.5d
-			y: 2.0d
 		}
 	]
 	title: "&e血脉觉醒！"
