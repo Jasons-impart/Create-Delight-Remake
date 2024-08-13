@@ -75,35 +75,4 @@ ServerEvents.recipes(e => {
         }
     })
     .id("farmersrespite:brewing/coffee")
-    // 烈焰辣椒酱
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "cookingtime": 200,
-        "experience": 0.35,
-        "ingredients": [
-            {
-                "item": "minecraft:blaze_powder"
-            },
-            {
-                "item": "minecraft:blaze_powder"
-            },
-            {
-                "item": "minecraft:nether_wart"
-            },
-            {
-                "item": "minecraft:nether_wart"
-            },
-            {
-                "item": 'createcafe:coffee_grounds'
-            },
-            {
-                "tag": "forge:raw_beef"
-            }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-            "item": "farmersrespite:blazing_chili"
-        }
-    })
-    .id("farmersrespite:cooking/blazing_chili")
 })

@@ -16,7 +16,8 @@ ServerEvents.recipes(e => {
         "create_confectionery:cocoa_powder_and_butter_recipe",
         "create:mixing/normal_chocolate",
         "farmersdelight:cooking/hot_cocoa",
-        "create_central_kitchen:emptying/hot_cocoa"
+        "create_central_kitchen:emptying/hot_cocoa",
+        "create_central_kitchen:filling/hot_cocoa"
     ])
     e.replaceInput({mod: "createcafe"}, "minecraft:cocoa_beans", "ratatouille:cocoa_powder")
     // 热可可
