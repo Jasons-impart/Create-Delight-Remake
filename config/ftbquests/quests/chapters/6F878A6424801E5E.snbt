@@ -9,7 +9,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["34D9D292CE6F683E"]
 			description: [
 				"刀是农夫乐事中最基础的工具，用剑来切割食物未免有些大材小用，而刀就刚好合适。除了用于切割食材，你也可以用刀来收割一些草本植物(比如草、小麦、稻米等)来有概率的获得草.刀和原版工具一样可以使用不同材料合成，但是注意，木刀和石刀是不存在的，取而代之的是燧石刀。&m所以，是时候去控些沙砥了。&r"
 				""
@@ -44,7 +43,9 @@
 					xp: 100
 				}
 			]
-			subtitle: "来做一把厨师刀吧"
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "给你一把厨师刀吧"
 			tasks: [{
 				id: "2ED3506D3D32A99F"
 				item: "farmersdelight:cutting_board"
@@ -114,21 +115,13 @@
 					type: "xp"
 					xp: 100
 				}
-			]
-			size: 1.5d
-			tasks: [
 				{
-					id: "5553B5232EF96069"
-					item: "farmersdelight:stove"
-					type: "item"
-				}
-				{
-					id: "291EC4D84A5BFBBE"
+					id: "22B7B69077015390"
 					item: "farmersdelight:cooking_pot"
 					type: "item"
 				}
 				{
-					id: "2CA30668956A624A"
+					id: "0F8752A8D77ACAB9"
 					item: {
 						Count: 1
 						id: "farmersdelight:skillet"
@@ -139,9 +132,17 @@
 					type: "item"
 				}
 			]
-			title: "开始做饭"
-			x: 2.5714285714285694d
-			y: 2.9761904761904816d
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "拿好这套最泛用的厨具！......丢了就自己做一套咯"
+			tasks: [{
+				id: "5553B5232EF96069"
+				item: "farmersdelight:stove"
+				type: "item"
+			}]
+			title: "我寻思这能用厨锅做"
+			x: 3.75d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -190,7 +191,7 @@
 				item: "farmersdelight:canvas"
 				type: "item"
 			}]
-			x: -6.5d
+			x: -6.0d
 			y: -0.5d
 		}
 		{
@@ -215,8 +216,8 @@
 				item: "farmersdelight:tatami"
 				type: "item"
 			}]
-			x: -6.5d
-			y: -2.0d
+			x: -6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["0A57106C8D121016"]
@@ -240,7 +241,7 @@
 				item: "farmersdelight:organic_compost"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -4.0d
 			y: -0.5d
 		}
 		{
@@ -298,10 +299,9 @@
 				type: "item"
 			}]
 			x: -5.0d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["7F9674CC778A157C"]
 			id: "0DB5F873297C3601"
 			rewards: [
 				{
@@ -315,13 +315,15 @@
 					xp: 100
 				}
 			]
+			shape: "rsquare"
+			size: 1.5d
 			subtitle: "可以用来简易的烹饪一些食物"
 			tasks: [{
 				id: "771F87D6CEDF680B"
 				item: "minecraft:campfire"
 				type: "item"
 			}]
-			x: -1.0d
+			x: 1.0d
 			y: 3.0d
 		}
 		{
@@ -393,8 +395,8 @@
 				item: "farmersdelight:rich_soil"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -2.0d
+			x: -4.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -492,7 +494,7 @@
 				item: "farmersdelight:rice_panicle"
 				type: "item"
 			}]
-			x: -17.0d
+			x: -16.5d
 			y: 1.0d
 		}
 		{
@@ -656,8 +658,8 @@
 				type: "item"
 			}]
 			title: "主世界咖啡"
-			x: 1.5d
-			y: -5.0d
+			x: 1.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -729,7 +731,7 @@
 				type: "item"
 			}]
 			x: -7.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]
@@ -754,7 +756,7 @@
 				type: "item"
 			}]
 			x: -6.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]
@@ -779,7 +781,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]
@@ -804,7 +806,7 @@
 				type: "item"
 			}]
 			x: -2.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]
@@ -828,7 +830,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5E77B30490CE96A9"]
@@ -854,7 +856,7 @@
 				type: "item"
 			}]
 			x: -7.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["5E77B30490CE96A9"]
@@ -880,7 +882,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["50602D5E64D63267"]
@@ -931,8 +933,8 @@
 				item: "createcafe:roasted_coffee_beans"
 				type: "item"
 			}]
-			x: 1.5d
-			y: -6.5d
+			x: 2.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["037A91D476687446"]
@@ -955,8 +957,8 @@
 				item: "createcafe:coffee_grounds"
 				type: "item"
 			}]
-			x: 1.5d
-			y: -8.0d
+			x: 3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["326D5BCADED75129"]
@@ -978,8 +980,8 @@
 				item: "createcafe:coffee_bucket"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -9.5d
+			x: 5.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["0FF64A9D58056F37"]
@@ -1025,7 +1027,7 @@
 				item: "farmersdelight:rice"
 				type: "item"
 			}]
-			x: -17.0d
+			x: -16.5d
 			y: -0.5d
 		}
 		{
@@ -1050,8 +1052,8 @@
 				item: "farmersdelight:cooked_rice"
 				type: "item"
 			}]
-			x: -17.0d
-			y: -2.0d
+			x: -15.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["7ACB73C0E9FBD4A9"]
@@ -1075,7 +1077,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["6F7B5777661962A2"]
@@ -1100,7 +1102,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["663D41A82205B3E3"]
@@ -1124,7 +1126,7 @@
 				type: "item"
 			}]
 			x: -6.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["6FC70BA0AED3A137"]
@@ -1147,7 +1149,7 @@
 				type: "item"
 			}]
 			x: -5.5d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["7AB702E0298F4A91"]
@@ -1171,7 +1173,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["05282CE0DCD9BE28"]
@@ -1196,10 +1198,9 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
-			dependencies: ["236182632D72C634"]
 			description: [
 				"与厨锅一样，水壶的下方需要热源加热，热源的判定及使用方式与厨锅一致"
 				""
@@ -1227,6 +1228,7 @@
 					xp: 100
 				}
 			]
+			shape: "rsquare"
 			size: 1.5d
 			subtitle: "下午三点，饮茶先啦！"
 			tasks: [{
@@ -1235,24 +1237,26 @@
 				type: "item"
 			}]
 			title: "农夫暇事"
-			x: 2.5238095238095184d
-			y: 0.7857142857142989d
+			x: -5.5d
+			y: -3.5d
 		}
 		{
-			dependencies: ["06B65355766687C5"]
+			dependencies: ["785D1A93F824AE09"]
 			id: "22B1F8EBD3AD8690"
 			rewards: [{
 				id: "2B6F9259A4D10EA8"
 				type: "xp"
 				xp: 100
 			}]
+			shape: "diamond"
+			size: 1.1d
 			tasks: [{
 				id: "1D2C2244D2F5B647"
 				item: "farmersdelight:rice_roll_medley_block"
 				type: "item"
 			}]
-			x: -16.0d
-			y: -0.5d
+			x: -14.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["68D86CEADCEED138"]
@@ -1276,7 +1280,7 @@
 				type: "item"
 			}]
 			x: -7.5d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["6FC70BA0AED3A137"]
@@ -1300,7 +1304,7 @@
 				type: "item"
 			}]
 			x: -6.5d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -1333,8 +1337,8 @@
 				item: "farmersdelight:ham"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 2.0d
+			x: -3.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1EE815FF79CE7E9E"]
@@ -1357,8 +1361,8 @@
 				item: "farmersdelight:smoked_ham"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 1.0d
+			x: -3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["60FB6AB94FAB23A6"]
@@ -1386,8 +1390,8 @@
 				item: "farmersrespite:tea_seeds"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -2.5d
+			x: -1.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -1411,8 +1415,8 @@
 				title: "茶与咖啡！"
 				type: "checkmark"
 			}]
-			x: 2.5d
-			y: -4.0d
+			x: -0.5d
+			y: -3.5d
 		}
 		{
 			dependencies: [
@@ -1457,8 +1461,8 @@
 				type: "item"
 			}]
 			title: "茶叶"
-			x: 2.5d
-			y: -2.5d
+			x: -2.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["6F89BA119149A040"]
@@ -1488,8 +1492,8 @@
 				type: "item"
 			}]
 			title: "下界咖啡"
-			x: 3.5d
-			y: -5.0d
+			x: 1.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["2BE1586D9D67F9EA"]
@@ -1512,8 +1516,8 @@
 				item: "farmersrespite:coffee_berries"
 				type: "item"
 			}]
-			x: 3.5d
-			y: -6.5d
+			x: 2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: [
@@ -1552,8 +1556,8 @@
 				}
 			]
 			title: "茶香四溢"
-			x: 2.5d
-			y: -1.0d
+			x: -3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -1579,8 +1583,8 @@
 				item: "minecraft:milk_bucket"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 2.0d
+			x: -6.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -1720,7 +1724,7 @@
 					type: "item"
 				}
 			]
-			size: 1.5d
+			size: 1.0d
 			subtitle: "来一场酣畅淋漓的屠宰"
 			tasks: [{
 				id: "7AF368C25056875F"
@@ -1735,7 +1739,7 @@
 			}]
 			title: "不素之客"
 			x: -5.0d
-			y: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -1794,22 +1798,6 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["3113E45D7D1D9A4E"]
-			id: "06B65355766687C5"
-			rewards: [{
-				id: "79420C454425DFED"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "609AC6F5E1B1F321"
-				item: "minecraft:kelp"
-				type: "item"
-			}]
-			x: -16.0d
-			y: 1.0d
-		}
-		{
 			dependencies: ["4C5DB06DC3540875"]
 			description: [""]
 			id: "4D60541DC7BC99C6"
@@ -1831,8 +1819,8 @@
 				item: "alexsmobs:lobster_tail"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -2.0d
+			x: -10.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -1847,7 +1835,7 @@
 				item: "oceansdelight:guardian"
 				type: "item"
 			}]
-			x: -11.0d
+			x: -12.0d
 			y: -3.0d
 		}
 		{
@@ -1863,7 +1851,7 @@
 				item: "oceansdelight:elder_guardian_slab"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -11.0d
 			y: -3.0d
 		}
 		{
@@ -1879,8 +1867,8 @@
 				item: "alexsdelight:lobster_pasta"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -2.5d
+			x: -10.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["3DE3B1D469147E41"]
@@ -1895,7 +1883,7 @@
 				item: "oceansdelight:cabbage_wrapped_elder_guardian"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -11.0d
 			y: -4.0d
 		}
 		{
@@ -1911,7 +1899,7 @@
 				item: "oceansdelight:guardian_soup"
 				type: "item"
 			}]
-			x: -11.0d
+			x: -12.0d
 			y: -4.0d
 		}
 		{
@@ -1964,71 +1952,6 @@
 			y: 7.5d
 		}
 		{
-			dependencies: [
-				"06B65355766687C5"
-				"40EBFAF6221F7BC2"
-				"4B0786620564E8C0"
-				"5C89C920A90424EB"
-				"0EE8A8266EFEAAF7"
-				"7ACDEA9DCED69541"
-				"4D60541DC7BC99C6"
-				"1EE815FF79CE7E9E"
-				"7AB702E0298F4A91"
-				"3E503B85378F1A90"
-				"2F2596CBA5D65075"
-				"20220744AEF253DA"
-				"50602D5E64D63267"
-				"6E73DDAFB4DFC98C"
-				"78E572AC3FBB1F7D"
-				"5E77B30490CE96A9"
-				"485C7A8257263DA0"
-				"0FF64A9D58056F37"
-				"7ACB73C0E9FBD4A9"
-				"794C36745728144B"
-				"110EED3EE1EDAA42"
-				"2DC53FA04BB0EFF5"
-				"3DE3B1D469147E41"
-				"45343A38F7B9CD1A"
-				"663D41A82205B3E3"
-				"2CFB0734FCBA02CF"
-				"26E955F487E8570B"
-			]
-			hide_dependency_lines: true
-			icon: "farmersdelight:stove"
-			id: "5D3615715E39235B"
-			invisible: true
-			rewards: [
-				{
-					count: 16
-					id: "3246A01D97843B9F"
-					item: "farmersdelight:rich_soil"
-					random_bonus: 48
-					type: "item"
-				}
-				{
-					count: 16
-					id: "3F9FC545B946BD05"
-					item: "nethersdelight:rich_soul_soil"
-					random_bonus: 48
-					type: "item"
-				}
-				{
-					id: "72BA69F6240CE9C8"
-					type: "xp"
-					xp: 100
-				}
-			]
-			shape: "square"
-			size: 3.0d
-			tasks: [{
-				id: "7ED1F41CFAE34CAB"
-				title: "恭喜你！！！"
-				type: "checkmark"
-			}]
-			x: -4.928571428571431d
-			y: -4.5d
-		}
-		{
 			dependencies: ["45343A38F7B9CD1A"]
 			id: "05653E1D4D1B3343"
 			rewards: [{
@@ -2045,7 +1968,7 @@
 			y: -0.5d
 		}
 		{
-			dependencies: ["0DB5F873297C3601"]
+			dependencies: ["033FF9DA78350FB2"]
 			id: "1E01FC2BE0941E79"
 			rewards: [{
 				id: "5BC2D2575F24CAE5"
@@ -2053,6 +1976,7 @@
 				xp: 100
 			}]
 			size: 1.5d
+			subtitle: "水饺远不止这么点种类哦"
 			tasks: [
 				{
 					id: "1A3CE77A7D0F14F0"
@@ -2066,8 +1990,8 @@
 				}
 			]
 			title: "富有中国气息的灶台"
-			x: 2.547619047619051d
-			y: 5.285714285714278d
+			x: 1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["326D5BCADED75129"]
@@ -2083,8 +2007,8 @@
 				item: "farmersrespite:blazing_chili"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -8.0d
+			x: 4.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["326D5BCADED75129"]
@@ -2099,8 +2023,8 @@
 				item: "farmersrespite:coffee"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -9.5d
+			x: 4.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["3D0980BDCB8BBB78"]
@@ -2118,6 +2042,8 @@
 					xp: 100
 				}
 			]
+			shape: "diamond"
+			size: 1.1d
 			tasks: [
 				{
 					id: "16A5CB16CC41E074"
@@ -2130,8 +2056,8 @@
 					type: "item"
 				}
 			]
-			x: 0.5d
-			y: -11.5d
+			x: 7.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
@@ -2195,8 +2121,8 @@
 				}
 			]
 			title: "尸体派对"
-			x: -3.5d
-			y: 6.5d
+			x: -4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
@@ -2300,7 +2226,7 @@
 			]
 			title: "屠户!"
 			x: -5.0d
-			y: 6.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
@@ -2405,7 +2331,7 @@
 				type: "item"
 			}]
 			x: -5.5d
-			y: 8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["439CBC5217A0B311"]
@@ -2421,7 +2347,7 @@
 				type: "item"
 			}]
 			x: -5.5d
-			y: 10.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["191A371DB8F3E198"]
@@ -2436,7 +2362,7 @@
 				item: "farmersrespite:tea_curry"
 				type: "item"
 			}]
-			x: 4.0d
+			x: -1.5d
 			y: -2.5d
 		}
 		{
@@ -2454,8 +2380,8 @@
 				item: "everyxhotpot:hotpot"
 				type: "item"
 			}]
-			x: -0.9999999999999929d
-			y: 4.761904761904766d
+			x: -0.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["16DFD4344F249ED4"]
@@ -2488,8 +2414,8 @@
 					type: "item"
 				}
 			]
-			x: -1.0d
-			y: 6.5d
+			x: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2504,7 +2430,7 @@
 				item: "festival_delicacies:pork_cabbage_boiled_dumpling"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 0.0d
 			y: 7.5d
 		}
 		{
@@ -2516,11 +2442,11 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "0F8FAAD41EC592E4"
-				item: "festival_delicacies:pork_fennel_boiled_dumpling"
+				id: "21A52339936A55AB"
+				item: "festival_delicacies:rabbit_meat_boiled_dumpling"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 2.0d
 			y: 7.5d
 		}
 		{
@@ -2532,12 +2458,12 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "31589AF099AA547F"
-				item: "festival_delicacies:mutton_boiled_dumpling"
+				id: "3A366B0917BD6D66"
+				item: "festival_delicacies:pork_carrot_wonton"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 7.5d
+			x: 2.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2552,8 +2478,8 @@
 				item: "festival_delicacies:garlic_chive_egg_boiled_dumpling"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 6.5d
+			x: -0.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2564,12 +2490,12 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "5B00448E2E52600E"
-				item: "festival_delicacies:chicken_mushroom_boiled_dumpling"
+				id: "1CFE0CA0B96B3A59"
+				item: "festival_delicacies:pork_mushroom_wonton"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 6.5d
+			x: 2.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2580,12 +2506,12 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "73ADFB088DD6DB37"
-				item: "festival_delicacies:pork_potato_boiled_dumpling"
+				id: "3DA9C7E1BBE4BFE2"
+				item: "festival_delicacies:pork_cabbage_wonton"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 5.5d
+			x: 2.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["0DB5F873297C3601"]
@@ -2602,8 +2528,8 @@
 				type: "item"
 			}]
 			title: "油炸食品！"
-			x: -1.047619047619051d
-			y: 1.3809523809523867d
+			x: 2.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["1C15494FDC899174"]
@@ -2626,8 +2552,8 @@
 				item: "casualness_delight:plate_of_fried_dumpling"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -0.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1C15494FDC899174"]
@@ -2650,8 +2576,8 @@
 				item: "casualness_delight:tonkatsu"
 				type: "item"
 			}]
-			x: -0.5d
-			y: -0.5d
+			x: 3.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1C15494FDC899174"]
@@ -2674,8 +2600,8 @@
 				item: "casualness_delight:fried_chicken_chip"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 0.5d
+			x: 4.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1C15494FDC899174"]
@@ -2705,8 +2631,8 @@
 					type: "item"
 				}
 			]
-			x: -2.5d
-			y: 0.5d
+			x: 1.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2721,8 +2647,8 @@
 				item: "festival_delicacies:cod_boiled_dumpling"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 7.5d
+			x: -0.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2737,158 +2663,8 @@
 				item: "festival_delicacies:mushroom_boiled_dumpling"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 5.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "049795F88F833F83"
-			rewards: [{
-				id: "54D12588E87373A8"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "也许可以用来冷却什么东西？"
-			tasks: [{
-				id: "0CDFE5084CDD7DAE"
-				item: "ratatouille:frozen_block"
-				type: "item"
-			}]
-			title: ">_<好冷啊"
-			x: -13.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["34D9D292CE6F683E"]
-			icon: "ratatouille:spreader"
-			id: "491266302FA9FE5D"
-			rewards: [{
-				id: "41DC63E4F682B533"
-				type: "xp"
-				xp: 100
-			}]
-			size: 1.5d
-			subtitle: "开启你的精制谷物生活吧！"
-			tasks: [{
-				id: "40A0AC868B1E3044"
-				title: "机械动力农业化发展"
-				type: "checkmark"
-			}]
-			title: "农业科技！！！"
-			x: -12.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "662557EEE3B061E9"
-			rewards: [{
-				id: "4400DF5693B92126"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "用它来精制谷物！"
-			tasks: [{
-				id: "5729314983387862"
-				item: "ratatouille:thresher"
-				type: "item"
-			}]
-			x: -13.0d
-			y: 6.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "3A122009CACF7BFE"
-			rewards: [{
-				id: "7CC346ECD91F1111"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "脱模前记得抹油（绝对不是什么作者忘记抹油之类的）"
-			tasks: [{
-				id: "69B5F5A818546FB5"
-				item: "ratatouille:mechanical_demolder"
-				type: "item"
-			}]
-			title: "脱模！！！"
-			x: -11.0d
-			y: 6.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "00ACA87F51B9F575"
-			rewards: [{
-				id: "4BBA63ABBACE1BE5"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "加上分散网效果更佳"
-			tasks: [{
-				id: "11F91CE4793C581E"
-				item: "ratatouille:spreader"
-				type: "item"
-			}]
-			title: "骨粉漫天飞舞~"
-			x: -10.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "7758504DF8D2C26A"
-			rewards: [{
-				id: "6E9D2E38C49677EF"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "无需电力的超级烤箱！"
-			tasks: [
-				{
-					id: "4CB9338AEDF96D9E"
-					item: "ratatouille:oven"
-					type: "item"
-				}
-				{
-					id: "203AA815EE33B017"
-					item: "ratatouille:oven_fan"
-					type: "item"
-				}
-			]
-			title: "经典烤箱！但是复古！"
-			x: -11.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "74B75BCF745A2B80"
-			rewards: [{
-				id: "5C56350DFD09980D"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "相当于一格水源"
-			tasks: [{
-				id: "641E0A2EE11F696E"
-				item: "ratatouille:irrigation_tower"
-				type: "item"
-			}]
-			x: -12.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "0D514862CB51DDCE"
-			rewards: [{
-				id: "053E798BF7E80688"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "额，这玩意的食品安全可以得到保障吗？"
-			tasks: [{
-				id: "137738B2C76D555B"
-				item: "ratatouille:squeeze_basin"
-				type: "item"
-			}]
-			x: -13.0d
-			y: 8.5d
+			x: -0.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["110EED3EE1EDAA42"]
@@ -2936,7 +2712,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: -2.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2952,7 +2728,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: -1.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["7AA98D07FF5E4B1D"]
@@ -2968,7 +2744,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: -1.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2984,7 +2760,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: 0.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["284F00D6766657E8"]
@@ -3000,7 +2776,7 @@
 				type: "item"
 			}]
 			x: -9.0d
-			y: 0.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["1E91F5DE3ECE22E9"]
@@ -3016,7 +2792,7 @@
 				type: "item"
 			}]
 			x: -8.0d
-			y: 0.0d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -3034,8 +2810,8 @@
 				item: "crabbersdelight:bisque"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -1.5d
+			x: -9.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["5F741F8935086E26"]
@@ -3098,8 +2874,8 @@
 				item: "minecraft:pufferfish"
 				type: "item"
 			}]
-			x: -14.0d
-			y: -3.0d
+			x: -13.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["437DDAAF6F64D0E0"]
@@ -3114,8 +2890,8 @@
 				item: "crabbersdelight:pufferfish_slice"
 				type: "item"
 			}]
-			x: -15.0d
-			y: -4.0d
+			x: -14.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -3131,7 +2907,7 @@
 				type: "item"
 			}]
 			x: -15.0d
-			y: -5.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -3146,8 +2922,8 @@
 				item: "crabbersdelight:cooked_pufferfish_slice"
 				type: "item"
 			}]
-			x: -16.0d
-			y: -4.0d
+			x: -16.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -3163,7 +2939,7 @@
 				type: "item"
 			}]
 			x: -16.0d
-			y: -5.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -3178,8 +2954,8 @@
 				item: "crabbersdelight:clam"
 				type: "item"
 			}]
-			x: -14.0d
-			y: -2.0d
+			x: -13.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["2F7BE3A06FA611D6"]
@@ -3195,7 +2971,7 @@
 				type: "item"
 			}]
 			x: -15.0d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -3211,7 +2987,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0DEAA38692CAC333"]
@@ -3227,7 +3003,185 @@
 				type: "item"
 			}]
 			x: -9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["32EC1F9B28640CE2"]
+			id: "785D1A93F824AE09"
+			rewards: [{
+				id: "72D7379EFD133122"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "有谁吃过鳕鱼寿司吗？"
+			tasks: [{
+				id: "77EA11305E3220C0"
+				item: "farmersdelight:cod_roll"
+				type: "item"
+			}]
+			title: "各种寿司"
+			x: -15.5d
 			y: 1.0d
+		}
+		{
+			dependencies: ["0DB5F873297C3601"]
+			id: "033FF9DA78350FB2"
+			subtitle: "“精加工”章节有更多相关内容哦"
+			tasks: [{
+				id: "2CC6A034E63A1018"
+				item: "create:wheat_flour"
+				type: "item"
+			}]
+			title: "饼皮的必要准备"
+			x: 1.0d
+			y: 4.5d
+		}
+		{
+			id: "37E0D4C31FF54DAA"
+			rewards: [{
+				id: "41FC463E6A629CE7"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "做点长久保存的腌菜？"
+			tasks: [{
+				id: "2A618452973662F7"
+				item: "vintagedelight:fermenting_jar"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["37E0D4C31FF54DAA"]
+			id: "325B0F5FB59CCCAE"
+			rewards: [{
+				id: "18F8B4F40ABD517E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6DE0E24BBA9086EE"
+				item: "vintagedelight:salt_dust"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "49893FF273AC1342"
+			rewards: [{
+				id: "4FD82B6176840113"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "一个恶心但实用的配方"
+			tasks: [{
+				id: "59C62753654BC31C"
+				item: "minecraft:slime_block"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "04DB834A47F32296"
+			rewards: [{
+				id: "6DC4AC6D13525EF8"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0464E6FA553DE9D6"
+				item: "vintagedelight:pickle"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "00A19FBC8F88FCD7"
+			rewards: [{
+				id: "767C86694FC16E67"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7CB9235E242A552B"
+				item: "vintagedelight:pickled_onion"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "11386B9F1C79B64B"
+			rewards: [{
+				id: "248221331EB400FB"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5B6003C0B8D1D7CC"
+				item: "vintagedelight:pickled_beetroot"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "1F5B0460CFF1EBCF"
+			rewards: [{
+				id: "5925746445DB8857"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1613D3F91C92AA51"
+				item: "vintagedelight:pickled_egg"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "1EC5E4A030B2C6A6"
+			rewards: [{
+				id: "174E735551602611"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4B950A72F5A8F8C5"
+				item: "vintagedelight:salted_cod"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["325B0F5FB59CCCAE"]
+			id: "5E957078FBC7E9EC"
+			rewards: [{
+				id: "0ECA324587B83FCF"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1A27A27514B05E6B"
+				item: "vintagedelight:salted_salmon"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 9.5d
 		}
 	]
 	title: "&e血脉觉醒！"

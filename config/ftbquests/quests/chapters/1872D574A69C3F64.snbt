@@ -97,6 +97,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "当然啦，你可以把酒藏到存储磁盘里"
 			tasks: [
 				{
 					id: "474049F27A9EDD72"
@@ -1043,6 +1044,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "但生活需要仪式感"
 			tasks: [{
 				id: "485A07B3A4C52473"
 				item: "vinery:wine_box"

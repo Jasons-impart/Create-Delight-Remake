@@ -356,6 +356,7 @@
 				""
 				"任何果酱均可与面包、果丹皮、芒果合成果酱面包、果丹卷和生拌芒果，同时保留原材料果酱的Buff效果。"
 			]
+			icon: "fruitsdelight:apple_jelly"
 			id: "58B030E19968924C"
 			rewards: [{
 				id: "1DFD887AF7FDB14E"
@@ -375,6 +376,7 @@
 		{
 			dependencies: ["58B030E19968924C"]
 			description: ["将果酱放在加热的炼药锅（下面放热源方块）内，用粘液球点击将其转化为对应的果冻"]
+			icon: "fruitsdelight:apple_jello"
 			id: "077CC191544E19C9"
 			rewards: [{
 				id: "46587BE46FA97934"
@@ -382,9 +384,9 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "7B2B103B9B8DFA00"
-				title: "制作出果冻"
-				type: "checkmark"
+				id: "04B004606B961E81"
+				item: "minecraft:slime_ball"
+				type: "item"
 			}]
 			title: "果冻"
 			x: -2.0d
