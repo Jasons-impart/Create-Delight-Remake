@@ -1,7 +1,7 @@
 {
 	id: "2E496A964591D32D"
 	loot_size: 1
-	order_index: 10
+	order_index: 9
 	rewards: [
 		{ count: 3, item: "vinery:red_grape_seeds" }
 		{ count: 3, item: "vinery:savanna_grape_seeds_red" }

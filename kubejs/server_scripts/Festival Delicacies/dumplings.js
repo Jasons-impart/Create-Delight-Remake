@@ -63,7 +63,7 @@ ServerEvents.recipes(e => {
     dumpling(e, [
         "#forge:dough",
         'butchercraft:pork_stewmeat',
-        "#forge:vegetables/cabbage",
+        "#forge:vegetables/chinese_cabbage",
         "#forge:vegetables/onion"
     ], '2x festival_delicacies:pork_cabbage_boiled_dumpling', 1.0, 200)
     dumpling(e,[
@@ -111,7 +111,7 @@ ServerEvents.recipes(e => {
         "#forge:dough",
         'minecraft:egg',
         '#forge:vegetables/onion',
-        'culturaldelights:cut_eggplant'
+        "#forge:vegetables/eggplant"
     ], '2x festival_delicacies:eggplant_egg_boiled_dumpling', 1.0, 200)
     dumpling(e,[
         "#forge:dough",
@@ -144,7 +144,7 @@ ServerEvents.recipes(e => {
     wonton(e, [
         "#forge:dough",
         "#forge:raw_pork",
-        "#forge:vegetables/cabbage",
+        "#forge:vegetables/chinese_cabbage",
         "#forge:vegetables/onion",
         "minecraft:dried_kelp"
     ], 'festival_delicacies:pork_cabbage_wonton', 1.0, 200)

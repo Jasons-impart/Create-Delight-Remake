@@ -1,10 +1,31 @@
 ServerEvents.tags("item", e => {
-    // 西蓝花兼容沙拉
-    e.add("forge:salad_ingredients", [
-        "candlelight:broccoli"
-    ])
+    // 白菜兼容
     e.add("forge:salad_ingredients/cabbage", [
-        "candlelight:broccoli"
+        'festival_delicacies:chinese_cabbage',
+        'festival_delicacies:chinese_cabbage_leaf'
+    ])
+    e.add("forge:vegetables/cabbage", [
+        'festival_delicacies:chinese_cabbage',
+        'festival_delicacies:chinese_cabbage_leaf'
+    ])
+    e.add("forge:crops/cabbage", [
+        'festival_delicacies:chinese_cabbage',
+        'festival_delicacies:chinese_cabbage_leaf'
+    ])
+    // 茄子兼容
+    e.add("culturaldelights:all_eggplants", [
+        'festival_delicacies:eggplant'
+    ])
+    e.add("culturaldelights:regular_eggplants", [
+        'festival_delicacies:eggplant'
+    ])
+    e.add("forge:vegetables/eggplant", [
+        'culturaldelights:eggplant',
+        'culturaldelights:cut_eggplant'
+    ])
+    e.add("forge:crops/eggplant", [
+        'culturaldelights:eggplant',
+        'culturaldelights:cut_eggplant'
     ])
     // 肉类标签
     e.add("forge:meat/raw", [

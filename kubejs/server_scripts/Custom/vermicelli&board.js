@@ -56,4 +56,9 @@ ServerEvents.recipes(e => {
     .transitionalItem('create:dough')
     .loops(2)
     .id("createdelight:recipes/board_noodles")
+    e.recipes.farmersdelight.cutting(
+        "create:dough",
+        "#forge:tools/knives",
+        "createdelight:board_noodles"
+    ).id("createdelight:cutting/board_noodles")
 })

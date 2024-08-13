@@ -9,23 +9,23 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["24CF527B4E34E599"]
 			id: "0EE8A8266EFEAAF7"
 			rewards: [{
 				id: "2D82307445A9C74B"
 				type: "xp"
 				xp: 100
 			}]
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "7C3B39B536CE8E77"
 				item: "minecraft:wheat"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -1.0d
+			x: -3.5d
+			y: -2.0d
 		}
 		{
-			dependencies: ["24CF527B4E34E599"]
 			id: "5C89C920A90424EB"
 			rewards: [
 				{
@@ -73,8 +73,8 @@
 				item: "culturaldelights:corn_cob"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 3.0d
+			x: 15.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["16785EC784F2D8D9"]
@@ -109,8 +109,8 @@
 				item: "create:wheat_flour"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -1.0d
+			x: -3.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
@@ -121,21 +121,13 @@
 				xp: 100
 			}]
 			tasks: [{
-				icon: "farmersdelight:wheat_dough"
-				id: "11918BFEA3A215E5"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:dough"
-					}
-				}
-				title: "软软的圆圆的白白的"
+				id: "238863FC8DFD8B36"
+				item: "farmersdelight:wheat_dough"
 				type: "item"
 			}]
 			title: "揉一揉！搓一搓！"
-			x: -1.0d
-			y: -2.5d
+			x: -6.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]
@@ -151,8 +143,8 @@
 				item: "minecraft:cake"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -4.5d
+			x: -9.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["19B378842DDB3477"]
@@ -174,8 +166,8 @@
 				item: "corn_delight:tortilla_raw"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 5.0d
+			x: 12.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3F7843954E17972C"]
@@ -197,8 +189,8 @@
 				item: "corn_delight:tortilla"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 5.0d
+			x: 11.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -220,8 +212,8 @@
 				item: "corn_delight:taco"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 6.0d
+			x: 10.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["360536F1351D4A6E"]
@@ -289,13 +281,14 @@
 				type: "xp"
 				xp: 100
 			}]
+			shape: "diamond"
 			tasks: [{
 				id: "4596C686EE35D7E1"
 				item: "ratatouille:wheat_kernels"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -1.0d
+			x: -3.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
@@ -311,8 +304,8 @@
 				item: "create:dough"
 				type: "item"
 			}]
-			x: -4.5d
-			y: -1.0d
+			x: -3.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
@@ -327,8 +320,8 @@
 				item: "create_confectionery:gingerdough"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.5d
+			x: -6.0d
+			y: -2.0d
 		}
 		{
 			icon: "ratatouille:thresher"
@@ -342,9 +335,9 @@
 			size: 3.0d
 			subtitle: "获得面粉的第一步~"
 			tasks: [{
-				id: "4CC4E5A9F968CBB9"
-				title: "开始脱粒吧"
-				type: "checkmark"
+				id: "001ACC6FC0329554"
+				item: "ratatouille:thresher"
+				type: "item"
 			}]
 			title: "精加工！"
 			x: 3.5d
@@ -363,8 +356,8 @@
 				item: "culturaldelights:corn_kernels"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 4.0d
+			x: 15.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["680B9A0F1D464751"]
@@ -395,8 +388,8 @@
 				}
 			]
 			title: "&ePOPCORN！"
-			x: 6.523809523809497d
-			y: 3.559523809523803d
+			x: 18.023809523809497d
+			y: 5.559523809523803d
 		}
 		{
 			dependencies: ["680B9A0F1D464751"]
@@ -412,8 +405,8 @@
 				item: "createdelight:corn_flour"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 5.0d
+			x: 15.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["6A22C5C0C765FEE2"]
@@ -428,8 +421,8 @@
 				item: "culturaldelights:corn_dough"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 5.0d
+			x: 14.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["19B378842DDB3477"]
@@ -444,8 +437,8 @@
 				item: "culturaldelights:tortilla"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 4.0d
+			x: 13.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3F7843954E17972C"]
@@ -460,8 +453,8 @@
 				item: "culturaldelights:empanada"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 6.0d
+			x: 12.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["02A92B3F08154E18"]
@@ -478,8 +471,8 @@
 				type: "item"
 			}]
 			title: "美味的挂面"
-			x: -6.0d
-			y: -0.5d
+			x: -3.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["02A92B3F08154E18"]
@@ -494,8 +487,8 @@
 				item: "createdelight:board_noodles"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -2.0d
+			x: -2.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["59B7B3011C8F6379"]
@@ -511,8 +504,8 @@
 				type: "item"
 			}]
 			title: "正宗~安徽~牛又~板面喽~"
-			x: -7.5d
-			y: -2.0d
+			x: -1.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["52B972C68D42A749"]
@@ -527,8 +520,8 @@
 				item: "farmersdelight:vegetable_noodles"
 				type: "item"
 			}]
-			x: -7.5d
-			y: -0.5d
+			x: -2.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["52B972C68D42A749"]
@@ -543,24 +536,8 @@
 				item: "farmersdelight:noodle_soup"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["731029D680D12421"]
-			id: "6DCE50E42762DAA9"
-			rewards: [{
-				id: "36E48C51A3D60514"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "69306986BC55BF1B"
-				item: "casualness_delight:spring_roll"
-				type: "item"
-			}]
-			x: 0.5d
-			y: -2.0d
+			x: -4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["731029D680D12421"]
@@ -601,8 +578,8 @@
 				}
 			]
 			title: "可~带劲了！"
-			x: 0.5d
-			y: -4.0d
+			x: -7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -617,8 +594,8 @@
 				item: "corn_delight:nachos_block"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 6.0d
+			x: 11.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -633,8 +610,8 @@
 				item: "farmersdelight:mutton_wrap"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 4.0d
+			x: 9.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -649,8 +626,8 @@
 				item: "culturaldelights:beef_burrito"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.0d
+			x: 10.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -665,8 +642,8 @@
 				item: "culturaldelights:pork_wrap"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 4.0d
+			x: 11.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -681,8 +658,8 @@
 				item: "farmersdelight:mutton_wrap"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 5.0d
+			x: 9.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["026142A9E3B05A2B"]
@@ -697,8 +674,8 @@
 				item: "culturaldelights:chicken_taco"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 6.0d
+			x: 9.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5C89C920A90424EB"]
@@ -865,6 +842,7 @@
 				xp: 100
 			}]
 			tasks: [{
+				icon: "create_confectionery:bar_of_black_chocolate"
 				id: "08646549F563E249"
 				item: {
 					Count: 1
@@ -931,8 +909,8 @@
 				item: "ratatouille:cake_mold_filled"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -2.5d
+			x: -7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["264682461CB7D15A"]
@@ -947,8 +925,8 @@
 				item: "ratatouille:cake_base"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -4.0d
+			x: -9.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]
@@ -963,8 +941,8 @@
 				item: "createaddition:chocolate_cake"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -5.5d
+			x: -9.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]
@@ -979,11 +957,10 @@
 				item: "createaddition:honey_cake"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -5.5d
+			x: -10.5d
+			y: 1.0d
 		}
 		{
-			dependencies: ["24CF527B4E34E599"]
 			id: "3E05DBF4E5BF11B1"
 			rewards: [{
 				id: "00D491C8CF6D1499"
@@ -999,11 +976,10 @@
 				type: "questsadditions:break"
 				value: 1L
 			}]
-			x: 3.0d
-			y: 1.5d
+			x: 14.5d
+			y: 3.5d
 		}
 		{
-			dependencies: ["24CF527B4E34E599"]
 			id: "3FB56E0EBDB7FFED"
 			rewards: [{
 				id: "783D45FF5A4E3DDF"
@@ -1018,8 +994,8 @@
 				type: "questsadditions:break"
 				value: 1L
 			}]
-			x: 4.0d
-			y: 1.5d
+			x: 15.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["30B6F298F2BE3B14"]
@@ -1034,8 +1010,8 @@
 				item: "create_confectionery:gingerbread_man"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -4.5d
+			x: -7.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["30B6F298F2BE3B14"]
@@ -1050,8 +1026,8 @@
 				item: "create_confectionery:gingerbread"
 				type: "item"
 			}]
-			x: -5.0d
-			y: -3.5d
+			x: -7.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["3119FC900915CDC9"]
@@ -1066,24 +1042,8 @@
 				item: "farmersrespite:coffee_cake"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["731029D680D12421"]
-			id: "0E3C96EC1CB21C34"
-			rewards: [{
-				id: "261960DEAAB52AA7"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "623BFEC402FB5440"
-				item: "festival_delicacies:pork_cabbage_boiled_dumpling"
-				type: "item"
-			}]
-			x: 0.5d
-			y: -3.0d
+			x: -10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["602CCB45885ABE1B"]
@@ -1172,7 +1132,7 @@
 				type: "item"
 			}]
 			x: 11.0d
-			y: 0.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["19B378842DDB3477"]
@@ -1187,8 +1147,8 @@
 				item: "corn_delight:corn_dog"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 6.0d
+			x: 13.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["19B378842DDB3477"]
@@ -1203,8 +1163,8 @@
 				item: "corn_delight:classic_corn_dog"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 6.0d
+			x: 14.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1221,11 +1181,12 @@
 				type: "item"
 			}]
 			title: ">_<好冷啊"
-			x: 2.5d
-			y: -5.0d
+			x: 1.5d
+			y: 4.0d
 		}
 		{
-			icon: "ratatouille:spreader"
+			dependencies: ["24CF527B4E34E599"]
+			icon: "create:cogwheel"
 			id: "491266302FA9FE5D"
 			rewards: [{
 				id: "41DC63E4F682B533"
@@ -1242,7 +1203,7 @@
 			}]
 			title: "农业科技！！！"
 			x: 3.5d
-			y: -4.25d
+			y: 3.25d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1258,8 +1219,8 @@
 				item: "ratatouille:thresher"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -4.0d
+			x: 1.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1269,15 +1230,15 @@
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "脱模前记得抹油（绝对不是什么作者忘记抹油之类的）"
+			subtitle: "脱模后记得从脱模机中取出模具！"
 			tasks: [{
 				id: "69B5F5A818546FB5"
 				item: "ratatouille:mechanical_demolder"
 				type: "item"
 			}]
 			title: "脱模！！！"
-			x: 4.5d
-			y: -5.0d
+			x: 5.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1294,8 +1255,8 @@
 				type: "item"
 			}]
 			title: "骨粉漫天飞舞~"
-			x: 5.0d
-			y: -4.0d
+			x: 5.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1320,7 +1281,7 @@
 			]
 			title: "经典烤箱！但是复古！"
 			x: 4.5d
-			y: -3.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1337,7 +1298,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: -3.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1354,7 +1315,240 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: -5.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "41FC5B76E9352D7F"
+			tasks: [{
+				id: "4A4BA3A0B7A3CF56"
+				item: "mynethersdelight:spicy_noodle_soup"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["02A92B3F08154E18"]
+			id: "1B018B0BAD7887C5"
+			tasks: [{
+				id: "4ABC23C130883FF9"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1B018B0BAD7887C5"]
+			id: "4EDF6EF1AE913E61"
+			tasks: [{
+				id: "07264BF1CE781726"
+				item: "refurbished_furniture:bread_slice"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["4EDF6EF1AE913E61"]
+			id: "4A89F84A8228E98D"
+			tasks: [{
+				id: "7F641CCC45A65F85"
+				item: "refurbished_furniture:cheese_sandwich"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["731029D680D12421"]
+			id: "1F1B9886D887CA27"
+			tasks: [{
+				id: "6DAC5E60C37EEEC0"
+				item: "casualness_delight:spicy_strips"
+				type: "item"
+			}]
+			x: -7.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["2FDFCAF57DDEAEC8"]
+			id: "654F02937932261D"
+			tasks: [{
+				id: "150AA19BD3546811"
+				item: "createdelight:oil_dough"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2FDFCAF57DDEAEC8"]
+			id: "321731B44F9D61CE"
+			tasks: [{
+				id: "6FE0F27D94DA45C3"
+				item: "ratatouille:salty_dough"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["2FDFCAF57DDEAEC8"]
+			id: "31EB9A4E9BC58E42"
+			tasks: [{
+				id: "1CB73CBB206908C0"
+				item: "createcafe:oreo_dough"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3119FC900915CDC9"]
+			id: "44A62F16404E5921"
+			tasks: [{
+				id: "49D8EF5136FF7449"
+				item: "mynethersdelight:magma_cake"
+				type: "item"
+			}]
+			x: -11.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["264682461CB7D15A"]
+			id: "62E92230755F95B6"
+			tasks: [{
+				id: "57E06B4989478998"
+				item: "create:blaze_cake_base"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["62E92230755F95B6"]
+			id: "4B59BD8B5F84A1D8"
+			tasks: [{
+				id: "35260DF578FD3B7B"
+				item: "create_things_and_misc:slime_cake"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["02A92B3F08154E18"]
+			id: "68E33BCC20F1089F"
+			tasks: [
+				{
+					id: "749A9760E82C11EC"
+					item: "refurbished_furniture:raw_vegetable_pizza"
+					type: "item"
+				}
+				{
+					id: "41F7D3CCBFCFC857"
+					item: "refurbished_furniture:raw_meatlovers_pizza"
+					type: "item"
+				}
+				{
+					id: "23E75F4B1650D5FA"
+					item: "createdelight:raw_cheese_pizza"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["68E33BCC20F1089F"]
+			id: "30BFA3E46E51A0F9"
+			tasks: [
+				{
+					id: "54E79C8918470782"
+					item: "vintagedelight:cheese_pizza"
+					type: "item"
+				}
+				{
+					id: "53BFEE0E6FFAE2D1"
+					item: "refurbished_furniture:cooked_vegetable_pizza"
+					type: "item"
+				}
+				{
+					id: "71F8886AE5430A2C"
+					item: "refurbished_furniture:cooked_meatlovers_pizza"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["31EB9A4E9BC58E42"]
+			id: "04CD81ABC8A72548"
+			tasks: [{
+				id: "64785610253CD7A5"
+				item: "createcafe:oreo_half"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["04CD81ABC8A72548"]
+			id: "439D10EAA72B8E9C"
+			tasks: [{
+				id: "3DC048B6D8E2156C"
+				item: "createcafe:oreo"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["02A92B3F08154E18"]
+			id: "24420CA40ECF3555"
+			tasks: [{
+				id: "238A28CE0BB6E324"
+				item: "minecraft:slime_ball"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["62E92230755F95B6"]
+			id: "78E02206F9793206"
+			tasks: [{
+				id: "3987B0697275AD3F"
+				item: "create:blaze_cake"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["654F02937932261D"]
+			id: "4203D357B42B166C"
+			tasks: [{
+				id: "402652E6D3BFE0DA"
+				item: "createdelight:puff_pastry"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4203D357B42B166C"]
+			id: "091A81917B17827D"
+			tasks: [{
+				id: "0E656640A8037CCF"
+				item: "farmersdelight:pie_crust"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 2.0d
 		}
 	]
 	title: "&e精加工！"
