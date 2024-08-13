@@ -14,7 +14,7 @@
 		x: -5.0d
 		y: -0.5d
 	}]
-	order_index: 3
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -125,7 +125,6 @@
 		{
 			dependencies: [
 				"7E05A27248576CB3"
-				"0F9A325B7651DE3D"
 				"55A0A828B4E2FE87"
 			]
 			id: "2685F6D1660E47A0"
@@ -376,7 +375,6 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["0B20E731C8BC4961"]
 			id: "0DEDCED03944EE7C"
 			tasks: [{
 				id: "0165AA2F24011052"

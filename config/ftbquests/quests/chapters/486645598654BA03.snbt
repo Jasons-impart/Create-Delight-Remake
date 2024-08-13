@@ -522,13 +522,7 @@
 		{
 			dependencies: ["0FA33E07B6274219"]
 			description: ["先用灵魂沙或灵魂土摆成T形，下面的灵魂沙两侧必须是空气，然后在3块灵魂沙上方各放置一个凋灵骷髅头颅即可召唤出凋灵（备注：最后放置的方块必须是&4凋灵骷髅头颅&r），也可侧放或倒放，不影响凋灵的生成。"]
-			icon: {
-				Count: 1b
-				id: "endrem:wither_eye"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "minecraft:wither_skeleton_skull"
 			id: "40E0C96F55C7A737"
 			rewards: [{
 				id: "5A248A5DB347B7DB"
