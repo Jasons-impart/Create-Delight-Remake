@@ -1098,8 +1098,8 @@
 				item: "farmersdelight:hot_cocoa"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 2.0d
+			x: 8.0d
+			y: 0.5d
 		}
 		{
 			dependencies: [
