@@ -590,6 +590,7 @@
 				item: "culturaldelights:chicken_taco"
 				type: "item"
 			}]
+			title: "鸡肉塔可"
 			x: -15.5d
 			y: 8.25d
 		}
@@ -929,6 +930,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "好吃又好玩"
 			tasks: [{
 				id: "188694213B453B41"
 				item: "create_confectionery:gingerbread_man"
@@ -1300,7 +1302,7 @@
 				type: "item"
 			}]
 			x: -1.0d
-			y: 0.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -1475,7 +1477,7 @@
 				item: "farmersdelight:raw_pasta"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: 0.0d
 		}
 		{
@@ -1492,6 +1494,7 @@
 		{
 			dependencies: ["50A0A857DB0064F7"]
 			id: "7BC2B218AD80F15E"
+			subtitle: "还有其它意面可供选择哦"
 			tasks: [{
 				id: "05E84D8A01ECA8B8"
 				item: "farmersdelight:pasta_with_meatballs"
@@ -1579,22 +1582,22 @@
 		}
 		{
 			dependencies: ["2FDFCAF57DDEAEC8"]
-			icon: "createdelight:bayberry_cookie_dough"
+			icon: "createdelight:honey_cookie_dough"
 			id: "4756A869F0D350FF"
-			tasks: [{
-				icon: "createdelight:bayberry_cookie_dough"
-				id: "0C2F32D7F1AA9685"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:cookie_dough"
-					}
-				}
+			rewards: [{
+				id: "2BA215CE18668A98"
+				item: "createdelight:honey_cookie_dough"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 0.0d
+			subtitle: "必备物品黄油要准备好哦"
+			tasks: [{
+				id: "5DCD4258076F2490"
+				item: "createdelight:butter"
+				type: "item"
+			}]
+			title: "制作曲奇面团"
+			x: -2.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["6A22C5C0C765FEE2"]
@@ -1783,6 +1786,7 @@
 			id: "33C78746BA212239"
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "禾下乘凉梦"
 			tasks: [{
 				id: "2FEDDA278CED9ED2"
 				item: "farmersdelight:rice_panicle"
@@ -1951,6 +1955,23 @@
 			}]
 			x: -8.5d
 			y: 7.5d
+		}
+		{
+			dependencies: ["4756A869F0D350FF"]
+			id: "59CC95A18195ABFA"
+			rewards: [{
+				id: "416A24D2F21FCB06"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "3731B1E8667F96E1"
+				item: "farmersdelight:honey_cookie"
+				type: "item"
+			}]
+			title: "香脆曲奇"
+			x: -2.0d
+			y: 0.0d
 		}
 	]
 	title: "&e精加工！"

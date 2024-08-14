@@ -404,6 +404,7 @@
 					xp: 100
 				}
 			]
+			subtitle: "被转变者"
 			tasks: [{
 				id: "5205CDA485DFFA93"
 				item: "farmersdelight:rich_soil"

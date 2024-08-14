@@ -34,11 +34,10 @@
 			y: 10.0d
 		}
 	]
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["4144F362E5458112"]
 			id: "3063D93E51ECAFA7"
 			rewards: [{
 				id: "76847546E3621FC9"
@@ -108,7 +107,6 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["77ECF5D5E59B874F"]
 			dependency_requirement: "one_completed"
 			hide_dependency_lines: true
 			id: "181E2BB5C3BC31A9"
@@ -186,11 +184,16 @@
 		{
 			dependencies: ["26710B63F426D6DF"]
 			id: "54E9D8443D877CB9"
+			rewards: [{
+				id: "3B16BC3FA18CB02A"
+				type: "xp"
+				xp: 100
+			}]
 			shape: "diamond"
 			subtitle: "这玩意可是现代工业的基础！（大量需求建议多做一点）"
 			tasks: [{
-				id: "0D470F995052EBA6"
-				item: "alloyed:steel_ingot"
+				id: "4C4FC31D7412FF4B"
+				item: "createmetallurgy:steel_ingot"
 				type: "item"
 			}]
 			title: "反复捶打！"
@@ -254,6 +257,8 @@
 			]
 			description: ["一个下界传送门由黑曜石框架构成（最小4×5，最大23×23，至少需要10个黑曜石，最多需要84个黑曜石）。边角上的四个黑曜石不是必须的。使用打火石激活。"]
 			id: "77C3D5F03FE29E44"
+			shape: "rsquare"
+			size: 1.2d
 			subtitle: "猪人：“&e我家还蛮大的，欢迎你来我家玩，玩累了就睡觉，没问题的&r”"
 			tasks: [{
 				dimension: "minecraft:the_nether"
@@ -417,7 +422,7 @@
 					type: "random"
 				}
 			]
-			subtitle: "终于不缺动力啦，哈哈哈哈！"
+			subtitle: "终于不缺动力啦"
 			tasks: [{
 				id: "297BB8D7090CD947"
 				item: "create:steam_engine"
@@ -984,7 +989,6 @@
 		}
 		{
 			dependencies: [
-				"77ECF5D5E59B874F"
 				"651AE0D14323B352"
 				"3956BF6CE5009F66"
 			]
@@ -1427,35 +1431,6 @@
 			y: 6.0d
 		}
 		{
-			dependencies: ["56B16C088C2D8BF7"]
-			hide_dependency_lines: true
-			id: "15192C0501E39792"
-			invisible: true
-			rewards: [{
-				id: "05494AC7B0302CF9"
-				item: "minecraft:golden_carrot"
-				random_bonus: 15
-				type: "item"
-			}]
-			shape: "square"
-			size: 3.0d
-			subtitle: "快去试试&e加农炮&r的&4巨大伤害&r吧！"
-			tasks: [{
-				id: "4A886A93E0722856"
-				item: {
-					Count: 1
-					id: "create:potato_cannon"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			title: "&e土豆神教！"
-			x: -4.5d
-			y: -3.0d
-		}
-		{
 			dependencies: ["0FB761C59E1A5A81"]
 			id: "388C12605ABFBD1D"
 			rewards: [{
@@ -1533,29 +1508,6 @@
 			title: "去抓&e“金”&r奴吧"
 			x: -6.0d
 			y: 0.0d
-		}
-		{
-			dependencies: ["46F3F0B5A507B3B5"]
-			id: "621260771FF90D36"
-			invisible: true
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "06A211F99006D21F"
-				table_id: 5347970608351672481L
-				type: "random"
-			}]
-			shape: "square"
-			size: 3.0d
-			subtitle: "&4超超超超超&r级远！"
-			tasks: [{
-				advancement: "create:extendo_grip_dual"
-				criterion: ""
-				id: "38AE8D28BDD7B1FD"
-				type: "advancement"
-			}]
-			title: "哇！&e这么远&r的触及距离！"
-			x: -1.5d
-			y: -3.0d
 		}
 		{
 			dependencies: [
@@ -1826,11 +1778,6 @@
 				type: "item"
 			}]
 			subtitle: "&4 柴油引擎&r的基础材料！"
-			tasks: [{
-				id: "59440DEB3B04DA7E"
-				item: "alloyed:bronze_ingot"
-				type: "item"
-			}]
 			title: "这是！&e青铜&r！"
 			x: -1.5d
 			y: 7.5d

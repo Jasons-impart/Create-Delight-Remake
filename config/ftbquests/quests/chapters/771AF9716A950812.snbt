@@ -12,16 +12,16 @@
 			description: ["推荐键位，n设置为ftbchunks地图，m设置为xareo地图"]
 			id: "55C42BCE0E399B3D"
 			size: 4.0d
-			subtitle: "原来你也玩机械动力悠然乐事！"
+			subtitle: "一切等待你兴起！"
 			tasks: [{
 				dimension: "minecraft:overworld"
 				disable_toast: true
 				icon: "minecraft:grass_block"
 				id: "2664A2E2CC659A77"
-				title: "原来你也玩机械动力悠然乐事！"
+				title: "新生"
 				type: "dimension"
 			}]
-			title: "异世相遇，尽享乐事~"
+			title: "踏进这片天地"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -36,8 +36,8 @@
 				type: "checkmark"
 			}]
 			title: "屠宰相关"
-			x: 3.5d
-			y: -1.5d
+			x: 3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -50,8 +50,8 @@
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 3.5d
-			y: 1.5d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -64,8 +64,8 @@
 				type: "checkmark"
 			}]
 			title: "如何去往末地"
-			x: -4.0d
-			y: -1.5d
+			x: -3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -79,21 +79,7 @@
 			}]
 			title: "各式各样的生物"
 			x: -4.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["55C42BCE0E399B3D"]
-			description: ["&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"]
-			id: "20B3ECF56011C11A"
-			size: 2.0d
-			subtitle: "注意柴油动力里的燃料"
-			tasks: [{
-				id: "495948214572F723"
-				title: "柴油动力！"
-				type: "checkmark"
-			}]
-			x: 0.0d
-			y: -4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -347,8 +333,111 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: 4.0d
+			y: -4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "ftbquests:book"
+			id: "54E5D285A4300964"
+			optional: true
+			rewards: [{
+				id: "7B3B009F64264C00"
+				item: "ftbquests:book"
+				type: "item"
+			}]
+			size: 2.0d
+			subtitle: "看我多大方，任务书随便拿！"
+			tasks: [{
+				id: "5237AD30A9B874EA"
+				title: "点击获得任务书！"
+				type: "checkmark"
+			}]
+			title: "什么？任务书丢了？不知道合成表？"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			id: "3CF4C402145AF2B9"
+			rewards: [
+				{
+					count: 32
+					id: "34577CE3B8D49E78"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "37BA81B407C6B806"
+					item: "minecraft:iron_block"
+					type: "item"
+				}
+				{
+					count: 64
+					id: "5FEFD330247CCE72"
+					item: "minecraft:andesite"
+					type: "item"
+				}
+			]
+			size: 1.5d
+			subtitle: "去亲手采集第一颗树吧，这是跨越性的一步。（跨越的是不是有点大了？）"
+			tasks: [{
+				count: 4L
+				icon: "minecraft:oak_log"
+				id: "768E3C505359488C"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				title: "木头！"
+				type: "item"
+			}]
+			title: "要致富还得是先撸树"
+			x: 0.0d
+			y: 5.25d
+		}
+		{
+			icon: "minecraft:red_bed"
+			id: "73CEB2D8D907517C"
+			rewards: [{
+				id: "35371B7E24B3591E"
+				item: "minecraft:red_bed"
+				type: "item"
+			}]
+			size: 1.5d
+			subtitle: "送你张床！"
+			tasks: [{
+				id: "00E6E046A67A3F2E"
+				title: "做个好梦"
+				type: "checkmark"
+			}]
+			title: "睡个好觉~"
+			x: 2.25d
+			y: 3.0d
+		}
+		{
+			icon: "minecraft:bread"
+			id: "33DC243444AA3860"
+			rewards: [{
+				count: 64
+				id: "6B442C619AB4184B"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			size: 1.5d
+			subtitle: "先让自己不要饿死"
+			tasks: [{
+				id: "02AD977C57124C8C"
+				title: "将就吃吧"
+				type: "checkmark"
+			}]
+			title: "在搭建一个自己的农场前......"
+			x: -2.5d
+			y: 3.0d
 		}
 	]
-	title: "介绍"
+	title: "初来乍到"
 }

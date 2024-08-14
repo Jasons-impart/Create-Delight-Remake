@@ -75,7 +75,6 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["3D7427876018E5D5"]
 			icon: {
 				Count: 1
 				id: "minecraft:diamond_sword"
