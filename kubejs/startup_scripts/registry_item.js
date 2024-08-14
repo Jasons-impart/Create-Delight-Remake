@@ -1,4 +1,9 @@
 StartupEvents.registry('item', e => {
+    // 安山合金粒
+    e.create("createdelight:andesite_alloy_nugget")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.andesite_alloy_nugget")
+        .tag("forge:nuggets/andesite_alloy")
     // 粗钢锭
     e.create("createdelight:raw_steel_ingot")
         .maxStackSize(64)

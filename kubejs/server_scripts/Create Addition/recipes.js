@@ -26,27 +26,15 @@ ServerEvents.recipes(e => {
         }
     ).id("createaddition:crafting/capacitor")
     // 连接器合成
-    e.custom({
-        "type": "minecraft:crafting_shapeless",
-        "ingredients": [
-            {
-                "tag": "forge:rods/electric"
-            },
-            {
-                "item": "create:andesite_alloy"
-            },
-            {
-                "item": "create:andesite_alloy"
-            },
-            {
-                "tag": "forge:slimeballs"
-            }
-        ],
-        "result":{
-            "item": "createaddition:large_connector",
-            "count": 2
-        }
-    }).id("createaddition:crafting/large_connector_electrum")
+    e.recipes.kubejs.shapeless(
+        "2x createaddition:large_connector",
+        [
+            "#forge:rods/electric",
+            "create:andesite_alloy",
+            "create:andesite_alloy",
+            "forge:slimeballs"
+        ]
+    ).id("createaddition:crafting/large_connector_electrum")
     // 电池合成
     let iner = 'createdelight:incompleted_modular_accumulator'
     e.recipes.create.sequenced_assembly('createaddition:modular_accumulator', 'create:brass_sheet', [

@@ -19,20 +19,10 @@ JEIEvents.hideItems(e => {
         "ad_astra:fluid_pipe_duct",
         "ad_astra:coal_generator",
         "ad_astra:iron_plate",
-        "ad_astra:steel_plate",
         "ad_astra:iron_rod",
         "ad_astra:steel_ingot",
-        "alloyedguns:musket",
-        "alloyedguns:flintlock",
-        "cgm:workbench",
         "create_enchantment_industry:experience_rotor",
-        "cgm:crude_shot",
-        "alloyedguns:complex_bullet_casing",
-        "alloyedguns:complex_bullet",
-        "alloyedguns:small_iron_pipe",
         "vinery:cherry_boat",
-        "beachparty:palm_boat",
-        "beachparty:palm_chest_boat",
         "vinery:cherry_chest_boat",
         "create_sa:block_picker",
         "refinedstorage:wrench",
@@ -47,5 +37,10 @@ JEIEvents.hideItems(e => {
 JEIEvents.addFluids(e => {
     e.add([
         "ratatouille:egg_yolk"
+    ])
+})
+JEIEvents.addItems(e => {
+    e.add([
+        "create:crushed_raw_tin"
     ])
 })

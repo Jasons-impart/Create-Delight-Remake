@@ -22,6 +22,7 @@ ServerEvents.recipes(e => {
         "create_things_and_misc:diluted_bonemeal_craft",
         "create_things_and_misc:bamboo_sail_craft",
         "create_things_and_misc:cherry_sail_craft",
-        "create_things_and_misc:sprinklerheadcraft"
+        "create_things_and_misc:sprinklerheadcraft",
+        "create_things_and_misc:blaze_burner_craft"
     ])
 })

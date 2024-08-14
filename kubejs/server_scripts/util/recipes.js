@@ -145,3 +145,15 @@ function wonton(event, inputs, output, exp, time) {
     event.recipes.farmersdelight.cooking(inputs, output, exp, time, "minecraft:bowl")
         .id(`createdelight:cooking/${output.split(":")[1]}`)
 }
+
+/**
+ * @param { Internal.RecipesEventJS } event 
+ * @param { InputItem_ } input
+ * @param { OutputItem_ } output 
+ * @param { number } xp // default 0.7
+ * @param { number } time // default 100 ticks
+ */
+function blast_and_smelting(event, input, output, xp, time) {
+    event.recipes.minecraft.blasting(output, input, xp, time).id(`createdelight:blasting/${output.split(":")[1]}_from_blasting_${input.split(":")[1]}`)
+    event.recipes.minecraft.smelting(output, input, xp, 2*time).id(`createdelight:smelting/${output.split(":")[1]}_from_melting_${input.split(":")[1]}`)
+}
