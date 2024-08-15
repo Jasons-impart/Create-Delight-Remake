@@ -26,10 +26,10 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "vintageimprovements:rolling/bronze_plate"}, "vintageimprovements:bronze_sheet", "createdelight:bronze_sheet")
     e.replaceOutput({id: "vintageimprovements:pressing/bronze_ingot"}, "vintageimprovements:bronze_sheet", "createdelight:bronze_sheet")
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createbigcannons:molten_bronze", 10),
+        Fluid.of("createbigcannons:molten_bronze", 90),
         [
-            Fluid.of("createdelight:molten_tin", 5),
-            Fluid.of("createmetallurgy:molten_copper", 5)
+            Fluid.of("createdelight:molten_tin", 45),
+            Fluid.of("createmetallurgy:molten_copper", 45)
         ], "superheated", 100
     ).id("createmetallurgy:alloying/alloying_bronze")
     metal_production_line(e, 

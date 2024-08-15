@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "create_central_kitchen:mixing/coffee"
+        "create_central_kitchen:mixing/coffee",
     ])
     // 袋装咖啡豆
     e.recipes.minecraft.crafting_shapeless(
@@ -57,22 +57,23 @@ ServerEvents.recipes(e => {
     .id("create_central_kitchen:filling/coffee")
     e.custom({
         "type": "farmersrespite:brewing",
-        "container": {
-            "item": "minecraft:glass_bottle"
+        "base": {
+          "count": 1000,
+          "fluid": "minecraft:water"
         },
         "cookingtime": 2400,
         "experience": 0.35,
-        "group": "coffee",
         "ingredients": [
-            {
-                "item": 'createcafe:coffee_grounds'
-            }
+          {
+            "item": "createcafe:coffee_grounds"
+          },
+          {
+            "item": "createcafe:coffee_grounds"
+          }
         ],
-        "needwater": true,
-        "recipe_book_tab": "drinks",
         "result": {
-            "item": "farmersrespite:coffee"
+          "count": 1000,
+          "fluid": "farmersrespite:coffee"
         }
-    })
-    .id("farmersrespite:brewing/coffee")
+      }).id("farmersrespite:brewing/coffee_from_water")
 })
