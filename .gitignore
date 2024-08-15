@@ -58,3 +58,11 @@ modpack.cfg
 *.bat
 /immersive_paintings_cache
 /.mixin.out
+/config/sound_physics_remastered
+/config/attributefix.json
+/config/embeddium-fingerprint.json
+/config/everycomp-hazardous.properties
+/config/fml.toml
+/config/quark-common.toml
+/config/screenshot_viewer-client.toml
+/config/sodium-extra-options.json
