@@ -51,18 +51,6 @@ ServerEvents.recipes(e => {
         .transitionalItem("refinedstorage:raw_advanced_processor")
         .loops(1)
         .id('refinedstorage:advanced_processor')
-    // 序列合成：神经处理器
-    e.recipes.create.sequenced_assembly('extrastorage:neural_processor', "refinedstorage:advanced_processor", [
-        e.recipes.create.deploying('extrastorage:raw_neural_processor', ['extrastorage:raw_neural_processor', "refinedstorage:processor_binding"]),
-        e.recipes.create.deploying('extrastorage:raw_neural_processor', ['extrastorage:raw_neural_processor', 'ulterlands:astrumm_ingot']),
-        e.recipes.create.deploying('extrastorage:raw_neural_processor', ['extrastorage:raw_neural_processor', "#forge:dusts/redstone"]),
-        e.recipes.create.deploying('extrastorage:raw_neural_processor', ['extrastorage:raw_neural_processor', "#forge:ingots/netherite"])
-            .keepHeldItem(),
-        e.recipes.create.pressing('extrastorage:raw_neural_processor', 'extrastorage:raw_neural_processor')
-    ])
-        .transitionalItem('extrastorage:raw_neural_processor')
-        .loops(1)
-        .id("extrastorage:neural_processor")
     // 破坏核心
     e.recipes.create.sequenced_assembly("refinedstorage:destruction_core", "refinedstorage:advanced_processor", [
         e.recipes.create.deploying("refinedstorage:advanced_processor", ["refinedstorage:advanced_processor", "minecraft:diamond_pickaxe"]),
