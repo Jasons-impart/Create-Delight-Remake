@@ -219,12 +219,19 @@
 				}
 			}
 			id: "428692AFFB20055B"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "6F897311B6775871"
-				table_id: 5077918012354645869L
-				type: "random"
-			}]
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3E1513777370ADD8"
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "6F897311B6775871"
+					table_id: 5077918012354645869L
+					type: "random"
+				}
+			]
 			shape: "diamond"
 			size: 2.0d
 			subtitle: "注意不要认领太多！！！"
