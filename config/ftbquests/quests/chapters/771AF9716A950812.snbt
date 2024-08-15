@@ -5,44 +5,290 @@
 	group: ""
 	icon: "create:goggles"
 	id: "771AF9716A950812"
+	images: [
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 10.0d
+			hover: [ ]
+			image: "minecraft:block/dispenser_top"
+			rotation: 0.0d
+			width: 10.0d
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "everycomp:textures/block/wdst/byg/zelkova_ladder.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.0d
+			y: -10.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "farmersrespite:item/dandelion_tea"
+			rotation: 0.0d
+			width: 5.0d
+			x: 5.0d
+			y: -3.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "minecraft:item/compass/compass_base_a"
+			rotation: 0.0d
+			width: 5.0d
+			x: -5.0d
+			y: -3.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "supplementaries:items/candle_holders/lime"
+			rotation: 0.0d
+			width: 5.0d
+			x: 5.0d
+			y: 3.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "colorfulhearts:textures/absorption.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "ftbquests:item/lootcrate/front_outline"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 1.0d
+			hover: [ ]
+			image: "storagedrawers:textures/blocks/overlay/handle_1.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 12.0d
+			y: 4.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "citadel:textures/gui/book/icon_default.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "tetra:blocks/crafting_table_top"
+			rotation: 0.0d
+			width: 5.0d
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "createbigcannons:block/cannon_barrel/bronze_cannon_barrel_end"
+			rotation: 0.0d
+			width: 5.0d
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "create:block/andesite_casing_piston"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.0d
+			y: -5.5d
+		}
+		{
+			click: ""
+			corner: false
+			dev: false
+			height: 5.0d
+			hover: [ ]
+			image: "farmersdelight:textures/particle/steam_2.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: 8.0d
+			y: -5.5d
+		}
+	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
 			description: ["推荐键位，n设置为ftbchunks地图，m设置为xareo地图"]
 			id: "55C42BCE0E399B3D"
+			rewards: [
+				{
+					count: 24
+					id: "4FEC9B470C9F32F5"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					id: "40200856857D68C6"
+					item: "sophisticatedbackpacks:iron_backpack"
+					type: "item"
+				}
+				{
+					count: 12
+					id: "02475B9958948AD4"
+					item: "minecraft:torch"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "57FE69D3711C215F"
+					table_id: 6485826240718891201L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "330CF7ABA2B6B346"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+			]
+			shape: "square"
 			size: 4.0d
-			subtitle: "一切等待你兴起！"
+			subtitle: "原来你也玩机械动力悠然乐事！"
 			tasks: [{
 				dimension: "minecraft:overworld"
 				disable_toast: true
 				icon: "minecraft:grass_block"
 				id: "2664A2E2CC659A77"
-				title: "新生"
+				title: "原来你也玩机械动力悠然乐事！"
 				type: "dimension"
 			}]
-			title: "踏进这片天地"
+			title: "异世相遇，尽享乐事~"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["55C42BCE0E399B3D"]
+			dependencies: ["64FB1FEC4F9721B7"]
 			description: ["注意！本整合包动物&e直接杀死&r&4不会掉落任何完整肉类&r！所有动物&4必须&r使用&4屠刀右键&r杀死！"]
+			icon: "minecraft:mutton"
 			id: "46F1F92929FC8F9F"
+			rewards: [{
+				id: "62B485112BBE2E6D"
+				item: "extradelight:bangers_mash"
+				type: "item"
+			}]
+			shape: "hexagon"
 			size: 2.0d
 			subtitle: "本整合包添加了屠宰乐事"
-			tasks: [{
-				id: "42B95E73286FD639"
-				type: "checkmark"
-			}]
+			tasks: [
+				{
+					id: "42B95E73286FD639"
+					type: "checkmark"
+				}
+				{
+					id: "1893FAE83B06F440"
+					item: {
+						Count: 1b
+						id: "butchercraft:butcher_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
 			title: "屠宰相关"
-			x: 3.0d
-			y: -3.0d
+			x: 8.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
+			icon: {
+				Count: 1b
+				id: "minecraft:player_head"
+				tag: {
+					SkullOwner: {
+						Id: [I;
+							-418050194
+							-2048506571
+							-1210633372
+							328619329
+						]
+						Name: "JnamerZ"
+						Properties: {
+							textures: [{
+								Signature: "kBnaHzQOHywFAbuX0Yc6CCzWVXcaVJ4V6YyUOTQ5ncr+tB+RkJwb3zuPcSHg729rzprToA2UoIjWN0khDzPSglr2TmALnbbm78fCVI1V0EHY/pavCgn88Geb4u6R49Lc5FIVuxoG0FcI1EpFniot+aSu8Uw5m09SJfEXtY8L3V74AaljdC8vQWEnCuc+yEL9Zd37TOmui6UbQFI4359DMy5kcg6Z2s2p305Iy2m1UU6/k1HT0IPaa7GBclgCkRWDbndgoQnT1LsV1nraqX04vr5FUro9xlVquBHCD8D1YC2EvKio8VZgGYIBdd5PufiOVSLtOwDeDM3Gyy4XaxLWCn8gZ7yJlxP1SkcZY5XGjDHd9HC7Z+mB0EW1HoOrGLQBPTBPnIHddJELuOxDDeoah0RdewVMjfIummXmtGTHby+QF6nLZWWkli+cnLunKlcdwUqLfU589fMhWQnJ3+QfEcRWwoeHTNeLL/K1e7MQmMQIYpq5GLyWBgCPBQmnRmtNF4MCbKRitDFels/G5srmGdR36HNApIbY7S4SSdbntW3zku/VOSLIn/wGJCA1fNrB7ASu3zewuZFC4NHYFplFghlCpj6pi5+BtY59gcmFZfj68Q+Rs+DYUs0pRG6mxtOQ4JHH3ws0Fz5u92Ekrgvsbe7YiVLNVwFOAesCZcp5MS0="
+								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTU5MzkwOCwKICAicHJvZmlsZUlkIiA6ICJlNzE1MGY2ZTg1ZTY0NTM1YjdkNzMzNjQxMzk2NTU0MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJKbmFtZXJaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlOTFiMDJhNzQ2N2YwNGVmN2M1MTA5NmEyNzlmY2Q4M2Q2ZGQwNWU4YmNhZWFhMGZkNTVmNGQ4Y2Y5NmU4M2EiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+							}]
+						}
+					}
+				}
+			}
 			id: "428692AFFB20055B"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3E1513777370ADD8"
+					table_id: 3539289042495036767L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "6F897311B6775871"
+					table_id: 5077918012354645869L
+					type: "random"
+				}
+			]
+			shape: "diamond"
 			size: 2.0d
 			subtitle: "注意不要认领太多！！！"
 			tasks: [{
@@ -50,46 +296,156 @@
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 4.0d
-			y: 0.0d
+			x: 5.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["由于未知力量&e（异界）&r入侵主世界，末影之眼失去了原来的效果，为了能够去往末地，你需要搜刮原版建筑中被异界能量影响的&1宝箱&r以及&1各种怪物&r，找齐&e12种末影之眼&r，你可以选择使用这些被&4异界&r能量影响的末影之眼定位传送门，找到传送门之后放置12中新末影之眼并取下原有的末影之眼，并进入末地最终与末影龙&4决一死战&r，解放这个世界"]
+			hide: true
+			icon: {
+				Count: 1b
+				id: "endrem:wither_eye"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "68E3F9D34EB6D9FB"
+			rewards: [
+				{
+					auto: "enabled"
+					description: ""
+					id: "0CF91682176F900F"
+					title: "你感觉有东西在盯着你"
+					type: "toast"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "00A76C3F345ABE5F"
+					table_id: 3539289042495036767L
+					type: "random"
+				}
+			]
+			shape: "octagon"
 			size: 2.0d
 			subtitle: "异世界力量入侵！"
-			tasks: [{
-				id: "2A29127615BBE470"
-				type: "checkmark"
-			}]
+			tasks: [
+				{
+					id: "2A29127615BBE470"
+					type: "checkmark"
+				}
+				{
+					id: "64554EA8680270EC"
+					item: "minecraft:ender_pearl"
+					type: "item"
+				}
+			]
 			title: "如何去往末地"
-			x: -3.0d
+			x: -5.0d
 			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了一系列来自alex的生物，如有不了解的问题可以查看&4任务书内相关章节&r"]
+			icon: "alexsmobs:maraca"
 			id: "48EC662CDE792B76"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2709BDF04A97B749"
+					table_id: 6485826240718891201L
+					type: "choice"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "10FA0C0DBD4AC714"
+					table_id: 4367154364932444092L
+					type: "choice"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "66FC11647493FB84"
+					table_id: 7772018159856264947L
+					type: "choice"
+				}
+			]
+			shape: "rsquare"
 			size: 2.0d
 			subtitle: "来自Alex的生物"
-			tasks: [{
-				id: "3ED4156434322595"
-				type: "checkmark"
-			}]
+			tasks: [
+				{
+					id: "3ED4156434322595"
+					type: "checkmark"
+				}
+				{
+					id: "38DA30EE9EDD5B8C"
+					item: "alexsmobs:animal_dictionary"
+					type: "item"
+				}
+			]
 			title: "各式各样的生物"
-			x: -4.0d
-			y: 0.0d
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["59350A53C2738BD9"]
+			description: ["&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"]
+			icon: "createdieselgenerators:diesel_engine"
+			id: "20B3ECF56011C11A"
+			rewards: [{
+				count: 4
+				id: "28462675C443A1BC"
+				item: "create_confectionery:caramelized_marshmellow_on_a_stick"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "注意柴油动力里的燃料"
+			tasks: [
+				{
+					id: "495948214572F723"
+					title: "柴油动力！"
+					type: "checkmark"
+				}
+				{
+					count: 24L
+					id: "3747D99FC15A1F1D"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -10.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
+			icon: {
+				Count: 1b
+				id: "minecraft:player_head"
+				tag: {
+					SkullOwner: {
+						Id: [I;
+							-1481240249
+							609436865
+							-2133274348
+							1779033550
+						]
+						Name: "hk11238981"
+						Properties: {
+							textures: [{
+								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY1NTc5MTg4NCwKICAicHJvZmlsZUlkIiA6ICJhN2I2MTE0NzI0NTM0NGMxODBkOGQxMTQ2YTA5ZTVjZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJoazExMjM4OTgxIiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTg1NzljYmY1OGUyYmQyNWJiOTJjMTJmYTc3MGE2NTYxYzY1MzZjZTkxOGVkZjNmYjQzOGNiMmEyYTljMzIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+							}]
+						}
+					}
+				}
+			}
 			id: "51C6C4C1530A4D3F"
 			rewards: [
 				{
 					id: "4A8756E748E0A516"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -113,7 +469,7 @@
 				{
 					id: "662FC193EC4C717D"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -138,7 +494,7 @@
 				{
 					id: "006D7714E74FBD5D"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -163,7 +519,7 @@
 				{
 					id: "5FE7428B42B4993F"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -188,7 +544,7 @@
 				{
 					id: "4E02990E5DFC6280"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -213,7 +569,7 @@
 				{
 					id: "33FD34B5A03CF83C"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -252,7 +608,7 @@
 				{
 					id: "5FA3072386B78900"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -277,7 +633,7 @@
 				{
 					id: "43BA01F5CF079E2F"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -302,7 +658,7 @@
 				{
 					id: "3182EB266D29CABD"
 					item: {
-						Count: 1
+						Count: 1b
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -325,6 +681,7 @@
 					type: "item"
 				}
 			]
+			shape: "square"
 			size: 2.0d
 			subtitle: "感谢所有参加本整合包制作的人员，以下排名不分先后"
 			tasks: [{
@@ -333,111 +690,211 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: -4.0d
+			y: 6.0d
 		}
 		{
-			can_repeat: true
 			dependencies: ["55C42BCE0E399B3D"]
-			icon: "ftbquests:book"
-			id: "54E5D285A4300964"
-			optional: true
-			rewards: [{
-				id: "7B3B009F64264C00"
-				item: "ftbquests:book"
-				type: "item"
-			}]
-			size: 2.0d
-			subtitle: "看我多大方，任务书随便拿！"
-			tasks: [{
-				id: "5237AD30A9B874EA"
-				title: "点击获得任务书！"
-				type: "checkmark"
-			}]
-			title: "什么？任务书丢了？不知道合成表？"
-			x: 0.0d
-			y: 3.0d
-		}
-		{
-			id: "3CF4C402145AF2B9"
+			description: [
+				"本整合包的武器系统主要由tetra的工具和武器模板提供，详细的玩法流程可以参考&4任务书相关章节（昔人已逝）"
+				"Tetra 模组的内容围绕着模块化物品展开，并致力于将之与冒险、科技等其它概念融合在一起。"
+			]
+			icon: {
+				Count: 1b
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/oak"
+					"double/basic_hammer_right_material": "basic_hammer/oak"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "8d9f4d4f-cc7b-40a7-94e2-c6ed432839d9"
+				}
+			}
+			id: "398AE54EB6F55F0D"
 			rewards: [
 				{
-					count: 32
-					id: "34577CE3B8D49E78"
-					item: "minecraft:oak_log"
+					id: "1393B922F7BDC12F"
+					item: "tetra:pristine_diamond"
 					type: "item"
 				}
 				{
-					count: 32
-					id: "37BA81B407C6B806"
-					item: "minecraft:iron_block"
-					type: "item"
+					id: "0A3909A2793AEDF5"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "锻造之艺，就在其中"
+			tasks: [
+				{
+					id: "77549F0D9F837A05"
+					title: "锻造大师"
+					type: "checkmark"
 				}
 				{
-					count: 64
-					id: "5FEFD330247CCE72"
-					item: "minecraft:andesite"
+					advancement: "tetra:upgrades/root"
+					criterion: ""
+					id: "3BC2EE382E874DF9"
+					type: "advancement"
+				}
+				{
+					count: 2L
+					id: "4496AAC8FB3C171C"
+					item: {
+						Count: 1b
+						id: "tetra:modular_double"
+						tag: {
+							Damage: 0
+							"double/basic_hammer_left_material": "basic_hammer/oak"
+							"double/basic_hammer_right_material": "basic_hammer/oak"
+							"double/basic_handle_material": "basic_handle/stick"
+							"double/handle": "double/basic_handle"
+							"double/head_left": "double/basic_hammer_left"
+							"double/head_right": "double/basic_hammer_right"
+							id: "8d9f4d4f-cc7b-40a7-94e2-c6ed432839d9"
+						}
+					}
 					type: "item"
 				}
 			]
-			size: 1.5d
-			subtitle: "去亲手采集第一颗树吧，这是跨越性的一步。（跨越的是不是有点大了？）"
-			tasks: [{
-				count: 4L
-				icon: "minecraft:oak_log"
-				id: "768E3C505359488C"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:logs"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"灾变（L_Ender's Cataclysm）是一个增加了困难的地牢、具有挑战性的 Boss 和强大装备的模组。Boss 的部分灵感来自于 Minecraft Dungeons 及其他游戏，与原版 Boss 相比，它们更加独特、复杂且强大；目前，本模组添加了 6 个精细的 Boss 和 5 个小 Boss，每个 Boss 都有自己的结构和独特技能，以及有特殊能力的战利品。更详细的内容可以在&4任务书的相关任务中查询。"
+				"实用小技巧：本mod的眼睛造价普遍较高，所以可以配合&e小地图&f来减少使用的损耗"
+			]
+			id: "5A5A0DC9678E8F17"
+			rewards: [
+				{
+					id: "4BBFD27B0A7F76C5"
+					item: {
+						Count: 1b
+						id: "tetra:modular_sword"
+						tag: {
+							Damage: 0
+							EnchantmentMapping: { }
+							HideFlags: 1
+							RepairCost: 0
+							display: {
+								Name: "{\"text\":\"狱界的审判\"}"
+							}
+							honing_progress: 207
+							id: "b678e959-0e4b-4710-8ae2-c595bd95ed59"
+							"sword/basic_hilt_material": "basic_hilt/cwitherite_ingot"
+							"sword/blade": "sword/flamberge_blade"
+							"sword/blade:quality": 1
+							"sword/blade:workable": 1
+							"sword/flamberge_blade_material": "flamberge_blade/ignitium_ingot"
+							"sword/grip_loop_material": "grip_loop/ignitium_ingot"
+							"sword/guard": "sword/socket"
+							"sword/hilt": "sword/basic_hilt"
+							"sword/hilt:quality": 1
+							"sword/pommel": "sword/grip_loop"
+							"sword/socket_material": "sword_socket/socket_pristine_diamond"
+						}
 					}
+					type: "item"
 				}
-				title: "木头！"
-				type: "item"
+				{
+					id: "6B47CC4A313F436E"
+					table_id: 2563156879298117344L
+					title: "绝佳的战斗音乐！"
+					type: "random"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "也许没有人会记得那些挑战者们，但他们留下的传奇不会被人遗忘"
+			tasks: [
+				{
+					id: "5B39689B4E62501B"
+					item: "cataclysm:mech_eye"
+					type: "item"
+				}
+				{
+					id: "0782A5CDE03BC9CF"
+					item: "cataclysm:flame_eye"
+					type: "item"
+				}
+				{
+					id: "2740C4C79F294C0A"
+					item: "cataclysm:void_eye"
+					type: "item"
+				}
+				{
+					id: "73A29F24CF70AC3B"
+					item: "cataclysm:monstrous_eye"
+					type: "item"
+				}
+				{
+					id: "50CEB076AC531031"
+					item: "cataclysm:abyss_eye"
+					type: "item"
+				}
+				{
+					id: "3BF03FD732DE4EE6"
+					item: "cataclysm:desert_eye"
+					type: "item"
+				}
+			]
+			title: "至高灾厄"
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["机械动力（Create）是一个围绕着建筑、装饰和机械的新兴模组，所添加的元素旨在为玩家提供全新的建筑与自动化体验，并尽可能多地为玩家预留自定义空间。在机器与能源方面，模组做出了极大的创新。机器不再由传统科技模组中乏味的电线供能，而是需要玩家搭建机械传动系统驱动。&4任务书中的相关内容&f会引导大家制造一个实用的机器。"]
+			id: "59350A53C2738BD9"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6C524984BA3FA1AC"
+				table_id: 6730734086547045908L
+				type: "random"
 			}]
-			title: "要致富还得是先撸树"
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "Welcome to create, the world is in your hands"
+			tasks: [{
+				advancement: "create:andesite_alloy"
+				criterion: ""
+				id: "61C25092F1AD6E14"
+				type: "advancement"
+			}]
+			title: "欢迎来到机械动力"
 			x: 0.0d
-			y: 5.25d
+			y: -6.0d
 		}
 		{
-			icon: "minecraft:red_bed"
-			id: "73CEB2D8D907517C"
-			rewards: [{
-				id: "35371B7E24B3591E"
-				item: "minecraft:red_bed"
-				type: "item"
-			}]
-			size: 1.5d
-			subtitle: "送你张床！"
-			tasks: [{
-				id: "00E6E046A67A3F2E"
-				title: "做个好梦"
-				type: "checkmark"
-			}]
-			title: "睡个好觉~"
-			x: 2.25d
-			y: 3.0d
-		}
-		{
-			icon: "minecraft:bread"
-			id: "33DC243444AA3860"
-			rewards: [{
-				count: 64
-				id: "6B442C619AB4184B"
-				item: "minecraft:bread"
-				type: "item"
-			}]
-			size: 1.5d
-			subtitle: "先让自己不要饿死"
-			tasks: [{
-				id: "02AD977C57124C8C"
-				title: "将就吃吧"
-				type: "checkmark"
-			}]
-			title: "在搭建一个自己的农场前......"
-			x: -2.5d
-			y: 3.0d
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "minecraft:wheat"
+			id: "64FB1FEC4F9721B7"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "一份耕耘,一份收获。 "
+			tasks: [
+				{
+					advancement: "farmersdelight:main/craft_knife"
+					criterion: ""
+					id: "2380C12AE641355B"
+					type: "advancement"
+				}
+				{
+					advancement: "minecraft:husbandry/plant_seed"
+					criterion: ""
+					id: "60C21386E715B6E9"
+					type: "advancement"
+				}
+			]
+			title: "刀耕火种"
+			x: 5.0d
+			y: -3.0d
 		}
 	]
-	title: "初来乍到"
+	title: "介绍"
 }
