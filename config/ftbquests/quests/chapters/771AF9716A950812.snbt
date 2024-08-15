@@ -7,11 +7,7 @@
 	id: "771AF9716A950812"
 	images: [
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 10.0d
-			hover: [ ]
 			image: "minecraft:block/dispenser_top"
 			rotation: 0.0d
 			width: 10.0d
@@ -19,11 +15,7 @@
 			y: -0.5d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "everycomp:textures/block/wdst/byg/zelkova_ladder.png"
 			rotation: 0.0d
 			width: 5.0d
@@ -31,11 +23,7 @@
 			y: -10.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "farmersrespite:item/dandelion_tea"
 			rotation: 0.0d
 			width: 5.0d
@@ -43,11 +31,7 @@
 			y: -3.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "minecraft:item/compass/compass_base_a"
 			rotation: 0.0d
 			width: 5.0d
@@ -55,11 +39,7 @@
 			y: -3.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "supplementaries:items/candle_holders/lime"
 			rotation: 0.0d
 			width: 5.0d
@@ -67,11 +47,7 @@
 			y: 3.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "colorfulhearts:textures/absorption.png"
 			rotation: 0.0d
 			width: 1.0d
@@ -79,11 +55,7 @@
 			y: 6.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "ftbquests:item/lootcrate/front_outline"
 			rotation: 0.0d
 			width: 5.0d
@@ -91,11 +63,7 @@
 			y: 6.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 1.0d
-			hover: [ ]
 			image: "storagedrawers:textures/blocks/overlay/handle_1.png"
 			rotation: 0.0d
 			width: 1.0d
@@ -103,11 +71,7 @@
 			y: 4.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "citadel:textures/gui/book/icon_default.png"
 			rotation: 0.0d
 			width: 5.0d
@@ -115,11 +79,7 @@
 			y: 3.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "tetra:blocks/crafting_table_top"
 			rotation: 0.0d
 			width: 5.0d
@@ -127,11 +87,7 @@
 			y: 0.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "createbigcannons:block/cannon_barrel/bronze_cannon_barrel_end"
 			rotation: 0.0d
 			width: 5.0d
@@ -139,11 +95,7 @@
 			y: 0.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "create:block/andesite_casing_piston"
 			rotation: 0.0d
 			width: 5.0d
@@ -151,11 +103,7 @@
 			y: -5.5d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "farmersdelight:textures/particle/steam_2.png"
 			rotation: 0.0d
 			width: 5.0d
@@ -236,7 +184,7 @@
 				{
 					id: "1893FAE83B06F440"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:butcher_knife"
 						tag: {
 							Damage: 0
@@ -253,7 +201,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:player_head"
 				tag: {
 					SkullOwner: {
@@ -278,7 +226,6 @@
 				{
 					exclude_from_claim_all: true
 					id: "3E1513777370ADD8"
-					table_id: 3539289042495036767L
 					type: "random"
 				}
 				{
@@ -322,7 +269,6 @@
 				{
 					exclude_from_claim_all: true
 					id: "00A76C3F345ABE5F"
-					table_id: 3539289042495036767L
 					type: "random"
 				}
 			]
@@ -421,7 +367,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:player_head"
 				tag: {
 					SkullOwner: {
@@ -445,7 +391,7 @@
 				{
 					id: "4A8756E748E0A516"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -469,7 +415,7 @@
 				{
 					id: "662FC193EC4C717D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -494,7 +440,7 @@
 				{
 					id: "006D7714E74FBD5D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -519,7 +465,7 @@
 				{
 					id: "5FE7428B42B4993F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -544,7 +490,7 @@
 				{
 					id: "4E02990E5DFC6280"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -569,7 +515,7 @@
 				{
 					id: "33FD34B5A03CF83C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -608,7 +554,7 @@
 				{
 					id: "5FA3072386B78900"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -633,7 +579,7 @@
 				{
 					id: "43BA01F5CF079E2F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -658,7 +604,7 @@
 				{
 					id: "3182EB266D29CABD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -699,7 +645,7 @@
 				"Tetra 模组的内容围绕着模块化物品展开，并致力于将之与冒险、科技等其它概念融合在一起。"
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "tetra:modular_double"
 				tag: {
 					Damage: 0
@@ -740,25 +686,6 @@
 					id: "3BC2EE382E874DF9"
 					type: "advancement"
 				}
-				{
-					count: 2L
-					id: "4496AAC8FB3C171C"
-					item: {
-						Count: 1b
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/oak"
-							"double/basic_hammer_right_material": "basic_hammer/oak"
-							"double/basic_handle_material": "basic_handle/stick"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "8d9f4d4f-cc7b-40a7-94e2-c6ed432839d9"
-						}
-					}
-					type: "item"
-				}
 			]
 			x: 8.0d
 			y: 0.0d
@@ -774,7 +701,7 @@
 				{
 					id: "4BBFD27B0A7F76C5"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "tetra:modular_sword"
 						tag: {
 							Damage: 0
@@ -803,7 +730,6 @@
 				}
 				{
 					id: "6B47CC4A313F436E"
-					table_id: 2563156879298117344L
 					title: "绝佳的战斗音乐！"
 					type: "random"
 				}
