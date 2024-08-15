@@ -21,6 +21,20 @@
 			"掉落物受锤子上的时运附魔影响，时运会提升燧石、绿宝石、钻石及无暇宝石数量"
 		]
 		id: "2C56AF7AB84C9E2C"
+		rewards: [{
+			id: "145341E967162A22"
+			item: {
+				Count: 1
+				id: "create_confectionery:caramelized_marshmellow_on_a_stick"
+				tag: {
+					RepairCost: 0
+					display: {
+						Name: "{\"text\":\"烤焦的，味道不是很好的Jason的肢体\"}"
+					}
+				}
+			}
+			type: "item"
+		}]
 		shape: "square"
 		subtitle: "深藏不露"
 		tasks: [{
