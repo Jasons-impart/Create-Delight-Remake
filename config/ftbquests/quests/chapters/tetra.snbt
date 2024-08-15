@@ -1,0 +1,37 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tetra"
+	group: "57E934AC8166BC73"
+	id: "4DCB769172A69AD5"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		description: [
+			"在30层往下会生成晶洞方块，外形为原版石头（1.18以下）。"
+			""
+			"1.18以后的版本在0层以下会生成晶洞方块，外形与深板岩相同，但偶尔会散发出白色粒子效果。"
+			""
+			"挖掘后固定掉落一颗晶洞玉石，不受精准采集以及时运影响。"
+			""
+			"在该模组工作台中可用等级大于等于2的锤子破开，使用锤子按物品栏顺序优先。"
+			""
+			"破开掉落：燧石、铁粒、金粒，青金石，红石，绿宝石、钻石及无暇宝石。"
+			""
+			"掉落物受锤子上的时运附魔影响，时运会提升燧石、绿宝石、钻石及无暇宝石数量"
+		]
+		id: "2C56AF7AB84C9E2C"
+		shape: "square"
+		subtitle: "深藏不露"
+		tasks: [{
+			count: 4L
+			id: "138E590DC5A47583"
+			item: { Count: 4, id: "tetra:geode" }
+			type: "item"
+		}]
+		title: "玉洞晶石"
+		x: -1.0d
+		y: -0.5d
+	}]
+	title: "锻造之路"
+}
