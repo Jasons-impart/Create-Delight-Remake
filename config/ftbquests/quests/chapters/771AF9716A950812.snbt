@@ -182,6 +182,7 @@
 					id: "1893FAE83B06F440"
 					item: {
 						Count: 1
+						Count: 1
 						id: "butchercraft:butcher_knife"
 						tag: {
 							Damage: 0
@@ -198,6 +199,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
 			icon: {
+				Count: 1
 				Count: 1
 				id: "minecraft:player_head"
 				tag: {
@@ -321,6 +323,7 @@
 			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
 			icon: {
 				Count: 1
+				Count: 1
 				id: "minecraft:player_head"
 				tag: {
 					SkullOwner: {
@@ -345,6 +348,7 @@
 					id: "4A8756E748E0A516"
 					item: {
 						Count: 1
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -368,6 +372,7 @@
 				{
 					id: "662FC193EC4C717D"
 					item: {
+						Count: 1
 						Count: 1
 						id: "minecraft:player_head"
 						tag: {
@@ -394,6 +399,7 @@
 					id: "006D7714E74FBD5D"
 					item: {
 						Count: 1
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -418,6 +424,7 @@
 				{
 					id: "5FE7428B42B4993F"
 					item: {
+						Count: 1
 						Count: 1
 						id: "minecraft:player_head"
 						tag: {
@@ -444,6 +451,7 @@
 					id: "4E02990E5DFC6280"
 					item: {
 						Count: 1
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -468,6 +476,7 @@
 				{
 					id: "33FD34B5A03CF83C"
 					item: {
+						Count: 1
 						Count: 1
 						id: "minecraft:player_head"
 						tag: {
@@ -508,6 +517,7 @@
 					id: "5FA3072386B78900"
 					item: {
 						Count: 1
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -533,6 +543,7 @@
 					id: "43BA01F5CF079E2F"
 					item: {
 						Count: 1
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -557,6 +568,7 @@
 				{
 					id: "3182EB266D29CABD"
 					item: {
+						Count: 1
 						Count: 1
 						id: "minecraft:player_head"
 						tag: {
@@ -598,6 +610,7 @@
 				"Tetra 模组的内容围绕着模块化物品展开，并致力于将之与冒险、科技等其它概念融合在一起。"
 			]
 			icon: {
+				Count: 1
 				Count: 1
 				id: "tetra:modular_double"
 				tag: {
