@@ -7,23 +7,7 @@
 	id: "771AF9716A950812"
 	images: [
 		{
-			click: ""
-			corner: false
-			dev: false
-			height: 10.0d
-			hover: [ ]
-			image: "minecraft:block/dispenser_top"
-			rotation: 0.0d
-			width: 10.0d
-			x: 0.0d
-			y: -0.5d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "everycomp:textures/block/wdst/byg/zelkova_ladder.png"
 			rotation: 0.0d
 			width: 5.0d
@@ -31,59 +15,15 @@
 			y: -10.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "farmersrespite:item/dandelion_tea"
 			rotation: 0.0d
 			width: 5.0d
-			x: 5.0d
-			y: -3.0d
+			x: -6.0d
+			y: -4.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
-			image: "minecraft:item/compass/compass_base_a"
-			rotation: 0.0d
-			width: 5.0d
-			x: -5.0d
-			y: -3.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 5.0d
-			hover: [ ]
-			image: "supplementaries:items/candle_holders/lime"
-			rotation: 0.0d
-			width: 5.0d
-			x: 5.0d
-			y: 3.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 1.0d
-			hover: [ ]
-			image: "colorfulhearts:textures/absorption.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: 3.0d
-			y: 6.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 5.0d
-			hover: [ ]
 			image: "ftbquests:item/lootcrate/front_outline"
 			rotation: 0.0d
 			width: 5.0d
@@ -91,59 +31,15 @@
 			y: 6.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
-			height: 1.0d
-			hover: [ ]
-			image: "storagedrawers:textures/blocks/overlay/handle_1.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: 12.0d
-			y: 4.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
 			image: "citadel:textures/gui/book/icon_default.png"
 			rotation: 0.0d
 			width: 5.0d
-			x: -5.0d
-			y: 3.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 5.0d
-			hover: [ ]
-			image: "tetra:blocks/crafting_table_top"
-			rotation: 0.0d
-			width: 5.0d
-			x: 8.0d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
 			height: 5.0d
-			hover: [ ]
-			image: "createbigcannons:block/cannon_barrel/bronze_cannon_barrel_end"
-			rotation: 0.0d
-			width: 5.0d
-			x: -8.0d
-			y: 0.0d
-		}
-		{
-			click: ""
-			corner: false
-			dev: false
-			height: 5.0d
-			hover: [ ]
 			image: "create:block/andesite_casing_piston"
 			rotation: 0.0d
 			width: 5.0d
@@ -151,16 +47,52 @@
 			y: -5.5d
 		}
 		{
-			click: ""
-			corner: false
-			dev: false
-			height: 5.0d
-			hover: [ ]
+			height: 6.0d
 			image: "farmersdelight:textures/particle/steam_2.png"
 			rotation: 0.0d
+			width: 6.0d
+			x: 10.0d
+			y: -6.0d
+		}
+		{
+			height: 5.0d
+			image: "everycomp:block/c/forbidden_arcanus/palettes/elder_window"
+			rotation: 0.0d
 			width: 5.0d
-			x: 8.0d
-			y: -5.5d
+			x: 5.0d
+			y: 3.0d
+		}
+		{
+			height: 5.0d
+			image: "vinery:block/calendar_1"
+			rotation: 0.0d
+			width: 5.0d
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			height: 5.0d
+			image: "farmersdelight:block/stove_front_on"
+			rotation: 0.0d
+			width: 5.0d
+			x: 5.0d
+			y: -3.0d
+		}
+		{
+			height: 5.0d
+			image: "tetra:item/module/toolbelt/belt/buckled"
+			rotation: 0.0d
+			width: 5.0d
+			x: -6.0d
+			y: -2.5d
+		}
+		{
+			height: 5.0d
+			image: "art_of_forging:item/enigmatic_construct"
+			rotation: 0.0d
+			width: 5.0d
+			x: -10.5d
+			y: -6.0d
 		}
 	]
 	order_index: 0
@@ -221,8 +153,21 @@
 			icon: "minecraft:mutton"
 			id: "46F1F92929FC8F9F"
 			rewards: [{
-				id: "62B485112BBE2E6D"
-				item: "extradelight:bangers_mash"
+				id: "412F13F6349E82FE"
+				item: {
+					Count: 1
+					id: "netmusic:music_cd"
+					tag: {
+						NetMusicSongInfo: {
+							artists: ["The Journeymen"]
+							name: "500 Miles"
+							read_only: 0b
+							time: 193
+							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+							vip: 0b
+						}
+					}
+				}
 				type: "item"
 			}]
 			shape: "hexagon"
@@ -236,7 +181,7 @@
 				{
 					id: "1893FAE83B06F440"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "butchercraft:butcher_knife"
 						tag: {
 							Damage: 0
@@ -246,14 +191,14 @@
 				}
 			]
 			title: "屠宰相关"
-			x: 8.0d
-			y: -5.0d
+			x: 10.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:player_head"
 				tag: {
 					SkullOwner: {
@@ -278,7 +223,6 @@
 				{
 					exclude_from_claim_all: true
 					id: "3E1513777370ADD8"
-					table_id: 3539289042495036767L
 					type: "random"
 				}
 				{
@@ -298,51 +242,6 @@
 			title: "认领区块相关"
 			x: 5.0d
 			y: 3.0d
-		}
-		{
-			dependencies: ["55C42BCE0E399B3D"]
-			description: ["由于未知力量&e（异界）&r入侵主世界，末影之眼失去了原来的效果，为了能够去往末地，你需要搜刮原版建筑中被异界能量影响的&1宝箱&r以及&1各种怪物&r，找齐&e12种末影之眼&r，你可以选择使用这些被&4异界&r能量影响的末影之眼定位传送门，找到传送门之后放置12中新末影之眼并取下原有的末影之眼，并进入末地最终与末影龙&4决一死战&r，解放这个世界"]
-			hide: true
-			icon: {
-				Count: 1b
-				id: "endrem:wither_eye"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "68E3F9D34EB6D9FB"
-			rewards: [
-				{
-					auto: "enabled"
-					description: ""
-					id: "0CF91682176F900F"
-					title: "你感觉有东西在盯着你"
-					type: "toast"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "00A76C3F345ABE5F"
-					table_id: 3539289042495036767L
-					type: "random"
-				}
-			]
-			shape: "octagon"
-			size: 2.0d
-			subtitle: "异世界力量入侵！"
-			tasks: [
-				{
-					id: "2A29127615BBE470"
-					type: "checkmark"
-				}
-				{
-					id: "64554EA8680270EC"
-					item: "minecraft:ender_pearl"
-					type: "item"
-				}
-			]
-			title: "如何去往末地"
-			x: -5.0d
-			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -421,7 +320,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:player_head"
 				tag: {
 					SkullOwner: {
@@ -445,7 +344,7 @@
 				{
 					id: "4A8756E748E0A516"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -469,7 +368,7 @@
 				{
 					id: "662FC193EC4C717D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -494,7 +393,7 @@
 				{
 					id: "006D7714E74FBD5D"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -519,7 +418,7 @@
 				{
 					id: "5FE7428B42B4993F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -544,7 +443,7 @@
 				{
 					id: "4E02990E5DFC6280"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -569,7 +468,7 @@
 				{
 					id: "33FD34B5A03CF83C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -608,7 +507,7 @@
 				{
 					id: "5FA3072386B78900"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -633,7 +532,7 @@
 				{
 					id: "43BA01F5CF079E2F"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -658,7 +557,7 @@
 				{
 					id: "3182EB266D29CABD"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:player_head"
 						tag: {
 							SkullOwner: {
@@ -699,7 +598,7 @@
 				"Tetra 模组的内容围绕着模块化物品展开，并致力于将之与冒险、科技等其它概念融合在一起。"
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "tetra:modular_double"
 				tag: {
 					Damage: 0
@@ -744,7 +643,7 @@
 					count: 2L
 					id: "4496AAC8FB3C171C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "tetra:modular_double"
 						tag: {
 							Damage: 0
@@ -760,92 +659,8 @@
 					type: "item"
 				}
 			]
-			x: 8.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["55C42BCE0E399B3D"]
-			description: [
-				"灾变（L_Ender's Cataclysm）是一个增加了困难的地牢、具有挑战性的 Boss 和强大装备的模组。Boss 的部分灵感来自于 Minecraft Dungeons 及其他游戏，与原版 Boss 相比，它们更加独特、复杂且强大；目前，本模组添加了 6 个精细的 Boss 和 5 个小 Boss，每个 Boss 都有自己的结构和独特技能，以及有特殊能力的战利品。更详细的内容可以在&4任务书的相关任务中查询。"
-				"实用小技巧：本mod的眼睛造价普遍较高，所以可以配合&e小地图&f来减少使用的损耗"
-			]
-			id: "5A5A0DC9678E8F17"
-			rewards: [
-				{
-					id: "4BBFD27B0A7F76C5"
-					item: {
-						Count: 1b
-						id: "tetra:modular_sword"
-						tag: {
-							Damage: 0
-							EnchantmentMapping: { }
-							HideFlags: 1
-							RepairCost: 0
-							display: {
-								Name: "{\"text\":\"狱界的审判\"}"
-							}
-							honing_progress: 207
-							id: "b678e959-0e4b-4710-8ae2-c595bd95ed59"
-							"sword/basic_hilt_material": "basic_hilt/cwitherite_ingot"
-							"sword/blade": "sword/flamberge_blade"
-							"sword/blade:quality": 1
-							"sword/blade:workable": 1
-							"sword/flamberge_blade_material": "flamberge_blade/ignitium_ingot"
-							"sword/grip_loop_material": "grip_loop/ignitium_ingot"
-							"sword/guard": "sword/socket"
-							"sword/hilt": "sword/basic_hilt"
-							"sword/hilt:quality": 1
-							"sword/pommel": "sword/grip_loop"
-							"sword/socket_material": "sword_socket/socket_pristine_diamond"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6B47CC4A313F436E"
-					table_id: 2563156879298117344L
-					title: "绝佳的战斗音乐！"
-					type: "random"
-				}
-			]
-			shape: "square"
-			size: 2.0d
-			subtitle: "也许没有人会记得那些挑战者们，但他们留下的传奇不会被人遗忘"
-			tasks: [
-				{
-					id: "5B39689B4E62501B"
-					item: "cataclysm:mech_eye"
-					type: "item"
-				}
-				{
-					id: "0782A5CDE03BC9CF"
-					item: "cataclysm:flame_eye"
-					type: "item"
-				}
-				{
-					id: "2740C4C79F294C0A"
-					item: "cataclysm:void_eye"
-					type: "item"
-				}
-				{
-					id: "73A29F24CF70AC3B"
-					item: "cataclysm:monstrous_eye"
-					type: "item"
-				}
-				{
-					id: "50CEB076AC531031"
-					item: "cataclysm:abyss_eye"
-					type: "item"
-				}
-				{
-					id: "3BF03FD732DE4EE6"
-					item: "cataclysm:desert_eye"
-					type: "item"
-				}
-			]
-			title: "至高灾厄"
-			x: -8.0d
-			y: 0.0d
+			x: -6.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -874,6 +689,12 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			icon: "minecraft:wheat"
 			id: "64FB1FEC4F9721B7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "505418A5DEC0FD98"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "一份耕耘,一份收获。 "
@@ -894,6 +715,45 @@
 			title: "刀耕火种"
 			x: 5.0d
 			y: -3.0d
+		}
+		{
+			dependencies: ["398AE54EB6F55F0D"]
+			description: [
+				"这个模组向 Tetra 添加了 47 个新模块，您可以制作这些模块。他们中的许多受到现实生活中的武器和流行文化武器的启发。这个模组还改变了简单的地牢箱子的战利品表。现在，每个卷轴都应该有自己的重量和稀有度，以使某些示意图更难获得。"
+				"融化你的金属，锻造你的意志,欢迎来到锻造之艺！"
+				"&4(相关攻略可以任务书中查询)"
+			]
+			id: "1B04B860E2651AEF"
+			rewards: [
+				{
+					id: "22487E6F883CBB3F"
+					item: "art_of_forging:rending_scissor_red"
+					type: "item"
+				}
+				{
+					id: "2E5C1F3349AA6B4F"
+					item: "art_of_forging:rending_scissor_purple"
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "Art of Forging"
+			tasks: [
+				{
+					id: "3879B873C39E8236"
+					item: "tetra:hammer_base"
+					type: "item"
+				}
+				{
+					id: "73ACBBB058AAB489"
+					item: "tetra:forged_workbench"
+					type: "item"
+				}
+			]
+			title: "锻造之艺"
+			x: -10.5d
+			y: -6.0d
 		}
 	]
 	title: "介绍"
