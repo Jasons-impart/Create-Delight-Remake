@@ -1,0 +1,6 @@
+{
+    "fluid": "ad_astra:fuel",
+    "burnTime": 60,
+    "superHeat": true,
+    "amountConsumedPerTick" : 1
+}

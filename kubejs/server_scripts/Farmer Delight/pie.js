@@ -20,7 +20,8 @@ ServerEvents.recipes(e => {
         "casualness_delight:crafting_shaped/quiche_lorraine",
         "farmersdelight:cooking/durian_pie",
         "farmersdelight:cooking/fig_tart",
-        "farmersdelight:cooking/lemon_tart"
+        "farmersdelight:cooking/lemon_tart",
+        "ends_delight:food/chorus_fruit_pie"
     ])
     baking(e, "createdelight:puff_pastry", 'farmersdelight:pie_crust', 1, "food", 600)
     e.recipes.kubejs.shapeless(
@@ -57,6 +58,17 @@ ServerEvents.recipes(e => {
             output, 1.0, 200
         ).id(`createdelight:cooking/${output.split(":")[1]}`)    
     });
+    e.recipes.farmersdelight.cooking(
+        [
+            "#minecraft:flowers",
+            "#forge:chorus_fruits",
+            "ends_delight:dried_chorus_flower",
+            "#forge:eggs",
+            "farmersdelight:pie_crust",
+            '#forge:vegetables/potato'
+        ],
+        'ends_delight:chorus_fruit_pie', 10.0, 200
+    ).id("createdelight:cooking/chorus_fruit_pie")
     e.recipes.farmersdelight.cooking(
         [
             "#alexsmobs:shoebill_foodstuffs",

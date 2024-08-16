@@ -1048,7 +1048,7 @@
 					xp: 100
 				}
 			]
-			subtitle: "小刀击杀猪有 50% 的几率掉落火腿，击杀疣猪兽几率则为 100%"
+			subtitle: "击杀疣猪兽100%获得"
 			tasks: [{
 				id: "5EC7FE2B277E04E1"
 				item: "farmersdelight:ham"
@@ -1228,9 +1228,9 @@
 				item: "farmersrespite:green_tea"
 				type: "item"
 			}]
-			title: "茶香四溢"
-			x: -25.0d
-			y: -2.0d
+			title: "绿茶"
+			x: -26.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -1672,8 +1672,8 @@
 				item: "farmersrespite:coffee"
 				type: "item"
 			}]
-			x: -23.5d
-			y: 7.0d
+			x: -23.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["326D5BCADED75129"]
@@ -1968,22 +1968,6 @@
 			}]
 			x: 2.0d
 			y: 6.5d
-		}
-		{
-			dependencies: ["191A371DB8F3E198"]
-			id: "13D83A6A85BA32BE"
-			rewards: [{
-				id: "7E532F4C80588F29"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "754B245E1B861E47"
-				item: "farmersrespite:tea_curry"
-				type: "item"
-			}]
-			x: -26.0d
-			y: -1.0d
 		}
 		{
 			dependencies: ["0DB5F873297C3601"]
@@ -2666,8 +2650,8 @@
 				item: "vintagedelight:fermenting_jar"
 				type: "item"
 			}]
-			x: 12.025000000000105d
-			y: 0.0d
+			x: 12.0d
+			y: 2.000000000000007d
 		}
 		{
 			dependencies: ["37E0D4C31FF54DAA"]
@@ -2826,7 +2810,7 @@
 			}]
 			title: "Alex生物？"
 			x: -14.0d
-			y: 1.0d
+			y: 1.5d
 		}
 		{
 			description: ["当你觉得任务窗口太大看不明白时，不妨ctrl+上下滚轮来调节页面大小。"]
@@ -2862,7 +2846,7 @@
 				item: "farmersrespite:green_tea_cookie"
 				type: "item"
 			}]
-			x: -26.0d
+			x: -23.0d
 			y: 0.0d
 		}
 		{
@@ -3462,6 +3446,7 @@
 				item: "vintagedelight:cheese_wheel"
 				type: "item"
 			}]
+			title: "无需发酵！"
 			x: 12.0d
 			y: 8.505952380952351d
 		}
@@ -3473,6 +3458,7 @@
 				item: "ad_astra:cheese"
 				type: "item"
 			}]
+			title: "豪吃！😋"
 			x: 12.0d
 			y: 9.505952380952351d
 		}
@@ -3636,8 +3622,8 @@
 				item: "createcafe:iced_coffee"
 				type: "item"
 			}]
-			x: -25.5d
-			y: 7.0d
+			x: -26.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["76D8496BD2E16DC4"]
@@ -3647,7 +3633,7 @@
 				item: "farmersrespite:long_apple_cider"
 				type: "item"
 			}]
-			x: -24.5d
+			x: -25.5d
 			y: 2.0d
 		}
 		{
@@ -3658,7 +3644,7 @@
 				item: "farmersrespite:strong_apple_cider"
 				type: "item"
 			}]
-			x: -22.5d
+			x: -24.5d
 			y: 2.0d
 		}
 		{
@@ -3669,8 +3655,8 @@
 				item: "farmersrespite:yellow_tea"
 				type: "item"
 			}]
-			x: -24.0d
-			y: -2.0d
+			x: -26.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["191A371DB8F3E198"]
@@ -3680,8 +3666,164 @@
 				item: "farmersrespite:black_tea"
 				type: "item"
 			}]
+			x: -26.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "2BC8E65592F75832"
+			tasks: [{
+				id: "5A1CE8443DD57E97"
+				item: "farmersrespite:rose_hip_tea"
+				type: "item"
+			}]
+			x: -25.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "33AF9121BFAF8E07"
+			tasks: [{
+				id: "25E7213147D66A73"
+				item: "farmersrespite:dandelion_tea"
+				type: "item"
+			}]
+			x: -24.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "29F8528E2A4DFEB5"
+			tasks: [{
+				id: "35551B9ACC177984"
+				item: "farmersrespite:gamblers_tea"
+				type: "item"
+			}]
+			x: -23.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "1A5D8297FCDC09FE"
+			tasks: [{
+				id: "18A1F3CEB51AC280"
+				item: "farmersrespite:purulent_tea"
+				type: "item"
+			}]
 			x: -23.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["0AA8A2C1A41EE9D2"]
+			id: "637C049AA9D2DD2D"
+			tasks: [{
+				id: "6F163DF96A8CD522"
+				item: "ends_delight:chorus_flower_tea"
+				type: "item"
+			}]
+			x: -19.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["233A094F8912668D"]
+			id: "6E485DBCE9C00F15"
+			tasks: [{
+				id: "2C38B617B08E3E6F"
+				item: "fruitsdelight:hawberry_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["20142C9E1C0A2929"]
+			id: "255B680CEDDF9986"
+			tasks: [{
+				id: "01FEAC4472442691"
+				item: "fruitsdelight:mango_tea"
+				type: "item"
+			}]
+			x: -26.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["233A094F8912668D"]
+			id: "3FEA472B3BF64747"
+			tasks: [{
+				id: "393D2C4589049E94"
+				item: "fruitsdelight:peach_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7E653A0F03BEE5A2"]
+			id: "7D1A5266CC394121"
+			tasks: [{
+				id: "347B79C1E9F45D62"
+				item: "fruitsdelight:mangosteen_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E653A0F03BEE5A2"]
+			id: "076CD2F55E8E422B"
+			tasks: [{
+				id: "7F6437A5DA8BF643"
+				item: "fruitsdelight:lychee_cherry_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3531C026F4EB9534"]
+			id: "37DFEE0BFE8DA55F"
+			tasks: [{
+				id: "493F51FA799318BF"
+				item: "createcafe:iced_coffee_milk"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3531C026F4EB9534"]
+			id: "087215E18536819F"
+			tasks: [{
+				id: "367E0FC88036A935"
+				item: "createcafe:caramel_iced_coffee"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["236182632D72C634"]
+			id: "393F7F1F2698D4EB"
+			tasks: [{
+				id: "5CEB162619FE7B34"
+				item: "casualness_delight:raw_cheese_wheel"
+				type: "item"
+			}]
+			title: "美味无需多盐！"
+			x: -14.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["393F7F1F2698D4EB"]
+			id: "7B8F6ACA6D6FD780"
+			tasks: [{
+				id: "3C40483F25D6D906"
+				item: "casualness_delight:cheese_wheel"
+				type: "item"
+			}]
+			title: "时间会证明一切"
+			x: -13.0d
+			y: 0.5d
 		}
 	]
 	title: "&e超级大厨！"
