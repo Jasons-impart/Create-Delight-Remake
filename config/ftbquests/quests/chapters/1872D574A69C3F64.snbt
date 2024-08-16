@@ -51,7 +51,7 @@
 			}]
 			title: "&4干净又卫生啊兄弟们"
 			x: 0.5d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -63,14 +63,14 @@
 				xp: 100
 			}]
 			size: 1.5d
-			subtitle: "配方请右击陈酿桶在左侧查看"
+			subtitle: "你就酿吧，一酿一个不出声"
 			tasks: [{
 				id: "415ECF20A2F1C9BB"
 				item: "vinery:fermentation_barrel"
 				type: "item"
 			}]
 			title: "陈年葡萄酒！"
-			x: 2.5d
+			x: 2.25d
 			y: 0.0d
 		}
 		{
@@ -88,7 +88,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -117,8 +117,8 @@
 				}
 			]
 			title: "储藏酒的好东西"
-			x: -2.5d
-			y: -1.5d
+			x: -1.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["5EA0D911ED1989E6"]
@@ -133,8 +133,8 @@
 				item: "vinery:apple_juice"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.0d
+			x: -1.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["64F78B51354A75ED"]
@@ -150,7 +150,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 3.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["5EA0D911ED1989E6"]
@@ -172,7 +172,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 5.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -190,7 +190,7 @@
 			}]
 			title: "总感觉里面装了酒"
 			x: -0.5d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["5EA0D911ED1989E6"]
@@ -211,8 +211,8 @@
 				}
 				type: "item"
 			}]
-			x: 1.5d
-			y: 4.0d
+			x: 1.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -242,7 +242,7 @@
 			}]
 			title: "&e我的葡萄汁啊~飞啊飞~飞到了瓶子里~"
 			x: 0.0d
-			y: -3.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -306,7 +306,7 @@
 				}
 			]
 			title: "酿酒师"
-			x: -2.5d
+			x: -2.0d
 			y: 0.0d
 		}
 		{
@@ -993,8 +993,8 @@
 				type: "item"
 			}]
 			title: "改良篝火"
-			x: 2.5d
-			y: -1.5d
+			x: 1.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -1010,8 +1010,8 @@
 				item: "vinery:basket"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 1.5d
+			x: -1.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
@@ -1034,8 +1034,8 @@
 					type: "item"
 				}
 			]
-			x: 2.5d
-			y: 1.5d
+			x: 1.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["186C8F9674316FC2"]
@@ -1052,8 +1052,8 @@
 				type: "item"
 			}]
 			title: "珍藏你的名酒！"
-			x: -4.0d
-			y: -1.5d
+			x: -3.0d
+			y: -1.0d
 		}
 	]
 	title: "&e酿酒大师"

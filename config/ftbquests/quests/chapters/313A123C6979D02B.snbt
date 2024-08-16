@@ -436,8 +436,8 @@
 				item: "farmersdelight:vegetable_noodles"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 6.0d
+			x: -3.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["52B972C68D42A749"]
@@ -1235,7 +1235,7 @@
 				item: "mynethersdelight:spicy_noodle_soup"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -2.5d
 			y: 6.0d
 		}
 		{
@@ -1268,8 +1268,8 @@
 				item: "refurbished_furniture:cheese_sandwich"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 7.0d
+			x: -5.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["731029D680D12421"]
@@ -1972,6 +1972,17 @@
 			title: "香脆曲奇"
 			x: -2.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "1E9B1EB4A4C285FF"
+			tasks: [{
+				id: "3D35C86C69378AE2"
+				item: "ends_delight:ender_noodle"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
 		}
 	]
 	title: "&e精加工！"
