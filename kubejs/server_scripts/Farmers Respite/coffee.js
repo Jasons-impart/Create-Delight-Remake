@@ -34,22 +34,29 @@ ServerEvents.recipes(e => {
     e.custom({
         "type": "farmersrespite:brewing",
         "base": {
-          "count": 1000,
-          "fluid": "minecraft:water"
+            "count": 1000,
+            "fluid": "minecraft:water"
         },
         "cookingtime": 2400,
         "experience": 0.35,
         "ingredients": [
-          {
-            "item": "createcafe:coffee_grounds"
-          },
-          {
-            "item": "createcafe:coffee_grounds"
-          }
+            {
+                "item": "createcafe:coffee_grounds"
+            },
+            {
+                "item": "createcafe:coffee_grounds"
+            }
         ],
         "result": {
-          "count": 1000,
-          "fluid": "farmersrespite:coffee"
+            "count": 1000,
+            "fluid": "farmersrespite:coffee"
         }
-      }).id("farmersrespite:brewing/coffee_from_water")
+    }).id("farmersrespite:brewing/coffee_from_water")
+    e.recipes.create.filling(
+        "createcafe:iced_coffee",
+        [
+            "createcafe:iced_coffee_cup_ice",
+            Fluid.of("farmersrespite:coffee", 250)
+        ]
+    ).id("createcafe:filling/coffee/iced_coffee_filling")
 })
