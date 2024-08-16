@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
         ]
     ).id("create:filling/chocolate_cake")
     e.recipes.create.sequenced_assembly('farmersrespite:coffee_cake', 'ratatouille:cake_base', [
-        e.recipes.create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("createcafe:coffee", 1000)]),
+        e.recipes.create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("farmersrespite:coffee", 1000)]),
         e.recipes.create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "createcafe:roasted_coffee_beans"])
     ])
         .transitionalItem("ratatouille:cake_base")

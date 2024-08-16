@@ -38,4 +38,10 @@ ItemEvents.modification(e => {
             food.effect("farmersdelight:nourishment", 300, 1, 1)
         }
     })
+    e.modify('culturaldelights:cut_pickle', item => {
+        item.foodProperties = food => {
+            food.effect("farmersrespite:caffeinated", 200, 1, 1)
+            food.effect("minecraft:hunger", 120, 1, 1)
+        }
+    })
 })
