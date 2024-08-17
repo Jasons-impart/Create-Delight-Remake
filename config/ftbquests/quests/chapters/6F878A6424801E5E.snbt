@@ -1149,7 +1149,7 @@
 					type: "item"
 				}
 			]
-			title: "茶叶"
+			title: "&2茶叶"
 			x: -24.5d
 			y: -0.5d
 		}
@@ -2133,7 +2133,7 @@
 				item: "casualness_delight:deep_frying_pan"
 				type: "item"
 			}]
-			title: "油炸食品！"
+			title: "&e油炸食品！"
 			x: -17.5d
 			y: -0.5d
 		}

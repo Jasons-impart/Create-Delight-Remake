@@ -49,9 +49,16 @@
 			y: -0.5d
 		}
 		{
+<<<<<<< HEAD
 			id: "3C5D3B1DC3B81DB4"
 			tasks: [{
 				id: "654CCCA27BC4F787"
+=======
+			id: "00B71A245BF589BC"
+			subtitle: "这把锤子将会陪伴你longtime longtime~~"
+			tasks: [{
+				id: "0B557CD4264676BE"
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 				item: {
 					Count: 1
 					id: "tetra:modular_double"
@@ -63,11 +70,16 @@
 						"double/handle": "double/basic_handle"
 						"double/head_left": "double/basic_hammer_left"
 						"double/head_right": "double/basic_hammer_right"
+<<<<<<< HEAD
 						id: "2b22c13a-282c-4b36-87f4-f0f8a2b30c15"
+=======
+						id: "c9904202-8745-493d-badc-86445d20f0a3"
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 					}
 				}
 				type: "item"
 			}]
+<<<<<<< HEAD
 			x: 3.0d
 			y: -2.5d
 		}
@@ -103,6 +115,11 @@
 			}]
 			x: 7.5d
 			y: 2.0d
+=======
+			title: "&2制作一把木锤"
+			x: -9.0d
+			y: -0.5d
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 		}
 	]
 	title: "锻造之路"

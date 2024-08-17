@@ -277,7 +277,7 @@
 				item: "refinedstorage:disk_drive"
 				type: "item"
 			}]
-			x: -6.0d
+			x: -5.5d
 			y: 0.0d
 		}
 		{
@@ -293,7 +293,7 @@
 				item: "refinedstorage:disk_manipulator"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -7.5d
 			y: 0.0d
 		}
 		{
