@@ -1,0 +1,154 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "4B6A861104F42DC2"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetra:modular_double"
+		tag: {
+			Damage: 0
+			"double/basic_hammer_left_material": "basic_hammer/oak"
+			"double/basic_hammer_right_material": "basic_hammer/oak"
+			"double/basic_handle_material": "basic_handle/stick"
+			"double/handle": "double/basic_handle"
+			"double/head_left": "double/basic_hammer_left"
+			"double/head_right": "double/basic_hammer_right"
+			id: "e72ea1c4-038f-4472-8bef-35b32455354e"
+		}
+	}
+	id: "4B6A861104F42DC2"
+	images: [{
+		height: 15.0d
+		image: "createdelight:textures/gui/hammer.png"
+		rotation: 0.0d
+		width: 15.0d
+		x: 3.5d
+		y: 0.0d
+	}]
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"  恭喜你发现了武器的新的锻造方式"
+				"  其实不同材质的木或者石锤并没有什么不同，比如安山岩，闪长岩或者说是从林木，橡木之类的"
+				"  木锤,最基础的锤子，只有1级的锻造等级，一般用于将原版工作台转化为本模组的专属工作台"
+			]
+			id: "78E196B7FEC2CBFA"
+			rewards: [{
+				id: "0913EA3E56170E58"
+				item: {
+					Count: 1
+					id: "tetra:holo"
+					tag: {
+						"holo/core": "holo/core"
+						"holo/core_material": "frame/dim"
+						"holo/frame": "holo/frame"
+						"holo/frame_material": "core/ancient"
+						"holo/repo": "holo/repo"
+						"holo/repo_material": "repo/default"
+						"holo/scanner": "holo/scanner"
+						"holo/scanner_material": "scanner/default"
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "制作一把木锤，开始你的锻造之路"
+			tasks: [{
+				advancement: "tetra:story/more_upgrades"
+				criterion: ""
+				id: "048A445FABE014F6"
+				type: "advancement"
+			}]
+			title: "欢迎来到tetra！"
+			x: 3.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["78E196B7FEC2CBFA"]
+			description: [
+				"  tetra最基本的合成台，使用tetra含有锤头的任意工具右键原版工作台以转化。"
+				"  可以在此对tetra的工具、武器等进行修改部件、强化、附魔、修复等操作。"
+				"  在附近悬挂或堆放（详见卷轴页面的使用方法）卷轴可以提供更多的选项。"
+				"  进行某些特定合成时需要玩家身上或者附近的工具架上有对应工具才能顺利进行。"
+				"  &d破坏后获得原版工作台"
+			]
+			id: "4ED1044B9B10ABAE"
+			shape: "square"
+			size: 2.0d
+			subtitle: "使用任意一个锤子右键工作台可以转换成加工台"
+			tasks: [{
+				advancement: "tetra:upgrades/workbench"
+				criterion: ""
+				id: "78A499910C6E9D4B"
+				type: "advancement"
+			}]
+			title: "初始锻造"
+			x: 3.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["78E196B7FEC2CBFA"]
+			id: "0B0D7A8F2E3C1FB0"
+			rewards: [{
+				id: "12263D0B8C4E5483"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "square"
+			subtitle: "可以直接在工作台上制作"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_2"
+				criterion: ""
+				id: "7A082D9BECF0E87E"
+				type: "advancement"
+			}]
+			title: "第一次升级！石锤Ⅱ！"
+			x: 4.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"0B0D7A8F2E3C1FB0"
+				"4ED1044B9B10ABAE"
+			]
+			id: "31D986AD80186490"
+			rewards: [{
+				count: 12
+				id: "69C2C122558D6828"
+				item: "minecraft:blackstone"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "需要在加工台中用铁改造锤头部件制作"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_3"
+				criterion: ""
+				id: "4E541B789CCBF95D"
+				type: "advancement"
+			}]
+			title: "更高级的锤子！铁锤Ⅲ！"
+			x: 5.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["31D986AD80186490"]
+			id: "5585E8AA405A90C4"
+			shape: "square"
+			subtitle: "使用下界材料—黑石，制作一把达到当前极限的锤子"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_4"
+				criterion: ""
+				id: "3C93FBB7BBA2A90A"
+				type: "advancement"
+			}]
+			title: "接近极限！黑石锤Ⅳ！"
+			x: 6.5d
+			y: -1.5d
+		}
+	]
+	title: "基础工艺"
+}
