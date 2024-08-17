@@ -53,5 +53,12 @@ StartupEvents.registry("fluid", e => {
         .translationKey("block.createdelight.molten_etrium")
         .translationKey("item.createdelight.molten_etrium_bucket")
         .tag("forge:molten_materials")
+    e.create("createdelight:molten_netherite")
+        .thickTexture(0X5a575a)
+        .bucketColor(0X5a575a)
+        .translationKey("fluid.createdelight.molten_netherite")
+        .translationKey("block.createdelight.molten_netherite")
+        .translationKey("item.createdelight.molten_netherite_bucket")
+        .tag("forge:molten_materials")
 
 })

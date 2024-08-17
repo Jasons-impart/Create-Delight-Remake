@@ -12,7 +12,10 @@ ServerEvents.tags("item", e => {
 ServerEvents.recipes(e => {
     e.replaceInput({id: "mynethersdelight:cooking/crimson_stroganoff"}, "#forge:milk", "#forge:whipped_cream")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:whipped_cream", 250),
+        [
+            Fluid.of("createdelight:whipped_cream", 250),
+            Fluid.water(250)
+        ],
         Fluid.of("milk", 500)
     )
         .heated()

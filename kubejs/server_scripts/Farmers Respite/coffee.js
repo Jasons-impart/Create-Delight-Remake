@@ -1,7 +1,18 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "create_central_kitchen:mixing/coffee"
+        "create_central_kitchen:mixing/coffee",
+        "create_central_kitchen:filling/coffee"
     ])
+    // 咖啡
+    e.recipes.create.mixing(
+        Fluid.of("farmersrespite:coffee", 500),
+        [
+            "createcafe:coffee_grounds",
+            Fluid.of("water", 500)
+        ]
+    )   
+        .heated()
+        .id("createcafe:mixing/coffee/coffee_mixing")
     // 袋装咖啡豆
     e.recipes.minecraft.crafting_shapeless(
         'farmersrespite:coffee_beans_sack',
@@ -13,66 +24,39 @@ ServerEvents.recipes(e => {
         'farmersrespite:coffee_beans_sack'        
     )
     .id("farmersrespite:coffee_beans")
-    // 咖啡果→咖啡豆
-    e.custom({
-        "type": "farmersdelight:cutting",
-        "ingredients": [
-            {
-                "item": "farmersrespite:coffee_berries"
-            }
-        ],
-        "result": [
-            {
-                "item": "createcafe:roasted_coffee_beans"
-            }
-        ],
-        "tool": {
-            "tag": "forge:tools/knives"
-        }
-    })
-    .id("farmersrespite:cutting/coffee_berries")
+    // 咖啡豆粉碎
     e.recipes.create.milling(
         [
-            'createcafe:coffee_grounds',
-            'minecraft:red_dye'
-        ],
-        [
-            "farmersrespite:coffee_berries"
-        ]
-    )
-    .id("create_central_kitchen:milling/coffee_berries")
-    e.recipes.minecraft.crafting_shapeless(
-        "createcafe:roasted_coffee_beans",
-        "farmersrespite:coffee_berries"
-    )
-    .id("minecraft:red_dye")
-    // 咖啡
-    e.recipes.create.filling(
-        'farmersrespite:coffee',
-        [
-            Fluid.of("createcafe:coffee", 250),
-            "minecraft:glass_bottle"
-        ]
-    )
-    .id("create_central_kitchen:filling/coffee")
+            "createcafe:coffee_grounds",
+            Item.of("2x createcafe:coffee_grounds").withChance(0.25)
+        ], 'farmersrespite:coffee_beans'
+    ).id("farmersrespite:milling/coffee_beans")
     e.custom({
         "type": "farmersrespite:brewing",
-        "container": {
-            "item": "minecraft:glass_bottle"
+        "base": {
+            "count": 1000,
+            "fluid": "minecraft:water"
         },
         "cookingtime": 2400,
         "experience": 0.35,
-        "group": "coffee",
         "ingredients": [
             {
-                "item": 'createcafe:coffee_grounds'
+                "item": "createcafe:coffee_grounds"
+            },
+            {
+                "item": "createcafe:coffee_grounds"
             }
         ],
-        "needwater": true,
-        "recipe_book_tab": "drinks",
         "result": {
-            "item": "farmersrespite:coffee"
+            "count": 1000,
+            "fluid": "farmersrespite:coffee"
         }
-    })
-    .id("farmersrespite:brewing/coffee")
+    }).id("farmersrespite:brewing/coffee_from_water")
+    e.recipes.create.filling(
+        "createcafe:iced_coffee",
+        [
+            "createcafe:iced_coffee_cup_ice",
+            Fluid.of("farmersrespite:coffee", 250)
+        ]
+    ).id("createcafe:filling/coffee/iced_coffee_filling")
 })

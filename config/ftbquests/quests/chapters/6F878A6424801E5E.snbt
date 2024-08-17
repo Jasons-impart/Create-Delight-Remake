@@ -148,8 +148,8 @@
 				type: "item"
 			}]
 			title: "我寻思这能用厨锅做"
-			x: -15.583333333333329d
-			y: 2.047619047619051d
+			x: -15.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -331,8 +331,8 @@
 				type: "item"
 			}]
 			title: "温馨火焰"
-			x: -17.488095238095227d
-			y: 2.047619047619051d
+			x: -17.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -841,10 +841,7 @@
 			y: 8.5d
 		}
 		{
-			dependencies: [
-				"1E766468CDA08B92"
-				"5AC8741B75B3670A"
-			]
+			dependencies: ["1E766468CDA08B92"]
 			dependency_requirement: "one_completed"
 			id: "037A91D476687446"
 			rewards: [
@@ -866,10 +863,13 @@
 				type: "item"
 			}]
 			x: -23.5d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
-			dependencies: ["037A91D476687446"]
+			dependencies: [
+				"037A91D476687446"
+				"5AC8741B75B3670A"
+			]
 			id: "326D5BCADED75129"
 			rewards: [
 				{
@@ -890,30 +890,7 @@
 				type: "item"
 			}]
 			x: -24.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["326D5BCADED75129"]
-			id: "3D0980BDCB8BBB78"
-			rewards: [
-				{
-					id: "1F6DD47CB34C1835"
-					item: "createcafe:iced_coffee"
-					type: "item"
-				}
-				{
-					id: "02667E5E3282C949"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "123BF7F73461C37F"
-				item: "createcafe:coffee_bucket"
-				type: "item"
-			}]
-			x: -24.5d
-			y: 7.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["0FF64A9D58056F37"]
@@ -987,17 +964,13 @@
 			y: 5.0d
 		}
 		{
+			dependencies: ["0DB5F873297C3601"]
 			description: [
 				"与厨锅一样，水壶的下方需要热源加热，热源的判定及使用方式与厨锅一致"
-				""
 				"水壶的配方是无序的，只要放入合适的材料并受热，它就会自动冲泡。如果材料包含容器（例如蜂蜜瓶），则处理完成后空容器会被从水壶左上方（以壶嘴朝向为前方）投掷出，可以在固定的位置摆放漏斗等方块以收集它们。"
-				""
 				"制作时间依配方复杂程度而定。较复杂的配方占多数，需要 2 分钟完成，其余则只需要 5 秒。"
-				""
 				"制作完的茶饮会暂时储存在显示槽中，此时水壶壶嘴处会冒出白色粒子，并不断发出刺耳的鸣叫声。显示槽内无论任何物品，最大叠加数都为64；显示槽满后水壶无法继续冲泡。鼠标指针移至显示槽中的物品上时会显示应有的容器。"
-				""
 				"显示槽中的物品不能被直接取出，需要在容器槽内放入合适的容器来将其转移到成品槽内，成品槽中的物品可以被取出，此时玩家可以获得一定经验值；也可通过手持合适的容器右击水壶取出。"
-				""
 				"破坏水壶会保留显示槽其中的物品，其他槽中的物品会掉落。"
 			]
 			id: "0AA8A2C1A41EE9D2"
@@ -1009,7 +982,13 @@
 					type: "item"
 				}
 				{
-					id: "70C8F476876272F0"
+					count: 9
+					id: "6C2245C8D996DB8B"
+					item: "createcafe:coffee_beans"
+					type: "item"
+				}
+				{
+					id: "5B32D8222FDC4197"
 					type: "xp"
 					xp: 100
 				}
@@ -1023,8 +1002,8 @@
 				type: "item"
 			}]
 			title: "农夫暇事"
-			x: -24.5d
-			y: -0.5d
+			x: -19.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["785D1A93F824AE09"]
@@ -1069,7 +1048,7 @@
 					xp: 100
 				}
 			]
-			subtitle: "小刀击杀猪有 50% 的几率掉落火腿，击杀疣猪兽几率则为 100%"
+			subtitle: "击杀疣猪兽100%获得"
 			tasks: [{
 				id: "5EC7FE2B277E04E1"
 				item: "farmersdelight:ham"
@@ -1079,35 +1058,31 @@
 			y: 2.0d
 		}
 		{
+			dependencies: ["0AA8A2C1A41EE9D2"]
 			description: [
 				"破坏野生茶树后得到，可以种植在任意土壤上，生长缓慢且无法用骨粉催熟"
 				"幼苗长大后共有4个成熟阶段，破坏后掉落茶籽、茶叶和木棍，用剪刀右键采摘可以保留幼苗。"
 				"在耕地上种植时，成熟阶段若根部周围发生方块更新，整株茶树会被破坏。"
 			]
 			id: "601F57B5FFA1BC38"
-			rewards: [
-				{
-					id: "493F47292C438F82"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "6B4C77964805C724"
-					item: "farmersrespite:green_tea_leaves"
-					type: "item"
-				}
-			]
-			tasks: [{
-				id: "734EE1C6A1F8E2F7"
-				item: "farmersrespite:tea_seeds"
-				type: "item"
+			rewards: [{
+				id: "493F47292C438F82"
+				type: "xp"
+				xp: 100
 			}]
-			x: -25.5d
-			y: 2.0d
+			shape: "diamond"
+			tasks: [{
+				elapsedTime: 10L
+				icon: "farmersrespite:green_tea_leaves_sack"
+				id: "65FA439E4B097456"
+				type: "questsadditions:time"
+			}]
+			x: -24.5d
+			y: 1.0d
 		}
 		{
-			dependencies: ["34D9D292CE6F683E"]
-			hide_dependency_lines: true
+			dependencies: ["0AA8A2C1A41EE9D2"]
+			hide_dependency_lines: false
 			id: "6F89BA119149A040"
 			rewards: [
 				{
@@ -1123,32 +1098,25 @@
 				}
 			]
 			shape: "diamond"
-			size: 1.3d
+			size: 1.0d
 			tasks: [{
-				elapsedTime: 30L
-				icon: "farmersrespite:yellow_tea"
-				id: "452D07E64042B761"
+				elapsedTime: 10L
+				icon: "farmersrespite:coffee_beans_sack"
+				id: "04B8FFA985A9FFF0"
 				type: "questsadditions:time"
 			}]
 			title: "茶与咖啡"
-			x: -24.427380952380858d
-			y: 3.380952380952408d
+			x: -24.5d
+			y: 3.0d
 		}
 		{
-			dependencies: [
-				"6F89BA119149A040"
-				"601F57B5FFA1BC38"
-			]
+			dependencies: ["601F57B5FFA1BC38"]
 			description: [
 				"不同成熟阶段采摘将得到2-3根木棍以及不同种类的茶叶："
-				""
-				"绿色：1-3绿茶叶；"
-				""
-				"黄色：1-3黄茶叶；"
-				""
-				"黄褐色：1-2红茶叶，1-2黄茶叶；"
-				""
-				"褐色：1-3红茶叶。"
+				"&a绿色&r：1-3绿茶叶；"
+				"&e黄色&r：1-3黄茶叶；"
+				"&6黄褐色&r：1-2红茶叶，1-2黄茶叶；"
+				"&0褐色&r：1-3红茶叶。"
 			]
 			id: "191A371DB8F3E198"
 			rewards: [
@@ -1164,22 +1132,32 @@
 					xp: 100
 				}
 			]
-			tasks: [{
-				id: "427B1F2B2BD69FAC"
-				item: "farmersrespite:green_tea_leaves"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "427B1F2B2BD69FAC"
+					item: "farmersrespite:green_tea_leaves"
+					type: "item"
+				}
+				{
+					id: "76095F33DD936C08"
+					item: "farmersrespite:yellow_tea_leaves"
+					type: "item"
+				}
+				{
+					id: "684E782E6596249A"
+					item: "farmersrespite:black_tea_leaves"
+					type: "item"
+				}
+			]
 			title: "茶叶"
 			x: -24.5d
-			y: 2.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["6F89BA119149A040"]
 			description: [
 				"咖啡树自然生成于下界的玄武岩三角洲群系，也可以用咖啡豆进行种植，只能种植在玄武岩，磨制玄武岩，平滑玄武岩和岩浆块上，且只有在下界才能正常生长。"
-				""
 				"以咖啡树为中心5×5×2范围内的农作物会被转变为凋零根须，每株作物能使咖啡树生长一个生长阶段。主世界的咖啡树只有通过这种方式才能生长结果。"
-				""
 				"咖啡树最高可生长到3格（需要4格空间），主干上总共会长出3根可结果的树枝，右键成熟的树枝即可收获1个咖啡浆果。"
 			]
 			id: "2BE1586D9D67F9EA"
@@ -1195,18 +1173,25 @@
 					xp: 100
 				}
 			]
-			tasks: [{
-				id: "14B639983ED964AF"
-				item: "farmersrespite:wild_coffee_bush"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "14B639983ED964AF"
+					item: "farmersrespite:wild_coffee_bush"
+					type: "item"
+				}
+				{
+					id: "1F77634367F54513"
+					item: "farmersrespite:coffee_berries"
+					type: "item"
+				}
+			]
 			title: "下界咖啡"
 			x: -25.5d
 			y: 4.0d
 		}
 		{
 			dependencies: ["2BE1586D9D67F9EA"]
-			description: ["在砧板上用刀切开即可得到咖啡豆，也可以用于合成红色染料"]
+			description: [""]
 			id: "5AC8741B75B3670A"
 			rewards: [
 				{
@@ -1220,19 +1205,17 @@
 					xp: 100
 				}
 			]
+			subtitle: "在砧板上用刀切开即可得到下界咖啡豆，也可以用于合成红色染料"
 			tasks: [{
 				id: "636C8A8C1AEC56A1"
-				item: "farmersrespite:coffee_berries"
+				item: "farmersrespite:coffee_beans"
 				type: "item"
 			}]
 			x: -25.5d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
-			dependencies: [
-				"0AA8A2C1A41EE9D2"
-				"191A371DB8F3E198"
-			]
+			dependencies: ["191A371DB8F3E198"]
 			icon: "farmersrespite:green_tea"
 			id: "7E653A0F03BEE5A2"
 			rewards: [{
@@ -1240,26 +1223,14 @@
 				type: "xp"
 				xp: 100
 			}]
-			tasks: [
-				{
-					id: "21ACA8E3EBA22C64"
-					item: "farmersrespite:green_tea"
-					type: "item"
-				}
-				{
-					id: "53CEC09F6553784E"
-					item: "farmersrespite:yellow_tea"
-					type: "item"
-				}
-				{
-					id: "72CB544A04F0AABB"
-					item: "farmersrespite:black_tea"
-					type: "item"
-				}
-			]
-			title: "茶香四溢"
-			x: -24.5d
-			y: 1.0d
+			tasks: [{
+				id: "21ACA8E3EBA22C64"
+				item: "farmersrespite:green_tea"
+				type: "item"
+			}]
+			title: "绿茶"
+			x: -26.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -1690,23 +1661,6 @@
 		}
 		{
 			dependencies: ["326D5BCADED75129"]
-			id: "7065DB99EBA4B796"
-			rewards: [{
-				id: "03DE6A9CF6E5C319"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "金苹果的次等替代品"
-			tasks: [{
-				id: "62C7D25EC21A0461"
-				item: "farmersrespite:blazing_chili"
-				type: "item"
-			}]
-			x: -23.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["326D5BCADED75129"]
 			id: "18179C7B1AA608D8"
 			rewards: [{
 				id: "45C5E053E4286C50"
@@ -1718,41 +1672,26 @@
 				item: "farmersrespite:coffee"
 				type: "item"
 			}]
-			x: -25.5d
-			y: 6.0d
+			x: -23.0d
+			y: 6.5d
 		}
 		{
-			dependencies: ["3D0980BDCB8BBB78"]
+			dependencies: ["326D5BCADED75129"]
 			id: "00EE4CE8393F7844"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "2079FBF41954B02B"
-					table_id: 7772018159856264947L
-					type: "loot"
-				}
-				{
-					id: "0C5E7774AA61E71A"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "0C5E7774AA61E71A"
+				type: "xp"
+				xp: 100
+			}]
 			shape: "diamond"
-			size: 1.1d
-			tasks: [
-				{
-					id: "16A5CB16CC41E074"
-					item: "farmersrespite:coffee_cake"
-					type: "item"
-				}
-				{
-					id: "2BE465079CA6960D"
-					item: "farmersrespite:coffee_cake_slice"
-					type: "item"
-				}
-			]
-			x: -24.498809523809413d
-			y: 8.166666666666693d
+			size: 1.0d
+			tasks: [{
+				id: "16A5CB16CC41E074"
+				item: "farmersrespite:coffee_cake"
+				type: "item"
+			}]
+			x: -24.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
@@ -2031,22 +1970,6 @@
 			y: 6.5d
 		}
 		{
-			dependencies: ["191A371DB8F3E198"]
-			id: "13D83A6A85BA32BE"
-			rewards: [{
-				id: "7E532F4C80588F29"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "754B245E1B861E47"
-				item: "farmersrespite:tea_curry"
-				type: "item"
-			}]
-			x: -23.5d
-			y: 2.5d
-		}
-		{
 			dependencies: ["0DB5F873297C3601"]
 			id: "16DFD4344F249ED4"
 			rewards: [{
@@ -2062,8 +1985,8 @@
 				item: "everyxhotpot:hotpot"
 				type: "item"
 			}]
-			x: -19.40357142857136d
-			y: 2.0595238095238457d
+			x: -15.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["16DFD4344F249ED4"]
@@ -2096,8 +2019,8 @@
 					type: "item"
 				}
 			]
-			x: -21.0d
-			y: 2.0d
+			x: -14.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2727,8 +2650,8 @@
 				item: "vintagedelight:fermenting_jar"
 				type: "item"
 			}]
-			x: 12.025000000000105d
-			y: 0.0d
+			x: 12.0d
+			y: 2.000000000000007d
 		}
 		{
 			dependencies: ["37E0D4C31FF54DAA"]
@@ -2886,8 +2809,8 @@
 				type: "item"
 			}]
 			title: "Alex生物？"
-			x: -14.011904761904745d
-			y: 2.000000000000007d
+			x: -14.0d
+			y: 1.5d
 		}
 		{
 			description: ["当你觉得任务窗口太大看不明白时，不妨ctrl+上下滚轮来调节页面大小。"]
@@ -2923,8 +2846,8 @@
 				item: "farmersrespite:green_tea_cookie"
 				type: "item"
 			}]
-			x: -23.5d
-			y: 1.5d
+			x: -23.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["228D3EF4AECD53F4"]
@@ -3523,6 +3446,7 @@
 				item: "vintagedelight:cheese_wheel"
 				type: "item"
 			}]
+			title: "无需发酵！"
 			x: 12.0d
 			y: 8.505952380952351d
 		}
@@ -3534,6 +3458,7 @@
 				item: "ad_astra:cheese"
 				type: "item"
 			}]
+			title: "豪吃！😋"
 			x: 12.0d
 			y: 9.505952380952351d
 		}
@@ -3681,7 +3606,223 @@
 				item: "farmersdelight:hot_cocoa"
 				type: "item"
 			}]
-			x: -23.5d
+			x: -19.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["326D5BCADED75129"]
+			id: "3531C026F4EB9534"
+			rewards: [{
+				id: "709D50AD34DFCC39"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1A8BFBE6EEADA5CF"
+				item: "createcafe:iced_coffee"
+				type: "item"
+			}]
+			x: -26.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["76D8496BD2E16DC4"]
+			id: "54ED142467C81E9B"
+			tasks: [{
+				id: "4FEF21DB0BAD35A6"
+				item: "farmersrespite:long_apple_cider"
+				type: "item"
+			}]
+			x: -25.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0AA8A2C1A41EE9D2"]
+			id: "76D8496BD2E16DC4"
+			tasks: [{
+				id: "39CBFCD6A9A41245"
+				item: "farmersrespite:strong_apple_cider"
+				type: "item"
+			}]
+			x: -24.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "233A094F8912668D"
+			tasks: [{
+				id: "3C8E7A6B8615D566"
+				item: "farmersrespite:yellow_tea"
+				type: "item"
+			}]
+			x: -26.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "20142C9E1C0A2929"
+			tasks: [{
+				id: "35541CA072561A8F"
+				item: "farmersrespite:black_tea"
+				type: "item"
+			}]
+			x: -26.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "2BC8E65592F75832"
+			tasks: [{
+				id: "5A1CE8443DD57E97"
+				item: "farmersrespite:rose_hip_tea"
+				type: "item"
+			}]
+			x: -25.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "33AF9121BFAF8E07"
+			tasks: [{
+				id: "25E7213147D66A73"
+				item: "farmersrespite:dandelion_tea"
+				type: "item"
+			}]
+			x: -24.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "29F8528E2A4DFEB5"
+			tasks: [{
+				id: "35551B9ACC177984"
+				item: "farmersrespite:gamblers_tea"
+				type: "item"
+			}]
+			x: -23.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "1A5D8297FCDC09FE"
+			tasks: [{
+				id: "18A1F3CEB51AC280"
+				item: "farmersrespite:purulent_tea"
+				type: "item"
+			}]
+			x: -23.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0AA8A2C1A41EE9D2"]
+			id: "637C049AA9D2DD2D"
+			tasks: [{
+				id: "6F163DF96A8CD522"
+				item: "ends_delight:chorus_flower_tea"
+				type: "item"
+			}]
+			x: -19.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["233A094F8912668D"]
+			id: "6E485DBCE9C00F15"
+			tasks: [{
+				id: "2C38B617B08E3E6F"
+				item: "fruitsdelight:hawberry_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["20142C9E1C0A2929"]
+			id: "255B680CEDDF9986"
+			tasks: [{
+				id: "01FEAC4472442691"
+				item: "fruitsdelight:mango_tea"
+				type: "item"
+			}]
+			x: -26.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["233A094F8912668D"]
+			id: "3FEA472B3BF64747"
+			tasks: [{
+				id: "393D2C4589049E94"
+				item: "fruitsdelight:peach_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7E653A0F03BEE5A2"]
+			id: "7D1A5266CC394121"
+			tasks: [{
+				id: "347B79C1E9F45D62"
+				item: "fruitsdelight:mangosteen_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7E653A0F03BEE5A2"]
+			id: "076CD2F55E8E422B"
+			tasks: [{
+				id: "7F6437A5DA8BF643"
+				item: "fruitsdelight:lychee_cherry_tea"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3531C026F4EB9534"]
+			id: "37DFEE0BFE8DA55F"
+			tasks: [{
+				id: "493F51FA799318BF"
+				item: "createcafe:iced_coffee_milk"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3531C026F4EB9534"]
+			id: "087215E18536819F"
+			tasks: [{
+				id: "367E0FC88036A935"
+				item: "createcafe:caramel_iced_coffee"
+				type: "item"
+			}]
+			x: -27.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["236182632D72C634"]
+			id: "393F7F1F2698D4EB"
+			tasks: [{
+				id: "5CEB162619FE7B34"
+				item: "casualness_delight:raw_cheese_wheel"
+				type: "item"
+			}]
+			title: "美味无需多盐！"
+			x: -14.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["393F7F1F2698D4EB"]
+			id: "7B8F6ACA6D6FD780"
+			tasks: [{
+				id: "3C40483F25D6D906"
+				item: "casualness_delight:cheese_wheel"
+				type: "item"
+			}]
+			title: "时间会证明一切"
+			x: -13.0d
 			y: 0.5d
 		}
 	]
