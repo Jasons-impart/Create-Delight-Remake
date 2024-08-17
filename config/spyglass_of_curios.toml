@@ -1,0 +1,47 @@
+#Used for test.
+#用于调试
+deBug = false
+
+#Render Settings
+["渲染设置"]
+	#Disable Render for ALL.
+	#禁用所有渲染
+	disableRenderAll = false
+	#Disable Render - Back waist.
+	#禁用渲染 - 后腰
+	disableRenderBackWaist = false
+	#Disable Render - Head.
+	#禁用渲染 - 头
+	disableRenderHead = false
+	#Disable Render - Indescribable.
+	#禁用渲染 - 不可描述
+	disableRenderIndescribable = false
+
+#Info Settings
+["信息设置"]
+	#Disable Multiplier Info.
+	#禁用倍率显示
+	disableMultiplierInfo = false
+
+#Multiplier Settings
+["倍率设置"]
+	#The default multiplier of spyglass.
+	#望远镜默认倍率
+	defaultMultiplier = 7
+	#The maximum multiplier of spyglass.
+	#望远镜最大倍率
+	#Range: 0 ~ 100
+	maxMultiplier = 12
+	#The minimum multiplier of spyglass.
+	#A minimum value less than -15 will cause the image to flip.
+	#望远镜最小倍率
+	#最小值小于-15将会导致镜像反转
+	#Range: -100 ~ 100
+	minMultiplier = -12
+
+#Display Settings
+["显示设置"]
+	#Enable cinematic camera when scoping (Just like Optifine).
+	#启用使用望远镜时的电影视角（就像Optifine的放大一样）
+	enableCinemaCamera = false
+
