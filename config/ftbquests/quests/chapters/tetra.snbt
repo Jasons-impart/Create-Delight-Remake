@@ -49,10 +49,16 @@
 			y: -0.5d
 		}
 		{
+<<<<<<< HEAD
+			id: "3C5D3B1DC3B81DB4"
+			tasks: [{
+				id: "654CCCA27BC4F787"
+=======
 			id: "00B71A245BF589BC"
 			subtitle: "这把锤子将会陪伴你longtime longtime~~"
 			tasks: [{
 				id: "0B557CD4264676BE"
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 				item: {
 					Count: 1
 					id: "tetra:modular_double"
@@ -64,14 +70,56 @@
 						"double/handle": "double/basic_handle"
 						"double/head_left": "double/basic_hammer_left"
 						"double/head_right": "double/basic_hammer_right"
+<<<<<<< HEAD
+						id: "2b22c13a-282c-4b36-87f4-f0f8a2b30c15"
+=======
 						id: "c9904202-8745-493d-badc-86445d20f0a3"
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 					}
 				}
 				type: "item"
 			}]
+<<<<<<< HEAD
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			id: "637AF7079F661321"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_2"
+				criterion: ""
+				id: "550514A9C4B0F821"
+				type: "advancement"
+			}]
+			x: 4.5d
+			y: -1.0d
+		}
+		{
+			id: "07DEAAB918513367"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_3"
+				criterion: ""
+				id: "05196E3742AB30D7"
+				type: "advancement"
+			}]
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			id: "4FCD8119055C8BB8"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_4"
+				criterion: ""
+				id: "04E12766635F9B46"
+				type: "advancement"
+			}]
+			x: 7.5d
+			y: 2.0d
+=======
 			title: "&2制作一把木锤"
 			x: -9.0d
 			y: -0.5d
+>>>>>>> d5e9c31e0475abc2ac701421bf05604683f94a8a
 		}
 	]
 	title: "锻造之路"

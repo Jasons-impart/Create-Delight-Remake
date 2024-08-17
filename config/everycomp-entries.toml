@@ -77,6 +77,9 @@
 		[types.wood_type.vinery]
 			dark_cherry = true
 
+		[types.wood_type.iceandfire]
+			dreadwood = true
+
 #Disables specific entries
 [entries]
 
