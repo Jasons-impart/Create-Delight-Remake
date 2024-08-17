@@ -1,4 +1,4 @@
-# ModList 0.3a
+# ModList 0.4a
 
 commit规范：在魔改mod的对应词条后以“>”符开头，之后描述。每条魔改项前皆添加“>”符。
 md格式在各个编辑器上标准不统一。每次使用回车从A行切换到B行前，最好在A行末尾打两个空格。
@@ -9,60 +9,103 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
 1. [机械动力（create）](https://www.mcmod.cn/class/2021.html)aa
 
-    * [机械动力：柴油动力（Create: Diesel Generators）](https://www.mcmod.cn/class/10727.html)aa
-
-      任务线：工程师－石油时代
     * [机械动力:咖啡馆（Create Cafe）](https://www.mcmod.cn/class/6016.html)aa
 
       任务线：***大厨－血脉觉醒-茶与咖啡  - 已完成***
     * [机械动力：火炮（Create Big Cannons）](https://www.mcmod.cn/class/7178.html)aa
 
       未指定
-    * [机械动力：工业扩展](https://www.mcmod.cn/class/3437.html)aa
+
+      * 下界钢锭
+      * 火炮机械
+    * [机械动力：工业扩展（Create Crafts &amp; Additions）](https://www.mcmod.cn/class/3437.html)aa
 
       任务线：工程师－旋转发电
     * [机械动力：甜食(Create Confectionery)](https://www.mcmod.cn/class/4871.html)aa
 
-      任务线：大厨－精加工－甜品分支
+      ***任务线：大厨－精加工－甜品分支 - 已完成***
     * [机械动力：柴油动力(Create: Diesel Generators)](https://www.mcmod.cn/class/10727.html)aa
 
       任务线：工程师－石油时代
+
+      * 三类油，柴油引擎
     * [机械动力：中央厨房(Create Central Kitchen)](https://www.mcmod.cn/class/9151.html)aa
 
-      未指定
+      * 预制菜自动化
     * [机械动力：晶莹剔透(Create: Crystal Clear)](https://www.mcmod.cn/class/7614.html)aa
 
-      未指定
+      * 玻璃机壳
     * [机械动力：物品附加(Create Stuff &amp; Additions)](https://www.mcmod.cn/class/3779.html)aa
 
       任务线：生活小技巧－来去自由－三大引擎
+
+      * 黄铜无人机，更多工具，气动装备（含喷气背包）  
+        十分好玩的抓钩
     * [机械动力：矿石开掘(Create Ore Excavation)](https://www.mcmod.cn/class/7300.html)aa
 
       任务线：生活小技巧－矿物再生
+
+      * 原石，矿机，勘探器
     * [机械动力：附魔工业(Create Enchantment Industry)](https://www.mcmod.cn/class/7892.html)  aa
 
       未指定
+
+      * 祛魔，打印附魔书，超限附魔，附魔自动化
     * [机械动力：齿轮与麦穗(Create: Ratatouille)](https://www.mcmod.cn/class/13995.html)aa
 
       任务线：***大厨－血脉觉醒－农业科技  - 已完成***。***大厨－精加工-巧克力  - 已完成***
-    * [机械动力：合金](https://www.mcmod.cn/class/6965.html)未更新（
-
-      任务线：添加钢和青铜
-    * [机械动力：合金枪械（Create: Alloyed Guns）](https://www.mcmod.cn/class/8537.html) >需要MrCrayfish的枪，机械动力，Framework，机械动力：合金作为前置 未更新
+    * ~~[机械动力：合金枪械（Create: Alloyed Guns）](https://www.mcmod.cn/class/8537.html)~~   ~~&gt;需要MrCrayfish的枪，机械动力，Framework，机械动力：合金作为前置 未更新~~
     * [机械动力：冶金学 (Create: metallury)](https://www.mcmod.cn/class/15052.html)新加aa
 
-      任务线：生活小技巧－枪械大师
+      * 钨  
+        “铸造”系列器械  
+        磨粉多倍矿
     * [[SnR]机械动力：汽鸣铁道 (Create: Steam &apos;n&apos; Rails)](https://www.mcmod.cn/class/8230.html)aa
 
       未指定
-    * [机械动力：经典改进 (Create: Vintage Improvements) ](https://www.mcmod.cn/class/13760.html)非正式aa
-    * [机械动力：实用物件(Create: things and misc)](https://www.mcmod.cn/class/7464.html)非正式aa
-    * [机械动力：伪装猫猫(Create: Copycats+)](https://www.mcmod.cn/class/13844.html)非正式aa
-    * [机械动力：创意传动 (Create: Connected)](https://www.mcmod.cn/class/13105.html)非正式aa
+
+      * 铁道器械
+    * [机械动力：经典改进 (Create: Vintage Improvements) ](https://www.mcmod.cn/class/13760.html) aa
+
+      * ‍
+
+      * 提供大量机械：  
+        更多***板材***  
+        接入工业拓展轧机，提供***棒、线***  
+        磨床抛光配方  
+        卷簧机工艺，产出***弹簧***  
+        压缩机，产粉和溶液，与硫酸配方相关  
+        振动台，解包  
+        离心机，离心配方  
+        弯曲压力机，金属压制配方  
+        赫尔夫锤，锻造台/铁砧配方  
+        车床  
+        激光加工
+    * [机械动力：实用物件(Create: misc and tings)](https://www.mcmod.cn/class/7464.html) aa
+
+      * 铁道功能方块
+    * [机械动力：伪装猫猫(Create: Copycats+)](https://www.mcmod.cn/class/13844.html) aa
+
+      * 伪装板
+    * [机械动力：创意传动 (Create: Connected)](https://www.mcmod.cn/class/13105.html) aa
+
+      * 传动用生产线构建  
+        机械动力无线红石增强  
+        增强原版功能
 2. [太空旅行（Ad Astra!](https://www.mcmod.cn/class/7395.html)）aa
+
+    *  
+
+      * 自有机械线
+      * 乱七八糟的星球矿石
 3. [沉浸式飞机 (Immersive Aircraft) ](https://www.mcmod.cn/class/8527.html)aa
 
     任务线：生活小技巧－来去自由
+
+    *  
+
+      * 五大飞行器
+      * 对应升级组件
 4. [[RS]精致存储 (Refined Storage)](https://www.mcmod.cn/class/691.html)aa
 
     任务线：生活小技巧－高级存储
@@ -89,45 +132,42 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
     * [Alex乐事（Alex&apos;s Delight）](https://www.mcmod.cn/class/5565.html) >同见于农夫乐事（Farmer's Delight）附属aa
 3. [天空之城（Castle in the Sky）](https://www.mcmod.cn/class/4920.html)aaaa
-4. [MrCrayfish的枪(MrCrayfish&apos;s Gun Mod)](https://www.mcmod.cn/class/1215.html#google_vignette)未更新
-
-    * [机械动力：合金枪械（Create: Alloyed Guns）](https://www.mcmod.cn/class/8537.html) >需要MrCrayfish的枪，机械动力，Framework，机械动力：合金作为前置未更新
-5. [苦力怕改革/苦力怕革新(Creeper Overhaul)](https://www.mcmod.cn/class/5373.html)aa
-6. [幽邃黑暗（Deeper and Darker）](https://www.mcmod.cn/class/7369.html)aa
+4. [苦力怕改革/苦力怕革新(Creeper Overhaul)](https://www.mcmod.cn/class/5373.html)aa
+5. [幽邃黑暗（Deeper and Darker）](https://www.mcmod.cn/class/7369.html)aa
 
     任务线：世界之旅－探索幽冥右
-7. [地牢浮现之时(When Dungeons Arise)](https://www.mcmod.cn/class/3607.html)aa
-8. [附魔生物(EnchantWithMob)](https://www.mcmod.cn/class/3443.html)未更新
-9. [末影龙增强(Ender Trigon)](https://www.mcmod.cn/class/7988.html)aa
+6. [地牢浮现之时(When Dungeons Arise)](https://www.mcmod.cn/class/3607.html)aa
+7. [附魔生物(EnchantWithMob)](https://www.mcmod.cn/class/3443.html)未更新
+8. [末影龙增强(Ender Trigon)](https://www.mcmod.cn/class/7988.html)aa
 
     任务线：世界之旅－终末之旅中
-10. [末地：创世(End Remastered)](https://www.mcmod.cn/class/3369.html)不用了这玩意有点恶心
+9. [末地：创世(End Remastered)](https://www.mcmod.cn/class/3369.html)不用了这玩意有点恶心
 
-     任务线：世界之旅－终末之旅左
-11. [[IDAS]地牢建筑统合 (Integrated Dungeons and Structures)](https://www.mcmod.cn/class/6142.html)aa
-12. [废弃传送门（Nebulus better portals）](https://www.mcmod.cn/class/15519.html)aa
-13. [残暴与掠夺 (Savage &amp; Ravage)](https://www.mcmod.cn/class/3481.html)未更新
-14. [静谧四季/季节 (Serene Seasons)](https://www.mcmod.cn/class/1132.html)aa
+    任务线：世界之旅－终末之旅左
+10. [[IDAS]地牢建筑统合 (Integrated Dungeons and Structures)](https://www.mcmod.cn/class/6142.html)aa
+11. [废弃传送门（Nebulus better portals）](https://www.mcmod.cn/class/15519.html)aa
+12. [残暴与掠夺 (Savage &amp; Ravage)](https://www.mcmod.cn/class/3481.html)未更新
+13. [静谧四季/季节 (Serene Seasons)](https://www.mcmod.cn/class/1132.html)aa
 
      * [SeasonHUD](https://www.mcmod.cn/class/8227.html)aa
-15. [旷野之息高塔 : 再重制 (Towers of the Wild Modded)](https://www.mcmod.cn/class/11568.html)aa
-16. [[T](https://www.mcmod.cn/class/7000.html)​[&T]Towns and Towers](https://www.mcmod.cn/class/7000.html)aa
-17. [Ulterlands维度（Ulterlands: Worlds Apart）](https://www.mcmod.cn/class/9576.html)未更新
+14. [旷野之息高塔 : 再重制 (Towers of the Wild Modded)](https://www.mcmod.cn/class/11568.html)aa
+15. [[T](https://www.mcmod.cn/class/7000.html)​[&T]Towns and Towers](https://www.mcmod.cn/class/7000.html)aa
+16. [Ulterlands维度（Ulterlands: Worlds Apart）](https://www.mcmod.cn/class/9576.html)未更新
 
      任务线：世界之旅－转生异界
-18. [不同寻常的末地 (Unusual End)](https://www.mcmod.cn/class/7344.html)未更新
+17. [不同寻常的末地 (Unusual End)](https://www.mcmod.cn/class/7344.html)未更新
 
      任务线：世界之旅－终末之旅右
-19. [YUNG的沙漠神殿优化 (YUNG&apos;s Better Desert Temples)](https://www.mcmod.cn/class/6613.html)aa
-20. [YUNG 的地牢优化 (YUNG&apos;s Better Dungeons)](https://www.mcmod.cn/class/4429.html)aa
-21. [YUNG的末地岛屿优化 (YUNG&apos;s Better End Island)](https://www.mcmod.cn/class/12175.html)aa
-22. [YUNG的丛林神庙优化 (YUNG&apos;s Better Jungle Temples)](https://www.mcmod.cn/class/12060.html)aa
-23. [YUNG 的矿井优化 (YUNG&apos;s Better Mineshafts)](https://www.mcmod.cn/class/2788.html)aa
-24. [YUNG的下界要塞优化 (YUNG&apos;s Better Nether Fortresses)](https://www.mcmod.cn/class/9384.html)aa
-25. [YUNG的海底神殿优化 (YUNG&apos;s Better Ocean Monuments)](https://www.mcmod.cn/class/7904.html)aa
-26. [YUNG的沼泽小屋优化 (YUNG&apos;s Better Witch Huts)](https://www.mcmod.cn/class/6618.html)aa
-27. [YUNG的额外结构（YUNG&apos;s Extras）](https://www.mcmod.cn/class/4276.html)aa
-28. [永恒之门(Gateways to Eternity)](https://www.mcmod.cn/class/7522.html) aa
+18. [YUNG的沙漠神殿优化 (YUNG&apos;s Better Desert Temples)](https://www.mcmod.cn/class/6613.html)aa
+19. [YUNG 的地牢优化 (YUNG&apos;s Better Dungeons)](https://www.mcmod.cn/class/4429.html)aa
+20. [YUNG的末地岛屿优化 (YUNG&apos;s Better End Island)](https://www.mcmod.cn/class/12175.html)aa
+21. [YUNG的丛林神庙优化 (YUNG&apos;s Better Jungle Temples)](https://www.mcmod.cn/class/12060.html)aa
+22. [YUNG 的矿井优化 (YUNG&apos;s Better Mineshafts)](https://www.mcmod.cn/class/2788.html)aa
+23. [YUNG的下界要塞优化 (YUNG&apos;s Better Nether Fortresses)](https://www.mcmod.cn/class/9384.html)aa
+24. [YUNG的海底神殿优化 (YUNG&apos;s Better Ocean Monuments)](https://www.mcmod.cn/class/7904.html)aa
+25. [YUNG的沼泽小屋优化 (YUNG&apos;s Better Witch Huts)](https://www.mcmod.cn/class/6618.html)aa
+26. [YUNG的额外结构（YUNG&apos;s Extras）](https://www.mcmod.cn/class/4276.html)aa
+27. [永恒之门(Gateways to Eternity)](https://www.mcmod.cn/class/7522.html) aa
 
 ## Agriculture
 
@@ -201,7 +241,7 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 6. [[IP]沉浸画框 (Immersive Paintings)](https://www.mcmod.cn/class/6947.html)aa
 7. [3D 皮肤层 (Skin Layers 3D)](https://www.mcmod.cn/class/4618.html)aa
 8. [锦致装饰 (Supplementaries)](https://www.mcmod.cn/class/3555.html)aa
-9. [Terralith](https://www.mcmod.cn/class/4557.html)aa
+9. [史诗地形（Terralith）](https://www.mcmod.cn/class/4557.html)  aa
 
 ## Utilities
 
@@ -229,94 +269,82 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 3. [吃不停（AlwaysEat）](https://www.mcmod.cn/class/4005.html)aa
 4. [苹果皮（AppleSkin）](https://www.mcmod.cn/class/744.html)aa
 5. [属性修复（AttributeFix）](https://www.mcmod.cn/class/2264.html)aa
-6. [美西螈桶修复（Axolotl Bucket Fix (Forge)）](https://www.mcmod.cn/class/8141.html)未更新
-7. [蜜蜂修复（Bee Fix）](https://www.mcmod.cn/class/8915.html)aa
-8. [更好的进度（Better Advancements）](https://www.mcmod.cn/class/1530.html)aa
-9. [更好的F3(BetterF3)](https://www.mcmod.cn/class/3525.html)aa
-10. [搬运（Carry On）](https://www.mcmod.cn/class/1081.html)aa
-11. [不死图腾插槽(Curio of Undying/Trinket of Undying/Charm of Undying)](https://www.mcmod.cn/class/2236.html)aa
-12. [聊天头像(Chat Heads)](https://www.mcmod.cn/class/4523.html)aa
-13. [更美观的血条(Health Overlay / Colorful Hearts)](https://www.mcmod.cn/class/1871.html)删除
-
-     * [经典且简易的状态栏(Classic And Simple Status Bars)](https://www.mcmod.cn/class/12121.html)新加aa
-14. [战斗翻滚(Combat Roll)](https://www.mcmod.cn/class/7671.html)删除
-15. [键位冲突显示(Controlling)](https://www.mcmod.cn/class/1191.html)aa
-16. [时装盔甲重置版(Cosmetic Armor Reworked)](https://www.mcmod.cn/class/2497.html)aa
-17. [准星摇晃(Crosshair Bobbing)](https://www.mcmod.cn/class/11063.html)aa
-18. [优化向，树叶渲染优化(Cull Leaves)](https://www.mcmod.cn/class/4414.html)替换
-
-     * [优化向，树叶渲染优化+(Cull Less Leaves Reforged)](https://www.mcmod.cn/class/9810.html)新加aa
-19. [万用皮肤补丁(CustomSkinLoader)](https://www.mcmod.cn/class/883.html)aa
-20. [动态准星(Dynamic Crosshair)](https://www.mcmod.cn/class/6559.html)aa
-21. [优化向，镁/铷：动态光源(Embeddium/Rubidium Dynamic Lights)](https://www.mcmod.cn/class/5302.html)aa
-22. [鞘翅插槽(Curious Elytra / Elytra Trinket / Elytra Slot)](https://www.mcmod.cn/class/3923.html)aa
-23. [优化向，铷分支（Embeddium）](https://www.mcmod.cn/class/12028.html)aa
+6. [蜜蜂修复（Bee Fix）](https://www.mcmod.cn/class/8915.html)aa
+7. [更好的进度（Better Advancements）](https://www.mcmod.cn/class/1530.html)aa
+8. [更好的F3(BetterF3)](https://www.mcmod.cn/class/3525.html)aa
+9. [搬运（Carry On）](https://www.mcmod.cn/class/1081.html)aa
+10. [不死图腾插槽(Curio of Undying/Trinket of Undying/Charm of Undying)](https://www.mcmod.cn/class/2236.html)aa
+11. [聊天头像(Chat Heads)](https://www.mcmod.cn/class/4523.html)aa
+12. [经典且简易的状态栏(Classic And Simple Status Bars)](https://www.mcmod.cn/class/12121.html)新加aa
+13. [键位冲突显示(Controlling)](https://www.mcmod.cn/class/1191.html)aa
+14. [时装盔甲重置版(Cosmetic Armor Reworked)](https://www.mcmod.cn/class/2497.html)aa
+15. [准星摇晃(Crosshair Bobbing)](https://www.mcmod.cn/class/11063.html)aa
+16. [优化向，树叶渲染优化+(Cull Less Leaves Reforged)](https://www.mcmod.cn/class/9810.html)新加aa
+17. [万用皮肤补丁(CustomSkinLoader)](https://www.mcmod.cn/class/883.html)aa
+18. [动态准星(Dynamic Crosshair)](https://www.mcmod.cn/class/6559.html)aa
+19. [优化向，镁/铷：动态光源(Embeddium/Rubidium Dynamic Lights)](https://www.mcmod.cn/class/5302.html)aa
+20. [鞘翅插槽(Curious Elytra / Elytra Trinket / Elytra Slot)](https://www.mcmod.cn/class/3923.html)aa
+21. [优化向，铷分支（Embeddium）](https://www.mcmod.cn/class/12028.html)aa
 
      * [优化向，铷分支（Embeddium++）](https://www.mcmod.cn/class/12822.html)aa
      * [优化向，铷附属(Rubidium Extra)](https://www.mcmod.cn/class/7180.html)新加aa
-24. [附魔描述(Enchantment Descriptions)](https://www.mcmod.cn/class/1945.html)aa
-25. [优化向，低负载高视距（Farsight）](https://www.mcmod.cn/class/5224.html)aa
-26. [树叶快速腐烂(Fast Leaf Decay)](https://www.mcmod.cn/class/1173.html)aa
-27. [优化向，铁氧体磁芯(FerriteCore)](https://www.mcmod.cn/class/3888.html)aa
-28. [优化向，FPS减速器(FPS Reducer)](https://www.mcmod.cn/class/1815.html)删除
-29. [FTB区块（FTB Chunks）](https://www.mcmod.cn/class/3201.html)aa
-30. [连锁破坏 (FTB Ultimine) ](https://www.mcmod.cn/class/3004.html)aa
-31. [物品高亮 (Item Highlighter) ](https://www.mcmod.cn/class/6071.html)aa
-32. [[i18n]自动汉化更新 (I18nUpdateMod) ](https://www.mcmod.cn/class/1188.html)aa
-33. [输入法冲突修复 (IMBlocker)](https://www.mcmod.cn/class/3358.html)aa
-34. [物品边框 (Item Borders)](https://www.mcmod.cn/class/5073.html)aa
-35. [物品物理掉落 (ItemPhysiclite)](https://www.mcmod.cn/class/932.html)aa
-36. [玉 (Jade)](https://www.mcmod.cn/class/3482.html)aa
+22. [附魔描述(Enchantment Descriptions)](https://www.mcmod.cn/class/1945.html)aa
+23. [优化向，低负载高视距（Farsight）](https://www.mcmod.cn/class/5224.html)aa
+24. [树叶快速腐烂(Fast Leaf Decay)](https://www.mcmod.cn/class/1173.html)aa
+25. [优化向，铁氧体磁芯(FerriteCore)](https://www.mcmod.cn/class/3888.html)aa
+26. [FTB区块（FTB Chunks）](https://www.mcmod.cn/class/3201.html)aa
+27. [连锁破坏 (FTB Ultimine) ](https://www.mcmod.cn/class/3004.html)aa
+28. [物品高亮 (Item Highlighter) ](https://www.mcmod.cn/class/6071.html)aa
+29. [[i18n]自动汉化更新 (I18nUpdateMod) ](https://www.mcmod.cn/class/1188.html)aa
+30. [输入法冲突修复 (IMBlocker)](https://www.mcmod.cn/class/3358.html)aa
+31. [物品边框 (Item Borders)](https://www.mcmod.cn/class/5073.html)aa
+32. [物品物理掉落 (ItemPhysiclite)](https://www.mcmod.cn/class/932.html)aa
+33. [玉 (Jade)](https://www.mcmod.cn/class/3482.html)aa
 
      * [Jade Addons](https://www.mcmod.cn/class/5837.html)aa
      * [3D物品显示！(Obscure-Tooltips)](https://www.mcmod.cn/class/8754.html)aa
-37. [[JECh]通用拼音搜索 (Just Enough Characters)](https://www.mcmod.cn/class/840.html)aa
-38. [[JEED]JEI药水效果 (Just Enough Effect Descriptions)](https://www.mcmod.cn/class/5460.html)aa
-39. [[JEI]JEI物品管理器 (Just Enough Items)](https://www.mcmod.cn/class/459.html)aa
+34. [[JECh]通用拼音搜索 (Just Enough Characters)](https://www.mcmod.cn/class/840.html)aa
+35. [[JEED]JEI药水效果 (Just Enough Effect Descriptions)](https://www.mcmod.cn/class/5460.html)aa
+36. [[JEI]JEI物品管理器 (Just Enough Items)](https://www.mcmod.cn/class/459.html)aa
 
      * [[JERI]JER集成 (JER Integration)](https://www.mcmod.cn/class/5611.html)aa
      * [[JEP]JEI工作方块 (Just Enough Professions)](https://www.mcmod.cn/class/4464.html)aa
      * [[JER]Just Enough Resources](https://www.mcmod.cn/class/855.html)aa
      * [JEI药水效果附属[MEED]Moderately Enough Effect Descriptions](https://www.mcmod.cn/class/12591.html)aa
      * [[JEA]考古学附属(Just Enough Archaeology)](https://www.mcmod.cn/class/11367.html)新加aa
-40. [优化向，DFU载入优化 (LazyDFU)](https://www.mcmod.cn/class/3407.html)删除
-41. [[mcwifipnp]更高级联机设置 (LAN World Plug-n-Play)](https://www.mcmod.cn/class/4498.html)aa
-42. [优化向，内存清扫 (Memory Sweep)](https://www.mcmod.cn/class/8653.html)aa
-43. [优化向，现代化修复 (ModernFix) ](https://www.mcmod.cn/class/8714.html)aa
-44. [鼠标手势 (Mouse Tweaks)](https://www.mcmod.cn/class/1162.html)aa
-45. [[NCR]禁用聊天举报 (No Chat Reports)](https://www.mcmod.cn/class/6756.html)aa
-46. [更多动画 (Not Enough Animations)](https://www.mcmod.cn/class/4378.html)aa
-47. [优化向，Iris &amp; Oculus Flywheel Compat](https://www.mcmod.cn/class/7283.html)aa
-48. [优化向，Oculus](https://www.mcmod.cn/class/5741.html)aa
-49. [优化向，开放式加载 (Open Loader)](https://www.mcmod.cn/class/3002.html)aa
-50. [护甲上限突破 (Overloaded Armor Bar)](https://www.mcmod.cn/class/3131.html)删除
-51. [优化向，数据包异常修复（Packet Fixer）](https://www.mcmod.cn/class/12625.html)aa
-52. [Path Under Gates ](https://www.mcmod.cn/class/15097.html)删除
-53. [多态合成 (Polymorph)](https://www.mcmod.cn/class/2895.html)aa
-54. [脚步声Forge版 (Presence Footsteps (Forge)) ](https://www.mcmod.cn/class/4819.html)aa
-55. [夸克 (Quark)](https://www.mcmod.cn/class/527.html)aa
-56. [截图查看器 (Screenshot Viewer)](https://www.mcmod.cn/class/8912.html)aa
-57. [越肩视角重制 (Shoulder Surfing Reloaded)](https://www.mcmod.cn/class/3305.html)aa
-58. [潜影盒工具提示 (Shulker Box Tooltip)](https://www.mcmod.cn/class/2611.html)aa
-59. [物理声效重制版 (Sound Physics Remastered)](https://www.mcmod.cn/class/8197.html)aa
-60. [星光 (Starlight)](https://www.mcmod.cn/class/3303.html)删除
-61. [穿草攻击 (SwingThroughGrass)](https://www.mcmod.cn/class/1465.html)未更新，更换
-
-     * [cleanswing](https://www.mcmod.cn/class/12242.html)新加aa
-62. [盔甲韧性显示 (Armor Toughness Bar)](https://www.mcmod.cn/class/2964.html)未更新
-63. [垃圾槽 (TrashSlot)](https://www.mcmod.cn/class/1893.html)aa
-64. [地区RPG风格标题（Traveler&apos;s Titles）](https://www.mcmod.cn/class/4471.html)aa
-65. [削树（HT&apos;s TreeChop）](https://www.mcmod.cn/class/6554.html)aa
-66. [移除原版村庄（Village Nullifier）](https://www.mcmod.cn/class/14198.html)aa
-67. [多维快捷键（Raw&apos;s Visual Keybinder）](https://www.mcmod.cn/class/15145.html)aa
-68. [沉浸式行动（[Watut]What Are They Up To）](https://www.mcmod.cn/class/12938.html)aa
-69. [[XMM]Xaero的小地图 (Xaero&apos;s Minimap)](https://www.mcmod.cn/class/1701.html)aa
+37. [优化向，DFU载入优化 (LazyDFU)](https://www.mcmod.cn/class/3407.html)删除
+38. [[mcwifipnp]更高级联机设置 (LAN World Plug-n-Play)](https://www.mcmod.cn/class/4498.html)aa
+39. [优化向，内存清扫 (Memory Sweep)](https://www.mcmod.cn/class/8653.html)aa
+40. [优化向，现代化修复 (ModernFix) ](https://www.mcmod.cn/class/8714.html)aa
+41. [鼠标手势 (Mouse Tweaks)](https://www.mcmod.cn/class/1162.html)aa
+42. [[NCR]禁用聊天举报 (No Chat Reports)](https://www.mcmod.cn/class/6756.html)aa
+43. [更多动画 (Not Enough Animations)](https://www.mcmod.cn/class/4378.html)aa
+44. [优化向，Iris &amp; Oculus Flywheel Compat](https://www.mcmod.cn/class/7283.html)aa
+45. [优化向，Oculus](https://www.mcmod.cn/class/5741.html)aa
+46. [优化向，开放式加载 (Open Loader)](https://www.mcmod.cn/class/3002.html)aa
+47. [优化向，数据包异常修复（Packet Fixer）](https://www.mcmod.cn/class/12625.html)aa
+48. [Path Under Gates ](https://www.mcmod.cn/class/15097.html)删除
+49. [多态合成 (Polymorph)](https://www.mcmod.cn/class/2895.html)aa
+50. [脚步声Forge版 (Presence Footsteps (Forge)) ](https://www.mcmod.cn/class/4819.html)aa
+51. [夸克 (Quark)](https://www.mcmod.cn/class/527.html)aa  
+     夸克相关
+52. [截图查看器 (Screenshot Viewer)](https://www.mcmod.cn/class/8912.html)aa
+53. [越肩视角重制 (Shoulder Surfing Reloaded)](https://www.mcmod.cn/class/3305.html)aa
+54. [潜影盒工具提示 (Shulker Box Tooltip)](https://www.mcmod.cn/class/2611.html)aa
+55. [物理声效重制版 (Sound Physics Remastered)](https://www.mcmod.cn/class/8197.html)aa
+56. [cleanswing](https://www.mcmod.cn/class/12242.html)新加aa
+57. [垃圾槽 (TrashSlot)](https://www.mcmod.cn/class/1893.html)aa
+58. [地区RPG风格标题（Traveler&apos;s Titles）](https://www.mcmod.cn/class/4471.html)aa
+59. [削树（HT&apos;s TreeChop）](https://www.mcmod.cn/class/6554.html)aa
+60. [移除原版村庄（Village Nullifier）](https://www.mcmod.cn/class/14198.html)aa
+61. [多维快捷键（Raw&apos;s Visual Keybinder）](https://www.mcmod.cn/class/15145.html)aa
+62. [沉浸式行动（[Watut]What Are They Up To）](https://www.mcmod.cn/class/12938.html)aa
+63. [[XMM]Xaero的小地图 (Xaero&apos;s Minimap)](https://www.mcmod.cn/class/1701.html)aa
 
      * [[XWM]Xaero的世界地图 (Xaero&apos;s World Map)](https://www.mcmod.cn/class/1483.html)aa
-70. [禁用实验性设置弹出（Yeetus Experimentus）](https://www.mcmod.cn/class/11062.html)aa
-71. [Zume](https://www.mcmod.cn/class/13754.html)aa
-72. [望远镜改进](https://www.mcmod.cn/class/9323.html)非正式
-73. [灵魂火优化(Soul fire&apos;d)](https://www.mcmod.cn/class/7632.html)
+64. [禁用实验性设置弹出（Yeetus Experimentus）](https://www.mcmod.cn/class/11062.html)aa
+65. [饰品望远镜(Spyglass of Curios)](https://www.mcmod.cn/class/12775.html) aa
+66. [灵魂火优化(Soul fire&apos;d)](https://www.mcmod.cn/class/7632.html)
 
 ## ExtraConfig
 
