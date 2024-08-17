@@ -98,7 +98,7 @@
 				type: "item"
 			}]
 			x: 4.5d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
@@ -130,8 +130,8 @@
 				item: "minecraft:raw_gold"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 0.0d
+			x: 8.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
@@ -141,7 +141,7 @@
 				item: "minecraft:glowstone_dust"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 4.5d
 			y: 1.0d
 		}
 		{
@@ -152,7 +152,7 @@
 				item: "minecraft:quartz"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 5.5d
 			y: 1.0d
 		}
 		{
@@ -174,7 +174,7 @@
 				item: "minecraft:ancient_debris"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 6.5d
 			y: 1.0d
 		}
 		{
@@ -253,6 +253,27 @@
 			}]
 			x: 6.5d
 			y: 0.0d
+		}
+		{
+			id: "428AB7BB0B921492"
+			tasks: [{
+				id: "03FCB362615E65DC"
+				item: "createdelight:raw_tin"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "480F8D5AC05A3B5A"
+			tasks: [{
+				id: "6927922112140AE9"
+				item: "iceandfire:raw_silver"
+				type: "item"
+			}]
+			x: 10.5d
+			y: -1.0d
 		}
 	]
 	title: "&e矿物再生！"

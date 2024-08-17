@@ -24,7 +24,7 @@
                     }
                   }
                 ],
-                "name": "createdelight:tin_ore"
+                "name": "createmetallurgy:wolframite_ore"
               },
               {
                 "type": "minecraft:item",
@@ -33,8 +33,8 @@
                     "add": false,
                     "count": {
                       "type": "minecraft:uniform",
-                      "max": 5.0,
-                      "min": 2.0
+                      "max": 3.0,
+                      "min": 1.0
                     },
                     "function": "minecraft:set_count"
                   },
@@ -47,7 +47,7 @@
                     "function": "minecraft:explosion_decay"
                   }
                 ],
-                "name": "createdelight:raw_tin"
+                "name": "createmetallurgy:raw_wolframite"
               }
             ]
           }

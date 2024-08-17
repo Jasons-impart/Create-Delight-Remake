@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "refinedstorage:silicon"
+    ])
     // 处理器粘合物
     e.recipes.create.mixing("8x refinedstorage:processor_binding", [
         "#forge:slimeballs",
@@ -14,9 +17,9 @@ ServerEvents.recipes(e => {
     ])
         .heated()
         .id("rs_kjs:raw_silicon")
-    e.recipes.minecraft.smelting("refinedstorage:silicon", "createdelight:raw_silicon")
+    blast_and_smelting(e, "createdelight:raw_silicon", 'ae2:silicon', 0.35, 100)
     // 序列合成：基础处理器
-    e.recipes.create.sequenced_assembly("refinedstorage:basic_processor", "refinedstorage:silicon", [
+    e.recipes.create.sequenced_assembly("refinedstorage:basic_processor", "ae2:silicon", [
         e.recipes.create.deploying("refinedstorage:raw_basic_processor", ["refinedstorage:raw_basic_processor", "refinedstorage:processor_binding"]),
         e.recipes.create.deploying("refinedstorage:raw_basic_processor", ["refinedstorage:raw_basic_processor", "#forge:plates/copper"]),
         e.recipes.create.deploying("refinedstorage:raw_basic_processor", ["refinedstorage:raw_basic_processor", "#forge:dusts/redstone"]),

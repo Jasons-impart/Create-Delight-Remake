@@ -294,6 +294,13 @@ StartupEvents.registry('item', e => {
     e.create("createdelight:incompleted_modular_accumulator")
         .maxStackSize(64)
         .translationKey("item.createdelight.incompleted_modular_accumulator")
+    e.create("createdelight:incomplete_electron_tube")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.incomplete_electron_tube")
+    e.create("createdelight:bleak_electron_tube")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.bleak_electron_tube")
+
     // 注册货币
     e.create("createdelight:iron_coin")
         .maxStackSize(64)

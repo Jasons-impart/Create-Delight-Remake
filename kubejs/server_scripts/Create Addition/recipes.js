@@ -44,4 +44,19 @@ ServerEvents.recipes(e => {
     .transitionalItem(iner)
     .loops(6)
     .id("createaddition:crafting/modular_accumulator_electrum")
+    // 特斯拉充电线圈
+    e.recipes.create.mechanical_crafting(
+        "createaddition:tesla_coil", [
+            "AAA",
+            " B ",
+            "CDC",
+            "EEE"
+        ], {
+            A: "createaddition:copper_spool",
+            B: "create:shaft",
+            C: "createaddition:capacitor",
+            D: "create:brass_casing",
+            E: "create:brass_sheet"
+        }
+    ).id("createaddition:mechanical_crafting/tesla_coil")
 })

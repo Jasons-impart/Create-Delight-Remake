@@ -1,4 +1,12 @@
 {
+    "fluid.createdelight.molten_electrum": "熔融琥珀金",
+    "block.createdelight.molten_electrum": "熔融琥珀金",
+    "item.createdelight.molten_electrum_bucket": "熔融琥珀金桶",
+    "fluid.createdelight.molten_sliver": "熔融银",
+    "block.createdelight.molten_sliver": "熔融银",
+    "item.createdelight.molten_sliver_bucket": "熔融银桶",
+    "item.createdelight.bleak_electron_tube": "暗淡电子管",
+    "item.createdelight.incomplete_electron_tube": "未完成的电子管",
     "createdelight.fire_dragon_eyes":"§4火龙之眼",
     "fluid.createdelight.molten_netherite": "熔融下界合金",
     "block.createdelight.molten_netherite": "熔融下界合金",

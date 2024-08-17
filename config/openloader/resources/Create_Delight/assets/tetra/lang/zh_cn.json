@@ -1,4 +1,6 @@
 {
+  "block.tetra.scroll_wall": "挂墙卷轴",
+  "block.tetra.scroll_open": "展开的卷轴",
   "tetra.holo.craft.materials.stat.tool_level.short": "等级",
   "tetra.sources.multi_tooltip": "本原理图由§9%s§r添加，然后由§9%s修改或覆盖",
   "tetra.sources.single_tooltip": "本原理图由§9%s添加",

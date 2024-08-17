@@ -9,7 +9,8 @@ ServerEvents.tags("item", e => {
         'vintageimprovements:zinc_spring',
         'vintageimprovements:cast_iron_spring',
         'vintageimprovements:copper_spring',
-        'vintageimprovements:vanadium_spring'
+        'vintageimprovements:vanadium_spring',
+        'vintageimprovements:silver_spring'
     ])
     e.add("forge:spring/between_500_2_1000", [
         'vintageimprovements:iron_spring',
