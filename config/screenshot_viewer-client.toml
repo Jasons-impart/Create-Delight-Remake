@@ -26,7 +26,7 @@ defaultListOrder = "ASCENDING"
 #Range: > 0
 pauseMenuButtonOffset = 4
 #The path to the folder containing the screenshots images that will be displayed in the screen.
-screenshotsFolder = "E:\\Create Dimension Relics\\.minecraft\\versions\\Create Delight Remake\\screenshots"
+screenshotsFolder = "D:\\Create-Delight-Remake\\.minecraft\\versions\\Create-Delight-Remake\\screenshots"
 #If enabled, clicking on the link printed in the chat when taking a screenshot will open it directly in the screenshot manager.
 redirectScreenshotChatLinks = false
 #The visibility state of the screenshots names.

@@ -6,46 +6,73 @@
 	id: "4DCB769172A69AD5"
 	order_index: 0
 	quest_links: [ ]
-	quests: [{
-		description: [
-			"在30层往下会生成晶洞方块，外形为原版石头（1.18以下）。"
-			""
-			"1.18以后的版本在0层以下会生成晶洞方块，外形与深板岩相同，但偶尔会散发出白色粒子效果。"
-			""
-			"挖掘后固定掉落一颗晶洞玉石，不受精准采集以及时运影响。"
-			""
-			"在该模组工作台中可用等级大于等于2的锤子破开，使用锤子按物品栏顺序优先。"
-			""
-			"破开掉落：燧石、铁粒、金粒，青金石，红石，绿宝石、钻石及无暇宝石。"
-			""
-			"掉落物受锤子上的时运附魔影响，时运会提升燧石、绿宝石、钻石及无暇宝石数量"
-		]
-		id: "2C56AF7AB84C9E2C"
-		rewards: [{
-			id: "145341E967162A22"
-			item: {
-				Count: 1
-				id: "create_confectionery:caramelized_marshmellow_on_a_stick"
-				tag: {
-					RepairCost: 0
-					display: {
-						Name: "{\"text\":\"烤焦的，味道不是很好的Jason的肢体\"}"
+	quests: [
+		{
+			description: [
+				"在30层往下会生成晶洞方块，外形为原版石头（1.18以下）。"
+				""
+				"1.18以后的版本在0层以下会生成晶洞方块，外形与深板岩相同，但偶尔会散发出白色粒子效果。"
+				""
+				"挖掘后固定掉落一颗晶洞玉石，不受精准采集以及时运影响。"
+				""
+				"在该模组工作台中可用等级大于等于2的锤子破开，使用锤子按物品栏顺序优先。"
+				""
+				"破开掉落：燧石、铁粒、金粒，青金石，红石，绿宝石、钻石及无暇宝石。"
+				""
+				"掉落物受锤子上的时运附魔影响，时运会提升燧石、绿宝石、钻石及无暇宝石数量"
+			]
+			id: "2C56AF7AB84C9E2C"
+			rewards: [{
+				id: "145341E967162A22"
+				item: {
+					Count: 1
+					id: "create_confectionery:caramelized_marshmellow_on_a_stick"
+					tag: {
+						RepairCost: 0
+						display: {
+							Name: "{\"text\":\"烤焦的，味道不是很好的Jason的肢体\"}"
+						}
 					}
 				}
-			}
-			type: "item"
-		}]
-		shape: "square"
-		subtitle: "深藏不露"
-		tasks: [{
-			count: 4L
-			id: "138E590DC5A47583"
-			item: { Count: 4, id: "tetra:geode" }
-			type: "item"
-		}]
-		title: "玉洞晶石"
-		x: -1.0d
-		y: -0.5d
-	}]
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "深藏不露"
+			tasks: [{
+				count: 4L
+				id: "138E590DC5A47583"
+				item: { Count: 4, id: "tetra:geode" }
+				type: "item"
+			}]
+			title: "玉洞晶石"
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			id: "00B71A245BF589BC"
+			subtitle: "这把锤子将会陪伴你longtime longtime~~"
+			tasks: [{
+				id: "0B557CD4264676BE"
+				item: {
+					Count: 1
+					id: "tetra:modular_double"
+					tag: {
+						Damage: 0
+						"double/basic_hammer_left_material": "basic_hammer/oak"
+						"double/basic_hammer_right_material": "basic_hammer/oak"
+						"double/basic_handle_material": "basic_handle/stick"
+						"double/handle": "double/basic_handle"
+						"double/head_left": "double/basic_hammer_left"
+						"double/head_right": "double/basic_hammer_right"
+						id: "c9904202-8745-493d-badc-86445d20f0a3"
+					}
+				}
+				type: "item"
+			}]
+			title: "&2制作一把木锤"
+			x: -9.0d
+			y: -0.5d
+		}
+	]
 	title: "锻造之路"
 }
