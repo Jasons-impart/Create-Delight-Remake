@@ -58,7 +58,7 @@ ServerEvents.recipes(e => {
         'ACA',
         'AAA'
     ], {
-        A: 'alloyed:steel_sheet',
+        A: '#forge:plates/steel',
         B: 'createaddition:iron_rod',
         C: 'create:fluid_tank'
     }).id('ad_astra:gas_tank')
@@ -77,7 +77,7 @@ ServerEvents.recipes(e => {
         'ABA',
         ' A '
     ], {
-        A: 'alloyed:steel_sheet',
+        A: '#forge:plates/steel',
         B: 'create:propeller'
     }).id('ad_astra:fan')
     //替换配方：钢燃料储罐
@@ -86,7 +86,7 @@ ServerEvents.recipes(e => {
         'ABC',
         'AA '
     ], {
-        A: 'alloyed:steel_sheet',
+        A: '#forge:plates/steel',
         B: 'create:fluid_tank',
         C: '#forge:rods/iron'
     }).id('ad_astra:recipes/steel_tank')
@@ -148,7 +148,7 @@ ServerEvents.recipes(e => {
         'CDC',
         'AEA'
     ], {
-        A: 'alloyed:steel_sheet',
+        A: '#forge:plates/steel',
         B: 'ad_astra:engine_fan',
         C: 'ad_astra:oxygen_tank',
         D: 'minecraft:lightning_rod',
@@ -160,21 +160,10 @@ ServerEvents.recipes(e => {
         'BCB',
         'AAA'
     ], {
-        A: 'alloyed:steel_sheet',
+        A: '#forge:plates/steel',
         B: 'create:fluid_tank',
         C: 'minecraft:furnace'
     }).id('ad_astra:recipes/fuel_refinery')
-    //替换配方：太阳能板
-    e.shaped('ad_astra:solar_panel', [
-        'AAA',
-        'BCB',
-        'CDC'
-    ], {
-        A: 'minecraft:blue_stained_glass',
-        B: 'alloyed:steel_sheet',
-        C: 'ad_astra:desh_plate',
-        D: 'createaddition:modular_accumulator'
-    }).id('ad_astra:recipes/solar_panel')
     //替换配方：紫金引擎
     e.shaped('ad_astra:ostrum_engine', [
         'ABA',
@@ -212,4 +201,43 @@ ServerEvents.recipes(e => {
             Fluid.of('createdieselgenerators:biodiesel', 30)
         ]
     ).id("ad_astra:sub_recipes/fuel_mixtures")
+    // 电子核心
+    e.recipes.kubejs.shaped(
+        '3x ad_astra:etrionic_core', [
+            "AAA",
+            "BBB",
+            "AAA"
+        ], {
+            A: "createaddition:zinc_sheet",
+            B: "createaddition:electrum_sheet"
+        }
+    ).id("ad_astra:crafting/etrionic_core")
+    // 电容器
+    e.recipes.kubejs.shaped(
+        "ad_astra:etrionic_capacitor",[
+            "ABA",
+            "BCB",
+            "DBD"
+        ], {
+            A: "minecraft:redstone",
+            B: "ad_astra:steel_plate",
+            C: "ad_astra:etrionic_core",
+            D: "minecraft:diamond"
+        }
+    ).id("ad_astra:etrionic_capacitor")
+    // 太阳能面板
+    e.replaceInput({id: "ad_astra:photovoltaic_etrium_cell"}, "minecraft:diamond", "ad_astra:etrionic_core")
+    // 太阳能
+    e.recipes.kubejs.shaped(
+        "ad_astra:solar_panel", [
+            "AAA",
+            "BCB",
+            "CDC"
+        ], {
+            A: "ad_astra:photovoltaic_etrium_cell",
+            B: "ad_astra:steel_plate",
+            C: "ad_astra:desh_plate",
+            D: "ad_astra:etrionic_core"
+        }
+    ).id("ad_astra:solar_panel")
 })

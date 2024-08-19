@@ -1,0 +1,20 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "2"
+	group: "14CFC96B5B37F10B"
+	id: "53A4CA1D97DBDC3F"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "510B2EE25982FD73"
+		tasks: [{
+			id: "42802682C50529BB"
+			item: "create:andesite_alloy"
+			type: "item"
+		}]
+		x: 0.5d
+		y: 0.0d
+	}]
+	title: "&2初级工程师"
+}

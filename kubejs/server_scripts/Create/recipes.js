@@ -89,7 +89,7 @@ ServerEvents.recipes(e => {
         .id("create:sequenced_assembly/precision_mechanism")
         
     let iner_2= "createdelight:incomplete_electron_tube"
-    e.recipes.create.sequenced_assembly('createdelight:bleak_electron_tube', "create:iron_sheet", [
+    e.recipes.create.sequenced_assembly('create:electron_tube', "create:iron_sheet", [
         e.recipes.create.deploying(iner_2, [iner_2, '#forge:wires/electric']),
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_tin", 10)]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"])
@@ -97,6 +97,12 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_2)
         .loops(1)
         .id("create:crafting/materials/electron_tube")
-    e.recipes.createaddition.charging("createdelight:bleak_electron_tube", "create:electron_tube", 1000, 4000)
+    e.recipes.createaddition.charging("create:electron_tube", "createdelight:bleak_electron_tube", 10000, 40000)
         .id("create:charging/electron_tube")
+    e.recipes.vintageimprovements.turning("6x create:chute", "minecraft:iron_block")
+        .id("create:crafting/kinetics/chute_2")
+    e.recipes.vintageimprovements.turning("3x create:item_vault", "minecraft:iron_block")
+        .id("create:crafting/kinetics/item_vault_2")
+    e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
+        .id("create:crafting/kinetics/fluid_tank_2")
 })

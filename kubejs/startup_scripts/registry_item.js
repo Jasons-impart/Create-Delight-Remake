@@ -276,6 +276,9 @@ StartupEvents.registry('item', e => {
             .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
     // 未完成相关
+    e.create("createdelight:incomplete_tesla_coil")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.incomplete_tesla_coil")
     e.create("createdelight:incomplete_alternator")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_alternator")
