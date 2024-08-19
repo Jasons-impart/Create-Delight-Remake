@@ -21,6 +21,8 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
     * [机械动力：工业扩展（Create Crafts &amp; Additions）](https://www.mcmod.cn/class/3437.html)aa
 
       任务线：工程师－旋转发电
+
+      * ***电力***
     * [机械动力：甜食(Create Confectionery)](https://www.mcmod.cn/class/4871.html)aa
 
       ***任务线：大厨－精加工－甜品分支 - 已完成***
@@ -28,6 +30,7 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
       任务线：工程师－石油时代
 
+      * ***电力***
       * 三类油，柴油引擎
     * [机械动力：中央厨房(Create Central Kitchen)](https://www.mcmod.cn/class/9151.html)aa
 
@@ -66,8 +69,6 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
       * 铁道器械
     * [机械动力：经典改进 (Create: Vintage Improvements) ](https://www.mcmod.cn/class/13760.html) aa
-
-      * ‍
 
       * 提供大量机械：  
         更多***板材***  
@@ -335,16 +336,15 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 56. [cleanswing](https://www.mcmod.cn/class/12242.html)新加aa
 57. [垃圾槽 (TrashSlot)](https://www.mcmod.cn/class/1893.html)aa
 58. [地区RPG风格标题（Traveler&apos;s Titles）](https://www.mcmod.cn/class/4471.html)aa
-59. [削树（HT&apos;s TreeChop）](https://www.mcmod.cn/class/6554.html)aa
-60. [移除原版村庄（Village Nullifier）](https://www.mcmod.cn/class/14198.html)aa
-61. [多维快捷键（Raw&apos;s Visual Keybinder）](https://www.mcmod.cn/class/15145.html)aa
-62. [沉浸式行动（[Watut]What Are They Up To）](https://www.mcmod.cn/class/12938.html)aa
-63. [[XMM]Xaero的小地图 (Xaero&apos;s Minimap)](https://www.mcmod.cn/class/1701.html)aa
+59. [移除原版村庄（Village Nullifier）](https://www.mcmod.cn/class/14198.html)aa
+60. [多维快捷键（Raw&apos;s Visual Keybinder）](https://www.mcmod.cn/class/15145.html)aa
+61. [沉浸式行动（[Watut]What Are They Up To）](https://www.mcmod.cn/class/12938.html)aa
+62. [[XMM]Xaero的小地图 (Xaero&apos;s Minimap)](https://www.mcmod.cn/class/1701.html)aa
 
      * [[XWM]Xaero的世界地图 (Xaero&apos;s World Map)](https://www.mcmod.cn/class/1483.html)aa
-64. [禁用实验性设置弹出（Yeetus Experimentus）](https://www.mcmod.cn/class/11062.html)aa
-65. [饰品望远镜(Spyglass of Curios)](https://www.mcmod.cn/class/12775.html) aa
-66. [灵魂火优化(Soul fire&apos;d)](https://www.mcmod.cn/class/7632.html)
+63. [禁用实验性设置弹出（Yeetus Experimentus）](https://www.mcmod.cn/class/11062.html)aa
+64. [饰品望远镜(Spyglass of Curios)](https://www.mcmod.cn/class/12775.html) aa
+65. [灵魂火优化(Soul fire&apos;d)](https://www.mcmod.cn/class/7632.html)
 
 ## ExtraConfig
 

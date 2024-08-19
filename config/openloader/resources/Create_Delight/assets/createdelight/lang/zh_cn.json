@@ -97,5 +97,9 @@
     "item.createdelight.incomplete_electric_motor": "未完成的电动马达",
     "item.createdelight.incomplete_huge_diesel_engine": "未完成的大型柴油引擎",
     "item.createdelight.incomplete_large_diesel_engine": "未完成的模块化柴油引擎",
-    "item.createdelight.incompleted_modular_accumulator": "未完成的蓄电池"
+    "item.createdelight.incompleted_modular_accumulator": "未完成的蓄电池",
+    "item.createdelight.first_stage_rocket_core":"一级火箭核心",
+    "item.createdelight.second_stage_rocket_core":"二级火箭核心",
+    "item.createdelight.third_stage_rocket_core":"三级火箭核心",
+    "item.createdelight.fourth_stage_rocket_core":"四级火箭核心"
 }
