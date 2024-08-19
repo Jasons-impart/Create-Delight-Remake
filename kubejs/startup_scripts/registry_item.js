@@ -318,4 +318,25 @@ StartupEvents.registry('item', e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.netherite_coin")
         .rarity("epic")
+
+    //一阶火箭核心
+    e.create("createdelight:first_stage_rocket_core")
+        .maxStackSize(64)
+        .translationKey("item.createdelight:first_stage_rocket_core")
+        .rarity("common")
+    //二阶火箭核心
+    e.create("createdelight:second_stage_rocket_core")
+        .maxStackSize(64)
+        .translationKey("item.createdelight:second_stage_rocket_core")
+        .rarity("common")
+    //三阶火箭核心
+    e.create("createdelight:third_stage_rocket_core")
+        .maxStackSize(64)
+        .translationKey("item.createdelight:third_stage_rocket_core")
+        .rarity("uncommon")
+    //四阶火箭核心
+    e.create("createdelight:fourth_stage_rocket_core")
+        .maxStackSize(64)
+        .translationKey("item.createdelight:fourth_stage_rocket_core")
+        .rarity("rare")
 })
