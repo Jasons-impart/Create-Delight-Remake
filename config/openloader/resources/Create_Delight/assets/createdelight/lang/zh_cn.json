@@ -8,7 +8,6 @@
     "item.createdelight.molten_sliver_bucket": "熔融银桶",
     "item.createdelight.bleak_electron_tube": "超频电子管",
     "item.createdelight.incomplete_electron_tube": "未完成的电子管",
-    "createdelight.fire_dragon_eyes":"§4火龙之眼",
     "fluid.createdelight.molten_netherite": "熔融下界合金",
     "block.createdelight.molten_netherite": "熔融下界合金",
     "item.createdelight.molten_netherite_bucket": "熔融下界合金桶",
@@ -102,5 +101,8 @@
     "item.createdelight.second_stage_rocket_core":"二级火箭核心",
     "item.createdelight.third_stage_rocket_core":"三级火箭核心",
     "item.createdelight.fourth_stage_rocket_core":"四级火箭核心",
-    "item.createdelight.sigma_man_sword":"西格玛男人专用剑"
+    "item.createdelight.sigma_man_sword":"西格玛男人专用剑",
+    "createdelight.fire_dragon_eyes":"§4火龙试炼",
+    "createdelight.ice_dragon":"§9冰龙试炼"
+
 }

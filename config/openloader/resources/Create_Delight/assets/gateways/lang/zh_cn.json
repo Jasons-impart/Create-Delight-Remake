@@ -1,7 +1,7 @@
 {
 	"entity.gateways.gateway" : "永恒之门",
 	"item.gateways.gate_pearl": "传送门珍珠",
-	"gateways.gate_pearl": "%s珍珠",
+	"gateways.gate_pearl": "%s",
 	"itemGroup.gateways": "永恒之门",
 
 	"info.gateways.gate_pearl": "你可以在方块上使用传送门珍珠来开启对应的传送门。\n\n开启传送门需要周围有足够的空间，且开启后无法打开另一个传送门。\n",

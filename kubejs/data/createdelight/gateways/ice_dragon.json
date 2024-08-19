@@ -1,14 +1,14 @@
 {
-	"size": "small",
-	"color": "#FFFF84",
+	"size": "large",
+	"color": "#6495ED",
 	"waves": [{
 			"entities": [{
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"count": 3
 			}],
 			"rewards": [{
 				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"rolls": 10
 			}],
 			"max_wave_time": 800,
@@ -16,7 +16,7 @@
 		},
 		{
 			"entities": [{
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"count": 4
 			}],
 			"modifiers": [{
@@ -47,7 +47,7 @@
 			],
 			"rewards": [{
 				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"rolls": 15
 			}],
 			"max_wave_time": 800,
@@ -55,7 +55,7 @@
 		},
 		{
 			"entities": [{
-					"entity": "iceandfire:fire_dragon",
+					"entity": "iceandfire:ice_dragon",
                     "count": 5
 				}
 			],
@@ -87,7 +87,7 @@
 			],
 			"rewards": [{
 				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"rolls": 20
 			}],
 			"max_wave_time": 800,
@@ -95,7 +95,7 @@
 		},
 		{
 			"entities": [{
-					"entity": "iceandfire:fire_dragon",
+					"entity": "iceandfire:ice_dragon",
                     "count": 6
 				}
 			],
@@ -127,7 +127,7 @@
 			],
 			"rewards": [{
 				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
+				"entity": "iceandfire:ice_dragon",
 				"rolls": 25
 			}],
 			"max_wave_time": 1000,
@@ -135,7 +135,7 @@
 		},
 		{
 			"entities": [{
-					"entity": "iceandfire:fire_dragon",
+					"entity": "iceandfire:ice_dragon",
                     "count": 7
 				}
 			],
@@ -178,7 +178,7 @@
 	],
     "rewards": [{
             "type": "gateways:entity_loot",
-            "entity": "iceandfire:fire_dragon",
+            "entity": "iceandfire:ice_dragon",
             "rolls": 75
         }
     ],
