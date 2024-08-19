@@ -339,4 +339,12 @@ StartupEvents.registry('item', e => {
         .maxStackSize(64)
         .translationKey("item.createdelight:fourth_stage_rocket_core")
         .rarity("rare")
+    
+    //测试剑
+    e.create("createdelight:sigma_man_sword","sword")
+        .tier("netherite")
+        .attackDamageBonus(999999)
+        .unstackable()
+        .translationKey("item.createdelight:sigma_man_sword")
+        .rarity("epic")
 })

@@ -16,7 +16,8 @@ let tooltips = [
     ['createdelight:oat_bread', "§9生命恢复（00:03）", "§9Regeneration(00:03)"],
     ['createmetallurgy:wolframite_ore', "§6常见于地狱30-36层", "§6Commonly found in nether 30-36 floors"],
     ['culturaldelights:pickle', "§9滋养（00::30）", "§9Nourishment(00:30)"],
-    ['culturaldelights:cut_pickle', "§9滋养（00::15）", "§9Nourishment(00:15)"]
+    ['culturaldelights:cut_pickle', "§9滋养（00::15）", "§9Nourishment(00:15)"],
+    ['createdelight:sigma_man_sword',"§o西格玛男人专用","§oFor sigma men only"]
 ]
 tooltips.forEach (([key, zh_cn, en_us]) => {
     // 添加 key
