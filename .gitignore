@@ -68,3 +68,7 @@ modpack.cfg
 /config/screenshot_viewer-client.toml
 /config/sodium-extra-options.json
 hotbar.nbt
+config/sound_physics_remastered/reflectivity.properties
+config/sound_physics_remastered/occlusion.properties
+config/everycomp-hazardous.properties
+config/packetfixer.properties
