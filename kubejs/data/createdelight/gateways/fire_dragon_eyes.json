@@ -1,25 +1,33 @@
 {
 	"size": "large",
 	"color": "#FFFF84",
-	"waves": [{
-			"entities": [{
-				"entity": "iceandfire:fire_dragon",
-				"count": 1
-			}],
-			"rewards": [{
-				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
-				"rolls": 2
-			}],
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 1
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 2
+				}
+			],
 			"max_wave_time": 800,
 			"setup_time": 100
 		},
 		{
-			"entities": [{
-				"entity": "iceandfire:fire_dragon",
-				"count": 2
-			}],
-			"modifiers": [{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.2
@@ -45,21 +53,25 @@
 					"value": 0.1
 				}
 			],
-			"rewards": [{
-				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
-				"rolls": 3
-			}],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
 			"max_wave_time": 800,
 			"setup_time": 150
 		},
 		{
-			"entities": [{
+			"entities": [
+				{
 					"entity": "iceandfire:fire_dragon",
-                    "count": 2
+					"count": 2
 				}
 			],
-			"modifiers": [{
+			"modifiers": [
+				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.4
@@ -85,21 +97,25 @@
 					"value": 0.12
 				}
 			],
-			"rewards": [{
-				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
-				"rolls": 3
-			}],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
 			"max_wave_time": 800,
 			"setup_time": 200
 		},
 		{
-			"entities": [{
+			"entities": [
+				{
 					"entity": "iceandfire:fire_dragon",
-                    "count": 3
+					"count": 3
 				}
 			],
-			"modifiers": [{
+			"modifiers": [
+				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.6
@@ -125,21 +141,25 @@
 					"value": 0.14
 				}
 			],
-			"rewards": [{
-				"type": "gateways:entity_loot",
-				"entity": "iceandfire:fire_dragon",
-				"rolls": 3
-			}],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
 			"max_wave_time": 1000,
 			"setup_time": 280
 		},
 		{
-			"entities": [{
+			"entities": [
+				{
 					"entity": "iceandfire:fire_dragon",
-                    "count": 3
+					"count": 3
 				}
 			],
-			"modifiers": [{
+			"modifiers": [
+				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.8
@@ -169,19 +189,19 @@
 				{
 					"type": "gateways:experience",
 					"experience": 500,
-                    "orb_size": 25
+					"orb_size": 25
 				}
 			],
 			"max_wave_time": 1200,
 			"setup_time": 340
 		}
 	],
-    "rewards": [{
-            "type": "gateways:entity_loot",
-            "entity": "iceandfire:fire_dragon",
-            "rolls": 5
-        }
-    ],
-    "failures": [
-    ]
+	"rewards": [
+		{
+			"type": "gateways:entity_loot",
+			"entity": "iceandfire:fire_dragon",
+			"rolls": 5
+		}
+	],
+	"failures": []
 }

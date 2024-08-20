@@ -10,8 +10,9 @@ StartupEvents.registry("item", e => {
         e.create(`createdelight:${item}`)
             .maxStackSize(64)
             .translationKey(`item.createdelight.${item}`)
-    });
+    })
 })
+
 StartupEvents.registry("block", e => {
     let blocks = [
         ["tin_block", "metal", 7, "pickaxe", "iron"],

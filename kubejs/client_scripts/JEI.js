@@ -31,16 +31,18 @@ JEIEvents.hideItems(e => {
         "refinedstorage:raw_advanced_processor",
         "quark:potato_crate",
         "createaddition:diamond_grit",
-        "ad_astra:steel_block"
+        "ad_astra:steel_block",
     ])
 })
+
 JEIEvents.addFluids(e => {
     e.add([
-        "ratatouille:egg_yolk"
+        "ratatouille:egg_yolk",
     ])
 })
+
 JEIEvents.addItems(e => {
     e.add([
-        "create:crushed_raw_tin"
+        "create:crushed_raw_tin",
     ])
 })

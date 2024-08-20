@@ -2,5 +2,5 @@
     "fluid": "createdelight:fuel_mixtures",
     "burnTime": 50,
     "superHeat": true,
-    "amountConsumedPerTick" : 1
+    "amountConsumedPerTick": 1
 }

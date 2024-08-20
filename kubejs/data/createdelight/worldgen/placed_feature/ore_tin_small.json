@@ -1,28 +1,27 @@
-
 {
-	"feature" : "createdelight:ore_tin_small",
-	"placement" : [
+	"feature": "createdelight:ore_tin_small",
+	"placement": [
 		{
-			"type" : "minecraft:count",
-			"count" : 10
+			"type": "minecraft:count",
+			"count": 10
 		},
 		{
-			"type" : "minecraft:height_range",
-			"height" : {
-				"type" : "minecraft:uniform",
-				"min_inclusive" : {
-					"above_bottom" : 64
+			"type": "minecraft:height_range",
+			"height": {
+				"type": "minecraft:uniform",
+				"min_inclusive": {
+					"above_bottom": 64
 				},
-				"max_inclusive" : {
-					"above_bottom" : 136
+				"max_inclusive": {
+					"above_bottom": 136
 				}
 			}
 		},
 		{
-			"type" : "minecraft:in_square"
+			"type": "minecraft:in_square"
 		},
 		{
-			"type" : "minecraft:biome"
+			"type": "minecraft:biome"
 		}
 	]
 }
