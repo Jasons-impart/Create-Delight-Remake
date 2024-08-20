@@ -2,30 +2,16 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "forge:is_cold/overworld"
+        "value": "ad_astra:glacio_ice_peaks"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "byg:shattered_glacier"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:frosted_taiga"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "byg:frosted_coniferous_forest"
+        "value": "ad_astra:glacio_snowy_barrens"
       }
     ]
   ]
