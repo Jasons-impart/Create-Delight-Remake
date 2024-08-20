@@ -18,6 +18,9 @@
 	#List of rules in format "domain:item1, domain:item2, n".
 	#Creates a compacting drawer rule to convert 1 of item1 into n of item2.
 	compactingRules = ["minecraft:clay, minecraft:clay_ball, 4"]
+	#Whether redstone upgrades should emit an analog redstone signal, requiring
+	#the use of a comparator to read it.  This will default to true starting with MC 1.21.
+	enableAnalogRedstone = false
 
 [StorageUpgrades]
 	#Storage upgrades multiply storage capacity by the given amount.
