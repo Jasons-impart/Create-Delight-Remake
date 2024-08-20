@@ -3,12 +3,12 @@ ServerEvents.recipes(e => {
         "createmetallurgy:melting/melting_copper",
         "createmetallurgy:casting_in_table/copper_plate"
     ])
-    metal_production_line_2(e, 
+    metal_production_line_2(e,
         [
             "minecraft:copper_block",
-            'minecraft:copper_ingot',
+            "minecraft:copper_ingot",
             "create:copper_nugget",
-            'create:copper_sheet',
+            "create:copper_sheet",
             "createmetallurgy:molten_copper"
         ], "heated", 40
     )

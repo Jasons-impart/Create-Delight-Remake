@@ -1,9 +1,9 @@
 ServerEvents.recipes(e => {
     let tea_recipes = [
         ["farmersrespite:green_tea_leaves", "farmersrespite:green_tea"],
-        ['farmersrespite:yellow_tea_leaves', 'farmersrespite:yellow_tea'],
-        ['farmersrespite:black_tea_leaves', 'farmersrespite:black_tea'],
-        ['farmersrespite:rose_hips', 'farmersrespite:rose_hip_tea']
+        ["farmersrespite:yellow_tea_leaves", "farmersrespite:yellow_tea"],
+        ["farmersrespite:black_tea_leaves", "farmersrespite:black_tea"],
+        ["farmersrespite:rose_hips", "farmersrespite:rose_hip_tea"]
     ]
     tea_recipes.forEach(([input, output]) => {
         e.recipes.create.mixing(
@@ -12,7 +12,7 @@ ServerEvents.recipes(e => {
                 Fluid.water(500),
                 input
             ]
-        )   
+        )
             .heated()
             .id(`farmersrespite:mixing/${output.split(":")[1]}`)
     });

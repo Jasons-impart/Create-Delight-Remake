@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
     ])
         .heated()
         .id("rs_kjs:raw_silicon")
-    blast_and_smelting(e, "createdelight:raw_silicon", 'ae2:silicon', 0.35, 100)
+    blast_and_smelting(e, "createdelight:raw_silicon", "ae2:silicon", 0.35, 100)
     // 序列合成：基础处理器
     e.recipes.create.sequenced_assembly("refinedstorage:basic_processor", "ae2:silicon", [
         e.recipes.create.deploying("refinedstorage:raw_basic_processor", ["refinedstorage:raw_basic_processor", "refinedstorage:processor_binding"]),
@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem("refinedstorage:raw_basic_processor")
         .loops(1)
-        .id('refinedstorage:basic_processor')
+        .id("refinedstorage:basic_processor")
     // 序列合成：进阶处理器
     e.recipes.create.sequenced_assembly("refinedstorage:improved_processor", "refinedstorage:basic_processor", [
         e.recipes.create.deploying("refinedstorage:raw_improved_processor", ["refinedstorage:raw_improved_processor", "refinedstorage:processor_binding"]),
@@ -41,7 +41,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem("refinedstorage:raw_improved_processor")
         .loops(1)
-        .id('refinedstorage:improved_processor')
+        .id("refinedstorage:improved_processor")
     // 序列合成：高阶处理器
     e.recipes.create.sequenced_assembly("refinedstorage:advanced_processor", "refinedstorage:improved_processor", [
         e.recipes.create.deploying("refinedstorage:raw_advanced_processor", ["refinedstorage:raw_advanced_processor", "refinedstorage:processor_binding"]),
@@ -53,7 +53,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem("refinedstorage:raw_advanced_processor")
         .loops(1)
-        .id('refinedstorage:advanced_processor')
+        .id("refinedstorage:advanced_processor")
     // 破坏核心
     e.recipes.create.sequenced_assembly("refinedstorage:destruction_core", "refinedstorage:advanced_processor", [
         e.recipes.create.deploying("refinedstorage:advanced_processor", ["refinedstorage:advanced_processor", "minecraft:diamond_pickaxe"]),

@@ -16,14 +16,14 @@ ServerEvents.recipes(e => {
     ])
     // 电容合成
     e.recipes.minecraft.crafting_shaped("2x createaddition:capacitor", [
-            " A ",
-            " B ",
-            " C "
-        ], {
-            A:'create:copper_sheet',
-            B:'createaddition:zinc_sheet',
-            C:'createaddition:copper_rod'
-        }
+        " A ",
+        " B ",
+        " C "
+    ], {
+        A: "create:copper_sheet",
+        B: "createaddition:zinc_sheet",
+        C: "createaddition:copper_rod"
+    }
     ).id("createaddition:crafting/capacitor")
     // 连接器合成
     e.recipes.kubejs.shapeless(
@@ -36,12 +36,12 @@ ServerEvents.recipes(e => {
         ]
     ).id("createaddition:crafting/large_connector_electrum")
     // 电池合成
-    let iner = 'createdelight:incompleted_modular_accumulator'
-    e.recipes.create.sequenced_assembly('createaddition:modular_accumulator', 'create:brass_block', [
+    let iner = "createdelight:incompleted_modular_accumulator"
+    e.recipes.create.sequenced_assembly("createaddition:modular_accumulator", "create:brass_block", [
         e.recipes.vintageimprovements.turning(iner, iner),
-        e.recipes.create.deploying(iner, [iner, '#forge:wires/electric']),
-        e.recipes.create.deploying(iner, [iner, 'createaddition:capacitor']),
-        e.recipes.create.deploying(iner, [iner, 'createaddition:capacitor']),
+        e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),
+        e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
+        e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
         e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_core"]),
         e.recipes.create.deploying(iner, [iner, "create:brass_sheet"])
     ])
@@ -75,6 +75,6 @@ ServerEvents.recipes(e => {
         .loops(1)
         .id("createaddition:mechanical_crafting/alternator")
     // 发电机电动机相互转化
-    e.recipes.kubejs.shapeless('createaddition:alternator', "createaddition:electric_motor").id("createaddition:alternator_2_motor")
-    e.recipes.kubejs.shapeless("createaddition:electric_motor", 'createaddition:alternator' ).id("createaddition:mechanical_crafting/electric_motor")
+    e.recipes.kubejs.shapeless("createaddition:alternator", "createaddition:electric_motor").id("createaddition:alternator_2_motor")
+    e.recipes.kubejs.shapeless("createaddition:electric_motor", "createaddition:alternator").id("createaddition:mechanical_crafting/electric_motor")
 })

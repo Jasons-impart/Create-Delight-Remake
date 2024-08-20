@@ -1,4 +1,4 @@
-StartupEvents.registry('item', e => {
+StartupEvents.registry("item", e => {
     // 安山合金粒
     e.create("createdelight:andesite_alloy_nugget")
         .maxStackSize(64)
@@ -222,15 +222,15 @@ StartupEvents.registry('item', e => {
         .translationKey("item.createdelight.french_fries")
         .food(food => {
             food.hunger(5)
-            .saturation(0.6)
-            .fastToEat()
+                .saturation(0.6)
+                .fastToEat()
         })
     e.create("createdelight:potato_sticks")
         .maxStackSize(64)
         .translationKey("item.createdelight.potato_sticks")
         .food(food => {
             food.hunger(1)
-            .saturation(1)
+                .saturation(1)
         })
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
@@ -238,7 +238,7 @@ StartupEvents.registry('item', e => {
         .translationKey("item.createdelight.raw_empanada")
         .food(food => {
             food.hunger(2)
-            .saturation(1)
+                .saturation(1)
         })
     // 生暴辣疣猪兽排
     e.create("createdelight:raw_hoglin_chop")
@@ -246,8 +246,8 @@ StartupEvents.registry('item', e => {
         .translationKey("item.createdelight.raw_hoglin_chop")
         .food(food => {
             food.hunger(2)
-            .saturation(1)
-            .effect("mynethersdelight:b_pungent", 1200, 1, 1.0)
+                .saturation(1)
+                .effect("mynethersdelight:b_pungent", 1200, 1, 1.0)
         })
     // 生奶酪披萨
     e.create("createdelight:raw_cheese_pizza")
@@ -259,8 +259,8 @@ StartupEvents.registry('item', e => {
         .translationKey("item.createdelight.oat_bread")
         .food(food => {
             food.hunger(2)
-            .saturation(1)
-            .effect("minecraft:regeneration", 60, 1, 1.0)
+                .saturation(1)
+                .effect("minecraft:regeneration", 60, 1, 1.0)
         })
     // 玉米粉
     e.create("createdelight:corn_flour")
@@ -272,8 +272,8 @@ StartupEvents.registry('item', e => {
         .translationKey("item.createdelight.salami")
         .food(food => {
             food.hunger(6)
-            .saturation(0.7)
-            .effect("farmersdelight:nourishment", 600, 1, 1.0)
+                .saturation(0.7)
+                .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
     // 未完成相关
     e.create("createdelight:incomplete_tesla_coil")
@@ -342,9 +342,9 @@ StartupEvents.registry('item', e => {
         .maxStackSize(64)
         .translationKey("item.createdelight:fourth_stage_rocket_core")
         .rarity("rare")
-    
+
     //测试剑
-    e.create("createdelight:sigma_man_sword","sword")
+    e.create("createdelight:sigma_man_sword", "sword")
         .tier("netherite")
         .attackDamageBonus(999999)
         .unstackable()

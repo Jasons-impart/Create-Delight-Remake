@@ -1,44 +1,44 @@
 ServerEvents.tags("item", e => {
     e.add("crabbersdelight:cooked_seafood", [
-        'alexsmobs:cooked_lobster_tail'
+        "alexsmobs:cooked_lobster_tail"
     ])
-    e.add('crabbersdelight:raw_seafood', [
-        'alexsmobs:lobster_tail'
+    e.add("crabbersdelight:raw_seafood", [
+        "alexsmobs:lobster_tail"
     ])
     e.add("crabbersdelight:lobster", [
-        'alexsmobs:lobster_tail',
-        'crabbersdelight:clawster'
+        "alexsmobs:lobster_tail",
+        "crabbersdelight:clawster"
     ])
     e.add("alexsmobs:seal_foodstuffs", [
-        'crabbersdelight:clawster',
-        'crabbersdelight:cooked_crab',
+        "crabbersdelight:clawster",
+        "crabbersdelight:cooked_crab",
         "crabbersdelight:crab",
         "crabbersdelight:crab_legs",
-        'crabbersdelight:raw_clam_meat',
-        'crabbersdelight:cooked_clam_meat',
-        'crabbersdelight:shrimp',
-        'crabbersdelight:cooked_shrimp',
-        'crabbersdelight:clawster',
-        'crabbersdelight:cooked_clawster'
+        "crabbersdelight:raw_clam_meat",
+        "crabbersdelight:cooked_clam_meat",
+        "crabbersdelight:shrimp",
+        "crabbersdelight:cooked_shrimp",
+        "crabbersdelight:clawster",
+        "crabbersdelight:cooked_clawster"
     ])
     e.add("crabbersdelight:crab", [
-        'crabbersdelight:crab',
-        'crabbersdelight:cooked_crab',
-        'crabbersdelight:crab_legs'
+        "crabbersdelight:crab",
+        "crabbersdelight:cooked_crab",
+        "crabbersdelight:crab_legs"
     ])
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "farmersdelight:cooking/jar_of_pickles"
     ])
-    e.replaceInput({id: "farmersdelight:cooking/stuffed_nautilus_shell"}, "#forge:cooked_fishes", "#alexsmobs:shoebill_foodstuffs")
-    e.replaceInput({id: "farmersdelight:cooking/crab_cakes"}, "crabbersdelight:crab", "#crabbersdelight:crab")
+    e.replaceInput({ id: "farmersdelight:cooking/stuffed_nautilus_shell" }, "#forge:cooked_fishes", "#alexsmobs:shoebill_foodstuffs")
+    e.replaceInput({ id: "farmersdelight:cooking/crab_cakes" }, "crabbersdelight:crab", "#crabbersdelight:crab")
     e.recipes.farmersdelight.cutting(
-        'crabbersdelight:cooked_crab',
+        "crabbersdelight:cooked_crab",
         "#forge:tools/knives",
         [
-            '4x crabbersdelight:crab_legs',
-            '2x quark:crab_shell',
+            "4x crabbersdelight:crab_legs",
+            "2x quark:crab_shell",
             Item.of("crabbersdelight:crab_legs").withChance(0.3)
         ]
     ).id("farmersdelight:cutting/cooked_crab")

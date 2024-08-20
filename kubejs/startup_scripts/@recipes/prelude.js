@@ -1,7 +1,7 @@
 // priority: 100
-const probejs$$RecipeSchema = Java.loadClass('dev.latvian.mods.kubejs.recipe.schema.RecipeSchema')
-const probejs$$RecipeComponentBuilder = Java.loadClass('dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder')
-const probejs$$RegistryInfo = Java.loadClass('dev.latvian.mods.kubejs.registry.RegistryInfo')
+const probejs$$RecipeSchema = Java.loadClass("dev.latvian.mods.kubejs.recipe.schema.RecipeSchema")
+const probejs$$RecipeComponentBuilder = Java.loadClass("dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder")
+const probejs$$RegistryInfo = Java.loadClass("dev.latvian.mods.kubejs.registry.RegistryInfo")
 
 /**
  * @type {Schema[]}
@@ -24,7 +24,7 @@ ComplexKey.prototype = {
 	 * @template {keyof Special.RecipeComponents} T
 	 * @param {string} key 
 	 * @param {T} type 
-	 * @param {(ReturnType<ReturnType<Special.RecipeComponents[T]>['key']> extends Internal.RecipeKey<infer U> ? U : never)} [optional = undefined] 
+	 * @param {(ReturnType<ReturnType<Special.RecipeComponents[T]>["key"]> extends Internal.RecipeKey<infer U> ? U : never)} [optional = undefined] 
 	 * @param {boolean} [alwaysWrite = false]
 	 * @returns {this}
 	 */
@@ -71,7 +71,7 @@ Schema.prototype = {
 	 * @template {keyof Special.RecipeComponents} T
 	 * @param {string} key 
 	 * @param {T} type 
-	 * @param {(ReturnType<ReturnType<Special.RecipeComponents[T]>['key']> extends Internal.RecipeKey<infer U> ? U : never)} [optional = undefined] 
+	 * @param {(ReturnType<ReturnType<Special.RecipeComponents[T]>["key"]> extends Internal.RecipeKey<infer U> ? U : never)} [optional = undefined] 
 	 * @param {boolean} [alwaysWrite = false]
 	 * @returns {this}
 	 */

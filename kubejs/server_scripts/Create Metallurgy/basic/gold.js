@@ -3,12 +3,12 @@ ServerEvents.recipes(e => {
         "createmetallurgy:melting/melting_gold",
         "createmetallurgy:casting_in_table/gold_plate"
     ])
-    metal_production_line_2(e, 
+    metal_production_line_2(e,
         [
             "minecraft:gold_block",
             "minecraft:gold_ingot",
             "minecraft:gold_nugget",
-            'create:golden_sheet',
+            "create:golden_sheet",
             "createmetallurgy:molten_gold"
         ], "heated", 40
     )

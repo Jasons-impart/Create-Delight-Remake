@@ -1,6 +1,6 @@
-ServerEvents.recipes( e => {
-    
-    let iner_1 = 'create_sa:incomplete_hydraulic_engine'
+ServerEvents.recipes(e => {
+
+    let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly(
         [
             Item.of("create_sa:hydraulic_engine").withChance(80),
@@ -15,8 +15,8 @@ ServerEvents.recipes( e => {
         .transitionalItem(iner_1)
         .loops(3)
         .id("create_sa:hydraulic_engine_recipe")
-    let iner_2 = 'create_sa:incomplete_heat_engine'
-    e.recipes.create.sequenced_assembly('create_sa:heat_engine', "vintageimprovements:andesite_sheet", [
+    let iner_2 = "create_sa:incomplete_heat_engine"
+    e.recipes.create.sequenced_assembly("create_sa:heat_engine", "vintageimprovements:andesite_sheet", [
         e.recipes.create.deploying(iner_2, [iner_2, "create:cogwheel"]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:zinc_nugget"]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:copper_nugget"]),
@@ -35,27 +35,27 @@ ServerEvents.recipes( e => {
         .loops(1)
         .id("create_sa:steam_engine_recipe")
     e.recipes.create.mechanical_crafting(
-        "create_sa:brass_jetpack_chestplate",[
-            "ABA",
-            "ACA",
-            "ADA"
-        ], {
-            A: "create:brass_sheet",
-            B: "create_sa:copper_jetpack_chestplate",
-            C: "create_sa:steam_engine",
-            D: "create_sa:andesite_jetpack_chestplate"
-        }
+        "create_sa:brass_jetpack_chestplate", [
+        "ABA",
+        "ACA",
+        "ADA"
+    ], {
+        A: "create:brass_sheet",
+        B: "create_sa:copper_jetpack_chestplate",
+        C: "create_sa:steam_engine",
+        D: "create_sa:andesite_jetpack_chestplate"
+    }
     ).id("create_sa:brass_jetpack_recipe")
     e.recipes.create.mechanical_crafting(
-        "create_sa:brass_exoskeleton_chestplate",[
-            "ABA",
-            "ACA",
-            "ADA"
-        ], {
-            A: "create:brass_sheet",
-            B: "create_sa:copper_exoskeleton_chestplate",
-            C: "create_sa:steam_engine",
-            D: "create_sa:andesite_exoskeleton_chestplate"
-        }
+        "create_sa:brass_exoskeleton_chestplate", [
+        "ABA",
+        "ACA",
+        "ADA"
+    ], {
+        A: "create:brass_sheet",
+        B: "create_sa:copper_exoskeleton_chestplate",
+        C: "create_sa:steam_engine",
+        D: "create_sa:andesite_exoskeleton_chestplate"
+    }
     ).id("create_sa:brass_exoskeleton_recipe")
 })

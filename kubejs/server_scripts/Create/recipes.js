@@ -35,51 +35,51 @@ ServerEvents.recipes(e => {
     ).id("create:crafting/kinetics/portable_fluid_interface")
     e.recipes.kubejs.shaped(
         "create:spout", [
-            "ABA",
-            " C "
-        ], {
-            A: "#forge:spring/blow_500",
-            B: "create:copper_casing",
-            C: "minecraft:dried_kelp"
-        }
+        "ABA",
+        " C "
+    ], {
+        A: "#forge:spring/blow_500",
+        B: "create:copper_casing",
+        C: "minecraft:dried_kelp"
+    }
     ).id("create:crafting/kinetics/spout")
     e.recipes.kubejs.shaped(
         "2x create:steam_engine", [
-            " A ",
-            " B ",
-            " C "
-        ], {
-            A: "create:shaft",
-            B: "#forge:spring/between_500_2_1000",
-            C: "minecraft:copper_block"
-        }
+        " A ",
+        " B ",
+        " C "
+    ], {
+        A: "create:shaft",
+        B: "#forge:spring/between_500_2_1000",
+        C: "minecraft:copper_block"
+    }
     ).id("create:crafting/kinetics/steam_engine")
     e.recipes.kubejs.shaped(
         "create:steam_whistle", [
-            " A ",
-            " B ",
-            " C "
-        ], {
-            A: "create:golden_sheet",
-            B: "#forge:spring/blow_500",
-            C: "minecraft:copper_ingot"
-        }
+        " A ",
+        " B ",
+        " C "
+    ], {
+        A: "create:golden_sheet",
+        B: "#forge:spring/blow_500",
+        C: "minecraft:copper_ingot"
+    }
     ).id("create:crafting/kinetics/steam_whistle")
     e.recipes.kubejs.shaped(
         "create:mechanical_arm", [
-            "AAB",
-            "AC ",
-            "DE "
-        ], {
-            A: "create:brass_sheet",
-            B: "create:andesite_alloy",
-            C: "#forge:spring/between_500_2_1000",
-            D: "create:precision_mechanism",
-            E: "create:brass_casing"
-        }
+        "AAB",
+        "AC ",
+        "DE "
+    ], {
+        A: "create:brass_sheet",
+        B: "create:andesite_alloy",
+        C: "#forge:spring/between_500_2_1000",
+        D: "create:precision_mechanism",
+        E: "create:brass_casing"
+    }
     ).id("create:crafting/kinetics/mechanical_arm")
     let iner = "create:incomplete_precision_mechanism"
-    e.recipes.create.sequenced_assembly('create:precision_mechanism', "create:golden_sheet", [
+    e.recipes.create.sequenced_assembly("create:precision_mechanism", "create:golden_sheet", [
         e.recipes.create.deploying(iner, [iner, "create:cogwheel"]),
         e.recipes.create.deploying(iner, [iner, "create:large_cogwheel"]),
         e.recipes.create.deploying(iner, [iner, "#forge:spring/between_500_2_1000"])
@@ -87,10 +87,10 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .loops(3)
         .id("create:sequenced_assembly/precision_mechanism")
-        
-    let iner_2= "createdelight:incomplete_electron_tube"
-    e.recipes.create.sequenced_assembly('create:electron_tube', "create:iron_sheet", [
-        e.recipes.create.deploying(iner_2, [iner_2, '#forge:wires/electric']),
+
+    let iner_2 = "createdelight:incomplete_electron_tube"
+    e.recipes.create.sequenced_assembly("create:electron_tube", "create:iron_sheet", [
+        e.recipes.create.deploying(iner_2, [iner_2, "#forge:wires/electric"]),
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_tin", 10)]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"])
     ])

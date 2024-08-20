@@ -67,5 +67,4 @@ StartupEvents.registry("fluid", e => {
         .translationKey("block.createdelight.molten_electrum")
         .translationKey("item.createdelight.molten_electrum_bucket")
         .tag("forge:molten_materials")
-
 })

@@ -13,14 +13,14 @@ ServerEvents.recipes(e => {
         .superheated()
         .id("create_confectionery:caramel_recipe")
     e.recipes.create.filling(
-        'createcafe:caramel_iced_coffee',
+        "createcafe:caramel_iced_coffee",
         [
             "createcafe:iced_coffee",
             Fluid.of("create_confectionery:caramel", 250)
         ]
     ).id("createcafe:filling/coffee/caramel_iced_coffee_filling")
     e.recipes.create.filling(
-        'corn_delight:caramel_popcorn',
+        "corn_delight:caramel_popcorn",
         [
             "culturaldelights:popcorn",
             Fluid.of("create_confectionery:caramel", 250)

@@ -1,5 +1,5 @@
 StartupEvents.registry("block", e => {
-    e.create('createdelight:garlic', "crop")
+    e.create("createdelight:garlic", "crop")
         .translationKey("block.createdelight.garlic")
         .renderType("cutout")
         .age(3, builder => {
@@ -12,8 +12,8 @@ StartupEvents.registry("block", e => {
         .growTick(tickevent => 25)
         .bonemeal(info => 1)
         .dropSeed(true)
-        .crop('festival_delicacies:garlic', 1)
-        .crop('festival_delicacies:garlic', 0.5)
+        .crop("festival_delicacies:garlic", 1)
+        .crop("festival_delicacies:garlic", 0.5)
         .texture(0, "minecraft:block/wheat_stage0")
         .texture(1, "minecraft:block/wheat_stage2")
         .texture(2, "minecraft:block/wheat_stage5")

@@ -10,10 +10,10 @@ ServerEvents.recipes(e => {
         "createmetallurgy:steel_block_from_steel_ingots"
     ])
     metal_production_line_2(e, [
-        'createmetallurgy:steel_block',
-        'createmetallurgy:steel_ingot',
-        'ad_astra:steel_nugget',
-        'ad_astra:steel_plate',
+        "createmetallurgy:steel_block",
+        "createmetallurgy:steel_ingot",
+        "ad_astra:steel_nugget",
+        "ad_astra:steel_plate",
         "createmetallurgy:molten_steel"
     ], "superheated", 100)
     e.recipes.createmetallurgy.melting(

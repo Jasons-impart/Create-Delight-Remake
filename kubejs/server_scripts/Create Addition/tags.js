@@ -1,17 +1,17 @@
 ServerEvents.tags("item", e => {
     e.add("forge:wires/electric", [
-        'createaddition:electrum_wire',
-        'createaddition:gold_wire',
-        'vintageimprovements:silver_wire'
+        "createaddition:electrum_wire",
+        "createaddition:gold_wire",
+        "vintageimprovements:silver_wire"
     ])
     e.add("forge:rods/electric", [
-        'createaddition:electrum_rod',
-        'createaddition:gold_rod',
-        'vintageimprovements:silver_rod'
+        "createaddition:electrum_rod",
+        "createaddition:gold_rod",
+        "vintageimprovements:silver_rod"
     ])
     e.add("forge:ingots/electric", [
-        'createaddition:electrum_ingot',
-        'minecraft:gold_ingot',
-        'iceandfire:silver_ingot'
+        "createaddition:electrum_ingot",
+        "minecraft:gold_ingot",
+        "iceandfire:silver_ingot"
     ])
 })

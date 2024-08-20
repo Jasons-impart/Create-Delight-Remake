@@ -29,9 +29,9 @@ JEIEvents.hideItems(e => {
         "refinedstorage:raw_basic_processor",
         "refinedstorage:raw_improved_processor",
         "refinedstorage:raw_advanced_processor",
-        'quark:potato_crate',
-        'createaddition:diamond_grit',
-        'ad_astra:steel_block'
+        "quark:potato_crate",
+        "createaddition:diamond_grit",
+        "ad_astra:steel_block"
     ])
 })
 JEIEvents.addFluids(e => {

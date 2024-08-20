@@ -1,10 +1,10 @@
 ServerEvents.recipes(e => {
-    metal_production_line_2(e, 
+    metal_production_line_2(e,
         [
             "create:andesite_alloy_block",
-            'create:andesite_alloy',
-            'createdelight:andesite_alloy_nugget',
-            'vintageimprovements:andesite_sheet',
+            "create:andesite_alloy",
+            "createdelight:andesite_alloy_nugget",
+            "vintageimprovements:andesite_sheet",
             "createdelight:molten_andesite"
         ], "heated", 10
     )
