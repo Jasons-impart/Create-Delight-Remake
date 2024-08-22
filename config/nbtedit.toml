@@ -1,0 +1,12 @@
+
+#General settings.
+[general]
+	#Enable debug logs. Necessary if you are reporting bugs.
+	debug = false
+
+	#Permission node levels. Like vanilla, should in 0 ~ 5 range.
+	[general.permission]
+		use = 2
+		read_only = 1
+		edit_on_player = 4
+
