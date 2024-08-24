@@ -1,0 +1,102 @@
+#Fluid Settings
+[fluid]
+	#Fluid Trader Settings
+	[fluid.trader]
+		#The amount of fluid storage a fluid trade has by default in Buckets (1,000mB).
+		#Range: 1 -> 1000
+		tradeStorage=10
+		
+		#The maximum quantity of fluids allowed to be sold or purchased in a single trade in Buckets (1,000mB).
+		#Regardless of the input, it will always be enforced to be less than or equal to the fluid trades current maximum capacity.
+		#Range: 1 -> 2147483647
+		tradeQuantityLimit=10
+		
+	#Fluid Tank Settings
+	[fluid.tank]
+		#The amount of fluid storage the Iron Tank can hold in Buckets (1,000mB)
+		#Range: 1 -> 5000
+		ironTankCapacity=10
+		
+		#The amount of fluid storage the Gold Tank can hold in Buckets (1,000mB)
+		#Range: 1 -> 5000
+		goldTankCapacity=25
+		
+		#The amount of fluid storage the Diamond Tank can hold in Buckets (1,000mB)
+		#Range: 1 -> 5000
+		diamondTankCapacity=100
+		
+		#The amount of fluid storage the Netherite Tank can hold in Buckets (1,000mB)
+		#Range: 1 -> 5000
+		netheriteTankCapacity=200
+		
+	#Fluid Upgrade Settings
+	[fluid.upgrades]
+		#The amount of fluid storage added by the first Fluid Capacity upgrade (Iron) in Buckets (1,000mB)
+		#Range: 1 -> 100000
+		upgradeCapacity1=10
+		
+		#The amount of fluid storage added by the second Fluid Capacity upgrade (Gold) in Buckets (1,000mB)
+		#Range: 1 -> 100000
+		upgradeCapacity2=25
+		
+		#The amount of fluid storage added by the third Fluid Capacity upgrade (Diamond) in Buckets (1,000mB)
+		#Range: 1 -> 100000
+		upgradeCapacity3=100
+		
+		#The amount of fluid storage added by the fourth Fluid Capacity upgrade (Netherite) in Buckets (1,000mB)
+		#Range: 1 -> 100000
+		upgradeCapacity4=200
+		
+	#Fluid Trader Interface Settings
+	[fluid.interface]
+		#The amount of fluid in mB that can be drained or restocked in a single drain tick (once per second).
+		#Range: 1 -> 2147483647
+		restockRate=10000
+		
+#Energy Settings
+[energy]
+	#Energy Trader Settings
+	[energy.trader]
+		#The amount of FE an energy trader has by default.
+		#Range: 1000 -> 100000000
+		traderStorage=100000
+		
+		#The maximum amount of FE an energy trader can sell or purchase in a single trade.
+		#Regardless of the input, it will always be enforced to be less than or equal to the energy traders current maximum capacity
+		#Range: 1 -> 2147483647
+		tradeQuantityLimit=2147483647
+		
+	#Battery Settings
+	[energy.battery]
+		#The amount of FE a Battery can hold.
+		#Range: 1000 -> 2147483647
+		batteryCapacity=100000
+		
+		#The amount of FE a Large Battery can hold.
+		#Range: 1000 -> 2147483647
+		largeBatteryCapacity=1000000
+		
+	#Energy Upgrade Settings
+	[energy.upgrades]
+		#The amount of energy storage added by the first Energy Capacity Upgrade (Iron).
+		#Range: 1000 -> 100000000
+		upgradeCapacity1=100000
+		
+		#The amount of energy storage added by the second Energy Capacity Upgrade (Gold).
+		#Range: 1000 -> 100000000
+		upgradeCapacity2=250000
+		
+		#The amount of energy storage added by the third Energy Capacity Upgrade (Diamond).
+		#Range: 1000 -> 100000000
+		upgradeCapacity3=1000000
+		
+		#The amount of energy storage added by the fourth Energy Capacity Upgrade (Netherite).
+		#Range: 1000 -> 100000000
+		upgradeCapacity4=2000000
+		
+	#Energy Interface Settings
+	[energy.interface]
+		#The amount of FE that can be drained or restocked in a single drain tick (once per second).
+		#Range: 1000 -> 2147483647
+		restockRate=100000
+		

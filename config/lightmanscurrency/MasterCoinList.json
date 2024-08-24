@@ -1,0 +1,314 @@
+{
+  "Chains": [
+    {
+      "chain": "main",
+      "name": {
+        "translate": "lightmanscurrency.money.chain.main"
+      },
+      "displayType": "lightmanscurrency:coin",
+      "InputType": "DEFAULT",
+      "CoreChain": [
+        {
+          "Coin": "createdelight:iron_coin",
+          "initial": {
+            "translate": "item.createdelight.iron_coin.initial"
+          },
+          "plural": {
+            "translate": "item.createdelight.iron_coin.plural"
+          }
+        },
+        {
+          "Coin": "createdelight:brass_coin",
+          "exchangeRate": 10,
+          "initial": {
+            "translate": "item.createdelight.brass_coin.initial"
+          },
+          "plural": {
+            "translate": "item.createdelight.brass_coin.plural"
+          }
+        },
+        {
+          "Coin": "createdelight:gold_coin",
+          "exchangeRate": 10,
+          "initial": {
+            "translate": "item.createdelight.gold_coin.initial"
+          },
+          "plural": {
+            "translate": "item.createdelight.gold_coin.plural"
+          }
+        },
+        {
+          "Coin": "createdelight:netherite_coin",
+          "exchangeRate": 10,
+          "initial": {
+            "translate": "item.createdelight.netherite_coin.initial"
+          },
+          "plural": {
+            "translate": "item.createdelight.netherite_coin.plural"
+          }
+        }
+      ],
+      "ATMData": {
+        "ExchangeButtons": [
+          {
+            "x": 10,
+            "y": 34,
+            "width": 160,
+            "command": "exchangeAllUp",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 10,
+                "y": 1,
+                "item": "createdelight:iron_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 35,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 50,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 75,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 90,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 115,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 130,
+                "y": 1,
+                "item": "createdelight:netherite_coin"
+              }
+            ]
+          },
+          {
+            "x": 10,
+            "y": 54,
+            "width": 160,
+            "command": "exchangeAllDown",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 10,
+                "y": 1,
+                "item": "createdelight:netherite_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 35,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 50,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 75,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 90,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 115,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 130,
+                "y": 1,
+                "item": "createdelight:iron_coin"
+              }
+            ]
+          },
+          
+          {
+            "x": 10,
+            "y": 74,
+            "width": 50,
+            "command": "exchangeDown-createdelight:iron_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:iron_coin"
+              }
+            ]
+          },
+          {
+            "x": 10,
+            "y": 94,
+            "width": 50,
+            "command": "exchangeUp-lightmanscurrency:coin_copper",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:iron_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              }
+            ]
+          },
+          {
+            "x": 65,
+            "y": 74,
+            "width": 50,
+            "command": "exchangeDown-createdelight:gold_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              }
+            ]
+          },
+          {
+            "x": 65,
+            "y": 94,
+            "width": 50,
+            "command": "exchangeUp-createdelight:brass_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:brass_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              }
+            ]
+          },
+          {
+            "x": 120,
+            "y": 74,
+            "width": 50,
+            "command": "exchangeDown-createdelight:netherite_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:netherite_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              }
+            ]
+          },
+          {
+            "x": 120,
+            "y": 94,
+            "width": 50,
+            "command": "exchangeUp-createdelight:gold_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 2,
+                "y": 1,
+                "item": "createdelight:gold_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 22,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 31,
+                "y": 1,
+                "item": "createdelight:netherite_coin"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
