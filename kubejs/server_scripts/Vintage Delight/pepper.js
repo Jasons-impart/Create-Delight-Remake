@@ -22,6 +22,7 @@ ServerEvents.recipes(e => {
             "#mynethersdelight:hot_spice",
             "minecraft:nether_wart",
             "butchercraft:beef_stewmeat"
-        ], "farmersrespite:blazing_chili", 1.0, 200, "minecraft:bowl"
+        ],
+        "farmersrespite:blazing_chili", 1.0, 200, "minecraft:bowl"
     ).id("mynethersdelight:cooking/blazing_chili")
 })

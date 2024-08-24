@@ -13,6 +13,7 @@ ServerEvents.tags("item", e => {
         "minecraft:chorus_fruit"
     ])
 })
+
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create:milling/wheat",

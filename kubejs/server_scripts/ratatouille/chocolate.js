@@ -10,6 +10,7 @@ ServerEvents.tags("item", e => {
         "create_confectionery:bar_of_black_chocolate"
     ])
 })
+
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create_confectionery:crushed_cocoa_recipe",

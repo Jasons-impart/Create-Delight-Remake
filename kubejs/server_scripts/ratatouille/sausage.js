@@ -14,5 +14,4 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "mynethersdelight:crafting/breakfast_sampler" }, "mynethersdelight:roasted_sausage", "ratatouille:sausage")
     e.replaceInput({ id: "mynethersdelight:cooking/sausage_and_potatoes" }, "mynethersdelight:hoglin_sausage", "ratatouille:raw_sausage")
     e.replaceInput({ id: "mynethersdelight:crafting/hotdog" }, "mynethersdelight:roasted_sausage", "ratatouille:sausage")
-
 })

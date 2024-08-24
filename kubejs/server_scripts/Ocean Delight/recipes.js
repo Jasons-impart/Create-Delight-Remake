@@ -59,6 +59,7 @@ ServerEvents.recipes(e => {
     )
         .id("oceansdelight:tentacle_on_a_stick")
 })
+
 ServerEvents.tags("item", e => {
     e.remove("forge:raw_fishes", [
         "crabbersdelight:pufferfish_slice"

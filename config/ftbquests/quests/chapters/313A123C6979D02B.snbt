@@ -1341,17 +1341,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["62E92230755F95B6"]
-			id: "4B59BD8B5F84A1D8"
-			tasks: [{
-				id: "35260DF578FD3B7B"
-				item: "create_things_and_misc:slime_cake"
-				type: "item"
-			}]
-			x: -7.0d
-			y: 3.0d
-		}
-		{
 			dependencies: ["02A92B3F08154E18"]
 			id: "68E33BCC20F1089F"
 			tasks: [

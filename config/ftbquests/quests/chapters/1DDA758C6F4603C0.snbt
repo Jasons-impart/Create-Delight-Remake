@@ -95,7 +95,7 @@
 			y: 7.0d
 		}
 		{
-			dependencies: ["65C8753C15473A60"]
+			dependencies: ["23237C92178C3BBC"]
 			icon: {
 				Count: 1
 				id: "ad_astra:space_helmet"
@@ -157,7 +157,7 @@
 				}
 			]
 			x: -4.0d
-			y: 12.5d
+			y: 14.0d
 		}
 		{
 			dependencies: [
@@ -1106,28 +1106,6 @@
 			}]
 			x: 5.0d
 			y: 11.0d
-		}
-		{
-			dependencies: ["23237C92178C3BBC"]
-			id: "65C8753C15473A60"
-			rewards: [{
-				id: "0D0376B354A007F6"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1FCE2827D495365B"
-				item: {
-					Count: 1b
-					id: "ad_astra:oxygen_tank"
-					tag: {
-						BotariumData: { }
-					}
-				}
-				type: "item"
-			}]
-			x: -4.0d
-			y: 14.0d
 		}
 		{
 			dependencies: ["387FB6E7ECA3FB46"]

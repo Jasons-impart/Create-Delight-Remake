@@ -21,7 +21,7 @@ function brewing(event, base, inputs, fluid, output) {
         }
     }
     inputs.forEach(input => {
-        if(input[0] == "#"){
+        if (input[0] == "#") {
             brewing_receipe.ingredients.push({
                 "tag": input.slice(1)
             })
@@ -43,5 +43,4 @@ function brewing(event, base, inputs, fluid, output) {
             "item": output
         }
     }).id(`farmersrespite:pouring/${output.split(":")[1]}`)
-
 }
