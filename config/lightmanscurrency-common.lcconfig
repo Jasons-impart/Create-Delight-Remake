@@ -110,37 +110,37 @@ debugLevel=0
 	#T1 loot item.
 	#Leave blank ("") to not spawn T1 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":1, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT1=lightmanscurrency:coin_copper
+	lootItemT1=createdelight:iron_coin
 	
 	#T2 loot item.
 	#Leave blank ("") to not spawn T2 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":2, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT2=lightmanscurrency:coin_iron
+	lootItemT2=createdelight:brass_coin
 	
 	#T3 loot item.
 	#Leave blank ("") to not spawn T3 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":3, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT3=lightmanscurrency:coin_gold
+	lootItemT3=createdelight:gold_coin
 	
 	#T4 loot item.
 	#Leave blank ("") to not spawn T4 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":4, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT4=lightmanscurrency:coin_emerald
+	lootItemT4=createdelight:netherite_coin
 	
 	#T5 loot item.
 	#Leave blank ("") to not spawn T5 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT5=lightmanscurrency:coin_diamond
+	lootItemT5=""
 	
 	#T6 loot item.
 	#Leave blank ("") to not spawn T6 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":6, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT6=lightmanscurrency:coin_netherite
+	lootItemT6=""
 	
 	#Entity Loot Settings.
 	[loot.entities]
 		#Whether coins can be dropped by entities.
-		enabled=true
+		enabled=false
 		
 		#Whether coins can be dropped by entities that were spawned by the vanilla spawner.
 		allowSpawnedDrops=false
@@ -206,7 +206,7 @@ debugLevel=0
 	#Chest Loot Settings
 	[loot.chests]
 		#Whether coins can spawn in chests.
-		enabled=true
+		enabled=false
 		
 		#Chest Spawn Lists
 		[loot.chests.lists]
