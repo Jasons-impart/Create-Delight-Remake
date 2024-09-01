@@ -130,12 +130,12 @@ debugLevel=0
 	#T5 loot item.
 	#Leave blank ("") to not spawn T5 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT5=""
+	lootItemT5=minecraft:air
 	
 	#T6 loot item.
 	#Leave blank ("") to not spawn T6 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":6, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT6=""
+	lootItemT6=minecraft:air
 	
 	#Entity Loot Settings.
 	[loot.entities]
