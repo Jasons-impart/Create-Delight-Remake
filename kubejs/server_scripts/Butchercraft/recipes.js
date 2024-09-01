@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
         "minecraft:slime_ball",
         [
             "minecraft:water_bucket",
-            'butchercraft:gelatin'
+            "butchercraft:gelatin"
         ]
     ).id("butchercraft:gelatin_to_slime_ball")
     e.recipes.create.mixing(
@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
                 "item": "butchercraft:fat"
             },
             {
-                "item": 'ratatouille:wheat_kernels'
+                "item": "ratatouille:wheat_kernels"
             },
             {
                 "item": "butchercraft:blood_fluid_bottle"
@@ -50,5 +50,5 @@ ServerEvents.recipes(e => {
             "item": "butchercraft:blood_sausage_mix"
         }
     })
-    .id("butchercraft:blood_sausage_mix")
+        .id("butchercraft:blood_sausage_mix")
 })

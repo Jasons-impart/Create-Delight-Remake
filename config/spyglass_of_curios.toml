@@ -27,7 +27,7 @@ deBug = false
 ["倍率设置"]
 	#The default multiplier of spyglass.
 	#望远镜默认倍率
-	defaultMultiplier = 7
+	defaultMultiplier = 3
 	#The maximum multiplier of spyglass.
 	#望远镜最大倍率
 	#Range: 0 ~ 100

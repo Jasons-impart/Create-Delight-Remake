@@ -58,10 +58,6 @@
   "jadeaddons": {
     "equipment_requirement": ""
   },
-  "extrastorage": {
-    "crafter": true,
-    "advanced_crafter": true
-  },
   "supplementaries": {
     "hat_stand": true
   },
@@ -104,6 +100,7 @@
   },
   "storagedrawers": {
     "display.stacklimit": true,
+    "main": true,
     "display.content": true,
     "display.status": true
   }

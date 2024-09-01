@@ -10,26 +10,26 @@ ServerEvents.recipes(e => {
             "createcafe:coffee_grounds",
             Fluid.of("water", 500)
         ]
-    )   
+    )
         .heated()
         .id("createcafe:mixing/coffee/coffee_mixing")
     // 袋装咖啡豆
     e.recipes.minecraft.crafting_shapeless(
-        'farmersrespite:coffee_beans_sack',
+        "farmersrespite:coffee_beans_sack",
         "9x createcafe:roasted_coffee_beans"
     )
-    .id("farmersrespite:coffee_beans_sack")
+        .id("farmersrespite:coffee_beans_sack")
     e.recipes.minecraft.crafting_shapeless(
         "9x createcafe:roasted_coffee_beans",
-        'farmersrespite:coffee_beans_sack'        
+        "farmersrespite:coffee_beans_sack"
     )
-    .id("farmersrespite:coffee_beans")
+        .id("farmersrespite:coffee_beans")
     // 咖啡豆粉碎
     e.recipes.create.milling(
         [
             "createcafe:coffee_grounds",
             Item.of("2x createcafe:coffee_grounds").withChance(0.25)
-        ], 'farmersrespite:coffee_beans'
+        ], "farmersrespite:coffee_beans"
     ).id("farmersrespite:milling/coffee_beans")
     e.custom({
         "type": "farmersrespite:brewing",

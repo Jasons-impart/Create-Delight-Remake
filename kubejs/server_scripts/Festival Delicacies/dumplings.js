@@ -1,6 +1,6 @@
 ServerEvents.tags("item", e => {
     e.add("forge:vegetables/onion", [
-        'festival_delicacies:greenonion'
+        "festival_delicacies:greenonion"
     ])
 })
 ServerEvents.recipes(e => {
@@ -59,107 +59,107 @@ ServerEvents.recipes(e => {
         "festival_delicacies:wonton_fd/fd_pork_carrot_wonton_recipe",
         "festival_delicacies:wonton/pork_carrot_wonton_recipe",
         "festival_delicacies:wonton/pork_carrot_wonton_recipe_2"
-        ])
+    ])
     dumpling(e, [
         "#forge:dough",
-        'butchercraft:pork_stewmeat',
+        "butchercraft:pork_stewmeat",
         "#forge:vegetables/chinese_cabbage",
         "#forge:vegetables/onion"
-    ], '2x festival_delicacies:pork_cabbage_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+    ], "2x festival_delicacies:pork_cabbage_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'butchercraft:pork_stewmeat',
-        'minecraft:kelp',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:pork_kelp_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "butchercraft:pork_stewmeat",
+        "minecraft:kelp",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:pork_kelp_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'minecraft:brown_mushroom',
-        'butchercraft:pork_stewmeat',
-        '#forge:vegetables/onion',
-        'minecraft:potato'
-    ], '2x festival_delicacies:pork_potato_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "minecraft:brown_mushroom",
+        "butchercraft:pork_stewmeat",
+        "#forge:vegetables/onion",
+        "minecraft:potato"
+    ], "2x festival_delicacies:pork_potato_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'butchercraft:pork_stewmeat',
-        'festival_delicacies:fennel',
-        '#forge:vegetables/onion'
-    ], 'festival_delicacies:pork_fennel_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "butchercraft:pork_stewmeat",
+        "festival_delicacies:fennel",
+        "#forge:vegetables/onion"
+    ], "festival_delicacies:pork_fennel_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'butchercraft:lamb_stewmeat',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:mutton_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "butchercraft:lamb_stewmeat",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:mutton_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'butchercraft:chicken_stewmeat',
-        'minecraft:brown_mushroom',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:chicken_mushroom_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "butchercraft:chicken_stewmeat",
+        "minecraft:brown_mushroom",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:chicken_mushroom_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'farmersdelight:cod_slice',
-        'minecraft:egg',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:cod_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "farmersdelight:cod_slice",
+        "minecraft:egg",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:cod_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'farmersdelight:salmon_slice',
-        'minecraft:carrot'
-    ], '2x festival_delicacies:salmon_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "farmersdelight:salmon_slice",
+        "minecraft:carrot"
+    ], "2x festival_delicacies:salmon_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'minecraft:egg',
-        '#forge:vegetables/onion',
+        "minecraft:egg",
+        "#forge:vegetables/onion",
         "#forge:vegetables/eggplant"
-    ], '2x festival_delicacies:eggplant_egg_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+    ], "2x festival_delicacies:eggplant_egg_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'minecraft:brown_mushroom',
-        'minecraft:red_mushroom',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:mushroom_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "minecraft:brown_mushroom",
+        "minecraft:red_mushroom",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:mushroom_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'minecraft:warped_fungus',
-        'minecraft:crimson_fungus',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:fungus_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "minecraft:warped_fungus",
+        "minecraft:crimson_fungus",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:fungus_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'festival_delicacies:garlic_chive',
-        'minecraft:egg'
-    ], '2x festival_delicacies:garlic_chive_egg_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "festival_delicacies:garlic_chive",
+        "minecraft:egg"
+    ], "2x festival_delicacies:garlic_chive_egg_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'minecraft:dandelion',
-        'minecraft:egg',
-        'minecraft:brown_mushroom'
-    ], '2x festival_delicacies:dandelion_leaf_boiled_dumpling', 1.0, 200)
-    dumpling(e,[
+        "minecraft:dandelion",
+        "minecraft:egg",
+        "minecraft:brown_mushroom"
+    ], "2x festival_delicacies:dandelion_leaf_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
         "#forge:dough",
-        'butchercraft:rabbit_stewmeat',
-        '#forge:vegetables/onion'
-    ], '2x festival_delicacies:rabbit_meat_boiled_dumpling', 1.0, 200)
+        "butchercraft:rabbit_stewmeat",
+        "#forge:vegetables/onion"
+    ], "2x festival_delicacies:rabbit_meat_boiled_dumpling", 1.0, 200)
     wonton(e, [
         "#forge:dough",
         "#forge:raw_pork",
         "#forge:vegetables/chinese_cabbage",
         "#forge:vegetables/onion",
         "minecraft:dried_kelp"
-    ], 'festival_delicacies:pork_cabbage_wonton', 1.0, 200)
+    ], "festival_delicacies:pork_cabbage_wonton", 1.0, 200)
     wonton(e, [
         "#forge:dough",
         "#forge:raw_pork",
         "minecraft:brown_mushroom",
         "#forge:vegetables/onion",
         "minecraft:dried_kelp"
-    ], 'festival_delicacies:pork_mushroom_wonton', 1.0, 200)
+    ], "festival_delicacies:pork_mushroom_wonton", 1.0, 200)
     wonton(e, [
         "#forge:dough",
         "#forge:raw_pork",
         "#forge:eggs",
         "#forge:vegetables/carrot",
         "minecraft:dried_kelp"
-    ], 'festival_delicacies:pork_carrot_wonton', 1.0, 200)
+    ], "festival_delicacies:pork_carrot_wonton", 1.0, 200)
 })

@@ -54,7 +54,7 @@ function crushing_ore(event, input, output, number, stone) {
     event.recipes.create.crushing([
         Item.of(`${number}x ${output}`),
         Item.of(output).withChance(0.75),
-        Item.of('create:experience_nugget').withChance(0.75),
+        Item.of("create:experience_nugget").withChance(0.75),
         Item.of(stone).withChance(0.12)
     ], input).id(`createdelight:crushing_${input.split(":")[1]}`)
 }
@@ -100,7 +100,7 @@ function combination(event, inputs, output, count) {
  * @param { number } time // defult 1200 ticks
  */
 function baking(event, input, output, count, category, time) {
-    event.custom({type: "refurbished_furniture:oven_baking", category: category, ingredient: {item: input}, result: {count: count, item: output}, time: time})
+    event.custom({ type: "refurbished_furniture:oven_baking", category: category, ingredient: { item: input }, result: { count: count, item: output }, time: time })
         .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
 }
 
@@ -155,5 +155,5 @@ function wonton(event, inputs, output, exp, time) {
  */
 function blast_and_smelting(event, input, output, xp, time) {
     event.recipes.minecraft.blasting(output, input, xp, time).id(`createdelight:blasting/${output.split(":")[1]}_from_blasting_${input.split(":")[1]}`)
-    event.recipes.minecraft.smelting(output, input, xp, 2*time).id(`createdelight:smelting/${output.split(":")[1]}_from_melting_${input.split(":")[1]}`)
+    event.recipes.minecraft.smelting(output, input, xp, 2 * time).id(`createdelight:smelting/${output.split(":")[1]}_from_melting_${input.split(":")[1]}`)
 }

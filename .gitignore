@@ -32,6 +32,7 @@
 /schematics
 /kubejs/probe
 /kubejs/README.txt
+/xaero
 .qmenu_opened.marker
 caxton_impl.dll
 options.txt
@@ -66,3 +67,8 @@ modpack.cfg
 /config/quark-common.toml
 /config/screenshot_viewer-client.toml
 /config/sodium-extra-options.json
+hotbar.nbt
+config/sound_physics_remastered/reflectivity.properties
+config/sound_physics_remastered/occlusion.properties
+config/everycomp-hazardous.properties
+config/packetfixer.properties

@@ -1,27 +1,27 @@
 {
-	"type" : "minecraft:ore",
-	"config" : {
-		"size" : 12,
-		"discard_chance_on_air_exposure" : 0.0,
-		"targets" : [
-		{
-			"state" : {
-				"Name" : "createdelight:tin_ore"
+	"type": "minecraft:ore",
+	"config": {
+		"size": 12,
+		"discard_chance_on_air_exposure": 0.0,
+		"targets": [
+			{
+				"state": {
+					"Name": "createdelight:tin_ore"
+				},
+				"target": {
+					"predicate_type": "minecraft:tag_match",
+					"tag": "minecraft:stone_ore_replaceables"
+				}
 			},
-			"target" : {
-				"predicate_type" : "minecraft:tag_match",
-				"tag" : "minecraft:stone_ore_replaceables"
+			{
+				"state": {
+					"Name": "createdelight:deepslate_tin_ore"
+				},
+				"target": {
+					"predicate_type": "minecraft:tag_match",
+					"tag": "minecraft:deepslate_ore_replaceables"
+				}
 			}
-		},
-		{
-			"state" : {
-				"Name" : "createdelight:deepslate_tin_ore"
-			},
-			"target" : {
-				"predicate_type" : "minecraft:tag_match",
-				"tag" : "minecraft:deepslate_ore_replaceables"
-			}
-		}
 		]
 	}
 }

@@ -3,16 +3,17 @@ StartupEvents.registry("item", e => {
         "bronze_ingot",
         "bronze_nugget",
         "bronze_sheet"
-    ]    
+    ]
     items.forEach(item => {
         e.create(`createdelight:${item}`)
             .maxStackSize(64)
             .translationKey(`item.createdelight.${item}`)
-    });
+    })
 })
+
 StartupEvents.registry("block", e => {
     let blocks = [
-        ["bronze_block", 'metal', 10, "pickaxe", "diamond"],
+        ["bronze_block", "metal", 10, "pickaxe", "diamond"],
     ]
     blocks.forEach(([id, sound, hardness, tool, level]) => {
         e.create(`createdelight:${id}`)

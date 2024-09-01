@@ -13,9 +13,9 @@ ServerEvents.recipes(e => {
             Fluid.of("farmersrespite:yellow_tea", 500),
             "fruitsdelight:peach"
         ]
-    )   
+    )
         .heated().id("fruitsdelight:mixing/flowing_peach_tea")
-    brewing(e, "farmersrespite:yellow_tea", 
+    brewing(e, "farmersrespite:yellow_tea",
         [
             "fruitsdelight:peach",
             "fruitsdelight:peach"
@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
         ], "fruitsdelight:mangosteen_tea", "fruitsdelight:mangosteen_tea"
     )
     e.recipes.create.mixing(
-        Fluid.of('fruitsdelight:lychee_cherry_tea', 1000),
+        Fluid.of("fruitsdelight:lychee_cherry_tea", 1000),
         [
             Fluid.of("farmersrespite:green_tea", 1000),
             "fruitsdelight:lychee",
@@ -62,21 +62,21 @@ ServerEvents.recipes(e => {
         [
             "fruitsdelight:lychee",
             "minecraft:cherry_leaves"
-        ], 'fruitsdelight:lychee_cherry_tea', 'fruitsdelight:lychee_cherry_tea'
+        ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
     )
     e.recipes.create.mixing(
-        Fluid.of('fruitsdelight:hawberry_tea', 500),
+        Fluid.of("fruitsdelight:hawberry_tea", 500),
         [
             Fluid.of("farmersrespite:yellow_tea", 500),
             "fruitsdelight:hawberry"
-            ]
+        ]
     )
         .heated().id("fruitsdelight:mixing/flowing_hawberry_tea")
     brewing(e, "farmersrespite:yellow_tea",
         [
             "fruitsdelight:hawberry",
             "fruitsdelight:hawberry"
-        ], 'fruitsdelight:hawberry_tea', 'fruitsdelight:hawberry_tea'
+        ], "fruitsdelight:hawberry_tea", "fruitsdelight:hawberry_tea"
     )
     e.recipes.create.mixing(
         Fluid.of("create_central_kitchen:chorus_flower_tea", 500),
@@ -85,7 +85,7 @@ ServerEvents.recipes(e => {
             "ends_delight:dried_chorus_flower"
         ]
     ).heated().id("create_central_kitchen:mixing/chorus_flower_tea")
-    brewing(e, "minecraft:water", 
+    brewing(e, "minecraft:water",
         [
             "ends_delight:dried_chorus_flower",
             "ends_delight:dried_chorus_flower"

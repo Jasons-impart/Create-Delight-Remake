@@ -1,18 +1,19 @@
 ServerEvents.tags("item", e => {
     e.remove("forge:dough", [
-        'create:dough'
+        "create:dough"
     ]);
     e.remove("forge:dough/wheat", [
-        'create:dough'
+        "create:dough"
     ])
     e.remove("forge:eggs", [
-        'alexsmobs:emu_egg'
+        "alexsmobs:emu_egg"
     ])
     e.add("forge:chorus_fruits", [
-        'ends_delight:chorus_fruit_grain',
-        'minecraft:chorus_fruit'
+        "ends_delight:chorus_fruit_grain",
+        "minecraft:chorus_fruit"
     ])
 })
+
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create:milling/wheat",
@@ -48,29 +49,29 @@ ServerEvents.recipes(e => {
         "farmersdelight:straw",
         Item.of("ratatouille:wheat_kernels").withChance(0.5)
     ], 200)
-    threshing(e, 'vintagedelight:oat', [
-        '2x vintagedelight:raw_oats',
+    threshing(e, "vintagedelight:oat", [
+        "2x vintagedelight:raw_oats",
         "farmersdelight:straw",
-        Item.of('2x vintagedelight:raw_oats').withChance(0.5)
+        Item.of("2x vintagedelight:raw_oats").withChance(0.5)
     ], 300)
-    threshing(e, 'farmersdelight:rice_panicle', [
-        '3x farmersdelight:rice',
+    threshing(e, "farmersdelight:rice_panicle", [
+        "3x farmersdelight:rice",
         "farmersdelight:straw",
-        Item.of('2x farmersdelight:rice').withChance(0.5)
+        Item.of("2x farmersdelight:rice").withChance(0.5)
     ], 400)
     // 蛋液适配
     e.recipes.create.emptying([
-            Fluid.of("ratatouille:egg_yolk", 250),
-            "ratatouille:egg_shell"
-        ], "#forge:eggs"
+        Fluid.of("ratatouille:egg_yolk", 250),
+        "ratatouille:egg_shell"
+    ], "#forge:eggs"
     ).id("create:emptying/yolk")
     e.recipes.create.emptying([
-            Fluid.of("ratatouille:egg_yolk", 1000),
-            "ratatouille:egg_shell"
-        ], 'alexsmobs:emu_egg'
+        Fluid.of("ratatouille:egg_yolk", 1000),
+        "ratatouille:egg_shell"
+    ], "alexsmobs:emu_egg"
     ).id("create:emptying/emu_yolk")
     // 面团相关
-        // 恶魂面团
+    // 恶魂面团
     e.recipes.kubejs.shapeless(
         "2x mynethersdelight:ghast_dough",
         [
@@ -87,12 +88,12 @@ ServerEvents.recipes(e => {
             "mynethersdelight:ghasmati"
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
-        // 燕麦面团
+    // 燕麦面团
     e.recipes.create.mixing(
-        'vintagedelight:oat_dough',
+        "vintagedelight:oat_dough",
         [
             Fluid.of("ratatouille:egg_yolk", 50),
-            'vintagedelight:raw_oats'
+            "vintagedelight:raw_oats"
         ]
     ).id("vintagedelight:oat_dough_from_eggs")
     e.recipes.kubejs.shapeless(
@@ -110,7 +111,7 @@ ServerEvents.recipes(e => {
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
     ).id("vintagedelight:bread_from_smelting")
-        // 面团
+    // 面团
     e.recipes.create.mixing(
         "create:dough",
         [
@@ -118,46 +119,46 @@ ServerEvents.recipes(e => {
             "create:wheat_flour"
         ]
     ).id("create:mixing/dough_by_mixing")
-        // 蛋黄面团
+    // 蛋黄面团
     e.recipes.create.mixing(
-        'farmersdelight:wheat_dough',
+        "farmersdelight:wheat_dough",
         [
             Fluid.of("ratatouille:egg_yolk", 50),
-            'create:wheat_flour'
+            "create:wheat_flour"
         ]
     ).id("farmersdelight:wheat_dough_from_eggs")
     e.recipes.kubejs.shapeless(
-        '3x farmersdelight:wheat_dough',
+        "3x farmersdelight:wheat_dough",
         [
             "#forge:eggs",
             "3x create:wheat_flour"
         ]
     ).id("farmersdelight:crafting/wheat_dough_manual_only")
-        // 咸面团
+    // 咸面团
     e.recipes.create.mixing(
-        'ratatouille:salty_dough',
+        "ratatouille:salty_dough",
         [
             Fluid.of("ratatouille:egg_yolk", 100),
-            '2x create:wheat_flour',
+            "2x create:wheat_flour",
             "#forge:salt"
         ]
     )
         .id("create:mixing/salty_dough")
     // 燕麦相关食物合成
-    e.replaceInput({id: "vintagedelight:fruity_granola_bar"}, 'vintagedelight:raw_oats', 'vintagedelight:oat_dough')
-    e.replaceInput({id: "vintagedelight:deluxe_granola_bar"}, 'vintagedelight:raw_oats', 'vintagedelight:oat_dough')
-    e.replaceInput({id: "vintagedelight:chocolate_granola_bar"}, 'vintagedelight:raw_oats', 'vintagedelight:oat_dough')
-    e.replaceInput({id: "vintagedelight:deluxe_granola_bar"}, 'minecraft:cocoa_beans', '#forge:bars/chocolate')
-    e.replaceInput({id: "vintagedelight:chocolate_granola_bar"}, 'minecraft:cocoa_beans', '#forge:bars/chocolate')
+    e.replaceInput({ id: "vintagedelight:fruity_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
+    e.replaceInput({ id: "vintagedelight:deluxe_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
+    e.replaceInput({ id: "vintagedelight:chocolate_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
+    e.replaceInput({ id: "vintagedelight:deluxe_granola_bar" }, "minecraft:cocoa_beans", "#forge:bars/chocolate")
+    e.replaceInput({ id: "vintagedelight:chocolate_granola_bar" }, "minecraft:cocoa_beans", "#forge:bars/chocolate")
     // 山竹糕合成
     e.recipes.farmersdelight.cooking(
         [
             "farmersdelight:rice",
             "minecraft:sugar",
             "minecraft:sugar",
-            '#forge:fruits/mangosteen',
-            '#forge:fruits/mangosteen'
+            "#forge:fruits/mangosteen",
+            "#forge:fruits/mangosteen"
         ], "fruitsdelight:mangosteen_cake", 1.0, 200
     )
-    .id("farmersdelight:cooking/mangosteen_cake")
+        .id("farmersdelight:cooking/mangosteen_cake")
 })

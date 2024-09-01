@@ -788,34 +788,6 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"4A19D3EB3E47BFDF"
-				"24BE09160DC6BE45"
-			]
-			id: "6DF59E3FBC34C19E"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "5BA9AB220D63828A"
-				table_id: 6485826240718891201L
-				type: "random"
-			}]
-			subtitle: "这不是送你转生的泥头车，这是通往&4异界的钥匙"
-			tasks: [{
-				id: "4C5CA986104C9859"
-				item: {
-					Count: 1b
-					id: "ulterlands:ulterlands_dimension"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			title: "&4这是什么？？？"
-			x: 0.5d
-			y: 5.0d
-		}
-		{
 			dependencies: ["6CAC228A727B16A6"]
 			id: "75E6927E3D539C00"
 			rewards: [{
