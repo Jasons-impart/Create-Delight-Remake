@@ -81,17 +81,17 @@ debugLevel=0
 	#Note: Changes made only apply to newly generated trades. Villagers with trades already defined will not be changed.
 	[villagers.modification]
 		#Whether vanilla villagers should have the Emeralds from their trades replaced with coins.
-		changeVanillaTrades=false
+		changeVanillaTrades=true
 		
 		#Whether villagers added by other mods should have the Emeralds from their trades replaced with coins.
-		changeModdedTrades=false
+		changeModdedTrades=true
 		
 		#Whether the wandering trader should have the emeralds from their trades replaced with the default replacement coin.
-		changeWanderingTrades=false
+		changeWanderingTrades=true
 		
 		#The default coin to replace a trades emeralds with.
 		#May seperate and define villager type specific entries by adding multiple items seperated by '-' with region
-		defaultEmeraldReplacementItem="lightmanscurrency:coin_emerald-r;minecraft:snow;lightmanscurrency:coin_chocolate_emerald"
+		defaultEmeraldReplacementItem="createdelight:iron_coin"
 		
 		#List of replacement coin overrides.
 		#Each entry must be formatted as follows: "mod:some_profession_type-SUB_ENTRY-SUB_ENTRY-..."
@@ -103,7 +103,7 @@ debugLevel=0
 		#Each item-entry is either 1 or 2 item ids (e.g. "mod:coin_item" or "mod:coin_item_1;mod:coin_item_2".
 		#When two are given, the first will replace the cost items (items the player must pay the villager) and the second will replace the result (items the player will be paid by the villager)
 		#Every trader not on this list will use the default trader coin defined above.
-		professionEmeraldReplacementOverrides=["minecraft:cartographer-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:fletcher-lightmanscurrency:coin_iron;lightmanscurrency:coin_copper-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron;lightmanscurrency:coin_chocolate_copper","minecraft:butcher-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:farmer-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:fisherman-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:shepherd-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:mason-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron","minecraft:leatherworker-lightmanscurrency:coin_iron-r;minecraft:snow;lightmanscurrency:coin_chocolate_iron"]
+		professionEmeraldReplacementOverrides=["minecraft:cartographer-createdelight:iron_coin","minecraft:fletcher-createdelight:iron_coin","minecraft:butcher-createdelight:iron_coin","minecraft:farmer-createdelight:iron_coin","minecraft:fisherman-createdelight:iron_coin","minecraft:shepherd-createdelight:iron_coin","minecraft:mason-createdelight:iron_coin","minecraft:leatherworker-createdelight:iron_coin"]
 		
 #Loot Options
 [loot]
