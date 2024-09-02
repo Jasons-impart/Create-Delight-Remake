@@ -17,7 +17,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 1
       },
       "SellTag": "lightmanscurrency:network_terminal",
@@ -269,7 +269,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 6
       },
       "Sell": {
@@ -283,7 +283,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 10
       },
       "Sell": {
@@ -297,7 +297,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 10
       },
       "Sell": {

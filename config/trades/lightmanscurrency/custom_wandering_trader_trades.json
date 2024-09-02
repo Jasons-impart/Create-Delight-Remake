@@ -3,7 +3,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 1
       },
       "Sell": {
@@ -47,7 +47,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 2
       },
       "Price2": {
@@ -65,7 +65,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 4
       },
       "Sell": {

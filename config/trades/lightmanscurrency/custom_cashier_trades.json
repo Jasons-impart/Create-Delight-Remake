@@ -2,7 +2,7 @@
   "TradesLevel1": [
     {
       "Type": "lightmanscurrency:enchanted_book_for_coins",
-      "Coin": "createdelight:brass_coin",
+      "Coin": "createdelight:copper_coin",
       "StartCoinCount": 5,
       "MaxTrades": 12,
       "XP": 1,
@@ -22,7 +22,7 @@
   "TradesLevel2": [
     {
       "Type": "lightmanscurrency:enchanted_book_for_coins",
-      "Coin": "createdelight:brass_coin",
+      "Coin": "createdelight:copper_coin",
       "StartCoinCount": 5,
       "MaxTrades": 12,
       "XP": 5,
@@ -31,7 +31,7 @@
     {
       "Type": "lightmanscurrency:items_for_map",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 3
       },
       "Destination": "minecraft:on_ocean_explorer_maps",
@@ -55,7 +55,7 @@
     },
     {
       "Type": "lightmanscurrency:enchanted_book_for_coins",
-      "Coin": "createdelight:brass_coin",
+      "Coin": "createdelight:copper_coin",
       "StartCoinCount": 5,
       "MaxTrades": 12,
       "XP": 10,
@@ -64,7 +64,7 @@
     {
       "Type": "lightmanscurrency:items_for_map",
       "Price": {
-        "ID": "createdelight:brass_coin",
+        "ID": "createdelight:copper_coin",
         "Count": 4
       },
       "Destination": "minecraft:on_woodland_explorer_maps",
@@ -208,7 +208,7 @@
     },
     {
       "Type": "lightmanscurrency:enchanted_book_for_coins",
-      "Coin": "createdelight:brass_coin",
+      "Coin": "createdelight:copper_coin",
       "StartCoinCount": 5,
       "MaxTrades": 12,
       "XP": 15,

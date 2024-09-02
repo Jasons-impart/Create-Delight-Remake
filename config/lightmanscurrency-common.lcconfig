@@ -115,7 +115,7 @@ debugLevel=0
 	#T2 loot item.
 	#Leave blank ("") to not spawn T2 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":2, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT2=createdelight:brass_coin
+	lootItemT2=createdelight:copper_coin
 	
 	#T3 loot item.
 	#Leave blank ("") to not spawn T3 loot.
@@ -125,12 +125,12 @@ debugLevel=0
 	#T4 loot item.
 	#Leave blank ("") to not spawn T4 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":4, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT4=createdelight:netherite_coin
+	lootItemT4=createdelight:emerald_coin
 	
 	#T5 loot item.
 	#Leave blank ("") to not spawn T5 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT5=minecraft:air
+	lootItemT5=createdelight:netherite_coin
 	
 	#T6 loot item.
 	#Leave blank ("") to not spawn T6 loot.

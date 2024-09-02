@@ -276,7 +276,7 @@
 		
 		#The price per claim chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		claimPrice="coin;1-createdelight:brass_coin"
+		claimPrice="coin;1-createdelight:copper_coin"
 		
 		#The maximum number of extra claim chunks allowed to be purchased with this command.
 		#Note: This count includes extra claim chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
