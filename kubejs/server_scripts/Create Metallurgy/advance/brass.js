@@ -22,4 +22,11 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_zinc", 15)
         ], "superheated", 50
     ).id("createmetallurgy:alloying/alloying_brass")
+    e.recipes.create.mixing(
+        Fluid.of("createmetallurgy:molten_brass", 10),
+        [
+            Fluid.of("createmetallurgy:molten_copper", 5),
+            Fluid.of("createmetallurgy:molten_zinc", 5)
+        ], 250, "superheated"
+    ).id("createmetallurgy:mixing/alloying_brass")
 })

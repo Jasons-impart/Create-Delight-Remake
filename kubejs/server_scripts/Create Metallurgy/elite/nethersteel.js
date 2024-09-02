@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_steel", 5),
             Fluid.of("createdelight:molten_netherite", 5)
         ], "superheated", 180
-    )
+    ).id("createmetallurgy:alloying/molten_nethersteel")
     metal_production_line_2(e, 
         [
             "createbigcannons:nethersteel_block",

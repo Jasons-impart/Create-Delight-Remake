@@ -1867,12 +1867,6 @@
 					type: "item"
 				}
 				{
-					id: "1A298914FDC552F0"
-					item: "upgradednetherite_ultimate:ultimate_upgraded_netherite_ingot"
-					random_bonus: 3
-					type: "item"
-				}
-				{
 					count: 2
 					id: "7C53E3F467A6D668"
 					item: "sophisticatedbackpacks:netherite_backpack"
