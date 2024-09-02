@@ -114,6 +114,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -11.5d
@@ -146,6 +147,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -10.5d
@@ -178,6 +180,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -9.5d
@@ -210,6 +213,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.5d
@@ -242,6 +246,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.5d
@@ -269,6 +274,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -6.5d
@@ -301,6 +307,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.5d
@@ -333,6 +340,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -4.5d
@@ -365,6 +373,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -3.5d
@@ -397,6 +406,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.5d
@@ -429,6 +439,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.5d
@@ -461,6 +472,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -6.5d
@@ -514,6 +526,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.5d
@@ -546,6 +559,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 0.0d
@@ -578,6 +592,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 1.0d
@@ -610,6 +625,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 2.0d
@@ -642,6 +658,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.0d
@@ -674,6 +691,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 4.0d
@@ -706,6 +724,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 5.0d
@@ -738,6 +757,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 6.0d
@@ -770,6 +790,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 7.0d
@@ -956,6 +977,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 2.5d
@@ -987,6 +1009,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.5d
@@ -996,7 +1019,7 @@
 			dependencies: ["08EABCEF8ADB226A"]
 			id: "3382A09D919C1DC2"
 			tasks: [{
-				id: "5D7D0B11E8C3A7F3"
+				id: "734DC08663D0A39D"
 				item: {
 					Count: 1
 					id: "tetra:scroll_rolled"
@@ -1004,16 +1027,16 @@
 						BlockEntityTag: {
 							data: [{
 								glyphs: [I;
-									4
-									1
-									0
+									8
+									9
+									10
 									5
 								]
 								intricate: 0b
-								key: "sword/throwing_knife"
+								key: "sword/howling"
 								material: 1
-								ribbon: "b8ced9"
-								schematics: ["tetra:sword/throwing_knife"]
+								ribbon: "faf396"
+								schematics: ["tetra:sword/howling"]
 							}]
 						}
 					}
@@ -1050,6 +1073,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -10.0d
@@ -1082,6 +1106,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -9.0d
@@ -1114,6 +1139,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.0d
@@ -1149,6 +1175,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.0d
@@ -1184,6 +1211,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -6.0d
@@ -1216,6 +1244,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.0d
@@ -1248,6 +1277,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -9.0d
@@ -1280,6 +1310,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.0d
@@ -1315,6 +1346,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.0d
@@ -1347,6 +1379,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -6.0d
@@ -1379,6 +1412,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.0d
@@ -1414,13 +1448,14 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -6.0d
 			y: 7.0d
 		}
 		{
-			dependencies: ["243D6889505F1555"]
+			dependencies: ["062C53CBBB225590"]
 			id: "4D56564AF6F236F4"
 			tasks: [{
 				id: "2FF44FCC23826A4A"
@@ -1449,6 +1484,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.0d
@@ -1485,6 +1521,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -9.0d
