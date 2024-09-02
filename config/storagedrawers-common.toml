@@ -12,7 +12,6 @@
 	enableUI = true
 	enableSidedInput = true
 	enableSidedOutput = true
-	enableItemConversion = true
 	enableExtraCompactingRules = true
 	debugTrace = false
 	#List of rules in format "domain:item1, domain:item2, n".
@@ -21,6 +20,14 @@
 	#Whether redstone upgrades should emit an analog redstone signal, requiring
 	#the use of a comparator to read it.  This will default to true starting with MC 1.21.
 	enableAnalogRedstone = false
+	#Allows drawers to be pulled from their block and inserted into another block.
+	enableDetachedDrawers = true
+	#Drawers track the capacity upgrades from the block they were taken from.
+	#Drawers can only be placed back into a block with the same or lower max capacity.
+	#Drawers can still only be inserted into a block with enough capacity for the items held.
+	forceDetachedDrawersMaxCapacityCheck = true
+	#If enabled, carrying filled drawers in your inventory gives slowness debuff, unless a Portability Upgrade is used.
+	heavyDrawers = false
 
 [StorageUpgrades]
 	#Storage upgrades multiply storage capacity by the given amount.
@@ -30,6 +37,9 @@
 	level3Mult = 8
 	level4Mult = 16
 	level5Mult = 32
+	#Balance upgrades allow same-item slots to balance out their amounts when items are
+	#added or removed from a lot.  Works across networks when acting through a controller.
+	enableBalanceUpgrade = true
 
 [Integration]
 	#When true, shows quantity as NxS + R (by stack size) rather than count

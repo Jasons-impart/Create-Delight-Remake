@@ -8,4 +8,5 @@ ServerEvents.recipes(e => {
             "createdelight:molten_sliver"
         ], "heated", 40
     )
+    blast_and_smelting(e, "create:crushed_raw_silver", "iceandfire:silver_ingot", 0.1, 100)
 })
