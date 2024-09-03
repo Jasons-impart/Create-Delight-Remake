@@ -1,130 +1,6 @@
 {
   "Traders": [
     {
-      "Type": "lctech:energy_trader",
-      "ID": "energy_trade_test",
-      "Name": "能量交易测试",
-      "OwnerName": "JSI宇宙第一无敌公司",
-      "Trades": [
-        {
-          "TradeType": "SALE",
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:iron_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          },
-          "Quantity": 1000,
-          "TradeRules": []
-        }
-      ]
-    },
-    {
-      "Type": "lctech:fluid_trader",
-      "ID": "fluid_trade_test",
-      "Name": "流体交易测试",
-      "OwnerName": "JSI宇宙第一无敌公司",
-      "Trades": [
-        {
-          "TradeType": "SALE",
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              },
-              {
-                "Coin": "createdelight:iron_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          },
-          "Product": {
-            "id": "createdieselgenerators:diesel",
-            "amount": 1000
-          },
-          "Quantity": 1,
-          "TradeRules": []
-        }
-      ]
-    },
-    {
-      "Type": "lightmanscurrency:item_trader",
-      "ID": "item_trade_test",
-      "Name": "物品交易测试",
-      "OwnerName": "JSI宇宙第一无敌公司",
-      "Trades": [
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "minecraft:cake",
-            "Count": 1
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        }
-      ]
-    },
-    {
-      "Type": "lightmanscurrency:slot_machine_trader",
-      "ID": "random_trade_test",
-      "Name": "摇奖测试",
-      "OwnerName": "JSI宇宙第一无敌公司",
-      "Price": {
-        "Value": [
-          {
-            "Coin": "createdelight:copper_coin",
-            "Amount": 1
-          }
-        ],
-        "Chain": "main",
-        "type": "lightmanscurrency:coins"
-      },
-      "Entries": [
-        {
-          "Items": [
-            {
-              "ID": "createdelight:gold_coin",
-              "Count": 1
-            }
-          ],
-          "Weight": 20
-        },
-        {
-          "Items": [
-            {
-              "ID": "createdelight:emerald_coin",
-              "Count": 1
-            }
-          ],
-          "Weight": 10
-        },
-        {
-          "Items": [
-            {
-              "ID": "createdelight:netherite_coin",
-              "Count": 1
-            }
-          ],
-          "Weight": 5
-        }
-      ]
-    },
-    {
       "Type": "lightmanscurrency:item_trader",
       "ID": "processed_food_trade",
       "Name": "加工食材回收",
@@ -351,37 +227,733 @@
           }
         }
       ]
-    }
-  ],
-  "Auctions": [
+    },
     {
-      "id": "auction_trade_test",
-      "Item1": {
-        "ID": "art_of_forging:demonic_blade",
-        "Count": 1
-      },
-      "Duration": 3600000,
-      "StartingBid": {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "seed_trader",
+      "Name": "买虚拟种子，种赛博作物",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "culturaldelights:eggplant_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "festival_delicacies:chinese_cabbage_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "festival_delicacies:eggplant_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "supplementaries:flax_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "farmersdelight:tomato_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "farmersdelight:cabbage_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:beetroot_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:melon_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:pumpkin_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:white_grape_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:red_grape_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "nethervinery:warped_grape_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "nethervinery:crimson_grape_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vintagedelight:cucumber_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vintagedelight:ghost_pepper_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vintagedelight:oat_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "festival_delicacies:fennel_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "festival_delicacies:garlic_chive_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:jungle_grape_seeds_white",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:jungle_grape_seeds_red",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:savanna_grape_seeds_red",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:savanna_grape_seeds_white",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:taiga_grape_seeds_red",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "vinery:taiga_grape_seeds_white",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:pear_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:hawberry_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:lychee_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:mango_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:persimmon_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:peach_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:orange_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:apple_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:mangosteen_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:bayberry_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:kiwi_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:fig_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:durian_sapling",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "fruitsdelight:lemon_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:slot_machine_trader",
+      "ID": "slot_machine_coin",
+      "Name": "ALLIN!!（现实里不要赌！）",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Price": {
         "Value": [
           {
-            "Coin": "createdelight:emerald_coin",
+            "Coin": "createdelight:copper_coin",
             "Amount": 1
           }
         ],
         "Chain": "main",
         "type": "lightmanscurrency:coins"
       },
-      "MinimumBid": {
-        "Value": [
-          {
-            "Coin": "createdelight:copper_coin",
-            "Amount": 5
-          }
-        ],
-        "Chain": "main",
-        "type": "lightmanscurrency:coins"
-      },
-      "Overtime": true
+      "Entries": [
+        {
+          "Items": [
+            {
+              "ID": "createdelight:gold_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:emerald_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:netherite_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 1
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:copper_coin",
+              "Count": 2
+            }
+          ],
+          "Weight": 500
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:iron_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 1000
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:iron_coin",
+              "Count": 5
+            }
+          ],
+          "Weight": 1000
+        }
+      ]
     }
-  ]
+  ],
+  "Auctions": []
 }
