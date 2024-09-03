@@ -17,7 +17,8 @@ let tooltips = [
     ["createmetallurgy:wolframite_ore", "§6常见于地狱30-36层", "§6Commonly found in nether 30-36 floors"],
     ["culturaldelights:pickle", "§9滋养（00::30）", "§9Nourishment(00:30)"],
     ["culturaldelights:cut_pickle", "§9滋养（00::15）", "§9Nourishment(00:15)"],
-    ["createdelight:sigma_man_sword", "§o西格玛男人专用", "§oFor sigma men only"]
+    ["createdelight:sigma_man_sword", "§o西格玛男人专用", "§oFor sigma men only"],
+    ["lightmanscurrency:coinmint", "§l§4已停用!!", "§l§4STOP USING NOW!!"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

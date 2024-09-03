@@ -48,10 +48,10 @@ ServerEvents.recipes(e => {
         B: "create_sa:brass_jetpack_chestplate",
         C: "ad_astra:calorite_tank",
         D: "ad_astra:netherite_space_suit",
-        E: "ad_astra:calorite_block",
+        E: 'ad_astra:etrionic_capacitor',
         F: "ad_astra:calorite_engine"
     })
-        .id("ad_astra:recipes/jet_suit")
+        .id("ad_astra:jet_suit")
     //替换配方：氧气罐
     e.shaped("ad_astra:gas_tank", [
         "ABA",
@@ -80,46 +80,6 @@ ServerEvents.recipes(e => {
         A: "#forge:plates/steel",
         B: "create:propeller"
     }).id("ad_astra:fan")
-    //替换配方：钢燃料储罐
-    e.shaped("ad_astra:steel_tank", [
-        "AA ",
-        "ABC",
-        "AA "
-    ], {
-        A: "#forge:plates/steel",
-        B: "create:fluid_tank",
-        C: "#forge:rods/iron"
-    }).id("ad_astra:recipes/steel_tank")
-    //替换配方：戴斯燃料储罐
-    e.shaped("ad_astra:desh_tank", [
-        "AA ",
-        "ABC",
-        "AA "
-    ], {
-        A: "ad_astra:desh_plate",
-        B: "create:fluid_tank",
-        C: "#forge:rods/iron"
-    }).id("ad_astra:recipes/desh_tank")
-    //替换配方：紫金燃料储罐
-    e.shaped("ad_astra:ostrum_tank", [
-        "AA ",
-        "ABC",
-        "AA "
-    ], {
-        A: "ad_astra:ostrum_plate",
-        B: "create:fluid_tank",
-        C: "#forge:rods/iron"
-    }).id("ad_astra:recipes/ostrum_tank")
-    //替换配方：耐热燃料储罐
-    e.shaped("ad_astra:calorite_tank", [
-        "AA ",
-        "ABC",
-        "AA "
-    ], {
-        A: "ad_astra:calorite_plate",
-        B: "create:fluid_tank",
-        C: "#forge:rods/iron"
-    }).id("ad_astra:recipes/calorite_tank")
     //替换配方：充能器
     e.shaped("ad_astra:energizer", [
         "ABA",
