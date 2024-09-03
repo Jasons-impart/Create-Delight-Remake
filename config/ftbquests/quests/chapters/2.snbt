@@ -1,4 +1,5 @@
 {
+	autofocus_id: "510B2EE25982FD73"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2"
@@ -6,15 +7,118 @@
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
 	quest_links: [ ]
-	quests: [{
-		id: "510B2EE25982FD73"
-		tasks: [{
-			id: "42802682C50529BB"
-			item: "create:andesite_alloy"
-			type: "item"
-		}]
-		x: 0.5d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			icon: "create:andesite_alloy"
+			id: "510B2EE25982FD73"
+			shape: "hexagon"
+			size: 3.0d
+			subtitle: "按住w可以进行俺寻思"
+			tasks: [{
+				advancement: "create:andesite_alloy"
+				criterion: ""
+				id: "32F3764E13857F42"
+				type: "advancement"
+			}]
+			title: "欢迎正式进入机械动力大家庭！"
+			x: 0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			id: "246ECF63C436F7D8"
+			tasks: [
+				{
+					id: "5395211DB2CE0109"
+					item: "create:wrench"
+					type: "item"
+				}
+				{
+					id: "3D0C0B1F37453890"
+					item: "create:goggles"
+					type: "item"
+				}
+			]
+			title: "工程师必备！"
+			x: 0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			id: "1AAB7454C767D9DB"
+			shape: "gear"
+			subtitle: "传输应力！"
+			tasks: [
+				{
+					id: "2123BCCCB8CB794D"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					id: "0D4A0C37648D9E58"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "4765813A3921B058"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			title: "浪漫从此刻开始"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "183724705FA6D24C"
+			subtitle: "每SU消耗数个牛排！"
+			tasks: [{
+				id: "0335E6DD3EF4025F"
+				item: "create:hand_crank"
+				type: "item"
+			}]
+			title: "手动应力"
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "1336C212F2B86468"
+			subtitle: "这里的风景真好看！(掉帧动力)"
+			tasks: [{
+				id: "421F40A9086EBCE3"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			title: "小水车吱呀吱悠悠地转"
+			x: 3.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["1336C212F2B86468"]
+			id: "724FF9E032B4B134"
+			tasks: [{
+				id: "5A9DF64690DD5CCF"
+				item: "create:large_water_wheel"
+				type: "item"
+			}]
+			title: "更慢！但是更强！"
+			x: 3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "7029D6C489D44144"
+			tasks: [{
+				id: "3B6F668D8EA70651"
+				item: "create:andesite_casing"
+				type: "item"
+			}]
+			title: "机器之根本"
+			x: 5.0d
+			y: 0.0d
+		}
+	]
 	title: "&2初级工程师"
 }
