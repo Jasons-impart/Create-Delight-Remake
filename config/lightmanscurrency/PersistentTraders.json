@@ -1,4 +1,387 @@
 {
-  "Traders": [],
-  "Auctions": []
+  "Traders": [
+    {
+      "Type": "lctech:energy_trader",
+      "ID": "energy_trade_test",
+      "Name": "能量交易测试",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Quantity": 1000,
+          "TradeRules": []
+        }
+      ]
+    },
+    {
+      "Type": "lctech:fluid_trader",
+      "ID": "fluid_trade_test",
+      "Name": "流体交易测试",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createdieselgenerators:diesel",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "item_trade_test",
+      "Name": "物品交易测试",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cake",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:slot_machine_trader",
+      "ID": "random_trade_test",
+      "Name": "摇奖测试",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Price": {
+        "Value": [
+          {
+            "Coin": "createdelight:copper_coin",
+            "Amount": 1
+          }
+        ],
+        "Chain": "main",
+        "type": "lightmanscurrency:coins"
+      },
+      "Entries": [
+        {
+          "Items": [
+            {
+              "ID": "createdelight:gold_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:emerald_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Items": [
+            {
+              "ID": "createdelight:netherite_coin",
+              "Count": 1
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "processed_food_trade",
+      "Name": "加工食材回收",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "casualness_delight:cheese_wheel",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:cake_base",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:pie_crust",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:corn_dough",
+            "Count": 16
+          },
+          "SellItem2": {
+            "ID": "culturaldelights:tortilla",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersrespite:green_tea_leaves",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:cooked_blood_sausage",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:salt_block",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:sausage",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:cocoa_butter",
+            "Count": 16
+          },
+          "SellItem2": {
+            "ID": "ratatouille:cocoa_solids",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:oreo",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:boba",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:wheat_flour",
+            "Count": 16
+          },
+          "SellItem2": {
+            "ID": "create:dough",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    }
+  ],
+  "Auctions": [
+    {
+      "id": "auction_trade_test",
+      "Item1": {
+        "ID": "art_of_forging:demonic_blade",
+        "Count": 1
+      },
+      "Duration": 3600000,
+      "StartingBid": {
+        "Value": [
+          {
+            "Coin": "createdelight:emerald_coin",
+            "Amount": 1
+          }
+        ],
+        "Chain": "main",
+        "type": "lightmanscurrency:coins"
+      },
+      "MinimumBid": {
+        "Value": [
+          {
+            "Coin": "createdelight:copper_coin",
+            "Amount": 5
+          }
+        ],
+        "Chain": "main",
+        "type": "lightmanscurrency:coins"
+      },
+      "Overtime": true
+    }
+  ]
 }

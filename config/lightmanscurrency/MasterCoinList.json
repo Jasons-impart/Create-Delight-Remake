@@ -19,7 +19,7 @@
         },
         {
           "Coin": "createdelight:copper_coin",
-          "exchangeRate": 10,
+          "exchangeRate": 9,
           "initial": {
             "translate": "item.createdelight.copper_coin.initial"
           },
@@ -29,7 +29,7 @@
         },
         {
           "Coin": "createdelight:gold_coin",
-          "exchangeRate": 10,
+          "exchangeRate": 9,
           "initial": {
             "translate": "item.createdelight.gold_coin.initial"
           },
@@ -39,7 +39,7 @@
         },
         {
           "Coin": "createdelight:emerald_coin",
-          "exchangeRate": 10,
+          "exchangeRate": 9,
           "initial": {
             "translate": "item.createdelight.emerald_coin.initial"
           },
@@ -49,7 +49,7 @@
         },
         {
           "Coin": "createdelight:netherite_coin",
-          "exchangeRate": 10,
+          "exchangeRate": 9,
           "initial": {
             "translate": "item.createdelight.netherite_coin.initial"
           },
