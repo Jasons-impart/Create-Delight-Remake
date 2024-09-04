@@ -21,6 +21,7 @@
   "create:goggles": null,
   "create:hide_boiler_tanks": null,
   "create:placard": null,
+  "create_mechanical_spawner:spawner_data": null,
   "extrastorage:advanced_crafter": null,
   "extrastorage:crafter": null,
   "jade:block_face": null,
