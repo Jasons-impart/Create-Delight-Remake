@@ -50,6 +50,9 @@
 			fig = true
 			durian = true
 
+		[types.leaves_type.alexscaves]
+			ancient = true
+
 	[types.wood_type]
 
 		[types.wood_type.mynethersdelight]
@@ -79,6 +82,10 @@
 
 		[types.wood_type.iceandfire]
 			dreadwood = true
+
+		[types.wood_type.alexscaves]
+			pewen = true
+			thornwood = true
 
 #Disables specific entries
 [entries]

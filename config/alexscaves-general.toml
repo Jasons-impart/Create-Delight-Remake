@@ -1,0 +1,106 @@
+
+[generation]
+	#Average radius (in blocks) of an Alex's Caves cave biome.
+	#Range: 10.0 ~ 1.7976931348623157E308
+	cave_biome_mean_width = 300.0
+	#Average separation (in blocks) between each Alex's Caves cave biome.
+	#Range: > 50
+	cave_biome_mean_separation = 900
+	#How irregularly shaped Alex's Caves cave biomes can generate. 0 = all biomes nearly circular. 1 = biomes completely squiggly in shape.
+	#Range: 0.0 ~ 1.0
+	cave_biome_width_randomness = 0.15
+	#Average spacing in between Alex's Caves cave biomes. 0 = all biomes nearly perfectly equidistant. 1 = biomes completely randomly spread out, sometimes next to eachother.
+	#Range: 0.0 ~ 1.0
+	cave_biome_spacing_randomness = 0.45
+	#Whether to warn users when a server starts if an incompatible generation mod is detected.
+	warn_generation_incompatibility = true
+
+[mob-spawning]
+	#Cave Creatures (All dinosaurs, raycats, etc) spawn at this frequency. Their cap is calculated by multiplying this number with the default mob cap for surface animals.
+	#Range: 0.0 ~ 10.0
+	cave_creature_spawn_count_modifier = 1.75
+
+[mob-behavior]
+	#How many cpu cores big mobs(tremorzilla, atlatitan, grottoceratops etc) should utilize when pathing. Bigger number = less impact on TPS
+	#Range: 1 ~ 100
+	pathfinding_threads = 5
+	#Chance that blocks destroyed by luxtructosaurus attacks drop themselves, if mob griefing is enabled.
+	#Range: 0.0 ~ 1.0
+	luxtructosaurus_block_drop_chance = 0.0
+	#The maximum explosion resistance that a block can have to be destroyed by an atlatitan stomp. Set to zero to disable all atlatitan block breaking.
+	#Range: > 0
+	atlatitan_max_block_explosion_resistance = 0
+	#How long (in game ticks) it takes for a nucleeper to explode.
+	#Range: > 20
+	nucleeper_fuse_time = 300
+	#True if the Tremorzilla beam breaks even more blocks.
+	devastating_tremorzilla_beam = false
+	#Whether the Watcher can take control of the camera.
+	watcher_possession = true
+	#How long (in game ticks) between watcher possession attempts.
+	#Range: 20 ~ 24000
+	watcher_possession_cooldown = 300
+
+[block-behavior]
+	#True if players wearing boots can walk on any scarlet neodymium surface.
+	walking_on_magnets = true
+	#How long (in game ticks) it usually takes for an amber monolith to spawn an animal.
+	#Range: > 1000
+	amber_monolith_mean_time = 32000
+	#True if the Nuclear Furnace only uses 'Blasting' recipes, false to use all smelting recipes.
+	nuclear_furnace_blasting_only = true
+	#True if the Nuclear Furnace should only use recipes using the `alexscaves:nuclear_furnace` recipe type, false to use regular behavior.
+	nuclear_furnace_custom_type = false
+
+[item-behavior]
+	#True if one Cave Codex is all that is needed to unlock every Cave Compendium entry.
+	only_one_research_needed = false
+	#How many attempts to find a biome a cave map engages in when used. Increase this to increase the search radius, or decrease it to make them faster.
+	#Range: > 64
+	cave_map_search_attempts = 128000
+	#How wide each search attempt scans for a biome. Increasing this generally makes cave biome maps faster - at the cost of losing fidelity(may skip biomes smaller than this in block width).
+	#Range: 4 ~ 256
+	cave_map_search_width = 64
+	#The maximum explosion resistance that a block can have to be destroyed by a nuclear explosion. Set to zero to disable all nuclear explosion block breaking.
+	#Range: > 0
+	nuke_max_block_explosion_resistance = 1000
+	#Whether some block items are dropped by nuclear explosions. False if all destroyed blocks do not drop items.
+	nuke_spawn_item_drops = true
+	#The scale of nuclear bomb destruction. multiply this by 16 to get the radius of a nuclear bomb explosion.
+	#Range: 0.0 ~ 1.7976931348623157E308
+	nuclear_explosion_size_modifier = 3.0
+	#Whether the Totem of Possession can be applied to players.
+	totem_of_possession_works_on_players = true
+	#The amount of time (in ticks) it takes to charge up the Cloak of Darkness ability.
+	#Range: > 20
+	darkness_cloak_charge_time = 1000
+	#The amount of time (in ticks) that players can fly with the Cloak of Darkness ability.
+	#Range: > 20
+	darkness_cloak_fly_time = 200
+
+[vanilla-changes]
+	#percent chance of bastion having a cave tablet for magnetic caves in its loot table:
+	#Range: 0.0 ~ 1.0
+	magnetic_tablet_loot_chance = 0.45
+	#percent chance of suspicious sand having a cave tablet for primordial caves in its loot table:
+	#Range: 0.0 ~ 1.0
+	primordial_tablet_loot_chance = 0.15
+	#percent chance of jungle temple having a cave tablet for toxic caves in its loot table:
+	#Range: 0.0 ~ 1.0
+	toxic_tablet_loot_chance = 0.5
+	#percent chance of underwater ruins having a cave tablet for abyssal chasm in its loot table:
+	#Range: 0.0 ~ 1.0
+	abyssal_tablet_loot_chance = 0.4
+	#percent chance of mansion having a cave tablet for forlorn hollows in its loot table:
+	#Range: 0.0 ~ 1.0
+	forlorn_tablet_loot_chance = 0.75
+	#percent chance of abandoned mineshaft chests having a map to a nearby underground mineshaft in their loot table:
+	#Range: 0.0 ~ 1.0
+	cabin_map_loot_chance = 0.15
+	#Whether the Cartographer Villagers can sell maps to Underground Cabins.
+	cartographers_sell_cabin_maps = true
+	#Whether the Wandering Traders can sell maps to Underground Cabins.
+	wandering_traders_sell_cabin_maps = true
+	#Whether the Enchantments added by AC appear in vanilla loot tables.
+	enchantments_in_loot = false
+
