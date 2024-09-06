@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "oceansdelight:cutting/pufferfish"
+        "oceansdelight:cutting/pufferfish",
+        "oceansdelight:cutting/tentacles"
     ])
     // 炙烤河豚寿司
     e.shapeless(
@@ -27,11 +28,7 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/onion"
     ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
-    e.recipes.farmersdelight.cutting(
-        "culturaldelights:raw_calamari",
-        "#farmersdelight:tools/knives",
-        "3x oceansdelight:cut_tentacles"
-    ).id("oceansdelight:cutting/tentacles")
+    cutting(e, "culturaldelights:raw_calamari", [["oceansdelight:cut_tentacles", 3]])
     e.custom({
         "type": "casualness_delight:deep_frying",
         "ingredient": {
@@ -47,17 +44,22 @@ ServerEvents.recipes(e => {
             "extradelight:cooking_oil",
             "oceansdelight:cut_tentacles"
         ]
-    )
-        .heated()
-        .id("oceansdelight:cooking/squid_rings2")
+    ).heated().id("oceansdelight:cooking/squid_rings2")
     e.shapeless(
         "oceansdelight:tentacle_on_a_stick",
         [
             "minecraft:stick",
             "culturaldelights:raw_calamari"
         ]
-    )
-        .id("oceansdelight:tentacle_on_a_stick")
+    ).id("oceansdelight:tentacle_on_a_stick")
+    cutting_3(e, 'oceansdelight:elder_guardian_slab', [
+        ['oceansdelight:elder_guardian_slice', 9],
+        ["minecraft:bone_meal"]
+    ])
+    cutting_3(e, 'oceansdelight:guardian', [
+        ['oceansdelight:guardian_tail'],
+        ["minecraft:bone_meal"]
+    ])
 })
 
 ServerEvents.tags("item", e => {

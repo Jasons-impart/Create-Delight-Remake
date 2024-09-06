@@ -49,16 +49,34 @@ ServerEvents.recipes(e => {
         "farmersdelight:straw",
         Item.of("ratatouille:wheat_kernels").withChance(0.5)
     ], 200)
+    e.custom({
+        type: "farmersdelight:cutting",
+        ingredients: [{item: "minecraft:wheat"}],
+        result: [{item: "ratatouille:wheat_kernels", count: 2}, {item: "farmersdelight:straw", count: 1}],
+        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+    }).id("tetracelium:cutting/wheat")
     threshing(e, "vintagedelight:oat", [
         "2x vintagedelight:raw_oats",
         "farmersdelight:straw",
         Item.of("2x vintagedelight:raw_oats").withChance(0.5)
     ], 300)
+    e.custom({
+        type: "farmersdelight:cutting",
+        ingredients: [{item: "vintagedelight:oat"}],
+        result: [{item: "vintagedelight:raw_oats", count: 2}, {item: "farmersdelight:straw", count: 1}],
+        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+    }).id("tetracelium:cutting/oat")
     threshing(e, "farmersdelight:rice_panicle", [
         "3x farmersdelight:rice",
         "farmersdelight:straw",
         Item.of("2x farmersdelight:rice").withChance(0.5)
     ], 400)
+    e.custom({
+        type: "farmersdelight:cutting",
+        ingredients: [{item: "farmersdelight:rice_panicle"}],
+        result: [{item: "farmersdelight:rice", count: 3}, {item: "farmersdelight:straw", count: 1}],
+        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+    }).id("tetracelium:cutting/rice_panicle")
     // 蛋液适配
     e.recipes.create.emptying([
         Fluid.of("ratatouille:egg_yolk", 250),

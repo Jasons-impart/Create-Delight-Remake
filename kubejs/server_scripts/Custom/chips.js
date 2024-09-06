@@ -1,7 +1,7 @@
 ServerEvents.recipes(e => {
-    e.recipes.farmersdelight.cutting(
-        "casualness_delight:potato_slice",
-        "#forge:tools/knives",
-        "createdelight:potato_sticks"
-    ).id("createdelight:cutting/potato_sticks")
+    remove_recipes_id(e, [
+        "casualness_delight:cutting/potato_slice"
+    ])
+    cutting(e, "casualness_delight:potato_slice", [["createdelight:potato_sticks"]])
+    cutting(e, "minecraft:potato", [["casualness_delight:potato_slice"]])
 })

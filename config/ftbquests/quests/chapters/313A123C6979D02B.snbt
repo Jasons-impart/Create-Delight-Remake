@@ -883,7 +883,6 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["6E73DDAFB4DFC98C"]
 			id: "3E05DBF4E5BF11B1"
 			rewards: [{
 				id: "00D491C8CF6D1499"
@@ -903,7 +902,6 @@
 			y: -0.75d
 		}
 		{
-			dependencies: ["6E73DDAFB4DFC98C"]
 			id: "3FB56E0EBDB7FFED"
 			rewards: [{
 				id: "783D45FF5A4E3DDF"
@@ -1924,7 +1922,6 @@
 			y: 12.0d
 		}
 		{
-			dependencies: ["33C78746BA212239"]
 			id: "756CE4E7CC0F6F7D"
 			tasks: [{
 				id: "1E03A331F6A6FE33"
@@ -1935,7 +1932,6 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["2C83375C95140953"]
 			id: "55396FEE3139B9DA"
 			tasks: [{
 				id: "2E849FAB4ACE6D9F"
@@ -1972,6 +1968,207 @@
 			}]
 			x: -4.0d
 			y: 7.0d
+		}
+		{
+			dependencies: ["6F18A16C7424367B"]
+			icon: "ratatouille:raw_sausage"
+			id: "02D30A170E9BF2CF"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "斯哈斯哈"
+			tasks: [{
+				icon: "ratatouille:raw_sausage"
+				id: "126326AD58F167C3"
+				stat: "minecraft:play_time"
+				type: "stat"
+				value: 1
+			}]
+			title: "香肠！我的最爱！"
+			x: -3.5d
+			y: 11.0d
+		}
+		{
+			id: "6F18A16C7424367B"
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "5014A9130A30280E"
+				item: "ratatouille:sausage_casing"
+				type: "item"
+			}]
+			title: "动物胶制作而成~"
+			x: -3.5d
+			y: 9.0d
+		}
+		{
+			id: "3BACCE2383508E48"
+			tasks: [{
+				id: "4789F112AC80ABE6"
+				item: "minecraft:slime_ball"
+				type: "item"
+			}]
+			title: "富含胶质！"
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["02D30A170E9BF2CF"]
+			id: "435539859AD4B53A"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				icon: "ratatouille:sausage"
+				id: "1A2B549AD2A3F532"
+				stat: "minecraft:play_time"
+				type: "stat"
+				value: 1
+			}]
+			title: "香肠！"
+			x: -3.5d
+			y: 13.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "7A275EC3F322D435"
+			tasks: [{
+				id: "282A60D5860AB234"
+				item: "hotdog_delight:cod_sausage"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "4A51552941C49493"
+			tasks: [{
+				id: "1A25F2CE763D2624"
+				item: "hotdog_delight:salmon_sausage"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 14.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "360A879F7B48F457"
+			tasks: [{
+				id: "547DD61E90F690C1"
+				item: "hotdog_delight:pork_sausage"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "3E728738156211E2"
+			tasks: [{
+				id: "2B172AE1A54CC920"
+				item: "hotdog_delight:squid_ink_sausage"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "65442CDD93E533C3"
+			tasks: [{
+				id: "03BE7BE0C09DFBDD"
+				item: "hotdog_delight:glow_squid_ink_sausage"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "6C2C2AB54095982B"
+			tasks: [{
+				id: "69A4DB94F6BF37E9"
+				item: "butchercraft:blood_sausage"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["435539859AD4B53A"]
+			id: "78621A06A5DC01BA"
+			tasks: [{
+				id: "4238243AE4C29607"
+				item: "ratatouille:raw_sausage"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 14.0d
+		}
+		{
+			dependencies: ["6C2C2AB54095982B"]
+			id: "50C7E34B57B13761"
+			tasks: [{
+				id: "0DA22424EE5D6AFF"
+				item: "butchercraft:cooked_blood_sausage"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["78621A06A5DC01BA"]
+			id: "6C72EE82D8596ED9"
+			tasks: [{
+				id: "601668E700FDBC61"
+				item: "ratatouille:sausage"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 14.0d
+		}
+		{
+			dependencies: ["78621A06A5DC01BA"]
+			id: "228409A73E7DA9CF"
+			tasks: [{
+				id: "17980B9F713B339F"
+				item: "createdelight:salami"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["360A879F7B48F457"]
+			id: "6CF9B4042EB0DDDE"
+			tasks: [{
+				id: "3EFE72A66285B557"
+				item: "hotdog_delight:cooked_pork_sausage"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["4A51552941C49493"]
+			id: "65DD56DD013ED8A2"
+			tasks: [{
+				id: "076582EFBFD28A91"
+				item: "hotdog_delight:cooked_salmon_sausage"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["7A275EC3F322D435"]
+			id: "7F056820211CFB72"
+			tasks: [{
+				id: "2449E9260EB1A28E"
+				item: "hotdog_delight:cooked_cod_sausage"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 13.0d
 		}
 	]
 	title: "&e精加工！"

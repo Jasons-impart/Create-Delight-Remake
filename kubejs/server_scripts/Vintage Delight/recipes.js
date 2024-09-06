@@ -1,4 +1,9 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "culturaldelights:cutting/wild_cucumbers",
+        "vintagedelight:cutting/cucumber_cutting",
+        "culturaldelights:cutting/cut_cucumber"
+    ])
     // 腊肠
     e.recipes.vintagedelight.fermenting(
         "5x createdelight:salami",
@@ -45,20 +50,12 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
-
-    e.recipes.farmersdelight.cutting(
-        "culturaldelights:wild_cucumbers",
-        "#forge:tools/knives",
-        [
-            "vintagedelight:cucumber_seeds",
-            "minecraft:green_dye"
-        ]
-    ).id("culturaldelights:cutting/wild_cucumbers")
-    e.recipes.farmersdelight.cutting(
-        "culturaldelights:cut_cucumber",
-        "#forge:tools/knives",
-        "vintagedelight:cucumber_noodles"
-    ).id("vintagedelight:cutting/cucumber_cutting")
+    cutting(e, "culturaldelights:wild_cucumbers",[
+        ["vintagedelight:cucumber_seeds"],
+        ["minecraft:green_dye"]
+    ])
+    cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
+    cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
         "vintagedelight:salt_dust",
@@ -90,4 +87,23 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 72000
     ).id("vintagedelight:fermenting/century_egg_from_fermenting")
+    e.custom({
+        "type": "vintagedelight:fermenting",
+        "processingTime": 5000,
+        "ingredients": [
+            {"tag": "createdelight:cabbage_leaves"},
+            {"tag": "createdelight:cabbage_leaves"},
+            {"tag": "createdelight:cabbage_leaves"},
+            {"tag": "createdelight:cabbage_leaves"},
+            {"tag": "forge:salt"},
+            {"tag": "forge:chilipepper"}
+        ],
+        "output": {
+            "count": 4,
+            "item": "vintagedelight:kimchi"
+        },
+        "secondaryOutput": {
+            "item": "vintagedelight:pickled_pepper"
+        }
+    }).id("vintagedelight:fermenting/kimchi_from_fermenting")
 })

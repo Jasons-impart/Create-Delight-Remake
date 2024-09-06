@@ -1,34 +1,8 @@
 {
-	icon: {
-		Count: 1
-		id: "minecraft:golden_hoe"
-		tag: {
-			Damage: 0
-		}
-	}
 	id: "467863873CF4CF6D"
 	loot_size: 1
 	order_index: 8
 	rewards: [
-		{
-			item: {
-				Count: 1
-				id: "minecraft:iron_hoe"
-				tag: {
-					Damage: 0
-				}
-			}
-		}
-		{
-			item: {
-				Count: 1
-				id: "minecraft:fishing_rod"
-				tag: {
-					Damage: 0
-				}
-			}
-		}
-		{ count: 5, item: "vinery:red_grape_seeds" }
 		{
 			item: {
 				Count: 1
@@ -37,7 +11,86 @@
 					Damage: 0
 				}
 			}
+			weight: 100.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "aetherdelight:stratus_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "farmersdelight:flint_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 20.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "farmersdelight:golden_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 5.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "aetherdelight:zanite_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "aetherdelight:gravitite_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "aetherdelight:skyjade_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "ends_delight:end_stone_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "ends_delight:purpur_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
 		}
 	]
-	title: "农夫初始奖励"
+	title: "刀具奖励"
 }

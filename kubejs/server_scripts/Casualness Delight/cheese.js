@@ -5,7 +5,11 @@ ServerEvents.recipes(e => {
         "refurbished_furniture:slicing/meatlovers_pizza_slice_from_cooked_meatlovers_pizza",
         "vintagedelight:cheese_pizza",
         "vintagedelight:cheese_pizza_from_slices",
-        "vintagedelight:cutting/cheese_pizza_from_cutting"
+        "vintagedelight:cutting/cheese_pizza_from_cutting",
+        "casualness_delight:cutting_cheese_wheel",
+        "refurbished_furniture:cutting/cooked_meatlovers_pizza",
+        "refurbished_furniture:cutting/cooked_vegetable_pizza",
+
     ])
     remove_recipes_input(e, [
         "vintagedelight:meat_pizza",
@@ -24,11 +28,7 @@ ServerEvents.recipes(e => {
         ], "2x casualness_delight:phantom_puff", 1.0, 200
     ).id("casualness_delight:cooking/phantom_puff")
     // 奶酪相关
-    e.recipes.farmersdelight.cutting(
-        "casualness_delight:cheese_wheel",
-        "#forge:tools/knives",
-        "7x casualness_delight:cheese_wheel_slice"
-    ).id("casualness_delight:cutting_cheese_wheel")
+    cutting(e, "casualness_delight:cheese_wheel", [["casualness_delight:cheese_wheel_slice", 7]])
     e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
@@ -40,21 +40,9 @@ ServerEvents.recipes(e => {
         "minecraft:potato",
         "ad_astra:cheese"
     ], "refurbished_furniture:raw_vegetable_pizza", 1)
-    e.recipes.farmersdelight.cutting(
-        "refurbished_furniture:cooked_meatlovers_pizza",
-        "#forge:tools/knives",
-        "6x refurbished_furniture:meatlovers_pizza_slice"
-    ).id("refurbished_furniture:cutting/cooked_meatlovers_pizza")
-    e.recipes.farmersdelight.cutting(
-        "refurbished_furniture:cooked_vegetable_pizza",
-        "#forge:tools/knives",
-        "6x refurbished_furniture:vegetable_pizza_slice"
-    ).id("refurbished_furniture:cutting/cooked_vegetable_pizza")
-    e.recipes.farmersdelight.cutting(
-        "vintagedelight:cheese_pizza",
-        "#forge:tools/knives",
-        "6x vintagedelight:cheese_pizza_slice"
-    ).id("refurbished_furniture:cutting/cheese_pizza")
+    cutting(e, "refurbished_furniture:cooked_meatlovers_pizza", [["refurbished_furniture:meatlovers_pizza_slice", 4]])
+    cutting(e, "refurbished_furniture:cooked_vegetable_pizza", [["refurbished_furniture:vegetable_pizza_slice", 4]])
+    cutting(e, "vintagedelight:cheese_pizza", [["vintagedelight:cheese_pizza_slice", 4]])
     combination(e, [
         "create:dough",
         "butchercraft:cooked_cubed_beef",

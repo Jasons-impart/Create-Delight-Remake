@@ -59,7 +59,7 @@
 		{
 			icon: {
 				Count: 1
-				id: "farmersdelight:golden_knife"
+				id: "aetherdelight:stratus_knife"
 				tag: {
 					Damage: 0
 				}
@@ -80,17 +80,13 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "一把漂亮的刀！"
 			tasks: [{
-				id: "72682524A642F964"
-				item: {
-					Count: 1
-					id: "farmersdelight:iron_knife"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "7094C9DCD5361405"
+				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
+			title: "大厨必需品！"
 			x: -6.5d
 			y: 2.0d
 		}
@@ -1026,28 +1022,11 @@
 		{
 			dependencies: ["7F9674CC778A157C"]
 			id: "1EE815FF79CE7E9E"
-			rewards: [
-				{
-					id: "066B5658EA574E95"
-					item: {
-						Count: 1
-						id: "farmersdelight:flint_knife"
-						tag: {
-							Damage: 120
-							Enchantments: [{
-								id: "minecraft:looting"
-								lvl: 10
-							}]
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "05E50147E15D350D"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "05E50147E15D350D"
+				type: "xp"
+				xp: 100
+			}]
 			subtitle: "击杀疣猪兽100%获得"
 			tasks: [{
 				id: "5EC7FE2B277E04E1"
@@ -3821,7 +3800,7 @@
 				item: "casualness_delight:cheese_wheel"
 				type: "item"
 			}]
-			title: "时间会证明一切"
+			title: "时间的味道！"
 			x: -13.0d
 			y: 0.5d
 		}

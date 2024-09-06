@@ -11,8 +11,8 @@
 		{ count: 2, item: "ends_delight:ender_congee" }
 		{ count: 2, item: "ends_delight:dragon_breath_and_chorus_soup" }
 		{ item: "oceansdelight:bowl_of_guardian_soup" }
-		{ count: 5, item: "farmersdelight:stuffed_potato" }
-		{ count: 10, item: "farmersdelight:dumplings" }
+		{ count: 5, item: "farmersdelight:stuffed_potato", weight: 50.0f }
+		{ count: 5, item: "farmersdelight:dumplings", weight: 50.0f }
 		{ count: 5, item: "farmersdelight:mutton_wrap" }
 		{ count: 5, item: "farmersdelight:bacon_sandwich" }
 		{ count: 5, item: "farmersdelight:hamburger" }
@@ -27,7 +27,7 @@
 		{ count: 5, item: "farmersdelight:kelp_roll" }
 		{ count: 5, item: "farmersdelight:cod_roll" }
 		{ count: 5, item: "farmersdelight:salmon_roll" }
-		{ count: 5, item: "farmersdelight:cabbage_rolls" }
+		{ count: 5, item: "farmersdelight:cabbage_rolls", weight: 50.0f }
 		{ item: "farmersdelight:shepherds_pie" }
 		{ item: "farmersdelight:honey_glazed_ham" }
 		{ item: "farmersdelight:stuffed_pumpkin" }

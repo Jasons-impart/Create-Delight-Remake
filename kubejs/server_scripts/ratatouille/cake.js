@@ -13,8 +13,7 @@ ServerEvents.recipes(e => {
         "farmersrespite:coffee_cake",
         "create_central_kitchen:crafting/coffee_cake_from_dough",
         "create_central_kitchen:mixing/coffee_cake",
-        "farmersrespite:coffee_cake_from_slices",
-        "mynethersdelight:magma_cake"
+        "farmersrespite:coffee_cake_from_slices"
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(Fluid.of("ratatouille:mince_meat", 250), [
@@ -47,6 +46,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner)
         .loops(1)
+        .id("mynethersdelight:magma_cake")
     e.recipes.create.compacting("create:blaze_cake_base", [
         Fluid.of("ratatouille:cake_batter", 500),
         "create:cinder_flour"

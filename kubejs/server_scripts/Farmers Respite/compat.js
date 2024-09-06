@@ -5,7 +5,8 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/mangosteen_tea",
         "farmersdelight:cooking/lychee_cherry_tea",
         "farmersdelight:cooking/hawberry_tea",
-        "ends_delight:food/chorus_flower_tea"
+        "ends_delight:food/chorus_flower_tea",
+        "farmersrespite:cutting/rose_bush"
     ])
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:peach_tea", 500),
@@ -91,4 +92,7 @@ ServerEvents.recipes(e => {
             "ends_delight:dried_chorus_flower"
         ], "create_central_kitchen:chorus_flower_tea", "ends_delight:chorus_flower_tea"
     )
+    cutting_3(e, "minecraft:rose_bush", [['farmersrespite:rose_hips', 2]])
+    cutting_3(e, 'farmersrespite:coffee_cake', [['farmersrespite:coffee_cake_slice', 7]])
+    cutting_3(e, 'farmersrespite:rose_hip_pie', [['farmersrespite:rose_hip_pie_slice', 4]])
 })

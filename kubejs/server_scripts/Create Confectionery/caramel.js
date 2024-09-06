@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
     e.recipes.farmersdelight.cooking(
         [
             "create_confectionery:bar_of_caramel",
-            "corn_delight:corn_seeds"
+            "culturaldelights:corn_kernels"
         ], "corn_delight:caramel_popcorn", 1.0, 200
     ).id("corn_delight:cooking/caramel_popcorn")
 })
