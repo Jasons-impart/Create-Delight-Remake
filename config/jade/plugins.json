@@ -51,13 +51,11 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
-  "treechop": {
-    "plugin": true,
-    "show_tree_block_counts": true,
-    "show_num_chops_remaining": true
-  },
   "jadeaddons": {
     "equipment_requirement": ""
+  },
+  "create_mechanical_spawner": {
+    "spawner_data": true
   },
   "supplementaries": {
     "hat_stand": true

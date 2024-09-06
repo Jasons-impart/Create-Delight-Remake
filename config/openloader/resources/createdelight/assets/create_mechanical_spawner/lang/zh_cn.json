@@ -1,0 +1,38 @@
+{
+	"block.create_mechanical_spawner.mechanical_spawner": "动力刷怪笼",
+
+	"fluid.create_mechanical_spawner.spawn_fluid_blaze": "烈焰人刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_creeper": "苦力怕刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_enderman": "末影人刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_magma_cube": "岩浆怪刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_random": "随机刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_skeleton": "骷髅刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_slime": "史莱姆刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_spider": "蜘蛛刷怪液",
+	"fluid.create_mechanical_spawner.spawn_fluid_zombie": "僵尸刷怪液",
+
+	"item.create_mechanical_spawner.spawn_fluid_blaze_bucket": "岩浆怪刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_creeper_bucket": "苦力怕刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_enderman_bucket": "末影人刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_magma_cube_bucket": "岩浆怪刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_random_bucket": "随机刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_skeleton_bucket": "骷髅刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_slime_bucket": "史莱姆刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_spider_bucket": "蜘蛛刷怪液桶",
+	"item.create_mechanical_spawner.spawn_fluid_zombie_bucket": "僵尸刷怪液桶",
+
+	"itemGroup.create_mechanical_spawner:main": "机械动力：动力刷怪笼",
+
+	"config.jade.plugin_create_mechanical_spawner.spawner_data": "动力刷怪笼数据",
+
+	"create_mechanical_spawner.recipe.spawner": "动力刷怪笼",
+
+	"create_mechanical_spawner.generic.biome_dependant": "取决于群系",
+
+	"create_mechanical_spawner.spawner.tooltip.progress": "进度：%d%%",
+	"create_mechanical_spawner.spawner.scrollValue.label": "刷怪高度（以方块为单位）",
+
+	"block.create_mechanical_spawner.mechanical_spawner.tooltip": "动力刷怪笼",
+	"block.create_mechanical_spawner.mechanical_spawner.tooltip.summary": "使用刷怪液生成生物。"
+
+}

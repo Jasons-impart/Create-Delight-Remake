@@ -1,0 +1,16 @@
+
+#Settings for the mechanical spawner
+[mechanical_spawner]
+	#Stress impact
+	#Range: 0.0 ~ 64.0
+	stressImpact = 16.0
+	#Minimum required speed
+	#Range: 0.0 ~ 254.0
+	minimumSpeed = 100.0
+	#Liquid capacity
+	#Range: > 1
+	liquidCapacity = 1000
+	#Max range
+	#Range: 1 ~ 6
+	maxRange = 2
+

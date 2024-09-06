@@ -953,6 +953,174 @@
           "Weight": 1000
         }
       ]
+    },
+    {
+      "Type": "lctech:fluid_trader",
+      "ID": "entity_spawn_fluid_trader",
+      "Name": "奇怪的生物流体（没法用桶装!）",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_zombie",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_skeleton",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_spider",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_creeper",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_slime",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_magma_cube",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_blaze",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_enderman",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        }
+      ]
     }
   ],
   "Auctions": []
