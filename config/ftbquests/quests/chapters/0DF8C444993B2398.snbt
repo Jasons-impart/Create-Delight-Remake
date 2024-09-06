@@ -571,14 +571,16 @@
 		}
 		{
 			dependencies: ["760F3F4B5CE16D74"]
-			description: ["接下来,大棒很有用"]
+			description: [""]
 			id: "228FE18F730715FB"
+			subtitle: "接下来,大棒很有用"
 			tasks: [{
 				advancement: "alexscaves:alexscaves/defeat_luxtructosaurus"
 				criterion: ""
 				id: "468115E634790ED8"
 				type: "advancement"
 			}]
+			title: "出发！暝煌龙！"
 			x: 9.5d
 			y: -11.0d
 		}
@@ -620,8 +622,9 @@
 		}
 		{
 			dependencies: ["760F3F4B5CE16D74"]
-			description: ["暝煌龙破坏方块现在完全不会掉落物品，所以不用担心卡顿（吗）"]
+			description: [""]
 			id: "46BA38F8F37F72FB"
+			subtitle: "暝煌龙破坏方块现在完全不会掉落物品，所以应该不用担心卡顿（也许）"
 			tasks: [{
 				id: "59B1FEF7C6BD31A8"
 				title: "注意"
@@ -1283,14 +1286,15 @@
 		}
 		{
 			dependencies: ["583F9FC03AC1ACBC"]
-			description: ["可以驯服辐射猫猫"]
+			description: [""]
 			id: "6A5FF780CCEE20DA"
-			subtitle: "小别致长的真东西"
+			subtitle: "可以驯服辐射猫猫"
 			tasks: [{
 				id: "26F2AE99734E76DB"
 				item: "alexscaves:radgill"
 				type: "item"
 			}]
+			title: "小别致长的真东西"
 			x: 3.5d
 			y: 7.0d
 		}
@@ -1642,8 +1646,9 @@
 		}
 		{
 			dependencies: ["42495DB28C41EEBD"]
-			description: ["撼地斯拉的破坏方块无法关闭，酌情考虑"]
+			description: [""]
 			id: "53F7AB24CCCCB70A"
+			subtitle: "撼地斯拉的破坏方块无法关闭，谨慎使用"
 			tasks: [{
 				id: "4C84799E043A5082"
 				title: "注意"
