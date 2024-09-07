@@ -1,4 +1,5 @@
 {
+	always_invisible: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "0DF8C444993B2398"
@@ -159,7 +160,9 @@
 			subtitle: "磁场转动！"
 			tasks: [{
 				biome: "alexscaves:magnetic_caves"
+				icon: "alexscaves:scarlet_magnet"
 				id: "0DF24A26AE7DB999"
+				title: "磁力洞窟！"
 				type: "biome"
 			}]
 			title: "磁场洞穴"
@@ -177,7 +180,9 @@
 			subtitle: "原始人，启洞！"
 			tasks: [{
 				biome: "alexscaves:primordial_caves"
+				icon: "alexscaves:flytrap"
 				id: "1D2806B67CB5DAE5"
+				title: "原始洞窟"
 				type: "biome"
 			}]
 			title: "原始洞穴"
@@ -623,14 +628,15 @@
 		}
 		{
 			dependencies: ["43AD46C2467260D8"]
-			description: ["丢进火山口里将会召唤暝煌龙。"]
+			description: [""]
 			id: "760F3F4B5CE16D74"
-			subtitle: "&4召唤暝煌龙！！！&r"
+			subtitle: "丢进火山口里将会召唤暝煌龙。"
 			tasks: [{
 				id: "18966EC12656D5D4"
 				item: "alexscaves:ominous_catalyst"
 				type: "item"
 			}]
+			title: "&4召唤暝煌龙！！！&r"
 			x: 10.5d
 			y: -9.0d
 		}
