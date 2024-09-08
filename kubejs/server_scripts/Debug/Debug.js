@@ -77,12 +77,3 @@ PlayerEvents.loggedIn((event) => {
 		}
 	}
 })
-BlockEvents.rightClicked("sophisticatedbackpacks:netherite_backpack", e => {
-    const{ entityData, block, player } = e
-    if( player.mainHandItem == "functionalstorage:copper_upgrade" && player.crouching ){
-        entityData.backpackData.tag.inventorySlots = entityData.backpackData.tag.inventorySlots + 1;
-        block.setEntityData(entityData);
-        block.entity.setChanged()
-        player.tell(Text.translate("message.jiafa.backpack_copper_upgrade", [entityData.backpackData.tag.inventorySlots]))
-    }
-})
