@@ -8,9 +8,3 @@ ServerEvents.recipes(e => {
         "nethervinery:obsidian_stem"
     ])
 })
-BlockEvents.rightClicked("vinery:grapevine_pot", e => {
-    const { player, level } = e
-    if (player.mainHandItem == "nethervinery:crimson_grape" | player.mainHandItem == "nethervinery:warped_grape") {
-        e.cancel()
-    }
-})

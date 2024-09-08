@@ -1,4 +1,5 @@
 {
+    "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
     "message.createdelight.debug":"§4验证开发者用户信息中§r\n§a身份正确§r\n§4欢迎回来!%s§r",
     "message.createdelight.conventcommand": "§6潜行+右键§r获取物品ID\n输入§6-kli§r删除所有掉落物\n输入§6-kle§r清除玩家之外的所有实体\n输入§6-efg§r获得[夜视 力量 抗性]buff\n输入§6-efc§r清除自身所有buff",
     "item.createdelight.incomplete_tesla_coil": "未完成的特斯拉充电线圈",
