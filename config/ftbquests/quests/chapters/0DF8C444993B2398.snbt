@@ -380,7 +380,10 @@
 				{
 					count: 4L
 					id: "7051FFB7E7405229"
-					item: { Count: 4, id: "alexscaves:magnetic_light" }
+					item: {
+						Count: 4
+						id: "alexscaves:magnetic_light"
+					}
 					type: "item"
 				}
 			]
