@@ -246,6 +246,7 @@
 					type: "item"
 				}
 			]
+			title: "置物"
 			x: 7.0d
 			y: 1.0d
 		}
@@ -519,11 +520,18 @@
 				"1CED61E7F780F38C"
 			]
 			id: "4492593A688BA447"
-			tasks: [{
-				id: "378369DC01AD9012"
-				item: "createaddition:rolling_mill"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "378369DC01AD9012"
+					item: "createaddition:rolling_mill"
+					type: "item"
+				}
+				{
+					id: "0853123B927D34DA"
+					item: "vintageimprovements:spring_coiling_machine"
+					type: "item"
+				}
+			]
 			x: 13.5d
 			y: 0.0d
 		}

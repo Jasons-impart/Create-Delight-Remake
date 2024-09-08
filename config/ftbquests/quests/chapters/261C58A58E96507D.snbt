@@ -7,6 +7,1048 @@
 	id: "261C58A58E96507D"
 	order_index: 1
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			dependencies: [
+				"3CC5C997C5AC7D30"
+				"040CED5705ED7E24"
+			]
+			id: "0E515BE9EA2A0B2F"
+			size: 2.0d
+			tasks: [{
+				id: "5FE59F26BC3E6AF3"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			id: "16E85851D21CB6A3"
+			tasks: [{
+				id: "611B7E2C375DC0F4"
+				item: "createbigcannons:cast_iron_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"16E85851D21CB6A3"
+				"4A3B20210954D458"
+			]
+			id: "450B37F01A318678"
+			tasks: [
+				{
+					id: "1EA44E62FD8B2C8B"
+					item: "createmetallurgy:foundry_basin"
+					type: "item"
+				}
+				{
+					id: "379A5FAEA8882DA0"
+					item: "createmetallurgy:foundry_lid"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			id: "2D588A416405B36C"
+			tasks: [{
+				id: "02DFC08AE036A576"
+				item: "createmetallurgy:casting_basin"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			icon: "createmetallurgy:casting_table"
+			id: "3CC5C997C5AC7D30"
+			tasks: [
+				{
+					id: "76501C8010EE1DDA"
+					item: "createmetallurgy:casting_table"
+					type: "item"
+				}
+				{
+					id: "5B774593FA768B3D"
+					item: "createmetallurgy:graphite_ingot_mold"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			id: "4A3B20210954D458"
+			tasks: [{
+				id: "703B5C0A3E769BF1"
+				item: "createmetallurgy:refractory_mortar"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["553925D5AA9E0050"]
+			id: "7C5A003A5FC02605"
+			tasks: [{
+				id: "2DE3CDA7029BBEEC"
+				item: "create:copper_casing"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7C5A003A5FC02605"]
+			id: "040CED5705ED7E24"
+			tasks: [{
+				id: "369E713E29509822"
+				item: "create:spout"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["553925D5AA9E0050"]
+			id: "63D229AF8283C3AA"
+			tasks: [
+				{
+					id: "2C9F5AAC68E5CF65"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+				{
+					id: "526DC193DB14D26A"
+					item: "create:mechanical_pump"
+					type: "item"
+				}
+			]
+			title: "流体运输"
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["553925D5AA9E0050"]
+			id: "4E885A428CBCE708"
+			tasks: [{
+				id: "50146030198E7AC4"
+				item: "create:fluid_tank"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7C5A003A5FC02605"]
+			id: "68D83C4DA9C39673"
+			tasks: [{
+				id: "500408E6C78A6D8A"
+				item: "create:item_drain"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -4.0d
+		}
+		{
+			id: "553925D5AA9E0050"
+			tasks: [{
+				id: "13C4F5EC8DB557A4"
+				item: "minecraft:copper_ingot"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["271924B430C340EC"]
+			id: "467AE0EF8AF5ACAF"
+			tasks: [{
+				advancement: "create:burner"
+				criterion: ""
+				id: "3679968D9A225E4F"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			id: "271924B430C340EC"
+			tasks: [{
+				id: "2B10D1A86D127809"
+				item: "create:empty_blaze_burner"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			id: "3E3B411612B17907"
+			tasks: [{
+				id: "11798106DE02AB07"
+				item: "create:brass_casing"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3E3B411612B17907"]
+			id: "3BAC2E9A7359CF70"
+			tasks: [{
+				id: "5C4595D491E8C1EA"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			id: "28B3247AF854504D"
+			tasks: [{
+				id: "12D220D8F367FD29"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			id: "31418813B6B9A004"
+			tasks: [{
+				id: "1B360AE31D3A7A34"
+				item: "vintageimprovements:helve_hammer"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["28B3247AF854504D"]
+			id: "3900087365D3C2B9"
+			tasks: [{
+				id: "52C7626334A4694F"
+				item: "create:cinder_flour"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3E3B411612B17907"]
+			id: "524FCF85B06F1CE0"
+			tasks: [{
+				id: "31173383667DB2B8"
+				item: "create:brass_hand"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["524FCF85B06F1CE0"]
+			id: "13743FB52F43BE38"
+			tasks: [{
+				id: "74E658C6E76EDC05"
+				item: "create:deployer"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"524FCF85B06F1CE0"
+				"575185F2DB0AD44C"
+				"3BAC2E9A7359CF70"
+			]
+			id: "7E36D7C58C06D08B"
+			tasks: [{
+				id: "6FA461103958B62C"
+				item: {
+					Count: 1
+					id: "create:extendo_grip"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"7AC63AC5921DD7F0"
+				"6603024447F23F40"
+				"13743FB52F43BE38"
+			]
+			id: "2CBBADBE62382C1B"
+			tasks: [{
+				id: "25BA77B8EFFB67FF"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			id: "7AC63AC5921DD7F0"
+			tasks: [{
+				id: "1B9A8E459ADA60C9"
+				item: "createdelight:tin_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13743FB52F43BE38"]
+			id: "575185F2DB0AD44C"
+			tasks: [{
+				id: "0D48FEFF57AE1DA1"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"575185F2DB0AD44C"
+				"3BAC2E9A7359CF70"
+			]
+			id: "5A16AE172A0C7772"
+			tasks: [{
+				id: "7B4BBEC84095C5DC"
+				item: "vintageimprovements:lathe"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3900087365D3C2B9"]
+			id: "728B14B91D127905"
+			tasks: [{
+				id: "2F066F6B4AD03E7F"
+				item: "create:blaze_cake_base"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["728B14B91D127905"]
+			id: "66936F516415C862"
+			tasks: [{
+				id: "65C72B9A9D371DBA"
+				item: "create:blaze_cake"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			id: "0B6FD35E76DC3EE0"
+			tasks: [{
+				id: "2B9EEA536D65A70A"
+				item: "create:mechanical_arm"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			id: "69C328EB588AA7E7"
+			tasks: [{
+				id: "2BB79617657D47A1"
+				item: "create:rotation_speed_controller"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"6275BEBAC1FD7652"
+				"28B3247AF854504D"
+			]
+			id: "350B7F0F94C4A28A"
+			tasks: [{
+				id: "0C827A56F5427947"
+				item: "create:powdered_obsidian"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 6.0d
+		}
+		{
+			id: "6275BEBAC1FD7652"
+			tasks: [{
+				id: "27E33F8CD5290919"
+				item: "minecraft:obsidian"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["350B7F0F94C4A28A"]
+			id: "0D90EC410B3E7FA5"
+			tasks: [{
+				id: "79DDA900DC6E9F7A"
+				item: "create:sturdy_sheet"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["0D90EC410B3E7FA5"]
+			id: "2C4BC15C42ABB286"
+			tasks: [{
+				id: "1A856CCD3A3F0B79"
+				item: "createmetallurgy:sturdy_whisk"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2C4BC15C42ABB286"]
+			id: "6731C7B5A0DADBAA"
+			size: 2.0d
+			subtitle: "更高效的合金方式"
+			tasks: [{
+				id: "13899F724F77AC56"
+				item: "createmetallurgy:foundry_mixer"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2CBBADBE62382C1B"]
+			id: "0A04D9A2087C0960"
+			tasks: [{
+				id: "22CA2058E0599792"
+				item: "vintageimprovements:laser_item"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"575185F2DB0AD44C"
+				"0A04D9A2087C0960"
+			]
+			id: "18051C145E36D885"
+			tasks: [{
+				id: "47D4C3F2CBA8FD8A"
+				item: "vintageimprovements:laser"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6731C7B5A0DADBAA"]
+			id: "424AE3AE68EED3C2"
+			size: 1.5d
+			tasks: [{
+				id: "0B1E8E58AA6E6FC2"
+				item: "createdelight:bronze_ingot"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"6731C7B5A0DADBAA"
+				"70EF06DF68816635"
+			]
+			id: "204FA8F11663B2DE"
+			size: 1.5d
+			tasks: [{
+				id: "68B82461560EB835"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 12.0d
+		}
+		{
+			id: "70EF06DF68816635"
+			tasks: [{
+				id: "0295F585B30CAD72"
+				item: "iceandfire:silver_ingot"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["6731C7B5A0DADBAA"]
+			id: "78F0F6D3D2A93E3F"
+			size: 1.5d
+			tasks: [{
+				id: "06A21BCAD3FC5EB2"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 16.0d
+		}
+		{
+			dependencies: [
+				"424AE3AE68EED3C2"
+				"438ABB273BF02586"
+				"6F7C09C2FF94275B"
+				"650FCFF52AB629C9"
+			]
+			id: "2D9BA5CD1922318D"
+			tasks: [{
+				id: "70CE2A26978B92D3"
+				item: "createdieselgenerators:diesel_engine"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"2D9BA5CD1922318D"
+				"6F7C09C2FF94275B"
+			]
+			id: "0BCFEB6A4C5D2AA0"
+			tasks: [{
+				id: "5D55FF6A11AB26A8"
+				item: "createdieselgenerators:large_diesel_engine"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"424AE3AE68EED3C2"
+				"78F0F6D3D2A93E3F"
+			]
+			id: "0956FD1089D07A55"
+			tasks: [{
+				id: "42102BE9AB323552"
+				item: "createdieselgenerators:huge_diesel_engine"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["78F0F6D3D2A93E3F"]
+			id: "1AE450CBC3C7EBFE"
+			tasks: [{
+				id: "6013B8A575E30730"
+				item: "createdieselgenerators:oil_scanner"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["78F0F6D3D2A93E3F"]
+			id: "677CA223988DBFC0"
+			tasks: [{
+				id: "53E71E887AF5236A"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"094CBEB74FD20505"
+				"1AE450CBC3C7EBFE"
+			]
+			description: ["抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
+			id: "5317EBC6D3C2A048"
+			rewards: [
+				{
+					id: "6A65A3B848CEF8B8"
+					item: "create:fluid_tank"
+					random_bonus: 5
+					type: "item"
+				}
+				{
+					id: "1222880A4DD36261"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "非常难做的抽油机，强烈建议对照思索建造"
+			tasks: [
+				{
+					id: "63B8CDE5120DC080"
+					item: "createdieselgenerators:pumpjack_bearing"
+					type: "item"
+				}
+				{
+					id: "62D4CA3C7D2983A9"
+					item: "createdieselgenerators:pumpjack_head"
+					type: "item"
+				}
+				{
+					id: "21B9F613A2AF0501"
+					item: "createdieselgenerators:pumpjack_hole"
+					type: "item"
+				}
+				{
+					id: "295FB1FEC4DD47F2"
+					item: "createdieselgenerators:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "79CC46B73C474BEC"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+			]
+			title: "石油大亨的第一步！"
+			x: -4.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["5317EBC6D3C2A048"]
+			id: "595552DF655C5C91"
+			tasks: [{
+				id: "61E4BFE740323277"
+				item: "createdieselgenerators:crude_oil_bucket"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"595552DF655C5C91"
+				"677CA223988DBFC0"
+			]
+			id: "3EBFCA3ADB47A6E1"
+			tasks: [{
+				id: "085095A904FB3DA2"
+				item: "createdieselgenerators:gasoline_bucket"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 20.0d
+		}
+		{
+			dependencies: [
+				"595552DF655C5C91"
+				"677CA223988DBFC0"
+			]
+			id: "2E21EDC4A314B7FD"
+			tasks: [{
+				id: "1E08FD572A229E5B"
+				item: "createdieselgenerators:diesel_bucket"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 20.0d
+		}
+		{
+			dependencies: [
+				"20D619F0AF190C4A"
+				"4075F51792830B6B"
+			]
+			id: "15BF957B2F2FE765"
+			tasks: [{
+				id: "4023150209C55861"
+				item: "createdieselgenerators:biodiesel_bucket"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 20.0d
+		}
+		{
+			dependencies: ["50C3559D684B2A7E"]
+			id: "20D619F0AF190C4A"
+			tasks: [{
+				id: "25A6AE99D2DE67C7"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 18.0d
+		}
+		{
+			dependencies: [
+				"2FDF02F66210FC78"
+				"0C49A6D118E480B4"
+			]
+			id: "4075F51792830B6B"
+			tasks: [{
+				id: "7F9F9DF7B1EE51B0"
+				item: "createdieselgenerators:ethanol_bucket"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 20.0d
+		}
+		{
+			id: "50C3559D684B2A7E"
+			tasks: [{
+				id: "4B2D6F58AAF8DC50"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:seeds"
+					}
+				}
+				title: "种子"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["78F0F6D3D2A93E3F"]
+			id: "0C49A6D118E480B4"
+			tasks: [{
+				id: "7A2068EA2FE0DC4C"
+				item: "createdieselgenerators:basin_lid"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 18.0d
+		}
+		{
+			id: "2FDF02F66210FC78"
+			tasks: [
+				{
+					id: "5465B512AA1D1662"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fermentable"
+						}
+					}
+					title: "用于发酵的东西"
+					type: "item"
+				}
+				{
+					id: "60DB43B9DCBB7471"
+					item: "minecraft:bone_meal"
+					type: "item"
+				}
+			]
+			title: "发酵"
+			x: -10.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["204FA8F11663B2DE"]
+			id: "33AB8A9B5DBF7C19"
+			tasks: [{
+				id: "220FBE9314306931"
+				item: "createaddition:electrum_sheet"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 12.0d
+		}
+		{
+			id: "707A88FD9B9D0377"
+			tasks: [{
+				id: "72F181D324C10D88"
+				item: "createaddition:electrum_wire"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 32.0d
+		}
+		{
+			dependencies: ["33AB8A9B5DBF7C19"]
+			id: "307FDD969BC2CFD7"
+			tasks: [{
+				id: "6C3D40276C4DC561"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:wires/electric"
+					}
+				}
+				title: "电线"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 14.0d
+		}
+		{
+			id: "405E000FD9D3E804"
+			tasks: [{
+				id: "665C081873FD9120"
+				item: "createaddition:zinc_sheet"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"33AB8A9B5DBF7C19"
+				"405E000FD9D3E804"
+			]
+			id: "223927D0F621237B"
+			tasks: [{
+				id: "1AC6D0DCABD9810B"
+				item: "ad_astra:etrionic_core"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"405E000FD9D3E804"
+				"77722E15F8D04188"
+			]
+			id: "4347373979FF2941"
+			tasks: [{
+				id: "47C4E876B70BF44C"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 10.0d
+		}
+		{
+			id: "77722E15F8D04188"
+			tasks: [{
+				id: "14BCFC03CF4C6576"
+				item: "createaddition:copper_rod"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 8.0d
+		}
+		{
+			dependencies: [
+				"223927D0F621237B"
+				"307FDD969BC2CFD7"
+				"4347373979FF2941"
+			]
+			id: "6D18199772CFE2F5"
+			tasks: [{
+				id: "74189117D66B9788"
+				item: "createaddition:modular_accumulator"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"223927D0F621237B"
+				"2766DFF8D2DEBF71"
+			]
+			id: "3827A4ABE03A55F3"
+			tasks: [{
+				id: "54414F748770AE55"
+				item: "createaddition:tesla_coil"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 14.0d
+		}
+		{
+			dependencies: [
+				"223927D0F621237B"
+				"2766DFF8D2DEBF71"
+			]
+			id: "15062C1C7B98DE8A"
+			tasks: [{
+				id: "2FF5546540CE06C3"
+				item: "createaddition:alternator"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 12.0d
+		}
+		{
+			id: "05F7EED13421654A"
+			tasks: [{
+				id: "3C55FDEAC4D6374A"
+				item: "create:copper_sheet"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["05F7EED13421654A"]
+			id: "19FB860BD260A721"
+			tasks: [{
+				id: "512DB50FCD00258B"
+				item: "createaddition:copper_wire"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["19FB860BD260A721"]
+			id: "2766DFF8D2DEBF71"
+			tasks: [{
+				id: "5B6AF0087D6347A4"
+				item: "createaddition:copper_spool"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["15062C1C7B98DE8A"]
+			id: "7CCAD982B2CC88BA"
+			tasks: [{
+				id: "48B94D6C8D59D93B"
+				item: "createaddition:electric_motor"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["2766DFF8D2DEBF71"]
+			id: "0911B547750BE013"
+			tasks: [{
+				id: "03A830A66EB9F703"
+				item: "createaddition:portable_energy_interface"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["2766DFF8D2DEBF71"]
+			id: "397338FFA5914D06"
+			tasks: [{
+				id: "554D774A1317586B"
+				item: "createaddition:festive_spool"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["77722E15F8D04188"]
+			id: "32218A4E7D4DF470"
+			tasks: [{
+				id: "49A4C03DBA226AA6"
+				item: "createaddition:connector"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["32218A4E7D4DF470"]
+			id: "4B294501D7618AF3"
+			tasks: [{
+				id: "047450F34376F20B"
+				item: "createaddition:small_light_connector"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["204FA8F11663B2DE"]
+			id: "2A95BC2D0697F08F"
+			tasks: [{
+				id: "6964ECFFC2861E8F"
+				item: "createaddition:electrum_rod"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["2A95BC2D0697F08F"]
+			id: "530835C4356324EB"
+			tasks: [{
+				id: "6CD9C6CBE557CCB9"
+				item: "createaddition:large_connector"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["650FCFF52AB629C9"]
+			hide_dependency_lines: true
+			id: "438ABB273BF02586"
+			tasks: [{
+				id: "60C459DADF95709C"
+				item: "createdieselgenerators:engine_turbocharger"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["650FCFF52AB629C9"]
+			hide_dependency_lines: true
+			id: "6F7C09C2FF94275B"
+			tasks: [{
+				id: "12D2EE154537D253"
+				item: "createdieselgenerators:engine_silencer"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["78F0F6D3D2A93E3F"]
+			id: "650FCFF52AB629C9"
+			tasks: [{
+				id: "40731B9ABA3D1F23"
+				item: "createdieselgenerators:engine_piston"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["204FA8F11663B2DE"]
+			id: "095381C944704346"
+			tasks: [{
+				id: "530A657DF56B4586"
+				item: "createaddition:electrum_amulet"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 10.0d
+		}
+	]
 	title: "&3进阶研修班！"
 }
