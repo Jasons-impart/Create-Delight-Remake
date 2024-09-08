@@ -116,15 +116,6 @@
 			light_ceiling_fan = true
 			kitchen_storage_cabinet = true
 
-		[entries.wood_type.storagedrawers]
-			trim = true
-			full_drawers_2 = true
-			half_drawers_1 = true
-			full_drawers_4 = true
-			half_drawers_4 = true
-			half_drawers_2 = true
-			full_drawers_1 = true
-
 		[entries.wood_type.create]
 			window = true
 			window_pane = true

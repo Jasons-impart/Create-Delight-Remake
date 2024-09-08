@@ -37,55 +37,6 @@
 		}
 		{
 			dependencies: ["094CBEB74FD20505"]
-			description: ["抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
-			id: "1F5B88A1AF6EE70A"
-			rewards: [
-				{
-					id: "51E7F1A18FF3D706"
-					item: "create:fluid_tank"
-					random_bonus: 5
-					type: "item"
-				}
-				{
-					id: "6E01EC75FA14C3C6"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "非常难做的抽油机，强烈建议对照思索建造"
-			tasks: [
-				{
-					id: "5B9D6C20667A3612"
-					item: "createdieselgenerators:pumpjack_bearing"
-					type: "item"
-				}
-				{
-					id: "26CA72C9E6B9E327"
-					item: "createdieselgenerators:pumpjack_head"
-					type: "item"
-				}
-				{
-					id: "2E8D7601D4E4633F"
-					item: "createdieselgenerators:pumpjack_hole"
-					type: "item"
-				}
-				{
-					id: "15E52405C3293BD2"
-					item: "createdieselgenerators:pumpjack_crank"
-					type: "item"
-				}
-				{
-					id: "59B32AB60AABCE74"
-					item: "create:fluid_pipe"
-					type: "item"
-				}
-			]
-			title: "石油大亨的第一步！"
-			x: -3.5d
-			y: -4.0d
-		}
-		{
-			dependencies: ["094CBEB74FD20505"]
 			id: "2118D08C7336D2EF"
 			rewards: [{
 				id: "25CBCD97785CE08C"
@@ -103,7 +54,6 @@
 			y: -5.5d
 		}
 		{
-			dependencies: ["1F5B88A1AF6EE70A"]
 			id: "4820027AB4E2F1AA"
 			rewards: [{
 				id: "74AF858EB2817D4C"
