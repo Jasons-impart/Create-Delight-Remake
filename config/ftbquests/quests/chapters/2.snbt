@@ -4,7 +4,7 @@
 	default_quest_shape: ""
 	filename: "2"
 	group: "14CFC96B5B37F10B"
-	icon: "create:andesite_casing"
+	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
 	quest_links: [ ]
@@ -45,16 +45,11 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["510B2EE25982FD73"]
+			dependencies: ["45A853738625FCFD"]
 			id: "1AAB7454C767D9DB"
 			shape: "gear"
 			subtitle: "传输应力！"
 			tasks: [
-				{
-					id: "2123BCCCB8CB794D"
-					item: "create:shaft"
-					type: "item"
-				}
 				{
 					id: "0D4A0C37648D9E58"
 					item: "create:cogwheel"
@@ -67,11 +62,12 @@
 				}
 			]
 			title: "浪漫从此刻开始"
-			x: 3.0d
+			x: 5.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["1AAB7454C767D9DB"]
+			dependencies: ["28CB30AB88780BC7"]
+			hide: true
 			id: "183724705FA6D24C"
 			subtitle: "每SU消耗数个牛排！"
 			tasks: [{
@@ -80,11 +76,13 @@
 				type: "item"
 			}]
 			title: "手动应力"
-			x: 2.0d
-			y: 1.5d
+			x: 7.0d
+			y: 3.0d
 		}
 		{
-			dependencies: ["1AAB7454C767D9DB"]
+			dependencies: ["28CB30AB88780BC7"]
+			hide: true
+			hide_dependent_lines: true
 			id: "1336C212F2B86468"
 			subtitle: "这里的风景真好看！(掉帧动力)"
 			tasks: [{
@@ -93,11 +91,15 @@
 				type: "item"
 			}]
 			title: "小水车吱呀吱悠悠地转"
-			x: 4.0d
-			y: 1.5d
+			x: 4.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["1336C212F2B86468"]
+			dependencies: [
+				"28CB30AB88780BC7"
+				"1336C212F2B86468"
+			]
+			hide: true
 			id: "724FF9E032B4B134"
 			tasks: [{
 				id: "5A9DF64690DD5CCF"
@@ -105,8 +107,8 @@
 				type: "item"
 			}]
 			title: "更慢！但是更强！"
-			x: 4.0d
-			y: 3.0d
+			x: 6.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -117,19 +119,20 @@
 				type: "item"
 			}]
 			title: "机器之根本"
-			x: 6.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["1AAB7454C767D9DB"]
+			dependencies: ["28CB30AB88780BC7"]
+			hide: true
 			id: "4D7BB97AA55ACE20"
 			tasks: [{
 				id: "56CDC20305BC3092"
 				item: "create:windmill_bearing"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 2.0d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -139,18 +142,7 @@
 				item: "create:mechanical_press"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["621E3093612F5D2C"]
-			id: "0CA5F56874618F05"
-			tasks: [{
-				id: "4AA4906D8812BBFB"
-				item: "create:iron_sheet"
-				type: "item"
-			}]
-			x: 12.0d
+			x: 10.5d
 			y: 0.0d
 		}
 		{
@@ -161,41 +153,45 @@
 				item: "create:millstone"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -1.5d
+			x: 8.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["0CA5F56874618F05"]
+			dependencies: ["1CED61E7F780F38C"]
 			id: "6BCFF368CB1C1FA4"
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				id: "2BCAE2943EEF83E6"
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: 11.0d
-			y: -1.5d
+			x: 10.533333333333339d
+			y: 5.009523809523792d
 		}
 		{
-			dependencies: ["0CA5F56874618F05"]
+			dependencies: ["1CED61E7F780F38C"]
+			hide: true
 			id: "372234CE950277CE"
 			tasks: [{
 				id: "4E24FD5247219941"
 				item: "create:mechanical_saw"
 				type: "item"
 			}]
-			x: 11.0d
-			y: 1.5d
+			x: 9.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["0CA5F56874618F05"]
+			dependencies: ["1CED61E7F780F38C"]
+			hide: true
 			id: "5C40F5E0F477394B"
 			tasks: [{
 				id: "2E03EF64834AAF0D"
 				item: "create:mechanical_harvester"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 1.5d
+			x: 11.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -205,62 +201,35 @@
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 1.5d
+			x: 9.0d
+			y: 1.0d
 		}
 		{
-			dependencies: ["0CA5F56874618F05"]
+			dependencies: ["1CED61E7F780F38C"]
+			hide: true
 			id: "762CD49FCDC889E2"
 			tasks: [{
 				id: "73CC459904BCE0DA"
 				item: "create:encased_fan"
 				type: "item"
 			}]
-			x: 13.0d
-			y: -1.5d
-		}
-		{
-			id: "175AC0AC2B1C90E6"
-			tasks: [{
-				id: "70104060EBBA4DA8"
-				item: "minecraft:kelp"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["175AC0AC2B1C90E6"]
-			id: "0E2D1C8AF2FD4BEA"
-			tasks: [{
-				id: "1B8847DD65D359F3"
-				item: "minecraft:dried_kelp"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0E2D1C8AF2FD4BEA"]
-			id: "3F16E947F45DB4A8"
-			tasks: [{
-				id: "4E789A1B0A97E0BB"
-				item: "create:belt_connector"
-				type: "item"
-			}]
-			x: 9.5d
+			x: 12.0d
 			y: 3.0d
 		}
 		{
 			dependencies: ["510B2EE25982FD73"]
 			id: "52E82ABD2EA30418"
+			shape: "square"
 			tasks: [{
-				id: "15ED2E999617EBD1"
+				icon: "create:contraption_controls"
+				id: "400724AF4FD7D46C"
+				stat: "minecraft:play_time"
 				title: "动态结构！"
-				type: "checkmark"
+				type: "stat"
+				value: 1
 			}]
 			x: 0.5d
-			y: 2.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -278,21 +247,23 @@
 				}
 			]
 			x: 7.0d
-			y: -1.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "3ACA3A7FE20E59D2"
 			tasks: [{
 				id: "54C1D5ED9BA355FE"
 				item: "create:mechanical_bearing"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 5.0d
+			x: -0.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "5EF1F883F44263FA"
 			tasks: [
 				{
@@ -323,10 +294,11 @@
 			]
 			title: "动力活塞"
 			x: -1.0d
-			y: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "47ABE0A581C1E40E"
 			tasks: [
 				{
@@ -341,10 +313,11 @@
 				}
 			]
 			x: 2.0d
-			y: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "21E81C4A8E9C95A0"
 			tasks: [
 				{
@@ -375,10 +348,11 @@
 			]
 			title: "底盘们"
 			x: -1.0d
-			y: 3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "54FEEB508185B5C2"
 			tasks: [
 				{
@@ -392,11 +366,12 @@
 					type: "item"
 				}
 			]
-			x: 1.0d
-			y: 5.0d
+			x: 1.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "2E62FA558BE57A48"
 			tasks: [{
 				id: "3BB66EC5E84A07C4"
@@ -410,12 +385,14 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
+			hide: true
 			id: "0436BA03D9EB8AA8"
 			secret: true
+			shape: "rsquare"
 			size: 1.5d
 			tasks: [{
 				advancement: "create:cart_pickup"
@@ -423,19 +400,21 @@
 				id: "0A87B93F68D5E572"
 				type: "advancement"
 			}]
-			x: 0.5d
-			y: 6.5d
+			title: "&e手劲真大！"
+			x: 0.5238095238095255d
+			y: 5.002380952380939d
 		}
 		{
-			dependencies: ["0CA5F56874618F05"]
+			dependencies: ["1CED61E7F780F38C"]
+			hide: true
 			id: "11A126AA8CC38620"
 			tasks: [{
 				id: "0EC233C973DFD246"
 				item: "create:mechanical_plough"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 2.0d
+			x: 9.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
@@ -454,7 +433,7 @@
 				item: "create:empty_schematic"
 				type: "item"
 			}]
-			x: -2.5d
+			x: -2.0d
 			y: -1.0d
 		}
 		{
@@ -475,7 +454,7 @@
 				type: "item"
 			}]
 			title: "把蓝图写入游戏中！"
-			x: -2.5d
+			x: -2.0d
 			y: 1.0d
 		}
 		{
@@ -498,8 +477,346 @@
 				type: "item"
 			}]
 			title: "论机械动力为什么能称之为神"
-			x: -4.5d
+			x: -4.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "28CB30AB88780BC7"
+			shape: "square"
+			tasks: [{
+				icon: "create:large_cogwheel"
+				id: "36E8D68F704A8D04"
+				stat: "minecraft:play_time"
+				title: "基础应力来源"
+				type: "stat"
+				value: 1
+			}]
+			x: 5.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"28CB30AB88780BC7"
+				"610ED0789BAF7EFC"
+			]
+			hide: true
+			id: "61FEE1B1ACE8ABC8"
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "2FF7DF66C79D6B20"
+				item: "create:steam_engine"
+				type: "item"
+			}]
+			title: "&e汽笛轰鸣！"
+			x: 5.5333333333333385d
+			y: 5.009523809523799d
+		}
+		{
+			dependencies: [
+				"621E3093612F5D2C"
+				"1CED61E7F780F38C"
+			]
+			id: "4492593A688BA447"
+			tasks: [{
+				id: "378369DC01AD9012"
+				item: "createaddition:rolling_mill"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["621E3093612F5D2C"]
+			id: "1CED61E7F780F38C"
+			shape: "square"
+			tasks: [{
+				advancement: "create:mechanical_press"
+				criterion: ""
+				icon: "create:iron_sheet"
+				id: "086CA48398190908"
+				type: "advancement"
+			}]
+			title: "基础机械"
+			x: 10.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			id: "45A853738625FCFD"
+			tasks: [{
+				id: "36CEF17E06B64B00"
+				item: "create:shaft"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4492593A688BA447"]
+			hide_dependent_lines: true
+			id: "610ED0789BAF7EFC"
+			tasks: [{
+				id: "2A5092B15035D856"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:spring/between_500_2_1000"
+					}
+				}
+				title: "高强度弹簧"
+				type: "item"
+			}]
+			title: "高强度弹簧"
+			x: 13.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["4492593A688BA447"]
+			id: "3968AC36E0517F5B"
+			tasks: [{
+				id: "7127D77D3E11B06A"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:spring/blow_500"
+					}
+				}
+				title: "任意低强度弹簧"
+				type: "item"
+			}]
+			title: "低强度弹簧"
+			x: 12.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["4492593A688BA447"]
+			id: "4CC4E893A6950B0F"
+			tasks: [{
+				id: "04FEF23790AACD5F"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:spring/over_1000"
+					}
+				}
+				title: "任意超高强度弹簧"
+				type: "item"
+			}]
+			title: "超高强度弹簧"
+			x: 14.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "1197EF9B84E242DE"
+			shape: "square"
+			tasks: [{
+				icon: "create_connected:six_way_gearbox"
+				id: "4891191CFCCB1195"
+				stat: "minecraft:play_time"
+				title: "传动装置"
+				type: "stat"
+				value: 1
+			}]
+			title: "基础传动装置"
+			x: 5.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "6DB08E176433BF12"
+			tasks: [
+				{
+					id: "70869FA732CC1295"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					id: "11B10262C3B5BC79"
+					item: "create_connected:shear_pin"
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "1BABF924FE8F0225"
+			tasks: [
+				{
+					id: "579832D192207787"
+					item: "create:clutch"
+					type: "item"
+				}
+				{
+					id: "191D05D7F969C4C1"
+					item: "create_connected:inverted_clutch"
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "175196C8D23715B3"
+			tasks: [
+				{
+					id: "423D7090C1FD3F5E"
+					item: "create:gearshift"
+					type: "item"
+				}
+				{
+					id: "7911909A9FB6AAC1"
+					item: "create_connected:inverted_gearshift"
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "6BF8E6F5FE6983F7"
+			tasks: [
+				{
+					id: "081D88940979F741"
+					item: "create_connected:encased_chain_cogwheel"
+					type: "item"
+				}
+				{
+					id: "34610210F737903E"
+					item: "create:encased_chain_drive"
+					type: "item"
+				}
+			]
+			x: 6.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "65CDCB9357D9BB71"
+			tasks: [
+				{
+					id: "64818D8DC9A24824"
+					item: "create:gearbox"
+					type: "item"
+				}
+				{
+					id: "3BC1CF65EC0B08DC"
+					item: "create_connected:parallel_gearbox"
+					type: "item"
+				}
+				{
+					id: "3B1D43DAA58C5C1E"
+					item: "create_connected:six_way_gearbox"
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "40C5A484EAF7283C"
+			tasks: [
+				{
+					id: "51EA42D1B2F1672F"
+					item: "create_connected:centrifugal_clutch"
+					type: "item"
+				}
+				{
+					id: "20591CB4F9652CA9"
+					item: "create_connected:brake"
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1197EF9B84E242DE"]
+			hide: true
+			id: "5B1CD6F67D035B28"
+			tasks: [
+				{
+					id: "51D6C1566B34BFA7"
+					item: "create:belt_connector"
+					type: "item"
+				}
+				{
+					id: "01C9CC011E2EC2D9"
+					item: "minecraft:dried_kelp"
+					type: "item"
+				}
+				{
+					id: "6070C69B5D2A751E"
+					item: "minecraft:kelp"
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "2BC23C199544A1DB"
+			rewards: [{
+				count: 10
+				id: "77C8D2938635C3B0"
+				item: "create:wooden_bracket"
+				type: "item"
+			}]
+			secret: true
+			tasks: [{
+				id: "3F035147C47AFFC1"
+				item: "create:wooden_bracket"
+				type: "item"
+			}]
+			title: "简单装饰一下我的齿轮组们~"
+			x: 4.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "2051934C4F660BB1"
+			rewards: [{
+				count: 10
+				id: "75AA12606FE7F1C0"
+				item: "create:metal_bracket"
+				type: "item"
+			}]
+			secret: true
+			tasks: [{
+				id: "65D9BE0883567089"
+				item: "create:metal_bracket"
+				type: "item"
+			}]
+			title: "超有工业风的齿轮组！"
+			x: 4.5d
+			y: 1.0d
+		}
+		{
+			id: "559252851CF21211"
+			tasks: [{
+				id: "3D57CF00DC3FD415"
+				title: "1"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -6.0d
 		}
 	]
 	title: "&2初级工程师"
