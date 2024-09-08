@@ -954,64 +954,6 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["74F81A8C4757CD08"]
-			id: "3956BF6CE5009F66"
-			rewards: [{
-				id: "77FC11C2EB85F290"
-				item: "create:empty_schematic"
-				type: "item"
-			}]
-			subtitle: "将空白蓝图放入蓝图桌以打印出可以放置结构虚影的蓝图"
-			tasks: [{
-				id: "46BB39AD997856F2"
-				item: "create:empty_schematic"
-				type: "item"
-			}]
-			x: -17.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["74F81A8C4757CD08"]
-			id: "651AE0D14323B352"
-			rewards: [{
-				id: "152ADFB165E5A2E2"
-				item: "create:empty_schematic"
-				type: "item"
-			}]
-			subtitle: "类似投影的好东西"
-			tasks: [{
-				id: "680F40F6F113FD16"
-				item: "create:schematic_table"
-				type: "item"
-			}]
-			title: "把蓝图写入游戏中！"
-			x: -15.0d
-			y: -2.5d
-		}
-		{
-			dependencies: [
-				"651AE0D14323B352"
-				"3956BF6CE5009F66"
-			]
-			description: ["蓝图大炮左上角放入火药（一个火药大概能打几百个方块别放多了），右上角可以放入书或者剪贴板（可以统计需要的材料），将蓝图结构放置完成后放入蓝图大炮左侧就可以准备打印结构了，紧贴蓝图大炮摆放容器并放置所需材料，调整蓝图大炮设置后即可点击△开始打印&4（注意：蓝图大炮打印流体储罐，保险库以及蓄电池会有问题，需要打印完后拆掉一个角后重新放置）"]
-			id: "68C809838E2F09A8"
-			rewards: [{
-				count: 32
-				id: "538F7DDFB245FD6A"
-				item: "minecraft:gunpowder"
-				type: "item"
-			}]
-			subtitle: "如标题所示，这就是机械动力的神，浪漫而又实用"
-			tasks: [{
-				id: "562475D62C420631"
-				item: "create:schematicannon"
-				type: "item"
-			}]
-			title: "论机械动力为什么能称之为神"
-			x: -16.0d
-			y: -4.0d
-		}
-		{
 			dependencies: ["7C63D27693E2270D"]
 			id: "2BC23C199544A1DB"
 			rewards: [{

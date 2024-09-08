@@ -80,7 +80,7 @@
 				type: "item"
 			}]
 			title: "手动应力"
-			x: 2.5d
+			x: 2.0d
 			y: 1.5d
 		}
 		{
@@ -93,7 +93,7 @@
 				type: "item"
 			}]
 			title: "小水车吱呀吱悠悠地转"
-			x: 3.5d
+			x: 4.0d
 			y: 1.5d
 		}
 		{
@@ -105,7 +105,7 @@
 				type: "item"
 			}]
 			title: "更慢！但是更强！"
-			x: 3.5d
+			x: 4.0d
 			y: 3.0d
 		}
 		{
@@ -117,7 +117,388 @@
 				type: "item"
 			}]
 			title: "机器之根本"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1AAB7454C767D9DB"]
+			id: "4D7BB97AA55ACE20"
+			tasks: [{
+				id: "56CDC20305BC3092"
+				item: "create:windmill_bearing"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7029D6C489D44144"]
+			id: "621E3093612F5D2C"
+			tasks: [{
+				id: "14A8664EEEAA4C30"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["621E3093612F5D2C"]
+			id: "0CA5F56874618F05"
+			tasks: [{
+				id: "4AA4906D8812BBFB"
+				item: "create:iron_sheet"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7029D6C489D44144"]
+			id: "4150EBCDFDA45F9E"
+			tasks: [{
+				id: "4FFF43D793BA3250"
+				item: "create:millstone"
+				type: "item"
+			}]
 			x: 5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["0CA5F56874618F05"]
+			id: "6BCFF368CB1C1FA4"
+			tasks: [{
+				id: "2BCAE2943EEF83E6"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: 11.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["0CA5F56874618F05"]
+			id: "372234CE950277CE"
+			tasks: [{
+				id: "4E24FD5247219941"
+				item: "create:mechanical_saw"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0CA5F56874618F05"]
+			id: "5C40F5E0F477394B"
+			tasks: [{
+				id: "2E03EF64834AAF0D"
+				item: "create:mechanical_harvester"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7029D6C489D44144"]
+			id: "5BEAE8E8844A5DDB"
+			tasks: [{
+				id: "70E9CF7003DB798F"
+				item: "create:mechanical_drill"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0CA5F56874618F05"]
+			id: "762CD49FCDC889E2"
+			tasks: [{
+				id: "73CC459904BCE0DA"
+				item: "create:encased_fan"
+				type: "item"
+			}]
+			x: 13.0d
+			y: -1.5d
+		}
+		{
+			id: "175AC0AC2B1C90E6"
+			tasks: [{
+				id: "70104060EBBA4DA8"
+				item: "minecraft:kelp"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["175AC0AC2B1C90E6"]
+			id: "0E2D1C8AF2FD4BEA"
+			tasks: [{
+				id: "1B8847DD65D359F3"
+				item: "minecraft:dried_kelp"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0E2D1C8AF2FD4BEA"]
+			id: "3F16E947F45DB4A8"
+			tasks: [{
+				id: "4E789A1B0A97E0BB"
+				item: "create:belt_connector"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			id: "52E82ABD2EA30418"
+			tasks: [{
+				id: "15ED2E999617EBD1"
+				title: "动态结构！"
+				type: "checkmark"
+			}]
+			x: 0.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7029D6C489D44144"]
+			id: "02E1C25396B0F5EA"
+			tasks: [
+				{
+					id: "14E9814A24EFF05E"
+					item: "create:depot"
+					type: "item"
+				}
+				{
+					id: "722C3A0A68223E5F"
+					item: "create:basin"
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "3ACA3A7FE20E59D2"
+			tasks: [{
+				id: "54C1D5ED9BA355FE"
+				item: "create:mechanical_bearing"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "5EF1F883F44263FA"
+			tasks: [
+				{
+					id: "0B2A23C227259611"
+					item: {
+						Count: 1
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "create:mechanical_piston"
+								}
+								{
+									Count: 1b
+									id: "create:sticky_mechanical_piston"
+								}
+							]
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3AD9C5A5A077B99A"
+					item: "create:piston_extension_pole"
+					type: "item"
+				}
+			]
+			title: "动力活塞"
+			x: -1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "47ABE0A581C1E40E"
+			tasks: [
+				{
+					id: "05D2FCCB23621758"
+					item: "create:gantry_carriage"
+					type: "item"
+				}
+				{
+					id: "0F1373574754A587"
+					item: "create:gantry_shaft"
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "21E81C4A8E9C95A0"
+			tasks: [
+				{
+					id: "7D3F670A3C8971C3"
+					item: {
+						Count: 1
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "create:linear_chassis"
+								}
+								{
+									Count: 1b
+									id: "create:secondary_linear_chassis"
+								}
+							]
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6329F98A6995EBD4"
+					item: "create:radial_chassis"
+					type: "item"
+				}
+			]
+			title: "底盘们"
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "54FEEB508185B5C2"
+			tasks: [
+				{
+					id: "60754519928E4D4E"
+					item: "create:cart_assembler"
+					type: "item"
+				}
+				{
+					id: "198116CB9C9A40C5"
+					item: "minecraft:minecart"
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "2E62FA558BE57A48"
+			tasks: [{
+				id: "3BB66EC5E84A07C4"
+				item: {
+					Count: 1
+					id: "create:super_glue"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["52E82ABD2EA30418"]
+			id: "0436BA03D9EB8AA8"
+			secret: true
+			size: 1.5d
+			tasks: [{
+				advancement: "create:cart_pickup"
+				criterion: ""
+				id: "0A87B93F68D5E572"
+				type: "advancement"
+			}]
+			x: 0.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["0CA5F56874618F05"]
+			id: "11A126AA8CC38620"
+			tasks: [{
+				id: "0EC233C973DFD246"
+				item: "create:mechanical_plough"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"74F81A8C4757CD08"
+				"510B2EE25982FD73"
+			]
+			id: "3956BF6CE5009F66"
+			rewards: [{
+				id: "77FC11C2EB85F290"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			subtitle: "将空白蓝图放入蓝图桌以打印出可以放置结构虚影的蓝图"
+			tasks: [{
+				id: "46BB39AD997856F2"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"74F81A8C4757CD08"
+				"510B2EE25982FD73"
+			]
+			id: "651AE0D14323B352"
+			rewards: [{
+				id: "152ADFB165E5A2E2"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			subtitle: "类似投影的好东西"
+			tasks: [{
+				id: "680F40F6F113FD16"
+				item: "create:schematic_table"
+				type: "item"
+			}]
+			title: "把蓝图写入游戏中！"
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"651AE0D14323B352"
+				"3956BF6CE5009F66"
+			]
+			description: ["蓝图大炮左上角放入火药（一个火药大概能打几百个方块别放多了），右上角可以放入书或者剪贴板（可以统计需要的材料），将蓝图结构放置完成后放入蓝图大炮左侧就可以准备打印结构了，紧贴蓝图大炮摆放容器并放置所需材料，调整蓝图大炮设置后即可点击△开始打印&4（注意：蓝图大炮打印流体储罐，保险库以及蓄电池会有问题，需要打印完后拆掉一个角后重新放置）"]
+			id: "68C809838E2F09A8"
+			rewards: [{
+				count: 32
+				id: "538F7DDFB245FD6A"
+				item: "minecraft:gunpowder"
+				type: "item"
+			}]
+			subtitle: "如标题所示，这就是机械动力的神，浪漫而又实用"
+			tasks: [{
+				id: "562475D62C420631"
+				item: "create:schematicannon"
+				type: "item"
+			}]
+			title: "论机械动力为什么能称之为神"
+			x: -4.5d
 			y: 0.0d
 		}
 	]
