@@ -1,0 +1,12 @@
+
+[radiation]
+	#Chance per tick (can be between 0 and 1) that living entities are irradiated by radiation created by the Create: New Age mod.
+	#Range: 0.0 ~ 1.0
+	new_age_base_radiation_chance = 0.0625
+	#Chance per tick (can be between 0 and 1) that a living entity's irradiated status worsens from prolonged exposure to radiation created by the Create: New Age mod.
+	#Range: 0.0 ~ 1.0
+	new_age_radiation_worsening_chance = 0.015625
+	#Max severity of irradiated effect (0 is Irradiated, 3 is Irradiated IV) that can be inflicted byradiation from the Create: New Age mod.
+	#Range: 0 ~ 3
+	new_age_max_radiation_amplifier = 2
+

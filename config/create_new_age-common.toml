@@ -1,0 +1,96 @@
+#Responsible for how much energy is generated per 1 stress unit in a tick
+#Default value is supposed to be compatible with default configuration of Create: Crafts and Additions
+#Range: 0.0 ~ 1.7976931348623157E308
+suToEnergy = 0.029296875
+#How many coils can the carbon brushes collect energy from
+#Range: > 0
+maxCoils = 8
+#How many reactor rods can a fuel inserter or a heat vent have in a single direction
+#Range: > 0
+maxRodsInDirection = 32
+#Multiplier of wire conductivity
+#Range: 0.0 ~ 1.7976931348623157E308
+conductivityMultiplier = 1.0
+#Maximum depth of network pathfinding
+#Range: > 1
+maxPathfindingDepth = 32
+#Multiplier of energising speed
+#Range: 0.0 ~ 1.7976931348623157E308
+energiserSpeedMultiplier = 1.0
+#Multiplier for the temperature at which components overheat. Set to -1 to disable overheating.
+#Range: -1.0 ~ 1.7976931348623157E308
+overheatingMultiplier = 1.0
+#Multiplier for how much heat pipes obtain from passive heat sources like Lava or even Boilers.
+#Range: 0.0 ~ 1.7976931348623157E308
+passiveHeatSourceMultiplier = 1.0
+#How much heat do pipes loose per second.
+#Range: 0.0 ~ 1.7976931348623157E308
+passivePipeHeatLoss = 1.0
+#Multiplier for how much heat a boiler needs.
+#Range: 0.0 ~ 1.7976931348623157E308
+boilerRequiredHeatMultiplier = 1.0
+#How much heat per tick a nuclear reactor rod generate.
+#Range: 0.0 ~ 1.7976931348623157E308
+ReactorRodHeat = 30.0
+#How much heat per tick a nuclear reactor rod looses above the 16000*overheatingMultiplier.
+#Range: 0.0 ~ 1.7976931348623157E308
+ReactorRodHeatLoss = 25.0
+#Multiplier for how much heat solar panels output.
+#Range: 0.0 ~ 1.7976931348623157E308
+solarPanelHeatMultiplier = 1.0
+#Maximum wire length
+#Range: > 1
+maxWireLength = 16
+
+[Motors]
+	#Maximum motor SU multiplier
+	#Range: 0.0 ~ 1.7976931348623157E308
+	motorSuMultiplier = 1.0
+	#Internal energy capacity of a basic motor
+	#Range: > 1
+	basicMotorCapacity = 16000
+	#Internal energy capacity of an advanced motor
+	#Range: > 1
+	advancedMotorCapacity = 64000
+	#Internal energy capacity of a reinforced motor
+	#Range: > 1
+	reinforcedMotorCapacity = 128000
+	#Top Speed of a basic motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	basicMotorSpeed = 128.0
+	#Top Speed of an advanced motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	advancedMotorSpeed = 256.0
+	#Top Speed of a reinforced motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	reinforcedMotorSpeed = 256.0
+	#Generated SU of a basic motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	basicMotorStress = 512.0
+	#Generated SU of an advanced motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	advancedMotorStress = 2048.0
+	#Generated SU of a reinforced motor
+	#Range: 1.0 ~ 1.7976931348623157E308
+	reinforcedMotorStress = 8192.0
+
+["Motor Extensions"]
+	#Power Multiplier of a basic motor extension
+	#Range: 1.0 ~ 1.7976931348623157E308
+	basicMotorExtensionMultiplier = 2.0
+	#Power Multiplier of a basic motor extension
+	#Range: 1.0 ~ 1.7976931348623157E308
+	advancedMotorExtensionMultiplier = 8.0
+	#Extra energy capacity of a basic motor extension
+	#Range: > 1
+	basicMotorExtensionExtraCapacity = 64000
+	#Extra energy capacity of an advanced motor extension
+	#Range: > 1
+	advancedMotorExtensionExtraCapacity = 256000
+	#Basic motor extension scroll step
+	#Range: > 1
+	basicMotorExtensionScrollStep = 1
+	#Advanced motor extension scroll step
+	#Range: > 1
+	advancedMotorExtensionScrollStep = 8
+
