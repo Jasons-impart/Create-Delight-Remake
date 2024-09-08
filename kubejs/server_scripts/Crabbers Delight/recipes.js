@@ -9,6 +9,7 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({ id: "crabbersdelight:squid_kebob" }, "crabbersdelight:cooked_squid_tentacles", "culturaldelights:cooked_calamari")
     package_item(e, "culturaldelights:squid", "crabbersdelight:squid_barrel", 9)
+    package_item(e, "culturaldelights:glow_squid", "crabbersdelight:glow_squid_barrel", 9)
     cutting(e, 'crabbersdelight:clam', [
         ['crabbersdelight:clam'],
         ['crabbersdelight:pearl', 5, 0.5]
