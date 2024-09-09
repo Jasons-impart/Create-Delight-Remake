@@ -18,10 +18,6 @@ ServerEvents.recipes(e => {
         'alexscaves:galena'
     ).id("alexscaves:crushing/galena")
 
-    crushing_ore(e, 'alexscaves:galena_iron_ore', 'create:crushed_raw_iron', 3, 'alexscaves:galena')
-    crushing_ore(e, 'alexscaves:guanostone_redstone_ore', 'minecraft:redstone', 12, 'alexscaves:guanostone')
-    crushing_ore(e, 'alexscaves:coprolith_coal_ore', 'minecraft:coal', 2, 'alexscaves:coprolith')
-
     //硫磺晶芽注入酸液生长
     e.recipes.create.filling(
         'alexscaves:sulfur_bud_medium',
@@ -41,6 +37,7 @@ ServerEvents.recipes(e => {
     
 
     //酸液再生（？）
+    remove_recipes_id(e, ["create_oppenheimered:mixing/sulfuric_acid"])
     e.recipes.create.mixing(
         Fluid.of('alexscaves:acid').withAmount(1000),
         ['2x alexscaves:acidic_radrock',
@@ -53,6 +50,6 @@ ServerEvents.recipes(e => {
         '4x alexscaves:acidic_radrock',
         ['4x alexscaves:radrock',
         Fluid.of('alexscaves:acid').withAmount(1000)]
-    ).heated()
+    )
     .id("alexscaves:compacting/acidic_radrock")
 })

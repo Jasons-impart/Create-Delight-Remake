@@ -349,7 +349,6 @@
 				"63270DD652001F56"
 				"0BA848A4275438F0"
 				"180CDA283387C562"
-				"2AB7E9D1015C8BC9"
 			]
 			description: [
 				"这些东西可以制作一个采石场。"
@@ -390,9 +389,8 @@
 		}
 		{
 			dependencies: [
-				"2F7BA8CDC979CD77"
-				"4B748035C627E9DF"
-				"2AB7E9D1015C8BC9"
+				"63B9D34596BDC195"
+				"0863DD67AB513786"
 			]
 			description: ["将其放于副手便可延展磁性工具的范围（铁，下界合金）。"]
 			id: "55819F6D302C7D1B"
@@ -409,14 +407,10 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: -9.0d
+			y: -11.5d
 		}
 		{
-			dependencies: [
-				"180CDA283387C562"
-				"4B748035C627E9DF"
-				"2AB7E9D1015C8BC9"
-			]
+			dependencies: ["63B9D34596BDC195"]
 			description: [
 				"使用全息编码器右键生物即可将其记录下来。然后你就可以将记录下来的生物投影到全息投影仪上。"
 				"对全息投影仪使用未记录生物的全息编码器会显示你自己的投影。"
@@ -435,13 +429,10 @@
 				}
 			]
 			x: 0.5d
-			y: -9.0d
+			y: -11.5d
 		}
 		{
-			dependencies: [
-				"0BA848A4275438F0"
-				"2AB7E9D1015C8BC9"
-			]
+			dependencies: ["0BA848A4275438F0"]
 			description: ["有两种模式：吸引和推开。按住shift使用时会切换模式。"]
 			id: "39B8696FAAEB50BA"
 			subtitle: "超帅的"
@@ -508,10 +499,7 @@
 			y: -6.0d
 		}
 		{
-			dependencies: [
-				"213DFC6488B2353F"
-				"3BE270D8A022837C"
-			]
+			dependencies: ["213DFC6488B2353F"]
 			description: ["使用三叶虾尾驯服"]
 			id: "0810870D4AB8119B"
 			subtitle: "起飞！"
@@ -563,10 +551,7 @@
 			y: -7.0d
 		}
 		{
-			dependencies: [
-				"213DFC6488B2353F"
-				"6D0FF3BCEF468F9D"
-			]
+			dependencies: ["213DFC6488B2353F"]
 			id: "4B622235EB9AF2FB"
 			tasks: [{
 				advancement: "alexscaves:alexscaves/breed_grottoceratops"
@@ -752,10 +737,7 @@
 			y: -15.0d
 		}
 		{
-			dependencies: [
-				"213DFC6488B2353F"
-				"228FE18F730715FB"
-			]
+			dependencies: ["213DFC6488B2353F"]
 			description: ["擎天龙只在打败暝煌龙后才会生成，喂食幽静沙拉便可驯服。"]
 			id: "08B98ADBC9E8E98A"
 			tasks: [{
@@ -859,11 +841,7 @@
 			y: -2.5d
 		}
 		{
-			dependencies: [
-				"1A125620D20AA83A"
-				"6DDBC842026AFB5A"
-				"2044C5BB33F06FA5"
-			]
+			dependencies: ["2044C5BB33F06FA5"]
 			id: "4E5901E23371125F"
 			subtitle: "也许会是重要的材料？"
 			tasks: [{
@@ -1704,12 +1682,7 @@
 			y: 9.0d
 		}
 		{
-			dependencies: [
-				"62AAC8E3FF04DBCB"
-				"53B23DEA2010C340"
-				"4052B2F475F32D1E"
-				"1540FB610B537CD2"
-			]
+			dependencies: ["4052B2F475F32D1E"]
 			id: "42495DB28C41EEBD"
 			subtitle: "使用核爆孵化，使用废料桶驯服，使用核弹繁殖"
 			tasks: [{
@@ -1843,7 +1816,7 @@
 			y: -7.0d
 		}
 		{
-			dependencies: ["4B748035C627E9DF"]
+			dependencies: ["63B9D34596BDC195"]
 			description: [
 				"放置后随机向外发射电流，并对击中的生物造成伤害，被击中的苦力怕和村民会变成闪电苦力怕和女巫。"
 				"挖掘后会发生爆炸！"
@@ -1856,7 +1829,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: -9.0d
+			y: -11.5d
 		}
 		{
 			dependencies: ["3241203B8302534F"]
@@ -1874,6 +1847,37 @@
 			title: "硫的再生"
 			x: 1.5d
 			y: 9.0d
+		}
+		{
+			id: "63B9D34596BDC195"
+			tasks: [{
+				id: "556E70CEB823C195"
+				item: "alexscaves:telecore"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -9.0d
+		}
+		{
+			dependencies: ["2F7BA8CDC979CD77"]
+			id: "0863DD67AB513786"
+			tasks: [{
+				id: "11BD04DFF15D93E5"
+				item: "alexscaves:ferrouslime_ball"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -9.0d
+		}
+		{
+			id: "6094BC1C1C95494A"
+			tasks: [{
+				id: "68F4D796B592F78D"
+				item: "alexscaves:notor_gizmo"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -9.0d
 		}
 	]
 	title: "神奇洞穴"
