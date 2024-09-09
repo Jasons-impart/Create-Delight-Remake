@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:overworld_caves",
+    "generator": {
+        "type": "minecraft:noise",
+        "settings": "minecraft:caves",
+        "biome_source": {
+            "type": "minecraft:fixed",
+            "biome": "alexscaves:primordial_caves"
+        }
+    }
+}
