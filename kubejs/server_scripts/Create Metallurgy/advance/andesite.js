@@ -36,4 +36,5 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_zinc", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
+    package_item(e, 'createdelight:andesite_alloy_nugget', 'create:andesite_alloy', 9)
 })

@@ -816,16 +816,6 @@
 			x: 4.5d
 			y: 1.0d
 		}
-		{
-			id: "559252851CF21211"
-			tasks: [{
-				id: "3D57CF00DC3FD415"
-				title: "1"
-				type: "checkmark"
-			}]
-			x: 2.5d
-			y: -6.0d
-		}
 	]
 	title: "&2初级工程师"
 }

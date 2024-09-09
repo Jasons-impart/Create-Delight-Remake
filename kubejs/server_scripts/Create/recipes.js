@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "create_connected:item_application/freezing_catalyst_from_empty"
+    ])
     // 黄铜机械手
     e.replaceInput({id: "create:crafting/kinetics/deployer"}, "create:electron_tube", "#forge:spring/between_500_2_1000")
     // 新增配方：玫瑰石英

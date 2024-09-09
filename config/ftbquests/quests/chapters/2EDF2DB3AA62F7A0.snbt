@@ -594,9 +594,18 @@
 		{
 			id: "7DED9A87C6CB80F0"
 			tasks: [{
-				id: "4A66033EA3963C85"
-				title: "芜湖起飞~！"
-				type: "checkmark"
+				icon: {
+					Count: 1
+					id: "minecraft:elytra"
+					tag: {
+						Damage: 0
+					}
+				}
+				id: "43BA1201DAA02500"
+				stat: "minecraft:fall_one_cm"
+				title: "起飞喽！"
+				type: "stat"
+				value: 4
 			}]
 			x: -2.0d
 			y: -3.0d

@@ -9,14 +9,6 @@
 	images: [
 		{
 			height: 5.0d
-			image: "everycomp:textures/block/wdst/byg/zelkova_ladder.png"
-			rotation: 0.0d
-			width: 5.0d
-			x: 0.0d
-			y: -10.0d
-		}
-		{
-			height: 5.0d
 			image: "farmersrespite:item/dandelion_tea"
 			rotation: 0.0d
 			width: 5.0d
@@ -94,6 +86,14 @@
 			width: 5.0d
 			x: -10.5d
 			y: -6.0d
+		}
+		{
+			height: 5.0d
+			image: "createdieselgenerators:block/distillation_tower/distillation_tank"
+			rotation: 0.0d
+			width: 5.0d
+			x: 0.0d
+			y: -10.0d
 		}
 	]
 	order_index: 0
@@ -684,7 +684,7 @@
 			}]
 			title: "欢迎来到机械动力"
 			x: 0.0d
-			y: -6.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]

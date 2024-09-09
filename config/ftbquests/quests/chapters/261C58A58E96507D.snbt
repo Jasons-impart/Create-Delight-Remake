@@ -14,6 +14,7 @@
 				"040CED5705ED7E24"
 			]
 			id: "0E515BE9EA2A0B2F"
+			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
 				id: "5FE59F26BC3E6AF3"
@@ -26,19 +27,18 @@
 		{
 			dependencies: ["467AE0EF8AF5ACAF"]
 			id: "16E85851D21CB6A3"
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
 				id: "611B7E2C375DC0F4"
 				item: "createbigcannons:cast_iron_ingot"
 				type: "item"
 			}]
 			x: 0.0d
-			y: -4.0d
+			y: -3.5d
 		}
 		{
-			dependencies: [
-				"16E85851D21CB6A3"
-				"4A3B20210954D458"
-			]
+			dependencies: ["16E85851D21CB6A3"]
 			id: "450B37F01A318678"
 			tasks: [
 				{
@@ -51,9 +51,14 @@
 					item: "createmetallurgy:foundry_lid"
 					type: "item"
 				}
+				{
+					id: "695BC7A033948DDF"
+					item: "createmetallurgy:refractory_mortar"
+					type: "item"
+				}
 			]
-			x: -2.0d
-			y: -4.0d
+			x: -1.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -63,8 +68,8 @@
 				item: "createmetallurgy:casting_basin"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -4.0d
+			x: 1.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -77,23 +82,13 @@
 					type: "item"
 				}
 				{
-					id: "5B774593FA768B3D"
-					item: "createmetallurgy:graphite_ingot_mold"
+					id: "5E3DE8CA20AF5075"
+					item: "createmetallurgy:graphite_blank_mold"
 					type: "item"
 				}
 			]
 			x: 0.0d
 			y: -2.0d
-		}
-		{
-			id: "4A3B20210954D458"
-			tasks: [{
-				id: "703B5C0A3E769BF1"
-				item: "createmetallurgy:refractory_mortar"
-				type: "item"
-			}]
-			x: -2.0d
-			y: -6.0d
 		}
 		{
 			dependencies: ["553925D5AA9E0050"]
@@ -103,8 +98,8 @@
 				item: "create:copper_casing"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -2.0d
+			x: -3.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7C5A003A5FC02605"]
@@ -114,7 +109,7 @@
 				item: "create:spout"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -2.0d
 			y: 0.0d
 		}
 		{
@@ -133,7 +128,7 @@
 				}
 			]
 			title: "流体运输"
-			x: -6.0d
+			x: -6.5d
 			y: 0.0d
 		}
 		{
@@ -144,8 +139,8 @@
 				item: "create:fluid_tank"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -4.0d
+			x: -5.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["7C5A003A5FC02605"]
@@ -155,18 +150,20 @@
 				item: "create:item_drain"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -4.0d
+			x: -3.5d
+			y: -1.5d
 		}
 		{
 			id: "553925D5AA9E0050"
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
 				id: "13C4F5EC8DB557A4"
 				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -2.0d
+			x: -5.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["271924B430C340EC"]
@@ -178,7 +175,7 @@
 				type: "advancement"
 			}]
 			x: 0.0d
-			y: -6.0d
+			y: -5.0d
 		}
 		{
 			id: "271924B430C340EC"
@@ -188,7 +185,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: -8.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["0E515BE9EA2A0B2F"]
@@ -210,7 +207,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["3BAC2E9A7359CF70"]
@@ -221,7 +218,7 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["3BAC2E9A7359CF70"]
@@ -232,7 +229,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["28B3247AF854504D"]
@@ -243,7 +240,7 @@
 				type: "item"
 			}]
 			x: -4.0d
-			y: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["3E3B411612B17907"]
@@ -253,7 +250,7 @@
 				item: "create:brass_hand"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: 2.0d
 		}
 		{
@@ -264,7 +261,7 @@
 				item: "create:deployer"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 3.0d
 			y: 2.0d
 		}
 		{
@@ -285,8 +282,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: 4.0d
+			x: 1.5d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -300,18 +297,20 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 4.5d
 			y: 2.0d
 		}
 		{
 			id: "7AC63AC5921DD7F0"
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
 				id: "1B9A8E459ADA60C9"
 				item: "createdelight:tin_ingot"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 0.0d
+			x: 4.5238095238095255d
+			y: 3.4880952380952337d
 		}
 		{
 			dependencies: ["13743FB52F43BE38"]
@@ -321,8 +320,8 @@
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 4.0d
+			x: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -335,8 +334,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 6.0d
+			x: 1.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3900087365D3C2B9"]
@@ -347,7 +346,7 @@
 				type: "item"
 			}]
 			x: -6.0d
-			y: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["728B14B91D127905"]
@@ -368,8 +367,8 @@
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 6.0d
+			x: 3.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -379,8 +378,8 @@
 				item: "create:rotation_speed_controller"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 6.0d
+			x: 4.5d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -394,17 +393,20 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			id: "6275BEBAC1FD7652"
 			tasks: [{
-				id: "27E33F8CD5290919"
-				item: "minecraft:obsidian"
-				type: "item"
+				advancement: "minecraft:story/form_obsidian"
+				criterion: ""
+				icon: "minecraft:obsidian"
+				id: "65B883CA56E0DF9D"
+				type: "advancement"
 			}]
+			title: "黑曜石"
 			x: -4.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["350B7F0F94C4A28A"]
@@ -449,7 +451,7 @@
 				item: "vintageimprovements:laser_item"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 6.0d
 			y: 2.0d
 		}
 		{
@@ -463,13 +465,14 @@
 				item: "vintageimprovements:laser"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 4.0d
+			x: 6.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["6731C7B5A0DADBAA"]
 			id: "424AE3AE68EED3C2"
-			size: 1.5d
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "0B1E8E58AA6E6FC2"
 				item: "createdelight:bronze_ingot"
@@ -484,7 +487,8 @@
 				"70EF06DF68816635"
 			]
 			id: "204FA8F11663B2DE"
-			size: 1.5d
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "68B82461560EB835"
 				item: "createaddition:electrum_ingot"
@@ -506,14 +510,15 @@
 		{
 			dependencies: ["6731C7B5A0DADBAA"]
 			id: "78F0F6D3D2A93E3F"
-			size: 1.5d
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "06A21BCAD3FC5EB2"
 				item: "createmetallurgy:steel_ingot"
 				type: "item"
 			}]
 			x: 0.0d
-			y: 16.0d
+			y: 15.75d
 		}
 		{
 			dependencies: [
@@ -774,16 +779,6 @@
 			}]
 			x: 4.0d
 			y: 12.0d
-		}
-		{
-			id: "707A88FD9B9D0377"
-			tasks: [{
-				id: "72F181D324C10D88"
-				item: "createaddition:electrum_wire"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 32.0d
 		}
 		{
 			dependencies: ["33AB8A9B5DBF7C19"]
@@ -1048,6 +1043,46 @@
 			}]
 			x: 4.0d
 			y: 10.0d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			id: "35B43C124186578F"
+			tasks: [{
+				id: "443AED8DD1F1757F"
+				item: "create_connected:empty_fan_catalyst"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["35B43C124186578F"]
+			hide: true
+			id: "7EBD14D46E6E2CF1"
+			tasks: [
+				{
+					id: "20EF1694803F00BE"
+					item: "create_connected:fan_blasting_catalyst"
+					type: "item"
+				}
+				{
+					id: "5BCCAEC3AB03E2ED"
+					item: "create_connected:fan_smoking_catalyst"
+					type: "item"
+				}
+				{
+					id: "5019DCAFCD20D09C"
+					item: "create_connected:fan_splashing_catalyst"
+					type: "item"
+				}
+				{
+					id: "113246D46AE07AC6"
+					item: "create_connected:fan_haunting_catalyst"
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: 0.0d
 		}
 	]
 	title: "&3进阶研修班！"
