@@ -22,11 +22,4 @@ ServerEvents.recipes(e => {
         "superheated",
         50
     ).id("createmetallurgy:melting/steel_nugget_2")
-    e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_steel", 90),
-        [
-            Fluid.of("createmetallurgy:molten_iron", 90),
-            "createmetallurgy:coke"
-        ], 250, "superheated"
-    ).id("createmetallurgy:mixing/molten_steel")
 })

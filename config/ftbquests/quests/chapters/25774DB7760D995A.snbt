@@ -1,4 +1,5 @@
 {
+	always_invisible: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "25774DB7760D995A"
@@ -36,24 +37,6 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["094CBEB74FD20505"]
-			id: "2118D08C7336D2EF"
-			rewards: [{
-				id: "25CBCD97785CE08C"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "用于储存流体，破坏后流体不会消失"
-			tasks: [{
-				id: "11304A163405FA2E"
-				item: "createdieselgenerators:canister"
-				type: "item"
-			}]
-			title: "把它密封起来喵"
-			x: -3.5d
-			y: -5.5d
-		}
-		{
 			id: "4820027AB4E2F1AA"
 			rewards: [{
 				id: "74AF858EB2817D4C"
@@ -87,24 +70,6 @@
 			title: "蒸馏！启动！"
 			x: -1.5d
 			y: -2.5d
-		}
-		{
-			dependencies: ["2118D08C7336D2EF"]
-			id: "2A5E9A398DD2EB3D"
-			rewards: [{
-				id: "23D46BC9C1FFB2C8"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "可以横向放置并可以染色的储罐，可防止燃料爆炸！"
-			tasks: [{
-				id: "5D0A31B3D6998592"
-				item: "createdieselgenerators:oil_barrel"
-				type: "item"
-			}]
-			title: "避免爆炸！"
-			x: -1.5d
-			y: -5.5d
 		}
 		{
 			dependencies: [
