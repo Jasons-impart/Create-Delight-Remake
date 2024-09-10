@@ -1,0 +1,3 @@
+WorldgenEvents.remove(e => {
+    
+})
