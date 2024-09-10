@@ -1,14 +1,10 @@
 let tooltips = [
-    ["cgm:workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["vinery:cherry_boat", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["vinery:cherry_chest_boat", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["vinery:grapevine_stem", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["nethervinery:obsidian_stem", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["ad_astra:nasa_workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
-    ["alloyed:steel_ingot", "§6可以在有工作盆铸造盖的工作盆里采用超级加热合成熔融钢!!", "§6Super heated synthetic molten steel can be used in a working basin with a working basin casting lid!!"],
-    ["brewinandchewin:keg", "§e周围放置营火以增加温度,放置冰块以降低温度", "§ePlace a campfire around to increase the temperature and ice cubes to lower the temperature"],
     ["createdieselgenerators:oil_barrel", "§6可以防止燃料爆炸", "§6Can prevent fuel explosion"],
-    ["createdelight:raw_steel_ingot", "§6注入岩浆后锤炼进行纯化", "§6Inject magma and press it for purification"],
     ["ratatouille:frozen_block", "§b可冷却周围一格以内的物品", "§bCools down items within one block of the area"],
     ["createdieselgenerators:distillation_controller", "§a每个储罐都需要一个", "§aOne is needed for each tank"],
     ["farmersdelight:ham", "§4目前只能通过用刀杀死疣猪兽来获得,或人工制作一个", "§4Currently it can only be obtained by killing a hoglin with a knife, or crafting one"],
@@ -18,7 +14,10 @@ let tooltips = [
     ["culturaldelights:pickle", "§9滋养（00::30）", "§9Nourishment(00:30)"],
     ["culturaldelights:cut_pickle", "§9滋养（00::15）", "§9Nourishment(00:15)"],
     ["createdelight:sigma_man_sword", "§o西格玛男人专用", "§oFor sigma men only"],
-    ["lightmanscurrency:coinmint", "§l§4已停用!!", "§l§4STOP USING NOW!!"]
+    ["lightmanscurrency:coinmint", "§l§4已停用!!", "§l§4STOP USING NOW!!"],
+    ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su\n"],
+    ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su\n"],
+    ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su\n"],
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

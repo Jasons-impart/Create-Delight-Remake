@@ -9,7 +9,10 @@ ServerEvents.recipes(e => {
         "createaddition:rolling/brass_ingot",
         "createaddition:crafting/accumulator_conversion",
         "createaddition:crafting/large_connector_gold",
-        "createaddition:crafting/modular_accumulator_gold"
+        "createaddition:crafting/modular_accumulator_gold",
+        "createaddition:compacting/biomass_pellet",
+        "createaddition:crafting/biomass_pellet",
+        "createaddition:crafting/biomass_pellet_block"
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"

@@ -1,5 +1,9 @@
 ServerEvents.recipes(e => {
     // 移除配方：ad_astra
+    remove_recipes_type(e, [
+        "ad_astra:refining",
+        "ad_astra:cryo_freezing"
+    ])
     remove_recipes_output(e, [
         "ad_astra:compressor",
         "ad_astra:coal_generator",
@@ -25,7 +29,9 @@ ServerEvents.recipes(e => {
         "ad_astra:recipes/ostrum_tank",
         "ad_astra:recipes/ostrum_engine",
         "ad_astra:recipes/calorite_tank",
-        "ad_astra:recipes/calorite_engine"
+        "ad_astra:recipes/calorite_engine",
+        "ad_astra:fuel_refinery",
+        "ad_astra:cryo_freezer"
     ])
 
     // 新增配方：霜原木
@@ -70,7 +76,7 @@ ServerEvents.recipes(e => {
     ], {
         A: "#forge:rods/iron",
         B: "create:precision_mechanism"
-    }).id("ad_astra:recipes/engine_frame")
+    }).id("ad_astra:engine_frame")
     //替换配方：引擎风扇
     e.shaped("ad_astra:fan", [
         " A ",
@@ -84,24 +90,13 @@ ServerEvents.recipes(e => {
     e.shaped("ad_astra:energizer", [
         "ABA",
         "ACA",
-        "DAD"
+        "ADA"
     ], {
         A: "ad_astra:ostrum_plate",
         B: "create:depot",
-        C: "createaddition:tesla_coil",
+        C: 'ad_astra:etrionic_capacitor',
         D: "createaddition:modular_accumulator"
-    }).id("ad_astra:recipes/energizer")
-    //替换配方：凛冰冻结装置
-    e.shaped("ad_astra:cryo_freezer", [
-        "ABA",
-        "BCB",
-        "DBD"
-    ], {
-        A: "ad_astra:engine_fan",
-        B: "ad_astra:ostrum_ingot",
-        C: "ad_astra:ostrum_tank",
-        D: "createaddition:modular_accumulator"
-    }).id("ad_astra:recipes/cryo_freezer")
+    }).id("ad_astra:energizer")
     //替换配方：氧气装载机
     e.shaped("ad_astra:oxygen_loader", [
         "ABA",
@@ -109,43 +104,11 @@ ServerEvents.recipes(e => {
         "AEA"
     ], {
         A: "#forge:plates/steel",
-        B: "ad_astra:engine_fan",
-        C: "ad_astra:oxygen_tank",
+        B: "ad_astra:fan",
+        C: "ad_astra:gas_tank",
         D: "minecraft:lightning_rod",
         E: "createaddition:modular_accumulator"
-    }).id("ad_astra:recipes/oxygen_loader")
-    //替换配方：燃油精炼机
-    e.shaped("ad_astra:fuel_refinery", [
-        "AAA",
-        "BCB",
-        "AAA"
-    ], {
-        A: "#forge:plates/steel",
-        B: "create:fluid_tank",
-        C: "minecraft:furnace"
-    }).id("ad_astra:recipes/fuel_refinery")
-    //替换配方：紫金引擎
-    e.shaped("ad_astra:ostrum_engine", [
-        "ABA",
-        " C ",
-        " D "
-    ], {
-        A: "ad_astra:ostrum_plate",
-        B: "ulterlands:etherite",
-        C: "ad_astra:engine_frame",
-        D: "ad_astra:engine_fan"
-    }).id("ad_astra:recipes/ostrum_engine")
-    //替换配方：耐热金属引擎
-    e.shaped("ad_astra:calorite_engine", [
-        "ABA",
-        " C ",
-        " D "
-    ], {
-        A: "ad_astra:calorite_plate",
-        B: "ulterlands:etherite",
-        C: "ad_astra:engine_frame",
-        D: "ad_astra:engine_fan"
-    }).id("ad_astra:recipes/calorite_engine")
+    }).id("ad_astra:oxygen_loader")
     // 混合燃料
     e.recipes.create.mixing(
         Fluid.of("createdelight:fuel_mixtures", 10),

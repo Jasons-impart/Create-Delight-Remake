@@ -171,6 +171,7 @@
 			dependencies: ["271924B430C340EC"]
 			id: "467AE0EF8AF5ACAF"
 			size: 2.0d
+			subtitle: "烈焰人目前可以直接通入液体燃料"
 			tasks: [{
 				advancement: "create:burner"
 				criterion: ""
@@ -224,7 +225,7 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 4.5d
 			y: -2.5d
 		}
 		{
@@ -368,7 +369,7 @@
 				type: "advancement"
 			}]
 			title: "黑曜石"
-			x: 4.0d
+			x: 3.5d
 			y: -2.5d
 		}
 		{
@@ -382,11 +383,14 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -1.5d
+			x: 4.0d
+			y: -1.0d
 		}
 		{
-			dependencies: ["0D90EC410B3E7FA5"]
+			dependencies: [
+				"0D90EC410B3E7FA5"
+				"1F3A98530C9F85C2"
+			]
 			id: "2C4BC15C42ABB286"
 			tasks: [{
 				id: "1A856CCD3A3F0B79"
@@ -1038,6 +1042,7 @@
 			id: "00A97860884CEAE7"
 			shape: "square"
 			size: 1.5d
+			subtitle: "&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"
 			tasks: [{
 				icon: "createdieselgenerators:crude_oil_bucket"
 				id: "6E405560D7B227FF"
@@ -1130,6 +1135,28 @@
 			title: "避免爆炸！"
 			x: 3.0d
 			y: 11.0d
+		}
+		{
+			dependencies: ["4D81970F11C86A8C"]
+			id: "1F3A98530C9F85C2"
+			tasks: [{
+				id: "32917A058B6842AB"
+				item: "createmetallurgy:tungsten_sheet"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			id: "4D81970F11C86A8C"
+			subtitle: "常见于地狱30-36层"
+			tasks: [{
+				id: "09945E5BB0FB4DEB"
+				item: "createmetallurgy:wolframite_ore"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -2.5d
 		}
 	]
 	title: "&3进阶研修班！"
