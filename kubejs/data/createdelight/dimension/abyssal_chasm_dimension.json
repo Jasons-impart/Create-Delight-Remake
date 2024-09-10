@@ -1,11 +1,58 @@
 {
-    "type": "minecraft:overworld_caves",
+    "type": "minecraft:overworld",
     "generator": {
-        "type": "minecraft:noise",
-        "settings": "minecraft:caves",
-        "biome_source": {
-            "type": "minecraft:fixed",
-            "biome": "alexscaves:abyssal_chasm"
-        }
+      "type": "minecraft:noise",
+      "settings": "createdelight:abyssal_chasm_dimension",
+      "biome_source": {
+        "type": "minecraft:multi_noise",
+        "biomes": [
+          {
+            "biome": "minecraft:ocean",
+            "parameters": {
+              "temperature": [
+                -0.2,
+                0.5
+              ],
+              "humidity": 0,
+              "continentalness": 0,
+              "erosion": 0,
+              "weirdness": 0,
+              "depth": 0,
+              "offset": 0
+            }
+          },
+          {
+            "biome": "alexscaves:abyssal_chasm",
+            "parameters": {
+              "temperature": [
+                -0.7,
+                0.3
+              ],
+              "humidity": 0,
+              "continentalness": 0,
+              "erosion": 0,
+              "weirdness": 0,
+              "depth": 0,
+              "offset": 0
+            }
+          },
+          {
+            "biome": "minecraft:deep_ocean",
+            "parameters": {
+              "temperature": [
+                -0.2,
+                0.5
+              ],
+              "humidity": 0,
+              "continentalness": -0.5,
+              "erosion": 0,
+              "weirdness": 0,
+              "depth": 0,
+              "offset": 0
+            }
+          }
+        ]
+      }
     }
-}
+  }
+  

@@ -1,8 +1,8 @@
 {
-    "type": "minecraft:overworld_caves",
+    "type": "createdelight:alexscaves_dimension",
     "generator": {
         "type": "minecraft:noise",
-        "settings": "minecraft:caves",
+        "settings": "minecraft:overworld",
         "biome_source": {
             "type": "minecraft:fixed",
             "biome": "alexscaves:primordial_caves"
