@@ -259,16 +259,16 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.raw_empanada")
         .food(food => {
-            food.hunger(2)
-                .saturation(1)
+            food.hunger(4)
+                .saturation(0.25)
         })
     // 生暴辣疣猪兽排
     e.create("createdelight:raw_hoglin_chop")
         .maxStackSize(64)
         .translationKey("item.createdelight.raw_hoglin_chop")
         .food(food => {
-            food.hunger(2)
-                .saturation(1)
+            food.hunger(10)
+                .saturation(0.8)
                 .effect("mynethersdelight:b_pungent", 1200, 1, 1.0)
         })
     // 生奶酪披萨
@@ -280,8 +280,8 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.oat_bread")
         .food(food => {
-            food.hunger(2)
-                .saturation(1)
+            food.hunger(5)
+                .saturation(0.5)
                 .effect("minecraft:regeneration", 60, 1, 1.0)
         })
     // 玉米粉
