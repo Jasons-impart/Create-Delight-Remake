@@ -29,3 +29,7 @@ ServerEvents.tags("item", e => {
         'aether:gravitite_hoe']
     )
 })
+
+ServerEvents.tags("worldgen/biome", e => {
+    e.remove("minecraft:is_deep_ocean", "alexscaves:abyssal_chasm");
+})
