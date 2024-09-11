@@ -12,6 +12,12 @@
 		{
 			icon: "create:andesite_alloy"
 			id: "510B2EE25982FD73"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "03A6C0382A35B62D"
+				table_id: 6730734086547045908L
+				type: "random"
+			}]
 			shape: "hexagon"
 			size: 3.0d
 			subtitle: "按住w可以进行俺寻思"
@@ -28,6 +34,12 @@
 		{
 			dependencies: ["510B2EE25982FD73"]
 			id: "246ECF63C436F7D8"
+			rewards: [{
+				count: 5
+				id: "12516F22E571C9A8"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "5395211DB2CE0109"
@@ -47,6 +59,12 @@
 		{
 			dependencies: ["45A853738625FCFD"]
 			id: "1AAB7454C767D9DB"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1D213AD8BB69E529"
+				table_id: 6730734086547045908L
+				type: "choice"
+			}]
 			shape: "gear"
 			subtitle: "传输应力！"
 			tasks: [
@@ -69,6 +87,11 @@
 			dependencies: ["28CB30AB88780BC7"]
 			hide: true
 			id: "183724705FA6D24C"
+			rewards: [{
+				id: "7CAFF2E087DBE011"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			subtitle: "每SU消耗数个牛排！"
 			tasks: [{
 				id: "0335E6DD3EF4025F"
@@ -84,6 +107,19 @@
 			hide: true
 			hide_dependent_lines: true
 			id: "1336C212F2B86468"
+			rewards: [
+				{
+					count: 4
+					id: "2193D3E438084DC8"
+					item: "create:water_wheel"
+					type: "item"
+				}
+				{
+					id: "3238E9A8F1C718D3"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "这里的风景真好看！(掉帧动力)"
 			tasks: [{
 				id: "421F40A9086EBCE3"
@@ -101,6 +137,19 @@
 			]
 			hide: true
 			id: "724FF9E032B4B134"
+			rewards: [
+				{
+					count: 4
+					id: "005541E2B38C3198"
+					item: "create:large_water_wheel"
+					type: "item"
+				}
+				{
+					id: "1FA27CD917B7951D"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "5A9DF64690DD5CCF"
 				item: "create:large_water_wheel"
@@ -113,6 +162,20 @@
 		{
 			dependencies: ["1AAB7454C767D9DB"]
 			id: "7029D6C489D44144"
+			rewards: [
+				{
+					id: "18145507F9554AC3"
+					item: "create:andesite_casing"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "7E060DF25A1F4CC8"
+					table_id: 6730734086547045908L
+					type: "choice"
+				}
+			]
 			tasks: [{
 				id: "3B6F668D8EA70651"
 				item: "create:andesite_casing"
@@ -126,6 +189,19 @@
 			dependencies: ["28CB30AB88780BC7"]
 			hide: true
 			id: "4D7BB97AA55ACE20"
+			rewards: [
+				{
+					count: 32
+					id: "02254124670AA448"
+					item: "create:white_sail"
+					type: "item"
+				}
+				{
+					id: "5B165FD45467BC49"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "56CDC20305BC3092"
 				item: "create:windmill_bearing"
@@ -137,6 +213,13 @@
 		{
 			dependencies: ["7029D6C489D44144"]
 			id: "621E3093612F5D2C"
+			rewards: [{
+				count: 5
+				id: "3522FDA3BF7C01DC"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "铿！铿！铿！"
 			tasks: [{
 				id: "14A8664EEEAA4C30"
 				item: "create:mechanical_press"
@@ -148,6 +231,12 @@
 		{
 			dependencies: ["7029D6C489D44144"]
 			id: "4150EBCDFDA45F9E"
+			rewards: [{
+				id: "795706D9D801F273"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "小麦粉，砂砾，燧石，甚至黏土，他都可以磨！"
 			tasks: [{
 				id: "4FFF43D793BA3250"
 				item: "create:millstone"
@@ -161,6 +250,7 @@
 			id: "6BCFF368CB1C1FA4"
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "它动起来了！它在搅拌！"
 			tasks: [{
 				id: "2BCAE2943EEF83E6"
 				item: "create:mechanical_mixer"
@@ -173,6 +263,12 @@
 			dependencies: ["1CED61E7F780F38C"]
 			hide: true
 			id: "372234CE950277CE"
+			rewards: [{
+				id: "35EB2DA3B772BB8F"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "这是什么？这是树厂之神！"
 			tasks: [{
 				id: "4E24FD5247219941"
 				item: "create:mechanical_saw"
@@ -185,6 +281,12 @@
 			dependencies: ["1CED61E7F780F38C"]
 			hide: true
 			id: "5C40F5E0F477394B"
+			rewards: [{
+				id: "07A9F6E2C93527CF"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "芜湖~自动种田啦"
 			tasks: [{
 				id: "2E03EF64834AAF0D"
 				item: "create:mechanical_harvester"
@@ -196,6 +298,12 @@
 		{
 			dependencies: ["7029D6C489D44144"]
 			id: "5BEAE8E8844A5DDB"
+			rewards: [{
+				id: "0EF95DDB0ED67A7A"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "方块破坏器！"
 			tasks: [{
 				id: "70E9CF7003DB798F"
 				item: "create:mechanical_drill"
@@ -208,6 +316,12 @@
 			dependencies: ["1CED61E7F780F38C"]
 			hide: true
 			id: "762CD49FCDC889E2"
+			rewards: [{
+				id: "6F32C73249450B34"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "粒子加工！"
 			tasks: [{
 				id: "73CC459904BCE0DA"
 				item: "create:encased_fan"
@@ -219,6 +333,12 @@
 		{
 			dependencies: ["510B2EE25982FD73"]
 			id: "52E82ABD2EA30418"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "45EC9F0DCA874EAF"
+				table_id: 6730734086547045908L
+				type: "random"
+			}]
 			shape: "square"
 			tasks: [{
 				icon: "create:contraption_controls"
@@ -234,6 +354,11 @@
 		{
 			dependencies: ["7029D6C489D44144"]
 			id: "02E1C25396B0F5EA"
+			rewards: [{
+				id: "3B73FD68CF8E9693"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "14E9814A24EFF05E"
@@ -254,6 +379,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "3ACA3A7FE20E59D2"
+			rewards: [{
+				id: "12EA67E196A1A5D4"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "54C1D5ED9BA355FE"
 				item: "create:mechanical_bearing"
@@ -266,6 +396,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "5EF1F883F44263FA"
+			rewards: [{
+				id: "47435421A7DC8956"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "0B2A23C227259611"
@@ -301,6 +436,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "47ABE0A581C1E40E"
+			rewards: [{
+				id: "00B9BCEC0A5BF89D"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "05D2FCCB23621758"
@@ -320,6 +460,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "21E81C4A8E9C95A0"
+			rewards: [{
+				id: "2BA0D31E66D169D2"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "7D3F670A3C8971C3"
@@ -355,6 +500,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "54FEEB508185B5C2"
+			rewards: [{
+				id: "5A2358CCCA90F26C"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "60754519928E4D4E"
@@ -374,6 +524,11 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "2E62FA558BE57A48"
+			rewards: [{
+				id: "7D0AF1C691647766"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3BB66EC5E84A07C4"
 				item: {
@@ -392,6 +547,12 @@
 			dependencies: ["52E82ABD2EA30418"]
 			hide: true
 			id: "0436BA03D9EB8AA8"
+			rewards: [{
+				count: 5
+				id: "733A27B9128C1D0B"
+				item: "createdelight:gold_coin"
+				type: "item"
+			}]
 			secret: true
 			shape: "rsquare"
 			size: 1.5d
@@ -409,6 +570,12 @@
 			dependencies: ["1CED61E7F780F38C"]
 			hide: true
 			id: "11A126AA8CC38620"
+			rewards: [{
+				id: "4D02F9F45E5388B1"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			subtitle: "快速破坏农业方块和锄地！"
 			tasks: [{
 				id: "0EC233C973DFD246"
 				item: "create:mechanical_plough"
@@ -503,6 +670,11 @@
 			]
 			hide: true
 			id: "61FEE1B1ACE8ABC8"
+			rewards: [{
+				id: "0FEE3BFF887C19B1"
+				item: "createdelight:gold_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 1.5d
 			tasks: [{
@@ -520,6 +692,12 @@
 				"1CED61E7F780F38C"
 			]
 			id: "4492593A688BA447"
+			rewards: [{
+				count: 5
+				id: "23B46FA0D3B75E25"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "378369DC01AD9012"
@@ -532,12 +710,19 @@
 					type: "item"
 				}
 			]
+			title: "制造弹簧"
 			x: 13.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["621E3093612F5D2C"]
 			id: "1CED61E7F780F38C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3538A2DC5F2DE82C"
+				table_id: 6730734086547045908L
+				type: "random"
+			}]
 			shape: "square"
 			tasks: [{
 				advancement: "create:mechanical_press"
@@ -553,6 +738,11 @@
 		{
 			dependencies: ["510B2EE25982FD73"]
 			id: "45A853738625FCFD"
+			rewards: [{
+				id: "1EF6223DE8B3C00D"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "36CEF17E06B64B00"
 				item: "create:shaft"
@@ -565,6 +755,12 @@
 			dependencies: ["4492593A688BA447"]
 			hide_dependent_lines: true
 			id: "610ED0789BAF7EFC"
+			rewards: [{
+				count: 5
+				id: "28B48B7DADC535C2"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2A5092B15035D856"
 				item: {
@@ -584,6 +780,11 @@
 		{
 			dependencies: ["4492593A688BA447"]
 			id: "3968AC36E0517F5B"
+			rewards: [{
+				id: "3A9404C2A34B7EA5"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7127D77D3E11B06A"
 				item: {
@@ -603,6 +804,11 @@
 		{
 			dependencies: ["4492593A688BA447"]
 			id: "4CC4E893A6950B0F"
+			rewards: [{
+				id: "4A13B8D9064AC979"
+				item: "createdelight:gold_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "04FEF23790AACD5F"
 				item: {
@@ -622,6 +828,12 @@
 		{
 			dependencies: ["1AAB7454C767D9DB"]
 			id: "1197EF9B84E242DE"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3557DCE3CBF7B061"
+				table_id: 6730734086547045908L
+				type: "choice"
+			}]
 			shape: "square"
 			tasks: [{
 				icon: "create_connected:six_way_gearbox"
@@ -639,6 +851,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "6DB08E176433BF12"
+			rewards: [{
+				id: "087B96C25EB63A50"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "70869FA732CC1295"
@@ -658,6 +875,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "1BABF924FE8F0225"
+			rewards: [{
+				id: "56F3D6012C926CB0"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "579832D192207787"
@@ -677,6 +899,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "175196C8D23715B3"
+			rewards: [{
+				id: "3E9FB9E96024F6B7"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "423D7090C1FD3F5E"
@@ -696,6 +923,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "6BF8E6F5FE6983F7"
+			rewards: [{
+				id: "021C79434EA9BDD3"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "081D88940979F741"
@@ -715,6 +947,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "65CDCB9357D9BB71"
+			rewards: [{
+				id: "73E6C7CEF8085B9F"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "64818D8DC9A24824"
@@ -739,6 +976,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "40C5A484EAF7283C"
+			rewards: [{
+				id: "4F0C2A98B6CAAAA7"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "51EA42D1B2F1672F"
@@ -758,6 +1000,11 @@
 			dependencies: ["1197EF9B84E242DE"]
 			hide: true
 			id: "5B1CD6F67D035B28"
+			rewards: [{
+				id: "1ED244CFBB901CF0"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "51D6C1566B34BFA7"
@@ -781,12 +1028,19 @@
 		{
 			dependencies: ["1AAB7454C767D9DB"]
 			id: "2BC23C199544A1DB"
-			rewards: [{
-				count: 10
-				id: "77C8D2938635C3B0"
-				item: "create:wooden_bracket"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 10
+					id: "77C8D2938635C3B0"
+					item: "create:wooden_bracket"
+					type: "item"
+				}
+				{
+					id: "02D61A153221A64F"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			secret: true
 			tasks: [{
 				id: "3F035147C47AFFC1"
@@ -800,12 +1054,19 @@
 		{
 			dependencies: ["1AAB7454C767D9DB"]
 			id: "2051934C4F660BB1"
-			rewards: [{
-				count: 10
-				id: "75AA12606FE7F1C0"
-				item: "create:metal_bracket"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 10
+					id: "75AA12606FE7F1C0"
+					item: "create:metal_bracket"
+					type: "item"
+				}
+				{
+					id: "50FD179D8EA81763"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			secret: true
 			tasks: [{
 				id: "65D9BE0883567089"
