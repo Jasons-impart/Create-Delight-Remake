@@ -13,9 +13,19 @@ ItemEvents.modification(e => {
         ['aetherdelight:festive_sweets',6,0.6],
         ['aether:enchanted_berry',3,1],
         ['aetherdelight:bowl_of_enchanted_berries',9,0.5],
-        ['casualness_delight:donkey_burger',6,0.75],
+        ['casualness_delight:cooked_donkey_meat',6,0.5],
+        ['casualness_delight:donkey_burger',10,0.6],
         ['casualness_delight:roast_gluten',7,0.8],
-        ['oceansdelight:bowl_of_guardian_soup',9,0.6]
+        ['oceansdelight:bowl_of_guardian_soup',9,0.6],
+        ['casualness_delight:roast_gluten',5,0.6],
+        ['casualness_delight:raw_fried_dumpling',9,0.5],
+        ['casualness_delight:fried_dumpling',10,1],
+        ['casualness_delight:phantom_dumplings',6,0.4],
+        ['casualness_delight:bowl_of_paper_wrapped_fish',6,1],
+        ['frycooks_delight:fried_potato',6,0.5],
+        ['oceansdelight:braised_sea_pickle',6,0.5],
+        ['vintagedelight:oatmeal',5,1],
+        ['casualness_delight:fish_and_chips',12,0.5]
     ]
     hungers.forEach(hunger => {
         e.modify(hunger[0], item => {
@@ -33,6 +43,7 @@ ItemEvents.modification(e => {
         ["mynethersdelight:ghast_dough", "minecraft:levitation", 120, 1, 1.0],
         ["culturaldelights:pickle", "farmersdelight:nourishment", 600, 1, 1.0],
         ["culturaldelights:cut_pickle", "farmersdelight:nourishment", 300, 1, 1],
+        ["casualness_delight:raw_fried_dumpling","minecraft:nausea", 600, 2, 1]
 
     ]
     effects.forEach(effect => {
