@@ -85,6 +85,9 @@
   "lootr": {
     "info": true
   },
+  "custommachinery": {
+    "machine_component_provider": true
+  },
   "ae2": {
     "part_icon": true,
     "charger": true,
@@ -96,11 +99,5 @@
     "power_storage": true,
     "crafting_monitor": true,
     "part_name": true
-  },
-  "storagedrawers": {
-    "display.stacklimit": true,
-    "main": true,
-    "display.content": true,
-    "display.status": true
   }
 }

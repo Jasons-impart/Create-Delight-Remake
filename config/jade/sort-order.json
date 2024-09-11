@@ -22,6 +22,8 @@
   "create:hide_boiler_tanks": null,
   "create:placard": null,
   "create_mechanical_spawner:spawner_data": null,
+  "custommachinery:machine_component_provider": null,
+  "custommachinery:machine_server_data_provider": null,
   "extrastorage:advanced_crafter": null,
   "extrastorage:crafter": null,
   "jade:block_face": null,
