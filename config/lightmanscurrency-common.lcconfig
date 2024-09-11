@@ -91,7 +91,7 @@ debugLevel=0
 		
 		#The default coin to replace a trades emeralds with.
 		#May seperate and define villager type specific entries by adding multiple items seperated by '-' with region
-		defaultEmeraldReplacementItem="createdelight:iron_coin"
+		defaultEmeraldReplacementItem="createdelight:copper_coin"
 		
 		#List of replacement coin overrides.
 		#Each entry must be formatted as follows: "mod:some_profession_type-SUB_ENTRY-SUB_ENTRY-..."

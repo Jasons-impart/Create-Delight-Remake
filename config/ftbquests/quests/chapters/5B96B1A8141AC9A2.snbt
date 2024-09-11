@@ -1679,19 +1679,6 @@
 		}
 		{
 			dependencies: ["17CB252D70813275"]
-			id: "50DE8314E2D59DD7"
-			rewards: [{
-				id: "5E643BBF54178F4B"
-				item: "quark:raw_copper_bricks"
-				type: "item"
-			}]
-			subtitle: "&4 柴油引擎&r的基础材料！"
-			title: "这是！&e青铜&r！"
-			x: -1.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["17CB252D70813275"]
 			id: "797FFC958859123B"
 			tasks: [{
 				id: "2915070F308F67A0"

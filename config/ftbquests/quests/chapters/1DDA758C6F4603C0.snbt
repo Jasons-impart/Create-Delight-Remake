@@ -15,7 +15,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["6B28062ECC1DE6AB"]
 			id: "2EF38D620B4E1664"
 			rewards: [
 				{
@@ -58,7 +57,6 @@
 			y: 11.0d
 		}
 		{
-			dependencies: ["6B28062ECC1DE6AB"]
 			id: "62BF6A18921A3A61"
 			rewards: [{
 				id: "1DE4768E440C9BC3"
@@ -160,10 +158,7 @@
 			y: 14.0d
 		}
 		{
-			dependencies: [
-				"2EF38D620B4E1664"
-				"630620B48B66A403"
-			]
+			dependencies: ["2EF38D620B4E1664"]
 			hide_dependency_lines: true
 			id: "4A79D97050F1297F"
 			rewards: [{
@@ -354,10 +349,7 @@
 			y: 9.5d
 		}
 		{
-			dependencies: [
-				"090D6C3F666BE947"
-				"630620B48B66A403"
-			]
+			dependencies: ["090D6C3F666BE947"]
 			id: "076611C66B1FEC72"
 			rewards: [{
 				id: "579C39F0F5831128"
@@ -475,10 +467,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"1AEB5413EB70CBCC"
-				"630620B48B66A403"
-			]
+			dependencies: ["1AEB5413EB70CBCC"]
 			id: "347BD4930DE7C347"
 			rewards: [{
 				id: "6CDE7D070A6CCD6F"
@@ -1273,7 +1262,6 @@
 			dependencies: [
 				"1A0996B135058CA3"
 				"06DA33866E1148A0"
-				"12DDF4479286DA28"
 			]
 			id: "37516EEF263B0004"
 			rewards: [
@@ -1443,11 +1431,7 @@
 			y: 11.0d
 		}
 		{
-			dependencies: [
-				"17323F34E01C4313"
-				"1AB992034B618D32"
-				"630620B48B66A403"
-			]
+			dependencies: ["1AB992034B618D32"]
 			dependency_requirement: "one_completed"
 			id: "1FADE23D87FAC9B1"
 			invisible_until_tasks: 2
