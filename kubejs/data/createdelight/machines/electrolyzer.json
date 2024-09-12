@@ -1,0 +1,145 @@
+{
+    "name": "block.createdelight.electrolyzer",
+    "appearance": {
+        "resistance": 12,
+        "idle": {
+            "block": "createdelight:machine/electrolyzer/off"
+        },
+        "running": {
+            "block": "createdelight:machine/electrolyzer/on",
+            "lightlevel": 15
+        },
+        "errored": {
+            "block": "createdelight:machine/electrolyzer/off"
+        },
+        "paused": {
+            "block": "createdelight:machine/electrolyzer/off"
+        }
+    },
+    "components": [
+        {
+            "type": "custommachinery:fluid",
+            "capacity": 4000,
+            "id": "fluidOutput2",
+            "maxInput": 0,
+            "maxOutput": 1000,
+            "mode": "both"
+        },
+        {
+            "type": "custommachinery:fluid",
+            "capacity": 4000,
+            "id": "fluidOutput1",
+            "maxInput": 0,
+            "maxOutput": 1000,
+            "mode": "both"
+        },
+        {
+            "type": "custommachinery:fluid",
+            "capacity": 4000,
+            "id": "fluidInput",
+            "maxInput": 1000,
+            "maxOutput": 1000,
+            "mode": "input"
+        },
+        {
+            "type": "custommachinery:energy",
+            "capacity": 1000000,
+            "maxInput": 10000,
+            "maxOutput": 10000,
+            "mode": "input",
+            "id": "fe",
+            "config": {
+                "input": true,
+                "output": false
+            }
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "input",
+            "mode": "input",
+            "variant": "custommachinery:energy",
+            "locked":false
+        },
+        {
+            "type": "custommachinery:item",
+            "id": "output",
+            "mode": "output",
+            "variant": "custommachinery:energy",
+            "locked":false
+        }
+    ],
+    "gui": [
+        {
+            "type": "custommachinery:texture",
+            "x": 0,
+            "y": 0,
+            "texture": "custommachinery:textures/gui/base_background.png",
+            "width": 205,
+            "height": 175
+        },
+        {
+            "type": "custommachinery:energy",
+            "id": "fe",
+            "x": 65,
+            "y": 25,
+            "width": 9
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 38,
+            "y": 25,
+            "id": "input",
+            "texture": "createdelight:textures/gui/energy_input.png"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 38,
+            "y": 50,
+            "id": "output",
+            "texture": "createdelight:textures/gui/energy_output.png"
+        },
+        {
+            "type": "custommachinery:progress",
+            "x": 107,
+            "y": 42
+        },
+        {
+            "type": "custommachinery:fluid",
+            "x": 83,
+            "y": 40,
+            "id": "fluidInput",
+            "texture": "custommachinery:textures/gui/base_slot.png",
+            "width": 18,
+            "height": 18
+        },
+        {
+            "type": "custommachinery:fluid",
+            "x": 137,
+            "y": 40,
+            "id": "fluidOutput2",
+            "texture": "custommachinery:textures/gui/base_slot.png",
+            "width": 18,
+            "height": 18
+        },
+        {
+            "type": "custommachinery:fluid",
+            "x": 155,
+            "y": 40,
+            "id": "fluidOutput1",
+            "texture": "custommachinery:textures/gui/base_slot.png",
+            "width": 18,
+            "height": 18
+        },
+        {
+            "text": "block.createdelight.electrolyzer",
+            "x": 7,
+            "y": 5,
+            "type": "custommachinery:text"
+        },
+        {
+            "x": 22,
+            "y": 80,
+            "type": "custommachinery:player_inventory"
+        }
+    ]
+}
