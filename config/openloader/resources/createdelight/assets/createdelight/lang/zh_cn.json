@@ -1,4 +1,6 @@
 {
+    "block.createdelight.emergency_industrial_platform": "应急工业平台",
+    "block.createdelight.electrolyzer": "小型电解机",
     "message.createdelight.south": "南",
     "message.createdelight.north": "北",
     "message.createdelight.east": "东",

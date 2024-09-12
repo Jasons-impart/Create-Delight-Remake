@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
         "ad_astra:fuel_refinery",
         "ad_astra:cryo_freezer"
     ])
-
+    e.replaceInput({id:"ad_astra:oxygen_distributor"}, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木
     e.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
@@ -98,8 +98,8 @@ ServerEvents.recipes(e => {
         D: "createaddition:modular_accumulator"
     }).id("ad_astra:energizer")
     //替换配方：氧气装载机
-    e.shaped("ad_astra:oxygen_loader", [
-        "ABA",
+    e.shaped("createdelight:electrolyzer", [
+        "AAA",
         "CDC",
         "AEA"
     ], {

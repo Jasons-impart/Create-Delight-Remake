@@ -1,0 +1,11 @@
+ServerEvents.recipes(event => {
+    event.recipes.custommachinery.custom_machine("createdelight:emergency_industrial_platform", 300).hide()
+        .requireItem("minecraft:dirt", "item")
+        .runCommandEachTick("/function createdelight:platform", 5)
+    event.recipes.custommachinery.custom_machine("createdelight:emergency_industrial_platform", 10).hide()
+        .requireItem("minecraft:stone", "item")
+        .runCommandOnEnd("/place template createdelight:emergency_industrial_platform ~ ~-4 ~", 5)
+        .runCommandOnEnd("/playsound minecraft:block.stone.place block @a ~ ~ ~ 0.5", 5)
+        .runCommandOnEnd("/particle minecraft:snowflake ~ ~1 ~ 0.3 1.5 0.3 0 5", 5)
+        .runCommandOnEnd("/particle minecraft:cloud ~ ~1 ~ 0.55 1 0.55 0 4", 5)
+})
