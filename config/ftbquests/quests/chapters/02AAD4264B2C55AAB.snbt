@@ -580,7 +580,6 @@
 		}
 		{
 			dependencies: ["0586B7C19B401999"]
-			description: [""]
 			id: "3DB261637ADAB659"
 			rewards: [{
 				id: "75812B0DBA119B8D"
