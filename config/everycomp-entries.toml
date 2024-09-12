@@ -137,3 +137,20 @@
 			short_door = true
 			tall_door = true
 
+		[entries.wood_type.handcrafted]
+			counter = true
+			corner_trim = true
+			fancy_bed = true
+			desk = true
+			shelf = true
+			nightstand = true
+			cupboard = true
+			dining_bench = true
+			bench = true
+			couch = true
+			table = true
+			chair = true
+			drawer = true
+			pillar_trim = true
+			side_table = true
+
