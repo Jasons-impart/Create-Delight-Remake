@@ -22,684 +22,361 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [""]
-			id: "08202376542D4584"
-			rewards: [
-				{
-					id: "350F0C75AAFE593D"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					count: 8
-					id: "292FA5DC921FF9A6"
-					item: "minecraft:oak_log"
-					type: "item"
-				}
-				{
-					id: "1334996DAF49DAA0"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "2E4CA8EA1F38DF74"
-					item: "sophisticatedbackpacks:backpack"
-					type: "item"
-				}
-			]
-			shape: "gear"
-			size: 1.5d
-			tasks: [{
-				id: "74F8692BEA4B9F6B"
-				item: {
-					Count: 1
-					id: "tetra:modular_double"
-					tag: {
-						Damage: 0
-						"double/basic_hammer_left_material": "basic_hammer/oak"
-						"double/basic_hammer_right_material": "basic_hammer/oak"
-						"double/basic_handle_material": "basic_handle/stick"
-						"double/handle": "double/basic_handle"
-						"double/head_left": "double/basic_hammer_left"
-						"double/head_right": "double/basic_hammer_right"
-						id: "91a59fea-cc84-4b94-b61b-15723e1dfdd0"
-					}
-				}
-				type: "item"
-			}]
-			x: 0.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			icon: "tetra:basic_workbench"
-			id: "2E4DB9B14AC12331"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "7A0F464693F0CBAB"
-					type: "random"
-				}
-				{
-					id: "2DD47CDF58854B9A"
-					type: "xp"
-					xp: 100
-				}
-			]
+			id: "526EB245C016B285"
+			size: 2.0d
 			tasks: [{
 				advancement: "tetra:upgrades/workbench"
 				criterion: ""
-				id: "5BE7362EC00D888B"
+				id: "4D2387176B5E9203"
 				type: "advancement"
 			}]
-			title: "新起点"
-			x: 0.5d
-			y: -1.0d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [""]
-			id: "351E22A5F370B611"
-			rewards: [
-				{
-					id: "058CA9886D77C770"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "30B41C7F22A2435B"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-			]
-			shape: "gear"
+			dependencies: ["526EB245C016B285"]
+			description: ["单头工具的头部改装。可以在挖掘时同时挖掘其正后方的若干个方块。"]
+			id: "0B0432FCBAB9FC40"
+			subtitle: "可直接在锻造遗迹发现"
 			tasks: [{
-				id: "3FE57D45300B1C3C"
-				item: {
-					Count: 1
-					id: "tetra:holo"
-					tag: {
-						"holo/core": "holo/core"
-						"holo/core_material": "frame/dim"
-						"holo/frame": "holo/frame"
-						"holo/frame_material": "core/ancient"
-						"holo/repo": "holo/repo"
-						"holo/repo_material": "repo/default"
-						"holo/scanner": "holo/scanner"
-						"holo/scanner_material": "scanner/default"
-					}
-				}
+				id: "62BF3A43915F79A1"
+				item: "tetra:earthpiercer"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -2.5d
+			x: 0.0d
+			y: -2.0d
 		}
 		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [
-				"&f安装一个储物袋可以充当小型背包哦。&8(还有箭袋和药水袋这些功能)"
-				"&6[腰带等级：羊毛-皮革-铁-潜影贝]"
-			]
-			id: "46D4BC1CA796FFF1"
-			rewards: [
-				{
-					count: 2
-					id: "56D625EFCEB36C1C"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					id: "085682620BD50458"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "锻造师的生活小帮手!"
+			dependencies: ["526EB245C016B285"]
+			description: ["剑的剑刃改装，拥有在触发横扫之刃时切去一大片石头（可被镐挖掘方块）的能力。"]
+			id: "0D591081539FD174"
+			subtitle: "可直接在锻造遗迹发现"
 			tasks: [{
-				id: "6E76502FB59AD5FF"
-				item: {
-					Count: 1
-					id: "tetra:modular_toolbelt"
-					tag: {
-						id: "c8db0c6d-32f4-49cd-b0f0-d00911233448"
-						"toolbelt/belt": "toolbelt/belt"
-						"toolbelt/belt_material": "belt/rope"
-						"toolbelt/slot1": "toolbelt/strap_slot1"
-						"toolbelt/strap_slot1_material": "strap1/leather"
-					}
-				}
+				id: "660D5020124D8B16"
+				item: "tetra:stonecutter"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -2.5d
+			x: 1.0d
+			y: -2.0d
 		}
 		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			id: "48DDFC405066F6C6"
-			rewards: [
-				{
-					id: "17E67B4ADA31191D"
-					item: "minecraft:lantern"
-					type: "item"
-				}
-				{
-					id: "703E6D6C69B77353"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					id: "363F040FAFAEB7DB"
-					type: "xp"
-					xp: 50
-				}
-			]
-			shape: "gear"
-			subtitle: "2级锤子材料"
+			dependencies: ["526EB245C016B285"]
+			description: ["双头工具的右部改装。破坏方块时会破坏周围一圈个方块（即3x3破坏）。"]
+			id: "69C5B8861725D45B"
+			subtitle: "可直接在锻造遗迹发现"
 			tasks: [{
-				count: 4L
-				id: "5971FFCCC1B4ABE1"
-				item: "minecraft:cobblestone"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["48DDFC405066F6C6"]
-			description: ["很基础的锻造材料。"]
-			id: "0586B7C19B401999"
-			rewards: [{
-				id: "21A7F065807FA04F"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "gear"
-			subtitle: "3级锤子材料"
-			tasks: [{
-				count: 4L
-				id: "1962A75B184E8662"
-				item: "minecraft:iron_ingot"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [""]
-			id: "0BC30D6453DD1790"
-			rewards: [
-				{
-					id: "47087CA3F05D86C1"
-					type: "xp"
-					xp: 100
-				}
-				{
-					count: 2
-					id: "7D909BC4A4EC8FC5"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-			]
-			subtitle: "更好的物品展示框!"
-			tasks: [{
-				id: "7E2BAF6AB1725D96"
-				item: "tetra:rack"
-				type: "item"
-			}]
-			x: 2.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			id: "3DA31EC72B107132"
-			rewards: [
-				{
-					count: 8
-					id: "6054899C8A4B0977"
-					item: "minecraft:emerald"
-					type: "item"
-				}
-				{
-					id: "6EA7562F5C259CDE"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "切削工具"
-			tasks: [{
-				id: "19B372F7C785AADF"
-				item: {
-					Count: 1
-					id: "minecraft:stone_sword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: -1.0d
-		}
-		{
-			dependencies: [
-				"07D9528875F98B99"
-				"0586B7C19B401999"
-			]
-			description: [""]
-			id: "19F876FCE057AD79"
-			rewards: [
-				{
-					id: "75C389AFEB81787C"
-					type: "xp"
-					xp: 300
-				}
-				{
-					id: "44CCA4A5B27D66A4"
-					item: "minecraft:iron_horse_armor"
-					type: "item"
-				}
-			]
-			shape: "gear"
-			subtitle: "我需要更高级的锻造科技!"
-			tasks: [{
-				advancement: "tetra:spelunking/ancient_ruins"
-				criterion: ""
-				id: "495357E02B527FFD"
-				type: "advancement"
-			}]
-			title: "锻造遗迹"
-			x: 0.5d
-			y: 6.5d
-		}
-		{
-			dependencies: ["0586B7C19B401999"]
-			description: [""]
-			id: "07D9528875F98B99"
-			rewards: [{
-				id: "0B13C3BF160AEF49"
-				type: "xp"
-				xp: 120
-			}]
-			shape: "gear"
-			subtitle: "4级锤子材料"
-			tasks: [{
-				count: 4L
-				id: "1CAE81B7FBED6EF9"
-				item: "minecraft:blackstone"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "5179E7D563BB6819"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "65DDEE22CAA24C81"
-					type: "loot"
-				}
-				{
-					id: "5E50D59CADEFCCF5"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			shape: "gear"
-			subtitle: "5级锤子"
-			tasks: [{
-				count: 4L
-				id: "6844805E5D367BB3"
-				item: "minecraft:obsidian"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			id: "28CAD775ABA59BEE"
-			rewards: [{
-				id: "2DC8BD8B5F3550FA"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2A4B6FCF6C8E7B3D"
-				item: {
-					Count: 1
-					id: "waystones:warp_stone"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 3.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["28CAD775ABA59BEE"]
-			id: "51ED49C0F3C0C825"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "76340D5DA2DEA4F7"
-					type: "random"
-				}
-				{
-					id: "6ADA30982CB39FD0"
-					type: "xp"
-					xp: 100
-				}
-			]
-			tasks: [{
-				id: "0A083A94E1550362"
-				item: "waystones:waystone"
-				type: "item"
-			}]
-			x: 3.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "6F31865C0AAA760A"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "6946249C547AA058"
-					type: "random"
-				}
-				{
-					id: "1E047C721F06CA70"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "锻造锤的动力来源"
-			tasks: [{
-				id: "0591CC0D1E984722"
-				item: {
-					Count: 1
-					id: "tetra:thermal_cell"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			title: "热能电池"
-			x: -1.0d
-			y: 6.5d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: ["具体用处查看上一个任务说明。"]
-			id: "54FBA6C046A72156"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "367AC8979BE5B196"
-					type: "random"
-				}
-				{
-					id: "2E598113307494BC"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "什么？你卡锤子等级了？"
-			tasks: [{
-				id: "52D40B4E20FE1E7F"
-				item: "tetra:combustion_chamber"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 6.5d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "6ED90C367C8EF2EE"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "656E6085317AC82A"
-					type: "random"
-				}
-				{
-					id: "365AED8A0F1C6944"
-					type: "xp_levels"
-					xp_levels: 2
-				}
-			]
-			subtitle: "来自锻造遗迹的材料"
-			tasks: [{
-				id: "626506F45CDD6E4F"
-				item: "tetra:metal_scrap"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "2CD64D8069076EE4"
-			rewards: [
-				{
-					id: "05F70B5EA1D61FEA"
-					type: "xp"
-					xp: 120
-				}
-				{
-					exclude_from_claim_all: true
-					id: "19144AB9B75036DF"
-					type: "random"
-				}
-			]
-			subtitle: "十分优质的手柄材料"
-			tasks: [{
-				id: "09A33AA43F39CDA4"
-				item: "tetra:forged_beam"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["5179E7D563BB6819"]
-			description: [
-				"打造一个下界合金锤子，这是你成为锻造大师的第一步!"
-				"&8(现在你需要了解一些&6锻造进阶&8和&e锻造派系&8方面的知识了)"
-			]
-			id: "4E39E5609A04C001"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "4424EDB6DA634DE6"
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "1197640119CCB844"
-					type: "random"
-				}
-				{
-					id: "35B07F23EFCB75F7"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			shape: "gear"
-			subtitle: "6级锤子"
-			tasks: [{
-				count: 4L
-				id: "3F4EF2EAF2248660"
-				item: "minecraft:netherite_ingot"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 9.5d
-		}
-		{
-			dependencies: ["0586B7C19B401999"]
-			description: [
-				"现在，我们在&2y30层以下&r可以找到这些晶体矿石。挖掘后固定掉落一颗晶洞玉石，不受精准采集以及时运影响。"
-				"在该模组工作台中可用等级大于等于2的锤子破开，使用锤子按物品栏顺序优先。"
-				"&7破开掉落：燧石、铁粒、金粒，青金石，红石，绿宝石、钻石及无暇宝石。"
-			]
-			id: "52DD467ABFC37BDC"
-			rewards: [
-				{
-					id: "507B1D07F79D5E84"
-					type: "xp"
-					xp: 120
-				}
-				{
-					exclude_from_claim_all: true
-					id: "796E150F10AACA26"
-					type: "random"
-				}
-			]
-			subtitle: "无暇宝石"
-			tasks: [{
-				id: "36BE95B9C11BCDED"
-				item: "tetra:geode"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["0586B7C19B401999"]
-			id: "3DB261637ADAB659"
-			rewards: [{
-				id: "75812B0DBA119B8D"
-				type: "xp"
-				xp: 120
-			}]
-			subtitle: "卷轴机制"
-			tasks: [{
-				id: "31C3FCA60E9AA9D9"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								effects: ["tetra:gem_expertise"]
-								glyphs: [
-									14
-									13
-									14
-									15
-								]
-								intricate: 0b
-								key: "gem_expertise"
-								material: 0
-								ribbon: "2bffee"
-							}]
-						}
-					}
-				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["5179E7D563BB6819"]
-			description: ["击杀末影龙有几率掉落。"]
-			id: "25D08CA732895094"
-			subtitle: "更好的弓弦"
-			tasks: [{
-				id: "4EF3F08CC2B73EE2"
-				item: "tetra:dragon_sinew"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 9.5d
-		}
-		{
-			dependencies: ["5179E7D563BB6819"]
-			description: [""]
-			id: "732E550DD47E7889"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "659B7C8B6B84C77E"
-					type: "random"
-				}
-				{
-					id: "7F7706159972AFF7"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "追求提升"
-			tasks: [{
-				id: "5F3FE62684C01198"
-				item: "tetra:planar_stabilizer"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 9.5d
-		}
-		{
-			description: [""]
-			id: "26E0C6570CBE3AC9"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3EF1258F8FDA3A7E"
-					type: "random"
-				}
-				{
-					id: "549D1A618088C185"
-					type: "xp_levels"
-					xp_levels: 3
-				}
-			]
-			subtitle: "下矿?"
-			tasks: [{
-				id: "5B89C255976BD5B4"
+				id: "17BEC4ECAABF8A13"
 				item: "tetra:chthonic_extractor"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 9.5d
+			x: -1.0d
+			y: -2.0d
 		}
 		{
-			description: [""]
-			id: "4A6F9154B36C333A"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3F9659B297FF9949"
-					type: "random"
-				}
-				{
-					id: "3D71BD7B4D58677E"
-					type: "xp"
-					xp: 180
-				}
-			]
-			subtitle: "我的神弓！"
+			id: "4B59A1EE7155AFC3"
+			size: 2.0d
 			tasks: [{
-				id: "057555776C93D77B"
-				item: "tetra:forged_bolt"
+				advancement: "tetra:spelunking/ancient_ruins"
+				criterion: ""
+				id: "5F284A120987F470"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["526EB245C016B285"]
+			id: "2DD2A8A57A45FDEA"
+			subtitle: "不错的弓弦材料"
+			tasks: [{
+				id: "2C5A5D5C172CB5DC"
+				item: "tetra:dragon_sinew"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 9.5d
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4B59A1EE7155AFC3"]
+			id: "5A0412975703ECE7"
+			size: 1.5d
+			tasks: [{
+				elapsedTime: 1L
+				icon: {
+					Count: 1
+					id: "tetra:modular_sword"
+					tag: {
+						Damage: 0
+						HideFlags: 1
+						honing_progress: 497
+						id: "1a230038-c097-43be-8083-612adc374ae9"
+						"sword/basic_hilt_material": "basic_hilt/forged_beam"
+						"sword/blade": "sword/katana_blade"
+						"sword/blade/settle_progress": 1171
+						"sword/blade:sword/murasama_imprv": 0
+						"sword/grip_loop_material": "grip_loop/dragon_sinew"
+						"sword/guard": "sword/tsuba_guard"
+						"sword/hilt": "sword/basic_hilt"
+						"sword/hilt/settle_progress": 472
+						"sword/hilt:hilt/wrap/dragon_sinew": 0
+						"sword/katana_blade_material": "katana_blade/netherite"
+						"sword/pommel": "sword/grip_loop"
+						"sword/tsuba_guard_material": "tsuba_guard/netherite"
+					}
+				}
+				id: "6EB99D1F2D03E1E6"
+				title: "Art of Forging"
+				type: "questsadditions:time"
+			}]
+			x: -4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4B59A1EE7155AFC3"]
+			id: "0F36EE20389AC17F"
+			size: 1.5d
+			tasks: [{
+				elapsedTime: 1L
+				icon: "witheringboon:soulaniteingot"
+				id: "4E16DE7EF653758A"
+				title: "Withering Boon"
+				type: "questsadditions:time"
+			}]
+			x: 4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "61863D59AF0A55BD"
+			tasks: [{
+				id: "51F8E20CAF2789DC"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["61863D59AF0A55BD"]
+			id: "7F7BBF51FF0CAB5C"
+			tasks: [{
+				id: "60B857BB25C9AD71"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["61863D59AF0A55BD"]
+			id: "67CE7F0A4A760294"
+			tasks: [{
+				id: "72FDBE0248ACC3BD"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "119399A4C8B448E3"
+			subtitle: "可发现于锻造遗迹的锻造容器中"
+			tasks: [{
+				id: "0DC64963E9D8FA64"
+				item: "art_of_forging:nano_insectoid"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "305CD2F89A0FEC9B"
+			subtitle: "可发现于锻造遗迹的锻造容器中"
+			tasks: [
+				{
+					id: "7279673440A47E32"
+					item: "art_of_forging:esoteric_codex"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "323ECFDF8CD67FFF"
+					item: { Count: 2, id: "art_of_forging:encoded_canister" }
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["305CD2F89A0FEC9B"]
+			id: "655091225D2BA1FA"
+			tasks: [{
+				id: "74102F4F5464179A"
+				item: "art_of_forging:mark_of_the_architect"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["119399A4C8B448E3"]
+			id: "2F1CAB1F72033D20"
+			subtitle: "使用带有纳米昆虫打磨的武器击杀末影人可掉落"
+			tasks: [{
+				id: "2A6250C6FA75A7D6"
+				item: "art_of_forging:heart_of_ender"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["119399A4C8B448E3"]
+			id: "48CEB0D9F5BB3B53"
+			subtitle: "使用带有纳米昆虫打磨的武器击杀凋零可掉落"
+			tasks: [{
+				id: "1D83083E4DCC072A"
+				item: "art_of_forging:devils_soul_gem"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["119399A4C8B448E3"]
+			id: "240203B27A213370"
+			subtitle: "使用带有纳米昆虫打磨的武器击杀监守者可掉落"
+			tasks: [{
+				id: "6A9EF98C0A3E874A"
+				item: "art_of_forging:eerie_shard"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["48CEB0D9F5BB3B53"]
+			id: "1737E866D40DF474"
+			tasks: [{
+				advancement: "tetra:art_of_forging/remembrance_upgrade"
+				criterion: ""
+				id: "07F5BDC1F7A1669D"
+				type: "advancement"
+			}]
+			x: -9.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["67CE7F0A4A760294"]
+			id: "008980F5CA826170"
+			tasks: [{
+				id: "1BB85CC555182285"
+				item: "art_of_forging:enigmatic_construct"
+				type: "item"
+			}]
+			x: -13.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["008980F5CA826170"]
+			id: "386B0E6E5FC6243C"
+			tasks: [{
+				advancement: "tetra:art_of_forging/crucible_upgrade"
+				criterion: ""
+				id: "63E4BBFD373D2DCB"
+				type: "advancement"
+			}]
+			x: -13.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"655091225D2BA1FA"
+				"386B0E6E5FC6243C"
+			]
+			id: "441C0B6D45B0A125"
+			tasks: [{
+				advancement: "tetra:art_of_forging/architects_crucible"
+				criterion: ""
+				id: "4EED1FAAA08ED78A"
+				type: "advancement"
+			}]
+			x: -11.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "199224C9B6737853"
+			tasks: [{
+				advancement: "tetra:art_of_forging/katana_upgrade"
+				criterion: ""
+				id: "378941D9A142D747"
+				type: "advancement"
+			}]
+			x: -7.0d
+			y: 7.0d
+		}
+		{
+			id: "16F7094F6B905C57"
+			tasks: [{
+				advancement: "tetra:art_of_forging/murasama_blade"
+				criterion: ""
+				id: "2F43423A95F2FE84"
+				type: "advancement"
+			}]
+			x: -8.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "31A9D5DEB1329772"
+			subtitle: "可发现于古城的宝箱中"
+			tasks: [{
+				id: "2458F1001A88627B"
+				item: "art_of_forging:ancient_axe"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "152335784AC92B0A"
+			subtitle: "可发现于古城的宝箱中"
+			tasks: [{
+				id: "53DDEB89A2DBD6FB"
+				item: "art_of_forging:ancient_blade"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "54ACD3E94B35D165"
+			subtitle: "可发现于古城的宝箱中"
+			tasks: [{
+				id: "6F759ECE46E29203"
+				item: "art_of_forging:ancient_flail"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["240203B27A213370"]
+			id: "6E03644484E41049"
+			tasks: [{
+				advancement: "tetra:art_of_forging/eerie_fuller"
+				criterion: ""
+				id: "5ADE7F2F0F596012"
+				type: "advancement"
+			}]
+			x: -7.0d
+			y: -1.0d
 		}
 	]
 	title: "&a锻造之美&r"
