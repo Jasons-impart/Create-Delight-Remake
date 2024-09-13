@@ -1,0 +1,74 @@
+[
+    {
+        "conditions": [
+            {
+                "type": "forge:mod_loaded",
+                "modid": "aetherdelight"
+            }
+        ],
+        "predicate": {
+            "items": [
+                "aetherdelight:holystone_knife"
+            ]
+        },
+        "item": "tetra:modular_sword",
+        "modules": {
+            "sword/blade": [
+                "sword/knife",
+                "knife/aether_holystone"
+            ],
+            "sword/hilt": [
+                "sword/basic_hilt",
+                "basic_hilt/aether_skyroot"
+            ]
+        }
+    },
+    {
+        "conditions": [
+            {
+                "type": "forge:mod_loaded",
+                "modid": "aetherdelight"
+            }
+        ],
+        "predicate": {
+            "items": [
+                "aetherdelight:zanite_knife"
+            ]
+        },
+        "item": "tetra:modular_sword",
+        "modules": {
+            "sword/blade": [
+                "sword/knife",
+                "knife/aether_zanite"
+            ],
+            "sword/hilt": [
+                "sword/basic_hilt",
+                "basic_hilt/aether_skyroot"
+            ]
+        }
+    },
+    {
+        "conditions": [
+            {
+                "type": "forge:mod_loaded",
+                "modid": "aetherdelight"
+            }
+        ],
+        "predicate": {
+            "items": [
+                "aetherdelight:gravitite_knife"
+            ]
+        },
+        "item": "tetra:modular_sword",
+        "modules": {
+            "sword/blade": [
+                "sword/knife",
+                "knife/aether_gravitite"
+            ],
+            "sword/hilt": [
+                "sword/basic_hilt",
+                "basic_hilt/aether_skyroot"
+            ]
+        }
+    }
+]
