@@ -35,17 +35,17 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({id:"ad_astra:oxygen_distributor"}, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木
-    e.shapeless("ad_astra:glacian_log", [
+    e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
         "ad_astra:ice_shard"
     ])
     // 新增配方：霜原树叶
-    e.shapeless("ad_astra:glacian_leaves", [
+    e.recipes.kubejs.shapeless("ad_astra:glacian_leaves", [
         "#minecraft:leaves",
         "ad_astra:ice_shard"
     ])
     // 替换配方：喷气式航天服
-    e.shaped("ad_astra:jet_suit", [
+    e.recipes.kubejs.shaped("ad_astra:jet_suit", [
         "ABA",
         "CDC",
         "EFE"
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
     })
         .id("ad_astra:jet_suit")
     //替换配方：氧气罐
-    e.shaped("ad_astra:gas_tank", [
+    e.recipes.kubejs.shaped("ad_astra:gas_tank", [
         "ABA",
         "ACA",
         "AAA"
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
         C: "create:fluid_tank"
     }).id("ad_astra:gas_tank")
     //替换配方：引擎框架
-    e.shaped("ad_astra:engine_frame", [
+    e.recipes.kubejs.shaped("ad_astra:engine_frame", [
         "AAA",
         "ABA",
         "AAA"
@@ -78,7 +78,7 @@ ServerEvents.recipes(e => {
         B: "create:precision_mechanism"
     }).id("ad_astra:engine_frame")
     //替换配方：引擎风扇
-    e.shaped("ad_astra:fan", [
+    e.recipes.kubejs.shaped("ad_astra:fan", [
         " A ",
         "ABA",
         " A "
@@ -87,7 +87,7 @@ ServerEvents.recipes(e => {
         B: "create:propeller"
     }).id("ad_astra:fan")
     //替换配方：充能器
-    e.shaped("ad_astra:energizer", [
+    e.recipes.kubejs.shaped("ad_astra:energizer", [
         "ABA",
         "ACA",
         "ADA"
@@ -97,17 +97,23 @@ ServerEvents.recipes(e => {
         C: 'ad_astra:etrionic_capacitor',
         D: "createaddition:modular_accumulator"
     }).id("ad_astra:energizer")
+    //石墨
+    e.recipes.kubejs.shapeless(
+        'createmetallurgy:graphite',[
+            "8x #minecraft:coals",
+            "minecraft:clay_ball"
+        ]
+    ).id("createmetallurgy:graphite")
     //替换配方：氧气装载机
-    e.shaped("createdelight:electrolyzer", [
+    e.recipes.kubejs.shaped('createdelight:electrolyzer', [
         "AAA",
-        "CDC",
-        "AEA"
+        "BCB",
+        "ADA"
     ], {
         A: "#forge:plates/steel",
-        B: "ad_astra:fan",
-        C: "ad_astra:gas_tank",
-        D: "minecraft:lightning_rod",
-        E: "createaddition:modular_accumulator"
+        B: "ad_astra:gas_tank",
+        C: '#forge:graphite',
+        D: "createaddition:modular_accumulator"
     }).id("ad_astra:oxygen_loader")
     // 混合燃料
     e.recipes.create.mixing(
