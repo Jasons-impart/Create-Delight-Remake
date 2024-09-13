@@ -391,6 +391,19 @@
 			x: 2.0d
 			y: -2.0d
 		}
+		{
+			dependencies: ["3A31CFC2ECFA2682"]
+			id: "1AA8B7F6B283121A"
+			subtitle: "给下界合金锤镶嵌下界之星"
+			tasks: [{
+				id: "73920CFCA3EFC2F2"
+				item: "minecraft:nether_star"
+				type: "item"
+			}]
+			title: "七级锤"
+			x: 17.0d
+			y: 0.0d
+		}
 	]
 	title: "基础工艺"
 }

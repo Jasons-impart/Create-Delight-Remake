@@ -86,8 +86,9 @@
 		}
 		{
 			dependencies: ["526EB245C016B285"]
+			hide_dependent_lines: true
 			id: "2DD2A8A57A45FDEA"
-			subtitle: "不错的弓弦材料"
+			subtitle: "不错的弓弦材料，同时也是裂天剪所需物品"
 			tasks: [{
 				id: "2C5A5D5C172CB5DC"
 				item: "tetra:dragon_sinew"
@@ -132,7 +133,10 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["4B59A1EE7155AFC3"]
+			dependencies: [
+				"4B59A1EE7155AFC3"
+				"29FC5B4614FB917D"
+			]
 			id: "0F36EE20389AC17F"
 			size: 1.5d
 			tasks: [{
@@ -180,6 +184,7 @@
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
+			description: ["在武器打磨时，如果背包中拥有纳米昆虫则会显示一个特殊的打磨\"纳米融合\"，每特殊打磨一次纳米融合等级便会加高。该等级越高，获得纳米融合特殊掉落物概率也就越高。"]
 			id: "119399A4C8B448E3"
 			subtitle: "可发现于锻造遗迹的锻造容器中"
 			tasks: [{
@@ -298,6 +303,7 @@
 				"386B0E6E5FC6243C"
 			]
 			id: "441C0B6D45B0A125"
+			subtitle: "DOOM SLAYER!!"
 			tasks: [{
 				advancement: "tetra:art_of_forging/architects_crucible"
 				criterion: ""
@@ -320,6 +326,7 @@
 			y: 7.0d
 		}
 		{
+			dependencies: ["199224C9B6737853"]
 			id: "16F7094F6B905C57"
 			tasks: [{
 				advancement: "tetra:art_of_forging/murasama_blade"
@@ -327,42 +334,31 @@
 				id: "2F43423A95F2FE84"
 				type: "advancement"
 			}]
-			x: -8.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["5A0412975703ECE7"]
-			id: "31A9D5DEB1329772"
-			subtitle: "可发现于古城的宝箱中"
-			tasks: [{
-				id: "2458F1001A88627B"
-				item: "art_of_forging:ancient_axe"
-				type: "item"
-			}]
-			x: -6.0d
+			x: -10.0d
 			y: 7.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
 			id: "152335784AC92B0A"
 			subtitle: "可发现于古城的宝箱中"
-			tasks: [{
-				id: "53DDEB89A2DBD6FB"
-				item: "art_of_forging:ancient_blade"
-				type: "item"
-			}]
-			x: -5.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["5A0412975703ECE7"]
-			id: "54ACD3E94B35D165"
-			subtitle: "可发现于古城的宝箱中"
-			tasks: [{
-				id: "6F759ECE46E29203"
-				item: "art_of_forging:ancient_flail"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "53DDEB89A2DBD6FB"
+					item: "art_of_forging:ancient_blade"
+					type: "item"
+				}
+				{
+					id: "381D34CE6413C366"
+					item: "art_of_forging:ancient_axe"
+					type: "item"
+				}
+				{
+					id: "4AC48C5CD8EBEA27"
+					item: "art_of_forging:ancient_flail"
+					type: "item"
+				}
+			]
+			title: "远古锻器"
 			x: -4.0d
 			y: 7.0d
 		}
@@ -377,6 +373,270 @@
 			}]
 			x: -7.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["16F7094F6B905C57"]
+			id: "470E9E60D640F962"
+			subtitle: "千夜寒的图纸由鬼妖村正的图纸升级而来，具体查看JEI的合成"
+			tasks: [{
+				id: "49F78D304E2762BC"
+				title: "千夜寒"
+				type: "checkmark"
+			}]
+			x: -11.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"5A0412975703ECE7"
+				"2DD2A8A57A45FDEA"
+			]
+			id: "7E4E208498CE3F49"
+			subtitle: "好贵"
+			tasks: [{
+				id: "698244C848E3FC8E"
+				item: "art_of_forging:life_fiber"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["7E4E208498CE3F49"]
+			description: ["断斩之剪可以作为剑的剑刃改装，同时也是裂天箭图纸的制作材料。"]
+			id: "5D841E1441200184"
+			subtitle: "写任务的没看过斩服少女"
+			tasks: [
+				{
+					id: "0FBD89E17F2A19B4"
+					item: "art_of_forging:rending_scissor_red"
+					type: "item"
+				}
+				{
+					id: "1748FB941BC94E90"
+					item: "art_of_forging:rending_scissor_purple"
+					type: "item"
+				}
+			]
+			title: "左右断斩之剪"
+			x: -6.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["5D841E1441200184"]
+			id: "4ADCDBAB03A46800"
+			subtitle: "用于拥有裂天剪图纸后的特殊剑刃改装"
+			tasks: [{
+				id: "6E7336C221FEDE54"
+				item: "art_of_forging:rending_scissor_complete"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["152335784AC92B0A"]
+			id: "2C1635509A52C163"
+			tasks: [
+				{
+					id: "546F2D8EEB90F3AF"
+					item: "art_of_forging:demonic_axe"
+					type: "item"
+				}
+				{
+					id: "022E9BC35A7EC451"
+					item: "art_of_forging:demonic_blade"
+					type: "item"
+				}
+				{
+					id: "676D9EC0778B3B78"
+					item: "art_of_forging:demonic_flail"
+					type: "item"
+				}
+			]
+			title: "重获新生"
+			x: -4.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["5A0412975703ECE7"]
+			id: "7CA5C16BA0D6A53A"
+			subtitle: "击杀凋零骷髅获得"
+			tasks: [{
+				id: "016E91AFCA6768C1"
+				item: "art_of_forging:shards_of_malice"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			id: "679F0BF82D692167"
+			subtitle: "可以在加工台上开出本模组特有的镶嵌宝石"
+			tasks: [{
+				id: "40817C0A01A675F7"
+				item: "witheringboon:meldedgeode"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			id: "0720A511B2906028"
+			subtitle: "击杀远古守卫者掉落"
+			tasks: [{
+				id: "43153B558FB9AB5F"
+				item: "witheringboon:hardenedprismarine"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["0720A511B2906028"]
+			id: "7E62E10978EABB3E"
+			tasks: [{
+				id: "210BEC1E6D6E1A6B"
+				item: "witheringboon:soulanitealloy"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"7E62E10978EABB3E"
+				"29FC5B4614FB917D"
+			]
+			id: "08FBB946EDB9962E"
+			tasks: [{
+				id: "45CA80F04ADBB18A"
+				item: "witheringboon:soulaniteingot"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 5.0d
+		}
+		{
+			id: "29FC5B4614FB917D"
+			subtitle: "由凋零掉落"
+			tasks: [{
+				id: "7E5021DBAF8BA435"
+				item: "witheringboon:witheredsoulstone"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["29FC5B4614FB917D"]
+			description: ["一把削铁如泥的宝剑，可使用灵魂合金锭升级为噬魂之刃。"]
+			id: "355A316987940471"
+			subtitle: "可被灵魂合金升级"
+			tasks: [{
+				id: "44FE197DA0CEA08E"
+				item: "witheringboon:blackbloodblade"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			description: ["在古城中发现的镰刀，可在短时间内眩晕小范围内的敌人，对群体目标和单体目标都非常有效。可使用灵魂合金锭升级为坚守者猎镰。"]
+			id: "351C14869FB02126"
+			subtitle: "可被灵魂合金升级"
+			tasks: [{
+				id: "387480858FFDBC74"
+				item: "witheringboon:wardensbane"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			description: ["由紫水晶制成，锋利且轻便的战斧，可轻易击碎盾牌和盔甲。可使用灵魂合金锭将其升级为 \"风之力\"。"]
+			id: "4968FC87D46C00E0"
+			tasks: [{
+				id: "6441E9EF2F7DD272"
+				item: "witheringboon:amethystgale"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			description: ["作为单头工具的头部改装。一把可投掷的斧头，投掷出去可以砍倒树木，但也是近身攻击的绝佳武器。"]
+			id: "59B3DD58FC43E4BA"
+			tasks: [{
+				id: "6F89080C5A664E4A"
+				item: "witheringboon:hoarfrosthead"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["119399A4C8B448E3"]
+			id: "1BB6FDB4F969CFCB"
+			tasks: [{
+				id: "0479231BCB82E626"
+				item: "art_of_forging:potent_mixture"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			id: "7575797048B12C10"
+			tasks: [{
+				id: "647163E15EAA8E57"
+				item: "witheringboon:enderchamber"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["7575797048B12C10"]
+			description: ["可以作为单头工具的头部制作狼牙棒，也可以作为双头工具的尾部。在头部被战争铸造后，给予头部部件一定的提升，不同种类的头部部件提升的方面不一样。"]
+			id: "65819A6A55591219"
+			tasks: [{
+				id: "1181BE1CAFC992C9"
+				item: "witheringboon:enderoverdrivemodule"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			description: ["掠夺者制作的攻城武器，能以弧线形式密集地射出许多支箭。"]
+			id: "6FF5230178F843C3"
+			tasks: [{
+				id: "1B7B5809AC4199D6"
+				item: "witheringboon:raidhorn"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["0F36EE20389AC17F"]
+			description: ["在丛林深处发现的弓，可直线发射两支箭。"]
+			id: "5A87778D72CFFD2D"
+			tasks: [{
+				id: "4DE7F829FA8034F7"
+				item: "witheringboon:lostviper"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 7.5d
 		}
 	]
 	title: "&a锻造之美&r"
