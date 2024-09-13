@@ -1,0 +1,56 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "028B14323B1C41A2"
+	group: "4BA960CEDF6AF694"
+	id: "028B14323B1C41A2"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1C5700AF4F045417"]
+			id: "712773DBE9B0E5C4"
+			tasks: [{
+				id: "5422F2C6F7B8F228"
+				item: "deeperdarker:heart_of_the_deep"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "1C5700AF4F045417"
+			tasks: [{
+				id: "2D962E87C13D5BF6"
+				title: "进入幽暗之域"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1C5700AF4F045417"]
+			id: "5EC8FE813C9B8A03"
+			tasks: [{
+				entity: "minecraft:warden"
+				id: "34A7BAC66CD10406"
+				type: "kill"
+				value: 1L
+			}]
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["712773DBE9B0E5C4"]
+			id: "1094533D50801898"
+			tasks: [{
+				dimension: "deeperdarker:otherside"
+				id: "6C743769F94F2238"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 0.0d
+		}
+	]
+	title: "幽暗之域"
+}

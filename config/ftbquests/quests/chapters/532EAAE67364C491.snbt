@@ -1,0 +1,16 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "532EAAE67364C491"
+	group: "14CFC96B5B37F10B"
+	icon: {
+		Count: 1
+		id: "ad_astra:tier_3_rocket"
+		tag: { }
+	}
+	id: "532EAAE67364C491"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "&e高级工程师！"
+}

@@ -1,0 +1,66 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "771AF9716A950812"
+	group: ""
+	id: "771AF9716A950812"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["04F5ECC7C4615A12"]
+			id: "20DEB6BAD2030A3B"
+			tasks: [{
+				id: "753ED44B0B4D3C68"
+				type: "checkmark"
+			}]
+			title: "注意事项"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["04F5ECC7C4615A12"]
+			id: "0CC31CEEB649E78E"
+			tasks: [{
+				id: "07DF151B175F6ACE"
+				title: "按键设置"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["04F5ECC7C4615A12"]
+			id: "2B4D90D95F4EB18B"
+			tasks: [{
+				id: "594BB5DCF725F4C8"
+				title: "光影"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "04F5ECC7C4615A12"
+			tasks: [{
+				id: "2C7F0636A9A41854"
+				title: "整合包说明"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["04F5ECC7C4615A12"]
+			id: "6DBD9ACC7FF20FCA"
+			tasks: [{
+				id: "119DDDEDE80D5C67"
+				title: "关于材质包"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+	]
+	title: "注意"
+}

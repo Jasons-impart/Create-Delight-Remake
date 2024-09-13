@@ -1,0 +1,11 @@
+type = slideshow
+
+slideshow-meta {
+   name = create_delight
+   width = 2560
+   height = 1600
+   x = 0
+   y = 0
+   duration = 20.0
+   fadespeed = 6.0
+}

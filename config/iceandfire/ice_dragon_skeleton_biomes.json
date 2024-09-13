@@ -1,0 +1,18 @@
+{
+  "biomes": [
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "ad_astra:glacio_ice_peaks"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "ad_astra:glacio_snowy_barrens"
+      }
+    ]
+  ]
+}

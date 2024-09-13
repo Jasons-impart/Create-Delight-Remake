@@ -1,0 +1,438 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "53C35D02B0698F04"
+	group: ""
+	icon: "minecraft:crafting_table"
+	id: "53C35D02B0698F04"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["04F5ECC7C4615A12"]
+			description: ["欢迎来到机械动力：悠然乐事整合包"]
+			id: "08D334C72F2F5ADC"
+			tasks: [{
+				id: "3CFE2EE307A4E7F1"
+				type: "checkmark"
+			}]
+			title: "初入世界"
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["08D334C72F2F5ADC"]
+			description: ["用你的小手手去采集第一棵树吧，这将会是跨越性的一步"]
+			id: "3CF4C402145AF2B9"
+			rewards: [{
+				count: 16
+				id: "34577CE3B8D49E78"
+				item: "minecraft:oak_log"
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "768E3C505359488C"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				title: "木头！"
+				type: "item"
+			}]
+			title: "要致富还得是先撸树"
+			x: 2.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["3CF4C402145AF2B9"]
+			dependency_requirement: "all_started"
+			icon: "minecraft:crafting_table"
+			id: "77ECF5D5E59B874F"
+			tasks: [{
+				id: "117AA51246578955"
+				item: "minecraft:crafting_table"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["77ECF5D5E59B874F"]
+			description: ["这总不用教吧"]
+			id: "0F04193DFE08130E"
+			rewards: [{
+				id: "3BBDB882CC28F727"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "010F10BAF70E014D"
+				item: {
+					Count: 1b
+					id: "minecraft:wooden_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "现在是时候来做一把镐子了"
+			x: 7.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0F04193DFE08130E"]
+			description: ["孩子去挖点石头吧"]
+			id: "5378B8523968F007"
+			rewards: [{
+				id: "4C3DDFA020FEFA11"
+				item: "minecraft:cobblestone"
+				random_bonus: 63
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "4D7052DC3DBB8731"
+				item: "minecraft:cobblestone"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0F04193DFE08130E"]
+			description: ["做一把剑来自卫吧"]
+			id: "08ECAB95A3D6E981"
+			rewards: [{
+				count: 8
+				id: "4A32343AAB3A7967"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5BE561E2379D3E65"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:swords"
+					}
+				}
+				title: "开始杀戮吧"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5378B8523968F007"]
+			id: "7B3771D9729E61A2"
+			tasks: [{
+				id: "24F9C1A71E7F9B40"
+				item: "minecraft:furnace"
+				type: "item"
+			}]
+			x: 12.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "31FCDE1EB7C614B8"
+			tasks: [{
+				id: "44474B75599046D1"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: 12.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "0532D3A0BE22E925"
+			tasks: [{
+				id: "73DCC006A075A3AF"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "19C4EC6F3980ED9A"
+			tasks: [{
+				id: "5A74B82C41946F89"
+				item: "minecraft:raw_copper"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"5378B8523968F007"
+				"0F04193DFE08130E"
+			]
+			description: ["有了石头我们就可以进行工具升级了"]
+			id: "59EB8216D9A91914"
+			tasks: [{
+				id: "56848055EF8A035B"
+				item: {
+					Count: 1b
+					id: "minecraft:stone_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 11.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"7B3771D9729E61A2"
+				"31FCDE1EB7C614B8"
+			]
+			id: "7A3709D4B50FDB64"
+			tasks: [{
+				id: "4291D69533A033CD"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			x: 14.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["59EB8216D9A91914"]
+			id: "0B20E731C8BC4961"
+			tasks: [{
+				id: "37E75DB2831DE06B"
+				item: "create:raw_zinc"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"59EB8216D9A91914"
+				"7A3709D4B50FDB64"
+				"31FCDE1EB7C614B8"
+			]
+			description: ["让我们做一把铁镐来收集更多资源吧"]
+			id: "4144F362E5458112"
+			tasks: [{
+				id: "23C4D701E1D75A55"
+				item: {
+					Count: 1b
+					id: "minecraft:iron_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 15.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "3063D93E51ECAFA7"
+			tasks: [{
+				id: "77A87928540A30B5"
+				item: "minecraft:diamond"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "6ABD2D5713580576"
+			tasks: [{
+				id: "1E0F63630505E83B"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "1B0ADB0243EEAD47"
+			tasks: [{
+				id: "5F3420B17F6687B6"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			x: 18.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "0FFA12C63E14396C"
+			tasks: [{
+				id: "0C631867D19F0F83"
+				item: "minecraft:lapis_lazuli"
+				type: "item"
+			}]
+			x: 18.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4144F362E5458112"]
+			id: "0F9A325B7651DE3D"
+			tasks: [{
+				id: "2E17E8C5AEB879C1"
+				item: "minecraft:raw_gold"
+				type: "item"
+			}]
+			x: 18.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3063D93E51ECAFA7"]
+			id: "154B8A10723BCCDD"
+			tasks: [{
+				id: "4A1935D35B48C3FF"
+				item: {
+					Count: 1b
+					id: "minecraft:diamond_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 20.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"712773DBE9B0E5C4"
+				"154B8A10723BCCDD"
+			]
+			id: "397E326073046811"
+			tasks: [{
+				count: 16L
+				id: "2BF3AF187221F6F7"
+				item: "minecraft:obsidian"
+				type: "item"
+			}]
+			x: 22.5d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"397E326073046811"
+				"181E2BB5C3BC31A9"
+			]
+			id: "2273B81FC4DA0A36"
+			tasks: [{
+				id: "225DFEBD3CFE9612"
+				item: "minecraft:enchanting_table"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7A3709D4B50FDB64"]
+			id: "2B06C9F73DF923F5"
+			tasks: [{
+				id: "277EBFFA4523ECE8"
+				item: {
+					Count: 1b
+					id: "minecraft:shears"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 16.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["77ECF5D5E59B874F"]
+			id: "25D7CEE93389160E"
+			tasks: [{
+				id: "6D9B874AD652364D"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "bookshelf:hoes"
+					}
+				}
+				title: "Any #bookshelf:hoes"
+				type: "item"
+			}]
+			title: "开始种田吧"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7A3709D4B50FDB64"]
+			id: "7EE833D19CE76C4F"
+			tasks: [{
+				id: "6BC6457998047B0A"
+				item: "minecraft:bucket"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["08D334C72F2F5ADC"]
+			description: ["可以用来标记家的位置"]
+			id: "0082C5BEB96B1114"
+			rewards: [{
+				id: "00D3F2F86D28DEE6"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			tasks: [{
+				id: "333F068D4B5273B9"
+				title: "指路石"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["08D334C72F2F5ADC"]
+			id: "0826A7B25117A46A"
+			subtitle: "未实现"
+			tasks: [{
+				id: "26EB9B06AEC25934"
+				type: "checkmark"
+			}]
+			title: "饮水"
+			x: 1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"77ECF5D5E59B874F"
+				"27EAB4476D54033D"
+			]
+			hide_dependency_lines: true
+			id: "181E2BB5C3BC31A9"
+			subtitle: "知识就是力量"
+			tasks: [{
+				id: "2920B4B4B42306C2"
+				item: "minecraft:book"
+				type: "item"
+			}]
+			x: 22.5d
+			y: -3.0d
+		}
+	]
+	title: "序章"
+}

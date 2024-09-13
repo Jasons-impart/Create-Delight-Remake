@@ -1,0 +1,12 @@
+{
+	id: "3C9B3FC1B9184FBC"
+	loot_size: 1
+	order_index: 10
+	rewards: [
+		{ count: 3, item: "vinery:white_grape_seeds" }
+		{ count: 3, item: "vinery:savanna_grape_seeds_white" }
+		{ count: 3, item: "vinery:taiga_grape_seeds_white" }
+		{ count: 3, item: "vinery:jungle_grape_seeds_white" }
+	]
+	title: "白葡萄种"
+}

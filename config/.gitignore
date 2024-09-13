@@ -1,0 +1,23 @@
+/*
+# 忽略当前目录下所以文件
+# 反选不忽略的文件夹和文件
+!.gitignore
+!/fancymenu
+!/iceandfire
+!/jei
+!/lightmanscurrency
+!/modernui
+!/openloader
+!/sound_physics_remastered
+!/starterkit
+!/trades
+!/aether-client.toml
+!/aether-common.toml
+!/carryon-client.toml
+!/carryon-common.toml
+!/curios-client.toml
+!/curios-common.toml
+!/ftbquests
+!/create*
+!/*delight*
+!/*xaero*

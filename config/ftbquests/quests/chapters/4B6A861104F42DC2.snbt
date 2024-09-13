@@ -1,0 +1,409 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "4B6A861104F42DC2"
+	group: "57E934AC8166BC73"
+	icon: {
+		Count: 1
+		id: "tetra:modular_double"
+		tag: {
+			Damage: 0
+			"double/basic_hammer_left_material": "basic_hammer/oak"
+			"double/basic_hammer_right_material": "basic_hammer/oak"
+			"double/basic_handle_material": "basic_handle/stick"
+			"double/handle": "double/basic_handle"
+			"double/head_left": "double/basic_hammer_left"
+			"double/head_right": "double/basic_hammer_right"
+			id: "e72ea1c4-038f-4472-8bef-35b32455354e"
+		}
+	}
+	id: "4B6A861104F42DC2"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			id: "75C7395A84B2E478"
+			subtitle: "用两根木棍和两块木板合成一把木锤"
+			tasks: [{
+				advancement: "tetra:story/more_upgrades"
+				criterion: ""
+				id: "47E4C1E5FD157B6A"
+				type: "advancement"
+			}]
+			title: "欢迎来到tetra!"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["75C7395A84B2E478"]
+			description: ["tetra最基本的合成台，使用tetra含有锤头的任意工具右键原版工作台以转化。"]
+			id: "3821026AD7352739"
+			subtitle: "初识锻造"
+			tasks: [{
+				advancement: "tetra:upgrades/workbench"
+				criterion: ""
+				id: "434991F6270078B1"
+				type: "advancement"
+			}]
+			title: "新起点"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3821026AD7352739"]
+			id: "0BAA9261B098316D"
+			subtitle: "制作下一级的锤子时记得保留上一级的锤子"
+			tasks: [
+				{
+					advancement: "tetra:upgrades/hammer_2"
+					criterion: ""
+					id: "1D2CD21DC0313220"
+					type: "advancement"
+				}
+				{
+					advancement: "tetra:upgrades/hammer_3"
+					criterion: ""
+					id: "72FE65B4F2183317"
+					type: "advancement"
+				}
+				{
+					advancement: "tetra:upgrades/hammer_4"
+					criterion: ""
+					id: "0CB6F26EBBBF6028"
+					type: "advancement"
+				}
+			]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"0BAA9261B098316D"
+				"6A7882FD5FF059C6"
+				"0941D2A2970EB5D1"
+			]
+			id: "72908B9592992F33"
+			size: 1.5d
+			subtitle: "进入锻造遗迹"
+			tasks: [{
+				advancement: "tetra:spelunking/ancient_ruins"
+				criterion: ""
+				id: "171E19D26C841195"
+				type: "advancement"
+			}]
+			title: "昔人已逝"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			description: [
+				"遗迹会生成在会下雪的群系。"
+				"寻找遗迹有两种方法："
+				"1.制图师会出售前往遗迹的地图。"
+				"2.给全息球加装末影之眼升级与紫水晶升级。"
+				"加装紫水晶升级后屏幕上方会出现一个扫荡的GUI。如果遗迹在视野内，则会对应方位的点会变成红色。"
+				"加装末影之眼升级后，将全息球放置在地上，按下“打开扫描仪”按键后，使用锤子敲击可以显示周围区块的群系类型。其中红色的区块便是锻造遗迹所在地。"
+			]
+			id: "6A7882FD5FF059C6"
+			rewards: [
+				{
+					id: "5747085D68036898"
+					item: "minecraft:ender_eye"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "70CF0D0F694161CE"
+					item: "minecraft:amethyst_shard"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "0C52FFCFE8523405"
+				title: "寻找遗迹方法"
+				type: "checkmark"
+			}]
+			x: 6.5d
+			y: -2.0d
+		}
+		{
+			description: ["遗迹内的方块需要使用锤子采集，采集后会获得金属碎片，想要采集下来则需要附魔精准采集的锤子。"]
+			id: "0941D2A2970EB5D1"
+			tasks: [{
+				id: "1DBB3EAE23C5E5CB"
+				title: "注意"
+				type: "checkmark"
+			}]
+			x: 7.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			id: "27BFF02187AC557B"
+			size: 1.0d
+			subtitle: "制作更高等级锤子的必备物品"
+			tasks: [
+				{
+					id: "6CD39BF103A52ABD"
+					item: "tetra:hammer_base"
+					type: "item"
+				}
+				{
+					id: "253C82C316387106"
+					item: "tetra:forged_workbench"
+					type: "item"
+				}
+			]
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			description: ["锻造锤初始为5级，安装上两个燃烧室即可达到7级。"]
+			id: "692DB8953E05EAE5"
+			subtitle: "造五级锤怎么要六级？"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_5"
+				criterion: ""
+				id: "01A6FA2B7630C275"
+				type: "advancement"
+			}]
+			x: 13.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			id: "2C52A0043DF7520D"
+			tasks: [{
+				id: "220322A0E3800924"
+				item: "tetra:lubricant_dispenser"
+				type: "item"
+			}]
+			x: 10.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			description: ["同时也可以作为弓的部件，安装后箭矢基本上不会受重力影响。"]
+			id: "01D8FB94D56BB2E2"
+			tasks: [{
+				id: "1B52F4DF65C456E2"
+				item: "tetra:planar_stabilizer"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			id: "2F1D629721990E36"
+			subtitle: "同时也可以作为盾牌的盾面"
+			tasks: [{
+				id: "4DB9A7DE2A98AFB7"
+				item: "tetra:vent_plate"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			id: "7FB4EF5A8151080B"
+			subtitle: "加大锤力"
+			tasks: [{
+				id: "76D9182D04F5E30B"
+				item: "tetra:combustion_chamber"
+				type: "item"
+			}]
+			x: 12.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			description: [
+				"在遗迹中你会遇到许多物品，他们需要的工具是：羊角锤与锤子。"
+				"打开锻造容器需要先用锤子锤掉四个封印，然后用羊角锤对着角撬直到撬开。&e注意：锻造容器可以翻页"
+				"&r板条箱可以使用锤子或者羊角锤打开，里面往往会出现金属碎片和锻造锤配件。"
+			]
+			id: "5E3FECE8A3CF0983"
+			tasks: [{
+				id: "452148A5ED44068D"
+				type: "checkmark"
+			}]
+			title: "锻造遗迹内的大部分解密"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["692DB8953E05EAE5"]
+			id: "3A31CFC2ECFA2682"
+			subtitle: "有了这个锤力基本上也不需要锻造锤了"
+			tasks: [{
+				advancement: "tetra:upgrades/hammer_6"
+				criterion: ""
+				id: "381E1CC339B1997A"
+				type: "advancement"
+			}]
+			x: 15.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["75C7395A84B2E478"]
+			description: ["模组自带的图鉴，内容包括各种材料的属性，以及各种工具/武器所能改造的部位与对应部位可用的材料。"]
+			id: "31578474F05E7255"
+			subtitle: "不要搞丢了"
+			tasks: [{
+				id: "1635D32BF6CDB1B8"
+				item: {
+					Count: 1
+					id: "tetra:holo"
+					tag: {
+						"holo/core": "holo/core"
+						"holo/core_material": "frame/dim"
+						"holo/frame": "holo/frame"
+						"holo/frame_material": "core/ancient"
+						"holo/repo": "holo/repo"
+						"holo/repo_material": "repo/default"
+						"holo/scanner": "holo/scanner"
+						"holo/scanner_material": "scanner/default"
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			description: ["用于给热力单元充能。"]
+			id: "0D47AFE8234E04C6"
+			subtitle: "需要地核提取器下方有地核管道，且地核管道直连渗流基岩"
+			tasks: [
+				{
+					icon: "tetra:core_extractor"
+					id: "338BC982CF093BEF"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tetra:core_extractor"
+					type: "observation"
+				}
+				{
+					icon: "tetra:transfer_unit"
+					id: "3A11AEDAA541AB5C"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tetra:transfer_unit"
+					type: "observation"
+				}
+				{
+					icon: "tetra:extractor_pipe"
+					id: "1FC0891404D3650A"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tetra:extractor_pipe"
+					type: "observation"
+				}
+			]
+			title: "地核提取"
+			x: 8.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["27BFF02187AC557B"]
+			id: "7D85F4D95B6CC9FD"
+			subtitle: "锻造锤的必需品"
+			tasks: [{
+				id: "12374E522C8E74EB"
+				item: {
+					Count: 1
+					id: "tetra:thermal_cell"
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+				type: "item"
+			}]
+			x: 11.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			description: ["安装在工具的绑定栏位，可以让你调整工具，使你的工具更耐用或者更有效率。"]
+			id: "674A9ED92E7B15C2"
+			subtitle: "变幻莫测"
+			tasks: [{
+				id: "4236A60886C92CB9"
+				item: "tetra:forged_bolt"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			id: "3629F1DBEEFAF2FF"
+			tasks: [{
+				id: "72F79831CE4BD424"
+				item: "tetra:metal_scrap"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3821026AD7352739"]
+			description: ["对着卷轴按住shift可以使其显示更多内容。"]
+			id: "30C7F1B60D7D333A"
+			subtitle: "扩展tetra的重要物品"
+			tasks: [{
+				id: "062D7D9111B942EC"
+				item: "tetra:scroll_rolled"
+				match_nbt: false
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["72908B9592992F33"]
+			id: "314A40F1D8129FD2"
+			subtitle: "可以作为工具的手柄，能提供不错的属性"
+			tasks: [{
+				id: "23E94AB6FB444C54"
+				item: "tetra:forged_beam"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3821026AD7352739"]
+			description: ["在地底你会找到闪烁粒子的石头，挖掉它就会掉落晶洞玉石。使用锤子在加工台上敲开。"]
+			id: "1AF1B7498D6B8705"
+			subtitle: "开宝！"
+			tasks: [{
+				advancement: "tetra:spelunking/geode"
+				criterion: ""
+				id: "637121F81CAC90C6"
+				type: "advancement"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3A31CFC2ECFA2682"]
+			id: "1AA8B7F6B283121A"
+			subtitle: "给下界合金锤镶嵌下界之星"
+			tasks: [{
+				id: "73920CFCA3EFC2F2"
+				item: "minecraft:nether_star"
+				type: "item"
+			}]
+			title: "七级锤"
+			x: 17.0d
+			y: 0.0d
+		}
+	]
+	title: "基础工艺"
+}
