@@ -1,3 +1,4 @@
-config\probe-settings.json
-config\probejs.json
+probe-settings.json
+probejs.json
 probe
+jsconfig.json
