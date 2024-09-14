@@ -4,13 +4,6 @@
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "ad_astra:lunar_wastelands"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
         "value": "byg:mojave_desert"
       }
     ],
