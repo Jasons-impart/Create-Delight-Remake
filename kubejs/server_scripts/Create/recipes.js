@@ -94,10 +94,11 @@ ServerEvents.recipes(e => {
         .id("create:sequenced_assembly/precision_mechanism")
 
     let iner_2 = "createdelight:incomplete_electron_tube"
-    e.recipes.create.sequenced_assembly("create:electron_tube", "create:iron_sheet", [
+    e.recipes.create.sequenced_assembly("2x create:electron_tube", "create:iron_sheet", [
         e.recipes.create.deploying(iner_2, [iner_2, "#forge:wires/electric"]),
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_tin", 10)]),
-        e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"])
+        e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"]),
+        e.recipes.create.cutting(iner_2, iner_2)
     ])
         .transitionalItem(iner_2)
         .loops(1)

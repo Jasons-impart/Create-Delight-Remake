@@ -38,6 +38,7 @@
 			dependencies: ["75C7395A84B2E478"]
 			description: ["tetra最基本的合成台，使用tetra含有锤头的任意工具右键原版工作台以转化。"]
 			id: "3821026AD7352739"
+			size: 1.5d
 			subtitle: "初识锻造"
 			tasks: [{
 				advancement: "tetra:upgrades/workbench"
@@ -402,6 +403,18 @@
 			}]
 			title: "七级锤"
 			x: 17.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["75C7395A84B2E478"]
+			id: "5B01657CB982DF52"
+			size: 2.0d
+			tasks: [{
+				id: "6025EF6D493AB229"
+				title: "强烈建议先看看隔壁锻造之美章节的教程内容！！！"
+				type: "checkmark"
+			}]
+			x: -3.0d
 			y: 0.0d
 		}
 	]
