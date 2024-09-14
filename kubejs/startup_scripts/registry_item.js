@@ -327,4 +327,18 @@ StartupEvents.registry("item", e => {
         .unstackable()
         .translationKey("item.createdelight:sigma_man_sword")
         .rarity("epic")
+        
+    //通用压印模板（ae用）
+    e.create("createdelight:universal_press").tag("vintageimprovements:curving_heads").translationKey("item.createdelight.universal_press")
+    //红石膏
+    e.create("createdelight:redstone_paste").maxDamage(256).translationKey("item.createdelight.redstone_paste")
+    //初加工的电路板
+    e.create('createdelight:initial_processing_of_printed_engineering_processor').translationKey('item.createdelight.initial_processing_of_printed_engineering_processor')
+    e.create('createdelight:initial_processing_of_printed_calculation_processor').translationKey('item.createdelight.initial_processing_of_printed_calculation_processor')
+    e.create('createdelight:initial_processing_of_printed_logic_processor').translationKey('item.createdelight.initial_processing_of_printed_logic_processor')
+    //待压印的处理器
+    e.create('createdelight:engineering_processor_inscribed').translationKey('item.createdelight.engineering_processor_inscribed')
+    e.create('createdelight:calculation_processor_inscribed').translationKey('item.createdelight.calculation_processor_inscribed')
+    e.create('createdelight:logic_processor_inscribed').translationKey('item.createdelight.logic_processor_inscribed')
+
 })
