@@ -1,0 +1,56 @@
+{
+    "name": "block.createdelight.emergency_industrial_platform",
+    "appearance": {
+        "resistance": 12,
+        "requires_tool": false,
+        "idle": {
+            "block":"createdelight:machine/emergency_industrial_platform"
+        },
+        "running": {
+            "block":"createdelight:machine/emergency_industrial_platform"
+        },
+        "errored": {
+            "block":"createdelight:machine/emergency_industrial_platform"
+        },
+        "paused": {
+            "block":"createdelight:machine/emergency_industrial_platform"
+        }
+    },
+    "components": [
+        {
+            "type": "custommachinery:item",
+            "id": "item",
+            "filter": ["minecraft:stone", "minecraft:dirt"],
+            "whitelist": true,
+            "capacity": 1,
+            "mode": "both",
+            "locked":false
+        }
+    ],
+    "gui": [
+        {
+            "type": "custommachinery:texture",
+            "x": 0,
+            "y": 0,
+            "texture": "custommachinery:textures/gui/base_background.png"
+        },
+        {
+            "type": "custommachinery:slot",
+            "x": 119,
+            "y": 30,
+            "id": "item",
+            "texture": "custommachinery:textures/gui/base_slot.png"
+        },
+        {
+            "x": 47,
+            "y": 80,
+            "type": "custommachinery:player_inventory"
+        },
+        {
+            "text": "block.createdelight.emergency_industrial_platform",
+            "x": 7,
+            "y": 5,
+            "type": "custommachinery:text"
+        }
+    ]
+}

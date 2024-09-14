@@ -1,0 +1,19 @@
+{
+  "fluid": "ad_astra:cryo_fuel",
+  "sound_speed": 1,
+  "normal": {
+    "speed": 96.0,
+    "strength": 12288.0,
+    "burn_rate": 2
+  },
+  "modular": {
+    "speed": 128.0,
+    "strength": 16384.0,
+    "burn_rate": 2
+  },
+  "huge": {
+    "speed": 128.0,
+    "strength": 20480.0,
+    "burn_rate": 2
+  }
+}

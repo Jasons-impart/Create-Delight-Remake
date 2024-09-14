@@ -1,0 +1,8 @@
+{
+  "values": [
+    "createdieselgenerators:diesel",
+    "createdieselgenerators:biodiesel",
+    "createdieselgenerators:gasoline",
+    "createdelight:fuel_mixtures"
+  ]
+}
