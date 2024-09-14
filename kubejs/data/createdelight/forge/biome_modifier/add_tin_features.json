@@ -1,0 +1,10 @@
+{
+	"type": "forge:add_features",
+	"biomes": "#minecraft:is_overworld",
+	"features": [
+		"createdelight:ore_tin_middle",
+		"createdelight:ore_tin_small",
+		"createdelight:ore_tin_upper"
+	],
+	"step": "underground_ores"
+}

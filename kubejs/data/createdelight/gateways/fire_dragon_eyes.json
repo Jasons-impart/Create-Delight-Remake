@@ -1,0 +1,207 @@
+{
+	"size": "large",
+	"color": "#FFFF84",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 1
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 2
+				}
+			],
+			"max_wave_time": 800,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 3
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
+			"max_wave_time": 800,
+			"setup_time": 150
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 2
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 6
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.12
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
+			"max_wave_time": 800,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 3
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.6
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.3
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.6
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.14
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:fire_dragon",
+					"rolls": 3
+				}
+			],
+			"max_wave_time": 1000,
+			"setup_time": 280
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:fire_dragon",
+					"count": 3
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 15
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.16
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:experience",
+					"experience": 500,
+					"orb_size": 25
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 340
+		}
+	],
+	"rewards": [
+		{
+			"type": "gateways:entity_loot",
+			"entity": "iceandfire:fire_dragon",
+			"rolls": 5
+		}
+	],
+	"failures": []
+}
