@@ -2405,6 +2405,211 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:emergency_industrial_platform",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "scroll_trader",
+      "Name": "卷轴出售",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;3,2,2,1],intricate:0b,key:\"sword/sturdy_guard\",material:1,ribbon:\"bcb8b5\",schematics:[\"tetra:sword/sturdy_guard\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;4,1,0,5],intricate:0b,key:\"sword/throwing_knife\",material:1,ribbon:\"b8ced9\",schematics:[\"tetra:sword/throwing_knife\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;8,9,10,5],intricate:0b,key:\"sword/howling\",material:1,ribbon:\"faf396\",schematics:[\"tetra:sword/howling\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,4,5],intricate:0b,key:\"single/head/halberd_head/halberd_head\",material:1,ribbon:\"444aff\",schematics:[\"tetra:single/head/halberd_head/halberd_head\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;0,1,9,4],intricate:0b,key:\"sword/key_guard\",material:1,ribbon:\"fae409\",schematics:[\"tetra:sword/key_guard\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;9,3,6,2],intricate:0b,key:\"single/head/mace_head/mace_head\",material:1,ribbon:\"560060\",schematics:[\"tetra:single/head/mace_head/mace_head\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,9,5],intricate:0b,key:\"bow/stave/dreadnought_stave\",material:1,ribbon:\"f3b31f\",schematics:[\"tetra:bow/stave/dreadnought_stave\",\"tetra:bow/stave/dreadnought_cross_stave\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;15,13,12,14],intricate:0b,key:\"bow/string/compound_string\",material:1,ribbon:\"19e588\",schematics:[\"tetra:bow/string/compound_string\",\"tetra:crossbow/string/compound_cross_string\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;3,5,6,9],intricate:0b,key:\"sword/tonal_blade\",material:1,ribbon:\"daf7a6\",schematics:[\"tetra:sword/tonal_blade\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:otherworld_note",
+            "Count": 1
+          },
+          "DisplayName": "用于合成其他卷轴",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     }
