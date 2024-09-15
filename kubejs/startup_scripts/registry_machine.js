@@ -3,7 +3,8 @@ StartupEvents.registry("block", (event) => {
 
     let machinery = [
         "electrolyzer",
-        "emergency_industrial_platform"
+        "emergency_industrial_platform",
+        "alloy_electric_furnace"
     ]
     machinery.forEach((name) => {
         event.create(MODID + name, "custommachinery")
