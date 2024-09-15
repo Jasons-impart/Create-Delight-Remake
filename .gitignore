@@ -72,3 +72,8 @@ config/sound_physics_remastered/reflectivity.properties
 config/sound_physics_remastered/occlusion.properties
 config/everycomp-hazardous.properties
 config/packetfixer.properties
+config/sound_physics_remastered/occlusion.properties
+config/embeddium-fingerprint.json
+config/everycomp-hazardous.properties
+config/packetfixer.properties
+config/sound_physics_remastered/reflectivity.properties

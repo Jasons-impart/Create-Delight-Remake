@@ -299,27 +299,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.netherite_coin")
         .rarity("epic")
 
-    // 一阶火箭核心
-    e.create("createdelight:first_stage_rocket_core")
-        .maxStackSize(64)
-        .translationKey("item.createdelight:first_stage_rocket_core")
-        .rarity("common")
-    // 二阶火箭核心
-    e.create("createdelight:second_stage_rocket_core")
-        .maxStackSize(64)
-        .translationKey("item.createdelight:second_stage_rocket_core")
-        .rarity("common")
-    // 三阶火箭核心
-    e.create("createdelight:third_stage_rocket_core")
-        .maxStackSize(64)
-        .translationKey("item.createdelight:third_stage_rocket_core")
-        .rarity("uncommon")
-    // 四阶火箭核心
-    e.create("createdelight:fourth_stage_rocket_core")
-        .maxStackSize(64)
-        .translationKey("item.createdelight:fourth_stage_rocket_core")
-        .rarity("rare")
-
     // 测试剑
     e.create("createdelight:sigma_man_sword", "sword")
         .tier("netherite")
@@ -327,4 +306,10 @@ StartupEvents.registry("item", e => {
         .unstackable()
         .translationKey("item.createdelight:sigma_man_sword")
         .rarity("epic")
+
+    // 异界笔记
+    e.create("createdelight:otherworld_note")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.otherworld_note")
+        .rarity("rare")
 })

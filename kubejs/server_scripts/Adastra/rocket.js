@@ -68,23 +68,20 @@ ServerEvents.recipes(e => {
         F: "createdelight:fourth_stage_rocket_core"
     })
     //序列组装：一阶火箭核心
-    let inss1 = "createdelight:first_stage_rocket_core"
+    let iner_1 = "createdelight:incomplete_first_stage_rocket_core"
     e.recipes.create.sequenced_assembly([
-        Item.of(inss1).withChance(6),
-        Item.of("minecraft:nether_star").withChance(1.5),
-        Item.of("vintageimprovements:nethersteel_sheet").withChance(1),
-        Item.of("create_sa:steam_engine").withChance(1.5)
-    ],
-        "vintageimprovements:nethersteel_sheet", [
-        e.recipes.create.deploying(inss1, [inss1, "create_sa:steam_engine"]),
-        e.recipes.create.deploying(inss1, [inss1, "createaddition:electrum_ingot"]),
-        e.recipes.create.deploying(inss1, [inss1, "ad_astra:engine_frame"]),
-        e.recipes.create.deploying(inss1, [inss1, "minecraft:nether_star"]),
-        e.recipes.vintageimprovements.curving(inss1, inss1, 2),
-        e.recipes.vintageimprovements.laser_cutting(inss1, inss1, 5000)
-    ]
-    ).transitionalItem("vintageimprovements:nethersteel_sheet")
-        .loops(5)
+        Item.of("createdelight:first_stage_rocket_core").withChance(6),
+        Item.of("minecraft:nether_star").withChance(4),
+        Item.of("createbigcannons:nethersteel_block").withChance(4)
+    ],"createbigcannons:nethersteel_block", [
+        e.recipes.vintageimprovements.turning(iner_1, iner_1),
+        e.recipes.create.deploying(iner_1, [iner_1, 'immersive_aircraft:gyroscope']),
+        e.recipes.create.deploying(iner_1, [iner_1, "minecraft:nether_star"]),
+        e.recipes.vintageimprovements.laser_cutting(iner_1, iner_1, 5000)
+    ])
+        .transitionalItem(iner_1)
+        .loops(1)
+        .id("createdelight:first_stage_rocket_core")
     //序列组装：二阶火箭核心
     let inss2 = "createdelight:second_stage_rocket_core"
     e.recipes.create.sequenced_assembly([

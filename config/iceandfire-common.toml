@@ -69,13 +69,13 @@
 		"Dragon Attack Damage" = 17
 		#Damage dealt from a successful fire breath attack. Attack Damage is scaled to by age, so a stage 5 dragon will deal 5x as much as this number
 		#Range: 0.0 ~ 10000.0
-		"Dragon Attack Damage(Fire breath)" = 2.0
+		"Dragon Attack Damage(Fire breath)" = 6.0
 		#Damage dealt from a successful ice breath attack. Attack Damage is scaled to by age, so a stage 5 dragon will deal 5x as much as this number
 		#Range: 0.0 ~ 10000.0
-		"Dragon Attack Damage(Ice breath)" = 2.5
+		"Dragon Attack Damage(Ice breath)" = 7.5
 		#Damage dealt from a successful lightning breath attack. Attack Damage is scaled to by age, so a stage 5 dragon will deal 5x as much as this number
 		#Range: 0.0 ~ 10000.0
-		"Dragon Attack Damage(Lightning breath)" = 3.5
+		"Dragon Attack Damage(Lightning breath)" = 11.5
 		#Change this to slow down or speed up dragon or amphithere flight.
 		#Range: 0.0 ~ 2.0
 		"Dragon Flight Speed Modifier" = 1.0
@@ -250,21 +250,21 @@
 		"Myrmex Gestation Length" = 2500
 		#How many ticks it takes for a Myrmex to move from a larva to a pupa, and from a pupa to an adult.
 		#Range: 1 ~ 100000
-		"Myrmex Hatch Length" = 35000
+		"Myrmex Hatch Length" = 3500
 		#One out of this number chance per chunk to generate a myrmex hive.
 		#Range: 1 ~ 10000
-		"Myrmex Colony Gen Chance" = 150
+		"Myrmex Colony Gen Chance" = 50
 		#How many maximum individuals a myrmex colony can have.
 		#Range: 10 ~ 10000
 		"Myrmex Colony Max Size" = 80
 		#Base Myrmex(worker) attack strength
 		#Range: 1.0 ~ 10000.0
-		"Myrmex Base Attack Strength" = 3.0
+		"Myrmex Base Attack Strength" = 10.0
 		#The maximum radius myrmex area allowed to wander/forage
 		#Range: 25 ~ 4000
 		"Myrmex Maximum Wander Radius" = 50
 		#Myrmex hives will ignore daytime
-		"Myrmex Hive Ignore Daytime" = false
+		"Myrmex Hive Ignore Daytime" = true
 
 	[Mobs.Amphitheres]
 		#True if amphitheres are allowed to spawn
