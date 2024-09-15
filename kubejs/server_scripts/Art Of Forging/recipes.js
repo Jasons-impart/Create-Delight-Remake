@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    e.replaceInput({mod: "tetra"}, "minecraft:writable_book", "createdelight:otherworld_note")
     remove_recipes_id(e, [
         "tetra:murasama_scroll"
     ])

@@ -306,4 +306,10 @@ StartupEvents.registry("item", e => {
         .unstackable()
         .translationKey("item.createdelight:sigma_man_sword")
         .rarity("epic")
+
+    // 异界笔记
+    e.create("createdelight:otherworld_note")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.otherworld_note")
+        .rarity("rare")
 })
