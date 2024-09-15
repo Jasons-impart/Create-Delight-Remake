@@ -83,42 +83,33 @@ ServerEvents.recipes(e => {
         .loops(1)
         .id("createdelight:first_stage_rocket_core")
     //序列组装：二阶火箭核心
-    let inss2 = "createdelight:second_stage_rocket_core"
+    let iner_2 = "createdelight:incomplete_second_stage_rocket_core"
     e.recipes.create.sequenced_assembly([
-        Item.of(inss2).withChance(6),
-        Item.of("ad_astra:ice_shard").withChance(1.5),
-        Item.of("ad_astra:desh_block").withChance(1),
-        Item.of("create_sa:steam_engine").withChance(1.5)
-    ],
-        "ad_astra:desh_plate", [
-        e.recipes.create.deploying(inss2, [inss2, "create_sa:steam_engine"]),
-        e.recipes.create.deploying(inss2, [inss2, "ad_astra:desh_block"]),
-        e.recipes.create.deploying(inss2, [inss2, "ad_astra:ice_shard"]),
-        e.recipes.create.deploying(inss2, [inss2, "iceandfire:cyclops_eye"]).keepHeldItem(),
-        e.recipes.create.deploying(inss2, [inss2, "iceandfire:gorgon_head"]).keepHeldItem(),
-        e.recipes.vintageimprovements.curving(inss2, inss2, 2),
-        e.recipes.vintageimprovements.laser_cutting(inss2, inss2, 5000)
-    ]
-    ).transitionalItem("ad_astra:desh_plate")
-        .loops(8)
+        Item.of("createdelight:second_stage_rocket_core").withChance(6),
+        Item.of("ad_astra:desh_block").withChance(4)
+    ],"ad_astra:desh_block", [
+        e.recipes.vintageimprovements.turning(iner_2, iner_2),
+        e.recipes.create.deploying(iner_2, [iner_2, "ad_astra:ice_shard"]),
+        e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:cyclops_eye"]),
+        e.recipes.create.deploying(iner_2, [iner_2, 'iceandfire:cockatrice_eye']),
+        e.recipes.vintageimprovements.laser_cutting(iner_2, iner_2, 5000)
+    ])
+        .transitionalItem(iner_2)
+        .loops(1)
+        .id("createdelight:second_stage_rocket_core")
     //序列组装：三阶火箭核心
-    let inss3 = "createdelight:third_stage_rocket_core"
+    let iner_3 = "createdelight:incomplete_third_stage_rocket_core"
     e.recipes.create.sequenced_assembly([
-        Item.of(inss3).withChance(6),
+        Item.of("createdelight:third_stage_rocket_core").withChance(6),
         Item.of("iceandfire:dragonsteel_fire_ingot").withChance(1.5),
-        Item.of("ad_astra:ostrum_plate").withChance(1),
-        Item.of("ad_astra:ostrum_block").withChance(1.5)
-    ],
-        "ad_astra:ostrum_plate", [
-        e.recipes.create.deploying(inss3, [inss3, "create_sa:steam_engine"]),
-        e.recipes.create.deploying(inss3, [inss3, "iceandfire:dragonsteel_fire_ingot"]),
-        e.recipes.create.deploying(inss3, [inss3, "ad_astra:ostrum_block"]),
-        e.recipes.create.filling(inss3, [inss3, Fluid.of("ad_astra:cryo_fuel", 100)]),
-        e.recipes.vintageimprovements.curving(inss3, inss3, 2),
-        e.recipes.vintageimprovements.laser_cutting(inss3, inss3, 5000)
-    ]
-    ).transitionalItem("ad_astra:ostrum_plate")
-        .loops(8)
+        Item.of("ad_astra:ostrum_block").withChance(2.5)
+    ],"ad_astra:ostrum_block", [
+        e.recipes.vintageimprovements.turning(iner_3, iner_3),
+        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 1000)]),
+        e.recipes.vintageimprovements.laser_cutting(iner_3, iner_3, 5000)
+    ])
+        .transitionalItem("ad_astra:ostrum_plate")
+        .loops(3)
     //序列组装：四阶火箭核心
     let inss4 = "createdelight:fourth_stage_rocket_core"
     e.recipes.create.sequenced_assembly([

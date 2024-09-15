@@ -1,4 +1,13 @@
 {
+    "fluid.createdelight.fire_dragon_blood": "火龙血",
+    "block.createdelight.fire_dragon_blood": "火龙血",
+    "item.createdelight.fire_dragon_blood_bucket": "火龙血桶",
+    "fluid.createdelight.ice_dragon_blood": "冰龙血",
+    "block.createdelight.ice_dragon_blood": "冰龙血",
+    "item.createdelight.ice_dragon_blood_bucket": "冰龙血桶",
+    "fluid.createdelight.lightning_dragon_blood": "雷龙血",
+    "block.createdelight.lightning_dragon_blood": "雷龙血",
+    "item.createdelight.lightning_dragon_blood_bucket": "雷龙血桶",
     "block.createdelight.emergency_industrial_platform": "应急工业平台",
     "block.createdelight.electrolyzer": "小型电解机",
     "message.createdelight.south": "南",

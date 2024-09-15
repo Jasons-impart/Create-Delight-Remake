@@ -214,7 +214,7 @@
 		"Stymphalian Bird Feather Drop Chance" = 25
 		#Stymphalian bird feather attack strength.
 		#Range: 0.0 ~ 10000.0
-		"Stymphalian Bird Feather Attack Strength" = 1.0
+		"Stymphalian Bird Feather Attack Strength" = 5.0
 		#How far away stymphalian birds will consider other birds to be in the same flock.
 		#Range: 1 ~ 10000
 		"Stymphalian Bird Flock Length" = 40

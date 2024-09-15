@@ -11,7 +11,7 @@ StartupEvents.registry("block", e => {
     ]
     blocks.forEach(([id, sound, hardness, tool, level]) => {
         e.create(`createdelight:${id}`)
-            .renderType("translucent")
+            .defaultCutout()
             .soundType(sound)
             .hardness(hardness)
             .resistance(hardness)

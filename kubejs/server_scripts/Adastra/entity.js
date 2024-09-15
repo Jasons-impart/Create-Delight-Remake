@@ -15,6 +15,10 @@ ServerEvents.tags("entity_type", e => {
         "iceandfire:myrmex_worker",
         "iceandfire:dragon_egg",
         "iceandfire:dragon_skull",
-        "iceandfire:fire_dragon"
+        "iceandfire:fire_dragon",
+        "iceandfire:stymphalian_bird",
+        "iceandfire:amphithere",
+        "iceandfire:hydra",
+        "iceandfire:lightning_dragon"
     ])
 })
