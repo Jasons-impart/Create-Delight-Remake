@@ -109,7 +109,7 @@
 		}
 		{
 			dependencies: ["43DFD256A8DE6F1E"]
-			description: ["产生的氧气使用管道导出,"]
+			description: ["产生的氧气使用管道导出，使用注液器向容器注入氧气。"]
 			id: "71E2C3861961DD7E"
 			subtitle: "用于产氧气"
 			tasks: [{
@@ -439,6 +439,7 @@
 		{
 			dependencies: ["0EF849425CE2BC23"]
 			id: "4832787642FDF389"
+			subtitle: "可以消耗电量飞行"
 			tasks: [
 				{
 					id: "62463DD0835C1987"

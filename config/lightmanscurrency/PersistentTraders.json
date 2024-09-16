@@ -879,6 +879,23 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "farmersrespite:tea_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     },
@@ -1115,6 +1132,29 @@
           },
           "Product": {
             "id": "create_mechanical_spawner:spawn_fluid_enderman",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelight:copper_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelight:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_wither_skeleton",
             "amount": 1000
           },
           "Quantity": 1,
@@ -2330,7 +2370,7 @@
                 "Amount": 2
               },
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelight:copper_coin",
                 "Amount": 5
               }
             ],
@@ -2421,6 +2461,107 @@
             ],
             "Chain": "main",
             "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_copper",
+            "Count": 1
+          },
+          "DisplayName": "不要搞丢了！搞丢了得花1天才能补回来",
+          "Price": {
+            "Free": true,
+            "type": "lightmanscurrency:null"
+          },
+          "Rules": [
+            {
+              "Limit": 1,
+              "ForgetTime": 86400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_iron",
+            "Count": 1
+          },
+          "BarterItem": {
+            "ID": "createdelight:iron_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_copper",
+            "Count": 1
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_gold",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "BarterItem": {
+            "ID": "createdelight:copper_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_iron",
+            "Count": 1
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_emerald",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "BarterItem": {
+            "ID": "createdelight:gold_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_gold",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_diamond",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "BarterItem": {
+            "ID": "createdelight:emerald_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_emerald",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          }
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_netherite",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "BarterItem": {
+            "ID": "createdelight:netherite_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_diamond",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
           }
         }
       ]
