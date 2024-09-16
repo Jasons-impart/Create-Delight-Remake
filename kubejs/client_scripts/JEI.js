@@ -32,6 +32,7 @@ JEIEvents.hideItems(e => {
         "quark:potato_crate",
         "createaddition:diamond_grit",
         "ad_astra:steel_block",
+        "ae2:facade"
     ])
 })
 
