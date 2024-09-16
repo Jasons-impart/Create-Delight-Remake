@@ -655,18 +655,6 @@
 			]
 			icon: "art_of_forging:sigil_of_eden"
 			id: "1B04B860E2651AEF"
-			rewards: [
-				{
-					id: "22487E6F883CBB3F"
-					item: "art_of_forging:rending_scissor_red"
-					type: "item"
-				}
-				{
-					id: "2E5C1F3349AA6B4F"
-					item: "art_of_forging:rending_scissor_purple"
-					type: "item"
-				}
-			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "Art of Forging"
