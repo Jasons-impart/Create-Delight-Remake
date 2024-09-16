@@ -204,7 +204,7 @@
 				item: "dummmmmmy:target_dummy"
 				type: "item"
 			}]
-			title: "试验伤害（未来也许会加入武器系统吧）"
+			title: "试验伤害"
 			x: -0.5d
 			y: -4.0d
 		}

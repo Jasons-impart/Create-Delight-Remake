@@ -2,37 +2,15 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "minecraft:is_overworld"
-      },
-      {
-        "type": "BIOME_TAG",
-        "negate": false,
-        "value": "forge:is_snowy"
-      },
-      {
-        "type": "BIOME_TAG",
-        "negate": true,
-        "value": "forge:is_wet/overworld"
-      },
-      {
-        "type": "BIOME_TAG",
-        "negate": true,
-        "value": "forge:is_water"
+        "value": "ad_astra:glacio_snowy_barrens"
       }
     ],
     [
       {
         "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "terralith:wintry_forest"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
+        "negate": true,
         "value": "terralith:wintry_lowlands"
       }
     ]
