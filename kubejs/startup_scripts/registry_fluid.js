@@ -73,4 +73,15 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.cryo_fuel")
         .translationKey("block.createdelight.cryo_fuel")
         .translationKey("item.createdelight.cryo_fuel_bucket")
+    // 陨石溶液
+    e.create("createdelight:sky_solution")
+        .translationKey("fluid.createdelight.sky_solution")
+        .translationKey("block.createdelight.sky_solution")
+        .translationKey("item.createdelight.sky_solution_bucket")
+    // 废液
+    e.create("createdelight:spent_liquor")
+        .translationKey("fluid.createdelight.spent_liquor")
+        .translationKey("block.createdelight.spent_liquor")
+        .translationKey("item.createdelight.spent_liquor_bucket")
+
 })
