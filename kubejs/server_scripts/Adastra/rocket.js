@@ -101,31 +101,33 @@ ServerEvents.recipes(e => {
     let iner_3 = "createdelight:incomplete_third_stage_rocket_core"
     e.recipes.create.sequenced_assembly([
         Item.of("createdelight:third_stage_rocket_core").withChance(6),
-        Item.of("iceandfire:dragonsteel_fire_ingot").withChance(1.5),
+        Item.of('ae2:engineering_processor').withChance(1.5),
         Item.of("ad_astra:ostrum_block").withChance(2.5)
     ],"ad_astra:ostrum_block", [
         e.recipes.vintageimprovements.turning(iner_3, iner_3),
-        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 1000)]),
+        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:engineering_processor']),
+        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
+        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
         e.recipes.vintageimprovements.laser_cutting(iner_3, iner_3, 5000)
     ])
-        .transitionalItem("ad_astra:ostrum_plate")
+        .transitionalItem(iner_3)
         .loops(3)
+        .id("createdelight:third_stage_rocket_core")
     //序列组装：四阶火箭核心
-    let inss4 = "createdelight:fourth_stage_rocket_core"
+    let iner_4 = "createdelight:incomplete_fourth_stage_rocket_core"
     e.recipes.create.sequenced_assembly([
-        Item.of(inss4).withChance(6),
-        Item.of("iceandfire:dragonsteel_fire_ingot").withChance(1.5),
-        Item.of("ad_astra:calorite_block").withChance(1),
-        Item.of("iceandfire:dragonsteel_lightning_ingot").withChance(1.5)
-    ],
-        "ad_astra:calorite_plate", [
-        e.recipes.create.deploying(inss4, [inss4, "create_sa:steam_engine"]),
-        e.recipes.create.deploying(inss4, [inss4, "iceandfire:dragonsteel_fire_ingot"]),
-        e.recipes.create.deploying(inss4, [inss4, "iceandfire:dragonsteel_lightning_ingot"]),
-        e.recipes.create.deploying(inss4, [inss4, "ad_astra:calorite_block"]),
-        e.recipes.vintageimprovements.curving(inss4, inss4, 2),
-        e.recipes.vintageimprovements.laser_cutting(inss4, inss4, 5000)
-    ]
-    ).transitionalItem("ad_astra:calorite_plate")
-        .loops(8)
+        Item.of("createdelight:fourth_stage_rocket_core").withChance(6),
+        Item.of('ae2:engineering_processor').withChance(1.5),
+        Item.of("ad_astra:calorite_block").withChance(2.5),
+    ],"ad_astra:calorite_block", [
+        e.recipes.vintageimprovements.turning(iner_4, iner_4),
+        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:engineering_processor']),
+        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
+        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
+        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:lightning_dragon_blood", 500)]),
+        e.recipes.vintageimprovements.laser_cutting(iner_4, iner_4, 5000)
+    ])
+        .transitionalItem("ad_astra:calorite_plate")
+        .loops(4)
+        .id("createdelight:fourth_stage_rocket_core")
 })

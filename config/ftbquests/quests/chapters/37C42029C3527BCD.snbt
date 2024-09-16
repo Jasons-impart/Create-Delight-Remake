@@ -135,8 +135,8 @@
 				item: "minecraft:raw_gold"
 				type: "item"
 			}]
-			x: 8.5d
-			y: -1.0d
+			x: 7.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
@@ -267,8 +267,8 @@
 				item: "createdelight:raw_tin"
 				type: "item"
 			}]
-			x: 9.5d
-			y: -1.0d
+			x: 7.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
@@ -278,7 +278,7 @@
 				item: "iceandfire:raw_silver"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 8.5d
 			y: -1.0d
 		}
 		{

@@ -360,6 +360,8 @@
 					xp: 100
 				}
 			]
+			shape: "rsquare"
+			size: 1.5d
 			subtitle: "快去收集吧"
 			tasks: [{
 				id: "259EA90014A27350"
@@ -1417,6 +1419,8 @@
 					xp: 100
 				}
 			]
+			shape: "rsquare"
+			size: 1.5d
 			tasks: [{
 				icon: "crabbersdelight:shrimp"
 				id: "0296BB0CC2CF4B84"
@@ -1826,6 +1830,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			shape: "hexagon"
 			subtitle: "加工，然后加工。"
 			tasks: [
 				{
@@ -2587,6 +2592,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			shape: "hexagon"
 			tasks: [{
 				id: "6DE0E24BBA9086EE"
 				item: "vintagedelight:salt_dust"
