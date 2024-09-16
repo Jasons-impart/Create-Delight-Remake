@@ -1,4 +1,5 @@
 {
+	autofocus_id: "4B59A1EE7155AFC3"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "02AAD4264B2C55AAB"
@@ -18,20 +19,24 @@
 		}
 	}
 	id: "55436AC0A0C01843"
-	order_index: 0
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["4B59A1EE7155AFC3"]
+			icon: "art_of_forging:sigil_of_eden"
 			id: "526EB245C016B285"
 			size: 2.0d
 			tasks: [{
-				advancement: "tetra:upgrades/workbench"
-				criterion: ""
-				id: "4D2387176B5E9203"
-				type: "advancement"
+				icon: "art_of_forging:sigil_of_eden"
+				id: "7FE967DEA7CA772A"
+				stat: "minecraft:play_time"
+				title: "稀有材料"
+				type: "stat"
+				value: 1
 			}]
 			x: 0.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -44,7 +49,7 @@
 				type: "item"
 			}]
 			x: 0.5d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -57,7 +62,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -70,15 +75,18 @@
 				type: "item"
 			}]
 			x: -0.5d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
+			icon: "art_of_forging:devils_soul_gem"
 			id: "4B59A1EE7155AFC3"
+			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
 				advancement: "tetra:spelunking/ancient_ruins"
 				criterion: ""
-				id: "5F284A120987F470"
+				id: "6D66A0E28FFE7CCD"
+				title: "锻造之美"
 				type: "advancement"
 			}]
 			x: 0.0d
@@ -95,7 +103,7 @@
 				type: "item"
 			}]
 			x: -1.5d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4B59A1EE7155AFC3"]
@@ -126,9 +134,10 @@
 					}
 				}
 				id: "6EB99D1F2D03E1E6"
-				title: "Art of Forging"
+				title: "锻造之艺"
 				type: "questsadditions:time"
 			}]
+			title: "&e锻造，&4魅力无穷！"
 			x: -4.0d
 			y: 5.0d
 		}
@@ -146,8 +155,9 @@
 				title: "Withering Boon"
 				type: "questsadditions:time"
 			}]
-			x: 4.0d
-			y: 5.0d
+			title: "&e根植&4灵魂&e的恐惧"
+			x: 4.059523809523803d
+			y: 5.0238095238095255d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -163,12 +173,20 @@
 		{
 			dependencies: ["61863D59AF0A55BD"]
 			id: "7F7BBF51FF0CAB5C"
-			tasks: [{
-				id: "60B857BB25C9AD71"
-				item: "art_of_forging:vobrivium_ingot"
-				type: "item"
-			}]
-			x: -10.0d
+			subtitle: "沃布莱特水晶可在沉船宝箱中寻找"
+			tasks: [
+				{
+					id: "60B857BB25C9AD71"
+					item: "art_of_forging:vobrivium_ingot"
+					type: "item"
+				}
+				{
+					id: "37157123AB8D7601"
+					item: "art_of_forging:vobrite_crystal"
+					type: "item"
+				}
+			]
+			x: -8.5d
 			y: 4.0d
 		}
 		{
@@ -179,19 +197,20 @@
 				item: "art_of_forging:endsteel_ingot"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -8.5d
 			y: 5.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
-			description: ["可发现于锻造遗迹的锻造容器中。在武器打磨时，如果背包中拥有纳米昆虫则会显示一个特殊的打磨\"纳米融合\"，每特殊打磨一次纳米融合等级便会加高。该等级越高，获得纳米融合特殊掉落物概率也就越高。"]
+			description: [""]
 			id: "119399A4C8B448E3"
-			subtitle: "纳米机器，小子"
+			subtitle: "可发现于锻造遗迹的锻造容器中\\n可使用&e纳米昆虫&r进行特殊打磨&4\"纳米融合\"&r，每次&4纳米融合&r等级都会提高\\n该等级越高，获得&e特殊掉落物&r概率越高"
 			tasks: [{
 				id: "0DC64963E9D8FA64"
 				item: "art_of_forging:nano_insectoid"
 				type: "item"
 			}]
+			title: "纳米机器，小子"
 			x: -7.0d
 			y: 4.0d
 		}
@@ -223,7 +242,7 @@
 				item: "art_of_forging:mark_of_the_architect"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -8.5d
 			y: 6.0d
 		}
 		{
@@ -236,8 +255,8 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 1.5d
+			x: -7.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -248,8 +267,8 @@
 				item: "art_of_forging:devils_soul_gem"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 1.5d
+			x: -8.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -260,22 +279,23 @@
 				item: "art_of_forging:eerie_shard"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 1.5d
+			x: -6.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["48CEB0D9F5BB3B53"]
-			description: ["一把长弓。拉弓速度及其之慢，同时射出的箭矢的速度也非常快。"]
+			description: [""]
 			id: "1737E866D40DF474"
-			subtitle: "忆念之弓"
+			subtitle: "拉弓速度极其之慢，但射出的箭矢的速度极其之快"
 			tasks: [{
 				advancement: "tetra:art_of_forging/remembrance_upgrade"
 				criterion: ""
 				id: "07F5BDC1F7A1669D"
 				type: "advancement"
 			}]
-			x: -9.0d
-			y: -1.0d
+			title: "忆念之弓"
+			x: -8.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["67CE7F0A4A760294"]
@@ -285,7 +305,7 @@
 				item: "art_of_forging:enigmatic_construct"
 				type: "item"
 			}]
-			x: -13.0d
+			x: -11.5d
 			y: 5.0d
 		}
 		{
@@ -297,7 +317,7 @@
 				id: "63E4BBFD373D2DCB"
 				type: "advancement"
 			}]
-			x: -13.0d
+			x: -11.5d
 			y: 6.0d
 		}
 		{
@@ -313,7 +333,7 @@
 				id: "4EED1FAAA08ED78A"
 				type: "advancement"
 			}]
-			x: -11.5d
+			x: -10.0d
 			y: 6.0d
 		}
 		{
@@ -339,7 +359,7 @@
 				id: "2F43423A95F2FE84"
 				type: "advancement"
 			}]
-			x: -10.0d
+			x: -8.5d
 			y: 7.0d
 		}
 		{
@@ -364,22 +384,23 @@
 				}
 			]
 			title: "远古锻器"
-			x: -4.0d
-			y: 7.0d
+			x: -5.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["240203B27A213370"]
-			description: ["带有怪异附层的武器可以更快积攒武器的打磨值，同时攻击时会触发音波尖啸。不过攻击时也有小概率产生幽匿脉络。"]
+			description: [""]
 			id: "6E03644484E41049"
-			subtitle: "音波尖啸"
+			subtitle: "带有怪异附层的武器可以更快积攒武器的打磨值，同时攻击时会触发&3音波尖啸&r\\n不过攻击时也有小概率产生幽匿脉络"
 			tasks: [{
 				advancement: "tetra:art_of_forging/eerie_fuller"
 				criterion: ""
 				id: "5ADE7F2F0F596012"
 				type: "advancement"
 			}]
-			x: -7.0d
-			y: -1.0d
+			title: "音波攻击"
+			x: -6.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["16F7094F6B905C57"]
@@ -390,7 +411,7 @@
 				title: "千夜寒"
 				type: "checkmark"
 			}]
-			x: -11.5d
+			x: -10.0d
 			y: 7.0d
 		}
 		{
@@ -405,14 +426,14 @@
 				item: "art_of_forging:life_fiber"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 7.0d
+			x: -7.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["7E4E208498CE3F49"]
-			description: ["断斩之剪可以作为剑的剑刃改装，同时也是裂天箭图纸的制作材料。"]
+			description: [""]
 			id: "5D841E1441200184"
-			subtitle: "写任务的没看过斩服少女"
+			subtitle: "断斩之剪可以作为剑的剑刃改装，同时也是裂天箭图纸的制作材料"
 			tasks: [
 				{
 					id: "0FBD89E17F2A19B4"
@@ -426,8 +447,8 @@
 				}
 			]
 			title: "左右断斩之剪"
-			x: -6.0d
-			y: 9.0d
+			x: -7.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["5D841E1441200184"]
@@ -439,10 +460,13 @@
 				type: "item"
 			}]
 			x: -6.0d
-			y: 11.0d
+			y: 9.5d
 		}
 		{
-			dependencies: ["152335784AC92B0A"]
+			dependencies: [
+				"152335784AC92B0A"
+				"7CA5C16BA0D6A53A"
+			]
 			id: "2C1635509A52C163"
 			tasks: [
 				{
@@ -462,8 +486,8 @@
 				}
 			]
 			title: "重获新生"
-			x: -4.0d
-			y: 9.0d
+			x: -5.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -474,8 +498,8 @@
 				item: "art_of_forging:shards_of_malice"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 7.0d
+			x: -6.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -486,20 +510,20 @@
 				item: "witheringboon:meldedgeode"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 7.5d
+			x: 5.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
 			id: "0720A511B2906028"
-			subtitle: "击杀远古守卫者掉落"
+			subtitle: "击杀远古守卫者掉落\\n亦可自己制作"
 			tasks: [{
 				id: "43153B558FB9AB5F"
 				item: "witheringboon:hardenedprismarine"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 5.0d
+			x: 5.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0720A511B2906028"]
@@ -509,8 +533,8 @@
 				item: "witheringboon:soulanitealloy"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 5.0d
+			x: 7.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
@@ -523,8 +547,8 @@
 				item: "witheringboon:soulaniteingot"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 5.0d
+			x: 7.0d
+			y: 3.0d
 		}
 		{
 			id: "29FC5B4614FB917D"
@@ -535,56 +559,58 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["29FC5B4614FB917D"]
-			description: ["一把削铁如泥的宝剑，可使用灵魂合金锭升级为噬魂之刃。"]
+			description: [""]
 			id: "355A316987940471"
-			subtitle: "可被灵魂合金升级"
+			subtitle: "一把削铁如泥的宝剑，可使用&6灵魂合金&r升级为&4噬魂之刃&r"
 			tasks: [{
 				id: "44FE197DA0CEA08E"
 				item: "witheringboon:blackbloodblade"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 2.5d
+			x: 4.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: ["在古城中发现的镰刀，可在短时间内眩晕小范围内的敌人，对群体目标和单体目标都非常有效。可使用灵魂合金锭升级为坚守者猎镰。"]
+			description: [""]
 			id: "351C14869FB02126"
-			subtitle: "可被灵魂合金升级"
+			subtitle: "在古城中发现的镰刀，可在短时间内眩晕小范围内的敌人，对群体目标和单体目标都非常有效\\n可使用灵魂合金锭升级为&9坚守者猎镰"
 			tasks: [{
 				id: "387480858FFDBC74"
 				item: "witheringboon:wardensbane"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 7.0d
 			y: 7.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: ["由紫水晶制成，锋利且轻便的战斧，可轻易击碎盾牌和盔甲。可使用灵魂合金锭将其升级为 \"风之力\"。"]
+			description: [""]
 			id: "4968FC87D46C00E0"
+			subtitle: "由紫水晶制成，锋利且轻便的战斧，可轻易击碎盾牌和盔甲。可使用灵魂合金锭将其升级为&3\"风之力\""
 			tasks: [{
 				id: "6441E9EF2F7DD272"
 				item: "witheringboon:amethystgale"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 5.0d
 			y: 7.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: ["作为单头工具的头部改装。一把可投掷的斧头，投掷出去可以砍倒树木，但也是近身攻击的绝佳武器。"]
+			description: [""]
 			id: "59B3DD58FC43E4BA"
+			subtitle: "作为单头工具的头部改装。一把可投掷的斧头，投掷出去可以砍倒树木，但也是近身攻击的绝佳武器。"
 			tasks: [{
 				id: "6F89080C5A664E4A"
 				item: "witheringboon:hoarfrosthead"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 6.0d
 			y: 7.5d
 		}
 		{
@@ -597,18 +623,19 @@
 				item: "art_of_forging:potent_mixture"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 1.5d
+			x: -5.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
 			id: "7575797048B12C10"
+			subtitle: "可发现于末地船中"
 			tasks: [{
 				id: "647163E15EAA8E57"
 				item: "witheringboon:enderchamber"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 4.0d
 			y: 7.5d
 		}
 		{
@@ -620,13 +647,14 @@
 				item: "witheringboon:enderoverdrivemodule"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 4.0d
 			y: 9.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: ["掠夺者制作的攻城武器，能以弧线形式密集地射出许多支箭。"]
+			description: [""]
 			id: "6FF5230178F843C3"
+			subtitle: "掠夺者制作的攻城武器，能以弧线形式密集地射出许多支箭(这不我们泰拉瑞亚吗)"
 			tasks: [{
 				id: "1B7B5809AC4199D6"
 				item: "witheringboon:raidhorn"
@@ -637,8 +665,9 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: ["在丛林深处发现的弓，可直线发射两支箭。"]
+			description: [""]
 			id: "5A87778D72CFFD2D"
+			subtitle: "在丛林深处发现的弓，可直线发射两支箭。"
 			tasks: [{
 				id: "4DE7F829FA8034F7"
 				item: "witheringboon:lostviper"
@@ -647,193 +676,6 @@
 			x: 2.0d
 			y: 7.5d
 		}
-		{
-			description: [
-				"此任务旨在教会你如何游玩tetra的&e锻造内容&r，目的则是让你学会如何自发的改装工具。且此教程&e不会提及每种工具每种材料的具体强度&r，因为理论上来说，看懂了下方的教程后，你能够自己衡量每种材料每种工具的强度。"
-				"祝愿你看完教程后，你能够制作出你自己心仪的武器，领略到真正的锻造之美。"
-			]
-			id: "4745D3F50C44D020"
-			size: 2.0d
-			subtitle: "务必看看！！！"
-			tasks: [{
-				id: "13156497F38FB05A"
-				item: {
-					Count: 1
-					id: "tetra:holo"
-					tag: {
-						"holo/core": "holo/core"
-						"holo/core_material": "frame/dim"
-						"holo/frame": "holo/frame"
-						"holo/frame_material": "core/ancient"
-						"holo/repo": "holo/repo"
-						"holo/repo_material": "repo/default"
-						"holo/scanner": "holo/scanner"
-						"holo/scanner_material": "scanner/default"
-					}
-				}
-				type: "item"
-			}]
-			title: "如何游玩tetra的锻造内容"
-			x: 0.0d
-			y: 10.0d
-		}
-		{
-			dependencies: ["4745D3F50C44D020"]
-			description: [
-				"你可以将&e原版工具&r（本包中还包括一些mod工具）放入加工台中。此时加工台上会显示改装界面，如下图所示："
-				"{image:createdelight:textures/gui/tetra_modify_gui.png width:83 height:66 align:center fit:true}"
-				"上方内容为属性，&e鼠标悬停&r在属性上即可显示属性的详细信息。"
-				"中间内容为工具的具体可改装的部件。"
-				"下方为修复，此修复的逻辑是：将每个部件的组成材料作为一个集合，每次所修复消耗的材料会&e选择集合的第一个，第二个...直到结束&r，然后循环往复。举个例子：假如有一把剑使用钻石作为剑刃，木头作为剑柄，石头作为护手，则每次修复所消耗的材料为钻石->木棍->石头->钻石->......"
-			]
-			id: "7072DAEC4534D452"
-			subtitle: "改装你的原版工具"
-			tasks: [{
-				advancement: "tetra:upgrades/sword_upgrade"
-				criterion: ""
-				id: "4D880D888125FDA1"
-				type: "advancement"
-			}]
-			title: "焕然一新"
-			x: 0.0d
-			y: 14.0d
-		}
-		{
-			dependencies: ["7072DAEC4534D452"]
-			description: [
-				"工具有众多类型，例如单头工具，双头工具，剑，弓，弩，盾牌。"
-				"此处只介绍单头工具与双头工具。&e单头工具&r主要为铁锹，当然mod中加入的戟，流星锤等。"
-				"而&e双头工具&r主要包括镐子，斧子，锄头，锤子等。双头工具也分为两种：&e双头元件型&r与&e工具尾部型&r。"
-				"双头改装型只有在双头都是&e同等级以及同种材料&r的改装类型时才是此材料的挖掘等级，否则会降一级。"
-				"工具尾部型则只有&e尾部与头部为同一种材料&r时挖掘等级才会是此材料的挖掘等级，否则也会降一级。"
-			]
-			id: "5E33AA304B6F9D9C"
-			tasks: [{
-				advancement: "tetra:upgrades/tool_upgrade"
-				criterion: ""
-				id: "292E5997174145BC"
-				type: "advancement"
-			}]
-			title: "工具类型"
-			x: -4.0d
-			y: 17.0d
-		}
-		{
-			dependencies: ["7072DAEC4534D452"]
-			description: [
-				"全息球即为&e此mod的图鉴&r，在其中你就可以找到材料的属性了。"
-				"在材料页面使用按住&eshift，然后使用滚轮&r来滚动页面。&e按住shift&r时也会将所有材料的图标显现出来。"
-				"{@pagebreak}"
-				"下图是一个材料的所有属性："
-				"{image:createdelight:textures/gui/tetra_material.png width:71 height:26 align:center fit:true}"
-				"材料下方的锤子即为将此材料加到工具上所需要的锤子的&e最低锤力&r。"
-				"左右的&e属性&r则会影响各种部件的各种数值。而最右侧就是该材料的&e特殊属性&r。"
-				"{@pagebreak}"
-				"{image:createdelight:textures/gui/tetra_modify_parts_gui.png width:110 height:70 align:center fit:true}"
-				"如上图例子所展示，“简易剑柄”模块受到材料的“耐久”，“完整性”属性影响，此参数越高，加的也就越多。同时“完整度”增加的幅度一定比“耐久”增加的幅度高（此处看不出来，建议你自己去试一下剑柄和剑刃使用同一种材料所带来的耐久变化）。以及此时材料的密度会影响武器的攻击速度。"
-				"所以在挑选材料时，&e请详细的查看该材料提供的属性&r。比如此处的末地烛，完整度属性较高，同时密度也比较轻，所以是作为剑柄的优秀材料，不过相对应的也有一定的负面效果。"
-				"{@pagebreak}"
-			]
-			icon: "minecraft:iron_ingot"
-			id: "70DB791638AB44CF"
-			tasks: [{
-				id: "65F0794AE24B54C8"
-				title: "收到"
-				type: "checkmark"
-			}]
-			title: "材料数值的查看以及其与对应部件的关系"
-			x: -2.0d
-			y: 17.0d
-		}
-		{
-			dependencies: ["7072DAEC4534D452"]
-			description: [
-				"打磨可以让你的工具更加强大。tetra工具在&e消耗耐久度&r时会产生&e打磨值&r。在打磨值到了一定程度后右上角会显示工具可打磨。打磨就是打磨部件，每个部件都有打磨的上限。&e每两次打磨&r都将消耗一点完整值。"
-				"那么完整值除了从手柄，还能从哪里获得呢？同样时在&e使用工具&r到一定程度后，屏幕的右上角会显示“xx部件更加牢固了”之类的话，此时你的工具的完整值就会&e增加一点&r。"
-			]
-			icon: {
-				Count: 1
-				id: "create:sand_paper"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "4536A0F8C9C5E5BC"
-			subtitle: "tetra工具升级的方式"
-			tasks: [{
-				id: "3B66F6B4A68975D0"
-				title: "收到"
-				type: "checkmark"
-			}]
-			title: "打磨与完整度"
-			x: 0.0d
-			y: 17.0d
-		}
-		{
-			dependencies: ["7072DAEC4534D452"]
-			description: [
-				"由非模块化的附魔工具改装而来的会带有附魔，同时模块化后的工具也可以附魔。"
-				"模块化后的工具的附魔是&e附魔在不同的模块&r上的，这就意味着&4当你替换掉拥有附魔的模块，该附魔也会一并消失。&r"
-				"对模块工具的附魔书附魔则是&e选定模块&r进行附魔。"
-				"附魔会消耗工具的&e魔法容量&r，当魔法容量见底时再加附魔会增加你的工具的&e不稳定性&r，不过这个“不稳定性”实际上不会对工具造成多大的影响。"
-			]
-			icon: {
-				Count: 1
-				id: "minecraft:enchanted_book"
-				tag: {
-					StoredEnchantments: [{
-						id: "minecraft:mending"
-						lvl: 1s
-					}]
-				}
-			}
-			id: "69CF4B79C436CB39"
-			tasks: [{
-				id: "46D4D07AA7ADBD11"
-				title: "收到"
-				type: "checkmark"
-			}]
-			title: "tetra工具的附魔"
-			x: 2.0d
-			y: 17.0d
-		}
-		{
-			dependencies: ["7072DAEC4534D452"]
-			description: [
-				"&e卷轴可以让你制作更强大的工具，或者对工具进行各种各样的特殊强化。卷轴的使用方式也不尽相同，有些需要直接放在加工台的台面上（比如千夜寒），有些放在工作台&e周围5x5的范围&r内即可。"
-				"在你改造某模块时，如果你的背包中有对应模块的特殊材料时，你就可以进行该模块的&e特殊改装&r。特殊改装的模块一般能力各异，且拥有强度。"
-			]
-			icon: {
-				Count: 1
-				id: "tetra:scroll_rolled"
-				tag: {
-					BlockEntityTag: {
-						data: [{
-							glyphs: [I;
-								3
-								2
-								2
-								1
-							]
-							intricate: 0b
-							key: "sword/sturdy_guard"
-							material: 1
-							ribbon: "bcb8b5"
-							schematics: ["tetra:sword/sturdy_guard"]
-						}]
-					}
-				}
-			}
-			id: "5BFE12B3FE84D281"
-			tasks: [{
-				id: "42FC35E5CB23D962"
-				title: "收到"
-				type: "checkmark"
-			}]
-			title: "卷轴与特殊材料"
-			x: 4.0d
-			y: 17.0d
-		}
 	]
-	title: "&a锻造之美&r"
+	title: "&3转·锻造之艺"
 }

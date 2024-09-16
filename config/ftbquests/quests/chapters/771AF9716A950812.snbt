@@ -9,14 +9,6 @@
 	images: [
 		{
 			height: 5.0d
-			image: "farmersrespite:item/dandelion_tea"
-			rotation: 0.0d
-			width: 5.0d
-			x: -6.0d
-			y: -4.0d
-		}
-		{
-			height: 5.0d
 			image: "ftbquests:item/lootcrate/front_outline"
 			rotation: 0.0d
 			width: 5.0d
@@ -57,14 +49,6 @@
 		}
 		{
 			height: 5.0d
-			image: "vinery:block/calendar_1"
-			rotation: 0.0d
-			width: 5.0d
-			x: -5.0d
-			y: 3.0d
-		}
-		{
-			height: 5.0d
 			image: "farmersdelight:block/stove_front_on"
 			rotation: 0.0d
 			width: 5.0d
@@ -73,18 +57,10 @@
 		}
 		{
 			height: 5.0d
-			image: "tetra:item/module/toolbelt/belt/buckled"
-			rotation: 0.0d
-			width: 5.0d
-			x: -6.0d
-			y: -2.5d
-		}
-		{
-			height: 5.0d
 			image: "art_of_forging:item/enigmatic_construct"
 			rotation: 0.0d
 			width: 5.0d
-			x: -10.5d
+			x: -11.0d
 			y: -6.0d
 		}
 		{
@@ -94,6 +70,30 @@
 			width: 5.0d
 			x: 0.0d
 			y: -10.0d
+		}
+		{
+			height: 5.0d
+			image: "createdelight:textures/gui/8.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: -5.5d
+			y: -3.5d
+		}
+		{
+			height: 1.0d
+			image: "ftbquests:block/barrier_open"
+			rotation: 0.0d
+			width: 0.0625d
+			x: -5.5d
+			y: 4.5d
+		}
+		{
+			height: 5.0d
+			image: "alexsmobs:textures/painting/nft.png"
+			rotation: 0.0d
+			width: 5.0d
+			x: -5.0d
+			y: 3.0d
 		}
 	]
 	order_index: 0
@@ -244,15 +244,14 @@
 			rewards: [
 				{
 					exclude_from_claim_all: true
-					id: "2709BDF04A97B749"
-					table_id: 6485826240718891201L
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
 					id: "2B8162301619CFFC"
 					table_id: 7772018159856264947L
 					type: "random"
+				}
+				{
+					id: "66043C64D616DE6D"
+					item: "createdelight:copper_coin"
+					type: "item"
 				}
 			]
 			shape: "rsquare"
@@ -591,9 +590,9 @@
 					type: "item"
 				}
 				{
-					id: "0A3909A2793AEDF5"
-					type: "xp_levels"
-					xp_levels: 5
+					id: "4FBED8D2403798A6"
+					item: "createdelight:copper_coin"
+					type: "item"
 				}
 			]
 			shape: "square"
@@ -612,10 +611,9 @@
 			description: ["机械动力（Create）是一个围绕着建筑、装饰和机械的新兴模组，所添加的元素旨在为玩家提供全新的建筑与自动化体验，并尽可能多地为玩家预留自定义空间。在机器与能源方面，模组做出了极大的创新。机器不再由传统科技模组中乏味的电线供能，而是需要玩家搭建机械传动系统驱动。&4任务书中的相关内容&f会引导大家制造一个实用的机器。"]
 			id: "59350A53C2738BD9"
 			rewards: [{
-				exclude_from_claim_all: true
-				id: "6C524984BA3FA1AC"
-				table_id: 6730734086547045908L
-				type: "random"
+				id: "1C88A34D02858755"
+				item: "createdelight:copper_coin"
+				type: "item"
 			}]
 			shape: "rsquare"
 			size: 2.0d
@@ -697,7 +695,7 @@
 				}
 			]
 			title: "锻造之艺"
-			x: -10.5d
+			x: -11.0d
 			y: -6.0d
 		}
 	]
