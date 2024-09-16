@@ -1599,7 +1599,7 @@
 			subtitle: "常见于地狱30-36层"
 			tasks: [{
 				id: "09945E5BB0FB4DEB"
-				item: "createmetallurgy:wolframite_ore"
+				item: "createmetallurgy:raw_wolframite"
 				type: "item"
 			}]
 			x: 6.0d

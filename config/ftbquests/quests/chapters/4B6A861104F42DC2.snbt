@@ -38,7 +38,6 @@
 		}
 		{
 			dependencies: ["75C7395A84B2E478"]
-			description: [""]
 			id: "3821026AD7352739"
 			shape: "hexagon"
 			size: 1.5d
@@ -167,7 +166,6 @@
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: [""]
 			id: "692DB8953E05EAE5"
 			subtitle: "锻造锤初始为5级，安装上两个燃烧室即可达到7级"
 			tasks: [{

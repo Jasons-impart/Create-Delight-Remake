@@ -974,7 +974,7 @@
     {
       "Type": "lctech:fluid_trader",
       "ID": "entity_spawn_fluid_trader",
-      "Name": "奇怪的生物流体（没法用桶装!）",
+      "Name": "奇怪的生物流体",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Trades": [
         {
