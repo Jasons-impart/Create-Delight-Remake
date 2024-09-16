@@ -1,4 +1,5 @@
 {
+	autofocus_id: "03F588EEB89B59F1"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "09B25267E61BEA9F"
@@ -54,12 +55,6 @@
 					item: "minecraft:mushroom_stew"
 					type: "item"
 				}
-				{
-					count: 5
-					id: "2B9144E4A6624C84"
-					item: "nethersdelight:strider_moss_stew"
-					type: "item"
-				}
 			]
 			subtitle: "神奇的真菌生物"
 			tasks: [{
@@ -88,7 +83,7 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "diamond"
+			shape: "hexagon"
 			size: 3.0d
 			tasks: [{
 				id: "4084D6A2070149C6"
@@ -389,6 +384,19 @@
 			title: "源源不断的源头（"
 			x: 2.0d
 			y: 3.5d
+		}
+		{
+			dependencies: ["00B69C1F341234E0"]
+			id: "40F6E5374E55A6CD"
+			subtitle: "你好狠心！"
+			tasks: [{
+				advancement: "castle_in_the_sky:trade"
+				criterion: ""
+				id: "7D37C27F37EB2D92"
+				type: "advancement"
+			}]
+			x: 2.0d
+			y: -9.0d
 		}
 	]
 	title: "主世界探险"

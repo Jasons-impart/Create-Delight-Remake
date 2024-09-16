@@ -13,6 +13,13 @@
         "negate": false,
         "value": "ad_astra:glacio_snowy_barrens"
       }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "ad_astra:glacio_snowy_barrens"
+      }
     ]
   ]
 }

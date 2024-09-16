@@ -1487,7 +1487,7 @@
 				item: "createdelight:gold_coin"
 				type: "item"
 			}]
-			subtitle: "准备飞翔太空吧~"
+			subtitle: "准备飞往太空吧~"
 			tasks: [{
 				id: "261FD2CCB9ADD815"
 				item: "createdelight:fuel_mixtures_bucket"

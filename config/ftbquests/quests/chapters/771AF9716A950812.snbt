@@ -32,20 +32,12 @@
 			y: -5.5d
 		}
 		{
-			height: 6.0d
-			image: "farmersdelight:textures/particle/steam_2.png"
-			rotation: 0.0d
-			width: 6.0d
-			x: 10.0d
-			y: -6.0d
-		}
-		{
 			height: 5.0d
 			image: "everycomp:block/c/forbidden_arcanus/palettes/elder_window"
 			rotation: 0.0d
 			width: 5.0d
 			x: 5.0d
-			y: 3.0d
+			y: 1.0d
 		}
 		{
 			height: 5.0d
@@ -54,22 +46,6 @@
 			width: 5.0d
 			x: 5.0d
 			y: -3.0d
-		}
-		{
-			height: 5.0d
-			image: "art_of_forging:item/enigmatic_construct"
-			rotation: 0.0d
-			width: 5.0d
-			x: -11.0d
-			y: -6.0d
-		}
-		{
-			height: 5.0d
-			image: "createdieselgenerators:block/distillation_tower/distillation_tank"
-			rotation: 0.0d
-			width: 5.0d
-			x: 0.0d
-			y: -10.0d
 		}
 		{
 			height: 5.0d
@@ -92,8 +68,24 @@
 			image: "alexsmobs:textures/painting/nft.png"
 			rotation: 0.0d
 			width: 5.0d
-			x: -5.0d
-			y: 3.0d
+			x: -5.5d
+			y: 1.0d
+		}
+		{
+			height: 5.0d
+			image: "lightmanscurrency:item/portable_atm"
+			rotation: 0.0d
+			width: 5.0d
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			height: 5.0d
+			image: "minecraft:item/ender_eye"
+			rotation: 0.0d
+			width: 5.0d
+			x: 5.0d
+			y: 6.0d
 		}
 	]
 	order_index: 0
@@ -107,11 +99,6 @@
 					count: 24
 					id: "4FEC9B470C9F32F5"
 					item: "minecraft:oak_log"
-					type: "item"
-				}
-				{
-					id: "40200856857D68C6"
-					item: "sophisticatedbackpacks:iron_backpack"
 					type: "item"
 				}
 				{
@@ -133,7 +120,7 @@
 					type: "random"
 				}
 			]
-			shape: "square"
+			shape: "hexagon"
 			size: 4.0d
 			subtitle: "原来你也玩机械动力悠然乐事！"
 			tasks: [{
@@ -144,7 +131,7 @@
 				title: "原来你也玩机械动力悠然乐事！"
 				type: "dimension"
 			}]
-			title: "异世相遇，尽享乐事~"
+			title: "悠然乐事"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -192,8 +179,8 @@
 				}
 			]
 			title: "屠宰相关"
-			x: 10.0d
-			y: -6.0d
+			x: 8.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -225,7 +212,7 @@
 				item: "createdelight:copper_coin"
 				type: "item"
 			}]
-			shape: "diamond"
+			shape: "pentagon"
 			size: 2.0d
 			subtitle: "注意不要认领太多！！！"
 			tasks: [{
@@ -234,7 +221,7 @@
 			}]
 			title: "认领区块相关"
 			x: 5.0d
-			y: 3.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -254,7 +241,7 @@
 					type: "item"
 				}
 			]
-			shape: "rsquare"
+			shape: "pentagon"
 			size: 2.0d
 			subtitle: "来自Alex的生物"
 			tasks: [{
@@ -262,8 +249,8 @@
 				type: "checkmark"
 			}]
 			title: "各式各样的生物"
-			x: -5.0d
-			y: 3.0d
+			x: -6.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["59350A53C2738BD9"]
@@ -276,7 +263,7 @@
 				item: "create_confectionery:caramelized_marshmellow_on_a_stick"
 				type: "item"
 			}]
-			shape: "pentagon"
+			shape: "hexagon"
 			size: 2.0d
 			subtitle: "注意柴油动力里的燃料"
 			tasks: [{
@@ -551,7 +538,7 @@
 					type: "item"
 				}
 			]
-			shape: "square"
+			shape: "pentagon"
 			size: 2.0d
 			subtitle: "感谢所有参加本整合包制作的人员，以下排名不分先后"
 			tasks: [{
@@ -595,7 +582,7 @@
 					type: "item"
 				}
 			]
-			shape: "square"
+			shape: "pentagon"
 			size: 2.0d
 			subtitle: "锻造之艺，就在其中"
 			tasks: [{
@@ -615,7 +602,7 @@
 				item: "createdelight:copper_coin"
 				type: "item"
 			}]
-			shape: "rsquare"
+			shape: "pentagon"
 			size: 2.0d
 			subtitle: "Welcome to create, the world is in your hands"
 			tasks: [{
@@ -666,6 +653,7 @@
 				"&4(相关攻略可以任务书中查询)"
 				"&d汉化由野营组提供,十分感谢，如有意见，立刻删除。"
 			]
+			icon: "art_of_forging:sigil_of_eden"
 			id: "1B04B860E2651AEF"
 			rewards: [
 				{
@@ -679,24 +667,58 @@
 					type: "item"
 				}
 			]
-			shape: "square"
+			shape: "hexagon"
 			size: 2.0d
 			subtitle: "Art of Forging"
-			tasks: [
-				{
-					id: "3879B873C39E8236"
-					item: "tetra:hammer_base"
-					type: "item"
-				}
-				{
-					id: "73ACBBB058AAB489"
-					item: "tetra:forged_workbench"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "3340C7309B991317"
+				title: "锻造的艺术"
+				type: "checkmark"
+			}]
 			title: "锻造之艺"
-			x: -11.0d
-			y: -6.0d
+			x: -9.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: {
+				Count: 1
+				id: "lightmanscurrency:wallet_netherite"
+				tag: {
+					AutoConvert: 1b
+				}
+			}
+			id: "7429D7F92D04A8BB"
+			rewards: [{
+				id: "5156E1D6B92EE81D"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统"
+			tasks: [{
+				id: "6B34FD5059C856EC"
+				title: "货币系统！"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "minecraft:ender_eye"
+			id: "64B9CFE4337A3EAA"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "注意！末地需要完成所有主线任务并解锁终抵群星任务才可去往！！！(&4暂未启用&r)"
+			tasks: [{
+				id: "39FA137A00BB30A2"
+				title: "末地"
+				type: "checkmark"
+			}]
+			x: 5.0d
+			y: 6.0d
 		}
 	]
 	title: "介绍"
