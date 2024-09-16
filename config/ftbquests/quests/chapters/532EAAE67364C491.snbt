@@ -469,6 +469,7 @@
 		{
 			dependencies: ["0EF849425CE2BC23"]
 			id: "4832787642FDF389"
+			subtitle: "可以消耗电量飞行"
 			tasks: [
 				{
 					id: "62463DD0835C1987"

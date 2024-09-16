@@ -202,7 +202,6 @@
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
-			description: [""]
 			id: "119399A4C8B448E3"
 			subtitle: "可发现于锻造遗迹的锻造容器中\\n可使用&e纳米昆虫&r进行特殊打磨&4\"纳米融合\"&r，每次&4纳米融合&r等级都会提高\\n该等级越高，获得&e特殊掉落物&r概率越高"
 			tasks: [{
@@ -284,7 +283,6 @@
 		}
 		{
 			dependencies: ["48CEB0D9F5BB3B53"]
-			description: [""]
 			id: "1737E866D40DF474"
 			subtitle: "拉弓速度极其之慢，但射出的箭矢的速度极其之快"
 			tasks: [{
@@ -389,7 +387,6 @@
 		}
 		{
 			dependencies: ["240203B27A213370"]
-			description: [""]
 			id: "6E03644484E41049"
 			subtitle: "带有怪异附层的武器可以更快积攒武器的打磨值，同时攻击时会触发&3音波尖啸&r\\n不过攻击时也有小概率产生幽匿脉络"
 			tasks: [{
@@ -563,7 +560,6 @@
 		}
 		{
 			dependencies: ["29FC5B4614FB917D"]
-			description: [""]
 			id: "355A316987940471"
 			subtitle: "一把削铁如泥的宝剑，可使用&6灵魂合金&r升级为&4噬魂之刃&r"
 			tasks: [{
@@ -576,7 +572,6 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: [""]
 			id: "351C14869FB02126"
 			subtitle: "在古城中发现的镰刀，可在短时间内眩晕小范围内的敌人，对群体目标和单体目标都非常有效\\n可使用灵魂合金锭升级为&9坚守者猎镰"
 			tasks: [{
@@ -589,7 +584,6 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: [""]
 			id: "4968FC87D46C00E0"
 			subtitle: "由紫水晶制成，锋利且轻便的战斧，可轻易击碎盾牌和盔甲。可使用灵魂合金锭将其升级为&3\"风之力\""
 			tasks: [{
@@ -602,7 +596,6 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: [""]
 			id: "59B3DD58FC43E4BA"
 			subtitle: "作为单头工具的头部改装。一把可投掷的斧头，投掷出去可以砍倒树木，但也是近身攻击的绝佳武器。"
 			tasks: [{
@@ -652,7 +645,6 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: [""]
 			id: "6FF5230178F843C3"
 			subtitle: "掠夺者制作的攻城武器，能以弧线形式密集地射出许多支箭(这不我们泰拉瑞亚吗)"
 			tasks: [{
@@ -665,7 +657,6 @@
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
-			description: [""]
 			id: "5A87778D72CFFD2D"
 			subtitle: "在丛林深处发现的弓，可直线发射两支箭。"
 			tasks: [{
