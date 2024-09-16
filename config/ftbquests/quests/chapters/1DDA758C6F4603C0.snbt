@@ -1401,12 +1401,6 @@
 			shape: "square"
 			size: 4.0d
 			subtitle: "燕子，没有你我可怎么活啊，燕子！"
-			tasks: [{
-				advancement: "ad_astra:rocket_destroyed"
-				criterion: ""
-				id: "5A047A050FB4A6A5"
-				type: "advancement"
-			}]
 			title: "等等我，我还没上车啊！！！！"
 			x: 10.0d
 			y: 5.0d

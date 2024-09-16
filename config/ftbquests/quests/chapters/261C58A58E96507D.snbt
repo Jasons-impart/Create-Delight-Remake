@@ -14,7 +14,6 @@
 				"3CC5C997C5AC7D30"
 				"040CED5705ED7E24"
 				"64E5E20F279E1544"
-				"6731C7B5A0DADBAA"
 			]
 			id: "0E515BE9EA2A0B2F"
 			rewards: [{
@@ -562,7 +561,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["2C4BC15C42ABB286"]
+			dependencies: [
+				"2C4BC15C42ABB286"
+				"0E515BE9EA2A0B2F"
+			]
 			id: "6731C7B5A0DADBAA"
 			rewards: [
 				{

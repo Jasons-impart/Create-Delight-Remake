@@ -220,19 +220,11 @@
 				}
 			}
 			id: "428692AFFB20055B"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3E1513777370ADD8"
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "6F897311B6775871"
-					table_id: 5077918012354645869L
-					type: "random"
-				}
-			]
+			rewards: [{
+				id: "262C632976BB2F34"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			shape: "diamond"
 			size: 2.0d
 			subtitle: "注意不要认领太多！！！"
@@ -258,31 +250,18 @@
 				}
 				{
 					exclude_from_claim_all: true
-					id: "10FA0C0DBD4AC714"
-					table_id: 4367154364932444092L
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "66FC11647493FB84"
+					id: "2B8162301619CFFC"
 					table_id: 7772018159856264947L
-					type: "choice"
+					type: "random"
 				}
 			]
 			shape: "rsquare"
 			size: 2.0d
 			subtitle: "来自Alex的生物"
-			tasks: [
-				{
-					id: "3ED4156434322595"
-					type: "checkmark"
-				}
-				{
-					id: "38DA30EE9EDD5B8C"
-					item: "alexsmobs:animal_dictionary"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "3ED4156434322595"
+				type: "checkmark"
+			}]
 			title: "各式各样的生物"
 			x: -5.0d
 			y: 3.0d
@@ -301,19 +280,11 @@
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "注意柴油动力里的燃料"
-			tasks: [
-				{
-					id: "495948214572F723"
-					title: "柴油动力！"
-					type: "checkmark"
-				}
-				{
-					count: 24L
-					id: "3747D99FC15A1F1D"
-					item: "minecraft:iron_ingot"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "495948214572F723"
+				title: "柴油动力！"
+				type: "checkmark"
+			}]
 			x: 0.0d
 			y: -10.0d
 		}
@@ -628,38 +599,11 @@
 			shape: "square"
 			size: 2.0d
 			subtitle: "锻造之艺，就在其中"
-			tasks: [
-				{
-					id: "77549F0D9F837A05"
-					title: "锻造大师"
-					type: "checkmark"
-				}
-				{
-					advancement: "tetra:upgrades/root"
-					criterion: ""
-					id: "3BC2EE382E874DF9"
-					type: "advancement"
-				}
-				{
-					count: 2L
-					id: "4496AAC8FB3C171C"
-					item: {
-						Count: 1
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/oak"
-							"double/basic_hammer_right_material": "basic_hammer/oak"
-							"double/basic_handle_material": "basic_handle/stick"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "8d9f4d4f-cc7b-40a7-94e2-c6ed432839d9"
-						}
-					}
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "77549F0D9F837A05"
+				title: "锻造大师"
+				type: "checkmark"
+			}]
 			x: -6.0d
 			y: -3.0d
 		}
@@ -691,10 +635,9 @@
 			icon: "minecraft:wheat"
 			id: "64FB1FEC4F9721B7"
 			rewards: [{
-				exclude_from_claim_all: true
-				id: "505418A5DEC0FD98"
-				table_id: 5347970608351672481L
-				type: "random"
+				id: "306A1996A10BFBA9"
+				item: "createdelight:copper_coin"
+				type: "item"
 			}]
 			shape: "pentagon"
 			size: 2.0d
