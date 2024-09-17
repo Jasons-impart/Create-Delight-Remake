@@ -4,7 +4,7 @@
 	"textures": {
 		"1": "createdelight:block/alloy_electric_furnace/top",
 		"3": "createdelight:block/alloy_electric_furnace/side",
-		"4": "createdelight:block/alloy_electric_furnace/front",
+		"4": "createdelight:block/alloy_electric_furnace/front_on",
 		"5": "createdelight:block/alloy_electric_furnace/down"
 	},
 	"elements": [
