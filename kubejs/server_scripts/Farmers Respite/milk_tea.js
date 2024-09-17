@@ -35,11 +35,6 @@ ServerEvents.recipes(e => {
             { "tag": "minecraft:leaves" },
             {
                 "amount": 200,
-                "fluid": "minecraft:water",
-                "nbt": {}
-            },
-            {
-                "amount": 200,
                 "fluidTag": "forge:milk"
             },
             {
