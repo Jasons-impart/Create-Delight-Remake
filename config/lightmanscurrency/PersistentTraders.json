@@ -2488,6 +2488,7 @@
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
           },
+          "DisplayName": "交换时记得把钱取出来！！",
           "BarterItem": {
             "ID": "createdelight:iron_coin",
             "Count": 9
@@ -2495,7 +2496,10 @@
           "BarterItem2": {
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
-          }
+          },
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2504,6 +2508,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
+          "DisplayName": "交换时记得把钱取出来！！",
           "BarterItem": {
             "ID": "createdelight:copper_coin",
             "Count": 9
@@ -2511,7 +2516,10 @@
           "BarterItem2": {
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
-          }
+          },
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2520,6 +2528,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
+          "DisplayName": "交换时记得把钱取出来！！",
           "BarterItem": {
             "ID": "createdelight:gold_coin",
             "Count": 9
@@ -2528,7 +2537,10 @@
             "ID": "lightmanscurrency:wallet_gold",
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
-          }
+          },
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2537,6 +2549,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
+          "DisplayName": "交换时记得把钱取出来！！",
           "BarterItem": {
             "ID": "createdelight:emerald_coin",
             "Count": 9
@@ -2545,7 +2558,10 @@
             "ID": "lightmanscurrency:wallet_emerald",
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
-          }
+          },
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2554,6 +2570,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
+          "DisplayName": "交换时记得把钱取出来！！",
           "BarterItem": {
             "ID": "createdelight:netherite_coin",
             "Count": 9
@@ -2562,7 +2579,10 @@
             "ID": "lightmanscurrency:wallet_diamond",
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
-          }
+          },
+          "IgnoreNBT": [
+            3
+          ]
         }
       ]
     },
