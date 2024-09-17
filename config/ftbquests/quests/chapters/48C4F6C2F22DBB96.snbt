@@ -10,17 +10,24 @@
 	quests: [
 		{
 			id: "7DD6AE3D040FB1AE"
-			rewards: [{
-				id: "1B9C60BFB14C6219"
-				item: {
-					Count: 1
-					id: "supplementaries:bubble_blower"
-					tag: {
-						Damage: 0
+			rewards: [
+				{
+					id: "1B9C60BFB14C6219"
+					item: {
+						Count: 1
+						id: "supplementaries:bubble_blower"
+						tag: {
+							Damage: 0
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "6561BBAFBBA66251"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			tasks: [
 				{
 					id: "446015A99AE27594"
@@ -39,17 +46,18 @@
 		{
 			description: [" &l具体操作方法详见&4https://www.mcmod.cn/post/3679.html&r"]
 			id: "7D65EC61C0EDC6D7"
-			rewards: [{
-				id: "1B5354565B111566"
-				item: {
-					Count: 1
-					id: "supplementaries:flute"
-					tag: {
-						Damage: 0
-					}
+			rewards: [
+				{
+					id: "1225859249BFB5E4"
+					item: "createdelight:copper_coin"
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "3191FB1774A49B8B"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "可以让朋友听到你的网易云音乐歌单！"
 			tasks: [
 				{
@@ -79,17 +87,24 @@
 		}
 		{
 			id: "6DACD46450CD6DFD"
-			rewards: [{
-				id: "02B62F82E52A2E06"
-				item: {
-					Count: 1
-					id: "supplementaries:bubble_blower"
-					tag: {
-						Damage: 0
+			rewards: [
+				{
+					id: "02B62F82E52A2E06"
+					item: {
+						Count: 1
+						id: "supplementaries:bubble_blower"
+						tag: {
+							Damage: 0
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "037602B0115E8329"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			tasks: [
 				{
 					id: "14EE4000084D36A9"
@@ -113,17 +128,24 @@
 				"骑马或本体接近马车后，按下快捷键拖走马车。"
 			]
 			id: "11584A30A7E1004D"
-			rewards: [{
-				id: "32D5ED5DAAF30976"
-				item: {
-					Count: 1
-					id: "supplementaries:slingshot"
-					tag: {
-						Damage: 0
+			rewards: [
+				{
+					id: "32D5ED5DAAF30976"
+					item: {
+						Count: 1
+						id: "supplementaries:slingshot"
+						tag: {
+							Damage: 0
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "387C85143272CD6D"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "开了光影非常惬意！"
 			tasks: [{
 				id: "13DC070521D92E6E"
@@ -135,17 +157,24 @@
 		}
 		{
 			id: "6EA2CC5B89935877"
-			rewards: [{
-				id: "2B6F9F770B05A493"
-				item: {
-					Count: 1
-					id: "supplementaries:bubble_blower"
-					tag: {
-						Damage: 0
+			rewards: [
+				{
+					id: "2B6F9F770B05A493"
+					item: {
+						Count: 1
+						id: "supplementaries:bubble_blower"
+						tag: {
+							Damage: 0
+						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "7EE41CB3B2AE365D"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "右键随机放置物品栏内建筑方块。非常适合做旧。"
 			tasks: [{
 				id: "104D8D8F7FCD9F7B"
@@ -158,23 +187,35 @@
 		}
 		{
 			id: "2983A2F4EF48C2EC"
-			rewards: [{
-				id: "4802D1FCD078C6EE"
-				item: "quark:abacus"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "4802D1FCD078C6EE"
+					item: "quark:abacus"
+					type: "item"
+				}
+				{
+					id: "36E7C0B06F21050B"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "6C0A4800B9155FAA"
 				item: "dummmmmmy:target_dummy"
 				type: "item"
 			}]
-			title: "试验伤害（未来也许会加入武器系统吧）"
+			title: "试验伤害"
 			x: -0.5d
 			y: -4.0d
 		}
 		{
 			dependencies: ["7DD6AE3D040FB1AE"]
 			id: "1BE43F6D6EF3FE1E"
+			rewards: [{
+				id: "719586DE121ECEEA"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "693A77DD22C6304D"
@@ -208,6 +249,11 @@
 					item: "minecraft:iron_horse_armor"
 					type: "item"
 				}
+				{
+					id: "5AE7A679ED9A2010"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
 			]
 			subtitle: "顶针的小马珍珠我也想要！"
 			tasks: [{
@@ -226,11 +272,18 @@
 			description: ["可以用来标记家的位置，注意：&e太远了会消耗经验"]
 			icon: "waystones:waystone"
 			id: "0082C5BEB96B1114"
-			rewards: [{
-				id: "00D3F2F86D28DEE6"
-				item: "waystones:waystone"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "00D3F2F86D28DEE6"
+					item: "waystones:waystone"
+					type: "item"
+				}
+				{
+					id: "65735F2BEDDE37C3"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "好耶！我可以传送了！"
 			tasks: [{
 				id: "333F068D4B5273B9"
@@ -243,6 +296,11 @@
 		{
 			description: ["选择3×3的空地，将合成蓝图右键放置，共有九个位置，空手或者机械动力扳手右键设置合成配方（可以JEI拖入或者直接点击小加号，点击小加号可以使用tag进行合成），设置完成后右键直接合成一次，蹲下右键可一次合成一组（没有一组就全都消耗掉），设置完成后千万不要用机械动力扳手右键（会直接消除合成配方）"]
 			id: "60B88C2A6488DC81"
+			rewards: [{
+				id: "298CAC0E9DFF9765"
+				item: "createdelight:copper_coin"
+				type: "item"
+			}]
 			subtitle: "霍！这不是植物魔法的工厂环吗"
 			tasks: [{
 				id: "64BF60DCF2763E29"
@@ -255,12 +313,19 @@
 		}
 		{
 			id: "22051C1DF80F99F0"
-			rewards: [{
-				count: 8
-				id: "32E6C10F0925B193"
-				item: "minecraft:golden_carrot"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 8
+					id: "32E6C10F0925B193"
+					item: "minecraft:golden_carrot"
+					type: "item"
+				}
+				{
+					id: "3D9C8F2E7020D7EF"
+					item: "createdelight:copper_coin"
+					type: "item"
+				}
+			]
 			subtitle: "用你的作物对敌人打出大量伤害吧"
 			tasks: [{
 				id: "378DF02C718C7A99"

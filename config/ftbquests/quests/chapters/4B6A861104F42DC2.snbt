@@ -1,4 +1,5 @@
 {
+	autofocus_id: "3821026AD7352739"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "4B6A861104F42DC2"
@@ -23,6 +24,7 @@
 	quests: [
 		{
 			id: "75C7395A84B2E478"
+			shape: "square"
 			subtitle: "用两根木棍和两块木板合成一把木锤"
 			tasks: [{
 				advancement: "tetra:story/more_upgrades"
@@ -36,19 +38,20 @@
 		}
 		{
 			dependencies: ["75C7395A84B2E478"]
-			description: ["tetra最基本的合成台，使用tetra含有锤头的任意工具右键原版工作台以转化。"]
 			id: "3821026AD7352739"
+			shape: "hexagon"
 			size: 1.5d
-			subtitle: "初识锻造"
+			subtitle: "tetra最基本的合成台，使用tetra含有锤头的任意工具右键原版工作台以转化"
 			tasks: [{
 				advancement: "tetra:upgrades/workbench"
 				criterion: ""
 				id: "434991F6270078B1"
+				title: "锤子右键工作台"
 				type: "advancement"
 			}]
 			title: "新起点"
-			x: 2.0d
-			y: 0.0d
+			x: 2.0095238095237917d
+			y: 0.0238095238095255d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -84,17 +87,19 @@
 				"0941D2A2970EB5D1"
 			]
 			id: "72908B9592992F33"
+			shape: "hexagon"
 			size: 1.5d
 			subtitle: "进入锻造遗迹"
 			tasks: [{
 				advancement: "tetra:spelunking/ancient_ruins"
 				criterion: ""
 				id: "171E19D26C841195"
+				title: "找到锻造遗迹"
 				type: "advancement"
 			}]
 			title: "昔人已逝"
-			x: 7.5d
-			y: 0.0d
+			x: 6.009523809523785d
+			y: 0.0238095238095255d
 		}
 		{
 			description: [
@@ -124,8 +129,8 @@
 				title: "寻找遗迹方法"
 				type: "checkmark"
 			}]
-			x: 6.5d
-			y: -2.0d
+			x: 5.0d
+			y: -1.5d
 		}
 		{
 			description: ["遗迹内的方块需要使用锤子采集，采集后会获得金属碎片，想要采集下来则需要附魔精准采集的锤子。"]
@@ -135,12 +140,13 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: 7.5d
-			y: -2.0d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
 			id: "27BFF02187AC557B"
+			shape: "hexagon"
 			size: 1.0d
 			subtitle: "制作更高等级锤子的必备物品"
 			tasks: [
@@ -155,21 +161,21 @@
 					type: "item"
 				}
 			]
-			x: 11.0d
+			x: 9.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: ["锻造锤初始为5级，安装上两个燃烧室即可达到7级。"]
 			id: "692DB8953E05EAE5"
-			subtitle: "造五级锤怎么要六级？"
+			subtitle: "锻造锤初始为5级，安装上两个燃烧室即可达到7级"
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_5"
 				criterion: ""
 				id: "01A6FA2B7630C275"
 				type: "advancement"
 			}]
-			x: 13.0d
+			title: "造五级锤怎么要六级？"
+			x: 11.0d
 			y: 0.0d
 		}
 		{
@@ -180,8 +186,8 @@
 				item: "tetra:lubricant_dispenser"
 				type: "item"
 			}]
-			x: 10.5d
-			y: -2.0d
+			x: 9.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -192,8 +198,8 @@
 				item: "tetra:planar_stabilizer"
 				type: "item"
 			}]
-			x: 9.5d
-			y: -2.0d
+			x: 8.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -204,8 +210,8 @@
 				item: "tetra:vent_plate"
 				type: "item"
 			}]
-			x: 11.5d
-			y: -2.0d
+			x: 10.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -216,8 +222,8 @@
 				item: "tetra:combustion_chamber"
 				type: "item"
 			}]
-			x: 12.5d
-			y: -2.0d
+			x: 11.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -232,24 +238,24 @@
 				type: "checkmark"
 			}]
 			title: "锻造遗迹内的大部分解密"
-			x: 6.0d
-			y: 2.0d
+			x: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["692DB8953E05EAE5"]
 			id: "3A31CFC2ECFA2682"
-			subtitle: "有了这个锤力基本上也不需要锻造锤了"
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_6"
 				criterion: ""
 				id: "381E1CC339B1997A"
 				type: "advancement"
 			}]
-			x: 15.0d
+			title: "有了这个锤力基本上也不需要锻造锤了"
+			x: 12.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["75C7395A84B2E478"]
+			dependencies: ["3821026AD7352739"]
 			description: ["模组自带的图鉴，内容包括各种材料的属性，以及各种工具/武器所能改造的部位与对应部位可用的材料。"]
 			id: "31578474F05E7255"
 			subtitle: "不要搞丢了"
@@ -271,48 +277,39 @@
 				}
 				type: "item"
 			}]
-			x: 0.0d
-			y: -2.0d
+			x: 3.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
-			description: ["用于给热力单元充能。"]
+			description: [""]
 			id: "0D47AFE8234E04C6"
-			subtitle: "需要地核提取器下方有地核管道，且地核管道直连渗流基岩"
+			subtitle: "地核提取器下方需有地核管道，且直连渗流基岩\\n用于给&4热力单元&r充能"
 			tasks: [
 				{
-					icon: "tetra:core_extractor"
-					id: "338BC982CF093BEF"
-					observe_type: 0
-					timer: 0L
-					to_observe: "tetra:core_extractor"
-					type: "observation"
+					id: "6E27317F040843BF"
+					item: "tetra:core_extractor"
+					type: "item"
 				}
 				{
-					icon: "tetra:transfer_unit"
-					id: "3A11AEDAA541AB5C"
-					observe_type: 0
-					timer: 0L
-					to_observe: "tetra:transfer_unit"
-					type: "observation"
+					id: "67680CCA57CD8A52"
+					item: "tetra:transfer_unit"
+					type: "item"
 				}
 				{
-					icon: "tetra:extractor_pipe"
-					id: "1FC0891404D3650A"
-					observe_type: 0
-					timer: 0L
-					to_observe: "tetra:extractor_pipe"
-					type: "observation"
+					id: "73642797B3714B56"
+					item: "tetra:extractor_pipe"
+					type: "item"
 				}
 			]
 			title: "地核提取"
-			x: 8.5d
-			y: -2.0d
+			x: 7.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
 			id: "7D85F4D95B6CC9FD"
-			subtitle: "锻造锤的必需品"
+			subtitle: "锻造锤的动力源"
 			tasks: [{
 				id: "12374E522C8E74EB"
 				item: {
@@ -325,8 +322,8 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: 11.0d
-			y: 2.0d
+			x: 9.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -338,33 +335,54 @@
 				item: "tetra:forged_bolt"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 2.0d
+			x: 5.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
 			id: "3629F1DBEEFAF2FF"
+			subtitle: "神秘莫测的金属，也许还有什么其他用途？"
 			tasks: [{
 				id: "72F79831CE4BD424"
 				item: "tetra:metal_scrap"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 2.0d
+			x: 6.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["对着卷轴按住shift可以使其显示更多内容。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [I;
+								3
+								2
+								2
+								1
+							]
+							intricate: 0b
+							key: "sword/sturdy_guard"
+							material: 1
+							ribbon: "bcb8b5"
+							schematics: ["tetra:sword/sturdy_guard"]
+						}]
+					}
+				}
+			}
 			id: "30C7F1B60D7D333A"
 			subtitle: "扩展tetra的重要物品"
 			tasks: [{
-				id: "062D7D9111B942EC"
-				item: "tetra:scroll_rolled"
-				match_nbt: false
-				type: "item"
+				id: "4E2ACF770DA08FE1"
+				title: "卷轴"
+				type: "checkmark"
 			}]
 			x: 2.0d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -375,22 +393,24 @@
 				item: "tetra:forged_beam"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 2.0d
+			x: 7.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
-			description: ["在地底你会找到闪烁粒子的石头，挖掉它就会掉落晶洞玉石。使用锤子在加工台上敲开。"]
+			description: [""]
 			id: "1AF1B7498D6B8705"
-			subtitle: "开宝！"
+			subtitle: "在地底你会找到闪烁粒子的石头，挖掉它就会掉落晶洞玉石。使用锤子在加工台上敲开。"
 			tasks: [{
 				advancement: "tetra:spelunking/geode"
 				criterion: ""
 				id: "637121F81CAC90C6"
+				title: "晶洞"
 				type: "advancement"
 			}]
+			title: "开宝！"
 			x: 2.0d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
@@ -402,21 +422,9 @@
 				type: "item"
 			}]
 			title: "七级锤"
-			x: 17.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["75C7395A84B2E478"]
-			id: "5B01657CB982DF52"
-			size: 2.0d
-			tasks: [{
-				id: "6025EF6D493AB229"
-				title: "强烈建议先看看隔壁锻造之美章节的教程内容！！！"
-				type: "checkmark"
-			}]
-			x: -3.0d
+			x: 14.0d
 			y: 0.0d
 		}
 	]
-	title: "基础工艺"
+	title: "&2承·新开端"
 }

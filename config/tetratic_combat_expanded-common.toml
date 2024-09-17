@@ -1,0 +1,19 @@
+
+[rendering]
+	#Enable Tetratic Rescaling for Items in the players Hand.
+	enableRescale = true
+
+[technical]
+	#Use Tetras AttackRange.
+	tetraRange = true
+	#Fall back to Tetras Reach Attribute instead of Range - used for broken addons or old Tetra Versions.
+	rangeFallback = true
+	#Uses Tetras Quick Stat to Scale Upswing.
+	quickIsUpswing = true
+	#Set the stacks on item switching - This is for older Worlds or config Changes, if you do not have old Items in your world you can turn this off
+	fallBackApplyConfig = true
+	#Event Backup for Howling, Lunging and True sweep (might cause effects to be executed twice)
+	EmptyLeftClick = true
+	#Verbose logs, enable this if you are having trouble and want to see more details in the logs
+	verboseLogs = false
+

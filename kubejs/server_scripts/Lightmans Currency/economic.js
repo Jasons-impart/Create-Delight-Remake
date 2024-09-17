@@ -31,6 +31,8 @@ ServerEvents.recipes(e => {
         "9x createdelight:emerald_coin",
         "createdelight:netherite_coin"
     ).id("createdelight:netherite_2_emerald")
+
+
 })
 MoreJSEvents.villagerTrades(e => {
     e.removeModdedTrades(["lightmanscurrency:banker"], 1)
@@ -43,7 +45,7 @@ MoreJSEvents.villagerTrades(e => {
         ["4x createdelight:iron_coin", "8x createdelight:iron_coin", "lightmanscurrency:trading_core"]
     ]
     trades.forEach(trade => {
-        if( trade.length > 2 ) {
+        if (trade.length > 2) {
             e.addTrade("lightmanscurrency:banker", 1, [trade[0], trade[1]], trade[2])
         } else {
             e.addTrade("lightmanscurrency:banker", 1, [trade[0]], trade[1])

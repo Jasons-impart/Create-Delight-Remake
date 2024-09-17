@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "1CD865FBF0A26F4D"
 	group: "57E934AC8166BC73"
+	hide_quest_until_deps_visible: true
 	icon: {
 		Count: 1
 		id: "tetra:scroll_rolled"
@@ -30,10 +31,11 @@
 		}
 	}
 	id: "1CD865FBF0A26F4D"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["30C7F1B60D7D333A"]
 			description: ["此章节仅简单介绍&5原理图&r或者&5卷轴&r的获取方式，具体改装内容请查看其他章节"]
 			icon: {
 				Count: 1
@@ -74,7 +76,6 @@
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
-			description: [""]
 			icon: "minecraft:emerald"
 			id: "3F7B4E18AB383B9E"
 			shape: "rsquare"
@@ -493,7 +494,6 @@
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
-			description: [""]
 			id: "71ED099035DBC037"
 			shape: "rsquare"
 			size: 1.5d
@@ -821,7 +821,6 @@
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
-			description: [""]
 			icon: "art_of_forging:forged_steel_ingot"
 			id: "243D6889505F1555"
 			shape: "rsquare"
@@ -837,7 +836,6 @@
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
-			description: [""]
 			icon: "tetra:geode"
 			id: "08EABCEF8ADB226A"
 			shape: "rsquare"
@@ -1571,5 +1569,5 @@
 			y: 4.0d
 		}
 	]
-	title: "成为卷轴大师！"
+	title: "&5终·卷轴大全"
 }
