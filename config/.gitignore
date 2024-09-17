@@ -5,7 +5,7 @@
 !/fancymenu
 !/iceandfire
 !/jei
-!/lightmanscurrency
+!/*lightman*
 !/modernui
 !/openloader
 # !/sound_physics_remastered
@@ -22,4 +22,6 @@
 !/*delight*
 !/*xaero*
 !/iceandfire-client.toml
+!/*quark*
+!/vintageimprovements*
 xaerominimap_entities.json
