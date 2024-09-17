@@ -25,7 +25,7 @@
 	#Set the recycle time of layout cache in seconds, using least recently used algorithm.
 	#Range: 2 ~ 15
 	cacheLifespan = 6
-	#The bidirectional text heuristic algorithm.
+	#The bidirectional text heuristic algorithm. The default is FirstStrong (Locale).
 	#This will affect which BiDi algorithm to use during text layout.
 	#Allowed Values: FIRST_STRONG, ANY_RTL, LTR, RTL, LOCALE, FIRST_STRONG_LTR, FIRST_STRONG_RTL
 	textDirection = "FIRST_STRONG"
@@ -49,7 +49,7 @@
 	#you can disable this option for compatibility, but this will decrease performance a bit.
 	#Modern UI will use another cache strategy if this is disabled.
 	useComponentCache = true
-	#Allow text layout to be computed from background threads, which may lead to inconsistency issues.
+	#Allow text layout to be computed from background threads (not cached).
 	#Otherwise, block the current thread and wait for main thread.
 	allowAsyncLayout = true
 	#See CSS line-break property, https://developer.mozilla.org/en-US/docs/Web/CSS/line-break
@@ -78,4 +78,14 @@
 	#For space providers, this is "font_name / minecraft:space",
 	#where font_name is font definition path without 'font/'.
 	defaultFontRuleSet = ["^minecraft:font\\/(nonlatin_european|accented|ascii|element_ideographs|cjk_punctuations|ellipsis|2em_dash)\\.png$", "^minecraft:default \\/ minecraft:space$"]
+	#Control the anti-aliasing of raw glyph rasterization.
+	antiAliasing = true
+	#Control the FreeType linear metrics and font hinting of raw glyph metrics.
+	#Disable if on low-res monitor; enable for linear text.
+	linearMetrics = true
+	#Control the minimum pixel density for SDF text and text in 3D world rendering.
+	#This value will be no less than current GUI scale.
+	#Recommend setting a higher value on high-res monitor and powerful PC hardware.
+	#Range: 4 ~ 8
+	minPixelDensityForSDF = 4
 

@@ -5,5 +5,5 @@ ServerEvents.recipes(e => {
         .requireItem("minecraft:copper_ingot")
         .requireItem("create:zinc_ingot")
         .requireEnergy(1000)
-        .hide()
+        .jei()
 })

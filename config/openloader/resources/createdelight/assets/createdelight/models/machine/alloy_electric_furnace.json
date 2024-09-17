@@ -2,19 +2,24 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "createdelight:block/alloy_electric_furnace"
+		"1": "createdelight:block/alloy_electric_furnace/top",
+		"3": "createdelight:block/alloy_electric_furnace/side",
+		"4": "createdelight:block/alloy_electric_furnace/front",
+		"5": "createdelight:block/alloy_electric_furnace/down",
+		"particle": "createdelight:block/alloy_electric_furnace/side"
 	},
 	"elements": [
 		{
 			"from": [0, 0, 0],
 			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0]},
 			"faces": {
-				"north": {"uv": [0, 0, 4, 4], "texture": "#1"},
-				"east": {"uv": [4.25, 0, 8.25, 4], "texture": "#1"},
-				"south": {"uv": [8.5, 0, 12.5, 4], "texture": "#1"},
-				"west": {"uv": [0, 4.25, 4, 8.25], "texture": "#1"},
-				"up": {"uv": [4.25, 4.25, 8.25, 8.25], "texture": "#1"},
-				"down": {"uv": [0, 8.5, 4, 12.5], "texture": "#1"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"up": {"uv": [16, 16, 0, 0], "texture": "#1"},
+				"down": {"uv": [16, 0, 0, 16], "texture": "#5"}
 			}
 		}
 	],
