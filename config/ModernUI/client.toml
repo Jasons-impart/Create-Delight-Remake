@@ -4,17 +4,17 @@
 	#The duration of GUI background color and blur radius animation in milliseconds. (0 = OFF)
 	#Range: 0 ~ 800
 	animationDuration = 200
-	#The GUI background color in #RRGGBB or #AARRGGBB format. Default value: #66000000
+	#The GUI background color in #RRGGBB or #AARRGGBB format. Default value: #99000000
 	#Can be one to four values representing top left, top right, bottom right and bottom left color.
 	#Multiple values produce a gradient effect, whereas one value produce a solid color.
 	#When values is less than 4, the rest of the corner color will be replaced by the last value.
 	backgroundColor = ["#99000000"]
-	#Add blur effect to GUI background when opened, it is incompatible with OptiFine's FXAA shader and some mods.
+	#Add Gaussian blur effect to GUI background when opened.
 	#Disable this if you run into a problem or are on low-end PCs
 	blurEffect = true
-	#The strength for two-pass gaussian convolution blur effect.
-	#samples/pixel = ((radius * 2) + 1) * 2, sigma = radius / 2.
-	#Range: 2 ~ 18
+	#The kernel radius for gaussian convolution blur effect, 0 = disable.
+	#samples per pixel = ((radius * 2) + 1) * 2, sigma = radius / 2.
+	#Range: 0 ~ 18
 	blurRadius = 7
 	#A list of GUI screen superclasses that won't activate blur effect when opened.
 	blurBlacklist = ["net.minecraft.client.gui.screens.ChatScreen"]
@@ -34,8 +34,8 @@
 	#This value will be no greater than master volume inactive.
 	#Range: 0.0 ~ 1.0
 	masterVolumeMinimized = 0.25
-	#This option means that blur effect only applies for GUI screens with a background
-	#This is only meaningful when blur effect is enabled.
+	#This option means that blur effect only applies to GUI screens with a background.
+	#Similar to Minecraft 1.20.6. Enable this for better optimization & compatibility.
 	blurWithBackground = true
 
 #Tooltip Config
@@ -80,6 +80,9 @@
 	shadowOpacity = 0.3499999940395355
 	#When true, tooltip border colors adapt to item's name and rarity.
 	adaptiveColors = true
+	#Amount to scroll the tooltip in response to a arrow key pressed event.
+	#Range: 0 ~ 320
+	arrowScrollFactor = 60
 
 #General Config
 [general]
@@ -135,11 +138,6 @@
 
 #Font Config
 [font]
-	#Control the anti-aliasing of raw glyph rasterization.
-	antiAliasing = true
-	#Control the FreeType font hinting of raw glyph metrics.
-	#Enable if on low-res monitor; disable for linear texts.
-	autoHinting = true
 	#The first font family to use. See fallbackFontFamilyList
 	firstFontFamily = "Source Han Sans CN Medium"
 	#A set of fallback font families to determine the typeface to use.
