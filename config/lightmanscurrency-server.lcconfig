@@ -276,7 +276,7 @@
 		
 		#The price per claim chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		claimPrice="coin;1-createdelight:gold_coin,2-createdelight:copper_coin,1-createdelight:iron_coin"
+		claimPrice="coin;1-createdelight:copper_coin"
 		
 		#The maximum number of extra claim chunks allowed to be purchased with this command.
 		#Note: This count includes extra claim chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
@@ -288,7 +288,7 @@
 		
 		#The price per forceload chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		forceloadPrice="coin;152-createdelight:netherite_coin,3-createdelight:emerald_coin,6-createdelight:gold_coin,6-createdelight:copper_coin,1-createdelight:iron_coin"
+		forceloadPrice="coin;1000-createdelight:netherite_coin"
 		
 		#The maximum number of extra forceload chunks allowed to be purchased with this command.
 		#Note: This count includes extra forceload chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
