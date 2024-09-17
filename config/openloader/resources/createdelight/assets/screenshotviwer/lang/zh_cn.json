@@ -1,4 +1,36 @@
 {
+  
+  "screen.screenshot_viewer.screenshot_manager.fast_delete": "快速删除模式",
+  "screen.screenshot_viewer.screenshot_manager.delete_n_screenshots": "删除 %d 张截图",
+  "screen.screenshot_viewer.button.fast_delete": "切换快速删除",
+  "screen.screenshot_viewer.button.copy_screenshot": "复制图片",
+  "screen.screenshot_viewer.delete_n_screenshots.message": "您确定要删除这些截图吗？（它们将永久丢失！）",
+  "tooltip.screenshot_viewer.redirect_to_screenshot_manager": "在截图管理器中打开截图...",
+  "tooltip.screenshot_viewer.menu_hint": "右键单击以管理\n按CTRL-C复制到剪贴板",
+
+  "config.screenshot_viewer.default_list_order": "默认截图列表排序",
+  "config.screenshot_viewer.default_list_order.desc": "打开屏幕时截图的排序方式。",
+  "config.screenshot_viewer.pause_menu_button_offset": "暂停菜单按钮偏移",
+  "config.screenshot_viewer.pause_menu_button_offset.desc": "如果在暂停菜单中显示截图管理器按钮，按钮的像素偏移量（从0到任意您想要的值）。",
+  "config.screenshot_viewer.screenshots_folder": "截图文件夹",
+  "config.screenshot_viewer.screenshots_folder.desc": "包含将显示在屏幕上的截图图像的文件夹路径。",
+  "config.screenshot_viewer.redirect_screenshot_chat_links": "重定向截图聊天链接",
+  "config.screenshot_viewer.redirect_screenshot_chat_links.desc": "如果启用，点击拍摄截图时在聊天中打印的链接将直接在截图管理器中打开。",
+  "config.screenshot_viewer.screenshot_element_text_visibility": "截图名称可见性",
+  "config.screenshot_viewer.screenshot_element_text_visibility.desc": "截图名称的可见状态。",
+  "config.screenshot_viewer.invert_zoom_direction": "反转缩放方向",
+  "config.screenshot_viewer.invert_zoom_direction.desc": "如果启用，将反转截图查看器菜单中的缩放滚动方向。",
+  "config.screenshot_viewer.display_hint_tooltip": "显示提示工具提示",
+  "config.screenshot_viewer.display_hint_tooltip.desc": "控制在悬停截图一段时间后是否显示提示信息的工具提示。",
+  "config.screenshot_viewer.render_wide_properties_button": "渲染宽属性按钮",
+  "config.screenshot_viewer.render_wide_properties_button.desc": "是否将属性按钮渲染为宽形或方形。",
+
+  "config_category.screenshot_viewer.ingame": "截图查看器挂钩",
+  "config_category.screenshot_viewer.ingui": "截图管理器自定义",
+
+  "toast.screenshot_viewer.copy_success": "成功复制截图！",
+  "toast.screenshot_viewer.copy_fail": "复制截图失败：%s",
+
   "screen.screenshot_viewer.manage_screenshots": "管理截图...",
   "screen.screenshot_viewer.screenshot_manager.zoom": "缩放模式（按住 CTRL）",
   "screen.screenshot_viewer.screenshot_manager.no_screenshots": "看起来你还没有截过图！",
