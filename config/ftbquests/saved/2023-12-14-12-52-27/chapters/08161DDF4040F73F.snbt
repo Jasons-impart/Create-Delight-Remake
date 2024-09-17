@@ -1,0 +1,33 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "08161DDF4040F73F"
+	group: "4BA960CEDF6AF694"
+	id: "08161DDF4040F73F"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["78ED6E4A8A4C9B29"]
+			id: "5AD01D1C54DE1993"
+			tasks: [{
+				dimension: "minecraft:the_nether"
+				id: "716101BFA91A6E23"
+				type: "dimension"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "78ED6E4A8A4C9B29"
+			tasks: [{
+				id: "07E953F4A8EF38DC"
+				type: "checkmark"
+			}]
+			title: "前往地狱"
+			x: -3.0d
+			y: 0.0d
+		}
+	]
+	title: "地狱"
+}

@@ -1,0 +1,416 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "4039B2F36430ACAF"
+	group: ""
+	id: "4039B2F36430ACAF"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "27AB40F51503A4E2"
+			tasks: [{
+				id: "722C00A93167CA83"
+				item: "minecraft:wheat"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "7E87CD0885173C1C"
+			tasks: [{
+				id: "3E5D61FE2DED86BA"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7E87CD0885173C1C"]
+			id: "27EAB4476D54033D"
+			tasks: [{
+				id: "569193C96D6D8CB3"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7E87CD0885173C1C"]
+			id: "010EEAB3ACBC1471"
+			subtitle: "一种很重要的调味料"
+			tasks: [{
+				id: "7D39B17A2E74CF9E"
+				item: "minecraft:sugar"
+				type: "item"
+			}]
+			x: -7.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "6D492640884A7F68"
+			subtitle: "喂猪吧孩子"
+			tasks: [{
+				id: "1F078823B097950F"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "680430208287BE41"
+			subtitle: "欢迎加入土豆神教"
+			tasks: [{
+				id: "61DB30733737E24B"
+				item: "minecraft:potato"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "25E88C0CCFFF77D8"
+			subtitle: "除了番茄酱都不好吃"
+			tasks: [{
+				id: "4A510F8737FAD994"
+				item: "farmersdelight:tomato"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "22740D4E8C45A5B8"
+			subtitle: "叫卷心菜的生菜"
+			tasks: [{
+				id: "0A0A26B8188150EE"
+				item: "farmersdelight:cabbage"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "270146A852CAD059"
+			subtitle: "谁在切洋葱！"
+			tasks: [{
+				id: "7357A1A6A40ECE0F"
+				item: "farmersdelight:onion"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "6EAEF8510F67CDA9"
+			tasks: [{
+				id: "6625BE2A811BDA4A"
+				item: "farmersdelight:rice_panicle"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "3B3D44D5B30D6D81"
+			subtitle: "玉米！"
+			tasks: [{
+				id: "22DA466B8ECCF149"
+				item: "corn_delight:corn"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "22DC01C75D5A180A"
+			tasks: [{
+				id: "12BAAA66562F4B52"
+				item: "minecraft:chorus_fruit"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "559EB7DDD2F8C33F"
+			subtitle: "谁要喝咖啡啊"
+			tasks: [{
+				id: "5C7DBFF70EE58DFF"
+				item: "createcafe:coffee_fruit"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["08D334C72F2F5ADC"]
+			hide_dependent_lines: true
+			id: "0CBBD56A45832FDF"
+			subtitle: "植物部分"
+			tasks: [{
+				id: "070336D5D2B40303"
+				title: "农夫乐事"
+				type: "checkmark"
+			}]
+			title: "一起来做美食吧"
+			x: -2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "4EF00D98BAFB0C18"
+			subtitle: "模仿马铃薯"
+			tasks: [{
+				id: "7787EB0FAAF66BE1"
+				item: "createcafe:cassava_seeds"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "5B4F67F4CB119E30"
+			tasks: [{
+				id: "15ACB2E7F798B597"
+				item: "farmersrespite:tea_seeds"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "762EFCB72D49BF60"
+			subtitle: "这是王维诗里的红豆"
+			tasks: [{
+				id: "00B548DC820B527D"
+				item: "neapolitan:adzuki_beans"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "03F2B18AD83FBAAF"
+			subtitle: "牛顿狂喜"
+			tasks: [{
+				id: "72D443B26E8E862B"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			x: -7.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "79B2C5BA5C4A67EE"
+			subtitle: "西瓜爱吃！！！！"
+			tasks: [{
+				id: "3FF7F96FA216C8BB"
+				item: "minecraft:melon_slice"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "07D49591077268C6"
+			subtitle: "南（难）瓜"
+			tasks: [{
+				id: "4847603C995BDE70"
+				item: "minecraft:pumpkin"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "079BAD7829B155B3"
+			tasks: [{
+				id: "5600D389F08A2B26"
+				item: "minecraft:cocoa_beans"
+				type: "item"
+			}]
+			x: -8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "0512B37D639204AF"
+			subtitle: "能吃"
+			tasks: [{
+				id: "719ADA18DCF6549A"
+				item: "neapolitan:strawberries"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "1222248AE61F1C2F"
+			subtitle: "在地下矿洞可以找到"
+			tasks: [{
+				id: "457496273077115E"
+				item: "minecraft:glow_berries"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "425AAD77731BC546"
+			subtitle: "在针叶林地形能找到"
+			tasks: [{
+				id: "3A980C1010B90E42"
+				item: "minecraft:sweet_berries"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "237F7735F4501C85"
+			subtitle: "是蘑菇呢"
+			tasks: [
+				{
+					id: "5B78EA18D4C19DD2"
+					item: "minecraft:brown_mushroom"
+					type: "item"
+				}
+				{
+					id: "4FAB6D4C50626E66"
+					item: "minecraft:red_mushroom"
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["08D334C72F2F5ADC"]
+			id: "3CDBF42FBC06EF2E"
+			subtitle: "动物部分"
+			tasks: [{
+				id: "67FB5954B2CA490D"
+				title: "来做美食吧"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["27AB40F51503A4E2"]
+			id: "4F7183200778C85D"
+			tasks: [{
+				id: "17422BC62F6190BC"
+				item: "create:wheat_flour"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["27AB40F51503A4E2"]
+			id: "4F946CFBD0347E61"
+			tasks: [{
+				id: "0E8500CF3F0CF05E"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["079BAD7829B155B3"]
+			id: "6CEA820B37A92591"
+			subtitle: "巧克力我爱吃巧克力，你爱吃巧克力吗？"
+			tasks: [{
+				id: "0F43330B518A61F4"
+				item: "farmersdelight:hot_cocoa"
+				type: "item"
+			}]
+			x: -9.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["559EB7DDD2F8C33F"]
+			id: "43D6A561080A2D10"
+			tasks: [{
+				id: "069403B91ECE0BAA"
+				item: "createcafe:roasted_coffee_beans"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["43D6A561080A2D10"]
+			id: "206A4CEBF8BE4A2D"
+			tasks: [{
+				id: "7B1E4168BBD1CBA4"
+				item: "createcafe:coffee_grounds"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["206A4CEBF8BE4A2D"]
+			id: "0F59A87A315A7A04"
+			tasks: [{
+				id: "18A76EB247010656"
+				item: "createcafe:coffee_bucket"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -12.0d
+		}
+		{
+			dependencies: ["0CBBD56A45832FDF"]
+			id: "47A38F70DC1A55F7"
+			subtitle: "另一种咖啡"
+			tasks: [{
+				id: "4CB79567AB6C0CD5"
+				item: "farmersrespite:coffee_beans"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["47A38F70DC1A55F7"]
+			id: "56A46348EC26ACA9"
+			tasks: [{
+				id: "357610098B2E9B92"
+				item: "farmersrespite:coffee"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 5.0d
+		}
+	]
+	title: "就爱整点好吃的"
+}

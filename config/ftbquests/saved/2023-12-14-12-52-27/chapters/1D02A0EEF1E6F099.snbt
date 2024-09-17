@@ -1,0 +1,94 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "1D02A0EEF1E6F099"
+	group: ""
+	id: "1D02A0EEF1E6F099"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"19C4EC6F3980ED9A"
+				"31FCDE1EB7C614B8"
+				"0B20E731C8BC4961"
+			]
+			id: "74F81A8C4757CD08"
+			tasks: [{
+				id: "4A68905A22AF7FBB"
+				type: "checkmark"
+			}]
+			title: "欢迎来到机械动力"
+			x: -0.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["74F81A8C4757CD08"]
+			id: "7AF1DCCD83A6AE03"
+			tasks: [{
+				count: 64L
+				id: "00420F5D3C1AAC4B"
+				item: "minecraft:andesite"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7AF1DCCD83A6AE03"]
+			id: "030BC4A6036F6446"
+			tasks: [{
+				id: "4E14A11438D3042A"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			id: "393765C400545B3C"
+			tasks: [{
+				id: "4BFB40C1EABF08E4"
+				item: "immersive_aircraft:airship"
+				type: "item"
+			}]
+			x: 16.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3E08DB67747DFCFF"]
+			id: "7C63D27693E2270D"
+			tasks: [
+				{
+					id: "237F784E4AE172F7"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					id: "337F1BCFAD46BBCF"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "102423DDEFB59432"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["030BC4A6036F6446"]
+			id: "3E08DB67747DFCFF"
+			tasks: [{
+				id: "2F440F8E083354E9"
+				item: "create:andesite_casing"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+	]
+	title: "机械动力"
+}

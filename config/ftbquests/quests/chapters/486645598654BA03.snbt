@@ -1,0 +1,858 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "486645598654BA03"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "minecraft:wither_skeleton_skull"
+	id: "486645598654BA03"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"7233C240743D38AA"
+				"19ED27078EFC9A69"
+			]
+			id: "11F69FF73C38D5D7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7705478FA4D8535F"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "体液喷射（&1真的很脏！&r）"
+			tasks: [{
+				id: "245562B2323EDF0E"
+				item: {
+					Count: 1
+					id: "alexsmobs:hemolymph_blaster"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["49E8339C5ADFCD3F"]
+			id: "7233C240743D38AA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "394743300CB1E110"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "这块肌肉闪烁着诡异的光芒"
+			tasks: [
+				{
+					id: "1D5B97B082235FE7"
+					item: "alexsmobs:hemolymph_sac"
+					type: "item"
+				}
+				{
+					id: "00100F5013692809"
+					item: "alexsmobs:warped_muscle"
+					type: "item"
+				}
+			]
+			title: "这东西好恶心"
+			x: 3.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["5A5B90E769E59135"]
+			id: "19ED27078EFC9A69"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0861DDA72D1BFA35"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "生物身体中最脏的液体之一"
+			tasks: [{
+				id: "1ACFDCAEC6037F0A"
+				item: {
+					Count: 1
+					id: "alexsmobs:blood_sprayer"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "你怎么还往外喷血啊"
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["5621A50A0F895F4C"]
+			id: "5A5B90E769E59135"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "29A550338B96A3E2"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "让你再吸我血！"
+			tasks: [{
+				id: "25F8E3E929CC787E"
+				item: "alexsmobs:mosquito_proboscis"
+				type: "item"
+			}]
+			title: "拔下来！"
+			x: 4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["1D3002399A5DCB18"]
+			id: "49E8339C5ADFCD3F"
+			subtitle: "受死吧，&4可恶的人类！！！"
+			tasks: [{
+				advancement: "alexsmobs:alexsmobs/warped_mosco_kill"
+				criterion: ""
+				id: "688BDA7EB605B5DA"
+				type: "advancement"
+			}]
+			title: "&e高质量男性！"
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"3C70EB8AF67D1DAD"
+				"45ADF7CA2DAD69B5"
+			]
+			description: ["玩家需要前往蘑菇岛找到一个&4没有蘑菇&r的蘑菇君，然后用诡异菌插满它的身体（&45个即可&r），让绯红蚊子吸它的血（蹲下右键可以&4抱起生物&r），然后绯红蚊子会变成蓝色并慢慢变大，最后突变成&1诡异蚊鬼&r（&e守护诡异森林的高质量男性&r）"]
+			id: "1D3002399A5DCB18"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1FDF35F9F11AEEC9"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "快跑！蘑菇君要变异了！"
+			tasks: [{
+				advancement: "alexsmobs:alexsmobs/crimson_mosquito_sick"
+				criterion: ""
+				id: "1AA008CA928D3513"
+				type: "advancement"
+			}]
+			title: "&4重病缠身！"
+			x: 3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3C70EB8AF67D1DAD"]
+			id: "5621A50A0F895F4C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "22175B8E354E4DE7"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "&1我要拍死你！！！&r（什么蚊子居然&4冬天都能活着&r）"
+			tasks: [{
+				advancement: "alexsmobs:alexsmobs/crimson_mosquito"
+				criterion: ""
+				id: "397333391975BBA8"
+				type: "advancement"
+			}]
+			title: "害得我睡不着觉的虫子！"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5A5B90E769E59135"]
+			id: "02B0E545695B7C21"
+			subtitle: "把口器扎到蛆身上真有&e够恶心的"
+			tasks: [{
+				id: "0BA307C2E889A685"
+				item: "alexsmobs:mosquito_larva"
+				type: "item"
+			}]
+			title: "幼虫！"
+			x: 5.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"1449D881D54C27EA"
+				"02B0E545695B7C21"
+			]
+			id: "48160C0FD18F7073"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0AAD79526ECC6E51"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "用绯红幼虫驯服一只诡异蟾蜍"
+			tasks: [{
+				advancement: "alexsmobs:alexsmobs/tame_warped_toad"
+				criterion: ""
+				id: "72CD81D6AE1D40AE"
+				type: "advancement"
+			}]
+			title: "&e今天是周三！~"
+			x: 5.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "1449D881D54C27EA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4E63DF58C763A990"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "&1蓝灿灿"
+			tasks: [{
+				biome: "minecraft:warped_forest"
+				icon: "minecraft:warped_fungus"
+				id: "07359EF504D37F19"
+				type: "biome"
+			}]
+			title: "诡异森林"
+			x: 5.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "3C70EB8AF67D1DAD"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1FF29F6FEFDDAF3C"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "&4红彤彤"
+			tasks: [{
+				biome: "minecraft:crimson_forest"
+				icon: "minecraft:crimson_fungus"
+				id: "05B8C4F9ABCD749A"
+				type: "biome"
+			}]
+			title: "绯红森林"
+			x: 3.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "4482AF6BE68C8D1D"
+			rewards: [{
+				id: "6F5BA06FA8651105"
+				item: "minecraft:quartz"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "石英顾名思义就是石头中的英雄（好伐我编不下去了）"
+			tasks: [{
+				id: "52F55A07414D763B"
+				item: "minecraft:quartz"
+				type: "item"
+			}]
+			title: "白白的"
+			x: 1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "03863109E200AF66"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4B685387169A6D4D"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			tasks: [{
+				id: "1A658F2E93C83C80"
+				item: "minecraft:glowstone_dust"
+				type: "item"
+			}]
+			title: "&e闪闪亮！"
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "302DE38002ACC065"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "10A3B11B9133690E"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "找到下界要塞"
+			tasks: [{
+				advancement: "minecraft:nether/find_fortress"
+				criterion: ""
+				id: "30F0A6D15D9DB096"
+				type: "advancement"
+			}]
+			x: 7.5d
+			y: 3.0d
+		}
+		{
+			description: [""]
+			hide_dependent_lines: true
+			id: "5AD01D1C54DE1993"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7CD26AB89DD5490A"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "好黑好多怪TAT"
+			tasks: [{
+				dimension: "minecraft:the_nether"
+				disable_toast: true
+				id: "716101BFA91A6E23"
+				type: "dimension"
+			}]
+			title: "我下地狱啦！"
+			x: 4.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "70A228B8AA9BFE0E"
+			rewards: [{
+				id: "4BD36A8FC572D75C"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "什么？难道你没觉得猪灵两个鼻孔特别像大眼萌妹的眼睛吗？"
+			tasks: [{
+				advancement: "minecraft:nether/distract_piglin"
+				criterion: ""
+				id: "7A448D3E464FCE2D"
+				type: "advancement"
+			}]
+			title: "猪灵妹子我来啦~"
+			x: 5.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			description: [
+				"自然生成于下界 Y 坐标&4 8~119 的空间"
+				"生成时连锁数量最大为3，但相当罕见，以连锁为2居多，但同样少见，&4多为单矿&r且&4不会裸露生成&r"
+				"每个区块最多生成两个矿脉，最多生成&e5个远古残骸"
+			]
+			id: "3C94D314BC3D0DE8"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4084C4A312053E20"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
+			subtitle: "这东西真的好少好难找（哭）"
+			tasks: [{
+				id: "07C5B2DF687B585D"
+				item: "minecraft:ancient_debris"
+				type: "item"
+			}]
+			title: "这是...&e超远古坚硬遗留沉积物？"
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3C94D314BC3D0DE8"]
+			id: "6E8099EE95B29FC1"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "17316BA4FB9CBFFC"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			tasks: [{
+				id: "2B55B1BA625C8404"
+				item: "minecraft:netherite_scrap"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6E8099EE95B29FC1"]
+			id: "24BE09160DC6BE45"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5A9396FA4CBDF7DC"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			tasks: [{
+				id: "602BED257250717C"
+				item: "minecraft:netherite_ingot"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "6460F97709785CDA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6A6C1251B7CD8CEB"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "找到猪灵堡垒"
+			tasks: [{
+				advancement: "minecraft:nether/find_bastion"
+				criterion: ""
+				icon: "minecraft:gilded_blackstone"
+				id: "2D503DC55A57E5A9"
+				type: "advancement"
+			}]
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["302DE38002ACC065"]
+			id: "7B5DD3DF2E03F832"
+			tasks: [{
+				id: "314DC1329FCE5877"
+				item: "minecraft:nether_wart"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["302DE38002ACC065"]
+			id: "299811388A624472"
+			rewards: [{
+				id: "7087DC7889ADC335"
+				item: "minecraft:blaze_rod"
+				type: "item"
+			}]
+			subtitle: "嘿嘿嘿小烈焰人&4我来啦&r！"
+			tasks: [{
+				entity: "minecraft:blaze"
+				id: "2ED438CA35BD29F1"
+				type: "kill"
+				value: 1L
+			}]
+			title: "&3可算是找到你啦！！！"
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"302DE38002ACC065"
+				"5AD01D1C54DE1993"
+			]
+			id: "0FDBCBC0020ED4F1"
+			rewards: [{
+				id: "00DEE66469EBA0AC"
+				item: {
+					Count: 1
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "minecraft:looting"
+							lvl: 3s
+						}]
+					}
+				}
+				title: "还是给你本&e抢夺III&r吧...."
+				type: "item"
+			}]
+			subtitle: "好！就这么&3阴死他"
+			tasks: [{
+				entity: "minecraft:wither_skeleton"
+				id: "2B51C9014C5523DE"
+				type: "kill"
+				value: 1L
+			}]
+			title: "&2卑鄙&r的两格高人类！"
+			x: 6.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0FDBCBC0020ED4F1"]
+			id: "0FA33E07B6274219"
+			rewards: [
+				{
+					count: 5
+					id: "5372565A50934F21"
+					item: "minecraft:paper"
+					type: "item"
+				}
+				{
+					description: ""
+					icon: "minecraft:paper"
+					id: "2741EA2446B93F8D"
+					title: "来~擦一擦"
+					type: "toast"
+				}
+			]
+			subtitle: "呼~终于&e打出来了&r~"
+			tasks: [{
+				count: 3L
+				id: "7E05EDB37A9F2282"
+				item: "minecraft:wither_skeleton_skull"
+				type: "item"
+			}]
+			title: "最&e难爆&r的一集"
+			x: 7.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["0FA33E07B6274219"]
+			description: ["先用灵魂沙或灵魂土摆成T形，下面的灵魂沙两侧必须是空气，然后在3块灵魂沙上方各放置一个凋灵骷髅头颅即可召唤出凋灵（备注：最后放置的方块必须是&4凋灵骷髅头颅&r），也可侧放或倒放，不影响凋灵的生成。"]
+			icon: "minecraft:wither_skeleton_skull"
+			id: "40E0C96F55C7A737"
+			rewards: [{
+				id: "5A248A5DB347B7DB"
+				item: {
+					Count: 1
+					id: "minecraft:potion"
+					tag: {
+						Potion: "minecraft:strong_regeneration"
+					}
+				}
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "骗你的，它只是&2普通凋零&r啦~"
+			tasks: [
+				{
+					block: "minecraft:soul_sand"
+					block_type: 0
+					id: "3CA9443780F757BC"
+					replace: false
+					replaced: "minecraft:air"
+					title: "4个灵魂沙！"
+					type: "questsadditions:place"
+					value: 4L
+				}
+				{
+					block: "minecraft:wither_skeleton_skull"
+					block_type: 0
+					id: "3DFFFB89D1766D4B"
+					replace: false
+					replaced: "minecraft:air"
+					title: "3个骷髅头！"
+					type: "questsadditions:place"
+					value: 3L
+				}
+			]
+			title: "&4哦不！&r它吃掉了我的&4命令方块！！！"
+			x: 9.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["40E0C96F55C7A737"]
+			id: "78A8BC66CF808C55"
+			rewards: [{
+				id: "647913F4BA5EDDF0"
+				item: "minecraft:wither_skeleton_skull"
+				random_bonus: 2
+				title: "抽个奖再来打一次？"
+				type: "item"
+			}]
+			subtitle: "我大方吧~"
+			tasks: [{
+				entity: "minecraft:wither"
+				icon: "minecraft:wither_skeleton_skull"
+				id: "79D4FFC5888F2E73"
+				type: "kill"
+				value: 1L
+			}]
+			title: "这不&e轻轻松松&r~"
+			x: 10.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["78A8BC66CF808C55"]
+			id: "7485B99EF2CF80D3"
+			rewards: [{
+				id: "041982505A5681C0"
+				item: "minecraft:wither_rose"
+				type: "item"
+			}]
+			subtitle: "&e真好看啊！！！"
+			tasks: [{
+				id: "264CD639B102DABB"
+				item: "minecraft:nether_star"
+				type: "item"
+			}]
+			title: "下界里最&e闪亮&r的星星！"
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["299811388A624472"]
+			id: "6CAC228A727B16A6"
+			tasks: [{
+				id: "5498352663ACCD98"
+				item: "minecraft:blaze_rod"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6CAC228A727B16A6"]
+			id: "520A75622AD44E7F"
+			tasks: [{
+				id: "5A78863AFF80D387"
+				item: "minecraft:brewing_stand"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"7B5DD3DF2E03F832"
+				"520A75622AD44E7F"
+			]
+			id: "74674D3025D5DFAA"
+			rewards: [{
+				auto: "enabled"
+				id: "321752C12DC6F8B6"
+				table_id: 7548246410364648339L
+				type: "random"
+			}]
+			subtitle: "你的第一瓶药水！"
+			tasks: [{
+				block: "minecraft:brewing_stand"
+				block_type: 0
+				checkItem: false
+				icon: {
+					Count: 1
+					id: "minecraft:potion"
+					tag: {
+						Potion: "minecraft:mundane"
+					}
+				}
+				id: "0860CE78339221E7"
+				isItemInteraction: false
+				type: "questsadditions:use"
+				value: 1L
+			}]
+			title: "女巫科技！"
+			x: 9.0d
+			y: 4.5d
+		}
+		{
+			id: "075B94F4CA10DA3D"
+			subtitle: "说实话，打磨的动画真的很像...."
+			tasks: [{
+				id: "081508E9AF2E7728"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "create:sandpaper"
+					}
+				}
+				title: "任意砂纸！"
+				type: "item"
+			}]
+			title: "刺啦刺啦刺啦"
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4482AF6BE68C8D1D"]
+			id: "3A674F0BEAB8179F"
+			rewards: [{
+				id: "3EFE7E9C47C1F9F0"
+				item: "create:rose_quartz"
+				random_bonus: 4
+				type: "item"
+			}]
+			tasks: [{
+				id: "23D37DA6E8A79653"
+				item: "create:rose_quartz"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"075B94F4CA10DA3D"
+				"3A674F0BEAB8179F"
+			]
+			id: "6603024447F23F40"
+			rewards: [{
+				id: "45858978E7CE8717"
+				item: "create:polished_rose_quartz"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "我给玫瑰石英增加了新合成方式！来，狠狠的自动化玫瑰石英！"
+			tasks: [{
+				id: "1FD42C9663500671"
+				item: "create:polished_rose_quartz"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6603024447F23F40"]
+			id: "1C9C0CB38E4C7851"
+			invisible: true
+			rewards: [{
+				id: "4827EE03BCF9D37E"
+				item: "create:polished_rose_quartz"
+				random_bonus: 15
+				type: "item"
+			}]
+			shape: "heart"
+			subtitle: "它真的好漂亮啊&4(♥∀♥)&r"
+			tasks: [{
+				id: "16BCE32BA9DFF786"
+				item: {
+					Count: 1
+					id: "create_sa:rose_quartz_pickaxe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "崭新的物品，玫瑰石英镐"
+			x: -3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["70A228B8AA9BFE0E"]
+			description: [""]
+			hide_dependent_lines: true
+			id: "206855F86F4DE3C8"
+			subtitle: "要去末地之前必须去往所有群星！"
+			tasks: [{
+				id: "30760B5269229805"
+				item: "minecraft:ender_pearl"
+				type: "item"
+			}]
+			title: "&e无用之物"
+			x: 5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["03863109E200AF66"]
+			id: "163E057B8D71A528"
+			subtitle: "走走走我们去&e天堂&r玩一玩"
+			tasks: [{
+				id: "6855BC78C405B064"
+				item: "minecraft:glowstone"
+				type: "item"
+			}]
+			title: "亮的我眼睛发慌"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6460F97709785CDA"]
+			id: "13D36F91435DB7D4"
+			rewards: [{
+				id: "164AC7C4FB6D1AE9"
+				item: "minecraft:raw_gold_block"
+				type: "item"
+			}]
+			subtitle: "嚯嚯嚯嚯嚯"
+			tasks: [{
+				id: "32C8580768307263"
+				item: "minecraft:gold_block"
+				type: "item"
+			}]
+			title: "&e古堡里面的金子！！！"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6CAC228A727B16A6"]
+			id: "75E6927E3D539C00"
+			rewards: [{
+				id: "05CDF228EBDA18BE"
+				item: "farmersrespite:blazing_chili"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "来一碗美味的&4烈焰辣椒酱&r如何？"
+			tasks: [{
+				id: "476FCC7244116898"
+				item: "minecraft:blaze_powder"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			icon: "minecraft:fire_charge"
+			id: "0BD6626359766789"
+			invisible: true
+			rewards: [{
+				count: 10
+				id: "050605F6B137AF0B"
+				item: "minecraft:ghast_tear"
+				type: "item"
+			}]
+			shape: "square"
+			size: 3.0d
+			subtitle: "滚去见鬼！"
+			tasks: [{
+				advancement: "minecraft:nether/return_to_sender"
+				criterion: ""
+				id: "6C40FA9785480E44"
+				type: "advancement"
+			}]
+			title: "&e见鬼去吧！"
+			x: 9.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"7B5DD3DF2E03F832"
+				"75E6927E3D539C00"
+			]
+			id: "58AD4A069629F806"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "77294913802C3121"
+				table_id: 7548246410364648339L
+				type: "loot"
+			}]
+			subtitle: "&4辣不怕不怕辣"
+			tasks: [{
+				id: "2E02AA9D040B2B21"
+				item: "farmersrespite:blazing_chili"
+				type: "item"
+			}]
+			title: "&4好辣！！！"
+			x: 12.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5AD01D1C54DE1993"]
+			id: "106E43956C737C36"
+			invisible: true
+			shape: "square"
+			size: 3.0d
+			tasks: [{
+				advancement: "minecraft:nether/explore_nether"
+				criterion: ""
+				id: "414FAF11A61AA905"
+				type: "advancement"
+			}]
+			title: "貌似并不是非常\"&e热门&r\"啊"
+			x: 0.0d
+			y: -1.5d
+		}
+	]
+	title: "&3黑漆漆的地狱"
+}

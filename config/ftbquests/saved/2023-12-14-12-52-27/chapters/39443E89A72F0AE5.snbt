@@ -1,0 +1,299 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "39443E89A72F0AE5"
+	group: "4BA960CEDF6AF694"
+	id: "39443E89A72F0AE5"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["现在去末地你需要收集十二种不同的眼睛"]
+			id: "0D62F80B34D6D4BB"
+			tasks: [{
+				id: "6E6815A1082E2127"
+				title: "末地重置"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			dependencies: [
+				"19EF00824FE97164"
+				"7C07CC6B1C3B0A56"
+				"6078AD6BEF15BC42"
+				"225613407F370CA9"
+				"755EC32AE743A83D"
+				"0994DEB70DEBAD86"
+				"18A964D09D82498B"
+				"15B639BE79C87D11"
+				"7BA61F553E25FC07"
+				"56A80D7A7C4E7C68"
+				"491511887828B2AC"
+				"44AE00BC07D1EEB9"
+				"670A9D10BD2690A0"
+				"28B933178C34DDC7"
+			]
+			id: "0373F30B09F3C827"
+			tasks: [{
+				dimension: "minecraft:the_end"
+				id: "2A966FC67BFE26F0"
+				type: "dimension"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "0994DEB70DEBAD86"
+			tasks: [{
+				id: "46EC59C53919161A"
+				item: {
+					Count: 1b
+					id: "endrem:black_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "18A964D09D82498B"
+			tasks: [{
+				id: "42A9CDC2E84BA79D"
+				item: {
+					Count: 1b
+					id: "endrem:cold_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "56A80D7A7C4E7C68"
+			tasks: [{
+				id: "6BC2B9054B349F78"
+				item: {
+					Count: 1b
+					id: "endrem:corrupted_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "19EF00824FE97164"
+			tasks: [{
+				id: "5D0BF62D158D403A"
+				item: {
+					Count: 1b
+					id: "endrem:nether_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "225613407F370CA9"
+			tasks: [{
+				id: "099BD0CBD21614B4"
+				item: {
+					Count: 1b
+					id: "endrem:old_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "755EC32AE743A83D"
+			tasks: [{
+				id: "01689CD9A8EF05FB"
+				item: {
+					Count: 1b
+					id: "endrem:rogue_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "7BA61F553E25FC07"
+			tasks: [{
+				id: "4D94746074A56494"
+				item: {
+					Count: 1b
+					id: "endrem:cursed_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "44AE00BC07D1EEB9"
+			tasks: [{
+				id: "0B309E0A946D42CB"
+				item: {
+					Count: 1b
+					id: "endrem:evil_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "670A9D10BD2690A0"
+			tasks: [{
+				id: "06EA1B69E0290D08"
+				item: {
+					Count: 1b
+					id: "endrem:guardian_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "15B639BE79C87D11"
+			tasks: [{
+				id: "5E2A6AF4453C7262"
+				item: {
+					Count: 1b
+					id: "endrem:magical_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "28B933178C34DDC7"
+			tasks: [{
+				id: "09F205258623CC22"
+				item: {
+					Count: 1b
+					id: "endrem:wither_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "491511887828B2AC"
+			tasks: [{
+				id: "6FB3E43727B3802F"
+				item: {
+					Count: 1b
+					id: "endrem:witch_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "7C07CC6B1C3B0A56"
+			tasks: [{
+				id: "460F72CE468ED3A9"
+				item: {
+					Count: 1b
+					id: "endrem:undead_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D62F80B34D6D4BB"]
+			id: "6078AD6BEF15BC42"
+			tasks: [{
+				id: "7B617A1ADFB61760"
+				item: {
+					Count: 1b
+					id: "endrem:exotic_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0373F30B09F3C827"]
+			id: "5CBF811F55377620"
+			tasks: [{
+				entity: "minecraft:ender_dragon"
+				id: "018A29490168C2B1"
+				type: "kill"
+				value: 1L
+			}]
+			x: 9.0d
+			y: -0.5d
+		}
+	]
+	title: "末地"
+}

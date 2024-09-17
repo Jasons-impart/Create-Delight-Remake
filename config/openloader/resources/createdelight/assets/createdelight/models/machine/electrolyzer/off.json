@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+        "front": "createdelight:block/custom_machine/electrolyzer/front",
+        "side": "createdelight:block/custom_machine/electrolyzer/side",
+        "top": "createdelight:block/custom_machine/electrolyzer/top"
+    }
+}

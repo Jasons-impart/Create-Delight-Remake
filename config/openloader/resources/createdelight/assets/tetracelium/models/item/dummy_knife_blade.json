@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "tetracelium:item/dummy_knife_blade"
+    }
+  }
