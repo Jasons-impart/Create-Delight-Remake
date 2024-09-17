@@ -2,7 +2,7 @@
 [sodiumdynamiclights]
 	#Lighting mode
 	#Allowed Values: OFF, SLOW, FAST, REALTIME
-	mode = "SLOW"
+	mode = "OFF"
 	#Enable entities light source.
 	entities = true
 	#Enable first-person player light source.

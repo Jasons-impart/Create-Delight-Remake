@@ -136,7 +136,7 @@
 		disableNameTagRendering = false
 		#Toggle fog feature
 		#Fog was a vanilla feature
-		fog = false
+		fog = true
 
 		[embeddiumplus.quality.darkness]
 			#Configure fog brightness on nether when darkness is enabled
