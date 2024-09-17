@@ -3,30 +3,11 @@
 #Client-only settings - If you're looking for general settings, look inside your worlds serverconfig folder!
 [client]
 	#.
-	#If enabled, compat items with not loaded mod still appears in the creative tab
-	forceCompatItemsIntoCreativeTab = false
-	#.
 	#If enabled, Shadow Steel & Refined Radiance items appears in the creative tab
 	legacyMaterialsIntoCreativeTab = false
-
 	#.
-	#Choose items to hide from creative tab & JEI
-	[client.hideItems]
-		#.
-		#Hides all Springs from creative tab & JEI (you still can craft it)
-		hideSprings = false
-		#.
-		#Hides all Small Springs from creative tab & JEI (you still can craft it)
-		hideSmallSprings = false
-		#.
-		#Hides all Rods from creative tab & JEI (you still can craft it)
-		hideRods = false
-		#.
-		#Hides all Sheets from creative tab & JEI (you still can craft it)
-		hideSheets = false
-		#.
-		#Hides all Wires from creative tab & JEI (you still can craft it)
-		hideWires = false
+	#If enabled, compat items with not loaded mod still appears in the creative tab
+	forceCompatItemsIntoCreativeTab = false
 
 	#.
 	#Position of Create: Vintage Improvements config button in the main menu & pause menu
@@ -51,4 +32,23 @@
 		#The sign (-/+) of this value determines what side of the row the button appears on (left/right)
 		#Range: > -2147483648
 		ingameMenuConfigButtonOffsetX = -4
+
+	#.
+	#Choose items to hide from creative tab & JEI
+	[client.hideItems]
+		#.
+		#Hides all Springs from creative tab & JEI (you still can craft it)
+		hideSprings = false
+		#.
+		#Hides all Small Springs from creative tab & JEI (you still can craft it)
+		hideSmallSprings = false
+		#.
+		#Hides all Rods from creative tab & JEI (you still can craft it)
+		hideRods = false
+		#.
+		#Hides all Sheets from creative tab & JEI (you still can craft it)
+		hideSheets = false
+		#.
+		#Hides all Wires from creative tab & JEI (you still can craft it)
+		hideWires = false
 
