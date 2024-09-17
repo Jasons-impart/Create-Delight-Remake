@@ -1,0 +1,32 @@
+#Chance for fruits to grow per random tick
+#Range: 0.0 ~ 1.0
+fruitsGrowChance = 0.3
+#Chance for fruits to drop per random tick
+#Range: 0.0 ~ 1.0
+fruitsDropChance = 0.2
+#Chance for flower to decay when fruits are picked up / dropped
+#Range: 0.0 ~ 1.0
+flowerDecayChance = 0.3
+#Effect application range for Rage Aura effect
+#Range: 0 ~ 64
+rageEffectRange = 24
+#Effect application range for Heal Aura effect
+#Range: 0 ~ 64
+healEffectRange = 6
+#Chance for peach to grow per random tick
+#Range: 0.0 ~ 1.0
+peachGrowChance = 0.1
+#Chance for peach to grow fruit when stop flowering
+#Range: 0.0 ~ 1.0
+peachFruitChance = 0.3
+#Chance for peach to decay when fruiting
+#Range: 0.0 ~ 1.0
+peachDecayChance = 0.1
+#Effect application range for Alienating effect
+#Range: 0 ~ 64
+alienatingEffectRange = 12
+#Enable cauldron jam and jello recipe
+enableCauldronRecipe = true
+#Enable Thirst Compat
+enableThirstCompat = true
+

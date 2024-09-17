@@ -94,4 +94,15 @@ StartupEvents.registry("fluid", e => {
         .translationKey("block.createdelight.lightning_dragon_blood")
         .translationKey("item.createdelight.lightning_dragon_blood_bucket")
         .tag("forge:molten_materials")
+    // 陨石溶液
+    e.create("createdelight:sky_solution")
+        .translationKey("fluid.createdelight.sky_solution")
+        .translationKey("block.createdelight.sky_solution")
+        .translationKey("item.createdelight.sky_solution_bucket")
+    // 废液
+    e.create("createdelight:spent_liquor")
+        .translationKey("fluid.createdelight.spent_liquor")
+        .translationKey("block.createdelight.spent_liquor")
+        .translationKey("item.createdelight.spent_liquor_bucket")
+
 })

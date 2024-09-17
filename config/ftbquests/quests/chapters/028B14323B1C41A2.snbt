@@ -1,0 +1,422 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "028B14323B1C41A2"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "deeperdarker:heart_of_the_deep"
+	id: "028B14323B1C41A2"
+	images: [{
+		alpha: 100
+		height: 10.0d
+		image: "deeperdarker:item/heart_of_the_deep"
+		rotation: 0.0d
+		width: 10.0d
+		x: 0.0d
+		y: 0.0d
+	}]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["5EC8FE813C9B8A03"]
+			id: "712773DBE9B0E5C4"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "772B54ACCEA1459F"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "中心雕像处会生成一条通向强化深板岩框架的楼梯。用深渊之心开启传送门后可进入。（记得清理传送门框架上的幽匿脉络）"
+			tasks: [{
+				id: "5422F2C6F7B8F228"
+				item: "deeperdarker:heart_of_the_deep"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["279F2B55DB1FDCF6"]
+			dependency_requirement: "all_started"
+			description: [""]
+			id: "5EC8FE813C9B8A03"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7E595CCCD7DE31D9"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "如果你激怒了坚守者，请尝试击败他"
+			tasks: [{
+				entity: "minecraft:warden"
+				id: "34A7BAC66CD10406"
+				type: "kill"
+				value: 1L
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"712773DBE9B0E5C4"
+				"1587355C65EFAFC5"
+				"63D8590DDDCD9E6F"
+			]
+			dependency_requirement: "one_started"
+			id: "1094533D50801898"
+			subtitle: "进入时一定要记得潜行，不然一进去就爆金币了别怪我没提醒你（）"
+			tasks: [{
+				dimension: "deeperdarker:otherside"
+				disable_toast: true
+				id: "6C743769F94F2238"
+				type: "dimension"
+			}]
+			title: "幽冥 (Otherside)"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "596B4F332180C769"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "030B90348F2B2880"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "深暗之域会在内陆生物群系Y=0以下的深板岩层中生成，不会自然生成任何生物，以幽匿系列方块为特征，通常会绵延数千个方块。当你发现许多缓慢闪烁着淡蓝色斑点的黑色方块时，你就已经抵达深暗之域了。远古城市会固定生成在深暗之域中Y=-52的地方，这意味着你有可能在开采钻石时毫无准备地步入一座远古城市。"
+			tasks: [{
+				icon: "minecraft:sculk"
+				id: "5F7B8E28162AD523"
+				structure: "#minecraft:ancient_city"
+				type: "structure"
+			}]
+			title: "远古城市"
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["596B4F332180C769"]
+			id: "1962F2517EF94B0A"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "463AC791EA797E0B"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "在古城内的箱子里可以找到，或者击败监守者掉落"
+			tasks: [
+				{
+					id: "7C3F80431C38F33A"
+					item: "minecraft:echo_shard"
+					type: "item"
+				}
+				{
+					id: "602B1359DB9EEB88"
+					item: "deeperdarker:warden_carapace"
+					type: "item"
+				}
+			]
+			x: -8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["596B4F332180C769"]
+			id: "279F2B55DB1FDCF6"
+			subtitle: "最好全程保持潜行，以防产生振动被检测到。如果不想全程保持潜行又想尽可能地不召唤监守者，那么可以在地面上铺上羊毛或地毯，直接走在上面；如果要往上或往下跳一格，就需要保持潜行，因为即使跳到羊毛或地毯上也可能会产生振动。"
+			tasks: [{
+				id: "0C518A8331630926"
+				title: "最好全程保持潜行，以防产生振动被检测到。如果不想全程保持潜行又想尽可能地不召唤监守者，那么可以在地面上铺上羊毛或地毯，直接走在上面；如果要往上或往下跳一格，就需要保持潜行，因为即使跳到羊毛或地毯上也可能会产生振动。"
+				type: "checkmark"
+			}]
+			title: "关于探索"
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1962F2517EF94B0A"]
+			id: "157DEA56584149D6"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4FA5BEF184E9F72C"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "可以用来强化下界合金装备"
+			tasks: [{
+				id: "08E96364541BF086"
+				item: "deeperdarker:reinforced_echo_shard"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"24BE09160DC6BE45"
+				"157DEA56584149D6"
+			]
+			id: "1587355C65EFAFC5"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2148ED8F5571BAAE"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "这个头盔具有一种能驱散黑暗的力量，或许我可以用他来探索这个深暗的维度"
+			tasks: [{
+				id: "18EE7F66A27A0C8D"
+				item: {
+					Count: 1
+					id: "deeperdarker:warden_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1094533D50801898"]
+			icon: "minecraft:sculk"
+			id: "3F8BE0A4D7A8C993"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "392341A7A48DDBD2"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "幽冥深渊是一个荒芜的地方，到处都是幽匿块和幽匿石，地表散落着许多化石骨架。"
+			tasks: [{
+				biome: "deeperdarker:deeplands"
+				id: "6DE65E139AFD8A55"
+				type: "biome"
+			}]
+			title: "幽冥深渊"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1094533D50801898"]
+			icon: "deeperdarker:echo_log"
+			id: "247257D6042AFFEF"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6C6FAC574382D764"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "回响森林是一个紫色的生物群系，生长着许多树木，地表除了幽匿块和幽匿石外，还有少量的回响土。"
+			tasks: [{
+				biome: "deeperdarker:echoing_forest"
+				id: "275672F2E2C101D4"
+				type: "biome"
+			}]
+			title: "回响森林"
+			x: 2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1094533D50801898"]
+			icon: "deeperdarker:gloomy_cactus"
+			id: "11B81D08C25E1D58"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2DE8604AE6AE0EBE"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "蔽日巨柱是一个由昏暗幽匿块组成的群系，该群系有大量晶化琥珀组成的柱子，还有幽暗喷泉，站在幽暗喷泉上可以起飞，但是要注意会摔死。"
+			tasks: [{
+				biome: "deeperdarker:overcast_columns"
+				id: "17C8694B800BBEB4"
+				type: "biome"
+			}]
+			title: "阴暗之柱"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"247257D6042AFFEF"
+				"3F8BE0A4D7A8C993"
+				"11B81D08C25E1D58"
+			]
+			icon: "minecraft:sculk_shrieker"
+			id: "6F68BC0C6EB12CF5"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2BAA2473ED5A9AA9"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: " 探索完幽冥的所有群系"
+			tasks: [{
+				advancement: "deeperdarker:main/explore_otherside"
+				criterion: ""
+				id: "1F843317CD004B25"
+				type: "advancement"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1094533D50801898"]
+			icon: "minecraft:sculk_vein"
+			id: "55B45C406017B1D1"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "568641FFA9A4E114"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "远古神庙会生成在y20附近，内部有大量战利品，是幽匿传讯器的唯一来源。"
+			tasks: [{
+				id: "62989B49AE693643"
+				structure: "deeperdarker:ancient_temple"
+				type: "structure"
+			}]
+			title: "远古神庙"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["55B45C406017B1D1"]
+			description: ["只能在远古神庙中找到，用于远程访问储存容器或功能性方块（目前仅支持原版的容器及功能性方块）。可供绑定的容器包括：&e箱子，木桶，潜影盒，陷阱箱，漏斗，投掷器，发射器&r。可供绑定的功能方块包括：&e工作台，熔炉，烟熏炉，高炉，切石机，铁砧，砂轮，锻造台，织布机，制图台，附魔台，酿造台，信标&r。潜行手持传讯器对方块使用即可与其绑定，此后在同一维度的任何位置使用传讯器即可直接打开该方块的GUI。若绑定箱子，当绑定的箱子因上方被阻挡而无法开启时，传讯器也无法使用。当绑定的方块所在区块被卸载，通过幽匿传讯器存取物品时，可能导致物品遗失或被复制，建议&4绑定常加载区块内的方块&r（出生点区块等）。再次潜行使用即可解除绑定，若无法检测到绑定的方块（方块被破坏或使用者位于其他维度）时，绑定会解除。"]
+			id: "7BC91CFECB9AABCC"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "55C338FD8002B336"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "四次元口袋"
+			tasks: [{
+				id: "63168EA95175CCC1"
+				item: "deeperdarker:sculk_transmitter"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			description: ["&4注意！！强化深板岩很难挖掘，请不要乱放！！"]
+			id: "63D8590DDDCD9E6F"
+			optional: true
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1D413B991B794429"
+				table_id: 5347970608351672481L
+				type: "loot"
+			}]
+			subtitle: "什么？找不到远古城市？不用担心我们为你提供了强化深板岩的合成方式！把TA摆成地狱门的样子用深渊之心敲击就可以啦！"
+			tasks: [{
+				id: "64BC5CE5590B46E3"
+				item: "minecraft:reinforced_deepslate"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1094533D50801898"]
+			description: ["可以在幽匿微光体团簇附近生成，可以使用附魔的下界合金胸甲进行驯服，驯服后可以吐出附魔书（不用费劲刷图书管理员了）"]
+			id: "59D151EE1A984570"
+			subtitle: "新的压榨对象"
+			tasks: [{
+				disable_toast: true
+				entity: "deeperdarker:sculk_snapper"
+				icon: "deeperdarker:sculk_jaw"
+				id: "274FE11148D1542E"
+				type: "kill"
+				value: 5L
+			}]
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["11B81D08C25E1D58"]
+			description: ["需要精准采集附魔才能获取，哪个少年能拒绝可以摔死自己的蹦床呢"]
+			id: "79AA04801827F28A"
+			subtitle: "诶，起飞~"
+			tasks: [{
+				id: "0D8C24396EF391D2"
+				item: "deeperdarker:gloomy_geyser"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["247257D6042AFFEF"]
+			description: ["少量生成于回响森林群系，和监守者一样没有视力，通过振动感知玩家位置。死亡后会掉落灵魂粉尘"]
+			id: "1946B2503AD25F9A"
+			subtitle: "别怕，不是监守者"
+			tasks: [{
+				entity: "deeperdarker:shattered"
+				icon: "deeperdarker:shattered_spawn_egg"
+				id: "4589452291BE594C"
+				type: "kill"
+				value: 5L
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1946B2503AD25F9A"]
+			description: ["用于在酿造台中将隐身药水酿造成隐匿药水，可以避免被幽匿感测体和监守者的卷须检测到。"]
+			id: "54012DABC1EE329B"
+			subtitle: "悄悄的进村~"
+			tasks: [{
+				id: "16908E7BD67448C8"
+				item: "deeperdarker:soul_dust"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["11B81D08C25E1D58"]
+			description: ["需要精准采集才能获取，带点纪念品回去装饰吧"]
+			id: "7678B694EDA2B5BB"
+			subtitle: "随手带点纪念品"
+			tasks: [{
+				id: "0E6ADB03B9BBA4E2"
+				item: "deeperdarker:crystallized_amber"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3F8BE0A4D7A8C993"]
+			description: ["幽冥深渊中只有生成的幻翼是敌对生物，刷幻翼膜的时候到了(不是，谁鞘翅还没个经验修补啊)"]
+			id: "0E2FD388A69CD5AB"
+			subtitle: "不是，谁鞘翅还没个经验修补啊"
+			tasks: [{
+				entity: "minecraft:phantom"
+				id: "1AC3BC5154182CE4"
+				type: "kill"
+				value: 5L
+			}]
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6F68BC0C6EB12CF5"]
+			description: ["当玩家踩踏被虫蚀的幽匿块时生成，拥有550点生命值，如果不小心踩到了只需要离开7格范围，失去目标后1分钟尖啸蠕虫就会重新回到地下。挑战一下吧"]
+			id: "52555ECE978CD198"
+			subtitle: "阴暗的爬行"
+			tasks: [{
+				entity: "deeperdarker:shriek_worm"
+				id: "6609793EEBE9DB4A"
+				type: "kill"
+				value: 1L
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "&4探索幽冥"
+}

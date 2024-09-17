@@ -1,0 +1,403 @@
+{
+	autofocus_id: "03F588EEB89B59F1"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "09B25267E61BEA9F"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "minecraft:grass_block"
+	id: "09B25267E61BEA9F"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			icon: "minecraft:mycelium"
+			id: "2D5042D30F0E685D"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "65667C5950DCCBBA"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "它真的灰常稀有！"
+			tasks: [{
+				biome: "minecraft:mushroom_fields"
+				icon: "minecraft:red_mushroom_block"
+				id: "4619C552E188905F"
+				type: "biome"
+			}]
+			title: "&6蘑菇岛"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2D5042D30F0E685D"]
+			description: [
+				"蘑菇君是一种奇怪的真菌生物，通常生成在蘑菇岛生物群系。"
+				"这些奇怪的生物是守卫者和炽足兽的亲戚，所以蘑菇君的外观会与他们类似。但不同的是蘑菇君是属于&e被动生物。"
+				"如果对蘑菇君使用同类型的蘑菇或真菌，更多的蘑菇或真菌将在蘑菇君身上生根，而使用剪刀可以剪去蘑菇君身上的蘑菇或真菌。"
+				"有一个或多个蘑菇时，蘑菇君会向附近同类型的蘑菇发射类似守卫者的光束。同时减少蘑菇君身上的蘑菇数量。"
+				"他们以此使附近生长出更多的该类型的蘑菇，如果蘑菇在菌丝类方块上方，这个蘑菇可能会长成巨大的蘑菇。&a（生~长~射~线~）"
+				"如果被杀时背上有5个蘑菇，蘑菇君会爆发出剧烈的爆炸，并有几率将附近的地形转化为与其菌类有关的生物群系。"
+			]
+			icon: "alexsmobs:spawn_egg_mungus"
+			id: "45ADF7CA2DAD69B5"
+			rewards: [
+				{
+					count: 3
+					id: "6B90CADE60D597DC"
+					item: "farmersdelight:mushroom_rice"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3B52BD5A3F7DF143"
+					item: "minecraft:mushroom_stew"
+					type: "item"
+				}
+			]
+			subtitle: "神奇的真菌生物"
+			tasks: [{
+				icon: "minecraft:red_mushroom"
+				id: "1D2BD9D6D1A30707"
+				observe_type: 5
+				timer: 0L
+				to_observe: "alexsmobs:mungus"
+				type: "observation"
+			}]
+			title: "&2蘑菇君"
+			x: -1.5d
+			y: -2.0d
+		}
+		{
+			icon: {
+				Count: 1
+				id: "minecraft:diamond_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "03F588EEB89B59F1"
+			rewards: [{
+				id: "01978038C66371F6"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "4084D6A2070149C6"
+				title: "主世界探险！"
+				type: "checkmark"
+			}]
+			title: "主世界探险！！！"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6735F22ABE5E84FF"]
+			id: "4629B904519AB5C6"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2F4C0F8324542883"
+				table_id: 5347970608351672481L
+				type: "random"
+			}]
+			subtitle: "恭喜你找到了隐藏宝藏点！！！"
+			tasks: [{
+				advancement: "castle_in_the_sky:find_castle"
+				criterion: ""
+				id: "2F9F16FD2047D81B"
+				type: "advancement"
+			}]
+			x: 2.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["4629B904519AB5C6"]
+			id: "00B69C1F341234E0"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4B47489281B4F2BE"
+				table_id: 7772018159856264947L
+				type: "choice"
+			}]
+			subtitle: "天空之城现在属于你了"
+			tasks: [{
+				advancement: "castle_in_the_sky:conquer_castle"
+				criterion: ""
+				id: "1085853212032DEF"
+				type: "advancement"
+			}]
+			x: 2.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			id: "6735F22ABE5E84FF"
+			invisible: true
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6D420565E82034E5"
+				table_id: 7772018159856264947L
+				type: "choice"
+			}]
+			subtitle: "石头会守护主人，等到有一天你要回到天空之城拉普达的时候，它就会为你指路。"
+			tasks: [{
+				id: "46256991864AE7AA"
+				item: {
+					Count: 1
+					id: "castle_in_the_sky:levitation_stone"
+					tag: {
+						castle_in_the_sky: { }
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			id: "181933A2A9CDD244"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "45F8F7285222C549"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "&1叮铃叮铃叮铃"
+			tasks: [{
+				icon: "minecraft:amethyst_block"
+				id: "5612D378359ED026"
+				observe_type: 0
+				timer: 0L
+				to_observe: "minecraft:amethyst_block"
+				type: "observation"
+			}]
+			title: "&6紫晶洞！"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["181933A2A9CDD244"]
+			id: "43D45931BFA12550"
+			rewards: [{
+				count: 3
+				id: "6A88A8930E53772A"
+				item: "minecraft:budding_amethyst"
+				type: "item"
+			}]
+			subtitle: "紫水晶母岩无法挖掘掉落，但是可以通过机械动力移走（矿车大法）"
+			tasks: [{
+				icon: "minecraft:budding_amethyst"
+				id: "5E2288DC1F7341E7"
+				observe_type: 0
+				timer: 0L
+				to_observe: "minecraft:budding_amethyst"
+				type: "observation"
+			}]
+			title: "&4不要挖掉它！！！"
+			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["43D45931BFA12550"]
+			id: "4A19D3EB3E47BFDF"
+			rewards: [{
+				id: "6AB8F65AFF3A92E0"
+				item: "minecraft:amethyst_shard"
+				random_bonus: 15
+				type: "item"
+			}]
+			subtitle: "很好听的~"
+			tasks: [{
+				id: "57FA53C48C03D1A9"
+				item: "minecraft:amethyst_shard"
+				type: "item"
+			}]
+			title: "&e美妙的音乐！"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			id: "2F7D291600E73191"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5553C03AEBCC384A"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "她真的好&1魔幻&r！"
+			tasks: [{
+				biome: "terralith:warped_mesa"
+				icon: "minecraft:purple_terracotta"
+				id: "303BBBC67133681B"
+				type: "biome"
+			}]
+			title: "&1奇异恶地"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2F7D291600E73191"]
+			icon: "supplementaries:enderman_head"
+			id: "37E51401DB374A75"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6069543A6A6F3EBF"
+				table_id: 7772018159856264947L
+				type: "random"
+			}]
+			subtitle: "这里也是那里也是到处都是！"
+			tasks: [{
+				icon: "supplementaries:enderman_head"
+				id: "2142CB34FEB1F737"
+				observe_type: 5
+				timer: 0L
+				to_observe: "minecraft:enderman"
+				type: "observation"
+			}]
+			title: "他们&4到处都是"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			id: "0636C4A3E5DF608B"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5A2200240A07539F"
+				table_id: 6485826240718891201L
+				type: "choice"
+			}]
+			subtitle: "好酷！但是&eMADE IN HEAVEN&r"
+			tasks: [{
+				icon: "minecraft:stripped_acacia_wood"
+				id: "0DC1C51862738E78"
+				structure: "dungeons_arise:heavenly_rider"
+				type: "structure"
+			}]
+			title: "&e天堂骑行者的战舰！"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0636C4A3E5DF608B"]
+			id: "08D29EF93E2A5308"
+			rewards: [{
+				id: "239F85008D5861DA"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				icon: "minecraft:wither_skeleton_skull"
+				id: "74BA291A9CBC2103"
+				observe_type: 5
+				timer: 0L
+				to_observe: "minecraft:wither_skeleton"
+				type: "observation"
+			}]
+			title: "我靠！&460滴血&r！"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["03F588EEB89B59F1"]
+			id: "69AE12371E6B977D"
+			subtitle: "灾厄源头！"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "minecraft:white_banner"
+					tag: {
+						BlockEntityTag: {
+							Patterns: [
+								{
+									Color: 9
+									Pattern: "mr"
+								}
+								{
+									Color: 8
+									Pattern: "bs"
+								}
+								{
+									Color: 7
+									Pattern: "cs"
+								}
+								{
+									Color: 8
+									Pattern: "bo"
+								}
+								{
+									Color: 15
+									Pattern: "ms"
+								}
+								{
+									Color: 8
+									Pattern: "hh"
+								}
+								{
+									Color: 8
+									Pattern: "mc"
+								}
+								{
+									Color: 15
+									Pattern: "bo"
+								}
+							]
+							id: "minecraft:banner"
+						}
+						HideFlags: 32
+						display: {
+							Name: "{\"color\":\"gold\",\"translate\":\"block.minecraft.ominous_banner\"}"
+						}
+					}
+				}
+				id: "54E62B7D49FB7868"
+				structure: "idas:pillager_camp"
+				title: "邪恶营地！"
+				type: "structure"
+			}]
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["69AE12371E6B977D"]
+			id: "285E11D6C0306C72"
+			rewards: [{
+				id: "5B53BF4626FE20DD"
+				item: "minecraft:emerald"
+				random_bonus: 5
+				type: "item"
+			}]
+			tasks: [{
+				block: "minecraft:spawner"
+				block_type: 0
+				checkItem: false
+				id: "3F23B1920EE2DDEE"
+				title: "记得挖掉刷怪笼！"
+				type: "questsadditions:break"
+				value: 1L
+			}]
+			title: "源源不断的源头（"
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["00B69C1F341234E0"]
+			id: "40F6E5374E55A6CD"
+			subtitle: "你好狠心！"
+			tasks: [{
+				advancement: "castle_in_the_sky:trade"
+				criterion: ""
+				id: "7D37C27F37EB2D92"
+				type: "advancement"
+			}]
+			x: 2.0d
+			y: -9.0d
+		}
+	]
+	title: "主世界探险"
+}

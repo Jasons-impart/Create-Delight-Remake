@@ -1,0 +1,19 @@
+{
+	id: "1ECB2C18081DB52B"
+	loot_size: 1
+	order_index: 4
+	rewards: [
+		{ item: "create:spout" }
+		{ item: "create:item_drain" }
+		{ item: "create:hose_pulley" }
+		{ count: 8, item: "create:fluid_tank", weight: 10.0f }
+		{ count: 2, item: "create:copper_valve_handle", weight: 10.0f }
+		{ count: 2, item: "create:fluid_valve", weight: 5.0f }
+		{ count: 2, item: "create:smart_fluid_pipe", weight: 5.0f }
+		{ count: 2, item: "create:mechanical_pump", weight: 5.0f }
+		{ count: 32, item: "create:fluid_pipe", weight: 10.0f }
+		{ item: "create:portable_fluid_interface", weight: 10.0f }
+		{ item: "create:steam_engine" }
+	]
+	title: "流体科技！"
+}

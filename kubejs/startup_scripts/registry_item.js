@@ -312,4 +312,20 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.otherworld_note")
         .rarity("rare")
+        
+    // 通用压印模板（ae用）
+    e.create("createdelight:universal_press").tag("vintageimprovements:curving_heads").translationKey("item.createdelight.universal_press")
+    // 红石膏
+    e.create("createdelight:redstone_paste").maxDamage(64).translationKey("item.createdelight.redstone_paste")
+    // 初加工的电路板
+    e.create('createdelight:initial_processing_of_printed_engineering_processor').translationKey('item.createdelight.initial_processing_of_printed_engineering_processor')
+    e.create('createdelight:initial_processing_of_printed_calculation_processor').translationKey('item.createdelight.initial_processing_of_printed_calculation_processor')
+    e.create('createdelight:initial_processing_of_printed_logic_processor').translationKey('item.createdelight.initial_processing_of_printed_logic_processor')
+    // 待压印的处理器
+    e.create('createdelight:engineering_processor_inscribed').translationKey('item.createdelight.engineering_processor_inscribed')
+    e.create('createdelight:calculation_processor_inscribed').translationKey('item.createdelight.calculation_processor_inscribed')
+    e.create('createdelight:logic_processor_inscribed').translationKey('item.createdelight.logic_processor_inscribed')
+    // 大块陨石
+    e.create('createdelight:bigger_sky_stone_block').translationKey('item.createdelight.bigger_sky_stone_block')
+
 })

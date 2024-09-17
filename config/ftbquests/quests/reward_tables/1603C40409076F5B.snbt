@@ -1,0 +1,28 @@
+{
+	id: "1603C40409076F5B"
+	loot_size: 1
+	order_index: 7
+	rewards: [
+		{ count: 2, item: "ends_delight:chorus_fruit_wine" }
+		{ count: 5, item: "ends_delight:bubble_tea" }
+		{ item: "ends_delight:stuffed_rice_cake" }
+		{ item: "ends_delight:roasted_dragon_meat" }
+		{ item: "ends_delight:smoked_dragon_leg" }
+		{ item: "ends_delight:roasted_shulker_meat" }
+		{ item: "ends_delight:shulker_meat" }
+		{ item: "ends_delight:fried_dragon_egg" }
+		{ item: "ends_delight:liquid_dragon_egg" }
+		{ item: "ends_delight:dragon_breath_soda" }
+		{ count: 3, item: "ends_delight:chorus_fruit_milk_tea" }
+		{ item: "ends_delight:steamed_dragon_egg" }
+		{ item: "ends_delight:dragon_leg_with_sauce" }
+		{ item: "ends_delight:end_barbecue_stick" }
+		{ item: "ends_delight:stir_fried_shulker_meat" }
+		{ item: "ends_delight:roasted_dragon_steak" }
+		{ count: 4, item: "ends_delight:chorus_fruit_pie_slice" }
+		{ count: 10, item: "ends_delight:chorus_fruit_popsicle" }
+		{ count: 2, item: "ends_delight:chorus_flower_tea" }
+		{ item: "ends_delight:grilled_shulker" }
+	]
+	title: "末地乐事表"
+}

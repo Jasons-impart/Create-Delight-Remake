@@ -1,0 +1,11 @@
+{
+	id: "66579587DC87FAA2"
+	loot_size: 1
+	order_index: 12
+	rewards: [
+		{ count: 3, item: "farmersrespite:green_tea_leaves" }
+		{ count: 3, item: "farmersrespite:yellow_tea_leaves" }
+		{ count: 3, item: "farmersrespite:black_tea_leaves" }
+	]
+	title: "茶叶"
+}
