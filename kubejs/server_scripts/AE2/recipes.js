@@ -282,4 +282,7 @@ ServerEvents.recipes((event) => {
   create.mixing(["2x #forge:dusts/redstone", Fluid.of("createdelight:spent_liquor", 250)],
     Fluid.of("createdelight:sky_solution", 250)
   )
+
+  //线缆锚
+  vintageimprovements.turning(Item.of('ae2:cable_anchor', 64), "#forge:ingots/iron")
 });
