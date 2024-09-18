@@ -22,6 +22,6 @@
 !/*delight*
 !/*xaero*
 !/iceandfire-client.toml
-!/*quark*
+# !/*quark* 要加去默认配置加
 !/vintageimprovements*
 xaerominimap_entities.json
