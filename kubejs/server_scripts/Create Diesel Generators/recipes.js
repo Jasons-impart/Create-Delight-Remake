@@ -41,8 +41,8 @@ ServerEvents.recipes(e => {
     }
   }).id("createdieselgenerators:crafting/distillation_controller")
   let iner = "createdelight:incomplete_diesel_engine"
-  e.recipes.create.sequenced_assembly("createdieselgenerators:diesel_engine", "createdelight:bronze_block", [
-    e.recipes.vintageimprovements.turning(iner, iner),
+  e.recipes.create.sequenced_assembly("createdieselgenerators:diesel_engine", "minecraft:polished_blackstone_slab", [
+    e.recipes.create.deploying(iner, [iner, "createdelight:bronze_block"]),
     e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
     e.recipes.create.deploying(iner, [iner, "createdieselgenerators:engine_piston"]),
     e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
