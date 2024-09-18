@@ -1,0 +1,172 @@
+{
+	"size": "large",
+	"color": "#2F4F4F",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:dread_knight",
+					"count": 4
+				},
+                {
+                    "entity": "iceandfire:dread_scuttler",
+                    "count": 8
+                },
+                {
+                    "entity": "iceandfire:dread_ghoul",
+                    "count": 12
+                },
+                {
+                    "entity": "iceandfire:dread_beast",
+                    "count": 8
+                },
+                {
+                    "entity": "iceandfire:dread_lich",
+                    "count": 2
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 1,
+                        "nbt" : {"gateway":"createdelight:the_gate_of_eternal_cold"}}
+				}
+			],
+			"max_wave_time": 900,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:ice_dragon",
+					"count": 1
+				},
+                {
+					"entity": "iceandfire:dread_knight",
+					"count": 6
+				},
+                {
+                    "entity": "iceandfire:dread_scuttler",
+                    "count": 6
+                },
+                {
+                    "entity": "iceandfire:dread_ghoul",
+                    "count": 14
+                },
+                {
+                    "entity": "iceandfire:dread_beast",
+                    "count": 6
+                },
+                {
+                    "entity": "iceandfire:dread_lich",
+                    "count": 4
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonsteel_ice_ingot", 
+                        "count": 1}
+                }
+			],
+			"max_wave_time": 1400,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:ice_dragon",
+					"count": 2
+				},
+                {
+					"entity": "iceandfire:dread_knight",
+					"count": 12
+				},
+                {
+                    "entity": "iceandfire:dread_scuttler",
+                    "count": 12
+                },
+                {
+                    "entity": "iceandfire:dread_ghoul",
+                    "count": 16
+                },
+                {
+                    "entity": "iceandfire:dread_beast",
+                    "count": 10
+                },
+                {
+                    "entity": "iceandfire:dread_lich",
+                    "count": 6
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dread_knight_sword", 
+                        "count": 1,
+                        "nbt": {"Damage":0}}
+                }
+			],
+			"max_wave_time": 1600,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "iceandfire:ice_dragon",
+					"count": 4
+				},
+                {
+					"entity": "iceandfire:lightning_dragon",
+					"count": 2
+				},
+                {
+					"entity": "iceandfire:fire_dragon",
+					"count": 2
+				},
+                {
+					"entity": "iceandfire:dread_knight",
+					"count": 16
+				},
+                {
+                    "entity": "iceandfire:dread_scuttler",
+                    "count": 12
+                },
+                {
+                    "entity": "iceandfire:dread_ghoul",
+                    "count": 16
+                },
+                {
+                    "entity": "iceandfire:dread_beast",
+                    "count": 12
+                },
+                {
+                    "entity": "iceandfire:dread_lich",
+                    "count": 6
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dread_queen_sword", 
+                        "count": 1,
+                        "nbt": {"Damage":0}}
+                }
+			],
+			"max_wave_time": 2000,
+			"setup_time": 300
+		}
+    ],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": true
+    }]
+}

@@ -30,21 +30,21 @@ ServerEvents.recipes(e => {
         [
             Fluid.of("createdelight:molten_tin", 45),
             Fluid.of("createmetallurgy:molten_copper", 45)
-        ], "superheated", 100
+        ], "heated", 30
     ).id("createmetallurgy:alloying/alloying_bronze")
     e.recipes.create.mixing(
         Fluid.of("createbigcannons:molten_bronze", 30),
         [
             Fluid.of("createdelight:molten_tin", 15),
             Fluid.of("createmetallurgy:molten_copper", 15)
-        ], 500, "superheated"
+        ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_bronze")
     metal_production_line(e,
         [
             "createdelight:bronze_block",
             "createdelight:bronze_ingot",
-            "createdelight:bronze_sheet",
             "createdelight:bronze_nugget",
+            "createdelight:bronze_sheet",
             "createbigcannons:molten_bronze"
         ], "heated", 80
     )

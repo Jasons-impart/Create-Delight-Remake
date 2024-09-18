@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/engine_piston_from_rods",
   ])
   // 替换安山合金
-  e.replaceInput({ mod: "createdieselgenerators" }, "create:andesite_alloy", "#forge:ingots/steel")
+  e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid"}, "create:andesite_alloy", "#forge:ingots/steel")
+  e.replaceInput({id: "createdieselgenerators:crafting/basin_lid"}, "create:andesite_alloy", 'createbigcannons:cast_iron_ingot')
   e.replaceInput({ mod: "createdieselgenerators" }, "create:propeller", "ad_astra:fan")
   e.custom({
     "type": "minecraft:crafting_shaped",
