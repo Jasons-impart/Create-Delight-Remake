@@ -15,13 +15,17 @@ ServerEvents.recipes(e => {
     e.recipes.createmetallurgy.melting(
         Fluid.of("createmetallurgy:molten_tungsten", 90),
         "createmetallurgy:dirty_wolframite_dust",
-        "superheated",
+        "heated",
         20
     ).id("createmetallurgy:melting/melting_dirty_wolframite_dust")
     e.recipes.createmetallurgy.melting(
         Fluid.of("createmetallurgy:molten_tungsten", 90),
         "createmetallurgy:wolframite_dust",
-        "superheated",
+        "heated",
         20
     ).id("createmetallurgy:melting/melting_wolframite_dust")
+    e.recipes.create.pressing(
+        "createmetallurgy:tungsten_sheet",
+        "createmetallurgy:tungsten_ingot"
+    ).id("create:pressing/tungsten_sheet")
 })

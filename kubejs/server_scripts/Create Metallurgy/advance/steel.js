@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:steel_ingots_from_block",
         "createmetallurgy:steel_block_from_steel_ingots"
     ])
-    metal_production_line_2(e, [
+    metal_production_line(e, [
         "createmetallurgy:steel_block",
         "createmetallurgy:steel_ingot",
         "ad_astra:steel_nugget",
@@ -22,4 +22,8 @@ ServerEvents.recipes(e => {
         "superheated",
         50
     ).id("createmetallurgy:melting/steel_nugget_2")
+    e.recipes.create.pressing(
+        "ad_astra:steel_plate",
+        "createmetallurgy:steel_ingot",
+    ).id("create:pressing/steel_plate")
 })
