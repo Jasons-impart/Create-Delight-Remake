@@ -9,8 +9,8 @@ ServerEvents.recipes(e => {
             "create:powdered_obsidian",
             "minecraft:prismarine"
         ])
-    .superheated()
-    .id("witheringboon:pressurizing/soulaniteingot")
+        .superheated()
+        .id("witheringboon:pressurizing/soulaniteingot")
     e.recipes.create.haunting("witheringboon:soulaniteingot", "witheringboon:soulanitealloy")
-    .id("witheringboon:haunting/soulaniteingot")
+        .id("witheringboon:haunting/soulaniteingot")
 })
