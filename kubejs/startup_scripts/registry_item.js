@@ -312,11 +312,13 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.otherworld_note")
         .rarity("rare")
-        
+
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press").tag("vintageimprovements:curving_heads").translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste").maxDamage(64).translationKey("item.createdelight.redstone_paste")
+    // 陨石膏
+    e.create("createdelight:sky_stone_paste").maxDamage(64).translationKey("item.createdelight.sky_stone_paste")
     // 初加工的电路板
     e.create('createdelight:initial_processing_of_printed_engineering_processor').translationKey('item.createdelight.initial_processing_of_printed_engineering_processor')
     e.create('createdelight:initial_processing_of_printed_calculation_processor').translationKey('item.createdelight.initial_processing_of_printed_calculation_processor')
@@ -327,5 +329,27 @@ StartupEvents.registry("item", e => {
     e.create('createdelight:logic_processor_inscribed').translationKey('item.createdelight.logic_processor_inscribed')
     // 大块陨石
     e.create('createdelight:bigger_sky_stone_block').translationKey('item.createdelight.bigger_sky_stone_block')
+    // 元件外壳坯件
+    e.create("createdelight:item_cell_housing_blank").translationKey("item.createdelight.item_cell_housing_blank")
+    e.create("createdelight:fluid_cell_housing_blank").translationKey("item.createdelight.fluid_cell_housing_blank")
+    e.create("createdelight:mega_item_cell_housing_blank").translationKey("item.createdelight.mega_item_cell_housing_blank")
+    e.create("createdelight:mega_fluid_cell_housing_blank").translationKey("item.createdelight.mega_fluid_cell_housing_blank")
+    // 初处理的元件外壳
+    e.create("createdelight:initial_processing_of_item_cell_housing").translationKey("item.createdelight.initial_processing_of_item_cell_housing")
+    e.create("createdelight:initial_processing_of_fluid_cell_housing").translationKey("item.createdelight.initial_processing_of_fluid_cell_housing")
+    e.create("createdelight:initial_processing_of_mega_item_cell_housing").translationKey("item.createdelight.initial_processing_of_mega_item_cell_housing")
+    e.create("createdelight:initial_processing_of_mega_fluid_cell_housing").translationKey("item.createdelight.initial_processing_of_mega_fluid_cell_housing")
+    // 未成型的元件外壳
+    e.create("createdelight:unformed_item_cell_housing").translationKey("item.createdelight.unformed_item_cell_housing")
+    e.create("createdelight:unformed_fluid_cell_housing").translationKey("item.createdelight.unformed_fluid_cell_housing")
+    e.create("createdelight:unformed_mega_item_cell_housing").translationKey("item.createdelight.unformed_mega_item_cell_housing")
+    e.create("createdelight:unformed_mega_fluid_cell_housing").translationKey("item.createdelight.unformed_mega_fluid_cell_housing")
+    // 石英玻璃部件
+    e.create("createdelight:quartz_glass_parts").translationKey("item.createdelight.quartz_glass_parts")
+    e.create("createdelight:quartz_vibrant_glass_parts").translationKey("item.createdelight.quartz_vibrant_glass_parts")
+    // 陨铜锭
+    e.create("createdelight:sky_copper_ingot").translationKey("item.createdelight.sky_copper_ingot")
+    // 元件外壳封头
+    e.create("createdelight:cell_housing_curving_head").translationKey("item.createdelight.cell_housing_curving_head").tag("vintageimprovements:curving_heads")
 
 })
