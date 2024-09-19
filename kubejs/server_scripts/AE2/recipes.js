@@ -39,23 +39,15 @@ ServerEvents.recipes((event) => {
     .id("createdelight:universal_press_6");
 
   let custom_inscribe = (result, middle) => {
-    event
-      .custom({
+    event.custom({
         type: "ae2:inscriber",
         ingredients: {
-          middle: {
-            item: middle,
-          },
-          top: {
-            item: "createdelight:universal_press",
-          },
+          middle: { item: middle },
+          top: { item: "createdelight:universal_press" },
         },
         mode: "inscribe",
-        result: {
-          item: result,
-        },
-      })
-      .id(`${result}_recipe`);
+        result: { item: result },
+      }).id(`${result}_recipe`);
   };
 
   custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond");
@@ -66,36 +58,21 @@ ServerEvents.recipes((event) => {
   custom_inscribe("createdelight:universal_press", "minecraft:iron_block");
 
   // 通用压印模板的配方
-  event
-    .custom({
+  event.custom({
       type: "ae2:transform",
       circumstance: {
         type: "fluid",
         tag: "minecraft:water",
       },
       ingredients: [
-        {
-          item: "ae2:silicon_press",
-        },
-        {
-          item: "ae2:logic_processor_press",
-        },
-        {
-          item: "ae2:engineering_processor_press",
-        },
-        {
-          item: "ae2:calculation_processor_press",
-        },
-        {
-          item: "megacells:accumulation_processor_press",
-        },
+        { item: "ae2:silicon_press" },
+        { item: "ae2:logic_processor_press" },
+        { item: "ae2:engineering_processor_press" },
+        { item: "ae2:calculation_processor_press" },
+        { item: "megacells:accumulation_processor_press" },
       ],
-      result: {
-        count: 5,
-        item: "createdelight:universal_press",
-      },
-    })
-    .id("universal_press_transform_recipe");
+      result: { item: "createdelight:universal_press", count: 5 },
+    }).id("universal_press_transform_recipe");
 
   // 初加工的电路板
   kubejs.shapeless("createdelight:initial_processing_of_printed_engineering_processor", [
@@ -252,19 +229,19 @@ ServerEvents.recipes((event) => {
     )
     .id("createdelight:sky_dust_2");
   create
-    .mixing("createdelight:bigger_sky_stone_block", [
+    .mixing("createdelight:enriched_sky_stone_block", [
       "ae2:sky_stone_block",
       "#forge:dusts/redstone",
     ])
-    .id("createdelight:bigger_sky_stone_block");
+    .id("createdelight:enriched_sky_stone_block");
   create
-    .pressing(
+    .crushing(
       [
-        "2x ae2:sky_dust",
-        Item.of("ae2:sky_dust", 2).withChance(0.1),
-        Item.of("ae2:sky_dust", 2).withChance(0.1),
+        "4x ae2:sky_dust",
+        Item.of("ae2:sky_dust", 2).withChance(0.3),
+        Item.of("ae2:sky_dust", 2).withChance(0.3),
       ],
-      "createdelight:bigger_sky_stone_block"
+      "createdelight:enriched_sky_stone_block"
     )
     .id("createdelight:sky_dust_3");
 
