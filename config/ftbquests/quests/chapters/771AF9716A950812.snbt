@@ -668,7 +668,10 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["55C42BCE0E399B3D"]
+			dependencies: [
+				"55C42BCE0E399B3D"
+				"34C9A7E928820147"
+			]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"
@@ -684,7 +687,7 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统"
+			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"
 			tasks: [{
 				id: "6B34FD5059C856EC"
 				title: "货币系统！"

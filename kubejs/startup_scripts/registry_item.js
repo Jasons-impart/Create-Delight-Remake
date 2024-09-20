@@ -378,4 +378,49 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:cell_housing_curving_head")
         .translationKey("item.createdelight.cell_housing_curving_head")
         .tag("vintageimprovements:curving_heads")
+    
+    //注册矿簇
+    e.create("createdelight:coal_mineral_cluster")
+        .translationKey("item.createdelight.coal_mineral_cluster")
+    e.create("createdelight:copper_mineral_cluster")
+        .translationKey("item.createdelight.copper_mineral_cluster")
+    e.create("createdelight:zinc_mineral_cluster")
+        .translationKey("item.createdelight.zinc_mineral_cluster")
+    e.create("createdelight:iron_mineral_cluster")
+        .translationKey("item.createdelight.iron_mineral_cluster")
+    e.create("createdelight:silver_mineral_cluster")
+        .translationKey("item.createdelight.silver_mineral_cluster")
+
+
+    e.create("createdelight:diamond_mineral_cluster")
+        .translationKey("item.createdelight.diamond_mineral_cluster")
+    e.create("createdelight:redstone_mineral_cluster")
+        .translationKey("item.createdelight.redstone_mineral_cluster")
+    e.create("createdelight:lapis_mineral_cluster")
+        .translationKey("item.createdelight.lapis_mineral_cluster")
+    e.create("createdelight:emerald_mineral_cluster")
+        .translationKey("item.createdelight.emerald_mineral_cluster")
+    
+    
+    e.create("createdelight:glowstone_mineral_cluster")
+        .translationKey("item.createdelight.glowstone_mineral_cluster")
+    e.create("createdelight:quartz_mineral_cluster")
+        .translationKey("item.createdelight.quartz_mineral_cluster")
+    e.create("createdelight:netherite_mineral_cluster")
+        .translationKey("item.createdelight.netherite_mineral_cluster")
+    e.create("createdelight:gold_mineral_cluster")
+        .translationKey("item.createdelight.gold_mineral_cluster")
+    
+    
+    e.create("createdelight:desh_mineral_cluster")
+        .translationKey("item.createdelight.desh_mineral_cluster")
+    e.create("createdelight:calorite_mineral_cluster")
+        .translationKey("item.createdelight.calorite_mineral_cluster")
+    e.create("createdelight:ostrum_mineral_cluster")
+        .translationKey("item.createdelight.ostrum_mineral_cluster")
+    e.create("createdelight:tin_mineral_cluster")
+        .translationKey("item.createdelight.tin_mineral_cluster")
+
+    
+
 })
