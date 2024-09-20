@@ -1095,7 +1095,7 @@
 			rewards: [{
 				count: 10
 				id: "601BCFC2C598A7E0"
-				item: "createdelight:netherite_coin"
+				item: "createdelightcore:netherite_coin"
 				type: "item"
 			}]
 			shape: "square"

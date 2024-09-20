@@ -9,52 +9,52 @@
       "InputType": "DEFAULT",
       "CoreChain": [
         {
-          "Coin": "createdelight:iron_coin",
+          "Coin": "createdelightcore:iron_coin",
           "initial": {
-            "translate": "item.createdelight.iron_coin.initial"
+            "translate": "item.createdelightcore.iron_coin.initial"
           },
           "plural": {
-            "translate": "item.createdelight.iron_coin.plural"
+            "translate": "item.createdelightcore.iron_coin.plural"
           }
         },
         {
-          "Coin": "createdelight:copper_coin",
+          "Coin": "createdelightcore:copper_coin",
           "exchangeRate": 9,
           "initial": {
-            "translate": "item.createdelight.copper_coin.initial"
+            "translate": "item.createdelightcore.copper_coin.initial"
           },
           "plural": {
-            "translate": "item.createdelight.copper_coin.plural"
+            "translate": "item.createdelightcore.copper_coin.plural"
           }
         },
         {
-          "Coin": "createdelight:gold_coin",
+          "Coin": "createdelightcore:gold_coin",
           "exchangeRate": 9,
           "initial": {
-            "translate": "item.createdelight.gold_coin.initial"
+            "translate": "item.createdelightcore.gold_coin.initial"
           },
           "plural": {
-            "translate": "item.createdelight.gold_coin.plural"
+            "translate": "item.createdelightcore.gold_coin.plural"
           }
         },
         {
-          "Coin": "createdelight:emerald_coin",
+          "Coin": "createdelightcore:emerald_coin",
           "exchangeRate": 9,
           "initial": {
-            "translate": "item.createdelight.emerald_coin.initial"
+            "translate": "item.createdelightcore.emerald_coin.initial"
           },
           "plural": {
-            "translate": "item.createdelight.emerald_coin.plural"
+            "translate": "item.createdelightcore.emerald_coin.plural"
           }
         },
         {
-          "Coin": "createdelight:netherite_coin",
+          "Coin": "createdelightcore:netherite_coin",
           "exchangeRate": 9,
           "initial": {
-            "translate": "item.createdelight.netherite_coin.initial"
+            "translate": "item.createdelightcore.netherite_coin.initial"
           },
           "plural": {
-            "translate": "item.createdelight.netherite_coin.plural"
+            "translate": "item.createdelightcore.netherite_coin.plural"
           }
         }
       ],
@@ -70,7 +70,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 10,
                 "y": 1,
-                "item": "createdelight:iron_coin"
+                "item": "createdelightcore:iron_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -82,7 +82,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 40,
                 "y": 1,
-                "item": "createdelight:copper_coin"
+                "item": "createdelightcore:copper_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -94,7 +94,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 70,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -106,7 +106,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 100,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -118,7 +118,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 130,
                 "y": 1,
-                "item": "createdelight:netherite_coin"
+                "item": "createdelightcore:netherite_coin"
               }
             ]
           },
@@ -132,7 +132,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 10,
                 "y": 1,
-                "item": "createdelight:netherite_coin"
+                "item": "createdelightcore:netherite_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -144,7 +144,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 40,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -156,7 +156,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 70,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -168,7 +168,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 100,
                 "y": 1,
-                "item": "createdelight:copper_coin"
+                "item": "createdelightcore:copper_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -180,48 +180,21 @@
                 "type": "lightmanscurrency:item",
                 "x": 130,
                 "y": 1,
-                "item": "createdelight:iron_coin"
+                "item": "createdelightcore:iron_coin"
               }
             ]
           },
-          
           {
             "x": 12,
             "y": 74,
             "width": 38,
-            "command": "exchangeDown-createdelight:iron_coin",
+            "command": "exchangeDown-createdelightcore:iron_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:copper_coin"
-              },
-              {
-                "type": "lightmanscurrency:small_arrow",
-                "x": 16,
-                "y": 6,
-                "direction": "RIGHT"
-              },
-              {
-                "type": "lightmanscurrency:item",
-                "x":22,
-                "y": 1,
-                "item": "createdelight:iron_coin"
-              }
-            ]
-          },
-          {
-            "x": 12,
-            "y": 94,
-            "width": 38,
-            "command": "exchangeUp-createdelight:iron_coin",
-            "icons": [
-              {
-                "type": "lightmanscurrency:item",
-                "x": 0,
-                "y": 1,
-                "item": "createdelight:iron_coin"
+                "item": "createdelightcore:copper_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -233,7 +206,33 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:copper_coin"
+                "item": "createdelightcore:iron_coin"
+              }
+            ]
+          },
+          {
+            "x": 12,
+            "y": 94,
+            "width": 38,
+            "command": "exchangeUp-createdelightcore:iron_coin",
+            "icons": [
+              {
+                "type": "lightmanscurrency:item",
+                "x": 0,
+                "y": 1,
+                "item": "createdelightcore:iron_coin"
+              },
+              {
+                "type": "lightmanscurrency:small_arrow",
+                "x": 16,
+                "y": 6,
+                "direction": "RIGHT"
+              },
+              {
+                "type": "lightmanscurrency:item",
+                "x": 22,
+                "y": 1,
+                "item": "createdelightcore:copper_coin"
               }
             ]
           },
@@ -241,13 +240,13 @@
             "x": 52,
             "y": 74,
             "width": 38,
-            "command": "exchangeDown-createdelight:gold_coin",
+            "command": "exchangeDown-createdelightcore:gold_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -259,7 +258,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:copper_coin"
+                "item": "createdelightcore:copper_coin"
               }
             ]
           },
@@ -267,13 +266,13 @@
             "x": 52,
             "y": 94,
             "width": 38,
-            "command": "exchangeUp-createdelight:copper_coin",
+            "command": "exchangeUp-createdelightcore:copper_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:copper_coin"
+                "item": "createdelightcore:copper_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -285,7 +284,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               }
             ]
           },
@@ -293,13 +292,13 @@
             "x": 92,
             "y": 74,
             "width": 38,
-            "command": "exchangeDown-createdelight:emerald_coin",
+            "command": "exchangeDown-createdelightcore:emerald_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -311,7 +310,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               }
             ]
           },
@@ -319,13 +318,13 @@
             "x": 92,
             "y": 94,
             "width": 38,
-            "command": "exchangeUp-createdelight:gold_coin",
+            "command": "exchangeUp-createdelightcore:gold_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:gold_coin"
+                "item": "createdelightcore:gold_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -337,7 +336,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               }
             ]
           },
@@ -345,13 +344,13 @@
             "x": 132,
             "y": 74,
             "width": 38,
-            "command": "exchangeDown-createdelight:netherite_coin",
+            "command": "exchangeDown-createdelightcore:netherite_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:netherite_coin"
+                "item": "createdelightcore:netherite_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -363,7 +362,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               }
             ]
           },
@@ -371,13 +370,13 @@
             "x": 132,
             "y": 94,
             "width": 38,
-            "command": "exchangeUp-createdelight:emerald_coin",
+            "command": "exchangeUp-createdelightcore:emerald_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",
                 "x": 0,
                 "y": 1,
-                "item": "createdelight:emerald_coin"
+                "item": "createdelightcore:emerald_coin"
               },
               {
                 "type": "lightmanscurrency:small_arrow",
@@ -389,7 +388,7 @@
                 "type": "lightmanscurrency:item",
                 "x": 22,
                 "y": 1,
-                "item": "createdelight:netherite_coin"
+                "item": "createdelightcore:netherite_coin"
               }
             ]
           }

@@ -3,7 +3,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -17,7 +17,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 1
       },
       "SellTag": "lightmanscurrency:network_terminal",
@@ -28,7 +28,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 8
       },
       "SellTag": "lightmanscurrency:atm",
@@ -39,7 +39,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -53,11 +53,11 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 4
       },
       "Price2": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 8
       },
       "Sell": {
@@ -73,7 +73,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 6
       },
       "SellTag": "lightmanscurrency:traders/shelf",
@@ -84,7 +84,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 14
       },
       "SellTag": "lightmanscurrency:traders/shelf_2x2",
@@ -95,7 +95,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 15
       },
       "Sell": {
@@ -109,7 +109,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 10
       },
       "Sell": {
@@ -125,7 +125,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 15
       },
       "SellTag": "lightmanscurrency:traders/card_display",
@@ -136,7 +136,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 20
       },
       "Sell": {
@@ -150,7 +150,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 20
       },
       "Sell": {
@@ -164,7 +164,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 15
       },
       "Sell": {
@@ -178,7 +178,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 10
       },
       "Sell": {
@@ -194,7 +194,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 25
       },
       "SellTag": "lightmanscurrency:traders/vending_machine",
@@ -205,7 +205,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 30
       },
       "Sell": {
@@ -219,7 +219,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 30
       },
       "SellTag": "lightmanscurrency:traders/freezer",
@@ -230,7 +230,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 30
       },
       "SellTag": "lightmanscurrency:traders/special/bookshelf",
@@ -241,7 +241,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:gold_coin",
+        "ID": "createdelightcore:gold_coin",
         "Count": 15
       },
       "Sell": {
@@ -258,7 +258,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 25
       },
       "SellTag": "lightmanscurrency:traders/large_vending_machine",
@@ -269,7 +269,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 6
       },
       "Sell": {
@@ -283,7 +283,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 10
       },
       "Sell": {
@@ -297,7 +297,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 10
       },
       "Sell": {
@@ -311,7 +311,7 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "createdelight:gold_coin",
+        "ID": "createdelightcore:gold_coin",
         "Count": 5
       },
       "SellTag": "lightmanscurrency:trader_interface",
@@ -322,7 +322,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:gold_coin",
+        "ID": "createdelightcore:gold_coin",
         "Count": 10
       },
       "Sell": {
