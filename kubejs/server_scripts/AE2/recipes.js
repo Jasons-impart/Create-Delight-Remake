@@ -40,14 +40,14 @@ ServerEvents.recipes((event) => {
 
   let custom_inscribe = (result, middle) => {
     event.custom({
-        type: "ae2:inscriber",
-        ingredients: {
-          middle: { item: middle },
-          top: { item: "createdelight:universal_press" },
-        },
-        mode: "inscribe",
-        result: { item: result },
-      }).id(`${result}_recipe`);
+      type: "ae2:inscriber",
+      ingredients: {
+        middle: { item: middle },
+        top: { item: "createdelight:universal_press" },
+      },
+      mode: "inscribe",
+      result: { item: result },
+    }).id(`${result}_recipe`);
   };
 
   custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond");
@@ -59,20 +59,20 @@ ServerEvents.recipes((event) => {
 
   // 通用压印模板的配方
   event.custom({
-      type: "ae2:transform",
-      circumstance: {
-        type: "fluid",
-        tag: "minecraft:water",
-      },
-      ingredients: [
-        { item: "ae2:silicon_press" },
-        { item: "ae2:logic_processor_press" },
-        { item: "ae2:engineering_processor_press" },
-        { item: "ae2:calculation_processor_press" },
-        { item: "megacells:accumulation_processor_press" },
-      ],
-      result: { item: "createdelight:universal_press", count: 5 },
-    }).id("universal_press_transform_recipe");
+    type: "ae2:transform",
+    circumstance: {
+      type: "fluid",
+      tag: "minecraft:water",
+    },
+    ingredients: [
+      { item: "ae2:silicon_press" },
+      { item: "ae2:logic_processor_press" },
+      { item: "ae2:engineering_processor_press" },
+      { item: "ae2:calculation_processor_press" },
+      { item: "megacells:accumulation_processor_press" },
+    ],
+    result: { item: "createdelight:universal_press", count: 5 },
+  }).id("universal_press_transform_recipe");
 
   // 初加工的电路板
   kubejs.shapeless("createdelight:initial_processing_of_printed_engineering_processor", [
@@ -313,19 +313,19 @@ ServerEvents.recipes((event) => {
 
   // ME元件外壳坯件
   vintageimprovements
-    .curving("createdelight:item_cell_housing_blank", "forge:ingots/iron")
+    .curving("4x createdelight:item_cell_housing_blank", "#forge:ingots/iron")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:item_cell_housing_blank_curving");
   vintageimprovements
-    .curving("createdelight:fluid_cell_housing_blank", "forge:ingots/copper")
+    .curving("4x createdelight:fluid_cell_housing_blank", "#forge:ingots/copper")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:fluid_cell_housing_blank_curving");
   vintageimprovements
-    .curving("createdelight:mega_item_cell_housing_blank", "#forge:ingots/sky_steel")
+    .curving("4x createdelight:mega_item_cell_housing_blank", "#forge:ingots/sky_steel")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:mega_item_cell_housing_blank_curving");
   vintageimprovements
-    .curving("createdelight:mega_fluid_cell_housing_blank", "createdelight:sky_copper_ingot")
+    .curving("4x createdelight:mega_fluid_cell_housing_blank", "createdelight:sky_copper_ingot")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:mega_fluid_cell_housing_blank_curving");
 
@@ -567,11 +567,11 @@ ServerEvents.recipes((event) => {
 
   // 石英玻璃部件
   vintageimprovements
-    .curving("createdelight:quartz_glass_parts", "ae2:quartz_glass")
+    .curving("4x createdelight:quartz_glass_parts", "ae2:quartz_glass")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:quartz_glass_parts_curving");
   vintageimprovements
-    .curving("createdelight:quartz_vibrant_glass_parts", "ae2:quartz_vibrant_glass")
+    .curving("4x createdelight:quartz_vibrant_glass_parts", "ae2:quartz_vibrant_glass")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:quartz_vibrant_glass_parts_curving");
 
@@ -581,5 +581,11 @@ ServerEvents.recipes((event) => {
       "#forge:storage_blocks/iron",
       "#ae2:knife",
     ])
-    .damageIngredient("#ae2:knife");
+    .damageIngredient("#ae2:knife", "114514");
+
+  // 杀元件外壳配方
+  event.remove({ id: "ae2:network/cells/item_cell_housing" })
+  event.remove({ id: "ae2:network/cells/fluid_cell_housing" })
+  event.remove({ id: "megacells:cells/mega_item_cell_housing" })
+  event.remove({ id: "megacells:cells/mega_fluid_cell_housing" })
 });
