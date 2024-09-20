@@ -36,7 +36,7 @@
 			image: "everycomp:block/c/forbidden_arcanus/palettes/elder_window"
 			rotation: 0.0d
 			width: 5.0d
-			x: 5.0d
+			x: 7.0d
 			y: 1.0d
 		}
 		{
@@ -86,6 +86,14 @@
 			width: 5.0d
 			x: 5.0d
 			y: 6.0d
+		}
+		{
+			height: 4.0d
+			image: "minecraft:block/attached_pumpkin_stem"
+			rotation: 0.0d
+			width: 4.0d
+			x: -8.0d
+			y: -4.5d
 		}
 	]
 	order_index: 0
@@ -180,7 +188,7 @@
 			]
 			title: "屠宰相关"
 			x: 8.0d
-			y: -3.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -220,7 +228,7 @@
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 5.0d
+			x: 7.0d
 			y: 1.0d
 		}
 		{
@@ -272,7 +280,7 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: -10.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -664,8 +672,8 @@
 				type: "checkmark"
 			}]
 			title: "锻造之艺"
-			x: -9.0d
-			y: -3.0d
+			x: -8.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
