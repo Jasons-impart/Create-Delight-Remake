@@ -20,21 +20,12 @@ ServerEvents.recipes(e => {
         "ad_astra:steel_plate"
     ])
     remove_recipes_id(e, [
-        "ad_astra:nasa_workbench/tier_1_rocket",
-        "ad_astra:nasa_workbench/tier_2_rocket",
-        "ad_astra:nasa_workbench/tier_3_rocket",
-        "ad_astra:nasa_workbench/tier_4_rocket",
-        "ad_astra:recipes/steel_ingot_from_blasting_iron_ingot",
-        "ad_astra:recipes/steel_ingot_from_nuggets",
-        "ad_astra:recipes/engine_frame",
-        "ad_astra:recipes/ostrum_tank",
-        "ad_astra:recipes/ostrum_engine",
-        "ad_astra:recipes/calorite_tank",
-        "ad_astra:recipes/calorite_engine",
         "ad_astra:fuel_refinery",
         "ad_astra:cryo_freezer",
         "ad_astra_giselle_addon:crafting/gravity_normalizer",
-        "ad_astra_giselle_addon:crafting/automation_nasa_workbench"
+        "ad_astra_giselle_addon:crafting/automation_nasa_workbench",
+        "ad_astra:steel_block",
+        "ad_astra:etrionic_blast_furnace"
     ])
     e.replaceInput({id:"ad_astra:oxygen_distributor"}, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木
@@ -172,4 +163,16 @@ ServerEvents.recipes(e => {
         D: "ad_astra:etrionic_core"
     }
     ).id("ad_astra:solar_panel")
+    e.recipes.kubejs.shaped(
+        "ad_astra_giselle_addon:oxygen_can", [
+            " A ",
+            "BCB",
+            "BDB"
+        ], {
+            A:"vintageimprovements:steel_rod",
+            B:"ad_astra:steel_plate",
+            C:'ad_astra:large_gas_tank',
+            D:"ad_astra:oxygen_gear"
+        }
+    ).id("ad_astra_giselle_addon:crafting/oxygen_can")
 })
