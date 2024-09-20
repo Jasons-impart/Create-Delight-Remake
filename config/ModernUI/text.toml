@@ -43,7 +43,7 @@
 	#Only Include: Only include providers that specified by defaultFontRuleSet.
 	#Only Exclude: Only exclude providers that specified by defaultFontRuleSet.
 	#Allowed Values: IGNORE_ALL, KEEP_ASCII, KEEP_OTHER, KEEP_ALL, ONLY_INCLUDE, ONLY_EXCLUDE
-	defaultFontBehavior = "KEEP_ASCII"
+	defaultFontBehavior = "IGNORE_ALL"
 	#Whether to use text component object as hash key to lookup in layout cache.
 	#If you find that Modern UI text rendering is not compatible with some mods,
 	#you can disable this option for compatibility, but this will decrease performance a bit.
