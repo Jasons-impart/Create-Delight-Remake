@@ -280,23 +280,23 @@ StartupEvents.registry("item", e => {
     // 注册货币
     e.create("createdelight:iron_coin")
         .maxStackSize(64)
-        .translationKey("item.createdelight.iron_coin")
+        .translationKey("item.createdelightcore.iron_coin")
         .rarity("common")
     e.create("createdelight:copper_coin")
         .maxStackSize(64)
-        .translationKey("item.createdelight.copper_coin")
+        .translationKey("item.createdelightcore.copper_coin")
         .rarity("uncommon")
     e.create("createdelight:gold_coin")
         .maxStackSize(64)
-        .translationKey("item.createdelight.gold_coin")
+        .translationKey("item.createdelightcore.gold_coin")
         .rarity("rare")
     e.create("createdelight:emerald_coin")
         .maxStackSize(64)
-        .translationKey("item.createdelight.emerald_coin")
+        .translationKey("item.createdelightcore.emerald_coin")
         .rarity("rare")
     e.create("createdelight:netherite_coin")
         .maxStackSize(64)
-        .translationKey("item.createdelight.netherite_coin")
+        .translationKey("item.createdelightcore.netherite_coin")
         .rarity("epic")
 
     // 测试剑
@@ -312,7 +312,7 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.otherworld_note")
         .rarity("rare")
-        
+
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press").tag("vintageimprovements:curving_heads").translationKey("item.createdelight.universal_press")
     // 红石膏
