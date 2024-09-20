@@ -209,7 +209,7 @@
 			id: "428692AFFB20055B"
 			rewards: [{
 				id: "262C632976BB2F34"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -237,7 +237,7 @@
 				}
 				{
 					id: "66043C64D616DE6D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -578,7 +578,7 @@
 				}
 				{
 					id: "4FBED8D2403798A6"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -599,7 +599,7 @@
 			id: "59350A53C2738BD9"
 			rewards: [{
 				id: "1C88A34D02858755"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -621,7 +621,7 @@
 			id: "64FB1FEC4F9721B7"
 			rewards: [{
 				id: "306A1996A10BFBA9"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -682,7 +682,7 @@
 			id: "7429D7F92D04A8BB"
 			rewards: [{
 				id: "5156E1D6B92EE81D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"

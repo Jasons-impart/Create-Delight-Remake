@@ -24,7 +24,7 @@
 				}
 				{
 					id: "6561BBAFBBA66251"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -49,12 +49,12 @@
 			rewards: [
 				{
 					id: "1225859249BFB5E4"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 				{
 					id: "3191FB1774A49B8B"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -101,7 +101,7 @@
 				}
 				{
 					id: "037602B0115E8329"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -142,7 +142,7 @@
 				}
 				{
 					id: "387C85143272CD6D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -171,7 +171,7 @@
 				}
 				{
 					id: "7EE41CB3B2AE365D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -195,7 +195,7 @@
 				}
 				{
 					id: "36E7C0B06F21050B"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -213,7 +213,7 @@
 			id: "1BE43F6D6EF3FE1E"
 			rewards: [{
 				id: "719586DE121ECEEA"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -251,7 +251,7 @@
 				}
 				{
 					id: "5AE7A679ED9A2010"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -280,7 +280,7 @@
 				}
 				{
 					id: "65735F2BEDDE37C3"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -298,7 +298,7 @@
 			id: "60B88C2A6488DC81"
 			rewards: [{
 				id: "298CAC0E9DFF9765"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "霍！这不是植物魔法的工厂环吗"
@@ -322,7 +322,7 @@
 				}
 				{
 					id: "3D9C8F2E7020D7EF"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]

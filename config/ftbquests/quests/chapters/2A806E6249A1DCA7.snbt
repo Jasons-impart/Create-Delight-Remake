@@ -421,7 +421,7 @@
 			id: "586F961AB5DF818C"
 			rewards: [{
 				id: "1F6068EDADA52E1B"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"

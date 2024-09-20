@@ -839,7 +839,7 @@
 				}
 				{
 					id: "506143BFCCA6AF49"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -900,7 +900,7 @@
 				}
 				{
 					id: "7804EE2EEB0AE5B1"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -1000,12 +1000,12 @@
 			rewards: [
 				{
 					id: "3A67910B69AF3126"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 				{
 					id: "337BFCF4B0E97008"
-					item: "createdelight:gold_coin"
+					item: "createdelightcore:gold_coin"
 					type: "item"
 				}
 			]
@@ -1043,7 +1043,7 @@
 			id: "6EE2F2B08178069F"
 			rewards: [{
 				id: "60127A6CB685B9C2"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1064,12 +1064,12 @@
 			rewards: [
 				{
 					id: "359008E320E6898D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 				{
 					id: "542E0B48161CB168"
-					item: "createdelight:gold_coin"
+					item: "createdelightcore:gold_coin"
 					type: "item"
 				}
 			]
@@ -1167,7 +1167,7 @@
 				}
 				{
 					id: "61F63B4C555B983D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -1189,7 +1189,7 @@
 			id: "46E8F43141D9DA70"
 			rewards: [{
 				id: "1D530F066A8A914A"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1216,7 +1216,7 @@
 			id: "2DE42C7109C32DEC"
 			rewards: [{
 				id: "790C235E7C0C566E"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "小心！他会不断恢复生命，尝试使用火焰对其造成伤害！"
@@ -1279,7 +1279,7 @@
 			rewards: [{
 				count: 3
 				id: "02DC6B437E9AC7A6"
-				item: "createdelight:netherite_coin"
+				item: "createdelightcore:netherite_coin"
 				type: "item"
 			}]
 			shape: "octagon"
@@ -1302,12 +1302,12 @@
 			rewards: [
 				{
 					id: "4B352ED0E2AB45AF"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 				{
 					id: "7879E8133D41EDAC"
-					item: "createdelight:gold_coin"
+					item: "createdelightcore:gold_coin"
 					type: "item"
 				}
 			]
@@ -1329,7 +1329,7 @@
 			id: "5BB6B085F8799E61"
 			rewards: [{
 				id: "04E95DB30842A57B"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1349,7 +1349,7 @@
 			id: "167EE7D7324F2C87"
 			rewards: [{
 				id: "341E2ABB6FFE59D4"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1369,7 +1369,7 @@
 			id: "183DB095CD25A18F"
 			rewards: [{
 				id: "6663707D23D58104"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1389,7 +1389,7 @@
 			id: "6D2CB5ADD219F518"
 			rewards: [{
 				id: "6AA08F8F4C409B9D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1409,7 +1409,7 @@
 			id: "5E48823AD99E93CC"
 			rewards: [{
 				id: "6C661FE58BF103DF"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1429,7 +1429,7 @@
 			id: "0CF2A684329C96E6"
 			rewards: [{
 				id: "16A1C52828D770A1"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
