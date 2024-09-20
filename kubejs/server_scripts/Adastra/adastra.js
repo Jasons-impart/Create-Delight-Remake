@@ -2,7 +2,8 @@ ServerEvents.recipes(e => {
     // 移除配方：ad_astra
     remove_recipes_type(e, [
         "ad_astra:refining",
-        "ad_astra:cryo_freezing"
+        "ad_astra:cryo_freezing",
+        "ad_astra:nasa_workbench"
     ])
     remove_recipes_output(e, [
         "ad_astra:compressor",
@@ -31,7 +32,9 @@ ServerEvents.recipes(e => {
         "ad_astra:recipes/calorite_tank",
         "ad_astra:recipes/calorite_engine",
         "ad_astra:fuel_refinery",
-        "ad_astra:cryo_freezer"
+        "ad_astra:cryo_freezer",
+        "ad_astra_giselle_addon:crafting/gravity_normalizer",
+        "ad_astra_giselle_addon:crafting/automation_nasa_workbench"
     ])
     e.replaceInput({id:"ad_astra:oxygen_distributor"}, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木
