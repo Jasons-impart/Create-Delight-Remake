@@ -575,6 +575,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "可以让机器直接对相邻容器操纵（输入/输出）"
 			tasks: [{
 				id: "44809035B2AA18E4"
 				item: "lightmanscurrency:hopper_upgrade"

@@ -388,4 +388,28 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_fourth_stage_rocket_core")
         .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
 
-})
+
+    // 主世界
+    e.create("createdelight:overworld_metal_ore_cluster")
+        .translationKey("item.createdelight.overworld_metal_ore_cluster")
+    e.create("createdelight:overworld_noble_metal_ore_cluster")
+        .translationKey("item.createdelight.overworld_noble_metal_ore_cluster")
+    // 下界
+    e.create("createdelight:nether_ore_cluster")
+        .translationKey("item.createdelight.nether_ore_cluster")
+    // 月球
+    e.create("createdelight:moon_ore_cluster")
+        .translationKey("item.createdelight.moon_ore_cluster")
+    // 火星
+    e.create("createdelight:mars_ore_cluster")
+        .translationKey("item.createdelight.mars_ore_cluster")
+    e.create("createdelight:mars_gemstone_cluster")
+        .translationKey("item.createdelight.mars_gemstone_cluster")
+    // 水星
+    e.create("createdelight:mercury_ore_cluster")
+        .translationKey("item.createdelight.mercury_ore_cluster")
+    
+    // 霜原星
+    e.create("createdelight:glacio_ore_cluster")
+        .translationKey("item.createdelight.glacio_ore_cluster")
+    })
