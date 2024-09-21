@@ -79,14 +79,6 @@
 			x: -6.0d
 			y: 6.0d
 		}
-		{
-			height: 5.0d
-			image: "minecraft:item/ender_eye"
-			rotation: 0.0d
-			width: 5.0d
-			x: 5.0d
-			y: 6.0d
-		}
 	]
 	order_index: 0
 	quest_links: [ ]
@@ -723,16 +715,17 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			icon: "minecraft:ender_eye"
+			icon: "createmetallurgy:sturdy_whisk"
 			id: "64B9CFE4337A3EAA"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "注意！末地需要完成所有主线任务并解锁终抵群星任务才可去往！！！(&4暂未启用&r)"
+			subtitle: "注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"
 			tasks: [{
 				id: "39FA137A00BB30A2"
 				title: "末地"
 				type: "checkmark"
 			}]
+			title: "熔炼相关"
 			x: 5.0d
 			y: 6.0d
 		}
