@@ -276,7 +276,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
+			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ, SSWTLZZ"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"
@@ -530,6 +530,31 @@
 									textures: [{
 										Signature: "uYBxaO3kRE6oWr/Pv3fYo32NPNZIn4WifPJG5cbC1LABGfcaCw1PM52E0WaL+lPlToNq2/WwY9cOuo8YQcy/JPHDTzjt87SMXaxbcgPUqnSFUroraKGAOBCmWTGs8PiKhBCst3eZ6QixtWEaaHjt+OZXqVR+ZYGYleOCOkeynZnM9VSWiB8bX4vdCSiF48fMPSKssbriWig9jhiPFzk9/4lVWUW5hmWdYvCL5gl+tRwIyjQBDBUZDwz2Qj9ERuVCKuH5dqpHVs0GeHQJKC1c2RZe0m0JCbqFk5ZjoomG6UB4thOHzFDqprqhDkixlckJ57G2VF8cJNXJiM2LTD22Az94ed6dKGrU+M/O6FcinP0Rze41chuQW1HcPlPFV8SvYq5G40lLEwoYTeRuUb+G3OhYinecmbkwPsJOwNgfjEzciF5/n70iUmF6vy+rK2ECtoTRtcVCHQ0dgCulNO255j8gMxGQMjUnVN5wifG08EhI29J5BIuNFKpLZQln6AE+UNUSurkzDOrDiBGICnilsYXvmT/ifpmV9haHjtXe1c9ZfAe3yejJafAHPtQzd3Nif2g3uMDTjHFm12tVJtJJafeKUn8lNjUalZfr/2meEDlxwNVgU0EaLf9FBol3CuUkIxJf0Q4BECOch1F1raYC9fV4qT6LReksg67ok9w50vI="
 										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NDU5MTQ1NCwKICAicHJvZmlsZUlkIiA6ICJiYWY4YmExODI5NGQ0ZGMxOTBlY2QzOTRkMmZjODkzYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ6aG9uZ3hpYW9saSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8zY2JjMzIzODRiZjI4MzU5YTY2MzA5OGNhYWNiODAwZTg1MmU5NzliYjBjYzBmNTY0Y2JmNDAzMzc0NGE0MTM1IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3E06F2F616B50F02"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-19249855
+									-1347729812
+									-1806167094
+									-302317712
+								]
+								Name: "SSWTLZZ"
+								Properties: {
+									textures: [{
+										Signature: "Uh0Qtx6+tD0RDr7lST6BcfwyAD5g0vRIp7XZeirY2uaEptWNuricgauDeqBVbQygZCgvXnfm4qlWmmcJTNuUZSJVw+gPldDZ6phUxWiij4pCpDhUKBvnbg2XEZhql+32d5jGh1bfl024lBJkWZRSoNXtgJfQXwPp08vMvmSz8/2hYYdAyT6TBVR3tahyvhZ5F4u9VfRxcJmC5lys4MwB/dRGq4wyNqu0/LI5KgDEzNdfCa+AwOetxNhwXX+qIs8bGFKWUZVfTeNgVmAuAslfhzbocqe7jd+u4bpLDS1Yg9vURCG1RZr7kzwJp+GQRfgwP1Pdsbs7ZpJ+JSkS1N+Hq/moRsyUsbdK2j4sIJdJRsARppRpHhpsEjt33O6ZO6skTWwzaBpZ4OG34D7QTTTUUshaEYl1/VkCzDtD+HhpvbIrnSyekJ/05M9u2GSh+4TcG9+wH4zuN3CswgUi6Zc8IbPgVQXfremfHuluX8ndyrXd7aP0ilUH/J7M191sv1WkGb12XI13ejbOK8wKaY1WIA4D89lJQLA+as0sbpZGo6PJZX79pndIWtNFGzEy6lo7vj0sJyLe7lnLGmcqbKQDH0AcYj2LUnS+bCGite0Xdy7VVciPu/QzHhn2ja94Jg7EQ2mt8P9X0Oabrc0c7ksvlnzkrjMbFcj+DsXsPaoRtnY="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcyNjkyMTQ5OTkzOSwKICAicHJvZmlsZUlkIiA6ICJmZWRhNDU0MWFmYWI0NjZjOTQ1ODEzY2FlZGZhZmY3MCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTU1dUTFpaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EwM2FlY2UwZjNmNTJiODBmYTM4YTY0Yjc3ZmI4NjhhMGU0ZTFhNGZkMDc5YmFlZGNjNjQxNDYwNTA5Y2U0NDUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
 									}]
 								}
 							}
