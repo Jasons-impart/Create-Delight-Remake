@@ -4,7 +4,8 @@
 材质
 e 配方id
 纸的制造
-
+P2P奇点
+空间元件
 */
 
 ServerEvents.recipes((event) => {
@@ -39,15 +40,17 @@ ServerEvents.recipes((event) => {
     .id("createdelight:universal_press_6");
 
   let custom_inscribe = (result, middle) => {
-    event.custom({
-      type: "ae2:inscriber",
-      ingredients: {
-        middle: { item: middle },
-        top: { item: "createdelight:universal_press" },
-      },
-      mode: "inscribe",
-      result: { item: result },
-    }).id(`${result}_recipe`);
+    event
+      .custom({
+        type: "ae2:inscriber",
+        ingredients: {
+          middle: { item: middle },
+          top: { item: "createdelight:universal_press" },
+        },
+        mode: "inscribe",
+        result: { item: result },
+      })
+      .id(`${result}_recipe`);
   };
 
   custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond");
@@ -58,21 +61,23 @@ ServerEvents.recipes((event) => {
   custom_inscribe("createdelight:universal_press", "minecraft:iron_block");
 
   // 通用压印模板的配方
-  event.custom({
-    type: "ae2:transform",
-    circumstance: {
-      type: "fluid",
-      tag: "minecraft:water",
-    },
-    ingredients: [
-      { item: "ae2:silicon_press" },
-      { item: "ae2:logic_processor_press" },
-      { item: "ae2:engineering_processor_press" },
-      { item: "ae2:calculation_processor_press" },
-      { item: "megacells:accumulation_processor_press" },
-    ],
-    result: { item: "createdelight:universal_press", count: 5 },
-  }).id("universal_press_transform_recipe");
+  event
+    .custom({
+      type: "ae2:transform",
+      circumstance: {
+        type: "fluid",
+        tag: "minecraft:water",
+      },
+      ingredients: [
+        { item: "ae2:silicon_press" },
+        { item: "ae2:logic_processor_press" },
+        { item: "ae2:engineering_processor_press" },
+        { item: "ae2:calculation_processor_press" },
+        { item: "megacells:accumulation_processor_press" },
+      ],
+      result: { item: "createdelight:universal_press", count: 5 },
+    })
+    .id("universal_press_transform_recipe");
 
   // 初加工的电路板
   kubejs.shapeless("createdelight:initial_processing_of_printed_engineering_processor", [
@@ -581,11 +586,104 @@ ServerEvents.recipes((event) => {
       "#forge:storage_blocks/iron",
       "#ae2:knife",
     ])
-    .damageIngredient("#ae2:knife", "114514");
+    .damageIngredient("#ae2:knife");
+
+  // 杀部分元件(说真的用啥循环手写直接硬写多好的（)
+  let cel1s_v = ["_256m", "_64m", "_16m", "_4m", "_1m", "_256k", "_64k", "_16k", "_4k", "_1k"];
+  let cel1s_type = ["item_", "fluid_"];
+  let cel1s_spname = ["ae2:", "megacells:"];
+
+  cel1s_spname.forEach((spname) => {
+    cel1s_type.forEach((type1) => {
+      cel1s_v.forEach((v) => {
+        event.remove({
+          output: `${spname + type1}storage_cell${v}`,
+          type: "minecraft:crafting_shaped",
+        });
+      });
+    });
+  });
+
+  event.remove({ id: "expatternprovider:cobblestone_cell" });
+  event.remove({ id: "expatternprovider:water_cell" });
+  event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
+  // event.remove({ id: "" })
 
   // 杀元件外壳配方
-  event.remove({ id: "ae2:network/cells/item_cell_housing" })
-  event.remove({ id: "ae2:network/cells/fluid_cell_housing" })
-  event.remove({ id: "megacells:cells/mega_item_cell_housing" })
-  event.remove({ id: "megacells:cells/mega_fluid_cell_housing" })
+  event.remove({ id: "ae2:network/cells/item_cell_housing" });
+  event.remove({ id: "ae2:network/cells/fluid_cell_housing" });
+  event.remove({ id: "megacells:cells/mega_item_cell_housing" });
+  event.remove({ id: "megacells:cells/mega_fluid_cell_housing" });
+
+  // 聚能石英玻璃
+  create.mixing(Item.of("ae2:quartz_vibrant_glass", 4), [
+    "4x ae2:quartz_glass",
+    "#forge:dusts/glowstone",
+  ]);
+
+  // 石英玻璃
+  create.mixing("4x ae2:quartz_glass", ["4x #forge:glass", "#forge:dusts/certus_quartz"]);
+
+  // 熵变机械臂
+  create
+    .sequenced_assembly("ae2:entropy_manipulator", "#forge:rods/iron", [
+      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:energy_cell"]),
+      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:engineering_processor"]),
+      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:fluix_crystal"]),
+      vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
+    ])
+    .transitionalItem("createaddition:iron_rod")
+    .loops(1);
+  event.remove({ id: "ae2:tools/misctools_entropy_manipulator" });
+
+  // 充能手杖
+  create
+    .sequenced_assembly("ae2:charged_staff", "#forge:rods/iron", [
+      create.deploying("#forge:rods/iron", [
+        "#forge:rods/iron",
+        "ae2:charged_certus_quartz_crystal",
+      ]),
+      vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
+    ])
+    .transitionalItem("createaddition:iron_rod")
+    .loops(1);
+  event.remove({ id: "ae2:tools/misctools_charged_staff" });
+
+  // 陨石罗盘
+  kubejs
+    .shapeless("ae2:meteorite_compass", [
+      "#forge:plates/copper",
+      "minecraft:baked_potato",
+      "#forge:plates/zinc",
+      "#minecraft:compasses",
+    ])
+    .keepIngredient("#forge:plates/copper")
+    .keepIngredient("#forge:plates/zinc")
+    .keepIngredient("minecraft:baked_potato");
+
+  // AE指南
+  kubejs
+    .shapeless("ae2:guide", [
+      "#forge:plates/copper",
+      "minecraft:baked_potato",
+      "#forge:plates/zinc",
+      "#forge:books",
+    ])
+    .keepIngredient("#forge:plates/copper")
+    .keepIngredient("#forge:plates/zinc")
+    .keepIngredient("minecraft:baked_potato");
+
+  // 充能石英火把
+  kubejs.shaped("4x ae2:quartz_fixture", ["A", "B"], {
+    A: "ae2:charged_certus_quartz_crystal",
+    B: "ae2:cable_anchor",
+  });
+  event.remove({ id: "ae2:decorative/quartz_fixture_from_anchors" });
+
+  // 杀mega部分
+  event.remove({ output: "megacells:mega_interface" });
+  event.remove({ output: "megacells:mega_pattern_provider" });
+
+  // 鱼大嘿嘿
+  vintageimprovements.centrifugation("expatternprovider:fishbig", "minecraft:pufferfish");
 });

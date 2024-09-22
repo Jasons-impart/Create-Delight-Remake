@@ -408,8 +408,12 @@ StartupEvents.registry("item", e => {
     // 水星
     e.create("createdelight:mercury_ore_cluster")
         .translationKey("item.createdelight.mercury_ore_cluster")
-    
+
     // 霜原星
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")
-    })
+
+    // 高压相变铁
+    e.create("createdelight:phase_transition_iron")
+        .translationKey("item.createdelight.phase_transition_iron")
+})
