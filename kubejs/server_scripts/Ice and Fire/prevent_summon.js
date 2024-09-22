@@ -10,7 +10,7 @@ EntityEvents.spawned(e => {
         "iceandfire:dread_thrall"]
     // 苍蝇生成
     if (dread_monster.find(e.entity.type)) {
-        if (e.level.dimension == "minecraft:overworld") {
+        if (e.level.dimension != "ad_astra:glacio") {
             e.cancel()
         }
     }
