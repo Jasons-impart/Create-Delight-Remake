@@ -37,7 +37,7 @@
 			rewards: [{
 				count: 5
 				id: "12516F22E571C9A8"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -89,7 +89,7 @@
 			id: "183724705FA6D24C"
 			rewards: [{
 				id: "7CAFF2E087DBE011"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "每SU消耗数个牛排！"
@@ -116,7 +116,7 @@
 				}
 				{
 					id: "3238E9A8F1C718D3"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -146,7 +146,7 @@
 				}
 				{
 					id: "1FA27CD917B7951D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -198,7 +198,7 @@
 				}
 				{
 					id: "5B165FD45467BC49"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -216,7 +216,7 @@
 			rewards: [{
 				count: 5
 				id: "3522FDA3BF7C01DC"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "铿！铿！铿！"
@@ -233,7 +233,7 @@
 			id: "4150EBCDFDA45F9E"
 			rewards: [{
 				id: "795706D9D801F273"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "小麦粉，砂砾，燧石，甚至黏土，他都可以磨！"
@@ -265,7 +265,7 @@
 			id: "372234CE950277CE"
 			rewards: [{
 				id: "35EB2DA3B772BB8F"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "这是什么？这是树厂之神！"
@@ -283,7 +283,7 @@
 			id: "5C40F5E0F477394B"
 			rewards: [{
 				id: "07A9F6E2C93527CF"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "芜湖~自动种田啦"
@@ -300,7 +300,7 @@
 			id: "5BEAE8E8844A5DDB"
 			rewards: [{
 				id: "0EF95DDB0ED67A7A"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "方块破坏器！"
@@ -318,7 +318,7 @@
 			id: "762CD49FCDC889E2"
 			rewards: [{
 				id: "6F32C73249450B34"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "粒子加工！"
@@ -356,7 +356,7 @@
 			id: "02E1C25396B0F5EA"
 			rewards: [{
 				id: "3B73FD68CF8E9693"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -381,7 +381,7 @@
 			id: "3ACA3A7FE20E59D2"
 			rewards: [{
 				id: "12EA67E196A1A5D4"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -398,7 +398,7 @@
 			id: "5EF1F883F44263FA"
 			rewards: [{
 				id: "47435421A7DC8956"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -438,7 +438,7 @@
 			id: "47ABE0A581C1E40E"
 			rewards: [{
 				id: "00B9BCEC0A5BF89D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -462,7 +462,7 @@
 			id: "21E81C4A8E9C95A0"
 			rewards: [{
 				id: "2BA0D31E66D169D2"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -502,7 +502,7 @@
 			id: "54FEEB508185B5C2"
 			rewards: [{
 				id: "5A2358CCCA90F26C"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -526,7 +526,7 @@
 			id: "2E62FA558BE57A48"
 			rewards: [{
 				id: "7D0AF1C691647766"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -550,7 +550,7 @@
 			rewards: [{
 				count: 5
 				id: "733A27B9128C1D0B"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			secret: true
@@ -572,7 +572,7 @@
 			id: "11A126AA8CC38620"
 			rewards: [{
 				id: "4D02F9F45E5388B1"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "快速破坏农业方块和锄地！"
@@ -666,7 +666,7 @@
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
 				id: "0FEE3BFF887C19B1"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			shape: "rsquare"
@@ -689,7 +689,7 @@
 			rewards: [{
 				count: 5
 				id: "23B46FA0D3B75E25"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -734,7 +734,7 @@
 			id: "45A853738625FCFD"
 			rewards: [{
 				id: "1EF6223DE8B3C00D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -752,7 +752,7 @@
 			rewards: [{
 				count: 5
 				id: "28B48B7DADC535C2"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -776,7 +776,7 @@
 			id: "3968AC36E0517F5B"
 			rewards: [{
 				id: "3A9404C2A34B7EA5"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -800,7 +800,7 @@
 			id: "4CC4E893A6950B0F"
 			rewards: [{
 				id: "4A13B8D9064AC979"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -847,7 +847,7 @@
 			id: "6DB08E176433BF12"
 			rewards: [{
 				id: "087B96C25EB63A50"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -871,7 +871,7 @@
 			id: "1BABF924FE8F0225"
 			rewards: [{
 				id: "56F3D6012C926CB0"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -895,7 +895,7 @@
 			id: "175196C8D23715B3"
 			rewards: [{
 				id: "3E9FB9E96024F6B7"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -919,7 +919,7 @@
 			id: "6BF8E6F5FE6983F7"
 			rewards: [{
 				id: "021C79434EA9BDD3"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -943,7 +943,7 @@
 			id: "65CDCB9357D9BB71"
 			rewards: [{
 				id: "73E6C7CEF8085B9F"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -972,7 +972,7 @@
 			id: "40C5A484EAF7283C"
 			rewards: [{
 				id: "4F0C2A98B6CAAAA7"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -996,7 +996,7 @@
 			id: "5B1CD6F67D035B28"
 			rewards: [{
 				id: "1ED244CFBB901CF0"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -1031,7 +1031,7 @@
 				}
 				{
 					id: "02D61A153221A64F"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -1057,7 +1057,7 @@
 				}
 				{
 					id: "50FD179D8EA81763"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]

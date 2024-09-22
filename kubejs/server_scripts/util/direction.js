@@ -1,5 +1,4 @@
 /**
- * 
  * @param { number } x1 
  * @param { number } y1 
  * @param { number } x2 

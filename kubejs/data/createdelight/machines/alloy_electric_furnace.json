@@ -6,7 +6,7 @@
             "block": "createdelight:machine/alloy_electric_furnace"
         },
         "running": {
-            "block": "createdelight:machine/alloy_electric_furnace",
+            "block": "createdelight:machine/alloy_electric_furnace_on",
             "lightlevel": 15
         },
         "errored": {

@@ -217,7 +217,7 @@
 			id: "428692AFFB20055B"
 			rewards: [{
 				id: "262C632976BB2F34"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -245,7 +245,7 @@
 				}
 				{
 					id: "66043C64D616DE6D"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -586,7 +586,7 @@
 				}
 				{
 					id: "4FBED8D2403798A6"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -607,7 +607,7 @@
 			id: "59350A53C2738BD9"
 			rewards: [{
 				id: "1C88A34D02858755"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -629,7 +629,7 @@
 			id: "64FB1FEC4F9721B7"
 			rewards: [{
 				id: "306A1996A10BFBA9"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -676,7 +676,10 @@
 			y: -4.0d
 		}
 		{
-			dependencies: ["55C42BCE0E399B3D"]
+			dependencies: [
+				"55C42BCE0E399B3D"
+				"34C9A7E928820147"
+			]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"
@@ -687,12 +690,12 @@
 			id: "7429D7F92D04A8BB"
 			rewards: [{
 				id: "5156E1D6B92EE81D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统"
+			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"
 			tasks: [{
 				id: "6B34FD5059C856EC"
 				title: "货币系统！"

@@ -59,7 +59,7 @@
 			rewards: [{
 				count: 2
 				id: "5BA3552FDA493892"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -88,7 +88,7 @@
 			rewards: [{
 				count: 2
 				id: "372D4FA051ADBF1E"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -106,7 +106,7 @@
 			rewards: [{
 				count: 2
 				id: "7ADA66637FE80436"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -296,7 +296,7 @@
 			rewards: [{
 				count: 3
 				id: "4080CDCAC21E2425"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "超大合成！"
@@ -325,7 +325,7 @@
 			rewards: [{
 				count: 3
 				id: "013276F5CBE08DCC"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "80！80！80！"
@@ -344,7 +344,7 @@
 			rewards: [{
 				count: 3
 				id: "76D6896B543505B2"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "指指点点"
@@ -362,7 +362,7 @@
 			rewards: [{
 				count: 3
 				id: "472EE17E2F0851FE"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "自动指指点点"
@@ -465,7 +465,7 @@
 			rewards: [{
 				count: 3
 				id: "3B66A1BC20F104B6"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "也是进厂了家人们"
@@ -483,7 +483,7 @@
 			rewards: [{
 				count: 3
 				id: "7A76199D4171E5DB"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "飞转的手"
@@ -501,7 +501,7 @@
 			rewards: [{
 				count: 3
 				id: "0A9411D071AB190C"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "QQ群的答案！"
@@ -575,7 +575,7 @@
 				}
 				{
 					id: "129B7A32DEFE8E0C"
-					item: "createdelight:gold_coin"
+					item: "createdelightcore:gold_coin"
 					type: "item"
 				}
 			]
@@ -595,7 +595,7 @@
 			rewards: [{
 				count: 3
 				id: "242DBD4C516C4D06"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "不要激光笔照别人眼睛哦"
@@ -616,7 +616,7 @@
 			rewards: [{
 				count: 3
 				id: "5CA1C6AB5EAC7B77"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "滋滋滋（更大的声音）"
@@ -727,7 +727,7 @@
 			rewards: [{
 				count: 3
 				id: "3B5B618B3693C9D3"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "非常非常吵"
@@ -745,7 +745,7 @@
 			rewards: [{
 				count: 3
 				id: "7D7F572CD24FFF1A"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "可以大规模使用，爽的嘞"
@@ -764,7 +764,7 @@
 			rewards: [{
 				count: 5
 				id: "2D6EA0B0C2FCC087"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "最大化！"
@@ -799,7 +799,7 @@
 			id: "5317EBC6D3C2A048"
 			rewards: [{
 				id: "6EAE40A068BA924B"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			subtitle: "非常难做的抽油机，强烈建议对照思索建造"
@@ -840,7 +840,7 @@
 			rewards: [{
 				count: 2
 				id: "386F7E49F90A07A2"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -864,7 +864,7 @@
 			rewards: [{
 				count: 2
 				id: "0C73D2EDBE02E2CF"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -882,7 +882,7 @@
 			rewards: [{
 				count: 2
 				id: "6905804578056B68"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -903,7 +903,7 @@
 			rewards: [{
 				count: 2
 				id: "713B01A89207FD5B"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "烈焰人：好喝"
@@ -922,7 +922,7 @@
 			rewards: [{
 				count: 2
 				id: "2414B99904241192"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "也可以拿来油炸食物"
@@ -944,7 +944,7 @@
 			rewards: [{
 				count: 2
 				id: "718B5DFDBE681E05"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "工业乙醇喝了小心失明+中毒"
@@ -964,7 +964,7 @@
 			rewards: [{
 				count: 2
 				id: "29B1C17635BD1422"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "榨油"
@@ -1002,7 +1002,7 @@
 			rewards: [{
 				count: 2
 				id: "0F67D115425F4A86"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1026,7 +1026,7 @@
 				{
 					count: 2
 					id: "3A2E9705616346DE"
-					item: "createdelight:copper_coin"
+					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
 			]
@@ -1060,7 +1060,7 @@
 			rewards: [{
 				count: 3
 				id: "5B35534B93F696DF"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1077,7 +1077,7 @@
 			rewards: [{
 				count: 3
 				id: "189D8B95653F51D5"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1143,7 +1143,7 @@
 			rewards: [{
 				count: 3
 				id: "1A7077F58E7EBEF9"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1163,7 +1163,7 @@
 			rewards: [{
 				count: 3
 				id: "18F8733C4152412C"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1180,7 +1180,7 @@
 			rewards: [{
 				count: 3
 				id: "058BCBEDAD7FDF16"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "最大发电量5k FE/t，最大应力消耗量16384(256rpm时)"
@@ -1200,7 +1200,7 @@
 			rewards: [{
 				count: 3
 				id: "646DDFCFAAEAC42D"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -1230,7 +1230,7 @@
 			rewards: [{
 				count: 3
 				id: "0A1DF18744115A38"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "没有损耗的电力"
@@ -1249,7 +1249,7 @@
 			rewards: [{
 				count: 3
 				id: "4A94C8E2BFA57851"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
@@ -1267,7 +1267,7 @@
 			rewards: [{
 				count: 3
 				id: "424C1226D64C3953"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "最大输入输出均为10K FE/t，导线长度最大为32格"
@@ -1296,7 +1296,7 @@
 			rewards: [{
 				count: 3
 				id: "2D7164009DBB32D9"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "貌似只有柴油引擎能用...鸡肋"
@@ -1318,7 +1318,7 @@
 			rewards: [{
 				count: 3
 				id: "76963357713D9F5C"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "安安静静的多好😋"
@@ -1337,7 +1337,7 @@
 			rewards: [{
 				count: 3
 				id: "0B09E14A98BD0C86"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "冲刺，冲刺，冲♿"
@@ -1371,7 +1371,7 @@
 			id: "35B43C124186578F"
 			rewards: [{
 				id: "12AD0464E38E363F"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "超超超方便的"
@@ -1389,7 +1389,7 @@
 			id: "7EBD14D46E6E2CF1"
 			rewards: [{
 				id: "262332588DA18160"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			tasks: [
@@ -1484,7 +1484,7 @@
 			id: "4BD0A02C133DC060"
 			rewards: [{
 				id: "741D0A39F5B4588D"
-				item: "createdelight:gold_coin"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			subtitle: "准备飞往太空吧~"
@@ -1527,7 +1527,7 @@
 			rewards: [{
 				count: 3
 				id: "7E44906FC90A2A25"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "最大输入输出均为100k FE/t，导线长度最大为64格"
@@ -1545,7 +1545,7 @@
 			rewards: [{
 				count: 3
 				id: "656917D782892754"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "用于储存流体，破坏后流体不会消失"
@@ -1564,7 +1564,7 @@
 			rewards: [{
 				count: 3
 				id: "6839C46FDFC15E31"
-				item: "createdelight:copper_coin"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			subtitle: "可以横向放置并可以染色的储罐，可防止燃料爆炸！"

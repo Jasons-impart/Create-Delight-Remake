@@ -38,7 +38,7 @@ ItemEvents.modification(e => {
                 food.hunger(hunger[1])
                 food.saturation(hunger[2])
             }
-        });
+        })
     })
     // 参数含义分别为，食物id，effectid，持续时间（tick），强度，获得效果的概率
     let effects = [
@@ -57,5 +57,5 @@ ItemEvents.modification(e => {
                 food.effect(effect[1], effect[2], effect[3], effect[4])
             }
         })
-    });
+    })
 })

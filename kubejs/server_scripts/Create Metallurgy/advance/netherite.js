@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
         "minecraft:netherite_ingot"
     ])
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_netherite", 27),
+        Fluid.of("createdelight:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
             "minecraft:netherite_scrap"

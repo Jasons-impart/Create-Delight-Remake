@@ -3871,6 +3871,20 @@
 			x: -6.5d
 			y: 10.0d
 		}
+		{
+			dependencies: ["2AE1BF43D10374BD"]
+			id: "135C3FFED9451AE3"
+			invisible: true
+			size: 1.5d
+			subtitle: "我去，好多沃土！"
+			tasks: [{
+				id: "17284753FD5E412F"
+				item: "vintagedelight:magic_peanut"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 7.0d
+		}
 	]
 	title: "&e超级大厨！"
 }

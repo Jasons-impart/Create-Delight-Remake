@@ -1,0 +1,29 @@
+/*
+# 忽略当前目录下所以文件
+# 反选不忽略的文件夹和文件
+!/.gitignore
+!/fancymenu
+!/iceandfire
+!/jei
+!/*lightman*
+!/modernui
+!/openloader
+# !/sound_physics_remastered
+!/starterkit
+!/trades
+!/aether-client.toml
+!/aether-common.toml
+!/carryon-client.toml
+!/carryon-common.toml
+!/curios-client.toml
+!/curios-common.toml
+!/ftbquests
+!/create*
+!/*delight*
+!/*xaero*
+!/iceandfire-client.toml
+# !/*quark* 要加去默认配置加
+!/vintageimprovements*
+xaerominimap_entities.json
+!/ad_astra*
+!/sereneseasons

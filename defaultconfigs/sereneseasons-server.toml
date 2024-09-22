@@ -1,0 +1,98 @@
+
+[time_settings]
+	#The duration of a Minecraft day in ticks.
+	#This only adjusts the internal length of a day used by the season cycle.
+	#It is intended to be used in conjunction with another mod which adjusts the actual length of a Minecraft day.
+	#Range: > 20
+	day_duration = 24000
+	#The duration of a sub season in days
+	#Range: > 1
+	sub_season_duration = 8
+	#The starting sub season for new worlds.
+	#0 = Random, 1 - 3 = Early/Mid/Late Spring
+	#4 - 6 = Early/Mid/Late Summer
+	#7 - 9 = Early/Mid/Late Autumn
+	#10 - 12 = Early/Mid/Late Winter
+	#Range: 0 ~ 12
+	starting_sub_season = 1
+	#If the season should progress on a server with no players online
+	progress_season_while_offline = false
+
+[aesthetic_settings]
+	#Change the grass color based on the current season
+	change_grass_color = true
+	#Change the foliage colour based on the current season
+	change_foliage_color = true
+	#Change the birch colour based on the current season
+	change_birch_color = true
+
+[dimension_settings]
+	#Seasons will only apply to dimensons listed here
+	whitelisted_dimensions = ["minecraft:overworld"]
+
+[melting_settings]
+
+	#The melting settings for snow and ice in each season. The game must be restarted for these to apply.
+	#melt_percent is the 0-1 percentage chance a snow or ice block will melt when chosen. (e.g. 100.0 = 100%, 50.0 = 50%)
+	#rolls is the number of blocks randomly picked in each chunk, each tick. (High number rolls is not recommended on servers)
+	#rolls should be 0 if blocks should not melt in that season.
+	[[melting_settings.season_melt_chances]]
+		season = "EARLY_WINTER"
+		melt_percent = 0.0
+		rolls = 0
+
+	[[melting_settings.season_melt_chances]]
+		season = "MID_WINTER"
+		melt_percent = 0.0
+		rolls = 0
+
+	[[melting_settings.season_melt_chances]]
+		season = "LATE_WINTER"
+		melt_percent = 0.0
+		rolls = 0
+
+	[[melting_settings.season_melt_chances]]
+		season = "EARLY_SPRING"
+		melt_percent = 6.25
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "MID_SPRING"
+		melt_percent = 8.33
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "LATE_SPRING"
+		melt_percent = 12.5
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "EARLY_SUMMER"
+		melt_percent = 25.0
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "MID_SUMMER"
+		melt_percent = 25.0
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "LATE_SUMMER"
+		melt_percent = 25.0
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "EARLY_AUTUMN"
+		melt_percent = 12.5
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "MID_AUTUMN"
+		melt_percent = 8.33
+		rolls = 1
+
+	[[melting_settings.season_melt_chances]]
+		season = "LATE_AUTUMN"
+		melt_percent = 6.25
+		rolls = 1
+

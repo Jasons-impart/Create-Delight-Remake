@@ -1,3 +1,0 @@
-#A list of mod ids that cannot have their registered config menu buttons appear in the options screen.
-hiddenConfigMenuButtons = ["example_mod_id"]
-

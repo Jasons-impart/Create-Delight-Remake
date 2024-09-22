@@ -29,6 +29,7 @@
 				item: "createoreexcavation:drill"
 				type: "item"
 			}]
+			subtitle: "未完成"
 			tasks: [{
 				id: "06BEEC5B7EA482E4"
 				item: "createoreexcavation:drilling_machine"

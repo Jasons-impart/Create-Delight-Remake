@@ -1,0 +1,666 @@
+{
+	autofocus_id: "34C9A7E928820147"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "785EA502775C1402"
+	group: "445171CC29E98940"
+	icon: "createdelightcore:netherite_coin"
+	id: "785EA502775C1402"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			icon: "createdelightcore:netherite_coin"
+			id: "34C9A7E928820147"
+			rewards: [{
+				id: "37D071E6074B572D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "由于LightmansCurrency的内容很多且都复杂，所以有必要写个教程让玩家能充分感觉到这个模组的强大"
+			tasks: [{
+				id: "51D48262326B5EB4"
+				item: "lightmanscurrency:portable_gem_terminal"
+				type: "item"
+			}]
+			title: "货币系统！"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			icon: "minecraft:emerald"
+			id: "5DF47BDDF4DB5F56"
+			rewards: [{
+				id: "6821B6A0027FAB23"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "本包所有村民的货币都被替换为了铜币"
+			tasks: [{
+				id: "43F5AFB97D1EFE9D"
+				title: "好吧"
+				type: "checkmark"
+			}]
+			title: "绿宝石？村民才不要！"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			icon: "lightmanscurrency:portable_terminal"
+			id: "094F21648BAEEA35"
+			rewards: [{
+				id: "1A5A9552A5792E1B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "本包的系统商店都位于交易终端里（就是送你的那个项链）"
+			tasks: [{
+				id: "2A768CD10BC73E74"
+				title: "收到"
+				type: "checkmark"
+			}]
+			title: "本包的交易系统呢？"
+			x: -3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			description: [
+				"使用这些机器可以实现网络上的交易的自动化。你可以自动购买商品，也可以自动出售商品，或者为你的网络上的商店补货。不过对于交易，每个机器可以也仅可以选择一个网络上商店的一个交易进行。"
+				"使用时需要指定机器的输入面和输出面，以及何种情况下工作。"
+			]
+			id: "39DF3E07789374D0"
+			rewards: [{
+				id: "2BA1FCE09F344292"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "财源滚滚来！"
+			tasks: [
+				{
+					id: "05FEA15D96E022B2"
+					item: "lightmanscurrency:item_trader_interface"
+					type: "item"
+				}
+				{
+					id: "304E500AD437C67B"
+					item: "lctech:fluid_trader_interface"
+					type: "item"
+				}
+				{
+					id: "1A98188264272486"
+					item: "lctech:energy_trader_interface"
+					type: "item"
+				}
+			]
+			title: "交易自动化"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			description: ["因为LightmansCurrency加入的各种各样形式的交易商店本质是一样的，所以这里只会介绍几个大类的商店物品。"]
+			hide_dependent_lines: true
+			id: "2B4939BD8F985C5A"
+			rewards: [{
+				id: "564E558499599407"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "制作自己商店的必要品！"
+			tasks: [{
+				id: "03262CF7D07D97C1"
+				item: "lightmanscurrency:trading_core"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			id: "0D06E960DDC64CDE"
+			rewards: [{
+				id: "502E38EFA0B7D13E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "用于制造给各种机器的升级的锻造模板"
+			tasks: [{
+				id: "528A1BEC360902C4"
+				item: "lightmanscurrency:upgrade_smithing_template"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			icon: {
+				Count: 1
+				id: "lightmanscurrency:wallet_netherite"
+				tag: {
+					AutoConvert: 1b
+				}
+			}
+			id: "6E365F85E5B32062"
+			rewards: [{
+				id: "3BB49C9C04525F27"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "你可以将钱存入ATM，或者暂时存入钱包中；存入钱包的钱可以直接用于交易（村民和商店机器都可）"
+			tasks: [
+				{
+					id: "5C245E8F7CDEB516"
+					item: {
+						Count: 1
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "lightmanscurrency:atm"
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:portable_atm"
+								}
+							]
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6DF2B6B63D4D8665"
+					item: {
+						Count: 1
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_copper"
+									tag: { }
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_iron"
+									tag: { }
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_gold"
+									tag: {
+										AutoConvert: 1b
+									}
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_emerald"
+									tag: {
+										AutoConvert: 1b
+									}
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_diamond"
+									tag: {
+										AutoConvert: 1b
+									}
+								}
+								{
+									Count: 1b
+									id: "lightmanscurrency:wallet_netherite"
+									tag: {
+										AutoConvert: 1b
+									}
+								}
+							]
+						}
+					}
+					match_nbt: false
+					type: "item"
+					weak_nbt_match: true
+				}
+			]
+			title: "存钱方式"
+			x: -3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "6B6E89B8D3487F89"
+			rewards: [{
+				id: "28DDC1EFF4F62D1A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可用于出售物品"
+			tasks: [{
+				id: "26FD9D880E515214"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:traders/vending_machine"
+					}
+				}
+				title: "Any #lightmanscurrency:traders/vending_machine"
+				type: "item"
+			}]
+			title: "五颜六色的售货机"
+			x: 0.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "56ABD359681947A7"
+			rewards: [{
+				id: "78E7B40E1CD9A20C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "直接出售流体，需要购买者自备桶之类的容器"
+			tasks: [{
+				id: "6FEF9BD84297B300"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:trader_fluid"
+					}
+				}
+				title: "Any #lightmanscurrency:trader_fluid"
+				type: "item"
+			}]
+			title: "卖饮料？"
+			x: -0.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "637901C46854DB82"
+			rewards: [{
+				id: "581EF7232B50AD44"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "用于出售电力，购买者同样需要自备电池之类的容器"
+			tasks: [{
+				id: "6AD21DBF62903B58"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:trader_energy"
+					}
+				}
+				title: "Any #lightmanscurrency:trader_energy"
+				type: "item"
+			}]
+			title: "发电厂卖电了"
+			x: 1.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "0A701F832E820DD8"
+			rewards: [{
+				id: "1CA5AB9C7EF2286B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可在网络上进行的物品交易器"
+			tasks: [{
+				id: "645E3A1955EEF5BB"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:traders/network/item"
+					}
+				}
+				title: "Any #lightmanscurrency:traders/network/item"
+				type: "item"
+			}]
+			title: "欢迎来到京东！"
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "06DCB4066290236F"
+			rewards: [{
+				id: "4A0E834DA33767CA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可在网络上进行的流体交易器"
+			tasks: [{
+				id: "1F138886A06F9E73"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:traders/network/fluid"
+					}
+				}
+				title: "Any #lightmanscurrency:traders/network/fluid"
+				type: "item"
+			}]
+			title: "包租婆，没水啦"
+			x: -1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "03012D76B0CADA18"
+			rewards: [{
+				id: "1A5D8C34BF98047B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可在网络上进行的电力交易器"
+			tasks: [{
+				id: "1A10020354440AC5"
+				item: "lctech:energy_trader_server"
+				type: "item"
+			}]
+			title: "我们家怎么停电了？"
+			x: 1.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			description: [
+				"首先，使用染料和纸（或者金锭）在售票机处制作一个总票（总票是唯一的，千万不要搞丢了！！！）。"
+				"然后，使用纸（或者金锭）来制作普通的票，或者通行证。二者区别是前者对检票口使用会消耗，而后者不会。"
+				"再使用总票作为售票亭的出售物品和检票口的接受物品。到时候检票口在接受到对应的票后会发出一个短暂的红石信号。"
+			]
+			id: "538044C6ED9D30BC"
+			rewards: [{
+				id: "069F6D811C0D19A3"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可以开游乐园了！"
+			tasks: [
+				{
+					id: "7A9C91979A02ED8A"
+					item: "lightmanscurrency:ticket_kiosk"
+					type: "item"
+				}
+				{
+					id: "6544A20E350B4927"
+					item: "lightmanscurrency:ticket_machine"
+					type: "item"
+				}
+				{
+					id: "58E27EFFDEE596FE"
+					item: "lightmanscurrency:paygate"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "08B922537E4810FB"
+			rewards: [{
+				id: "6E82F1B4ADA55B7D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可以拿来坑服务器里的人（不是）"
+			tasks: [{
+				id: "4545A071AA7EA229"
+				item: "lightmanscurrency:slot_machine"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			id: "7A72D27772EBABCA"
+			rewards: [{
+				id: "2E7E6DE22999506E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "可用于整合各种各样各种位置的交易器，使用它时就会显示它绑定的所有交易器里的交易"
+			tasks: [{
+				id: "69FEB14DAB860599"
+				item: "lightmanscurrency:cash_register"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0D06E960DDC64CDE"]
+			id: "7D287010A479E4FE"
+			rewards: [{
+				id: "5D7E944C5EFE3B40"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "将你本地的交易器传到网络上"
+			tasks: [{
+				id: "3DCA846A65CBB628"
+				item: "lightmanscurrency:network_upgrade"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D06E960DDC64CDE"]
+			id: "69844CCA1F887224"
+			rewards: [{
+				id: "4B948459EBB9E1EA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "增加你的机器的交易相关的交互频率（用于交易自动化）"
+			tasks: [{
+				id: "65F7DB71414C6CB0"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "lightmanscurrency:speed_upgrade_1"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:speed_upgrade_2"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:speed_upgrade_3"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:speed_upgrade_4"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:speed_upgrade_5"
+							}
+						]
+					}
+				}
+				title: "速度升级"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D06E960DDC64CDE"]
+			id: "796F860EC76D6D5E"
+			rewards: [{
+				id: "2864EE10196DC300"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "增加交易器交易栏位的数量"
+			tasks: [{
+				id: "32FFF9188FD6771C"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_1"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_2"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_3"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_4"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_5"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:offer_upgrade_6"
+							}
+						]
+					}
+				}
+				title: "交易报价升级"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D06E960DDC64CDE"]
+			id: "1D82FB88238CAF69"
+			rewards: [{
+				id: "2F0A7AF4E6BDFB5A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "44809035B2AA18E4"
+				item: "lightmanscurrency:hopper_upgrade"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["0D06E960DDC64CDE"]
+			id: "6D62093A07CCE710"
+			rewards: [{
+				id: "19475E52401AC42E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "增加交易器的库存的大小（虽然本身每个槽位就已经可以存576个物品了））"
+			tasks: [{
+				id: "70ACF96F93862ACD"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "lightmanscurrency:item_capacity_upgrade_1"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:item_capacity_upgrade_2"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:item_capacity_upgrade_3"
+							}
+							{
+								Count: 1b
+								id: "lightmanscurrency:item_capacity_upgrade_4"
+							}
+						]
+					}
+				}
+				title: "容量升级"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "70B8E5DAF6E0E2D7"
+			rewards: [{
+				id: "71DD54CD3A424CBD"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "卖盔甲 嗯就是这么简单"
+			tasks: [{
+				id: "547CFC98F2055B9C"
+				item: "lightmanscurrency:armor_display"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			icon: "minecraft:gold_block"
+			id: "5784CE8128510E60"
+			rewards: [{
+				id: "145272AD066C71A7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "你可以组建一个团队，团队内的成员会共享每个人的交易器（当然也可以部分的不共享），同时团队会拥有一个团队的银行账户"
+			tasks: [{
+				id: "2D3914FB7DE524F6"
+				title: "财团！"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+	]
+	title: "&e玩转经济！"
+}

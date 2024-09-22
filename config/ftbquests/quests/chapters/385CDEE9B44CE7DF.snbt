@@ -4789,7 +4789,7 @@
 			rewards: [{
 				count: 10
 				id: "7E0D781487F9766F"
-				item: "createdelight:netherite_coin"
+				item: "createdelightcore:netherite_coin"
 				type: "item"
 			}]
 			shape: "octagon"

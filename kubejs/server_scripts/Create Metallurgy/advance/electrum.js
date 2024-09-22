@@ -17,4 +17,11 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:molten_sliver", 45)
         ], "heated", 20
     ).id("createmetallurgy:alloying/molten_electrum")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:molten_electrum", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 15),
+            Fluid.of("createdelight:molten_sliver", 15)
+        ], 100, "heated"
+    ).id("createmetallurgy:alloying/molten_electrum_2")
 })

@@ -51,9 +51,9 @@ ServerEvents.recipes(e => {
     ], 200)
     e.custom({
         type: "farmersdelight:cutting",
-        ingredients: [{item: "minecraft:wheat"}],
-        result: [{item: "ratatouille:wheat_kernels", count: 2}, {item: "farmersdelight:straw", count: 1}],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        ingredients: [{ item: "minecraft:wheat" }],
+        result: [{ item: "ratatouille:wheat_kernels", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }).id("tetracelium:cutting/wheat")
     threshing(e, "vintagedelight:oat", [
         "2x vintagedelight:raw_oats",
@@ -62,9 +62,9 @@ ServerEvents.recipes(e => {
     ], 300)
     e.custom({
         type: "farmersdelight:cutting",
-        ingredients: [{item: "vintagedelight:oat"}],
-        result: [{item: "vintagedelight:raw_oats", count: 2}, {item: "farmersdelight:straw", count: 1}],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        ingredients: [{ item: "vintagedelight:oat" }],
+        result: [{ item: "vintagedelight:raw_oats", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }).id("tetracelium:cutting/oat")
     threshing(e, "farmersdelight:rice_panicle", [
         "3x farmersdelight:rice",
@@ -73,9 +73,9 @@ ServerEvents.recipes(e => {
     ], 400)
     e.custom({
         type: "farmersdelight:cutting",
-        ingredients: [{item: "farmersdelight:rice_panicle"}],
-        result: [{item: "farmersdelight:rice", count: 3}, {item: "farmersdelight:straw", count: 1}],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        ingredients: [{ item: "farmersdelight:rice_panicle" }],
+        result: [{ item: "farmersdelight:rice", count: 3 }, { item: "farmersdelight:straw", count: 1 }],
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }).id("tetracelium:cutting/rice_panicle")
     // 蛋液适配
     e.recipes.create.emptying([

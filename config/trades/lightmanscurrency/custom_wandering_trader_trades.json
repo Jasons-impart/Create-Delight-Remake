@@ -3,7 +3,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 1
       },
       "Sell": {
@@ -17,7 +17,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -31,7 +31,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -47,11 +47,11 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 2
       },
       "Price2": {
-        "ID": "createdelight:iron_coin",
+        "ID": "createdelightcore:iron_coin",
         "Count": 4
       },
       "Sell": {
@@ -65,7 +65,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "createdelight:copper_coin",
+        "ID": "createdelightcore:copper_coin",
         "Count": 4
       },
       "Sell": {
