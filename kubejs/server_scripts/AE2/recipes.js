@@ -607,7 +607,6 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "expatternprovider:cobblestone_cell" });
   event.remove({ id: "expatternprovider:water_cell" });
   event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
-  // event.remove({ id: "" })
 
   // 杀元件外壳配方
   event.remove({ id: "ae2:network/cells/item_cell_housing" });
@@ -616,13 +615,17 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "megacells:cells/mega_fluid_cell_housing" });
 
   // 聚能石英玻璃
-  create.mixing(Item.of("ae2:quartz_vibrant_glass", 4), [
-    "4x ae2:quartz_glass",
-    "#forge:dusts/glowstone",
-  ]);
+  create
+    .mixing(Item.of("ae2:quartz_vibrant_glass", 4), [
+      "4x ae2:quartz_glass",
+      "#forge:dusts/glowstone",
+    ])
+    .id("createdelight:quartz_vibrant_glass");
 
   // 石英玻璃
-  create.mixing("4x ae2:quartz_glass", ["4x #forge:glass", "#forge:dusts/certus_quartz"]);
+  create
+    .mixing("4x ae2:quartz_glass", ["4x #forge:glass", "#forge:dusts/certus_quartz"])
+    .id("createdelight:quartz_glass");
 
   // 熵变机械臂
   create
@@ -633,7 +636,8 @@ ServerEvents.recipes((event) => {
       vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
     ])
     .transitionalItem("createaddition:iron_rod")
-    .loops(1);
+    .loops(1)
+    .id("createdelight:entropy_manipulator");
   event.remove({ id: "ae2:tools/misctools_entropy_manipulator" });
 
   // 充能手杖
@@ -646,7 +650,8 @@ ServerEvents.recipes((event) => {
       vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
     ])
     .transitionalItem("createaddition:iron_rod")
-    .loops(1);
+    .loops(1)
+    .id("createdelight:charged_staff");
   event.remove({ id: "ae2:tools/misctools_charged_staff" });
 
   // 陨石罗盘
@@ -685,5 +690,58 @@ ServerEvents.recipes((event) => {
   event.remove({ output: "megacells:mega_pattern_provider" });
 
   // 鱼大嘿嘿
-  vintageimprovements.centrifugation("expatternprovider:fishbig", "minecraft:pufferfish");
+  vintageimprovements
+    .centrifugation("expatternprovider:fishbig", "minecraft:pufferfish")
+    .id("createdelight:fishbig");
+
+  // 无限水元件
+  create
+    .sequenced_assembly(
+      Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:water"}}'),
+      "ae2:cell_component_1k",
+      create.filling("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        Fluid.of("minecraft:water", 1000),
+      ])
+    )
+    .loops(512)
+    .transitionalItem("ae2:cell_component_1k")
+    .id("createdelight:infinity_water_cell");
+
+  // 大宗存储组件
+  event.replaceInput(
+    { id: "megacells:crafting/bulk_cell_component" },
+    "megacells:cell_component_1m",
+    "functionalstorage:copper_upgrade"
+  );
+  event.replaceInput(
+    { id: "megacells:crafting/bulk_cell_component" },
+    "ae2:spatial_cell_component_2",
+    "functionalstorage:copper_upgrade"
+  );
+
+  // 大宗元件
+  kubejs.shapeless("megacells:bulk_item_cell", [
+    "megacells:bulk_cell_component",
+    "megacells:mega_item_cell_housing",
+  ]);
+
+  // 陨石储罐
+  create
+    .item_application("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"])
+    .id("createdelight:sky_stone_tank");
+  kubejs.shapeless("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"]);
+
+  // 原料缓存器
+  create
+    .item_application("expatternprovider:ingredient_buffer", [
+      "ae2:quartz_glass",
+      "ae2:cell_component_1k",
+    ])
+    .id("createdelight:ingredient_buffer");
+  kubejs.shapeless("expatternprovider:ingredient_buffer", [
+    "ae2:quartz_glass",
+    "ae2:cell_component_1k",
+  ]);
+  event.remove({ id: "expatternprovider:ingredient_buffer" });
 });
