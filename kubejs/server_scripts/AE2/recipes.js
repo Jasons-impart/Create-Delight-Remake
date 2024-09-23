@@ -6,6 +6,8 @@ e 配方id
 纸的制造
 P2P奇点
 空间元件
+红石互动生成陨石
+Jason的相变铁
 */
 
 ServerEvents.recipes((event) => {
@@ -744,4 +746,351 @@ ServerEvents.recipes((event) => {
     "ae2:cell_component_1k",
   ]);
   event.remove({ id: "expatternprovider:ingredient_buffer" });
+
+  // β-正交晶系六方铁
+  let iron_blocks_64 = ["mynethersdelight:bullet_pepper"];
+  for (let i = 0; i < 64; i++) {
+    iron_blocks_64.push("#forge:storage_blocks/iron");
+  }
+
+  vintageimprovements
+    .pressurizing("createdelight:phase_transition_iron", iron_blocks_64)
+    .id("createdelight:phase_transition_iron_A");
+
+  // event.custom({
+  //   type: "ae2:transform",
+  //   circumstance: {
+  //     type: "explosion",
+  //   },
+  //   ingredients: [
+  //     {
+  //       count: 64,
+  //       tag: "forge:storage_blocks/iron",
+  //     },
+
+  //   ],
+  //   result: {
+  //     count: 1,
+  //     item: "createdelight:phase_transition_iron",
+  //   },
+  // });
+
+  // 样板
+  event.remove({ id: "ae2:network/crafting/patterns_blank" });
+  create
+    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
+      create.deploying("#forge:plates/iron", [
+        "#forge:plates/iron",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .transitionalItem("#forge:plates/iron")
+    .loops(1)
+    .id("createdelight:blank_pattern_A");
+  create
+    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
+      create.deploying("#forge:plates/iron", [
+        "#forge:plates/iron",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .transitionalItem("#forge:plates/iron")
+    .loops(1)
+    .id("createdelight:blank_pattern_B");
+  create
+    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_glass"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .transitionalItem("#forge:plates/iron")
+    .loops(1)
+    .id("createdelight:blank_pattern_C");
+  create
+    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_vibrant_glass"]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_vibrant_glass"]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .transitionalItem("#forge:plates/iron")
+    .loops(1)
+    .id("createdelight:blank_pattern_D");
+
+  // 样板修改器
+  create
+    .sequenced_assembly("expatternprovider:pattern_modifier", "ae2:blank_pattern", [
+      create.deploying("ae2:blank_pattern", ["ae2:blank_pattern", "ae2:logic_processor"]),
+      create.deploying("ae2:blank_pattern", ["ae2:blank_pattern", "#forge:dyes/green"]),
+      vintageimprovements
+        .curving("ae2:blank_pattern", "ae2:blank_pattern")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:pattern_modifier_1")
+    .transitionalItem("ae2:blank_pattern")
+    .loops(1);
+  event.remove({ id: "expatternprovider:pattern_modifier" });
+
+  // 扩展样板管理终端
+  create
+    .sequenced_assembly("expatternprovider:ex_pattern_access_part", "ae2:pattern_access_terminal", [
+      create.deploying("ae2:pattern_access_terminal", [
+        "ae2:pattern_access_terminal",
+        "ae2:logic_processor",
+      ]),
+      create.deploying("ae2:pattern_access_terminal", [
+        "ae2:pattern_access_terminal",
+        "minecraft:redstone_lamp",
+      ]),
+    ])
+    .transitionalItem("ae2:pattern_access_terminal")
+    .loops(1)
+    .id("createdelight:ex_pattern_access_part_1");
+
+  // 组件坞
+  event.remove({ id: "megacells:network/cell_dock" });
+  create
+    .deploying(Item.of("megacells:cell_dock", 10), ["ae2:drive", "#forge:ingots/sky_steel"])
+    .id("createdelight:cell_dock_1");
+
+  // 1K存储元件
+  create
+    .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:certus_quartz_crystal",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:logic_processor",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .loops(1)
+    .transitionalItem("ae2:certus_quartz_crystal")
+    .id("createdelight:cell_component_1k_A");
+
+  create
+    .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "createdelight:redstone_paste",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "createdelight:redstone_paste",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:certus_quartz_crystal",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:logic_processor",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .loops(1)
+    .transitionalItem("ae2:certus_quartz_crystal")
+    .id("createdelight:cell_component_1k_B");
+
+  create
+    .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.vacuumizing("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:certus_quartz_crystal",
+      ]),
+      create.deploying("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "ae2:logic_processor",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .loops(1)
+    .transitionalItem("ae2:certus_quartz_crystal")
+    .id("createdelight:cell_component_1k_C");
+
+  // 4K存储元件
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_A")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "createdelight:redstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_B")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.vacuumizing("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_C")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_D")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "createdelight:redstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_E")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
+      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.vacuumizing("ae2:certus_quartz_crystal", [
+        "ae2:certus_quartz_crystal",
+        "#forge:dusts/redstone",
+      ]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4k_F")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_1k");
 });

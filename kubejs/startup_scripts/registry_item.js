@@ -426,7 +426,7 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")
 
-    // 高压相变铁
+    // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
         .translationKey("item.createdelight.phase_transition_iron")
 })
