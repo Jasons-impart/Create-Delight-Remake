@@ -267,6 +267,7 @@
 		{
 			dependencies: ["360AB2F07EC4E939"]
 			id: "396CC64ECF6DAE3C"
+			secret: true
 			tasks: [{
 				id: "7204291EEF2156B8"
 				item: "createdelightcore:gold_coin"
@@ -278,6 +279,7 @@
 		{
 			dependencies: ["360AB2F07EC4E939"]
 			id: "62E0FBFBC1255148"
+			secret: true
 			tasks: [{
 				id: "5C8E0C200677FCB4"
 				item: "createdelightcore:copper_coin"
@@ -289,6 +291,7 @@
 		{
 			dependencies: ["360AB2F07EC4E939"]
 			id: "3DF9593454C4CAC8"
+			secret: true
 			tasks: [{
 				id: "4BC43D21403CA8B2"
 				item: "createdelightcore:iron_coin"
@@ -300,6 +303,7 @@
 		{
 			dependencies: ["360AB2F07EC4E939"]
 			id: "00575CA6E635BB15"
+			secret: true
 			tasks: [{
 				id: "5C30664C65084F67"
 				item: "createdelightcore:emerald_coin"
@@ -311,6 +315,7 @@
 		{
 			dependencies: ["360AB2F07EC4E939"]
 			id: "2482257650AA3AA9"
+			secret: true
 			tasks: [{
 				id: "0CDEB061E60D5778"
 				item: "createdelightcore:netherite_coin"

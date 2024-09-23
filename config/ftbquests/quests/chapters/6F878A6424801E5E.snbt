@@ -3885,6 +3885,39 @@
 			x: -13.5d
 			y: 7.0d
 		}
+		{
+			id: "74A7EB9CD4EA66EB"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "68E31B23CB86F069"
+					table_id: 8614959000113369079L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "744D43782B77D663"
+					table_id: 8614959000113369079L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "4D99B72CC7FF8E9E"
+					table_id: 8614959000113369079L
+					type: "random"
+				}
+			]
+			secret: true
+			subtitle: "不是，你 ......."
+			tasks: [{
+				id: "5025C3FC2AD44A15"
+				item: "createdelight:braised_intestines_in_brown_sauce"
+				type: "item"
+			}]
+			title: "&e九转大肠"
+			x: -12.0d
+			y: 1.5d
+		}
 	]
 	title: "&e超级大厨！"
 }
