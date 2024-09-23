@@ -248,6 +248,19 @@ StartupEvents.registry("item", e => {
                 .saturation(0.7)
                 .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
+    // 九转大肠
+    e.create("createdelight:braised_intestines_in_brown_sauce")
+        .rarity("epic")
+        .maxStackSize(16)
+        .translationKey("item.createdelight.braised_intestines_in_brown_sauce")
+        .food(food =>{
+            food.hunger(20)
+                .saturation(1)
+                .effect("minecraft:nausea", 200, 2, 1.0)
+                .effect("minecraft:darkness", 200, 1, 1.0)
+                .effect("farmersdelight:nourishment", 6000, 1, 1.0)
+    
+        })
     // 未完成相关
     e.create("createdelight:incomplete_tesla_coil")
         .maxStackSize(64)
