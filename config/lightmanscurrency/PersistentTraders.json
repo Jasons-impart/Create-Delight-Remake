@@ -944,6 +944,11 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -1758,6 +1763,11 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -2570,6 +2580,11 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -3342,9 +3357,9 @@
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
-          "Duration": 3600000,
-          "Fluctuation": 25,
-          "Type": "lightmanscurrency:price_fluctuation"
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -3407,7 +3422,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "vintagedelight:raw_oats",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3458,7 +3473,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:wheat_flour",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3475,7 +3490,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:dough",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3577,7 +3592,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:corn_flour",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3645,7 +3660,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cocoa_beans",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3713,7 +3728,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:puff_pastry",
-            "Count": 128
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3803,8 +3818,8 @@
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
-          "Limit": 1,
-          "ForgetTime": 172800000,
+          "Limit": 3,
+          "ForgetTime": 86400000,
           "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
@@ -3948,6 +3963,131 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:first_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Limit": 1,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:second_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:third_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:fourth_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:desh_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:ostrum_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:calorite_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     },
@@ -3956,6 +4096,13 @@
       "ID": "electricity_trade",
       "Name": "挖矿（记得给你终端上满顶级升级",
       "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 81,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
       "Trades": [
         {
           "TradeType": "PURCHASE",
@@ -3963,7 +4110,7 @@
             "Value": [
               {
                 "Coin": "createdelightcore:iron_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3984,6 +4131,11 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
