@@ -62,6 +62,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 3L
 				id: "341D50CB9A6F9045"
 				item: "createdelightcore:iron_coin"
@@ -141,6 +142,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				count: 3L
 				id: "738B28FD7401DDAC"
 				item: "createdelightcore:iron_coin"
@@ -170,6 +172,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				id: "6F5E7F389AD99454"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -199,6 +202,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				id: "584FF37D80A85D41"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -228,6 +232,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				id: "77581598D78C3382"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -250,6 +255,7 @@
 				type: "item"
 			}]
 			tasks: [{
+				consume_items: true
 				id: "63F5058E702B7BC9"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
