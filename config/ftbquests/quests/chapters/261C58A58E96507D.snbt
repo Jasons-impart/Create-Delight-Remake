@@ -38,9 +38,9 @@
 			id: "16E85851D21CB6A3"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "0D8CEAA89C94C138"
+				id: "4B539E12EF0C10AC"
 				table_id: 5347970608351672481L
-				type: "choice"
+				type: "random"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -164,9 +164,9 @@
 			id: "63D229AF8283C3AA"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "44CB16D75AF38057"
+				id: "52ADB662463243D3"
 				table_id: 2218915723137103147L
-				type: "choice"
+				type: "random"
 			}]
 			subtitle: "可以说是最浪漫的管道之一了"
 			tasks: [
@@ -190,9 +190,9 @@
 			id: "4E885A428CBCE708"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "39A9B8E840A27B41"
+				id: "3403EC301BD08A0C"
 				table_id: 2218915723137103147L
-				type: "choice"
+				type: "random"
 			}]
 			subtitle: "我比铁桶更能装！"
 			tasks: [{
@@ -424,9 +424,9 @@
 			id: "7AC63AC5921DD7F0"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "25289DA0B21A0AA6"
+				id: "564D1DDC46427A8F"
 				table_id: 5347970608351672481L
-				type: "choice"
+				type: "random"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -679,9 +679,9 @@
 			id: "70EF06DF68816635"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "6B04958C031882B5"
+				id: "52787054A88BD724"
 				table_id: 5347970608351672481L
-				type: "choice"
+				type: "random"
 			}]
 			shape: "hexagon"
 			size: 1.5d

@@ -61,9 +61,9 @@
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "1D213AD8BB69E529"
+				id: "3AD9156E5AF3346B"
 				table_id: 6730734086547045908L
-				type: "choice"
+				type: "random"
 			}]
 			shape: "gear"
 			subtitle: "传输应力！"
@@ -171,9 +171,9 @@
 				}
 				{
 					exclude_from_claim_all: true
-					id: "7E060DF25A1F4CC8"
+					id: "2102329A51E2F61E"
 					table_id: 6730734086547045908L
-					type: "choice"
+					type: "random"
 				}
 			]
 			tasks: [{
@@ -248,6 +248,12 @@
 		{
 			dependencies: ["1CED61E7F780F38C"]
 			id: "6BCFF368CB1C1FA4"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5172AE89874C69BE"
+				table_id: 6730734086547045908L
+				type: "random"
+			}]
 			shape: "rsquare"
 			size: 1.5d
 			subtitle: "它动起来了！它在搅拌！"
@@ -626,12 +632,20 @@
 			]
 			description: ["蓝图大炮左上角放入火药（一个火药大概能打几百个方块别放多了），右上角可以放入书或者剪贴板（可以统计需要的材料），将蓝图结构放置完成后放入蓝图大炮左侧就可以准备打印结构了，紧贴蓝图大炮摆放容器并放置所需材料，调整蓝图大炮设置后即可点击△开始打印&4（注意：蓝图大炮打印流体储罐，保险库以及蓄电池会有问题，需要打印完后拆掉一个角后重新放置）"]
 			id: "68C809838E2F09A8"
-			rewards: [{
-				count: 32
-				id: "538F7DDFB245FD6A"
-				item: "minecraft:gunpowder"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 32
+					id: "538F7DDFB245FD6A"
+					item: "minecraft:gunpowder"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "6C68DEE7115EBF4F"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+			]
 			subtitle: "如标题所示，这就是机械动力的神，浪漫而又实用"
 			tasks: [{
 				id: "562475D62C420631"
@@ -824,9 +838,9 @@
 			id: "1197EF9B84E242DE"
 			rewards: [{
 				exclude_from_claim_all: true
-				id: "3557DCE3CBF7B061"
-				table_id: 6730734086547045908L
-				type: "choice"
+				id: "297F586B89663D9B"
+				table_id: 5347970608351672481L
+				type: "random"
 			}]
 			shape: "square"
 			tasks: [{
