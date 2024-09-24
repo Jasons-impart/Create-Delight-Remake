@@ -3784,7 +3784,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:copper_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -3801,7 +3801,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:copper_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
