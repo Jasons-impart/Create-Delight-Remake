@@ -1,0 +1,57 @@
+
+[minecraft]
+	#Show Wither Boss Bar
+	WitherBossBar = true
+	#Show Ender Dragon
+	EnderDragonBossBar = true
+
+[cataclysm]
+	#Show Ignis
+	IgnisBossBar = true
+	#Show Netherite Monstrosity
+	NetheriteMonstrosityBossBar = true
+	#Show Ender Guardian
+	EnderGuardianBossBar = true
+	#Show Harbinger
+	HarbingerBossBar = true
+	#Show Leviathan
+	LeviathanBossBar = true
+
+[bomd]
+	#Show Night Lich
+	NightLichBossBar = true
+	#Show Nether Gauntlet
+	NetherGauntletBossBar = true
+	#Show Obsidilith
+	ObsidilithBossBar = true
+	#Show Void Blossom
+	VoidBlossomBossBar = true
+
+[mowziesmobs]
+	#Show Frostmaw
+	FrostmawBossBar = true
+	#Show Ferrous Wroughtnaut
+	FerrousWroughtnautBossBar = true
+
+[meetyourfight]
+	#Show Bellringer
+	BellringerBossBar = true
+	#Show Swampjaw
+	SwampjawBossBar = true
+
+[alexsmobs]
+	#Show Void Worm
+	VoidWormBossBar = true
+
+[crackerwitherstorm]
+	#Show Wither Storm
+	WitherStormBossBar = true
+
+[aether]
+	#Show Slider
+	SliderBossBar = true
+	#Show Valkyrie Queen
+	ValkyrieQueenBossBar = true
+	#Show Sun Spirit
+	SunSpiritBossBar = true
+

@@ -28,6 +28,9 @@ ServerEvents.tags("item", e => {
         'aether:gravitite_axe',
         'aether:gravitite_hoe']
     )
+
+    e.add("forge:ingots/uranium", "alexscaves:uranium")
+    e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
 })
 
 ServerEvents.tags("worldgen/biome", e => {
