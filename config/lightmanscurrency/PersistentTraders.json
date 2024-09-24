@@ -3557,23 +3557,6 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createcafe:oreo_dough",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
             "ID": "culturaldelights:corn_kernels",
             "Count": 24
           },
@@ -3762,7 +3745,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_dough",
-            "Count": 8
+            "Count": 4
           },
           "Price": {
             "Value": [
@@ -3779,7 +3762,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo",
-            "Count": 2
+            "Count": 1
           },
           "Price": {
             "Value": [
@@ -3796,13 +3779,64 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_crushed",
-            "Count": 3
+            "Count": 2
           },
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
                 "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:tapioca_flour",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:raw_boba",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:boba",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -3828,7 +3862,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "create:brass_ingot",
-            "Count": 64
+            "Count": 16
           },
           "Price": {
             "Value": [
@@ -3862,7 +3896,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "create:precision_mechanism",
-            "Count": 16
+            "Count": 8
           },
           "Price": {
             "Value": [
@@ -3879,7 +3913,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "create:electron_tube",
-            "Count": 32
+            "Count": 16
           },
           "Price": {
             "Value": [
@@ -3917,7 +3951,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "createdelight:bronze_ingot",
-            "Count": 64
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3934,7 +3968,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "createaddition:electrum_ingot",
-            "Count": 64
+            "Count": 32
           },
           "Price": {
             "Value": [
@@ -3951,7 +3985,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "create:blaze_cake",
-            "Count": 64
+            "Count": 16
           },
           "Price": {
             "Value": [
@@ -4042,7 +4076,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "ad_astra:desh_ingot",
-            "Count": 64
+            "Count": 16
           },
           "Price": {
             "Value": [
@@ -4059,7 +4093,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "ad_astra:ostrum_ingot",
-            "Count": 64
+            "Count": 16
           },
           "Price": {
             "Value": [
@@ -4076,7 +4110,7 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "ad_astra:calorite_ingot",
-            "Count": 64
+            "Count": 16
           },
           "Price": {
             "Value": [
