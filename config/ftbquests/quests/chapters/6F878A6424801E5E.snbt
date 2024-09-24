@@ -3918,6 +3918,27 @@
 			x: -12.0d
 			y: 1.5d
 		}
+		{
+			id: "5CA97AC22D4938D0"
+			rewards: [{
+				id: "482A8ED33A04445A"
+				item: {
+					Count: 1
+					id: "create_sa:copper_jetpack_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "5E8976721437E966"
+				item: "createdelight:boiling_water_cabbage"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
 	]
 	title: "&e超级大厨！"
 }

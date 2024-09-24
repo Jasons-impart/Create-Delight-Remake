@@ -4854,6 +4854,412 @@
           }
         }
       ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "smoke_food_trade",
+      "Name": "稍微烤制的食物的回收",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_porkchop",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_mutton",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_chicken",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_rabbit",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_cod",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_salmon",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:cooked_bison",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:cooked_bunfungus",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_moose_ribs",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:boiled_emu_egg",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_kangaroo_meat",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_catfish",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "crabbersdelight:cooked_tropical_fish",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:cooked_squid",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:cooked_loin",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:popcorn",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:bread",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:dried_persimmon",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:roasted_peanut",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:baked_durian",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:dried_kelp",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:baked_pear",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:smoked_eggplant",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
     }
   ],
   "Auctions": []
