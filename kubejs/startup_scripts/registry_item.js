@@ -334,6 +334,10 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:redstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.redstone_paste")
+    // 荧石膏
+    e.create("createdelight:glowstone_paste")
+        .maxDamage(64)
+        .translationKey("item.createdelight.glowstone_paste")
     // 陨石膏
     e.create("createdelight:sky_stone_paste")
         .maxDamage(64)
