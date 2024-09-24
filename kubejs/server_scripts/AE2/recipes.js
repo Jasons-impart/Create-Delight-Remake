@@ -7,7 +7,7 @@ e 配方id
 P2P奇点
 空间元件
 红石互动生成陨石
-Jason的相变铁
+Jason的相变铁世界生成
 */
 
 ServerEvents.recipes((event) => {
@@ -336,7 +336,7 @@ ServerEvents.recipes((event) => {
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:mega_fluid_cell_housing_blank_curving");
 
-  // 初处理的元件外壳
+  // 未加工的元件外壳
   kubejs.shapeless("createdelight:initial_processing_of_item_cell_housing", [
     "createdelight:item_cell_housing_blank",
     "3x #forge:dusts/redstone",
@@ -348,10 +348,12 @@ ServerEvents.recipes((event) => {
   kubejs.shapeless("createdelight:initial_processing_of_mega_item_cell_housing", [
     "createdelight:mega_item_cell_housing_blank",
     "3x #forge:dusts/redstone",
+    "3x ae2:sky_dust",
   ]);
   kubejs.shapeless("createdelight:initial_processing_of_mega_fluid_cell_housing", [
     "createdelight:mega_fluid_cell_housing_blank",
     "3x #forge:dusts/redstone",
+    "3x ae2:sky_dust",
   ]);
 
   kubejs
@@ -370,14 +372,19 @@ ServerEvents.recipes((event) => {
     .shapeless("createdelight:initial_processing_of_mega_item_cell_housing", [
       "createdelight:mega_item_cell_housing_blank",
       "createdelight:redstone_paste",
+      "createdelight:sky_stone_paste",
     ])
-    .damageIngredient("createdelight:redstone_paste");
+    .damageIngredient("createdelight:redstone_paste")
+    .damageIngredient("createdelight:sky_stone_paste");
+
   kubejs
     .shapeless("createdelight:initial_processing_of_mega_fluid_cell_housing", [
       "createdelight:mega_fluid_cell_housing_blank",
       "createdelight:redstone_paste",
+      "createdelight:sky_stone_paste",
     ])
-    .damageIngredient("createdelight:redstone_paste");
+    .damageIngredient("createdelight:redstone_paste")
+    .damageIngredient("createdelight:sky_stone_paste");
 
   create
     .sequenced_assembly(
@@ -407,10 +414,16 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       "createdelight:initial_processing_of_mega_item_cell_housing",
       "createdelight:mega_item_cell_housing_blank",
-      create.deploying("createdelight:mega_item_cell_housing_blank", [
-        "createdelight:mega_item_cell_housing_blank",
-        "#forge:dusts/redstone",
-      ])
+      [
+        create.deploying("createdelight:mega_item_cell_housing_blank", [
+          "createdelight:mega_item_cell_housing_blank",
+          "#forge:dusts/redstone",
+        ]),
+        create.deploying("createdelight:mega_item_cell_housing_blank", [
+          "createdelight:mega_item_cell_housing_blank",
+          "ae2:sky_dust",
+        ]),
+      ]
     )
     .loops(2)
     .transitionalItem("createdelight:mega_item_cell_housing_blank")
@@ -419,10 +432,16 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       "createdelight:initial_processing_of_mega_fluid_cell_housing",
       "createdelight:mega_fluid_cell_housing_blank",
-      create.deploying("createdelight:mega_fluid_cell_housing_blank", [
-        "createdelight:mega_fluid_cell_housing_blank",
-        "#forge:dusts/redstone",
-      ])
+      [
+        create.deploying("createdelight:mega_item_cell_housing_blank", [
+          "createdelight:mega_item_cell_housing_blank",
+          "#forge:dusts/redstone",
+        ]),
+        create.deploying("createdelight:mega_item_cell_housing_blank", [
+          "createdelight:mega_item_cell_housing_blank",
+          "ae2:sky_dust",
+        ]),
+      ]
     )
     .loops(2)
     .transitionalItem("createdelight:mega_fluid_cell_housing_blank")
@@ -439,10 +458,12 @@ ServerEvents.recipes((event) => {
   vintageimprovements.vacuumizing("createdelight:initial_processing_of_mega_item_cell_housing", [
     "createdelight:mega_item_cell_housing_blank",
     "#forge:dusts/redstone",
+    "ae2:sky_dust",
   ]);
   vintageimprovements.vacuumizing("createdelight:initial_processing_of_mega_fluid_cell_housing", [
     "createdelight:mega_fluid_cell_housing_blank",
     "#forge:dusts/redstone",
+    "ae2:sky_dust",
   ]);
 
   // 未成型的元件外壳
@@ -557,19 +578,19 @@ ServerEvents.recipes((event) => {
   // 元件外壳
   vintageimprovements
     .curving("ae2:item_cell_housing", "createdelight:unformed_item_cell_housing")
-    .mode(2)
+    .head("createdelight:cell_housing_curving_head")
     .id("ae2:item_cell_housing_1");
   vintageimprovements
     .curving("ae2:fluid_cell_housing", "createdelight:unformed_fluid_cell_housing")
-    .mode(2)
+    .head("createdelight:cell_housing_curving_head")
     .id("ae2:fluid_cell_housing_1");
   vintageimprovements
     .curving("megacells:mega_item_cell_housing", "createdelight:unformed_mega_item_cell_housing")
-    .mode(2)
+    .head("createdelight:cell_housing_curving_head")
     .id("megacells:mega_item_cell_housing_1");
   vintageimprovements
     .curving("megacells:mega_fluid_cell_housing", "createdelight:unformed_mega_fluid_cell_housing")
-    .mode(2)
+    .head("createdelight:cell_housing_curving_head")
     .id("megacells:mega_fluid_cell_housing_1");
 
   // 石英玻璃部件
@@ -869,6 +890,7 @@ ServerEvents.recipes((event) => {
     .deploying(Item.of("megacells:cell_dock", 10), ["ae2:drive", "#forge:ingots/sky_steel"])
     .id("createdelight:cell_dock_1");
 
+  //
   // 1K存储元件
   create
     .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
@@ -898,7 +920,7 @@ ServerEvents.recipes((event) => {
         "ae2:logic_processor",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .loops(1)
@@ -925,7 +947,7 @@ ServerEvents.recipes((event) => {
         "ae2:logic_processor",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .loops(1)
@@ -949,7 +971,7 @@ ServerEvents.recipes((event) => {
         "ae2:logic_processor",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .loops(1)
@@ -970,7 +992,7 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_A")
@@ -992,7 +1014,7 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_B")
@@ -1001,9 +1023,9 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
-      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
-      vintageimprovements.vacuumizing("ae2:certus_quartz_crystal", [
-        "ae2:certus_quartz_crystal",
+      vintageimprovements.polishing("ae2:cell_component_1k", "ae2:cell_component_1k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_1k", [
+        "ae2:cell_component_1k",
         "#forge:dusts/redstone",
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
@@ -1014,7 +1036,7 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:quartz_glass"]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_C")
@@ -1023,7 +1045,7 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
-      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.polishing("ae2:cell_component_1k", "ae2:cell_component_1k"),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
@@ -1037,7 +1059,7 @@ ServerEvents.recipes((event) => {
         "createdelight:quartz_glass_parts",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_D")
@@ -1046,7 +1068,7 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
-      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.polishing("ae2:cell_component_1k", "ae2:cell_component_1k"),
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
         "createdelight:redstone_paste",
@@ -1062,7 +1084,7 @@ ServerEvents.recipes((event) => {
         "createdelight:quartz_glass_parts",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_E")
@@ -1071,7 +1093,7 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:cell_component_4k", "ae2:cell_component_1k", [
-      vintageimprovements.polishing("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal"),
+      vintageimprovements.polishing("ae2:cell_component_1k", "ae2:cell_component_1k"),
       vintageimprovements.vacuumizing("ae2:certus_quartz_crystal", [
         "ae2:certus_quartz_crystal",
         "#forge:dusts/redstone",
@@ -1087,10 +1109,809 @@ ServerEvents.recipes((event) => {
         "createdelight:quartz_glass_parts",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .id("createdelight:cell_component_4k_F")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
+
+  // 16K存储元件
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_A")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_B")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_C")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_D")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_E")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_16k", "ae2:cell_component_4k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_4k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "#forge:dusts/glowstone",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
+
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_4k", [
+        "ae2:cell_component_4k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16k_F")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_4k");
+
+  // 64K存储元件
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_4k", "ae2:cell_component_16k"),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", ["ae2:cell_component_16k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_A")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_16k", "ae2:cell_component_16k"),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", ["ae2:cell_component_16k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_B")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_16k", "ae2:cell_component_16k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", ["ae2:cell_component_16k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_C")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_16k", "ae2:cell_component_16k"),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_D")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_16k", "ae2:cell_component_16k"),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:glowstone_paste",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_E")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_64k", "ae2:cell_component_16k", [
+      vintageimprovements.polishing("ae2:cell_component_16k", "ae2:cell_component_16k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "#forge:dusts/glowstone",
+        "#forge:dusts/glowstone",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:cell_component_16k",
+      ]),
+
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_16k", [
+        "ae2:cell_component_16k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64k_F")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_16k");
+
+  // 256K存储元件
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_A")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_B")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:sky_dust",
+        "ae2:sky_dust",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_C")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_D")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_E")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  create
+    .sequenced_assembly("ae2:cell_component_256k", "ae2:cell_component_64k", [
+      vintageimprovements.polishing("ae2:cell_component_64k", "ae2:cell_component_64k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:sky_dust",
+        "ae2:sky_dust",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
+        "createdelight:quartz_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256k_F")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_64k");
+
+  //1M存储组件
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_A")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
+
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_B")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
+
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:sky_dust",
+        "ae2:sky_dust",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_C")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
+
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", ["ae2:cell_component_256k", "ae2:sky_dust"]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_D")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
+
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:sky_stone_paste",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_E")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
+
+  create
+    .sequenced_assembly("megacells:cell_component_1m", "ae2:cell_component_256k", [
+      vintageimprovements.polishing("ae2:cell_component_256k", "ae2:cell_component_256k"),
+      vintageimprovements.vacuumizing("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:sky_dust",
+        "ae2:sky_dust",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+
+      create.deploying("ae2:cell_component_256k", [
+        "ae2:cell_component_256k",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_1m_F")
+    .loops(1)
+    .transitionalItem("ae2:cell_component_256k");
 });
+
+// create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k"]),
