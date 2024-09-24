@@ -2163,10 +2163,14 @@
             "Value": [
               {
                 "Coin": "createdelightcore:gold_coin",
-                "Amount": 2
+                "Amount": 1
               },
               {
                 "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -2184,6 +2188,10 @@
             "Value": [
               {
                 "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -2200,8 +2208,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2218,7 +2226,7 @@
             "Value": [
               {
                 "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
+                "Amount": 1
               }
             ],
             "Chain": "main",
@@ -2234,8 +2242,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:netherite_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2398,8 +2406,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2416,8 +2424,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2434,8 +2442,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2452,8 +2460,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2470,8 +2478,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2488,8 +2496,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2506,8 +2514,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2524,8 +2532,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2542,8 +2550,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -2560,8 +2568,8 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",
