@@ -24,6 +24,10 @@ debugLevel=0
 	#Disabling will not remove any existing Tax Blocks from the world, nor prevent their use.
 	canCraftTaxCollector=true
 	
+	#Whether ATM Cards can be crafted.
+	#Disabling will not remove any existing ATM Cards from the world, nor prevent their use.
+	canCraftATMCard=false
+	
 	#Money Chest Crafting
 	[crafting.money_chest]
 		#Whether the Money Chest can be crafted.
