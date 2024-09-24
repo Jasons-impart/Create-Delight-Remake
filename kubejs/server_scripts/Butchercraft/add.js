@@ -25,4 +25,30 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_2)
         .loops(9)
         .id("createdelight:braised_intestines_in_brown_sauce")
+
+    //搅拌器开水白菜
+    e.recipes.create.mixing("createdelight:boiling_water_cabbage",[
+        "festival_delicacies:chinese_cabbage", 
+        "minecraft:bowl",
+        "vintagedelight:salt_dust", 
+        Fluid.of("minecraft:water", 500), 
+    ])  
+        .heated()
+        // .replaceIngredient({item:"createdelight:boiling_water_cabbage"},"minecraft:bowl")
+        .id("createdelight:boiling_water_cabbage")
+         
 })
+// e.recipes.create.mixing(Fluid.of("minecraft:water", 500), [
+//   "#forge:crops/chinese_cabbage",
+//   "vintagedelight:salt_dust",
+//   Fluid.of("minecraft:water", 500),
+// ])
+
+// .heated();
+    // //芒果奶茶
+    // e.recipes.create.mixing(Fluid.of("createcafe:mango_tea", 500), [
+    //     "fruitsdelight:mango", 
+    //     "minecraft:sugar", 
+    //     Fluid.of("minecraft:milk", 200), 
+    //     Fluid.of("farmersrespite:dandelion_tea", 100)
+    // ]).heated().id("createcafe:mixing/mango_tea_mixing")

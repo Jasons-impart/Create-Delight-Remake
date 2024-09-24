@@ -259,8 +259,22 @@ StartupEvents.registry("item", e => {
                 .effect("minecraft:nausea", 200, 2, 1.0)
                 .effect("minecraft:darkness", 200, 1, 1.0)
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
-    
+         })
+    //开水白菜
+    e.create("createdelight:boiling_water_cabbage")
+        .rarity("uncommon")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.boiling_water_cabbage")
+        .food(food =>{
+           food.hunger(8)
+               .saturation(0.6)
+               .effect("minecraft:resistance", 500, 2, 1.0)
+               .effect("farmersdelight:nourishment", 3000, 1, 1.0)
+               .effect("minecraft:fire", 20, 1, 1.0)
+               
+
         })
+
     // 未完成相关
     e.create("createdelight:incomplete_tesla_coil")
         .maxStackSize(64)
