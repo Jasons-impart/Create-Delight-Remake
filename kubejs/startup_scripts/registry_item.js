@@ -260,7 +260,7 @@ StartupEvents.registry("item", e => {
                 .effect("minecraft:darkness", 200, 1, 1.0)
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
          })
-    //开水白菜
+    //清水白菜
     e.create("createdelight:boiling_water_cabbage")
         .rarity("uncommon")
         .maxStackSize(64)
