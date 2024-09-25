@@ -452,4 +452,7 @@ StartupEvents.registry("item", e => {
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
         .translationKey("item.createdelight.phase_transition_iron")
+    // 人造钻石（别给加钻石tag）
+    e.create("createdelight:mmd_diamond")
+        .translationKey("item.createdelight.mmd_diamond")
 })

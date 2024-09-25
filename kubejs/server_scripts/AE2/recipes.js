@@ -237,12 +237,12 @@ ServerEvents.recipes((event) => {
     .curving("ae2:calculation_processor", "createdelight:calculation_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_5");
-    vintageimprovements
+  vintageimprovements
     .curving("ae2:logic_processor", "createdelight:logic_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_6");
-    vintageimprovements
-    .curving('megacells:accumulation_processor', "createdelight:accumulation_processor_inscribed")
+  vintageimprovements
+    .curving("megacells:accumulation_processor", "createdelight:accumulation_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_8");
 
@@ -2473,6 +2473,136 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "megacells:cells/cell_component_16m" });
   event.remove({ id: "megacells:cells/cell_component_64m" });
   event.remove({ id: "megacells:cells/cell_component_256m" });
-});
 
-// create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k"]),
+  // 水晶修复器
+  create
+    .sequenced_assembly("expatternprovider:crystal_fixer", "#forge:storage_blocks/iron", [
+      create.pressing("#forge:storage_blocks/iron", "#forge:storage_blocks/iron"),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/fluix",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:rods/iron",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:rods/iron",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/certus_quartz",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/certus_quartz",
+      ]),
+    ])
+    .transitionalItem("#forge:storage_blocks/iron")
+    .id("createdelight:crystal_fixer")
+    .loops(1);
+  event.remove({ id: "expatternprovider:crystal_fixer" });
+
+  // MEGA解压缩模块
+  create
+    .sequenced_assembly("megacells:decompression_module", "#forge:ingots/sky_steel", [
+      create.pressing("#forge:ingots/sky_steel", "#forge:ingots/sky_steel"),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "megacells:compression_card",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:logic_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:engineering_processor",
+      ]),
+    ])
+    .id("createdelight:decompression_module")
+    .transitionalItem("#forge:ingots/sky_steel")
+    .loops(1);
+  event.remove({ id: "megacells:crafting/decompression_module" });
+
+  // // 人工钻石
+  // let coal_64 = [Fluid.of("minecraft:lava", 250)];
+  // for (let i = 0; i < 64; i++) {
+  //   coal_64.push("#minecraft:coals");
+  // }
+  // vintageimprovements
+  //   .pressurizing("createdelight:mmd_diamond", coal_64)
+  //   .heated()
+  //   .id("createdelight:mmd_diamond_A");
+
+  // 能源元件
+  create
+    .sequenced_assembly("ae2:energy_cell", "ae2:quartz_glass", [
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
+    ])
+    .id("createdelight:energy_cell_A")
+    .transitionalItem("ae2:quartz_glass")
+    .loops(1);
+  create
+    .sequenced_assembly("ae2:energy_cell", "createdelight:quartz_glass_parts", [
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:dusts/fluix",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:gems/certus_quartz",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:dusts/fluix",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:gems/certus_quartz",
+      ]),
+    ])
+    .id("createdelight:energy_cell_B")
+    .transitionalItem("createdelight:quartz_glass_parts")
+    .loops(1);
+
+  // 致密能源元件
+  create
+    .sequenced_assembly(
+      "ae2:dense_energy_cell",
+      "ae2:calculation_processor",
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "ae2:energy_cell",
+      ])
+    )
+    .id("createdelight:dense_energy_cell")
+    .transitionalItem("ae2:calculation_processor")
+    .loops(4);
+
+  // 超密能源元件
+  create
+    .sequenced_assembly(
+      "megacells:mega_energy_cell",
+      "megacells:accumulation_processor",
+      create.deploying("megacells:accumulation_processor", [
+        "megacells:accumulation_processor",
+        "ae2:energy_cell",
+      ])
+    )
+    .id("createdelight:mega_energy_cell")
+    .transitionalItem("megacells:accumulation_processor")
+    .loops(4);
+});
