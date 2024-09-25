@@ -32,6 +32,7 @@ function deep_frying(output, input, time) {
         "frycooks_delight:lard",
         "frycooks_delight:lard_block"
     ])
+    
     package_item(e, 'frycooks_delight:canola', 'frycooks_delight:canola_crate', 9)
     deep_frying('frycooks_delight:fried_potato', 'minecraft:potato', 100)
     deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
@@ -45,4 +46,9 @@ function deep_frying(output, input, time) {
         Fluid.of("createdieselgenerators:plant_oil", 500),
         "2x vintagedelight:roasted_peanut"
     ).id("createdieselgenerators:compacting/plant_oil_from_peanut")
+    e.recipes.ratatouille.threshing([
+        "2x frycooks_delight:canola_seeds",
+        Item.of("2x frycooks_delight:canola_seeds").withChance(0.5)
+    ],
+    "frycooks_delight:canola")
 })

@@ -94,6 +94,10 @@ ServerEvents.recipes((event) => {
     "ae2:printed_logic_processor",
     "2x #forge:dusts/redstone",
   ]);
+  kubejs.shapeless("createdelight:initial_processing_of_printed_accumulation_processor", [
+    "megacells:printed_accumulation_processor",
+    "2x #forge:dusts/fluix",
+  ]);
   vintageimprovements.vacuumizing(
     "createdelight:initial_processing_of_printed_engineering_processor",
     ["ae2:printed_engineering_processor", "#forge:dusts/redstone"]
@@ -106,6 +110,10 @@ ServerEvents.recipes((event) => {
     "ae2:printed_logic_processor",
     "#forge:dusts/redstone",
   ]);
+  vintageimprovements.vacuumizing(
+    "createdelight:initial_processing_of_printed_accumulation_processor",
+    ["megacells:printed_accumulation_processor", "#forge:dusts/fluix"]
+  );
   create
     .sequenced_assembly(
       "createdelight:initial_processing_of_printed_engineering_processor",
@@ -142,6 +150,18 @@ ServerEvents.recipes((event) => {
     .id("createdelight:initial_processing_of_printed_processor_3")
     .transitionalItem("ae2:printed_logic_processor")
     .loops(2);
+  create
+    .sequenced_assembly(
+      "createdelight:initial_processing_of_printed_accumulation_processor",
+      "megacells:printed_accumulation_processor",
+      create.deploying("megacells:printed_accumulation_processor", [
+        "megacells:printed_accumulation_processor",
+        "#forge:dusts/fluix",
+      ])
+    )
+    .id("createdelight:initial_processing_of_printed_processor_4")
+    .transitionalItem("megacells:printed_accumulation_processor")
+    .loops(2);
   kubejs
     .shapeless("createdelight:initial_processing_of_printed_engineering_processor", [
       "ae2:printed_engineering_processor",
@@ -174,6 +194,10 @@ ServerEvents.recipes((event) => {
     "createdelight:initial_processing_of_printed_logic_processor",
     "ae2:printed_silicon",
   ]);
+  kubejs.shapeless("createdelight:accumulation_processor_inscribed", [
+    "createdelight:initial_processing_of_printed_accumulation_processor",
+    "ae2:printed_silicon",
+  ]);
   create
     .deploying("createdelight:engineering_processor_inscribed", [
       "createdelight:initial_processing_of_printed_engineering_processor",
@@ -192,6 +216,12 @@ ServerEvents.recipes((event) => {
       "ae2:printed_silicon",
     ])
     .id("createdelight:processor_inscribed_3");
+  create
+    .deploying("createdelight:accumulation_processor_inscribed", [
+      "createdelight:initial_processing_of_printed_accumulation_processor",
+      "ae2:printed_silicon",
+    ])
+    .id("createdelight:processor_inscribed_7");
 
   // 红石膏合成
   create
@@ -211,6 +241,10 @@ ServerEvents.recipes((event) => {
     .curving("ae2:logic_processor", "createdelight:logic_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_6");
+  vintageimprovements
+    .curving("megacells:accumulation_processor", "createdelight:accumulation_processor_inscribed")
+    .mode(2)
+    .id("createdelight:processor_inscribed_8");
 
   // 陨钢锭
   create
@@ -890,7 +924,6 @@ ServerEvents.recipes((event) => {
     .deploying(Item.of("megacells:cell_dock", 10), ["ae2:drive", "#forge:ingots/sky_steel"])
     .id("createdelight:cell_dock_1");
 
-  //
   // 1K存储元件
   create
     .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
@@ -985,7 +1018,7 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
         "ae2:calculation_processor",
@@ -1007,7 +1040,7 @@ ServerEvents.recipes((event) => {
         "createdelight:redstone_paste",
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
+
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
         "ae2:calculation_processor",
@@ -1029,7 +1062,6 @@ ServerEvents.recipes((event) => {
         "#forge:dusts/redstone",
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
         "ae2:calculation_processor",
@@ -1048,7 +1080,6 @@ ServerEvents.recipes((event) => {
       vintageimprovements.polishing("ae2:cell_component_1k", "ae2:cell_component_1k"),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "#forge:dusts/redstone"]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
@@ -1074,7 +1105,6 @@ ServerEvents.recipes((event) => {
         "createdelight:redstone_paste",
       ]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
         "ae2:calculation_processor",
@@ -1098,7 +1128,6 @@ ServerEvents.recipes((event) => {
         "ae2:certus_quartz_crystal",
         "#forge:dusts/redstone",
       ]),
-      create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", ["ae2:cell_component_1k", "ae2:cell_component_1k"]),
       create.deploying("ae2:cell_component_1k", [
         "ae2:cell_component_1k",
@@ -1137,8 +1166,6 @@ ServerEvents.recipes((event) => {
         "#forge:dusts/glowstone",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1164,8 +1191,6 @@ ServerEvents.recipes((event) => {
         "createdelight:glowstone_paste",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1188,8 +1213,6 @@ ServerEvents.recipes((event) => {
         "#forge:dusts/glowstone",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1223,8 +1246,6 @@ ServerEvents.recipes((event) => {
         "#forge:dusts/glowstone",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1253,8 +1274,6 @@ ServerEvents.recipes((event) => {
         "createdelight:glowstone_paste",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1280,8 +1299,6 @@ ServerEvents.recipes((event) => {
         "#forge:dusts/glowstone",
       ]),
       create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-      create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k", "ae2:cell_component_4k"]),
-
       create.deploying("ae2:cell_component_4k", [
         "ae2:cell_component_4k",
         "ae2:calculation_processor",
@@ -1324,11 +1341,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_16k", ["ae2:cell_component_16k", "ae2:quartz_glass"]),
@@ -1357,11 +1369,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_16k", ["ae2:cell_component_16k", "ae2:quartz_glass"]),
@@ -1385,11 +1392,6 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_16k",
         "ae2:cell_component_16k",
       ]),
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
         "ae2:calculation_processor",
@@ -1428,11 +1430,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_16k", [
@@ -1464,11 +1461,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_16k", [
@@ -1495,11 +1487,6 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_16k",
         "ae2:cell_component_16k",
       ]),
-      create.deploying("ae2:cell_component_16k", [
-        "ae2:cell_component_16k",
-        "ae2:cell_component_16k",
-      ]),
-
       create.deploying("ae2:cell_component_16k", [
         "ae2:cell_component_16k",
         "ae2:calculation_processor",
@@ -1530,11 +1517,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
@@ -1563,11 +1545,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
@@ -1593,11 +1570,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_64k", ["ae2:cell_component_64k", "ae2:quartz_glass"]),
@@ -1620,11 +1592,6 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_64k",
         "ae2:cell_component_64k",
       ]),
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
         "ae2:calculation_processor",
@@ -1658,11 +1625,6 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
         "ae2:calculation_processor",
       ]),
       create.deploying("ae2:cell_component_64k", [
@@ -1687,17 +1649,12 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
+        "ae2:cell_component_64k",
+      ]),
+      create.deploying("ae2:cell_component_64k", [
+        "ae2:cell_component_64k",
         "ae2:calculation_processor",
       ]),
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-      create.deploying("ae2:cell_component_64k", [
-        "ae2:cell_component_64k",
-        "ae2:cell_component_64k",
-      ]),
-
       create.deploying("ae2:cell_component_64k", [
         "ae2:cell_component_64k",
         "createdelight:quartz_glass_parts",
@@ -1722,13 +1679,8 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_256k",
         "ae2:cell_component_256k",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
       create.deploying("ae2:cell_component_256k", [
@@ -1758,13 +1710,8 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_256k",
         "ae2:cell_component_256k",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
       create.deploying("ae2:cell_component_256k", [
@@ -1791,13 +1738,8 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_256k",
         "ae2:cell_component_256k",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
       create.deploying("ae2:cell_component_256k", [
@@ -1823,13 +1765,8 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_256k",
         "ae2:cell_component_256k",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
       create.deploying("ae2:cell_component_256k", [
@@ -1859,13 +1796,8 @@ ServerEvents.recipes((event) => {
         "ae2:cell_component_256k",
         "ae2:cell_component_256k",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
       create.deploying("ae2:cell_component_256k", [
@@ -1890,17 +1822,12 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("ae2:cell_component_256k", [
         "ae2:cell_component_256k",
+        "ae2:cell_component_256k",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
         "megacells:accumulation_processor",
       ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-      create.deploying("ae2:cell_component_256k", [
-        "ae2:cell_component_256k",
-        "ae2:cell_component_256k",
-      ]),
-
       create.deploying("ae2:cell_component_256k", [
         "ae2:cell_component_256k",
         "createdelight:quartz_vibrant_glass_parts",
@@ -1912,6 +1839,770 @@ ServerEvents.recipes((event) => {
     .id("createdelight:cell_component_1m_F")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
-});
 
-// create.deploying("ae2:cell_component_4k", ["ae2:cell_component_4k"]),
+  // 4M存储组件
+  create
+    .sequenced_assembly("megacells:cell_component_4m", "megacells:cell_component_1m", [
+      vintageimprovements.polishing("megacells:cell_component_1m", "megacells:cell_component_1m"),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:cell_component_1m",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4m_A")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_1m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_4m", "megacells:cell_component_1m", [
+      vintageimprovements.polishing("megacells:cell_component_1m", "megacells:cell_component_1m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:cell_component_1m",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4m_C")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_1m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_4m", "megacells:cell_component_1m", [
+      vintageimprovements.polishing("megacells:cell_component_1m", "megacells:cell_component_1m"),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:cell_component_1m",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4m_D")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_1m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_4m", "megacells:cell_component_1m", [
+      vintageimprovements.polishing("megacells:cell_component_1m", "megacells:cell_component_1m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "#forge:dusts/ender_pearl",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "megacells:cell_component_1m",
+      ]),
+      create.deploying("megacells:cell_component_1m", [
+        "megacells:cell_component_1m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_4m_F")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_1m");
+
+  // 16M存储组件
+  create
+    .sequenced_assembly("megacells:cell_component_16m", "megacells:cell_component_4m", [
+      vintageimprovements.polishing("megacells:cell_component_4m", "megacells:cell_component_4m"),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:cell_component_4m",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16m_A")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_4m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_16m", "megacells:cell_component_4m", [
+      vintageimprovements.polishing("megacells:cell_component_4m", "megacells:cell_component_4m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:cell_component_4m",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16m_C")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_4m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_16m", "megacells:cell_component_4m", [
+      vintageimprovements.polishing("megacells:cell_component_4m", "megacells:cell_component_4m"),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:cell_component_4m",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16m_D")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_4m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_16m", "megacells:cell_component_4m", [
+      vintageimprovements.polishing("megacells:cell_component_4m", "megacells:cell_component_4m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "#forge:dusts/ender_pearl",
+        "#forge:dusts/ender_pearl",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "megacells:cell_component_4m",
+      ]),
+      create.deploying("megacells:cell_component_4m", [
+        "megacells:cell_component_4m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_16m_F")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_4m");
+
+  // 64M存储组件
+  create
+    .sequenced_assembly("megacells:cell_component_64m", "megacells:cell_component_16m", [
+      vintageimprovements.polishing("megacells:cell_component_16m", "megacells:cell_component_16m"),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:cell_component_16m",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64m_A")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_16m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_64m", "megacells:cell_component_16m", [
+      vintageimprovements.polishing("megacells:cell_component_16m", "megacells:cell_component_16m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:cell_component_16m",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64m_C")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_16m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_64m", "megacells:cell_component_16m", [
+      vintageimprovements.polishing("megacells:cell_component_16m", "megacells:cell_component_16m"),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:cell_component_16m",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64m_D")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_16m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_64m", "megacells:cell_component_16m", [
+      vintageimprovements.polishing("megacells:cell_component_16m", "megacells:cell_component_16m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "ae2:matter_ball",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "megacells:cell_component_16m",
+      ]),
+      create.deploying("megacells:cell_component_16m", [
+        "megacells:cell_component_16m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_64m_F")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_16m");
+
+  // 256M存储组件
+  create
+    .sequenced_assembly("megacells:cell_component_256m", "megacells:cell_component_64m", [
+      vintageimprovements.polishing("megacells:cell_component_64m", "megacells:cell_component_64m"),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:cell_component_64m",
+      ]),
+
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256m_A")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_64m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_256m", "megacells:cell_component_64m", [
+      vintageimprovements.polishing("megacells:cell_component_64m", "megacells:cell_component_64m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:cell_component_64m",
+      ]),
+
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:quartz_vibrant_glass",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256m_C")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_64m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_256m", "megacells:cell_component_64m", [
+      vintageimprovements.polishing("megacells:cell_component_64m", "megacells:cell_component_64m"),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:cell_component_64m",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256m_D")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_64m");
+
+  create
+    .sequenced_assembly("megacells:cell_component_256m", "megacells:cell_component_64m", [
+      vintageimprovements.polishing("megacells:cell_component_64m", "megacells:cell_component_64m"),
+      vintageimprovements.vacuumizing("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "ae2:matter_ball",
+        "ae2:matter_ball",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "megacells:cell_component_64m",
+      ]),
+      create.deploying("megacells:cell_component_64m", [
+        "megacells:cell_component_64m",
+        "createdelight:quartz_vibrant_glass_parts",
+      ]),
+      vintageimprovements
+        .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
+        .head("createdelight:cell_housing_curving_head"),
+    ])
+    .id("createdelight:cell_component_256m_F")
+    .loops(1)
+    .transitionalItem("megacells:cell_component_64m");
+
+  // 存储组件动力合成
+  create
+    .mechanical_crafting("ae2:cell_component_1k", ["ABA", "BCB", "ABA"], {
+      A: "#forge:dusts/redstone",
+      B: "#forge:gems/certus_quartz",
+      C: "ae2:logic_processor",
+    })
+    .id("createdelight:mechanical_crafting_1k");
+  create
+    .mechanical_crafting("ae2:cell_component_4k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/redstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_1k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_4k");
+  create
+    .mechanical_crafting("ae2:cell_component_16k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/glowstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_4k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_16k");
+  create
+    .mechanical_crafting("ae2:cell_component_64k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/glowstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_16k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_64k");
+  create
+    .mechanical_crafting("ae2:cell_component_256k", ["ABA", "CDC", "ACA"], {
+      A: "ae2:sky_dust",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_64k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_256k");
+  create
+    .mechanical_crafting("megacells:cell_component_1m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:sky_dust",
+      B: "megacells:accumulation_processor",
+      C: "ae2:cell_component_256k",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_1m");
+  create
+    .mechanical_crafting("megacells:cell_component_4m", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/ender_pearl",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_1m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_4m");
+  create
+    .mechanical_crafting("megacells:cell_component_16m", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/ender_pearl",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_4m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_16m");
+  create
+    .mechanical_crafting("megacells:cell_component_64m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:matter_ball",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_16m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_64m");
+  create
+    .mechanical_crafting("megacells:cell_component_256m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:matter_ball",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_64m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_256m");
+
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_1k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_4k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_16k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_64k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_256k_part" });
+  event.remove({ id: "megacells:cells/cell_component_1m" });
+  event.remove({ id: "megacells:cells/cell_component_4m" });
+  event.remove({ id: "megacells:cells/cell_component_16m" });
+  event.remove({ id: "megacells:cells/cell_component_64m" });
+  event.remove({ id: "megacells:cells/cell_component_256m" });
+
+  // 水晶修复器
+  create
+    .sequenced_assembly("expatternprovider:crystal_fixer", "#forge:storage_blocks/iron", [
+      create.pressing("#forge:storage_blocks/iron", "#forge:storage_blocks/iron"),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/fluix",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:rods/iron",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:rods/iron",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/certus_quartz",
+      ]),
+      create.deploying("#forge:storage_blocks/iron", [
+        "#forge:storage_blocks/iron",
+        "#forge:gems/certus_quartz",
+      ]),
+    ])
+    .transitionalItem("#forge:storage_blocks/iron")
+    .id("createdelight:crystal_fixer")
+    .loops(1);
+  event.remove({ id: "expatternprovider:crystal_fixer" });
+
+  // MEGA解压缩模块
+  create
+    .sequenced_assembly("megacells:decompression_module", "#forge:ingots/sky_steel", [
+      create.pressing("#forge:ingots/sky_steel", "#forge:ingots/sky_steel"),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "megacells:compression_card",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:logic_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("#forge:ingots/sky_steel", [
+        "#forge:ingots/sky_steel",
+        "ae2:engineering_processor",
+      ]),
+    ])
+    .id("createdelight:decompression_module")
+    .transitionalItem("#forge:ingots/sky_steel")
+    .loops(1);
+  event.remove({ id: "megacells:crafting/decompression_module" });
+
+  // // 人工钻石
+  // let coal_64 = [Fluid.of("minecraft:lava", 250)];
+  // for (let i = 0; i < 64; i++) {
+  //   coal_64.push("#minecraft:coals");
+  // }
+  // vintageimprovements
+  //   .pressurizing("createdelight:mmd_diamond", coal_64)
+  //   .heated()
+  //   .id("createdelight:mmd_diamond_A");
+
+  // 能源元件
+  create
+    .sequenced_assembly("ae2:energy_cell", "ae2:quartz_glass", [
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
+      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
+    ])
+    .id("createdelight:energy_cell_A")
+    .transitionalItem("ae2:quartz_glass")
+    .loops(1);
+  create
+    .sequenced_assembly("ae2:energy_cell", "createdelight:quartz_glass_parts", [
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:dusts/fluix",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:gems/certus_quartz",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:dusts/fluix",
+      ]),
+      create.deploying("createdelight:quartz_glass_parts", [
+        "createdelight:quartz_glass_parts",
+        "#forge:gems/certus_quartz",
+      ]),
+    ])
+    .id("createdelight:energy_cell_B")
+    .transitionalItem("createdelight:quartz_glass_parts")
+    .loops(1);
+
+  // 致密能源元件
+  create
+    .sequenced_assembly(
+      "ae2:dense_energy_cell",
+      "ae2:calculation_processor",
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "ae2:energy_cell",
+      ])
+    )
+    .id("createdelight:dense_energy_cell")
+    .transitionalItem("ae2:calculation_processor")
+    .loops(4);
+
+  // 超密能源元件
+  create
+    .sequenced_assembly(
+      "megacells:mega_energy_cell",
+      "megacells:accumulation_processor",
+      create.deploying("megacells:accumulation_processor", [
+        "megacells:accumulation_processor",
+        "ae2:energy_cell",
+      ])
+    )
+    .id("createdelight:mega_energy_cell")
+    .transitionalItem("megacells:accumulation_processor")
+    .loops(4);
+});

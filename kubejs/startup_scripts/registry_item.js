@@ -363,6 +363,8 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.initial_processing_of_printed_calculation_processor")
     e.create("createdelight:initial_processing_of_printed_logic_processor")
         .translationKey("item.createdelight.initial_processing_of_printed_logic_processor")
+    e.create("createdelight:initial_processing_of_printed_accumulation_processor")
+        .translationKey("item.createdelight.initial_processing_of_printed_accumulation_processor")
     // 待压印的处理器
     e.create("createdelight:engineering_processor_inscribed")
         .translationKey("item.createdelight.engineering_processor_inscribed")
@@ -370,6 +372,9 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.calculation_processor_inscribed")
     e.create("createdelight:logic_processor_inscribed")
         .translationKey("item.createdelight.logic_processor_inscribed")
+    e.create("createdelight:accumulation_processor_inscribed")
+        .translationKey("item.createdelight.accumulation_processor_inscribed")
+
     // 元件外壳坯件
     e.create("createdelight:item_cell_housing_blank")
         .translationKey("item.createdelight.item_cell_housing_blank")
@@ -447,4 +452,7 @@ StartupEvents.registry("item", e => {
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
         .translationKey("item.createdelight.phase_transition_iron")
+    // 人造钻石（别给加钻石tag）
+    e.create("createdelight:mmd_diamond")
+        .translationKey("item.createdelight.mmd_diamond")
 })
