@@ -8,8 +8,8 @@ EntityEvents.spawned(e => {
         "iceandfire:dread_lich_skull",
         "iceandfire:dread_scuttler",
         "iceandfire:dread_thrall"]
-    // 苍蝇生成
-    if (dread_monster.find(e.entity.type)) {
+    // 悚怖怪生成
+    if (dread_monster.indexOf(e.entity.type) != -1) {
         if (e.level.dimension != "ad_astra:glacio") {
             e.cancel()
         }
