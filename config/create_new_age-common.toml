@@ -1,7 +1,7 @@
 #Responsible for how much energy is generated per 1 stress unit in a tick
 #Default value is supposed to be compatible with default configuration of Create: Crafts and Additions
 #Range: 0.0 ~ 1.7976931348623157E308
-suToEnergy = 0.029296875
+suToEnergy = 0.30517578125
 #How many coils can the carbon brushes collect energy from
 #Range: > 0
 maxCoils = 8
