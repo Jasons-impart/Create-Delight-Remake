@@ -1,0 +1,135 @@
+{
+	"size": "large",
+	"color": "#2F4F4F",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "alexsmobs:enderiophage",
+					"count": 4
+				},
+                {
+                    "entity": "alexsmobs:soul_vulture",
+                    "count": 2
+                },
+                {
+                    "entity": "minecraft:wither_skeleton",
+                    "count": 10
+                },
+				{
+                    "entity": "iceandfire:cockatrice",
+                    "count": 2
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 1,
+                        "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
+				}
+			],
+			"max_wave_time": 600,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexsmobs:enderiophage",
+					"count": 4
+				},
+                {
+                    "entity": "alexsmobs:soul_vulture",
+                    "count": 2
+                },
+                {
+                    "entity": "minecraft:wither_skeleton",
+                    "count": 16
+                },
+				{
+                    "entity": "iceandfire:cockatrice",
+                    "count": 2
+                }
+			],
+            "rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecraft:wither_skeleton",
+					"rolls": 40
+				}
+			],
+			
+			"max_wave_time": 600,
+			"setup_time": 200
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexsmobs:enderiophage",
+					"count": 4
+				},
+                {
+                    "entity": "alexsmobs:soul_vulture",
+                    "count": 2
+                },
+                {
+                    "entity": "minecraft:wither_skeleton",
+                    "count": 16
+                },
+				{
+                    "entity": "iceandfire:cockatrice",
+                    "count": 4
+                }
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecraft:wither_skeleton",
+					"rolls": 120
+				}
+			],
+			"max_wave_time": 600,
+			"setup_time": 200
+		},
+        {
+            "entities": [
+				{
+					"entity": "alexsmobs:enderiophage",
+					"count": 2
+				},
+                {
+                    "entity": "alexsmobs:soul_vulture",
+                    "count": 2
+                },
+                {
+                    "entity": "minecraft:wither_skeleton",
+                    "count": 18
+                },
+                {
+                    "entity": "alexsmobs:warped_mosco",
+                    "count": 2
+                }
+			],
+            "rewards": [
+				{
+					"type": "gateways:stack",
+					 "stack": {
+						 "item": "gateways:gate_pearl", 
+						 "count": 1,
+						 "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
+				 }
+			],
+            "max_wave_time": 600,
+			"setup_time": 200
+        }
+     ],
+	"failures": [
+		{
+			"type": "gateways:explosion",
+			"strength": 6,
+			"fire": true,
+			"block_damage": true
+			}
+	]
+}

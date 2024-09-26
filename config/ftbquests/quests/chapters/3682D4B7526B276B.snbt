@@ -53,17 +53,17 @@
 		}
 		{
 			dependencies: ["35D6F762D597A198"]
-			icon: "minecraft:andesite"
+			icon: "create:andesite_alloy"
 			id: "016DEA2CE35A5D5B"
 			rewards: [{
 				count: 64
-				id: "1C8E2ACA144274F5"
-				item: "minecraft:andesite"
+				icon: "create:andesite_alloy"
+				id: "62C970F98CFB3629"
+				item: "create:andesite_alloy"
 				type: "item"
 			}]
 			tasks: [{
 				consume_items: true
-				count: 3L
 				id: "341D50CB9A6F9045"
 				item: "createdelightcore:iron_coin"
 				type: "item"
@@ -133,17 +133,16 @@
 		}
 		{
 			dependencies: ["35D6F762D597A198"]
-			icon: "create:zinc_nugget"
+			icon: "minecraft:copper_ingot"
 			id: "2FC4BB6A441C2059"
 			rewards: [{
 				count: 64
-				id: "1E0A62B8CD67615D"
-				item: "create:zinc_nugget"
+				id: "6DB94A30B5DA3FF0"
+				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
 			tasks: [{
 				consume_items: true
-				count: 3L
 				id: "738B28FD7401DDAC"
 				item: "createdelightcore:iron_coin"
 				type: "item"
@@ -203,6 +202,7 @@
 			}]
 			tasks: [{
 				consume_items: true
+				count: 2L
 				id: "584FF37D80A85D41"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -233,6 +233,7 @@
 			}]
 			tasks: [{
 				consume_items: true
+				count: 4L
 				id: "77581598D78C3382"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -256,6 +257,7 @@
 			}]
 			tasks: [{
 				consume_items: true
+				count: 8L
 				id: "63F5058E702B7BC9"
 				item: "createdelightcore:netherite_coin"
 				type: "item"
@@ -336,6 +338,41 @@
 				type: "checkmark"
 			}]
 			x: -2.0d
+			y: -11.5d
+		}
+		{
+			icon: "create:brass_ingot"
+			id: "5DDF3FC19E7CD16B"
+			rewards: [{
+				count: 64
+				id: "14FE26842C0699B1"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			tasks: [{
+				count: 3L
+				id: "7649C53C0C8E0C35"
+				item: "createdelightcore:iron_coin"
+				type: "item"
+			}]
+			x: -9.5d
+			y: -14.0d
+		}
+		{
+			icon: "create:mechanical_crafter"
+			id: "3ECFD50C5EA743E6"
+			rewards: [{
+				count: 7
+				id: "67426C3D9F89DE77"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7E513A9CD809F6EE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			x: -6.5d
 			y: -11.5d
 		}
 	]
