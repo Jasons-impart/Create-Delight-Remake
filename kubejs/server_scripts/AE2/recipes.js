@@ -8,12 +8,11 @@ P2P奇点
 空间元件
 红石互动生成陨石
 Jason的相变铁世界生成
+人造钻石适配
 */
 
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create } = event.recipes;
-
-  remove_recipes_output(event, "ae2:inscriber");
 
   // 电路板配方
   vintageimprovements
@@ -2534,15 +2533,15 @@ ServerEvents.recipes((event) => {
     .loops(1);
   event.remove({ id: "megacells:crafting/decompression_module" });
 
-  // // 人工钻石
-  // let coal_64 = [Fluid.of("minecraft:lava", 250)];
-  // for (let i = 0; i < 64; i++) {
-  //   coal_64.push("#minecraft:coals");
-  // }
-  // vintageimprovements
-  //   .pressurizing("createdelight:mmd_diamond", coal_64)
-  //   .heated()
-  //   .id("createdelight:mmd_diamond_A");
+  // 人工钻石
+  let coal_64 = [Fluid.of("minecraft:lava", 250)];
+  for (let i = 0; i < 64; i++) {
+    coal_64.push("minecraft:coal");
+  }
+  vintageimprovements
+    .pressurizing("createdelight:mmd_diamond", coal_64)
+    .heated()
+    .id("createdelight:mmd_diamond_A");
 
   // 能源元件
   create
@@ -2605,4 +2604,184 @@ ServerEvents.recipes((event) => {
     .id("createdelight:mega_energy_cell")
     .transitionalItem("megacells:accumulation_processor")
     .loops(4);
+
+  // 福鲁伊克斯珍珠
+  create
+    .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "2x #forge:gems/fluix"])
+    .id("createdelight:fluix_pearl_A");
+  create
+    .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "2x #forge:dusts/fluix"])
+    .id("createdelight:fluix_pearl_B");
+  create
+    .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "#forge:gems/fluix", "#forge:dusts/fluix"])
+    .id("createdelight:fluix_pearl_C");
+
+  // 无线终端
+  create
+    .sequenced_assembly("ae2:wireless_terminal", "ae2:terminal", [
+      create.deploying("ae2:terminal", ["ae2:terminal", "ae2:dense_energy_cell"]),
+      create.deploying("ae2:terminal", ["ae2:terminal", "ae2:wireless_receiver"]),
+      create.deploying("ae2:terminal", ["ae2:terminal", "#ae2:quartz_wrench"]).keepHeldItem(),
+    ])
+    .loops(1)
+    .transitionalItem("ae2:terminal")
+    .id("createdelight:wireless_terminal");
+  event.remove({ id: "ae2:network/wireless_terminal" });
+
+  create
+    .sequenced_assembly("ae2:wireless_crafting_terminal", "ae2:crafting_terminal", [
+      create.deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "ae2:dense_energy_cell"]),
+      create.deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "ae2:wireless_receiver"]),
+      create
+        .deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "#ae2:quartz_wrench"])
+        .keepHeldItem(),
+    ])
+    .loops(1)
+    .transitionalItem("ae2:crafting_terminal")
+    .id("createdelight:wireless_crafting_terminal_A");
+  event.remove({ id: "ae2:network/wireless_crafting_terminal" });
+
+  create
+    .sequenced_assembly(
+      "ae2wtlib:wireless_pattern_access_terminal",
+      "ae2:pattern_access_terminal",
+      [
+        create.deploying("ae2:pattern_access_terminal", [
+          "ae2:pattern_access_terminal",
+          "ae2:dense_energy_cell",
+        ]),
+        create.deploying("ae2:pattern_access_terminal", [
+          "ae2:pattern_access_terminal",
+          "ae2:wireless_receiver",
+        ]),
+        create
+          .deploying("ae2:pattern_access_terminal", [
+            "ae2:pattern_access_terminal",
+            "#ae2:quartz_wrench",
+          ])
+          .keepHeldItem(),
+      ]
+    )
+    .loops(1)
+    .transitionalItem("ae2:pattern_access_terminal")
+    .id("createdelight:wireless_pattern_access_terminal");
+  event.remove({ id: "ae2wtlib:pattern_access/wireless_pattern_access_terminal" });
+
+  create
+    .sequenced_assembly(
+      "ae2wtlib:wireless_pattern_encoding_terminal",
+      "ae2:pattern_encoding_terminal",
+      [
+        create.deploying("ae2:pattern_encoding_terminal", [
+          "ae2:pattern_encoding_terminal",
+          "ae2:dense_energy_cell",
+        ]),
+        create.deploying("ae2:pattern_encoding_terminal", [
+          "ae2:pattern_encoding_terminal",
+          "ae2:wireless_receiver",
+        ]),
+        create
+          .deploying("ae2:pattern_encoding_terminal", [
+            "ae2:pattern_encoding_terminal",
+            "#ae2:quartz_wrench",
+          ])
+          .keepHeldItem(),
+      ]
+    )
+    .loops(1)
+    .transitionalItem("ae2:pattern_encoding_terminal")
+    .id("createdelight:wireless_pattern_encoding_terminal");
+  event.remove({ id: "ae2wtlib:pattern_encoding/wireless_pattern_encoding_terminal" });
+
+  create
+    .sequenced_assembly(
+      "expatternprovider:wireless_ex_pat",
+      "expatternprovider:ex_pattern_access_part",
+      [
+        create.deploying("expatternprovider:ex_pattern_access_part", [
+          "expatternprovider:ex_pattern_access_part",
+          "ae2:dense_energy_cell",
+        ]),
+        create.deploying("expatternprovider:ex_pattern_access_part", [
+          "expatternprovider:ex_pattern_access_part",
+          "ae2:wireless_receiver",
+        ]),
+        create
+          .deploying("expatternprovider:ex_pattern_access_part", [
+            "expatternprovider:ex_pattern_access_part",
+            "#ae2:quartz_wrench",
+          ])
+          .keepHeldItem(),
+      ]
+    )
+    .loops(1)
+    .transitionalItem("expatternprovider:ex_pattern_access_part")
+    .id("createdelight:wireless_ex_pat");
+  event.remove({ id: "expatternprovider:wireless_ex_pat" });
+
+  create
+    .sequenced_assembly("ae2:wireless_crafting_terminal", "ae2:wireless_terminal", [
+      create.deploying("ae2:wireless_terminal", ["ae2:wireless_terminal", "#forge:workbench"]),
+      create.deploying("ae2:wireless_terminal", [
+        "ae2:wireless_terminal",
+        "ae2:calculation_processor",
+      ]),
+    ])
+    .transitionalItem("ae2:wireless_terminal")
+    .id("createdelight:wireless_crafting_terminal_B")
+    .loops(1);
+  event.remove({ id: "ae2:network/upgrade_wireless_crafting_terminal" });
+
+  // 无线接收器
+  kubejs.shaped("ae2:wireless_receiver", ["A", "B", "C"], {
+    A: "ae2:fluix_pearl",
+    B: "#ae2:p2p_attunements/me_p2p_tunnel",
+    C: "#forge:plates/iron",
+  });
+  event.replaceInput(
+    { id: "ae2:network/wireless_part" },
+    "ae2:quartz_fiber",
+    "#ae2:p2p_attunements/me_p2p_tunnel"
+  );
+
+  // 终端
+  create
+    .sequenced_assembly("ae2:pattern_access_terminal", "#ae2:illuminated_panel", [
+      create.deploying("#ae2:illuminated_panel", [
+        "#ae2:illuminated_panel",
+        "ae2:engineering_processor",
+      ]),
+      create.deploying("#ae2:illuminated_panel", [
+        "#ae2:illuminated_panel",
+        "ae2:cable_pattern_provider",
+      ]),
+    ])
+    .id("createdelight:pattern_access_terminal")
+    .loops(1)
+    .transitionalItem("#ae2:illuminated_panel");
+  event.remove({ id: "ae2:network/parts/terminals_pattern_access" });
+
+  create
+    .sequenced_assembly("ae2:terminal", "#ae2:illuminated_panel", [
+      create.deploying("#ae2:illuminated_panel", ["#ae2:illuminated_panel", "ae2:formation_core"]),
+      create.deploying("#ae2:illuminated_panel", ["#ae2:illuminated_panel", "ae2:logic_processor"]),
+      create.deploying("#ae2:illuminated_panel", [
+        "#ae2:illuminated_panel",
+        "ae2:annihilation_core",
+      ]),
+    ])
+    .id("createdelight:terminal_2")
+    .loops(1)
+    .transitionalItem("#ae2:illuminated_panel");
+  event.remove({ id: "ae2:network/parts/terminals" });
+
+  create
+    .sequenced_assembly("ae2:crafting_terminal", "ae2:terminal", [
+      create.deploying("ae2:terminal", ["ae2:terminal", "#forge:workbench"]),
+      create.deploying("ae2:terminal", ["ae2:terminal", "ae2:calculation_processor"]),
+    ])
+    .transitionalItem("ae2:terminal")
+    .id("createdelight:terminal_B")
+    .loops(1);
+  event.remove({ id: "ae2:network/parts/terminals_crafting" });
 });
