@@ -270,7 +270,7 @@ StartupEvents.registry("item", e => {
                .saturation(0.6)
                .effect("minecraft:resistance", 500, 2, 1.0)
                .effect("farmersdelight:nourishment", 3000, 1, 1.0)
-               .effect("minecraft:fire", 20, 1, 1.0)
+               .effect("mynethersdelight:g_pungent", 20, 1, 1.0)
                
 
         })
@@ -343,6 +343,7 @@ StartupEvents.registry("item", e => {
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
+        .tag('ae2:inscriber_presses')
         .translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")

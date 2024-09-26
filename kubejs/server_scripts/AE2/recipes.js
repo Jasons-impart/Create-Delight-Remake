@@ -16,7 +16,7 @@ ServerEvents.recipes((event) => {
 
   // 电路板配方
   vintageimprovements
-    .curving("ae2:printed_engineering_processor", "minecraft:diamond")
+    .curving("ae2:printed_engineering_processor", "#forge:gems/diamond")
     .head("createdelight:universal_press")
     .id("createdelight:universal_press_1");
   vintageimprovements
@@ -40,7 +40,7 @@ ServerEvents.recipes((event) => {
     .head("createdelight:universal_press")
     .id("createdelight:universal_press_6");
 
-  let custom_inscribe = (result, middle) => {
+  let custom_inscribe = (result, middle, other) => {
     event
       .custom({
         type: "ae2:inscriber",
@@ -51,10 +51,11 @@ ServerEvents.recipes((event) => {
         mode: "inscribe",
         result: { item: result },
       })
-      .id(`${result}_recipe`);
+      .id(`${result}_recipe${other}`);
   };
 
-  custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond");
+  custom_inscribe("ae2:printed_engineering_processor", "createdelight:mmd_diamond", "_A");
+  custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond", "_B");
   custom_inscribe("megacells:printed_accumulation_processor", "megacells:sky_steel_ingot");
   custom_inscribe("ae2:printed_logic_processor", "minecraft:gold_ingot");
   custom_inscribe("ae2:printed_silicon", "ae2:silicon");
@@ -2784,4 +2785,146 @@ ServerEvents.recipes((event) => {
     .id("createdelight:terminal_B")
     .loops(1);
   event.remove({ id: "ae2:network/parts/terminals_crafting" });
+
+  // 照明元件
+  kubejs.shaped("3x ae2:semi_dark_monitor", ["ABC", "ADC", "ABC"], {
+    A: "#forge:ingots/iron",
+    B: "#forge:dusts/glowstone",
+    C: "ae2:quartz_glass",
+    D: "#forge:dusts/redstone",
+  });
+  event.replaceInput(
+    { id: "ae2:network/parts/panels_semi_dark_monitor" },
+    "minecraft:iron_ingot",
+    "#forge:plates/iron"
+  );
+
+  // 基础卡
+  kubejs.shaped("ae2:basic_card", ["ABB", "CDB", "ABB"], {
+    A: "#forge:ingots/gold",
+    B: "#forge:plates/iron",
+    C: "#forge:dusts/redstone",
+    D: "ae2:calculation_processor",
+  });
+  create
+    .sequenced_assembly(Item.of("ae2:basic_card", 8), "ae2:calculation_processor", [
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:ingots/iron",
+      ]),
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:ingots/gold",
+      ]),
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:dusts/redstone",
+      ]),
+      vintageimprovements.laser_cutting(
+        "ae2:calculation_processor",
+        "ae2:calculation_processor",
+        100
+      ),
+    ])
+    .transitionalItem("ae2:calculation_processor")
+    .loops(1)
+    .id("createdelight:basic_card_A");
+  event.remove({ id: "ae2:materials/basiccard" });
+
+  // 高级卡
+  kubejs.shaped("ae2:advanced_card", ["ABB", "CDB", "ABB"], {
+    A: "#forge:gems/diamond",
+    B: "#forge:plates/iron",
+    C: "#forge:dusts/redstone",
+    D: "ae2:calculation_processor",
+  });
+  create
+    .sequenced_assembly(Item.of("ae2:advanced_card", 8), "ae2:calculation_processor", [
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:ingots/iron",
+      ]),
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:gems/diamond",
+      ]),
+      create.deploying("ae2:calculation_processor", [
+        "ae2:calculation_processor",
+        "#forge:dusts/redstone",
+      ]),
+      vintageimprovements.laser_cutting(
+        "ae2:calculation_processor",
+        "ae2:calculation_processor",
+        100
+      ),
+    ])
+    .transitionalItem("ae2:calculation_processor")
+    .loops(1)
+    .id("createdelight:advanced_card_A");
+  event.remove({ id: "ae2:materials/advancedcard" });
+
+  // 染料复制
+  let colours = [
+    "white",
+    "orange",
+    "magenta",
+    "light_blue",
+    "lime",
+    "pink",
+    "purple",
+    "light_gray",
+    "gray",
+    "cyan",
+    "brown",
+    "green",
+    "blue",
+    "red",
+    "black",
+    "yellow",
+  ];
+
+  colours.forEach((c) => {
+    create.mixing(`4x minecraft:${c}_dye`, [`minecraft:${c}_dye`, "ae2:matter_ball"]);
+  });
+
+  // 破坏核心
+  kubejs.shaped("ae2:annihilation_core", ["AAA", "BCD", "AAA"], {
+    A: "#forge:nuggets/iron",
+    B: "#forge:gems/quartz",
+    C: "#forge:dusts/fluix",
+    D: "ae2:logic_processor",
+  });
+  create
+    .sequenced_assembly("ae2:annihilation_core", "minecraft:iron_nugget", [
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/quartz"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
+    ])
+    .id("createdelight:annihilation_core_A")
+    .loops(1)
+    .transitionalItem("minecraft:iron_nugget");
+  event.remove({ id: "ae2:materials/annihilationcore" });
+
+  // 成型核心
+  kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
+    A: "#forge:nuggets/iron",
+    B: "#forge:gems/quartz",
+    C: "#forge:dusts/fluix",
+    D: "ae2:logic_processor",
+  });
+  create
+    .sequenced_assembly("ae2:formation_core", "minecraft:iron_nugget", [
+      create.deploying("minecraft:iron_nugget", [
+        "minecraft:iron_nugget",
+        "#forge:gems/certus_quartz",
+      ]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
+    ])
+    .id("createdelight:formation_core_A")
+    .loops(1)
+    .transitionalItem("minecraft:iron_nugget");
+  event.remove({ id: "ae2:materials/formationcore" });
+
+  
 });
