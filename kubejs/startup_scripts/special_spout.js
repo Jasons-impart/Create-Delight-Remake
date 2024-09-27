@@ -20,7 +20,7 @@ CreateEvents.spoutHandler(e => {
             let item = inventory.getAllItems().get(0)
             if (tankId.indexOf(item.id) == -1)
                 return 0
-            if (item.nbt == null || item.nbt == {}) {
+            if (item.nbt.isEmpty || item.nbt == {}) {
                 item.nbt = {tagStock: 0}
             }
             let nbt = item.nbt
@@ -43,7 +43,7 @@ CreateEvents.spoutHandler(e => {
                             fluidMultipler = 0.5
                         else if (fluid.id == "createdieselgenerators:gasoline")
                             fluidMultipler = 0.4
-                        else if (fluid.id == "createdieselgenerators:fluid_mixtures")
+                        else if (fluid.id == "createdelight:fuel_mixtures")
                             fluidMultipler = 0.25
                         else
                             return 0
@@ -52,7 +52,6 @@ CreateEvents.spoutHandler(e => {
                         }
                         return fluidAmount
                     }
-
                 }
             }
             return 0
