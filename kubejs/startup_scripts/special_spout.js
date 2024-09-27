@@ -20,7 +20,7 @@ CreateEvents.spoutHandler(e => {
             let item = inventory.getAllItems().get(0)
             if (tankId.indexOf(item.id) == -1)
                 return 0
-            if (item.nbt.isEmpty || item.nbt == {}) {
+            if (item.nbt.isEmpty() || item.nbt == {}) {
                 item.nbt = {tagStock: 0}
             }
             let nbt = item.nbt
