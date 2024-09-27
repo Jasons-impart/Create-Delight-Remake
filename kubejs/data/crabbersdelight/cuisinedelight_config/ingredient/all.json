@@ -1,0 +1,85 @@
+{
+    "entries": [
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "crabbersdelight:shrimp"
+                },
+                {
+                    "item": "crabbersdelight:raw_frog_leg"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 2,
+            "stir_time": 40
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [
+                {
+                    "effect": "minecraft:nausea",
+                    "level": 0,
+                    "time": 100
+                },
+                {
+                    "effect": "minecraft:poison",
+                    "level": 0,
+                    "time": 100
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "crabbersdelight:pufferfish_slice"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "crabbersdelight:tropical_fish_slice"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "crabbersdelight:clawster"
+                },
+                {
+                    "item": "crabbersdelight:crab"
+                }
+            ],
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 4,
+            "stir_time": 60
+        }
+    ]
+}

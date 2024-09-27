@@ -14,6 +14,7 @@ let tooltips = [
     ["culturaldelights:pickle", "§9滋养（00::30）", "§9Nourishment(00:30)"],
     ["culturaldelights:cut_pickle", "§9滋养（00::15）", "§9Nourishment(00:15)"],
     ["createdelight:sigma_man_sword", "§o西格玛男人专用", "§oFor sigma men only"],
+    ["createdelight:braised_intestines_in_brown_sauce","§o你真是饿了...","§oYou are so hunger..."],
     ["lightmanscurrency:coinmint", "§l§4已停用!!", "§l§4STOP USING NOW!!"],
     ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su\n"],
     ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su\n"],

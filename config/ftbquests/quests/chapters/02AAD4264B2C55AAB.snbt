@@ -610,7 +610,7 @@
 			dependencies: ["119399A4C8B448E3"]
 			description: ["可作为代替火药的物品，且其作为材料产出的物品更多。"]
 			id: "1BB6FDB4F969CFCB"
-			subtitle: "使用带有纳米昆虫打磨的武器击杀监守者可掉落"
+			subtitle: "使用带有纳米昆虫打磨的武器击杀苦力怕可掉落"
 			tasks: [{
 				id: "0479231BCB82E626"
 				item: "art_of_forging:potent_mixture"

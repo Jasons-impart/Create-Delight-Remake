@@ -79,22 +79,6 @@
 			x: -6.0d
 			y: 6.0d
 		}
-		{
-			height: 5.0d
-			image: "minecraft:item/ender_eye"
-			rotation: 0.0d
-			width: 5.0d
-			x: 5.0d
-			y: 6.0d
-		}
-		{
-			height: 4.0d
-			image: "minecraft:block/attached_pumpkin_stem"
-			rotation: 0.0d
-			width: 4.0d
-			x: -8.0d
-			y: -4.5d
-		}
 	]
 	order_index: 0
 	quest_links: [ ]
@@ -284,7 +268,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ"]
+			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ, SSWTLZZ"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"
@@ -545,6 +529,31 @@
 					}
 					type: "item"
 				}
+				{
+					id: "3E06F2F616B50F02"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-19249855
+									-1347729812
+									-1806167094
+									-302317712
+								]
+								Name: "SSWTLZZ"
+								Properties: {
+									textures: [{
+										Signature: "Uh0Qtx6+tD0RDr7lST6BcfwyAD5g0vRIp7XZeirY2uaEptWNuricgauDeqBVbQygZCgvXnfm4qlWmmcJTNuUZSJVw+gPldDZ6phUxWiij4pCpDhUKBvnbg2XEZhql+32d5jGh1bfl024lBJkWZRSoNXtgJfQXwPp08vMvmSz8/2hYYdAyT6TBVR3tahyvhZ5F4u9VfRxcJmC5lys4MwB/dRGq4wyNqu0/LI5KgDEzNdfCa+AwOetxNhwXX+qIs8bGFKWUZVfTeNgVmAuAslfhzbocqe7jd+u4bpLDS1Yg9vURCG1RZr7kzwJp+GQRfgwP1Pdsbs7ZpJ+JSkS1N+Hq/moRsyUsbdK2j4sIJdJRsARppRpHhpsEjt33O6ZO6skTWwzaBpZ4OG34D7QTTTUUshaEYl1/VkCzDtD+HhpvbIrnSyekJ/05M9u2GSh+4TcG9+wH4zuN3CswgUi6Zc8IbPgVQXfremfHuluX8ndyrXd7aP0ilUH/J7M191sv1WkGb12XI13ejbOK8wKaY1WIA4D89lJQLA+as0sbpZGo6PJZX79pndIWtNFGzEy6lo7vj0sJyLe7lnLGmcqbKQDH0AcYj2LUnS+bCGite0Xdy7VVciPu/QzHhn2ja94Jg7EQ2mt8P9X0Oabrc0c7ksvlnzkrjMbFcj+DsXsPaoRtnY="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcyNjkyMTQ5OTkzOSwKICAicHJvZmlsZUlkIiA6ICJmZWRhNDU0MWFmYWI0NjZjOTQ1ODEzY2FlZGZhZmY3MCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTU1dUTFpaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EwM2FlY2UwZjNmNTJiODBmYTM4YTY0Yjc3ZmI4NjhhMGU0ZTFhNGZkMDc5YmFlZGNjNjQxNDYwNTA5Y2U0NDUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
 			]
 			shape: "pentagon"
 			size: 2.0d
@@ -706,16 +715,17 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			icon: "minecraft:ender_eye"
+			icon: "createmetallurgy:sturdy_whisk"
 			id: "64B9CFE4337A3EAA"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "注意！末地需要完成所有主线任务并解锁终抵群星任务才可去往！！！(&4暂未启用&r)"
+			subtitle: "注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"
 			tasks: [{
 				id: "39FA137A00BB30A2"
 				title: "末地"
 				type: "checkmark"
 			}]
+			title: "熔炼相关"
 			x: 5.0d
 			y: 6.0d
 		}

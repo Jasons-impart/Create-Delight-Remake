@@ -35,7 +35,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["30C7F1B60D7D333A"]
 			description: ["此章节仅简单介绍&5原理图&r或者&5卷轴&r的获取方式，具体改装内容请查看其他章节"]
 			icon: {
 				Count: 1

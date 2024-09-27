@@ -248,6 +248,33 @@ StartupEvents.registry("item", e => {
                 .saturation(0.7)
                 .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
+    // 九转大肠
+    e.create("createdelight:braised_intestines_in_brown_sauce")
+        .rarity("epic")
+        .maxStackSize(16)
+        .translationKey("item.createdelight.braised_intestines_in_brown_sauce")
+        .food(food =>{
+            food.hunger(20)
+                .saturation(1)
+                .effect("minecraft:nausea", 200, 2, 1.0)
+                .effect("minecraft:darkness", 200, 1, 1.0)
+                .effect("farmersdelight:nourishment", 6000, 1, 1.0)
+         })
+    //清水白菜
+    e.create("createdelight:boiling_water_cabbage")
+        .rarity("uncommon")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.boiling_water_cabbage")
+        .food(food =>{
+           food.hunger(8)
+               .saturation(0.6)
+               .effect("minecraft:resistance", 500, 2, 1.0)
+               .effect("farmersdelight:nourishment", 3000, 1, 1.0)
+               .effect("mynethersdelight:g_pungent", 20, 1, 1.0)
+               
+
+        })
+
     // 未完成相关
     e.create("createdelight:incomplete_tesla_coil")
         .maxStackSize(64)
@@ -316,11 +343,16 @@ StartupEvents.registry("item", e => {
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
+        .tag('ae2:inscriber_presses')
         .translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.redstone_paste")
+    // 荧石膏
+    e.create("createdelight:glowstone_paste")
+        .maxDamage(64)
+        .translationKey("item.createdelight.glowstone_paste")
     // 陨石膏
     e.create("createdelight:sky_stone_paste")
         .maxDamage(64)
@@ -332,6 +364,8 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.initial_processing_of_printed_calculation_processor")
     e.create("createdelight:initial_processing_of_printed_logic_processor")
         .translationKey("item.createdelight.initial_processing_of_printed_logic_processor")
+    e.create("createdelight:initial_processing_of_printed_accumulation_processor")
+        .translationKey("item.createdelight.initial_processing_of_printed_accumulation_processor")
     // 待压印的处理器
     e.create("createdelight:engineering_processor_inscribed")
         .translationKey("item.createdelight.engineering_processor_inscribed")
@@ -339,6 +373,9 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.calculation_processor_inscribed")
     e.create("createdelight:logic_processor_inscribed")
         .translationKey("item.createdelight.logic_processor_inscribed")
+    e.create("createdelight:accumulation_processor_inscribed")
+        .translationKey("item.createdelight.accumulation_processor_inscribed")
+
     // 元件外壳坯件
     e.create("createdelight:item_cell_housing_blank")
         .translationKey("item.createdelight.item_cell_housing_blank")
@@ -388,4 +425,35 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_fourth_stage_rocket_core")
         .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
 
+
+    // 主世界
+    e.create("createdelight:overworld_metal_ore_cluster")
+        .translationKey("item.createdelight.overworld_metal_ore_cluster")
+    e.create("createdelight:overworld_noble_metal_ore_cluster")
+        .translationKey("item.createdelight.overworld_noble_metal_ore_cluster")
+    // 下界
+    e.create("createdelight:nether_ore_cluster")
+        .translationKey("item.createdelight.nether_ore_cluster")
+    // 月球
+    e.create("createdelight:moon_ore_cluster")
+        .translationKey("item.createdelight.moon_ore_cluster")
+    // 火星
+    e.create("createdelight:mars_ore_cluster")
+        .translationKey("item.createdelight.mars_ore_cluster")
+    e.create("createdelight:mars_gemstone_cluster")
+        .translationKey("item.createdelight.mars_gemstone_cluster")
+    // 水星
+    e.create("createdelight:mercury_ore_cluster")
+        .translationKey("item.createdelight.mercury_ore_cluster")
+
+    // 霜原星
+    e.create("createdelight:glacio_ore_cluster")
+        .translationKey("item.createdelight.glacio_ore_cluster")
+
+    // β-正交晶系六方铁
+    e.create("createdelight:phase_transition_iron")
+        .translationKey("item.createdelight.phase_transition_iron")
+    // 人造钻石（别给加钻石tag）
+    e.create("createdelight:mmd_diamond")
+        .translationKey("item.createdelight.mmd_diamond")
 })

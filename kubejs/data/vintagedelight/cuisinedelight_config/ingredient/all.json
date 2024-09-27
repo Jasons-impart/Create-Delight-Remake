@@ -1,0 +1,113 @@
+{
+    "entries": [
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "vintagedelight:ghost_pepper"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "vintagedelight:cucumber"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "vintagedelight:peanut"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 8,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "vintagedelight:pickled_pepper"
+                },
+                {
+                    "item": "vintagedelight:kimchi"
+                },
+                {
+                    "item": "vintagedelight:pickled_onion"
+                },
+                {
+                    "item": "vintagedelight:pickled_beetroot"
+                },
+                {
+                    "item": "vintagedelight:pickle"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 8,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": {
+                "item": "vintagedelight:pickled_egg"
+            },
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "CARB",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "vintagedelight:cucumber_noodles"
+                },
+                {
+                    "item": "vintagedelight:oat_dough"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 300,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.7,
+            "size": 2,
+            "stir_time": 80
+        }
+    ]
+}

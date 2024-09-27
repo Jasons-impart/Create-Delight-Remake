@@ -24,6 +24,10 @@ debugLevel=0
 	#Disabling will not remove any existing Tax Blocks from the world, nor prevent their use.
 	canCraftTaxCollector=true
 	
+	#Whether ATM Cards can be crafted.
+	#Disabling will not remove any existing ATM Cards from the world, nor prevent their use.
+	canCraftATMCard=false
+	
 	#Money Chest Crafting
 	[crafting.money_chest]
 		#Whether the Money Chest can be crafted.
@@ -103,7 +107,7 @@ debugLevel=0
 		#Each item-entry is either 1 or 2 item ids (e.g. "mod:coin_item" or "mod:coin_item_1;mod:coin_item_2".
 		#When two are given, the first will replace the cost items (items the player must pay the villager) and the second will replace the result (items the player will be paid by the villager)
 		#Every trader not on this list will use the default trader coin defined above.
-		professionEmeraldReplacementOverrides=["minecraft:cartographer-createdelightcore:copper_coin","minecraft:fletcher-createdelightcore:copper_coin","minecraft:butcher-createdelightcore:copper_coin","minecraft:farmer-createdelightcore:copper_coin","minecraft:fisherman-createdelightcore:copper_coin","minecraft:shepherd-createdelightcore:copper_coin","minecraft:mason-createdelightcore:copper_coin","minecraft:leatherworker-createdelightcore:copper_coin"]
+		professionEmeraldReplacementOverrides=["minecraft:fletcher-createdelightcore:iron_coin","minecraft:toolsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:weaponsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:fisherman-createdelightcore:iron_coin","minecraft:mason-createdelightcore:iron_coin","minecraft:armorer-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:leatherworker-createdelightcore:iron_coin"]
 		
 #Loot Options
 [loot]
