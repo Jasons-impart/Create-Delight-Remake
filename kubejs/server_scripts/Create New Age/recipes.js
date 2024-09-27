@@ -4,7 +4,38 @@ ServerEvents.recipes(e => {
         "create_new_age:shaped/heat_pipe",
         "create_new_age:shaped/heat_pipe_mirror",
         "create_new_age:advanced_motor_extension"])
+    
+    // 充能和激发互相适配
+    e.forEachRecipe({type: "create_new_age:energising", mod: "create_new_age"}, r => {
+        let energy = r.json.get("energy_needed").asDouble
+        let input = r.getOriginalRecipeIngredients()
+        let output = r.getOriginalRecipeResult()
+        e.recipes.createaddition.charging(input, output, energy)
+        .id(`create_new_age:charging/${output.getId().split(":")[1]}`)
+    })
+    e.forEachRecipe({type: "createaddition:charging", mod: "createaddition"}, r => {
+        let energy = r.json.get("energy").asDouble
+        let input = r.json.get("input").asJsonObject
+        let itemId = input.get("item").asString
+        let count = input.get("count").asDouble
+        let output = r.getOriginalRecipeResult()
+        e.recipes.create_new_age.energising(Ingredient.of(itemId, count), output, energy)
+        .id(`createaddition:energising/${output.getId().split(":")[1]}`)
+    })
+    
+    // 电金核心
+    e.recipes.kubejs.shaped("ad_astra:etrionic_core", [
+        "AA ",
+        "BB ",
+        "AA "
+    ],
+    {
+        A: "createaddition:zinc_sheet",
+        B: "create_new_age:overcharged_golden_sheet"
+    }
+)
 
+    // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
     for (let i = 0; i < 8; i++) {
         ingr_1.push("alexscaves:energized_galena_neutral")
@@ -60,7 +91,7 @@ ServerEvents.recipes(e => {
     //激发器
     e.replaceInput({id: "create_new_age:shaped/energiser_t3"}, "minecraft:copper_block", "vintageimprovements:laser_item")
 
-    //电机扩展
+    //电机，电机扩展
     e.replaceInput({id: "create_new_age:shaped/basic_motor_extension"}, "create_new_age:overcharged_iron", "createmetallurgy:steel_ingot")
     e.recipes.create.mechanical_crafting("create_new_age:advanced_motor_extension", [
         "AAAAA",
@@ -75,4 +106,7 @@ ServerEvents.recipes(e => {
         E: "alexscaves:block_of_azure_neodymium"
     })
     .id("create_new_age:advanced_motor_extension")
+
+    e.replaceInput({id: "create_new_age:shaped/basic_motor"}, "minecraft:iron_nugget", "ad_astra:steel_nugget")
+    e.replaceInput({id: "create_new_age:shaped/advanced_motor"}, "minecraft:gold_nugget", "createaddition:electrum_nugget")
 })

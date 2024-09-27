@@ -1,4 +1,13 @@
 ServerEvents.recipes(e => {
+
+    remove_recipes_id(e, ["create_oppenheimered:mixing/sulfuric_acid",
+        "create_oppenheimered:filling/acid_radrook",
+        "alexscaves:uranium_rod",
+        "create_oppenheimered:mixing/azure_to_scarlet_neodymium",
+        "create_oppenheimered:mixing/scarlet_to_azure_neodymium"
+])
+
+
     //硫磺，硫磺晶簇->硫粉
     e.recipes.create.crushing([
         '3x alexscaves:sulfur_dust',
@@ -18,29 +27,7 @@ ServerEvents.recipes(e => {
         'alexscaves:galena'
     ).id("alexscaves:crushing/galena")
 
-    //硫磺晶芽注入酸液生长
-    e.recipes.create.filling(
-        'alexscaves:sulfur_bud_medium',
-        ['alexscaves:sulfur_bud_small',
-            Fluid.of('alexscaves:acid').withAmount(50)]
-    ).id("alexscaves:filling/sulfur_bud_medium")
-    e.recipes.create.filling(
-        'alexscaves:sulfur_bud_large',
-        ['alexscaves:sulfur_bud_medium',
-            Fluid.of('alexscaves:acid').withAmount(50)]
-    ).id("alexscaves:filling/sulfur_bud_large")
-    e.recipes.create.filling(
-        'alexscaves:sulfur_cluster',
-        ['alexscaves:sulfur_bud_large',
-            Fluid.of('alexscaves:acid').withAmount(50)]
-    ).id("alexscaves:filling/sulfur_cluster")
-
-
     //酸液再生（？）
-    remove_recipes_id(e, ["create_oppenheimered:mixing/sulfuric_acid",
-                          "create_oppenheimered:filling/acid_radrook",
-                          "alexscaves:uranium_rod"
-    ])
     e.recipes.create.mixing(
         Fluid.of('alexscaves:acid').withAmount(1000),
         ['2x alexscaves:acidic_radrock',
@@ -99,7 +86,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
 
     // 聚合物板
-    e.replaceInput({id: "create_mechanical_spawner:polymer_plate"}, "minecraft:iron_ingot", "createmetallurgy:steel_ingot")
+    e.replaceInput({id: "alexscaves:polymer_plate"}, "minecraft:iron_ingot", "createmetallurgy:steel_ingot")
     let iner_2 = "createmetallurgy:steel_block"
     e.recipes.create.sequenced_assembly("48x alexscaves:polymer_plate", iner_2, [
         e.recipes.vintageimprovements.hammering(iner_2, iner_2),
@@ -111,8 +98,64 @@ ServerEvents.recipes(e => {
     .loops(1)
     .id("alexscaves:polymer_plate_2")
 
+
     //粉碎珍珠出海洋玻璃碎片
     e.recipes.create.crushing([
         "3x alexscaves:sea_glass_shards",
         Item.of("alexscaves:sea_glass_shards", 3).withChance(0.5)], "alexscaves:pearl")
+
+    
+    //磁化洞穴
+
+    //重锤
+    let iner_3 = "alexscaves:block_of_scarlet_neodymium"
+    e.recipes.create.sequenced_assembly("alexscaves:heavyweight", iner_3,
+        [
+            e.recipes.vintageimprovements.curving(iner_3, iner_3, 2),
+            e.recipes.create.deploying(iner_3, [iner_3, "createmetallurgy:steel_ingot"])
+        ]
+    )
+    .transitionalItem(iner_3)
+    .loops(1)
+    .id("alexscaves:heavyweight")
+
+    //机铁之心
+    let iner_4 = "minecraft:iron_block"
+    e.recipes.create.sequenced_assembly("alexscaves:heart_of_iron", iner_4,
+        [
+            e.recipes.vintageimprovements.turning(iner_4, iner_4),
+            e.recipes.create_new_age.energising(iner_4, iner_4, 20000)
+        ]
+    )
+    .transitionalItem(iner_4)
+    .loops(1)
+    .id("alexscaves:heart_of_iron")
+
+    //磁流核
+    e.recipes.kubejs.shaped("alexscaves:telecore", [
+        "ABC",
+        " D ",
+        "   "
+    ],
+    {
+        A: "alexscaves:scarlet_neodymium_ingot",
+        B: "minecraft:quartz",
+        C: "alexscaves:azure_neodymium_ingot",
+        D: "create_new_age:overcharged_iron_sheet"
+    })
+    .id("alexscaves:telecore")
+    e.replaceInput({id: "create_oppenheimered:deploying/precision_mechanism_from_telecore"}, "create:large_cogwheel", "#forge:spring/between_500_2_1000")
+    e.replaceInput({id: "create_oppenheimered:deploying/electron_tube_from_notor_gizmo"}, "create:copper_nugget", "create_new_age:overcharged_iron_sheet")
+
+    //扫描机兵零件
+    let iner_5 = "ad_astra:steel_nugget"
+    e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", iner_5, 
+        [
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:azure_neodymium_ingot"]),
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:scarlet_neodymium_ingot"])
+        ]
+    )
+    .transitionalItem(iner_5)
+    .loops(1)
+    .id("alexscaves:notor_gizmo")
 })
