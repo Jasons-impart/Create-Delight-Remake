@@ -170,7 +170,8 @@
     "createdelight.fire_dragon_eyes": "§4火龙试炼",
     "createdelight.ice_dragon": "§9冰龙试炼",
     "createdelight.lightning_dragon": "§5雷龙试炼",
-    "createdelight.piercing_withering":"§5穿刺枯萎试炼",
-    "createdelight.the_gate_of_eternal_cold": "永寒悚怖之门",
+    "createdelight.the_gate_of_eternal_cold": "§9永寒悚怖之门",
+    "createdelight.piercing_withering_trial": "§l§5穿刺枯萎试炼",
     "block.createdelight.alloy_electric_furnace": "合金电炉"
+    
 }

@@ -1,5 +1,5 @@
 {
-	"size": "large",
+	"size": "small",
 	"color": "#2F4F4F",
 	"waves": [
 		{
@@ -13,11 +13,11 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecraft:wither_skeleton",
+                    "entity": "minecarft:wither_skeleton",
                     "count": 10
                 },
 				{
-                    "entity": "iceandfire:cockatrice",
+                    "entity": "iceandfire:if_cockatrice",
                     "count": 2
                 }
 			],
@@ -44,22 +44,21 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecraft:wither_skeleton",
+                    "entity": "minecarft:wither_skeleton",
                     "count": 16
                 },
 				{
-                    "entity": "iceandfire:cockatrice",
+                    "entity": "iceandfire:if_cockatrice",
                     "count": 2
                 }
 			],
-            "rewards": [
+			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "minecraft:wither_skeleton",
+					"entity": "minecarft:wither_skeleton",
 					"rolls": 40
 				}
 			],
-			
 			"max_wave_time": 600,
 			"setup_time": 200
 		},
@@ -74,18 +73,18 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecraft:wither_skeleton",
+                    "entity": "minecarft:wither_skeleton",
                     "count": 16
                 },
 				{
-                    "entity": "iceandfire:cockatrice",
+                    "entity": "iceandfire:if_cockatrice",
                     "count": 4
                 }
 			],
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "minecraft:wither_skeleton",
+					"entity": "minecarft:wither_skeleton",
 					"rolls": 120
 				}
 			],
@@ -93,7 +92,7 @@
 			"setup_time": 200
 		},
         {
-            "entities": [
+			"entities": [
 				{
 					"entity": "alexsmobs:enderiophage",
 					"count": 2
@@ -103,7 +102,7 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecraft:wither_skeleton",
+                    "entity": "minecarft:wither_skeleton",
                     "count": 18
                 },
                 {
@@ -111,25 +110,68 @@
                     "count": 2
                 }
 			],
-            "rewards": [
+			"rewards": [
 				{
 					"type": "gateways:stack",
 					 "stack": {
 						 "item": "gateways:gate_pearl", 
 						 "count": 1,
-						 "nbt" : {"gateways":"createdelight:piercing_withering"}}
+						 "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
 				 }
 			],
-            "max_wave_time": 600,
+			"max_wave_time": 600,
 			"setup_time": 200
-        }
-     ],
+		},
+        {
+			"entities": [
+				{
+					"entity": "minecarft:wither",
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.20
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.20
+		     	}
+            ],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecarft:wither",
+					"rolls": 2
+				}
+			],
+			"max_wave_time": 600,
+			"setup_time": 200
+		}
+    ],
 	"failures": [
-		{
-			"type": "gateways:explosion",
-			"strength": 6,
-			"fire": true,
-			"block_damage": true
-			}
-	]
+        {
+        "type": "gateways:explosion",
+        "strength": 6,
+        "fire": true,
+        "block_damage": false
+    }]
 }
