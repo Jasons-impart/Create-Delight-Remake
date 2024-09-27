@@ -1,0 +1,17 @@
+{
+  "type": "cuisinedelight:plate_cuisine",
+  "holderItem": "cuisinedelight:fried_pasta",
+  "list": [
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "tag": "forge:pasta/raw_pasta"
+      },
+      "max": 1.25,
+      "min": 0.75,
+      "score": 2.0
+    }
+  ],
+  "saturationBonus": 0.0,
+  "saturationBonusModifier": 0.0
+}

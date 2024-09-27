@@ -1,0 +1,26 @@
+{
+  "type": "cuisinedelight:plate_cuisine",
+  "holderItem": "cuisinedelight:scrambled_egg_and_tomato",
+  "list": [
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "tag": "forge:eggs"
+      },
+      "max": 1.7,
+      "min": 0.3,
+      "score": 1.0
+    },
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "tags": "forge:vegetables/tomato"
+      },
+      "max": 1.7,
+      "min": 0.3,
+      "score": 2.0
+    }
+  ],
+  "saturationBonus": 0.0,
+  "saturationBonusModifier": 0.0
+}

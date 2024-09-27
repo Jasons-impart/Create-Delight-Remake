@@ -1,0 +1,237 @@
+{
+    "entries": [
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:beef_ribs"
+                },
+                {
+                    "item": "butchercraft:lamb_ribs"
+                },
+                {
+                    "item": "butchercraft:pork_ribs"
+                },
+                {
+                    "item": "butchercraft:goat_ribs"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 180,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 5,
+            "stir_time": 120
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:beef_roast"
+                },
+                {
+                    "item": "butchercraft:lamb_roast"
+                },
+                {
+                    "item": "butchercraft:pork_roast"
+                },
+                {
+                    "item": "butchercraft:goat_roast"
+                }
+            ],
+            "max_time": 300,
+            "min_time": 180,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 4,
+            "stir_time": 100
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:goat_chop"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 3,
+            "stir_time": 80
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:cubed_beef"
+                },
+                {
+                    "item": "butchercraft:cubed_lamb"
+                },
+                {
+                    "item": "butchercraft:cubed_pork"
+                },
+                {
+                    "item": "butchercraft:cubed_goat"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.8,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:beef_scraps"
+                },
+                {
+                    "item": "butchercraft:ground_beef"
+                },
+                {
+                    "item": "butchercraft:beef_stewmeat"
+                },
+                {
+                    "item": "butchercraft:oxtail"
+                },
+                {
+                    "item": "butchercraft:lamb_scraps"
+                },
+                {
+                    "item": "butchercraft:ground_lamb"
+                },
+                {
+                    "item": "butchercraft:lamb_stewmeat"
+                },
+                {
+                    "item": "butchercraft:pork_scraps"
+                },
+                {
+                    "item": "butchercraft:ground_pork"
+                },
+                {
+                    "item": "butchercraft:pork_stewmeat"
+                },
+                {
+                    "item": "butchercraft:goat_scraps"
+                },
+                {
+                    "item": "butchercraft:ground_goat"
+                },
+                {
+                    "item": "butchercraft:goat_stewmeat"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "butchercraft:chicken_breast"
+                },
+                {
+                    "item": "butchercraft:cubed_chicken"
+                },
+                {
+                    "item": "butchercraft:ground_chicken"
+                },
+                {
+                    "item": "butchercraft:chicken_leg"
+                },
+                {
+                    "item": "butchercraft:chicken_scraps"
+                },
+                {
+                    "item": "butchercraft:chicken_thigh"
+                },
+                {
+                    "item": "butchercraft:chicken_wing"
+                },
+                {
+                    "item": "butchercraft:chicken_stewmeat"
+                },
+                {
+                    "item": "butchercraft:rabbit_saddle"
+                },
+                {
+                    "item": "butchercraft:cubed_rabbit"
+                },
+                {
+                    "item": "butchercraft:ground_rabbit"
+                },
+                {
+                    "item": "butchercraft:rabbit_leg"
+                },
+                {
+                    "item": "butchercraft:rabbit_scraps"
+                },
+                {
+                    "item": "butchercraft:rabbit_thigh"
+                },
+                {
+                    "item": "butchercraft:rabbit_stewmeat"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "tag": "forge:offal/raw"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+          "type": "NONE",
+          "effects": [],
+          "ingredient": [
+            {
+              "item": "butchercraft:lard"
+            }
+          ],
+          "max_time": 300,
+          "min_time": 0,
+          "nutrition": 4,
+          "overcook_penalty": 0.0,
+          "raw_penalty": 0.0,
+          "size": 1,
+          "stir_time": 120
+        }
+    ]
+}
