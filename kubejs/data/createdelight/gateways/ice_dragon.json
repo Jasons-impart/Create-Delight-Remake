@@ -139,7 +139,7 @@
 		{
 			"type": "gateways:entity_loot",
 			"entity": "iceandfire:ice_dragon",
-			"rolls": 1
+			"rolls": 5
 		}
 	],
 	"failures": [

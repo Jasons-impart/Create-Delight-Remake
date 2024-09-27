@@ -117,7 +117,7 @@
 					 "stack": {
 						 "item": "gateways:gate_pearl", 
 						 "count": 1,
-						 "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
+						 "nbt" : {"gateways":"createdelight:piercing_withering"}}
 				 }
 			],
             "max_wave_time": 600,
