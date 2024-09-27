@@ -1,0 +1,78 @@
+{
+    "entries": [
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "festival_delicacies:chinese_cabbage_leaf"
+                },
+                {
+                    "item": "festival_delicacies:garlic_chive"
+                },
+                {
+                    "item": "festival_delicacies:eggplant"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "festival_delicacies:chinese_cabbage"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "NONE",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "festival_delicacies:greenonion"
+                },
+                {
+                    "item": "festival_delicacies:garlic"
+                },
+                {
+                    "item": "festival_delicacies:fennel"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 2,
+            "overcook_penalty": 0,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+          "type": "MEAT",
+          "effects": [],
+          "ingredient": {
+            "item": "festival_delicacies:preserved_meat"
+          },
+          "max_time": 240,
+          "min_time": 120,
+          "nutrition": 8,
+          "overcook_penalty": 0.5,
+          "raw_penalty": 0,
+          "size": 1,
+          "stir_time": 80
+        }
+    ]
+}
