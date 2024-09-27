@@ -6,7 +6,6 @@ ServerEvents.recipes(e => {
         "createaddition:mixing/bioethanol",
         "createaddition:crafting/capacitor_2",
         "createaddition:crafting/capacitor_1",
-        "createaddition:rolling/brass_ingot",
         "createaddition:crafting/accumulator_conversion",
         "createaddition:crafting/large_connector_gold",
         "createaddition:crafting/modular_accumulator_gold",

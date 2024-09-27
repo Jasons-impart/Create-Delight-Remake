@@ -1,4 +1,6 @@
 {
+    "item.createdelight.phase_transition_iron": "β-正交晶系六方铁",
+    "item.createdelight.mmd_diamond": "人工钻石",
     "item.createdelight.crushed_raw_desh": "粉碎戴斯矿石",
     "item.createdelight.crushed_raw_ostrum": "粉碎紫金矿石",
     "item.createdelight.crushed_raw_calorite": "粉碎耐热金属矿石",
@@ -22,9 +24,11 @@
     "item.createdelight.initial_processing_of_printed_engineering_processor": "未加工的工程处理器",
     "item.createdelight.initial_processing_of_printed_calculation_processor": "未加工的运算处理器",
     "item.createdelight.initial_processing_of_printed_logic_processor": "未加工的逻辑处理器",
+    "item.createdelight.initial_processing_of_printed_accumulation_processor": "未加工的累积处理器",
     "item.createdelight.engineering_processor_inscribed": "待压印的工程处理器",
     "item.createdelight.calculation_processor_inscribed": "待压印的运算处理器",
     "item.createdelight.logic_processor_inscribed": "待压印的逻辑处理器",
+    "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "block.createdelight.enriched_sky_stone_block": "富集陨石",
     "item.createdelight.item_cell_housing_blank": "物品元件外壳坯件",
     "item.createdelight.fluid_cell_housing_blank": "流体元件外壳坯件",
