@@ -31,14 +31,13 @@ CreateEvents.spoutHandler(e => {
                 const{ x, y, z } = pos
                 if (fluid.amount >= fluidAmount && nbt.tagStock <= maxAmount) {
                     if ((item.id == tankId[i] && fluid.id == "minecraft:water")) {
-                        level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                         if (!simulate) {
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                             nbt.tagStock = nbt.tagStock + fluidAmount / 10
                         }
                         return fluidAmount
                     }
                     if ((item.id == tankId[i + 3])) {
-                        level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                         let fluidMultipler = 1
                         if (fluid.id == "minecraft:lava")
                             fluidMultipler = 1
@@ -51,6 +50,7 @@ CreateEvents.spoutHandler(e => {
                         else
                             return 0
                         if (!simulate) {
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                             nbt.tagStock = nbt.tagStock + fluidAmount / 10
                         }
                         return fluidAmount * fluidMultipler
