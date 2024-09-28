@@ -92,7 +92,7 @@ CreateEvents.spoutHandler(e => {
                     if (fluidAmount > 0 && nbt.tagStock <= maxAmount) {
                         if (item.id == tankId[i] && ((i < 3 && fluid.id == "minecraft:water") || (i >= 3 && fluid.id != "minecraft:water"))) {
                             if (!simulate) {
-                                level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y + 2},z=${z},distance=..12] ${x} ${y + 2} ${z}`)
+                                level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                                 nbt.tagStock = nbt.tagStock + fluidAmount / 10
                             }
                             return fluidAmount * fluidMultipler
@@ -102,10 +102,14 @@ CreateEvents.spoutHandler(e => {
             }
             if (item.hasTag("create_sa:fillable") || item.hasTag("create_sa:fuelable")) {
                 item.getOrCreateTag()
+                const { pos, level } = block
+                const { x, y, z } = pos
                 if (item.hasTag("create_sa:fillable") && fluid.id == "minecraft:water")
                     return fillWater(fluid, simulate, item)
+                    level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                 if (item.hasTag("create_sa:fuelable"))
                     return fillFuel(fluid, simulate, item)
+                    level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
             }
             return 0
         }
