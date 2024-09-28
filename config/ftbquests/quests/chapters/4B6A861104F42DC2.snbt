@@ -23,9 +23,10 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["每当需要更高级的工具时，我总得重新制作一把新的。有时，我脑海中会闪过一个想法：是否可以&e直接更换工具的部件&r，以提升工具的性能？带着这个念头，我尝试用圆石制作了一把锤子，希望能实现我的设想。（补药做木锤呀）"]
+			description: ["每当需要更高级的工具时，我总得重新制作一把新的。有时，我脑海中会闪过一个想法：是否可以&e直接更换工具的部件&r，以提升工具的性能？带着这个念头，我尝试用圆石制作了一把锤子，希望能实现我的设想。"]
 			id: "75C7395A84B2E478"
 			shape: "square"
+			subtitle: "补药做木锤呀"
 			tasks: [{
 				advancement: "tetra:story/more_upgrades"
 				criterion: ""
@@ -33,7 +34,7 @@
 				type: "advancement"
 			}]
 			title: "模块化开端"
-			x: -1.0d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
@@ -53,7 +54,7 @@
 				type: "advancement"
 			}]
 			title: "新的工作台"
-			x: 1.5d
+			x: 2.5d
 			y: 0.0d
 		}
 		{
@@ -70,7 +71,7 @@
 				type: "advancement"
 			}]
 			title: "这不是铁锤吗？"
-			x: 4.0d
+			x: 5.0d
 			y: 0.0d
 		}
 		{
@@ -90,7 +91,7 @@
 				type: "advancement"
 			}]
 			title: "昔人已逝"
-			x: 10.5d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -123,7 +124,7 @@
 				title: "寻找遗迹方法"
 				type: "checkmark"
 			}]
-			x: 8.0d
+			x: 9.0d
 			y: -1.5d
 		}
 		{
@@ -135,14 +136,11 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: 9.5d
-			y: -1.0d
+			x: 10.5d
+			y: -3.5d
 		}
 		{
-			dependencies: [
-				"72908B9592992F33"
-				"7D85F4D95B6CC9FD"
-			]
+			dependencies: ["7D85F4D95B6CC9FD"]
 			description: [
 				"在遗迹中，我循着微光继续前行，最终找到了一个锻造加工台，其正上方悬挂着一把锻造锤，&e锻造台&r的精妙构造和斑驳的纹理无不诉说着岁月的痕迹。想必这一定是锻造师的心血结晶。"
 				"（锻造锤在无&e燃烧室&r加成下为&e五级&r锤等级）"
@@ -170,7 +168,7 @@
 				}
 			]
 			title: "锻造台！"
-			x: 13.75d
+			x: 18.0d
 			y: 0.0d
 		}
 		{
@@ -185,11 +183,14 @@
 				type: "advancement"
 			}]
 			title: "黑曜石锤！"
-			x: 17.0d
-			y: -1.0d
+			x: 21.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
+			dependencies: [
+				"27BFF02187AC557B"
+				"56758B34C00AEFF3"
+			]
 			description: ["可以被连接到锻造锤上，降低50%的锤子故障概率"]
 			id: "2C52A0043DF7520D"
 			tasks: [{
@@ -198,31 +199,36 @@
 				type: "item"
 			}]
 			x: 15.5d
-			y: -1.0d
+			y: -2.0d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
+			dependencies: [
+				"56758B34C00AEFF3"
+				"27BFF02187AC557B"
+			]
 			description: ["可以被连接到锻造锤上，让用锻造锤合成的主要组件略微提高属性，同时也可以作为弓的部件，安装后箭矢基本上不会受重力影响。"]
 			id: "01D8FB94D56BB2E2"
+			subtitle: "高质量"
 			tasks: [{
 				id: "1B52F4DF65C456E2"
 				item: "tetra:planar_stabilizer"
 				type: "item"
 			}]
-			x: 14.5d
-			y: 1.5d
+			x: 16.5d
+			y: -3.5d
 		}
 		{
-			dependencies: ["27BFF02187AC557B"]
+			dependencies: ["56758B34C00AEFF3"]
+			dependency_requirement: "all_started"
+			description: ["连接到锻造锤或传输单元上能稍微提高效率，同时也可以作为盾牌的盾面"]
 			id: "2F1D629721990E36"
-			subtitle: "连接到锻造锤或传输单元上能稍微提高效率，同时也可以作为盾牌的盾面"
 			tasks: [{
 				id: "4DB9A7DE2A98AFB7"
 				item: "tetra:vent_plate"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 1.5d
+			x: 15.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -233,7 +239,7 @@
 				item: "tetra:combustion_chamber"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 21.0d
 			y: 0.0d
 		}
 		{
@@ -250,8 +256,8 @@
 				type: "observation"
 			}]
 			title: "锻造师的遗产"
-			x: 11.5d
-			y: 1.0d
+			x: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7FB4EF5A8151080B"]
@@ -265,7 +271,7 @@
 				type: "advancement"
 			}]
 			title: "终极锤！"
-			x: 18.25d
+			x: 24.0d
 			y: 0.0d
 		}
 		{
@@ -291,14 +297,11 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
+			x: 1.5d
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"7D85F4D95B6CC9FD"
-				"27BFF02187AC557B"
-			]
+			dependencies: ["27BFF02187AC557B"]
 			description: [
 				"热电池能量不足时会导致锻造锤无法使用，可以更换新的电池或者对热电池进行充电。"
 				"地核提取器下方需有&e直连渗流基岩&r的地核管道（亮着橙色光的管道为可用管道），使用锤子将传输单元&e调整至下图状态&r后，将热力电池放置在传输单元上即可充电"
@@ -322,19 +325,24 @@
 					to_observe: "tetra:core_extractor"
 					type: "observation"
 				}
+				{
+					icon: "tetra:transfer_unit"
+					id: "739BFEB155E4895E"
+					observe_type: 0
+					timer: 0L
+					to_observe: "tetra:transfer_unit"
+					type: "observation"
+				}
 			]
 			title: "地核提取"
-			x: 14.5d
-			y: -1.5d
+			x: 17.0d
+			y: 1.5d
 		}
 		{
-			dependencies: [
-				"56758B34C00AEFF3"
-				"023CB874F457BB78"
-			]
+			dependencies: ["72908B9592992F33"]
 			dependency_requirement: "one_completed"
+			description: ["在遗迹中，我还发现了一些酷似电池的物品。这应该就是笔记中提到的热电池，只需将它们&e安装在锻造锤上&r，便能为其提供能量。"]
 			id: "7D85F4D95B6CC9FD"
-			subtitle: "锻造锤的动力源"
 			tasks: [{
 				id: "12374E522C8E74EB"
 				item: {
@@ -347,8 +355,8 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: 13.0d
-			y: -1.5d
+			x: 15.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -361,38 +369,39 @@
 				item: "tetra:forged_bolt"
 				type: "item"
 			}]
-			x: 11.5d
-			y: -3.0d
+			x: 13.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
 			dependency_requirement: "one_completed"
-			description: ["神秘的金属碎片，或许以后有重要用途。"]
+			description: ["在遗迹中的大小容器中，我发现了许多散发着魔力气息的金属碎片。但是他们的用途我还暂时不得而知。也许锻造师的笔记上会提到。"]
 			id: "3629F1DBEEFAF2FF"
 			tasks: [{
 				id: "72F79831CE4BD424"
 				item: "tetra:metal_scrap"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 1.0d
+			x: 10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
+			description: ["可以作为工具的手柄，能提供不错的属性"]
 			id: "314A40F1D8129FD2"
-			subtitle: "可以作为工具的手柄，能提供不错的属性"
 			tasks: [{
 				id: "23E94AB6FB444C54"
 				item: "tetra:forged_beam"
 				type: "item"
 			}]
-			x: 9.5d
-			y: -3.0d
+			x: 12.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["在挖矿时，我发现了一种&e闪烁着粒子效果的石头&r，出于好奇，我把它挖开了。这块石头与普通石头不同，我从中找到了一些奇特的矿石。&e用锤子在加工台上将其打碎后&r，发现了一些常见的矿石，偶尔还能获得罕见的宝石，甚至还有几颗毫无瑕疵的极品宝石。也许将这些宝石镶嵌在工具上，会带来更好的效果。"]
 			id: "1AF1B7498D6B8705"
+			subtitle: "出！"
 			tasks: [{
 				advancement: "tetra:spelunking/geode"
 				criterion: ""
@@ -401,7 +410,7 @@
 				type: "advancement"
 			}]
 			title: "开宝！"
-			x: 2.5d
+			x: 3.5d
 			y: -2.0d
 		}
 		{
@@ -416,8 +425,8 @@
 				type: "item"
 			}]
 			title: "七级锤"
-			x: 20.5d
-			y: 0.0d
+			x: 24.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
@@ -430,12 +439,12 @@
 				type: "advancement"
 			}]
 			title: "“老乡”"
-			x: 6.0d
+			x: 7.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1E0BB246F04014C3"]
-			description: ["在尝试改造弓时，我发现锤子的强度严重不足，甚至连黑石锤都无法打造铁弓材。无计可施的我只能向村庄里的老铁匠请教如何改造出更强的弓。老铁匠告诉我，传说在远方&e雪山&r的山脚下，有一位久负盛名的锻造师，他掌握着一切锻造技能，想必他一定能解答我的疑惑。然而，这位锻造师已经许多年没有消息了。村里的&e制图师&r或许知道他的工坊的位置，此外，使用&e末影之眼和紫水晶改造后的全息球&r也许可以帮助我寻找他。"]
+			description: ["在尝试改造弓时，我发现锤子的强度远远不够，连黑石锤都无法铸造出铁质弓材。无计可施的我只好向村庄里的老铁匠请教如何制作更强的弓。老铁匠告诉我，传说在遥远的&e雪山&r脚下，有一位久负盛名的锻造大师，他精通世间所有的锻造技艺，或许能解答我的疑惑。然而，这位锻造师已多年杳无音讯。村里的&e制图师&r可能知道他工坊的位置。此外，据传曾有人使用&e末影之眼和紫水晶改造全息球&r，并借此找到了锻造大师。"]
 			icon: "tetra:forged_wall"
 			id: "01FC78875A324DE3"
 			tasks: [{
@@ -443,7 +452,7 @@
 				type: "checkmark"
 			}]
 			title: "道听途说"
-			x: 8.0d
+			x: 9.0d
 			y: 0.0d
 		}
 		{
@@ -460,45 +469,29 @@
 				type: "observation"
 			}]
 			title: "锻造零件"
-			x: 10.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["72908B9592992F33"]
-			description: ["在工坊中，我在一个特殊装置上发现了类似&e电池&r的东西，板条箱里也偶尔会找到这种东西。虽然我暂时还不知道它的具体用途，但或许未来能派上用场。"]
-			icon: "tetra:transfer_unit"
-			id: "023CB874F457BB78"
-			tasks: [{
-				icon: "tetra:transfer_unit"
-				id: "136D71193D468069"
-				observe_type: 0
-				timer: 0L
-				to_observe: "tetra:transfer_unit"
-				type: "observation"
-			}]
-			title: "传输单元"
-			x: 11.5d
-			y: -1.0d
+			x: 13.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: [""]
+			description: ["锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"]
 			id: "332D5E0455DC61E7"
-			subtitle: "锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"
 			tasks: [{
 				advancement: "tetra:spelunking/hammer_jam"
 				criterion: ""
 				id: "4D8444477A6DFD69"
 				type: "advancement"
 			}]
-			x: 15.5d
-			y: 1.0d
+			title: "卡壳"
+			x: 19.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
 				"3629F1DBEEFAF2FF"
 				"5E3FECE8A3CF0983"
 			]
+			description: ["查阅锻造师的笔记得知，这种金属源自地核，在漫长岁月中一直以固态形式在熔岩中沉眠，拥有极高的抗火能力。然而，它难以直接锻造成钢锭。但若将其与&e外星陨石粉末及熔融状态的下界合金在高温中熔铸&r，便能融合出一种全新的金属。"]
 			id: "73CC400D59686F5C"
 			tasks: [{
 				id: "25294DFF356EB451"
@@ -506,11 +499,12 @@
 				type: "item"
 			}]
 			title: "谐振合金"
-			x: 10.5d
-			y: 2.0d
+			x: 12.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["73CC400D59686F5C"]
+			description: ["我将熔融的液态金属倒入&e熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。我相信这将开创一个新纪元。"]
 			id: "7861A70169C19A1A"
 			shape: "hexagon"
 			size: 2.0d
@@ -520,8 +514,30 @@
 				type: "item"
 			}]
 			title: "新纪元"
-			x: 10.5d
-			y: 4.0d
+			x: 12.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["01D8FB94D56BB2E2"]
+			description: ["在锻造锤上安装平面稳定器后可使打造的部件获得“高质量”属性，小幅度提升各项性能"]
+			icon: {
+				Count: 1
+				id: "minecraft:enchanted_book"
+				tag: {
+					StoredEnchantments: [{
+						id: "minecraft:protection"
+						lvl: 4s
+					}]
+				}
+			}
+			id: "3C21C65039C98D92"
+			tasks: [{
+				id: "1A25B9CA82C37B0A"
+				title: "高质量"
+				type: "checkmark"
+			}]
+			x: 18.5d
+			y: -3.5d
 		}
 	]
 	title: "&2承·新开端"

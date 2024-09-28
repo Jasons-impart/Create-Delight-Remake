@@ -26,7 +26,7 @@
 			dependencies: ["4B59A1EE7155AFC3"]
 			icon: "art_of_forging:sigil_of_eden"
 			id: "526EB245C016B285"
-			size: 2.0d
+			size: 1.0d
 			tasks: [{
 				icon: "art_of_forging:sigil_of_eden"
 				id: "7FE967DEA7CA772A"
@@ -35,8 +35,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: 0.0d
-			y: 2.0d
+			x: 59.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -48,8 +48,8 @@
 				item: "tetra:earthpiercer"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 0.0d
+			x: 60.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -61,8 +61,8 @@
 				item: "tetra:stonecutter"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 0.0d
+			x: 61.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -74,10 +74,11 @@
 				item: "tetra:chthonic_extractor"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 0.0d
+			x: 59.0d
+			y: -5.0d
 		}
 		{
+			dependencies: ["7861A70169C19A1A"]
 			icon: "art_of_forging:devils_soul_gem"
 			id: "4B59A1EE7155AFC3"
 			shape: "hexagon"
@@ -89,8 +90,8 @@
 				title: "锻造之美"
 				type: "advancement"
 			}]
-			x: 0.0d
-			y: 5.0d
+			x: 59.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["526EB245C016B285"]
@@ -102,8 +103,8 @@
 				item: "tetra:dragon_sinew"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 0.0d
+			x: 58.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["4B59A1EE7155AFC3"]
@@ -138,8 +139,8 @@
 				type: "questsadditions:time"
 			}]
 			title: "&e锻造，&4魅力无穷！"
-			x: -4.0d
-			y: 5.0d
+			x: 55.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -156,8 +157,8 @@
 				type: "questsadditions:time"
 			}]
 			title: "&e根植&4灵魂&e的恐惧"
-			x: 4.059523809523803d
-			y: 5.0238095238095255d
+			x: 62.5d
+			y: 0.25d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -167,8 +168,8 @@
 				item: "art_of_forging:forged_steel_ingot"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 5.0d
+			x: 52.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["61863D59AF0A55BD"]
@@ -186,8 +187,8 @@
 					type: "item"
 				}
 			]
-			x: -8.5d
-			y: 4.0d
+			x: 51.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["61863D59AF0A55BD"]
@@ -197,8 +198,8 @@
 				item: "art_of_forging:endsteel_ingot"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 5.0d
+			x: 51.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -210,8 +211,8 @@
 				type: "item"
 			}]
 			title: "纳米机器，小子"
-			x: -7.0d
-			y: 4.0d
+			x: 52.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -230,8 +231,8 @@
 					type: "item"
 				}
 			]
-			x: -7.0d
-			y: 6.0d
+			x: 52.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["305CD2F89A0FEC9B"]
@@ -241,8 +242,8 @@
 				item: "art_of_forging:mark_of_the_architect"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 6.0d
+			x: 51.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -254,8 +255,8 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 2.5d
+			x: 52.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -266,8 +267,8 @@
 				item: "art_of_forging:devils_soul_gem"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 2.5d
+			x: 51.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -278,8 +279,8 @@
 				item: "art_of_forging:eerie_shard"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 2.5d
+			x: 53.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["48CEB0D9F5BB3B53"]
@@ -292,8 +293,8 @@
 				type: "advancement"
 			}]
 			title: "忆念之弓"
-			x: -8.5d
-			y: 1.0d
+			x: 51.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["67CE7F0A4A760294"]
@@ -303,8 +304,8 @@
 				item: "art_of_forging:enigmatic_construct"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 5.0d
+			x: 48.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["008980F5CA826170"]
@@ -315,8 +316,8 @@
 				id: "63E4BBFD373D2DCB"
 				type: "advancement"
 			}]
-			x: -11.5d
-			y: 6.0d
+			x: 48.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -331,8 +332,8 @@
 				id: "4EED1FAAA08ED78A"
 				type: "advancement"
 			}]
-			x: -10.0d
-			y: 6.0d
+			x: 49.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -344,8 +345,8 @@
 				type: "advancement"
 			}]
 			title: "武士刀之道"
-			x: -7.0d
-			y: 7.0d
+			x: 52.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["199224C9B6737853"]
@@ -357,8 +358,8 @@
 				id: "2F43423A95F2FE84"
 				type: "advancement"
 			}]
-			x: -8.5d
-			y: 7.0d
+			x: 51.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -382,8 +383,8 @@
 				}
 			]
 			title: "远古锻器"
-			x: -5.0d
-			y: 8.0d
+			x: 54.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["240203B27A213370"]
@@ -396,8 +397,8 @@
 				type: "advancement"
 			}]
 			title: "音波攻击"
-			x: -6.5d
-			y: 1.0d
+			x: 53.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["16F7094F6B905C57"]
@@ -408,8 +409,8 @@
 				title: "千夜寒"
 				type: "checkmark"
 			}]
-			x: -10.0d
-			y: 7.0d
+			x: 49.5d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -423,8 +424,8 @@
 				item: "art_of_forging:life_fiber"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 8.0d
+			x: 52.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7E4E208498CE3F49"]
@@ -444,8 +445,8 @@
 				}
 			]
 			title: "左右断斩之剪"
-			x: -7.0d
-			y: 9.5d
+			x: 52.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5D841E1441200184"]
@@ -456,8 +457,8 @@
 				item: "art_of_forging:rending_scissor_complete"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 9.5d
+			x: 53.5d
+			y: 4.5d
 		}
 		{
 			dependencies: [
@@ -483,8 +484,8 @@
 				}
 			]
 			title: "重获新生"
-			x: -5.0d
-			y: 9.5d
+			x: 54.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -495,8 +496,8 @@
 				item: "art_of_forging:shards_of_malice"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 8.0d
+			x: 53.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -507,8 +508,8 @@
 				item: "witheringboon:meldedgeode"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 5.0d
+			x: 65.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -519,8 +520,8 @@
 				item: "witheringboon:hardenedprismarine"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 4.0d
+			x: 65.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0720A511B2906028"]
@@ -530,8 +531,8 @@
 				item: "witheringboon:soulanitealloy"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 4.0d
+			x: 66.5d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -544,8 +545,8 @@
 				item: "witheringboon:soulaniteingot"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 3.0d
+			x: 66.5d
+			y: -2.0d
 		}
 		{
 			id: "29FC5B4614FB917D"
@@ -555,8 +556,8 @@
 				item: "witheringboon:witheredsoulstone"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 3.0d
+			x: 63.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["29FC5B4614FB917D"]
@@ -567,8 +568,8 @@
 				item: "witheringboon:blackbloodblade"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 1.5d
+			x: 63.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -579,8 +580,8 @@
 				item: "witheringboon:wardensbane"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 7.5d
+			x: 66.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -591,8 +592,8 @@
 				item: "witheringboon:amethystgale"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 7.5d
+			x: 64.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -603,8 +604,8 @@
 				item: "witheringboon:hoarfrosthead"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 7.5d
+			x: 65.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["119399A4C8B448E3"]
@@ -616,8 +617,8 @@
 				item: "art_of_forging:potent_mixture"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 2.5d
+			x: 54.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -628,8 +629,8 @@
 				item: "witheringboon:enderchamber"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 7.5d
+			x: 63.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7575797048B12C10"]
@@ -640,8 +641,8 @@
 				item: "witheringboon:enderoverdrivemodule"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 9.0d
+			x: 63.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -652,8 +653,8 @@
 				item: "witheringboon:raidhorn"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 7.5d
+			x: 62.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["0F36EE20389AC17F"]
@@ -664,8 +665,750 @@
 				item: "witheringboon:lostviper"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 7.5d
+			x: 61.5d
+			y: 2.5d
+		}
+		{
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "true_crucible"
+							glyphs: [I;
+								8
+								7
+								9
+								2
+							]
+							intricate: 1b
+							key: "sword/crucible/architects_crucible_blade"
+							material: 2
+							ribbon: "ff0042"
+							schematics: [
+								"tetra:sword/crucible_blade"
+								"tetra:sword/crucible/architects_crucible_blade"
+							]
+						}]
+					}
+				}
+			}
+			id: "4178108D392476B9"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				advancement: "tetra:art_of_forging/root"
+				criterion: ""
+				id: "6EDC35C7A5A0FC86"
+				type: "advancement"
+			}]
+			x: 0.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "38CD78E43A6497DC"
+			tasks: [{
+				id: "41507FB3303D2212"
+				item: "art_of_forging:vobrite_crystal"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"38CD78E43A6497DC"
+				"24B350776EC1E573"
+				"25312B7026403FFF"
+			]
+			id: "47ADAC6620C3FF87"
+			size: 1.5d
+			tasks: [{
+				id: "36BD3E1BEBBF6A21"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 3.75d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "24B350776EC1E573"
+			tasks: [{
+				id: "05E1245BB066A60A"
+				item: "aetheric_tetranomicon:valkyrian_scrap"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "6211A2D1F45C224F"
+			tasks: [{
+				id: "2F6F2552A30F569E"
+				item: "witheringboon:hardenedprismarine"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "2B57F16B9F150906"
+			tasks: [{
+				id: "7D800634AC2440E2"
+				item: "witheringboon:witheredsoulstone"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"6211A2D1F45C224F"
+				"2B57F16B9F150906"
+				"748ECF70317F9EA6"
+				"38DBD1E39A2E6B30"
+			]
+			id: "551A3651A1E545B9"
+			size: 1.5d
+			tasks: [{
+				id: "2A81162ACF3EFED9"
+				item: "witheringboon:soulaniteingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["551A3651A1E545B9"]
+			id: "63B03A277D459A65"
+			tasks: [
+				{
+					id: "7C61E5405BB8F177"
+					item: "iceandfire:dragonsteel_fire_ingot"
+					type: "item"
+				}
+				{
+					id: "0684B419D88E9743"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					id: "3336D82836E71280"
+					item: "iceandfire:dragonsteel_lightning_ingot"
+					type: "item"
+				}
+			]
+			x: 13.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["551A3651A1E545B9"]
+			id: "38D20838234FECAE"
+			tasks: [{
+				id: "3FA49AA0BB5B0251"
+				item: "art_of_forging:dragon_soul"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["551A3651A1E545B9"]
+			id: "37009649B2B8EC6C"
+			tasks: [{
+				id: "5B78C6B3E560AF87"
+				item: "art_of_forging:fragment_of_eden"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 11.5d
+		}
+		{
+			dependencies: [
+				"63B03A277D459A65"
+				"38D20838234FECAE"
+				"37009649B2B8EC6C"
+			]
+			id: "691FF0ECF3FDC2ED"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "27225645CA88DA29"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 14.25d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "25312B7026403FFF"
+			tasks: [{
+				id: "0CEAB15EAC48A56C"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "aether:aerclouds"
+					}
+				}
+				title: "Any #aether:aerclouds"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "748ECF70317F9EA6"
+			tasks: [{
+				id: "6E8A5AEF9543DF67"
+				item: "art_of_forging:soul_ember"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 6.5d
+		}
+		{
+			id: "50E6BE9153146BF5"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "54A33806AEF48C3E"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -0.75d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "6D5A656ACC1EC65B"
+			tasks: [{
+				id: "7CC80CAAE8BE5484"
+				item: "art_of_forging:soul_ember"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "19C9240CC2FCED23"
+			tasks: [{
+				id: "1C104AC1E0A6BB93"
+				item: "art_of_forging:shards_of_malice"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["22EB3CAE02880E7F"]
+			id: "7F9D35C4E62EBE86"
+			tasks: [{
+				id: "3114D559C5159C66"
+				item: "art_of_forging:life_fiber"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "38DBD1E39A2E6B30"
+			tasks: [{
+				id: "0DB002EE8C4F3893"
+				item: "iceandfire:ghost_ingot"
+				type: "item"
+			}]
+			x: 14.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["7F9D35C4E62EBE86"]
+			id: "06833E5F5569DFA6"
+			tasks: [
+				{
+					id: "42BB001312F43D89"
+					item: "art_of_forging:rending_scissor_red"
+					type: "item"
+				}
+				{
+					id: "0437FA2F881C71D1"
+					item: "art_of_forging:rending_scissor_purple"
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["06833E5F5569DFA6"]
+			id: "1F19F9E3509D49AA"
+			tasks: [
+				{
+					id: "647A84739BB9675A"
+					item: "art_of_forging:rending_scissor_complete"
+					type: "item"
+				}
+				{
+					id: "0342A664BE15F66D"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "otherworldly"
+									glyphs: [I;
+										1
+										15
+										2
+										13
+									]
+									intricate: 0b
+									key: "tetra/rending_scissor_complete"
+									material: 2
+									ribbon: "e32182"
+									schematics: [
+										"tetra:sword/scissor_blade_left"
+										"tetra:sword/scissor_blade_right"
+										"tetra:sword/rending_scissor_complete"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["1F19F9E3509D49AA"]
+			id: "1607F7E800D3A52C"
+			tasks: [{
+				advancement: "tetra:art_of_forging/rending_scissor_complete_upgrade"
+				criterion: ""
+				id: "5C95ECC22DEE9A0A"
+				type: "advancement"
+			}]
+			x: 7.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["38163DC2EF9E6DA3"]
+			id: "477603DD01400467"
+			tasks: [{
+				advancement: "tetra:art_of_forging/euclidean_dagger_upgrade"
+				criterion: ""
+				id: "588A9537513C0EB0"
+				type: "advancement"
+			}]
+			x: -5.0d
+			y: 9.0d
+		}
+		{
+			id: "137C9220F86DD557"
+			tasks: [
+				{
+					id: "083CFDFAEA3DE401"
+					item: "art_of_forging:ancient_blade"
+					type: "item"
+				}
+				{
+					id: "3163DEC754A400AD"
+					item: "art_of_forging:ancient_axe"
+					type: "item"
+				}
+				{
+					id: "35992FBD1265DFF1"
+					item: "art_of_forging:ancient_flail"
+					type: "item"
+				}
+			]
+			x: -10.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["7259774FF36EFCA6"]
+			id: "4A0CB2CD39AF679F"
+			tasks: [{
+				advancement: "art_of_forging:materials/find_all_demonic_items"
+				criterion: ""
+				id: "48AD750FB46EC5D9"
+				type: "advancement"
+			}]
+			x: -7.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["19C9240CC2FCED23"]
+			id: "38163DC2EF9E6DA3"
+			tasks: [
+				{
+					id: "111FB7B02D4B1E43"
+					item: "art_of_forging:fragment_of_eden"
+					type: "item"
+				}
+				{
+					id: "4E558BCD644965DD"
+					item: "art_of_forging:sigil_of_eden"
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "2B0342C9C0B57372"
+			tasks: [{
+				id: "4458274AF47E8A81"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2B0342C9C0B57372"]
+			id: "6534A8367009AD68"
+			tasks: [{
+				id: "59C78A6628BBE6B0"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "art_of_forging"
+								glyphs: [I;
+									5
+									10
+									13
+									2
+								]
+								intricate: 0b
+								key: "sword/katana/katana_blade"
+								material: 2
+								ribbon: "dbff10"
+								schematics: [
+									"tetra:sword/katana/katana_blade"
+									"tetra:sword/tsuba_guard"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["6534A8367009AD68"]
+			id: "59AA40D0405EBE55"
+			tasks: [
+				{
+					id: "44DCE255A6640D7E"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "otherworldly"
+									glyphs: [I;
+										6
+										7
+										13
+										15
+									]
+									intricate: 0b
+									key: "sword/katana/murasama_blade"
+									material: 2
+									ribbon: "c52323"
+									schematics: ["tetra:sword/katana/murasama_blade"]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "tetra:art_of_forging/murasama_blade"
+					criterion: ""
+					id: "3C203776E644FED6"
+					type: "advancement"
+				}
+			]
+			x: -2.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"59AA40D0405EBE55"
+				"4A0CB2CD39AF679F"
+				"477603DD01400467"
+			]
+			id: "311424590CC23510"
+			tasks: [{
+				id: "1CF4C011BABC5D39"
+				item: "minecraft:writable_book"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3D6F2D2827972749"]
+			id: "74CBB9E36AC536AA"
+			tasks: [
+				{
+					id: "3211079DF3B97683"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "art_of_forging"
+									glyphs: [I;
+										8
+										7
+										9
+										2
+									]
+									intricate: 0b
+									key: "tetra/crucible_blade"
+									material: 2
+									ribbon: "ff1e00"
+									schematics: ["tetra:sword/crucible_blade"]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "tetra:art_of_forging/crucible_upgrade"
+					criterion: ""
+					id: "4A081B9A60BA7DF6"
+					type: "advancement"
+				}
+			]
+			x: 2.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"1607F7E800D3A52C"
+				"74CBB9E36AC536AA"
+				"69FDAEA318C16F60"
+			]
+			id: "77A9515AA98A2567"
+			tasks: [{
+				id: "3A52063435281FD1"
+				item: "art_of_forging:mark_of_the_architect"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["2B0342C9C0B57372"]
+			id: "3D6F2D2827972749"
+			tasks: [
+				{
+					id: "420C8439CFC88D01"
+					item: "art_of_forging:esoteric_codex"
+					type: "item"
+				}
+				{
+					id: "7183B57CDDA9C9EF"
+					item: "art_of_forging:enigmatic_construct"
+					type: "item"
+				}
+				{
+					id: "115994C95C1E9E50"
+					item: "art_of_forging:dragon_soul"
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["17C30E3B0635EC76"]
+			id: "3C7ECDD0047075D3"
+			tasks: [{
+				count: 4L
+				id: "2D90A05000017C83"
+				item: "minecraft:wither_skeleton_skull"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6D5A656ACC1EC65B"]
+			id: "17C30E3B0635EC76"
+			tasks: [{
+				id: "586711542A9C7A43"
+				title: "灵魂火镰"
+				type: "checkmark"
+			}]
+			x: -7.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"137C9220F86DD557"
+				"19C9240CC2FCED23"
+				"3C7ECDD0047075D3"
+			]
+			id: "7259774FF36EFCA6"
+			tasks: [
+				{
+					id: "4C1F5DF05E48FC4B"
+					item: "art_of_forging:demonic_blade"
+					type: "item"
+				}
+				{
+					id: "7731AEB54A07343A"
+					item: "art_of_forging:demonic_axe"
+					type: "item"
+				}
+				{
+					id: "60C8444F65A1D39D"
+					item: "art_of_forging:demonic_flail"
+					type: "item"
+				}
+			]
+			x: -7.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "4E3D0A015ECF75F2"
+			tasks: [{
+				id: "7C939EE3B6AC6015"
+				item: "witheringboon:blackbloodblade"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4E3D0A015ECF75F2"]
+			id: "23DBC78515F34004"
+			tasks: [{
+				id: "1368500368013449"
+				item: "witheringboon:soulaniteingot"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["77A9515AA98A2567"]
+			id: "6078B3E3ACE67D7E"
+			tasks: [{
+				id: "2C6B18F0DAF6966E"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "true_crucible"
+								glyphs: [I;
+									8
+									7
+									9
+									2
+								]
+								intricate: 1b
+								key: "sword/crucible/architects_crucible_blade"
+								material: 2
+								ribbon: "ff0042"
+								schematics: [
+									"tetra:sword/crucible_blade"
+									"tetra:sword/crucible/architects_crucible_blade"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: 5.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["311424590CC23510"]
+			id: "76D096AB589DA308"
+			tasks: [{
+				id: "6D4D4A69EC3FFCD9"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "otherworldly"
+								glyphs: [I;
+									7
+									8
+									14
+									13
+								]
+								intricate: 1b
+								key: "sword/thousand_cold_nights"
+								material: 2
+								ribbon: "5c7c80"
+								schematics: [
+									"tetra:sword/katana/murasama_blade"
+									"tetra:sword/thousand_cold_nights"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -5.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "22EB3CAE02880E7F"
+			tasks: [{
+				id: "6C18BC704E5273A7"
+				item: "tetra:dragon_sinew"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["23DBC78515F34004"]
+			id: "69FDAEA318C16F60"
+			tasks: [{
+				id: "0DBB02EA363F9C17"
+				title: "噬魂之刃"
+				type: "checkmark"
+			}]
+			x: 5.0d
+			y: 9.0d
 		}
 	]
 	title: "&3转·锻造之艺"
