@@ -22,7 +22,7 @@ ServerEvents.recipes((event) => {
       '{"text": "主世界贵金属矿簇"}',
       "createdelight:overworld_noble_metal_ore_cluster",
     )
-    .placement(128, 16, 0721)
+    .placement(128, 16, 721)
     .id("kubejs:overworld_noble_metal_ore_cluster_ore")
     .biomeWhitelist("minecraft:is_overworld");
   event.recipes.createoreexcavation
@@ -79,7 +79,7 @@ ServerEvents.recipes((event) => {
   //火星宝石矿簇
   event.recipes.createoreexcavation
     .vein('{"text": "火星宝石矿簇"}', "createdelight:mars_gemstone_cluster")
-    .placement(128, 16, 0721)
+    .placement(128, 16, 721)
     .id("kubejs:mars_gemstone_cluster_ore")
     .biomeWhitelist("ad_astra:has_structure/mars_temple");
   event.recipes.createoreexcavation
