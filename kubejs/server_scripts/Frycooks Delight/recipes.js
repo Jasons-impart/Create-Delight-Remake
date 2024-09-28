@@ -36,8 +36,8 @@ function deep_frying(output, input, time) {
     package_item(e, 'frycooks_delight:canola', 'frycooks_delight:canola_crate', 9)
     deep_frying('frycooks_delight:fried_potato', 'minecraft:potato', 100)
     deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
-    deep_frying('frycooks_delight:fried_onion_ring', 'createdelight:sliced_onion', 100)
-    e.replaceInput({id: "culturaldelights:smelting/smoked_tomato"}, "farmersdelight:tomato", "createdelight:sliced_tomato")
+    deep_frying('frycooks_delight:fried_onion_ring', 'some_assembly_required:sliced_onion', 100)
+    e.replaceInput({id: "culturaldelights:smelting/smoked_tomato"}, "farmersdelight:tomato", "some_assembly_required:tomato_slices")
     e.recipes.create.compacting(
         Fluid.of("createdieselgenerators:plant_oil", 500),
         "2x frycooks_delight:canola_seeds"

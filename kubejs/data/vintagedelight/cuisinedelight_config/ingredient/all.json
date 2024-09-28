@@ -108,6 +108,33 @@
             "raw_penalty": 0.7,
             "size": 2,
             "stir_time": 80
-        }
+        },
+        {
+            "type": "NONE",
+            "effects": [
+                {
+                  "effect": "minecraft:strength",
+                  "level": 1,
+                  "time": 600
+                },
+                {
+                  "effect": "minecraft:speed",
+                  "level": 1,
+                  "time": 600
+                }
+            ],
+            "ingredient": [
+              {
+                "item": "vintagedelight:salt_dust"
+              }
+            ],
+            "max_time": 300,
+            "min_time": 0,
+            "nutrition": 4,
+            "overcook_penalty": 0.0,
+            "raw_penalty": 0.0,
+            "size": 1,
+            "stir_time": 120
+          }
     ]
 }

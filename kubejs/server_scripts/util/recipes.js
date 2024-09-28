@@ -103,7 +103,17 @@ function baking(event, input, output, count, category, time) {
     event.custom({ type: "refurbished_furniture:oven_baking", category: category, ingredient: { item: input }, result: { count: count, item: output }, time: time })
         .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
 }
-
+/**
+ * @param { Internal.RecipesEventJS } event 
+ * @param { InputItem_ } input 
+ * @param { OutputItem_ } output
+ * @param { String } category // "misc", "food"
+ * @param { number } time 
+ */
+function toasting(event, input, output, category, time) {
+    event.custom({ type: "refurbished_furniture:toaster_heating", category: category, ingredient: { item: input }, result: output, time: time })
+        .id(`refurbished_furniture:toasting/${output.split(":")[1]}`)
+}
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 

@@ -78,6 +78,38 @@
             "effects": [],
             "ingredient": [
                 {
+                    "item": "culturaldelights:pickle"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:cut_pickle"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
                     "item": "culturaldelights:avocado"
                 }
             ],

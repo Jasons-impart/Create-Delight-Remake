@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
         "9x vintagedelight:cucumber"
     ).id("vintagedelight:cucumber_crate")
     e.recipes.vintagedelight.fermenting(
-        "culturaldelights:pickle",
+        "5x culturaldelights:pickle",
         [
             "vintagedelight:cucumber",
             "vintagedelight:cucumber",
@@ -40,7 +40,7 @@ ServerEvents.recipes(e => {
         ], 6000
     ).id("vintagedelight:fermenting/pickle_from_fermenting")
     e.recipes.vintagedelight.fermenting(
-        "culturaldelights:cut_pickle",
+        "5x culturaldelights:cut_pickle",
         [
             "culturaldelights:cut_cucumber",
             "culturaldelights:cut_cucumber",

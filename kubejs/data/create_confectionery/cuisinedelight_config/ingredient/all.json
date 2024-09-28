@@ -2,7 +2,12 @@
     "entries": [
         {
           "type": "NONE",
-          "effects": [],
+          "effects": [
+            {
+              "effect": "minecraft:speed",
+              "level": 1,
+              "time": 1200
+            }],
           "ingredient": [
             {
               "item": "create_confectionery:bar_of_caramel"

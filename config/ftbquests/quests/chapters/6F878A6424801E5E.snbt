@@ -3764,7 +3764,7 @@
 			id: "39501D0E06276FA4"
 			tasks: [{
 				id: "39FE96BC1838948D"
-				item: "createdelight:sliced_tomato"
+				item: "some_assembly_required:tomato_slices"
 				type: "item"
 			}]
 			x: -5.5d
@@ -3786,7 +3786,7 @@
 			id: "46405FB93333E6BB"
 			tasks: [{
 				id: "309554B0FA8AFF96"
-				item: "createdelight:sliced_onion"
+				item: "some_assembly_required:sliced_onion"
 				type: "item"
 			}]
 			x: -11.5d
