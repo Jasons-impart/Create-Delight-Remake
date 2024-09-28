@@ -1,5 +1,5 @@
 {
-	"size": "small",
+	"size": "large",
 	"color": "#2F4F4F",
 	"waves": [
 		{
@@ -13,14 +13,41 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecarft:wither_skeleton",
+                    "entity": "minecraft:wither_skeleton",
                     "count": 10
                 },
 				{
-                    "entity": "iceandfire:if_cockatrice",
+                    "entity": "iceandfire:cockatrice",
                     "count": 2
                 }
 			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.20
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.20
+		     	}
+            ],
 			"rewards": [
 				{
 					"type": "gateways:stack",
@@ -30,7 +57,7 @@
                         "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
 				}
 			],
-			"max_wave_time": 600,
+			"max_wave_time": 1000,
 			"setup_time": 200
 		},
 		{
@@ -44,22 +71,50 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecarft:wither_skeleton",
+                    "entity": "minecraft:wither_skeleton",
                     "count": 16
                 },
 				{
-                    "entity": "iceandfire:if_cockatrice",
+                    "entity": "iceandfire:cockatrice",
                     "count": 2
                 }
 			],
-			"rewards": [
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.20
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.20
+		     	}
+            ],
+            "rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "minecarft:wither_skeleton",
+					"entity": "minecraft:wither_skeleton",
 					"rolls": 40
 				}
 			],
-			"max_wave_time": 600,
+			
+			"max_wave_time": 1200,
 			"setup_time": 200
 		},
 		{
@@ -73,61 +128,13 @@
                     "count": 2
                 },
                 {
-                    "entity": "minecarft:wither_skeleton",
+                    "entity": "minecraft:wither_skeleton",
                     "count": 16
                 },
 				{
-                    "entity": "iceandfire:if_cockatrice",
+                    "entity": "iceandfire:cockatrice",
                     "count": 4
                 }
-			],
-			"rewards": [
-				{
-					"type": "gateways:entity_loot",
-					"entity": "minecarft:wither_skeleton",
-					"rolls": 120
-				}
-			],
-			"max_wave_time": 600,
-			"setup_time": 200
-		},
-        {
-			"entities": [
-				{
-					"entity": "alexsmobs:enderiophage",
-					"count": 2
-				},
-                {
-                    "entity": "alexsmobs:soul_vulture",
-                    "count": 2
-                },
-                {
-                    "entity": "minecarft:wither_skeleton",
-                    "count": 18
-                },
-                {
-                    "entity": "alexsmobs:warped_mosco",
-                    "count": 2
-                }
-			],
-			"rewards": [
-				{
-					"type": "gateways:stack",
-					 "stack": {
-						 "item": "gateways:gate_pearl", 
-						 "count": 1,
-						 "nbt" : {"gateways":"createdelight:piercing_withering_trial"}}
-				 }
-			],
-			"max_wave_time": 600,
-			"setup_time": 200
-		},
-        {
-			"entities": [
-				{
-					"entity": "minecarft:wither",
-					"count": 1
-				}
 			],
 			"modifiers": [
 				{
@@ -159,19 +166,122 @@
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "minecarft:wither",
+					"entity": "minecraft:wither_skeleton",
+					"rolls": 120
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 200
+		},
+        {
+            "entities": [
+				{
+					"entity": "alexsmobs:enderiophage",
+					"count": 2
+				},
+                {
+                    "entity": "alexsmobs:soul_vulture",
+                    "count": 2
+                },
+                {
+                    "entity": "minecraft:wither_skeleton",
+                    "count": 18
+                },
+                {
+                    "entity": "alexsmobs:warped_mosco",
+                    "count": 2
+                }
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.20
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.20
+		     	}
+            ],
+            "rewards": [
+				{
+					"type": "gateways:stack",
+					 "stack": {
+						 "item": "gateways:gate_pearl", 
+						 "count": 1,
+						 "nbt" : {"gateways":"createdelight:piercing_withering"}}
+				 }
+			],
+            "max_wave_time": 1400,
+			"setup_time": 200
+        },
+		{
+            "entities": [
+                {
+                    "entity": "minecraft:wither",
+                    "count": 1
+                }
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.80
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.50
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.20
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.20
+		     	}
+            ],
+            "rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecraft:wither",
 					"rolls": 2
 				}
 			],
-			"max_wave_time": 600,
+            "max_wave_time": 1200,
 			"setup_time": 200
-		}
-    ],
+        }
+     ],
 	"failures": [
-        {
-        "type": "gateways:explosion",
-        "strength": 6,
-        "fire": true,
-        "block_damage": false
-    }]
+		{
+			"type": "gateways:explosion",
+			"strength": 6,
+			"fire": true,
+			"block_damage": true
+			}
+	]
 }
