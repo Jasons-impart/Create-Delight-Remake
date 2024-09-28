@@ -121,6 +121,7 @@ ServerEvents.tags("item", e => {
         "culturaldelights:cucumber_seeds",
         "corn_delight:corn_seeds",
         "corn_delight:corn",
-        "corn_delight:tortilla"
+        "corn_delight:tortilla",
+        "refurbished_furniture:knife",
     ])
 })
