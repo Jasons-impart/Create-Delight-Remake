@@ -737,7 +737,7 @@
     "tetra.synergy.double/dual_throwing_axe": "双面斧",
 	"tetra.synergy.sword/murasama": "村正之刃",
 	"tetra.synergy.sword/architects_crucible": "锻造师之权",
-	"tetra.synergy.sword/thousand_cold_nights": "千冷之夜",
+	"tetra.synergy.sword/thousand_cold_nights": "千夜寒",
 
 
 
@@ -806,7 +806,7 @@
 	"tetra/schematic/crucible/architects_crucible.description": "改进你的裁决剑刃，并将其升级为真正的锻造师之权.",
 	"tetra/schematic/crucible/architects_crucible.slot1": "锻造师之权",
 
-	"tetra.improvement.sword/architect_imprv.name": "违禁建筑",
+	"tetra.improvement.sword/architect_imprv.name": "违禁之物",
 	"tetra.improvement.sword/architect_imprv.description": "令你的锻造师之权真正降临现实",
 
     "tetra.improvement.blade/esoteric_tier.name": "神秘学",
@@ -1029,14 +1029,14 @@
     "item.tetra.scroll.sword/katana/murasama_blade.description": "包含来自另一个世界的知识，教授如何锻造村正之刃",
     "item.tetra.scroll.sword/katana/murasama_blade.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
-	"item.tetra.scroll.sword/crucible/architects_crucible_blade.prefix": "锻造之艺 第0章",
+	"item.tetra.scroll.sword/crucible/architects_crucible_blade.prefix": "锻造之艺 第零章",
     "item.tetra.scroll.sword/crucible/architects_crucible_blade.name": "锻造师之权",
     "item.tetra.scroll.sword/crucible/architects_crucible_blade.description": "包含制造锻造师之权所需的全部禁忌知识",
     "item.tetra.scroll.sword/crucible/architects_crucible_blade.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
     "item.tetra.scroll.sword/thousand_cold_nights.prefix": "锻造之艺 第  ？章",
-    "item.tetra.scroll.sword/thousand_cold_nights.name": "千冷之夜",
-    "item.tetra.scroll.sword/thousand_cold_nights.description": "包含如何再现千冷之夜的恶魔知识",
+    "item.tetra.scroll.sword/thousand_cold_nights.name": "千夜寒",
+    "item.tetra.scroll.sword/thousand_cold_nights.description": "包含如何再现千夜寒的恶魔知识",
     "item.tetra.scroll.sword/thousand_cold_nights.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
 
@@ -1057,7 +1057,7 @@
     "tetra.advancements.scrolls.root.title": "隐藏的秘密§eAoF§r",
     "tetra.advancements.scrolls.root.description": "找到一份卷轴，找到锻造艺术的图纸",
 
-    "art_of_forging.advancements.materials.root.title": "材料大全§e锻造之艺§r",
+    "art_of_forging.advancements.materials.root.title": "材料大全 §e锻造之艺§r",
     "art_of_forging.advancements.materials.root.description": "制作谐振合金混合物，开始锻造新材料。",
 
     "tetra.advancements.art_of_forging.rapier_upgrade.title": "荣耀的针",
@@ -1082,10 +1082,10 @@
     "tetra.advancements.upgrades.executioner_upgrade.description": "制作一把斩首巨剑",
 
     "tetra.advancements.art_of_forging.rending_scissor_red_upgrade.title": "Don't lose your way in your mind!（梗源于斩服少女）",
-    "tetra.advancements.art_of_forging.rending_scissor_red_upgrade.description": "制作红色裂齿刀锋。",
+    "tetra.advancements.art_of_forging.rending_scissor_red_upgrade.description": "制作红色撕裂剪刃。",
 
     "tetra.advancements.art_of_forging.rending_scissor_purple_upgrade.title": "可愛い女と呼ばないで（梗源于斩服少女）",
-    "tetra.advancements.art_of_forging.rending_scissor_purple_upgrade.description": "制作紫色的裂空剪刀刃",
+    "tetra.advancements.art_of_forging.rending_scissor_purple_upgrade.description": "制作紫色的撕裂剪刃",
 
     "tetra.advancements.art_of_forging.katana_upgrade.title": "刀之道",
     "tetra.advancements.art_of_forging.katana_upgrade.description": "制作武士刀刃",
