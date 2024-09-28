@@ -12,7 +12,7 @@ CreateEvents.spoutHandler(e => {
     
     e.add(
         "createdelight:depot_filling_tank_spout_interaction",
-        "create:depot",
+        ["create:depot", "create:weighted_ejector"],
         (block, fluid, simulate) => {
             let inventory = block.getInventory()
             if (inventory.isEmpty())
@@ -20,7 +20,7 @@ CreateEvents.spoutHandler(e => {
             let item = inventory.getAllItems().get(0)
             if (tankId.indexOf(item.id) == -1)
                 return 0
-            if (item.nbt.isEmpty() || item.nbt == {}) {
+            if (item.nbt == null || item.nbt.isEmpty()) {
                 item.nbt = {tagStock: 0}
             }
             let nbt = item.nbt
@@ -33,6 +33,7 @@ CreateEvents.spoutHandler(e => {
                     if ((item.id == tankId[i] && fluid.id == "minecraft:water")) {
                         level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                         if (!simulate) {
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                             nbt.tagStock = nbt.tagStock + fluidAmount / 10
                         }
                         return fluidAmount
@@ -51,9 +52,10 @@ CreateEvents.spoutHandler(e => {
                         else
                             return 0
                         if (!simulate) {
-                            nbt.tagStock = nbt.tagStock + fluidAmount / 10 / fluidMultipler
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
+                            nbt.tagStock = nbt.tagStock + fluidAmount / 10
                         }
-                        return fluidAmount
+                        return fluidAmount * fluidMultipler
                     }
                 }
             }
