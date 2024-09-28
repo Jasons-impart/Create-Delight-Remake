@@ -35,6 +35,8 @@ JEIEvents.hideItems((e) => {
     "ae2:facade",
     "megacells:mega_interface",
     "megacells:mega_pattern_provider",
+    "megacells:mega_interface_interface",
+    "megacells:mega_pattern_provider_interface",
   ]);
 });
 
