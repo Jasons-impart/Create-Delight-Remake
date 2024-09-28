@@ -1,5 +1,5 @@
 ServerEvents.tags("item", e => {
-    e.add("forge:spring/blow_500", [
+    e.add("forge:spring/below_500", [
         "vintageimprovements:tin_spring",
         "vintageimprovements:golden_spring",
         "vintageimprovements:electrum_spring",

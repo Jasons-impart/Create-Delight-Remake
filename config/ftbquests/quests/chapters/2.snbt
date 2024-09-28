@@ -799,7 +799,7 @@
 					Count: 1
 					id: "itemfilters:tag"
 					tag: {
-						value: "forge:spring/blow_500"
+						value: "forge:spring/below_500"
 					}
 				}
 				title: "任意低强度弹簧"

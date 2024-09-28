@@ -850,7 +850,6 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			description: [""]
 			hide: true
 			id: "6B73F85582C4208C"
 			subtitle: "双头工具的右部改装。破坏方块时，随机破坏周围几个方块。"
@@ -907,7 +906,6 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			description: [""]
 			hide: true
 			id: "2FA4F7A647152C1D"
 			subtitle: "单头工具的头部改装。可以在挖掘时同时挖掘其正后方的若干个方块。"
@@ -938,7 +936,6 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			description: [""]
 			hide: true
 			id: "6AAC8436FAA6B311"
 			subtitle: "剑的剑刃改装，拥有在触发横扫之刃时切去一大片石头（可被镐挖掘方块）的能力。"

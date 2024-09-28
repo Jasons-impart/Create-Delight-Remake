@@ -16,7 +16,7 @@ function remove_recipes_input(event, items) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { ResourceLocation[] } ids
+ * @param { Special.RecipeId[] } ids
  */
 function remove_recipes_id(event, ids) {
     ids.forEach(id => {
@@ -25,7 +25,7 @@ function remove_recipes_id(event, ids) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { string[] } types
+ * @param { Special.RecipeType[] } types
  */
 function remove_recipes_type(event, types) {
     types.forEach(type => {
@@ -34,7 +34,7 @@ function remove_recipes_type(event, types) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { string[] } mods
+ * @param { Special.Mod[] } mods
  */
 function remove_recipes_mod(event, mods) {
     mods.forEach(mod => {

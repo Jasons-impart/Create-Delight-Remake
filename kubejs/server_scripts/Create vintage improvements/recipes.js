@@ -6,7 +6,7 @@ ServerEvents.recipes(e => {
         " C ",
         " D "
     ], {
-        A: "#forge:spring/blow_500",
+        A: "#forge:spring/below_500",
         B: "create:copper_casing",
         C: "minecraft:dried_kelp",
         D: "#createbigcannons:sheet_iron"
