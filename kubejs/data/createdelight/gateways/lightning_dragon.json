@@ -6,14 +6,41 @@
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 3
+					"count": 1
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 5
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value":0.1 
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
 					"entity": "iceandfire:lightning_dragon",
-					"rolls": 10
+					"rolls": 1
 				}
 			],
 			"max_wave_time": 800,
@@ -23,41 +50,41 @@
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 4
+					"count": 1
 				}
 			],
 			"modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
+					"value": 1
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 3
+					"value": 10
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
+					"value": 3
 				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": 0.1
+					"value": 2
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.1
+					"value": -0.2
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
 					"entity": "iceandfire:lightning_dragon",
-					"rolls": 15
+					"rolls": 1
 				}
 			],
 			"max_wave_time": 800,
@@ -67,133 +94,45 @@
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 5
+					"count": 1
 				}
 			],
 			"modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.20
+					"value": 2
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 3
+					"value": 20
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.20
+					"value": 5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": 0.15
+					"value": 2
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.10
+					"value": -0.2
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
 					"entity": "iceandfire:lightning_dragon",
-					"rolls": 20
+					"rolls": 2
 				}
 			],
 			"max_wave_time": 800,
 			"setup_time": 200
-		},
-		{
-			"entities": [
-				{
-					"entity": "iceandfire:lightning_dragon",
-					"count": 6
-				}
-			],
-			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.25
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 5
-				},
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.30
-				},
-				{
-					"attribute": "generic.knockback_resistance",
-					"operation": "ADDITION",
-					"value": 0.15
-				},
-				{
-					"attribute": "generic.movement_speed",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.15
-				}
-			],
-			"rewards": [
-				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 25
-				}
-			],
-			"max_wave_time": 1000,
-			"setup_time": 280
-		},
-		{
-			"entities": [
-				{
-					"entity": "iceandfire:lightning_dragon",
-					"count": 7
-				}
-			],
-			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.35
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 5
-				},
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
-				},
-				{
-					"attribute": "generic.knockback_resistance",
-					"operation": "ADDITION",
-					"value": 0.20
-				},
-				{
-					"attribute": "generic.movement_speed",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.15
-				}
-			],
-			"rewards": [
-				{
-					"type": "gateways:experience",
-					"experience": 500,
-					"orb_size": 25
-				}
-			],
-			"max_wave_time": 1200,
-			"setup_time": 340
 		}
 	],
 	"rewards": [
@@ -203,5 +142,12 @@
 			"rolls": 5
 		}
 	],
-	"failures": []
+	"failures": [
+		{
+			"type": "gateways:explosion",
+			"strength": 50,
+			"fire": true,
+			"block_damage": true
+			}
+	]
 }

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vintagedelight"
+        }
+    ],
+    "container": {
+        "item": "vintagedelight:mason_jar"
+    },
+    "displayItem": {
+        "item": "some_assembly_required:spread",
+        "nbt": {
+            "Color": 10364173
+        }
+    },
+    "fullName": {
+      "translate": "some_assembly_required.ingredient.pepper_jam"
+    },
+    "item": "vintagedelight:pepper_jam_mason_jar",
+    "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
+}

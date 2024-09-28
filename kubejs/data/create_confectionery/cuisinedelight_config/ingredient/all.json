@@ -1,0 +1,25 @@
+{
+    "entries": [
+        {
+          "type": "NONE",
+          "effects": [
+            {
+              "effect": "minecraft:speed",
+              "level": 1,
+              "time": 1200
+            }],
+          "ingredient": [
+            {
+              "item": "create_confectionery:bar_of_caramel"
+            }
+          ],
+          "max_time": 300,
+          "min_time": 0,
+          "nutrition": 4,
+          "overcook_penalty": 0.0,
+          "raw_penalty": 0.0,
+          "size": 1,
+          "stir_time": 120
+        }
+    ]
+}

@@ -51,11 +51,18 @@
 				xp: 100
 			}]
 			subtitle: "用于压榨葡萄的木制容器"
-			tasks: [{
-				id: "314858CAB5D462CA"
-				item: "vinery:grapevine_pot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "314858CAB5D462CA"
+					item: "vinery:grapevine_pot"
+					type: "item"
+				}
+				{
+					id: "20BC5AD791F821C7"
+					item: "vinery:wine_bottle"
+					type: "item"
+				}
+			]
 			title: "&4干净又卫生啊兄弟们"
 			x: 0.5d
 			y: -1.5d
@@ -183,24 +190,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["0295DFC67A8CF4B9"]
-			id: "611495D361621A62"
-			rewards: [{
-				id: "5F43111B4069E3BE"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "装酒的玩意儿"
-			tasks: [{
-				id: "57F308E0B601D196"
-				item: "vinery:wine_bottle"
-				type: "item"
-			}]
-			title: "总感觉里面装了酒"
-			x: -0.5d
-			y: -1.5d
-		}
-		{
 			dependencies: ["5EA0D911ED1989E6"]
 			id: "0F4EFB9B55CFFBF9"
 			rewards: [{
@@ -223,10 +212,7 @@
 			y: 3.0d
 		}
 		{
-			dependencies: [
-				"611495D361621A62"
-				"7943F4B92BD73CC3"
-			]
+			dependencies: ["7943F4B92BD73CC3"]
 			description: [""]
 			id: "522C959D15ACAA3E"
 			rewards: [{
@@ -249,7 +235,7 @@
 				type: "item"
 			}]
 			title: "&e我的葡萄汁啊~飞啊飞~飞到了瓶子里~"
-			x: 0.0d
+			x: 0.5d
 			y: -3.0d
 		}
 		{
@@ -1062,6 +1048,26 @@
 			title: "珍藏你的名酒！"
 			x: -3.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "2B16F730A7B6D977"
+			subtitle: "可以用来种植葡萄，&e增产！"
+			tasks: [
+				{
+					id: "75998BE8499B43FE"
+					item: "nethervinery:obsidian_stem"
+					type: "item"
+				}
+				{
+					id: "41DAD25F58CF77CB"
+					item: "vinery:grapevine_stem"
+					type: "item"
+				}
+			]
+			title: "葡萄藤杆"
+			x: -0.5d
+			y: -1.5d
 		}
 	]
 	title: "&e酿酒大师"

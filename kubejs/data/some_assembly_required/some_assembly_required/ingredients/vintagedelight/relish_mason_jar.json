@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vintagedelight"
+        }
+    ],
+    "container": {
+        "item": "vintagedelight:mason_jar"
+    },
+    "displayItem": {
+        "item": "some_assembly_required:spread",
+        "nbt": {
+            "Color": 7179533
+        }
+    },
+  "fullName": {
+    "translate": "some_assembly_required.ingredient.relish"
+    },
+    "item": "vintagedelight:relish_mason_jar",
+    "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
+}

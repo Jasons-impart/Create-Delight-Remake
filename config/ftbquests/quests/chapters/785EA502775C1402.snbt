@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createdelightcore:netherite_coin"
 	id: "785EA502775C1402"
-	order_index: 5
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -40,7 +40,7 @@
 			}]
 			shape: "square"
 			size: 1.5d
-			subtitle: "本包所有村民的货币都被替换为了铜币"
+			subtitle: "本包所有村民的货币都被替换为了模组的货币（注意，部分村民的回收收益遭到了大幅削弱）"
 			tasks: [{
 				id: "43F5AFB97D1EFE9D"
 				title: "好吧"
@@ -74,8 +74,8 @@
 		{
 			dependencies: ["34C9A7E928820147"]
 			description: [
-				"使用这些机器可以实现网络上的交易的自动化。你可以自动购买商品，也可以自动出售商品，或者为你的网络上的商店补货。不过对于交易，每个机器可以也仅可以选择一个网络上商店的一个交易进行。"
-				"使用时需要指定机器的输入面和输出面，以及何种情况下工作。"
+				"使用这些机器可以实现网络上的交易的自动化。你可以自动购买商品，也可以自动出售商品，或者为你的网络上的商店补货。不过对于交易，每个机器仅可以选择网络上的商店的一个交易来进行。"
+				"使用时需要指定机器的输入面和输出面，以及何种情况下才会工作。"
 			]
 			id: "39DF3E07789374D0"
 			rewards: [{
@@ -235,6 +235,7 @@
 						}
 					}
 					match_nbt: false
+					title: "钱包"
 					type: "item"
 					weak_nbt_match: true
 				}
@@ -301,7 +302,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "用于出售电力，购买者同样需要自备电池之类的容器"
+			subtitle: "用于出售电力，购买者需要自备电池之类的容器"
 			tasks: [{
 				id: "6AD21DBF62903B58"
 				item: {
