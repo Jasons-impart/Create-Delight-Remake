@@ -2594,5 +2594,6 @@
   "tetra.tweak.scanner/adjustable_span.label": "范围",
   "tetra.tweak.scanner/adjustable_span.tooltip": "修改竖直或水平范围的优先级。",
   "tetra.tweak.scanner/adjustable_span.left": "竖直",
-  "tetra.tweak.scanner/adjustable_span.right": "水平"
+  "tetra.tweak.scanner/adjustable_span.right": "水平",
+  "tetra.variant.bastard_blade/dragonsteel_ice_ingot": "龙霜钢变种剑剑刃"
 }
