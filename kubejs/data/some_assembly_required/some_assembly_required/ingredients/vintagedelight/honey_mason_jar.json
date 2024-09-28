@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vintagedelight"
+        }
+    ],
+    "container": {
+        "item": "vintagedelight:mason_jar"
+    },
+    "displayItem": {
+        "item": "some_assembly_required:spread",
+        "nbt": {
+            "Color": 16551702
+        }
+    },
+    "fullName": {
+      "translate": "some_assembly_required.ingredient.honey_bottle"
+    },
+    "item": "vintagedelight:honey_mason_jar",
+    "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
+}
