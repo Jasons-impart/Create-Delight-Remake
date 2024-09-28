@@ -3,8 +3,8 @@ ServerEvents.recipes(e => {
         "vinery:cherry_boat"
     ])
     remove_recipes_output(e, [
-        "vinery:cherry_boat",
-        "vinery:grapevine_stem",
-        "nethervinery:obsidian_stem"
+        "vinery:cherry_boat"
+        // "vinery:grapevine_stem",
+        // "nethervinery:obsidian_stem"
     ])
 })
