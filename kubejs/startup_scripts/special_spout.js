@@ -27,10 +27,12 @@ CreateEvents.spoutHandler(e => {
             for (let i = 0; i < 3; i++) {
                 let maxAmount = 800 * Math.pow(2, i)
                 let fluidAmount = Math.min(maxAmount - nbt.tagStock, 100) * 10
-                console.log(fluidAmount)
+                const{ pos, level } = block
+                const{ x, y, z } = pos
                 if (fluid.amount >= fluidAmount && nbt.tagStock <= maxAmount) {
                     if ((item.id == tankId[i] && fluid.id == "minecraft:water")) {
                         if (!simulate) {
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                             nbt.tagStock = nbt.tagStock + fluidAmount / 10
                         }
                         return fluidAmount
@@ -48,6 +50,7 @@ CreateEvents.spoutHandler(e => {
                         else
                             return 0
                         if (!simulate) {
+                            level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                             nbt.tagStock = nbt.tagStock + fluidAmount / 10 / fluidMultipler
                         }
                         return fluidAmount
