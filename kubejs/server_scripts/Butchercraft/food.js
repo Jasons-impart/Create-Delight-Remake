@@ -11,30 +11,26 @@ ServerEvents.recipes(e => {
 //砂纸打磨 <recipetype:create:sandpaper_polishing>.addRecipe(配方名, 输出, 输出,)
 //热量：没有（none）普通加热（heated）超级加热（superheated）
 
-
-    //序列装配 九转大肠
-    let iner_2 = "createdelight:braised_intestines_in_brown_sauce" //iner_2替代中间产物
+    //九转大肠
+    let iner = "butchercraft:cooked_tripe" //iner替代中间产物
     e.recipes.create.sequenced_assembly("createdelight:braised_intestines_in_brown_sauce","butchercraft:cooked_tripe",[
-        e.recipes.create.deploying(iner_2, [iner_2, "butchercraft:cooked_tripe"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "festival_delicacies:greenonion"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "butchercraft:lard"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "vintagedelight:vinegar_bottle"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "farmersdelight:apple_cider"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "butchercraft:cooked_tripe"]),
+        e.recipes.create.cutting(iner, iner),
+        e.recipes.vintageimprovements.vibrating(iner, iner),
+        e.recipes.create.deploying(iner, [iner, "festival_delicacies:greenonion"]),
+        e.recipes.create.deploying(iner, [iner, "butchercraft:lard"]),
+        e.recipes.create.deploying(iner, [iner, "vintagedelight:vinegar_bottle"])
     ])
-        .transitionalItem(iner_2)
-        .loops(9)
+        .transitionalItem(iner)
+        .loops(1)
         .id("createdelight:braised_intestines_in_brown_sauce")
 
-    //搅拌器 开水白菜
+    //开水白菜
     e.recipes.create.mixing("createdelight:boiling_water_cabbage",[
         "festival_delicacies:chinese_cabbage", 
         "minecraft:bowl",
         "vintagedelight:salt_dust", 
         Fluid.of("minecraft:water", 500), 
-    ])  
+    ])
         .heated()
-        // .replaceIngredient({item:"createdelight:boiling_water_cabbage"},"minecraft:bowl")
         .id("createdelight:boiling_water_cabbage")
-         
-  })
+})

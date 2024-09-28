@@ -267,12 +267,15 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.boiling_water_cabbage")
         .food(food =>{
            food.hunger(8)
-               .saturation(0.6)
-               .effect("minecraft:resistance", 500, 2, 1.0)
-               .effect("farmersdelight:nourishment", 3000, 1, 1.0)
-               .effect("mynethersdelight:g_pungent", 20, 1, 1.0)
-               
-
+                .saturation(0.6)
+                .effect("minecraft:resistance", 500, 2, 1.0)
+                .effect("farmersdelight:nourishment", 3000, 1, 1.0)
+                .eaten(EatenEvent => {
+                    let player = EatenEvent.getPlayer()
+                    if(EatenEvent.getPlayer() != null){
+                        player.give("minecraft:bowl")
+                    }
+                })
         })
 
     // 未完成相关
