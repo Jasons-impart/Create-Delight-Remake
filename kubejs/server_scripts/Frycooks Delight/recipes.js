@@ -49,6 +49,6 @@ function deep_frying(output, input, time) {
     e.recipes.ratatouille.threshing([
         "2x frycooks_delight:canola_seeds",
         Item.of("2x frycooks_delight:canola_seeds").withChance(0.5)
-    ],
-    "frycooks_delight:canola")
+    ],"frycooks_delight:canola")
+    .id("ratatouille:threshing/canola_seeds")
 })

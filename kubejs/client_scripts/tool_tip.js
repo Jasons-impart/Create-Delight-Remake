@@ -1,8 +1,6 @@
 let tooltips = [
     ["vinery:cherry_boat", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["vinery:cherry_chest_boat", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
-    ["vinery:grapevine_stem", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
-    ["nethervinery:obsidian_stem", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["ad_astra:nasa_workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
     ["createdieselgenerators:oil_barrel", "§6可以防止燃料爆炸", "§6Can prevent fuel explosion"],
     ["ratatouille:frozen_block", "§b可冷却周围一格以内的物品", "§bCools down items within one block of the area"],
