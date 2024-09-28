@@ -12,7 +12,7 @@ Jason的相变铁世界生成
 */
 
 ServerEvents.recipes((event) => {
-  const { kubejs, vintageimprovements, create } = event.recipes;
+  const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
 
   // 电路板配方
   vintageimprovements
@@ -39,6 +39,30 @@ ServerEvents.recipes((event) => {
     .curving("createdelight:universal_press", "minecraft:iron_block")
     .head("createdelight:universal_press")
     .id("createdelight:universal_press_6");
+  vintageimprovements
+    .curving("ae2:printed_engineering_processor", "#forge:gems/diamond")
+    .head("ae2:engineering_processor_press")
+    .id("createdelight:universal_press_7");
+  vintageimprovements
+    .curving("megacells:printed_accumulation_processor", "megacells:sky_steel_ingot")
+    .head("megacells:accumulation_processor_press")
+    .id("createdelight:universal_press_8");
+  vintageimprovements
+    .curving("ae2:printed_calculation_processor", "ae2:certus_quartz_crystal")
+    .head("ae2:calculation_processor_press")
+    .id("createdelight:universal_press_9");
+  vintageimprovements
+    .curving("ae2:printed_logic_processor", "minecraft:gold_ingot")
+    .head("ae2:logic_processor_press")
+    .id("createdelight:universal_press_10");
+  vintageimprovements
+    .curving("ae2:printed_silicon", "ae2:silicon")
+    .head("ae2:silicon_press")
+    .id("createdelight:universal_press_11");
+  vintageimprovements
+    .curving("createdelight:universal_press", "minecraft:iron_block")
+    .head("createdelight:universal_press")
+    .id("createdelight:universal_press_12");
 
   let custom_inscribe = (result, middle, other) => {
     event
@@ -2926,5 +2950,141 @@ ServerEvents.recipes((event) => {
     .transitionalItem("minecraft:iron_nugget");
   event.remove({ id: "ae2:materials/formationcore" });
 
-  
+  // ME量子链接仓
+  create
+    .mechanical_crafting("ae2:quantum_link", ["AABAA", "ACDCA", "BEFEB", "ACGCA", "AABAA"], {
+      A: "ae2:quartz_glass",
+      B: "#ae2:glass_cable",
+      C: "ae2:fluix_pearl",
+      D: "ae2:singularity",
+      E: "ae2:dense_energy_cell",
+      F: "ae2:controller",
+      G: "ae2:interface",
+    })
+    .id("createdelight:quantum_link_A");
+  event.remove({ id: "ae2:network/blocks/quantum_link" });
+
+  // ME量子环
+  create
+    .item_application("ae2:quantum_ring", ["createdelight:space_casing", "ae2:controller"])
+    .id("createdelight:quantum_ring_A");
+  event.remove({ id: "ae2:network/blocks/quantum_ring" });
+
+  // 空间外壳
+  kubejs.shaped("createdelight:space_casing", ["ABA", "CDC", "ACA"], {
+    A: "createdelight:phase_transition_iron",
+    B: "ae2:singularity",
+    C: "ae2:fluix_pearl",
+    D: "#forge:storage_blocks/sky_steel",
+  });
+
+  // 铁外壳
+  minecraft.stonecutting("4x createdelight:iron_casing", "#forge:storage_blocks/iron");
+
+  // 陨钢外壳
+  minecraft.stonecutting("4x createdelight:sky_steel_casing", "#forge:storage_blocks/sky_steel");
+
+  // 量子桥卡
+  create
+    .sequenced_assembly("ae2wtlib:quantum_bridge_card", "ae2:advanced_card", [
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
+      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_link"]),
+    ])
+    .id("createdelight:quantum_bridge_card")
+    .transitionalItem("ae2:advanced_card")
+    .loops(1);
+  event.remove({ id: "ae2wtlib:quantum_bridge_card" });
+
+  // ME样板供应器
+  create
+    .sequenced_assembly("2x ae2:pattern_provider", "createdelight:iron_casing", [
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:annihilation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:formation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "#forge:workbench",
+      ]),
+    ])
+    .id("createdelight:pattern_provider")
+    .loops(1)
+    .transitionalItem("createdelight:iron_casing");
+  event.replaceInput(
+    { id: "ae2:network/blocks/pattern_providers_interface" },
+    "#forge:ingots/iron",
+    "#forge:plates/iron"
+  );
+
+  // // 分子装配室
+  // create
+  //   .sequenced_assembly("2x ae2:molecular_assembler", "ae2:quartz_glass", [
+  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "ae2:annihilation_core"]),
+  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "ae2:formation_core"]),
+  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:workbench"]),
+  //   ])
+  //   .id("createdelight:molecular_assembler_A")
+  //   .loops(1)
+  //   .transitionalItem("ae2:quartz_glass");
+  // create
+  //   .sequenced_assembly("2x ae2:molecular_assembler", "createdelight:quartz_glass_parts", [
+  //     create.deploying("createdelight:quartz_glass_parts", [
+  //       "createdelight:quartz_glass_parts",
+  //       "ae2:annihilation_core",
+  //     ]),
+  //     create.deploying("createdelight:quartz_glass_parts", [
+  //       "createdelight:quartz_glass_parts",
+  //       "ae2:formation_core",
+  //     ]),
+  //     create.deploying("createdelight:quartz_glass_parts", [
+  //       "createdelight:quartz_glass_parts",
+  //       "#forge:workbench",
+  //     ]),
+  //   ])
+  //   .id("createdelight:molecular_assembler_B")
+  //   .loops(1)
+  //   .transitionalItem("createdelight:quartz_glass_parts");
+
+  // event.replaceInput(
+  //   { id: "ae2:network/crafting/molecular_assembler" },
+  //   "#forge:ingots/iron",
+  //   "#forge:plates/iron"
+  // );
+
+  // // ME接口
+  // create
+  //   .sequenced_assembly('ae2:interface', '#forge:glass', [
+  //     create.deploying('#forge:glass', [
+  //       '#forge:glass',
+  //       "ae2:annihilation_core",
+  //     ]),
+  //     create.deploying('#forge:glass', [
+  //       '#forge:glass',
+  //       "ae2:formation_core",
+  //     ]),
+  //     create.deploying('#forge:glass', [
+  //       '#forge:glass',
+  //       "#forge:workbench",
+  //     ]),
+  //   ])
+  //   .id("createdelight:interface")
+  //   .loops(1)
+  //   .transitionalItem('#forge:glass');
+
+  // event.replaceInput(
+  //   { id: "ae2:network/blocks/interfaces_interface" },
+  //   "#forge:ingots/iron",
+  //   "#forge:plates/iron"
+  // );
 });
