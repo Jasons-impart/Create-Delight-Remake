@@ -36,10 +36,19 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_desh_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createdelight:molten_desh", 90),
+        Fluid.of("createdelight:molten_desh", 120),
         "createdelight:desh_dust",
         "superheated",
         20
     ).id("createmetallurgy:melting/melting_desh_dust")
     blast_and_smelting(e, 'createdelight:crushed_raw_desh', "ad_astra:desh_ingot", 0.1, 100)
+    metal_production_line_5(e, 
+        [
+            "createdelight:dirty_desh_dust",
+            "createdelight:desh_dust",
+            "createdelight:crushed_raw_desh",
+            "ad_astra:raw_desh",
+            "ad_astra:desh_nugget"
+        ]
+    )
 })
