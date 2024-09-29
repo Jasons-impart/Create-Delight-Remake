@@ -32,10 +32,20 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_silver_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createdelight:molten_sliver", 90),
+        Fluid.of("createdelight:molten_sliver", 120),
         'createdelight:silver_dust',
         "heated",
         20
     ).id("createmetallurgy:melting/melting_silver_dust")
     blast_and_smelting(e, "create:crushed_raw_silver", "iceandfire:silver_ingot", 0.1, 100)
+    
+    metal_production_line_5(e, 
+        [
+            "createdelight:dirty_silver_dust",
+            "createdelight:silver_dust",
+            "create:crushed_raw_silver",
+            "iceandfire:raw_silver",
+            "iceandfire:silver_nugget"
+        ]
+    )
 })

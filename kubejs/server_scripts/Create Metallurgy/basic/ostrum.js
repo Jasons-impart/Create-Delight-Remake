@@ -36,10 +36,20 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_ostrum_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createdelight:molten_ostrum", 90),
+        Fluid.of("createdelight:molten_ostrum", 120),
         "createdelight:ostrum_dust",
         "superheated",
         20
     ).id("createmetallurgy:melting/melting_ostrum_dust")
     blast_and_smelting(e, 'createdelight:crushed_raw_ostrum', "ad_astra:ostrum_ingot", 0.1, 100)
+
+    metal_production_line_5(e, 
+        [
+            "createdelight:dirty_ostrum_dust",
+            "createdelight:ostrum_dust",
+            "createdelight:crushed_raw_ostrum",
+            "ad_astra:raw_ostrum",
+            "ad_astra:ostrum_nugget"
+        ]
+    )
 })

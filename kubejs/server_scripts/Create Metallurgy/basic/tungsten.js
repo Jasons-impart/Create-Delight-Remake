@@ -19,7 +19,7 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_wolframite_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createmetallurgy:molten_tungsten", 90),
+        Fluid.of("createmetallurgy:molten_tungsten", 120),
         "createmetallurgy:wolframite_dust",
         "heated",
         20
@@ -28,4 +28,13 @@ ServerEvents.recipes(e => {
         "createmetallurgy:tungsten_sheet",
         "createmetallurgy:tungsten_ingot"
     ).id("create:pressing/tungsten_sheet")
+    metal_production_line_5(e, 
+        [
+            "createmetallurgy:dirty_wolframite_dust",
+            "createmetallurgy:wolframite_dust",
+            "createmetallurgy:crushed_raw_wolframite",
+            "createmetallurgy:raw_wolframite",
+            "createmetallurgy:tungsten_nugget"
+        ]
+    )
 })

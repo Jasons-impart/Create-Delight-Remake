@@ -448,10 +448,15 @@ StartupEvents.registry("item", e => {
     // 水星
     e.create("createdelight:mercury_ore_cluster")
         .translationKey("item.createdelight.mercury_ore_cluster")
-
+    // 金星
+    e.create("createdelight:venus_ore_cluster")
+        .translationKey("item.createdelight.venus_ore_cluster")
     // 霜原星
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")
+    // 探矿仪
+    e.create("createdelight:prospector")
+        .translationKey("item.createdelight.prospector")
 
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")

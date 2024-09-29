@@ -3,13 +3,13 @@ const OreVeinAtlasItem = Java.loadClass("com.tom.createores.item.OreVeinAtlasIte
 let veins = [
     ["overworld_metal_ore_cluster", "kubejs:overworld_metal_ore_cluster_ore"],
     ["overworld_noble_metal_ore_cluster", "kubejs:overworld_noble_metal_ore_cluster_ore"],
-    ["nether_ore_cluster", "kubejs:nether_ore_cluster_ore"],
+    ["nether_ore_cluster", "kubejs:nether_ore_cluster"],
     ["moon_ore_cluster", "kubejs:moon_ore_cluster_ore"],
     ["mars_ore_cluster", "kubejs:mars_ore_cluster_ore"],
     ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"]
 ]
 
-ItemEvents.rightClicked("stick", e => {
+ItemEvents.rightClicked("createdelight:prospector", e => {
     const { player, level } = e
     let excludedVein = []
     player.inventory.allItems.forEach(item => {

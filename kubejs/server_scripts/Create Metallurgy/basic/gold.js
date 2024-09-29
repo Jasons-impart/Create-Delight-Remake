@@ -12,6 +12,15 @@ ServerEvents.recipes(e => {
             "createmetallurgy:molten_gold"
         ], "heated", 40
     )
+    metal_production_line_5(e, 
+        [
+            "createmetallurgy:dirty_gold_dust",
+            "createmetallurgy:gold_dust",
+            "create:crushed_raw_gold",
+            "minecraft:raw_gold",
+            "minecraft:gold_nugget"
+        ]
+    )
     e.recipes.createmetallurgy.melting(
         Fluid.of("createmetallurgy:molten_gold", 90),
         "createmetallurgy:dirty_gold_dust",
@@ -19,7 +28,7 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_gold_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createmetallurgy:molten_gold", 90),
+        Fluid.of("createmetallurgy:molten_gold", 120),
         "createmetallurgy:gold_dust",
         "heated",
         20
