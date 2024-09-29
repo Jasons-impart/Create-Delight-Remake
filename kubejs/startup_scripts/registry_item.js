@@ -448,7 +448,9 @@ StartupEvents.registry("item", e => {
     // 水星
     e.create("createdelight:mercury_ore_cluster")
         .translationKey("item.createdelight.mercury_ore_cluster")
-
+    // 金星
+    e.create("createdelight:venus_ore_cluster")
+        .translationKey("item.createdelight.venus_ore_cluster")
     // 霜原星
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")

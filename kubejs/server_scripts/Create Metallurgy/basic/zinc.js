@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
         "heated",
         20
     ).id("createmetallurgy:melting/melting_zinc_dust")
-    metal_production_line_5(e, 
+    metal_production_line_5(e,
         [
             "createmetallurgy:dirty_zinc_dust",
             "createmetallurgy:zinc_dust",
