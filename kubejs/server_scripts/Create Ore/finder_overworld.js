@@ -9,7 +9,7 @@ let veins = [
     ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"]
 ]
 
-ItemEvents.rightClicked("stick", e => {
+ItemEvents.rightClicked("createdelight:prospector", e => {
     const { player, level } = e
     let excludedVein = []
     player.inventory.allItems.forEach(item => {

@@ -454,6 +454,9 @@ StartupEvents.registry("item", e => {
     // 霜原星
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")
+    // 探矿仪
+    e.create("createdelight:prospector")
+        .translationKey("item.createdelight.prospector")
 
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
