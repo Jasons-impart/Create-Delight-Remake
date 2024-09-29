@@ -87,3 +87,8 @@
 	#Whether Money Mending should make a noise when triggered.
 	moneyMendingClink=true
 	
+#Debug Settings
+[debug]
+	#Whether LC Screens should render a white background for easier debugging & screenshots
+	debugScreenBG=false
+	

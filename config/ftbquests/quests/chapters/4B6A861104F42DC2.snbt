@@ -482,9 +482,10 @@
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: ["锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"]
+			description: [""]
 			id: "332D5E0455DC61E7"
 			optional: true
+			subtitle: "锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"
 			tasks: [{
 				advancement: "tetra:spelunking/hammer_jam"
 				criterion: ""
