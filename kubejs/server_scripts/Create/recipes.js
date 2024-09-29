@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "3x create:portable_storage_interface",
         [
-            "#forge:spring/blow_500",
+            "#forge:spring/below_500",
             "create:andesite_casing",
             "create:chute"
         ]
@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "create:portable_fluid_interface",
         [
-            "#forge:spring/blow_500",
+            "#forge:spring/below_500",
             "create:copper_casing",
             "create:chute"
         ]
@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
         "ABA",
         " C "
     ], {
-        A: "#forge:spring/blow_500",
+        A: "#forge:spring/below_500",
         B: "create:copper_casing",
         C: "minecraft:dried_kelp"
     }
@@ -71,7 +71,7 @@ ServerEvents.recipes(e => {
         " C "
     ], {
         A: "create:golden_sheet",
-        B: "#forge:spring/blow_500",
+        B: "#forge:spring/below_500",
         C: "minecraft:copper_ingot"
     }
     ).id("create:crafting/kinetics/steam_whistle")

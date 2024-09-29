@@ -157,8 +157,8 @@
 				type: "questsadditions:time"
 			}]
 			title: "&e根植&4灵魂&e的恐惧"
-			x: 62.5d
-			y: 0.25d
+			x: 62.25d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5A0412975703ECE7"]
@@ -389,7 +389,7 @@
 		{
 			dependencies: ["240203B27A213370"]
 			id: "6E03644484E41049"
-			subtitle: "带有怪异附层的武器可以更快积攒武器的打磨值，同时攻击时会触发&3音波尖啸&r\\n不过攻击时也有小概率产生幽匿脉络"
+			subtitle: "带有怪异附层的武器可以更快积攒武器的打磨值，同时长按右键会触发&3音波尖啸&r\\n不过攻击时也有小概率产生幽匿脉络"
 			tasks: [{
 				advancement: "tetra:art_of_forging/eerie_fuller"
 				criterion: ""
@@ -429,7 +429,6 @@
 		}
 		{
 			dependencies: ["7E4E208498CE3F49"]
-			description: [""]
 			id: "5D841E1441200184"
 			subtitle: "断斩之剪可以作为剑的剑刃改装，同时也是裂天箭图纸的制作材料"
 			tasks: [
