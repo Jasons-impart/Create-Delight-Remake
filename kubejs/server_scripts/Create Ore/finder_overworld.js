@@ -1,17 +1,12 @@
 const $OreVeinGenerator = Java.loadClass("com.tom.createores.OreVeinGenerator")
 const OreVeinAtlasItem = Java.loadClass("com.tom.createores.item.OreVeinAtlasItem")
 let veins = [
-    ["coal", "createoreexcavation:ore_vein_type/coal"],
-    ["iron", "createoreexcavation:ore_vein_type/iron"],
-    ["copper", "createoreexcavation:ore_vein_type/copper"],
-    ["water", "createoreexcavation:ore_vein_type/water"],
-    ["diamond", "createoreexcavation:ore_vein_type/diamond"],
-    ["emerald", "createoreexcavation:ore_vein_type/emerald"],
-    ["gold", "createoreexcavation:ore_vein_type/gold"],
-    ["hardened_diamond", "createoreexcavation:ore_vein_type/hardened_diamond"],
-    ["lapis", "createoreexcavation:ore_vein_type/lapis"],
-    ["redstone", "createoreexcavation:ore_vein_type/redstone"],
-    ["zinc", "createoreexcavation:ore_vein_type/zinc"]
+    ["overworld_metal_ore_cluster", "kubejs:overworld_metal_ore_cluster_ore"],
+    ["overworld_noble_metal_ore_cluster", "kubejs:overworld_noble_metal_ore_cluster_ore"],
+    ["nether_ore_cluster", "kubejs:nether_ore_cluster_ore"],
+    ["moon_ore_cluster", "kubejs:moon_ore_cluster_ore"],
+    ["mars_ore_cluster", "kubejs:mars_ore_cluster_ore"],
+    ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"]
 ]
 
 ItemEvents.rightClicked("stick", e => {
