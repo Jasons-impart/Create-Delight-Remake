@@ -113,7 +113,7 @@ ServerEvents.recipes((event) => {
     .vein('{"text": "金星矿簇"}', "createdelight:venus_ore_cluster")
     .placement(128, 16, 721)
     .id("kubejs:venus_ore_cluster_ore")
-    .biomeWhitelist("createdelight:is_venus");
+    .biomeWhitelist("createdelight:is_venus")
   event.recipes.createoreexcavation
     .drilling(
       "createdelight:venus_ore_cluster",

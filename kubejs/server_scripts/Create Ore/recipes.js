@@ -88,12 +88,14 @@ ServerEvents.recipes(e => {
     e.recipes.create.crushing([
         Item.of("minecraft:quartz").withChance(0.75),
         Item.of("minecraft:gold_nugget", 3).withChance(0.5),
-        Item.of("createmetallurgy:crushed_raw_wolframite").withChance(0.3)
+        Item.of("createmetallurgy:crushed_raw_wolframite").withChance(0.3),
+        Item.of("minecraft:ancient_debris").withChance(0.15)
     ],
         ["createdelight:nether_ore_cluster"])
         .id("create:crushing/crushed_raw_ore_from_nether_ore_cluster")
     e.recipes.vintageimprovements.vibrating([
         Item.of("createmetallurgy:raw_wolframite").withChance(0.5),
+        Item.of("minecraft:ancient_debris").withChance(0.3),
         Item.of("minecraft:quartz").withChance(0.25),
         Item.of("minecraft:gold_nugget", 3).withChance(0.25)
     ],
