@@ -1,0 +1,18 @@
+{
+	icon: "ae2:engineering_processor"
+	id: "051AD7319446C4E0"
+	loot_size: 1
+	order_index: 15
+	rewards: [
+		{ item: "ae2:logic_processor" }
+		{ item: "ae2:printed_calculation_processor" }
+		{ item: "ae2:engineering_processor" }
+		{ item: "ae2:calculation_processor" }
+		{ item: "ae2:printed_engineering_processor" }
+		{ item: "ae2:printed_logic_processor" }
+		{ item: "ae2:printed_silicon" }
+		{ item: "megacells:accumulation_processor" }
+		{ item: "megacells:printed_accumulation_processor" }
+	]
+	title: "处理器"
+}
