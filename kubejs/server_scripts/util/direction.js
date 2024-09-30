@@ -17,11 +17,11 @@ function getDirection(x1, y1, x2, y2) {
     if (dy === 0) return dx > 0 ? Text.translate("message.createdelight.east") : Text.translate("message.createdelight.west");
 
     if (dx > 0 && dy > 0) {
-        return Text.translate("message.createdelight.southeast");
+        return Text.translate("message.createdelight.northeast");
     }
 
     if (dx > 0 && dy < 0) {
-        return Text.translate("message.createdelight.northeast");
+        return Text.translate("message.createdelight.southeast");
     }
 
     if (dx < 0 && dy > 0) {
