@@ -306,6 +306,8 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:bleak_electron_tube")
         .maxStackSize(64)
         .translationKey("item.createdelight.bleak_electron_tube")
+    e.create("createdelight:incomplete_fs_upgrade")
+        .translationKey("item.createdelight.incomplete_fs_upgrade")
 
     // 注册货币
     e.create("createdelight:iron_coin")
@@ -454,6 +456,9 @@ StartupEvents.registry("item", e => {
     // 霜原星
     e.create("createdelight:glacio_ore_cluster")
         .translationKey("item.createdelight.glacio_ore_cluster")
+    // 探矿仪
+    e.create("createdelight:prospector")
+        .translationKey("item.createdelight.prospector")
 
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")

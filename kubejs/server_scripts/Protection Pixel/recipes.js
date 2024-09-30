@@ -14,7 +14,8 @@ ServerEvents.recipes(e => {
         "protection_pixel:hellsnakeloot",
         "protection_pixel:slingshotloot",
         "protection_pixel:anchorpointloot",
-        "protection_pixel:buoyancyloot"
+        "protection_pixel:buoyancyloot",
+        "protection_pixel:alloyplate"
     ])
     e.recipes.create.cutting(
         '2x protection_pixel:smallnetheritesheet',
@@ -322,4 +323,13 @@ ServerEvents.recipes(e => {
         "create:propeller",
         "ad_astra:fan"
     )
+    let iner_1 = "ad_astra:steel_plate"
+    e.recipes.create.sequenced_assembly("protection_pixel:alloyarmorplate", iner_1, [
+        e.recipes.create.deploying(iner_1, [iner_1, "protection_pixel:smallnetheritesheet"]),
+        e.recipes.create.deploying(iner_1, [iner_1, "ad_astra:steel_plate"]),
+        e.recipes.vintageimprovements.hammering(iner_1, iner_1)
+    ])
+    .loops(1)
+    .transitionalItem("protection_pixel:incompletealloyarmorplate")
+    .id("protection_pixel:alloyplate")
 })

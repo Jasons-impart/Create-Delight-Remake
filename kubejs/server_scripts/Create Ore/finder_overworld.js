@@ -9,7 +9,7 @@ let veins = [
     ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"]
 ]
 
-ItemEvents.rightClicked("stick", e => {
+ItemEvents.rightClicked("createdelight:prospector", e => {
     const { player, level } = e
     let excludedVein = []
     player.inventory.allItems.forEach(item => {
@@ -25,7 +25,7 @@ ItemEvents.rightClicked("stick", e => {
     // 数字是范围，单位是区块，100就是100区块（100*16格）以内
     let blockPosition = player.blockPosition()
     console.log(excludedVein.toLocaleString())
-    let pair = $OreVeinGenerator.getPicker(level).locate(player.blockPosition(), level, 100, (v) => excludedVein.indexOf(v.getId()) == -1)
+    let pair = $OreVeinGenerator.getPicker(level).locate(player.blockPosition(), level, 16, (v) => excludedVein.indexOf(v.getId()) == -1)
     let pos = pair.first
     let info = pair.second
     let distance = Math.floor(Math.sqrt((blockPosition.x - pos.x) * (blockPosition.x - pos.x) + (blockPosition.z - pos.z) * (blockPosition.z - pos.z)))

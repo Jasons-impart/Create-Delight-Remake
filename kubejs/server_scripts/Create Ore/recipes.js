@@ -52,7 +52,7 @@ ServerEvents.recipes(e => {
         .id("create:crushing/crushed_raw_ore_from_overworld_metal_ore_cluster")
 
     e.recipes.vintageimprovements.vibrating([
-        Item.of("minecraft:redstone", 4).withChance(0.75),
+        Item.of("createoreexcavation:raw_redstone").withChance(0.75),
         Item.of("minecraft:raw_iron").withChance(0.6),
         Item.of("create:raw_zinc").withChance(0.6),
         Item.of("minecraft:coal").withChance(0.5),
@@ -75,8 +75,8 @@ ServerEvents.recipes(e => {
 
     e.recipes.vintageimprovements.vibrating([
         
-        Item.of("minecraft:diamond").withChance(0.2),
-        Item.of("minecraft:emerald").withChance(0.3),
+        Item.of("createoreexcavation:raw_diamond").withChance(0.2),
+        Item.of("createoreexcavation:raw_emerald").withChance(0.3),
         Item.of("minecraft:lapis_lazuli", 4).withChance(0.4),
         Item.of("iceandfire:raw_silver").withChance(0.25),
         Item.of("minecraft:raw_gold").withChance(0.25)
@@ -88,12 +88,14 @@ ServerEvents.recipes(e => {
     e.recipes.create.crushing([
         Item.of("minecraft:quartz").withChance(0.75),
         Item.of("minecraft:gold_nugget", 3).withChance(0.5),
-        Item.of("createmetallurgy:crushed_raw_wolframite").withChance(0.3)
+        Item.of("createmetallurgy:crushed_raw_wolframite").withChance(0.3),
+        Item.of("minecraft:netherite_scrap").withChance(0.05)
     ],
         ["createdelight:nether_ore_cluster"])
         .id("create:crushing/crushed_raw_ore_from_nether_ore_cluster")
     e.recipes.vintageimprovements.vibrating([
         Item.of("createmetallurgy:raw_wolframite").withChance(0.5),
+        Item.of("minecraft:ancient_debris").withChance(0.3),
         Item.of("minecraft:quartz").withChance(0.25),
         Item.of("minecraft:gold_nugget", 3).withChance(0.25)
     ],
@@ -103,7 +105,6 @@ ServerEvents.recipes(e => {
     //月球矿簇
     e.recipes.create.crushing([
         Item.of("create:crushed_raw_iron"),
-        Item.of("ad_astra:cheese").withChance(0.5),
         Item.of("createdelight:crushed_raw_desh").withChance(0.25)
     ],
         ["createdelight:moon_ore_cluster"])
@@ -137,7 +138,7 @@ ServerEvents.recipes(e => {
         ["createdelight:mars_gemstone_cluster"])
         .id("create:crushing/crushed_raw_ore_from_mars_gemstone_cluster")
     e.recipes.vintageimprovements.vibrating([
-        Item.of("minecraft:diamond").withChance(0.4)
+        Item.of("createoreexcavation:raw_diamond").withChance(0.4)
     ],
         ["createdelight:mars_gemstone_cluster"])
         .id("vintageimprovements:vibrating/raw_ore_from_mars_gemstone_cluster")
@@ -154,7 +155,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.vibrating([
         Item.of("minecraft:coal"),
         Item.of("minecraft:raw_gold").withChance(0.6),
-        Item.of("minecraft:diamond").withChance(0.4),
+        Item.of("createoreexcavation:raw_diamond").withChance(0.4),
         Item.of("ad_astra:raw_calorite").withChance(0.5)
     ],
         ["createdelight:venus_ore_cluster"])
