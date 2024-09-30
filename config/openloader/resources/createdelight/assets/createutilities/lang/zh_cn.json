@@ -1,0 +1,74 @@
+{
+    "block.createutilities.void_steel_block": "虚空钢块",
+    "block.createutilities.void_steel_scaffolding": "虚空钢脚手架",
+    "block.createutilities.void_steel_ladder": "虚空钢梯子",
+    "block.createutilities.void_steel_bars": "虚空钢栏杆",
+    "block.createutilities.amethyst_tiles": "紫水晶砖",
+    "block.createutilities.small_amethyst_tiles": "小紫水晶砖",
+  
+    "itemGroup.createutilities.base": "机械动力：实用物品",
+  
+    "block.createutilities.gearcube": "六轴齿轮箱",
+    "block.createutilities.lshaped_gearbox": "L形齿轮箱",
+    "block.createutilities.void_motor": "虚空马达",
+    "block.createutilities.void_chest": "虚空箱子",
+    "block.createutilities.void_tank": "虚空流体储罐",
+    "block.createutilities.void_battery": "虚空蓄电池",
+    "block.createutilities.void_casing": "虚空机壳",
+  
+    "item.createutilities.void_steel_ingot": "虚空钢锭",
+    "item.createutilities.void_steel_sheet": "虚空钢板",
+    "item.createutilities.graviton_tube": "真空管",
+    "item.createutilities.polished_amethyst": "磨制紫水晶",
+  
+    "createutilities.logistics.owner": "所有者",
+    "createutilities.logistics.void.click_to_set_owner": "单击认领",
+    "createutilities.logistics.void.click_to_remove_owner": "单击取消认领",
+  
+    "createutilities.tooltip.void_battery.header": "虚空蓄电池信息：",
+    "createutilities.tooltip.void_battery.energy": "能量",
+  
+    "createutilities.ponder.gearcube.header": "使用六轴齿轮箱传递旋转力",
+    "createutilities.ponder.gearcube.text_1": "这种向所有方向传递旋转力的方式显得相当笨重",
+    "createutilities.ponder.gearcube.text_2": "一个六轴齿轮箱可使装置变得更为紧凑",
+  
+    "createutilities.ponder.lshaped_gearbox.header": "使用L形齿轮箱传递旋转力",
+    "createutilities.ponder.lshaped_gearbox.text_1": "这种改变方向的方式显得相当笨重",
+    "createutilities.ponder.lshaped_gearbox.text_2": "使用齿轮箱将比上种设计更为紧凑，但另外两个方向的接口毫无用处",
+    "createutilities.ponder.lshaped_gearbox.text_3": "有了L型齿轮箱，就能以更简洁、更经济的方式实现这一目标",
+    "createutilities.ponder.lshaped_gearbox.text_4": "持扳手右键点击它，可以改变其接口的方向",
+  
+    "createutilities.ponder.void_motor.header": "使用虚空马达",
+    "createutilities.ponder.void_motor.text_1": "虚空马达可远距离传递旋转力",
+    "createutilities.ponder.void_motor.text_2": "在其所带的插槽中放置物品，可以为其指定频率",
+    "createutilities.ponder.void_motor.text_3": "右键点击底部插槽即可取消认领虚空马达",
+    "createutilities.ponder.void_motor.text_4": "再次右键点击可重新认领它",
+    "createutilities.ponder.void_motor.text_5": "如果虚空马达被认领，只有所有者才能编辑其频率",
+    "createutilities.ponder.void_motor.text_6": "虚空马达只能在相同频率和相同所有者的虚空马达间传递旋转力",
+  
+    "createutilities.ponder.void_chest.header": "使用虚空箱子",
+    "createutilities.ponder.void_chest.text_1": "虚空箱子可远距离传递物品",
+    "createutilities.ponder.void_chest.text_2": "在其所带的插槽中放置物品，可以为其指定频率",
+    "createutilities.ponder.void_chest.text_3": "右键点击底部插槽即可取消认领虚空箱子",
+    "createutilities.ponder.void_chest.text_4": "再次右键点击可重新认领它",
+    "createutilities.ponder.void_chest.text_5": "如果虚空箱子被认领，只有所有者才能编辑其频率",
+    "createutilities.ponder.void_chest.text_6": "虚空箱子只能在相同频率和相同所有者的虚空箱子间传递物品",
+  
+    "createutilities.ponder.void_tank.header": "使用虚空流体储罐",
+    "createutilities.ponder.void_tank.text_1": "虚空流体储罐可远距离传递流体",
+    "createutilities.ponder.void_tank.text_2": "在其所带的插槽中放置物品，可以为其指定频率",
+    "createutilities.ponder.void_tank.text_3": "右键点击底部插槽即可取消认领虚空流体储罐",
+    "createutilities.ponder.void_tank.text_4": "再次右键点击可重新认领它",
+    "createutilities.ponder.void_tank.text_5": "如果虚空流体储罐被认领，只有所有者才能编辑其频率",
+    "createutilities.ponder.void_tank.text_6": "虚空流体储罐只能在相同频率和相同所有者的虚空流体储罐间传递流体",
+  
+    "createutilities.ponder.void_battery.header": "使用虚空蓄电池",
+    "createutilities.ponder.void_battery.text_1": "虚空蓄电池可远距离传递能量",
+    "createutilities.ponder.void_battery.text_2": "在其所带的插槽中放置物品，可以为其指定频率",
+    "createutilities.ponder.void_battery.text_3": "右键点击底部插槽即可取消认领虚空蓄电池",
+    "createutilities.ponder.void_battery.text_4": "再次右键点击可重新认领它",
+    "createutilities.ponder.void_battery.text_5": "如果虚空蓄电池被认领，只有所有者才能编辑其频率",
+    "createutilities.ponder.void_battery.text_6": "虚空蓄电池只能在相同频率和相同所有者的虚空蓄电池间传递能量"
+  
+  }
+  
