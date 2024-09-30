@@ -74,4 +74,23 @@ ServerEvents.recipes(e => {
     .id("createdieselgenerators:crafting/huge_diesel_engine")
   e.recipes.vintageimprovements.turning("3x createdieselgenerators:oil_barrel", "createmetallurgy:steel_block")
     .id("createdieselgenerators:crafting/oil_barrel")
+  e.custom({
+    "type": "createdieselgenerators:basin_fermenting",
+    "ingredients": [
+      {
+        "tag": 'minecraft:coals'
+      }
+    ],
+    "processingTime": 200,
+    "results": [
+      {
+        "item": 'vintageimprovements:sulfur_chunk'
+      },
+      {
+        "item": 'vintageimprovements:sulfur_chunk',
+        "chance": 0.25
+      }
+    ],
+    "heatRequirement": "heated"
+  }).id("createdieselgenerators:basin_fermenting/coals")
 })
