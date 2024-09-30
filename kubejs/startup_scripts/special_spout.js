@@ -117,7 +117,7 @@ CreateEvents.spoutHandler(e => {
                 if (!simulate) {
                     block.getBlockState().randomTick(block.level, block.pos, block.level.random)
                 }
-                return 200
+                return 50
             }
             return 0
         }
