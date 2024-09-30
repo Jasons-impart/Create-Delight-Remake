@@ -1,12 +1,3 @@
-/*
-额todo：
-材质
-纸的制造
-空间元件
-红石互动生成陨石
-Jason的相变铁世界生成
-*/
-
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
 
@@ -278,8 +269,10 @@ ServerEvents.recipes((event) => {
 
   // 奇点
   create.cutting("ae2:singularity", "create:mechanical_saw").id("createdelight:singularity_1");
-  create.crushing("ae2:singularity", '#design_decor:crushing_wheels').id("createdelight:singularity_2");
-  create.milling("ae2:singularity", '#design_decor:millstones').id("createdelight:singularity_3");
+  create
+    .crushing("ae2:singularity", "#design_decor:crushing_wheels")
+    .id("createdelight:singularity_2");
+  create.milling("ae2:singularity", "#design_decor:millstones").id("createdelight:singularity_3");
 
   // 陨石再生
   create.milling("4x ae2:sky_dust", "ae2:sky_stone_block").id("createdelight:sky_dust_1");
@@ -3117,7 +3110,9 @@ ServerEvents.recipes((event) => {
   });
 
   // 空间IO端口
-  create.item_application("ae2:spatial_io_port", ["createdelight:space_casing", "ae2:io_port"]);
+  create
+    .item_application("ae2:spatial_io_port", ["createdelight:space_casing", "ae2:io_port"])
+    .id("createdelight:spatial_io_port");
   event.remove({ id: "ae2:network/blocks/spatial_io_port" });
 
   // 充能器
