@@ -30,6 +30,13 @@ function metal_production_line(event, metal, heat, time) {
         .id(`createmetallurgy:crafting/${metal[2].split(":")[1]}_2_${metal[1].split(":")[1]}`)
     event.recipes.kubejs.shapeless(`9x ${metal[2]}`, `${metal[1]}`)
         .id(`createmetallurgy:crafting/${metal[1].split(":")[1]}_2_${metal[2].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[3], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+    .loops(1)
+    .transitionalItem(metal[0])
+    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -54,6 +61,13 @@ function metal_production_line_2(event, metal, heat, time) {
         .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[3], [Fluid.of(`${metal[4]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[3], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+    .loops(1)
+    .transitionalItem(metal[0])
+    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -74,6 +88,13 @@ function metal_production_line_3(event, metal, heat, time) {
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[3]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[2], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+    .loops(1)
+    .transitionalItem(metal[0])
+    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[2].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
