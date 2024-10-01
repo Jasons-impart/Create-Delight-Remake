@@ -323,6 +323,18 @@ ServerEvents.recipes(e => {
         "create:propeller",
         "ad_astra:fan"
     )
+    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:oxyloot"},
+        "create:fluid_tank",
+        "ad_astra_giselle_addon:oxygen_can"
+    )
+    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:boosterloot"},
+        "create:precision_mechanism",
+        'create_sa:brass_exoskeleton_chestplate'
+    )
+    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:jetloot"},
+        "create:precision_mechanism",
+        'create_sa:brass_jetpack_chestplate'
+    )
     let iner_1 = "ad_astra:steel_plate"
     e.recipes.create.sequenced_assembly("protection_pixel:alloyarmorplate", iner_1, [
         e.recipes.create.deploying(iner_1, [iner_1, "protection_pixel:smallnetheritesheet"]),

@@ -71,7 +71,7 @@
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "撕裂的维度皆被冻结......无声无息......"
+			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
 			tasks: [
 				{
 					id: "0F69834EF0A45187"
@@ -98,7 +98,7 @@
 					value: 12
 				}
 			]
-			title: "凛冬之寒"
+			title: "&1凛冬之寒"
 			x: 2.0d
 			y: -1.0d
 		}
@@ -145,7 +145,7 @@
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "灵魂破散，万物枯萎"
+			subtitle: "灵魂&4&k222&r&r破散，万&4&k222&r&r物&4&k222&r&r枯萎&4&k222&r&r"
 			tasks: [
 				{
 					id: "1DD719232C694C72"
@@ -168,7 +168,7 @@
 					value: 12L
 				}
 			]
-			title: "刺骨......穿心......"
+			title: "&4刺骨&r&k111&r&c穿心&r......"
 			x: 2.0d
 			y: 9.0d
 		}
