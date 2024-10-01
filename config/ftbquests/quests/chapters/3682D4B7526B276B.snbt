@@ -1,4 +1,5 @@
 {
+	always_invisible: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "3682D4B7526B276B"
@@ -341,6 +342,7 @@
 			y: -11.5d
 		}
 		{
+			dependencies: ["2FC4BB6A441C2059"]
 			icon: "create:brass_ingot"
 			id: "5DDF3FC19E7CD16B"
 			rewards: [{
@@ -359,6 +361,7 @@
 			y: -14.0d
 		}
 		{
+			dependencies: ["267D01DEED8936ED"]
 			icon: "create:mechanical_crafter"
 			id: "3ECFD50C5EA743E6"
 			rewards: [{
