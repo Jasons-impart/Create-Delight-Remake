@@ -65,8 +65,8 @@ ServerEvents.recipes((event) => {
       .id(`${result}_recipe${other}`);
   };
 
-  custom_inscribe("ae2:printed_engineering_processor", "createdelight:mmd_diamond", "_A");
-  custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond", "_B");
+  custom_inscribe("ae2:printed_engineering_processor", "createdelight:mmd_diamond", "_1");
+  custom_inscribe("ae2:printed_engineering_processor", "minecraft:diamond", "_2");
   custom_inscribe("megacells:printed_accumulation_processor", "megacells:sky_steel_ingot");
   custom_inscribe("ae2:printed_logic_processor", "minecraft:gold_ingot");
   custom_inscribe("ae2:printed_silicon", "ae2:silicon");
@@ -823,7 +823,7 @@ ServerEvents.recipes((event) => {
 
   vintageimprovements
     .pressurizing("createdelight:phase_transition_iron", iron_blocks_64)
-    .id("createdelight:phase_transition_iron_A");
+    .id("createdelight:phase_transition_iron_1");
 
   // event.custom({
   //   type: "ae2:transform",
@@ -858,7 +858,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("#forge:plates/iron")
     .loops(1)
-    .id("createdelight:blank_pattern_A");
+    .id("createdelight:blank_pattern_1");
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
@@ -873,7 +873,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("#forge:plates/iron")
     .loops(1)
-    .id("createdelight:blank_pattern_B");
+    .id("createdelight:blank_pattern_2");
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
@@ -971,7 +971,7 @@ ServerEvents.recipes((event) => {
     ])
     .loops(1)
     .transitionalItem("ae2:certus_quartz_crystal")
-    .id("createdelight:cell_component_1k_A");
+    .id("createdelight:cell_component_1k_1");
 
   create
     .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
@@ -998,7 +998,7 @@ ServerEvents.recipes((event) => {
     ])
     .loops(1)
     .transitionalItem("ae2:certus_quartz_crystal")
-    .id("createdelight:cell_component_1k_B");
+    .id("createdelight:cell_component_1k_2");
 
   create
     .sequenced_assembly("ae2:cell_component_1k", "ae2:certus_quartz_crystal", [
@@ -1041,7 +1041,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_A")
+    .id("createdelight:cell_component_4k_1")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1063,7 +1063,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:certus_quartz_crystal", "ae2:certus_quartz_crystal")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_B")
+    .id("createdelight:cell_component_4k_2")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1188,7 +1188,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_A")
+    .id("createdelight:cell_component_16k_1")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1213,7 +1213,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_B")
+    .id("createdelight:cell_component_16k_2")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1361,7 +1361,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_A")
+    .id("createdelight:cell_component_64k_1")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1389,7 +1389,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_B")
+    .id("createdelight:cell_component_64k_2")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1537,7 +1537,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_A")
+    .id("createdelight:cell_component_256k_1")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1565,7 +1565,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_B")
+    .id("createdelight:cell_component_256k_2")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1704,7 +1704,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_A")
+    .id("createdelight:cell_component_1m_1")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1735,7 +1735,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_B")
+    .id("createdelight:cell_component_1m_2")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1889,7 +1889,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4m_A")
+    .id("createdelight:cell_component_4m_1")
     .loops(1)
     .transitionalItem("megacells:cell_component_1m");
 
@@ -2024,7 +2024,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16m_A")
+    .id("createdelight:cell_component_16m_1")
     .loops(1)
     .transitionalItem("megacells:cell_component_4m");
 
@@ -2159,7 +2159,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64m_A")
+    .id("createdelight:cell_component_64m_1")
     .loops(1)
     .transitionalItem("megacells:cell_component_16m");
 
@@ -2295,7 +2295,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256m_A")
+    .id("createdelight:cell_component_256m_1")
     .loops(1)
     .transitionalItem("megacells:cell_component_64m");
 
@@ -2555,7 +2555,7 @@ ServerEvents.recipes((event) => {
   vintageimprovements
     .pressurizing("createdelight:mmd_diamond", coal_64)
     .heated()
-    .id("createdelight:mmd_diamond_A");
+    .id("createdelight:mmd_diamond_1");
 
   // 能源元件
   create
@@ -2565,7 +2565,7 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
       create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
     ])
-    .id("createdelight:energy_cell_A")
+    .id("createdelight:energy_cell_1")
     .transitionalItem("ae2:quartz_glass")
     .loops(1);
   create
@@ -2587,7 +2587,7 @@ ServerEvents.recipes((event) => {
         "#forge:gems/certus_quartz",
       ]),
     ])
-    .id("createdelight:energy_cell_B")
+    .id("createdelight:energy_cell_2")
     .transitionalItem("createdelight:quartz_glass_parts")
     .loops(1);
 
@@ -2622,10 +2622,10 @@ ServerEvents.recipes((event) => {
   // 福鲁伊克斯珍珠
   create
     .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "2x #forge:gems/fluix"])
-    .id("createdelight:fluix_pearl_A");
+    .id("createdelight:fluix_pearl_1");
   create
     .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "2x #forge:dusts/fluix"])
-    .id("createdelight:fluix_pearl_B");
+    .id("createdelight:fluix_pearl_2");
   create
     .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "#forge:gems/fluix", "#forge:dusts/fluix"])
     .id("createdelight:fluix_pearl_C");
@@ -2652,7 +2652,7 @@ ServerEvents.recipes((event) => {
     ])
     .loops(1)
     .transitionalItem("ae2:crafting_terminal")
-    .id("createdelight:wireless_crafting_terminal_A");
+    .id("createdelight:wireless_crafting_terminal_1");
   event.remove({ id: "ae2:network/wireless_crafting_terminal" });
 
   create
@@ -2742,7 +2742,7 @@ ServerEvents.recipes((event) => {
       ]),
     ])
     .transitionalItem("ae2:wireless_terminal")
-    .id("createdelight:wireless_crafting_terminal_B")
+    .id("createdelight:wireless_crafting_terminal_2")
     .loops(1);
   event.remove({ id: "ae2:network/upgrade_wireless_crafting_terminal" });
 
@@ -2795,7 +2795,7 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:terminal", ["ae2:terminal", "ae2:calculation_processor"]),
     ])
     .transitionalItem("ae2:terminal")
-    .id("createdelight:terminal_B")
+    .id("createdelight:terminal_2")
     .loops(1);
   event.remove({ id: "ae2:network/parts/terminals_crafting" });
 
@@ -2841,7 +2841,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("ae2:calculation_processor")
     .loops(1)
-    .id("createdelight:basic_card_A");
+    .id("createdelight:basic_card_1");
   event.remove({ id: "ae2:materials/basiccard" });
 
   // 高级卡
@@ -2873,7 +2873,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("ae2:calculation_processor")
     .loops(1)
-    .id("createdelight:advanced_card_A");
+    .id("createdelight:advanced_card_1");
   event.remove({ id: "ae2:materials/advancedcard" });
 
   // 染料复制
@@ -2913,7 +2913,7 @@ ServerEvents.recipes((event) => {
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
     ])
-    .id("createdelight:annihilation_core_A")
+    .id("createdelight:annihilation_core_1")
     .loops(1)
     .transitionalItem("minecraft:iron_nugget");
   event.remove({ id: "ae2:materials/annihilationcore" });
@@ -2934,7 +2934,7 @@ ServerEvents.recipes((event) => {
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
     ])
-    .id("createdelight:formation_core_A")
+    .id("createdelight:formation_core_1")
     .loops(1)
     .transitionalItem("minecraft:iron_nugget");
   event.remove({ id: "ae2:materials/formationcore" });
@@ -2950,13 +2950,13 @@ ServerEvents.recipes((event) => {
       F: "ae2:controller",
       G: "ae2:interface",
     })
-    .id("createdelight:quantum_link_A");
+    .id("createdelight:quantum_link_1");
   event.remove({ id: "ae2:network/blocks/quantum_link" });
 
   // ME量子环
   create
     .item_application("ae2:quantum_ring", ["createdelight:space_casing", "ae2:controller"])
-    .id("createdelight:quantum_ring_A");
+    .id("createdelight:quantum_ring_1");
   event.remove({ id: "ae2:network/blocks/quantum_ring" });
 
   // 空间外壳
@@ -3036,7 +3036,7 @@ ServerEvents.recipes((event) => {
         "ae2:quartz_glass",
       ]),
     ])
-    .id("createdelight:molecular_assembler_A")
+    .id("createdelight:molecular_assembler_1")
     .loops(1)
     .transitionalItem("createdelight:iron_casing");
   create
@@ -3058,7 +3058,7 @@ ServerEvents.recipes((event) => {
         "createdelight:quartz_glass_parts",
       ]),
     ])
-    .id("createdelight:molecular_assembler_B")
+    .id("createdelight:molecular_assembler_2")
     .loops(1)
     .transitionalItem("createdelight:iron_casing");
 
