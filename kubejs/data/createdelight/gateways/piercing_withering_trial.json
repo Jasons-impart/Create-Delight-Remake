@@ -54,7 +54,7 @@
 					"stack": {
                         "item": "gateways:gate_pearl", 
                         "count": 1,
-                        "nbt" : {"gateways":"createdelight.piercing_withering_trial"}}
+                        "nbt" : {"gateway":"createdelight:piercing_withering_trial"}}
 				}
 			],
 			"max_wave_time": 1000,
@@ -222,11 +222,11 @@
             "rewards": [
 				{
 					"type": "gateways:stack",
-					 "stack": {
-						 "item": "gateways:gate_pearl", 
-						 "count": 1,
-						 "nbt" : {"gateways":"createdelight.piercing_withering_trial"}}
-				 }
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:piercing_withering_trial"}}
+				}
 			],
             "max_wave_time": 1400,
 			"setup_time": 200
@@ -242,7 +242,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.80
+					"value": 1.2
 				},
 				{
 					"attribute": "generic.armor",
@@ -269,7 +269,7 @@
 				{
 					"type": "gateways:entity_loot",
 					"entity": "minecraft:wither",
-					"rolls": 2
+					"rolls": 4
 				}
 			],
             "max_wave_time": 1200,
