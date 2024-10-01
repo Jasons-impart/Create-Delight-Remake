@@ -44,6 +44,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			description: [
 				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
 				"                                                  ——《异兽手记·竦怖军团》"
@@ -103,6 +104,7 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			description: [
 				"悼念者的心灵容不得一丝轻浮"
 				"庄严的枪支寄予着哀悼"
@@ -171,6 +173,18 @@
 			title: "&4刺骨&r&k111&r&c穿心&r......"
 			x: 2.0d
 			y: 9.0d
+		}
+		{
+			icon: "witheringboon:witheredsoulstone"
+			id: "5981A5D70F26A7A5"
+			tasks: [{
+				id: "18FE7BED9A8A3B93"
+				title: "这是一个标记"
+				type: "checkmark"
+			}]
+			title: "&4异界之灾！"
+			x: 2.0d
+			y: 4.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

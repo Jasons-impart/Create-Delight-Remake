@@ -1178,12 +1178,9 @@
 		}
 		{
 			dependencies: ["67732CAF81D56AFE"]
-			description: [
-				"在物质聚合器中，删除每256000个物品即可制作一个奇点。"
-				""
-				"记得塞入64k以上的存储组件，记得选择奇点模式。"
-			]
+			description: [""]
 			id: "731427102D213611"
+			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
 			tasks: [{
 				id: "1FDE3E1EEF326F42"
 				item: "ae2:singularity"
@@ -2008,6 +2005,19 @@
 			x: 3.5d
 			y: 3.5d
 		}
+		{
+			dependencies: ["308066883A8B3B3E"]
+			description: ["将&9陨石废液&r使用&e注液器&r直接注入放置的赛特斯石英母岩方块可催生赛特斯石英晶簇"]
+			id: "141F9B0D68D52280"
+			subtitle: "纯炫技（"
+			tasks: [{
+				id: "440AD285ABD61826"
+				title: "赛特斯石英的另一种催生方式"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 0.0d
+		}
 	]
-	title: "应用能源2"
+	title: "&9应用能源2"
 }
