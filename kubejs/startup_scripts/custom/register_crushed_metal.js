@@ -2,8 +2,9 @@ StartupEvents.registry("item", e => {
     let metals = [
         "desh",
         "ostrum",
-        "calorite"
+        "calorite",
     ]
+
     metals.forEach(metal => {
         e.create(`createdelight:crushed_raw_${metal}`)
             .maxStackSize(64)

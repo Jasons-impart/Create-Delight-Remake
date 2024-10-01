@@ -39,8 +39,8 @@ ServerEvents.recipes(e => {
             H: "create:brass_ingot"
         }
     )
-    .id("protection_pixel:plagueloot")
-    e.recipes.create.mechanical_crafting("protection_pixel:lancer_helmet", 
+        .id("protection_pixel:plagueloot")
+    e.recipes.create.mechanical_crafting("protection_pixel:lancer_helmet",
         [
             "  A  ",
             " BCB ",
@@ -57,7 +57,7 @@ ServerEvents.recipes(e => {
             G: "ad_astra:steel_plate"
         }
     )
-    .id("protection_pixel:lancerloot")
+        .id("protection_pixel:lancerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:hammer_helmet",
         [
             " ABA ",
@@ -66,14 +66,14 @@ ServerEvents.recipes(e => {
             "BCECB"
         ],
         {
-            A:"create:brass_sheet",
-            B:"create:brass_ingot",
-            C:"ad_astra:steel_plate",
-            D:"create_sa:brass_helmet",
-            E:"minecraft:glass_pane"
+            A: "create:brass_sheet",
+            B: "create:brass_ingot",
+            C: "ad_astra:steel_plate",
+            D: "create_sa:brass_helmet",
+            E: "minecraft:glass_pane"
         }
     )
-    .id("protection_pixel:hammerloot")
+        .id("protection_pixel:hammerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:closed_helmet",
         [
             " ABA ",
@@ -91,7 +91,7 @@ ServerEvents.recipes(e => {
             G: "create:brass_sheet"
         }
     )
-    .id("protection_pixel:closedloot")
+        .id("protection_pixel:closedloot")
     e.recipes.create.mechanical_crafting("protection_pixel:bloodprisoner_helmet",
         [
             " ABA ",
@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
             G: "create:fluid_valve"
         }
     )
-    .id("protection_pixel:bloodprisonerloot")
+        .id("protection_pixel:bloodprisonerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:hunter_helmet",
         [
             "AB BA",
@@ -125,8 +125,8 @@ ServerEvents.recipes(e => {
             F: "ad_astra:steel_plate"
         }
     )
-    .id("protection_pixel:hunterloot")
-    e.recipes.create.mechanical_crafting("protection_pixel:breaker_chestplate", 
+        .id("protection_pixel:hunterloot")
+    e.recipes.create.mechanical_crafting("protection_pixel:breaker_chestplate",
         [
             "ABCBA",
             "DEFED",
@@ -144,7 +144,7 @@ ServerEvents.recipes(e => {
             H: "create:mechanical_piston"
         }
     )
-    .id("protection_pixel:breakerloot")
+        .id("protection_pixel:breakerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:wingsofprism_chestplate",
         [
             "ABCBA",
@@ -163,7 +163,7 @@ ServerEvents.recipes(e => {
             H: "vintageimprovements:laser_item"
         }
     )
-    .id("protection_pixel:prismloot")
+        .id("protection_pixel:prismloot")
     e.recipes.create.mechanical_crafting("protection_pixel:workerhornet_chestplate",
         [
             " A A ",
@@ -183,7 +183,7 @@ ServerEvents.recipes(e => {
             I: "create:brass_hand"
         }
     )
-    .id("protection_pixel:workerloot")
+        .id("protection_pixel:workerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:magneticstorm_chestplate",
         [
             "ABCBA",
@@ -203,7 +203,7 @@ ServerEvents.recipes(e => {
             I: "createaddition:capacitor"
         }
     )
-    .id("protection_pixel:magneticloot")
+        .id("protection_pixel:magneticloot")
     e.recipes.create.mechanical_crafting("protection_pixel:pioneer_chestplate",
         [
             " A A ",
@@ -222,7 +222,7 @@ ServerEvents.recipes(e => {
             H: "createmetallurgy:steel_ingot"
         }
     )
-    .id("protection_pixel:pioneerloot")
+        .id("protection_pixel:pioneerloot")
     e.recipes.create.mechanical_crafting("protection_pixel:hellsnake_chestplate",
         [
             "ABABA",
@@ -239,7 +239,7 @@ ServerEvents.recipes(e => {
             G: "create:mechanical_pump"
         }
     )
-    .id("protection_pixel:hellsnakeloot")
+        .id("protection_pixel:hellsnakeloot")
     e.recipes.create.mechanical_crafting("protection_pixel:slingshot_leggings",
         [
             " A A ",
@@ -256,7 +256,7 @@ ServerEvents.recipes(e => {
             F: "createmetallurgy:steel_ingot"
         }
     )
-    .id("protection_pixel:slingshotloot")
+        .id("protection_pixel:slingshotloot")
     e.recipes.create.mechanical_crafting("protection_pixel:anchorpoint_leggings",
         [
             " ABA ",
@@ -275,8 +275,8 @@ ServerEvents.recipes(e => {
             H: "create:brass_ingot"
         }
     )
-    .id("protection_pixel:anchorpointloot")
-    e.recipes.create.mechanical_crafting("protection_pixel:buoyancy_leggings", 
+        .id("protection_pixel:anchorpointloot")
+    e.recipes.create.mechanical_crafting("protection_pixel:buoyancy_leggings",
         [
             " ABA ",
             "CDEDC",
@@ -293,14 +293,14 @@ ServerEvents.recipes(e => {
             G: "create_sa:brass_leggings",
             H: "create:brass_ingot"
         }
-    
+
     ).id("protection_pixel:buoyancyloot")
-    e.findRecipes({mod: "protection_pixel", output: "#protection_pixel:alloy"}).forEach(recipe => {
+    e.findRecipes({ mod: "protection_pixel", output: "#protection_pixel:alloy" }).forEach(recipe => {
         let result = recipe.originalRecipeResult
         let ingredient = recipe.json.getAsJsonObject("ingredient").get("item").getAsString()
         let transitionalItem = recipe.json.getAsJsonObject("transitionalItem").get("item").getAsString()
         let id = recipe.getId()
-        e.remove({id: id})
+        e.remove({ id: id })
         e.recipes.create.sequenced_assembly(result, ingredient,
             [
                 e.recipes.create.filling(ingredient, [ingredient, Fluid.of("createmetallurgy:molten_steel").withAmount(250)]),
@@ -311,27 +311,27 @@ ServerEvents.recipes(e => {
                 e.recipes.create.deploying(ingredient, [ingredient, "protection_pixel:smallnetheritesheet"])
             ]
         )
-        .transitionalItem(transitionalItem)
-        .loops(1)
-        .id(id)
+            .transitionalItem(transitionalItem)
+            .loops(1)
+            .id(id)
     })
-    e.replaceInput({mod: "protection_pixel", output: "#curios:motorinterface"}, 
+    e.replaceInput({ mod: "protection_pixel", output: "#curios:motorinterface" },
         "minecraft:iron_ingot",
         "createmetallurgy:steel_ingot"
     )
-    e.replaceInput({mod: "protection_pixel", output: "#curios:motorinterface"}, 
+    e.replaceInput({ mod: "protection_pixel", output: "#curios:motorinterface" },
         "create:propeller",
         "ad_astra:fan"
     )
-    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:oxyloot"},
+    e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:oxyloot" },
         "create:fluid_tank",
         "ad_astra_giselle_addon:oxygen_can"
     )
-    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:boosterloot"},
+    e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:boosterloot" },
         "create:precision_mechanism",
         'create_sa:brass_exoskeleton_chestplate'
     )
-    e.replaceInput({mod: "protection_pixel", id: "protection_pixel:jetloot"},
+    e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:jetloot" },
         "create:precision_mechanism",
         'create_sa:brass_jetpack_chestplate'
     )
@@ -341,7 +341,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.deploying(iner_1, [iner_1, "ad_astra:steel_plate"]),
         e.recipes.vintageimprovements.hammering(iner_1, iner_1)
     ])
-    .loops(1)
-    .transitionalItem("protection_pixel:incompletealloyarmorplate")
-    .id("protection_pixel:alloyplate")
+        .loops(1)
+        .transitionalItem("protection_pixel:incompletealloyarmorplate")
+        .id("protection_pixel:alloyplate")
 })

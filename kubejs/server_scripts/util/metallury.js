@@ -34,9 +34,9 @@ function metal_production_line(event, metal, heat, time) {
         event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
         event.recipes.create.cutting(metal[0], metal[0])
     ])
-    .loops(1)
-    .transitionalItem(metal[0])
-    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -65,9 +65,9 @@ function metal_production_line_2(event, metal, heat, time) {
         event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
         event.recipes.create.cutting(metal[0], metal[0])
     ])
-    .loops(1)
-    .transitionalItem(metal[0])
-    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -92,9 +92,9 @@ function metal_production_line_3(event, metal, heat, time) {
         event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
         event.recipes.create.cutting(metal[0], metal[0])
     ])
-    .loops(1)
-    .transitionalItem(metal[0])
-    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[2].split(":")[1]}`)
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[2].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 

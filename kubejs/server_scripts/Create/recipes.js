@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething"
     ])
     // 黄铜机械手
-    e.replaceInput({id: "create:crafting/kinetics/deployer"}, "create:electron_tube", "#forge:spring/between_500_2_1000")
+    e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
     // 新增配方：玫瑰石英
     e.shapeless("create:rose_quartz", [
         "4x redstone",

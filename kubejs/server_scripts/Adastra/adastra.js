@@ -27,7 +27,7 @@ ServerEvents.recipes(e => {
         "ad_astra:steel_block",
         "ad_astra:etrionic_blast_furnace"
     ])
-    e.replaceInput({id:"ad_astra:oxygen_distributor"}, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
+    e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木
     e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
@@ -44,7 +44,7 @@ ServerEvents.recipes(e => {
         "CDC",
         "EFE"
     ], {
-        A: "ad_astra:calorite_plate",
+        A: "#forge:plates/calorite",
         B: "create_sa:brass_jetpack_chestplate",
         C: "ad_astra:calorite_tank",
         D: "ad_astra:netherite_space_suit",
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
         "AAA"
     ], {
         A: "#forge:plates/steel",
-        B: "createaddition:iron_rod",
+        B: "#forge:rods/iron",
         C: "create:fluid_tank"
     }).id("ad_astra:gas_tank")
     //替换配方：引擎框架
@@ -93,10 +93,10 @@ ServerEvents.recipes(e => {
     }).id("ad_astra:energizer")
     //石墨
     e.recipes.kubejs.shapeless(
-        'createmetallurgy:graphite',[
-            "8x #minecraft:coals",
-            "minecraft:clay_ball"
-        ]
+        'createmetallurgy:graphite', [
+        "8x #minecraft:coals",
+        "minecraft:clay_ball"
+    ]
     ).id("createmetallurgy:graphite")
     //替换配方：氧气装载机
     e.recipes.kubejs.shaped('createdelight:electrolyzer', [
@@ -143,7 +143,7 @@ ServerEvents.recipes(e => {
         "DBD"
     ], {
         A: "minecraft:redstone",
-        B: "ad_astra:steel_plate",
+        B: "#forge:plates/steel",
         C: "ad_astra:etrionic_core",
         D: "minecraft:diamond"
     }
@@ -158,21 +158,21 @@ ServerEvents.recipes(e => {
         "CDC"
     ], {
         A: "ad_astra:photovoltaic_etrium_cell",
-        B: "ad_astra:steel_plate",
-        C: "ad_astra:desh_plate",
+        B: "#forge:plates/steel",
+        C: "#forge:plates/desh",
         D: "ad_astra:etrionic_core"
     }
     ).id("ad_astra:solar_panel")
     e.recipes.kubejs.shaped(
         "ad_astra_giselle_addon:oxygen_can", [
-            " A ",
-            "BCB",
-            "BDB"
-        ], {
-            A:"vintageimprovements:steel_rod",
-            B:"ad_astra:steel_plate",
-            C:'ad_astra:large_gas_tank',
-            D:"ad_astra:oxygen_gear"
-        }
+        " A ",
+        "BCB",
+        "BDB"
+    ], {
+        A: "#forge:rods/steel",
+        B: "#forge:plates/steel",
+        C: 'ad_astra:large_gas_tank',
+        D: "ad_astra:oxygen_gear"
+    }
     ).id("ad_astra_giselle_addon:crafting/oxygen_can")
 })

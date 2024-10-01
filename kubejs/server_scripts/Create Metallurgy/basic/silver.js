@@ -4,7 +4,7 @@ ServerEvents.recipes(e => {
         "create:blasting/silver_ingot_compat_iceandfire",
         "create:splashing/iceandfire/crushed_raw_silver"
     ])
-    metal_production_line_2(e, 
+    metal_production_line_2(e,
         [
             "iceandfire:silver_block",
             "iceandfire:silver_ingot",
@@ -38,8 +38,8 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_silver_dust")
     blast_and_smelting(e, "create:crushed_raw_silver", "iceandfire:silver_ingot", 0.1, 100)
-    
-    metal_production_line_5(e, 
+
+    metal_production_line_5(e,
         [
             "createdelight:dirty_silver_dust",
             "createdelight:silver_dust",

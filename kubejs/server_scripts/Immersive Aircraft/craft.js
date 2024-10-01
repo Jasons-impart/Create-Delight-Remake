@@ -14,18 +14,18 @@ ServerEvents.recipes(e => {
     ])
     // 旋转炮
     e.shaped(
-        "immersive_aircraft:rotary_cannon",[
-            " A ",
-            " B ",
-            " C "
-        ], {
-            A:"minecraft:dispenser",
-            B:"immersive_aircraft:industrial_gears",
-            C:"alloyed:steel_ingot"
-        }
+        "immersive_aircraft:rotary_cannon", [
+        " A ",
+        " B ",
+        " C "
+    ], {
+        A: "minecraft:dispenser",
+        B: "immersive_aircraft:industrial_gears",
+        C: "alloyed:steel_ingot"
+    }
     )
-    .id("immersive_aircraft:rotary_cannon")
-    
+        .id("immersive_aircraft:rotary_cannon")
+
     // 动力合成器添加：四轴飞行器
     e.recipes.create.mechanical_crafting("immersive_aircraft:quadrocopter", [
         "ABA",

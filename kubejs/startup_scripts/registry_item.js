@@ -253,26 +253,26 @@ StartupEvents.registry("item", e => {
         .rarity("epic")
         .maxStackSize(16)
         .translationKey("item.createdelight.braised_intestines_in_brown_sauce")
-        .food(food =>{
+        .food(food => {
             food.hunger(20)
                 .saturation(1)
                 .effect("minecraft:nausea", 200, 2, 1.0)
                 .effect("minecraft:darkness", 200, 1, 1.0)
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
-         })
+        })
     //清水白菜
     e.create("createdelight:boiling_water_cabbage")
         .rarity("uncommon")
         .maxStackSize(64)
         .translationKey("item.createdelight.boiling_water_cabbage")
-        .food(food =>{
-           food.hunger(8)
+        .food(food => {
+            food.hunger(8)
                 .saturation(0.6)
                 .effect("minecraft:resistance", 500, 2, 1.0)
                 .effect("farmersdelight:nourishment", 3000, 1, 1.0)
                 .eaten(EatenEvent => {
                     let player = EatenEvent.getPlayer()
-                    if(EatenEvent.getPlayer() != null){
+                    if (EatenEvent.getPlayer() != null) {
                         player.give("minecraft:bowl")
                     }
                 })
@@ -466,7 +466,7 @@ StartupEvents.registry("item", e => {
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
         .translationKey("item.createdelight.phase_transition_iron")
-    // 人造钻石（别给加钻石tag）
+    // 人造钻石
     e.create("createdelight:mmd_diamond")
         .translationKey("item.createdelight.mmd_diamond")
 })

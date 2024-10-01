@@ -34,7 +34,7 @@ ServerEvents.recipes(e => {
             "#forge:rods/electric",
             "create:andesite_alloy",
             "create:andesite_alloy",
-            "forge:slimeballs"
+            "#forge:slimeballs"
         ]
     ).id("createaddition:crafting/large_connector_electrum")
     // 电池合成

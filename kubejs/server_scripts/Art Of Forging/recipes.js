@@ -17,6 +17,6 @@ ServerEvents.recipes(e => {
             E: "minecraft:netherite_ingot"
         }
     ).id("tetra:murasama_scroll")
-    
-    e.replaceInput({mod: "tetra"}, "minecraft:writable_book", "createdelight:otherworld_note")
+
+    e.replaceInput({ mod: "tetra" }, "minecraft:writable_book", "createdelight:otherworld_note")
 })
