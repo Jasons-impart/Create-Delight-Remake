@@ -44,6 +44,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			description: [
 				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
 				"                                                  ——《异兽手记·竦怖军团》"
@@ -71,7 +72,7 @@
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "撕裂的维度皆被冻结......无声无息......"
+			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
 			tasks: [
 				{
 					id: "0F69834EF0A45187"
@@ -98,11 +99,12 @@
 					value: 12
 				}
 			]
-			title: "凛冬之寒"
+			title: "&1凛冬之寒"
 			x: 2.0d
 			y: -1.0d
 		}
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			description: [
 				"悼念者的心灵容不得一丝轻浮"
 				"庄严的枪支寄予着哀悼"
@@ -145,7 +147,7 @@
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "灵魂破散，万物枯萎"
+			subtitle: "灵魂&4&k222&r&r破散，万&4&k222&r&r物&4&k222&r&r枯萎&4&k222&r&r"
 			tasks: [
 				{
 					id: "1DD719232C694C72"
@@ -168,9 +170,21 @@
 					value: 12L
 				}
 			]
-			title: "刺骨......穿心......"
+			title: "&4刺骨&r&k111&r&c穿心&r......"
 			x: 2.0d
 			y: 9.0d
+		}
+		{
+			icon: "witheringboon:witheredsoulstone"
+			id: "5981A5D70F26A7A5"
+			tasks: [{
+				id: "18FE7BED9A8A3B93"
+				title: "这是一个标记"
+				type: "checkmark"
+			}]
+			title: "&4异界之灾！"
+			x: 2.0d
+			y: 4.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

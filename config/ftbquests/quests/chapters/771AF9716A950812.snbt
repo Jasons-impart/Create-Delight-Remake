@@ -80,7 +80,7 @@
 			y: 6.0d
 		}
 	]
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -690,8 +690,8 @@
 			}
 			id: "7429D7F92D04A8BB"
 			rewards: [{
-				id: "5156E1D6B92EE81D"
-				item: "createdelightcore:copper_coin"
+				id: "02176C222B0B79F4"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
@@ -732,8 +732,8 @@
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
-				id: "25E346180534EE29"
-				item: "createdelightcore:copper_coin"
+				id: "197EB50F53658370"
+				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
 			title: "-&c这是...一枚货币！-"

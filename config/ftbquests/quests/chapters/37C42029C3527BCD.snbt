@@ -7,7 +7,7 @@
 	group: "445171CC29E98940"
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 3
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -18,7 +18,7 @@
 				item: "createoreexcavation:extractor"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -1.5d
 			y: 0.5d
 		}
 		{
@@ -37,7 +37,7 @@
 				type: "item"
 			}]
 			title: "虚空挖矿机！"
-			x: 2.5d
+			x: 3.5d
 			y: 0.5d
 		}
 		{
@@ -55,10 +55,13 @@
 			}]
 			title: "让我看看你在哪~"
 			x: 1.0d
-			y: -1.0d
+			y: -2.0d
 		}
 		{
+			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "1D7AB28B86CF3039"
 				title: "矿物再生科技！"
@@ -127,7 +130,7 @@
 			]
 			title: "筛选矿脉"
 			x: 1.0d
-			y: -2.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["532B2FC7E0826D5E"]
@@ -137,7 +140,7 @@
 				item: "minecraft:water_bucket"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -3.0d
 			y: 0.5d
 		}
 		{
@@ -148,7 +151,7 @@
 				item: "createdelight:overworld_metal_ore_cluster"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: -0.5d
 		}
 		{
@@ -159,7 +162,7 @@
 				item: "createdelight:overworld_noble_metal_ore_cluster"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: -0.5d
 		}
 		{
@@ -170,7 +173,7 @@
 				item: "createdelight:nether_ore_cluster"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.0d
 			y: -0.5d
 		}
 		{
@@ -181,7 +184,7 @@
 				item: "createdelight:moon_ore_cluster"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: 0.5d
 		}
 		{
@@ -192,7 +195,7 @@
 				item: "createdelight:mars_ore_cluster"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: 0.5d
 		}
 		{
@@ -203,7 +206,7 @@
 				item: "createdelight:mars_gemstone_cluster"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.0d
 			y: 0.5d
 		}
 		{
@@ -214,7 +217,7 @@
 				item: "createdelight:mercury_ore_cluster"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: 1.5d
 		}
 		{
@@ -225,7 +228,7 @@
 				item: "createdelight:venus_ore_cluster"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 6.0d
 			y: 1.5d
 		}
 		{
@@ -236,8 +239,20 @@
 				item: "createdelight:glacio_ore_cluster"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.0d
 			y: 1.5d
+		}
+		{
+			dependencies: ["00AF35D832509CB8"]
+			icon: "createmetallurgy:dirty_gold_dust"
+			id: "15F92D3DE8FAB8A2"
+			tasks: [{
+				id: "2A9CC37CC50DC65B"
+				title: "矿物处理"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 3.0d
 		}
 	]
 	title: "&e矿物再生！"

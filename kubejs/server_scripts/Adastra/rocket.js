@@ -127,7 +127,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:lightning_dragon_blood", 500)]),
         e.recipes.vintageimprovements.laser_cutting(iner_4, iner_4, 500)
     ])
-        .transitionalItem("ad_astra:calorite_plate")
+        .transitionalItem(iner_4)
         .loops(4)
         .id("createdelight:fourth_stage_rocket_core")
 })

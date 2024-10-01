@@ -34,7 +34,7 @@
 				type: "advancement"
 			}]
 			title: "模块化开端"
-			x: 0.0d
+			x: 0.5d
 			y: 0.0d
 		}
 		{
@@ -89,7 +89,7 @@
 				type: "advancement"
 			}]
 			title: "昔人已逝"
-			x: 13.0d
+			x: 10.5d
 			y: 0.0d
 		}
 		{
@@ -122,7 +122,7 @@
 				title: "寻找遗迹方法"
 				type: "checkmark"
 			}]
-			x: 7.5d
+			x: 6.5d
 			y: 0.0d
 		}
 		{
@@ -135,7 +135,7 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: 13.0d
+			x: 10.5d
 			y: -1.5d
 		}
 		{
@@ -170,8 +170,8 @@
 				}
 			]
 			title: "锻造台！"
-			x: 16.5d
-			y: 0.0d
+			x: 13.023809523809518d
+			y: 0.010714285714257699d
 		}
 		{
 			dependencies: ["7FB4EF5A8151080B"]
@@ -185,8 +185,8 @@
 				type: "advancement"
 			}]
 			title: "黑曜石锤！"
-			x: 19.0d
-			y: 3.0d
+			x: 14.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -197,8 +197,8 @@
 				item: "tetra:lubricant_dispenser"
 				type: "item"
 			}]
-			x: 15.0d
-			y: -5.5d
+			x: 11.5d
+			y: -4.5d
 		}
 		{
 			dependencies: [
@@ -216,8 +216,8 @@
 				item: "tetra:planar_stabilizer"
 				type: "item"
 			}]
-			x: 18.0d
-			y: -2.5d
+			x: 14.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -229,8 +229,8 @@
 				item: "tetra:vent_plate"
 				type: "item"
 			}]
-			x: 17.0d
-			y: -6.0d
+			x: 13.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -241,8 +241,8 @@
 				item: "tetra:combustion_chamber"
 				type: "item"
 			}]
-			x: 16.5d
-			y: 3.0d
+			x: 13.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -259,7 +259,7 @@
 				type: "observation"
 			}]
 			title: "锻造师的遗产"
-			x: 13.0d
+			x: 10.5d
 			y: 1.5d
 		}
 		{
@@ -275,8 +275,8 @@
 				type: "advancement"
 			}]
 			title: "千钧之力！"
-			x: 16.5d
-			y: 6.0d
+			x: 13.015986394557807d
+			y: 3.4828231292516776d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -301,7 +301,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -340,7 +340,7 @@
 				}
 			]
 			title: "地核提取"
-			x: 18.0d
+			x: 14.5d
 			y: -0.5d
 		}
 		{
@@ -360,8 +360,8 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: 16.5d
-			y: -2.5d
+			x: 13.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -374,8 +374,8 @@
 				item: "tetra:forged_bolt"
 				type: "item"
 			}]
-			x: 16.0d
-			y: -6.0d
+			x: 12.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["5E3FECE8A3CF0983"]
@@ -389,7 +389,7 @@
 				type: "item"
 			}]
 			title: "神秘金属"
-			x: 13.0d
+			x: 10.5d
 			y: 3.0d
 		}
 		{
@@ -401,8 +401,8 @@
 				item: "tetra:forged_beam"
 				type: "item"
 			}]
-			x: 18.0d
-			y: -5.5d
+			x: 14.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -416,7 +416,7 @@
 			}]
 			title: "开宝！"
 			x: 2.0d
-			y: -1.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
@@ -430,8 +430,8 @@
 				type: "item"
 			}]
 			title: "八级锤"
-			x: 19.0d
-			y: 6.0d
+			x: 13.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
@@ -458,7 +458,7 @@
 				type: "checkmark"
 			}]
 			title: "道听途说"
-			x: 10.0d
+			x: 8.5d
 			y: 0.0d
 		}
 		{
@@ -477,8 +477,8 @@
 				type: "observation"
 			}]
 			title: "锻造零件"
-			x: 16.5d
-			y: -4.5d
+			x: 13.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
@@ -493,7 +493,7 @@
 				type: "advancement"
 			}]
 			title: "卡壳"
-			x: 18.0d
+			x: 14.5d
 			y: 0.5d
 		}
 		{
@@ -506,7 +506,7 @@
 				type: "item"
 			}]
 			title: "谐振合金"
-			x: 13.0d
+			x: 10.5d
 			y: 4.5d
 		}
 		{
@@ -521,12 +521,12 @@
 				type: "item"
 			}]
 			title: "新纪元"
-			x: 13.0d
+			x: 10.5d
 			y: 6.0d
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
-			description: ["在锻造锤上安装平面稳定器后可使打造的部件获得“高质量”属性，小幅度提升各项性能"]
+			description: [""]
 			icon: {
 				Count: 1
 				id: "minecraft:enchanted_book"
@@ -538,13 +538,14 @@
 				}
 			}
 			id: "3C21C65039C98D92"
+			subtitle: "在锻造锤上安装平面稳定器后可使打造的部件获得“高质量”属性，小幅度提升各项性能"
 			tasks: [{
 				id: "1A25B9CA82C37B0A"
 				title: "高质量"
 				type: "checkmark"
 			}]
-			x: 20.0d
-			y: -2.5d
+			x: 16.0d
+			y: -2.0d
 		}
 		{
 			description: ["原版的剑可用于改造其他的剑"]
@@ -570,7 +571,7 @@
 				type: "item"
 			}]
 			title: "剑"
-			x: 6.0d
+			x: 5.5d
 			y: 3.0d
 		}
 		{
@@ -584,7 +585,7 @@
 			}]
 			title: "工具架子"
 			x: 3.0d
-			y: -1.0d
+			y: -1.5d
 		}
 		{
 			id: "03664386DA7FE6DC"
@@ -599,7 +600,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 5.5d
 			y: 1.5d
 		}
 		{
@@ -617,7 +618,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 5.5d
 			y: 4.0d
 		}
 		{
@@ -691,7 +692,7 @@
 				}
 			]
 			title: "双头工具"
-			x: 5.0d
+			x: 4.5d
 			y: 3.0d
 		}
 		{
@@ -718,7 +719,7 @@
 				type: "item"
 			}]
 			title: "单头工具"
-			x: 5.0d
+			x: 4.5d
 			y: 4.0d
 		}
 		{
@@ -738,7 +739,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 4.5d
 			y: 1.5d
 		}
 		{
@@ -978,7 +979,7 @@
 				}
 			]
 			title: "专长"
-			x: 9.0d
+			x: 7.5d
 			y: 4.0d
 		}
 		{
@@ -1043,7 +1044,7 @@
 				}
 			]
 			title: "镀金"
-			x: 10.0d
+			x: 8.5d
 			y: 4.0d
 		}
 		{
@@ -1258,7 +1259,7 @@
 					type: "item"
 				}
 			]
-			x: 10.0d
+			x: 8.5d
 			y: 1.5d
 		}
 		{
@@ -1290,7 +1291,7 @@
 				type: "item"
 			}]
 			title: "坚固守卫"
-			x: 10.0d
+			x: 8.5d
 			y: 3.0d
 		}
 		{
@@ -1322,7 +1323,7 @@
 				type: "item"
 			}]
 			title: "飞刀"
-			x: 9.0d
+			x: 7.5d
 			y: 3.0d
 		}
 		{
@@ -1353,7 +1354,7 @@
 				type: "item"
 			}]
 			title: "风啸剑刃"
-			x: 9.0d
+			x: 7.5d
 			y: 1.5d
 		}
 		{
@@ -1364,8 +1365,8 @@
 				item: "tetra:earthpiercer"
 				type: "item"
 			}]
-			x: 14.5d
-			y: -4.5d
+			x: 11.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -1375,8 +1376,8 @@
 				item: "tetra:stonecutter"
 				type: "item"
 			}]
-			x: 18.5d
-			y: -4.5d
+			x: 15.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -1386,8 +1387,8 @@
 				item: "tetra:chthonic_extractor"
 				type: "item"
 			}]
-			x: 15.0d
-			y: -3.5d
+			x: 11.5d
+			y: -2.5d
 		}
 	]
 	title: "&2承·新开端"
