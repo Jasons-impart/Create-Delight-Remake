@@ -1,4 +1,8 @@
 {
+    "fluid.createdelight.molten_void_steel": "熔融虚空钢",
+    "block.createdelight.molten_void_steel": "熔融虚空钢",
+    "item.createdelight.molten_void_steel_bucket": "熔融虚空钢桶",
+    "item.createdelight.incomplete_graviton_tube": "未完成的真空管",
     "item.createdelight.prospector": "探矿仪",
     "item.createdelight.phase_transition_iron": "β-正交晶系六方铁",
     "item.createdelight.mmd_diamond": "人工钻石",
