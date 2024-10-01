@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createdelightcore:netherite_coin"
 	id: "785EA502775C1402"
-	order_index: 6
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -149,6 +149,7 @@
 		}
 		{
 			dependencies: ["34C9A7E928820147"]
+			description: ["&d下界合金等级&r之前的钱包可于交易市场中购买，&e下界之星等级&r可由&d下界合金钱包&r合成而来"]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"

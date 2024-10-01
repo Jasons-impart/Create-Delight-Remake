@@ -1,8 +1,9 @@
 {
+	autofocus_id: "6DC960C9CBFEEAE9"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2F14272613261E70"
-	group: "52E87E212DFA1947"
+	group: "57E934AC8166BC73"
 	icon: "quark:blue_blossom_leaves"
 	id: "2F14272613261E70"
 	images: [
@@ -19,15 +20,15 @@
 			image: "enhanced_boss_bars:textures/gui/boss_bars/wither_storm.png"
 			rotation: 0.0d
 			width: 15.0d
-			x: 1.0d
-			y: 7.5d
+			x: 2.0d
+			y: 6.5d
 		}
 		{
 			height: 6.0d
 			image: "minecraft:textures/painting/wither.png"
 			rotation: 0.0d
 			width: 6.0d
-			x: 1.0d
+			x: 2.0d
 			y: 10.0d
 		}
 		{
@@ -35,8 +36,8 @@
 			image: "witheringboon:item/witheredsoulstone"
 			rotation: 0.0d
 			width: 2.0d
-			x: 1.0d
-			y: 12.0d
+			x: 2.0d
+			y: 11.5d
 		}
 	]
 	order_index: 0
@@ -168,10 +169,10 @@
 				}
 			]
 			title: "刺骨......穿心......"
-			x: 1.0d
-			y: 10.0d
+			x: 2.0d
+			y: 9.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]
-	title: "异界之灾!"
+	title: "&4异界之灾!"
 }
