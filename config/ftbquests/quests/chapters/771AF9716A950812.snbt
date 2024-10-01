@@ -9,51 +9,11 @@
 	images: [
 		{
 			height: 5.0d
-			image: "ftbquests:item/lootcrate/front_outline"
-			rotation: 0.0d
-			width: 5.0d
-			x: 0.0d
-			y: 6.0d
-		}
-		{
-			height: 5.0d
 			image: "citadel:textures/gui/book/icon_default.png"
 			rotation: 0.0d
 			width: 5.0d
 			x: 0.0d
 			y: 0.0d
-		}
-		{
-			height: 5.0d
-			image: "create:block/andesite_casing_piston"
-			rotation: 0.0d
-			width: 5.0d
-			x: 0.0d
-			y: -5.5d
-		}
-		{
-			height: 5.0d
-			image: "everycomp:block/c/forbidden_arcanus/palettes/elder_window"
-			rotation: 0.0d
-			width: 5.0d
-			x: 6.0d
-			y: 0.5d
-		}
-		{
-			height: 5.0d
-			image: "farmersdelight:block/stove_front_on"
-			rotation: 0.0d
-			width: 5.0d
-			x: 5.0d
-			y: -4.0d
-		}
-		{
-			height: 5.0d
-			image: "createdelight:textures/gui/8.png"
-			rotation: 0.0d
-			width: 5.0d
-			x: -5.0d
-			y: -4.0d
 		}
 		{
 			height: 1.0d
@@ -62,22 +22,6 @@
 			width: 0.0625d
 			x: -5.5d
 			y: 4.5d
-		}
-		{
-			height: 5.0d
-			image: "alexsmobs:textures/painting/nft.png"
-			rotation: 0.0d
-			width: 5.0d
-			x: -6.0d
-			y: 0.5d
-		}
-		{
-			height: 5.0d
-			image: "lightmanscurrency:item/portable_atm"
-			rotation: 0.0d
-			width: 5.0d
-			x: -6.0d
-			y: 6.0d
 		}
 	]
 	order_index: 0
@@ -737,8 +681,24 @@
 				type: "item"
 			}]
 			title: "-&c这是...一枚货币！-"
-			x: -6.0d
-			y: 6.0d
+			x: -7.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["64B9CFE4337A3EAA"]
+			description: ["每条&e处理方式&r的增产数量&4不同&r，请&e自行计算&r"]
+			icon: "createmetallurgy:gold_dust"
+			id: "3027E5E07BE0B171"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"15F92D3DE8FAB8A2\" } }"
+			tasks: [{
+				id: "4B0B25EBBB30F627"
+				type: "checkmark"
+			}]
+			title: "矿物处理流程"
+			x: 7.0d
+			y: 7.0d
 		}
 	]
 	title: "介绍"

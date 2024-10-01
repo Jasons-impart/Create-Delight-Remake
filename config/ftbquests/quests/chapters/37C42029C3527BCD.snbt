@@ -1,5 +1,4 @@
 {
-	always_invisible: true
 	autofocus_id: "00AF35D832509CB8"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
@@ -244,8 +243,9 @@
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
-			icon: "createmetallurgy:dirty_gold_dust"
+			icon: "createmetallurgy:foundry_mixer"
 			id: "15F92D3DE8FAB8A2"
+			subtitle: "本整合包的&4矿物增产&r步骤(以铁为例)"
 			tasks: [{
 				id: "2A9CC37CC50DC65B"
 				title: "矿物处理"
@@ -253,6 +253,138 @@
 			}]
 			x: 1.0d
 			y: 3.0d
+		}
+		{
+			dependencies: ["15F92D3DE8FAB8A2"]
+			id: "4B090FE6593322AC"
+			tasks: [{
+				id: "6B3F3C6C3BCCB930"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4B090FE6593322AC"]
+			id: "137B5A8B8C7EA6A2"
+			tasks: [{
+				id: "55E0BF1A0DF778B0"
+				item: "create:crushed_raw_iron"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4B090FE6593322AC"]
+			id: "47E95A5286A80075"
+			tasks: [{
+				id: "213263254430005F"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["47E95A5286A80075"]
+			id: "6F32D461564F952D"
+			tasks: [{
+				id: "679683474CEA2CA3"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["6F32D461564F952D"]
+			id: "0458A8485A72A1C7"
+			tasks: [{
+				id: "632092F4B351D611"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "4972D38A770A8022"
+			tasks: [{
+				id: "5FE496D0E90A30D1"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4972D38A770A8022"]
+			id: "23DBCDC7BE8D7207"
+			tasks: [{
+				id: "4AE27F3570C5B172"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["23DBCDC7BE8D7207"]
+			id: "6EAE2A71D355B4F4"
+			tasks: [{
+				id: "26DC4A594FE3CFFD"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "7E52E474B3645158"
+			tasks: [{
+				id: "2B675C54A010DA80"
+				item: "minecraft:iron_nugget"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["7E52E474B3645158"]
+			id: "5EB5A9C8EC954D78"
+			tasks: [{
+				id: "0FE6E72E15649120"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "65050B6C6BE04373"
+			tasks: [{
+				id: "76404E8D5B5F89DB"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "479850F95DEE291B"
+			tasks: [{
+				id: "67670514C126967C"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
 		}
 	]
 	title: "&e矿物再生！"
