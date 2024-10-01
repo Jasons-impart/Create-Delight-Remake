@@ -44,7 +44,10 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["5981A5D70F26A7A5"]
+			dependencies: [
+				"5981A5D70F26A7A5"
+				"75605D2B058F2DA5"
+			]
 			description: [
 				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
 				"                                                  ——《异兽手记·竦怖军团》"
@@ -185,6 +188,17 @@
 			title: "&4异界之灾！"
 			x: 2.0d
 			y: 4.0d
+		}
+		{
+			id: "75605D2B058F2DA5"
+			subtitle: "悚怖生物只可在寒霜星召唤！"
+			tasks: [{
+				id: "45AF760E66EDAA6A"
+				title: "&4注意！"
+				type: "checkmark"
+			}]
+			x: 4.0d
+			y: 0.5d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

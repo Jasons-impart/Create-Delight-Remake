@@ -420,6 +420,7 @@
 		}
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
+			description: [""]
 			id: "1AA8B7F6B283121A"
 			optional: true
 			subtitle: "给下界合金锤镶嵌下界之星并打磨到最高级"
@@ -481,6 +482,7 @@
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
+			description: [""]
 			id: "332D5E0455DC61E7"
 			optional: true
 			subtitle: "锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"
@@ -524,6 +526,7 @@
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
+			description: [""]
 			icon: {
 				Count: 1
 				id: "minecraft:enchanted_book"
@@ -1006,7 +1009,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1038,7 +1040,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1047,28 +1048,6 @@
 			y: 4.0d
 		}
 		{
-			icon: {
-				Count: 1
-				id: "tetra:scroll_rolled"
-				tag: {
-					BlockEntityTag: {
-						data: [{
-							details: "warforge"
-							glyphs: [I;
-								6
-								7
-								11
-								7
-							]
-							intricate: 0b
-							key: "warforge/adze"
-							material: 2
-							ribbon: "8559b3"
-							schematics: ["tetra:warforge/adze"]
-						}]
-					}
-				}
-			}
 			id: "5014699556117EBC"
 			tasks: [
 				{
@@ -1095,7 +1074,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1122,7 +1100,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1149,7 +1126,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1176,7 +1152,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1203,7 +1178,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1230,7 +1204,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1257,7 +1230,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1284,7 +1256,6 @@
 							}
 						}
 					}
-					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1317,7 +1288,6 @@
 						}
 					}
 				}
-				match_nbt: true
 				type: "item"
 			}]
 			title: "坚固守卫"
@@ -1350,7 +1320,6 @@
 						}
 					}
 				}
-				match_nbt: true
 				type: "item"
 			}]
 			title: "飞刀"
@@ -1382,7 +1351,6 @@
 						}
 					}
 				}
-				match_nbt: true
 				type: "item"
 			}]
 			title: "风啸剑刃"
