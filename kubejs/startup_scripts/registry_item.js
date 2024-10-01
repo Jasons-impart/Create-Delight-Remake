@@ -308,6 +308,9 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.bleak_electron_tube")
     e.create("createdelight:incomplete_fs_upgrade")
         .translationKey("item.createdelight.incomplete_fs_upgrade")
+    e.create("createdelight:incomplete_graviton_tube")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.incomplete_graviton_tube")
 
     // 注册货币
     e.create("createdelight:iron_coin")
