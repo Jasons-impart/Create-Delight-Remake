@@ -1,0 +1,25 @@
+{
+    "Version": 1.0,
+    "attributemap":{
+      "double/head_left": {
+        "double/soul_fire_scythe_left": {
+          "config": {
+          "scaleY": 2.0,
+          "scaleZ": 1.5,
+            "attributes": {
+              "parent": "bettercombat:scythe"
+            }
+          }
+        }
+      },
+      "sword/blade": {
+        "sword/tonal_blade": {
+          "config": {
+            "attributes": {
+              "parent": "bettercombat:dagger"
+            }
+          }
+        }
+      }
+    }
+  }

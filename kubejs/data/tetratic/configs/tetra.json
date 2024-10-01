@@ -1,0 +1,62 @@
+{
+  "Version": 1.0,
+  "attributemap": {
+    "sword/blade": {
+      "sword/heavy_blade": {
+        "config": {
+          "scaleY": 2.0,
+          "scaleZ": 1.5,
+          "attributes": {
+            "parent": "bettercombat:claymore"
+          }
+        }
+      }
+    },
+    "single/head": {
+      "single/spearhead": {
+        "conditions": [
+          {
+            "type": "module",
+            "key": "single/handle",
+            "value": "single/light_handle",
+            "config": {
+              "scaleY": 1.75,
+              "scaleZ": 1.5,
+              "attributes": {
+                "parent": "bettercombat:trident"
+              }
+            }
+          },
+          {
+            "type": "module",
+            "key": "single/handle",
+            "value": "single/long_handle",
+            "config": {
+              "scaleY": 2.0,
+              "scaleZ": 1.5,
+              "attributes": {
+                "parent": "bettercombat:spear"
+              }
+            }
+          }
+        ],
+        "config": {
+          "scaleY": 1.5,
+          "scaleZ": 1.5,
+          "attributes": {
+            "parent": "bettercombat:glaive"
+          }
+        }
+      },
+			"single/hoarfrost": {
+				"config": {
+          "scaleY": 1.5,
+          "scaleZ": 1.5,
+					"attributes": {
+						"parent": "bettercombat:halberd"
+					}
+				}
+			}
+    }
+  }
+}
