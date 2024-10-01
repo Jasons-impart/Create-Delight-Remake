@@ -1,5 +1,5 @@
 {   
-    "key": "dragonsteel_ice_ingot",
+    "key": "dragonsteel_lightning_ingot",
     "category": "metal",
     "primary": 9.1,
     "secondary": 8.3,
@@ -11,10 +11,10 @@
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 12,
     "tints": {
-      "glyph": "0fcce6",
-      "texture": "0fcce6"
+      "glyph": "5c069d",
+      "texture": "5c069d"
     },
     "textures": [ "heavy", "metal" ],
-    "material": { "items": [ "iceandfire:dragonsteel_ice_ingot" ] },
+    "material": { "items": [ "iceandfire:dragonsteel_lightning_ingot" ] },
     "requiredTools": { "hammer_dig": "minecraft:glod" }
   }

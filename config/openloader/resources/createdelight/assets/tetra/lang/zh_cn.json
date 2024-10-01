@@ -2597,5 +2597,9 @@
   "tetra.tweak.scanner/adjustable_span.right": "水平",
 
   "tetra.material.dragonsteel_ice_ingot.prefix":"龙霜钢", 
-  "tetra.material.dragonsteel_ice_ingot": "龙霜钢"
+  "tetra.material.dragonsteel_ice_ingot": "龙霜钢",
+  "tetra.material.dragonsteel_fire_ingot.prefix":"龙炎钢", 
+  "tetra.material.dragonsteel_fire_ingot": "龙炎钢",
+  "tetra.material.dragonsteel_lightning_ingot.prefix":"龙霆钢", 
+  "tetra.material.dragonsteel_lightning_ingot": "龙霆钢"
 }
