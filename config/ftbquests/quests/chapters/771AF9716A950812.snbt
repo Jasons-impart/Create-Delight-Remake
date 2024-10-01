@@ -36,8 +36,8 @@
 			image: "everycomp:block/c/forbidden_arcanus/palettes/elder_window"
 			rotation: 0.0d
 			width: 5.0d
-			x: 7.0d
-			y: 1.0d
+			x: 6.0d
+			y: 0.5d
 		}
 		{
 			height: 5.0d
@@ -45,15 +45,15 @@
 			rotation: 0.0d
 			width: 5.0d
 			x: 5.0d
-			y: -3.0d
+			y: -4.0d
 		}
 		{
 			height: 5.0d
 			image: "createdelight:textures/gui/8.png"
 			rotation: 0.0d
 			width: 5.0d
-			x: -5.5d
-			y: -3.5d
+			x: -5.0d
+			y: -4.0d
 		}
 		{
 			height: 1.0d
@@ -68,8 +68,8 @@
 			image: "alexsmobs:textures/painting/nft.png"
 			rotation: 0.0d
 			width: 5.0d
-			x: -5.5d
-			y: 1.0d
+			x: -6.0d
+			y: 0.5d
 		}
 		{
 			height: 5.0d
@@ -80,11 +80,11 @@
 			y: 6.0d
 		}
 	]
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["推荐键位，n设置为ftbchunks地图，m设置为xareo地图"]
+			description: ["单击&n&9蓝色下划线&r&r字体可跳转至对应章节"]
 			id: "55C42BCE0E399B3D"
 			rewards: [
 				{
@@ -171,8 +171,8 @@
 				}
 			]
 			title: "屠宰相关"
-			x: 8.0d
-			y: -5.0d
+			x: 7.0d
+			y: -7.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -212,8 +212,8 @@
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 7.0d
-			y: 1.0d
+			x: 6.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -235,14 +235,14 @@
 			]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "来自Alex的生物"
+			subtitle: "{ \"text\": \"来自Alex的生物\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"329597CAA8B8D983\" } }"
 			tasks: [{
 				id: "3ED4156434322595"
 				type: "checkmark"
 			}]
 			title: "各式各样的生物"
 			x: -6.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["59350A53C2738BD9"]
@@ -601,14 +601,14 @@
 			]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "锻造之艺，就在其中"
+			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4745D3F50C44D020\" } }"
 			tasks: [{
 				id: "77549F0D9F837A05"
 				title: "锻造大师"
 				type: "checkmark"
 			}]
-			x: -6.0d
-			y: -3.0d
+			x: -4.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -621,7 +621,7 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "Welcome to create, the world is in your hands"
+			subtitle: "{ \"text\": \"欢迎来到机械动力！世界就在你的手中！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"510B2EE25982FD73\" } }"
 			tasks: [{
 				advancement: "create:andesite_alloy"
 				criterion: ""
@@ -643,24 +643,15 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "一份耕耘,一份收获。 "
-			tasks: [
-				{
-					advancement: "farmersdelight:main/craft_knife"
-					criterion: ""
-					id: "2380C12AE641355B"
-					type: "advancement"
-				}
-				{
-					advancement: "minecraft:husbandry/plant_seed"
-					criterion: ""
-					id: "60C21386E715B6E9"
-					type: "advancement"
-				}
-			]
+			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34D9D292CE6F683E\" } }"
+			tasks: [{
+				id: "731BA1C9CD625DBF"
+				title: "开始你的农耕生活吧！"
+				type: "checkmark"
+			}]
 			title: "刀耕火种"
-			x: 5.0d
-			y: -3.0d
+			x: 4.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["398AE54EB6F55F0D"]
@@ -681,14 +672,15 @@
 				type: "checkmark"
 			}]
 			title: "锻造之艺"
-			x: -8.0d
-			y: -4.0d
+			x: -7.0d
+			y: -7.0d
 		}
 		{
 			dependencies: [
 				"55C42BCE0E399B3D"
 				"34C9A7E928820147"
 			]
+			description: ["游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"
@@ -704,29 +696,48 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"
+			subtitle: "{ \"text\": \"玩转货币！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34C9A7E928820147\" } }"
 			tasks: [{
 				id: "6B34FD5059C856EC"
 				title: "货币系统！"
 				type: "checkmark"
 			}]
-			x: -6.0d
-			y: 6.0d
+			x: -4.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
+			description: ["注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"]
 			icon: "createmetallurgy:sturdy_whisk"
 			id: "64B9CFE4337A3EAA"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"
+			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"6731C7B5A0DADBAA\" } }"
 			tasks: [{
 				id: "39FA137A00BB30A2"
 				title: "末地"
 				type: "checkmark"
 			}]
 			title: "熔炼相关"
-			x: 5.0d
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7429D7F92D04A8BB"]
+			description: [
+				"本整合包的货币分为五类：&7铁币 &c铜币 &e金币 &2绿宝石币 &8下届合金币"
+				"你&4无法&r将低级货币合成高级货币，但&a可以&r可逆向分解（为什么呢？"
+			]
+			id: "360AB2F07EC4E939"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "25E346180534EE29"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			title: "-&c这是...一枚货币！-"
+			x: -6.0d
 			y: 6.0d
 		}
 	]
