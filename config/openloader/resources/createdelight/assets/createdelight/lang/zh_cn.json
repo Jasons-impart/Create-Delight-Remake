@@ -1,4 +1,5 @@
 {
+    "item.createdelight.prospector": "探矿仪",
     "item.createdelight.phase_transition_iron": "β-正交晶系六方铁",
     "item.createdelight.mmd_diamond": "人工钻石",
     "item.createdelight.crushed_raw_desh": "粉碎戴斯矿石",
@@ -75,6 +76,7 @@
     "item.createdelight.moon_ore_cluster": "月球矿簇",
     "item.createdelight.mars_ore_cluster": "火星矿簇",
     "item.createdelight.mars_gemstone_cluster": "火星宝石矿簇",
+    "item.createdelight.venus_ore_cluster": "金星矿簇",
     "item.createdelight.mercury_ore_cluster": "水星矿簇",
     "item.createdelight.glacio_ore_cluster": "霜原星矿簇",
     "fluid.createdelight.molten_electrum": "熔融琥珀金",

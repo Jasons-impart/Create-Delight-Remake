@@ -1,16 +1,3 @@
-/*
-额todo：
-杀压印器改压印器配方到较后
-材质
-e 配方id
-纸的制造
-P2P奇点
-空间元件
-红石互动生成陨石
-Jason的相变铁世界生成
-人造钻石适配
-*/
-
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
 
@@ -282,8 +269,10 @@ ServerEvents.recipes((event) => {
 
   // 奇点
   create.cutting("ae2:singularity", "create:mechanical_saw").id("createdelight:singularity_1");
-  create.crushing("ae2:singularity", "create:crushing_wheel").id("createdelight:singularity_2");
-  create.milling("ae2:singularity", "create:millstone").id("createdelight:singularity_3");
+  create
+    .crushing("ae2:singularity", "#design_decor:crushing_wheels")
+    .id("createdelight:singularity_2");
+  create.milling("ae2:singularity", "#design_decor:millstones").id("createdelight:singularity_3");
 
   // 陨石再生
   create.milling("4x ae2:sky_dust", "ae2:sky_stone_block").id("createdelight:sky_dust_1");
@@ -3011,11 +3000,11 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
-        "ae2:formation_core",
+        "#forge:workbench",
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
-        "#forge:workbench",
+        "ae2:formation_core",
       ]),
     ])
     .id("createdelight:pattern_provider")
@@ -3027,64 +3016,276 @@ ServerEvents.recipes((event) => {
     "#forge:plates/iron"
   );
 
-  // // 分子装配室
-  // create
-  //   .sequenced_assembly("2x ae2:molecular_assembler", "ae2:quartz_glass", [
-  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "ae2:annihilation_core"]),
-  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "ae2:formation_core"]),
-  //     create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:workbench"]),
-  //   ])
-  //   .id("createdelight:molecular_assembler_A")
-  //   .loops(1)
-  //   .transitionalItem("ae2:quartz_glass");
-  // create
-  //   .sequenced_assembly("2x ae2:molecular_assembler", "createdelight:quartz_glass_parts", [
-  //     create.deploying("createdelight:quartz_glass_parts", [
-  //       "createdelight:quartz_glass_parts",
-  //       "ae2:annihilation_core",
-  //     ]),
-  //     create.deploying("createdelight:quartz_glass_parts", [
-  //       "createdelight:quartz_glass_parts",
-  //       "ae2:formation_core",
-  //     ]),
-  //     create.deploying("createdelight:quartz_glass_parts", [
-  //       "createdelight:quartz_glass_parts",
-  //       "#forge:workbench",
-  //     ]),
-  //   ])
-  //   .id("createdelight:molecular_assembler_B")
-  //   .loops(1)
-  //   .transitionalItem("createdelight:quartz_glass_parts");
+  // 分子装配室
+  create
+    .sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:annihilation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:formation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "#forge:workbench",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:quartz_glass",
+      ]),
+    ])
+    .id("createdelight:molecular_assembler_A")
+    .loops(1)
+    .transitionalItem("createdelight:iron_casing");
+  create
+    .sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:annihilation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:formation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "#forge:workbench",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "createdelight:quartz_glass_parts",
+      ]),
+    ])
+    .id("createdelight:molecular_assembler_B")
+    .loops(1)
+    .transitionalItem("createdelight:iron_casing");
 
-  // event.replaceInput(
-  //   { id: "ae2:network/crafting/molecular_assembler" },
-  //   "#forge:ingots/iron",
-  //   "#forge:plates/iron"
-  // );
+  event.replaceInput(
+    { id: "ae2:network/crafting/molecular_assembler" },
+    "#forge:ingots/iron",
+    "#forge:plates/iron"
+  );
 
-  // // ME接口
-  // create
-  //   .sequenced_assembly('ae2:interface', '#forge:glass', [
-  //     create.deploying('#forge:glass', [
-  //       '#forge:glass',
-  //       "ae2:annihilation_core",
-  //     ]),
-  //     create.deploying('#forge:glass', [
-  //       '#forge:glass',
-  //       "ae2:formation_core",
-  //     ]),
-  //     create.deploying('#forge:glass', [
-  //       '#forge:glass',
-  //       "#forge:workbench",
-  //     ]),
-  //   ])
-  //   .id("createdelight:interface")
-  //   .loops(1)
-  //   .transitionalItem('#forge:glass');
+  // ME接口
+  create
+    .sequenced_assembly("2x ae2:interface", "createdelight:iron_casing", [
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:annihilation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:formation_core",
+      ]),
+      create.deploying("createdelight:iron_casing", ["createdelight:iron_casing", "#forge:glass"]),
+    ])
+    .id("createdelight:interface")
+    .loops(1)
+    .transitionalItem("createdelight:iron_casing");
 
-  // event.replaceInput(
-  //   { id: "ae2:network/blocks/interfaces_interface" },
-  //   "#forge:ingots/iron",
-  //   "#forge:plates/iron"
-  // );
+  event.replaceInput(
+    { id: "ae2:network/blocks/interfaces_interface" },
+    "#forge:ingots/iron",
+    "#forge:plates/iron"
+  );
+
+  // P2P通道
+  create
+    .sequenced_assembly("2x ae2:me_p2p_tunnel", "#forge:ingots/iron", [
+      create.deploying("#forge:ingots/iron", ["#forge:ingots/iron", "ae2:engineering_processor"]),
+      create.deploying("#forge:ingots/iron", ["#forge:ingots/iron", "ae2:singularity"]),
+      create.deploying("#forge:ingots/iron", ["#forge:ingots/iron", "#forge:gems/fluix"]),
+    ])
+    .id("createdelight:me_p2p_tunnel")
+    .transitionalItem("#forge:ingots/iron")
+    .loops(1);
+  event.remove({ id: "ae2:network/parts/tunnels_me" });
+  kubejs.shaped("ae2:me_p2p_tunnel", ["ABA", "BCB", "DDD"], {
+    A: "ae2:singularity",
+    B: "create:iron_sheet",
+    C: "ae2:engineering_processor",
+    D: "#forge:gems/fluix",
+  });
+
+  // 空间IO端口
+  create
+    .item_application("ae2:spatial_io_port", ["createdelight:space_casing", "ae2:io_port"])
+    .id("createdelight:spatial_io_port");
+  event.remove({ id: "ae2:network/blocks/spatial_io_port" });
+
+  // 充能器
+  create.item_application("ae2:charger", ["createdelight:iron_casing", "minecraft:copper_ingot"]);
+  event.replaceInput(
+    { id: "ae2:network/blocks/crystal_processing_charger" },
+    "#forge:ingots/iron",
+    "#forge:plates/iron"
+  );
+
+  // ME控制器
+  create
+    .sequenced_assembly("ae2:controller", "createdelight:sky_steel_casing", [
+      create.deploying("createdelight:sky_steel_casing", [
+        "createdelight:sky_steel_casing",
+        "#forge:storage_blocks/sky_steel",
+      ]),
+      create.deploying("createdelight:sky_steel_casing", [
+        "createdelight:sky_steel_casing",
+        "#forge:gems/fluix",
+      ]),
+      create.deploying("createdelight:sky_steel_casing", [
+        "createdelight:sky_steel_casing",
+        "#forge:gems/fluix",
+      ]),
+      create.deploying("createdelight:sky_steel_casing", [
+        "createdelight:sky_steel_casing",
+        "#forge:storage_blocks/sky_steel",
+      ]),
+    ])
+    .id("createdelight:controller")
+    .transitionalItem("createdelight:sky_steel_casing")
+    .loops(1);
+  event.replaceInput(
+    { id: "ae2:network/blocks/controller" },
+    "ae2:smooth_sky_stone_block",
+    "#forge:storage_blocks/sky_steel"
+  );
+
+  // 物质聚合器
+  create.item_application("ae2:condenser", [
+    "createdelight:iron_casing",
+    "trashcans:ultimate_trash_can",
+  ]);
+  event.remove({ id: "ae2:network/blocks/io_condenser" });
+
+  // 累积压印模板
+  vintageimprovements
+    .pressurizing("megacells:accumulation_processor_press", [
+      "ae2:engineering_processor_press",
+      "ae2:singularity",
+      "ae2:calculation_processor_press",
+      Fluid.of("minecraft:lava", 250),
+    ])
+    .id("createdelight:accumulation_processor_press");
+
+  // 石英纤维
+  create
+    .mixing("16x ae2:quartz_fiber", ["4x #forge:glass", "4x #forge:gems/certus_quartz"])
+    .heated()
+    .id("createdelight:quartz_fiber");
+
+  // 杀物质炮
+  event.remove({ id: "ae2:tools/matter_cannon" });
+
+  // 空间锚
+  create
+    .mechanical_crafting("ae2:spatial_anchor", ["AABAA", "ACGEA", "BDFDB", "AEGCA", "AABAA"], {
+      A: "createdelight:space_casing",
+      B: "#ae2:smart_dense_cable",
+      C: "ae2:fluix_block",
+      D: "ae2:spatial_cell_component_128",
+      E: "ae2:singularity",
+      F: "megacells:mega_energy_cell",
+      G: "ae2:controller",
+    })
+    .id("createdelight:spatial_anchor");
+  event.remove({ id: "ae2:network/blocks/spatial_anchor" });
+
+  // 合成单元
+  create
+    .sequenced_assembly("2x ae2:crafting_unit", "createdelight:iron_casing", [
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:calculation_processor",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:logic_processor",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "#ae2:p2p_attunements/me_p2p_tunnel",
+      ]),
+    ])
+    .id("createdelight:crafting_unit")
+    .loops(1)
+    .transitionalItem("createdelight:iron_casing");
+
+  // ME驱动器
+  create
+    .sequenced_assembly("ae2:drive", "createdelight:iron_casing", [
+      vintageimprovements.turning("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "createdelight:iron_casing",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "ae2:engineering_processor",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
+        "#ae2:p2p_attunements/me_p2p_tunnel",
+      ]),
+    ])
+    .id("createdelight:drive")
+    .transitionalItem("createdelight:iron_casing")
+    .loops(1);
+
+  // MEGA合成单元
+  create
+    .sequenced_assembly("2x megacells:mega_crafting_unit", "ae2:crafting_unit", [
+      create.deploying("ae2:crafting_unit", [
+        "ae2:crafting_unit",
+        "#ae2:p2p_attunements/me_p2p_tunnel",
+      ]),
+      create.deploying("ae2:crafting_unit", [
+        "ae2:crafting_unit",
+        "megacells:accumulation_processor",
+      ]),
+      create.deploying("ae2:crafting_unit", [
+        "ae2:crafting_unit",
+        "createdelight:bleak_electron_tube",
+      ]),
+    ])
+    .id("createdelight:mega_crafting_unit")
+    .transitionalItem("ae2:crafting_unit")
+    .loops(1);
+  event.replaceInput(
+    { id: "megacells:crafting/mega_crafting_unit" },
+    "ae2:fluix_smart_cable",
+    "createdelight:bleak_electron_tube"
+  );
+
+  // ME扩展IO端口
+  event.replaceInput(
+    { id: "expatternprovider:ex_io_port" },
+    "ae2:speed_card",
+    "createdelight:bleak_electron_tube"
+  );
+
+  // 扩展分子装配室
+  event.replaceInput(
+    { id: "expatternprovider:ex_molecular_assembler" },
+    "#forge:gems/fluix",
+    "createdelight:bleak_electron_tube"
+  );
+
+  // 杀扩展驱动器
+  event.remove({ id: "expatternprovider:ex_drive" });
+
+  // ME无线连接器
+  event.replaceInput(
+    { id: "expatternprovider:wireless_connector" },
+    "ae2:sky_dust",
+    "ae2:smooth_sky_stone_block"
+  );
+  event.replaceInput(
+    { id: "expatternprovider:wireless_connector" },
+    "ae2:engineering_processor",
+    "ae2:controller"
+  );
+
+  // 杀压印器
+  event.remove({ id: "ae2:network/blocks/inscribers" });
 });

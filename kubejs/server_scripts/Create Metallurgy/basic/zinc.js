@@ -19,9 +19,18 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_zinc_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createmetallurgy:molten_zinc", 90),
+        Fluid.of("createmetallurgy:molten_zinc", 120),
         "createmetallurgy:zinc_dust",
         "heated",
         20
     ).id("createmetallurgy:melting/melting_zinc_dust")
+    metal_production_line_5(e,
+        [
+            "createmetallurgy:dirty_zinc_dust",
+            "createmetallurgy:zinc_dust",
+            "create:crushed_raw_zinc",
+            "create:raw_zinc",
+            "create:zinc_nugget"
+        ]
+    )
 })

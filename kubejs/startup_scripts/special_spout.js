@@ -102,16 +102,41 @@ CreateEvents.spoutHandler(e => {
             }
             if (item.hasTag("create_sa:fillable") || item.hasTag("create_sa:fuelable")) {
                 item.getOrCreateTag()
-                const { pos, level } = block
-                const { x, y, z } = pos
                 if (item.hasTag("create_sa:fillable") && fluid.id == "minecraft:water")
                     return fillWater(fluid, simulate, item)
-                    level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
                 if (item.hasTag("create_sa:fuelable"))
                     return fillFuel(fluid, simulate, item)
-                    level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
             }
             return 0
         }
     )
+    e.add("createdelight:budding_certus_grow_spout_interaction",
+        ["ae2:flawless_budding_quartz", "ae2:flawed_budding_quartz", "ae2:chipped_budding_quartz", "ae2:damaged_budding_quartz"],
+        (block, fluid, simulate) => {
+            if (fluid.id == "createdelight:spent_liquor" && fluid.amount >= 50) {
+                if (!simulate) {
+                    block.getBlockState().randomTick(block.level, block.pos, block.level.random)
+                }
+                return 50
+            }
+            return 0
+        }
+    )
+    // e.add("createdelight:budding_certus_fix_spout_interaction",
+    //     ["ae2:chipped_budding_quartz", "ae2:damaged_budding_quartz", "ae2:quartz_block"],
+    //     (block, fluid, simulate) => {
+    //         if (fluid.id == "createdelight:spent_liquor" && fluid.amount >= 50 && block.level.random.nextInt(4) == 0) {
+    //             if (!simulate) {
+    //                 if (block.id == "ae2:quartz_block")
+    //                     block.setBlockState(Block.getBlock("ae2:damaged_budding_quartz").defaultBlockState(), 2)
+    //                 else if (block.id == "ae2:damaged_budding_quartz")
+    //                     block.setBlockState(Block.getBlock("ae2:chipped_budding_quartz").defaultBlockState(), 2)
+    //                 else if (block.id == "ae2:chipped_budding_quartz")
+    //                     block.setBlockState(Block.getBlock("ae2:flawed_budding_quartz").defaultBlockState(), 2)
+    //             }
+    //             return 50
+    //         }
+    //         return 0
+    //     }
+    // )
 })

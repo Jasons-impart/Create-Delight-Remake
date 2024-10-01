@@ -87,10 +87,21 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/dirty_tin_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createdelight:molten_tin", 90),
+        Fluid.of("createdelight:molten_tin", 120),
         "createdelight:tin_dust",
         "heated",
         20
     ).id("createmetallurgy:melting/tin_dust")
+
+    
+    metal_production_line_5(e, 
+        [
+            "createdelight:dirty_tin_dust",
+            "createdelight:tin_dust",
+            "create:crushed_raw_tin",
+            "createdelight:raw_tin",
+            "createdelight:tin_nugget"
+        ]
+    )
 
 })

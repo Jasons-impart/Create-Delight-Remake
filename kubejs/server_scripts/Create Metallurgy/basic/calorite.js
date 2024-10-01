@@ -36,11 +36,19 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_calorite_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createdelight:molten_calorite", 90),
+        Fluid.of("createdelight:molten_calorite", 120),
         "createdelight:calorite_dust",
         "superheated",
         20
     ).id("createmetallurgy:melting/melting_calorite_dust")
     blast_and_smelting(e, 'createdelight:crushed_raw_calorite', "ad_astra:calorite_ingot", 0.1, 100)
-
+    metal_production_line_5(e, 
+        [
+            "createdelight:dirty_calorite_dust",
+            "createdelight:calorite_dust",
+            "createdelight:crushed_raw_calorite",
+            "ad_astra:raw_calorite",
+            "ad_astra:calorite_nugget"
+        ]
+    )
 })
