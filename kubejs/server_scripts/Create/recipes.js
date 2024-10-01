@@ -116,4 +116,7 @@ ServerEvents.recipes(e => {
         .id("create:crafting/kinetics/item_vault_2")
     e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
         .id("create:crafting/kinetics/fluid_tank_2")
+    //坚固板的另一个配方
+    e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
+        .id("vintageimprovements:hammering/sturdy_sheet")
 })
