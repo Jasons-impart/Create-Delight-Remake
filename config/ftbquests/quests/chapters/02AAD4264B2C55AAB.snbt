@@ -19,7 +19,7 @@
 		}
 	}
 	id: "55436AC0A0C01843"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -153,6 +153,7 @@
 					type: "item"
 				}
 			]
+			title: "龙钢"
 			x: -6.0d
 			y: 6.0d
 		}
@@ -208,7 +209,7 @@
 						value: "aether:aerclouds"
 					}
 				}
-				title: "Any #aether:aerclouds"
+				title: "任意云"
 				type: "item"
 			}]
 			x: 3.0d
@@ -978,6 +979,7 @@
 				icon: "minecraft:echo_shard"
 				id: "021A5012962A0F19"
 				structure: "minecraft:ancient_city"
+				title: "发现远古城市"
 				type: "structure"
 			}]
 			x: -6.0d

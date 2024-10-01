@@ -152,7 +152,7 @@
 			subtitle: "先得有航天服才能在外太空生存"
 			tasks: [
 				{
-					id: "645985857652666A"
+					id: "63E2E227BECF85D1"
 					item: {
 						Count: 1
 						id: "ad_astra:space_helmet"
@@ -163,7 +163,7 @@
 					type: "item"
 				}
 				{
-					id: "706980AA551D330A"
+					id: "0FEEEB725093526B"
 					item: {
 						Count: 1
 						id: "ad_astra:space_suit"
@@ -174,7 +174,7 @@
 					type: "item"
 				}
 				{
-					id: "21556B948D62A256"
+					id: "6343DE6690504162"
 					item: {
 						Count: 1
 						id: "ad_astra:space_pants"
@@ -185,7 +185,7 @@
 					type: "item"
 				}
 				{
-					id: "5AA63F053A1E89BE"
+					id: "1596D9BF93DF0AB1"
 					item: {
 						Count: 1
 						id: "ad_astra:space_boots"
@@ -1442,6 +1442,123 @@
 			title: "奇幻生物：悚怖劫蛛"
 			x: 20.0d
 			y: 1.0d
+		}
+		{
+			dependencies: ["7B9BACB0DA054015"]
+			id: "436A84764BE8B157"
+			shape: "hexagon"
+			subtitle: "可以用普通盔甲附魔后，携带特殊氧气瓶即可进入太空！！！"
+			tasks: [
+				{
+					id: "35718DC624F931A8"
+					item: {
+						Count: 1
+						id: "minecraft:enchanted_book"
+						tag: {
+							StoredEnchantments: [{
+								id: "ad_astra_giselle_addon:space_breathing"
+								lvl: 1s
+							}]
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3DCB22A6D18862CB"
+					item: {
+						Count: 1
+						id: "ad_astra_giselle_addon:oxygen_can"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "太空呼吸的魔法！"
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7B9BACB0DA054015"]
+			id: "3A27FB3A1AA8D320"
+			shape: "hexagon"
+			subtitle: "从此以后，太空如履平地！"
+			tasks: [{
+				id: "469F6644E80EF0C4"
+				item: {
+					Count: 1
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "ad_astra_giselle_addon:gravity_normalizing"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			title: "重力正常化的魔法！"
+			x: -3.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["7317362ABAA2113E"]
+			id: "09594CFD70990B44"
+			shape: "hexagon"
+			tasks: [{
+				id: "701C60B5BB59AC1A"
+				item: {
+					Count: 1
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "ad_astra_giselle_addon:space_fire_proof"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			title: "太空抗火的魔法！"
+			x: 16.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["0EF849425CE2BC23"]
+			id: "376AB401206241CD"
+			shape: "hexagon"
+			tasks: [{
+				id: "727C0E051FF9CEE6"
+				item: {
+					Count: 1
+					id: "minecraft:enchanted_book"
+					tag: {
+						StoredEnchantments: [{
+							id: "ad_astra_giselle_addon:acid_rain_proof"
+							lvl: 1s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			title: "酸雨防护的魔法！"
+			x: 14.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["393E1E2F429F9972"]
+			id: "7503BE3861AA4B82"
+			shape: "hexagon"
+			tasks: [{
+				id: "74EA1C9C71541CAF"
+				item: {
+					Count: 1
+					id: "ad_astra_giselle_addon:netherite_oxygen_can"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 3.0d
 		}
 	]
 	title: "&e群星之旅！"

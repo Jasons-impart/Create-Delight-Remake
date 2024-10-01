@@ -19,7 +19,7 @@
 		}
 	}
 	id: "4B6A861104F42DC2"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -55,7 +55,7 @@
 			}]
 			title: "新的工作台"
 			x: 2.5d
-			y: 0.0d
+			y: 0.0059523809523724935d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -73,7 +73,7 @@
 			}]
 			title: "这不是铁锤吗？"
 			x: 2.5d
-			y: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["01FC78875A324DE3"]
@@ -446,7 +446,7 @@
 			}]
 			title: "“老乡”"
 			x: 2.5d
-			y: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["6A7882FD5FF059C6"]
