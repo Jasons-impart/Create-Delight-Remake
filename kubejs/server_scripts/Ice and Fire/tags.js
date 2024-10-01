@@ -3,4 +3,7 @@ ServerEvents.tags("item", e => {
         'iceandfire:earplugs',
         'iceandfire:blindfold'
     ])
+    e.removeAllTagsFrom([
+        'iceandfire:copper_nugget'
+    ])
 })
