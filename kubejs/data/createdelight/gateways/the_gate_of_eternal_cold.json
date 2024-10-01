@@ -10,7 +10,7 @@
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 2
+                    "count": 1
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
@@ -29,7 +29,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.35
+					"value": 0.50
 				},
 				{
 					"attribute": "generic.armor",
@@ -95,7 +95,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.60
 				},
 				{
 					"attribute": "generic.armor",
@@ -160,7 +160,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.60
 				},
 				{
 					"attribute": "generic.armor",
@@ -234,7 +234,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.60
 				},
 				{
 					"attribute": "generic.armor",
@@ -308,7 +308,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.60
 				},
 				{
 					"attribute": "generic.armor",
