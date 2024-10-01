@@ -234,9 +234,15 @@ ServerEvents.recipes((event) => {
     ])
     .id("createdelight:processor_inscribed_7");
 
-  // 红石膏合成
+  // 膏合成
   create
     .mixing("createdelight:redstone_paste", ["64x #forge:dusts/redstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:glowstone_paste", ["64x #forge:dusts/glowstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:sky_stone_paste", ["64x ae2:sky_dust", "#forge:plates/iron"])
     .heated();
 
   // 处理器配方
@@ -2795,7 +2801,7 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:terminal", ["ae2:terminal", "ae2:calculation_processor"]),
     ])
     .transitionalItem("ae2:terminal")
-    .id("createdelight:terminal_2")
+    .id("createdelight:crafting_terminal_2")
     .loops(1);
   event.remove({ id: "ae2:network/parts/terminals_crafting" });
 
