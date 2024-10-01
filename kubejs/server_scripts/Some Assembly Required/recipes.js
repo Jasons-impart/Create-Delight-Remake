@@ -23,6 +23,7 @@ ServerEvents.recipes(e => {
     cutting(e, "minecraft:golden_apple",  [["some_assembly_required:golden_apple_slices", 2]])
     cutting(e, "minecraft:enchanted_golden_apple",  [["some_assembly_required:enchanted_golden_apple_slices", 2]])
     cutting(e, "minecraft:bread",  [["some_assembly_required:bread_slice", 4]])
+    cutting(e, "some_assembly_required:burger_bun", [["some_assembly_required:burger_bun_bottom", 1], ["some_assembly_required:burger_bun_top", 1]])
 
 
 

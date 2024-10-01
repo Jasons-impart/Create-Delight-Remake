@@ -38,7 +38,17 @@ ServerEvents.recipes(e => {
         J: "create:brass_tunnel"
     }
     ).id("createoreexcavation:drilling_machine")
-
+    e.replaceInput({id: "createoreexcavation:vein_finder"}, "#forge:ores/redstone", "minecraft:redstone_block")
+    e.recipes.kubejs.shaped("createdelight:prospector", [
+        "ABA",
+        "ACA",
+        "AAA"
+    ],
+    {
+        A: "createmetallurgy:steel_ingot",
+        B: "createoreexcavation:vein_finder",
+        C: "minecraft:tinted_glass"
+    }).id("createdelight:shaped/prospector")
     //主世界金属矿簇
     e.recipes.create.crushing([
         Item.of("create:crushed_raw_copper").withChance(0.75),
