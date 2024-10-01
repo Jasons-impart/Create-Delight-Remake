@@ -887,7 +887,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("#forge:plates/iron")
     .loops(1)
-    .id("createdelight:blank_pattern_C");
+    .id("createdelight:blank_pattern_3");
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
@@ -899,7 +899,7 @@ ServerEvents.recipes((event) => {
     ])
     .transitionalItem("#forge:plates/iron")
     .loops(1)
-    .id("createdelight:blank_pattern_D");
+    .id("createdelight:blank_pattern_4");
 
   // 样板修改器
   create
@@ -1022,7 +1022,7 @@ ServerEvents.recipes((event) => {
     ])
     .loops(1)
     .transitionalItem("ae2:certus_quartz_crystal")
-    .id("createdelight:cell_component_1k_C");
+    .id("createdelight:cell_component_1k_3");
 
   // 4K存储元件
   create
@@ -1084,7 +1084,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_C")
+    .id("createdelight:cell_component_4k_3")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1106,7 +1106,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_D")
+    .id("createdelight:cell_component_4k_4")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1130,7 +1130,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_E")
+    .id("createdelight:cell_component_4k_5")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1154,7 +1154,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_1k", "ae2:cell_component_1k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4k_F")
+    .id("createdelight:cell_component_4k_6")
     .loops(1)
     .transitionalItem("ae2:cell_component_1k");
 
@@ -1235,7 +1235,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_C")
+    .id("createdelight:cell_component_16k_3")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1271,7 +1271,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_D")
+    .id("createdelight:cell_component_16k_4")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1299,7 +1299,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_E")
+    .id("createdelight:cell_component_16k_5")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1324,7 +1324,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_4k", "ae2:cell_component_4k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16k_F")
+    .id("createdelight:cell_component_16k_6")
     .loops(1)
     .transitionalItem("ae2:cell_component_4k");
 
@@ -1414,7 +1414,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_C")
+    .id("createdelight:cell_component_64k_3")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1453,7 +1453,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_D")
+    .id("createdelight:cell_component_64k_4")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1484,7 +1484,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_E")
+    .id("createdelight:cell_component_64k_5")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1512,7 +1512,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_16k", "ae2:cell_component_16k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64k_F")
+    .id("createdelight:cell_component_64k_6")
     .loops(1)
     .transitionalItem("ae2:cell_component_16k");
 
@@ -1590,7 +1590,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_C")
+    .id("createdelight:cell_component_256k_3")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1617,7 +1617,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_D")
+    .id("createdelight:cell_component_256k_4")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1648,7 +1648,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_E")
+    .id("createdelight:cell_component_256k_5")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1676,7 +1676,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_64k", "ae2:cell_component_64k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256k_F")
+    .id("createdelight:cell_component_256k_6")
     .loops(1)
     .transitionalItem("ae2:cell_component_64k");
 
@@ -1763,7 +1763,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_C")
+    .id("createdelight:cell_component_1m_3")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1790,7 +1790,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_D")
+    .id("createdelight:cell_component_1m_4")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1821,7 +1821,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_E")
+    .id("createdelight:cell_component_1m_5")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1849,7 +1849,7 @@ ServerEvents.recipes((event) => {
         .curving("ae2:cell_component_256k", "ae2:cell_component_256k")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_1m_F")
+    .id("createdelight:cell_component_1m_6")
     .loops(1)
     .transitionalItem("ae2:cell_component_256k");
 
@@ -1917,7 +1917,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4m_C")
+    .id("createdelight:cell_component_4m_3")
     .loops(1)
     .transitionalItem("megacells:cell_component_1m");
 
@@ -1956,7 +1956,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4m_D")
+    .id("createdelight:cell_component_4m_4")
     .loops(1)
     .transitionalItem("megacells:cell_component_1m");
 
@@ -1984,7 +1984,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_1m", "megacells:cell_component_1m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_4m_F")
+    .id("createdelight:cell_component_4m_6")
     .loops(1)
     .transitionalItem("megacells:cell_component_1m");
 
@@ -2052,7 +2052,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16m_C")
+    .id("createdelight:cell_component_16m_3")
     .loops(1)
     .transitionalItem("megacells:cell_component_4m");
 
@@ -2091,7 +2091,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16m_D")
+    .id("createdelight:cell_component_16m_4")
     .loops(1)
     .transitionalItem("megacells:cell_component_4m");
 
@@ -2119,7 +2119,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_4m", "megacells:cell_component_4m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_16m_F")
+    .id("createdelight:cell_component_16m_6")
     .loops(1)
     .transitionalItem("megacells:cell_component_4m");
 
@@ -2187,7 +2187,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64m_C")
+    .id("createdelight:cell_component_64m_3")
     .loops(1)
     .transitionalItem("megacells:cell_component_16m");
 
@@ -2226,7 +2226,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64m_D")
+    .id("createdelight:cell_component_64m_4")
     .loops(1)
     .transitionalItem("megacells:cell_component_16m");
 
@@ -2254,7 +2254,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_16m", "megacells:cell_component_16m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_64m_F")
+    .id("createdelight:cell_component_64m_6")
     .loops(1)
     .transitionalItem("megacells:cell_component_16m");
 
@@ -2324,7 +2324,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256m_C")
+    .id("createdelight:cell_component_256m_3")
     .loops(1)
     .transitionalItem("megacells:cell_component_64m");
 
@@ -2363,7 +2363,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256m_D")
+    .id("createdelight:cell_component_256m_4")
     .loops(1)
     .transitionalItem("megacells:cell_component_64m");
 
@@ -2391,7 +2391,7 @@ ServerEvents.recipes((event) => {
         .curving("megacells:cell_component_64m", "megacells:cell_component_64m")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:cell_component_256m_F")
+    .id("createdelight:cell_component_256m_6")
     .loops(1)
     .transitionalItem("megacells:cell_component_64m");
 
@@ -2628,7 +2628,7 @@ ServerEvents.recipes((event) => {
     .id("createdelight:fluix_pearl_2");
   create
     .mixing("ae2:fluix_pearl", ["#forge:ender_pearls", "#forge:gems/fluix", "#forge:dusts/fluix"])
-    .id("createdelight:fluix_pearl_C");
+    .id("createdelight:fluix_pearl_3");
 
   // 无线终端
   create
