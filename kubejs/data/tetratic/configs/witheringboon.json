@@ -1,0 +1,82 @@
+{
+  "Version": 1.0,
+  "attributemap": {
+    "double/head_left": {
+      "double/reaping_scythe_left": {
+        "config": {
+          "scaleY": 2.0,
+          "scaleZ": 2.0,
+          "attributes": {
+            "parent": "bettercombat:scythe"
+          }
+        }
+      },
+      "double/wardenhunterleft_left": {
+        "config": {
+          "scaleY": 2.0,
+          "scaleZ": 2.0,
+          "attributes": {
+            "parent": "bettercombat:scythe"
+          }
+        }
+      }
+    },
+    "single/head": {
+      "single/basic_pitchfork": {
+        "conditions": [
+          {
+            "type": "module",
+            "key": "single/handle",
+            "value": "single/light_handle",
+            "config": {
+              "scaleY": 1.75,
+              "scaleZ": 1.5,
+              "attributes": {
+                "parent": "bettercombat:trident"
+              }
+            }
+          },
+          {
+            "type": "module",
+            "key": "single/handle",
+            "value": "single/long_handle",
+            "config": {
+              "scaleY": 2.0,
+              "scaleZ": 1.5,
+              "attributes": {
+                "parent": "bettercombat:spear"
+              }
+            }
+          }
+        ],
+        "config": {
+          "scaleY": 1.5,
+          "scaleZ": 1.5,
+          "attributes": {
+            "parent": "bettercombat:spear"
+          }
+        }
+      }
+    },
+    "sword/blade": {
+      "sword/blackbloodblade": {
+        "config": {
+          "scaleY": 2.0,
+          "scaleZ": 1.5,
+          "attributes": {
+            "parent": "bettercombat:claymore"
+          }
+        }
+      },
+      "sword/souleatingblade": {
+        "config": {
+          "scaleY": 2.0,
+          "scaleZ": 1.5,
+          "attributes": {
+            "parent": "bettercombat:claymore"
+          }
+        }
+      }
+    }
+  }
+}

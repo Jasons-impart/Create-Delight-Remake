@@ -144,7 +144,7 @@
 				type: "item"
 			}]
 			title: "我寻思这能用厨锅做"
-			x: -15.5d
+			x: -16.5d
 			y: 1.0d
 		}
 		{
@@ -327,7 +327,7 @@
 				type: "item"
 			}]
 			title: "温馨火焰"
-			x: -17.5d
+			x: -18.5d
 			y: 2.0d
 		}
 		{
@@ -671,7 +671,7 @@
 				type: "item"
 			}]
 			title: "主世界咖啡"
-			x: -23.5d
+			x: -24.5d
 			y: 4.0d
 		}
 		{
@@ -860,7 +860,7 @@
 				item: "createcafe:roasted_coffee_beans"
 				type: "item"
 			}]
-			x: -23.5d
+			x: -24.5d
 			y: 5.5d
 		}
 		{
@@ -887,7 +887,7 @@
 				item: "createcafe:coffee_grounds"
 				type: "item"
 			}]
-			x: -24.5d
+			x: -25.5d
 			y: 6.5d
 		}
 		{
@@ -1000,7 +1000,7 @@
 				type: "item"
 			}]
 			title: "农夫暇事"
-			x: -19.5d
+			x: -20.5d
 			y: 2.0d
 		}
 		{
@@ -1058,7 +1058,7 @@
 				id: "65FA439E4B097456"
 				type: "questsadditions:time"
 			}]
-			x: -24.5d
+			x: -25.5d
 			y: 1.0d
 		}
 		{
@@ -1087,7 +1087,7 @@
 				type: "questsadditions:time"
 			}]
 			title: "茶与咖啡"
-			x: -24.5d
+			x: -25.5d
 			y: 3.0d
 		}
 		{
@@ -1131,7 +1131,7 @@
 				}
 			]
 			title: "&2茶叶"
-			x: -24.5d
+			x: -25.5d
 			y: -0.5d
 		}
 		{
@@ -1167,7 +1167,7 @@
 				}
 			]
 			title: "下界咖啡"
-			x: -25.5d
+			x: -26.5d
 			y: 4.0d
 		}
 		{
@@ -1192,7 +1192,7 @@
 				item: "farmersrespite:coffee_beans"
 				type: "item"
 			}]
-			x: -25.5d
+			x: -26.5d
 			y: 5.5d
 		}
 		{
@@ -1210,7 +1210,7 @@
 				type: "item"
 			}]
 			title: "绿茶"
-			x: -26.0d
+			x: -27.0d
 			y: 0.0d
 		}
 		{
@@ -1641,7 +1641,7 @@
 				}
 			]
 			title: "富有中国气息的灶台"
-			x: -17.5d
+			x: -18.5d
 			y: 6.0d
 		}
 		{
@@ -1657,7 +1657,7 @@
 				item: "farmersrespite:coffee"
 				type: "item"
 			}]
-			x: -23.0d
+			x: -24.0d
 			y: 6.5d
 		}
 		{
@@ -1675,7 +1675,7 @@
 				item: "farmersrespite:coffee_cake"
 				type: "item"
 			}]
-			x: -24.5d
+			x: -25.5d
 			y: 8.0d
 		}
 		{
@@ -1971,7 +1971,7 @@
 				item: "everyxhotpot:hotpot"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.5d
 			y: 3.0d
 		}
 		{
@@ -2005,7 +2005,7 @@
 					type: "item"
 				}
 			]
-			x: -14.0d
+			x: -15.0d
 			y: 3.0d
 		}
 		{
@@ -2021,7 +2021,7 @@
 				item: "festival_delicacies:pork_cabbage_boiled_dumpling"
 				type: "item"
 			}]
-			x: -20.0d
+			x: -21.0d
 			y: 6.5d
 		}
 		{
@@ -2037,7 +2037,7 @@
 				item: "festival_delicacies:rabbit_meat_boiled_dumpling"
 				type: "item"
 			}]
-			x: -20.0d
+			x: -21.0d
 			y: 7.5d
 		}
 		{
@@ -2053,7 +2053,7 @@
 				item: "festival_delicacies:pork_carrot_wonton"
 				type: "item"
 			}]
-			x: -15.0d
+			x: -16.0d
 			y: 7.5d
 		}
 		{
@@ -2069,7 +2069,7 @@
 				item: "festival_delicacies:garlic_chive_egg_boiled_dumpling"
 				type: "item"
 			}]
-			x: -19.0d
+			x: -20.0d
 			y: 8.5d
 		}
 		{
@@ -2085,7 +2085,7 @@
 				item: "festival_delicacies:pork_mushroom_wonton"
 				type: "item"
 			}]
-			x: -15.0d
+			x: -16.0d
 			y: 6.5d
 		}
 		{
@@ -2101,7 +2101,7 @@
 				item: "festival_delicacies:pork_cabbage_wonton"
 				type: "item"
 			}]
-			x: -15.0d
+			x: -16.0d
 			y: 8.5d
 		}
 		{
@@ -2120,7 +2120,7 @@
 				type: "item"
 			}]
 			title: "&e油炸食品！"
-			x: -17.5d
+			x: -18.5d
 			y: -1.5d
 		}
 		{
@@ -2136,7 +2136,7 @@
 				item: "casualness_delight:fried_dumpling"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: -2.5d
 		}
 		{
@@ -2152,7 +2152,7 @@
 				item: "casualness_delight:tonkatsu"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: -3.5d
 		}
 		{
@@ -2168,7 +2168,7 @@
 				item: "casualness_delight:fried_chicken_chip"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: -4.5d
 		}
 		{
@@ -2179,7 +2179,7 @@
 				item: "casualness_delight:fried_fish"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.5d
 			y: -2.5d
 		}
 		{
@@ -2195,7 +2195,7 @@
 				item: "festival_delicacies:cod_boiled_dumpling"
 				type: "item"
 			}]
-			x: -20.0d
+			x: -21.0d
 			y: 5.5d
 		}
 		{
@@ -2211,7 +2211,7 @@
 				item: "festival_delicacies:mushroom_boiled_dumpling"
 				type: "item"
 			}]
-			x: -20.0d
+			x: -21.0d
 			y: 8.5d
 		}
 		{
@@ -2565,7 +2565,7 @@
 				type: "item"
 			}]
 			title: "饼皮的必要准备"
-			x: -17.50238095238096d
+			x: -18.50238095238096d
 			y: 4.507142857142846d
 		}
 		{
@@ -2743,7 +2743,7 @@
 				type: "item"
 			}]
 			title: "Alex生物？"
-			x: -14.0d
+			x: -15.0d
 			y: 1.5d
 		}
 		{
@@ -2780,7 +2780,7 @@
 				item: "farmersrespite:green_tea_cookie"
 				type: "item"
 			}]
-			x: -23.0d
+			x: -24.0d
 			y: 0.0d
 		}
 		{
@@ -2813,7 +2813,7 @@
 				item: "mynethersdelight:fried_hoglin_chop"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.5d
 			y: -4.5d
 		}
 		{
@@ -2824,7 +2824,7 @@
 				item: "culturaldelights:empanada"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: -1.5d
 		}
 		{
@@ -2835,7 +2835,7 @@
 				item: "createdelight:french_fries"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.5d
 			y: -1.5d
 		}
 		{
@@ -2846,7 +2846,7 @@
 				item: "casualness_delight:potato_chip"
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.5d
 			y: -3.5d
 		}
 		{
@@ -2860,7 +2860,7 @@
 				item: "casualness_delight:fish_and_chips"
 				type: "item"
 			}]
-			x: -14.5d
+			x: -15.5d
 			y: -2.0d
 		}
 		{
@@ -3224,7 +3224,7 @@
 				item: "festival_delicacies:uncooked_sweet_zongzi"
 				type: "item"
 			}]
-			x: -17.0d
+			x: -18.0d
 			y: 8.5d
 		}
 		{
@@ -3235,7 +3235,7 @@
 				item: "festival_delicacies:uncooked_sweet_zongzi"
 				type: "item"
 			}]
-			x: -16.0d
+			x: -17.0d
 			y: 8.5d
 		}
 		{
@@ -3246,7 +3246,7 @@
 				item: "festival_delicacies:qingtuan"
 				type: "item"
 			}]
-			x: -18.0d
+			x: -19.0d
 			y: 10.5d
 		}
 		{
@@ -3257,7 +3257,7 @@
 				item: "festival_delicacies:red_bean"
 				type: "item"
 			}]
-			x: -18.0d
+			x: -19.0d
 			y: 8.5d
 		}
 		{
@@ -3268,7 +3268,7 @@
 				item: "festival_delicacies:red_bean_paste"
 				type: "item"
 			}]
-			x: -18.0d
+			x: -19.0d
 			y: 9.5d
 		}
 		{
@@ -3279,7 +3279,7 @@
 				item: "festival_delicacies:artemisia_argyi"
 				type: "item"
 			}]
-			x: -15.0d
+			x: -16.0d
 			y: 5.5d
 		}
 		{
@@ -3292,7 +3292,7 @@
 				type: "item"
 			}]
 			title: "滚远点！熏死人了"
-			x: -14.0d
+			x: -15.0d
 			y: 5.5d
 		}
 		{
@@ -3303,7 +3303,7 @@
 				item: "festival_delicacies:meat_zongzi"
 				type: "item"
 			}]
-			x: -16.0d
+			x: -17.0d
 			y: 9.5d
 		}
 		{
@@ -3314,7 +3314,7 @@
 				item: "festival_delicacies:sweet_zongzi"
 				type: "item"
 			}]
-			x: -17.0d
+			x: -18.0d
 			y: 9.5d
 		}
 		{
@@ -3540,7 +3540,7 @@
 				item: "farmersdelight:hot_cocoa"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: 3.5d
 		}
 		{
@@ -3556,7 +3556,7 @@
 				item: "createcafe:iced_coffee"
 				type: "item"
 			}]
-			x: -26.0d
+			x: -27.0d
 			y: 6.5d
 		}
 		{
@@ -3567,7 +3567,7 @@
 				item: "farmersrespite:long_apple_cider"
 				type: "item"
 			}]
-			x: -25.5d
+			x: -26.5d
 			y: 2.0d
 		}
 		{
@@ -3578,7 +3578,7 @@
 				item: "farmersrespite:strong_apple_cider"
 				type: "item"
 			}]
-			x: -24.5d
+			x: -25.5d
 			y: 2.0d
 		}
 		{
@@ -3589,7 +3589,7 @@
 				item: "farmersrespite:yellow_tea"
 				type: "item"
 			}]
-			x: -26.0d
+			x: -27.0d
 			y: -1.0d
 		}
 		{
@@ -3600,7 +3600,7 @@
 				item: "farmersrespite:black_tea"
 				type: "item"
 			}]
-			x: -26.0d
+			x: -27.0d
 			y: -2.0d
 		}
 		{
@@ -3611,7 +3611,7 @@
 				item: "farmersrespite:rose_hip_tea"
 				type: "item"
 			}]
-			x: -25.0d
+			x: -26.0d
 			y: -2.0d
 		}
 		{
@@ -3622,7 +3622,7 @@
 				item: "farmersrespite:dandelion_tea"
 				type: "item"
 			}]
-			x: -24.0d
+			x: -25.0d
 			y: -2.0d
 		}
 		{
@@ -3633,7 +3633,7 @@
 				item: "farmersrespite:gamblers_tea"
 				type: "item"
 			}]
-			x: -23.0d
+			x: -24.0d
 			y: -2.0d
 		}
 		{
@@ -3644,7 +3644,7 @@
 				item: "farmersrespite:purulent_tea"
 				type: "item"
 			}]
-			x: -23.0d
+			x: -24.0d
 			y: -1.0d
 		}
 		{
@@ -3655,7 +3655,7 @@
 				item: "ends_delight:chorus_flower_tea"
 				type: "item"
 			}]
-			x: -19.5d
+			x: -20.5d
 			y: 0.5d
 		}
 		{
@@ -3666,7 +3666,7 @@
 				item: "fruitsdelight:hawberry_tea"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: -2.0d
 		}
 		{
@@ -3677,7 +3677,7 @@
 				item: "fruitsdelight:mango_tea"
 				type: "item"
 			}]
-			x: -26.0d
+			x: -27.0d
 			y: -3.0d
 		}
 		{
@@ -3688,7 +3688,7 @@
 				item: "fruitsdelight:peach_tea"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: -1.0d
 		}
 		{
@@ -3699,7 +3699,7 @@
 				item: "fruitsdelight:mangosteen_tea"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: 0.0d
 		}
 		{
@@ -3710,7 +3710,7 @@
 				item: "fruitsdelight:lychee_cherry_tea"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: 1.0d
 		}
 		{
@@ -3721,7 +3721,7 @@
 				item: "createcafe:iced_coffee_milk"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: 6.0d
 		}
 		{
@@ -3732,7 +3732,7 @@
 				item: "createcafe:caramel_iced_coffee"
 				type: "item"
 			}]
-			x: -27.0d
+			x: -28.0d
 			y: 7.0d
 		}
 		{
@@ -3744,7 +3744,7 @@
 				type: "item"
 			}]
 			title: "美味无需多盐！"
-			x: -14.0d
+			x: -15.0d
 			y: 0.5d
 		}
 		{
@@ -3756,7 +3756,7 @@
 				type: "item"
 			}]
 			title: "时间的味道！"
-			x: -13.0d
+			x: -14.0d
 			y: 0.5d
 		}
 		{
@@ -3800,7 +3800,7 @@
 				item: "frycooks_delight:fried_potato"
 				type: "item"
 			}]
-			x: -18.5d
+			x: -19.5d
 			y: -4.5d
 		}
 		{
@@ -3811,7 +3811,7 @@
 				item: "frycooks_delight:fried_onion_ring"
 				type: "item"
 			}]
-			x: -16.5d
+			x: -17.5d
 			y: -4.5d
 		}
 		{
@@ -3824,7 +3824,7 @@
 				type: "item"
 			}]
 			title: "甜甜圈真好吃😋"
-			x: -17.5d
+			x: -18.5d
 			y: -4.5d
 		}
 		{
@@ -3835,7 +3835,7 @@
 				item: "frycooks_delight:canola_seeds"
 				type: "item"
 			}]
-			x: -17.50238095238096d
+			x: -18.50238095238096d
 			y: 0.02142857142855803d
 		}
 		{
@@ -3886,27 +3886,8 @@
 			y: 7.0d
 		}
 		{
+			dependencies: ["236182632D72C634"]
 			id: "74A7EB9CD4EA66EB"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "68E31B23CB86F069"
-					table_id: 8614959000113369079L
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "744D43782B77D663"
-					table_id: 8614959000113369079L
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "4D99B72CC7FF8E9E"
-					table_id: 8614959000113369079L
-					type: "random"
-				}
-			]
 			secret: true
 			subtitle: "不是，你 ......."
 			tasks: [{
@@ -3915,29 +3896,19 @@
 				type: "item"
 			}]
 			title: "&e九转大肠"
-			x: -12.0d
-			y: 1.5d
+			x: -17.0d
+			y: -0.5d
 		}
 		{
+			dependencies: ["236182632D72C634"]
 			id: "5CA97AC22D4938D0"
-			rewards: [{
-				id: "482A8ED33A04445A"
-				item: {
-					Count: 1
-					id: "create_sa:copper_jetpack_chestplate"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
 			tasks: [{
 				id: "5E8976721437E966"
 				item: "createdelight:boiling_water_cabbage"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 0.0d
+			x: -16.0d
+			y: -0.5d
 		}
 	]
 	title: "&e超级大厨！"

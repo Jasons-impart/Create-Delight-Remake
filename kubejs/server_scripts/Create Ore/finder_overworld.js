@@ -6,7 +6,11 @@ let veins = [
     ["nether_ore_cluster", "kubejs:nether_ore_cluster"],
     ["moon_ore_cluster", "kubejs:moon_ore_cluster_ore"],
     ["mars_ore_cluster", "kubejs:mars_ore_cluster_ore"],
-    ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"]
+    ["mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore"],
+    ["mercury_ore_cluster", "kubejs:mercury_ore_cluster_ore"],
+    ["venus_ore_cluster", "kubejs:venus_ore_cluster_ore"],
+    ["glacio_ore_cluster", "kubejs:glacio_ore_cluster_ore"]
+
 ]
 
 ItemEvents.rightClicked("createdelight:prospector", e => {

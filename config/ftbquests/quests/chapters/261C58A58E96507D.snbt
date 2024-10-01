@@ -24,11 +24,18 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			tasks: [{
-				id: "5FE59F26BC3E6AF3"
-				item: "create:brass_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "5FE59F26BC3E6AF3"
+					item: "create:brass_ingot"
+					type: "item"
+				}
+				{
+					id: "3D85EC973B8FA68B"
+					item: "createmetallurgy:molten_brass_bucket"
+					type: "item"
+				}
+			]
 			title: "黄铜科技！"
 			x: -2.0d
 			y: 2.0d
@@ -317,7 +324,7 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 2.5d
 			y: -2.5d
 		}
 		{
@@ -431,11 +438,18 @@
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "到处都是"
-			tasks: [{
-				id: "1B9A8E459ADA60C9"
-				item: "createdelight:tin_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "1B9A8E459ADA60C9"
+					item: "createdelight:tin_ingot"
+					type: "item"
+				}
+				{
+					id: "54FF695D7342772D"
+					item: "createdelight:molten_tin_bucket"
+					type: "item"
+				}
+			]
 			x: 2.25d
 			y: 5.25d
 		}
@@ -524,7 +538,7 @@
 				type: "advancement"
 			}]
 			title: "黑曜石"
-			x: 3.5d
+			x: 1.5d
 			y: -2.5d
 		}
 		{
@@ -544,7 +558,7 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 2.0d
 			y: -1.0d
 		}
 		{
@@ -558,7 +572,7 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: 5.0d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -644,11 +658,18 @@
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "铜锡合金"
-			tasks: [{
-				id: "0B1E8E58AA6E6FC2"
-				item: "createdelight:bronze_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "0B1E8E58AA6E6FC2"
+					item: "createdelight:bronze_ingot"
+					type: "item"
+				}
+				{
+					id: "2F25481BB8CEC3EC"
+					item: "createbigcannons:molten_bronze_bucket"
+					type: "item"
+				}
+			]
 			x: 4.0d
 			y: 5.25d
 		}
@@ -667,11 +688,18 @@
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "金银合金"
-			tasks: [{
-				id: "68B82461560EB835"
-				item: "createaddition:electrum_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "68B82461560EB835"
+					item: "createaddition:electrum_ingot"
+					type: "item"
+				}
+				{
+					id: "6BBACFB7F70C2502"
+					item: "createdelight:molten_electrum_bucket"
+					type: "item"
+				}
+			]
 			x: 13.5d
 			y: 2.0d
 		}
@@ -685,11 +713,18 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{
-				id: "0295F585B30CAD72"
-				item: "iceandfire:silver_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "0295F585B30CAD72"
+					item: "iceandfire:silver_ingot"
+					type: "item"
+				}
+				{
+					id: "675E8EE05126ACEF"
+					item: "createdelight:molten_sliver_bucket"
+					type: "item"
+				}
+			]
 			x: 16.0d
 			y: 2.0d
 		}
@@ -708,11 +743,18 @@
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "唉，炼钢"
-			tasks: [{
-				id: "06A21BCAD3FC5EB2"
-				item: "createmetallurgy:steel_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "06A21BCAD3FC5EB2"
+					item: "createmetallurgy:steel_ingot"
+					type: "item"
+				}
+				{
+					id: "5D1B7304EDFEB837"
+					item: "createbigcannons:molten_steel_bucket"
+					type: "item"
+				}
+			]
 			x: 6.0d
 			y: 5.25d
 		}
@@ -1441,11 +1483,18 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{
-				id: "30ADC99EADD5B3F2"
-				item: "create:zinc_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "30ADC99EADD5B3F2"
+					item: "create:zinc_ingot"
+					type: "item"
+				}
+				{
+					id: "2B972AA875FCE733"
+					item: "createmetallurgy:molten_zinc_bucket"
+					type: "item"
+				}
+			]
 			x: -4.511904761904773d
 			y: 2.028571428571432d
 		}
@@ -1586,7 +1635,7 @@
 				item: "createmetallurgy:tungsten_sheet"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 4.0d
 			y: -1.0d
 		}
 		{
@@ -1598,13 +1647,132 @@
 				type: "item"
 			}]
 			subtitle: "常见于地狱30-36层"
+			tasks: [
+				{
+					id: "09945E5BB0FB4DEB"
+					item: "createmetallurgy:raw_wolframite"
+					type: "item"
+				}
+				{
+					id: "19737E2A72DBBD6B"
+					item: "createmetallurgy:molten_tungsten_bucket"
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6731C7B5A0DADBAA"
+				"2F1C71BF1D4FA5C7"
+			]
+			id: "7BB30D76B337AFA6"
+			rewards: [{
+				id: "645F8BEAB72BA7D6"
+				item: "createutilities:void_steel_ingot"
+				random_bonus: 9
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					id: "5FB26A6FB3BA9B85"
+					item: "createutilities:void_steel_ingot"
+					type: "item"
+				}
+				{
+					id: "34942B9E9A2442B6"
+					item: "createdelight:molten_void_steel_bucket"
+					type: "item"
+				}
+			]
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			id: "2F1C71BF1D4FA5C7"
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
-				id: "09945E5BB0FB4DEB"
-				item: "createmetallurgy:raw_wolframite"
+				id: "330408E081A7D227"
+				item: "ae2:ender_dust"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7BB30D76B337AFA6"]
+			hide: true
+			id: "363322309954733A"
+			rewards: [{
+				id: "31436F739A47AD4A"
+				item: "createutilities:graviton_tube"
+				random_bonus: 3
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			tasks: [{
+				id: "329DC314D4302943"
+				item: "createutilities:graviton_tube"
+				type: "item"
+			}]
+			x: 7.026530612244898d
+			y: -2.006802721088434d
+		}
+		{
+			dependencies: ["363322309954733A"]
+			id: "629DE358DE7955B1"
+			rewards: [{
+				count: 2
+				id: "360BBEE54F352D2E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3CA02F47DF9ABA46"
+				item: "createutilities:void_tank"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["363322309954733A"]
+			id: "20F74C6BB7A47E3D"
+			rewards: [{
+				count: 2
+				id: "3023C37CE40932A1"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "2EEF626B2D241A51"
+				item: "createutilities:void_battery"
+				type: "item"
+			}]
+			x: 8.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["363322309954733A"]
+			id: "1AA4EE519484CC2B"
+			rewards: [{
+				count: 2
+				id: "118861BA0BBE91EC"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "69FDDB5DDB9AE6E8"
+				item: "createutilities:void_motor"
 				type: "item"
 			}]
 			x: 6.0d
-			y: -2.5d
+			y: -3.5d
 		}
 	]
 	title: "&3进阶研修班！"
