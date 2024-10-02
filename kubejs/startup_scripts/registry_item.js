@@ -351,7 +351,7 @@ StartupEvents.registry("item", e => {
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
-        .tag('ae2:inscriber_presses')
+        .tag("ae2:inscriber_presses")
         .translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")

@@ -52,12 +52,12 @@ ServerEvents.recipes(e => {
             "culturaldelights:raw_calamari"
         ]
     ).id("oceansdelight:tentacle_on_a_stick")
-    cutting_3(e, 'oceansdelight:elder_guardian_slab', [
-        ['oceansdelight:elder_guardian_slice', 9],
+    cutting_3(e, "oceansdelight:elder_guardian_slab", [
+        ["oceansdelight:elder_guardian_slice", 9],
         ["minecraft:bone_meal"]
     ])
-    cutting_3(e, 'oceansdelight:guardian', [
-        ['oceansdelight:guardian_tail'],
+    cutting_3(e, "oceansdelight:guardian", [
+        ["oceansdelight:guardian_tail"],
         ["minecraft:bone_meal"]
     ])
 })

@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:cod_sausage",
         [
             "ratatouille:sausage_casing",
-            '#forge:raw_fishes/cod',
+            "#forge:raw_fishes/cod",
             "#forge:salt"
         ]
     ).id("hotdog_delight:codsrecp")
@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:salmon_sausage",
         [
             "ratatouille:sausage_casing",
-            '#forge:raw_fishes/salmon',
+            "#forge:raw_fishes/salmon",
             "#forge:salt"
         ]
     ).id("hotdog_delight:salmonsrecp")
@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:pork_sausage",
         [
             "ratatouille:sausage_casing",
-            '#forge:pork/raw',
+            "#forge:pork/raw",
             "#forge:salt"
         ]
     ).id("hotdog_delight:porksaurecp")
@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:squid_ink_sausage",
         [
             "ratatouille:sausage_casing",
-            'culturaldelights:squid',
+            "culturaldelights:squid",
             "#forge:salt"
         ]
     ).id("hotdog_delight:inksrecp")
@@ -41,7 +41,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:glow_squid_ink_sausage",
         [
             "ratatouille:sausage_casing",
-            'culturaldelights:glow_squid',
+            "culturaldelights:glow_squid",
             "#forge:salt"
         ]
     ).id("hotdog_delight:glorecp")

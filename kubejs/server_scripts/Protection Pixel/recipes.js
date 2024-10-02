@@ -18,7 +18,7 @@ ServerEvents.recipes(e => {
         "protection_pixel:alloyplate"
     ])
     e.recipes.create.cutting(
-        '2x protection_pixel:smallnetheritesheet',
+        "2x protection_pixel:smallnetheritesheet",
         "#forge:plates/netherite"
     ).id("protection_pixel:smallnetheritesheetloot")
     e.recipes.create.mechanical_crafting("protection_pixel:plague_helmet",
@@ -329,11 +329,11 @@ ServerEvents.recipes(e => {
     )
     e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:boosterloot" },
         "create:precision_mechanism",
-        'create_sa:brass_exoskeleton_chestplate'
+        "create_sa:brass_exoskeleton_chestplate"
     )
     e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:jetloot" },
         "create:precision_mechanism",
-        'create_sa:brass_jetpack_chestplate'
+        "create_sa:brass_jetpack_chestplate"
     )
     let iner_1 = "ad_astra:steel_plate"
     e.recipes.create.sequenced_assembly("protection_pixel:alloyarmorplate", iner_1, [

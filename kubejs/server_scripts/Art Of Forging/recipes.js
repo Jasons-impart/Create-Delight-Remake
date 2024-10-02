@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
         "tetra:murasama_scroll"
     ])
     e.recipes.kubejs.shaped(
-        Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;6,7,13,15],intricate:0b,key:"sword/katana/murasama_blade",material:2,ribbon:"c52323",schematics:["tetra:sword/katana/murasama_blade"]}]}}'),
+        Item.of("tetra:scroll_rolled", "{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;6,7,13,15],intricate:0b,key:"sword / katana / murasama_blade",material:2,ribbon:"c52323",schematics:["tetra: sword / katana / murasama_blade"]}]}}"),
         [
             "AEA",
             "BDB",

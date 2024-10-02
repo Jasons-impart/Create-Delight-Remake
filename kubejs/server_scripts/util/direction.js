@@ -10,7 +10,7 @@ function getDirection(x1, y1, x2, y2) {
     const dy = y2 - y1;
 
     if (dx === 0 && dy === 0) {
-        return 'Same Point';
+        return "Same Point";
     }
 
     if (dx === 0) return dy > 0 ? Text.translate("message.createdelight.south") : Text.translate("message.createdelight.north");

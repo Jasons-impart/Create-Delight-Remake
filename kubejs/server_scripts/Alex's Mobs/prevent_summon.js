@@ -1,16 +1,16 @@
-EntityEvents.spawned(e => {
+EntityEvents.spawned(event => {
     // 苍蝇生成
-    if (e.entity.type == "alexsmobs:fly") {
-        if (e.level.dimension != "minecraft:overworld") {
-            e.cancel()
+    if (event.entity.type == "alexsmobs:fly") {
+        if (event.level.dimension != "minecraft:overworld") {
+            event.cancel()
         }
     }
     // 蜈蚣生成
-    if (e.entity.type == "alexsmobs:centipede_head") {
-        e.cancel()
+    if (event.entity.type == "alexsmobs:centipede_head") {
+        event.cancel()
     }
     // 轻语灵生成
-    if (e.entity.type == "alexsmobs:murmur") {
-        e.cancel()
+    if (event.entity.type == "alexsmobs:murmur") {
+        event.cancel()
     }
 })

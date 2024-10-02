@@ -35,7 +35,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
     let distance = Math.floor(Math.sqrt((blockPosition.x - pos.x) * (blockPosition.x - pos.x) + (blockPosition.z - pos.z) * (blockPosition.z - pos.z)))
     let direction = getDirection(Math.floor(blockPosition.x / 16), Math.floor(blockPosition.z / 16), Math.floor(pos.x / 16), Math.floor(pos.z / 16))
     player.swing()
-    if (direction == 'Same Point') {
+    if (direction == "Same Point") {
         player.setStatusMessage(Component.literal("最近的矿脉是").append(info.getName().color(Color.YELLOW)).append(", §2就在你脚下"))
     } else {
         player.setStatusMessage(Component.literal("最近的矿脉是").append(info.getName().color(Color.YELLOW)).append(", 位于").append(direction.color(Color.YELLOW)).append(`方§e${distance}§r米`))

@@ -1,9 +1,9 @@
 ServerEvents.tags("item", e => {
     e.add("curios:head", [
-        'iceandfire:earplugs',
-        'iceandfire:blindfold'
+        "iceandfire:earplugs",
+        "iceandfire:blindfold"
     ])
     e.removeAllTagsFrom([
-        'iceandfire:copper_nugget'
+        "iceandfire:copper_nugget"
     ])
 })

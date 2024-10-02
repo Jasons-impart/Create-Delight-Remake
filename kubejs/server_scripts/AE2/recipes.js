@@ -773,7 +773,7 @@ ServerEvents.recipes((event) => {
   // 无限水元件
   create
     .sequenced_assembly(
-      Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:water"}}'),
+      Item.of("expatternprovider:infinity_cell", "{record:{"#c":"ae2: f",id:"minecraft: water"}}"),
       "ae2:cell_component_1k",
       create.filling("ae2:cell_component_1k", [
         "ae2:cell_component_1k",

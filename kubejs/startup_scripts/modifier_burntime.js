@@ -13,6 +13,6 @@ ItemEvents.modification(e => {
     modify("createdieselgenerators:gasoline_bucket", 40000)
     modify("createdelight:fuel_mixtures_bucket", 50000)
     modify("ad_astra:cryo_fuel_bucket", 30000)
-    modify('createaddition:biomass_pellet', 0)
-    modify('createaddition:biomass_pellet_block', 0)
+    modify("createaddition:biomass_pellet", 0)
+    modify("createaddition:biomass_pellet_block", 0)
 })

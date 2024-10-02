@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
         ]
     ).id("createaddition:crafting/large_connector_electrum")
     // 电池合成
-    let iner = 'createdelight:incompleted_modular_accumulator'
+    let iner = "createdelight:incompleted_modular_accumulator"
     e.recipes.create.sequenced_assembly("createaddition:modular_accumulator", "create:brass_sheet", [
         e.recipes.vintageimprovements.curving(iner, iner, 1),
         e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),

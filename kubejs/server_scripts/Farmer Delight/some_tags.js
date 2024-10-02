@@ -1,7 +1,7 @@
 ServerEvents.tags("item", e => {
     // 油菜籽移除种子标签
     e.remove("forge:seeds/canola", [
-        'frycooks_delight:canola_seeds'
+        "frycooks_delight:canola_seeds"
     ])
     // 白菜兼容
     e.add("forge:salad_ingredients/cabbage", [
@@ -17,8 +17,8 @@ ServerEvents.tags("item", e => {
         "festival_delicacies:chinese_cabbage_leaf"
     ])
     e.add("createdelight:cabbage_leaves", [
-        'festival_delicacies:chinese_cabbage_leaf',
-        'farmersdelight:cabbage_leaf'
+        "festival_delicacies:chinese_cabbage_leaf",
+        "farmersdelight:cabbage_leaf"
     ])
     // 茄子兼容
     e.add("culturaldelights:all_eggplants", [
@@ -60,11 +60,11 @@ ServerEvents.tags("item", e => {
     ])
     e.add("mynethersdelight:curry_meats", [
         "ratatouille:raw_sausage",
-        'hotdog_delight:cod_sausage',
-        'hotdog_delight:salmon_sausage',
-        'hotdog_delight:pork_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        "hotdog_delight:cod_sausage",
+        "hotdog_delight:salmon_sausage",
+        "hotdog_delight:pork_sausage",
+        "hotdog_delight:squid_ink_sausage",
+        "hotdog_delight:glow_squid_ink_sausage"
     ])
     e.add("forge:cheese", [
         "ad_astra:cheese",
@@ -92,19 +92,19 @@ ServerEvents.tags("item", e => {
     e.add("forge:sausage/cooked", [
         "ratatouille:sausage",
         "createdelight:salami",
-        'hotdog_delight:cooked_pork_sausage',
-        'hotdog_delight:cooked_salmon_sausage',
-        'hotdog_delight:cooked_cod_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        "hotdog_delight:cooked_pork_sausage",
+        "hotdog_delight:cooked_salmon_sausage",
+        "hotdog_delight:cooked_cod_sausage",
+        "hotdog_delight:squid_ink_sausage",
+        "hotdog_delight:glow_squid_ink_sausage"
     ])
     e.add("forge:sausage/raw", [
         "ratatouille:raw_sausage",
-        'hotdog_delight:cod_sausage',
-        'hotdog_delight:salmon_sausage',
-        'hotdog_delight:pork_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        "hotdog_delight:cod_sausage",
+        "hotdog_delight:salmon_sausage",
+        "hotdog_delight:pork_sausage",
+        "hotdog_delight:squid_ink_sausage",
+        "hotdog_delight:glow_squid_ink_sausage"
     ])
     e.remove("forge:vegetables/ghost_pepper", [
         "vintagedelight:ghost_pepper"

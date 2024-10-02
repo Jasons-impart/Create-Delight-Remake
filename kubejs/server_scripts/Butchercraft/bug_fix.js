@@ -1,31 +1,36 @@
-ServerEvents.recipes(e => {
-    e.recipes.minecraft.crafting_shapeless(
+ServerEvents.recipes(event => {
+    event.shapeless(
         "supplementaries:soap",
         [
-            Item.of("minecraft:water_bucket"),
+            "minecraft:water_bucket",
             "4x supplementaries:ash",
-            "butchercraft:lard"
+            "butchercraft:lard",
         ]
-    ).id("supplementaries:soap")
-    e.recipes.create.sequenced_assembly("2x farmersdelight:ham", "butchercraft:pork_roast", [
-        e.recipes.create.deploying("butchercraft:pork_roast", ["butchercraft:pork_roast", "minecraft:bone"]),
-        e.recipes.create.deploying("butchercraft:pork_roast", ["butchercraft:pork_roast", "minecraft:bone"]),
-        e.recipes.create.cutting("butchercraft:pork_roast", "butchercraft:pork_roast")
-    ]
-    )
-        .transitionalItem("butchercraft:pork_roast")
-        .loops(1)
-        .id("butchercraft:crafting_ham")
-    e.recipes.create.emptying([
-        Fluid.of("butchercraft:blood_fluid").withAmount(250),
-        "minecraft:glass_bottle"
-    ]
-        , ["butchercraft:blood_fluid_bottle"])
-        .id("butchercraft:blood_bottle_2")
-    e.recipes.create.filling(
+    ).id("supplementaries:soap");
+    event.recipes.create.sequenced_assembly(
+        "2x farmersdelight:ham",
+        "butchercraft:pork_roast",
+        [
+            event.recipes.create.deploying("butchercraft:pork_roast", ["butchercraft:pork_roast", "minecraft:bone"]),
+            event.recipes.create.deploying("butchercraft:pork_roast", ["butchercraft:pork_roast", "minecraft:bone"]),
+            event.recipes.create.cutting("butchercraft:pork_roast", "butchercraft:pork_roast")
+        ]
+    ).transitionalItem("butchercraft:pork_roast").loops(1)
+        .id("butchercraft:crafting_ham");
+    event.recipes.create.emptying(
+        [
+            Fluid.of("butchercraft:blood_fluid").withAmount(250),
+            "minecraft:glass_bottle",
+        ],
+        [
+            "butchercraft:blood_fluid_bottle",
+        ]
+    ).id("butchercraft:blood_bottle_2");
+    event.recipes.create.filling(
         "butchercraft:blood_fluid_bottle",
         [
             "minecraft:glass_bottle",
-            Fluid.of("butchercraft:blood_fluid").withAmount(250)
-        ])
-})
+            Fluid.of("butchercraft:blood_fluid").withAmount(250),
+        ]
+    ).id("butchercraft:blood_bottle_3");
+});
