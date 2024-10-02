@@ -58,6 +58,73 @@
           }
         }
       ],
+      "SideChains": [
+        [
+          {
+            "Coin": "createdelight:iron_coin",
+            "exchangeRate": 1,
+            "ParentCoin": "createdelightcore:iron_coin",
+            "initial": {
+              "translate": "block.createdelightcore.iron_coin.initial"
+            },
+            "plural": {
+              "translate": "block.createdelightcore.iron_coin.plural"
+            }
+          }
+        ],
+        [
+          {
+            "Coin": "createdelight:copper_coin",
+            "exchangeRate": 1,
+            "ParentCoin": "createdelightcore:copper_coin",
+            "initial": {
+              "translate": "block.createdelightcore.copper_coin.initial"
+            },
+            "plural": {
+              "translate": "block.createdelightcore.copper_coin.plural"
+            }
+          }
+        ],
+        [
+          {
+            "Coin": "createdelight:gold_coin",
+            "exchangeRate": 1,
+            "ParentCoin": "createdelightcore:gold_coin",
+            "initial": {
+              "translate": "block.createdelightcore.gold_coin.initial"
+            },
+            "plural": {
+              "translate": "block.createdelightcore.gold_coin.plural"
+            }
+          }
+        ],
+        [
+          {
+            "Coin": "createdelight:emerald_coin",
+            "exchangeRate": 1,
+            "ParentCoin": "createdelightcore:emerald_coin",
+            "initial": {
+              "translate": "block.createdelightcore.emerald_coin.initial"
+            },
+            "plural": {
+              "translate": "block.createdelightcore.emerald_coin.plural"
+            }
+          }
+        ],
+        [
+          {
+            "Coin": "createdelight:netherite_coin",
+            "exchangeRate": 1,
+            "ParentCoin": "createdelightcore:netherite_coin",
+            "initial": {
+              "translate": "block.createdelightcore.netherite_coin.initial"
+            },
+            "plural": {
+              "translate": "block.createdelightcore.netherite_coin.plural"
+            }
+          }
+        ]
+      ],
       "ATMData": {
         "ExchangeButtons": [
           {
