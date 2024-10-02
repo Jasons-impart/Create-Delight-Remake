@@ -31,7 +31,7 @@
 
 	["Server Configs"."Oil Config"]
 		#Whenever crude oil deposits are infinite
-		"Infinite oil deposits" = false
+		"Infinite oil deposits" = true
 		#Normal oil chunks oil amount multiplier
 		"Normal oil chunks oil amount multiplier" = 1.0
 		#High oil chunks oil amount multiplier

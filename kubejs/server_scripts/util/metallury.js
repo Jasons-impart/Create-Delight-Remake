@@ -30,6 +30,13 @@ function metal_production_line(event, metal, heat, time) {
         .id(`createmetallurgy:crafting/${metal[2].split(":")[1]}_2_${metal[1].split(":")[1]}`)
     event.recipes.kubejs.shapeless(`9x ${metal[2]}`, `${metal[1]}`)
         .id(`createmetallurgy:crafting/${metal[1].split(":")[1]}_2_${metal[2].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[3], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -54,6 +61,13 @@ function metal_production_line_2(event, metal, heat, time) {
         .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[3], [Fluid.of(`${metal[4]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[3], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -74,6 +88,13 @@ function metal_production_line_3(event, metal, heat, time) {
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[3]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[2], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[2].split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS_ } event 
@@ -94,4 +115,47 @@ function metal_production_line_4(event, metal, heat, time) {
         .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[3]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
+}
+
+/**
+ * @type {Map<OutputItem_, [InputItem_, number]>}
+ */
+let byProductMap = new Map()
+byProductMap.set("createmetallurgy:iron_dust", ["minecraft:redstone", 0.5])
+byProductMap.set("createmetallurgy:copper_dust", ["minecraft:clay_ball", 0.5])
+byProductMap.set("createmetallurgy:zinc_dust", ["minecraft:gunpowder", 0.5])
+byProductMap.set("createmetallurgy:gold_dust", ["minecraft:quartz", 0.5])
+byProductMap.set("createmetallurgy:wolframite_dust", ["2x minecraft:gold_nugget", 0.5])
+byProductMap.set("createdelight:tin_dust", ["minecraft:glowstone_dust", 0.5])
+byProductMap.set("createdelight:silver_dust", ["vintageimprovements:sulfur_chunk", 0.5])
+byProductMap.set("createdelight:desh_dust", ["ad_astra:cheese", 0.2])
+byProductMap.set("createdelight:ostrum_dust", ["iceandfire:myrmex_desert_resin", 0.2])
+byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2])
+/**
+ * 
+ * @param { Internal.RecipesEventJS_ } event 
+ * @param { InputItem_[] } metal //dirty_dust, dust, crushed_raw_ore, raw_ore, nugget
+ * @param { number } time 
+ */
+function metal_production_line_5(event, metal, time) {
+    let byProduct = byProductMap.get(metal[1])
+    event.recipes.vintageimprovements.pressurizing(
+        [Item.of(metal[0], 2)], [
+        Fluid.of("vintageimprovements:sulfuric_acid", 250),
+        metal[3]
+    ])
+        .superheated()
+        .id(`vintageimprovements:pressurizing/${metal[0].split(":")[1]}`)
+    event.recipes.vintageimprovements.centrifugation(
+        [metal[1], Item.of(metal[1]).withChance(0.25), Item.of(byProduct[0]).withChance(byProduct[1])],
+        metal[0])
+        .id(`vintageimprovements:centrifugation/${metal[0].split(":")[1]}`)
+    event.recipes.vintageimprovements.centrifugation(
+        [Item.of(metal[4], 12), Item.of(metal[4], 6).withChance(0.25)],
+        metal[2])
+        .id(`vintageimprovements:centrifugation/${metal[4].split(":")[1]}`)
+    event.recipes.vintageimprovements.vibrating(
+        Item.of(metal[4], 18),
+        metal[2])
+        .id(`vintageimprovements:vibrating/${metal[4].split(":")[1]}`)
 }

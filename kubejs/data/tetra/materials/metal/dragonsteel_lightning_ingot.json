@@ -1,0 +1,20 @@
+{   
+    "key": "dragonsteel_lightning_ingot",
+    "category": "metal",
+    "primary": 9.1,
+    "secondary": 8.3,
+    "tertiary": 3.5,
+    "durability": 2450,
+    "integrityCost": 2,
+    "integrityGain": 8,
+    "magicCapacity": 200,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 12,
+    "tints": {
+      "glyph": "5c069d",
+      "texture": "5c069d"
+    },
+    "textures": [ "heavy", "metal" ],
+    "material": { "items": [ "iceandfire:dragonsteel_lightning_ingot" ] },
+    "requiredTools": { "hammer_dig": "minecraft:glod" }
+  }

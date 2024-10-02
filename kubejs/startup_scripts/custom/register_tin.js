@@ -2,9 +2,7 @@ StartupEvents.registry("item", e => {
     let items = [
         "tin_ingot",
         "tin_nugget",
-        "raw_tin",
-        "tin_dust",
-        "dirty_tin_dust"
+        "raw_tin"
     ]
     items.forEach(item => {
         e.create(`createdelight:${item}`)

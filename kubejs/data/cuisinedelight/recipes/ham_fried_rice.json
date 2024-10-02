@@ -1,0 +1,26 @@
+{
+  "type": "cuisinedelight:plate_cuisine",
+  "holderItem": "cuisinedelight:ham_fried_rice",
+  "list": [
+    {
+      "bonus": 0.2,
+      "ingredient": {
+        "tag": "forge:grain/rice"
+      },
+      "max": 1.6,
+      "min": 0.4,
+      "score": 2.0
+    },
+    {
+      "bonus": 0.2,
+      "ingredient": {
+        "item": "farmersdelight:ham"
+      },
+      "max": 1.8,
+      "min": 0.2,
+      "score": 1.0
+    }
+  ],
+  "saturationBonus": 0.0,
+  "saturationBonusModifier": 0.0
+}

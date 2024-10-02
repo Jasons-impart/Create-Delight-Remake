@@ -3,21 +3,21 @@
     "showGravityNormalizerArea": false,
     "jetSuitEnabled": true,
     // Type: Integer
-    "oxygenBarX": 5,
+    "oxygenBarX": 20,
     // Type: Integer
-    "oxygenBarY": 25,
+    "oxygenBarY": 150,
     // Type: Float
-    "oxygenBarScale": 1.0,
+    "oxygenBarScale": 0.8,
     // Type: Integer
-    "energyBarX": 11,
+    "energyBarX": 25,
     // Type: Integer
-    "energyBarY": 95,
+    "energyBarY": 225,
     // Type: Float
-    "energyBarScale": 1.0,
+    "energyBarScale": 0.8,
     "spaceMuffler": true,
     "radio": {
         // Range: 0 - 100
-        "volume": 49,
+        "volume": 50,
         "favorites": []
     }
 }

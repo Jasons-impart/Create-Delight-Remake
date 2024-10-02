@@ -18,6 +18,8 @@
 				type: "xp"
 				xp: 100
 			}]
+			shape: "hexagon"
+			size: 2.0d
 			subtitle: "果栈丰盈"
 			tasks: [{
 				id: "024FD0EC5D519DB8"
@@ -52,7 +54,6 @@
 			dependencies: ["08FD4AD67AD3D19E"]
 			description: [
 				"食用后恢复饥饿值3点（）和饱和度1点（）。"
-				""
 				"是烹饪冰糖雪梨、梨汁、梨子果酱和烤梨的原料之一。"
 			]
 			id: "60A76054159A37F7"
@@ -419,12 +420,13 @@
 			hide_dependency_lines: true
 			id: "586F961AB5DF818C"
 			rewards: [{
-				id: "022AF1A6C591B85A"
-				item: "fruitsdelight:durian_sapling"
+				id: "1F6068EDADA52E1B"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "pentagon"
 			size: 2.0d
+			subtitle: "给你钱自己去买一个吧（"
 			tasks: [{
 				id: "68F7E59CF979626E"
 				title: "实在找不到榴莲可以看这里"

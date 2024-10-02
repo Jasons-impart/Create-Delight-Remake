@@ -19,9 +19,18 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_copper_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createmetallurgy:molten_copper", 90),
+        Fluid.of("createmetallurgy:molten_copper", 120),
         "createmetallurgy:copper_dust",
         "heated",
         20
     ).id("createmetallurgy:melting/melting_copper_dust")
+    metal_production_line_5(e, 
+        [
+            "createmetallurgy:dirty_copper_dust",
+            "createmetallurgy:copper_dust",
+            "create:crushed_raw_copper",
+            "minecraft:raw_copper",
+            "create:copper_nugget"
+        ]
+    )
 })

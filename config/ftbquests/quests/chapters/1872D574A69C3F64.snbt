@@ -12,8 +12,8 @@
 		{
 			dependencies: ["5958FC6B58D52BEE"]
 			description: [
-				"共四种葡萄：红葡萄,白葡萄,绯红葡萄和诡异葡萄。"
-				"红白葡萄在四种群系下有对应品种，而后两者为地狱专属葡萄。"
+				"共四种葡萄：&c红葡萄&r,白葡萄,&4绯红葡萄&r和&1诡异葡萄&r。"
+				"红白葡萄在四种群系下有对应变种，而后两者为地狱专属葡萄。"
 				"葡萄葡萄葡萄，是不是感觉认不出这个词了？"
 			]
 			id: "0295DFC67A8CF4B9"
@@ -22,13 +22,20 @@
 				type: "xp"
 				xp: 100
 			}]
-			shape: "diamond"
+			shape: "hexagon"
 			size: 2.0d
 			subtitle: "美味无需多盐"
 			tasks: [{
-				id: "01F8E2E3D032B2B2"
+				id: "2D962FF9A44E1F46"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:fruits/grape"
+					}
+				}
 				title: "获得任意一种葡萄"
-				type: "checkmark"
+				type: "item"
 			}]
 			title: "让我们开始吧"
 			x: 0.0d
@@ -44,11 +51,18 @@
 				xp: 100
 			}]
 			subtitle: "用于压榨葡萄的木制容器"
-			tasks: [{
-				id: "314858CAB5D462CA"
-				item: "vinery:grapevine_pot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "314858CAB5D462CA"
+					item: "vinery:grapevine_pot"
+					type: "item"
+				}
+				{
+					id: "20BC5AD791F821C7"
+					item: "vinery:wine_bottle"
+					type: "item"
+				}
+			]
 			title: "&4干净又卫生啊兄弟们"
 			x: 0.5d
 			y: -1.5d
@@ -62,6 +76,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			shape: "rsquare"
 			size: 1.5d
 			subtitle: "你就酿吧，一酿一个不出声"
 			tasks: [{
@@ -70,7 +85,7 @@
 				type: "item"
 			}]
 			title: "陈年葡萄酒！"
-			x: 2.25d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -175,24 +190,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["0295DFC67A8CF4B9"]
-			id: "611495D361621A62"
-			rewards: [{
-				id: "5F43111B4069E3BE"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "装酒的玩意儿"
-			tasks: [{
-				id: "57F308E0B601D196"
-				item: "vinery:wine_bottle"
-				type: "item"
-			}]
-			title: "总感觉里面装了酒"
-			x: -0.5d
-			y: -1.5d
-		}
-		{
 			dependencies: ["5EA0D911ED1989E6"]
 			id: "0F4EFB9B55CFFBF9"
 			rewards: [{
@@ -215,10 +212,7 @@
 			y: 3.0d
 		}
 		{
-			dependencies: [
-				"611495D361621A62"
-				"7943F4B92BD73CC3"
-			]
+			dependencies: ["7943F4B92BD73CC3"]
 			description: [""]
 			id: "522C959D15ACAA3E"
 			rewards: [{
@@ -241,7 +235,7 @@
 				type: "item"
 			}]
 			title: "&e我的葡萄汁啊~飞啊飞~飞到了瓶子里~"
-			x: 0.0d
+			x: 0.5d
 			y: -3.0d
 		}
 		{
@@ -328,7 +322,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.75d
 			y: -2.0d
 		}
 		{
@@ -350,7 +344,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.75d
 			y: -1.0d
 		}
 		{
@@ -372,7 +366,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.75d
 			y: 0.0d
 		}
 		{
@@ -394,7 +388,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.75d
 			y: 1.0d
 		}
 		{
@@ -416,7 +410,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.75d
 			y: 2.0d
 		}
 		{
@@ -438,7 +432,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.75d
 			y: -2.0d
 		}
 		{
@@ -460,7 +454,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.75d
 			y: -1.0d
 		}
 		{
@@ -482,7 +476,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.75d
 			y: 0.0d
 		}
 		{
@@ -504,7 +498,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.75d
 			y: 1.0d
 		}
 		{
@@ -527,7 +521,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.75d
 			y: 2.0d
 		}
 		{
@@ -549,7 +543,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 6.75d
 			y: -2.0d
 		}
 		{
@@ -571,7 +565,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 6.75d
 			y: -1.0d
 		}
 		{
@@ -593,7 +587,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 6.75d
 			y: 0.0d
 		}
 		{
@@ -615,7 +609,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 6.75d
 			y: 1.0d
 		}
 		{
@@ -637,7 +631,7 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
+			x: 6.75d
 			y: 2.0d
 		}
 		{
@@ -659,7 +653,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.75d
 			y: -2.0d
 		}
 		{
@@ -681,7 +675,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.75d
 			y: -1.0d
 		}
 		{
@@ -703,7 +697,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.75d
 			y: 0.0d
 		}
 		{
@@ -725,7 +719,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.75d
 			y: 1.0d
 		}
 		{
@@ -747,7 +741,7 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 7.75d
 			y: 2.0d
 		}
 		{
@@ -769,7 +763,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 8.75d
 			y: -2.0d
 		}
 		{
@@ -791,7 +785,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 8.75d
 			y: -1.0d
 		}
 		{
@@ -814,7 +808,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 8.75d
 			y: 0.0d
 		}
 		{
@@ -836,7 +830,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 8.75d
 			y: 1.0d
 		}
 		{
@@ -861,7 +855,7 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.75d
 			y: 1.0d
 		}
 		{
@@ -883,7 +877,7 @@
 				}
 				type: "item"
 			}]
-			x: 8.0d
+			x: 8.75d
 			y: 2.0d
 		}
 		{
@@ -908,7 +902,7 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.75d
 			y: 2.0d
 		}
 		{
@@ -930,7 +924,7 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.75d
 			y: -2.0d
 		}
 		{
@@ -952,7 +946,7 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.75d
 			y: -1.0d
 		}
 		{
@@ -974,7 +968,7 @@
 				}
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.75d
 			y: 0.0d
 		}
 		{
@@ -1045,7 +1039,7 @@
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "但生活需要仪式感"
+			subtitle: "&4生活需要仪式感！！！"
 			tasks: [{
 				id: "485A07B3A4C52473"
 				item: "vinery:wine_box"
@@ -1054,6 +1048,26 @@
 			title: "珍藏你的名酒！"
 			x: -3.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["0295DFC67A8CF4B9"]
+			id: "2B16F730A7B6D977"
+			subtitle: "可以用来种植葡萄，&e增产！"
+			tasks: [
+				{
+					id: "75998BE8499B43FE"
+					item: "nethervinery:obsidian_stem"
+					type: "item"
+				}
+				{
+					id: "41DAD25F58CF77CB"
+					item: "vinery:grapevine_stem"
+					type: "item"
+				}
+			]
+			title: "葡萄藤杆"
+			x: -0.5d
+			y: -1.5d
 		}
 	]
 	title: "&e酿酒大师"

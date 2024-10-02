@@ -1,11 +1,12 @@
 {
+	autofocus_id: "00AF35D832509CB8"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "37C42029C3527BCD"
 	group: "445171CC29E98940"
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 3
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,7 +17,7 @@
 				item: "createoreexcavation:extractor"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -1.5d
 			y: 0.5d
 		}
 		{
@@ -28,6 +29,7 @@
 				item: "createoreexcavation:drill"
 				type: "item"
 			}]
+			subtitle: "未完成"
 			tasks: [{
 				id: "06BEEC5B7EA482E4"
 				item: "createoreexcavation:drilling_machine"
@@ -42,28 +44,23 @@
 				"4A19D3EB3E47BFDF"
 				"00AF35D832509CB8"
 			]
-			description: [
-				"使用探矿杖时，会在聊天栏中显示以下信息："
-				"{image:createdelight:textures/gui/how_to_use_vein_finder.png width:300 height:130 align:1 fit:true}"
-				"上图的解释："
-				"“在区块中探测到”即为&e当前&r所在区块"
-				"“探测到周围”即为当前所在区块周围的&e3x3&r区块"
-				"“探测到痕迹”则是&e任意距离远&r的矿脉"
-				"查找矿脉时建议开启&eF3+G&r的显示区块边界功能"
-			]
+			description: [""]
 			id: "7DC98E34AECFBB5C"
-			subtitle: "使用探矿杖来寻找矿物痕迹"
+			subtitle: "使用探矿仪来寻找矿物痕迹"
 			tasks: [{
-				id: "2F2832039C2FE873"
-				item: "createoreexcavation:vein_finder"
+				id: "76E5AF8D288B99E7"
+				item: "createdelight:prospector"
 				type: "item"
 			}]
 			title: "让我看看你在哪~"
 			x: 1.0d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
+			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "1D7AB28B86CF3039"
 				title: "矿物再生科技！"
@@ -73,236 +70,21 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["532B2FC7E0826D5E"]
-			id: "4915822A31209AE5"
-			tasks: [{
-				id: "7774F169ED6E6548"
-				item: "createdieselgenerators:crude_oil_bucket"
-				type: "item"
-			}]
-			x: -2.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["532B2FC7E0826D5E"]
-			id: "5C1DDAA96EA89DE6"
-			tasks: [{
-				id: "0914C42E86B4B1E4"
-				item: "ad_astra:cryo_fuel_bucket"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "488172BBB1562C8A"
-			tasks: [{
-				id: "6136A5D8DF152959"
-				item: "createoreexcavation:raw_diamond"
-				type: "item"
-			}]
-			x: 4.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "170EE2F6F665AFD2"
-			tasks: [{
-				id: "33EEBC232233211C"
-				item: "createoreexcavation:raw_redstone"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "22612D1AD9D6060B"
-			tasks: [{
-				id: "4D835676B32CC81E"
-				item: "createoreexcavation:raw_emerald"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "03AE084DBE0BDE50"
-			tasks: [{
-				id: "1EDBFCF614A9B447"
-				item: "minecraft:raw_gold"
-				type: "item"
-			}]
-			x: 8.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "37F2A6BD7DD6D49A"
-			tasks: [{
-				id: "58B759B643EADF55"
-				item: "minecraft:glowstone_dust"
-				type: "item"
-			}]
-			x: 4.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "6887633B93501B5B"
-			tasks: [{
-				id: "5E62E769EDC8ED22"
-				item: "minecraft:quartz"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "47AFB0616CF90D9E"
-			tasks: [{
-				id: "4300119D34F55C1A"
-				item: "minecraft:coal"
-				type: "item"
-			}]
-			x: 4.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "55E4268E3DB49FE5"
-			tasks: [{
-				id: "3B2C0E912176B599"
-				item: "minecraft:ancient_debris"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "50F9538CF5ECC7A4"
-			tasks: [{
-				id: "06156B28F8C01B64"
-				item: "minecraft:raw_iron"
-				type: "item"
-			}]
-			x: 7.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "589223D704875652"
-			tasks: [{
-				id: "2675CF9BD743DD9C"
-				item: "create:raw_zinc"
-				type: "item"
-			}]
-			x: 6.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "0E6E61681507431C"
-			tasks: [{
-				id: "42C421F336B6FA70"
-				item: "minecraft:raw_copper"
-				type: "item"
-			}]
-			x: 5.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "17675FEFDD5314FA"
-			tasks: [{
-				id: "606CE56CAC06075A"
-				item: "ad_astra:raw_desh"
-				type: "item"
-			}]
-			x: 4.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "3BD3D20732F7C589"
-			tasks: [{
-				id: "7A17E40EB2DE8A29"
-				item: "ad_astra:raw_calorite"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "50F3B771B04DA8AC"
-			tasks: [{
-				id: "0704BDC2621CC5CE"
-				item: "ad_astra:raw_ostrum"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "0A4E75FEB16DDA8A"
-			tasks: [{
-				id: "4554D969B601AC4E"
-				item: "minecraft:lapis_lazuli"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "428AB7BB0B921492"
-			tasks: [{
-				id: "03FCB362615E65DC"
-				item: "createdelight:raw_tin"
-				type: "item"
-			}]
-			x: 9.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "480F8D5AC05A3B5A"
-			tasks: [{
-				id: "6927922112140AE9"
-				item: "iceandfire:raw_silver"
-				type: "item"
-			}]
-			x: 10.5d
-			y: -1.0d
-		}
-		{
 			dependencies: ["7DC98E34AECFBB5C"]
 			description: [
-				""
-				""
 				"{image:createdelight:textures/gui/how_to_filter_vein_1.png width:256 height:136 align:center}"
 				"1.在&e区块内&r放置采样钻机，然后在采样钻机上放置一个&e有气压的背罐&r。"
 				"2.右击采样钻机进行采样，采样完成后，使用&e矿脉地图册&r右击采样钻机。"
 				"{@pagebreak}"
-				""
 				"{image:createdelight:textures/gui/how_to_filter_vein_2.png width:210 height:130 align:center}"
 				"此为矿物地图册的界面。"
 				"左侧列出的矿脉地图册，在&e点击&r时会列出所选矿脉的坐标，开采余量等信息。"
 				"右侧列出的矿脉类型，对于每个选项："
-				"在点击右侧的&e单选框&r后会将选中的矿脉&e过滤&r掉，使探矿杖不再寻找该种矿脉。"
-				"&e直接点击选项&r会&e选中&r矿脉，使得探矿杖只会寻找该矿脉。"
+				"在点击右侧的&e单选框&r后会将选中的矿脉&e过滤&r掉，使探矿仪不再寻找该种矿脉。"
+				"&e直接点击选项&r会&e选中&r矿脉，使得探矿仪只会寻找该矿脉。"
 				"{@pagebreak}"
-				"(new page placeholder text)"
-				""
 				"{image:createdelight:textures/gui/how_to_filter_vein_3_1.png width:120 height:25 align:center}"
-				"{image:createdelight:textures/gui/how_to_filter_vein_3_2.png width:140 height:50 align:center}"
-				"如上图，将\"水\"矿脉&e过滤&r掉后，即使处于水矿脉中，也没有显示“发现水的痕迹”。之后只要&e跟随痕迹&r，再将&e找到的矿脉&r过滤掉即可找到所有矿脉。"
+				"如上图，将\"水\"矿脉&e过滤&r掉后，即使处于水矿脉中，也不再显示矿脉。之后只要&e跟随探矿仪&r，再将&e找到的矿脉&r过滤掉即可找到所有矿脉。"
 			]
 			icon: "createoreexcavation:vein_atlas"
 			id: "6E314AD4717C615D"
@@ -348,6 +130,261 @@
 			title: "筛选矿脉"
 			x: 1.0d
 			y: -3.5d
+		}
+		{
+			dependencies: ["532B2FC7E0826D5E"]
+			id: "6EE1A5AAA6A2A70D"
+			tasks: [{
+				id: "3C982A603192F38B"
+				item: "minecraft:water_bucket"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "25402AC89D8A228D"
+			tasks: [{
+				id: "649498EBF3665514"
+				item: "createdelight:overworld_metal_ore_cluster"
+				type: "item"
+			}]
+			x: 5.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "2FBE1D79E2ABE354"
+			tasks: [{
+				id: "55FB3F60B6382D92"
+				item: "createdelight:overworld_noble_metal_ore_cluster"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "14A7E300A6E8713A"
+			tasks: [{
+				id: "4BD0DF8766CDC565"
+				item: "createdelight:nether_ore_cluster"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "6AAABC407C109018"
+			tasks: [{
+				id: "2BD7B423285DC203"
+				item: "createdelight:moon_ore_cluster"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "5F319B2C7BDEB8D0"
+			tasks: [{
+				id: "1F274E0B7622AA60"
+				item: "createdelight:mars_ore_cluster"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "0B8E43A62E09F76F"
+			tasks: [{
+				id: "486A257CE620CC92"
+				item: "createdelight:mars_gemstone_cluster"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "3AEB8D651511A188"
+			tasks: [{
+				id: "6BA3EE6BAA5328C8"
+				item: "createdelight:mercury_ore_cluster"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "64F7A7BA1855669D"
+			tasks: [{
+				id: "36DF698BB1A69D21"
+				item: "createdelight:venus_ore_cluster"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["13761553F15A2C1A"]
+			id: "334A18AE324C3CD8"
+			tasks: [{
+				id: "65705B2A820A5B51"
+				item: "createdelight:glacio_ore_cluster"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["00AF35D832509CB8"]
+			icon: "createmetallurgy:foundry_mixer"
+			id: "15F92D3DE8FAB8A2"
+			subtitle: "本整合包的&4矿物增产&r步骤(以铁为例)"
+			tasks: [{
+				id: "2A9CC37CC50DC65B"
+				title: "矿物处理"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["15F92D3DE8FAB8A2"]
+			id: "4B090FE6593322AC"
+			tasks: [{
+				id: "6B3F3C6C3BCCB930"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4B090FE6593322AC"]
+			id: "137B5A8B8C7EA6A2"
+			tasks: [{
+				id: "55E0BF1A0DF778B0"
+				item: "create:crushed_raw_iron"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4B090FE6593322AC"]
+			id: "47E95A5286A80075"
+			tasks: [{
+				id: "213263254430005F"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["47E95A5286A80075"]
+			id: "6F32D461564F952D"
+			tasks: [{
+				id: "679683474CEA2CA3"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["6F32D461564F952D"]
+			id: "0458A8485A72A1C7"
+			tasks: [{
+				id: "632092F4B351D611"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "4972D38A770A8022"
+			tasks: [{
+				id: "5FE496D0E90A30D1"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4972D38A770A8022"]
+			id: "23DBCDC7BE8D7207"
+			tasks: [{
+				id: "4AE27F3570C5B172"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["23DBCDC7BE8D7207"]
+			id: "6EAE2A71D355B4F4"
+			tasks: [{
+				id: "26DC4A594FE3CFFD"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "7E52E474B3645158"
+			tasks: [{
+				id: "2B675C54A010DA80"
+				item: "minecraft:iron_nugget"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["7E52E474B3645158"]
+			id: "5EB5A9C8EC954D78"
+			tasks: [{
+				id: "0FE6E72E15649120"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "65050B6C6BE04373"
+			tasks: [{
+				id: "76404E8D5B5F89DB"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["137B5A8B8C7EA6A2"]
+			id: "479850F95DEE291B"
+			tasks: [{
+				id: "67670514C126967C"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
 		}
 	]
 	title: "&e矿物再生！"

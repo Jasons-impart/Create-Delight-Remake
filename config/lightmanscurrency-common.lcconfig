@@ -24,6 +24,10 @@ debugLevel=0
 	#Disabling will not remove any existing Tax Blocks from the world, nor prevent their use.
 	canCraftTaxCollector=true
 	
+	#Whether ATM Cards can be crafted.
+	#Disabling will not remove any existing ATM Cards from the world, nor prevent their use.
+	canCraftATMCard=false
+	
 	#Money Chest Crafting
 	[crafting.money_chest]
 		#Whether the Money Chest can be crafted.
@@ -91,7 +95,7 @@ debugLevel=0
 		
 		#The default coin to replace a trades emeralds with.
 		#May seperate and define villager type specific entries by adding multiple items seperated by '-' with region
-		defaultEmeraldReplacementItem="createdelight:iron_coin"
+		defaultEmeraldReplacementItem="createdelightcore:copper_coin"
 		
 		#List of replacement coin overrides.
 		#Each entry must be formatted as follows: "mod:some_profession_type-SUB_ENTRY-SUB_ENTRY-..."
@@ -103,34 +107,34 @@ debugLevel=0
 		#Each item-entry is either 1 or 2 item ids (e.g. "mod:coin_item" or "mod:coin_item_1;mod:coin_item_2".
 		#When two are given, the first will replace the cost items (items the player must pay the villager) and the second will replace the result (items the player will be paid by the villager)
 		#Every trader not on this list will use the default trader coin defined above.
-		professionEmeraldReplacementOverrides=["minecraft:cartographer-createdelight:iron_coin","minecraft:fletcher-createdelight:iron_coin","minecraft:butcher-createdelight:iron_coin","minecraft:farmer-createdelight:iron_coin","minecraft:fisherman-createdelight:iron_coin","minecraft:shepherd-createdelight:iron_coin","minecraft:mason-createdelight:iron_coin","minecraft:leatherworker-createdelight:iron_coin"]
+		professionEmeraldReplacementOverrides=["minecraft:fletcher-createdelightcore:iron_coin","minecraft:toolsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:weaponsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:fisherman-createdelightcore:iron_coin","minecraft:mason-createdelightcore:iron_coin","minecraft:armorer-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:leatherworker-createdelightcore:iron_coin"]
 		
 #Loot Options
 [loot]
 	#T1 loot item.
 	#Leave blank ("") to not spawn T1 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":1, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT1=createdelight:iron_coin
+	lootItemT1=createdelightcore:iron_coin
 	
 	#T2 loot item.
 	#Leave blank ("") to not spawn T2 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":2, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT2=createdelight:copper_coin
+	lootItemT2=createdelightcore:copper_coin
 	
 	#T3 loot item.
 	#Leave blank ("") to not spawn T3 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":3, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT3=createdelight:gold_coin
+	lootItemT3=createdelightcore:gold_coin
 	
 	#T4 loot item.
 	#Leave blank ("") to not spawn T4 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":4, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT4=createdelight:emerald_coin
+	lootItemT4=createdelightcore:emerald_coin
 	
 	#T5 loot item.
 	#Leave blank ("") to not spawn T5 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
-	lootItemT5=createdelight:netherite_coin
+	lootItemT5=createdelightcore:netherite_coin
 	
 	#T6 loot item.
 	#Leave blank ("") to not spawn T6 loot.

@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
         "9x vintagedelight:cucumber"
     ).id("vintagedelight:cucumber_crate")
     e.recipes.vintagedelight.fermenting(
-        "culturaldelights:pickle",
+        "5x culturaldelights:pickle",
         [
             "vintagedelight:cucumber",
             "vintagedelight:cucumber",
@@ -40,7 +40,7 @@ ServerEvents.recipes(e => {
         ], 6000
     ).id("vintagedelight:fermenting/pickle_from_fermenting")
     e.recipes.vintagedelight.fermenting(
-        "culturaldelights:cut_pickle",
+        "5x culturaldelights:cut_pickle",
         [
             "culturaldelights:cut_cucumber",
             "culturaldelights:cut_cucumber",
@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
-    cutting(e, "culturaldelights:wild_cucumbers",[
+    cutting(e, "culturaldelights:wild_cucumbers", [
         ["vintagedelight:cucumber_seeds"],
         ["minecraft:green_dye"]
     ])
@@ -91,12 +91,12 @@ ServerEvents.recipes(e => {
         "type": "vintagedelight:fermenting",
         "processingTime": 5000,
         "ingredients": [
-            {"tag": "createdelight:cabbage_leaves"},
-            {"tag": "createdelight:cabbage_leaves"},
-            {"tag": "createdelight:cabbage_leaves"},
-            {"tag": "createdelight:cabbage_leaves"},
-            {"tag": "forge:salt"},
-            {"tag": "forge:chilipepper"}
+            { "tag": "createdelight:cabbage_leaves" },
+            { "tag": "createdelight:cabbage_leaves" },
+            { "tag": "createdelight:cabbage_leaves" },
+            { "tag": "createdelight:cabbage_leaves" },
+            { "tag": "forge:salt" },
+            { "tag": "forge:chilipepper" }
         ],
         "output": {
             "count": 4,

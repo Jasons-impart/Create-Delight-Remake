@@ -12,6 +12,15 @@ ServerEvents.recipes(e => {
             "createmetallurgy:molten_iron"
         ], "heated", 80
     )
+    metal_production_line_5(e, 
+        [
+            "createmetallurgy:dirty_iron_dust",
+            "createmetallurgy:iron_dust",
+            "create:crushed_raw_iron",
+            "minecraft:raw_iron",
+            "minecraft:iron_nugget"
+        ]
+    )
     e.recipes.createmetallurgy.melting(
         Fluid.of("createmetallurgy:molten_iron", 90),
         "createmetallurgy:dirty_iron_dust",
@@ -19,7 +28,7 @@ ServerEvents.recipes(e => {
         20
     ).id("createmetallurgy:melting/melting_dirty_iron_dust")
     e.recipes.createmetallurgy.melting(
-        Fluid.of("createmetallurgy:molten_iron", 90),
+        Fluid.of("createmetallurgy:molten_iron", 120),
         "createmetallurgy:iron_dust",
         "heated",
         20

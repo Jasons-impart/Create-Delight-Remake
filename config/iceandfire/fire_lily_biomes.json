@@ -2,9 +2,16 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "forge:is_hot/overworld"
+        "value": "ad_astra:martian_wastelands"
+      }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "ad_astra:mercury_deltas"
       }
     ],
     [

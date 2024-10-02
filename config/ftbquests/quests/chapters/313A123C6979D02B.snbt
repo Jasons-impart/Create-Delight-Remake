@@ -1,5 +1,5 @@
 {
-	autofocus_id: "049795F88F833F83"
+	autofocus_id: "491266302FA9FE5D"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "313A123C6979D02B"
@@ -57,7 +57,7 @@
 				{
 					count: 3
 					id: "05876383E803A41F"
-					item: "corn_delight:corn_seeds"
+					item: "culturaldelights:corn_kernels"
 					type: "item"
 				}
 				{
@@ -1111,7 +1111,7 @@
 			}]
 			title: "农业科技！！！"
 			x: -3.5d
-			y: -7.25d
+			y: -7.5d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1336,7 +1336,7 @@
 				type: "item"
 			}]
 			x: -6.0d
-			y: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["02A92B3F08154E18"]
@@ -1431,7 +1431,7 @@
 				item: "create:blaze_cake"
 				type: "item"
 			}]
-			x: -7.5d
+			x: -7.0d
 			y: 4.0d
 		}
 		{
@@ -1583,8 +1583,8 @@
 				type: "item"
 			}]
 			title: "制作曲奇面团"
-			x: -2.5d
-			y: 1.0d
+			x: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6A22C5C0C765FEE2"]
@@ -1955,8 +1955,8 @@
 				type: "item"
 			}]
 			title: "香脆曲奇"
-			x: -2.0d
-			y: 0.0d
+			x: -1.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["52B972C68D42A749"]

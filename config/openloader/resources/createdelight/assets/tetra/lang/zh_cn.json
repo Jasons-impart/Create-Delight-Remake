@@ -2594,5 +2594,12 @@
   "tetra.tweak.scanner/adjustable_span.label": "范围",
   "tetra.tweak.scanner/adjustable_span.tooltip": "修改竖直或水平范围的优先级。",
   "tetra.tweak.scanner/adjustable_span.left": "竖直",
-  "tetra.tweak.scanner/adjustable_span.right": "水平"
+  "tetra.tweak.scanner/adjustable_span.right": "水平",
+
+  "tetra.material.dragonsteel_ice_ingot.prefix":"龙霜钢", 
+  "tetra.material.dragonsteel_ice_ingot": "龙霜钢",
+  "tetra.material.dragonsteel_fire_ingot.prefix":"龙炎钢", 
+  "tetra.material.dragonsteel_fire_ingot": "龙炎钢",
+  "tetra.material.dragonsteel_lightning_ingot.prefix":"龙霆钢", 
+  "tetra.material.dragonsteel_lightning_ingot": "龙霆钢"
 }

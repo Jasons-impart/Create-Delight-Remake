@@ -3,19 +3,12 @@ ServerEvents.recipes(e => {
         "minecraft:netherite_ingot"
     ])
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_netherite", 27),
+        Fluid.of("createdelight:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
             "minecraft:netherite_scrap"
         ], "superheated", 180
     ).id("createmetallurgy:alloying/molten_netherite")
-    e.recipes.create.mixing(
-        Fluid.of("createdelight:molten_netherite", 27),
-        [
-            Fluid.of("createmetallurgy:molten_gold", 90),
-            "minecraft:netherite_scrap"
-        ], 900, "superheated"
-    ).id("createmetallurgy:mixing/molten_netherite")
     metal_production_line_3(e, 
         [
             "minecraft:netherite_block",

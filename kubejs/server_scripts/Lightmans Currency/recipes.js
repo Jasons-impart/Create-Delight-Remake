@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         "lightmanscurrency:wallet_gold",
         "lightmanscurrency:wallet_emerald",
         "lightmanscurrency:wallet_diamond",
-        "lightmanscurrency:wallet_netherite",
+        "lightmanscurrency:wallet_netherite"
     ])
     remove_recipes_id(e, [
         "lightmanscurrency:coinmint",
@@ -35,6 +35,12 @@ ServerEvents.recipes(e => {
         "lightmanscurrency:coins/coin_netherite_from_pile",
         "lightmanscurrency:coins/coinpile_netherite_from_coin",
         "lightmanscurrency:coins/coinpile_netherite_from_block",
-        "lightmanscurrency:coins/coinblock_netherite_from_pile"
+        "lightmanscurrency:coins/coinblock_netherite_from_pile",
+        "lightmanscurrency:wallet/upgrade_wallet_iron_to_wallet_nether_star",
+        "lightmanscurrency:wallet/upgrade_wallet_emerald_to_wallet_nether_star",
+        "lightmanscurrency:wallet/upgrade_wallet_gold_to_wallet_nether_star",
+        "lightmanscurrency:wallet/upgrade_wallet_diamond_to_wallet_nether_star",
+        "lightmanscurrency:wallet/wallet_nether_star",
+        "lightmanscurrency:wallet/upgrade_wallet_copper_to_wallet_nether_star"
     ])
 })

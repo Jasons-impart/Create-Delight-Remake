@@ -2,19 +2,9 @@
   "biomes": [
     [
       {
-        "type": "BIOME_TAG",
+        "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "minecraft:is_overworld"
-      },
-      {
-        "type": "BIOME_TAG",
-        "negate": false,
-        "value": "minecraft:is_beach"
-      },
-      {
-        "type": "BIOME_TAG",
-        "negate": true,
-        "value": "minecraft:is_ocean"
+        "value": "ad_astra:lunar_wastelands"
       }
     ],
     [

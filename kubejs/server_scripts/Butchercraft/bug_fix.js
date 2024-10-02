@@ -16,4 +16,16 @@ ServerEvents.recipes(e => {
         .transitionalItem("butchercraft:pork_roast")
         .loops(1)
         .id("butchercraft:crafting_ham")
+    e.recipes.create.emptying([
+        Fluid.of("butchercraft:blood_fluid").withAmount(250),
+        "minecraft:glass_bottle"
+    ]
+        , ["butchercraft:blood_fluid_bottle"])
+        .id("butchercraft:blood_bottle_2")
+    e.recipes.create.filling(
+        "butchercraft:blood_fluid_bottle",
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("butchercraft:blood_fluid").withAmount(250)
+        ])
 })

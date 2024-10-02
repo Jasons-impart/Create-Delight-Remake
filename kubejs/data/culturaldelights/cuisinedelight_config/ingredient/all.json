@@ -1,0 +1,141 @@
+{
+    "entries": [
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:raw_calamari"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:squid"
+                },
+                {
+                    "item": "culturaldelights:glow_squid"
+                }
+            ],
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 3,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:cut_cucumber"
+                },
+                {
+                    "item": "culturaldelights:cut_avocado"
+                },
+                {
+                    "item": "culturaldelights:corn_kernels"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:corn_cob"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 3,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:pickle"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:cut_pickle"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "culturaldelights:avocado"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "CARB",
+            "effects": [],
+            "ingredient": [
+              {
+                "item": "culturaldelights:corn_dough"
+              }
+            ],
+            "max_time": 360,
+            "min_time": 300,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.7,
+            "size": 2,
+            "stir_time": 80
+        }
+    ]
+}

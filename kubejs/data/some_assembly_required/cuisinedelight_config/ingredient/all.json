@@ -1,0 +1,89 @@
+{
+    "entries": [
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "some_assembly_required:apple_slices"
+                },
+                {
+                    "item": "some_assembly_required:chopped_beetroot"
+                },
+                {
+                    "item": "some_assembly_required:chopped_carrot"
+                },
+                {
+                    "item": "some_assembly_required:chopped_golden_carrot"
+                },
+                {
+                    "item": "some_assembly_required:tomato_slices"
+                },
+                {
+                    "item": "some_assembly_required:sliced_onion"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 60,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "minecraft:regeneration",
+                    "level": 0,
+                    "time": 60
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "some_assembly_required:golden_apple_slices"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                  "effect": "minecraft:regeneration",
+                  "level": 1,
+                  "time": 400
+                },
+                {
+                  "effect": "minecraft:resistance",
+                  "level": 0,
+                  "time": 3600
+                },
+                {
+                  "effect": "minecraft:fire_resistance",
+                  "level": 0,
+                  "time": 3600
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "some_assembly_required:enchanted_golden_apple_slices"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 10,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.2,
+            "size": 1,
+            "stir_time": 60
+        }
+    ]
+}

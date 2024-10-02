@@ -13,4 +13,11 @@
 	#Max range
 	#Range: 1 ~ 6
 	maxRange = 2
+	#Loot collector capacity in stacks
+	allowAnyContainerLootCollector = false
+	#Forces to require a loot collector for the spawner to work.
+	lootCollectorRequired = false
+	#Loot collector capacity in stacks
+	#Range: 1 ~ 16
+	lootCollectorCapacity = 8
 

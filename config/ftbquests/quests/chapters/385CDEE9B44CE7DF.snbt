@@ -1,21 +1,26 @@
 {
+	autofocus_id: "329597CAA8B8D983"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "385CDEE9B44CE7DF"
 	group: "445171CC29E98940"
 	icon: "alexsmobs:animal_dictionary"
 	id: "385CDEE9B44CE7DF"
-	order_index: 1
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
 			id: "329597CAA8B8D983"
+			shape: "rsquare"
 			size: 3.0d
 			subtitle: " Alex mob's最受欢迎的生物模组之一"
 			tasks: [{
-				id: "5A9F2549A64C19AB"
-				item: "alexsmobs:animal_dictionary"
-				type: "item"
+				advancement: "alexsmobs:alexsmobs/root"
+				criterion: ""
+				icon: "alexsmobs:animal_dictionary"
+				id: "443BF498DB0DC050"
+				title: "打开动物图鉴"
+				type: "advancement"
 			}]
 			title: "各种各样的生物"
 			x: 0.0d
@@ -24,91 +29,118 @@
 		{
 			dependencies: ["329597CAA8B8D983"]
 			id: "2D43C89747A7B7EA"
+			shape: "hexagon"
+			size: 1.5d
 			subtitle: "即现实中存在的生物"
 			tasks: [{
 				id: "03659C2299D467B9"
 				title: "现实生物"
 				type: "checkmark"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["329597CAA8B8D983"]
 			id: "72BA8A6D655609B8"
+			shape: "hexagon"
+			size: 1.5d
 			subtitle: "即现实中不存在的生物属于模组自创的"
 			tasks: [{
 				id: "38BC20E2B47797FA"
 				title: "虚构生物"
 				type: "checkmark"
 			}]
-			x: -2.0d
+			x: -3.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "2D498ED418390340"
 			tasks: [{
-				id: "51C6AD3971D0A2EE"
+				elapsedTime: 1L
+				icon: "alexsmobs:tarantula_hawk_wing"
+				id: "21141AAC07BA0CBC"
 				title: "节肢动物"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
-			x: 3.0d
+			x: 4.0d
 			y: -2.5d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "6D40B019C49B2AF0"
 			tasks: [{
-				id: "0BFD97471E40CE34"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "alexsmobs:lost_tentacle"
+				id: "3A5F91967D2C4E89"
 				title: "软体动物"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
 			x: 4.5d
 			y: -1.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "3406C96937AFB360"
 			tasks: [{
-				id: "628D98B6D57766A3"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "alexsmobs:raccoon_tail"
+				id: "7071C0A4D5CCA328"
 				title: "哺乳动物"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
 			x: 4.5d
 			y: 1.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "2CE5C6337A66E546"
 			tasks: [{
-				id: "3868710FF53AE418"
-				title: "水生动物"
-				type: "checkmark"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "minecraft:cod_bucket"
+				id: "5339FBF31DA6994C"
+				title: "水生生物"
+				type: "questsadditions:time"
 			}]
-			x: 3.0d
-			y: 2.5d
+			x: 4.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "479251A439D11CC8"
 			tasks: [{
-				id: "3C42C949DF1BE28E"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "alexsmobs:rattlesnake_rattle"
+				id: "6869DE55789C0DA6"
 				title: "爬行动物"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
-			x: 1.0d
+			x: 2.5d
 			y: 3.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "2139307D0FFD9E7E"
 			tasks: [{
-				id: "57600500FEE2049C"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "alexsmobs:roadrunner_feather"
+				id: "0AAAA3C5C9F0B06E"
 				title: "鸟类"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
-			x: 1.0d
+			x: 2.5d
 			y: -3.0d
 		}
 		{
@@ -752,7 +784,6 @@
 				"卷尾猴在吃过香蕉后，有几率掉落香蕉皮，可用来制作猴儿汤。"
 			]
 			id: "2A952709E62C7F2E"
-			invisible: true
 			invisible_until_tasks: 1
 			subtitle: "“国服ADC”"
 			tasks: [{
@@ -2653,33 +2684,45 @@
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
+			hide: true
 			id: "2FA1DDD66F69F506"
+			invisible: true
 			tasks: [{
-				id: "4985AA6A3D65FBC6"
+				dimension: "minecraft:overworld"
+				icon: "minecraft:grass_block"
+				id: "4AB12EC1A073E7F7"
 				title: "主世界"
-				type: "checkmark"
+				type: "dimension"
 			}]
 			x: -3.5d
 			y: -2.0d
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
+			hide: true
 			id: "7C03FBDCD77655A6"
+			invisible: true
 			tasks: [{
-				id: "5EB860FA7A8F27B2"
+				dimension: "minecraft:the_nether"
+				icon: "minecraft:netherrack"
+				id: "2A2260741F096F47"
 				title: "下界"
-				type: "checkmark"
+				type: "dimension"
 			}]
 			x: -5.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
+			hide: true
 			id: "3F57397F4636474E"
+			invisible: true
 			tasks: [{
-				id: "150249C3BBF63524"
+				dimension: "minecraft:the_end"
+				icon: "minecraft:end_stone"
+				id: "0CE127194F3B1957"
 				title: "末地"
-				type: "checkmark"
+				type: "dimension"
 			}]
 			x: -3.5d
 			y: 2.0d
@@ -3293,46 +3336,27 @@
 				"当玩家使用命名牌将其命名“Herobrine”或者打开了特别秘密设置之后，地底矿工就会变成HIM的样子。"
 			]
 			id: "3E540298ED0A5EF7"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "2486A82B2DE8D2FB"
-					table_id: 5347970608351672481L
-					type: "loot"
-				}
-				{
-					id: "5FC0A05ED29E3CB6"
-					type: "xp"
-					xp: 100
-				}
-			]
 			subtitle: "“鬼鬼，旷工旷工”"
-			tasks: [
-				{
-					advancement: "alexsmobs:alexsmobs/ghostly_pickaxe"
-					criterion: ""
-					id: "1A3A0D8706FD209D"
-					title: "有鬼？"
-					type: "advancement"
-				}
-				{
-					id: "27D65BB40B9358FD"
-					item: {
-						Count: 1
-						id: "alexsmobs:ghostly_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
+			tasks: [{
+				advancement: "alexsmobs:alexsmobs/ghostly_pickaxe"
+				criterion: ""
+				id: "1A3A0D8706FD209D"
+				title: "有鬼？"
+				type: "advancement"
+			}]
 			x: -12.5d
 			y: 2.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
 			description: ["如果你不信的话，可以去搜一下这个生物到底是什么样子的()"]
+			icon: {
+				Count: 1
+				id: "alexsmobs:unsettling_kimono"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "37A9508D29A5D25C"
 			rewards: [{
 				count: 3
@@ -3347,6 +3371,7 @@
 				title: "太吓人了所以删掉了()"
 				type: "checkmark"
 			}]
+			title: "轻语灵"
 			x: -11.0d
 			y: 3.0d
 		}
@@ -3580,6 +3605,7 @@
 				"37A9508D29A5D25C"
 			]
 			description: ["远程武器，对着生物按下攻击键（默认为鼠标左键）可以进行长距离攻击，并同时最多攻击3个生物。单次攻击的最大伤害为5点"]
+			hide: true
 			id: "11DA4560F059DAE2"
 			rewards: [{
 				id: "563F3ACB24362BFB"
@@ -3598,8 +3624,8 @@
 				}
 				type: "item"
 			}]
-			x: -15.5d
-			y: 5.5d
+			x: -12.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3983,7 +4009,7 @@
 				type: "item"
 			}]
 			x: -13.0d
-			y: 15.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -4060,17 +4086,7 @@
 			y: 18.0d
 		}
 		{
-			dependencies: [
-				"0D1C2B358358E634"
-				"4432D4ED599F6BF9"
-				"63C3CE4E0436A6AC"
-				"3C5526B0A2A9A2C3"
-				"5DAB7CB303E642BF"
-				"2A78205F777642B2"
-				"0FABEC8E21CC98B7"
-				"260C6AE374824BEB"
-				"46A840BE69AA3FE8"
-			]
+			dependencies: ["46A840BE69AA3FE8"]
 			description: [
 				"虚空蠕虫是一种十分古老的生物，生活在末地下方的虚空中。"
 				""
@@ -4078,6 +4094,7 @@
 				""
 				"召唤虚空蠕虫会达成目标&e【以魂换魂】&r，使虚空蠕虫分成两段会达成进度&e【吾应先攻敌首级】&r，击败虚空蠕虫会完成挑战&e【蠕虫危机】&r。"
 			]
+			hide: true
 			id: "7C0A47296C1C91B4"
 			rewards: [
 				{
@@ -4103,7 +4120,7 @@
 				to_observe: "alexsmobs:void_worm"
 				type: "observation"
 			}]
-			x: -6.0d
+			x: -7.0d
 			y: 18.0d
 		}
 		{
@@ -4135,6 +4152,7 @@
 			y: 18.0d
 		}
 		{
+			dependencies: ["7C0A47296C1C91B4"]
 			description: [
 				"虚空蠕虫有多种攻击方式，"
 				"第一，虚空蠕虫可以从口中吐出4个虚空水晶，虚空水晶无法击碎，且会自动追踪附近的猎物，对猎物造成致命打击。"
@@ -4147,10 +4165,11 @@
 				title: "攻击方式"
 				type: "checkmark"
 			}]
-			x: -7.0d
-			y: 15.5d
+			x: -7.5d
+			y: 16.0d
 		}
 		{
+			dependencies: ["7C0A47296C1C91B4"]
 			description: ["对虚空蠕虫最有效的攻击方式，便是直接攻击它的头部。如果身体的一段被严重损伤，它会停止发光。如果身体的一段被完全摧毁，那么，虚空蠕虫便会分成两段。分裂后的虚空蠕虫有着原本一半的血量，移动速度会慢一些，但攻击伤害依旧很高。如果不谨慎的话，很可能会被虚空蠕虫吞噬。"]
 			id: "260C6AE374824BEB"
 			tasks: [{
@@ -4158,8 +4177,8 @@
 				title: "进攻"
 				type: "checkmark"
 			}]
-			x: -4.5d
-			y: 15.5d
+			x: -6.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["521942F5C730C783"]
@@ -4281,7 +4300,7 @@
 				type: "item"
 			}]
 			x: -13.0d
-			y: 16.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["0D02B11D949BC139"]
@@ -4396,6 +4415,7 @@
 			y: 19.5d
 		}
 		{
+			dependencies: ["34F1729351474031"]
 			id: "667DBE03D8426EB5"
 			tasks: [{
 				id: "47ACEF368AF890C3"
@@ -4408,10 +4428,11 @@
 				}
 				type: "item"
 			}]
-			x: -4.0d
-			y: 6.0d
+			x: -1.5d
+			y: 4.0d
 		}
 		{
+			dependencies: ["34F1729351474031"]
 			id: "2EAA0567FC4C247B"
 			tasks: [{
 				id: "7477ECBE911EABBC"
@@ -4424,10 +4445,11 @@
 				}
 				type: "item"
 			}]
-			x: -3.0d
-			y: 6.0d
+			x: 1.5d
+			y: 4.0d
 		}
 		{
+			dependencies: ["34F1729351474031"]
 			id: "650C9CC1F851CAEF"
 			tasks: [{
 				id: "7E92CFD6AE82FA4D"
@@ -4440,10 +4462,11 @@
 				}
 				type: "item"
 			}]
-			x: -4.0d
-			y: 7.0d
+			x: -0.5d
+			y: 4.5d
 		}
 		{
+			dependencies: ["34F1729351474031"]
 			id: "65A0A858CA04B30F"
 			tasks: [{
 				id: "2F095AA05F7BEE9C"
@@ -4456,8 +4479,8 @@
 				}
 				type: "item"
 			}]
-			x: -3.0d
-			y: 7.0d
+			x: 0.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5679FB8E147767A0"]
@@ -4511,22 +4534,6 @@
 			}]
 			x: 13.0d
 			y: 4.5d
-		}
-		{
-			description: [
-				"概率在丛林神庙的发射器和宝箱中生成，只能使用发射器发射出去，射出去后撞到方块就会碎裂。"
-				""
-				"可以作用在卷尾猴上，可以让卷尾猴投掷石头时提升伤害。"
-			]
-			id: "7235DE5B55DBF292"
-			subtitle: "“气球塔防”"
-			tasks: [{
-				id: "0BBD1747728E36D7"
-				item: "alexsmobs:ancient_dart"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 4.0d
 		}
 		{
 			dependencies: ["279AA1CC6987C65C"]
@@ -4600,21 +4607,6 @@
 			y: 3.5d
 		}
 		{
-			id: "7EDEFC3657312E7C"
-			rewards: [{
-				id: "22B10A25E2D62983"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2DF1C7BF3F36704B"
-				item: "alexsdelight:acacia_blossom_soup"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 6.0d
-		}
-		{
 			dependencies: [
 				"72F0394531F2BD46"
 				"11DA4560F059DAE2"
@@ -4645,7 +4637,6 @@
 				"2214C72F1AE667F8"
 				"397E1B19721A295B"
 				"3834AFBFC5D44478"
-				"7235DE5B55DBF292"
 				"6A73332F3547EA32"
 				"1D36D13A35180A3E"
 				"2A130E907DF2A85B"
@@ -4735,7 +4726,6 @@
 				"2A952709E62C7F2E"
 				"3406C96937AFB360"
 				"570C5C561EF72C08"
-				"7EDEFC3657312E7C"
 				"7CB3EFC3AB6B61B3"
 				"4CE3E925A6CEA4A7"
 				"063E0BC71EF735A1"
@@ -4792,23 +4782,25 @@
 			]
 			hide_dependency_lines: true
 			hide_details_until_startable: true
+			icon: "quark:diamond_heart"
 			id: "2F7AECCF9B917BA9"
 			invisible: true
 			invisible_until_tasks: 173
 			rewards: [{
-				count: 4
-				id: "262120C85D6BB4FB"
-				item: "upgradednetherite_ultimate:ultimate_upgraded_netherite_ingot"
+				count: 10
+				id: "7E0D781487F9766F"
+				item: "createdelightcore:netherite_coin"
 				type: "item"
 			}]
+			shape: "octagon"
 			size: 4.0d
 			tasks: [{
 				id: "42788507008F7243"
 				type: "checkmark"
 			}]
 			title: "恭喜你完成了这一章的所有任务"
-			x: 2.5d
-			y: 10.0d
+			x: 0.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["05239181F7424ABB"]
@@ -4835,10 +4827,7 @@
 			y: 15.5d
 		}
 		{
-			dependencies: [
-				"02B0E545695B7C21"
-				"2A130E907DF2A85B"
-			]
+			dependencies: ["2A130E907DF2A85B"]
 			id: "46A840BE69AA3FE8"
 			rewards: [
 				{
@@ -4854,14 +4843,15 @@
 					type: "item"
 				}
 			]
+			shape: "circle"
 			subtitle: "用绯红孑孑右击衣壳体，转化为虚空蠕虫"
 			tasks: [{
 				id: "6D240EB0FCB09272"
 				item: "alexsmobs:mysterious_worm"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 15.5d
+			x: -9.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["7FFB5FAAC2F7B09F"]
@@ -4919,10 +4909,7 @@
 			y: 11.5d
 		}
 		{
-			dependencies: [
-				"77FD4E812B965295"
-				"7485B99EF2CF80D3"
-			]
+			dependencies: ["77FD4E812B965295"]
 			id: "48A930CAE544282F"
 			rewards: [{
 				count: 10
@@ -4942,11 +4929,15 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
+			hide: true
 			id: "1B36D2B9486430FD"
 			tasks: [{
-				id: "42FDD40F4C769940"
-				title: "两栖生物"
-				type: "checkmark"
+				disable_toast: true
+				elapsedTime: 1L
+				icon: "minecraft:frogspawn"
+				id: "3F20739647FCC439"
+				title: "两栖动物"
+				type: "questsadditions:time"
 			}]
 			x: 4.5d
 			y: 0.0d
@@ -4961,6 +4952,19 @@
 			}]
 			x: 4.0d
 			y: -8.5d
+		}
+		{
+			dependencies: ["329597CAA8B8D983"]
+			id: "34F1729351474031"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "1A72062C39051BF9"
+				title: "药水"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
 		}
 	]
 	title: "&e动物朋友们"

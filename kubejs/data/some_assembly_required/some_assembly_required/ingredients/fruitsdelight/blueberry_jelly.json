@@ -1,0 +1,19 @@
+{
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "fruitsdelight"
+      }
+    ],
+    "container": {
+      "item": "minecraft:glass_bottle"
+    },
+    "displayItem": {
+      "item": "some_assembly_required:spread",
+      "nbt": {
+        "Color": 721472
+      }
+    },
+    "item": "fruitsdelight:blueberry_jelly",
+    "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
+  }

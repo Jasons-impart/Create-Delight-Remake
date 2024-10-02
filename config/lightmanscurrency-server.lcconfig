@@ -76,19 +76,23 @@
 #Wallet Settings
 [wallet]
 	#The lowest level wallet capable of exchanging coins.
-	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-No Wallet
-	#Range: 0 -> 6
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
 	exchangeLevel=1
 	
 	#The lowest level wallet capable of automatically collecting coins while equipped.
-	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-No Wallet
-	#Range: 0 -> 6
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
 	pickupLevel=2
 	
 	#The lowest level wallet capable of allowing transfers to/from your bank account.
-	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-No Wallet
-	#Range: 0 -> 6
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
 	bankLevel=5
+	
+	#Whether wallets can have 24 additional slots added by using an upgrade item on them from their inventory
+	#By default diamonds are the only valid upgrade item, but this can be changed by a datapack
+	allowCapacityUpgrade=true
 	
 	#Whether Wallet Drops should be manually spawned into the world instead of the default behaviour of being passed to the PlayerDropsEvent
 	#Wallet Drops will be either the Wallet itself, or the coins dropped when the `coinDropPercent` game rule is greater than 0.
@@ -142,11 +146,11 @@
 	
 	#The cost required to repair a single item durability point with the Money Mending enchantment.
 	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-	moneyMendingRepairCost="coin;1-createdelight:iron_coin"
+	moneyMendingRepairCost="coin;1-createdelightcore:iron_coin"
 	
 	#The additional cost to repair an item with Infinity applied to it.
 	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-	moneyMendingInfinityCost="coin;4-createdelight:iron_coin"
+	moneyMendingInfinityCost="coin;4-createdelightcore:iron_coin"
 	
 	#The coin collection radius of the Coin Magnet I enchantment.
 	#Range: 1 -> 50
@@ -276,7 +280,7 @@
 		
 		#The price per claim chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		claimPrice="coin;1-createdelight:copper_coin"
+		claimPrice="coin;1-createdelightcore:copper_coin"
 		
 		#The maximum number of extra claim chunks allowed to be purchased with this command.
 		#Note: This count includes extra claim chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
@@ -288,7 +292,7 @@
 		
 		#The price per forceload chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		forceloadPrice="coin;1000-createdelight:netherite_coin"
+		forceloadPrice="coin;1000-createdelightcore:netherite_coin"
 		
 		#The maximum number of extra forceload chunks allowed to be purchased with this command.
 		#Note: This count includes extra forceload chunks given to the player/team via normal FTB Chunks methods as well (if applicable).

@@ -1,0 +1,17 @@
+{
+  "type": "cuisinedelight:plate_cuisine",
+  "holderItem": "cuisinedelight:mixed_fried_rice",
+  "list": [
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "tag": "forge:grain/rice"
+      },
+      "max": 1.6,
+      "min": 0.4,
+      "score": 1.0
+    }
+  ],
+  "saturationBonus": 0.0,
+  "saturationBonusModifier": 0.0
+}

@@ -9,9 +9,9 @@ ServerEvents.tags("item", e => {
         "vinery:jungle_grapes_red",
         "vinery:jungle_grapes_white",
         "nethervinery:warped_grape",
-        "nethervinery:crimson_grape"
+        "nethervinery:crimson_grape",
     ])
     e.add("forge:fruits/cherry", [
-        "vinery:cherry"
+        "vinery:cherry",
     ])
 })

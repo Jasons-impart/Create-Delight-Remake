@@ -1,4 +1,14 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "create_connected:item_application/freezing_catalyst_from_empty",
+        "create_connected:item_application/sanding_catalyst_from_empty",
+        "create_connected:item_application/seething_catalyst_from_empty",
+        "create_connected:crafting/kinetics/empty_fan_catalyst_from_freezing",
+        "create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding",
+        "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething"
+    ])
+    // 黄铜机械手
+    e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
     // 新增配方：玫瑰石英
     e.shapeless("create:rose_quartz", [
         "4x redstone",
@@ -20,7 +30,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "3x create:portable_storage_interface",
         [
-            "#forge:spring/blow_500",
+            "#forge:spring/below_500",
             "create:andesite_casing",
             "create:chute"
         ]
@@ -28,7 +38,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "create:portable_fluid_interface",
         [
-            "#forge:spring/blow_500",
+            "#forge:spring/below_500",
             "create:copper_casing",
             "create:chute"
         ]
@@ -38,7 +48,7 @@ ServerEvents.recipes(e => {
         "ABA",
         " C "
     ], {
-        A: "#forge:spring/blow_500",
+        A: "#forge:spring/below_500",
         B: "create:copper_casing",
         C: "minecraft:dried_kelp"
     }
@@ -61,7 +71,7 @@ ServerEvents.recipes(e => {
         " C "
     ], {
         A: "create:golden_sheet",
-        B: "#forge:spring/blow_500",
+        B: "#forge:spring/below_500",
         C: "minecraft:copper_ingot"
     }
     ).id("create:crafting/kinetics/steam_whistle")
@@ -89,20 +99,24 @@ ServerEvents.recipes(e => {
         .id("create:sequenced_assembly/precision_mechanism")
 
     let iner_2 = "createdelight:incomplete_electron_tube"
-    e.recipes.create.sequenced_assembly("create:electron_tube", "create:iron_sheet", [
+    e.recipes.create.sequenced_assembly("2x create:electron_tube", "create:iron_sheet", [
         e.recipes.create.deploying(iner_2, [iner_2, "#forge:wires/electric"]),
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_tin", 10)]),
-        e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"])
+        e.recipes.create.deploying(iner_2, [iner_2, "create:polished_rose_quartz"]),
+        e.recipes.create.cutting(iner_2, iner_2)
     ])
         .transitionalItem(iner_2)
         .loops(1)
         .id("create:crafting/materials/electron_tube")
     e.recipes.createaddition.charging("create:electron_tube", "createdelight:bleak_electron_tube", 10000, 40000)
         .id("create:charging/electron_tube")
-    e.recipes.vintageimprovements.turning("6x create:chute", "minecraft:iron_block")
+    e.recipes.vintageimprovements.turning("6x create:chute", "createbigcannons:cast_iron_block")
         .id("create:crafting/kinetics/chute_2")
-    e.recipes.vintageimprovements.turning("3x create:item_vault", "minecraft:iron_block")
+    e.recipes.vintageimprovements.turning("3x create:item_vault", "createbigcannons:cast_iron_block")
         .id("create:crafting/kinetics/item_vault_2")
     e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
         .id("create:crafting/kinetics/fluid_tank_2")
+    //坚固板的另一个配方
+    e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
+        .id("vintageimprovements:hammering/sturdy_sheet")
 })

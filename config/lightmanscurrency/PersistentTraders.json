@@ -2,234 +2,6 @@
   "Traders": [
     {
       "Type": "lightmanscurrency:item_trader",
-      "ID": "processed_food_trade",
-      "Name": "加工食材回收",
-      "OwnerName": "JSI宇宙第一无敌公司",
-      "Trades": [
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "casualness_delight:cheese_wheel",
-            "Count": 1
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              },
-              {
-                "Coin": "createdelight:iron_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "ratatouille:cake_base",
-            "Count": 1
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "farmersdelight:pie_crust",
-            "Count": 1
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "culturaldelights:corn_dough",
-            "Count": 16
-          },
-          "SellItem2": {
-            "ID": "culturaldelights:tortilla",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "farmersrespite:green_tea_leaves",
-            "Count": 64
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "butchercraft:cooked_blood_sausage",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "vintagedelight:salt_block",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "ratatouille:sausage",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "ratatouille:cocoa_butter",
-            "Count": 16
-          },
-          "SellItem2": {
-            "ID": "ratatouille:cocoa_solids",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createcafe:oreo",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createcafe:boba",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:iron_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:wheat_flour",
-            "Count": 16
-          },
-          "SellItem2": {
-            "ID": "create:dough",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelight:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        }
-      ]
-    },
-    {
-      "Type": "lightmanscurrency:item_trader",
       "ID": "seed_trader",
       "Name": "买虚拟种子，种赛博作物",
       "OwnerName": "JSI宇宙第一无敌公司",
@@ -243,7 +15,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -260,7 +32,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -277,7 +49,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -294,7 +66,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -311,7 +83,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -328,7 +100,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -345,7 +117,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -362,7 +134,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -379,7 +151,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -396,7 +168,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -413,7 +185,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -430,7 +202,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -447,7 +219,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -464,7 +236,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -481,7 +253,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -498,7 +270,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -515,7 +287,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -532,7 +304,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -549,7 +321,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -566,7 +338,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -583,7 +355,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -600,7 +372,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -617,7 +389,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -634,7 +406,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -651,7 +423,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -668,7 +440,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -685,7 +457,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -702,7 +474,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -719,7 +491,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -736,7 +508,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -753,7 +525,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -770,7 +542,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -787,7 +559,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -804,7 +576,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -821,7 +593,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -838,7 +610,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -855,7 +627,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:gold_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 1
               }
             ],
@@ -872,7 +644,24 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "farmersrespite:tea_seeds",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 5
               }
             ],
@@ -890,7 +679,7 @@
       "Price": {
         "Value": [
           {
-            "Coin": "createdelight:copper_coin",
+            "Coin": "createdelightcore:copper_coin",
             "Amount": 1
           }
         ],
@@ -901,7 +690,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:gold_coin",
+              "ID": "createdelightcore:gold_coin",
               "Count": 1
             }
           ],
@@ -910,7 +699,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:emerald_coin",
+              "ID": "createdelightcore:emerald_coin",
               "Count": 1
             }
           ],
@@ -919,7 +708,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:netherite_coin",
+              "ID": "createdelightcore:netherite_coin",
               "Count": 1
             }
           ],
@@ -928,7 +717,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:copper_coin",
+              "ID": "createdelightcore:copper_coin",
               "Count": 2
             }
           ],
@@ -937,7 +726,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:iron_coin",
+              "ID": "createdelightcore:iron_coin",
               "Count": 1
             }
           ],
@@ -946,7 +735,7 @@
         {
           "Items": [
             {
-              "ID": "createdelight:iron_coin",
+              "ID": "createdelightcore:iron_coin",
               "Count": 5
             }
           ],
@@ -957,7 +746,7 @@
     {
       "Type": "lctech:fluid_trader",
       "ID": "entity_spawn_fluid_trader",
-      "Name": "奇怪的生物流体（没法用桶装!）",
+      "Name": "奇怪的生物流体",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Trades": [
         {
@@ -965,7 +754,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -984,7 +773,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -1003,7 +792,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -1022,7 +811,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -1041,7 +830,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 1
               }
             ],
@@ -1060,7 +849,7 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 1
               }
             ],
@@ -1079,11 +868,11 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 1
               },
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -1102,11 +891,11 @@
           "Price": {
             "Value": [
               {
-                "Coin": "createdelight:copper_coin",
+                "Coin": "createdelightcore:copper_coin",
                 "Amount": 1
               },
               {
-                "Coin": "createdelight:iron_coin",
+                "Coin": "createdelightcore:iron_coin",
                 "Amount": 5
               }
             ],
@@ -1119,6 +908,4364 @@
           },
           "Quantity": 1,
           "TradeRules": []
+        },
+        {
+          "TradeType": "SALE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_mechanical_spawner:spawn_fluid_wither_skeleton",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "ingredients_trader",
+      "Name": "农民伯伯辛苦了！",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Duration": 3600000,
+          "Fluctuation": 25,
+          "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:carrot",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:potato",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:beetroot",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:cassava_root",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:cabbage",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:tomato",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:onion",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:eggplant",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "festival_delicacies:chinese_cabbage",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "festival_delicacies:greenonion",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "festival_delicacies:eggplant",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "festival_delicacies:garlic_chive",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:peanut",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:ghost_pepper",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:cucumber",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:wheat",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:banana",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:cassava_root",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:avocado",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:corn_cob",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:bullet_pepper",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:gearo_berry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "nethervinery:crimson_grape",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "nethervinery:warped_grape",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:cherry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:red_grape",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:white_grape",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:savanna_grapes_red",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:savanna_grapes_white",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:taiga_grapes_red",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:taiga_grapes_white",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vinery:jungle_grapes_red",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:pear",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:hawberry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:lychee",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:mango",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:persimmon",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:peach",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:orange",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:mangosteen",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:bayberry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:kiwi",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:fig",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:blueberry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:lemon",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:cranberry",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:pineapple",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "animal_ingredients_trader",
+      "Name": "好浓的血腥味啊",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Duration": 3600000,
+          "Fluctuation": 25,
+          "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:beef",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:chicken",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:mutton",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:rabbit",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:raw_bison",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:raw_bunfungus",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:kangaroo_meat",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:tripe",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:stomach",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:lung",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:liver",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:kidney",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:heart",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:brain",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:leather_scrap",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:sinew",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "butchercraft:fat",
+            "Count": 128
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cod",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:salmon",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:tropical_fish",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:squid",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:glow_squid",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "utility_trader",
+      "Name": "实用物品出售",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "cobblefordays:tier_1",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "cobblefordays:tier_2",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "cobblefordays:tier_3",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "cobblefordays:tier_4",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "cobblefordays:tier_5",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:emergency_industrial_platform",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_copper",
+            "Count": 1
+          },
+          "DisplayName": "不要搞丢了！搞丢了得花1天才能补回来",
+          "Price": {
+            "Free": true,
+            "type": "lightmanscurrency:null"
+          },
+          "Rules": [
+            {
+              "Limit": 1,
+              "ForgetTime": 86400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_iron",
+            "Count": 1
+          },
+          "DisplayName": "交换时记得把钱取出来！！",
+          "BarterItem": {
+            "ID": "createdelightcore:iron_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_copper",
+            "Count": 1
+          },
+          "IgnoreNBT": [
+            3
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_gold",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "DisplayName": "交换时记得把钱取出来！！",
+          "BarterItem": {
+            "ID": "createdelightcore:copper_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_iron",
+            "Count": 1
+          },
+          "IgnoreNBT": [
+            3
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_emerald",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "DisplayName": "交换时记得把钱取出来！！",
+          "BarterItem": {
+            "ID": "createdelightcore:gold_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_gold",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "IgnoreNBT": [
+            3
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_diamond",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "DisplayName": "交换时记得把钱取出来！！",
+          "BarterItem": {
+            "ID": "createdelightcore:emerald_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_emerald",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "IgnoreNBT": [
+            3
+          ]
+        },
+        {
+          "TradeType": "BARTER",
+          "SellItem": {
+            "ID": "lightmanscurrency:wallet_netherite",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "DisplayName": "交换时记得把钱取出来！！",
+          "BarterItem": {
+            "ID": "createdelightcore:netherite_coin",
+            "Count": 9
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_diamond",
+            "Count": 1,
+            "Tag": "{AutoConvert:1b}"
+          },
+          "IgnoreNBT": [
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "scroll_trader",
+      "Name": "卷轴出售",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;3,2,2,1],intricate:0b,key:\"sword/sturdy_guard\",material:1,ribbon:\"bcb8b5\",schematics:[\"tetra:sword/sturdy_guard\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;4,1,0,5],intricate:0b,key:\"sword/throwing_knife\",material:1,ribbon:\"b8ced9\",schematics:[\"tetra:sword/throwing_knife\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{glyphs:[I;8,9,10,5],intricate:0b,key:\"sword/howling\",material:1,ribbon:\"faf396\",schematics:[\"tetra:sword/howling\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,4,5],intricate:0b,key:\"single/head/halberd_head/halberd_head\",material:1,ribbon:\"444aff\",schematics:[\"tetra:single/head/halberd_head/halberd_head\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;0,1,9,4],intricate:0b,key:\"sword/key_guard\",material:1,ribbon:\"fae409\",schematics:[\"tetra:sword/key_guard\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;9,3,6,2],intricate:0b,key:\"single/head/mace_head/mace_head\",material:1,ribbon:\"560060\",schematics:[\"tetra:single/head/mace_head/mace_head\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;8,1,9,5],intricate:0b,key:\"bow/stave/dreadnought_stave\",material:1,ribbon:\"f3b31f\",schematics:[\"tetra:bow/stave/dreadnought_stave\",\"tetra:bow/stave/dreadnought_cross_stave\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;15,13,12,14],intricate:0b,key:\"bow/string/compound_string\",material:1,ribbon:\"19e588\",schematics:[\"tetra:bow/string/compound_string\",\"tetra:crossbow/string/compound_cross_string\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "tetra:scroll_rolled",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;3,5,6,9],intricate:0b,key:\"sword/tonal_blade\",material:1,ribbon:\"daf7a6\",schematics:[\"tetra:sword/tonal_blade\"]}]}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:otherworld_note",
+            "Count": 1
+          },
+          "DisplayName": "用于合成其他卷轴",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lctech:fluid_trader",
+      "ID": "fluid_trade",
+      "Name": "回收好喝（可能也不好喝）的",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Duration": 3600000,
+          "Fluctuation": 25,
+          "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:green_tea",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:yellow_tea",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:black_tea",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:rose_hip_tea",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:dandelion_tea",
+            "amount": 1000
+          },
+          "Quantity": 4,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:purulent_tea",
+            "amount": 1000
+          },
+          "Quantity": 3,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:gamblers_tea",
+            "amount": 1000
+          },
+          "Quantity": 3,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:coffee",
+            "amount": 1000
+          },
+          "Quantity": 2,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:apple_cider",
+            "amount": 1000
+          },
+          "Quantity": 4,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:melon_juice",
+            "amount": 1000
+          },
+          "Quantity": 2,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "farmersrespite:hot_cocoa",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:melted_sugar",
+            "amount": 1000
+          },
+          "Quantity": 3,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:filling",
+            "amount": 1000
+          },
+          "Quantity": 5,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:mango_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:lime_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:lychee_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:kiwi_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:lemon_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:watermelon_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:blueberry_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:peach_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:pineapple_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:banana_tea",
+            "amount": 1000
+          },
+          "Quantity": 4,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:cherry_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:apple_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:pumpkin_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:avocado_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:sweetberry_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:durian_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:persimmon_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:mandarin_tea",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createcafe:banana_syrup",
+            "amount": 1000
+          },
+          "Quantity": 8,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "createdelight:whipped_cream",
+            "amount": 1000
+          },
+          "Quantity": 10,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create:honey",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create:chocolate",
+            "amount": 1000
+          },
+          "Quantity": 2,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_central_kitchen:tomato_sauce",
+            "amount": 1000
+          },
+          "Quantity": 3,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_confectionery:black_chocolate",
+            "amount": 1000
+          },
+          "Quantity": 2,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_confectionery:white_chocolate",
+            "amount": 1000
+          },
+          "Quantity": 2,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_confectionery:ruby_chocolate",
+            "amount": 1000
+          },
+          "Quantity": 1,
+          "TradeRules": []
+        },
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Product": {
+            "id": "create_confectionery:caramel",
+            "amount": 1000
+          },
+          "Quantity": 3,
+          "TradeRules": []
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "rough_machining_food_trade",
+      "Name": "纯纯工业美食（粗加工回收）",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:cocoa_butter",
+            "Count": 8
+          },
+          "SellItem2": {
+            "ID": "ratatouille:cocoa_solids",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:cocoa_powder",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:coffee_grounds",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:raw_oats",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:oat_dough",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:wheat_kernels",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:wheat_flour",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:dough",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:salty_dough",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:oil_dough",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:ghast_dough",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:corn_kernels",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:corn_flour",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:corn_dough",
+            "Count": 28
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "corn_delight:tortilla_raw",
+            "Count": 28
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:tortilla_chips",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cocoa_beans",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:dried_cocoa_beans",
+            "Count": 28
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ratatouille:dried_cocoa_nibs",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:raw_pasta",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:puff_pastry",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "farmersdelight:pie_crust",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:oreo_dough",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:oreo",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:oreo_crushed",
+            "Count": 2
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:tapioca_flour",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:raw_boba",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createcafe:boba",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "technology_help_trade",
+      "Name": "给大忙人的科技补助",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 3,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:brass_ingot",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createmetallurgy:steel_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:precision_mechanism",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:electron_tube",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:andesite_alloy",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:bronze_ingot",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createaddition:electrum_ingot",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:blaze_cake",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:first_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Limit": 1,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:second_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:third_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelight:fourth_stage_rocket_core",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:netherite_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:desh_ingot",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:ostrum_ingot",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:calorite_ingot",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lctech:energy_trader",
+      "ID": "electricity_trade",
+      "Name": "挖矿（记得给你终端上满顶级升级",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 81,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Quantity": 9999999,
+          "TradeRules": []
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "ore_trade",
+      "Name": "回收你家里的矿",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Duration": 3600000,
+          "Fluctuation": 25,
+          "Type": "lightmanscurrency:price_fluctuation"
+        },
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_iron",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_gold",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_copper",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_zinc",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_silver",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:crushed_raw_wolframite",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:crushed_raw_desh",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:crushed_raw_ostrum",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_tin",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:crushed_raw_calorite",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_iron_dust",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_gold_dust",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_copper_dust",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_zinc_dust",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_silver_dust",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_wolframite_dust",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_desh_dust",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_ostrum_dust",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_calorite_dust",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_tin_dust",
+            "Count": 32
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:iron_dust",
+            "Count": 9
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:gold_dust",
+            "Count": 9
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:copper_dust",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:zinc_dust",
+            "Count": 15
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_silver_dust",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:wolframite_dust",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_desh_dust",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_ostrum_dust",
+            "Count": 9
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_calorite_dust",
+            "Count": 3
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:tin_dust",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:raw_iron",
+            "Count": 15
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:raw_gold",
+            "Count": 15
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:raw_copper",
+            "Count": 40
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:raw_zinc",
+            "Count": 25
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "iceandfire:raw_silver",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:raw_wolframite",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ad_astra:raw_desh",
+            "Count": 10
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ad_astra:raw_ostrum",
+            "Count": 15
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "ad_astra:raw_calorite",
+            "Count": 5
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:raw_tin",
+            "Count": 40
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "smoke_food_trade",
+      "Name": "稍微烤制的食物的回收",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Rules": [
+        {
+          "Limit": 100,
+          "ForgetTime": 86400000,
+          "Type": "lightmanscurrency:player_trade_limit"
+        }
+      ],
+      "Trades": [
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_porkchop",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_mutton",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_chicken",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_rabbit",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_cod",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:cooked_salmon",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:cooked_bison",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsdelight:cooked_bunfungus",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_moose_ribs",
+            "Count": 4
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:boiled_emu_egg",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_kangaroo_meat",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "alexsmobs:cooked_catfish",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "crabbersdelight:cooked_tropical_fish",
+            "Count": 6
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:cooked_squid",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:cooked_loin",
+            "Count": 12
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:popcorn",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:bread",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:dried_persimmon",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "vintagedelight:roasted_peanut",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:baked_durian",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:dried_kelp",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "fruitsdelight:baked_pear",
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:smoked_eggplant",
+            "Count": 48
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     }

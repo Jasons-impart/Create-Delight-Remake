@@ -16,7 +16,7 @@ function remove_recipes_input(event, items) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { ResourceLocation[] } ids
+ * @param { Special.RecipeId[] } ids
  */
 function remove_recipes_id(event, ids) {
     ids.forEach(id => {
@@ -25,7 +25,7 @@ function remove_recipes_id(event, ids) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { string[] } types
+ * @param { Special.RecipeType[] } types
  */
 function remove_recipes_type(event, types) {
     types.forEach(type => {
@@ -34,7 +34,7 @@ function remove_recipes_type(event, types) {
 }
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { string[] } mods
+ * @param { Special.Mod[] } mods
  */
 function remove_recipes_mod(event, mods) {
     mods.forEach(mod => {
@@ -103,7 +103,17 @@ function baking(event, input, output, count, category, time) {
     event.custom({ type: "refurbished_furniture:oven_baking", category: category, ingredient: { item: input }, result: { count: count, item: output }, time: time })
         .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
 }
-
+/**
+ * @param { Internal.RecipesEventJS } event 
+ * @param { InputItem_ } input 
+ * @param { OutputItem_ } output
+ * @param { String } category // "misc", "food"
+ * @param { number } time 
+ */
+function toasting(event, input, output, category, time) {
+    event.custom({ type: "refurbished_furniture:toaster_heating", category: category, ingredient: { item: input }, result: output, time: time })
+        .id(`refurbished_furniture:toasting/${output.split(":")[1]}`)
+}
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
@@ -165,9 +175,9 @@ function blast_and_smelting(event, input, output, xp, time) {
 function cutting(event, input, outputs) {
     let recipe = {
         type: "farmersdelight:cutting",
-        ingredients: [{item: input}],
+        ingredients: [{ item: input }],
         result: [],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }
     let result = []
     outputs.forEach(output => {
@@ -181,7 +191,7 @@ function cutting(event, input, outputs) {
         })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
-    event.recipes.farmersdelight.cutting(input,"#forge:tools/knives",result).id(`farmersdelight:cutting/${input.split(":")[1]}`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`farmersdelight:cutting/${input.split(":")[1]}`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**
@@ -192,9 +202,9 @@ function cutting(event, input, outputs) {
 function cutting_1(event, input, outputs) {
     let recipe = {
         type: "farmersdelight:cutting",
-        ingredients: [{item: input}],
+        ingredients: [{ item: input }],
         result: [],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }
     let result = []
     outputs.forEach(output => {
@@ -208,7 +218,7 @@ function cutting_1(event, input, outputs) {
         })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
-    event.recipes.farmersdelight.cutting(input,"#forge:tools/knives",result).id(`${outputs[0][0].split(":")[0]}:food/${outputs[0][0].split(":")[1]}`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${outputs[0][0].split(":")[0]}:food/${outputs[0][0].split(":")[1]}`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**
@@ -219,9 +229,9 @@ function cutting_1(event, input, outputs) {
 function cutting_2(event, input, outputs) {
     let recipe = {
         type: "farmersdelight:cutting",
-        ingredients: [{item: input}],
+        ingredients: [{ item: input }],
         result: [],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }
     let result = []
     outputs.forEach(output => {
@@ -235,7 +245,7 @@ function cutting_2(event, input, outputs) {
         })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
-    event.recipes.farmersdelight.cutting(input,"#forge:tools/knives",result).id(`${input.split(":")[0]}:${input.split(":")[1]}_cutting`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${input.split(":")[0]}:${input.split(":")[1]}_cutting`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**
@@ -246,9 +256,9 @@ function cutting_2(event, input, outputs) {
 function cutting_3(event, input, outputs) {
     let recipe = {
         type: "farmersdelight:cutting",
-        ingredients: [{item: input}],
+        ingredients: [{ item: input }],
         result: [],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
     }
     let result = []
     outputs.forEach(output => {
@@ -262,6 +272,6 @@ function cutting_3(event, input, outputs) {
         })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
-    event.recipes.farmersdelight.cutting(input,"#forge:tools/knives",result).id(`${input.split(":")[0]}:cutting/${input.split(":")[1]}`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${input.split(":")[0]}:cutting/${input.split(":")[1]}`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }

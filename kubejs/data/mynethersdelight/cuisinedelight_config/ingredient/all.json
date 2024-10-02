@@ -1,0 +1,84 @@
+{
+    "entries": [
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "mynethersdelight:minced_strider"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "mynethersdelight:strider_slice"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "mynethersdelight:hoglin_loin"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 10,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 3,
+            "stir_time": 80
+        },
+        {
+            "type": "CARB",
+            "effects": [],
+            "ingredient": [
+              {
+                "item": "mynethersdelight:ghasta"
+              },
+              {
+                "item": "mynethersdelight:ghasmati"
+              },
+              {
+                "item": "mynethersdelight:ghast_dough"
+              }
+            ],
+            "max_time": 360,
+            "min_time": 300,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.7,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "NONE",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "mynethersdelight:bullet_pepper"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 2,
+            "overcook_penalty": 0,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 80
+        }
+    ]
+}

@@ -14,14 +14,11 @@
 		x: 0.0d
 		y: 0.0d
 	}]
-	order_index: 4
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"5EC8FE813C9B8A03"
-				"509DFE1445C81591"
-			]
+			dependencies: ["5EC8FE813C9B8A03"]
 			id: "712773DBE9B0E5C4"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -179,47 +176,6 @@
 			}]
 			x: -4.0d
 			y: 4.0d
-		}
-		{
-			dependencies: [
-				"1962F2517EF94B0A"
-				"24BE09160DC6BE45"
-			]
-			description: ["由回响碎片合成，可以制作回响下界合金装备，能够提供对监守者的特殊加成，也是终极之瓶的必要材料"]
-			id: "7EB845340EFDD2EF"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "43ED5D4EF00D3CC3"
-				table_id: 5347970608351672481L
-				type: "random"
-			}]
-			subtitle: "七步之内必有解药"
-			tasks: [{
-				id: "538BA984D7DD0542"
-				item: "upgradednetherite:echo_essence"
-				type: "item"
-			}]
-			x: -6.0d
-			y: 2.0d
-		}
-		{
-			dependencies: ["7EB845340EFDD2EF"]
-			description: ["和普通的下界合金锭用法一样，可以将钻石装备锻造为回响下界合金装备，提供对监守者的加成以及灵魂绑定（监守者很强的，多试几次吧）"]
-			id: "509DFE1445C81591"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "0DC702E0B2E9B869"
-				table_id: 5347970608351672481L
-				type: "random"
-			}]
-			subtitle: "对监守者特化装备"
-			tasks: [{
-				id: "0A5AD66FAAD27EF8"
-				item: "upgradednetherite:echo_upgraded_netherite_ingot"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 2.0d
 		}
 		{
 			dependencies: ["1094533D50801898"]

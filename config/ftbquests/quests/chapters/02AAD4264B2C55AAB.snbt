@@ -1,4 +1,5 @@
 {
+	autofocus_id: "4B59A1EE7155AFC3"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "02AAD4264B2C55AAB"
@@ -18,690 +19,1249 @@
 		}
 	}
 	id: "55436AC0A0C01843"
-	order_index: 1
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			description: [""]
-			id: "08202376542D4584"
-			rewards: [
-				{
-					id: "350F0C75AAFE593D"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					count: 8
-					id: "292FA5DC921FF9A6"
-					item: "minecraft:oak_log"
-					type: "item"
-				}
-				{
-					id: "1334996DAF49DAA0"
-					type: "xp"
-					xp: 150
-				}
-				{
-					id: "2E4CA8EA1F38DF74"
-					item: "sophisticatedbackpacks:backpack"
-					type: "item"
-				}
-			]
-			shape: "gear"
-			size: 1.5d
-			tasks: [{
-				id: "74F8692BEA4B9F6B"
-				item: {
-					Count: 1
-					id: "tetra:modular_double"
-					tag: {
-						Damage: 0
-						"double/basic_hammer_left_material": "basic_hammer/oak"
-						"double/basic_hammer_right_material": "basic_hammer/oak"
-						"double/basic_handle_material": "basic_handle/stick"
-						"double/handle": "double/basic_handle"
-						"double/head_left": "double/basic_hammer_left"
-						"double/head_right": "double/basic_hammer_right"
-						id: "91a59fea-cc84-4b94-b61b-15723e1dfdd0"
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "true_crucible"
+							glyphs: [I;
+								8
+								7
+								9
+								2
+							]
+							intricate: 1b
+							key: "sword/crucible/architects_crucible_blade"
+							material: 2
+							ribbon: "ff0042"
+							schematics: [
+								"tetra:sword/crucible_blade"
+								"tetra:sword/crucible/architects_crucible_blade"
+							]
+						}]
 					}
 				}
-				type: "item"
-			}]
-			x: 0.5d
-			y: 0.5d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			icon: "tetra:basic_workbench"
-			id: "2E4DB9B14AC12331"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "7A0F464693F0CBAB"
-					type: "random"
-				}
-				{
-					id: "2DD47CDF58854B9A"
-					type: "xp"
-					xp: 100
-				}
-			]
+			}
+			id: "4178108D392476B9"
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
-				advancement: "tetra:upgrades/workbench"
+				advancement: "tetra:art_of_forging/root"
 				criterion: ""
-				id: "5BE7362EC00D888B"
+				id: "6EDC35C7A5A0FC86"
 				type: "advancement"
 			}]
-			title: "新起点"
-			x: 0.5d
-			y: -1.0d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [""]
-			id: "351E22A5F370B611"
-			rewards: [
-				{
-					id: "058CA9886D77C770"
-					type: "xp"
-					xp: 200
-				}
-				{
-					id: "30B41C7F22A2435B"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-			]
-			shape: "gear"
+			dependencies: ["50E6BE9153146BF5"]
+			id: "38CD78E43A6497DC"
 			tasks: [{
-				id: "3FE57D45300B1C3C"
-				item: {
-					Count: 1
-					id: "tetra:holo"
-					tag: {
-						"holo/core": "holo/core"
-						"holo/core_material": "frame/dim"
-						"holo/frame": "holo/frame"
-						"holo/frame_material": "core/ancient"
-						"holo/repo": "holo/repo"
-						"holo/repo_material": "repo/default"
-						"holo/scanner": "holo/scanner"
-						"holo/scanner_material": "scanner/default"
-					}
-				}
+				id: "41507FB3303D2212"
+				item: "art_of_forging:vobrite_crystal"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -2.5d
-		}
-		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [
-				"&f安装一个储物袋可以充当小型背包哦。&8(还有箭袋和药水袋这些功能)"
-				"&6[腰带等级：羊毛-皮革-铁-潜影贝]"
-			]
-			id: "46D4BC1CA796FFF1"
-			rewards: [
-				{
-					count: 2
-					id: "56D625EFCEB36C1C"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					id: "085682620BD50458"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "锻造师的生活小帮手!"
-			tasks: [{
-				id: "6E76502FB59AD5FF"
-				item: {
-					Count: 1
-					id: "tetra:modular_toolbelt"
-					tag: {
-						id: "c8db0c6d-32f4-49cd-b0f0-d00911233448"
-						"toolbelt/belt": "toolbelt/belt"
-						"toolbelt/belt_material": "belt/rope"
-						"toolbelt/slot1": "toolbelt/strap_slot1"
-						"toolbelt/strap_slot1_material": "strap1/leather"
-					}
-				}
-				type: "item"
-			}]
-			x: -1.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			id: "48DDFC405066F6C6"
-			rewards: [
-				{
-					id: "17E67B4ADA31191D"
-					item: "minecraft:lantern"
-					type: "item"
-				}
-				{
-					id: "703E6D6C69B77353"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-				{
-					id: "363F040FAFAEB7DB"
-					type: "xp"
-					xp: 50
-				}
-			]
-			shape: "gear"
-			subtitle: "2级锤子材料"
-			tasks: [{
-				count: 4L
-				id: "5971FFCCC1B4ABE1"
-				item: "minecraft:cobblestone"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["48DDFC405066F6C6"]
-			description: ["很基础的锻造材料。"]
-			id: "0586B7C19B401999"
-			rewards: [{
-				id: "21A7F065807FA04F"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "gear"
-			subtitle: "3级锤子材料"
-			tasks: [{
-				count: 4L
-				id: "1962A75B184E8662"
-				item: "minecraft:iron_ingot"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["2E4DB9B14AC12331"]
-			description: [""]
-			id: "0BC30D6453DD1790"
-			rewards: [
-				{
-					id: "47087CA3F05D86C1"
-					type: "xp"
-					xp: 100
-				}
-				{
-					count: 2
-					id: "7D909BC4A4EC8FC5"
-					item: "minecraft:emerald_block"
-					type: "item"
-				}
-			]
-			subtitle: "更好的物品展示框!"
-			tasks: [{
-				id: "7E2BAF6AB1725D96"
-				item: "tetra:rack"
-				type: "item"
-			}]
-			x: 2.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["08202376542D4584"]
-			description: [""]
-			id: "3DA31EC72B107132"
-			rewards: [
-				{
-					count: 8
-					id: "6054899C8A4B0977"
-					item: "minecraft:emerald"
-					type: "item"
-				}
-				{
-					id: "6EA7562F5C259CDE"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "切削工具"
-			tasks: [{
-				id: "19B372F7C785AADF"
-				item: {
-					Count: 1
-					id: "minecraft:stone_sword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: -1.0d
+			x: 3.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
-				"07D9528875F98B99"
-				"0586B7C19B401999"
+				"38CD78E43A6497DC"
+				"24B350776EC1E573"
+				"25312B7026403FFF"
 			]
-			description: [""]
-			id: "19F876FCE057AD79"
-			rewards: [
+			id: "47ADAC6620C3FF87"
+			size: 1.5d
+			tasks: [{
+				id: "36BD3E1BEBBF6A21"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "24B350776EC1E573"
+			tasks: [{
+				id: "05E1245BB066A60A"
+				item: "aetheric_tetranomicon:valkyrian_scrap"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "2B57F16B9F150906"
+			tasks: [{
+				id: "7D800634AC2440E2"
+				item: "witheringboon:witheredsoulstone"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"2B57F16B9F150906"
+				"748ECF70317F9EA6"
+				"38DBD1E39A2E6B30"
+				"392BB596FCE8221B"
+			]
+			id: "551A3651A1E545B9"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "2A81162ACF3EFED9"
+				item: "witheringboon:soulaniteingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"1DD863B1746B045F"
+				"072C57A43EFA47D2"
+				"0D352790BA1FF3E6"
+			]
+			id: "63B03A277D459A65"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
 				{
-					id: "75C389AFEB81787C"
-					type: "xp"
-					xp: 300
+					id: "7C61E5405BB8F177"
+					item: "iceandfire:dragonsteel_fire_ingot"
+					type: "item"
 				}
 				{
-					id: "44CCA4A5B27D66A4"
-					item: "minecraft:iron_horse_armor"
+					id: "0684B419D88E9743"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					id: "3336D82836E71280"
+					item: "iceandfire:dragonsteel_lightning_ingot"
 					type: "item"
 				}
 			]
-			shape: "gear"
-			subtitle: "我需要更高级的锻造科技!"
+			title: "龙钢"
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "38D20838234FECAE"
 			tasks: [{
-				advancement: "tetra:spelunking/ancient_ruins"
+				id: "3FA49AA0BB5B0251"
+				item: "art_of_forging:dragon_soul"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "37009649B2B8EC6C"
+			tasks: [{
+				id: "5B78C6B3E560AF87"
+				item: "art_of_forging:fragment_of_eden"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"38D20838234FECAE"
+				"37009649B2B8EC6C"
+				"740D759F98D9A8CF"
+				"09D6DDED6D63A613"
+			]
+			id: "691FF0ECF3FDC2ED"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "27225645CA88DA29"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "25312B7026403FFF"
+			tasks: [{
+				id: "0CEAB15EAC48A56C"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "aether:aerclouds"
+					}
+				}
+				title: "任意云"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "748ECF70317F9EA6"
+			tasks: [{
+				id: "6E8A5AEF9543DF67"
+				item: "art_of_forging:soul_ember"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 9.0d
+		}
+		{
+			id: "50E6BE9153146BF5"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "54A33806AEF48C3E"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "6D5A656ACC1EC65B"
+			size: 1.5d
+			tasks: [{
+				id: "7CC80CAAE8BE5484"
+				item: "art_of_forging:soul_ember"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "19C9240CC2FCED23"
+			size: 1.5d
+			tasks: [{
+				id: "1C104AC1E0A6BB93"
+				item: "art_of_forging:shards_of_malice"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["22EB3CAE02880E7F"]
+			id: "7F9D35C4E62EBE86"
+			tasks: [{
+				id: "3114D559C5159C66"
+				item: "art_of_forging:life_fiber"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "38DBD1E39A2E6B30"
+			tasks: [{
+				id: "0DB002EE8C4F3893"
+				item: "iceandfire:ghost_ingot"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7F9D35C4E62EBE86"]
+			icon: "art_of_forging:rending_scissor_red"
+			id: "06833E5F5569DFA6"
+			tasks: [
+				{
+					id: "42BB001312F43D89"
+					item: "art_of_forging:rending_scissor_red"
+					type: "item"
+				}
+				{
+					id: "0437FA2F881C71D1"
+					item: "art_of_forging:rending_scissor_purple"
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["06833E5F5569DFA6"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "otherworldly"
+							glyphs: [I;
+								1
+								15
+								2
+								13
+							]
+							intricate: 0b
+							key: "tetra/rending_scissor_complete"
+							material: 2
+							ribbon: "e32182"
+							schematics: [
+								"tetra:sword/scissor_blade_left"
+								"tetra:sword/scissor_blade_right"
+								"tetra:sword/rending_scissor_complete"
+							]
+						}]
+					}
+				}
+			}
+			id: "1F19F9E3509D49AA"
+			tasks: [
+				{
+					id: "647A84739BB9675A"
+					item: "art_of_forging:rending_scissor_complete"
+					type: "item"
+				}
+				{
+					id: "0342A664BE15F66D"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "otherworldly"
+									glyphs: [I;
+										1
+										15
+										2
+										13
+									]
+									intricate: 0b
+									key: "tetra/rending_scissor_complete"
+									material: 2
+									ribbon: "e32182"
+									schematics: [
+										"tetra:sword/scissor_blade_left"
+										"tetra:sword/scissor_blade_right"
+										"tetra:sword/rending_scissor_complete"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1F19F9E3509D49AA"]
+			id: "1607F7E800D3A52C"
+			tasks: [{
+				advancement: "tetra:art_of_forging/rending_scissor_complete_upgrade"
 				criterion: ""
-				id: "495357E02B527FFD"
+				id: "5C95ECC22DEE9A0A"
 				type: "advancement"
 			}]
-			title: "锻造遗迹"
-			x: 0.5d
-			y: 6.5d
+			x: 12.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["0586B7C19B401999"]
-			description: [""]
-			id: "07D9528875F98B99"
-			rewards: [{
-				id: "0B13C3BF160AEF49"
-				type: "xp"
-				xp: 120
-			}]
-			shape: "gear"
-			subtitle: "4级锤子材料"
+			dependencies: ["38163DC2EF9E6DA3"]
+			id: "477603DD01400467"
 			tasks: [{
-				count: 4L
-				id: "1CAE81B7FBED6EF9"
-				item: "minecraft:blackstone"
-				type: "item"
+				advancement: "tetra:art_of_forging/euclidean_dagger_upgrade"
+				criterion: ""
+				id: "588A9537513C0EB0"
+				type: "advancement"
 			}]
-			x: 0.5d
-			y: 5.0d
+			x: -9.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "5179E7D563BB6819"
-			rewards: [
+			dependencies: ["033C857187DC6731"]
+			icon: "art_of_forging:ancient_blade"
+			id: "137C9220F86DD557"
+			tasks: [
 				{
-					exclude_from_claim_all: true
-					id: "65DDEE22CAA24C81"
-					type: "loot"
+					id: "083CFDFAEA3DE401"
+					item: "art_of_forging:ancient_blade"
+					type: "item"
 				}
 				{
-					id: "5E50D59CADEFCCF5"
-					type: "xp_levels"
-					xp_levels: 5
+					id: "3163DEC754A400AD"
+					item: "art_of_forging:ancient_axe"
+					type: "item"
+				}
+				{
+					id: "35992FBD1265DFF1"
+					item: "art_of_forging:ancient_flail"
+					type: "item"
 				}
 			]
-			shape: "gear"
-			subtitle: "5级锤子"
-			tasks: [{
-				count: 4L
-				id: "6844805E5D367BB3"
-				item: "minecraft:obsidian"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 8.0d
+			x: -9.0d
+			y: -6.0d
 		}
 		{
-			dependencies: ["08202376542D4584"]
-			id: "28CAD775ABA59BEE"
-			rewards: [{
-				id: "2DC8BD8B5F3550FA"
-				type: "xp"
-				xp: 100
-			}]
+			dependencies: ["7259774FF36EFCA6"]
+			id: "4A0CB2CD39AF679F"
 			tasks: [{
-				id: "2A4B6FCF6C8E7B3D"
-				item: {
-					Count: 1
-					id: "waystones:warp_stone"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
+				advancement: "art_of_forging:materials/find_all_demonic_items"
+				criterion: ""
+				id: "48AD750FB46EC5D9"
+				type: "advancement"
 			}]
-			x: 3.5d
-			y: 0.5d
+			x: -12.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["28CAD775ABA59BEE"]
-			id: "51ED49C0F3C0C825"
-			rewards: [
+			dependencies: ["19C9240CC2FCED23"]
+			icon: "art_of_forging:sigil_of_eden"
+			id: "38163DC2EF9E6DA3"
+			tasks: [
 				{
-					exclude_from_claim_all: true
-					id: "76340D5DA2DEA4F7"
-					type: "random"
+					id: "111FB7B02D4B1E43"
+					item: "art_of_forging:fragment_of_eden"
+					type: "item"
 				}
 				{
-					id: "6ADA30982CB39FD0"
-					type: "xp"
-					xp: 100
+					id: "4E558BCD644965DD"
+					item: "art_of_forging:sigil_of_eden"
+					type: "item"
 				}
 			]
-			tasks: [{
-				id: "0A083A94E1550362"
-				item: "waystones:waystone"
-				type: "item"
-			}]
-			x: 3.5d
-			y: -1.0d
+			x: -6.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "6F31865C0AAA760A"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "6946249C547AA058"
-					type: "random"
-				}
-				{
-					id: "1E047C721F06CA70"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "锻造锤的动力来源"
+			dependencies: ["4178108D392476B9"]
+			id: "2B0342C9C0B57372"
+			size: 1.5d
 			tasks: [{
-				id: "0591CC0D1E984722"
-				item: {
-					Count: 1
-					id: "tetra:thermal_cell"
-					tag: {
-						Damage: 0
-					}
-				}
+				id: "4458274AF47E8A81"
+				item: "createdelight:otherworld_note"
 				type: "item"
 			}]
-			title: "热能电池"
-			x: -1.0d
-			y: 6.5d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
-			dependencies: ["19F876FCE057AD79"]
-			description: ["具体用处查看上一个任务说明。"]
-			id: "54FBA6C046A72156"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "367AC8979BE5B196"
-					type: "random"
-				}
-				{
-					id: "2E598113307494BC"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "什么？你卡锤子等级了？"
+			dependencies: ["2B0342C9C0B57372"]
+			id: "6534A8367009AD68"
 			tasks: [{
-				id: "52D40B4E20FE1E7F"
-				item: "tetra:combustion_chamber"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 6.5d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "6ED90C367C8EF2EE"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "656E6085317AC82A"
-					type: "random"
-				}
-				{
-					id: "365AED8A0F1C6944"
-					type: "xp_levels"
-					xp_levels: 2
-				}
-			]
-			subtitle: "来自锻造遗迹的材料"
-			tasks: [{
-				id: "626506F45CDD6E4F"
-				item: "tetra:metal_scrap"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["19F876FCE057AD79"]
-			description: [""]
-			id: "2CD64D8069076EE4"
-			rewards: [
-				{
-					id: "05F70B5EA1D61FEA"
-					type: "xp"
-					xp: 120
-				}
-				{
-					exclude_from_claim_all: true
-					id: "19144AB9B75036DF"
-					type: "random"
-				}
-			]
-			subtitle: "十分优质的手柄材料"
-			tasks: [{
-				id: "09A33AA43F39CDA4"
-				item: "tetra:forged_beam"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["5179E7D563BB6819"]
-			description: [
-				"打造一个下界合金锤子，这是你成为锻造大师的第一步!"
-				"&8(现在你需要了解一些&6锻造进阶&8和&e锻造派系&8方面的知识了)"
-			]
-			id: "4E39E5609A04C001"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "4424EDB6DA634DE6"
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "1197640119CCB844"
-					type: "random"
-				}
-				{
-					id: "35B07F23EFCB75F7"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			shape: "gear"
-			subtitle: "6级锤子"
-			tasks: [{
-				count: 4L
-				id: "3F4EF2EAF2248660"
-				item: "minecraft:netherite_ingot"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 9.5d
-		}
-		{
-			dependencies: ["0586B7C19B401999"]
-			description: [
-				"现在，我们在&2y30层以下&r可以找到这些晶体矿石。挖掘后固定掉落一颗晶洞玉石，不受精准采集以及时运影响。"
-				"在该模组工作台中可用等级大于等于2的锤子破开，使用锤子按物品栏顺序优先。"
-				"&7破开掉落：燧石、铁粒、金粒，青金石，红石，绿宝石、钻石及无暇宝石。"
-			]
-			id: "52DD467ABFC37BDC"
-			rewards: [
-				{
-					id: "507B1D07F79D5E84"
-					type: "xp"
-					xp: 120
-				}
-				{
-					exclude_from_claim_all: true
-					id: "796E150F10AACA26"
-					type: "random"
-				}
-			]
-			subtitle: "无暇宝石"
-			tasks: [{
-				id: "36BE95B9C11BCDED"
-				item: "tetra:geode"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["0586B7C19B401999"]
-			description: [""]
-			id: "3DB261637ADAB659"
-			rewards: [{
-				id: "75812B0DBA119B8D"
-				type: "xp"
-				xp: 120
-			}]
-			subtitle: "卷轴机制"
-			tasks: [{
-				id: "31C3FCA60E9AA9D9"
+				id: "59C78A6628BBE6B0"
 				item: {
 					Count: 1
 					id: "tetra:scroll_rolled"
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								effects: ["tetra:gem_expertise"]
-								glyphs: [
-									14
+								details: "art_of_forging"
+								glyphs: [I;
+									5
+									10
 									13
-									14
-									15
+									2
 								]
 								intricate: 0b
-								key: "gem_expertise"
-								material: 0
-								ribbon: "2bffee"
+								key: "sword/katana/katana_blade"
+								material: 2
+								ribbon: "dbff10"
+								schematics: [
+									"tetra:sword/katana/katana_blade"
+									"tetra:sword/tsuba_guard"
+								]
 							}]
 						}
 					}
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: 3.5d
+			x: -3.0d
+			y: 3.0d
 		}
 		{
-			dependencies: ["5179E7D563BB6819"]
-			description: ["击杀末影龙有几率掉落。"]
-			id: "25D08CA732895094"
-			subtitle: "更好的弓弦"
+			dependencies: ["6534A8367009AD68"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_progress: 435
+					id: "d7e3690d-2b4c-4a50-8554-52fde1163f7e"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/katana_blade"
+					"sword/blade:quality": 1
+					"sword/blade:sword/murasama_imprv": 0
+					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:quality": 1
+					"sword/katana_blade_material": "katana_blade/endsteel_ingot"
+					"sword/pommel": "sword/grip_loop"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":3.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+				}
+			}
+			id: "59AA40D0405EBE55"
+			tasks: [
+				{
+					id: "44DCE255A6640D7E"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "otherworldly"
+									glyphs: [I;
+										6
+										7
+										13
+										15
+									]
+									intricate: 0b
+									key: "sword/katana/murasama_blade"
+									material: 2
+									ribbon: "c52323"
+									schematics: ["tetra:sword/katana/murasama_blade"]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "tetra:art_of_forging/murasama_blade"
+					criterion: ""
+					id: "3C203776E644FED6"
+					type: "advancement"
+				}
+			]
+			x: -6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"59AA40D0405EBE55"
+				"4A0CB2CD39AF679F"
+				"477603DD01400467"
+			]
+			id: "311424590CC23510"
 			tasks: [{
-				id: "4EF3F08CC2B73EE2"
+				id: "50AB4D9C6EC4B7FD"
+				title: "恶魔典籍"
+				type: "checkmark"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3D6F2D2827972749"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_progress: 370
+					id: "d2a48f3d-ca5e-48c0-a717-b3e19d3d12c4"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/crucible_blade"
+					"sword/blade:quality": 1
+					"sword/crucible_blade_material": "crucible_blade/endsteel_ingot"
+					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:quality": 1
+					"sword/pommel": "sword/grip_loop"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:sword\",\"attributes\":{\"attack_range\":3.5,\"two_handed\":false,\"category\":\"sword\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_stab\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.2,\"randomness\":0.1}}]}}"
+				}
+			}
+			id: "74CBB9E36AC536AA"
+			tasks: [
+				{
+					id: "3211079DF3B97683"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "art_of_forging"
+									glyphs: [I;
+										8
+										7
+										9
+										2
+									]
+									intricate: 0b
+									key: "tetra/crucible_blade"
+									material: 2
+									ribbon: "ff1e00"
+									schematics: ["tetra:sword/crucible_blade"]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "tetra:art_of_forging/crucible_upgrade"
+					criterion: ""
+					id: "4A081B9A60BA7DF6"
+					type: "advancement"
+				}
+			]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"1607F7E800D3A52C"
+				"74CBB9E36AC536AA"
+				"69FDAEA318C16F60"
+			]
+			id: "77A9515AA98A2567"
+			tasks: [{
+				id: "3A52063435281FD1"
+				item: "art_of_forging:mark_of_the_architect"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2B0342C9C0B57372"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "art_of_forging"
+							glyphs: [I;
+								8
+								7
+								9
+								2
+							]
+							intricate: 0b
+							key: "tetra/crucible_blade"
+							material: 2
+							ribbon: "ff1e00"
+							schematics: ["tetra:sword/crucible_blade"]
+						}]
+					}
+				}
+			}
+			id: "3D6F2D2827972749"
+			tasks: [
+				{
+					id: "420C8439CFC88D01"
+					item: "art_of_forging:esoteric_codex"
+					type: "item"
+				}
+				{
+					id: "7183B57CDDA9C9EF"
+					item: "art_of_forging:enigmatic_construct"
+					type: "item"
+				}
+				{
+					id: "115994C95C1E9E50"
+					item: "art_of_forging:dragon_soul"
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6D5A656ACC1EC65B"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/handle/settle_progress": 275
+					"double/handle:basic_handle/soot": 0
+					"double/head_left": "double/soul_fire_scythe_left"
+					"double/head_right": "double/soul_fire_scythe_right"
+					"double/head_right/settle_progress": 288
+					"double/soul_fire_scythe_left_material": "soul_fire_scythe/soul_fire_scythe"
+					"double/soul_fire_scythe_right_material": "soul_fire_scythe/soul_fire_scythe"
+					honing_progress: 287
+					id: "6c8be754-286f-42da-b3d4-17dadc586f0c"
+					weapon_attributes: "{\"parent\":\"bettercombat:scythe\",\"attributes\":{\"attack_range\":3.0,\"pose\":\"bettercombat:pose_two_handed_scythe\",\"two_handed\":true,\"category\":\"scythe\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:scythe_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:scythe_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+				}
+			}
+			id: "17C30E3B0635EC76"
+			tasks: [{
+				id: "586711542A9C7A43"
+				title: "灵魂火镰"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"137C9220F86DD557"
+				"19C9240CC2FCED23"
+				"17C30E3B0635EC76"
+			]
+			icon: "art_of_forging:demonic_blade"
+			id: "7259774FF36EFCA6"
+			tasks: [
+				{
+					id: "4C1F5DF05E48FC4B"
+					item: "art_of_forging:demonic_blade"
+					type: "item"
+				}
+				{
+					id: "7731AEB54A07343A"
+					item: "art_of_forging:demonic_axe"
+					type: "item"
+				}
+				{
+					id: "60C8444F65A1D39D"
+					item: "art_of_forging:demonic_flail"
+					type: "item"
+				}
+			]
+			x: -9.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "4E3D0A015ECF75F2"
+			size: 1.5d
+			tasks: [{
+				id: "7C939EE3B6AC6015"
+				item: "witheringboon:blackbloodblade"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4E3D0A015ECF75F2"]
+			id: "23DBC78515F34004"
+			tasks: [{
+				id: "1368500368013449"
+				item: "witheringboon:soulaniteingot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["77A9515AA98A2567"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_progress: 500
+					id: "8ee3a958-b2a5-4707-a231-4e71661b9ef9"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/crucible_blade"
+					"sword/blade:quality": 1
+					"sword/blade:sword/architect_imprv": 0
+					"sword/crucible_blade_material": "crucible_blade/endsteel_ingot"
+					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:quality": 1
+					"sword/pommel": "sword/grip_loop"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:sword\",\"attributes\":{\"attack_range\":3.5,\"two_handed\":false,\"category\":\"sword\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_stab\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.2,\"randomness\":0.1}}]}}"
+				}
+			}
+			id: "6078B3E3ACE67D7E"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "2C6B18F0DAF6966E"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "true_crucible"
+								glyphs: [I;
+									8
+									7
+									9
+									2
+								]
+								intricate: 1b
+								key: "sword/crucible/architects_crucible_blade"
+								material: 2
+								ribbon: "ff0042"
+								schematics: [
+									"tetra:sword/crucible_blade"
+									"tetra:sword/crucible/architects_crucible_blade"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: 12.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["311424590CC23510"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_available: 1b
+					honing_count: 13
+					honing_progress: -140
+					id: "6e6b6160-2115-4ad5-aca4-3439e1c25677"
+					repairCount: 1
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/katana_blade"
+					"sword/blade:quality": 1
+					"sword/blade:sword/thousand_cold_nights_imprv": 0
+					"sword/counterweight_material": "counterweight/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt/settle_progress": 1574
+					"sword/hilt:hilt_hone/damage": 1
+					"sword/hilt:hone_gild": 1
+					"sword/hilt:settled": 1
+					"sword/katana_blade_material": "katana_blade/endsteel_ingot"
+					"sword/pommel": "sword/counterweight"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":3.0,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+				}
+			}
+			id: "76D096AB589DA308"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "6D4D4A69EC3FFCD9"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "otherworldly"
+								glyphs: [I;
+									7
+									8
+									14
+									13
+								]
+								intricate: 1b
+								key: "sword/thousand_cold_nights"
+								material: 2
+								ribbon: "5c7c80"
+								schematics: [
+									"tetra:sword/katana/murasama_blade"
+									"tetra:sword/thousand_cold_nights"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -16.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "22EB3CAE02880E7F"
+			size: 1.5d
+			tasks: [{
+				id: "6C18BC704E5273A7"
 				item: "tetra:dragon_sinew"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 9.5d
+			x: 3.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["5179E7D563BB6819"]
-			description: [""]
-			id: "732E550DD47E7889"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "659B7C8B6B84C77E"
-					type: "random"
+			dependencies: ["23DBC78515F34004"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					honing_available: 1b
+					honing_progress: -19
+					id: "59adf940-a857-4931-8c92-b728e7d3202a"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/souleatingblade"
+					"sword/blade/settle_progress": 1505
+					"sword/decorative_pommel_material": "decorative_pommel/iron"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt/settle_progress": 535
+					"sword/pommel": "sword/decorative_pommel"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					"sword/souleatingblade_material": "souleatingblade/souleatingblade"
+					weapon_attributes: "{\"parent\":\"bettercombat:claymore\",\"attributes\":{\"attack_range\":3.0,\"pose\":\"bettercombat:pose_two_handed_sword\",\"two_handed\":true,\"category\":\"claymore\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:claymore_swing\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_stab_left\",\"swing_sound\":{\"id\":\"bettercombat:claymore_stab\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.25,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slam\",\"swing_sound\":{\"id\":\"bettercombat:claymore_slam\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.0}}]}}"
 				}
-				{
-					id: "7F7706159972AFF7"
-					type: "xp_levels"
-					xp_levels: 5
-				}
-			]
-			subtitle: "追求提升"
+			}
+			id: "69FDAEA318C16F60"
 			tasks: [{
-				id: "5F3FE62684C01198"
-				item: "tetra:planar_stabilizer"
-				type: "item"
+				id: "0DBB02EA363F9C17"
+				title: "噬魂之刃"
+				type: "checkmark"
 			}]
-			x: 2.0d
-			y: 9.5d
+			x: 9.0d
+			y: 0.0d
 		}
 		{
-			description: [""]
-			id: "26E0C6570CBE3AC9"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3EF1258F8FDA3A7E"
-					type: "random"
-				}
-				{
-					id: "549D1A618088C185"
-					type: "xp_levels"
-					xp_levels: 3
-				}
-			]
-			subtitle: "下矿?"
+			dependencies: ["1395569F70AEFEE2"]
+			id: "0D248D4F04552839"
 			tasks: [{
-				id: "5B89C255976BD5B4"
-				item: "tetra:chthonic_extractor"
+				id: "5228691B7AF83F40"
+				item: "art_of_forging:devils_soul_gem"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 9.5d
+			x: 3.0d
+			y: -6.0d
 		}
 		{
-			description: [""]
-			id: "4A6F9154B36C333A"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3F9659B297FF9949"
-					type: "random"
-				}
-				{
-					id: "3D71BD7B4D58677E"
-					type: "xp"
-					xp: 180
-				}
-			]
-			subtitle: "我的神弓！"
+			dependencies: ["4178108D392476B9"]
+			id: "1395569F70AEFEE2"
+			size: 1.5d
 			tasks: [{
-				id: "057555776C93D77B"
-				item: "tetra:forged_bolt"
+				id: "5BBFAA1C222297B5"
+				item: "art_of_forging:nano_insectoid"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 9.5d
+			x: 0.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			hide_dependency_lines: true
+			id: "033C857187DC6731"
+			size: 1.5d
+			tasks: [{
+				icon: "minecraft:echo_shard"
+				id: "021A5012962A0F19"
+				structure: "minecraft:ancient_city"
+				title: "发现远古城市"
+				type: "structure"
+			}]
+			x: -6.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"033C857187DC6731"
+				"1395569F70AEFEE2"
+			]
+			id: "5BAADF26B7A390EB"
+			tasks: [{
+				id: "6F8CAE1DE6EC4EC0"
+				item: "art_of_forging:eerie_shard"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["1395569F70AEFEE2"]
+			id: "06478E19031CB2DC"
+			tasks: [{
+				id: "1815BC1FE4BB247A"
+				item: "art_of_forging:heart_of_ender"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["1395569F70AEFEE2"]
+			id: "0BE48240C8B3FA5B"
+			tasks: [{
+				id: "6853C39CED2388F4"
+				item: "art_of_forging:potent_mixture"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["033C857187DC6731"]
+			id: "2D7B9FCFE620EA5D"
+			tasks: [{
+				id: "6354870F00DF7366"
+				item: "minecraft:echo_shard"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["35C5712DB94C5022"]
+			id: "33BC499F630A44DB"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				advancement: "tetra:art_of_forging/remembrance_upgrade"
+				criterion: ""
+				id: "29821F39429E2463"
+				type: "advancement"
+			}]
+			x: 9.0d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"0D248D4F04552839"
+				"5FC72D360093BE89"
+			]
+			id: "35C5712DB94C5022"
+			tasks: [{
+				id: "56060D49318460F2"
+				title: "追忆卷轴"
+				type: "checkmark"
+			}]
+			title: "暂未完成：追忆卷轴"
+			x: 6.0d
+			y: -6.0d
+		}
+		{
+			id: "5FC72D360093BE89"
+			tasks: [
+				{
+					id: "5ACC547ECB1E3FA4"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "art_of_forging"
+									glyphs: [I;
+										8
+										1
+										9
+										5
+									]
+									intricate: 0b
+									key: "bow/stave/dreadnought_stave"
+									material: 1
+									ribbon: "f3b31f"
+									schematics: [
+										"tetra:bow/stave/dreadnought_stave"
+										"tetra:bow/stave/dreadnought_cross_stave"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4E9A6CF67271F5F7"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "art_of_forging"
+									glyphs: [I;
+										15
+										13
+										12
+										14
+									]
+									intricate: 0b
+									key: "bow/string/compound_string"
+									material: 1
+									ribbon: "19e588"
+									schematics: [
+										"tetra:bow/string/compound_string"
+										"tetra:crossbow/string/compound_cross_string"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 5.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "740D759F98D9A8CF"
+			tasks: [{
+				id: "54A6FCF5194E2AFC"
+				item: "minecraft:dragon_breath"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "09D6DDED6D63A613"
+			tasks: [{
+				id: "3545C85B76D96227"
+				title: "alex洞穴材料"
+				type: "checkmark"
+			}]
+			title: "待定材料"
+			x: 0.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "392BB596FCE8221B"
+			tasks: [{
+				id: "49E77A7B41F6E17E"
+				item: "art_of_forging:heart_of_ender"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "1DD863B1746B045F"
+			tasks: [{
+				id: "4577A4C3D2FB6C5E"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "iceandfire:dragon_bloods"
+					}
+				}
+				title: "任意龙血"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"141E662DB7E1864B"
+				"6579F3450069ADAB"
+				"09623C8269E58620"
+				"19B357651B572CC7"
+			]
+			id: "19419665C1CD0351"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "6BA056B9D68E4DF4"
+				item: "dreadsteel:dreadsteel_ingot"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "141E662DB7E1864B"
+			tasks: [{
+				id: "6F1C2E46317B8165"
+				type: "checkmark"
+			}]
+			title: "待定材料1"
+			x: -7.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "19B357651B572CC7"
+			tasks: [{
+				id: "39EA75ACC264A3EA"
+				item: "iceandfire:dread_shard"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "09623C8269E58620"
+			tasks: [{
+				id: "7ED4E196400B67D3"
+				title: "待定材料3"
+				type: "checkmark"
+			}]
+			x: -5.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "6579F3450069ADAB"
+			tasks: [{
+				id: "30C48A1321E57503"
+				title: "待定材料2"
+				type: "checkmark"
+			}]
+			x: -6.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "072C57A43EFA47D2"
+			tasks: [{
+				id: "1EDA1BA115AFC626"
+				title: "待定材料2"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["50E6BE9153146BF5"]
+			id: "0D352790BA1FF3E6"
+			tasks: [{
+				id: "4CA3DCB2CA9B9B8A"
+				title: "待定材料1"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: 5.0d
 		}
 	]
-	title: "&a锻造之美&r"
+	title: "&3转·锻造之艺"
 }

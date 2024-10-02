@@ -27,7 +27,6 @@ migrateCopycatsOnInitialize = true
 	copycat_wall = true
 	six_way_gearbox = true
 	crank_wheel = true
-	fan_freezing_catalyst = true
 	encased_chain_cogwheel = true
 	sequenced_pulse_generator = true
 	freewheel_clutch = true
@@ -39,4 +38,26 @@ migrateCopycatsOnInitialize = true
 	copycat_fence = true
 	bamboo_window = true
 	cherry_window = true
+	inventory_access_port = true
+	inventory_bridge = true
+
+#.
+#Enable/disable categories of features. Disabling a category hides all related features. Values on server override clients
+[feature_categories]
+	#.
+	#.
+	#All kinetic components, such as gearboxes and crank wheels
+	kinetic = true
+	#.
+	#All redstone components, such as linked transmitter and sequenced pulse generator
+	redstone = true
+	#.
+	#All components related to item and fluid transport
+	logistics = true
+	#.
+	#All copycats (Install Create: Copycats+ to upgrade)
+	copycats = true
+	#.
+	#All building palette blocks
+	palette = true
 

@@ -1,0 +1,22 @@
+{
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "vintagedelight"
+        }
+    ],
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
+    "displayItem": {
+        "item": "some_assembly_required:spread",
+        "nbt": {
+            "Color": 15587526
+        }
+    },
+    "fullName": {
+      "translate": "some_assembly_required.ingredient.nut_milk"
+    },
+    "item": "vintagedelight:nut_milk_bottle",
+    "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
+}

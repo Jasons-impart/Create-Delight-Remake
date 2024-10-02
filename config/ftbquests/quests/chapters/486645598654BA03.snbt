@@ -5,16 +5,7 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "minecraft:wither_skeleton_skull"
 	id: "486645598654BA03"
-	images: [{
-		alpha: 100
-		height: 9.0d
-		image: "endrem:items/nether_eye"
-		rotation: 0.0d
-		width: 9.0d
-		x: 4.285714285714285d
-		y: 1.75d
-	}]
-	order_index: 2
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -117,12 +108,6 @@
 		{
 			dependencies: ["1D3002399A5DCB18"]
 			id: "49E8339C5ADFCD3F"
-			rewards: [{
-				count: 10
-				id: "505D20A52C14D794"
-				item: "nethersdelight:warped_moldy_meat"
-				type: "item"
-			}]
 			subtitle: "受死吧，&4可恶的人类！！！"
 			tasks: [{
 				advancement: "alexsmobs:alexsmobs/warped_mosco_kill"
@@ -405,8 +390,8 @@
 				item: "minecraft:netherite_ingot"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 5.0d
+			x: 3.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["5AD01D1C54DE1993"]
@@ -744,9 +729,10 @@
 		}
 		{
 			dependencies: ["70A228B8AA9BFE0E"]
+			description: [""]
 			hide_dependent_lines: true
 			id: "206855F86F4DE3C8"
-			subtitle: "已经没用啦~，甚至连要塞都找不到的东西（"
+			subtitle: "要去末地之前必须去往所有群星！"
 			tasks: [{
 				id: "30760B5269229805"
 				item: "minecraft:ender_pearl"

@@ -21,6 +21,7 @@ ServerEvents.recipes(e => {
         "corn_delight:cooking/creamed_corn",
         "corn_delight:taco",
         "corn_delight:cutting/wild_corn",
+        "corn_delight:corn_from_crate",
     ])
     remove_recipes_output(e, [
         "corn_delight:corn_seeds"

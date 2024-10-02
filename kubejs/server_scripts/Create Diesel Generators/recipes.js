@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/engine_piston_from_rods",
   ])
   // 替换安山合金
-  e.replaceInput({ mod: "createdieselgenerators" }, "create:andesite_alloy", "#forge:ingots/steel")
+  e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid"}, "create:andesite_alloy", "#forge:ingots/steel")
+  e.replaceInput({id: "createdieselgenerators:crafting/basin_lid"}, "create:andesite_alloy", 'createbigcannons:cast_iron_ingot')
   e.replaceInput({ mod: "createdieselgenerators" }, "create:propeller", "ad_astra:fan")
   e.custom({
     "type": "minecraft:crafting_shaped",
@@ -40,8 +41,8 @@ ServerEvents.recipes(e => {
     }
   }).id("createdieselgenerators:crafting/distillation_controller")
   let iner = "createdelight:incomplete_diesel_engine"
-  e.recipes.create.sequenced_assembly("createdieselgenerators:diesel_engine", "createdelight:bronze_block", [
-    e.recipes.vintageimprovements.turning(iner, iner),
+  e.recipes.create.sequenced_assembly("createdieselgenerators:diesel_engine", "minecraft:polished_blackstone_slab", [
+    e.recipes.create.deploying(iner, [iner, "createdelight:bronze_block"]),
     e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
     e.recipes.create.deploying(iner, [iner, "createdieselgenerators:engine_piston"]),
     e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
@@ -73,4 +74,23 @@ ServerEvents.recipes(e => {
     .id("createdieselgenerators:crafting/huge_diesel_engine")
   e.recipes.vintageimprovements.turning("3x createdieselgenerators:oil_barrel", "createmetallurgy:steel_block")
     .id("createdieselgenerators:crafting/oil_barrel")
+  e.custom({
+    "type": "createdieselgenerators:basin_fermenting",
+    "ingredients": [
+      {
+        "tag": 'minecraft:coals'
+      }
+    ],
+    "processingTime": 200,
+    "results": [
+      {
+        "item": 'vintageimprovements:sulfur_chunk'
+      },
+      {
+        "item": 'vintageimprovements:sulfur_chunk',
+        "chance": 0.25
+      }
+    ],
+    "heatRequirement": "heated"
+  }).id("createdieselgenerators:basin_fermenting/coals")
 })
