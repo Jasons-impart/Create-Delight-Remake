@@ -1,0 +1,43 @@
+{
+    "type": "createdelight:alexscaves_dimension",
+    "generator": {
+      "type": "minecraft:noise",
+      "settings": "createdelight:alexscaves_dimension",
+      "biome_source": {
+        "type": "minecraft:multi_noise",
+        "biomes": [
+          {
+            "biome": "alexscaves:magnetic_caves",
+            "parameters": {
+              "temperature": 0,
+              "humidity": 0,
+              "continentalness": 0,
+              "erosion": 0,
+              "weirdness": 0,
+              "depth": [
+                1,
+                2
+              ],
+              "offset": 0
+            }
+          },
+          {
+            "biome": "minecraft:dripstone_caves",
+            "parameters": {
+              "temperature": 0,
+              "humidity": 0,
+              "continentalness": 0,
+              "erosion": 0,
+              "weirdness": 0,
+              "depth": [
+                -2,
+                -1
+              ],
+              "offset": 0
+            }
+          }
+        ]
+      }
+    }
+  }
+  

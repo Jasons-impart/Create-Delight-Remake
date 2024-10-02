@@ -1,0 +1,8 @@
+#Choose how many wire sections are rendered in one meter (block).
+#Decreasing this value can theoretically improve performance
+#Range: > 1
+wireSectionsPerMeter = 10
+#...wire thickness...
+#Range: 0.0 ~ 1.7976931348623157E308
+wireThickness = 0.03
+

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "createdelight:toxic_caves_dimension",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "alexscaves:toxic_caves"
+    }
+  }
+}

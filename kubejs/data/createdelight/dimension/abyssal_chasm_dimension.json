@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:overworld",
+    "generator": {
+      "type": "minecraft:noise",
+      "settings": "createdelight:abyssal_chasm_dimension",
+      "biome_source": {
+        "type": "minecraft:fixed",
+        "biome": "alexscaves:abyssal_chasm"
+      }
+    }
+  }
+  
