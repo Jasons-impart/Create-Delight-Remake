@@ -38,9 +38,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 8,
+                        "nbt" : {"gateway":"iceandfire:lightning_dragon_blood"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -82,9 +84,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 18,
+                        "nbt" : {"gateway":"iceandfire:dragonscales_amythest"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -126,9 +130,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 2
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 8,
+                        "nbt" : {"gateway":"iceandfire:dragonforge_lightning_brick"}}
 				}
 			],
 			"max_wave_time": 800,

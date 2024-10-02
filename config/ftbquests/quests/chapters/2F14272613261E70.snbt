@@ -13,7 +13,7 @@
 			rotation: 0.0d
 			width: 14.0d
 			x: 2.0d
-			y: -1.0d
+			y: -6.5d
 		}
 		{
 			height: 3.0d
@@ -29,7 +29,7 @@
 			rotation: 0.0d
 			width: 6.0d
 			x: 2.0d
-			y: 10.0d
+			y: 9.0d
 		}
 		{
 			height: 2.0d
@@ -37,17 +37,38 @@
 			rotation: 0.0d
 			width: 2.0d
 			x: 2.0d
-			y: 11.5d
+			y: 11.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_fire"
+			rotation: 0.0d
+			width: 4.0d
+			x: -3.5d
+			y: -1.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_ice"
+			rotation: 0.0d
+			width: 4.0d
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_lightning"
+			rotation: 0.0d
+			width: 4.0d
+			x: 8.0d
+			y: -1.0d
 		}
 	]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: [
-				"5981A5D70F26A7A5"
-				"75605D2B058F2DA5"
-			]
+			dependencies: ["75605D2B058F2DA5"]
 			description: [
 				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
 				"                                                  ——《异兽手记·竦怖军团》"
@@ -104,7 +125,7 @@
 			]
 			title: "&1凛冬之寒"
 			x: 2.0d
-			y: -1.0d
+			y: -7.0d
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
@@ -175,30 +196,254 @@
 			]
 			title: "&4刺骨&r&k111&r&c穿心&r......"
 			x: 2.0d
-			y: 9.0d
+			y: 8.0d
 		}
 		{
-			icon: "witheringboon:witheredsoulstone"
+			description: ["                 流莺飞燕自来往，底事归途芳草长。"]
+			hide: false
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:lightning_dragon"
+				}
+			}
 			id: "5981A5D70F26A7A5"
+			rewards: [
+				{
+					id: "5EE9EE3529289ECA"
+					item: {
+						Count: 1
+						id: "supplementaries:flute"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "657571807D06C27E"
+					item: {
+						Count: 1
+						id: "netmusic:music_cd"
+						tag: {
+							NetMusicSongInfo: {
+								artists: ["The Journeymen"]
+								name: "500 Miles"
+								read_only: 0b
+								time: 193
+								url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+								vip: 0b
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "离地而居"
 			tasks: [{
 				id: "18FE7BED9A8A3B93"
-				title: "这是一个标记"
+				title: "边境故乡"
 				type: "checkmark"
 			}]
-			title: "&4异界之灾！"
+			title: "何方归途"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
+			dependencies: ["6EE16F38DAF6F30D"]
+			description: ["{image:iceandfire:block/dragonforge_ice_brick_grill width:100 height:100 align:center}"]
 			id: "75605D2B058F2DA5"
+			rewards: [{
+				count: 5
+				id: "5D43785F9E62409C"
+				item: "createdelight:glacio_ore_cluster"
+				type: "item"
+			}]
+			shape: "square"
 			subtitle: "悚怖生物只可在&6冰原星&r召唤！"
 			tasks: [{
-				id: "45AF760E66EDAA6A"
-				title: "&4注意！"
-				type: "checkmark"
+				biome: "ad_astra:glacio_snowy_barrens"
+				icon: "ad_astra:ice_shard"
+				id: "2A6943F251FD983F"
+				title: "寒霜之星"
+				type: "biome"
 			}]
-			x: 4.0d
-			y: 0.5d
+			title: "&b极寒之狱"
+			x: 2.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"        冰龙是漫游于主世界上空的三种龙之一，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
+				"                                                              ——《异兽笔记·冰龙》"
+			]
+			id: "6EE16F38DAF6F30D"
+			rewards: [
+				{
+					id: "059C81CB0E8C3F89"
+					item: {
+						Count: 1
+						id: "iceandfire:dread_knight_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "40789296BF70D1B9"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_ice"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "冰冻三尺非一日之寒"
+			tasks: [
+				{
+					id: "0DC97E98F2CDB730"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:ice_dragon"
+						}
+					}
+					type: "item"
+				}
+				{
+					entity: "iceandfire:ice_dragon"
+					id: "0219772DAE948195"
+					type: "kill"
+					value: 12L
+				}
+			]
+			title: "&b踏冰而行！"
+			x: 2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"        作为自然元素的象征，爬行巨兽——无论冰火，一直在人类社会中作为传奇而广为人知但有传闻，还有一种巨兽与他们相似却只居住在最奇异的环境中：它们，便是电龙。"
+				"                                                          ———《异兽笔记·电龙》"
+			]
+			id: "788769F0E610DB74"
+			rewards: [
+				{
+					id: "5C18311ACA5AF781"
+					item: {
+						Count: 1
+						id: "aether:lightning_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "46B5A29F73AF6412"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_lightning"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "惊雷震天"
+			tasks: [
+				{
+					id: "41DAAAFD407BF6B2"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:lightning_dragon"
+						}
+					}
+					type: "item"
+				}
+				{
+					entity: "iceandfire:lightning_dragon"
+					id: "44681A935FC205B9"
+					type: "kill"
+					value: 12L
+				}
+			]
+			title: "&1疾雷甚箭！"
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"         火龙是漫游于主世界上空的三种龙之一，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。 "
+				"                                                            ——《异兽笔记·火龙》             "
+			]
+			id: "28D6DD2C306E32AE"
+			rewards: [
+				{
+					id: "41E0D57BBA0F32EC"
+					item: {
+						Count: 1
+						id: "aether:flaming_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1F8C0A83685E96C7"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_fire"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "狻猊腾云,蒲牢鸣钟!"
+			tasks: [
+				{
+					id: "406D38C395D5A45B"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:fire_dragon_eyes"
+						}
+					}
+					type: "item"
+				}
+				{
+					entity: "iceandfire:fire_dragon"
+					id: "2E51AD3A37355139"
+					type: "kill"
+					value: 12L
+				}
+			]
+			title: "&4吾身如火！"
+			x: -4.0d
+			y: 0.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]
