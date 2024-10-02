@@ -1,4 +1,5 @@
 ServerEvents.recipes(event => {
+    const { create, vintageimprovements, minecraft } = event.recipes;
     // 移除配方：ad_astra
     remove_recipes_type(
         event,
@@ -43,7 +44,8 @@ ServerEvents.recipes(event => {
     );
 
     // 新增配方：霜原木
-    event.shapeless(
+    
+    minecraft.crafting_shapeless(
         "ad_astra:glacian_log",
         [
             "#minecraft:logs",
@@ -51,7 +53,7 @@ ServerEvents.recipes(event => {
         ]
     );
     // 新增配方：霜原树叶
-    event.shapeless(
+    minecraft.crafting_shapeless(
         "ad_astra:glacian_leaves",
         [
             "#minecraft:leaves",
@@ -59,7 +61,7 @@ ServerEvents.recipes(event => {
         ]
     );
     // 替换配方：喷气式航天服
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:jet_suit",
         [
             "ABA",
@@ -77,7 +79,7 @@ ServerEvents.recipes(event => {
     ).id("ad_astra:jet_suit");
 
     // 替换配方：氧气罐
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:gas_tank",
         [
             "ABA",
@@ -91,7 +93,7 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:gas_tank");
     // 替换配方：引擎框架
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:engine_frame",
         [
             "AAA",
@@ -104,7 +106,7 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:engine_frame");
     // 替换配方：引擎风扇
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:fan",
         [
             " A ",
@@ -117,7 +119,7 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:fan");
     // 替换配方：充能器
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:energizer",
         [
             "ABA",
@@ -132,7 +134,7 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:energizer");
     // 石墨
-    event.shapeless(
+    minecraft.crafting_shapeless(
         "createmetallurgy:graphite",
         [
             "8x #minecraft:coals",
@@ -140,7 +142,7 @@ ServerEvents.recipes(event => {
         ]
     ).id("createmetallurgy:graphite");
     // 替换配方：氧气装载机
-    event.shaped(
+    minecraft.crafting_shaped(
         "createdelight:electrolyzer",
         [
             "AAA",
@@ -155,14 +157,14 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:oxygen_loader");
     // 混合燃料
-    event.recipes.create.mixing(
+    create.mixing(
         Fluid.of("createdelight:fuel_mixtures", 10),
         [
             Fluid.of("createdieselgenerators:gasoline", 10),
             Fluid.of("createdieselgenerators:diesel", 10),
         ]
     ).id("ad_astra:recipes/fuel_mixtures");
-    event.recipes.create.mixing(
+    create.mixing(
         Fluid.of("createdelight:fuel_mixtures", 20),
         [
             Fluid.of("createdieselgenerators:gasoline", 20),
@@ -170,7 +172,7 @@ ServerEvents.recipes(event => {
         ]
     ).id("ad_astra:sub_recipes/fuel_mixtures");
     // 电子核心
-    event.shaped(
+    minecraft.crafting_shaped(
         "3x ad_astra:etrionic_core",
         [
             "AAA",
@@ -183,7 +185,7 @@ ServerEvents.recipes(event => {
         }
     ).id("ad_astra:crafting/etrionic_core");
     // 电容器
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:etrionic_capacitor",
         [
             "ABA",
@@ -204,7 +206,7 @@ ServerEvents.recipes(event => {
         "ad_astra:etrionic_core"
     );
     // 太阳能
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra:solar_panel",
         [
             "AAA",
@@ -218,7 +220,7 @@ ServerEvents.recipes(event => {
             D: "ad_astra:etrionic_core",
         }
     ).id("ad_astra:solar_panel");
-    event.shaped(
+    minecraft.crafting_shaped(
         "ad_astra_giselle_addon:oxygen_can",
         [
             " A ",
