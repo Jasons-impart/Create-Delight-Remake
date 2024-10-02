@@ -40,9 +40,9 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "gateways:gate_pearl", 
+                        "item": "iceandfire:ice_dragon_blood", 
                         "count": 8,
-                        "nbt" : {"gateway":"iceandfire:ice_dragon_blood"}}
+                        "nbt" : {"iceandfirey":"iceandfire:ice_dragon_blood"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -86,9 +86,9 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "gateways:gate_pearl", 
+                        "item": "iceandfire:dragonscales_white", 
                         "count": 18,
-                        "nbt" : {"gateway":"iceandfire:dragonscales_white"}}
+                        "nbt" : {"iceandfire":"iceandfire:dragonscales_white"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -132,9 +132,9 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "gateways:gate_pearl", 
+                        "item": "iceandfire:dragonforge_ice_brick", 
                         "count": 8,
-                        "nbt" : {"gateway":"iceandfire:dragonforge_ice_brick"}}
+                        "nbt" : {"iceandfire":"iceandfire:dragonforge_ice_brick"}}
 				}
 			],
 			"max_wave_time": 800,
