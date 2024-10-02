@@ -150,10 +150,10 @@
 	],
 	"failures": [
 		{
-		"type": "gateways:explosion",
-        "strength": 25,
-        "fire": true,
-        "block_damage": true
-		}
+			"type": "gateways:explosion",
+			"strength": 6,
+			"fire": true,
+			"block_damage": true
+			}
 	]
 }

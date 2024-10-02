@@ -151,7 +151,7 @@
 	"failures": [
 		{
 			"type": "gateways:explosion",
-			"strength": 15,
+			"strength": 6,
 			"fire": true,
 			"block_damage": true
 			}
