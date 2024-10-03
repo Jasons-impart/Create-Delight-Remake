@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     //增加配方：冰龙试炼珍珠合成
-    e.shaped(Item.of("gateways:gate_pearl", "{gateway:"createdelight: ice_dragon"}"), [
+    e.shaped(Item.of("gateways:gate_pearl", "{gateway:\"createdelight:ice_dragon\"}"), [
         "ABA",
         "CDC",
         "ABA"
@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         D: "minecraft:nether_star"
     })
     //增加配方：火龙试炼珍珠合成
-    e.shaped(Item.of("gateways:gate_pearl", "{gateway:"createdelight: fire_dragon_eyes"}"), [
+    e.shaped(Item.of("gateways:gate_pearl", "{gateway:\"createdelight:fire_dragon_eyes\"}"), [
         "ABA",
         "CDC",
         "ABA"
@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
         D: "minecraft:nether_star"
     })
     //增加配方：雷龙试炼珍珠合成
-    e.shaped(Item.of("gateways:gate_pearl", "{gateway:"createdelight: lightning_dragon"}"), [
+    e.shaped(Item.of("gateways:gate_pearl", "{gateway:\"createdelight:lightning_dragon\"}"), [
         "ABA",
         "CDC",
         "ABA"
@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
     const incomplete = "gateways:gate_pearl"
 
     create.sequenced_assembly([
-        Item.of(Item.of("gateways:gate_pearl", "{gateway:"createdelight: the_gate_of_eternal_cold"}")).withChance(2.9),
+        Item.of("gateways:gate_pearl", "{gateway:\"createdelight:the_gate_of_eternal_cold\"}").withChance(2.9),
         Item.of("minecarft:ender_pearl").withChance(0.1),
     ], "minecraft:ender_pearl", [
         create.cutting(incomplete, incomplete),
@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
     const incomplete_2 = "gateways:gate_pearl"
 
     create.sequenced_assembly([
-        Item.of(Item.of("gateways:gate_pearl", "{gateway:"createdelight: piercing_withering_trial"}")).withChance(4.0),
+        Item.of("gateways:gate_pearl", "{gateway:\"createdelight:piercing_withering_trial\"}").withChance(4.0),
         Item.of("minecarft:ender_pearl").withChance(0.01),
     ], "minecraft:ender_pearl", [
         create.cutting(incomplete, incomplete),

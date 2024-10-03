@@ -37,7 +37,7 @@ PlayerEvents.chat((event) => {
 		if (message.trim().equalsIgnoreCase("-kli") &&
 			player.username === playerName[i]) {
 			server.runCommandSilent("kill @e[type=item]")
-			server.runCommandSilent("tellraw @a "§4掉落物已清除"")
+			server.runCommandSilent("tellraw @a \"§4掉落物已清除\"")
 			event.cancel()
 		}
 
@@ -47,7 +47,7 @@ PlayerEvents.chat((event) => {
 			player.runCommandSilent("effect give @s minecraft:night_vision infinite 255 true")
 			player.runCommandSilent("effect give @s minecraft:strength infinite 255 true")
 			player.runCommandSilent("effect give @s minecraft:resistance infinite 255 true")
-			player.runCommandSilent("tellraw @s "§6已获得所有BUFF"")
+			player.runCommandSilent("tellraw @s \"§6已获得所有BUFF\"")
 			event.cancel()
 		}
 
@@ -55,7 +55,7 @@ PlayerEvents.chat((event) => {
 		if (message.trim().equalsIgnoreCase("-efc") &&
 			player.username === playerName[i]) {
 			player.runCommandSilent("effect clear")
-			player.runCommandSilent("tellraw @s "§4已清除所有BUFF"")
+			player.runCommandSilent("tellraw @s \"§4已清除所有BUFF\"")
 			event.cancel()
 		}
 
@@ -63,7 +63,7 @@ PlayerEvents.chat((event) => {
 		if (message.trim().equalsIgnoreCase("-kle") &&
 			player.username === playerName[i]) {
 			server.runCommandSilent("kill @e[type=!player]")
-			server.runCommandSilent("tellraw @a "§4所有实体已清除"")
+			server.runCommandSilent("tellraw @a \"§4所有实体已清除\"")
 			event.cancel()
 		}
 	}
