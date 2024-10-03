@@ -780,6 +780,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -805,6 +806,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -830,6 +832,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -850,6 +853,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -875,6 +879,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -900,6 +905,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -925,6 +931,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -950,6 +957,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -975,6 +983,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1009,6 +1018,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1040,6 +1050,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1074,6 +1085,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1100,6 +1112,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1126,6 +1139,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1152,6 +1166,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1178,6 +1193,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1204,6 +1220,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1230,6 +1247,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1256,6 +1274,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1288,6 +1307,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "坚固守卫"
@@ -1320,6 +1340,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "飞刀"
@@ -1351,6 +1372,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "风啸剑刃"
