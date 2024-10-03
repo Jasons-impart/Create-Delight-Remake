@@ -7,6 +7,9 @@ ServerEvents.recipes(e => {
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding",
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething"
     ])
+    remove_recipes_output(e, [
+        "minecraft:paper"
+    ])
     // 黄铜机械手
     e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
     // 新增配方：玫瑰石英
@@ -119,4 +122,43 @@ ServerEvents.recipes(e => {
     //坚固板的另一个配方
     e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
         .id("vintageimprovements:hammering/sturdy_sheet")
+    //被锯碎的甘蔗
+    e.recipes.create.cutting("createdelight:sawed_sugarcane", "minecraft:sugar_cane")
+        .id("create:cutting/sawed_sugarcane")
+    //待发酵的纸浆
+    e.recipes.create.mixing(Fluid.of("createdelight:unfermented_paper_pulp", 100), ["createdelight:sawed_sugarcane", Fluid.of("minecraft:water", 100)]).heated()
+        .id("create:mixing/unfermented_paper_pulp")
+    e.recipes.create.mixing(Fluid.of("createdelight:unfermented_paper_pulp", 100), ["farmersdelight:tree_bark", Fluid.of("minecraft:water", 100)]).heated()
+        .id("create:mixing/unfermented_paper_pulp/tree_bark")
+    //纸浆
+    e.custom({
+        "type": "createdieselgenerators:basin_fermenting",
+        "ingredients": [
+          {
+            "fluid": "createdelight:unfermented_paper_pulp",
+            "amount": 100
+          }
+        ],
+        "processingTime": 200,
+        "results": [
+          {
+            "fluid": "createdelight:paper_pulp",
+            "amount": 100
+          }
+        ],
+        "heatRequirement": "heated"
+      })
+        .id("vintageimprovements:turning/paper_pulp")
+    //未完成的纸
+    e.recipes.vintageimprovements.vacuumizing("createdelight:incomplete_paper", Fluid.of("createdelight:paper_pulp", 100)).heated()
+    .id("create:vacuumizing/incomplete_paper")
+    //纸
+    let inter1 = "minecraft:paper"
+    e.recipes.create.sequenced_assembly(inter1,"createdelight:incomplete_paper", [
+        e.recipes.create.pressing(inter1,inter1),
+        e.recipes.create.cutting(inter1,inter1)
+    ])
+    .transitionalItem(inter1)
+    .loops(1)
+    .id("create:sepuenced_assembly/paper")
 })

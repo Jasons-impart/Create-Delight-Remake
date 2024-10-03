@@ -115,5 +115,18 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.spent_liquor")
         .translationKey("block.createdelight.spent_liquor")
         .translationKey("item.createdelight.spent_liquor_bucket")
-
+    //纸浆
+    e.create("createdelight:paper_pulp")
+        .thickTexture(0xF0FFFF)
+        .bucketColor(0xF0FFFF)
+        .translationKey("fluid.createdelight.paper_pulp")
+        .translationKey("block.createdelight.paper_pulp")
+        .translationKey("item.createdelight.paper_pulp_bucket")
+    //待发酵的纸浆
+    e.create("createdelight:unfermented_paper_pulp")
+        .thinTexture(0xF0FFFF)
+        .bucketColor(0xF0FFFF)
+        .translationKey("fluid.createdelight.unfermented_paper_pulp")
+        .translationKey("block.createdelight.unfermented_paper_pulp")
+        .translationKey("item.createdelight.unfermented_paper_pulp_bucket")
 })

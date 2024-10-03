@@ -188,6 +188,13 @@
     "createdelight.the_gate_of_eternal_cold": "§9永寒悚怖之门",
     "createdelight.piercing_withering_trial": "§l§5穿刺枯萎试炼",
     "block.createdelight.alloy_electric_furnace": "合金电炉",
-    "item.createdelight.incomplete_fs_upgrade": "未完成的抽屉升级"
-    
+    "item.createdelight.incomplete_fs_upgrade": "未完成的抽屉升级",
+    "fluid.createdelight.paper_pulp": "纸浆",
+    "block.createdelight.paper_pulp": "纸浆",
+    "item.createdelight.paper_pulp_bucket": "纸浆桶",
+    "item.createdelight.sawed_sugarcane": "被锯碎的甘蔗",
+    "fluid.createdelight.unfermented_paper_pulp": "待发酵的纸浆",
+    "block.createdelight.unfermented_paper_pulp": "待发酵的纸浆",
+    "item.createdelight.unfermented_paper_pulp_bucket": "待发酵的纸浆桶",
+    "item.createdelight.incomplete_paper": "未完成的纸"
 }

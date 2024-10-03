@@ -469,4 +469,10 @@ StartupEvents.registry("item", e => {
     // 人造钻石
     e.create("createdelight:mmd_diamond")
         .translationKey("item.createdelight.mmd_diamond")
+    //被锯碎的甘蔗
+    e.create("createdelight:sawed_sugarcane")
+        .translationKey("item.createdelight.sawed_sugarcane")
+    //未完成的纸
+    e.create("createdelight:incomplete_paper")
+        .translationKey("item.createdelight.incomplete_paper")
 })
