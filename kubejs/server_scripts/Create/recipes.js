@@ -150,11 +150,13 @@ ServerEvents.recipes(e => {
       })
         .id("vintageimprovements:turning/paper_pulp")
     //未完成的纸
-    e.recipes.vintageimprovements.vacuumizing("createdelight:incomplete_paper", Fluid.of("createdelight:paper_pulp", 100)).heated()
+    e.recipes.vintageimprovements.vacuumizing(["createdelight:incomplete_paper"], Fluid.of("createdelight:paper_pulp", 100)).heated()
     .id("create:vacuumizing/incomplete_paper")
     //纸
     let inter1 = "minecraft:paper"
-    e.recipes.create.sequenced_assembly(inter1,"createdelight:incomplete_paper", [
+    e.recipes.create.sequenced_assembly([
+        Item.of("2x minecraft:paper")],
+        "createdelight:incomplete_paper", [
         e.recipes.create.pressing(inter1,inter1),
         e.recipes.create.cutting(inter1,inter1)
     ])

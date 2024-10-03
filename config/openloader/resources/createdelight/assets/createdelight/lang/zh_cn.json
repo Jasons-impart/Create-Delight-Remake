@@ -196,5 +196,6 @@
     "fluid.createdelight.unfermented_paper_pulp": "待发酵的纸浆",
     "block.createdelight.unfermented_paper_pulp": "待发酵的纸浆",
     "item.createdelight.unfermented_paper_pulp_bucket": "待发酵的纸浆桶",
-    "item.createdelight.incomplete_paper": "未完成的纸"
+    "item.createdelight.incomplete_paper": "未完成的纸",
+    "item.createdelight.waste_paper": "废纸"
 }
