@@ -48,4 +48,8 @@ ServerEvents.recipes(e => {
             "createbigcannons:molten_bronze"
         ], "heated", 80
     )
+    e.recipes.create.pressing(
+        "createdelight:bronze_sheet",
+        "createdelight:bronze_ingot",
+    ).id("create:pressing/bronze_sheet")
 })
