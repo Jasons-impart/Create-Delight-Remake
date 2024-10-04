@@ -2927,7 +2927,7 @@ ServerEvents.recipes((event) => {
   // 成型核心
   kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
     A: "#forge:nuggets/iron",
-    B: "#forge:gems/quartz",
+    B: "#forge:gems/certus_quartz",
     C: "#forge:dusts/fluix",
     D: "ae2:logic_processor",
   });

@@ -128,6 +128,6 @@ ServerEvents.recipes(e => {
         e.recipes.vintageimprovements.laser_cutting(iner_4, iner_4, 500)
     ])
         .transitionalItem(iner_4)
-        .loops(4)
+        .loops(1)
         .id("createdelight:fourth_stage_rocket_core")
 })
