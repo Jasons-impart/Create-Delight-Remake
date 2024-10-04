@@ -750,8 +750,8 @@
 					type: "item"
 				}
 				{
-					id: "5D1B7304EDFEB837"
-					item: "createbigcannons:molten_steel_bucket"
+					id: "68527CADA6769FC2"
+					item: "createmetallurgy:molten_steel_bucket"
 					type: "item"
 				}
 			]

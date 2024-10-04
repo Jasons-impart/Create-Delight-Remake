@@ -475,4 +475,7 @@ StartupEvents.registry("item", e => {
     //未完成的纸
     e.create("createdelight:incomplete_paper")
         .translationKey("item.createdelight.incomplete_paper")
+    //废纸
+    e.create("createdelight:waste_paper")
+        .translationKey("item.createdelight.waste_paper")
 })

@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
     package_item(e, "culturaldelights:squid", "crabbersdelight:squid_barrel", 9)
     package_item(e, "culturaldelights:glow_squid", "crabbersdelight:glow_squid_barrel", 9)
     cutting(e, 'crabbersdelight:clam', [
-        ['crabbersdelight:clam'],
+        ['crabbersdelight:raw_clam_meat'],
         ['crabbersdelight:pearl', 5, 0.5]
     ])
     cutting(e, 'minecraft:pufferfish', [
