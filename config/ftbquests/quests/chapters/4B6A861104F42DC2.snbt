@@ -186,7 +186,7 @@
 			}]
 			title: "黑曜石锤！"
 			x: 14.5d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -242,7 +242,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -275,8 +275,8 @@
 				type: "advancement"
 			}]
 			title: "千钧之力！"
-			x: 13.015986394557807d
-			y: 3.4828231292516776d
+			x: 13.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -430,8 +430,8 @@
 				type: "item"
 			}]
 			title: "八级锤"
-			x: 13.0d
-			y: 5.0d
+			x: 14.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
