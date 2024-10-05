@@ -1,0 +1,687 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "045A2479E8D37705"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "iceandfire:dragon_skull_ice"
+	id: "045A2479E8D37705"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			icon: "iceandfire:bestiary"
+			id: "2AE0738C43D5A42B"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [
+				{
+					id: "563231D73D0221EB"
+					item: "iceandfire:bestiary"
+					type: "item"
+				}
+				{
+					id: "0AD480E364AEC877"
+					item: "iceandfire:lectern"
+					type: "item"
+				}
+				{
+					id: "1DD6F6BC913214BF"
+					item: "iceandfire:manuscript"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "03B211A53B10318E"
+			tasks: [
+				{
+					id: "2EC5AB13D4C3531C"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "iceandfire:dragon_skulls"
+						}
+					}
+					title: "Any #iceandfire:dragon_skulls"
+					type: "item"
+				}
+				{
+					id: "6553912996329ADE"
+					item: "iceandfire:dragonbone"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -4.5d
+		}
+		{
+			dependencies: [
+				"244B2CABBB89B269"
+				"0B2D858482173126"
+			]
+			dependency_requirement: "one_completed"
+			id: "17D9DB61D8A8DC98"
+			tasks: [{
+				entity: "iceandfire:fire_dragon"
+				id: "7CAC1922654F1A46"
+				type: "kill"
+				value: 1L
+			}]
+			x: 0.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["17D9DB61D8A8DC98"]
+			icon: "iceandfire:dragonscales_red"
+			id: "69CC188E28D83004"
+			tasks: [{
+				id: "1CCA3E7282C3E14B"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "iceandfire:scales/dragon/fire"
+					}
+				}
+				title: "Any #iceandfire:scales/dragon/fire"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["7B89E928C3A6F2E6"]
+			icon: "iceandfire:dragonforge_fire_core_disabled"
+			id: "516EA9DA2724D121"
+			tasks: [
+				{
+					id: "02EA33152F1C451C"
+					item: "iceandfire:dragonforge_fire_brick"
+					type: "item"
+				}
+				{
+					id: "1895D80695C886C9"
+					item: "iceandfire:dragonforge_fire_input"
+					type: "item"
+				}
+				{
+					id: "2959AB497511AE68"
+					item: "iceandfire:dragonforge_fire_core_disabled"
+					type: "item"
+				}
+				{
+					id: "0DF3A5614BF77AB4"
+					item: "iceandfire:dragon_bone_block"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -9.0d
+		}
+		{
+			icon: "iceandfire:dragonforge_ice_core_disabled"
+			id: "4D089CF9272B7C60"
+			tasks: [
+				{
+					id: "365D372937763215"
+					item: "iceandfire:dragonforge_ice_brick"
+					type: "item"
+				}
+				{
+					id: "1C4C8000FB7C2034"
+					item: "iceandfire:dragonforge_ice_input"
+					type: "item"
+				}
+				{
+					id: "2558FB47389F2FFB"
+					item: "iceandfire:dragonforge_ice_core_disabled"
+					type: "item"
+				}
+				{
+					id: "2F203D2802F8B88A"
+					item: "iceandfire:dragon_bone_block"
+					type: "item"
+				}
+			]
+			x: 13.5d
+			y: 3.0d
+		}
+		{
+			icon: "iceandfire:dragonforge_lightning_core_disabled"
+			id: "01E72F560F575A9C"
+			tasks: [
+				{
+					id: "1BD6E61BCC900F11"
+					item: "iceandfire:dragonforge_lightning_brick"
+					type: "item"
+				}
+				{
+					id: "16C6534BCD1C108F"
+					item: "iceandfire:dragonforge_lightning_input"
+					type: "item"
+				}
+				{
+					id: "22BE14BA5B392D71"
+					item: "iceandfire:dragonforge_lightning_core_disabled"
+					type: "item"
+				}
+				{
+					id: "5AE471408ECDC7CD"
+					item: "iceandfire:dragon_bone_block"
+					type: "item"
+				}
+			]
+			x: 15.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["516EA9DA2724D121"]
+			id: "5B93E8E6D33CF5E4"
+			tasks: [{
+				id: "1B4CDE18988A75E8"
+				item: "iceandfire:dragonsteel_fire_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -10.5d
+		}
+		{
+			dependencies: ["4D089CF9272B7C60"]
+			id: "1929725D08B07686"
+			tasks: [{
+				id: "13B7F82AD6466515"
+				item: "iceandfire:dragonsteel_ice_ingot"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["01E72F560F575A9C"]
+			id: "5C0EC9448D4B3AD4"
+			tasks: [{
+				id: "4103F79378D8D3C5"
+				item: "iceandfire:dragonsteel_lightning_ingot"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"556B30C5A2ED0D94"
+				"5D858F179FB2D627"
+			]
+			icon: {
+				Count: 1
+				id: "iceandfire:dragonbone_sword_fire"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "152AF469DBE10F53"
+			min_required_tasks: 1
+			tasks: [
+				{
+					id: "47D5390BFF11F719"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_fire"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7C80ECC75A3AA46A"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_ice"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6F4E86F862A4DF44"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_sword_lightning"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["17D9DB61D8A8DC98"]
+			id: "556B30C5A2ED0D94"
+			tasks: [{
+				id: "67FA75267D4F62AF"
+				item: "iceandfire:fire_dragon_blood"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"03B211A53B10318E"
+				"17D9DB61D8A8DC98"
+			]
+			dependency_requirement: "one_completed"
+			id: "5D858F179FB2D627"
+			tasks: [{
+				id: "79B4FEC392E68754"
+				item: {
+					Count: 1
+					id: "iceandfire:dragonbone_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			id: "6AF0BCF34F1E3853"
+			tasks: [{
+				dimension: "ad_astra:moon"
+				id: "034E20100DBC39D7"
+				type: "dimension"
+			}]
+			title: "月球"
+			x: -3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			id: "244B2CABBB89B269"
+			tasks: [{
+				dimension: "ad_astra:mars"
+				id: "6A87D73715BD6733"
+				type: "dimension"
+			}]
+			title: "火星"
+			x: -1.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			id: "1BEE7AD2537F2428"
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				id: "5F61EA66AEFBD9B5"
+				type: "dimension"
+			}]
+			title: "霜原星"
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			id: "0B2D858482173126"
+			tasks: [{
+				dimension: "ad_astra:mercury"
+				id: "3E2F7F0F21A35C3B"
+				type: "dimension"
+			}]
+			title: "水星"
+			x: 1.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			id: "5246A4941FE396AC"
+			tasks: [{
+				dimension: "ad_astra:venus"
+				id: "24F96FC782F1BB94"
+				type: "dimension"
+			}]
+			title: "金星"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6AF0BCF34F1E3853"]
+			id: "36C9F799E0135534"
+			tasks: [{
+				entity: "aether:cockatrice"
+				id: "0CF304DA0C1B4795"
+				type: "kill"
+				value: 1L
+			}]
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6AF0BCF34F1E3853"]
+			id: "727D7C9DEF77A306"
+			tasks: [{
+				entity: "iceandfire:cyclops"
+				id: "0543E20840257248"
+				type: "kill"
+				value: 1L
+			}]
+			x: -3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["36C9F799E0135534"]
+			id: "6361FC8177EE1302"
+			tasks: [{
+				id: "403A557411B5F5CD"
+				item: "iceandfire:cockatrice_eye"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["36C9F799E0135534"]
+			id: "1675A1ED2A110DAA"
+			tasks: [{
+				id: "6339972979BFB29D"
+				item: "iceandfire:rotten_egg"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["36C9F799E0135534"]
+			id: "2B63A71C7958334A"
+			tasks: [{
+				id: "303FC9FB56C75EC5"
+				item: "iceandfire:cockatrice_skull"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["36C9F799E0135534"]
+			id: "6128230B90665EA9"
+			tasks: [{
+				id: "64025D219ED87AFE"
+				item: "iceandfire:witherbone"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["727D7C9DEF77A306"]
+			id: "299E52DB76168756"
+			tasks: [{
+				id: "424FF61EA150C51D"
+				item: "iceandfire:cyclops_skull"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["727D7C9DEF77A306"]
+			id: "771C223810F33BB5"
+			tasks: [{
+				id: "333BB491F781CD41"
+				item: {
+					Count: 1
+					id: "iceandfire:cyclops_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "33AEA40FA5FE2CE3"
+			tasks: [{
+				entity: "iceandfire:sea_serpent"
+				id: "7AAEA2F3ABDE5020"
+				type: "kill"
+				value: 1L
+			}]
+			x: -2.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"556B30C5A2ED0D94"
+				"69CC188E28D83004"
+			]
+			id: "7B89E928C3A6F2E6"
+			min_required_tasks: 1
+			tasks: [
+				{
+					id: "2FF588316CBC4D9A"
+					item: "iceandfire:dragonegg_red"
+					type: "item"
+				}
+				{
+					id: "1D81A1859324C81D"
+					item: "iceandfire:dragonegg_green"
+					type: "item"
+				}
+				{
+					id: "1D1E8703BD5FE749"
+					item: "iceandfire:dragonegg_bronze"
+					type: "item"
+				}
+				{
+					id: "79C062F131E11096"
+					item: "iceandfire:dragonegg_gray"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["5246A4941FE396AC"]
+			id: "7C9857F0DAD1E04E"
+			tasks: [{
+				entity: "iceandfire:lightning_dragon"
+				id: "115E13A1686B728B"
+				type: "kill"
+				value: 1L
+			}]
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0B2D858482173126"]
+			id: "6A6D74966776E49B"
+			tasks: [{
+				entity: "iceandfire:stymphalian_bird"
+				id: "490C2B557DE4AE68"
+				type: "kill"
+				value: 1L
+			}]
+			x: 3.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1BEE7AD2537F2428"]
+			id: "1D34EBFF1D60EA85"
+			tasks: [{
+				entity: "iceandfire:ice_dragon"
+				id: "4EDEBE19A0009358"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["5246A4941FE396AC"]
+			id: "71CBDE6F46E867ED"
+			tasks: [{
+				entity: "iceandfire:deathworm"
+				id: "3564736E44D0BA17"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["5246A4941FE396AC"]
+			id: "6DAF4BB49D52FD8B"
+			tasks: [{
+				entity: "iceandfire:hydra"
+				id: "059DBA24B756E367"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["5246A4941FE396AC"]
+			id: "77B14A2DDB78829C"
+			tasks: [{
+				entity: "iceandfire:amphithere"
+				id: "43FF49493AD282D9"
+				type: "kill"
+				value: 1L
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["244B2CABBB89B269"]
+			id: "2652F9C2A88605B3"
+			tasks: [{
+				id: "0D279802D4ABD131"
+				title: "恐蚁"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["1BEE7AD2537F2428"]
+			id: "5DAF3876129A89A9"
+			tasks: [{
+				id: "5FD95F53CFAA4342"
+				structure: "idas:iceandfire/dread_citadel"
+				type: "structure"
+			}]
+			x: 2.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["2AE0738C43D5A42B"]
+			disable_toast: true
+			id: "06E9305FCDABCD28"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				id: "3782FD07D15E1C1B"
+				type: "dimension"
+			}]
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "36350630DD6F9724"
+			tasks: [{
+				id: "5C92E6CBAAEE44F1"
+				structure: "idas:labyrinth"
+				type: "structure"
+			}]
+			x: -1.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "569303FE1B0810A0"
+			tasks: [{
+				entity: "iceandfire:siren"
+				id: "14F19DCE413F9DE5"
+				type: "kill"
+				value: 1L
+			}]
+			x: -4.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "3A6EEE7BAE1ACB81"
+			tasks: [{
+				entity: "iceandfire:ghost"
+				id: "1DC55AE58ED4C046"
+				type: "kill"
+				value: 1L
+			}]
+			x: -4.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "6A73BFA1FD7B98A9"
+			tasks: [{
+				entity: "iceandfire:troll"
+				id: "21A610ACD207D0B7"
+				type: "kill"
+				value: 1L
+			}]
+			x: -4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["36350630DD6F9724"]
+			id: "1F4036E773E1E9F1"
+			tasks: [{
+				entity: "iceandfire:gorgon"
+				id: "372C2920DB9B9E61"
+				type: "kill"
+				value: 1L
+			}]
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["1F4036E773E1E9F1"]
+			id: "1E07922289055F60"
+			tasks: [{
+				id: "6D5A5ED5D027F85A"
+				item: "iceandfire:dread_key"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["06E9305FCDABCD28"]
+			id: "43A601DE6C882054"
+			tasks: [{
+				entity: "iceandfire:hippocampus"
+				id: "044C25C464CEB713"
+				type: "kill"
+				value: 1L
+			}]
+			x: -3.5d
+			y: 4.5d
+		}
+	]
+	title: "异兽传说"
+}

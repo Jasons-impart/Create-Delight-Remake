@@ -1073,8 +1073,8 @@
 				item: "minecraft:echo_shard"
 				type: "item"
 			}]
-			x: -4.5d
-			y: -5.0d
+			x: -5.0d
+			y: -7.0d
 		}
 		{
 			dependencies: ["35C5712DB94C5022"]
