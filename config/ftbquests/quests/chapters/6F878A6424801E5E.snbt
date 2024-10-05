@@ -916,18 +916,11 @@
 		{
 			dependencies: ["794C36745728144B"]
 			id: "668C5A8F44F6E48D"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "6A6E3131B1763CAB"
-					type: "choice"
-				}
-				{
-					id: "13E9D6C73B9CF253"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "13E9D6C73B9CF253"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "61A2C4549C71E00B"
 				item: "farmersdelight:rice"
@@ -940,19 +933,11 @@
 			dependencies: ["668C5A8F44F6E48D"]
 			description: ["香喷喷的大米饭"]
 			id: "32EC1F9B28640CE2"
-			rewards: [
-				{
-					count: 3
-					id: "3511BF849C91E98B"
-					item: "extradelight:riceball"
-					type: "item"
-				}
-				{
-					id: "07F765FE95EA7034"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "07F765FE95EA7034"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "5F13F995C9B79878"
 				item: "farmersdelight:cooked_rice"
