@@ -5,4 +5,10 @@ BlockEvents.rightClicked("alexsmobs:capsid", e => {
         e.cancel()
         player.sendInventoryUpdate()
     }
+    if( block.entityData["Items"][0]["id"].search("present") != -1 && player.mainHandItem.id.search("present") != -1 ){
+        player.tell(Text.translate("message.createdelight.capsid"))
+        e.cancel()
+        player.sendInventoryUpdate()
+    }
+
 })

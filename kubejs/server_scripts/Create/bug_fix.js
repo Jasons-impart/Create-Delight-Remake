@@ -4,6 +4,3 @@ BlockEvents.rightClicked("alexsmobs:capsid", e => {
         e.cancel()
     }
 })
-ServerEvents.tags("minecraft:block", e => {
-    e.remove("create:safe_nbt", "create:clipboard")
-})

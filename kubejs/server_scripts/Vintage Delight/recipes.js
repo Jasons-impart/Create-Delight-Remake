@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:cutting/cucumber_cutting",
         "culturaldelights:cutting/cut_cucumber"
     ])
+    e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
     // 腊肠
     e.recipes.vintagedelight.fermenting(
         "5x createdelight:salami",
