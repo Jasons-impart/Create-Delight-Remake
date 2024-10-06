@@ -197,5 +197,10 @@
     "block.createdelight.unfermented_paper_pulp": "待发酵的纸浆",
     "item.createdelight.unfermented_paper_pulp_bucket": "待发酵的纸浆桶",
     "item.createdelight.incomplete_paper": "未完成的纸",
-    "item.createdelight.waste_paper": "废纸"
+    "item.createdelight.waste_paper": "废纸",
+
+
+    "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
+    "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
+    "item.tetra.scroll.bow/stave/remembrance_stave.description": "包含锻造追忆之弓的知识"
 }

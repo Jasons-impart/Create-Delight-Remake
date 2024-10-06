@@ -111,7 +111,7 @@ ServerEvents.recipes(e => {
         e.recipes.vintageimprovements.laser_cutting(iner_3, iner_3, 500)
     ])
         .transitionalItem(iner_3)
-        .loops(3)
+        .loops(1)
         .id("createdelight:third_stage_rocket_core")
     //序列组装：四阶火箭核心
     let iner_4 = "createdelight:incomplete_fourth_stage_rocket_core"
