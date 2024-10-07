@@ -3,10 +3,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "37C42029C3527BCD"
-	group: ""
+	group: "445171CC29E98940"
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 8
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{

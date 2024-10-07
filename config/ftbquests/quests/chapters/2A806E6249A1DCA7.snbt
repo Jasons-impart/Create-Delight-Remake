@@ -3,10 +3,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2A806E6249A1DCA7"
-	group: ""
+	group: "7D0A1432AAAD0EBA"
 	icon: "fruitsdelight:pineapple"
 	id: "2A806E6249A1DCA7"
-	order_index: 13
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{

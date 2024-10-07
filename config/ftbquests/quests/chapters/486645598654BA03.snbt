@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "486645598654BA03"
-	group: ""
+	group: "0E7AEC0D0D9C1B1C"
 	icon: "minecraft:wither_skeleton_skull"
 	id: "486645598654BA03"
-	order_index: 9
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -298,7 +298,7 @@
 		{
 			description: [""]
 			hide_dependent_lines: true
-			id: "1BD99CFBE693DA24"
+			id: "5AD01D1C54DE1993"
 			rewards: [{
 				exclude_from_claim_all: true
 				id: "7CD26AB89DD5490A"
@@ -309,7 +309,7 @@
 			tasks: [{
 				dimension: "minecraft:the_nether"
 				disable_toast: true
-				id: "4C598DE640CE498F"
+				id: "716101BFA91A6E23"
 				type: "dimension"
 			}]
 			title: "我下地狱啦！"

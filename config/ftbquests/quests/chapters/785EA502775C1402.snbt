@@ -3,10 +3,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "785EA502775C1402"
-	group: ""
+	group: "445171CC29E98940"
 	icon: "createdelightcore:gold_coin"
 	id: "785EA502775C1402"
-	order_index: 5
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{

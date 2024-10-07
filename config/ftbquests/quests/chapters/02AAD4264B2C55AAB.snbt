@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "02AAD4264B2C55AAB"
-	group: ""
+	group: "57E934AC8166BC73"
 	icon: {
 		Count: 1
 		id: "tetra:modular_double"
@@ -19,7 +19,7 @@
 		}
 	}
 	id: "55436AC0A0C01843"
-	order_index: 18
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{

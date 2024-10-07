@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "6ABB091E92303780"
-	group: ""
+	group: "57E934AC8166BC73"
 	icon: {
 		Count: 1
 		id: "tetra:holo"
@@ -19,7 +19,7 @@
 		}
 	}
 	id: "6ABB091E92303780"
-	order_index: 11
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
