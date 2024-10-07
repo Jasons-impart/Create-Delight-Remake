@@ -821,33 +821,33 @@ ServerEvents.recipes((event) => {
   ]);
   event.remove({ id: "expatternprovider:ingredient_buffer" });
 
-  // β-正交晶系六方铁
-  let iron_blocks_64 = ["mynethersdelight:bullet_pepper"];
-  for (let i = 0; i < 64; i++) {
-    iron_blocks_64.push("#forge:storage_blocks/iron");
+  // β-正交晶系六方铁 相变铁
+  let iron_blocks_26 = ["mynethersdelight:bullet_pepper"];
+  for (let i = 0; i < 26; i++) {
+    iron_blocks_26.push("#forge:storage_blocks/iron");
   }
 
   vintageimprovements
-    .pressurizing("createdelight:phase_transition_iron", iron_blocks_64)
+    .pressurizing("createdelight:phase_transition_iron", iron_blocks_26)
     .id("createdelight:phase_transition_iron_1");
 
-  // event.custom({
-  //   type: "ae2:transform",
-  //   circumstance: {
-  //     type: "explosion",
-  //   },
-  //   ingredients: [
-  //     {
-  //       count: 64,
-  //       tag: "forge:storage_blocks/iron",
-  //     },
+  let iron_blocks_26_ = [];
+  for (let i = 0; i < 26; i++) {
+    iron_blocks_26_.push({ item: "minecraft:iron_block" });
+  }
+  event
+    .custom({
+      type: "lychee:item_exploding",
+      item_in: iron_blocks_26_,
 
-  //   ],
-  //   result: {
-  //     count: 1,
-  //     item: "createdelight:phase_transition_iron",
-  //   },
-  // });
+      post: [
+        {
+          type: "drop_item",
+          item: "createdelight:phase_transition_iron",
+        },
+      ],
+    })
+    .id("createdelight:phase_transition_iron_2");
 
   // 样板
   event.remove({ id: "ae2:network/crafting/patterns_blank" });
@@ -2553,14 +2553,14 @@ ServerEvents.recipes((event) => {
     .loops(1);
   event.remove({ id: "megacells:crafting/decompression_module" });
 
-  // 人工钻石
+  // 人造钻石
   let coal_64 = [Fluid.of("minecraft:lava", 250)];
   for (let i = 0; i < 64; i++) {
     coal_64.push("minecraft:coal");
   }
   vintageimprovements
     .pressurizing("createdelight:mmd_diamond", coal_64)
-    .heated()
+    .superheated()
     .id("createdelight:mmd_diamond_1");
 
   // 能源元件
@@ -2935,7 +2935,10 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly("ae2:formation_core", "minecraft:iron_nugget", [
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/certus_quartz"]),
+      create.deploying("minecraft:iron_nugget", [
+        "minecraft:iron_nugget",
+        "#forge:gems/certus_quartz",
+      ]),
     ])
     .id("createdelight:formation_core_1")
     .loops(1)
@@ -2979,10 +2982,6 @@ ServerEvents.recipes((event) => {
   // 量子桥卡
   create
     .sequenced_assembly("ae2wtlib:quantum_bridge_card", "ae2:advanced_card", [
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
       create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
       create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
       create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
@@ -3291,4 +3290,18 @@ ServerEvents.recipes((event) => {
 
   // 杀压印器
   event.remove({ id: "ae2:network/blocks/inscribers" });
+
+  // 无限熔岩盘
+  create
+    .sequenced_assembly(
+      Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:lava"}}'),
+      "ae2:cell_component_1k",
+      create.filling(Item.of("ae2:cell_component_1k"), [
+        "ae2:cell_component_1k",
+        Fluid.of("minecraft:lava", 1000),
+      ])
+    )
+    .loops(10000)
+    .id("createdelight:infinity_cell_lava")
+    .transitionalItem("ae2:cell_component_1k");
 });

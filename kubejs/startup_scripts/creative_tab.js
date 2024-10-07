@@ -15,4 +15,5 @@ function custom_scroll(glyphs, intricate, key, material, schematics, ribbon) {
 StartupEvents.modifyCreativeTab("kubejs:tab", e => {
     e.add(["minecraft:dirt"])
     e.add([custom_scroll([1, 1, 4, 5], 1, "bow/stave/remembrance_stave", 1, ["tetra:bow/stave/remembrance_stave"], "c10000")])
+    e.add(Item.of('expatternprovider:infinity_cell', '{record:{"#c":"ae2:f",id:"minecraft:lava"}}'))
 })

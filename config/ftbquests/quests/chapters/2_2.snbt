@@ -446,19 +446,12 @@
 			dependencies: ["308066883A8B3B3E"]
 			hide_dependency_lines: true
 			id: "13B709930A44FC2D"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3509A7B3D272C233"
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "44ED133325134CA9"
-					table_id: 367842927525151968L
-					type: "random"
-				}
-			]
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "44ED133325134CA9"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
 			tasks: [{
 				id: "3DB5C15676086942"
 				item: "ae2:cell_component_4k"
