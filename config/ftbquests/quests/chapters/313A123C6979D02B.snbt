@@ -3,10 +3,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "313A123C6979D02B"
-	group: "7D0A1432AAAD0EBA"
+	group: ""
 	icon: "ratatouille:thresher"
 	id: "313A123C6979D02B"
-	order_index: 1
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{

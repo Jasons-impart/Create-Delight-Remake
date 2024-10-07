@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2EDF2DB3AA62F7A0"
-	group: "445171CC29E98940"
+	group: ""
 	icon: {
 		Count: 1
 		id: "minecraft:elytra"
@@ -12,7 +12,7 @@
 		}
 	}
 	id: "2EDF2DB3AA62F7A0"
-	order_index: 3
+	order_index: 21
 	quest_links: [ ]
 	quests: [
 		{
