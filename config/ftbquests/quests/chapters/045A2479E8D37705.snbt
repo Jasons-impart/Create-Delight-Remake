@@ -309,7 +309,7 @@
 				type: "dimension"
 			}]
 			title: "火星"
-			x: -1.5d
+			x: -2.5d
 			y: -2.5d
 		}
 		{
@@ -335,7 +335,7 @@
 				type: "dimension"
 			}]
 			title: "水星"
-			x: 1.5d
+			x: 2.5d
 			y: -2.5d
 		}
 		{
@@ -514,7 +514,7 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 2.0d
+			x: 2.5d
 			y: -3.5d
 		}
 		{
@@ -538,7 +538,7 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 4.5d
+			x: 4.0d
 			y: 1.0d
 		}
 		{
@@ -575,7 +575,7 @@
 			}]
 			title: "沙漠恐蚁"
 			x: -3.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["1BEE7AD2537F2428"]
@@ -609,7 +609,7 @@
 				structure: "idas:labyrinth"
 				type: "structure"
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: 4.5d
 		}
 		{
@@ -657,7 +657,7 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 0.0d
+			x: -0.5d
 			y: 5.5d
 		}
 		{
@@ -703,7 +703,7 @@
 				item: "iceandfire:stymphalian_skull"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 2.5d
 			y: -6.5d
 		}
 		{
@@ -799,8 +799,8 @@
 				item: "iceandfire:stymphalian_arrow"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -5.5d
+			x: 1.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -816,7 +816,7 @@
 				}
 				type: "item"
 			}]
-			x: 3.0d
+			x: 2.5d
 			y: -5.5d
 		}
 		{
@@ -828,7 +828,7 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
@@ -843,6 +843,7 @@
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
+			icon: "iceandfire:dragonscales_electric"
 			id: "1231C11A3F017724"
 			tasks: [{
 				id: "2AB440B017346073"
@@ -864,6 +865,7 @@
 				"34E1D8B005ACD4CF"
 				"1231C11A3F017724"
 			]
+			icon: "iceandfire:dragonegg_electric"
 			id: "3C3F2A2F6691A1C0"
 			min_required_tasks: 1
 			tasks: [
@@ -904,6 +906,7 @@
 		}
 		{
 			dependencies: ["1D34EBFF1D60EA85"]
+			icon: "iceandfire:dragonscales_white"
 			id: "1EA272CB25BF206C"
 			tasks: [{
 				id: "70B49ECD45A64864"
@@ -925,6 +928,7 @@
 				"0961AD88179B18C4"
 				"1EA272CB25BF206C"
 			]
+			icon: "iceandfire:dragonegg_white"
 			id: "13006D610CC27C68"
 			min_required_tasks: 1
 			tasks: [
@@ -954,6 +958,7 @@
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
+			icon: "iceandfire:deathworm_chitin_yellow"
 			id: "650660906D7664C1"
 			min_required_tasks: 1
 			tasks: [
@@ -973,12 +978,14 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
-			y: 1.0d
+			x: 4.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
+			icon: "iceandfire:deathworm_egg"
 			id: "2CCC53476B772751"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "6CFBE0E2F3795655"
@@ -991,7 +998,7 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
+			x: 5.5d
 			y: 2.0d
 		}
 		{
@@ -1002,14 +1009,21 @@
 				item: "iceandfire:deathworm_tounge"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 1.75d
+			x: 3.5d
+			y: 2.0d
 		}
 		{
 			dependencies: [
 				"650660906D7664C1"
 				"0E90A52B08FC7E68"
 			]
+			icon: {
+				Count: 1
+				id: "iceandfire:deathworm_gauntlet_yellow"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "0A6D670B4F9781B1"
 			min_required_tasks: 1
 			tasks: [
@@ -1047,8 +1061,8 @@
 					type: "item"
 				}
 			]
-			x: 6.0d
-			y: 2.0d
+			x: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["34E1D8B005ACD4CF"]
@@ -1106,6 +1120,7 @@
 				"1E07922289055F60"
 				"5DAF3876129A89A9"
 			]
+			icon: "iceandfire:dreadwood_planks_lock"
 			id: "46059198877920C4"
 			tasks: [{
 				id: "5A3F12393815BC64"
@@ -1119,6 +1134,25 @@
 		}
 		{
 			dependencies: ["46059198877920C4"]
+			icon: {
+				Count: 1
+				id: "iceandfire:dread_queen_staff"
+				tag: {
+					Enchantments: [
+						{
+							id: "unbreaking"
+							lvl: 3
+						}
+						{
+							id: "mending"
+							lvl: 1
+						}
+					]
+					display: {
+						Lore: ["{\"text\":\"Found in the foreboding Dread Citadel\"}"]
+					}
+				}
+			}
 			id: "2FFDB418D3340352"
 			tasks: [
 				{
@@ -1193,6 +1227,7 @@
 		}
 		{
 			dependencies: ["33AEA40FA5FE2CE3"]
+			icon: "iceandfire:sea_serpent_scales_teal"
 			id: "2A1F4B842B1E2BC9"
 			tasks: [{
 				id: "655F2B936FB21B13"
@@ -1357,6 +1392,13 @@
 		}
 		{
 			dependencies: ["6A73BFA1FD7B98A9"]
+			icon: {
+				Count: 1
+				id: "iceandfire:troll_weapon_axe"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5A0E6C0E9936C499"
 			min_required_tasks: 1
 			tasks: [
@@ -1473,6 +1515,98 @@
 			}]
 			x: 1.5d
 			y: 8.5d
+		}
+		{
+			dependencies: ["4CE42E34D9931CA1"]
+			id: "18D08F417A414BF1"
+			tasks: [{
+				id: "27A19E5DFC526EB8"
+				item: "iceandfire:myrmex_jungle_staff"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["6736C76B71256499"]
+			icon: "iceandfire:myrmex_jungle_chitin"
+			id: "4CE42E34D9931CA1"
+			tasks: [
+				{
+					id: "0833407F833D9A77"
+					item: "iceandfire:myrmex_jungle_chitin"
+					type: "item"
+				}
+				{
+					id: "28B12AF3FAF0C7C3"
+					item: "iceandfire:myrmex_stinger"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["2652F9C2A88605B3"]
+			id: "7160E3E42BFE313D"
+			tasks: [
+				{
+					id: "6090F18BCC16D3E9"
+					item: "iceandfire:myrmex_desert_chitin"
+					type: "item"
+				}
+				{
+					id: "3D4481D7F4CC91A0"
+					item: "iceandfire:myrmex_stinger"
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7160E3E42BFE313D"]
+			id: "5276902CE187FB55"
+			tasks: [{
+				id: "69A3DD87C4CEF72B"
+				item: "iceandfire:myrmex_desert_staff"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["17D9DB61D8A8DC98"]
+			id: "4AF5258EEB87544A"
+			tasks: [{
+				id: "49E82251AF1F79E4"
+				item: "iceandfire:fire_dragon_heart"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7C9857F0DAD1E04E"]
+			id: "5425A4C3DA6A9FA4"
+			tasks: [{
+				id: "74527E7F74B4C460"
+				item: "iceandfire:lightning_dragon_heart"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1D34EBFF1D60EA85"]
+			id: "47595C181772F96D"
+			tasks: [{
+				id: "21E7409264AD9980"
+				item: "iceandfire:ice_dragon_heart"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.5d
 		}
 	]
 	title: "异兽传说"
