@@ -38,9 +38,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:fire_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:fire_dragon_blood", 
+                        "count": 8,
+                        "nbt" : {"iceandfire":"iceandfire:fire_dragon_blood"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -82,9 +84,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:fire_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonscales_red", 
+                        "count": 18,
+                        "nbt" : {"iceandfire":"iceandfire:dragonscales_red"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -126,9 +130,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:fire_dragon",
-					"rolls": 2
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonforge_fire_brick", 
+                        "count": 8,
+                        "nbt" : {"iceandfire":"iceandfire:dragonforge_fire_brick"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -144,10 +150,10 @@
 	],
 	"failures": [
 		{
-		"type": "gateways:explosion",
-        "strength": 25,
-        "fire": true,
-        "block_damage": true
-		}
+			"type": "gateways:explosion",
+			"strength": 6,
+			"fire": true,
+			"block_damage": true
+			}
 	]
 }

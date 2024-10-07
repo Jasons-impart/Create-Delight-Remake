@@ -200,7 +200,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "1449D881D54C27EA"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -220,7 +220,7 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "3C70EB8AF67D1DAD"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -240,7 +240,7 @@
 			y: 0.5d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "4482AF6BE68C8D1D"
 			rewards: [{
 				id: "6F5BA06FA8651105"
@@ -259,7 +259,7 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "03863109E200AF66"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -277,7 +277,6 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
 			id: "302DE38002ACC065"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -298,7 +297,7 @@
 		{
 			description: [""]
 			hide_dependent_lines: true
-			id: "5AD01D1C54DE1993"
+			id: "3761A330203AAB6E"
 			rewards: [{
 				exclude_from_claim_all: true
 				id: "7CD26AB89DD5490A"
@@ -309,7 +308,7 @@
 			tasks: [{
 				dimension: "minecraft:the_nether"
 				disable_toast: true
-				id: "716101BFA91A6E23"
+				id: "45E6AAB02E756132"
 				type: "dimension"
 			}]
 			title: "我下地狱啦！"
@@ -317,7 +316,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "70A228B8AA9BFE0E"
 			rewards: [{
 				id: "4BD36A8FC572D75C"
@@ -336,7 +335,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			description: [
 				"自然生成于下界 Y 坐标&4 8~119 的空间"
 				"生成时连锁数量最大为3，但相当罕见，以连锁为2居多，但同样少见，&4多为单矿&r且&4不会裸露生成&r"
@@ -394,7 +393,7 @@
 			y: 6.5d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
+			dependencies: ["3761A330203AAB6E"]
 			id: "6460F97709785CDA"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -446,7 +445,7 @@
 		{
 			dependencies: [
 				"302DE38002ACC065"
-				"5AD01D1C54DE1993"
+				"3761A330203AAB6E"
 			]
 			id: "0FDBCBC0020ED4F1"
 			rewards: [{
@@ -792,7 +791,6 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
 			icon: "minecraft:fire_charge"
 			id: "0BD6626359766789"
 			invisible: true
@@ -838,7 +836,6 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["5AD01D1C54DE1993"]
 			id: "106E43956C737C36"
 			invisible: true
 			shape: "square"

@@ -2827,23 +2827,23 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly(Item.of("ae2:basic_card", 8), "ae2:calculation_processor", [
+      vintageimprovements.laser_cutting(
+        "ae2:calculation_processor",
+        "ae2:calculation_processor",
+        100
+      ),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
         "#forge:ingots/iron",
       ]),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
-        "#forge:ingots/gold",
+        "#forge:dusts/redstone",
       ]),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
-        "#forge:dusts/redstone",
+        "#forge:ingots/gold",
       ]),
-      vintageimprovements.laser_cutting(
-        "ae2:calculation_processor",
-        "ae2:calculation_processor",
-        100
-      ),
     ])
     .transitionalItem("ae2:calculation_processor")
     .loops(1)
@@ -2859,23 +2859,23 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly(Item.of("ae2:advanced_card", 8), "ae2:calculation_processor", [
+      vintageimprovements.laser_cutting(
+        "ae2:calculation_processor",
+        "ae2:calculation_processor",
+        100
+      ),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
         "#forge:ingots/iron",
       ]),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
-        "#forge:gems/diamond",
+        "#forge:dusts/redstone",
       ]),
       create.deploying("ae2:calculation_processor", [
         "ae2:calculation_processor",
-        "#forge:dusts/redstone",
+        "#forge:gems/diamond",
       ]),
-      vintageimprovements.laser_cutting(
-        "ae2:calculation_processor",
-        "ae2:calculation_processor",
-        100
-      ),
     ])
     .transitionalItem("ae2:calculation_processor")
     .loops(1)
@@ -2915,9 +2915,9 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly("ae2:annihilation_core", "minecraft:iron_nugget", [
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/quartz"]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/quartz"]),
     ])
     .id("createdelight:annihilation_core_1")
     .loops(1)
@@ -2933,12 +2933,9 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly("ae2:formation_core", "minecraft:iron_nugget", [
-      create.deploying("minecraft:iron_nugget", [
-        "minecraft:iron_nugget",
-        "#forge:gems/certus_quartz",
-      ]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
+      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/certus_quartz"]),
     ])
     .id("createdelight:formation_core_1")
     .loops(1)
@@ -3203,15 +3200,15 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly("2x ae2:crafting_unit", "createdelight:iron_casing", [
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
+        "#ae2:p2p_attunements/me_p2p_tunnel",
+      ]),
+      create.deploying("createdelight:iron_casing", [
+        "createdelight:iron_casing",
         "ae2:calculation_processor",
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
         "ae2:logic_processor",
-      ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
-        "#ae2:p2p_attunements/me_p2p_tunnel",
       ]),
     ])
     .id("createdelight:crafting_unit")
@@ -3227,11 +3224,11 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
-        "ae2:engineering_processor",
+        "#ae2:p2p_attunements/me_p2p_tunnel",
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
-        "#ae2:p2p_attunements/me_p2p_tunnel",
+        "ae2:engineering_processor",
       ]),
     ])
     .id("createdelight:drive")

@@ -58,7 +58,7 @@
 				}
 			],
 			"max_wave_time": 1000,
-			"setup_time": 200
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -115,7 +115,7 @@
 			],
 			
 			"max_wave_time": 1200,
-			"setup_time": 200
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -171,7 +171,7 @@
 				}
 			],
 			"max_wave_time": 1200,
-			"setup_time": 200
+			"setup_time": 300
 		},
         {
             "entities": [
@@ -229,7 +229,7 @@
 				}
 			],
             "max_wave_time": 1400,
-			"setup_time": 200
+			"setup_time": 300
         },
 		{
             "entities": [
@@ -242,7 +242,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 7.0
+					"value": 5.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -272,8 +272,8 @@
 					"rolls": 4
 				}
 			],
-            "max_wave_time": 1200,
-			"setup_time": 200
+            "max_wave_time": 1800,
+			"setup_time": 340
         }
      ],
 	"failures": [

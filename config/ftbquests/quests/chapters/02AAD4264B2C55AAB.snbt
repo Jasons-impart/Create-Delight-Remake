@@ -244,7 +244,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
-			description: [""]
+			description: ["锻造师发现，将&e烈焰人引诱至灵魂沙峡谷并击杀&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4直接收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
 			id: "6D5A656ACC1EC65B"
 			size: 1.5d
 			tasks: [{
@@ -398,7 +398,7 @@
 		}
 		{
 			dependencies: ["38163DC2EF9E6DA3"]
-			description: [""]
+			description: ["另一本笔记已经十分破烂，而且字迹难以辨认，但是从零碎的文字中，我能猜到图腾可用于&4直接制造一种短剑&r。此外，笔记上写到的“图.....器上..提高武器.....性，可...附加凋..果，有时可以夺.....标的生命”，或许是把它&e镶嵌在武器上&r可以获得一些加成？"]
 			id: "477603DD01400467"
 			tasks: [{
 				advancement: "tetra:art_of_forging/euclidean_dagger_upgrade"
@@ -412,7 +412,7 @@
 		}
 		{
 			dependencies: ["033C857187DC6731"]
-			description: [""]
+			description: ["在远古城市的箱子里，我找到了&e三把暗淡失色的远古武器&r。笔记提到，只要&e注入邪恶之力&r它们便能重焕生机。可惜笔记到此再次戛然而止，似乎如何为它们注入邪恶之力还需要我亲自去探寻。"]
 			icon: "art_of_forging:ancient_blade"
 			id: "137C9220F86DD557"
 			tasks: [
@@ -433,11 +433,12 @@
 				}
 			]
 			title: "&c远古之遗&r"
-			x: -9.0d
+			x: -6.0d
 			y: -6.0d
 		}
 		{
 			dependencies: ["7259774FF36EFCA6"]
+			description: ["打造完三把武器后，我迫不及待地测试它们的威力，对着僵尸挥舞时，灾厄之星果然展现了无与伦比的力量。但正当我欣赏它精致的纹理时，突然感到有一股未知的力量在缓缓汲取我的生命。我急忙放下剑，前去翻找恶魔笔记。所幸这一部分的记载还算清楚。原来灾厄之星的力量源自吞噬其他生物的生命，&e如果持有者在一段时间内未攻击其他生物，武器将直接吞噬持有者的生命&r。"]
 			id: "4A0CB2CD39AF679F"
 			tasks: [{
 				advancement: "art_of_forging:materials/find_all_demonic_items"
@@ -451,7 +452,7 @@
 		}
 		{
 			dependencies: ["19C9240CC2FCED23"]
-			description: [""]
+			description: ["笔记中记载，击杀&e凋零&r后&e偶尔&r会掉落一种&e黑色的不可名状之物&r，可能是凋零心脏的碎片。将其与&e恶意碎片&r结合，可合成一枚&4充满恶魔之力的图腾&r。然而奇怪的是，关于图腾的用途，笔记到此戛然而止。只留下了一句意义不明的警示：“止步于此，不可僭越。”这时我想起了在箱子中找到的另一本封面印着恶魔图腾的笔记，也许在那本笔记上可以得到答案。"]
 			icon: "art_of_forging:sigil_of_eden"
 			id: "38163DC2EF9E6DA3"
 			tasks: [
@@ -727,46 +728,15 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["6D5A656ACC1EC65B"]
-			icon: {
-				Count: 1
-				id: "tetra:modular_double"
-				tag: {
-					Damage: 0
-					HideFlags: 1
-					"double/basic_handle_material": "basic_handle/stick"
-					"double/handle": "double/basic_handle"
-					"double/handle/settle_progress": 275
-					"double/handle:basic_handle/soot": 0
-					"double/head_left": "double/soul_fire_scythe_left"
-					"double/head_right": "double/soul_fire_scythe_right"
-					"double/head_right/settle_progress": 288
-					"double/soul_fire_scythe_left_material": "soul_fire_scythe/soul_fire_scythe"
-					"double/soul_fire_scythe_right_material": "soul_fire_scythe/soul_fire_scythe"
-					honing_progress: 287
-					id: "6c8be754-286f-42da-b3d4-17dadc586f0c"
-					weapon_attributes: "{\"parent\":\"bettercombat:scythe\",\"attributes\":{\"attack_range\":3.0,\"pose\":\"bettercombat:pose_two_handed_scythe\",\"two_handed\":true,\"category\":\"scythe\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:scythe_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:scythe_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
-				}
-			}
-			id: "17C30E3B0635EC76"
-			tasks: [{
-				id: "586711542A9C7A43"
-				title: "灵魂火镰"
-				type: "checkmark"
-			}]
-			title: "&1灵魂火镰&r"
-			x: -6.0d
-			y: -3.0d
-		}
-		{
 			dependencies: [
 				"137C9220F86DD557"
 				"19C9240CC2FCED23"
 				"555B9953FB506DEE"
 			]
-			description: [""]
+			description: ["我尝试将三把远古武器与&e恶意碎片和凋灵骷髅头&r——我能想到的最邪恶的两种物品——一起进行合成。结果成功了，&e三把武器重新散发出了浓烈的邪恶气息&r，但这股来自远古的恶意仿佛要将我直接吞噬。"]
 			icon: "art_of_forging:demonic_blade"
 			id: "7259774FF36EFCA6"
+			subtitle: "三把武器分别使用 剑、斧、锹 进行改造"
 			tasks: [
 				{
 					id: "4C1F5DF05E48FC4B"
@@ -785,7 +755,7 @@
 				}
 			]
 			title: "&c远古恶意&r"
-			x: -12.0d
+			x: -9.0d
 			y: -3.0d
 		}
 		{
@@ -1015,6 +985,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
+			description: ["远古城市中埋藏着许多在锻造时能够大放异彩的材料，我打算前往收集一些。"]
 			hide_dependency_lines: true
 			id: "033C857187DC6731"
 			size: 1.5d
@@ -1026,7 +997,7 @@
 				type: "structure"
 			}]
 			title: "远古城市"
-			x: -6.0d
+			x: -3.0d
 			y: -6.0d
 		}
 		{
@@ -1040,7 +1011,7 @@
 				item: "art_of_forging:eerie_shard"
 				type: "item"
 			}]
-			x: -3.0d
+			x: 0.0d
 			y: -6.0d
 		}
 		{
@@ -1051,8 +1022,8 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: -0.5d
-			y: -5.0d
+			x: 0.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
@@ -1062,8 +1033,8 @@
 				item: "art_of_forging:potent_mixture"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -5.0d
+			x: -0.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["033C857187DC6731"]
@@ -1073,7 +1044,7 @@
 				item: "minecraft:echo_shard"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -1.0d
 			y: -7.0d
 		}
 		{
@@ -1099,9 +1070,29 @@
 			description: [""]
 			id: "35C5712DB94C5022"
 			tasks: [{
-				id: "56060D49318460F2"
-				title: "追忆卷轴"
-				type: "checkmark"
+				id: "79A2A8657A3FACE4"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								glyphs: [
+									1.0d
+									1.0d
+									4.0d
+									5.0d
+								]
+								intricate: 1.0d
+								key: "bow/stave/remembrance_stave"
+								material: 1.0d
+								ribbon: "c10000"
+								schematics: ["tetra:bow/stave/remembrance_stave"]
+							}]
+						}
+					}
+				}
+				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
 			x: 6.0d
@@ -1173,8 +1164,8 @@
 				}
 			]
 			title: "&f无畏弓臂&r  &f复合弓弦&r"
-			x: 5.0d
-			y: -7.5d
+			x: 4.5d
+			y: -8.0d
 		}
 		{
 			dependencies: ["50E6BE9153146BF5"]
@@ -1315,15 +1306,17 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["17C30E3B0635EC76"]
+			dependencies: ["6D5A656ACC1EC65B"]
+			description: ["可是，我真的需要这么多&e凋灵骷髅头&r吗？"]
 			id: "555B9953FB506DEE"
 			tasks: [{
+				count: 12L
 				id: "41898F6767FF14A2"
 				item: "minecraft:wither_skeleton_skull"
 				type: "item"
 			}]
 			title: "&1凋灵头颅&r"
-			x: -9.0d
+			x: -6.0d
 			y: -3.0d
 		}
 	]
