@@ -38,9 +38,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:lightning_dragon_blood", 
+                        "count": 8,
+                        "nbt" : {"giceandfire":"iceandfire:lightning_dragon_blood"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -82,9 +84,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonscales_amythest", 
+                        "count": 18,
+                        "nbt" : {"iceandfire":"iceandfire:dragonscales_amythest"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -126,9 +130,11 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 2
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonforge_lightning_brick", 
+                        "count": 8,
+                        "nbt" : {"iceandfire":"iceandfire:dragonforge_lightning_brick"}}
 				}
 			],
 			"max_wave_time": 800,
@@ -145,7 +151,7 @@
 	"failures": [
 		{
 			"type": "gateways:explosion",
-			"strength": 50,
+			"strength": 6,
 			"fire": true,
 			"block_damage": true
 			}
