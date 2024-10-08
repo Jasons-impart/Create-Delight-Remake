@@ -57,4 +57,17 @@ ItemEvents.modification(e => {
             }
         })
     })
+
+    e.modify("butchercraft:apron", item => {
+        item.maxDamage = 240
+    })
+    e.modify("butchercraft:gloves", item => {
+        item.maxDamage = 225
+    })
+    e.modify("butchercraft:mask", item => {
+        item.maxDamage = 165
+    })
+    e.modify("butchercraft:boots", item => {
+        item.maxDamage = 195
+    })
 })
