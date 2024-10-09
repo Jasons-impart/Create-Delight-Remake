@@ -1,4 +1,8 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "iceandfire:dragonforge_fire_core_disabled",
+        "iceandfire:dragonforge_fire_input"
+    ])
     metal_production_line_6(e, 
         [
             "iceandfire:dragonsteel_fire_block",

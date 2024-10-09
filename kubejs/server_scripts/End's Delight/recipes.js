@@ -10,4 +10,5 @@ ServerEvents.recipes(e => {
     cutting_1(e, 'ends_delight:chorus_fruit_pie', [['ends_delight:chorus_fruit_pie_slice', 4]])
     cutting_1(e, 'ends_delight:raw_dragon_meat', [['ends_delight:raw_dragon_meat_cuts', 3]])
     cutting_1(e, 'ends_delight:roasted_dragon_meat', [['ends_delight:roasted_dragon_meat_cuts', 3]])
+    e.replaceInput({id: "ends_delight:crack_non_hatchable_dragon_egg"}, "ends_delight:non_hatchable_dragon_egg", "#forge:dragonegg")
 })
