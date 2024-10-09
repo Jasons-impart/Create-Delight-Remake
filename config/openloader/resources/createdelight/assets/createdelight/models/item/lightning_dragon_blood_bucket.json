@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createdelight:item/lightning_dragon_blood_bucket"
+  }
+}

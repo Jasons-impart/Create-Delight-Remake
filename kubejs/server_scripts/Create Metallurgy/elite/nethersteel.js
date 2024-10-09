@@ -4,10 +4,10 @@ ServerEvents.recipes(e => {
         "createbigcannons:compacting/forge_nethersteel_ingot"
     ])
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createbigcannons:molten_nethersteel", 10),
+        Fluid.of("createbigcannons:molten_nethersteel", 30),
         [
-            Fluid.of("createmetallurgy:molten_steel", 5),
-            Fluid.of("createdelight:molten_netherite", 5)
+            Fluid.of("createmetallurgy:molten_steel", 15),
+            Fluid.of("createdelight:molten_netherite", 15)
         ], "superheated", 180
     ).id("createmetallurgy:alloying/molten_nethersteel")
     metal_production_line_2(e, 

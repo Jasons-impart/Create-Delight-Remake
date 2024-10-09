@@ -159,3 +159,27 @@ function metal_production_line_5(event, metal, time) {
         metal[2])
         .id(`vintageimprovements:vibrating/${metal[4].split(":")[1]}`)
 }
+
+/**
+ * @param { Internal.RecipesEventJS_ } event 
+ * @param { InputItem_[] } metal // block, ingot, fluid
+ * @param { String } heat // heated, superheated
+ * @param { number } time // default 80ticks
+ */
+function metal_production_line_6(event, metal, heat, time) {
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 90), metal[1])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[2].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_basin(metal[0], Fluid.of(`${metal[2]}`, 810))
+        .processingTime(2 * time).id(`createmetallurgy:casting_in_basin/${metal[0].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[1], [Fluid.of(`${metal[2]}`, 90), "createmetallurgy:graphite_ingot_mold"])
+        .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
+    event.recipes.create.sequenced_assembly(Item.of(metal[2], 9), metal[0], [
+        event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+        event.recipes.create.cutting(metal[0], metal[0])
+    ])
+        .loops(1)
+        .transitionalItem(metal[0])
+        .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[2].split(":")[1]}`)
+}
