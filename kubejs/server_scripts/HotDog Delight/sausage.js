@@ -45,4 +45,12 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ]
     ).id("hotdog_delight:glorecp")
+    e.recipes.create.mixing(
+        "hotdog_delight:pumpkin_sausage",
+        [
+            "ratatouille:sausage_casing",
+            'farmersdelight:pumpkin_slice',
+            "#forge:salt"
+        ]
+    ).id("hotdog_delight:pumpkinrecp")
 })
