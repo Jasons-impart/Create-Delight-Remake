@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdelight:item/egg_yolk_bucket"
+    }
+  }

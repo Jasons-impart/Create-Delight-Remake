@@ -19,6 +19,14 @@
               "parent": "bettercombat:dagger"
             }
           }
+        },
+        "sword/crucible_blade": {
+          "config": {
+            "scaleY": 1.5,
+            "attributes": {
+              "parent": "bettercombat:crucible"
+            }
+          }
         }
       }
     }

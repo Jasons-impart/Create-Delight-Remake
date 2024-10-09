@@ -8,3 +8,8 @@ ServerEvents.tags("item", e => {
         "minecraft:iron_ore"
     ])
 })
+ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "createbigcannons:compacting/forge_nethersteel_nugget"
+    ])
+})
