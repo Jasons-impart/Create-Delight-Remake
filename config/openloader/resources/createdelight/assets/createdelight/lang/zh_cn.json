@@ -1,4 +1,10 @@
 {
+    "fluid.createdelight.cake_batter": "蛋糕糊",
+    "block.createdelight.cake_batter": "蛋糕糊",
+    "item.createdelight.cake_batter_bucket": "蛋糕糊桶",
+    "fluid.createdelight.egg_yolk": "蛋黄",
+    "block.createdelight.egg_yolk": "蛋黄",
+    "item.createdelight.egg_yolk_bucket": "蛋黄桶",
     "item.createdelight.glowstone_paste": "萤石膏",
     "block.createdelight.iron_casing": "铁外壳",
     "block.createdelight.space_casing": "空间外壳",

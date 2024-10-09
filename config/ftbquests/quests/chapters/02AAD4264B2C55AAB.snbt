@@ -78,6 +78,7 @@
 				"25312B7026403FFF"
 			]
 			id: "47ADAC6620C3FF87"
+			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
 				id: "36BD3E1BEBBF6A21"
@@ -137,7 +138,7 @@
 			]
 			id: "63B03A277D459A65"
 			shape: "hexagon"
-			size: 2.0d
+			size: 1.5d
 			tasks: [
 				{
 					id: "7C61E5405BB8F177"
@@ -231,6 +232,7 @@
 			y: 9.0d
 		}
 		{
+			dependencies: ["55E75519AE205C2E"]
 			id: "50E6BE9153146BF5"
 			shape: "hexagon"
 			size: 2.0d
@@ -473,6 +475,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
+			description: ["锻造师提到，不仅仅是这个世界存在锻造师，其他世界同样也有锻造大师的身影。许多异界探险者将他们的见闻汇编成书籍，也许我可以从中学习异界的知识，锻造出更强大的武器。&e商店&r里就有这些书籍出售。"]
 			id: "2B0342C9C0B57372"
 			size: 1.5d
 			tasks: [{
@@ -480,45 +483,45 @@
 				item: "createdelight:otherworld_note"
 				type: "item"
 			}]
-			title: "异界见闻"
-			x: 0.0d
+			title: "&3异界见闻&r"
+			x: -3.0d
 			y: 3.0d
 		}
 		{
 			dependencies: ["2B0342C9C0B57372"]
+			description: [
+				"一名探险者的书籍中记载道：传说村正是另一个时空下的日本战国时期的一位著名刀匠，他所锻造的武士刀以&e无比锋利&r著称，能够轻易斩断一切，因此被视为具有邪气。据说，统一日本的德川家康的祖父和父亲都死于村正刀，导致德川家族在统治期间禁止持有和使用村正刀。自此，村正刀在日本民间被称为“妖刀”，充满了不祥的传说与神秘色彩。"
+				"文中还详细的记载了村正之刃的锻造技巧。"
+			]
 			id: "6534A8367009AD68"
-			subtitle: "可作为切削工具"
 			tasks: [{
-				id: "59C78A6628BBE6B0"
+				id: "03A88390E8ED09F7"
 				item: {
 					Count: 1
 					id: "tetra:scroll_rolled"
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
-									5
-									10
+									6
+									7
 									13
-									2
+									15
 								]
 								intricate: 0b
-								key: "sword/katana/katana_blade"
+								key: "sword/katana/murasama_blade"
 								material: 2
-								ribbon: "dbff10"
-								schematics: [
-									"tetra:sword/katana/katana_blade"
-									"tetra:sword/tsuba_guard"
-								]
+								ribbon: "c52323"
+								schematics: ["tetra:sword/katana/murasama_blade"]
 							}]
 						}
 					}
 				}
 				type: "item"
 			}]
-			title: "&3浪人之遗&r"
-			x: -3.0d
+			title: "&3妖鬼之遗&r"
+			x: -6.0d
 			y: 3.0d
 		}
 		{
@@ -547,42 +550,20 @@
 				}
 			}
 			id: "59AA40D0405EBE55"
-			tasks: [
-				{
-					id: "44DCE255A6640D7E"
-					item: {
-						Count: 1
-						id: "tetra:scroll_rolled"
-						tag: {
-							BlockEntityTag: {
-								data: [{
-									details: "otherworldly"
-									glyphs: [I;
-										6
-										7
-										13
-										15
-									]
-									intricate: 0b
-									key: "sword/katana/murasama_blade"
-									material: 2
-									ribbon: "c52323"
-									schematics: ["tetra:sword/katana/murasama_blade"]
-								}]
-							}
-						}
-					}
-					type: "item"
-				}
-				{
-					advancement: "tetra:art_of_forging/murasama_blade"
-					criterion: ""
-					id: "3C203776E644FED6"
-					type: "advancement"
-				}
-			]
-			title: "&3妖鬼村正&r"
-			x: -6.0d
+			rewards: [{
+				auto: "invisible"
+				command: "/effect give @s minecraft:nausea 10 5 true"
+				id: "03EBCA095CF1C8BA"
+				type: "command"
+			}]
+			tasks: [{
+				advancement: "tetra:art_of_forging/murasama_blade"
+				criterion: ""
+				id: "3C203776E644FED6"
+				type: "advancement"
+			}]
+			title: "&3妖刀&r"
+			x: -9.0d
 			y: 3.0d
 		}
 		{
@@ -591,7 +572,11 @@
 				"4A0CB2CD39AF679F"
 				"477603DD01400467"
 			]
-			description: [""]
+			description: [
+				"当我将传说中的村正之刃握在手中，突然一阵晕眩感袭来。我感觉到脑海中所有与恶魔相关的知识开始自发地整合。待我清醒过来时，一旁原本破破烂烂的恶魔笔记莫名变得崭新，封面上赫然印着四个字——&e恶魔典籍&r。翻开恶魔典籍，原先模糊不清的字迹如今变得清晰可见，而最后空白的几页也被密密麻麻的文字填满，为首的便是三个大字——"
+				""
+				"                                             &o&l&b千   夜   寒&r&r&r"
+			]
 			id: "311424590CC23510"
 			tasks: [{
 				id: "50AB4D9C6EC4B7FD"
@@ -599,7 +584,7 @@
 				type: "checkmark"
 			}]
 			title: "&b恶魔典籍&r"
-			x: -9.0d
+			x: -12.0d
 			y: 3.0d
 		}
 		{
@@ -661,7 +646,7 @@
 				}
 			]
 			title: "&5裁决剑&r"
-			x: 6.0d
+			x: 9.0d
 			y: 3.0d
 		}
 		{
@@ -677,11 +662,11 @@
 				type: "item"
 			}]
 			title: "&5锻造师的遗稿&r"
-			x: 9.0d
+			x: 12.0d
 			y: 3.0d
 		}
 		{
-			dependencies: ["2B0342C9C0B57372"]
+			dependencies: ["443E4E48D9EB4F40"]
 			description: [""]
 			icon: {
 				Count: 1
@@ -708,11 +693,6 @@
 			id: "3D6F2D2827972749"
 			tasks: [
 				{
-					id: "420C8439CFC88D01"
-					item: "art_of_forging:esoteric_codex"
-					type: "item"
-				}
-				{
 					id: "7183B57CDDA9C9EF"
 					item: "art_of_forging:enigmatic_construct"
 					type: "item"
@@ -723,8 +703,8 @@
 					type: "item"
 				}
 			]
-			title: "&5神秘典籍&r"
-			x: 3.0d
+			title: "&5龙之灵魂&r"
+			x: 6.0d
 			y: 3.0d
 		}
 		{
@@ -1318,6 +1298,31 @@
 			title: "&1凋灵头颅&r"
 			x: -6.0d
 			y: -3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "443E4E48D9EB4F40"
+			size: 1.5d
+			tasks: [{
+				id: "7DA4B957FAF9F0B3"
+				item: "art_of_forging:esoteric_codex"
+				type: "item"
+			}]
+			title: "&5神秘典籍&r"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			id: "55E75519AE205C2E"
+			size: 1.5d
+			tasks: [{
+				id: "5D24F3902FC78AC9"
+				title: "锻造材料"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
 		}
 	]
 	title: "&3转·锻造之艺"

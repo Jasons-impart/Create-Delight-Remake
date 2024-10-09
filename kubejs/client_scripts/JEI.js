@@ -40,10 +40,6 @@ JEIEvents.hideItems((e) => {
   ]);
 });
 
-JEIEvents.addFluids((e) => {
-  e.add(["ratatouille:egg_yolk"]);
-});
-
 JEIEvents.addItems((e) => {
   e.add(["create:crushed_raw_tin"]);
 });

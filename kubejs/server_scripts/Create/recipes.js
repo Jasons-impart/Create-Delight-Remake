@@ -7,7 +7,8 @@ ServerEvents.recipes(e => {
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_sanding",
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething",
         "quark:tweaks/crafting/utility/bent/paper",
-        "create:pressing/sugar_cane"
+        "create:pressing/sugar_cane",
+        "design_decor:stonecutting/industrial_plating"
     ])
     // 黄铜机械手
     e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
@@ -16,6 +17,14 @@ ServerEvents.recipes(e => {
         "4x redstone",
         "quartz"
     ])
+    e.recipes.minecraft.stonecutting(
+        "4x design_decor:cast_iron_boiler",
+        "createbigcannons:cast_iron_block"
+    ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder")
+    e.recipes.minecraft.stonecutting(
+        "design_decor:cast_iron_boiler_large",
+        "createbigcannons:cast_iron_block"
+    ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder_large")
     // 动力锯切割：平滑玫瑰石英
     e.recipes.create.cutting(
         ["create:polished_rose_quartz", Item.of("create:polished_rose_quartz").withChance(0.1)],

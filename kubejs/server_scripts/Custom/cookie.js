@@ -42,7 +42,7 @@ ServerEvents.recipes(e => {
                 "minecraft:sugar",
                 "#forge:animal_oil",
                 "2x create:wheat_flour",
-                Fluid.of("ratatouille:egg_yolk", 50)
+                Fluid.of("createdelight:egg_yolk", 50)
             ]
         ).id(`createdelight:mixing/${result.split(":")[1]}_1`)
         e.recipes.create.mixing(
@@ -52,7 +52,7 @@ ServerEvents.recipes(e => {
                 Fluid.of("create:honey", 50),
                 "createdelight:butter",
                 "2x create:wheat_flour",
-                Fluid.of("ratatouille:egg_yolk", 50)
+                Fluid.of("createdelight:egg_yolk", 50)
             ]
         ).id(`createdelight:mixing/${result.split(":")[1]}_2`)
         baking(e, result.split(" ")[1], cookie, 4, "food", 200)
