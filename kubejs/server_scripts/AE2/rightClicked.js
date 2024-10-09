@@ -1,6 +1,5 @@
 BlockEvents.rightClicked("functionalstorage:fluid_1", (event) => {
-  const { player, block, item, server } = event;
-  // 没写完下次接着写
+  const { player, block, item, level } = event;
   if (
     block.id === "functionalstorage:fluid_1" &&
     item.id === "ae2:cell_component_1k" &&
@@ -22,8 +21,10 @@ BlockEvents.rightClicked("functionalstorage:fluid_1", (event) => {
         },
       });
       block.entity.setChanged();
-      server.runCommand(
-        `say ${block.entityData.getCompound("fluidHandler").getCompound("0").getInt("Amount")}`
+      level.destroyBlock(block.pos, true);
+      item.count--;
+      player.giveInHand(
+        Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:lava"}}')
       );
     }
   } else {
