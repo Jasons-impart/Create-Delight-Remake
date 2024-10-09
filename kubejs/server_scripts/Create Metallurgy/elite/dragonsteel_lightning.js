@@ -17,5 +17,4 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:lightning_dragon_blood", 15),
         ], "superheated", 60
     ).id("iceandfire:dragonforge/dragonsteel_lightning_ingot")
-
 })
