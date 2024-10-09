@@ -24,6 +24,23 @@ ServerEvents.recipes(e => {
     ).id("create:mixing/mince_meat")
 
     // 蛋糕相关
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:cake_batter", 1000),
+        [
+            Fluid.of("minecraft:milk", 250),
+            Fluid.of("createdelight:egg_yolk", 250),
+            '2x create:wheat_flour',
+            "minecraft:sugar"
+        ]
+    ).id("create:mixing/cake_batter")
+    e.recipes.create.filling(
+        'ratatouille:cake_mold_filled',
+        [
+            "ratatouille:cake_mold",
+            Fluid.of("createdelight:cake_batter", 500)
+        ]
+    ).id("create:filling/cake_mold_filled")
+
     e.recipes.create.filling(
         "createaddition:chocolate_cake",
         [
@@ -48,7 +65,7 @@ ServerEvents.recipes(e => {
         .loops(1)
         .id("mynethersdelight:magma_cake")
     e.recipes.create.compacting("create:blaze_cake_base", [
-        Fluid.of("ratatouille:cake_batter", 500),
+        Fluid.of("createdelight:cake_batter", 500),
         "create:cinder_flour"
     ]).id("create:compacting/blaze_cake")
 })
