@@ -183,28 +183,6 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
         })
-    // 切片食物
-    // e.create("createdelight:sliced_onion")
-    //     .maxStackSize(64)
-    //     .translationKey("item.createdelight.sliced_onion")
-    //     .food(food => {
-    //         food.hunger(1)
-    //             .saturation(0.5)
-    //     })
-    //     .tag("forge:crops/onion")
-    //     .tag("forge:vegetables/onion")
-    //     .tag("forge:fermentable")
-    //     .tag("festival_delicacies:onion")
-    // e.create("createdelight:sliced_tomato")
-    //     .maxStackSize(64)
-    //     .translationKey("item.createdelight.sliced_tomato")
-    //     .food(food => {
-    //         food.hunger(1)
-    //             .saturation(0.5)
-    //     })
-    //     .tag("forge:crops/tomato")
-    //     .tag("forge:vegetables/tomato")
-    //     .tag("forge:fermentable")
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)

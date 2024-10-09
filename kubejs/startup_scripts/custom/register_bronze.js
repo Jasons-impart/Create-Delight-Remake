@@ -1,13 +1,14 @@
 StartupEvents.registry("item", e => {
     let items = [
         "bronze_ingot",
-        "bronze_nugget",
-        "bronze_sheet"
+        "bronze_nugget"
     ]
     items.forEach(item => {
         e.create(`createdelight:${item}`)
             .maxStackSize(64)
             .translationKey(`item.createdelight.${item}`)
+            .tag(`forge:${item.split("_")[1]}s/bronze`)
+            .tag(`forge:${item.split("_")[1]}s`)
     })
 })
 
@@ -22,6 +23,8 @@ StartupEvents.registry("block", e => {
             .resistance(hardness)
             .tag(`minecraft:mineable/${tool}`)
             .tag(`minecraft:needs_${level}_tool`)
+            .tag("forge:storage_blocks/bronze")
+            .tag("forge:storage_blocks")
             .translationKey(`block.createdelight.${id}`)
             .requiresTool(true)
     })
