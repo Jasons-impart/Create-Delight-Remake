@@ -1039,14 +1039,11 @@
 				type: "advancement"
 			}]
 			title: "&5追忆之弓&r"
-			x: 9.0d
+			x: 12.0d
 			y: -6.0d
 		}
 		{
-			dependencies: [
-				"0D248D4F04552839"
-				"5FC72D360093BE89"
-			]
+			dependencies: ["042C053521BF3C43"]
 			description: [""]
 			id: "35C5712DB94C5022"
 			tasks: [{
@@ -1075,7 +1072,7 @@
 				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
-			x: 6.0d
+			x: 9.0d
 			y: -6.0d
 		}
 		{
@@ -1323,6 +1320,20 @@
 			}]
 			x: 0.0d
 			y: 3.0d
+		}
+		{
+			dependencies: [
+				"0D248D4F04552839"
+				"5FC72D360093BE89"
+			]
+			id: "042C053521BF3C43"
+			tasks: [{
+				id: "2243147F4127CFCF"
+				title: "羿射九日"
+				type: "checkmark"
+			}]
+			x: 6.0d
+			y: -6.0d
 		}
 	]
 	title: "&3转·锻造之艺"

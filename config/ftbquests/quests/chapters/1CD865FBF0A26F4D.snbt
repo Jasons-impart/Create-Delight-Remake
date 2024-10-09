@@ -70,8 +70,8 @@
 				title: "目标是成为卷轴大师！"
 				type: "checkmark"
 			}]
-			x: -4.5d
-			y: -0.5d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
@@ -85,8 +85,8 @@
 				title: "村民交易"
 				type: "checkmark"
 			}]
-			x: -7.5d
-			y: -3.5d
+			x: -3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -119,8 +119,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -9.0d
-			y: -6.0d
+			x: -4.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -153,8 +153,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -9.0d
-			y: -5.0d
+			x: -4.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -187,8 +187,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.0d
-			y: -5.0d
+			x: -3.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -221,8 +221,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.0d
-			y: -6.0d
+			x: -3.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -255,8 +255,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.0d
-			y: -5.0d
+			x: -2.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -284,8 +284,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.0d
-			y: -6.0d
+			x: -2.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -318,8 +318,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -6.0d
-			y: -5.0d
+			x: -1.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -352,8 +352,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -6.0d
-			y: -6.0d
+			x: -1.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -386,8 +386,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.5d
-			y: -7.0d
+			x: -3.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -420,8 +420,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.5d
-			y: -2.0d
+			x: -4.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -454,8 +454,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.5d
-			y: -2.0d
+			x: -3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
@@ -488,8 +488,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -6.5d
-			y: -2.0d
+			x: -2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
@@ -504,8 +504,8 @@
 				type: "dimension"
 			}]
 			title: "地狱"
-			x: -1.5d
-			y: -3.5d
+			x: 3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -543,8 +543,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -1.5d
-			y: -2.0d
+			x: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -577,8 +577,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -3.0d
-			y: -5.0d
+			x: 1.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -611,8 +611,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -3.0d
-			y: -6.0d
+			x: 1.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -645,8 +645,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -2.0d
-			y: -5.0d
+			x: 2.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -679,8 +679,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -2.0d
-			y: -6.0d
+			x: 2.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -713,8 +713,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -1.0d
-			y: -5.0d
+			x: 3.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -747,8 +747,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -1.0d
-			y: -6.0d
+			x: 3.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -781,8 +781,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 0.0d
-			y: -5.0d
+			x: 4.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
@@ -815,8 +815,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 0.0d
-			y: -6.0d
+			x: 4.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
@@ -830,8 +830,8 @@
 				title: "锻造之艺"
 				type: "checkmark"
 			}]
-			x: -7.5d
-			y: 2.5d
+			x: -3.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2EA5136C0C3B87FE"]
@@ -845,8 +845,8 @@
 				title: "tetra"
 				type: "checkmark"
 			}]
-			x: -1.5d
-			y: 2.5d
+			x: 3.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -901,8 +901,8 @@
 				}
 			]
 			title: "提取器"
-			x: -2.5d
-			y: 1.0d
+			x: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -931,8 +931,8 @@
 					type: "item"
 				}
 			]
-			x: -1.5d
-			y: 1.0d
+			x: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -971,8 +971,8 @@
 					type: "item"
 				}
 			]
-			x: -0.5d
-			y: 1.0d
+			x: 4.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -1004,8 +1004,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -2.5d
-			y: 4.0d
+			x: 2.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -1037,8 +1037,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.0d
+			x: 3.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
@@ -1069,8 +1069,8 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 4.0d
+			x: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1103,8 +1103,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -10.0d
-			y: 1.0d
+			x: -5.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1137,8 +1137,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -9.0d
-			y: 1.0d
+			x: -4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1171,8 +1171,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.0d
-			y: 1.0d
+			x: -3.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1208,8 +1208,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.0d
-			y: 1.0d
+			x: -2.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1245,8 +1245,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -6.0d
-			y: 1.0d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1279,8 +1279,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.0d
-			y: 1.0d
+			x: -0.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1313,8 +1313,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -9.5d
-			y: 4.0d
+			x: -5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1347,8 +1347,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.5d
-			y: 4.0d
+			x: -1.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1384,8 +1384,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.5d
-			y: 4.0d
+			x: -3.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1418,8 +1418,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -6.5d
-			y: 4.0d
+			x: -2.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["275D75A02D8DDA64"]
@@ -1451,8 +1451,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.0d
-			y: 5.5d
+			x: -3.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["275D75A02D8DDA64"]
@@ -1487,8 +1487,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.0d
-			y: 5.5d
+			x: -2.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["062C53CBBB225590"]
@@ -1523,8 +1523,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.5d
-			y: 5.5d
+			x: -1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["243D6889505F1555"]
@@ -1561,8 +1561,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.5d
-			y: 4.0d
+			x: -4.0d
+			y: 4.5d
 		}
 	]
 	title: "&5合·卷轴大全"

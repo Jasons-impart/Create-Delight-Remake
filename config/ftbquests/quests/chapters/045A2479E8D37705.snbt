@@ -290,6 +290,7 @@
 			dependencies: ["2AE0738C43D5A42B"]
 			icon: "ad_astra:moon_globe"
 			id: "6AF0BCF34F1E3853"
+			size: 1.5d
 			tasks: [{
 				dimension: "ad_astra:moon"
 				id: "034E20100DBC39D7"
@@ -303,6 +304,7 @@
 			dependencies: ["2AE0738C43D5A42B"]
 			icon: "ad_astra:mars_globe"
 			id: "244B2CABBB89B269"
+			size: 1.5d
 			tasks: [{
 				dimension: "ad_astra:mars"
 				id: "6A87D73715BD6733"
@@ -316,6 +318,7 @@
 			dependencies: ["2AE0738C43D5A42B"]
 			icon: "ad_astra:glacio_globe"
 			id: "1BEE7AD2537F2428"
+			size: 1.5d
 			tasks: [{
 				dimension: "ad_astra:glacio"
 				id: "5F61EA66AEFBD9B5"
@@ -329,6 +332,7 @@
 			dependencies: ["2AE0738C43D5A42B"]
 			icon: "ad_astra:mercury_globe"
 			id: "0B2D858482173126"
+			size: 1.5d
 			tasks: [{
 				dimension: "ad_astra:mercury"
 				id: "3E2F7F0F21A35C3B"
@@ -342,6 +346,7 @@
 			dependencies: ["2AE0738C43D5A42B"]
 			icon: "ad_astra:venus_globe"
 			id: "5246A4941FE396AC"
+			size: 1.5d
 			tasks: [{
 				dimension: "ad_astra:venus"
 				id: "24F96FC782F1BB94"
@@ -515,7 +520,7 @@
 				value: 1L
 			}]
 			x: 2.5d
-			y: -3.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["1BEE7AD2537F2428"]
@@ -538,8 +543,8 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 4.0d
-			y: 1.0d
+			x: 5.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -550,8 +555,8 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 4.5d
-			y: -1.0d
+			x: 5.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -567,6 +572,7 @@
 		}
 		{
 			dependencies: ["244B2CABBB89B269"]
+			hide: true
 			id: "2652F9C2A88605B3"
 			tasks: [{
 				id: "0D279802D4ABD131"
@@ -574,8 +580,8 @@
 				type: "checkmark"
 			}]
 			title: "沙漠恐蚁"
-			x: -3.0d
-			y: -3.5d
+			x: -2.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["1BEE7AD2537F2428"]
@@ -593,6 +599,7 @@
 			disable_toast: true
 			icon: "ad_astra:earth_globe"
 			id: "06E9305FCDABCD28"
+			size: 1.5d
 			tasks: [{
 				dimension: "minecraft:overworld"
 				id: "3782FD07D15E1C1B"
@@ -692,7 +699,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["6A6D74966776E49B"]
@@ -704,7 +711,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: -6.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["77B14A2DDB78829C"]
@@ -714,7 +721,7 @@
 				item: "iceandfire:amphithere_feather"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.5d
 			y: -2.5d
 		}
 		{
@@ -726,8 +733,8 @@
 				item: "iceandfire:amphithere_skull"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -4.5d
+			x: 6.25d
+			y: -4.25d
 		}
 		{
 			dependencies: ["2F52C516A27808AB"]
@@ -743,7 +750,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
+			x: 5.5d
 			y: -3.5d
 		}
 		{
@@ -754,8 +761,8 @@
 				item: "iceandfire:hydra_fang"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -2.0d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["6DAF4BB49D52FD8B"]
@@ -765,8 +772,8 @@
 				item: "iceandfire:hydra_heart"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -1.0d
+			x: 6.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["6DAF4BB49D52FD8B"]
@@ -777,8 +784,8 @@
 				item: "iceandfire:hydra_skull"
 				type: "item"
 			}]
-			x: 6.0d
-			y: -4.0d
+			x: 8.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["40D76FD4DD98DAE0"]
@@ -788,8 +795,8 @@
 				item: "iceandfire:hydra_arrow"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -3.0d
+			x: 7.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -800,7 +807,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: -5.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -817,7 +824,7 @@
 				type: "item"
 			}]
 			x: 2.5d
-			y: -5.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -828,7 +835,7 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: -5.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
@@ -839,7 +846,7 @@
 				type: "item"
 			}]
 			x: 6.5d
-			y: -0.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
@@ -858,7 +865,7 @@
 				type: "item"
 			}]
 			x: 6.5d
-			y: 0.5d
+			y: -0.5d
 		}
 		{
 			dependencies: [
@@ -978,8 +985,8 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
-			y: 2.0d
+			x: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
@@ -998,8 +1005,8 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
-			y: 2.0d
+			x: 5.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
@@ -1009,7 +1016,7 @@
 				item: "iceandfire:deathworm_tounge"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 6.0d
 			y: 2.0d
 		}
 		{
@@ -1061,8 +1068,8 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
-			y: 3.0d
+			x: 7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["34E1D8B005ACD4CF"]
@@ -1079,7 +1086,7 @@
 				type: "item"
 			}]
 			x: 7.5d
-			y: -1.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0961AD88179B18C4"]
@@ -1561,8 +1568,8 @@
 					type: "item"
 				}
 			]
-			x: -3.5d
-			y: -4.5d
+			x: -2.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["7160E3E42BFE313D"]
@@ -1572,8 +1579,8 @@
 				item: "iceandfire:myrmex_desert_staff"
 				type: "item"
 			}]
-			x: -4.0d
-			y: -5.5d
+			x: -2.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["17D9DB61D8A8DC98"]
