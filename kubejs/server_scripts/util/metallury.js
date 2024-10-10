@@ -116,7 +116,32 @@ function metal_production_line_4(event, metal, heat, time) {
     event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[3]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
 }
-
+/**
+ * @param { Internal.RecipesEventJS_ } event 
+ * @param { InputItem_[] } metal // block, ingot, nugget, plate, rod, wire, fluid
+ * @param { String } heat // heated, superheated
+ * @param { number } time // default 80ticks
+ */
+function metal_production_line_6(event, metal, heat, time) {
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 90), metal[1])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 10), metal[2])
+        .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[2].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 90), metal[3])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[3].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 45), metal[4])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[4].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 45), metal[5])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[5].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[1], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_ingot_mold"])
+        .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[6]}`, 10), "createmetallurgy:graphite_nugget_mold"])
+        .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[3], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_plate_mold"])
+        .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_rod_mold"])
+        .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[4].split(":")[1]}`)
+}
 /**
  * @type {Map<OutputItem_, [InputItem_, number]>}
  */
