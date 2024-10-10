@@ -335,14 +335,17 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:redstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.redstone_paste")
+        .tag("createdelight:redstone")
     // 荧石膏
     e.create("createdelight:glowstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.glowstone_paste")
+        .tag("createdelight:glowstone")
     // 陨石膏
     e.create("createdelight:sky_stone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.sky_stone_paste")
+        .tag("createdelight:sky_stone")
     // 初加工的电路板
     e.create("createdelight:initial_processing_of_printed_engineering_processor")
         .translationKey("item.createdelight.initial_processing_of_printed_engineering_processor")
@@ -392,8 +395,10 @@ StartupEvents.registry("item", e => {
     // 石英玻璃部件
     e.create("createdelight:quartz_glass_parts")
         .translationKey("item.createdelight.quartz_glass_parts")
+        .tag("createdelight:quartz_glass")
     e.create("createdelight:quartz_vibrant_glass_parts")
         .translationKey("item.createdelight.quartz_vibrant_glass_parts")
+        .tag("createdelight:quartz_vibrant_glass")
     // 陨铜锭
     e.create("createdelight:sky_copper_ingot")
         .translationKey("item.createdelight.sky_copper_ingot")
@@ -447,6 +452,7 @@ StartupEvents.registry("item", e => {
     // 人造钻石
     e.create("createdelight:mmd_diamond")
         .translationKey("item.createdelight.mmd_diamond")
+        .tag("forge:gems/diamond")
     //被锯碎的甘蔗
     e.create("createdelight:sawed_sugarcane")
         .translationKey("item.createdelight.sawed_sugarcane")
