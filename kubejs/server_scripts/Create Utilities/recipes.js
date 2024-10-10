@@ -1,7 +1,9 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "createutilities:shaped/gearcube",
-        "createutilities:shaped/void_chest"
+        "createutilities:shaped/void_chest",
+        "createmetallurgy:alloying/void_steel",
+        "createutilities:mixing/void_steel_ingot"
     ])
     metal_production_line_3(e, [
         "createutilities:void_steel_block",
@@ -9,9 +11,14 @@ ServerEvents.recipes(e => {
         "createutilities:void_steel_sheet",
         "createmetallurgy:molten_void_steel"
     ],
-    "heated",
-    60
-    )
+    "heated", 60)
+    e.recipes.createmetallurgy.alloying(
+        Fluid.of("createmetallurgy:molten_void_steel", 90),
+        [
+            "ae2:ender_dust",
+            Fluid.of("createmetallurgy:molten_steel", 90)
+        ], 180, "superheated"
+    ).id("createmetallurgy:alloying/molten_void_steel")
     let iner = "createdelight:incomplete_graviton_tube"
     e.recipes.create.sequenced_assembly("4x createutilities:graviton_tube", "createutilities:void_steel_sheet", [
         e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),
