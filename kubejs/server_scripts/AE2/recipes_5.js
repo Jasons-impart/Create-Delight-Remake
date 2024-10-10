@@ -152,7 +152,7 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("createdelight:iron_casing", [
         "createdelight:iron_casing",
-        '#createdelight:quartz_glass',
+        "#createdelight:quartz_glass",
       ]),
     ])
     .id("createdelight:molecular_assembler_1")
@@ -230,6 +230,10 @@ ServerEvents.recipes((event) => {
       create.deploying("createdelight:sky_steel_casing", [
         "createdelight:sky_steel_casing",
         "#forge:gems/fluix",
+      ]),
+      create.deploying("createdelight:sky_steel_casing", [
+        "createdelight:sky_steel_casing",
+        "ae2:engineering_processor",
       ]),
       create.deploying("createdelight:sky_steel_casing", [
         "createdelight:sky_steel_casing",

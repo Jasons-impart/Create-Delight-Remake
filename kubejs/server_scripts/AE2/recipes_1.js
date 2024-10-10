@@ -172,6 +172,43 @@ ServerEvents.recipes((event) => {
     .id("createdelight:initial_processing_of_printed_processor_4")
     .transitionalItem("megacells:printed_accumulation_processor")
     .loops(2);
+  create
+    .sequenced_assembly(
+      "createdelight:initial_processing_of_printed_engineering_processor",
+      "ae2:printed_engineering_processor",
+      create.deploying("ae2:printed_engineering_processor", [
+        "ae2:printed_engineering_processor",
+        "createdelight:redstone_paste",
+      ])
+    )
+    .id("createdelight:initial_processing_of_printed_processor_5")
+    .transitionalItem("ae2:printed_engineering_processor")
+    .loops(1);
+  create
+    .sequenced_assembly(
+      "createdelight:initial_processing_of_printed_calculation_processor",
+      "ae2:printed_calculation_processor",
+      create.deploying("ae2:printed_calculation_processor", [
+        "ae2:printed_calculation_processor",
+        "createdelight:redstone_paste",
+      ])
+    )
+    .id("createdelight:initial_processing_of_printed_processor_6")
+    .transitionalItem("ae2:printed_calculation_processor")
+    .loops(1);
+  create
+    .sequenced_assembly(
+      "createdelight:initial_processing_of_printed_logic_processor",
+      "ae2:printed_logic_processor",
+      create.deploying("ae2:printed_logic_processor", [
+        "ae2:printed_logic_processor",
+        "createdelight:redstone_paste",
+      ])
+    )
+    .id("createdelight:initial_processing_of_printed_processor_7")
+    .transitionalItem("ae2:printed_logic_processor")
+    .loops(1);
+
   kubejs
     .shapeless("createdelight:initial_processing_of_printed_engineering_processor", [
       "ae2:printed_engineering_processor",
@@ -235,13 +272,13 @@ ServerEvents.recipes((event) => {
 
   // 膏合成
   create
-    .mixing("createdelight:redstone_paste", ["64x #forge:dusts/redstone", "#forge:plates/iron"])
+    .mixing("createdelight:redstone_paste", ["32x #forge:dusts/redstone", "#forge:plates/iron"])
     .heated();
   create
-    .mixing("createdelight:glowstone_paste", ["64x #forge:dusts/glowstone", "#forge:plates/iron"])
+    .mixing("createdelight:glowstone_paste", ["32x #forge:dusts/glowstone", "#forge:plates/iron"])
     .heated();
   create
-    .mixing("createdelight:sky_stone_paste", ["64x ae2:sky_dust", "#forge:plates/iron"])
+    .mixing("createdelight:sky_stone_paste", ["32x ae2:sky_dust", "#forge:plates/iron"])
     .heated();
 
   // 处理器配方

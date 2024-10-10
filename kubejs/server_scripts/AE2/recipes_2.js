@@ -210,7 +210,7 @@ ServerEvents.recipes((event) => {
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
       create.deploying("#forge:plates/iron", [
         "#forge:plates/iron",
-        "createdelight:quartz_vibrant_glass_parts",
+        '#createdelight:quartz_vibrant_glass',
       ]),
       vintageimprovements
         .curving("#forge:plates/iron", "#forge:plates/iron")
@@ -225,7 +225,7 @@ ServerEvents.recipes((event) => {
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
       create.deploying("#forge:plates/iron", [
         "#forge:plates/iron",
-        "createdelight:quartz_glass_parts",
+        '#createdelight:quartz_glass',
       ]),
       vintageimprovements
         .curving("#forge:plates/iron", "#forge:plates/iron")
@@ -234,32 +234,6 @@ ServerEvents.recipes((event) => {
     .transitionalItem("#forge:plates/iron")
     .loops(1)
     .id("createdelight:blank_pattern_2");
-  create
-    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_glass"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_glass"]),
-      vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
-        .head("createdelight:cell_housing_curving_head"),
-    ])
-    .transitionalItem("#forge:plates/iron")
-    .loops(1)
-    .id("createdelight:blank_pattern_3");
-  create
-    .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_vibrant_glass"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:quartz_vibrant_glass"]),
-      vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
-        .head("createdelight:cell_housing_curving_head"),
-    ])
-    .transitionalItem("#forge:plates/iron")
-    .loops(1)
-    .id("createdelight:blank_pattern_4");
 
   // 样板修改器
   create
