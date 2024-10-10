@@ -724,11 +724,11 @@
 	
     "tetra/schematic/sword/tsuba_guard.name": "辅刀",
     "tetra/schematic/sword/tsuba_guard.description": "制作一个护手的铁饰，不仅可以保护手部，还可以提高玩家的额外护甲强度。\n\n材料的§f硬度§r和§f柔韧性§r会增加护甲值。",
-    "tetra/schematic/sword/tsuba_guard.slot1": "铁饰材料",
+    "tetra/schematic/sword/tsuba_guard.slot1": "辅刀材料",
 	
-    "tetra.module.sword/tsuba_guard.name": "铁饰",
+    "tetra.module.sword/tsuba_guard.name": "辅刀",
     "tetra.module.sword/tsuba_guard.description": "一种可以保护手部和提高额外护甲强度的铁饰。通常与武士刀配合使用。",
-    "tetra.module.sword/tsuba_guard.material_name": "％s铁饰",
+    "tetra.module.sword/tsuba_guard.material_name": "%s辅刀",
 
 
 

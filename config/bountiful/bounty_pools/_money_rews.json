@@ -1,0 +1,32 @@
+{
+    "content": {
+        
+        "cashier_iron_coin": {
+            "type": "item",
+            "content": "createdelightcore:iron_coin",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 100
+        },
+        "cashier_copper_coin": {
+            "type": "item",
+            "content": "createdelightcore:copper_coin",
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 1000
+        },
+        "cashier_gold_coin": {
+            "type": "item",
+            "content": "createdelightcore:gold_coin",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 10000
+        }
+    }
+}

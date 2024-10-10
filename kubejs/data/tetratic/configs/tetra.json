@@ -1,6 +1,71 @@
 {
   "Version": 1.0,
   "attributemap": {
+    "double/head_left": {
+      "double/basic_hammer_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:hammer"
+          }
+        }
+      },
+      "double/basic_axe_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:heavy_axe"
+          }
+        }
+      },
+      "double/basic_pickaxe_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:pickaxe"
+          }
+        }
+      },
+      "double/hoe_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:pickaxe"
+          }
+        }
+      },
+      "double/claw_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:pickaxe"
+          }
+        }
+      },
+      "double/adze_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:pickaxe"
+          }
+        }
+      },
+      "double/sickle_left": {
+        "key": "double/head_left",
+        "improvement": "double/warforged",
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:sickle"
+          }
+        }
+      }
+    },
     "sword/blade": {
       "sword/heavy_blade": {
         "config": {
