@@ -167,6 +167,14 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:board_noodles")
         .maxStackSize(64)
         .translationKey("item.createdelight.board_noodles")
+    // 老冰棍
+    e.create("createdelight:empty_popsicle")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.empty_popsicle")
+        .food(food => {
+            food.hunger(3)
+                .saturation(0.5)
+        })
     // 薯条
     e.create("createdelight:french_fries")
         .maxStackSize(64)
@@ -453,6 +461,7 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:mmd_diamond")
         .translationKey("item.createdelight.mmd_diamond")
         .tag("forge:gems/diamond")
+
     //被锯碎的甘蔗
     e.create("createdelight:sawed_sugarcane")
         .translationKey("item.createdelight.sawed_sugarcane")

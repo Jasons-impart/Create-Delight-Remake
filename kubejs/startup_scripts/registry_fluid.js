@@ -131,4 +131,12 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.egg_yolk")
         .translationKey("block.createdelight.egg_yolk")
         .translationKey("item.createdelight.egg_yolk_bucket")
+    
+    //黏液
+    e.create("createdelight:slime")
+        .thickTexture(0x04FF00)
+        .bucketColor(0x04FF00)
+        .translationKey("fluid.createdelight.slime")
+        .translationKey("block.createdelight.slime")
+        .translationKey("item.createdelight.slime_bucket")
 })
