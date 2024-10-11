@@ -2,23 +2,37 @@
     "content": {
         "all_rew_primary_currency": {
             "type": "item",
+            "rarity": "UNCOMMON",
             "content": "createdelightcore:copper_coin",
             "amount": {
                 "min": 1,
                 "max": 4
             },
             "unitWorth": 1000,
-            "weightMult": 1.3
+            "weightMult": 1.3,
+            "forbids": [
+                {
+                    "type": "item",
+                    "content": "createdelightcore:gold_coin"
+                }
+            ]
         },
         "all_rew_primary_currency_rare_bargain": {
             "type": "item",
+            "rarity": "UNCOMMON",
             "content": "createdelightcore:copper_coin",
             "amount": {
                 "min": 1,
                 "max": 4
             },
             "unitWorth": 800,
-            "weightMult": 0.2
+            "weightMult": 0.2,
+            "forbids": [
+                {
+                    "type": "item",
+                    "content": "createdelightcore:gold_coin"
+                }
+            ]
         },
         "all_iron_coin": {
             "type": "item",
@@ -27,28 +41,46 @@
                 "min": 1,
                 "max": 32
             },
+            "forbids": [
+                {
+                    "type": "item",
+                    "content": "createdelightcore:gold_coin"
+                },
+                {
+                    "type": "item",
+                    "content": "createdelightcore:copper_coin"
+                }
+            ],
             "unitWorth": 100,
-			"weightMult": 0.65
+			"weightMult": 0.35
         },
         "all_copper_coin": {
             "type": "item",
+            "rarity": "UNCOMMON",
             "content": "createdelightcore:copper_coin",
             "amount": {
                 "min": 1,
                 "max": 16
             },
+            "forbids": [
+                {
+                    "type": "item",
+                    "content": "createdelightcore:gold_coin"
+                }
+            ],
             "unitWorth": 1000,
-			"weightMult": 0.65
+			"weightMult": 0.35
         },
         "all_gold_coin": {
             "type": "item",
+            "rarity": "RARE",
             "content": "createdelightcore:gold_coin",
             "amount": {
                 "min": 1,
                 "max": 9
             },
-            "unitWorth": 10000,
-			"weightMult": 0.65
+            "unitWorth": 9000,
+			"weightMult": 0.35
         }
     }
 }

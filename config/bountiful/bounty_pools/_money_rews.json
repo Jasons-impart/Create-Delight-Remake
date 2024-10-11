@@ -22,11 +22,22 @@
         "cashier_gold_coin": {
             "type": "item",
             "content": "createdelightcore:gold_coin",
+            "rarity": "UNCOMMON",
             "amount": {
                 "min": 1,
                 "max": 9
             },
             "unitWorth": 10000
+        },
+        "cashier_emerald_coin": {
+            "type": "item",
+            "content": "createdelightcore:emerald_coin",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 90000
         }
     }
 }
