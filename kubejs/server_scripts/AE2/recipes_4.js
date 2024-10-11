@@ -256,4 +256,7 @@ ServerEvents.recipes((event) => {
     .loops(1)
     .id("createdelight:advanced_card_1");
   event.remove({ id: "ae2:materials/advancedcard" });
+
+  // 共振发电
+  
 });
