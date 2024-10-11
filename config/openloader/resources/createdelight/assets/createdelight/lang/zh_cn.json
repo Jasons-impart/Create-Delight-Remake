@@ -160,6 +160,7 @@
     "item.createdelight.potato_stew_beef": "土豆加牛肉",
     "text.createdelight.eat_potato_stew_beef": "厨子不偷，五谷不收？!",
     "item.createdelight.vermicelli": "挂面",
+    "item.createdelight.empty_popsicle": "老冰棍",
     "item.createdelight.chocolate_cookie_dough": "巧克力曲奇面团",
     "item.createdelight.persimmon_cookie_dough": "柿曲奇面团",
     "item.createdelight.lemon_cookie_dough": "柠檬曲奇面团",
@@ -212,7 +213,9 @@
     "item.createdelight.unfermented_paper_pulp_bucket": "待发酵的纸浆桶",
     "item.createdelight.incomplete_paper": "未完成的纸",
     "item.createdelight.waste_paper": "废纸",
-
+    "fluid.createdelight.slime": "黏液",
+    "block.createdelight.slime": "黏液",
+    "item.createdelight.slime_bucket": "黏液桶",
 
     "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
     "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
