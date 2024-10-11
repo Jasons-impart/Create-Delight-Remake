@@ -177,7 +177,7 @@ ServerEvents.recipes((event) => {
 
   // β-正交晶系六方铁 相变铁
   let iron_blocks_26 = ["mynethersdelight:bullet_pepper"];
-  for (let i = 0; i < 26; i++) {
+  for (let i = 0; i < 16; i++) {
     iron_blocks_26.push("#forge:storage_blocks/iron");
   }
 
@@ -186,7 +186,7 @@ ServerEvents.recipes((event) => {
     .id("createdelight:phase_transition_iron_1");
 
   let iron_blocks_26_ = [];
-  for (let i = 0; i < 26; i++) {
+  for (let i = 0; i < 16; i++) {
     iron_blocks_26_.push({ item: "minecraft:iron_block" });
   }
   event
