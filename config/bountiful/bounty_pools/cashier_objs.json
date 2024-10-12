@@ -3241,7 +3241,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 25000
+            "unitWorth": 25000,
+            "weightMult": 0.3 
         },
         "cashier_obj_ghasta_with_cream": {
             "type": "item",
@@ -3251,7 +3252,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 31000
+            "unitWorth": 31000,
+            "weightMult": 0.25 
         },
         "cashier_obj_roast_stuffed_hoglin": {
             "type": "item",
@@ -3261,7 +3263,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 28000
+            "unitWorth": 28000,
+            "weightMult": 0.25 
         },
         "cashier_obj_steamed_dragon_egg_block": {
             "type": "item",
@@ -3271,7 +3274,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 35000
+            "unitWorth": 35000,
+            "weightMult": 0.25 
         },
         "cashier_obj_dragon_leg_with_sauce_block": {
             "type": "item",
@@ -3281,7 +3285,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 40000
+            "unitWorth": 40000,
+            "weightMult": 0.25 
         },
         "cashier_obj_deluxe_burger": {
             "type": "item",
@@ -3291,7 +3296,8 @@
                 "min": 1,
                 "max": 2
             },
-            "unitWorth": 38000
+            "unitWorth": 38000,
+            "weightMult": 0.25 
         }
     }
 }

@@ -216,6 +216,7 @@
     "fluid.createdelight.slime": "黏液",
     "block.createdelight.slime": "黏液",
     "item.createdelight.slime_bucket": "黏液桶",
+    "item.createdelight.unfinished_leather": "未完成的皮革",
 
     "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
     "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
