@@ -172,8 +172,8 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.empty_popsicle")
         .food(food => {
-            food.hunger(3)
-                .saturation(0.5)
+            food.hunger(2)
+                .saturation(0.25)
         })
     // 薯条
     e.create("createdelight:french_fries")
@@ -471,4 +471,9 @@ StartupEvents.registry("item", e => {
     //废纸
     e.create("createdelight:waste_paper")
         .translationKey("item.createdelight.waste_paper")
+    
+    //未完成的皮革
+    e.create("createdelight:unfinished_leather")
+        .tag("forge:leather")
+        .translationKey("item.createdelight.unfinished_leather")
 })
