@@ -140,7 +140,7 @@ function metal_production_line_6(event, metal, heat, time) {
         .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[3], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
-    event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_rod_mold"])
+    event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 45), "createmetallurgy:graphite_rod_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[4].split(":")[1]}`)
 }
 
