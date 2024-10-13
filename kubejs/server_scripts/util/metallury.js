@@ -165,7 +165,7 @@ function metal_production_line_7(event, metal, heat, time) {
  * @type {Map<OutputItem_, [InputItem_, number]>}
  */
 let byProductMap = new Map()
-byProductMap.set("createmetallurgy:iron_dust", ["minecraft:redstone", 0.5])
+byProductMap.set("createmetallurgy:iron_dust", ["minecraft:redstone", 0.75])
 byProductMap.set("createmetallurgy:copper_dust", ["minecraft:clay_ball", 0.5])
 byProductMap.set("createmetallurgy:zinc_dust", ["minecraft:gunpowder", 0.5])
 byProductMap.set("createmetallurgy:gold_dust", ["minecraft:quartz", 0.5])
@@ -179,9 +179,8 @@ byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2
  * 
  * @param { Internal.RecipesEventJS_ } event 
  * @param { InputItem_[] } metal //dirty_dust, dust, crushed_raw_ore, raw_ore, nugget
- * @param { number } time 
  */
-function metal_production_line_5(event, metal, time) {
+function metal_production_line_5(event, metal) {
     let byProduct = byProductMap.get(metal[1])
     event.recipes.vintageimprovements.pressurizing(
         [Item.of(metal[0], 2)], [
@@ -202,4 +201,14 @@ function metal_production_line_5(event, metal, time) {
         Item.of(metal[4], 18),
         metal[2])
         .id(`vintageimprovements:vibrating/${metal[4].split(":")[1]}`)
+    event.recipes.create.splashing([Item.of(metal[4], 9), Item.of(byProduct[0]).withChance(byProduct[1])], metal[2])
+        .id(`create:splashing/${metal[2].split(":")[1]}`)
+    event.recipes.create.splashing([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])], metal[0])
+        .id(`createmetallurgy:splashing/${metal[0].split(":")[1]}`)
+    event.recipes.create.crushing([metal[2], Item.of("create:experience_nugget").withChance(0.75)], metal[3])
+        .id(`create:crushing/${metal[3].split(":")[1]}`)
+    event.recipes.create.milling([metal[0], Item.of(metal[0]).withChance(0.25)], metal[2])
+        .id(`create:milling/${metal[2].split(":")[1]}`)
+    
 }
+
