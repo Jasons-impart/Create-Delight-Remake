@@ -79,7 +79,6 @@ ServerEvents.recipes((event) => {
         "butchercraft:cow_hide",
         "butchercraft:blood_fluid_bucket",
         "butchercraft:blood_fluid_bucket",
-        "butchercraft:blood_fluid_bucket",
         "butchercraft:heart",
       ],
       "createdelight:cow_zip",
@@ -87,6 +86,7 @@ ServerEvents.recipes((event) => {
     [
       [
         "butchercraft:sheep_hide",
+        "butchercraft:blood_fluid_bucket",
         "butchercraft:blood_fluid_bucket",
         "butchercraft:stomach",
         "2x butchercraft:lung",
@@ -159,6 +159,7 @@ ServerEvents.recipes((event) => {
         "5x butchercraft:leather_scrap",
         "16x butchercraft:sinew",
         "12x butchercraft:fat",
+        "butchercraft:blood_fluid_bucket",
         "butchercraft:blood_fluid_bucket",
         "13x minecraft:bone",
         "butchercraft:goat_head_item",
@@ -266,17 +267,75 @@ ServerEvents.recipes((event) => {
     ],
   ];
   ann.forEach(([outp, inp]) => {
-    create.item_application(outp, [inp, "#forge:tools/knives"]);
+    create.item_application(outp, [inp, "#forge:tools/knives"]).id(`${inp}_unpack`);
   });
 
-  // create
-  //   .sequenced_assembly("createdelight:cow_zip", "butchercraft:cow_carcass", [
-  //       create.deploying(inpu, [inpu, Item.of("minecraft:bucket")]),
-  //     create.deploying(inpu, [inpu, Item.of("butchercraft:skinning_knife")]),
-  //     create.deploying(inpu, [inpu, Item.of("butchercraft:bone_saw")]),
-  //     create.deploying(inpu, [inpu, Item.of("butchercraft:gut_knife")]),
-  //     create.deploying(inpu, [inpu, Item.of("butchercraft:butcher_knife")]),
-  //   ])
-  //   .transitionalItem("butchercraft:cow_carcass")
-  //   .loops(1);
+  ["cow", "sheep", "goat", "pig"].forEach((ani) => {
+    create
+      .sequenced_assembly(`createdelight:${ani}_zip`, `butchercraft:${ani}_carcass`, [
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("minecraft:bucket"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("minecraft:bucket"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("butchercraft:skinning_knife"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("butchercraft:bone_saw"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("butchercraft:gut_knife"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("butchercraft:butcher_knife"),
+        ]),
+      ])
+      .transitionalItem(`butchercraft:${ani}_carcass`)
+      .loops(1)
+      .id(`createdelight:${ani}_zip_zip`);
+  });
+
+  [
+    "chicken",
+    "white_rabbit",
+    "black_rabbit",
+    "brown_rabbit",
+    "splotched_rabbit",
+    "gold_rabbit",
+  ].forEach((ani) => {
+    create
+      .sequenced_assembly(`createdelight:${ani}_zip`, `butchercraft:${ani}_carcass`, [
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("minecraft:glass_bottle"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of("minecraft:glass_bottle"),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of(Item.of("butchercraft:gut_knife")),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of(Item.of("minecraft:shears")),
+        ]),
+        create.deploying(`butchercraft:${ani}_carcass`, [
+          `butchercraft:${ani}_carcass`,
+          Item.of(Item.of("butchercraft:skinning_knife")),
+        ]),
+      ])
+      .transitionalItem(`butchercraft:${ani}_carcass`)
+      .loops(1)
+      .id(`createdelight:${ani}_zip_zip`);
+  });
 });
