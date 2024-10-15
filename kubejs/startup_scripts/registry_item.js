@@ -474,6 +474,5 @@ StartupEvents.registry("item", e => {
     
     //未完成的皮革
     e.create("createdelight:unfinished_leather")
-        .tag("forge:leather")
         .translationKey("item.createdelight.unfinished_leather")
 })
