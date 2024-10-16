@@ -1,0 +1,12 @@
+{
+    "parent": "minecraft:block/cube",
+    "textures": {
+      "down": "vintagedelight:block/oat_bag_bottom",
+      "east": "vintagedelight:block/oat_bag_side",
+      "north": "vintagedelight:block/oat_bag_side_tied",
+      "particle": "vintagedelight:block/gearo_berry_bag_top",
+      "south": "vintagedelight:block/oat_bag_side_tied",
+      "up": "vintagedelight:block/gearo_berry_bag_top",
+      "west": "vintagedelight:block/oat_bag_side"
+    }
+  }

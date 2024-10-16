@@ -10,8 +10,9 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cutting/wild_cucumbers",
         "vintagedelight:cutting/cucumber_cutting",
-        "culturaldelights:cutting/cut_cucumber"
+        "culturaldelights:cutting/cut_cucumber",
     ])
+    e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
     // 腊肠
     e.recipes.vintagedelight.fermenting(
