@@ -116,6 +116,7 @@ function metal_production_line_4(event, metal, heat, time) {
     event.recipes.createmetallurgy.casting_in_table(metal[2], [Fluid.of(`${metal[3]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
 }
+
 /**
  * @param { Internal.RecipesEventJS_ } event 
  * @param { InputItem_[] } metal // block, ingot, nugget, plate, rod, wire, fluid
@@ -139,14 +140,32 @@ function metal_production_line_6(event, metal, heat, time) {
         .processingTime(0.5 * time).id(`createmetallurgy:casting_in_table/${metal[2].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[3], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_plate_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
-    event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 90), "createmetallurgy:graphite_rod_mold"])
+    event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 45), "createmetallurgy:graphite_rod_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[4].split(":")[1]}`)
+}
+
+
+/**
+ * @param { Internal.RecipesEventJS_ } event 
+ * @param { InputItem_[] } metal // block, ingot, fluid
+ * @param { String } heat // heated, superheated
+ * @param { number } time // default 80ticks
+ */
+function metal_production_line_7(event, metal, heat, time) {
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 90), metal[1])
+        .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_basin(metal[0], Fluid.of(`${metal[2]}`, 810))
+        .processingTime(2 * time).id(`createmetallurgy:casting_in_basin/${metal[0].split(":")[1]}`)
+    event.recipes.createmetallurgy.casting_in_table(metal[1], [Fluid.of(`${metal[2]}`, 90), "createmetallurgy:graphite_ingot_mold"])
+        .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[1].split(":")[1]}`)
 }
 /**
  * @type {Map<OutputItem_, [InputItem_, number]>}
  */
 let byProductMap = new Map()
-byProductMap.set("createmetallurgy:iron_dust", ["minecraft:redstone", 0.5])
+byProductMap.set("createmetallurgy:iron_dust", ["minecraft:redstone", 0.75])
 byProductMap.set("createmetallurgy:copper_dust", ["minecraft:clay_ball", 0.5])
 byProductMap.set("createmetallurgy:zinc_dust", ["minecraft:gunpowder", 0.5])
 byProductMap.set("createmetallurgy:gold_dust", ["minecraft:quartz", 0.5])
@@ -160,13 +179,12 @@ byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2
  * 
  * @param { Internal.RecipesEventJS_ } event 
  * @param { InputItem_[] } metal //dirty_dust, dust, crushed_raw_ore, raw_ore, nugget
- * @param { number } time 
  */
-function metal_production_line_5(event, metal, time) {
+function metal_production_line_5(event, metal) {
     let byProduct = byProductMap.get(metal[1])
     event.recipes.vintageimprovements.pressurizing(
         [Item.of(metal[0], 2)], [
-        Fluid.of("vintageimprovements:sulfuric_acid", 250),
+        Fluid.of("vintageimprovements:sulfuric_acid", 100),
         metal[3]
     ])
         .superheated()
@@ -183,4 +201,14 @@ function metal_production_line_5(event, metal, time) {
         Item.of(metal[4], 18),
         metal[2])
         .id(`vintageimprovements:vibrating/${metal[4].split(":")[1]}`)
+    event.recipes.create.splashing([Item.of(metal[4], 9), Item.of(byProduct[0]).withChance(byProduct[1])], metal[2])
+        .id(`create:splashing/${metal[2].split(":")[1]}`)
+    event.recipes.create.splashing([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])], metal[0])
+        .id(`createmetallurgy:splashing/${metal[0].split(":")[1]}`)
+    event.recipes.create.crushing([metal[2], Item.of("create:experience_nugget").withChance(0.75)], metal[3])
+        .id(`create:crushing/${metal[3].split(":")[1]}`)
+    event.recipes.create.milling([metal[0], Item.of(metal[0]).withChance(0.25)], metal[2])
+        .id(`create:milling/${metal[2].split(":")[1]}`)
+    
 }
+

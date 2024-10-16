@@ -216,8 +216,15 @@
     "fluid.createdelight.slime": "黏液",
     "block.createdelight.slime": "黏液",
     "item.createdelight.slime_bucket": "黏液桶",
+    "item.createdelight.unfinished_leather": "未完成的皮革",
 
     "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
     "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
-    "item.tetra.scroll.bow/stave/remembrance_stave.description": "包含锻造追忆之弓的知识"
+    "item.tetra.scroll.bow/stave/remembrance_stave.description": "包含锻造追忆之弓的知识",
+    "block.mbd2.energy_in": "能量输入口",
+    "block.mbd2.alloy_electric_furnace": "合金电炉核心",
+    "block.mbd2.create_in": "应力输入接口",
+    "block.mbd2.butchery_in": "屠宰室输入口",
+    "block.mbd2.butchery_out": "屠宰室输出口",
+    "block.mbd2.butchery_room": "屠宰室核心"
 }

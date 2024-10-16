@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething",
         "quark:tweaks/crafting/utility/bent/paper",
         "create:pressing/sugar_cane",
-        "design_decor:stonecutting/industrial_plating"
+        "design_decor:stonecutting/industrial_plating",
+        "create:splashing/iceandfire/crushed_raw_silver"
     ])
     // 黄铜机械手
     e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
@@ -130,4 +131,9 @@ ServerEvents.recipes(e => {
     //坚固板的另一个配方
     e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
         .id("vintageimprovements:hammering/sturdy_sheet")
+    //deco和create的工业铁块互切
+    e.recipes.minecraft.stonecutting("design_decor:industrial_plating_block", "create:industrial_iron_block")
+        .id("industrial_plating_block_from_industrial_iron_block")
+    e.recipes.minecraft.stonecutting("create:industrial_iron_block", "design_decor:industrial_plating_block")
+        .id("industrial_iron_block_from_industrial_plating_block")
 })

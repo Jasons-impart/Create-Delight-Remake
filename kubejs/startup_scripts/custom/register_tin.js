@@ -29,6 +29,7 @@ StartupEvents.registry("block", e => {
             .resistance(hardness)
             .tag(`minecraft:mineable/${tool}`)
             .tag(`minecraft:needs_${level}_tool`)
+            .tag("forge:ores/tin")
             .translationKey(`block.createdelight.${id}`)
             .requiresTool(true)
     })

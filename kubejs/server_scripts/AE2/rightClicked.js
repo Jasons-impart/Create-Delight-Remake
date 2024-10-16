@@ -1,4 +1,5 @@
 BlockEvents.rightClicked("functionalstorage:fluid_1", (event) => {
+// 手持1k ME存储组件蹲下右击获取
   const { player, block, item, level } = event;
   if (
     block.id === "functionalstorage:fluid_1" &&

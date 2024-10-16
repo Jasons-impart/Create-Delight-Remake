@@ -17,7 +17,16 @@ let tooltips = [
     ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su\n"],
     ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su\n"],
     ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su\n"],
-    ["createdelight:emergency_industrial_platform", "§a放入泥土以显示平台范围，放入石头以产生平台", "§aInsert dirt to display platform range, insert stone to generate platform."]
+    ["createdelight:emergency_industrial_platform", "§a放入泥土以显示平台范围，放入石头以产生平台", "§aInsert dirt to display platform range, insert stone to generate platform."],
+    ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
+    ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    ["createdelight:nether_ore_cluster", "1536su/RPM", "1536su/RPM"],
+    ["createdelight:moon_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    ["createdelight:mars_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    ["createdelight:mars_gemstone_cluster", "1536su/RPM", "1536su/RPM"],
+    ["createdelight:mercury_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    ["createdelight:venus_ore_cluster", "2048su/RPM", "2048su/RPM"],
+    ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

@@ -944,11 +944,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -1763,11 +1758,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -2588,11 +2578,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -3364,11 +3349,6 @@
       "Name": "纯纯工业美食（粗加工回收）",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
       ],
       "Trades": [
         {
@@ -4173,11 +4153,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -4869,11 +4844,6 @@
       "Name": "稍微烤制的食物的回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
       ],
       "Trades": [
         {
