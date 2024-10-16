@@ -1889,8 +1889,8 @@
     "tetra.module.crossbow/burst_stave.name": "爆裂板条",
     "tetra.stats.art_of_forging:esoteric_edge": "秘术之刃",
     "tetra.stats.art_of_forging:judgement.tooltip_short": "敌人生命值低于一定程度时，您有可能一击必杀",
-    "tetra/schematic/sword/crucible/crucible_blade.description": "用坩埚剑刃替换当前剑的剑刃。\n\n材料 §f硬度§r 增加 §f伤害§r。",
-    "tetra/schematic/sword/crucible/crucible_blade.name": "§c熔炉剑刃§r",
+    "tetra/schematic/sword/crucible/crucible_blade.description": "用裁决剑刃替换当前剑的剑刃。\n\n材料 §f硬度§r 增加 §f伤害§r。",
+    "tetra/schematic/sword/crucible/crucible_blade.name": "§c裁决剑刃§r",
     "tetra/schematic/sword/crucible/crucible_blade.slot1": "剑刃材料",
     "tetra/schematic/sword/flamberge/flamberge_blade.description": "用长剑刃替换当前的剑刃。\n\n材料§f硬度§r增加§f伤害§r。",
     "tetra/schematic/sword/flamberge/flamberge_blade.name": "长剑刃"

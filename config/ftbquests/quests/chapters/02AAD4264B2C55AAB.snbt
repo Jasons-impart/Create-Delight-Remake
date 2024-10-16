@@ -246,7 +246,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
-			description: ["锻造师发现，将&e烈焰人引诱至灵魂沙峡谷并击杀&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4直接收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
+			description: ["将&e烈焰人引诱至灵魂沙峡谷并击杀&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4直接收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
 			id: "6D5A656ACC1EC65B"
 			size: 1.5d
 			tasks: [{
@@ -668,28 +668,7 @@
 		{
 			dependencies: ["443E4E48D9EB4F40"]
 			description: [""]
-			icon: {
-				Count: 1
-				id: "tetra:scroll_rolled"
-				tag: {
-					BlockEntityTag: {
-						data: [{
-							details: "art_of_forging"
-							glyphs: [I;
-								8
-								7
-								9
-								2
-							]
-							intricate: 0b
-							key: "tetra/crucible_blade"
-							material: 2
-							ribbon: "ff1e00"
-							schematics: ["tetra:sword/crucible_blade"]
-						}]
-					}
-				}
-			}
+			icon: "art_of_forging:dragon_soul"
 			id: "3D6F2D2827972749"
 			tasks: [
 				{
@@ -951,7 +930,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
-			description: [""]
+			description: ["我在箱子里发现了一种奇怪的虫子，笔记中提到它可以用来&e打磨武器&r。使用打磨后武器击杀生物时，纳米昆虫会分解它们体内的某些成分，从而产生&e全新的掉落物&r。这些新的战利品各自有其独特的用途。"]
 			id: "1395569F70AEFEE2"
 			size: 1.5d
 			tasks: [{
@@ -1069,6 +1048,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
