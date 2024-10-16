@@ -2011,6 +2011,646 @@
 			x: -2.0d
 			y: 0.0d
 		}
+		{
+			dependencies: ["23844625502BCC3B"]
+			id: "534742BED850E751"
+			tasks: [{
+				id: "490DF8C3941CD16D"
+				item: "ae2:printed_calculation_processor"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: [
+				"1A851F2AC4486963"
+				"70BA3B5FB6BA1B8A"
+				"64FEFE0EE74CB76B"
+			]
+			id: "1551BA92CF2E1580"
+			tasks: [{
+				id: "402B23BC806C17C7"
+				item: "createdelight:initial_processing_of_printed_calculation_processor"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["05D52AC3EBD5ACF6"]
+			id: "55889D281FB84C4D"
+			tasks: [{
+				id: "23D821A8F7A6855F"
+				item: "createdelight:calculation_processor_inscribed"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["30AFE2C4EC9DBBDB"]
+			id: "070FCFD15EA22E5B"
+			tasks: [{
+				id: "342ECA2EE20C855C"
+				item: "ae2:calculation_processor"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["534742BED850E751"]
+			id: "64FEFE0EE74CB76B"
+			subtitle: "消耗2粉"
+			tasks: [{
+				count: 2L
+				id: "23AD812C09ADDF67"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			title: "直接无序合成"
+			x: 2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["534742BED850E751"]
+			id: "1A851F2AC4486963"
+			subtitle: "等价于消耗1粉"
+			tasks: [{
+				id: "5B414093FD083583"
+				item: {
+					Count: 1
+					id: "createdelight:redstone_paste"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "使用膏"
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["534742BED850E751"]
+			icon: "vintageimprovements:vacuum_chamber"
+			id: "70BA3B5FB6BA1B8A"
+			subtitle: "消耗1粉"
+			tasks: [
+				{
+					id: "1BF899F66642A721"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:vacuum_chamber"
+					id: "47204766D8D38839"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的压缩机"
+					to_observe: "vintageimprovements:vacuum_chamber"
+					type: "observation"
+				}
+			]
+			title: "使用压缩机处理"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"1551BA92CF2E1580"
+				"23844625502BCC3B"
+				"48394BA873D459B7"
+			]
+			id: "05D52AC3EBD5ACF6"
+			tasks: [{
+				id: "111FE5AC3C0B14DC"
+				item: "ae2:printed_silicon"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["55889D281FB84C4D"]
+			icon: {
+				Count: 1
+				id: "vintageimprovements:concave_curving_head"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "30AFE2C4EC9DBBDB"
+			tasks: [
+				{
+					id: "27697107C2114B7E"
+					item: {
+						Count: 1
+						id: "vintageimprovements:concave_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:curving_press"
+					id: "18FB75FEB4157334"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的冲压机"
+					to_observe: "vintageimprovements:curving_press"
+					type: "observation"
+				}
+			]
+			title: "使用凹陷封头冲压"
+			x: 10.0d
+			y: 8.0d
+		}
+		{
+			id: "36DB558EE19C0129"
+			tasks: [{
+				id: "056C57B7681AC6F0"
+				item: "ae2:certus_quartz_crystal"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["36DB558EE19C0129"]
+			icon: "createdelight:universal_press"
+			id: "23844625502BCC3B"
+			tasks: [
+				{
+					id: "59A479FDD08F9721"
+					item: "createdelight:universal_press"
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:curving_press"
+					id: "5B7781020F9EA800"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的冲压机"
+					to_observe: "vintageimprovements:curving_press"
+					type: "observation"
+				}
+			]
+			title: "使用通用压印模板冲压"
+			x: -2.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6F8DB4C688CDE79B"]
+			id: "0A879354109B6029"
+			tasks: [{
+				id: "34E54AAAECDFD7F8"
+				item: "createdelight:item_cell_housing_blank"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["4878BCD4902197B0"]
+			icon: "createdelight:cell_housing_curving_head"
+			id: "6F8DB4C688CDE79B"
+			tasks: [
+				{
+					id: "1BDFD72F0AB4370C"
+					item: "createdelight:cell_housing_curving_head"
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:curving_press"
+					id: "749D765DD0B92A46"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的冲压机"
+					to_observe: "vintageimprovements:curving_press"
+					type: "observation"
+				}
+			]
+			title: "使用元件外壳封头冲压"
+			x: -2.0d
+			y: 12.0d
+		}
+		{
+			id: "4878BCD4902197B0"
+			tasks: [{
+				id: "4E93DF101477488D"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["0A879354109B6029"]
+			icon: "vintageimprovements:vacuum_chamber"
+			id: "6DC3E0168AC06ADC"
+			subtitle: "消耗1粉"
+			tasks: [
+				{
+					id: "21621443FFB0841A"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:vacuum_chamber"
+					id: "2C743DE3A4A538E8"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的压缩机"
+					to_observe: "vintageimprovements:vacuum_chamber"
+					type: "observation"
+				}
+			]
+			title: "使用压缩机处理"
+			x: 2.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["0A879354109B6029"]
+			id: "5901D18C4E177068"
+			subtitle: "消耗3粉"
+			tasks: [{
+				count: 3L
+				id: "2E76C8326C8DBA2A"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			title: "直接无序合成"
+			x: 2.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["0A879354109B6029"]
+			id: "13E21DC010216882"
+			subtitle: "等价于消耗1粉"
+			tasks: [{
+				id: "61D812868846E2EF"
+				item: {
+					Count: 1
+					id: "createdelight:redstone_paste"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "使用膏"
+			x: 2.0d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"13E21DC010216882"
+				"5901D18C4E177068"
+				"6DC3E0168AC06ADC"
+			]
+			id: "51627CB273142F22"
+			tasks: [{
+				id: "41B169413B0150E1"
+				item: "createdelight:initial_processing_of_item_cell_housing"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["51627CB273142F22"]
+			id: "5AB2EBBD2243DE6B"
+			subtitle: "消耗两个石英玻璃"
+			tasks: [{
+				count: 2L
+				id: "1F1A65BE47AAEE87"
+				item: "ae2:quartz_glass"
+				type: "item"
+			}]
+			title: "石英玻璃直接无序合成"
+			x: 6.0d
+			y: 11.0d
+		}
+		{
+			dependencies: [
+				"51627CB273142F22"
+				"0462FFB851550962"
+			]
+			id: "300372C7A93BD7C5"
+			subtitle: "消耗0.25个石英玻璃"
+			tasks: [{
+				id: "729F8418B5976DAA"
+				item: "createdelight:quartz_glass_parts"
+				type: "item"
+			}]
+			title: "使用石英玻璃部件"
+			x: 6.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["5AB2EBBD2243DE6B"]
+			icon: "createdelight:cell_housing_curving_head"
+			id: "0462FFB851550962"
+			tasks: [{
+				elapsedTime: 1L
+				id: "074988C6E5470F39"
+				type: "questsadditions:time"
+			}]
+			title: "使用元件外壳封头冲压"
+			x: 6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: [
+				"5AB2EBBD2243DE6B"
+				"300372C7A93BD7C5"
+			]
+			id: "3087A516BF36628A"
+			tasks: [{
+				id: "1D2D4A931752E8D4"
+				item: "createdelight:unformed_item_cell_housing"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["57F8817405EFEF38"]
+			id: "278BC1E140416413"
+			tasks: [{
+				id: "6296458FD67FE8E9"
+				item: "ae2:item_cell_housing"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3087A516BF36628A"]
+			icon: "createdelight:cell_housing_curving_head"
+			id: "57F8817405EFEF38"
+			tasks: [{
+				elapsedTime: 1L
+				id: "6193E4C687C96D49"
+				type: "questsadditions:time"
+			}]
+			title: "使用元件外壳封头冲压"
+			x: 10.0d
+			y: 12.0d
+		}
+		{
+			id: "5ACCE843604EB1CA"
+			tasks: [{
+				id: "5448D8645325A779"
+				item: "ae2:certus_quartz_crystal"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["5ACCE843604EB1CA"]
+			id: "34D57250C41B9518"
+			tasks: [{
+				icon: "vintageimprovements:belt_grinder"
+				id: "0306A312B37635FE"
+				observe_type: 0
+				timer: 0L
+				title: "观察你的磨床"
+				to_observe: "vintageimprovements:belt_grinder"
+				type: "observation"
+			}]
+			title: "使用磨床打磨"
+			x: -2.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["34D57250C41B9518"]
+			id: "063E7664355E0526"
+			subtitle: "消耗2粉"
+			tasks: [{
+				count: 2L
+				id: "0D41CCFE880689AC"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			title: "直接使用粉"
+			x: 0.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["34D57250C41B9518"]
+			icon: "vintageimprovements:vacuum_chamber"
+			id: "69C732CD62ED4E20"
+			subtitle: "消耗1粉"
+			tasks: [
+				{
+					id: "7F4A88C9F1BD03FB"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					icon: "vintageimprovements:vacuum_chamber"
+					id: "2D19407B36C2AC62"
+					observe_type: 0
+					timer: 0L
+					title: "观察你的压缩机"
+					to_observe: "vintageimprovements:vacuum_chamber"
+					type: "observation"
+				}
+			]
+			title: "使用压缩机处理"
+			x: 0.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["34D57250C41B9518"]
+			id: "2D565BC4989BC56E"
+			subtitle: "等价于消耗1粉"
+			tasks: [{
+				id: "1A431B3BD081A454"
+				item: {
+					Count: 1
+					id: "createdelight:redstone_paste"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.0d
+		}
+		{
+			dependencies: [
+				"69C732CD62ED4E20"
+				"063E7664355E0526"
+				"2D565BC4989BC56E"
+			]
+			id: "290D330CC831FB79"
+			subtitle: "此处为赛特斯石英"
+			tasks: [{
+				id: "2C1637FA29256CE9"
+				item: "ae2:certus_quartz_crystal"
+				type: "item"
+			}]
+			title: "与输入物一致的物品"
+			x: 2.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["290D330CC831FB79"]
+			id: "79E21703C72C52C4"
+			subtitle: "此处为逻辑处理器"
+			tasks: [{
+				id: "403687B5D7F1D7DF"
+				item: "ae2:logic_processor"
+				type: "item"
+			}]
+			title: "安装处理器"
+			x: 4.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["79E21703C72C52C4"]
+			id: "7850CD8A3597DC8B"
+			subtitle: "此处为石英玻璃"
+			tasks: [{
+				id: "4ED67FC99BA9BBEC"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "createdelight:quartz_glass"
+					}
+				}
+				title: "Any #createdelight:quartz_glass"
+				type: "item"
+			}]
+			title: "石英/聚能石英玻璃（或者其部件）"
+			x: 6.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["7850CD8A3597DC8B"]
+			icon: "createdelight:cell_housing_curving_head"
+			id: "1E75F90CA8E6E2EE"
+			tasks: [{
+				elapsedTime: 1L
+				id: "7785B3C2623D1A9F"
+				type: "questsadditions:time"
+			}]
+			title: "使用元件外壳封头冲压"
+			x: 8.0d
+			y: 16.0d
+		}
+		{
+			dependencies: [
+				"1E75F90CA8E6E2EE"
+				"15BFEC9F7E634241"
+			]
+			id: "0B84C8CAB2D017A0"
+			tasks: [{
+				id: "03AD4554831085FD"
+				item: "ae2:cell_component_1k"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["4878BCD4902197B0"]
+			id: "35D8B0B1F9C870F8"
+			tasks: [{
+				id: "4063E67D1B5DE4DB"
+				title: "注意"
+				type: "checkmark"
+			}]
+			title: "元件外壳示例"
+			x: -6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["36DB558EE19C0129"]
+			id: "74A17F55703C7EDC"
+			tasks: [{
+				id: "6B124E6A5E448027"
+				title: "处理器的示例"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["5ACCE843604EB1CA"]
+			id: "74A5DA81CE5D0581"
+			tasks: [{
+				id: "65C314F8BBE2A23E"
+				title: "nk元件示例（使用序列组装）"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: 16.0d
+		}
+		{
+			id: "15BFEC9F7E634241"
+			subtitle: "当然也可以使用动力合成器，此处不再赘述"
+			tasks: [{
+				icon: "create:mechanical_crafter"
+				id: "012C9327348EAA52"
+				observe_type: 0
+				timer: 0L
+				title: "看看你的动力合成器"
+				to_observe: "create:mechanical_crafter"
+				type: "observation"
+			}]
+			title: "动力合成器"
+			x: 12.0d
+			y: 16.0d
+		}
+		{
+			dependencies: ["4E302D249C6B88DA"]
+			icon: "createdelight:universal_press"
+			id: "48394BA873D459B7"
+			tasks: [{
+				elapsedTime: 1L
+				id: "51DDA70606B779B9"
+				type: "questsadditions:time"
+			}]
+			title: "使用通用压印模板冲压"
+			x: 6.0d
+			y: 7.0d
+		}
+		{
+			id: "4E302D249C6B88DA"
+			tasks: [{
+				id: "48CD8883381D2E7F"
+				item: "ae2:silicon"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"74A17F55703C7EDC"
+				"74A5DA81CE5D0581"
+				"35D8B0B1F9C870F8"
+			]
+			id: "3F2537B88B8517A7"
+			size: 1.5d
+			subtitle: "任务书里的教程与实际不会完全一致，实际情况参考合成"
+			tasks: [{
+				id: "792328DB75F63176"
+				title: "注意"
+				type: "checkmark"
+			}]
+			x: -9.0d
+			y: 12.0d
+		}
 	]
 	title: "&9应用能源2"
 }
