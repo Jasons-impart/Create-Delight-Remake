@@ -6,6 +6,17 @@
 			"entities": [
 				{
 					"entity": "iceandfire:fire_dragon",
+					"nbt": {
+						"AgeTicks": 1800000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					},
 					"count": 1
 				}
 			],
@@ -21,11 +32,6 @@
 					"value": 6.25
 				},
 				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
-				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
 					"value": 1
@@ -33,16 +39,19 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value":0.1 
+					"value": 0.1
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "iceandfire:fire_dragon_blood", 
-                        "count": 8,
-                        "nbt" : {"iceandfire":"iceandfire:fire_dragon_blood"}}
+						"item": "iceandfire:fire_dragon_blood",
+						"count": 8,
+						"nbt": {
+							"iceandfire": "iceandfire:fire_dragon_blood"
+						}
+					}
 				}
 			],
 			"max_wave_time": 800,
@@ -52,19 +61,30 @@
 			"entities": [
 				{
 					"entity": "iceandfire:fire_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1800000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 3
+					"value": 1
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 12.5
+					"value": 6.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -79,16 +99,19 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.1
+					"value": -0.4
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "iceandfire:dragonscales_red", 
-                        "count": 18,
-                        "nbt" : {"iceandfire":"iceandfire:dragonscales_red"}}
+						"item": "iceandfire:dragonscales_red",
+						"count": 18,
+						"nbt": {
+							"iceandfire": "iceandfire:dragonscales_red"
+						}
+					}
 				}
 			],
 			"max_wave_time": 800,
@@ -98,14 +121,25 @@
 			"entities": [
 				{
 					"entity": "iceandfire:fire_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1800000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 6
+					"value": 1
 				},
 				{
 					"attribute": "generic.armor",
@@ -115,7 +149,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.5
+					"value": 2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -125,16 +159,19 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.3
+					"value": -0.5
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "iceandfire:dragonforge_fire_brick", 
-                        "count": 8,
-                        "nbt" : {"iceandfire":"iceandfire:dragonforge_fire_brick"}}
+						"item": "iceandfire:dragonforge_fire_brick",
+						"count": 8,
+						"nbt": {
+							"iceandfire": "iceandfire:dragonforge_fire_brick"
+						}
+					}
 				}
 			],
 			"max_wave_time": 800,
@@ -154,6 +191,6 @@
 			"strength": 6,
 			"fire": true,
 			"block_damage": true
-			}
+		}
 	]
 }
