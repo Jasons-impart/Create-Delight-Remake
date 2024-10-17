@@ -20,7 +20,7 @@ ServerEvents.recipes((event) => {
   ];
 
   colours.forEach((c) => {
-    create.mixing(`4x minecraft:${c}_dye`, [`minecraft:${c}_dye`, "ae2:matter_ball"]);
+    create.mixing(`4x minecraft:${c}_dye`, [`minecraft:${c}_dye`, "ae2:matter_ball"]).id(`createdelight:${c}_dye_matter`);
   });
 
   // 破坏核心
