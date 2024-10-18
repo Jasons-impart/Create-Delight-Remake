@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         [
             e.recipes.create.deploying(iner_1, [iner_1, "create:copper_sheet"]),
             e.recipes.create.filling(iner_1, [iner_1, Fluid.water(250)]),
-            e.recipes.create.pressing(iner_1, iner_1)
+            e.recipes.create.deploying(iner_1, [iner_1, "create:copper_sheet"]),
         ]
     )
         .transitionalItem(iner_1)

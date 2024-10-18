@@ -26,7 +26,11 @@ let tooltips = [
     ["createdelight:mars_gemstone_cluster", "1536su/RPM", "1536su/RPM"],
     ["createdelight:mercury_ore_cluster", "1024su/RPM", "1024su/RPM"],
     ["createdelight:venus_ore_cluster", "2048su/RPM", "2048su/RPM"],
-    ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"]
+    ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"],
+    ["art_of_forging:devils_soul_gem", "使用带有纳米融合的武器击杀凋零可获得", "Killing the Wither with a weapon that has nano fusion can grant"],
+    ["art_of_forging:eerie_shard", "使用带有纳米融合的武器击杀监守者可获得", "Killing the Guardian with a weapon that has nano fusion can grant"],
+    ["art_of_forging:heart_of_ender", "使用带有纳米融合的武器击杀末影人可获得", "Killing the Enderman with a weapon that has nano fused can grant"],
+    ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

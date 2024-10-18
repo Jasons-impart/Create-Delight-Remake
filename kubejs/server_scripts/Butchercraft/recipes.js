@@ -44,13 +44,14 @@ ServerEvents.recipes((e) => {
   }).id("butchercraft:blood_sausage_mix");
 
   e.recipes.create
-    .mixing("butchercraft:blood_sausage_mix", [
+    .mixing("8x butchercraft:blood_sausage_mix", [
       Ingredient.of("#forge:ground_meat/raw").withCount(6),
       Fluid.of("butchercraft:blood_fluid").withAmount(250),
       "butchercraft:fat",
       "ratatouille:wheat_kernels",
     ])
     .id("butchercraft:mixing/blood_sausage_mix");
+    e.recipes.create.compacting(Fluid.of("ratatouille:mince_meat", 250), ["butchercraft:blood_sausage_mix", "#forge:salt"])
 });
 
 ServerEvents.recipes((event) => {
