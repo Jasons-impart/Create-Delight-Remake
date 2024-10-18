@@ -188,7 +188,7 @@
 		"Death Worms Target Monsters" = true
 		#Deathworm spawn weight. Higher = lower chance to spawn
 		#Range: 1 ~ 10000
-		"Death Worm Spawn Weight" = 30
+		"Death Worm Spawn Weight" = 90
 
 	[Mobs.Cockatrice]
 		#Maximum cockatrice health
@@ -203,7 +203,7 @@
 		"Spawn Cockatrices" = true
 		#Cockatrice spawn weight. Lower = lower chance to spawn
 		#Range: 1 ~ 10000
-		"Cockatrice Spawn Weight" = 4
+		"Cockatrice Spawn Weight" = 2
 
 	[Mobs.Stymphalians]
 		#How many blocks away can stymphalian birds spot potential prey. Note that increasing this could cause lag.
@@ -264,7 +264,7 @@
 		#Range: 25 ~ 4000
 		"Myrmex Maximum Wander Radius" = 50
 		#Myrmex hives will ignore daytime
-		"Myrmex Hive Ignore Daytime" = false
+		"Myrmex Hive Ignore Daytime" = true
 
 	[Mobs.Amphitheres]
 		#True if amphitheres are allowed to spawn
@@ -293,7 +293,7 @@
 		#Range: 1 ~ 10000
 		"Spawn Sea Serpent Chance" = 250
 		#Whether or not sea serpents can break weak blocks in their way
-		"Sea Serpent Griefing" = true
+		"Sea Serpent Griefing" = false
 		#Default sea serpent health, this is scaled to the sea serpent's particular size
 		#Range: 1.0 ~ 10000.0
 		"Sea Serpent Base Health" = 20.0
@@ -359,10 +359,10 @@
 	"Dragonsteel Sword Base Attack Strength" = 25.0
 	#Default armor value of dragonsteel chestplate.
 	#Range: > 7
-	"Dragonsteel Base Armor" = 12
+	"Dragonsteel Base Armor" = 10
 	#Default armor toughness value of dragonsteel.
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Dragonsteel Base Armor Toughness" = 6.0
+	"Dragonsteel Base Armor Toughness" = 5.0
 	#Default durability value of dragonsteel tools.
 	#Range: > 1
 	"Dragonsteel Base Durability" = 8000
