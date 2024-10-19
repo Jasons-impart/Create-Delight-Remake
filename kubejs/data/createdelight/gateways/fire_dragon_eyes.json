@@ -7,7 +7,7 @@
 				{
 					"entity": "iceandfire:fire_dragon",
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -21,16 +21,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 6.25
-				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
@@ -54,7 +44,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 100
 		},
 		{
@@ -63,7 +53,7 @@
 					"entity": "iceandfire:fire_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -76,16 +66,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 6.5
-				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
@@ -114,7 +94,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 150
 		},
 		{
@@ -123,7 +103,7 @@
 					"entity": "iceandfire:fire_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -136,16 +116,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 25
-				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
@@ -174,7 +144,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 200
 		}
 	],
