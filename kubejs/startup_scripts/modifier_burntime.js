@@ -1,4 +1,9 @@
 ItemEvents.modification(e => {
+    /**
+     * 
+     * @param {Special.Item} id 
+     * @param {number} burnTime 
+     */
     function modify(id, burnTime) {
         e.modify(id, item => {
             item.burnTime = burnTime
@@ -15,4 +20,6 @@ ItemEvents.modification(e => {
     modify("ad_astra:cryo_fuel_bucket", 30000)
     modify('createaddition:biomass_pellet', 0)
     modify('createaddition:biomass_pellet_block', 0)
+    modify("mynethersdelight:magma_cake_slice", 5000)
+    modify("mynethersdelight:hot_cream_cone", 3000)
 })
