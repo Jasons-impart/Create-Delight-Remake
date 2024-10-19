@@ -8,7 +8,7 @@
 					"entity": "iceandfire:lightning_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -52,7 +52,7 @@
                         "nbt" : {"giceandfire":"iceandfire:lightning_dragon_blood"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 100
 		},
 		{
@@ -61,7 +61,7 @@
 					"entity": "iceandfire:lightning_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -105,7 +105,7 @@
                         "nbt" : {"iceandfire":"iceandfire:dragonscales_amythest"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 150
 		},
 		{
@@ -114,7 +114,7 @@
 					"entity": "iceandfire:lightning_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -158,7 +158,7 @@
                         "nbt" : {"iceandfire":"iceandfire:dragonforge_lightning_brick"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 200
 		}
 	],

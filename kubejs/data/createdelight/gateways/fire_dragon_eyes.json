@@ -7,7 +7,7 @@
 				{
 					"entity": "iceandfire:fire_dragon",
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -24,12 +24,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 6.25
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -54,7 +49,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 100
 		},
 		{
@@ -63,7 +58,7 @@
 					"entity": "iceandfire:fire_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -79,12 +74,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 6.5
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -114,7 +104,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 150
 		},
 		{
@@ -123,7 +113,7 @@
 					"entity": "iceandfire:fire_dragon",
 					"count": 1,
 					"nbt": {
-						"AgeTicks": 1800000,
+						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
@@ -139,12 +129,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 25
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -174,7 +159,7 @@
 					}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 200
 		}
 	],
