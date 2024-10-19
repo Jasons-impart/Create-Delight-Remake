@@ -298,7 +298,7 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_graviton_tube")
 
-    注册货币
+    // 注册货币
     e.create("createdelight:iron_coin")
         .maxStackSize(64)
         .translationKey("item.createdelightcore.iron_coin")
