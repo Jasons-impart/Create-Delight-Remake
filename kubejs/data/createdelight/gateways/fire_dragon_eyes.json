@@ -22,11 +22,6 @@
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
-				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
 					"value": 1
@@ -71,11 +66,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
@@ -126,11 +116,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
