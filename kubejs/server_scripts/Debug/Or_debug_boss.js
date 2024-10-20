@@ -10,7 +10,7 @@ ItemEvents.rightClicked("createdelight:debug_reload_tool", (event) => {
   return;
 });
 
-// ItemEvents.dropped('createdelight:debug_reload_tool',event=>{
-//     const { server, player } = event;
-
-// })
+ItemEvents.rightClicked("createdelight:debug_info_tool", (event) => {
+  const { server, player, target } = event;
+  server.tell(`咕咕咕 不知道写啥`);
+});

@@ -283,19 +283,19 @@ ServerEvents.recipes((event) => {
 
   // 处理器配方
   vintageimprovements
-    .curving("ae2:engineering_processor", "createdelight:engineering_processor_inscribed")
+    .curving("4x ae2:engineering_processor", "createdelight:engineering_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_4");
   vintageimprovements
-    .curving("ae2:calculation_processor", "createdelight:calculation_processor_inscribed")
+    .curving("4x ae2:calculation_processor", "createdelight:calculation_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_5");
   vintageimprovements
-    .curving("ae2:logic_processor", "createdelight:logic_processor_inscribed")
+    .curving("4x ae2:logic_processor", "createdelight:logic_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_6");
   vintageimprovements
-    .curving("megacells:accumulation_processor", "createdelight:accumulation_processor_inscribed")
+    .curving("4x megacells:accumulation_processor", "createdelight:accumulation_processor_inscribed")
     .mode(2)
     .id("createdelight:processor_inscribed_8");
 

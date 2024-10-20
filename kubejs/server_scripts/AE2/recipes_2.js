@@ -210,7 +210,7 @@ ServerEvents.recipes((event) => {
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
       create.deploying("#forge:plates/iron", [
         "#forge:plates/iron",
-        '#createdelight:quartz_vibrant_glass',
+        "#createdelight:quartz_vibrant_glass",
       ]),
       vintageimprovements
         .curving("#forge:plates/iron", "#forge:plates/iron")
@@ -223,10 +223,7 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
       create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
-      create.deploying("#forge:plates/iron", [
-        "#forge:plates/iron",
-        '#createdelight:quartz_glass',
-      ]),
+      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#createdelight:quartz_glass"]),
       vintageimprovements
         .curving("#forge:plates/iron", "#forge:plates/iron")
         .head("createdelight:cell_housing_curving_head"),
@@ -270,4 +267,57 @@ ServerEvents.recipes((event) => {
   create
     .deploying(Item.of("megacells:cell_dock", 10), ["ae2:drive", "#forge:ingots/sky_steel"])
     .id("createdelight:cell_dock_1");
+
+  // 母岩
+  create
+    .item_application(
+      [
+        Item.of("ae2:flawless_budding_quartz").withChance(0.5),
+        Item.of("ae2:quartz_block").withChance(0.5),
+      ],
+      ["ae2:flawed_budding_quartz", "ae2:flawed_budding_quartz"]
+    )
+    .id("createdelight:budding_quartz_1");
+  create
+    .item_application(
+      [
+        Item.of("ae2:flawed_budding_quartz").withChance(0.5),
+        Item.of("ae2:quartz_block").withChance(0.5),
+      ],
+      ["ae2:chipped_budding_quartz", "ae2:chipped_budding_quartz"]
+    )
+    .id("createdelight:budding_quartz_2");
+  create
+    .item_application(
+      [
+        Item.of("ae2:chipped_budding_quartz").withChance(0.5),
+        Item.of("ae2:quartz_block").withChance(0.5),
+      ],
+      ["ae2:damaged_budding_quartz", "ae2:damaged_budding_quartz"]
+    )
+    .id("createdelight:budding_quartz_3");
+  create
+    .item_application(
+      [
+        Item.of("ae2:damaged_budding_quartz").withChance(0.5),
+        Item.of("ae2:quartz_block").withChance(0.5),
+      ],
+      ["ae2:quartz_block", "ae2:quartz_block"]
+    )
+    .id("createdelight:budding_quartz_4");
+
+  // 压印器
+  create
+    .mechanical_crafting("ae2:inscriber", ["AABAA", "CDEDC", "FGHGF", "CIHIC", "AAAAA"], {
+      A: "#forge:ingots/iron",
+      B: "#forge:storage_blocks/copper",
+      C: "#forge:gems/fluix",
+      D: "vintageimprovements:curving_press",
+      E: "createaddition:alternator",
+      F: "#forge:glass",
+      G: "vintageimprovements:concave_curving_head",
+      H: "#forge:spring/between_500_2_1000",
+      I: "create:depot",
+    })
+    .id("createdelight:inscriber");
 });
