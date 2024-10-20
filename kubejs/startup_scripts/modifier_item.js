@@ -73,5 +73,13 @@ ItemEvents.modification(e => {
     e.modify("butchercraft:boots", item => {
         item.maxDamage = 195
     })
-
+    e.modify("create:blaze_cake", item => {
+        item.foodProperties = food => {
+            // 虽然不会生效
+            food.eaten(e => {
+                let player = e.getEntity()
+                player.nbt.putInt("Fire", 200)
+            })
+        }
+    })
 })

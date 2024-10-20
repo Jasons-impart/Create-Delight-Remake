@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    const {createmetallurgy, create} = e.recipes
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
@@ -59,4 +60,59 @@ ServerEvents.recipes(e => {
         "createdelight:crushed_raw_calorite",
         "ad_astra:raw_calorite",
         "ad_astra:calorite_nugget"])
+    
+    remove_recipes_id(e, [
+        "createmetallurgy:alloying/netherite",
+        "createmetallurgy:alloying/steel"
+    ])
+    
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
+    [
+        Fluid.of("createmetallurgy:molten_gold", 90),
+        "netherite_scrap"])
+    .heatRequirement("superheated")
+    .id("createmetallurgy:alloying/netherite")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_steel", 270), 
+    [
+        Fluid.of("createmetallurgy:molten_iron", 270),
+        "#forge:coal_coke"        
+    ])
+    .heatRequirement("superheated")
+    .id("createmetallurgy:alloying/steel")
+
+    e.recipes.create.mixing(
+        Fluid.of("createmetallurgy:molten_bronze", 30),
+        [
+            Fluid.of("createmetallurgy:molten_tin", 15),
+            Fluid.of("createmetallurgy:molten_copper", 15)
+        ], 150, "heated"
+    ).id("createmetallurgy:mixing/alloying_bronze")
+    e.recipes.create.mixing(
+        Fluid.of("createmetallurgy:molten_electrum", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 15),
+            Fluid.of("createmetallurgy:molten_sliver", 15)
+        ], 100, "heated"
+    ).id("createmetallurgy:mixing/molten_electrum")
+    e.recipes.create.mixing(
+        Fluid.of("createmetallurgy:molten_brass", 10),
+        [
+            Fluid.of("createmetallurgy:molten_copper", 5),
+            Fluid.of("createmetallurgy:molten_zinc", 5)
+        ], 100, "heated"
+    ).id("createmetallurgy:mixing/alloying_brass")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:molten_andesite", 270),
+        [
+            "minecraft:andesite",
+            Fluid.of("createmetallurgy:molten_iron", 20)
+        ], 50, "heated"
+    ).id("createmetallurgy:mixing/andesite_alloyed_from_iron")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:molten_andesite", 270),
+        [
+            "minecraft:andesite",
+            Fluid.of("createmetallurgy:molten_zinc", 20)
+        ], 50, "heated"
+    ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
 })

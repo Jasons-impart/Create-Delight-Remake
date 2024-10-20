@@ -1171,7 +1171,6 @@
 		}
 		{
 			dependencies: ["67732CAF81D56AFE"]
-			description: [""]
 			id: "731427102D213611"
 			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
 			tasks: [{
@@ -2120,7 +2119,6 @@
 		{
 			dependencies: [
 				"1551BA92CF2E1580"
-				"23844625502BCC3B"
 				"48394BA873D459B7"
 			]
 			id: "05D52AC3EBD5ACF6"
