@@ -337,7 +337,6 @@ StartupEvents.registry("item", e => {
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
-        .tag('ae2:inscriber_presses')
         .translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")
@@ -471,8 +470,14 @@ StartupEvents.registry("item", e => {
     //废纸
     e.create("createdelight:waste_paper")
         .translationKey("item.createdelight.waste_paper")
-    
+
     //未完成的皮革
     e.create("createdelight:unfinished_leather")
         .translationKey("item.createdelight.unfinished_leather")
+
+    // DEBUG工具
+    e.create("createdelight:debug_reload_tool")
+        .translationKey("item.createdelight.debug_reload_tool")
+    e.create("createdelight:debug_info_tool")
+        .translationKey("item.createdelight.debug_info_tool")
 })

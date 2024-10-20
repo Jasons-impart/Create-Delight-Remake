@@ -1,0 +1,16 @@
+ItemEvents.rightClicked("createdelight:debug_reload_tool", (event) => {
+  const { server, player } = event;
+  if (player.isCrouching()) {
+    server.tell("§6[成功]已经重载server脚本（不包括配方）");
+    server.runCommand("kubejs reload server_scripts");
+  } else {
+    server.tell("§6[成功]已经重载client脚本");
+    server.runCommand("kubejs reload server_scripts");
+  }
+  return;
+});
+
+// ItemEvents.dropped('createdelight:debug_reload_tool',event=>{
+//     const { server, player } = event;
+
+// })

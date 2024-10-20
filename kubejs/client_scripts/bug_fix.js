@@ -15,7 +15,6 @@ BlockEvents.rightClicked("alexsmobs:capsid", (e) => {
     player.tell(Text.translate("message.createdelight.capsid"));
     e.cancel();
     player.sendInventoryUpdate();
-  } else {
-    return;
   }
+  return;
 });

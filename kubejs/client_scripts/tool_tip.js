@@ -30,7 +30,8 @@ let tooltips = [
     ["art_of_forging:devils_soul_gem", "使用带有纳米融合的武器击杀凋零可获得", "Killing the Wither with a weapon that has nano fusion can grant"],
     ["art_of_forging:eerie_shard", "使用带有纳米融合的武器击杀监守者可获得", "Killing the Guardian with a weapon that has nano fusion can grant"],
     ["art_of_forging:heart_of_ender", "使用带有纳米融合的武器击杀末影人可获得", "Killing the Enderman with a weapon that has nano fused can grant"],
-    ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"]
+    ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"],
+    ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

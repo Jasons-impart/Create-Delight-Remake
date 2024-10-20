@@ -223,4 +223,32 @@ ServerEvents.recipes((event) => {
     .id("createdelight:mega_energy_cell")
     .transitionalItem("megacells:accumulation_processor")
     .loops(4);
+
+  // 无限圆石配方
+  create
+    .mechanical_crafting(
+      Item.of(
+        "expatternprovider:infinity_cell",
+        '{record:{"#c":"ae2:i",id:"minecraft:cobblestone"}}'
+      ),
+      ["AAAAA", "BCDCB", "BEFGB", "BHIHB", "AAAAA"],
+      {
+        A: "createdelight:space_casing",
+        B: "cobblefordays:tier_5",
+        C: "ae2:singularity",
+        D: "ae2:interface",
+        E: Item.of(
+          "expatternprovider:infinity_cell",
+          '{record:{"#c":"ae2:f",id:"minecraft:water"}}'
+        ).weakNBT(),
+        F: "ae2:annihilation_plane",
+        G: Item.of(
+          "expatternprovider:infinity_cell",
+          '{display:{Lore:[\'{"italic":false,"color":"white","extra":[{"text":""},{"text":"手持 "},{"color":"blue","text":"1k ME存储组件"},{"text":" 对装有大于1万桶熔岩的1x1流体抽屉蹲下右键获取"}],"text":""}\']},record:{"#c":"ae2:f",id:"minecraft:lava"}}'
+        ).weakNBT(),
+        H: "ae2:spatial_cell_component_128",
+        I: "megacells:bulk_cell_component",
+      }
+    )
+    .id("createdelight:inf_cobblestone");
 });

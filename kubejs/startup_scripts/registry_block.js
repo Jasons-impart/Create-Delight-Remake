@@ -64,6 +64,7 @@ StartupEvents.registry("block", (e) => {
       .resistance(10)
       .tagBlock(`minecraft:mineable/pickaxe`)
       .tagBlock(`minecraft:needs_iron_tool`)
-      .requiresTool(false);
+      .requiresTool(false)
+      ;
   });
 });
