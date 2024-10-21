@@ -2291,9 +2291,7 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2311,9 +2309,7 @@
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2332,9 +2328,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2353,9 +2347,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2374,9 +2366,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         }
       ]
     },
@@ -3348,8 +3338,7 @@
       "ID": "rough_machining_food_trade",
       "Name": "纯纯工业美食（粗加工回收）",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "PURCHASE",
@@ -4110,6 +4099,24 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:chest",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{ForgeCaps:{},Items:[{Count:64b,Slot:0b,id:\"ae2:white_smart_cable\"},{Count:7b,Slot:1b,id:\"ae2:storage_bus\"},{Count:1b,Slot:2b,id:\"ae2:crafting_terminal\"},{Count:1b,Slot:3b,id:\"ae2:crystal_resonance_generator\"}],id:\"minecraft:chest\"},display:{Name:'{\"italic\":false,\"extra\":[{\"text\":\"\"},{\"bold\":true,\"italic\":true,\"underlined\":true,\"color\":\"gold\",\"text\":\"AE简易存储组合包\"}],\"text\":\"\"}'}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     },
@@ -4843,8 +4850,7 @@
       "ID": "smoke_food_trade",
       "Name": "稍微烤制的食物的回收",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "PURCHASE",
