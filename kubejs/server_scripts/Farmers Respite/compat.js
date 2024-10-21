@@ -95,4 +95,8 @@ ServerEvents.recipes(e => {
     cutting_3(e, "minecraft:rose_bush", [['farmersrespite:rose_hips', 2]])
     cutting_3(e, 'farmersrespite:coffee_cake', [['farmersrespite:coffee_cake_slice', 7]])
     cutting_3(e, 'farmersrespite:rose_hip_pie', [['farmersrespite:rose_hip_pie_slice', 4]])
+    e.recipes.create.haunting("farmersrespite:yellow_tea_leaves", "farmersrespite:green_tea_leaves")
+    .id("farmersrespite:haunting/yellow_tea_leaves")
+    e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")
+    .id("farmersrespite:haunting/black_tea_leaves")
 })
