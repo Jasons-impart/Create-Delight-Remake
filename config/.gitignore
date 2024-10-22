@@ -27,6 +27,8 @@
 !/iceandfire-client.toml
 !/iceandfire-common.toml
 !/butchercraft-common.toml
+!/shouldersurfing-client.toml
+!/waystones-common.toml
 # !/*quark* 要加去默认配置加
 !/vintageimprovements*
 xaerominimap_entities.json
