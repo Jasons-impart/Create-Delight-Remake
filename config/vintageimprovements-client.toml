@@ -41,7 +41,7 @@
 		hideSprings = false
 		#.
 		#Hides all Small Springs from creative tab & JEI (you still can craft it)
-		hideSmallSprings = false
+		hideSmallSprings = true
 		#.
 		#Hides all Rods from creative tab & JEI (you still can craft it)
 		hideRods = false
