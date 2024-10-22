@@ -18,5 +18,5 @@
 	hoodChanceMultiplier = 0.01
 	#Chance that a carcass applies its bloody effects per inventory tick. (Default 1/1000) Raising this can decrease server lag.
 	#Range: > 1
-	armyHoodChanceMultiplier = 1000
+	armyHoodChanceMultiplier = 3000
 

@@ -19,16 +19,16 @@
 	dimensionalWarpXpCost = 3
 	#The multiplier applied to the base xp cost when teleporting to a global waystone through any method.
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-	globalWaystoneXpCostMultiplier = 0.0
+	globalWaystoneXpCostMultiplier = 1.0
 	#The multiplier applied to the base xp cost when teleporting using a Warp Stone item (not the Waystone block, Konstantin)
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 	warpStoneXpCostMultiplier = 0.0
 	#The multiplier applied to the base xp cost when teleporting from one waystone to another.
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-	waystoneXpCostMultiplier = 0.0
+	waystoneXpCostMultiplier = 1.0
 	#The multiplier applied to the base xp cost when teleporting from one sharestone to another.
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
-	sharestoneXpCostMultiplier = 0.0
+	sharestoneXpCostMultiplier = 1.0
 	#The multiplier applied to the base xp cost when teleporting from a portstone.
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 	portstoneXpCostMultiplier = 0.0
