@@ -269,7 +269,10 @@
 			y: -4.0d
 		}
 		{
-			description: ["可以用来标记家的位置，注意：&e太远了会消耗经验"]
+			description: [
+				"可以用来标记家的位置，注意：&e太远了会消耗经验"
+				"再注意：使用传送石、传送石座、传送石盘无需消耗经验"
+			]
 			icon: "waystones:waystone"
 			id: "0082C5BEB96B1114"
 			rewards: [
@@ -339,6 +342,34 @@
 				type: "item"
 			}]
 			x: -0.5d
+			y: -1.0d
+		}
+		{
+			description: [
+				"这种珍珠大部分都可以制作，使用后会召唤一个传送门，其中会刷新敌怪。当你打败一个波次后会给予奖励，直到打完。"
+				"每个珍珠出现的怪与奖励都不尽相同，请具体珍珠具体分析（"
+			]
+			id: "10BDEBCE995C859F"
+			rewards: [{
+				id: "2334D2865B45953B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "challenge yourself!（并非）"
+			tasks: [{
+				id: "2D17A1FCB1398ECA"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:basic/blaze"
+					}
+				}
+				match_nbt: false
+				title: "某个珍珠"
+				type: "item"
+			}]
+			x: 1.0d
 			y: -1.0d
 		}
 	]
