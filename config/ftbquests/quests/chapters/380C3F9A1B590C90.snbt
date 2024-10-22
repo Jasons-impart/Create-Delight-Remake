@@ -120,7 +120,7 @@
 			y: 7.5d
 		}
 		{
-			description: ["这条产线可实现以&e一个仙人掌/菠萝苗/腐肉/粗布以及少量海带&r为原料制造皮革两张."]
+			description: ["这条产线可实现以&e一个仙人掌/菠萝苗/腐肉/粗布以及少量海带&r为原料制皮革两张。"]
 			icon: "minecraft:leather"
 			id: "06C244AEF0521053"
 			size: 1.5d
@@ -162,7 +162,7 @@
 		}
 		{
 			dependencies: ["06C244AEF0521053"]
-			description: ["量产以上四个材料均可实现大量制造皮革。"]
+			description: ["量产以上四种材料均可实现大量制皮革。"]
 			disable_toast: true
 			icon: "minecraft:cactus"
 			id: "5F7A132E1CFCEED3"
