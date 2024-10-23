@@ -68,7 +68,7 @@ StartupEvents.registry("block", (e) => {
   // 边界碎片
   e.create("createdelight:fragment_of_border")
     .model("ftbquests:block/barrier")
-    .transparent(true)
+    .defaultTranslucent()
     .suffocating(true)
     .noDrops()
     .fullBlock(false)
