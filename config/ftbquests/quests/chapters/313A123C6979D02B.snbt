@@ -2063,11 +2063,18 @@
 		{
 			dependencies: ["435539859AD4B53A"]
 			id: "3E728738156211E2"
-			tasks: [{
-				id: "2B172AE1A54CC920"
-				item: "hotdog_delight:squid_ink_sausage"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "2B172AE1A54CC920"
+					item: "hotdog_delight:squid_ink_sausage"
+					type: "item"
+				}
+				{
+					id: "1A8E6D40033C0A2B"
+					item: "hotdog_delight:glow_squid_ink_sausage"
+					type: "item"
+				}
+			]
 			x: -4.5d
 			y: 12.0d
 		}
@@ -2075,10 +2082,11 @@
 			dependencies: ["435539859AD4B53A"]
 			id: "65442CDD93E533C3"
 			tasks: [{
-				id: "03BE7BE0C09DFBDD"
-				item: "hotdog_delight:glow_squid_ink_sausage"
+				id: "0BF5CDB75986A39A"
+				item: "hotdog_delight:pumpkin_sausage"
 				type: "item"
 			}]
+			title: "素食主义者！"
 			x: -2.5d
 			y: 12.0d
 		}

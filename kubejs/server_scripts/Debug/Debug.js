@@ -13,7 +13,8 @@ let playerName = [
     "Maruyama_Ayaa",
 	"XinJinIris",
 	"cawyyds",
-	"SSWTLZZ"
+	"SSWTLZZ",
+	"JIAFALSEDREAM"
 ]
 ItemEvents.rightClicked((event) => {
 	const { item, player, server } = event

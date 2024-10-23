@@ -11,8 +11,11 @@
 # !/sound_physics_remastered
 !/starterkit
 !/trades
+!/bountiful
 !/aether-client.toml
 !/aether-common.toml
+!/alexsmobs.toml
+!/dynamiccrosshair.json5
 !/carryon-client.toml
 !/carryon-common.toml
 !/curios-client.toml
@@ -22,9 +25,15 @@
 !/*delight*
 !/*xaero*
 !/iceandfire-client.toml
+!/iceandfire-common.toml
 !/butchercraft-common.toml
+!/shouldersurfing-client.toml
+!/waystones-common.toml
+!/vinery
 # !/*quark* 要加去默认配置加
 !/vintageimprovements*
 xaerominimap_entities.json
 !/ad_astra*
 !/sereneseasons
+!/chat_heads.json5
+!/xbob.json

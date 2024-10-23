@@ -6,24 +6,31 @@
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							},
+							{
+								"forge:id": "minecraft:regeneration",
+								"Amplifier": 1,
+								"Duration": 1200,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 5
-				},
-				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -33,41 +40,50 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value":0.1 
+					"value":-0.2
 				}
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:lightning_dragon_blood", 
+                        "count": 8,
+                        "nbt" : {"giceandfire":"iceandfire:lightning_dragon_blood"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 100
 		},
 		{
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							},
+							{
+								"forge:id": "minecraft:regeneration",
+								"Amplifier": 2,
+								"Duration": 1200,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 1
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 10
-				},
-				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 3
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -82,36 +98,45 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonscales_amythest", 
+                        "count": 18,
+                        "nbt" : {"iceandfire":"iceandfire:dragonscales_amythest"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 150
 		},
 		{
 			"entities": [
 				{
 					"entity": "iceandfire:lightning_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							},
+							{
+								"forge:id": "minecraft:regeneration",
+								"Amplifier": 3,
+								"Duration": 1200,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 2
-				},
-				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 20
-				},
-				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 5
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -126,12 +151,14 @@
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:lightning_dragon",
-					"rolls": 2
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonforge_lightning_brick", 
+                        "count": 8,
+                        "nbt" : {"iceandfire":"iceandfire:dragonforge_lightning_brick"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 200
 		}
 	],
@@ -145,7 +172,7 @@
 	"failures": [
 		{
 			"type": "gateways:explosion",
-			"strength": 50,
+			"strength": 6,
 			"fire": true,
 			"block_damage": true
 			}

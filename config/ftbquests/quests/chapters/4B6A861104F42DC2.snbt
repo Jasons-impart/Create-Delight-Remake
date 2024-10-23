@@ -186,7 +186,7 @@
 			}]
 			title: "黑曜石锤！"
 			x: 14.5d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -242,7 +242,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -275,8 +275,8 @@
 				type: "advancement"
 			}]
 			title: "千钧之力！"
-			x: 13.015986394557807d
-			y: 3.4828231292516776d
+			x: 13.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -420,7 +420,7 @@
 		}
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
-			description: [""]
+			description: ["在使用锤子的过程中，我发现了一种提升性能的技巧：当&e下界合金锤的其中一个锤头的一个属性打磨到最高等级&r后，&e下一次打磨&r可以&4直接提升锤子的整体性能，从而再次提高锤头的等级&r。此外，笔记中还提到&4为锤子镶嵌下界之星&r还能进一步增强它的性能。通过这一系列操作，最终可以获得锻造等级高达八级的锤子。"]
 			id: "1AA8B7F6B283121A"
 			optional: true
 			subtitle: "给下界合金锤镶嵌下界之星并打磨到最高级"
@@ -430,8 +430,8 @@
 				type: "item"
 			}]
 			title: "八级锤"
-			x: 13.0d
-			y: 5.0d
+			x: 14.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
@@ -548,7 +548,7 @@
 			y: -2.0d
 		}
 		{
-			description: ["原版的剑可用于改造其他的剑"]
+			description: ["原版的剑可用于改造"]
 			id: "48056E10DEC79964"
 			shape: "rsquare"
 			tasks: [{
@@ -780,6 +780,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -805,6 +806,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -830,6 +832,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -850,6 +853,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -875,6 +879,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -900,6 +905,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -925,6 +931,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -950,6 +957,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -975,6 +983,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1009,6 +1018,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1040,6 +1050,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1074,6 +1085,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1100,6 +1112,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1126,6 +1139,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1152,6 +1166,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1178,6 +1193,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1204,6 +1220,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1230,6 +1247,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -1256,6 +1274,7 @@
 							}
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -1288,6 +1307,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "坚固守卫"
@@ -1320,6 +1340,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "飞刀"
@@ -1351,6 +1372,7 @@
 						}
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "风啸剑刃"
@@ -1388,7 +1410,7 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: -2.5d
+			y: -2.0d
 		}
 	]
 	title: "&2承·新开端"

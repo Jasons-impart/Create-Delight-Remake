@@ -1,0 +1,40 @@
+ServerEvents.recipes(e => {
+    //屠宰室核心
+    e.shaped("mbd2:butchery_room",[
+        "ABA",
+        "BCB",
+        "ABA"
+    ],{
+        A:"create:industrial_iron_block",
+        B:"create:andesite_alloy",
+        C:"create:precision_mechanism"
+    })
+    //屠宰入口
+    e.shaped("mbd2:butchery_in",[
+        "ABA",
+        "BCB",
+        "ABA"
+    ],{
+        A:"create:industrial_iron_block",
+        B:"create:andesite_alloy",
+        C:"vintageimprovements:redstone_module"
+    })
+    //屠宰出口
+    e.shaped("mbd2:butchery_out",[
+        "ABA",
+        "BCB",
+        "ABA"
+    ],{
+        A:"create:andesite_alloy",
+        B:"create:industrial_iron_block",
+        C:"create:precision_mechanism"
+    })
+    e.shaped("mbd2:create_in",[
+        " A ",
+        "ABA",
+        " A "
+    ],{
+        A:"create:cogwheel",
+        B:"create:gearbox"
+    })
+})

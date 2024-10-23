@@ -446,19 +446,12 @@
 			dependencies: ["308066883A8B3B3E"]
 			hide_dependency_lines: true
 			id: "13B709930A44FC2D"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "3509A7B3D272C233"
-					type: "choice"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "44ED133325134CA9"
-					table_id: 367842927525151968L
-					type: "random"
-				}
-			]
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "44ED133325134CA9"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
 			tasks: [{
 				id: "3DB5C15676086942"
 				item: "ae2:cell_component_4k"
@@ -624,7 +617,7 @@
 				item: "ae2:quartz_fiber"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -0.5d
 			y: 0.5d
 		}
 		{
@@ -641,7 +634,7 @@
 				item: "ae2:fluix_glass_cable"
 				type: "item"
 			}]
-			x: -1.0d
+			x: -0.5d
 			y: 1.5d
 		}
 		{
@@ -659,7 +652,7 @@
 				type: "item"
 			}]
 			title: "包层线缆"
-			x: -1.0d
+			x: -0.5d
 			y: 2.5d
 		}
 		{
@@ -677,7 +670,7 @@
 				type: "item"
 			}]
 			title: "智能线缆"
-			x: -1.0d
+			x: -0.5d
 			y: 3.5d
 		}
 		{
@@ -696,7 +689,7 @@
 				type: "item"
 			}]
 			title: "致密包层线缆"
-			x: -1.0d
+			x: -0.5d
 			y: 4.5d
 		}
 		{
@@ -1107,8 +1100,8 @@
 				item: "ae2:charger"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 1.0d
+			x: 0.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["74EFE6FF130F8040"]
@@ -1178,7 +1171,6 @@
 		}
 		{
 			dependencies: ["67732CAF81D56AFE"]
-			description: [""]
 			id: "731427102D213611"
 			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
 			tasks: [{
@@ -1453,14 +1445,14 @@
 			dependencies: ["308066883A8B3B3E"]
 			hide_dependency_lines: true
 			id: "0CCD8E8E6F94CCD1"
-			size: 2.0d
+			size: 1.5d
 			tasks: [{
 				id: "01D03E3E3BD7912E"
 				title: "部分ae物品合成可使用序列装配且倍率更高！"
 				type: "checkmark"
 			}]
-			x: 4.5d
-			y: -4.5d
+			x: -2.25d
+			y: 0.0d
 		}
 		{
 			dependencies: ["202D7D4B4DEC4E28"]
@@ -2015,7 +2007,7 @@
 				title: "赛特斯石英的另一种催生方式"
 				type: "checkmark"
 			}]
-			x: -2.0d
+			x: 1.5d
 			y: 0.0d
 		}
 	]

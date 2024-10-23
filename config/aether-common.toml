@@ -10,6 +10,8 @@
 	"Repeat Sun Spirit's battle dialogue" = true
 	#Determines if a message that links The Aether mod's Patreon should show
 	"Show Patreon message" = true
+	#Moves the message for when a player attacks the Slider with an incorrect item to be above the hotbar instead of in chat
+	"Reposition attack message above hotbar" = false
 
 ["Data Pack"]
 	#Sets the Aether Temporary Freezing data pack to be added to new worlds automatically

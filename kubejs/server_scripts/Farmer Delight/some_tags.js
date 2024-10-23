@@ -64,12 +64,15 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:salmon_sausage',
         'hotdog_delight:pork_sausage',
         'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        'hotdog_delight:glow_squid_ink_sausage',
+        'hotdog_delight:pumpkin_sausage'
     ])
+    // 奶酪
     e.add("forge:cheese", [
         "ad_astra:cheese",
         "casualness_delight:cheese_wheel_slice"
     ])
+    // 黄瓜
     e.add("culturaldelights:cucumbers", [
         "vintagedelight:cucumber"
     ])
@@ -89,6 +92,7 @@ ServerEvents.tags("item", e => {
     e.add("forge:seeds/corn", [
         "culturaldelights:corn_kernels"
     ])
+    // 香肠
     e.add("forge:sausage/cooked", [
         "ratatouille:sausage",
         "createdelight:salami",
@@ -96,7 +100,8 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:cooked_salmon_sausage',
         'hotdog_delight:cooked_cod_sausage',
         'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        'hotdog_delight:glow_squid_ink_sausage',
+        'hotdog_delight:pumpkin_sausage'
     ])
     e.add("forge:sausage/raw", [
         "ratatouille:raw_sausage",
@@ -104,7 +109,8 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:salmon_sausage',
         'hotdog_delight:pork_sausage',
         'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage'
+        'hotdog_delight:glow_squid_ink_sausage',
+        'hotdog_delight:pumpkin_sausage'
     ])
     e.remove("forge:vegetables/ghost_pepper", [
         "vintagedelight:ghost_pepper"

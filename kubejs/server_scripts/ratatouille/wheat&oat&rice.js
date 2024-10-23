@@ -79,12 +79,12 @@ ServerEvents.recipes(e => {
     }).id("tetracelium:cutting/rice_panicle")
     // 蛋液适配
     e.recipes.create.emptying([
-        Fluid.of("ratatouille:egg_yolk", 250),
+        Fluid.of("createdelight:egg_yolk", 250),
         "ratatouille:egg_shell"
     ], "#forge:eggs"
     ).id("create:emptying/yolk")
     e.recipes.create.emptying([
-        Fluid.of("ratatouille:egg_yolk", 1000),
+        Fluid.of("createdelight:egg_yolk", 1000),
         "ratatouille:egg_shell"
     ], "alexsmobs:emu_egg"
     ).id("create:emptying/emu_yolk")
@@ -102,7 +102,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "mynethersdelight:ghast_dough",
         [
-            Fluid.of("ratatouille:egg_yolk", 100),
+            Fluid.of("createdelight:egg_yolk", 100),
             "mynethersdelight:ghasmati"
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
@@ -110,7 +110,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "vintagedelight:oat_dough",
         [
-            Fluid.of("ratatouille:egg_yolk", 50),
+            Fluid.of("createdelight:egg_yolk", 50),
             "vintagedelight:raw_oats"
         ]
     ).id("vintagedelight:oat_dough_from_eggs")
@@ -141,7 +141,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "farmersdelight:wheat_dough",
         [
-            Fluid.of("ratatouille:egg_yolk", 50),
+            Fluid.of("createdelight:egg_yolk", 50),
             "create:wheat_flour"
         ]
     ).id("farmersdelight:wheat_dough_from_eggs")
@@ -156,7 +156,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "ratatouille:salty_dough",
         [
-            Fluid.of("ratatouille:egg_yolk", 100),
+            Fluid.of("createdelight:egg_yolk", 100),
             "2x create:wheat_flour",
             "#forge:salt"
         ]

@@ -13,13 +13,25 @@ ServerEvents.recipes((event) => {
       .id(`${result}_sequenced_assembly`);
   };
 
-  fs_upgrade(
-    "#functionalstorage:drawer",
-    "functionalstorage:copper_upgrade",
-    "#forge:ingots/copper",
-    "#forge:storage_blocks/copper",
-    "#forge:chests/wooden"
-  );
+  create
+    .sequenced_assembly("functionalstorage:copper_upgrade", "#functionalstorage:drawer", [
+      create.deploying("createdelight:incomplete_fs_upgrade", [
+        "createdelight:incomplete_fs_upgrade",
+        "#forge:ingots/copper",
+      ]),
+      create.deploying("createdelight:incomplete_fs_upgrade", [
+        "createdelight:incomplete_fs_upgrade",
+        "#forge:storage_blocks/copper",
+      ]),
+      create.deploying("createdelight:incomplete_fs_upgrade", [
+        "createdelight:incomplete_fs_upgrade",
+        "#forge:chests/wooden",
+      ]),
+    ])
+    .loops(1)
+    .transitionalItem("createdelight:incomplete_fs_upgrade")
+    .id("functionalstorage:copper_upgrade_sequenced_assembly");
+
   fs_upgrade(
     "functionalstorage:copper_upgrade",
     "functionalstorage:gold_upgrade",

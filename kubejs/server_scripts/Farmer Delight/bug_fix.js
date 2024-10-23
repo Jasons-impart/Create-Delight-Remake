@@ -1,4 +1,13 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "farmersdelight:cutting/sugar_cane_alt"
+    ])
+    cutting(e, 'minecraft:sugar_cane', 
+        [
+            ['minecraft:sugar'],
+            ['minecraft:sugar', 1, 0.25]
+        ]
+    )
 })
 
 LootJS.modifiers(e => {

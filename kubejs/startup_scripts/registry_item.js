@@ -167,6 +167,14 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:board_noodles")
         .maxStackSize(64)
         .translationKey("item.createdelight.board_noodles")
+    // 老冰棍
+    e.create("createdelight:empty_popsicle")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.empty_popsicle")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.25)
+        })
     // 薯条
     e.create("createdelight:french_fries")
         .maxStackSize(64)
@@ -183,28 +191,6 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
         })
-    // 切片食物
-    // e.create("createdelight:sliced_onion")
-    //     .maxStackSize(64)
-    //     .translationKey("item.createdelight.sliced_onion")
-    //     .food(food => {
-    //         food.hunger(1)
-    //             .saturation(0.5)
-    //     })
-    //     .tag("forge:crops/onion")
-    //     .tag("forge:vegetables/onion")
-    //     .tag("forge:fermentable")
-    //     .tag("festival_delicacies:onion")
-    // e.create("createdelight:sliced_tomato")
-    //     .maxStackSize(64)
-    //     .translationKey("item.createdelight.sliced_tomato")
-    //     .food(food => {
-    //         food.hunger(1)
-    //             .saturation(0.5)
-    //     })
-    //     .tag("forge:crops/tomato")
-    //     .tag("forge:vegetables/tomato")
-    //     .tag("forge:fermentable")
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)
@@ -351,20 +337,22 @@ StartupEvents.registry("item", e => {
     // 通用压印模板（ae用）
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
-        .tag('ae2:inscriber_presses')
         .translationKey("item.createdelight.universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.redstone_paste")
+        .tag("createdelight:redstone")
     // 荧石膏
     e.create("createdelight:glowstone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.glowstone_paste")
+        .tag("createdelight:glowstone")
     // 陨石膏
     e.create("createdelight:sky_stone_paste")
         .maxDamage(64)
         .translationKey("item.createdelight.sky_stone_paste")
+        .tag("createdelight:sky_stone")
     // 初加工的电路板
     e.create("createdelight:initial_processing_of_printed_engineering_processor")
         .translationKey("item.createdelight.initial_processing_of_printed_engineering_processor")
@@ -414,8 +402,10 @@ StartupEvents.registry("item", e => {
     // 石英玻璃部件
     e.create("createdelight:quartz_glass_parts")
         .translationKey("item.createdelight.quartz_glass_parts")
+        .tag("createdelight:quartz_glass")
     e.create("createdelight:quartz_vibrant_glass_parts")
         .translationKey("item.createdelight.quartz_vibrant_glass_parts")
+        .tag("createdelight:quartz_vibrant_glass")
     // 陨铜锭
     e.create("createdelight:sky_copper_ingot")
         .translationKey("item.createdelight.sky_copper_ingot")
@@ -469,4 +459,25 @@ StartupEvents.registry("item", e => {
     // 人造钻石
     e.create("createdelight:mmd_diamond")
         .translationKey("item.createdelight.mmd_diamond")
+        .tag("forge:gems/diamond")
+
+    //被锯碎的甘蔗
+    e.create("createdelight:sawed_sugarcane")
+        .translationKey("item.createdelight.sawed_sugarcane")
+    //未完成的纸
+    e.create("createdelight:incomplete_paper")
+        .translationKey("item.createdelight.incomplete_paper")
+    //废纸
+    e.create("createdelight:waste_paper")
+        .translationKey("item.createdelight.waste_paper")
+
+    //未完成的皮革
+    e.create("createdelight:unfinished_leather")
+        .translationKey("item.createdelight.unfinished_leather")
+
+    // DEBUG工具
+    e.create("createdelight:debug_reload_tool")
+        .translationKey("item.createdelight.debug_reload_tool")
+    e.create("createdelight:debug_info_tool")
+        .translationKey("item.createdelight.debug_info_tool")
 })

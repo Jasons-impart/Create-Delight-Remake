@@ -1,5 +1,5 @@
 const $OreVeinGenerator = Java.loadClass("com.tom.createores.OreVeinGenerator")
-const OreVeinAtlasItem = Java.loadClass("com.tom.createores.item.OreVeinAtlasItem")
+const $OreVeinAtlasItem = Java.loadClass("com.tom.createores.item.OreVeinAtlasItem")
 let veins = [
     ["overworld_metal_ore_cluster", "kubejs:overworld_metal_ore_cluster_ore"],
     ["overworld_noble_metal_ore_cluster", "kubejs:overworld_noble_metal_ore_cluster_ore"],
@@ -19,11 +19,13 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
     player.inventory.allItems.forEach(item => {
         if (item.id == "createoreexcavation:vein_atlas") {
             let nbt = item.nbt
-            let exclude = nbt[OreVeinAtlasItem.EXCLUDE]
-            console.log(exclude)
-            exclude.forEach(tag => {
-                excludedVein.push(tag.getAsString())
-            })
+            if (nbt != null) {
+                let exclude = nbt[$OreVeinAtlasItem.EXCLUDE]
+                console.log(exclude)
+                exclude.forEach(tag => {
+                    excludedVein.push(tag.getAsString())
+                })
+            }
         }
     })
     // 数字是范围，单位是区块，100就是100区块（100*16格）以内

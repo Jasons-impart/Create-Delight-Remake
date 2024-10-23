@@ -1341,6 +1341,41 @@
 			x: 16.5d
 			y: -0.5d
 		}
+		{
+			dependencies: ["3622034AE0FD46AA"]
+			id: "50C856849F88D673"
+			subtitle: "慢了点，但是可以悬浮！！而且而且可以放到背饰栏！！！！"
+			tasks: [{
+				id: "5EC35CD2636BF24C"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "create_jetpack:netherite_jetpack"
+								tag: {
+									Air: 900
+								}
+							}
+							{
+								Count: 1b
+								id: "create_jetpack:jetpack"
+								tag: {
+									Air: 900
+								}
+							}
+						]
+					}
+				}
+				title: "喷气背包"
+				type: "item"
+			}]
+			title: "悬浮喷气背包！"
+			x: -7.0d
+			y: -4.0d
+		}
 	]
 	title: "&e来去自由！"
 }

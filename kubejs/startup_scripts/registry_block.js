@@ -5,8 +5,8 @@ StartupEvents.registry("block", (e) => {
     .soundType("stone")
     .hardness(10)
     .resistance(10)
-    .tag(`minecraft:mineable/pickaxe`)
-    .tag(`minecraft:needs_iron_tool`)
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock(`minecraft:needs_iron_tool`)
     .requiresTool(true);
 
   // 铁外壳
@@ -15,8 +15,8 @@ StartupEvents.registry("block", (e) => {
     .soundType("metal")
     .hardness(10)
     .resistance(10)
-    .tag(`minecraft:mineable/pickaxe`)
-    .tag(`minecraft:needs_iron_tool`)
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock(`minecraft:needs_iron_tool`)
     .requiresTool(true);
 
   // 空间外壳
@@ -24,9 +24,11 @@ StartupEvents.registry("block", (e) => {
     .translationKey("block.createdelight.space_casing")
     .soundType("metal")
     .hardness(100)
-    .resistance(10)
-    .tag(`minecraft:mineable/pickaxe`)
-    .tag(`minecraft:needs_iron_tool`)
+    .resistance(100)
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock(`minecraft:needs_iron_tool`)
+    .tagBlock("minecraft:wither_immune")
+    .tagBlock("minecraft:dragon_immune")
     .requiresTool(true);
 
   // 陨铁外壳
@@ -35,7 +37,46 @@ StartupEvents.registry("block", (e) => {
     .soundType("metal")
     .hardness(30)
     .resistance(10)
-    .tag(`minecraft:mineable/pickaxe`)
-    .tag(`minecraft:needs_iron_tool`)
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock(`minecraft:needs_iron_tool`)
+    .tagBlock("minecraft:wither_immune")
+    .tagBlock("minecraft:dragon_immune")
     .requiresTool(true);
+  // 动物.zip
+  let zip = [
+    "cow",
+    "sheep",
+    "pig",
+    "chicken",
+    "goat",
+    "black_rabbit",
+    "brown_rabbit",
+    "splotched_rabbit",
+    "gold_rabbit",
+    "white_rabbit",
+  ];
+  zip.forEach((n) => {
+    e.create(`createdelight:${n}_zip`)
+      .translationKey(`block.createdelight.${n}_zip`)
+      .soundType("powder_snow")
+      .hardness(10)
+      .resistance(10)
+      .tagBlock(`minecraft:mineable/pickaxe`)
+      .tagBlock(`minecraft:needs_iron_tool`)
+      .requiresTool(false);
+  });
+  // 边界碎片
+  e.create("createdelight:fragment_of_border")
+    .model("ftbquests:block/barrier")
+    .defaultTranslucent()
+    .suffocating(true)
+    .noDrops()
+    .fullBlock(false)
+    .lightLevel(15)
+    .hardness(400)
+    .resistance(100)
+    .translationKey("block.createdelight.fragment_of_border")
+    .soundType("metal")
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock(`minecraft:needs_iron_tool`);
 });

@@ -6,63 +6,72 @@
 			"entities": [
 				{
 					"entity": "iceandfire:ice_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
+					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
 					"value": 0.5
 				},
 				{
-					"attribute": "generic.armor",
-					"operation": "ADDITION",
-					"value": 2.5
-				},
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
-				},
-				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": -0.2
+					"value": 0.2
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value":0.2 
+					"value": -0.2 
 				}
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:ice_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:ice_dragon_blood", 
+                        "count": 8,
+                        "nbt" : {"iceandfirey":"iceandfire:ice_dragon_blood"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 100
 		},
 		{
 			"entities": [
 				{
 					"entity": "iceandfire:ice_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 1.5
-				},
-				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 6.25
+					"value": 10
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -72,66 +81,76 @@
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": -0.2
+					"value": 0.2
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": -0.3
 				}
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:ice_dragon",
-					"rolls": 1
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonscales_white", 
+                        "count": 18,
+                        "nbt" : {"iceandfire":"iceandfire:dragonscales_white"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 150
 		},
 		{
 			"entities": [
 				{
 					"entity": "iceandfire:ice_dragon",
-					"count": 1
+					"count": 1,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
 				}
 			],
 			"modifiers": [
 				{
-					"attribute": "generic.max_health",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 3
-				},
-				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 12.5
+					"value": 20
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.75
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": -0.5
+					"value": 0.2
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
+					"value": -0.4
 				}
 			],
 			"rewards": [
 				{
-					"type": "gateways:entity_loot",
-					"entity": "iceandfire:ice_dragon",
-					"rolls": 2
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dragonforge_ice_brick", 
+                        "count": 8,
+                        "nbt" : {"iceandfire":"iceandfire:dragonforge_ice_brick"}}
 				}
 			],
-			"max_wave_time": 800,
+			"max_wave_time": 1200,
 			"setup_time": 200
 		}
 	],
@@ -145,7 +164,7 @@
 	"failures": [
 		{
 			"type": "gateways:explosion",
-			"strength": 15,
+			"strength": 6,
 			"fire": true,
 			"block_damage": true
 			}

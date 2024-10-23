@@ -30,7 +30,8 @@ ItemEvents.modification(e => {
         ['casualness_delight:bowl_of_fried_dumpling', 6, 0.8],
         ['create_confectionery:gingerbread_man', 6, 0.7],
         ['create_confectionery:gingerbread', 6, 0.7],
-        ['vintagedelight:chocolate_nut_granola_bar', 5, 1.2]
+        ['vintagedelight:chocolate_nut_granola_bar', 5, 1.2],
+        ['create:blaze_cake', 10, 0.75]
     ]
     hungers.forEach(hunger => {
         e.modify(hunger[0], item => {
@@ -49,6 +50,8 @@ ItemEvents.modification(e => {
         ["culturaldelights:pickle", "farmersdelight:nourishment", 600, 1, 1.0],
         ["culturaldelights:cut_pickle", "farmersdelight:nourishment", 300, 1, 1],
         ["casualness_delight:raw_fried_dumpling", "minecraft:nausea", 600, 2, 1],
+        ["create:blaze_cake", "mynethersdelight:b_pungent", 1200, 2, 1],
+        ["create:blaze_cake", "minecraft:strength", 600, 2, 1],
     ]
     effects.forEach(effect => {
         e.modify(effect[0], item => {
@@ -56,5 +59,27 @@ ItemEvents.modification(e => {
                 food.effect(effect[1], effect[2], effect[3], effect[4])
             }
         })
+    })
+
+    e.modify("butchercraft:apron", item => {
+        item.maxDamage = 240
+    })
+    e.modify("butchercraft:gloves", item => {
+        item.maxDamage = 225
+    })
+    e.modify("butchercraft:mask", item => {
+        item.maxDamage = 165
+    })
+    e.modify("butchercraft:boots", item => {
+        item.maxDamage = 195
+    })
+    e.modify("create:blaze_cake", item => {
+        item.foodProperties = food => {
+            // 虽然不会生效
+            food.eaten(e => {
+                let player = e.getEntity()
+                player.nbt.putInt("Fire", 200)
+            })
+        }
     })
 })

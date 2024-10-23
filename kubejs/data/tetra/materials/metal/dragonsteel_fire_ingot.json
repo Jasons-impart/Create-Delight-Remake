@@ -2,7 +2,7 @@
     "key": "dragonsteel_fire_ingot",
     "category": "metal",
     "primary": 9.1,
-    "secondary": 8.3,
+    "secondary": 3.6,
     "tertiary": 3.5,
     "durability": 2450,
     "integrityCost": 2,
@@ -16,5 +16,5 @@
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_fire_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:glod" }
+    "requiredTools": { "hammer_dig": "minecraft:diamond" }
   }

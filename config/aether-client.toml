@@ -64,6 +64,10 @@
 	"Disables vanilla world preview menu music" = false
 	#Disables the menu music on the Aether world preview menu, only works if 'Disables Aether music manager' is false
 	"Disables Aether world preview menu music" = false
+	#Makes Blue Aerclouds have their wobbly sounds that play when bouncing on them
+	"Blue Aercloud bouncing sounds" = true
+	#Disables the Aether's boss fight music, only works if 'Disables Aether music manager' is false
+	"Disables Aether boss music" = false
 
 [Miscellaneous]
 	#Disables the Cumulus menu selection screen button on launch

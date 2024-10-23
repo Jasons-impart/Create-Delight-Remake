@@ -944,11 +944,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -1763,11 +1758,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -2301,9 +2291,7 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2321,9 +2309,7 @@
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2342,9 +2328,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2363,9 +2347,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",
@@ -2384,9 +2366,7 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [
-            3
-          ]
+          "IgnoreNBT": [3]
         }
       ]
     },
@@ -2588,11 +2568,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -3363,13 +3338,7 @@
       "ID": "rough_machining_food_trade",
       "Name": "纯纯工业美食（粗加工回收）",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "PURCHASE",
@@ -3860,7 +3829,7 @@
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
-          "Limit": 3,
+          "Limit": 10,
           "ForgetTime": 86400000,
           "Type": "lightmanscurrency:player_trade_limit"
         }
@@ -4130,6 +4099,126 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:chest",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{ForgeCaps:{},Items:[{Count:64b,Slot:0b,id:\"ae2:white_smart_cable\"},{Count:7b,Slot:1b,id:\"ae2:storage_bus\"},{Count:1b,Slot:2b,id:\"ae2:crafting_terminal\"},{Count:1b,Slot:3b,id:\"ae2:crystal_resonance_generator\"}],id:\"minecraft:chest\"},display:{Name:'{\"italic\":false,\"extra\":[{\"text\":\"\"},{\"bold\":true,\"italic\":true,\"underlined\":true,\"color\":\"gold\",\"text\":\"AE简易存储组合包\"}],\"text\":\"\"}'}}"
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:calculation_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:logic_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:engineering_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "megacells:accumulation_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:formation_core",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:annihilation_core",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     },
@@ -4173,11 +4262,6 @@
           "Duration": 3600000,
           "Fluctuation": 25,
           "Type": "lightmanscurrency:price_fluctuation"
-        },
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
         }
       ],
       "Trades": [
@@ -4868,13 +4952,7 @@
       "ID": "smoke_food_trade",
       "Name": "稍微烤制的食物的回收",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-        {
-          "Limit": 100,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "PURCHASE",

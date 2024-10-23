@@ -1,0 +1,19 @@
+{
+    "content": {
+        "all_obj_primary_currency": {
+			"type": "item",
+			"content": "createdelightcore:copper_coin",
+			"amount": {
+				"min": 1,
+				"max": 24
+			},
+			"unitWorth": 1000,
+			"weightMult": 0.65
+		},
+		"all_obj_iron_block": {},
+		"all_obj_anvil": {},
+		"all_obj_dirt": {},
+		"all_obj_cobblestone": {},
+		"all_obj_stonebrick": {}
+    }
+}
