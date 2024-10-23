@@ -319,6 +319,7 @@
 		}
 		{
 			dependencies: ["06833E5F5569DFA6"]
+			description: [""]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -383,6 +384,7 @@
 					type: "item"
 				}
 			]
+			title: "&4裂空剪&r"
 			x: 12.0d
 			y: -3.0d
 		}
@@ -550,12 +552,6 @@
 				}
 			}
 			id: "59AA40D0405EBE55"
-			rewards: [{
-				auto: "invisible"
-				command: "/effect give @s minecraft:nausea 10 5 true"
-				id: "03EBCA095CF1C8BA"
-				type: "command"
-			}]
 			tasks: [{
 				advancement: "tetra:art_of_forging/murasama_blade"
 				criterion: ""
@@ -574,18 +570,26 @@
 			]
 			description: [
 				"当我将传说中的村正之刃握在手中，突然一阵晕眩感袭来。我感觉到脑海中所有与恶魔相关的知识开始自发地整合。待我清醒过来时，一旁原本破破烂烂的恶魔笔记莫名变得崭新，封面上赫然印着四个字——&e恶魔典籍&r。翻开恶魔典籍，原先模糊不清的字迹如今变得清晰可见，而最后空白的几页也被密密麻麻的文字填满，为首的便是三个大字——"
-				"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-				""
+				"&b~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+				"&r"
 				""
 				"                                           &o&l&b千   夜   寒&r&r&r"
 				""
 				""
-				"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+				"&b~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&r"
 			]
 			id: "311424590CC23510"
+			rewards: [{
+				auto: "invisible"
+				command: "/effect give @s minecraft:nausea 15 5 true"
+				elevate_perms: true
+				exclude_from_claim_all: true
+				id: "403B73FE872F31BB"
+				team_reward: false
+				type: "command"
+			}]
 			tasks: [{
-				id: "50AB4D9C6EC4B7FD"
-				title: "恶魔典籍"
+				id: "4DB31B06E6B01EB6"
 				type: "checkmark"
 			}]
 			title: "&b恶魔典籍&r"
@@ -875,15 +879,16 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
+			description: ["击杀末影龙后，我在&e它死亡的地方&r发现了两根龙筋，这个用途可多了。"]
 			id: "22EB3CAE02880E7F"
 			size: 1.5d
-			subtitle: "一条龙掉俩"
+			subtitle: "可能在天上（"
 			tasks: [{
 				id: "6C18BC704E5273A7"
 				item: "tetra:dragon_sinew"
 				type: "item"
 			}]
-			title: "龙筋"
+			title: "&5龙筋&r"
 			x: 3.0d
 			y: -3.0d
 		}
@@ -922,7 +927,7 @@
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
-			description: [""]
+			description: ["当我使用&e纳米融合后的武器击败了凋灵&r时，一颗形状奇异的宝珠掉落在地。想必这便是传说中追忆之弓的核心材料。"]
 			id: "0D248D4F04552839"
 			tasks: [{
 				id: "5228691B7AF83F40"
@@ -969,7 +974,7 @@
 				"033C857187DC6731"
 				"1395569F70AEFEE2"
 			]
-			description: ["当我使用纳米融合后的武器击杀&e坚守者&r时，除了常见的回响碎片外，还掉落了一种之前未见过的材料。这种材料可用于&e打造武器附层&r，使武器&e更易打磨&r，但其缺点是在攻击时可能会在目标附近产生幽匿脉络。"]
+			description: ["当我使用&e纳米融合后的武器击杀坚守者&r时，除了常见的回响碎片外，还掉落了一种之前未见过的材料。这种材料可用于&e打造武器附层&r，使武器&e更易打磨&r，但其缺点是在攻击时可能会在目标附近产生幽匿脉络。"]
 			id: "5BAADF26B7A390EB"
 			tasks: [{
 				id: "6F8CAE1DE6EC4EC0"
@@ -981,6 +986,7 @@
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
+			description: ["使用带有纳米融合的武器击杀末影人可获得，可镶嵌在武器上，使得武器击杀生物时直接将战利品传送到自己身上。"]
 			id: "06478E19031CB2DC"
 			tasks: [{
 				id: "1815BC1FE4BB247A"
@@ -992,6 +998,7 @@
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
+			description: ["使用带有纳米融合的武器击杀苦力怕可获得,进阶版的火药，在制作以火药为原料的物品的时候可以获得更多产出。"]
 			id: "0BE48240C8B3FA5B"
 			tasks: [{
 				id: "6853C39CED2388F4"
@@ -1003,7 +1010,9 @@
 		}
 		{
 			dependencies: ["033C857187DC6731"]
+			description: [""]
 			id: "2D7B9FCFE620EA5D"
+			optional: true
 			tasks: [{
 				id: "6354870F00DF7366"
 				item: "minecraft:echo_shard"
@@ -1032,10 +1041,31 @@
 				"5FC72D360093BE89"
 				"0D248D4F04552839"
 			]
-			description: [""]
+			description: ["然而我并不满足于此。尽管没有任何证据表明传说中的追忆之弓确实存在，我仍然决定借助黑暗宝珠的力量结合现有的弓锻造技巧，探索追忆之弓的锻造方法。"]
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							glyphs: [
+								1.0d
+								1.0d
+								4.0d
+								5.0d
+							]
+							intricate: 1.0d
+							key: "bow/stave/remembrance_stave"
+							material: 1.0d
+							ribbon: "c10000"
+							schematics: ["tetra:bow/stave/remembrance_stave"]
+						}]
+					}
+				}
+			}
 			id: "35C5712DB94C5022"
 			tasks: [{
-				id: "79A2A8657A3FACE4"
+				id: "3FD16B1EDC6C993E"
 				item: {
 					Count: 1
 					id: "tetra:scroll_rolled"
@@ -1057,7 +1087,6 @@
 						}
 					}
 				}
-				match_nbt: true
 				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
@@ -1065,7 +1094,12 @@
 			y: -6.0d
 		}
 		{
-			description: [""]
+			description: [
+				"在&e地牢&r深处，埋藏着现世最强弓的图纸。"
+				"经过特殊改造的无畏弓材，拥有远超普通弓材的力量，能够承受极高的张力，释放出强大的箭速。"
+				"而由多股高强度纤维捻成的复合弓弦，具备超凡的韧性和耐久。"
+				"两者的结合造就了现世最强的弓，这款弓不仅具备无与伦比的力量与精准度，还拥有卓越的耐用性与抗压性。"
+			]
 			id: "5FC72D360093BE89"
 			tasks: [
 				{
