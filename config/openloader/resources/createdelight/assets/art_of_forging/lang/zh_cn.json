@@ -122,12 +122,12 @@
 	"art_of_forging.effect.flame_protection.name": "火焰保护",
 	"art_of_forging.effect.flame_protection.tooltip": "穿戴后提供 §e%s§r 火焰抗性Buff。",
 	"tetra.stats.art_of_forging:flame_protection": "火焰保护",
-	"tetra.stats.art_of_forging:flame_protection.tooltip_short": "穿戴后提供火焰抗性Buff",
+	"tetra.stats.art_of_forging:flame_protection.tooltip_short": "穿戴后提供抗火Buff",
 	
 	"art_of_forging.effect.arcane_protection.name": "奥术防护",
 	"art_of_forging.effect.arcane_protection.tooltip": "穿戴后减少 §e%s§r 的魔法伤害。",
 	"tetra.stats.art_of_forging:arcane_protection": "奥术防护",
-    "tetra.stats.art_of_forging:arcane_protection.tooltip_short": "穿戴后减少魔法伤害",
+    "tetra.stats.art_of_forging:arcane_protection.tooltip_short": "穿戴后减少受到的魔法伤害",
 	
 	"art_of_forging.effect.strength_infused.name": "力量之怒",
 	"art_of_forging.effect.strength_infused.tooltip": "穿戴后提供 §e%s§r 力量Buff。",
