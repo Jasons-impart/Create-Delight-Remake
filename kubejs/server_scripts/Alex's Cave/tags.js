@@ -31,6 +31,22 @@ ServerEvents.tags("item", e => {
 
     e.add("forge:ingots/uranium", "alexscaves:uranium")
     e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
+    e.add("createdelight:candy_cane", [
+        "aether:candy_cane",
+        "alexscaves:candy_cane",
+        "create_confectionery:candy_cane"])
+    e.add("forge:gelatin", [
+        'alexscaves:gelatin_red',
+        'alexscaves:gelatin_green',
+        'alexscaves:gelatin_yellow',
+        'alexscaves:gelatin_blue',
+        'alexscaves:gelatin_pink',
+        'butchercraft:gelatin'])
+    
+})
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:logs", ["alexscaves:licoroot"])
 })
 
 ServerEvents.tags("worldgen/biome", e => {

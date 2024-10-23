@@ -158,4 +158,48 @@ ServerEvents.recipes(e => {
     .transitionalItem(iner_5)
     .loops(1)
     .id("alexscaves:notor_gizmo")
+
+    //焦糖转换
+    e.recipes.create.cutting("3x alexscaves:caramel", "create_confectionery:bar_of_caramel")
+    .id("alexscaves:caramel")
+    e.recipes.create.compacting(Fluid.of("create_confectionery:caramel", 80), "alexscaves:caramel")
+    .heated()
+    .id("create_confectionery:compacting/caramel_2")
+    
+    //焦糖苹果注液
+    e.recipes.create.filling("alexscaves:caramel_apple", ["minecraft:apple", Fluid.of("create_confectionery:caramel", 500)])
+    .id("alexscaves:filling/caramel_apple")
+    //蛋糕胚
+    e.recipes.create.compacting("ratatouille:cake_base", "3x alexscaves:cake_layer")
+    .heated()
+    .id("alexscaves:compacting/cake_base")
+
+    //黑巧克力to巧克力块
+    e.recipes.minecraft.stonecutting("3x alexscaves:block_of_chocolate", "create_confectionery:bar_of_black_chocolate")
+    .id("block_of_chocolate_from_bar_of_black_chocolate")
+    
+    //统一拐杖糖
+    e.replaceInput({input: "alexscaves:candy_cane"}, "alexscaves:candy_cane", "#createdelight:candy_cane")
+
+    //拐杖糖打磨成尖拐杖糖
+    e.recipes.vintageimprovements.polishing("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
+    .id("alexscaves:polishing/sharpened_candy_cane")
+    
+    //拐杖糖粉碎成薄荷糖粉
+    e.recipes.create.crushing([Item.of("3x alexscaves:peppermint_powder"), Item.of("2x alexscaves:peppermint_powder").withChance(0.5)], [["alexscaves:sharpened_candy_cane", "#createdelight:candy_cane"]])
+    //姜饼块to姜饼块
+    e.recipes.minecraft.stonecutting("6x alexscaves:gingerbread_block", "create_confectionery:gingerbread_block")
+    .id("gingerbread_block_from_gingerbread_block")
+    
+    //姜饼面团to生面团块
+    e.recipes.minecraft.stonecutting("2x alexscaves:dough_block", "create_confectionery:gingerdough")
+    .id("dough_block_from_gingerdough")
+
+    //甘草糖粉碎出甘草蔓
+    e.recipes.create.crushing([Item.of("alexscaves:licoroot_vine"), Item.of("alexscaves:licoroot_vine").withChance(0.25)], "alexscaves:licoroot")
+    .id("alexscaves:crushing/licoroot_vine")
+
+    //姜饼块粉碎出姜饼屑
+    e.recipes.create.milling("alexscaves:gingerbread_crumbs", "alexscaves:gingerbread_block")
+    .id("alexscaves:milling/gingerbread_crumbs")
 })
