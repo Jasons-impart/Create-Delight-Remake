@@ -22,8 +22,8 @@
 				title: "增产"
 				type: "checkmark"
 			}]
-			x: 0.0d
-			y: 0.0d
+			x: 6.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["4290279E12E3E104"]
