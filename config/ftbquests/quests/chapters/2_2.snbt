@@ -13,6 +13,7 @@
 			description: [
 				"你可称它为模组中的红石：掌握者能够非常娴熟地运用，而新手时常认为其很难，同时可能性巨大。"
 				"百科上的白色旅人资料类型https://www.mcmod.cn/item/list/260-154.html  是一个归纳性的资料集，可以参考。"
+				"&e本章内容为本包ae的概述，关于魔改部分请参考另一章（完成这个任务后便会解锁）&r"
 			]
 			icon: "ae2:certus_quartz_crystal"
 			id: "308066883A8B3B3E"
@@ -99,7 +100,7 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["50D8C38DC212DC64"]
+			dependencies: ["5089829D24A6D497"]
 			id: "5FD02B3338ACCDCA"
 			tasks: [{
 				id: "0398BA61FCA8866B"
@@ -225,15 +226,15 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["5FD02B3338ACCDCA"]
+			dependencies: ["0B0EB366E3DAAC4F"]
 			id: "08159DE0BD6FBF85"
 			tasks: [{
 				id: "20B899B04E55A78B"
 				item: "ae2:basic_card"
 				type: "item"
 			}]
-			x: -5.0d
-			y: -3.0d
+			x: -6.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["08159DE0BD6FBF85"]
@@ -243,8 +244,8 @@
 				item: "ae2:redstone_card"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -3.5d
+			x: -7.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["08159DE0BD6FBF85"]
@@ -254,8 +255,8 @@
 				item: "ae2:capacity_card"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -2.5d
+			x: -7.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["08159DE0BD6FBF85"]
@@ -265,8 +266,8 @@
 				item: "ae2:void_card"
 				type: "item"
 			}]
-			x: -5.0d
-			y: -2.0d
+			x: -6.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["08159DE0BD6FBF85"]
@@ -276,8 +277,8 @@
 				item: "ae2:crafting_card"
 				type: "item"
 			}]
-			x: -5.0d
-			y: -4.0d
+			x: -6.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["0B0EB366E3DAAC4F"]
@@ -612,6 +613,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "只会传输能量，不会传输频道。一般用于网络之间的隔绝"
 			tasks: [{
 				id: "1978A1C981761DB0"
 				item: "ae2:quartz_fiber"
@@ -629,6 +631,7 @@
 				random_bonus: 2
 				type: "item"
 			}]
+			subtitle: "基础的线缆。可传递8个频道"
 			tasks: [{
 				id: "0E8C51104BCF7AE7"
 				item: "ae2:fluix_glass_cable"
@@ -646,6 +649,7 @@
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
+			subtitle: "可染色的基础线缆"
 			tasks: [{
 				id: "3F4963EF1E4FE9F5"
 				item: "ae2:fluix_covered_cable"
@@ -664,6 +668,7 @@
 				random_bonus: 2
 				type: "item"
 			}]
+			subtitle: "会实时显示该线缆后机器所消耗的频道"
 			tasks: [{
 				id: "0D3D0482BB45B12F"
 				item: "ae2:fluix_smart_cable"
@@ -683,6 +688,7 @@
 				random_bonus: 5
 				type: "item"
 			}]
+			subtitle: "相当于大型的智能线缆。可以传输32个频道，但不能连接面板形的器件"
 			tasks: [{
 				id: "69E56925A90AFF1B"
 				item: "ae2:fluix_smart_dense_cable"
@@ -1446,6 +1452,7 @@
 			hide_dependency_lines: true
 			id: "0CCD8E8E6F94CCD1"
 			size: 1.5d
+			subtitle: "具体内容请参考另一章"
 			tasks: [{
 				id: "01D03E3E3BD7912E"
 				title: "部分ae物品合成可使用序列装配且倍率更高！"
@@ -1591,15 +1598,12 @@
 				item: "ae2:io_port"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 1.0d
+			x: 9.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["202D7D4B4DEC4E28"]
-			description: [
-				"通过燃烧燃料来产生电力，具有根据网络内耗电量来调节自身发电量的功能，发电量小时，燃烧物品的速率也会降低。"
-				"谐振仓可以插入能源卡增加储能，插入加速卡提高速度"
-			]
+			description: ["通过燃烧燃料来给AE网络供能。"]
 			id: "0C24F8A3A1E91DA1"
 			tasks: [{
 				id: "100E4C5D54662AF3"
@@ -1611,13 +1615,7 @@
 		}
 		{
 			dependencies: ["202D7D4B4DEC4E28"]
-			description: [
-				"无需燃料的永动AE发电机，发电量为20AE/t，但是有使用限制 ——"
-				"每个ME网络只能有至多一台「晶振发电器」。"
-				"若多个ME网络通过石英纤维相连，则这些网络总共只能使用一台「晶振发电器」。"
-				""
-				"不过你仍然可以想方设法使用触发总线、能源元件、能源发信器等设备来让多台「晶振发电器」协同工作，向你的主网络充能。"
-			]
+			description: ["无需燃料的永动AE发电机。"]
 			id: "79E6D6EF6A21FB99"
 			tasks: [{
 				id: "1E1CC2514C926FF4"
@@ -1634,6 +1632,7 @@
 				"手持扳手潜行右击可将大部分AE设备拆卸为掉落物形式。"
 			]
 			id: "582F163AB43E066A"
+			subtitle: "实际上完全可以被机械动力的扳手代替"
 			tasks: [{
 				id: "6589E4B56C8B55E5"
 				item: {
@@ -1809,6 +1808,7 @@
 			dependencies: ["6122FE92B818C61B"]
 			hide_dependent_lines: true
 			id: "48DD55B64E120E31"
+			subtitle: "将其放入网络中，然后使用移动终端shift右键绑定，你便可以在一定范围内访问到你的网络"
 			tasks: [{
 				id: "2DE83611589A07EF"
 				item: "ae2:wireless_access_point"
@@ -1935,7 +1935,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 0.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["4227B0E599FE221E"]
@@ -1946,7 +1946,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 2.0d
+			y: 3.0d
 		}
 		{
 			description: ["储电量200000AE，每使用一次消耗1600AE能量，故充满电后最多处理125个方块。"]
@@ -1999,7 +1999,10 @@
 		}
 		{
 			dependencies: ["308066883A8B3B3E"]
-			description: ["将&9陨石废液&r使用&e注液器&r直接注入放置的赛特斯石英母岩方块可催生赛特斯石英晶簇"]
+			description: [
+				"将&9陨石废液&r使用&e注液器&r直接注入放置的赛特斯石英母岩方块可催生赛特斯石英晶簇"
+				"实际上效率非常高，而且不会占用母岩的面，我建议用这个"
+			]
 			id: "141F9B0D68D52280"
 			subtitle: "纯炫技（"
 			tasks: [{
@@ -2009,6 +2012,39 @@
 			}]
 			x: 1.5d
 			y: 0.0d
+		}
+		{
+			dependencies: ["79E6D6EF6A21FB99"]
+			description: [
+				"实际上AE网络&e不需要控制器&r也可以运行。只要网络供能，那该网络就会有8个频道。因此你可以使用前面的这个发电机来供能。"
+				"对于只想要一个大箱子的人来说，这无疑是最方便的方法。配合&e外部存储总线&r与保险箱或者抽屉一系列，你甚至&e不需要制作其他的ae元件&r便可得到一个巨大的箱子。"
+				"{@pagebreak}"
+				"下图为一个简单的实例。使用外部存储总线连接需要接入网络的容器即可，此处为保险箱"
+				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
+				"{@pagebreak}"
+			]
+			id: "3298DB4E27338BBF"
+			subtitle: "实际上AE网络不需要控制器也可以运行"
+			tasks: [{
+				id: "3BE404AAA0DB572E"
+				title: "好"
+				type: "checkmark"
+			}]
+			title: "不想做控制器的小朋友你们好啊"
+			x: 2.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["50D8C38DC212DC64"]
+			id: "5089829D24A6D497"
+			subtitle: "强烈建议使用这东西，它可以压印所有处理器"
+			tasks: [{
+				id: "0199B62BE79AD857"
+				item: "createdelight:universal_press"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -2.0d
 		}
 	]
 	title: "&9应用能源2"

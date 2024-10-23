@@ -380,6 +380,7 @@
 			hide: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "0462FFB851550962"
+			subtitle: "一个石英玻璃能处理为四个其对应的部件"
 			tasks: [{
 				elapsedTime: 1L
 				id: "074988C6E5470F39"
@@ -645,6 +646,7 @@
 		}
 		{
 			dependencies: ["308066883A8B3B3E"]
+			description: ["你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。你需要做的就是按照你想要做的东西的序列组装即可。"]
 			id: "3F2537B88B8517A7"
 			shape: "hexagon"
 			size: 1.5d
