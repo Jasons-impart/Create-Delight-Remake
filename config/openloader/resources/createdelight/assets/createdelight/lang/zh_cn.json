@@ -230,5 +230,6 @@
     "block.mbd2.butchery_in": "屠宰室输入口",
     "block.mbd2.butchery_out": "屠宰室输出口",
     "block.mbd2.butchery_room": "屠宰室核心",
-    "block.mbd2.monster_liquid": "怪物压缩核心"
+    "block.mbd2.monster_liquid": "怪物压缩核心",
+    "mbd2.butchery": "屠宰室"
 }
