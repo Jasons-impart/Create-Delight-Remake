@@ -4962,6 +4962,45 @@
 			x: 0.0d
 			y: 3.0d
 		}
+		{
+			dependencies: ["2FA1DDD66F69F506"]
+			description: [
+				"蘑菇君是一种奇怪的真菌生物，通常生成在蘑菇岛生物群系。"
+				"这些奇怪的生物是守卫者和炽足兽的亲戚，所以蘑菇君的外观会与他们类似。但不同的是蘑菇君是属于&e被动生物。"
+				"如果对蘑菇君使用同类型的蘑菇或真菌，更多的蘑菇或真菌将在蘑菇君身上生根，而使用剪刀可以剪去蘑菇君身上的蘑菇或真菌。"
+				"有一个或多个蘑菇时，蘑菇君会向附近同类型的蘑菇发射类似守卫者的光束。同时减少蘑菇君身上的蘑菇数量。"
+				"他们以此使附近生长出更多的该类型的蘑菇，如果蘑菇在菌丝类方块上方，这个蘑菇可能会长成巨大的蘑菇。&a（生~长~射~线~）"
+				"如果被杀时背上有5个蘑菇，蘑菇君会爆发出剧烈的爆炸，并有几率将附近的地形转化为与其菌类有关的生物群系。"
+			]
+			icon: "alexsmobs:spawn_egg_mungus"
+			id: "45ADF7CA2DAD69B5"
+			rewards: [
+				{
+					count: 3
+					id: "6B90CADE60D597DC"
+					item: "farmersdelight:mushroom_rice"
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3B52BD5A3F7DF143"
+					item: "minecraft:mushroom_stew"
+					type: "item"
+				}
+			]
+			subtitle: "神奇的真菌生物"
+			tasks: [{
+				icon: "minecraft:red_mushroom"
+				id: "1D2BD9D6D1A30707"
+				observe_type: 5
+				timer: 0L
+				to_observe: "alexsmobs:mungus"
+				type: "observation"
+			}]
+			title: "&2蘑菇君"
+			x: -12.5d
+			y: -3.0d
+		}
 	]
 	title: "&e动物朋友们"
 }
