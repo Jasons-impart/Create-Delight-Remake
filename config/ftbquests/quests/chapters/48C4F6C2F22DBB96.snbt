@@ -372,18 +372,6 @@
 			x: 1.0d
 			y: -1.0d
 		}
-		{
-			description: ["会记录你最近吃的32种食物，并计算多样性之和，同时它也会指明每一个等级给予的buff。"]
-			id: "7598256BA1F218AD"
-			subtitle: "让我看看我自己吃了啥（？"
-			tasks: [{
-				id: "760BED21ED5A77B5"
-				item: "solapplepie:food_book"
-				type: "item"
-			}]
-			x: -5.0d
-			y: -1.0d
-		}
 	]
 	title: "实用小玩意"
 }
