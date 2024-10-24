@@ -59,7 +59,7 @@
 		{
 			icon: {
 				Count: 1
-				id: "aetherdelight:stratus_knife"
+				id: "ends_delight:dragon_tooth_knife"
 				tag: {
 					Damage: 0
 				}
