@@ -609,9 +609,10 @@
 			id: "35D8B0B1F9C870F8"
 			shape: "square"
 			tasks: [{
-				id: "4063E67D1B5DE4DB"
-				title: "注意"
-				type: "checkmark"
+				elapsedTime: 1L
+				id: "1093F89F026C91B5"
+				title: "元件外壳示例"
+				type: "questsadditions:time"
 			}]
 			title: "元件外壳示例"
 			x: -2.75d
@@ -623,10 +624,11 @@
 			id: "74A17F55703C7EDC"
 			shape: "square"
 			tasks: [{
-				id: "6B124E6A5E448027"
-				title: "处理器的示例"
-				type: "checkmark"
+				elapsedTime: 1L
+				id: "6E840954BAE6BC13"
+				type: "questsadditions:time"
 			}]
+			title: "处理器示例"
 			x: -2.75d
 			y: -3.0d
 		}
@@ -635,18 +637,21 @@
 			hide: false
 			id: "74A5DA81CE5D0581"
 			shape: "square"
-			subtitle: "当然也可以使用动力合成器，此处不再赘述"
+			subtitle: "当然也可以使用动力合成器或者手搓，此处不再赘述"
 			tasks: [{
-				id: "65C314F8BBE2A23E"
+				elapsedTime: 1L
+				id: "665A9C1D4EFAFD01"
 				title: "存储元件示例（使用序列组装）"
-				type: "checkmark"
+				type: "questsadditions:time"
 			}]
 			x: -2.75d
 			y: 3.0d
 		}
 		{
-			dependencies: ["308066883A8B3B3E"]
-			description: ["你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。&e按照你想要做的东西的序列组装的步骤组装&r即可。"]
+			description: [
+				"你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。&e按照你想要做的东西的序列组装的步骤组装&r即可。"
+				"&4反正记住一点：步骤越复杂的合成方式消耗的材料越少。&r"
+			]
 			id: "3F2537B88B8517A7"
 			shape: "hexagon"
 			size: 1.5d
