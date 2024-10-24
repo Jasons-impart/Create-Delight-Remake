@@ -5,7 +5,7 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "iceandfire:dragon_skull_ice"
 	id: "045A2479E8D37705"
-	order_index: 4
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
