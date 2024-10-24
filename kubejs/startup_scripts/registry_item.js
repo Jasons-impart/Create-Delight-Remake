@@ -461,9 +461,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.mmd_diamond")
         .tag("forge:gems/diamond")
 
-    //被锯碎的甘蔗
-    e.create("createdelight:sawed_sugarcane")
-        .translationKey("item.createdelight.sawed_sugarcane")
     //未完成的纸
     e.create("createdelight:incomplete_paper")
         .translationKey("item.createdelight.incomplete_paper")
