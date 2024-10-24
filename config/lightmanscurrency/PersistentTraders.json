@@ -3829,7 +3829,7 @@
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
-          "Limit": 3,
+          "Limit": 10,
           "ForgetTime": 86400000,
           "Type": "lightmanscurrency:player_trade_limit"
         }
@@ -4112,6 +4112,108 @@
               {
                 "Coin": "createdelightcore:emerald_coin",
                 "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:calculation_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:logic_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:engineering_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "megacells:accumulation_processor",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:formation_core",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:annihilation_core",
+            "Count": 8
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 1
               }
             ],
             "Chain": "main",

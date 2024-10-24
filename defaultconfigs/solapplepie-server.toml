@@ -1,0 +1,121 @@
+
+[Benefits]
+	# A list of diversity value thresholds, in ascending order. When the player's food diversity reaches a threshold,
+	# they will get the benefits associated with that threshold.
+	#
+	#
+	thresholds = [2.0, 5.0, 7.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
+	# 
+	# Define custom benefits here. Each entry in the list corresponds to a benefit that will be obtained
+	# at the corresponding diversity threshold defined the list above. For example, the first entry in
+	# this list will be applied when the player's food diversity reaches the number in the first entry in
+	# the threshold list above.
+	# A benefit can also be marked as a detriment. In that case, its activation is reversed.
+	# A detriment is applied while the player has less diversity than the threshold,
+	# and will be removed when the threshold is reached.
+	# Each benefit is a string with the following form: [+/-][type],[registry name],[value] (without the brackets)
+	# A leading plus (or the of a symbol) denotes a benefit, while a minus denotes a detriment.
+	# The type can either be 'attribute' for attribute modifiers or 'effect' for potion effects
+	# Registry names for common vanila attributes are 
+	# generic.max_health, generic.knockback_resistance, generic.movement_speed, generic.luck, 
+	# generic.attack_damage, generic.attack_speed, generic.armor, generic.armor_toughness 
+	# The value of attributes is the numerical number that will be added to that attribute
+	# Use a negative number for subtraction. Multiplicative modifiers are not supported.
+	# For potion effects, the value is an integer and is the potion effect amplifier. Note
+	# that the amplifier is 0 indexed, so minecraft:strength,1 corresponds to Strength II
+	#
+	# To add multiple benefits to the same threshold, separate them by a semicolon ';'
+	# Make sure that you have NO SPACES!
+	# As an example, 'attribute,generic.max_health,2;effect,strength,1' will give both +2 max hp
+	# and Strength II at the corresponding threshold.
+	# 'attribute,generic.attack_damage,1;-effect,slowness,0' will give +1 attack damage at the corresponding threshold
+	# and Slowness I below the corresponding threshold.
+	#
+	#
+	benefitsUnparsed = ["effect,speed,0", "attribute,generic.max_health,1", "attribute,generic.max_health,1;effect,haste,0", "attribute,generic.max_health,1;effect,strength,0;effect,night_vision,0", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,regeneration,0", "attribute,generic.max_health,1;effect,speed,1", "attribute,generic.max_health,1;effect,strength,0", "attribute,generic.max_health,1;effect,luck,0", "attribute,generic.max_health,1;attribute,generic.knockback_resistance,1", "attribute,generic.max_health,1;attribute,generic.speed,2", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,haste,1", "attribute,generic.max_health,1;effect,strength,1", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,strength,2", "attribute,generic.max_health,1;effect,luck,1"]
+	# The minimum number of foods a player needs to eat before any benefits are applied.
+	#
+	#
+	#Range: 0 ~ 1000
+	minFoodsToActivate = 0
+
+[Filtering]
+	# Foods in this list won't contribute to food diversity.
+	#
+	#
+	blacklist = []
+	#
+	# When this list contains anything, the blacklist is ignored and instead only foods from here count.
+	#
+	#
+	whitelist = []
+
+[Miscellaneous]
+	# Whether or not to reset food diversity on death, effectively losing all benefits.
+	#
+	#
+	resetOnDeath = false
+	#
+	# If true, eating foods outside of survival mode (e.g. creative/adventure) is not tracked.
+	#
+	#
+	limitProgressionToSurvival = false
+	#
+	# How many foods should be tracked. I.e., how many food items eaten in the past should count toward food diversity.
+	# Note that the larger this is, the higher your potential diversity value can be, so keep this mind
+	# if you are defining custom thresholds/benefits above.
+	# !!!If you update queueSize, and leave the other advanced options unchanged,
+	# make sure you change endDecay (below) to match queueSize, or else nothing will change!!!
+	#
+	#
+	#Range: 1 ~ 1000
+	queueSize = 32
+
+[Advanced]
+	# These config options all affect the technical details of how diversity is calculated.
+	# Please look at the explanation on the wiki on the github to see how these values work.
+	#
+	# Lowest possible diversity contribution a food can give. This is a multiplier, not an
+	# absolute value!
+	#
+	#
+	#Range: 0.0 ~ 1.0
+	minContribution = 0.0
+	#
+	# The default diversity value when you eat a food. There is little reason to ever change this.
+	#
+	#
+	#Range: 0.0 ~ 100.0
+	defaultContribution = 1.0
+	#
+	# How many meals in the past should the diversity penalty stop from.
+	# **Needs to be less than queueSize and greater than startDecay!!!**
+	# Note that if you update queueSize, to retain the default behavior, you need to also
+	# set endDecay equal to the queueSize
+	#
+	#
+	#Range: 0 ~ 1000
+	endDecay = 32
+	#
+	# How many meals in the past should the diversity time penalty start to apply.
+	# **Needs to be less than queueSize and less than or equal to endDecay!!!**
+	#
+	#
+	#Range: 0 ~ 1000
+	startDecay = 0
+	#
+	# Whether blacklisted foods should still take a spot in the queue, even if they don't contribute any diversity.
+	#
+	#
+	shouldForbiddenCount = true
+
+[Complexity]
+	# Define custom complexity values for individual foods here.
+	# The complexity value of a food is how much diversity points it gives. 
+	# The base diversity value of foods not defined here is equal to defaultContribution.
+	# Each entry in the list should be a string defining one food, and the format is [registry name],[value]
+	# Note that tags are NOT currently supported.
+	#
+	#
+	complexityUnparsed = ["minecraft:cooked_porkchop,2", "minecraft:cooked_beef,2", "minecraft:golden_carrot,2", "minecraft:golden_apple,4", "minecraft:enchanted_golden_apple,10", "largemeals:sweet_berry_custard,5", "largemeals:pufferfish_broth,5", "largemeals:mushroom_pot_pie,5", "largemeals:hearty_lunch,6", "farmersrespite:green_tea,3", "farmersrespite:yellow_tea,3", "farmersrespite:coffee,3", "farmersrespite:black_tea,3", "farmersrespite:rose_hip_tea,3", "farmersrespite:dandelion_tea,3", "farmersrespite:black_tea,3", "farmersrespite:rose_hip_pie_slice,4", "farmersrespite:coffee_cake_slice,4", "farmersrespite:blazing_chili,5", "farmersdelight:cake_slice,4", "farmersdelight:chocolate_pie_slice,4", "farmersdelight:apple_pie_slice,4", "farmersdelight:sweet_berry_cheesecake_slice,4"]
+

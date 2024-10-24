@@ -1,0 +1,32 @@
+/*
+Vinery Config
+
+===========
+Discord: https://discord.gg/Vqu6wYZwdZ
+Modrinth: https://modrinth.com/mod/lets-do-vinery
+CurseForge: https://www.curseforge.com/minecraft/mc-mods/lets-do-vinery
+*/
+{
+	"wine_effect_duration": 900,
+	"wine_effect_strength": 1,
+	// Whether the CreeperEffect should destroy blocks (true) or just kill the player (false).
+	"destroy_blocks": true,
+	// Probability for the set bonus to work (in %)
+	"probability_to_keep_bone_meal": 100,
+	// Ticks it takes to ferment a bottle
+	"fermentation_barrel_time": 6000,
+	// Percentage multiplier for the growth speed of grapes
+	"grape_growth_speed": 100,
+	// Whether the winemaker armor should give a set bonus, which can prevent your bone meal from being used
+	"enable_wine_maker_set_bonus": true,
+	// Amount of damage when the armor gets damaged because of the set bonus
+	"damage_per_use": 1,
+	// Probability for damaging armor on using the set bonus (in %)
+	"probability_for_damage": 30,
+	// How many % of the normal wandering traders should be a wandering wine trader?
+	"wine_trader_chance": 50,
+	// Length of a year (in days).
+	"year_length_in_days": 96,
+	// Years per effect level
+	"years_per_effect_level": 8
+}

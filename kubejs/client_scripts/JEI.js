@@ -56,5 +56,7 @@ JEIEvents.hideItems((e) => {
 });
 
 JEIEvents.addItems((e) => {
-  e.add(["create:crushed_raw_tin"]);
+  e.add([
+    "create:crushed_raw_tin",
+    "solapplepie:food_book"]);
 });
