@@ -95,69 +95,6 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["6735F22ABE5E84FF"]
-			id: "4629B904519AB5C6"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "2F4C0F8324542883"
-				table_id: 5347970608351672481L
-				type: "random"
-			}]
-			subtitle: "恭喜你找到了隐藏宝藏点！！！"
-			tasks: [{
-				advancement: "castle_in_the_sky:find_castle"
-				criterion: ""
-				id: "2F9F16FD2047D81B"
-				type: "advancement"
-			}]
-			x: 2.0d
-			y: -5.0d
-		}
-		{
-			dependencies: ["4629B904519AB5C6"]
-			id: "00B69C1F341234E0"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "4B47489281B4F2BE"
-				table_id: 7772018159856264947L
-				type: "choice"
-			}]
-			subtitle: "天空之城现在属于你了"
-			tasks: [{
-				advancement: "castle_in_the_sky:conquer_castle"
-				criterion: ""
-				id: "1085853212032DEF"
-				type: "advancement"
-			}]
-			x: 2.0d
-			y: -7.0d
-		}
-		{
-			dependencies: ["03F588EEB89B59F1"]
-			id: "6735F22ABE5E84FF"
-			invisible: true
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "6D420565E82034E5"
-				table_id: 7772018159856264947L
-				type: "choice"
-			}]
-			subtitle: "石头会守护主人，等到有一天你要回到天空之城拉普达的时候，它就会为你指路。"
-			tasks: [{
-				id: "46256991864AE7AA"
-				item: {
-					Count: 1
-					id: "castle_in_the_sky:levitation_stone"
-					tag: {
-						castle_in_the_sky: { }
-					}
-				}
-				type: "item"
-			}]
-			x: 2.0d
-			y: -3.5d
-		}
-		{
 			dependencies: ["03F588EEB89B59F1"]
 			id: "181933A2A9CDD244"
 			rewards: [{
@@ -384,19 +321,6 @@
 			title: "源源不断的源头（"
 			x: 2.0d
 			y: 3.5d
-		}
-		{
-			dependencies: ["00B69C1F341234E0"]
-			id: "40F6E5374E55A6CD"
-			subtitle: "你好狠心！"
-			tasks: [{
-				advancement: "castle_in_the_sky:trade"
-				criterion: ""
-				id: "7D37C27F37EB2D92"
-				type: "advancement"
-			}]
-			x: 2.0d
-			y: -9.0d
 		}
 	]
 	title: "主世界探险"

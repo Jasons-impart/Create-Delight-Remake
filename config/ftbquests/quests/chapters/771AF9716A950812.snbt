@@ -6,24 +6,14 @@
 	group: ""
 	icon: "create:goggles"
 	id: "771AF9716A950812"
-	images: [
-		{
-			height: 5.0d
-			image: "citadel:textures/gui/book/icon_default.png"
-			rotation: 0.0d
-			width: 5.0d
-			x: 0.0d
-			y: 0.0d
-		}
-		{
-			height: 1.0d
-			image: "ftbquests:block/barrier_open"
-			rotation: 0.0d
-			width: 0.0625d
-			x: -5.5d
-			y: 4.5d
-		}
-	]
+	images: [{
+		height: 5.0d
+		image: "citadel:textures/gui/book/icon_default.png"
+		rotation: 0.0d
+		width: 5.0d
+		x: 0.0d
+		y: 0.0d
+	}]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
