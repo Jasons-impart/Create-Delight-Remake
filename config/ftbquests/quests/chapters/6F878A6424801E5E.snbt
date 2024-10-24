@@ -3896,6 +3896,38 @@
 			x: -16.0d
 			y: -0.5d
 		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "73992E846A016357"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0E177B573061A3EC"
+				table_id: 8614959000113369079L
+				type: "random"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [
+				{
+					id: "3607B57D20FF2A7D"
+					item: "mbd2:butchery_in"
+					type: "item"
+				}
+				{
+					id: "1B0E6E585176E952"
+					item: "mbd2:butchery_room"
+					type: "item"
+				}
+				{
+					id: "7A84E0490EDB3714"
+					item: "mbd2:butchery_out"
+					type: "item"
+				}
+			]
+			title: "多方块屠宰室"
+			x: 4.5d
+			y: 10.0d
+		}
 	]
 	title: "&e超级大厨！"
 }
