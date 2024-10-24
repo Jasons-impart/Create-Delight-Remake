@@ -592,6 +592,7 @@
 			y: -6.5d
 		}
 		{
+			dependencies: ["553925D5AA9E0050"]
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
@@ -605,7 +606,7 @@
 				}
 				id: "43BA1201DAA02500"
 				stat: "minecraft:fall_one_cm"
-				title: "起飞喽！"
+				title: "准备起飞！"
 				type: "stat"
 				value: 4
 			}]

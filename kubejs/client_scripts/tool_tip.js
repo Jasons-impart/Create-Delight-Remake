@@ -32,7 +32,7 @@ let tooltips = [
     ["art_of_forging:heart_of_ender", "使用带有纳米融合的武器击杀末影人可获得", "Killing the Enderman with a weapon that has nano fused can grant"],
     ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
-    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看JEI瞻远者之臂了解如何召唤瞻远者", "咕咕咕"]
+    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看JEI瞻远者之臂了解如何召唤瞻远者", "zzz"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {
