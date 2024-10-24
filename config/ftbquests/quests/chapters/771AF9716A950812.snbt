@@ -32,28 +32,62 @@
 			id: "55C42BCE0E399B3D"
 			rewards: [
 				{
-					count: 24
-					id: "4FEC9B470C9F32F5"
-					item: "minecraft:oak_log"
+					id: "6AFE6C12EEE2D122"
+					item: "solcarrot:food_book"
 					type: "item"
 				}
 				{
-					count: 12
-					id: "02475B9958948AD4"
-					item: "minecraft:torch"
+					id: "7AD543C199D51666"
+					item: {
+						Count: 1
+						id: "sophisticatedbackpacks:backpack"
+						tag: {
+							contentsUuid: [I;
+								1412211533
+								-1935980405
+								-1239321403
+								297734021
+							]
+							inventorySlots: 27
+							renderInfo: {
+								upgradeItems: [{
+									Count: 1b
+									id: "minecraft:air"
+									tag: { }
+								}]
+							}
+							upgradeSlots: 1
+						}
+					}
 					type: "item"
 				}
 				{
-					exclude_from_claim_all: true
-					id: "57FE69D3711C215F"
-					table_id: 6485826240718891201L
-					type: "random"
+					id: "3A50D0EA5E13508D"
+					item: {
+						Count: 1
+						id: "minecraft:stone_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
 				}
 				{
-					exclude_from_claim_all: true
-					id: "330CF7ABA2B6B346"
-					table_id: 7772018159856264947L
-					type: "random"
+					id: "246296375B15F358"
+					item: {
+						Count: 1
+						id: "minecraft:stone_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 32
+					id: "20B54EFCD4A263B3"
+					item: "farmersdelight:stuffed_potato"
+					type: "item"
 				}
 			]
 			shape: "hexagon"
@@ -115,8 +149,8 @@
 				}
 			]
 			title: "屠宰相关"
-			x: 7.0d
-			y: -7.0d
+			x: 6.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -127,16 +161,16 @@
 				tag: {
 					SkullOwner: {
 						Id: [I;
-							-418050194
-							-2048506571
-							-1210633372
-							328619329
+							-1960145443
+							-948351405
+							-2025608280
+							671325087
 						]
-						Name: "JnamerZ"
+						Name: "LuJiChi"
 						Properties: {
 							textures: [{
-								Signature: "kBnaHzQOHywFAbuX0Yc6CCzWVXcaVJ4V6YyUOTQ5ncr+tB+RkJwb3zuPcSHg729rzprToA2UoIjWN0khDzPSglr2TmALnbbm78fCVI1V0EHY/pavCgn88Geb4u6R49Lc5FIVuxoG0FcI1EpFniot+aSu8Uw5m09SJfEXtY8L3V74AaljdC8vQWEnCuc+yEL9Zd37TOmui6UbQFI4359DMy5kcg6Z2s2p305Iy2m1UU6/k1HT0IPaa7GBclgCkRWDbndgoQnT1LsV1nraqX04vr5FUro9xlVquBHCD8D1YC2EvKio8VZgGYIBdd5PufiOVSLtOwDeDM3Gyy4XaxLWCn8gZ7yJlxP1SkcZY5XGjDHd9HC7Z+mB0EW1HoOrGLQBPTBPnIHddJELuOxDDeoah0RdewVMjfIummXmtGTHby+QF6nLZWWkli+cnLunKlcdwUqLfU589fMhWQnJ3+QfEcRWwoeHTNeLL/K1e7MQmMQIYpq5GLyWBgCPBQmnRmtNF4MCbKRitDFels/G5srmGdR36HNApIbY7S4SSdbntW3zku/VOSLIn/wGJCA1fNrB7ASu3zewuZFC4NHYFplFghlCpj6pi5+BtY59gcmFZfj68Q+Rs+DYUs0pRG6mxtOQ4JHH3ws0Fz5u92Ekrgvsbe7YiVLNVwFOAesCZcp5MS0="
-								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTU5MzkwOCwKICAicHJvZmlsZUlkIiA6ICJlNzE1MGY2ZTg1ZTY0NTM1YjdkNzMzNjQxMzk2NTU0MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJKbmFtZXJaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlOTFiMDJhNzQ2N2YwNGVmN2M1MTA5NmEyNzlmY2Q4M2Q2ZGQwNWU4YmNhZWFhMGZkNTVmNGQ4Y2Y5NmU4M2EiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+								Signature: "qQmSx1BZLxVQDY9EVTIhepepmMzXcNmX5PZABEQbA7BiHZ1ilxy4mWiNqy3ciQMJBSwV5EzEIjLRbERlYFGcqEiJDmw4ufGUiYWRK/oXGurElKSTIXfLdsXJkW5dMIr+hjWQ4z8wnCu3Hsv0QwwaF9/NVyHBmYHE7Brx/MxCGicTK8yzzLggQUsCo71lUT9GCr9pKvWkUa2WITxOuBlN72rDyrlhd4gZDb/tNC4g/16ZhhWi8oTbN95nXe9AchgXBHkaQGS/0obbd7XwRa08yABUvZf18q67PLyHqkNlzxNIRrs/StOOqOuIzWpuX1NOjTdrbiZoALabY55cqs1Fmkj7VuZulpf8bBXaIKB28EQHBKaYB2YMjJoTzs22YU0wObMQJIs1Yq1wBGr2yMhSnWA8z+iyrtMhATf4n4NL3M8xed34hRvQP9WYGxCWMIPcKCWvPL6kxZ0a9PPy5cwgogz4AgUS/h14E/Qj1gVlZwnLsmLGjMe+NlXk/ug2IYvqQnwtBC4jHXqIsc3CM3FpXeLDYnh//5BaU3bHaM0E7Xq2sp2DqTfpVcBr0OZpC6KLhdeBOUpIScn7dTFhd8xDFc+fCxcS1Y5fQ6Cxtr3t5S9pXJ7N5UCa9Z+mHmHtQgT9Lpa3jlG+4gKkUDJmG3EoZlx0P1R0YQ0yMFvSvCxUU6E="
+								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTYzMjU4MjA0MSwKICAicHJvZmlsZUlkIiA6ICI4YjJhOGRkZGM3Nzk0ZTUzODc0M2FiYTgyODAzOWI5ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJMdUppQ2hpIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M3NmFhY2U1NWJiYjNiZjI1MjQzZWEwYzA5NjNhYTJlZjA1YWE2ZDRiZjRiMTU5ZTMyNDNmNDI0OGFjYjYwYjMiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NkOWQ4MmFiMTdmZDkyMDIyZGJkNGE4NmNkZTRjMzgyYTc1NDBlMTE3ZmFlN2I5YTI4NTM2NTg1MDVhODA2MjUiCiAgICB9CiAgfQp9"
 							}]
 						}
 					}
@@ -149,15 +183,15 @@
 				type: "item"
 			}]
 			shape: "pentagon"
-			size: 2.0d
+			size: 1.5d
 			subtitle: "注意不要认领太多！！！"
 			tasks: [{
 				id: "66BE628B0EBBFBC7"
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 6.0d
-			y: 0.0d
+			x: 2.9761904761904674d
+			y: 1.0714285714285623d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -176,6 +210,11 @@
 					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
+				{
+					id: "23111F2B1BC1612C"
+					item: "alexsmobs:animal_dictionary"
+					type: "item"
+				}
 			]
 			shape: "pentagon"
 			size: 2.0d
@@ -185,7 +224,7 @@
 				type: "checkmark"
 			}]
 			title: "各式各样的生物"
-			x: -6.0d
+			x: -5.0d
 			y: 0.0d
 		}
 		{
@@ -208,7 +247,7 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: -9.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -285,31 +324,6 @@
 					type: "item"
 				}
 				{
-					id: "006D7714E74FBD5D"
-					item: {
-						Count: 1
-						id: "minecraft:player_head"
-						tag: {
-							SkullOwner: {
-								Id: [I;
-									-282015448
-									2131051872
-									-1970615444
-									-944829261
-								]
-								Name: "mi_xiao_bao"
-								Properties: {
-									textures: [{
-										Signature: "x+Lov1i4qrkF5jkPdmgKKkFOwvs1SLRO5JuAsMSZhEJ7iDMl76Rzzu+T55XplWnn6B7LVkqy8swCPKX1hsfH6OsoaXmI9/VC1dAyBM4Tgekv7miKTW7ySl/zzI9KBEqFRzOTqHX7AS3fxk/WRywAzi0/uaSD1tmoHoSnf2CfiNMwLBgOQXzzOUN46syUHb9yuKeRRBbq3TsPg8KPOnToG5uTwzamhlDhh+bIHQ3uuS7LFSLjiWNUDI1kZ5Qwin8XI+YZOD6IzwM9DOAn5jIMeN1rB8D2ZkOLqAQP4VfPkJo40k3BDfaKWRuEp2iFY4ZKWeXkrZW8fZowgIWhqYPAG/0vyJv0hraz0vSxw3v3ZUOQPlV9qRkdzTFpLGEwsggJPvYmuCbA5F4dRo/8ezK/kY72EVTPDBQrJDGVr36V5MFlGYnb8FxJmJsgd42CPlfHc9s5ndXHchVBmj5S90kj/5hgbtXPXKrd8lVcMqz+3APrJBRKzB2yTaDm0RGwWNSMrmdgKBdLkZ9DBYQb81CGbvOHq60/J54AeMKTwfcZBN9I5w/JQI/x5WyAkydeJYVYQctZCjVL/H6M++tyV3EOfmyOFW2P8RQs+SXLyacOk1ivUFXUiqIQfQ5Bi/13UFI1lTOm2mtw0DE4yiIHLZuq2cWJga+mSGoJ4AEZNXCzR6Y="
-										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTYzMjU5NjI4MCwKICAicHJvZmlsZUlkIiA6ICJlZjMwYzkyODdmMDU0NTYwOGE4YWNiNmNjN2FmMGNiMyIsCiAgInByb2ZpbGVOYW1lIiA6ICJtaV94aWFvX2JhbyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9iMzA4MDUzMzlhN2JkYzdiNGNlYzc5ZjFjYzE1MzZhMGY0NDYxNDhkNmY5NDk5ODQwYTFmOWI5MjE5YzE4ZmEwIgogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
-									}]
-								}
-							}
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "5FE7428B42B4993F"
 					item: {
 						Count: 1
@@ -360,45 +374,6 @@
 					type: "item"
 				}
 				{
-					id: "33FD34B5A03CF83C"
-					item: {
-						Count: 1
-						id: "minecraft:player_head"
-						tag: {
-							SkullOwner: {
-								Id: [I;
-									-314503313
-									-1747434562
-									-1112769927
-									1334878169
-								]
-								Name: "ikoi03"
-								Properties: {
-									textures: [
-										{
-											Signature: "D4JusGkADiNwrI/uIHUNz3Jv5iJpizNFE6vd5h7z0gz3myQvObZtz42USs0jgrbGbgI75rfeLds3xmb3J2p7AG+6vFDMbBw83vqHAssYPhf2Oxdbj6jlo9V7rVZC8oh/iTqdqL7MWaOQP+2wx/cK7R2Ab7FbiGy/Bx+EmAxiLdw9f3MpMCn+IotGinCb7cSJVWgXBmk2nXyoBmU+52c4PoIkp9b4RopdY/FlS+hyPV8EvWhBI31Xn6y8kMmGYKuIFENA+Ld+5rjD9nCJmNCCQhaAbaHISSVq66WwhIkX8JBhIXzpSUtWCxyM6alxnA6sdOyOfUuS/3s1ZI1EzVQrA0La/0qkrtFS1Eg1j1W8d0fl9izp0aWNdDnnAc5TX6VZb0QXvjPBX9QB8ryx//4qi150kkp5wlSMHhh0x2hB287GoxfawHpnNfp2j3jOuHzm9PJEJ8S/lL7lK12E22Y1zPD/wrQYmDt+NUibPNOHr9PEdfa2g9TNhGkh8e2tsoM5o1YgpyDnlkv8qWdx1dYM69L711yVWEut1qUvOMnb5BmEMi7UBdV90Q02XELiR9M3ZMBl11gjt62Tzz2nCL2bDtkf0ypZYRJNXTvMifdj6OSQZjrlCnswKAPrzrt2Py908q2so2SP5oT6yeAhrKWKnOovEZboKveLsqItm4Gs+A4="
-											Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQwMjQ1NywKICAicHJvZmlsZUlkIiA6ICJlZDQxMGY2Zjk3ZDg0M2JlYmRhYzdhNzk0ZjkwOWZkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJpa29pMDMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVjYjgxYTdmNGViMTJkYjlmODc4NzUzZDRjMmEyYjZiMDdlOGUxNjM0MDY3ODM0OGEyZjAzZjIxN2NmMWJjNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"
-										}
-										{
-											Signature: "D4JusGkADiNwrI/uIHUNz3Jv5iJpizNFE6vd5h7z0gz3myQvObZtz42USs0jgrbGbgI75rfeLds3xmb3J2p7AG+6vFDMbBw83vqHAssYPhf2Oxdbj6jlo9V7rVZC8oh/iTqdqL7MWaOQP+2wx/cK7R2Ab7FbiGy/Bx+EmAxiLdw9f3MpMCn+IotGinCb7cSJVWgXBmk2nXyoBmU+52c4PoIkp9b4RopdY/FlS+hyPV8EvWhBI31Xn6y8kMmGYKuIFENA+Ld+5rjD9nCJmNCCQhaAbaHISSVq66WwhIkX8JBhIXzpSUtWCxyM6alxnA6sdOyOfUuS/3s1ZI1EzVQrA0La/0qkrtFS1Eg1j1W8d0fl9izp0aWNdDnnAc5TX6VZb0QXvjPBX9QB8ryx//4qi150kkp5wlSMHhh0x2hB287GoxfawHpnNfp2j3jOuHzm9PJEJ8S/lL7lK12E22Y1zPD/wrQYmDt+NUibPNOHr9PEdfa2g9TNhGkh8e2tsoM5o1YgpyDnlkv8qWdx1dYM69L711yVWEut1qUvOMnb5BmEMi7UBdV90Q02XELiR9M3ZMBl11gjt62Tzz2nCL2bDtkf0ypZYRJNXTvMifdj6OSQZjrlCnswKAPrzrt2Py908q2so2SP5oT6yeAhrKWKnOovEZboKveLsqItm4Gs+A4="
-											Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQwMjQ1NywKICAicHJvZmlsZUlkIiA6ICJlZDQxMGY2Zjk3ZDg0M2JlYmRhYzdhNzk0ZjkwOWZkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJpa29pMDMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVjYjgxYTdmNGViMTJkYjlmODc4NzUzZDRjMmEyYjZiMDdlOGUxNjM0MDY3ODM0OGEyZjAzZjIxN2NmMWJjNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"
-										}
-										{
-											Signature: "rgOqwl2kZofyijo4RMSOXANsv+cgvBAF7iaRlMcn20mcITnOBWZj+18FWbUMm7lKFCXmLNwDf3MjLb1z82ZrURIgUOhwf2gNAEi2NlAxT6qTv0X0xasJIg6AiwZbVQapJ9ja0wvdB2EsKa6m03Z6F+lpfm8bRPjHdJuM3zZ3FffdN8EwLlZsbw9lyU+Ro6LhuZCItBVFkOTrUx9kmyAUFvMMwoQyviZ0CpiSyZ159c3P4db0/3INsUkrT1NShIBYJeMaPe97ieoTqSH1nkS2hWA7lyGp9RFQp1AKgzpTOAuQOTw0t0LVP+G9r6aeR3WjsulFAHGNN1ZVEt5i1qP7K3whAPQQJ3LSQnNp3/BLSWPHI9KavgMedEKvJ4VsoIJ5g4mpYdqnfH32hpseP8vLJrUy8qMLuWFlUh9XQcN180sIUE6Vp2pkrF0XRsmnWn6HiVA0PGxaui2/q9EzoEDDmtMS0GLsaet/08FESPTh6EL8usQ5fdLUwKZ4mRJwmWKuGXZSvbc2DW5zAwoZA5u4YmDZfXe9U+ncvL+fEoTyO61OsUSJ3ROJQIkJ+T/ZvlTP0EHYjmw9y2yTxSYCDIH9Mg6u7GKW9llMGMRNDF3aTpU5xfNkwRDLYa+P9N4WudlHD5BkE9wddB1MieZzIykAQE0cIeTR71O4HCeNi2CIRdY="
-											Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQwMjQ1OSwKICAicHJvZmlsZUlkIiA6ICJlZDQxMGY2Zjk3ZDg0M2JlYmRhYzdhNzk0ZjkwOWZkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJpa29pMDMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVjYjgxYTdmNGViMTJkYjlmODc4NzUzZDRjMmEyYjZiMDdlOGUxNjM0MDY3ODM0OGEyZjAzZjIxN2NmMWJjNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"
-										}
-										{
-											Signature: "semAvxAVo51lu4M55X2zdVG8EfYrw1UyBP1RIhRpxr4Ei2eCsNAbNKSBsIAGiIdTmRod8mOR+Ei4kzoM446erTdWMk1znd1vUJQ/jmBnj9iOkCTj6Ue6xFQres4LiXTXJ7jP4JSva+HrZbo2zz14Gtaw1athuvtDd22uHTK2fOiuEqu4nzJohFWf/oMHpRqvyijHmxh1EpF6oKnG0sgNL84cGsE+2iD9qXlc6T2VDBxLONxsJKKjKiunL1ZDG/k/wupOfLsk7SuPRkPYZx8SsbbGZgb5QsBR37icR+QCdaRzuVyK43HRCJRWL4aNsjfFEdrqjpA/ud4YTrHXvuk9n1F5G2pwO52f1RDNX9WAo2WOFLINQO5cr3u1AP57VPJkPHFFsgTBJHS62VrgZ5h481/eCOijzUKXoJIBS2uA++uBOcNDgTkZ58xSwsleBFqzY6j7e2VWAfOOz+CSvgiOe7HtEBTxXeHTlgePJ9o0UWrKHmGmObefkIYr4S0xS9AuKqpD9el11WAKHiq9Q3pgaQgC0dDL0nWikgR/0MW8KXErSDba6CZktxgy6diJrK01oktLzoWAN3mi0g2A1ko6xekb3MA9Ud11+K6Ce7cvpCH3Ar6C869BAVSlB3ROZM/iSqiyNVTsx6pLxbTpE5WMOet5BphGgtXeYgfbUM/DTLw="
-											Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQwMjQ5OCwKICAicHJvZmlsZUlkIiA6ICJlZDQxMGY2Zjk3ZDg0M2JlYmRhYzdhNzk0ZjkwOWZkOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJpa29pMDMiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWVjYjgxYTdmNGViMTJkYjlmODc4NzUzZDRjMmEyYjZiMDdlOGUxNjM0MDY3ODM0OGEyZjAzZjIxN2NmMWJjNyIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"
-										}
-									]
-								}
-							}
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "5FA3072386B78900"
 					item: {
 						Count: 1
@@ -416,31 +391,6 @@
 									textures: [{
 										Signature: "khhHAfxjC29VRUYT4M62yaHw+JVnqFOuIDk3hhgXLHNUrj+cR3pBkqYGvFZmYmo+XzL1hEsgVwJtMYrI/U/eaF0wbac0PTAXxxdrVn/nM7zIl5sRoqQMoyJtM2j3LJSo6DGh6CkMlNoZ7Gqq3x1akwN5wKzXdV8NF+YmATq7UZ5KiuIxzrJZttIYTrZ+Cd/EFworyln2vzadZBgk3+A8jpFacfhZXozoS6eWjy5VDrDYlFchz2J3QrJhiVj9Eqb3OskaiVvmfsy90a7buIUl2dzQJJa8unLuin4jjjLy49Vu65F+TaU8i3WUZ7hKBvcnODrnDfLJF2z+5gPk3RW9jTV8Fc33HGCV382VN8eGdaVGuw+KSFzsBdCtHlv2Rje5CkwdvJ1QuM+uYkO6fZinR79vsrM5k37IDZjilw4kCG6Rgo/Ec6EoqjKASwJLJXYYJU0UsGiC5tk//dZ98PSmIooICrG6L/p+6iX/R9nJJyEwsixxFUt7cC1R+jbwWbmXL6FEa54FVskyf7zfBLXYL1G1fZ2IFVOvgAy9KoGTJQACMMs7wh9PwtOT86VW61OrQEcYowxrcq/U4hmJXNJ27JEm6d8W3JmJ9hK7y+hOvgo9p/l6q14AIIfgqCP4ZkGamoOQQIKYfbrPmXKTxQhyIudCncs1y0nDgomDQr439yY="
 										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQ5MTY1NSwKICAicHJvZmlsZUlkIiA6ICJlNjNiMTlmYmI1OTE0NDk5YmEyOWI3YjU1NjdlMGEwMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJDX1BlYXJsIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMyMTkyZGJhOGRjZWNkMTM3MGViNjM0NDIzOTY0ZDM0M2JjOGU4Mjc3ZTY4OTA5YTE5NGY2YjBlNjliZjk2ZDgiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="
-									}]
-								}
-							}
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "43BA01F5CF079E2F"
-					item: {
-						Count: 1
-						id: "minecraft:player_head"
-						tag: {
-							SkullOwner: {
-								Id: [I;
-									-418050194
-									-2048506571
-									-1210633372
-									328619329
-								]
-								Name: "JnamerZ"
-								Properties: {
-									textures: [{
-										Signature: "kBnaHzQOHywFAbuX0Yc6CCzWVXcaVJ4V6YyUOTQ5ncr+tB+RkJwb3zuPcSHg729rzprToA2UoIjWN0khDzPSglr2TmALnbbm78fCVI1V0EHY/pavCgn88Geb4u6R49Lc5FIVuxoG0FcI1EpFniot+aSu8Uw5m09SJfEXtY8L3V74AaljdC8vQWEnCuc+yEL9Zd37TOmui6UbQFI4359DMy5kcg6Z2s2p305Iy2m1UU6/k1HT0IPaa7GBclgCkRWDbndgoQnT1LsV1nraqX04vr5FUro9xlVquBHCD8D1YC2EvKio8VZgGYIBdd5PufiOVSLtOwDeDM3Gyy4XaxLWCn8gZ7yJlxP1SkcZY5XGjDHd9HC7Z+mB0EW1HoOrGLQBPTBPnIHddJELuOxDDeoah0RdewVMjfIummXmtGTHby+QF6nLZWWkli+cnLunKlcdwUqLfU589fMhWQnJ3+QfEcRWwoeHTNeLL/K1e7MQmMQIYpq5GLyWBgCPBQmnRmtNF4MCbKRitDFels/G5srmGdR36HNApIbY7S4SSdbntW3zku/VOSLIn/wGJCA1fNrB7ASu3zewuZFC4NHYFplFghlCpj6pi5+BtY59gcmFZfj68Q+Rs+DYUs0pRG6mxtOQ4JHH3ws0Fz5u92Ekrgvsbe7YiVLNVwFOAesCZcp5MS0="
-										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTU5MzkwOCwKICAicHJvZmlsZUlkIiA6ICJlNzE1MGY2ZTg1ZTY0NTM1YjdkNzMzNjQxMzk2NTU0MSIsCiAgInByb2ZpbGVOYW1lIiA6ICJKbmFtZXJaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JlOTFiMDJhNzQ2N2YwNGVmN2M1MTA5NmEyNzlmY2Q4M2Q2ZGQwNWU4YmNhZWFhMGZkNTVmNGQ4Y2Y5NmU4M2EiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
 									}]
 								}
 							}
@@ -508,7 +458,7 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -616,8 +566,8 @@
 				type: "checkmark"
 			}]
 			title: "锻造之艺"
-			x: -7.0d
-			y: -7.0d
+			x: -6.0d
+			y: -6.0d
 		}
 		{
 			dependencies: [
@@ -633,11 +583,18 @@
 				}
 			}
 			id: "7429D7F92D04A8BB"
-			rewards: [{
-				id: "02176C222B0B79F4"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "02176C222B0B79F4"
+					item: "createdelightcore:gold_coin"
+					type: "item"
+				}
+				{
+					id: "3F7CCFB5CF2E6287"
+					item: "lightmanscurrency:portable_gem_terminal"
+					type: "item"
+				}
+			]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"玩转货币！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34C9A7E928820147\" } }"
@@ -681,8 +638,8 @@
 				type: "item"
 			}]
 			title: "-&c这是...一枚货币！-"
-			x: -7.0d
-			y: 7.0d
+			x: -6.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["64B9CFE4337A3EAA"]
@@ -697,8 +654,46 @@
 				type: "checkmark"
 			}]
 			title: "矿物处理流程"
-			x: 7.0d
-			y: 7.0d
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			id: "28A38E3B4EE9EFEC"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "部分特定食物可以增加血量上限，具体食物详见&e食物手册"
+			tasks: [{
+				id: "508ED918A1675176"
+				item: "solcarrot:food_book"
+				type: "item"
+			}]
+			title: "小tips"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			id: "3911F2778F70E4B9"
+			rewards: [{
+				auto: "no_toast"
+				id: "74C0F3379C69CD7C"
+				item: "ftbquests:book"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			tasks: [{
+				disable_toast: true
+				elapsedTime: 1L
+				gameTime: "system"
+				icon: "ftbquests:book"
+				id: "70B3E3406AC6EB91"
+				title: "任务系统"
+				type: "questsadditions:time"
+			}]
+			x: -3.0714285714285694d
+			y: 1.0714285714285623d
 		}
 	]
 	title: "介绍"
