@@ -384,7 +384,7 @@
 					type: "item"
 				}
 			]
-			title: "&4裂空剪&r"
+			title: "&4裂空剪卷轴&r"
 			x: 12.0d
 			y: -3.0d
 		}
@@ -397,6 +397,7 @@
 				id: "5C95ECC22DEE9A0A"
 				type: "advancement"
 			}]
+			title: "裂空剪！"
 			x: 12.0d
 			y: 0.0d
 		}

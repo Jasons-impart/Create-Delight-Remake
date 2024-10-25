@@ -45,16 +45,44 @@ ServerEvents.recipes(e => {
                 Fluid.of("createdelight:egg_yolk", 50)
             ]
         ).id(`createdelight:mixing/${result.split(":")[1]}_1`)
-        e.recipes.create.mixing(
-            result,
-            [
-                input,
-                Fluid.of("create:honey", 50),
-                "createdelight:butter",
-                "2x create:wheat_flour",
-                Fluid.of("createdelight:egg_yolk", 50)
+        e.custom({
+            type: "create:mixing",
+            ingredients: [
+                {
+                    item: input
+                },
+                {
+                    amount: 50,
+                    fluidTag: "forge:honey"
+                },
+                {
+                    item: "createdelight:butter"
+                },
+                {
+                    count: 2,
+                    item: "create:wheat_flour"
+                },
+                {
+                    amount: 50,
+                    fluid: "createdelight:egg_yolk"
+                }
+            ],
+            results: [
+                {
+                    item: result
+                }
             ]
-        ).id(`createdelight:mixing/${result.split(":")[1]}_2`)
+        }).id(`createdelight:mixing/${result.split(":")[1]}_2`)
+        // e.recipes.create.mixing(
+        //     result,
+        //     [
+        //         input,
+        //         Fluid.of("create:honey", 50),
+        //         "createdelight:butter",
+        //         "2x create:wheat_flour",
+        //         Fluid.of("createdelight:egg_yolk", 50)
+        //     ]
+        // ).id(`createdelight:mixing/${result.split(":")[1]}_2`)
         baking(e, result.split(" ")[1], cookie, 4, "food", 200)
     });
     recipes.forEach(([result, input]) => {
