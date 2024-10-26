@@ -485,7 +485,7 @@
 				item: "ae2:spatial_cell_component_16"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 12.0d
 			y: 11.5d
 		}
 		{
@@ -502,7 +502,7 @@
 				item: "ae2:spatial_cell_component_128"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 13.0d
 			y: 11.5d
 		}
 		{
@@ -520,7 +520,7 @@
 				type: "item"
 			}]
 			title: "晶体催生器"
-			x: -1.0d
+			x: -1.5d
 			y: 10.5d
 		}
 		{
@@ -787,7 +787,7 @@
 		}
 		{
 			dependencies: ["6B02622B0BBD5191"]
-			description: ["这是本包加入的，可用于所有压印操作的模板。"]
+			description: ["这是本包加入的，可用于&e所有压印操作&r的模板。需要使用五种模板合成。"]
 			id: "04D1535475BCBF5C"
 			subtitle: "one for all"
 			tasks: [{
@@ -1187,7 +1187,7 @@
 				title: "Any #ae2:covered_cable"
 				type: "item"
 			}]
-			title: "包层玻璃线缆"
+			title: "包层线缆"
 			x: -3.0d
 			y: 16.5d
 		}
@@ -1214,7 +1214,7 @@
 		{
 			dependencies: ["0574AC9F074EB325"]
 			id: "63DBBC61CEAD9D83"
-			subtitle: "同样会显示频道，但是能传递32个频道，不过不能连接面板形机器"
+			subtitle: "致密包层线缆的智能版本"
 			tasks: [{
 				id: "1B1BCB5F750FD6EB"
 				item: {
@@ -1227,7 +1227,7 @@
 				title: "Any #ae2:smart_dense_cable"
 				type: "item"
 			}]
-			title: "致密包层线缆"
+			title: "致密线缆"
 			x: -3.0d
 			y: 18.5d
 		}
@@ -1248,8 +1248,8 @@
 				item: "ae2:crystal_resonance_generator"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 11.5d
+			x: -1.5d
+			y: 12.5d
 		}
 		{
 			dependencies: [
@@ -1272,6 +1272,13 @@
 		}
 		{
 			dependencies: ["0066F663463000B8"]
+			description: [
+				"使用这些方块就可以搭建一个cpu。"
+				"合成存储器可以增加CPU容量。只需要知道越复杂的合成消耗的字节越多就行了。"
+				"合成监控器用于显示当前正进行的合成任务，其小终端可以用染色器改变颜色。"
+				"并行处理单元提升CPU的物品发配能力。大概就是并行处理单元越多，处理速度会变快，不过不是绝对的。"
+				"合成单元无特殊作用，但是可以在多方块结构中凑数。"
+			]
 			id: "613AEAFC080EAD2B"
 			rewards: [{
 				id: "2F13AD5CA1906D69"
@@ -1338,7 +1345,6 @@
 			y: 13.5d
 		}
 		{
-			dependencies: ["6FB9BA9B19441FFD"]
 			description: [
 				"每个量子网桥由8个ME量子环围绕一个ME量子链接仓构成，放置方向不限，即：可以是1x3x3，3x1x3，3x3x1"
 				"两个量子网桥为一对，需要在链接仓内放置成对的量子缠绕态奇点，当两端都被加载且都有电时工作"
@@ -1366,11 +1372,11 @@
 				}
 			]
 			title: "量子网桥"
-			x: 1.0d
+			x: 0.0d
 			y: 16.5d
 		}
 		{
-			dependencies: ["74BD7E87BE22AD1F"]
+			dependencies: ["6E76C3F1A42B867F"]
 			description: [
 				"空间塔是用来存储一定范围内方块和实体的设备。(实质是将方块和实体搬入封闭空间)"
 				""
@@ -1397,9 +1403,10 @@
 				}
 			]
 			x: 2.0d
-			y: 12.5d
+			y: 16.5d
 		}
 		{
+			dependencies: ["2B4EDA54C96F070A"]
 			id: "6FB9BA9B19441FFD"
 			tasks: [{
 				id: "1E973230EF0C6EEA"
@@ -1407,7 +1414,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 16.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["66D3987673156EBD"]
@@ -1417,8 +1424,8 @@
 				item: "ae2:basic_card"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 3.5d
+			x: 14.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["66D3987673156EBD"]
@@ -1428,7 +1435,7 @@
 				item: "ae2:advanced_card"
 				type: "item"
 			}]
-			x: 17.0d
+			x: 16.0d
 			y: 3.0d
 		}
 		{
@@ -1439,8 +1446,8 @@
 				item: "ae2:redstone_card"
 				type: "item"
 			}]
-			x: 11.5d
-			y: 3.0d
+			x: 13.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["4C839528BAF9A7AD"]
@@ -1450,8 +1457,8 @@
 				item: "ae2:capacity_card"
 				type: "item"
 			}]
-			x: 12.5d
-			y: 2.0d
+			x: 14.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["4C839528BAF9A7AD"]
@@ -1461,8 +1468,8 @@
 				item: "ae2:void_card"
 				type: "item"
 			}]
-			x: 13.5d
-			y: 2.0d
+			x: 15.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["4C839528BAF9A7AD"]
@@ -1472,8 +1479,8 @@
 				item: "ae2:crafting_card"
 				type: "item"
 			}]
-			x: 14.5d
-			y: 3.0d
+			x: 16.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["7DF0886961C80D8B"]
@@ -1483,7 +1490,7 @@
 				item: "ae2wtlib:magnet_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 2.5d
 		}
 		{
@@ -1494,7 +1501,7 @@
 				item: "ae2:inverter_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 1.5d
 		}
 		{
@@ -1505,7 +1512,7 @@
 				item: "ae2:fuzzy_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 3.5d
 		}
 		{
@@ -1516,7 +1523,7 @@
 				item: "ae2:speed_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 4.5d
 		}
 		{
@@ -1527,7 +1534,7 @@
 				item: "ae2:equal_distribution_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 0.5d
 		}
 		{
@@ -1538,7 +1545,7 @@
 				item: "ae2:energy_card"
 				type: "item"
 			}]
-			x: 18.0d
+			x: 17.0d
 			y: 5.5d
 		}
 		{
@@ -1549,7 +1556,7 @@
 				item: "megacells:greater_energy_card"
 				type: "item"
 			}]
-			x: 18.0d
+			x: 17.0d
 			y: 0.5d
 		}
 		{
@@ -1560,7 +1567,7 @@
 				item: "megacells:compression_card"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 18.0d
 			y: 5.5d
 		}
 		{
@@ -1656,8 +1663,8 @@
 				item: "ae2:wireless_receiver"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 12.5d
+			x: -1.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["2BD6A2B1488B12A1"]
@@ -1669,13 +1676,14 @@
 				item: "ae2:wireless_access_point"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 12.5d
+			x: 0.5d
+			y: 11.5d
 		}
 		{
 			dependencies: [
 				"74BD7E87BE22AD1F"
 				"7345C77F35547703"
+				"6FB9BA9B19441FFD"
 			]
 			id: "6E76C3F1A42B867F"
 			size: 1.5d
@@ -1717,7 +1725,7 @@
 				item: "ae2:spatial_anchor"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.0d
 			y: 16.5d
 		}
 		{
@@ -1815,8 +1823,8 @@
 		{
 			dependencies: ["141A6861778724F6"]
 			description: [
-				"引爆一个奇点和一个末影粉可获得两个拥有相同NBT（Freq）的量子缠绕态奇点，如果同时引爆了三个奇点和三个末影珍珠粉则会出现三对量子缠绕态奇点。"
-				"放置于量子环中间的ME量子链接仓中以使用。"
+				"引爆&e一个奇点和一个末影粉&r可获得两个拥有&e相同NBT&r（Freq）的量子缠绕态奇点，如果同时引爆了三个奇点和三个末影珍珠粉则会出现三对量子缠绕态奇点。"
+				"放置于&e量子环中间&r的ME量子链接仓中以使用。"
 			]
 			id: "587F9FEBD03DC83D"
 			tasks: [{
@@ -1843,8 +1851,81 @@
 					type: "item"
 				}
 			]
-			x: 1.0d
-			y: 11.5d
+			x: 0.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["7345C77F35547703"]
+			description: [
+				"使用方法：获取一对量子缠绕态奇点，将其中一个放入一个量子环，另一个放入你的终端。"
+				"安装量子桥卡后终端能够&e自动充电&r。"
+			]
+			id: "3D5FFC62705AC5C0"
+			tasks: [{
+				id: "0635730FB6AF40BD"
+				item: "ae2wtlib:quantum_bridge_card"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 18.5d
+		}
+		{
+			dependencies: ["375FBDA8DC16A604"]
+			id: "7922DE1C8E288FDC"
+			subtitle: "同样包层，但是可以传递32个频道；不过不能连接面板形机器"
+			tasks: [{
+				id: "0F0ACB833590DC61"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:covered_dense_cable"
+					}
+				}
+				title: "Any #ae2:covered_dense_cable"
+				type: "item"
+			}]
+			title: "致密包层线缆"
+			x: -4.0d
+			y: 16.5d
+		}
+		{
+			description: [
+				"一个重要机器。在节省材料方面能够起到重要作用；同时也是合成相变铁的机器。"
+				"拥有两个模式：真空处理和加压处理。使用扳手右击机器即可切换模式。"
+			]
+			id: "2B4EDA54C96F070A"
+			tasks: [{
+				icon: "vintageimprovements:vacuum_chamber"
+				id: "478DABC700C325D6"
+				observe_type: 0
+				timer: 0L
+				title: "看看你的压缩机"
+				to_observe: "vintageimprovements:vacuum_chamber"
+				type: "observation"
+			}]
+			title: "压缩机"
+			x: -1.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["47D824E8188E18E9"]
+			description: [
+				"要使用自动合成，你必须将你的配方写入样板。编写样板需要使用样板编码终端，写完一个样板后需要将其放入样板供应器。"
+				"对于非处理样板（也就是使用分子装配室），只需将样板放入样板供应器，然后再贴着样板供应器放置分子装配室即可。"
+				"{@pagebreak}"
+				"而处理样板则有些不同。这里稍微提及一点点关于自动合成的机制：每当你下一个订单（自动合成请求），AE网络中的原料都会&e送往样板供应器&r，然后由样板供应器&e送入临近的容器&r，且输出物品的顺序是：从样板的&e左上到右下&r。使用扳手右键样板供应器可以使其只往某个方向输出物品。"
+				"比如自动化序列组装，我这里的建议是用好“动力臂自带轮询调度”与“样板供应器送出的物品是有序的”这两个特性。更详细的例子请参考其他地方的AE教程。"
+			]
+			id: "60EED72CFB198693"
+			tasks: [{
+				id: "19DEDB0F44401AF2"
+				item: "ae2:blank_pattern"
+				type: "item"
+			}]
+			title: "样板与样板供应器"
+			x: 9.0d
+			y: 13.5d
 		}
 	]
 	title: "&9应用能源2"
