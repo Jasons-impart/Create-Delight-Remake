@@ -72,11 +72,7 @@
 			y: 6.0d
 		}
 		{
-			dependencies: [
-				"38CD78E43A6497DC"
-				"24B350776EC1E573"
-				"25312B7026403FFF"
-			]
+			dependencies: ["38CD78E43A6497DC"]
 			id: "47ADAC6620C3FF87"
 			shape: "hexagon"
 			size: 1.5d
@@ -87,17 +83,6 @@
 			}]
 			x: 6.0d
 			y: 6.0d
-		}
-		{
-			dependencies: ["50E6BE9153146BF5"]
-			id: "24B350776EC1E573"
-			tasks: [{
-				id: "05E1245BB066A60A"
-				item: "aetheric_tetranomicon:valkyrian_scrap"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 7.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -201,24 +186,6 @@
 			title: "&5终末钢&r"
 			x: 0.0d
 			y: 12.0d
-		}
-		{
-			dependencies: ["50E6BE9153146BF5"]
-			id: "25312B7026403FFF"
-			tasks: [{
-				id: "0CEAB15EAC48A56C"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "aether:aerclouds"
-					}
-				}
-				title: "任意云"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 5.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
