@@ -35,7 +35,6 @@ ServerEvents.recipes(e => {
         .id("createdelight:boiling_water_cabbage")
     e.recipes.farmersdelight.cooking([
         "festival_delicacies:chinese_cabbage", 
-        "minecraft:bowl",
         "vintagedelight:salt_dust",
         "minecraft:water_bucket"
     ], "createdelight:boiling_water_cabbage", 1.0, 200, "bowl").id("createdelight:cooking/boiling_water_cabbage")
