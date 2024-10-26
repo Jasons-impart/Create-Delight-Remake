@@ -91,7 +91,7 @@
 				{
 					icon: {
 						Count: 1
-						id: "aether:vampire_blade"
+						id: "create_sa:rose_quartz_sword"
 						tag: {
 							Damage: 0
 						}
