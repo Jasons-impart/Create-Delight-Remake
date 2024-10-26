@@ -1,4 +1,6 @@
 ServerEvents.recipes(e => {
+    e.remove({id:"the_bumblezone:bee_bread/from_bucket"})
+    e.remove({id:"the_bumblezone:bee_soup"})
     // 蜂王浆
     e.recipes.create.compacting(
         "the_bumblezone:royal_jelly_block",
@@ -54,4 +56,39 @@ ServerEvents.recipes(e => {
             "4x minecraft:honey_bottle"
         ]
     ).replaceIngredient("minecraft:honey_bottle", "minecraft:glass_bottle").id("the_bumblezone:honey_bucket/from_honey_bottle")
+    //蜂蜜饲料
+    e.recipes.create.filling(
+        "the_bumblezone:bee_bread", 
+        ["the_bumblezone:pollen_puff",Fluid.of("create:honey",250)
+        ]).id("filling/bee_bread")
+    //蜜蜂汤
+    e.custom({
+        "type": "farmersdelight:cooking",
+        "cookingtime": 200,
+        "experience": 1.0,
+        "ingredients": [
+          {
+            "item": "the_bumblezone:bee_bread"
+          },
+          {
+            "item": "minecraft:beetroot"
+          },
+          {
+            "item": "minecraft:potatoes"
+          },
+          {
+            "item": "minecraft:honeycomb"
+          },
+          {
+            "item": "minecraft:honeycomb"
+          },
+          {
+            "item": "the_bumblezone:bee_stinger"
+          }
+        ],
+        "recipe_book_tab": "meals",
+        "result": {
+          "item": "the_bumblezone:bee_soup"
+        }
+      }).id("cook/bee_soup")
 })

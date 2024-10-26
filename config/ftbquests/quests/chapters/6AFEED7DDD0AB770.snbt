@@ -1,0 +1,680 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "6AFEED7DDD0AB770"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "the_bumblezone:honey_crystal"
+	id: "6AFEED7DDD0AB770"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"如何进入/离开蜜蜂领域："
+				""
+				"进入的方法：朝着蜂巢投掷末影珍珠就会被传送进入蜜蜂领域。"
+				"离开的方法：向下挖，直到坐标 y=0 以下，或者向上爬到 y=256 以上，它会自动判断你想离开蜜蜂领域。"
+				""
+				"初次进入建议携带的物品：玻璃瓶（装糖水/蜂蜜）+桶；船（糖水底板中快速移动）/鞘翅+火箭；花头饰"
+			]
+			id: "69E04E78B5292984"
+			rewards: [
+				{
+					id: "234D73DEE19216BA"
+					item: {
+						Count: 1
+						id: "the_bumblezone:flower_headwear"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2D8F0A16AFE9F0C4"
+					type: "xp"
+					xp: 100
+				}
+			]
+			size: 1.5d
+			subtitle: "欢迎来到蜜蜂领域"
+			tasks: [{
+				dimension: "the_bumblezone:the_bumblezone"
+				id: "76947765109CEBA2"
+				title: "蜂蜜领域"
+				type: "dimension"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6FE1E4B54AA983AA"
+				"5DA7F35E7B341E05"
+			]
+			id: "383A2C984DD58A68"
+			rewards: [{
+				id: "4556DE3B60C05D7F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "675C683360A3B5E5"
+				item: {
+					Count: 1
+					id: "the_bumblezone:honey_compass"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["383A2C984DD58A68"]
+			description: [
+				"通过使用蜂蜜指南针能够定位最近的巢室迷宫。迷宫中有大量的蜜蜂领域的方块，以及成吨的充满宝藏的蜂蜜茧。在巢室迷宫中搜刮到的蜜蜂盔甲还会有额外的特殊效果！"
+				""
+				"贸然进入巢室迷宫会获得蜂群之怒的效果，并遭到蜜蜂们的围攻。因此你应当确保你获得了蜂群之护，或是穿戴了花头饰后进入迷宫。一旦你已经吸收了蜂之精华，那就可以随时出入巢室迷宫了。在巢室迷宫中发现的蜂蜜指南针会指向最近的王座尖柱"
+			]
+			id: "044C1CC5D4815359"
+			rewards: [{
+				id: "7F06CB2741E6FA46"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				biome: "#the_bumblezone:has_structure/cell_maze"
+				icon: "the_bumblezone:porous_honeycomb_block"
+				id: "2E96DB5E1BD6B3A9"
+				title: "巢室迷宫"
+				type: "biome"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["044C1CC5D4815359"]
+			description: [
+				"蜂后无法被实体推动，在受到伤害之前都保持中立，当被激怒时，它会持续不断的召唤蜜蜂来进行攻击，近战攻击距离非常近。"
+				"你可以手持物品右键蜂后，或将物品丢到蜂后面前与其进行交易。交易列表非常多，同一个物品也有不同的几率交易出不同的物品，你可以安装JEI、REI或EMI来查询蜂后所有的交易与几率。"
+				"蜂后还会挑选一件可交易物品拿在手上，并告诉附近的玩家在接下来的20分钟内它想要这件物品，交易这件物品将获得三倍的奖励和经验。玩家最多可以获得24次的三倍交易奖励直到蜂后感到满意，经过20分钟之后蜂后才会重新挑选新的奖励交易物品。"
+			]
+			id: "588F6A55189D0FA8"
+			rewards: [
+				{
+					id: "1F4E732727F3F233"
+					item: "minecraft:oxeye_daisy"
+					type: "item"
+				}
+				{
+					id: "6A3ACAA97EE97A28"
+					type: "xp"
+					xp: 100
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				icon: "the_bumblezone:bee_queen_spawn_egg"
+				id: "0F2EA70F655509E0"
+				observe_type: 5
+				timer: 0L
+				title: "蜂后"
+				to_observe: "the_bumblezone:bee_queen"
+				type: "observation"
+			}]
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: ["首次与蜂后成功交易后，你将解锁蜂后的挑战任务线，每完成一个挑战进度，都会获得一瓶蜂王浆瓶，完成所有挑战进度后与蜂后右键互动，将获得蜂之精华！再次右键蜂后将重置进度，可再重新完成挑战进度并获得蜂之精华。"]
+			id: "5FCD4820C6EA300A"
+			rewards: [{
+				id: "6E3C514F50DB3613"
+				type: "xp"
+				xp: 100
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "47DD7F68EB636A53"
+				item: "the_bumblezone:essence_of_the_bees"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5FCD4820C6EA300A"]
+			description: [
+				"右键长按可以吸收蜜蜂精华，并永久获得以下效果："
+				""
+				"自由进出巢室迷宫而不会引发蜂群之怒。"
+				""
+				"在王座尖柱靠近蜂后时不会获得挖掘疲劳。"
+				""
+				"从满多孔蜜脾块中用玻璃瓶获取蜂蜜、挖掘蜂蜜块或是满多孔蜜脾块不会获得蜂群之怒。"
+				""
+				"可以直接采集蜂房，拿走蜜脾和蜂蜜，不再需要营火。"
+				""
+				"从蜂蜜史莱姆身上取走蜂蜜不再激怒蜂蜜史莱姆。"
+				""
+				"新找到的蜂蜜指南针可以指向永恒圣所。"
+				""
+				"可以接触精华方块并开启永恒圣所的竞技场。"
+				""
+				"站在古代蜂蜡块和冷光蜂蜡块上不再会获得挖掘疲劳。"
+				""
+				"挖掘冷光蜂蜡块会掉落对应属性的种类，而不是无属性种类。"
+				""
+				"完成圣所竞技场获得的精华可以被使用了。"
+				""
+				"蜜蜂精华不会被岩浆或火焰烧毁"
+			]
+			id: "6D9F677B651F6006"
+			subtitle: "成为蜜蜂的一份子"
+			tasks: [{
+				id: "4BE16513DA6C7AD0"
+				title: "蜜蜂精华效果"
+				type: "checkmark"
+			}]
+			x: 13.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			description: [
+				"可产生无限水源，与水接触没有反应。"
+				""
+				"糖水可以治疗任何与之接触并且未受攻击的蜜蜂；"
+				""
+				"可以代替水源在旁边种植甘蔗，并且能加速甘蔗生长"
+			]
+			id: "4DEFCFDDAD7B0CA0"
+			rewards: [{
+				id: "3772FA803BE604E1"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5C7623D109D4E83B"
+				item: "the_bumblezone:sugar_water_bucket"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: [
+				"从部分结构中的蜜蜂茧中获得，非常稀有；此外作为蜂后第四阶级交易的稀有掉落"
+				"右键任意蜜蜂可以把它捕捉进公文包内，最多能容纳14只蜜蜂。"
+				"Shift+右键可以打开公文包的UI，从中可以看到每一只蜜蜂的状态和种类，还可以对公文包内的蜜蜂使用物品栏内的物品，包括：治疗蜜蜂、安装蜂刺、授予花粉和长大成年。"
+				""
+				"可以在UI内释放蜜蜂，也可以左键点击任何方块来释放蜜蜂（从第一行左起）。如果左键点击的是实体，那么一只蜜蜂被释放后会攻击这个实体。Shift+左键可以释放所有蜜蜂。"
+			]
+			icon_scale: 1.5d
+			id: "239865FDA8D9A6DC"
+			rewards: [{
+				id: "0F91057E7C687FE9"
+				type: "xp"
+				xp: 100
+			}]
+			size: 2.0d
+			subtitle: "装载你所有的蜜蜂"
+			tasks: [{
+				id: "17F6AAED61A611E6"
+				item: "the_bumblezone:buzzing_briefcase"
+				type: "item"
+			}]
+			x: 8.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["609550E552ABA48A"]
+			description: [
+				"可以在任何地方放置蜂王浆流体，但在不允许放置水的维度中（如地狱），放置后会变为闪耀蜂蜜结晶"
+				"你可以把蜂王浆桶与蜂后交易来获得一些有价值的物品。"
+				""
+				"喂给蜜蜂可以给予蜜蜂4500秒的蜂能IV，并且一定会获得蜂群之护；喂给巨蜂可以增加1000点好感度，直接让巨蜂变为巨蜂皇后，当手持蜂王浆桶时，巨蜂会跟随你。"
+				""
+				"位于蜂王浆中的实体会获得5秒的生命恢复II和15秒的蜂能效果。"
+			]
+			id: "7813AD767C08E331"
+			rewards: [
+				{
+					count: 2
+					id: "565F2CF31772FF62"
+					item: "the_bumblezone:royal_jelly_bottle"
+					type: "item"
+				}
+				{
+					id: "11317BD5A610CAAE"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "0E7705C5E80B8C21"
+				item: "the_bumblezone:royal_jelly_bucket"
+				type: "item"
+			}]
+			x: 11.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			description: [
+				"可以在任何地方放置蜂蜜流体，但在不允许放置水的维度中（如地狱），放置后会变为闪耀蜂蜜结晶"
+				"右键对成年蜜蜂使用时，会使其恢复所有生命值，并使其和周围10格内所有蜜蜂进入繁殖状态。"
+				"右键对幼年蜜蜂使用时，会使其恢复所有生命值，并有几率成长为成年蜜蜂。"
+				"当右键喂给蜜蜂时，有80%的几率获得蜂群之护。"
+				"对着多孔蜜脾块使用时，会将其和周围随机两个相邻的多孔蜜脾块转变为满多孔蜜脾块。"
+				"对着蜜脾育幼块使用时，会将其立刻生长至最终阶段。"
+				"是巨蜂最爱的食物，当手持蜜蜂桶时，巨蜂会跟随你，喂给巨蜂能获得5点好感度。"
+			]
+			id: "6DBB5B18765FC501"
+			rewards: [{
+				id: "3608E3A412F14C6E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6C09E0658635B2A4"
+				item: "create:honey_bucket"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: [
+				"通过完成永恒圣所的竞技场获得。"
+				"如果你过早地进入了永恒圣所，你会获得强大的挖掘疲劳效果，并且其中的守卫哨兵会对你造成大量伤害。即使你到达了中心的房间，你也不能触发它。反之，如果你吸收了蜂之精华，那么能够更安全地进入其中并触发相应的事件。"
+			]
+			id: "3C2F7E48D064D706"
+			rewards: [{
+				id: "6285C508E2B9D34B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "528019A01725534C"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "the_bumblezone:ability_essence_items"
+					}
+				}
+				title: "Any #the_bumblezone:ability_essence_items"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6FE1E4B54AA983AA"]
+			description: [
+				"蜂蜜结晶盾牌可像原版盾牌一样防御怪物的攻击，成功格挡攻击时，施加 8秒缓慢。在阻挡爆炸或火焰伤害时，会受到大量耐久损耗。"
+				"蜂蜜结晶盾牌刚被合成出来时，盾牌等级为 1，耐久度为40点，但当你用蜂蜜结晶碎片在铁砧中修复它时就会提高耐久度上限。"
+				"蜂蜜结晶盾牌可以被耐久和消失诅咒附魔，但无法被经验修补附魔"
+			]
+			id: "6350062FCA3EC2D0"
+			rewards: [{
+				id: "098EC6A2B8989AEB"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "1FB8F30BE97F6E9D"
+				item: {
+					Count: 1
+					id: "the_bumblezone:honey_crystal_shield"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: [
+				"螫（zhē）针矛是一种用于近战或远程攻击的投掷武器，类似于三叉戟，可以在蜜蜂领域各结构的蜂蜜茧中找到。"
+				"可以使用蜂刺或燧石进行修理"
+				"攻击时对所有非亡灵生物会造成5秒的中毒效果，每一级的淬毒附魔会增施加的中毒效果5秒，中毒等级提升1级，最高持续25秒 中毒IV。"
+				"此外还有一个限定附魔：神经毒素，只能附魔于螫针矛。如果有神经毒素附魔，只要攻击的单位不免疫麻痹，就会消耗4点耐久。"
+			]
+			id: "5CCBCFADA11BC22C"
+			rewards: [{
+				id: "29F23F3BECEBB57B"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4977BF47A5E3EF12"
+				item: {
+					Count: 1
+					id: "the_bumblezone:stinger_spear"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6FE1E4B54AA983AA"]
+			description: [
+				"蜜蜂炮是一种发射蜜蜂的武器。"
+				""
+				"手持蜜蜂炮右键蜜蜂，你就可以把至多3只蜜蜂装入炮筒内，长按右键发射，不能装载被激怒的蜜蜂。"
+				""
+				"无论装载多少蜜蜂，都只会造成2点伤害和17秒中毒I。"
+				""
+				"可以使用糖渍圆石或糖渍石头进行修理"
+			]
+			id: "447038278A6852E3"
+			rewards: [{
+				id: "3EAD3DFF53001357"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "6059A82A861EF9CE"
+				item: {
+					Count: 1
+					id: "the_bumblezone:bee_cannon"
+					tag: {
+						BeesStored: [ ]
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["6FE1E4B54AA983AA"]
+			description: [
+				"结晶炮是一种发射蜂蜜结晶，并造成高伤害和高击退的武器。"
+				""
+				"手持结晶炮右键可以装填1发蜂蜜结晶碎片，你至多可以装填3发结晶碎片，长按右键发射。"
+				""
+				"每一个结晶弹射物都会造成都只会造成8-13点伤害。每次发射会消耗1耐久，此外每装填1发结晶也会消耗1耐久，这意味着一次射出3发结晶需要消耗4点耐久，即使一次射出1发结晶也要消耗2点耐久。"
+				""
+				"可以使用糖渍圆石、糖渍石头或蜂蜜结晶碎片进行修理"
+				"可以附魔耐久、经验修补、消失诅咒、快速装填、冲击、力量和穿透。"
+			]
+			id: "05D1812E39D26C6B"
+			rewards: [{
+				id: "75B9DDC753B0175F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "0B13301A45C9D750"
+				item: {
+					Count: 1
+					id: "the_bumblezone:crystal_cannon"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: [
+				"蜂王浆瓶通过完成蜂后之请系列任务从蜂后处获得（直接发送至背包）。"
+				""
+				"喝下蜂王浆瓶会恢复12点饥饿值和24点饱和度并获得速度提升II、跳跃提升IV、缓降I和蜂能II 1分钟，同时还会移除玩家身上的中毒、虚弱和缓慢。"
+				""
+				"你可以把蜂王浆瓶与蜂后交易来获得一些有价值的物品。"
+				""
+				"喂给蜜蜂可以给予蜜蜂1000秒的蜂能IV，并且一定会获得蜂群之护；喂给巨蜂可以增加250点好感度。"
+			]
+			id: "609550E552ABA48A"
+			rewards: [{
+				id: "2703A2FB0D4E1281"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "5334FA44DAE06565"
+				item: "the_bumblezone:royal_jelly_bottle"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			id: "6DC87B4FC2F2F94F"
+			rewards: [{
+				id: "29DCDA752DB65EF7"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [
+				{
+					id: "680C6DBDDDEF124A"
+					item: "the_bumblezone:bee_bread"
+					type: "item"
+				}
+				{
+					id: "7C0E64306D2339BA"
+					item: "the_bumblezone:bee_soup"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			description: [
+				"花粉团是一种可弹射，类似于雪球，但不会造成任何伤害和击退效果，也可以使用发射器发射雪球。"
+				""
+				"通过挖掘花粉堆或者用水瓶、糖水瓶、水桶或湿海绵右键一个已授粉的蜜蜂可以获得花粉团"
+				""
+				"当花粉团击中方块时，会尝试创建一层花粉堆方块，如果是在空中则会下坠。"
+				""
+				"如果击中了熊猫，会使得熊猫打喷嚏。"
+				""
+				"如果击中了未授粉的蜜蜂，会使得蜜蜂进入授粉状态"
+				"如果击中了一朵花，可能会在以其为中心5*5的范围内复制一朵花出来。凋零玫瑰和紫颂花不能被复制"
+				""
+				"如果击中了嗅探兽，则会在附近生成一块覆地苔藓。"
+				""
+				"如果击中了站在南瓜上的雪傀儡，则会在附近的耕地（或其他可能的方块）上种植南瓜。"
+			]
+			id: "5DA7F35E7B341E05"
+			rewards: [
+				{
+					count: 3
+					id: "043143024235D5C9"
+					item: "the_bumblezone:pollen_puff"
+					type: "item"
+				}
+				{
+					id: "3AB7888576998C28"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "01F542ED71C858E6"
+				item: "the_bumblezone:pollen_puff"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			id: "3FDF8BAF62B5B873"
+			rewards: [{
+				id: "724DE62065E27841"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "高击退弹射物"
+			tasks: [{
+				id: "6EE8BC55A495D84E"
+				item: "the_bumblezone:dirt_pellet"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			description: [
+				"晶化花是一种由魔法蜂蜜水晶制成的不寻常的花朵。在悬垂花园和过度生长之花结构中会生成，此外还部分其他结构中也有隐藏的晶化花。"
+				"晶化花只能在闪耀蜂蜜结晶紫水晶块或其他晶化方块上生长"
+				""
+				"右键晶化花会打开一个GUI，你可以给予晶化花你的经验或是物品供其消耗。你也可以通过投掷物品或者提供给它经验球的方式让它吸收。晶化花最高可以长7格高，此时的花达到最高等级7，不再能吸收更多的物品和经验。值得注意的是，部分物品对升级晶化花的有更加显著的效果。大约需要32级玩家经验来让晶化花生长到最高等级（7级）"
+				""
+				"可放置书/附魔书，待附魔的附魔书至多可以拥有两条附魔。"
+				""
+				"附魔后，晶化花会掉落蜂蜜结晶碎片，晶化花的等级越高，掉落越多。"
+				"破坏晶化花会摧毁整个晶化花并掉落晶化花，若重新种植不会保留阶级和经验，离开的时候记得带上花！"
+				"可以使用比较器输出红石信号，晶化花等级越高信号越强，可以以此来自动化晶化花吸收经验的过程。"
+			]
+			id: "1E6F2A41C656C839"
+			rewards: [
+				{
+					count: 3
+					id: "1081DC2CA06D8041"
+					item: "minecraft:book"
+					type: "item"
+				}
+				{
+					id: "3897B3CD968EEB12"
+					type: "xp"
+					xp: 100
+				}
+			]
+			size: 1.5d
+			tasks: [{
+				id: "4CC34ED9C6B98BD0"
+				item: "the_bumblezone:crystalline_flower"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			id: "6FE1E4B54AA983AA"
+			rewards: [{
+				id: "778EA7D3ACBD3433"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "36792A6863FC0F0D"
+				item: "the_bumblezone:honey_crystal_shards"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["69E04E78B5292984"]
+			description: [
+				"蜂蜜茧可以在各式各样的结构中找到，它们通常都被填满了宝藏。"
+				""
+				"正常的破坏如同箱子，会掉落其中所有的物品，但若使用精准采集进行破坏，则能够保留其中所有的物品。此外蜂蜜茧是易燃的，靠近火的会导致蜂蜜茧被破坏，其中的物品掉落。你也可以使用铁砧对其进行改名，如同其他容器一般。"
+				""
+				"蜂蜜茧和潜影盒不能相互嵌套，蜂蜜茧之间也不能进行嵌套。如果蜂蜜茧内没有物品，可以堆叠存储，否则单独占用1格的空间。当光标移动至背包内装有物品的蜂蜜茧，也会显示其中的物品。"
+				""
+				"当空蜜脾育幼块与一个能够喂养蜜蜂的物品共同放置于蜂蜜茧中，蜂蜜茧会缓慢地将其转化为蜜脾育幼块。"
+				""
+				"若蜂蜜茧上方被水覆盖，那么其中的东西会喷出，如同水灌进蜂蜜茧中一样。"
+			]
+			id: "268B0FB300B43DE7"
+			rewards: [{
+				id: "5160A0F38653668E"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				icon: "the_bumblezone:honey_cocoon"
+				id: "6858B7DCF90CD7A2"
+				observe_type: 0
+				timer: 0L
+				title: "蜂蜜茧"
+				to_observe: "the_bumblezone:honey_cocoon "
+				type: "observation"
+			}]
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			description: [
+				"轻盈之风是一种功能型方块，能过朝着风吹的方向推动其面前的实体，铁傀儡、潜影贝、恼鬼、蜂后和监视守卫不受影响。在蜜蜂领域的部分结构中，也有着轻盈之风的分布。"
+				""
+				"与蜂后使用蜜蜂盔甲和工具进行交易可以获得。"
+				""
+				"右键一个方块可以放置一个反向于朝向的轻盈之风。可以通过在轻盈之风处放置一个其他方块，或手持轻盈之风物品可以破坏轻盈之风。此外，能够被所有破坏方块的爆炸所摧毁。"
+			]
+			id: "554F9C970A5EB627"
+			rewards: [{
+				id: "68A8EED0855D8FA6"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4B574103E5CD7A5F"
+				item: "the_bumblezone:windy_air"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["588F6A55189D0FA8"]
+			id: "6B51D7ED18958653"
+			rewards: [
+				{
+					id: "446DA071326C40B7"
+					item: "the_bumblezone:bee_soup"
+					type: "item"
+				}
+				{
+					id: "1149EFB144C7FD49"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "02CA18BC03CD851B"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "the_bumblezone:bee_armors/bz_armor_ability_enhancing_wearables"
+					}
+				}
+				title: "Any #the_bumblezone:bee_armors/bz_armor_ability_enhancing_wearables"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 2.5d
+		}
+	]
+	title: "蜜蜂领域"
+}
