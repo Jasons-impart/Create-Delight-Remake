@@ -56,7 +56,7 @@ ServerEvents.tags("item", e => {
         "silentsdelight:warden_heart",
         "silentsdelight:minced_warden_heart",
         "silentsdelight:minced_warden_heart",
-        "casualness_delight:raw_donkey_meat"
+        "casualness_delight:raw_donkey_meat"        
     ])
     e.add("mynethersdelight:curry_meats", [
         "ratatouille:raw_sausage",
