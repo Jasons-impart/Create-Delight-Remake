@@ -3,15 +3,15 @@
     "conditions": [
       {
         "type": "forge:mod_loaded",
-        "modid": "create"
+        "modid": "the_bumblezone"
       }
     ],
     "fluid": {
       "amount": 250,
-      "fluid": "the_bumblezone:honey_fluid_still",
+      "fluid": "the_bumblezone:royal_jelly_fluid_still",
       "nbt": {}
     },
     "result": {
-      "item": "minecraft:honey_bottle"
+      "item": "the_bumblezone:royal_jelly_bottle"
     }
   }
