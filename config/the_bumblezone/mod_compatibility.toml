@@ -8,7 +8,7 @@
 		# The fluid to replace Bumblezone's Honey Fluid in the dimension. Requires restart.
 		# Note, this will not replace already placed Bumblezone Honey Fluid.
 		#
-		alternativeFluidToReplaceHoneyFluid = ""
+		alternativeFluidToReplaceHoneyFluid = "create:honey"
 		# 
 		#-----------------------------------------------------
 		#

@@ -571,25 +571,8 @@
 				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: -6.5d
-		}
-		{
-			dependencies: ["6FC1C0839095AC2D"]
-			id: "3019616025F02B1A"
-			tasks: [{
-				id: "3CA5C06B9F985B49"
-				item: {
-					Count: 1
-					id: "deeperdarker:soul_elytra"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -3.0d
-			y: -6.5d
+			x: -2.0d
+			y: -7.0d
 		}
 		{
 			dependencies: ["553925D5AA9E0050"]
