@@ -520,7 +520,7 @@
 				type: "item"
 			}]
 			title: "晶体催生器"
-			x: -1.5d
+			x: -2.0d
 			y: 10.5d
 		}
 		{
@@ -719,7 +719,7 @@
 				type: "checkmark"
 			}]
 			title: "应用能源的开始"
-			x: -5.0d
+			x: -3.0d
 			y: 7.5d
 		}
 		{
@@ -824,7 +824,7 @@
 				item: "ae2:certus_quartz_crystal"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -3.0d
 			y: 9.5d
 		}
 		{
@@ -957,7 +957,7 @@
 				item: "ae2:certus_quartz_dust"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -3.0d
 			y: 11.5d
 		}
 		{
@@ -968,7 +968,7 @@
 				item: "ae2:silicon"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -3.0d
 			y: 13.5d
 		}
 		{
@@ -979,7 +979,7 @@
 				item: "ae2:quartz_glass"
 				type: "item"
 			}]
-			x: -7.0d
+			x: -5.0d
 			y: 11.5d
 		}
 		{
@@ -990,7 +990,7 @@
 				item: "ae2:quartz_vibrant_glass"
 				type: "item"
 			}]
-			x: -7.0d
+			x: -5.0d
 			y: 13.5d
 		}
 		{
@@ -1002,7 +1002,7 @@
 				item: "createdelight:quartz_glass_parts"
 				type: "item"
 			}]
-			x: -9.0d
+			x: -7.0d
 			y: 11.5d
 		}
 		{
@@ -1014,7 +1014,7 @@
 				item: "createdelight:quartz_vibrant_glass_parts"
 				type: "item"
 			}]
-			x: -9.0d
+			x: -7.0d
 			y: 13.5d
 		}
 		{
@@ -1102,7 +1102,7 @@
 				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -1.0d
 			y: 9.5d
 		}
 		{
@@ -1114,7 +1114,7 @@
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -1.0d
 			y: 13.5d
 		}
 		{
@@ -1152,7 +1152,7 @@
 				type: "item"
 			}]
 			title: "玻璃线缆"
-			x: -3.0d
+			x: -1.0d
 			y: 15.5d
 		}
 		{
@@ -1168,7 +1168,7 @@
 				item: "ae2:quartz_fiber"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -2.0d
 			y: 13.5d
 		}
 		{
@@ -1188,7 +1188,7 @@
 				type: "item"
 			}]
 			title: "包层线缆"
-			x: -3.0d
+			x: -1.0d
 			y: 16.5d
 		}
 		{
@@ -1208,7 +1208,7 @@
 				type: "item"
 			}]
 			title: "智能线缆"
-			x: -3.0d
+			x: -1.0d
 			y: 17.5d
 		}
 		{
@@ -1228,7 +1228,7 @@
 				type: "item"
 			}]
 			title: "致密线缆"
-			x: -3.0d
+			x: -1.0d
 			y: 18.5d
 		}
 		{
@@ -1248,7 +1248,7 @@
 				item: "ae2:crystal_resonance_generator"
 				type: "item"
 			}]
-			x: -1.5d
+			x: 0.0d
 			y: 12.5d
 		}
 		{
@@ -1273,7 +1273,7 @@
 		{
 			dependencies: ["0066F663463000B8"]
 			description: [
-				"使用这些方块就可以搭建一个cpu。"
+				"使用这些方块就可以搭建一个CPU。需要保证CPU的整体形态为一个长方体。"
 				"合成存储器可以增加CPU容量。只需要知道越复杂的合成消耗的字节越多就行了。"
 				"合成监控器用于显示当前正进行的合成任务，其小终端可以用染色器改变颜色。"
 				"并行处理单元提升CPU的物品发配能力。大概就是并行处理单元越多，处理速度会变快，不过不是绝对的。"
@@ -1663,7 +1663,7 @@
 				item: "ae2:wireless_receiver"
 				type: "item"
 			}]
-			x: -1.5d
+			x: 0.0d
 			y: 11.5d
 		}
 		{
@@ -1676,7 +1676,7 @@
 				item: "ae2:wireless_access_point"
 				type: "item"
 			}]
-			x: 0.5d
+			x: 2.0d
 			y: 11.5d
 		}
 		{
@@ -1851,7 +1851,7 @@
 					type: "item"
 				}
 			]
-			x: 0.5d
+			x: 2.0d
 			y: 10.5d
 		}
 		{
@@ -1886,7 +1886,7 @@
 				type: "item"
 			}]
 			title: "致密包层线缆"
-			x: -4.0d
+			x: -2.0d
 			y: 16.5d
 		}
 		{
@@ -1905,8 +1905,8 @@
 				type: "observation"
 			}]
 			title: "压缩机"
-			x: -1.5d
-			y: 14.5d
+			x: 0.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["47D824E8188E18E9"]
