@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, ["createmetallurgy:alloying/electrum"])
     const {createmetallurgy, create} = e.recipes
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
@@ -80,6 +81,15 @@ ServerEvents.recipes(e => {
     .heatRequirement("superheated")
     .id("createmetallurgy:alloying/steel")
 
+    createmetallurgy.alloying( Fluid.of("createmetallurgy:molten_electrum", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 15),
+            Fluid.of("createmetallurgy:molten_sliver", 15)
+        ]
+    )
+    .heatRequirement("heated")
+    .id("createmetallurgy:alloying/molten_electrum")
+    
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_bronze", 30),
         [
