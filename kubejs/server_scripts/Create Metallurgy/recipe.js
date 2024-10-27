@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, ["createmetallurgy:alloying/electrum"])
     const {createmetallurgy, create} = e.recipes
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
@@ -80,6 +81,15 @@ ServerEvents.recipes(e => {
     .heatRequirement("superheated")
     .id("createmetallurgy:alloying/steel")
 
+    createmetallurgy.alloying( Fluid.of("createmetallurgy:molten_electrum", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 15),
+            Fluid.of("createmetallurgy:molten_sliver", 15)
+        ]
+    )
+    .heatRequirement("heated")
+    .id("createmetallurgy:alloying/molten_electrum")
+    
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_bronze", 30),
         [
@@ -115,4 +125,15 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_zinc", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
+    e.recipes.create.pressing(
+        'ad_astra:steel_plate',
+        'createmetallurgy:steel_ingot'
+    ).id("create:pressing/steel_ingot")
+    e.recipes.createmetallurgy.casting_in_table(
+        'ad_astra:steel_plate',
+        [
+            Fluid.of("createmetallurgy:molten_steel", 90),
+            "createmetallurgy:graphite_plate_mold"
+        ], 100, false
+    ).id("createmetallurgy:casting_in_table/steel/plate")
 })
