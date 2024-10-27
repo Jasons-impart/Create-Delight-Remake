@@ -13,12 +13,10 @@
 	#Foods in this list won't affect the player's health nor show up in the food book.
 	blacklist = []
 	#When this list contains anything, the blacklist is ignored and instead only foods from here count.
-	whitelist = [
-		'farmersdelight:stuffed_potato'
-	]
+	whitelist = []
 	#The minimum hunger value foods need to provide in order to count for milestones, in half drumsticks.
 	#Range: 0 ~ 1000
-	minimumFoodValue = 1
+	minimumFoodValue = 8
 
 [miscellaneous]
 	#Whether or not to reset the food list on death, effectively losing all bonus hearts.
