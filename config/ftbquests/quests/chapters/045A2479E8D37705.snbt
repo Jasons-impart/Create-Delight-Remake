@@ -1,4 +1,5 @@
 {
+	always_invisible: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "045A2479E8D37705"
@@ -9,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["32EA89B38D6BE059"]
 			icon: "iceandfire:bestiary"
 			id: "2AE0738C43D5A42B"
 			shape: "hexagon"
@@ -1615,6 +1617,16 @@
 			}]
 			x: 4.5d
 			y: 4.5d
+		}
+		{
+			id: "32EA89B38D6BE059"
+			tasks: [{
+				id: "6DEAE035CAF46F6C"
+				title: "暂未开放"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -1.5d
 		}
 	]
 	title: "异兽传说"

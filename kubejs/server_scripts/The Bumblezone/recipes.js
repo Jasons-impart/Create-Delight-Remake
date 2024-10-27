@@ -62,33 +62,58 @@ ServerEvents.recipes(e => {
         ["the_bumblezone:pollen_puff",Fluid.of("create:honey",250)
         ]).id("filling/bee_bread")
     //蜜蜂汤
-    e.custom({
-        "type": "farmersdelight:cooking",
-        "cookingtime": 200,
-        "experience": 1.0,
-        "ingredients": [
-          {
-            "item": "the_bumblezone:bee_bread"
-          },
-          {
-            "item": "minecraft:beetroot"
-          },
-          {
-            "item": "minecraft:potatoes"
-          },
-          {
-            "item": "minecraft:honeycomb"
-          },
-          {
-            "item": "minecraft:honeycomb"
-          },
-          {
-            "item": "the_bumblezone:bee_stinger"
-          }
-        ],
-        "recipe_book_tab": "meals",
-        "result": {
-          "item": "the_bumblezone:bee_soup"
-        }
-      }).id("cook/bee_soup")
+    e.recipes.farmersdelight.cooking(
+      [
+        "the_bumblezone:bee_bread",
+        "minecraft:beetroot",
+        "minecraft:potatoes",
+        "minecraft:honeycomb",
+        "minecraft:honeycomb",
+        "the_bumblezone:bee_stinger"
+      ], 
+      "the_bumblezone:bee_soup", 
+      1.0, 200, "minecraft:bowl"
+    ).id("createdelight:cook/bee_soup")
+    // 机械动力兼容
+    e.recipes.create.mixing(
+      Fluid.of("create:honey", 50),
+      [
+        Fluid.of("minecraft:water", 50),
+        'the_bumblezone:honey_crystal_shards'
+      ], 200
+    ).heated().id("create:mixing/honey_crystal_shards")
+    e.recipes.create.compacting(
+      [
+        'minecraft:honeycomb',
+        Fluid.of("create:honey", 250)
+      ],
+      'the_bumblezone:filled_porous_honeycomb_block'
+    ).id("create:compacting/filled_porous_honeycomb_block")
+    e.recipes.create.compacting(
+      'minecraft:honeycomb',
+      'the_bumblezone:porous_honeycomb_block'
+    ).id("create:compacting/porous_honeycomb_block")
+    e.recipes.create.cutting(
+      '9x minecraft:honeycomb',
+      '#the_bumblezone:carvable_wax'
+    ).id("create:cutting/carvable_wax")
+    e.recipes.create.compacting(
+      'minecraft:honeycomb',
+      'the_bumblezone:empty_honeycomb_brood_block'
+    ).id("create:compacting/empty_honeycomb_brood_block")
+    e.recipes.create.compacting(
+      [
+        'minecraft:honeycomb',
+        Fluid.of("create_mechanical_spawner:spawn_fluid_bee", 100)
+      ],
+      'the_bumblezone:honeycomb_brood_block'
+    ).id("create:compacting/honeycomb_brood_block")
+    // 蜂蜜增产
+    e.recipes.create.mixing(
+      Fluid.of("create:honey", 100),
+      [
+        Fluid.of("the_bumblezone:sugar_water_still", 100),
+        Fluid.of("the_bumblezone:royal_jelly_fluid_still", 5)
+      ]
+    )
 })

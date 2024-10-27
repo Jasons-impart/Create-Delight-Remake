@@ -89,6 +89,15 @@
 					item: "farmersdelight:stuffed_potato"
 					type: "item"
 				}
+				{
+					command: "/gamerule keepInventory true"
+					elevate_perms: true
+					icon: "minecraft:totem_of_undying"
+					id: "341B02A3C4AD532F"
+					silent: true
+					title: "死亡不掉落"
+					type: "command"
+				}
 			]
 			shape: "hexagon"
 			size: 4.0d
@@ -694,6 +703,35 @@
 			}]
 			x: -3.0714285714285694d
 			y: 1.0714285714285623d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "minecraft:totem_of_undying"
+			id: "34B1006074300964"
+			rewards: [{
+				command: "/gamerule keepInventory true"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "the_bumblezone:essence_continuity"
+					tag: {
+						abilityUseRemaining: 1
+					}
+				}
+				id: "373492C37EFDB4A2"
+				silent: true
+				title: "死亡不掉落"
+				type: "command"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			tasks: [{
+				id: "62F8B86872E2D83B"
+				title: "死亡不掉落"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: -1.0d
 		}
 	]
 	title: "介绍"

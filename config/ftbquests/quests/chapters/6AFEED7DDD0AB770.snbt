@@ -12,11 +12,12 @@
 			description: [
 				"如何进入/离开蜜蜂领域："
 				""
-				"进入的方法：朝着蜂巢投掷末影珍珠就会被传送进入蜜蜂领域。"
+				"进入的方法：朝着蜂巢投掷末影珍珠就会被传送进入蜜蜂领域, 或使用活塞将生物推入蜂巢"
 				"离开的方法：向下挖，直到坐标 y=0 以下，或者向上爬到 y=256 以上，它会自动判断你想离开蜜蜂领域。"
 				""
 				"初次进入建议携带的物品：玻璃瓶（装糖水/蜂蜜）+桶；船（糖水底板中快速移动）/鞘翅+火箭；花头饰"
 			]
+			icon: "the_bumblezone:essence_of_the_bees"
 			id: "69E04E78B5292984"
 			rewards: [
 				{
@@ -67,7 +68,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -90,7 +91,7 @@
 				title: "巢室迷宫"
 				type: "biome"
 			}]
-			x: 5.5d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
@@ -299,6 +300,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "提醒：圣所内的任务都&4非常困难&r，请做好准备！！！"
 			tasks: [{
 				id: "528019A01725534C"
 				item: {
@@ -308,7 +310,7 @@
 						value: "the_bumblezone:ability_essence_items"
 					}
 				}
-				title: "Any #the_bumblezone:ability_essence_items"
+				title: "任意精华"
 				type: "item"
 			}]
 			x: 10.5d
@@ -669,7 +671,7 @@
 						value: "the_bumblezone:bee_armors/bz_armor_ability_enhancing_wearables"
 					}
 				}
-				title: "Any #the_bumblezone:bee_armors/bz_armor_ability_enhancing_wearables"
+				title: "任意蜜蜂套装"
 				type: "item"
 			}]
 			x: 9.5d

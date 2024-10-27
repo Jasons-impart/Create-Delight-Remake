@@ -610,6 +610,7 @@
 			shape: "square"
 			tasks: [{
 				elapsedTime: 1L
+				icon: "ae2:item_cell_housing"
 				id: "1093F89F026C91B5"
 				title: "元件外壳示例"
 				type: "questsadditions:time"
@@ -621,6 +622,7 @@
 		{
 			dependencies: ["3F2537B88B8517A7"]
 			hide: false
+			icon: "ae2:calculation_processor"
 			id: "74A17F55703C7EDC"
 			shape: "square"
 			tasks: [{
@@ -640,6 +642,7 @@
 			subtitle: "当然也可以使用动力合成器或者手搓，此处不再赘述"
 			tasks: [{
 				elapsedTime: 1L
+				icon: "ae2:cell_component_1k"
 				id: "665A9C1D4EFAFD01"
 				title: "存储元件示例（使用序列组装）"
 				type: "questsadditions:time"
