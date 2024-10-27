@@ -125,4 +125,15 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_zinc", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
+    e.recipes.create.pressing(
+        'ad_astra:steel_plate',
+        'createmetallurgy:steel_ingot'
+    ).id("create:pressing/steel_ingot")
+    e.recipes.createmetallurgy.casting_in_table(
+        'ad_astra:steel_plate',
+        [
+            Fluid.of("createmetallurgy:molten_steel", 90),
+            "createmetallurgy:graphite_plate_mold"
+        ], 100, false
+    ).id("createmetallurgy:casting_in_table/steel/plate")
 })
