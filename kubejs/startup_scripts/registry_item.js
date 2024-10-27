@@ -477,4 +477,8 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
         .translationKey("item.createdelight.debug_info_tool")
+
+    // // AE: 未完成的 熵变机械臂 充能手杖 样板
+    // ["charged_staff", "entropy_manipulator", "blank_pattern"]
+    // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")
 })
