@@ -331,6 +331,7 @@ ServerEvents.recipes((event) => {
         "butchercraft:blood_fluid_bucket",
         "2x butchercraft:kidney",
         "butchercraft:heart",
+        '2x farmersdelight:ham',
         "16x minecraft:bone",
         "10x butchercraft:pork_stewmeat",
         "12x butchercraft:pork_scraps",
