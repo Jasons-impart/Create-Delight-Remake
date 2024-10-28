@@ -1,0 +1,10 @@
+ServerEvents.recipes(e => {
+    e.recipes.kubejs.shapeless("createdelight:tin_block", "9x createdelight:tin_ingot")
+    .id("createdelight:tin_block_from_tin_ingot")
+    e.recipes.kubejs.shapeless("9x createdelight:tin_ingot", "createdelight:tin_block")
+    .id("createdelight:tin_ingot_from_tin_block")
+    e.recipes.kubejs.shapeless("9x createdelight:tin_nugget", "createdelight:tin_ingot")
+    .id("createdelight:tin_nugget_from_tin_ingot")
+    e.recipes.kubejs.shapeless("createdelight:tin_ingot", "9x createdelight:tin_nugget")
+    .id("createdelight:tin_ingot_from_tin_nugget")
+})

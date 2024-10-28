@@ -1,5 +1,4 @@
 ServerEvents.recipes(e => {
-    remove_recipes_id(e, ["createmetallurgy:alloying/electrum"])
     const {createmetallurgy, create} = e.recipes
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
@@ -64,7 +63,8 @@ ServerEvents.recipes(e => {
     
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
-        "createmetallurgy:alloying/steel"
+        "createmetallurgy:alloying/steel",
+        "createmetallurgy:alloying/electrum"
     ])
     
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
@@ -81,27 +81,27 @@ ServerEvents.recipes(e => {
     .heatRequirement("superheated")
     .id("createmetallurgy:alloying/steel")
 
-    createmetallurgy.alloying( Fluid.of("createmetallurgy:molten_electrum", 30),
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_electrum", 30),
         [
-            Fluid.of("createmetallurgy:molten_gold", 15),
-            Fluid.of("createmetallurgy:molten_sliver", 15)
-        ]
-    )
+            Fluid.of("createmetallurgy:molten_silver", 15),
+            Fluid.of("createmetallurgy:molten_gold", 15)
+        ])
+    .processingTime(40)
     .heatRequirement("heated")
-    .id("createmetallurgy:alloying/molten_electrum")
-    
+    .id("createmetallurgy:alloying/electrum")
+
     e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_bronze", 30),
+        Fluid.of("createmetallurgy:molten_bronze", 40),
         [
-            Fluid.of("createmetallurgy:molten_tin", 15),
-            Fluid.of("createmetallurgy:molten_copper", 15)
+            Fluid.of("createmetallurgy:molten_tin", 10),
+            Fluid.of("createmetallurgy:molten_copper", 30)
         ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_bronze")
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_electrum", 30),
         [
-            Fluid.of("createmetallurgy:molten_gold", 15),
-            Fluid.of("createmetallurgy:molten_sliver", 15)
+            Fluid.of("createmetallurgy:molten_sliver", 15),
+            Fluid.of("createmetallurgy:molten_gold", 15)
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
     e.recipes.create.mixing(

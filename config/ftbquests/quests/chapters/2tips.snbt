@@ -34,6 +34,7 @@
 				"70BA3B5FB6BA1B8A"
 				"64FEFE0EE74CB76B"
 			]
+			dependency_requirement: "one_completed"
 			hide: false
 			id: "1551BA92CF2E1580"
 			tasks: [{
@@ -333,6 +334,7 @@
 				"5901D18C4E177068"
 				"6DC3E0168AC06ADC"
 			]
+			dependency_requirement: "one_completed"
 			hide: false
 			id: "51627CB273142F22"
 			tasks: [{
@@ -395,6 +397,7 @@
 				"5AB2EBBD2243DE6B"
 				"300372C7A93BD7C5"
 			]
+			dependency_requirement: "one_completed"
 			hide: false
 			id: "3087A516BF36628A"
 			tasks: [{
@@ -528,6 +531,7 @@
 				"063E7664355E0526"
 				"2D565BC4989BC56E"
 			]
+			dependency_requirement: "one_completed"
 			hide: false
 			id: "290D330CC831FB79"
 			subtitle: "此处为赛特斯石英"
