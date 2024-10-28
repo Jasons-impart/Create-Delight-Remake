@@ -12,4 +12,5 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless("9x createdelight:raw_tin", "createdelight:raw_tin_block")
     .id("createdelight:raw_tin_from_raw_tin_block")
     e.recipes.minecraft.blasting("createdelight:tin_ingot", "createdelight:raw_tin")
+    e.recipes.minecraft.smelting("createdelight:tin_ingot", "createdelight:raw_tin")
 })
