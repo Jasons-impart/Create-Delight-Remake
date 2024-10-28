@@ -3,6 +3,7 @@
   "attributemap": {
     "double/head_left": {
       "double/basic_hammer_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -12,6 +13,7 @@
         }
       },
       "double/basic_axe_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -21,6 +23,7 @@
         }
       },
       "double/basic_pickaxe_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -30,6 +33,7 @@
         }
       },
       "double/hoe_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -39,6 +43,7 @@
         }
       },
       "double/claw_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -48,6 +53,7 @@
         }
       },
       "double/adze_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
@@ -57,6 +63,7 @@
         }
       },
       "double/sickle_left": {
+        "type": "improvement",
         "key": "double/head_left",
         "improvement": "double/warforged",
         "config": {
