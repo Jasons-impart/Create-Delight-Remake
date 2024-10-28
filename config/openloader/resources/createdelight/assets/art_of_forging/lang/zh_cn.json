@@ -9,10 +9,10 @@
     "tetra.stats.art_of_forging:stormcaller": "风暴呼唤者",
     "tetra.stats.art_of_forging:stormcaller.tooltip_short": "命中时召唤雷电",
 
-    "art_of_forging.effect.evoking_maw.name": "唤魔者之口",
-    "art_of_forging.effect.evoking_maw.tooltip": "击中时召唤§e%s个唤魔者尖牙§r。",
-    "tetra.stats.art_of_forging:evoking_maw": "唤魔者之口",
-    "tetra.stats.art_of_forging:evoking_maw.tooltip_short": "击中时召唤唤魔者尖牙",
+    "art_of_forging.effect.evokingmaw.name": "唤魔者之口",
+    "art_of_forging.effect.evokingmaw.tooltip": "击中时召唤§e%s个唤魔者尖牙§r。",
+    "tetra.stats.art_of_forging:evokingmaw": "唤魔者之口",
+    "tetra.stats.art_of_forging:evokingmaw.tooltip_short": "击中时召唤唤魔者尖牙",
 
     "art_of_forging.effect.life_steal.name": "生命窃取",
     "art_of_forging.effect.life_steal.tooltip": "成功命中后有§e%s概率§r恢复§e%s生命值§r。",
@@ -179,7 +179,7 @@
 
 
 	"effect.art_of_forging.devouring": "吞噬诅咒",
-	"effect.art_of_forging.evoking_maw": "唤魔者之口",
+	"effect.art_of_forging.evokingmaw": "唤魔者之口",
 	"effect.art_of_forging.defuse_creeper": "拆弹",
 	"effect.art_of_forging.mortal_wounds": "致命伤",
 	"effect.art_of_forging.targeted": "定向",
