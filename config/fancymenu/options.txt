@@ -77,4 +77,4 @@ B:debug_overlay_show_resources_category = 'true';
 
 ##[tutorial]
 
-B:welcome_screen_shown = 'true';
+B:show_welcome_screen = 'false';

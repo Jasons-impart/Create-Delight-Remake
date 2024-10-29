@@ -5,4 +5,6 @@
 	genCornLootModifier = false
 	#Should Novice and Apprentice Farmers trade this mod's crops? (May reduce chances of other trades appearing)
 	villagersTradeCorn = false
+	#Should this mod add corn farm to plains and taiga village?
+	genCornFarm = true
 
