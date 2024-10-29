@@ -794,6 +794,7 @@
 			y: 3.5d
 		}
 		{
+			dependencies: ["78F0F6D3D2A93E3F"]
 			icon: "ad_astra:earth_globe"
 			id: "112566BE4CAC8023"
 			rewards: [{

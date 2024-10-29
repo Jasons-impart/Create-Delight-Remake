@@ -133,7 +133,7 @@ ServerEvents.recipes((event) => {
     i16k,
     i64k,
     "createdelight:glowstone_paste",
-    i64k,
+    i16k,
     "ae2:calculation_processor",
     "#createdelight:quartz_glass",
     "#forge:dusts/glowstone"

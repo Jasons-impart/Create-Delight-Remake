@@ -1,0 +1,17 @@
+{
+    "type": "some_assembly_required:sandwich_spouting",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "the_bumblezone"
+      }
+    ],
+    "fluid": {
+      "amount": 250,
+      "fluid": "the_bumblezone:royal_jelly_fluid_still",
+      "nbt": {}
+    },
+    "result": {
+      "item": "the_bumblezone:royal_jelly_bottle"
+    }
+  }

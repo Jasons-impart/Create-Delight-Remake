@@ -63,7 +63,8 @@ ServerEvents.recipes(e => {
     
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
-        "createmetallurgy:alloying/steel"
+        "createmetallurgy:alloying/steel",
+        "createmetallurgy:alloying/electrum"
     ])
     
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
@@ -80,18 +81,27 @@ ServerEvents.recipes(e => {
     .heatRequirement("superheated")
     .id("createmetallurgy:alloying/steel")
 
-    e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_bronze", 30),
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_electrum", 30),
         [
-            Fluid.of("createmetallurgy:molten_tin", 15),
-            Fluid.of("createmetallurgy:molten_copper", 15)
+            Fluid.of("createmetallurgy:molten_silver", 15),
+            Fluid.of("createmetallurgy:molten_gold", 15)
+        ])
+    .processingTime(40)
+    .heatRequirement("heated")
+    .id("createmetallurgy:alloying/electrum")
+
+    e.recipes.create.mixing(
+        Fluid.of("createmetallurgy:molten_bronze", 40),
+        [
+            Fluid.of("createmetallurgy:molten_tin", 10),
+            Fluid.of("createmetallurgy:molten_copper", 30)
         ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_bronze")
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_electrum", 30),
         [
-            Fluid.of("createmetallurgy:molten_gold", 15),
-            Fluid.of("createmetallurgy:molten_sliver", 15)
+            Fluid.of("createmetallurgy:molten_sliver", 15),
+            Fluid.of("createmetallurgy:molten_gold", 15)
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
     e.recipes.create.mixing(
@@ -115,4 +125,15 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_zinc", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
+    e.recipes.create.pressing(
+        'ad_astra:steel_plate',
+        'createmetallurgy:steel_ingot'
+    ).id("create:pressing/steel_ingot")
+    e.recipes.createmetallurgy.casting_in_table(
+        'ad_astra:steel_plate',
+        [
+            Fluid.of("createmetallurgy:molten_steel", 90),
+            "createmetallurgy:graphite_plate_mold"
+        ], 100, false
+    ).id("createmetallurgy:casting_in_table/steel/plate")
 })

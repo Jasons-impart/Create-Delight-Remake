@@ -40,24 +40,25 @@ ServerEvents.recipes(e => {
         Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:the_gate_of_eternal_cold"}')).withChance(2.9),
         Item.of("minecarft:ender_pearl").withChance(0.1),
     ], "minecraft:ender_pearl", [
-        create.cutting(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "iceandfire:dragonsteel_ice_ingot"]),
+        create.cutting(incomplete, incomplete),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.filling(incomplete, [incomplete, Fluid.of("createdelight:ice_dragon_blood", 250)]),
         create.deploying(incomplete, [incomplete, "iceandfire:dread_shard"])
     ]).transitionalItem(incomplete).loops(4)
+    .id("createdelight:sequenced_assembly/the_gate_of_eternal_cold")
     //添加配方：枯萎穿刺试炼合成
-    const incomplete_2 = "gateways:gate_pearl"
 
     create.sequenced_assembly([
         Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:piercing_withering_trial"}')).withChance(4.0),
         Item.of("minecarft:ender_pearl").withChance(0.01),
     ], "minecraft:ender_pearl", [
-        create.cutting(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "minecraft:wither_skeleton_skull"]),
+        create.cutting(incomplete, incomplete),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "minecraft:nether_star"]),
         create.deploying(incomplete, [incomplete, "iceandfire:witherbone"]),
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(2)
+    .id("createdelight:sequenced_assembly/piercing_withering_trial")
 })

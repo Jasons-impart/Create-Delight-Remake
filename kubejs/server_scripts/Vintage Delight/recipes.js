@@ -97,6 +97,22 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 72000
     ).id("vintagedelight:fermenting/century_egg_from_fermenting")
+    e.recipes.vintagedelight.fermenting(
+        "vintagedelight:century_egg",
+        [
+            "#forge:dragonegg",
+            "#forge:ash",
+            "#forge:salt"
+        ], 72000
+    ).id("vintagedelight:fermenting/century_egg_from_dragonegg")
+    e.recipes.vintagedelight.fermenting(
+        "vintagedelight:century_egg",
+        [
+            "alexsmobs:emu_egg",
+            "#forge:ash",
+            "#forge:salt"
+        ], 72000
+    ).id("vintagedelight:fermenting/century_egg_from_emu_egg")
     e.custom({
         "type": "vintagedelight:fermenting",
         "processingTime": 5000,

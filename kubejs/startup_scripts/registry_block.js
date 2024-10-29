@@ -57,6 +57,7 @@ StartupEvents.registry("block", (e) => {
   ];
   zip.forEach((n) => {
     e.create(`createdelight:${n}_zip`)
+      .model("createdelight:block/zip")
       .translationKey(`block.createdelight.${n}_zip`)
       .soundType("powder_snow")
       .hardness(10)

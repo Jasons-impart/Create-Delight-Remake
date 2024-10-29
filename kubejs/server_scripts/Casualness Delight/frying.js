@@ -83,4 +83,6 @@ ServerEvents.recipes(e => {
         ]
     ).id("mynethersdelight:cooking/fried_hoglin_chop")
     deep_frying("mynethersdelight:fried_hoglin_chop", "createdelight:raw_hoglin_chop", 100)
+    // 生大炸饺
+    e.replaceInput({id: "casualness_delight:crafting_shaped/raw_fried_dumpling"}, "minecraft:porkchop", "#forge:meat/raw")
 })

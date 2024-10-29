@@ -12,7 +12,7 @@
 		}
 	}
 	id: "2EDF2DB3AA62F7A0"
-	order_index: 3
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -571,27 +571,11 @@
 				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: -6.5d
+			x: -2.0d
+			y: -7.0d
 		}
 		{
-			dependencies: ["6FC1C0839095AC2D"]
-			id: "3019616025F02B1A"
-			tasks: [{
-				id: "3CA5C06B9F985B49"
-				item: {
-					Count: 1
-					id: "deeperdarker:soul_elytra"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -3.0d
-			y: -6.5d
-		}
-		{
+			dependencies: ["553925D5AA9E0050"]
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
@@ -605,7 +589,7 @@
 				}
 				id: "43BA1201DAA02500"
 				stat: "minecraft:fall_one_cm"
-				title: "起飞喽！"
+				title: "准备起飞！"
 				type: "stat"
 				value: 4
 			}]

@@ -5,7 +5,7 @@ let tooltips = [
     ["createdieselgenerators:oil_barrel", "§6可以防止燃料爆炸", "§6Can prevent fuel explosion"],
     ["ratatouille:frozen_block", "§b可冷却周围一格以内的物品", "§bCools down items within one block of the area"],
     ["createdieselgenerators:distillation_controller", "§a每个储罐都需要一个", "§aOne is needed for each tank"],
-    ["farmersdelight:ham", "§4目前只能通过用刀杀死疣猪兽来获得,或人工制作一个", "§4Currently it can only be obtained by killing a hoglin with a knife, or crafting one"],
+    // ["farmersdelight:ham", "§4目前只能通过用刀杀死疣猪兽来获得,或人工制作一个", "§4Currently it can only be obtained by killing a hoglin with a knife, or crafting one"],
     ["vintageimprovements:belt_grinder", "§aRPM≤16为低转速,§616≤RPM≤64为中转速,§4RPM≥64为高转速", "§aRPM≤16 is low rotational speed,§616≤ RPM≤64 is medium rotational speed and §4RPM≥64 is high rotational speed"],
     ["createdelight:oat_bread", "§9生命恢复（00:03）", "§9Regeneration(00:03)"],
     ["createmetallurgy:wolframite_ore", "§6常见于地狱30-36层", "§6Commonly found in nether 30-36 floors"],
@@ -32,7 +32,7 @@ let tooltips = [
     ["art_of_forging:heart_of_ender", "使用带有纳米融合的武器击杀末影人可获得", "Killing the Enderman with a weapon that has nano fused can grant"],
     ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
-    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看JEI瞻远者之臂了解如何召唤瞻远者", "咕咕咕"]
+    ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"]
 ]
 
 tooltips.forEach(([key, zh_cn, en_us]) => {

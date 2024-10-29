@@ -461,9 +461,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.mmd_diamond")
         .tag("forge:gems/diamond")
 
-    //被锯碎的甘蔗
-    e.create("createdelight:sawed_sugarcane")
-        .translationKey("item.createdelight.sawed_sugarcane")
     //未完成的纸
     e.create("createdelight:incomplete_paper")
         .translationKey("item.createdelight.incomplete_paper")
@@ -480,4 +477,8 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
         .translationKey("item.createdelight.debug_info_tool")
+
+    // // AE: 未完成的 熵变机械臂 充能手杖 样板
+    // ["charged_staff", "entropy_manipulator", "blank_pattern"]
+    // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")
 })

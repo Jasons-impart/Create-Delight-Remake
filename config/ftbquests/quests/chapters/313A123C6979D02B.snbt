@@ -293,9 +293,9 @@
 			dependencies: ["680B9A0F1D464751"]
 			id: "2BF1372C3C19903E"
 			rewards: [{
-				id: "791BD93E498AEC5E"
-				type: "xp"
-				xp: 100
+				id: "4E3C6EBCDB9CFABC"
+				item: "createdelightcore:gold_coin"
+				type: "item"
 			}]
 			secret: true
 			shape: "square"
@@ -913,6 +913,7 @@
 				block_type: 0
 				checkItem: false
 				id: "6D85E4640994601A"
+				title: "野生玉米！"
 				type: "questsadditions:break"
 				value: 1L
 			}]
@@ -1924,9 +1925,13 @@
 		{
 			id: "756CE4E7CC0F6F7D"
 			tasks: [{
-				id: "1E03A331F6A6FE33"
-				item: "farmersdelight:wild_rice"
-				type: "item"
+				block: "farmersdelight:wild_rice"
+				block_type: 0
+				checkItem: false
+				id: "2A94878ED5E766D7"
+				title: "野生稻米！"
+				type: "questsadditions:break"
+				value: 1L
 			}]
 			x: 3.5d
 			y: 7.5d
@@ -1934,9 +1939,14 @@
 		{
 			id: "55396FEE3139B9DA"
 			tasks: [{
-				id: "2E849FAB4ACE6D9F"
-				item: "vintagedelight:wild_oats"
-				type: "item"
+				block: "vintagedelight:wild_oats"
+				block_type: 0
+				checkItem: false
+				icon: "vintagedelight:wild_oats"
+				id: "4DEB6CAA99BFFCF2"
+				title: "野生燕麦！"
+				type: "questsadditions:break"
+				value: 1L
 			}]
 			x: -8.5d
 			y: 7.5d

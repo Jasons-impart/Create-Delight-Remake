@@ -1,1 +1,0 @@
-You can edit this description in ./config/starterkit/description/starterkit.txt!

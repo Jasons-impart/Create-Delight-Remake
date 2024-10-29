@@ -7,9 +7,9 @@
 	[overlay.position]
 		#Use negative values to position relative to the right/bottom of the screen
 		#Range: > -2147483648
-		x = 6
+		x = 20
 		#Range: > -2147483648
-		y = 6
+		y = 120
 
 [effects]
 	seasonal = true

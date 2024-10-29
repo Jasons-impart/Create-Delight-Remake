@@ -7,4 +7,7 @@ ServerEvents.recipes(e => {
     create.filling("minecraft:golden_carrot", ["minecraft:carrot", Fluid.of("createmetallurgy:molten_gold", 50)])
     createmetallurgy.casting_in_basin("quark:golden_carrot_crate", ["farmersdelight:carrot_crate", Fluid.of("createmetallurgy:molten_gold", 450)])
     .processingTime(100)
+    vintageimprovements.pressurizing(["minecraft:deepslate"], [Fluid.lava(250), "#forge:cobblestone"])
+    .heated()
+    .id("vintageimprovements:pressurizing/deepslate")
 })

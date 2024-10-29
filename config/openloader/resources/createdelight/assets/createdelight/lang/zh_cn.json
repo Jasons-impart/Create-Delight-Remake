@@ -1,4 +1,7 @@
 {
+    "jei.BlazeBurnerSuperHeat": "超燃液体",
+    "jei.SuperHeat":"超级加热",
+    "block.createdelight.fragment_of_border":"边境碎块",
     "fluid.createdelight.molten_fire_steel": "熔融龙炎钢",
     "block.createdelight.molten_fire_steel": "熔融龙炎钢",
     "item.createdelight.molten_fire_steel_bucket": "熔融龙炎钢桶",
@@ -227,5 +230,6 @@
     "block.mbd2.butchery_in": "屠宰室输入口",
     "block.mbd2.butchery_out": "屠宰室输出口",
     "block.mbd2.butchery_room": "屠宰室核心",
-    "block.mbd2.monster_liquid": "怪物压缩核心"
+    "block.mbd2.monster_liquid": "怪物压缩核心",
+    "mbd2.butchery": "屠宰室"
 }

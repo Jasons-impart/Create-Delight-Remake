@@ -403,16 +403,6 @@
             },
             "unitWorth": 1500
         },
-        "cashier_obj_bowl_of_blue_berries": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "aetherdelight:bowl_of_blue_berries",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1500
-        },
         "cashier_obj_bread": {
             "type": "item",
             "rarity": "UNCOMMON",
@@ -617,16 +607,6 @@
             "type": "item",
             "rarity": "UNCOMMON",
             "content": "alexsmobs:mosquito_repellent_stew",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 2000
-        },
-        "cashier_obj_bowl_of_enchanted_berries": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "aetherdelight:bowl_of_enchanted_berries",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -1642,36 +1622,6 @@
                 "max": 10
             },
             "unitWorth": 2900
-        },
-        "cashier_obj_swet_pudding": {
-            "type": "item",
-            "rarity": "RARE",
-            "content": "aetherdelight:swet_pudding",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1800
-        },
-        "cashier_obj_sweet_and_sour_soup": {
-            "type": "item",
-            "rarity": "RARE",
-            "content": "aetherdelight:sweet_and_sour_soup",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 2200
-        },
-        "cashier_obj_festive_sweets": {
-            "type": "item",
-            "rarity": "RARE",
-            "content": "aetherdelight:festive_sweets",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 3500
         },
         "cashier_obj_golden_carrot": {
             "type": "item",

@@ -16,16 +16,6 @@
 		{
 			item: {
 				Count: 1
-				id: "aetherdelight:stratus_knife"
-				tag: {
-					Damage: 0
-				}
-			}
-			weight: 3.0f
-		}
-		{
-			item: {
-				Count: 1
 				id: "farmersdelight:flint_knife"
 				tag: {
 					Damage: 0
@@ -42,34 +32,6 @@
 				}
 			}
 			weight: 5.0f
-		}
-		{
-			item: {
-				Count: 1
-				id: "aetherdelight:zanite_knife"
-				tag: {
-					Damage: 0
-				}
-			}
-		}
-		{
-			item: {
-				Count: 1
-				id: "aetherdelight:gravitite_knife"
-				tag: {
-					Damage: 0
-				}
-			}
-		}
-		{
-			item: {
-				Count: 1
-				id: "aetherdelight:skyjade_knife"
-				tag: {
-					Damage: 0
-				}
-			}
-			weight: 3.0f
 		}
 		{
 			item: {

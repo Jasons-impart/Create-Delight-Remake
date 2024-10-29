@@ -1,5 +1,5 @@
 {
-	autofocus_id: "6DC960C9CBFEEAE9"
+	autofocus_id: "5981A5D70F26A7A5"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2F14272613261E70"
@@ -91,7 +91,7 @@
 				{
 					icon: {
 						Count: 1
-						id: "aether:vampire_blade"
+						id: "create_sa:rose_quartz_sword"
 						tag: {
 							Damage: 0
 						}
@@ -201,6 +201,9 @@
 			y: 0.5d
 		}
 	]
-	subtitle: ["泪如灰落，绣如星宿"]
+	subtitle: [
+		"泪如灰落，绣如星宿"
+		"属于暂未完成章节"
+	]
 	title: "&4异界之灾!"
 }

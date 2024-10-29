@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -40,10 +40,7 @@
 			y: 0.5d
 		}
 		{
-			dependencies: [
-				"4A19D3EB3E47BFDF"
-				"00AF35D832509CB8"
-			]
+			dependencies: ["00AF35D832509CB8"]
 			description: [""]
 			id: "7DC98E34AECFBB5C"
 			subtitle: "使用探矿仪来寻找矿物痕迹"

@@ -59,7 +59,7 @@
 		{
 			icon: {
 				Count: 1
-				id: "aetherdelight:stratus_knife"
+				id: "ends_delight:dragon_tooth_knife"
 				tag: {
 					Damage: 0
 				}
@@ -1810,7 +1810,10 @@
 		}
 		{
 			dependencies: ["39D73D0E0410E5C9"]
-			description: ["挂肉勾用于大型牲畜，案板用于小型牲畜也可用于某些肉类的加工，任何肉类都可以用它试一试能不能剁得再碎一点。"]
+			description: [
+				"&4已兼容机械动力!&r"
+				"挂肉勾用于大型牲畜，案板用于小型牲畜也可用于某些肉类的加工，任何肉类都可以用它试一试能不能剁得再碎一点"
+			]
 			id: "5EB3B636A6FEA921"
 			rewards: [{
 				id: "2D8490DDBEC0A43C"
@@ -2732,6 +2735,7 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["34D9D292CE6F683E"]
 			description: ["当你觉得任务窗口太大看不明白时，不妨ctrl+上下滚轮来调节页面大小。"]
 			id: "66D065B43FA2BF50"
 			rewards: [{
@@ -3894,6 +3898,38 @@
 			}]
 			x: -16.0d
 			y: -0.5d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "73992E846A016357"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0E177B573061A3EC"
+				table_id: 8614959000113369079L
+				type: "random"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [
+				{
+					id: "3607B57D20FF2A7D"
+					item: "mbd2:butchery_in"
+					type: "item"
+				}
+				{
+					id: "1B0E6E585176E952"
+					item: "mbd2:butchery_room"
+					type: "item"
+				}
+				{
+					id: "7A84E0490EDB3714"
+					item: "mbd2:butchery_out"
+					type: "item"
+				}
+			]
+			title: "多方块屠宰室"
+			x: 4.5d
+			y: 10.0d
 		}
 	]
 	title: "&e超级大厨！"

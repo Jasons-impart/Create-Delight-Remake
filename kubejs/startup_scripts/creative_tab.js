@@ -26,7 +26,6 @@ function custom_scroll(glyphs, intricate, key, material, schematics, ribbon) {
 }
 
 StartupEvents.modifyCreativeTab("kubejs:tab", (e) => {
-  e.add(["minecraft:dirt"]);
   e.add([
     custom_scroll(
       [1, 1, 4, 5],
