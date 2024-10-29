@@ -6,10 +6,6 @@
 	#Size of the camera adjustment per step.
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 	camera_step_size = 0.025
-	#Whether or not to temporarily center the camera when climbing.
-	center_camera_when_climbing = true
-	#Whether or not to temporarily center the camera when using Elytra.
-	center_camera_when_fall_flying = false
 	#The speed multiplier at which the camera transitions between positions.
 	#Range: 0.05 ~ 1.0
 	camera_transition_speed_multiplier = 0.25
@@ -108,6 +104,17 @@
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				multiplier_offset_z = 1.0
 
+			[camera.offset.multiplier.climbing]
+				#x-offset multiplier for when the player is climbing.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				multiplier_offset_x = 0.0
+				#y-offset multiplier for when the player is climbing.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				multiplier_offset_y = 1.0
+				#z-offset multiplier for when the player is climbing.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				multiplier_offset_z = 1.0
+
 		[camera.offset.modifiers]
 
 			[camera.offset.modifiers.passenger]
@@ -151,6 +158,17 @@
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				modifier_offset_y = 0.0
 				#z-offset modifier for when using Elytra.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				modifier_offset_z = 0.0
+
+			[camera.offset.modifiers.climbing]
+				#x-offset modifier for when the player is climbing.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				modifier_offset_x = 0.0
+				#y-offset modifier for when the player is climbing.
+				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
+				modifier_offset_y = 0.0
+				#z-offset modifier for when the player is climbing.
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				modifier_offset_z = 0.0
 
