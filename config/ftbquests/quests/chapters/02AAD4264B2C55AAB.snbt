@@ -50,7 +50,7 @@
 			}
 			id: "4178108D392476B9"
 			shape: "hexagon"
-			size: 2.0d
+			size: 2.5d
 			tasks: [{
 				advancement: "tetra:art_of_forging/root"
 				criterion: ""
@@ -68,21 +68,21 @@
 				item: "art_of_forging:vobrite_crystal"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 6.0d
+			x: 9.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["38CD78E43A6497DC"]
 			id: "47ADAC6620C3FF87"
 			shape: "hexagon"
-			size: 1.5d
+			size: 2.0d
 			tasks: [{
 				id: "36BD3E1BEBBF6A21"
 				item: "art_of_forging:vobrivium_ingot"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 6.0d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -92,8 +92,8 @@
 				item: "witheringboon:witheredsoulstone"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 9.0d
+			x: 9.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -112,18 +112,13 @@
 				type: "item"
 			}]
 			title: "&b灵魂合金&r"
-			x: 6.0d
-			y: 12.0d
+			x: 7.5d
+			y: 4.0d
 		}
 		{
-			dependencies: [
-				"1DD863B1746B045F"
-				"072C57A43EFA47D2"
-				"0D352790BA1FF3E6"
-			]
 			id: "63B03A277D459A65"
 			shape: "hexagon"
-			size: 1.5d
+			size: 2.0d
 			tasks: [
 				{
 					id: "7C61E5405BB8F177"
@@ -142,8 +137,8 @@
 				}
 			]
 			title: "龙钢"
-			x: -6.0d
-			y: 6.0d
+			x: 15.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["50E6BE9153146BF5"]
@@ -153,8 +148,8 @@
 				item: "art_of_forging:dragon_soul"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 9.0d
+			x: 10.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["50E6BE9153146BF5"]
@@ -164,8 +159,8 @@
 				item: "art_of_forging:fragment_of_eden"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 9.0d
+			x: 13.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -184,8 +179,8 @@
 				type: "item"
 			}]
 			title: "&5终末钢&r"
-			x: 0.0d
-			y: 12.0d
+			x: 11.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -195,11 +190,10 @@
 				item: "art_of_forging:soul_ember"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 9.0d
+			x: 6.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["55E75519AE205C2E"]
 			id: "50E6BE9153146BF5"
 			shape: "hexagon"
 			size: 2.0d
@@ -208,13 +202,13 @@
 				item: "art_of_forging:forged_steel_ingot"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 6.0d
+			x: 11.5d
+			y: 0.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			description: ["将&e烈焰人引诱至灵魂沙峡谷并击杀&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
 			id: "6D5A656ACC1EC65B"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "7CC80CAAE8BE5484"
@@ -222,13 +216,13 @@
 				type: "item"
 			}]
 			title: "&1灵魂火种&r"
-			x: -3.0d
-			y: -3.0d
+			x: -6.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			description: ["每当我踏足下界要塞，总能感受到一股浓烈的恶意迎面袭来，而其中最为强烈的，便来自那些全身漆黑的&e凋灵骷髅&r——一种被凋灵的恶魔之力所腐蚀的骷髅。据笔记记载，从它们身上可以提取并浓缩来自恶魔的恶意，最终凝结成“&e恶意碎片&r”。然而，这种饱含恶魔气息的结晶并非凡人能够轻易掌握，稍有不慎，便可能遭受反噬。对此我必须要格外注意。"]
 			id: "19C9240CC2FCED23"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "1C104AC1E0A6BB93"
@@ -236,8 +230,8 @@
 				type: "item"
 			}]
 			title: "&4恶意结晶&r"
-			x: -3.0d
-			y: 0.0d
+			x: -8.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["22EB3CAE02880E7F"]
@@ -249,8 +243,8 @@
 				type: "item"
 			}]
 			title: "&4生命纤维&r"
-			x: 6.0d
-			y: -3.0d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -260,8 +254,8 @@
 				item: "iceandfire:ghost_ingot"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 9.0d
+			x: 8.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7F9D35C4E62EBE86"]
@@ -281,8 +275,8 @@
 				}
 			]
 			title: "&4撕&r&5裂&r&4剪&r&5刃&r"
-			x: 9.0d
-			y: -3.0d
+			x: 4.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["06833E5F5569DFA6"]
@@ -352,8 +346,8 @@
 				}
 			]
 			title: "&4裂空剪卷轴&r"
-			x: 12.0d
-			y: -3.0d
+			x: 4.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1F19F9E3509D49AA"]
@@ -365,8 +359,8 @@
 				type: "advancement"
 			}]
 			title: "裂空剪！"
-			x: 12.0d
-			y: 0.0d
+			x: 4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["38163DC2EF9E6DA3"]
@@ -379,8 +373,8 @@
 				type: "advancement"
 			}]
 			title: "&0夜幕降临&r"
-			x: -9.0d
-			y: 0.0d
+			x: -8.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["033C857187DC6731"]
@@ -405,8 +399,8 @@
 				}
 			]
 			title: "&c远古之遗&r"
-			x: -6.0d
-			y: -6.0d
+			x: -4.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7259774FF36EFCA6"]
@@ -419,8 +413,8 @@
 				type: "advancement"
 			}]
 			title: "&4灾厄之星&r"
-			x: -12.0d
-			y: 0.0d
+			x: -6.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["19C9240CC2FCED23"]
@@ -440,13 +434,13 @@
 				}
 			]
 			title: "&0恶魔之遗&r"
-			x: -6.0d
-			y: 0.0d
+			x: -8.0d
+			y: 4.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			description: ["锻造师提到，不仅仅是这个世界存在锻造师，其他世界同样也有锻造大师的身影。许多异界探险者将他们的见闻汇编成书籍，也许我可以从中学习异界的知识，锻造出更强大的武器。&e商店&r里就有这些书籍出售。"]
 			id: "2B0342C9C0B57372"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "4458274AF47E8A81"
@@ -454,11 +448,11 @@
 				type: "item"
 			}]
 			title: "&3异界见闻&r"
-			x: -3.0d
-			y: 3.0d
+			x: -4.0d
+			y: 4.0d
 		}
 		{
-			dependencies: ["2B0342C9C0B57372"]
+			dependencies: ["73663A1DAA730035"]
 			description: [
 				"一名探险者的书籍中记载道：传说村正是另一个时空下的日本战国时期的一位著名刀匠，他所锻造的武士刀以&e无比锋利&r著称，能够轻易斩断一切，因此被视为具有邪气。据说，统一日本的德川家康的祖父和父亲都死于村正刀，导致德川家族在统治期间禁止持有和使用村正刀。自此，村正刀在日本民间被称为“妖刀”，充满了不祥的传说与神秘色彩。"
 				"文中还详细的记载了村正之刃的锻造技巧。"
@@ -492,10 +486,13 @@
 			}]
 			title: "&3妖鬼之遗&r"
 			x: -6.0d
-			y: 3.0d
+			y: 8.0d
 		}
 		{
-			dependencies: ["6534A8367009AD68"]
+			dependencies: [
+				"6534A8367009AD68"
+				"4482D1BF32F71FBF"
+			]
 			description: [""]
 			icon: {
 				Count: 1
@@ -520,6 +517,8 @@
 				}
 			}
 			id: "59AA40D0405EBE55"
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				advancement: "tetra:art_of_forging/murasama_blade"
 				criterion: ""
@@ -527,14 +526,14 @@
 				type: "advancement"
 			}]
 			title: "&3妖刀&r"
-			x: -9.0d
-			y: 3.0d
+			x: -6.0d
+			y: 10.0d
 		}
 		{
 			dependencies: [
-				"59AA40D0405EBE55"
 				"4A0CB2CD39AF679F"
 				"477603DD01400467"
+				"6534A8367009AD68"
 			]
 			description: [
 				"当我将传说中的村正之刃握在手中，突然一阵晕眩感袭来。我感觉到脑海中所有与恶魔相关的知识开始自发地整合。待我清醒过来时，一旁原本破破烂烂的恶魔笔记莫名变得崭新，封面上赫然印着四个字——&e恶魔典籍&r。翻开恶魔典籍，原先模糊不清的字迹如今变得清晰可见，而最后空白的几页也被密密麻麻的文字填满，为首的便是三个大字——"
@@ -561,76 +560,69 @@
 				type: "checkmark"
 			}]
 			title: "&b恶魔典籍&r"
-			x: -12.0d
-			y: 3.0d
+			x: -8.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["3D6F2D2827972749"]
 			icon: {
 				Count: 1
-				id: "tetra:modular_sword"
+				id: "tetra:scroll_rolled"
 				tag: {
-					Damage: 0
-					HideFlags: 1
-					honing_progress: 370
-					id: "d2a48f3d-ca5e-48c0-a717-b3e19d3d12c4"
-					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
-					"sword/blade": "sword/crucible_blade"
-					"sword/blade:quality": 1
-					"sword/crucible_blade_material": "crucible_blade/endsteel_ingot"
-					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
-					"sword/guard": "sword/socket"
-					"sword/hilt": "sword/basic_hilt"
-					"sword/hilt:quality": 1
-					"sword/pommel": "sword/grip_loop"
-					"sword/socket_material": "sword_socket/socket_void_worm_eye"
-					weapon_attributes: "{\"parent\":\"bettercombat:sword\",\"attributes\":{\"attack_range\":3.5,\"two_handed\":false,\"category\":\"sword\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_stab\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.2,\"randomness\":0.1}}]}}"
+					BlockEntityTag: {
+						data: [{
+							details: "art_of_forging"
+							glyphs: [I;
+								8
+								7
+								9
+								2
+							]
+							intricate: 0b
+							key: "tetra/crucible_blade"
+							material: 2
+							ribbon: "ff1e00"
+							schematics: ["tetra:sword/crucible_blade"]
+						}]
+					}
 				}
 			}
 			id: "74CBB9E36AC536AA"
-			tasks: [
-				{
-					id: "3211079DF3B97683"
-					item: {
-						Count: 1
-						id: "tetra:scroll_rolled"
-						tag: {
-							BlockEntityTag: {
-								data: [{
-									details: "art_of_forging"
-									glyphs: [I;
-										8
-										7
-										9
-										2
-									]
-									intricate: 0b
-									key: "tetra/crucible_blade"
-									material: 2
-									ribbon: "ff1e00"
-									schematics: ["tetra:sword/crucible_blade"]
-								}]
-							}
+			tasks: [{
+				id: "3211079DF3B97683"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "art_of_forging"
+								glyphs: [I;
+									8
+									7
+									9
+									2
+								]
+								intricate: 0b
+								key: "tetra/crucible_blade"
+								material: 2
+								ribbon: "ff1e00"
+								schematics: ["tetra:sword/crucible_blade"]
+							}]
 						}
 					}
-					type: "item"
 				}
-				{
-					advancement: "tetra:art_of_forging/crucible_upgrade"
-					criterion: ""
-					id: "4A081B9A60BA7DF6"
-					type: "advancement"
-				}
-			]
+				type: "item"
+			}]
 			title: "&5裁决剑&r"
-			x: 9.0d
-			y: 3.0d
+			x: 0.0d
+			y: 6.0d
 		}
 		{
 			dependencies: [
 				"1607F7E800D3A52C"
 				"74CBB9E36AC536AA"
-				"69FDAEA318C16F60"
+				"6492B12E7FF19CF5"
 			]
 			id: "77A9515AA98A2567"
 			tasks: [{
@@ -639,8 +631,8 @@
 				type: "item"
 			}]
 			title: "&5锻造师的遗稿&r"
-			x: 12.0d
-			y: 3.0d
+			x: 2.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["443E4E48D9EB4F40"]
@@ -660,14 +652,14 @@
 				}
 			]
 			title: "&5龙之灵魂&r"
-			x: 6.0d
-			y: 3.0d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
 				"137C9220F86DD557"
 				"19C9240CC2FCED23"
-				"555B9953FB506DEE"
+				"2ED05D4C38C4B3F1"
 			]
 			description: ["我尝试将三把远古武器与&e恶意碎片和凋灵骷髅头&r——我能想到的最邪恶的两种物品——一起进行合成。结果成功了，&e三把武器重新散发出了浓烈的邪恶气息&r，但这股来自远古的恶意仿佛要将我直接吞噬。"]
 			icon: "art_of_forging:demonic_blade"
@@ -691,12 +683,12 @@
 				}
 			]
 			title: "&c远古恶意&r"
-			x: -9.0d
-			y: -3.0d
+			x: -6.0d
+			y: 4.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			id: "4E3D0A015ECF75F2"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "7C939EE3B6AC6015"
@@ -704,8 +696,8 @@
 				type: "item"
 			}]
 			title: "诸神黄昏"
-			x: 3.0d
-			y: 0.0d
+			x: -10.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["4E3D0A015ECF75F2"]
@@ -715,8 +707,8 @@
 				item: "witheringboon:soulaniteingot"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 0.0d
+			x: -10.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["77A9515AA98A2567"]
@@ -775,8 +767,8 @@
 				type: "item"
 			}]
 			title: "&5锻造师之权&r"
-			x: 12.0d
-			y: 6.0d
+			x: 2.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["311424590CC23510"]
@@ -842,13 +834,13 @@
 				type: "item"
 			}]
 			title: "&b千夜寒&r"
-			x: -12.0d
-			y: 6.0d
+			x: -8.0d
+			y: 10.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			description: ["击杀末影龙后，我在&e它死亡的地方&r发现了两根龙筋，这个用途可多了。"]
 			id: "22EB3CAE02880E7F"
+			shape: "pentagon"
 			size: 1.5d
 			subtitle: "可能在天上（"
 			tasks: [{
@@ -857,11 +849,14 @@
 				type: "item"
 			}]
 			title: "&5龙筋&r"
-			x: 3.0d
-			y: -3.0d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["23DBC78515F34004"]
+			dependencies: [
+				"23DBC78515F34004"
+				"311424590CC23510"
+			]
 			icon: {
 				Count: 1
 				id: "tetra:modular_sword"
@@ -890,8 +885,8 @@
 				title: "噬魂之刃"
 				type: "checkmark"
 			}]
-			x: 9.0d
-			y: 0.0d
+			x: -10.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
@@ -903,13 +898,13 @@
 				type: "item"
 			}]
 			title: "&5黑暗宝珠&r"
-			x: 3.0d
-			y: -6.0d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
 			description: ["我在箱子里发现了一种奇怪的虫子，笔记中提到它可以用来&e打磨武器&r。使用打磨后武器击杀生物时，纳米昆虫会分解它们体内的某些成分，从而产生&e全新的掉落物&r。这些新的战利品各自有其独特的用途。"]
 			id: "1395569F70AEFEE2"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "5BBFAA1C222297B5"
@@ -917,14 +912,15 @@
 				type: "item"
 			}]
 			title: "&f微观掠夺者&r"
-			x: 0.0d
-			y: -3.0d
+			x: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["4178108D392476B9"]
 			description: ["远古城市中埋藏着许多在锻造时能够大放异彩的材料，我打算前往收集一些。"]
 			hide_dependency_lines: true
 			id: "033C857187DC6731"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				icon: "minecraft:echo_shard"
@@ -934,13 +930,13 @@
 				type: "structure"
 			}]
 			title: "远古城市"
-			x: -3.0d
-			y: -6.0d
+			x: -4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
-				"033C857187DC6731"
 				"1395569F70AEFEE2"
+				"033C857187DC6731"
 			]
 			description: ["当我使用&e纳米融合后的武器击杀坚守者&r时，除了常见的回响碎片外，还掉落了一种之前未见过的材料。这种材料可用于&e打造武器附层&r，使武器&e更易打磨&r，但其缺点是在攻击时可能会在目标附近产生幽匿脉络。"]
 			id: "5BAADF26B7A390EB"
@@ -949,45 +945,34 @@
 				item: "art_of_forging:eerie_shard"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -6.0d
+			x: -3.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
 			description: ["使用带有纳米融合的武器击杀末影人可获得，可镶嵌在武器上，使得武器击杀生物时直接将战利品传送到自己身上。"]
 			id: "06478E19031CB2DC"
+			optional: true
 			tasks: [{
 				id: "1815BC1FE4BB247A"
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -4.5d
+			x: -1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
 			description: ["使用带有纳米融合的武器击杀苦力怕可获得,进阶版的火药，在制作以火药为原料的物品的时候可以获得更多产出。"]
 			id: "0BE48240C8B3FA5B"
+			optional: true
 			tasks: [{
 				id: "6853C39CED2388F4"
 				item: "art_of_forging:potent_mixture"
 				type: "item"
 			}]
-			x: -0.5d
-			y: -4.5d
-		}
-		{
-			dependencies: ["033C857187DC6731"]
-			description: [""]
-			id: "2D7B9FCFE620EA5D"
-			optional: true
-			tasks: [{
-				id: "6354870F00DF7366"
-				item: "minecraft:echo_shard"
-				type: "item"
-			}]
-			x: -1.0d
-			y: -7.0d
+			x: -2.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["35C5712DB94C5022"]
@@ -1001,8 +986,8 @@
 				type: "advancement"
 			}]
 			title: "&5追忆之弓&r"
-			x: 9.0d
-			y: -6.0d
+			x: -2.0d
+			y: 10.0d
 		}
 		{
 			dependencies: [
@@ -1058,8 +1043,8 @@
 				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
-			x: 6.0d
-			y: -6.0d
+			x: -2.0d
+			y: 8.0d
 		}
 		{
 			description: [
@@ -1132,8 +1117,8 @@
 				}
 			]
 			title: "&f无畏弓臂&r  &f复合弓弦&r"
-			x: 5.0d
-			y: -8.0d
+			x: -3.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["50E6BE9153146BF5"]
@@ -1143,8 +1128,8 @@
 				item: "minecraft:dragon_breath"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 9.0d
+			x: 11.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["50E6BE9153146BF5"]
@@ -1155,8 +1140,8 @@
 				type: "checkmark"
 			}]
 			title: "待定材料"
-			x: 0.5d
-			y: 9.0d
+			x: 12.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -1166,26 +1151,8 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 9.0d
-		}
-		{
-			dependencies: ["50E6BE9153146BF5"]
-			id: "1DD863B1746B045F"
-			tasks: [{
-				id: "4577A4C3D2FB6C5E"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "iceandfire:dragon_bloods"
-					}
-				}
-				title: "任意龙血"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 6.0d
+			x: 7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: [
@@ -1204,19 +1171,20 @@
 				type: "item"
 			}]
 			title: "&f悚怖钢&r"
-			x: -6.0d
-			y: 12.0d
+			x: 15.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["63B03A277D459A65"]
 			id: "141E662DB7E1864B"
 			tasks: [{
-				id: "6F1C2E46317B8165"
-				type: "checkmark"
+				id: "156579804A25CEAF"
+				item: "iceandfire:dread_queen_staff"
+				type: "item"
 			}]
-			title: "待定材料1"
-			x: -7.5d
-			y: 9.0d
+			title: "悚怖女皇权杖"
+			x: 14.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["63B03A277D459A65"]
@@ -1226,8 +1194,8 @@
 				item: "iceandfire:dread_shard"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 9.0d
+			x: 17.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["63B03A277D459A65"]
@@ -1237,8 +1205,8 @@
 				title: "待定材料3"
 				type: "checkmark"
 			}]
-			x: -5.5d
-			y: 9.0d
+			x: 16.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["63B03A277D459A65"]
@@ -1248,48 +1216,12 @@
 				title: "待定材料2"
 				type: "checkmark"
 			}]
-			x: -6.5d
-			y: 9.0d
+			x: 15.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["50E6BE9153146BF5"]
-			id: "072C57A43EFA47D2"
-			tasks: [{
-				id: "567BEE0014369408"
-				title: "耐热合金锻造龙钢"
-				type: "checkmark"
-			}]
-			x: -3.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["50E6BE9153146BF5"]
-			id: "0D352790BA1FF3E6"
-			tasks: [{
-				id: "4CA3DCB2CA9B9B8A"
-				title: "待定材料1"
-				type: "checkmark"
-			}]
-			x: -3.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["6D5A656ACC1EC65B"]
-			description: ["可是，我真的需要这么多&e凋灵骷髅头&r吗？"]
-			id: "555B9953FB506DEE"
-			tasks: [{
-				count: 12L
-				id: "41898F6767FF14A2"
-				item: "minecraft:wither_skeleton_skull"
-				type: "item"
-			}]
-			title: "&1凋灵头颅&r"
-			x: -6.0d
-			y: -3.0d
-		}
-		{
-			dependencies: ["4178108D392476B9"]
 			id: "443E4E48D9EB4F40"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				id: "7DA4B957FAF9F0B3"
@@ -1297,20 +1229,198 @@
 				type: "item"
 			}]
 			title: "&5神秘典籍&r"
-			x: 3.0d
-			y: 3.0d
+			x: 0.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["4178108D392476B9"]
-			id: "55E75519AE205C2E"
-			size: 1.5d
+			dependencies: ["2B0342C9C0B57372"]
+			id: "73663A1DAA730035"
 			tasks: [{
-				id: "5D24F3902FC78AC9"
-				title: "锻造材料"
+				id: "08CA947BA75EA48F"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "art_of_forging"
+								glyphs: [I;
+									5
+									10
+									13
+									2
+								]
+								intricate: 0b
+								key: "sword/katana/katana_blade"
+								material: 2
+								ribbon: "dbff10"
+								schematics: [
+									"tetra:sword/katana/katana_blade"
+									"tetra:sword/tsuba_guard"
+								]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			id: "4482D1BF32F71FBF"
+			tasks: [{
+				id: "67205374C62B079E"
+				item: "vvaddon:mine_ingot"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["6B492F74CABE8E97"]
+			id: "6492B12E7FF19CF5"
+			tasks: [{
+				id: "341195E7E37683E3"
+				item: {
+					Count: 1
+					id: "tetra:scroll_rolled"
+					tag: {
+						BlockEntityTag: {
+							data: [{
+								details: "art_of_forging"
+								glyphs: [I;
+									3
+									5
+									6
+									9
+								]
+								intricate: 0b
+								key: "sword/tonal_blade"
+								material: 1
+								ribbon: "daf7a6"
+								schematics: ["tetra:sword/tonal_blade"]
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6D5A656ACC1EC65B"]
+			id: "2ED05D4C38C4B3F1"
+			tasks: [{
+				count: 12L
+				id: "321B8AB3A1F5432D"
+				item: { Count: 12, id: "minecraft:wither_skeleton_skull" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4A7D4B98BC089A8A"]
+			id: "6B492F74CABE8E97"
+			tasks: [{
+				id: "07B0A7CC6D795BB3"
 				type: "checkmark"
 			}]
-			x: 0.0d
-			y: 3.0d
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			id: "4A7D4B98BC089A8A"
+			shape: "pentagon"
+			size: 1.5d
+			tasks: [{
+				id: "2E3BE2293E220DE6"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			id: "513F0851D963A72A"
+			tasks: [{
+				id: "128EE6E69CF3FD9B"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			id: "4C489D41B7D7FE32"
+			tasks: [{
+				id: "57F6267A4C87CE3B"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "6EBD79B87E10DA7F"
+			tasks: [{
+				id: "48B5B9F5166ABCFC"
+				item: {
+					Count: 1
+					id: "ad_astra:etrionic_capacitor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 8.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "7779E241F787B373"
+			tasks: [{
+				id: "7C71531E849872E6"
+				item: "createdelight:bleak_electron_tube"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "01A60A138E892348"
+			tasks: [{
+				id: "3305046C8DF55CEE"
+				item: "vintageimprovements:redstone_module"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 8.0d
+		}
+		{
+			id: "4BA4050F5446B8E3"
+			tasks: [{
+				id: "67436E5550395678"
+				item: "createdelight:sky_copper_ingot"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"01A60A138E892348"
+				"6EBD79B87E10DA7F"
+				"7779E241F787B373"
+			]
+			id: "77C9E5888CF36149"
+			tasks: [{
+				id: "7A673351703FDD31"
+				item: "vvaddon:mine_ingot"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 9.5d
 		}
 	]
 	subtitle: ["暂属于未完成章节"]
