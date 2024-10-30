@@ -1,0 +1,9 @@
+{
+  "slot": "create_armorer:attachment/slot/grip_gantry_shaft",
+  "model": "create_armorer:attachment/grip_gantry_shaft",
+  "texture": "create_armorer:attachment/uv/grip_gantry_shaft",
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

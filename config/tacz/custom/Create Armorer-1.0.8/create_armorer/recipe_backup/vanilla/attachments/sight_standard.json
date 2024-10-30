@@ -1,0 +1,32 @@
+{
+  "materials": [
+    {
+      "item": {
+        "tag": "forge:ingots/iron"
+      },
+      "count": 4
+    },
+    {
+      "item": {
+        "tag": "forge:ingots/copper"
+      },
+      "count": 6
+    },
+    {
+      "item": {
+        "item": "minecraft:dried_kelp"
+      },
+      "count": 8
+    },
+    {
+      "item": {
+        "tag": "forge:glass_panes"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "type": "attachment",
+    "id": "create_armorer:sight_standard"
+  }
+}

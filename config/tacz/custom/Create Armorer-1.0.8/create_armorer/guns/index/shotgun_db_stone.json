@@ -1,0 +1,7 @@
+{
+    "name": "create_armorer.gun.shotgun_db_stone",
+    "display": "create_armorer:shotgun_db_stone_display",
+    "data": "create_armorer:shotgun_db_stone_data",
+    "type": "shotgun",
+    "sort": 350
+}

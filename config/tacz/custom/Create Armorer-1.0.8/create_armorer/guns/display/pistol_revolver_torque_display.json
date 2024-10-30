@@ -1,0 +1,50 @@
+{
+    "model": "create_armorer:gun/pistol_revolver_torque_geo",
+    "texture": "create_armorer:gun/uv/pistol_revolver_torque",
+    "lod": {
+        "model": "create_armorer:gun/lod/pistol_revolver_torque_lod",
+        "texture": "create_armorer:gun/lod/pistol_revolver_torque_lod"
+    },
+    "hud": "create_armorer:gun/hud/pistol_revolver_torque",
+    "slot": "create_armorer:gun/slot/pistol_revolver_torque",
+    "animation": "create_armorer:pistol_revolver_torque",
+    "use_default_animation": "pistol",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 1
+    },
+    "sounds": {
+        "shoot": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_shoot",
+        "shoot_3p": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_shoot",
+        "reload_empty": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_reload",
+        "reload_tactical": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_reload",
+        "melee_bayonet": "create_armorer:attachment_bayonet/bayonet_attack1",
+        "inspect": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_inspect",
+        "inspect_empty": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_inspect",
+        "draw": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_put_away",
+        "silence": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_silence",
+        "silence_3p": "create_armorer:pistol_revolver_torque/pistol_revolver_torque_silence"
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "model": "create_armorer:gun/pistol_auto_stress_geo",
+    "texture": "create_armorer:gun/uv/pistol_auto_stress",
+    "lod": {
+        "model": "create_armorer:gun/lod/pistol_auto_stress_lod",
+        "texture": "create_armorer:gun/lod/pistol_auto_stress_lod"
+    },
+    "hud": "create_armorer:gun/hud/pistol_auto_stress",
+    "slot": "create_armorer:gun/slot/pistol_auto_stress",
+    "animation": "create_armorer:pistol_auto_stress",
+    "use_default_animation": "pistol",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "shoot": "create_armorer:pistol_auto_stress/pistol_auto_stress_shoot",
+        "shoot_3p": "create_armorer:pistol_auto_stress/pistol_auto_stress_shoot",
+        "reload_empty": "create_armorer:pistol_auto_stress/pistol_auto_stress_reload_empty",
+        "reload_tactical": "create_armorer:pistol_auto_stress/pistol_auto_stress_reload_tactical",
+        "inspect": "create_armorer:pistol_auto_stress/pistol_auto_stress_inspect",
+        "inspect_empty": "create_armorer:pistol_auto_stress/pistol_auto_stress_inspect_empty",
+        "draw": "create_armorer:pistol_auto_stress/pistol_auto_stress_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:pistol_auto_stress/pistol_auto_stress_put_away",
+        "silence": "create_armorer:pistol_auto_stress/pistol_auto_stress_silence",
+        "silence_3p": "create_armorer:pistol_auto_stress/pistol_auto_stress_silence"
+    }
+}

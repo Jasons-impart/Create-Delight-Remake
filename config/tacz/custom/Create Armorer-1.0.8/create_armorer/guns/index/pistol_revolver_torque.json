@@ -1,0 +1,7 @@
+{
+    "name": "create_armorer.gun.pistol_revolver_torque",
+    "display": "create_armorer:pistol_revolver_torque_display",
+    "data": "create_armorer:pistol_revolver_torque_data",
+    "type": "pistol",
+    "sort": 350
+}

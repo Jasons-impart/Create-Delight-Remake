@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.sight_medium_distance.name",
+  "display": "create_armorer:sight_medium_distance_display",
+  "data": "create_armorer:sight_medium_distance_data",
+  "type": "scope"
+}

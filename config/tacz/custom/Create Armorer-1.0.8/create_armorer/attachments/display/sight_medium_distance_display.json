@@ -1,0 +1,15 @@
+{
+  "slot": "create_armorer:attachment/slot/sight_medium_distance",
+  "model": "create_armorer:attachment/sight_medium_distance",
+  "texture": "create_armorer:attachment/uv/sight_medium_distance",
+  "zoom": [
+    2.5,
+    4
+  ],
+  "scope": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

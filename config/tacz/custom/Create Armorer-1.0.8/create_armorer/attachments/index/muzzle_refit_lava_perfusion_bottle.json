@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.muzzle_refit_lava_perfusion_bottle.name",
+  "display": "create_armorer:muzzle_refit_lava_perfusion_bottle_display",
+  "data": "create_armorer:muzzle_refit_lava_perfusion_bottle_data",
+  "type": "muzzle"
+}

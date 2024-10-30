@@ -1,0 +1,9 @@
+{
+  "slot": "create_armorer:attachment/slot/muzzle_refit_lava_perfusion_bottle",
+  "model": "create_armorer:attachment/muzzle_refit_lava_perfusion_bottle",
+  "texture": "create_armorer:attachment/uv/muzzle_refit_lava_perfusion_bottle",
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "create_armorer.attachment.muzzle_refit_brass_retractor.name",
+  "display": "create_armorer:muzzle_refit_brass_retractor_display",
+  "data": "create_armorer:muzzle_refit_brass_retractor_data",
+  "tooltip": "create_armorer.tooltip.attachment.muzzle_refit_brass_retractor",
+  "type": "muzzle"
+}

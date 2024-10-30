@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.grip_wooden.name",
+  "display": "create_armorer:grip_wooden_display",
+  "data": "create_armorer:grip_wooden_data",
+  "type": "grip"
+}

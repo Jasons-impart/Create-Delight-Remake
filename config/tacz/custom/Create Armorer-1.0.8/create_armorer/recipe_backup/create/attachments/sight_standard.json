@@ -1,0 +1,32 @@
+{
+  "materials": [
+    {
+      "item": {
+        "tag": "forge:plates/iron"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "tag": "forge:plates/brass"
+      },
+      "count": 2
+    },
+    {
+      "item": {
+        "item": "minecraft:dried_kelp"
+      },
+      "count": 6
+    },
+    {
+      "item": {
+        "tag": "forge:glass_panes"
+      },
+      "count": 2
+    }
+  ],
+  "result": {
+    "type": "attachment",
+    "id": "create_armorer:sight_standard"
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 8,
+				"texture_height": 8,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "grip",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-0.5, -3.625, -0.75],
+							"size": [1, 4, 1.5],
+							"uv": {
+								"north": {"uv": [0, 4], "uv_size": [1, 4]},
+								"east": {"uv": [0, 0], "uv_size": [1.5, 4]},
+								"south": {"uv": [4, 0], "uv_size": [1, 4]},
+								"west": {"uv": [1.5, 0], "uv_size": [-1.5, 4]},
+								"up": {"uv": [1, 4], "uv_size": [1, 1.5]},
+								"down": {"uv": [2, 5.5], "uv_size": [1, -1.5]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+  "materials": [
+    {
+      "item": {
+        "tag": "forge:ingots/iron"
+      },
+      "count": 5
+    },
+    {
+      "item": {
+        "item": "minecraft:andesite"
+      },
+      "count": 5
+    }
+  ],
+  "result": {
+    "type": "attachment",
+    "id": "create_armorer:extended_mag_ca_1"
+  }
+}

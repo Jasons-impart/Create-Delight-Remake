@@ -1,0 +1,46 @@
+{
+    "model": "create_armorer:gun/smg_auto_crank_geo",
+    "texture": "create_armorer:gun/uv/smg_auto_crank",
+    "lod": {
+        "model": "create_armorer:gun/lod/smg_auto_crank_lod",
+        "texture": "create_armorer:gun/lod/smg_auto_crank_lod"
+    },
+    "hud": "create_armorer:gun/hud/smg_auto_crank",
+    "show_crosshair": true,
+    "slot": "create_armorer:gun/slot/smg_auto_crank",
+    "animation": "create_armorer:smg_auto_crank",
+    "use_default_animation": "pistol",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.8,
+                0.8,
+                0.8
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "shoot": "create_armorer:smg_auto_crank/smg_auto_crank_shoot",
+        "shoot_3p": "create_armorer:smg_auto_crank/smg_auto_crank_shoot",
+        "reload_empty": "create_armorer:smg_auto_crank/smg_auto_crank_reload",
+        "reload_tactical": "create_armorer:smg_auto_crank/smg_auto_crank_reload",
+        "inspect": "create_armorer:smg_auto_crank/smg_auto_crank_inspect",
+        "inspect_empty": "create_armorer:smg_auto_crank/smg_auto_crank_inspect",
+        "draw": "create_armorer:smg_auto_crank/smg_auto_crank_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:smg_auto_crank/smg_auto_crank_put_away",
+        "silence": "create_armorer:smg_auto_crank/smg_auto_crank_silence",
+        "silence_3p": "create_armorer:smg_auto_crank/smg_auto_crank_silence"
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "model": "create_armorer:gun/mg_platemag_flywheel_geo",
+    "texture": "create_armorer:gun/uv/mg_platemag_flywheel",
+    "lod": {
+        "model": "create_armorer:gun/lod/mg_platemag_flywheel_lod",
+        "texture": "create_armorer:gun/lod/mg_platemag_flywheel_lod"
+    },
+    "hud": "create_armorer:gun/hud/mg_platemag_flywheel",
+    "slot": "create_armorer:gun/slot/mg_platemag_flywheel",
+    "animation": "create_armorer:mg_platemag_flywheel",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                1,
+                1,
+                1
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 1
+    },
+    "shell": {
+        "initial_velocity": [5, 2, 1],
+        "random_velocity": [1, 1, 0.25],
+        "acceleration": [0.0, -10, 0.0],
+        "angular_velocity": [360, -1200, 90],
+        "living_time": 1.0
+    },
+    "sounds": {
+        "shoot": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_shoot",
+        "shoot_3p": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_shoot",
+        "reload_empty": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_reload",
+        "reload_tactical": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_reload",
+        "inspect": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_inspect",
+        "inspect_empty": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_inspect",
+        "draw": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_put_away",
+        "silence": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_silence",
+        "silence_3p": "create_armorer:mg_platemag_flywheel/mg_platemag_flywheel_silence"
+    }
+}

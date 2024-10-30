@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.sight_standard.name",
+  "display": "create_armorer:sight_standard_display",
+  "data": "create_armorer:sight_standard_data",
+  "type": "scope"
+}

@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.extended_mag_ca_2.name",
+  "display": "create_armorer:extended_mag_ca_2_display",
+  "data": "create_armorer:extended_mag_ca_2_data",
+  "type": "extended_mag"
+}
