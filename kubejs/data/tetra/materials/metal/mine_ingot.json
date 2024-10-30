@@ -1,0 +1,20 @@
+{   
+    "key": "mine_ingot",
+    "category": "metal",
+    "primary": 8,
+    "secondary": 2,
+    "tertiary": 2,
+    "durability": 8000,
+    "integrityCost": 2,
+    "integrityGain": 8,
+    "magicCapacity": 100,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 6,
+    "tints": {
+      "glyph": "1AD5DC",
+      "texture": "1AD5DC"
+    },
+    "textures": ["heavy", "metal" ],
+    "material": { "items": [ "vvaddon:mine_ingot" ] },
+    "requiredTools": { "hammer_dig": "minecraft:netherite_ingot" }
+  }
