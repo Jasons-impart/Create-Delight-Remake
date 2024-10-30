@@ -139,4 +139,29 @@ CreateEvents.spoutHandler(e => {
     //         return 0
     //     }
     // )
+    e.add(
+        "createdelight:sulfur_spout_interaction", // ID
+        "alexscaves:sulfur", // 目標方塊
+        (block, fluid, simulate) => {
+            let level = block.level
+            let upPos = block.pos.above()
+            let upBlock = level.getBlock(upPos)
+            if (fluid.id === "alexscaves:acid" && fluid.amount >= 10 && upBlock.getId() !== "alexscaves:sulfur_cluster") {
+                if (!simulate) {
+                    if (level.getRandom().nextInt(3) == 0) {
+                        if (upBlock.getId() === "minecraft:air")
+                            level.server.runCommandSilent(`/execute in ${level.dimension} run setblock ${upPos.x} ${upPos.y} ${upPos.z} alexscaves:sulfur_bud_small`)
+                        else if (upBlock.getId() === "alexscaves:sulfur_bud_small")
+                            level.server.runCommandSilent(`/execute in ${level.dimension} run setblock ${upPos.x} ${upPos.y} ${upPos.z} alexscaves:sulfur_bud_medium`)
+                        else if (upBlock.getId() === "alexscaves:sulfur_bud_medium")
+                            level.server.runCommandSilent(`/execute in ${level.dimension} run setblock ${upPos.x} ${upPos.y} ${upPos.z} alexscaves:sulfur_bud_large`)
+                        else if (upBlock.getId() === "alexscaves:sulfur_bud_large")
+                            level.server.runCommandSilent(`/execute in ${level.dimension} run setblock ${upPos.x} ${upPos.y} ${upPos.z} alexscaves:sulfur_cluster`)
+                    }
+                }
+                return 10;
+            }
+            return 0;
+        }
+    )
 })
