@@ -1,0 +1,27 @@
+{
+    "key": "forged_steel_ingot",
+    "category": "metal",
+    "primary": 9,
+    "secondary": 3,
+    "tertiary": 4,
+    "durability": 4000,
+    "integrityCost": 2,
+    "integrityGain": 9,
+    "magicCapacity": 100,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 10,
+    "tints": {
+        "glyph": "262222",
+        "texture": "262222"
+    },
+    "textures": [
+        "heavy",
+        "metal"
+    ],
+    "material": {
+        "items": [ "art_of_forging:forged_steel_ingot" ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:netherite"
+    }
+}

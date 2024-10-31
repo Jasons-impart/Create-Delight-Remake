@@ -6,10 +6,10 @@
     "tertiary": 2,
     "durability": 8000,
     "integrityCost": 2,
-    "integrityGain": 8,
+    "integrityGain": 9,
     "magicCapacity": 100,
     "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 6,
+    "toolEfficiency": 9,
     "tints": {
       "glyph": "1AD5DC",
       "texture": "1AD5DC"

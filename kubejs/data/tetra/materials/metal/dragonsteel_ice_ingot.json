@@ -1,20 +1,20 @@
 {   
     "key": "dragonsteel_ice_ingot",
     "category": "metal",
-    "primary": 9.1,
-    "secondary": 3.6,
-    "tertiary": 3.5,
-    "durability": 2450,
+    "primary": 10,
+    "secondary": 4,
+    "tertiary": 5,
+    "durability": 6000,
     "integrityCost": 2,
-    "integrityGain": 8,
-    "magicCapacity": 200,
+    "integrityGain": 10,
+    "magicCapacity": 120,
     "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 12,
+    "toolEfficiency": 11,
     "tints": {
       "glyph": "0fcce6",
       "texture": "0fcce6"
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_ice_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:diamond" }
+    "requiredTools": { "hammer_dig": "minecraft:netherite" }
   }

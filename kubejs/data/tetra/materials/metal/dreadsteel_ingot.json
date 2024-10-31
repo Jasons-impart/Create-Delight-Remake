@@ -1,13 +1,13 @@
 {   
-    "key": "dragonsteel_fire_ingot",
+    "key": "dreadsteel_ingot",
     "category": "metal",
-    "primary": 10,
+    "primary": 12,
     "secondary": 4,
     "tertiary": 5,
-    "durability": 6000,
+    "durability": 10000,
     "integrityCost": 2,
-    "integrityGain": 10,
-    "magicCapacity": 120,
+    "integrityGain": 11,
+    "magicCapacity": 150,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 11,
     "tints": {
@@ -15,6 +15,6 @@
       "texture": "910d13"
     },
     "textures": [ "heavy", "metal" ],
-    "material": { "items": [ "iceandfire:dragonsteel_fire_ingot" ] },
+    "material": { "items": [ "dreadsteel:dreadsteel_ingot" ] },
     "requiredTools": { "hammer_dig": "minecraft:netherite" }
   }
