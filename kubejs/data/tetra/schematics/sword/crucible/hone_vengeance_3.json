@@ -1,0 +1,27 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 0
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "blade/vengeance_tier",
+        "level": 2
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:stone"
+            },
+            "improvements": {
+                "blade/vengeance_tier": 3
+            }
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_double",
+            "nbt": "{\"id\": \"spelunking/shockwave_hammer\", \"double/head_left\": \"double/shockwave_hammer_left\",\"double/head_right\": \"double/basic_hammer_right\",\"double/basic_hammer_right_material\": \"basic_hammer/netherite\",\"double/handle\": \"double/basic_handle\",\"double/basic_handle_material\": \"basic_handle/netherite\"}"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.shockwave_hammer.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.shockwave_hammer.description"
+        },
+        "frame": "goal",
+        "hidden": true
+    },
+    "parent": "tetra:spelunking/craft_shockwave_chamber",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "double/shockwave_hammer",
+                "after": {
+                    "items": [
+                        "tetra:modular_double"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module"
+        ]
+    ]
+}

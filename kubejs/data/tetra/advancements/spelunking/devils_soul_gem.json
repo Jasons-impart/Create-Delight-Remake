@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "art_of_forging:devils_soul_gem"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.devils_soul_gem.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.devils_soul_gem.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:spelunking/find_nano_insectoid",
+    "criteria": {
+        "soul_gem": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "art_of_forging:devils_soul_gem"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "soul_gem"
+        ]
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "replace": true,
+    "slots": [ "sword/fuller" ],
+    "type": "tetra:basic_major_module",
+    "variants": [
+        {
+            "key": "echo_fuller/echo_fuller",
+            "attributes": {
+                "generic.attack_speed": -0.15
+            },
+            "effects": {
+                "truesweep": 1,
+                "sculkTaint": [ 3, 0.01 ],
+                "intuit": 1
+            },
+            "durability": 25,
+            "integrity": 1,
+            "magicCapacity": 100,
+            "glyph": {
+                "tint": "034150",
+                "textureX": 72,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/sword/fuller/echo_fuller/echo_fuller"
+                },
+                {
+                    "location": "tetra:item/module/sword/fuller/echo_fuller/echo_fuller",
+                    "emission": 8
+                }
+            ]
+        }
+    ]
+}

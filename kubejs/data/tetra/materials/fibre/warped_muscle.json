@@ -1,0 +1,30 @@
+{
+    "key": "warped_muscle",
+    "category": "fibre",
+    "primary": 6.5,
+    "secondary": 7.8,
+    "tertiary": 6.9,
+    "durability": 1250,
+    "integrityCost": 2,
+    "integrityGain": 7,
+    "magicCapacity": 85,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "3fc5e0",
+        "texture": "3fc5e0"
+    },
+    "textures": [
+        "metal",
+        "default"
+    ],
+    "material": {
+        "items": [ "alexsmobs:warped_muscle" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:iron"
+    },
+    "effects": {
+        "unbreaking": 2
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "material": {
+        "items": [ "art_of_forging:life_fiber" ],
+        "count": 1
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:diamond"
+    },
+    "moduleKey": "sword/rending_scissor_purple",
+    "moduleVariant": "rending_scissor_purple/rending_scissor_purple"
+}

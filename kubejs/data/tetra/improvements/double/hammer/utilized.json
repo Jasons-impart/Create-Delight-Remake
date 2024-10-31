@@ -1,0 +1,22 @@
+[
+    {
+        "key": "double/utilized",
+        "integrity": -1,
+        "effects": {
+            "extraction": 4
+        },
+        "aspects": {
+            "bluntWeapon": 1,
+            "blockBreaker": 2
+        },
+        "tools": {
+            "pickaxe_dig": [ 1, 15 ]
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/double/head/basic_hammer/utilized",
+                "tint": "inherit"
+            }
+        ]
+    }
+]

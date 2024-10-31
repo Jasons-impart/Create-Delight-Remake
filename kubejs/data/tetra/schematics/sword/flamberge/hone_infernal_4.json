@@ -1,0 +1,27 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 16
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "blade/infernal",
+        "level": 3
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:stone"
+            },
+            "improvements": {
+                "blade/infernal": 4
+            }
+        }
+    ]
+}

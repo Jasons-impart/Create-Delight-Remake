@@ -1,0 +1,33 @@
+{
+    "replace": true,
+    "slots": [
+        "double/head_left",
+        "double/head_right"
+    ],
+    "keySuffixes": [
+        "_left",
+        "_right"
+    ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "22c0f3",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 240,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:soul_ember" ]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "double/soul_fire_scythe",
+            "moduleVariant": "soul_fire_scythe/soul_fire_scythe"
+        }
+    ]
+}

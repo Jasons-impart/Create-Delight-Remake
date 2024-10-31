@@ -1,0 +1,42 @@
+{
+    "replace": true,
+    "slots": [ "sword/guard" ],
+    "type": "tetra:basic_module",
+    "renderLayer": "higher",
+    "variants": [
+        {
+            "materials": [ "tetra:metal/", "tetra:wood/", "tetra:scale/", "tetra:bone/", "tetra:misc/vent_plate" ],
+            "key": "tsuba_guard/",
+            "integrity": -1,
+            "attributes": {
+                "generic.armor": 1,
+                "generic.armor_toughness": 1,
+                "generic.attack_speed": -0.1
+            },
+            "extract": {
+                "primaryAttributes": {
+                    "generic.armor": 0.3,
+                    "generic.armor_toughness": 0.1
+                },
+                "secondaryAttributes": {
+                    "generic.armor": 0.2,
+                    "generic.armor_toughness": 0.2
+                },
+                "tertiaryAttributes": {
+                    "generic.armor": -0.1,
+                    "generic.armor_toughness": -0.1,
+                    "generic.attack_speed": 0.1
+                },
+                "durability": 0.2,
+                "integrity": -0.1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 56,
+                    "textureY": 32
+                },
+                "availableTextures": [ "metal", "shiny", "crude" ],
+                "models": [{ "location": "tetra:item/module/sword/guard/tsube_guard/" }]
+            }
+        }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [
+        "double/head_left"
+    ],
+    "slotSuffixes": [
+        "_left"
+    ],
+    "improvements": [
+        "tetra:double/annihilator_axe/",
+        "tetra:double/shared_head/",
+        "tetra:double/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "annihilator_axe/annihilator_axe",
+            "integrity": -2,
+            "attributes": {
+              "generic.attack_damage": 13,
+              "generic.attack_speed": -1.5
+            },
+            "aspects": {
+                "block_breaker": 2,
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "shieldbreaker": 1,
+                "art_of_forging:devouring": [ 2, 5 ],
+                "art_of_forging:life_steal": [ 1.5, 25 ],
+                "art_of_forging:knockback": [ 0.5, 0 ],
+                "art_of_forging:hubris": 30,
+                "crushing": 2,
+                "armorPenetration": 5,
+                "art_of_forging:carnage": [ 1, 10 ]
+            },
+            "tools": {
+                "axe_dig": [ 5, 1 ],
+                "axe_strip": [ 1, 1 ],
+                "axe_scrape": [ 1, 1 ],
+                "axe_wax_off": [ 1, 1 ]
+            },
+            "durability": 100,
+            "magicCapacity": 800,
+            "glyph": {
+                "tint": "971020",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 176,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/double/head/annihilator_axe/annihilator_axe"
+                },
+                {
+                    "location": "tetra:item/module/double/head/annihilator_axe/annihilator_axe_glow",
+                    "emission": 10
+                }
+            ]
+        }
+    ]
+}

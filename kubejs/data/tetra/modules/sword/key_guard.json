@@ -1,0 +1,45 @@
+{
+	"replace": true,
+	"slots": [ "sword/guard" ],
+	"type": "tetra:basic_module",
+	"renderLayer": "higher",
+	"variants": [
+		{
+			"materials": [ "tetra:metal/", "tetra:wood/", "tetra:scale/", "tetra:bone/", "tetra:misc/vent_plate" ],
+			"key": "key_guard/",
+			"integrity": -1,
+			"attributes": {
+				"generic.armor": 0.5
+			},
+			"effects": {
+				"quickStrike": 1
+			},
+			"extract": {
+				"primaryAttributes": {
+					"generic.armor": 0.3
+				},
+				"secondaryAttributes": {
+					"generic.armor": 0.1
+				},
+				"tertiaryAttributes": {
+					"generic.armor": -0.05
+				},
+				"secondaryEffects": {
+					"quickStrike": -0.2
+				},
+				"tertiaryEffects": {
+					"quickStrike": 0.5
+				},
+				"durability": 0.2,
+				"integrity": -0.1,
+				"glyph": {
+					"textureLocation": "tetra:textures/gui/aof_glyph.png",
+					"textureX": 7,
+					"textureY": 16
+				},
+				"availableTextures": [ "metal", "shiny", "crude" ],
+				"models": [{ "location": "tetra:item/module/sword/guard/key_guard/" }]
+			}
+		}
+	]
+}

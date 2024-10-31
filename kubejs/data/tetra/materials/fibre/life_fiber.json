@@ -1,0 +1,32 @@
+{
+    "key": "life_fiber",
+    "category": "fibre",
+    "primary": 7.8,
+    "secondary": 4.5,
+    "tertiary": 7.2,
+    "durability": 1360,
+    "integrityCost": 2,
+    "integrityGain": 7,
+    "magicCapacity": 100,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "e82c32",
+        "texture": "e82c32"
+    },
+    "textures": [
+        "metal",
+        "default"
+    ],
+    "material": {
+        "items": [ "art_of_forging:life_fiber" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:iron"
+    },
+    "effects": {
+        "stabilizing": 3,
+        "unbreaking": 3,
+        "art_of_forging:resolve": [ 2, 3.5 ]
+    }
+}

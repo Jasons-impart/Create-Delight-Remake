@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/eerie_fuller\", \"sword/blade\": \"sword/basic_blade\",\"sword/basic_blade_material\": \"basic_blade/forged_steel\", \"sword/fuller\": \"sword/eerie_fuller\", \"sword/eerie_fuller_material\": \"eerie_fuller/eerie_fullereerie_shard\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/forged_steel\"}"
+        },
+        "frame": "challenge",
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.eerie_fuller.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.eerie_fuller.description"
+        },
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/echo_fuller",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/eerie_fuller",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module"
+        ]
+    ]
+}

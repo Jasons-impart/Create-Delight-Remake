@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "art_of_forging:eerie_shard"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.eerie_shard.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.eerie_shard.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:spelunking/find_nano_insectoid",
+    "criteria": {
+        "eerie_shard": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "art_of_forging:eerie_shard"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "eerie_shard"
+        ]
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "replace": true,
+    "localizationKey": "shared/hone_nano_fused_1",
+    "slots": [
+        "double/handle",
+        "double/head_left",
+        "double/head_right",
+        "single/handle",
+        "single/head",
+        "sword/blade",
+        "sword/hilt",
+        "bow/stave",
+        "bow/string",
+        "shield/plate",
+        "shield/grip",
+        "crossbow/stave",
+        "crossbow/stock"
+    ],
+    "keySuffixes": [
+        "_double_handle",
+        "_double_head_left",
+        "_double_head_right",
+        "_single_handle",
+        "_single_head",
+        "_sword_blade",
+        "_sword_hilt",
+        "_bow_stave",
+        "_bow_string",
+        "_shield_plate",
+        "_shield_grip",
+        "_crossbow_stave",
+        "_crossbow_stock"
+    ],
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureX": 112,
+        "textureY": 240
+    },
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "nano_fused"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:nano_insectoid" ],
+                "count": 1
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:stone"
+            },
+            "experienceCost": 3,
+            "improvements": {
+                "nano_fused": 1
+            }
+        }
+    ]
+}

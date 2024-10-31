@@ -1,0 +1,32 @@
+{
+    "replace": true,
+    "slots": [
+        "double/head_left"
+    ],
+    "keySuffixes": [
+        "_left"
+    ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "971020",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 176,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:demonic_axe"]
+            },
+            "experienceCost": 10,
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "double/annihilator_axe",
+            "moduleVariant": "annihilator_axe/annihilator_axe"
+        }
+    ]
+}

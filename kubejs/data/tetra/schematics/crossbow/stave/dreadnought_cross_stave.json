@@ -1,0 +1,49 @@
+{
+    "replace": true,
+    "slots": [ "crossbow/stave" ],
+    "materialSlotCount": 1,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 112
+    },
+    "requirement": {
+        "type": "tetra:locked",
+        "key": "tetra:bow/stave/dreadnought_cross_stave"
+    },
+    "translation": {
+        "primaryAttributes": {
+            "tetra:draw_speed": -1,
+            "tetra:draw_strength": 4
+        },
+        "tertiaryAttributes": {
+            "tetra:draw_speed": 2,
+            "tetra:draw_strength": 3
+        },
+        "durability": 3,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "minecraft:stick" ],
+                "count": 4
+            },
+            "moduleKey": "crossbow/dreadnought_cross_stave",
+            "moduleVariant": "dreadnought_cross_stave/stick"
+        },
+        {
+            "materials": [ "tetra:wood/" ],
+            "moduleKey": "crossbow/dreadnought_cross_stave",
+            "moduleVariant": "dreadnought_cross_stave/"
+        },
+        {
+            "materials": [ "tetra:metal/" ],
+            "toolOffset": 2,
+            "moduleKey": "crossbow/dreadnought_cross_stave",
+            "moduleVariant": "dreadnought_cross_stave/"
+        }
+    ]
+}

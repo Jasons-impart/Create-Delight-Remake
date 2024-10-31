@@ -1,0 +1,43 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:sword/euclidean_dagger/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "euclidean_dagger/euclidean_dagger",
+            "integrity": -2,
+            "attributes": {
+                "generic.attack_speed": -0.9,
+                "generic.attack_damage": 8.5
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "durability": 65,
+            "tags":[
+                "forge:swords"
+            ],
+            "effects": {
+                "art_of_forging:life_steal": [ 3, 30 ],
+                "art_of_forging:decaying": [ 1, 2 ],
+                "armorPenetration": 15,
+                "jab": 45
+            },
+            "magicCapacity": 1000,
+            "glyph": {
+                "tint": "dccb9e",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 112,
+                "textureY": 16
+            },
+            "models": [{ "location": "tetra:item/module/sword/blade/euclidean_dagger/euclidean_dagger" }]
+        }
+    ]
+}

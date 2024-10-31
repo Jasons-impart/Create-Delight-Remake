@@ -1,0 +1,31 @@
+{
+    "replace": true,
+    "slots": [ "double/head_left" ],
+    "keySuffixes": [ "_left" ],
+    "materialSlotCount": 1,
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 224,
+        "textureY": 16
+    },
+    "displayType": "major",
+    "translation": {
+        "primaryAttributes": {
+            "generic.attack_damage": 2
+        },
+        "primaryEffects": {
+            "art_of_forging:beheading": 2
+        },
+        "durability": 2,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "countFactor": 2,
+            "moduleKey": "double/reaping_scythe",
+            "moduleVariant": "reaping_scythe/"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+	"replace": false,
+	"slots": [ "sword/guard" ],
+	"materialSlotCount": 1,
+	"displayType": "minor",
+	"glyph": {
+		"textureX": 80,
+		"textureY": 16
+	},
+	"outcomes": [
+		{
+			"materials": [ "tetra:socket/" ],
+			"moduleKey": "sword/socket",
+			"moduleVariant": "sword_socket/",
+			"experienceFactor": 1
+		}
+	]
+}

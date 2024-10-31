@@ -1,0 +1,49 @@
+{
+    "replace": true,
+    "slots": [ "double/head_left" ],
+    "keySuffixes": [
+        "_left"
+    ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureX": 64
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:and",
+                "requirements": [
+                    {
+                        "type": "tetra:module",
+                        "module": "double/basic_hammer_left"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "double/utilized"
+                    }
+                ]
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "head_hone/radius_tier"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:gold"
+            },
+            "improvements": {
+                "head_hone/radius_tier": 1
+            }
+        }
+    ]
+}

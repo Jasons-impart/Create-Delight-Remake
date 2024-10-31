@@ -1,0 +1,36 @@
+{
+	"replace": true,
+	"slots": [ "double/head_left" ],
+	"keySuffixes": [ "_left" ],
+	"materialSlotCount": 1,
+	"glyph": {
+		"textureLocation": "tetra:textures/gui/aof_glyph.png",
+		"textureX": 64
+	},
+	"displayType": "major",
+	"translation": {
+		"primaryAttributes": {
+			"generic.attack_damage": 2
+		},
+		"primaryEffects": {
+			"stun": 2
+		},
+		"secondaryEffects": {
+			"throwable": 2
+		},
+		"tools": {
+			"axe_dig": [ 2, 2 ]
+		},
+		"durability": 2,
+		"integrity": -3,
+		"magicCapacity": 3
+	},
+	"outcomes": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"countFactor": 1,
+			"moduleKey": "double/tomahawk",
+			"moduleVariant": "tomahawk/"
+		}
+	]
+}

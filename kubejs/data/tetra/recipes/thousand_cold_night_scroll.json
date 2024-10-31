@@ -1,0 +1,38 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " m ",
+        "msm",
+        " m "
+    ],
+    "key": {
+        "m": {
+            "item": "art_of_forging:shards_of_malice"
+        },
+        "s": {
+            "type": "tetra:scroll",
+            "key": "sword/katana/murasama_blade",
+            "schematics": [ "" ],
+            "intricate": false,
+            "material": 2,
+            "ribbon": "c52323"
+        }
+    },
+    "result": {
+        "item": "tetra:scroll_rolled",
+        "count": 1,
+        "nbt": {
+            "BlockEntityTag": {
+                "data": [{
+                    "key": "sword/thousand_cold_nights",
+                    "schematics": [ "tetra:sword/katana/murasama_blade", "tetra:sword/thousand_cold_nights" ],
+                    "details": "otherworldly",
+                    "intricate": true,
+                    "material": 2,
+                    "ribbon": "5c7c80",
+                    "glyphs": [ 7, 8, 14, 13 ]
+                }]
+            }
+        }
+    }
+}

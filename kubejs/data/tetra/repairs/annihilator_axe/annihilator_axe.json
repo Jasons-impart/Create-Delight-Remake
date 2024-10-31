@@ -1,0 +1,11 @@
+{
+    "material": {
+        "items": [ "art_of_forging:shards_of_malice" ],
+        "count": 3
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:diamond"
+    },
+    "moduleKey": "double/annihilator_axe",
+    "moduleVariant": "annihilator_axe/annihilator_axe"
+}

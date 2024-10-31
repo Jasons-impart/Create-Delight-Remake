@@ -1,0 +1,30 @@
+{
+    "replace": true,
+    "localizationKey": "sword/shared_blade/hone_damage_2",
+    "slots": [
+        "single/head"
+    ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 96
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "mace_head_hone/damage",
+        "level": 1
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:gold"
+            },
+            "improvements": {
+                "mace_head_hone/damage": 2
+            }
+        }
+    ]
+}

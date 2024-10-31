@@ -1,0 +1,27 @@
+{
+    "replace": true,
+    "slots": [ "single/head" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "971020",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:demonic_flail" ]
+            },
+            "experienceCost": 10,
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "single/mourning_star",
+            "moduleVariant": "mourning_star/mourning_star"
+        }
+    ]
+}

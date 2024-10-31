@@ -1,0 +1,73 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:sword/rapier_blade/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "key": "tonal_blade/",
+            "attributes": {
+                "generic.attack_speed": -1.45,
+                "generic.attack_damage": 0.1
+            },
+            "effects": {
+                "art_of_forging:disorienting": [ 3, 4 ],
+                "armorPenetration": 1
+            },
+            "tools": {
+                "cut": [ 1, 0.2 ]
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "durability": -20,
+            "tags":[
+                "forge:swords"
+            ],
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.65
+                },
+                "secondaryAttributes": {
+                    "generic.attack_damage": 0.4,
+                    "generic.attack_speed": -0.4
+                },
+                "tertiaryAttributes": {
+                    "generic.attack_damage": -0.4,
+                    "generic.attack_speed": 0.5
+                },
+                "primaryEffects": {
+                    "art_of_forging:disorienting": [ 0, 1 ],
+                    "armorPenetration": 0.25
+                },
+                "secondaryEffects": {
+                    "art_of_forging:disorienting": -1,
+                    "armorPenetration": 0.25
+                },
+                "tertiaryEffects": {
+                    "art_of_forging:disorienting": [ 1, 3 ],
+                    "armorPenetration": -0.7
+                },
+                "durability": 0.7,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 128,
+                    "textureY": 16
+                },
+                "availableTextures": [ "metal", "shiny", "grainy", "crude" ],
+                "models": [{
+                    "location": "tetra:item/module/sword/blade/tonal_blade/"
+                }]
+            }
+        }
+    ]
+}

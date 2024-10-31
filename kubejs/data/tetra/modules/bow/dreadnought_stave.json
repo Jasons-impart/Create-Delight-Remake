@@ -1,0 +1,62 @@
+{
+	"replace": true,
+	"slots": [ "bow/stave" ],
+	"type": "tetra:basic_major_module",
+	"improvements": [
+		"tetra:bow/stave/dreadnought_stave",
+		"tetra:bow/shared_stave/",
+		"tetra:bow/shared/",
+		"tetra:shared/"
+	],
+	"variants": [{
+			"materials": [ "tetra:wood/", "tetra:misc/stick", "tetra:metal/" ],
+			"key": "dreadnought_stave/",
+			"attributes": {
+				"tetra:draw_speed": 1.3
+			},
+			"aspects": {
+				"bow": 2,
+				"breakable": 2
+			},
+			"effects": {
+				"spread": [ 0, 97 ]
+			},
+			"durability": 255,
+			"integrity": -1,
+			"extract": {
+				"primaryAttributes": {
+					"tetra:draw_speed": 0.1,
+					"tetra:draw_strength": 1.3
+				},
+				"tertiaryAttributes": {
+					"tetra:draw_speed": -0.12,
+					"tetra:draw_strength": 0.5
+				},
+			"durability": 0.8,
+			"integrity": -1,
+			"magicCapacity": 1,
+			"glyph": {
+				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureX": 112
+			},
+			"availableTextures": ["crude"],
+			"models": [
+				{
+					"location": "tetra:item/module/bow/stave/dreadnought/"
+				},
+				{
+					"type": "draw_0",
+					"location": "tetra:item/module/bow/stave/dreadnought/"
+				},
+				{
+					"type": "draw_1",
+					"location": "tetra:item/module/bow/stave/dreadnought/1_"
+				},
+				{
+					"type": "draw_2",
+					"location": "tetra:item/module/bow/stave/dreadnought/1_"
+				}
+			]
+		}
+	}]
+}

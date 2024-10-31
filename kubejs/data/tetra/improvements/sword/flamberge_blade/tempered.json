@@ -1,0 +1,26 @@
+[
+	{
+		"key": "blade/tempered",
+		"level": 1,
+		"integrity": -1,
+		"effects": {
+			"armorPenetration": 10
+		}
+	},
+	{
+		"key": "blade/tempered",
+		"level": 2,
+		"integrity": -1,
+		"effects": {
+			"armorPenetration": 15
+		}
+	},
+	{
+		"key": "blade/tempered",
+		"level": 3,
+		"integrity": -2,
+		"effects": {
+			"armorPenetration": 20
+		}
+	}
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "key": "sword/architect_imprv",
+        "integrity": -2,
+        "effects": {
+            "art_of_forging:esoteric_edge": 20,
+            "truesweep": 1,
+            "sweeping": 1,
+            "severing": [ 10, 2 ],
+            "art_of_forging:knockback": [ 0.5, 0 ]
+        },
+        "attributes": {
+            "generic.attack_damage": 1.4,
+            "generic.attack_speed": 0.2
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/architects_crucible/architects_crucible"
+            },
+            {
+                "location": "tetra:item/module/sword/blade/architects_crucible/architects_crucible_glow",
+                "emission": 2
+            }
+        ]
+    }
+]

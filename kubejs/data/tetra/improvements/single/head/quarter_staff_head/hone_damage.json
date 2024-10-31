@@ -1,0 +1,56 @@
+[
+    {
+        "key": "quarter_staff_head_hone/damage",
+        "level": 1,
+        "aspects": {
+          "honed": 1
+        },
+        "attributes": {
+          "generic.attack_damage": 0.5
+        }
+    },
+    {
+        "key": "quarter_staff_head_hone/damage",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+          "honed": 2
+        },
+        "attributes": {
+          "generic.attack_damage": 1
+        }
+    },
+    {
+        "key": "quarter_staff_head_hone/damage",
+        "level": 3,
+        "integrity": -1,
+        "aspects": {
+          "honed": 3
+        },
+        "attributes": {
+          "generic.attack_damage": 1.5
+        }
+    },
+    {
+        "key": "quarter_staff_head_hone/damage",
+        "level": 4,
+        "integrity": -2,
+        "aspects": {
+          "honed": 4
+        },
+        "attributes": {
+          "generic.attack_damage": 2
+        }
+    },
+    {
+        "key": "quarter_staff_head_hone/damage",
+        "level": 5,
+        "integrity": -2,
+        "aspects": {
+          "honed": 5
+        },
+        "attributes": {
+          "generic.attack_damage": 3
+        }
+    }
+]

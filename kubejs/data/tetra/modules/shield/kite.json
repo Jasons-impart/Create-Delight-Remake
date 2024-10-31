@@ -1,0 +1,54 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "shield/plate" ],
+    "improvements": [
+        "tetra:shield/plate/kite/",
+        "tetra:shield/plate/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:metal/", "tetra:bone/", "tetra:misc/vent_plate" ],
+            "key": "kite/",
+            "attributes": {
+                "tetra:ability_damage": 5,
+                "tetra:ability_cooldown": 3.5
+            },
+            "aspects": {
+                "bluntWeapon": 1,
+                "breakable": 2
+            },
+            "effects": {
+                "blocking": 16
+            },
+            "durability": 98,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:ability_damage": 0.6
+                },
+                "secondaryAttributes": {
+                    "tetra:ability_damage": 0.3,
+                    "tetra:ability_cooldown": 0.36
+                },
+                "tertiaryAttributes": {
+                    "tetra:ability_cooldown": -0.21
+                },
+                "durability": 0.8,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 224
+                },
+                "availableTextures": [ "wooden", "metal", "bone", "vent" ],
+                "models": [
+                    {
+                        "type": "tetra:plate/kite",
+                        "location": "tetra:item/module/shield/plate/kite/"
+                    }
+                ]
+            }
+        }
+    ]
+}

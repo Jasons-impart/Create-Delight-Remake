@@ -1,0 +1,31 @@
+{
+    "replace": true,
+    "slots": [
+        "bow/stave"
+    ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureX": 16,
+        "textureY": 240
+    },
+    "requirement": {
+        "type": "tetra:not",
+        "requirement": {
+            "type": "tetra:improvement",
+            "improvement": "stave_hone/speed"
+        }
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "axe_dig": "minecraft:gold"
+            },
+            "improvements": {
+                "stave_hone/speed": 1
+            }
+        }
+    ]
+}

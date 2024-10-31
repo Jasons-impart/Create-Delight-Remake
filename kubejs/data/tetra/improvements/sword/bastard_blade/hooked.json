@@ -1,0 +1,26 @@
+[
+    {
+        "key": "blade/hooked",
+        "level": 1,
+        "integrity": -1,
+        "effects": {
+            "backstab": 1
+        }
+    },
+    {
+        "key": "blade/hooked",
+        "level": 2,
+        "integrity": -1,
+        "effects": {
+            "backstab": 2
+        }
+    },
+    {
+        "key": "blade/hooked",
+        "level": 3,
+        "integrity": -2,
+        "effects": {
+            "backstab": 4
+        }
+    }
+]

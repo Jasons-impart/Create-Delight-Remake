@@ -1,0 +1,26 @@
+{
+    "replace": true,
+    "slots": [
+        "crossbow/stave"
+    ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureX": 32,
+        "textureY": 240
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "crossbow_stave_hone/damage",
+        "level": 1
+    },
+    "outcomes": [
+        {
+            "improvements": {
+                "crossbow_stave_hone/damage": 2
+            }
+        }
+    ]
+}

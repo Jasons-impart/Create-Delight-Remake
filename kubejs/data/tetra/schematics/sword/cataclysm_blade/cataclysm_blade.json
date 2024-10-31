@@ -1,0 +1,27 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "971020",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 192,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:demonic_blade" ]
+            },
+            "experienceCost": 10,
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "sword/cataclysm_blade",
+            "moduleVariant": "cataclysm_blade/cataclysm_blade"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+[
+    {
+        "modules": [
+            "double/tomahawk",
+            "double/basic_hammer"
+        ],
+        "name": "double/mjolnir"
+    },
+    {
+        "modules": [
+            "double/tomahawk",
+            "double/basic_axe"
+        ],
+        "name": "double/dual_throwing_axe"
+    }
+]

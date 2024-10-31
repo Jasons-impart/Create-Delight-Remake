@@ -1,0 +1,35 @@
+{
+    "replace": true,
+    "slots": [ "single/head" ],
+    "materialSlotCount": 1,
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 240
+    },
+    "translation": {
+        "primaryAttributes": {
+            "generic.attack_speed": 1,
+            "generic.armor": 1
+        },
+        "secondaryAttributes": {
+            "generic.attack_damage": 1,
+            "generic.attack_speed": -1,
+            "generic.movement_speed": 2
+        },
+        "primaryEffects": {
+            "stun": 1
+        },
+        "durability": 3,
+        "integrity": -3,
+        "magicCapacity": 2
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "countFactor": 2,
+            "moduleKey": "single/cane_head",
+            "moduleVariant": "cane_head/"
+        }
+    ]
+}

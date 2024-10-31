@@ -1,0 +1,45 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/rapier_upgrade\", \"sword/blade\": \"sword/rapier_blade\",\"sword/rapier_blade_material\": \"rapier_blade/iron\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/oak_wood\"}"
+		},
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.rapier_upgrade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.rapier_upgrade.description"
+        }
+    },
+    "parent": "tetra:art_of_forging/root",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/rapier_blade",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        },
+        "improvement": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "sword/rapier_blade",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module",
+            "improvement"
+        ]
+    ]
+}

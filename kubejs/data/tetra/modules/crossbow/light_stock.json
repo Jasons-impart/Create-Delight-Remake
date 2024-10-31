@@ -1,0 +1,46 @@
+{
+    "replace": true,
+    "slots": [ "crossbow/stock" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/light_stock/",
+        "tetra:crossbow/stock/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:rod/stick", "tetra:metal/" ],
+            "key": "light_stock/",
+            "attributes": {
+                "tetra:draw_strength": -0.5,
+                "tetra:draw_speed": 0.2
+            },
+            "aspects": {
+              "crossbow": 2,
+              "breakable": 2
+            },
+            "durability": 85,
+            "extract": {
+                "secondaryAttributes": {
+                    "tetra:draw_strength": -0.5,
+                    "tetra:draw_speed": 0.1
+                },
+                "durability": 0.05,
+                "integrity": 0.5,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 128,
+                    "textureY": 48
+                },
+                "availableTextures": [ "default" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/crossbow/stock/light_stock/",
+                        "type": "static"
+                    }
+                ]
+            }
+        }
+    ]
+}

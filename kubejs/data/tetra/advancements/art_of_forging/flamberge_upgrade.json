@@ -1,0 +1,45 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/flamberge_upgrade\", \"sword/blade\": \"sword/flamberge_blade\",\"sword/flamberge_blade_material\": \"flamberge_blade/iron\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/iron\", \"sword/guard\": \"sword/wide_guard\",\"sword/wide_guard_material\": \"wide_guard/iron\"}"
+		},
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.flamberge_upgrade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.flamberge_upgrade.description"
+        }
+    },
+    "parent": "tetra:art_of_forging/katana_upgrade",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/flamberge_blade",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        },
+        "improvement": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "sword/flamberge_blade",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module",
+            "improvement"
+        ]
+    ]
+}

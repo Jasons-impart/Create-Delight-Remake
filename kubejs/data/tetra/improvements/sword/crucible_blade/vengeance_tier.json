@@ -1,0 +1,34 @@
+[
+    {
+        "key": "blade/vengeance_tier",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "art_of_forging:vengeance": [ 5, 0 ]
+        }
+    },
+    {
+        "key": "blade/vengeance_tier",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+            "honed": 2
+        },
+        "effects": {
+            "art_of_forging:vengeance": [ 10, 0 ]
+        }
+    },
+    {
+        "key": "blade/vengeance_tier",
+        "level": 3,
+        "integrity": -1,
+        "aspects": {
+            "honed": 3
+        },
+        "effects": {
+            "art_of_forging:vengeance": [ 15, 0 ]
+        }
+    }
+]

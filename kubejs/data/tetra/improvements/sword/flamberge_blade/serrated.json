@@ -1,0 +1,34 @@
+[
+	{
+		"key": "blade/serrated",
+		"level": 1,
+		"integrity": -1,
+		"effects": {
+			"bleeding": 2
+		}
+	},
+	{
+		"key": "blade/serrated",
+		"level": 2,
+		"integrity": -1,
+		"effects": {
+			"bleeding": 3
+		}
+	},
+	{
+		"key": "blade/serrated",
+		"level": 3,
+		"integrity": -2,
+		"effects": {
+			"bleeding": 5
+		}
+	},
+	{
+		"key": "blade/serrated",
+		"level": 4,
+		"integrity": -2,
+		"effects": {
+			"bleeding": 7
+		}
+	}
+]

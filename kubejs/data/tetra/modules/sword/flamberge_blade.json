@@ -1,0 +1,65 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"type": "tetra:basic_major_module",
+	"improvements": [
+		"tetra:sword/flamberge_blade/",
+		"tetra:sword/shared_blade/",
+		"tetra:sword/shared/",
+		"tetra:shared/"
+	],
+	"variants": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"key": "flamberge_blade/",
+			"attributes": {
+				"generic.attack_speed": -1.7,
+				"generic.attack_damage": 0.75
+			},
+			"effects": {
+				"armorPenetration": 6,
+				"sweeping": 1,
+				"puncture": [ 3, 8 ],
+				"bleeding": 1
+			},
+			"tools": {
+				"cut": [ 1, 0.5 ]
+			},
+			"aspects": {
+				"edged_weapon": 2,
+				"breakable": 2
+			},
+			"durability": -20,
+			"tags":[
+				"forge:swords"
+			],
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 1
+				},
+				"primaryEffects": {
+					"armorPenetration": 2
+				},
+				"secondaryEffects": {
+					"puncture": 2
+				},
+				"tertiaryEffects": {
+					"sweeping": 1,
+					"armorPenetration": -1,
+					"puncture": -0.3
+				},
+				"durability": 0.9,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureLocation": "tetra:textures/gui/aof_glyph.png",
+					"textureX": 16
+				},
+				"availableTextures": [ "metal", "shiny", "grainy", "crude" ],
+				"models": [{
+					"location": "tetra:item/module/sword/blade/flamberge_blade/"
+				}]
+			}
+		}
+	]
+}

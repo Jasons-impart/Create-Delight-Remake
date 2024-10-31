@@ -1,0 +1,35 @@
+{
+    "replace": true,
+    "slots": [ "double/head_left" ],
+    "keySuffixes": [ "_left" ],
+    "materialSlotCount": 0,
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph": {
+        "textureX": 128,
+        "textureY": 240
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:locked",
+                "key": "tetra:utilize/hammer"
+            },
+            {
+                "type": "tetra:module",
+                "module": "double/basic_hammer_left"
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:iron"
+            },
+            "improvements": {
+                "double/utilized": 0
+            }
+        }
+    ]
+}

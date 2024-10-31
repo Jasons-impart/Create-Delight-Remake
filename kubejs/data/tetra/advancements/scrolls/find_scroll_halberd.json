@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:scroll_rolled",
+            "nbt": "{BlockEntityTag:{data:[{material:1,ribbon:\"b8ced9\"}]}}"
+        },
+        "title": {
+            "translate": "tetra.advancements.scrolls.find_scroll_halberd.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.scrolls.find_scroll_halberd.description"
+        }
+    },
+    "parent": "tetra:scrolls/root",
+    "criteria": {
+        "find": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "tetra:scroll_rolled",
+                        "nbt": "{BlockEntityTag:{data:[{key:\"single/head/halberd_head/halberd_head\"}]}}"
+                    }
+                ]
+            }
+        }
+    }
+}

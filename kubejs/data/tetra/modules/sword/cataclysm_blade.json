@@ -1,0 +1,53 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:sword/cataclysm_blade/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "cataclysm_blade/cataclysm_blade",
+            "integrity": -3,
+            "attributes": {
+                "generic.attack_speed": -1.0,
+                "generic.attack_damage": 11
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "durability": 100,
+            "tags":[
+                "forge:swords"
+            ],
+            "effects": {
+                "art_of_forging:devouring": [ 2, 5 ],
+                "art_of_forging:life_steal": [ 1.5, 25 ],
+                "art_of_forging:knockback": [ 0.5, 0 ],
+                "art_of_forging:hubris": 30,
+                "armorPenetration": 5,
+                "art_of_forging:slaughtering": [ 10, 70 ]
+            },
+            "magicCapacity": 800,
+            "glyph": {
+                "tint": "971020",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 192,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade"
+                },
+                {
+                    "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade_glow",
+                    "emission": 10
+                }
+            ]
+        }
+    ]
+}

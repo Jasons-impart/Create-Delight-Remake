@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/murasama_blade\", \"sword/blade\": \"sword/katana_blade\",\"sword/katana_blade_material\": \"katana_blade/netherite\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/netherite\", \"sword/guard\": \"sword/wide_guard\",\"sword/wide_guard_material\": \"wide_guard/netherite\", \"sword/blade:sword/murasama_imprv\": 0}"
+        },
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.murasama_blade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.murasama_blade.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/katana_upgrade",
+    "criteria": {
+        "murasama_imprv": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "sword/murasama_imprv"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "murasama_imprv"
+        ]
+    ]
+}

@@ -1,0 +1,46 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "requirement": {
+        "type": "tetra:locked",
+        "key": "tetra:sword/scissor_blade_left"
+    },
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208
+    },
+    "translation": {
+        "primaryAttributes": {
+            "generic.attack_damage": 1
+        },
+        "primaryEffects": {
+            "armorPenetration": 1
+        },
+        "tertiaryEffects": {
+            "armorPenetration": -1
+        },
+        "durability": 3,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "countFactor": 2,
+            "moduleKey": "sword/scissor_blade_left",
+            "moduleVariant": "scissor_blade_left/"
+        },
+        {
+            "materials": [ "tetra:fibre/life_fiber" ],
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "countFactor": 2,
+            "moduleKey": "sword/rending_scissor_red",
+            "moduleVariant": "rending_scissor_red/rending_scissor_red"
+        }
+    ]
+}
