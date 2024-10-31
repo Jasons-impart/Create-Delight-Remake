@@ -13,8 +13,8 @@
             "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
             "key": "katana_blade/",
             "attributes": {
-                "generic.attack_speed": -1.5,
-                "generic.attack_damage": 0.12
+                "generic.attack_speed": -1,
+                "generic.attack_damage": 2
             },
             "effects": {
                 "skewering": [ 1, 1 ],
@@ -34,7 +34,7 @@
             ],
             "extract": {
                 "primaryAttributes": {
-                    "generic.attack_damage": 0.8
+                    "generic.attack_damage": 0.7
                 },
                 "tools": {
                     "cut": [ 0.5, 1 ]
@@ -43,15 +43,22 @@
                     "skewering": 0.3,
                     "sweeping": 1
                 },
+                "secondaryAttributes": {
+                    "generic.attack_damage": 0.4,
+                    "generic.attack_speed": -0.1
+                },    
                 "secondaryEffects": {
                     "sweeping": -0.1,
                     "skewering": 0.1
                 },
+			"tertiaryAttributes": {
+				"generic.attack_speed": 0.1
+			    },
                 "tertiaryEffects": {
                     "sweeping": 0.3,
                     "abilityMomentum": 0.1
                 },
-                "durability": 0.9,
+                "durability": 0.2,
                 "integrity": -1,
                 "magicCapacity": 1.5,
                 "glyph": {

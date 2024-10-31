@@ -12,8 +12,8 @@
 		"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
 		"key": "crucible_blade/",
 		"attributes": {
-			"generic.attack_speed": -2,
-			"generic.attack_damage": 1
+			"generic.attack_speed": -2.5,
+			"generic.attack_damage": 3
 		},
 		"effects": {
 			"armorPenetration": 10,
@@ -36,11 +36,11 @@
 		],
 		"extract": {
 			"primaryAttributes": {
-				"generic.attack_damage": 2
+				"generic.attack_damage": 1.5
 			},
 			"secondaryAttributes": {
 				"generic.attack_damage": 0.5,
-				"generic.attack_speed": -0.1
+				"generic.attack_speed": -0.05
 			},
 			"tertiaryAttributes": {
 				"generic.attack_damage": -1,

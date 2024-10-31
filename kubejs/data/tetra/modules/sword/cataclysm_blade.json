@@ -13,8 +13,8 @@
             "key": "cataclysm_blade/cataclysm_blade",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.0,
-                "generic.attack_damage": 11
+                "generic.attack_speed": -1.35,
+                "generic.attack_damage": 10
             },
             "aspects": {
                 "edged_weapon": 2,
