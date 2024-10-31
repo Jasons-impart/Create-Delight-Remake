@@ -4,16 +4,12 @@ ServerEvents.recipes(e => {
         "create_oppenheimered:filling/acid_radrook",
         "alexscaves:uranium_rod",
         "create_oppenheimered:mixing/azure_to_scarlet_neodymium",
-        "create_oppenheimered:mixing/scarlet_to_azure_neodymium"
+        "create_oppenheimered:mixing/scarlet_to_azure_neodymium",
+        "alexscaves:nuclear_bomb"
 ])
 
 
     //硫磺，硫磺晶簇->硫粉
-    e.recipes.create.crushing([
-        '3x alexscaves:sulfur_dust',
-        Item.of('alexscaves:sulfur_dust').withChance(0.5)
-    ], 'alexscaves:sulfur_cluster'
-    ).id("alexscaves:crushing/sulfur_dust")
     e.recipes.create.crushing([
         'alexscaves:sulfur_dust',
         Item.of('alexscaves:sulfur_dust').withChance(0.25)
@@ -75,6 +71,22 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_1)
         .loops(1)
         .id("alexscaves:uranium_rod")
+    //核弹
+    e.recipes.create.mechanical_crafting("alexscaves:nuclear_bomb", [
+        "AABAA",
+        "ACDCA",
+        "ACECA",
+        "ACDCA",
+        "AABAA"
+    ],
+    {
+        A: "ad_astra:steel_plate",
+        B: "minecraft:tnt",
+        C: "alexscaves:uranium_rod",
+        D: "alexscaves:fissile_core",
+        E: "alexscaves:block_of_uranium"
+    })
+    .id("alexscaves:nuclear_bomb")
     
     //修改动力刷怪笼配方
     e.replaceInput({id: "create_mechanical_spawner:mechanical_spawner"}, "minecraft:emerald", "alexscaves:amber_monolith")

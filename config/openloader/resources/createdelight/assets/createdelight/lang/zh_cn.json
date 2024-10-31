@@ -145,6 +145,9 @@
     "block.createdelight.raw_tin_block": "粗锡块",
     "block.createdelight.tin_ore": "锡矿石",
     "block.createdelight.deepslate_tin_ore": "深层锡矿石",
+    "item.createdelight.fire_dragonsteel_armorplate": "龙炎钢插板",
+    "item.createdelight.ice_dragonsteel_armorplate": "龙霜钢插板",
+    "item.createdelight.lightning_dragonsteel_armorplate": "龙霆钢插板",
     "item.createdelight.corn_flour": "玉米面粉",
     "item.createdelight.salami": "腊肠",
     "item.createdelight.braised_intestines_in_brown_sauce":"九转大肠",
@@ -224,6 +227,7 @@
     "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
     "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
     "item.tetra.scroll.bow/stave/remembrance_stave.description": "包含锻造追忆之弓的知识",
+
     "block.mbd2.energy_in": "能量输入口",
     "block.mbd2.alloy_electric_furnace": "合金电炉核心",
     "block.mbd2.create_in": "应力输入接口",
@@ -231,5 +235,9 @@
     "block.mbd2.butchery_out": "屠宰室输出口",
     "block.mbd2.butchery_room": "屠宰室核心",
     "block.mbd2.monster_liquid": "怪物压缩核心",
-    "mbd2.butchery": "屠宰室"
+    "mbd2.butchery": "屠宰室",
+
+    "block.createdelight.radon": "氡气",
+    "fluid.createdelight.radon": "氡气",
+    "item.createdelight.radon_bucket": "氡气桶"
 }

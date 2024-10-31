@@ -1,5 +1,7 @@
-ServerEvents.tags("item", e => {
-    e.add("protection_pixel:plates", [
-        
-    ])
-})
+// armor, toughness, weight
+const armorplate = {
+    "createdelight:fire_dragonsteel_armorplate": [2.5, 1.5, 1.5],
+    "createdelight:ice_dragonsteel_armorplate": [2.5, 1.5, 1.5],
+    "createdelight:lightning_dragonsteel_armorplate": [2.5, 1.5, 1.5]
+}
+

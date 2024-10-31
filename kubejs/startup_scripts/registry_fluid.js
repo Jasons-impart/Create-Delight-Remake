@@ -139,4 +139,11 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.slime")
         .translationKey("block.createdelight.slime")
         .translationKey("item.createdelight.slime_bucket")
+    //氡气
+    e.create("createdelight:radon")
+        .thinTexture(0XA0FFDA)
+        .noBlock()
+        .translationKey("fluid.createdelight.radon")
+        .translationKey("block.createdelight.radon")
+        .translationKey("item.createdelight.radon_bucket")
 })

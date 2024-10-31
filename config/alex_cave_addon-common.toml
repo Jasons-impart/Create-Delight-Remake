@@ -6,4 +6,6 @@ crossbow-shoot-nuke = false
 larger_meteor = false
 enable-magnetic-orbs = false
 magnetic-orbs-no-break = false
+dinosaur-jockey = true
+cooler-magnetic-quarry = false
 

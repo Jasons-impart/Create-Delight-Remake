@@ -1,5 +1,6 @@
 ServerEvents.recipes(e => {
     e.replaceInput({ mod: "vintageimprovements" }, "vintageimprovements:iron_spring", "#forge:spring/between_500_2_1000")
+    e.replaceInput({ id: "vintageimprovements:pressurizing/sulfur_dioxide"}, "vintageimprovements:sulfur", "alexscaves:sulfur_dust")
     e.recipes.kubejs.shaped(
         "create_enchantment_industry:printer", [
         "ABA",
