@@ -1,0 +1,30 @@
+{
+    "key": "endsteel_ingot",
+    "category": "metal",
+    "primary": 14,
+    "secondary": 4,
+    "tertiary": 6,
+    "durability": 20000,
+    "integrityCost": 4,
+    "integrityGain": 12,
+    "magicCapacity": 80,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 14,
+    "effects": {
+        "art_of_forging:dragon_mist": [ 2, 15 ]
+    },
+    "tints": {
+        "glyph": "311c3b",
+        "texture": "311c3b"
+    },
+    "textures": [
+        "heavy",
+        "metal"
+    ],
+    "material": {
+        "items": [ "art_of_forging:endsteel_ingot" ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:netherite"
+    }
+}

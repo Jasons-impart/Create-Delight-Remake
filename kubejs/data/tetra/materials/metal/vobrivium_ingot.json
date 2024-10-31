@@ -1,0 +1,30 @@
+{
+    "key": "vobrivium_ingot",
+    "category": "metal",
+    "primary": 9,
+    "secondary": 3,
+    "tertiary": 4,
+    "durability": 2500,
+    "integrityCost": 2,
+    "integrityGain": 9,
+    "magicCapacity": 200,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 10,
+    "effects": {
+        "art_of_forging:stormcaller": [ 1, 10 ]
+    },
+    "tints": {
+        "glyph": "deedee",
+        "texture": "deedee"
+    },
+    "textures": [
+        "heavy",
+        "metal"
+    ],
+    "material": {
+        "items": [ "art_of_forging:vobrivium_ingot" ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:netherite"
+    }
+}
