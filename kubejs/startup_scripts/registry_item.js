@@ -493,8 +493,8 @@ StartupEvents.registry("item", e => {
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.ice_dragonsteel_armorplate")
     //龙霆钢插板
-    e.create("createdelight:lighting_dragonsteel_armorplate")
+    e.create("createdelight:lightning_dragonsteel_armorplate")
         .maxDamage(3000)
         .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.lighting_dragonsteel_armorplate")
+        .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
 })

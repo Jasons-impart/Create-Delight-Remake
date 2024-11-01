@@ -5,3 +5,8 @@ const armorplate = {
     "createdelight:lightning_dragonsteel_armorplate": [2.5, 1.5, 1.5]
 }
 
+// PlayerEvents.inventoryOpened(e => {
+//     e.getInventoryContainer().items.forEach(slot => {
+//         console.log(`id: ${item.id}, nbt: ${item.nbt}`)
+//     })
+// })
