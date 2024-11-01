@@ -1,0 +1,6 @@
+[
+    {
+        "key": "shield/banner",
+        "models": [{ "type": "tetra:banner/kite" }]
+    }
+]

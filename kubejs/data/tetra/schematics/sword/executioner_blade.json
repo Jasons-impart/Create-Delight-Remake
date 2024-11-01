@@ -1,0 +1,26 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"materialSlotCount": 1,
+	"displayType": "major",
+	"translation": {
+		"primaryAttributes": {
+			"generic.attack_damage": 3
+		},
+		"durability": 4,
+		"integrity": -3,
+		"magicCapacity": 3
+	},
+	"glyph": {
+		"textureLocation": "tetra:textures/gui/aof_glyph.png",
+		"textureX": 192
+	},
+	"outcomes": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"countFactor": 2,
+			"moduleKey": "sword/executioner_blade",
+			"moduleVariant": "executioner_blade/"
+		}
+	]
+}

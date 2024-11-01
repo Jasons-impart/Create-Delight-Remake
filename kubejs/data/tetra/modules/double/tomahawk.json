@@ -1,0 +1,66 @@
+{
+	"replace": true,
+	"type": "tetra:multi_major_module",
+	"slots": [ "double/head_left" ],
+	"slotSuffixes": [ "_left" ],
+	"improvements": [
+		"tetra:enchantment/loyalty",
+		"tetra:double/tomahawk/",
+		"tetra:double/shared_head/",
+		"tetra:double/shared/",
+		"tetra:shared/"
+	],
+	"variants": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"key": "tomahawk/",
+			"attributes": {
+				"generic.attack_speed": -1.45,
+				"generic.attack_damage": 1
+			},
+			"aspects": {
+				"block_breaker": 1,
+				"edged_weapon": 2,
+				"throwable": 2,
+				"breakable": 2
+			},
+			"effects": {
+				"shieldbreaker": 1,
+				"throwable": [ 1, 0.6 ],
+				"stun":[ 10, 1.5]
+			},
+			"durability": -10,
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 1
+				},
+				"tools": {
+					"axe_dig": [ 1, 1 ],
+					"axe_strip": [ 1, 1 ],
+					"axe_scrape": [ 1, 1 ],
+					"axe_wax_off": [ 1, 1 ]
+				},
+				"primaryEffects": {
+					"stun": [ 1, 0.5 ]
+				},
+				"secondaryEffects": {
+					"throwable": [ 0, 0.2 ]
+				},
+				"tertiaryEffects": {
+					"stun": -0.2
+				},
+				"durability": 0.7,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureLocation": "tetra:textures/gui/aof_glyph.png",
+					"textureX": 64
+				},
+				"availableTextures": [ "crude", "metal", "shiny" ],
+				"models": [{
+					"location": "tetra:item/module/double/head/tomahawk/"
+				}]
+			}
+		}
+	]
+}

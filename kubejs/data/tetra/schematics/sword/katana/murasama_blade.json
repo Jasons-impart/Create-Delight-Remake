@@ -1,0 +1,43 @@
+{
+    "replace": true,
+    "localizationKey": "katana/murasama_blade",
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 0,
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph":{
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "tint": "c52323"
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:locked",
+                "key": "tetra:sword/katana/murasama_blade"
+            },
+            {
+                "type": "tetra:module",
+                "module": "sword/katana_blade"
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "sword/thousand_cold_nights_imprv"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:iron"
+            },
+            "improvements": {
+                "sword/murasama_imprv": 0
+            }
+        }
+    ]
+}

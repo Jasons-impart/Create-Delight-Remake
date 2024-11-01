@@ -1,0 +1,30 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/architects_crucible\", \"sword/blade\": \"sword/crucible_blade\",\"sword/crucible_blade_material\": \"crucible_blade/forged_steel\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/forged_steel\", \"sword/guard\": \"sword/binding\",\"sword/binding_material\": \"sword_binding/life_fiber\", \"sword/pomel\": \"sword/counterweight\",\"sword/counterweight_material\": \"counterweight/obsidian\", \"sword/blade:sword/architect_imprv\": 0}"
+        },
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.architects_crucible.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.architects_crucible.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/crucible_upgrade",
+    "criteria": {
+        "architect_imprv": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "sword/architect_imprv"
+            }
+        }
+    },
+    "requirements": [
+        [
+            "architect_imprv"
+        ]
+    ]
+}

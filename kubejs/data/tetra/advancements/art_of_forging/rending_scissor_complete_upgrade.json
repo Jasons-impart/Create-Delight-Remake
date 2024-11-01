@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/rending_scissor_complete_upgrade\", \"sword/blade\": \"sword/rending_scissor_complete\"}"
+        },
+        "frame": "challenge",
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.rending_scissor_complete_upgrade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.rending_scissor_complete_upgrade.description"
+        },
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/flamberge_upgrade",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/rending_scissor_complete",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module"
+        ]
+    ]
+}

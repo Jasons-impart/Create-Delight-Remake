@@ -1,0 +1,23 @@
+{
+    "replace": true,
+    "slots": [ "sword/fuller" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "minor",
+    "glyph": {
+        "tint": "034150",
+        "textureX": 72,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:misc/echo_shard" ],
+            "requiredTools": {
+                "hammer_dig": "minecraft:iron"
+            },
+            "moduleKey": "sword/echo_fuller",
+            "moduleVariant": "echo_fuller/echo_fuller"
+        }
+    ]
+}

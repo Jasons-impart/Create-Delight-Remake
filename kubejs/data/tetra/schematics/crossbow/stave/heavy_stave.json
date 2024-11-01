@@ -1,0 +1,44 @@
+{
+    "replace": true,
+    "slots": [ "crossbow/stave" ],
+    "materialSlotCount": 1,
+    "displayType": "major",
+    "glyph": {
+        "textureX": 128,
+        "textureY": 32
+    },
+    "translation": {
+        "primaryAttributes": {
+            "tetra:draw_speed": -4,
+            "tetra:draw_strength": 7
+        },
+        "tertiaryAttributes": {
+            "tetra:draw_speed": -1,
+            "tetra:draw_strength": 4
+        },
+        "durability": 3,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "minecraft:stick" ],
+                "count": 2
+            },
+            "moduleKey": "crossbow/heavy_stave",
+            "moduleVariant": "heavy_stave/stick"
+        },
+        {
+            "materials": [ "tetra:wood/" ],
+            "moduleKey": "crossbow/heavy_stave",
+            "moduleVariant": "heavy_stave/"
+        },
+        {
+            "materials": [ "tetra:metal/" ],
+            "toolOffset": 2,
+            "moduleKey": "crossbow/heavy_stave",
+            "moduleVariant": "heavy_stave/"
+        }
+    ]
+}

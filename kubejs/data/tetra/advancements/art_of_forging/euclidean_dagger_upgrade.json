@@ -1,0 +1,47 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/euclidean_dagger_upgrade\", \"sword/blade\": \"sword/euclidean_dagger\", \"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/netherite\"}"
+        },
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.euclidean_dagger_upgrade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.euclidean_dagger_upgrade.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/root",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/euclidean_dagger",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        },
+        "improvement": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "sword/euclidean_dagger",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module",
+            "improvement"
+        ]
+    ]
+}

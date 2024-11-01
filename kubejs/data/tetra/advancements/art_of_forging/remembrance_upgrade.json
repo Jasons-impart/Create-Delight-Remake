@@ -1,0 +1,47 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_bow",
+            "nbt": "{\"id\": \"art_of_forging/remembrance_upgrade\", \"bow/stave\": \"bow/remembrance_stave\",\"bow/string\": \"bow/basic_string\",\"bow/basic_string_material\": \"basic_string/dragon_sinew\"}"
+        },
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.remembrance_upgrade.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.remembrance_upgrade.description"
+        },
+        "frame": "challenge",
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/dreadnought_upgrade",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "bow/remembrance_stave",
+                "after": {
+                    "items": [
+                        "tetra:modular_bow"
+                    ]
+                }
+            }
+        },
+        "improvement": {
+            "trigger": "tetra:craft_improvement",
+            "conditions": {
+                "improvement": "bow/remembrance_stave",
+                "after": {
+                    "items": [
+                        "tetra:modular_bow"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module",
+            "improvement"
+        ]
+    ]
+}

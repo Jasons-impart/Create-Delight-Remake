@@ -1,0 +1,24 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"materialSlotCount": 1,
+	"materialRevealSlot": 0,
+	"rarity": "temporary",
+	"displayType": "major",
+	"glyph": {
+		"textureLocation": "tetra:textures/gui/aof_glyph.png",
+		"textureX": 160
+	},
+	"outcomes": [
+		{
+			"material": {
+				"items": [ "minecraft:amethyst_block" ]
+			},
+			"requiredTools": {
+				"hammer_dig": "minecraft:iron"
+			},
+			"moduleKey": "sword/shifting_blade",
+			"moduleVariant": "shifting_blade/shifting_blade"
+		}
+	]
+}

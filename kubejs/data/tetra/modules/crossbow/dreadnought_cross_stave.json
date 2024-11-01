@@ -1,0 +1,50 @@
+{
+    "replace": true,
+    "slots": [ "crossbow/stave" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/dreadnought_cross_stave/",
+        "tetra:crossbow/shared_stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:rod/stick", "tetra:metal/" ],
+            "key": "dreadnought_cross_stave/",
+            "attributes": {
+                "tetra:draw_speed": 0.5,
+                "tetra:draw_strength": 1
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 99,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.18,
+                    "tetra:draw_strength": 1.3
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.12,
+                    "tetra:draw_strength": 0.7
+                },
+                "durability": 0.9,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 112
+                },
+                "availableTextures": [ "default" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/crossbow/stave/dreadnought_stave/",
+                        "type": "static"
+                    }
+                ]
+            }
+        }
+    ]
+}

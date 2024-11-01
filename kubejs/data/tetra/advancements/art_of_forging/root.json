@@ -1,0 +1,76 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_double",
+            "nbt": "{\"id\": \"art_of_forging/hammer_4\", \"double/head_left\": \"double/basic_hammer_left\",\"double/basic_hammer_left_material\": \"basic_hammer/stone\",\"double/head_right\": \"double/basic_hammer_right\",\"double/basic_hammer_right_material\": \"basic_hammer/stone\",\"double/handle\": \"double/basic_handle\",\"double/basic_handle_material\": \"basic_handle/oak\"}"
+        },
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.intro.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.intro.description"
+        },
+        "background": "minecraft:textures/block/polished_blackstone_bricks.png"
+    },
+    "criteria": {
+        "sword": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        },
+        "double": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "after": {
+                    "items": [
+                        "tetra:modular_double"
+                    ]
+                }
+            }
+        },
+        "single": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "after": {
+                    "items": [
+                        "tetra:modular_single"
+                    ]
+                }
+            }
+        },
+        "bow": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "after": {
+                    "items": [
+                        "tetra:modular_bow"
+                    ]
+                }
+            }
+        },
+        "crossbow": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "after": {
+                    "items": [
+                        "tetra:modular_crossbow"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "sword",
+            "double",
+            "single",
+            "bow",
+            "crossbow"
+        ]
+    ]
+}

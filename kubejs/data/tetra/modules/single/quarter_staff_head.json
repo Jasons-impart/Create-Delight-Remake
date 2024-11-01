@@ -1,0 +1,60 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "single/head" ],
+    "improvements": [
+        "tetra:single/head/quarter_staff/",
+        "tetra:single/shared_head/",
+        "tetra:single/head/shared/",
+        "tetra:single/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "key": "quarter_staff_head/",
+            "attributes": {
+                "generic.attack_speed": -0.65
+            },
+            "effects": {
+                "stun": [ 1, 10 ],
+                "sweeping": 4,
+                "blocking": [ 2, 1 ]
+            },
+            "aspects": {
+                "breakable": 2,
+                "blunt_weapon": 1
+            },
+            "durability": -20,
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.85
+                },
+                "secondaryAttributes": {
+                    "generic.attack_damage": 0.1,
+                    "generic.attack_speed": -0.1
+                },
+                "primaryEffects": {
+                    "blocking": [ 2, 2 ]
+                },
+                "secondaryEffects": {
+                    "stun": 1
+                },
+                "tetriaryEffects": {
+                    "sweeping": 2,
+                    "stun": -1
+                },
+                "durability": 0.8,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 16,
+                    "textureY": 16
+                },
+                "availableTextures": [ "metal", "shiny", "crude" ],
+                "models": [{ "location": "tetra:item/module/single/head/quarter_staff_head/" }]
+            }
+        }
+    ]
+}

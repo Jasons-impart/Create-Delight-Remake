@@ -1,0 +1,61 @@
+{
+	"replace": true,
+	"type": "tetra:basic_major_module",
+	"slots": [ "single/head" ],
+	"improvements": [
+        "tetra:single/head/mace/",
+		"tetra:single/shared_head/",
+        "tetra:single/head/shared/",
+		"tetra:single/shared/",
+        "tetra:shared/"
+	],
+	"variants": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"key": "mace_head/",
+			"attributes": {
+				"generic.attack_speed": -1.5,
+				"forge:reach_distance": -1.5
+			},
+			"effects": {
+				"stun": [ 18, 2 ],
+				"crushing": 4,
+				"shieldbreaker": 1
+			},
+			"aspects": {
+				"breakable": 2,
+				"blunt_weapon": 1
+			},
+			"durability": -20,
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 1.4
+				},
+				"secondaryAttributes": {
+					"generic.attack_speed": -0.20,
+					"generic.attack_damage": 0.14
+				},
+				"primaryEffects": {
+					"crushing": 0.2
+				},
+				"secondaryEffects": {
+					"crushing": 0.2,
+					"stun": [ 5, 1 ]
+				},
+				"tetriaryEffects": {
+					"crushing": -0.2,
+					"stun": -0.5
+				},
+				"durability": 0.9,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureLocation": "tetra:textures/gui/aof_glyph.png",
+					"textureX": 96
+				},
+				"availableTextures": [ "metal", "shiny", "crude" ],
+				"models": [{ "location": "tetra:item/module/single/head/mace_head/" }]
+			}
+		}
+	]
+}

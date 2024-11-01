@@ -1,0 +1,75 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:sword/katana_blade/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "key": "katana_blade/",
+            "attributes": {
+                "generic.attack_speed": -1,
+                "generic.attack_damage": 2
+            },
+            "effects": {
+                "skewering": [ 1, 1 ],
+                "sweeping": 1,
+                "abilityMomentum": [ 4, 0.5 ]
+            },
+            "tools": {
+                "cut": [ 1, 2 ]
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "durability": -20,
+            "tags":[
+                "forge:swords"
+            ],
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.7
+                },
+                "tools": {
+                    "cut": [ 0.5, 1 ]
+                },
+                "primaryEffects": {
+                    "skewering": 0.3,
+                    "sweeping": 1
+                },
+                "secondaryAttributes": {
+                    "generic.attack_damage": 0.4,
+                    "generic.attack_speed": -0.1
+                },    
+                "secondaryEffects": {
+                    "sweeping": -0.1,
+                    "skewering": 0.1
+                },
+			"tertiaryAttributes": {
+				"generic.attack_speed": 0.1
+			    },
+                "tertiaryEffects": {
+                    "sweeping": 0.3,
+                    "abilityMomentum": 0.1
+                },
+                "durability": 0.2,
+                "integrity": -1,
+                "magicCapacity": 1.5,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 208
+                },
+                "availableTextures": [ "metal", "shiny", "grainy", "crude" ],
+                "models": [{
+                    "location": "tetra:item/module/sword/blade/katana_blade/"
+                }]
+            }
+        }
+    ]
+}

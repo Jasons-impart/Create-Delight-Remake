@@ -1,0 +1,46 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [
+        "double/head_left",
+        "double/head_right"
+    ],
+    "slotSuffixes": [
+        "_left",
+        "_right"
+    ],
+    "improvements": [
+        "tetra:double/slime_hammer/",
+        "tetra:double/shared_head/",
+        "tetra:double/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "slime_hammer/slime_hammer",
+            "integrity": -1,
+            "attributes": {
+                "generic.attack_damage": 0,
+                "generic.attack_speed": -1.1
+            },
+            "aspects": {
+                "breakable": 2
+            },
+            "effects": {
+                "art_of_forging:knockback": [ 1.5, 0 ]
+            },
+            "durability": 10,
+            "magicCapacity": 50,
+            "glyph": {
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 160,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/double/head/slime_hammer/slime_hammer"
+                }
+            ]
+        }
+    ]
+}

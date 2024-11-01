@@ -1,0 +1,34 @@
+[
+      {
+        "key": "blade/goliath_tier",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "art_of_forging:goliath_slayer": 25
+        }
+    },
+    {
+        "key": "blade/goliath_tier",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+            "honed": 2
+        },
+        "effects": {
+            "art_of_forging:goliath_slayer": 50
+        }
+    },
+    {
+        "key": "blade/goliath_tier",
+        "level": 3,
+        "integrity": -1,
+        "aspects": {
+          "honed": 3
+        },
+        "effects": {
+            "art_of_forging:goliath_slayer": 75
+        }
+    }
+]

@@ -1,0 +1,45 @@
+{
+	"display": {
+		"icon": {
+			"item": "tetra:modular_sword",
+			"nbt": "{\"id\": \"upgrades/executioner_upgrade\", \"sword/blade\": \"sword/executioner_blade\",\"sword/executioner_blade_material\": \"executioner_blade/iron\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/dark_oak\", \"sword/guard\": \"sword/wide_guard\",\"sword/wide_guard_material\": \"wide_guard/obsidian\"}"
+		},
+		"title": {
+			"translate": "tetra.advancements.upgrades.executioner_upgrade.title"
+		},
+		"description": {
+			"translate": "tetra.advancements.upgrades.executioner_upgrade.description"
+		}
+	},
+	"parent": "tetra:upgrades/sword_upgrade",
+	"criteria": {
+		"module": {
+			"trigger": "tetra:craft_module",
+			"conditions": {
+				"module": "sword/executioner_blade",
+				"after": {
+					"items": [
+						"tetra:modular_sword"
+					]
+				}
+			}
+		},
+		"improvement": {
+			"trigger": "tetra:craft_improvement",
+			"conditions": {
+				"improvement": "sword/executioner_blade",
+				"after": {
+					"items": [
+						"tetra:modular_sword"
+					]
+				}
+			}
+		}
+	},
+	"requirements": [
+		[
+			"module",
+			"improvement"
+		]
+	]
+}

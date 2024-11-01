@@ -1,0 +1,26 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "artifact/casing" ],
+    "improvements": [],
+    "variants": [
+        {
+            "materials": [ "tetra:metal/" ],
+            "key": "machination/",
+            "integrity": 2,
+            "extract": {
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 32,
+                    "textureY": 32
+                },
+                "availableTextures": [ "metal", "shiny" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/artifact/casing/machination/"
+                    }
+                ]
+            }
+        }
+    ]
+}

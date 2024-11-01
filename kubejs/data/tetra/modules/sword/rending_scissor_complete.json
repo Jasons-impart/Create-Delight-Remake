@@ -1,0 +1,47 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:sword/rending_scissor_complete/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "rending_scissor_complete/rending_scissor_complete",
+            "integrity": -3,
+            "attributes": {
+                "generic.attack_speed": -1.9,
+                "generic.attack_damage": 10
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "durability": 85,
+            "tags":[
+                "forge:swords"
+            ],
+            "effects": {
+                "armorPenetration": 40,
+                "sweeping": 2,
+                "crushing": 5,
+                "abilityCombo": 10,
+                "abilityExhilaration": 2,
+                "abilityRevenge": 2,
+                "severing": [ 2, 20 ],
+                "abilityDefensive": 1,
+                "art_of_forging:life_fiber_loss": [ 2, 25 ]
+            },
+            "magicCapacity": 850,
+            "glyph": {
+                "tint": "c91649",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 208
+            },
+            "models": [{ "location": "tetra:item/module/sword/blade/rending_scissor_complete/rending_scissor_complete" }]
+          }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+    "replace": true,
+    "localizationKey": "sword/shared_blade/hone_damage_2",
+    "slots": [
+        "single/head"
+    ],
+    "materialSlotCount": 0,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "textureY": 16
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "mourning_star_hone/damage",
+        "level": 1
+    },
+    "outcomes": [
+        {
+            "requiredTools": {
+                "hammer_dig": "minecraft:gold"
+            },
+            "improvements": {
+                "mourning_star_hone/damage": 2
+            }
+        }
+    ]
+}

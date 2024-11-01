@@ -1,0 +1,69 @@
+{
+	"replace": true,
+	"type": "tetra:basic_major_module",
+	"slots": [ "single/head" ],
+	"improvements": [
+        "tetra:single/head/halberd_head/",
+		"tetra:single/shared_head/",
+        "tetra:single/head/shared/",
+		"tetra:single/shared/",
+        "tetra:shared/"
+	],
+	"variants": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"key": "halberd_head/",
+			"attributes": {
+				"generic.attack_speed": -0.8
+			},
+			"effects": {
+				"armorPenetration": 2.5,
+				"stun": [ 15, 2 ],
+				"sweeping": 5,
+				"shieldbreaker": 1,
+				"art_of_forging:dismounting": [ 10, 2.5 ]
+			},
+			"aspects": {
+				"pointy_weapon": 1,
+				"edged_weapon":  2,
+				"breakable": 2
+			},
+			"durability": -20,
+			"extract": {
+				"primaryAttributes": {
+					"generic.attack_damage": 1.4
+				},
+				"secondaryAttributes": {
+					"generic.attack_speed": -0.15,
+					"generic.attack_damage": 0.15
+				},
+				"tools": {
+					"axe": [ 0.3, 1 ]
+				},
+				"primaryEffects": {
+					"armorPenetration": 1,
+					"art_of_forging:dismounting": 1
+				},
+				"secondaryEffects": {
+					"armorPenetration": 0.5,
+					"stun": [ 5, 1 ],
+					"art_of_forging:dismounting": [ 5, 0.5 ]
+				},
+				"tetriaryEffects": {
+					"stun": -1,
+					"armorPenetration": -0.5,
+					"sweeping": 2
+				},
+				"durability": 0.9,
+				"integrity": -1,
+				"magicCapacity": 1,
+				"glyph": {
+					"textureLocation": "tetra:textures/gui/aof_glyph.png",
+					"textureX": 32
+				},
+				"availableTextures": [ "metal", "shiny", "crude" ],
+				"models": [{ "location": "tetra:item/module/single/head/halberd_head/" }]
+			}
+		}
+	]
+}

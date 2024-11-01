@@ -1,0 +1,26 @@
+{
+    "key": "socket_heart_of_ender",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 48,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "effects": {
+        "janking": [4, 0.05]
+    },
+    "tints": {
+        "glyph": "be8dd6",
+        "texture": "be8dd6"
+    },
+    "textures": ["default"],
+    "experienceCost": 3,
+    "material": {
+        "items": ["art_of_forging:heart_of_ender"]
+    }
+}

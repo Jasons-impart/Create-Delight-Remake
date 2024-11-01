@@ -1,0 +1,38 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"materialSlotCount": 1,
+	"requirement": {
+		"type": "tetra:locked",
+		"key": "tetra:sword/crucible_blade"
+	},
+	"rarity": "temporary",
+	"displayType": "major",
+	"glyph": {
+		"tint": "f71f02",
+		"textureLocation": "tetra:textures/gui/aof_glyph.png",
+		"textureX": 0
+	},
+	"translation": {
+		"primaryAttributes": {
+			"generic.attack_damage": 3
+		},
+		"primaryEffects": {
+			"armorPenetration": 2
+		},
+		"tertiaryEffects": {
+			"sweeping": 1
+		},
+		"durability": 4,
+		"integrity": -3,
+		"magicCapacity": 3
+	},
+	"outcomes": [
+		{
+			"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+			"countFactor": 5,
+			"moduleKey": "sword/crucible_blade",
+			"moduleVariant": "crucible_blade/"
+		}
+	]
+}

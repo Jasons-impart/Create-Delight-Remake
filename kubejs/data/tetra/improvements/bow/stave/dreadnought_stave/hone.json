@@ -1,0 +1,56 @@
+[
+	{
+		"key": "dreadnought_stave_hone/speed",
+		"level": 1,
+		"aspects": {
+			"honed": 1
+		},
+		"attributes": {
+			"**tetra:draw_speed": -0.1
+		}
+	},
+	{
+		"key": "dreadnought_stave_hone/speed",
+		"level": 2,
+		"aspects": {
+			"honed": 2
+		},
+		"integrity": -1,
+		"attributes": {
+			"**tetra:draw_speed": -0.15
+		}
+	},
+	{
+		"key": "dreadnought_stave_hone/speed",
+		"level": 3,
+		"aspects": {
+			"honed": 3
+		},
+		"integrity": -1,
+		"attributes": {
+			"**tetra:draw_speed": -0.2
+		}
+	},
+	{
+		"key": "dreadnought_stave_hone/speed",
+		"level": 4,
+		"aspects": {
+			"honed": 4
+		},
+		"integrity": -2,
+		"attributes": {
+			"**tetra:draw_speed": -0.25
+		}
+	},
+	{
+		"key": "dreadnought_stave_hone/speed",
+		"level": 5,
+		"aspects": {
+			"honed": 5
+		},
+		"integrity": -2,
+		"attributes": {
+			"**tetra:draw_speed": -0.3
+		}
+	}
+]

@@ -1,0 +1,30 @@
+{
+    "replace": true,
+    "slots": [
+        "double/head_left"
+    ],
+    "keySuffixes": [
+        "_left"
+    ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 144,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:shockwave_chamber"]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "double/shockwave_hammer",
+            "moduleVariant": "shockwave_hammer/shockwave_hammer"
+        }
+    ]
+}

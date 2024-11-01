@@ -1,0 +1,25 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "f10ac0",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:rending_scissor_purple" ]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "sword/rending_scissor_purple",
+            "moduleVariant": "rending_scissor_purple/rending_scissor_purple"
+        }
+    ]
+}

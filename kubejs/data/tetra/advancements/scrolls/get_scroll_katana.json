@@ -1,0 +1,29 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:scroll_rolled",
+            "nbt": "{BlockEntityTag:{data:[{material:2,ribbon:\"dbff10\"}]}}"
+        },
+        "frame": "goal",
+        "title": {
+            "translate": "tetra.advancements.scrolls.get_scroll_katana.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.scrolls.get_scroll_katana.description"
+        }
+    },
+    "parent": "tetra:scrolls/root",
+    "criteria": {
+        "find": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "tetra:scroll_rolled",
+                        "nbt": "{BlockEntityTag:{data:[{key:\"sword/katana/katana_blade\"}]}}"
+                    }
+                ]
+            }
+        }
+    }
+}

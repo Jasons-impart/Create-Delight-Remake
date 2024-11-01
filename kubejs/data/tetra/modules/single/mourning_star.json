@@ -1,0 +1,52 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "single/head" ],
+    "improvements": [
+        "tetra:single/head/mourning_star/",
+        "tetra:single/shared_head/",
+        "tetra:single/head/shared/",
+        "tetra:single/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "mourning_star/mourning_star",
+            "integrity": -2,
+            "attributes": {
+                "generic.attack_damage": 12,
+                "generic.attack_speed": -1.1
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "art_of_forging:devouring": [ 2, 5 ],
+                "art_of_forging:life_steal": [ 1.5, 25 ],
+                "art_of_forging:knockback": [ 0.5, 0 ],
+                "art_of_forging:hubris": 30,
+                "sweeping": 2,
+                "armorPenetration": 5,
+                "art_of_forging:retribution": [ 5, 30 ],
+                "art_of_forging:judgement": [ 40, 20 ]
+            },
+            "magicCapacity": 800,
+            "glyph": {
+                "tint": "971020",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 208,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/single/head/mourning_star/mourning_star"
+                },
+                {
+                    "location": "tetra:item/module/single/head/mourning_star/mourning_star_glow",
+                    "emission": 10
+                }
+            ]
+        }
+    ]
+}

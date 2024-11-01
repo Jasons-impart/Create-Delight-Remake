@@ -1,0 +1,28 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "requirement": {
+        "type": "tetra:locked",
+        "key": "tetra:sword/rending_scissor_complete"
+    },
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "c91649",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:rending_scissor_complete" ]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "sword/rending_scissor_complete",
+            "moduleVariant": "rending_scissor_complete/rending_scissor_complete"
+        }
+    ]
+}

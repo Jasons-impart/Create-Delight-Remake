@@ -1,0 +1,33 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "artifact/internal" ],
+    "renderLayer": "lower",
+    "improvements": [],
+    "variants": [
+        {
+            "materials": [ "tetra:reagent/" ],
+            "key": "orb/",
+            "integrity": 1,
+            "extract": {
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 64,
+                    "textureY": 32
+                },
+                "availableTextures": [
+                    "default",
+                    "dust",
+                    "emerald",
+                    "glass",
+                    "magma_cream"
+                ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/artifact/internal/orb/"
+                    }
+                ]
+            }
+        }
+    ]
+}

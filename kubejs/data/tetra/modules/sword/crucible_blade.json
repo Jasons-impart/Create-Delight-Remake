@@ -1,0 +1,74 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"type": "tetra:basic_major_module",
+	"improvements": [
+		"tetra:sword/crucible_blade/",
+		"tetra:sword/shared_blade/",
+		"tetra:sword/shared/",
+		"tetra:shared/"
+	],
+	"variants": [{
+		"materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+		"key": "crucible_blade/",
+		"attributes": {
+			"generic.attack_speed": -2.5,
+			"generic.attack_damage": 3
+		},
+		"effects": {
+			"armorPenetration": 10,
+			"sweeping": 1,
+			"severing": [ 5, 2 ],
+			"abilityCombo": [ 5, 2 ],
+			"abilityExhilarated": [ 8, 2 ],
+			"art_of_forging:vengeance": [ 5, 5 ]
+		},
+		"tools": {
+			"cut": [ 2, 3 ]
+		},
+		"aspects": {
+			"edged_weapon": 2,
+			"breakable": 2
+		},
+		"durability": -550,
+		"tags":[
+			"forge:swords"
+		],
+		"extract": {
+			"primaryAttributes": {
+				"generic.attack_damage": 1.5
+			},
+			"secondaryAttributes": {
+				"generic.attack_damage": 0.5,
+				"generic.attack_speed": -0.05
+			},
+			"tertiaryAttributes": {
+				"generic.attack_damage": -1,
+				"generic.attack_speed": 0.1
+			},
+			"primaryEffects": {
+				"armorPenetration": 3,
+				"severing": [ 2, 1 ]
+			},
+			"secondaryEffects": {
+				"sweeping": -1
+			},
+			"tertiaryEffects": {
+				"sweeping": 1,
+				"armorPenetration": -0.5
+			},
+			"durability": 1,
+			"integrity": -1,
+			"magicCapacity": 1,
+			"glyph": {
+				"tint": "f71f02",
+				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureX": 0
+			},
+			"availableTextures": [ "metal", "shiny", "grainy", "crude" ],
+			"models": [{
+				"location": "tetra:item/module/sword/blade/crucible_blade/"
+			}]
+		}
+	}]
+}

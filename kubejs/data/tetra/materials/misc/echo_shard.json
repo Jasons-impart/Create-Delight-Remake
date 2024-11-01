@@ -1,0 +1,29 @@
+{
+    "key": "echo_shard",
+    "hidden": true,
+    "category": "misc",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 10,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 100,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "034150",
+        "texture": "034150"
+    },
+    "textures": [
+        "default"
+    ],
+    "material": {
+        "items": [ "minecraft:echo_shard" ]
+    },
+    "experienceCost": 5,
+    "effects": {
+        "sculkTaint": [ 0, 0 ],
+        "intuit": 1
+    }
+}

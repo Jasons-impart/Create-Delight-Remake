@@ -1,0 +1,18 @@
+{
+    "replace": true,
+    "slots": [ "artifact/internal" ],
+    "materialSlotCount": 1,
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 64,
+        "textureY": 32
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:reagent/" ],
+            "moduleKey": "artifact/internal/orb",
+            "moduleVariant": "orb/"
+        }
+    ]
+}

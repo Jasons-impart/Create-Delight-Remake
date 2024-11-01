@@ -1,0 +1,23 @@
+[
+    {
+        "key": "sword/thousand_cold_nights_imprv",
+        "integrity": -2,
+        "effects": {
+            "severing": [ 10, 1 ],
+            "bleeding": [ 1, 1 ],
+            "abilityMomentum": [ 2, 1 ],
+            "art_of_forging:conquering": [ 3, 5 ],
+            "art_of_forging:devouring": [ 3, 5 ],
+            "art_of_forging:life_steal": [ 1.5, 25 ]
+        },
+        "attributes": {
+            "generic.attack_speed": 0.1,
+            "generic.attack_damage": 1
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/thousand_cold_nights/thousand_cold_nights"
+            }
+        ]
+    }
+]

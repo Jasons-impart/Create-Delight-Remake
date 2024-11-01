@@ -1,0 +1,42 @@
+{
+    "replace": true,
+    "slots": [ "bow/string" ],
+    "materialSlotCount": 1,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 48,
+        "textureY": 16
+    },
+    "requirement": {
+        "type": "tetra:locked",
+        "key": "tetra:bow/string/compound_string"
+    },
+    "translation": {
+        "secondaryAttributes": {
+            "tetra:draw_speed": -1,
+            "tetra:draw_strength": 2
+        },
+        "secondaryEffects": {
+            "velocity": 1
+        },
+        "durability": 2,
+        "integrity": 3,
+        "magicCapacity": 3
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:fibre/" ],
+            "countFactor": 3,
+            "moduleKey": "bow/compound_string",
+            "moduleVariant": "compound_string/"
+        },
+        {
+            "materials": [ "tetra:skin/" ],
+            "toolOffset": 1,
+            "moduleKey": "bow/compound_string",
+            "moduleVariant": "compound_string/"
+        }
+    ]
+}

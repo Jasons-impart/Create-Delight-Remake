@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "tetra:modular_sword",
+            "nbt": "{\"id\": \"art_of_forging/echo_fuller\", \"sword/blade\": \"sword/basic_blade\",\"sword/basic_blade_material\": \"basic_blade/netherite\", \"sword/fuller\": \"sword/echo_fuller\", \"sword/echo_fuller_material\": \"echo_fuller/echo_fullerecho_shard\",\"sword/hilt\": \"sword/basic_hilt\",\"sword/basic_hilt_material\": \"basic_hilt/netherite\"}"
+        },
+        "frame": "goal",
+        "title": {
+            "translate": "tetra.advancements.art_of_forging.echo_fuller.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.art_of_forging.echo_fuller.description"
+        },
+        "hidden": true
+    },
+    "parent": "tetra:art_of_forging/root",
+    "criteria": {
+        "module": {
+            "trigger": "tetra:craft_module",
+            "conditions": {
+                "module": "sword/echo_fuller",
+                "after": {
+                    "items": [
+                        "tetra:modular_sword"
+                    ]
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "module"
+        ]
+    ]
+}

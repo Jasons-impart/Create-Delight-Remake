@@ -1,0 +1,34 @@
+[
+    {
+        "key": "mourning_star_hone/damage",
+        "level": 1,
+        "aspects": {
+          "honed": 1
+        },
+        "attributes": {
+          "generic.attack_damage": 0.5
+        }
+    },
+    {
+        "key": "mourning_star_hone/damage",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+          "honed": 2
+        },
+        "attributes": {
+          "generic.attack_damage": 1
+        }
+    },
+    {
+        "key": "mourning_star_hone/damage",
+        "level": 3,
+        "integrity": -1,
+        "aspects": {
+          "honed": 3
+        },
+        "attributes": {
+          "generic.attack_damage": 1.5
+        }
+    }
+]

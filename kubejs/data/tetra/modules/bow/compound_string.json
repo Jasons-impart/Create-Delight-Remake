@@ -1,0 +1,61 @@
+{
+    "replace": true,
+    "slots": [ "bow/string" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:bow/compound_string/",
+        "tetra:bow/shared_string/",
+        "tetra:bow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:fibre/", "tetra:skin/" ],
+            "key": "compound_string/",
+            "integrity": 1,
+            "durability": 70,
+            "attributes": {
+                "tetra:draw_speed": -0.05
+            },
+            "aspects": {
+                "bow": 2,
+                "breakable": 2
+            },
+            "extract": {
+                "secondaryAttributes": {
+                    "tetra:draw_speed": 0.1,
+                    "tetra:draw_strength": 2
+                },
+                "secondaryEffects": {
+                    "velocity": 0.1
+                },
+                "durability": 0.5,
+                "integrity": 1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 48,
+                    "textureY": 16
+                },
+                "availableTextures": [ "default" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/bow/string/compound_string/"
+                    },
+                    {
+                        "type": "draw_0",
+                        "location": "tetra:item/module/bow/string/compound_string/0_"
+                    },
+                    {
+                        "type": "draw_1",
+                        "location": "tetra:item/module/bow/string/compound_string/1_"
+                    },
+                    {
+                        "type": "draw_2",
+                        "location": "tetra:item/module/bow/string/compound_string/2_"
+                    }
+                ]
+            }
+        }
+    ]
+}

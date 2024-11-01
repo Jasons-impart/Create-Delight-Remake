@@ -1,0 +1,34 @@
+{
+    "display": {
+        "icon": {
+            "item": "art_of_forging:encoded_canister"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.find_canister.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.find_canister.description"
+        },
+        "hidden": true
+    },
+    "parent": "tetra:spelunking/containers",
+    "criteria": {
+        "canister": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "art_of_forging:encoded_canister"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "canister"
+        ]
+    ]
+}

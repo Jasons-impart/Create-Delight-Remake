@@ -1,0 +1,34 @@
+[
+    {
+        "materials": [ "tetra:metal/" ],
+        "key": "shield/aerodynamic_trim/",
+        "group": "trim",
+        "integrity": -1,
+        "aspects": {
+            "throwable": 2
+        },
+        "effects": {
+            "throwable": [ 1, 0.8 ]
+        },
+        "models": [
+            {
+                "type": "tetra:plate/kite",
+                "location": "tetra:item/module/shield/plate/kite/improvements/aerodynamic_trim_bevel",
+                "tint": "inherit"
+            }
+        ],
+        "extract": {
+            "primaryEffects": {
+                "throwable": [ 0, 0.015 ]
+            },
+            "durability": 0.1,
+            "availableTextures": [ "aerodynamic_trim" ],
+            "models": [
+                {
+                    "type": "tetra:plate/kite",
+                    "location": "tetra:item/module/shield/plate/kite/improvements/"
+                }
+            ]
+        }
+    }
+]

@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "art_of_forging:shockwave_chamber"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.craft_shockwave_chamber.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.craft_shockwave_chamber.description"
+        },
+        "frame": "goal",
+        "hidden": true
+    },
+    "parent": "tetra:spelunking/containers",
+    "criteria": {
+        "shockwave_chamber": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "art_of_forging:shockwave_chamber"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "shockwave_chamber"
+        ]
+    ]
+}

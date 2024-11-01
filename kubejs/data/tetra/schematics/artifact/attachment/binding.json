@@ -1,0 +1,19 @@
+{
+    "replace": true,
+    "type": "tetra:basic_module",
+    "slots": [ "artifact/attachment" ],
+    "materialSlotCount": 1,
+    "displayType": "minor",
+    "glyph": {
+        "textureX": 88,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "materials": [ "tetra:metal/", "tetra:fibre/" ],
+            "countFactor": 1,
+            "moduleKey": "artifact/attachment/binding",
+            "moduleVariant": "binding/"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "replace": true,
+    "type": "tetra:basic_module",
+    "slots": [ "artifact/attachment" ],
+    "renderLayer": "higher",
+    "variants": [
+        {
+            "materials": [ "tetra:metal/", "tetra:fibre/" ],
+            "key": "binding/",
+            "integrity": -1,
+            "extract": {
+                "glyph": {
+                    "textureX": 88,
+                    "textureY": 16
+                },
+                "availableTextures": [ "default", "metal" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/artifact/attachment/binding/"
+                    }
+                ]
+            }
+        }
+    ]
+}

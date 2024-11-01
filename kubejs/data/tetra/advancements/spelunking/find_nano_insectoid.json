@@ -1,0 +1,33 @@
+{
+    "display": {
+        "icon": {
+            "item": "art_of_forging:nano_insectoid"
+        },
+        "title": {
+            "translate": "tetra.advancements.spelunking.find_nano_insectoid.title"
+        },
+        "description": {
+            "translate": "tetra.advancements.spelunking.find_nano_insectoid.description"
+        }
+    },
+    "parent": "tetra:spelunking/containers",
+    "criteria": {
+        "insectoid": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "art_of_forging:nano_insectoid"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "insectoid"
+        ]
+    ]
+}

@@ -1,0 +1,18 @@
+{
+	"replace": false,
+	"slots": [ "single/binding" ],
+	"materialSlotCount": 1,
+	"displayType": "minor",
+	"glyph": {
+		"textureX": 80,
+		"textureY": 16
+	},
+	"outcomes": [
+		{
+			"materials": [ "tetra:socket/" ],
+			"moduleKey": "single/socket",
+			"moduleVariant": "single_socket/",
+			"experienceFactor": 1
+		}
+	]
+}

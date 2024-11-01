@@ -1,0 +1,26 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "dccb9e",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 112,
+        "textureY": 16
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:sigil_of_eden" ]
+            },
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "sword/euclidean_dagger",
+            "moduleVariant": "euclidean_dagger/euclidean_dagger"
+        }
+    ]
+}

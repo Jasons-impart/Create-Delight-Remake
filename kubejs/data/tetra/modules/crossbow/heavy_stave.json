@@ -1,0 +1,50 @@
+{
+    "replace": true,
+    "slots": [ "crossbow/stave" ],
+    "type": "tetra:basic_major_module",
+    "improvements": [
+        "tetra:crossbow/heavy_stave/",
+        "tetra:crossbow/shared_stave/",
+        "tetra:crossbow/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:rod/stick", "tetra:metal/" ],
+            "key": "heavy_stave/",
+            "attributes": {
+                "tetra:draw_speed": 1.65,
+                "tetra:draw_strength": 1.5
+            },
+            "aspects": {
+                "crossbow": 2,
+                "breakable": 2
+            },
+            "durability": 110,
+            "extract": {
+                "primaryAttributes": {
+                    "tetra:draw_speed": 0.33,
+                    "tetra:draw_strength": 1.5
+                },
+                "tertiaryAttributes": {
+                    "tetra:draw_speed": -0.09,
+                    "tetra:draw_strength": 1.0
+                },
+                "durability": 1.0,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureX": 128,
+                    "textureY": 32
+                },
+                "availableTextures": [ "default" ],
+                "models": [
+                    {
+                        "location": "tetra:item/module/crossbow/stave/heavy_stave/",
+                        "type": "static"
+                    }
+                ]
+            }
+        }
+    ]
+}

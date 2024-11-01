@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        "awa",
+        " # "
+    ],
+    "key": {
+        "#": {
+            "tag": "tetra:swords"
+        },
+        "a": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "w": {
+            "item": "minecraft:writable_book"
+        }
+    },
+    "result": {
+        "item": "tetra:scroll_rolled",
+        "count": 1,
+        "nbt": {
+            "BlockEntityTag": {
+                "data": [{
+                    "key": "sword/katana/murasama_blade",
+                    "schematics": [ "tetra:sword/katana/murasama_blade" ],
+                    "details": "otherworldly",
+                    "intricate": false,
+                    "material": 2,
+                    "ribbon": "c52323",
+                    "glyphs": [ 6, 7, 13, 15 ]
+                }]
+            }
+        }
+    }
+}

@@ -1,0 +1,109 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "sword/blade" ],
+    "improvements": [
+        "tetra:sword/scissor_blades/",
+        "tetra:sword/shared_blade/",
+        "tetra:sword/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "key": "scissor_blade_left/",
+            "integrity": -1,
+            "attributes": {
+                "generic.attack_speed": -1.3,
+                "generic.attack_damage": 0.65
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "armorPenetration": 5,
+                "sweeping": 2,
+                "crushing": 1,
+                "abilityCombo": 3,
+                "abilityRevenge": 2,
+                "severing": [ 1, 5 ],
+                "abilityDefensive": 1
+            },
+            "durability": -20,
+            "tags":[
+                "forge:swords"
+            ],
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 0.8
+                },
+                "secondaryAttributes": {
+                    "generic.attack_damage": 0.5,
+                    "generic.attack_speed": -0.4
+                },
+                "tertiaryAttributes": {
+                    "generic.attack_damage": -0.2,
+                    "generic.attack_speed": 0.2
+                },
+                "primaryEffects": {
+                    "armorPenetration": 1,
+                    "abilityRevenge": 1
+                },
+                "secondaryEffects": {
+                    "crushing": 1
+                },
+                "tertiaryEffects": {
+                    "sweeping": 1,
+                    "crushing": -1,
+                    "abilityCombo": 1
+                },
+                "durability": 0.9,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 208
+                },
+                "availableTextures": [ "metal", "shiny", "grainy", "crude" ],
+                "models": [{
+                    "location": "tetra:item/module/sword/blade/rending_scissor_red/"
+                }]
+            }
+        },
+        {
+            "materials": [ "tetra:fibre/life_fiber" ],
+            "key": "rending_scissor_red/rending_scissor_red",
+            "attributes": {
+                "generic.attack_speed": -1.4,
+                "generic.attack_damage": 10
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "tags":[
+                "forge:swords"
+            ],
+            "effects": {
+                "armorPenetration": 35,
+                "sweeping": 2,
+                "crushing": 5,
+                "abilityCombo": 10,
+                "abilityRevenge": 2,
+                "severing": [ 1, 15 ],
+                "abilityDefensive": 1,
+                "art_of_forging:life_fiber_loss": [ 1, 10 ]
+            },
+            "magicCapacity": 850,
+            "glyph": {
+                "tint": "c40808",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 208
+            },
+            "models": [{
+                "location": "tetra:item/module/sword/blade/rending_scissor_red/rending_scissor_red"
+            }]
+        }
+    ]
+}
