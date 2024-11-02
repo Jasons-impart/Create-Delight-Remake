@@ -943,8 +943,8 @@
     "tetra.material.echo_shard": "回响碎片",
     "tetra.material.echo_shard.prefix": "回响碎片",
 
-    "tetra.material.socket_void_worm_eye": "虚空蠕虫眼",
-    "tetra.material.socket_void_worm_eye.prefix": "§d虚空蠕虫眼§r",
+    "tetra.material.precision_mechanism": "精密构件",
+    "tetra.material.precision_mechanism.prefix": "精密构件",
 
     "tetra.material.blaze_powder": "烈焰粉",
     "tetra.material.blaze_powder.prefix": "§6烈焰粉§r",
@@ -967,7 +967,8 @@
     "tetra.material.reagent_emerald": "绿宝石",
     "tetra.material.reagent_emerald.prefix": "§a绿宝石§r",
 
-
+    "tetra.material.socket_void_worm_eye": "虚空蠕虫眼",
+    "tetra.material.socket_void_worm_eye.prefix": "§d虚空蠕虫眼§r",
 
     "item.tetra.scroll.tetra/flamberge_blade.prefix": "锻造之艺，第一章",
     "item.tetra.scroll.tetra/flamberge_blade.name": "焰形剑",
@@ -1042,13 +1043,7 @@
 
 
     "tetra.variant.sword_socket/void_worm_eye": "缚灵 [§d虚空蠕虫之眼§r]",
-    "tetra.variant.sword_socket/void_worm_eye.description": "传说中的虚空蠕虫之眼，缚灵到剑刃与握柄相接的部位。 \n\n任何神都不会畏惧死亡，因此提供宝石的全部效果。",
-
-    "tetra.variant.double_socket/void_worm_eye": "绑定[§d虚空蠕虫之眼§r]",
-    "tetra.variant.double_socket/void_worm_eye.description": "传说中的虚空蠕虫之眼，绑定在工具头的一侧。\n \n神不畏死，因此提供所有宝石的综合效果。",
-
-    "tetra.variant.single_socket/void_worm_eye": "绑定[§d虚空蠕虫之眼§r]",
-    "tetra.variant.single_socket/void_worm_eye.description": "传说中的虚空蠕虫之眼，绑定在头部与柄的交界处。\n \n神不畏死，因此提供所有宝石的综合效果。",
+    "tetra.variant.sword_socket/void_worm_eye.description": "传说中的虚空蠕虫之眼，缚灵到剑刃与握柄相接的部位。 虚空之神不会畏惧死亡，因此提供强大效果。",
 
     "tetra.advancements.art_of_forging.intro.title": "锻造入门§eAoF§r",
 

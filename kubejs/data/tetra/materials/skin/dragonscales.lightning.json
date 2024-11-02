@@ -1,0 +1,29 @@
+{
+  "key": "dragonscales_lightning",
+  "category": "skin",
+  "primary": 6,
+  "secondary": 2,
+  "tertiary": 5,
+  "durability": 500,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 200,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "7f00ff",
+    "texture": "7f00ff"
+  },
+  "textures": [
+        "metal",
+        "default"
+  ],
+  "material": {
+    "items": [
+    "iceandfire:dragonscales_electric","iceandfire:dragonscales_amythest","iceandfire:dragonscales_copper","iceandfire:dragonscales_black"
+    ]
+  },
+  "requiredTools": {
+    "cut": "minecraft:iron"
+  }
+}
