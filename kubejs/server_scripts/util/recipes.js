@@ -2,7 +2,7 @@
 
 /**
  * @param { Internal.RecipesEventJS } event 
- * @param { Internal.ItemStack[] } items
+ * @param { Internal.ItemStack_[] } items
  */
 function remove_recipes_output(event, items) {
     event.remove({ output: items })
