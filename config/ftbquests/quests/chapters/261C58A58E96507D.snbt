@@ -292,7 +292,7 @@
 		}
 		{
 			dependencies: ["3E3B411612B17907"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "3BAC2E9A7359CF70"
 			rewards: [{
 				count: 3
@@ -340,7 +340,7 @@
 		}
 		{
 			dependencies: ["3E3B411612B17907"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "524FCF85B06F1CE0"
 			rewards: [{
 				count: 3
@@ -719,7 +719,7 @@
 				"438ABB273BF02586"
 				"424AE3AE68EED3C2"
 			]
-			hide: true
+			hide_until_deps_visible: true
 			id: "2D9BA5CD1922318D"
 			rewards: [{
 				count: 3
@@ -756,7 +756,7 @@
 		}
 		{
 			dependencies: ["00A97860884CEAE7"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0956FD1089D07A55"
 			rewards: [{
 				count: 5
@@ -775,7 +775,7 @@
 		}
 		{
 			dependencies: ["78F0F6D3D2A93E3F"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "1AE450CBC3C7EBFE"
 			size: 1.5d
 			subtitle: "小心霉菌！！！"
@@ -791,7 +791,7 @@
 		{
 			dependencies: ["00A97860884CEAE7"]
 			description: ["抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
-			hide: true
+			hide_until_deps_visible: true
 			icon: "createdieselgenerators:pumpjack_crank"
 			id: "5317EBC6D3C2A048"
 			rewards: [{
@@ -994,7 +994,7 @@
 		}
 		{
 			dependencies: ["00A97860884CEAE7"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0C49A6D118E480B4"
 			rewards: [{
 				count: 2
@@ -1052,7 +1052,7 @@
 		}
 		{
 			dependencies: ["3906B88BE82A2E2B"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "33AB8A9B5DBF7C19"
 			rewards: [{
 				count: 3
@@ -1112,7 +1112,7 @@
 		}
 		{
 			dependencies: ["3906B88BE82A2E2B"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "4347373979FF2941"
 			rewards: [{
 				id: "7AA272DCBC6185BF"
@@ -1192,7 +1192,7 @@
 		}
 		{
 			dependencies: ["3906B88BE82A2E2B"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "2766DFF8D2DEBF71"
 			rewards: [{
 				count: 3
@@ -1259,7 +1259,7 @@
 		}
 		{
 			dependencies: ["3906B88BE82A2E2B"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "32218A4E7D4DF470"
 			rewards: [{
 				count: 3
@@ -1288,7 +1288,7 @@
 				"650FCFF52AB629C9"
 				"00A97860884CEAE7"
 			]
-			hide: true
+			hide_until_deps_visible: true
 			id: "438ABB273BF02586"
 			rewards: [{
 				count: 3
@@ -1310,7 +1310,7 @@
 				"650FCFF52AB629C9"
 				"00A97860884CEAE7"
 			]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6F7C09C2FF94275B"
 			rewards: [{
 				count: 3
@@ -1329,7 +1329,7 @@
 		}
 		{
 			dependencies: ["00A97860884CEAE7"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "650FCFF52AB629C9"
 			rewards: [{
 				count: 3
@@ -1382,7 +1382,7 @@
 		}
 		{
 			dependencies: ["35B43C124186578F"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7EBD14D46E6E2CF1"
 			rewards: [{
 				id: "262332588DA18160"
@@ -1519,7 +1519,7 @@
 		}
 		{
 			dependencies: ["3906B88BE82A2E2B"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "50209BF5E14C3CC5"
 			rewards: [{
 				count: 3
@@ -1638,7 +1638,7 @@
 		}
 		{
 			dependencies: ["7BB30D76B337AFA6"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "363322309954733A"
 			rewards: [{
 				id: "31436F739A47AD4A"

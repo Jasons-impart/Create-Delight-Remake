@@ -1,24 +1,15 @@
 {
   "type": "cuisinedelight:plate_cuisine",
-  "holderItem": "cuisinedelight:meat_fried_rice",
+  "holderItem": "cuisinedelight:vegetable_platter",
   "list": [
     {
       "bonus": 0.1,
       "ingredient": {
-        "tag": "forge:grain/rice"
-      },
-      "max": 1.6,
-      "min": 0.4,
-      "score": 1.0
-    },
-    {
-      "bonus": 0.1,
-      "ingredient": {
         "type": "cuisinedelight:food_type",
-        "foodType": "MEAT"
+        "foodType": "VEG"
       },
-      "max": 1.7,
-      "min": 0.3,
+      "max": 1.25,
+      "min": 0.75,
       "score": 1.0
     },
     {

@@ -14,7 +14,7 @@
 	quests: [
 		{
 			dependencies: ["112566BE4CAC8023"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "5DAE5518A667F6C8"
 			size: 1.0d
 			subtitle: "可供给&e1-4&r级所有火箭"
@@ -146,7 +146,7 @@
 		}
 		{
 			dependencies: ["112566BE4CAC8023"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7B9BACB0DA054015"
 			subtitle: "先得有航天服才能在外太空生存"
 			tasks: [
@@ -200,7 +200,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "605F75F85D1E9394"
 			subtitle: "?_?"
 			tasks: [{
@@ -367,7 +367,7 @@
 		}
 		{
 			dependencies: ["74102256002B6071"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "393E1E2F429F9972"
 			tasks: [{
 				id: "02CA846E36BF1C40"
@@ -455,7 +455,7 @@
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0EF849425CE2BC23"
 			tasks: [{
 				id: "0B32564AAE25822F"
@@ -612,7 +612,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "09A81D91F0924F72"
 			subtitle: "咦？这都有奶酪可以吃的哦"
 			tasks: [{
@@ -625,7 +625,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "4AC2410412B59E7D"
 			subtitle: "在每个星球的较深处都有（当然除了地球）"
 			tasks: [{
@@ -638,7 +638,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6B3421E6D8FE09CB"
 			subtitle: "古老的村民还在使用着绿宝石货币"
 			tasks: [{
@@ -829,7 +829,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7531EFF5A3EC66DB"
 			rewards: [
 				{
@@ -857,7 +857,7 @@
 		}
 		{
 			dependencies: ["112566BE4CAC8023"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0B9D13771A7EA4B9"
 			subtitle: "可供给&e1-2&r级火箭"
 			tasks: [
@@ -877,7 +877,7 @@
 		}
 		{
 			dependencies: ["112566BE4CAC8023"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "49E545714FDE875D"
 			subtitle: "可供给&e1-3&r级火箭"
 			tasks: [{
@@ -890,7 +890,7 @@
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "461E14E713E9D376"
 			rewards: [
 				{
@@ -995,7 +995,7 @@
 		}
 		{
 			dependencies: ["74102256002B6071"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "73A7209A4AF710F8"
 			rewards: [
 				{
@@ -1023,7 +1023,7 @@
 		}
 		{
 			dependencies: ["74102256002B6071"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "29D1317F687092E7"
 			tasks: [{
 				icon: "iceandfire:myrmex_stinger"
@@ -1039,7 +1039,7 @@
 		}
 		{
 			dependencies: ["74102256002B6071"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6EE2F2B08178069F"
 			rewards: [{
 				id: "60127A6CB685B9C2"
@@ -1059,7 +1059,7 @@
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6D431DA73BB7D209"
 			rewards: [
 				{
@@ -1157,7 +1157,7 @@
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "57F55EA5F20DECC9"
 			rewards: [
 				{
@@ -1185,7 +1185,7 @@
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "46E8F43141D9DA70"
 			rewards: [{
 				id: "1D530F066A8A914A"
@@ -1212,7 +1212,7 @@
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "2DE42C7109C32DEC"
 			rewards: [{
 				id: "790C235E7C0C566E"
@@ -1234,7 +1234,7 @@
 		}
 		{
 			dependencies: ["7317362ABAA2113E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0F620AFF09E036D9"
 			tasks: [{
 				entity: "iceandfire:fire_dragon"
@@ -1250,7 +1250,7 @@
 		}
 		{
 			dependencies: ["7317362ABAA2113E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7F581915B8B037B1"
 			tasks: [{
 				entity: "iceandfire:stymphalian_bird"
@@ -1273,8 +1273,8 @@
 				"74102256002B6071"
 				"0159488B430D5B90"
 			]
-			hide: true
 			hide_dependency_lines: true
+			hide_until_deps_visible: true
 			id: "25781A3553108A4C"
 			rewards: [{
 				count: 3
@@ -1297,7 +1297,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "08CCA61F6A3494B8"
 			rewards: [
 				{
@@ -1325,7 +1325,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "5BB6B085F8799E61"
 			rewards: [{
 				id: "04E95DB30842A57B"
@@ -1345,7 +1345,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "167EE7D7324F2C87"
 			rewards: [{
 				id: "341E2ABB6FFE59D4"
@@ -1365,7 +1365,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "183DB095CD25A18F"
 			rewards: [{
 				id: "6663707D23D58104"
@@ -1385,7 +1385,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6D2CB5ADD219F518"
 			rewards: [{
 				id: "6AA08F8F4C409B9D"
@@ -1405,7 +1405,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "5E48823AD99E93CC"
 			rewards: [{
 				id: "6C661FE58BF103DF"
@@ -1425,7 +1425,7 @@
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "0CF2A684329C96E6"
 			rewards: [{
 				id: "16A1C52828D770A1"
@@ -1502,7 +1502,7 @@
 		}
 		{
 			dependencies: ["7317362ABAA2113E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "09594CFD70990B44"
 			shape: "hexagon"
 			tasks: [{

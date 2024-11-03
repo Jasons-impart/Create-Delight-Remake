@@ -5,7 +5,7 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "the_bumblezone:honey_crystal"
 	id: "6AFEED7DDD0AB770"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{

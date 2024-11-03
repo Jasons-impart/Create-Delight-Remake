@@ -18,7 +18,7 @@
 	quests: [
 		{
 			dependencies: ["23844625502BCC3B"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "534742BED850E751"
 			tasks: [{
 				id: "490DF8C3941CD16D"
@@ -35,7 +35,7 @@
 				"64FEFE0EE74CB76B"
 			]
 			dependency_requirement: "one_completed"
-			hide: false
+			hide_until_deps_visible: false
 			id: "1551BA92CF2E1580"
 			tasks: [{
 				id: "402B23BC806C17C7"
@@ -47,7 +47,7 @@
 		}
 		{
 			dependencies: ["05D52AC3EBD5ACF6"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "55889D281FB84C4D"
 			tasks: [{
 				id: "23D821A8F7A6855F"
@@ -59,7 +59,7 @@
 		}
 		{
 			dependencies: ["30AFE2C4EC9DBBDB"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "070FCFD15EA22E5B"
 			shape: "hexagon"
 			size: 1.5d
@@ -73,7 +73,7 @@
 		}
 		{
 			dependencies: ["534742BED850E751"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "64FEFE0EE74CB76B"
 			subtitle: "消耗2粉"
 			tasks: [{
@@ -88,7 +88,7 @@
 		}
 		{
 			dependencies: ["534742BED850E751"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "1A851F2AC4486963"
 			subtitle: "等价于消耗1粉"
 			tasks: [{
@@ -108,7 +108,7 @@
 		}
 		{
 			dependencies: ["534742BED850E751"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "vintageimprovements:vacuum_chamber"
 			id: "70BA3B5FB6BA1B8A"
 			subtitle: "消耗1粉"
@@ -134,7 +134,7 @@
 		}
 		{
 			dependencies: ["1551BA92CF2E1580"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "05D52AC3EBD5ACF6"
 			tasks: [{
 				id: "111FE5AC3C0B14DC"
@@ -146,7 +146,7 @@
 		}
 		{
 			dependencies: ["55889D281FB84C4D"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: {
 				Count: 1
 				id: "vintageimprovements:concave_curving_head"
@@ -183,7 +183,7 @@
 		}
 		{
 			dependencies: ["74A17F55703C7EDC"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "36DB558EE19C0129"
 			tasks: [{
 				id: "056C57B7681AC6F0"
@@ -195,7 +195,7 @@
 		}
 		{
 			dependencies: ["36DB558EE19C0129"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "createdelight:universal_press"
 			id: "23844625502BCC3B"
 			tasks: [
@@ -220,7 +220,7 @@
 		}
 		{
 			dependencies: ["6F8DB4C688CDE79B"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "0A879354109B6029"
 			tasks: [{
 				id: "34E54AAAECDFD7F8"
@@ -232,7 +232,7 @@
 		}
 		{
 			dependencies: ["4878BCD4902197B0"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "6F8DB4C688CDE79B"
 			tasks: [
@@ -257,7 +257,7 @@
 		}
 		{
 			dependencies: ["35D8B0B1F9C870F8"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "4878BCD4902197B0"
 			tasks: [{
 				id: "4E93DF101477488D"
@@ -269,7 +269,7 @@
 		}
 		{
 			dependencies: ["0A879354109B6029"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "vintageimprovements:vacuum_chamber"
 			id: "6DC3E0168AC06ADC"
 			subtitle: "消耗1粉"
@@ -295,7 +295,7 @@
 		}
 		{
 			dependencies: ["0A879354109B6029"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "5901D18C4E177068"
 			subtitle: "消耗3粉"
 			tasks: [{
@@ -310,7 +310,7 @@
 		}
 		{
 			dependencies: ["0A879354109B6029"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "13E21DC010216882"
 			subtitle: "等价于消耗1粉"
 			tasks: [{
@@ -335,7 +335,7 @@
 				"6DC3E0168AC06ADC"
 			]
 			dependency_requirement: "one_completed"
-			hide: false
+			hide_until_deps_visible: false
 			id: "51627CB273142F22"
 			tasks: [{
 				id: "41B169413B0150E1"
@@ -347,7 +347,7 @@
 		}
 		{
 			dependencies: ["51627CB273142F22"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "5AB2EBBD2243DE6B"
 			subtitle: "消耗两个石英玻璃"
 			tasks: [{
@@ -365,7 +365,7 @@
 				"51627CB273142F22"
 				"0462FFB851550962"
 			]
-			hide: false
+			hide_until_deps_visible: false
 			id: "300372C7A93BD7C5"
 			subtitle: "消耗0.25个石英玻璃"
 			tasks: [{
@@ -379,7 +379,7 @@
 		}
 		{
 			dependencies: ["5AB2EBBD2243DE6B"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "0462FFB851550962"
 			subtitle: "一个石英玻璃能处理为四个其对应的部件"
@@ -398,7 +398,7 @@
 				"300372C7A93BD7C5"
 			]
 			dependency_requirement: "one_completed"
-			hide: false
+			hide_until_deps_visible: false
 			id: "3087A516BF36628A"
 			tasks: [{
 				id: "1D2D4A931752E8D4"
@@ -410,7 +410,7 @@
 		}
 		{
 			dependencies: ["57F8817405EFEF38"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "278BC1E140416413"
 			shape: "hexagon"
 			size: 1.5d
@@ -424,7 +424,7 @@
 		}
 		{
 			dependencies: ["3087A516BF36628A"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "57F8817405EFEF38"
 			tasks: [{
@@ -438,7 +438,7 @@
 		}
 		{
 			dependencies: ["74A5DA81CE5D0581"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "5ACCE843604EB1CA"
 			tasks: [{
 				id: "5448D8645325A779"
@@ -450,7 +450,7 @@
 		}
 		{
 			dependencies: ["5ACCE843604EB1CA"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "34D57250C41B9518"
 			tasks: [{
 				icon: "vintageimprovements:belt_grinder"
@@ -467,7 +467,7 @@
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "063E7664355E0526"
 			subtitle: "消耗2粉"
 			tasks: [{
@@ -482,7 +482,7 @@
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "vintageimprovements:vacuum_chamber"
 			id: "69C732CD62ED4E20"
 			subtitle: "消耗1粉"
@@ -508,7 +508,7 @@
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "2D565BC4989BC56E"
 			subtitle: "等价于消耗1粉"
 			tasks: [{
@@ -532,7 +532,7 @@
 				"2D565BC4989BC56E"
 			]
 			dependency_requirement: "one_completed"
-			hide: false
+			hide_until_deps_visible: false
 			id: "290D330CC831FB79"
 			subtitle: "此处为赛特斯石英"
 			tasks: [{
@@ -546,7 +546,7 @@
 		}
 		{
 			dependencies: ["290D330CC831FB79"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "79E21703C72C52C4"
 			subtitle: "此处为逻辑处理器"
 			tasks: [{
@@ -560,7 +560,7 @@
 		}
 		{
 			dependencies: ["79E21703C72C52C4"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "7850CD8A3597DC8B"
 			subtitle: "此处为石英玻璃"
 			tasks: [{
@@ -581,7 +581,7 @@
 		}
 		{
 			dependencies: ["7850CD8A3597DC8B"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "1E75F90CA8E6E2EE"
 			tasks: [{
@@ -595,7 +595,7 @@
 		}
 		{
 			dependencies: ["1E75F90CA8E6E2EE"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "0B84C8CAB2D017A0"
 			shape: "hexagon"
 			size: 1.5d
@@ -609,7 +609,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "35D8B0B1F9C870F8"
 			shape: "square"
 			tasks: [{
@@ -625,7 +625,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
-			hide: false
+			hide_until_deps_visible: false
 			icon: "ae2:calculation_processor"
 			id: "74A17F55703C7EDC"
 			shape: "square"
@@ -640,7 +640,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
-			hide: false
+			hide_until_deps_visible: false
 			id: "74A5DA81CE5D0581"
 			shape: "square"
 			subtitle: "当然也可以使用动力合成器或者手搓，此处不再赘述"

@@ -37,31 +37,6 @@
 					type: "item"
 				}
 				{
-					id: "7AD543C199D51666"
-					item: {
-						Count: 1
-						id: "sophisticatedbackpacks:backpack"
-						tag: {
-							contentsUuid: [I;
-								1412211533
-								-1935980405
-								-1239321403
-								297734021
-							]
-							inventorySlots: 27
-							renderInfo: {
-								upgradeItems: [{
-									Count: 1b
-									id: "minecraft:air"
-									tag: { }
-								}]
-							}
-							upgradeSlots: 1
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "3A50D0EA5E13508D"
 					item: {
 						Count: 1
@@ -97,6 +72,11 @@
 					silent: true
 					title: "死亡不掉落"
 					type: "command"
+				}
+				{
+					id: "5B9581F0DD4D723E"
+					item: "sophisticatedbackpacks:backpack"
+					type: "item"
 				}
 			]
 			shape: "hexagon"

@@ -14,11 +14,21 @@
     {
       "bonus": 0.1,
       "ingredient": {
-        "tags": "forge:vegetables/tomato"
+        "tag": "forge:vegetables/tomato"
       },
       "max": 1.7,
       "min": 0.3,
       "score": 2.0
+    },
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "type": "cuisinedelight:food_type",
+        "foodType": "NONE"
+      },
+      "max": 1,
+      "min": 0,
+      "score": 1.0
     }
   ],
   "saturationBonus": 0.0,

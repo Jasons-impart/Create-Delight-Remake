@@ -574,7 +574,7 @@
 		}
 		{
 			dependencies: ["244B2CABBB89B269"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "2652F9C2A88605B3"
 			tasks: [{
 				id: "0D279802D4ABD131"

@@ -19,6 +19,16 @@
       "max": 1.8,
       "min": 0.2,
       "score": 1.0
+    },
+    {
+      "bonus": 0.1,
+      "ingredient": {
+        "type": "cuisinedelight:food_type",
+        "foodType": "NONE"
+      },
+      "max": 1,
+      "min": 0,
+      "score": 1.0
     }
   ],
   "saturationBonus": 0.0,

@@ -90,7 +90,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "562F3598849E3624"
 			subtitle: "与皮匠交易获得"
 			tasks: [{
@@ -124,7 +124,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "678E0A2025595267"
 			subtitle: "与牧羊人交易获得"
 			tasks: [{
@@ -158,7 +158,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "17F2597922976B37"
 			subtitle: "与屠夫交易获得"
 			tasks: [{
@@ -192,7 +192,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6521CB67E0C44E7F"
 			subtitle: "与皮匠交易获得"
 			tasks: [{
@@ -226,7 +226,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "47454EC6196B0068"
 			subtitle: "与制箭师交易获得"
 			tasks: [{
@@ -260,7 +260,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "24CD4675867BCA33"
 			subtitle: "与石匠交易获得"
 			tasks: [{
@@ -289,7 +289,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "5588DB7A4FF8108A"
 			subtitle: "与制箭师交易获得"
 			tasks: [{
@@ -323,7 +323,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "279D771DF6D9D9FB"
 			subtitle: "与盔甲匠交易获得"
 			tasks: [{
@@ -357,7 +357,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "244CDA2B80647156"
 			subtitle: "与石匠交易获得"
 			tasks: [{
@@ -391,7 +391,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "1E66CBCF8AEC86B9"
 			subtitle: "与盔甲匠、工具匠、工具匠交易获得"
 			tasks: [{
@@ -425,7 +425,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "09358762A9189373"
 			subtitle: "与制箭师交易获得"
 			tasks: [{
@@ -459,7 +459,7 @@
 		}
 		{
 			dependencies: ["3F7B4E18AB383B9E"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "376E5D18575F6F3B"
 			subtitle: "与皮匠交易获得"
 			tasks: [{
@@ -509,7 +509,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "3FCD6AE24097E645"
 			tasks: [{
 				id: "5A6B83CD9A226DE3"
@@ -548,7 +548,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7361FADE1214D789"
 			tasks: [{
 				id: "33970DF7E2B890EF"
@@ -582,7 +582,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "55D14726735AF561"
 			tasks: [{
 				id: "2CEF9CD28D9DFCBC"
@@ -616,7 +616,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "567431B9ED59EB60"
 			tasks: [{
 				id: "0D4D5CF786E5CAF7"
@@ -650,7 +650,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7049370E854F0BBD"
 			tasks: [{
 				id: "0800EC05D51A093F"
@@ -684,7 +684,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "525ADAAA3BFA82B6"
 			tasks: [{
 				id: "71C15EF997A315A7"
@@ -718,7 +718,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "1E9510D5E4F66250"
 			tasks: [{
 				id: "50B3F741F2CD78F0"
@@ -752,7 +752,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "24ECBC30C2DD5EC7"
 			tasks: [{
 				id: "66307F0D4DE6D968"
@@ -786,7 +786,7 @@
 		}
 		{
 			dependencies: ["71ED099035DBC037"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "4B5DD01252910C02"
 			tasks: [{
 				id: "2739D2EEF77E8C50"
@@ -850,7 +850,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6B73F85582C4208C"
 			subtitle: "双头工具的右部改装。破坏方块时，随机破坏周围几个方块。"
 			tasks: [
@@ -906,7 +906,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "2FA4F7A647152C1D"
 			subtitle: "单头工具的头部改装。可以在挖掘时同时挖掘其正后方的若干个方块。"
 			tasks: [
@@ -936,7 +936,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6AAC8436FAA6B311"
 			subtitle: "剑的剑刃改装，拥有在触发横扫之刃时切去一大片石头（可被镐挖掘方块）的能力。"
 			tasks: [
@@ -976,7 +976,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "71F4D8F06896D56E"
 			tasks: [{
 				id: "5E3C4A5252E29FCD"
@@ -1009,7 +1009,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7B4858F6E2CC2B67"
 			tasks: [{
 				id: "182A2DA7A4D9C49C"
@@ -1042,7 +1042,7 @@
 		}
 		{
 			dependencies: ["08EABCEF8ADB226A"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "3382A09D919C1DC2"
 			tasks: [{
 				id: "734DC08663D0A39D"
@@ -1074,7 +1074,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "622908D411DC1622"
 			tasks: [{
 				id: "6EA87A3A36098669"
@@ -1108,7 +1108,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "1BAA3B2AB0A6FD2B"
 			tasks: [{
 				id: "1B816CAAB9825A90"
@@ -1142,7 +1142,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "688E329B7B56CEDC"
 			tasks: [{
 				id: "49F90392F7BDF96A"
@@ -1176,7 +1176,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "289F21062AA888A9"
 			tasks: [{
 				id: "17887DC8E381021C"
@@ -1213,7 +1213,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "7AC2EC9FFBD92BB0"
 			tasks: [{
 				id: "1CA07DEFC71C6B1F"
@@ -1250,7 +1250,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "71331DB43BF103F9"
 			tasks: [{
 				id: "7749B66331CFFABF"
@@ -1284,7 +1284,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "5BEBB948DCFBF2D8"
 			tasks: [{
 				id: "66B96ED663BDFB81"
@@ -1318,7 +1318,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "062C53CBBB225590"
 			tasks: [{
 				id: "0E9D645C6ED9B95D"
@@ -1352,7 +1352,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "275D75A02D8DDA64"
 			tasks: [{
 				id: "5CC3D84AE08E75F4"
@@ -1389,7 +1389,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "6139DCFC261518A2"
 			tasks: [{
 				id: "5042784054D9FAFD"
@@ -1528,7 +1528,7 @@
 		}
 		{
 			dependencies: ["243D6889505F1555"]
-			hide: true
+			hide_until_deps_visible: true
 			id: "73CE1FBD49551A32"
 			tasks: [{
 				id: "4A3B5A12DD39ADC4"
