@@ -1,7 +1,7 @@
 ServerEvents.tags("item", e => {
     // 油菜籽移除种子标签
     e.remove("forge:seeds/canola", [
-        'frycooks_delight:canola_seeds'
+        'frycooks_delight:canola_seeds',
     ])
     // 白菜兼容
     e.add("forge:salad_ingredients/cabbage", [

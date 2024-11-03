@@ -2821,7 +2821,7 @@
 			id: "4E9D03C8C63D6283"
 			tasks: [{
 				id: "4658B6BDBE35B05D"
-				item: "createdelight:french_fries"
+				item: "create_bic_bit:fries"
 				type: "item"
 			}]
 			x: -16.5d
@@ -2977,7 +2977,7 @@
 			id: "2841165B09C7347F"
 			tasks: [{
 				id: "40AF95A063E8A243"
-				item: "createdelight:potato_sticks"
+				item: "create_bic_bit:raw_fries"
 				type: "item"
 			}]
 			x: -1.5d

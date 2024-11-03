@@ -175,22 +175,6 @@ StartupEvents.registry("item", e => {
             food.hunger(2)
                 .saturation(0.25)
         })
-    // 薯条
-    e.create("createdelight:french_fries")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.french_fries")
-        .food(food => {
-            food.hunger(5)
-                .saturation(0.6)
-                .fastToEat()
-        })
-    e.create("createdelight:potato_sticks")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.potato_sticks")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-        })
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)

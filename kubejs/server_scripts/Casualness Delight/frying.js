@@ -9,17 +9,17 @@ ServerEvents.recipes(e => {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { tag: input.slice(1) }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-                .heated().id(`casualness_delight:mix_animal_frying/${output.split(":")[1]}`)
-            e.recipes.create.mixing(output, [Fluid.of("createdieselgenerators:plant_oil", 50), input])
-                .heated().id(`casualness_delight:mix_plant_frying/${output.split(":")[1]}`)
+            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
+            .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
         else {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { item: input }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-                .heated().id(`casualness_delight:mix_animal_frying/${output.split(":")[1]}`)
-            e.recipes.create.mixing(output, [Fluid.of("createdieselgenerators:plant_oil", 50), input])
-                .heated().id(`casualness_delight:mix_plant_frying/${output.split(":")[1]}`)
+            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
+            .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
     }
 
@@ -59,13 +59,33 @@ ServerEvents.recipes(e => {
     deep_frying("casualness_delight:fried_chicken_chip", "farmersdelight:chicken_cuts", 100)
     deep_frying("casualness_delight:spring_roll", "casualness_delight:raw_spring_roll", 100)
     deep_frying("casualness_delight:fried_dumpling", "casualness_delight:raw_fried_dumpling", 100)
-    deep_frying("createdelight:french_fries", "createdelight:potato_sticks", 100)
+    deep_frying("create_bic_bit:fries", "create_bic_bit:raw_fries", 100)
+    deep_frying('frycooks_delight:fried_potato', 'minecraft:potato', 100)
+    deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
+    deep_frying('frycooks_delight:fried_onion_ring', 'some_assembly_required:sliced_onion', 100)
+    deep_frying('create_bic_bit:cheese_souffle', 'create_bic_bit:raw_cheese_souffle', 100)
+    deep_frying('create_bic_bit:kroket', 'create_bic_bit:raw_kroket', 100)
+    deep_frying('create_bic_bit:eggball', 'create_bic_bit:raw_eggball', 100)
+    deep_frying('create_bic_bit:frikandel', 'create_bic_bit:raw_frikandel', 100)
+    deep_frying('create_bic_bit:fries', 'potato_slice', 100)
+    deep_frying('create_bic_bit:churros', 'create_bic_bit:raw_churros', 100)
+    deep_frying('create_deepfried:panzerotto', 'create_deepfried:raw_panzerotto', 100)
+    deep_frying('create_deepfried:blooming_onion', 'farmersdelight:onion', 100)
+    deep_frying('create_deepfried:fried_chicken', 'minecraft:chicken', 100)
+    deep_frying('create_deepfried:yuca_fries', 'createcafe:cassava_root', 100)
+    deep_frying('create_deepfried:apfelkuchle', 'some_assembly_required:apple_slices', 100)
+    deep_frying('create_deepfried:tempura', 'create_deepfried:raw_tempura', 100)
+    deep_frying('create_deepfried:berliner', 'create_bic_bit:sweet_dough', 100)
+    deep_frying('create_deepfried:deepfried_chocolate_bar', 'create:bar_of_chocolate', 100)
+    deep_frying('oceansdelight:squid_rings', 'oceansdelight:cut_tentacles', 100)
+    deep_frying('create_bic_bit:bitterballen', 'create_bic_bit:raw_bitterballen', 100)
+    deep_frying('create_bic_bit:oliebollen', 'ratatouille:salty_dough', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [
             "vintagedelight:salt_dust",
             "casualness_delight:fried_fish",
-            "2x createdelight:french_fries",
+            "2x create_bic_bit:fries",
             "minecraft:bowl"
         ]
     ).id("casualness_delight:cooking/fish_and_chips")

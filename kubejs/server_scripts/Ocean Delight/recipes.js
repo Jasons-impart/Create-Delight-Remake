@@ -36,16 +36,8 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/onion"
     ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
-    cutting(e, "#forge:squid_tentacles", [["oceansdelight:cut_tentacles", 3]])
-    e.custom({
-        "type": "casualness_delight:deep_frying",
-        "ingredient": {
-            "item": "oceansdelight:cut_tentacles"
-        },
-        "cookingtime": 100,
-        "result": "oceansdelight:squid_rings"
-    })
-        .id("oceansdelight:cooking/squid_rings")
+    cutting_3(e, "oceanic_delight:squid_tentacles", [["oceansdelight:cut_tentacles", 3]])
+    cutting_3(e, "oceanic_delight:glow_squid_tentacles", [["oceansdelight:cut_tentacles", 3]])
     e.recipes.create.mixing(
         "oceansdelight:squid_rings",
         [
@@ -93,6 +85,8 @@ ServerEvents.recipes(e => {
         ['minecraft:kelp', 3],
         ['minecraft:kelp', 2, 0.6]
     ])
+
+    
 })
 
 ServerEvents.tags("item", e => {
