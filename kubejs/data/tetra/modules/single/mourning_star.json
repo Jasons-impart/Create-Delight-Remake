@@ -14,24 +14,21 @@
             "key": "mourning_star/mourning_star",
             "integrity": -2,
             "attributes": {
-                "generic.attack_damage": 12,
-                "generic.attack_speed": -1.1
+                "generic.attack_damage": 15,
+                "generic.attack_speed": -2.2
             },
             "aspects": {
                 "edged_weapon": 2,
                 "breakable": 2
             },
             "effects": {
-                "art_of_forging:devouring": [ 2, 5 ],
-                "art_of_forging:life_steal": [ 1.5, 25 ],
-                "art_of_forging:knockback": [ 0.5, 0 ],
-                "art_of_forging:hubris": 30,
-                "sweeping": 2,
-                "armorPenetration": 5,
-                "art_of_forging:retribution": [ 5, 30 ],
-                "art_of_forging:judgement": [ 40, 20 ]
+                "throwable": [0, 0.8],
+                "art_of_forging:devouring": [ 1, 5 ],
+                "art_of_forging:life_steal": [ 50, 5 ],
+                "art_of_forging:hubris": 50,
+                "armorPenetration": 50
             },
-            "magicCapacity": 800,
+            "magicCapacity": 300,
             "glyph": {
                 "tint": "971020",
                 "textureLocation": "tetra:textures/gui/aof_glyph.png",

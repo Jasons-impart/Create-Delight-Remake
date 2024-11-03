@@ -57,7 +57,7 @@
 	"tetra.stats.art_of_forging:vengeance.tooltip_short": "在低生命值时造成更多伤害",
 	  
 	"art_of_forging.effect.resolve.name": "决意",
-	"art_of_forging.effect.resolve.tooltip": "当你生命值在§e%s颗心§r或以下时，获得§e%s秒§r的力量和抗性提升。",
+	"art_of_forging.effect.resolve.tooltip": "你将获得§e%s秒§r的力量和抗性提升，当当生命值跌至§e%s颗心§r或以下时。",
 	"tetra.stats.art_of_forging:resolve": "决意",
 	"tetra.stats.art_of_forging:resolve.tooltip_short": "在低血量时获得力量和抗性提升效果",
 	  
@@ -89,7 +89,7 @@
 	"tetra.stats.art_of_forging:carnage.tooltip_short": "攻击目标时获得伤害加成，连续攻击可叠加，直到死亡",
 
 	"art_of_forging.effect.judgement.name": "审判",
-	"art_of_forging.effect.judgement.tooltip": "如果敌人的生命值低于 §e%s§r，你有 §e%s%§r 的概率瞬间击杀他们。",
+	"art_of_forging.effect.judgement.tooltip": "如果敌人的生命值低于§e%s§r，你有§e%百分之s§r的概率瞬间击杀他们。",
 	"tetra.stats.art_of_forging:judgement": "审判",
 
 

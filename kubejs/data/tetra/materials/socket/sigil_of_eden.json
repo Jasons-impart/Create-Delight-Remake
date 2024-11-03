@@ -1,4 +1,5 @@
 {
+    "replace": true,
     "key": "sigil_of_eden",
     "hidden": true,
     "category": "socket",
@@ -12,12 +13,10 @@
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-        "**generic.attack_damage": 0.3
+        "**generic.attack_damage": 4
     },
     "effects": {
-        "art_of_forging:decaying": [ 1, 5 ],
-        "art_of_forging:life_steal": [ 2, 15 ],
-        "intuit": 4
+        "art_of_forging:decaying": [ 2, 5 ]
     },
     "tints": {
         "glyph": "af3838"

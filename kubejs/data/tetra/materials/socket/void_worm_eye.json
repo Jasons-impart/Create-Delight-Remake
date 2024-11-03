@@ -1,29 +1,32 @@
 {
+    "replace": true,
     "key": "socket_void_worm_eye",
     "hidden": true,
     "category": "socket",
     "primary": 0,
     "secondary": 0,
     "tertiary": 0,
-    "durability": 45,
+    "durability": 60,
     "integrityCost": 1,
     "integrityGain": 0,
     "magicCapacity": 0,
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-        "**generic.attack_damage": 0.2
+        "generic.attack_damage": 5,
+        "forge:reach_distance":2,
+        "forge:attack_range":1
     },
     "effects": {
-        "criticalStrike": [ 32, 2 ],
-        "intuit": 4,
-        "stabilizing": 10
+        "criticalStrike": [ 50, 2 ],
+        "life_fiber_loss": [ 2, 10 ],
+        "art_of_forging:resolve": [ 60, 4 ]
     },
     "tints": {
         "glyph": "4a42ab"
     },
     "textures": [ "worm_eye" ],
-    "experienceCost": 15,
+    "experienceCost": 30,
     "material": {
         "items": [ "alexsmobs:void_worm_eye" ]
     }

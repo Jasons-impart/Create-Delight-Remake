@@ -1,4 +1,5 @@
 {
+    "replace": true,
     "key": "life_fiber",
     "category": "fibre",
     "primary": 7.8,
@@ -26,7 +27,6 @@
     },
     "effects": {
         "stabilizing": 3,
-        "unbreaking": 3,
-        "art_of_forging:resolve": [ 2, 3.5 ]
+        "unbreaking": 3
     }
 }
