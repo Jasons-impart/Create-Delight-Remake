@@ -13,29 +13,29 @@
             "key": "rending_scissor_complete/rending_scissor_complete",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.9,
-                "generic.attack_damage": 10
+                "generic.attack_speed": -1.5,
+                "generic.attack_damage": 12
             },
             "aspects": {
                 "edged_weapon": 2,
                 "breakable": 2
             },
-            "durability": 85,
+            "durability": 200,
             "tags":[
                 "forge:swords"
             ],
             "effects": {
                 "armorPenetration": 40,
-                "sweeping": 2,
-                "crushing": 5,
+                "sweeping": 3,
+                "crushing": 10,
                 "abilityCombo": 10,
                 "abilityExhilaration": 2,
                 "abilityRevenge": 2,
-                "severing": [ 2, 20 ],
                 "abilityDefensive": 1,
-                "art_of_forging:life_fiber_loss": [ 2, 25 ]
+                "art_of_forging:life_fiber_loss": [ 2, 10 ],
+                "art_of_forging:life_steal":[10,5]
             },
-            "magicCapacity": 850,
+            "magicCapacity": 300,
             "glyph": {
                 "tint": "c91649",
                 "textureLocation": "tetra:textures/gui/aof_glyph.png",

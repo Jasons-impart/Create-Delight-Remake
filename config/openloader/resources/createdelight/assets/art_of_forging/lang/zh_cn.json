@@ -74,12 +74,12 @@
 	"tetra.stats.art_of_forging:infernal_rebuke.tooltip_short": "有一定几率将敌人点燃并击退",
 
 	"art_of_forging.effect.hubris.name": "傲慢诅咒",
-	"art_of_forging.effect.hubris.tooltip": "当你的生命值在90%或以上时，你会造成 §e%s 额外伤害§r。当你失去生命值时，你的武器伤害会减少，当生命值降至30%或更低时，你的伤害会减少到原伤害的一半以上。",
+	"art_of_forging.effect.hubris.tooltip": "当你的生命值在百分之90或以上时，你会造成§e%s额外伤害§r。当你失去生命值时，手持武器造成伤害会减少，当生命值降至百分之30或更低时，你的伤害会减少到原伤害的一半以上。",
 	"tetra.stats.art_of_forging:hubris": "傲慢诅咒",
-	"tetra.stats.art_of_forging:hubris.tooltip_short": "满血时造成额外伤害，生命值越低，伤害越少",
+	"tetra.stats.art_of_forging:hubris.tooltip_short": "生命值高于90%时造成额外伤害，生命值越低，伤害越少",
 
 	"art_of_forging.effect.slaughtering.name": "屠戮",
-	"art_of_forging.effect.slaughtering.tooltip": "当你的目标生命值高于 §e%s%§r 时，你会造成 §e%s 额外伤害§r。",
+	"art_of_forging.effect.slaughtering.tooltip": "当你的目标生命值高于§e百分之%s§r时，你会造成§e百分之%s额外伤害§r。",
 	"tetra.stats.art_of_forging:slaughtering": "屠戮",
 	"tetra.stats.art_of_forging:slaughtering.tooltip_short": "当目标生命值高于某个百分比时，造成额外伤害",
 
