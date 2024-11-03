@@ -1,3 +1,5 @@
+// 原代码源自Qi_Month的New Create
+// JIAFALSEDREAM重构代码（可能）优化了性能
 // 开发者用户信息
 const playerNames = [
   "Qi_Month",

@@ -13,7 +13,7 @@
             "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
             "key": "katana_blade/",
             "attributes": {
-                "generic.attack_speed": -1,
+                "generic.attack_speed": -1.5,
                 "generic.attack_damage": 2
             },
             "effects": {

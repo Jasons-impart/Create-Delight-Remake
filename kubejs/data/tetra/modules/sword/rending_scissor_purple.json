@@ -13,28 +13,27 @@
             "key": "rending_scissor_purple/rending_scissor_purple",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.4,
-                "generic.attack_damage": 9
+                "generic.attack_speed": -1.5,
+                "generic.attack_damage": 5
             },
             "aspects": {
                 "edged_weapon": 2,
                 "breakable": 2
             },
-            "durability": 85,
+            "durability": 100,
             "tags":[
                 "forge:swords"
             ],
             "effects": {
-                "armorPenetration": 35,
-                "sweeping": 2,
-                "crushing": 5,
+                "armorPenetration": 20,
+                "sweeping": 3,
+                "crushing": 8,
                 "abilityCombo": 10,
                 "abilityExhilaration": 2,
-                "severing": [ 1, 15 ],
                 "abilityDefensive": 1,
-                "art_of_forging:life_fiber_loss": [ 1, 10 ]
+                "art_of_forging:life_fiber_loss": [ 2, 10 ]
             },
-            "magicCapacity": 850,
+            "magicCapacity": 300,
             "glyph": {
                 "tint": "f10ac0",
                 "textureLocation": "tetra:textures/gui/aof_glyph.png",
