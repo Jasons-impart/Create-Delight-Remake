@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
     e.shapeless(
         "2x oceansdelight:fugu_roll",
         [
-            "farmersdelight:cooked_rice",
+            "createdelight:empty_riceball",
             "2x crabbersdelight:cooked_pufferfish_slice"
         ]
     )
@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
         "2x culturaldelights:pufferfish_roll",
         [
             "2x crabbersdelight:pufferfish_slice",
-            "farmersdelight:cooked_rice",
+            "createdelight:empty_riceball",
         ]
     )
         .id("culturaldelights:pufferfish_roll")
