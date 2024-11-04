@@ -1,5 +1,6 @@
 [
     {
+        "replace": true,
         "key": "sword/architect_imprv",
         "integrity": -2,
         "effects": {
@@ -10,7 +11,7 @@
             "art_of_forging:knockback": [ 0.5, 0 ]
         },
         "attributes": {
-            "generic.attack_damage": 1.4,
+            "generic.attack_damage": 5,
             "generic.attack_speed": 0.2
         },
         "models": [

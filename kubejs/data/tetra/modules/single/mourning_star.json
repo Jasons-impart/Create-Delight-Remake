@@ -24,7 +24,7 @@
             "effects": {
                 "throwable": [0, 0.8],
                 "art_of_forging:devouring": [ 1, 5 ],
-                "art_of_forging:life_steal": [ 50, 5 ],
+                "art_of_forging:life_steal": [ 5, 50 ],
                 "art_of_forging:hubris": 50,
                 "armorPenetration": 50
             },

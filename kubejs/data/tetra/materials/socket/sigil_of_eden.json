@@ -13,7 +13,7 @@
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-        "**generic.attack_damage": 4
+        "generic.attack_damage": 4
     },
     "effects": {
         "art_of_forging:decaying": [ 2, 5 ]

@@ -15,7 +15,7 @@
     "tetra.stats.art_of_forging:evokingmaw.tooltip_short": "击中时召唤唤魔者尖牙",
 
     "art_of_forging.effect.life_steal.name": "生命窃取",
-    "art_of_forging.effect.life_steal.tooltip": "成功命中后有§e%s概率§r恢复§e%s生命值§r。",
+    "art_of_forging.effect.life_steal.tooltip": "成功命中后恢复§e%s生命值§r（§e%s概率§r）。",
     "tetra.stats.art_of_forging:life_steal": "生命窃取",
     "tetra.stats.art_of_forging:life_steal.tooltip_short": "成功命中后有几率恢复生命值",
 

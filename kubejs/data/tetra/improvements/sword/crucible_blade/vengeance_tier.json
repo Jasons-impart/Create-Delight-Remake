@@ -17,7 +17,7 @@
             "honed": 2
         },
         "effects": {
-            "art_of_forging:vengeance": [ 10, 0 ]
+            "art_of_forging:vengeance": [ 15, 0 ]
         }
     },
     {
@@ -28,7 +28,7 @@
             "honed": 3
         },
         "effects": {
-            "art_of_forging:vengeance": [ 15, 0 ]
+            "art_of_forging:vengeance": [ 30, 0 ]
         }
     }
 ]
