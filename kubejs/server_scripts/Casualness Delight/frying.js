@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { tag: input.slice(1) }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
             e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { item: input }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
             e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }

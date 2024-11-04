@@ -6,7 +6,8 @@ ServerEvents.recipes(e => {
         "oceanic_delight:sea_pickle_roll_slice",
         "oceanic_delight:shrimp_cutting",
         "oceanic_delight:fish_egg_roll_slice",
-        "oceanic_delight:wild_sea_grape_cutting"
+        "oceanic_delight:wild_sea_grape_cutting",
+        "oceansdelight:cooking/squid_rings"
     ])
     remove_recipes_output(e, [
         "culturaldelights:cooked_calamari"
