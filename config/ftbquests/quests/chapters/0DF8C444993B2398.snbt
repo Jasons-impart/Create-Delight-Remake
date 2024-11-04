@@ -1834,7 +1834,6 @@
 		{
 			dependencies: ["3241203B8302534F"]
 			description: [
-				"{image:createdelight:textures/gui/alexs_cave/sulfur_farm.png width:256 height:133 align:center}"
 				"在硫磺晶体上方放置酸蚀辐射石，硫磺晶体上便会开始生长硫磺晶簇。"
 				"且硫磺晶体也可以使用硫粉合成，因此硫磺农场可以越做越大。"
 			]
