@@ -1,0 +1,62 @@
+{
+    "entries": [
+        {
+            "type": "SEAFOOD",
+            "effects": [
+                {
+                  "effect": "oceanic_delight:instant_breath",
+                  "level": 0,
+                  "time": 20
+                }],
+            "ingredient": [
+                {
+                    "item": "oceanic_delight:shrimp_slices"
+                },
+                {
+                    "item": "oceanic_delight:squid_tentacles"
+                },
+                {
+                    "item": "oceanic_delight:glow_squid_tentacles"
+                },
+                {
+                    "item": "oceanic_delight:salmon_eggs"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 9,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.0,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": {
+                "item": "oceanic_delight:sea_grape"
+            },
+            "max_time": 80,
+            "min_time": 0,
+            "nutrition": 6,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.75,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": {
+                "item": "oceanic_delight:sea_pickle_slices"
+            },
+            "max_time": 80,
+            "min_time": 0,
+            "nutrition": 3,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 1,
+            "stir_time": 60
+        }
+    ]
+}

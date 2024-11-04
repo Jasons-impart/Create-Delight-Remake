@@ -5,6 +5,9 @@
             "modid": "the_bumblezone"
         }
     ],
+    "container": {
+        "item": "minecraft:glass_bottle"
+    },
     "displayItem": {
         "item": "some_assembly_required:spread",
         "nbt": {

@@ -248,6 +248,17 @@ StartupEvents.registry("item", e => {
                 })
         })
 
+    //空饭团
+    e.create("createdelight:empty_riceball")
+        .food(food => {
+            food.hunger(4)
+                .saturation(0.6)
+        })
+        .translationKey("item.createdelight.empty_riceball")
+    //未完成的寿司
+    e.create("createdelight:sushi_unrolledroll")
+        .translationKey("item.createdelight.sushi_unrolledroll")
+        
     // 未完成相关
     e.create("createdelight:incomplete_tesla_coil")
         .maxStackSize(64)

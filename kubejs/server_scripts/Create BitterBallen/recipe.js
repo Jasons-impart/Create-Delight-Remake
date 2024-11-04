@@ -3,6 +3,7 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/mayonnaise_recipe",
         "create_bic_bit:mixing/sunflower_seeds_recipe",
         "create_bic_bit:mixing/frying_oil_recipe",
+        "create_bic_bit:mixing/ketchup_recipe"
         
     ])
     remove_recipes_output(e, [
@@ -34,7 +35,8 @@ ServerEvents.recipes(e => {
         'create_bic_bit:raw_fries',
         'create_bic_bit:fries',
         'create_bic_bit:oliebollen',
-        'create_bic_bit:crystallised_oil'
+        'create_bic_bit:crystallised_oil',
+        'create_deepfried:calamari'
     ]
     
     )

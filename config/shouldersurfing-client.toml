@@ -261,6 +261,18 @@
 		#Allowed Values: ALWAYS, NEVER, WHEN_AIMING, WHEN_IN_RANGE, WHEN_AIMING_OR_IN_RANGE
 		shoulder_surfing = "ALWAYS"
 
+	[crosshair.obstruction]
+		#When the crosshair type is static, shows an additional indicator on obstacles that stand between you and your target.
+		show_obstruction_indicator = true
+		#Only show the obstruction indicator when using items that would trigger the adaptive crosshair.
+		only_when_aiming = true
+		#Hide the obstruction indicator when it is too close to the main crosshair. Distance measured in scaled pixels.
+		#Range: > 0
+		min_distance_to_crosshair = 8
+		#Ignore obstructions that are too far away from the player. Distance measured in blocks. Set to 0 to disable.
+		#Range: 0.0 ~ 1.7976931348623157E308
+		max_distance_to_obstruction = 20.0
+
 [audio]
 	#Whether to center sounds made by the player.
 	center_player_sounds = false
