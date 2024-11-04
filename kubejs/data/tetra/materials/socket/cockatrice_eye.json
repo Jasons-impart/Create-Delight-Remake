@@ -1,0 +1,29 @@
+{
+    "replace": true,
+    "key": "cockatrice_eye",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 60,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 200,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "effects": {
+        "art_of_forging:decaying": [2,10]   
+    },
+    "tints": {
+        "glyph": "383333",
+        "texture": "383333"
+    },
+    "textures": [
+        "default"
+    ],
+    "experienceCost": 20,
+    "material":{
+        "items":["iceandfire:cockatrice_eye"]
+    }
+}

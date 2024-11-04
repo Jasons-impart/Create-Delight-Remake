@@ -8,7 +8,9 @@
             "abilityMomentum": [ 2, 1 ],
             "art_of_forging:conquering": [ 4, 5 ],
             "art_of_forging:devouring": [ 3, 5 ],
-            "art_of_forging:life_steal": [ 3, 25 ]
+            "art_of_forging:life_steal": [ 3, 25 ],
+            "vvaddon:nightvisioneffect": 1,
+            "vvaddon:combo": 1
         },
         "attributes": {
             "generic.attack_speed": 0.55,

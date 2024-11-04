@@ -8,11 +8,11 @@
             "truesweep": 1,
             "sweeping": 1,
             "severing": [ 10, 2 ],
-            "art_of_forging:knockback": [ 0.5, 0 ]
+            "vvaddon:strengtheffect": 2
         },
         "attributes": {
-            "generic.attack_damage": 5,
-            "generic.attack_speed": 0.2
+            "generic.attack_damage": 10,
+            "generic.attack_speed": -0.1
         },
         "models": [
             {

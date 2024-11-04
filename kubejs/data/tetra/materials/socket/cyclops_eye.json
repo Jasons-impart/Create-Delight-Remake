@@ -1,0 +1,29 @@
+{
+    "replace": true,
+    "key": "cyclops_eye",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 60,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 200,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "effects": {
+        "art_of_forging:goliath_slayer": 25   
+    },
+    "tints": {
+        "glyph": "b74545",
+        "texture": "b74545"
+    },
+    "textures": [
+        "default"
+    ],
+    "experienceCost": 20,
+    "material":{
+        "items":["iceandfire:cyclops_eye"]
+     }
+}
