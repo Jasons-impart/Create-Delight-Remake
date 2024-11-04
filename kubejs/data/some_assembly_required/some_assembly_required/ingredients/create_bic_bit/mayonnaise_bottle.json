@@ -2,7 +2,7 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": "the_bumblezone"
+            "modid": "create_bic_bit"
         }
     ],
     "container": {
@@ -11,9 +11,12 @@
     "displayItem": {
         "item": "some_assembly_required:spread",
         "nbt": {
-            "Color": 11416283
+            "Color": 14804904
         }
     },
-    "item": "the_bumblezone:royal_jelly_bottle",
+    "fullName": {
+        "translate": "some_assembly_required.ingredient.mayonnaise"
+    },
+    "item": "create_bic_bit:mayonnaise_bottle",
     "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
 }

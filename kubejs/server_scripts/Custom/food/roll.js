@@ -82,6 +82,7 @@ ServerEvents.recipes(e => {
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["#forge:cucumber", "#culturaldelights:avocados"], "culturaldelights:midori_roll")
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["#forge:cooked_chicken", "minecraft:beetroot"], "culturaldelights:chicken_roll")
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["minecraft:carrot"], "farmersdelight:kelp_roll")
+    sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["createdelight:empty_riceball", "oceanic_delight:salmon_eggs"], "oceanic_delight:fish_egg_roll")
     sushi_roll(e, "minecraft:dried_kelp", "#forge:sea_pickles", ["#forge:squid_tentacles"], "oceanic_delight:sea_pickle_roll")
     sushi_roll(e, "silentsdelight:sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril", ["minecraft:carrot"], "silentsdelight:sculk_sensor_tendril_roll")
 })
