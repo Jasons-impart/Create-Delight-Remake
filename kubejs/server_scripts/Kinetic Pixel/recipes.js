@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "kinetic_pixel" }, "create:precision_mechanism", "vintageimprovements:steel_spring")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
 
-    const { create, vintageimprovements } = e.recipes
+    const { create, vintageimprovements,kubejs } = e.recipes
     let iner_1 = "createmetallurgy:steel_block"
     create.sequenced_assembly("6x kinetic_pixel:barrel", iner_1, [
         create.cutting(iner_1, iner_1),
@@ -169,4 +169,132 @@ ServerEvents.recipes(e => {
             H: "#minecraft:logs"
         })
         .id("create_armorer:smg_auto_crank")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}'),
+        [
+            " A ",
+            "BCB",
+            " A "
+        ],
+        {
+            A: "create:brass_sheet",
+            B: "crystal_clear:brass_glass_casing",
+            C: "create:precision_mechanism"
+        }
+    )
+    .id("create_armorer:sight_standard")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}'),
+        [
+            "AAA",
+            "BCB",
+            "AAA"
+        ],
+        {
+            A: "create:brass_sheet",
+            B: "crystal_clear:brass_glass_casing",
+            C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}').strongNBT()
+        }
+    )
+    .id("create_armorer:sight_medium_distance")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:scope_telephoto"}'),
+        [
+            "AAA",
+            "BCB",
+            "AAA"
+        ],
+        {
+            A: "create:brass_sheet",
+            B: "crystal_clear:brass_glass_casing",
+            C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}').strongNBT()
+        }
+    ).id("create_armorer:scope_telephoto")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:grip_gantry_shaft"}'),
+        [
+            "A",
+            "A"
+        ],
+        {
+            A: "create:gantry_shaft"
+        }
+    ).id("create_armorer:grip_gantry_shaft")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_brass_retractor"}'),
+        [
+            "AAA",
+            "   ",
+            "AAA"
+        ],
+        {
+            A: "createaddition:brass_rod"
+        }
+    ).id("create_armorer:muzzle_refit_brass_retractor")
+    let iner_2 = 'ad_astra:steel_tank'
+    create.sequenced_assembly(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_lava_perfusion_bottle"}'),
+        iner_2,
+        [
+            create.deploying(iner_2, [iner_2, 'create_sa:small_fueling_tank'])
+        ]
+    )
+    .loops(2)
+    .transitionalItem(iner_2)
+    .id("create_armorer:muzzle_refit_lava_perfusion_bottle")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_1"}'),
+        [
+            "ABA",
+            "ACA",
+            "ADA"
+        ],
+        {
+            A: "vintageimprovements:andesite_sheet",
+            B: "create_sa:heat_engine",
+            C: "create:andesite_alloy",
+            D: "kinetic_pixel:ammunitionbox"
+        }
+    ).id("create_armorer:extended_mag_ca_1")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_2"}'),
+        [
+            "ABA",
+            "ACA",
+            "ADA"
+        ],
+        {
+            A: "create:copper_sheet",
+            B: "create_sa:hydraulic_engine",
+            C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_1"}').strongNBT(),
+            D: "kinetic_pixel:ammunitionbox"
+        }
+    ).id("create_armorer:extended_mag_ca_2")
+    kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_3"}'),
+        [
+            "ABA",
+            "ACA",
+            "ADA"
+        ],
+        {
+            A: "create:brass_sheet",
+            B: "create_sa:steam_engine",
+            C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_2"}').strongNBT(),
+            D: "kinetic_pixel:ammunitionbox"
+        }
+    ).id("create_armorer:extended_mag_ca_3")
+    let iner_3 = 'create:brass_sheet'
+    create.sequenced_assembly(
+        Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(8),
+        iner_3,
+        [
+            create.deploying(iner_3, [iner_3, 'minecraft:gunpowder']),
+            create.deploying(iner_3, [iner_3, 'create:copper_sheet']),
+            create.deploying(iner_3, [iner_3, 'createmetallurgy:tungsten_sheet']),
+            create.cutting(iner_3, iner_3)
+        ]
+    )
+    .transitionalItem(iner_3)
+    .id("create_armorer:slap")
 })

@@ -116,6 +116,8 @@ CreateEvents.spoutHandler(e => {
             if (fluid.id == "createdelight:spent_liquor" && fluid.amount >= 50) {
                 if (!simulate) {
                     block.getBlockState().randomTick(block.level, block.pos, block.level.random)
+                    block.getBlockState().randomTick(block.level, block.pos, block.level.random)
+                    block.getBlockState().randomTick(block.level, block.pos, block.level.random)
                 }
                 return 50
             }
