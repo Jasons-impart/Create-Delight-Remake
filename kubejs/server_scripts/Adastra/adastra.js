@@ -28,6 +28,7 @@ ServerEvents.recipes(e => {
         "ad_astra:etrionic_blast_furnace"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
+    e.replaceInput({}, "ad_astra:steel_rod", "#ad_astra:steel_rods")
     // 新增配方：霜原木
     e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
