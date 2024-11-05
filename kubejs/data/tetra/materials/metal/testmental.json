@@ -1,0 +1,31 @@
+{
+    "replace": true,
+    "key": "alexscaves:scarlet_neodymium_ingot",
+    "category": "metal",
+    "primary": 2,
+    "secondary": 2,
+    "tertiary": 10,
+    "durability": 2000,
+    "integrityCost": 2,
+    "integrityGain": 4,
+    "magicCapacity": 400,
+    "toolLevel": "minecraft:netherite",
+    "toolEfficiency": 8,
+    "effects": {
+         "forge:unbreaking":3
+    },
+    "tints": {
+        "glyph": "311c3b",
+        "texture": "311c3b"
+    },
+    "textures": [
+        "heavy",
+        "metal"
+    ],
+    "material": {
+        "items": [ "alexscaves:scarlet_neodymium_ingot" ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:netherite"
+    }
+}
