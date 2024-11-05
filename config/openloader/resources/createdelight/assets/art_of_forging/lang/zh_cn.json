@@ -1,5 +1,5 @@
 {
-	"art_of_forging.effect.decaying.name": "凋零之触",
+    "art_of_forging.effect.decaying.name": "凋零之触",
     "art_of_forging.effect.decaying.tooltip": "对目标施加凋零效果，效果强度为§e%s§r，持续§e%s秒§r。",
     "tetra.stats.art_of_forging:decaying": "凋零之触",
     "tetra.stats.art_of_forging:decaying.tooltip_short": "施加凋零效果",
@@ -942,9 +942,6 @@
 
     "tetra.material.echo_shard": "回响碎片",
     "tetra.material.echo_shard.prefix": "回响碎片",
-
-    "tetra.material.precision_mechanism": "精密构件",
-    "tetra.material.precision_mechanism.prefix": "精密构件",
 
     "tetra.material.blaze_powder": "烈焰粉",
     "tetra.material.blaze_powder.prefix": "§6烈焰粉§r",
