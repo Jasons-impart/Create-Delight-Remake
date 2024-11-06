@@ -1,29 +1,42 @@
 {
     "replace": true,
     "slots": [ "bow/stave" ],
+    "localizationKey": "remembrance_stave/remembrance_stave",
     "materialSlotCount": 1,
     "materialRevealSlot": 0,
     "rarity": "temporary",
-    "displayType": "major",
+    "displayType": "improvement",
     "glyph": {
         "textureX": 128,
         "textureY": 32,
         "tint": "a31f68"
     },
     "requirement": {
-		"type": "tetra:locked",
-		"key": "tetra:bow/stave/remembrance_stave"
-	},
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:locked",
+                "key": "tetra:bow/stave/remembrance_stave"
+            },
+            {
+                "type": "tetra:module",
+                "module": "bow/dreadnought_stave"
+            }
+        ]
+    },
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:devils_soul_gem" ]
+                "items": [
+                    "art_of_forging:devils_soul_gem"
+                ]
             },
             "requiredTools": {
                 "hammer_dig": "minecraft:diamond"
             },
-            "moduleKey": "bow/remembrance_stave",
-            "moduleVariant": "remembrance_stave/remembrance_stave"
+            "improvements": {
+                "bow/remembrance_imprv": 0
+            }
         }
     ]
 }

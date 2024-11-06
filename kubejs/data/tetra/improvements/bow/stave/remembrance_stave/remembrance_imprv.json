@@ -1,0 +1,53 @@
+[
+    {
+        "key": "bow/remembrance_imprv",
+        "integrity": -1,
+        "effects": {
+            "spread": [ 0, 99 ],
+            "suspend": 1,
+            "velocity": 20,
+            "overbowed": 60,
+            "art_of_forging:esoteric_edge": 100
+        },
+        "attributes": {
+            "tetra:draw_speed": 5,
+            "tetra:draw_strength": 12
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/bow/stave/remembrance/remembrance_stave"
+            },
+            {
+                "type": "draw_0",
+                "location": "tetra:item/module/bow/stave/remembrance/0_remembrance_stave"
+            },
+            {
+                "type": "draw_1",
+                "location": "tetra:item/module/bow/stave/remembrance/1_remembrance_stave"
+            },
+            {
+                "type": "draw_2",
+                "location": "tetra:item/module/bow/stave/remembrance/2_remembrance_stave"
+            },
+            {
+                "location": "tetra:item/module/bow/stave/remembrance/remembrance_stave_glow",
+                "emission": 8
+            },
+            {
+                "type": "draw_0",
+                "location": "tetra:item/module/bow/stave/remembrance/0_remembrance_stave_glow",
+                "emission": 8
+            },
+            {
+                "type": "draw_1",
+                "location": "tetra:item/module/bow/stave/remembrance/1_remembrance_stave_glow",
+                "emission": 10
+            },
+            {
+                "type": "draw_2",
+                "location": "tetra:item/module/bow/stave/remembrance/2_remembrance_stave_glow",
+                "emission": 15
+            }
+        ]
+    }
+]
