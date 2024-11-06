@@ -14,11 +14,10 @@
             "key": "tonal_blade/",
             "attributes": {
                 "generic.attack_speed": -1.45,
-                "generic.attack_damage": 0.1
+                "generic.attack_damage": 0
             },
             "effects": {
-                "art_of_forging:disorienting": [ 3, 4 ],
-                "armorPenetration": 1
+                "art_of_forging:disorienting": [ 3, 4 ]
             },
             "tools": {
                 "cut": [ 1, 0.2 ]
@@ -33,27 +32,24 @@
             ],
             "extract": {
                 "primaryAttributes": {
-                    "generic.attack_damage": 0.65
+                    "generic.attack_damage": 0
                 },
                 "secondaryAttributes": {
-                    "generic.attack_damage": 0.4,
-                    "generic.attack_speed": -0.4
+                    "generic.attack_damage": 0,
+                    "generic.attack_speed": -0
                 },
                 "tertiaryAttributes": {
-                    "generic.attack_damage": -0.4,
-                    "generic.attack_speed": 0.5
+                    "generic.attack_damage": 1,
+                    "generic.attack_speed": 0.1
                 },
                 "primaryEffects": {
-                    "art_of_forging:disorienting": [ 0, 1 ],
-                    "armorPenetration": 0.25
+
                 },
                 "secondaryEffects": {
-                    "art_of_forging:disorienting": -1,
-                    "armorPenetration": 0.25
+
                 },
                 "tertiaryEffects": {
-                    "art_of_forging:disorienting": [ 1, 3 ],
-                    "armorPenetration": -0.7
+                    "art_of_forging:disorienting": [ 1, 3 ]
                 },
                 "durability": 0.7,
                 "integrity": -1,
