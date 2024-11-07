@@ -12,7 +12,7 @@
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 8,
     "effects": {
-         "forge:unbreaking":3
+         "unbreaking":3
     },
     "tints": {
         "glyph": "311c3b",
