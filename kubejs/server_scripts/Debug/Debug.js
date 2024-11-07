@@ -36,23 +36,26 @@ const handleChatCommand = (event, command, message, target) => {
       case "-kli":
         server.runCommandSilent("kill @e[type=item]");
         server.runCommandSilent(`tellraw ${target} "§4掉落物已清除"`);
+        event.cancel();
         break;
       case "-efg":
         player.runCommandSilent("effect give @s minecraft:night_vision infinite 255 true");
         player.runCommandSilent("effect give @s minecraft:strength infinite 255 true");
         player.runCommandSilent("effect give @s minecraft:resistance infinite 255 true");
         player.runCommandSilent(`tellraw @s "§6已获得所有BUFF"`);
+        event.cancel();
         break;
       case "-efc":
         player.runCommandSilent("effect clear");
         player.runCommandSilent(`tellraw @s "§4已清除所有BUFF"`);
+        event.cancel();
         break;
       case "-kle":
         server.runCommandSilent("kill @e[type=!player]");
         server.runCommandSilent(`tellraw ${target} "§4所有实体已清除"`);
+        event.cancel();
         break;
     }
-    event.cancel();
   }
 };
 
