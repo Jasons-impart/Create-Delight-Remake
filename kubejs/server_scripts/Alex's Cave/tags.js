@@ -30,7 +30,7 @@ ServerEvents.tags("item", e => {
     )
 
     e.add("forge:ingots/uranium", "alexscaves:uranium")
-    e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
+    // e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
     e.add("createdelight:candy_cane", [
         "aether:candy_cane",
         "alexscaves:candy_cane",

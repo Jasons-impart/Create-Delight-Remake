@@ -6,8 +6,8 @@ ServerEvents.recipes(e => {
         "create_oppenheimered:mixing/azure_to_scarlet_neodymium",
         "create_oppenheimered:mixing/scarlet_to_azure_neodymium",
         "alexscaves:nuclear_bomb"
-])
-
+    ])
+    e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
 
     //硫磺，硫磺晶簇->硫粉
     e.recipes.create.crushing([
@@ -47,7 +47,7 @@ ServerEvents.recipes(e => {
             "minecraft:mud"
         ]
     ).heated()
-    .id("alexscaves:pressurizing/toxic_paste")
+        .id("alexscaves:pressurizing/toxic_paste")
 
     //离心核废料
     e.recipes.vintageimprovements.centrifugation(
@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
             Fluid.of("alexscaves:acid").withAmount(250)
         ],
         ["alexscaves:unrefined_waste"])
-    .id("alexscaves:centrifugation/uranium_shard")
+        .id("alexscaves:centrifugation/uranium_shard")
 
     let iner_1 = "alexscaves:block_of_uranium"
     //铀棒
@@ -79,26 +79,26 @@ ServerEvents.recipes(e => {
         "ACDCA",
         "AABAA"
     ],
-    {
-        A: "ad_astra:steel_plate",
-        B: "minecraft:tnt",
-        C: "alexscaves:uranium_rod",
-        D: "alexscaves:fissile_core",
-        E: "alexscaves:block_of_uranium"
-    })
-    .id("alexscaves:nuclear_bomb")
-    
+        {
+            A: "ad_astra:steel_plate",
+            B: "minecraft:tnt",
+            C: "alexscaves:uranium_rod",
+            D: "alexscaves:fissile_core",
+            E: "alexscaves:block_of_uranium"
+        })
+        .id("alexscaves:nuclear_bomb")
+
     //修改动力刷怪笼配方
-    e.replaceInput({id: "create_mechanical_spawner:mechanical_spawner"}, "minecraft:emerald", "alexscaves:amber_monolith")
+    e.replaceInput({ id: "create_mechanical_spawner:mechanical_spawner" }, "minecraft:emerald", "alexscaves:amber_monolith")
 
     //氡气相关
     e.recipes.vintageimprovements.pressurizing(Fluid.of("createdelight:radon").withAmount(1000), Fluid.of("alexscaves:acid").withAmount(100))
-    .secondaryFluidOutput(0)
-    .heated()
+        .secondaryFluidOutput(0)
+        .heated()
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
 
     // 聚合物板
-    e.replaceInput({id: "alexscaves:polymer_plate"}, "minecraft:iron_ingot", "createmetallurgy:steel_ingot")
+    e.replaceInput({ id: "alexscaves:polymer_plate" }, "minecraft:iron_ingot", "createmetallurgy:steel_ingot")
     let iner_2 = "createmetallurgy:steel_block"
     e.recipes.create.sequenced_assembly("48x alexscaves:polymer_plate", iner_2, [
         e.recipes.vintageimprovements.hammering(iner_2, iner_2),
@@ -106,9 +106,9 @@ ServerEvents.recipes(e => {
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:radon").withAmount(1000)]),
         e.recipes.create.cutting(iner_2, iner_2)
     ])
-    .transitionalItem(iner_2)
-    .loops(1)
-    .id("alexscaves:polymer_plate_2")
+        .transitionalItem(iner_2)
+        .loops(1)
+        .id("alexscaves:polymer_plate_2")
 
 
     //粉碎珍珠出海洋玻璃碎片
@@ -116,7 +116,7 @@ ServerEvents.recipes(e => {
         "3x alexscaves:sea_glass_shards",
         Item.of("alexscaves:sea_glass_shards", 3).withChance(0.5)], "alexscaves:pearl")
 
-    
+
     //磁化洞穴
 
     //重锤
@@ -127,9 +127,9 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner_3, [iner_3, "createmetallurgy:steel_ingot"])
         ]
     )
-    .transitionalItem(iner_3)
-    .loops(1)
-    .id("alexscaves:heavyweight")
+        .transitionalItem(iner_3)
+        .loops(1)
+        .id("alexscaves:heavyweight")
 
     //机铁之心
     let iner_4 = "minecraft:iron_block"
@@ -139,9 +139,9 @@ ServerEvents.recipes(e => {
             e.recipes.create_new_age.energising(iner_4, iner_4, 20000)
         ]
     )
-    .transitionalItem(iner_4)
-    .loops(1)
-    .id("alexscaves:heart_of_iron")
+        .transitionalItem(iner_4)
+        .loops(1)
+        .id("alexscaves:heart_of_iron")
 
     //磁流核
     e.recipes.kubejs.shaped("alexscaves:telecore", [
@@ -149,69 +149,69 @@ ServerEvents.recipes(e => {
         " D ",
         "   "
     ],
-    {
-        A: "alexscaves:scarlet_neodymium_ingot",
-        B: "minecraft:quartz",
-        C: "alexscaves:azure_neodymium_ingot",
-        D: "create_new_age:overcharged_iron_sheet"
-    })
-    .id("alexscaves:telecore")
-    e.replaceInput({id: "create_oppenheimered:deploying/precision_mechanism_from_telecore"}, "create:large_cogwheel", "#forge:spring/between_500_2_1000")
-    e.replaceInput({id: "create_oppenheimered:deploying/electron_tube_from_notor_gizmo"}, "create:copper_nugget", "create_new_age:overcharged_iron_sheet")
+        {
+            A: "alexscaves:scarlet_neodymium_ingot",
+            B: "minecraft:quartz",
+            C: "alexscaves:azure_neodymium_ingot",
+            D: "create_new_age:overcharged_iron_sheet"
+        })
+        .id("alexscaves:telecore")
+    e.replaceInput({ id: "create_oppenheimered:deploying/precision_mechanism_from_telecore" }, "create:large_cogwheel", "#forge:spring/between_500_2_1000")
+    e.replaceInput({ id: "create_oppenheimered:deploying/electron_tube_from_notor_gizmo" }, "create:copper_nugget", "create_new_age:overcharged_iron_sheet")
 
     //扫描机兵零件
     let iner_5 = "ad_astra:steel_nugget"
-    e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", iner_5, 
+    e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", iner_5,
         [
             e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:azure_neodymium_ingot"]),
             e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:scarlet_neodymium_ingot"])
         ]
     )
-    .transitionalItem(iner_5)
-    .loops(1)
-    .id("alexscaves:notor_gizmo")
+        .transitionalItem(iner_5)
+        .loops(1)
+        .id("alexscaves:notor_gizmo")
 
     //焦糖转换
     e.recipes.create.cutting("3x alexscaves:caramel", "create_confectionery:bar_of_caramel")
-    .id("alexscaves:caramel")
+        .id("alexscaves:caramel")
     e.recipes.create.compacting(Fluid.of("create_confectionery:caramel", 80), "alexscaves:caramel")
-    .heated()
-    .id("create_confectionery:compacting/caramel_2")
-    
+        .heated()
+        .id("create_confectionery:compacting/caramel_2")
+
     //焦糖苹果注液
     e.recipes.create.filling("alexscaves:caramel_apple", ["minecraft:apple", Fluid.of("create_confectionery:caramel", 500)])
-    .id("alexscaves:filling/caramel_apple")
+        .id("alexscaves:filling/caramel_apple")
     //蛋糕胚
     e.recipes.create.compacting("ratatouille:cake_base", "3x alexscaves:cake_layer")
-    .heated()
-    .id("alexscaves:compacting/cake_base")
+        .heated()
+        .id("alexscaves:compacting/cake_base")
 
     //黑巧克力to巧克力块
     e.recipes.minecraft.stonecutting("3x alexscaves:block_of_chocolate", "create_confectionery:bar_of_black_chocolate")
-    .id("block_of_chocolate_from_bar_of_black_chocolate")
-    
+        .id("block_of_chocolate_from_bar_of_black_chocolate")
+
     //统一拐杖糖
-    e.replaceInput({input: "alexscaves:candy_cane"}, "alexscaves:candy_cane", "#createdelight:candy_cane")
+    e.replaceInput({ input: "alexscaves:candy_cane" }, "alexscaves:candy_cane", "#createdelight:candy_cane")
 
     //拐杖糖打磨成尖拐杖糖
     e.recipes.vintageimprovements.polishing("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
-    .id("alexscaves:polishing/sharpened_candy_cane")
-    
+        .id("alexscaves:polishing/sharpened_candy_cane")
+
     //拐杖糖粉碎成薄荷糖粉
     e.recipes.create.crushing([Item.of("3x alexscaves:peppermint_powder"), Item.of("2x alexscaves:peppermint_powder").withChance(0.5)], [["alexscaves:sharpened_candy_cane", "#createdelight:candy_cane"]])
     //姜饼块to姜饼块
     e.recipes.minecraft.stonecutting("6x alexscaves:gingerbread_block", "create_confectionery:gingerbread_block")
-    .id("gingerbread_block_from_gingerbread_block")
-    
+        .id("gingerbread_block_from_gingerbread_block")
+
     //姜饼面团to生面团块
     e.recipes.minecraft.stonecutting("2x alexscaves:dough_block", "create_confectionery:gingerdough")
-    .id("dough_block_from_gingerdough")
+        .id("dough_block_from_gingerdough")
 
     //甘草糖粉碎出甘草蔓
     e.recipes.create.crushing([Item.of("alexscaves:licoroot_vine"), Item.of("alexscaves:licoroot_vine").withChance(0.25)], "alexscaves:licoroot")
-    .id("alexscaves:crushing/licoroot_vine")
+        .id("alexscaves:crushing/licoroot_vine")
 
     //姜饼块粉碎出姜饼屑
     e.recipes.create.milling("alexscaves:gingerbread_crumbs", "alexscaves:gingerbread_block")
-    .id("alexscaves:milling/gingerbread_crumbs")
+        .id("alexscaves:milling/gingerbread_crumbs")
 })
