@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "kinetic_pixel" }, "create:precision_mechanism", "vintageimprovements:steel_spring")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
 
-    const { create, vintageimprovements,kubejs } = e.recipes
+    const { create, vintageimprovements, kubejs, minecraft } = e.recipes
     let iner_1 = "createmetallurgy:steel_block"
     create.sequenced_assembly("6x kinetic_pixel:barrel", iner_1, [
         create.cutting(iner_1, iner_1),
@@ -284,17 +284,24 @@ ServerEvents.recipes(e => {
             D: "kinetic_pixel:ammunitionbox"
         }
     ).id("create_armorer:extended_mag_ca_3")
-    let iner_3 = 'create:brass_sheet'
-    create.sequenced_assembly(
-        Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(8),
-        iner_3,
-        [
-            create.deploying(iner_3, [iner_3, 'minecraft:gunpowder']),
-            create.deploying(iner_3, [iner_3, 'create:copper_sheet']),
-            create.deploying(iner_3, [iner_3, 'createmetallurgy:tungsten_sheet']),
-            create.cutting(iner_3, iner_3)
-        ]
-    )
-    .transitionalItem(iner_3)
+    create.mechanical_crafting('createdelight:packaged_ammo', [
+        " A ",
+        "BCB",
+        "BCB",
+        " D "
+    ],{
+        A: "createmetallurgy:tungsten_block",
+        B: "minecraft:copper_block",
+        C: "quark:gunpowder_sack",
+        D: "create:brass_block"
+    })
+    .id("createdelight:packaged_ammo")
+    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:slap"}'), "createdelight:packaged_ammo")
     .id("create_armorer:slap")
+    create.cutting(Item.of('tacz:ammo', 36, '{AmmoId:"tacz:12g"}'), "createdelight:packaged_ammo")
+    .id("tacz:12g")
+    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:rbapb"}'), "createdelight:packaged_ammo")
+    .id("create_armorer:rbapb")
+    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), "createdelight:packaged_ammo")
+    .id("create_armorer:gas_pistol_ammo")
 })

@@ -80,4 +80,11 @@ StartupEvents.registry("block", (e) => {
     .soundType("metal")
     .tagBlock(`minecraft:mineable/pickaxe`)
     .tagBlock(`minecraft:needs_iron_tool`);
+
+    
+  // 打包弹药
+  e.create("createdelight:packaged_ammo")
+  .soundType("metal")
+  .requiresTool(false)
+  .translationKey("block.createdelight.packaged_ammo");
 });
