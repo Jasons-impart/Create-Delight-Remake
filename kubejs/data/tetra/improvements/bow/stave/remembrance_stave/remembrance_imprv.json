@@ -10,8 +10,8 @@
             "art_of_forging:esoteric_edge": 100
         },
         "attributes": {
-            "tetra:draw_speed": 5,
-            "tetra:draw_strength": 12
+            "tetra:draw_speed": 0.5,
+            "tetra:draw_strength": 6
         },
         "models": [
             {

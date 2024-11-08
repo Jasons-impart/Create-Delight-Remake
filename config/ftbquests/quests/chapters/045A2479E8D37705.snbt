@@ -42,8 +42,8 @@
 				item: "iceandfire:dragonbone"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -4.0d
+			x: -3.5d
+			y: -8.0d
 		}
 		{
 			dependencies: [
@@ -52,6 +52,7 @@
 			]
 			dependency_requirement: "one_completed"
 			id: "17D9DB61D8A8DC98"
+			min_required_tasks: 1
 			tasks: [{
 				entity: "iceandfire:fire_dragon"
 				id: "7CAC1922654F1A46"
@@ -65,6 +66,7 @@
 			dependencies: ["17D9DB61D8A8DC98"]
 			icon: "iceandfire:dragonscales_red"
 			id: "69CC188E28D83004"
+			size: 1.25d
 			tasks: [{
 				id: "1CCA3E7282C3E14B"
 				item: {
@@ -77,184 +79,44 @@
 				title: "Any #iceandfire:scales/dragon/fire"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -5.0d
+			x: 1.5d
+			y: -6.5d
 		}
 		{
-			dependencies: ["7B89E928C3A6F2E6"]
-			icon: "iceandfire:dragonforge_fire_core_disabled"
-			id: "516EA9DA2724D121"
-			tasks: [
-				{
-					id: "02EA33152F1C451C"
-					item: "iceandfire:dragonforge_fire_brick"
-					type: "item"
-				}
-				{
-					id: "1895D80695C886C9"
-					item: "iceandfire:dragonforge_fire_input"
-					type: "item"
-				}
-				{
-					id: "2959AB497511AE68"
-					item: "iceandfire:dragonforge_fire_core_disabled"
-					type: "item"
-				}
-				{
-					id: "0DF3A5614BF77AB4"
-					item: "iceandfire:dragon_bone_block"
-					type: "item"
-				}
-			]
-			x: 0.0d
-			y: -7.0d
-		}
-		{
-			dependencies: [
-				"13006D610CC27C68"
-				"46059198877920C4"
-			]
-			dependency_requirement: "one_completed"
-			icon: "iceandfire:dragonforge_ice_core_disabled"
-			id: "4D089CF9272B7C60"
-			tasks: [
-				{
-					id: "365D372937763215"
-					item: "iceandfire:dragonforge_ice_brick"
-					type: "item"
-				}
-				{
-					id: "1C4C8000FB7C2034"
-					item: "iceandfire:dragonforge_ice_input"
-					type: "item"
-				}
-				{
-					id: "2558FB47389F2FFB"
-					item: "iceandfire:dragonforge_ice_core_disabled"
-					type: "item"
-				}
-				{
-					id: "2F203D2802F8B88A"
-					item: "iceandfire:dragon_bone_block"
-					type: "item"
-				}
-			]
-			x: 3.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["3C3F2A2F6691A1C0"]
-			icon: "iceandfire:dragonforge_lightning_core_disabled"
-			id: "01E72F560F575A9C"
-			tasks: [
-				{
-					id: "1BD6E61BCC900F11"
-					item: "iceandfire:dragonforge_lightning_brick"
-					type: "item"
-				}
-				{
-					id: "16C6534BCD1C108F"
-					item: "iceandfire:dragonforge_lightning_input"
-					type: "item"
-				}
-				{
-					id: "22BE14BA5B392D71"
-					item: "iceandfire:dragonforge_lightning_core_disabled"
-					type: "item"
-				}
-				{
-					id: "5AE471408ECDC7CD"
-					item: "iceandfire:dragon_bone_block"
-					type: "item"
-				}
-			]
-			x: 8.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["516EA9DA2724D121"]
+			dependencies: ["556B30C5A2ED0D94"]
 			id: "5B93E8E6D33CF5E4"
+			size: 1.25d
 			tasks: [{
 				id: "1B4CDE18988A75E8"
 				item: "iceandfire:dragonsteel_fire_ingot"
 				type: "item"
 			}]
-			x: 0.0d
-			y: -8.0d
+			x: -1.5d
+			y: -6.5d
 		}
 		{
-			dependencies: ["4D089CF9272B7C60"]
+			dependencies: ["0961AD88179B18C4"]
 			id: "1929725D08B07686"
+			size: 1.25d
 			tasks: [{
 				id: "13B7F82AD6466515"
 				item: "iceandfire:dragonsteel_ice_ingot"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 8.5d
+			x: 6.5d
+			y: 6.5d
 		}
 		{
-			dependencies: ["01E72F560F575A9C"]
+			dependencies: ["34E1D8B005ACD4CF"]
 			id: "5C0EC9448D4B3AD4"
+			size: 1.25d
 			tasks: [{
 				id: "4103F79378D8D3C5"
 				item: "iceandfire:dragonsteel_lightning_ingot"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"556B30C5A2ED0D94"
-				"5D858F179FB2D627"
-			]
-			icon: {
-				Count: 1
-				id: "iceandfire:dragonbone_sword_fire"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "152AF469DBE10F53"
-			min_required_tasks: 1
-			tasks: [
-				{
-					id: "47D5390BFF11F719"
-					item: {
-						Count: 1
-						id: "iceandfire:dragonbone_sword_fire"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7C80ECC75A3AA46A"
-					item: {
-						Count: 1
-						id: "iceandfire:dragonbone_sword_ice"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6F4E86F862A4DF44"
-					item: {
-						Count: 1
-						id: "iceandfire:dragonbone_sword_lightning"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			x: -1.5d
-			y: -6.0d
+			x: 8.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["17D9DB61D8A8DC98"]
@@ -264,29 +126,8 @@
 				item: "iceandfire:fire_dragon_blood"
 				type: "item"
 			}]
-			x: -0.5d
-			y: -5.0d
-		}
-		{
-			dependencies: [
-				"03B211A53B10318E"
-				"17D9DB61D8A8DC98"
-			]
-			dependency_requirement: "one_completed"
-			id: "5D858F179FB2D627"
-			tasks: [{
-				id: "79B4FEC392E68754"
-				item: {
-					Count: 1
-					id: "iceandfire:dragonbone_sword"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
 			x: -1.5d
-			y: -5.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
@@ -469,12 +310,10 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"556B30C5A2ED0D94"
-				"69CC188E28D83004"
-			]
+			dependencies: ["17D9DB61D8A8DC98"]
 			id: "7B89E928C3A6F2E6"
 			min_required_tasks: 1
+			size: 1.25d
 			tasks: [
 				{
 					id: "2FF588316CBC4D9A"
@@ -498,7 +337,7 @@
 				}
 			]
 			x: 0.0d
-			y: -6.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -533,8 +372,8 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: 3.5d
-			y: 4.5d
+			x: 4.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -546,7 +385,7 @@
 				value: 1L
 			}]
 			x: 5.0d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -558,7 +397,7 @@
 				value: 1L
 			}]
 			x: 5.0d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["5246A4941FE396AC"]
@@ -582,8 +421,8 @@
 				type: "checkmark"
 			}]
 			title: "沙漠恐蚁"
-			x: -2.5d
-			y: -4.0d
+			x: -3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["1BEE7AD2537F2428"]
@@ -701,7 +540,7 @@
 				item: "iceandfire:stymphalian_bird_feather"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 3.0d
 			y: -5.0d
 		}
 		{
@@ -713,8 +552,8 @@
 				item: "iceandfire:stymphalian_skull"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -7.5d
+			x: 4.75d
+			y: -6.75d
 		}
 		{
 			dependencies: ["77B14A2DDB78829C"]
@@ -724,7 +563,7 @@
 				item: "iceandfire:amphithere_feather"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 4.0d
 			y: -2.5d
 		}
 		{
@@ -736,7 +575,7 @@
 				item: "iceandfire:amphithere_skull"
 				type: "item"
 			}]
-			x: 6.25d
+			x: 5.75d
 			y: -4.25d
 		}
 		{
@@ -753,7 +592,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
+			x: 5.0d
 			y: -3.5d
 		}
 		{
@@ -765,7 +604,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["6DAF4BB49D52FD8B"]
@@ -776,7 +615,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["6DAF4BB49D52FD8B"]
@@ -787,8 +626,8 @@
 				item: "iceandfire:hydra_skull"
 				type: "item"
 			}]
-			x: 8.0d
-			y: -1.5d
+			x: 7.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["40D76FD4DD98DAE0"]
@@ -799,7 +638,7 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: -1.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -809,7 +648,7 @@
 				item: "iceandfire:stymphalian_arrow"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 3.0d
 			y: -6.0d
 		}
 		{
@@ -826,8 +665,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: -6.5d
+			x: 4.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["467341A4C358239B"]
@@ -837,8 +676,8 @@
 				item: "iceandfire:stymphalian_feather_bundle"
 				type: "item"
 			}]
-			x: 3.5d
-			y: -6.0d
+			x: 4.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
@@ -848,13 +687,14 @@
 				item: "iceandfire:lightning_dragon_blood"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 0.5d
+			x: 7.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["7C9857F0DAD1E04E"]
 			icon: "iceandfire:dragonscales_electric"
 			id: "1231C11A3F017724"
+			size: 1.25d
 			tasks: [{
 				id: "2AB440B017346073"
 				item: {
@@ -867,17 +707,15 @@
 				title: "Any #iceandfire:scales/dragon/lightning"
 				type: "item"
 			}]
-			x: 6.5d
-			y: -0.5d
+			x: 8.0d
+			y: 1.5d
 		}
 		{
-			dependencies: [
-				"34E1D8B005ACD4CF"
-				"1231C11A3F017724"
-			]
+			dependencies: ["7C9857F0DAD1E04E"]
 			icon: "iceandfire:dragonegg_electric"
 			id: "3C3F2A2F6691A1C0"
 			min_required_tasks: 1
+			size: 1.25d
 			tasks: [
 				{
 					id: "04B660EB566C6E91"
@@ -900,7 +738,7 @@
 					type: "item"
 				}
 			]
-			x: 7.5d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -911,13 +749,14 @@
 				item: "iceandfire:ice_dragon_blood"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 5.5d
+			x: 5.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["1D34EBFF1D60EA85"]
 			icon: "iceandfire:dragonscales_white"
 			id: "1EA272CB25BF206C"
+			size: 1.25d
 			tasks: [{
 				id: "70B49ECD45A64864"
 				item: {
@@ -930,17 +769,15 @@
 				title: "Any #iceandfire:scales/dragon/ice"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 5.5d
+			x: 6.5d
+			y: 3.5d
 		}
 		{
-			dependencies: [
-				"0961AD88179B18C4"
-				"1EA272CB25BF206C"
-			]
+			dependencies: ["1D34EBFF1D60EA85"]
 			icon: "iceandfire:dragonegg_white"
 			id: "13006D610CC27C68"
 			min_required_tasks: 1
+			size: 1.25d
 			tasks: [
 				{
 					id: "1309ADA19F4F17B9"
@@ -963,8 +800,8 @@
 					type: "item"
 				}
 			]
-			x: 3.5d
-			y: 6.5d
+			x: 6.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
@@ -989,7 +826,7 @@
 				}
 			]
 			x: 6.0d
-			y: 3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
@@ -1009,7 +846,7 @@
 				}
 			]
 			x: 5.0d
-			y: 3.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["71CBDE6F46E867ED"]
@@ -1020,7 +857,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 2.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -1073,40 +910,6 @@
 			]
 			x: 7.0d
 			y: 2.0d
-		}
-		{
-			dependencies: ["34E1D8B005ACD4CF"]
-			id: "473E545262A00868"
-			tasks: [{
-				id: "60D0A70A3D121793"
-				item: {
-					Count: 1
-					id: "iceandfire:dragonbone_sword_lightning"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 7.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["0961AD88179B18C4"]
-			id: "6C713F9D091ABE24"
-			tasks: [{
-				id: "729A2892BAB00DE0"
-				item: {
-					Count: 1
-					id: "iceandfire:dragonbone_sword_ice"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 4.5d
-			y: 6.5d
 		}
 		{
 			dependencies: ["1F4036E773E1E9F1"]
@@ -1571,8 +1374,8 @@
 					type: "item"
 				}
 			]
-			x: -2.5d
-			y: -5.0d
+			x: -4.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["7160E3E42BFE313D"]
@@ -1582,8 +1385,8 @@
 				item: "iceandfire:myrmex_desert_staff"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -6.0d
+			x: -5.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["17D9DB61D8A8DC98"]
@@ -1593,7 +1396,7 @@
 				item: "iceandfire:fire_dragon_heart"
 				type: "item"
 			}]
-			x: 1.0d
+			x: -1.0d
 			y: -4.0d
 		}
 		{
@@ -1605,7 +1408,7 @@
 				type: "item"
 			}]
 			x: 5.5d
-			y: 1.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["1D34EBFF1D60EA85"]
@@ -1615,8 +1418,8 @@
 				item: "iceandfire:ice_dragon_heart"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 4.5d
+			x: 4.0d
+			y: 6.0d
 		}
 		{
 			id: "32EA89B38D6BE059"

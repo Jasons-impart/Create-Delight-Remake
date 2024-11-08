@@ -1,0 +1,68 @@
+{
+    "replace": true,
+    "slots": ["double/head_left", "double/head_right"],
+    "keySuffixes": ["_left", "_right"],
+    "materialSlotCount": 1,
+    "glyph": {
+        "textureX": 64
+    },
+    "displayType": "major",
+    "applicableMaterials": ["#wood", "#stone", "!copper", "!iron", "!blackstone", "!obsidian", "!netherite", "!dragonsteel_fire_ingot","!dragonsteel_ice_ingot","!dragonsteel_lightning_ingot","!dreadsteel_ingot"],
+    "translation": {
+        "primaryAttributes": {
+            "generic.attack_damage": 2
+        },
+        "secondaryAttributes": {
+            "generic.attack_damage": 3,
+            "generic.attack_speed": -1
+        },
+        "tools": {
+            "hammer_dig": [0, 2]
+        },
+        "durability": 2,
+        "integrity": -3,
+        "magicCapacity": 3
+    },
+    "outcomes": [{
+        "materials": ["tetra:wood/", "tetra:stone/stone", "tetra:stone/diorite", "tetra:stone/andesite", "tetra:stone/granite"],
+        "toolFactor": 0,
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/"
+    }, {
+        "materials": ["tetra:metal/iron", "tetra:metal/copper"],
+        "countFactor": 2,
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/"
+    }, {
+        "materials": ["tetra:stone/blackstone"],
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/"
+    }, {
+        "material": {
+            "tag": "forge:obsidian"
+        },
+        "requiredTools": {
+            "hammer_dig": "minecraft:netherite"
+        },
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/obsidian",
+        "improvements": {
+            "arrested": 0
+        }
+    }, {
+        "material": {
+            "items": ["minecraft:netherite_ingot"],
+            "count": 2
+        },
+        "requiredTools": {
+            "hammer_dig": "tetra:maxed_forge_hammer"
+        },
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/netherite"
+    }, {
+        "materials": [ "tetra:metal/dragonsteel_fire_ingot","tetra:metal/dragonsteel_ice_ingot","tetra:metal/dragonsteel_lightning_ingot","tetra:metal/dreadsteel_ingot"],
+        "countFactor": 2,
+        "moduleKey": "double/basic_hammer",
+        "moduleVariant": "basic_hammer/"
+    }]
+}
