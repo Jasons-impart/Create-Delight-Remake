@@ -6,8 +6,7 @@
             "severing": [ 5, 1 ],
             "bleeding": [ 1, 1 ],
             "abilityMomentum": [ 1, 1 ],
-            "vvaddon:rush": 1,
-            "vvaddon:charge": 1
+            "vvaddon:rush": 1
         },
         "attributes": {
             "generic.attack_speed": 0.1,
