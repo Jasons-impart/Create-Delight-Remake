@@ -25,6 +25,11 @@
 		{
 			description: ["每当需要更高级的工具时，我总得重新制作一把新的。有时，我脑海中会闪过一个想法：是否可以&e直接更换工具的部件&r，以提升工具的性能？带着这个念头，我尝试用圆石制作了一把锤子，希望能实现我的设想。"]
 			id: "75C7395A84B2E478"
+			rewards: [{
+				id: "013C9FE2AE77D251"
+				item: "minecraft:crafting_table"
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "补药做木锤呀"
 			tasks: [{
@@ -34,7 +39,7 @@
 				type: "advancement"
 			}]
 			title: "模块化开端"
-			x: 0.5d
+			x: 0.0d
 			y: 0.0d
 		}
 		{
@@ -54,8 +59,8 @@
 				type: "advancement"
 			}]
 			title: "新的工作台"
-			x: 2.5d
-			y: 0.0059523809523724935d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -72,14 +77,22 @@
 				type: "advancement"
 			}]
 			title: "这不是铁锤吗？"
-			x: 2.5d
+			x: 3.0d
 			y: 1.5d
 		}
 		{
-			dependencies: ["01FC78875A324DE3"]
+			dependencies: [
+				"01FC78875A324DE3"
+				"0941D2A2970EB5D1"
+			]
 			description: ["跟随地图的指引，我来到雪山脚下，但那里除了白茫茫的积雪外空无一物。然而改造后的全息球却显示锻造师的工坊就在附近。不甘心的我决定向&e地下&r探寻。在挖掘过程中，我发现了一些奇怪的钢结构，顿时重燃希望，沿着钢梁继续挖掘。终于，挖开一块石头后，一个地下结构出现在我眼前。经过一番探索，我确信这里就是锻造师的工坊，然而它早已荒废多年，空无一人，锻造师也不知去向。或许，现在称它为遗迹更为合适。"]
 			id: "72908B9592992F33"
-			shape: "hexagon"
+			rewards: [{
+				id: "0FDD9B9DA8811171"
+				item: "minecraft:writable_book"
+				type: "item"
+			}]
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
 				advancement: "tetra:spelunking/ancient_ruins"
@@ -89,11 +102,10 @@
 				type: "advancement"
 			}]
 			title: "昔人已逝"
-			x: 10.5d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["31578474F05E7255"]
 			description: [
 				"遗迹会生成在会下雪的群系。"
 				"寻找遗迹有两种方法："
@@ -122,11 +134,10 @@
 				title: "寻找遗迹方法"
 				type: "checkmark"
 			}]
-			x: 6.5d
-			y: 0.0d
+			x: 5.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["72908B9592992F33"]
 			description: ["遗迹内的方块需要使用锤子采集，采集后会获得金属碎片，想要采集下来则需要附魔精准采集的锤子。"]
 			icon: "tetra:forged_platform"
 			id: "0941D2A2970EB5D1"
@@ -135,7 +146,7 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: 10.5d
+			x: 7.0d
 			y: -1.5d
 		}
 		{
@@ -149,7 +160,7 @@
 			]
 			icon: "tetra:forged_workbench"
 			id: "27BFF02187AC557B"
-			shape: "hexagon"
+			shape: "pentagon"
 			size: 1.5d
 			tasks: [
 				{
@@ -170,7 +181,7 @@
 				}
 			]
 			title: "锻造台！"
-			x: 13.023809523809518d
+			x: 10.523809523809518d
 			y: 0.010714285714257699d
 		}
 		{
@@ -185,8 +196,8 @@
 				type: "advancement"
 			}]
 			title: "黑曜石锤！"
-			x: 14.5d
-			y: 3.0d
+			x: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -197,7 +208,7 @@
 				item: "tetra:lubricant_dispenser"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 9.0d
 			y: -4.5d
 		}
 		{
@@ -216,7 +227,7 @@
 				item: "tetra:planar_stabilizer"
 				type: "item"
 			}]
-			x: 14.5d
+			x: 12.0d
 			y: -2.0d
 		}
 		{
@@ -229,7 +240,7 @@
 				item: "tetra:vent_plate"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 11.0d
 			y: -5.0d
 		}
 		{
@@ -241,8 +252,8 @@
 				item: "tetra:combustion_chamber"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 3.0d
+			x: 10.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -259,15 +270,14 @@
 				type: "observation"
 			}]
 			title: "锻造师的遗产"
-			x: 10.5d
+			x: 8.0d
 			y: 1.5d
 		}
 		{
 			dependencies: ["7FB4EF5A8151080B"]
 			description: ["据笔记上所说，下界合金锤便是这世上最强的锻造锤了，除此之外还可以通过&e打磨和镶嵌下界之星&r的方式进一步提升它的锻造能力，可是真的还需要继续升级吗？或许吧。"]
 			id: "3A31CFC2ECFA2682"
-			shape: "hexagon"
-			size: 1.5d
+			size: 1.0d
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_6"
 				criterion: ""
@@ -275,8 +285,8 @@
 				type: "advancement"
 			}]
 			title: "千钧之力！"
-			x: 13.0d
-			y: 6.0d
+			x: 10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
@@ -301,7 +311,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
+			x: 4.0d
 			y: 0.0d
 		}
 		{
@@ -340,7 +350,7 @@
 				}
 			]
 			title: "地核提取"
-			x: 14.5d
+			x: 12.0d
 			y: -0.5d
 		}
 		{
@@ -360,7 +370,7 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: 13.0d
+			x: 10.5d
 			y: -2.0d
 		}
 		{
@@ -374,7 +384,7 @@
 				item: "tetra:forged_bolt"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 10.0d
 			y: -5.0d
 		}
 		{
@@ -389,7 +399,7 @@
 				type: "item"
 			}]
 			title: "神秘金属"
-			x: 10.5d
+			x: 8.0d
 			y: 3.0d
 		}
 		{
@@ -401,7 +411,7 @@
 				item: "tetra:forged_beam"
 				type: "item"
 			}]
-			x: 14.5d
+			x: 12.0d
 			y: -4.5d
 		}
 		{
@@ -415,7 +425,7 @@
 				type: "item"
 			}]
 			title: "开宝！"
-			x: 2.0d
+			x: 2.5d
 			y: -1.5d
 		}
 		{
@@ -430,8 +440,8 @@
 				type: "item"
 			}]
 			title: "八级锤"
-			x: 14.5d
-			y: 6.0d
+			x: 12.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
@@ -445,20 +455,36 @@
 				type: "advancement"
 			}]
 			title: "“老乡”"
-			x: 2.5d
-			y: 3.0d
+			x: 5.0d
+			y: 1.5d
 		}
 		{
-			dependencies: ["6A7882FD5FF059C6"]
+			dependencies: [
+				"6A7882FD5FF059C6"
+				"1E0BB246F04014C3"
+				"31578474F05E7255"
+			]
 			description: ["在尝试改造弓时，我发现锤子的强度严重不足，甚至连黑石锤都无法打造铁弓材。无计可施的我只能向村庄里的老铁匠请教如何改造出更强的弓。老铁匠告诉我，传说在远方&b雪山&r的山脚下，有一位久负盛名的锻造师，他掌握着一切锻造技能，想必他一定能解答我的疑惑。然而，这位锻造师已经许多年没有消息了。村里的&e制图师&r或许知道他的工坊的位置，此外，使用&5&o末影之眼&r和&5&o紫水晶&r改造后的全息球&r也许可以帮助我寻找他。"]
 			icon: "tetra:forged_wall"
 			id: "01FC78875A324DE3"
+			rewards: [
+				{
+					id: "66F2563C9284B77D"
+					item: "minecraft:ender_eye"
+					type: "item"
+				}
+				{
+					id: "1B10E42F7865A7DF"
+					item: "minecraft:amethyst_shard"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "42795E7AEF7135C5"
 				type: "checkmark"
 			}]
 			title: "道听途说"
-			x: 8.5d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
@@ -477,7 +503,7 @@
 				type: "observation"
 			}]
 			title: "锻造零件"
-			x: 13.0d
+			x: 10.5d
 			y: -3.5d
 		}
 		{
@@ -493,24 +519,11 @@
 				type: "advancement"
 			}]
 			title: "卡壳"
-			x: 14.5d
+			x: 12.0d
 			y: 0.5d
 		}
 		{
 			dependencies: ["3629F1DBEEFAF2FF"]
-			description: ["查阅锻造师的笔记得知，这种金属源自地核，在漫长岁月中一直以固态形式在熔岩中沉眠，拥有极高的抗火能力。然而，它难以直接锻造成钢锭。但若将其与&e外星陨石粉末、下界合金碎片以及熔融状态的下界钢锭在高温中熔铸&r，便能融合出一种全新的金属。"]
-			id: "73CC400D59686F5C"
-			tasks: [{
-				id: "25294DFF356EB451"
-				item: "art_of_forging:resonant_alloy"
-				type: "item"
-			}]
-			title: "谐振合金"
-			x: 10.5d
-			y: 4.5d
-		}
-		{
-			dependencies: ["73CC400D59686F5C"]
 			description: ["我将熔融的液态金属倒入&e熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。我相信这将开创一个新纪元。"]
 			id: "7861A70169C19A1A"
 			shape: "hexagon"
@@ -521,8 +534,8 @@
 				type: "item"
 			}]
 			title: "新纪元"
-			x: 10.5d
-			y: 6.0d
+			x: 8.0d
+			y: 4.75d
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
@@ -544,7 +557,7 @@
 				title: "高质量"
 				type: "checkmark"
 			}]
-			x: 16.0d
+			x: 13.5d
 			y: -2.0d
 		}
 		{
@@ -571,7 +584,7 @@
 				type: "item"
 			}]
 			title: "剑"
-			x: 5.5d
+			x: 2.0d
 			y: 3.0d
 		}
 		{
@@ -584,11 +597,12 @@
 				type: "item"
 			}]
 			title: "工具架子"
-			x: 3.0d
+			x: 1.5d
 			y: -1.5d
 		}
 		{
 			id: "03664386DA7FE6DC"
+			shape: "rsquare"
 			tasks: [{
 				id: "5EFF9CB62B0B58CA"
 				item: {
@@ -600,8 +614,8 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
-			y: 1.5d
+			x: 0.0d
+			y: 4.0d
 		}
 		{
 			description: ["原版的弓可用于改造"]
@@ -618,7 +632,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
+			x: 2.0d
 			y: 4.0d
 		}
 		{
@@ -692,38 +706,67 @@
 				}
 			]
 			title: "双头工具"
-			x: 4.5d
+			x: 1.0d
 			y: 3.0d
 		}
 		{
 			description: ["原版的锹为单头工具，可用于改造"]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_shovel"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6DEC3C0546CBC51E"
 			shape: "rsquare"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "minecraft:iron_shovel"
-					tag: {
-						Damage: 0
+			tasks: [
+				{
+					icon: {
+						Count: 1
+						id: "minecraft:iron_shovel"
+						tag: {
+							Damage: 0
+						}
 					}
-				}
-				id: "0526A1671CD836FA"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:tools/shovels"
+					id: "0526A1671CD836FA"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:tools/shovels"
+						}
 					}
+					title: "Any #forge:tools/shovels"
+					type: "item"
 				}
-				title: "Any #forge:tools/shovels"
-				type: "item"
-			}]
+				{
+					icon: {
+						Count: 1
+						id: "minecraft:iron_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					id: "4B61BD61E6625C43"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "minecraft:hoes"
+						}
+					}
+					title: "Any #minecraft:hoes"
+					type: "item"
+				}
+			]
 			title: "单头工具"
-			x: 4.5d
+			x: 1.0d
 			y: 4.0d
 		}
 		{
 			id: "6B19B1391FB0509C"
+			shape: "rsquare"
 			tasks: [{
 				id: "5648432511E243C4"
 				item: {
@@ -739,8 +782,8 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 1.5d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			description: [
@@ -988,7 +1031,7 @@
 				}
 			]
 			title: "专长"
-			x: 7.5d
+			x: 4.0d
 			y: 4.0d
 		}
 		{
@@ -1055,11 +1098,12 @@
 				}
 			]
 			title: "镀金"
-			x: 8.5d
+			x: 5.0d
 			y: 4.0d
 		}
 		{
 			id: "5014699556117EBC"
+			shape: "rsquare"
 			tasks: [
 				{
 					id: "322A0CB4FB2D8C50"
@@ -1278,8 +1322,8 @@
 					type: "item"
 				}
 			]
-			x: 8.5d
-			y: 1.5d
+			x: 6.0d
+			y: 4.0d
 		}
 		{
 			id: "3EA5B5BF2F118493"
@@ -1311,7 +1355,7 @@
 				type: "item"
 			}]
 			title: "坚固守卫"
-			x: 8.5d
+			x: 5.0d
 			y: 3.0d
 		}
 		{
@@ -1344,11 +1388,12 @@
 				type: "item"
 			}]
 			title: "飞刀"
-			x: 7.5d
+			x: 4.0d
 			y: 3.0d
 		}
 		{
 			id: "1BB17365A0FC3BA4"
+			shape: "rsquare"
 			tasks: [{
 				id: "308C3CDF0DA6A8CA"
 				item: {
@@ -1376,8 +1421,8 @@
 				type: "item"
 			}]
 			title: "风啸剑刃"
-			x: 7.5d
-			y: 1.5d
+			x: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -1387,7 +1432,7 @@
 				item: "tetra:earthpiercer"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 8.5d
 			y: -3.5d
 		}
 		{
@@ -1398,7 +1443,7 @@
 				item: "tetra:stonecutter"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 12.5d
 			y: -3.5d
 		}
 		{
@@ -1409,8 +1454,27 @@
 				item: "tetra:chthonic_extractor"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 9.0d
 			y: -2.0d
+		}
+		{
+			dependencies: ["3A31CFC2ECFA2682"]
+			id: "4BF0A8A21D78B730"
+			tasks: [{
+				id: "641A11C6761B993C"
+				item: {
+					Count: 1
+					id: "tetra:modular_double"
+					tag: {
+						"double/socket_material": "double_socket/socket_nether_star"
+					}
+				}
+				match_nbt: true
+				type: "item"
+				weak_nbt_match: true
+			}]
+			x: 10.5d
+			y: 4.75d
 		}
 	]
 	title: "&2承·新开端"
