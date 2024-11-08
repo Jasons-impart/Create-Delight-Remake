@@ -1,5 +1,5 @@
 {
-    "type": "createdelight:alexscaves_dimension",
+    "type": "minecraft:overworld",
     "generator": {
         "type": "minecraft:noise",
         "settings": "minecraft:overworld",

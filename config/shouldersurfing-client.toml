@@ -177,7 +177,7 @@
 	#Allowed Values: FIRST_PERSON, THIRD_PERSON_BACK, THIRD_PERSON_FRONT, SHOULDER_SURFING
 	default_perspective = "FIRST_PERSON"
 	#Whether or not to remember the last perspective used.
-	remember_last_perspective = true
+	remember_last_perspective = false
 	#Whether or not to replace the default third person perspective.
 	replace_default_perspective = false
 	#Whether or not to skip the third person front perspective.
