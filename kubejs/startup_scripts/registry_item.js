@@ -492,8 +492,6 @@ StartupEvents.registry("item", e => {
         .maxDamage(3000)
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-    //移液器
-    e.create("createdelight:pipettes")
-        .translationKey("item.createdelight.pipettes")
+
         
 })
