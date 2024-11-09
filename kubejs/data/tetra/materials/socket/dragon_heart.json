@@ -1,0 +1,29 @@
+{
+    "replace": true,
+    "key": "dragon_heart",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 100,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 100,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes": {
+
+    },
+    "effects": {
+         "art_of_forging:dragon_mist": [ 2, 15 ]     
+    },
+    "tints": {
+        "glyph": "000000"
+    },
+    "textures": [ "dragon_heart" ],
+    "experienceCost": 15,
+    "material": {
+        "items": [ "iceandfire:fire_dragon_heart" ,"iceandfire:ice_dragon_heart","iceandfire:lightning_dragon_heart" ]
+    }
+}

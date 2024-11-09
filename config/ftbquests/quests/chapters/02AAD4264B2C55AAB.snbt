@@ -353,7 +353,7 @@
 				"7779E241F787B373"
 			]
 			description: [
-				"一名探险者的书籍中记载道：传说村正是另一个时空下的日本战国时期的一位著名刀匠，他所锻造的武士刀以&e无比锋利&r著称，能够轻易斩断一切，因此被视为具有邪气。据说，统一日本的德川家康的祖父和父亲都死于村正刀，导致德川家族在统治期间禁止持有和使用村正刀。自此，村正刀在日本民间被称为“妖刀”，充满了不祥的传说与神秘色彩。"
+				""
 				"文中还详细的记载了村正之刃的锻造技巧。"
 			]
 			id: "6534A8367009AD68"
@@ -395,30 +395,10 @@
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
-				id: "27FFAF1B6C6765C2"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "otherworldly"
-								glyphs: [I;
-									6
-									7
-									13
-									15
-								]
-								intricate: 0b
-								key: "sword/katana/murasama_blade"
-								material: 2
-								ribbon: "c52323"
-								schematics: ["tetra:sword/katana/murasama_blade"]
-							}]
-						}
-					}
-				}
-				type: "item"
+				advancement: "tetra:art_of_forging/murasama_blade"
+				criterion: ""
+				id: "333DD7D84FB4D19A"
+				type: "advancement"
 			}]
 			title: "&3妖刀&r"
 			x: -6.5d
@@ -568,55 +548,26 @@
 				Count: 1
 				id: "tetra:modular_sword"
 				tag: {
-					Damage: 0
-					HideFlags: 1
-					honing_progress: 500
-					id: "8ee3a958-b2a5-4707-a231-4e71661b9ef9"
-					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					id: "art_of_forging/architects_crucible"
+					"sword/basic_hilt_material": "basic_hilt/forged_steel"
+					"sword/binding_material": "sword_binding/life_fiber"
 					"sword/blade": "sword/crucible_blade"
-					"sword/blade:quality": 1
 					"sword/blade:sword/architect_imprv": 0
-					"sword/crucible_blade_material": "crucible_blade/endsteel_ingot"
-					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
-					"sword/guard": "sword/socket"
+					"sword/counterweight_material": "counterweight/obsidian"
+					"sword/crucible_blade_material": "crucible_blade/forged_steel"
+					"sword/guard": "sword/binding"
 					"sword/hilt": "sword/basic_hilt"
-					"sword/hilt:quality": 1
-					"sword/pommel": "sword/grip_loop"
-					"sword/socket_material": "sword_socket/socket_void_worm_eye"
-					weapon_attributes: "{\"parent\":\"bettercombat:sword\",\"attributes\":{\"attack_range\":3.5,\"two_handed\":false,\"category\":\"sword\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_stab\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.2,\"randomness\":0.1}}]}}"
+					"sword/pomel": "sword/counterweight"
 				}
 			}
 			id: "6078B3E3ACE67D7E"
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
-				id: "2C6B18F0DAF6966E"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "true_crucible"
-								glyphs: [I;
-									8
-									7
-									9
-									2
-								]
-								intricate: 1b
-								key: "sword/crucible/architects_crucible_blade"
-								material: 2
-								ribbon: "ff0042"
-								schematics: [
-									"tetra:sword/crucible_blade"
-									"tetra:sword/crucible/architects_crucible_blade"
-								]
-							}]
-						}
-					}
-				}
-				type: "item"
+				advancement: "tetra:art_of_forging/architects_crucible"
+				criterion: ""
+				id: "27FEFA836FC8F61F"
+				type: "advancement"
 			}]
 			title: "&5锻造师之权&r"
 			x: 2.0d
@@ -1204,6 +1155,7 @@
 		}
 		{
 			dependencies: ["6534A8367009AD68"]
+			description: ["一名探险者的书籍中记载道：传说村正是另一个时空下的日本战国时期的一位著名刀匠，他所锻造的武士刀以&e无比锋利&r著称，能够轻易斩断一切，因此被视为具有邪气。据说，统一日本的德川家康的祖父和父亲都死于村正刀，导致德川家族在统治期间禁止持有和使用村正刀。自此，村正刀在日本民间被称为“妖刀”，充满了不祥的传说与神秘色彩。"]
 			id: "65AD134128B2610B"
 			tasks: [{
 				id: "2A5DD38E980815A7"

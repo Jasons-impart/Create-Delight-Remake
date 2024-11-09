@@ -2619,5 +2619,7 @@
   "tetra.material.mine_ingot.prefix": "幻金锭",
   "tetra.material.mine_ingot": "幻金锭",
   "tetra.material.resonant_metal.prefix": "谐振金属",
-  "tetra.material.resonant_metal": "谐振金属"
+  "tetra.material.resonant_metal": "谐振金属",
+  "tetra.material.dragon_heart.prefix": "龙心脏",
+  "tetra.material.dragon_heart": "龙心脏"
 }
