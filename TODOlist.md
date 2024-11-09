@@ -34,7 +34,8 @@
 - AE 思索
 - 添加/remake 指令用于紫砂（并且显示文本）
 - 收容
-- carryon部分黑名单
+- carryon部分黑名单 末影抽屉 背包 莱特曼
+- infotool
 
 ### 认领-xxy
 

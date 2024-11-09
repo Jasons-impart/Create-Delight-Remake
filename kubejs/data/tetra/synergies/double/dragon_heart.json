@@ -1,0 +1,8 @@
+[ {
+    "modules": ["double/basic_hammer"],
+    "moduleVariants": ["double_socket/dragon_heart"],
+    "visibilityKey": "double_socket/dragon_heart",
+    "tools": {
+        "hammer_dig": 2
+    }
+}]
