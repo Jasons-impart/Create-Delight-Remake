@@ -64,9 +64,12 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
         "createmetallurgy:alloying/steel",
-        "createmetallurgy:alloying/electrum"
+        "createmetallurgy:alloying/electrum",
+        "createmetallurgy:alloying/brass"
     ])
     
+    e.replaceInput({mod: "createmetallurgy"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
     [
         Fluid.of("createmetallurgy:molten_gold", 90),
@@ -89,6 +92,14 @@ ServerEvents.recipes(e => {
     .processingTime(40)
     .heatRequirement("heated")
     .id("createmetallurgy:alloying/electrum")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_brass", 30),
+    [
+        Fluid.of("createmetallurgy:molten_zinc", 15),
+        Fluid.of("createmetallurgy:molten_copper", 15)
+    ])
+    .processingTime(40)
+    .heatRequirement("heated")
+    .id("createmetallurgy:alloying/molten_brass")
 
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_bronze", 40),
@@ -129,6 +140,10 @@ ServerEvents.recipes(e => {
         'ad_astra:steel_plate',
         'createmetallurgy:steel_ingot'
     ).id("create:pressing/steel_ingot")
+    e.recipes.create.pressing(
+        "createmetallurgy:tungsten_sheet",
+        "createmetallurgy:tungsten_ingot"
+    ).id("create:pressing/tungsten_sheet")
     e.recipes.createmetallurgy.casting_in_table(
         'ad_astra:steel_plate',
         [
