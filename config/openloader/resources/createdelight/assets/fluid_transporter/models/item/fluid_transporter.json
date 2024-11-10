@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "fluid_transporter:item/fluid_transporter"
+  }
+}
