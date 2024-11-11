@@ -1,0 +1,29 @@
+{
+    "key": "shadow_silk",
+    "category": "fibre",
+    "primary": 12,
+    "secondary": 10,
+    "tertiary": 8,
+    "durability": 200,
+    "integrityCost": 2,
+    "integrityGain": 7,
+    "magicCapacity": 200,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "000000",
+        "texture": "000000"
+    },
+    "textures": [
+        "default"
+    ],
+    "material": {
+        "items": [ "alexscaves:shadow_silk" ]
+    },
+    "requiredTools": {
+        "cut": "minecraft:iron"
+    },
+    "effects": {
+                "art_of_forging:devouring": [ 1, 5 ]
+    }
+}

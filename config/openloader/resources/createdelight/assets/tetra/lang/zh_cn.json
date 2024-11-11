@@ -2621,5 +2621,11 @@
   "tetra.material.resonant_metal.prefix": "谐振金属",
   "tetra.material.resonant_metal": "谐振金属",
   "tetra.material.dragon_heart.prefix": "龙心脏",
-  "tetra.material.dragon_heart": "龙心脏"
+  "tetra.material.dragon_heart": "龙心脏",
+  "tetra.material.pure_darkness.prefix": "纯粹黑暗",
+  "tetra.material.pure_darkness": "纯粹黑暗",
+  "tetra.material.totem_of_undying.prefix": "不死图腾",
+  "tetra.material.totem_of_undying": "不死图腾",
+  "tetra.material.pure_shadow_silk.prefix": "黑暗丝绸",
+  "tetra.material.pure_shadow_silk": "黑暗丝绸"
 }

@@ -1,6 +1,6 @@
 {
     "replace": true,
-    "key": "dragon_heart",
+    "key": "totem_of_undying",
     "hidden": true,
     "category": "socket",
     "primary": 0,
@@ -9,21 +9,21 @@
     "durability": 100,
     "integrityCost": 1,
     "integrityGain": 0,
-    "magicCapacity": 100,
+    "magicCapacity": 0,
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-
+        "generic.attack_damage": 5
     },
     "effects": {
-         "art_of_forging:dragon_mist": [ 15, 20 ]     
+        "art_of_forging:resolve": [ 60, 4 ]
     },
     "tints": {
-        "glyph": "000000"
+        "glyph": "f9f918"
     },
-    "textures": [ "dragon_heart" ],
-    "experienceCost": 15,
+    "textures": [ "totem_of_undying" ],
+    "experienceCost": 30,
     "material": {
-        "items": [ "iceandfire:fire_dragon_heart" ,"iceandfire:ice_dragon_heart","iceandfire:lightning_dragon_heart" ]
+        "items": [ "minecraft:totem_of_undying" ]
     }
 }
