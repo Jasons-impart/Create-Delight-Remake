@@ -10,6 +10,10 @@
     "magicCapacity": 100,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 10,
+    "effects": {
+         "unbreaking":1,
+         "workable":5
+    },
     "tints": {
         "glyph": "262222",
         "texture": "262222"

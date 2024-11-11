@@ -1,0 +1,8 @@
+[{
+    "modules": ["double/basic_hammer"],
+    "moduleVariants": ["double_perk_socket_0/pure_darkness"],
+    "visibilityKey": "double_perk_socket_0/pure_darkness",
+    "tools": {
+        "hammer_dig": 2
+    }
+}]

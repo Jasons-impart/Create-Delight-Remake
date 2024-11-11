@@ -10,6 +10,9 @@
   "magicCapacity": 200,
   "toolLevel": 0,
   "toolEfficiency": 0,
+   "attributes": {
+        "generic.attack_damage": 3
+    },
   "tints": {
     "glyph": "bf0000",
     "texture": "bf0000"

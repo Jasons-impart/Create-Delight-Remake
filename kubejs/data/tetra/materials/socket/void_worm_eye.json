@@ -19,7 +19,6 @@
     },
     "effects": {
         "criticalStrike": [ 50, 2 ],
-        "life_fiber_loss": [ 2, 10 ],
         "art_of_forging:resolve": [ 60, 4 ]
     },
     "tints": {
