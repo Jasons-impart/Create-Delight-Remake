@@ -316,12 +316,12 @@ StartupEvents.registry("item", e => {
         .rarity("epic")
 
     // 测试剑
-    e.create("createdelight:sigma_man_sword", "sword")
-        .tier("netherite")
-        .attackDamageBonus(999999)
-        .unstackable()
-        .translationKey("item.createdelight:sigma_man_sword")
-        .rarity("epic")
+    // e.create("createdelight:sigma_man_sword", "sword")
+    //     .tier("netherite")
+    //     .attackDamageBonus(999999)
+    //     .unstackable()
+    //     .translationKey("item.createdelight:sigma_man_sword")
+    //     .rarity("epic")
 
     // 异界笔记
     e.create("createdelight:otherworld_note")

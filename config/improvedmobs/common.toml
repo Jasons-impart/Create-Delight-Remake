@@ -1,0 +1,292 @@
+
+#Default difficulty caps at 250
+[general]
+	#Disable/Enables the whole difficulty scaling of this mod. Requires a mc restart
+	"Enable difficulty scaling" = false
+	#Time in ticks for which the difficulty shouldnt increase at the beginning. One full minecraft day is 24000 ticks
+	#Range: > 0
+	"Difficulty Delay" = 0
+	#If true ignores mobs from spawners
+	"Ignore Spawner" = false
+	#Handles increase in difficulty regarding current difficulty.
+	#Format is <minimum current difficulty>-<increase every 2400 ticks>
+	#Example ["0-0.01","10-0.1","30-0"]
+	#So the difficulty increases by 0.01 every 2400 ticks (->0.1 per mc day since a mc day has 24000 ticks) till it reaches a difficulty of 10.
+	#Then it increases by 1 per mc day till it reaches 30 and then stops.
+	#If you want to use negative values use | instead of - as the delimiter.
+	"Difficulty Increase" = ["0.0-0.1", "250.0-0.0"]
+	#Wether difficulty should only increase with at least one online players or not
+	"Ignore Players" = false
+	#If true will increase difficulty by the amount of time skipped. Else will only increase difficulty once.
+	"Punish Time Skip" = true
+	#Disable/Enable friendly fire for owned pets.
+	FriendlyFire = false
+	#Blacklist for pet you should't be able to give armor to. Pets from mods, which have custom armor already should be included here (for balancing reasons).
+	"Pet Blacklist" = []
+	#Treat pet blacklist as whitelist
+	"Pet Whitelist" = false
+	#Increase difficulty with time
+	#Here untill its back as a gamerule
+	"Difficulty toggle" = true
+	#How the difficulty at a position is calculated. Supported values are: 
+	#GLOBAL: Serverwide difficulty value
+	#PLAYERMAX: Maximum difficulty of players in a 256 radius around the position
+	#PLAYERMEAN: Average difficulty of players in a 256 radius around the position
+	#DISTANCE: Uses the distance to the position defined in Center Position to define the difficulty
+	#DISTANCESPAWN: Uses the distance to the world spawn to define the difficulty
+	#If the type is any of the distance types the functionality of Difficulty Increase is changed to the following where the 1. value is the minimum distance and the 2. is the difficulty that applies. 
+	#E.g. ["0-0","1000-5"] translates to 0 difficulty between 0-1000 distance and 5 difficulty for distance >= 1000
+	#You can also define it as a triple x-y-z instead where z is the increase per block in for that area.
+	#E.g. ["0-0-0.1","1000-5-1"] the difficulty increases between 0-1000 by 0.1 per block and >= 1000 by 1 per block with a starting value of 5
+	#Allowed Values: GLOBAL, PLAYERMAX, PLAYERMEAN, DISTANCE, DISTANCESPAWN
+	"Difficulty type" = "PLAYERMEAN"
+	#Position used for DISTANCE difficulty type
+	"Center Position" = "0-0"
+
+#Black/Whitelist for various stuff
+[list]
+	#Entities added here will be blacklisted from their assigned flags. Usage:
+	#<entity registry name> or <namespace> or <#tag> followed by any of:
+	#[ALL,ATTRIBUTES,ARMOR,HELDITEMS,BLOCKBREAK,USEITEM,LADDER,STEAL,GUARDIAN,PARROT,TARGETVILLAGER,NEUTRALAGGRO,PEHKUI,REVERSE].
+	#Having no flags is equal to ALL. Use REVERSE to reverse all flags. Some flags do nothing for certain mobs!
+	#Examples (without <>):
+	#<minecraft:sheep> (equal to minecraft:sheep|ALL) excludes sheeps from all modifications
+	#<minecraft:sheep|REVERSE|ATTRIBUTES will> add sheep to attributes modification only
+	#<#minecraft:raiders|ATTRIBUTES> will add all entities in the raiders tag to everything except attributes
+	#<minecraft:sheep|ATTRIBUTES> will add sheep to everything except attributes
+	#<minecraft> disables everything for all minecraft mobs
+	"Entity Configs" = ["alexsmobs:emu", "alexsmobs:cockroach", "alexsmobs:froststalker", "alexsmobs:centipede_tail", "ad_astra:glacian_ram", "alexsmobs:snow_leopard", "create_sa:vault_module", "alexsmobs:lobster", "alexsmobs:seagull", "alexscaves:gummy_bear", "alexscaves_torpedoes:polarizz", "alexsmobs:moose", "alexsmobs:seal", "minecraft:glow_squid", "alexsmobs:shoebill", "alexsmobs:flutter", "alexscaves:notor", "alexsmobs:roadrunner", "alexsmobs:laviathan", "minecraft:trader_llama", "create_confectionery:little_gingerbread_man", "create_sa:magnet_module", "alexsmobs:terrapin", "alexsmobs:capuchin_monkey", "iceandfire:dread_horse", "alexsmobs:endergrade", "minecraft:horse", "alexscaves:subterranodon", "alexsmobs:anaconda", "iceandfire:myrmex_swarmer", "minecraft:polar_bear", "alexscaves:tremorzilla", "alexscaves:grottoceratops", "iceandfire:lightning_dragon", "iceandfire:dragon_skull", "minecraft:llama", "minecraft:pig", "minecraft:turtle", "alexsmobs:alligator_snapping_turtle", "alexsmobs:maned_wolf", "alexscaves:candicorn", "minecraft:sheep", "minecraft:tadpole", "minecraft:goat", "minecraft:dolphin", "alexsmobs:rattlesnake", "iceandfire:fire_dragon", "alexsmobs:gelada_monkey", "minecraft:cod", "alexsmobs:mantis_shrimp", "alexsmobs:komodo_dragon", "alexsmobs:hammerhead_shark", "alexscaves_torpedoes:bulb", "minecraft:donkey", "the_bumblezone:variant_bee", "alexsmobs:tiger", "create_sa:brass_cube_r", "alexsmobs:raccoon", "endertrigon:baby_ender_dragon", "alexsmobs:grizzly_bear", "alexsmobs:platypus", "minecraft:squid", "minecraft:skeleton_horse", "iceandfire:myrmex_soldier", "alexsmobs:potoo", "quark:stoneling", "minecraft:cow", "alexscaves:radgill", "alexsmobs:fly", "alexscaves:trilocaris", "iceandfire:hippocampus", "minecraft:bee", "the_bumblezone:bee_queen", "alexsmobs:devils_hole_pupfish", "quark:shiba", "iceandfire:pixie", "alexsmobs:crocodile", "quark:toretoise", "crabbersdelight:crab", "alexsmobs:blue_jay", "the_bumblezone:honey_slime", "alexsmobs:toucan", "minecraft:salmon", "iceandfire:myrmex_queen", "alexsmobs:sea_bear", "alexsmobs:triops", "minecraft:snow_golem", "alexsmobs:rhinoceros", "alexscaves_torpedoes:magnetic_burst", "minecraft:mooshroom", "alexsmobs:frilled_shark", "alexsmobs:bison", "alexscaves:hullbreaker", "alexsmobs:anteater", "alexsmobs:mudskipper", "iceandfire:myrmex_sentinel", "minecraft:villager", "alexsmobs:rain_frog", "alexsmobs:bald_eagle", "alexsmobs:sugar_glider", "supplementaries:red_merchant", "iceandfire:myrmex_royal", "iceandfire:ice_dragon", "minecraft:rabbit", "minecraft:axolotl", "alexsmobs:blobfish", "create_sa:drill_module", "alexsmobs:gorilla", "alexsmobs:orca", "alexsmobs:tusklin", "alexscaves:sweetish_fish", "minecraft:strider", "alexscaves:raycat", "minecraft:parrot", "alexsmobs:leafcutter_ant", "quark:crab", "alexsmobs:cosmic_cod", "alexscaves:tremorsaurus", "alexsmobs:underminer", "alexsmobs:mungus", "alexsmobs:jerboa", "minecraft:bat", "minecraft:wandering_trader", "alexsmobs:caiman", "alexscaves:atlatitan", "alexsmobs:spectre", "alexsmobs:cosmaw", "alexscaves:vallumraptor", "iceandfire:amphithere", "vinery:mule", "alexscaves:deep_one_mage", "iceandfire:sea_serpent", "ad_astra:lunarian", "alexsmobs:catfish", "minecraft:frog", "minecraft:iron_golem", "alexsmobs:kangaroo", "alexsmobs:comb_jelly", "iceandfire:mob_skull", "alexsmobs:banana_slug", "alexscaves:tripodfish", "dummmmmmy:target_dummy", "railways:conductor", "alexscaves:relicheirus", "alexsmobs:mimic_octopus", "alexscaves:deep_one_knight", "alexsmobs:hummingbird", "alexsmobs:elephant", "create_sa:fan_module", "alexsmobs:bunfungus", "create_sa:brass_drone", "alexsmobs:gazelle", "alexscaves:deep_one", "minecraft:mule", "minecraft:sniffer", "alexsmobs:skunk", "vinery:wandering_winemaker", "alexsmobs:crow", "minecraft:zombie_horse", "alexsmobs:sunbird", "iceandfire:cockatrice", "minecraft:camel", "alexscaves:sea_pig", "alexsmobs:flying_fish", "alexsmobs:tasmanian_devil", "iceandfire:myrmex_worker", "alexsmobs:centipede_body", "alexscaves:gossamer_worm", "minecraft:cat", "minecraft:pufferfish", "alexsmobs:stradpole", "alexsmobs:tarantula_hawk", "minecraft:fox", "alexsmobs:cachalot_whale", "minecraft:allay", "minecraft:tropical_fish", "iceandfire:hippogryph", "alexscaves:gloomoth", "ad_astra:lunarian_wandering_trader", "minecraft:ocelot", "alexsmobs:warped_toad", "iceandfire:deathworm", "the_bumblezone:beehemoth", "alexscaves:gammaroach", "alexscaves:lanternfish", "minecraft:chicken", "alexsmobs:giant_squid", "minecraft:wolf", "minecraft:panda"]
+	#Any of the following 
+	#[ATTRIBUTES, ARMOR, HELDITEMS, BLOCKBREAK, USEITEM, LADDER, STEAL, GUARDIAN, PARROT, TARGETVILLAGER, NEUTRALAGGRO, PEHKUI]
+	#added here will disable that feature completely.
+	#E.g. ["GUARDIAN"] will disable the guardian feature
+	"Flag Blacklist" = ["BLOCKBREAK", "LADDER", "STEAL", "PARROT", "TARGETVILLAGER", "NEUTRALAGGRO"]
+	#Treat ATTRIBUTES flags as whitelist
+	"Attribute Whitelist" = false
+	#Treat ARMOR flags as whitelist
+	"Armor Equip Whitelist" = false
+	#Treat HELDITEMS flags as whitelist
+	"Held Equip Whitelist" = false
+	#Treat BLOCKBREAK flags as whitelist
+	"Breaker Whitelist" = false
+	#Treat USEITEM flags as whitelist
+	"Use Flag Whitelist" = false
+	#Treat LADDER flags as whitelist
+	"Ladder Whitelist" = false
+	#Treat STEAL flags as whitelist
+	"Steal Whitelist" = false
+	#Treat GUARDIAN flags as whitelist
+	"Guardian Whitelist" = false
+	#Treat PARROT flags as whitelist
+	"Phantom Whitelist" = false
+	#Treat TARGETVILLAGER flags as whitelist
+	"Villager Whitelist" = false
+	#Treat NEUTRALAGGRO flags as whitelist
+	"Neutral Aggro Whitelist" = false
+	#Treat PEHKUI flags as whitelist (Needs pehkui installed)
+	"Pehkui Whitelist" = false
+
+#Settings for mod integration
+[integration]
+	#Should the scaling health mods difficulty system be used instead of this ones. (Requires scaling health mod)
+	#Allowed Values: OFF, ON, ADD
+	"Use Scaling Health Mod" = "ON"
+	#If true and playerEx is installed will use the level from playerEx as difficulty
+	#Allowed Values: OFF, ON, ADD
+	"Use Player EX Mod" = "ON"
+	#Scaling for playerEX integration
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"PlayerEX Scaling" = 1.0
+	#If true and LevelZ is installed will use the the total skill level from LevelZ as difficulty
+	#Allowed Values: OFF, ON, ADD
+	"Use LevelZ Mod" = "ON"
+	#Scaling for LevelZ integration
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"LevelZ Scaling" = 1.0
+	#Using pehkui to vary the size of mobs
+	"Use pehkui Mod" = false
+	#The Max scale of mobs. Range [1.0,10], default 2.0
+	#Range: 1.0 ~ 10.0
+	"Max size Multiplier" = 2.0
+	#The Minimum scale of mobs. Range (0,1.0), default 0.5
+	#Range: 0.0 ~ 1.0
+	"Minimum size Multiplier" = 0.5
+	#Chance that a mob will be affected by size changes
+	#Range: 0.0 ~ 1.0
+	"Size Chance" = 0.5
+
+#Settings regarding custom ai for mobs
+[ai]
+	#Whitelist for blocks, which can be actively broken. 
+	#Usage: id|namespace|#tag. Put "!" infront to exclude blocks. E.g. "minecraft", "minecraft:dirt" or "#minecraft:planks"
+	#Note: If you include common blocks (like grass blocks) the pathfinding can have undesirable results.
+	"Block Break Whitelist" = ["#forge:glass", "#forge:glass_panes", "#minecraft:fence_gates", "#forge:fence_gates", "#minecraft:wooden_doors"]
+	#Treat Block Whitelist as Blocklist
+	"Breaklist as Blacklist" = false
+	#Use the block breaking sound instead of a knocking sound
+	Sound = false
+	#Chance for a mob to be able to break blocks
+	#Range: 0.0 ~ 1.0
+	"Breaker Chance" = 0.30000001192092896
+	#Initial cooldown for block breaking mobs
+	#Range: > 0
+	"Breaker Initial Cooldown" = 120
+	#Cooldown for breaking blocks
+	#Range: > 0
+	"Breaker Cooldown" = 20
+	#By default mobs can only break the block they can harvest with the current tool they holding. Set this to true to disable that check (The block will not drop if they cant harvest it though!).
+	"Ignore Harvest Check" = false
+	#Blocks will be restored after x ticks being broken. If set to 0 will never restore
+	#This will not restore block entity data!
+	#Range: > 0
+	"Restore delay" = 0
+	#If mobs should break blocks when not chasing a target
+	"Idle Break" = false
+	#Chance a breaker mob to ignore line of sight
+	#Range: 0.0 ~ 1.0
+	"Breaker Sight Ignore" = 0.5
+	#A modifier to the breaking speed
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Breaking Speed Base" = 1.0
+	#Addition to breaking speed modifier based on difficulty.
+	#Final modifier is base + addition * difficulty
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Breaking Speed Add" = 0.0
+	#Chance for a mob to be able to steal items from inventory blocks
+	#Range: 0.0 ~ 1.0
+	"Stealer Chance" = 0.30000001192092896
+	#List of blocks mobs shouldn't steal from. You can also add a modid to blacklist whole mods
+	"Steal Block Blacklist" = []
+	#Items which will be given to mobs who can break blocks. Empty list = no items. Syntax: id;weight
+	#Note: Mobs can only break blocks if the tool they are holding can break the blocks
+	"Breaking items" = ["minecraft:diamond_pickaxe;1", "minecraft:iron_axe;2"]
+	#Should mobs be able to break block entities? Evaluated before the break list
+	"Break BlockEntities" = false
+	#Chance for neutral mobs to be aggressive
+	#Range: 0.0 ~ 1.0
+	"Neutral Aggressive Chance" = 0.05000000074505806
+	#List for of pairs containing which mobs auto target others. Syntax is [mob id]-[mob id] where second value is the target.
+	# e.g. minecraft:zombie-minecraft:skeleton makes all zombies target skeletons
+	"Auto Target List" = []
+	#Difficulty at which mobs are able to break blocks
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Difficulty Break AI" = 0.0
+	#Difficulty at which mobs are able to steal items
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Difficulty Steal AI" = 0.0
+	#Chance for mobs to be able to summon an aquatic mount
+	#Range: 0.0 ~ 1.0
+	"Guardian Chance" = 0.5
+	#Chance for mobs to be able to summon a flying mount
+	#Range: 0.0 ~ 1.0
+	"Phantom Chance" = 0.5
+	#Set this to true to allow tnt thrown by mobs to destroy blocks
+	"TNT Block Destruction" = false
+	#Chance for a mob to ignore line of sight
+	#This config ONLY affects villager target, neutral aggressive and auto targeting feature
+	#Range: 0.0 ~ 1.0
+	"Generic Sight Ignore" = 0.5
+
+#Configs regarding mobs spawning with equipment
+[equipment]
+	#Blacklist items from whole mods. Add modid to prevent items from that mod being equipped. (For individual items use the equipment.json)
+	"Item Blacklist" = []
+	#Use blacklist as whitelist
+	"Item Whitelist" = false
+	#Blacklist for items mobs should never be able to use.
+	#Use as in using the item similar to players (e.g. shooting bows)
+	"Item Use Blacklist" = ["bigbrain:buckler"]
+	#Turn the use blacklist into a whitelist
+	"Item Use Whitelist" = false
+	#Blacklist for specific mobs and items they shouldnt use (e.g. skeletons already use bows)
+	#<entity registry name-item>
+	#For different items but same entity use multiple lines
+	#Some special names are BOW, TRIDEN, CROSSBOW refering to every bow/trident/crossbow item (So you dont need to type e.g. every bow item)
+	"Entity Item Use Blacklist" = ["minecraft:drowned;TRIDENT", "minecraft:illusioner;BOW", "minecraft:piglin;CROSSBOW", "minecraft:pillager;CROSSBOW", "minecraft:skeleton;BOW", "minecraft:snow_golem;minecraft:snowball", "minecraft:stray;BOW", "minecraft:wither_skeleton;BOW"]
+	#Base chance that a mob can have one piece of armor
+	#Range: 0.0 ~ 1.0
+	"Equipment Chance" = 0.10000000149011612
+	#Base chance for each additional armor pieces
+	#Range: 0.0 ~ 1.0
+	"Additional Equipment Chance" = 0.30000001192092896
+	#Adds additional x*difficulty% to base equip chance
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Equipment Addition" = 0.30000001192092896
+	#Chance for an equipment to have a random armor trim
+	#Range: 0.0 ~ 1.0
+	"Armor Trim Chance" = 0.05000000074505806
+	#Chance for mobs to have a weapon
+	#Range: 0.0 ~ 1.0
+	"Weapon Chance" = 0.5
+	#Adds additional x*difficulty% to base weapon chance
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Weapon Chance Add" = 0.30000001192092896
+	#Base chance for each armor pieces to get enchanted
+	#Range: 0.0 ~ 1.0
+	"Enchanting Chance" = 0.20000000298023224
+	#Adds additional x*difficulty% to base enchanting chance
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Enchanting Addition" = 0.20000000298023224
+	#Specify min and max enchanting levels according to difficulty. difficulty-minLevel-maxLevel
+	"Enchanting Calc" = ["0.0-5-10", "25.0-5-15", "50.0-10-17", "100.0-15-25", "200.0-20-30", "250.0-30-35"]
+	#Blacklist enchantments from being applied to equipments
+	"Enchanting Blacklist" = []
+	#Turn the enchant blacklist to a whitelist
+	"Enchanting Whitelist" = false
+	#Chance for mobs to have an item in offhand
+	#Range: 0.0 ~ 1.0
+	"Item Equip Chance" = 0.5
+	#Adds additional x*difficulty% to base item chance
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Item Chance add" = 0.20000000298023224
+	#Should mobs drop the armor equipped through this mod? Will not change drops if the mob obtained the armor through other means (e.g. vanilla)
+	"Should drop equipment" = false
+
+#Settings for attribute modifiers
+[attributes]
+	#Health will be multiplied by 1 + difficulty*0.016*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Health Increase Multiplier" = 1.0
+	#Health will be multiplied by at maximum this. Set to 0 means no limit
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Max Health Increase" = 5.0
+	#Round health to the nearest x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Round HP" = 0.5
+	#Damage will be multiplied by 1 + difficulty*0.008*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Damage Increase Multiplier" = 1.0
+	#Damage will be multiplied by at maximum this. Set to 0 means no limit
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Max Damage Increase" = 3.0
+	#Speed will be increased by difficulty*0.0008*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Speed Increase" = 1.0
+	#Maximum increase in speed
+	#Range: 0.0 ~ 1.0
+	"Max Speed" = 0.1
+	#Knockback will be increased by difficulty*0.002*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Knockback Increase" = 1.0
+	#Maximum increase in knockback
+	#Range: 0.0 ~ 1.0
+	"Max Knockback" = 0.5
+	#Magic resistance will be increased by difficulty*0.0016*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Magic Resistance Increase" = 1.0
+	#Maximum increase in magic resistance. Magic reduction is percentage
+	#Range: 0.0 ~ 1.0
+	"Max Magic Resistance" = 0.4000000059604645
+	#Projectile Damage will be multiplied by 1 + difficulty*0.008*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Projectile Damage Increase" = 1.0
+	#Projectile damage will be multiplied by maximum of this
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Max Projectile Damage" = 2.0
+	#Explosion Damage will be multiplied by 1 + difficulty*0.003*x. Set to 0 to disable
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Explosion Damage Increase" = 1.0
+	#Explosion damage will be multiplied by maximum of this
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Max Explosion Damage" = 1.75
+
