@@ -1,6 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "createdeco:compacting/industrial_iron_ingot"])
+        "createdeco:compacting/industrial_iron_ingot",
+        "create:industrial_iron_block_from_iron_ingots_stonecutting"]
+        )
     remove_recipes_output(e, [
         'createdeco:andesite_sheet',
         'createdeco:zinc_sheet',

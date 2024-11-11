@@ -130,79 +130,86 @@ ServerEvents.recipes(e => {
 
     //钕再生
     //方铅岩再生
-    e.recipes.vintageimprovements.vacuumizing(
-        ["alexscaves:galena", "create_new_age:magnetite_block"], 
+    e.recipes.vintageimprovements.pressurizing(
+        ["alexscaves:galena", "create_new_age:magnetite_block"],
         ["create_new_age:magnetite_block", "minecraft:deepslate", "minecraft:iron_nugget"])
         .heatRequirement("heated")
-    .id("alexscaves:vacuumizing/galena")
+        .id("alexscaves:pressurizing/galena")
 
     //方铅岩充能为充能方铅岩
     e.recipes.create_new_age.energising("alexscaves:galena", "alexscaves:energized_galena_neutral", 20000)
-    .id("alexscaves:energising/energized_galena_neutral")
-    
+        .id("alexscaves:energising/energized_galena_neutral")
+
     e.recipes.createaddition.charging("alexscaves:galena", "alexscaves:energized_galena_neutral", 20000, 40000)
-    .id("alexscaves:charging/energized_galena_neutral")
+        .id("alexscaves:charging/energized_galena_neutral")
 
     //充能方铅岩离心成两种方铅岩
     e.recipes.vintageimprovements.centrifugation(
-        ["alexscaves:energized_galena_scarlet", "alexscaves:energized_galena_azure"], 
+        [Item.of("alexscaves:energized_galena_scarlet").withChance(0.5), Item.of("alexscaves:energized_galena_azure").withChance(0.5)],
         "alexscaves:energized_galena_neutral"
     )
-    .id("alexscaves:centrifugation/energized_galena_neutral")
+        .id("alexscaves:centrifugation/energized_galena_neutral")
 
     //两种方铅岩转化为钕
     e.recipes.create.crushing([
-        Item.of("minecraft:iron_nugget").withChance(0.2), 
-        Item.of("vintageimprovements:vanadium_nugget").withChance(0.2), 
-        Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.05)],
-    "alexscaves:energized_galena_scarlet")
-    .id("alexscaves:crushing/energized_galena_scarlet")
+        Item.of("minecraft:iron_nugget").withChance(0.30),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.30),
+        Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.15)],
+        "alexscaves:energized_galena_scarlet")
+        .id("alexscaves:crushing/energized_galena_scarlet")
 
     e.recipes.create.crushing([
-        Item.of("minecraft:iron_nugget").withChance(0.2), 
-        Item.of("vintageimprovements:vanadium_nugget").withChance(0.2), 
+        Item.of("minecraft:iron_nugget").withChance(0.30),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.30),
+        Item.of("alexscaves:raw_azure_neodymium").withChance(0.15)],
+        "alexscaves:energized_galena_azure")
+        .id("alexscaves:crushing/energized_galena_azure")
+
+
+    e.recipes.create.crushing([
+        Item.of("minecraft:iron_nugget").withChance(0.25),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.40),
+        Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.05),
         Item.of("alexscaves:raw_azure_neodymium").withChance(0.05)],
-    "alexscaves:energized_galena_azure")
-    .id("alexscaves:crushing/energized_galena_azure")
-
-
+        "alexscaves:energized_galena_neutral")
+        .id("alexscaves:crushing/energized_galena_neutral")
     //赤汝·青汝合金
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createdelight:molten_scarlet_neodymium", 90),
-    [
-        Fluid.of("createmetallurgy:molten_iron", 180),
-        "alexscaves:raw_scarlet_neodymium",
-        "alexscaves:raw_scarlet_neodymium"
-    ])
-    .heatRequirement("superheated")
-    .id("createdelight:alloying/molten_scarlet_neodymium")
-    
+        [
+            Fluid.of("createmetallurgy:molten_iron", 180),
+            "alexscaves:raw_scarlet_neodymium",
+            "alexscaves:raw_scarlet_neodymium"
+        ])
+        .heatRequirement("superheated")
+        .id("createdelight:alloying/molten_scarlet_neodymium")
+
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createdelight:molten_azure_neodymium", 90),
-    [
-        Fluid.of("createmetallurgy:molten_iron", 180),
-        "alexscaves:raw_azure_neodymium",
-        "alexscaves:raw_azure_neodymium"
-    ])
-    .heatRequirement("superheated")
-    .id("createdelight:alloying/molten_azure_neodymium")
+        [
+            Fluid.of("createmetallurgy:molten_iron", 180),
+            "alexscaves:raw_azure_neodymium",
+            "alexscaves:raw_azure_neodymium"
+        ])
+        .heatRequirement("superheated")
+        .id("createdelight:alloying/molten_azure_neodymium")
 
 
     metal_production_line_7(e,
         [
             'alexscaves:block_of_scarlet_neodymium',
-            'alexscaves:scarlet_neodymium_ingot', 
+            'alexscaves:scarlet_neodymium_ingot',
             'createdelight:molten_scarlet_neodymium'],
-            "heated",
-            100
+        "heated",
+        100
     )
     metal_production_line_7(e,
         [
             'alexscaves:block_of_azure_neodymium',
-            'alexscaves:azure_neodymium_ingot', 
+            'alexscaves:azure_neodymium_ingot',
             'createdelight:molten_azure_neodymium'],
-            "heated",
-            100
+        "heated",
+        100
     )
     //重锤
     let iner_3 = "alexscaves:block_of_scarlet_neodymium"
