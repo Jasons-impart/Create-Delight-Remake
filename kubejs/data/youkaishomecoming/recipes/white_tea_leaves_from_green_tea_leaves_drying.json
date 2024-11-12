@@ -1,0 +1,10 @@
+{
+  "type": "youkaishomecoming:drying_rack",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.0,
+  "ingredient": {
+    "item": "farmersrespite:green_tea_leaves"
+  },
+  "result": "youkaishomecoming:white_tea_leaves"
+}

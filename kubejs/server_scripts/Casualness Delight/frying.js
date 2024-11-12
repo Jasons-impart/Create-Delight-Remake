@@ -80,6 +80,7 @@ ServerEvents.recipes(e => {
     deep_frying('oceansdelight:squid_rings', 'oceansdelight:cut_tentacles', 100)
     deep_frying('create_bic_bit:bitterballen', 'create_bic_bit:raw_bitterballen', 100)
     deep_frying('create_bic_bit:oliebollen', 'ratatouille:salty_dough', 100)
+    deep_frying('youkaishomecoming:oily_bean_curd', 'youkaishomecoming:tofu', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [

@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
         "oceansdelight:tentacle_on_a_stick",
         [
             "minecraft:stick",
-            "#forge:squid_tentacles"
+            "#forge:tentacles"
         ]
     ).id("oceansdelight:tentacle_on_a_stick")
     cutting_3(e, 'oceansdelight:elder_guardian_slab', [
@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
 
     //Oceanic delight
     e.replaceInput({}, "oceanic_delight:shrimp", "crabbersdelight:shrimp")
-    e.replaceInput({}, "culturaldelights:raw_calamari", "#forge:squid_tentacles")
+    e.replaceInput({}, "culturaldelights:raw_calamari", "#forge:tentacles")
     e.replaceInput({}, "culturaldelights:cooked_calamari", "oceanic_delight:grilled_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari"}, "culturaldelights:raw_calamari", "oceanic_delight:squid_tentacles")

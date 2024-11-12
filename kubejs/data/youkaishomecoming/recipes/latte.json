@@ -1,0 +1,24 @@
+{
+  "type": "youkaishomecoming:moka_pot",
+  "container": {
+    "item": "minecraft:glass_bottle"
+  },
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredients": [
+    {
+      "item": "createcafe:coffee_grounds"
+    },
+    {
+      "type": "l2library:potion",
+      "potion": "minecraft:water"
+    },
+    {
+      "tag": "forge:milk/milk_bottle"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "item": "youkaishomecoming:latte"
+  }
+}

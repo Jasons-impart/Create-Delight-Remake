@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:squid_ink_sausage",
         [
             "ratatouille:sausage_casing",
-            'culturaldelights:squid',
+            'oceanic_delight:squid_tentacles',
             "#forge:salt"
         ]
     ).id("hotdog_delight:inksrecp")
@@ -41,7 +41,7 @@ ServerEvents.recipes(e => {
         "hotdog_delight:glow_squid_ink_sausage",
         [
             "ratatouille:sausage_casing",
-            'culturaldelights:glow_squid',
+            'oceanic_delight:glow_squid_tentacles',
             "#forge:salt"
         ]
     ).id("hotdog_delight:glorecp")

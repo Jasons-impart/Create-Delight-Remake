@@ -3,7 +3,8 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/mayonnaise_recipe",
         "create_bic_bit:mixing/sunflower_seeds_recipe",
         "create_bic_bit:mixing/frying_oil_recipe",
-        "create_bic_bit:mixing/ketchup_recipe"
+        "create_bic_bit:mixing/ketchup_recipe",
+        "create_bic_bit:deep_frying/ice_recipe"
         
     ])
     remove_recipes_output(e, [
