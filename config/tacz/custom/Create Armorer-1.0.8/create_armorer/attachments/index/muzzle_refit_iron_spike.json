@@ -1,0 +1,7 @@
+{
+  "name": "create_armorer.attachment.muzzle_refit_iron_spike.name",
+  "display": "create_armorer:muzzle_refit_iron_spike_display",
+  "data": "create_armorer:muzzle_refit_iron_spike_data",
+  "tooltip": "create_armorer.tooltip.attachment.muzzle_refit_iron_spike",
+  "type": "muzzle"
+}

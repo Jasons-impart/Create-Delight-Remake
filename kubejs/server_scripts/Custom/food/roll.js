@@ -79,6 +79,8 @@ ServerEvents.recipes(e => {
     sushi_with_kelp(e, "crabbersdelight:tropical_fish_slice", "2x culturaldelights:tropical_roll")
     sushi_with_kelp(e, "#forge:cooked_eggs", "2x culturaldelights:egg_roll")
     sushi_with_kelp(e, "#forge:tentacles", "2x culturaldelights:calamari_roll")
+    sushi_with_kelp(e, "#forge:shrimps", "2x oceanic_delight:shrimp_roll")
+    sushi_with_kelp(e, "youkaishomecoming:flesh", "2x youkaishomecoming:flesh_roll")
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["#forge:cucumber", "#culturaldelights:avocados"], "culturaldelights:midori_roll")
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["#forge:cooked_chicken", "minecraft:beetroot"], "culturaldelights:chicken_roll")
     sushi_roll(e, "minecraft:dried_kelp", "minecraft:dried_kelp", ["minecraft:carrot"], "farmersdelight:kelp_roll")
