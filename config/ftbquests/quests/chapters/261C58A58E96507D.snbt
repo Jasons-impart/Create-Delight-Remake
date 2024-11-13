@@ -1707,6 +1707,19 @@
 			x: 6.0d
 			y: -3.5d
 		}
+		{
+			description: ["它可以直接从任何流体容器中取出最多1000mb的流体，然后将其放到任何它可以放进去的流体容器中。"]
+			id: "0C2B19B0BF09D46D"
+			size: 2.0d
+			subtitle: "比较强大的物品"
+			tasks: [{
+				id: "7D28EB8BC5D43550"
+				item: "fluid_transporter:fluid_transporter"
+				type: "item"
+			}]
+			x: -11.0d
+			y: 2.0d
+		}
 	]
 	title: "&3进阶研修班！"
 }

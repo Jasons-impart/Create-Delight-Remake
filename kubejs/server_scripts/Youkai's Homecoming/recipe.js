@@ -7,7 +7,12 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:green_tea_leaves',
         'youkaishomecoming:oolong_tea_leaves',
         'youkaishomecoming:black_tea_leaves',
-        'youkaishomecoming:tofu'])
+        'youkaishomecoming:tofu',
+        'youkaishomecoming:tea_leaf_bag',
+        'youkaishomecoming:coffee_bean_bag',
+        'youkaishomecoming:black_tea_bag',
+        'youkaishomecoming:green_tea_bag',
+        'youkaishomecoming:oolong_tea_bag'])
     remove_recipes_id(e, [
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
