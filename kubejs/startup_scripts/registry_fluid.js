@@ -164,4 +164,30 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.radon")
         .translationKey("block.createdelight.radon")
         .translationKey("item.createdelight.radon_bucket")
+
+    //冰淇淋流体
+    let icecream_list = [
+        ["vanilla", 0xfceeca],
+        ["chocolate", 0xefa385],
+        ["strawberry", 0xf4bcea],
+        ["banana", 0xfce285],
+        ["mint", 0x8bf1ac],
+        ["adzuki", 0xfcc4b3]
+    ]
+    icecream_list.forEach((list) => {
+        
+    e.create(`createdelight:${list[0]}_ice_cream`)
+        .thickTexture(list[1])
+        .bucketColor(list[1])
+        .translationKey("fluid.createdelight." + list[0] + "_ice_cream")
+        .translationKey("block.createdelight." + list[0] + "_ice_cream")
+        .translationKey("item.createdelight." + list[0] + "_ice_cream_bucket")
+    
+    e.create(`createdelight:${list[0]}_milkshake`)
+        .thinTexture(list[1])
+        .bucketColor(list[1])
+        .translationKey("fluid.createdelight." + list[0] + "_milkshake")
+        .translationKey("block.createdelight." + list[0] + "_milkshake")
+        .translationKey("item.createdelight." + list[0] + "_milkshake_bucket")
+    })
 })
