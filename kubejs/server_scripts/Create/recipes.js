@@ -9,7 +9,8 @@ ServerEvents.recipes(e => {
         "quark:tweaks/crafting/utility/bent/paper",
         "create:pressing/sugar_cane",
         "design_decor:stonecutting/industrial_plating",
-        "create:splashing/iceandfire/crushed_raw_silver"
+        "create:splashing/iceandfire/crushed_raw_silver",
+        "create:mixing/brass_ingot"
     ])
     // 黄铜机械手
     e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")

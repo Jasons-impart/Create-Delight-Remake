@@ -14,10 +14,11 @@ function UpdateRank(player, value) {
 }
 /**
  * 
- * @param {Internal.Player} player 
+ * @param {Internal.ServerPlayer} player 
+ * @returns {number}
  */
 function GetPlayerDifficulty(player) {
-    player.getData().get("improvedmobs:player_cap")
+    return player.nbt.getCompound("ForgeCaps").getCompound("improvedmobs:player_cap").getFloat("IMDifficulty")
 }
 
 FTBQuestsEvents.customReward(e => {

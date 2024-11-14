@@ -33,6 +33,7 @@
 		{
 			id: "2DF7214D268E18E5"
 			rewards: [{
+				auto: "no_toast"
 				id: "55146A03C4C37D89"
 				tags: ["rank_1"]
 				type: "custom"
@@ -50,6 +51,7 @@
 		{
 			id: "3D3BD75B7BFB0506"
 			rewards: [{
+				auto: "no_toast"
 				id: "2467236918A20505"
 				tags: ["rank_1"]
 				type: "custom"
@@ -67,6 +69,7 @@
 		{
 			id: "238C6F47D0064BA0"
 			rewards: [{
+				auto: "no_toast"
 				id: "222C4CF8A5E19852"
 				tags: ["rank_1"]
 				type: "custom"
@@ -84,6 +87,7 @@
 		{
 			id: "2B8E399B6B1D147E"
 			rewards: [{
+				auto: "no_toast"
 				id: "1C0F9583E2E23EDD"
 				tags: ["rank_1"]
 				type: "custom"
@@ -101,6 +105,7 @@
 		{
 			id: "4F3232C0D657DCA8"
 			rewards: [{
+				auto: "no_toast"
 				id: "7C6589EDD0A57189"
 				tags: ["rank_1"]
 				type: "custom"
@@ -118,6 +123,7 @@
 		{
 			id: "7127F4F92F12FB55"
 			rewards: [{
+				auto: "no_toast"
 				id: "7B3290D16FA34698"
 				tags: ["rank_1"]
 				type: "custom"
@@ -135,6 +141,7 @@
 		{
 			id: "7CCED6F3F7D29A5B"
 			rewards: [{
+				auto: "no_toast"
 				id: "00F0F7AE0C5526C4"
 				tags: ["rank_1"]
 				type: "custom"
@@ -152,6 +159,7 @@
 		{
 			id: "357EAD05A833A30D"
 			rewards: [{
+				auto: "no_toast"
 				id: "7483B292D4329F7C"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1512,6 +1520,7 @@
 		{
 			id: "471651C38BE4FE34"
 			rewards: [{
+				auto: "no_toast"
 				id: "7BC79A7ADF1A815B"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1529,6 +1538,7 @@
 		{
 			id: "72138BBBC18D3ED7"
 			rewards: [{
+				auto: "no_toast"
 				id: "4DE5B1FAC2D3D0EF"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1564,6 +1574,7 @@
 		{
 			id: "71ED248EDC4F4D27"
 			rewards: [{
+				auto: "no_toast"
 				id: "154D9F266AAC6CF1"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1581,6 +1592,7 @@
 		{
 			id: "57ABB9798D503640"
 			rewards: [{
+				auto: "no_toast"
 				id: "1D66595B9A14C449"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1616,6 +1628,7 @@
 		{
 			id: "1D12CFA971404488"
 			rewards: [{
+				auto: "no_toast"
 				id: "6A3B7323D0CC89A2"
 				tags: ["rank_1"]
 				type: "custom"
@@ -1669,7 +1682,7 @@
 		{
 			id: "123602DEF42CEE9F"
 			rewards: [{
-				auto: "invisible"
+				auto: "no_toast"
 				id: "6E53B828BD66F82E"
 				tags: ["rank_1"]
 				type: "custom"
@@ -2105,6 +2118,21 @@
 			}]
 			x: 2.5d
 			y: 12.5d
+		}
+		{
+			can_repeat: false
+			description: [
+				"整合包添加了improvedmob这个模组，它是用于提升难度的。不过我们没有使用其难度计算方式，而是自定义了一套难度的增长方式。"
+				"简单来说就是：你对于整合包探索的越深，击杀的怪物越多，难度就会越高。当你击杀了一定数量的怪物或者进入新的维度，难度就会提升。具体的数值请在右侧查看。"
+			]
+			id: "75B48D0D0596B108"
+			tasks: [{
+				id: "6D9A87FA87869534"
+				title: "请读我"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: -1.5d
 		}
 	]
 	title: "难度索引"

@@ -9,7 +9,10 @@ ServerEvents.tags("item", e => {
         "vinery:jungle_grape_seeds_red",
         "vinery:jungle_grape_seeds_white",
         "vinery:savanna_grape_seeds_red",
-        "vinery:savanna_grape_seeds_white"
+        "vinery:savanna_grape_seeds_white",
+        "neapolitan:mint_sprout",
+        "neapolitan:strawberry_pips",
+        "neapolitan:vanilla_pods"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_seeds",
@@ -26,7 +29,10 @@ ServerEvents.tags("item", e => {
         "vinery:red_grape_seeds",
         "vinery:white_grape_seeds",
         "vinery:savanna_grape_seeds_red",
-        "vinery:savanna_grape_seeds_white"
+        "vinery:savanna_grape_seeds_white",
+        "oceanic_delight:sea_grape",
+        "neapolitan:mint_sprout",
+        "neapolitan:vanilla_pods"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_seeds",
@@ -48,13 +54,20 @@ ServerEvents.tags("item", e => {
         "vinery:red_grape_seeds",
         "vinery:white_grape_seeds",
         "vinery:taiga_grape_seeds_red",
-        "vinery:taiga_grape_seeds_white"
+        "vinery:taiga_grape_seeds_white",
+        "oceanic_delight:sea_grape",
+        "neapolitan:banana_frond",
+        "neapolitan:mint_sprout",
+        "neapolitan:strawberry_pips",
+        "neapolitan:vanilla_pods"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_seeds",
         "createcafe:coffee_beans",
         "festival_delicacies:chinese_cabbage_seeds",
         "festival_delicacies:greenonion",
+        "neapolitan:mint_sprout",
+        "neapolitan:vanilla_pods"
     ])
 })
 
@@ -68,7 +81,10 @@ ServerEvents.tags("block", e => {
         "vinery:jungle_grape_bush_red",
         "vinery:jungle_grape_bush_white",
         "vinery:savanna_grape_bush_red",
-        "vinery:savanna_grape_bush_white"
+        "vinery:savanna_grape_bush_white",
+        "neapolitan:mint",
+        "neapolitan:strawberry_bush",
+        "neapolitan:vanilla_vine"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_crop",
@@ -84,7 +100,10 @@ ServerEvents.tags("block", e => {
         "vinery:red_grape_bush",
         "vinery:white_grape_bush",
         "vinery:savanna_grape_bush_red",
-        "vinery:savanna_grape_bush_white"
+        "vinery:savanna_grape_bush_white",
+        "oceanic_delight:sea_grape_plant",
+        "neapolitan:mint",
+        "neapolitan:vanilla_vine"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_plant",
@@ -105,13 +124,20 @@ ServerEvents.tags("block", e => {
         "vinery:red_grape_bush",
         "vinery:white_grape_bush",
         "vinery:taiga_grape_bush_red",
-        "vinery:taiga_grape_bush_white"
+        "vinery:taiga_grape_bush_white",
+        "oceanic_delight:sea_grape_plant",
+        "neapolitan:small_banana_frond",
+        "neapolitan:mint",
+        "neapolitan:strawberry_bush",
+        "neapolitan:vanilla_vine"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_crop",
         "createcafe:coffee_crop",
         "festival_delicacies:chinese_cabbage",
-        "festival_delicacies:greenonion"
+        "festival_delicacies:greenonion",
+        "neapolitan:mint",
+        "neapolitan:vanilla_vine"
     ])
 
 })

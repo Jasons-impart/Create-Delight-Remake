@@ -20,6 +20,7 @@
 !/curios-client.toml
 !/curios-common.toml
 !/ftbquests
+!/refurbished_furniture.server.toml
 !/create*
 !/*delight*
 !/*xaero*

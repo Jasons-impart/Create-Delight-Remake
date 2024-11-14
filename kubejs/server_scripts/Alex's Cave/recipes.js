@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
 
     ])
     e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
-
+    e.replaceInput({id: "create_oppenheimered:mixing/ice_cream_licoroot"}, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
     //硫磺，硫磺晶簇->硫粉
     e.recipes.create.crushing([
         'alexscaves:sulfur_dust',

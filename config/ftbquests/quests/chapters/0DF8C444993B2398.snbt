@@ -150,10 +150,7 @@
 			y: 0.0d
 		}
 		{
-			description: [
-				"磁场洞穴以特殊的磁力机制与机械生命为主题。这个黑暗的群系中到处都分布着发微光的赤钕柱和青钕柱，尖锐的方铅岩锥上放置着危险的特斯拉球作为光照，四处都闪烁着红色的和蓝色的电弧。玩家还可以看到小块的方铅岩从地面飘向天空，仿佛不受重力的影响一般。"
-				"{image:createdelight:textures/gui/alexs_cave/magnetic_caves_preview.png width:256 height:137 align:center fit:true}"
-			]
+			description: ["磁场洞穴以特殊的磁力机制与机械生命为主题。这个黑暗的群系中到处都分布着发微光的赤钕柱和青钕柱，尖锐的方铅岩锥上放置着危险的特斯拉球作为光照，四处都闪烁着红色的和蓝色的电弧。玩家还可以看到小块的方铅岩从地面飘向天空，仿佛不受重力的影响一般。"]
 			icon: "alexscaves:scarlet_magnet"
 			id: "3D02EA3A30EE1933"
 			size: 1.5d
@@ -170,10 +167,7 @@
 			y: -4.0d
 		}
 		{
-			description: [
-				"原始洞穴以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"
-				"{image:createdelight:textures/gui/alexs_cave/primordial_caves_preview.png width:256 height:137 align:center fit:true}"
-			]
+			description: ["原始洞穴以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"]
 			icon: "alexscaves:flytrap"
 			id: "213DFC6488B2353F"
 			size: 1.5d
@@ -190,10 +184,7 @@
 			y: -4.0d
 		}
 		{
-			description: [
-				"毒化洞穴是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该洞穴，可能会受到致命的“辐照”效果。（下图上了夜视）"
-				"{image:createdelight:textures/gui/alexs_cave/toxic_caves_preview.png width:256 height:137 align:center fit:true}"
-			]
+			description: ["毒化洞穴是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该洞穴，可能会受到致命的“辐照”效果。（下图上了夜视）"]
 			icon: "alexscaves:waste_drum"
 			id: "583F9FC03AC1ACBC"
 			size: 1.5d
@@ -208,10 +199,7 @@
 			y: 4.0d
 		}
 		{
-			description: [
-				"渊海陷窟是个以海底和深渊为主题的群系。这个位于海洋深处的群系，收不到任何一点来自于地表的光亮，漆黑且又神秘，海洋巨兽的遗骸也散落于此，此外还有一些古文明所遗留下来的研究所。"
-				"{image:createdelight:textures/gui/alexs_cave/abyssal_chasm_preview.png width:256 height:137 align:center fit:true}"
-			]
+			description: ["渊海陷窟是个以海底和深渊为主题的群系。这个位于海洋深处的群系，收不到任何一点来自于地表的光亮，漆黑且又神秘，海洋巨兽的遗骸也散落于此，此外还有一些古文明所遗留下来的研究所。"]
 			icon: "alexscaves:submarine"
 			id: "24317CED18E77A85"
 			rewards: [
@@ -250,10 +238,7 @@
 			y: 4.0d
 		}
 		{
-			description: [
-				"异寂空谷以恐怖的黑暗和诡谲的黑魔法为主题。这里的生物多为发生了异变的诡异生物，而这里的居民都是不欢迎外来者的邪教徒。此处被深邃的黑暗笼罩着，玩家在这里的视野会被缩短，同时光源放出的光也会变得更加微弱。往远处看，玩家只能看到一个个猩红的眼球。危险悄然潜伏于黑暗之中......（下图上了夜视）"
-				"{image:createdelight:textures/gui/alexs_cave/forlorn_hollows_preview.png width:256 height:137 align:center fit:true}"
-			]
+			description: ["异寂空谷以恐怖的黑暗和诡谲的黑魔法为主题。这里的生物多为发生了异变的诡异生物，而这里的居民都是不欢迎外来者的邪教徒。此处被深邃的黑暗笼罩着，玩家在这里的视野会被缩短，同时光源放出的光也会变得更加微弱。往远处看，玩家只能看到一个个猩红的眼球。危险悄然潜伏于黑暗之中......（下图上了夜视）"]
 			icon: "alexscaves:peering_coprolith"
 			id: "4111E9030C1FF346"
 			rewards: [{
@@ -358,7 +343,6 @@
 				""
 				""
 				"{@pagebreak}"
-				"{image:createdelight:textures/gui/alexs_cave/magnetic_quarry.png width:170 height:100 align:center}"
 				"物品会从磁力采石场上方弹出，采石场会一直运行直到达到基岩层。"
 				"注意，磁力采石场是一次性的（当然你可以把它抱走）"
 			]
@@ -1848,6 +1832,7 @@
 			y: 9.0d
 		}
 		{
+			dependencies: ["4B748035C627E9DF"]
 			id: "63B9D34596BDC195"
 			tasks: [{
 				id: "556E70CEB823C195"
@@ -1869,6 +1854,7 @@
 			y: -9.0d
 		}
 		{
+			dependencies: ["180CDA283387C562"]
 			id: "6094BC1C1C95494A"
 			tasks: [{
 				id: "68F4D796B592F78D"

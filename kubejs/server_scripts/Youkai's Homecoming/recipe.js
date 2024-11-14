@@ -8,6 +8,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:oolong_tea_leaves',
         'youkaishomecoming:black_tea_leaves',
         'youkaishomecoming:tofu',
+        'youkaishomecoming:butter',
+        'youkaishomecoming:bowl_of_cream',
         'youkaishomecoming:tea_leaf_bag',
         'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:black_tea_bag',
@@ -19,7 +21,9 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:oily_bean_curd_from_tofu_smoking',
         'youkaishomecoming:pods_cutting',
         'youkaishomecoming:red_velvet_cake',
-        "youkaishomecoming:emptying/blood_bottle_emptying"
+        "youkaishomecoming:emptying/blood_bottle_emptying",
+        'youkaishomecoming:mandrake_root_cutting',
+        'youkaishomecoming:raw_lamprey_cutting'
     ])
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
@@ -56,5 +60,14 @@ ServerEvents.recipes(e => {
     create.crushing("8x youkaishomecoming:ice_cube",
                     "minecraft:ice"
     ).id("youkaishomecoming:crushing/ice_cube")
-    
+    cutting_3(e, "youkaishomecoming:mandrake_root",
+        [
+            ["youkaishomecoming:stripped_mandrake_root", 1]
+        ]
+    )
+    cutting_3(e, "youkaishomecoming:raw_lamprey",
+        [
+            ["youkaishomecoming:raw_lamprey_fillet", 1]
+        ]
+    )
 })
