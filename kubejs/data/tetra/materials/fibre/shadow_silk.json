@@ -1,12 +1,12 @@
 {
     "key": "shadow_silk",
     "category": "fibre",
-    "primary": 12,
-    "secondary": 10,
-    "tertiary": 8,
-    "durability": 200,
+    "primary": 1,
+    "secondary": 6,
+    "tertiary": 4,
+    "durability": 1200,
     "integrityCost": 2,
-    "integrityGain": 7,
+    "integrityGain": 10,
     "magicCapacity": 200,
     "toolLevel": 0,
     "toolEfficiency": 0,
@@ -14,6 +14,9 @@
         "glyph": "000000",
         "texture": "000000"
     },
+     "attributes": {
+                    "tetra:draw_speed": -0.4
+   },
     "textures": [
         "default"
     ],

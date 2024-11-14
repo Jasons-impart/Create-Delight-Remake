@@ -16,7 +16,8 @@
         "generic.attack_damage": 5
     },
     "effects": {
-        "art_of_forging:resolve": [ 60, 4 ]
+        "art_of_forging:resolve": [ 60, 4 ],
+        "art_of_forging:devouring": [ -5, 5 ]
     },
     "tints": {
         "glyph": "f9f918"

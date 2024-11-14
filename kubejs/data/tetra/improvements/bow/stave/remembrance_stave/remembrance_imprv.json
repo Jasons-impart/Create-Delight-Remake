@@ -7,11 +7,12 @@
             "suspend": 1,
             "velocity": 20,
             "overbowed": 60,
-            "art_of_forging:esoteric_edge": 100
+            "art_of_forging:esoteric_edge": 100,
+              "art_of_forging:devouring": [ -2, 5 ]
         },
         "attributes": {
             "tetra:draw_speed": 0.5,
-            "tetra:draw_strength": 6
+            "tetra:draw_strength": 12
         },
         "models": [
             {
