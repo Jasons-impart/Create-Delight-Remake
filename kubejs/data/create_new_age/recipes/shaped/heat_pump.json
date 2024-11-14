@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": {
+      "item": "create_new_age:heat_pipe"
+    },
+    "t": {
+      "item": "create_new_age:thorium"
+    },
+    "z": {
+      "tag": "forge:ingots/zinc"
+    },
+    "c": {
+      "tag": "forge:nuggets/copper"
+    },
+    "a": {
+      "item": "create:andesite_alloy"
+    }
+  },
+  "pattern": [
+    "zpz",
+	"ctc",
+	"apa"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:heat_pump"
+  },
+  "show_notification": true
+}

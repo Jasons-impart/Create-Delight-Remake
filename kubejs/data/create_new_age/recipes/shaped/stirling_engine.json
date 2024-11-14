@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "i": {
+      "item": "create:industrial_iron_block"
+    },
+    "p": {
+      "item": "create_new_age:heat_pipe"
+    },
+    "m": {
+      "item": "create:precision_mechanism"
+    },
+    "c": {
+      "tag": "forge:plates/copper"
+	  }
+  },
+  "pattern": [
+    " m ",
+    "cic",
+	" p "
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:stirling_engine"
+  },
+  "show_notification": true
+}

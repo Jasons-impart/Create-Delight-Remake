@@ -24,7 +24,11 @@ ServerEvents.recipes(e => {
     }
 
     remove_recipes_id(e, [
-        "casualness_delight:crafting_shaped/deep_frying_pan"
+        "casualness_delight:crafting_shaped/deep_frying_pan",
+        "create_deepfried:mixing/raw_chicken_nuggets",
+        "create_bic_bit:deploying/waxed_unripe_cheese",
+        "create_bic_bit:deploying/waxed_young_cheese",
+        "create_bic_bit:deploying/waxed_aged_cheese"
     ])
 
     // 油炸锅

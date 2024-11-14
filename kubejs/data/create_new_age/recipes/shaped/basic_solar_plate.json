@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "p": {
+      "item": "create_new_age:heat_pipe"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "g": {
+      "item": "minecraft:glass_pane"
+    },
+    "i": {
+      "item": "create:industrial_iron_block"
+    },
+    "z": {
+      "tag": "forge:nuggets/zinc"
+    }
+  },
+  "pattern": [
+    "zgz",
+    "cgc",
+    "pip"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:basic_solar_heating_plate"
+  },
+  "show_notification": true
+}

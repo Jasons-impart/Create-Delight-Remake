@@ -1,0 +1,32 @@
+{
+"type": "create:mixing",
+	"heatRequirement": "superheated",
+	"ingredients":[
+		{
+		"item": "create_new_age:overcharged_diamond"
+		},
+		{
+		"item": "create_new_age:overcharged_gold"
+		},
+		{
+		"item": "minecraft:blaze_powder"
+		},
+		{
+		"item": "create_new_age:magnetite_block"
+		},
+		{
+		"amount": 500,
+		"fluid": "create:potion",
+		"nbt": 
+			{
+				"Bottle": "REGULAR",
+				"Potion": "minecraft:awkward"
+			}
+		}
+	],
+  "results": [
+    {
+      "item": "create_new_age:fluxuated_magnetite"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "e": {
+      "item": "create_new_age:energiser_t1"
+    },
+    "w": {
+      "item": "create_new_age:overcharged_golden_wire"
+    },
+    "o":{
+      "item": "create_new_age:overcharged_gold"
+    },
+    "s":{
+      "tag": "forge:plates/gold"
+    }
+  },
+  "pattern": [
+    "sws",
+    "oeo"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:energiser_t2"
+  },
+  "show_notification": true
+}
