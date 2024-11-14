@@ -16,12 +16,12 @@
 			"generic.attack_damage": 0
 		},
 		"effects": {
-			"armorPenetration": 10,
+			"armorPenetration": 40,
 			"sweeping": 1,
-			"severing": [ 5, 2 ],
 			"abilityCombo": [ 5, 2 ],
 			"abilityExhilarated": [ 8, 2 ],
-			"art_of_forging:vengeance": [ 5, 5 ]
+			"art_of_forging:vengeance": [ 5, 5 ],
+                        "art_of_forging:goliath_slayer": 100
 		},
 		"tools": {
 			"cut": [ 2, 3 ]
@@ -46,18 +46,13 @@
 				"generic.attack_damage": -1,
 				"generic.attack_speed": 0.1
 			},
-			"primaryEffects": {
-				"armorPenetration": 3,
-				"severing": [ 2, 1 ]
-			},
 			"secondaryEffects": {
 				"sweeping": -1
 			},
 			"tertiaryEffects": {
-				"sweeping": 0.8,
-				"armorPenetration": -0.5
+				"sweeping": 0.8
 			},
-			"durability": 1,
+			"durability":0.5,
 			"integrity": -1,
 			"magicCapacity": 1,
 			"glyph": {

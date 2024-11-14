@@ -4,11 +4,13 @@
         "key": "sword/architect_imprv",
         "integrity": -2,
         "effects": {
-            "art_of_forging:esoteric_edge": 20,
+            "art_of_forging:esoteric_edge": 0,
             "truesweep": 1,
             "sweeping": 1,
-            "severing": [ 10, 2 ],
-            "vvaddon:strengtheffect": 2
+            "severing": [ 50, 4 ],
+            "vvaddon:strengtheffect": 1,
+	    "armorPenetration": 30,
+            "art_of_forging:goliath_slayer": 100
         },
         "attributes": {
             "generic.attack_damage": 10,

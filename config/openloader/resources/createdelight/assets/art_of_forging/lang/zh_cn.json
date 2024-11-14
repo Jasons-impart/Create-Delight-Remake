@@ -5,7 +5,7 @@
     "tetra.stats.art_of_forging:decaying.tooltip_short": "施加凋零效果",
 
     "art_of_forging.effect.stormcaller.name": "风暴呼唤者",
-    "art_of_forging.effect.stormcaller.tooltip": "命中时有§e%s概率§r召唤§e%s个雷电§r。",
+    "art_of_forging.effect.stormcaller.tooltip": "命中时召唤§e%s个雷电§r（§e%s概率§r）。",
     "tetra.stats.art_of_forging:stormcaller": "风暴呼唤者",
     "tetra.stats.art_of_forging:stormcaller.tooltip_short": "命中时召唤雷电",
 
@@ -52,7 +52,7 @@
 	"tetra.stats.art_of_forging:disorienting.tooltip_short": "以§e%s效能§r造成减速、虚弱和混乱，持续§e%s秒§r",
 	  
 	"art_of_forging.effect.vengeance.name": "复仇",
-	"art_of_forging.effect.vengeance.tooltip": "当你生命值在§e%s颗心§r或以下时，你会造成§e%s百分比§r的额外伤害。",
+	"art_of_forging.effect.vengeance.tooltip": "生命值较低时会额外造成§e%s百分比§r伤害（当你生命值在§e%s颗心§r或以下时）。",
 	"tetra.stats.art_of_forging:vengeance": "复仇",
 	"tetra.stats.art_of_forging:vengeance.tooltip_short": "在低生命值时造成更多伤害",
 	  
@@ -814,12 +814,12 @@
     "tetra.improvement.blade/esoteric_tier.prefix": "秘刃",
     "tetra.improvement.blade/esoteric_tier.description": "增加秘刃切口的伤害",
 
-    "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：秘刃",
-    "tetra/schematic/sword/crucible/hone_esoteric_1.description": "将秘刃切口的伤害提高5%。",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "打磨：秘刃II",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.description": "打磨并改进秘刃切口，使其伤害增加到10%。",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "打磨：秘刃III",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.description": "进一步打磨并改进秘刃切口，使其伤害增加到15%。",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：碎甲",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.description": "针对击碎护甲进行打磨，无视其10%效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "打磨：碎甲II",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.description": "打磨剑刃，穿透敌人的护甲，无视其20%效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "打磨：碎甲III",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.description": "进一步打磨并改进剑锋，敌人护甲将形同虚设。",
 
     "tetra.improvement.nano_fused.name": "纳米融合",
     "tetra.improvement.nano_fused.description": "用纳米昆虫注入武器，改变特定生物的掉落物品。",

@@ -10,6 +10,9 @@
     "magicCapacity": 120,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 11,
+     "effects": {
+        "art_of_forging:stormcaller": [ 3, 20 ]
+        },
     "tints": {
       "glyph": "5c069d",
       "texture": "5c069d"

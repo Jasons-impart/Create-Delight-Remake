@@ -6,7 +6,7 @@
             "honed": 1
         },
         "effects": {
-            "art_of_forging:esoteric_edge": 10
+	    "armorPenetration": 10
         }
     },
     {
@@ -17,7 +17,7 @@
             "honed": 2
         },
         "effects": {
-            "art_of_forging:esoteric_edge": 20
+	    "armorPenetration": 20
         }
     },
     {
@@ -28,7 +28,7 @@
             "honed": 3
         },
         "effects": {
-            "art_of_forging:esoteric_edge": 30
+	    "armorPenetration": 30
         }
     }
 ]
