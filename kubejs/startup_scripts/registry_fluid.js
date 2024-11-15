@@ -177,9 +177,10 @@ StartupEvents.registry("fluid", e => {
     icecream_list.forEach((list) => {
         
     e.create(`createdelight:${list[0]}_ice_cream`)
-        .thickTexture(list[1])
+        .stillTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] +"_ice_cream_still")
+        .flowingTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] +"_ice_cream_flow")
         .bucketColor(list[1])
-        .translationKey("fluid.createdelight." + list[0] + "_ice_cream")
+        .translationKey("fluid.createdelight." +list[0] + "_ice_cream")
         .translationKey("block.createdelight." + list[0] + "_ice_cream")
         .translationKey("item.createdelight." + list[0] + "_ice_cream_bucket")
     

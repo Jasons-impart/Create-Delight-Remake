@@ -95,6 +95,40 @@ ServerEvents.recipes((event) => {
       .id(`${output}_sequenced_assembly_b`);
   }
 
+  /**
+   * 
+   * @param {OutputItem_} result 
+   * @param {InputItem_} ingr1 
+   * @param {InputItem_} ingr2 
+   * @param {InputItem_} ingr3 
+   * @param {InputItem_} ingr4 
+   */
+  function craft_shaped(result, ingr1, ingr2, ingr3, ingr4 ) {
+    event.recipes.kubejs.shaped(result, [
+      "ADA",
+      "CBC",
+      "ACA"
+    ],
+    {
+      A: ingr1,
+      B: ingr2,
+      C: ingr3,
+      D: ingr4
+    })
+    .id(`${result}_shaped`)
+  }
+
+  craft_shaped(i1k, "ae2:certus_quartz_crystal", "#createdelight:quartz_glass", "#forge:dusts/redstone", "ae2:logic_processor")
+  craft_shaped(i4k, i1k, "#createdelight:quartz_glass", "#forge:dusts/redstone", "ae2:calculation_processor")
+  craft_shaped(i16k, i4k, "#createdelight:quartz_glass", "#forge:dusts/glowstone", "ae2:calculation_processor")
+  craft_shaped(i64k, i16k, "#createdelight:quartz_glass", "#forge:dusts/glowstone", "ae2:calculation_processor")
+  craft_shaped(i256k, i64k, "#createdelight:quartz_glass", "ae2:sky_dust", "ae2:calculation_processor")
+  craft_shaped(i1m, i256k, "#createdelight:quartz_vibrant_glass", "ae2:sky_dust", "megacells:accumulation_processor")
+  craft_shaped(i4m, i1m, "#createdelight:quartz_vibrant_glass", "#forge:dusts/ender_pearl", "megacells:accumulation_processor")
+  craft_shaped(i16m, i4m, "#createdelight:quartz_vibrant_glass", "#forge:dusts/ender_pearl", "megacells:accumulation_processor")
+  craft_shaped(i64m, i16m, "#createdelight:quartz_vibrant_glass", "ae2:matter_ball", "megacells:accumulation_processor")
+  craft_shaped(i256m, i64m, "#createdelight:quartz_vibrant_glass", "ae2:matter_ball", "megacells:accumulation_processor")
+
   // 1k ME存储组件
   seq_1(
     "ae2:certus_quartz_crystal",
