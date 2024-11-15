@@ -67,6 +67,14 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:glow_squid_ink_sausage',
         'hotdog_delight:pumpkin_sausage'
     ])
+    e.add("forge:beef/cooked", [
+        'minecraft:cooked_beef',
+        'farmersdelight:beef_patty'
+    ])
+    // 奶类标签
+    e.add("forge:milk/milk_bottle", [
+        'vintagedelight:nut_milk_bottle'
+    ])
     // 奶酪
     e.add("forge:cheese", [
         "ad_astra:cheese",

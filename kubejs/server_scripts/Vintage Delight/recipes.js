@@ -132,4 +132,40 @@ ServerEvents.recipes(e => {
             "item": "vintagedelight:pickled_pepper"
         }
     }).id("vintagedelight:fermenting/kimchi_from_fermenting")
+    // 花生奶兼容
+    e.recipes.create.emptying(
+        [
+            Fluid.of("createdelight:nut_milk", 250),
+            "minecraft:glass_bottle"
+        ], 
+        "vintagedelight:nut_milk_bottle"
+    ).id("create:emptying/compat/vintagedelight/nut_milk_bottle")
+    e.recipes.create.filling(
+        "vintagedelight:nut_milk_bottle",
+        [
+            Fluid.of("createdelight:nut_milk", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("create:filling/compat/vintagedelight/nut_milk_bottle")
+    e.recipes.kubejs.shapeless(
+        'createdelight:nut_milk_bucket',
+        [
+            "4x vintagedelight:nut_milk_bottle",
+            "minecraft:bucket"
+        ]
+    ).id("vintagedelight:nut_milk_bucket_from_bottles").replaceIngredient("vintagedelight:nut_milk_bottle", "minecraft:glass_bottle")
+    e.recipes.kubejs.shapeless(
+        "4x vintagedelight:nut_milk_bottle",
+        [
+            'createdelight:nut_milk_bucket',
+            "4x minecraft:glass_bottle"
+        ]
+    ).id("vintagedelight:nut_milk_bottle").replaceIngredient("createdelight:nut_milk_bucket", "minecraft:bucket")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:nut_milk", 250),
+        [
+            "2x vintagedelight:peanut",
+            "minecraft:sugar"
+        ]
+    ).heated().id("vintagedelight:mixing/nut_milk")
 })

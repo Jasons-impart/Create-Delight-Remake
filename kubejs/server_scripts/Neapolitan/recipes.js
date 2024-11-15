@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
         "neapolitan:strawberry_cake",
         "neapolitan:banana_cake",
         "neapolitan:mint_cake",
-        "neapolitan:adzuki_cake"
+        "neapolitan:adzuki_cake",
+        "neapolitan:milk/milk_bottles_from_bucket",
     ])
 
     e.replaceInput({}, "neapolitan:ice_cubes", "youkaishomecoming:ice_cube")
@@ -33,7 +34,7 @@ ServerEvents.recipes(e => {
      */
     function make_cake(e, input, output) {
         e.recipes.create.deploying(output, [
-            "ratatouille:cake_base",
+            "minecraft:cake",
             input
         ])
         .id(`neapolitan:deploying/${output.split(":")[1]}`)

@@ -1,4 +1,7 @@
 {
+    "fluid.createdelight.nut_milk": "花生奶",
+    "block.createdelight.nut_milk": "花生奶",
+    "item.createdelight.nut_milk_bucket": "花生奶桶",
     "jei.BlazeBurnerSuperHeat": "超燃液体",
     "jei.SuperHeat":"超级加热",
     "block.createdelight.fragment_of_border":"边境碎块",

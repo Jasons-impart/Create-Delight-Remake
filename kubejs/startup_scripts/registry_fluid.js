@@ -149,7 +149,14 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.egg_yolk")
         .translationKey("block.createdelight.egg_yolk")
         .translationKey("item.createdelight.egg_yolk_bucket")
-    
+    //花生奶
+    e.create("createdelight:nut_milk")
+        .thinTexture(0xf5e7c2)
+        .noBlock()
+        .translationKey("fluid.createdelight.nut_milk")
+        .translationKey("block.createdelight.nut_milk")
+        .translationKey("item.createdelight.nut_milk_bucket")
+        .tag("forge:milk")
     //黏液
     e.create("createdelight:slime")
         .thickTexture(0x04FF00)

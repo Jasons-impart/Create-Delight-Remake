@@ -52,6 +52,7 @@ ItemEvents.modification(e => {
         ["casualness_delight:raw_fried_dumpling", "minecraft:nausea", 600, 2, 1],
         ["create:blaze_cake", "mynethersdelight:b_pungent", 1200, 2, 1],
         ["create:blaze_cake", "minecraft:strength", 600, 2, 1],
+        ["create_central_kitchen:chocolate_cake_slice", "neapolitan:sugar_rush", 10, 1, 1],
     ]
     effects.forEach(effect => {
         e.modify(effect[0], item => {

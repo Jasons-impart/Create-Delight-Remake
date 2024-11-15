@@ -23,7 +23,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:red_velvet_cake',
         "youkaishomecoming:emptying/blood_bottle_emptying",
         'youkaishomecoming:mandrake_root_cutting',
-        'youkaishomecoming:raw_lamprey_cutting'
+        'youkaishomecoming:raw_lamprey_cutting',
+        "youkaishomecoming:red_velvet_cake_slice"
     ])
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
@@ -70,4 +71,5 @@ ServerEvents.recipes(e => {
             ["youkaishomecoming:raw_lamprey_fillet", 1]
         ]
     )
+    cutting_3(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
 })
