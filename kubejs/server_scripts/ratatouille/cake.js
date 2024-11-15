@@ -13,7 +13,9 @@ ServerEvents.recipes(e => {
         "farmersrespite:coffee_cake",
         "create_central_kitchen:crafting/coffee_cake_from_dough",
         "create_central_kitchen:mixing/coffee_cake",
-        "farmersrespite:coffee_cake_from_slices"
+        "farmersrespite:coffee_cake_from_slices",
+        "create_central_kitchen:cutting/chocolate_cake_slice",
+        "neapolitan:cake"
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(Fluid.of("ratatouille:mince_meat", 250), [
@@ -42,12 +44,13 @@ ServerEvents.recipes(e => {
     ).id("create:filling/cake_mold_filled")
 
     e.recipes.create.filling(
-        "createaddition:chocolate_cake",
+        "neapolitan:chocolate_cake",
         [
             "ratatouille:cake_base",
             Fluid.of("create:chocolate", 1000)
         ]
     ).id("create:filling/chocolate_cake")
+    cutting(e, 'neapolitan:chocolate_cake', [['create_central_kitchen:chocolate_cake_slice', 7]])
     e.recipes.create.sequenced_assembly("farmersrespite:coffee_cake", "ratatouille:cake_base", [
         e.recipes.create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("farmersrespite:coffee", 1000)]),
         e.recipes.create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "createcafe:roasted_coffee_beans"])

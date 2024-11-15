@@ -4,4 +4,8 @@ ServerEvents.recipes(e => {
         Fluid.of("fruitsdelight:kiwi_juice", 250),
         "2x fruitsdelight:kiwi"
     ).id("fruitsdelight:mixing/flowing_kiwi_juice")
+    e.recipes.create.mixing(
+        Fluid.of("fruitsdelight:hamimelon_juice", 250),
+        "4x fruitsdelight:hamimelon_slice"
+    ).id("fruitsdelight:mixing/flowing_hamimelon_juice")
 })
