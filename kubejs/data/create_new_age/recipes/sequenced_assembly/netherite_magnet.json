@@ -1,0 +1,78 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:ancient_debris"
+  },
+  "loops": 4,
+  "results": [
+    {
+      "item": "create_new_age:netherite_magnet"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:ancient_debris"
+        },
+        {
+          "item": "create_new_age:overcharged_diamond"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:ancient_debris"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "minecraft:ancient_debris"
+        },
+        {
+          "item": "minecraft:netherite_scrap"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:ancient_debris"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "minecraft:ancient_debris"
+        }
+      ],
+      "results": [
+        {
+          "item": "minecraft:ancient_debris"
+        }
+      ]
+    },
+	{
+    "type": "create_new_age:energising",
+	"energy_needed": 10000,
+	"ingredients": [
+    {
+      "item": "minecraft:ancient_debris"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:ancient_debris"
+    }
+  ]
+}
+  ],
+  "transitionalItem": {
+    "item": "minecraft:netherite_scrap",
+	"nbt": 
+		{ "custom_model_data":83535}
+  }
+}

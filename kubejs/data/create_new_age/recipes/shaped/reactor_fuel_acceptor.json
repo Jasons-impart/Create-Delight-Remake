@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "r": {
+      "item": "create_new_age:reactor_casing"
+    },
+    "v": {
+      "item": "create:andesite_funnel"
+    },
+    "c": {
+      "item": "create_new_age:copper_circuit"
+    },
+    "o": {
+      "item": "create_new_age:overcharged_iron_sheet"
+    },
+    "h": {
+      "item": "minecraft:hopper"
+    }
+  },
+  "pattern": [
+    " v ",
+    "crc",
+	"oho"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:reactor_fuel_acceptor"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "type": "create:mechanical_crafting",
+  "acceptMirrored": true,
+  "key": {
+    "i": {
+      "item": "create_new_age:overcharged_iron_sheet"
+    },
+    "g": {
+      "item": "create_new_age:overcharged_golden_sheet"
+    }
+  },
+  "pattern": [
+    "i","g","i","g","i","g","i","g"
+  ],
+  "result": {
+    "count": 1,
+    "item": "create_new_age:layered_magnet"
+  }
+}
