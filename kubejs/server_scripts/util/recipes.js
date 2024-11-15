@@ -102,7 +102,7 @@ function combination(event, inputs, output, count) {
 function baking(event, input, output, count, category, time) {
     event.custom({ type: "refurbished_furniture:oven_baking", category: category, ingredient: { item: input }, result: { count: count, item: output }, time: time })
         .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
-    event.recipes.minecraft.smoking(output, input)
+    event.recipes.minecraft.smoking(Item.of(output, count), input)
         .id(`createdelight:smoking/${output.split(":")[1]}_manual_only`)
 }
 /**

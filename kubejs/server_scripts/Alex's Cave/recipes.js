@@ -13,7 +13,9 @@ ServerEvents.recipes(e => {
         "create_oppenheimered:mixing/scarlet_neodymium",
         "create_oppenheimered:mixing/azure_neodymium",
         "alexscaves:azure_neodymium_ingot",
-        "alexscaves:scarlet_neodymium_ingot"
+        "alexscaves:scarlet_neodymium_ingot",
+        "create_oppenheimered:compacting/layer_cake",
+        "create_oppenheimered:mixing/chocolate_heating"
 
     ])
     e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")

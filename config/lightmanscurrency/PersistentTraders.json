@@ -4999,7 +4999,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelight:dirty_silver_dust",
+            "ID": "createdelight:silver_dust",
             "Count": 6
           },
           "Price": {
