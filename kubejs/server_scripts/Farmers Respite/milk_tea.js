@@ -77,7 +77,8 @@ ServerEvents.recipes(e => {
         ["forge:fruits/banana", "farmersrespite:black_tea", "createcafe:banana_tea"],
         ["forge:fruits/cherry", "farmersrespite:black_tea", "createcafe:cherry_tea"],
         ["forge:cafe/oreo_crushed", "farmersrespite:black_tea", "createcafe:oreo_tea"],
-        ["forge:chorus_fruits", "farmersrespite:black_tea", "create_central_kitchen:chorus_fruit_milk_tea"]
+        ["forge:chorus_fruits", "farmersrespite:black_tea", "create_central_kitchen:chorus_fruit_milk_tea"],
+        ["forge:fruits/strawberry", "farmersrespite:black_tea", "createcafe:strawberry_tea"]
 
     ]
     milk_teas.forEach(milk_tea => {
