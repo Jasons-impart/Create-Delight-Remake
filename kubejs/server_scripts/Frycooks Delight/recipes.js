@@ -7,9 +7,8 @@ ServerEvents.recipes(e => {
         "frycooks_delight:canola_crate",
         "frycooks_delight:canola",
         "frycooks_delight:lard",
-        "frycooks_delight:lard_block"
+        "frycooks_delight:lard_block",
     ])
-
     package_item(e, 'frycooks_delight:canola', 'frycooks_delight:canola_crate', 9)
     e.replaceInput({ id: "culturaldelights:smelting/smoked_tomato" }, "farmersdelight:tomato", "some_assembly_required:tomato_slices")
     e.recipes.create.compacting(

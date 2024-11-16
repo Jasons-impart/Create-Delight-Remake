@@ -79,6 +79,17 @@ ServerEvents.recipes(e => {
     ).id("vintagedelight:salt_bucket_to_salt")
     // 腌制
     e.recipes.vintagedelight.fermenting(
+        "5x vintagedelight:surstromming",
+        [
+            'create_bic_bit:raw_herring',
+            'create_bic_bit:raw_herring',
+            'create_bic_bit:raw_herring',
+            'create_bic_bit:raw_herring',
+            'create_bic_bit:raw_herring',
+            "#forge:salt"
+        ], 2500
+    ).id("vintagedelight:fermenting/surstromming_from_fermenting")
+    e.recipes.vintagedelight.fermenting(
         "5x festival_delicacies:preserved_meat",
         [
             "#forge:raw_pork",
