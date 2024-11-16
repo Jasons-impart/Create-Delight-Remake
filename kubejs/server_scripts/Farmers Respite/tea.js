@@ -1,4 +1,8 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "create_central_kitchen:emptying/apple_cider",
+        "create_central_kitchen:filling/apple_cider"
+    ])
     let tea_recipes = [
         ["farmersrespite:green_tea_leaves", "farmersrespite:green_tea"],
         ["farmersrespite:yellow_tea_leaves", "farmersrespite:yellow_tea"],
