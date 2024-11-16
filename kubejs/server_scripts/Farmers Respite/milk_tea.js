@@ -43,7 +43,8 @@ ServerEvents.recipes(e => {
         ["neapolitan:vanilla", "farmersrespite:black_tea", "createcafe:vanilla_tea"],
         ['culturaldelights:avocados', "farmersrespite:black_tea", "createcafe:avocado_tea"],
         ["forge:fruits/mango", "farmersrespite:dandelion_tea", "createcafe:mango_tea"],
-        ['forge:fruits/peach', "farmersrespite:dandelion_tea", "createcafe:peach_tea"]
+        ['forge:fruits/peach', "farmersrespite:dandelion_tea", "createcafe:peach_tea"],
+        ['forge:fruits/durian', "farmersrespite:dandelion_tea", "createcafe:durian_tea"]
     ]
     milk_teas.forEach(milk_tea => {
         e.custom({
