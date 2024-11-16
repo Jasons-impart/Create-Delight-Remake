@@ -4,20 +4,76 @@ ServerEvents.tags("item", e => {
     ])
 })
 ServerEvents.recipes(e => {
-    //芒果奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:mango_tea", 500), [
-        "fruitsdelight:mango", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:dandelion_tea", 100)
-    ]).heated().id("createcafe:mixing/mango_tea_mixing")
-    //桃子奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:peach_tea", 500), [
-        "fruitsdelight:peach", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:dandelion_tea", 100)
-    ]).heated().id("createcafe:mixing/peach_tea_mixing")
+    remove_recipes_id(e, [
+        "createcafe:mixing/vanilla_tea_mixing2",
+        "createcafe:mixing/avocado_tea_mixing3"
+    ])
+    //紫颂果珍珠奶茶
+    e.custom({
+        type: "create:mixing",
+        heatRequirement: "heated",
+        ingredients: [
+            {
+                tag: "forge:chorus_fruits"
+            },
+            {
+                item: "ends_delight:ender_pearl_grain"
+            },
+            {
+                item: "minecraft:sugar"
+            },
+            {
+                amount: 200,
+                fluidTag: "forge:milk"
+            },
+            {
+                amount: 100,
+                fluid: "farmersrespite:black_tea",
+                nbt: {}
+            }
+        ],
+        results: [
+            {
+                amount: 500,
+                fluid: "create_central_kitchen:chorus_fruit_bubble_tea"
+            }
+        ]
+    }).id("ends_delight:food/bubble_tea")
+    let milk_teas = [
+        ["neapolitan:vanilla", "farmersrespite:black_tea", "createcafe:vanilla_tea"],
+        ['culturaldelights:avocados', "farmersrespite:black_tea", "createcafe:avocado_tea"],
+        ["forge:fruits/mango", "farmersrespite:dandelion_tea", "createcafe:mango_tea"],
+        ['forge:fruits/peach', "farmersrespite:dandelion_tea", "createcafe:peach_tea"]
+    ]
+    milk_teas.forEach(milk_tea => {
+        e.custom({
+            type: "create:mixing",
+            heatRequirement: "heated",
+            ingredients: [
+                {
+                    tag: milk_tea[0]
+                },
+                {
+                    item: "minecraft:sugar"
+                },
+                {
+                    amount: 200,
+                    fluidTag: "forge:milk"
+                },
+                {
+                    amount: 100,
+                    fluid: milk_tea[1],
+                    nbt: {}
+                }
+            ],
+            results: [
+                {
+                    amount: 500,
+                    fluid: milk_tea[2]
+                }
+            ]
+        }).id(`createcafe:mixing/${milk_tea[2].split(":")[1]}_mixing`)
+    });
     //榴莲茶
     e.recipes.create.mixing(Fluid.of("createcafe:durian_tea", 500), [
         "fruitsdelight:durian_flesh", 
@@ -151,12 +207,4 @@ ServerEvents.recipes(e => {
         Fluid.of("minecraft:milk", 200), 
         Fluid.of("farmersrespite:black_tea", 100)
     ]).heated().id("ends_delight:food/chorus_fruit_milk_tea")
-    //紫颂果珍珠奶茶
-    e.recipes.create.mixing(Fluid.of("create_central_kitchen:chorus_fruit_bubble_tea", 500), [
-        '#forge:chorus_fruits', 
-        "ends_delight:ender_pearl_grain",
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:black_tea", 100)
-    ]).heated().id("ends_delight:food/bubble_tea")
 })

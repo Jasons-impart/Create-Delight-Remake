@@ -1,4 +1,8 @@
 ServerEvents.tags("item", e => {
+    // 香草标签
+    e.add("neapolitan:vanilla", [
+        'neapolitan:dried_vanilla_pods'
+    ])
     // 油菜籽移除种子标签
     e.remove("forge:seeds/canola", [
         'frycooks_delight:canola_seeds',
