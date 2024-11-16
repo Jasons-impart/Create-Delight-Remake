@@ -32,9 +32,9 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly("ae2:annihilation_core", "minecraft:iron_nugget", [
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/quartz"]),
+      create.deploying("createdelight:incomplete_annihilation_core", ["createdelight:incomplete_annihilation_core", "ae2:logic_processor"]),
+      create.deploying("createdelight:incomplete_annihilation_core", ["createdelight:incomplete_annihilation_core", "#forge:dusts/fluix"]),
+      create.deploying("createdelight:incomplete_annihilation_core", ["createdelight:incomplete_annihilation_core", "#forge:gems/quartz"]),
     ])
     .transitionalItem("createdelight:incomplete_annihilation_core")
     .loops(1)
@@ -50,10 +50,10 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly("ae2:formation_core", "minecraft:iron_nugget", [
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "ae2:logic_processor"]),
-      create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
-      create.deploying("minecraft:iron_nugget", [
-        "minecraft:iron_nugget",
+      create.deploying("createdelight:incomplete_formation_core", ["createdelight:incomplete_formation_core", "ae2:logic_processor"]),
+      create.deploying("createdelight:incomplete_formation_core", ["createdelight:incomplete_formation_core", "#forge:dusts/fluix"]),
+      create.deploying("createdelight:incomplete_formation_core", [
+        "createdelight:incomplete_formation_core",
         "#forge:gems/certus_quartz",
       ]),
     ])
@@ -99,11 +99,11 @@ ServerEvents.recipes((event) => {
   // 量子桥卡
   create
     .sequenced_assembly("ae2wtlib:quantum_bridge_card", "ae2:advanced_card", [
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
-      create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_link"]),
+      create.deploying("createdelight:incomplete_quantum_bridge_card", ["createdelight:incomplete_quantum_bridge_card", "ae2:quantum_ring"]),
+      create.deploying("createdelight:incomplete_quantum_bridge_card", ["createdelight:incomplete_quantum_bridge_card", "ae2:quantum_ring"]),
+      create.deploying("createdelight:incomplete_quantum_bridge_card", ["createdelight:incomplete_quantum_bridge_card", "ae2:quantum_ring"]),
+      create.deploying("createdelight:incomplete_quantum_bridge_card", ["createdelight:incomplete_quantum_bridge_card", "ae2:quantum_ring"]),
+      create.deploying("createdelight:incomplete_quantum_bridge_card", ["createdelight:incomplete_quantum_bridge_card", "ae2:quantum_link"]),
     ])
     .transitionalItem("createdelight:incomplete_quantum_bridge_card")
     .loops(1)
@@ -113,16 +113,16 @@ ServerEvents.recipes((event) => {
   // ME样板供应器
   create
     .sequenced_assembly("2x ae2:pattern_provider", "createdelight:iron_casing", [
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_pattern_provider", [
+        "createdelight:incomplete_pattern_provider",
         "ae2:annihilation_core",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_pattern_provider", [
+        "createdelight:incomplete_pattern_provider",
         "#forge:workbench",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_pattern_provider", [
+        "createdelight:incomplete_pattern_provider",
         "ae2:formation_core",
       ]),
     ])
@@ -138,20 +138,20 @@ ServerEvents.recipes((event) => {
   // 分子装配室
   create
     .sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_molecular_assembler", [
+        "createdelight:incomplete_molecular_assembler",
         "ae2:annihilation_core",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_molecular_assembler", [
+        "createdelight:incomplete_molecular_assembler",
         "ae2:formation_core",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_molecular_assembler", [
+        "createdelight:incomplete_molecular_assembler",
         "#forge:workbench",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_molecular_assembler", [
+        "createdelight:incomplete_molecular_assembler",
         "#createdelight:quartz_glass",
       ]),
     ])
@@ -168,15 +168,15 @@ ServerEvents.recipes((event) => {
   // ME接口
   create
     .sequenced_assembly("2x ae2:interface", "createdelight:iron_casing", [
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_interface", [
+        "createdelight:incomplete_interface",
         "ae2:annihilation_core",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_interface", [
+        "createdelight:incomplete_interface",
         "ae2:formation_core",
       ]),
-      create.deploying("createdelight:iron_casing", ["createdelight:iron_casing", "#forge:glass"]),
+      create.deploying("createdelight:incomplete_interface", ["createdelight:incomplete_interface", "#forge:glass"]),
     ])
     .loops(1)
     .transitionalItem("createdelight:incomplete_interface")
@@ -296,16 +296,16 @@ ServerEvents.recipes((event) => {
   // 合成单元
   create
     .sequenced_assembly("2x ae2:crafting_unit", "createdelight:iron_casing", [
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_crafting_unit", [
+        "createdelight:incomplete_crafting_unit",
         "#ae2:p2p_attunements/me_p2p_tunnel",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_crafting_unit", [
+        "createdelight:incomplete_crafting_unit",
         "ae2:calculation_processor",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_crafting_unit", [
+        "createdelight:incomplete_crafting_unit",
         "ae2:logic_processor",
       ]),
     ])
@@ -316,16 +316,16 @@ ServerEvents.recipes((event) => {
   // ME驱动器
   create
     .sequenced_assembly("ae2:drive", "createdelight:iron_casing", [
-      vintageimprovements.turning("createdelight:iron_casing", [
-        "createdelight:iron_casing",
-        "createdelight:iron_casing",
+      vintageimprovements.turning("createdelight:incomplete_drive", [
+        "createdelight:incomplete_drive",
+        "createdelight:incomplete_drive",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_drive", [
+        "createdelight:incomplete_drive",
         "#ae2:p2p_attunements/me_p2p_tunnel",
       ]),
-      create.deploying("createdelight:iron_casing", [
-        "createdelight:iron_casing",
+      create.deploying("createdelight:incomplete_drive", [
+        "createdelight:incomplete_drive",
         "ae2:engineering_processor",
       ]),
     ])
@@ -336,16 +336,16 @@ ServerEvents.recipes((event) => {
   // MEGA合成单元
   create
     .sequenced_assembly("2x megacells:mega_crafting_unit", "ae2:crafting_unit", [
-      create.deploying("ae2:crafting_unit", [
-        "ae2:crafting_unit",
+      create.deploying("createdelight:incomplete_mega_crafting_unit", [
+        "createdelight:incomplete_mega_crafting_unit",
         "#ae2:p2p_attunements/me_p2p_tunnel",
       ]),
-      create.deploying("ae2:crafting_unit", [
-        "ae2:crafting_unit",
+      create.deploying("createdelight:incomplete_mega_crafting_unit", [
+        "createdelight:incomplete_mega_crafting_unit",
         "megacells:accumulation_processor",
       ]),
-      create.deploying("ae2:crafting_unit", [
-        "ae2:crafting_unit",
+      create.deploying("createdelight:incomplete_mega_crafting_unit", [
+        "createdelight:incomplete_mega_crafting_unit",
         "createdelight:bleak_electron_tube",
       ]),
     ])
@@ -398,8 +398,8 @@ ServerEvents.recipes((event) => {
         '{display:{Lore:[\'{"italic":false,"color":"white","extra":[{"text":""},{"text":"手持 "},{"color":"blue","text":"1k ME存储组件"},{"text":" 对装有大于1万桶熔岩的1x1流体抽屉蹲下右键获取"}],"text":""}\']},record:{"#c":"ae2:f",id:"minecraft:lava"}}'
       ),
       "ae2:cell_component_1k",
-      create.filling(Item.of("ae2:cell_component_1k"), [
-        "ae2:cell_component_1k",
+      create.filling(Item.of("createdelight:incomplete_infinity_cell"), [
+        "createdelight:incomplete_infinity_cell",
         Fluid.of("minecraft:lava", 1000),
       ])
     )

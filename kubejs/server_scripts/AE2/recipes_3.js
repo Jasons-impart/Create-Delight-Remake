@@ -95,25 +95,25 @@ ServerEvents.recipes((event) => {
   // 水晶修复器
   create
     .sequenced_assembly("expatternprovider:crystal_fixer", "#forge:storage_blocks/iron", [
-      create.pressing("#forge:storage_blocks/iron", "#forge:storage_blocks/iron"),
-      create.deploying("#forge:storage_blocks/iron", [
-        "#forge:storage_blocks/iron",
+      create.pressing("createdelight:incomplete_crystal_fixer", "createdelight:incomplete_crystal_fixer"),
+      create.deploying("createdelight:incomplete_crystal_fixer", [
+        "createdelight:incomplete_crystal_fixer",
         "#forge:gems/fluix",
       ]),
-      create.deploying("#forge:storage_blocks/iron", [
-        "#forge:storage_blocks/iron",
+      create.deploying("createdelight:incomplete_crystal_fixer", [
+        "createdelight:incomplete_crystal_fixer",
         "#forge:rods/iron",
       ]),
-      create.deploying("#forge:storage_blocks/iron", [
-        "#forge:storage_blocks/iron",
+      create.deploying("createdelight:incomplete_crystal_fixer", [
+        "createdelight:incomplete_crystal_fixer",
         "#forge:rods/iron",
       ]),
-      create.deploying("#forge:storage_blocks/iron", [
-        "#forge:storage_blocks/iron",
+      create.deploying("createdelight:incomplete_crystal_fixer", [
+        "createdelight:incomplete_crystal_fixer",
         "#forge:gems/certus_quartz",
       ]),
-      create.deploying("#forge:storage_blocks/iron", [
-        "#forge:storage_blocks/iron",
+      create.deploying("createdelight:incomplete_crystal_fixer", [
+        "createdelight:incomplete_crystal_fixer",
         "#forge:gems/certus_quartz",
       ]),
     ])
@@ -125,25 +125,25 @@ ServerEvents.recipes((event) => {
   // MEGA解压缩模块
   create
     .sequenced_assembly("megacells:decompression_module", "#forge:ingots/sky_steel", [
-      create.pressing("#forge:ingots/sky_steel", "#forge:ingots/sky_steel"),
-      create.deploying("#forge:ingots/sky_steel", [
-        "#forge:ingots/sky_steel",
+      create.pressing("createdelight:incomplete_decompression_module", "createdelight:incomplete_decompression_module"),
+      create.deploying("createdelight:incomplete_decompression_module", [
+        "createdelight:incomplete_decompression_module",
         "megacells:compression_card",
       ]),
-      create.deploying("#forge:ingots/sky_steel", [
-        "#forge:ingots/sky_steel",
+      create.deploying("createdelight:incomplete_decompression_module", [
+        "createdelight:incomplete_decompression_module",
         "ae2:logic_processor",
       ]),
-      create.deploying("#forge:ingots/sky_steel", [
-        "#forge:ingots/sky_steel",
+      create.deploying("createdelight:incomplete_decompression_module", [
+        "createdelight:incomplete_decompression_module",
         "ae2:calculation_processor",
       ]),
-      create.deploying("#forge:ingots/sky_steel", [
-        "#forge:ingots/sky_steel",
+      create.deploying("createdelight:incomplete_decompression_module", [
+        "createdelight:incomplete_decompression_module",
         "megacells:accumulation_processor",
       ]),
-      create.deploying("#forge:ingots/sky_steel", [
-        "#forge:ingots/sky_steel",
+      create.deploying("createdelight:incomplete_decompression_module", [
+        "createdelight:incomplete_decompression_module",
         "ae2:engineering_processor",
       ]),
     ])
@@ -165,10 +165,10 @@ ServerEvents.recipes((event) => {
   // 能源元件
   create
     .sequenced_assembly("ae2:energy_cell", "#createdelight:quartz_glass", [
-      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
-      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
-      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
-      create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
+      create.deploying("createdelight:incomplete_energy_cell", ["createdelight:incomplete_energy_cell", "#forge:dusts/fluix"]),
+      create.deploying("createdelight:incomplete_energy_cell", ["createdelight:incomplete_energy_cell", "#forge:gems/certus_quartz"]),
+      create.deploying("createdelight:incomplete_energy_cell", ["createdelight:incomplete_energy_cell", "#forge:dusts/fluix"]),
+      create.deploying("createdelight:incomplete_energy_cell", ["createdelight:incomplete_energy_cell", "#forge:gems/certus_quartz"]),
     ])
     .transitionalItem("createdelight:incomplete_energy_cell")
     .loops(1)
@@ -201,8 +201,8 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       "ae2:dense_energy_cell",
       "ae2:calculation_processor",
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_dense_energy_cell", [
+        "createdelight:incomplete_dense_energy_cell",
         "ae2:energy_cell",
       ])
     )
@@ -215,8 +215,8 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       "megacells:mega_energy_cell",
       "megacells:accumulation_processor",
-      create.deploying("megacells:accumulation_processor", [
-        "megacells:accumulation_processor",
+      create.deploying("createdelight:incomplete_mega_energy_cell", [
+        "createdelight:incomplete_mega_energy_cell",
         "ae2:energy_cell",
       ])
     )

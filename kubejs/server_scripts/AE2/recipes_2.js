@@ -129,8 +129,8 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:water"}}'),
       "ae2:cell_component_1k",
-      create.filling("reatedelight:incomplete_infinity_cell", [
-        "reatedelight:incomplete_infinity_cell",
+      create.filling("createdelight:incomplete_infinity_cell", [
+        "createdelight:incomplete_infinity_cell",
         Fluid.of("minecraft:water", 1000),
       ])
     )
@@ -207,13 +207,13 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "ae2:network/crafting/patterns_blank" });
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
-      create.deploying("#forge:plates/iron", [
-        "#forge:plates/iron",
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
+      create.deploying("createdelight:incomplete_blank_pattern", [
+        "createdelight:incomplete_blank_pattern",
         "#createdelight:quartz_vibrant_glass",
       ]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("createdelight:incomplete_blank_pattern", "createdelight:incomplete_blank_pattern")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .transitionalItem("createdelight:incomplete_blank_pattern")
@@ -221,11 +221,11 @@ ServerEvents.recipes((event) => {
     .id("createdelight:blank_pattern_1");
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "ae2:certus_quartz_crystal"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#forge:dusts/glowstone"]),
-      create.deploying("#forge:plates/iron", ["#forge:plates/iron", "#createdelight:quartz_glass"]),
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "#forge:dusts/glowstone"]),
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "#createdelight:quartz_glass"]),
       vintageimprovements
-        .curving("#forge:plates/iron", "#forge:plates/iron")
+        .curving("createdelight:incomplete_blank_pattern", "createdelight:incomplete_blank_pattern")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .transitionalItem("createdelight:incomplete_blank_pattern")
@@ -235,10 +235,10 @@ ServerEvents.recipes((event) => {
   // 样板修改器
   create
     .sequenced_assembly("expatternprovider:pattern_modifier", "ae2:blank_pattern", [
-      create.deploying("ae2:blank_pattern", ["ae2:blank_pattern", "ae2:logic_processor"]),
-      create.deploying("ae2:blank_pattern", ["ae2:blank_pattern", "#forge:dyes/green"]),
+      create.deploying("createdelight:incomplete_pattern_modifier", ["createdelight:incomplete_pattern_modifier", "ae2:logic_processor"]),
+      create.deploying("createdelight:incomplete_pattern_modifier", ["createdelight:incomplete_pattern_modifier", "#forge:dyes/green"]),
       vintageimprovements
-        .curving("ae2:blank_pattern", "ae2:blank_pattern")
+        .curving("createdelight:incomplete_pattern_modifier", "createdelight:incomplete_pattern_modifier")
         .head("createdelight:cell_housing_curving_head"),
     ])
     .transitionalItem("createdelight:incomplete_pattern_modifier")

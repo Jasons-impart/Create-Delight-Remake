@@ -1,6 +1,21 @@
 ServerEvents.tags("item", e => {
     e.add("forge:fruits/durian", [
         "fruitsdelight:durian_flesh"
+    ]),
+    e.add("forge:fruits/apple", [
+        "minecraft:apple"
+    ]),
+    e.add("forge:fruits/pumpkin_slice", [
+        "farmersdelight:pumpkin_slice"
+    ])
+    e.add("forge:fruits/sweet_berries", [
+        "minecraft:sweet_berries"
+    ])
+    e.add("forge:fruits/melon_slice", [
+        "minecraft:melon_slice"
+    ]),
+    e.add("forge:cafe/oreo_crushed", [
+        "createcafe:oreo_crushed"
     ])
 })
 ServerEvents.recipes(e => {
@@ -44,7 +59,26 @@ ServerEvents.recipes(e => {
         ['culturaldelights:avocados', "farmersrespite:black_tea", "createcafe:avocado_tea"],
         ["forge:fruits/mango", "farmersrespite:dandelion_tea", "createcafe:mango_tea"],
         ['forge:fruits/peach', "farmersrespite:dandelion_tea", "createcafe:peach_tea"],
-        ['forge:fruits/durian', "farmersrespite:dandelion_tea", "createcafe:durian_tea"]
+        ['forge:fruits/durian', "farmersrespite:dandelion_tea", "createcafe:durian_tea"],
+        ["forge:fruits/fig", "farmersrespite:green_tea", "createcafe:fig_tea"],
+        ["forge:fruits/grape", "farmersrespite:green_tea", "createcafe:grape_tea"],
+        ["forge:fruits/blood_orange", "farmersrespite:rose_hip_tea", "createcafe:blood_tea"],
+        ["forge:fruits/lychee", "farmersrespite:rose_hip_tea", "createcafe:lychee_tea"],
+        ["forge:fruits/blueberry", "farmersrespite:rose_hip_tea", "createcafe:blueberry_tea"],
+        ["forge:fruits/pineapple", "farmersrespite:green_tea", "createcafe:pineapple_tea"],
+        ["forge:fruits/apple", "farmersrespite:green_tea", "createcafe:apple_tea"],
+        ["forge:fruits/pumpkin_slice", "farmersrespite:yellow_tea", "createcafe:pumpkin_tea"],
+        ["forge:fruits/sweet_berries", "farmersrespite:rose_hip_tea", "createcafe:sweetberry_tea"],
+        ["forge:fruits/kiwi", "farmersrespite:yellow_tea", "createcafe:kiwi_tea"],
+        ["forge:fruits/orange", "farmersrespite:yellow_tea", "createcafe:orange_tea"],
+        ["forge:fruits/persimmon", "farmersrespite:yellow_tea", "createcafe:persimmon_tea"],
+        ["forge:fruits/lemon", "farmersrespite:green_tea", "createcafe:lemon_tea"],
+        ["forge:fruits/melon_slice", "farmersrespite:rose_hip_tea", "createcafe:watermelon_tea"],
+        ["forge:fruits/banana", "farmersrespite:black_tea", "createcafe:banana_tea"],
+        ["forge:fruits/cherry", "farmersrespite:black_tea", "createcafe:cherry_tea"],
+        ["forge:cafe/oreo_crushed", "farmersrespite:black_tea", "createcafe:oreo_tea"],
+        ["forge:chorus_fruits", "farmersrespite:black_tea", "create_central_kitchen:chorus_fruit_milk_tea"]
+
     ]
     milk_teas.forEach(milk_tea => {
         e.custom({
@@ -75,130 +109,4 @@ ServerEvents.recipes(e => {
             ]
         }).id(`createcafe:mixing/${milk_tea[2].split(":")[1]}_mixing`)
     });
-    //无花果茶
-    e.recipes.create.mixing(Fluid.of("createcafe:fig_tea", 500), [
-        "fruitsdelight:fig", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:green_tea", 100)
-    ]).heated().id("createcafe:mixing/fig_tea_mixing")
-    //葡萄奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:grape_tea", 500), [
-        "#forge:fruits/grape", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:green_tea", 100)
-    ]).heated().id("createcafe:mixing/grape_tea_mixing")
-    //血橙奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:blood_tea", 500), [
-        "createcafe:blood_orange", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:rose_hip_tea", 100)
-    ]).heated().id("createcafe:mixing/blood_tea_mixing")
-    //荔枝奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:lychee_tea", 500), [
-        "fruitsdelight:lychee", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:rose_hip_tea", 100)
-    ]).heated().id("createcafe:mixing/lychee_tea_mixing")
-    //蓝莓奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:blueberry_tea", 500), [
-        "fruitsdelight:blueberry", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:rose_hip_tea", 100)
-    ]).heated().id("createcafe:mixing/blueberry_tea_mixing")
-    //菠萝奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:pineapple_tea", 500), [
-        "fruitsdelight:pineapple", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:green_tea", 100)
-    ]).heated().id("createcafe:mixing/pineapple_tea_mixing")
-    //苹果奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:apple_tea", 500), [
-        "minecraft:apple", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:green_tea", 100)
-    ]).heated().id("createcafe:mixing/apple_tea_mixing")
-    //南瓜奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:pumpkin_tea", 500), [
-        'farmersdelight:pumpkin_slice', 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:yellow_tea", 100)
-    ]).heated().id("createcafe:mixing/pumpkin_tea_mixing")
-    //甜浆果奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:sweetberry_tea", 500), [
-        "minecraft:sweet_berries", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:rose_hip_tea", 100)
-    ]).heated().id("createcafe:mixing/sweetberry_tea_mixing")
-    //猕猴桃奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:kiwi_tea", 500), [
-        "fruitsdelight:kiwi", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:yellow_tea", 100)
-    ]).heated().id("createcafe:mixing/kiwi_tea_mixing")
-    //橙子奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:orange_tea", 500), [
-        "fruitsdelight:orange", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:yellow_tea", 100)
-    ]).heated().id("createcafe:mixing/orange_tea_mixing")
-    //🦁奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:persimmon_tea", 500), [
-        "fruitsdelight:persimmon", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:yellow_tea", 100)
-    ]).heated().id("createcafe:mixing/persimmon_tea_mixing")
-    //柠檬茶
-    e.recipes.create.mixing(Fluid.of("createcafe:lemon_tea", 500), [
-        "fruitsdelight:lemon", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:green_tea", 100)
-    ]).heated().id("createcafe:mixing/lemon_tea_mixing")
-    //西瓜奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:watermelon_tea", 500), [
-        "minecraft:melon_slice", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:rose_hip_tea", 100)
-    ]).heated().id("createcafe:mixing/watermelon_tea_mixing")
-    //香蕉奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:banana_tea", 500), [
-        "alexsmobs:banana", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:black_tea", 100)
-    ]).heated().id("createcafe:mixing/banana_tea_mixing")
-    //樱桃奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:cherry_tea", 500), [
-        "vinery:cherry", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:black_tea", 100)
-    ]).heated().id("createcafe:mixing/cherry_tea_mixing")
-    //奥利奥奶茶
-    e.recipes.create.mixing(Fluid.of("createcafe:oreo_tea", 500), [
-        "createcafe:oreo_crushed", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:black_tea", 100)
-    ]).heated().id("createcafe:mixing/oreo_tea_mixing")
-    //紫颂花奶茶
-    e.recipes.create.mixing(Fluid.of("create_central_kitchen:chorus_fruit_milk_tea", 500), [
-        '#forge:chorus_fruits', 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:black_tea", 100)
-    ]).heated().id("ends_delight:food/chorus_fruit_milk_tea")
 })
