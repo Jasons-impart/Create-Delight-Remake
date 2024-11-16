@@ -6,7 +6,7 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/ketchup_recipe",
         "create_bic_bit:deep_frying/ice_recipe",
         "create_bic_bit:mixing/curdled_milk",
-        "create_bic_bit:mixing/unripe_cheese_wedge"
+        "create_bic_bit:compacting/unripe_cheese"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 

@@ -291,6 +291,47 @@
     "item.createdelight.mint_milkshake_bucket": "薄荷奶昔桶",
     "block.createdelight.adzuki_milkshake": "红豆奶昔",
     "fluid.createdelight.adzuki_milkshake": "红豆奶昔",
-    "item.createdelight.adzuki_milkshake_bucket": "红豆奶昔桶"
+    "item.createdelight.adzuki_milkshake_bucket": "红豆奶昔桶",
+
+    
+    "item.createdelight.incomplete_cell_component_1k": "未完成的1k me存储组件",
+    "item.createdelight.incomplete_cell_component_4k": "未完成的4k me存储组件",
+    "item.createdelight.incomplete_cell_component_16k": "未完成的16k me存储组件",
+    "item.createdelight.incomplete_cell_component_64k": "未完成的64k me存储组件",
+    "item.createdelight.incomplete_cell_component_256k": "未完成的256k me存储组件",
+    "item.createdelight.incomplete_basic_card": "未完成的基础卡",
+    "item.createdelight.incomplete_advanced_card": "未完成的高级卡",
+    "item.createdelight.incomplete_formation_core": "未完成的成型核心",
+    "item.createdelight.incomplete_annihilation_core": "未完成的破坏核心",
+    "item.createdelight.incomplete_charged_staff": "未完成的充能手杖",
+    "item.createdelight.incomplete_entropy_manipulator": "未完成的熵变机械臂",
+    "item.createdelight.incomplete_blank_pattern": "未完成的空白样板",
+    "item.createdelight.incomplete_wireless_terminal": "未完成的无线终端",
+    "item.createdelight.incomplete_wireless_crafting_terminal": "未完成的无线合成终端",
+    "item.createdelight.incomplete_quantum_bridge_card": "未完成的量子桥卡",
+    "item.createdelight.incomplete_wireless_pattern_access_terminal": "未完成的无线样板管理终端",
+    "item.createdelight.incomplete_wireless_pattern_encoding_terminal": "未完成的无线样板编码终端",
+    "item.createdelight.incomplete_cell_component_1m": "未完成的1m me存储组件",
+    "item.createdelight.incomplete_cell_component_4m": "未完成的4m me存储组件",
+    "item.createdelight.incomplete_cell_component_16m": "未完成的16m me存储组件",
+    "item.createdelight.incomplete_cell_component_64m": "未完成的64m me存储组件",
+    "item.createdelight.incomplete_cell_component_256m": "未完成的256m me存储组件",
+    "item.createdelight.incomplete_wireless_ex_pat": "未完成的无线扩展样板管理终端",
+    "item.createdelight.incomplete_pattern_modifier": "未完成的样板修改器",
+    "item.createdelight.incomplete_infinity_cell": "未完成的无限元件",
+    "item.createdelight.incomplete_mega_energy_cell": "未完成的超密能源元件",
+    "item.createdelight.incomplete_mega_crafting_unit": "未完成的MEGA合成单元",
+    "item.createdelight.incomplete_decompression_module": "未完成的MEGA解压缩模块",
+    "item.createdelight.incomplete_drive": "未完成的ME驱动器",
+    "item.createdelight.incomplete_interface": "未完成的ME接口",
+    "item.createdelight.incomplete_energy_cell": "未完成的能源元件",
+    "item.createdelight.incomplete_dense_energy_cell": "未完成的致密能源元件",
+    "item.createdelight.incomplete_crafting_unit": "未完成的合成单元",
+    "item.createdelight.incomplete_pattern_provider": "未完成的样板供应器",
+    "item.createdelight.incomplete_molecular_assembler": "未完成的分子装配室",
+    "item.createdelight.incomplete_controller": "未完成的ME控制器",
+    "item.createdelight.incomplete_crystal_fixer": "未完成的水晶修复器"
+
+
 
 }
