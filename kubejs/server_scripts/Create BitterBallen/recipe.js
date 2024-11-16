@@ -4,8 +4,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/sunflower_seeds_recipe",
         "create_bic_bit:mixing/frying_oil_recipe",
         "create_bic_bit:mixing/ketchup_recipe",
-        "create_bic_bit:deep_frying/ice_recipe"
-        
+        "create_bic_bit:deep_frying/ice_recipe",
+        "create_bic_bit:mixing/curdled_milk",
+        "create_bic_bit:mixing/unripe_cheese_wedge"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -53,6 +54,13 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:egg_yolk", 100),
         Fluid.of("createdieselgenerators:plant_oil", 250)
     ]).id("create_bic_bit:mixing/mayonnaise_recipe")
+    e.recipes.create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
+        Fluid.of("createdelight:vinegar", 250),
+        Fluid.of("minecraft:milk", 1000),
+        "create_bic_bit:crushed_nether_wart"
+    ]).heated()
+    .id("create_bic_bit:mixing/curdled_milk")
+    e.recipes.create.compacting("vintagedelight:cheese_curds", Fluid.of("create_bic_bit:curdled_milk", 250))
     threshing(e, "minecraft:sunflower", [
         "create_bic_bit:sunflower_seeds",
         Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)

@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight } = e.recipes
+    const { create, farmersdelight, createdieselgenerators } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")
@@ -32,8 +32,8 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, 'youkaishomecoming:coffee_powder', 'createcafe:coffee_grounds')
     e.replaceInput({}, 'youkaishomecoming:bowl_of_cream', 'createdelight:whipped_cream_bowl')
     e.replaceInput({}, 'youkaishomecoming:butter', 'createdelight:butter')
-    e.replaceInput({not: {output: ["minecraft:packed_ice", Fluid.water(), "youkaishomecoming:ice_cube"]}}, "minecraft:ice", "youkaishomecoming:ice_cube")
-    e.replaceInput({mod: 'youkaishomecoming'}, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
+    e.replaceInput({ not: { output: ["minecraft:packed_ice", Fluid.water(), "youkaishomecoming:ice_cube"] } }, "minecraft:ice", "youkaishomecoming:ice_cube")
+    e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
     e.replaceInput({}, "youkaishomecoming:roe", "oceanic_delight:salmon_eggs")
     e.replaceInput({}, "festival_delicacies:red_bean", "youkaishomecoming:redbean")
@@ -41,14 +41,14 @@ ServerEvents.recipes(e => {
         create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("butchercraft:blood_fluid")]),
         create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "youkaishomecoming:flesh"])
     ])
-    .loops(1)
-    .transitionalItem("ratatouille:cake_base")
-    .id("youkaishomecoming:sequenced_assembly/red_velvet_cake")
+        .loops(1)
+        .transitionalItem("ratatouille:cake_base")
+        .id("youkaishomecoming:sequenced_assembly/red_velvet_cake")
     threshing(e, 'youkaishomecoming:pods', ['youkaishomecoming:soybean', Item.of('youkaishomecoming:soybean').withChance(0.5)], 200)
     farmersdelight.cooking(
         [
-            'youkaishomecoming:soybean', 
-            'youkaishomecoming:soybean', 
+            'youkaishomecoming:soybean',
+            'youkaishomecoming:soybean',
             '#forge:salt'],
         'youkaishomecoming:tofu',
         1.0, 200)
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
     ])
         .id('youkaishomecoming:compacting/tofu')
     create.crushing("8x youkaishomecoming:ice_cube",
-                    "minecraft:ice"
+        "minecraft:ice"
     ).id("youkaishomecoming:crushing/ice_cube")
     cutting_3(e, "youkaishomecoming:mandrake_root",
         [
@@ -72,4 +72,46 @@ ServerEvents.recipes(e => {
         ]
     )
     cutting_3(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
+
+    e.custom({
+        "type": "youkaishomecoming:simple_fermentation",
+        "ingredients": [
+            {
+                tag: "forge:mushrooms"
+            }
+        ],
+        "inputFluid": {
+            "amount": 1000,
+            "fluid": "youkaishomecoming:mio"
+        },
+        "outputFluid": {
+            "amount": 1000,
+            "fluid": "createdelight:vinegar"
+        },
+        "results": [
+            {
+                item: "vintagedelight:organic_mash"
+            },
+            {
+                item: "vintagedelight:organic_mash"
+            },
+            {
+                item: "vintagedelight:organic_mash"
+            },
+            {
+                item: "vintagedelight:organic_mash"
+            }
+        ],
+        "time": 2400
+    })
+        .id("cratedelight:vinegar")
+    createdieselgenerators.basin_fermenting([
+        "4x vintagedelight:organic_mash",
+        Fluid.of("createdelight:vinegar", 1000)
+    ], [
+        "#forge:mushrooms",
+        Fluid.of("youkaishomecoming:mio", 1000)
+    ])
+    .processingTime(1800)
+    .id("cratedelight:vinegar_2")
 })

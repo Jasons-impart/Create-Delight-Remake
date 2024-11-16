@@ -7,7 +7,7 @@ ServerEvents.recipes(e => {
         e.recipes.vintageimprovements.vibrating(iner, iner),
         e.recipes.create.deploying(iner, [iner, "festival_delicacies:greenonion"]),
         e.recipes.create.deploying(iner, [iner, "butchercraft:lard"]),
-        e.recipes.create.deploying(iner, [iner, "vintagedelight:vinegar_bottle"])
+        e.recipes.create.filling(iner, [iner, Fluid.of("createdelight:vinegar", 250)])
     ])
         .transitionalItem(iner)
         .loops(1)

@@ -168,4 +168,13 @@ ServerEvents.recipes(e => {
             "minecraft:sugar"
         ]
     ).heated().id("vintagedelight:mixing/nut_milk")
+
+    e.recipes.create.filling("vintagedelight:vinegar_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)])
+    .id("create:filling/compat/vintagedelight/vinegar_bottle")
+    e.recipes.create.filling("vintagedelight:vinegar_mason_jar", ["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)])
+    .id("create:filling/compat/vintagedelight/vinegar_jar")
+    e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)], "vintagedelight:vinegar_bottle")
+    .id("create:filling/emptying/vintagedelight/vinegar_bottle")
+    e.recipes.create.emptying(["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)], "vintagedelight:vinegar_mason_jar")
+    .id("create:filling/emptying/vintagedelight/vinegar_jar")
 })
