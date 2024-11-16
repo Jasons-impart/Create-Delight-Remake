@@ -75,13 +75,6 @@ ServerEvents.recipes(e => {
             ]
         }).id(`createcafe:mixing/${milk_tea[2].split(":")[1]}_mixing`)
     });
-    //榴莲茶
-    e.recipes.create.mixing(Fluid.of("createcafe:durian_tea", 500), [
-        "fruitsdelight:durian_flesh", 
-        "minecraft:sugar", 
-        Fluid.of("minecraft:milk", 200), 
-        Fluid.of("farmersrespite:dandelion_tea", 100)
-    ]).heated().id("createcafe:mixing/durian_tea_mixing")
     //无花果茶
     e.recipes.create.mixing(Fluid.of("createcafe:fig_tea", 500), [
         "fruitsdelight:fig", 
