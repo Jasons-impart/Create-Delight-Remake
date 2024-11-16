@@ -25,73 +25,75 @@ ServerEvents.recipes((event) => {
   // const ran_str = generateRandomStringWithNumbers(4);
 
   function seq_1(input, output, a, b, c, d, e) {
+    let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(input, input),
-        create.deploying(input, [input, a]),
-        create.deploying(input, [input, b]),
-        create.deploying(input, [input, c]),
-        create.deploying(input, [input, d]),
-        vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
+        vintageimprovements.polishing(iner, input),
+        create.deploying(iner, [iner, a]),
+        create.deploying(iner, [iner, b]),
+        create.deploying(iner, [iner, c]),
+        create.deploying(iner, [iner, d]),
+        vintageimprovements.curving(iner, iner).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem("createdelight:incomplete_" + input.split(":"))
+      .transitionalItem(iner)
       .id(`${output}_sequenced_assembly_a`);
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(input, input),
-        create.deploying(input, [input, e]),
-        create.deploying(input, [input, e]),
-        create.deploying(input, [input, b]),
-        create.deploying(input, [input, c]),
-        create.deploying(input, [input, d]),
-        vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
+        vintageimprovements.polishing(iner, input),
+        create.deploying(iner, [iner, e]),
+        create.deploying(iner, [iner, e]),
+        create.deploying(iner, [iner, b]),
+        create.deploying(iner, [iner, c]),
+        create.deploying(iner, [iner, d]),
+        vintageimprovements.curving(iner, iner).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem("createdelight:incomplete_" + input.split(":"))
+      .transitionalItem(iner)
       .id(`${output}_sequenced_assembly_b`);
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(input, input),
-        vintageimprovements.vacuumizing(input, [input, e]),
-        create.deploying(input, [input, b]),
-        create.deploying(input, [input, c]),
-        create.deploying(input, [input, d]),
-        vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
+        vintageimprovements.polishing(iner, iner),
+        vintageimprovements.vacuumizing(iner, [iner, e]),
+        create.deploying(iner, [iner, b]),
+        create.deploying(iner, [iner, c]),
+        create.deploying(iner, [iner, d]),
+        vintageimprovements.curving(iner, iner).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem("createdelight:incomplete_" + input.split(":"))
+      .transitionalItem(iner)
       .id(`${output}_sequenced_assembly_c`);
   }
 
   function seq_2(input, output, b, c, d, e) {
+    let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(input, input),
-        create.deploying(input, [input, e]),
-        create.deploying(input, [input, e]),
-        create.deploying(input, [input, b]),
-        create.deploying(input, [input, c]),
-        create.deploying(input, [input, d]),
-        vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
+        vintageimprovements.polishing(iner, iner),
+        create.deploying(iner, [iner, e]),
+        create.deploying(iner, [iner, e]),
+        create.deploying(iner, [iner, b]),
+        create.deploying(iner, [iner, c]),
+        create.deploying(iner, [iner, d]),
+        vintageimprovements.curving(iner, iner).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem(input)
+      .transitionalItem(iner)
       .id(`${output}_sequenced_assembly_a`);
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(input, input),
-        vintageimprovements.vacuumizing(input, [input, e]),
-        create.deploying(input, [input, b]),
-        create.deploying(input, [input, c]),
-        create.deploying(input, [input, d]),
-        vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
+        vintageimprovements.polishing(iner, iner),
+        vintageimprovements.vacuumizing(iner, [iner, e]),
+        create.deploying(iner, [iner, b]),
+        create.deploying(iner, [iner, c]),
+        create.deploying(iner, [iner, d]),
+        vintageimprovements.curving(iner, iner).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem(input)
+      .transitionalItem(iner)
       .id(`${output}_sequenced_assembly_b`);
   }
 

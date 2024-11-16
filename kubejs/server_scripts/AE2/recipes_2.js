@@ -60,12 +60,12 @@ ServerEvents.recipes((event) => {
   // 熵变机械臂
   create
     .sequenced_assembly("ae2:entropy_manipulator", "#forge:rods/iron", [
-      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:energy_cell"]),
-      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:engineering_processor"]),
-      create.deploying("#forge:rods/iron", ["#forge:rods/iron", "ae2:fluix_crystal"]),
-      vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
+      create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:energy_cell"]),
+      create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:engineering_processor"]),
+      create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:fluix_crystal"]),
+      vintageimprovements.polishing("createdelight:incomplete_entropy_manipulator", "createdelight:incomplete_entropy_manipulator"),
     ])
-    .transitionalItem("createaddition:iron_rod")
+    .transitionalItem("createdelight:incomplete_entropy_manipulator")
     .loops(1)
     .id("createdelight:entropy_manipulator");
   event.remove({ id: "ae2:tools/misctools_entropy_manipulator" });
@@ -73,13 +73,13 @@ ServerEvents.recipes((event) => {
   // 充能手杖
   create
     .sequenced_assembly("ae2:charged_staff", "#forge:rods/iron", [
-      create.deploying("#forge:rods/iron", [
-        "#forge:rods/iron",
+      create.deploying("createdelight:incomplete_charged_staff", [
+        "createdelight:incomplete_charged_staff",
         "ae2:charged_certus_quartz_crystal",
       ]),
-      vintageimprovements.polishing("#forge:rods/iron", "#forge:rods/iron"),
+      vintageimprovements.polishing("createdelight:incomplete_charged_staff", "createdelight:incomplete_charged_staff"),
     ])
-    .transitionalItem("createaddition:iron_rod")
+    .transitionalItem("createdelight:incomplete_charged_staff")
     .loops(1)
     .id("createdelight:charged_staff");
   event.remove({ id: "ae2:tools/misctools_charged_staff" });
@@ -129,13 +129,13 @@ ServerEvents.recipes((event) => {
     .sequenced_assembly(
       Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:water"}}'),
       "ae2:cell_component_1k",
-      create.filling("ae2:cell_component_1k", [
-        "ae2:cell_component_1k",
+      create.filling("reatedelight:incomplete_infinity_cell", [
+        "reatedelight:incomplete_infinity_cell",
         Fluid.of("minecraft:water", 1000),
       ])
     )
     .loops(512)
-    .transitionalItem("ae2:cell_component_1k")
+    .transitionalItem("createdelight:incomplete_infinity_cell")
     .id("createdelight:infinity_water_cell");
 
   // 大宗存储组件
@@ -216,7 +216,7 @@ ServerEvents.recipes((event) => {
         .curving("#forge:plates/iron", "#forge:plates/iron")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .transitionalItem("#forge:plates/iron")
+    .transitionalItem("createdelight:incomplete_blank_pattern")
     .loops(1)
     .id("createdelight:blank_pattern_1");
   create
@@ -228,7 +228,7 @@ ServerEvents.recipes((event) => {
         .curving("#forge:plates/iron", "#forge:plates/iron")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .transitionalItem("#forge:plates/iron")
+    .transitionalItem("createdelight:incomplete_blank_pattern")
     .loops(1)
     .id("createdelight:blank_pattern_2");
 
@@ -241,26 +241,11 @@ ServerEvents.recipes((event) => {
         .curving("ae2:blank_pattern", "ae2:blank_pattern")
         .head("createdelight:cell_housing_curving_head"),
     ])
-    .id("createdelight:pattern_modifier_1")
-    .transitionalItem("ae2:blank_pattern")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_pattern_modifier")
+    .loops(1)
+    .id("createdelight:pattern_modifier_1");
   event.remove({ id: "expatternprovider:pattern_modifier" });
 
-  // 扩展样板管理终端
-  create
-    .sequenced_assembly("expatternprovider:ex_pattern_access_part", "ae2:pattern_access_terminal", [
-      create.deploying("ae2:pattern_access_terminal", [
-        "ae2:pattern_access_terminal",
-        "ae2:logic_processor",
-      ]),
-      create.deploying("ae2:pattern_access_terminal", [
-        "ae2:pattern_access_terminal",
-        "minecraft:redstone_lamp",
-      ]),
-    ])
-    .transitionalItem("ae2:pattern_access_terminal")
-    .loops(1)
-    .id("createdelight:ex_pattern_access_part_1");
 
   // 组件坞
   event.remove({ id: "megacells:network/cell_dock" });

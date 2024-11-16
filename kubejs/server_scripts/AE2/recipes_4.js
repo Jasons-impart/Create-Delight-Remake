@@ -19,7 +19,7 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:terminal", ["ae2:terminal", "#ae2:quartz_wrench"]).keepHeldItem(),
     ])
     .loops(1)
-    .transitionalItem("ae2:terminal")
+    .transitionalItem("createdelight:incomplete_wireless_terminal")
     .id("createdelight:wireless_terminal");
   event.remove({ id: "ae2:network/wireless_terminal" });
 
@@ -32,7 +32,7 @@ ServerEvents.recipes((event) => {
         .keepHeldItem(),
     ])
     .loops(1)
-    .transitionalItem("ae2:crafting_terminal")
+    .transitionalItem("createdelight:incomplete_wireless_crafting_terminal")
     .id("createdelight:wireless_crafting_terminal_1");
   event.remove({ id: "ae2:network/wireless_crafting_terminal" });
 
@@ -58,7 +58,7 @@ ServerEvents.recipes((event) => {
       ]
     )
     .loops(1)
-    .transitionalItem("ae2:pattern_access_terminal")
+    .transitionalItem("createdelight:incomplete_wireless_pattern_access_terminal")
     .id("createdelight:wireless_pattern_access_terminal");
   event.remove({ id: "ae2wtlib:pattern_access/wireless_pattern_access_terminal" });
 
@@ -84,7 +84,7 @@ ServerEvents.recipes((event) => {
       ]
     )
     .loops(1)
-    .transitionalItem("ae2:pattern_encoding_terminal")
+    .transitionalItem("createdelight:incomplete_wireless_pattern_encoding_terminal")
     .id("createdelight:wireless_pattern_encoding_terminal");
   event.remove({ id: "ae2wtlib:pattern_encoding/wireless_pattern_encoding_terminal" });
 
@@ -110,7 +110,7 @@ ServerEvents.recipes((event) => {
       ]
     )
     .loops(1)
-    .transitionalItem("expatternprovider:ex_pattern_access_part")
+    .transitionalItem("createdelight:incomplete_wireless_ex_pat")
     .id("createdelight:wireless_ex_pat");
   event.remove({ id: "expatternprovider:wireless_ex_pat" });
 
@@ -122,9 +122,9 @@ ServerEvents.recipes((event) => {
         "ae2:calculation_processor",
       ]),
     ])
-    .transitionalItem("ae2:wireless_terminal")
-    .id("createdelight:wireless_crafting_terminal_2")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_wireless_crafting_terminal")
+    .loops(1)
+    .id("createdelight:wireless_crafting_terminal_2");
   event.remove({ id: "ae2:network/upgrade_wireless_crafting_terminal" });
 
   // 无线接收器
@@ -220,7 +220,7 @@ ServerEvents.recipes((event) => {
         "#forge:ingots/gold",
       ]),
     ])
-    .transitionalItem("ae2:calculation_processor")
+    .transitionalItem("createdelight:incomplete_basic_card")
     .loops(1)
     .id("createdelight:basic_card_1");
   event.remove({ id: "ae2:materials/basiccard" });
@@ -252,7 +252,7 @@ ServerEvents.recipes((event) => {
         "#forge:gems/diamond",
       ]),
     ])
-    .transitionalItem("ae2:calculation_processor")
+    .transitionalItem("createdelight:incomplete_advanced_card")
     .loops(1)
     .id("createdelight:advanced_card_1");
   event.remove({ id: "ae2:materials/advancedcard" });

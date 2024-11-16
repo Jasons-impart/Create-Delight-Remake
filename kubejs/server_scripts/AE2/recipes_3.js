@@ -117,7 +117,7 @@ ServerEvents.recipes((event) => {
         "#forge:gems/certus_quartz",
       ]),
     ])
-    .transitionalItem("#forge:storage_blocks/iron")
+    .transitionalItem("createdelight:incomplete_crystal_fixer")
     .id("createdelight:crystal_fixer")
     .loops(1);
   event.remove({ id: "expatternprovider:crystal_fixer" });
@@ -147,9 +147,9 @@ ServerEvents.recipes((event) => {
         "ae2:engineering_processor",
       ]),
     ])
-    .id("createdelight:decompression_module")
-    .transitionalItem("#forge:ingots/sky_steel")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_decompression_module")
+    .loops(1)
+    .id("createdelight:decompression_module");
   event.remove({ id: "megacells:crafting/decompression_module" });
 
   // 人造钻石
@@ -170,9 +170,9 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:dusts/fluix"]),
       create.deploying("ae2:quartz_glass", ["ae2:quartz_glass", "#forge:gems/certus_quartz"]),
     ])
-    .id("createdelight:energy_cell_1")
-    .transitionalItem("ae2:quartz_glass")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_energy_cell")
+    .loops(1)
+    .id("createdelight:energy_cell_1");
   //   create
   //     .sequenced_assembly("ae2:energy_cell", "createdelight:quartz_glass_parts", [
   //       create.deploying("createdelight:quartz_glass_parts", [
@@ -206,9 +206,9 @@ ServerEvents.recipes((event) => {
         "ae2:energy_cell",
       ])
     )
-    .id("createdelight:dense_energy_cell")
-    .transitionalItem("ae2:calculation_processor")
-    .loops(4);
+    .transitionalItem("createdelight:incomplete_dense_energy_cell")
+    .loops(4)
+    .id("createdelight:dense_energy_cell");
 
   // 超密能源元件
   create
@@ -220,9 +220,9 @@ ServerEvents.recipes((event) => {
         "ae2:energy_cell",
       ])
     )
-    .id("createdelight:mega_energy_cell")
-    .transitionalItem("megacells:accumulation_processor")
-    .loops(4);
+    .transitionalItem("createdelight:incomplete_mega_energy_cell")
+    .loops(4)
+    .id("createdelight:mega_energy_cell");
 
   // 无限圆石配方
   create

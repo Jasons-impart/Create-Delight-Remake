@@ -486,6 +486,7 @@ StartupEvents.registry("item", e => {
         "ae2:advanced_card",
         "ae2:formation_core",
         "ae2:annihilation_core",
+        "ae2:me_p2p_tunnel",
         "ae2:charged_staff",
         "ae2:entropy_manipulator",
         "ae2:blank_pattern",

@@ -36,9 +36,9 @@ ServerEvents.recipes((event) => {
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:dusts/fluix"]),
       create.deploying("minecraft:iron_nugget", ["minecraft:iron_nugget", "#forge:gems/quartz"]),
     ])
-    .id("createdelight:annihilation_core_1")
+    .transitionalItem("createdelight:incomplete_annihilation_core")
     .loops(1)
-    .transitionalItem("minecraft:iron_nugget");
+    .id("createdelight:annihilation_core_1");
   event.remove({ id: "ae2:materials/annihilationcore" });
 
   // 成型核心
@@ -57,9 +57,9 @@ ServerEvents.recipes((event) => {
         "#forge:gems/certus_quartz",
       ]),
     ])
-    .id("createdelight:formation_core_1")
+    .transitionalItem("createdelight:incomplete_formation_core")
     .loops(1)
-    .transitionalItem("minecraft:iron_nugget");
+    .id("createdelight:formation_core_1");
   event.remove({ id: "ae2:materials/formationcore" });
 
   // ME量子链接仓
@@ -105,9 +105,9 @@ ServerEvents.recipes((event) => {
       create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_ring"]),
       create.deploying("ae2:advanced_card", ["ae2:advanced_card", "ae2:quantum_link"]),
     ])
-    .id("createdelight:quantum_bridge_card")
-    .transitionalItem("ae2:advanced_card")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_quantum_bridge_card")
+    .loops(1)
+    .id("createdelight:quantum_bridge_card");
   event.remove({ id: "ae2wtlib:quantum_bridge_card" });
 
   // ME样板供应器
@@ -126,9 +126,9 @@ ServerEvents.recipes((event) => {
         "ae2:formation_core",
       ]),
     ])
-    .id("createdelight:pattern_provider")
     .loops(1)
-    .transitionalItem("createdelight:iron_casing");
+    .transitionalItem("createdelight:incomplete_pattern_provider")
+    .id("createdelight:pattern_provider");
   event.replaceInput(
     { id: "ae2:network/blocks/pattern_providers_interface" },
     "#forge:ingots/iron",
@@ -155,9 +155,9 @@ ServerEvents.recipes((event) => {
         "#createdelight:quartz_glass",
       ]),
     ])
-    .id("createdelight:molecular_assembler_1")
     .loops(1)
-    .transitionalItem("createdelight:iron_casing");
+    .transitionalItem("createdelight:incomplete_molecular_assembler")
+    .id("createdelight:molecular_assembler_1");
 
   event.replaceInput(
     { id: "ae2:network/crafting/molecular_assembler" },
@@ -178,9 +178,9 @@ ServerEvents.recipes((event) => {
       ]),
       create.deploying("createdelight:iron_casing", ["createdelight:iron_casing", "#forge:glass"]),
     ])
-    .id("createdelight:interface")
     .loops(1)
-    .transitionalItem("createdelight:iron_casing");
+    .transitionalItem("createdelight:incomplete_interface")
+    .id("createdelight:interface");
 
   event.replaceInput(
     { id: "ae2:network/blocks/interfaces_interface" },
@@ -195,9 +195,9 @@ ServerEvents.recipes((event) => {
       create.deploying("#forge:ingots/iron", ["#forge:ingots/iron", "ae2:singularity"]),
       create.deploying("#forge:ingots/iron", ["#forge:ingots/iron", "#forge:gems/fluix"]),
     ])
-    .id("createdelight:me_p2p_tunnel")
-    .transitionalItem("#forge:ingots/iron")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_me_p2p_tunnel")
+    .loops(1)
+    .id("createdelight:me_p2p_tunnel");
   event.remove({ id: "ae2:network/parts/tunnels_me" });
   kubejs.shaped("ae2:me_p2p_tunnel", ["ABA", "BCB", "DDD"], {
     A: "ae2:singularity",
@@ -244,9 +244,9 @@ ServerEvents.recipes((event) => {
         "#forge:storage_blocks/sky_steel",
       ]),
     ])
-    .id("createdelight:controller")
-    .transitionalItem("createdelight:sky_steel_casing")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_controller")
+    .loops(1)
+    .id("createdelight:controller");
   event.replaceInput(
     { id: "ae2:network/blocks/controller" },
     "ae2:smooth_sky_stone_block",
@@ -309,9 +309,9 @@ ServerEvents.recipes((event) => {
         "ae2:logic_processor",
       ]),
     ])
-    .id("createdelight:crafting_unit")
     .loops(1)
-    .transitionalItem("createdelight:iron_casing");
+    .transitionalItem("createdelight:incomplete_crafting_unit")
+    .id("createdelight:crafting_unit");
 
   // ME驱动器
   create
@@ -329,9 +329,9 @@ ServerEvents.recipes((event) => {
         "ae2:engineering_processor",
       ]),
     ])
-    .id("createdelight:drive")
-    .transitionalItem("createdelight:iron_casing")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_drive")
+    .loops(1)
+    .id("createdelight:drive");
 
   // MEGA合成单元
   create
@@ -349,9 +349,9 @@ ServerEvents.recipes((event) => {
         "createdelight:bleak_electron_tube",
       ]),
     ])
-    .id("createdelight:mega_crafting_unit")
-    .transitionalItem("ae2:crafting_unit")
-    .loops(1);
+    .transitionalItem("createdelight:incomplete_mega_crafting_unit")
+    .loops(1)
+    .id("createdelight:mega_crafting_unit");
   event.replaceInput(
     { id: "megacells:crafting/mega_crafting_unit" },
     "ae2:fluix_smart_cable",
@@ -404,6 +404,6 @@ ServerEvents.recipes((event) => {
       ])
     )
     .loops(10000)
-    .id("createdelight:infinity_cell_lava")
-    .transitionalItem("ae2:cell_component_1k");
+    .transitionalItem("createdelight:incomplete_infinity_cell")
+    .id("createdelight:infinity_cell_lava");
 });
