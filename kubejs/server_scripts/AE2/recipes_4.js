@@ -14,9 +14,9 @@ ServerEvents.recipes((event) => {
   // 无线终端
   create
     .sequenced_assembly("ae2:wireless_terminal", "ae2:terminal", [
-      create.deploying("ae2:terminal", ["ae2:terminal", "ae2:dense_energy_cell"]),
-      create.deploying("ae2:terminal", ["ae2:terminal", "ae2:wireless_receiver"]),
-      create.deploying("ae2:terminal", ["ae2:terminal", "#ae2:quartz_wrench"]).keepHeldItem(),
+      create.deploying("createdelight:incomplete_wireless_terminal", ["createdelight:incomplete_wireless_terminal", "ae2:dense_energy_cell"]),
+      create.deploying("createdelight:incomplete_wireless_terminal", ["createdelight:incomplete_wireless_terminal", "ae2:wireless_receiver"]),
+      create.deploying("createdelight:incomplete_wireless_terminal", ["createdelight:incomplete_wireless_terminal", "#ae2:quartz_wrench"]).keepHeldItem(),
     ])
     .loops(1)
     .transitionalItem("createdelight:incomplete_wireless_terminal")
@@ -25,10 +25,10 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:wireless_crafting_terminal", "ae2:crafting_terminal", [
-      create.deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "ae2:dense_energy_cell"]),
-      create.deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "ae2:wireless_receiver"]),
+      create.deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "ae2:dense_energy_cell"]),
+      create.deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "ae2:wireless_receiver"]),
       create
-        .deploying("ae2:crafting_terminal", ["ae2:crafting_terminal", "#ae2:quartz_wrench"])
+        .deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "#ae2:quartz_wrench"])
         .keepHeldItem(),
     ])
     .loops(1)
@@ -41,17 +41,17 @@ ServerEvents.recipes((event) => {
       "ae2wtlib:wireless_pattern_access_terminal",
       "ae2:pattern_access_terminal",
       [
-        create.deploying("ae2:pattern_access_terminal", [
-          "ae2:pattern_access_terminal",
+        create.deploying("createdelight:incomplete_wireless_pattern_access_terminal", [
+          "createdelight:incomplete_wireless_pattern_access_terminal",
           "ae2:dense_energy_cell",
         ]),
-        create.deploying("ae2:pattern_access_terminal", [
-          "ae2:pattern_access_terminal",
+        create.deploying("createdelight:incomplete_wireless_pattern_access_terminal", [
+          "createdelight:incomplete_wireless_pattern_access_terminal",
           "ae2:wireless_receiver",
         ]),
         create
-          .deploying("ae2:pattern_access_terminal", [
-            "ae2:pattern_access_terminal",
+          .deploying("createdelight:incomplete_wireless_pattern_access_terminal", [
+            "createdelight:incomplete_wireless_pattern_access_terminal",
             "#ae2:quartz_wrench",
           ])
           .keepHeldItem(),
@@ -67,17 +67,17 @@ ServerEvents.recipes((event) => {
       "ae2wtlib:wireless_pattern_encoding_terminal",
       "ae2:pattern_encoding_terminal",
       [
-        create.deploying("ae2:pattern_encoding_terminal", [
-          "ae2:pattern_encoding_terminal",
+        create.deploying("createdelight:incomplete_wireless_pattern_encoding_terminal", [
+          "createdelight:incomplete_wireless_pattern_encoding_terminal",
           "ae2:dense_energy_cell",
         ]),
-        create.deploying("ae2:pattern_encoding_terminal", [
-          "ae2:pattern_encoding_terminal",
+        create.deploying("createdelight:incomplete_wireless_pattern_encoding_terminal", [
+          "createdelight:incomplete_wireless_pattern_encoding_terminal",
           "ae2:wireless_receiver",
         ]),
         create
-          .deploying("ae2:pattern_encoding_terminal", [
-            "ae2:pattern_encoding_terminal",
+          .deploying("createdelight:incomplete_wireless_pattern_encoding_terminal", [
+            "createdelight:incomplete_wireless_pattern_encoding_terminal",
             "#ae2:quartz_wrench",
           ])
           .keepHeldItem(),
@@ -93,17 +93,17 @@ ServerEvents.recipes((event) => {
       "expatternprovider:wireless_ex_pat",
       "expatternprovider:ex_pattern_access_part",
       [
-        create.deploying("expatternprovider:ex_pattern_access_part", [
-          "expatternprovider:ex_pattern_access_part",
+        create.deploying("createdelight:incomplete_wireless_ex_pat", [
+          "createdelight:incomplete_wireless_ex_pat",
           "ae2:dense_energy_cell",
         ]),
-        create.deploying("expatternprovider:ex_pattern_access_part", [
-          "expatternprovider:ex_pattern_access_part",
+        create.deploying("createdelight:incomplete_wireless_ex_pat", [
+          "createdelight:incomplete_wireless_ex_pat",
           "ae2:wireless_receiver",
         ]),
         create
-          .deploying("expatternprovider:ex_pattern_access_part", [
-            "expatternprovider:ex_pattern_access_part",
+          .deploying("createdelight:incomplete_wireless_ex_pat", [
+            "createdelight:incomplete_wireless_ex_pat",
             "#ae2:quartz_wrench",
           ])
           .keepHeldItem(),
@@ -116,9 +116,9 @@ ServerEvents.recipes((event) => {
 
   create
     .sequenced_assembly("ae2:wireless_crafting_terminal", "ae2:wireless_terminal", [
-      create.deploying("ae2:wireless_terminal", ["ae2:wireless_terminal", "#forge:workbench"]),
-      create.deploying("ae2:wireless_terminal", [
-        "ae2:wireless_terminal",
+      create.deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "#forge:workbench"]),
+      create.deploying("createdelight:incomplete_wireless_crafting_terminal", [
+        "createdelight:incomplete_wireless_crafting_terminal",
         "ae2:calculation_processor",
       ]),
     ])
@@ -203,20 +203,20 @@ ServerEvents.recipes((event) => {
   create
     .sequenced_assembly(Item.of("ae2:basic_card", 8), "ae2:calculation_processor", [
       vintageimprovements.laser_cutting(
-        "ae2:calculation_processor",
-        "ae2:calculation_processor",
+        "createdelight:incomplete_basic_card",
+        "createdelight:incomplete_basic_card",
         100
       ),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_basic_card", [
+        "createdelight:incomplete_basic_card",
         "#forge:ingots/iron",
       ]),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_basic_card", [
+        "createdelight:incomplete_basic_card",
         "#forge:dusts/redstone",
       ]),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_basic_card", [
+        "createdelight:incomplete_basic_card",
         "#forge:ingots/gold",
       ]),
     ])
@@ -235,20 +235,20 @@ ServerEvents.recipes((event) => {
   create
     .sequenced_assembly(Item.of("ae2:advanced_card", 8), "ae2:calculation_processor", [
       vintageimprovements.laser_cutting(
-        "ae2:calculation_processor",
-        "ae2:calculation_processor",
+        "createdelight:incomplete_advanced_card",
+        "createdelight:incomplete_advanced_card",
         100
       ),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_advanced_card", [
+        "createdelight:incomplete_advanced_card",
         "#forge:ingots/iron",
       ]),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_advanced_card", [
+        "createdelight:incomplete_advanced_card",
         "#forge:dusts/redstone",
       ]),
-      create.deploying("ae2:calculation_processor", [
-        "ae2:calculation_processor",
+      create.deploying("createdelight:incomplete_advanced_card", [
+        "createdelight:incomplete_advanced_card",
         "#forge:gems/diamond",
       ]),
     ])
