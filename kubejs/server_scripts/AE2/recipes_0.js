@@ -35,7 +35,7 @@ ServerEvents.recipes((event) => {
         vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem(input)
+      .transitionalItem("createdelight:incomplete_" + input.split(":"))
       .id(`${output}_sequenced_assembly_a`);
 
     create
@@ -49,7 +49,7 @@ ServerEvents.recipes((event) => {
         vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem(input)
+      .transitionalItem("createdelight:incomplete_" + input.split(":"))
       .id(`${output}_sequenced_assembly_b`);
 
     create
@@ -62,7 +62,7 @@ ServerEvents.recipes((event) => {
         vintageimprovements.curving(input, input).head("createdelight:cell_housing_curving_head"),
       ])
       .loops(1)
-      .transitionalItem(input)
+      .transitionalItem("createdelight:incomplete_" + input.split(":"))
       .id(`${output}_sequenced_assembly_c`);
   }
 

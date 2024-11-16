@@ -260,36 +260,36 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.sushi_unrolledroll")
         
     // 未完成相关
-    e.create("createdelight:incomplete_tesla_coil")
+    e.create("createdelight:incomplete_tesla_coil", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_tesla_coil")
-    e.create("createdelight:incomplete_alternator")
+    e.create("createdelight:incomplete_alternator", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_alternator")
-    e.create("createdelight:incomplete_diesel_engine")
+    e.create("createdelight:incomplete_diesel_engine", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_diesel_engine")
-    e.create("createdelight:incomplete_electric_motor")
+    e.create("createdelight:incomplete_electric_motor", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_electric_motor")
-    e.create("createdelight:incomplete_huge_diesel_engine")
+    e.create("createdelight:incomplete_huge_diesel_engine", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_huge_diesel_engine")
-    e.create("createdelight:incomplete_large_diesel_engine")
+    e.create("createdelight:incomplete_large_diesel_engine", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_large_diesel_engine")
-    e.create("createdelight:incompleted_modular_accumulator")
+    e.create("createdelight:incompleted_modular_accumulator", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incompleted_modular_accumulator")
-    e.create("createdelight:incomplete_electron_tube")
+    e.create("createdelight:incomplete_electron_tube", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_electron_tube")
-    e.create("createdelight:bleak_electron_tube")
+    e.create("createdelight:bleak_electron_tube", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.bleak_electron_tube")
-    e.create("createdelight:incomplete_fs_upgrade")
+    e.create("createdelight:incomplete_fs_upgrade", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_fs_upgrade")
-    e.create("createdelight:incomplete_graviton_tube")
+    e.create("createdelight:incomplete_graviton_tube", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_graviton_tube")
 
@@ -409,13 +409,13 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.cell_housing_curving_head")
         .tag("vintageimprovements:curving_heads")
     // 未完成火箭核心
-    e.create("createdelight:incomplete_first_stage_rocket_core")
+    e.create("createdelight:incomplete_first_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_first_stage_rocket_core")
-    e.create("createdelight:incomplete_second_stage_rocket_core")
+    e.create("createdelight:incomplete_second_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_second_stage_rocket_core")
-    e.create("createdelight:incomplete_third_stage_rocket_core")
+    e.create("createdelight:incomplete_third_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_third_stage_rocket_core")
-    e.create("createdelight:incomplete_fourth_stage_rocket_core")
+    e.create("createdelight:incomplete_fourth_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
 
 
@@ -472,7 +472,54 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
         .translationKey("item.createdelight.debug_info_tool")
-
+    
+    /**
+     * @type {Internal.ItemStack_[]}
+     */
+    let ae2_incomplete_item = [
+        "ae2:cell_component_1k",
+        "ae2:cell_component_4k",
+        "ae2:cell_component_16k",
+        "ae2:cell_component_64k",
+        "ae2:cell_component_256k",
+        "ae2:basic_card",
+        "ae2:advanced_card",
+        "ae2:formation_core",
+        "ae2:annihilation_core",
+        "ae2:charged_staff",
+        "ae2:entropy_manipulator",
+        "ae2:blank_pattern",
+        "ae2:wireless_terminal",
+        "ae2:wireless_crafting_terminal",
+        "ae2wtlib:quantum_bridge_card",
+        "ae2wtlib:wireless_pattern_access_terminal",
+        "ae2wtlib:wireless_pattern_encoding_terminal",
+        "megacells:cell_component_1m",
+        "megacells:cell_component_4m",
+        "megacells:cell_component_16m",
+        "megacells:cell_component_64m",
+        "megacells:cell_component_256m",
+        "expatternprovider:wireless_ex_pat",
+        "expatternprovider:pattern_modifier",
+        "expatternprovider:infinity_cell",
+        "megacells:mega_energy_cell",
+        "megacells:mega_crafting_unit",
+        "megacells:decompression_module",
+        "ae2:drive",
+        "ae2:interface",
+        "ae2:energy_cell",
+        "ae2:dense_energy_cell",
+        "ae2:crafting_unit",
+        "ae2:pattern_provider",
+        "ae2:molecular_assembler",
+        "ae2:controller",
+        "expatternprovider:crystal_fixer"
+    ]
+    ae2_incomplete_item.forEach(item => {
+        e.create("createdelight:incomplete_" + item.split(":")[1], "create:sequenced_assembly")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.incomplete_" + item)
+    })
     // // AE: 未完成的 熵变机械臂 充能手杖 样板
     // ["charged_staff", "entropy_manipulator", "blank_pattern"]
     // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")
