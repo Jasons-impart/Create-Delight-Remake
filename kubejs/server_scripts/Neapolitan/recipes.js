@@ -19,7 +19,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, "neapolitan:chocolate_bar", "create:bar_of_chocolate")
     e.replaceInput({}, "neapolitan:adzuki_beans", "youkaishomecoming:redbean")
 
-    const {create} = e.recipes
+    const {create, kubejs} = e.recipes
     create.filling("neapolitan:chocolate_strawberries", ["neapolitan:strawberries", Fluid.of("create:chocolate", 250)])
     .id("neapolitan:filling/chocolate_strawberries")
     create.filling("neapolitan:vanilla_chocolate_fingers", ["neapolitan:dried_vanilla_pods", Fluid.of("create:chocolate", 250)])
@@ -44,7 +44,11 @@ ServerEvents.recipes(e => {
     make_cake(e, "#forge:fruits/banana", "neapolitan:banana_cake")
     make_cake(e, "neapolitan:mint_leaves", "neapolitan:mint_cake")
     make_cake(e, "neapolitan:roasted_adzuki_beans", "neapolitan:adzuki_cake")
-
+    kubejs.shapeless("neapolitan:adzuki_soil", [
+        "youkaishomecoming:redbean",
+        "minecraft:dirt"
+    ])
+    .id("neapolitan:adzuki_soil")
 })
 
 ServerEvents.tags("minecraft:item", e => {

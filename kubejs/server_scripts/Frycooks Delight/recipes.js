@@ -17,8 +17,12 @@ ServerEvents.recipes(e => {
     ).id("createdieselgenerators:compacting/plant_oil_from_canola_seeds")
     e.recipes.create.compacting(
         Fluid.of("createdieselgenerators:plant_oil", 500),
-        "2x vintagedelight:roasted_peanut"
+        "2x vintagedelight:roasted_peanut"  
     ).id("createdieselgenerators:compacting/plant_oil_from_peanut")
+    e.recipes.create.compacting(
+        Fluid.of("createdieselgenerators:plant_oil", 500),
+        "2x youkaishomecoming:soybean"
+    ).id("createdieselgenerators:compacting/plant_oil_soybean")
     threshing(e,
         "frycooks_delight:canola",
         [
