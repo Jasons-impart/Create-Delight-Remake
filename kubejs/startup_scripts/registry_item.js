@@ -472,7 +472,7 @@ StartupEvents.registry("item", e => {
     /**
      * @type {Internal.ItemStack_[]}
      */
-    let ae2_incomplete_item = [
+    let incomplete_item = [
         "ae2:cell_component_1k",
         "ae2:cell_component_4k",
         "ae2:cell_component_16k",
@@ -510,9 +510,12 @@ StartupEvents.registry("item", e => {
         "ae2:pattern_provider",
         "ae2:molecular_assembler",
         "ae2:controller",
-        "expatternprovider:crystal_fixer"
+        "expatternprovider:crystal_fixer",
+        "createdelight:fire_dragonsteel_armorplate",
+        "createdelight:ice_dragonsteel_armorplate",
+        "createdelight:lightning_dragonsteel_armorplate"
     ]
-    ae2_incomplete_item.forEach(item => {
+    incomplete_item.forEach(item => {
         e.create("createdelight:incomplete_" + item.split(":")[1], "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_" + item)
@@ -536,6 +539,5 @@ StartupEvents.registry("item", e => {
         .maxDamage(3000)
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
         
 })

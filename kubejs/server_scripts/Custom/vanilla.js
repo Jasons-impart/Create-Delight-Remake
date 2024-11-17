@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {vintageimprovements, create, createmetallurgy} = e.recipes
+    const {vintageimprovements, create, createmetallurgy, create_new_age} = e.recipes
     vintageimprovements.pressurizing("minecraft:glowstone_dust", "minecraft:glow_berries")
     .heated()
     .id("createdelight:pressurizing/glowstone_dust")
@@ -10,4 +10,15 @@ ServerEvents.recipes(e => {
     vintageimprovements.pressurizing(["minecraft:deepslate"], [Fluid.lava(50), "#forge:cobblestone"])
     .heated()
     .id("vintageimprovements:pressurizing/deepslate")
+    create.sequenced_assembly([
+        Item.of("minecraft:budding_amethyst").withChance(0.1), 
+        Item.of("minecraft:amethyst_block").withChance(0.9)
+    ],
+    "minecraft:amethyst_block", [
+        create.filling("minecraft:amethyst_block", ["minecraft:amethyst_block", Fluid.of("createdelight:spent_liquor", 1000)]),
+        create_new_age.energising("minecraft:amethyst_block", "minecraft:amethyst_block", 20000)
+    ])
+    .transitionalItem("minecraft:amethyst_block")
+    .loops(1)
+    .id("create:sequenced_assembly/budding_amethyst_from_amethyst_block")
 })

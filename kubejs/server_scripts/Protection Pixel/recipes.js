@@ -345,8 +345,8 @@ ServerEvents.recipes(e => {
         .transitionalItem("protection_pixel:incompletealloyarmorplate")
         .id("protection_pixel:alloyplate")
     
-    let iner_2 = "protection_pixel:alloyarmorplate"
-    e.recipes.create.sequenced_assembly('createdelight:fire_dragonsteel_armorplate', iner_2, [
+    let iner_2 = "createdelight:incomplete_fire_dragonsteel_armorplate"
+    e.recipes.create.sequenced_assembly('createdelight:fire_dragonsteel_armorplate', "protection_pixel:alloyarmorplate", [
         e.recipes.vintageimprovements.vacuumizing(iner_2, [iner_2, Fluid.of("createdelight:fire_dragon_blood", 1000)]),
         e.recipes.create.deploying(iner_2, [iner_2, "#iceandfire:scales/dragon/fire"]),
         e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:dragonsteel_fire_ingot"]),
@@ -356,23 +356,25 @@ ServerEvents.recipes(e => {
     .transitionalItem(iner_2)
     .id("createdelight:sequenced_assembly/fire_dragonsteel_armorplate")
 
-    e.recipes.create.sequenced_assembly('createdelight:ice_dragonsteel_armorplate', iner_2, [
-        e.recipes.vintageimprovements.vacuumizing(iner_2, [iner_2, Fluid.of("createdelight:ice_dragon_blood", 1000)]),
-        e.recipes.create.deploying(iner_2, [iner_2, "#iceandfire:scales/dragon/ice"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:dragonsteel_ice_ingot"]),
-        e.recipes.vintageimprovements.hammering(iner_2, iner_2)
+    let iner_3 = "createdelight:incomplete_ice_dragonsteel_armorplate"
+    e.recipes.create.sequenced_assembly('createdelight:ice_dragonsteel_armorplate', "protection_pixel:alloyarmorplate", [
+        e.recipes.vintageimprovements.vacuumizing(iner_3, [iner_3, Fluid.of("createdelight:ice_dragon_blood", 1000)]),
+        e.recipes.create.deploying(iner_3, [iner_3, "#iceandfire:scales/dragon/ice"]),
+        e.recipes.create.deploying(iner_3, [iner_3, "iceandfire:dragonsteel_ice_ingot"]),
+        e.recipes.vintageimprovements.hammering(iner_3, iner_3)
     ])
     .loops(1)
-    .transitionalItem(iner_2)
+    .transitionalItem(iner_3)
     .id("createdelight:sequenced_assembly/ice_dragonsteel_armorplate")
 
-    e.recipes.create.sequenced_assembly('createdelight:lightning_dragonsteel_armorplate', iner_2, [
-        e.recipes.vintageimprovements.vacuumizing(iner_2, [iner_2, Fluid.of("createdelight:lightning_dragon_blood", 1000)]),
-        e.recipes.create.deploying(iner_2, [iner_2, "#iceandfire:scales/dragon/lightning"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:dragonsteel_lightning_ingot"]),
-        e.recipes.vintageimprovements.hammering(iner_2, iner_2)
+    let iner_4 = "createdelight:incomplete_lightning_dragonsteel_armorplate"
+    e.recipes.create.sequenced_assembly('createdelight:lightning_dragonsteel_armorplate', "protection_pixel:alloyarmorplate", [
+        e.recipes.vintageimprovements.vacuumizing(iner_4, [iner_4, Fluid.of("createdelight:lightning_dragon_blood", 1000)]),
+        e.recipes.create.deploying(iner_4, [iner_4, "#iceandfire:scales/dragon/lightning"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "iceandfire:dragonsteel_lightning_ingot"]),
+        e.recipes.vintageimprovements.hammering(iner_4, iner_4)
     ])
     .loops(1)
-    .transitionalItem(iner_2)
+    .transitionalItem(iner_4)
     .id("createdelight:sequenced_assembly/lightning_dragonsteel_armorplate")
 })
