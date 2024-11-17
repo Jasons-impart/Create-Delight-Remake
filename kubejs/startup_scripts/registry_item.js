@@ -5,15 +5,11 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.andesite_alloy_nugget")
         .tag("forge:nuggets/andesite_alloy")
     // 土豆加牛肉
-    e.create("createdelight:potato_stew_beef")
+    e.create("createdelight:potato_stew_beef", "create:sequenced_assembly")
         .food(food => {
             food.hunger(7)
                 .saturation(0.6)
                 .meat()
-                .eaten(ctx => {
-                    if (!ctx.level.isClientSide())
-                        ctx.player.tell(Text.translatable("text.createdelight.eat_potato_stew_beef").red())
-                })
         })
         .translationKey("item.createdelight.potato_stew_beef")
     // 注册挂面
@@ -284,7 +280,7 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_electron_tube", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_electron_tube")
-    e.create("createdelight:bleak_electron_tube", "create:sequenced_assembly")
+    e.create("createdelight:bleak_electron_tube")
         .maxStackSize(64)
         .translationKey("item.createdelight.bleak_electron_tube")
     e.create("createdelight:incomplete_fs_upgrade", "create:sequenced_assembly")
