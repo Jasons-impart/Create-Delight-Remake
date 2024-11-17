@@ -10,7 +10,7 @@ ServerEvents.recipes(e => {
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
             .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
-            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
+            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
         else {
@@ -18,7 +18,7 @@ ServerEvents.recipes(e => {
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
             .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
-            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 125), input])
+            e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
     }
@@ -78,10 +78,11 @@ ServerEvents.recipes(e => {
     deep_frying('create_deepfried:tempura', 'create_deepfried:raw_tempura', 100)
     deep_frying('create_deepfried:berliner', 'create_bic_bit:sweet_dough', 100)
     deep_frying('create_deepfried:deepfried_chocolate_bar', 'create:bar_of_chocolate', 100)
-    deep_frying('oceansdelight:squid_rings', 'oceansdelight:cut_tentacles', 100)
+    deep_frying('create_deepfried:calamari', 'createdelight:raw_calamari', 100)
     deep_frying('create_bic_bit:bitterballen', 'create_bic_bit:raw_bitterballen', 100)
     deep_frying('create_bic_bit:oliebollen', 'ratatouille:salty_dough', 100)
     deep_frying('youkaishomecoming:oily_bean_curd', 'youkaishomecoming:tofu', 100)
+    deep_frying('oceanic_delight:fried_shrimp', "createdelight:unfried_shrimp", 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [

@@ -1,27 +1,25 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "oceansdelight:cutting/pufferfish",
-        "oceansdelight:cutting/tentacles",
         "oceanic_delight:sea_pickle_slices",
         "oceanic_delight:sea_pickle_roll_slice",
         "oceanic_delight:shrimp_cutting",
         "oceanic_delight:fish_egg_roll_slice",
         "oceanic_delight:wild_sea_grape_cutting",
-        "oceansdelight:cooking/squid_rings",
-        "oceanic_delight:egg_roll"
+        "oceanic_delight:egg_roll",
+        "oceanic_delight:fried_shrimp"
     ])
     remove_recipes_output(e, [
         "culturaldelights:cooked_calamari"
     ])
     // 炙烤河豚寿司
     e.shapeless(
-        "2x oceansdelight:fugu_roll",
+        "2x createdelight:fugu_roll",
         [
             "createdelight:empty_riceball",
             "2x crabbersdelight:cooked_pufferfish_slice"
         ]
     )
-        .id("oceansdelight:food/fugu_roll")
+        .id("createdelight:food/fugu_roll")
     // 河豚寿司
     e.shapeless(
         "2x culturaldelights:pufferfish_roll",
@@ -38,33 +36,11 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/onion"
     ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
-    cutting_3(e, "oceanic_delight:squid_tentacles", [["oceansdelight:cut_tentacles", 3]])
-    cutting_3(e, "oceanic_delight:glow_squid_tentacles", [["oceansdelight:cut_tentacles", 3]])
-    e.recipes.create.mixing(
-        "oceansdelight:squid_rings",
-        [
-            "extradelight:cooking_oil",
-            "oceansdelight:cut_tentacles"
-        ]
-    ).heated().id("oceansdelight:cooking/squid_rings2")
-    e.shapeless(
-        "oceansdelight:tentacle_on_a_stick",
-        [
-            "minecraft:stick",
-            "#forge:tentacles"
-        ]
-    ).id("oceansdelight:tentacle_on_a_stick")
-    cutting_3(e, 'oceansdelight:elder_guardian_slab', [
-        ['oceansdelight:elder_guardian_slice', 9],
-        ["minecraft:bone_meal"]
-    ])
-    cutting_3(e, 'oceansdelight:guardian', [
-        ['oceansdelight:guardian_tail'],
-        ["minecraft:bone_meal"]
-    ])
+    cutting_3(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
+    cutting_3(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])
 
     //Oceanic delight
-    e.replaceInput({}, "oceanic_delight:shrimp", "crabbersdelight:shrimp")
+    e.replaceInput({}, "oceanic_delight:shrimp", "oceanic_delight:shrimp_slices")
     e.replaceInput({}, "culturaldelights:raw_calamari", "#forge:tentacles")
     e.replaceInput({}, "culturaldelights:cooked_calamari", "oceanic_delight:grilled_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
@@ -73,7 +49,7 @@ ServerEvents.recipes(e => {
     cutting_3(e, "minecraft:sea_pickle", [
         ['oceanic_delight:sea_pickle_slices', 2]
     ])
-    cutting_3(e, "crabbersdelight:shrimp", [
+    cutting_3(e, 'crabbersdelight:cooked_shrimp', [
         ['oceanic_delight:shrimp_slices', 2]
     ])
     cutting_3(e, 'oceanic_delight:sea_pickle_roll', [
@@ -87,8 +63,23 @@ ServerEvents.recipes(e => {
         ['minecraft:kelp', 3],
         ['minecraft:kelp', 2, 0.6]
     ])
-
-    
+    // 虾仁薯片
+    e.recipes.create.mixing(
+        'oceanic_delight:shrimp_chips',
+        [
+            '#crabbersdelight:shrimps',
+            'casualness_delight:potato_chip'
+        ]
+    ).heated().id("oceanic_delight:shrimp_chips")
+    // 炸虾仁系列
+    e.recipes.create.mixing(
+        "createdelight:unfried_shrimp",
+        [
+            'oceanic_delight:shrimp_slices',
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("createdelight:unfried_shrimp")
 })
 
 ServerEvents.tags("item", e => {
@@ -96,6 +87,5 @@ ServerEvents.tags("item", e => {
         "crabbersdelight:pufferfish_slice"
     ])
     e.removeAllTagsFrom("culturaldelights:raw_calamari")
-    e.add('forge:shrimps', 'crabbersdelight:shrimp')
     e.removeAllTagsFrom('oceanic_delight:shrimp')
 })

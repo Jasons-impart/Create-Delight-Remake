@@ -42,7 +42,10 @@ ServerEvents.tags("item", e => {
         'alexscaves:gelatin_blue',
         'alexscaves:gelatin_pink',
         'butchercraft:gelatin'])
-    
+    e.remove("minecraft:fishes", [
+        'alexscaves:cooked_radgill',
+        'alexscaves:radgill'
+    ])
 })
 
 ServerEvents.tags("minecraft:block", e => {

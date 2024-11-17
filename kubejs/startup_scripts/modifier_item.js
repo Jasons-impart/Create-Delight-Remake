@@ -16,14 +16,12 @@ ItemEvents.modification(e => {
         ['casualness_delight:cooked_donkey_meat', 6, 0.8],
         ['casualness_delight:donkey_burger', 10, 0.6],
         ['casualness_delight:roast_gluten', 7, 0.8],
-        ['oceansdelight:bowl_of_guardian_soup', 9, 0.6],
         ['casualness_delight:roast_gluten', 5, 0.6],
         ['casualness_delight:raw_fried_dumpling', 9, 0.5],
         ['casualness_delight:fried_dumpling', 10, 1],
         ['casualness_delight:phantom_dumplings', 6, 0.4],
         ['casualness_delight:bowl_of_paper_wrapped_fish', 6, 1],
         ['frycooks_delight:fried_potato', 6, 1],
-        ['oceansdelight:braised_sea_pickle', 6, 0.5],
         ['vintagedelight:oatmeal', 5, 1],
         ['casualness_delight:fish_and_chips', 12, 0.5],
         ['casualness_delight:fried_chicken_chip', 6, 0.8],
@@ -31,7 +29,8 @@ ItemEvents.modification(e => {
         ['create_confectionery:gingerbread_man', 6, 0.7],
         ['create_confectionery:gingerbread', 6, 0.7],
         ['vintagedelight:chocolate_nut_granola_bar', 5, 1.2],
-        ['create:blaze_cake', 10, 0.75]
+        ['create:blaze_cake', 10, 0.75],
+        ['oceanic_delight:shrimp_chips', 4, 1.5]
     ]
     hungers.forEach(hunger => {
         e.modify(hunger[0], item => {

@@ -1463,40 +1463,8 @@
 				item: "alexsmobs:lobster_tail"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -5.5d
 			y: -3.5d
-		}
-		{
-			dependencies: ["3C036D58B281C3AD"]
-			id: "26E955F487E8570B"
-			rewards: [{
-				id: "72651EEC78EC48B9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1A067FE3121018B8"
-				item: "oceansdelight:guardian"
-				type: "item"
-			}]
-			x: -7.5d
-			y: -2.5d
-		}
-		{
-			dependencies: ["3C036D58B281C3AD"]
-			id: "3DE3B1D469147E41"
-			rewards: [{
-				id: "5589BCD312E20A85"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "000E2FFCDD5E7748"
-				item: "oceansdelight:elder_guardian_slab"
-				type: "item"
-			}]
-			x: -6.5d
-			y: -2.5d
 		}
 		{
 			dependencies: ["4D60541DC7BC99C6"]
@@ -1513,38 +1481,6 @@
 			}]
 			x: -4.5d
 			y: -4.5d
-		}
-		{
-			dependencies: ["3DE3B1D469147E41"]
-			id: "7E6E570BC025D348"
-			rewards: [{
-				id: "0A9C779FFCFD68D9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "71539AA2FF5EC11C"
-				item: "oceansdelight:cabbage_wrapped_elder_guardian"
-				type: "item"
-			}]
-			x: -6.5d
-			y: -3.5d
-		}
-		{
-			dependencies: ["26E955F487E8570B"]
-			id: "299462DF04413B15"
-			rewards: [{
-				id: "37F454EA1D38493D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "42B022B9B9058D63"
-				item: "oceansdelight:guardian_soup"
-				type: "item"
-			}]
-			x: -7.5d
-			y: -3.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -1566,7 +1502,7 @@
 					type: "item"
 				}
 			]
-			x: -8.5d
+			x: -7.5d
 			y: -2.5d
 		}
 		{
@@ -1583,8 +1519,8 @@
 				item: "farmersdelight:squid_ink_pasta"
 				type: "item"
 			}]
-			x: -9.5d
-			y: -3.5d
+			x: -8.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["78E572AC3FBB1F7D"]
@@ -2210,12 +2146,19 @@
 				type: "xp"
 				xp: 100
 			}]
-			tasks: [{
-				id: "05C645C0F0C2AED8"
-				item: "culturaldelights:raw_calamari"
-				type: "item"
-			}]
-			x: -8.5d
+			tasks: [
+				{
+					id: "311D791B97D7AFFB"
+					item: "oceanic_delight:squid_tentacles"
+					type: "item"
+				}
+				{
+					id: "7DFB0C3DD31C992A"
+					item: "oceanic_delight:glow_squid_tentacles"
+					type: "item"
+				}
+			]
+			x: -7.5d
 			y: -3.5d
 		}
 		{
@@ -2231,7 +2174,7 @@
 				item: "crabbersdelight:clawster"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -5.5d
 			y: -2.5d
 		}
 		{
@@ -2248,7 +2191,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: -1.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["7AA98D07FF5E4B1D"]
@@ -2264,7 +2207,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: -1.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2280,7 +2223,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: -0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["284F00D6766657E8"]
@@ -2296,7 +2239,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: -0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1E91F5DE3ECE22E9"]
@@ -2330,8 +2273,8 @@
 				item: "crabbersdelight:bisque"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -2.5d
+			x: -4.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["5F741F8935086E26"]
@@ -2342,11 +2285,11 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "59D1E8B092A11B10"
-				item: "oceansdelight:cut_tentacles"
+				id: "3EC04DB6DA1CA1C2"
+				item: "createdelight:raw_calamari"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -7.5d
 			y: -4.5d
 		}
 		{
@@ -2358,11 +2301,11 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "4705381E33F4433A"
-				item: "oceansdelight:squid_rings"
+				id: "5DA303FCB34C27D4"
+				item: "create_deepfried:calamari"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -7.5d
 			y: -5.5d
 		}
 		{
@@ -2378,8 +2321,8 @@
 				item: "minecraft:ink_sac"
 				type: "item"
 			}]
-			x: -9.5d
-			y: -2.5d
+			x: -8.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2395,7 +2338,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: -1.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["437DDAAF6F64D0E0"]
@@ -2411,7 +2354,7 @@
 				type: "item"
 			}]
 			x: -9.5d
-			y: -1.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -2426,8 +2369,8 @@
 				item: "culturaldelights:pufferfish_roll"
 				type: "item"
 			}]
-			x: -10.5d
-			y: -2.5d
+			x: -9.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -2443,7 +2386,7 @@
 				type: "item"
 			}]
 			x: -10.5d
-			y: -0.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["116C278F48671E12"]
@@ -2459,7 +2402,7 @@
 				type: "item"
 			}]
 			x: -10.5d
-			y: -1.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2475,7 +2418,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: -0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["2F7BE3A06FA611D6"]
@@ -2491,7 +2434,7 @@
 				type: "item"
 			}]
 			x: -9.5d
-			y: -0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2507,7 +2450,7 @@
 				type: "item"
 			}]
 			x: -8.5d
-			y: 0.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["0DEAA38692CAC333"]
@@ -2522,8 +2465,8 @@
 				item: "crabbersdelight:stuffed_nautilus_shell"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 0.5d
+			x: -9.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["32EC1F9B28640CE2"]
@@ -2780,8 +2723,8 @@
 				item: "crabbersdelight:crab_legs"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -1.5d
+			x: -3.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["4D673D657D32FCFD"]
@@ -2791,8 +2734,8 @@
 				item: "crabbersdelight:crab_cakes"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -1.5d
+			x: -3.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["1C15494FDC899174"]
@@ -2883,8 +2826,8 @@
 				item: "crabbersdelight:pearl"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 0.5d
+			x: -10.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3C036D58B281C3AD"]
@@ -2894,7 +2837,7 @@
 				item: "crabbersdelight:raw_frog_leg"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.5d
 			y: -2.5d
 		}
 		{
@@ -2905,7 +2848,7 @@
 				item: "crabbersdelight:cooked_frog_leg"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.5d
 			y: -3.5d
 		}
 		{
@@ -2916,7 +2859,7 @@
 				item: "crabbersdelight:frog_leg_kebob"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.5d
 			y: -4.5d
 		}
 		{
@@ -2936,7 +2879,7 @@
 				type: "item"
 			}]
 			x: -4.5d
-			y: 0.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["7AC06923A11BA87F"]
@@ -2948,7 +2891,7 @@
 			}]
 			title: "恶心的食物"
 			x: -3.5d
-			y: 0.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["45343A38F7B9CD1A"]
@@ -3930,6 +3873,45 @@
 			title: "多方块屠宰室"
 			x: 4.5d
 			y: 10.0d
+		}
+		{
+			dependencies: ["43993FFB4F29D713"]
+			id: "6619094D67E0D06B"
+			rewards: [{
+				id: "70B44D9C0E107FBB"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "17A8EE4773E25A5D"
+				item: "createdelight:fugu_roll"
+				type: "item"
+			}]
+			title: "炙烤河豚寿司"
+			x: -11.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4D60541DC7BC99C6"]
+			id: "74E51357B1870FD9"
+			tasks: [{
+				id: "32EFBC6C6B533E48"
+				item: "alexsmobs:cooked_lobster_tail"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1E91F5DE3ECE22E9"]
+			id: "4A6ABA79E50B293B"
+			tasks: [{
+				id: "630639B16245D260"
+				item: "oceanic_delight:shrimp_slices"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -1.5d
 		}
 	]
 	title: "&e超级大厨！"
