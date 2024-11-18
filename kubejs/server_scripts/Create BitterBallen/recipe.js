@@ -14,7 +14,9 @@ ServerEvents.recipes(e => {
         "create_deepfried:compat/farmersdelight/deep_frying/onion_rings",
         "create_bic_bit:compat/farmersdelight/frikandel_recipe2",
         "create_bic_bit:compat/farmersdelight/kroket_recipe2",
-        "create_bic_bit:compat/farmersdelight/bitterballen_recipe2"
+        "create_bic_bit:compat/farmersdelight/bitterballen_recipe2",
+        "create_bic_bit:deep_frying/bitterballen_recipe_2",
+        "create_bic_bit:deep_frying/enderball_recipe"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 

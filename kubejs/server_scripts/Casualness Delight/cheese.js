@@ -12,8 +12,6 @@ ServerEvents.recipes(e => {
         "create_bic_bit:deploying/waxed_unripe_cheese",
         "create_bic_bit:deploying/waxed_young_cheese",
         "create_bic_bit:deploying/waxed_aged_cheese",
-        "create_bic_bit:deep_frying/bitterballen_recipe_2",
-        "create_bic_bit:deep_frying/enderball_recipe"
 
     ])
     remove_recipes_input(e, [
