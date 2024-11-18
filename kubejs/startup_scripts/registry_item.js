@@ -187,6 +187,33 @@ StartupEvents.registry("item", e => {
                 .saturation(0.5)
                 .effect("minecraft:hunger", 600, 1, 0.5)
         })
+    // 生鸡块
+    e.create("createdelight:raw_chicken_chip")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_chicken_chip")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生猪排
+    e.create("createdelight:raw_tonkatsu")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_tonkatsu")
+        .food(food => {
+            food.hunger(4)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生炸鱼
+    e.create("createdelight:raw_fish")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_fish")
+        .food(food => {
+            food.hunger(3)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
         .maxStackSize(64)
