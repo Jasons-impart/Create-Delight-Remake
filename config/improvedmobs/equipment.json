@@ -131,40 +131,40 @@
       0.011899999
     ],
     "iceandfire:amphithere_macuahuitl": [
-      27724,
-      0.94598794
+      17724,
+      20.945988
     ],
     "iceandfire:copper_axe": [
       28043,
-      0.5130528
+      20.513052
     ],
     "iceandfire:copper_sword": [
       28081,
       0.44120392
     ],
     "iceandfire:dragonbone_axe": [
-      25607,
-      5.459938
+      10607,
+      10.459938
     ],
     "iceandfire:dragonbone_bow": [
-      25650,
-      5.3690643
+      10650,
+      10.369064
     ],
     "iceandfire:dragonbone_sword": [
-      25677,
-      5.311902
+      10677,
+      10.311902
     ],
     "iceandfire:dragonbone_sword_fire": [
-      25048,
-      6.6307178
+      8048,
+      11.630718
     ],
     "iceandfire:dragonbone_sword_ice": [
-      25048,
-      6.6307178
+      10048,
+      11.630718
     ],
     "iceandfire:dragonbone_sword_lightning": [
-      25048,
-      6.6307178
+      10048,
+      11.630718
     ],
     "iceandfire:dragonsteel_fire_axe": [
       0,
@@ -203,16 +203,16 @@
       0.021399999
     ],
     "iceandfire:ghost_sword": [
-      23288,
+      10288,
       10.300405
     ],
     "iceandfire:hippocampus_slapper": [
-      27763,
-      0.89580816
+      7763,
+      12.895808
     ],
     "iceandfire:hippogryph_sword": [
-      27691,
-      0.988363
+      7691,
+      12.988363
     ],
     "iceandfire:myrmex_desert_axe": [
       27508,
@@ -255,28 +255,28 @@
       0.8557993
     ],
     "iceandfire:troll_weapon_column": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "iceandfire:troll_weapon_column_forest": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "iceandfire:troll_weapon_column_frost": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "iceandfire:troll_weapon_hammer": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "iceandfire:troll_weapon_trunk": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "iceandfire:troll_weapon_trunk_frost": [
-      27794,
-      0.8557993
+      7794,
+      11.8558
     ],
     "minecraft:bow": [
       26050,
@@ -369,12 +369,12 @@
   },
   "OFFHAND": {
     "alexscaves:resistor_shield": [
-      187,
-      4.9045377
+      18,
+      5.9045377
     ],
     "dreadsteel:dreadsteel_shield": [
-      187,
-      4.759497
+      18,
+      5.759497
     ],
     "minecraft:ender_pearl": [
       1837,
@@ -393,8 +393,8 @@
       1.6255897
     ],
     "the_bumblezone:honey_crystal_shield": [
-      2107,
-      0.8635538
+      501,
+      3.8635538
     ]
   },
   "FEET": {

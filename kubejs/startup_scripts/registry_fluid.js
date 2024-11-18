@@ -189,20 +189,21 @@ StartupEvents.registry("fluid", e => {
         ["adzuki", 0xfcc4b3]
     ]
     icecream_list.forEach((list) => {
-        
-    e.create(`createdelight:${list[0]}_ice_cream`)
-        .stillTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] +"_ice_cream_still")
-        .flowingTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] +"_ice_cream_flow")
-        .bucketColor(list[1])
-        .translationKey("fluid.createdelight." +list[0] + "_ice_cream")
-        .translationKey("block.createdelight." + list[0] + "_ice_cream")
-        .translationKey("item.createdelight." + list[0] + "_ice_cream_bucket")
-    
-    e.create(`createdelight:${list[0]}_milkshake`)
-        .thinTexture(list[1])
-        .bucketColor(list[1])
-        .translationKey("fluid.createdelight." + list[0] + "_milkshake")
-        .translationKey("block.createdelight." + list[0] + "_milkshake")
-        .translationKey("item.createdelight." + list[0] + "_milkshake_bucket")
+        e.create(`createdelight:${list[0]}_ice_cream`)
+            .stillTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] + "_ice_cream_still")
+            .flowingTexture("createdelight:fluid/" + list[0] + "_ice_cream/" + list[0] + "_ice_cream_flow")
+            .bucketColor(list[1])
+            .translationKey("fluid.createdelight." + list[0] + "_ice_cream")
+            .translationKey("block.createdelight." + list[0] + "_ice_cream")
+            .translationKey("item.createdelight." + list[0] + "_ice_cream_bucket")
+            .createAttributes()
+            .tickDelay(20)
+
+        e.create(`createdelight:${list[0]}_milkshake`)
+            .thinTexture(list[1])
+            .bucketColor(list[1])
+            .translationKey("fluid.createdelight." + list[0] + "_milkshake")
+            .translationKey("block.createdelight." + list[0] + "_milkshake")
+            .translationKey("item.createdelight." + list[0] + "_milkshake_bucket")
     })
 })
