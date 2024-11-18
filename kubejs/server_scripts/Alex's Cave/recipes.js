@@ -1,7 +1,9 @@
 ServerEvents.recipes(e => {
 
-    remove_recipes_id(e, ["create_oppenheimered:mixing/sulfuric_acid",
+    remove_recipes_id(e, [
+        "create_oppenheimered:mixing/sulfuric_acid",
         "create_oppenheimered:filling/acid_radrook",
+        "create_oppenheimered:filling/fissile_acid_to_waste",
         "alexscaves:uranium_rod",
         "create_oppenheimered:mixing/azure_to_scarlet_neodymium",
         "create_oppenheimered:mixing/scarlet_to_azure_neodymium",
@@ -15,7 +17,8 @@ ServerEvents.recipes(e => {
         "alexscaves:azure_neodymium_ingot",
         "alexscaves:scarlet_neodymium_ingot",
         "create_oppenheimered:compacting/layer_cake",
-        "create_oppenheimered:mixing/chocolate_heating"
+        "create_oppenheimered:mixing/chocolate_heating",
+        
 
     ])
     e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
@@ -27,34 +30,19 @@ ServerEvents.recipes(e => {
     ], 'vintageimprovements:sulfur'
     ).id("alexscaves:crushing/sulfur_dust_2")
 
-    //粉碎方铅岩获取铁粒和钒粒
-    e.recipes.create.crushing([
-        Item.of('minecraft:iron_nugget').withChance(0.15),
-        Item.of('vintageimprovements:vanadium_nugget').withChance(0.15)],
-        'alexscaves:galena'
-    ).id("alexscaves:crushing/galena")
-
-    //酸液再生（？）
-    e.recipes.create.mixing(
-        Fluid.of('alexscaves:acid').withAmount(1000),
-        ['2x alexscaves:acidic_radrock',
-            'minecraft:mud',
-            Fluid.water(1000)]
-    ).heated()
-        .id("alexscaves:mixing/acid")
-
-    e.recipes.create.compacting(
-        '4x alexscaves:acidic_radrock',
-        ['4x alexscaves:radrock',
-            Fluid.of('alexscaves:acid').withAmount(1000)]
-    )
-        .id("alexscaves:compacting/acidic_radrock")
+    make_growing_cluster(e, [
+        "alexscaves:sulfur_dust",
+        "alexscaves:sulfur_bud_small",
+        "alexscaves:sulfur_bud_medium",
+        "alexscaves:sulfur_bud_large",
+        "alexscaves:sulfur_cluster"
+    ], 0.25, "alexscaves:acid", 200)
 
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
-        "9x alexscaves:toxic_paste",
-        [Fluid.of("alexscaves:acid").withAmount(250),
-        Fluid.water(1000),
+        "6x alexscaves:toxic_paste",
+        [Fluid.of("alexscaves:acid").withAmount(100),
+        Fluid.of("createdelight:slime", 90),
             "minecraft:mud"
         ]
     ).heated()
@@ -130,6 +118,13 @@ ServerEvents.recipes(e => {
 
     //磁化洞穴
 
+    //粉碎方铅岩获取铁粒和钒粒
+    e.recipes.create.crushing([
+        Item.of('minecraft:iron_nugget').withChance(0.15),
+        Item.of('vintageimprovements:vanadium_nugget').withChance(0.1)],
+        'alexscaves:galena'
+    ).id("alexscaves:crushing/galena")
+
     //钕再生
     //方铅岩再生
     e.recipes.vintageimprovements.pressurizing(
@@ -154,23 +149,23 @@ ServerEvents.recipes(e => {
 
     //两种方铅岩转化为钕
     e.recipes.create.crushing([
-        Item.of("minecraft:iron_nugget").withChance(0.30),
-        Item.of("vintageimprovements:vanadium_nugget").withChance(0.30),
+        Item.of("minecraft:iron_nugget").withChance(0.2),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.2),
         Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.15)],
         "alexscaves:energized_galena_scarlet")
         .id("alexscaves:crushing/energized_galena_scarlet")
 
     e.recipes.create.crushing([
-        Item.of("minecraft:iron_nugget").withChance(0.30),
-        Item.of("vintageimprovements:vanadium_nugget").withChance(0.30),
+        Item.of("minecraft:iron_nugget").withChance(0.2),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.2),
         Item.of("alexscaves:raw_azure_neodymium").withChance(0.15)],
         "alexscaves:energized_galena_azure")
         .id("alexscaves:crushing/energized_galena_azure")
 
 
     e.recipes.create.crushing([
-        Item.of("minecraft:iron_nugget").withChance(0.25),
-        Item.of("vintageimprovements:vanadium_nugget").withChance(0.40),
+        Item.of("minecraft:iron_nugget").withChance(0.15),
+        Item.of("vintageimprovements:vanadium_nugget").withChance(0.3),
         Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.05),
         Item.of("alexscaves:raw_azure_neodymium").withChance(0.05)],
         "alexscaves:energized_galena_neutral")

@@ -46,6 +46,11 @@ ServerEvents.tags("item", e => {
         'alexscaves:cooked_radgill',
         'alexscaves:radgill'
     ])
+    e.add("create:upright_on_belt", [
+        "alexscaves:sulfur_bud_small",
+        "alexscaves:sulfur_bud_medium", 
+        "alexscaves:sulfur_bud_large",
+        "alexscaves:sulfur_cluster"])
 })
 
 ServerEvents.tags("minecraft:block", e => {

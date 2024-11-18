@@ -142,6 +142,14 @@ function metal_production_line_6(event, metal, heat, time) {
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[3].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_table(metal[4], [Fluid.of(`${metal[6]}`, 45), "createmetallurgy:graphite_rod_mold"])
         .processingTime(time).id(`createmetallurgy:casting_in_table/${metal[4].split(":")[1]}`)
+        
+event.recipes.create.sequenced_assembly(Item.of(metal[3], 9), metal[0], [
+    event.recipes.vintageimprovements.hammering(metal[0], metal[0]),
+    event.recipes.create.cutting(metal[0], metal[0])
+])
+    .loops(1)
+    .transitionalItem(metal[0])
+    .id(`vintageimprovements:sequenced_assembly/${metal[0].split(":")[1]}_to_${metal[3].split(":")[1]}`)
 }
 
 
