@@ -6,7 +6,10 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/ketchup_recipe",
         "create_bic_bit:deep_frying/ice_recipe",
         "create_bic_bit:mixing/curdled_milk",
-        "create_bic_bit:compacting/unripe_cheese"
+        "create_bic_bit:compacting/unripe_cheese",
+        "create_deepfried:mixing/raw_springroll",
+        "create_deepfried:compat/farmersdelight/mixing/raw_springroll",
+        "create_deepfried:deep_frying/springroll"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -67,8 +70,55 @@ ServerEvents.recipes(e => {
     ], 200)
     e.recipes.create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "2x create_bic_bit:crushed_sunflower_seeds")
     .id("create_bic_bit:compacting/plant_oil_from_crushed_sunflower_seeds")
+    e.recipes.create.mixing(
+        Fluid.of("create_bic_bit:stamppot", 250),
+        [
+            '4x minecraft:baked_potato',
+            '2x some_assembly_required:chopped_carrot',
+            'some_assembly_required:sliced_onion'
+        ]
+    ).id("create_bic_bit:compat/farmersdelight/stamppot_recipe2")
+    e.recipes.create.mixing(
+        'create_bic_bit:raw_cheese_souffle',
+        [
+            "#forge:cheese",
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("create_bic_bit:mixing/raw_cheese_souffle")
+    e.recipes.create.mixing(
+        "create_bic_bit:sweet_dough",
+        [
+            Fluid.of("create:honey", 100),
+            Fluid.of("createdelight:egg_yolk", 50),
+            "create:wheat_flour"
+        ]
+    ).id("create_bic_bit:filling/sweet_dough_recipe")
+    e.recipes.create.mixing(
+        "create_bic_bit:sweet_dough",
+        [
+            Fluid.of("create:honey", 100),
+            "farmersdelight:wheat_dough"
+        ]
+    ).id("create_bic_bit:compat/farmersdelight/sweet_dough_recipe2")
 
     //deepfried
+    e.recipes.create.mixing(
+        "create_deepfried:raw_tempura",
+        [
+            "create:wheat_flour",
+            "#forge:seafood",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_deepfried:compat/farmersdelight/mixing/raw_tempura")
+    e.recipes.create.mixing(
+        "create_deepfried:raw_tempura",
+        [
+            "create:wheat_flour",
+            '3x #forge:vegetables',
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_deepfried:mixing/raw_tempura")
 })
 
 ServerEvents.tags("minecraft:item", e => {
@@ -80,4 +130,14 @@ ServerEvents.tags("minecraft:item", e => {
         'create_deepfried:raw_onion_rings', 
         'create_deepfried:onion_rings', 
         'create_deepfried:apple_slices'])
+    e.add("forge:seafood", [
+        "#minecraft:fishes",
+        "#crabbersdelight:lobster",
+        "#crabbersdelight:crab",
+        "#crabbersdelight:shrimps"
+    ])
+})
+LootJS.modifiers(e => {
+    e.addBlockLootModifier("minecraft:dead_bush")
+        .removeLoot('create_deepfried:yuca')
 })

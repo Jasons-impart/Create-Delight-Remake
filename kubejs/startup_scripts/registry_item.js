@@ -12,6 +12,13 @@ StartupEvents.registry("item", e => {
                 .meat()
         })
         .translationKey("item.createdelight.potato_stew_beef")
+    // 河豚寿司
+    e.create("createdelight:fugu_roll")
+        .translationKey("item.createdelight.fugu_roll")
+        .food(food => {
+            food.hunger(7)
+                .saturation(1)
+        })
     // 注册挂面
     e.create("createdelight:vermicelli")
         .maxStackSize(64)
@@ -156,7 +163,7 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
                 .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
+                .effect("minecraft:hunger", 200, 1, 0.5)
                 .effect("minecraft:nausea", 200, 1, 1.0)
         })
     // 板面
@@ -171,6 +178,24 @@ StartupEvents.registry("item", e => {
             food.hunger(2)
                 .saturation(0.25)
         })
+    // 生炸虾仁
+    e.create("createdelight:unfried_shrimp")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.unfried_shrimp")
+        .food(food => {
+            food.hunger(4)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 鱿鱼圈
+    e.create("createdelight:raw_calamari")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_calamari")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+        })
+
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)
