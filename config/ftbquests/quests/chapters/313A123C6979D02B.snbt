@@ -1636,7 +1636,7 @@
 			id: "06133F62BF0FF142"
 			tasks: [{
 				id: "2B22C168D1455A3B"
-				item: "refurbished_furniture:bread_slice"
+				item: "some_assembly_required:bread_slice"
 				type: "item"
 			}]
 			x: -12.0d

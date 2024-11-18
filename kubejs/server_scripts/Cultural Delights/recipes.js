@@ -12,6 +12,14 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/onion"
         ]
     ).id("culturaldelights:cooking/empanada")
+    e.recipes.kubejs.shapeless(
+        "2x culturaldelights:egg_roll",
+        [
+            '2x #forge:cooked_eggs',
+            'createdelight:empty_riceball',
+            "minecraft:dried_kelp"
+        ]
+    ).id("culturaldelights:egg_roll")
     cutting_3(e, 'culturaldelights:glow_squid', [
         ['oceanic_delight:glow_squid_tentacles', 2],
         ['minecraft:glow_ink_sac', 3, 0.5]

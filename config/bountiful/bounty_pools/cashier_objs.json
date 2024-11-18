@@ -1,14 +1,5 @@
 {
     "content": {
-        "cashier_obj_seagrass_salad": {
-            "type": "item",
-            "content": "oceansdelight:seagrass_salad",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 200
-        },
         "cashier_obj_spicy_strips": {
             "type": "item",
             "content": "casualness_delight:spicy_strips",
@@ -333,26 +324,6 @@
             },
             "unitWorth": 500
         },
-        "cashier_obj_braised_sea_pickle": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "oceansdelight:braised_sea_pickle",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1600
-        },
-        "cashier_obj_squid_rings": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "oceansdelight:squid_rings",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1500
-        },
         "cashier_obj_raw_hotdog": {
             "type": "item_tag",
             "rarity": "UNCOMMON",
@@ -412,26 +383,6 @@
                 "max": 10
             },
             "unitWorth": 1200
-        },
-        "cashier_obj_baked_tentacle_on_a_stick": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "oceansdelight:baked_tentacle_on_a_stick",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1200
-        },
-        "cashier_obj_honey_fried_kelp": {
-            "type": "item",
-            "rarity": "UNCOMMON",
-            "content": "oceansdelight:honey_fried_kelp",
-            "amount": {
-                "min": 1,
-                "max": 10
-            },
-            "unitWorth": 1300
         },
         "cashier_obj_kimchi": {
             "type": "item",
@@ -2912,26 +2863,6 @@
                 "max": 5
             },
             "unitWorth": 11500
-        },
-        "cashier_obj_cabbage_wrapped_elder_guardian": {
-            "type": "item",
-            "rarity": "EPIC",
-            "content": "oceansdelight:cabbage_wrapped_elder_guardian",
-            "amount": {
-                "min": 1,
-                "max": 5
-            },
-            "unitWorth": 14000
-        },
-        "cashier_obj_guardian_soup": {
-            "type": "item",
-            "rarity": "EPIC",
-            "content": "oceansdelight:guardian_soup",
-            "amount": {
-                "min": 1,
-                "max": 5
-            },
-            "unitWorth": 13000
         },
         "cashier_obj_rose_hip_pie": {
             "type": "item",

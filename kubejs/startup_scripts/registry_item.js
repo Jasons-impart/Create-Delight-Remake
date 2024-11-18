@@ -5,17 +5,20 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.andesite_alloy_nugget")
         .tag("forge:nuggets/andesite_alloy")
     // 土豆加牛肉
-    e.create("createdelight:potato_stew_beef")
+    e.create("createdelight:potato_stew_beef", "create:sequenced_assembly")
         .food(food => {
             food.hunger(7)
                 .saturation(0.6)
                 .meat()
-                .eaten(ctx => {
-                    if (!ctx.level.isClientSide())
-                        ctx.player.tell(Text.translatable("text.createdelight.eat_potato_stew_beef").red())
-                })
         })
         .translationKey("item.createdelight.potato_stew_beef")
+    // 河豚寿司
+    e.create("createdelight:fugu_roll")
+        .translationKey("item.createdelight.fugu_roll")
+        .food(food => {
+            food.hunger(7)
+                .saturation(1)
+        })
     // 注册挂面
     e.create("createdelight:vermicelli")
         .maxStackSize(64)
@@ -160,7 +163,7 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
                 .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
+                .effect("minecraft:hunger", 200, 1, 0.5)
                 .effect("minecraft:nausea", 200, 1, 1.0)
         })
     // 板面
@@ -175,6 +178,51 @@ StartupEvents.registry("item", e => {
             food.hunger(2)
                 .saturation(0.25)
         })
+    // 生炸虾仁
+    e.create("createdelight:unfried_shrimp")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.unfried_shrimp")
+        .food(food => {
+            food.hunger(4)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生鸡块
+    e.create("createdelight:raw_chicken_chip")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_chicken_chip")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生猪排
+    e.create("createdelight:raw_tonkatsu")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_tonkatsu")
+        .food(food => {
+            food.hunger(4)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生炸鱼
+    e.create("createdelight:raw_fish")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_fish")
+        .food(food => {
+            food.hunger(3)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 鱿鱼圈
+    e.create("createdelight:raw_calamari")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_calamari")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+        })
+
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)
@@ -284,7 +332,7 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_electron_tube", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_electron_tube")
-    e.create("createdelight:bleak_electron_tube", "create:sequenced_assembly")
+    e.create("createdelight:bleak_electron_tube")
         .maxStackSize(64)
         .translationKey("item.createdelight.bleak_electron_tube")
     e.create("createdelight:incomplete_fs_upgrade", "create:sequenced_assembly")
@@ -476,7 +524,7 @@ StartupEvents.registry("item", e => {
     /**
      * @type {Internal.ItemStack_[]}
      */
-    let ae2_incomplete_item = [
+    let incomplete_item = [
         "ae2:cell_component_1k",
         "ae2:cell_component_4k",
         "ae2:cell_component_16k",
@@ -514,9 +562,12 @@ StartupEvents.registry("item", e => {
         "ae2:pattern_provider",
         "ae2:molecular_assembler",
         "ae2:controller",
-        "expatternprovider:crystal_fixer"
+        "expatternprovider:crystal_fixer",
+        "createdelight:fire_dragonsteel_armorplate",
+        "createdelight:ice_dragonsteel_armorplate",
+        "createdelight:lightning_dragonsteel_armorplate"
     ]
-    ae2_incomplete_item.forEach(item => {
+    incomplete_item.forEach(item => {
         e.create("createdelight:incomplete_" + item.split(":")[1], "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_" + item)
@@ -540,6 +591,5 @@ StartupEvents.registry("item", e => {
         .maxDamage(3000)
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
         
 })

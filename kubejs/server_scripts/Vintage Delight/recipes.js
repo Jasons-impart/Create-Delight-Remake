@@ -90,6 +90,28 @@ ServerEvents.recipes(e => {
         ], 2500
     ).id("vintagedelight:fermenting/surstromming_from_fermenting")
     e.recipes.vintagedelight.fermenting(
+        "5x vintagedelight:salted_cod",
+        [
+            'minecraft:cod',
+            'minecraft:cod',
+            'minecraft:cod',
+            'minecraft:cod',
+            'minecraft:cod',
+            "#forge:salt"
+        ], 2500
+    ).id("vintagedelight:salted_cod")
+    e.recipes.vintagedelight.fermenting(
+        "5x vintagedelight:salted_salmon",
+        [
+            'minecraft:salmon',
+            'minecraft:salmon',
+            'minecraft:salmon',
+            'minecraft:salmon',
+            'minecraft:salmon',
+            "#forge:salt"
+        ], 2500
+    ).id("vintagedelight:salted_salmon")
+    e.recipes.vintagedelight.fermenting(
         "5x festival_delicacies:preserved_meat",
         [
             "#forge:raw_pork",

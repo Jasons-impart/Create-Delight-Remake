@@ -2,7 +2,9 @@ ServerEvents.tags("item", (e) => {
   e.add("forge:fermentable", ["createaddition:biomass"]);
 });
 ServerEvents.recipes((e) => {
-  remove_recipes_id(e, ["createdieselgenerators:crafting/engine_piston_from_rods"]);
+  remove_recipes_id(e, [
+    "createdieselgenerators:crafting/engine_piston_from_rods",
+    "createdieselgenerators:compacting/plant_oil"]);
   // 替换安山合金
   e.replaceInput(
     { mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" },
@@ -109,6 +111,12 @@ ServerEvents.recipes((e) => {
     ],
     heatRequirement: "heated",
   }).id("createdieselgenerators:basin_fermenting/coals");
+  e.recipes.create.compacting(Fluid.of("createdieselgenerators:plant_oil", 100), 
+  Ingredient.of("#forge:seeds")
+  .subtract([
+    "frycooks_delight:canola_seeds", 
+    "youkaishomecoming:soybean"]))
+  .id("createdieselgenerators:compacting/plant_oil")
 });
 
 ServerEvents.recipes((event) => {
