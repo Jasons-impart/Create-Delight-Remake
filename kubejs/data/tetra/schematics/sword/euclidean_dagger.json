@@ -14,7 +14,7 @@
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:sigil_of_eden" ]
+                "items": [ "art_of_forging:fragment_of_eden" ]
             },
             "requiredTools": {
                 "hammer_dig": "minecraft:diamond"

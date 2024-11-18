@@ -1,0 +1,11 @@
+[ {
+    "modules": ["sword/euclidean_dagger"],
+    "moduleVariants": ["sword_socket/sigil_of_eden"],
+    "visibilityKey": "sword_socket/sigil_of_eden",
+    "attributes": {
+        "generic.attack_damage": 4
+    },
+    "effects": {
+                "jab": 50
+    }
+}]

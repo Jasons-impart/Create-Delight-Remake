@@ -16,7 +16,7 @@
         "generic.attack_damage": 4
     },
     "effects": {
-        "art_of_forging:decaying": [ 2, 5 ]
+        "criticalStrike": [ 50, 2 ]
     },
     "tints": {
         "glyph": "af3838"
