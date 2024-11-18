@@ -1,0 +1,11 @@
+{
+	id: "7C7F5EC61AC97C50"
+	loot_size: 1
+	order_index: 16
+	rewards: [
+		{ item: "art_of_forging:ancient_axe" }
+		{ item: "art_of_forging:ancient_blade" }
+		{ item: "art_of_forging:ancient_flail" }
+	]
+	title: "远古恶意"
+}

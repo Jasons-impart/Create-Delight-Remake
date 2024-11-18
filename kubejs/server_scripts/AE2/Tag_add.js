@@ -7,4 +7,9 @@ ServerEvents.tags("item", (event) => {
   event.add("createdelight:glowstone", "minecraft:glowstone_dust");
   event.add("createdelight:sky_stone", "ae2:sky_dust");
   event.add("createdelight:redstone", "minecraft:redstone");
+  event.add("create:upright_on_belt", [
+    "ae2:small_quartz_bud",
+    "ae2:medium_quartz_bud",
+    "ae2:large_quartz_bud",
+    "ae2:quartz_cluster"])
 });

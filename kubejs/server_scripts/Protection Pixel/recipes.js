@@ -335,7 +335,7 @@ ServerEvents.recipes(e => {
         "create:precision_mechanism",
         'create_sa:brass_jetpack_chestplate'
     )
-    let iner_1 = "ad_astra:steel_plate"
+    let iner_1 = "createdelight:incomplete_lightning_dragonsteel_armorplate"
     e.recipes.create.sequenced_assembly("protection_pixel:alloyarmorplate", iner_1, [
         e.recipes.create.deploying(iner_1, [iner_1, "protection_pixel:smallnetheritesheet"]),
         e.recipes.create.deploying(iner_1, [iner_1, "ad_astra:steel_plate"]),

@@ -14,7 +14,7 @@
             "integrity": -2,
             "attributes": {
                 "generic.attack_speed": -0.9,
-                "generic.attack_damage": 8.5
+                "generic.attack_damage": 15
             },
             "aspects": {
                 "edged_weapon": 2,
@@ -25,10 +25,10 @@
                 "forge:swords"
             ],
             "effects": {
-                "art_of_forging:life_steal": [ 3, 30 ],
-                "art_of_forging:decaying": [ 1, 2 ],
-                "armorPenetration": 15,
-                "jab": 45
+                "art_of_forging:life_steal": [ 3, 50 ],
+                "art_of_forging:decaying": [ 2, 3 ],
+                "armorPenetration": 30,
+                "jab": 50
             },
             "magicCapacity": 1000,
             "glyph": {

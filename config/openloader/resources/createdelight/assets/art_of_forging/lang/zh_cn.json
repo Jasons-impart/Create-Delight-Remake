@@ -816,9 +816,9 @@
 
     "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：碎甲",
     "tetra/schematic/sword/crucible/hone_esoteric_1.description": "针对击碎护甲进行打磨，无视其10%效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "打磨：碎甲II",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "线路：碎甲II",
     "tetra/schematic/sword/crucible/hone_esoteric_2.description": "打磨剑刃，穿透敌人的护甲，无视其20%效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "打磨：碎甲III",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "线路：碎甲III",
     "tetra/schematic/sword/crucible/hone_esoteric_3.description": "进一步打磨并改进剑锋，敌人护甲将形同虚设。",
 
     "tetra.improvement.nano_fused.name": "纳米融合",
