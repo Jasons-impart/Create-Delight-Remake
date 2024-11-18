@@ -48,7 +48,7 @@ ServerEvents.recipes((e) => {
     "rabbit"
   ]
   small_anms.forEach(small_anm => {
-    farmersdelight.cutting(`butchercraft:cubed_${small_anm}`, 'butchercraft:butcher_knife', [`2x butchercraft:${small_anm}_stewmeat`, 2])
+    farmersdelight.cutting(`butchercraft:cubed_${small_anm}`, 'butchercraft:butcher_knife', `2x butchercraft:${small_anm}_stewmeat`)
     farmersdelight.cutting(`butchercraft:cooked_cubed_${small_anm}`, 'butchercraft:butcher_knife', [`2x butchercraft:cooked_${small_anm}_stewmeat`])
     e.recipes.create.milling(
       `butchercraft:ground_${small_anm}`,

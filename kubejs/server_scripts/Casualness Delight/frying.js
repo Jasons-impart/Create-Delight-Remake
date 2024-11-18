@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { tag: input.slice(1) }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
             e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
             e.custom({ type: "casualness_delight:deep_frying", ingredient: { item: input }, cookingtime: time, result: output })
                 .id(`casualness_delight:deep_frying/${output.split(":")[1]}`)
             e.recipes.create.mixing(output, ["butchercraft:lard", input])
-            .heatRequirement("superheated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
+            .heatRequirement("heated").id(`casualness_delight:animal_frying/${output.split(":")[1]}`)
             e.recipes.create_bic_bit.deep_frying(output, [Fluid.of("createdieselgenerators:plant_oil", 25), input])
             .heatRequirement("heated").id(`casualness_delight:plant_frying/${output.split(":")[1]}`)
         }
@@ -61,7 +61,8 @@ ServerEvents.recipes(e => {
     deep_frying("casualness_delight:spring_roll", "casualness_delight:raw_spring_roll", 100)
     deep_frying("casualness_delight:fried_dumpling", "casualness_delight:raw_fried_dumpling", 100)
     deep_frying("create_bic_bit:fries", "create_bic_bit:raw_fries", 100)
-    deep_frying('frycooks_delight:fried_potato', 'minecraft:potato', 100)
+    deep_frying('frycooks_delight:fried_potato', 'createdelight:unfried_potato', 100)
+    deep_frying('frycooks_delight:fried_chicken_leg', 'createdelight:unfried_chicken_leg', 100)
     deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
     deep_frying('create_deepfried:onion_rings', 'create_deepfried:raw_onion_rings', 100)
     deep_frying('create_bic_bit:cheese_souffle', 'create_bic_bit:raw_cheese_souffle', 100)
@@ -83,6 +84,7 @@ ServerEvents.recipes(e => {
     deep_frying('create_bic_bit:oliebollen', 'ratatouille:salty_dough', 100)
     deep_frying('youkaishomecoming:oily_bean_curd', 'youkaishomecoming:tofu', 100)
     deep_frying('oceanic_delight:fried_shrimp', "createdelight:unfried_shrimp", 100)
+    deep_frying('create_bic_bit:enderball', 'minecraft:ender_pearl', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [
@@ -94,18 +96,17 @@ ServerEvents.recipes(e => {
     ).id("casualness_delight:cooking/fish_and_chips")
     deep_frying("culturaldelights:empanada", "createdelight:raw_empanada", 100)
     // 生暴辣疣猪兽排
-    e.recipes.kubejs.shapeless(
-        "createdelight:raw_hoglin_chop",
+    e.recipes.farmersdelight.cooking(
         [
             "mynethersdelight:hoglin_loin",
             "#forge:dough",
             "#forge:milk",
             "#forge:eggs",
-            "#mynethersdelight:hot_spice",
-            "minecraft:bowl"
-        ]
+            "#mynethersdelight:hot_spice"
+        ],
+        'mynethersdelight:fried_hoglin_chop',
+        1.0, 400
     ).id("mynethersdelight:cooking/fried_hoglin_chop")
-    deep_frying("mynethersdelight:fried_hoglin_chop", "createdelight:raw_hoglin_chop", 100)
     // 生大炸饺
     e.replaceInput({id: "casualness_delight:crafting_shaped/raw_fried_dumpling"}, "minecraft:porkchop", "#forge:meat/raw")
     // 生炸鸡，炸鱼，炸猪排

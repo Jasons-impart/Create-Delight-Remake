@@ -29,4 +29,21 @@ ServerEvents.recipes(e => {
             "2x frycooks_delight:canola_seeds",
             Item.of("2x frycooks_delight:canola_seeds").withChance(0.5)
         ], 200)
+    // 生炸鸡腿，生炸土豆
+    e.recipes.create.mixing(
+        "createdelight:unfried_potato",
+        [
+            "minecraft:potato",
+            "create:wheat_flour",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("frycooks_delight:mixing/unfried_potato")
+    e.recipes.create.mixing(
+        "createdelight:unfried_chicken_leg",
+        [
+            'butchercraft:chicken_leg',
+            "create:wheat_flour",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("frycooks_delight:mixing/unfried_chicken_leg")
 })

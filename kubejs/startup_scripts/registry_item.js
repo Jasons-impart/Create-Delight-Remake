@@ -214,6 +214,24 @@ StartupEvents.registry("item", e => {
                 .saturation(0.5)
                 .effect("minecraft:hunger", 600, 1, 0.5)
         })
+    // 生炸土豆
+    e.create("createdelight:unfried_potato")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.unfried_potato")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
+    // 生炸鸡腿
+    e.create("createdelight:unfried_chicken_leg")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.unfried_chicken_leg")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+                .effect("minecraft:hunger", 600, 1, 0.5)
+        })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
         .maxStackSize(64)
@@ -230,15 +248,6 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(4)
                 .saturation(0.25)
-        })
-    // 生暴辣疣猪兽排
-    e.create("createdelight:raw_hoglin_chop")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_hoglin_chop")
-        .food(food => {
-            food.hunger(10)
-                .saturation(0.8)
-                .effect("mynethersdelight:b_pungent", 1200, 1, 1.0)
         })
     // 生奶酪披萨
     e.create("createdelight:raw_cheese_pizza")
@@ -274,8 +283,6 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(20)
                 .saturation(1)
-                .effect("minecraft:nausea", 200, 2, 1.0)
-                .effect("minecraft:darkness", 200, 1, 1.0)
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
         })
     //清水白菜
@@ -341,27 +348,6 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_graviton_tube")
 
-    // 注册货币
-    e.create("createdelight:iron_coin")
-        .maxStackSize(64)
-        .translationKey("item.createdelightcore.iron_coin")
-        .rarity("common")
-    e.create("createdelight:copper_coin")
-        .maxStackSize(64)
-        .translationKey("item.createdelightcore.copper_coin")
-        .rarity("uncommon")
-    e.create("createdelight:gold_coin")
-        .maxStackSize(64)
-        .translationKey("item.createdelightcore.gold_coin")
-        .rarity("rare")
-    e.create("createdelight:emerald_coin")
-        .maxStackSize(64)
-        .translationKey("item.createdelightcore.emerald_coin")
-        .rarity("rare")
-    e.create("createdelight:netherite_coin")
-        .maxStackSize(64)
-        .translationKey("item.createdelightcore.netherite_coin")
-        .rarity("epic")
 
     // 测试剑
     // e.create("createdelight:sigma_man_sword", "sword")
