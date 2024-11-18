@@ -21,4 +21,20 @@ ServerEvents.recipes(e => {
     .transitionalItem("minecraft:amethyst_block")
     .loops(1)
     .id("create:sequenced_assembly/budding_amethyst_from_amethyst_block")
+
+    make_growing_cluster(e, [
+        "minecraft:amethyst_shard",
+        "minecraft:small_amethyst_bud",
+        "minecraft:medium_amethyst_bud",
+        "minecraft:large_amethyst_bud",
+        "minecraft:amethyst_cluster"
+    ], 0.25, "minecraft:water", 50)
+})
+
+ServerEvents.tags("minecraft:item", e => {
+    e.add("create:upright_on_belt", [
+        "minecraft:small_amethyst_bud", 
+        "minecraft:medium_amethyst_bud", 
+        "minecraft:large_amethyst_bud", 
+        "minecraft:amethyst_cluster"])
 })
