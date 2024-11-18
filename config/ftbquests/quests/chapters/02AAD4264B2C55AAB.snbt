@@ -1064,8 +1064,8 @@
 				}
 				type: "item"
 			}]
-			x: 9.5d
-			y: 8.0d
+			x: 16.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["4BA4050F5446B8E3"]
@@ -1075,8 +1075,8 @@
 				item: "createdelight:bleak_electron_tube"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 8.0d
+			x: 15.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["4BA4050F5446B8E3"]
@@ -1086,8 +1086,8 @@
 				item: "vintageimprovements:redstone_module"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 8.0d
+			x: 17.5d
+			y: 5.0d
 		}
 		{
 			id: "4BA4050F5446B8E3"
@@ -1096,8 +1096,8 @@
 				item: "createdelight:sky_copper_ingot"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 6.0d
+			x: 16.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["137C9220F86DD557"]
@@ -1362,8 +1362,8 @@
 				type: "item"
 			}]
 			title: "&3妖鬼之遗&r"
-			x: 9.5d
-			y: 10.0d
+			x: 16.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["73F6088E76969E13"]
@@ -1386,6 +1386,40 @@
 			}]
 			x: 21.5d
 			y: 16.0d
+		}
+		{
+			dependencies: ["137C9220F86DD557"]
+			icon: "art_of_forging:ancient_blade"
+			id: "4CB67EAA986CC50C"
+			min_required_tasks: 1
+			optional: true
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0A532F4D92B83CDE"
+				table_id: 8970993187691265104L
+				type: "choice"
+			}]
+			tasks: [
+				{
+					consume_items: true
+					id: "076CE94FBF63FCE4"
+					item: "art_of_forging:ancient_axe"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "1F22F5585DCE0745"
+					item: "art_of_forging:ancient_blade"
+					type: "item"
+				}
+				{
+					id: "18DDA124D7045599"
+					item: "art_of_forging:demonic_flail"
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 2.0d
 		}
 	]
 	subtitle: ["暂属于未完成章节"]

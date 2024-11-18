@@ -55,15 +55,15 @@ ServerEvents.recipes(e => {
     ).id("casualness_delight:crafting_shaped_plant/deep_frying_pan")
     // 炸
     deep_frying("casualness_delight:potato_chip", "casualness_delight:potato_slice", 100)
-    deep_frying("casualness_delight:fried_fish", "#minecraft:fishes", 100)
-    deep_frying("casualness_delight:tonkatsu", "minecraft:porkchop", 100)
-    deep_frying("casualness_delight:fried_chicken_chip", "farmersdelight:chicken_cuts", 100)
+    deep_frying("casualness_delight:fried_fish", 'createdelight:raw_fish', 100)
+    deep_frying("casualness_delight:tonkatsu", 'createdelight:raw_tonkatsu', 100)
+    deep_frying("casualness_delight:fried_chicken_chip", 'createdelight:raw_chicken_chip', 100)
     deep_frying("casualness_delight:spring_roll", "casualness_delight:raw_spring_roll", 100)
     deep_frying("casualness_delight:fried_dumpling", "casualness_delight:raw_fried_dumpling", 100)
     deep_frying("create_bic_bit:fries", "create_bic_bit:raw_fries", 100)
     deep_frying('frycooks_delight:fried_potato', 'minecraft:potato', 100)
     deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
-    deep_frying('frycooks_delight:fried_onion_ring', 'some_assembly_required:sliced_onion', 100)
+    deep_frying('create_deepfried:onion_rings', 'create_deepfried:raw_onion_rings', 100)
     deep_frying('create_bic_bit:cheese_souffle', 'create_bic_bit:raw_cheese_souffle', 100)
     deep_frying('create_bic_bit:kroket', 'create_bic_bit:raw_kroket', 100)
     deep_frying('create_bic_bit:eggball', 'create_bic_bit:raw_eggball', 100)
@@ -108,4 +108,29 @@ ServerEvents.recipes(e => {
     deep_frying("mynethersdelight:fried_hoglin_chop", "createdelight:raw_hoglin_chop", 100)
     // 生大炸饺
     e.replaceInput({id: "casualness_delight:crafting_shaped/raw_fried_dumpling"}, "minecraft:porkchop", "#forge:meat/raw")
+    // 生炸鸡，炸鱼，炸猪排
+    e.recipes.create.mixing(
+        'createdelight:raw_fish',
+        [
+            "#minecraft:fishes",
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("createdelight:mixing/raw_fish")
+    e.recipes.create.mixing(
+        'createdelight:raw_tonkatsu',
+        [
+            'minecraft:porkchop',
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("createdelight:mixing/raw_tonkatsu")
+    e.recipes.create.mixing(
+        'createdelight:raw_chicken_chip',
+        [
+            'butchercraft:chicken_breast',
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("createdelight:mixing/raw_chicken_chip")
 })

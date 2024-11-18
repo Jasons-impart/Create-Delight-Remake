@@ -40,7 +40,7 @@
                 },
                 "tertiaryAttributes": {
                     "generic.attack_damage": 1,
-                    "generic.attack_speed": 0.1
+                    "generic.attack_speed": 0.05
                 },
                 "primaryEffects": {
 
