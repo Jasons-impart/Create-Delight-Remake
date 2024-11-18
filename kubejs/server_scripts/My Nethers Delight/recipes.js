@@ -1,4 +1,8 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "mynethersdelight:boiled_egg_from_smoking",
+        "mynethersdelight:boiled_egg_cooking"
+    ])
     const {create, kubejs} = e.recipes
     create.milling("minecraft:gunpowder", "mynethersdelight:powder_cannon")
     .id("mynethersdelight:milling/powdery_cannon")
@@ -24,4 +28,9 @@ ServerEvents.recipes(e => {
         "4x minecraft:bone_meal"
     ])
     .id("mynethersdelight:letios_compost_from_glowspores_2")
+    e.recipes.farmersdelight.cooking(
+        '#forge:eggs',
+        'mynethersdelight:boiled_egg',
+        1.0, 200
+    ).id("mynethersdelight:boiled_egg_from_campfire_cooking")
 })

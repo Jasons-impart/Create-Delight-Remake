@@ -9,18 +9,17 @@ ServerEvents.recipes(e => {
         "create_bic_bit:compacting/unripe_cheese",
         "create_deepfried:mixing/raw_springroll",
         "create_deepfried:compat/farmersdelight/mixing/raw_springroll",
-        "create_deepfried:deep_frying/springroll"
+        "create_deepfried:deep_frying/springroll",
+        "create_deepfried:compat/farmersdelight/mixing/raw_onion_rings",
+        "create_deepfried:compat/farmersdelight/deep_frying/onion_rings"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
         'create_bic_bit:kroket', 
-        // 'create_bic_bit:bitterballen', 
         'create_bic_bit:eggball', 
         'create_bic_bit:frikandel', 
         'create_bic_bit:churros',
         'create_deepfried:yuca', 
-        'create_deepfried:raw_onion_rings', 
-        'create_deepfried:onion_rings', 
         'create_deepfried:apple_slices',
         'create_bic_bit:unripe_cheese_wedge', 
         'create_bic_bit:young_cheese_wedge', 
@@ -119,6 +118,14 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:mixing/raw_tempura")
+    e.recipes.create.mixing(
+        'create_deepfried:raw_onion_rings',
+        [
+            'some_assembly_required:sliced_onion',
+            "create:wheat_flour",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_deepfried:compat/farmersdelight/mixing/raw_onion_rings2")
 })
 
 ServerEvents.tags("minecraft:item", e => {
@@ -127,9 +134,8 @@ ServerEvents.tags("minecraft:item", e => {
         'create_bic_bit:young_cheese_wedge', 
         'create_bic_bit:aged_cheese_wedge',
         'create_deepfried:yuca', 
-        'create_deepfried:raw_onion_rings', 
-        'create_deepfried:onion_rings', 
-        'create_deepfried:apple_slices'])
+        'create_deepfried:apple_slices'
+    ])
     e.add("forge:seafood", [
         "#minecraft:fishes",
         "#crabbersdelight:lobster",
