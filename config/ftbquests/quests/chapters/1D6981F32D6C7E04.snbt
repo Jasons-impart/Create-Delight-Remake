@@ -2134,6 +2134,82 @@
 			x: -2.0d
 			y: -1.5d
 		}
+		{
+			can_repeat: false
+			id: "19F7D16F2E003480"
+			tasks: [{
+				id: "6A08DE376B14F5A8"
+				title: "难度提升"
+				type: "checkmark"
+			}]
+			x: 11.5d
+			y: -1.5d
+		}
+		{
+			id: "56CE633A8A8DE8AB"
+			rewards: [{
+				id: "4A69624C154FCC12"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			subtitle: "交付这些物品就可以提升十级难度！"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "464B36CA12B5D392"
+					item: "art_of_forging:shards_of_malice"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "49B6C5C5DFD1F23B"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+			]
+			title: "觉得难度太低了？"
+			x: 11.5d
+			y: -0.5d
+		}
+		{
+			id: "5CA456D3407F3AFB"
+			tasks: [{
+				id: "750EAC7BE640D75A"
+				title: "难度降低"
+				type: "checkmark"
+			}]
+			x: 12.5d
+			y: -1.5d
+		}
+		{
+			id: "5CDA9A91051633A4"
+			rewards: [{
+				id: "5132D1EFBB7446BD"
+				tags: ["unrank_10"]
+				type: "custom"
+			}]
+			subtitle: "交付这些物品就可以下降十级难度！"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "58CC10AFB0D09D6E"
+					item: { Count: 64, id: "minecraft:bone" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "34E87090D3D3BF79"
+					item: { Count: 64, id: "minecraft:rotten_flesh" }
+					type: "item"
+				}
+			]
+			title: "觉得难度太高了？"
+			x: 12.5d
+			y: -0.5d
+		}
 	]
 	title: "难度索引"
 }

@@ -27,5 +27,8 @@ FTBQuestsEvents.customReward(e => {
         if (s.split("_")[0] == "rank") {
             UpdateRank(e.player, s.split("_")[1])
         }
+        else {
+            UpdateRank(e.player, -s.split("_")[1])
+        }
     })
 })
