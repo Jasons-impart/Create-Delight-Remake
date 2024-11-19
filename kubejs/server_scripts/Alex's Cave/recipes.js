@@ -40,7 +40,7 @@ ServerEvents.recipes(e => {
 
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
-        "6x alexscaves:toxic_paste",
+        "9x alexscaves:toxic_paste",
         [Fluid.of("alexscaves:acid").withAmount(100),
         Fluid.of("createdelight:slime", 90),
             "minecraft:mud"

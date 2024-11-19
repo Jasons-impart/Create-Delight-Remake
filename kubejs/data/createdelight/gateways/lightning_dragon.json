@@ -18,7 +18,7 @@
 							},
 							{
 								"forge:id": "minecraft:regeneration",
-								"Amplifier": 1,
+								"Amplifier": 2,
 								"Duration": 1200,
 								"ShowParticles": 0
 							}
@@ -27,11 +27,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
@@ -71,7 +66,7 @@
 							},
 							{
 								"forge:id": "minecraft:regeneration",
-								"Amplifier": 2,
+								"Amplifier": 3,
 								"Duration": 1200,
 								"ShowParticles": 0
 							}
@@ -80,11 +75,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
@@ -124,7 +114,7 @@
 							},
 							{
 								"forge:id": "minecraft:regeneration",
-								"Amplifier": 3,
+								"Amplifier": 4,
 								"Duration": 1200,
 								"ShowParticles": 0
 							}
@@ -133,11 +123,6 @@
 				}
 			],
 			"modifiers": [
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
-				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
