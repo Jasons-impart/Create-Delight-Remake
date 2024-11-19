@@ -11,7 +11,12 @@ ServerEvents.recipes(e => {
         "create_deepfried:compat/farmersdelight/mixing/raw_springroll",
         "create_deepfried:deep_frying/springroll",
         "create_deepfried:compat/farmersdelight/mixing/raw_onion_rings",
-        "create_deepfried:compat/farmersdelight/deep_frying/onion_rings"
+        "create_deepfried:compat/farmersdelight/deep_frying/onion_rings",
+        "create_bic_bit:compat/farmersdelight/frikandel_recipe2",
+        "create_bic_bit:compat/farmersdelight/kroket_recipe2",
+        "create_bic_bit:compat/farmersdelight/bitterballen_recipe2",
+        "create_bic_bit:deep_frying/bitterballen_recipe_2",
+        "create_bic_bit:deep_frying/enderball_recipe"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -100,6 +105,40 @@ ServerEvents.recipes(e => {
             "farmersdelight:wheat_dough"
         ]
     ).id("create_bic_bit:compat/farmersdelight/sweet_dough_recipe2")
+    e.recipes.create.mixing(
+        'create_bic_bit:raw_frikandel',
+        [
+            '#forge:meat/processed/raw',
+            "create:wheat_flour",
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("create_bic_bit:mixing/frikandel_recipe")
+    e.recipes.create.mixing(
+        'create_bic_bit:raw_kroket',
+        [
+            '#forge:meat/processed/raw',
+            "2x create:wheat_flour",
+            'createdelight:butter',
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("create_bic_bit:mixing/kroket_recipe")
+    e.recipes.create.mixing(
+        '2x create_bic_bit:raw_bitterballen',
+        [
+            '#forge:meat/processed/raw',
+            "create:wheat_flour",
+            'createdelight:butter',
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("create_bic_bit:mixing/bitterballen_recipe")
+    e.recipes.create.mixing(
+        'create_bic_bit:raw_eggball',
+        [
+            'mynethersdelight:boiled_egg',
+            "create:wheat_flour",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_bic_bit:mixing/raw_eggball")
 
     //deepfried
     e.recipes.create.mixing(

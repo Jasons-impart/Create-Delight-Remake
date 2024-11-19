@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         "refurbished_furniture:cutting/cooked_vegetable_pizza",
         "create_bic_bit:deploying/waxed_unripe_cheese",
         "create_bic_bit:deploying/waxed_young_cheese",
-        "create_bic_bit:deploying/waxed_aged_cheese"
+        "create_bic_bit:deploying/waxed_aged_cheese",
 
     ])
     remove_recipes_input(e, [

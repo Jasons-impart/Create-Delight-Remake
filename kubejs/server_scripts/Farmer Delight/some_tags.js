@@ -58,6 +58,53 @@ ServerEvents.tags("item", e => {
         "silentsdelight:minced_warden_heart",
         "casualness_delight:raw_donkey_meat"        
     ])
+    e.add("forge:meat/processed/raw", [
+        "#forge:meat/processed/raw/beef",
+        "#forge:meat/processed/raw/pork",
+        "#forge:meat/processed/raw/chicken",
+        "#forge:meat/processed/raw/rabbit",
+        "#forge:meat/processed/raw/lamb",
+        "#forge:meat/processed/raw/goat"
+    ])
+    e.add("forge:meat/processed/raw/beef", [
+        'alexsdelight:bison_mince',
+        'farmersdelight:minced_beef',
+        'butchercraft:beef_scraps',
+        'butchercraft:ground_beef',
+        'butchercraft:cubed_beef',
+        'butchercraft:beef_stewmeat'
+    ])
+    e.add("forge:meat/processed/raw/pork", [
+        'butchercraft:pork_scraps',
+        'butchercraft:ground_pork',
+        'butchercraft:cubed_pork',
+        'butchercraft:pork_stewmeat'
+    ])
+    e.add("forge:meat/processed/raw/chicken", [
+        'farmersdelight:chicken_cuts',
+        'butchercraft:chicken_scraps',
+        'butchercraft:ground_chicken',
+        'butchercraft:cubed_chicken',
+        'butchercraft:chicken_stewmeat'
+    ])
+    e.add("forge:meat/processed/raw/rabbit", [
+        'butchercraft:rabbit_scraps',
+        'butchercraft:ground_rabbit',
+        'butchercraft:cubed_rabbit',
+        'butchercraft:rabbit_stewmeat'
+    ])
+    e.add("forge:meat/processed/raw/lamb", [
+        'butchercraft:lamb_scraps',
+        'butchercraft:ground_lamb',
+        'butchercraft:cubed_lamb',
+        'butchercraft:lamb_stewmeat'
+    ])
+    e.add("forge:meat/processed/raw/goat", [
+        'butchercraft:goat_scraps',
+        'butchercraft:ground_goat',
+        'butchercraft:cubed_goat',
+        'butchercraft:goat_stewmeat'
+    ])
     e.add("mynethersdelight:curry_meats", [
         "ratatouille:raw_sausage",
         'hotdog_delight:cod_sausage',

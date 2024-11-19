@@ -25,7 +25,8 @@ ServerEvents.recipes(e => {
         "ad_astra_giselle_addon:crafting/gravity_normalizer",
         "ad_astra_giselle_addon:crafting/automation_nasa_workbench",
         "ad_astra:steel_block",
-        "ad_astra:etrionic_blast_furnace"
+        "ad_astra:etrionic_blast_furnace",
+        "ad_astra:alloying/steel_ingot_from_alloying_iron_ingot_and_coals"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     e.replaceInput({}, "ad_astra:steel_rod", "#ad_astra:steel_rods")
