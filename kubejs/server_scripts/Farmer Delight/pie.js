@@ -83,7 +83,7 @@ ServerEvents.recipes(e => {
     ).id("createdelight:cooking/stargazy_pie")
     e.recipes.farmersdelight.cooking(
         [
-            "#alexsmobs:seal_foodstuffs",
+            "#forge:seafood",
             "#forge:cheese",
             "#forge:meat/raw",
             "#forge:eggs",

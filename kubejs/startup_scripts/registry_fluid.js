@@ -5,12 +5,15 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.fuel_mixtures")
         .translationKey("block.createdelight.fuel_mixtures")
         .translationKey("item.createdelight.fuel_mixtures_bucket")
+    // 鲜奶油
     e.create("createdelight:whipped_cream")
-        .thinTexture(0XF0FFFF)
-        .bucketColor(0XF0FFFF)
+        .stillTexture("createdelight:fluid/whipped_cream/still")
+        .flowingTexture("createdelight:fluid/whipped_cream/flowing")
         .translationKey("fluid.createdelight.whipped_cream")
         .translationKey("block.createdelight.whipped_cream")
         .translationKey("item.createdelight.whipped_cream_bucket")
+        .createAttributes()
+        .tickDelay(10)
     // 熔融流体
     let molten_fluids = [
         "andesite",
@@ -99,15 +102,25 @@ StartupEvents.registry("fluid", e => {
         .thinTexture(0xf5e7c2)
         .noBlock()
         .translationKey("fluid.createdelight.nut_milk")
-        .translationKey("block.createdelight.nut_milk")
         .translationKey("item.createdelight.nut_milk_bucket")
         .tag("forge:milk")
+    // 星树茶
+    e.create("createdelight:tree_star_tea")
+        .thinTexture(0x6ca30e)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.tree_star_tea")
+    // 水母汽水
+    e.create("createdelight:jellyfish_soda")
+        .thinTexture(0x85d5f0)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.jellyfish_soda")
     //醋
     e.create("createdelight:vinegar")
         .thinTexture(0x570000)
         .noBlock()
         .translationKey("fluid.createdelight.vinegar")
-        .translationKey("block.createdelight.vinegar")
         .translationKey("item.createdelight.vinegar_bucket")
     //黏液
     e.create("createdelight:slime")

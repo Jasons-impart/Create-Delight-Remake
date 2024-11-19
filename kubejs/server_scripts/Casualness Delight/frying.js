@@ -85,6 +85,7 @@ ServerEvents.recipes(e => {
     deep_frying('youkaishomecoming:oily_bean_curd', 'youkaishomecoming:tofu', 100)
     deep_frying('oceanic_delight:fried_shrimp', "createdelight:unfried_shrimp", 100)
     deep_frying('create_bic_bit:enderball', 'minecraft:ender_pearl', 100)
+    deep_frying('create_deepfried:corn_dog', 'create_deepfried:raw_corn_dog', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [
@@ -134,4 +135,14 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_chicken_chip")
+    // 玉米热狗
+    e.recipes.create.mixing(
+        "create_deepfried:raw_corn_dog",
+        [
+            "minecraft:stick",
+            '#forge:sausage/raw',
+            "createdelight:corn_flour",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_deepfried:mixing/raw_corn_dog")
 })

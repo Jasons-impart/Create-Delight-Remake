@@ -1,4 +1,8 @@
 ServerEvents.tags("item", e => {
+    // 爆米花
+    e.add("forge:popcorn", [
+        'corn_delight:caramel_popcorn'
+    ])
     // 香草标签
     e.add("neapolitan:vanilla", [
         'neapolitan:dried_vanilla_pods'
@@ -184,5 +188,6 @@ ServerEvents.tags("item", e => {
         "corn_delight:corn",
         "corn_delight:tortilla",
         "refurbished_furniture:knife",
+        "corn_delight:popcorn"
     ])
 })

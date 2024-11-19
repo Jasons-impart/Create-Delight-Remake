@@ -302,7 +302,23 @@ StartupEvents.registry("item", e => {
                     }
                 })
         })
-
+    // 玉米热狗相关
+    e.create("createdelight:mayo_corn_dog")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.mayo_corn_dog")
+        .food(food => {
+            food.hunger(8)
+                .saturation(0.6)
+                .effect("minecraft:resistance", 200, 1, 1.0)
+        })
+    e.create("createdelight:ketchup_corn_dog")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.ketchup_corn_dog")
+        .food(food => {
+            food.hunger(8)
+                .saturation(0.6)
+                .effect("minecraft:fire_resistance", 200, 1, 1.0)
+        })
     //空饭团
     e.create("createdelight:empty_riceball")
         .food(food => {

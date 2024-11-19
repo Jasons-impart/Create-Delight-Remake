@@ -16,7 +16,8 @@ ServerEvents.recipes(e => {
         "create_bic_bit:compat/farmersdelight/kroket_recipe2",
         "create_bic_bit:compat/farmersdelight/bitterballen_recipe2",
         "create_bic_bit:deep_frying/bitterballen_recipe_2",
-        "create_bic_bit:deep_frying/enderball_recipe"
+        "create_bic_bit:deep_frying/enderball_recipe",
+        "create_deepfried:deep_frying/corn_dog"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -35,8 +36,6 @@ ServerEvents.recipes(e => {
         'create_deepfried:blooming_onion', 
         'create_deepfried:fried_chicken', 
         'create_deepfried:fish_and_chips', 
-        'create_deepfried:raw_corn_dog', 
-        'create_deepfried:corn_dog', 
         'create_deepfried:chicken_nuggets',
         'create_deepfried:tempura', 
         'create_deepfried:berliner', 
@@ -165,6 +164,34 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:compat/farmersdelight/mixing/raw_onion_rings2")
+    e.recipes.create.filling(
+        'createdelight:ketchup_corn_dog',
+        [
+            'create_deepfried:corn_dog',
+            Fluid.of("create_bic_bit:ketchup", 250)
+        ]
+    ).id("create_deepfried:filling/ketchup_corn_dog")
+    e.recipes.create.filling(
+        'createdelight:mayo_corn_dog',
+        [
+            'create_deepfried:corn_dog',
+            Fluid.of("create_bic_bit:mayonnaise", 250)
+        ]
+    ).id("create_deepfried:filling/mayo_corn_dog")
+    e.recipes.create.filling(
+        'corn_delight:classic_corn_dog',
+        [
+            "createdelight:ketchup_corn_dog",
+            Fluid.of("create_bic_bit:mayonnaise", 250)
+        ]
+    ).id("create_deepfried:filling/classic_corn_dog_from_ketchup_corn_dog")
+    e.recipes.create.filling(
+        'corn_delight:classic_corn_dog',
+        [
+            "createdelight:mayo_corn_dog",
+            Fluid.of("create_bic_bit:ketchup", 250)
+        ]
+    ).id("create_deepfried:filling/classic_corn_dog_from_mayo_corn_dog")
 })
 
 ServerEvents.tags("minecraft:item", e => {

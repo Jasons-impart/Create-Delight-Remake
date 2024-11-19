@@ -2684,6 +2684,7 @@
     "fluid.create.potion": "药水",
     "fluid.create.tea": "建筑工茶水",
     "fluid.create.honey": "蜂蜜",
+    "fluid.create.chocolate": "巧克力",
     "item.create.andesite_alloy": "安山合金",
     "item.create.attribute_filter": "属性过滤器",
     "item.create.attribute_filter.tooltip.behaviour1": "打开_配置界面_",

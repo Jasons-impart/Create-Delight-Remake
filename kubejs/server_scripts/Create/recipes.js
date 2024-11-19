@@ -139,4 +139,40 @@ ServerEvents.recipes(e => {
         .id("industrial_plating_block_from_industrial_iron_block")
     e.recipes.minecraft.stonecutting("create:industrial_iron_block", "design_decor:industrial_plating_block")
         .id("industrial_iron_block_from_industrial_plating_block")
+    // 甜甜圈
+    e.custom({
+        type: "create:filling",
+        ingredients: [
+            {
+                item: "frycooks_delight:plain_donut"
+            },
+            {
+                amount: 250,
+                fluidTag: "forge:milk"
+            }
+        ],
+        results: [
+            {
+                item: "create:sweet_roll"
+            }
+        ]
+    }).id("create:filling/sweet_roll")
+    e.custom({
+        type: "create:filling",
+        ingredients: [
+            {
+                item: "alexscaves:gingerbread_crumbs"
+            },
+            {
+                amount: 250,
+                fluidTag: "forge:milk"
+            }
+        ],
+        results: [
+            {
+                item: "create:sweet_roll",
+                count: 3
+            }
+        ]
+    }).id("create_oppenheimered:filling/gingerbread_sweet_roll")
 })

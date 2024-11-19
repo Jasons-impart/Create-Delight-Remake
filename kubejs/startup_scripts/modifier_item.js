@@ -30,7 +30,8 @@ ItemEvents.modification(e => {
         ['create_confectionery:gingerbread', 6, 0.7],
         ['vintagedelight:chocolate_nut_granola_bar', 5, 1.2],
         ['create:blaze_cake', 10, 0.75],
-        ['oceanic_delight:shrimp_chips', 4, 1.5]
+        ['oceanic_delight:shrimp_chips', 4, 1.5],
+        ['create:sweet_roll', 8, 1.5]
     ]
     hungers.forEach(hunger => {
         e.modify(hunger[0], item => {
@@ -52,6 +53,8 @@ ItemEvents.modification(e => {
         ["create:blaze_cake", "mynethersdelight:b_pungent", 1200, 2, 1],
         ["create:blaze_cake", "minecraft:strength", 600, 2, 1],
         ["create_central_kitchen:chocolate_cake_slice", "neapolitan:sugar_rush", 10, 1, 1],
+        ['corn_delight:classic_corn_dog', "minecraft:resistance", 200, 1, 1],
+        ['corn_delight:classic_corn_dog', "minecraft:fire_resistance", 200, 1, 1]
     ]
     effects.forEach(effect => {
         e.modify(effect[0], item => {

@@ -18,8 +18,8 @@ ServerEvents.recipes(e => {
         "alexscaves:scarlet_neodymium_ingot",
         "create_oppenheimered:compacting/layer_cake",
         "create_oppenheimered:mixing/chocolate_heating",
-        
-
+        "alexcaves_delight:cooking/tree_tea_recipe",
+        "alexcaves_delight:cooking/jellyfishsoda_recipe"
     ])
     e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
     e.replaceInput({id: "create_oppenheimered:mixing/ice_cream_licoroot"}, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
@@ -303,4 +303,45 @@ ServerEvents.recipes(e => {
     //姜饼块粉碎出姜饼屑
     e.recipes.create.milling("alexscaves:gingerbread_crumbs", "alexscaves:gingerbread_block")
         .id("alexscaves:milling/gingerbread_crumbs")
+    // 食物兼容
+    e.recipes.create.emptying(
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("createdelight:tree_star_tea", 250)
+        ],
+        'alexcaves_delight:tree_star_tea'
+    ).id("farmersrespite:emptying/tree_star_tea")
+    e.recipes.create.filling(
+        'alexcaves_delight:tree_star_tea',
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("createdelight:tree_star_tea", 250)
+        ]
+    ).id("farmersrespite:filling/tree_star_tea")
+    brewing(e, "farmersrespite:green_tea",
+        [
+            "alexscaves:tree_star",
+            "alexscaves:tree_star"
+        ], "createdelight:tree_star_tea", "alexcaves_delight:tree_star_tea"
+    )
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:tree_star_tea", 500),
+        [
+            "alexscaves:tree_star",
+            Fluid.of("farmersrespite:green_tea", 500)
+        ]
+    ).id("alexcaves_delight:mixing/tree_star_tea")
+    brewing(e, "minecraft:water",
+        [
+            "alexscaves:bioluminesscence",
+            "alexscaves:bioluminesscence"
+        ], "createdelight:jellyfish_soda", "alexcaves_delight:jellyfish_soda"
+    )
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:jellyfish_soda", 500),
+        [
+            "alexscaves:bioluminesscence",
+            Fluid.of("minecraft:water", 500)
+        ]
+    ).id("alexcaves_delight:mixing/jellyfish_soda")
 })

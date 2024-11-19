@@ -24,7 +24,10 @@ function custom_scroll(glyphs, intricate, key, material, schematics, ribbon) {
     },
   });
 }
-
+StartupEvents.modifyCreativeTab("create:base", e => {
+  e.add("create:chocolate_bucket")
+  e.add("create:honey_bucket")
+})
 StartupEvents.modifyCreativeTab("kubejs:tab", e => {
   e.add([
     custom_scroll(

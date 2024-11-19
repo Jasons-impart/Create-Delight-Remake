@@ -22,9 +22,18 @@ ServerEvents.recipes(e => {
         "corn_delight:taco",
         "corn_delight:cutting/wild_corn",
         "corn_delight:corn_from_crate",
+        "corn_delight:organic_compost_from_corncob",
+        "corn_delight:cob_pipe",
+        "corn_delight:paper_from_corncob",
+        "corn_delight:cooking/corn_dog",
+        "corn_delight:classic_corn_dog_from_crafting",
+        "corn_delight:cooking/classic_corn_dog",
+        "corn_delight:popcorn_from_campfire_cooking",
+        "corn_delight:popcorn",
+        "corn_delight:popcorn_from_smoking"
     ])
     remove_recipes_output(e, [
-        "corn_delight:corn_seeds"
+        "corn_delight:corn_seeds",
     ])
     e.replaceInput({ id: "vintagedelight:stuffed_burrito" }, "#forge:bread", "culturaldelights:tortilla")
     e.replaceInput({ mod: "corn_delight" }, "corn_delight:cornbread_batter", "culturaldelights:corn_dough")
@@ -95,21 +104,6 @@ ServerEvents.recipes(e => {
         "corn_delight:tortilla_raw",
         "culturaldelights:corn_dough"
     ).id("corn_delight:crafting/tortilla_raw")
-    e.recipes.farmersdelight.cooking(
-        [
-            "culturaldelights:corn_dough",
-            "#forge:cheese",
-            "#forge:cooked_pork",
-            "farmersdelight:tomato_sauce"
-        ], "corn_delight:classic_corn_dog", 0.5, 200, "minecraft:stick"
-    ).id("corn_delight:cooking/classic_corn_dog")
-    e.recipes.farmersdelight.cooking(
-        [
-            "culturaldelights:corn_dough",
-            "#forge:cheese",
-            "#forge:cooked_pork"
-        ], "corn_delight:corn_dog", 0.5, 200, "minecraft:stick"
-    ).id("corn_delight:cooking/corn_dog")
     e.recipes.farmersdelight.cooking(
         [
             "corn_delight:cornbread",
