@@ -42,4 +42,11 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
       '{display:{Lore:[\'{"italic":false,"color":"white","extra":[{"text":""},{"text":"手持 "},{"color":"blue","text":"1k ME存储组件"},{"text":" 对装有大于1万桶熔岩的1x1流体抽屉蹲下右键获取"}],"text":""}\']},record:{"#c":"ae2:f",id:"minecraft:lava"}}'
     )
   );
+  e.remove('createdelight:fire_dragonsteel_armorplate')
+  e.remove('createdelight:ice_dragonsteel_armorplate')
+  e.remove('createdelight:lightning_dragonsteel_armorplate')
+  e.add([
+    Item.of('createdelight:fire_dragonsteel_armorplate', '{Damage:0,armor:2.5d,toughness:1.5d,weight:1.5d}'), 
+    Item.of('createdelight:ice_dragonsteel_armorplate', '{Damage:0,armor:2.5d,toughness:1.5d,weight:1.5d}'), 
+    Item.of('createdelight:lightning_dragonsteel_armorplate', '{Damage:0,armor:2.5d,toughness:1.5d,weight:1.5d}')])
 });
