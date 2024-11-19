@@ -69,7 +69,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1
+					"value": 0.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -119,7 +119,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2
+					"value": 1
 				},
 				{
 					"attribute": "generic.knockback_resistance",

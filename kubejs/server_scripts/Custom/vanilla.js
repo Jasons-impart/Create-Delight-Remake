@@ -1,4 +1,9 @@
 ServerEvents.recipes(e => {
+    remove_recipes_output(e,
+        [
+            "minecraft:enchanted_golden_apple"
+        ]
+    )
     const {vintageimprovements, create, createmetallurgy, create_new_age} = e.recipes
     vintageimprovements.pressurizing("minecraft:glowstone_dust", "minecraft:glow_berries")
     .heated()
@@ -29,6 +34,16 @@ ServerEvents.recipes(e => {
         "minecraft:large_amethyst_bud",
         "minecraft:amethyst_cluster"
     ], 0.25, "minecraft:water", 50)
+    let iner_1 = "create_new_age:incomplete_enchanted_golden_apple"
+    create.sequenced_assembly("minecraft:enchanted_golden_apple", "minecraft:apple", [
+        create.filling(iner_1, [iner_1, Fluid.of("create_enchantment_industry:experience", 120)]),
+        create.deploying(iner_1, [iner_1, "minecraft:gold_block"]),
+        create.deploying(iner_1, [iner_1, "minecraft:gold_block"]),
+        create_new_age.energising(iner_1, iner_1, 2000000)
+    ])
+    .loops(4)
+    .transitionalItem(iner_1)
+    .id("minecraft:enchanted_golden_apple")
 })
 
 ServerEvents.tags("minecraft:item", e => {
