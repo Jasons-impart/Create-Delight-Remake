@@ -3078,7 +3078,7 @@
             "type": "lightmanscurrency:coins"
           },
           "Product": {
-            "id": "farmersrespite:melon_juice",
+            "id": "create_central_kitchen:melon_juice",
             "amount": 1000
           },
           "Quantity": 2,

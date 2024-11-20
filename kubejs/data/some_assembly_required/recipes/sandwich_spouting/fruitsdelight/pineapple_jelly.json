@@ -1,0 +1,17 @@
+{
+    "type": "some_assembly_required:sandwich_spouting",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "fruitsdelight"
+      }
+    ],
+    "fluid": {
+      "amount": 125,
+      "fluid": "fruitsdelight:pineapple_jam",
+      "nbt": {}
+    },
+    "result": {
+      "item": "fruitsdelight:pineapple_jelly"
+    }
+  }

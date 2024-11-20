@@ -1,0 +1,17 @@
+{
+    "type": "some_assembly_required:sandwich_spouting",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "create_bic_bit"
+      }
+    ],
+    "fluid": {
+      "amount": 250,
+      "fluid": "create_bic_bit:mayonnaise",
+      "nbt": {}
+    },
+    "result": {
+      "item": "create_bic_bit:mayonnaise_bottle"
+    }
+  }
