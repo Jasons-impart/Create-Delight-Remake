@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+      "front": "mbd2:block/hydropower_station",
+      "side": "mbd2:block/hydropower_station_side",
+      "top": "mbd2:block/hydropower_station_side"
+    }
+  }
