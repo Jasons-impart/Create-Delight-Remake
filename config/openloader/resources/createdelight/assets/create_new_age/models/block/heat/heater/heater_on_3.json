@@ -1,0 +1,6 @@
+{
+  "parent": "create_new_age:block/heat/heater/heater",
+  "textures": {
+    "4": "create_new_age:block/heater/heater_steel_on_3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/block",
+  "ambientocclusion": false,
+  "textures": {
+    "0": "create_new_age:block/generator_coil",
+    "particle": "create:block/palettes/stone_types/cut/andesite_cut"
+  },
+
+  "loader": "forge:obj",
+  "flip_v": true,
+  "model": "create_new_age:models/block/generation/generator_coil/generator_coil.obj"
+}
