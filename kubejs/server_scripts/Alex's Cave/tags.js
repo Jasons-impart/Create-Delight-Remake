@@ -51,10 +51,22 @@ ServerEvents.tags("item", e => {
         "alexscaves:sulfur_bud_medium", 
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster"])
+    e.add("create_new_age:magnet", [
+        "alexscaves:block_of_scarlet_neodymium",
+        "alexscaves:block_of_azure_neodymium"
+    ])
 })
 
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:logs", ["alexscaves:licoroot"])
+    e.add("create_new_age:custom_magnet", [
+        "alexscaves:block_of_scarlet_neodymium",
+        "alexscaves:block_of_azure_neodymium"
+    ])
+    e.add("create_new_age:magnets/strength_8", [
+        "alexscaves:block_of_scarlet_neodymium",
+        "alexscaves:block_of_azure_neodymium"
+    ])
 })
 
 ServerEvents.tags("worldgen/biome", e => {

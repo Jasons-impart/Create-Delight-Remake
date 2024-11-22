@@ -114,7 +114,12 @@ ServerEvents.recipes(e => {
     e.recipes.create.crushing([
         "3x alexscaves:sea_glass_shards",
         Item.of("alexscaves:sea_glass_shards", 3).withChance(0.5)], "alexscaves:pearl")
-
+    e.recipes.vintageimprovements.centrifugation([
+        "minecraft:mud",
+        "alexscaves:sea_glass_shards"
+    ],
+        "alexscaves:muck"
+    ).id("alexscaves:centrifugation/muck")
 
     //磁化洞穴
 
