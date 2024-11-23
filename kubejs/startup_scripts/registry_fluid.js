@@ -138,7 +138,12 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.radon")
         .translationKey("block.createdelight.radon")
         .translationKey("item.createdelight.radon_bucket")
-
+    //未精炼的糖汁
+    e.create("createdelight:unrefined_sugar")
+        .thinTexture(0XBCB998)
+        .translationKey("fluid.createdelight.unrefined_sugar")
+        .translationKey("block.createdelight.unrefined_sugar")
+        .translationKey("item.createdelight.unrefined_sugar_bucket")
     //冰淇淋流体
     let icecream_list = [
         ["vanilla", 0xfceeca],

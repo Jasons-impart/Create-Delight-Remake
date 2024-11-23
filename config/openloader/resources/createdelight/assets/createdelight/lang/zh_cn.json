@@ -267,6 +267,9 @@
     "block.createdelight.alloy_electric_furnace": "合金电炉",
     "mbd2.hydropower_station": "大坝",
 
+    "block.createdelight.unrefined_sugar": "未精炼的糖汁",
+    "fluid.createdelight.unrefined_sugar": "未精炼的糖汁",
+    "item.createdelight.unrefined_sugar_bucket": "未精炼的糖汁桶",
     "block.createdelight.radon": "氡气",
     "fluid.createdelight.radon": "氡气",
     "item.createdelight.radon_bucket": "氡气桶",

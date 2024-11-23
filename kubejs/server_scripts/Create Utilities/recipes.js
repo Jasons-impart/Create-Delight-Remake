@@ -21,7 +21,7 @@ ServerEvents.recipes(e => {
     ).id("createmetallurgy:alloying/molten_void_steel")
     let iner = "createdelight:incomplete_graviton_tube"
     e.recipes.create.sequenced_assembly("4x createutilities:graviton_tube", "createutilities:void_steel_sheet", [
-        e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),
+        e.recipes.create.deploying(iner, [iner, "waystones:warp_dust"]),
         e.recipes.create.filling(iner, [iner, Fluid.of("createmetallurgy:molten_tin", 10)]),
         e.recipes.create.deploying(iner, [iner, "createutilities:polished_amethyst"]),
         e.recipes.create.cutting(iner, iner)

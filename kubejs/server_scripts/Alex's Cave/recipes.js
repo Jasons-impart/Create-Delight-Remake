@@ -94,8 +94,11 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(Fluid.of("createdelight:radon").withAmount(1000), Fluid.of("alexscaves:acid").withAmount(100))
         .secondaryFluidOutput(0)
         .heated()
+        .id("alexscaves:pressurizing/radon")
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
-
+    .id("alexscaves:filling/radon_bottle")
+    e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)], "alexscaves:radon_bottle")
+    .id("alexscaves:emptying/radon")
     // 聚合物板
     e.replaceInput({ id: "alexscaves:polymer_plate" }, "minecraft:iron_ingot", "createmetallurgy:steel_ingot")
     let iner_2 = "createmetallurgy:steel_block"
@@ -114,6 +117,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.crushing([
         "3x alexscaves:sea_glass_shards",
         Item.of("alexscaves:sea_glass_shards", 3).withChance(0.5)], "alexscaves:pearl")
+    .id("alexscaves:crushing/pearl")
     e.recipes.vintageimprovements.centrifugation([
         "minecraft:mud",
         "alexscaves:sea_glass_shards"
@@ -304,7 +308,8 @@ ServerEvents.recipes(e => {
     //甘草糖粉碎出甘草蔓
     e.recipes.create.crushing([Item.of("alexscaves:licoroot_vine"), Item.of("alexscaves:licoroot_vine").withChance(0.25)], "alexscaves:licoroot")
         .id("alexscaves:crushing/licoroot_vine")
-
+    e.recipes.create.item_application("alexscaves:licoroot_sprout", ["alexscaves:licoroot_vine", "minecraft:sugar"])
+    .id("alexscaves:item_application/licoroot_sprout")
     //姜饼块粉碎出姜饼屑
     e.recipes.create.milling("alexscaves:gingerbread_crumbs", "alexscaves:gingerbread_block")
         .id("alexscaves:milling/gingerbread_crumbs")

@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
         "createaddition:crafting/modular_accumulator_gold",
         "createaddition:compacting/biomass_pellet",
         "createaddition:crafting/biomass_pellet",
-        "createaddition:crafting/biomass_pellet_block"
+        "createaddition:crafting/biomass_pellet_block",
+        "createaddition:mixing/electrum"
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"

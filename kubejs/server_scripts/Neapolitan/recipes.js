@@ -13,6 +13,7 @@ ServerEvents.recipes(e => {
         "neapolitan:mint_cake",
         "neapolitan:adzuki_cake",
         "neapolitan:milk/milk_bottles_from_bucket",
+        "neapolitan:ice_cubes"
     ])
 
     e.replaceInput({}, "neapolitan:ice_cubes", "youkaishomecoming:ice_cube")

@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createbigcannons:molten_nethersteel", 30),
+        Fluid.of("createbigcannons:molten_nethersteel", 90),
         [
             Fluid.of("createmetallurgy:molten_steel", 15),
             Fluid.of("createmetallurgy:molten_netherite", 15)

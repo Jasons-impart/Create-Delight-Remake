@@ -124,6 +124,8 @@ function metal_production_line_4(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_6(event, metal, heat, time) {
+    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
+        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 10), metal[2])
