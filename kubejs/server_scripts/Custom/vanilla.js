@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
         "minecraft:medium_amethyst_bud",
         "minecraft:large_amethyst_bud",
         "minecraft:amethyst_cluster"
-    ], 0.25, "minecraft:water", 50)
+    ], "minecraft:water", 50)
     let iner_1 = "create_new_age:incomplete_enchanted_golden_apple"
     create.sequenced_assembly("minecraft:enchanted_golden_apple", "minecraft:apple", [
         create.filling(iner_1, [iner_1, Fluid.of("create_enchantment_industry:experience", 120)]),

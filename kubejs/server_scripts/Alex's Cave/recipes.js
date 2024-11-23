@@ -36,7 +36,7 @@ ServerEvents.recipes(e => {
         "alexscaves:sulfur_bud_medium",
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster"
-    ], 0.25, "alexscaves:acid", 200)
+    ], "alexscaves:acid", 50)
 
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(

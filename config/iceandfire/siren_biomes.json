@@ -4,12 +4,7 @@
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "minecraft:is_overworld"
-      },
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
-        "value": "minecraft:is_ocean"
+        "value": "alexscaves:abyssal_chasm"
       }
     ]
   ]

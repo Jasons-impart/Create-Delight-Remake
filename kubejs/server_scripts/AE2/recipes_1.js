@@ -3,19 +3,17 @@
  * 
  * @param {Internal.RecipesEventJS} e 
  * @param {InputItem_[]} transitionItems 
- * @param {number} chance 0-1
  * @param {Internal.FluidStackJS_} fluid 
  * @param {number} amount 
  */
-function make_growing_cluster(e, transitionItems, chance, fluid, amount) {
-  console.log("长度:", transitionItems.length)
+function make_growing_cluster(e, transitionItems, fluid, amount) {
   for (let index = 1; index < transitionItems.length; index++) {
     let item = transitionItems[index];
     let lastItem = transitionItems[index - 1];
-    e.recipes.create.sequenced_assembly([Item.of(item).withChance(chance), Item.of(lastItem).withChance(1 - chance)], lastItem, [
+    e.recipes.create.sequenced_assembly(item, lastItem, [
       e.recipes.create.filling(lastItem, [lastItem, Fluid.of(fluid, amount)])
     ])
-    .loops(1)
+    .loops(4)
     .transitionalItem(lastItem)
     .id(`${item.split(":")[0]}:compat/filling/${item.split(":")[1]}`)
   }
@@ -714,7 +712,7 @@ ServerEvents.recipes((event) => {
     "ae2:small_quartz_bud", 
     "ae2:medium_quartz_bud", 
     "ae2:large_quartz_bud", 
-    "ae2:quartz_cluster"], 0.25, "createdelight:spent_liquor", 50)
+    "ae2:quartz_cluster"], "createdelight:spent_liquor", 50)
   create.crushing(["4x ae2:certus_quartz_dust", Item.of("ae2:certus_quartz_dust", 4).withChance(0.25)], "ae2:quartz_cluster")
   .id("create:compat/crushing/certus_quartz_dust")
   
