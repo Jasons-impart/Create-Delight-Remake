@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
         "create_new_age:reactor/reactor_casing",
         "create_new_age:shaped/heat_pipe",
         "create_new_age:shaped/heat_pipe_mirror",
-        "create_new_age:advanced_motor_extension"])
+        "create_new_age:advanced_motor_extension",
+        "create_new_age:shaped/fluxuated_magnetite"
+    ])
     
     // 充能和激发互相适配
     e.forEachRecipe({type: "create_new_age:energising", mod: "create_new_age"}, r => {
@@ -43,8 +45,49 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:magnetite_block", 
         ingr_1
-    ).heated()
-    
+    ).heated().id("create_new_age:pressurizing/magnetite_block")
+    // 红石磁铁
+    e.recipes.vintageimprovements.pressurizing(
+        "create_new_age:redstone_magnet",
+        [
+            "create_new_age:magnetite_block",
+            'minecraft:redstone',
+            Fluid.of("createdelight:molten_scarlet_neodymium", 90),
+            Fluid.of("createdelight:molten_azure_neodymium", 90)
+        ]
+    ).heated().id("create_new_age:shaped/redstone_magnet")
+    // 铁金介质磁铁
+    let iner_3 = "createdelight:incomplete_layered_magnet"
+    e.recipes.create.sequenced_assembly("create_new_age:layered_magnet", "create_new_age:redstone_magnet", 
+        [
+            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_golden_sheet']),
+            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_iron_sheet']),
+            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_golden_sheet']),
+            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_iron_sheet']),
+        ]
+    )
+        .loops(1)
+        .transitionalItem(iner_3)
+        .id("create_new_age:shaped/layered_magnet")
+    // 钻石磁铁
+    e.recipes.vintageimprovements.pressurizing(
+        "create_new_age:fluxuated_magnetite",
+        [
+            'create_new_age:overcharged_gold',
+            'create_new_age:overcharged_diamond',
+            "create_new_age:layered_magnet",
+            'minecraft:blaze_powder',
+            Fluid.of("alexscaves:acid", 250)
+        ]
+    ).heated().id("create_new_age:fluxuated_magnetite")
+    // 下届合金磁铁
+    e.recipes.vintageimprovements.pressurizing(
+        "create_new_age:netherite_magnet",
+        [
+            "create_new_age:fluxuated_magnetite",
+            Fluid.of("createmetallurgy:molten_netherite", 90)
+        ]
+    ).heated().id("create_new_age:shaped/netherite_magnet")
     //核反应堆材料
     let iner_1 = "create_new_age:incomplete_casing"
     e.recipes.create.sequenced_assembly("create_new_age:reactor_casing", "ad_astra:steel_plating", [
@@ -74,7 +117,7 @@ ServerEvents.recipes(e => {
     .transitionalItem(iner_2)
     .id("create_new_age:reactor_glass_from_depth_glass")
     
-    //热能
+    //热能管道
     e.recipes.kubejs.shaped("24x create_new_age:heat_pipe", [
         "AAA",
         "BBB",

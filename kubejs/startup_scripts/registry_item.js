@@ -331,6 +331,9 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.sushi_unrolledroll")
         
     // 未完成相关
+    e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.incomplete_layered_magnet")
     e.create("createdelight:incomplete_tesla_coil", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.incomplete_tesla_coil")

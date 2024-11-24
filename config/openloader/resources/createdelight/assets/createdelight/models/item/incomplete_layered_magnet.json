@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+      "all": "createdelight:item/incomplete_layered_magnet"
+    }
+  }
