@@ -8,11 +8,17 @@ ServerEvents.recipes(e => {
     vintageimprovements.pressurizing("minecraft:glowstone_dust", "minecraft:glow_berries")
     .heated()
     .id("createdelight:pressurizing/glowstone_dust")
+
     create.filling("minecraft:golden_apple", ["minecraft:apple", Fluid.of("createmetallurgy:molten_gold", 450)])
+    .id("createdelight:filling/golden_apple")
     create.filling("minecraft:golden_carrot", ["minecraft:carrot", Fluid.of("createmetallurgy:molten_gold", 50)])
+    .id("createdelight:filling/golden_carrot")
+
     createmetallurgy.casting_in_basin(
         "quark:golden_carrot_crate", 
         ["farmersdelight:carrot_crate", Fluid.of("createmetallurgy:molten_gold", 450)], 100, true)
+    .id("createdelight:casting_in_basin/golden_carrot_crate")
+
     vintageimprovements.pressurizing(["minecraft:deepslate"], [Fluid.lava(50), "#forge:cobblestone"])
     .heated()
     .id("vintageimprovements:pressurizing/deepslate")
