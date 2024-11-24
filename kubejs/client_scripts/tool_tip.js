@@ -33,6 +33,8 @@ let tooltips = [
     ["art_of_forging:potent_mixture", "使用带有纳米融合的武器击杀苦力怕可获得", "Killing the Creeper with a weapon that has nano fusion can grant"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
     ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
+    ['create_central_kitchen:chocolate_cake_slice', "§9甜蜜冲刺（00:10）", "§9Sugar Rush(00:10)"],
+    ['alexscaves:cave_map', "该物品已无实际用处，且不可按照显示的配方合成", "This item is no longer useful and cannot be crafted using the displayed recipe"]
     ['create_central_kitchen:chocolate_cake_slice', "§9能量冲击（00:10）", "§9Sugar Rush(00:10)"],
     ["alexscaves:block_of_azure_neodymium", "§7磁感应强度：", "§7Magnetic Force: "],
     ["alexscaves:block_of_scarlet_neodymium", "§7磁感应强度：", "§7Magnetic Force: "]

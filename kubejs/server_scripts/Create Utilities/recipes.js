@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         "createutilities:void_steel_sheet",
         "createmetallurgy:molten_void_steel"
     ],
-    "heated", 60)
+        "heated", 60)
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createmetallurgy:molten_void_steel", 90),
         [
@@ -19,6 +19,11 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_steel", 90)
         ], 180, "superheated"
     ).id("createmetallurgy:alloying/molten_void_steel")
+    
+    e.recipes.createmetallurgy.casting_in_basin(
+        "createutilities:void_casing",
+        ["minecraft:obsidian", Fluid.of("createmetallurgy:molten_void_steel", 90)], 70, true)
+        .id("createutilities:casting_in_basin/void_casing")
     let iner = "createdelight:incomplete_graviton_tube"
     e.recipes.create.sequenced_assembly("4x createutilities:graviton_tube", "createutilities:void_steel_sheet", [
         e.recipes.create.deploying(iner, [iner, "waystones:warp_dust"]),
@@ -50,4 +55,5 @@ ServerEvents.recipes(e => {
             "createutilities:graviton_tube"
         ]
     ).id("createutilities:shaped/void_motor")
+
 })

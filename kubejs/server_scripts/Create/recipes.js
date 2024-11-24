@@ -134,11 +134,24 @@ ServerEvents.recipes(e => {
     //坚固板的另一个配方
     e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
         .id("vintageimprovements:hammering/sturdy_sheet")
+    e.recipes.createmetallurgy.casting_in_basin(
+        "create:railway_casing", 
+        ["create:brass_casing", Fluid.of("createmetallurgy:molten_steel", 90)], 70, true)
+        .id("create:casting_in_basin/railway_casing")
+    
+    e.recipes.createmetallurgy.casting_in_basin(
+        "create:andesite_casing", 
+        ["#forge:stripped_logs", Fluid.of("createdelight:molten_andesite", 90)], 70, true)
+        .id("create:casting_in_basin/andesite_casing")
+    
+    
     //deco和create的工业铁块互切
     e.recipes.minecraft.stonecutting("design_decor:industrial_plating_block", "create:industrial_iron_block")
         .id("industrial_plating_block_from_industrial_iron_block")
     e.recipes.minecraft.stonecutting("create:industrial_iron_block", "design_decor:industrial_plating_block")
         .id("industrial_iron_block_from_industrial_plating_block")
+    e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
+        .id("industrial_iron_block_from_steel_ingot")
     // 甜甜圈
     e.custom({
         type: "create:filling",
