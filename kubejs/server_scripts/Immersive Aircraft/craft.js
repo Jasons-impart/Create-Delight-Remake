@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
         C: "alloyed:steel_ingot"
     }
     )
-        .id("immersive_aircraft:rotary_cannon")
+        .id("immersive_aircraft:rotary_cannon_shaped")
 
     // 动力合成器添加：四轴飞行器
     e.recipes.create.mechanical_crafting("immersive_aircraft:quadrocopter", [
@@ -37,6 +37,7 @@ ServerEvents.recipes(e => {
         C: "minecraft:scaffolding",
         D: "immersive_aircraft:engine"
     })
+    .id("immersive_aircraft:mechanical_crafting/quadrocopter")
     // 动力合成器添加：固定旋翼机
     e.recipes.create.mechanical_crafting("immersive_aircraft:gyrodyne", [
         " A ",
@@ -48,6 +49,7 @@ ServerEvents.recipes(e => {
         C: "immersive_aircraft:hull",
         D: "minecraft:grindstone"
     })
+    .id("immersive_aircraft:mechanical_crafting/gyrodyne")
     // 动力合成器添加：双翼机
     e.recipes.create.mechanical_crafting("immersive_aircraft:biplane", [
         "  A  ",
@@ -62,6 +64,7 @@ ServerEvents.recipes(e => {
         D: "#minecraft:wooden_trapdoors",
         E: "#minecraft:logs"
     })
+    .id("immersive_aircraft:mechanical_crafting/biplane")
     // 动力合成器添加：锅炉
     e.recipes.create.mechanical_crafting("immersive_aircraft:boiler", [
         "AAA",
@@ -71,10 +74,11 @@ ServerEvents.recipes(e => {
         "AAA"
     ], {
         A: "minecraft:copper_ingot",
-        B: "create_sa:large_filling_tank",
+        B: "create_sa:small_filling_tank",
         C: "create_sa:heat_engine",
-        D: "create_sa:large_fueling_tank"
+        D: "create_sa:small_fueling_tank"
     })
+    .id("immersive_aircraft:mechanical_crafting/boiler")
     // 添加配方：飞艇
     e.shaped("immersive_aircraft:airship", [
         "AAA",
@@ -86,6 +90,7 @@ ServerEvents.recipes(e => {
         C: "immersive_aircraft:engine",
         D: "immersive_aircraft:propeller"
     })
+    .id("immersive_aircraft:airship_shaped")
     // 增加配方：引擎
     e.shaped("immersive_aircraft:engine", [
         "AAA",
@@ -97,6 +102,7 @@ ServerEvents.recipes(e => {
         C: "create_sa:steam_engine",
         D: "immersive_aircraft:boiler"
     })
+    .id("immersive_aircraft:engine_shaped")
     // 增加配方：螺旋桨
     e.shaped("immersive_aircraft:propeller", [
         "AA ",
@@ -106,6 +112,7 @@ ServerEvents.recipes(e => {
         A: "minecraft:iron_ingot",
         B: "create:andesite_alloy"
     })
+    .id("immersive_aircraft:propeller_shaped")
     // 增加配方：钢制锅炉
     e.shaped("immersive_aircraft:steel_boiler", [
         "AAA",
@@ -116,6 +123,7 @@ ServerEvents.recipes(e => {
         B: "immersive_aircraft:boiler",
         C: "create_sa:steam_engine"
     })
+    .id("immersive_aircraft:steel_boiler_shaped")
     // 增加配方：工业齿轮
     e.shaped("immersive_aircraft:industrial_gears", [
         " AA",
@@ -126,6 +134,7 @@ ServerEvents.recipes(e => {
         B: "create:cogwheel",
         C: "63x create:shaft"
     })
+    .id("immersive_aircraft:industrial_gears_shaped")
     // 新增配方：改良起落架
     e.shaped("immersive_aircraft:improved_landing_gear", [
         " AB",
@@ -136,4 +145,5 @@ ServerEvents.recipes(e => {
         B: "create:andesite_alloy",
         C: "minecraft:dried_kelp"
     })
+    .id("immersive_aircraft:improved_landing_gear_shaped")
 })

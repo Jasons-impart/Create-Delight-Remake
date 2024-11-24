@@ -21,6 +21,9 @@ ServerEvents.recipes(e => {
         "alexcaves_delight:cooking/tree_tea_recipe",
         "alexcaves_delight:cooking/jellyfishsoda_recipe"
     ])
+    remove_recipes_output(e, [
+        "alexscaves:cave_map"
+    ])
     e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
     e.replaceInput({id: "create_oppenheimered:mixing/ice_cream_licoroot"}, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
     //硫磺，硫磺晶簇->硫粉
