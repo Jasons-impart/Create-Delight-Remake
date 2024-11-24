@@ -16,6 +16,7 @@
             "material": {
                 "items": [ "art_of_forging:fragment_of_eden" ]
             },
+            "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": "minecraft:diamond"
             },

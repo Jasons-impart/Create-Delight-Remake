@@ -94,7 +94,13 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "create_mechanical_spawner:mechanical_spawner" }, "minecraft:emerald", "alexscaves:amber_monolith")
 
     //氡气相关
-    e.recipes.vintageimprovements.pressurizing(Fluid.of("createdelight:radon").withAmount(1000), Fluid.of("alexscaves:acid").withAmount(100))
+    e.recipes.vintageimprovements.pressurizing(
+        [
+            Fluid.of("createdelight:radon", 500),
+            Fluid.of("vintageimprovements:sulfuric_acid", 500)
+        ],
+        Fluid.of("alexscaves:acid", 1000)
+    )
         .secondaryFluidOutput(0)
         .heated()
         .id("alexscaves:pressurizing/radon")

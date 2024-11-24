@@ -14,9 +14,9 @@ let tooltips = [
     ["createdelight:sigma_man_sword", "§o西格玛男人专用", "§oFor sigma men only"],
     ["createdelight:braised_intestines_in_brown_sauce","§o你真是饿了...","§oYou are so hunger..."],
     ["lightmanscurrency:coinmint", "§l§4已停用!!", "§l§4STOP USING NOW!!"],
-    ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su\n"],
-    ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su\n"],
-    ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su\n"],
+    ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su"],
+    ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su"],
+    ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su"],
     ["createdelight:emergency_industrial_platform", "§a放入泥土以显示平台范围，放入石头以产生平台", "§aInsert dirt to display platform range, insert stone to generate platform."],
     ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
     ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],
@@ -35,8 +35,10 @@ let tooltips = [
     ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
     ['create_central_kitchen:chocolate_cake_slice', "§9甜蜜冲刺（00:10）", "§9Sugar Rush(00:10)"],
     ['alexscaves:cave_map', "该物品已无实际用处，且不可按照显示的配方合成", "This item is no longer useful and cannot be crafted using the displayed recipe"]
+    ['create_central_kitchen:chocolate_cake_slice', "§9能量冲击（00:10）", "§9Sugar Rush(00:10)"],
+    ["alexscaves:block_of_azure_neodymium", "§7磁感应强度：", "§7Magnetic Force: "],
+    ["alexscaves:block_of_scarlet_neodymium", "§7磁感应强度：", "§7Magnetic Force: "]
 ]
-
 tooltips.forEach(([key, zh_cn, en_us]) => {
     // 添加 key
     ItemEvents.tooltip(e => {
@@ -52,4 +54,9 @@ tooltips.forEach(([key, zh_cn, en_us]) => {
     ClientEvents.lang("en_us", e => {
         e.add(key, en_us)
     })
+})
+// 磁铁特例
+ItemEvents.tooltip(e => {
+    e.add("alexscaves:block_of_azure_neodymium", "§b 8")
+    e.add("alexscaves:block_of_scarlet_neodymium", "§b 8")
 })
