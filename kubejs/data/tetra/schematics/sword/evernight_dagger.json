@@ -1,0 +1,35 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph": {
+        "tint": "d8a800",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:module",
+                "module": "sword/euclidean_dagger"
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "art_of_forging:sigil_of_eden" ]
+            },
+            "experienceCost": 30,
+            "requiredTools": {
+                "hammer_dig": "minecraft:gold"
+            },
+            "moduleKey": "sword/evernight_dagger",
+            "moduleVariant": "evernight_dagger/evernight_dagger"
+        }
+    ]
+}

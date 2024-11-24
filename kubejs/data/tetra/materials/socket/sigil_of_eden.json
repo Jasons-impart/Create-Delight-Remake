@@ -16,7 +16,7 @@
         "generic.attack_damage": 4
     },
     "effects": {
-        "criticalStrike": [ 50, 2 ]
+        "criticalStrike": [ 25, 2 ]
     },
     "tints": {
         "glyph": "af3838"
