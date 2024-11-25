@@ -16,6 +16,11 @@
 	#Enable with caution as this will allow players to grief and rob other players shops and otherwise protected machinery.
 	anarchyMode=false
 	
+	#A list of dimension ids that are quarantined from all cross-dimensional interactions.
+	#This includes disabling Trader Interfaces, Network Traders & Terminals (personal trader interactions & cash registers will still function), and all Bank Account access.
+	#Mostly intended to be used to allow the existence of 'Creative Dimensions' where money can be cheated in by your average player, but should not affect a players inventory/bank balance in the 'normal' dimensions.
+	quarantinedDimensions=[]
+	
 #Coin Mint Settings
 [coin_mint]
 	#Whether or not Coin Mint recipes of mintType "MINT" will function.
@@ -90,7 +95,7 @@
 	#Range: 0 -> 7
 	bankLevel=5
 	
-	#Whether wallets can have 24 additional slots added by using an upgrade item on them from their inventory
+	#Whether wallets can have additional slots added by using an upgrade item on them from their inventory
 	#By default diamonds are the only valid upgrade item, but this can be changed by a datapack
 	allowCapacityUpgrade=true
 	
@@ -223,6 +228,9 @@
 	
 #Network Terminal Settings
 [terminal]
+	#Whether the /lcterminal command will exist allowing players to access the Trading Terminal without the physical item/block
+	lcterminalCommand=false
+	
 	#Whether Traders with no defined Custom Name will be sorted to the bottom of the Trader list on the Network Terminal.
 	sortUnnamedTradersToBottom=false
 	

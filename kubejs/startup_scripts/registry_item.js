@@ -156,7 +156,7 @@ StartupEvents.registry("item", e => {
             food.hunger(12)
                 .saturation(1)
         })
-    e.create("createdelight:oil_dough_with_butter")
+    e.create("createdelight:oil_dough_with_butter", "create:sequenced_assembly")
         .maxStackSize(64)
         .translationKey("item.createdelight.oil_dough_with_butter")
         .food(food => {
@@ -327,7 +327,7 @@ StartupEvents.registry("item", e => {
         })
         .translationKey("item.createdelight.empty_riceball")
     //未完成的寿司
-    e.create("createdelight:sushi_unrolledroll")
+    e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
         .translationKey("item.createdelight.sushi_unrolledroll")
         
     // 未完成相关
@@ -584,16 +584,19 @@ StartupEvents.registry("item", e => {
     //龙炎钢插板
     e.create("createdelight:fire_dragonsteel_armorplate")
         .maxDamage(3000)
+        .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.fire_dragonsteel_armorplate")
     //龙霜钢插板
     e.create("createdelight:ice_dragonsteel_armorplate")
         .maxDamage(3000)
+        .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.ice_dragonsteel_armorplate")
     //龙霆钢插板
     e.create("createdelight:lightning_dragonsteel_armorplate")
         .maxDamage(3000)
+        .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
         
