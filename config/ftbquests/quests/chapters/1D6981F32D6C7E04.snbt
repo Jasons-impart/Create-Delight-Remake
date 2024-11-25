@@ -4,6 +4,7 @@
 	default_repeatable_quest: true
 	filename: "1D6981F32D6C7E04"
 	group: "0E7AEC0D0D9C1B1C"
+	icon: "alexscaves:pure_darkness"
 	id: "1D6981F32D6C7E04"
 	order_index: 3
 	quest_links: [ ]

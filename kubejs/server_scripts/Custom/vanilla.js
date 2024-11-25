@@ -53,9 +53,15 @@ ServerEvents.recipes(e => {
     .id("minecraft:enchanted_golden_apple")
 
     create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
-     [["alexscaves:licoroot_vine", "minecraft:sugar_cane", "minecraft:beetroot"], Fluid.water(250)])
-    .id("createdelight:compacting/unrefined_sugar")
-    vintageimprovements.pressurizing([Fluid.of("createcafe:melted_sugar", 500), Fluid.water(500)], Fluid.of("createdelight:unrefined_sugar", 1000))
+     ["minecraft:sugar_cane", Fluid.water(250)])
+    .id("createdelight:compacting/unrefined_sugar_from_sugar_cane")
+    create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
+     ["2x minecraft:beetroot", Fluid.water(250)])
+    .id("createdelight:compacting/unrefined_sugar_from_beetroot")
+    create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
+     ["3x alexscaves:licoroot_vine", Fluid.water(250)])
+    .id("createdelight:compacting/unrefined_sugar_from_licoroot_vine")
+    vintageimprovements.pressurizing([Fluid.of("createcafe:melted_sugar", 100), Fluid.water(100)], Fluid.of("createdelight:unrefined_sugar", 200))
     .secondaryFluidOutput(1)
     .heated()
     .id("createdelight:pressurizing/melted_sugar")

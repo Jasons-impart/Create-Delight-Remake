@@ -96,10 +96,10 @@ ServerEvents.recipes(e => {
     //氡气相关
     e.recipes.vintageimprovements.pressurizing(
         [
-            Fluid.of("createdelight:radon", 500),
-            Fluid.of("vintageimprovements:sulfuric_acid", 500)
+            Fluid.of("createdelight:radon", 100),
+            Fluid.of("vintageimprovements:sulfuric_acid", 100)
         ],
-        Fluid.of("alexscaves:acid", 1000)
+        Fluid.of("alexscaves:acid", 200)
     )
         .secondaryFluidOutput(0)
         .heated()

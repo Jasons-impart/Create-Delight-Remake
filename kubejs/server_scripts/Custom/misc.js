@@ -1,7 +1,7 @@
 ServerEvents.recipes(e => {
     const {create, createdieselgenerators} = e.recipes
-    create.crushing(["24x createdieselgenerators:wood_chip",
-        Item.of("createdieselgenerators:wood_chip", 8).withChance(0.5),
+    create.crushing(["12x createdieselgenerators:wood_chip",
+        Item.of("createdieselgenerators:wood_chip", 4).withChance(0.5),
         Item.of("farmersdelight:tree_bark", 1).withChance(0.75)],
     "#minecraft:logs")
     .id("createdelight:crushing/logs")

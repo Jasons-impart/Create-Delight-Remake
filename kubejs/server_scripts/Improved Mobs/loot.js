@@ -22,12 +22,11 @@ LootJS.modifiers(e => {
     addDifficultyLoot("minecraft:zombie", 100, "minecraft:iron_ingot", 0.5)
     addDifficultyLoot("iceandfire:cockatrice", 100, "iceandfire:cockatrice_eye", 0.5)
 
-    let dreadList = ["iceandfire:dread_lich", "iceandfire:dread_ghoul", "iceandfire:dread_knight"].forEach(entity => {
-        addDifficultyLoot(entity, 150, "iceandfire:dragonsteel_ice_ingot", 0.2)
-        addDifficultyLoot(entity, 150, "iceandfire:dragonsteel_fire_ingot", 0.2)
-        addDifficultyLoot(entity, 150, "iceandfire:dragonsteel_lightning_ingot", 0.2)
-    })
-    
+    addDifficultyLoot("iceandfire:dread_lich", 150, "iceandfire:dragonsteel_ice_ingot", 0.1)
+    addDifficultyLoot("iceandfire:dread_knight", 150, "iceandfire:dragonsteel_ice_ingot", 0.1)
+    addDifficultyLoot("iceandfire:dread_thrall", 150, "iceandfire:dragonsteel_ice_ingot", 0.05)
+    addDifficultyLoot("iceandfire:dread_ghoul", 150, "iceandfire:dragonsteel_ice_ingot", 0.05)
+
 
     difficultyLootList.forEach((value) => {
         e.addEntityLootModifier(value[0])
