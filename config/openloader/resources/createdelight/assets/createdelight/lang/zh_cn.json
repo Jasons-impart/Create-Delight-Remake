@@ -2,6 +2,8 @@
     "itemGroup.createdelight.metal": "机械动力：悠然乐事 | 金属",
     "itemGroup.createdelight.fluid": "机械动力：悠然乐事 | 流体",
     "itemGroup.createdelight.food": "机械动力：悠然乐事 | 食物",
+    "itemGroup.createdelight.machine": "机械动力：悠然乐事 | 机器",
+    "itemGroup.createdelight.misc": "机械动力：悠然乐事 | 杂项",
     "item.createdelight.incomplete_layered_magnet": "未完成的铁金介质磁铁",
     "item.createdelight.mayo_corn_dog": "蛋黄酱玉米热狗",
     "item.createdelight.ketchup_corn_dog": "番茄酱玉米热狗",
@@ -353,8 +355,12 @@
     "item.createdelight.incomplete_pattern_provider": "未完成的样板供应器",
     "item.createdelight.incomplete_molecular_assembler": "未完成的分子装配室",
     "item.createdelight.incomplete_controller": "未完成的ME控制器",
-    "item.createdelight.incomplete_crystal_fixer": "未完成的水晶修复器"
-
+    "item.createdelight.incomplete_crystal_fixer": "未完成的水晶修复器",
+    "item.createdelight.inferior_genetic_seed": "劣质的基因种子",
+    "item.createdelight.normal_genetic_seed": "普通的基因种子",
+    "item.createdelight.refined_genetic_seed": "精炼的基因种子",
+    "item.createdelight.pure_genetic_seed": "纯粹的基因种子",
+    "item.createdelight.flawless_genetic_seed": "完美的基因种子"
 
 
 }

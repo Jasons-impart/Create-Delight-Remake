@@ -102,13 +102,6 @@ ServerEvents.recipes(e => {
     'minecraft:honeycomb',
     'the_bumblezone:empty_honeycomb_brood_block'
   ).id("create:compacting/empty_honeycomb_brood_block")
-  e.recipes.create.compacting(
-    [
-      'minecraft:honeycomb',
-      Fluid.of("create_mechanical_spawner:spawn_fluid_bee", 100)
-    ],
-    'the_bumblezone:honeycomb_brood_block'
-  ).id("create:compacting/honeycomb_brood_block")
   // 蜂蜜增产
   e.recipes.create.mixing(
     Fluid.of("create:honey", 100),

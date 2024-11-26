@@ -343,4 +343,11 @@ StartupEvents.registry("creative_mode_tab", e => {
       'createdelight:ostrum_dust',
       'createdelight:calorite_dust',
     ])
+    
+  e.create("createdelight:machine")
+  .translationKey("itemGroup.createdelight.machine")
+  .icon(() => Item.of("createdelight:electrolyzer"))
+  e.create("createdelight:misc")
+  .translationKey("itemGroup.createdelight.misc")
+  .icon(() => Item.of("createdelight:fragment_of_border"))
 })
