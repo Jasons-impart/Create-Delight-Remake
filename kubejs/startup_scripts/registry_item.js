@@ -471,32 +471,23 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_fourth_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
 
-
-    // 主世界
-    e.create("createdelight:overworld_metal_ore_cluster")
-        .translationKey("item.createdelight.overworld_metal_ore_cluster")
-    e.create("createdelight:overworld_noble_metal_ore_cluster")
-        .translationKey("item.createdelight.overworld_noble_metal_ore_cluster")
-    // 下界
-    e.create("createdelight:nether_ore_cluster")
-        .translationKey("item.createdelight.nether_ore_cluster")
-    // 月球
-    e.create("createdelight:moon_ore_cluster")
-        .translationKey("item.createdelight.moon_ore_cluster")
-    // 火星
-    e.create("createdelight:mars_ore_cluster")
-        .translationKey("item.createdelight.mars_ore_cluster")
-    e.create("createdelight:mars_gemstone_cluster")
-        .translationKey("item.createdelight.mars_gemstone_cluster")
-    // 水星
-    e.create("createdelight:mercury_ore_cluster")
-        .translationKey("item.createdelight.mercury_ore_cluster")
-    // 金星
-    e.create("createdelight:venus_ore_cluster")
-        .translationKey("item.createdelight.venus_ore_cluster")
-    // 霜原星
-    e.create("createdelight:glacio_ore_cluster")
-        .translationKey("item.createdelight.glacio_ore_cluster")
+    // 矿石注册
+    let clusters = [
+        ["overworld_metal", "common"],
+        ["overworld_noble_metal", "epic"],
+        ["nether", "epic"],
+        ["moon", "rare"],
+        ["mars", "rare"],
+        ["mercury", "rare"],
+        ["venus", "rare"],
+        ["glacio", "rare"],
+        ["mars_gemstone", "uncommon"]
+    ]
+    clusters.forEach(cluster => {
+        e.create(`createdelight:${cluster[0]}_ore_cluster`)
+            .rarity(cluster[1])
+            .translationKey(`item.createdelight.${cluster[0]}_ore_cluster`)
+    });
     // 探矿仪
     e.create("createdelight:prospector")
         .translationKey("item.createdelight.prospector")
@@ -573,9 +564,9 @@ StartupEvents.registry("item", e => {
         "createdelight:lightning_dragonsteel_armorplate"
     ]
     incomplete_item.forEach(item => {
-        e.create("createdelight:incomplete_" + item.split(":")[1], "create:sequenced_assembly")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.incomplete_" + item)
+        e.create(`createdelight:incomplete_${item.split(":")[1]}`, "create:sequenced_assembly")
+            .maxStackSize(64)
+            .translationKey(`item.createdelight.incomplete_${item}`)
     })
     // // AE: 未完成的 熵变机械臂 充能手杖 样板
     // ["charged_staff", "entropy_manipulator", "blank_pattern"]
