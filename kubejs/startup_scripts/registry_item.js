@@ -474,20 +474,23 @@ StartupEvents.registry("item", e => {
     // 矿石注册
     let clusters = [
         ["overworld_metal", "common"],
-        ["overworld_noble_metal", "epic"],
-        ["nether", "epic"],
-        ["moon", "rare"],
-        ["mars", "rare"],
-        ["mercury", "rare"],
-        ["venus", "rare"],
-        ["glacio", "rare"],
-        ["mars_gemstone", "uncommon"]
+        ["overworld_noble_metal", "rare"],
+        ["nether", "rare"],
+        ["moon", "epic"],
+        ["mars", "epic"],
+        ["mercury", "common"],
+        ["venus", "epic"],
+        ["glacio", "epic"],
     ]
     clusters.forEach(cluster => {
         e.create(`createdelight:${cluster[0]}_ore_cluster`)
             .rarity(cluster[1])
             .translationKey(`item.createdelight.${cluster[0]}_ore_cluster`)
     });
+    // 特例矿石
+    e.create("createdelight:mars_gemstone_cluster")
+        .rarity("uncommon")
+        .translationKey("item.createdelight.mars_gemstone_cluster")
     // 探矿仪
     e.create("createdelight:prospector")
         .translationKey("item.createdelight.prospector")

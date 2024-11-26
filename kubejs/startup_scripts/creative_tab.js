@@ -9,6 +9,15 @@ StartupEvents.modifyCreativeTab("create:base", e => {
 StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e => {
   e.add([
     'createdelight:prospector',
+    'createdelight:overworld_metal_ore_cluster',
+    'createdelight:overworld_noble_metal_ore_cluster',
+    'createdelight:nether_ore_cluster',
+    'createdelight:moon_ore_cluster',
+    'createdelight:mars_ore_cluster',
+    'createdelight:mars_gemstone_cluster',
+    'createdelight:mercury_ore_cluster',
+    'createdelight:venus_ore_cluster',
+    'createdelight:glacio_ore_cluster',
   ])
 })
 // 机素防护
@@ -192,6 +201,15 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
     'createdelight:incomplete_controller',
     'createdelight:incomplete_crystal_fixer',
     'createdelight:prospector',
+    'createdelight:overworld_metal_ore_cluster',
+    'createdelight:overworld_noble_metal_ore_cluster',
+    'createdelight:nether_ore_cluster',
+    'createdelight:moon_ore_cluster',
+    'createdelight:mars_ore_cluster',
+    'createdelight:mars_gemstone_cluster',
+    'createdelight:mercury_ore_cluster',
+    'createdelight:venus_ore_cluster',
+    'createdelight:glacio_ore_cluster',
   ])
 });
 // 物品栏分类
