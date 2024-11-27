@@ -58,6 +58,7 @@ JEIEvents.hideItems((e) => {
 JEIEvents.addItems((e) => {
   e.add([
     "create:crushed_raw_tin",
-    "create:honey_bucket"
+    "create:honey_bucket",
+    "create_connected:fan_freezing_catalyst"
   ]);
 });

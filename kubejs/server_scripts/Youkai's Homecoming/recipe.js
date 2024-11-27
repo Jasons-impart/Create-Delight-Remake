@@ -116,4 +116,42 @@ ServerEvents.recipes(e => {
     .id("createdelight:vinegar_2")
     create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
     .id("youkaishomecoming:milling/matcha")
+
+    //咖啡调配
+    create.filling("youkaishomecoming:americano", ["youkaishomecoming:espresso", Fluid.water(250)])
+    .id("youkaishomecoming:filling/americano")
+    
+    create.deploying("youkaishomecoming:ristretto", ["youkaishomecoming:espresso", "createcafe:coffee_grounds"])
+    .id("youkaishomecoming:deploying/ristretto")
+    
+    e.custom({
+        type: "create:filling",
+        ingredients: [
+            {
+                item: "youkaishomecoming:espresso"
+            },
+            {
+                amount: 250,
+                fluidTag: "forge:milk"
+            }
+        ],
+        results: [
+            {
+                item: "youkaishomecoming:latte",
+                count: 1
+            }
+        ]
+    }).id("youkaishomecoming:filling/latte")
+
+    create.filling("youkaishomecoming:con_panna", ["youkaishomecoming:ristretto", Fluid.of("createdelight:whipped_cream", 250)])
+    .id("youkaishomecoming:filling/con_panna")
+    create.filling("youkaishomecoming:macchiato", ["youkaishomecoming:espresso", Fluid.of("createdelight:whipped_cream", 250)])
+    .id("youkaishomecoming:filling/macchiato")
+    create.deploying("youkaishomecoming:affogato", ["youkaishomecoming:macchiato", "youkaishomecoming:ice_cube"])
+    .id("youkaishomecoming:deploying/affogato")
+    create.filling("youkaishomecoming:cappuccino", ["youkaishomecoming:latte", Fluid.of("createdelight:whipped_cream", 250)])
+    .id("youkaishomecoming:filling/cappuccino")
+    create.filling("youkaishomecoming:mocha", ["youkaishomecoming:latte", Fluid.of("create:chocolate", 250)])
+    .id("youkaishomecoming:filling/mocha")
+
 })
