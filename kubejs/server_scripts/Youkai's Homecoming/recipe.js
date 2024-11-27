@@ -113,5 +113,7 @@ ServerEvents.recipes(e => {
         Fluid.of("youkaishomecoming:mio", 1000)
     ])
     .processingTime(1800)
-    .id("cratedelight:vinegar_2")
+    .id("createdelight:vinegar_2")
+    create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
+    .id("youkaishomecoming:milling/matcha")
 })

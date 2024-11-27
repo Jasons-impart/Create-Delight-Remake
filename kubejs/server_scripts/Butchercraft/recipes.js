@@ -212,6 +212,26 @@ ServerEvents.recipes((e) => {
   e.recipes.create
     .mixing("minecraft:slime_ball", [Fluid.of("water", 250), "#forge:gelatin"])
     .id("butchercraft:mixing/gelatin_to_slime_ball");
+  e.recipes.create.cutting("8x minecraft:leather", "butchercraft:cow_hide")
+  .id("butchercraft:cutting/cow_hide")
+  e.recipes.create.cutting("6x minecraft:leather", "butchercraft:pig_hide")
+  .id("butchercraft:cutting/pig_hide")
+  e.recipes.create.cutting("6x minecraft:leather", "butchercraft:sheep_hide")
+  .id("butchercraft:cutting/sheep_hide")
+  e.recipes.create.cutting("6x minecraft:leather", "butchercraft:goat_hide")
+  .id("butchercraft:cutting/goat_hide")
+  cutting(e, "butchercraft:cow_hide", [["minecraft:leather", 8]])
+  cutting(e, "butchercraft:pig_hide", [["minecraft:leather", 6]])
+  cutting(e, "butchercraft:sheep_hide", [["minecraft:leather", 6]])
+  cutting(e, "butchercraft:goat_hide", [["minecraft:leather", 6]])
+  e.recipes.create.crushing(["4x minecraft:bone_meal",
+    Item.of("minecraft:bone_meal", 4).withChance(0.25)], 
+    [['butchercraft:cow_skull_head_item', 'butchercraft:sheep_skull_head_item', 'butchercraft:pig_skull_head_item', 'butchercraft:goat_skull_head_item']])
+    .id("butchercraft:crushing/large_skull_head")
+    e.recipes.create.crushing(["3x minecraft:bone_meal",
+      Item.of("minecraft:bone_meal", 2).withChance(0.25)], 
+      [['butchercraft:chicken_skull_head_item', 'butchercraft:rabbit_skull_head_item']])
+      .id("butchercraft:crushing/small_skull_head")
   // 血肠混合料
   e.custom({
     type: "minecraft:crafting_shapeless",
