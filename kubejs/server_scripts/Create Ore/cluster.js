@@ -81,6 +81,7 @@ ServerEvents.recipes((event) => {
       "kubejs:mars_ore_cluster_ore",
       600,
     )
+    .fluid("minecraft:lava")
     .stress(1024)
     .id("kubejs:mars_ore_cluster_ore_drilling");
 

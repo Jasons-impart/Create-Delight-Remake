@@ -26,6 +26,7 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:raw_lamprey_cutting',
         "youkaishomecoming:red_velvet_cake_slice"
     ])
+    remove_recipes_type(e, ["youkaishomecoming:moka_pot"]);
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:black_tea_leaves', 'farmersrespite:black_tea_leaves')
@@ -170,4 +171,31 @@ ServerEvents.recipes(e => {
         create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)], `youkaishomecoming:${coffee}`)
         .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
     })
+
+    brewing(e, "minecraft:water", ["createcafe:coffee_grounds"], "createdelight:espresso_fluid", "youkaishomecoming:espresso", 250)
+
+    brewing(e, "minecraft:water", ["createcafe:coffee_grounds", "#forge:water_bottles"], "createdelight:americano_fluid", "youkaishomecoming:americano", 250)
+    brewing(e, "createdelight:espresso_fluid", ["#forge:water_bottles"], "createdelight:americano_fluid", "youkaishomecoming:americano", 250)
+
+    brewing(e, "minecraft:water", ["createcafe:coffee_grounds", "createcafe:coffee_grounds"], "createdelight:ristretto_fluid", "youkaishomecoming:ristretto", 250)
+    brewing(e, "createdelight:espresso_fluid", ["createcafe:coffee_grounds"], "createdelight:ristretto_fluid", "youkaishomecoming:ristretto", 250)
+
+    brewing(e, "minecraft:water", ["#forge:milk/milk_bottle", "createcafe:coffee_grounds"], "createdelight:latte_fluid", "youkaishomecoming:latte", 250)
+    brewing(e, "createdelight:espresso_fluid", ["#forge:milk/milk_bottle"], "createdelight:latte_fluid", "youkaishomecoming:latte", 250)
+
+    brewing(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds", "youkaishomecoming:ice_cube"], "createdelight:affogato_fluid", "youkaishomecoming:affogato", 250)
+    brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "youkaishomecoming:ice_cube"], "createdelight:affogato_fluid", "youkaishomecoming:affogato", 250)
+
+    brewing(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds", "createcafe:coffee_grounds"], "createdelight:con_panna_fluid", "youkaishomecoming:con_panna", 250)
+    brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds"], "createdelight:con_panna_fluid", "youkaishomecoming:con_panna", 250)
+    
+    brewing(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds", "#forge:milk/milk_bottle"], "createdelight:cappuccino_fluid", "youkaishomecoming:cappuccino", 250)
+    brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "#forge:milk/milk_bottle"], "createdelight:cappuccino_fluid", "youkaishomecoming:cappuccino", 250)
+    
+    brewing(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato", 250)
+    brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato", 250)
+    
+    brewing(e, "minecraft:water", ["ratatouille:cocoa_powder", "createcafe:coffee_grounds", "#forge:milk/milk_bottle"], "createdelight:mocha_fluid", "youkaishomecoming:mocha", 250)
+    brewing(e, "createdelight:espresso_fluid", ["ratatouille:cocoa_powder", "#forge:milk/milk_bottle"], "createdelight:mocha_fluid", "youkaishomecoming:mocha", 250)
+    
 })

@@ -1,22 +1,24 @@
 /**
  * @param { Internal.RecipesEventJS_ } event 
- * @param { InputItem_ } base 
+ * @param { Internal.FluidStackJS_ } base 
  * @param { InputItem_[] } inputs 
- * @param { OutputItem_ } fluid 
+ * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
+ * @param {number} [amount]
  */
-function brewing(event, base, inputs, fluid, output) {
+function brewing(event, base, inputs, fluid, output, amount) {
+    amount = amount || 1000
     let brewing_receipe = {
         "type": "farmersrespite:brewing",
         "base": {
-            "count": 1000,
+            "count": amount,
             "fluid": base
         },
         "cookingtime": 2400,
         "experience": 0.35,
         "ingredients": [],
         "result": {
-            "count": 1000,
+            "count": amount,
             "fluid": fluid
         }
     }
