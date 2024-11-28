@@ -82,7 +82,8 @@ ServerEvents.tags("item", e => {
         'butchercraft:pork_scraps',
         'butchercraft:ground_pork',
         'butchercraft:cubed_pork',
-        'butchercraft:pork_stewmeat'
+        'butchercraft:pork_stewmeat',
+        'farmersdelight:bacon'
     ])
     e.add("forge:meat/processed/raw/chicken", [
         'farmersdelight:chicken_cuts',

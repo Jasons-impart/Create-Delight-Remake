@@ -154,4 +154,20 @@ ServerEvents.recipes(e => {
     create.filling("youkaishomecoming:mocha", ["youkaishomecoming:latte", Fluid.of("create:chocolate", 250)])
     .id("youkaishomecoming:filling/mocha")
 
+    let coffee_list = [
+        'espresso', 
+        'americano', 
+        'ristretto', 
+        'latte', 
+        'affogato', 
+        'con_panna', 
+        'cappuccino', 
+        'macchiato', 
+        'mocha']
+        coffee_list.forEach(coffee => {
+        create.filling(`youkaishomecoming:${coffee}`, ["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)])
+        .id(`youkaishomecoming:filling/${coffee}_from_fluid`)
+        create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)], `youkaishomecoming:${coffee}`)
+        .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
+    })
 })

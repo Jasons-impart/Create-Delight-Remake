@@ -1,17 +1,17 @@
 ServerEvents.recipes(e => {
     const {create, vintageimprovements} = e.recipes
     e.remove({mod: "create_mechanical_spawner", type: "create:mixing"})
-    vintageimprovements.vacuumizing('createdelight:inferior_genetic_seed', [
-        Fluid.of("netherexp:ectoplasm", 200),
-        Fluid.of("create:potion", 50, {Potion: "minecraft:healing"})
-    ])
-    .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed")
+    // vintageimprovements.vacuumizing('createdelight:inferior_genetic_seed', [
+    //     Fluid.of("netherexp:ectoplasm", 200),
+    //     Fluid.of("create:potion", 50, {Potion: "minecraft:healing"})
+    // ])
+    // .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed")
     let inferior_genetic_seed_input = []
     for (let index = 0; index < 8; index++) {
         inferior_genetic_seed_input.push("createaddition:biomass")
     }
     inferior_genetic_seed_input.push("ae2:quantum_entangled_singularity")
-    vintageimprovements.vacuumizing('16x createdelight:inferior_genetic_seed', inferior_genetic_seed_input)
+    vintageimprovements.vacuumizing('16x createdelight:inferior_genetic_seed', inferior_genetic_seed_input.concat(Fluid.of("netherexp:ectoplasm", 250)))
     .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed_2")
     
     create.emptying([

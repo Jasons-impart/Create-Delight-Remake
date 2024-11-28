@@ -360,7 +360,25 @@
     "item.createdelight.normal_genetic_seed": "普通的基因种子",
     "item.createdelight.refined_genetic_seed": "精炼的基因种子",
     "item.createdelight.pure_genetic_seed": "纯粹的基因种子",
-    "item.createdelight.flawless_genetic_seed": "完美的基因种子"
+    "item.createdelight.flawless_genetic_seed": "完美的基因种子",
 
 
+    "fluid.createdelight.espresso_fluid": "意式浓缩",
+    "block.createdelight.espresso_fluid": "意式浓缩",
+    "fluid.createdelight.americano_fluid": "美式",
+    "block.createdelight.americano_fluid": "美式",
+    "fluid.createdelight.ristretto_fluid": "芮斯崔朵",
+    "block.createdelight.ristretto_fluid": "芮斯崔朵",
+    "fluid.createdelight.latte_fluid": "拿铁",
+    "block.createdelight.latte_fluid": "拿铁",
+    "fluid.createdelight.affogato_fluid": "阿芙佳朵",
+    "block.createdelight.affogato_fluid": "阿芙佳朵",
+    "fluid.createdelight.con_panna_fluid": "康宝蓝",
+    "block.createdelight.con_panna_fluid": "康宝蓝",
+    "fluid.createdelight.cappuccino_fluid": "卡布奇诺",
+    "block.createdelight.cappuccino_fluid": "卡布奇诺",
+    "fluid.createdelight.macchiato_fluid": "玛奇朵",
+    "block.createdelight.macchiato_fluid": "玛奇朵",
+    "fluid.createdelight.mocha_fluid": "摩卡",
+    "block.createdelight.mocha_fluid": "摩卡"
 }

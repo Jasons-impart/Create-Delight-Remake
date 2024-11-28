@@ -1,0 +1,14 @@
+
+#Eatable settings
+[eatable]
+	#List of items
+	#Depending on the mode only these items will be made eatable (WHITELIST) or these items will keep their vanilla behaviour (BLACKLIST)
+	#If an item is not affected according to the rules above they will keep their vanilla behaviour
+	item_list = ["vintagedelight:apple_sauce_mason_jar", "vintagedelight:gearo_berry_mason_jar", "vintagedelight:sweet_berry_mason_jar", "vintagedelight:glow_berry_mason_jar", "vintagedelight:pepper_jam_mason_jar", "vintagedelight:relish_mason_jar", "vintagedelight:nut_mash_mason_jar"]
+	#List of items
+	#These items will be made uneatable while full (Overrides vanilla behaviour)
+	uneatable_list = []
+	#Mode as explained in other settings
+	#Allowed Values: BLACKLIST, WHITELIST
+	mode = "BLACKLIST"
+
