@@ -5,6 +5,12 @@ StartupEvents.modifyCreativeTab("create:base", e => {
     "create:honey_bucket"
   ])
 })
+// 创意传动
+StartupEvents.modifyCreativeTab("create_connected:main", e => {
+  e.add([
+    'create_connected:fan_freezing_catalyst'
+  ])
+})
 // 机械动力：矿石开掘
 StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e => {
   e.add([

@@ -1410,6 +1410,11 @@
 					item: "create_connected:fan_haunting_catalyst"
 					type: "item"
 				}
+				{
+					id: "7CBFD2B1B860ED9F"
+					item: "create_connected:fan_freezing_catalyst"
+					type: "item"
+				}
 			]
 			title: "鼓风机触媒们"
 			x: -2.0d
