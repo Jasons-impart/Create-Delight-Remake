@@ -20,13 +20,14 @@ LootJS.modifiers(e => {
     }
 
     addDifficultyLoot("minecraft:zombie", 100, "minecraft:iron_ingot", 0.5)
-    addDifficultyLoot("iceandfire:cockatrice", 100, "iceandfire:cockatrice_eye", 0.5)
+    addDifficultyLoot("minecraft:wither_skeleton", 100, "art_of_forging:fragment_of_eden", 0.1)
+    addDifficultyLoot("minecraft:wither", 100, "art_of_forging:sigil_of_eden", 0.25)
 
+    addDifficultyLoot("iceandfire:cockatrice", 100, "iceandfire:cockatrice_eye", 0.5)
     addDifficultyLoot("iceandfire:dread_lich", 150, "iceandfire:dragonsteel_ice_ingot", 0.1)
     addDifficultyLoot("iceandfire:dread_knight", 150, "iceandfire:dragonsteel_ice_ingot", 0.1)
     addDifficultyLoot("iceandfire:dread_thrall", 150, "iceandfire:dragonsteel_ice_ingot", 0.05)
     addDifficultyLoot("iceandfire:dread_ghoul", 150, "iceandfire:dragonsteel_ice_ingot", 0.05)
-
 
     difficultyLootList.forEach((value) => {
         e.addEntityLootModifier(value[0])
