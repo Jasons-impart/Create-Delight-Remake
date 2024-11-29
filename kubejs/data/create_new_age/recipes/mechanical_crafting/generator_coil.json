@@ -18,7 +18,7 @@
       "item": "create:shaft"
     },
     "w": {
-      "item": "create_new_age:copper_wire"
+      "item": "createaddition:copper_spool"
     }
   },
   "pattern": [

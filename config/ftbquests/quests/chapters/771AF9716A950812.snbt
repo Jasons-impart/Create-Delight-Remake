@@ -240,7 +240,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, mi_xiao_bao, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, JnamerZ, SSWTLZZ, JIAFALSEDREAM"]
+			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"

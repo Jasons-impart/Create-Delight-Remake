@@ -2,7 +2,14 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create_new_age:reactor/reactor_casing",
         "create_new_age:advanced_motor_extension",
-        "create_new_age:shaped/fluxuated_magnetite"
+        "create_new_age:shaped/fluxuated_magnetite",
+        "create_new_age:shaped/connector",
+        "create_new_age:cutting/copper_sheet",
+        "create_new_age:cutting/overcharged_iron_sheet",
+        "create_new_age:cutting/overcharged_golden_sheet",
+        "create_new_age:diamond_wire",
+        "create_new_age:pressing/blank_circuit",
+        "create_new_age:deploying/copper_circuit"
     ])
     
     // 充能和激发互相适配
