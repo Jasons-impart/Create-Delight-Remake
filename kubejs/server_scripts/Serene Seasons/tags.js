@@ -12,7 +12,8 @@ ServerEvents.tags("item", e => {
         "vinery:savanna_grape_seeds_white",
         "neapolitan:mint_sprout",
         "neapolitan:strawberry_pips",
-        "neapolitan:vanilla_pods"
+        "neapolitan:vanilla_pods",
+        "createdelight:adzuki_beans_seed"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_seeds",
@@ -59,7 +60,8 @@ ServerEvents.tags("item", e => {
         "neapolitan:banana_frond",
         "neapolitan:mint_sprout",
         "neapolitan:strawberry_pips",
-        "neapolitan:vanilla_pods"
+        "neapolitan:vanilla_pods",
+        "createdelight:adzuki_beans_seed"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_seeds",
