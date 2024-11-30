@@ -29,9 +29,14 @@ ServerEvents.recipes(e => {
     ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder_large")
     // 动力锯切割：平滑玫瑰石英
     e.recipes.create.cutting(
-        ["create:polished_rose_quartz", Item.of("create:polished_rose_quartz").withChance(0.1)],
+        "create:polished_rose_quartz",
         "create:rose_quartz"
-    ).id("create.kjs:polished_rose_quartz")
+    ).id("create:cutting/polished_rose_quartz")
+    // 动力锯切割：磨制紫水晶
+    e.recipes.create.cutting(
+        'createutilities:polished_amethyst',
+        'minecraft:amethyst_shard'
+    ).id("create:cutting/polished_amethyst")
     e.recipes.kubejs.shapeless(
         "create:weighted_ejector",
         [

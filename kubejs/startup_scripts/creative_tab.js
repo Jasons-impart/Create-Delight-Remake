@@ -11,6 +11,62 @@ StartupEvents.modifyCreativeTab("create_connected:main", e => {
     'create_connected:fan_freezing_catalyst'
   ])
 })
+// 货币系统
+StartupEvents.modifyCreativeTab("lightmanscurrency:machines", e => {
+  e.remove([
+    'lightmanscurrency:coinmint',
+  ])
+})
+StartupEvents.modifyCreativeTab("lightmanscurrency:coins", e => {
+  e.remove([
+    'lightmanscurrency:coin_copper',
+    'lightmanscurrency:coin_iron',
+    'lightmanscurrency:coin_gold',
+    'lightmanscurrency:coin_emerald',
+    'lightmanscurrency:coin_diamond',
+    'lightmanscurrency:coin_netherite',
+    "lightmanscurrency:coinpile_copper",
+    "lightmanscurrency:coinpile_iron",
+    "lightmanscurrency:coinpile_gold",
+    "lightmanscurrency:coinpile_emerald",
+    "lightmanscurrency:coinpile_diamond",
+    "lightmanscurrency:coinpile_netherite",
+    'lightmanscurrency:coinblock_copper',
+    'lightmanscurrency:coinblock_iron',
+    'lightmanscurrency:coinblock_gold',
+    'lightmanscurrency:coinblock_emerald',
+    'lightmanscurrency:coinblock_diamond',
+    'lightmanscurrency:coinblock_netherite',
+  ])
+})
+StartupEvents.modifyCreativeTab("createdeco:props_tab", e => {
+  e.remove([
+    'createdeco:iron_coin',
+    'createdeco:copper_coin',
+    'createdeco:industrial_iron_coin',
+    'createdeco:zinc_coin',
+    'createdeco:gold_coin',
+    'createdeco:netherite_coin',
+    'createdeco:brass_coin',
+    'createdeco:iron_coinstack',
+    'createdeco:copper_coinstack',
+    'createdeco:industrial_iron_coinstack',
+    'createdeco:zinc_coinstack',
+    'createdeco:gold_coinstack',
+    'createdeco:netherite_coinstack',
+    'createdeco:brass_coinstack',
+    'createdeco:andesite_sheet',
+    'createdeco:zinc_sheet',
+    'createdeco:netherite_sheet',
+    'createdeco:netherite_nugget',
+    "createdeco:andesite_hull",
+    'createdeco:brass_hull',
+    'createdeco:iron_hull',
+    'createdeco:copper_hull',
+    'createdeco:industrial_iron_hull',
+    'createdeco:zinc_hull'
+  ])
+})
 // 机械动力：矿石开掘
 StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e => {
   e.add([
@@ -35,13 +91,13 @@ StartupEvents.modifyCreativeTab("protection_pixel:pp", e => {
   ])
 })
 // tetra
-StartupEvents.modifyCreativeTab("tetra:tetra", e => {
+StartupEvents.modifyCreativeTab("tetra:default", e => {
   e.add([
     custom_scroll([1, 1, 4, 5],1,"bow/stave/remembrance_stave",1,["tetra:bow/stave/remembrance_stave"],"c10000"),
   ])
 })
 // epp
-StartupEvents.modifyCreativeTab("expatternprovider:epp", e => {
+StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
   e.add([
     Item.of("expatternprovider:infinity_cell",'{record:{"#c":"ae2:f",id:"minecraft:lava"}}'),
   ])

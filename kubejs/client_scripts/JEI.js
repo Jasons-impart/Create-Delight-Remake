@@ -22,8 +22,6 @@ JEIEvents.hideItems((e) => {
     "ad_astra:iron_rod",
     "ad_astra:steel_ingot",
     "create_enchantment_industry:experience_rotor",
-    "vinery:cherry_boat",
-    "vinery:cherry_chest_boat",
     "create_sa:block_picker",
     "refinedstorage:wrench",
     "refinedstorage:raw_basic_processor",
@@ -57,8 +55,6 @@ JEIEvents.hideItems((e) => {
 
 JEIEvents.addItems((e) => {
   e.add([
-    "create:crushed_raw_tin",
-    "create:honey_bucket",
     "create_connected:fan_freezing_catalyst"
   ]);
 });

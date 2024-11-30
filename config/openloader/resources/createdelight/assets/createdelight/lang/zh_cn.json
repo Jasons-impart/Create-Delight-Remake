@@ -382,5 +382,26 @@
     "fluid.createdelight.macchiato_fluid": "玛奇雅朵",
     "block.createdelight.macchiato_fluid": "玛奇雅朵",
     "fluid.createdelight.mocha_fluid": "摩卡",
-    "block.createdelight.mocha_fluid": "摩卡"
+    "block.createdelight.mocha_fluid": "摩卡",
+
+    "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
+    "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
+    "tooltip.createdelight.frozen_block": "§7可§b冷却§7周围§b一格以内§7的物品",
+    "tooltip.createdelight.mechanical_demolder": "§7使用时类似§b辊压机§r§7，但是会将模具存储在§b机器内部",
+    "tooltip.createdelight.distillation_controller": "§b每个§7储罐都需要一个",
+    "tooltip.createdelight.wolframite_ore": "§7常见于§b地狱30-36层",
+    "tooltip.createdelight.belt_grinder": "§bRPM≤16§7为低转速，§b16≤RPM≤64§7为中转速，§bRPM≥64为§7高转速",
+    "tooltip.createdelight.emergency_industrial_platform": "§7放入§b泥土§7以显示§b平台范围§7，放入§b石头§7以§b产生平台",
+    "tooltip.createdelight.shards_of_malice": "§7源自于§b凋灵骷髅§7的恶意的结晶",
+    "tooltip.createdelight.fragment_of_eden": "§b凋零§7的心脏碎片",
+    "tooltip.createdelight.dragon_soul": "§b末地君主§7的灵魂碎片",
+    "tooltip.createdelight.soul_ember": "§7灵魂沙峡谷中§b烈焰人§7的眼泪",
+    "tooltip.createdelight.nano_insectoid": "§7源自§b远古§7的科技，能够分解生物死后的尸体从而产生§b全新的物质",
+    "tooltip.createdelight.devils_soul_gem": "§7使用带有§b纳米融合§7词条的武器击杀§b凋零",
+    "tooltip.createdelight.eerie_shard": "§7使用带有§b纳米融合§7词条的武器击杀§b监守者",
+    "tooltip.createdelight.heart_of_ender": "§7使用带有§b纳米融合§7词条的武器击杀§b末影人",
+    "tooltip.createdelight.potent_mixture": "§7使用带有§b纳米融合§7词条的武器击杀§b苦力怕",
+    "tooltip.createdelight.block_of_azure_neodymium": "§7磁感应强度：",
+    "tooltip.createdelight.block_of_scarlet_neodymium": "§7磁感应强度："
+
 }

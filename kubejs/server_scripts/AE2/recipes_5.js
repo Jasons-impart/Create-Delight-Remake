@@ -1,5 +1,6 @@
 ServerEvents.recipes((event) => {
-  const { kubejs, vintageimprovements, create, minecraft } = event.recipes; // 染料复制
+  const { kubejs, vintageimprovements, create, minecraft } = event.recipes; 
+  // 染料复制
   let colours = [
     "white",
     "orange",
@@ -391,19 +392,13 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "ae2:network/blocks/inscribers" });
 
   // 无限熔岩盘
-  create
-    .sequenced_assembly(
-      Item.of(
-        "expatternprovider:infinity_cell",
-        '{display:{Lore:[\'{"italic":false,"color":"white","extra":[{"text":""},{"text":"手持 "},{"color":"blue","text":"1k ME存储组件"},{"text":" 对装有大于1万桶熔岩的1x1流体抽屉蹲下右键获取"}],"text":""}\']},record:{"#c":"ae2:f",id:"minecraft:lava"}}'
-      ),
+  let iner = "createdelight:incomplete_infinity_cell"
+  create.sequenced_assembly(
+      Item.of("expatternprovider:infinity_cell",'{record:{"#c":"ae2:f",id:"minecraft:lava"}}'),
       "ae2:cell_component_1k",
-      create.filling(Item.of("createdelight:incomplete_infinity_cell"), [
-        "createdelight:incomplete_infinity_cell",
-        Fluid.of("minecraft:lava", 1000),
-      ])
+      create.filling(iner, [iner, Fluid.of("minecraft:lava", 1000)])
     )
-    .loops(10000)
-    .transitionalItem("createdelight:incomplete_infinity_cell")
-    .id("createdelight:infinity_cell_lava");
+      .loops(512)
+      .transitionalItem(iner)
+      .id("createdelight:infinity_cell_lava");
 });
