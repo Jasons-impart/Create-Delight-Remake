@@ -32,8 +32,9 @@
     },
     "outcomes": [
         {
+            "experienceCost": 30,
             "requiredTools": {
-                "hammer_dig": "minecraft:iron"
+                "hammer_dig": 9
             },
             "improvements": {
                 "sword/murasama_imprv": 0

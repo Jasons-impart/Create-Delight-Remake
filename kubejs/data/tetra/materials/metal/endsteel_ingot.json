@@ -27,6 +27,6 @@
         "items": [ "art_of_forging:endsteel_ingot" ]
     },
     "requiredTools": {
-        "hammer_dig": "minecraft:netherite"
+        "hammer_dig": 9
     }
 }

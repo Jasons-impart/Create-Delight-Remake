@@ -1,7 +1,8 @@
 {
     "replace": true,
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
     "hone": true,
     "rarity": "hone",
     "displayType": "major",
@@ -36,8 +37,13 @@
     },
     "outcomes": [
         {
+            "material": {
+                "items":[ "alexsmobs:shark_tooth" ,"iceandfire:troll_tusk","iceandfire:hydra_fang","iceandfire:sea_serpent_fang","alexsmobs:bone_serpent_tooth"],
+                "count": 1
+            },
+            "experienceCost": 10,
             "requiredTools": {
-                "hammer_dig": "minecraft:gold"
+                "hammer_dig": 9
             },
             "improvements": {
                 "blade/esoteric_tier": 1

@@ -1,7 +1,7 @@
 {
     "replace": true,
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "hone": true,
     "rarity": "hone",
     "displayType": "major",
@@ -36,8 +36,13 @@
     },
     "outcomes": [
         {
+            "material": {
+                "items":[ "iceandfire:cyclops_eye"],
+                "count": 1
+            },
+            "experienceCost": 10,
             "requiredTools": {
-                "hammer_dig": "minecraft:gold"
+                "hammer_dig": 9
             },
             "improvements": {
                 "blade/goliath_tier": 1

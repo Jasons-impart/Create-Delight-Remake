@@ -1,4 +1,5 @@
 {   
+    "replace":"true",
     "key": "dragonsteel_fire_ingot",
     "category": "metal",
     "primary": 10,
@@ -8,7 +9,7 @@
     "integrityCost": 2,
     "integrityGain": 8,
     "magicCapacity": 120,
-    "toolLevel": "minecraft:netherite",
+    "toolLevel": 7,
     "toolEfficiency": 11,
     "tints": {
       "glyph": "910d13",
@@ -16,5 +17,7 @@
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_fire_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:netherite" }
+    "requiredTools": { 
+        "hammer_dig": 7
+     }
   }

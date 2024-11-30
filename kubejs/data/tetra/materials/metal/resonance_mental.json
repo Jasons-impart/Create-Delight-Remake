@@ -26,6 +26,6 @@
         "items": [ "alexscaves:scarlet_neodymium_ingot" ]
     },
     "requiredTools": {
-        "hammer_dig": "minecraft:netherite"
+        "hammer_dig": 8
     }
 }

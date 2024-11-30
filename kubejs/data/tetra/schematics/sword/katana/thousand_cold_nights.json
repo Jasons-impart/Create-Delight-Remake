@@ -2,7 +2,7 @@
     "replace": true,
     "localizationKey": "katana/thousand_cold_nights",
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
@@ -32,8 +32,9 @@
     },
     "outcomes": [
         {
+            "experienceCost": 30,
             "requiredTools": {
-                "hammer_dig": "minecraft:diamond"
+                "hammer_dig": 9
             },
             "improvements": {
                 "sword/thousand_cold_nights_imprv": 0

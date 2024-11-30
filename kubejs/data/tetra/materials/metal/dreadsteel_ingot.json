@@ -16,5 +16,5 @@
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "dreadsteel:dreadsteel_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:netherite" }
+    "requiredTools": { "hammer_dig": 8 }
   }

@@ -26,7 +26,7 @@
             },
             "experienceCost": 30,
             "requiredTools": {
-                "hammer_dig": "minecraft:gold"
+                "hammer_dig": 9
             },
             "moduleKey": "sword/evernight_dagger",
             "moduleVariant": "evernight_dagger/evernight_dagger"

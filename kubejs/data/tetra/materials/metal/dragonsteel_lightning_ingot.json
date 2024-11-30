@@ -19,5 +19,5 @@
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_lightning_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:netherite" }
+    "requiredTools": { "hammer_dig": 7 }
   }

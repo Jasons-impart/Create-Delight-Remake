@@ -26,6 +26,6 @@
         "items": [ "art_of_forging:forged_steel_ingot" ]
     },
     "requiredTools": {
-        "hammer_dig": "minecraft:netherite"
+        "hammer_dig": 7
     }
 }
