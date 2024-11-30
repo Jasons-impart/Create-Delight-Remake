@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
-    const {create, vintageimprovements} = e.recipes
-    create.cutting("2x minecraft:leather", "createdelight:unfinished_leather").id("createdelight:pressing/leather")
+    const {create, vintageimprovements, createdelightcore} = e.recipes
+    createdelightcore.fan_freezing("minecraft:leather", "createdelight:unfinished_leather")
+    .id("createdelight:fan_freezing/unfinished_leather")
     vintageimprovements.pressurizing("createdelight:unfinished_leather", [Fluid.of("createdelight:slime", 45), "#createdelight:leather_ingredient"])
     .heated()
     .id("createdelight:pressurizing/unfinished_leather")

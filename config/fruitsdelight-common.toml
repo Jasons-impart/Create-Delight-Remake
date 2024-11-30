@@ -6,7 +6,7 @@ fruitsGrowChance = 0.3
 fruitsDropChance = 0.2
 #Chance for flower to decay when fruits are picked up / dropped
 #Range: 0.0 ~ 1.0
-flowerDecayChance = 0.3
+flowerDecayChance = 0.0
 #Effect application range for Rage Aura effect
 #Range: 0 ~ 64
 rageEffectRange = 24
