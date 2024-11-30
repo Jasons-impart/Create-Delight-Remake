@@ -8,7 +8,6 @@
 
 - kjs 那堆 warning 啥情况，有人处理一下吗
 - 调整机械动力矿物开掘的矿脉生成，矿簇处理
-- 鼓风机加工类型添加？
 - 关于链接纹理的研究？
 - 刷怪液的获取
 - 加入更多中菜（寻找 mod，添加自定义食物等）？
@@ -21,6 +20,7 @@
 - 战利品宝箱的修改
 - [mod非致命问题] vintagedelight-0.1.6的CustomPotionBrewing.class内有bug导致mod增加的炼药效果不生效
 - [mod非致命问题] iceandfire-2.1.13-1.20.1-beta-5的client\render\entity\layer\LayerDragonEyes.class加载材质失败
+
 ### 认领-假发
 
 - AE 思索
@@ -32,6 +32,7 @@
 - 荧石再生
 - mbd应力产出
 - mbd多方块并行机器（甚至到现在我mbd都没看过几眼）
+- 维度撕裂者改改效果
 
 ### 认领-xxy
 
