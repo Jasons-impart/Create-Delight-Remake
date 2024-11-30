@@ -1,26 +1,31 @@
 StartupEvents.registry("block", e => {
-    e.create("createdelight:garlic", "crop")
-        .translationKey("block.createdelight.garlic")
+    e.create("createdelight:adzuki_beans", "crop")
+        .translationKey("block.createdelight.adzuki_beans")
         .renderType("cutout")
-        .age(3, builder => {
-            builder
-                .shape(0, 0, 0, 0, 16, 2, 16)
-                .shape(1, 0, 0, 0, 16, 4, 16)
-                .shape(2, 0, 0, 0, 16, 8, 16)
-                .shape(3, 0, 0, 0, 16, 16, 16)
+        .age(6, age => {
+            age.shape(0, 0, 0, 0, 16, 2, 16)
+            age.shape(1, 0, 0, 0, 16, 4, 16)
+            age.shape(2, 0, 0, 0, 16, 8, 16)
+            age.shape(3, 0, 0, 0, 16, 12, 16)
+            age.shape(4, 0, 0, 0, 16, 12, 16)
+            age.shape(5, 0, 0, 0, 16, 16, 16)
+            age.shape(6, 0, 0, 0, 16, 16, 16)
         })
-        .growTick(tickevent => 25)
-        .bonemeal(info => 1)
+        .growTick((tickevent) => 25)
+        .bonemeal(info => {
+            return 1
+        })
         .dropSeed(true)
-        .crop("festival_delicacies:garlic", 1)
-        .crop("festival_delicacies:garlic", 0.5)
-        .texture(0, "minecraft:block/wheat_stage0")
-        .texture(1, "minecraft:block/wheat_stage2")
-        .texture(2, "minecraft:block/wheat_stage5")
-        .texture(3, "minecraft:block/wheat_stage7")
-        .item((seeditem) => {
-            seeditem
-                .texture("minecraft:item/wheat_seeds")
-                .translationKey("item.createdelight.garlic_seed")
+        .crop("createdelight:adzuki_beans_seed", 1)
+        .texture(0, "neapolitan:block/flowering_adzuki_sprouts_stage0")
+        .texture(1, "neapolitan:block/flowering_adzuki_sprouts_stage1")
+        .texture(2, "neapolitan:block/flowering_adzuki_sprouts_stage2")
+        .texture(3, "neapolitan:block/flowering_adzuki_sprouts_stage3")
+        .texture(4, "neapolitan:block/flowering_adzuki_sprouts_stage4")
+        .texture(5, "neapolitan:block/flowering_adzuki_sprouts_stage5")
+        .texture(6, "neapolitan:block/flowering_adzuki_sprouts_stage6")
+        .item(seed => {
+            seed.texture("neapolitan:item/adzuki_beans")
+            seed.translationKey("item.createdelight.adzuki_beans_seed")
         })
 })
