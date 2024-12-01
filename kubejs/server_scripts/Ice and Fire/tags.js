@@ -11,3 +11,7 @@ ServerEvents.tags("item", e => {
         'iceandfire:ice_dragon_flesh', 
         'iceandfire:lightning_dragon_flesh'])
 })
+
+ServerEvents.tags("block", e => {
+    e.add("minecraft:logs", "iceandfire:dreadwood_log")
+})
