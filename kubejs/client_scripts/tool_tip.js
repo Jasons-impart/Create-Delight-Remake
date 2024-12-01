@@ -1,11 +1,11 @@
-ItemEvents.tooltip((event) => {
+ItemEvents.tooltip(e => {
     /**
      * @param { Internal.ItemStack_[] } items
      */
     function addShiftTooltip(items) {
         items.forEach(item => {
-            event.addAdvanced(item, (item, advanced, text) => {
-                if (!event.shift) {
+            e.addAdvanced(item, (item, advanced, text) => {
+                if (!e.shift) {
                     text.add(1, Text.translatable("tooltip.createdelight.hold_shift_to_see_more_info"))
                 } else {
                     text.add(1, Text.translatable("tooltip.createdelight.hold_shift"))
@@ -29,7 +29,8 @@ ItemEvents.tooltip((event) => {
         "art_of_forging:fragment_of_eden",
         "art_of_forging:dragon_soul",
         "art_of_forging:soul_ember",
-        "art_of_forging:nano_insectoid"
+        "art_of_forging:nano_insectoid",
+        
     ])
 })
 let tooltips = [
@@ -71,7 +72,7 @@ tooltips.forEach(([key, zh_cn, en_us]) => {
         e.add(key, en_us)
     })
 })
-// 磁铁特例
+// 磁铁
 ItemEvents.tooltip(e => {
     e.add("alexscaves:block_of_azure_neodymium", Text.translate("tooltip.createdelight.block_of_azure_neodymium"))
     e.add("alexscaves:block_of_scarlet_neodymium", Text.translate("tooltip.createdelight.block_of_scarlet_neodymium"))
