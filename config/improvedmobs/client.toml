@@ -4,10 +4,10 @@
 	#Range: > 0
 	"Gui X" = 5
 	#Range: > 0
-	"Gui Y" = 10
+	"Gui Y" = 20
 	#Textformatting codes for the display of the difficulty
 	#Allowed Values: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE, GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW, WHITE, OBFUSCATED, BOLD, STRIKETHROUGH, UNDERLINE, ITALIC, RESET
-	"Difficulty color" = "AQUA"
+	"Difficulty color" = "DARK_PURPLE"
 	#Scaling of the difficulty text
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Text Scale" = 1.0
@@ -15,5 +15,5 @@
 	"Show Difficulty" = false
 	#Relative location of the difficulty text in regards to the screen.
 	#Allowed Values: TOPRIGHT, TOPLEFT, BOTTOMRIGHT, BOTTOMLEFT
-	"Difficulty location" = "TOPLEFT"
+	"Difficulty location" = "TOPRIGHT"
 
