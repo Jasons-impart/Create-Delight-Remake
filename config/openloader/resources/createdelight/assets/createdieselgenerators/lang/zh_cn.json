@@ -23,7 +23,7 @@
   "createdieselgenerators.chemical_sprayer_lighter.tooltip.behaviour1": "用其 _储罐_ 中的 _液体_ 开始 _喷洒_。尝试 _点燃_ 该 _液体_。",
   "createdieselgenerators.oil_scanner.tooltip.condition1": "当右键点击时。",
   "createdieselgenerators.oil_scanner.tooltip.behaviour1": "开始 _扫描_ _原油储藏_。",
-  "createdieselgenerators.oil_barrel.tooltip.summary": "为您储存 _液体_。可以水平和垂直放置。",
+  "createdieselgenerators.oil_barrel.tooltip.summary": "为您储存 _液体_。可以水平和垂直放置。可以防止燃料_爆炸_",
   "createdieselgenerators.oil_barrel.tooltip.condition1": "当用染料右键点击时。",
   "createdieselgenerators.oil_barrel.tooltip.behaviour1": "_染色_ 该方块。",
 
