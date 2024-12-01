@@ -12,7 +12,7 @@
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Text Scale" = 1.0
 	#Show the the difficulty text
-	"Show Difficulty" = true
+	"Show Difficulty" = false
 	#Relative location of the difficulty text in regards to the screen.
 	#Allowed Values: TOPRIGHT, TOPLEFT, BOTTOMRIGHT, BOTTOMLEFT
 	"Difficulty location" = "TOPRIGHT"
