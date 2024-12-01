@@ -1,5 +1,19 @@
 ServerEvents.recipes(e => {
-
+    remove_recipes_id(e, [
+        "create_sa:blazing_pickaxe_recipe",
+        "create_sa:blazing_shovel_recipe",
+        "create_sa:blazing_axe_recipe",
+        "create_sa:blazing_sword_recipe",
+        "create_sa:vault_recipe"
+    ])
+    remove_recipes_output(e, [
+        "create_sa:copper_magnet",
+        "create_sa:brass_cube",
+        "create_sa:drone_controller",
+        "create_sa:fan_component",
+        "create_sa:vault_component",
+        "create_sa:brass_drone_item",
+    ])
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly(
         [
