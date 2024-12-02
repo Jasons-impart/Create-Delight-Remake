@@ -24,7 +24,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:emptying/blood_bottle_emptying",
         'youkaishomecoming:mandrake_root_cutting',
         'youkaishomecoming:raw_lamprey_cutting',
-        "youkaishomecoming:red_velvet_cake_slice"
+        "youkaishomecoming:red_velvet_cake_slice",
+        "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting"
     ])
     remove_recipes_type(e, ["youkaishomecoming:moka_pot"]);
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
@@ -38,6 +39,15 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
     e.replaceInput({}, "youkaishomecoming:roe", "oceanic_delight:salmon_eggs")
     e.replaceInput({}, "festival_delicacies:red_bean", "youkaishomecoming:redbean")
+    e.replaceInput({id: "youkaishomecoming:apaki"}, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
+    e.replaceInput({id: "youkaishomecoming:avgolemono"}, "minecraft:glow_berries", "#forge:fruits/lemon")
+    e.replaceInput([{id: "youkaishomecoming:blazing_red_curry"}, {id: "youkaishomecoming:mapo_tofu"}], "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
+    
+
+
+    create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
+    .id("youkaishomecoming:pressing/clay_saucer")
+
     create.sequenced_assembly("youkaishomecoming:red_velvet_cake", "ratatouille:cake_base", [
         create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("butchercraft:blood_fluid")]),
         create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "youkaishomecoming:flesh"])
