@@ -424,6 +424,8 @@
     "tooltip.createdelight.shift_portable_drill": "§7这台钻机具有和§b铁镐§7一样的硬度！但它§b无法§7进行任何附魔\n它需要§b水§7和§b燃料§7才能工作，把它放在§b副手栏§7，然后丢出水桶（燃料需使用§b注液器§7或§b储罐§7添加）\n或使用§b注液器§7注入燃料或水（例如熔岩，柴油，水……）\n",
     "tooltip.createdelight.shift_flamethrower": "§7这把火焰喷射器会将烈焰人的怒火全部喷射出来！\n可以§b点燃§7任意生物，并§b熔炼§7火焰附近的物品！\n但需要§b燃料§7才能工作，把它放在§b副手栏§7，然后丢出燃料（例如熔岩桶、煤炭、木材……）\n或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）\n\n§b右键点击时:\n§7启动/关闭§b火焰喷射器\n",
     "tooltip.createdelight.shift_block_picker": "§7来自于§b《半条命2》§7的神奇工具，允许使用者将方块§b移动§7或§b发射§7到你想要的位置！但§b不能移动存储信息的方块§7\n需要§b水§7才能工作，把它放在§b副手栏§7，然后丢出水桶\n或使用§b注液器§7注入水\n\n§b对空气或方块右键:§7\n打开/关闭§b磁铁\n",
+    "tooltip.createdelight.shift_creative_filling_tank": "§7拥有§b无限§7的储量，且可以§b自动§7为使用§b燃料§7和§b水§7的设备加注§b燃料",
+    "tooltip.createdelight.shift_copper_magnet": "§7允许使用者在§b手持§7时§b吸引半径4格§7方块范围内的物品",
     "tooltip.createdelight.shift_small_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                   \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n",
     "tooltip.createdelight.shift_medium_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                  \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n",
     "tooltip.createdelight.shift_big_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n"

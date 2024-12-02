@@ -26,6 +26,8 @@ ItemEvents.tooltip(e => {
         'create_sa:portable_drill',
         'create_sa:flamethrower',
         'create_sa:block_picker',
+        'create_sa:creative_filling_tank',
+        'create_sa:copper_magnet',
         // 'create_sa:small_filling_tank',
         // 'create_sa:medium_filling_tank',
         // 'create_sa:big_filling_tank'
