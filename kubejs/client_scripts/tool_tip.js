@@ -1,20 +1,5 @@
 ItemEvents.tooltip(e => {
-    /**
-     * @param { Internal.ItemStack_[] } items
-     */
-    function addShiftTooltip(items) {
-        items.forEach(item => {
-            e.addAdvanced(item, (item, advanced, text) => {
-                if (!e.shift) {
-                    text.add(1, Text.translatable("tooltip.createdelight.hold_shift_to_see_more_info"))
-                } else {
-                    text.add(1, Text.translatable("tooltip.createdelight.hold_shift"))
-                    text.add(2, Text.translatable(`tooltip.createdelight.${item.getId().split(":")[1]}`))
-                }
-            })
-        })
-    }
-    addShiftTooltip([
+    clearAddShiftTooltip(e, [
         "ratatouille:frozen_block",
         "ratatouille:mechanical_demolder",
         "createdieselgenerators:distillation_controller",
@@ -30,7 +15,46 @@ ItemEvents.tooltip(e => {
         "art_of_forging:dragon_soul",
         "art_of_forging:soul_ember",
         "art_of_forging:nano_insectoid",
+        'createdelight:prospector',
+        'vintageimprovements:vacuum_chamber',
+        "vintageimprovements:vibrating_table",
+        'vintageimprovements:lathe',
+        'create_sa:brass_exoskeleton_chestplate',
+        'create_sa:andesite_exoskeleton_chestplate',
+        'create_sa:copper_exoskeleton_chestplate',
+        'create_sa:grapplin_whisk',
+        'create_sa:portable_drill',
+        'create_sa:flamethrower',
+        'create_sa:block_picker',
+        'create_sa:creative_filling_tank',
+        'create_sa:copper_magnet',
+        // 'create_sa:small_filling_tank',
+        // 'create_sa:medium_filling_tank',
+        // 'create_sa:big_filling_tank'
+    ])
+    clearAddCtrlTooltip(e, [
         
+    ])
+    clearAddShiftCtrlTooltip(e, [
+        'create_sa:brass_jetpack_chestplate',
+        'create_sa:andesite_jetpack_chestplate',
+        'create_sa:copper_jetpack_chestplate'
+    ])
+    addFuelAndWater(e, [
+        'create_sa:brass_jetpack_chestplate',
+        'create_sa:brass_exoskeleton_chestplate',
+        'create_sa:portable_drill',
+    ])
+    addFuel(e, [
+        'create_sa:andesite_jetpack_chestplate',
+        'create_sa:andesite_exoskeleton_chestplate',
+        'create_sa:grapplin_whisk',
+        'create_sa:flamethrower',
+    ])
+    addWater(e, [
+        'create_sa:copper_jetpack_chestplate',
+        'create_sa:copper_exoskeleton_chestplate',
+        'create_sa:block_picker',
     ])
 })
 let tooltips = [

@@ -22,6 +22,7 @@
 	
 	
 	"block.vintageimprovements.lathe": "车床",
+	"item.vintageimprovements.lathe": "车床",
 	"vintageimprovements.recipe.assembly.turning": "车床加工",
 	"vintageimprovements.recipe.turning": "车削",
 	"vintageimprovements.lathe.item_slot": "当前配料",
@@ -387,7 +388,7 @@
 	"item.vintageimprovements.v_shaped_curving_head.tooltip.behaviour1": "██     ██",
 
 	"block.vintageimprovements.belt_grinder": "砂带磨床",
-	"item.vintageimprovements.grinder_belt": "砂带",
+	"item.vintageimprovements.belt_grinder": "砂带",
 	"vintageimprovements.recipe.assembly.polishing": "磨床打磨",
 	"vintageimprovements.recipe.polishing": "打磨",
 
@@ -398,12 +399,14 @@
 	"vintageimprovements.recipe.coiling": "卷制",
 
 	"block.vintageimprovements.vacuum_chamber": "压缩机",
+	"item.vintageimprovements.vacuum_chamber": "压缩机",
 	"vintageimprovements.recipe.assembly.vacuumizing": "抽真空",
 	"vintageimprovements.recipe.assembly.pressurizing": "加压",
 	"vintageimprovements.recipe.vacuumizing": "真空处理",
 	"vintageimprovements.recipe.pressurizing": "加压处理",
 
 	"block.vintageimprovements.vibrating_table": "振动台",
+	"item.vintageimprovements.vibrating_table": "振动台",
 	"vintageimprovements.recipe.assembly.vibrating": "振动",
 	"vintageimprovements.recipe.vibrating": "振动处理",
 	"vintageimprovements.recipe.unpacking": "振动解包",

@@ -3123,7 +3123,7 @@
                 "max": 2
             },
             "unitWorth": 25000,
-            "weightMult": 0.3 
+            "weightMult": 0.3
         },
         "cashier_obj_ghasta_with_cream": {
             "type": "item",
@@ -3134,7 +3134,7 @@
                 "max": 2
             },
             "unitWorth": 31000,
-            "weightMult": 0.25 
+            "weightMult": 0.25
         },
         "cashier_obj_roast_stuffed_hoglin": {
             "type": "item",
@@ -3145,7 +3145,7 @@
                 "max": 2
             },
             "unitWorth": 28000,
-            "weightMult": 0.25 
+            "weightMult": 0.25
         },
         "cashier_obj_steamed_dragon_egg_block": {
             "type": "item",
@@ -3156,7 +3156,7 @@
                 "max": 2
             },
             "unitWorth": 35000,
-            "weightMult": 0.25 
+            "weightMult": 0.25
         },
         "cashier_obj_dragon_leg_with_sauce_block": {
             "type": "item",
@@ -3167,7 +3167,7 @@
                 "max": 2
             },
             "unitWorth": 40000,
-            "weightMult": 0.25 
+            "weightMult": 0.25
         },
         "cashier_obj_deluxe_burger": {
             "type": "item",
@@ -3178,7 +3178,1417 @@
                 "max": 2
             },
             "unitWorth": 38000,
-            "weightMult": 0.25 
+            "weightMult": 0.25
+        },
+        "cashier_obj_glow_squid_tentacles": {
+            "type": "item",
+            "content": "cashier_obj_glow_squid_tentacles",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 200,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_squid_tentacles": {
+            "type": "item",
+            "content": "cashier_obj_squid_tentacles",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 200,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_shrimp_slices": {
+            "type": "item",
+            "content": "cashier_obj_shrimp_slices",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 250,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_sea_pickle_slices": {
+            "type": "item",
+            "content": "cashier_obj_sea_pickle_slices",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 200,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_sea_grape_juice": {
+            "type": "item",
+            "content": "cashier_obj_sea_grape_juice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_elder_guardian_eye": {
+            "type": "item",
+            "content": "cashier_obj_elder_guardian_eye",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 500,
+            "rarity": "RARE"
+        },
+        "cashier_obj_salmon_eggs": {
+            "type": "item",
+            "content": "cashier_obj_salmon_eggs",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_ancient_fish_eggs": {
+            "type": "item",
+            "content": "cashier_obj_ancient_fish_eggs",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 450,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_sea_grape": {
+            "type": "item",
+            "content": "cashier_obj_sea_grape",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 250,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_stuffed_pufferfish": {
+            "type": "item",
+            "content": "cashier_obj_stuffed_pufferfish",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 800,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_bowl_of_paella": {
+            "type": "item",
+            "content": "cashier_obj_bowl_of_paella",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1000,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_paella_plate": {
+            "type": "item",
+            "content": "cashier_obj_paella_plate",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1200,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_squid_and_pickles": {
+            "type": "item",
+            "content": "cashier_obj_squid_and_pickles",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 950,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_shrimp_rice": {
+            "type": "item",
+            "content": "cashier_obj_shrimp_rice",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1050,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_pasta_with_eyeball": {
+            "type": "item",
+            "content": "cashier_obj_pasta_with_eyeball",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1200,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_shrimp_stew": {
+            "type": "item",
+            "content": "cashier_obj_shrimp_stew",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1300,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_fish_egg_noodle_soup": {
+            "type": "item",
+            "content": "cashier_obj_fish_egg_noodle_soup",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1500,
+            "rarity": "RARE"
+        },
+        "cashier_obj_globular_rice": {
+            "type": "item",
+            "content": "cashier_obj_globular_rice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_shrimp_roll": {
+            "type": "item",
+            "content": "cashier_obj_shrimp_roll",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1500,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_glow_squid_stew": {
+            "type": "item",
+            "content": "cashier_obj_glow_squid_stew",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1800,
+            "rarity": "RARE"
+        },
+        "cashier_obj_fish_egg_roll_slice": {
+            "type": "item",
+            "content": "cashier_obj_fish_egg_roll_slice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_fish_egg_roll": {
+            "type": "item",
+            "content": "cashier_obj_fish_egg_roll",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 1200,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_sea_pickle_roll": {
+            "type": "item",
+            "content": "cashier_obj_sea_pickle_roll",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_sea_pickle_roll_slice": {
+            "type": "item",
+            "content": "cashier_obj_sea_pickle_roll_slice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_steamed_beef": {
+            "type": "item",
+            "content": "cashier_obj_steamed_beef",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1500,
+            "rarity": "RARE"
+        },
+        "cashier_obj_takoyaki": {
+            "type": "item",
+            "content": "cashier_obj_takoyaki",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1700,
+            "rarity": "RARE"
+        },
+        "cashier_obj_shrimp_chips": {
+            "type": "item",
+            "content": "cashier_obj_shrimp_chips",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 1000,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_fried_shrimp": {
+            "type": "item",
+            "content": "cashier_obj_fried_shrimp",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 1100,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_sea_salad": {
+            "type": "item",
+            "content": "cashier_obj_sea_salad",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_caesar_salad": {
+            "type": "item",
+            "content": "cashier_obj_caesar_salad",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_potato_salad": {
+            "type": "item",
+            "content": "cashier_obj_potato_salad",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_squid_salad": {
+            "type": "item",
+            "content": "cashier_obj_squid_salad",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 900,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_seafood_skewer": {
+            "type": "item",
+            "content": "cashier_obj_seafood_skewer",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1100,
+            "rarity": "UNCOMMON"
+        },
+        "cashier_obj_caviar_toast": {
+            "type": "item",
+            "content": "cashier_obj_caviar_toast",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 1500,
+            "rarity": "RARE"
+        },
+        "cashier_obj_sponge_cake_slice": {
+            "type": "item",
+            "content": "cashier_obj_sponge_cake_slice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 1200,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_sponge_cake": {
+            "type": "item",
+            "content": "cashier_obj_sponge_cake",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 1300,
+            "rarity": "COMMON"
+        },
+        "cashier_obj_raw_lamprey": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_raw_lamprey",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_cooked_flesh": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_cooked_flesh",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 400
+        },
+        "cashier_obj_flesh": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_flesh",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 380
+        },
+        "cashier_obj_roasted_lamprey_fillet": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_roasted_lamprey_fillet",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 750
+        },
+        "cashier_obj_raw_lamprey_fillet": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_raw_lamprey_fillet",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 700
+        },
+        "cashier_obj_roasted_lamprey": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_roasted_lamprey",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 750
+        },
+        "cashier_obj_pods": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_pods",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 250
+        },
+        "cashier_obj_soybean": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_soybean",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 280
+        },
+        "cashier_obj_plate_of_stuffed_pufferfish": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_plate_of_stuffed_pufferfish",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 3000
+        },
+        "cashier_obj_bun": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_bun",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 250
+        },
+        "cashier_obj_tobiko_gunkan": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_tobiko_gunkan",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_tutu_congee": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_tutu_congee",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800
+        },
+        "cashier_obj_steamed_egg_in_bamboo": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_steamed_egg_in_bamboo",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 750
+        },
+        "cashier_obj_doughnut": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_doughnut",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_higi_chocolate": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_higi_chocolate",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950
+        },
+        "cashier_obj_higi_doughnut": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_higi_doughnut",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 900
+        },
+        "cashier_obj_fairy_candy": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_fairy_candy",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2500
+        },
+        "cashier_obj_candy_apple": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_candy_apple",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2300
+        },
+        "cashier_obj_pork_rice_ball": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_pork_rice_ball",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_oyaki": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_oyaki",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800
+        },
+        "cashier_obj_koishi_mousse": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_koishi_mousse",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2800
+        },
+        "cashier_obj_yakumo_inari": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_yakumo_inari",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2900
+        },
+        "cashier_obj_sekibankiyaki": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_sekibankiyaki",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 3100
+        },
+        "cashier_obj_senbei": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_senbei",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 250
+        },
+        "cashier_obj_onigili": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_onigili",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_yashouma_dango": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_yashouma_dango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_sakura_mochi": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_sakura_mochi",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_matcha": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_matcha",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_cooked_mandrake_root": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_cooked_mandrake_root",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 700
+        },
+        "cashier_obj_roe": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_roe",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2900
+        },
+        "cashier_obj_coffee_mochi": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_coffee_mochi",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2800
+        },
+        "cashier_obj_tsukimi_dango": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_tsukimi_dango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 3200
+        },
+        "cashier_obj_mochi": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_mochi",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_oily_bean_curd": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_oily_bean_curd",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 650
+        },
+        "cashier_obj_tofu": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_tofu",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_matcha_mochi": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_matcha_mochi",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2600
+        },
+        "cashier_obj_blazing_red_curry": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_blazing_red_curry",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_avgolemono": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_avgolemono",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_apaki": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_apaki",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 900
+        },
+        "cashier_obj_shaved_ice_over_rice": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_shaved_ice_over_rice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_assorted_dango": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_assorted_dango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_mitarashi_dango": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_mitarashi_dango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 330
+        },
+        "cashier_obj_kinako_dango": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_kinako_dango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 320
+        },
+        "cashier_obj_big_popsicle": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_big_popsicle",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_milk_popsicle": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_milk_popsicle",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 330
+        },
+        "cashier_obj_red_velvet_cake": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_red_velvet_cake",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2000
+        },
+        "cashier_obj_red_velvet_cake_slice": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_red_velvet_cake_slice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950
+        },
+        "cashier_obj_flesh_feast": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_flesh_feast",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5000
+        },
+        "cashier_obj_raw_flesh_feast": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_raw_flesh_feast",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5200
+        },
+        "cashier_obj_chest_of_heart_throbbing_surprise": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_chest_of_heart_throbbing_surprise",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 7000
+        },
+        "cashier_obj_scarlet_devil_cake": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_scarlet_devil_cake",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_flesh_chocolate_mousse": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_flesh_chocolate_mousse",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 4800
+        },
+        "cashier_obj_bowl_of_flesh_feast": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_bowl_of_flesh_feast",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5100
+        },
+        "cashier_obj_flesh_stew": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_flesh_stew",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
+        },
+        "cashier_obj_lions_head": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_lions_head",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2500
+        },
+        "cashier_obj_canned_flesh": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_canned_flesh",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5400
+        },
+        "cashier_obj_flesh_roll": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_flesh_roll",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2300
+        },
+        "cashier_obj_flesh_dumplings": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_flesh_dumplings",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_bowl_of_heart_throbbing_surprise": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_bowl_of_heart_throbbing_surprise",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 6000
+        },
+        "cashier_obj_udumbara_cake": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_udumbara_cake",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2100
+        },
+        "cashier_obj_mapo_tofu": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_mapo_tofu",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800
+        },
+        "cashier_obj_grilled_eel_over_rice": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_grilled_eel_over_rice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2100
+        },
+        "cashier_obj_tuscan_salmon": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_tuscan_salmon",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2300
+        },
+        "cashier_obj_mushroom_soup": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_mushroom_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_higan_soup": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_higan_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800
+        },
+        "cashier_obj_longevity_noodles": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_longevity_noodles",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_miso_soup": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_miso_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_seafood_miso_soup": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_seafood_miso_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_poor_god_soup": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_poor_god_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 750
+        },
+        "cashier_obj_power_soup": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_power_soup",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_shirayuki": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_shirayuki",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2500
+        },
+        "cashier_obj_sweet_ormosia_mochi_mixed_boiled": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_sweet_ormosia_mochi_mixed_boiled",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
+        },
+        "cashier_obj_tofu_burger": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_tofu_burger",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950
+        },
+        "cashier_obj_stinky_tofu": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_stinky_tofu",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_sauce_grilled_fish": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_sauce_grilled_fish",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_pastitsio": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_pastitsio",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 800
+        },
+        "cashier_obj_imitation_bear_paw": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_imitation_bear_paw",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5000
+        },
+        "cashier_obj_dried_fish": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_dried_fish",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 300
+        },
+        "cashier_obj_bamboo_mizuyokan": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_bamboo_mizuyokan",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 400
+        },
+        "cashier_obj_tarte_lune": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_tarte_lune",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_tarte_lune_slice": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_tarte_lune_slice",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 950
+        },
+        "cashier_obj_scarlet_mist": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_scarlet_mist",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
+        },
+        "cashier_obj_wind_priestesses": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_wind_priestesses",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2500
+        },
+        "cashier_obj_moon_rocket": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_moon_rocket",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 5500
+        },
+        "cashier_obj_lemon_black_tea": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_lemon_black_tea",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_peach_tapioca": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_peach_tapioca",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_peach_yatsuhashi": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_peach_yatsuhashi",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 330
+        },
+        "cashier_obj_daiginjo": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_daiginjo",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 6000
+        },
+        "cashier_obj_dassai": {
+            "type": "item",
+            "rarity": "EPIC",
+            "content": "cashier_obj_dassai",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 6200
+        },
+        "cashier_obj_full_moons_eve": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_full_moons_eve",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
+        },
+        "cashier_obj_tengu_tango": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_tengu_tango",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2300
+        },
+        "cashier_obj_sparrow_sake": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_sparrow_sake",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_mead": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_mead",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 850
+        },
+        "cashier_obj_mio": {
+            "type": "item",
+            "rarity": "UNCOMMON",
+            "content": "cashier_obj_mio",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 900
+        },
+        "cashier_obj_mocha": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_mocha",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_cappuccino": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_cappuccino",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 380
+        },
+        "cashier_obj_blood_curd": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_blood_curd",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
+        },
+        "cashier_obj_seven_colored_yokan": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_seven_colored_yokan",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2500
+        },
+        "cashier_obj_espresso": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_espresso",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 320
+        },
+        "cashier_obj_americano": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_americano",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 350
+        },
+        "cashier_obj_ristretto": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_ristretto",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 330
+        },
+        "cashier_obj_latte": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_latte",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 380
+        },
+        "cashier_obj_macchiato": {
+            "type": "item",
+            "rarity": "COMMON",
+            "content": "cashier_obj_macchiato",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 400
+        },
+        "cashier_obj_affogato": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_affogato",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2200
+        },
+        "cashier_obj_con_panna": {
+            "type": "item",
+            "rarity": "RARE",
+            "content": "cashier_obj_con_panna",
+            "amount": {
+                "min": 1,
+                "max": 10
+            },
+            "unitWorth": 2400
         }
     }
 }

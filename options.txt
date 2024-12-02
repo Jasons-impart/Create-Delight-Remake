@@ -339,7 +339,7 @@ key_key.create_sa.decrease_reach:key.keyboard.down
 key_key.screenshot_viewer.open_screenshots_screen:key.keyboard.unknown
 key_key.presencefootsteps.settings:key.keyboard.f10
 key_key.entityculling.toggle:key.keyboard.unknown
-soundCategory_master:0.10099337748344371
+soundCategory_master:0.1
 soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0
