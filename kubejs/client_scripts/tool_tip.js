@@ -28,6 +28,8 @@ ItemEvents.tooltip(e => {
         'create_sa:block_picker',
         'create_sa:creative_filling_tank',
         'create_sa:copper_magnet',
+        'create_sa:slime_helmet',
+        'create_sa:slime_boots',
         // 'create_sa:small_filling_tank',
         // 'create_sa:medium_filling_tank',
         // 'create_sa:big_filling_tank'
