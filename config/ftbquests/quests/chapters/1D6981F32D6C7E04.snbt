@@ -2175,6 +2175,7 @@
 			y: -0.5d
 		}
 		{
+			can_repeat: false
 			id: "5CA456D3407F3AFB"
 			tasks: [{
 				id: "750EAC7BE640D75A"

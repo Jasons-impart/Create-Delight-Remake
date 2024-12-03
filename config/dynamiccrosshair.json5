@@ -1,13 +1,16 @@
 {
-	"dynamicCrosshair": "Disabled",
+	"dynamicCrosshair": false,
 	"disableDebugCrosshair": false,
 	"thirdPersonCrosshair": false,
 	"hideWithScreen": true,
 	"hideWithMap": true,
+	"fixCenteredCrosshair": false,
 	"crosshairConfig": {
-		"onBlock": "IfTargeting",
+		"onBlock": true,
+		"onInteractableBlock": true,
 		"onEntity": true,
 		"holdingTool": "Always",
+		"displayCorrectTool": true,
 		"holdingMeleeWeapon": true,
 		"meleeWeaponOnEntity": false,
 		"meleeWeaponOnBreakableBlock": false,
@@ -15,121 +18,109 @@
 		"holdingThrowable": "IfInteractable",
 		"holdingShield": true,
 		"holdingBlock": "IfInteractable",
+		"holdingBlockInOffhand": true,
 		"holdingUsableItem": "IfInteractable",
 		"forceHoldingSpyglass": false
 	},
 	"color": {
-		"crosshairColor": "Unchanged",
+		"overrideColor": false,
 		"customColor": -5588020,
-		"forceColor": false
+		"enableBlend": true
 	},
 	"dynamicCrosshairStyle": true,
 	"crosshairStyle": {
 		"regular": {
-			"style": "Cross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"onBlock": {
-			"style": "Cross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"onEntity": {
-			"style": "DiagonalCross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open-diagonal.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"holdingTool": {
-			"style": "Square",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/square.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"holdingMeleeWeapon": {
-			"style": "Cross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"holdingRangedWeapon": {
-			"style": "DiagonalCross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open-diagonal.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"holdingThrowable": {
-			"style": "Circle",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/circle.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"holdingBlock": {
-			"style": "Diamond",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/diamond-large.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
+		},
+		"interact": {
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/brackets.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
+		},
+		"useItem": {
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/brackets-round.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
+		},
+		"shield": {
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/brackets-bottom.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		}
 	},
 	"crosshairModifiers": {
-		"modInteractable": {
-			"style": "Brackets",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
-		},
-		"modUsableItem": {
-			"style": "RoundBrackets",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
-		},
-		"modShield": {
-			"style": "BracketsBottom",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
-		},
 		"modCorrectTool": {
-			"style": "Dot",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/dot.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		},
 		"modIncorrectTool": {
-			"style": "DiagonalCross",
-			"color": {
-				"crosshairColor": "Unchanged",
-				"customColor": -5588020,
-				"forceColor": false
-			}
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open-diagonal.png",
+			"overrideColor": false,
+			"customColor": -5588020,
+			"enableBlend": true,
+			"coalesce": true
 		}
 	},
 	"enableTweaks": true,

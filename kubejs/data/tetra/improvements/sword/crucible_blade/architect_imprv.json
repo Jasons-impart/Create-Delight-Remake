@@ -4,7 +4,6 @@
         "key": "sword/architect_imprv",
         "integrity": -2,
         "effects": {
-            "art_of_forging:esoteric_edge": 0,
             "truesweep": 1,
             "sweeping": 1,
             "severing": [ 50, 4 ],

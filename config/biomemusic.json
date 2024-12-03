@@ -1,0 +1,34 @@
+{
+  "delayModifier": {
+    "desc:": "Modifies the delay between songs, lower = shorter delay (1.0 = vanilla). Default = 0.25",
+    "delayModifier": 0.25
+  },
+  "pitchVariance": {
+    "desc:": "Adds randomized pitch variance of up to the given value (e.g. 0.1), makes songs sound slightly different. default = 0",
+    "pitchVariance": 0.1
+  },
+  "musicVariance": {
+    "desc:": "Enables more varied music to be available for biomes, default = true",
+    "musicVariance": true
+  },
+  "smartMusic": {
+    "desc:": "Enables smart stopping of music, when the biome changes or player leaves a cave/water/night is over, default = true",
+    "smartMusic": true
+  },
+  "disableDefaultMusicInDimensions": {
+    "desc:": "Disables overworld music being played at random(rarely) in nether/end, default = true",
+    "disableDefaultMusicInDimensions": true
+  },
+  "displayMusicPlayed": {
+    "desc:": "Shows currently played music in chat/log, default = false",
+    "displayMusicPlayed": false
+  },
+  "playonlycustomnightmusic": {
+    "desc:": "Plays only custom provided music at night, default = false",
+    "playonlycustomnightmusic": false
+  },
+  "logloadedmusic": {
+    "desc:": "Prints the music files getting loaded into the latest.log, default = false",
+    "logloadedmusic": false
+  }
+}
