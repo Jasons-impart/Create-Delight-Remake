@@ -16,12 +16,11 @@
 			"generic.attack_damage": 0
 		},
 		"effects": {
-			"armorPenetration": 40,
+			"armorPenetration": 30,
 			"sweeping": 1,
 			"abilityCombo": [ 5, 2 ],
 			"abilityExhilarated": [ 8, 2 ],
-			"art_of_forging:vengeance": [ 5, 5 ],
-                        "art_of_forging:goliath_slayer": 100
+                        "art_of_forging:goliath_slayer": 50
 		},
 		"tools": {
 			"cut": [ 2, 3 ]
