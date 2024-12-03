@@ -6,18 +6,17 @@
             "honed": 1
         },
         "effects": {
-            "art_of_forging:vengeance": [ 5, 0 ]
+            "art_of_forging:slaughtering": [ 10, 70 ]
         }
     },
     {
         "key": "blade/vengeance_tier",
         "level": 2,
-        "integrity": -1,
         "aspects": {
             "honed": 2
         },
         "effects": {
-            "art_of_forging:vengeance": [ 15, 0 ]
+            "art_of_forging:slaughtering": [ 20, 60]
         }
     },
     {
@@ -28,7 +27,7 @@
             "honed": 3
         },
         "effects": {
-            "art_of_forging:vengeance": [ 30, 0 ]
+            "art_of_forging:slaughtering": [ 30, 40 ]
         }
     }
 ]

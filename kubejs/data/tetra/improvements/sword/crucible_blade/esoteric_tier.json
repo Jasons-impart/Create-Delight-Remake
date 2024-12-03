@@ -12,7 +12,6 @@
     {
         "key": "blade/esoteric_tier",
         "level": 2,
-        "integrity": -1,
         "aspects": {
             "honed": 2
         },
@@ -28,7 +27,7 @@
             "honed": 3
         },
         "effects": {
-	    "armorPenetration": 30
+	    "armorPenetration": 40
         }
     }
 ]

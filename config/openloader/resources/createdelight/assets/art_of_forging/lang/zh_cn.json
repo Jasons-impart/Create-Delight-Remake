@@ -814,12 +814,12 @@
     "tetra.improvement.blade/esoteric_tier.prefix": "秘刃",
     "tetra.improvement.blade/esoteric_tier.description": "增加秘刃切口的伤害",
 
-    "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：碎甲",
-    "tetra/schematic/sword/crucible/hone_esoteric_1.description": "针对击碎护甲进行打磨，无视其10%效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "线路：碎甲II",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.description": "打磨剑刃，穿透敌人的护甲，无视其20%效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "线路：碎甲III",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.description": "进一步打磨并改进剑锋，敌人护甲将形同虚设。",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：秘刃",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.description": "为剑刃注入魔力，无视敌人10%护甲效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.name": "线路：秘刃II",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.description": "将更多的魔力注入剑刃，无视敌人20%效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.name": "线路：秘刃III",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.description": "将剑刃彻底神化，从此敌人护甲将形同虚设。",
 
     "tetra.improvement.nano_fused.name": "纳米融合",
     "tetra.improvement.nano_fused.description": "用纳米昆虫注入武器，改变特定生物的掉落物品。",
