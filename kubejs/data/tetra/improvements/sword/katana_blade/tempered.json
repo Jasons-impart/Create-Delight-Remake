@@ -1,26 +1,26 @@
 [
     {
-        "key": "blade/tempered",
+        "key": "blade/puncture_tier",
         "level": 1,
         "integrity": -1,
         "effects": {
-            "armorPenetration": 20
+            "puncture": [5,2]
         }
     },
     {
-        "key": "blade/tempered",
+        "key": "blade/puncture_tier",
         "level": 2,
         "integrity": -1,
         "effects": {
-            "armorPenetration": 30
+            "puncture": [8,2]
         }
     },
     {
-        "key": "blade/tempered",
+        "key": "blade/puncture_tier",
         "level": 3,
         "integrity": -2,
         "effects": {
-            "armorPenetration": 45
+            "puncture": [10,4]
         }
     }
 ]

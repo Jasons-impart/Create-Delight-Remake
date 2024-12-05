@@ -17,11 +17,11 @@
                 "requirements": [
                     {
                         "type": "tetra:module",
-                        "module": "sword/crucible_blade"
+                        "module": "sword/katana_blade"
                     },
                     {
                         "type": "tetra:improvement",
-                        "improvement": "sword/architect_imprv"
+                        "improvement": "sword/murasama_imprv"
                     }
                 ]
             },
@@ -29,7 +29,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/esoteric_tier"
+                    "improvement": "blade/puncture_tier"
                 }
             }
         ]
@@ -45,7 +45,7 @@
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/esoteric_tier": 1
+                "blade/puncture_tier": 1
             }
         }
     ]

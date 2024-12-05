@@ -2,7 +2,7 @@
     "replace": true,
     "localizationKey": "katana/thousand_cold_nights",
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 1,
+    "materialSlotCount": 0,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{

@@ -1,0 +1,29 @@
+{
+    "replace": true,
+    "key": "bleak_electron_tube",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes": {
+        "generic.attack_damage": 10
+    },
+    "effects": {
+
+    },
+    "tints": {
+        "glyph": "7b00ff"
+    },
+    "textures": [ "bleak_electron_tube" ],
+    "experienceCost": 30,
+    "material": {
+        "items": [ "createdelight:bleak_electron_tube" ]
+    }
+}

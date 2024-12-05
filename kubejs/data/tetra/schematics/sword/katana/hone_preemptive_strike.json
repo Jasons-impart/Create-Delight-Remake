@@ -17,11 +17,11 @@
                 "requirements": [
                     {
                         "type": "tetra:module",
-                        "module": "sword/crucible_blade"
+                        "module": "sword/katana_blade"
                     },
                     {
                         "type": "tetra:improvement",
-                        "improvement": "sword/architect_imprv"
+                        "improvement": "sword/murasama_imprv"
                     }
                 ]
             },
@@ -29,7 +29,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/esoteric_tier"
+                    "improvement": "blade/preemptive_strike"
                 }
             }
         ]
@@ -37,15 +37,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:shark_tooth" ,"iceandfire:troll_tusk","iceandfire:hydra_fang","iceandfire:sea_serpent_fang","alexsmobs:bone_serpent_tooth"],
+                "items":[ "kinetic_pixel:pistonexciter"],
                 "count": 1
             },
-            "experienceCost": 10,
+            "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/esoteric_tier": 1
+                "blade/preemptive_strike": 1
             }
         }
     ]

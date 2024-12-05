@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/preemptive_strike",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+	    "art_of_forging:slaughtering": [300,99]
+        }
+    }
+]
