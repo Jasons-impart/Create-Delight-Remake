@@ -390,6 +390,9 @@
     "tooltip.createdelight.hold_ctrl": "§r§8按住 [§r§rCtrl§8] 查看如何使用§r\n",
     "tooltip.createdelight.fuel": "§7燃料§8：%s/1600.0",
     "tooltip.createdelight.water": "§7水§8：%s/1600.0",
+    "tooltip.createdelight.stock1": "§7存储§8：%s/800.0",
+    "tooltip.createdelight.stock2": "§7存储§8：%s/1600.0",
+    "tooltip.createdelight.stock3": "§7存储§8：%s/3200.0",
     "tooltip.createdelight.shift_frozen_block": "§7可§b冷却§7周围§b一格以内§7的物品",
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§r§7，但是会将模具存储在§b机器内部",
     "tooltip.createdelight.shift_distillation_controller": "§b每个§7储罐都需要一个",
@@ -428,7 +431,10 @@
     "tooltip.createdelight.shift_copper_magnet": "§7允许使用者在§b手持§7时§b吸引半径4格§7方块范围内的物品",
     "tooltip.createdelight.shift_slime_helmet": "§7使用具有粘液球做成的头盔，可以避免被§b夜间的生物伤害§7！并且可以规避§b鞘翅带来的动能！",
     "tooltip.createdelight.shift_slime_boots": "§7使用粘液球做成的靴子，可以让你§b跳的更远§7！并且能让你从最致命的§b坠落中存活下来！",
-    "tooltip.createdelight.shift_small_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                   \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n",
-    "tooltip.createdelight.shift_medium_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                  \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n",
-    "tooltip.createdelight.shift_big_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        \n"
+    "tooltip.createdelight.shift_small_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                   \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        ",
+    "tooltip.createdelight.shift_medium_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                  \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        ",
+    "tooltip.createdelight.shift_large_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        ",
+    "tooltip.createdelight.shift_small_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                   \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
+    "tooltip.createdelight.shift_medium_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                  \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
+    "tooltip.createdelight.shift_large_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）"
 }

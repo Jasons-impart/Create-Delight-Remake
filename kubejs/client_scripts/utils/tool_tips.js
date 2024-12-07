@@ -114,3 +114,51 @@ function addWater(event, items) {
         })
     });
 }
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock1(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock1", stock))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock2(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock2", stock))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock3(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock3", stock))
+        })
+    });
+}

@@ -30,9 +30,12 @@ ItemEvents.tooltip(e => {
         'create_sa:copper_magnet',
         'create_sa:slime_helmet',
         'create_sa:slime_boots',
-        // 'create_sa:small_filling_tank',
-        // 'create_sa:medium_filling_tank',
-        // 'create_sa:big_filling_tank'
+        'create_sa:small_filling_tank',
+        'create_sa:medium_filling_tank',
+        'create_sa:large_filling_tank',
+        'create_sa:small_fueling_tank',
+        'create_sa:medium_fueling_tank',
+        'create_sa:large_fueling_tank',
     ])
     clearAddCtrlTooltip(e, [
         
@@ -57,6 +60,18 @@ ItemEvents.tooltip(e => {
         'create_sa:copper_jetpack_chestplate',
         'create_sa:copper_exoskeleton_chestplate',
         'create_sa:block_picker',
+    ])
+    addStock1(e, [
+        'create_sa:small_filling_tank',
+        'create_sa:small_fueling_tank',
+    ])
+    addStock2(e, [
+        'create_sa:medium_filling_tank',
+        'create_sa:medium_fueling_tank',
+    ])
+    addStock3(e, [
+        'create_sa:large_filling_tank',
+        'create_sa:large_fueling_tank',
     ])
 })
 let tooltips = [
