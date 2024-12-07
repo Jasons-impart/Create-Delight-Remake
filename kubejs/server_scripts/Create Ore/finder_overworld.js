@@ -17,15 +17,17 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
         }
     })
     // console.log(excludedVein.toLocaleString())
-    let {pos, info} = $OreVeinGenerator.getPicker(level).locate(
+    let blockPosition = player.blockPosition()
+    let {first, second} = $OreVeinGenerator.getPicker(level).locate(
         blockPosition,
         level,
         MAX_SEARCH_DIST_IN_BLOCK,
-        (vein) => !excludedVein.includes(vein.getId())
+        (vein) => excludedVein.indexOf(vein.getId()) == -1
     )
+    let pos = first, info = second
     let distance = Math.floor(Math.sqrt(
-        (blockPosition.x - pos.x) ** 2
-        + (blockPosition.z - pos.z) ** 2
+        Math.pow(blockPosition.x - pos.x, 2)
+        + Math.pow(blockPosition.z - pos.z, 2)
     ))
     let direction = getDirection(
         Math.floor(blockPosition.x / BLOCK_SIZE),
@@ -33,7 +35,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
         Math.floor(pos.x / BLOCK_SIZE),
         Math.floor(pos.z / BLOCK_SIZE)
     )
-    message = Component.literal("最近的矿脉是")
+    let message = Component.literal("最近的矿脉是")
                 .append(info.getName().color(Color.YELLOW))
     if (direction == 'Same Point') {
         message = message.append(", §2就在你脚下")
