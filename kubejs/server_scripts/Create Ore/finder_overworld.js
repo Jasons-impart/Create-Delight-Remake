@@ -18,13 +18,12 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
     })
     // console.log(excludedVein.toLocaleString())
     let blockPosition = player.blockPosition()
-    let {first, second} = $OreVeinGenerator.getPicker(level).locate(
+    let {first : pos, second : info} = $OreVeinGenerator.getPicker(level).locate(
         blockPosition,
         level,
         MAX_SEARCH_DIST_IN_BLOCK,
-        (vein) => excludedVein.indexOf(vein.getId()) == -1
+        (vein) => !excludedVein.includes(vein.getId())
     )
-    let pos = first, info = second
     let distance = Math.floor(Math.sqrt(
         Math.pow(blockPosition.x - pos.x, 2)
         + Math.pow(blockPosition.z - pos.z, 2)
