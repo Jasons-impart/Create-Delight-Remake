@@ -22,6 +22,23 @@ function clearAddShiftTooltip(event, items) {
  * @param { Internal.ItemTooltipEventJS } event 
  * @param { Internal.ItemStack_[] } items 
  */
+function addShiftTooltip(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            if (!event.shift) {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_shift_to_see_more_info"))
+            } else {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_shift"))
+                text.add(2, Text.translatable(`tooltip.createdelight.shift_${item.getId().split(":")[1]}`))
+            }
+        })
+    })
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
 function clearAddCtrlTooltip(event, items) {
     items.forEach(item => {
         event.addAdvanced(item, (item, advanced, text) => {

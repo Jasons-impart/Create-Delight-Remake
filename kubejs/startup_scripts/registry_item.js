@@ -493,8 +493,13 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.mars_gemstone_cluster")
     // 探矿仪
     e.create("createdelight:prospector")
+        .finishUsing((stack, level, entity) => {
+            entity.addItemCoolDown(stack, 100)
+        })
+        .maxStackSize(1)
         .translationKey("item.createdelight.prospector")
-
+    e.create("createdelight:prospector_core")
+        .translationKey("item.createdelight.prospector_core")
     // β-正交晶系六方铁
     e.create("createdelight:phase_transition_iron")
         .translationKey("item.createdelight.phase_transition_iron")

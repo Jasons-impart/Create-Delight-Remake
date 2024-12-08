@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "create_sa:item/copper_magnet",
+    "layer1": "lightmanscurrency:item/upgrade_tier/iron"
+  }
+}

@@ -4,16 +4,24 @@ ServerEvents.recipes(e => {
         "create_sa:blazing_shovel_recipe",
         "create_sa:blazing_axe_recipe",
         "create_sa:blazing_sword_recipe",
-        "create_sa:vault_recipe"
+        "create_sa:vault_recipe",
+        "create_sa:heap_of_experience_recipe",
+        "create_sa:experience_pickaxe_recipe",
+        "create_sa:experience_shovel_recipe",
+        "create_sa:experience_axe_recipe",
+        "create_sa:experience_sword_recipe",
+        "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
+        "create_sa:zinc_handle_recipe"
     ])
     remove_recipes_output(e, [
-        "create_sa:copper_magnet",
         "create_sa:brass_cube",
         "create_sa:drone_controller",
         "create_sa:fan_component",
         "create_sa:vault_component",
         "create_sa:brass_drone_item",
     ])
+    e.replaceInput({mod: "create_sa" }, 'create_sa:zinc_handle', '#forge:rods/zinc')
+    e.replaceInput({id: "create_sa:copper_magnet_recipe"}, "minecraft:netherite_ingot", "alexscaves_torpedoes:pocket_magnet")
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly(
         [

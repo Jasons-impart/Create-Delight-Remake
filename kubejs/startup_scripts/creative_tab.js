@@ -1,8 +1,58 @@
+// 玉米乐事
+StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
+  e.remove([
+    "corn_delight:cob_pipe",
+    "corn_delight:corn",
+    "corn_delight:corn_crate",
+    "corn_delight:corn_dog",
+    "corn_delight:corn_seeds",
+    "corn_delight:cornbread_batter",
+    "corn_delight:corncob",
+    "corn_delight:creamed_corn",
+    "corn_delight:grilled_corn",
+    "corn_delight:nachos_bowl",
+    "corn_delight:popcorn",
+    "corn_delight:taco",
+    "corn_delight:tortilla",
+    "corn_delight:tortilla_chip",
+  ])
+})
 // 机械动力
 StartupEvents.modifyCreativeTab("create:base", e => {
   e.add([
     "create:chocolate_bucket",
     "create:honey_bucket"
+  ])
+})
+// 机械动力：实用物品
+StartupEvents.modifyCreativeTab("createutilities:base", e => {
+  e.remove([
+    'createutilities:void_chest',
+    'createutilities:gearcube'
+  ])
+})
+// 齿轮与麦穗
+StartupEvents.modifyCreativeTab("ratatouille:base", e => {
+  e.remove([
+    'ratatouille:salt'
+  ])
+})
+// 机械动力：甜食
+StartupEvents.modifyCreativeTab("create_confectionery:create_confectionery_tab", e => {
+  e.remove([
+    'create_confectionery:crushed_cocoa',
+    'create_confectionery:cocoa_powder',
+    'create_confectionery:cocoa_butter',
+    'create_confectionery:candy_cane_block'
+  ])
+})
+
+// 柴油动力
+StartupEvents.modifyCreativeTab("createdieselgenerators:cdg_creative_tab", e => {
+  e.remove([
+    'createdieselgenerators:kelp_handle',
+    'createdieselgenerators:chemical_sprayer',
+    'createdieselgenerators:chemical_sprayer_lighter'
   ])
 })
 // 创意传动
@@ -22,7 +72,42 @@ StartupEvents.modifyCreativeTab("create_sa:create_stuff_additions_tab", e => {
     'create_sa:blazing_shovel',
     'create_sa:blazing_axe',
     'create_sa:blazing_cleaver',
-    'create_sa:brass_cube'
+    'create_sa:brass_cube',
+    'create_sa:heap_of_experience',
+    'create_sa:experience_pickaxe',
+    'create_sa:experience_pickaxe',
+    'create_sa:experience_axe',
+    'create_sa:experience_sword',
+    'create_sa:experience_shovel',
+    'create_sa:zinc_handle'
+  ])
+})
+// 油炸
+StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
+  e.remove([
+    'create_bic_bit:unripe_cheese',
+    'create_bic_bit:waxed_unripe_cheese',
+    'create_bic_bit:young_cheese',
+    'create_bic_bit:waxed_young_cheese',
+    'create_bic_bit:aged_cheese',
+    'create_bic_bit:waxed_aged_cheese',
+    'create_bic_bit:unripe_cheese_wedge',
+    'create_bic_bit:young_cheese_wedge',
+    'create_bic_bit:aged_cheese_wedge',
+    'create_bic_bit:crystallised_oil',
+    'create_bic_bit:frying_oil_bottle',
+    'create_bic_bit:frying_oil_bucket'
+  ])
+})
+StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
+  e.remove([
+    "frycooks_delight:burnt_morsel",
+    "frycooks_delight:canola_oil",
+    "frycooks_delight:fried_fish_slice",
+    "frycooks_delight:fried_onion_ring",
+    "frycooks_delight:hot_grease_bucket",
+    "frycooks_delight:lard",
+    "frycooks_delight:lard_block",
   ])
 })
 // 货币系统
@@ -51,6 +136,32 @@ StartupEvents.modifyCreativeTab("lightmanscurrency:coins", e => {
     'lightmanscurrency:coinblock_emerald',
     'lightmanscurrency:coinblock_diamond',
     'lightmanscurrency:coinblock_netherite',
+    'lightmanscurrency:coin_chocolate_copper',
+    'lightmanscurrency:coinpile_chocolate_copper',
+    'lightmanscurrency:coinblock_chocolate_copper',
+    'lightmanscurrency:coin_chocolate_iron',
+    'lightmanscurrency:coinpile_chocolate_iron',
+    'lightmanscurrency:coinblock_chocolate_iron',
+    'lightmanscurrency:coin_chocolate_gold',
+    'lightmanscurrency:coinpile_chocolate_gold',
+    'lightmanscurrency:coinblock_chocolate_gold',
+    'lightmanscurrency:coin_chocolate_emerald',
+    'lightmanscurrency:coinpile_chocolate_emerald',
+    'lightmanscurrency:coinblock_chocolate_emerald',
+    'lightmanscurrency:coin_chocolate_diamond',
+    'lightmanscurrency:coinpile_chocolate_diamond',
+    'lightmanscurrency:coinblock_chocolate_diamond',
+    'lightmanscurrency:coin_chocolate_netherite',
+    'lightmanscurrency:coinpile_chocolate_netherite',
+    'lightmanscurrency:coinblock_chocolate_netherite',
+  ])
+  e.add([
+    'lightmanscurrency:offer_upgrade_1',
+    'lightmanscurrency:offer_upgrade_2',
+    'lightmanscurrency:offer_upgrade_3',
+    'lightmanscurrency:offer_upgrade_4',
+    'lightmanscurrency:offer_upgrade_5',
+    'lightmanscurrency:offer_upgrade_6',
   ])
 })
 StartupEvents.modifyCreativeTab("createdeco:props_tab", e => {
@@ -85,6 +196,7 @@ StartupEvents.modifyCreativeTab("createdeco:props_tab", e => {
 StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e => {
   e.add([
     'createdelight:prospector',
+    'createdelight:prospector_core',
     'createdelight:overworld_metal_ore_cluster',
     'createdelight:overworld_noble_metal_ore_cluster',
     'createdelight:nether_ore_cluster',
@@ -94,6 +206,9 @@ StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e =
     'createdelight:mercury_ore_cluster',
     'createdelight:venus_ore_cluster',
     'createdelight:glacio_ore_cluster',
+  ])
+  e.remove([
+    'createoreexcavation:vein_finder',
   ])
 })
 // 机素防护
@@ -277,6 +392,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
     'createdelight:incomplete_controller',
     'createdelight:incomplete_crystal_fixer',
     'createdelight:prospector',
+    'createdelight:prospector_core',
     'createdelight:overworld_metal_ore_cluster',
     'createdelight:overworld_noble_metal_ore_cluster',
     'createdelight:nether_ore_cluster',
