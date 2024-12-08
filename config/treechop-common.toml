@@ -1,0 +1,195 @@
+
+[mod]
+	#Set to false to disable TreeChop without having to uninstall the mod
+	enabled = true
+	#Let TreeChop print to the log
+	printDebugInfo = true
+
+[permissions]
+
+	[permissions.choppingEnabled]
+		canBeFalse = true
+		canBeTrue = true
+
+	[permissions.fellingEnabled]
+		canBeFalse = true
+		canBeTrue = true
+
+	[permissions.sneakBehavior]
+		canBeInvertFelling = true
+		canBeNone = true
+		canBeInvertChopping = true
+
+	[permissions.treeMustHaveLeaves]
+		canBeFalse = true
+		canBeTrue = true
+
+	[permissions.chopInCreativeMode]
+		canBeFalse = true
+		canBeTrue = true
+
+[general]
+	#If false, log items will be destroyed when chopping
+	dropLootForChoppedBlocks = true
+	#If true, chopped logs will drop a log item immediately instead of waiting for the tree to be felled, restoring legacy behavior. Does nothing if dropLootForChoppedBlocks is false
+	dropLootOnFirstChop = false
+
+[treeDetection]
+	#Maximum number of log blocks that can be detected to belong to one tree
+	#Range: 1 ~ 8096
+	maxTreeBlocks = 1024
+	#Maximum number of leaves blocks that can destroyed when a tree is felled
+	#Range: 1 ~ 8096
+	maxLeavesBlocks = 1024
+	#Destroy leaves when a tree is felled
+	breakLeaves = true
+	#Non-decayable leaves are ignored when detecting leaves
+	ignorePersistentLeaves = true
+	#Maximum distance from log blocks to destroy leaves blocks when felling
+	#Range: 0 ~ 16
+	maxBreakLeavesDistance = 7
+
+	[treeDetection.logs]
+		#Blocks that should be considered choppable
+		#For block lists, specify using registry names (mod:block), tags (#mod:tag), namespaces (@mod), and Java-style regular expressions
+		#Regular expressions must match the whole resource name, including the colon. Some simple examples are:
+		# - To match any block ending in _log: ".*_log", where .* is a wildcard
+		# - You can also specify a mod: "treemod:.*_log"
+		# - To also match stripped versions: ".*_log(_stripped)?", where ? means that the text in the parenthesis is optional
+		#For more help, see https://github.com/hammertater/treechop/wiki/Configuration
+		blocks = ["#treechop:choppables", "#minecraft:logs"]
+		#Blocks that should never be chopped, even if included in the list above
+		#Specify using registry names (mod:block), tags (#mod:tag), and namespaces (@mod)
+		exceptions = ["minecraft:bamboo", "#dynamictrees:branches", "dynamictrees:trunk_shell"]
+
+	[treeDetection.leaves]
+		#Blocks that should be considered leaves
+		#Specify using registry names (mod:block), tags (#mod:tag), and namespaces (@mod)
+		blocks = ["#treechop:leaves_like", "#minecraft:leaves", "pamhc2trees:pam[a-z]+"]
+		#Blocks that should never be considered leaves, even if included in the list above
+		#Specify using registry names (mod:block), tags (#mod:tag), and namespaces (@mod)
+		exceptions = []
+
+[chopCounting]
+	#Method to use for computing the number of chops needed to fell a tree
+	#Allowed Values: LINEAR, LOGARITHMIC
+	algorithm = "LOGARITHMIC"
+	#How to round the number of chops needed to fell a tree; this is more meaningful for smaller trees
+	#Allowed Values: DOWN, NEAREST, UP
+	rounding = "NEAREST"
+	#Felling a tree can require more chops than the number of blocks in the tree
+	canRequireMoreChopsThanBlocks = false
+
+	#See https://github.com/hammertater/treechop/#logarithmic
+	[chopCounting.logarithmic]
+		#Determines the number of chops required to fell a tree; higher values require more chops for bigger trees
+		#Range: 0.0 ~ 10000.0
+		a = 10.0
+
+	#See https://github.com/hammertater/treechop/#linear
+	[chopCounting.linear]
+		#The number of chops per block required to fell a tree; if chopsPerBlock = 0.5, it will take 50 chops to fell a 100 block tree
+		#Range: 0.0 ~ 7.0
+		chopsPerBlock = 1.0
+		#The base number of chops required to fell a tree regardless of its size
+		#Range: -10000.0 ~ 10000.0
+		baseNumChops = 0.0
+
+[compatibility]
+	#https://www.curseforge.com/minecraft/mc-mods/carry-on
+	#https://modrinth.com/mod/carry-on
+	#Small fixes.
+	carryOn = true
+	#https://www.curseforge.com/minecraft/mc-mods/project-mmo
+	#https://modrinth.com/mod/project-mmo
+	#Award woodcutting XP for chopping.
+	projectMMO = true
+	#https://www.curseforge.com/minecraft/mc-mods/the-one-probe
+	#https://modrinth.com/mod/the-one-probe
+	#Shows the number of chops required to fell a tree and what loot will drop.
+	theOneProbe = true
+	#https://github.com/TerraformersMC
+	#Fixes starting chop radius for small logs from Terraformers mods (Terrestria, etc.)
+	terraformers = true
+	#https://github.com/AtomicStryker/atomicstrykers-minecraft-mods
+	#Fixes bad behavior
+	multiMine = true
+	#https://www.curseforge.com/minecraft/mc-mods/apotheosis
+	#Adds compatibility with the "chainsaw" enchantment.
+	apotheosis = true
+
+	[compatibility.general]
+		#Only chop when using the correct tool for drops, if any (does nothing in vanilla, but some mods add tool requirements to logs
+		choppingRequiresCorrectToolForDrops = true
+		#Only chop when using a tool that increases block breaking speed (such as axes for logs)
+		choppingRequiresFastBreakingTool = false
+		#Prevent chopping when right-clicking blocks
+		preventChoppingOnRightClick = false
+		#Prevent infinite loops when chopping; fixes crashes when using modded items that break multiple blocks
+		preventChopRecursion = true
+
+		[compatibility.general.blacklist]
+			#Whether the listed items should be blacklisted or whitelisted
+			#Allowed Values: BLACKLIST, WHITELIST
+			blacklistOrWhitelist = "BLACKLIST"
+			#List of item registry names (mod:item), tags (#mod:tag), and namespaces (@mod) for items that should not chop when used to break a log
+			#- Items in this list that have special support for TreeChop will not be blacklisted; see https://github.com/hammertater/treechop/blob/main/docs/compatibility.md#blacklist
+			items = ["botania:terra_axe", "@lumberjack", "mekanism:atomic_disassembler", "practicaltools:diamond_greataxe", "practicaltools:golden_greataxe", "practicaltools:iron_greataxe", "practicaltools:netherite_greataxe", "twilightforest:giant_pickaxe"]
+
+		#The chop settings used by non-player entities, such as robots and machine blocks
+		[compatibility.general.fakePlayerChopSettings]
+			#Use with caution! May cause conflicts with some mods, e.g. https://github.com/hammertater/treechop/issues/71
+			choppingEnabled = false
+			#Felling only matters if chopping is enabled; probably best to leave this on
+			fellingEnabled = true
+			treesMustHaveLeaves = true
+
+	#A set of alternate tree detection strategies for oddly shaped trees
+	#For block lists, specify using registry names (mod:block), tags (#mod:tag), namespaces (@mod), and Java-style regular expressions
+	#Regular expressions must match the whole resource name, including the colon. Some simple examples are:
+	# - To match any block ending in _log: ".*_log", where .* is a wildcard
+	# - You can also specify a mod: "treemod:.*_log"
+	# - To also match stripped versions: ".*_log(_stripped)?", where ? means that the text in the parenthesis is optional
+	#For more help, see https://github.com/hammertater/treechop/wiki/Configuration
+	[compatibility.trees]
+
+		[compatibility.trees.hugeMushrooms]
+			logs = ["#forge:mushroom_stems"]
+			leaves = ["#forge:mushroom_caps"]
+
+		[compatibility.trees.hugeFungi]
+			logs = ["#minecraft:crimson_stems", "#minecraft:warped_stems"]
+			leaves = ["#minecraft:wart_blocks", "minecraft:shroomlight"]
+
+		[compatibility.trees.problematicLeavesTrees]
+			logs = ["tropicraft:.*_log(_.*)?", "mysticbiomes:.*_log", "betternether:.*_bark", "betternether:.*_log", "alexscaves:.*_log", "alexscaves:pewen_wood"]
+			leaves = ["tropicraft:.*_leaves(_.*)?", "betternether:.*_leaves", "regions_unexplored:brimwood_leaves", "alexscaves:.*_branch", "alexscaves:pewen_pines"]
+
+	[compatibility.silentgear]
+		#https://www.curseforge.com/minecraft/mc-mods/tinkers-construct
+		#https://modrinth.com/mod/tinkers-construct
+		#Makes saws do more chops.
+		enabled = true
+		#Number of chops a saw should perform on a single block break
+		#Range: 1 ~ 10000
+		sawChops = 5
+
+	[compatibility.tinkersConstruct]
+		#https://www.curseforge.com/minecraft/mc-mods/tinkers-construct
+		#https://modrinth.com/mod/tinkers-construct
+		#Makes AOE tools do more chops.
+		enabled = true
+		#Number of chops that tree breaking tools (like broad axes) should perform on a single block break
+		#Range: 1 ~ 10000
+		treeBreakingTools = 5
+		#Number of chops that wood breaking tools (like hand axes) should perform on a single block break
+		#Range: 1 ~ 10000
+		woodBreakingTools = 1
+		#The chop count multiplier for each level of the expanded upgrade
+		#Range: 1.0 ~ 10000.0
+		expandedMultiplier = 2.0
+
+	[compatibility.API]
+		#Log information about TreeChop API usage. May be useful for debugging mod compatibility issues.
+		verbose = false
+
