@@ -65,6 +65,10 @@ StartupEvents.modifyCreativeTab("create_new_age:create_new_age_tab", e => {
     'create_new_age:blank_circuit',
     'create_new_age:electrical_connector'
   ])
+  e.add([
+    'alexscaves:block_of_scarlet_neodymium',
+    'alexscaves:block_of_azure_neodymium'
+  ])
 })
 // 创意传动
 StartupEvents.modifyCreativeTab("create_connected:main", e => {
@@ -119,6 +123,17 @@ StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
     "frycooks_delight:hot_grease_bucket",
     "frycooks_delight:lard",
     "frycooks_delight:lard_block",
+  ])
+})
+StartupEvents.modifyCreativeTab("create_deepfried:deepfried", e => {
+  e.remove([
+    "create_deepfried:apple_slices",
+    "create_deepfried:chicken_nuggets",
+    "create_deepfried:fish_and_chips",
+    "create_deepfried:raw_chicken_nuggets",
+    "create_deepfried:raw_springroll",
+    "create_deepfried:springroll",
+    "create_deepfried:yuca",
   ])
 })
 // 货币系统
