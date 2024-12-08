@@ -63,6 +63,13 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "lightmanscurrency:cash_register"}, "minecraft:ender_pearl", "lightmanscurrency:trading_core")
     e.replaceInput({id: "lightmanscurrency:terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
     e.replaceInput({id: "lightmanscurrency:gem_terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
+    e.recipes.kubejs.shapeless(
+        'lightmanscurrency:wallet_ender_dragon',
+        [
+            "lightmanscurrency:wallet_netherite",
+            "minecraft:dragon_breath"
+        ]
+    ).id("lightmanscurrency:wallet/upgrade_wallet_netherite_to_wallet_ender_dragon")
 })
 
 MoreJSEvents.villagerTrades(e => {

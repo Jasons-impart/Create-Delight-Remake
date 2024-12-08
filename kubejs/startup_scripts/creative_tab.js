@@ -55,6 +55,17 @@ StartupEvents.modifyCreativeTab("createdieselgenerators:cdg_creative_tab", e => 
     'createdieselgenerators:chemical_sprayer_lighter'
   ])
 })
+// 机械动力：新世代
+StartupEvents.modifyCreativeTab("create_new_age:create_new_age_tab", e => {
+  e.remove([
+    'create_new_age:copper_wire',
+    'create_new_age:overcharged_diamond_wire',
+    'create_new_age:overcharged_iron_wire',
+    'create_new_age:overcharged_golden_wire',
+    'create_new_age:blank_circuit',
+    'create_new_age:electrical_connector'
+  ])
+})
 // 创意传动
 StartupEvents.modifyCreativeTab("create_connected:main", e => {
   e.add([

@@ -493,9 +493,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.mars_gemstone_cluster")
     // 探矿仪
     e.create("createdelight:prospector")
-        .finishUsing((stack, level, entity) => {
-            entity.addItemCoolDown(stack, 100)
-        })
         .maxStackSize(1)
         .translationKey("item.createdelight.prospector")
     e.create("createdelight:prospector_core")
