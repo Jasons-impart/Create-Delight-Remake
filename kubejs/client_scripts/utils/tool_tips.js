@@ -179,3 +179,20 @@ function addStock3(event, items) {
         })
     });
 }
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addAir(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let Air = item.nbt.Air
+            let air = parseInt(Air)
+            if(air == undefined){
+                air = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.air", air))
+        })
+    });
+}
