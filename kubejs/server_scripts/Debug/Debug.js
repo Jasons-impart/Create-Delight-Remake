@@ -15,6 +15,7 @@ const playerNames = [
   "cawyyds",
   "SSWTLZZ",
   "JIAFALSEDREAM",
+  "AzureCrab"
 ];
 
 const isDeveloper = (playerUsername) => playerNames.includes(playerUsername);
