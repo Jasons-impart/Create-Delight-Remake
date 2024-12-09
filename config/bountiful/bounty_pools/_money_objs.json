@@ -1,0 +1,63 @@
+{
+    "content": {
+        "cashier_iron_coin": {
+            "type": "item",
+            "content": "createdelightcore:iron_coin",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 100
+        },
+        "cashier_copper_coin": {
+            "type": "item",
+            "content": "createdelightcore:copper_coin",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 12
+            },
+            "unitWorth": 1000
+        },
+        "cashier_gold_coin": {
+            "type": "item",
+            "content": "createdelightcore:gold_coin",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 2
+            },
+            "unitWorth": 10000
+        },
+        "cashier_gold_coin_epic": {
+            "type": "item",
+            "content": "createdelightcore:gold_coin",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 5
+            },
+            "unitWorth": 10000
+        },
+        "cashier_emerald_coin": {
+            "type": "item",
+            "content": "createdelightcore:emerald_coin",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 90000
+        },
+        "cashier_emerald_coin_legendary": {
+            "type": "item",
+            "content": "createdelightcore:emerald_coin",
+            "rarity": "LEGENDARY",
+            "amount": {
+                "min": 1,
+                "max": 3
+            },
+            "unitWorth": 90000
+        }
+    }
+}

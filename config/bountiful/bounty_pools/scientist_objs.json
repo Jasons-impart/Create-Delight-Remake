@@ -1,0 +1,201 @@
+{
+    "content" :{
+        "scientist_obj_andesite_alloy_block": {
+            "type": "item",
+            "content": "create:andesite_alloy_block",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 1000
+        },
+        "scientist_obj_copper_block": {
+            "type": "item",
+            "content": "minecraft:copper_block",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 2000
+        },
+        "scientist_obj_zinc_block": {
+            "type": "item",
+            "content": "create:zinc_block",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 4000
+        },
+        "scientist_obj_steel_block": {
+            "type": "item",
+            "content": "createmetallurgy:steel_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 9000
+        },
+        "scientist_obj_brass_block": {
+            "type": "item",
+            "content": "create:brass_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 7500
+        },
+        "scientist_obj_void_steel_block": {
+            "type": "item",
+            "content": "createutilities:void_steel_block",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 10000
+        },
+        "scientist_obj_sky_steel_block": {
+            "type": "item",
+            "content": "megacells:sky_steel_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 6000
+        },
+        "scientist_obj_bronze_block": {
+            "type": "item",
+            "content": "createdelight:bronze_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 9
+            },
+            "unitWorth": 9000
+        },
+        "scientist_obj_hydraulic_engine": {
+            "type": "item",
+            "content": "create_sa:hydraulic_engine",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 2000
+        },
+        "scientist_obj_heat_engine": {
+            "type": "item",
+            "content": "create_sa:heat_engine",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 4000
+        },
+        "scientist_obj_precision_mechanism": {
+            "type": "item",
+            "content": "create:precision_mechanism",
+            "rarity": "RARE",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 6000
+        },
+        "scientist_obj_steam_engine": {
+            "type": "item",
+            "content": "create_sa:steam_engine",
+            "rarity": "RARE",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 8000
+        },
+        "scientist_obj_electron_tube": {
+            "type": "item",
+            "content": "create:electron_tube",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 2000
+        },
+        "scientist_obj_certus_quartz_crystal": {
+            "type": "item",
+            "content": "ae2:certus_quartz_crystal",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 200
+        },
+        "scientist_obj_charged_certus_quartz_crystal": {
+            "type": "item",
+            "content": "ae2:charged_certus_quartz_crystal",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 300
+        },
+        "scientist_obj_fluix_crystal": {
+            "type": "item",
+            "content": "ae2:fluix_crystal",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 500
+        },
+        "scientist_obj_printed_calculation_processor": {
+            "type": "item",
+            "content": "ae2:printed_calculation_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 300
+        },
+        "scientist_obj_printed_logic_processor": {
+            "type": "item",
+            "content": "ae2:printed_logic_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 600
+        },
+        "scientist_obj_printed_engineering_processor": {
+            "type": "item",
+            "content": "ae2:printed_engineering_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 1000
+        },
+        "scientist_obj_printed_accumulation_processor": {
+            "type": "item",
+            "content": "megacells:printed_accumulation_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 750
+        }
+    }
+}

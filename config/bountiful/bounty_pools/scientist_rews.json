@@ -1,0 +1,204 @@
+{
+    "content": {
+        "scientist_brass_block": {
+            "type": "item",
+            "content": "create:brass_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 3
+            },
+            "unitWorth": 7500
+        },
+        "scientist_steel_block": {
+            "type": "item",
+            "content": "createmetallurgy:steel_block",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 3
+            },
+            "unitWorth": 9000
+        },
+        "scientist_void_steel_block": {
+            "type": "item",
+            "content": "createutilities:void_steel_block",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 3
+            },
+            "unitWorth": 18000
+        },
+        "scientist_electrum_ingot": {
+            "type": "item",
+            "content": "createaddition:electrum_ingot",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 1000
+        },
+        "scientist_calculation_processor": {
+            "type": "item",
+            "content": "ae2:calculation_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 300
+        },
+        "scientist_logic_processor": {
+            "type": "item",
+            "content": "ae2:logic_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 600
+        },
+        "scientist_engineering_processor": {
+            "type": "item",
+            "content": "ae2:engineering_processor",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 1000
+        },
+        "scientist_annihilation_core": {
+            "type": "item",
+            "content": "ae2:annihilation_core",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 2000
+        },
+        "scientist_formation_core": {
+            "type": "item",
+            "content": "ae2:formation_core",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 2000
+        },
+        "scientist_accumulation_processor": {
+            "type": "item",
+            "content": "megacells:accumulation_processor",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 750
+        },
+        "scientist_redstone_module": {
+            "type": "item",
+            "content": "vintageimprovements:redstone_module",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 6000
+        },
+        "scientist_graviton_tube": {
+            "type": "item",
+            "content": "createutilities:graviton_tube",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 4500
+        },
+        "scientist_boiler": {
+            "type": "item",
+            "content": "immersive_aircraft:boiler",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 36000
+        },
+        "scientist_steel_boiler": {
+            "type": "item",
+            "content": "immersive_aircraft:steel_boiler",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 45000
+        },
+        "scientist_engine": {
+            "type": "item",
+            "content": "immersive_aircraft:engine",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 45000
+        },
+        "scientist_eco_engine": {
+            "type": "item",
+            "content": "immersive_aircraft:eco_engine",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 56000
+        },
+        "scientist_nether_engine": {
+            "type": "item",
+            "content": "immersive_aircraft:nether_engine",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 81000
+        },
+        "scientist_strikerexciter": {
+            "type": "item",
+            "content": "kinetic_pixel:strikerexciter",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 56000
+        },
+        "scientist_pistonexciter": {
+            "type": "item",
+            "content": "kinetic_pixel:pistonexciter",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 56000
+        },
+        "scientist_controller": {
+            "type": "item",
+            "content": "ae2:controller",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 81000
+        }
+    }
+}
