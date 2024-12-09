@@ -52,9 +52,14 @@ StartupEvents.modifyCreativeTab("create:base", e => {
     ])
   })
   // CCA
-  StartupEvents.modifyCreativeTab("create_connected:main", e => {
-    e.add([
-      'create_connected:fan_freezing_catalyst'
+  StartupEvents.modifyCreativeTab("createaddition:main", e => {
+    e.remove([
+      'createaddition:chocolate_cake',
+      'createaddition:biomass_pellet_block',
+      'createaddition:biomass_pellet',
+      'createaddition:straw',
+      'createaddition:seed_oil_bucket',
+      'createaddition:bioethanol_bucket'
     ])
   })
   // 创意传动

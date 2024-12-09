@@ -77,7 +77,7 @@ ServerEvents.recipes(e => {
         e.recipes.vintageimprovements.turning(iner_1, iner_1),
         e.recipes.create.deploying(iner_1, [iner_1, 'immersive_aircraft:gyroscope']),
         e.recipes.create.deploying(iner_1, [iner_1, "minecraft:nether_star"]),
-        e.recipes.vintageimprovements.laser_cutting(iner_1, iner_1, 500)
+        e.recipes.create_new_age.energising(iner_1, iner_1, 4000)
     ])
         .transitionalItem(iner_1)
         .loops(1)
@@ -92,7 +92,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.deploying(iner_2, [iner_2, "ad_astra:ice_shard"]),
         e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:cyclops_eye"]),
         e.recipes.create.deploying(iner_2, [iner_2, 'iceandfire:cockatrice_eye']),
-        e.recipes.vintageimprovements.laser_cutting(iner_2, iner_2, 500)
+        e.recipes.create_new_age.energising(iner_2, iner_2, 40000)
     ])
         .transitionalItem(iner_2)
         .loops(1)
@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.deploying(iner_3, [iner_3, 'ae2:engineering_processor']),
         e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
         e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
-        e.recipes.vintageimprovements.laser_cutting(iner_3, iner_3, 500)
+        e.recipes.create_new_age.energising(iner_3, iner_3, 400000)
     ])
         .transitionalItem(iner_3)
         .loops(1)
@@ -125,7 +125,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
         e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
         e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:lightning_dragon_blood", 500)]),
-        e.recipes.vintageimprovements.laser_cutting(iner_4, iner_4, 500)
+        e.recipes.create_new_age.energising(iner_4, iner_4, 800000)
     ])
         .transitionalItem(iner_4)
         .loops(1)

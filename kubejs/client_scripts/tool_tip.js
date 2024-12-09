@@ -75,6 +75,12 @@ ItemEvents.tooltip(e => {
         'create_sa:large_filling_tank',
         'create_sa:large_fueling_tank',
     ])
+    addAir(e, [
+        'create:netherite_backtank',
+        'create:copper_backtank',
+        'create_jetpack:jetpack',
+        'create_jetpack:netherite_jetpack',
+    ])
 })
 let tooltips = [
     ["ad_astra:nasa_workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],

@@ -15,3 +15,6 @@ ServerEvents.tags("item", e => {
         "iceandfire:silver_ingot"
     ])
 })
+ServerEvents.tags("fluid", e => {
+    e.removeAllTagsFrom("createaddition:seed_oil")
+})
