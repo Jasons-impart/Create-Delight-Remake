@@ -55,13 +55,13 @@ Feel free to give us feedback in DISCORD!
 -------------------------------------------------------------------------
 
 ![image](https://gitee.com/shi-chonghai/Create-Delight-Remake/raw/main/images_for_readme/qq.png)  
-[CLICK HERE!](https://www.curseforge.com/linkout?remoteUrl=https%253a%252f%252fqm.qq.com%252fq%252fEPZo2w9Cpy)  
+[CLICK HERE!](https://qm.qq.com/q/ajPFnOx65a)  
 Feel free to give us feedback in QQ!  
 
 -------------------------------------------------------------------------
 
 ![image](https://gitee.com/shi-chonghai/Create-Delight-Remake/raw/main/images_for_readme/donation.png)  
-[CLICK HERE!](https://www.curseforge.com/linkout?remoteUrl=https%253a%252f%252fafdian.net%252fa%252fhk11238981)  
+[CLICK HERE!](https://afdian.com/a/hk11238981)  
 Your support keeps our project running!  Every donation, big or small,  
 helps us continue our mission. With your help,  
 Thank you for considering a contribution!  
