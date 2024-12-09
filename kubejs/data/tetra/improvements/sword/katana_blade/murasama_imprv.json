@@ -3,10 +3,8 @@
         "key": "sword/murasama_imprv",
         "integrity": -1,
         "effects": {
-            "severing": [ 5, 1 ],
-            "bleeding": [ 1, 1 ],
-            "abilityMomentum": [ 1, 1 ],
-            "vvaddon:rush": 1
+            "truesweep": 1,
+            "abilityMomentum": [ 1, 1 ]
         },
         "attributes": {
             "generic.attack_speed": 0.1,

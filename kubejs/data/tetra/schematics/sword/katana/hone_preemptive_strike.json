@@ -1,0 +1,52 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 0
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:and",
+                "requirements": [
+                    {
+                        "type": "tetra:module",
+                        "module": "sword/katana_blade"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "sword/murasama_imprv"
+                    }
+                ]
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "blade/preemptive_strike"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "kinetic_pixel:pistonexciter"],
+                "count": 1
+            },
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/preemptive_strike": 1
+            }
+        }
+    ]
+}

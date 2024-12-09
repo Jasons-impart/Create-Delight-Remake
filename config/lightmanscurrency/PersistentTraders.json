@@ -2581,15 +2581,19 @@
           }
         },
         {
-          "TradeType": "SALE",
+          "TradeType": "BARTER",
           "SellItem": {
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "DisplayName": "不要搞丢了！搞丢了得花1天才能补回来",
-          "Price": {
-            "Free": true,
-            "type": "lightmanscurrency:null"
+          "DisplayName": "不要搞丢了！搞丢了得花1天才能再买",
+          "BarterItem": {
+            "ID": "createdelightcore:iron_coin",
+            "Count": 5
+          },
+          "BarterItem2": {
+            "ID": "lightmanscurrency:wallet_leather",
+            "Count": 1
           },
           "Rules": [
             {
@@ -2597,7 +2601,8 @@
               "ForgetTime": 86400000,
               "Type": "lightmanscurrency:player_trade_limit"
             }
-          ]
+          ],
+          "IgnoreNBT": [3]
         },
         {
           "TradeType": "BARTER",

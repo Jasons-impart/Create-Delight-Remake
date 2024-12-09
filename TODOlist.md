@@ -20,6 +20,7 @@
 - 战利品宝箱的修改
 - [mod非致命问题] vintagedelight-0.1.6的CustomPotionBrewing.class内有bug导致mod增加的炼药效果不生效
 - [mod非致命问题] iceandfire-2.1.13-1.20.1-beta-5的client\render\entity\layer\LayerDragonEyes.class加载材质失败
+- 鸡蛇反制措施
 
 ### 认领-假发
 

@@ -1,20 +1,6 @@
 ServerEvents.recipes(e => {
-    // e.recipes.minecraft.crafting_shapeless(
-    //     "createdelightcore:copper_coin",
-    //     "9x createdelightcore:iron_coin"
-    // ).id("createdelight:iron_2_copper")
-    // e.recipes.minecraft.crafting_shapeless(
-    //     "createdelightcore:gold_coin",
-    //     "9x createdelightcore:copper_coin"
-    // ).id("createdelight:copper_2_gold")
-    // e.recipes.minecraft.crafting_shapeless(
-    //     "createdelightcore:emerald_coin",
-    //     "9x createdelightcore:gold_coin"
-    // ).id("createdelight:gold_2_emerald")
-    // e.recipes.minecraft.crafting_shapeless(
-    //     "createdelightcore:netherite_coin",
-    //     "9x createdelightcore:emerald_coin"
-    // ).id("createdelight:emerald_2_netherite")
+    e.replaceInput({id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1"}, "minecraft:ender_pearl", "create_sa:copper_magnet")
+    e.replaceInput({id: "lightmanscurrency:upgrades/network_upgrade"}, "minecraft:ender_eye", 'ae2:singularity')
     e.recipes.minecraft.crafting_shapeless(
         "9x createdelightcore:iron_coin",
         "createdelightcore:copper_coin"
@@ -51,6 +37,39 @@ ServerEvents.recipes(e => {
         "createdelightcore:netherite_coin",
         "createdelight:netherite_coin"
     )
+    e.recipes.kubejs.shaped(
+        'lightmanscurrency:trading_core',
+        [
+            "AAA",
+            "ABA",
+            "AAA"
+        ], {
+            A: "createdelightcore:iron_coin",
+            B: "createdelightcore:gold_coin"
+        }
+    ).id("lightmanscurrency:trading_core")
+    e.recipes.kubejs.shaped(
+        'lightmanscurrency:atm',
+        [
+            "ABA",
+            "ACA",
+            "AAA"
+        ], {
+            A: "#forge:ingots/iron",
+            B: "#forge:glass_panes",
+            C: "lightmanscurrency:trading_core"
+        }
+    ).id("lightmanscurrency:atm")
+    e.replaceInput({id: "lightmanscurrency:cash_register"}, "minecraft:ender_pearl", "lightmanscurrency:trading_core")
+    e.replaceInput({id: "lightmanscurrency:terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
+    e.replaceInput({id: "lightmanscurrency:gem_terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
+    e.recipes.kubejs.shapeless(
+        'lightmanscurrency:wallet_ender_dragon',
+        [
+            "lightmanscurrency:wallet_netherite",
+            "minecraft:dragon_breath"
+        ]
+    ).id("lightmanscurrency:wallet/upgrade_wallet_netherite_to_wallet_ender_dragon")
 })
 
 MoreJSEvents.villagerTrades(e => {

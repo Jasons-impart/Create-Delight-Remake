@@ -22,6 +22,23 @@ function clearAddShiftTooltip(event, items) {
  * @param { Internal.ItemTooltipEventJS } event 
  * @param { Internal.ItemStack_[] } items 
  */
+function addShiftTooltip(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            if (!event.shift) {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_shift_to_see_more_info"))
+            } else {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_shift"))
+                text.add(2, Text.translatable(`tooltip.createdelight.shift_${item.getId().split(":")[1]}`))
+            }
+        })
+    })
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
 function clearAddCtrlTooltip(event, items) {
     items.forEach(item => {
         event.addAdvanced(item, (item, advanced, text) => {
@@ -111,6 +128,71 @@ function addWater(event, items) {
                 water = 0
             }
             text.add(Text.translate("tooltip.createdelight.water", water))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock1(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock1", stock))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock2(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock2", stock))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addStock3(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let stock = item.nbt.tagStock
+            if(stock == undefined){
+                stock = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.stock3", stock))
+        })
+    });
+}
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addAir(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            let Air = item.nbt.Air
+            let air = parseInt(Air)
+            if(air == undefined){
+                air = 0
+            }
+            text.add(Text.translate("tooltip.createdelight.air", air))
         })
     });
 }

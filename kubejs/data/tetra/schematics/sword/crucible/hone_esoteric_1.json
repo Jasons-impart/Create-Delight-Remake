@@ -2,7 +2,6 @@
     "replace": true,
     "slots": [ "sword/blade" ],
     "materialSlotCount": 1,
-    "materialRevealSlot": 0,
     "hone": true,
     "rarity": "hone",
     "displayType": "major",

@@ -79,7 +79,7 @@
 	"tetra.stats.art_of_forging:hubris.tooltip_short": "生命值高于90%时造成额外伤害，生命值越低，伤害越少",
 
 	"art_of_forging.effect.slaughtering.name": "屠戮",
-	"art_of_forging.effect.slaughtering.tooltip": "当你的目标生命值高于§e百分之%s§r时，你会造成§e百分之%s额外伤害§r。",
+	"art_of_forging.effect.slaughtering.tooltip": "你会造成§e百分之%s额外伤害§r（当你的目标生命值高于§e百分之%s§r时）。",
 	"tetra.stats.art_of_forging:slaughtering": "屠戮",
 	"tetra.stats.art_of_forging:slaughtering.tooltip_short": "当目标生命值高于某个百分比时，造成额外伤害",
 
@@ -89,7 +89,7 @@
 	"tetra.stats.art_of_forging:carnage.tooltip_short": "攻击目标时获得伤害加成，连续攻击可叠加，直到死亡",
 
 	"art_of_forging.effect.judgement.name": "审判",
-	"art_of_forging.effect.judgement.tooltip": "如果敌人的生命值低于§e%s§r，你有§e%百分之s§r的概率瞬间击杀他们。",
+	"art_of_forging.effect.judgement.tooltip": "你将有§e%百分之s§r的概率瞬间击杀敌人，（当他们的生命值低于§e%s§r）。",
 	"tetra.stats.art_of_forging:judgement": "审判",
 
 

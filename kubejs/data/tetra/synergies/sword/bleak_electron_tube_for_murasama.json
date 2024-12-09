@@ -1,0 +1,13 @@
+[ {
+        "modules": [ "sword/katana_blade" ],
+        "matchSuffixed": true,
+        "improvements": [ "sword/murasama_imprv" ],
+        "moduleVariants": ["sword_socket/bleak_electron_tube"],
+        "visibilityKey": "sword_socket/bleak_electron_tube",
+        "effects": {
+
+    },
+    "attributes": {
+	"generic.attack_damage": 10
+   }
+}]

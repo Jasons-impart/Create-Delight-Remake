@@ -137,6 +137,17 @@ ServerEvents.recipes(e => {
         B: "createaddition:electrum_sheet"
     }
     ).id("ad_astra:crafting/etrionic_core")
+    e.recipes.kubejs.shaped(
+        "3x ad_astra:etrionic_core",
+        [
+            " A ",
+            " B ",
+            " A "
+        ],{
+            A: 'create_new_age:overcharged_iron_sheet',
+            B: 'create_new_age:overcharged_golden_sheet'
+        }
+    ).id("ad_astra:shapeless/etrionic_core")
     // 电容器
     e.recipes.kubejs.shaped(
         "ad_astra:etrionic_capacitor", [

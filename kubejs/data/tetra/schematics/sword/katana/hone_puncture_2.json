@@ -1,0 +1,32 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 0
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "blade/puncture_tier",
+        "level": 1
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ ""],
+                "count": 1
+            },
+            "experienceCost": 10,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/puncture_tier": 2
+            }
+        }
+    ]
+}

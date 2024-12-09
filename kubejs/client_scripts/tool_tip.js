@@ -1,5 +1,24 @@
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
+        'create_sa:brass_exoskeleton_chestplate',
+        'create_sa:andesite_exoskeleton_chestplate',
+        'create_sa:copper_exoskeleton_chestplate',
+        'create_sa:grapplin_whisk',
+        'create_sa:portable_drill',
+        'create_sa:flamethrower',
+        'create_sa:block_picker',
+        'create_sa:creative_filling_tank',
+        'create_sa:copper_magnet',
+        'create_sa:slime_helmet',
+        'create_sa:slime_boots',
+        'create_sa:small_filling_tank',
+        'create_sa:medium_filling_tank',
+        'create_sa:large_filling_tank',
+        'create_sa:small_fueling_tank',
+        'create_sa:medium_fueling_tank',
+        'create_sa:large_fueling_tank',
+    ])
+    addShiftTooltip(e, [
         "ratatouille:frozen_block",
         "ratatouille:mechanical_demolder",
         "createdieselgenerators:distillation_controller",
@@ -19,20 +38,6 @@ ItemEvents.tooltip(e => {
         'vintageimprovements:vacuum_chamber',
         "vintageimprovements:vibrating_table",
         'vintageimprovements:lathe',
-        'create_sa:brass_exoskeleton_chestplate',
-        'create_sa:andesite_exoskeleton_chestplate',
-        'create_sa:copper_exoskeleton_chestplate',
-        'create_sa:grapplin_whisk',
-        'create_sa:portable_drill',
-        'create_sa:flamethrower',
-        'create_sa:block_picker',
-        'create_sa:creative_filling_tank',
-        'create_sa:copper_magnet',
-        'create_sa:slime_helmet',
-        'create_sa:slime_boots',
-        // 'create_sa:small_filling_tank',
-        // 'create_sa:medium_filling_tank',
-        // 'create_sa:big_filling_tank'
     ])
     clearAddCtrlTooltip(e, [
         
@@ -57,6 +62,24 @@ ItemEvents.tooltip(e => {
         'create_sa:copper_jetpack_chestplate',
         'create_sa:copper_exoskeleton_chestplate',
         'create_sa:block_picker',
+    ])
+    addStock1(e, [
+        'create_sa:small_filling_tank',
+        'create_sa:small_fueling_tank',
+    ])
+    addStock2(e, [
+        'create_sa:medium_filling_tank',
+        'create_sa:medium_fueling_tank',
+    ])
+    addStock3(e, [
+        'create_sa:large_filling_tank',
+        'create_sa:large_fueling_tank',
+    ])
+    addAir(e, [
+        'create:netherite_backtank',
+        'create:copper_backtank',
+        'create_jetpack:jetpack',
+        'create_jetpack:netherite_jetpack',
     ])
 })
 let tooltips = [
@@ -98,10 +121,14 @@ tooltips.forEach(([key, zh_cn, en_us]) => {
         e.add(key, en_us)
     })
 })
-// 磁铁
 ItemEvents.tooltip(e => {
-    e.add("alexscaves:block_of_azure_neodymium", Text.translate("tooltip.createdelight.block_of_azure_neodymium"))
-    e.add("alexscaves:block_of_scarlet_neodymium", Text.translate("tooltip.createdelight.block_of_scarlet_neodymium"))
+    // 磁铁
+    e.add("alexscaves:block_of_azure_neodymium", Text.translate("tooltip.createdelight.magnetic_flux_density"))
+    e.add("alexscaves:block_of_scarlet_neodymium", Text.translate("tooltip.createdelight.magnetic_flux_density"))
     e.add("alexscaves:block_of_azure_neodymium", "§b 8")
     e.add("alexscaves:block_of_scarlet_neodymium", "§b 8")
+    // ATM卡
+    e.addAdvanced('lightmanscurrency:atm_card', (item, advanced, text) => {
+        text.remove(1)
+    })
 })

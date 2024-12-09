@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ae2:item/singularity",
+    "layer1": "lightmanscurrency:item/upgrade_tier/gold"
+  }
+}

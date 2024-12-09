@@ -1,0 +1,13 @@
+[ {
+        "modules": [ "sword/katana_blade" ],
+        "matchSuffixed": true,
+        "improvements": [ "sword/murasama_imprv" ],
+        "moduleVariants": ["katana_blade/mine_ingot"],
+        "visibilityKey": "katana_blade/mine_ingot",
+        "effects": {
+
+    },
+    "attributes": {
+	"generic.attack_damage": 10
+   }
+}]

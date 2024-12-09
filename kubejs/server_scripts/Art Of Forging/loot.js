@@ -8,4 +8,5 @@ LootJS.modifiers(e => {
     // // 移除灵魂碎片
     // e.addEntityLootModifier("minecraft:blaze")
     //     .removeLoot("art_of_forging:soul_ember")
+
 })
