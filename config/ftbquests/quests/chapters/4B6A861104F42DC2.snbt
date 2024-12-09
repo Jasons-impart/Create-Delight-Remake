@@ -740,25 +740,6 @@
 					title: "Any #forge:tools/shovels"
 					type: "item"
 				}
-				{
-					icon: {
-						Count: 1
-						id: "minecraft:iron_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					id: "4B61BD61E6625C43"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "minecraft:hoes"
-						}
-					}
-					title: "Any #minecraft:hoes"
-					type: "item"
-				}
 			]
 			title: "单头工具"
 			x: 1.0d
