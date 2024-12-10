@@ -167,7 +167,7 @@
 	#
 	# Whether the Crystalline Flower block will pull in and eat any experience orb that touches it in the world
 	#
-	crystallineFlowerConsumeExperienceOrbEntities = true
+	crystallineFlowerConsumeExperienceOrbEntities = false
 	# 
 	#-----------------------------------------------------
 	#
@@ -179,7 +179,7 @@
 	#
 	# Whether the Crystalline Flower's GUI allows players to feed it the player's experience
 	#
-	crystallineFlowerConsumeExperienceUI = true
+	crystallineFlowerConsumeExperienceUI = false
 	# 
 	#-----------------------------------------------------
 	#
