@@ -19,7 +19,7 @@ PlayerEvents.inventoryOpened(e => {
                     })
                 }
             }
-        })    
+        })
     })
 })
 

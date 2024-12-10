@@ -1,0 +1,22 @@
+{
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "createdelight:item/fire_dragonsteel_armorplate0"
+    },
+    "overrides": [
+      {
+        "predicate": {
+          "damaged": 1,
+          "damage": 0.2
+        },
+        "model": "createdelight:item/fire_dragonsteel_armorplate1"
+      },
+      {
+        "predicate": {
+          "damaged": 1,
+          "damage": 0.8
+        },
+        "model": "createdelight:item/fire_dragonsteel_armorplate2"
+      }
+    ]
+  }
