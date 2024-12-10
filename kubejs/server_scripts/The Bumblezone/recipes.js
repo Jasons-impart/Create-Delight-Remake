@@ -111,6 +111,14 @@ ServerEvents.recipes(e => {
     ]
   )
 
+  // 产蜂蜜结晶
+  e.recipes.vintageimprovements.vacuumizing(
+    "5x the_bumblezone:glistering_honey_crystal"
+  , [
+    Fluid.of("create_enchantment_industry:experience", 30),
+    "the_bumblezone:glistering_honey_crystal"
+  ]).id("vintageimprovements:vacuumizing/glistering_honey_crystal")
+
   e.recipes.vintageimprovements.pressurizing([
     Fluid.of("createcafe:melted_sugar", 25), Fluid.water(500)],
     Fluid.of("the_bumblezone:sugar_water_still", 500))
