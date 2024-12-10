@@ -69,4 +69,14 @@ ServerEvents.recipes(e => {
         .loops(3)
         .id("create_new_age:shaped/energiser_t3")
         .transitionalItem(iner)
+    e.recipes.createaddition.charging(
+        'createdelight:mmd_diamond',
+        'create_new_age:overcharged_diamond',
+        10000
+    ).id("createaddition:charging/mmd_diamond")
+    e.recipes.create_new_age.energising(
+        'createdelight:mmd_diamond',
+        'create_new_age:overcharged_diamond',
+        10000
+    ).id("create_new_age:energising/mmd_diamond")
 })
