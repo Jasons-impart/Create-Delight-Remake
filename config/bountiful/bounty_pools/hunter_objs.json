@@ -1,0 +1,526 @@
+{
+    "content": {
+		"hunter_obj_zombie": {
+			"type": "entity",
+			"content": "minecraft:zombie",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 250
+		},
+		"hunter_obj_skeleton": {
+			"type": "entity",
+			"content": "minecraft:skeleton",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 250
+		},
+		"hunter_obj_creeper": {
+			"type": "entity",
+			"content": "minecraft:creeper",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 400,
+			"weightMult": 0.5
+		},
+		"hunter_obj_husk": {
+			"type": "entity",
+			"content": "minecraft:husk",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 400,
+			"weightMult": 0.5
+		},
+		"hunter_obj_stray": {
+			"type": "entity",
+			"content": "minecraft:stray",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 400,
+			"weightMult": 0.5
+		},
+		"hunter_obj_wither_skeleton": {
+			"type": "entity",
+			"content": "minecraft:wither_skeleton",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 8
+			},
+			"unitWorth": 600,
+			"weightMult": 0.75
+		},
+		"hunter_obj_witch": {
+			"type": "entity",
+			"content": "minecraft:witch",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 8
+			},
+			"unitWorth": 1000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_vindicator": {
+			"type": "entity",
+			"content": "minecraft:vindicator",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 5
+			},
+			"unitWorth": 1000,
+			"weightMult": 0.6
+		},
+		"hunter_obj_ghast": {
+			"type": "entity",
+			"content": "minecraft:ghast",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 1500,
+			"weightMult": 0.4
+		},
+		"hunter_obj_hoglin": {
+			"type": "entity",
+			"content": "minecraft:hoglin",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 8
+			},
+			"unitWorth": 1000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_blaze": {
+			"type": "entity",
+			"content": "minecraft:blaze",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 16
+			},
+			"unitWorth": 700,
+			"weightMult": 0.6
+		},
+		"hunter_obj_piglin_brute": {
+			"type": "entity",
+			"content": "minecraft:piglin_brute",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 1500,
+			"weightMult": 0.4
+		},
+		"hunter_obj_cockatrice": {
+			"type": "entity",
+			"content": "iceandfire:cockatrice",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 8
+			},
+			"unitWorth": 3000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_siren": {
+			"type": "entity",
+			"content": "iceandfire:siren",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 5000,
+			"weightMult": 0.4
+		},
+		"hunter_obj_stymphalian_bird": {
+			"type": "entity",
+			"content": "iceandfire:stymphalian_bird",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.4
+		},
+		"hunter_obj_death_worm": {
+			"type": "entity",
+			"content": "iceandfire:death_worm",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_dread_lich": {
+			"type": "entity",
+			"content": "iceandfire:dread_lich",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_evoker": {
+			"type": "entity",
+			"content": "minecraft:evoker",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 3
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.4
+		},
+		"hunter_obj_teletor": {
+			"type": "entity",
+			"content": "alexscaves:teletor",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_boundroid": {
+			"type": "entity",
+			"content": "alexscaves:boundroid",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_notor": {
+			"type": "entity",
+			"content": "alexscaves:notor",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 4000,
+			"weightMult": 0.6
+		},
+		"hunter_obj_ferrouslime": {
+			"type": "entity",
+			"content": "alexscaves:ferrouslime",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 4000,
+			"weightMult": 0.6
+		},
+		"hunter_obj_magnetron": {
+			"type": "entity",
+			"content": "alexscaves:magnetron",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 2
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_licowitch": {
+			"type": "entity",
+			"content": "alexscaves:licowitch",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_caramel_cube": {
+			"type": "entity",
+			"content": "alexscaves:caramel_cube",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 4000,
+			"weightMult": 0.6
+		},
+		"hunter_obj_gumbeeper": {
+			"type": "entity",
+			"content": "alexscaves:gumbeeper",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_caniac": {
+			"type": "entity",
+			"content": "alexscaves:caniac",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_brainiac": {
+			"type": "entity",
+			"content": "alexscaves:brainiac",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_nucleeper": {
+			"type": "entity",
+			"content": "alexscaves:nucleeper",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 2
+			},
+			"unitWorth": 7500,
+			"weightMult": 0.3
+		},
+		"hunter_obj_underzealot": {
+			"type": "entity",
+			"content": "alexscaves:underzealot",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 4000,
+			"weightMult": 0.6
+		},
+		"hunter_obj_vesper": {
+			"type": "entity",
+			"content": "alexscaves:vesper",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_corrodent": {
+			"type": "entity",
+			"content": "alexscaves:corrodent",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 6000,
+			"weightMult": 0.5
+		},
+		"hunter_obj_watcher": {
+			"type": "entity",
+			"content": "alexscaves:watcher",
+            "rarity": "RARE",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_fire_dragon": {
+			"type": "entity",
+			"content": "iceandfire:fire_dragon",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 64000,
+			"weightMult": 0.2
+		},
+		"hunter_obj_ice_dragon": {
+			"type": "entity",
+			"content": "iceandfire:ice_dragon",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 64000,
+			"weightMult": 0.2
+		},
+		"hunter_obj_lightning_dragon": {
+			"type": "entity",
+			"content": "iceandfire:lightning_dragon",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 64000,
+			"weightMult": 0.2
+		},
+		"hunter_obj_cyclops": {
+			"type": "entity",
+			"content": "iceandfire:cyclops",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 56000,
+			"weightMult": 0.25
+		},
+		"hunter_obj_gorgon": {
+			"type": "entity",
+			"content": "iceandfire:gorgon",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 45000,
+			"weightMult": 0.3
+		},
+		"hunter_obj_hydra": {
+			"type": "entity",
+			"content": "iceandfire:hydra",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 56000,
+			"weightMult": 0.25
+		},
+		"hunter_obj_sea_serpent": {
+			"type": "entity",
+			"content": "iceandfire:sea_serpent",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 56000,
+			"weightMult": 0.25
+		},
+		"hunter_obj_hullbreaker": {
+			"type": "entity",
+			"content": "alexscaves:hullbreaker",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 81000,
+			"weightMult": 0.1
+		},
+		"hunter_obj_gum_worm": {
+			"type": "entity",
+			"content": "alexscaves:gum_worm",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 56000,
+			"weightMult": 0.25
+		},
+		"hunter_obj_wither": {
+			"type": "entity",
+			"content": "minecraft:wither",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 64000,
+			"weightMult": 0.2
+		},
+		"hunter_obj_luxtructosaurus": {
+			"type": "entity",
+			"content": "alexscaves:luxtructosaurus",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 300000,
+			"weightMult": 0.1
+		},
+		"hunter_obj_ender_dragon": {
+			"type": "entity",
+			"content": "minecraft:ender_dragon",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 400000,
+			"weightMult": 0.05
+		},
+		
+		"hunter_obj_fire_dragon_legendary": {
+			"type": "entity",
+			"content": "iceandfire:fire_dragon",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 2,
+				"max": 10
+			},
+			"unitWorth": 100000,
+			"weightMult": 0.1
+		},
+		"hunter_obj_ice_dragon_legendary": {
+			"type": "entity",
+			"content": "iceandfire:fire_dragon",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 2,
+				"max": 10
+			},
+			"unitWorth": 100000,
+			"weightMult": 0.1
+		},
+		"hunter_obj_lightning_dragon_legendary": {
+			"type": "entity",
+			"content": "iceandfire:fire_dragon",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 2,
+				"max": 10
+			},
+			"unitWorth": 100000,
+			"weightMult": 0.1
+		}
+    }
+}
