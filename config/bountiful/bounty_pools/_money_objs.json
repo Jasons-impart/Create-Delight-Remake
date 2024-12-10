@@ -1,6 +1,5 @@
 {
     "content": {
-        
         "cashier_iron_coin": {
             "type": "item",
             "content": "createdelightcore:iron_coin",
@@ -59,28 +58,6 @@
                 "max": 3
             },
             "unitWorth": 90000
-        },
-        "cashier_emerald_coin_legendary_2": {
-            "type": "item",
-            "content": "createdelightcore:emerald_coin",
-            "rarity": "LEGENDARY",
-            "amount": {
-                "min": 1,
-                "max": 6
-            },
-			"weightMult": 0.5,
-            "unitWorth": 90000
-        },
-        "cashier_netherite_coin": {
-            "type": "item",
-            "content": "createdelightcore:netherite_coin",
-            "rarity": "LEGENDARY",
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-			"weightMult": 0.2,
-            "unitWorth": 810000
         }
     }
 }
