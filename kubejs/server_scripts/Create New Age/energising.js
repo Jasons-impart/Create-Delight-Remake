@@ -9,7 +9,8 @@ ServerEvents.recipes(e => {
         "create_new_age:cutting/overcharged_golden_sheet",
         "create_new_age:diamond_wire",
         "create_new_age:pressing/blank_circuit",
-        "create_new_age:deploying/copper_circuit"
+        "create_new_age:deploying/copper_circuit",
+        "create_new_age:energising/splash_water_bottle"
     ])
     
     // 充能和激发互相适配
@@ -56,4 +57,16 @@ ServerEvents.recipes(e => {
             D: "vintageimprovements:laser_item"
         }
     ).id("create_new_age:shaped/energiser_t2")
+    let iner = "create_new_age:energiser_t2"
+    e.recipes.create.sequenced_assembly(
+        'create_new_age:energiser_t3',
+        'create_new_age:energiser_t2',
+        [
+            e.recipes.create.deploying(iner, [iner, 'create_new_age:overcharged_diamond']),
+            e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_core"])
+        ]
+    )
+        .loops(3)
+        .id("create_new_age:shaped/energiser_t3")
+        .transitionalItem(iner)
 })
