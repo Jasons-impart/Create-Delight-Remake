@@ -16,7 +16,7 @@ conductivityMultiplier = 1.0
 maxPathfindingDepth = 32
 #Multiplier of energising speed
 #Range: 0.0 ~ 1.7976931348623157E308
-energiserSpeedMultiplier = 1.0
+energiserSpeedMultiplier = 10.0
 #Multiplier for the temperature at which components overheat. Set to -1 to disable overheating.
 #Range: -1.0 ~ 1.7976931348623157E308
 overheatingMultiplier = 1.0
@@ -48,13 +48,13 @@ maxWireLength = 16
 	motorSuMultiplier = 1.0
 	#Internal energy capacity of a basic motor
 	#Range: > 1
-	basicMotorCapacity = 16000
+	basicMotorCapacity = 160000
 	#Internal energy capacity of an advanced motor
 	#Range: > 1
-	advancedMotorCapacity = 64000
+	advancedMotorCapacity = 640000
 	#Internal energy capacity of a reinforced motor
 	#Range: > 1
-	reinforcedMotorCapacity = 128000
+	reinforcedMotorCapacity = 1280000
 	#Top Speed of a basic motor
 	#Range: 1.0 ~ 1.7976931348623157E308
 	basicMotorSpeed = 128.0
@@ -66,27 +66,27 @@ maxWireLength = 16
 	reinforcedMotorSpeed = 256.0
 	#Generated SU of a basic motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	basicMotorStress = 512.0
+	basicMotorStress = 2048.0
 	#Generated SU of an advanced motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	advancedMotorStress = 2048.0
+	advancedMotorStress = 8192.0
 	#Generated SU of a reinforced motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	reinforcedMotorStress = 8192.0
+	reinforcedMotorStress = 32768.0
 
 ["Motor Extensions"]
 	#Power Multiplier of a basic motor extension
 	#Range: 1.0 ~ 1.7976931348623157E308
-	basicMotorExtensionMultiplier = 2.0
+	basicMotorExtensionMultiplier = 4.0
 	#Power Multiplier of a basic motor extension
 	#Range: 1.0 ~ 1.7976931348623157E308
-	advancedMotorExtensionMultiplier = 8.0
+	advancedMotorExtensionMultiplier = 10.0
 	#Extra energy capacity of a basic motor extension
 	#Range: > 1
-	basicMotorExtensionExtraCapacity = 64000
+	basicMotorExtensionExtraCapacity = 640000
 	#Extra energy capacity of an advanced motor extension
 	#Range: > 1
-	advancedMotorExtensionExtraCapacity = 256000
+	advancedMotorExtensionExtraCapacity = 2560000
 	#Basic motor extension scroll step
 	#Range: > 1
 	basicMotorExtensionScrollStep = 1

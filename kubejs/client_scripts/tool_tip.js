@@ -125,8 +125,8 @@ ItemEvents.tooltip(e => {
     // 磁铁
     e.add("alexscaves:block_of_azure_neodymium", Text.translate("tooltip.createdelight.magnetic_flux_density"))
     e.add("alexscaves:block_of_scarlet_neodymium", Text.translate("tooltip.createdelight.magnetic_flux_density"))
-    e.add("alexscaves:block_of_azure_neodymium", "§b 8")
-    e.add("alexscaves:block_of_scarlet_neodymium", "§b 8")
+    e.add("alexscaves:block_of_azure_neodymium", "§b 16")
+    e.add("alexscaves:block_of_scarlet_neodymium", "§b 16")
     // ATM卡
     e.addAdvanced('lightmanscurrency:atm_card', (item, advanced, text) => {
         text.remove(1)
