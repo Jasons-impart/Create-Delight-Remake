@@ -2,6 +2,7 @@
 #0-All debug messages. 1-Warnings/Errors only. 2-Errors only. 3-No debug messages.
 #Note: All debug messages will still be sent debug.log regardless of settings.
 #Range: 0 -> 3
+#Default: 0
 debugLevel=0
 
 #Crafting Settings
@@ -10,22 +11,27 @@ debugLevel=0
 	#Whether Network Traders can be crafted.
 	#Disabling will not remove any existing Network Traders from the world, nor prevent their use.
 	#Disabling does NOT disable the recipes of Network Upgrades or the Trading Terminals.
+	#Default: true
 	canCraftNetworkTrader=true
 	
 	#Whether Trader Interface blocks can be crafted.
 	#Disabling will not remove any existing Trader Interfaces from the world, nor prevent their use.
+	#Default: true
 	canCraftTraderInterface=true
 	
 	#Whether Auction Stand blocks can be crafted.
 	#Disabling will not remove any existing Auction Stands from the world, nor prevent their use.
+	#Default: true
 	canCraftAuctionStand=true
 	
 	#Whether Tax Blocks can be crafted.
 	#Disabling will not remove any existing Tax Blocks from the world, nor prevent their use.
+	#Default: true
 	canCraftTaxCollector=true
 	
 	#Whether ATM Cards can be crafted.
 	#Disabling will not remove any existing ATM Cards from the world, nor prevent their use.
+	#Default: false
 	canCraftATMCard=true
 	
 	#Money Chest Crafting
@@ -33,64 +39,79 @@ debugLevel=0
 		#Whether the Money Chest can be crafted.
 		#Disabling will not remove any existing Money Chests from the world, nor prevent their use.
 		#Disabling does NOT disable the recipes of Money Chest Upgrades.
+		#Default: true
 		canCraftCoinChest=true
 		
 		#Whether the Money Chest Exchange Upgrade can be crafted.
 		#Disabling will not remove any existing Money Chest Exchange Upgrades from the world, nor prevent their use.
+		#Default: true
 		canCraftExchangeUpgrade=true
 		
 		#Whether the Money Chest Magnet Upgrades can be crafted.
 		#Disabling will not remove any existing Money Chest Magnet Upgrades from the world, nor prevent their use.
+		#Default: true
 		canCraftMagnetUpgrade=true
 		
 		#Whether the Money Chest Bank Upgrade can be crafted.
 		#Disabling will not remove any existing Money Chest Bank Upgrades from the world, nor prevent their use.
+		#Default: true
 		canCraftBankUpgrade=true
 		
 		#Whether the Money Chest Security Upgrades can be crafted.
 		#Disabling will not remove any existing Money Chest Security Upgrades from the world, nor prevent their use.
+		#Default: true
 		canCraftSecurityUpgrade=true
 		
 #Event Settings
 [events]
 	#Whether advancements will give players chocolate coins as a reward for playing during the event.
 	#Note: Disabling will disable the entire `/lcadmin events reward` command used by the functions to give the reward.
+	#Default: true
 	advancementRewards=false
 	
 	#Whether the Chocolate Event Coins will be added to the coin data.
 	#Note: Disabling will not remove any Chocolate Coin items that already exist.
+	#Default: true
 	chocolate=false
 	
 	#Whether the Chocolate Event Coins will replace a small portion of the default coin loot drops during the event.
 	#See "chocolateRate" to customize the replacement rate
+	#Default: true
 	chocolateDrops=true
 	
 	#The percentage of Chocolate Coins being dropped instead of normal coins while an event is active.
 	#Range: 0.0 -> 1.0
+	#Default: 0.1
 	chocolateRate=0.1
 	
 #Villager Related Settings
 #Note: Any changes to villagers requires a full reboot to be applied due to how Minecraft/Forge registers trades.
 [villagers]
 	#Whether the wandering trader will have additional trades that allow you to buy misc items with money.
+	#Default: true
 	addCustomWanderingTrades=true
 	
 	#Whether the banker villager profession will have any registered trades. The banker sells Lightman's Currency items for coins.
+	#Default: true
 	addBanker=true
 	
 	#Whether the cashier villager profession will have any registered trades.. The cashier sells an amalgamation of vanilla traders products for coins.
+	#Default: true
 	addCashier=true
 	
 	#Villager Trade Modification
 	#Note: Changes made only apply to newly generated trades. Villagers with trades already defined will not be changed.
 	[villagers.modification]
 		#Whether vanilla villagers should have the Emeralds from their trades replaced with coins.
+		#Default: false
 		changeVanillaTrades=true
 		
 		#Whether villagers added by other mods should have the Emeralds from their trades replaced with coins.
+		#Default: false
 		changeModdedTrades=true
 		
 		#Whether the wandering trader should have the emeralds from their trades replaced with the default replacement coin.
+		#Default: false
 		changeWanderingTrades=true
 		
 		#The default coin to replace a trades emeralds with.
@@ -114,43 +135,52 @@ debugLevel=0
 	#T1 loot item.
 	#Leave blank ("") to not spawn T1 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":1, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_copper"
 	lootItemT1="createdelightcore:iron_coin"
 	
 	#T2 loot item.
 	#Leave blank ("") to not spawn T2 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":2, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_iron"
 	lootItemT2="createdelightcore:copper_coin"
 	
 	#T3 loot item.
 	#Leave blank ("") to not spawn T3 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":3, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_gold"
 	lootItemT3="createdelightcore:gold_coin"
 	
 	#T4 loot item.
 	#Leave blank ("") to not spawn T4 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":4, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_emerald"
 	lootItemT4="createdelightcore:emerald_coin"
 	
 	#T5 loot item.
 	#Leave blank ("") to not spawn T5 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_diamond"
 	lootItemT5="createdelightcore:netherite_coin"
 	
 	#T6 loot item.
 	#Leave blank ("") to not spawn T6 loot.
 	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":6, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_netherite"
 	lootItemT6="minecraft:air"
 	
 	#Entity Loot Settings.
 	[loot.entities]
 		#Whether coins can be dropped by entities.
+		#Default: true
 		enabled=false
 		
 		#Whether coins can be dropped by entities that were spawned by the vanilla spawner.
+		#Default: false
 		allowSpawnedDrops=false
 		
 		#Whether modded machines that emulate player behaviour can trigger coin drops from entities.
 		#Set to false to help prevent autmated coin farming.
+		#Default: true
 		allowFakePlayerDrops=true
 		
 		#Entity Drop Lists. Accepts the following inputs:
@@ -210,6 +240,7 @@ debugLevel=0
 	#Chest Loot Settings
 	[loot.chests]
 		#Whether coins can spawn in chests.
+		#Default: true
 		enabled=false
 		
 		#Chest Spawn Lists
