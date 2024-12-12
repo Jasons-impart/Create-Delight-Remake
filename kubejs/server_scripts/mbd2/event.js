@@ -71,7 +71,7 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
                 let y = parseInt(poslist[1])
                 let z = parseInt(poslist[2])
 
-                let particle = Utils.particleOptions(`dust 1 0 0 1`)
+                // let particle = Utils.particleOptions(`dust 1 0 0 1`)
                 // level.spawnParticles(particle, false, x + 0.5, y + 0.5, z + 0.5, 0, 1, 0, 1, 0.5)
                 level.getEntitiesWithin(AABB.of(x + 1, y + 1, z + 1, x - 1, y - 1, z - 1)).forEach(entity => {
                     if (entity.isLiving()) {
@@ -84,5 +84,16 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
                 })
             })
         }
+    }
+})
+
+MBDMachineEvents.onRemoved("mbd2:reacter_rod", e => {
+    
+    const { level, pos, machineStateName } = e.event.machine
+    if (machineStateName == "working" || machineStateName == "waiting") {
+        level.createExplosion(pos.x, pos.y, pos.z)
+        .causesFire(false)
+        .explosionMode("block")
+        .explode()
     }
 })
