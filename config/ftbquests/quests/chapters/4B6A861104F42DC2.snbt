@@ -720,27 +720,25 @@
 			}
 			id: "6DEC3C0546CBC51E"
 			shape: "rsquare"
-			tasks: [
-				{
-					icon: {
-						Count: 1
-						id: "minecraft:iron_shovel"
-						tag: {
-							Damage: 0
-						}
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "minecraft:iron_shovel"
+					tag: {
+						Damage: 0
 					}
-					id: "0526A1671CD836FA"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:tools/shovels"
-						}
-					}
-					title: "Any #forge:tools/shovels"
-					type: "item"
 				}
-			]
+				id: "0526A1671CD836FA"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:tools/shovels"
+					}
+				}
+				title: "Any #forge:tools/shovels"
+				type: "item"
+			}]
 			title: "单头工具"
 			x: 1.0d
 			y: 4.0d
