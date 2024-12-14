@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/carnage",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+	    "art_of_forging:carnage": 1
+        }
+    }
+]

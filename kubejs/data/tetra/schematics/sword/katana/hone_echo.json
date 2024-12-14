@@ -23,6 +23,10 @@
                     {
                         "type": "tetra:improvement",
                         "improvement": "sword/murasama_imprv"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "blade/puncture_tier"
                     }
                 ]
             },
@@ -30,7 +34,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/puncture_tier"
+                    "improvement": "blade/echo"
                 }
             }
         ]
@@ -38,15 +42,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:shark_tooth" ,"iceandfire:troll_tusk","iceandfire:hydra_fang","iceandfire:sea_serpent_fang","alexsmobs:bone_serpent_tooth"],
+                "items":[ "kinetic_pixel:pistonexciter"],
                 "count": 1
             },
-            "experienceCost": 10,
+            "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/puncture_tier": 1
+                "blade/echo": 1
             }
         }
     ]
