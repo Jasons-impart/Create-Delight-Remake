@@ -1,9 +1,9 @@
 /*
 !/.gitignore
-!/config/*
-!/defaultconfigs/*
-!/keybinding presets/*
-!/kubejs/*
+!/config
+!/defaultconfigs
+!/keybinding presets
+!/kubejs
 !/mods
 !/LICENSE
 !/ModList 0.4a.md
