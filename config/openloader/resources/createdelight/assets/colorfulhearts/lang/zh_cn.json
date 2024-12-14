@@ -1,0 +1,20 @@
+{
+    "colorfulhearts.screen.configuration.title": "多彩之心",
+    "colorfulhearts.screen.configuration.colors.category": "颜色",
+    "colorfulhearts.screen.configuration.tweaks.category": "调整",
+    "colorfulhearts.screen.health.title": "生命值颜色",
+    "colorfulhearts.screen.absorption.title": "吸收值颜色",
+    "colorfulhearts.options.button.health_colors": "生命值",
+    "colorfulhearts.options.button.absorption_colors": "吸收值",
+    "colorfulhearts.options.button.absorption_over_health.false": "吸收：分离显示",
+    "colorfulhearts.options.button.absorption_over_health.true": "吸收：覆盖生命值",
+    "colorfulhearts.options.button.hearttype.normal": "普通",
+    "colorfulhearts.options.button.hearttype.poisoned": "中毒",
+    "colorfulhearts.options.button.hearttype.withered": "凋零",
+    "colorfulhearts.options.button.hearttype.frozen": "冰冻",
+    "colorfulhearts.options.button.confirmsave": "保存并退出",
+    "colorfulhearts.options.button.cancel": "取消",
+    "colorfulhearts.options.button.vanillaheart.true": "原版：启用",
+    "colorfulhearts.options.button.vanillaheart.false": "原版：禁用"
+  }
+  
