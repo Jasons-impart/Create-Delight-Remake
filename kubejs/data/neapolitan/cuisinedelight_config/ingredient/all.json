@@ -1,0 +1,66 @@
+{
+    "entries": [
+        {
+            "type": "NONE",
+            "effects": [
+                {
+                    "effect": "neapolitan:vanilla_scent",
+                    "level": 0,
+                    "time": 1200
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "neapolitan:vanilla_pods"
+                }
+            ],
+            "max_time": 300,
+            "min_time": 0,
+            "nutrition": 1,
+            "overcook_penalty": 0,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "neapolitan:strawberries"
+                },
+                {
+                    "item": "neapolitan:white_strawberries"
+                }
+            ],
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "neapolitan:agility",
+                    "level": 0,
+                    "time": 1200
+                }],
+            "ingredient": [
+                {
+                    "item": "neapolitan:banana"
+                }
+            ],
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 60
+        }
+    ]
+}
