@@ -6,29 +6,27 @@ const armorplate = {
 }
 
 PlayerEvents.inventoryOpened(e => {
-    e.getInventoryContainer().items.forEach(item => {
-        //使用比较蠢的方法一定程度的修复自定义插板信息丢失
-        if (item.hasTag("protection_pixel:plates")) {
-            if (item.nbt.get("weight") == null) {
-                let id = item.getId().toString()
-                item.nbt.merge({
-                    armor: armorplate[id][0],
-                    toughness: armorplate[id][1],
-                    weight: armorplate[id][2],
-                })
+    e.server.scheduleInTicks(5, () => {
+        e.getInventoryContainer().items.forEach(item => {
+            //使用比较蠢的方法一定程度的修复自定义插板信息丢失
+            if (item.hasTag("protection_pixel:plates")) {
+                if (item.nbt.get("weight") == null) {
+                    let id = item.getId().toString()
+                    item.nbt.merge({
+                        armor: armorplate[id][0],
+                        toughness: armorplate[id][1],
+                        weight: armorplate[id][2],
+                    })
+                }
             }
-        }
-        // console.log(`id: ${item.id}, nbt: ${item.nbt}`)
+        })
     })
 })
 
 EntityEvents.hurt(e => {
-    let entity = e.getEntity()
-    let source = e.getSource()
-    let fire_count = 0
-    let ice_count = 0
-    let lightning_count = 0
-    let dragonsteel_count = 0
+    const { entity, source } = e
+    let zero = [0, 0, 0, 0]
+    let [ fire_count, ice_count, lightning_count, dragonsteel_count ] = zero
     function linear(val, start, end) {
         return val * (end - start) + start
     }

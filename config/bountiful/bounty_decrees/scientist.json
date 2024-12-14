@@ -1,0 +1,10 @@
+{
+	"objectives": [
+		"scientist_objs",
+		"_money_objs"
+	],
+	"rewards": [
+		"_money_rews",
+		"scientist_rews"
+	]
+}
