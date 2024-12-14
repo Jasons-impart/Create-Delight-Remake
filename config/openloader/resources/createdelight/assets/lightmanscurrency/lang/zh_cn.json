@@ -1388,7 +1388,7 @@
 	"tooptip.lightmanscurrency.coinjar.storedcoins.single": "装有一个%s",
 	"tooptip.lightmanscurrency.coinjar.storedcoins.multiple": "装有%1$s个%2$s",
 	"tooltip.lightmanscurrency.storedmoney": "$%s",
-	"tooltip.lightmanscurrency.wallet.storedmoney": "§2装有:%s",
+	"tooltip.lightmanscurrency.wallet.storedmoney": "§2装有:",
 	"tooltip.lightmanscurrency.wallet.pickup": "§e自动收集你捡到的任何钱币。§r",
 	"tooltip.lightmanscurrency.wallet.pickup.magnet": "§e可以吸取并收集 %s 米内的钱币。§r",
 	"tooltip.lightmanscurrency.wallet.manualConvert": "§e可以在界面中手动兑换钱币。§r",
