@@ -1,0 +1,22 @@
+{
+  "itemGroup.hamsters.tab": "仓鼠",
+  "item.hamsters.hamsters": "仓鼠",
+  "entity.hamsters.hamster": "仓鼠",
+  "item.hamsters.hamster": "仓鼠",
+  "tooltip.hamsters.white": "白色",
+  "tooltip.hamsters.peaches_and_cream": "奶油黄桃",
+  "tooltip.hamsters.orange": "橙色",
+  "tooltip.hamsters.grey_white": "灰白",
+  "tooltip.hamsters.brown": "棕色",
+  "tooltip.hamsters.black_white": "黑白",
+  "tooltip.hamsters.black": "黑色", 
+  "tooltip.hamsters.tamed": "驯服",
+  "tooltip.hamsters.baby": "幼崽", 
+  "item.hamsters.hamster_spawn_egg": "仓鼠刷怪蛋",
+  "block.hamsters.tunnel": "通道",
+  "block.hamsters.hamster_wheel": "仓鼠轮",
+  "hamsters.subtitles.hamster.ambient": "仓鼠尖叫",
+  "hamsters.subtitles.hamster.hurt": "仓鼠受伤",
+  "hamsters.subtitles.hamster.death": "仓鼠死亡",
+  "hamsters.subtitles.hamster.beg": "仓鼠祈祷"
+}
