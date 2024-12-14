@@ -1325,11 +1325,9 @@
 		}
 		{
 			dependencies: ["4A7D4B98BC089A8A"]
+			description: [""]
 			id: "552B038D310FA139"
-			tasks: [{
-				id: "3316E491DB6BA14F"
-				type: "checkmark"
-			}]
+			title: "&7谐振金属&r"
 			x: -4.0d
 			y: 2.0d
 		}

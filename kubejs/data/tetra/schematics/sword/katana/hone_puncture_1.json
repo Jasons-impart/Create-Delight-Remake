@@ -7,7 +7,8 @@
     "displayType": "major",
     "glyph": {
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 0
+        "textureX": 208,
+        "tint": "c52323"
     },
     "requirement": {
         "type": "tetra:and",
