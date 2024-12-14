@@ -299,8 +299,8 @@
 	"createaddition.schedule.condition.threshold.unit": "kFE",
 	"createaddition.schedule.condition.threshold.energy": "电能",
 
-	"death.attack.barbed_wire": "%1$s 尝试越过铁丝网",
-  	"death.attack.barbed_wire.player": "%1$s 在与 %2$s 的战斗中尝试越过铁丝网",
+	"death.attack.createaddition.barbed_wire": "%1$s 尝试越过铁丝网",
+  	"death.attack.createaddition.barbed_wire.player": "%1$s 在与 %2$s 的战斗中尝试越过铁丝网",
 
 	"effect.createaddition.shocking":"触电",
 	"death.attack.tesla_coil": "%1$s 受到了致命电击",
