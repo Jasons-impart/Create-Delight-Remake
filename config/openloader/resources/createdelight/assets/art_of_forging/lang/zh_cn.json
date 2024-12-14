@@ -84,7 +84,7 @@
 	"tetra.stats.art_of_forging:slaughtering.tooltip_short": "当目标生命值高于某个百分比时，造成额外伤害",
 
 	"art_of_forging.effect.carnage.name": "屠杀",
-	"art_of_forging.effect.carnage.tooltip": "当你攻击目标时，你会获得10%的伤害加成。每次连续攻击时，加成伤害增加10%，最多可叠加至40%。此叠加效果在死亡时消失。",
+	"art_of_forging.effect.carnage.tooltip": "当你攻击目标时，你会获得10%%的伤害加成。每次连续攻击时，加成伤害增加10%%，最多可叠加至40%%。此叠加效果在死亡时消失。",
 	"tetra.stats.art_of_forging:carnage": "屠杀",
 	"tetra.stats.art_of_forging:carnage.tooltip_short": "攻击目标时获得伤害加成，连续攻击可叠加，直到死亡",
 

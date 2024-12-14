@@ -36,7 +36,7 @@
 !/treechop-common.toml
 !/waystones-common.toml
 !/vinery
-# !/*quark* 要加去默认配置加
+!/quark-common.toml
 !/vintageimprovements*
 xaerominimap_entities.json
 !/ad_astra*
