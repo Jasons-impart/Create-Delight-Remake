@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/echo",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+	    "abilityEcho": 1
+        }
+    }
+]

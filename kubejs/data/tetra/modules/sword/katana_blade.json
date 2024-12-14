@@ -18,8 +18,7 @@
             },
             "effects": {
                 "skewering": [ 1, 1 ],
-                "sweeping": 1,
-                "abilityMomentum": [ 4, 0.5 ]
+                "sweeping": 1
             },
             "tools": {
                 "cut": [ 1, 2 ]
