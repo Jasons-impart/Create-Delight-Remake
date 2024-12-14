@@ -1,0 +1,158 @@
+{
+    "entries": [
+        {
+            "type": "SEAFOOD",
+            "effects": [
+                {
+                    "effect": "minecraft:night_vision",
+                    "level": 0,
+                    "time": 1200
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:raw_lamprey"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 2,
+            "stir_time": 40
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [
+                {
+                    "effect": "minecraft:night_vision",
+                    "level": 0,
+                    "time": 1200
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:raw_lamprey_fillet"
+                }
+            ],
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:soybean"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 180,
+            "nutrition": 8,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "youkaishomecoming:hypnosis",
+                    "level": 0,
+                    "time": 1200
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:stripped_mandrake_root"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 180,
+            "nutrition": 6,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.5,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": {
+                "item": "youkaishomecoming:tofu"
+            },
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 12,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.1,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "youkaishomecoming:phantom",
+                    "level": 1,
+                    "time": 1200
+                }
+            ],
+            "ingredient": {
+                "item": "youkaishomecoming:udumbara_flower"
+            },
+            "max_time": 360,
+            "min_time": 0,
+            "nutrition": 16,
+            "overcook_penalty": 0.0,
+            "raw_penalty": 0.0,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:flesh"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 180,
+            "nutrition": 8,
+            "overcook_penalty": 0.25,
+            "raw_penalty": 1,
+            "size": 1,
+            "stir_time": 40
+        },
+        {
+            "type": "NONE",
+            "effects": [
+                {
+                    "effect": "farmersdelight:nourishment",
+                    "level": 0,
+                    "time": 600
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "youkaishomecoming:soy_sauce_bottle"
+                }
+            ],
+            "max_time": 300,
+            "min_time": 0,
+            "nutrition": 8,
+            "overcook_penalty": 0,
+            "raw_penalty": 0,
+            "size": 1,
+            "stir_time": 120
+        }
+    ]
+}
