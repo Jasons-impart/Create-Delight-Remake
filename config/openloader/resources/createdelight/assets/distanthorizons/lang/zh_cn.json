@@ -60,6 +60,11 @@
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending.@tooltip": "LOD区域的生物群落融合配置，与原版mc的配置相同。\n\n请注意，除了'0'之外的任何设置都会极大地影响Lod构建时间\n并增加三角形数。如果设置得太高，对区块生成速度的影响也很大。\n\n'0'等于原版生物群落融合的'1x1'，\n'1'等于原版生物群落融合的'3x3'，\n'2'等于原版生物群落融合的'5x5'...\n",
 
   "distanthorizons.config.client.advanced.graphics.fog": "雾",
+
+  "distanthorizons.config.client.advanced.graphics.fog.drawMode": "雾绘制模式",
+  "distanthorizons.config.client.advanced.graphics.fog.drawMode.@tooltip": "雾将在何时渲染到LOD上。",
+  "distanthorizons.config.client.advanced.graphics.fog.distance": "雾距离",
+  "distanthorizons.config.client.advanced.graphics.fog.distance.@tooltip": "雾将在LOD上渲染的距离。",
   "distanthorizons.config.client.advanced.graphics.fog.colorMode": "雾颜色模式",
   "distanthorizons.config.client.advanced.graphics.fog.colorMode.@tooltip": "LOD渲染时雾的颜色。",
   "distanthorizons.config.client.advanced.graphics.fog.disableVanillaFog": "禁用原版雾",
@@ -253,6 +258,7 @@
 
   "distanthorizons.config.client.advanced.logging": "日志记录",
   "distanthorizons.config.client.advanced.logging.@tooltip": "控制日志记录的处理方式。",
+  
   "distanthorizons.config.client.advanced.logging.logWorldGenEvent": "世界生成事件",
   "distanthorizons.config.client.advanced.logging.logWorldGenPerformance": "世界生成性能",
   "distanthorizons.config.client.advanced.logging.logWorldGenLoadEvent": "世界生成加载事件",
