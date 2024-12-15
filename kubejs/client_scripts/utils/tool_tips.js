@@ -189,7 +189,7 @@ function addAir(event, items) {
         event.addAdvanced(item, (item, advanced, text) => {
             let Air = item.nbt.Air
             let air = parseInt(Air)
-            if(air == undefined){
+            if(isNaN(air)){
                 air = 0
             }
             text.add(Text.translate("tooltip.createdelight.air", air))
