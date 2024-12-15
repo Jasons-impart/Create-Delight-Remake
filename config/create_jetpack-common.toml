@@ -1,7 +1,7 @@
 
 [air]
 	#Range: > 1
-	uses_per_tank = 7200
+	uses_per_tank = 36000
 	#Range: > 1
 	uses_per_tank_hover = 72000
 
