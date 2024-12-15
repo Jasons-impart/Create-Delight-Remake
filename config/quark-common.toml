@@ -117,7 +117,7 @@
 	Grate = true
 	Hedges = true
 	"Hollow Logs" = true
-	"Industrial Palette" = false
+	"Industrial Palette" = true
 	"Japanese Palette" = true
 	"Leaf Carpet" = true
 	Midori = true
@@ -125,7 +125,7 @@
 	"More Mud Blocks" = true
 	"More Potted Plants" = true
 	"Nether Brick Fence Gate" = true
-	"Rainbow Lamps" = false
+	"Rainbow Lamps" = true
 	"Raw Metal Bricks" = true
 	Rope = true
 	"Shear Vines" = true
@@ -197,8 +197,8 @@
 
 	[building.leaf_carpet]
 		#This feature disables itself if any of the following mods are loaded:
-		# - woodworks
 		# - immersive_weathering
+		# - woodworks
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -237,8 +237,8 @@
 		#Allowed values: [0,1]
 		"Fall Damage Multiplier" = 0.5
 		#This feature disables itself if any of the following mods are loaded:
-		# - goated
 		# - environmental
+		# - goated
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -246,8 +246,8 @@
 	[building.variant_bookshelves]
 		"Change Names" = true
 		#This feature disables itself if any of the following mods are loaded:
-		# - woodworks
 		# - woodster
+		# - woodworks
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -266,8 +266,8 @@
 	[building.variant_ladders]
 		"Change Names" = true
 		#This feature disables itself if any of the following mods are loaded:
-		# - woodworks
 		# - woodster
+		# - woodworks
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -349,7 +349,7 @@
 	"Pathfinder Maps" = false
 	Pickarang = false
 	"Seed Pouch" = true
-	"Skull Pikes" = false
+	"Skull Pikes" = true
 	"Slime In A Bucket" = true
 	"Torch Arrow" = true
 	Trowel = true
@@ -526,7 +526,7 @@
 	"Glass Shard" = true
 	"Gold Tools Have Fortune" = true
 	"Grab Chickens" = false
-	"Hoe Harvesting" = false
+	"Hoe Harvesting" = true
 	"Horses Swim" = true
 	"Improved Sponges" = true
 	"Lock Rotation" = true
