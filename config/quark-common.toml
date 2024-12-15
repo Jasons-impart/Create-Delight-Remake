@@ -51,17 +51,17 @@
 	oddities = true
 
 [automation]
-	"Chains Connect Blocks" = true
-	Chute = true
-	Crafter = true
-	"Dispensers Place Blocks" = true
+	"Chains Connect Blocks" = false
+	Chute = false
+	Crafter = false
+	"Dispensers Place Blocks" = false
 	"Ender Watcher" = true
 	"Feeding Trough" = true
 	Gravisand = true
-	"Iron Rod" = true
+	"Iron Rod" = false
 	"Metal Buttons" = true
 	"Obsidian Plate" = true
-	"Pistons Move Tile Entities" = true
+	"Pistons Move Tile Entities" = false
 	"Redstone Randomizer" = true
 
 	[automation.crafter]
@@ -117,7 +117,7 @@
 	Grate = true
 	Hedges = true
 	"Hollow Logs" = true
-	"Industrial Palette" = true
+	"Industrial Palette" = false
 	"Japanese Palette" = true
 	"Leaf Carpet" = true
 	Midori = true
@@ -125,18 +125,18 @@
 	"More Mud Blocks" = true
 	"More Potted Plants" = true
 	"Nether Brick Fence Gate" = true
-	"Rainbow Lamps" = true
+	"Rainbow Lamps" = false
 	"Raw Metal Bricks" = true
 	Rope = true
 	"Shear Vines" = true
 	Shingles = true
 	"Soul Sandstone" = true
-	Stools = true
-	"Sturdy Stone" = true
+	Stools = false
+	"Sturdy Stone" = false
 	Thatch = true
 	"Variant Bookshelves" = true
 	"Variant Chests" = true
-	"Variant Furnaces" = true
+	"Variant Furnaces" = false
 	"Variant Ladders" = true
 	"Vertical Planks" = true
 	"Vertical Slabs" = true
@@ -197,8 +197,8 @@
 
 	[building.leaf_carpet]
 		#This feature disables itself if any of the following mods are loaded:
-		# - immersive_weathering
 		# - woodworks
+		# - immersive_weathering
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -237,8 +237,8 @@
 		#Allowed values: [0,1]
 		"Fall Damage Multiplier" = 0.5
 		#This feature disables itself if any of the following mods are loaded:
-		# - environmental
 		# - goated
+		# - environmental
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -246,8 +246,8 @@
 	[building.variant_bookshelves]
 		"Change Names" = true
 		#This feature disables itself if any of the following mods are loaded:
-		# - woodster
 		# - woodworks
+		# - woodster
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -266,8 +266,8 @@
 	[building.variant_ladders]
 		"Change Names" = true
 		#This feature disables itself if any of the following mods are loaded:
-		# - woodster
 		# - woodworks
+		# - woodster
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -342,14 +342,14 @@
 	"Ambient Discs" = true
 	"Ancient Tomes" = true
 	"Beacon Redirection" = true
-	"Bottled Cloud" = true
+	"Bottled Cloud" = false
 	"Color Runes" = true
 	"Endermosh Music Disc" = true
 	"Parrot Eggs" = true
-	"Pathfinder Maps" = true
-	Pickarang = true
+	"Pathfinder Maps" = false
+	Pickarang = false
 	"Seed Pouch" = true
-	"Skull Pikes" = true
+	"Skull Pikes" = false
 	"Slime In A Bucket" = true
 	"Torch Arrow" = true
 	Trowel = true
@@ -512,7 +512,7 @@
 
 [tweaks]
 	"Armed Armor Stands" = true
-	"Automatic Recipe Unlock" = true
+	"Automatic Recipe Unlock" = false
 	"Better Elytra Rocket" = true
 	"Campfires Boost Elytra" = true
 	"Compasses Work Everywhere" = true
@@ -525,12 +525,12 @@
 	"Enhanced Ladders" = true
 	"Glass Shard" = true
 	"Gold Tools Have Fortune" = true
-	"Grab Chickens" = true
-	"Hoe Harvesting" = true
+	"Grab Chickens" = false
+	"Hoe Harvesting" = false
 	"Horses Swim" = true
 	"Improved Sponges" = true
 	"Lock Rotation" = true
-	"Magma Keeps Concrete Powder" = true
+	"Magma Keeps Concrete Powder" = false
 	"Map Washing" = true
 	"More Banner Layers" = true
 	"More Note Block Sounds" = true
@@ -770,12 +770,12 @@
 	"Azalea Wood" = true
 	"Big Stone Clusters" = true
 	"Blossom Trees" = true
-	"Chorus Vegetation" = true
+	"Chorus Vegetation" = false
 	Corundum = true
 	"Fairy Rings" = true
 	"Fallen Logs" = true
 	"Glimmering Weald" = true
-	"Monster Box" = true
+	"Monster Box" = false
 	"Nether Obsidian Spikes" = true
 	"New Stone Types" = true
 	"No More Lava Pockets" = true
@@ -1172,9 +1172,9 @@
 			Dimensions = ["minecraft:the_nether"]
 
 	[world.new_stone_types]
-		"Enable Limestone" = true
-		"Enable Jasper" = true
-		"Enable Shale" = true
+		"Enable Limestone" = false
+		"Enable Jasper" = false
+		"Enable Shale" = false
 		"Enable Myalite" = true
 		"Add New Stones To Mason Trades" = true
 
@@ -1347,11 +1347,11 @@
 				"Is Blacklist" = false
 
 [mobs]
-	Crabs = true
+	Crabs = false
 	Forgotten = true
 	Foxhound = true
 	Shiba = true
-	Stonelings = true
+	Stonelings = false
 	Toretoise = true
 	Wraith = true
 
@@ -1827,7 +1827,7 @@
 	"Matrix Enchanting" = false
 	Pipes = false
 	"Tiny Potato" = true
-	"Totem Of Holding" = true
+	"Totem Of Holding" = false
 
 	[oddities.backpack]
 		#Set this to true to allow the backpacks to be unequipped even with items in them
