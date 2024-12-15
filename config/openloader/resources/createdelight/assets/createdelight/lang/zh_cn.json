@@ -392,7 +392,7 @@
     "tooltip.createdelight.stock1": "§7存储§8：%s/800.0",
     "tooltip.createdelight.stock2": "§7存储§8：%s/1600.0",
     "tooltip.createdelight.stock3": "§7存储§8：%s/3200.0",
-    "tooltip.createdelight.air": "§7储气§8:%s/900.0",
+    "tooltip.createdelight.air": "§7储气§8:%s",
     "tooltip.createdelight.shift_frozen_block": "§7可§b冷却§7周围§b一格以内§7的物品",
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§r§7，但是会将模具存储在§b机器内部",
     "tooltip.createdelight.shift_distillation_controller": "§b每个§7储罐都需要一个",
