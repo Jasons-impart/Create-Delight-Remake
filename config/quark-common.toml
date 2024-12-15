@@ -1352,7 +1352,7 @@
 	Foxhound = true
 	Shiba = true
 	Stonelings = false
-	Toretoise = true
+	Toretoise = false
 	Wraith = true
 
 	[mobs.crabs]
