@@ -1,8 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_output(e, [
-        "supplementaries:bomb",
         "create_enchantment_industry:experience_rotor",
-        "supplementaries:bomb_spiky"
     ])
     remove_recipes_id(e, [
         "create:crafting/materials/rose_quartz",

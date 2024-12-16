@@ -4,11 +4,11 @@
 	clock_block = true
 	redstone_illuminator = true
 	crank = true
-	cog_block = true
+	cog_block = false
 	gold_door = true
 	gold_trapdoor = true
 	lock_block = true
-	relayer = true
+	relayer = false
 
 	[redstone.speaker_block]
 		enabled = true
@@ -22,7 +22,7 @@
 		range = 64
 
 	[redstone.bellows]
-		enabled = true
+		enabled = false
 		#bellows pushes air following this equation: 
 		#air=(sin(2PI*ticks/period)<0), with period = base_period-(redstone_power-1)*power_scaling 
 		#represents base period at 1 power
@@ -42,7 +42,7 @@
 		range = 5
 
 	[redstone.spring_launcher]
-		enabled = true
+		enabled = false
 		#spring launcher launch speed
 		#Range: 0.0 ~ 16.0
 		velocity = 1.5
@@ -60,14 +60,14 @@
 		work_from_any_side = false
 
 	[redstone.turn_table]
-		enabled = true
+		enabled = false
 		#can rotate entities standing on it?
 		rotate_entities = true
 		#Allows turn table to shuffle containers content when rotated over horizontal axis
 		shuffle_containers = true
 
 	[redstone.pulley_block]
-		enabled = true
+		enabled = false
 		#Chance for a new mineshaft elevator piece to spawn
 		#Range: 0.0 ~ 1.0
 		mineshaft_elevator = 0.035
@@ -85,12 +85,12 @@
 		fill_entities_below = false
 
 	[redstone.crystal_display]
-		enabled = true
+		enabled = false
 		#Allows chaining 2 crystal displays, letting one power the other to its left IF its own power exceeds 10. Given power will be its own divided by 10. Note that to work the decimal display must NOT have power directly behind it. Doing so will override the behavior to non chaining mode
 		chaining = true
 
 [functional]
-	fodder = true
+	fodder = false
 	hourglass = true
 
 	[functional.rope]
@@ -99,7 +99,7 @@
 		#Makes sliding down ropes as fast as free falling, still negating fall damage
 		slide_on_fall = true
 		#In case you want to disable supplementaries ropes you can specify here another mod rope and they will be used for rope arrows and in mineshafts instead
-		rope_override = "supplementaries:rope"
+		rope_override = "farmersdelight:rope"
 		#Enables horizontal placement of ropes. Disabling will make ropes always non solid
 		horizontal_ropes = true
 		#Use this config to turn allow supplementaries to replace all items tagged as #supplementaies:ropes with supplementaries own rope or turn them to air instead. This is applied to all loot tables (chests and drops)
@@ -107,7 +107,7 @@
 		replace_in_loot_tables = "NONE"
 
 	[functional.jar]
-		enabled = true
+		enabled = false
 		#Jar liquid capacity: leave at 12 for pixel accuracy
 		#Range: 0 ~ 1024
 		capacity = 12
@@ -119,11 +119,11 @@
 		#Dynamically allows all small mobs inside jars depending on their hitbox size
 		jar_auto_detect = false
 		#Allow Jars to capture small mobs
-		jar_capture = true
+		jar_capture = false
 		#Allow Jars to hold cookies
-		jar_cookies = true
+		jar_cookies = false
 		#Allow Jars to hold liquids from bottles, buckets and bowls
-		jar_liquids = true
+		jar_liquids = false
 
 	[functional.cage]
 		enabled = true
@@ -132,14 +132,14 @@
 		#Allows all baby mobs to be captured by cages
 		cage_allow_all_babies = false
 		#Dynamically allows all small mobs inside cages depending on their hitbox size
-		cage_auto_detect = false
+		cage_auto_detect = true
 		#Makes it so all (hostile) mobs captured by cages and jars will be set to persistent so they won't despawn when released
 		persistent_mobs = false
 		#Health percentage under which mobs will be allowed to be captured by cages and jars. Leave at 100 to accept any health level
 		#Range: 1 ~ 100
 		health_threshold = 100
 		#When on, if a mob is tameable, it will only be capturable when tamed.
-		require_taming = true
+		require_taming = false
 
 	[functional.safe]
 		enabled = true
@@ -241,14 +241,14 @@
 	netherite_door = true
 	netherite_trapdoor = true
 	checker_block = true
-	raked_gravel = true
+	raked_gravel = false
 	feather_block = true
 	statue = true
 	doormat = true
 	flint_block = true
 	candle_holder = true
 	bunting = true
-	fire_pit = true
+	fire_pit = false
 	wicker_fence = true
 	fine_wood = true
 
@@ -284,7 +284,7 @@
 	[building.item_shelf]
 		enabled = true
 		#Makes item shelves climbable
-		climbable_shelves = false
+		climbable_shelves = true
 
 	[building.sugar_cube]
 		enabled = true
@@ -297,16 +297,16 @@
 	[building.planter]
 		enabled = true
 		#Makes so saplings that grow in a planter will break it turning into rooted dirt
-		broken_by_sapling = false
+		broken_by_sapling = true
 		#When Farmers Delight is on planter will also act like rich soil and use it in its recipe
 		rich_soil_planter = true
 
 	[building.notice_board]
 		enabled = true
 		#Allows notice boards to accept and display any item, not just maps and books
-		allow_any_item = false
+		allow_any_item = true
 		#Enables a GUI for the block. Not needed as the block just holds one item which you can place by clicking on it
-		gui = true
+		gui = false
 
 	[building.pedestal]
 		enabled = true
@@ -368,7 +368,7 @@
 		enabled = true
 
 	[building.slidy_block]
-		enabled = true
+		enabled = false
 		#Slidy block speed
 		#Range: 0.0 ~ 1.0
 		speed = 0.125
@@ -384,9 +384,9 @@
 		angle = 69.44395478041653
 
 [tools]
-	candy = true
+	candy = false
 	stasis = true
-	altimeter = true
+	altimeter = false
 	confetti_popper = true
 
 	[tools.quiver]
@@ -398,14 +398,14 @@
 		slots = 6
 		#Increase this number to alter the probability for a Skeleton with quiver to spawn. Note that this also depends on local difficulty so you wont ever see them on easy and very rarely on normal. Similar logic to equipment
 		#Range: 0.0 ~ 1.0
-		quiver_skeleton_spawn_chance = 0.03
+		quiver_skeleton_spawn_chance = 0.06
 		#Allows quiver to only be used when in offhand or in curio slot
-		only_works_in_curio = false
+		only_works_in_curio = true
 		#Arrows you pickup will try to go in a quiver if available provided it has some arrow of the same type
 		quiver_pickup = true
 
 	[tools.slice_map]
-		enabled = true
+		enabled = false
 		#Multiplier that will be applied by slice maps to lower their range compared to normal maps
 		#Range: 0.0 ~ 1.0
 		range_multiplier = 0.25
@@ -426,7 +426,7 @@
 			feather_falling_prevents_breaking = true
 
 	[tools.wrench]
-		enabled = true
+		enabled = false
 		#Allows wrenches to bypass a block interaction action prioritizing their own when on said hand
 		#Allowed Values: MAIN_HAND, OFF_HAND, BOTH, NONE
 		bypass_when_on = "MAIN_HAND"
@@ -471,7 +471,7 @@
 			break_blocks = "WEAK"
 
 	[tools.slingshot]
-		enabled = true
+		enabled = false
 		#Slingshot range multiplier. Affect the initial projectile speed
 		#Range: 0.0 ~ 5.0
 		range_multiplier = 1.0
@@ -494,7 +494,7 @@
 		#Allows enderpearls to be thrown by slingshots
 		allow_enderpearls = false
 		#Allows buckets to be thrown by slingshots. Thrown buckets will place their content when they land
-		allow_buckets = true
+		allow_buckets = false
 		#Damage that items in the 'supplementaries:slingshot_damageable' tag will deal. Scales with thrown speed. Tag is empty by default.
 		#Range: 0.0 ~ 100.0
 		damageable_damage = 0.5
@@ -544,11 +544,11 @@
 
 	[tweaks.dispenser_tweaks]
 		#Allows dispensers to use axes on blocks to strip logs and scrape off copper oxidation and wax
-		axe_strip = true
+		axe_strip = false
 		#Enables shooting ender pearls with dispensers
-		shoot_ender_pearls = true
+		shoot_ender_pearls = false
 		#Enables extracting bundles items with dispensers
-		extract_from_bundles = true
+		extract_from_bundles = false
 
 	[tweaks.throwable_bricks]
 		#Throw bricks at your foes! Might break glass blocks
@@ -572,7 +572,7 @@
 
 	[tweaks.raked_gravel]
 		#allow gravel to be raked with a hoe
-		enabled = true
+		enabled = false
 
 	[tweaks.bottle_xp]
 		#Allow bottling up xp by using a bottle on an enchanting table
@@ -586,14 +586,14 @@
 	[tweaks.map_tweaks]
 		#Cartographers will sell 'adventurer maps' that will lead to a random vanilla structure (choosen from a thought out preset list).
 		#Best kept disabled if you are adding custom adventurer maps with datapack (check the wiki for more)
-		random_adventurer_maps = true
+		random_adventurer_maps = false
 		#Select a random structure to look for instead of iterating through all of the ones in the tag returning the closest. Turning on will make ones that have diff structures (aka all different ruined portals) show up more. On could take much more time to compute
-		random_adventurer_maps_select_random_structure = true
+		random_adventurer_maps_select_random_structure = false
 		#Enables beacons, lodestones, respawn anchors, beds, conduits, portals to be displayed on maps by clicking one of them with a map
-		block_map_markers = true
+		block_map_markers = false
 		#Shows a death marker on your map when you die. Requires a recovery compass in player inventory or similar
 		#Allowed Values: OFF, WITH_COMPASS, ALWAYS
-		death_marker = "WITH_COMPASS"
+		death_marker = "OFF"
 		#If Quark is installed adventurer maps will be replaced by adventurer quills. These will not lag the server when generating
 		quill_adventurer_maps = true
 		#If Quark is installed replaces buried treasure and mansion maps with their equivalent quill form. This removes the lag spike they create when generating
@@ -602,7 +602,7 @@
 		#Range: 10 ~ 600
 		min_search_radius = 75
 		#Makes blocks tagged as 'tinted_on_map' use their tint color. This allows for accurate biome colors for water and grass as well as other custom block that use any tint
-		tinted_blocks_on_maps = true
+		tinted_blocks_on_maps = false
 
 	[tweaks.placeable_books]
 		#Allows written books to be placed down. Requires shift clicking
@@ -648,18 +648,18 @@
 		enabled = true
 
 	[tweaks.slimed_effect]
-		enabled = true
+		enabled = false
 		#Allow slimeballs to be thrown
-		throwable_slimeballs = true
+		throwable_slimeballs = false
 		#Show a slime overlay when you hit an entity with a slimeball
 		overlay = true
 		#Thrown slimeballs will shortly nerf the player jump height. Disable if you don't want this effect as it can be quite powerful
 		#Allowed Values: NEVER, ALWAYS, NORMAL_DIFFICULTY, HARD_DIFFICULTY
-		hinders_jump = "NORMAL_DIFFICULTY"
+		hinders_jump = "NEVER"
 		#Duration of the slimed effect in ticks
 		#Range: 0 ~ 1000
-		duration = 300
+		duration = 0
 		#Chance that a slime mob will apply slimed effect on successful attack. Multiplied by the slime size
 		#Range: 0.0 ~ 1.0
-		chance_per_slime_size = 0.15
+		chance_per_slime_size = 0
 
