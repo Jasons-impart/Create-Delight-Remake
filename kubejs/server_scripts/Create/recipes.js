@@ -148,8 +148,38 @@ ServerEvents.recipes(e => {
         "create:andesite_casing", 
         ["#forge:stripped_logs", Fluid.of("createdelight:molten_andesite", 90)], 70, true)
         .id("create:casting_in_basin/andesite_casing")
-    
-    
+    // 墨囊配方
+    let iner_3 = "ratatouille:sausage_casing"
+    e.recipes.create.sequenced_assembly('minecraft:ink_sac', 'ratatouille:sausage_casing', 
+        [
+            e.recipes.create.filling(iner_3, [iner_3, Fluid.of("create_enchantment_industry:ink", 500)]),
+            e.recipes.create.deploying(iner_3, [iner_3, "#forge:slimeballs"]),
+        ]
+    )
+        .transitionalItem(iner_3)
+        .loops(1)
+        .id("create:sequenced_assembly/milk_sac")
+    // TNT
+    let iner_4 = "minecraft:sand"
+    e.recipes.create.sequenced_assembly('minecraft:tnt', "#forge:sand",
+        [
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("supplementaries:lumisene", 100)]),
+        ]
+    )
+        .transitionalItem(iner_4)
+        .loops(4)
+        .id("create:sequenced_assembly/tnt")
+    // tinyTNT
+    let iner_5 = "ae2:certus_quartz_dust"
+    e.recipes.create.sequenced_assembly('ae2:tiny_tnt', "ae2:certus_quartz_dust",
+        [
+            e.recipes.create.filling(iner_5, [iner_5, Fluid.of("supplementaries:lumisene", 100)]),
+        ]
+    )
+        .transitionalItem(iner_5)
+        .loops(2)
+        .id("create:sequenced_assembly/tiny_tnt")
+
     //deco和create的工业铁块互切
     e.recipes.minecraft.stonecutting("design_decor:industrial_plating_block", "create:industrial_iron_block")
         .id("industrial_plating_block_from_industrial_iron_block")
