@@ -1,6 +1,14 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "hotbath:hot_water_bucket",
+        "hotbath:herbal_bath_bucket",
+        "hotbath:honey_bath_bucket",
+        "hotbath:milk_bath_bucket",
+        "hotbath:peony_bath_bucket",
+        "hotbath:rose_bath_bucket"])
     const {create, vintageimprovements} = e.recipes
     vintageimprovements.pressurizing(Fluid.of("hotbath:hot_water_fluid", 500), Fluid.water(500))
+    .heated()
     .id("vintageimprovements:pressurizing/hot_water_fluid")
 
     create.mixing(Fluid.of("hotbath:honey_bath_fluid", 1000), [Fluid.of("create:honey", 250), Fluid.of("hotbath:hot_water_fluid", 750)])
