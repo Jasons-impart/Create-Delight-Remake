@@ -5,7 +5,8 @@
         "effects": {
             "vvaddon:evil": 1,
             "art_of_forging:devouring": [ 3, 5 ],
-            "art_of_forging:life_steal": [ 3, 25 ]
+            "art_of_forging:life_steal": [ 3, 25 ],
+            "armorPenetration": 20
         },
         "attributes": {
             "generic.attack_speed": 0.2,
