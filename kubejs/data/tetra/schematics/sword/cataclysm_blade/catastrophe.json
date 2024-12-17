@@ -1,50 +1,47 @@
 {
     "replace": true,
-    "localizationKey": "katana/thousand_cold_nights",
+    "localizationKey": "cataclysm_blade/catastrophe",
     "slots": [ "sword/blade" ],
     "materialSlotCount": 0,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
+        "tint": "971020",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 208,
-        "tint": "3c4154"
+        "textureX": 192,
+        "textureY": 16
     },
     "requirement": {
         "type": "tetra:and",
         "requirements": [
             {
-                "type": "tetra:locked",
-                "key": "tetra:sword/thousand_cold_nights"
-            },
-            {
                 "type": "tetra:module",
-                "module": "sword/katana_blade"
+                "module": "sword/cataclysm_blade"
             },
             {
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "sword/thousand_cold_nights_imprv"
+                    "improvement": "sword/redemption_imprv"
                 }
             },
             {
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "sword/murasama_imprv"
+                    "improvement": "sword/catastrophe_imprv"
                 }
             }
         ]
     },
     "outcomes": [
         {
-            "experienceCost": 30,
+            "experienceCost": 15,
             "requiredTools": {
-                "hammer_dig": 9
+                "hammer_dig": 7
             },
             "improvements": {
-                "sword/thousand_cold_nights_imprv": 0
+                "sword/catastrophe_imprv": 0
             }
         }
     ]
