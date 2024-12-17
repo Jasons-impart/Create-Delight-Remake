@@ -1,0 +1,179 @@
+{
+    "content": {
+        "blacksmith_raw_copper": {
+            "type": "item",
+            "content": "minecraft:raw_copper",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 250
+        },
+        "blacksmith_raw_tin": {
+            "type": "item",
+            "content": "minecraft:raw_tin",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 200
+        },
+        "blacksmith_raw_copper_uncommon": {
+            "type": "item",
+            "content": "minecraft:raw_copper",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.5,
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 250
+        },
+        "blacksmith_raw_tin_uncommon": {
+            "type": "item",
+            "content": "minecraft:raw_tin",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.5,
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 200
+        },
+        "blacksmith_raw_zinc": {
+            "type": "item",
+            "content": "create:raw_zinc",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_raw_iron_uncommon": {
+            "type": "item",
+            "content": "minecraft:raw_iron",
+            "amount": {
+                "min": 1,
+                "max": 24
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_raw_zinc_uncommon": {
+            "type": "item",
+            "content": "create:raw_zinc",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.4,
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_raw_iron": {
+            "type": "item",
+            "content": "minecraft:raw_iron",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.4,
+            "amount": {
+                "min": 16,
+                "max": 64
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_raw_gold": {
+            "type": "item",
+            "content": "minecraft:raw_gold",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 1000
+        },
+        "blacksmith_raw_silver": {
+            "type": "item",
+            "content": "iceandfire:raw_silver",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 750
+        },
+        "blacksmith_raw_wolframite": {
+            "type": "item",
+            "content": "createmetallurgy:raw_wolframite",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 24
+            },
+            "unitWorth": 1500
+        },
+        "blacksmith_raw_desh": {
+            "type": "item",
+            "content": "ad_astra:raw_desh",
+            "rarity": "RARE",
+            "amount": {
+                "min": 1,
+                "max": 24
+            },
+            "unitWorth": 2000
+        },
+        "blacksmith_raw_ostrum": {
+            "type": "item",
+            "content": "ad_astra:raw_ostrum",
+            "rarity": "RARE",
+            "weightMult": 0.75,
+            "amount": {
+                "min": 1,
+                "max": 24
+            },
+            "unitWorth": 3500
+        },
+        "blacksmith_raw_calorite": {
+            "type": "item",
+            "content": "ad_astra:raw_calorite",
+            "rarity": "RARE",
+            "weightMult": 0.5,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 5000
+        },
+        "blacksmith_raw_calorite_epic": {
+            "type": "item",
+            "content": "ad_astra:raw_calorite",
+            "rarity": "EPIC",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 16,
+                "max": 32
+            },
+            "unitWorth": 5000
+        },
+        "blacksmith_diamond": {
+            "type": "item",
+            "content": "minecraft:diamond",
+            "rarity": "EPIC",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 1,
+                "max": 32
+            },
+            "unitWorth": 9000
+        },
+        "blacksmith_ancient_debris": {
+            "type": "item",
+            "content": "minecraft:ancient_debris",
+            "rarity": "EPIC",
+            "weightMult": 0.1,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 45000
+        }
+    }
+}
