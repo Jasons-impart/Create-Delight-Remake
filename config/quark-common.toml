@@ -125,7 +125,7 @@
 	"More Mud Blocks" = true
 	"More Potted Plants" = true
 	"Nether Brick Fence Gate" = true
-	"Rainbow Lamps" = true
+	"Rainbow Lamps" = false
 	"Raw Metal Bricks" = true
 	Rope = true
 	"Shear Vines" = true
