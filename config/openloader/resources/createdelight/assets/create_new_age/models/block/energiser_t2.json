@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "create_new_age:block/energiser_t2",
-		"particle": "create_new_age:block/energiser"
+		"particle": "create:block/andesite_casing"
 	},
 	"elements": [
 		{
