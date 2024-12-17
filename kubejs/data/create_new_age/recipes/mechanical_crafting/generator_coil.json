@@ -15,7 +15,7 @@
       "item": "create:metal_bracket"
     },
     "s": {
-      "item": "create:shaft"
+      "item": "createaddition:alternator"
     },
     "w": {
       "item": "createaddition:copper_spool"

@@ -53,10 +53,9 @@ ServerEvents.recipes(e => {
         .id("createaddition:crafting/modular_accumulator_electrum")
     // 特斯拉充电线圈
     let iner_2 = "createdelight:incomplete_tesla_coil"
-    e.recipes.create.sequenced_assembly("createaddition:tesla_coil", "create:brass_block", [
-        e.recipes.vintageimprovements.turning(iner_2, iner_2),
-        e.recipes.create.deploying(iner_2, [iner_2, "ad_astra:etrionic_core"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "create:shaft"]),
+    e.recipes.create.sequenced_assembly("createaddition:tesla_coil", "create_new_age:energiser_t3", [
+        e.recipes.create.deploying(iner_2, [iner_2, 'create:brass_sheet']),
+        e.recipes.create.deploying(iner_2, [iner_2, "alexscaves:tesla_bulb"]),
         e.recipes.create.deploying(iner_2, [iner_2, "createaddition:copper_spool"]),
         e.recipes.create.deploying(iner_2, [iner_2, "createaddition:copper_spool"]),
         e.recipes.create.deploying(iner_2, [iner_2, "createaddition:copper_spool"])
@@ -66,18 +65,31 @@ ServerEvents.recipes(e => {
         .id("createaddition:mechanical_crafting/tesla_coil")
     // 发电机
     let iner_3 = "createdelight:incomplete_alternator"
-    e.recipes.create.sequenced_assembly("createaddition:alternator", "createmetallurgy:steel_block", [
-        e.recipes.vintageimprovements.turning(iner_3, iner_3),
-        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_spool"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_spool"]),
+    e.recipes.create.sequenced_assembly("createaddition:alternator", "create:shaft", [
+        e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:steel_plate"]),
         e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_spool"]),
         e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:etrionic_core"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "create:shaft"])
     ])
         .transitionalItem(iner_3)
-        .loops(1)
+        .loops(4)
         .id("createaddition:mechanical_crafting/alternator")
-    // 发电机电动机相互转化
-    e.recipes.kubejs.shapeless("createaddition:alternator", "createaddition:electric_motor").id("createaddition:alternator_2_motor")
-    e.recipes.kubejs.shapeless("createaddition:electric_motor", "createaddition:alternator").id("createaddition:mechanical_crafting/electric_motor")
+    // 电动机
+    let iner_4 = "createdelight:incomplete_electric_motor"
+    e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create:shaft", [
+        e.recipes.create.deploying(iner_4, [iner_4, "create:brass_sheet"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "ad_astra:etrionic_core"]),
+    ])
+        .transitionalItem(iner_4)
+        .loops(4)
+        .id("createaddition:mechanical_crafting/electric_motor")
+    // 移动式能量接口
+    e.recipes.kubejs.shapeless(
+        'createaddition:portable_energy_interface',
+        [
+            "#forge:spring/below_500",
+            "create:brass_casing",
+            "createaddition:copper_spool"
+        ]
+    ).id("createaddition:crafting/portable_energy_interface")
 })
