@@ -1,0 +1,8 @@
+[
+    {
+        "modules": [ "sword/cataclysm_blade" ],
+        "matchSuffixed": true,
+        "improvements": [ "sword/redemption_imprv" ],
+        "name": "sword/redemption"
+    }
+]

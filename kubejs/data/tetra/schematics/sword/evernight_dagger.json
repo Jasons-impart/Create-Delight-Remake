@@ -8,7 +8,8 @@
     "glyph": {
         "tint": "d8a800",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 208
+        "textureX": 112,
+        "textureY": 16
     },
     "requirement": {
         "type": "tetra:and",

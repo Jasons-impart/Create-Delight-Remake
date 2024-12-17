@@ -1,0 +1,25 @@
+[
+    {
+        "key": "sword/redemption_imprv",
+        "integrity": -1,
+        "effects": {
+            "vvaddon:honor": 1,
+            "art_of_forging:hubris": -30,
+            "art_of_forging:devouring": [ -1, 5 ],
+            "art_of_forging:life_fiber_loss": [ 1, 5 ]
+        },
+        "attributes": {
+            "generic.attack_speed": 0,
+            "generic.attack_damage": 10
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade"
+            },
+            {
+                "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade_glow",
+                "emission": 15
+            }
+        ]
+    }
+]

@@ -1,0 +1,25 @@
+[
+    {
+        "key": "sword/catastrophe_imprv",
+        "integrity": -1,
+        "effects": {
+            "vvaddon:evil": 1,
+            "art_of_forging:devouring": [ 3, 5 ],
+            "art_of_forging:life_steal": [ 3, 25 ],
+            "armorPenetration": 20
+        },
+        "attributes": {
+            "generic.attack_speed": 0.2,
+            "generic.attack_damage": 5
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade"
+            },
+            {
+                "location": "tetra:item/module/sword/blade/cataclysm_blade/cataclysm_blade_glow",
+                "emission": 15
+            }
+        ]
+    }
+]
