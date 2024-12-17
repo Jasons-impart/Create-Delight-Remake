@@ -1,7 +1,9 @@
 /*
 # 忽略当前目录下所以文件
 # 反选不忽略的文件夹和文件
+
 !/.gitignore
+!/alexsmobs
 !/fancymenu
 !/iceandfire
 !/jei
