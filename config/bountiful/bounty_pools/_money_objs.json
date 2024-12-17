@@ -12,10 +12,19 @@
         "cashier_copper_coin": {
             "type": "item",
             "content": "createdelightcore:copper_coin",
-            "rarity": "UNCOMMON",
             "amount": {
                 "min": 1,
-                "max": 12
+                "max": 8
+            },
+            "unitWorth": 1000
+        },
+        "cashier_copper_coin_uncommon": {
+            "type": "item",
+            "content": "createdelightcore:copper_coin",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 9,
+                "max": 16
             },
             "unitWorth": 1000
         },
@@ -34,7 +43,7 @@
             "content": "createdelightcore:gold_coin",
             "rarity": "EPIC",
             "amount": {
-                "min": 1,
+                "min": 3,
                 "max": 5
             },
             "unitWorth": 10000
@@ -54,7 +63,7 @@
             "content": "createdelightcore:emerald_coin",
             "rarity": "LEGENDARY",
             "amount": {
-                "min": 1,
+                "min": 2,
                 "max": 3
             },
             "unitWorth": 90000
