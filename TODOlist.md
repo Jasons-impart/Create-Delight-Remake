@@ -14,13 +14,13 @@
 - 蚁脂做菜，龙肉做菜
 - mbd2 彻底取代 cm（杀了 cm）？
 - 教程维度？
-- 瞻远者珍珠挑战配方
 - 更高效的熔炼/处理粉方法
 - 给每一个食物mod加一个最终食物？
 - 战利品宝箱的修改
 - [mod非致命问题] vintagedelight-0.1.6的CustomPotionBrewing.class内有bug导致mod增加的炼药效果不生效
 - [mod非致命问题] iceandfire-2.1.13-1.20.1-beta-5的client\render\entity\layer\LayerDragonEyes.class加载材质失败
 - 鸡蛇反制措施
+- 食品与饮品buff统一
 
 ### 认领-假发
 

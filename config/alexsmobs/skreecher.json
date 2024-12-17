@@ -1,0 +1,16 @@
+{
+  "biomes": [
+    [
+      {
+        "type": "BIOME_TAG",
+        "negate": true,
+        "value": "forge:no_default_monsters"
+      },
+      {
+        "type": "BIOME_TAG",
+        "negate": false,
+        "value": "alexsmobs:skreechers_can_spawn_wardens"
+      }
+    ]
+  ]
+}

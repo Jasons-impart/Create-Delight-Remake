@@ -2,7 +2,8 @@ ServerEvents.tags("entity_type", e => {
     e.add("createdelight:can_survive_ad_astra", [
         "iceandfire:mob_skull",
         "iceandfire:cyclops",
-        "minecraft:sheep",
+        "minecraft:sheep",     
+        "minecraft:chicken",
         "iceandfire:gorgon",
         "iceandfire:deathworm",
         "iceandfire:cockatrice",

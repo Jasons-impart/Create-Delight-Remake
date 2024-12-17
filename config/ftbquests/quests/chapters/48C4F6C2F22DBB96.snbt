@@ -372,6 +372,115 @@
 			x: 1.0d
 			y: -1.0d
 		}
+		{
+			id: "12B765C2EB5EA318"
+			tasks: [
+				{
+					id: "06EE530AF5BF713A"
+					item: "supplementaries:bomb"
+					type: "item"
+				}
+				{
+					id: "55AB06B6F2758234"
+					item: "supplementaries:bomb_blue"
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: 0.5d
+		}
+		{
+			id: "583669122E2EA4D1"
+			tasks: [{
+				id: "3D6FA95501A6E5F1"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							SelectedSlot: 0
+							Size: 6
+						}
+					}
+					id: "supplementaries:quiver"
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 0.5d
+		}
+		{
+			id: "45C57ED333F98DD0"
+			tasks: [{
+				id: "7552AB3C589754B2"
+				item: {
+					Count: 1
+					id: "supplementaries:rope_arrow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			id: "0BBA9C91E11CD035"
+			tasks: [{
+				id: "015A04155C069811"
+				item: "supplementaries:antique_ink"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 0.5d
+		}
+		{
+			id: "1541C0ACC9DF2368"
+			tasks: [{
+				id: "28FE293829D98FB6"
+				item: "supplementaries:soap"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 2.0d
+		}
+		{
+			id: "6041752A590B6123"
+			tasks: [{
+				id: "0877AC7861ED6A7A"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			id: "156F31EC2CF275E0"
+			tasks: [{
+				id: "2D280FE00F5F4F4D"
+				item: "supplementaries:speaker_block"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			id: "3EF308A8E1AD1782"
+			tasks: [{
+				id: "73C79EAE75CF273D"
+				item: {
+					Count: 1
+					id: "supplementaries:flute"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -0.5d
+			y: 0.5d
+		}
 	]
 	title: "实用小玩意"
 }

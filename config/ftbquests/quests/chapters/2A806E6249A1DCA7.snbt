@@ -1000,6 +1000,18 @@
 			x: -2.0d
 			y: -2.0d
 		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "27F5863D1F72F4D5"
+			secret: true
+			tasks: [{
+				id: "0C149DAED122A8B3"
+				item: "quark:ancient_fruit"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -5.0d
+		}
 	]
 	title: "&e水果大亨"
 }

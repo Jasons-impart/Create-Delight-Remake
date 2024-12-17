@@ -8,7 +8,7 @@
 		#Enable a random globe texture for each world
 		random_world = true
 		#Displays current coordinates when using a globe
-		show_coordinates = true
+		show_coordinates = false
 
 	[blocks.notice_board]
 		#Allows notice board displayed text to be centered instead of being left aligned
