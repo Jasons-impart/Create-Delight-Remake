@@ -11,6 +11,7 @@ ServerEvents.tags("minecraft:fluid", e => {
         "createdelight:egg_yolk",
         "createcafe:melted_sugar",
         "create:honey",
-        "createdelight:vinegar"
+        "createdelight:vinegar",
+        "#forge:molten_materials"
     ])
 })
