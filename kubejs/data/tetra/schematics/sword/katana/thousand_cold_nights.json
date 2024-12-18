@@ -25,6 +25,13 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
+                    "improvement": "sword/thousand_cold_nights_imprv"
+                }
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
                     "improvement": "sword/murasama_imprv"
                 }
             }

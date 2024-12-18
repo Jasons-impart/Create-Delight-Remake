@@ -2596,6 +2596,20 @@
   "tetra.tweak.scanner/adjustable_span.left": "竖直",
   "tetra.tweak.scanner/adjustable_span.right": "水平",
 
+   "tetra/schematic/cataclysm_blade/catastrophe.name": "灾祸",
+   "tetra/schematic/cataclysm_blade/catastrophe.description": "将破坏核心装在剑刃上，获得真正的灾祸之刃。你真的不打算回头了吗？",
+   "tetra/schematic/cataclysm_blade/catastrophe.slot1": "灾祸",
+   "tetra.improvement.sword/catastrophe_imprv.name": "灾祸降临",
+   "tetra.improvement.sword/catastrophe_imprv.description": "将你的灾厄之刃打造成传说中的灭世灾祸之刃",
+   "tetra.synergy.sword/catastrophe": "灾祸",
+
+   "tetra/schematic/cataclysm_blade/redemption.name": "救赎",
+   "tetra/schematic/cataclysm_blade/redemption.description": "将天使核心装在剑刃上，成为天使在人间的代言人。",
+   "tetra/schematic/cataclysm_blade/redemption.slot1": "救赎",
+   "tetra.improvement.sword/redemption_imprv.name": "救赎已至",
+   "tetra.improvement.sword/redemption_imprv.description": "将你的灾厄之刃打造成传说中的天使救赎之刃",
+   "tetra.synergy.sword/redemption": "救赎",
+
    "tetra/schematic/sword/katana/hone_puncture_1.name": "刺穿I",
    "tetra/schematic/sword/katana/hone_puncture_1.description": "解锁刺穿效果，右键蓄力使用，命中敌人后将造成伤害并降低其护甲，持续2秒。",
    "tetra/schematic/sword/katana/hone_puncture_1.slot1": "材料1",

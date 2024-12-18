@@ -28,7 +28,7 @@
                 "art_of_forging:devouring": [ 1, 5 ],
                 "art_of_forging:life_steal": [ 3, 20 ],
                 "art_of_forging:hubris": 30,
-                "armorPenetration": 50,
+                "armorPenetration": 20,
                 "art_of_forging:slaughtering": [ 10, 70 ],
                 "bleeding":3
             },

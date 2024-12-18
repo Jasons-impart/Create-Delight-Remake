@@ -1,0 +1,48 @@
+{
+    "replace": true,
+    "localizationKey": "cataclysm_blade/redemption",
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 0,
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph":{
+        "tint": "ffd700",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 192,
+        "textureY": 16
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:module",
+                "module": "sword/cataclysm_blade"
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "sword/redemption_imprv"
+                }
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "sword/catastrophe_imprv"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 7
+            },
+            "improvements": {
+                "sword/redemption_imprv": 0
+            }
+        }
+    ]
+}

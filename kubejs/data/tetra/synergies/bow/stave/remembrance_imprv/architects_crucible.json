@@ -1,8 +1,0 @@
-[
-    {
-        "modules": [ "bow/dreadnought_stave" ],
-        "matchSuffixed": true,
-        "improvements": [ "bow/remembrance_imprv" ],
-        "name": "bow/remembrance_stave"
-    }
-]
