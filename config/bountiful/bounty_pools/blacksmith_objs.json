@@ -142,6 +142,17 @@
             },
             "unitWorth": 5000
         },
+        "blacksmith_bronze_ingot": {
+            "type": "item",
+            "content": "createdelight:bronze_ingot",
+            "rarity": "RARE",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 4000
+        },
         "blacksmith_raw_calorite_epic": {
             "type": "item",
             "content": "ad_astra:raw_calorite",
@@ -164,6 +175,28 @@
             },
             "unitWorth": 9000
         },
+        "blacksmith_forged_steel_ingot": {
+            "type": "item",
+            "content": "art_of_forging:forged_steel_ingot",
+            "rarity": "EPIC",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 9000
+        },
+        "blacksmith_vobrivium_ingot": {
+            "type": "item",
+            "content": "art_of_forging:vobrivium_ingot",
+            "rarity": "EPIC",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 12000
+        },
         "blacksmith_ancient_debris": {
             "type": "item",
             "content": "minecraft:ancient_debris",
@@ -174,6 +207,61 @@
                 "max": 16
             },
             "unitWorth": 45000
+        },
+        "blacksmith_dragonsteel_fire_ingot": {
+            "type": "item",
+            "content": "iceandfire:dragonsteel_fire_ingot",
+            "rarity": "EPIC",
+            "weightMult": 0.1,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 12000
+        },
+        "blacksmith_dragonsteel_ice_ingot": {
+            "type": "item",
+            "content": "iceandfire:dragonsteel_ice_ingot",
+            "rarity": "EPIC",
+            "weightMult": 0.1,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 12000
+        },
+        "blacksmith_dragonsteel_lightning_ingot": {
+            "type": "item",
+            "content": "iceandfire:dragonsteel_lightning_ingot",
+            "rarity": "EPIC",
+            "weightMult": 0.1,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 12000
+        },
+        "blacksmith_dreadsteel_ingot": {
+            "type": "item",
+            "content": "dreadsteel:dreadsteel_ingot",
+            "rarity": "LEGENDARY",
+            "weightMult": 0.05,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 36000
+        },
+        "blacksmith_endsteel_ingot": {
+            "type": "item",
+            "content": "art_of_forging:endsteel_ingot",
+            "rarity": "LEGENDARY",
+            "weightMult": 0.05,
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 24000
         }
     }
 }

@@ -3,6 +3,7 @@
 		"blacksmith_objs"
 	],
 	"rewards": [
-		"_money_rews"
+		"_money_rews",
+		"blacksmith_rews"
 	]
 }
