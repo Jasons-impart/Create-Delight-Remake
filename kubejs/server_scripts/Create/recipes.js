@@ -19,7 +19,7 @@ ServerEvents.recipes(e => {
         "4x redstone",
         "quartz"
     ])
-    
+
     e.recipes.minecraft.stonecutting(
         "4x design_decor:cast_iron_boiler",
         "createbigcannons:cast_iron_block"
@@ -137,21 +137,59 @@ ServerEvents.recipes(e => {
         .id("create:crafting/kinetics/item_vault_2")
     e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
         .id("create:crafting/kinetics/fluid_tank_2")
+    e.recipes.vintageimprovements.curving("create:fluid_pipe", "create:copper_sheet")
+        .head("vintageimprovements:v_shaped_curving_head")
+        .id("create:crafting/kinetics/fluid_pipe_2")
+
+    //青铜制作铜相关物品
+    e.recipes.kubejs.shaped("12x create:fluid_pipe", [
+        [
+            "#forge:plates/bronze",
+            "#forge:ingots/bronze",
+            "#forge:plates/bronze"]
+    ])
+        .id("create:crafting/kinetics/fluid_pipe_from_bronze")
+    e.recipes.kubejs.shaped("12x create:fluid_pipe", [
+        ["#forge:plates/bronze"],
+        ["#forge:ingots/bronze"],
+        ["#forge:plates/bronze"]
+    ])
+        .id("create:crafting/kinetics/fluid_pipe_from_bronze_vertical")
+    e.recipes.kubejs.shaped("3x create_connected:fluid_vessel", [
+        [
+            "#forge:plates/bronze",
+            "minecraft:barrel",
+            "#forge:plates/bronze"
+        ]
+    ])
+        .id("create_connected:crafting/kinetics/fluid_vessel_from_bronze")
+    e.recipes.kubejs.shaped("3x create:fluid_tank", [
+        ["#forge:plates/bronze"],
+        ["minecraft:barrel"],
+        ["#forge:plates/bronze"]
+    ])
+        .id("create:crafting/kinetics/fluid_tank_from_bronze")
+    e.recipes.vintageimprovements.turning("9x create:fluid_tank", "#forge:storage_blocks/bronze")
+        .id("create:crafting/kinetics/fluid_tank_from_bronze_2")
+    e.recipes.vintageimprovements.curving("3x create:fluid_pipe", "#forge:plates/bronze")
+        .head("vintageimprovements:v_shaped_curving_head")
+        .id("create:crafting/kinetics/fluid_pipe_from_bronze_2")
+
     //坚固板的另一个配方
     e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
         .id("vintageimprovements:hammering/sturdy_sheet")
     e.recipes.createmetallurgy.casting_in_basin(
-        "create:railway_casing", 
+        "create:railway_casing",
         ["create:brass_casing", Fluid.of("createmetallurgy:molten_steel", 90)], 70, true)
         .id("create:casting_in_basin/railway_casing")
-    
+
     e.recipes.createmetallurgy.casting_in_basin(
-        "create:andesite_casing", 
+        "create:andesite_casing",
         ["#forge:stripped_logs", Fluid.of("createdelight:molten_andesite", 90)], 70, true)
         .id("create:casting_in_basin/andesite_casing")
     // 墨囊配方
     let iner_3 = "ratatouille:sausage_casing"
-    e.recipes.create.sequenced_assembly('minecraft:ink_sac', 'ratatouille:sausage_casing', 
+    e.recipes.create.sequenced_assembly('minecraft:ink_sac', 'ratatouille:sausage_casing',
         [
             e.recipes.create.filling(iner_3, [iner_3, Fluid.of("create_enchantment_industry:ink", 500)]),
             e.recipes.create.deploying(iner_3, [iner_3, "#forge:slimeballs"]),
