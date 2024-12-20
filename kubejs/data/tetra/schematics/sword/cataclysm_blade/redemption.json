@@ -6,7 +6,7 @@
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
-        "tint": "ffd700",
+        "tint": "ffffff",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
         "textureX": 192,
         "textureY": 16
