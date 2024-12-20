@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "createmetallurgy:belt_grinder",
         "createmetallurgy:sandpaper_belt",
         "torchmaster:frozen_pearl",
-        "torchmaster:feral_flare_lantern"
+        "torchmaster:feral_flare_lantern",
+        "minecraft:netherite_ingot"
     ])
     remove_recipes_mod(e, [
         "ftbquests",

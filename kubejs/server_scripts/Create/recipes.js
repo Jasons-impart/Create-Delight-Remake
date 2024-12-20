@@ -19,6 +19,7 @@ ServerEvents.recipes(e => {
         "4x redstone",
         "quartz"
     ])
+    
     e.recipes.minecraft.stonecutting(
         "4x design_decor:cast_iron_boiler",
         "createbigcannons:cast_iron_block"
