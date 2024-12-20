@@ -18,7 +18,9 @@ ServerEvents.recipes(e => {
 
     e.replaceInput({}, "neapolitan:ice_cubes", "youkaishomecoming:ice_cube")
     e.replaceInput({}, "neapolitan:chocolate_bar", "create:bar_of_chocolate")
-    e.replaceInput({}, "neapolitan:adzuki_beans", "youkaishomecoming:redbean")
+    e.replaceInput({}, "neapolitan:adzuki_beans", "createdelight:adzuki_beans_seed")
+    e.replaceInput({id: "neapolitan:adzuki/adzuki_bun"}, "minecraft:wheat", "create:dough")
+    e.replaceInput({id: "neapolitan:strawberry/strawberry_scones"}, "minecraft:wheat", "vintagedelight:oat_dough")
 
     const {create, kubejs} = e.recipes
     create.filling("neapolitan:chocolate_strawberries", ["neapolitan:strawberries", Fluid.of("create:chocolate", 250)])
@@ -27,6 +29,8 @@ ServerEvents.recipes(e => {
     .id("neapolitan:filling/vanilla_chocolate_fingers")
     create.filling("neapolitan:chocolate_spider_eye", ["minecraft:spider_eye", Fluid.of("create:chocolate", 125)])
     .id("neapolitan:filling/chocolate_spider_eye")
+    create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries")
+    .id("neapolitan:haunting/white_strawberries")
     /**
      * 
      * @param {Internal.RecipesEventJS} e 
@@ -45,11 +49,6 @@ ServerEvents.recipes(e => {
     make_cake(e, "#forge:fruits/banana", "neapolitan:banana_cake")
     make_cake(e, "neapolitan:mint_leaves", "neapolitan:mint_cake")
     make_cake(e, "neapolitan:roasted_adzuki_beans", "neapolitan:adzuki_cake")
-    kubejs.shapeless("neapolitan:adzuki_soil", [
-        "youkaishomecoming:redbean",
-        "minecraft:dirt"
-    ])
-    .id("neapolitan:adzuki_soil")
 })
 
 ServerEvents.tags("minecraft:item", e => {

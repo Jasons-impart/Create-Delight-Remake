@@ -26,6 +26,8 @@
 	#[in Meters per Second]
 	#Range: 0.0 ~ 1000.0
 	blastEffectDelaySpeed = 320.0
+	#.
+	highlightFuzeInputOnShellBlocks = true
 
 	#.
 	#Projectile Flyby Sounds

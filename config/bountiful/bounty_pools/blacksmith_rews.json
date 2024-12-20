@@ -1,0 +1,199 @@
+{
+    "content": {
+        "blacksmith_metal_scrap": {
+            "type": "item",
+            "content": "tetra:metal_scrap",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_forged_mesh": {
+            "type": "item",
+            "content": "tetra:forged_mesh",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_quick_latch": {
+            "type": "item",
+            "content": "tetra:quick_latch",
+            "weightMult": 0.25,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 500
+        },
+        "blacksmith_metal_scrap_uncommon": {
+            "type": "item",
+            "content": "tetra:metal_scrap",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.15,
+            "amount": {
+                "min": 8,
+                "max": 16
+            },
+            "unitWorth": 250
+        },
+        "blacksmith_forged_beam": {
+            "type": "item",
+            "content": "tetra:forged_beam",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 1000
+        },
+        "blacksmith_vent_plate": {
+            "type": "item",
+            "content": "tetra:vent_plate",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 1500
+        },
+        "blacksmith_lubricant_dispenser": {
+            "type": "item",
+            "content": "tetra:lubricant_dispenser",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 1500
+        },
+        "blacksmith_planar_stabilizer": {
+            "type": "item",
+            "content": "tetra:planar_stabilizer",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 2000
+        },
+        "blacksmith_combustion_chamber": {
+            "type": "item",
+            "content": "tetra:combustion_chamber",
+            "rarity": "UNCOMMON",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 2000
+        },
+        "blacksmith_chthonic_extractor": {
+            "type": "item",
+            "content": "tetra:chthonic_extractor",
+            "rarity": "RARE",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 8
+            },
+            "unitWorth": 3000
+        },
+        "blacksmith_stonecutter": {
+            "type": "item",
+            "content": "tetra:stonecutter",
+            "rarity": "RARE",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 4000
+        },
+        "blacksmith_earthpiercer": {
+            "type": "item",
+            "content": "tetra:earthpiercer",
+            "rarity": "RARE",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 4000
+        },
+        "blacksmith_metal_scrap_rare": {
+            "type": "item",
+            "content": "tetra:metal_scrap",
+            "rarity": "RARE",
+            "weightMult": 0.2,
+            "amount": {
+                "min": 16,
+                "max": 32
+            },
+            "unitWorth": 250
+        },
+        "blacksmith_nano_insectoid": {
+            "type": "item",
+            "content": "art_of_forging:nano_insectoid",
+            "rarity": "EPIC",
+            "weightMult": 0.15,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 6000
+        },
+        "blacksmith_encoded_canister": {
+            "type": "item",
+            "content": "art_of_forging:encoded_canister",
+            "rarity": "EPIC",
+            "weightMult": 0.15,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 12000
+        },
+        "blacksmith_esoteric_codex": {
+            "type": "item",
+            "content": "art_of_forging:esoteric_codex",
+            "rarity": "EPIC",
+            "weightMult": 0.15,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 18000
+        },
+        "blacksmith_curious_artifact": {
+            "type": "item",
+            "content": "art_of_forging:curious_artifact",
+            "rarity": "EPIC",
+            "weightMult": 0.075,
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 36000
+        },
+        "blacksmith_metal_scrap_epic": {
+            "type": "item",
+            "content": "tetra:metal_scrap",
+            "rarity": "EPIC",
+            "weightMult": 0.15,
+            "amount": {
+                "min": 48,
+                "max": 96
+            },
+            "unitWorth": 250
+        }
+    }
+}

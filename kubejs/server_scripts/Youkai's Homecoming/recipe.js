@@ -34,6 +34,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, 'youkaishomecoming:coffee_powder', 'createcafe:coffee_grounds')
     e.replaceInput({}, 'youkaishomecoming:bowl_of_cream', 'createdelight:whipped_cream_bowl')
     e.replaceInput({}, 'youkaishomecoming:butter', 'createdelight:butter')
+    e.replaceInput({}, "youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
     e.replaceInput({ not: { output: ["minecraft:packed_ice", Fluid.water(), "youkaishomecoming:ice_cube"] } }, "minecraft:ice", "youkaishomecoming:ice_cube")
     e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
@@ -42,6 +43,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "youkaishomecoming:apaki"}, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
     e.replaceInput({id: "youkaishomecoming:avgolemono"}, "minecraft:glow_berries", "#forge:fruits/lemon")
     e.replaceInput([{id: "youkaishomecoming:blazing_red_curry"}, {id: "youkaishomecoming:mapo_tofu"}], "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
+    e.replaceInput([{id: "youkaishomecoming:flesh_chocolate_mousse"}, {id: "youkaishomecoming:scarlet_devil_cake"}], "minecraft:wheat", "create:dough")
     
 
 

@@ -82,6 +82,20 @@ ServerEvents.recipes(e => {
     ["createdelight:overworld_metal_ore_cluster"])
     .id("vintageimprovements:vibrating/raw_ore_from_overworld_metal_ore_cluster")
 
+    //主世界金属矿簇产机械动力含矿石
+    e.recipes.vintageimprovements.vacuumizing([
+        Item.of("4x create:veridium").withChance(0.5),
+        Item.of("4x create:asurine").withChance(0.5),
+        Item.of("4x create:crimsite").withChance(0.5),
+        Item.of("4x create:scoria").withChance(0.25),
+        Item.of("4x create:ochrum").withChance(0.2),
+    ],
+    [
+        "createdelight:overworld_metal_ore_cluster",
+        "ae2:matter_ball"
+    ])
+    .id("vintageimprovements:vacuumizing/overworld_metal_ore_cluster")
+
     //主世界贵金属矿簇
     e.recipes.create.crushing([
         Item.of("create:crushed_raw_silver").withChance(0.5),
