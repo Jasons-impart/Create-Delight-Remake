@@ -33,4 +33,21 @@ ServerEvents.recipes(e => {
         'mynethersdelight:boiled_egg',
         1.0, 200
     ).id("mynethersdelight:boiled_egg_from_campfire_cooking")
+
+    
+    cutting_3(e, "mynethersdelight:ghasta_with_cream", [
+        ["mynethersdelight:ghasta_with_cream", 1, 0.9],
+        ["mynethersdelight:ghasta", 1]
+    ])
+
+    e.recipes.create.filling(
+        "2x mynethersdelight:ghasta",
+        ["mynethersdelight:ghasta", Fluid.of("create:potion", 250, {Potion: "minecraft:healing"})])
+        .id("mynethersdelight:filling/ghasta")
+    e.recipes.create.filling(
+        "2x mynethersdelight:ghasmati",
+        ["mynethersdelight:ghasmati", Fluid.of("create:potion", 250, {Potion: "minecraft:healing"})])
+        .id("mynethersdelight:filling/ghasmati")
+
+    e.recipes.create.emptying([Fluid.of("netherexp:ectoplasm", 250), "minecraft:bowl", "mynethersdelight:ghasta"], "mynethersdelight:plate_of_ghasta_with_cream")
 })
