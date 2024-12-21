@@ -28,7 +28,7 @@ ServerEvents.recipes((event) => {
     let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, input),
+        // vintageimprovements.polishing(iner, input),
         create.deploying(iner, [iner, a]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
@@ -41,7 +41,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, input),
+        // vintageimprovements.polishing(iner, input),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
@@ -55,7 +55,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         vintageimprovements.vacuumizing(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
@@ -71,7 +71,7 @@ ServerEvents.recipes((event) => {
     let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
@@ -85,7 +85,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         vintageimprovements.vacuumizing(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
