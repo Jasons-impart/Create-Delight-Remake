@@ -21,6 +21,7 @@
 - [mod非致命问题] iceandfire-2.1.13-1.20.1-beta-5的client\render\entity\layer\LayerDragonEyes.class加载材质失败
 - 鸡蛇反制措施
 - 食品与饮品buff统一
+- infotool
 
 ### 认领-假发
 
@@ -28,7 +29,6 @@
 - 添加/remake 指令用于紫砂（并且显示文本）
 - 收容
 - carryon部分黑名单 末影抽屉 背包 莱特曼 那个冰箱mod的
-- infotool
 - 获取已加载区块
 - 荧石再生
 - mbd应力产出
