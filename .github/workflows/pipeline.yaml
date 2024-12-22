@@ -1,0 +1,20 @@
+name: 发布包
+run-name: ${{ github.actor }} 正在发布新版本🚀
+on:
+  push:
+    branches:
+      - release-*
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    name: 发布🚀
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      - name: 安装 Packwiz
+        run: |
+          go install github.com/packwiz/packwiz@latest
+      - run: echo "🍏 This job's status is ${{ job.status }}."
