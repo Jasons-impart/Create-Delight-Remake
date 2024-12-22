@@ -11,15 +11,17 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: 安装weget & unzip
-        run: |
-          sudo apt update
-          sudo apt-get install wget
-          sudo apt-get install unzip
       - name: 安装 Packwiz
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "Linux 64-bit x86"
+          github-token: ${{ secrets.GITHUB_TOKEN }} # token with actions:read permissions on target repo
+          repository: packwiz/packwiz
+          run-id: 11331794723
+      - name: 解压
         run: |
-          weget -O packwiz.zip https://github.com/packwiz/packwiz/actions/runs/11331794723/artifacts/2054258542
-          unzip packwiz.zip
+          unzip "Linux 64-bit x86.zip"
           chomd +x packwiz
       - name: List files in the repository
         run: |
