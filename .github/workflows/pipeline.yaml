@@ -26,7 +26,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          run mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
           chmod +x ./packwiz
       - name: 检测并生成mods meta信息
         run: |
