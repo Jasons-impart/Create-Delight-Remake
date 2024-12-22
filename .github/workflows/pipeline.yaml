@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - release-*
+    paths:
+      - pack.toml
 jobs:
   Release:
     runs-on: ubuntu-latest
@@ -40,5 +42,6 @@ jobs:
       - name: 上传包
         uses: actions/upload-artifact@v3
         with:
+          name: Curseforge-Release
           path: ./*.zip
       - run: echo "🍏 This job's status is ${{ job.status }}."
