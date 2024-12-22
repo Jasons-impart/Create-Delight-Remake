@@ -11,21 +11,23 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
       - name: 安装 Packwiz
         run: |
-          go install github.com/packwiz/packwiz@latest
+          weget -O packwiz.zip https://github.com/packwiz/packwiz/actions/runs/11331794723/artifacts/2054258542
+          unzip packwiz.zip
+          chomd +x packwiz
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}  
       - name: 检测并生成mods meta信息
         run: |
-          packwiz curseforge detect
+          ./packwiz curseforge detect
       - name: 更新index
         run: |
-          packwiz refresh
+          ./packwiz refresh
       - name: 生成curseforge包
         run: |
-          packwiz curseforge export
+          ./packwiz curseforge export
       - name: 上传包
         uses: actions/upload-artifact@v3
         with:
