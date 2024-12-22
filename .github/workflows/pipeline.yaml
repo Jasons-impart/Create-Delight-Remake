@@ -17,4 +17,17 @@ jobs:
       - name: 安装 Packwiz
         run: |
           go install github.com/packwiz/packwiz@latest
+      - name: 检测并生成mods meta信息
+        run: |
+          ./packwiz curseforge detect
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成curseforge包
+        run: |
+          ./packwiz curseforge export
+      - name: 上传包
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./*.zip
       - run: echo "🍏 This job's status is ${{ job.status }}."
