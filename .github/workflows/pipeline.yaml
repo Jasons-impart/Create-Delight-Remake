@@ -11,6 +11,11 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: 安装weget & unzip
+        run: |
+          sudo apt update
+          sudo apt-get install wget
+          sudo apt-get install unzip
       - name: 安装 Packwiz
         run: |
           weget -O packwiz.zip https://github.com/packwiz/packwiz/actions/runs/11331794723/artifacts/2054258542
