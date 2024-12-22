@@ -19,13 +19,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }} # token with actions:read permissions on target repo
           repository: packwiz/packwiz
           run-id: 11331794723
+      - name: List files in the repository
+        run: |
+            ls -r ${{ github.workspace }}  
       - name: 解压
         run: |
           unzip "Linux 64-bit x86.zip"
           chomd +x packwiz
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}  
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
