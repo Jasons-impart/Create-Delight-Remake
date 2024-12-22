@@ -16,16 +16,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           pattern: "Linux 64-bit x86"
+          path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }} # token with actions:read permissions on target repo
           repository: packwiz/packwiz
           run-id: 11331794723
       - name: List files in the repository
         run: |
-            ls -r ${{ github.workspace }}  
-      - name: 解压
-        run: |
-          unzip "Linux 64-bit x86"
-          chomd +x packwiz
+            ls ${{ github.workspace }}  
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
