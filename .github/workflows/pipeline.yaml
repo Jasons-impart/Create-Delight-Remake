@@ -1,0 +1,47 @@
+name: 发布包
+run-name: ${{ github.actor }} 正在发布新版本🚀
+on:
+  push:
+    branches:
+      - release-*
+    paths:
+      - pack.toml
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    name: 发布🚀
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: 安装 Packwiz
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "Linux 64-bit x86"
+          path: ${{ github.workspace }}
+          github-token: ${{ secrets.GITHUB_TOKEN }} # token with actions:read permissions on target repo
+          repository: packwiz/packwiz
+          run-id: 11331794723
+      - name: List files in the repository
+        run: |
+            ls ${{ github.workspace }}  
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}/Linux\ 64-bit\ x86
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
+          chmod +x ./packwiz
+      - name: 检测并生成mods meta信息
+        run: |
+          ./packwiz curseforge detect
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成curseforge包
+        run: |
+          ./packwiz curseforge export
+      - name: 上传包
+        uses: actions/upload-artifact@v3
+        with:
+          name: Curseforge-Release
+          path: ./*.zip
+      - run: echo "🍏 This job's status is ${{ job.status }}."

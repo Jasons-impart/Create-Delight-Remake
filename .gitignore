@@ -1,5 +1,6 @@
 /*
 !/.gitignore
+!/.github
 !/config
 !/defaultconfigs
 !/keybinding presets
@@ -12,3 +13,5 @@
 !/hotai
 !/TODOlist.md
 !/ldlib
+!/pack.toml
+!/index.toml

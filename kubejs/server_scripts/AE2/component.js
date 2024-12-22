@@ -1,4 +1,22 @@
 ServerEvents.recipes((event) => {
+
+  // 杀部分元件(说真的用啥循环手写直接硬写多好的（)
+  let cel1s_v = ["_256m", "_64m", "_16m", "_4m", "_1m", "_256k", "_64k", "_16k", "_4k", "_1k"];
+  let cel1s_type = ["item_", "fluid_"];
+  let cel1s_spname = ["ae2:", "megacells:"];
+
+  cel1s_spname.forEach((spname) => {
+    cel1s_type.forEach((type1) => {
+      cel1s_v.forEach((v) => {
+        event.remove({
+          output: `${spname + type1}storage_cell${v}`,
+          type: "minecraft:crafting_shaped",
+        });
+      });
+    });
+  });
+
+
   const { create, vintageimprovements } = event.recipes;
   let i1k = "ae2:cell_component_1k";
   let i4k = "ae2:cell_component_4k";
@@ -28,7 +46,7 @@ ServerEvents.recipes((event) => {
     let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, input),
+        // vintageimprovements.polishing(iner, input),
         create.deploying(iner, [iner, a]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
@@ -41,7 +59,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, input),
+        // vintageimprovements.polishing(iner, input),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
@@ -55,7 +73,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         vintageimprovements.vacuumizing(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
@@ -71,7 +89,7 @@ ServerEvents.recipes((event) => {
     let iner = "createdelight:incomplete_" + output.split(":")[1]
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
@@ -85,7 +103,7 @@ ServerEvents.recipes((event) => {
 
     create
       .sequenced_assembly(output, input, [
-        vintageimprovements.polishing(iner, iner),
+        // vintageimprovements.polishing(iner, iner),
         vintageimprovements.vacuumizing(iner, [iner, e]),
         create.deploying(iner, [iner, b]),
         create.deploying(iner, [iner, c]),
@@ -105,19 +123,19 @@ ServerEvents.recipes((event) => {
    * @param {InputItem_} ingr3 
    * @param {InputItem_} ingr4 
    */
-  function craft_shaped(result, ingr1, ingr2, ingr3, ingr4 ) {
+  function craft_shaped(result, ingr1, ingr2, ingr3, ingr4) {
     event.recipes.kubejs.shaped(result, [
       "ADA",
       "CBC",
       "ACA"
     ],
-    {
-      A: ingr1,
-      B: ingr2,
-      C: ingr3,
-      D: ingr4
-    })
-    .id(`${result}_shaped`)
+      {
+        A: ingr1,
+        B: ingr2,
+        C: ingr3,
+        D: ingr4
+      })
+      .id(`${result}_shaped`)
   }
 
   craft_shaped(i1k, "ae2:certus_quartz_crystal", "#createdelight:quartz_glass", "#forge:dusts/redstone", "ae2:logic_processor")
@@ -236,4 +254,96 @@ ServerEvents.recipes((event) => {
     "#createdelight:quartz_vibrant_glass",
     "ae2:matter_ball"
   );
+
+  // 存储组件动力合成
+  create
+    .mechanical_crafting("ae2:cell_component_1k", ["ABA", "BCB", "ABA"], {
+      A: "#forge:dusts/redstone",
+      B: "#forge:gems/certus_quartz",
+      C: "ae2:logic_processor",
+    })
+    .id("createdelight:mechanical_crafting_1k");
+  create
+    .mechanical_crafting("ae2:cell_component_4k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/redstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_1k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_4k");
+  create
+    .mechanical_crafting("ae2:cell_component_16k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/glowstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_4k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_16k");
+  create
+    .mechanical_crafting("ae2:cell_component_64k", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/glowstone",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_16k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_64k");
+  create
+    .mechanical_crafting("ae2:cell_component_256k", ["ABA", "CDC", "ACA"], {
+      A: "ae2:sky_dust",
+      B: "ae2:calculation_processor",
+      C: "ae2:cell_component_64k",
+      D: "ae2:quartz_glass",
+    })
+    .id("createdelight:mechanical_crafting_256k");
+  create
+    .mechanical_crafting("megacells:cell_component_1m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:sky_dust",
+      B: "megacells:accumulation_processor",
+      C: "ae2:cell_component_256k",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_1m");
+  create
+    .mechanical_crafting("megacells:cell_component_4m", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/ender_pearl",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_1m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_4m");
+  create
+    .mechanical_crafting("megacells:cell_component_16m", ["ABA", "CDC", "ACA"], {
+      A: "#forge:dusts/ender_pearl",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_4m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_16m");
+  create
+    .mechanical_crafting("megacells:cell_component_64m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:matter_ball",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_16m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_64m");
+  create
+    .mechanical_crafting("megacells:cell_component_256m", ["ABA", "CDC", "ACA"], {
+      A: "ae2:matter_ball",
+      B: "megacells:accumulation_processor",
+      C: "megacells:cell_component_64m",
+      D: "ae2:quartz_vibrant_glass",
+    })
+    .id("createdelight:mechanical_crafting_256m");
+
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_1k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_4k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_16k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_64k_part" });
+  event.remove({ id: "ae2:network/cells/item_storage_components_cell_256k_part" });
+  event.remove({ id: "megacells:cells/cell_component_1m" });
+  event.remove({ id: "megacells:cells/cell_component_4m" });
+  event.remove({ id: "megacells:cells/cell_component_16m" });
+  event.remove({ id: "megacells:cells/cell_component_64m" });
+  event.remove({ id: "megacells:cells/cell_component_256m" });
 });

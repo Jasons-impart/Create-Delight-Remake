@@ -21,6 +21,16 @@ function make_growing_cluster(e, transitionItems, fluid, amount) {
 
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
+  
+    event.remove({ id: "expatternprovider:cobblestone_cell" });
+    event.remove({ id: "expatternprovider:water_cell" });
+    event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
+  
+    // 杀元件外壳配方
+    event.remove({ id: "ae2:network/cells/item_cell_housing" });
+    event.remove({ id: "ae2:network/cells/fluid_cell_housing" });
+    event.remove({ id: "megacells:cells/mega_item_cell_housing" });
+    event.remove({ id: "megacells:cells/mega_fluid_cell_housing" });
   // 电路板配方
   vintageimprovements
     .curving("ae2:printed_engineering_processor", "#forge:gems/diamond")
