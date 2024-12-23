@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - release-*
-    paths:
-      - pack.toml
+
 jobs:
   Release:
     runs-on: ubuntu-latest
@@ -13,6 +12,22 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: 读取包名
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-modpackname
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'name'
+      - name: 读取版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'version'
+      - name: 输出版本号和包名
+        run: |
+          echo ${{ steps.read-modpackname.outputs.value }}
+          echo ${{ steps.read-version.outputs.value }}
       - name: 安装 Packwiz
         id: download-artifact
         uses: actions/download-artifact@v4
@@ -30,18 +45,38 @@ jobs:
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
           mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
           chmod +x ./packwiz
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成带mod本体的包 移动到workspace文件夹
+        run: |
+          ./packwiz curseforge export
+          mv *.zip ../full-release.zip
+          unzip ../full-release.zip -d ../full-release
+          ls ..
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
       - name: 更新index
         run: |
           ./packwiz refresh
-      - name: 生成curseforge包
+      - name: 生成不带mod本体的包
         run: |
           ./packwiz curseforge export
-      - name: 上传包
-        uses: actions/upload-artifact@v3
+          mv *.zip ../lite-release.zip
+          unzip ../lite-release.zip -d ../lite-release
+          ls ..
+      - name: Workaround actions/upload-artifact#176
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+      - name: 上传带mod包
+        uses: actions/upload-artifact@v4
         with:
-          name: Curseforge-Release
-          path: ./*.zip
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-full
+          path: ${{ env.artifacts_path }}/full-release/
+      - name: 上传不带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-lite
+          path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
