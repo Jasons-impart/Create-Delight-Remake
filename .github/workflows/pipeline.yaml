@@ -12,6 +12,14 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
+      - name: 读取版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'version'
+      - name: 输出版本号
+        run: echo ${{ steps.read-version.outputs.value }}
       - name: 安装 Packwiz
         id: download-artifact
         uses: actions/download-artifact@v4
@@ -56,11 +64,11 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: full-release
+          name: Create-Delight-Remake-${{ steps.read-version.outputs.value }}-full
           path: ${{ env.artifacts_path }}/full-release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: lite-release
+          name: Create-Delight-Remake-${{ steps.read-version.outputs.value }}-lite
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
