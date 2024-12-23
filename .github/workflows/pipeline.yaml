@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - release-*
-    paths:
-      - pack.toml
+
 jobs:
   Release:
     runs-on: ubuntu-latest
@@ -30,18 +29,35 @@ jobs:
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
           mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
           chmod +x ./packwiz
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成带mod本体的包 移动到workspace文件夹
+        run: |
+          ./packwiz curseforge export
+          mv *.zip ../*-full-release.zip
+          unzip ../*-full-release.zip
+          ls ..
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
       - name: 更新index
         run: |
           ./packwiz refresh
-      - name: 生成curseforge包
+      - name: 生成不带mod本体的包
         run: |
           ./packwiz curseforge export
-      - name: 上传包
-        uses: actions/upload-artifact@v3
+          mv *.zip ../*-lite-release.zip
+          unzip ../*-lite-release.zip
+          ls ..
+      - name: 上传带mod包
+        uses: actions/upload-artifact@v4
         with:
-          name: Curseforge-Release
-          path: ./*.zip
+          name: full-release
+          path: ../*-full-release.zip
+      - name: 上传不带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: lite-release
+          path: ../*-lite-release.zip
       - run: echo "🍏 This job's status is ${{ job.status }}."
