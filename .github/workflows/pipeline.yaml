@@ -50,14 +50,17 @@ jobs:
           mv *.zip ../lite-release.zip
           unzip ../lite-release.zip -d ../lite-release
           ls ..
+      - name: Workaround actions/upload-artifact#176
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
           name: full-release
-          path: ../full-release/
+          path: ${{ env.artifacts_path }}/full-release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
           name: lite-release
-          path: ../lite-release/
+          path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
