@@ -13,9 +13,7 @@ ServerEvents.recipes(e => {
         "create_new_age:redstone_magnet",
         [
             "create_new_age:magnetite_block",
-            'minecraft:redstone',
-            Fluid.of("createdelight:molten_scarlet_neodymium", 90),
-            Fluid.of("createdelight:molten_azure_neodymium", 90)
+            'minecraft:redstone'
         ]
     ).heated().id("create_new_age:shaped/redstone_magnet")
     // 铁金介质磁铁
@@ -24,21 +22,18 @@ ServerEvents.recipes(e => {
         [
             e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_golden_sheet']),
             e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_iron_sheet']),
-            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_golden_sheet']),
-            e.recipes.create.deploying(iner_3, [iner_3, 'create_new_age:overcharged_iron_sheet']),
         ]
     )
-        .loops(1)
+        .loops(3)
         .transitionalItem(iner_3)
         .id("create_new_age:shaped/layered_magnet")
     // 钻石磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:fluxuated_magnetite",
         [
-            'create_new_age:overcharged_gold',
-            'create_new_age:overcharged_diamond',
+            '2x create_new_age:overcharged_diamond',
             "create_new_age:layered_magnet",
-            'minecraft:blaze_powder',
+            '2x minecraft:blaze_powder',
             Fluid.of("alexscaves:acid", 250)
         ]
     ).heated().id("create_new_age:fluxuated_magnetite")
@@ -47,8 +42,17 @@ ServerEvents.recipes(e => {
         "create_new_age:netherite_magnet",
         [
             "create_new_age:fluxuated_magnetite",
-            Fluid.of("createmetallurgy:molten_netherite", 90)
+            Fluid.of("createmetallurgy:molten_netherite", 180),
+            Fluid.of("createdelight:molten_azure_neodymium", 180)
         ]
-    ).heated().id("create_new_age:shaped/netherite_magnet")
+    ).heated().id("create_new_age:shaped/netherite_magnet_1")
+    e.recipes.vintageimprovements.pressurizing(
+        "create_new_age:netherite_magnet",
+        [
+            "create_new_age:fluxuated_magnetite",
+            Fluid.of("createmetallurgy:molten_netherite", 180),
+            Fluid.of("createdelight:molten_scarlet_neodymium", 180),
+        ]
+    ).heated().id("create_new_age:shaped/netherite_magnet_2")
 
 })
