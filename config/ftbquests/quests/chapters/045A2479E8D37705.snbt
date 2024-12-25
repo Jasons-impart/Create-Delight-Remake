@@ -203,7 +203,7 @@
 			dependencies: ["6AF0BCF34F1E3853"]
 			id: "36C9F799E0135534"
 			tasks: [{
-				entity: "aether:cockatrice"
+				entity: "iceandfire:cockatrice"
 				id: "0CF304DA0C1B4795"
 				type: "kill"
 				value: 1L

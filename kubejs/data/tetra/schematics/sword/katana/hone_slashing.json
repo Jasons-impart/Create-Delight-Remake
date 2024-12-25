@@ -34,7 +34,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/exhilaration"
+                    "improvement": "blade/slashing"
                 }
             }
         ]
@@ -42,7 +42,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "kinetic_pixel:pistonexciter"],
+                "items":[ "create_connected:control_chip"],
                 "count": 1
             },
             "experienceCost": 15,
@@ -50,7 +50,7 @@
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/exhilaration": 1
+                "blade/slashing": 1
             }
         }
     ]

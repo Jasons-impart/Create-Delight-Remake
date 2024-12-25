@@ -18,10 +18,10 @@
     "outcomes": [
         {
             "material": {
-                "items":[ ""],
-                "count": 1
+                "items":[ "ae2:fluix_pearl"],
+                "count": 4
             },
-            "experienceCost": 10,
+            "experienceCost": 20,
             "requiredTools": {
                 "hammer_dig": 9
             },

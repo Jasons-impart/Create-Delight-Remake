@@ -42,8 +42,8 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "kinetic_pixel:pistonexciter"],
-                "count": 1
+                "items":[ "art_of_forging:eerie_shard"],
+                "count": 2
             },
             "experienceCost": 15,
             "requiredTools": {
