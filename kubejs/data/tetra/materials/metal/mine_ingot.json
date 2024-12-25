@@ -10,6 +10,9 @@
     "magicCapacity": 100,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 9,
+    "improvements":{
+      "vvaddon/charge": 1
+    },
     "tints": {
       "glyph": "1AD5DC",
       "texture": "1AD5DC"

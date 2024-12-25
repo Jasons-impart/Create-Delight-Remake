@@ -2,12 +2,12 @@
         "modules": [ "sword/katana_blade" ],
         "matchSuffixed": true,
         "improvements": [ "sword/murasama_imprv" ],
-        "moduleVariants": ["sword_socket/bleak_electron_tube"],
-        "visibilityKey": "sword_socket/bleak_electron_tube",
+        "moduleVariants": ["sword_socket/singularity"],
+        "visibilityKey": "sword_socket/singularity",
         "effects": {
 
     },
     "attributes": {
-	"generic.attack_damage": 10
+	"generic.attack_speed": 0.8
    }
 }]

@@ -4,7 +4,7 @@
         "level": 1,
         "integrity": -1,
         "effects": {
-            "puncture": [5,2]
+            "puncture": [8,4]
         }
     },
     {
@@ -12,7 +12,7 @@
         "level": 2,
         "integrity": -1,
         "effects": {
-            "puncture": [8,2]
+            "puncture": [12,4]
         }
     },
     {
@@ -20,7 +20,7 @@
         "level": 3,
         "integrity": -2,
         "effects": {
-            "puncture": [10,4]
+            "puncture": [15,8]
         }
     }
 ]

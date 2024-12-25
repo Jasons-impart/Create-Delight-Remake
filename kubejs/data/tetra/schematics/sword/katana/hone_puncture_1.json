@@ -38,8 +38,8 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:shark_tooth" ,"iceandfire:troll_tusk","iceandfire:hydra_fang","iceandfire:sea_serpent_fang","alexsmobs:bone_serpent_tooth"],
-                "count": 1
+                "items":[ "ae2:charged_certus_quartz_crystal"],
+                "count": 16
             },
             "experienceCost": 10,
             "requiredTools": {

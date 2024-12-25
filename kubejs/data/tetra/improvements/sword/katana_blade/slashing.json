@@ -1,12 +1,12 @@
 [
     {
-        "key": "blade/exhilaration",
+        "key": "blade/slashing",
         "level": 1,
         "aspects": {
             "honed": 1
         },
         "effects": {
-	    "abilityExhilaration": 100
+	    "bleeding": 5
         }
     }
 ]
