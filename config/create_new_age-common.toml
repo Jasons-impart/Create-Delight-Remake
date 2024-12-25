@@ -57,7 +57,7 @@ maxWireLength = 16
 	reinforcedMotorCapacity = 1280000
 	#Top Speed of a basic motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	basicMotorSpeed = 128.0
+	basicMotorSpeed = 256.0
 	#Top Speed of an advanced motor
 	#Range: 1.0 ~ 1.7976931348623157E308
 	advancedMotorSpeed = 256.0
@@ -66,13 +66,13 @@ maxWireLength = 16
 	reinforcedMotorSpeed = 256.0
 	#Generated SU of a basic motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	basicMotorStress = 2048.0
+	basicMotorStress = 4096.0
 	#Generated SU of an advanced motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	advancedMotorStress = 8192.0
+	advancedMotorStress = 16384.0
 	#Generated SU of a reinforced motor
 	#Range: 1.0 ~ 1.7976931348623157E308
-	reinforcedMotorStress = 32768.0
+	reinforcedMotorStress = 65536.0
 
 ["Motor Extensions"]
 	#Power Multiplier of a basic motor extension
