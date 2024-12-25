@@ -470,6 +470,12 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_third_stage_rocket_core")
     e.create("createdelight:incomplete_fourth_stage_rocket_core", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
+    // 行星齿轮
+    e.create("createdelight:incomplete_planet_gear", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_planet_gear")
+    e.create("createdelight:planet_gear")
+        .translationKey("item.createdelight.planet_gear")
+        .rarity("uncommon")
 
     // 矿石注册
     let clusters = [

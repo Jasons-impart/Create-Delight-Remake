@@ -169,5 +169,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:mercury_ore_cluster',
         'createdelight:venus_ore_cluster',
         'createdelight:glacio_ore_cluster',
+        "createdelight:planet_gear",
+        "createdelight:incomplete_planet_gear"
     ])
 });  

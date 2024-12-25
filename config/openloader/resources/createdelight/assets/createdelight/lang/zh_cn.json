@@ -251,6 +251,7 @@
     "item.createdelight.incomplete_wireless_pattern_encoding_terminal": "未完成的无线样板编码终端",
     "item.createdelight.incomplete_wireless_terminal": "未完成的无线终端",
     "item.createdelight.incompleted_modular_accumulator": "未完成的蓄电池",
+    "item.createdelight.incomplete_planet_gear": "未完成的行星齿轮",
     "item.createdelight.inferior_genetic_seed": "劣质的基因种子",
     "item.createdelight.initial_processing_of_fluid_cell_housing": "未加工的流体元件外壳",
     "item.createdelight.initial_processing_of_item_cell_housing": "未加工的物品元件外壳",
@@ -360,6 +361,7 @@
     "item.tetra.scroll.bow/stave/remembrance_stave.description": "包含锻造追忆之弓的知识",
     "item.tetra.scroll.bow/stave/remembrance_stave.name": "追忆之弓",
     "item.tetra.scroll.bow/stave/remembrance_stave.prefix": "原理图",
+    "item.createdelight.planet_gear": "行星齿轮",
 
     "jei.BlazeBurnerSuperHeat": "烈焰人加热",
 
