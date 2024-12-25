@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "create_new_age:shaped/netherite_magnet"
+    ])
     // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
     for (let i = 0; i < 8; i++) {
@@ -31,9 +34,11 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:fluxuated_magnetite",
         [
-            '2x create_new_age:overcharged_diamond',
+            'create_new_age:overcharged_diamond',
+            'create_new_age:overcharged_diamond',
             "create_new_age:layered_magnet",
-            '2x minecraft:blaze_powder',
+            'minecraft:blaze_powder',
+            'minecraft:blaze_powder',
             Fluid.of("alexscaves:acid", 250)
         ]
     ).heated().id("create_new_age:fluxuated_magnetite")
