@@ -271,4 +271,12 @@ ServerEvents.recipes(e => {
             "create:chute"
         ]
     ).id("railways:crafting/portable_fuel_interface")
+    // 精密构件
+    e.recipes.create.deploying(
+        "create:precision_mechanism",
+        [
+            "create:brass_sheet",
+            "alexscaves:telecore"
+        ]
+    ).id("create_oppenheimered:deploying/precision_mechanism_from_telecore")
 })

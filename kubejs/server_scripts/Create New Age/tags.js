@@ -15,4 +15,8 @@ ServerEvents.tags("minecraft:item", e => {
             "alexscaves:hazmat_boots"
         ]
     ])
+    e.add("createaddition:high_current_spools", [
+        'createaddition:gold_spool',
+        'createaddition:electrum_spool'
+    ])
 })

@@ -3,7 +3,7 @@ StartupEvents.modifyCreativeTab("create:base", e => {
     e.add([
       "create:chocolate_bucket",
       "create:honey_bucket",
-      "createdelight:plante_gear"
+      "createdelight:planet_gear"
     ])
   })
   // 机械动力：实用物品
