@@ -59,5 +59,16 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:molten_scarlet_neodymium", 180),
         ]
     ).heated().id("create_new_age:shaped/netherite_magnet_2")
-
+    // 碳刷
+    let iner_4 = "createdelight:incomplete_carbon_brushes"
+    e.recipes.create.sequenced_assembly('create_new_age:carbon_brushes', 'create:shaft',
+        [
+            e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
+            e.recipes.create.deploying(iner_4, [iner_4, 'createmetallurgy:graphite']),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelight:molten_andesite",250)])
+        ]
+    )
+        .loops(4)
+        .transitionalItem(iner_4)
+        .id("create_new_age:shaped/carbon_brushes")
 })
