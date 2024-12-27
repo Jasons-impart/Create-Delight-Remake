@@ -1,6 +1,14 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "create_new_age:shaped/netherite_magnet"
+        "create_new_age:shaped/netherite_magnet",
+        "create_new_age:shaped/connector_mirrored",
+        "create_new_age:shaped/boiler_heater",
+        "create_new_age:shaped/heat_pump",
+        "create_new_age:shaped/heat_pipe",
+        "create_new_age:shaped/heat_pipe_mirror",
+        "create_new_age:shaped/stirling_engine",
+        "create_new_age:shaped/basic_solar_plate",
+        "create_new_age:shaped/advanced_solar_plate"
     ])
     // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
@@ -59,5 +67,16 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:molten_scarlet_neodymium", 180),
         ]
     ).heated().id("create_new_age:shaped/netherite_magnet_2")
-
+    // 碳刷
+    let iner_4 = "createdelight:incomplete_carbon_brushes"
+    e.recipes.create.sequenced_assembly('create_new_age:carbon_brushes', 'create:shaft',
+        [
+            e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
+            e.recipes.create.deploying(iner_4, [iner_4, 'createmetallurgy:graphite']),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelight:molten_andesite",250)])
+        ]
+    )
+        .loops(4)
+        .transitionalItem(iner_4)
+        .id("create_new_age:shaped/carbon_brushes")
 })

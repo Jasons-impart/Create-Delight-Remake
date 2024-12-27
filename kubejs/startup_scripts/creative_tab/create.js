@@ -46,7 +46,13 @@ StartupEvents.modifyCreativeTab("create:base", e => {
       'create_new_age:overcharged_golden_wire',
       'create_new_age:blank_circuit',
       'create_new_age:electrical_connector',
-      'create_new_age:copper_circuit'
+      'create_new_age:copper_circuit',
+      'create_new_age:heater',
+      'create_new_age:heat_pump',
+      'create_new_age:heat_pipe',
+      'create_new_age:stirling_engine',
+      'create_new_age:basic_solar_heating_plate',
+      'create_new_age:advanced_solar_heating_plate'
     ])
     e.add([
       'alexscaves:block_of_scarlet_neodymium',
