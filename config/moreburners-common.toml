@@ -1,0 +1,31 @@
+
+#Settings for all burners' parameters
+[parameters]
+	#The minimum heat value required to become seething. (super heating)
+	seething_heat = 340.0
+	#The minimum heat value required to become kindled. (heating)
+	kindled_heat = 200.0
+	#The minimum heat value required to become fading. (heating)
+	fading_heat = 160.0
+	#The minimum heat value required to become smouldering.
+	smouldering_heat = 80.0
+
+	#Settings for electric burner's parameters
+	[parameters.electric_burner]
+		#The max amount of energy capacity.
+		max_capacity = 500000
+		#The amount of energy consumed per tick.
+		energy_cost = 10000
+		#The value to multiply on the energy consumed per tick when heating.
+		energy_multiplier_1 = 1.5
+		#The value to multiply on the energy consumed per tick when super heating.
+		energy_multiplier_2 = 2.0
+		#The amount of heat gained per tick when consuming energy.
+		heating_rate = 10.0
+		#The amount of heat lost per tick when not consuming energy.
+		cooling_rate = 1.0
+		#The maximum heat value the electric burner can reach before upgraded.
+		max_heat = 300.0
+		#The maximum heat value the electric burner can reach after upgraded.
+		upgraded_max_heat = 400.0
+
