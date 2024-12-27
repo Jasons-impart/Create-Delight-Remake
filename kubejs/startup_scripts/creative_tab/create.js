@@ -45,7 +45,8 @@ StartupEvents.modifyCreativeTab("create:base", e => {
       'create_new_age:overcharged_iron_wire',
       'create_new_age:overcharged_golden_wire',
       'create_new_age:blank_circuit',
-      'create_new_age:electrical_connector'
+      'create_new_age:electrical_connector',
+      'create_new_age:copper_circuit'
     ])
     e.add([
       'alexscaves:block_of_scarlet_neodymium',
