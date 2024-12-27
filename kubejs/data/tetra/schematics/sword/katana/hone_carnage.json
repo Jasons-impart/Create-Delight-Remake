@@ -38,7 +38,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "kinetic_pixel:pistonexciter"],
+                "items":[ "alexscaves:holocoder"],
                 "count": 1
             },
             "experienceCost": 15,

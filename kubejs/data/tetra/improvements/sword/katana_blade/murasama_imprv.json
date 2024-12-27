@@ -3,11 +3,13 @@
         "key": "sword/murasama_imprv",
         "integrity": -1,
         "effects": {
-            "truesweep": 1
+            "truesweep":1,
+            "armorPenetration": 30,
+            "bleeding": 5,
+            "vvaddon:charge": 1
         },
         "attributes": {
-            "generic.attack_speed": 0.1,
-            "generic.attack_damage": 0.5
+            "generic.attack_speed": 0.5
         },
         "models": [
             {

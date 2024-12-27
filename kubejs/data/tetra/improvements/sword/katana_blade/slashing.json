@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/slashing",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+	    "bleeding": 5
+        }
+    }
+]

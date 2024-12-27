@@ -1,0 +1,30 @@
+{
+    "replace": true,
+    "key": "singularity",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes": {
+        "forge:attack_range":1
+    },
+    "effects": {
+        "intuit": 10,
+        "janking":[10,0]
+    },
+    "tints": {
+        "glyph": "1818a5"
+    },
+    "textures": [ "singularity" ],
+    "experienceCost": 30,
+    "material": {
+        "items": [ "ae2:singularity" ]
+    }
+}

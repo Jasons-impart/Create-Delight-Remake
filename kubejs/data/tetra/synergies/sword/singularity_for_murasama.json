@@ -1,0 +1,13 @@
+[ {
+        "modules": [ "sword/katana_blade" ],
+        "matchSuffixed": true,
+        "improvements": [ "sword/murasama_imprv" ],
+        "moduleVariants": ["sword_socket/singularity"],
+        "visibilityKey": "sword_socket/singularity",
+        "effects": {
+
+    },
+    "attributes": {
+	"generic.attack_speed": 0.8
+   }
+}]

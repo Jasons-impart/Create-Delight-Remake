@@ -1,0 +1,57 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "tint": "c52323"
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:and",
+                "requirements": [
+                    {
+                        "type": "tetra:module",
+                        "module": "sword/katana_blade"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "sword/murasama_imprv"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "blade/puncture_tier"
+                    }
+                ]
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "blade/slashing"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "create_connected:control_chip"],
+                "count": 1
+            },
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/slashing": 1
+            }
+        }
+    ]
+}
