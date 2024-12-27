@@ -1,6 +1,14 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "create_new_age:shaped/netherite_magnet"
+        "create_new_age:shaped/netherite_magnet",
+        "create_new_age:shaped/connector_mirrored",
+        "create_new_age:shaped/boiler_heater",
+        "create_new_age:shaped/heat_pump",
+        "create_new_age:shaped/heat_pipe",
+        "create_new_age:shaped/heat_pipe_mirror",
+        "create_new_age:shaped/stirling_engine",
+        "create_new_age:shaped/basic_solar_plate",
+        "create_new_age:shaped/advanced_solar_plate"
     ])
     // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
