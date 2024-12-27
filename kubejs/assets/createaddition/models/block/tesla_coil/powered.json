@@ -2,12 +2,26 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"3": "create:block/axis_top",
+		"3": "createaddition:block/tesla_coil/lightning_new",
+		"4": "createaddition:block/tesla_coil/lightning",
 		"main": "createaddition:block/tesla_coil/tesla_coil",
 		"axis": "create:block/axis",
 		"particle": "create:block/brass_casing"
 	},
 	"elements": [
+		{
+			"from": [5, 15, 5],
+			"to": [11, 21, 11],
+			"rotation": {"angle": 0, "axis": "z", "origin": [8, 12.25, 8]},
+			"faces": {
+				"north": {"uv": [8.5, 8.5, 11.5, 11.5], "rotation": 180, "texture": "#main"},
+				"east": {"uv": [8.5, 8.5, 11.5, 11.5], "rotation": 180, "texture": "#main"},
+				"south": {"uv": [8.5, 8.5, 11.5, 11.5], "rotation": 180, "texture": "#main"},
+				"west": {"uv": [8.5, 8.5, 11.5, 11.5], "rotation": 180, "texture": "#main"},
+				"up": {"uv": [11.5, 8.5, 8.5, 11.5], "rotation": 180, "texture": "#main"},
+				"down": {"uv": [11.5, 11.5, 8.5, 8.5], "rotation": 180, "texture": "#main"}
+			}
+		},
 		{
 			"from": [2, 12, 2],
 			"to": [14, 14, 14],
@@ -24,14 +38,14 @@
 		{
 			"name": "Axis",
 			"from": [6, 11, 6],
-			"to": [10, 18, 10],
+			"to": [10, 15, 10],
 			"rotation": {"angle": 0, "axis": "z", "origin": [8, 12.25, 8]},
 			"faces": {
-				"north": {"uv": [6, 0, 10, 9], "rotation": 180, "texture": "#axis"},
-				"east": {"uv": [6, 0, 10, 9], "rotation": 180, "texture": "#axis"},
-				"south": {"uv": [6, 0, 10, 9], "rotation": 180, "texture": "#axis"},
-				"west": {"uv": [6, 0, 10, 9], "rotation": 180, "texture": "#axis"},
-				"up": {"uv": [10, 6, 6, 10], "rotation": 180, "texture": "#3"},
+				"north": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#axis"},
+				"east": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#axis"},
+				"south": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#axis"},
+				"west": {"uv": [6, 0, 10, 6], "rotation": 180, "texture": "#axis"},
+				"up": {"uv": [14, 12.5, 12.5, 14], "rotation": 180, "texture": "#main"},
 				"down": {"uv": [14, 14, 12.5, 12.5], "rotation": 180, "texture": "#main"}
 			}
 		},
@@ -46,6 +60,19 @@
 				"west": {"uv": [0, 8.5, 8, 14], "rotation": 180, "texture": "#main"},
 				"up": {"uv": [8, 0, 0, 8], "rotation": 180, "texture": "#main"},
 				"down": {"uv": [8, 8, 0, 0], "rotation": 180, "texture": "#main"}
+			}
+		},
+		{
+			"from": [4.75, 15, 4.75],
+			"to": [11.25, 21.25, 11.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [4, 14, 4]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#3"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#4"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#missing", "cullface": "down"}
 			}
 		}
 	],
@@ -89,7 +116,7 @@
 			"name": "energiser",
 			"origin": [0, 0, 0],
 			"color": 0,
-			"children": [0, 1, 2]
+			"children": [0, 1, 2, 3, 4]
 		}
 	]
 }

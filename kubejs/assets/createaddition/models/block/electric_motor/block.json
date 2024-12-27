@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"particle": "createaddition:block/electric_motor/brass_electric_motor",
+		"main": "createaddition:block/electric_motor/brass_electric_motor"
+	},
+	"elements": [
+		{
+			"name": "core",
+			"from": [3, 3, 0],
+			"to": [13, 13, 14],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [9.5, 1.5, 14.5, 6.5], "texture": "#main", "cullface": "north"},
+				"east": {"uv": [9.5, 8, 14.5, 15], "rotation": 270, "texture": "#main"},
+				"south": {"uv": [1.5, 1.5, 6.5, 6.5], "texture": "#main"},
+				"west": {"uv": [9.5, 8, 14.5, 15], "rotation": 90, "texture": "#main"},
+				"up": {"uv": [9.5, 8, 14.5, 15], "rotation": 180, "texture": "#main"},
+				"down": {"uv": [9.5, 8, 14.5, 15], "texture": "#main"}
+			}
+		},
+		{
+			"name": "coil",
+			"from": [0, 0, 5],
+			"to": [16, 16, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8, 13]},
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#main"},
+				"east": {"uv": [2.5, 8, 5.5, 16], "texture": "#main", "cullface": "east"},
+				"south": {"uv": [0, 0, 8, 8], "rotation": 90, "texture": "#main"},
+				"west": {"uv": [2.5, 8, 5.5, 16], "texture": "#main", "cullface": "west"},
+				"up": {"uv": [2.5, 8, 5.5, 16], "rotation": 90, "texture": "#main", "cullface": "up"},
+				"down": {"uv": [2.5, 8, 5.5, 16], "rotation": 90, "texture": "#main", "cullface": "down"}
+			}
+		}
+	]
+}

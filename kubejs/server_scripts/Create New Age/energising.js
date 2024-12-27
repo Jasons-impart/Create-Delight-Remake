@@ -1,7 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create_new_age:reactor/reactor_casing",
-        "create_new_age:advanced_motor_extension",
         "create_new_age:shaped/fluxuated_magnetite",
         "create_new_age:shaped/connector",
         "create_new_age:cutting/copper_sheet",
