@@ -25,3 +25,9 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "expatternprovider:assembler_matrix_speed"
   ])
 })
+
+StartupEvents.modifyCreativeTab("alexsmobs:alexsmobs", e => {
+  e.remove([
+    "alexsmobs:banana"
+  ])
+})
