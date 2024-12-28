@@ -175,6 +175,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_advanced_motor',
         'createdelight:incomplete_reinforced_motor',
         'createdelight:incomplete_carbon_brushes',
-        "createdelight:adzuki_beans_seed"
+        "createdelight:adzuki_beans_seed",
+        "createdelight:artemisia_argyi_seed"
     ])
 });  

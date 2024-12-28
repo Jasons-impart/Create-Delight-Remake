@@ -6,6 +6,7 @@
     "itemGroup.createdelight.misc": "机械动力：悠然乐事 | 杂项",
 
     "block.createdelight.adzuki_beans": "红豆植株",
+    "block.createdelight.artemisia_argyi": "艾草植株",
     "block.createdelight.adzuki_ice_cream": "红豆冰淇淋",
     "block.createdelight.adzuki_milkshake": "红豆奶昔",
     "block.createdelight.affogato_fluid": "阿芙佳朵",
@@ -146,6 +147,7 @@
 
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",
+    "item.createdelight.artemisia_argyi_seed": "艾草种子",
     "item.createdelight.adzuki_ice_cream_bucket": "红豆冰淇淋桶",
     "item.createdelight.adzuki_milkshake_bucket": "红豆奶昔桶",
     "item.createdelight.andesite_alloy_nugget": "安山合金粒",

@@ -83,7 +83,8 @@ ItemEvents.tooltip(e => {
     ])
 })
 let tooltips = [
-    ["ad_astra:nasa_workbench", "§l§4请不要拿出来, 会崩溃!!!", "§l§4Please don't take it out, it will collapse!!!"],
+    ['neapolitan:adzuki_beans', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
+    ['neapolitan:adzuki_soil', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],
     ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su"],
     ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su"],

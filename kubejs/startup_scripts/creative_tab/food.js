@@ -63,7 +63,8 @@ StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
       'festival_delicacies:red_bean'
     ])
     e.add([
-        'createdelight:adzuki_beans_seed'
+        'createdelight:adzuki_beans_seed',
+        "createdelight:artemisia_argyi_seed"
       ]
     )
   })

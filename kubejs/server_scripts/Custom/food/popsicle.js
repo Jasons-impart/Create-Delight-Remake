@@ -56,17 +56,17 @@ ServerEvents.recipes(e => {
     e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "youkaishomecoming:ice_cube"])
     .id("createdelight:deploying/big_popsicle")
     // 牛奶冰棍特殊处理
-    e.recipes.kubejs.shaped(
-        "youkaishomecoming:milk_popsicle",
-        [
-            "  A",
-            " A ",
-            "B  "
-        ], {
-            A: "#forge:milk/milk_bottle",
-            B: "createdelight:empty_popsicle"
-        }
-    ).id("createdelight:shaped/milk_popsicle")
+    // e.recipes.kubejs.shaped(
+    //     "youkaishomecoming:milk_popsicle",
+    //     [
+    //         "  A",
+    //         " A ",
+    //         "B  "
+    //     ], {
+    //         A: "#forge:milk/milk_bottle",
+    //         B: "createdelight:empty_popsicle"
+    //     }
+    // ).id("createdelight:shaped/milk_popsicle")
     e.custom({
         type: "create:filling",
         ingredients: [

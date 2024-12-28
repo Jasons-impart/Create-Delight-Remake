@@ -28,4 +28,29 @@ StartupEvents.registry("block", e => {
             seed.texture("neapolitan:item/adzuki_beans")
             seed.translationKey("item.createdelight.adzuki_beans_seed")
         })
+    e.create("createdelight:artemisia_argyi", "crop")
+        .translationKey("block.createdelight.artemisia_argyi")
+        .renderType("cutout")
+        .age(3, age => {
+            age.shape(0, 0, 0, 0, 16, 2, 16)
+            age.shape(1, 0, 0, 0, 16, 4, 16)
+            age.shape(2, 0, 0, 0, 16, 8, 16)
+            age.shape(3, 0, 0, 0, 16, 12, 16)
+        })
+        .growTick((tickevent) => 25)
+        .bonemeal(info => {
+            return 1
+        })
+        .dropSeed(true)
+        .crop('festival_delicacies:artemisia_argyi', 1)
+        .crop('festival_delicacies:artemisia_argyi', 0.5)
+        .texture(0, "createdelight:block/artemisia_argyi_stage0")
+        .texture(1, "createdelight:block/artemisia_argyi_stage1")
+        .texture(2, "createdelight:block/artemisia_argyi_stage2")
+        .texture(3, "createdelight:block/artemisia_argyi_stage3")
+        .item(seed => {
+            seed.texture("createdelight:item/artemisia_argyi_seed")
+            seed.translationKey("item.createdelight.adzuki_beans_seed")
+        })
+
 })

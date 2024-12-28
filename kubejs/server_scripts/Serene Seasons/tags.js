@@ -13,7 +13,8 @@ ServerEvents.tags("item", e => {
         "neapolitan:mint_sprout",
         "neapolitan:strawberry_pips",
         "neapolitan:vanilla_pods",
-        "createdelight:adzuki_beans_seed"
+        "createdelight:adzuki_beans_seed",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_seeds",
@@ -33,7 +34,8 @@ ServerEvents.tags("item", e => {
         "vinery:savanna_grape_seeds_white",
         "oceanic_delight:sea_grape",
         "neapolitan:mint_sprout",
-        "neapolitan:vanilla_pods"
+        "neapolitan:vanilla_pods",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_seeds",
@@ -61,7 +63,8 @@ ServerEvents.tags("item", e => {
         "neapolitan:mint_sprout",
         "neapolitan:strawberry_pips",
         "neapolitan:vanilla_pods",
-        "createdelight:adzuki_beans_seed"
+        "createdelight:adzuki_beans_seed",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_seeds",
@@ -86,7 +89,9 @@ ServerEvents.tags("block", e => {
         "vinery:savanna_grape_bush_white",
         "neapolitan:mint",
         "neapolitan:strawberry_bush",
-        "neapolitan:vanilla_vine"
+        "neapolitan:vanilla_vine",
+        "createdelight:adzuki_beans_seed",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_crop",
@@ -105,7 +110,8 @@ ServerEvents.tags("block", e => {
         "vinery:savanna_grape_bush_white",
         "oceanic_delight:sea_grape_plant",
         "neapolitan:mint",
-        "neapolitan:vanilla_vine"
+        "neapolitan:vanilla_vine",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_plant",
@@ -131,7 +137,9 @@ ServerEvents.tags("block", e => {
         "neapolitan:small_banana_frond",
         "neapolitan:mint",
         "neapolitan:strawberry_bush",
-        "neapolitan:vanilla_vine"
+        "neapolitan:vanilla_vine",
+        "createdelight:adzuki_beans_seed",
+        "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_crop",
