@@ -27,27 +27,27 @@
     "disableAirVortexes": false,
     "cryoFreezer": {
         // Type: Long
-        "ironTierMaxEnergyInOut": 100,
+        "ironTierMaxEnergyInOut": 1000,
         // Type: Long
-        "steelTierMaxEnergyInOut": 150,
+        "steelTierMaxEnergyInOut": 1500,
         // Type: Long
-        "deshTierMaxEnergyInOut": 250,
+        "deshTierMaxEnergyInOut": 2500,
         // Type: Long
-        "ostrumTierMaxEnergyInOut": 500,
+        "ostrumTierMaxEnergyInOut": 5000,
         // Type: Long
-        "ironTierEnergyCapacity": 10000,
+        "ironTierEnergyCapacity": 100000,
         // Type: Long
-        "steelTierEnergyCapacity": 20000,
+        "steelTierEnergyCapacity": 200000,
         // Type: Long
-        "deshTierEnergyCapacity": 50000,
+        "deshTierEnergyCapacity": 500000,
         // Type: Long
-        "ostrumTierEnergyCapacity": 100000,
+        "ostrumTierEnergyCapacity": 1000000,
         // Type: Long
-        "steelTierFluidCapacity": 3000,
+        "steelTierFluidCapacity": 30000,
         // Type: Long
-        "deshTierFluidCapacity": 5000,
+        "deshTierFluidCapacity": 50000,
         // Type: Long
-        "ostrumTierFluidCapacity": 10000,
+        "ostrumTierFluidCapacity": 100000,
         // Type: Long
         "coalGeneratorEnergyGenerationPerTick": 20,
         // Type: Long
@@ -62,7 +62,7 @@
          * The maximum number of blocks that an oxygen distributor and gravity normalizer can distribute to.
          * Type: Integer
          */
-        "maxDistributionBlocks": 6000,
+        "maxDistributionBlocks": 100000,
         /*
          * The tick rate (20 ticks = 1 second) at which the oxygen distributor and gravity normalizer will recalculate the distribution area.
          * Type: Integer
