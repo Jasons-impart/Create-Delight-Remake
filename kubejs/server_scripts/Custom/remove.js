@@ -4,7 +4,6 @@ ServerEvents.recipes(e => {
     ])
     remove_recipes_id(e, [
         "create:crafting/materials/rose_quartz",
-        "neapolitan:banana/banana_bread",
         "createmetallurgy:belt_grinder",
         "createmetallurgy:sandpaper_belt",
         "torchmaster:frozen_pearl",
