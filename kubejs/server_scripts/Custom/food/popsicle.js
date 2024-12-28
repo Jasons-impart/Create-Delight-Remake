@@ -7,14 +7,14 @@ ServerEvents.recipes(e => {
         "CA "
     ],
         {
-            A: "youkaishomecoming:ice_cube",
+            A: "#forge:ice_cube",
             B: "minecraft:sugar",
             C: "minecraft:stick"
         })
         .id("createdelight:shaped/empty_popsicle")
     let iner_1 = "minecraft:stick"
     e.recipes.create.sequenced_assembly("createdelight:empty_popsicle", iner_1, [
-        e.recipes.create.deploying(iner_1, [iner_1, "youkaishomecoming:ice_cube"]),
+        e.recipes.create.deploying(iner_1, [iner_1, "#forge:ice_cube"]),
         e.recipes.create.deploying(iner_1, [iner_1, "minecraft:sugar"])
     ])
         .transitionalItem(iner_1)
@@ -53,7 +53,7 @@ ServerEvents.recipes(e => {
     make_popsicle("fruitsdelight:kiwi_popsicle", "fruitsdelight:kiwi", Fluid.of("fruitsdelight:kiwi_juice", 250))
     make_popsicle("casualness_delight:green_tongue", "minecraft:slime_ball", Fluid.of("createdelight:slime", 90))
     // make_popsicle("youkaishomecoming:milk_popsicle", "#forge:milk/milk_bottle", Fluid.of("minecraft:milk", 250))
-    e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "youkaishomecoming:ice_cube"])
+    e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "#forge:ice_cube"])
     .id("createdelight:deploying/big_popsicle")
     // 牛奶冰棍特殊处理
     // e.recipes.kubejs.shaped(

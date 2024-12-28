@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
             ingredient, 
             Fluid.of("minecraft:milk", 250), 
             Fluid.of("createcafe:melted_sugar", 125), 
-            "youkaishomecoming:ice_cube"])
+            "#forge:ice_cube"])
         .id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
         e.recipes.create.mixing(Fluid.of(outputFluidMilkshake, 750), [
             Fluid.of(outputFluidIcecream, 250),
