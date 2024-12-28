@@ -54,7 +54,7 @@ StartupEvents.modifyCreativeTab("create:base", e => {
       'create_new_age:basic_solar_heating_plate',
       'create_new_age:advanced_solar_heating_plate'
     ])
-    e.add([
+    e.addAfter('create_new_age:fluxuated_magnetite', [
       'alexscaves:block_of_scarlet_neodymium',
       'alexscaves:block_of_azure_neodymium'
     ])
