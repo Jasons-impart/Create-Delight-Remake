@@ -92,8 +92,6 @@
 	ecto_slab_emerging_chance = 40
 	#Defines 1 in specified chance for how often Ecto Slabs emerge from soul swirls if the player has Unbounded Speed
 	ecto_slab_emerging_with_unbounded_speed = 5
-	#Ghast and Blaze Fireballs will render 3D if enabled
-	3d_fireballs = false
 
 #Game Mechanic Settings
 [game_mechanics]
@@ -117,12 +115,11 @@
 	reduce_soul_sand_slowness = false
 	#Soul Speed will no longer damage your boots when enabled
 	remove_soul_speed_durability_penalty = false
-	#Secondary and Tertiary sub-biomes will start generating if enabled
-	enable_sub_biomes = true
-	#Defines the weight for Secondary sub-biome regions
-	secondary_sub_biome_weights = 2
-	#When Flowing Ectoplasm is surrounded on two sides by sources it converts to source
-	ectoplasm_source_conversion = false
+	#Ectoplasm slowly starts dealing freezing damage when in contact
+	ectoplasm_freezing_damage = true
+	#Developer Mode enables various Loggers and other technical information for debugging sake 
+	#If you aren't a dev or someone with technical knowledge then keep it at "false" lol
+	dev_test_mode = false
 
 #Particle & Sound Settings
 [particles_and_sounds]
@@ -134,16 +131,16 @@
 	enable_ectoplasm_particles = true
 	#Ectoplasm will occasionally produce whispering sounds
 	enable_ectoplasm_sounds = true
-	#Blackstone will produce unique sounds
-	blackstone_sounds = true
-	#Polished Blackstone will produce unique sounds
-	polished_blackstone_sounds = true
-	#Magma Blocks will produce unique sounds
-	magma_block_sounds = true
-	#Glowstone and Redstone Lamps will produce unique sounds
-	glowstone_sounds = true
-	#Quartz Blocks will produce unique sounds
-	quartz_sounds = true
 	#Fireballs will leave a trail of fire behind
 	improved_fireball_particles = true
+
+#Sub-Biome Settings
+[sub_biome]
+	#Defines if Sub-Biomes should be enabled
+	enable_sub_biomes = true
+	#How often Black Ice Glaciers should replace Soul Sand Valleys
+	#Range: 0.0 ~ 1.0
+	black_ice_glaciers_rarity = 0.08
+	#How big Black Ice Glaciers should be
+	black_ice_glaciers_size = 64
 
