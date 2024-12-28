@@ -277,3 +277,16 @@ function cutting_3(event, input, outputs) {
     event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${input.split(":")[0]}:cutting/${input.split(":")[1]}`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
+/**
+ * 
+ * @param { Internal.RecipesEventJS } e 
+ * @param { InputItem_ } input 
+ * @param { OutputItem_ } output 
+ */
+function make_cake(e, input, output) {
+    e.recipes.create.deploying(output, [
+        "minecraft:cake",
+        input
+    ])
+    .id(`neapolitan:deploying/${output.split(":")[1]}`)
+}

@@ -56,6 +56,18 @@ StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
       "create_deepfried:yuca",
     ])
   })
+  //节日乐事
+  StartupEvents.modifyCreativeTab("festival_delicacies:festival_delicacies", e => {
+    e.remove([
+      'festival_delicacies:rice',
+      'festival_delicacies:red_bean'
+    ])
+    e.add([
+        'createdelight:adzuki_beans_seed',
+        "createdelight:artemisia_argyi_seed"
+      ]
+    )
+  })
 
 //那不勒斯风味
 StartupEvents.registry("minecraft:creative_mode_tab", e => {
