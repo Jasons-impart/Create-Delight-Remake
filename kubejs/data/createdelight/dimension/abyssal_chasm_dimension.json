@@ -1,12 +1,36 @@
 {
-    "type": "minecraft:overworld",
-    "generator": {
-      "type": "minecraft:noise",
-      "settings": "createdelight:abyssal_chasm_dimension",
-      "biome_source": {
-        "type": "minecraft:fixed",
-        "biome": "alexscaves:abyssal_chasm"
-      }
+  "type": "minecraft:overworld",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "createdelight:abyssal_chasm_dimension",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:deep_ocean",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0.1,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "alexscaves:abyssal_chasm",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.25
+          }
+        }
+      ]
     }
   }
-  
+}
