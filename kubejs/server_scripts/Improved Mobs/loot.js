@@ -19,7 +19,6 @@ LootJS.modifiers(e => {
         )
     }
 
-    addDifficultyLoot("minecraft:zombie", 100, "minecraft:iron_ingot", 0.5)
     addDifficultyLoot("minecraft:wither_skeleton", 100, "art_of_forging:fragment_of_eden", 0.1)
     addDifficultyLoot("minecraft:wither", 100, "art_of_forging:sigil_of_eden", 0.25)
 
