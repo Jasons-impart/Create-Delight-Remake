@@ -742,12 +742,12 @@
 
 
 
-	"tetra/schematic/katana/murasama_blade.name": "妖鬼村正",
-	"tetra/schematic/katana/murasama_blade.description": "将你的刀剑升级为传说的村正刀。",
-	"tetra/schematic/katana/murasama_blade.slot1": "村正刀",
+	"tetra/schematic/katana/murasama_blade.name": "能量剑刃",
+	"tetra/schematic/katana/murasama_blade.description": "将你的刀剑升级为来自未来的村正之刃。",
+	"tetra/schematic/katana/murasama_blade.slot1": "村正之刃",
 	
-	"tetra.improvement.sword/murasama_imprv.name": "妖刀",
-	"tetra.improvement.sword/murasama_imprv.description": "让你的刀附带妖鬼之力",
+	"tetra.improvement.sword/murasama_imprv.name": "村正之刃",
+	"tetra.improvement.sword/murasama_imprv.description": "能量剑刃",
 	
 	"tetra/schematic/double/basic_hammer/utilize.name": "复用",
 	"tetra/schematic/double/basic_hammer/utilize.description": "利用工具的锤头解锁模块中的独特专长",

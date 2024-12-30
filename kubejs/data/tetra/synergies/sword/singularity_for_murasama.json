@@ -5,7 +5,7 @@
         "moduleVariants": ["sword_socket/singularity"],
         "visibilityKey": "sword_socket/singularity",
         "effects": {
-
+            "abilityEcho": 1
     },
     "attributes": {
 	"generic.attack_speed": 0.8

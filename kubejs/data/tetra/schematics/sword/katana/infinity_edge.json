@@ -8,7 +8,7 @@
     "glyph": {
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
         "textureX": 208,
-        "tint": "c52323"
+        "tint": "3c4154"
     },
     "requirement": {
         "type": "tetra:and",
@@ -22,11 +22,7 @@
                     },
                     {
                         "type": "tetra:improvement",
-                        "improvement": "sword/murasama_imprv"
-                    },
-                    {
-                        "type": "tetra:improvement",
-                        "improvement": "blade/puncture_tier"
+                        "improvement": "sword/thousand_cold_nights_imprv"
                     }
                 ]
             },
@@ -34,7 +30,14 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/echo"
+                    "improvement": "blade/infinity_edge"
+                }
+            },
+                {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "blade/booldthirster"
                 }
             }
         ]
@@ -42,15 +45,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "art_of_forging:eerie_shard"],
-                "count": 2
+                "items":[ "alexsmobs:void_worm_mandible"],
+                "count": 1
             },
             "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/echo": 1
+                "blade/infinity_edge": 1
             }
         }
     ]

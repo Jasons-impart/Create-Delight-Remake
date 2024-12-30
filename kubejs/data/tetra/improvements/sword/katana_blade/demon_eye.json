@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/demon_eye",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "vvaddon:nightvisioneffect": 1
+        }
+    }
+]
