@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/infinity_edge",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "criticalStrike": [ 15, 0.5 ]
+        }
+    }
+]

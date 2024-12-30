@@ -3,17 +3,11 @@
         "key": "sword/thousand_cold_nights_imprv",
         "integrity": -2,
         "effects": {
-            "severing": [ 5, 3 ],
-            "bleeding": [ 1, 1 ],
-            "abilityMomentum": [ 2, 1 ],
-            "art_of_forging:conquering": [ 4, 5 ],
+            "severing": [ 10, 3 ],
             "art_of_forging:devouring": [ 2, 5 ],
-            "art_of_forging:life_steal": [ 3, 25 ],
-            "vvaddon:nightvisioneffect": 1,
-            "vvaddon:combo": 1
+            "art_of_forging:life_steal": [ 1, 20 ]
         },
         "attributes": {
-            "generic.attack_speed": 0.55,
             "generic.attack_damage": 3
         },
         "models": [

@@ -1,26 +1,26 @@
 [
     {
-        "key": "blade/serrated",
+        "key": "blade/benight",
         "level": 1,
         "integrity": -1,
         "effects": {
-            "bleeding": 1
+            "armorPenetration": 15
         }
     },
     {
-        "key": "blade/serrated",
+        "key": "blade/benight",
         "level": 2,
         "integrity": -1,
         "effects": {
-            "bleeding": 2
+            "armorPenetration": 30
         }
     },
     {
-        "key": "blade/serrated",
+        "key": "blade/benight",
         "level": 3,
-        "integrity": -2,
+        "integrity": -1,
         "effects": {
-            "bleeding": 4
+            "armorPenetration": 50
         }
     }
 ]

@@ -1,0 +1,10 @@
+[ {
+        "modules": [ "sword/katana_blade" ],
+        "matchSuffixed": true,
+        "improvements": [ "blade/infinity_edge" ],
+        "moduleVariants": ["sword_socket/socket_void_worm_eye"],
+        "visibilityKey": "sword_socket/socket_void_worm_eye",
+        "effects": {
+            "criticalStrike": [ 10, 0.25]
+    }
+}]

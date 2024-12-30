@@ -1,0 +1,53 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "tint": "3c4154"
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:and",
+                "requirements": [
+                    {
+                        "type": "tetra:module",
+                        "module": "sword/katana_blade"
+                    },
+                    {
+                        "type": "tetra:improvement",
+                        "improvement": "sword/thousand_cold_nights_imprv"
+                    }
+                ]
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "blade/conquering"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "alexscaves:totem_of_possession"],
+                "count": 1
+            },
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/conquering": 1
+            }
+        }
+    ]
+}

@@ -16,13 +16,14 @@
         "generic.attack_damage": 4
     },
     "effects": {
-        "criticalStrike": [ 25, 2 ]
+            "criticalStrike": [ 20, 2 ],
+            "art_of_forging:life_steal": [ 2, 20 ]
     },
     "tints": {
         "glyph": "af3838"
     },
     "textures": [ "sigil_of_eden" ],
-    "experienceCost": 15,
+    "experienceCost": 30,
     "material": {
         "items": [ "art_of_forging:sigil_of_eden" ]
     }
