@@ -1,0 +1,33 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "tint": "3c4154"
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "blade/benight",
+        "level": 2
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "alexscaves:desolate_dagger"],
+                "count": 1
+            },
+            "experienceCost": 30,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/benight": 3
+            }
+        }
+    ]
+}

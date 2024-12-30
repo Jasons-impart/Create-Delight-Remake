@@ -1,0 +1,33 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "hone",
+    "displayType": "major",
+    "glyph": {
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208,
+        "tint": "3c4154"
+    },
+    "requirement": {
+        "type": "tetra:improvement",
+        "improvement": "blade/benight",
+        "level": 1
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "alexscaves:pure_darkness"],
+                "count": 2
+            },
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/benight": 2
+            }
+        }
+    ]
+}

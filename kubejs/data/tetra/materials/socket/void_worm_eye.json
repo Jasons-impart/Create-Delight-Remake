@@ -18,7 +18,7 @@
         "forge:attack_range":1
     },
     "effects": {
-        "criticalStrike": [ 50, 2 ],
+        "criticalStrike": [ 25, 1.5 ],
         "art_of_forging:resolve": [ 60, 4 ]
     },
     "tints": {

@@ -8,7 +8,7 @@
             "sweeping": 1,
             "severing": [ 50, 4 ],
             "vvaddon:strengtheffect": 1,
-	    "armorPenetration": 30,
+	        "armorPenetration": 30,
             "art_of_forging:goliath_slayer": 100
         },
         "attributes": {
