@@ -16,6 +16,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:cocoa_liquor_extract")
     e.recipes.createoreexcavation.extracting(Fluid.of("create:honey", 100), "createdelight:honey_vein", 100)
         .stress(1024)
+        .fluid(Fluid.of("the_bumblezone:sugar_water_still", 250))
         .id("createdelight:honey_extract")
 })
 
