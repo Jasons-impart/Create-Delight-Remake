@@ -51,7 +51,7 @@ ServerEvents.recipes((event) => {
       600,
     )
     .stress(1536)
-    .fluid("minecraft:lava")
+    .fluid(Fluid.lava(500))
     .drill("createoreexcavation:netherite_drill")
     .id("kubejs:nether_ore_cluster_drilling");
 
@@ -82,7 +82,7 @@ ServerEvents.recipes((event) => {
       "kubejs:mars_ore_cluster_ore",
       600,
     )
-    .fluid("minecraft:lava")
+    .fluid(Fluid.lava(500))
     .stress(1024)
     .id("kubejs:mars_ore_cluster_ore_drilling");
 
