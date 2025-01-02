@@ -23,6 +23,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			description: [""]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -57,6 +58,7 @@
 				id: "6EDC35C7A5A0FC86"
 				type: "advancement"
 			}]
+			title: "&e锻造之艺&r"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -563,7 +565,10 @@
 		}
 		{
 			dependencies: ["07FC717035C3584B"]
-			description: [""]
+			description: [
+				"按照古籍中记载的仪式，我将击杀&4遗弃者&r后掉落的&4恶魔之眼&r献祭给夜之恶魔。"
+				"最终，这一恐怖的杀戮武器——&b千夜寒&r，得以重现世间，重新散发它令人颤栗的威能。"
+			]
 			icon: {
 				Count: 1
 				id: "tetra:modular_sword"
@@ -684,7 +689,7 @@
 				title: "发现远古城市"
 				type: "structure"
 			}]
-			title: "远古城市"
+			title: "&0远古城市&r"
 			x: 6.0d
 			y: 0.0d
 		}
@@ -1106,8 +1111,8 @@
 				type: "item"
 			}]
 			title: "&c远古恶意&r"
-			x: 8.0d
-			y: 1.5d
+			x: 5.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["137C9220F86DD557"]
@@ -1121,8 +1126,8 @@
 				type: "item"
 			}]
 			title: "&c远古恶意&r"
-			x: 8.0d
-			y: 2.5d
+			x: 6.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7259774FF36EFCA6"]
@@ -1415,8 +1420,8 @@
 				}
 			]
 			title: "收集不到三件套？"
-			x: 6.0d
-			y: 3.5d
+			x: 8.0d
+			y: 2.0d
 		}
 	]
 	subtitle: ["暂属于未完成章节"]

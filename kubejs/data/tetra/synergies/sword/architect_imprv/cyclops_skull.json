@@ -1,11 +1,11 @@
 [ {
     "modules": ["sword/crucible_blade"],
-    "moduleVariants": ["sword_socket/cyclops_eye"],
-    "visibilityKey": "sword_socket/cyclops_eye",
+    "moduleVariants": ["sword_socket/cyclops_skull"],
+    "visibilityKey": "sword_socket/cyclops_skull",
     "effects": {
         "art_of_forging:goliath_slayer": 50
     },
     "attributes": {
-	"generic.attack_damage": 10
+	"generic.attack_damage": 6
    }
 }]

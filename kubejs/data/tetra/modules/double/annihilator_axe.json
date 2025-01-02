@@ -29,19 +29,15 @@
             "effects": {
                 "shieldbreaker": 1,
                 "art_of_forging:devouring": [ 2, 5 ],
-                "art_of_forging:life_steal": [ 1.5, 25 ],
-                "art_of_forging:knockback": [ 0.5, 0 ],
                 "art_of_forging:hubris": 30,
-                "crushing": 2,
-                "armorPenetration": 5,
                 "art_of_forging:carnage": [ 1, 10 ]
             },
             "tools": {
-                "axe_dig": [ 5, 2 ],
+                "axe_dig": [ 4, 12 ],
                 "axe_strip": [ 1, 1 ],
                 "axe_scrape": [ 1, 1 ],
                 "axe_wax_off": [ 1, 1 ],
-                "shovel_dig": [5, 2]
+                "shovel_dig": [4, 12]
             },
             "durability": 100,
             "magicCapacity": 800,

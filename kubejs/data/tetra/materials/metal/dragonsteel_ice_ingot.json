@@ -9,7 +9,7 @@
     "integrityGain": 8,
     "magicCapacity": 120,
     "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 11,
+    "toolEfficiency": 10,
      "effects": {
      "art_of_forging:disorienting":[20,2]
         },

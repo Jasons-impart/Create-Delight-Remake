@@ -4,7 +4,7 @@
         "integrity": -2,
         "effects": {
             "severing": [ 10, 3 ],
-            "art_of_forging:devouring": [ 2, 5 ],
+            "art_of_forging:devouring": [ 4, 5 ],
             "art_of_forging:life_steal": [ 1, 20 ]
         },
         "attributes": {

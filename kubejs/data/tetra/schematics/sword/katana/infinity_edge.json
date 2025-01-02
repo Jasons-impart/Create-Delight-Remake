@@ -37,7 +37,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/booldthirster"
+                    "improvement": "blade/bloodthirster"
                 }
             }
         ]

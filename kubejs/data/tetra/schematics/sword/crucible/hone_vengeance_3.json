@@ -1,7 +1,7 @@
 {
     "replace": true,
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "hone": true,
     "rarity": "hone",
     "displayType": "major",
@@ -16,8 +16,13 @@
     },
     "outcomes": [
         {
+            "material": {
+                "items":[ "alexscaves:tectonic_shard"],
+                "count": 2
+            },
+            "experienceCost": 20,
             "requiredTools": {
-                "hammer_dig": "minecraft:stone"
+                "hammer_dig": 9
             },
             "improvements": {
                 "blade/vengeance_tier": 3

@@ -27,6 +27,6 @@
         "cut": "minecraft:iron"
     },
     "effects": {
-                "art_of_forging:devouring": [ 1, 5 ]
+                "art_of_forging:devouring": [ -2, 5 ]
     }
 }

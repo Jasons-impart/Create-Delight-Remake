@@ -37,7 +37,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:shark_tooth" ,"iceandfire:troll_tusk","iceandfire:hydra_fang","iceandfire:sea_serpent_fang","alexsmobs:bone_serpent_tooth"],
+                "items":[ "art_of_forging:soul_ember"],
                 "count": 1
             },
             "experienceCost": 10,

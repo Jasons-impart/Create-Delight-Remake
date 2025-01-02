@@ -20,7 +20,7 @@
                 "items":[ "iceandfire:cyclops_skull"],
                 "count": 1
             },
-            "experienceCost": 15,
+            "experienceCost": 20,
             "requiredTools": {
                 "hammer_dig": 9
             },

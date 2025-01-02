@@ -17,7 +17,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:cyclops_eye"],
+                "items":[ "art_of_forging:dragon_soul"],
                 "count": 1
             },
             "experienceCost": 10,

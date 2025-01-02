@@ -74,12 +74,12 @@
 	"tetra.stats.art_of_forging:infernal_rebuke.tooltip_short": "有一定几率将敌人点燃并击退",
 
 	"art_of_forging.effect.hubris.name": "傲慢诅咒",
-	"art_of_forging.effect.hubris.tooltip": "当你的生命值在百分之90或以上时，你会造成§e%s额外伤害§r。当你失去生命值时，手持武器造成伤害会减少，当生命值降至百分之30或更低时，你的伤害会减少到原伤害的一半以上。",
+	"art_of_forging.effect.hubris.tooltip": "当你的生命值在90%%或以上时，你会造成§e%s额外伤害§r。当你失去生命值时，手持武器造成伤害会减少，当生命值降至30%%或更低时，你的伤害会减少到原伤害的一半以上。",
 	"tetra.stats.art_of_forging:hubris": "傲慢诅咒",
 	"tetra.stats.art_of_forging:hubris.tooltip_short": "生命值高于90%时造成额外伤害，生命值越低，伤害越少",
 
 	"art_of_forging.effect.slaughtering.name": "屠戮",
-	"art_of_forging.effect.slaughtering.tooltip": "你会造成§e百分之%s额外伤害§r（当你的目标生命值高于§e百分之%s§r时）。",
+	"art_of_forging.effect.slaughtering.tooltip": "你会造成§e%%s额外伤害§r（当你的目标生命值高于§e%%s§r时）。",
 	"tetra.stats.art_of_forging:slaughtering": "屠戮",
 	"tetra.stats.art_of_forging:slaughtering.tooltip_short": "当目标生命值高于某个百分比时，造成额外伤害",
 
@@ -167,9 +167,9 @@
     "tetra.stats.art_of_forging:subjugation.tooltip_short": "连续攻击目标允许你释放一次定向攻击，造成负面效果并吸取目标生命",
 
     "art_of_forging.effect.goliath_slayer.name": "巨人杀手",
-    "art_of_forging.effect.goliath_slayer.tooltip": "对Boss或类似Boss的实体造成额外§e%s§r伤害。",
+    "art_of_forging.effect.goliath_slayer.tooltip": "对高血量目标造成额外§e%s§r伤害。",
     "tetra.stats.art_of_forging:goliath_slayer": "巨人杀手",
-    "tetra.stats.art_of_forging:goliath_slayer.tooltip_short": "对Boss或类似Boss的实体造成更多伤害",
+    "tetra.stats.art_of_forging:goliath_slayer.tooltip_short": "对高血量目标造成更多伤害",
 
 
 
@@ -769,16 +769,19 @@
 	"tetra/schematic/double/basic_hammer/hone_radius_5.name": "打磨：深掘 V",
 	"tetra/schematic/double/basic_hammer/hone_radius_5.description": "进一步打磨，提升挖掘深度。效果增加至54个方块。",
 	
-    "tetra.improvement.blade/vengeance_tier.name": "愤怒之刃",
-    "tetra.improvement.blade/vengeance_tier.prefix": "愤怒之刃",
-    "tetra.improvement.blade/vengeance_tier.description": "增加复仇伤害。",
+    "tetra.improvement.blade/vengeance_tier.name": "无畏",
+    "tetra.improvement.blade/vengeance_tier.prefix": "无畏",
+    "tetra.improvement.blade/vengeance_tier.description": "勇者抽刃向强者。",
 
-    "tetra/schematic/sword/crucible/hone_vengeance_1.name": "路径：愤怒",
-    "tetra/schematic/sword/crucible/hone_vengeance_1.description": "在生命值低时增加5%的复仇伤害。",
-    "tetra/schematic/sword/crucible/hone_vengeance_2.name": "打磨：愤怒之刃II",
-    "tetra/schematic/sword/crucible/hone_vengeance_2.description": "提升复仇伤害。在生命值较低时的伤害提高到15%。",
-    "tetra/schematic/sword/crucible/hone_vengeance_3.name": "打磨：愤怒之刃III",
-    "tetra/schematic/sword/crucible/hone_vengeance_3.description": "进一步提升复仇伤害。在生命值较低时的伤害提高到20%。",
+    "tetra/schematic/sword/crucible/hone_vengeance_1.name": "无畏I",
+    "tetra/schematic/sword/crucible/hone_vengeance_1.description": "击杀令人生畏的巨型恐龙，磨炼胆识，你将对80%%生命值以上的敌人额外造成10%%伤害。",
+    "tetra/schematic/sword/crucible/hone_vengeance_1.slot1": "沉重骨头",
+    "tetra/schematic/sword/crucible/hone_vengeance_2.name": "无畏II",
+    "tetra/schematic/sword/crucible/hone_vengeance_2.description": "击杀更多巨型恐龙，进一步提升胆识，你将对70%%生命值以上的敌人额外造成20%%伤害。",
+    "tetra/schematic/sword/crucible/hone_vengeance_2.slot1": "沉重骨头",
+    "tetra/schematic/sword/crucible/hone_vengeance_3.name": "无畏III",
+    "tetra/schematic/sword/crucible/hone_vengeance_3.description": "击杀传说中的瞑煌龙，无畏的你将对50%%生命值以上的敌人额外造成30%%伤害。",
+    "tetra/schematic/sword/crucible/hone_vengeance_3.slot1": "板块碎片",
 
     "tetra.improvement.blade/infernal.name": "炼狱之刃",
     "tetra.improvement.blade/infernal.prefix": "炼狱之刃",
@@ -816,10 +819,13 @@
 
     "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：秘刃",
     "tetra/schematic/sword/crucible/hone_esoteric_1.description": "为剑刃注入魔力，无视敌人10%护甲效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.slot1": "灵魂余烬",
     "tetra/schematic/sword/crucible/hone_esoteric_2.name": "线路：秘刃II",
     "tetra/schematic/sword/crucible/hone_esoteric_2.description": "将更多的魔力注入剑刃，无视敌人20%效力。",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.slot1": "龙之灵魂",
     "tetra/schematic/sword/crucible/hone_esoteric_3.name": "线路：秘刃III",
     "tetra/schematic/sword/crucible/hone_esoteric_3.description": "将剑刃彻底神化，从此敌人护甲将形同虚设。",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.slot1": "神秘构件",
 
     "tetra.improvement.nano_fused.name": "纳米融合",
     "tetra.improvement.nano_fused.description": "用纳米昆虫注入武器，改变特定生物的掉落物品。",
@@ -918,16 +924,19 @@
     "tetra.improvement.shockwave_head_hone/damage.description": "增加造成的伤害",
 
     "tetra.improvement.blade/goliath_tier.name": "巨人杀手",
-    "tetra.improvement.blade/goliath_tier.description": "对Boss造成更多伤害",
+    "tetra.improvement.blade/goliath_tier.description": "对高血量目标造成更多伤害",
 
     "tetra/schematic/sword/crucible/hone_goliath_1.name": "路径：巨人杀手I",
-    "tetra/schematic/sword/crucible/hone_goliath_1.description": "对Boss造成的伤害提高25%。",
+    "tetra/schematic/sword/crucible/hone_goliath_1.description": "碾碎巨人独眼用于强化剑刃，对高血量目标额外造成25%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_1.slot1": "巨人独眼",
 
     "tetra/schematic/sword/crucible/hone_goliath_2.name": "打磨：巨人杀手II",
-    "tetra/schematic/sword/crucible/hone_goliath_2.description": "进一步改进部件。对Boss造成的伤害提高至50%。",
+    "tetra/schematic/sword/crucible/hone_goliath_2.description": "碾碎巨人独眼用于强化剑刃，对高血量目标额外造成50%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_2.slot1": "巨人独眼",
 
     "tetra/schematic/sword/crucible/hone_goliath_3.name": "打磨：巨人杀手III",
-    "tetra/schematic/sword/crucible/hone_goliath_3.description": "进一步改进部件。对Boss造成的伤害提高至75%。",
+    "tetra/schematic/sword/crucible/hone_goliath_3.description": "碾碎巨人颅骨用于强化剑刃，对高血量目标额外造成100%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_3.slot1": "独眼巨人颅骨",
 
 
 
