@@ -146,4 +146,36 @@ ServerEvents.recipes(e => {
         C: "minecraft:dried_kelp"
     })
     .id("immersive_aircraft:improved_landing_gear_shaped")
+    // 新增配方：猩红双翼机
+    e.recipes.create.mechanical_crafting(
+        'man_of_many_planes:scarlet_biplane',
+        [
+            " ABA ",
+            "CCDCC",
+            " CEC ",
+            "  E  ",
+            " CAC "
+        ], {
+            A: "immersive_aircraft:improved_landing_gear",
+            B: "immersive_aircraft:enhanced_propeller",
+            C: "immersive_aircraft:hull_reinforcement",
+            D: "immersive_aircraft:biplane",
+            E: "create:railway_casing"
+        })
+        .id("man_of_many_planes:scarlet_biplane")
+    // 新增配方：经济双翼机
+    e.recipes.create.mechanical_crafting(
+        'man_of_many_planes:economy_plane',
+        [
+            "ABC",
+            "DEB",
+            "ABC"
+        ], {
+            A: "immersive_aircraft:improved_landing_gear",
+            B: "immersive_aircraft:hull_reinforcement",
+            C: "immersive_aircraft:sail",
+            D: "immersive_aircraft:enhanced_propeller",
+            E: "immersive_aircraft:biplane"
+        }
+    ).id("man_of_many_planes:economy_plane")
 })
