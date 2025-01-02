@@ -2670,7 +2670,7 @@
    "tetra/schematic/sword/katana/hone_benight_2.description": "献祭更多的纯粹黑暗,化身夜幕,对敌人造成的伤害将无视30%%护甲。",
    "tetra/schematic/sword/katana/hone_benight_2.slot1": "纯粹黑暗",
    "tetra/schematic/sword/katana/hone_benight_3.name": "入夜III",
-   "tetra/schematic/sword/katana/hone_benight_3.description": "为夜之恶魔献上荒芜匕首,此刻你将成为黑暗本身,对敌人造成的伤害将无视50%护甲。",
+   "tetra/schematic/sword/katana/hone_benight_3.description": "为夜之恶魔献上荒芜匕首,此刻你将成为黑暗本身,对敌人造成的伤害将无视50%%护甲。",
    "tetra/schematic/sword/katana/hone_benight_3.slot1": "荒芜匕首",  
 
   "tetra.variant.evernight_dagger/evernight_dagger": "§4永夜匕首§r",
@@ -2690,6 +2690,8 @@
   "tetra.material.cyclops_eye.prefix":"§5巨人独眼§r", 
   "tetra.material.cyclops_eye": "§5巨人独眼§r",
   "tetra.variant.sword_socket/cyclops_eye": "§5巨人独眼§r",
+  "tetra.material.cyclops_skull": "§5独眼巨人颅骨§r",
+  "tetra.variant.sword_socket/cyclops_skull": "§5独眼巨人颅骨§r",
   "tetra.material.dragonscales_fire.prefix":"§4火龙鳞§r", 
   "tetra.material.dragonscales_fire": "§4火龙鳞§r",
   "tetra.material.dragonscales_ice.prefix":"§b冰龙鳞§r", 
@@ -2716,7 +2718,7 @@
   "tetra.material.totem_of_undying": "不死图腾",
   "tetra.material.shadow_silk.prefix": "黑暗丝绸",
   "tetra.material.shadow_silk": "黑暗丝绸",
-  "tetra.material.singularity.prefix": "§11奇点§r",
-  "tetra.material.singularity": "§11奇点§r",
-  "tetra.variant.sword_socket/singularity":"§11奇点§r"
+  "tetra.material.singularity.prefix": "§1奇点§r",
+  "tetra.material.singularity": "§1奇点§r",
+  "tetra.variant.sword_socket/singularity":"§1奇点§r"
 }

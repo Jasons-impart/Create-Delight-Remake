@@ -17,7 +17,8 @@
     },
     "effects": {
             "criticalStrike": [ 20, 2 ],
-            "art_of_forging:life_steal": [ 2, 20 ]
+            "art_of_forging:life_steal": [ 2, 20 ],
+            "intuit": 5
     },
     "tints": {
         "glyph": "af3838"

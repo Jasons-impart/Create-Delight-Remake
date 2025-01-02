@@ -9,7 +9,7 @@
     "integrityGain": 9,
     "magicCapacity": 200,
     "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 10,
+    "toolEfficiency": 8,
     "effects": {
         "art_of_forging:stormcaller": [ 1, 10 ]
     },

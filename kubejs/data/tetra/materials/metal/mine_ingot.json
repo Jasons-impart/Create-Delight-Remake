@@ -9,7 +9,7 @@
     "integrityGain": 9,
     "magicCapacity": 100,
     "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 9,
+    "toolEfficiency": 8,
     "improvements":{
       "vvaddon/charge": 1
     },

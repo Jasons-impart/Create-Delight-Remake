@@ -1,6 +1,6 @@
 {
     "replace": true,
-    "key": "cyclops_eye",
+    "key": "cyclops_skull",
     "hidden": true,
     "category": "socket",
     "primary": 0,
@@ -13,11 +13,11 @@
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-	"generic.attack_damage": 1
+	"generic.attack_damage": 2
     },
     "effects": {
-        "art_of_forging:goliath_slayer": 25,
-        "intuit": 3   
+        "art_of_forging:goliath_slayer": 50,
+        "intuit": 5   
     },
     "tints": {
         "glyph": "b74545",
@@ -26,8 +26,8 @@
     "textures": [
         "default"
     ],
-    "experienceCost": 15,
+    "experienceCost": 30,
     "material":{
-        "items":["iceandfire:cyclops_eye"]
+        "items":["iceandfire:cyclops_skull"]
      }
 }

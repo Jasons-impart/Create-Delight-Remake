@@ -16,7 +16,7 @@
         "forge:attack_range":1
     },
     "effects": {
-        "intuit": 10,
+        "intuit": 5,
         "janking":[10,0]
     },
     "tints": {

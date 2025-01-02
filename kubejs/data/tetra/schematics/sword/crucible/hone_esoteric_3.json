@@ -17,7 +17,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:cyclops_skull"],
+                "items":[ "art_of_forging:enigmatic_construct"],
                 "count": 1
             },
             "experienceCost": 30,

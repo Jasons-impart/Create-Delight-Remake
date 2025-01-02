@@ -30,14 +30,14 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/infinity_edge"
+                    "improvement": "blade/bloodthirster"
                 }
             },
                 {
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/booldthirster"
+                    "improvement": "blade/infinity_edge"
                 }
             }
         ]
