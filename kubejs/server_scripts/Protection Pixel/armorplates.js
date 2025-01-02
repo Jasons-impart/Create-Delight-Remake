@@ -23,14 +23,22 @@ PlayerEvents.inventoryOpened(e => {
     })
 })
 
-EntityEvents.hurt(e => {
+
+//因为kubejs没法做到减少受到伤害，所以将受击减伤托管给forgeevent
+/**
+ * 
+ * @param {Internal.LivingHurtEvent} e 
+ */
+global.ArmorplateHurtEvent = function(e) {
     const { entity, source } = e
     let zero = [0, 0, 0, 0]
     let [ fire_count, ice_count, lightning_count, dragonsteel_count ] = zero
     function linear(val, start, end) {
         return val * (end - start) + start
     }
+    let returnFlag = true
     entity.getArmorSlots().forEach(item => {
+        returnFlag = false
         if (item.hasTag("protection_pixel:protection")) {
             let slot_count = 1
             let nbt = item.nbt
@@ -55,19 +63,21 @@ EntityEvents.hurt(e => {
             
         }
     })
+    if (returnFlag)
+        return
     
     let damage_multi = 1
     if (source.getType() == "dragon_fire") {
-        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(fire_count / 13, 1, 0.8)
+        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(fire_count / 13, 1, 0.6)
     }
     
     if (source.getType() == "dragon_ice") {
-        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(ice_count / 13, 1, 0.8)
+        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(ice_count / 13, 1, 0.6)
     }
     
     if (source.getType() == "dragon_lightning") {
-        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(lightning_count / 13, 1, 0.8)
+        damage_multi = linear(dragonsteel_count / 13, 1, 0.8) * linear(lightning_count / 13, 1, 0.6)
     }
-    // console.log(`damage_multi:${damage_multi}, damagetype:${source.getType()}, originaldamage:${e.getDamage()}`)
-    e.getEntity().heal(e.getDamage() * (1 - damage_multi))
-})
+    // console.log(`damage_multi:${damage_multi}, damagetype:${source.getType()}, originaldamage:${e.getAmount()}`)
+    e.setAmount(e.getAmount() * damage_multi)
+}
