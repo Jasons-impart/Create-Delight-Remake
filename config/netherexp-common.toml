@@ -3,13 +3,9 @@
 [blocks]
 	#Nether vines have a random chance to grow their biomes' respective spores if they haven't reached maturity
 	should_nether_vines_grow_spores = true
-	#Nylium can be flattened with a shovel to make Nylium Paths
-	enable_nylium_paths = true
-	#Soul Soil can be flattened with a shovel to make Soul Paths
-	enable_soul_paths = true
 	#Fossil Ore that is covered on all faces slowly turns to Fossil Fuel
 	renewable_fossil_fuel = true
-	#Defines how many seconds a geyser will go into cooldown for 
+	#How many seconds a geyser will go into cooldown for 
 	#setting to "0" functionally disables the cooldown mechanic
 	geyser_cooldown = 5
 	#Defines how much vertical velocity you'll gain with a geyser
@@ -28,37 +24,38 @@
 	frogmist_breakable_by_fist = false
 	#Stepping into Magma Cream Block will put you out if you're on fire
 	magma_cream_block_douses_fire = true
-	#Defines how many bullets will be shot when a Shotgun Barrel is powered
+	#How many bullets will be shot when a Shotgun Barrel is powered
 	shotgun_barrel_bullets = 10
-	#Defines what causes Soul Magma Blocks to damage you 
+	#What causes Soul Magma Blocks to damage you 
 	#SPRINTING - Only damages when sprinting on the block 
 	#ALWAYS - Damages you unless sneaking 
 	# 
 	#Allowed Values: SPRINTING, ALWAYS
 	soul_magma_damage_type = "SPRINTING"
-	#Defines how many seconds a Soul Swirl is in cooldown for when activated
+	#How many seconds a Soul Swirl is in cooldown for when activated
 	soul_swirls_cooldown = 50
-	#Defines how many seconds the player will be inflicted with Unbounded Speed when passing Soul Swirls
+	#How many seconds the player will be inflicted with Unbounded Speed when passing Soul Swirls
 	unbounded_speed_duration = 10
-	#Defines what happens when Soul Swirls are bone mealed 
+	#What happens when Soul Swirls are bone mealed 
 	#DROPS - Drops more of itself when bone mealed 
 	#DUPLICATES - Places another soul swirl beside it 
 	#DISABLED - Disables bone mealing soul swirls 
 	# 
 	#Allowed Values: DROPS, DUPLICATES, DISABLED
 	soul_swirls_bone_meal_behavior = "DUPLICATES"
-	#Defines how much experience is dropped when treacherous flames are grinded down
+	#How much experience is dropped when treacherous flames are grinded down
 	sculk_grinder_experience = 450
 
 #Item Settings
 [items]
-	#Defines the stack size for all Potions & Antidotes 
+	#The stack size for all Potions & Antidotes 
 	#Vanilla value is "1"
 	#Range: 1 ~ 64
 	potion_stack_size = 16
-	#Defines the stack size for Will O' Wisps
-	#Range: 1 ~ 64
-	will_o_wisp_stack_size = 16
+	#Caps the Maximum Damage of the Jackhammer-Fist to this value
+	will_o_wisp_stack_size = 40.0
+	#The amount of time Black Icicle deal Freezing Damage when shot or skewered
+	black_icicle_freeze_ticks = 500
 
 #Entity Settings
 [entities]
@@ -136,9 +133,9 @@
 
 #Sub-Biome Settings
 [sub_biome]
-	#Defines if Sub-Biomes should be enabled
+	#Enables Secondary & Tertiary Sub-Biomes
 	enable_sub_biomes = true
-	#How often Black Ice Glaciers should replace Soul Sand Valleys
+	#How often Black Ice Glaciers should replace Soul Sand Valley
 	#Range: 0.0 ~ 1.0
 	black_ice_glaciers_rarity = 0.08
 	#How big Black Ice Glaciers should be
