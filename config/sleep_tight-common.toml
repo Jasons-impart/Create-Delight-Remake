@@ -1,0 +1,164 @@
+
+[misc]
+	#Fixes multiplayer players being positioned 2 pixels above a bed
+	fix_bed_position = true
+	#Allows laying on a bed when you are on sleeping cooldown
+	lay_when_on_cooldown = true
+	#Allows player to sleep in the middle of two beds
+	queen_size_bed = true
+	#Disables damage from bed explosion when used in another dimension. Can also be used to disable explosion entirely allowing one to sleep in those dimensions
+	#Allowed Values: DEFAULT, TINY_EXPLOSION, ALLOWS_SLEEPING, ALLOWS_SLEEPING_NO_RESPAWN
+	behavior_in_dimension = "DEFAULT"
+	#Interval between two consecutive sleep times for them to not be considered consecutive
+	#Range: 0 ~ 1000000
+	sleep_interval = 24000
+	#Makes night bag less unique by allowing you to place them normally on the ground
+	boring_night_bags = false
+	#Immediately attempt sleeping after laying down on a bed
+	sleep_immediately = false
+
+	[misc.heartstone_mod_integration]
+		#Gives some benefit when sleeping next to somebody else. By default only works in conjunction with heartstone mod
+		#Allowed Values: HEARTSTONE_PLAYER_OR_VILLAGER, HEARTSTONE_PLAYER, ANY_PLAYER_OR_VILLAGER, ANY_PLAYER, OFF
+		enabled = "HEARTSTONE_PLAYER_OR_VILLAGER"
+
+		#Effect to give to players when they wake up
+		#This is a list. Add more entries with syntax [[...]]
+		[[misc.heartstone_mod_integration.effects]]
+			intensity_per_level = 0.0
+			base_duration = 1800
+			duration_per_level = 20.0
+			effect = "minecraft:regeneration"
+
+[bedbugs]
+	#Base spawn chance every time you wake up, increases with difficulty
+	#Range: 0.0 ~ 1.0
+	spawn_chance = 0.0
+	#max radius at which they can spawn
+	#Range: 1 ~ 64
+	max_spawn_radius = 24
+	#min radius from which they can spawn
+	#Range: 1 ~ 64
+	min_spawn_radius = 12
+	#Max light level that a bedbug can spawn at
+	#Range: 0 ~ 15
+	max_allowed_light_level = 0
+	#The game will perform x attempts to spawn a bedbug around each player when they wake up. This already takes into account the chance config.High values will decrease failed attempts
+	#Range: 0 ~ 1000
+	tries = 0
+	#Prevents bedbugs when using dream essence
+	prevented_by_dream_essence = true
+	#Only spawns bedbugs when sleeping in your home bed
+	only_when_in_home_bed = false
+
+[sleep_cooldown]
+	#Time before you can sleep/rest again after you've slept in a hammock
+	#Range: 0 ~ 1000000
+	hammock = 0
+	#Time before you can sleep/rest again after you've successfully slept in a bed
+	#Range: 0 ~ 1000000
+	night_bag = 0
+	#Time before you can sleep/rest again after you've successfully slept in a bed
+	#Range: 0 ~ 1000000
+	bed = 0
+
+[sleep_benefits]
+	#Which type of beds will apply benefits on wake up
+	#Allowed Values: NONE, ALWAYS, HOME_BED
+	active_for = "HOME_BED"
+	#Healing applied on wake up
+	#Allowed Values: NONE, TIME_BASED, MAX
+	healing = "MAX"
+	#
+	#Allowed Values: NONE, TIME_BASED, MAX
+	effect_clearing = "MAX"
+	#
+	#Allowed Values: ALL, BENEFICIAL, HARMFUL
+	effect_clearing_types = "ALL"
+
+	#Effects to apply when player wakes up. You can add more entries, this is a list
+	[[sleep_benefits.effects_on_wake_up]]
+		intensity_per_level = 0.075
+		base_duration = 2400
+		duration_per_level = 600.0
+		effect = "sleep_tight:invigorated"
+
+[sleep_penalties]
+	apply_to_beds = false
+	apply_to_hammock = false
+	apply_to_night_bags = false
+	#Method to calculate hunger loss. Can be based off time slept, difficulty or constant
+	#Allowed Values: CONSTANT, TIME_BASED, DIFFICULTY_BASED, TIME_DIFFICULTY_BASED
+	consumed_hunger_mode = "CONSTANT"
+	#Base hunger decrement value. Depends on other config. Set to 0 to disable
+	#Range: 0.0 ~ 20.0
+	base_value = 0.0
+
+[sleep_requirements]
+	apply_to_beds = true
+	apply_to_hammock = true
+	apply_to_night_bags = true
+	#Requires player to have full hunger bar before being able to sleep
+	require_full_hunger = false
+	#Xp cost for sleeping. Does not affect peaceful
+	#Range: 0 ~ 200
+	xp_cost = 0
+
+[home_bed]
+	#Amount of nights needed to mark a bed as home bed
+	#Range: 1 ~ 50
+	required_nights = 8
+	#Percentage of xp added per tier of the effect. Setting to 1 doubles the effect
+	#Range: 0.0 ~ 1.0
+	invigorated_effect_xp = 0.1
+	#Home bed level cap. Each night slept increases this number
+	#Range: 0 ~ 1000
+	max_level_cap = 100
+	#Makes respawning only possible when using your own Home Bed. Fight back the night!
+	only_respawn_in_home_bed = false
+
+[nightmares]
+	apply_to_beds = false
+	apply_to_hammock = false
+	apply_to_night_bags = false
+	#Amount of consecutive nights slept after which nightmares could start to happen
+	#Range: 0 ~ 100
+	appear_after_consecutive_nights = 3
+	#Range: 0.0 ~ 1.0
+	nightmare_increment_per_night = 0.0
+	#Multiplier applied to time slept after a nightmare
+	#Range: 0.01 ~ 1.0
+	sleep_time_multiplier = 1.0
+	#Refractory period after a nightmare in which you won't be able to sleep
+	#Range: 0 ~ 1000000
+	insomnia_duration = 0
+
+[wake_up_encounters]
+	#The game will perform x attempts to spawn a mod around each player every time they sleep.Increases likelihood of finding one. Note that actual value will also depend on local difficulty
+	#Range: 0 ~ 1000
+	tries = 25
+	#Max amount of mobs per encounter
+	#Range: 0 ~ 20
+	max_count = 1
+	#Range: 1 ~ 32
+	spawn_radius = 10
+	#Range: 0 ~ 32
+	min_radius = 2
+	#Range: 1 ~ 10
+	height = 3
+	#Mobs that can randomly wake up the player if sleeping in a dark place. Leave empty to use default spawning behavior. Add a weighted list in the following format (replace line bellow):
+	#[[bed.wake_up_encounters.alternative_whitelist]]
+	#			data = "minecraft:vindicator"
+	#			weight = 2
+	#[[bed.wake_up_encounters.alternative_whitelist]]
+	#			data = "minecraft:creeper"
+	#			weight = 2
+	#
+	alternative_whitelist = []
+	#Multiplier applied to time slept after an encounter
+	#Range: 0.01 ~ 1.0
+	sleep_time_multiplier = 0.5
+	#Refractory period after an encounter in which you won't be able to sleep
+	#Range: 0 ~ 1000000
+	insomnia_duration = 12000
+
