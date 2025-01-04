@@ -47,66 +47,498 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["7259774FF36EFCA6"]
-			id: "43EB1E1D9205CAC3"
+			id: "3F2289F40B3CEEEA"
 			tasks: [{
-				id: "77CC9C86E8B90B2A"
-				item: {
-					Count: 1
-					id: "tetra:modular_sword"
-					tag: {
-						Damage: 0
-						"sword/blade": "sword/cataclysm_blade"
-						"sword/blade:sword/catastrophe_imprv": 0
-					}
-				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
-			}]
-			x: -1.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["7259774FF36EFCA6"]
-			id: "2D41BE24271DB74D"
-			tasks: [{
-				id: "5D6B14AD0CD7BE9A"
-				item: {
-					Count: 1
-					id: "tetra:modular_sword"
-					tag: {
-						Damage: 0
-						"sword/blade": "sword/cataclysm_blade"
-						"sword/blade:sword/catastrophe_imprv": 0
-					}
-				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
-			}]
-			x: 1.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["7259774FF36EFCA6"]
-			id: "45F4C58CBF291C1F"
-			tasks: [{
-				id: "679BD12EE8A65007"
-				item: {
-					Count: 1
-					id: "tetra:modular_sword"
-					tag: {
-						Damage: 0
-						"sword/blade": "sword/cataclysm_blade"
-					}
-				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
+				id: "7986B4F31B6444E8"
+				title: "村正之刃"
+				type: "checkmark"
 			}]
 			x: 0.0d
-			y: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			id: "04CE8655DEEB17D3"
+			tasks: [{
+				id: "09CA081150F81D17"
+				item: "ae2:charged_certus_quartz_crystal"
+				type: "item"
+			}]
+			title: "充能打击"
+			x: -2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			icon: "ae2:fluix_pearl"
+			id: "0B7C08EE7238F6CF"
+			tasks: [
+				{
+					count: 16L
+					id: "05A7C6C1AE7DB7A4"
+					item: { Count: 16, id: "ae2:charged_certus_quartz_crystal" }
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "0EF03A3D86411578"
+					item: { Count: 8, id: "ae2:fluix_crystal" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "3AD3D844F754936A"
+					item: { Count: 4, id: "ae2:fluix_pearl" }
+					type: "item"
+				}
+			]
+			title: "充能剑刃"
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			id: "5FFE2312719FA903"
+			tasks: [{
+				id: "27FB2F9F86A1F73D"
+				item: "create_connected:control_chip"
+				type: "item"
+			}]
+			title: "撕裂"
+			x: 1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			id: "1A232D4C2005CBE5"
+			tasks: [{
+				id: "361EAC49165E8691"
+				item: "alexscaves:holocoder"
+				type: "item"
+			}]
+			title: "破析"
+			x: -1.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			id: "4AAA5BB44805E5A2"
+			tasks: [{
+				id: "4B2DF53B67996206"
+				item: "kinetic_pixel:pistonexciter"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3F2289F40B3CEEEA"]
+			id: "51238C6B9E481CD1"
+			tasks: [{
+				id: "58E2D55D89CCDEB6"
+				item: "ae2:singularity"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			id: "53D0EBBAB29AA8C9"
+			tasks: [{
+				id: "3832A16AD2ABABEC"
+				title: "千夜寒"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			id: "48B49F741B291B69"
+			tasks: [{
+				id: "3D703270B0A3A75E"
+				item: "alexscaves:darkened_apple"
+				type: "item"
+			}]
+			title: "魔瞳"
+			x: 4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			icon: {
+				Count: 1
+				id: "alexscaves:desolate_dagger"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "71846A30C0E2D33E"
+			tasks: [
+				{
+					id: "497781324B922B24"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "342218EF70FEB70A"
+					item: { Count: 2, id: "alexscaves:pure_darkness" }
+					type: "item"
+				}
+				{
+					id: "1AB6CE58EA4DC1A3"
+					item: {
+						Count: 1
+						id: "alexscaves:desolate_dagger"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "入夜"
+			x: 5.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			id: "6FECEF23F5694B28"
+			tasks: [{
+				id: "5C1ED35017023D3E"
+				item: {
+					Count: 1
+					id: "alexscaves:totem_of_possession"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "征服者"
+			x: 6.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			id: "46C457CD989B236C"
+			tasks: [{
+				id: "2CBE78F38C41B14D"
+				item: "alexsmobs:void_worm_eye"
+				type: "item"
+			}]
+			title: "无尽之刃"
+			x: 4.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			id: "4B6E8A65F9C94BCC"
+			tasks: [{
+				id: "3A53FFD5D9ED284F"
+				item: "art_of_forging:sigil_of_eden"
+				type: "item"
+			}]
+			title: "饮血剑"
+			x: 6.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["46C457CD989B236C"]
+			id: "67E5866F8FC27115"
+			tasks: [{
+				id: "2B935051EAB12B25"
+				item: "alexsmobs:void_worm_mandible"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["4B6E8A65F9C94BCC"]
+			id: "1B0AEFA5C46F810D"
+			tasks: [{
+				count: 4L
+				id: "23E6F487E99BA364"
+				item: "alexscaves:corrodent_teeth"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 7.0d
+		}
+		{
+			id: "3E5B08E68CF610C0"
+			tasks: [{
+				id: "1F3E1B7A9044C153"
+				title: "锻造师之权"
+				type: "checkmark"
+			}]
+			x: -4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3E5B08E68CF610C0"]
+			icon: "iceandfire:cyclops_skull"
+			id: "6E604A0095BFDCCD"
+			tasks: [
+				{
+					id: "1B7D64EB43729067"
+					item: {
+						Count: 1
+						id: "iceandfire:cyclops_eye"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3BF19D86BB73F162"
+					item: {
+						Count: 1
+						id: "iceandfire:cyclops_eye"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1EDE8E6D9E24CE37"
+					item: "iceandfire:cyclops_skull"
+					type: "item"
+				}
+			]
+			title: "巨人杀手"
+			x: -4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E5B08E68CF610C0"]
+			icon: {
+				Count: 1
+				id: "iceandfire:ghost_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4C7B6C7706868D7B"
+			tasks: [
+				{
+					count: 4L
+					id: "4F38EBB32D0A1749"
+					item: { Count: 4, id: "minecraft:ghast_tear" }
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "28E1342C31A6FB09"
+					item: "art_of_forging:soul_ember"
+					type: "item"
+				}
+				{
+					id: "4F15F1EE7DFE1BA5"
+					item: {
+						Count: 1
+						id: "iceandfire:ghost_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "秘刃"
+			x: -5.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E5B08E68CF610C0"]
+			id: "4F63FF8CBA18857B"
+			tasks: [
+				{
+					id: "66D41E04B71FDD3E"
+					item: "alexscaves:heavy_bone"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "305152558EFD85CF"
+					item: { Count: 2, id: "alexscaves:heavy_bone" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "49F378025B8CDD67"
+					item: { Count: 2, id: "alexscaves:tectonic_shard" }
+					type: "item"
+				}
+			]
+			title: "无畏"
+			x: -3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3E5B08E68CF610C0"]
+			id: "0D6639C88DEF9063"
+			tasks: [{
+				id: "2E562F97309DB0E0"
+				item: {
+					Count: 1
+					id: "iceandfire:cyclops_eye"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3E5B08E68CF610C0"]
+			id: "26C93DC1910A6A9A"
+			tasks: [{
+				id: "0366A076D59C7BB9"
+				item: "iceandfire:cyclops_skull"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.5d
+		}
+		{
+			id: "0FCA1FD3752590FF"
+			tasks: [{
+				id: "41C2853A53DCDA48"
+				title: "灾厄"
+				type: "checkmark"
+			}]
+			title: "灾厄之刃"
+			x: -8.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0FCA1FD3752590FF"]
+			id: "3D1917B4B8793167"
+			tasks: [{
+				id: "5A9A54E498C519A8"
+				item: "constructionwand:core_angel"
+				type: "item"
+			}]
+			title: "救赎之刃"
+			x: -10.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0FCA1FD3752590FF"]
+			id: "6EB179DB9F84E7FD"
+			tasks: [{
+				id: "2516868B210C311A"
+				item: "constructionwand:core_destruction"
+				type: "item"
+			}]
+			title: "灾祸之刃"
+			x: -7.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["6EB179DB9F84E7FD"]
+			icon: "the_bumblezone:bee_stinger"
+			id: "733A1F887053CABF"
+			tasks: [
+				{
+					count: 16L
+					id: "00DD3B024F076A59"
+					item: { Count: 16, id: "supplementaries:bamboo_spikes" }
+					type: "item"
+				}
+				{
+					id: "142AE01E4677AE2D"
+					item: "the_bumblezone:bee_stinger"
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6EB179DB9F84E7FD"]
+			id: "5A80C6825A3B5809"
+			tasks: [{
+				id: "02AB6582AE6F00AA"
+				item: "alexcaves_delight:cleaverofheavybone_knife"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6EB179DB9F84E7FD"]
+			id: "1C006156A502A4AE"
+			tasks: [{
+				id: "111EAB86992A4B45"
+				title: "征服者"
+				type: "checkmark"
+			}]
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3D1917B4B8793167"]
+			id: "55A950209C8C3677"
+			tasks: [{
+				id: "2626F28AB70B43DE"
+				item: "minecraft:totem_of_undying"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3D1917B4B8793167"]
+			id: "3AB0306AA0200DAC"
+			tasks: [{
+				count: 4L
+				id: "03E13988AB85AB30"
+				item: { Count: 4, id: "alexscaves:radiant_essence" }
+				type: "item"
+			}]
+			x: -11.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3D1917B4B8793167"]
+			id: "06C18919B99ECA16"
+			tasks: [{
+				id: "1618784E620B5C63"
+				title: "祝福"
+				type: "checkmark"
+			}]
+			x: -9.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["53D0EBBAB29AA8C9"]
+			id: "20A5B6D421E42DB6"
+			tasks: [{
+				id: "7F9578978B60108C"
+				item: "dreadsteel:dreadsteel_ingot"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["20A5B6D421E42DB6"]
+			id: "35D845B28C73E823"
+			tasks: [{
+				id: "43585F20D4FA7EFB"
+				item: "alexscaves:shadow_silk"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 7.0d
 		}
 	]
 	title: "&5合·锻火承续"

@@ -1,0 +1,18 @@
+[
+    {
+        "key": "blade/equality",
+        "level": 1,
+        "integrity": -1,
+        "effects": {
+	    "crushing": 30
+        }
+    },
+    {
+        "key": "blade/equality",
+        "level": 2,
+        "integrity": -1,
+        "effects": {
+	    "crushing": 40
+        }
+    }
+]

@@ -19,7 +19,6 @@
     },
     "effects": {
         "criticalStrike": [ 25, 1.5 ],
-        "art_of_forging:resolve": [ 60, 4 ],
         "intuit": 5
     },
     "tints": {

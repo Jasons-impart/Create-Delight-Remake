@@ -26,7 +26,7 @@
     "outcomes": [
         {
             "material": {
-                "items": [ "minecraft:nether_star" ]
+                "items": [ "art_of_forging:enigmatic_construct" ]
             },
             "experienceCost": 30,
             "requiredTools": {

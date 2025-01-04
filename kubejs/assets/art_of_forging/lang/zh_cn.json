@@ -57,7 +57,7 @@
 	"tetra.stats.art_of_forging:vengeance.tooltip_short": "在低生命值时造成更多伤害",
 	  
 	"art_of_forging.effect.resolve.name": "决意",
-	"art_of_forging.effect.resolve.tooltip": "你将获得§e%s秒§r的力量和抗性提升，当当生命值跌至§e%s颗心§r或以下时。",
+	"art_of_forging.effect.resolve.tooltip": "你将获得§e%s秒§r的力量和抗性提升，当你生命值跌至§e%s颗心§r或以下时。",
 	"tetra.stats.art_of_forging:resolve": "决意",
 	"tetra.stats.art_of_forging:resolve.tooltip_short": "在低血量时获得力量和抗性提升效果",
 	  
@@ -819,13 +819,13 @@
 
     "tetra/schematic/sword/crucible/hone_esoteric_1.name": "路线：秘刃",
     "tetra/schematic/sword/crucible/hone_esoteric_1.description": "为剑刃注入魔力，无视敌人10%护甲效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_1.slot1": "灵魂余烬",
+    "tetra/schematic/sword/crucible/hone_esoteric_1.slot1": "恶魂之泪",
     "tetra/schematic/sword/crucible/hone_esoteric_2.name": "线路：秘刃II",
     "tetra/schematic/sword/crucible/hone_esoteric_2.description": "将更多的魔力注入剑刃，无视敌人20%效力。",
-    "tetra/schematic/sword/crucible/hone_esoteric_2.slot1": "龙之灵魂",
+    "tetra/schematic/sword/crucible/hone_esoteric_2.slot1": "魂质",
     "tetra/schematic/sword/crucible/hone_esoteric_3.name": "线路：秘刃III",
     "tetra/schematic/sword/crucible/hone_esoteric_3.description": "将剑刃彻底神化，从此敌人护甲将形同虚设。",
-    "tetra/schematic/sword/crucible/hone_esoteric_3.slot1": "神秘构件",
+    "tetra/schematic/sword/crucible/hone_esoteric_3.slot1": "幻灵剑",
 
     "tetra.improvement.nano_fused.name": "纳米融合",
     "tetra.improvement.nano_fused.description": "用纳米昆虫注入武器，改变特定生物的掉落物品。",
@@ -1201,9 +1201,9 @@
     "item.tetra.scroll.true_crucible.details": "§c§l§n锻造师之权§r \n 锻造师之权是由恶意和怨恨锻造的强大武器。它本身就是一件强大的武器，而像锻造师一样锻造它可以让它获得奥秘的特性，将部分物理伤害转化为形而上的伤害。",
 	
     "art_of_forging.effect.esoteric_edge.name": "秘术之刃",
-    "art_of_forging.effect.esoteric_edge.tooltip": "转化你造成的 §e%s百分比§r 伤害为魔法伤害。",
+    "art_of_forging.effect.esoteric_edge.tooltip": "转化你造成的 §e%s%%§r 伤害为魔法伤害。",
     "art_of_forging.effect.retribution.name": "报应",
-    "art_of_forging.effect.retribution.tooltip": "当你受到攻击时，你对攻击者造成 §e%s§r 的伤害，并有百分之%s的几率反击攻击者。",
+    "art_of_forging.effect.retribution.tooltip": "当你受到攻击时有概率使得攻击者遭到报应，对其造成 §e%s§r 的伤害（ §e%s%%概率§r）。",
     "tetra.module.artifact/attachment/binding.description": "一种绑带附魔。",
     "tetra.module.artifact/attachment/binding.material_name": "%s 绑带",
     "tetra.stats.art_of_forging:esoteric_edge": "秘术之刃",

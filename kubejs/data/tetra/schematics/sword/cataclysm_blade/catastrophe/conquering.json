@@ -2,13 +2,13 @@
     "replace": true,
     "slots": [ "sword/blade" ],
     "materialSlotCount": 1,
-    "hone": true,
-    "rarity": "hone",
-    "displayType": "major",
-    "glyph": {
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph":{
+        "tint": "971020",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 208,
-        "tint": "3c4154"
+        "textureX": 192,
+        "textureY": 16
     },
     "requirement": {
         "type": "tetra:and",
@@ -18,11 +18,11 @@
                 "requirements": [
                     {
                         "type": "tetra:module",
-                        "module": "sword/katana_blade"
+                        "module": "sword/cataclysm_blade"
                     },
                     {
                         "type": "tetra:improvement",
-                        "improvement": "sword/thousand_cold_nights_imprv"
+                        "improvement": "sword/catastrophe_imprv"
                     }
                 ]
             },
@@ -30,14 +30,14 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/bloodthirster"
+                    "improvement": "blade/redemption"
                 }
             },
                 {
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/infinity_edge"
+                    "improvement": "blade/conquering"
                 }
             }
         ]
@@ -45,15 +45,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexscaves:corrodent_teeth"],
-                "count": 4
+                "items":[ "alexsmobs:void_worm_mandible"],
+                "count": 1
             },
             "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/bloodthirster": 1
+                "blade/conquering": 1
             }
         }
     ]

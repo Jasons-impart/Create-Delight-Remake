@@ -2,30 +2,31 @@
     "replace": true,
     "slots": [ "sword/blade" ],
     "materialSlotCount": 1,
-    "hone": true,
-    "rarity": "hone",
-    "displayType": "major",
-    "glyph": {
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph":{
+        "tint": "971020",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 0
+        "textureX": 192,
+        "textureY": 16
     },
     "requirement": {
         "type": "tetra:improvement",
-        "improvement": "blade/esoteric_tier",
-        "level": 2
+        "improvement": "blade/retribution",
+        "level": 1
     },
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:ghost_sword"],
+                "items":[ "the_bumblezone:bee_stinger"],
                 "count": 1
             },
-            "experienceCost": 30,
+            "experienceCost": 20,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/esoteric_tier": 3
+                "blade/retribution": 2
             }
         }
     ]

@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/blessing",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "art_of_forging:resolve": [ 30, 4 ]
+        }
+    }
+]

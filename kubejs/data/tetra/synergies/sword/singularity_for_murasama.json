@@ -5,6 +5,7 @@
         "moduleVariants": ["sword_socket/singularity"],
         "visibilityKey": "sword_socket/singularity",
         "effects": {
+            "intuit": 5,
             "abilityEcho": 1
     },
     "attributes": {
