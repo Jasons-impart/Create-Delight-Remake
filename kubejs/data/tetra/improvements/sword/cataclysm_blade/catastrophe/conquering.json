@@ -1,0 +1,12 @@
+[
+    {
+        "key": "blade/conquering",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "art_of_forging:conquering": [ 4, 5 ]
+        }
+    }
+]

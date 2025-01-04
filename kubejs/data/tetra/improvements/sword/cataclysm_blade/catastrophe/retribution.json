@@ -1,0 +1,18 @@
+[
+    {
+        "key": "blade/retribution",
+        "level": 1,
+        "integrity": -1,
+        "effects": {
+	    "art_of_forging:retribution": [3,20]
+        }
+    },
+    {
+        "key": "blade/retribution",
+        "level": 2,
+        "integrity": -1,
+        "effects": {
+	    "art_of_forging:retribution": [5,50]
+        }
+    }
+]

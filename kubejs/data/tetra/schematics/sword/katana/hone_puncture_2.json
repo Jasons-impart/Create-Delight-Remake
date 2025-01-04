@@ -19,7 +19,7 @@
         {
             "material": {
                 "items":[ "ae2:fluix_crystal"],
-                "count": 8
+                "count": 16
             },
             "experienceCost": 15,
             "requiredTools": {

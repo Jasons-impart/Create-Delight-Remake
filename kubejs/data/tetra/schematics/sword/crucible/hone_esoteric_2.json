@@ -17,8 +17,8 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "art_of_forging:dragon_soul"],
-                "count": 1
+                "items":[ "iceandfire:ectoplasm"],
+                "count": 8
             },
             "experienceCost": 10,
             "requiredTools": {

@@ -37,8 +37,8 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "art_of_forging:soul_ember"],
-                "count": 1
+                "items":[ "minecraft:ghast_tear"],
+                "count": 4
             },
             "experienceCost": 10,
             "requiredTools": {
