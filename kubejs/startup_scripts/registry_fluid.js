@@ -24,7 +24,8 @@ StartupEvents.registry("fluid", e => {
         "azure_neodymium",
         "fire_steel",
         "ice_steel",
-        "lightning_steel"
+        "lightning_steel",
+        "forged_steel"
     ]
     molten_fluids.forEach(molten_fluid => {
         e.create(`createdelight:molten_${molten_fluid}`)
@@ -55,6 +56,14 @@ StartupEvents.registry("fluid", e => {
             .createAttributes()
             .tickDelay(10)
     });
+
+    // 恶意溶液
+    e.create("createdelight:malice_solution")
+        .thickTexture(0x2CFFFF)
+        .bucketColor(0x2CFFFF)
+        .translationKey("fluid.createdelight.malice_solution")
+        .translationKey("block.createdelight.malice_solution")
+        .translationKey("item.createdelight.malice_solution_bucket")
 
     // 陨石溶液
     e.create("createdelight:sky_solution")

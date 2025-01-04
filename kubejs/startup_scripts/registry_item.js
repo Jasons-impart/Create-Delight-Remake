@@ -328,7 +328,7 @@ StartupEvents.registry("item", e => {
     //未完成的寿司
     e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
         .translationKey("item.createdelight.sushi_unrolledroll")
-        
+
     // 未完成相关
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_layered_magnet")
@@ -523,7 +523,7 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
         .translationKey("item.createdelight.debug_info_tool")
-    
+
     /**
      * @type {Internal.ItemStack_[]}
      */
@@ -601,6 +601,15 @@ StartupEvents.registry("item", e => {
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]
     seed_quality.forEach(q => {
         e.create(`createdelight:${q}_genetic_seed`)
-        .translationKey(`item.createdelight.${q}_genetic_seed`)
+            .translationKey(`item.createdelight.${q}_genetic_seed`)
     })
+    //悚怖之心
+    e.create("createdelight:dread_heart")
+        .rarity("epic")
+        .translationKey("item.createdelight.dread_heart") 
+    //恶魔之眼
+    e.create("createdelight:devil_eye")
+        .rarity("epic")
+        .translationKey("item.createdelight.devil_eye") 
+    
 })

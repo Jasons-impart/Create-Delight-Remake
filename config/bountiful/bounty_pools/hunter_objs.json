@@ -36,7 +36,7 @@
 				"max": 16
 			},
 			"unitWorth": 400,
-			"weightMult": 0.5
+			"weightMult": 0.75
 		},
 		"hunter_obj_stray": {
 			"type": "entity",
@@ -46,7 +46,7 @@
 				"max": 16
 			},
 			"unitWorth": 400,
-			"weightMult": 0.5
+			"weightMult": 0.75
 		},
 		"hunter_obj_wither_skeleton": {
 			"type": "entity",
@@ -68,7 +68,7 @@
 				"max": 8
 			},
 			"unitWorth": 1000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_vindicator": {
 			"type": "entity",
@@ -79,7 +79,7 @@
 				"max": 5
 			},
 			"unitWorth": 1000,
-			"weightMult": 0.6
+			"weightMult": 0.3
 		},
 		"hunter_obj_ghast": {
 			"type": "entity",
@@ -90,7 +90,7 @@
 				"max": 4
 			},
 			"unitWorth": 1500,
-			"weightMult": 0.4
+			"weightMult": 0.25
 		},
 		"hunter_obj_hoglin": {
 			"type": "entity",
@@ -101,7 +101,7 @@
 				"max": 8
 			},
 			"unitWorth": 1000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_blaze": {
 			"type": "entity",
@@ -112,7 +112,7 @@
 				"max": 16
 			},
 			"unitWorth": 700,
-			"weightMult": 0.6
+			"weightMult": 0.3
 		},
 		"hunter_obj_piglin_brute": {
 			"type": "entity",
@@ -123,7 +123,7 @@
 				"max": 4
 			},
 			"unitWorth": 1500,
-			"weightMult": 0.4
+			"weightMult": 0.2
 		},
 		"hunter_obj_cockatrice": {
 			"type": "entity",
@@ -134,7 +134,7 @@
 				"max": 8
 			},
 			"unitWorth": 3000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_siren": {
 			"type": "entity",
@@ -145,7 +145,7 @@
 				"max": 4
 			},
 			"unitWorth": 5000,
-			"weightMult": 0.4
+			"weightMult": 0.2
 		},
 		"hunter_obj_stymphalian_bird": {
 			"type": "entity",
@@ -156,7 +156,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.4
+			"weightMult": 0.2
 		},
 		"hunter_obj_death_worm": {
 			"type": "entity",
@@ -167,7 +167,7 @@
 				"max": 1
 			},
 			"unitWorth": 9000,
-			"weightMult": 0.3
+			"weightMult": 0.2
 		},
 		"hunter_obj_dread_lich": {
 			"type": "entity",
@@ -178,7 +178,7 @@
 				"max": 1
 			},
 			"unitWorth": 9000,
-			"weightMult": 0.3
+			"weightMult": 0.2
 		},
 		"hunter_obj_evoker": {
 			"type": "entity",
@@ -189,7 +189,7 @@
 				"max": 3
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.4
+			"weightMult": 0.2
 		},
 		"hunter_obj_teletor": {
 			"type": "entity",
@@ -200,7 +200,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_boundroid": {
 			"type": "entity",
@@ -211,7 +211,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_notor": {
 			"type": "entity",
@@ -222,7 +222,7 @@
 				"max": 4
 			},
 			"unitWorth": 4000,
-			"weightMult": 0.6
+			"weightMult": 0.3
 		},
 		"hunter_obj_ferrouslime": {
 			"type": "entity",
@@ -233,7 +233,7 @@
 				"max": 4
 			},
 			"unitWorth": 4000,
-			"weightMult": 0.6
+			"weightMult": 0.3
 		},
 		"hunter_obj_magnetron": {
 			"type": "entity",
@@ -244,7 +244,7 @@
 				"max": 2
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.3
+			"weightMult": 0.2
 		},
 		"hunter_obj_licowitch": {
 			"type": "entity",
@@ -255,7 +255,7 @@
 				"max": 1
 			},
 			"unitWorth": 9000,
-			"weightMult": 0.3
+			"weightMult": 0.2
 		},
 		"hunter_obj_caramel_cube": {
 			"type": "entity",
@@ -266,7 +266,7 @@
 				"max": 4
 			},
 			"unitWorth": 4000,
-			"weightMult": 0.6
+			"weightMult": 0.3
 		},
 		"hunter_obj_gumbeeper": {
 			"type": "entity",
@@ -277,7 +277,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_caniac": {
 			"type": "entity",
@@ -288,7 +288,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_brainiac": {
 			"type": "entity",
@@ -299,7 +299,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_nucleeper": {
 			"type": "entity",
@@ -310,7 +310,7 @@
 				"max": 2
 			},
 			"unitWorth": 7500,
-			"weightMult": 0.3
+			"weightMult": 0.1
 		},
 		"hunter_obj_underzealot": {
 			"type": "entity",
@@ -321,7 +321,7 @@
 				"max": 4
 			},
 			"unitWorth": 4000,
-			"weightMult": 0.6
+			"weightMult": 0.25
 		},
 		"hunter_obj_vesper": {
 			"type": "entity",
@@ -332,7 +332,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_corrodent": {
 			"type": "entity",
@@ -343,7 +343,7 @@
 				"max": 4
 			},
 			"unitWorth": 6000,
-			"weightMult": 0.5
+			"weightMult": 0.25
 		},
 		"hunter_obj_watcher": {
 			"type": "entity",
@@ -354,7 +354,7 @@
 				"max": 1
 			},
 			"unitWorth": 9000,
-			"weightMult": 0.3
+			"weightMult": 0.2
 		},
 		"hunter_obj_fire_dragon": {
 			"type": "entity",
@@ -365,7 +365,7 @@
 				"max": 1
 			},
 			"unitWorth": 64000,
-			"weightMult": 0.2
+			"weightMult": 0.1
 		},
 		"hunter_obj_ice_dragon": {
 			"type": "entity",
@@ -376,7 +376,7 @@
 				"max": 1
 			},
 			"unitWorth": 64000,
-			"weightMult": 0.2
+			"weightMult": 0.1
 		},
 		"hunter_obj_lightning_dragon": {
 			"type": "entity",
@@ -387,7 +387,7 @@
 				"max": 1
 			},
 			"unitWorth": 64000,
-			"weightMult": 0.2
+			"weightMult": 0.1
 		},
 		"hunter_obj_cyclops": {
 			"type": "entity",
@@ -398,7 +398,7 @@
 				"max": 1
 			},
 			"unitWorth": 56000,
-			"weightMult": 0.25
+			"weightMult": 0.15
 		},
 		"hunter_obj_gorgon": {
 			"type": "entity",
@@ -409,7 +409,7 @@
 				"max": 1
 			},
 			"unitWorth": 45000,
-			"weightMult": 0.3
+			"weightMult": 0.15
 		},
 		"hunter_obj_hydra": {
 			"type": "entity",
@@ -420,7 +420,7 @@
 				"max": 1
 			},
 			"unitWorth": 56000,
-			"weightMult": 0.25
+			"weightMult": 0.15
 		},
 		"hunter_obj_sea_serpent": {
 			"type": "entity",
@@ -431,7 +431,7 @@
 				"max": 1
 			},
 			"unitWorth": 56000,
-			"weightMult": 0.25
+			"weightMult": 0.15
 		},
 		"hunter_obj_hullbreaker": {
 			"type": "entity",
@@ -442,7 +442,7 @@
 				"max": 1
 			},
 			"unitWorth": 81000,
-			"weightMult": 0.1
+			"weightMult": 0.05
 		},
 		"hunter_obj_gum_worm": {
 			"type": "entity",
@@ -453,7 +453,7 @@
 				"max": 1
 			},
 			"unitWorth": 56000,
-			"weightMult": 0.25
+			"weightMult": 0.1
 		},
 		"hunter_obj_wither": {
 			"type": "entity",
@@ -464,7 +464,7 @@
 				"max": 1
 			},
 			"unitWorth": 64000,
-			"weightMult": 0.2
+			"weightMult": 0.1
 		},
 		"hunter_obj_luxtructosaurus": {
 			"type": "entity",
