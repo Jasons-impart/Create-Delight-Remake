@@ -279,4 +279,14 @@ ServerEvents.recipes(e => {
             "alexscaves:telecore"
         ]
     ).id("create_oppenheimered:deploying/precision_mechanism_from_telecore")
+    e.recipes.kubejs.shaped("create:blaze_burner", [
+        "AAA",
+        "BCB",
+        "BDB"
+    ], {
+        A: "minecraft:blaze_powder",
+        B: "minecraft:blaze_rod",
+        C: "create:empty_blaze_burner",
+        D: "#mynethersdelight:bullet_pepper"
+    }).id("create:shaped/blaze_burner")
 })
