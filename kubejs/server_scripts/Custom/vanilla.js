@@ -65,6 +65,14 @@ ServerEvents.recipes(e => {
     .secondaryFluidOutput(1)
     .heated()
     .id("createdelight:pressurizing/melted_sugar")
+
+    vintageimprovements.vacuumizing("minecraft:blaze_rod", [
+        "minecraft:blaze_powder",
+        "minecraft:blaze_powder",
+        "minecraft:blaze_powder",
+        "minecraft:blaze_powder", 
+        "minecraft:stick"])
+    .id("vintageimprovements:vacuumizing/blaze_rod")
 })
 
 ServerEvents.tags("minecraft:item", e => {
