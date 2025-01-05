@@ -14,5 +14,6 @@ ServerEvents.recipes(e => {
         "iceandfire:dragonsteel_lightning_pickaxe",
         "iceandfire:dragonsteel_lightning_axe",
         "iceandfire:dragonsteel_lightning_shovel",
-        "iceandfire:dragonsteel_lightning_hoe"])
+        "iceandfire:dragonsteel_lightning_hoe",
+        "dreadsteel:dreadsteel_ingot"])
 })

@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     //无暇宝石制作
-    const {vintageimprovements, create} = e.recipes
+    const {vintageimprovements, create, createaddition} = e.recipes
     vintageimprovements.laser_cutting(Item.of("tetra:pristine_lapis").withChance(0.1), "minecraft:lapis_lazuli", 10000, 1000)
     .id("tetra:laser_cutting/pristine_lapis")
     
@@ -50,4 +50,12 @@ ServerEvents.recipes(e => {
         Item.of("2x minecraft:lapis_lazuli").withChance(0.5)],
         "tetra:pristine_lapis")
         .id("tetra:cutting/pristine_lapis")
+
+    create.deploying(["tetra:forged_mesh", Item.of("art_of_forging:nano_insectoid").withChance(0.1)], ["createdelight:forged_steel_sheet", "art_of_forging:nano_insectoid"])
+    .keepHeldItem()
+    .id("tetra:deploying/forged_mesh")
+    createaddition.rolling("art_of_forging:forged_steel_ingot", "2x tetra:forged_beam")
+    .id("tetra:rolling/forged_beam")
+    create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
+    .id("tetra:deploying/forged_bolt")
 })
