@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
-    const {kubejs, create, createmetallurgy, create_new_age, createaddition, vintageimprovements} = e.recipes
+    const { kubejs, create, createmetallurgy, create_new_age, createaddition, vintageimprovements } = e.recipes
     remove_recipes_id(e, [
         "tetra:murasama_scroll",
+        "tetra:crucible_scroll",
         "art_of_forging:forged_steel_from_blasting_alloy",
         "art_of_forging:resonant_alloy",
         "art_of_forging:vobrivium_ingot",
@@ -12,7 +13,9 @@ ServerEvents.recipes(e => {
         "art_of_forging:rending_scissor_purple",
         "art_of_forging:rending_scissor_red",
         "art_of_forging:rending_scissor_complete",
-        "art_of_forging:mark_of_the_architect"
+        "art_of_forging:mark_of_the_architect",
+        "art_of_forging:enigmatic_construct",
+        "art_of_forging:sigil_of_eden"
     ])
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;6,7,13,15],intricate:0b,key:"sword/katana/murasama_blade",material:2,ribbon:"c52323",schematics:["tetra:sword/katana/murasama_blade"]}]}}'),
@@ -29,15 +32,40 @@ ServerEvents.recipes(e => {
             E: "minecraft:netherite_ingot"
         }
     ).id("tetra:murasama_scroll")
+    kubejs.shaped(
+        Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,7,9,2],intricate:0b,key:"tetra/crucible_blade",material:2,ribbon:"ff1e00",schematics:["tetra:sword/crucible_blade"]}]}}'),
+        [
+            " A ",
+            "BCB",
+            " D "
+        ],
+        {
+            A: "art_of_forging:dragon_soul",
+            B: "art_of_forging:forged_steel_ingot",
+            C: "createdelight:otherworld_note",
+            D: "minecraft:beacon"
+        }
+    )
+    .id("tetra:crucible_scroll")
 
     e.replaceInput({ mod: "tetra" }, "minecraft:writable_book", "createdelight:otherworld_note")
+    e.replaceInput([{ id: "art_of_forging:forged_platform" }, { id: "art_of_forging:forged_pillar" }], "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet")
     
-    metal_production_line_7(e, 
-        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:molten_forged_steel"], "superheated", 160)
+    kubejs.shaped("art_of_forging:enigmatic_construct", [
+        " A ",
+        "ABA",
+        " A "
+    ], {
+        A: "art_of_forging:encoded_canister",
+        B: "art_of_forging:dragon_soul"
+    })    
+    
+    metal_production_line_3(e,
+        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelight:molten_forged_steel"], "superheated", 160)
     kubejs.shapeless("createdelight:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
-    .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
+        .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
     kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelight:forged_steel_block")
-    .id("art_of_forging:forged_steel_block")
+        .id("art_of_forging:forged_steel_block")
     createmetallurgy.alloying(Fluid.of("createdelight:molten_forged_steel", 360), [
         "tetra:metal_scrap",
         "tetra:metal_scrap",
@@ -46,8 +74,9 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:spent_liquor", 250),
         Fluid.of("createmetallurgy:molten_netherite", 30)
     ])
-    .id("art_of_forging:alloying/molten_forged_steel")
-
+        .id("art_of_forging:alloying/molten_forged_steel")
+    create.pressing("createdelight:forged_steel_sheet", "art_of_forging:forged_steel_ingot")
+        .id("art_of_forging:pressing/forged_steel_sheet")
     {
         let iner = "art_of_forging:forged_steel_ingot"
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
@@ -58,9 +87,9 @@ ServerEvents.recipes(e => {
             create.deploying(iner, [iner, "createdelight:dread_heart"]),
             create.filling(iner, [iner, Fluid.of("createdelight:molten_lightning_steel", 30)])
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("dreadsteel:sequenced_assembly/dreadsteel_ingot")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("dreadsteel:sequenced_assembly/dreadsteel_ingot")
     }
     {
         let iner = "art_of_forging:forged_steel_ingot"
@@ -68,12 +97,12 @@ ServerEvents.recipes(e => {
             create.deploying(iner, [iner, "art_of_forging:vobrite_crystal"]),
             create_new_age.energising(iner, iner, 20000)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/vobrivium_ingot")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/vobrivium_ingot")
     }
     create_new_age.energising("art_of_forging:vobrite_crystal", "2x art_of_forging:vobrite_crystal", 2000000)
-    .id("art_of_forging:energising/vobrite_crystal")
+        .id("art_of_forging:energising/vobrite_crystal")
     createaddition.charging("art_of_forging:vobrite_crystal", "2x art_of_forging:vobrite_crystal", 2000000, 100000)
 
     {
@@ -85,9 +114,9 @@ ServerEvents.recipes(e => {
             create.filling(iner, [iner, Fluid.of("create_central_kitchen:dragon_breath", 250)]),
             vintageimprovements.hammering(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/endsteel_ingot")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/endsteel_ingot")
     }
 
     vintageimprovements.vacuumizing(Fluid.of("createdelight:malice_solution", 1000), [
@@ -95,7 +124,7 @@ ServerEvents.recipes(e => {
         "art_of_forging:shards_of_malice",
         "art_of_forging:soul_ember"
     ])
-    .id("art_of_forging:vacuumizing/malice_solution")
+        .id("art_of_forging:vacuumizing/malice_solution")
 
     {
         let iner = "art_of_forging:ancient_blade"
@@ -105,9 +134,9 @@ ServerEvents.recipes(e => {
             create.filling(iner, [iner, Fluid.of("createdelight:malice_solution", 1000)]),
             vintageimprovements.hammering(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/demonic_blade")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/demonic_blade")
     }
     {
         let iner = "art_of_forging:ancient_axe"
@@ -117,9 +146,9 @@ ServerEvents.recipes(e => {
             create.filling(iner, [iner, Fluid.of("createdelight:malice_solution", 1000)]),
             vintageimprovements.hammering(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/demonic_axe")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/demonic_axe")
     }
     {
         let iner = "art_of_forging:ancient_flail"
@@ -129,11 +158,11 @@ ServerEvents.recipes(e => {
             create.filling(iner, [iner, Fluid.of("createdelight:malice_solution", 1000)]),
             vintageimprovements.hammering(iner, iner),
             create.deploying(iner, [iner, "iceandfire:chain"])
-            
+
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/demonic_flail")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/demonic_flail")
     }
     {
         let iner = "art_of_forging:shards_of_malice"
@@ -141,14 +170,14 @@ ServerEvents.recipes(e => {
             create.deploying(iner, [iner, "art_of_forging:soul_ember"]),
             create.deploying(iner, [iner, "art_of_forging:fragment_of_eden"]),
             create.filling(iner, [iner, Fluid.of("createdelight:malice_solution", 250)]),
-            create.compacting(iner, iner)
+            create.pressing(iner, iner)
         ])
-        .loops(4)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/sigil_of_eden")
+            .loops(4)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/sigil_of_eden")
     }
     vintageimprovements.vacuumizing("2x art_of_forging:life_fiber", [
-        Fluid.of("create:potion", 1000, {Bottle: "REGULAR", Potion: "minecraft:healing"}),
+        Fluid.of("create:potion", 1000, { Bottle: "REGULAR", Potion: "minecraft:healing" }),
         "tetra:dragon_sinew",
         "tetra:dragon_sinew",
         "protection_pixel:reinforcedfiber"
@@ -164,7 +193,7 @@ ServerEvents.recipes(e => {
         C: "farmersdelight:diamond_knife",
         D: "minecraft:blaze_rod"
     })
-    .id("art_of_forging:rending_scissor_red")
+        .id("art_of_forging:rending_scissor_red")
 
     kubejs.shaped("art_of_forging:rending_scissor_purple", [
         " AB",
@@ -176,7 +205,7 @@ ServerEvents.recipes(e => {
         C: "farmersdelight:diamond_knife",
         D: "minecraft:blaze_rod"
     })
-    .id("art_of_forging:rending_scissor_purple")
+        .id("art_of_forging:rending_scissor_purple")
 
     {
         let iner = "netherexp:banshee_rod"
@@ -185,9 +214,9 @@ ServerEvents.recipes(e => {
             create.deploying(iner, [iner, "art_of_forging:rending_scissor_purple"]),
             vintageimprovements.hammering(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:sequenced_assembly/rending_scissor_complete")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/rending_scissor_complete")
     }
     {
         let iner = "createaddition:electrum_ingot"
@@ -197,23 +226,29 @@ ServerEvents.recipes(e => {
             create.deploying(iner, [iner, "ad_astra:etrionic_capacitor"]),
             vintageimprovements.vacuumizing(iner, [iner, Fluid.of("createdelight:sky_solution", 1000)])
         ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:sequenced_assembly/mine_ingot")
     }
-    kubejs.shapeless(Item.of('tetra:scroll_rolled',
+    kubejs.shaped(Item.of('tetra:scroll_rolled',
         '{BlockEntityTag:{data:[{glyphs:[1.0d,1.0d,4.0d,5.0d],intricate:1.0d,key:"bow/stave/remembrance_stave",material:1.0d,ribbon:"c10000",schematics:["tetra:bow/stave/remembrance_stave"]}]}}'),
-    [
-        "alexscaves:dreadbow",
-        Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,1,9,5],intricate:0b,key:"bow/stave/dreadnought_stave",material:1,ribbon:"f3b31f",schematics:["tetra:bow/stave/dreadnought_stave","tetra:bow/stave/dreadnought_cross_stave"]}]}}').strongNBT(),
-        "iceandfire:dragonbone_bow"]
+        [
+            ["alexscaves:dreadbow"],
+            [Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,1,9,5],intricate:0b,key:"bow/stave/dreadnought_stave",material:1,ribbon:"f3b31f",schematics:["tetra:bow/stave/dreadnought_stave","tetra:bow/stave/dreadnought_cross_stave"]}]}}').strongNBT()],
+            ["iceandfire:dragonbone_bow"]
+        ]
     ).id("art_of_forging:remembrance_shave")
-    kubejs.shapeless(Item.of('tetra:scroll_rolled',
+    kubejs.shaped(Item.of('tetra:scroll_rolled',
         '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;15,13,12,14],intricate:0b,key:"bow/string/compound_string",material:1,ribbon:"19e588",schematics:["tetra:bow/string/compound_string","tetra:crossbow/string/compound_cross_string"]}]}}'),
-    [
-        "alexscaves:shadow_silk",
-        "art_of_forging:life_fiber",
-        "protection_pixel:reinforcedfiber",
-        "#iceandfire:scales/dragon",
-        "#mynethersdelight:hoglin_hide",
-        "alexscaves:tough_hide",
-        "createdelight:otherworld_note"
-    ])
+        [
+            ["alexscaves:shadow_silk",
+                "art_of_forging:life_fiber",
+                "protection_pixel:reinforcedfiber"],
+            ["minecraft:air",
+                "createdelight:otherworld_note",
+                "minecraft:air"],
+            ["#iceandfire:scales/dragon",
+                "#mynethersdelight:hoglin_hide",
+                "alexscaves:tough_hide"]
+        ])
 })

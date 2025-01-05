@@ -64,6 +64,7 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:molten_ice_steel_bucket',
         'createdelight:lightning_dragon_blood_bucket',
         'createdelight:molten_lightning_steel_bucket',
+        'createdelight:molten_forged_steel_bucket',
         // 工业大生产液体
         'createdelight:fuel_mixtures_bucket',
         'createdelight:sky_solution_bucket',
@@ -101,11 +102,14 @@ StartupEvents.registry("creative_mode_tab", e => {
         // 金属块
         'createdelight:tin_block',
         'createdelight:bronze_block',
+        "createdelight:forged_steel_block",
         // 粗金属块
         "createdelight:raw_tin_block",
         // 金属锭
         'createdelight:tin_ingot',
         'createdelight:bronze_ingot',
+        // 金属板
+        'createdelight:forged_steel_sheet',
         // 金属粒
         'createdelight:tin_nugget',
         'createdelight:andesite_alloy_nugget',
