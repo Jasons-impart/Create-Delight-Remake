@@ -5,7 +5,7 @@
 	#Allows laying on a bed when you are on sleeping cooldown
 	lay_when_on_cooldown = true
 	#Allows player to sleep in the middle of two beds
-	queen_size_bed = true
+	queen_size_bed = false
 	#Disables damage from bed explosion when used in another dimension. Can also be used to disable explosion entirely allowing one to sleep in those dimensions
 	#Allowed Values: DEFAULT, TINY_EXPLOSION, ALLOWS_SLEEPING, ALLOWS_SLEEPING_NO_RESPAWN
 	behavior_in_dimension = "DEFAULT"
@@ -15,7 +15,7 @@
 	#Makes night bag less unique by allowing you to place them normally on the ground
 	boring_night_bags = false
 	#Immediately attempt sleeping after laying down on a bed
-	sleep_immediately = false
+	sleep_immediately = true
 
 	[misc.heartstone_mod_integration]
 		#Gives some benefit when sleeping next to somebody else. By default only works in conjunction with heartstone mod
