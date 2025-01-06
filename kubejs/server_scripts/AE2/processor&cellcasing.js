@@ -1,36 +1,37 @@
-
 /**
- * 
- * @param {Internal.RecipesEventJS} e 
- * @param {InputItem_[]} transitionItems 
- * @param {Internal.FluidStackJS_} fluid 
- * @param {number} amount 
+ * @format
+ * @param {Internal.RecipesEventJS} e
+ * @param {InputItem_[]} transitionItems
+ * @param {Internal.FluidStackJS_} fluid
+ * @param {number} amount
  */
+
 function make_growing_cluster(e, transitionItems, fluid, amount) {
   for (let index = 1; index < transitionItems.length; index++) {
     let item = transitionItems[index];
     let lastItem = transitionItems[index - 1];
-    e.recipes.create.sequenced_assembly(item, lastItem, [
-      e.recipes.create.filling(lastItem, [lastItem, Fluid.of(fluid, amount)])
-    ])
-    .loops(4)
-    .transitionalItem(lastItem)
-    .id(`${item.split(":")[0]}:compat/filling/${item.split(":")[1]}`)
+    e.recipes.create
+      .sequenced_assembly(item, lastItem, [
+        e.recipes.create.filling(lastItem, [lastItem, Fluid.of(fluid, amount)]),
+      ])
+      .loops(4)
+      .transitionalItem(lastItem)
+      .id(`${item.split(":")[0]}:compat/filling/${item.split(":")[1]}`);
   }
 }
 
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
-  
-    event.remove({ id: "expatternprovider:cobblestone_cell" });
-    event.remove({ id: "expatternprovider:water_cell" });
-    event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
-  
-    // 杀元件外壳配方
-    event.remove({ id: "ae2:network/cells/item_cell_housing" });
-    event.remove({ id: "ae2:network/cells/fluid_cell_housing" });
-    event.remove({ id: "megacells:cells/mega_item_cell_housing" });
-    event.remove({ id: "megacells:cells/mega_fluid_cell_housing" });
+
+  event.remove({ id: "expatternprovider:cobblestone_cell" });
+  event.remove({ id: "expatternprovider:water_cell" });
+  event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
+
+  // 杀元件外壳配方
+  event.remove({ id: "ae2:network/cells/item_cell_housing" });
+  event.remove({ id: "ae2:network/cells/fluid_cell_housing" });
+  event.remove({ id: "megacells:cells/mega_item_cell_housing" });
+  event.remove({ id: "megacells:cells/mega_fluid_cell_housing" });
   // 电路板配方
   vintageimprovements
     .curving("ae2:printed_engineering_processor", "#forge:gems/diamond")
@@ -716,21 +717,46 @@ ServerEvents.recipes((event) => {
     .head("createdelight:cell_housing_curving_head")
     .id("megacells:mega_fluid_cell_housing_1");
 
+  make_growing_cluster(
+    event,
+    [
+      "ae2:certus_quartz_dust",
+      "ae2:small_quartz_bud",
+      "ae2:medium_quartz_bud",
+      "ae2:large_quartz_bud",
+      "ae2:quartz_cluster",
+    ],
+    "createdelight:spent_liquor",
+    50
+  );
+  create
+    .crushing(
+      ["4x ae2:certus_quartz_dust", Item.of("ae2:certus_quartz_dust", 4).withChance(0.25)],
+      "ae2:quartz_cluster"
+    )
+    .id("create:compat/crushing/certus_quartz_dust");
 
-  make_growing_cluster(event, [
-    "ae2:certus_quartz_dust", 
-    "ae2:small_quartz_bud", 
-    "ae2:medium_quartz_bud", 
-    "ae2:large_quartz_bud", 
-    "ae2:quartz_cluster"], "createdelight:spent_liquor", 50)
-  create.crushing(["4x ae2:certus_quartz_dust", Item.of("ae2:certus_quartz_dust", 4).withChance(0.25)], "ae2:quartz_cluster")
-  .id("create:compat/crushing/certus_quartz_dust")
-  
-  create.mixing("2x ae2:certus_quartz_crystal", [
-    Fluid.water(250),
-    "ae2:certus_quartz_dust",
-    "ae2:charged_certus_quartz_crystal"
-  ])
-  .id("create:compat/mixing/certus_quartz_crystal")
+  create
+    .mixing("2x ae2:certus_quartz_crystal", [
+      Fluid.water(250),
+      "ae2:certus_quartz_dust",
+      "ae2:charged_certus_quartz_crystal",
+    ])
+    .id("create:compat/mixing/certus_quartz_crystal");
 
+  // 荧石再生
+  vintageimprovements
+    .pressurizing(
+      ["4x minecraft:glowstone_dust", Fluid.of("minecraft:water", 250)],
+      Fluid.of("createdelight:sky_solution", 250)
+    )
+    .heated()
+    .id("createdelight:regeneration_of_glowstone_1");
+  create
+    .mixing(
+      ["2x minecraft:glowstone_dust", Fluid.of("minecraft:water", 250)],
+      Fluid.of("createdelight:sky_solution", 250)
+    )
+    .heated()
+    .id("createdelight:regeneration_of_glowstone_2");
 });
