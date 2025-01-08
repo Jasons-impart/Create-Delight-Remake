@@ -15,4 +15,8 @@ EntityEvents.spawned(e => {
             e.cancel()
         }
     }
+    if (e.entity.type == "iceandfire:siren" || e.entity.type == "iceandfire:sea_serpent")
+        if (e.level.dimension != "createdelight:abyssal_chasm_dimension") {
+            e.cancel()
+        }
 })
