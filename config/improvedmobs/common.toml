@@ -205,19 +205,19 @@
 	"Entity Item Use Blacklist" = ["minecraft:drowned;TRIDENT", "minecraft:illusioner;BOW", "minecraft:piglin;CROSSBOW", "minecraft:pillager;CROSSBOW", "minecraft:skeleton;BOW", "minecraft:snow_golem;minecraft:snowball", "minecraft:stray;BOW", "minecraft:wither_skeleton;BOW"]
 	#Base chance that a mob can have one piece of armor
 	#Range: 0.0 ~ 1.0
-	"Equipment Chance" = 0.10000000149011612
+	"Equipment Chance" = 0.20000000149011612
 	#Base chance for each additional armor pieces
 	#Range: 0.0 ~ 1.0
-	"Additional Equipment Chance" = 0.30000001192092896
+	"Additional Equipment Chance" = 0.10000001192092896
 	#Adds additional x*difficulty% to base equip chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Equipment Addition" = 0.30000001192092896
+	"Equipment Addition" = 0.40000001192092896
 	#Chance for an equipment to have a random armor trim
 	#Range: 0.0 ~ 1.0
 	"Armor Trim Chance" = 0.05000000074505806
 	#Chance for mobs to have a weapon
 	#Range: 0.0 ~ 1.0
-	"Weapon Chance" = 0.5
+	"Weapon Chance" = 0.3
 	#Adds additional x*difficulty% to base weapon chance
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Weapon Chance Add" = 0.30000001192092896
@@ -235,10 +235,10 @@
 	"Enchanting Whitelist" = false
 	#Chance for mobs to have an item in offhand
 	#Range: 0.0 ~ 1.0
-	"Item Equip Chance" = 0.5
+	"Item Equip Chance" = 0.2
 	#Adds additional x*difficulty% to base item chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Item Chance add" = 0.20000000298023224
+	"Item Chance add" = 0.30000000298023224
 	#Should mobs drop the armor equipped through this mod? Will not change drops if the mob obtained the armor through other means (e.g. vanilla)
 	"Should drop equipment" = false
 
