@@ -390,7 +390,7 @@
     ],
     "minecraft:shield": [
       2000,
-      2.6255897
+      2.6255896
     ],
     "the_bumblezone:honey_crystal_shield": [
       1000,
@@ -964,11 +964,11 @@
     ],
     "alexsmobs:crocodile_chestplate": [
       0,
-      0
+      0.0
     ],
     "alexsmobs:rocky_chestplate": [
       0,
-      0
+      0.0
     ],
     "alexsmobs:tarantula_hawk_elytra": [
       0,
