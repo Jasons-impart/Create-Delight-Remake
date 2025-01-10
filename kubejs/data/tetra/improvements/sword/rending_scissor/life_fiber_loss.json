@@ -1,13 +1,12 @@
 [
     {
-        "key": "blade/conquering",
-        "integrity": -1,
+        "key": "blade/life_fiber_loss",
         "level": 1,
         "aspects": {
             "honed": 1
         },
         "effects": {
-            "art_of_forging:conquering": [ 4, 5 ]
+                "art_of_forging:life_fiber_loss": [ 3, 10 ]
         }
     }
 ]

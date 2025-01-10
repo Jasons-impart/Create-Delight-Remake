@@ -60,7 +60,7 @@
         "moduleKey": "double/basic_hammer",
         "moduleVariant": "basic_hammer/netherite"
     }, {
-        "materials": [ "tetra:metal/dragonsteel_fire_ingot","tetra:metal/dragonsteel_ice_ingot","tetra:metal/dragonsteel_lightning_ingot","tetra:metal/dreadsteel_ingot"],
+        "materials": [ "tetra:metal/dragonsteel_fire_ingot","tetra:metal/dragonsteel_ice_ingot","tetra:metal/dragonsteel_lightning_ingot","tetra:metal/dreadsteel_ingot","tetra:metal/endsteel_ingot"],
         "countFactor": 2,
         "moduleKey": "double/basic_hammer",
         "moduleVariant": "basic_hammer/"

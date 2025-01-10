@@ -1,0 +1,12 @@
+[ {
+        "modules": [ "single/long_handle" ],
+        "matchSuffixed": true,
+        "moduleVariants": ["quarter_staff_head/oak"],
+        "visibilityKey": "quarter_staff_head/oak",
+        "effects": {
+
+    },
+    "attributes": {
+        "forge:attack_range":64
+   }
+}]

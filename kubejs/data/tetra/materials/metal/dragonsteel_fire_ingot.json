@@ -5,7 +5,7 @@
     "primary": 10,
     "secondary": 4,
     "tertiary": 5,
-    "durability": 3000,
+    "durability": 1500,
     "integrityCost": 2,
     "integrityGain": 8,
     "magicCapacity": 120,

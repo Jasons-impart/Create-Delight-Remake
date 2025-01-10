@@ -1,14 +1,15 @@
 [
     {
         "key": "sword/thousand_cold_nights_imprv",
-        "integrity": -2,
+        "integrity": -1,
         "effects": {
             "severing": [ 10, 3 ],
-            "art_of_forging:devouring": [ 4, 5 ],
+            "art_of_forging:devouring": [ 6, 5 ],
             "art_of_forging:life_steal": [ 1, 20 ]
         },
         "attributes": {
-            "generic.attack_damage": 3
+            "generic.attack_damage": 11.14,
+            "generic.attack_speed": 0.07
         },
         "models": [
             {

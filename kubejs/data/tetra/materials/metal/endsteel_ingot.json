@@ -5,7 +5,7 @@
     "primary": 14,
     "secondary": 4,
     "tertiary": 6,
-    "durability": 5000,
+    "durability": 2000,
     "integrityCost": 4,
     "integrityGain": 10,
     "magicCapacity": 80,
@@ -27,6 +27,6 @@
         "items": [ "art_of_forging:endsteel_ingot" ]
     },
     "requiredTools": {
-        "hammer_dig": 9
+        "hammer_dig": 8
     }
 }

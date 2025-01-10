@@ -1,35 +1,27 @@
 {
     "replace": true,
-    "localizationKey": "cataclysm_blade/catastrophe",
     "slots": [ "sword/blade" ],
     "materialSlotCount": 1,
+    "hone": true,
     "rarity": "temporary",
     "displayType": "improvement",
-    "glyph":{
-        "tint": "971020",
+    "glyph": {
+        "tint": "c91649",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
-        "textureX": 192,
-        "textureY": 16
+        "textureX": 208
     },
     "requirement": {
         "type": "tetra:and",
         "requirements": [
             {
                 "type": "tetra:module",
-                "module": "sword/cataclysm_blade"
+                "module": "sword/rending_scissor_complete"
             },
             {
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "sword/redemption_imprv"
-                }
-            },
-            {
-                "type": "tetra:not",
-                "requirement": {
-                    "type": "tetra:improvement",
-                    "improvement": "sword/catastrophe_imprv"
+                    "improvement": "blade/life_fiber_loss"
                 }
             }
         ]
@@ -37,15 +29,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "constructionwand:core_destruction"],
-                "count": 1
+                "items":[ "alexscaves:corrodent_teeth"],
+                "count": 16
             },
             "experienceCost": 15,
             "requiredTools": {
-                "hammer_dig": 7
+                "hammer_dig": 9
             },
             "improvements": {
-                "sword/catastrophe_imprv": 0
+                "blade/bloodthirster": 1
             }
         }
     ]

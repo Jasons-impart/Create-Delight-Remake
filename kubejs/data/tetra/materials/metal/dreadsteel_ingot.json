@@ -4,14 +4,14 @@
     "primary": 12,
     "secondary": 4,
     "tertiary": 5,
-    "durability": 4000,
+    "durability": 1800,
     "integrityCost": 2,
-    "integrityGain": 8,
+    "integrityGain": 9,
     "magicCapacity": 150,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 11,
         "effects": {
-            "art_of_forging:devouring": [ -2, 5 ]
+            "art_of_forging:devouring": [ 0, 5 ]
         },
     "tints": {
       "glyph": "910d13",

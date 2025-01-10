@@ -19,7 +19,7 @@
 		}
 	}
 	id: "55436AC0A0C01843"
-	order_index: 3
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -147,7 +147,7 @@
 			y: 8.0d
 		}
 		{
-			description: ["将&e烈焰人引诱至灵魂沙峡谷并击杀&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
+			description: ["将&e在灵魂沙峡谷击杀烈焰人、幻鬼和容器&r，便可轻松获取它们的&e灵魂之火&r。而用这些&e灵魂火种打造的镰刀&r，具备&4收割头颅&r的能力，这可大大降低了获取&e凋灵骷髅头&r的难度。"]
 			id: "6D5A656ACC1EC65B"
 			optional: true
 			shape: "pentagon"
@@ -159,7 +159,7 @@
 			}]
 			title: "&1灵魂火种&r"
 			x: 4.0d
-			y: -2.0d
+			y: 0.0d
 		}
 		{
 			description: ["每当我踏足下界要塞，总能感受到一股浓烈的恶意迎面袭来，而其中最为强烈的，便来自那些全身漆黑的&e凋灵骷髅&r——一种被凋灵的恶魔之力所腐蚀的骷髅。据笔记记载，从它们身上可以提取并浓缩来自恶魔的恶意，最终凝结成“&e恶意碎片&r”。然而，这种饱含恶魔气息的结晶并非凡人能够轻易掌握，稍有不慎，便可能遭受反噬。对此我必须要格外注意。"]
@@ -438,6 +438,7 @@
 		}
 		{
 			dependencies: ["11701B8C1482DEB2"]
+			description: ["将&e神秘典籍和下界之星以及龙之灵魂&r合成，便得到了传说中&5裁决剑&r的图纸，裁决剑可以&e对Boss造成巨额伤害&r。"]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -497,9 +498,10 @@
 				"6492B12E7FF19CF5"
 				"1F19F9E3509D49AA"
 			]
+			icon: "art_of_forging:mark_of_the_architect"
 			id: "77A9515AA98A2567"
-			tasks: [{
-				id: "3A52063435281FD1"
+			rewards: [{
+				id: "7B34D9A8C0D9A68A"
 				item: "art_of_forging:mark_of_the_architect"
 				type: "item"
 			}]
@@ -511,7 +513,7 @@
 			dependencies: [
 				"137C9220F86DD557"
 				"19C9240CC2FCED23"
-				"2ED05D4C38C4B3F1"
+				"6D5A656ACC1EC65B"
 			]
 			description: ["我尝试将远古剑刃与&e恶意碎片和凋灵骷髅头&r——我能想到的最邪恶的两种物品融合在剑刃上，再将其浸泡在&e恶意溶液&r中。最终我成功了，&e远古剑刃重新散发出了浓烈的邪恶气息&r，但这股来自远古的恶意仿佛要将我直接吞噬。"]
 			icon: "art_of_forging:demonic_blade"
@@ -608,33 +610,9 @@
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
-				id: "6D4D4A69EC3FFCD9"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "otherworldly"
-								glyphs: [I;
-									7
-									8
-									14
-									13
-								]
-								intricate: 1b
-								key: "sword/thousand_cold_nights"
-								material: 2
-								ribbon: "5c7c80"
-								schematics: [
-									"tetra:sword/katana/murasama_blade"
-									"tetra:sword/thousand_cold_nights"
-								]
-							}]
-						}
-					}
-				}
-				type: "item"
+				id: "1DDC97A32FA9CFF6"
+				title: "&b千夜寒&r"
+				type: "checkmark"
 			}]
 			title: "&b千夜寒&r"
 			x: 2.0d
@@ -657,7 +635,7 @@
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
-			description: ["当我使用&e纳米融合后的武器击败了凋灵&r时，一颗形状奇异的宝珠掉落在地。想必这便是传说中追忆之弓的核心材料。"]
+			description: ["当我使用&e纳米融合后的武器击败了凋灵&r时，一颗形状奇异的宝珠掉落在地。据记载这便是传说中打造追忆之弓的核心材料。"]
 			id: "0D248D4F04552839"
 			tasks: [{
 				id: "5228691B7AF83F40"
@@ -665,7 +643,7 @@
 				type: "item"
 			}]
 			title: "&5黑暗宝珠&r"
-			x: -9.0d
+			x: -10.0d
 			y: 4.0d
 		}
 		{
@@ -679,7 +657,7 @@
 				type: "item"
 			}]
 			title: "&f微观掠夺者&r"
-			x: -9.0d
+			x: -10.0d
 			y: 2.0d
 		}
 		{
@@ -709,8 +687,8 @@
 				item: "art_of_forging:eerie_shard"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 1.0d
+			x: -9.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
@@ -722,8 +700,8 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 2.0d
+			x: -11.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["1395569F70AEFEE2"]
@@ -735,11 +713,14 @@
 				item: "art_of_forging:potent_mixture"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 3.0d
+			x: -10.0d
+			y: 0.5d
 		}
 		{
-			dependencies: ["35C5712DB94C5022"]
+			dependencies: [
+				"35C5712DB94C5022"
+				"260FA35907D280A1"
+			]
 			id: "33BC499F630A44DB"
 			shape: "hexagon"
 			size: 2.0d
@@ -750,16 +731,15 @@
 				type: "advancement"
 			}]
 			title: "&5追忆之弓&r"
-			x: -9.0d
+			x: -10.0d
 			y: 8.0d
 		}
 		{
 			dependencies: [
 				"5FC72D360093BE89"
 				"0D248D4F04552839"
-				"260FA35907D280A1"
 			]
-			description: ["然而我并不满足于此。尽管没有任何证据表明传说中的追忆之弓确实存在，我仍然决定借助黑暗宝珠的力量结合现有的弓锻造技巧，探索追忆之弓的锻造方法。"]
+			description: ["然而我并不满足于此。尽管没有任何证据表明传说中的追忆之弓确实存在，我仍然决定借助黑暗宝珠的力量结合现有的弓锻造技巧，寻找追忆之弓的锻造方法。"]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -808,7 +788,7 @@
 				type: "item"
 			}]
 			title: "&5追忆卷轴&r"
-			x: -9.0d
+			x: -10.0d
 			y: 6.0d
 		}
 		{
@@ -817,39 +797,63 @@
 				"经过特殊改造的无畏弓材，拥有远超普通弓材的力量，能够承受极高的张力，释放出强大的箭速。"
 			]
 			id: "5FC72D360093BE89"
-			tasks: [{
-				id: "5ACC547ECB1E3FA4"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "art_of_forging"
-								glyphs: [I;
-									8
-									1
-									9
-									5
-								]
-								intricate: 0b
-								key: "bow/stave/dreadnought_stave"
-								material: 1
-								ribbon: "f3b31f"
-								schematics: [
-									"tetra:bow/stave/dreadnought_stave"
-									"tetra:bow/stave/dreadnought_cross_stave"
-								]
-							}]
+			tasks: [
+				{
+					id: "5ACC547ECB1E3FA4"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "art_of_forging"
+									glyphs: [I;
+										8
+										1
+										9
+										5
+									]
+									intricate: 0b
+									key: "bow/stave/dreadnought_stave"
+									material: 1
+									ribbon: "f3b31f"
+									schematics: [
+										"tetra:bow/stave/dreadnought_stave"
+										"tetra:bow/stave/dreadnought_cross_stave"
+									]
+								}]
+							}
 						}
 					}
+					match_nbt: true
+					type: "item"
 				}
-				match_nbt: true
-				type: "item"
-			}]
+				{
+					id: "7CE96AF6FC1691AF"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_bow"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "26964A657FE81389"
+					item: {
+						Count: 1
+						id: "iceandfire:dragonbone_bow"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
 			title: "&f无畏弓臂&r "
-			x: -10.5d
-			y: 5.0d
+			x: -12.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["47ADAC6620C3FF87"]
@@ -886,10 +890,10 @@
 			id: "141E662DB7E1864B"
 			tasks: [{
 				id: "156579804A25CEAF"
-				item: "iceandfire:dread_queen_staff"
+				item: "createdelight:dread_heart"
 				type: "item"
 			}]
-			title: "悚怖女皇权杖"
+			title: "悚怖之心"
 			x: 14.0d
 			y: 6.0d
 		}
@@ -905,6 +909,7 @@
 			y: 6.0d
 		}
 		{
+			description: ["我在遗迹中的多个&e锻造容器&r中翻找，意外发现了一本由锻造师留下的书籍，书中详细记录了名为“&5裁决剑&r”的武器锻造方法。"]
 			id: "443E4E48D9EB4F40"
 			shape: "pentagon"
 			size: 1.5d
@@ -984,18 +989,6 @@
 			}]
 			x: -4.0d
 			y: 4.0d
-		}
-		{
-			dependencies: ["6D5A656ACC1EC65B"]
-			id: "2ED05D4C38C4B3F1"
-			tasks: [{
-				count: 4L
-				id: "321B8AB3A1F5432D"
-				item: "minecraft:wither_skeleton_skull"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 0.0d
 		}
 		{
 			id: "4A7D4B98BC089A8A"
@@ -1180,36 +1173,68 @@
 		}
 		{
 			dependencies: ["77A9515AA98A2567"]
-			id: "4D83FD5A7BCBFADC"
-			tasks: [{
-				id: "1A4AD8E229555444"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "true_crucible"
-								glyphs: [I;
-									8
-									7
-									9
-									2
-								]
-								intricate: 1b
-								key: "sword/crucible/architects_crucible_blade"
-								material: 2
-								ribbon: "ff0042"
-								schematics: [
-									"tetra:sword/crucible_blade"
-									"tetra:sword/crucible/architects_crucible_blade"
-								]
-							}]
-						}
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "true_crucible"
+							glyphs: [I;
+								8
+								7
+								9
+								2
+							]
+							intricate: 1b
+							key: "sword/crucible/architects_crucible_blade"
+							material: 2
+							ribbon: "ff0042"
+							schematics: [
+								"tetra:sword/crucible_blade"
+								"tetra:sword/crucible/architects_crucible_blade"
+							]
+						}]
 					}
 				}
-				type: "item"
-			}]
+			}
+			id: "4D83FD5A7BCBFADC"
+			tasks: [
+				{
+					id: "1A4AD8E229555444"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "true_crucible"
+									glyphs: [I;
+										8
+										7
+										9
+										2
+									]
+									intricate: 1b
+									key: "sword/crucible/architects_crucible_blade"
+									material: 2
+									ribbon: "ff0042"
+									schematics: [
+										"tetra:sword/crucible_blade"
+										"tetra:sword/crucible/architects_crucible_blade"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "38D0CD2B04D56E62"
+					item: "art_of_forging:enigmatic_construct"
+					type: "item"
+				}
+			]
 			x: -4.0d
 			y: 8.0d
 		}
@@ -1267,20 +1292,14 @@
 		}
 		{
 			dependencies: ["443E4E48D9EB4F40"]
-			icon: "art_of_forging:enigmatic_construct"
+			description: ["想要打造裁决剑，第一步便是获取&e末影龙的灵魂&r，击杀末影龙便大概率掉落一个。"]
+			icon: "art_of_forging:dragon_soul"
 			id: "11701B8C1482DEB2"
-			tasks: [
-				{
-					id: "7B35A82955162B4C"
-					item: "art_of_forging:dragon_soul"
-					type: "item"
-				}
-				{
-					id: "2B0A0F477158DCFC"
-					item: "art_of_forging:enigmatic_construct"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "7B35A82955162B4C"
+				item: "art_of_forging:dragon_soul"
+				type: "item"
+			}]
 			x: -2.0d
 			y: 2.0d
 		}
@@ -1352,6 +1371,7 @@
 		}
 		{
 			dependencies: ["6A55E5F7C7309D1D"]
+			description: ["由多股弓弦捻成的复合弓弦有着远超普通弓弦的韧性，这是我能制作的&e最强力的弓弦&r了"]
 			id: "260FA35907D280A1"
 			tasks: [{
 				id: "461F57FC52992CC2"
@@ -1382,10 +1402,12 @@
 				}
 				type: "item"
 			}]
-			x: -7.5d
-			y: 5.0d
+			x: -8.0d
+			y: 6.0d
 		}
 		{
+			description: ["我研究了世界上绝大多数性能卓越的&e纤维与皮革&r，并结合从异界学习到的知识，最终找到了一种制造高性能&e弓弦&r的方法。"]
+			icon: "art_of_forging:life_fiber"
 			id: "6A55E5F7C7309D1D"
 			tasks: [
 				{
@@ -1426,8 +1448,8 @@
 					type: "item"
 				}
 			]
-			x: -7.5d
-			y: 3.0d
+			x: -8.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["63B03A277D459A65"]
@@ -1497,6 +1519,28 @@
 			}]
 			x: 18.0d
 			y: 4.0d
+		}
+		{
+			dependencies: ["1395569F70AEFEE2"]
+			id: "3F79AE0388A78F0B"
+			tasks: [{
+				id: "6FCE7C18518CBA32"
+				item: "createdelight:dread_heart"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["1395569F70AEFEE2"]
+			id: "1A9E7EF475810513"
+			tasks: [{
+				id: "624BB381205E156C"
+				item: "art_of_forging:nano_insectoid"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 0.5d
 		}
 	]
 	subtitle: ["暂属于未完成章节"]

@@ -13,7 +13,7 @@
             "key": "rending_scissor_red/rending_scissor_red",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.5,
+                "generic.attack_speed": -1,
                 "generic.attack_damage": 10
             },
             "aspects": {
@@ -24,11 +24,10 @@
             "tags":[
                 "forge:swords"
             ],
-            "effects": {
-                "armorPenetration": 40,
-                "abilityCombo": 10,
-                "abilityRevenge": 2,
-                "abilityDefensive": 1,
+            "effects": {              
+                "crushing": 8,
+                "art_of_forging:life_fiber_loss": [ 1, 10 ],
+                "armorPenetration": 40
             },
             "magicCapacity": 100,
             "glyph": {
