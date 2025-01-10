@@ -1,0 +1,105 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+        {
+            "name": "aof_dungeon_extended",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "tetra:scroll_rolled",
+                    "functions": [
+                        {
+                            "function": "tetra:scroll",
+                            "key": "sword/key_guard",
+                            "intricate": false,
+                            "details": "art_of_forging",
+                            "material": 1,
+                            "ribbon": "fae409",
+                            "glyphs": [ 0, 1, 9, 4 ],
+                            "schematics": [ "tetra:sword/key_guard" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tetra:scroll_rolled",
+                    "functions": [
+                        {
+                            "function": "tetra:scroll",
+                            "key": "single/head/mace_head/mace_head",
+                            "intricate": false,
+                            "details": "art_of_forging",
+                            "material": 1,
+                            "ribbon": "560060",
+                            "glyphs": [ 9, 3, 6, 2 ],
+                            "schematics": [ "tetra:single/head/mace_head/mace_head" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tetra:scroll_rolled",
+                    "functions": [
+                        {
+                            "function": "tetra:scroll",
+                            "key": "bow/stave/dreadnought_stave",
+                            "intricate": false,
+                            "details": "art_of_forging",
+                            "material": 1,
+                            "ribbon": "f3b31f",
+                            "glyphs": [ 8, 1, 9, 5 ],
+                            "schematics": [ "tetra:bow/stave/dreadnought_stave", "tetra:bow/stave/dreadnought_cross_stave" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tetra:scroll_rolled",
+                    "functions": [
+                        {
+                            "function": "tetra:scroll",
+                            "key": "single/head/halberd_head/halberd_head",
+                            "intricate": false,
+                            "details": "art_of_forging",
+                            "material": 1,
+                            "ribbon": "444aff",
+                            "glyphs": [ 8, 1, 4, 5 ],
+                            "schematics": [ "tetra:single/head/halberd_head/halberd_head" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "name": "tetra:scroll_rolled",
+                    "functions": [
+                        {
+                            "function": "tetra:scroll",
+                            "key": "sword/tonal_blade",
+                            "intricate": false,
+                            "details": "art_of_forging",
+                            "material": 1,
+                            "ribbon": "daf7a6",
+                            "glyphs": [ 3, 5, 6, 9 ],
+                            "schematics": [ "tetra:sword/tonal_blade" ]
+                        }
+                    ]
+                },
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 1.0,
+                                "min": 1.0
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "art_of_forging:curious_artifact"
+                }
+            ]
+        }
+    ]
+}

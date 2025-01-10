@@ -29,4 +29,19 @@ EntityEvents.drops(e => {
     addNanoFuseLoot(e, "alexscaves:boundroid", "art_of_forging:nano_insectoid")
     addNanoFuseLoot(e, "alexscaves:ferrouslime", "art_of_forging:nano_insectoid")
     addNanoFuseLoot(e, "alexscaves:notor", "art_of_forging:nano_insectoid")
+    addNanoFuseLoot(e, "minecraft:wither_skeleton", "art_of_forging:shards_of_malice")
+    
+    let dread_monster = [
+        "iceandfire:dread_beast",
+        "iceandfire:dread_ghoul",
+        "iceandfire:dread_horse",
+        "iceandfire:dread_knight",
+        "iceandfire:dread_lich",
+        "iceandfire:dread_lich_skull",
+        "iceandfire:dread_scuttler",
+        "iceandfire:dread_thrall",
+    ]
+    dread_monster.forEach(type => {
+        addNanoFuseLoot(e, type, "createdelight:dread_heart")
+    })
 })
