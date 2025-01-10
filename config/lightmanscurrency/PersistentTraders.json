@@ -2835,24 +2835,6 @@
           "SellItem": {
             "ID": "tetra:scroll_rolled",
             "Count": 1,
-            "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;15,13,12,14],intricate:0b,key:\"bow/string/compound_string\",material:1,ribbon:\"19e588\",schematics:[\"tetra:bow/string/compound_string\",\"tetra:crossbow/string/compound_cross_string\"]}]}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:gold_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "tetra:scroll_rolled",
-            "Count": 1,
             "Tag": "{BlockEntityTag:{data:[{details:\"art_of_forging\",glyphs:[I;3,5,6,9],intricate:0b,key:\"sword/tonal_blade\",material:1,ribbon:\"daf7a6\",schematics:[\"tetra:sword/tonal_blade\"]}]}}"
           },
           "Price": {
