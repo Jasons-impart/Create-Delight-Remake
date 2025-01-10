@@ -52,7 +52,7 @@
 
 ["同调"]
 	#同调 特性生效的物品, 默认: "minecraft:barrier"
-	"生效的物品" = "minecraft:barrier"
+	"生效的物品" = "alexscaves:shadow_silk"
 	#同调 特性修补收益, 0.025代表每个物品每秒修复0.025耐久值, 默认: 0.025
 	#Range: 0.0 ~ 1.0
 	"增益" = 0.025

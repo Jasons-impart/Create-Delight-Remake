@@ -2,7 +2,7 @@
     "replace": true,
     "localizationKey": "katana/thousand_cold_nights",
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
@@ -39,6 +39,9 @@
     },
     "outcomes": [
         {
+            "material": {
+                "items": [ "createdelight:devil_eye" ]
+            },
             "experienceCost": 30,
             "requiredTools": {
                 "hammer_dig": 9

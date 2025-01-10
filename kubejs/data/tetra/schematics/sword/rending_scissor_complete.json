@@ -19,7 +19,7 @@
                 "items": [ "art_of_forging:rending_scissor_complete" ]
             },
             "requiredTools": {
-                "hammer_dig": "minecraft:diamond"
+                "hammer_dig": 9
             },
             "moduleKey": "sword/rending_scissor_complete",
             "moduleVariant": "rending_scissor_complete/rending_scissor_complete"

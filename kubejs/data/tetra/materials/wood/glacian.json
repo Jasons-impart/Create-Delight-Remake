@@ -1,0 +1,32 @@
+{
+  "key": "glacian",
+  "category": "wood",
+  "primary": 3.3,
+  "secondary": 1.1,
+  "tertiary": 9.3,
+  "durability": 110,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 80,
+  "toolLevel": "minecraft:gold",
+  "toolEfficiency": 5,
+  "tints": {
+    "glyph": "ae7e96",
+    "texture": "ae7e96"
+  },
+  "textures": [
+    "crude",
+    "wooden"
+  ],
+  "material": {
+    "items": [
+      "ad_astra:glacian_planks"
+    ]
+  },
+  "effects": {
+    "unstable": 15
+  },
+  "requiredTools": {
+    "axe_dig": "minecraft:iron"
+  }
+}

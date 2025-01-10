@@ -592,8 +592,9 @@
 	"tetra.variant.slime_hammer/slime_hammer": "史莱姆锤",
 	
     "tetra/schematic/sword/eerie_fuller.name": "怪异附层",
-    "tetra/schematic/sword/eerie_fuller.description": "用守卫者掉落的怪异碎片打造的附层，使使用者可以发出音爆。",
+    "tetra/schematic/sword/eerie_fuller.description": "用持有纳米融合武器击杀坚守者掉落的怪异碎片打造的附层，使使用者可以发出音爆。",
     "tetra/schematic/sword/eerie_fuller.slot1": "怪异附层",
+    "tetra.material.eerie_shard":"怪异碎片",
 	
     "tetra.module.sword/eerie_fuller.name": "§3怪异附层§r",
     "tetra.module.sword/eerie_fuller.description": "用守卫者掉落的怪异碎片打造的长柄，使使用者可以发出音爆。",

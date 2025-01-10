@@ -31,7 +31,7 @@
 		}
 	}
 	id: "1CD865FBF0A26F4D"
-	order_index: 4
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -149,7 +149,7 @@
 				title: "千夜寒"
 				type: "checkmark"
 			}]
-			x: 5.5d
+			x: 4.5d
 			y: 3.0d
 		}
 		{
@@ -161,7 +161,7 @@
 				type: "item"
 			}]
 			title: "魔瞳"
-			x: 4.5d
+			x: 3.5d
 			y: 4.5d
 		}
 		{
@@ -199,7 +199,7 @@
 				}
 			]
 			title: "入夜"
-			x: 5.5d
+			x: 4.5d
 			y: 4.5d
 		}
 		{
@@ -217,7 +217,7 @@
 				type: "item"
 			}]
 			title: "征服者"
-			x: 6.5d
+			x: 5.5d
 			y: 4.5d
 		}
 		{
@@ -229,7 +229,7 @@
 				type: "item"
 			}]
 			title: "无尽之刃"
-			x: 4.5d
+			x: 3.5d
 			y: 6.0d
 		}
 		{
@@ -241,7 +241,7 @@
 				type: "item"
 			}]
 			title: "饮血剑"
-			x: 6.5d
+			x: 5.5d
 			y: 6.0d
 		}
 		{
@@ -252,19 +252,19 @@
 				item: "alexsmobs:void_worm_mandible"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 3.5d
 			y: 7.0d
 		}
 		{
 			dependencies: ["4B6E8A65F9C94BCC"]
 			id: "1B0AEFA5C46F810D"
 			tasks: [{
-				count: 4L
+				count: 16L
 				id: "23E6F487E99BA364"
 				item: "alexscaves:corrodent_teeth"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 5.5d
 			y: 7.0d
 		}
 		{
@@ -526,7 +526,7 @@
 				item: "dreadsteel:dreadsteel_ingot"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 4.5d
 			y: 6.0d
 		}
 		{
@@ -537,8 +537,18 @@
 				item: "alexscaves:shadow_silk"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 4.5d
 			y: 7.0d
+		}
+		{
+			id: "5102CB6DC624866C"
+			tasks: [{
+				id: "42D09E1D2967F391"
+				title: "裂空剪"
+				type: "checkmark"
+			}]
+			x: 7.5d
+			y: 3.0d
 		}
 	]
 	title: "&5合·锻火承续"

@@ -13,8 +13,8 @@
             "key": "rending_scissor_purple/rending_scissor_purple",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.5,
-                "generic.attack_damage": 5
+                "generic.attack_speed": -1.8,
+                "generic.attack_damage": 15
             },
             "aspects": {
                 "edged_weapon": 2,
@@ -27,11 +27,7 @@
             "effects": {
                 "armorPenetration": 20,
                 "sweeping": 3,
-                "crushing": 8,
-                "abilityCombo": 10,
-                "abilityExhilaration": 2,
-                "abilityDefensive": 1,
-                "art_of_forging:life_fiber_loss": [ 2, 10 ]
+                "art_of_forging:life_fiber_loss": [ 1, 10 ]
             },
             "magicCapacity": 300,
             "glyph": {

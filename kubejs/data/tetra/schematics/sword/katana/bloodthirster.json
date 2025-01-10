@@ -46,7 +46,7 @@
         {
             "material": {
                 "items":[ "alexscaves:corrodent_teeth"],
-                "count": 4
+                "count": 16
             },
             "experienceCost": 15,
             "requiredTools": {

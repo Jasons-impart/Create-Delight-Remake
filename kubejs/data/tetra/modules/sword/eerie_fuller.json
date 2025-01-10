@@ -6,16 +6,15 @@
         {
             "key": "eerie_fuller/eerie_fuller",
             "attributes": {
-                "generic.attack_speed": -0.20
+                "generic.attack_speed": 0
             },
             "effects": {
-                "truesweep": 2,
                 "sculkTaint": [ 5, 0.05 ],
-                "intuit": 3,
+                "intuit": 5,
                 "art_of_forging:sonic_shock": 10
             },
-            "durability": 45,
-            "integrity": 1,
+            "durability": 0,
+            "integrity": 5,
             "magicCapacity": 300,
             "glyph": {
                 "tint": "246f73",

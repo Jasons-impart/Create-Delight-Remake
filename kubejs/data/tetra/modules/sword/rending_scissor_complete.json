@@ -13,8 +13,8 @@
             "key": "rending_scissor_complete/rending_scissor_complete",
             "integrity": -3,
             "attributes": {
-                "generic.attack_speed": -1.5,
-                "generic.attack_damage": 12
+                "generic.attack_speed": -1.2,
+                "generic.attack_damage": 15
             },
             "aspects": {
                 "edged_weapon": 2,
@@ -28,12 +28,7 @@
                 "armorPenetration": 40,
                 "sweeping": 3,
                 "crushing": 10,
-                "abilityCombo": 10,
-                "abilityExhilaration": 2,
-                "abilityRevenge": 2,
-                "abilityDefensive": 1,
-                "art_of_forging:life_fiber_loss": [ 2, 10 ],
-                "art_of_forging:life_steal":[10,5]
+                "art_of_forging:life_fiber_loss": [ 2, 10 ]
             },
             "magicCapacity": 300,
             "glyph": {
