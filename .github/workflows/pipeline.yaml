@@ -40,6 +40,9 @@ jobs:
       - name: List files in the repository
         run: |
             ls ${{ github.workspace }}  
+      - name: 重命名.hmclversion.cfg
+        run: |
+          mv .hmclversion.cfg hmclversion.cfg
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
