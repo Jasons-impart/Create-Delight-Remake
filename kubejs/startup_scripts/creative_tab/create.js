@@ -116,3 +116,12 @@ StartupEvents.modifyCreativeTab("createoreexcavation:create_ore_excavation", e =
     'createoreexcavation:vein_finder',
   ])
 })
+  // Ad Astra 删除多余且无法看配方的火箭
+StartupEvents.modifyCreativeTab("ad_astra:main", e => {
+  e.remove([
+    Item.of('ad_astra:tier_1_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
+    Item.of('ad_astra:tier_2_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
+    Item.of('ad_astra:tier_3_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
+    Item.of('ad_astra:tier_4_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
+  ])
+})
