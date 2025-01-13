@@ -6,8 +6,8 @@ ServerEvents.recipes(e => {
         "netherexp:roasted_bone"
     ])
     const {create, kubejs, vintageimprovements, farmersdelight} = e.recipes
-    e.replaceInput({}, "farmersdelight:ham", "#forge:ham")
-    e.replaceInput({}, "farmersdelight:smoked_ham", "#forge:cooked_ham")
+    e.replaceInput({not: [{id: "tetracelium:cutting/ham"}, {id: "farmersdelight:cutting/ham"}]}, "farmersdelight:ham", "#forge:ham")
+    e.replaceInput({not: [{id: "tetracelium:cutting/smoked_ham"}, {id: "farmersdelight:cutting/smoked_ham"}]}, "farmersdelight:smoked_ham", "#forge:cooked_ham")
 
     cutting(e, "netherexp:hogham", [['mynethersdelight:hoglin_loin', 2], ['minecraft:bone', 1]])
     cutting(e, "netherexp:cooked_hogham", [['mynethersdelight:cooked_loin', 2], ['minecraft:bone', 1]])
