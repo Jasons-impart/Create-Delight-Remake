@@ -46,7 +46,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz-build ./packwiz
           chmod +x ./packwiz
       - name: 更新index
         run: |
