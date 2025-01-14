@@ -35,8 +35,8 @@ jobs:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }} # token with actions:read permissions on target repo
-          repository: packwiz/packwiz
-          run-id: 11331794723
+          repository: wanquanw/packwiz-build
+          run-id: 12769245242
       - name: List files in the repository
         run: |
             ls ${{ github.workspace }}  
@@ -46,7 +46,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz .
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz-build ./packwiz
           chmod +x ./packwiz
       - name: 更新index
         run: |
