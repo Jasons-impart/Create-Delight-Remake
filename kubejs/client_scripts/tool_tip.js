@@ -17,6 +17,10 @@ ItemEvents.tooltip(e => {
         'create_sa:small_fueling_tank',
         'create_sa:medium_fueling_tank',
         'create_sa:large_fueling_tank',
+        'dreadsteel:kit_default',
+        'dreadsteel:kit_white',
+        'dreadsteel:kit_black',
+        'dreadsteel:kit_bronze',
     ])
     addShiftTooltip(e, [
         "ratatouille:frozen_block",
@@ -45,7 +49,7 @@ ItemEvents.tooltip(e => {
     clearAddShiftCtrlTooltip(e, [
         'create_sa:brass_jetpack_chestplate',
         'create_sa:andesite_jetpack_chestplate',
-        'create_sa:copper_jetpack_chestplate'
+        'create_sa:copper_jetpack_chestplate',
     ])
     addFuelAndWater(e, [
         'create_sa:brass_jetpack_chestplate',
