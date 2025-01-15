@@ -521,6 +521,7 @@
 		{
 			dependencies: ["53D0EBBAB29AA8C9"]
 			id: "20A5B6D421E42DB6"
+			subtitle: "悚怖钢作为千夜寒的手柄可额外降低4级的吞噬诅咒"
 			tasks: [{
 				id: "7F9578978B60108C"
 				item: "dreadsteel:dreadsteel_ingot"
@@ -532,6 +533,7 @@
 		{
 			dependencies: ["20A5B6D421E42DB6"]
 			id: "35D845B28C73E823"
+			subtitle: "暗影丝绸作为裹柄可降低2级吞噬诅咒"
 			tasks: [{
 				id: "43585F20D4FA7EFB"
 				item: "alexscaves:shadow_silk"
@@ -539,16 +541,6 @@
 			}]
 			x: 4.5d
 			y: 7.0d
-		}
-		{
-			id: "5102CB6DC624866C"
-			tasks: [{
-				id: "42D09E1D2967F391"
-				title: "裂空剪"
-				type: "checkmark"
-			}]
-			x: 7.5d
-			y: 3.0d
 		}
 	]
 	title: "&5合·锻火承续"
