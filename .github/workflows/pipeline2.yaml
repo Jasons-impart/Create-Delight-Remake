@@ -42,6 +42,7 @@ jobs:
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
             for prefix in "${prefixes[@]}"; do
+              echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
       - name: list remained mod
