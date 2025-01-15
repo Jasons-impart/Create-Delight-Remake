@@ -1,0 +1,57 @@
+name: 发布服务端包
+run-name: ${{ github.actor }} 正在发布客户端新版本🚀 - TESTING
+on:
+  push:
+    branches:
+      - release-server-*
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    name: 发布🚀
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        path: main
+      - name: 读取包名
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-modpackname
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'name'
+      - name: 读取版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'version'
+      - name: 输出版本号和包名
+        run: |
+          echo ${{ steps.read-modpackname.outputs.value }}
+          echo ${{ steps.read-version.outputs.value }}
+      - name: 移除.hmclversion.cfg
+        run: |
+          rm .hmclversion.cfg
+      - uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: 'Griefed/ServerPackCreator'
+          file: 'ServerPackCreator-7.1.8.jar'
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: List files in the repository
+        run: |
+            ls ${{ github.workspace }}
+      # - name: 生成带mod本体的包 移动到workspace文件夹
+      #   run: |
+      #     ./packwiz curseforge export
+      #     mv *.zip ../full-release.zip
+      #     unzip ../full-release.zip -d ../full-release
+      #     ls ..
+      # - name: Workaround actions/upload-artifact#176
+      #   run: |
+      #     echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+      # - name: 上传带mod包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-full
+      #     path: ${{ env.artifacts_path }}/full-release/
+      # - run: echo "🍏 This job's status is ${{ job.status }}."

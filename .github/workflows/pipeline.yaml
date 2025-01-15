@@ -1,9 +1,9 @@
-name: 发布包
-run-name: ${{ github.actor }} 正在发布新版本🚀
+name: 发布客户端包
+run-name: ${{ github.actor }} 正在发布客户端新版本🚀
 on:
   push:
     branches:
-      - release-*
+      - release-client-*
 
 jobs:
   Release:
