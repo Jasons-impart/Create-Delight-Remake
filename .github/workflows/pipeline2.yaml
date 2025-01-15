@@ -48,18 +48,9 @@ jobs:
       - name: list remained mod
         run: |
           ls ${{ github.workspace }}/main/mods
-      # - name: 生成带mod本体的包 移动到workspace文件夹
-      #   run: |
-      #     ./packwiz curseforge export
-      #     mv *.zip ../full-release.zip
-      #     unzip ../full-release.zip -d ../full-release
-      #     ls ..
-      # - name: Workaround actions/upload-artifact#176
-      #   run: |
-      #     echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
-      # - name: 上传带mod包
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-full
-      #     path: ${{ env.artifacts_path }}/full-release/
-      # - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: 上传带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-server
+          path: ${{ env.artifacts_path }}/main
+      - run: echo "🍏 This job's status is ${{ job.status }}."
