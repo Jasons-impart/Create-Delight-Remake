@@ -23,7 +23,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["每当需要更高级的工具时，我总得重新制作一把新的。有时，我脑海中会闪过一个想法：是否可以&e直接更换工具的部件&r，以提升工具的性能？带着这个念头，我尝试用圆石制作了一把锤子，希望能实现我的设想。"]
+			description: ["每当我需要更高性能的工具时，我总得重新制作一把新的。有时我脑海中会闪过一个想法：是否可以&e直接更换工具一些的部件&r？这显然比重新制作一件工具性价比更高。带着这个念头，我尝试用石头制作了一把工具锤，希望能实现我的设想。"]
 			id: "75C7395A84B2E478"
 			rewards: [{
 				id: "013C9FE2AE77D251"
@@ -51,6 +51,7 @@
 			id: "3821026AD7352739"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "放下工作台，然后用锤子右键它就行"
 			tasks: [{
 				advancement: "tetra:upgrades/workbench"
 				criterion: ""
@@ -85,15 +86,11 @@
 				"01FC78875A324DE3"
 				"0941D2A2970EB5D1"
 			]
-			description: ["跟随地图的指引，我来到雪山脚下，但那里除了白茫茫的积雪外空无一物。然而改造后的全息球却显示锻造师的工坊就在附近。不甘心的我决定向&e地下&r探寻。在挖掘过程中，我发现了一些奇怪的钢结构，顿时重燃希望，沿着钢梁继续挖掘。终于，挖开一块石头后，一个地下结构出现在我眼前。经过一番探索，我确信这里就是锻造师的工坊，然而它早已荒废多年，空无一人，锻造师也不知去向。或许，现在称它为遗迹更为合适。"]
+			description: ["跟随地图的指引，我来到雪山脚下，但那里除了白茫茫的积雪外空无一物。然而改造后的全息球却显示锻造师的工坊就在附近。不甘心的我决定向&e地下&r探寻。在挖掘过程中，我发现了一些奇怪的&e钢结构&r，顿时重燃希望，沿着钢梁继续挖掘。终于，挖开一块石头后，一个地下结构出现在我眼前。经过一番探索，我确信这里就是锻造师的工坊，然而它早已荒废多年，空无一人，锻造师也不知去向。或许，现在称它为遗迹更为合适。"]
 			id: "72908B9592992F33"
-			rewards: [{
-				id: "0FDD9B9DA8811171"
-				item: "minecraft:writable_book"
-				type: "item"
-			}]
 			shape: "pentagon"
 			size: 1.5d
+			subtitle: "遗迹中的某些地方会有流浪者的刷怪笼哦，小心行事"
 			tasks: [{
 				advancement: "tetra:spelunking/ancient_ruins"
 				criterion: ""
@@ -116,19 +113,7 @@
 			]
 			icon: "minecraft:map"
 			id: "6A7882FD5FF059C6"
-			rewards: [
-				{
-					id: "5747085D68036898"
-					item: "minecraft:ender_eye"
-					type: "item"
-				}
-				{
-					count: 4
-					id: "70CF0D0F694161CE"
-					item: "minecraft:amethyst_shard"
-					type: "item"
-				}
-			]
+			subtitle: "建议使用探险家指南针搜索“extractor ruin”或是“regular ruin”，更加方便（"
 			tasks: [{
 				id: "0C52FFCFE8523405"
 				title: "寻找遗迹方法"
@@ -203,6 +188,7 @@
 			dependencies: ["56758B34C00AEFF3"]
 			description: ["可以被连接到锻造锤上，降低50%的锤子故障概率"]
 			id: "2C52A0043DF7520D"
+			subtitle: "不建议用这个"
 			tasks: [{
 				id: "220322A0E3800924"
 				item: "tetra:lubricant_dispenser"
@@ -245,7 +231,7 @@
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: ["根据笔记上的内容，在锻造锤上&e每安装一个燃烧室可提升锻造锤一个等级，最高可达到七级&r，可用于锻造黑曜石锤（五级锤，需要六级锤打造）和下界合金锤（六级锤，需要七级锤打造）"]
+			description: ["根据笔记上的内容，在锻造锤上&e每安装一个燃烧室可提升锻造锤一个等级，加装两个时可达到七级&r，可用于锻造黑曜石锤（五级锤，需要加装一个燃烧室的锻造锤打造）和下界合金锤（六级锤，需要安装两个燃烧室的锻造锤打造）"]
 			id: "7FB4EF5A8151080B"
 			tasks: [{
 				id: "76D9182D04F5E30B"
@@ -275,16 +261,17 @@
 		}
 		{
 			dependencies: ["7FB4EF5A8151080B"]
-			description: ["据笔记上所说，下界合金锤便是这世上最强的锻造锤了，除此之外还可以通过&e打磨和镶嵌下界之星&r的方式进一步提升它的锻造能力，可是真的还需要继续升级吗？或许吧。"]
+			description: ["据笔记上所说，下界合金锤便是&5这个世界&r最强的锻造锤了，除此之外还可以通过&e打磨和镶嵌下界之星&r的方式进一步提升它的锻造能力。"]
 			id: "3A31CFC2ECFA2682"
-			size: 1.0d
+			shape: "hexagon"
+			size: 1.5d
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_6"
 				criterion: ""
 				id: "381E1CC339B1997A"
 				type: "advancement"
 			}]
-			title: "千钧之力！"
+			title: "六级锤"
 			x: 10.5d
 			y: 3.0d
 		}
@@ -376,7 +363,7 @@
 		{
 			dependencies: ["56758B34C00AEFF3"]
 			dependency_requirement: "one_completed"
-			description: ["安装在工具的绑定栏位，可以让你调整工具，使你的工具更耐用或者更有效率。"]
+			description: ["安装在工具的绑定栏位，可以让你调整工具（主要是弓），使你的工具更耐用或者更有效率。"]
 			id: "674A9ED92E7B15C2"
 			subtitle: "变幻莫测"
 			tasks: [{
@@ -392,6 +379,12 @@
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中的&e大小容器&r中，我发现了许多散发着魔力气息的&e金属碎片&r。但是他们的用途我还暂时不得而知。也许&4锻造师的笔记&r上会提到。"]
 			id: "3629F1DBEEFAF2FF"
+			rewards: [{
+				count: 32
+				id: "47AEAE9033BB0521"
+				item: "tetra:metal_scrap"
+				type: "item"
+			}]
 			subtitle: "金属碎片"
 			tasks: [{
 				id: "72F79831CE4BD424"
@@ -418,7 +411,13 @@
 			dependencies: ["3821026AD7352739"]
 			description: ["在挖矿时，我发现了一种&e闪烁着粒子效果的石头&r，出于好奇，我把它挖开了。这块石头与普通石头不同，我从中找到了一些奇特的矿石。&e用锤子在加工台上将其打碎后&r，发现了一些常见的矿石，偶尔还能获得罕见的宝石，甚至还有几颗毫无瑕疵的极品宝石。也许将这些宝石镶嵌在工具上，会带来更好的效果。"]
 			id: "1AF1B7498D6B8705"
-			subtitle: "出！"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2A99FD290702E6C9"
+				table_id: 2077532568744688732L
+				type: "random"
+			}]
+			subtitle: "开！主播主播，你的无瑕钻石确实很强，但还是太难获得了，有没有更加简单又强势的宝石推荐一下吗？有的兄弟有的，这么强的宝石当然不止一颗，一共有九颗，都是版本T0.5的超标宝石。"
 			tasks: [{
 				id: "35E66C31CB7BC45B"
 				item: "tetra:geode"
@@ -445,7 +444,7 @@
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
-			description: ["在打造下界合金部件时，铁锤的硬度也已经不够了。我尝试用钻石或黑曜石制作锤头，但在普通加工台上很难实现。于是我退而求其次，选择用硬度稍低但&e来自下界的黑石&r来制作锤头，希望它能与下界合金产生某种特殊反应，没想到居然成功了！"]
+			description: ["在打造钻石部件时，铁锤的硬度也已经不够了。我尝试用钻石制作锤头，但钻石难以成型。而铁锤显然无法打造黑曜石锤。于是我退而求其次，选择用硬度稍低但带有下界魔力的&e黑石&r来制作锤头，希望它能与钻石产生某种特殊反应，没想到居然成功了！"]
 			id: "1E0BB246F04014C3"
 			subtitle: "黑石锤"
 			tasks: [{
@@ -454,7 +453,7 @@
 				id: "25ADD591E90B355A"
 				type: "advancement"
 			}]
-			title: "“老乡”"
+			title: "黑石锤"
 			x: 5.0d
 			y: 1.5d
 		}
@@ -464,7 +463,7 @@
 				"1E0BB246F04014C3"
 				"31578474F05E7255"
 			]
-			description: ["在尝试改造弓时，我发现锤子的强度严重不足，甚至连黑石锤都无法打造铁弓材。无计可施的我只能向村庄里的老铁匠请教如何改造出更强的弓。老铁匠告诉我，传说在远方&b雪山&r的山脚下，有一位久负盛名的锻造师，他掌握着一切锻造技能，想必他一定能解答我的疑惑。然而，这位锻造师已经许多年没有消息了。村里的&e制图师&r或许知道他的工坊的位置，此外，使用&5&o末影之眼&r和&5&o紫水晶&r改造后的全息球&r也许可以帮助我寻找他。"]
+			description: ["在尝试打造下界合金部件时，我发现锤子的强度远远不足，无法将下界合金打造成理想的形状。然而，钻石无法用来打造锤子，而我目前也更没有能力制作下界合金锤。我向村庄里的老铁匠请教如何打造出更强力的锤子，他告诉我，传说在远方的&b雪山&r脚下，有一位久负盛名的锻造师，想必他一定能解答我的疑惑。然而，这位锻造师已经许多年没有消息了。村里的&e制图师&r或许知道他的工坊的位置，此外，使用&5&o末影之眼&r和&5&o紫水晶&r改造后的全息球&r也许可以帮助我寻找他。"]
 			icon: "tetra:forged_wall"
 			id: "01FC78875A324DE3"
 			rewards: [
@@ -524,7 +523,7 @@
 		}
 		{
 			dependencies: ["3629F1DBEEFAF2FF"]
-			description: ["我将熔融的液态金属倒入&e熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。我相信这将开创一个新纪元。"]
+			description: ["依照笔记上的指引，我将&e金属碎片和陨石废液以及熔融下界合金在熔铸炉中熔合，将产物倒入熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。这将开创一个新纪元。"]
 			id: "7861A70169C19A1A"
 			shape: "hexagon"
 			size: 1.5d
@@ -539,7 +538,7 @@
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
-			description: [""]
+			description: ["在锻造锤上安装平面稳定器后可使打造的部件获得“&e高质量&r”属性，&e小幅度提升各项性能&r"]
 			icon: {
 				Count: 1
 				id: "minecraft:enchanted_book"
@@ -551,7 +550,6 @@
 				}
 			}
 			id: "3C21C65039C98D92"
-			subtitle: "在锻造锤上安装平面稳定器后可使打造的部件获得“高质量”属性，小幅度提升各项性能"
 			tasks: [{
 				id: "1A25B9CA82C37B0A"
 				title: "高质量"
@@ -561,7 +559,7 @@
 			y: -2.0d
 		}
 		{
-			description: ["原版的剑可用于改造"]
+			description: ["&e原版&r的剑可用于改造"]
 			id: "48056E10DEC79964"
 			shape: "rsquare"
 			tasks: [{
@@ -585,12 +583,13 @@
 			}]
 			title: "剑"
 			x: 2.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["打造工具的时候，经常要用到不同的工具，为了方便随时随地可以拿取工具，我做了一个架子用来放置常用的工具"]
 			id: "49F8C50AE9B68585"
+			subtitle: "在以加工台为中心的5x5方形区域内放置工具架，放在工具架上的工具可直接在加工台上取用"
 			tasks: [{
 				id: "73910FEC80C8262F"
 				item: "tetra:rack"
@@ -601,6 +600,7 @@
 			y: -1.5d
 		}
 		{
+			description: ["&e原版&r的盾牌可用于改造"]
 			id: "03664386DA7FE6DC"
 			shape: "rsquare"
 			tasks: [{
@@ -615,10 +615,10 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
-			description: ["原版的弓可用于改造"]
+			description: ["&e原版&r的弓可用于改造"]
 			id: "3F5E3041FB441163"
 			shape: "rsquare"
 			tasks: [{
@@ -633,10 +633,10 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
-			description: ["原版镐、斧、锄等为双头工具，可用于改造"]
+			description: ["&e原版&r镐、斧、锄等为双头工具，可用于改造"]
 			icon: {
 				Count: 1
 				id: "minecraft:iron_pickaxe"
@@ -707,10 +707,10 @@
 			]
 			title: "双头工具"
 			x: 1.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
-			description: ["原版的锹为单头工具，可用于改造"]
+			description: ["&e原版&r的锹为单头工具，可用于改造"]
 			icon: {
 				Count: 1
 				id: "minecraft:iron_shovel"
@@ -741,9 +741,10 @@
 			}]
 			title: "单头工具"
 			x: 1.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
+			description: ["模块化腰带"]
 			id: "6B19B1391FB0509C"
 			shape: "rsquare"
 			tasks: [{
@@ -762,7 +763,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
 			description: [
@@ -1011,7 +1012,7 @@
 			]
 			title: "专长"
 			x: 4.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
 			id: "5A514768646B5842"
@@ -1078,7 +1079,7 @@
 			]
 			title: "镀金"
 			x: 5.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
 			id: "5014699556117EBC"
@@ -1302,7 +1303,7 @@
 				}
 			]
 			x: 6.0d
-			y: 4.0d
+			y: 5.0d
 		}
 		{
 			id: "3EA5B5BF2F118493"
@@ -1335,7 +1336,7 @@
 			}]
 			title: "坚固守卫"
 			x: 5.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
 			id: "7C3B7E9AE14D105E"
@@ -1368,7 +1369,7 @@
 			}]
 			title: "飞刀"
 			x: 4.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
 			id: "1BB17365A0FC3BA4"
@@ -1401,7 +1402,7 @@
 			}]
 			title: "风啸剑刃"
 			x: 6.0d
-			y: 3.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -1437,23 +1438,17 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["3A31CFC2ECFA2682"]
-			id: "4BF0A8A21D78B730"
+			description: ["整合包对Tetra本体只进行了较小幅度的修改，对Tetra的附属锻造之艺（Art of Foring）进行的魔改更多，本章节可基本按照原版Tetra经验通过，如果你是Tetra的新手玩家，那通过整章任务也可以让你快速上手Tetra"]
+			id: "48DABAA5BA34BE62"
+			shape: "gear"
+			size: 1.5d
 			tasks: [{
-				id: "641A11C6761B993C"
-				item: {
-					Count: 1
-					id: "tetra:modular_double"
-					tag: {
-						"double/socket_material": "double_socket/socket_nether_star"
-					}
-				}
-				match_nbt: true
-				type: "item"
-				weak_nbt_match: true
+				id: "2B6BB42E096A74FA"
+				title: "注意"
+				type: "checkmark"
 			}]
-			x: 10.5d
-			y: 4.75d
+			x: -2.25d
+			y: 0.0d
 		}
 	]
 	title: "&2承·昔人已逝"
