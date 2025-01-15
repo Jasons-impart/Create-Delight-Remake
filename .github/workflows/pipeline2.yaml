@@ -36,7 +36,8 @@ jobs:
       - uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: 'Griefed/ServerPackCreator'
-          file: 'ServerPackCreator-7.1.8.jar'
+          regex: true
+          file: "*.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: List files in the repository
         run: |
@@ -44,6 +45,9 @@ jobs:
       - name: list java
         run: |
           java -version
+      - name: cgen
+        run: |
+          java ServerPackCreator-7.1.8.jar
       # - name: 生成带mod本体的包 移动到workspace文件夹
       #   run: |
       #     ./packwiz curseforge export
