@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "createbigcannons:compacting/forge_nethersteel_nugget"
+    ])
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createbigcannons:molten_nethersteel", 90),
         [

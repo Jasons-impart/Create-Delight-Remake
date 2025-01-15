@@ -1,5 +1,3 @@
-ServerEvents.recipes(e => {
-    remove_recipes_id(e, [
-        "createbigcannons:compacting/forge_nethersteel_nugget"
-    ])
+ServerEvents.tags("minecraft:item", e => {
+    e.removeAllTagsFrom("createbigcannons:steel_scrap")
 })
