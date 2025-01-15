@@ -379,6 +379,12 @@
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中的&e大小容器&r中，我发现了许多散发着魔力气息的&e金属碎片&r。但是他们的用途我还暂时不得而知。也许&4锻造师的笔记&r上会提到。"]
 			id: "3629F1DBEEFAF2FF"
+			rewards: [{
+				count: 32
+				id: "47AEAE9033BB0521"
+				item: "tetra:metal_scrap"
+				type: "item"
+			}]
 			subtitle: "金属碎片"
 			tasks: [{
 				id: "72F79831CE4BD424"
@@ -405,6 +411,12 @@
 			dependencies: ["3821026AD7352739"]
 			description: ["在挖矿时，我发现了一种&e闪烁着粒子效果的石头&r，出于好奇，我把它挖开了。这块石头与普通石头不同，我从中找到了一些奇特的矿石。&e用锤子在加工台上将其打碎后&r，发现了一些常见的矿石，偶尔还能获得罕见的宝石，甚至还有几颗毫无瑕疵的极品宝石。也许将这些宝石镶嵌在工具上，会带来更好的效果。"]
 			id: "1AF1B7498D6B8705"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2A99FD290702E6C9"
+				table_id: 2077532568744688732L
+				type: "random"
+			}]
 			subtitle: "开！主播主播，你的无瑕钻石确实很强，但还是太难获得了，有没有更加简单又强势的宝石推荐一下吗？有的兄弟有的，这么强的宝石当然不止一颗，一共有九颗，都是版本T0.5的超标宝石。"
 			tasks: [{
 				id: "35E66C31CB7BC45B"
@@ -526,7 +538,7 @@
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
-			description: [""]
+			description: ["在锻造锤上安装平面稳定器后可使打造的部件获得“&e高质量&r”属性，&e小幅度提升各项性能&r"]
 			icon: {
 				Count: 1
 				id: "minecraft:enchanted_book"
@@ -538,7 +550,6 @@
 				}
 			}
 			id: "3C21C65039C98D92"
-			subtitle: "在锻造锤上安装平面稳定器后可使打造的部件获得“高质量”属性，小幅度提升各项性能"
 			tasks: [{
 				id: "1A25B9CA82C37B0A"
 				title: "高质量"

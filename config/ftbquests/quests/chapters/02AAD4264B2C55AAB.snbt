@@ -56,6 +56,7 @@
 			id: "4178108D392476B9"
 			shape: "hexagon"
 			size: 2.5d
+			subtitle: "更高级的锤子等级见右侧的高级金属相关任务"
 			tasks: [{
 				advancement: "tetra:art_of_forging/root"
 				criterion: ""
@@ -75,7 +76,7 @@
 				item: "art_of_forging:vobrite_crystal"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 8.5d
 			y: 2.0d
 		}
 		{
@@ -89,7 +90,7 @@
 				item: "art_of_forging:vobrivium_ingot"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 7.5d
 			y: 4.0d
 		}
 		{
@@ -120,7 +121,7 @@
 				}
 			]
 			title: "龙钢"
-			x: 14.0d
+			x: 11.5d
 			y: 4.0d
 		}
 		{
@@ -132,7 +133,7 @@
 				item: "art_of_forging:fragment_of_eden"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 8.5d
 			y: 6.0d
 		}
 		{
@@ -152,7 +153,7 @@
 				type: "item"
 			}]
 			title: "&5终末钢&r"
-			x: 10.0d
+			x: 7.5d
 			y: 8.0d
 		}
 		{
@@ -820,7 +821,7 @@
 				item: "minecraft:dragon_breath"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 7.5d
 			y: 6.0d
 		}
 		{
@@ -840,7 +841,7 @@
 				type: "item"
 			}]
 			title: "&f悚怖钢&r"
-			x: 14.0d
+			x: 11.5d
 			y: 8.0d
 		}
 		{
@@ -853,7 +854,7 @@
 				type: "item"
 			}]
 			title: "悚怖之心"
-			x: 14.0d
+			x: 11.5d
 			y: 6.0d
 		}
 		{
@@ -865,7 +866,7 @@
 				item: "iceandfire:dread_shard"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 12.5d
 			y: 6.0d
 		}
 		{
@@ -933,7 +934,7 @@
 				}
 				type: "item"
 			}]
-			x: 19.5d
+			x: 17.0d
 			y: 2.0d
 		}
 		{
@@ -944,7 +945,7 @@
 				item: "createdelight:bleak_electron_tube"
 				type: "item"
 			}]
-			x: 17.5d
+			x: 15.0d
 			y: 2.0d
 		}
 		{
@@ -955,7 +956,7 @@
 				item: "vintageimprovements:redstone_module"
 				type: "item"
 			}]
-			x: 16.5d
+			x: 14.0d
 			y: 2.0d
 		}
 		{
@@ -969,7 +970,7 @@
 				item: "createaddition:electrum_ingot"
 				type: "item"
 			}]
-			x: 18.0d
+			x: 15.5d
 			y: 0.0d
 		}
 		{
@@ -1242,7 +1243,7 @@
 				item: "art_of_forging:forged_steel_ingot"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 9.5d
 			y: 0.0d
 		}
 		{
@@ -1252,7 +1253,7 @@
 				item: "ad_astra:calorite_ingot"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 12.5d
 			y: 2.0d
 		}
 		{
@@ -1383,7 +1384,7 @@
 				item: "alexscaves:occult_gem"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 10.5d
 			y: 6.0d
 		}
 		{
@@ -1401,7 +1402,7 @@
 				type: "item"
 			}]
 			title: "龙血"
-			x: 14.0d
+			x: 11.5d
 			y: 2.0d
 		}
 		{
@@ -1413,7 +1414,7 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 6.5d
 			y: 6.0d
 		}
 		{
@@ -1425,7 +1426,7 @@
 				title: "陨石溶液"
 				type: "checkmark"
 			}]
-			x: 18.5d
+			x: 16.0d
 			y: 2.0d
 		}
 		{
@@ -1444,7 +1445,7 @@
 				type: "item"
 			}]
 			title: "超导金属"
-			x: 18.0d
+			x: 15.5d
 			y: 4.0d
 		}
 		{
@@ -1503,14 +1504,14 @@
 				"691FF0ECF3FDC2ED"
 				"19419665C1CD0351"
 			]
-			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨可最高获得11级锤"]
+			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤"]
 			id: "268643C6AE454B9F"
 			tasks: [{
 				id: "6F0D1285271C87FA"
 				item: "alexscaves:pure_darkness"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 9.5d
 			y: 8.0d
 		}
 	]
