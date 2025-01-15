@@ -38,13 +38,15 @@ jobs:
           repo: 'Griefed/ServerPackCreator'
           file: "ServerPackCreator-7_1_8-Installer-Linux-amd64.sh"
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: List files in the repository
+      - name: Read and delete files
         run: |
-            ls ${{ github.workspace }}
-      - name: 安装
+            mapfile -t prefixes < ${{ github.workspace }}/main/.modremovelist
+            for prefix in "${prefixes[@]}"; do
+              find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
+            done
+      - name: list remained mod
         run: |
-          chmod +x ServerPackCreator-7_1_8-Installer-Linux-amd64.sh
-          yes '' | sudo ./ServerPackCreator-7_1_8-Installer-Linux-amd64.sh
+          ls ${{ github.workspace }}/main/mods
       # - name: 生成带mod本体的包 移动到workspace文件夹
       #   run: |
       #     ./packwiz curseforge export
