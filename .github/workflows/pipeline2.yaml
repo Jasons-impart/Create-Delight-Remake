@@ -1,5 +1,5 @@
 name: 发布服务端包
-run-name: ${{ github.actor }} 正在发布客户端新版本🚀 - TESTING
+run-name: ${{ github.actor }} 正在发布服务端新版本🚀 - TESTING
 on:
   push:
     branches:
@@ -12,7 +12,8 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
-        path: main
+        with:
+          path: main
       - name: 读取包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
