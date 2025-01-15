@@ -290,7 +290,7 @@
 				id: "588A9537513C0EB0"
 				type: "advancement"
 			}]
-			title: "&0夜幕降临&r"
+			title: "&8&l夜幕降临&r"
 			x: 2.0d
 			y: 4.0d
 		}
@@ -424,8 +424,11 @@
 				command: "/effect give @s minecraft:nausea 15 5 true"
 				elevate_perms: true
 				exclude_from_claim_all: true
+				icon: "minecraft:rotten_flesh"
 				id: "403B73FE872F31BB"
+				silent: true
 				team_reward: false
+				title: "你泛起了一阵恶心"
 				type: "command"
 			}]
 			tasks: [{
@@ -527,19 +530,6 @@
 			title: "&c远古恶意&r"
 			x: 4.0d
 			y: 2.0d
-		}
-		{
-			id: "4E3D0A015ECF75F2"
-			shape: "pentagon"
-			size: 1.5d
-			tasks: [{
-				id: "7C939EE3B6AC6015"
-				item: "witheringboon:blackbloodblade"
-				type: "item"
-			}]
-			title: "诸神黄昏"
-			x: -30.5d
-			y: 2.5d
 		}
 		{
 			dependencies: ["4D83FD5A7BCBFADC"]
@@ -1476,6 +1466,7 @@
 				title: "Any #iceandfire:dragon_bloods"
 				type: "item"
 			}]
+			title: "龙血"
 			x: 14.0d
 			y: 2.0d
 		}
@@ -1495,9 +1486,9 @@
 			icon: "createdelight:sky_solution_bucket"
 			id: "0CCB51A12AA2417F"
 			tasks: [{
-				id: "708AC65E50736AE3"
-				title: "陨石溶液"
-				type: "checkmark"
+				id: "127161F9B65D2E49"
+				item: "createdelight:sky_solution_bucket"
+				type: "item"
 			}]
 			x: 18.5d
 			y: 2.0d
@@ -1543,6 +1534,5 @@
 			y: 0.5d
 		}
 	]
-	subtitle: ["暂属于未完成章节"]
 	title: "&3转·锻造之艺"
 }
