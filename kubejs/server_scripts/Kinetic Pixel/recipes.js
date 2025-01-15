@@ -18,7 +18,7 @@ ServerEvents.recipes(e => {
     let iner_1 = "createmetallurgy:steel_block"
     create.sequenced_assembly("6x kinetic_pixel:barrel", iner_1, [
         create.cutting(iner_1, iner_1),
-        vintageimprovements.turning(iner_1, iner_1)
+        vintageimprovements.curving(iner_1, iner_1, 4)
     ])
         .loops(1)
         .transitionalItem(iner_1)
