@@ -565,15 +565,15 @@
 			id: "6731C7B5A0DADBAA"
 			rewards: [
 				{
-					exclude_from_claim_all: true
-					id: "6E0AEE8F5654E63A"
-					table_id: 5347970608351672481L
-					type: "choice"
-				}
-				{
 					id: "129B7A32DEFE8E0C"
 					item: "createdelightcore:gold_coin"
 					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "5EAE56AA8EB1E2A5"
+					table_id: 5347970608351672481L
+					type: "random"
 				}
 			]
 			size: 2.0d

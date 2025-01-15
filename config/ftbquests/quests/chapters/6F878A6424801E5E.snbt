@@ -1014,7 +1014,7 @@
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "击杀疣猪兽100%获得"
+			subtitle: "将猪使用屠宰室屠宰获得"
 			tasks: [{
 				id: "5EC7FE2B277E04E1"
 				item: "farmersdelight:ham"
