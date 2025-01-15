@@ -52,5 +52,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-server
-          path: ${{ env.artifacts_path }}/main
+          path: ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
