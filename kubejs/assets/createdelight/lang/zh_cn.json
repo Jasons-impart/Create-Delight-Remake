@@ -2,7 +2,7 @@
     "itemGroup.createdelight.fluid": "机械动力：悠然乐事 | 流体",
     "itemGroup.createdelight.food": "机械动力：悠然乐事 | 食物",
     "itemGroup.createdelight.machine": "机械动力：悠然乐事 | 机器",
-    "itemGroup.createdelight.metal": "机械动力：悠然乐事 | 金属",
+    "itemGroup.createdelight.ore": "机械动力：悠然乐事 | 矿物",
     "itemGroup.createdelight.misc": "机械动力：悠然乐事 | 杂项",
 
     "block.createdelight.adzuki_beans": "红豆植株",
@@ -450,5 +450,9 @@
     "tooltip.createdelight.shift_large_filling_tank": "§b自动填充§7使用§b水§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击水或使用§b注液器§7注入水                        ",
     "tooltip.createdelight.shift_small_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                   \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
     "tooltip.createdelight.shift_medium_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                  \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
-    "tooltip.createdelight.shift_large_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）"
+    "tooltip.createdelight.shift_large_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
+    "tooltip.createdelight.shift_kit_default": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+    "tooltip.createdelight.shift_kit_white": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+    "tooltip.createdelight.kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+    "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色"
 }
