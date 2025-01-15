@@ -44,7 +44,7 @@ jobs:
       - name: 安装
         run: |
           chmod +x ServerPackCreator-7_1_8-Installer-Linux-amd64.sh
-          sudo ./ServerPackCreator-7_1_8-Installer-Linux-amd64.sh
+          yes '' | sudo ./ServerPackCreator-7_1_8-Installer-Linux-amd64.sh
       # - name: 生成带mod本体的包 移动到workspace文件夹
       #   run: |
       #     ./packwiz curseforge export
