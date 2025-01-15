@@ -37,7 +37,7 @@ jobs:
         with:
           repo: 'Griefed/ServerPackCreator'
           regex: true
-          file: "serverpackcreator-.*\\.jar"
+          file: ".*\\.jar"
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: List files in the repository
         run: |
