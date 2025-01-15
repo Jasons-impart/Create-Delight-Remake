@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Read and delete files
         run: |
-            mapfile -t prefixes < ${{ github.workspace }}/main/.modremovelist
+            mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
             for prefix in "${prefixes[@]}"; do
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
