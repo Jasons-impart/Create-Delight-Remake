@@ -41,6 +41,9 @@ jobs:
       - name: List files in the repository
         run: |
             ls ${{ github.workspace }}
+      - name: list java
+        run: |
+          which java
       # - name: 生成带mod本体的包 移动到workspace文件夹
       #   run: |
       #     ./packwiz curseforge export
