@@ -37,3 +37,36 @@ StartupEvents.modifyCreativeTab("moreburners:moreburners_tab", e => {
     "moreburners:nickel_coil"
   ])
 })
+
+StartupEvents.modifyCreativeTab("torchmaster:creative_tab", e => {
+  e.remove([
+    'torchmaster:feral_flare_lantern',
+    'torchmaster:frozen_pearl'
+  ])
+})
+
+StartupEvents.modifyCreativeTab("ae2:main", e => {
+  e.add([
+    'createdelight:universal_press'
+  ])
+})
+
+StartupEvents.modifyCreativeTab("iceandfire:items", e => {
+  e.add([
+    'dreadsteel:dreadsteel_ingot',
+    'dreadsteel:kit_default',
+    'dreadsteel:kit_white',
+    'dreadsteel:kit_black',
+    'dreadsteel:kit_bronze',
+  ])
+})
+
+StartupEvents.modifyCreativeTab("minecraft:ingredients", e => {
+  e.remove([
+    'dreadsteel:dreadsteel_ingot',
+    'dreadsteel:kit_default',
+    'dreadsteel:kit_white',
+    'dreadsteel:kit_black',
+    'dreadsteel:kit_bronze',
+  ])
+})

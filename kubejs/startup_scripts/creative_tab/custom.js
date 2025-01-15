@@ -5,6 +5,17 @@ StartupEvents.registry("creative_mode_tab", e => {
         .translationKey("itemGroup.createdelight.food")
         .icon(() => Item.of("createdelight:unfried_shrimp"))
         .content(() => [
+        // 压缩包（bushi）
+        'createdelight:cow_zip',
+        'createdelight:sheep_zip',
+        'createdelight:chicken_zip',
+        'createdelight:pig_zip',
+        'createdelight:goat_zip',
+        'createdelight:white_rabbit_zip',
+        'createdelight:black_rabbit_zip',
+        'createdelight:brown_rabbit_zip',
+        'createdelight:splotched_rabbit_zip',
+        'createdelight:gold_rabbit_zip',
         // 原材料
         'createdelight:corn_flour',
         'createdelight:whipped_cream_bowl',
@@ -94,11 +105,17 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:mint_milkshake_bucket',
         'createdelight:adzuki_ice_cream_bucket',
         'createdelight:adzuki_milkshake_bucket',
+        // 特殊流体
+        'createdelight:malice_solution_bucket',
       ])
-    e.create("createdelight:metal")
-        .translationKey("itemGroup.createdelight.metal")
+    e.create("createdelight:ore")
+        .translationKey("itemGroup.createdelight.ore")
         .icon(() => Item.of("createdelight:raw_tin"))
         .content(() => [
+        // 矿物
+        'createdelight:tin_ore',
+        'createdelight:deepslate_tin_ore',
+        'createdelight:enriched_sky_stone_block',
         // 金属块
         'createdelight:tin_block',
         'createdelight:bronze_block',
@@ -132,13 +149,35 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:desh_dust',
         'createdelight:ostrum_dust',
         'createdelight:calorite_dust',
+        // 杂项
+        'createdelight:mmd_diamond',
+        'createdelight:phase_transition_iron',
       ])
       
     e.create("createdelight:machine")
         .translationKey("itemGroup.createdelight.machine")
         .icon(() => Item.of("createdelight:electrolyzer"))
+        .content(() => [
+           'createdelight:electrolyzer',
+           'createdelight:emergency_industrial_platform', 
+        ])
     e.create("createdelight:misc")
         .translationKey("itemGroup.createdelight.misc")
         .icon(() => Item.of("createdelight:fragment_of_border"))
+        .content(() => [
+          // 火箭核心
+          'createdelight:first_stage_rocket_core',
+          'createdelight:second_stage_rocket_core',
+          'createdelight:third_stage_rocket_core',
+          'createdelight:fourth_stage_rocket_core',
+          //外壳
+          'createdelight:iron_casing',
+          'createdelight:space_casing',
+          'createdelight:sky_steel_casing',
+          // 线圈
+          'createdelight:coil',
+          // 边境碎块
+          'createdelight:fragment_of_border',
+        ])
 })
   
