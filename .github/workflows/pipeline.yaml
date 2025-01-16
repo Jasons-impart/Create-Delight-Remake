@@ -3,7 +3,6 @@ run-name: ${{ github.actor }} 正在发布客户端新版本🚀
 on:
   push:
     branches:
-      - main
       - test-release
       - release
 
@@ -34,6 +33,8 @@ jobs:
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
             echo "Nightly!"
+            date +%m%d%H%M
+            echo "$VERSION_SUFFIX"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi

@@ -35,6 +35,8 @@ jobs:
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
             echo "Nightly!"
+            date +%m%d%H%M
+            echo "$VERSION_SUFFIX"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
