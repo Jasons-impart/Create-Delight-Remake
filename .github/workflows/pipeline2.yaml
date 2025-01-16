@@ -31,7 +31,7 @@ jobs:
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
-          if [[ $GITHUB_REF == refs/heads/release ]]; then
+          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
