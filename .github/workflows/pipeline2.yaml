@@ -3,7 +3,8 @@ run-name: ${{ github.actor }} 正在发布服务端新版本🚀
 on:
   push:
     branches:
-      - release-server-*
+      - test-release
+      - release
 
 jobs:
   Release:
@@ -26,41 +27,55 @@ jobs:
         with:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'version'
-      - name: 读取mc版本号
-        uses: SebRollen/toml-action@v1.2.0
-        id: read-minecraft
-        with:
-          file: ${{ github.workspace }}/main/pack.toml
-          field: 'versions.minecraft'
-      - name: 读取forge版本号
-        uses: SebRollen/toml-action@v1.2.0
-        id: read-forge
-        with:
-          file: ${{ github.workspace }}/main/pack.toml
-          field: 'versions.forge'
-      - name: 输出版本号和包名
+      - name: 生成整合包nightly构建后缀
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
-          echo ${{ steps.read-forge.outputs.value }}
-          echo ${{ steps.read-minecraft.outputs.value }}
-      - name: 移除.hmclversion.cfg
+          if [[ $GITHUB_REF == refs/heads/release ]]; then
+            VERSION_SUFFIX=$(date +%m%d%H%M)
+            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
+          fi
+      # - name: 读取mc版本号
+      #   uses: SebRollen/toml-action@v1.2.0
+      #   id: read-minecraft
+      #   with:
+      #     file: ${{ github.workspace }}/main/pack.toml
+      #     field: 'versions.minecraft'
+      # - name: 读取forge版本号
+      #   uses: SebRollen/toml-action@v1.2.0
+      #   id: read-forge
+      #   with:
+      #     file: ${{ github.workspace }}/main/pack.toml
+      #     field: 'versions.forge'
+      # - name: 输出版本号和包名
+      #   run: |
+      #     echo ${{ steps.read-modpackname.outputs.value }}
+      #     echo ${{ steps.read-version.outputs.value }}
+      #     echo ${{ steps.read-forge.outputs.value }}
+      #     echo ${{ steps.read-minecraft.outputs.value }}
+      # - name: 下载forge
+      #   env:
+      #     MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+      #     FORGE: ${{ steps.read-forge.outputs.value }}
+      #   run: |
+      #     URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+      #     echo "$URL"
+      #     curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}/main
+      - name: Read and delete packwiz ignore files
         run: |
-          rm ${{ github.workspace }}/main/.hmclversion.cfg
-      - name: 下载forge
-        env:
-          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-          FORGE: ${{ steps.read-forge.outputs.value }}
-        run: |
-          URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
-          echo "$URL"
-          curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
-      - name: 安装forge
-        run: |
-          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
-      - name: list file
-        run: |
-          ls ${{ github.workspace }}/main
+            mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
+            for prefix in "${prefixes[@]}"; do
+              echo "Deleting files with prefix: $prefix"
+              find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
+            done
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
@@ -68,12 +83,13 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
-      - name: list remained mod
+      - name: list remained files & mods
         run: |
+          ls ${{ github.workspace }}/main
           ls ${{ github.workspace }}/main/mods
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-server
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION }}-server
           path: ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."

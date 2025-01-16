@@ -3,7 +3,9 @@ run-name: ${{ github.actor }} 正在发布客户端新版本🚀
 on:
   push:
     branches:
-      - release-client-*
+      - main
+      - test-release
+      - release
 
 jobs:
   Release:
@@ -24,10 +26,16 @@ jobs:
         with:
           file: ${{ github.workspace }}/pack.toml
           field: 'version'
-      - name: 输出版本号和包名
+      - name: 生成整合包nightly构建后缀
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
+          if [[ $GITHUB_REF == refs/heads/release ]]; then
+            VERSION_SUFFIX=$(date +%m%d%H%M)
+            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
+          fi
       - name: 安装 Packwiz
         id: download-artifact
         uses: actions/download-artifact@v4
@@ -75,11 +83,11 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-full
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION }}-full
           path: ${{ env.artifacts_path }}/full-release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-lite
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION }}-lite
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
