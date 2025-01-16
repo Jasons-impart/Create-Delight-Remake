@@ -90,6 +90,6 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION }}-server
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION_SUFFIX }}-server
           path: ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
