@@ -54,7 +54,7 @@ jobs:
         run: |
           URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
           echo "$URL"
-          curl -O ${{ github.workspace }}/main/forge-installer.jar "$URL"
+          curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
