@@ -26,19 +26,16 @@ jobs:
           file: ${{ github.workspace }}/pack.toml
           field: 'version'
       - name: 生成整合包nightly构建后缀
+        id: set_version_prefix
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
-            echo "Nightly!"
-            date +%m%d%H%M
-            echo "$VERSION_SUFFIX"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
-          echo ${{ steps.set_version.outputs.VERSION_SUFFIX }}
       - name: 安装 Packwiz
         id: download-artifact
         uses: actions/download-artifact@v4
@@ -86,11 +83,11 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION_SUFFIX }}-full
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-full
           path: ${{ env.artifacts_path }}/full-release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION_SUFFIX }}-lite
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."

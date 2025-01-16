@@ -28,19 +28,16 @@ jobs:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'version'
       - name: 生成整合包nightly构建后缀
+        id: set_version_prefix
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
-            echo "Nightly!"
-            date +%m%d%H%M
-            echo "$VERSION_SUFFIX"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
-          echo ${{ steps.set_version.outputs.VERSION_SUFFIX }}
       # - name: 读取mc版本号
       #   uses: SebRollen/toml-action@v1.2.0
       #   id: read-minecraft
@@ -94,6 +91,6 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version.outputs.VERSION_SUFFIX }}-server
+          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
           path: ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
