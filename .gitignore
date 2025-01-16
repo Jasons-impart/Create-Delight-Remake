@@ -6,7 +6,7 @@
 !/kubejs
 !/mods
 !/LICENSE
-!/ModList 0.4a.md
+!/ModList0.4a.md
 !/README.md
 !/icon.png
 !/hotai
@@ -17,3 +17,5 @@
 !/resourcepacks
 !/.packwizignore
 !/.hmclversion.cfg
+!/.clientonlymodlist
+!/DevGuide.md
