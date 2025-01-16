@@ -2193,22 +2193,12 @@
 				type: "custom"
 			}]
 			subtitle: "交付这些物品就可以下降十级难度！"
-			tasks: [
-				{
-					consume_items: true
-					count: 64L
-					id: "58CC10AFB0D09D6E"
-					item: { Count: 64, id: "minecraft:bone" }
-					type: "item"
-				}
-				{
-					consume_items: true
-					count: 64L
-					id: "34E87090D3D3BF79"
-					item: { Count: 64, id: "minecraft:rotten_flesh" }
-					type: "item"
-				}
-			]
+			tasks: [{
+				count: 3L
+				id: "5531E801176CAB4A"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			title: "觉得难度太高了？"
 			x: 12.5d
 			y: -0.5d
