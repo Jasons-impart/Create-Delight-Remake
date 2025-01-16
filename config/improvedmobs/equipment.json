@@ -451,8 +451,8 @@
       0.5113901
     ],
     "create:netherite_diving_boots": [
-      3891,
-      1.9030677
+      2891,
+      5.9030676
     ],
     "create_sa:brass_boots": [
       4220,
@@ -471,8 +471,8 @@
       1.1909808
     ],
     "dreadsteel:dreadsteel_boots": [
-      1235,
-      10.857092
+      735,
+      12.857092
     ],
     "iceandfire:armor_amythest_boots": [
       1300,
@@ -544,15 +544,15 @@
     ],
     "iceandfire:dragonsteel_fire_boots": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:dragonsteel_ice_boots": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:dragonsteel_lightning_boots": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:forest_troll_leather_boots": [
       4180,
@@ -579,40 +579,40 @@
       0.030599998
     ],
     "iceandfire:tide_blue_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_bronze_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_deepblue_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_green_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_purple_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_red_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_teal_boots": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "minecraft:chainmail_boots": [
       4934,
       0.540316
     ],
     "minecraft:diamond_boots": [
-      4018,
-      1.7373508
+      3018,
+      5.737351
     ],
     "minecraft:golden_boots": [
       5000,
@@ -627,8 +627,8 @@
       0.0244
     ],
     "minecraft:netherite_boots": [
-      3891,
-      1.9030677
+      2391,
+      7.9030676
     ],
     "protection_pixel:socks_boots": [
       4560,
@@ -649,12 +649,12 @@
   },
   "LEGS": {
     "ad_astra:jet_suit_pants": [
-      2624,
-      5.199434
+      1624,
+      9.199434
     ],
     "ad_astra:netherite_space_pants": [
-      3450,
-      3.1634672
+      2450,
+      7.1634674
     ],
     "ad_astra:space_pants": [
       4266,
@@ -729,8 +729,8 @@
       1.1909808
     ],
     "dreadsteel:dreadsteel_leggings": [
-      1235,
-      10.857092
+      735,
+      12.857092
     ],
     "iceandfire:armor_amythest_leggings": [
       1300,
@@ -801,16 +801,16 @@
       1.4508864
     ],
     "iceandfire:dragonsteel_fire_leggings": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:dragonsteel_ice_leggings": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:dragonsteel_lightning_leggings": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:forest_troll_leather_leggings": [
       4166,
@@ -837,40 +837,40 @@
       0.030599998
     ],
     "iceandfire:tide_blue_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_bronze_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_deepblue_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_green_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_purple_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_red_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_teal_leggings": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "minecraft:chainmail_leggings": [
       4920,
       0.540316
     ],
     "minecraft:diamond_leggings": [
-      4004,
-      1.7373508
+      3004,
+      5.737351
     ],
     "minecraft:golden_leggings": [
       4986,
@@ -885,8 +885,8 @@
       0.0244
     ],
     "minecraft:netherite_leggings": [
-      3877,
-      1.9030677
+      2877,
+      5.9030676
     ],
     "protection_pixel:anchorpoint_leggings": [
       4545,
@@ -927,12 +927,12 @@
   },
   "CHEST": {
     "ad_astra:jet_suit": [
-      2675,
-      5.120687
+      1675,
+      9.120687
     ],
     "ad_astra:netherite_space_suit": [
-      3500,
-      2.9321702
+      2500,
+      6.9321704
     ],
     "ad_astra:space_suit": [
       4314,
@@ -988,7 +988,7 @@
     ],
     "create:netherite_backtank": [
       3891,
-      1.9030677
+      5.9030676
     ],
     "create_jetpack:jetpack": [
       0,
@@ -1035,8 +1035,8 @@
       1.1909808
     ],
     "dreadsteel:dreadsteel_chestplate": [
-      1235,
-      10.857092
+      735,
+      12.857092
     ],
     "iceandfire:armor_amythest_chestplate": [
       1300,
@@ -1108,15 +1108,15 @@
     ],
     "iceandfire:dragonsteel_fire_chestplate": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:dragonsteel_ice_chestplate": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:dragonsteel_lightning_chestplate": [
       1490,
-      7.6011405
+      9.601141
     ],
     "iceandfire:forest_troll_leather_chestplate": [
       4180,
@@ -1143,40 +1143,40 @@
       0.030599998
     ],
     "iceandfire:tide_blue_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_bronze_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_deepblue_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_green_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_purple_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_red_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "iceandfire:tide_teal_chestplate": [
-      3068,
-      4.262535
+      2068,
+      8.262535
     ],
     "minecraft:chainmail_chestplate": [
       4934,
       0.540316
     ],
     "minecraft:diamond_chestplate": [
-      4018,
-      1.7373508
+      3018,
+      5.737351
     ],
     "minecraft:golden_chestplate": [
       5000,
@@ -1191,8 +1191,8 @@
       0.0244
     ],
     "minecraft:netherite_chestplate": [
-      3891,
-      1.9030677
+      2891,
+      5.9030676
     ],
     "protection_pixel:breaker_chestplate": [
       4836,
@@ -1273,12 +1273,12 @@
   },
   "HEAD": {
     "ad_astra:jet_suit_helmet": [
-      2579,
-      5.2949486
+      1579,
+      9.294949
     ],
     "ad_astra:netherite_space_helmet": [
-      3419,
-      3.2958906
+      2419,
+      7.295891
     ],
     "ad_astra:space_helmet": [
       4236,
@@ -1397,8 +1397,8 @@
       0.5113901
     ],
     "create:netherite_diving_helmet": [
-      3877,
-      1.9030677
+      2877,
+      5.9030676
     ],
     "create_sa:brass_helmet": [
       4206,
@@ -1417,8 +1417,8 @@
       1.1909808
     ],
     "dreadsteel:dreadsteel_helmet": [
-      1235,
-      10.857092
+      735,
+      12.857092
     ],
     "iceandfire:armor_amythest_helmet": [
       1300,
@@ -1493,16 +1493,16 @@
       1.4508864
     ],
     "iceandfire:dragonsteel_fire_helmet": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:dragonsteel_ice_helmet": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:dragonsteel_lightning_helmet": [
-      1476,
-      7.6011405
+      976,
+      9.601141
     ],
     "iceandfire:earplugs": [
       0,
@@ -1533,40 +1533,40 @@
       0.030599998
     ],
     "iceandfire:tide_blue_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_bronze_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_deepblue_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_green_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_purple_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_red_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "iceandfire:tide_teal_helmet": [
-      3054,
-      4.262535
+      2054,
+      8.262535
     ],
     "minecraft:chainmail_helmet": [
       4920,
       0.540316
     ],
     "minecraft:diamond_helmet": [
-      4004,
-      1.7373508
+      3004,
+      5.737351
     ],
     "minecraft:golden_helmet": [
       4986,
@@ -1581,8 +1581,8 @@
       0.0244
     ],
     "minecraft:netherite_helmet": [
-      3877,
-      1.9030677
+      2877,
+      5.9030676
     ],
     "minecraft:shulker_shell": [
       5431,
