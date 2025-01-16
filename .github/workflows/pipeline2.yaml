@@ -52,8 +52,8 @@ jobs:
           MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
           FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          echo https://maven.minecraftforge.net/net/minecraftforge/forge/${MINECRAFT}-${FORGE}/forge-${MINECRAFT}-${FORGE}-installer.jar
-          curl -O ${{ github.workspace }}/main/forge-installer.jar 
+          URL=https://maven.minecraftforge.net/net/minecraftforge/forge/${MINECRAFT}-${FORGE}/forge-${MINECRAFT}-${FORGE}-installer.jar
+          curl -O ${{ github.workspace }}/main/forge-installer.jar $URL
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
