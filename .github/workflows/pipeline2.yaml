@@ -55,10 +55,16 @@ jobs:
           URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
           echo "$URL"
           curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
+      - name: 安装forge
+        run: |
+          java -jar ${{ github.workspace }}/main/forge-installer.jar nogui --installServer
+          chmod +x ${{ github.workspace }}/main/run.sh
+          echo "eula=true" >> ${{ github.workspace }}/main/eula.txt
+          cd ${{ github.workspace }}/main && ./run.sh
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
-      - name: Read and delete files
+      - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
             for prefix in "${prefixes[@]}"; do
