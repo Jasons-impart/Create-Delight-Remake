@@ -33,9 +33,11 @@ jobs:
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+            echo "Nightly!"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
+          echo ${{ steps.set_version.outputs.VERSION_SUFFIX }}
       - name: 安装 Packwiz
         id: download-artifact
         uses: actions/download-artifact@v4

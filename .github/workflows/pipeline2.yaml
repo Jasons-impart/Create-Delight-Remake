@@ -34,9 +34,11 @@ jobs:
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
             echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+            echo "Nightly!"
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
+          echo ${{ steps.set_version.outputs.VERSION_SUFFIX }}
       # - name: 读取mc版本号
       #   uses: SebRollen/toml-action@v1.2.0
       #   id: read-minecraft
