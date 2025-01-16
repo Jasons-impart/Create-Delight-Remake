@@ -1,5 +1,5 @@
 name: 发布服务端包
-run-name: ${{ github.actor }} 正在发布服务端新版本🚀 - TESTING
+run-name: ${{ github.actor }} 正在发布服务端新版本🚀
 on:
   push:
     branches:
@@ -58,9 +58,6 @@ jobs:
       - name: 安装forge
         run: |
           cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
-        # chmod +x ${{ github.workspace }}/main/run.sh
-        # echo "eula=true" >> ${{ github.workspace }}/main/eula.txt
-        # cd ${{ github.workspace }}/main && ./run.sh
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
