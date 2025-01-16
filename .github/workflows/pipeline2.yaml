@@ -14,30 +14,45 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: main
-      - name: 读取包名
+      - name: 读取整合包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
         with:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'name'
-      - name: 读取版本号
+      - name: 读取整合包版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-version
         with:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'version'
+      - name: 读取mc版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-minecraft
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'minecraft'
+      - name: 读取forge版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-forge
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'forge'
       - name: 输出版本号和包名
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
           echo ${{ steps.read-version.outputs.value }}
+          echo ${{ steps.read-forge.outputs.value }}
+          echo ${{ steps.read-minecraft.outputs.value }}
       - name: 移除.hmclversion.cfg
         run: |
           rm ${{ github.workspace }}/main/.hmclversion.cfg
-      - uses: dsaltares/fetch-gh-release-asset@master
-        with:
-          repo: 'Griefed/ServerPackCreator'
-          file: "ServerPackCreator-7_1_8-Installer-Linux-amd64.sh"
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: 下载forge
+        run: |
+          curl -O ${{ github.workspace }}/main/forge-installer.jar https://maven.minecraftforge.net/net/minecraftforge/forge/${{ steps.read-minecraft.outputs.value }}-{{ steps.read-forge.outputs.value }}/forge-${{ steps.read-minecraft.outputs.value }}-{{ steps.read-forge.outputs.value }}-installer.jar
+      - name: list file
+        run: |
+          ls ${{ github.workspace }}/main
       - name: Read and delete files
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
