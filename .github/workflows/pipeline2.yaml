@@ -31,13 +31,13 @@ jobs:
         id: read-minecraft
         with:
           file: ${{ github.workspace }}/main/pack.toml
-          field: 'minecraft'
+          field: 'versions.minecraft'
       - name: 读取forge版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-forge
         with:
           file: ${{ github.workspace }}/main/pack.toml
-          field: 'forge'
+          field: 'versions.forge'
       - name: 输出版本号和包名
         run: |
           echo ${{ steps.read-modpackname.outputs.value }}
@@ -48,8 +48,12 @@ jobs:
         run: |
           rm ${{ github.workspace }}/main/.hmclversion.cfg
       - name: 下载forge
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          curl -O ${{ github.workspace }}/main/forge-installer.jar https://maven.minecraftforge.net/net/minecraftforge/forge/${{ steps.read-minecraft.outputs.value }}-{{ steps.read-forge.outputs.value }}/forge-${{ steps.read-minecraft.outputs.value }}-{{ steps.read-forge.outputs.value }}-installer.jar
+          echo https://maven.minecraftforge.net/net/minecraftforge/forge/${MINECRAFT}-${FORGE}/forge-${MINECRAFT}-${FORGE}-installer.jar
+          curl -O ${{ github.workspace }}/main/forge-installer.jar 
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
