@@ -58,9 +58,9 @@ jobs:
       - name: 安装forge
         run: |
           java -jar ${{ github.workspace }}/main/forge-installer.jar nogui --installServer
-          chmod +x ${{ github.workspace }}/main/run.sh
-          echo "eula=true" >> ${{ github.workspace }}/main/eula.txt
-          cd ${{ github.workspace }}/main && ./run.sh
+        # chmod +x ${{ github.workspace }}/main/run.sh
+        # echo "eula=true" >> ${{ github.workspace }}/main/eula.txt
+        # cd ${{ github.workspace }}/main && ./run.sh
       - name: list file
         run: |
           ls ${{ github.workspace }}/main
