@@ -57,7 +57,7 @@ jobs:
           curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
       - name: 安装forge
         run: |
-          java -jar ${{ github.workspace }}/main/forge-installer.jar nogui --installServer
+          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
         # chmod +x ${{ github.workspace }}/main/run.sh
         # echo "eula=true" >> ${{ github.workspace }}/main/eula.txt
         # cd ${{ github.workspace }}/main && ./run.sh
