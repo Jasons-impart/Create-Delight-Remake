@@ -55,7 +55,6 @@ ServerEvents.recipes(e => {
     let iner_3 = "createdelight:incomplete_planet_gear"
     e.recipes.create.sequenced_assembly("createdelight:planet_gear", "create:brass_sheet", 
         [
-            e.recipes.create.pressing(iner_3, iner_3),
             e.recipes.create.deploying(iner_3, [iner_3, "create:precision_mechanism"]),
             e.recipes.create.deploying(iner_3, [iner_3, "design_decor:industrial_gear"]),
             e.recipes.create.deploying(iner_3, [iner_3, 'design_decor:industrial_gear_large']),
