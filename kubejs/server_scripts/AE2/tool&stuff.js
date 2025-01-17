@@ -157,11 +157,10 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly(Item.of("ae2:basic_card", 8), "ae2:calculation_processor", [
-      vintageimprovements.laser_cutting(
+      create.deploying("createdelight:incomplete_basic_card", [
         "createdelight:incomplete_basic_card",
-        "createdelight:incomplete_basic_card",
-        100
-      ),
+        "#forge:ingots/gold",
+      ]),
       create.deploying("createdelight:incomplete_basic_card", [
         "createdelight:incomplete_basic_card",
         "#forge:ingots/iron",
@@ -170,10 +169,11 @@ ServerEvents.recipes((event) => {
         "createdelight:incomplete_basic_card",
         "#forge:dusts/redstone",
       ]),
-      create.deploying("createdelight:incomplete_basic_card", [
+      vintageimprovements.laser_cutting(
         "createdelight:incomplete_basic_card",
-        "#forge:ingots/gold",
-      ]),
+        "createdelight:incomplete_basic_card",
+        100
+      ),
     ])
     .transitionalItem("createdelight:incomplete_basic_card")
     .loops(1)
@@ -189,11 +189,10 @@ ServerEvents.recipes((event) => {
   });
   create
     .sequenced_assembly(Item.of("ae2:advanced_card", 8), "ae2:calculation_processor", [
-      vintageimprovements.laser_cutting(
-        "createdelight:incomplete_advanced_card",
-        "createdelight:incomplete_advanced_card",
-        100
-      ),
+      create.deploying("createdelight:incomplete_basic_card", [
+        "createdelight:incomplete_basic_card",
+        "#forge:gems/diamond",
+      ]),
       create.deploying("createdelight:incomplete_advanced_card", [
         "createdelight:incomplete_advanced_card",
         "#forge:ingots/iron",
@@ -202,10 +201,11 @@ ServerEvents.recipes((event) => {
         "createdelight:incomplete_advanced_card",
         "#forge:dusts/redstone",
       ]),
-      create.deploying("createdelight:incomplete_advanced_card", [
+      vintageimprovements.laser_cutting(
         "createdelight:incomplete_advanced_card",
-        "#forge:gems/diamond",
-      ]),
+        "createdelight:incomplete_advanced_card",
+        100
+      ),
     ])
     .transitionalItem("createdelight:incomplete_advanced_card")
     .loops(1)
@@ -219,11 +219,11 @@ ServerEvents.recipes((event) => {
   event.remove({ id: "ae2:network/crafting/patterns_blank" });
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
       create.deploying("createdelight:incomplete_blank_pattern", [
         "createdelight:incomplete_blank_pattern",
         "#createdelight:quartz_vibrant_glass",
       ]),
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
       vintageimprovements
         .curving("createdelight:incomplete_blank_pattern", "createdelight:incomplete_blank_pattern")
         .head("createdelight:cell_housing_curving_head"),
@@ -233,9 +233,9 @@ ServerEvents.recipes((event) => {
     .id("createdelight:blank_pattern_1");
   create
     .sequenced_assembly("4x ae2:blank_pattern", "#forge:plates/iron", [
-      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
       create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "#forge:dusts/glowstone"]),
       create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "#createdelight:quartz_glass"]),
+      create.deploying("createdelight:incomplete_blank_pattern", ["createdelight:incomplete_blank_pattern", "ae2:certus_quartz_crystal"]),
       vintageimprovements
         .curving("createdelight:incomplete_blank_pattern", "createdelight:incomplete_blank_pattern")
         .head("createdelight:cell_housing_curving_head"),

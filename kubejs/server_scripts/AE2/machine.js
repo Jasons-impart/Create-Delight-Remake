@@ -96,8 +96,8 @@ ServerEvents.recipes((event) => {
   // ME样板供应器
   let iner_4 = "createdelight:incomplete_pattern_provider"
   create.sequenced_assembly("2x ae2:pattern_provider", "createdelight:iron_casing", [
-    create.deploying(iner_4, [iner_4, "ae2:annihilation_core"]),
     create.deploying(iner_4, [iner_4, "#forge:workbench"]),
+    create.deploying(iner_4, [iner_4, "ae2:annihilation_core"]),
     create.deploying(iner_4, [iner_4, "ae2:formation_core"]),
   ])
     .loops(1)
@@ -108,10 +108,10 @@ ServerEvents.recipes((event) => {
   // 分子装配室
   let iner_5 = "createdelight:incomplete_molecular_assembler"
   create.sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
+    create.deploying(iner_5, [iner_5, "#createdelight:quartz_glass"]),
+    create.deploying(iner_5, [iner_5, "#forge:workbench"]),
     create.deploying(iner_5, [iner_5, "ae2:annihilation_core"]),
     create.deploying(iner_5, [iner_5, "ae2:formation_core"]),
-    create.deploying(iner_5, [iner_5, "#forge:workbench"]),
-    create.deploying(iner_5, [iner_5, "#createdelight:quartz_glass"]),
   ])
     .loops(1)
     .transitionalItem(iner_5)
@@ -122,9 +122,9 @@ ServerEvents.recipes((event) => {
   // ME接口
   let iner_6 = "createdelight:incomplete_interface"
   create.sequenced_assembly("2x ae2:interface", "createdelight:iron_casing", [
+    create.deploying(iner_6, [iner_6, "#forge:glass"]),
     create.deploying(iner_6, [iner_6, "ae2:annihilation_core"]),
     create.deploying(iner_6, [iner_6, "ae2:formation_core"]),
-    create.deploying(iner_6, [iner_6, "#forge:glass"]),
   ])
     .loops(1)
     .transitionalItem(iner_6)
@@ -357,7 +357,7 @@ ServerEvents.recipes((event) => {
       "megacells:accumulation_processor",
       create.deploying("createdelight:incomplete_mega_energy_cell", [
         "createdelight:incomplete_mega_energy_cell",
-        "ae2:energy_cell",
+        "ae2:dense_energy_cell",
       ])
     )
     .transitionalItem("createdelight:incomplete_mega_energy_cell")
