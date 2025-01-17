@@ -3,6 +3,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "tetra:murasama_scroll",
         "tetra:crucible_scroll",
+        "tetra:katana_scroll",
+        "tetra:thousand_cold_night_scroll",
         "art_of_forging:forged_steel_from_blasting_alloy",
         "art_of_forging:resonant_alloy",
         "art_of_forging:vobrivium_ingot",
@@ -20,17 +22,13 @@ ServerEvents.recipes(e => {
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;6,7,13,15],intricate:0b,key:"sword/katana/murasama_blade",material:2,ribbon:"c52323",schematics:["tetra:sword/katana/murasama_blade"]}]}}'),
         [
-            "AEA",
-            "BDB",
-            "ACA"
-        ],
-        {
-            A: "create:polished_rose_quartz",
-            B: "#tetra:swords",
-            C: "vintageimprovements:redstone_module",
-            D: "minecraft:writable_book",
-            E: "minecraft:netherite_ingot"
-        }
+            ["", "create:electron_tube", ""],
+            [
+                "ad_astra:etrionic_core",
+                Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT(),
+                "ad_astra:etrionic_capacitor"],
+            ["", "vintageimprovements:redstone_module", ""]
+        ]
     ).id("tetra:murasama_scroll")
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,7,9,2],intricate:0b,key:"tetra/crucible_blade",material:2,ribbon:"ff1e00",schematics:["tetra:sword/crucible_blade"]}]}}'),
@@ -46,11 +44,11 @@ ServerEvents.recipes(e => {
             D: "minecraft:beacon"
         }
     )
-    .id("tetra:crucible_scroll")
+        .id("tetra:crucible_scroll")
 
     e.replaceInput({ mod: "tetra" }, "minecraft:writable_book", "createdelight:otherworld_note")
     e.replaceInput([{ id: "art_of_forging:forged_platform" }, { id: "art_of_forging:forged_pillar" }], "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet")
-    
+
     kubejs.shaped("art_of_forging:enigmatic_construct", [
         " A ",
         "ABA",
@@ -58,8 +56,29 @@ ServerEvents.recipes(e => {
     ], {
         A: "art_of_forging:encoded_canister",
         B: "art_of_forging:dragon_soul"
-    })    
-    
+    })
+
+    kubejs.shaped(
+        Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}'), [
+        ["", "#tetra:swords", ""],
+        ["#forge:plates/iron", "createdelight:otherworld_note", "#forge:rods/iron"],
+        ["", "#forge:ingots/iron", ""]
+    ])
+        .id("tetra:katana_scroll")
+
+    kubejs.shaped(
+        Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;7,8,14,13],intricate:1b,key:"sword/thousand_cold_nights",material:2,ribbon:"5c7c80",schematics:["tetra:sword/katana/murasama_blade","tetra:sword/thousand_cold_nights"]}]}}'), [
+        " A ",
+        "BCB",
+        " B "
+    ],
+    {
+        A: "createdelight:demonic_codex",
+        B: "art_of_forging:shards_of_malice",
+        C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
+    })
+        .id("tetra:thousand_cold_night_scroll")
+
     metal_production_line_3(e,
         ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelight:molten_forged_steel"], "superheated", 160)
     kubejs.shapeless("createdelight:forged_steel_block", "9x art_of_forging:forged_steel_ingot")

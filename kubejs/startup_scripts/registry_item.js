@@ -614,5 +614,9 @@ StartupEvents.registry("item", e => {
     //锻造钢板
     e.create("createdelight:forged_steel_sheet")
     .translationKey("item.createdelight.forged_steel_sheet") 
+    //恶魔典籍
+    e.create("createdelight:demonic_codex")
+        .rarity("epic")
+        .translationKey("item.createdelight.demonic_codex") 
     
 })
