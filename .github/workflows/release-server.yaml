@@ -27,6 +27,24 @@ jobs:
         with:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'version'
+      - name: 读取mc版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-minecraft
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'versions.minecraft'
+      - name: 读取forge版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-forge
+        with:
+          file: ${{ github.workspace }}/main/pack.toml
+          field: 'versions.forge'
+      - name: 输出版本号和包名
+        run: |
+          echo ${{ steps.read-modpackname.outputs.value }}
+          echo ${{ steps.read-version.outputs.value }}
+          echo ${{ steps.read-forge.outputs.value }}
+          echo ${{ steps.read-minecraft.outputs.value }}
       - name: 生成整合包nightly构建后缀
         id: set_version_prefix
         run: |
@@ -38,38 +56,6 @@ jobs:
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
-      # - name: 读取mc版本号
-      #   uses: SebRollen/toml-action@v1.2.0
-      #   id: read-minecraft
-      #   with:
-      #     file: ${{ github.workspace }}/main/pack.toml
-      #     field: 'versions.minecraft'
-      # - name: 读取forge版本号
-      #   uses: SebRollen/toml-action@v1.2.0
-      #   id: read-forge
-      #   with:
-      #     file: ${{ github.workspace }}/main/pack.toml
-      #     field: 'versions.forge'
-      # - name: 输出版本号和包名
-      #   run: |
-      #     echo ${{ steps.read-modpackname.outputs.value }}
-      #     echo ${{ steps.read-version.outputs.value }}
-      #     echo ${{ steps.read-forge.outputs.value }}
-      #     echo ${{ steps.read-minecraft.outputs.value }}
-      # - name: 下载forge
-      #   env:
-      #     MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-      #     FORGE: ${{ steps.read-forge.outputs.value }}
-      #   run: |
-      #     URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
-      #     echo "$URL"
-      #     curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
-      # - name: 安装forge
-      #   run: |
-      #     cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
-      # - name: list file
-      #   run: |
-      #     ls ${{ github.workspace }}/main
       - name: Read and delete packwiz ignore files
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
@@ -84,6 +70,9 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
+      - name: 重命名server jvm参数配置样例
+        run: |
+          mv ${{ github.workspace }}/main/.user_jvm_args.example.txt ${{ github.workspace }}/main/user_jvm_args.example.txt
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
@@ -93,4 +82,23 @@ jobs:
         with:
           name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
           path: ${{ github.workspace }}/main
+      - name: 下载forge
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
+        run: |
+          URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          echo "$URL"
+          curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
+      - name: 安装forge
+        run: |
+          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
+      - name: 上传带forge核心的包
+        uses: actions/upload-artifact@v4
+        with:
+          name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+          path: ${{ github.workspace }}/main
+      - name: list file
+        run: |
+          ls ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
