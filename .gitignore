@@ -19,4 +19,5 @@
 !/.hmclversion.cfg
 !/.clientonlymodlist
 !/.options.txt
+!/.user_jvm_args.example.txt
 !/DevGuide.md
