@@ -1,8 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "createoreexcavation:vein_finder",
-        "createoreexcavation:cutting/diamond_cutting",
-        "createoreexcavation:cutting/emerald_cutting"
+        "createoreexcavation:vein_finder"
     ])
     e.recipes.create.mechanical_crafting(
         "createoreexcavation:extractor", [

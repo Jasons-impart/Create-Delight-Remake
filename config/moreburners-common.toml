@@ -17,13 +17,13 @@
 		#The amount of energy consumed per tick.
 		energy_cost = 10000
 		#The value to multiply on the energy consumed per tick when heating.
-		energy_multiplier_1 = 1.5
+		energy_multiplier_1 = 1.0
 		#The value to multiply on the energy consumed per tick when super heating.
 		energy_multiplier_2 = 1.5
 		#The amount of heat gained per tick when consuming energy.
-		heating_rate = 10.0
+		heating_rate = 25.0
 		#The amount of heat lost per tick when not consuming energy.
-		cooling_rate = 1.0
+		cooling_rate = 1000.0
 		#The maximum heat value the electric burner can reach before upgraded.
 		max_heat = 300.0
 		#The maximum heat value the electric burner can reach after upgraded.
