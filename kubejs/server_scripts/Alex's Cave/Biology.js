@@ -1,4 +1,6 @@
 EntityEvents.spawned(e => {
+    if (e.entity.isPlayer())
+        return
     let typeList = [
         "minecraft", "quark"]
     let dimList = [

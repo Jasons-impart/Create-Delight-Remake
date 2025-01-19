@@ -8,6 +8,8 @@
         "bounty_pools/*/another_example",
         "bounty_decrees/other/*",
         "bounty_pools/bountiful/*",
+        "bounty_pools/charm/*",
+        "bounty_pools/croptopia/*",
         "bounty_decrees/bountiful/*"
     ],
     "objectiveModifier": 0,

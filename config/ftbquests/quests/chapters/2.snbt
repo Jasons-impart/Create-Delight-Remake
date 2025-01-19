@@ -22,10 +22,9 @@
 			size: 3.0d
 			subtitle: "按住w可以进行俺寻思"
 			tasks: [{
-				advancement: "create:andesite_alloy"
-				criterion: ""
-				id: "32F3764E13857F42"
-				type: "advancement"
+				id: "64F7AFEB80123DB9"
+				item: "create:andesite_alloy"
+				type: "item"
 			}]
 			title: "欢迎正式进入机械动力大家庭！"
 			x: 0.5d
