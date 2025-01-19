@@ -1,11 +1,6 @@
 EntityEvents.spawned(e => {
     let typeList = [
-        "minecraft:zombie",
-        "minecraft:zombie_villager",
-        "minecraft:skeleton",
-        'quark:forgotten',
-        "minecraft:spider",
-        "minecraft:creeper"]
+        "minecraft", "quark"]
     let dimList = [
         "createdelight:magnetic_caves_dimension",
         "createdelight:abyssal_chasm_dimension",
@@ -13,10 +8,11 @@ EntityEvents.spawned(e => {
         "createdelight:primordial_caves_dimension",
         "createdelight:toxic_caves_dimension",
         "createdelight:candy_cavity_dimension"]
-    if (typeList.indexOf(e.entity.type) != -1) {
-        if (dimList.indexOf(e.level.dimension) != -1) {
-            e.cancel()
-        }
-    }
+        typeList.forEach(type => {
+            dimList.forEach(dim => {
+                if (e.entity.type.startsWith(type) && e.level.dimension == dim)
+                    e.cancel()
+            })
+        })
 
 })
