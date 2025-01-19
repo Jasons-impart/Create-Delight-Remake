@@ -10,3 +10,7 @@
 # 发包使用的工具
 - packwiz https://packwiz.infra.link/tutorials/creating/getting-started/
 - 因为原始repo的发布文件已经过期，使用了个人fork的版本：https://github.com/wanquanw/packwiz-build
+
+# 修改整合包内的默认配置
+- 直接修改整合包内的.options.txt文件即可，发包时会将这个作为整合包的默认配置
+- 包括但不限于：键位设置、加载的资源包和加载顺序
