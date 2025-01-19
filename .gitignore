@@ -18,4 +18,5 @@
 !/.packwizignore
 !/.hmclversion.cfg
 !/.clientonlymodlist
+!/.options.txt
 !/DevGuide.md
