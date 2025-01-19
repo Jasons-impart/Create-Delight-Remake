@@ -70,6 +70,9 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
+      - name: 重命名server jvm参数配置样例
+        run: |
+          mv .user_jvm_args.example.txt user_jvm_args.example.txt
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
