@@ -52,7 +52,6 @@
 		{
 			dependencies: ["292FC524DA151FF1"]
 			id: "47C445F09B1CD5BD"
-			invisible: true
 			rewards: [{
 				id: "22E3A9C2A32B1382"
 				item: "createdelightcore:copper_coin"

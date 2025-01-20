@@ -644,9 +644,9 @@
 			tasks: [{
 				icon: "ad_astra:lunarian_spawn_egg"
 				id: "23650472EE4003AD"
-				observe_type: 0
+				observe_type: 5
 				timer: 0L
-				to_observe: "adastra:lunarian"
+				to_observe: "ad_astra:lunarian"
 				type: "observation"
 			}]
 			title: "月球村民"
@@ -906,7 +906,8 @@
 			]
 			subtitle: "月球村民养育的鸡被月球辐射所致变异"
 			tasks: [{
-				entity: "aether:cockatrice"
+				disable_toast: true
+				entity: "iceandfire:cockatrice"
 				icon: "iceandfire:cockatrice_skull"
 				id: "1EC0969322247952"
 				title: "击杀鸡蛇！"
