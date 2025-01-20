@@ -137,8 +137,7 @@ ServerEvents.recipes(e => {
         .id("create:crafting/kinetics/item_vault_2")
     e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
         .id("create:crafting/kinetics/fluid_tank_2")
-    e.recipes.vintageimprovements.curving("create:fluid_pipe", "create:copper_sheet")
-        .head("vintageimprovements:v_shaped_curving_head")
+    e.recipes.vintageimprovements.curving("create:fluid_pipe", "create:copper_sheet", 4)
         .id("create:crafting/kinetics/fluid_pipe_2")
 
     //青铜制作铜相关物品
@@ -171,8 +170,7 @@ ServerEvents.recipes(e => {
         .id("create:crafting/kinetics/fluid_tank_from_bronze")
     e.recipes.vintageimprovements.turning("9x create:fluid_tank", "#forge:storage_blocks/bronze")
         .id("create:crafting/kinetics/fluid_tank_from_bronze_2")
-    e.recipes.vintageimprovements.curving("3x create:fluid_pipe", "#forge:plates/bronze")
-        .head("vintageimprovements:v_shaped_curving_head")
+    e.recipes.vintageimprovements.curving("3x create:fluid_pipe", "#forge:plates/bronze", 4)
         .id("create:crafting/kinetics/fluid_pipe_from_bronze_2")
 
     //坚固板的另一个配方
