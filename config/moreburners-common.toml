@@ -23,7 +23,7 @@
 		#The amount of heat gained per second when consuming energy.
 		heating_rate = 25.0
 		#The amount of heat lost per second when not consuming energy.
-		cooling_rate = 1000.0
+		cooling_rate = 25.0
 		#The maximum heat value the electric burner can reach before upgraded.
 		max_heat = 300.0
 		#The maximum heat value the electric burner can reach after upgraded.

@@ -15,7 +15,7 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonsteel_fire_hoe',
         'iceandfire:dragonsteel_ice_hoe',
         'iceandfire:dragonsteel_lightning_hoe'])
-    
+
     e.add('alexscaves:galena_gauntlet_crystallization_items',
         ['aether:zanite_sword',
         'aether:zanite_shovel',
@@ -55,6 +55,7 @@ ServerEvents.tags("item", e => {
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
+    e.removeAll("alexscaves:restricted_biome_locators")
 })
 
 ServerEvents.tags("minecraft:block", e => {
@@ -67,8 +68,4 @@ ServerEvents.tags("minecraft:block", e => {
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
-})
-
-ServerEvents.tags("worldgen/biome", e => {
-    e.remove("minecraft:is_deep_ocean", "alexscaves:abyssal_chasm");
 })

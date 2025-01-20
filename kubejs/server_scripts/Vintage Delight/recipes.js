@@ -68,8 +68,11 @@ ServerEvents.recipes(e => {
     cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
-        "vintagedelight:salt_dust",
-        Fluid.of("water", 250)
+        "2x vintagedelight:salt_dust",
+        [
+            Fluid.of("water", 250),
+            "vintagedelight:salt_dust"
+        ]
     )
         .heated()
         .id("ratatouille:salt")

@@ -6,8 +6,8 @@
             "extraction": 4
         },
         "aspects": {
-            "bluntWeapon": 1,
-            "blockBreaker": 2
+            "blunt_weapon": 1,
+            "block_breaker": 2
         },
         "tools": {
             "pickaxe_dig": [ 1, 15 ]
