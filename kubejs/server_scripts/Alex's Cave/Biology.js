@@ -1,5 +1,5 @@
 EntityEvents.spawned(e => {
-    if (e.entity.isPlayer())
+    if (!e.entity.isMonster())
         return
     let typeList = [
         "minecraft", "quark"]

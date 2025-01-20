@@ -180,8 +180,12 @@
 	remember_last_perspective = false
 	#Whether or not to replace the default third person perspective.
 	replace_default_perspective = false
-	#Whether or not to skip the third person front perspective.
-	skip_third_person_front_perspective = false
+	#Whether or not the first person perspective is enabled.
+	first_person_enabled = true
+	#Whether or not the third person front perspective is enabled.
+	third_person_front_enabled = true
+	#Whether or not the third person back perspective is enabled.
+	third_person_back_enabled = true
 
 [player]
 	#Whether or not to adjust the player model transparency when view is obstructed. Changing this value may require a game restart to take full effect.
