@@ -22,7 +22,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
         blockPosition,
         level,
         MAX_SEARCH_DIST_IN_BLOCK,
-        (vein) => !excludedVein.includes(vein.getId())
+        (vein) => excludedVein.indexOf(vein.getId()) == -1
     )
     let distance = Math.floor(Math.sqrt(
         Math.pow(blockPosition.x - pos.x, 2)
