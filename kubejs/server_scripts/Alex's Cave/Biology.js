@@ -12,7 +12,7 @@ EntityEvents.spawned(e => {
         "createdelight:candy_cavity_dimension"]
         typeList.forEach(type => {
             dimList.forEach(dim => {
-                if (e.entity.type.startsWith(type) && e.level.dimension == dim)
+                if (e.entity.type.toString().startsWith(type) && e.level.dimension == dim)
                     e.cancel()
             })
         })
