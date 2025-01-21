@@ -6,7 +6,8 @@ ServerEvents.recipes(e => {
             'kinetic_pixel:andesitealloycompressionsheet',
             'kinetic_pixel:specialsteelcompressionsheet',
             'kinetic_pixel:specialsteelingot',
-            'kinetic_pixel:nitropropellant']
+            'kinetic_pixel:nitropropellant',
+            'tacz:gun_smith_table']
     )
     e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "ad_astra:steel_plate")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:iron_nugget", "ad_astra:steel_nugget")

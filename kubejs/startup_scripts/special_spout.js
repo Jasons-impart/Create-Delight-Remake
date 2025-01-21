@@ -104,7 +104,7 @@ CreateEvents.spoutHandler(e => {
                 item.getOrCreateTag()
                 if (item.hasTag("create_sa:fillable") && fluid.id == "minecraft:water")
                     return fillWater(fluid, simulate, item)
-                if (item.hasTag("create_sa:fuelable" && fluid.id != "minecraft:water"))
+                if (item.hasTag("create_sa:fuelable") && fluid.id != "minecraft:water")
                     return fillFuel(fluid, simulate, item)
             }
             return 0
