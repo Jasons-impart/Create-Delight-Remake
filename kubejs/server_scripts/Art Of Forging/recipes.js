@@ -17,7 +17,8 @@ ServerEvents.recipes(e => {
         "art_of_forging:rending_scissor_complete",
         "art_of_forging:mark_of_the_architect",
         "art_of_forging:enigmatic_construct",
-        "art_of_forging:sigil_of_eden"
+        "art_of_forging:sigil_of_eden",
+        "art_of_forging:life_fiber"
     ])
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;6,7,13,15],intricate:0b,key:"sword/katana/murasama_blade",material:2,ribbon:"c52323",schematics:["tetra:sword/katana/murasama_blade"]}]}}'),
