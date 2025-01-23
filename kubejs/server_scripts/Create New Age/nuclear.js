@@ -22,3 +22,9 @@ ServerEvents.recipes(e => {
     ])
     .id("create_new_age:thorium_multiplication")
 })
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("create_new_age:stops_radiation",
+        "mbd2:reactor",
+        "mbd2:reactor_vent")
+})

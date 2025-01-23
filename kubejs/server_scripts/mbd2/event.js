@@ -1,5 +1,3 @@
-MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
-    let blocks = ['create_new_age:reactor_glass', 'create_new_age:reactor_casing', 'mbd2:reactor_vent', 'mbd2:reactor']
 
     /**
      * 
@@ -13,13 +11,7 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
         if (age == 0)
             return -1
         let positions = [pos.above(), pos.below(), pos.north(), pos.south(), pos.east(), pos.west()]
-        let blockFlag = false
-        blocks.forEach(blockId => {
-            if (level.getBlock(pos).getId() == blockId) {
-                blockFlag = true
-            }
-        })
-        if (!blockFlag) {
+        if (!level.getBlock(pos).hasTag("create_new_age:stops_radiation")) {
             list.set(`${pos.x},${pos.y},${pos.z}`, age)
             positions.forEach(position => {
                 if (list.get(`${position.x},${position.y},${position.z}`) == null) {
@@ -31,23 +23,17 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
 
     /**
      * 
-     * @param {Internal.Level} level 
-     * @param {BlockPos} pos 
-     * @param {number} size 
-     * @param {Map<string, number>} list 
+     * @param {Internal.Level} level
+     * @param {BlockPos} pos
+     * @param {number} size
+     * @param {Map<string, number>} list
      * @returns {Map<string, number>}
      */
     function nuclearDiffusionByCount(level, pos, size, list) {
         if (list.size >= size)
             return
         let positions = [pos.above(), pos.below(), pos.north(), pos.south(), pos.east(), pos.west()]
-        let blockFlag = false
-        blocks.forEach(blockId => {
-            if (level.getBlock(pos).getId() == blockId) {
-                blockFlag = true
-            }
-        })
-        if (!blockFlag) {
+        if (!level.getBlock(pos).hasTag("create_new_age:stops_radiation")) {
             list.set(`${pos.x},${pos.y},${pos.z}`, age)
             positions.forEach(position => {
                 if (list.get(`${position.x},${position.y},${position.z}`) == null) {
@@ -56,6 +42,7 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
             })
         }
     }
+MBDMachineEvents.onTick("mbd2:reactor_rod", e => {
     const { level, pos, machineStateName } = e.event.machine
     if (machineStateName == "working") {
         /**
@@ -87,7 +74,7 @@ MBDMachineEvents.onTick("mbd2:reacter_rod", e => {
     }
 })
 
-MBDMachineEvents.onRemoved("mbd2:reacter_rod", e => {
+MBDMachineEvents.onRemoved("mbd2:reactor_rod", e => {
     
     const { level, pos, machineStateName } = e.event.machine
     if (machineStateName == "working" || machineStateName == "waiting") {
