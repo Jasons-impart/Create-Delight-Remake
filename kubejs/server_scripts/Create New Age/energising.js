@@ -9,7 +9,9 @@ ServerEvents.recipes(e => {
         "create_new_age:diamond_wire",
         "create_new_age:pressing/blank_circuit",
         "create_new_age:deploying/copper_circuit",
-        "create_new_age:energising/splash_water_bottle"
+        "create_new_age:energising/splash_water_bottle",
+        "create_new_age:reactor/reactor_heat_vent",
+        "create_new_age:reactor/reactor_rod"
     ])
     
     // 充能和激发互相适配
