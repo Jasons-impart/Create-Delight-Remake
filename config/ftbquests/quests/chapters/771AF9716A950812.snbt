@@ -144,27 +144,7 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
-			icon: {
-				Count: 1
-				id: "minecraft:player_head"
-				tag: {
-					SkullOwner: {
-						Id: [I;
-							-1960145443
-							-948351405
-							-2025608280
-							671325087
-						]
-						Name: "LuJiChi"
-						Properties: {
-							textures: [{
-								Signature: "qQmSx1BZLxVQDY9EVTIhepepmMzXcNmX5PZABEQbA7BiHZ1ilxy4mWiNqy3ciQMJBSwV5EzEIjLRbERlYFGcqEiJDmw4ufGUiYWRK/oXGurElKSTIXfLdsXJkW5dMIr+hjWQ4z8wnCu3Hsv0QwwaF9/NVyHBmYHE7Brx/MxCGicTK8yzzLggQUsCo71lUT9GCr9pKvWkUa2WITxOuBlN72rDyrlhd4gZDb/tNC4g/16ZhhWi8oTbN95nXe9AchgXBHkaQGS/0obbd7XwRa08yABUvZf18q67PLyHqkNlzxNIRrs/StOOqOuIzWpuX1NOjTdrbiZoALabY55cqs1Fmkj7VuZulpf8bBXaIKB28EQHBKaYB2YMjJoTzs22YU0wObMQJIs1Yq1wBGr2yMhSnWA8z+iyrtMhATf4n4NL3M8xed34hRvQP9WYGxCWMIPcKCWvPL6kxZ0a9PPy5cwgogz4AgUS/h14E/Qj1gVlZwnLsmLGjMe+NlXk/ug2IYvqQnwtBC4jHXqIsc3CM3FpXeLDYnh//5BaU3bHaM0E7Xq2sp2DqTfpVcBr0OZpC6KLhdeBOUpIScn7dTFhd8xDFc+fCxcS1Y5fQ6Cxtr3t5S9pXJ7N5UCa9Z+mHmHtQgT9Lpa3jlG+4gKkUDJmG3EoZlx0P1R0YQ0yMFvSvCxUU6E="
-								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTYzMjU4MjA0MSwKICAicHJvZmlsZUlkIiA6ICI4YjJhOGRkZGM3Nzk0ZTUzODc0M2FiYTgyODAzOWI5ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJMdUppQ2hpIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M3NmFhY2U1NWJiYjNiZjI1MjQzZWEwYzA5NjNhYTJlZjA1YWE2ZDRiZjRiMTU5ZTMyNDNmNDI0OGFjYjYwYjMiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NkOWQ4MmFiMTdmZDkyMDIyZGJkNGE4NmNkZTRjMzgyYTc1NDBlMTE3ZmFlN2I5YTI4NTM2NTg1MDVhODA2MjUiCiAgICB9CiAgfQp9"
-							}]
-						}
-					}
-				}
-			}
+			icon: "minecraft:cartography_table"
 			id: "428692AFFB20055B"
 			rewards: [{
 				id: "262C632976BB2F34"
@@ -179,8 +159,8 @@
 				type: "checkmark"
 			}]
 			title: "认领区块相关"
-			x: 2.9761904761904674d
-			y: 1.0714285714285623d
+			x: -3.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -240,7 +220,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM"]
+			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"
@@ -437,6 +417,44 @@
 					}
 					type: "item"
 				}
+				{
+					id: "799B4A84555FBF8E"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1636838176
+									1114391272
+									-1202169318
+									583422121
+								]
+								Name: "AzureCrab"
+								Properties: {
+									CustomSkinLoaderInfo: [
+										{
+											Value: "http://textures.minecraft.net/texture/2367068abcafaa719a14290261af6b77d1504bb6320478d7c7a39ca65de26ff"
+										}
+										{
+											Value: "default"
+										}
+										{
+											Value: "https://littleskin.cn/csl/textures/50daee1b9ed2aa85e260e9af3010f7f2bd078dfc40aec032f8f51fa438f69144"
+										}
+										{
+											Value: "null"
+										}
+									]
+									textures: [{
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzY0MTkxNzU1NSwKICAicHJvZmlsZUlkIiA6ICI5ZTZmZDRlMDQyNmM0MmU4Yjg1ODVhMWEyMmM2NTBhOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBenVyZUNyYWIiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM2NzA2OGFiY2FmYWE3MTlhMTQyOTAyNjFhZjZiNzdkMTUwNGJiNjMyMDQ3OGQ3YzdhMzljYTY1ZGUyNmZmIgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
 			]
 			shape: "pentagon"
 			size: 2.0d
@@ -447,7 +465,7 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: 5.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -678,8 +696,8 @@
 				title: "任务系统"
 				type: "questsadditions:time"
 			}]
-			x: -3.0714285714285694d
-			y: 1.0714285714285623d
+			x: 3.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -708,6 +726,51 @@
 				type: "checkmark"
 			}]
 			x: -3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["51C6C4C1530A4D3F"]
+			description: [
+				"特别感谢："
+				"CFPAOrg(cfpa.team)的模组翻译"
+				"XeKr(space.bilibili.com/5930630)的材质包"
+			]
+			icon: "minecraft:brick"
+			id: "6D88BDC3681A445F"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "感谢所有mc社区开发者，是你们的优秀作品构成了整合包的砖瓦"
+			tasks: [{
+				id: "294ED5BD3E8222C1"
+				title: "致谢"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"本整合包加入了sleep tight，晚上入睡的时候记得在床头插火把，不然0光环境下入睡会有怪物把你吓醒导致无法入睡哦。"
+				"多夜在同一张床上入睡会获得经验buff，鼓励大家尽可能在自家的床上美美入睡"
+			]
+			icon: "sleep_tight:night_bag"
+			id: "1D22CD4640CF708B"
+			rewards: [{
+				id: "3D453E490D7229BC"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "每每在家里的床上入睡，我总感觉到无比的安心"
+			tasks: [{
+				id: "7FE779185C94F65D"
+				title: "有道理"
+				type: "checkmark"
+			}]
+			title: "安然入睡"
+			x: 3.0d
 			y: -1.0d
 		}
 	]
