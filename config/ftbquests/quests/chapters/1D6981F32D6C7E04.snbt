@@ -2158,7 +2158,7 @@
 			tasks: [
 				{
 					consume_items: true
-					count: 32L
+					count: 8L
 					id: "464B36CA12B5D392"
 					item: "art_of_forging:shards_of_malice"
 					type: "item"
@@ -2166,7 +2166,7 @@
 				{
 					consume_items: true
 					id: "49B6C5C5DFD1F23B"
-					item: "alexscaves:pure_darkness"
+					item: "art_of_forging:fragment_of_eden"
 					type: "item"
 				}
 			]

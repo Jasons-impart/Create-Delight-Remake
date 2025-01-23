@@ -6,7 +6,7 @@
  * @param {number} value 
  */
 function UpdateRank(player, value) {
-    value = (GetPlayerDifficulty(player) + value) < 0 ? GetPlayerDifficulty(player) : value
+    value = (GetPlayerDifficulty(player) + value) < 0 ? -GetPlayerDifficulty(player) : value
     player.getServer().runCommandSilent(`/improvedmobs difficulty player ${player.username} add ${value}`)
     if (value < 0)
         player.tell(`难度降低了${-value}！`)
