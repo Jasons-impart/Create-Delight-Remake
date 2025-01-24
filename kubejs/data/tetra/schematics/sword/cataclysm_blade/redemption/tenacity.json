@@ -45,7 +45,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:void_worm_mandible"],
+                "items":[ "minecraft:totem_of_undying"],
                 "count": 1
             },
             "experienceCost": 15,

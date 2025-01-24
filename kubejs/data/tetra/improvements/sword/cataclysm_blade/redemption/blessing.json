@@ -2,6 +2,7 @@
     {
         "key": "blade/blessing",
         "level": 1,
+        "integrity": -1,
         "aspects": {
             "honed": 1
         },

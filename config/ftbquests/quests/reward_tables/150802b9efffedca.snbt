@@ -1,0 +1,18 @@
+{
+	id: "150802B9EFFFEDCA"
+	loot_size: 1
+	order_index: 18
+	rewards: [
+		{ count: 2, item: "dreadsteel:dreadsteel_ingot" }
+		{ count: 2, item: "art_of_forging:endsteel_ingot" }
+		{ count: 4, item: "iceandfire:dragonsteel_fire_ingot" }
+		{ count: 4, item: "iceandfire:dragonsteel_lightning_ingot" }
+		{ count: 4, item: "iceandfire:dragonsteel_ice_ingot" }
+		{ count: 8, item: "minecraft:netherite_ingot" }
+		{ item: "art_of_forging:dragon_soul" }
+		{ count: 4, item: "art_of_forging:fragment_of_eden" }
+		{ item: "art_of_forging:sigil_of_eden", weight: 0.2f }
+		{ item: "alexscaves:pure_darkness", weight: 0.2f }
+	]
+	title: "锻造大师奖励"
+}

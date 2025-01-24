@@ -2,7 +2,6 @@
     {
         "key": "blade/puncture_tier",
         "level": 1,
-        "integrity": -1,
         "effects": {
             "puncture": [8,4]
         }

@@ -54,6 +54,12 @@
 				}
 			}
 			id: "4178108D392476B9"
+			rewards: [{
+				count: 3
+				id: "46105229562095F2"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.5d
 			subtitle: "更高级的锤子等级见右侧的高级金属相关任务"
@@ -69,8 +75,9 @@
 		}
 		{
 			dependencies: ["73F6088E76969E13"]
+			description: [""]
 			id: "38CD78E43A6497DC"
-			subtitle: "在沉船或水下的溺尸遗迹中的箱子里可以找到"
+			subtitle: "在沉船或水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
 			tasks: [{
 				id: "41507FB3303D2212"
 				item: "art_of_forging:vobrite_crystal"
@@ -81,7 +88,14 @@
 		}
 		{
 			dependencies: ["38CD78E43A6497DC"]
+			description: ["我在锻造钢锭上安装了这种充满魔力的水晶，再为其充电便得到了这种质地坚韧的金属"]
 			id: "47ADAC6620C3FF87"
+			rewards: [{
+				count: 3
+				id: "5079660030621FF5"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "双头沃布里钢锤为七级锤"
@@ -99,7 +113,28 @@
 				"79324D33E24DFFB4"
 				"73F6088E76969E13"
 			]
+			description: [
+				"我将&e龙鳞、龙血和耐热金属&r混合在一起，在高温下搅拌，最终锻造出了带有龙之力的龙钢"
+				"龙钢蕴含着无比强大的龙之力，&e可以取代龙鳞在锻造中的位置并且不会被消耗，可以在锻造时节省一个龙鳞，但是需把耐热合金换成能耐更高温的锻造钢&r"
+			]
 			id: "63B03A277D459A65"
+			rewards: [
+				{
+					id: "20B238F56AC6FF8D"
+					item: "iceandfire:dragonsteel_fire_ingot"
+					type: "item"
+				}
+				{
+					id: "5823F1A9393BDD98"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					id: "629A1ADD49658201"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "双头龙钢锤为七级锤"
@@ -144,6 +179,11 @@
 			]
 			description: [""]
 			id: "691FF0ECF3FDC2ED"
+			rewards: [{
+				id: "49116D48A89919DF"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "双头终末钢锤为八级锤"
@@ -161,6 +201,11 @@
 			description: ["每当我踏足下界要塞，总能感受到一股浓烈的恶意迎面袭来，而其中最为强烈的，便来自那些全身漆黑的&e凋灵骷髅&r——一种被凋灵的恶魔之力所腐蚀的骷髅。据笔记记载，从它们身上可以提取并浓缩来自恶魔的恶意，最终凝结成“&e恶意碎片&r”。然而，这种饱含恶魔气息的结晶并非凡人能够轻易掌握，稍有不慎，便可能遭受反噬。对此我必须要格外注意。"]
 			hide_dependency_lines: true
 			id: "19C9240CC2FCED23"
+			rewards: [{
+				id: "3856DE96796B3E14"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
@@ -308,6 +353,11 @@
 			description: ["锻造师提到，不仅仅是这个世界存在锻造师，其他世界同样也有锻造大师的身影。许多异界探险者将他们的见闻汇编成书籍，也许我可以从中学习异界的知识，锻造出更强大的武器。&e商店&r里就有这些书籍出售。"]
 			hide_dependency_lines: true
 			id: "2B0342C9C0B57372"
+			rewards: [{
+				id: "053C9D22C67DFDD1"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			subtitle: "Lightman的商店的卷轴分类下出售"
@@ -321,7 +371,7 @@
 			y: 2.25d
 		}
 		{
-			dependencies: ["65AD134128B2610B"]
+			dependencies: ["73663A1DAA730035"]
 			description: ["我尝试将电流通入几种常见的金属，但它们的电阻显然过高，导致电流在极短时间内迅速衰减，远未达到超导效果。于是，我转而以&e琥珀金&r作为基底，将&e陨石溶液&r注入其中，并安装了一些&e精密的电子元件&r。经过反复调试，我成功打造出了一种近乎实现超导性能的材料。"]
 			id: "6534A8367009AD68"
 			tasks: [{
@@ -331,10 +381,10 @@
 			}]
 			title: "&3超导金属&r"
 			x: 0.0d
-			y: 8.0d
+			y: 6.0d
 		}
 		{
-			dependencies: ["6534A8367009AD68"]
+			dependencies: ["65AD134128B2610B"]
 			description: ["在超导金属的加持下，我成功锻造出了的&3村正之刃&r。这把武器拥有着极强的&e破甲&r能力，能够轻易削弱敌人的护甲防御。此外，它还具备极高的灵敏性，在突发遭遇战中可以&e迅速出鞘&r，成为反制敌人的利器。每一击都带着雷霆之势，让对手无从招架。"]
 			icon: {
 				Count: 1
@@ -359,6 +409,12 @@
 				}
 			}
 			id: "59AA40D0405EBE55"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "015EA96ED14FCE68"
+				table_id: 1515464272228904394L
+				type: "random"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "使用其他金属打造的村正之刃效果会很一般"
@@ -378,9 +434,9 @@
 				"73663A1DAA730035"
 			]
 			description: [
-				"我将三把武器随手放在一旁，翻阅着残破的恶魔典籍。忽然，一阵晕眩感席卷全身，脑海中仿佛跑马灯般闪现无数张牙舞爪的黑影，那些影子嘶吼着，挣扎着，仿佛下一秒就要将我彻底吞噬。"
+				"我将两把武器随手放在一旁，翻阅着残破的恶魔典籍。忽然，一阵晕眩感席卷全身，脑海中仿佛跑马灯般闪现无数张牙舞爪的黑影，那些影子嘶吼着，挣扎着，仿佛下一秒就要将我彻底吞噬。"
 				""
-				"等我回过神来，眼前的恶魔笔记竟已焕然一新。那本原本残缺不堪的书籍变得完好如初，封面上浮现出四个醒目的大字——&e恶魔典籍&r。"
+				"等我回过神来，眼前的恶魔笔记竟已焕然一新。那本原本残缺不堪的书籍变得完好如初，封面上浮现出四个醒目的大字——&b恶魔典籍&r。"
 				""
 				"我心中一震，颤抖着翻开书页。原本模糊不清的字迹，如今变得清晰而可读，而那些空白的几页，也被密密麻麻的文字填满。文字间似有某种异样的力量，让我不由自主地屏住呼吸。在那片密文的开头，赫然写着三个醒目的大字——&b~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 				"&r"
@@ -391,17 +447,24 @@
 				"&b~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&r"
 			]
 			id: "311424590CC23510"
-			rewards: [{
-				auto: "invisible"
-				command: "/effect give @s minecraft:nausea 15 5 true"
-				elevate_perms: true
-				exclude_from_claim_all: true
-				id: "403B73FE872F31BB"
-				team_reward: false
-				type: "command"
-			}]
+			rewards: [
+				{
+					auto: "invisible"
+					command: "/effect give @s minecraft:nausea 15 5 true"
+					elevate_perms: true
+					exclude_from_claim_all: true
+					id: "403B73FE872F31BB"
+					team_reward: false
+					type: "command"
+				}
+				{
+					id: "2FA467B836B90A63"
+					item: "createdelight:demonic_codex"
+					type: "item"
+				}
+			]
 			tasks: [{
-				id: "3FF4A9F64FE68410"
+				id: "45A77FDA3E091051"
 				type: "checkmark"
 			}]
 			title: "&b恶魔典籍&r"
@@ -434,6 +497,12 @@
 				}
 			}
 			id: "74CBB9E36AC536AA"
+			rewards: [{
+				count: 2
+				id: "16975B2D5A87DC14"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3211079DF3B97683"
 				item: {
@@ -469,11 +538,19 @@
 			description: ["在遗迹中翻箱倒柜的时候我发现了一种神秘的罐子，上面刻着一些我看不懂的编码，我也不知道它们的用途是什么。但随着我完成这三把武器的打造，我的锻造技艺进一步精进。再次翻看这些编码时，我顿感豁然开朗，似乎终于触及了如何打造对Boss生物的终极杀器——&5锻造师之权&r的奥秘。"]
 			icon: "art_of_forging:mark_of_the_architect"
 			id: "77A9515AA98A2567"
-			rewards: [{
-				id: "7B34D9A8C0D9A68A"
-				item: "art_of_forging:mark_of_the_architect"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "7B34D9A8C0D9A68A"
+					item: "art_of_forging:mark_of_the_architect"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "0CD0A198936423D5"
+					item: "art_of_forging:encoded_canister"
+					type: "item"
+				}
+			]
 			tasks: [{
 				id: "4740D1077991AF05"
 				item: "art_of_forging:encoded_canister"
@@ -491,6 +568,12 @@
 			description: ["我尝试将远古剑刃与&e恶意碎片和凋灵骷髅头&r——我能想到的最邪恶的两种物品融合在剑刃上，再将其浸泡在&e恶意溶液&r中。最终我成功了，&e远古剑刃重新散发出了浓烈的邪恶气息&r，但这股来自远古的恶意仿佛要将我直接吞噬。"]
 			icon: "art_of_forging:demonic_blade"
 			id: "7259774FF36EFCA6"
+			rewards: [{
+				count: 2
+				id: "133A74B1A2C3B43A"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			subtitle: "三把武器分别使用 剑、斧、锹 进行改造"
 			tasks: [{
 				id: "4C1F5DF05E48FC4B"
@@ -534,6 +617,12 @@
 				}
 			}
 			id: "6078B3E3ACE67D7E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0832F018DB835F69"
+				table_id: 1515464272228904394L
+				type: "random"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -581,6 +670,12 @@
 				}
 			}
 			id: "76D096AB589DA308"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "396E44BECD76D662"
+				table_id: 1515464272228904394L
+				type: "random"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "遗弃者的召唤方式见《神奇洞穴》章节"
@@ -598,6 +693,11 @@
 			description: ["杀死末影龙后，我在&e它死亡的地方&r发现了&e两根龙筋&r，这种纤维拥有极高的韧性，质地独特，想必在锻造和强化装备方面能够发挥出多种用途。"]
 			hide_dependency_lines: true
 			id: "22EB3CAE02880E7F"
+			rewards: [{
+				id: "2100B7AED29479E8"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			subtitle: "裂空剪的魔改暂未完成，敬请期待"
@@ -630,7 +730,6 @@
 			id: "1395569F70AEFEE2"
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "追忆之弓的魔改暂未完成，敬请期待"
 			tasks: [{
 				id: "5BBFAA1C222297B5"
 				item: "art_of_forging:nano_insectoid"
@@ -645,6 +744,11 @@
 			description: ["远古城市中埋藏着许多在锻造时能够大放异彩的材料，我打算前往收集一些。"]
 			hide_dependency_lines: true
 			id: "033C857187DC6731"
+			rewards: [{
+				id: "120F815028425A65"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
@@ -704,6 +808,7 @@
 			id: "33BC499F630A44DB"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "追忆之弓的魔改暂未完成，敬请期待"
 			tasks: [{
 				advancement: "tetra:art_of_forging/remembrance_upgrade"
 				criterion: ""
@@ -720,7 +825,7 @@
 				"0D248D4F04552839"
 				"37B4ABA102143DA3"
 			]
-			description: ["然而我并不满足于此。尽管没有任何证据表明传说中的追忆之弓确实存在，我仍然决定借助黑暗宝珠的力量结合现有的弓锻造技巧，寻找追忆之弓的锻造方法。"]
+			description: ["然而我并不满足于此。尽管没有任何证据表明传说中的追忆之弓确实存在，我仍然决定借助&e黑暗宝珠&r的力量结合&e现有的弓锻造技巧&r，寻找追忆之弓的锻造方法。"]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -815,6 +920,7 @@
 		{
 			dependencies: ["47ADAC6620C3FF87"]
 			id: "740D759F98D9A8CF"
+			subtitle: "使用玻璃瓶对着末影龙吐出的龙息右键即可获得"
 			tasks: [{
 				id: "54A6FCF5194E2AFC"
 				item: "minecraft:dragon_breath"
@@ -831,6 +937,11 @@
 			]
 			description: [""]
 			id: "19419665C1CD0351"
+			rewards: [{
+				id: "21BDAED95057A629"
+				item: "dreadsteel:dreadsteel_ingot"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "双头悚怖钢锤为八级锤"
@@ -873,6 +984,11 @@
 			description: ["我在遗迹中的多个&e锻造容器&r中翻找，意外发现了一本由锻造师留下的书籍，书中详细记录了名为“&5裁决剑&r”的武器锻造方法。"]
 			hide_dependency_lines: true
 			id: "443E4E48D9EB4F40"
+			rewards: [{
+				id: "24929C31CA40F077"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			tasks: [{
@@ -888,6 +1004,12 @@
 			dependencies: ["2B0342C9C0B57372"]
 			description: ["传说东瀛异界的扶桑国的铁匠在直刀的基础上优化改良出了曲刃刀（太刀），后来铁匠们又完善了折叠锻造技术，使得刀刃更加锐利且富有韧性。随着战斗技术和战场环境的变化，太刀逐渐演变为武士刀，刀刃弯曲度更小，更加适合近身作战时快速出刀。"]
 			id: "73663A1DAA730035"
+			rewards: [{
+				count: 2
+				id: "63F58B91D2E273DE"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "08CA947BA75EA48F"
 				item: {
@@ -933,7 +1055,7 @@
 				}
 				type: "item"
 			}]
-			x: 17.0d
+			x: 16.0d
 			y: 2.0d
 		}
 		{
@@ -960,6 +1082,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
+			description: ["我尝试将电流通入几种常见的金属，但它们的电阻显然过高，导致电流在极短时间内迅速衰减，远未达到超导效果。于是，我转而以&e琥珀金&r作为基底，将&e陨石溶液&r注入其中，并安装了一些&e精密的电子元件&r。经过反复调试，我成功打造出了一种近乎实现超导性能的材料。"]
 			hide_dependency_lines: true
 			id: "4BA4050F5446B8E3"
 			shape: "hexagon"
@@ -974,7 +1097,7 @@
 		}
 		{
 			dependencies: ["137C9220F86DD557"]
-			description: [""]
+			description: ["魔改暂未完成，敬请期待"]
 			icon: "art_of_forging:demonic_flail"
 			id: "29F86BBDE05E7D14"
 			subtitle: "使用单头工具改造"
@@ -989,7 +1112,7 @@
 		}
 		{
 			dependencies: ["137C9220F86DD557"]
-			description: [""]
+			description: ["魔改暂未完成，敬请期待"]
 			icon: "art_of_forging:demonic_axe"
 			id: "61CAC1C2E3248C4A"
 			subtitle: "使用单头工具改造"
@@ -1024,9 +1147,14 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["73663A1DAA730035"]
+			dependencies: ["6534A8367009AD68"]
 			description: ["来自未来异界的探险者的笔记记载着未来的一种能量剑，剑刃使用&e超导金属&r打造，电流可以以极低的损耗再剑刃上循环流转。充能的剑刃可以轻松切开任何敌人的盔甲。"]
 			id: "65AD134128B2610B"
+			rewards: [{
+				id: "1263C3376E487113"
+				item: "createdelightcore:emerald_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2A5DD38E980815A7"
 				item: {
@@ -1055,41 +1183,78 @@
 			}]
 			title: "&3充能剑刃&r"
 			x: 0.0d
-			y: 6.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["311424590CC23510"]
 			description: ["恶魔典籍中详细记载了大量与另一个异界——鬼影世界相关的锻造知识。其中提到了一把无比锋利的传说武器，名为千夜寒。我或许可以尝试借助&e恶魔之力&r，将一把极其锋利的&e武士刀刃&r进一步强化，最终将其锻造成传说中的&b千夜寒&r，让其锋芒直指深渊！"]
-			id: "07FC717035C3584B"
-			tasks: [{
-				id: "7C5A873F3845C3F8"
-				item: {
-					Count: 1
-					id: "tetra:scroll_rolled"
-					tag: {
-						BlockEntityTag: {
-							data: [{
-								details: "otherworldly"
-								glyphs: [I;
-									7
-									8
-									14
-									13
-								]
-								intricate: 1b
-								key: "sword/thousand_cold_nights"
-								material: 2
-								ribbon: "5c7c80"
-								schematics: [
-									"tetra:sword/katana/murasama_blade"
-									"tetra:sword/thousand_cold_nights"
-								]
-							}]
-						}
+			icon: {
+				Count: 1
+				id: "tetra:scroll_rolled"
+				tag: {
+					BlockEntityTag: {
+						data: [{
+							details: "otherworldly"
+							glyphs: [I;
+								7
+								8
+								14
+								13
+							]
+							intricate: 1b
+							key: "sword/thousand_cold_nights"
+							material: 2
+							ribbon: "5c7c80"
+							schematics: [
+								"tetra:sword/katana/murasama_blade"
+								"tetra:sword/thousand_cold_nights"
+							]
+						}]
 					}
 				}
+			}
+			id: "07FC717035C3584B"
+			rewards: [{
+				id: "49A9DCBB3630895C"
+				item: "createdelightcore:emerald_coin"
 				type: "item"
 			}]
+			tasks: [
+				{
+					id: "7C5A873F3845C3F8"
+					item: {
+						Count: 1
+						id: "tetra:scroll_rolled"
+						tag: {
+							BlockEntityTag: {
+								data: [{
+									details: "otherworldly"
+									glyphs: [I;
+										7
+										8
+										14
+										13
+									]
+									intricate: 1b
+									key: "sword/thousand_cold_nights"
+									material: 2
+									ribbon: "5c7c80"
+									schematics: [
+										"tetra:sword/katana/murasama_blade"
+										"tetra:sword/thousand_cold_nights"
+									]
+								}]
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0C0CEBC2A3898329"
+					item: "createdelight:devil_eye"
+					type: "item"
+				}
+			]
 			title: "&b千夜寒卷轴&r"
 			x: 2.0d
 			y: 8.0d
@@ -1123,6 +1288,11 @@
 				}
 			}
 			id: "4D83FD5A7BCBFADC"
+			rewards: [{
+				id: "297CF3CA51B44C68"
+				item: "createdelightcore:emerald_coin"
+				type: "item"
+			}]
 			subtitle: "锻造师之权原理图由裁决剑原理图和锻造师的遗稿合成"
 			tasks: [
 				{
@@ -1221,6 +1391,11 @@
 			description: ["要打造裁决剑，首先需要获取其核心材料——&e龙之灵魂&r。这种材料可以为剑刃附上强大的魔力，使其对Boss生物造成巨额伤害。我得尽快踏上屠龙之路了。"]
 			icon: "art_of_forging:dragon_soul"
 			id: "11701B8C1482DEB2"
+			rewards: [{
+				id: "1F14AE63C9C67DE3"
+				type: "xp"
+				xp: 500
+			}]
 			subtitle: "击杀末影龙大概率会掉落一个。"
 			tasks: [{
 				id: "7B35A82955162B4C"
@@ -1234,6 +1409,12 @@
 			dependencies: ["4178108D392476B9"]
 			hide_dependency_lines: true
 			id: "73F6088E76969E13"
+			rewards: [{
+				count: 3
+				id: "47A359E2BCD70480"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "双头锻造钢锤为七级锤"
@@ -1377,10 +1558,10 @@
 		{
 			dependencies: ["63B03A277D459A65"]
 			id: "1ABE35B8CAAB3F83"
-			subtitle: "击杀异寂空谷的窥心者获得，详见《神奇洞穴》章节"
+			subtitle: "使用带有纳米融合效果的武器击杀凋灵骷髅获得，直接击杀凋零也可获得"
 			tasks: [{
 				id: "45F7301C7F8A7598"
-				item: "alexscaves:occult_gem"
+				item: "art_of_forging:fragment_of_eden"
 				type: "item"
 			}]
 			x: 10.5d
@@ -1425,7 +1606,7 @@
 				title: "陨石溶液"
 				type: "checkmark"
 			}]
-			x: 16.0d
+			x: 17.0d
 			y: 2.0d
 		}
 		{
@@ -1435,7 +1616,13 @@
 				"6EBD79B87E10DA7F"
 				"7779E241F787B373"
 			]
+			description: ["村正之刃的专属金属"]
 			id: "5C1B7AAA928BCA00"
+			rewards: [{
+				id: "62BDDFE988F29066"
+				type: "xp_levels"
+				xp_levels: 15
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
@@ -1470,6 +1657,7 @@
 			y: 0.5d
 		}
 		{
+			description: ["现世最为强力的两把弓，我得好好研究一下"]
 			id: "37B4ABA102143DA3"
 			tasks: [
 				{
@@ -1505,6 +1693,11 @@
 			]
 			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤"]
 			id: "268643C6AE454B9F"
+			rewards: [{
+				id: "119CD0F8A13EBE0B"
+				item: "createdelightcore:emerald_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6F0D1285271C87FA"
 				item: "alexscaves:pure_darkness"

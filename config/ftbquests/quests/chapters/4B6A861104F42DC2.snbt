@@ -345,6 +345,17 @@
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中，我还发现了一些酷似电池的物品。这应该就是笔记中提到的热电池，只需将它们&e安装在锻造锤上&r，便能为其提供能量。"]
 			id: "7D85F4D95B6CC9FD"
+			rewards: [{
+				id: "2D6331C9515FDB39"
+				item: {
+					Count: 1
+					id: "tetra:thermal_cell"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "12374E522C8E74EB"
 				item: {
