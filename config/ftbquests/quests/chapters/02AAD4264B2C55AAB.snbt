@@ -446,6 +446,7 @@
 				""
 				"&b~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&r"
 			]
+			icon: "createdelight:demonic_codex"
 			id: "311424590CC23510"
 			rewards: [
 				{

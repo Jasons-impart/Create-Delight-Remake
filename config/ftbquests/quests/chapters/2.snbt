@@ -218,6 +218,8 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 1.5d
 			subtitle: "铿！铿！铿！"
 			tasks: [{
 				id: "14A8664EEEAA4C30"
@@ -261,8 +263,8 @@
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: 10.533333333333339d
-			y: 5.009523809523792d
+			x: 10.5d
+			y: 5.25d
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
@@ -671,10 +673,8 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"28CB30AB88780BC7"
-				"610ED0789BAF7EFC"
-			]
+			dependencies: ["610ED0789BAF7EFC"]
+			hide_dependency_lines: false
 			hide_until_deps_visible: true
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
@@ -690,14 +690,11 @@
 				type: "item"
 			}]
 			title: "&e汽笛轰鸣！"
-			x: 5.5333333333333385d
-			y: 5.009523809523799d
+			x: 15.75d
+			y: -3.0d
 		}
 		{
-			dependencies: [
-				"621E3093612F5D2C"
-				"1CED61E7F780F38C"
-			]
+			dependencies: ["510B2EE25982FD73"]
 			id: "4492593A688BA447"
 			rewards: [{
 				count: 5
@@ -705,21 +702,13 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			tasks: [
-				{
-					id: "378369DC01AD9012"
-					item: "createaddition:rolling_mill"
-					type: "item"
-				}
-				{
-					id: "0853123B927D34DA"
-					item: "vintageimprovements:spring_coiling_machine"
-					type: "item"
-				}
-			]
-			title: "制造弹簧"
-			x: 13.5d
-			y: 0.0d
+			tasks: [{
+				id: "0853123B927D34DA"
+				item: "vintageimprovements:spring_coiling_machine"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["621E3093612F5D2C"]
@@ -759,8 +748,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["4492593A688BA447"]
-			hide_dependent_lines: true
+			dependencies: [
+				"4492593A688BA447"
+				"4BA2635FA5EA807D"
+			]
 			id: "610ED0789BAF7EFC"
 			rewards: [{
 				count: 5
@@ -781,11 +772,14 @@
 				type: "item"
 			}]
 			title: "高强度弹簧"
-			x: 13.5d
-			y: -2.0d
+			x: 14.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["4492593A688BA447"]
+			dependencies: [
+				"4492593A688BA447"
+				"4BA2635FA5EA807D"
+			]
 			id: "3968AC36E0517F5B"
 			rewards: [{
 				id: "3A9404C2A34B7EA5"
@@ -805,11 +799,14 @@
 				type: "item"
 			}]
 			title: "低强度弹簧"
-			x: 12.5d
-			y: -1.0d
+			x: 14.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["4492593A688BA447"]
+			dependencies: [
+				"4492593A688BA447"
+				"4BA2635FA5EA807D"
+			]
 			id: "4CC4E893A6950B0F"
 			rewards: [{
 				id: "4A13B8D9064AC979"
@@ -829,8 +826,8 @@
 				type: "item"
 			}]
 			title: "超高强度弹簧"
-			x: 14.5d
-			y: -1.0d
+			x: 14.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -875,7 +872,7 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
+			x: 7.0d
 			y: -2.0d
 		}
 		{
@@ -900,7 +897,7 @@
 				}
 			]
 			x: 4.0d
-			y: -3.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -923,8 +920,8 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
-			y: -4.0d
+			x: 4.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -935,6 +932,9 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "传动的神"
 			tasks: [
 				{
 					id: "081D88940979F741"
@@ -947,8 +947,8 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
-			y: -4.0d
+			x: 5.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -976,8 +976,8 @@
 					type: "item"
 				}
 			]
-			x: 7.0d
-			y: -3.0d
+			x: 6.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -1001,7 +1001,7 @@
 				}
 			]
 			x: 7.0d
-			y: -2.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -1029,7 +1029,7 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
+			x: 4.5d
 			y: -4.0d
 		}
 		{
@@ -1108,6 +1108,38 @@
 			}]
 			x: -1.0d
 			y: -3.5d
+		}
+		{
+			dependencies: ["4BA2635FA5EA807D"]
+			dependency_requirement: "one_completed"
+			id: "395CE84DC5201E94"
+			subtitle: "可是，为什么铜线不算电线？"
+			tasks: [{
+				id: "2B63CF0E1224CAD5"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:wires/electric"
+					}
+				}
+				title: "电线"
+				type: "item"
+			}]
+			title: "电线"
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["621E3093612F5D2C"]
+			id: "4BA2635FA5EA807D"
+			tasks: [{
+				id: "2EFD1A38D1D357FE"
+				item: "createaddition:rolling_mill"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 0.0d
 		}
 	]
 	title: "&2初级工程师"
