@@ -11,9 +11,9 @@
 	quests: [
 		{
 			dependencies: [
-				"3CC5C997C5AC7D30"
-				"040CED5705ED7E24"
 				"64E5E20F279E1544"
+				"450B37F01A318678"
+				"2D588A416405B36C"
 			]
 			id: "0E515BE9EA2A0B2F"
 			rewards: [{
@@ -50,7 +50,7 @@
 				item: "createbigcannons:cast_iron_ingot"
 				type: "item"
 			}]
-			x: -5.25d
+			x: -5.5d
 			y: 0.5d
 		}
 		{
@@ -79,8 +79,8 @@
 					type: "item"
 				}
 			]
-			x: -6.0d
-			y: -1.0d
+			x: -3.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -96,8 +96,8 @@
 				item: "createmetallurgy:casting_basin"
 				type: "item"
 			}]
-			x: -4.5d
-			y: -1.0d
+			x: -3.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -121,8 +121,8 @@
 					type: "item"
 				}
 			]
-			x: -3.5d
-			y: 0.5d
+			x: -5.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["553925D5AA9E0050"]
@@ -138,7 +138,7 @@
 				item: "create:copper_casing"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -6.0d
 			y: 3.5d
 		}
 		{
@@ -156,7 +156,7 @@
 				item: "create:spout"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -4.5d
 			y: 3.5d
 		}
 		{
@@ -182,7 +182,7 @@
 				}
 			]
 			title: "流体运输"
-			x: -8.0d
+			x: -9.5d
 			y: 3.5d
 		}
 		{
@@ -200,7 +200,7 @@
 				item: "create:fluid_tank"
 				type: "item"
 			}]
-			x: -6.5d
+			x: -7.5d
 			y: 5.0d
 		}
 		{
@@ -217,7 +217,7 @@
 				item: "create:item_drain"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -6.0d
 			y: 5.0d
 		}
 		{
@@ -235,7 +235,7 @@
 				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
-			x: -6.5d
+			x: -7.5d
 			y: 3.5d
 		}
 		{
@@ -287,11 +287,11 @@
 				type: "item"
 			}]
 			title: "黄铜机械"
-			x: -1.952380952380956d
-			y: 5.238095238095241d
+			x: -2.0d
+			y: 4.5d
 		}
 		{
-			dependencies: ["3E3B411612B17907"]
+			dependencies: ["2CBBADBE62382C1B"]
 			hide_until_deps_visible: true
 			id: "3BAC2E9A7359CF70"
 			rewards: [{
@@ -300,24 +300,28 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			size: 2.0d
 			subtitle: "超大合成！"
 			tasks: [{
 				id: "5C4595D491E8C1EA"
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: -3.0d
-			y: 6.5d
+			x: -2.0d
+			y: 11.0d
 		}
 		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			hide_dependency_lines: false
 			id: "28B3247AF854504D"
+			size: 2.0d
 			subtitle: "不要把宝贝丢进去了"
 			tasks: [{
 				id: "12D220D8F367FD29"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 2.0d
 			y: -2.5d
 		}
 		{
@@ -335,8 +339,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 8.0d
+			x: -0.5d
+			y: 11.0d
 		}
 		{
 			dependencies: ["3E3B411612B17907"]
@@ -354,8 +358,8 @@
 				item: "create:brass_hand"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 6.5d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["524FCF85B06F1CE0"]
@@ -372,15 +376,11 @@
 				item: "create:deployer"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 8.0d
+			x: -2.0d
+			y: 7.5d
 		}
 		{
-			dependencies: [
-				"524FCF85B06F1CE0"
-				"575185F2DB0AD44C"
-				"3BAC2E9A7359CF70"
-			]
+			dependencies: ["575185F2DB0AD44C"]
 			id: "7E36D7C58C06D08B"
 			shape: "rsquare"
 			size: 1.0d
@@ -396,11 +396,15 @@
 				}
 				type: "item"
 			}]
-			x: -1.9880952380952408d
-			y: 7.421428571428571d
+			x: -6.0d
+			y: 11.0d
 		}
 		{
-			dependencies: ["13743FB52F43BE38"]
+			dependencies: [
+				"13743FB52F43BE38"
+				"040CED5705ED7E24"
+				"395CE84DC5201E94"
+			]
 			id: "2CBBADBE62382C1B"
 			rewards: [{
 				id: "0F9BBFA37C52A031"
@@ -413,8 +417,8 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 8.5d
+			x: -2.0d
+			y: 9.0d
 		}
 		{
 			id: "7AC63AC5921DD7F0"
@@ -436,7 +440,10 @@
 			y: 5.25d
 		}
 		{
-			dependencies: ["13743FB52F43BE38"]
+			dependencies: [
+				"13743FB52F43BE38"
+				"610ED0789BAF7EFC"
+			]
 			id: "575185F2DB0AD44C"
 			rewards: [{
 				id: "2428B7E60526AAB1"
@@ -450,8 +457,8 @@
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 9.0d
+			x: -4.0d
+			y: 7.5d
 		}
 		{
 			dependencies: [
@@ -471,8 +478,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: -3.0d
-			y: 8.0d
+			x: -4.0d
+			y: 11.0d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -489,8 +496,8 @@
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
-			x: -3.0d
-			y: 10.0d
+			x: -4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -501,14 +508,15 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			size: 1.5d
 			subtitle: "QQ群的答案！"
 			tasks: [{
 				id: "2BB79617657D47A1"
 				item: "create:rotation_speed_controller"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 10.5d
+			x: -5.75d
+			y: 7.5d
 		}
 		{
 			id: "6275BEBAC1FD7652"
@@ -520,8 +528,8 @@
 				type: "advancement"
 			}]
 			title: "黑曜石"
-			x: 1.5d
-			y: -2.5d
+			x: 1.0d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -587,7 +595,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["2CBBADBE62382C1B"]
+			dependencies: ["3BAC2E9A7359CF70"]
 			id: "0A04D9A2087C0960"
 			rewards: [{
 				count: 3
@@ -601,8 +609,8 @@
 				item: "vintageimprovements:laser_item"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 9.5d
+			x: -2.0d
+			y: 13.0d
 		}
 		{
 			dependencies: [
@@ -610,6 +618,7 @@
 				"0A04D9A2087C0960"
 			]
 			id: "18051C145E36D885"
+			invisible: true
 			rewards: [{
 				count: 3
 				id: "5CA1C6AB5EAC7B77"
@@ -622,8 +631,8 @@
 				item: "vintageimprovements:laser"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 10.0d
+			x: -0.5d
+			y: 13.0d
 		}
 		{
 			dependencies: [
@@ -1145,7 +1154,7 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["35B43C124186578F"]
@@ -1185,7 +1194,7 @@
 			]
 			title: "鼓风机触媒们"
 			x: -2.0d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
 			id: "6C17235C107747E6"
@@ -1214,8 +1223,8 @@
 				item: "create:zinc_ingot"
 				type: "item"
 			}]
-			x: -4.511904761904773d
-			y: 2.028571428571432d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
