@@ -149,7 +149,10 @@
 		}
 		{
 			dependencies: ["34C9A7E928820147"]
-			description: ["&d下界合金等级&r之前的钱包可于交易市场中购买，&e下界之星等级&r可由&d下界合金钱包&r合成而来"]
+			description: [
+				"&d下界合金等级&r之前的钱包可于交易市场中购买，&e下界之星等级&r或&e龙息等级&r可由&d下界合金钱包&r合成而来"
+				"&4注意！！！&r钱包在市场中兑换前一定要&4提前清空&r，否则将会丢失内部&4&l全部货币！！！"
+			]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"
@@ -646,7 +649,7 @@
 		}
 		{
 			dependencies: ["34C9A7E928820147"]
-			icon: "minecraft:gold_block"
+			icon: "lightmanscurrency:tax_block"
 			id: "5784CE8128510E60"
 			rewards: [{
 				id: "145272AD066C71A7"
@@ -663,6 +666,19 @@
 			}]
 			x: 3.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "313D6FA60323627E"
+			subtitle: "可以自由设置税收比例（最高99%），领地内商家也可以选择接受的税收上线，所以最好还是商量好再设置比例"
+			tasks: [{
+				id: "408CD16A3A019B00"
+				item: "lightmanscurrency:tax_block"
+				type: "item"
+			}]
+			title: "禁止苛税！"
+			x: 0.0d
+			y: -8.0d
 		}
 	]
 	title: "&e玩转经济！"

@@ -663,16 +663,23 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"整合包添加了难度系统。难度系统有自己一套独立的计算方式："
+				"1.你对于整合包探索的越深，击杀的怪物越多，难度就会越高。"
+				"2.当你击杀了一定数量的怪物或者进入新的维度，难度就会提升。具体的数值请在右侧查看。"
+				"3.以及每次死亡后难度都会下降一定的百分比，且死亡时难度越高百分比越低。"
+				"&etips:如果要查看难度可以使用/improvedmob指令"
+			]
+			icon: "art_of_forging:shards_of_malice"
 			id: "28A38E3B4EE9EFEC"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "部分特定食物可以增加血量上限，具体食物详见&e食物手册"
+			subtitle: "{ \"text\": \"难度索引\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1D6981F32D6C7E04\" } }"
 			tasks: [{
-				id: "508ED918A1675176"
-				item: "solcarrot:food_book"
-				type: "item"
+				id: "3771E3B5CEC979A2"
+				type: "checkmark"
 			}]
-			title: "小tips"
+			title: "难度系统"
 			x: 5.0d
 			y: 0.0d
 		}
@@ -731,15 +738,24 @@
 		{
 			dependencies: ["51C6C4C1530A4D3F"]
 			description: [
-				"特别感谢："
+				"特别鸣谢(排名不分先后)："
 				"CFPAOrg(cfpa.team)的模组翻译"
 				"XeKr(space.bilibili.com/5930630)的材质包"
+				"Qi-Month(https://github.com/Qi-Month)提供的部分代码"
+				"史莱姆li(https://b23.tv/1gjok8E)提供的工业平台的代码及其贴图"
+				"以及内测群中帮助我们内测的各位同学们的测试bug以及提出意见"
 			]
 			icon: "minecraft:brick"
 			id: "6D88BDC3681A445F"
+			rewards: [{
+				id: "6FE2492283ED6A85"
+				item: "minecraft:enchanted_golden_apple"
+				title: "你们每个人都值得一个附魔金苹果！"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "感谢所有mc社区开发者，是你们的优秀作品构成了整合包的砖瓦"
+			subtitle: "感谢所有mc社区开发者和玩家们，是你们的优秀作品构成了整合包的砖瓦"
 			tasks: [{
 				id: "294ED5BD3E8222C1"
 				title: "致谢"

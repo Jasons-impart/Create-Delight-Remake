@@ -3,10 +3,10 @@
 	default_quest_shape: "circle"
 	default_repeatable_quest: true
 	filename: "1D6981F32D6C7E04"
-	group: "0E7AEC0D0D9C1B1C"
+	group: "445171CC29E98940"
 	icon: "alexscaves:pure_darkness"
 	id: "1D6981F32D6C7E04"
-	order_index: 3
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -2119,22 +2119,6 @@
 			}]
 			x: 2.5d
 			y: 12.5d
-		}
-		{
-			can_repeat: false
-			description: [
-				"整合包添加了improvedmob这个模组，它是用于提升难度的。不过我们没有使用其难度计算方式，而是自定义了一套难度的增长方式。"
-				"简单来说就是：你对于整合包探索的越深，击杀的怪物越多，难度就会越高。当你击杀了一定数量的怪物或者进入新的维度，难度就会提升。具体的数值请在右侧查看。"
-				"以及每次死亡后难度都会下降一定的百分比，且死亡时难度越高百分比越低。如果要查看难度可以使用/improvedmob指令。"
-			]
-			id: "75B48D0D0596B108"
-			tasks: [{
-				id: "6D9A87FA87869534"
-				title: "请读我"
-				type: "checkmark"
-			}]
-			x: -2.0d
-			y: -1.5d
 		}
 		{
 			can_repeat: false

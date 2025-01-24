@@ -6,7 +6,7 @@
 	group: "14CFC96B5B37F10B"
 	icon: "ae2:controller"
 	id: "274BEE49DE9A54AB"
-	order_index: 3
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -2025,10 +2025,11 @@
 		}
 		{
 			dependencies: ["7AF08EA4FB3D9A15"]
+			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
 			icon: "create:brass_hand"
 			id: "6345035A4DB1C6F4"
 			size: 2.0d
-			subtitle: "使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"
+			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
 			tasks: [{
 				id: "0A4287875D19DDD9"
 				title: "使用机械动力吧"
