@@ -204,7 +204,9 @@
 			id: "36C9F799E0135534"
 			tasks: [{
 				entity: "iceandfire:cockatrice"
+				icon: "minecraft:spawner"
 				id: "0CF304DA0C1B4795"
+				title: "Kill：x1 鸡蛇"
 				type: "kill"
 				value: 1L
 			}]
@@ -430,8 +432,10 @@
 			tasks: [{
 				id: "5FD95F53CFAA4342"
 				structure: "idas:iceandfire/dread_citadel"
+				title: "找寻：悚陵"
 				type: "structure"
 			}]
+			title: "漆黑的陵墓"
 			x: 1.5d
 			y: 4.5d
 		}
@@ -456,8 +460,10 @@
 			tasks: [{
 				id: "5C92E6CBAAEE44F1"
 				structure: "idas:labyrinth"
+				title: "找寻：美杜莎神庙"
 				type: "structure"
 			}]
+			title: "未知的神殿"
 			x: -0.5d
 			y: 4.5d
 		}
@@ -939,9 +945,11 @@
 				id: "5A3F12393815BC64"
 				observe_type: 0
 				timer: 0L
+				title: "观察：悚木锁孔"
 				to_observe: "iceandfire:dreadwood_planks_lock"
 				type: "observation"
 			}]
+			title: "凄冷的大门"
 			x: 1.5d
 			y: 6.5d
 		}
@@ -1321,6 +1329,7 @@
 		{
 			dependencies: ["46059198877920C4"]
 			id: "1E7A7D06ACE02244"
+			subtitle: "真是令人不寒而栗"
 			tasks: [{
 				id: "0BDB223D2E7CA061"
 				item: "iceandfire:dread_shard"

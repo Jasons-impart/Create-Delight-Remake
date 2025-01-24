@@ -1,0 +1,131 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "7404AD370631C60C"
+	group: "609578D9E02B974F"
+	id: "7404AD370631C60C"
+	images: [
+		{
+			height: 4.0d
+			image: "supplementaries:textures/gui/book/icon/github.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			height: 4.0d
+			image: "dramaticdoors:item/short_glass_door"
+			rotation: 0.0d
+			width: 4.0d
+			x: 2.5d
+			y: 0.5d
+		}
+	]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["                   https://github.com/Jasons-impart"]
+			id: "043D97EB7AC4FE87"
+			rewards: [
+				{
+					id: "3795D1A0E9069DF4"
+					item: "minecraft:cat_spawn_egg"
+					type: "item"
+				}
+				{
+					count: 12
+					id: "08BC9373B171A32E"
+					item: "minecraft:cod"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "https://github.com/Jasons-impart/Create-Delight-Remake"
+			tasks: [{
+				id: "64A23A0E5C6688D6"
+				title: "检查标记"
+				type: "checkmark"
+			}]
+			title: "JSI制作组GitHub网页"
+			x: -0.5d
+			y: 1.0d
+		}
+		{
+			description: [
+				"                                 1群:856762964"
+				"                                 2群:710553028"
+			]
+			icon: "supplementaries:hourglass"
+			id: "25E4BEE39C72BFCF"
+			rewards: [
+				{
+					id: "07C7F9C67731B0FD"
+					item: {
+						Count: 1
+						id: "netmusic:music_cd"
+						tag: {
+							NetMusicSongInfo: {
+								artists: [
+									"Famishin"
+									"Angel Note"
+								]
+								name: "It's a HORI style!"
+								read_only: 0b
+								time: 269
+								url: "https://music.163.com/song/media/outer/url?id=473403148.mp3"
+								vip: 0b
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "699FCBAEE8DE0CB7"
+					item: "idas:music_disc_calidum"
+					type: "item"
+				}
+				{
+					id: "1222E185F37A801A"
+					item: "alexsmobs:music_disc_thime"
+					type: "item"
+				}
+				{
+					id: "4CA08792E77666E4"
+					item: "create_connected:music_disc_interlude"
+					type: "item"
+				}
+				{
+					id: "07CB0B73E3F23AC8"
+					item: "netherexp:music_disc_buckshot_wonderland"
+					type: "item"
+				}
+				{
+					id: "370475645A5688C0"
+					item: "minecraft:music_disc_otherside"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "有意向一起玩或者讨论以及有意图加入开发组的都可以来这一起聊天ovo"
+			tasks: [
+				{
+					id: "2EF581F0B73E6E76"
+					title: "官方QQ群"
+					type: "checkmark"
+				}
+				{
+					elapsedTime: 600L
+					icon: "supplementaries:hourglass"
+					id: "66C275376092496B"
+					title: "感受时间的流逝"
+					type: "questsadditions:time"
+				}
+			]
+			x: 2.5d
+			y: 1.0d
+		}
+	]
+	title: "相关链接"
+}
