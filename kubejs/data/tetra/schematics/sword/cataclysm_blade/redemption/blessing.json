@@ -45,8 +45,8 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:void_worm_mandible"],
-                "count": 1
+                "items":[ "alexscaves:radiant_essence"],
+                "count": 2
             },
             "experienceCost": 15,
             "requiredTools": {

@@ -2,7 +2,7 @@
     "replace": true,
     "localizationKey": "cataclysm_blade/redemption",
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
@@ -36,6 +36,10 @@
     },
     "outcomes": [
         {
+            "material": {
+                "items":[ "constructionwand:core_angel"],
+                "count": 1
+            },
             "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 7

@@ -18,7 +18,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:void_worm_mandible"],
+                "items":[ "alexscaves:conversion_crucible"],
                 "count": 1
             },
             "experienceCost": 15,

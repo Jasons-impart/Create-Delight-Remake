@@ -45,7 +45,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexsmobs:void_worm_mandible"],
+                "items":[ "minecraft:respawn_anchor"],
                 "count": 1
             },
             "experienceCost": 15,
