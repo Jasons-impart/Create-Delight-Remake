@@ -1,4 +1,5 @@
 {
+	autofocus_id: "112566BE4CAC8023"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "532EAAE67364C491"
@@ -9,7 +10,7 @@
 		tag: { }
 	}
 	id: "532EAAE67364C491"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -1278,7 +1279,7 @@
 			hide_until_deps_visible: true
 			id: "25781A3553108A4C"
 			rewards: [{
-				count: 3
+				count: 5
 				id: "02DC6B437E9AC7A6"
 				item: "createdelightcore:netherite_coin"
 				type: "item"

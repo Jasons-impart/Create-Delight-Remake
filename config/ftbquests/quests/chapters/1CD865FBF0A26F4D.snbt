@@ -43,7 +43,7 @@
 				title: "锻造大师"
 				type: "checkmark"
 			}]
-			x: 0.0d
+			x: -2.0d
 			y: 0.0d
 		}
 		{

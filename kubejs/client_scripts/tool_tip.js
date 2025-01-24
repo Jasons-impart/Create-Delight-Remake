@@ -87,6 +87,7 @@ ItemEvents.tooltip(e => {
     ])
 })
 let tooltips = [
+    ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
     ['neapolitan:adzuki_beans', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
     ['neapolitan:adzuki_soil', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],

@@ -1084,6 +1084,31 @@
 			x: 4.5d
 			y: 1.0d
 		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			id: "630FA0478B7DAAAA"
+			subtitle: "可以从机器中取出剩余的流体，支持绝大部分流体！"
+			tasks: [{
+				id: "574A5F305CD2C196"
+				item: "createfluidstuffs:bucket"
+				type: "item"
+			}]
+			title: "看看我们带来了什么！"
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["630FA0478B7DAAAA"]
+			id: "0A0E7F0FE62B435D"
+			subtitle: "可以取出少量流体从而可以进行过滤的一个标记 😋"
+			tasks: [{
+				id: "3AE0AC989B8696C9"
+				item: "createfluidstuffs:jar"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.5d
+		}
 	]
 	title: "&2初级工程师"
 }

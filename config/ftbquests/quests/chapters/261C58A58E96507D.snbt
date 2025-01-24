@@ -616,7 +616,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "滋滋滋（更大的声音）"
+			subtitle: "只能用来切割玻璃的垃圾（"
 			tasks: [{
 				id: "47D4C3F2CBA8FD8A"
 				item: "vintageimprovements:laser"
@@ -1051,239 +1051,6 @@
 			y: 10.75d
 		}
 		{
-			dependencies: ["3906B88BE82A2E2B"]
-			hide_until_deps_visible: true
-			id: "33AB8A9B5DBF7C19"
-			rewards: [{
-				count: 3
-				id: "5B35534B93F696DF"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "220FBE9314306931"
-				item: "createaddition:electrum_sheet"
-				type: "item"
-			}]
-			x: 13.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["33AB8A9B5DBF7C19"]
-			id: "307FDD969BC2CFD7"
-			rewards: [{
-				count: 3
-				id: "189D8B95653F51D5"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "6C3D40276C4DC561"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:wires/electric"
-					}
-				}
-				title: "电线"
-				type: "item"
-			}]
-			x: 12.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["33AB8A9B5DBF7C19"]
-			id: "223927D0F621237B"
-			rewards: [{
-				id: "647081CBA589238C"
-				item: "ad_astra:etrionic_core"
-				random_bonus: 3
-				type: "item"
-			}]
-			subtitle: "电力器械的核心部件"
-			tasks: [{
-				id: "1AC6D0DCABD9810B"
-				item: "ad_astra:etrionic_core"
-				type: "item"
-			}]
-			x: 13.5d
-			y: 8.5d
-		}
-		{
-			dependencies: ["3906B88BE82A2E2B"]
-			hide_until_deps_visible: true
-			id: "4347373979FF2941"
-			rewards: [{
-				id: "7AA272DCBC6185BF"
-				item: "createaddition:capacitor"
-				random_bonus: 7
-				type: "item"
-			}]
-			subtitle: "有了电容！就有了青天！电容来了！青天就来了！"
-			tasks: [{
-				id: "47C4E876B70BF44C"
-				item: "createaddition:capacitor"
-				type: "item"
-			}]
-			title: "来MC我就为办一件事！"
-			x: 12.0d
-			y: 7.0d
-		}
-		{
-			dependencies: [
-				"223927D0F621237B"
-				"307FDD969BC2CFD7"
-				"4347373979FF2941"
-			]
-			id: "6D18199772CFE2F5"
-			rewards: [{
-				count: 3
-				id: "1A7077F58E7EBEF9"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "74189117D66B9788"
-				item: "createaddition:modular_accumulator"
-				type: "item"
-			}]
-			x: 12.0d
-			y: 10.0d
-		}
-		{
-			dependencies: [
-				"223927D0F621237B"
-				"2766DFF8D2DEBF71"
-			]
-			id: "3827A4ABE03A55F3"
-			rewards: [{
-				count: 3
-				id: "18F8733C4152412C"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "54414F748770AE55"
-				item: "createaddition:tesla_coil"
-				type: "item"
-			}]
-			x: 15.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["223927D0F621237B"]
-			id: "15062C1C7B98DE8A"
-			rewards: [{
-				count: 3
-				id: "058BCBEDAD7FDF16"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "最大发电量5k FE/t，最大应力消耗量16384(256rpm时)"
-			tasks: [{
-				id: "2FF5546540CE06C3"
-				item: "createaddition:alternator"
-				type: "item"
-			}]
-			title: "旋转起来！"
-			x: 13.5d
-			y: 10.0d
-		}
-		{
-			dependencies: ["3906B88BE82A2E2B"]
-			hide_until_deps_visible: true
-			id: "2766DFF8D2DEBF71"
-			rewards: [{
-				count: 3
-				id: "646DDFCFAAEAC42D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [
-				{
-					id: "5B6AF0087D6347A4"
-					item: "createaddition:copper_spool"
-					type: "item"
-				}
-				{
-					id: "630E85CD72792FF0"
-					item: "createaddition:gold_spool"
-					type: "item"
-				}
-				{
-					id: "78E95637AABAB1A5"
-					item: "createaddition:electrum_spool"
-					type: "item"
-				}
-			]
-			title: "导线"
-			x: 15.0d
-			y: 7.0d
-		}
-		{
-			dependencies: ["15062C1C7B98DE8A"]
-			id: "7CCAD982B2CC88BA"
-			rewards: [{
-				count: 3
-				id: "0A1DF18744115A38"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "没有损耗的电力"
-			tasks: [{
-				id: "48B94D6C8D59D93B"
-				item: "createaddition:electric_motor"
-				type: "item"
-			}]
-			title: "电生磁磁生电"
-			x: 13.5d
-			y: 11.5d
-		}
-		{
-			dependencies: ["2766DFF8D2DEBF71"]
-			id: "0911B547750BE013"
-			rewards: [{
-				count: 3
-				id: "4A94C8E2BFA57851"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "03A830A66EB9F703"
-				item: "createaddition:portable_energy_interface"
-				type: "item"
-			}]
-			x: 15.0d
-			y: 10.0d
-		}
-		{
-			dependencies: ["3906B88BE82A2E2B"]
-			hide_until_deps_visible: true
-			id: "32218A4E7D4DF470"
-			rewards: [{
-				count: 3
-				id: "424C1226D64C3953"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "最大输入输出均为10K FE/t，导线长度最大为32格"
-			tasks: [
-				{
-					id: "49A4C03DBA226AA6"
-					item: "createaddition:connector"
-					type: "item"
-				}
-				{
-					id: "23F7024C2FEC93D2"
-					item: "createaddition:small_light_connector"
-					type: "item"
-				}
-			]
-			x: 12.0d
-			y: 5.5d
-		}
-		{
 			dependencies: [
 				"650FCFF52AB629C9"
 				"00A97860884CEAE7"
@@ -1515,31 +1282,12 @@
 				icon: "createaddition:capacitor"
 				id: "6C9F53B359092342"
 				stat: "minecraft:play_time"
-				title: "电力时代"
+				title: "进入电力时代！"
 				type: "stat"
 				value: 1
 			}]
 			x: 13.5d
 			y: 5.25d
-		}
-		{
-			dependencies: ["3906B88BE82A2E2B"]
-			hide_until_deps_visible: true
-			id: "50209BF5E14C3CC5"
-			rewards: [{
-				count: 3
-				id: "7E44906FC90A2A25"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "最大输入输出均为100k FE/t，导线长度最大为64格"
-			tasks: [{
-				id: "515279776D8DD4EC"
-				item: "createaddition:large_connector"
-				type: "item"
-			}]
-			x: 15.0d
-			y: 5.5d
 		}
 		{
 			dependencies: ["5317EBC6D3C2A048"]
@@ -1711,6 +1459,270 @@
 			}]
 			x: 6.0d
 			y: -3.5d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			description: [""]
+			id: "043C01E333AD7139"
+			subtitle: "超级超级超级好用的多流体储存罐！（最多八种流体）"
+			tasks: [{
+				id: "3F3576DB3D33FC4B"
+				item: "createfluidstuffs:multi_fluid_tank"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["3906B88BE82A2E2B"]
+			hide_until_deps_visible: true
+			id: "4347373979FF2941"
+			rewards: [{
+				id: "7AA272DCBC6185BF"
+				item: "createaddition:capacitor"
+				random_bonus: 7
+				type: "item"
+			}]
+			subtitle: "有了电容！就有了青天！电容来了！青天就来了！"
+			tasks: [{
+				id: "47C4E876B70BF44C"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			title: "来MC我就为办一件事！"
+			x: 12.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3906B88BE82A2E2B"]
+			hide_until_deps_visible: true
+			id: "33AB8A9B5DBF7C19"
+			rewards: [{
+				count: 3
+				id: "5B35534B93F696DF"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "220FBE9314306931"
+				item: "createaddition:electrum_sheet"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3906B88BE82A2E2B"]
+			hide_until_deps_visible: true
+			id: "2766DFF8D2DEBF71"
+			rewards: [{
+				count: 3
+				id: "646DDFCFAAEAC42D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "5B6AF0087D6347A4"
+					item: "createaddition:copper_spool"
+					type: "item"
+				}
+				{
+					id: "630E85CD72792FF0"
+					item: "createaddition:gold_spool"
+					type: "item"
+				}
+				{
+					id: "78E95637AABAB1A5"
+					item: "createaddition:electrum_spool"
+					type: "item"
+				}
+			]
+			title: "导线"
+			x: 15.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3906B88BE82A2E2B"]
+			hide_until_deps_visible: true
+			id: "50209BF5E14C3CC5"
+			rewards: [{
+				count: 3
+				id: "7E44906FC90A2A25"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "最大输入输出均为80k FE/t，导线长度最大为64格"
+			tasks: [{
+				id: "515279776D8DD4EC"
+				item: "createaddition:large_connector"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3906B88BE82A2E2B"]
+			hide_until_deps_visible: true
+			id: "32218A4E7D4DF470"
+			rewards: [{
+				count: 3
+				id: "424C1226D64C3953"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "最大输入输出均为10K FE/t，导线长度最大为32格"
+			tasks: [
+				{
+					id: "49A4C03DBA226AA6"
+					item: "createaddition:connector"
+					type: "item"
+				}
+				{
+					id: "23F7024C2FEC93D2"
+					item: "createaddition:small_light_connector"
+					type: "item"
+				}
+			]
+			x: 12.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["33AB8A9B5DBF7C19"]
+			id: "307FDD969BC2CFD7"
+			rewards: [{
+				count: 3
+				id: "189D8B95653F51D5"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6C3D40276C4DC561"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:wires/electric"
+					}
+				}
+				title: "电线"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["33AB8A9B5DBF7C19"]
+			id: "223927D0F621237B"
+			rewards: [{
+				id: "647081CBA589238C"
+				item: "ad_astra:etrionic_core"
+				random_bonus: 3
+				type: "item"
+			}]
+			subtitle: "电力器械的核心部件"
+			tasks: [{
+				id: "1AC6D0DCABD9810B"
+				item: "ad_astra:etrionic_core"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"223927D0F621237B"
+				"307FDD969BC2CFD7"
+				"4347373979FF2941"
+			]
+			id: "6D18199772CFE2F5"
+			rewards: [{
+				count: 3
+				id: "1A7077F58E7EBEF9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "超超超超大的蓄电池"
+			tasks: [{
+				id: "74189117D66B9788"
+				item: "createaddition:modular_accumulator"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["223927D0F621237B"]
+			id: "15062C1C7B98DE8A"
+			rewards: [{
+				count: 3
+				id: "058BCBEDAD7FDF16"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "最大发电量1666.5 FE/t，最大应力消耗量8192(256rpm时)"
+			tasks: [{
+				id: "2FF5546540CE06C3"
+				item: "createaddition:alternator"
+				type: "item"
+			}]
+			title: "旋转起来！"
+			x: 13.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["15062C1C7B98DE8A"]
+			id: "7CCAD982B2CC88BA"
+			rewards: [{
+				count: 3
+				id: "0A1DF18744115A38"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "一半的损耗（应力->电力->应力）"
+			tasks: [{
+				id: "48B94D6C8D59D93B"
+				item: "createaddition:electric_motor"
+				type: "item"
+			}]
+			title: "电生磁磁生电"
+			x: 15.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2766DFF8D2DEBF71"]
+			id: "0911B547750BE013"
+			rewards: [{
+				count: 3
+				id: "4A94C8E2BFA57851"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "03A830A66EB9F703"
+				item: "createaddition:portable_energy_interface"
+				type: "item"
+			}]
+			x: 15.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["15062C1C7B98DE8A"]
+			icon: "create_new_age:generator_coil"
+			id: "14B30C2FB9869ED8"
+			shape: "square"
+			size: 1.5d
+			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\" } }"
+			tasks: [{
+				icon: "create_new_age:generator_coil"
+				id: "268A85AE51F2B5B8"
+				stat: "minecraft:play_time"
+				title: "大型高效率发电方式！"
+				type: "stat"
+				value: 1
+			}]
+			x: 13.5d
+			y: 12.0d
 		}
 	]
 	title: "&3进阶研修班！"

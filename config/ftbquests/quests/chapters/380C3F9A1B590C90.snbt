@@ -1,4 +1,5 @@
 {
+	autofocus_id: "696A502F48B90A6E"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "380C3F9A1B590C90"
@@ -19,10 +20,10 @@
 			size: 3.0d
 			tasks: [{
 				id: "7D75C5D7AE7DC679"
-				title: "增产"
+				title: "增产及再生"
 				type: "checkmark"
 			}]
-			x: 6.0d
+			x: 7.5d
 			y: -3.0d
 		}
 		{
@@ -42,7 +43,7 @@
 							value: "forge:papers_raw_material"
 						}
 					}
-					title: "Any #forge:papers_raw_material"
+					title: "粗纤维物品"
 					type: "item"
 				}
 				{
@@ -77,8 +78,9 @@
 			icon: "createdelight:unfermented_paper_pulp_bucket"
 			id: "43F6BF796F22AAA4"
 			tasks: [{
-				id: "5C6D9E23CD8CF844"
-				type: "checkmark"
+				id: "6BDD2808FD34EBFE"
+				item: "createdelight:unfermented_paper_pulp_bucket"
+				type: "item"
 			}]
 			title: "待发酵的纸浆"
 			x: 3.0d
@@ -90,8 +92,9 @@
 			icon: "createdelight:paper_pulp_bucket"
 			id: "567401BBABA2F521"
 			tasks: [{
-				id: "791E02E540997443"
-				type: "checkmark"
+				id: "0476DD778CFF0198"
+				item: "createdelight:paper_pulp_bucket"
+				type: "item"
 			}]
 			title: "纸浆"
 			x: 3.0d
@@ -151,12 +154,12 @@
 			icon: "createdelight:slime_bucket"
 			id: "2F4B0A78F86BB9D1"
 			tasks: [{
-				id: "2E30C1E562A0E377"
-				title: "黏液"
-				type: "checkmark"
+				id: "76D768F54377CC59"
+				item: "createdelight:slime_bucket"
+				type: "item"
 			}]
-			x: 6.0d
-			y: 3.0d
+			x: 7.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["06C244AEF0521053"]
@@ -178,7 +181,7 @@
 			}]
 			title: "仙人掌/菠萝苗/腐肉/粗布"
 			x: 5.0d
-			y: 2.25d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -193,7 +196,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 4.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7BC0279C33CBC043"]
@@ -213,7 +216,7 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["06C244AEF0521053"]
@@ -334,6 +337,128 @@
 			}]
 			x: 10.0d
 			y: 3.0d
+		}
+		{
+			id: "4458E27C5252B296"
+			size: 1.5d
+			tasks: [{
+				id: "6DFC07744EB495D2"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			title: "磁铁再生"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "7B70E01AFD2682DF"
+			tasks: [{
+				id: "58ED58AA2DE0EE84"
+				item: "minecraft:iron_nugget"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "67745081E83C9431"
+			tasks: [{
+				id: "23D9612B406CCC0F"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "70ECE9227BC282F8"
+			tasks: [{
+				id: "6BC5E1F4FDAF8DE5"
+				item: "minecraft:deepslate"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7B70E01AFD2682DF"
+				"70ECE9227BC282F8"
+				"67745081E83C9431"
+			]
+			id: "022B6494C59BA440"
+			tasks: [{
+				id: "493F5B3144D2A520"
+				item: "alexscaves:galena"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"022B6494C59BA440"
+				"394CADE1D352FDFE"
+				"6D3C402FFD2589A4"
+			]
+			id: "66B9F063DCC82118"
+			tasks: [{
+				id: "69D5CBDED0ABC5AC"
+				item: "alexscaves:energized_galena_neutral"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["022B6494C59BA440"]
+			id: "394CADE1D352FDFE"
+			tasks: [{
+				id: "7221DEE65BAA4939"
+				item: "alexscaves:energized_galena_scarlet"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["022B6494C59BA440"]
+			id: "6D3C402FFD2589A4"
+			tasks: [{
+				id: "0402B4D2746DCBAA"
+				item: "alexscaves:energized_galena_azure"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["66B9F063DCC82118"]
+			id: "0D13653994741380"
+			tasks: [{
+				id: "5C54750DA5464D59"
+				item: "minecraft:iron_block"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"0D13653994741380"
+				"66B9F063DCC82118"
+			]
+			id: "500DE3AE5B0CD3B2"
+			tasks: [{
+				id: "7D4696529891FBE0"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 6.0d
 		}
 	]
 	title: "增产小技巧"
