@@ -57,8 +57,16 @@ jobs:
 
           # 设置环境变量，用于后续上传工件时指定路径
           echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
+      - name: 从生成的补丁临时目录里删除打包会忽略的文件
+        run: |
+            mapfile -t names < ${{ github.workspace }}/.packwizignore
+            names+=("pack.toml")
+            for filename in "${names[@]}"; do
+              echo "Deleting files $filename"
+              find ${{ env.PATCH_DIR }} -name "${filename}" -exec rm {} +
+            done
       - name: 上传补丁
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-patch
           path: ${{ env.PATCH_DIR }}
