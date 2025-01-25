@@ -16,6 +16,12 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+      - name: 读取包名
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-modpackname
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'name'
       - name: 读取版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-version
@@ -40,22 +46,39 @@ jobs:
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
       - name: 根据tag生成补丁
         run: |
-          # 获取从最近的tag到当前提交的所有变化文件
-          changed_files=$(git diff --name-only ${{ env.LATEST_TAG }} HEAD)
-          echo "变化的文件有: $changed_files"
-
-          # 创建一个临时目录并复制变化的文件
           temp_dir=$(mktemp -d)
-          for file in $changed_files; do
+          # 创建合并记录文件
+          mods_changes="$temp_dir/mods_changes.txt"
+          touch "$mods_changes"
+
+          # 获取所有有变化的文件及变化类型
+          git diff --name-status ${{ env.LATEST_TAG }} HEAD | while IFS=$'\t' read -r status file; do
+            if [[ $file == mods/* ]]; then
+              case $status in
+                A)
+                  # A 表示文件被添加
+                  echo "Added: $file" >> "$mods_changes"
+                  ;;
+                D)
+                  # D 表示文件被删除
+                  echo "Deleted: $file" >> "$mods_changes"
+                  ;;
+                R*)
+                  # R 开头表示文件被更名，这里获取新文件名
+                  new_file=$(echo $file | cut -d$'\t' -f2)
+                  echo "Renamed: $file -> $new_file" >> "$mods_changes"
+                  ;;
+              esac
+            else
               if [ -e "$file" ]; then
                 mkdir -p "$temp_dir/$(dirname $file)"
                 cp -rL "$file" "$temp_dir/$file"
               else
                 echo "文件 $file 已删除，跳过复制。"
               fi
+            fi
           done
 
-          # 设置环境变量，用于后续上传工件时指定路径
           echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
       - name: 从生成的补丁临时目录里删除打包会忽略的文件
         run: |
