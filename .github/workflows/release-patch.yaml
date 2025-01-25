@@ -72,13 +72,24 @@ jobs:
                   ;;
               esac
             else
-              if [ -e "$file" ]; then
-                target_path="$temp_dir/$(dirname $file)"
-                mkdir -p "$target_path"
-                cp -rL "$file" "$target_path/$(basename $file)"
-              else
-                echo "文件 $file 已删除，跳过复制。"
-              fi
+              case $status in
+                A|M)
+                  if [ -e "$file" ]; then                  
+                    mkdir -p "$temp_dir/$(dirname $file)"
+                    cp -rL "$file" "$temp_dir/$file"
+                  fi
+                  ;;
+                R*)
+                  new_file=$(echo "$file" | cut -d$'\t' -f3)
+                  if [ -e "$new_file" ]; then
+                    mkdir -p "$temp_dir/$(dirname $new_file)"
+                    cp -rL "$new_file" "$temp_dir/$new_file"
+                  fi
+                  ;;
+                D)
+                  echo "文件 $file 已删除，跳过复制。"
+                  ;;
+              esac
             fi
           done
 
