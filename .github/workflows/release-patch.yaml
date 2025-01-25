@@ -1,5 +1,5 @@
 name: 发布客户端补丁
-run-name: ${{ github.actor }} 正在发布客户端新版本🚀
+run-name: ${{ github.actor }} 正在发布客户端补丁🚀
 on:
   push:
     branches:
@@ -47,8 +47,12 @@ jobs:
           # 创建一个临时目录并复制变化的文件
           temp_dir=$(mktemp -d)
           for file in $changed_files; do
-              mkdir -p "$temp_dir/$(dirname $file)"
-              cp "$file" "$temp_dir/$file"
+              if [ -e "$file" ]; then
+                mkdir -p "$temp_dir/$(dirname $file)"
+                cp -L "$file" "$temp_dir/$file"
+              else
+                echo "文件 $file 已删除，跳过复制。"
+              fi
           done
 
           # 设置环境变量，用于后续上传工件时指定路径
