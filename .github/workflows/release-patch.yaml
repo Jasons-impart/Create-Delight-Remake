@@ -1,0 +1,55 @@
+name: 发布客户端包
+run-name: ${{ github.actor }} 正在发布客户端新版本🚀
+on:
+  push:
+    branches:
+      - test-release
+      - release
+
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    name: 发布🚀
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: 生成整合包nightly构建后缀
+        id: set_version_prefix
+        run: |
+          echo ${{ steps.read-modpackname.outputs.value }}
+          echo ${{ steps.read-version.outputs.value }}
+          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
+            VERSION_SUFFIX=$(date +%m%d%H%M)
+            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
+          fi
+      - name: 获取最近的tag并配置环境变量
+        run: |
+          latest_tag=$(git describe --tags --abbrev=0)
+          echo "最近的tag是: $latest_tag"
+          echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+      - name: 根据tag生成补丁
+        run: |
+          # 获取从最近的tag到当前提交的所有变化文件
+          changed_files=$(git diff --name-only $latest_tag HEAD)
+          echo "变化的文件有: $changed_files"
+
+          # 创建一个临时目录并复制变化的文件
+          temp_dir=$(mktemp -d)
+          for file in $changed_files; do
+              mkdir -p "$temp_dir/$(dirname $file)"
+              cp "$file" "$temp_dir/$file"
+          done
+
+          # 设置环境变量，用于后续上传工件时指定路径
+          echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
+      - name: 上传补丁
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-patch
+          path: ${{ env.PATCH_DIR }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
