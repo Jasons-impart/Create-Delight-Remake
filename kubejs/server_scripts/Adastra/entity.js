@@ -35,7 +35,7 @@ EntityEvents.spawned(e => {
     ]
     IgnoreGravityEntityList.forEach(entity => {
         if (e.entity.type == entity) {
-            e.entity.setItemSlot("feet", Item.of('minecraft:leather_boots', '{Damage:0,RepairCost:1,Unbreakable:1b}').enchant('ad_astra_giselle_addon:gravity_normalizing', 1))
+            e.entity.setItemSlot("feet", Item.of('createdelight:air_boots', '{Damage:0,RepairCost:1,Unbreakable:1b}').enchant('ad_astra_giselle_addon:gravity_normalizing', 1).enchant('minecraft:vanishing_curse', 1))
         }
     })
 })
