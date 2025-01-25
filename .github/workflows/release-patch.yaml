@@ -58,18 +58,15 @@ jobs:
             if [[ $file == mods/* ]]; then
               case $status in
                 A)
-                  echo "Added: $file" >> "$mods_changes"
+                  echo "添加: $file" >> "$mods_changes"
                   ;;
                 D)
-                  echo "Deleted: $file" >> "$mods_changes"
+                  echo "删除: $file" >> "$mods_changes"
                   ;;
                 R*)
                   old_file=$(echo "$file" | cut -d$'\t' -f1)
                   new_file=$(echo "$file" | cut -d$'\t' -f2)
-                  echo "Renamed: $old_file -> $new_file" >> "$mods_changes"
-                  ;;
-                M)
-                  echo "Modified: $file" >> "$mods_changes"
+                  echo "升/降级: $old_file -> $new_file" >> "$mods_changes"
                   ;;
               esac
             else
