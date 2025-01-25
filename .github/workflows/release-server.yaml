@@ -80,7 +80,7 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: \[Server\]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}
+          name: "[Server]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
       - name: 下载forge
         env:

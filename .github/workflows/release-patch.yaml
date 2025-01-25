@@ -105,6 +105,6 @@ jobs:
       - name: 上传补丁
         uses: actions/upload-artifact@v4
         with:
-          name: \[Patch\]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}
+          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ env.PATCH_DIR }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
