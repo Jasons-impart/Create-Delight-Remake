@@ -71,8 +71,9 @@ jobs:
               esac
             else
               if [ -e "$file" ]; then
-                mkdir -p "$temp_dir/$(dirname $file)"
-                cp -rL "$file" "$temp_dir/$file"
+                target_path="$temp_dir/$(dirname $file)"
+                mkdir -p "$target_path"
+                cp -rL "$file" "$target_path/$(basename $file)"
               else
                 echo "文件 $file 已删除，跳过复制。"
               fi
