@@ -53,6 +53,8 @@ jobs:
 
           # 获取所有有变化的文件及变化类型
           git diff --name-status ${{ env.LATEST_TAG }} HEAD | while IFS=$'\t' read -r status file; do
+            echo "file: $file"
+            echo "status: $status"
             if [[ $file == mods/* ]]; then
               case $status in
                 A)
