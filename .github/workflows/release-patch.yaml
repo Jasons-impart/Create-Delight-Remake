@@ -58,32 +58,35 @@ jobs:
             if [[ $file == mods/* ]]; then
               case $status in
                 A)
-                  # A 表示文件被添加
                   echo "Added: $file" >> "$mods_changes"
                   ;;
                 D)
-                  # D 表示文件被删除
                   echo "Deleted: $file" >> "$mods_changes"
                   ;;
                 R*)
-                  # R 开头表示文件被更名，这里获取新文件名
-                  new_file=$(echo $file | cut -d$'\t' -f2)
-                  echo "Renamed: $file -> $new_file" >> "$mods_changes"
+                  old_file=$(echo "$file" | cut -d$'\t' -f2)
+                  new_file=$(echo "$file" | cut -d$'\t' -f3)
+                  echo "Renamed: $old_file -> $new_file" >> "$mods_changes"
+                  ;;
+                M)
+                  echo "Modified: $file" >> "$mods_changes"
                   ;;
               esac
             else
               case $status in
                 A|M)
-                  if [ -e "$file" ]; then                  
-                    mkdir -p "$temp_dir/$(dirname $file)"
-                    cp -rL "$file" "$temp_dir/$file"
+                  if [ -e "$file" ]; then
+                    target_dir="$temp_dir/$(dirname "$file")"
+                    mkdir -p "$target_dir"
+                    cp -rL "$file" "$target_dir"
                   fi
                   ;;
                 R*)
                   new_file=$(echo "$file" | cut -d$'\t' -f3)
                   if [ -e "$new_file" ]; then
-                    mkdir -p "$temp_dir/$(dirname $new_file)"
-                    cp -rL "$new_file" "$temp_dir/$new_file"
+                    target_dir="$temp_dir/$(dirname "$new_file")"
+                    mkdir -p "$target_dir"
+                    cp -rL "$new_file" "$target_dir"
                   fi
                   ;;
                 D)
