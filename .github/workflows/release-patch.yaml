@@ -1,4 +1,4 @@
-name: 发布客户端包
+name: 发布客户端补丁
 run-name: ${{ github.actor }} 正在发布客户端新版本🚀
 on:
   push:
@@ -16,6 +16,12 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+      - name: 读取版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'version'
       - name: 生成整合包nightly构建后缀
         id: set_version_prefix
         run: |
@@ -35,7 +41,7 @@ jobs:
       - name: 根据tag生成补丁
         run: |
           # 获取从最近的tag到当前提交的所有变化文件
-          changed_files=$(git diff --name-only $latest_tag HEAD)
+          changed_files=$(git diff --name-only ${{ env.LATEST_TAG }} HEAD)
           echo "变化的文件有: $changed_files"
 
           # 创建一个临时目录并复制变化的文件
