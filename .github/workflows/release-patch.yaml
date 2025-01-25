@@ -64,8 +64,8 @@ jobs:
                   echo "Deleted: $file" >> "$mods_changes"
                   ;;
                 R*)
-                  old_file=$(echo "$file" | cut -d$'\t' -f2)
-                  new_file=$(echo "$file" | cut -d$'\t' -f3)
+                  old_file=$(echo "$file" | cut -d$'\t' -f1)
+                  new_file=$(echo "$file" | cut -d$'\t' -f2)
                   echo "Renamed: $old_file -> $new_file" >> "$mods_changes"
                   ;;
                 M)
@@ -82,7 +82,7 @@ jobs:
                   fi
                   ;;
                 R*)
-                  new_file=$(echo "$file" | cut -d$'\t' -f3)
+                  new_file=$(echo "$file" | cut -d$'\t' -f2)
                   if [ -e "$new_file" ]; then
                     target_dir="$temp_dir/$(dirname "$new_file")"
                     mkdir -p "$target_dir"
