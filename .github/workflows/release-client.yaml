@@ -89,6 +89,6 @@ jobs:
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: 客户端-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite
+          name: \[Client\]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
