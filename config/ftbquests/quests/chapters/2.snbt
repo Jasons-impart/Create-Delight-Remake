@@ -684,6 +684,7 @@
 			}]
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "你最基础的动力源！"
 			tasks: [{
 				id: "2FF7DF66C79D6B20"
 				item: "create:steam_engine"
@@ -691,10 +692,10 @@
 			}]
 			title: "&e汽笛轰鸣！"
 			x: 15.75d
-			y: -3.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["510B2EE25982FD73"]
+			dependencies: ["7029D6C489D44144"]
 			id: "4492593A688BA447"
 			rewards: [{
 				count: 5
@@ -707,7 +708,7 @@
 				item: "vintageimprovements:spring_coiling_machine"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 12.5d
 			y: -1.5d
 		}
 		{
@@ -773,7 +774,7 @@
 			}]
 			title: "高强度弹簧"
 			x: 14.0d
-			y: -3.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -800,7 +801,7 @@
 			}]
 			title: "低强度弹簧"
 			x: 14.0d
-			y: 0.0d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -827,7 +828,7 @@
 			}]
 			title: "超高强度弹簧"
 			x: 14.0d
-			y: -1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
