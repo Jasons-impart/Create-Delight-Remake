@@ -366,3 +366,23 @@ ServerEvents.recipes(e => {
         ]
     ).id("alexcaves_delight:mixing/jellyfish_soda")
 })
+
+ServerEvents.recipes((event) => {
+  const { create, vintageimprovements } = event.recipes;
+
+  // 辐鳃鱼（和桶）量产
+  vintageimprovements
+    .pressurizing(
+      [Item.of("alexscaves:radgill").withChance(0.01), Fluid.of("minecraft:lava", 250)],
+      ["#minecraft:fishes", Fluid.of("alexscaves:acid", 1000)]
+    )
+    .heated()
+    .id("createdelight:radgill");
+  vintageimprovements
+    .pressurizing(
+      [Item.of("alexscaves:radgill_bucket").withChance(0.05), Fluid.of("minecraft:lava", 250)],
+      ["#createdelight:fish_buckets", Fluid.of("alexscaves:acid", 1000)]
+    )
+    .heated()
+    .id("createdelight:radgill_bucket");
+});

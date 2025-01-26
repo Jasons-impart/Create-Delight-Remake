@@ -58,6 +58,37 @@ ServerEvents.tags("item", e => {
     e.removeAll("alexscaves:restricted_biome_locators")
 })
 
+ServerEvents.tags("minecraft:item", (event) => {
+  event.add("createdelight:fish_buckets", [
+    "minecraft:cod_bucket",
+    "minecraft:salmon_bucket",
+    "minecraft:tropical_fish_bucket",
+    "minecraft:pufferfish_bucket",
+    "minecraft:axolotl_bucket",
+    "alexsmobs:lobster_bucket",
+    "alexsmobs:blobfish_bucket",
+    "alexsmobs:stradpole_bucket",
+    "alexsmobs:platypus_bucket",
+    "alexsmobs:frilled_shark_bucket",
+    "alexsmobs:mimic_octopus_bucket",
+    "alexsmobs:terrapin_bucket",
+    "alexsmobs:comb_jelly_bucket",
+    "alexsmobs:cosmic_cod_bucket",
+    "alexsmobs:devils_hole_pupfish_bucket",
+    "alexsmobs:small_catfish_bucket",
+    "alexsmobs:medium_catfish_bucket",
+    "alexsmobs:large_catfish_bucket",
+    "alexsmobs:flying_fish_bucket",
+    "alexsmobs:mudskipper_bucket",
+    "alexsmobs:triops_bucket",
+    "alexscaves:trilocaris_bucket",
+    "alexscaves:lanternfish_bucket",
+    "alexscaves:tripodfish_bucket",
+    "alexscaves:sea_pig_bucket",
+    "crabbersdelight:crab_bucket",
+  ]);
+});
+
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:logs", ["alexscaves:licoroot"])
     e.add("create_new_age:custom_magnet", [
