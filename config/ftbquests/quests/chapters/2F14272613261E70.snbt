@@ -1,10 +1,10 @@
 {
-	autofocus_id: "5981A5D70F26A7A5"
+	autofocus_id: "03950A91DF592F72"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "2F14272613261E70"
 	group: "0E7AEC0D0D9C1B1C"
-	icon: "minecraft:writable_book"
+	icon: "minecraft:wither_skeleton_skull"
 	id: "2F14272613261E70"
 	images: [
 		{
@@ -13,7 +13,7 @@
 			rotation: 0.0d
 			width: 14.0d
 			x: 2.0d
-			y: -6.0d
+			y: -7.5d
 		}
 		{
 			height: 3.0d
@@ -21,15 +21,7 @@
 			rotation: 0.0d
 			width: 15.0d
 			x: 2.0d
-			y: 6.5d
-		}
-		{
-			height: 6.0d
-			image: "minecraft:textures/painting/wither.png"
-			rotation: 0.0d
-			width: 6.0d
-			x: 2.0d
-			y: 10.0d
+			y: 7.0d
 		}
 		{
 			height: 4.0d
@@ -54,22 +46,6 @@
 			width: 4.0d
 			x: 6.0d
 			y: -0.5d
-		}
-		{
-			height: 3.0d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 3.0d
-			x: 6.0d
-			y: 3.5d
-		}
-		{
-			height: 3.0d
-			image: "minecraft:block/crafting_table_top"
-			rotation: 0.0d
-			width: 3.0d
-			x: -2.0d
-			y: 3.5d
 		}
 	]
 	order_index: 3
@@ -105,32 +81,17 @@
 			shape: "square"
 			size: 2.0d
 			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
-			tasks: [
-				{
-					id: "0F69834EF0A45187"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:the_gate_of_eternal_cold"
-						}
+			tasks: [{
+				id: "0F69834EF0A45187"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:the_gate_of_eternal_cold"
 					}
-					type: "item"
 				}
-				{
-					icon: {
-						Count: 1
-						id: "create_sa:rose_quartz_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					id: "62A859BB30F58F6D"
-					stat: "minecraft:player_kills"
-					type: "stat"
-					value: 12
-				}
-			]
+				type: "item"
+			}]
 			title: "&1凛冬之寒"
 			x: 2.0d
 			y: -6.0d
@@ -155,11 +116,6 @@
 			}
 			id: "6DC960C9CBFEEAE9"
 			rewards: [
-				{
-					id: "437B95F12325E6C2"
-					item: "witheringboon:witheredsoulstone"
-					type: "item"
-				}
 				{
 					id: "12D539EA04083668"
 					item: "minecraft:nether_star"
@@ -204,11 +160,15 @@
 			]
 			title: "&4刺骨&r&k111&r&c穿心&r......"
 			x: 2.0d
-			y: 9.0d
+			y: 7.0d
 		}
 		{
-			description: ["{image:vinery:item/apple_tree_sapling width:50 height:50 align:center}"]
-			icon: "quark:blue_blossom_sapling"
+			description: [""]
+			icon: {
+				Count: 1
+				id: "explorerscompass:explorerscompass"
+				tag: { }
+			}
 			id: "5981A5D70F26A7A5"
 			rewards: [
 				{
@@ -264,104 +224,29 @@
 				}
 			]
 			shape: "square"
+			size: 2.0d
 			subtitle: "踏上去往远方的路途"
-			tasks: [
-				{
-					count: 16L
-					id: "5A3F799717238309"
-					item: { Count: 16, id: "minecraft:ender_pearl" }
-					type: "item"
-				}
-				{
-					id: "6A12F0955527C663"
-					item: {
-						Count: 1
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/netherite"
-							"double/basic_hammer_right_material": "basic_hammer/netherite"
-							"double/basic_handle_material": "basic_handle/forged_beam"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "301b2e18-9048-415f-979b-c3105a0f09b5"
-						}
+			tasks: [{
+				id: "6A12F0955527C663"
+				item: {
+					Count: 1
+					id: "tetra:modular_double"
+					tag: {
+						Damage: 0
+						"double/basic_hammer_left_material": "basic_hammer/netherite"
+						"double/basic_hammer_right_material": "basic_hammer/netherite"
+						"double/basic_handle_material": "basic_handle/forged_beam"
+						"double/handle": "double/basic_handle"
+						"double/head_left": "double/basic_hammer_left"
+						"double/head_right": "double/basic_hammer_right"
+						id: "301b2e18-9048-415f-979b-c3105a0f09b5"
 					}
-					type: "item"
 				}
-				{
-					id: "4B175AAA7913DE86"
-					item: {
-						Count: 1
-						id: "minecraft:netherite_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "0E4F169EEB04DFAF"
-					item: {
-						Count: 1
-						id: "sophisticatedbackpacks:netherite_backpack"
-						tag: {
-							contentsUuid: [I;
-								670702803
-								-543734169
-								-1158906314
-								17940444
-							]
-							inventorySlots: 120
-							renderInfo: {
-								upgradeItems: [
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-									{
-										Count: 1b
-										id: "minecraft:air"
-										tag: { }
-									}
-								]
-							}
-							upgradeSlots: 7
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "离地而居"
+				type: "item"
+			}]
+			title: "背井离乡"
 			x: 2.0d
-			y: 4.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["421576F1BE1DF7D9"]
@@ -393,22 +278,13 @@
 			}]
 			shape: "square"
 			subtitle: "悚怖生物只可在&6霜原星&r召唤！"
-			tasks: [
-				{
-					id: "6704722CD5BCE211"
-					observe_type: 0
-					timer: 0L
-					title: "观察一下霜原星仪吧"
-					to_observe: "ad_astra:glacio_globe"
-					type: "observation"
-				}
-				{
-					dimension: "ad_astra:glacio_orbit"
-					id: "513C79094CBC7FB5"
-					title: "访问维度：霜原星"
-					type: "dimension"
-				}
-			]
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				icon: "ad_astra:glacio_globe"
+				id: "513C79094CBC7FB5"
+				title: "霜原星"
+				type: "dimension"
+			}]
 			title: "无垠之牢！"
 			x: 2.0d
 			y: -4.0d
@@ -431,7 +307,7 @@
 			}]
 			title: "踏冰而行！"
 			x: 2.0d
-			y: -2.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["03950A91DF592F72"]
@@ -451,7 +327,7 @@
 			}]
 			title: "雷霆之势！"
 			x: 6.5d
-			y: -1.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["03950A91DF592F72"]
@@ -470,8 +346,8 @@
 				type: "item"
 			}]
 			title: "欲火奋战！"
-			x: -2.5d
-			y: -1.5d
+			x: -2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
@@ -532,96 +408,168 @@
 			]
 			title: "巨龙之首"
 			x: 2.0d
-			y: 1.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
-				"5981A5D70F26A7A5"
-				"5CFF638E92FCAE45"
+				"752E66805BBFEC51"
+				"6DC960C9CBFEEAE9"
 			]
-			hide_until_deps_complete: false
-			id: "54C0A35A7009E761"
-			rewards: [{
-				count: 12
-				id: "111E139910455D63"
-				item: "minecraft:diamond_block"
-				type: "item"
-			}]
-			shape: "square"
-			subtitle: "来自远古版本的回响"
-			tasks: [{
-				id: "58FDD8ADD557F979"
-				item: {
-					Count: 1
-					id: "gateways:gate_pearl"
-					tag: {
-						gateway: "createdelight:the_original_partner"
-					}
-				}
-				type: "item"
-			}]
-			title: "一切的开始"
-			x: 6.0d
-			y: 3.5d
-		}
-		{
-			dependencies: [
-				"5981A5D70F26A7A5"
-				"5CFF638E92FCAE45"
+			description: [
+				"嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
+				"{@pagebreak}"
+				"虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，0.4再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
 			]
-			id: "561466881FBB11A3"
-			rewards: [{
-				count: 12
-				id: "30F1C73CA7294D5D"
-				item: "minecraft:netherite_block"
-				type: "item"
-			}]
-			shape: "square"
-			subtitle: "地下的回响"
-			tasks: [{
-				id: "0F08EA74636A2DB5"
-				item: {
-					Count: 1
-					id: "gateways:gate_pearl"
-					tag: {
-						gateway: "createdelight:a_fearless_shout"
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "alexsmobs:void_worm_eye"
+			id: "1DD9F7C0F4BD2170"
+			rewards: [
+				{
+					id: "6C47E75030CA8A40"
+					item: {
+						Count: 1
+						id: "tetra:modular_sword"
+						tag: {
+							Damage: 0
+							EnchantmentMapping: {
+								"minecraft:looting": "sword/blade"
+								"minecraft:sharpness": "sword/blade"
+								"minecraft:soul_fire_aspect": "sword/blade"
+								"minecraft:sweeping": "sword/blade"
+								"minecraft:unbreaking": "sword/hilt"
+							}
+							Enchantments: [
+								{
+									id: "minecraft:soul_fire_aspect"
+									lvl: 3s
+								}
+								{
+									id: "minecraft:sharpness"
+									lvl: 7s
+								}
+								{
+									id: "minecraft:unbreaking"
+									lvl: 5s
+								}
+								{
+									id: "minecraft:sweeping"
+									lvl: 5s
+								}
+								{
+									id: "minecraft:looting"
+									lvl: 5s
+								}
+							]
+							HideFlags: 1
+							RepairCost: 0
+							display: {
+								Name: "{\"text\":\"终不似，少年游\"}"
+							}
+							honing_available: 1b
+							honing_count: 27
+							honing_progress: -11
+							id: "121f95fb-c92a-4ccd-affe-dfc6e9855521"
+							repairCount: 27
+							"sword/basic_hilt_material": "basic_hilt/end_rod"
+							"sword/blade": "sword/katana_blade"
+							"sword/blade:blade/benight": 3
+							"sword/blade:blade/bloodthirster": 1
+							"sword/blade:blade/conquering": 1
+							"sword/blade:blade/demon_eye": 1
+							"sword/blade:blade_hone/damage": 5
+							"sword/blade:blade_hone/speed": 5
+							"sword/blade:settled": 1
+							"sword/blade:sword/thousand_cold_nights_imprv": 0
+							"sword/fuller": "sword/reinforced_fuller"
+							"sword/grip_loop_material": "grip_loop/vobrivium_ingot"
+							"sword/guard": "sword/socket"
+							"sword/hilt": "sword/basic_hilt"
+							"sword/hilt:hilt_hone/damage": 5
+							"sword/hilt:hilt_hone/speed": 5
+							"sword/hilt:quality": 2
+							"sword/hilt:settled": 2
+							"sword/katana_blade_material": "katana_blade/dreadsteel_ingot"
+							"sword/pommel": "sword/grip_loop"
+							"sword/reinforced_fuller_material": "reinforced_fuller/bone"
+							"sword/socket_material": "sword_socket/sigil_of_eden"
+							weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":3.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+						}
 					}
-				}
-				type: "item"
-			}]
-			title: "旅途的起点"
-			x: -2.0d
-			y: 3.5d
-		}
-		{
-			description: ["因为学业的技术的原因这一部分暂时未能完成和打磨，十分抱歉qwq"]
-			icon: "quark:clear_shard"
-			id: "5CFF638E92FCAE45"
-			rewards: [{
-				id: "0CCD76EE118A5638"
-				item: "waystones:waystone"
-				type: "item"
-			}]
-			shape: "diamond"
-			tasks: [
-				{
-					id: "6A189B656799BB0C"
-					title: "残缺的诗卷"
-					type: "checkmark"
+					type: "item"
 				}
 				{
-					id: "75742BA133398CCF"
-					item: "minecraft:beacon"
+					count: 5
+					id: "0F688A7D388C7A40"
+					item: "createdelightcore:netherite_coin"
 					type: "item"
 				}
 			]
+			shape: "octagon"
+			size: 4.0d
+			subtitle: "欲买桂花同载酒，终不似，少年游。"
+			tasks: [
+				{
+					id: "07B355A54F127F2D"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:lightning_dragon"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4B60256CE1B8C7F4"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:fire_dragon_eyes"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6DE0D6292BDBB6E4"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:ice_dragon"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "28C2E8815759D132"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "39D85D0AE1EA91E7"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:the_gate_of_eternal_cold"
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "打破时空之门"
 			x: 2.0d
-			y: 3.0d
+			y: -10.0d
 		}
 	]
-	subtitle: [
-		"泪如灰落，绣如星宿"
-		"属于暂未完成章节"
-	]
-	title: "远方诗篇"
+	subtitle: ["泪如灰落，绣如星宿"]
+	title: "&1异世界的挑战！"
 }

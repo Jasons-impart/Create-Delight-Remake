@@ -313,6 +313,7 @@
 		{
 			dependencies: ["3BAC2E9A7359CF70"]
 			hide_dependency_lines: false
+			hide_dependent_lines: true
 			id: "28B3247AF854504D"
 			size: 2.0d
 			subtitle: "不要把宝贝丢进去了"
@@ -321,8 +322,8 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -2.5d
+			x: -4.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["3BAC2E9A7359CF70"]
@@ -528,8 +529,8 @@
 				type: "advancement"
 			}]
 			title: "黑曜石"
-			x: 1.0d
-			y: -1.0d
+			x: 2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: [

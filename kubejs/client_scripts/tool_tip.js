@@ -89,7 +89,6 @@ ItemEvents.tooltip(e => {
 let tooltips = [
     ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
     ['neapolitan:adzuki_beans', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
-    ['neapolitan:adzuki_soil', "§l§4该物品已无实际用处", "§l§4This item is no longer useful"],
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],
     ['createdieselgenerators:diesel_engine', "§4下面有错误, 最多应为24576su", "§4-> the following contains an error, should be up to 24576su"],
     ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su"],
@@ -100,16 +99,16 @@ let tooltips = [
     ["culturaldelights:cut_pickle", "§9滋养（00:15）", "§9Nourishment(00:15)"],
     ['create_central_kitchen:chocolate_cake_slice', "§9甜蜜冲刺（00:10）", "§9Sugar Rush(00:10)"],
     ['create_central_kitchen:chocolate_cake_slice', "§9能量冲击（00:10）", "§9Sugar Rush(00:10)"],
-    ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
-    ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    ["createdelight:nether_ore_cluster", "1536su/RPM", "1536su/RPM"],
-    ["createdelight:moon_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    ["createdelight:mars_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    ["createdelight:mars_gemstone_cluster", "1536su/RPM", "1536su/RPM"],
-    ["createdelight:mercury_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    ["createdelight:venus_ore_cluster", "2048su/RPM", "2048su/RPM"],
-    ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
+    // ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
+    // ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    // ["createdelight:nether_ore_cluster", "1536su/RPM", "1536su/RPM"],
+    // ["createdelight:moon_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    // ["createdelight:mars_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    // ["createdelight:mars_gemstone_cluster", "1536su/RPM", "1536su/RPM"],
+    // ["createdelight:mercury_ore_cluster", "1024su/RPM", "1024su/RPM"],
+    // ["createdelight:venus_ore_cluster", "2048su/RPM", "2048su/RPM"],
+    // ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"],
 ]
 tooltips.forEach(([key, zh_cn, en_us]) => {
     // 添加 key
