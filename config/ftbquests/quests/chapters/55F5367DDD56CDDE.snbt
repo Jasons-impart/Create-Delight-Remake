@@ -1,0 +1,700 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "55F5367DDD56CDDE"
+	group: "14CFC96B5B37F10B"
+	icon: {
+		Count: 1
+		id: "tacz:modern_kinetic_gun"
+		tag: {
+			GunCurrentAmmoCount: 16
+			GunFireMode: "SEMI"
+			GunId: "create_armorer:pistol_auto_stress"
+			HasBulletInBarrel: 1b
+		}
+	}
+	id: "55F5367DDD56CDDE"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependency_requirement: "one_completed"
+			id: "22FC86C71E0A564F"
+			tasks: [
+				{
+					id: "01D37BAD97AA4C1D"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "192B3D3C6A969DF6"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 1
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "724339726522C5B4"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 2
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "弹药盒"
+			x: -4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"460CC6D8C3E8B5C3"
+				"493DAB14A4BF8EB9"
+			]
+			id: "04A1D260561BB2FE"
+			tasks: [{
+				id: "7E9362C4CD2ECC47"
+				item: "createdelight:packaged_ammo"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["04A1D260561BB2FE"]
+			id: "6EB35AD69CE00DFB"
+			tasks: [
+				{
+					id: "2D7DFE9713891322"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:slap"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "10E358426A4A3428"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "tacz:12g"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4316BAF400D140FE"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:rbapb"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "530EA880F42137EA"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:gas_pistol_ammo"
+						}
+					}
+					type: "item"
+				}
+			]
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"36307B1C1A08401E"
+				"522D9A63888B1679"
+			]
+			id: "05AC1CD132C52AA9"
+			tasks: [{
+				id: "3F8DE1E39DB54662"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:sight_standard"
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["05AC1CD132C52AA9"]
+			id: "041E9BF9C6308286"
+			tasks: [{
+				id: "1391BF9FE306F05C"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:sight_medium_distance"
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["041E9BF9C6308286"]
+			id: "33C85FC386B67CF1"
+			tasks: [{
+				id: "47B3C4C050835B5D"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:scope_telephoto"
+					}
+				}
+				type: "item"
+			}]
+			x: 0.5d
+			y: -3.5d
+		}
+		{
+			id: "2DD6A240264C4584"
+			tasks: [{
+				id: "3FD566F6933EF227"
+				item: "tacz:target"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["2DD6A240264C4584"]
+			id: "3A119AC2F95DA502"
+			tasks: [{
+				id: "586EE9D3B499DE45"
+				item: "tacz:target_minecart"
+				type: "item"
+			}]
+			x: 0.5d
+			y: -2.0d
+		}
+		{
+			id: "2401E978A7BA9B2F"
+			subtitle: "展示你的枪械"
+			tasks: [{
+				id: "469D4B243EADD65C"
+				item: "tacz:statue"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"0DC1AB9FC5F14EA8"
+				"41379D4080831AC3"
+			]
+			id: "356BBBE0231B5569"
+			tasks: [{
+				id: "55001013B645A6A0"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 4
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:pistol_revolver_torque"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 0.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"452F9C0FC9D70713"
+				"13DBF28DFB189647"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
+			]
+			id: "41379D4080831AC3"
+			tasks: [{
+				id: "3724706504EB75D2"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 16
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:pistol_auto_stress"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "17814FCA8FA03298"
+			tasks: [{
+				id: "53EE5F698BC357A1"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 8
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:sniper_semi_clockwork"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "66932A15EC0A1225"
+			tasks: [{
+				id: "29748633842F9360"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 2
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:shotgun_db_stone"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "49CB1E19D0085C3C"
+			tasks: [{
+				id: "6ECE416CE90063FE"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 4
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:shotgun_pump_bearing"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "0C65B4740D9042EF"
+			tasks: [{
+				id: "06C897AB38520ECE"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 30
+						GunFireMode: "AUTO"
+						GunId: "create_armorer:smg_auto_crank"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "7A65279DE0FF832E"
+			tasks: [{
+				id: "22DAAE69B88FAE5C"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 50
+						GunFireMode: "AUTO"
+						GunId: "create_armorer:mg_platemag_flywheel"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"76B59336E9D5034A"
+				"356BBBE0231B5569"
+			]
+			id: "685DB6036E082F72"
+			tasks: [{
+				id: "589D43DECB0E011C"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 30
+						GunFireMode: "AUTO"
+						GunId: "create_armorer:rifle_assult_crane"
+						HasBulletInBarrel: 1b
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["685DB6036E082F72"]
+			id: "3FA092ABB79E8129"
+			tasks: [{
+				id: "6A2F518383DC365B"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:muzzle_refit_lava_perfusion_bottle"
+					}
+				}
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["49CB1E19D0085C3C"]
+			id: "6EC2443F98A3B763"
+			tasks: [{
+				id: "1D618053E9165766"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:muzzle_refit_brass_retractor"
+					}
+				}
+				type: "item"
+			}]
+			x: 4.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"17814FCA8FA03298"
+				"685DB6036E082F72"
+			]
+			id: "7D567EF25C0B448A"
+			tasks: [{
+				id: "0B8EA515A3A54DA1"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:grip_wooden"
+					}
+				}
+				type: "item"
+			}]
+			x: 4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"17814FCA8FA03298"
+				"685DB6036E082F72"
+			]
+			id: "39CE49FAEA6C83E2"
+			tasks: [{
+				id: "727C91190365D9C4"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:grip_gantry_shaft"
+					}
+				}
+				type: "item"
+			}]
+			x: 4.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["452F9C0FC9D70713"]
+			id: "03E7B3B4BF96CFBC"
+			tasks: [{
+				id: "0BD52011BA5EE3AB"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:extended_mag_ca_1"
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"4BCD281D0CB06708"
+				"03E7B3B4BF96CFBC"
+			]
+			id: "49F951A0088D5C0F"
+			tasks: [{
+				id: "1BE0995C51C408DA"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:extended_mag_ca_2"
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"0DC1AB9FC5F14EA8"
+				"49F951A0088D5C0F"
+			]
+			id: "50B0329321F1BE0D"
+			tasks: [{
+				id: "5EC27DFFD4C55E14"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "create_armorer:extended_mag_ca_3"
+					}
+				}
+				type: "item"
+			}]
+			x: 0.5d
+			y: 10.0d
+		}
+		{
+			id: "452F9C0FC9D70713"
+			tasks: [{
+				id: "6DE9968B4FEB683A"
+				item: "create_sa:heat_engine"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 8.5d
+		}
+		{
+			id: "4BCD281D0CB06708"
+			tasks: [{
+				id: "5BC410BE5E9DDC55"
+				item: "create_sa:hydraulic_engine"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 8.5d
+		}
+		{
+			id: "0DC1AB9FC5F14EA8"
+			tasks: [{
+				id: "3433C04E0980E671"
+				item: "create_sa:steam_engine"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 8.5d
+		}
+		{
+			id: "36307B1C1A08401E"
+			tasks: [{
+				id: "458642743E2DE885"
+				item: "crystal_clear:brass_glass_casing"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -3.5d
+		}
+		{
+			id: "522D9A63888B1679"
+			tasks: [{
+				id: "5494690CA2E54A15"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -5.0d
+		}
+		{
+			id: "460CC6D8C3E8B5C3"
+			tasks: [{
+				id: "6C07858D04CA80A9"
+				item: "createmetallurgy:tungsten_block"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -2.0d
+		}
+		{
+			id: "493DAB14A4BF8EB9"
+			tasks: [{
+				id: "740E73EFC1D4EF40"
+				item: "quark:gunpowder_sack"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["04118DA8C94403B9"]
+			id: "13DBF28DFB189647"
+			tasks: [{
+				id: "4078E5D27B70DEFB"
+				item: "kinetic_pixel:pistonexciter"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.5d
+		}
+		{
+			id: "04118DA8C94403B9"
+			tasks: [{
+				id: "6713305522A7B0BF"
+				item: "vintageimprovements:redstone_module"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["227338B9308E0B6F"]
+			id: "1B0CBFCC0DDE3160"
+			tasks: [{
+				id: "30E8DEF63AE8BAA5"
+				item: "kinetic_pixel:barrel"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 5.5d
+		}
+		{
+			id: "6AF83156027D923D"
+			tasks: [{
+				id: "31C42A029F3B1771"
+				item: "kinetic_pixel:ammunitionbox"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["67185F3F645F82B9"]
+			id: "227338B9308E0B6F"
+			tasks: [{
+				id: "4E7CB8933EEEDF06"
+				item: {
+					Count: 1
+					id: "vintageimprovements:v_shaped_curving_head"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7E2450F4EE169331"]
+			id: "67185F3F645F82B9"
+			tasks: [{
+				id: "6EC57CDFBC4CDFA1"
+				item: {
+					Count: 1
+					id: "vintageimprovements:convex_curving_head"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: 2.5d
+		}
+		{
+			id: "7E2450F4EE169331"
+			tasks: [{
+				id: "27B91CDEA297B10D"
+				item: "vintageimprovements:lathe"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["04118DA8C94403B9"]
+			id: "76B59336E9D5034A"
+			tasks: [{
+				id: "5E48B38752EB0C35"
+				item: "kinetic_pixel:strikerexciter"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 4.0d
+		}
+	]
+	title: "精械锐制"
+}
