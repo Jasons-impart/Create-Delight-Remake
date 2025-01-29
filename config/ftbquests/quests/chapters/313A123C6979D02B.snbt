@@ -2191,6 +2191,12 @@
 		{
 			dependencies: ["71362ADA5C9546E8"]
 			id: "485EA96A33EC4B28"
+			rewards: [{
+				count: 5
+				id: "568977BC54CB1267"
+				item: "frycooks_delight:canola_seeds"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2865B5ADA69A7DAC"
 				item: "frycooks_delight:canola_seeds"
@@ -2248,6 +2254,11 @@
 				"13F215D55925DD38"
 			]
 			id: "34636258CDA46423"
+			rewards: [{
+				id: "6A671470DFF558AA"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4E9779290CECD38D"
 				item: "create_bic_bit:mechanical_fryer"
@@ -2945,6 +2956,12 @@
 		}
 		{
 			id: "593F05A29A568F41"
+			rewards: [{
+				count: 5
+				id: "695D716CC18A118B"
+				item: "create_bic_bit:sunflower_seeds"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4DD0839B7EB0D548"
 				item: "create_bic_bit:sunflower_seeds"
@@ -2967,6 +2984,11 @@
 		{
 			dependencies: ["0BFA98351C335E32"]
 			id: "15FDCA19E78454B5"
+			rewards: [{
+				id: "7DBCD7BD15E78725"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "20607B9BBF47E602"
 				item: "create_bic_bit:roasted_sunflower_seeds"

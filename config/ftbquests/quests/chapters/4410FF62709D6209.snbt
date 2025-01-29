@@ -15,7 +15,23 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["12F737DEB644CF4D"]
 			id: "11C33FA416DDA394"
+			rewards: [{
+				count: 3
+				id: "1BAA860E207C14FB"
+				item: {
+					Count: 1
+					id: "protection_pixel:brassarmorplate"
+					tag: {
+						Damage: 0
+						armor: 2.0d
+						toughness: 1.0d
+						weight: 2.0d
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "6590AF84B667BECA"
 				item: {
@@ -30,12 +46,27 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 0.5d
+			x: -2.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["11C33FA416DDA394"]
 			id: "4669658759AFD142"
+			rewards: [{
+				count: 3
+				id: "29E49136B88586BA"
+				item: {
+					Count: 1
+					id: "protection_pixel:ironarmorplate"
+					tag: {
+						Damage: 0
+						armor: 1.0d
+						toughness: 0.0d
+						weight: 1.0d
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "229305F1ECEBA384"
 				item: {
@@ -50,12 +81,27 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 0.5d
+			x: -0.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["4669658759AFD142"]
 			id: "6B1C1179B36F657F"
+			rewards: [{
+				count: 3
+				id: "397222F19A89A54E"
+				item: {
+					Count: 1
+					id: "protection_pixel:alloyarmorplate"
+					tag: {
+						Damage: 0
+						armor: 2.0d
+						toughness: 1.0d
+						weight: 1.5d
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "563426DDAF4C374A"
 				item: {
@@ -70,34 +116,15 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 0.5d
+			x: 1.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["6B1C1179B36F657F"]
-			id: "4FBF5F2428DDABF2"
-			tasks: [{
-				id: "209D10ECBB56B6A7"
-				item: {
-					Count: 1
-					id: "createdelight:fire_dragonsteel_armorplate"
-					tag: {
-						Damage: 0
-						armor: 2.5d
-						toughness: 1.5d
-						weight: 1.5d
-					}
-				}
-				type: "item"
-			}]
-			x: 2.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["6B1C1179B36F657F"]
+			dependency_requirement: "one_completed"
 			id: "639BBF217C130DE2"
-			tasks: [{
-				id: "1E85750DB3CA2396"
+			rewards: [{
+				id: "164FE7841635D62C"
 				item: {
 					Count: 1
 					id: "createdelight:ice_dragonsteel_armorplate"
@@ -110,31 +137,61 @@
 				}
 				type: "item"
 			}]
-			x: 1.5d
-			y: 2.0d
+			tasks: [
+				{
+					id: "1E85750DB3CA2396"
+					item: {
+						Count: 1
+						id: "createdelight:ice_dragonsteel_armorplate"
+						tag: {
+							Damage: 0
+							armor: 2.5d
+							toughness: 1.5d
+							weight: 1.5d
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "41D64DF57634C12E"
+					item: {
+						Count: 1
+						id: "createdelight:fire_dragonsteel_armorplate"
+						tag: {
+							Damage: 0
+							armor: 2.5d
+							toughness: 1.5d
+							weight: 1.5d
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "02FE43FDFB94FCFC"
+					item: {
+						Count: 1
+						id: "createdelight:lightning_dragonsteel_armorplate"
+						tag: {
+							Damage: 0
+							armor: 2.5d
+							toughness: 1.5d
+							weight: 1.5d
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 3.5d
 		}
 		{
-			dependencies: ["6B1C1179B36F657F"]
-			id: "1EC2C55CAB3A63F8"
-			tasks: [{
-				id: "4AB0A3FEC13443B1"
-				item: {
-					Count: 1
-					id: "createdelight:lightning_dragonsteel_armorplate"
-					tag: {
-						Damage: 0
-						armor: 2.5d
-						toughness: 1.5d
-						weight: 1.5d
-					}
-				}
+			dependencies: ["11C33FA416DDA394"]
+			id: "111EF4E3283CA4CB"
+			rewards: [{
+				id: "355877FD27D97E58"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 2.0d
-		}
-		{
-			id: "111EF4E3283CA4CB"
 			tasks: [{
 				id: "576FBC8BEFFC4293"
 				item: {
@@ -146,11 +203,22 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
-			y: 0.5d
+			x: -2.0d
+			y: 5.0d
 		}
 		{
+			dependencies: [
+				"69E4DC7D51EBAE61"
+				"213DFB6D69A4DAFC"
+			]
 			id: "750A51AC0BDA859D"
+			rewards: [{
+				count: 3
+				id: "620E8369D4CF07B0"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "进物品栏点开人物左上角的饰品栏就可以装上啦"
 			tasks: [{
 				id: "4703FA85822A3C05"
 				item: {
@@ -165,11 +233,23 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 3.5d
+			x: 5.5d
+			y: 5.0d
 		}
 		{
 			id: "213DFB6D69A4DAFC"
+			rewards: [{
+				count: 3
+				id: "68EE62343FC828BB"
+				item: {
+					Count: 1
+					id: "protection_pixel:flarerod"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "06D0940C91F82690"
 				item: {
@@ -181,62 +261,77 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 3.5d
-		}
-		{
-			id: "2BB25D8CD9649EE9"
-			tasks: [{
-				id: "3005187F67087BE8"
-				item: "protection_pixel:emptywatertank"
-				type: "item"
-			}]
 			x: 4.0d
-			y: 3.5d
+			y: 5.0d
 		}
 		{
 			id: "076C8C2CDCD7AB79"
+			rewards: [{
+				id: "16186F0B291B74BA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5BB6E6CB35CF56D7"
 				item: "protection_pixel:pneumaticgrenade"
 				type: "item"
 			}]
 			x: 5.5d
-			y: 3.5d
+			y: 12.5d
 		}
 		{
 			id: "3ED1F53EF49EC024"
+			rewards: [{
+				id: "5BB2874CC2795460"
+				item: "protection_pixel:hookitem"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5DA41755A9E1CBCB"
 				item: "protection_pixel:hookitem"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 15.5d
+			x: 4.0d
+			y: 14.0d
 		}
 		{
 			id: "2F41E7E332CF519A"
+			rewards: [{
+				id: "3E5E8B7056C95CEE"
+				item: "protection_pixel:chestplatelining"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3DC656DD78C5885B"
 				item: "protection_pixel:chestplatelining"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 11.0d
+			x: 8.5d
+			y: 8.0d
 		}
 		{
+			dependencies: ["646C278943092331"]
 			id: "7020BD9CAEB2D1E2"
+			rewards: [{
+				id: "1D9B24293592EC48"
+				item: "protection_pixel:leggingslining"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4AA8CF466B99B74F"
 				item: "protection_pixel:leggingslining"
 				type: "item"
 			}]
-			x: -3.5d
+			x: 1.0d
 			y: 12.5d
 		}
 		{
-			dependencies: ["56BFE4E09AAC70A2"]
 			id: "3779745DA8DFCF88"
+			rewards: [{
+				id: "743FC87DFC1F8F00"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0ABDA1AEB9E1867B"
 				item: {
@@ -252,18 +347,12 @@
 			y: 6.5d
 		}
 		{
-			id: "56BFE4E09AAC70A2"
-			tasks: [{
-				id: "5CA649253F1C320E"
-				item: "create_sa:steam_engine"
+			id: "3A0818AE02BB788D"
+			rewards: [{
+				id: "208F84C99A7E5E73"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 5.0d
-		}
-		{
-			dependencies: ["3F9B77B80C5065CB"]
-			id: "3A0818AE02BB788D"
 			tasks: [{
 				id: "6BD4DE2DC3FACE15"
 				item: {
@@ -279,17 +368,12 @@
 			y: 6.5d
 		}
 		{
-			id: "3F9B77B80C5065CB"
-			tasks: [{
-				id: "0E3FF2405D425946"
-				item: "create_sa:hydraulic_engine"
+			id: "235C642F72FA36AE"
+			rewards: [{
+				id: "5CA2829ABF90B071"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 5.0d
-		}
-		{
-			id: "235C642F72FA36AE"
 			tasks: [{
 				id: "7E25E0EA983800CA"
 				item: {
@@ -306,6 +390,11 @@
 		}
 		{
 			id: "59CAF5831FF61C9C"
+			rewards: [{
+				id: "1F6D796685FC8A3F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4E270C6ABFA2CA65"
 				item: {
@@ -321,8 +410,12 @@
 			y: 6.5d
 		}
 		{
-			dependencies: ["3F9B77B80C5065CB"]
 			id: "315E44B81E1B6C6F"
+			rewards: [{
+				id: "335C443B1DA92E44"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0066D9C2C7E6EFF2"
 				item: {
@@ -338,8 +431,12 @@
 			y: 6.5d
 		}
 		{
-			dependencies: ["3F9B77B80C5065CB"]
 			id: "11ABD5170197DB76"
+			rewards: [{
+				id: "4CB0B8C9ABFA88EB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "1D226937D519FC98"
 				item: {
@@ -357,6 +454,12 @@
 		{
 			dependencies: ["3779745DA8DFCF88"]
 			id: "730063FE811BB2B9"
+			rewards: [{
+				count: 3
+				id: "23C747C614844515"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0DA1DA0929F273F1"
 				item: {
@@ -374,6 +477,12 @@
 		{
 			dependencies: ["3A0818AE02BB788D"]
 			id: "65A75D6F3E289EC2"
+			rewards: [{
+				count: 3
+				id: "3CCF2E6C09B157EB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "732842C2945B1D61"
 				item: {
@@ -391,6 +500,12 @@
 		{
 			dependencies: ["235C642F72FA36AE"]
 			id: "73409A934B172133"
+			rewards: [{
+				count: 3
+				id: "322C93B2408EDF2C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2EF96606CD0EABA8"
 				item: {
@@ -408,6 +523,12 @@
 		{
 			dependencies: ["59CAF5831FF61C9C"]
 			id: "71AC617B5B4CE057"
+			rewards: [{
+				count: 3
+				id: "1C67B91695F13B9B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3B27C4AB233B8820"
 				item: {
@@ -425,6 +546,12 @@
 		{
 			dependencies: ["315E44B81E1B6C6F"]
 			id: "7710718E35CE7374"
+			rewards: [{
+				count: 3
+				id: "45112F37596085CA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "453875B1FCBBC315"
 				item: {
@@ -442,6 +569,12 @@
 		{
 			dependencies: ["11ABD5170197DB76"]
 			id: "47E7293B152A4001"
+			rewards: [{
+				count: 3
+				id: "1189D65BF047A147"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "1FDB50268B52B369"
 				item: {
@@ -459,6 +592,11 @@
 		{
 			dependencies: ["1EFFA3505B97B2E3"]
 			id: "2108E693364F7ADF"
+			rewards: [{
+				id: "22C280BA134A89AD"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "12D89C50D60621B7"
 				item: {
@@ -470,11 +608,17 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
+			x: -2.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["1EFFA3505B97B2E3"]
 			id: "3D518C6838510580"
+			rewards: [{
+				id: "10A846A3C9B78D2D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0073DBDA6AC37E46"
 				item: {
@@ -486,11 +630,17 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
+			x: -0.5d
 			y: 9.5d
 		}
 		{
+			dependencies: ["1EFFA3505B97B2E3"]
 			id: "72E606EEB1EF1F3F"
+			rewards: [{
+				id: "5E0E1F4E01BAA886"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "381C56FC613ADDF0"
 				item: {
@@ -502,11 +652,17 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
+			x: 1.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["1EFFA3505B97B2E3"]
 			id: "6C49076D240E8C5C"
+			rewards: [{
+				id: "540F15366184DB73"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6B3F1FFAA3E2B719"
 				item: {
@@ -518,11 +674,17 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 2.5d
 			y: 9.5d
 		}
 		{
+			dependencies: ["1EFFA3505B97B2E3"]
 			id: "35140D0340C093BA"
+			rewards: [{
+				id: "64C889549A03D896"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "311FF4688A7E6D4E"
 				item: {
@@ -534,11 +696,17 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
+			x: 4.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["1EFFA3505B97B2E3"]
 			id: "2E7F6B636190C291"
+			rewards: [{
+				id: "1D9209144F21B317"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "2D60123631D512D5"
 				item: {
@@ -550,12 +718,18 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 5.5d
 			y: 9.5d
 		}
 		{
 			dependencies: ["2108E693364F7ADF"]
 			id: "6B63E051D649BFE3"
+			rewards: [{
+				count: 3
+				id: "1C74FE64980D4BD5"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "412D58DAA5123BCF"
 				item: {
@@ -567,12 +741,18 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
+			x: -2.0d
 			y: 11.0d
 		}
 		{
 			dependencies: ["3D518C6838510580"]
 			id: "0E560E4D3DF08ABA"
+			rewards: [{
+				count: 3
+				id: "082730D991D4B204"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7936D94768152AE5"
 				item: {
@@ -584,12 +764,18 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
+			x: -0.5d
 			y: 11.0d
 		}
 		{
 			dependencies: ["72E606EEB1EF1F3F"]
 			id: "44152BD0DBB404EB"
+			rewards: [{
+				count: 3
+				id: "093652622DD10882"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "71C0E8C08A56D895"
 				item: {
@@ -601,12 +787,18 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
+			x: 1.0d
 			y: 11.0d
 		}
 		{
 			dependencies: ["6C49076D240E8C5C"]
 			id: "1D0D227A87DF39F2"
+			rewards: [{
+				count: 3
+				id: "4759F0DB8345FF9B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6A6F871B0FE776F1"
 				item: {
@@ -618,12 +810,18 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 2.5d
 			y: 11.0d
 		}
 		{
 			dependencies: ["2E7F6B636190C291"]
 			id: "17F9BB78C3F5AFCF"
+			rewards: [{
+				count: 3
+				id: "60C6BCACBACE81DF"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "79FB88BD8CB60DEF"
 				item: {
@@ -635,12 +833,18 @@
 				}
 				type: "item"
 			}]
-			x: 7.0d
+			x: 5.5d
 			y: 11.0d
 		}
 		{
 			dependencies: ["200082B554934FD9"]
 			id: "645028C3AFF23ABD"
+			rewards: [{
+				count: 3
+				id: "12F7793AF04E5D2D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "04698A093A792750"
 				item: {
@@ -652,11 +856,17 @@
 				}
 				type: "item"
 			}]
-			x: 8.5d
+			x: 7.0d
 			y: 11.0d
 		}
 		{
+			dependencies: ["2F41E7E332CF519A"]
 			id: "200082B554934FD9"
+			rewards: [{
+				id: "4B5742654A6A8960"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "38F8303199677FEE"
 				item: {
@@ -668,12 +878,18 @@
 				}
 				type: "item"
 			}]
-			x: 8.5d
+			x: 7.0d
 			y: 9.5d
 		}
 		{
 			dependencies: ["35140D0340C093BA"]
 			id: "022A726C70558356"
+			rewards: [{
+				count: 3
+				id: "6FE1F3B35975E79C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "50446D2028F83689"
 				item: {
@@ -685,12 +901,17 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
+			x: 4.0d
 			y: 11.0d
 		}
 		{
-			dependencies: ["2155EA0D3B0FBC11"]
+			dependencies: ["2F41E7E332CF519A"]
 			id: "540A8D752E1F6ED6"
+			rewards: [{
+				id: "4E3B779D4FA1B7F0"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "01D37E6D7064D169"
 				item: {
@@ -702,21 +923,17 @@
 				}
 				type: "item"
 			}]
-			x: 10.0d
-			y: 11.0d
-		}
-		{
-			id: "2155EA0D3B0FBC11"
-			tasks: [{
-				id: "11A0850FFE8C4D9C"
-				item: "minecraft:heart_of_the_sea"
-				type: "item"
-			}]
-			x: 10.0d
+			x: 8.5d
 			y: 9.5d
 		}
 		{
+			dependencies: ["7020BD9CAEB2D1E2"]
 			id: "3DDDB1082AAD1045"
+			rewards: [{
+				id: "1585686B7CA92DEE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "6EC04AEF4B5C4550"
 				item: {
@@ -728,11 +945,17 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 12.5d
+			x: -3.5d
+			y: 14.0d
 		}
 		{
+			dependencies: ["7020BD9CAEB2D1E2"]
 			id: "281FB54248CBD76E"
+			rewards: [{
+				id: "7AD781171A67DA32"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4732BCAC7428E9D3"
 				item: {
@@ -744,11 +967,17 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 12.5d
+			x: -2.0d
+			y: 14.0d
 		}
 		{
+			dependencies: ["7020BD9CAEB2D1E2"]
 			id: "3F85B9754AB1B7A8"
+			rewards: [{
+				id: "736F706DAA74BF68"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "26E5398361363C9A"
 				item: {
@@ -760,12 +989,18 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 12.5d
+			x: -0.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["3DDDB1082AAD1045"]
 			id: "331C3ADAB2F7064D"
+			rewards: [{
+				count: 3
+				id: "2BF0FAEC9D81346C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "284F61B128B6AFA9"
 				item: {
@@ -777,12 +1012,18 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 14.0d
+			x: -3.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["281FB54248CBD76E"]
 			id: "46E91D197F45B053"
+			rewards: [{
+				count: 3
+				id: "46D158F0AA919985"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "64FC9C6F2FEF63F1"
 				item: {
@@ -794,12 +1035,18 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 14.0d
+			x: -2.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["3F85B9754AB1B7A8"]
 			id: "170422384B1A0759"
+			rewards: [{
+				count: 3
+				id: "0605185023214908"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "564C8675BF210056"
 				item: {
@@ -811,11 +1058,16 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 14.0d
+			x: -0.5d
+			y: 15.5d
 		}
 		{
 			id: "41B28DBF4D98DE09"
+			rewards: [{
+				id: "365F245C2F1EAF01"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "31FE338530E0A30F"
 				item: {
@@ -827,11 +1079,17 @@
 				}
 				type: "item"
 			}]
-			x: 8.5d
+			x: -2.0d
 			y: 6.5d
 		}
 		{
+			dependencies: ["2F41E7E332CF519A"]
 			id: "55E958DF0CF3F253"
+			rewards: [{
+				id: "432C16534714D169"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "67E6577321601324"
 				item: {
@@ -843,11 +1101,17 @@
 				}
 				type: "item"
 			}]
-			x: 11.5d
+			x: 10.0d
 			y: 9.5d
 		}
 		{
+			dependencies: ["7020BD9CAEB2D1E2"]
 			id: "7835812A87557550"
+			rewards: [{
+				id: "030812DB2CB6ED88"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "113C89DEF9B8B577"
 				item: {
@@ -859,11 +1123,17 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
-			y: 12.5d
+			x: 1.0d
+			y: 14.0d
 		}
 		{
+			dependencies: ["30FFEC94721F88CA"]
 			id: "646C278943092331"
+			rewards: [{
+				id: "307B4A5FE5A25F11"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "56415C82C9566FBD"
 				item: {
@@ -875,11 +1145,16 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 3.5d
+			x: -2.0d
+			y: 12.5d
 		}
 		{
 			id: "1106875AEE478B93"
+			rewards: [{
+				id: "6BEE48BD6E458BE5"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "378EF93534446B51"
 				item: {
@@ -890,7 +1165,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 8.0d
+			y: 9.5d
 		}
 		{
 			dependencies: [
@@ -898,6 +1173,11 @@
 				"45D51E8ECCF2C9D3"
 			]
 			id: "1EFFA3505B97B2E3"
+			rewards: [{
+				id: "184C1CE7A2C15045"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "158DAEF7263DB3A2"
 				item: {
@@ -908,10 +1188,15 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 9.5d
+			y: 8.0d
 		}
 		{
 			id: "45D51E8ECCF2C9D3"
+			rewards: [{
+				id: "46516F50EB0F7C09"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7CF79347BB1A5EF2"
 				item: {
@@ -922,17 +1207,22 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 9.5d
+			y: 8.0d
 		}
 		{
 			id: "12F737DEB644CF4D"
+			rewards: [{
+				id: "6E3D31993183A630"
+				item: "minecraft:lava_bucket"
+				type: "item"
+			}]
 			tasks: [{
 				id: "67E77D4824865FEF"
 				item: "protection_pixel:armorloadplatform"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 0.5d
+			x: -3.5d
+			y: 3.5d
 		}
 		{
 			id: "647F51CF16CC6693"
@@ -941,11 +1231,17 @@
 				item: "protection_pixel:armorhanger"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 0.5d
+			x: 10.0d
+			y: 15.5d
 		}
 		{
 			id: "4724F6125D138503"
+			rewards: [{
+				count: 3
+				id: "1F332C3E5BF3D5D0"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "19C48A77B79D9228"
 				item: {
@@ -957,12 +1253,18 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 17.0d
+			x: 8.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["1F663B77037810E1"]
 			id: "58F798A6C30E85B3"
+			rewards: [{
+				count: 3
+				id: "43F61FE2ECD29F5E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "0D78878F3456FA67"
 				item: {
@@ -975,11 +1277,16 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 17.0d
+			y: 15.5d
 		}
 		{
-			dependencies: ["70322379F624B4A5"]
 			id: "1F7A3EEEB170FE79"
+			rewards: [{
+				count: 3
+				id: "2AA89640E548B812"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "11D23C5075A320F8"
 				item: {
@@ -991,11 +1298,17 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 17.0d
+			x: 4.0d
+			y: 12.5d
 		}
 		{
 			id: "6B34EF10CB00992A"
+			rewards: [{
+				count: 3
+				id: "02266C12FCA0C853"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "575511D6F8328A5B"
 				item: {
@@ -1007,23 +1320,35 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 17.0d
+			x: 8.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["46C7EAD55A9ED63C"]
 			id: "3FEEFE2B2D888251"
+			rewards: [{
+				count: 3
+				id: "7796C3BAC2133ABB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "225080A442CFFAFD"
 				item: "protection_pixel:pneumaticgrenadelauncharm"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 17.0d
+			x: 5.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["3ED1F53EF49EC024"]
 			id: "1E41D2DA613006CA"
+			rewards: [{
+				count: 3
+				id: "5C61B7A7964D7690"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "266FC6C7F311EC5D"
 				item: {
@@ -1035,8 +1360,8 @@
 				}
 				type: "item"
 			}]
-			x: 5.5d
-			y: 17.0d
+			x: 4.0d
+			y: 15.5d
 		}
 		{
 			dependencies: [
@@ -1044,6 +1369,11 @@
 				"653CCCBF887CD773"
 			]
 			id: "1F663B77037810E1"
+			rewards: [{
+				id: "3D6432F7E0D6F9C7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "5A6F668B340E1811"
 				item: {
@@ -1054,56 +1384,54 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 15.5d
+			y: 14.5d
 		}
 		{
-			dependencies: [
-				"15BE4C0BF3B6FC93"
-				"46DE35966E616C56"
-			]
 			id: "70322379F624B4A5"
-			tasks: [{
-				id: "3E5CAB5392B90479"
-				item: {
-					Count: 1
-					id: "create_sa:brass_jetpack_chestplate"
-					tag: { }
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "芜湖，起飞"
+			tasks: [
+				{
+					id: "598B36F332B8AC2A"
+					item: {
+						Count: 1
+						id: "create_sa:copper_jetpack_chestplate"
+						tag: { }
+					}
+					type: "item"
 				}
-				type: "item"
-			}]
-			x: -2.0d
-			y: 17.0d
+				{
+					id: "00E7EF32D7D7D1FD"
+					item: {
+						Count: 1
+						id: "create_sa:andesite_jetpack_chestplate"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "652AAC2DA4F798EC"
+					item: {
+						Count: 1
+						id: "create_sa:brass_jetpack_chestplate"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "芜湖，起飞"
+			x: -4.0d
+			y: 5.5d
 		}
 		{
-			id: "46DE35966E616C56"
-			tasks: [{
-				id: "714C571FBE2CB9AC"
-				item: {
-					Count: 1
-					id: "create_sa:andesite_jetpack_chestplate"
-					tag: { }
-				}
-				type: "item"
-			}]
-			x: -3.5d
-			y: 17.0d
-		}
-		{
-			id: "15BE4C0BF3B6FC93"
-			tasks: [{
-				id: "08640D5FD5F530F5"
-				item: {
-					Count: 1
-					id: "create_sa:copper_jetpack_chestplate"
-					tag: { }
-				}
-				type: "item"
-			}]
-			x: -3.5d
-			y: 15.5d
-		}
-		{
+			dependencies: ["076C8C2CDCD7AB79"]
 			id: "46C7EAD55A9ED63C"
+			rewards: [{
+				id: "5AF31F8AA3982CA8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "1AD87F34A1BA43A3"
 				item: {
@@ -1115,12 +1443,17 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
-			y: 15.5d
+			x: 5.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["7D4A84EE25EB8F12"]
 			id: "02AD4FA84513FA13"
+			rewards: [{
+				id: "0D8066BE08C4F9CB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7D0EBB2ADF021FB7"
 				item: {
@@ -1131,10 +1464,15 @@
 				type: "item"
 			}]
 			x: 7.0d
-			y: 14.0d
+			y: 13.5d
 		}
 		{
 			id: "7D4A84EE25EB8F12"
+			rewards: [{
+				id: "698A039E238B5DA6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "7DA963CCABB87175"
 				item: {
@@ -1149,13 +1487,48 @@
 		}
 		{
 			id: "653CCCBF887CD773"
+			rewards: [{
+				id: "381E4AD204067CDF"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4AE3FF92DA878427"
 				item: "ad_astra:oxygen_gear"
 				type: "item"
 			}]
 			x: 8.5d
-			y: 14.0d
+			y: 12.5d
+		}
+		{
+			id: "69E4DC7D51EBAE61"
+			rewards: [{
+				id: "5D1D3066A6FA4605"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "583D908E864E505B"
+				item: "protection_pixel:emptywatertank"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 3.5d
+		}
+		{
+			id: "30FFEC94721F88CA"
+			rewards: [{
+				id: "623AEE1087A4548A"
+				item: "protection_pixel:reinforcedfiber"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6BB6A300ABC41E4D"
+				item: "protection_pixel:reinforcedfiber"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 12.5d
 		}
 	]
 	title: "蒸汽动力铠甲！"
