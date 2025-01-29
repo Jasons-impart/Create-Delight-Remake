@@ -1004,6 +1004,7 @@
 			dependencies: ["08FD4AD67AD3D19E"]
 			id: "27F5863D1F72F4D5"
 			secret: true
+			subtitle: "&2不是哥们？这也能产出经验？"
 			tasks: [{
 				id: "0C149DAED122A8B3"
 				item: "quark:ancient_fruit"

@@ -1736,14 +1736,11 @@
 			dependencies: ["2CE5C6337A66E546"]
 			description: [
 				"栉水母是一种简单的胶状被动生物，处于动物生命定义极限。它会在夜晚的冻洋中生成。"
-				""
 				"栉水母可以在夜晚的冻洋中被找到，其散发出的绚丽色彩与周围海洋的湛蓝形成了鲜明的对比。"
-				""
 				"具有多种色彩（包括蓝色、红色、绿色）的它们可以用水桶来进行捕捉。"
-				""
-				"击杀掉落&4彩&r&e虹&r&a果&r&5冻&r"
 			]
 			id: "394502E95EC5440E"
+			subtitle: "击杀掉落&4彩&r&e虹&r&a果&r&5冻&r"
 			tasks: [{
 				icon: "alexsmobs:comb_jelly_bucket"
 				id: "3ED92A38E6A3A52E"
@@ -5000,6 +4997,18 @@
 			title: "&2蘑菇君"
 			x: -12.5d
 			y: -3.0d
+		}
+		{
+			dependencies: ["394502E95EC5440E"]
+			id: "7810A2F1C9C88747"
+			subtitle: "可以使用海绵（副手无物品）擦除身上的颜色"
+			tasks: [{
+				id: "75D0E3EE770162B5"
+				item: "alexsmobs:rainbow_jelly"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 19.5d
 		}
 	]
 	title: "&e动物朋友们"

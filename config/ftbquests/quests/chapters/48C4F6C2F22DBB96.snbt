@@ -10,24 +10,12 @@
 	quests: [
 		{
 			id: "7DD6AE3D040FB1AE"
-			rewards: [
-				{
-					id: "1B9C60BFB14C6219"
-					item: {
-						Count: 1
-						id: "supplementaries:bubble_blower"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6561BBAFBBA66251"
-					item: "createdelightcore:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "6561BBAFBBA66251"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "上传你的大作！"
 			tasks: [
 				{
 					id: "446015A99AE27594"
@@ -83,7 +71,7 @@
 			]
 			title: "音乐大师"
 			x: 1.0d
-			y: -4.0d
+			y: 2.0d
 		}
 		{
 			id: "6DACD46450CD6DFD"
@@ -105,6 +93,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "春困秋乏夏打盹，睡不醒的冬三月😴"
 			tasks: [
 				{
 					id: "14EE4000084D36A9"
@@ -119,7 +108,7 @@
 			]
 			title: "季节变换"
 			x: -0.5d
-			y: -2.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["05D6B228BA11656D"]
@@ -157,24 +146,11 @@
 		}
 		{
 			id: "6EA2CC5B89935877"
-			rewards: [
-				{
-					id: "2B6F9F770B05A493"
-					item: {
-						Count: 1
-						id: "supplementaries:bubble_blower"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7EE41CB3B2AE365D"
-					item: "createdelightcore:copper_coin"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "7EE41CB3B2AE365D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			subtitle: "右键随机放置物品栏内建筑方块。非常适合做旧。"
 			tasks: [{
 				id: "104D8D8F7FCD9F7B"
@@ -182,8 +158,8 @@
 				type: "item"
 			}]
 			title: "建筑小帮手"
-			x: 1.0d
-			y: -2.5d
+			x: 2.5d
+			y: -4.0d
 		}
 		{
 			id: "2983A2F4EF48C2EC"
@@ -216,6 +192,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "让你的大作熠熠生辉！"
 			tasks: [
 				{
 					id: "693A77DD22C6304D"
@@ -341,36 +318,41 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: -1.0d
+			x: 1.0d
+			y: -4.0d
 		}
 		{
 			description: [
 				"这种珍珠大部分都可以制作，使用后会召唤一个传送门，其中会刷新敌怪。当你打败一个波次后会给予奖励，直到打完。"
 				"每个珍珠出现的怪与奖励都不尽相同，请具体珍珠具体分析（"
 			]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:fire_dragon_eyes"
+				}
+			}
 			id: "10BDEBCE995C859F"
 			rewards: [{
-				id: "2334D2865B45953B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "challenge yourself!（并非）"
-			tasks: [{
-				id: "2D17A1FCB1398ECA"
+				id: "65DFC099F3D2DA99"
 				item: {
 					Count: 1
 					id: "gateways:gate_pearl"
 					tag: {
-						gateway: "gateways:basic/blaze"
+						gateway: "gateways:basic/slime"
 					}
 				}
-				match_nbt: false
-				title: "某个珍珠"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -1.0d
+			subtitle: "challenge yourself!（并非）"
+			tasks: [{
+				id: "52495AB9F6070A8B"
+				title: "任意传送门珍珠！"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -2.5d
 		}
 		{
 			id: "12B765C2EB5EA318"
@@ -391,6 +373,7 @@
 		}
 		{
 			id: "583669122E2EA4D1"
+			subtitle: "随身携带大量箭矢！"
 			tasks: [{
 				id: "3D6FA95501A6E5F1"
 				item: {
@@ -406,8 +389,8 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 0.5d
+			x: 2.5d
+			y: -1.0d
 		}
 		{
 			id: "45C57ED333F98DD0"
@@ -422,11 +405,12 @@
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 2.0d
+			x: 2.5d
+			y: 0.5d
 		}
 		{
 			id: "0BBA9C91E11CD035"
+			subtitle: "仿古字体真好看(╹ڡ╹ )"
 			tasks: [{
 				id: "015A04155C069811"
 				item: "supplementaries:antique_ink"
@@ -437,6 +421,7 @@
 		}
 		{
 			id: "1541C0ACC9DF2368"
+			subtitle: "别吃！千万别吃！"
 			tasks: [{
 				id: "28FE293829D98FB6"
 				item: "supplementaries:soap"
@@ -447,16 +432,19 @@
 		}
 		{
 			id: "6041752A590B6123"
+			subtitle: "试试带到头上？"
 			tasks: [{
 				id: "0877AC7861ED6A7A"
 				item: "supplementaries:confetti_popper"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 2.0d
+			x: 1.0d
+			y: -1.0d
 		}
 		{
+			description: ["输入红石信号可以在一定范围内播放标题，强烈推荐搭配列车实现列车到站广播"]
 			id: "156F31EC2CF275E0"
+			subtitle: " 大喇叭"
 			tasks: [{
 				id: "2D280FE00F5F4F4D"
 				item: "supplementaries:speaker_block"
@@ -467,6 +455,7 @@
 		}
 		{
 			id: "3EF308A8E1AD1782"
+			subtitle: "豪庭！"
 			tasks: [{
 				id: "73C79EAE75CF273D"
 				item: {
@@ -478,8 +467,96 @@
 				}
 				type: "item"
 			}]
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2983A2F4EF48C2EC"]
+			id: "2DD6A240264C4584"
+			rewards: [{
+				id: "00FDF20C499C05AB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "练枪专用靶！"
+			tasks: [{
+				id: "3FD566F6933EF227"
+				item: "tacz:target"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2DD6A240264C4584"]
+			id: "3A119AC2F95DA502"
+			rewards: [{
+				id: "58BCBB21257E83D2"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "移动靶！"
+			tasks: [{
+				id: "586EE9D3B499DE45"
+				item: "tacz:target_minecart"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -1.0d
+		}
+		{
+			id: "7403332ED2924419"
+			subtitle: "长度宽度一次性搞定！"
+			tasks: [{
+				id: "5827196A98AC0265"
+				item: "quark:abacus"
+				type: "item"
+			}]
 			x: -0.5d
 			y: 0.5d
+		}
+		{
+			id: "5D9CE12CE2600E0F"
+			rewards: [{
+				id: "216D7D4B63EF7CF9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "具有物理效果的流体！可以制作TNT！"
+			tasks: [{
+				id: "2E76BAA817568B7F"
+				item: "supplementaries:lumisene_bottle"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 0.5d
+		}
+		{
+			id: "2EEABCBF9AAE4919"
+			rewards: [{
+				id: "0AC53B67FDBC108B"
+				item: "minecraft:sponge"
+				type: "item"
+			}]
+			subtitle: "吃一口试试？"
+			tasks: [{
+				id: "1A47B5EB98A08CF8"
+				item: "alexsmobs:rainbow_jelly"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.0d
+		}
+		{
+			id: "2401E978A7BA9B2F"
+			subtitle: "展示你的枪械"
+			tasks: [{
+				id: "469D4B243EADD65C"
+				item: "tacz:statue"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
 		}
 	]
 	title: "实用小玩意"

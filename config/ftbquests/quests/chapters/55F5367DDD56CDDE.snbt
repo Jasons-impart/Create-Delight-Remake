@@ -1,4 +1,5 @@
 {
+	autofocus_id: "168836201ED24533"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "55F5367DDD56CDDE"
@@ -18,7 +19,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["6EB35AD69CE00DFB"]
+			dependencies: ["2F27A7E899601927"]
 			dependency_requirement: "one_completed"
 			id: "22FC86C71E0A564F"
 			tasks: [
@@ -57,85 +58,35 @@
 				}
 			]
 			title: "弹药盒"
-			x: -1.0d
-			y: 2.5d
+			x: -2.5d
+			y: 8.5d
 		}
 		{
-			id: "04A1D260561BB2FE"
-			rewards: [{
-				count: 3
-				id: "24745667F266BADA"
-				item: "createdelight:packaged_ammo"
-				type: "item"
-			}]
+			dependencies: ["2F27A7E899601927"]
+			id: "6EB35AD69CE00DFB"
 			tasks: [{
-				id: "7E9362C4CD2ECC47"
-				item: "createdelight:packaged_ammo"
+				id: "2D7DFE9713891322"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "create_armorer:slap"
+					}
+				}
 				type: "item"
 			}]
 			x: -4.0d
-			y: 2.5d
+			y: 7.5d
 		}
 		{
-			dependencies: ["04A1D260561BB2FE"]
-			id: "6EB35AD69CE00DFB"
-			tasks: [
-				{
-					id: "2D7DFE9713891322"
-					item: {
-						Count: 1
-						id: "tacz:ammo"
-						tag: {
-							AmmoId: "create_armorer:slap"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "10E358426A4A3428"
-					item: {
-						Count: 1
-						id: "tacz:ammo"
-						tag: {
-							AmmoId: "tacz:12g"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "4316BAF400D140FE"
-					item: {
-						Count: 1
-						id: "tacz:ammo"
-						tag: {
-							AmmoId: "create_armorer:rbapb"
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "530EA880F42137EA"
-					item: {
-						Count: 1
-						id: "tacz:ammo"
-						tag: {
-							AmmoId: "create_armorer:gas_pistol_ammo"
-						}
-					}
-					type: "item"
-				}
-			]
-			x: -2.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["36307B1C1A08401E"]
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "05AC1CD132C52AA9"
 			rewards: [{
 				id: "37424BAADC204BE8"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "3F8DE1E39DB54662"
 				item: {
@@ -147,8 +98,8 @@
 				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: 10.0d
+			x: -5.9880952380952195d
+			y: 1.7976190476190403d
 		}
 		{
 			dependencies: ["05AC1CD132C52AA9"]
@@ -158,6 +109,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "1391BF9FE306F05C"
 				item: {
@@ -169,8 +121,8 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 10.0d
+			x: -7.4880952380952195d
+			y: 1.7976190476190403d
 		}
 		{
 			dependencies: ["041E9BF9C6308286"]
@@ -180,6 +132,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "47B3C4C050835B5D"
 				item: {
@@ -191,59 +144,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: 10.0d
+			x: -8.98809523809522d
+			y: 1.7976190476190403d
 		}
 		{
-			id: "2DD6A240264C4584"
-			rewards: [{
-				id: "00FDF20C499C05AB"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "3FD566F6933EF227"
-				item: "tacz:target"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 8.5d
-		}
-		{
-			dependencies: ["2DD6A240264C4584"]
-			id: "3A119AC2F95DA502"
-			rewards: [{
-				id: "58BCBB21257E83D2"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "586EE9D3B499DE45"
-				item: "tacz:target_minecart"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 10.0d
-		}
-		{
-			id: "2401E978A7BA9B2F"
-			subtitle: "展示你的枪械"
-			tasks: [{
-				id: "469D4B243EADD65C"
-				item: "tacz:statue"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 5.5d
-		}
-		{
-			dependencies: ["41379D4080831AC3"]
+			dependencies: [
+				"13DBF28DFB189647"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
+			]
 			id: "356BBBE0231B5569"
 			rewards: [{
-				id: "1E848147FC1EE630"
+				id: "3B0A8B565BC25F0B"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "55001013B645A6A0"
 				item: {
@@ -258,8 +175,8 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 7.0d
+			x: 5.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -269,10 +186,12 @@
 			]
 			id: "41379D4080831AC3"
 			rewards: [{
-				id: "271A9E5691EC2B5E"
+				id: "419FAEC07A3064DC"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "3724706504EB75D2"
 				item: {
@@ -287,20 +206,23 @@
 				}
 				type: "item"
 			}]
-			x: -2.5d
-			y: 7.0d
+			x: 3.0d
+			y: 1.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "17814FCA8FA03298"
 			rewards: [{
-				id: "4B21D3D7D012C0FB"
+				id: "24A68DA58CA89793"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "53EE5F698BC357A1"
 				item: {
@@ -315,20 +237,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 1.0d
+			x: 5.0d
+			y: 5.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "66932A15EC0A1225"
 			rewards: [{
-				id: "1FFA30F710015A33"
+				id: "6F80690B05DF21EF"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "29748633842F9360"
 				item: {
@@ -343,20 +268,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 4.0d
+			x: 3.0d
+			y: 7.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "49CB1E19D0085C3C"
 			rewards: [{
-				id: "2F806F19794A9E10"
+				id: "43E9CFCA79235811"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "6ECE416CE90063FE"
 				item: {
@@ -371,20 +299,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 5.5d
+			x: 5.0d
+			y: 7.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "0C65B4740D9042EF"
 			rewards: [{
-				id: "7BE551CDCB19D5B8"
+				id: "790E687272B0C020"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "06C897AB38520ECE"
 				item: {
@@ -399,20 +330,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 7.0d
+			x: 5.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "7A65279DE0FF832E"
 			rewards: [{
-				id: "2FE4B0B149A387AA"
+				id: "4E41982EE635F109"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "22DAAE69B88FAE5C"
 				item: {
@@ -427,20 +361,23 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 8.5d
+			x: 3.0d
+			y: 3.0d
 		}
 		{
 			dependencies: [
 				"76B59336E9D5034A"
-				"356BBBE0231B5569"
+				"1B0CBFCC0DDE3160"
+				"6AF83156027D923D"
 			]
 			id: "685DB6036E082F72"
 			rewards: [{
-				id: "181908C3097EB28A"
+				id: "6781A0D37729E009"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "rsquare"
+			size: 2.0d
 			tasks: [{
 				id: "589D43DECB0E011C"
 				item: {
@@ -455,17 +392,18 @@
 				}
 				type: "item"
 			}]
-			x: 2.5d
-			y: 2.5d
+			x: 3.0d
+			y: 5.0d
 		}
 		{
-			dependencies: ["685DB6036E082F72"]
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "3FA092ABB79E8129"
 			rewards: [{
 				id: "0BB11509C4FC1D85"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "6A2F518383DC365B"
 				item: {
@@ -477,17 +415,18 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 4.0d
+			x: -5.9880952380952195d
+			y: 3.2976190476190403d
 		}
 		{
-			dependencies: ["49CB1E19D0085C3C"]
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "6EC2443F98A3B763"
 			rewards: [{
 				id: "3F56BE6AD389C449"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "1D618053E9165766"
 				item: {
@@ -499,20 +438,18 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 5.5d
+			x: -7.4880952380952195d
+			y: 3.2976190476190403d
 		}
 		{
-			dependencies: [
-				"17814FCA8FA03298"
-				"685DB6036E082F72"
-			]
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "7D567EF25C0B448A"
 			rewards: [{
 				id: "011D1E6A7E927392"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "0B8EA515A3A54DA1"
 				item: {
@@ -524,20 +461,18 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 1.0d
+			x: -5.9880952380952195d
+			y: 4.79761904761904d
 		}
 		{
-			dependencies: [
-				"17814FCA8FA03298"
-				"685DB6036E082F72"
-			]
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "39CE49FAEA6C83E2"
 			rewards: [{
 				id: "69C5E5BB6EDE7114"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
 			tasks: [{
 				id: "727C91190365D9C4"
 				item: {
@@ -549,11 +484,13 @@
 				}
 				type: "item"
 			}]
-			x: 4.5d
-			y: 2.5d
+			x: -7.4880952380952195d
+			y: 4.79761904761904d
 		}
 		{
+			dependencies: ["3AECBFE9F68326C1"]
 			id: "03E7B3B4BF96CFBC"
+			shape: "square"
 			tasks: [{
 				id: "0BD52011BA5EE3AB"
 				item: {
@@ -565,12 +502,13 @@
 				}
 				type: "item"
 			}]
-			x: -2.5d
-			y: 8.5d
+			x: -5.9880952380952195d
+			y: 6.29761904761904d
 		}
 		{
 			dependencies: ["03E7B3B4BF96CFBC"]
 			id: "49F951A0088D5C0F"
+			shape: "square"
 			tasks: [{
 				id: "1BE0995C51C408DA"
 				item: {
@@ -582,12 +520,13 @@
 				}
 				type: "item"
 			}]
-			x: -1.0d
-			y: 8.5d
+			x: -7.4880952380952195d
+			y: 6.29761904761904d
 		}
 		{
 			dependencies: ["49F951A0088D5C0F"]
 			id: "50B0329321F1BE0D"
+			shape: "square"
 			tasks: [{
 				id: "5EC27DFFD4C55E14"
 				item: {
@@ -599,150 +538,301 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 8.5d
+			x: -8.98809523809522d
+			y: 6.29761904761904d
 		}
 		{
-			id: "36307B1C1A08401E"
-			rewards: [{
-				count: 3
-				id: "7C3271411E30AAC4"
-				item: "crystal_clear:brass_glass_casing"
-				type: "item"
-			}]
-			tasks: [{
-				id: "458642743E2DE885"
-				item: "crystal_clear:brass_glass_casing"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 10.0d
-		}
-		{
-			dependencies: ["04118DA8C94403B9"]
+			dependencies: ["5C9DFDBC0105016B"]
+			hide_dependent_lines: true
 			id: "13DBF28DFB189647"
 			rewards: [{
-				count: 3
-				id: "0CA20C8071D79F11"
-				item: "kinetic_pixel:pistonexciter"
+				id: "7BEA9C182FA53F85"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "pentagon"
+			size: 1.5d
 			tasks: [{
 				id: "4078E5D27B70DEFB"
 				item: "kinetic_pixel:pistonexciter"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 5.5d
+			x: 1.0d
+			y: 1.0d
 		}
 		{
-			id: "04118DA8C94403B9"
+			dependencies: ["5C9DFDBC0105016B"]
+			hide_dependent_lines: true
+			id: "1B0CBFCC0DDE3160"
 			rewards: [{
-				id: "555ADA1308FC3CD6"
+				id: "57034CB58F03B1CB"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			tasks: [{
-				id: "6713305522A7B0BF"
-				item: "vintageimprovements:redstone_module"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["227338B9308E0B6F"]
-			id: "1B0CBFCC0DDE3160"
-			rewards: [{
-				count: 5
-				id: "0BCE956CCFD33761"
-				item: "kinetic_pixel:barrel"
-				type: "item"
-			}]
+			shape: "pentagon"
+			size: 1.5d
 			tasks: [{
 				id: "30E8DEF63AE8BAA5"
 				item: "kinetic_pixel:barrel"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 6.0d
+			x: 1.0d
+			y: 5.0d
 		}
 		{
+			dependencies: ["5C9DFDBC0105016B"]
+			hide_dependent_lines: true
 			id: "6AF83156027D923D"
 			rewards: [{
-				count: 3
-				id: "514B3A7F9A3049D4"
-				item: "kinetic_pixel:ammunitionbox"
+				id: "5F29D307F3DEB3CB"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "pentagon"
+			size: 1.5d
 			tasks: [{
 				id: "31C42A029F3B1771"
 				item: "kinetic_pixel:ammunitionbox"
 				type: "item"
 			}]
-			x: -4.0d
+			x: 1.0d
 			y: 7.0d
 		}
 		{
-			dependencies: ["67185F3F645F82B9"]
-			id: "227338B9308E0B6F"
-			rewards: [{
-				id: "3E84E1DD4C0846E0"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "4E7CB8933EEEDF06"
-				item: {
-					Count: 1
-					id: "vintageimprovements:v_shaped_curving_head"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -4.0d
-			y: 5.0d
-		}
-		{
-			id: "67185F3F645F82B9"
-			rewards: [{
-				id: "0DAA78380C331FBD"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "6EC57CDFBC4CDFA1"
-				item: {
-					Count: 1
-					id: "vintageimprovements:convex_curving_head"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -4.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["04118DA8C94403B9"]
+			dependencies: ["5C9DFDBC0105016B"]
+			hide_dependent_lines: true
 			id: "76B59336E9D5034A"
 			rewards: [{
-				count: 3
-				id: "106AE9E35614F136"
-				item: "kinetic_pixel:strikerexciter"
+				id: "03F5418B3873485C"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "pentagon"
+			size: 1.5d
 			tasks: [{
 				id: "5E48B38752EB0C35"
 				item: "kinetic_pixel:strikerexciter"
 				type: "item"
 			}]
-			x: 0.5d
+			x: 1.0d
+			y: 3.0d
+		}
+		{
+			icon: "tacz:gun_smith_table"
+			id: "168836201ED24533"
+			rewards: [
+				{
+					count: 10
+					id: "156CAAD4BC0B9B3F"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:slap"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "2FEF467A84C6FC96"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "tacz:12g"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "21370CBD9A773F72"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:rbapb"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "6D7471CCFEBDE766"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:gas_pistol_ammo"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "octagon"
+			size: 2.0d
+			tasks: [{
+				id: "6ADDA443115B6852"
+				title: "强力枪械！"
+				type: "checkmark"
+			}]
+			title: "枪械制作！"
+			x: -2.5d
 			y: 4.0d
 		}
+		{
+			dependencies: ["168836201ED24533"]
+			icon: {
+				Count: 1
+				ForgeCaps: {
+					Parent: {
+						Items: [ ]
+						Size: 32
+					}
+				}
+				id: "kinetic_pixel:laboratorialfirearmblueprint"
+				tag: {
+					Inventory: {
+						Items: [ ]
+						Size: 32
+					}
+				}
+			}
+			id: "5C9DFDBC0105016B"
+			tasks: [{
+				icon: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+					id: "kinetic_pixel:laboratorialfirearmblueprint"
+					tag: {
+						Inventory: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+				}
+				id: "4C987B80B2D53DC0"
+				stat: "minecraft:play_time"
+				title: "基础部件"
+				type: "stat"
+				value: 1
+			}]
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["168836201ED24533"]
+			id: "3AECBFE9F68326C1"
+			tasks: [{
+				icon: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+					id: "kinetic_pixel:heatpoweredfirearmblueprint"
+					tag: {
+						Inventory: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+				}
+				id: "6FDE09C399BDEDF8"
+				stat: "minecraft:play_time"
+				title: "枪械配件"
+				type: "stat"
+				value: 1
+			}]
+			x: -4.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["168836201ED24533"]
+			icon: {
+				Count: 1
+				id: "tacz:ammo_box"
+				tag: {
+					Creative: 1b
+				}
+			}
+			id: "2F27A7E899601927"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "tacz:ammo_box"
+					tag: {
+						Creative: 1b
+					}
+				}
+				id: "33D6EF8BEB6E466E"
+				stat: "minecraft:play_time"
+				title: "子弹制作"
+				type: "stat"
+				value: 1
+			}]
+			x: -2.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2F27A7E899601927"]
+			id: "01436C8ED39FE322"
+			tasks: [{
+				id: "77A2A8BBD1F10964"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "create_armorer:rbapb"
+					}
+				}
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["2F27A7E899601927"]
+			id: "73CC1BADE5FD79FC"
+			tasks: [{
+				id: "78AAE192F0A139EE"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "create_armorer:gas_pistol_ammo"
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["2F27A7E899601927"]
+			id: "230431D3F812415C"
+			tasks: [{
+				id: "56F3E3DE23A81A20"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "tacz:12g"
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: 7.5d
+		}
 	]
-	title: "精械锐制"
+	title: "&3精械锐制"
 }

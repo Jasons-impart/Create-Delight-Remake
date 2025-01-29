@@ -555,7 +555,6 @@
 			hide_until_deps_visible: true
 			id: "0436BA03D9EB8AA8"
 			rewards: [{
-				count: 5
 				id: "733A27B9128C1D0B"
 				item: "createdelightcore:gold_coin"
 				type: "item"
@@ -1088,6 +1087,8 @@
 		{
 			dependencies: ["510B2EE25982FD73"]
 			id: "630FA0478B7DAAAA"
+			shape: "gear"
+			size: 1.5d
 			subtitle: "可以从机器中取出剩余的流体，支持绝大部分流体！"
 			tasks: [{
 				id: "574A5F305CD2C196"
@@ -1101,6 +1102,8 @@
 		{
 			dependencies: ["630FA0478B7DAAAA"]
 			id: "0A0E7F0FE62B435D"
+			shape: "gear"
+			size: 1.5d
 			subtitle: "可以取出少量流体从而可以进行过滤的一个标记 😋"
 			tasks: [{
 				id: "3AE0AC989B8696C9"

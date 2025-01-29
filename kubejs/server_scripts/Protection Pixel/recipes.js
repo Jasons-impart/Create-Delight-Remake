@@ -164,6 +164,20 @@ ServerEvents.recipes(e => {
         }
     )
         .id("protection_pixel:prismloot")
+    e.recipes.create.mechanical_crafting('protection_pixel:tosaki_helmet', 
+        [
+            "AABAA",
+            "ACDEA",
+            "AA AA"
+        ], {
+            A: "protection_pixel:heatresistantceramicsheet",
+            B: "protection_pixel:smallnetheritesheet",
+            C: "minecraft:tinted_glass",
+            D: "create_sa:brass_helmet",
+            E: "create:precision_mechanism"
+        }
+    )
+        .id("protection_pixel:tosakihelmetloot")
     e.recipes.create.mechanical_crafting("protection_pixel:workerhornet_chestplate",
         [
             " A A ",
@@ -240,6 +254,55 @@ ServerEvents.recipes(e => {
         }
     )
         .id("protection_pixel:hellsnakeloot")
+    e.recipes.create.mechanical_crafting('protection_pixel:falconnest_chestplate',
+        [
+            "ABCBA",
+            "DCECD",
+            "ACFCA"
+        ], {
+            A: "create:propeller",
+            B: "create:electron_tube",
+            C: "create:brass_sheet",
+            D: "createmetallurgy:steel_ingot",
+            E: "create_sa:brass_exoskeleton_chestplate",
+            F: "create_sa:heat_engine"
+        }
+    )
+        .id("protection_pixel:falconnestloot")
+    e.recipes.create.mechanical_crafting('protection_pixel:floatshield_chestplate', 
+        [
+            "AB BA",
+            "HCBCH",
+            "DEFED",
+            "HCGCH"
+        ], {
+            A: "minecraft:lightning_rod",
+            B: "create:sturdy_sheet",
+            C: "minecraft:copper_ingot",
+            D: "protection_pixel:smallnetheritesheet",
+            E: "create:precision_mechanism",
+            F: "create_sa:brass_exoskeleton_chestplate",
+            G: "minecraft:heart_of_the_sea",
+            H: "createmetallurgy:tungsten_sheet"
+        }
+    )
+        .id("protection_pixel:floatshieldloot")
+    e.recipes.create.mechanical_crafting('protection_pixel:tosaki_chestplate',
+        [
+            " A A ",
+            "BCDCB",
+            "CEFEC",
+            "CCCCC"
+        ], {
+            A: "create:iron_sheet",
+            B: "create:fluid_tank",
+            C: 'protection_pixel:heatresistantceramicsheet',
+            D: "create:precision_mechanism",
+            E: "protection_pixel:smallnetheritesheet",
+            F: "create_sa:brass_exoskeleton_chestplate",
+        }
+    )
+        .id("protection_pixel:tosakichestloot")
     e.recipes.create.mechanical_crafting("protection_pixel:slingshot_leggings",
         [
             " A A ",

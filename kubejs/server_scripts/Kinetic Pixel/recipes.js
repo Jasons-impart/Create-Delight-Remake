@@ -1,13 +1,19 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "kinetic_pixel:enderalloyingotloot",
+        "kinetic_pixel:endercsloot",
+        "kinetic_pixel:tableloot",
+        "kinetic_pixel:shellloot"
+    ])
     remove_recipes_output(e,
         [
-            'kinetic_pixel:barrel',
             'kinetic_pixel:brasscompressionsheet',
             'kinetic_pixel:andesitealloycompressionsheet',
             'kinetic_pixel:specialsteelcompressionsheet',
             'kinetic_pixel:specialsteelingot',
             'kinetic_pixel:nitropropellant',
-            'tacz:gun_smith_table']
+            'tacz:gun_smith_table'
+        ]
     )
     e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "ad_astra:steel_plate")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:iron_nugget", "ad_astra:steel_nugget")
@@ -16,14 +22,10 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
 
     const { create, vintageimprovements, kubejs, minecraft } = e.recipes
-    let iner_1 = "createmetallurgy:steel_block"
-    create.sequenced_assembly("6x kinetic_pixel:barrel", iner_1, [
-        create.cutting(iner_1, iner_1),
-        vintageimprovements.curving(iner_1, iner_1, 4)
-    ])
-        .loops(1)
-        .transitionalItem(iner_1)
-        .id("kinetic_pixel:barrel")
+    vintageimprovements.turning(
+        'kinetic_pixel:barrel',
+        'createmetallurgy:steel_ingot'
+    ).id("kinetic_pixel:barrel")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:pistol_revolver_torque",HasBulletInBarrel:1b}'),
         [
@@ -222,6 +224,17 @@ ServerEvents.recipes(e => {
         }
     ).id("create_armorer:grip_gantry_shaft")
     kubejs.shaped(
+        Item.of('tacz:attachment', '{AttachmentId:"create_armorer:grip_wooden"}'),
+        [
+            " A ",
+            " B ",
+            " A "
+        ], {
+            A: "create:andesite_alloy",
+            B: '#minecraft:logs'
+        }
+    ).id("create_armorer:grip_wooden")
+    kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_brass_retractor"}'),
         [
             "AAA",
@@ -240,9 +253,9 @@ ServerEvents.recipes(e => {
             create.deploying(iner_2, [iner_2, 'create_sa:small_fueling_tank'])
         ]
     )
-    .loops(2)
-    .transitionalItem(iner_2)
-    .id("create_armorer:muzzle_refit_lava_perfusion_bottle")
+        .loops(2)
+        .transitionalItem(iner_2)
+        .id("create_armorer:muzzle_refit_lava_perfusion_bottle")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_1"}'),
         [
@@ -285,24 +298,58 @@ ServerEvents.recipes(e => {
             D: "kinetic_pixel:ammunitionbox"
         }
     ).id("create_armorer:extended_mag_ca_3")
-    create.mechanical_crafting('createdelight:packaged_ammo', [
-        " A ",
-        "BCB",
-        "BCB",
-        " D "
-    ],{
-        A: "createmetallurgy:tungsten_block",
-        B: "minecraft:copper_block",
-        C: "quark:gunpowder_sack",
-        D: "create:brass_block"
-    })
-    .id("createdelight:packaged_ammo")
-    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:slap"}'), "createdelight:packaged_ammo")
-    .id("create_armorer:slap")
-    create.cutting(Item.of('tacz:ammo', 36, '{AmmoId:"tacz:12g"}'), "createdelight:packaged_ammo")
-    .id("tacz:12g")
-    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:rbapb"}'), "createdelight:packaged_ammo")
-    .id("create_armorer:rbapb")
-    create.cutting(Item.of('tacz:ammo', 60, '{AmmoId:"create_armorer:gas_pistol_ammo"}'), "createdelight:packaged_ammo")
-    .id("create_armorer:gas_pistol_ammo")
+
+    let iner = 'create:brass_sheet'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
+        [
+            vintageimprovements.curving(iner, iner, 1),
+            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
+            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
+            create.pressing(iner, iner),
+            create.cutting(iner, iner)
+        ]
+    )
+        .loops(1)
+        .transitionalItem(iner)
+        .id("create_armorer:slap")
+
+    let iner_1 = 'create:brass_sheet'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
+        [
+            vintageimprovements.curving(iner_1, iner_1, 2),
+            create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
+            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
+            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true)
+        ]
+    )
+        .loops(1)
+        .transitionalItem(iner)
+        .id("create_armorer:rbapb")
+    
+    let iner_3 = 'createbigcannons:autocannon_cartridge_sheet'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createbigcannons:autocannon_cartridge_sheet',
+        [
+            vintageimprovements.curving(iner_3, iner_3, 1),
+            create.deploying(iner_3, [iner_3, 'createbigcannons:guncotton']),
+            create.deploying(iner_3, [iner_3, '#forge:gems/diamond']),
+            create.pressing(iner_3, iner_3)
+        ]
+    )
+        .loops(1)
+        .transitionalItem(iner_3)
+        .id("create_armorer:gas_pistol_ammo")
+
+    let iner_4 = 'alexscaves:polymer_plate'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
+        [
+            vintageimprovements.curving(iner_4, iner_4, 1),
+            create.deploying(iner_4, [iner_4, 'createbigcannons:guncotton']),
+            create.deploying(iner_4, [iner_4, '#forge:nuggets']),
+            create.deploying(iner_4, [iner_4, '#forge:nuggets']),
+            create.pressing(iner_4, iner_4)
+        ]
+    )
+        .loops(1)
+        .transitionalItem(iner_4)
+        .id("tacz:12g")
 })

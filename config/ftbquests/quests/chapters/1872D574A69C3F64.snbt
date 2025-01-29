@@ -18,9 +18,9 @@
 			]
 			id: "0295DFC67A8CF4B9"
 			rewards: [{
-				id: "01EDFDE6C62257B2"
-				type: "xp"
-				xp: 100
+				id: "33A8499E6D5AB0CD"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			shape: "hexagon"
 			size: 2.0d
@@ -46,11 +46,11 @@
 			description: ["至少放入 6 个葡萄才可进行，方式是跳起来在 榨汁盆上踩三次。干净又卫生啊兄弟们 踩中时会有独特的音效。"]
 			id: "7943F4B92BD73CC3"
 			rewards: [{
-				id: "46FD39AF82B76CB5"
-				type: "xp"
-				xp: 100
+				id: "1E119E4554536F6B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
-			subtitle: "用于压榨葡萄的木制容器"
+			subtitle: "&4干净又卫生啊兄弟们"
 			tasks: [
 				{
 					id: "314858CAB5D462CA"
@@ -63,7 +63,7 @@
 					type: "item"
 				}
 			]
-			title: "&4干净又卫生啊兄弟们"
+			title: "用于压榨葡萄的木制容器"
 			x: 0.5d
 			y: -1.5d
 		}
@@ -72,9 +72,9 @@
 			hide_dependent_lines: true
 			id: "13C898B81498C177"
 			rewards: [{
-				id: "437410B49B4986B3"
-				type: "xp"
-				xp: 100
+				id: "23CFE7FCC7AC348A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			shape: "rsquare"
 			size: 1.5d
@@ -92,9 +92,9 @@
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "64F78B51354A75ED"
 			rewards: [{
-				id: "72476C2CB7179577"
-				type: "xp"
-				xp: 100
+				id: "5FBC0F4689EBC687"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "但为什么只是变成了苹果碎？"
 			tasks: [{
@@ -109,9 +109,9 @@
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "186C8F9674316FC2"
 			rewards: [{
-				id: "01779D9B4581330F"
-				type: "xp"
-				xp: 100
+				id: "30E48893E669A8CA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "当然啦，你可以把酒藏到存储磁盘里"
 			tasks: [
@@ -139,9 +139,10 @@
 			dependencies: ["5EA0D911ED1989E6"]
 			id: "5C8A33D8AF216ECC"
 			rewards: [{
-				id: "18EB03794979C96F"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "7FB1683524343B5D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "6949FD3F000136D2"
@@ -155,9 +156,9 @@
 			dependencies: ["64F78B51354A75ED"]
 			id: "5EA0D911ED1989E6"
 			rewards: [{
-				id: "01BDBD7954FE1D9B"
-				type: "xp"
-				xp: 100
+				id: "107337C5E3D2CDDC"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "09CF3E7185B50D79"
@@ -171,9 +172,10 @@
 			dependencies: ["5EA0D911ED1989E6"]
 			id: "260CBF5661D1008B"
 			rewards: [{
-				id: "69A74425D570290D"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "7E1F721C2382D35C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "52A1E3CD82131A28"
@@ -193,9 +195,10 @@
 			dependencies: ["5EA0D911ED1989E6"]
 			id: "0F4EFB9B55CFFBF9"
 			rewards: [{
-				id: "5184D2ECED86C489"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "587AB8EBD880B32B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "5AA0AE81DD2D9FBE"
@@ -216,9 +219,9 @@
 			description: [""]
 			id: "522C959D15ACAA3E"
 			rewards: [{
-				id: "5E4D371EBCC4A71E"
-				type: "xp"
-				xp: 100
+				id: "47D22498FB70C2B4"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "手持酒瓶右键踩好的榨汁盆获得葡萄汁"
 			tasks: [{
@@ -234,7 +237,7 @@
 				title: "Any #vinery:grapejuice"
 				type: "item"
 			}]
-			title: "&e我的葡萄汁！"
+			title: "&e我是葡萄汁！"
 			x: 0.5d
 			y: -3.0d
 		}
@@ -243,17 +246,12 @@
 			description: ["身穿酿酒师套装时使用骨粉不再消耗，而是消耗套装耐久。"]
 			id: "41BDA4219B4FEEC3"
 			rewards: [{
-				id: "44041BBC871DF19D"
-				type: "xp"
-				xp: 100
+				id: "68090196DC0AC8F0"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "至少看起来挺像那么回事的"
 			tasks: [
-				{
-					id: "5C8907ABFB6C5858"
-					item: "vinery:calendar"
-					type: "item"
-				}
 				{
 					id: "4FFBBB834B958763"
 					item: {
@@ -307,9 +305,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "7B7304F9500BC81A"
 			rewards: [{
-				id: "3C97204606E3E398"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "5049DB3B2FF91C4E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "50012B7E0BE0A495"
@@ -329,9 +328,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "65DB4690273F88DB"
 			rewards: [{
-				id: "0552645D815076BE"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "70E18102722C68EB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "43594FC28E567F5A"
@@ -351,9 +351,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "1A4CD8075ED4283A"
 			rewards: [{
-				id: "0063656C61AE38C4"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "799AA1A2BA06BC93"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "6C170DF0A49CC33C"
@@ -373,9 +374,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "0E4F556290E2173A"
 			rewards: [{
-				id: "0A317703D7D18E08"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "09CD6622393F4E76"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "08F6648E2497A609"
@@ -395,9 +397,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "77372C34971F993B"
 			rewards: [{
-				id: "635251DD85016E4E"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "1C5219FED0558F0E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "0D5528D5F13E25C0"
@@ -417,9 +420,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "422D0B14EFA2F759"
 			rewards: [{
-				id: "505161B03335E550"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "0632434AFB532D60"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "3FA730CE1F63DA65"
@@ -439,9 +443,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "436A7C2C7D43C66F"
 			rewards: [{
-				id: "1E505511C8300E27"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "743C0A21536B806D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "59323C4FED28C367"
@@ -461,9 +466,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "4ACE44B98DC97BF5"
 			rewards: [{
-				id: "05C46338212FFFB8"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "5E8F3E8D8A94C5DC"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "676C5C75B3B28212"
@@ -483,9 +489,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "63DAD3CF52408157"
 			rewards: [{
-				id: "2F20DD018047EDB3"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "2967E8C9B1852702"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "23DF215AAF70E732"
@@ -506,9 +513,10 @@
 			dependency_requirement: "all_started"
 			id: "4DE9F7869D224684"
 			rewards: [{
-				id: "20DF7C68F1D19302"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "37555F526B5FA2C9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "14A69EF1320BD7B5"
@@ -528,9 +536,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "4DD2D5F95A0F8ECB"
 			rewards: [{
-				id: "798DB6B45F315FC5"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "27EEDB753415407F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "223E9CBFE035FE65"
@@ -550,9 +559,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "35943235122034FD"
 			rewards: [{
-				id: "4F8611B4EAB873FE"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "6A996B709BBECA51"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "064B4A53519CD8EA"
@@ -572,9 +582,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "4313943A9877A015"
 			rewards: [{
-				id: "41912952D3274E9A"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "007E5B50D17ACA54"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "5D96AAADD86CCEEE"
@@ -594,9 +605,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "689FF2457F30971B"
 			rewards: [{
-				id: "340C882EA8234CED"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "350D0ABA9FE425C8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "74F3D37805AB8F93"
@@ -616,9 +628,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "59CC19CF73488852"
 			rewards: [{
-				id: "135A8781C84E379E"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "5849BECB5862DC5C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "42DA2420E773DE02"
@@ -638,9 +651,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "35B7C73907D25336"
 			rewards: [{
-				id: "76299CDB845BB56C"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "26B0D12BE0583397"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "2EEB6907629F629F"
@@ -660,9 +674,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "5DA9885F0652ADF0"
 			rewards: [{
-				id: "06D6335FE6466367"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "7E400875117A7CDB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "405023104734C174"
@@ -682,9 +697,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "2E328CB7A4E5F638"
 			rewards: [{
-				id: "3ED483800BCDDD9C"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "4981BD58CA70BCA8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "29F97D7257A4D23D"
@@ -704,9 +720,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "27B12C7294D4BF3E"
 			rewards: [{
-				id: "33CB424A017ECCD7"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "26EB4121AD4CD91C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "50023E6AF7DC26B4"
@@ -726,9 +743,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "0AE7061A3F6E72FA"
 			rewards: [{
-				id: "5CFD6F91DC82843B"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "0EFAD8B0DE2AAA22"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "1D0196B5F629EF89"
@@ -748,9 +766,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "6FE4A0181929AF5D"
 			rewards: [{
-				id: "64457D3B225BE66E"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "5ABCE28D9C8FB383"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "41CDC7AC8FECD355"
@@ -770,9 +789,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "5B4F1E7A5A50C2C8"
 			rewards: [{
-				id: "3DDA560B7893B60F"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "4462DB6C45988FEE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "1F1FCDCDC2EE06D1"
@@ -792,9 +812,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "602510F89494FBC1"
 			rewards: [{
-				id: "5774CE525C8DF9DD"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "029FB709BF3FDAAF"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "神奇的名字..."
 			tasks: [{
@@ -815,9 +836,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "2AF39D37AB5ABFE4"
 			rewards: [{
-				id: "35BC973719572D82"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "7A5E78BB3FCCD318"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "2EA4CD2A110DF9F2"
@@ -840,9 +862,9 @@
 			]
 			id: "5ABD8948EB3B9E16"
 			rewards: [{
-				id: "2314453BC53ED96D"
-				type: "xp"
-				xp: 100
+				id: "02139C9010A08EE0"
+				item: "createdelightcore:gold_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "63BECF65BBEA3E36"
@@ -862,9 +884,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "3016158AD4A52FFF"
 			rewards: [{
-				id: "410130295319F531"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "2DD60F3A89723C78"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "152B82B94D0548D9"
@@ -887,9 +910,9 @@
 			]
 			id: "5D5783C474042145"
 			rewards: [{
-				id: "1B4DC7AD2595E01A"
-				type: "xp"
-				xp: 100
+				id: "32FEB066581415D4"
+				item: "createdelightcore:gold_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "5F9E3E76D1812159"
@@ -909,9 +932,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "736A1C65FF6DA138"
 			rewards: [{
-				id: "4ABBEE6EE7B36398"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "5D394D0441286000"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "6911402DC46B0640"
@@ -931,9 +955,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "0D4A628B0B7CF742"
 			rewards: [{
-				id: "3E9CEC39D6939AAB"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "0799EE74C6EBE6CE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "20277ADC5DCE455C"
@@ -953,9 +978,10 @@
 			dependencies: ["13C898B81498C177"]
 			id: "0321BFD1060D2856"
 			rewards: [{
-				id: "1F6F33E9FBE94B12"
-				type: "xp"
-				xp: 100
+				count: 3
+				id: "73D2C0EBC006D646"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			tasks: [{
 				id: "741311292F2001AF"
@@ -975,9 +1001,9 @@
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "21491709810AEF12"
 			rewards: [{
-				id: "0A93C584219DBD3F"
-				type: "xp"
-				xp: 100
+				id: "521870B0616457AB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "可两个摞在一起成为大型篝火"
 			tasks: [{
@@ -994,9 +1020,9 @@
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "02569B0F869C3FBE"
 			rewards: [{
-				id: "26B24673955DF011"
-				type: "xp"
-				xp: 100
+				id: "04A8DFDB2950E13F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "用于放葡萄，shift右键可取出"
 			tasks: [{
@@ -1011,9 +1037,9 @@
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "326977490BC20488"
 			rewards: [{
-				id: "43D8B7BA6AFB227C"
-				type: "xp"
-				xp: 100
+				id: "57356282A3B3EFAA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "可以装两种不同的东西，但总体上限为64"
 			tasks: [
@@ -1035,9 +1061,9 @@
 			dependencies: ["186C8F9674316FC2"]
 			id: "3437E6EB0861F20D"
 			rewards: [{
-				id: "7DDAB10822EE416E"
-				type: "xp"
-				xp: 100
+				id: "40FA2C29FB0C9C97"
+				item: "createdelightcore:copper_coin"
+				type: "item"
 			}]
 			subtitle: "&4生活需要仪式感！！！"
 			tasks: [{
@@ -1052,6 +1078,11 @@
 		{
 			dependencies: ["0295DFC67A8CF4B9"]
 			id: "2B16F730A7B6D977"
+			rewards: [{
+				id: "611383FCE7D00592"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			subtitle: "可以用来种植葡萄，&e增产！"
 			tasks: [
 				{

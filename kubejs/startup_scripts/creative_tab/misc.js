@@ -12,6 +12,14 @@ StartupEvents.modifyCreativeTab("tetra:default", e => {
     custom_scroll([1, 1, 4, 5], 1, "bow/stave/remembrance_stave", 1, ["tetra:bow/stave/remembrance_stave"], "c10000"),
   ])
 })
+StartupEvents.modifyCreativeTab("art_of_forging:art_of_forging", e => {
+  e.add([
+    'createdelight:demonic_codex',
+    'createdelight:otherworld_note',
+    'createdelight:dread_heart',
+    'createdelight:devil_eye',
+  ])
+})
 // epp
 StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
   e.add([
@@ -68,5 +76,30 @@ StartupEvents.modifyCreativeTab("minecraft:ingredients", e => {
     'dreadsteel:kit_white',
     'dreadsteel:kit_black',
     'dreadsteel:kit_bronze',
+  ])
+})
+
+StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
+  e.remove([
+    'kinetic_pixel:firearmworktable',
+    'kinetic_pixel:wildgraycotton',
+    'kinetic_pixel:graycotton',
+    'kinetic_pixel:graycottonseed',
+    'kinetic_pixel:bambooshell',
+    'kinetic_pixel:bambooshell',
+    Item.of('kinetic_pixel:pressurepoweredfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
+    Item.of('kinetic_pixel:heatpoweredfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
+    Item.of('kinetic_pixel:laboratorialfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
+    Item.of('kinetic_pixel:magicpoweredfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
+    'kinetic_pixel:gascylinder',
+    'kinetic_pixel:emptygascylinder',
+    'kinetic_pixel:brasscompressionsheet',
+    'kinetic_pixel:andesitealloycompressionsheet',
+    'kinetic_pixel:specialsteelcompressionsheet',
+    'kinetic_pixel:enderalloycompressionsheet',
+    'kinetic_pixel:enderalloyingot',
+    'kinetic_pixel:specialsteelingot',
+    'kinetic_pixel:componenttemplate',
+    'kinetic_pixel:nitropropellant',
   ])
 })

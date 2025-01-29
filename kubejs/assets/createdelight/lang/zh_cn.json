@@ -426,6 +426,7 @@
     "tooltip.createdelight.shift_eerie_shard": "§7使用带有§b纳米融合§7词条的武器击杀§b监守者",
     "tooltip.createdelight.shift_heart_of_ender": "§7使用带有§b纳米融合§7词条的武器击杀§b末影人",
     "tooltip.createdelight.shift_potent_mixture": "§7使用带有§b纳米融合§7词条的武器击杀§b苦力怕",
+    "tooltip.createdelight.shift_dread_heart": "§7使用带有§b纳米融合§7词条的武器击杀§b悚怖怪物",
     "tooltip.createdelight.magnetic_flux_density": "§7磁感应强度：",
     "tooltip.createdelight.shift_prospector": "§7右键以显示§b最近§7矿脉§b距离§7及§b方位",
     "tooltip.createdelight.shift_vacuum_chamber": "§7该机器需要的最低转速为：§b30",
@@ -456,6 +457,6 @@
     "tooltip.createdelight.shift_large_fueling_tank": "§b自动填充§7使用§b燃料§7的物品\n                                 \n§b填充储罐方式:                                 \n§7§b右键§7点击岩浆或使用§b注液器§7注入燃料（例如熔岩，柴油，汽油……）",
     "tooltip.createdelight.shift_kit_default": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_white": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
-    "tooltip.createdelight.kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+    "tooltip.createdelight.shift_kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色"
 }
