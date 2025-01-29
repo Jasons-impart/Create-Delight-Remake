@@ -35,16 +35,6 @@
 			y: 0.0d
 		}
 		{
-			id: "03B211A53B10318E"
-			tasks: [{
-				id: "6553912996329ADE"
-				item: "iceandfire:dragonbone"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -8.0d
-		}
-		{
 			dependencies: [
 				"244B2CABBB89B269"
 				"0B2D858482173126"

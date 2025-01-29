@@ -9,13 +9,13 @@
 		id: "tetra:modular_double"
 		tag: {
 			Damage: 0
-			"double/basic_hammer_left_material": "basic_hammer/oak"
-			"double/basic_hammer_right_material": "basic_hammer/oak"
-			"double/basic_handle_material": "basic_handle/stick"
+			"double/basic_hammer_left_material": "basic_hammer/netherite"
+			"double/basic_hammer_right_material": "basic_hammer/netherite"
+			"double/basic_handle_material": "basic_handle/forged_beam"
 			"double/handle": "double/basic_handle"
 			"double/head_left": "double/basic_hammer_left"
 			"double/head_right": "double/basic_hammer_right"
-			id: "e72ea1c4-038f-4472-8bef-35b32455354e"
+			id: "0880ce26-5935-4c28-b721-50dacdf1d998"
 		}
 	}
 	id: "4B6A861104F42DC2"
@@ -23,6 +23,14 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: [
+				"5E33AA304B6F9D9C"
+				"4536A0F8C9C5E5BC"
+				"5BFE12B3FE84D281"
+				"70DB791638AB44CF"
+				"69CF4B79C436CB39"
+				"48DABAA5BA34BE62"
+			]
 			description: ["每当我需要更高性能的工具时，我总得重新制作一把新的。有时我脑海中会闪过一个想法：是否可以&e直接更换工具一些的部件&r？这显然比重新制作一件工具性价比更高。带着这个念头，我尝试用石头制作了一把工具锤，希望能实现我的设想。"]
 			id: "75C7395A84B2E478"
 			rewards: [{
@@ -32,12 +40,33 @@
 			}]
 			shape: "square"
 			subtitle: "补药做木锤呀"
-			tasks: [{
-				advancement: "tetra:story/more_upgrades"
-				criterion: ""
-				id: "47E4C1E5FD157B6A"
-				type: "advancement"
-			}]
+			tasks: [
+				{
+					advancement: "tetra:story/more_upgrades"
+					criterion: ""
+					id: "47E4C1E5FD157B6A"
+					type: "advancement"
+				}
+				{
+					id: "2C11970271F1375D"
+					item: {
+						Count: 1
+						id: "tetra:modular_double"
+						tag: {
+							Damage: 0
+							"double/basic_hammer_left_material": "basic_hammer/stone"
+							"double/basic_hammer_right_material": "basic_hammer/stone"
+							"double/basic_handle_material": "basic_handle/stick"
+							"double/handle": "double/basic_handle"
+							"double/head_left": "double/basic_hammer_left"
+							"double/head_right": "double/basic_hammer_right"
+							id: "ec271f92-1e7e-4c9a-aa0a-09f1a0d8fd37"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+			]
 			title: "模块化开端"
 			x: 0.0d
 			y: 0.0d
@@ -49,6 +78,12 @@
 				"&e（使用锤子右键原版工作台）&r"
 			]
 			id: "3821026AD7352739"
+			rewards: [{
+				count: 4
+				id: "1053679CA5D8E3CA"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "放下工作台，然后用锤子右键它就行"
@@ -66,15 +101,20 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: [
-				"当我使用&e钻石&r升级工具时，石锤的硬度已无法打造出我需要的部件。于是我决定升级我的锤子。"
-				"升级锤子时，显然我不能手搓锤头，因此我需要重新制作一把锤子。我先在加工台上用&e铁锭&r合成了一个铁锤头，替换了锤子的一端，但这把一端是铁、一端是石的锤子，仍然不足以胜任打造钻石部件的任务。于是我将另一端也换成了铁锤头，借助这把锤子，我终于成功制作了第一个钻石部件。"
+				"石锤虽然暂且可以胜任早期的打造任务，但是显然不是长久之计。于是我决定升级我的锤子。"
+				"升级锤子时，我不能手搓锤头，因此我需要重新制作一把锤子。我先在加工台上用&e铁锭&r做锤头来替换了锤子的一端，但这把一端是铁、一端是石的锤子，仍然不足以胜任打造钻石部件的任务。于是我将另一端也换成了铁锤头，成功获得了一把铁锤。"
 			]
 			id: "0BAA9261B098316D"
-			subtitle: "铁锤"
+			rewards: [{
+				id: "67FB0436FB5FA9B8"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_3"
 				criterion: ""
 				id: "72FE65B4F2183317"
+				title: "制作铁锤"
 				type: "advancement"
 			}]
 			title: "这不是铁锤吗？"
@@ -82,12 +122,14 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"01FC78875A324DE3"
-				"0941D2A2970EB5D1"
-			]
+			dependencies: ["01FC78875A324DE3"]
 			description: ["跟随地图的指引，我来到雪山脚下，但那里除了白茫茫的积雪外空无一物。然而改造后的全息球却显示锻造师的工坊就在附近。不甘心的我决定向&e地下&r探寻。在挖掘过程中，我发现了一些奇怪的&e钢结构&r，顿时重燃希望，沿着钢梁继续挖掘。终于，挖开一块石头后，一个地下结构出现在我眼前。经过一番探索，我确信这里就是锻造师的工坊，然而它早已荒废多年，空无一人，锻造师也不知去向。或许，现在称它为遗迹更为合适。"]
 			id: "72908B9592992F33"
+			rewards: [{
+				id: "548FEB5152692E76"
+				type: "xp"
+				xp: 100
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			subtitle: "遗迹中的某些地方会有流浪者的刷怪笼哦，小心行事"
@@ -123,6 +165,7 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["72908B9592992F33"]
 			description: ["遗迹内的方块需要使用锤子采集，采集后会获得金属碎片，想要采集下来则需要附魔精准采集的锤子。"]
 			icon: "tetra:forged_platform"
 			id: "0941D2A2970EB5D1"
@@ -131,7 +174,7 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: 7.0d
+			x: 8.0d
 			y: -1.5d
 		}
 		{
@@ -145,6 +188,11 @@
 			]
 			icon: "tetra:forged_workbench"
 			id: "27BFF02187AC557B"
+			rewards: [{
+				id: "17D5677520AFB799"
+				type: "xp"
+				xp: 1000
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			tasks: [
@@ -182,7 +230,7 @@
 			}]
 			title: "黑曜石锤！"
 			x: 12.0d
-			y: 1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["56758B34C00AEFF3"]
@@ -233,6 +281,11 @@
 			dependencies: ["27BFF02187AC557B"]
 			description: ["根据笔记上的内容，在锻造锤上&e每安装一个燃烧室可提升锻造锤一个等级，加装两个时可达到七级&r，可用于锻造黑曜石锤（五级锤，需要加装一个燃烧室的锻造锤打造）和下界合金锤（六级锤，需要安装两个燃烧室的锻造锤打造）"]
 			id: "7FB4EF5A8151080B"
+			rewards: [{
+				id: "78BBF39D3F457DAB"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "76D9182D04F5E30B"
 				item: "tetra:combustion_chamber"
@@ -243,15 +296,16 @@
 		}
 		{
 			dependencies: ["72908B9592992F33"]
-			description: ["除了小型的板条箱外，还有一种大型的容器，简单的方式无法将其打开，经过多次尝试后我终于成功将它们打开。需要先用锤子敲掉四个封印，然后用羊角锤撬开每个角。令我意外的是，这个容器的容量非常惊人，竟然有整整三页的存储空间。除了那些板条箱中的物资外，里面还有一本&e锻造师留下的笔记&r，这可得认真看看。"]
+			description: ["遗迹中除了小型的板条箱外，还有一种大型的容器，简单的方式无法将其打开，经过多次尝试后我终于成功将它们打开。需要先用锤子敲掉四个封印，然后用羊角锤撬开每个角。令我意外的是，这个容器的容量非常惊人，竟然有整整三页的存储空间。除了那些板条箱中的物资外，里面还有一本&e锻造师留下的笔记&r，这可得认真看看。"]
 			icon: "tetra:forged_container"
 			id: "5E3FECE8A3CF0983"
-			subtitle: "锻造容器"
+			subtitle: "笔记正在完善中，敬请期待"
 			tasks: [{
 				icon: "tetra:forged_container"
 				id: "43D2F55666F28441"
 				observe_type: 0
 				timer: 0L
+				title: "在遗迹中找到锻造容器"
 				to_observe: "tetra:forged_container"
 				type: "observation"
 			}]
@@ -263,12 +317,17 @@
 			dependencies: ["7FB4EF5A8151080B"]
 			description: ["据笔记上所说，下界合金锤便是&5这个世界&r最强的锻造锤了，除此之外还可以通过&e打磨和镶嵌下界之星&r的方式进一步提升它的锻造能力。"]
 			id: "3A31CFC2ECFA2682"
-			shape: "hexagon"
-			size: 1.5d
+			rewards: [{
+				id: "51B6E985AE16583D"
+				type: "xp_levels"
+				xp_levels: 5
+			}]
+			size: 1.0d
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_6"
 				criterion: ""
 				id: "381E1CC339B1997A"
+				title: "打造下界合金锤"
 				type: "advancement"
 			}]
 			title: "六级锤"
@@ -391,12 +450,11 @@
 			description: ["在遗迹中的&e大小容器&r中，我发现了许多散发着魔力气息的&e金属碎片&r。但是他们的用途我还暂时不得而知。也许&4锻造师的笔记&r上会提到。"]
 			id: "3629F1DBEEFAF2FF"
 			rewards: [{
-				count: 32
+				count: 8
 				id: "47AEAE9033BB0521"
 				item: "tetra:metal_scrap"
 				type: "item"
 			}]
-			subtitle: "金属碎片"
 			tasks: [{
 				id: "72F79831CE4BD424"
 				item: "tetra:metal_scrap"
@@ -441,27 +499,41 @@
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
 			description: ["在使用锤子的过程中，我发现了一种提升性能的技巧：当&e下界合金锤的其中一个锤头的一个属性打磨到最高等级&r后，&e下一次打磨&r可以&4直接提升锤子的整体性能，从而再次提高锤头的等级&r。此外，笔记中还提到&4为锤子镶嵌下界之星&r还能进一步增强它的性能。通过这一系列操作，最终可以获得锻造等级高达八级的锤子。"]
+			icon: "minecraft:nether_star"
 			id: "1AA8B7F6B283121A"
 			optional: true
-			subtitle: "给下界合金锤镶嵌下界之星并打磨到最高级"
-			tasks: [{
-				id: "73920CFCA3EFC2F2"
+			rewards: [{
+				id: "6F021D02BD1F0BC4"
 				item: "minecraft:nether_star"
 				type: "item"
 			}]
-			title: "八级锤"
-			x: 12.0d
-			y: 3.0d
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "在打磨完全或是镶嵌下界之星中两种方法中选择一个即可打造出七级锤"
+			tasks: [{
+				id: "67CA9F03C6B83A4B"
+				title: "打造出七级锤"
+				type: "checkmark"
+			}]
+			title: "七级锤"
+			x: 10.5d
+			y: 4.75d
 		}
 		{
 			dependencies: ["0BAA9261B098316D"]
 			description: ["在打造钻石部件时，铁锤的硬度也已经不够了。我尝试用钻石制作锤头，但钻石难以成型。而铁锤显然无法打造黑曜石锤。于是我退而求其次，选择用硬度稍低但带有下界魔力的&e黑石&r来制作锤头，希望它能与钻石产生某种特殊反应，没想到居然成功了！"]
 			id: "1E0BB246F04014C3"
+			rewards: [{
+				id: "6D8DDDE3F6F378EC"
+				type: "xp"
+				xp: 200
+			}]
 			subtitle: "黑石锤"
 			tasks: [{
 				advancement: "tetra:upgrades/hammer_4"
 				criterion: ""
 				id: "25ADD591E90B355A"
+				title: "制作黑石锤"
 				type: "advancement"
 			}]
 			title: "黑石锤"
@@ -509,6 +581,7 @@
 				id: "35F56781AD91C6CE"
 				observe_type: 0
 				timer: 0L
+				title: "在遗迹中找到锻造板条箱"
 				to_observe: "tetra:forged_crate"
 				type: "observation"
 			}]
@@ -536,6 +609,19 @@
 			dependencies: ["3629F1DBEEFAF2FF"]
 			description: ["依照笔记上的指引，我将&e金属碎片和陨石废液以及熔融下界合金在熔铸炉中熔合，将产物倒入熔铸盆&r，最终铸造出了一种全新的金属。正如笔记中所述，这种金属展现出惊人的强度，远超我所知的任何其他材料。这将开创一个新纪元。"]
 			id: "7861A70169C19A1A"
+			rewards: [
+				{
+					count: 32
+					id: "76A1B85AA9CB057B"
+					item: "tetra:metal_scrap"
+					type: "item"
+				}
+				{
+					id: "7986BEBCAF311885"
+					type: "xp_levels"
+					xp_levels: 5
+				}
+			]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
@@ -600,6 +686,12 @@
 			dependencies: ["3821026AD7352739"]
 			description: ["打造工具的时候，经常要用到不同的工具，为了方便随时随地可以拿取工具，我做了一个架子用来放置常用的工具"]
 			id: "49F8C50AE9B68585"
+			rewards: [{
+				count: 4
+				id: "0B6FC779E66C6F30"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
 			subtitle: "在以加工台为中心的5x5方形区域内放置工具架，放在工具架上的工具可直接在加工台上取用"
 			tasks: [{
 				id: "73910FEC80C8262F"
@@ -656,6 +748,7 @@
 				}
 			}
 			id: "055C7F9D1D6A56BE"
+			min_required_tasks: 1
 			shape: "rsquare"
 			tasks: [
 				{
@@ -789,7 +882,13 @@
 				"武器匠：5级售卖金属专长"
 			]
 			id: "5E811158E94E98B9"
+			rewards: [{
+				id: "7CCF81A538161EB7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "事实上整合包中的魔改武器基本无法使用锻造锤打造，想要进一步提升武器属性只能向村民购买对应的卷轴"
 			tasks: [
 				{
 					id: "4E1D94E9DCF1DC3C"
@@ -1027,7 +1126,13 @@
 		}
 		{
 			id: "5A514768646B5842"
+			rewards: [{
+				id: "3FA45E62C94F08DE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "在下界堡垒或猪灵堡垒的箱子中获得"
 			tasks: [
 				{
 					id: "6825B37AA1F04371"
@@ -1094,7 +1199,13 @@
 		}
 		{
 			id: "5014699556117EBC"
+			rewards: [{
+				id: "56FEE70F1ADE6E10"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "在下界堡垒或猪灵堡垒的箱子中获得"
 			tasks: [
 				{
 					id: "322A0CB4FB2D8C50"
@@ -1318,7 +1429,13 @@
 		}
 		{
 			id: "3EA5B5BF2F118493"
+			rewards: [{
+				id: "39909C158A3140D7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "在地牢的箱子中"
 			tasks: [{
 				id: "03C8D4EF9395DF62"
 				item: {
@@ -1351,7 +1468,13 @@
 		}
 		{
 			id: "7C3B7E9AE14D105E"
+			rewards: [{
+				id: "057932CD857C527E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "在地牢的箱子中"
 			tasks: [{
 				id: "583A2E30A7EDFA53"
 				item: {
@@ -1384,7 +1507,13 @@
 		}
 		{
 			id: "1BB17365A0FC3BA4"
+			rewards: [{
+				id: "25A4BCC1BC9EC613"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
+			subtitle: "在地牢的箱子中"
 			tasks: [{
 				id: "308C3CDF0DA6A8CA"
 				item: {
@@ -1450,9 +1579,24 @@
 		}
 		{
 			description: ["整合包对Tetra本体只进行了较小幅度的修改，对Tetra的附属锻造之艺（Art of Foring）进行的魔改更多，本章节可基本按照原版Tetra经验通过，如果你是Tetra的新手玩家，那通过整章任务也可以让你快速上手Tetra"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/oak"
+					"double/basic_hammer_right_material": "basic_hammer/oak"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "be8cf944-febd-4471-93f3-d146036232ec"
+				}
+			}
 			id: "48DABAA5BA34BE62"
 			shape: "gear"
 			size: 1.5d
+			subtitle: "建议阅读完第一章再进入本章，第一章中讲解了一部分Tetra的基础内容"
 			tasks: [{
 				id: "2B6BB42E096A74FA"
 				title: "注意"
@@ -1462,5 +1606,5 @@
 			y: 0.0d
 		}
 	]
-	title: "&2承·昔人已逝"
+	title: "&2昔人已逝"
 }

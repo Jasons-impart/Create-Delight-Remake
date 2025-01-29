@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "1CD865FBF0A26F4D"
 	group: "57E934AC8166BC73"
-	hide_quest_until_deps_visible: true
 	icon: {
 		Count: 1
 		id: "tetra:scroll_rolled"
@@ -44,6 +43,35 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["当你解锁本章的时候，你已经迈出了成为新的锻造大师的第一步，本章会引导你打造出整合包中最强大的几把武器。"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					EnchantmentMapping: {
+						"minecraft:unbreaking": "double/handle"
+					}
+					Enchantments: [{
+						id: "minecraft:unbreaking"
+						lvl: 3s
+					}]
+					HideFlags: 1
+					"double/basic_hammer_left_material": "basic_hammer/endsteel_ingot"
+					"double/basic_hammer_right_material": "basic_hammer/endsteel_ingot"
+					"double/basic_handle_material": "basic_handle/endsteel_ingot"
+					"double/binding": "double/socket"
+					"double/handle": "double/basic_handle"
+					"double/handle/settle_progress": 2615
+					"double/handle:settled": 1
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					"double/socket_material": "double_socket/pure_darkness"
+					honing_available: 1b
+					honing_count: 12
+					honing_progress: -19
+					id: "fd9738ad-6654-4dc3-963c-7102e1dfc5d3"
+				}
+			}
 			id: "02C4A15FAC0DA7D4"
 			shape: "gear"
 			size: 2.0d
@@ -58,6 +86,80 @@
 		{
 			dependencies: ["02C4A15FAC0DA7D4"]
 			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					EnchantmentMapping: {
+						"minecraft:looting": "sword/hilt"
+						"minecraft:mending": "sword/hilt"
+						"minecraft:sharpness": "sword/blade"
+						"minecraft:sweeping": "sword/blade"
+						"minecraft:unbreaking": "sword/blade"
+					}
+					Enchantments: [
+						{
+							id: "minecraft:mending"
+							lvl: 1s
+						}
+						{
+							id: "minecraft:sharpness"
+							lvl: 7s
+						}
+						{
+							id: "minecraft:sweeping"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:looting"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:unbreaking"
+							lvl: 3s
+						}
+					]
+					HideFlags: 1
+					RepairCost: 0
+					display: {
+						Name: "{\"text\":\"完全体村正测试\"}"
+					}
+					honing_available: 1b
+					honing_count: 51
+					honing_progress: -46
+					id: "ac985410-3fad-4222-8f0d-6a1b8c0b0689"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/katana_blade"
+					"sword/blade:blade/carnage": 1
+					"sword/blade:blade/echo": 1
+					"sword/blade:blade/exhilaration": 1
+					"sword/blade:blade/preemptive_strike": 1
+					"sword/blade:blade/puncture_tier": 3
+					"sword/blade:blade/slashing": 1
+					"sword/blade:blade_hone/damage": 5
+					"sword/blade:blade_hone/speed": 5
+					"sword/blade:nano_fused": 1
+					"sword/blade:quality": 1
+					"sword/blade:settled": 1
+					"sword/blade:sword/murasama_imprv": 0
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:hilt/wrap/life_fiber": 0
+					"sword/hilt:hilt_hone/damage": 5
+					"sword/hilt:hilt_hone/speed": 5
+					"sword/hilt:nano_fused": 1
+					"sword/hilt:quality": 1
+					"sword/hilt:settled": 2
+					"sword/katana_blade_material": "katana_blade/mine_ingot"
+					"sword/pommel": "sword/grip_loop"
+					"sword/reinforced_fuller_material": "reinforced_fuller/endsteel_ingot"
+					"sword/socket_material": "sword_socket/singularity"
+					weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":4.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+				}
+			}
 			id: "3F2289F40B3CEEEA"
 			tasks: [{
 				id: "7986B4F31B6444E8"
@@ -163,6 +265,69 @@
 			dependencies: ["02C4A15FAC0DA7D4"]
 			description: ["千夜寒有三个高级打磨和两条不同的升级线路（暴击和吸血）"]
 			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					EnchantmentMapping: {
+						"minecraft:sharpness": "sword/blade"
+						"minecraft:sweeping": "sword/blade"
+						"minecraft:unbreaking": "sword/blade"
+					}
+					Enchantments: [
+						{
+							id: "minecraft:sharpness"
+							lvl: 7s
+						}
+						{
+							id: "minecraft:sweeping"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:unbreaking"
+							lvl: 3s
+						}
+					]
+					HideFlags: 1
+					RepairCost: 0
+					display: {
+						Name: "{\"text\":\"暴击刀\"}"
+					}
+					honing_available: 1b
+					honing_count: 44
+					honing_progress: -43
+					id: "b04997cc-2cf0-442c-b1a6-7cfb4ce64d67"
+					"quark:RuneColor": "cyan"
+					"sword/basic_hilt_material": "basic_hilt/dreadsteel_ingot"
+					"sword/blade": "sword/katana_blade"
+					"sword/blade:blade/benight": 3
+					"sword/blade:blade/conquering": 1
+					"sword/blade:blade/demon_eye": 1
+					"sword/blade:blade/infinity_edge": 1
+					"sword/blade:blade/serrated": 3
+					"sword/blade:blade/tempered": 3
+					"sword/blade:blade_hone/damage": 5
+					"sword/blade:blade_hone/speed": 5
+					"sword/blade:quality": 1
+					"sword/blade:settled": 2
+					"sword/blade:sword/thousand_cold_nights_imprv": 0
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/grip_loop_material": "grip_loop/shadow_silk"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:hilt/wrap/shadow_silk": 0
+					"sword/hilt:hilt_hone/damage": 5
+					"sword/hilt:hilt_hone/speed": 5
+					"sword/hilt:quality": 1
+					"sword/hilt:settled": 2
+					"sword/katana_blade_material": "katana_blade/endsteel_ingot"
+					"sword/pommel": "sword/grip_loop"
+					"sword/reinforced_fuller_material": "reinforced_fuller/endsteel_ingot"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":4.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
+				}
+			}
 			id: "53D0EBBAB29AA8C9"
 			tasks: [{
 				id: "3832A16AD2ABABEC"
@@ -245,7 +410,7 @@
 		}
 		{
 			dependencies: ["67E5866F8FC27115"]
-			description: ["为暴击线路的千夜寒镶嵌虚空蠕虫眼，你的千夜寒将获得更高的暴击率、造成更高的暴击伤害"]
+			description: ["为暴击线路的千夜寒镶嵌虚空蠕虫眼，你的千夜寒将额外获得更高的暴击率、造成更高的暴击伤害"]
 			id: "46C457CD989B236C"
 			tasks: [{
 				id: "2CBE78F38C41B14D"
@@ -258,7 +423,7 @@
 		}
 		{
 			dependencies: ["1B0AEFA5C46F810D"]
-			description: ["为吸血线路的千夜寒镶嵌伊甸图腾，你的千夜寒将获得更高的回血概率率、回复量"]
+			description: ["为吸血线路的千夜寒镶嵌伊甸图腾，你的千夜寒将额外获得更高的回血概率率、回复量"]
 			id: "4B6E8A65F9C94BCC"
 			tasks: [{
 				id: "3A53FFD5D9ED284F"
@@ -300,6 +465,73 @@
 			dependencies: ["02C4A15FAC0DA7D4"]
 			description: ["锻造师之权有三个高级打磨以及两个特殊镶嵌，对Boss专武"]
 			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					EnchantmentMapping: {
+						"minecraft:looting": "sword/blade"
+						"minecraft:mending": "sword/hilt"
+						"minecraft:sharpness": "sword/blade"
+						"minecraft:sweeping": "sword/hilt"
+						"minecraft:unbreaking": "sword/hilt"
+					}
+					Enchantments: [
+						{
+							id: "minecraft:mending"
+							lvl: 1s
+						}
+						{
+							id: "minecraft:sharpness"
+							lvl: 7s
+						}
+						{
+							id: "minecraft:sweeping"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:looting"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:unbreaking"
+							lvl: 3s
+						}
+					]
+					HideFlags: 1
+					honing_available: 1b
+					honing_count: 49
+					honing_progress: -130
+					id: "70f7ccf3-15c6-4fc3-a2ff-21529cd79bd3"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/crucible_blade"
+					"sword/blade/settle_progress": 1545
+					"sword/blade:blade/esoteric_tier": 3
+					"sword/blade:blade/goliath_tier": 3
+					"sword/blade:blade/vengeance_tier": 2
+					"sword/blade:blade_hone/damage": 5
+					"sword/blade:blade_hone/speed": 5
+					"sword/blade:quality": 1
+					"sword/blade:settled": 1
+					"sword/blade:sword/architect_imprv": 0
+					"sword/crucible_blade_material": "crucible_blade/endsteel_ingot"
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/grip_loop_material": "grip_loop/endsteel_ingot"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:hilt/wrap/life_fiber": 0
+					"sword/hilt:hilt_hone/damage": 5
+					"sword/hilt:hilt_hone/speed": 5
+					"sword/hilt:quality": 1
+					"sword/hilt:settled": 2
+					"sword/pommel": "sword/grip_loop"
+					"sword/reinforced_fuller_material": "reinforced_fuller/endsteel_ingot"
+					"sword/socket_material": "sword_socket/cyclops_skull"
+					tetraticScaleY: 1.5f
+					weapon_attributes: "{\"parent\":\"bettercombat:crucible\",\"attributes\":{\"attack_range\":3.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"longsword\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:claymore_swing\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:claymore_swing\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_switch_blade_right\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:one_handed_slash_switch_blade_left\",\"swing_sound\":{\"id\":\"bettercombat:sword_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":1.0,\"angle\":360.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_spin\",\"swing_sound\":{\"id\":\"bettercombat:double_axe_swing\",\"volume\":1.0,\"pitch\":1.1,\"randomness\":0.1}}]}}"
+				}
+			}
 			id: "3E5B08E68CF610C0"
 			tasks: [{
 				id: "1F3E1B7A9044C153"
@@ -448,6 +680,75 @@
 			dependencies: ["02C4A15FAC0DA7D4"]
 			description: ["灾厄之刃有两条截然相反的提升路线"]
 			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "tetra:modular_sword"
+				tag: {
+					Damage: 0
+					EnchantmentMapping: {
+						"minecraft:looting": "sword/blade"
+						"minecraft:mending": "sword/hilt"
+						"minecraft:sharpness": "sword/blade"
+						"minecraft:sweeping": "sword/blade"
+						"minecraft:unbreaking": "sword/blade"
+					}
+					Enchantments: [
+						{
+							id: "minecraft:mending"
+							lvl: 1s
+						}
+						{
+							id: "minecraft:sharpness"
+							lvl: 7s
+						}
+						{
+							id: "minecraft:sweeping"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:looting"
+							lvl: 5s
+						}
+						{
+							id: "minecraft:unbreaking"
+							lvl: 3s
+						}
+					]
+					HideFlags: 1
+					RepairCost: 0
+					display: {
+						Name: "{\"text\":\"满配灾厄\"}"
+					}
+					honing_available: 1b
+					honing_count: 37
+					honing_progress: -5
+					id: "3d90733e-240e-4ed7-a6e4-85c063d2e04d"
+					"sword/basic_hilt_material": "basic_hilt/endsteel_ingot"
+					"sword/blade": "sword/cataclysm_blade"
+					"sword/blade:blade/carnage": 1
+					"sword/blade:blade/carnage1": 1
+					"sword/blade:blade/conquering": 1
+					"sword/blade:blade/retribution": 2
+					"sword/blade:blade_hone/damage": 5
+					"sword/blade:blade_hone/speed": 5
+					"sword/blade:settled": 1
+					"sword/blade:sword/catastrophe_imprv": 0
+					"sword/cataclysm_blade_material": "cataclysm_blade/cataclysm_blade"
+					"sword/fuller": "sword/reinforced_fuller"
+					"sword/grip_loop_material": "grip_loop/shadow_silk"
+					"sword/guard": "sword/socket"
+					"sword/hilt": "sword/basic_hilt"
+					"sword/hilt:hilt/wrap/life_fiber": 0
+					"sword/hilt:hilt_hone/damage": 5
+					"sword/hilt:hilt_hone/speed": 5
+					"sword/hilt:quality": 1
+					"sword/hilt:settled": 2
+					"sword/pommel": "sword/grip_loop"
+					"sword/reinforced_fuller_material": "reinforced_fuller/endsteel_ingot"
+					"sword/socket_material": "sword_socket/socket_void_worm_eye"
+					weapon_attributes: "{\"parent\":\"bettercombat:claymore\",\"attributes\":{\"attack_range\":4.5,\"pose\":\"bettercombat:pose_two_handed_sword\",\"two_handed\":true,\"category\":\"claymore\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:claymore_swing\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_stab_left\",\"swing_sound\":{\"id\":\"bettercombat:claymore_stab\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.25,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slam\",\"swing_sound\":{\"id\":\"bettercombat:claymore_slam\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.0}}]}}"
+				}
+			}
 			id: "0FCA1FD3752590FF"
 			tasks: [{
 				id: "41C2853A53DCDA48"
@@ -608,13 +909,15 @@
 			y: 7.0d
 		}
 		{
+			dependencies: ["02C4A15FAC0DA7D4"]
 			description: [
-				"在武器消耗耐久后会使得武器更加稳固，当右上角弹出某个部件已稳固时，这把武器将额外获得完整度，最多可获得四点（剑刃两点、剑柄两点）。在加工台上点击武器的剑刃或剑柄，点击详情即可查看稳固进度"
+				"在武器消耗耐久后会使得武器更加稳固，当右上角弹出某个部件已稳固时，这把武器将额外获得完整度，最多可获得四点（剑刃两点、剑柄两点）。在加工台上点击武器的剑刃或剑柄，点击详情即可查看稳固进度。"
 				"{image:createdelight:textures/gui/wengu.png width:100 height:100 align:center}"
 			]
+			hide_dependency_lines: true
 			id: "11140619C490BA12"
 			shape: "gear"
-			subtitle: "本章的武器均设计好了完整度，如果出现打磨时完整度不够，将武器部件刷到稳固即可"
+			subtitle: "本章的武器均设计好了完整度，如果出现打磨时完整度不够，将全部的武器部件刷到稳固即可。如果出现完整度溢出或是不够进行全部的打磨，欢迎反馈。"
 			tasks: [{
 				id: "275318FC8DE6B2D2"
 				title: "打磨"
@@ -624,6 +927,18 @@
 			x: 0.0d
 			y: 1.5d
 		}
+		{
+			dependencies: ["6EB179DB9F84E7FD"]
+			description: ["暗影丝绸作为裹柄和握环可分别降低2级吞噬诅咒，&e注意，悚怖钢剑柄无法降低灾祸之刃的吞噬诅咒等级&r"]
+			id: "00E069C1D28616C4"
+			tasks: [{
+				id: "318970B5465BB1A4"
+				item: "alexscaves:shadow_silk"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 7.0d
+		}
 	]
-	title: "&5合·锻火承续"
+	title: "&5锻火承续"
 }

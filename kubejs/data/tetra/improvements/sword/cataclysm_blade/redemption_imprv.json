@@ -10,7 +10,7 @@
         },
         "attributes": {
             "generic.attack_speed": 0.6,
-            "generic.attack_damage": -15
+            "generic.attack_damage": -10
         },
         "models": [
             {

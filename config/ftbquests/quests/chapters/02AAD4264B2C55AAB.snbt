@@ -4,20 +4,7 @@
 	default_quest_shape: ""
 	filename: "02AAD4264B2C55AAB"
 	group: "57E934AC8166BC73"
-	icon: {
-		Count: 1
-		id: "tetra:modular_double"
-		tag: {
-			Damage: 0
-			"double/basic_hammer_left_material": "basic_hammer/oak"
-			"double/basic_hammer_right_material": "basic_hammer/oak"
-			"double/basic_handle_material": "basic_handle/stick"
-			"double/handle": "double/basic_handle"
-			"double/head_left": "double/basic_hammer_left"
-			"double/head_right": "double/basic_hammer_right"
-			id: "d693d304-cf80-43d2-8952-f7e88df82510"
-		}
-	}
+	icon: "art_of_forging:sigil_of_eden"
 	id: "55436AC0A0C01843"
 	order_index: 2
 	quest_links: [ ]
@@ -27,7 +14,10 @@
 				"7861A70169C19A1A"
 				"3A31CFC2ECFA2682"
 			]
-			description: ["整合包对Art of Forging进行了颠覆性的重做，玩家先前游玩AoF的相关经验大部分不适用于本整合包，大部分魔改内容都在在本章中任务线路中给出提示，但由于更新比较仓促，部分内容还未实现，同时武器、材料数值也并未进行严格的平衡，敬请谅解。在后续的更新中我们会尽快将内容补全，还你一个完整的体验。"]
+			description: [
+				"&4更高级的锤子等级见右侧的高级金属相关任务"
+				"&r整合包对Art of Forging进行了颠覆性的重做，玩家先前游玩AoF的相关经验大部分不适用于本整合包，大部分魔改内容都在在本章中任务线路中给出提示，但由于更新比较仓促，部分内容还未实现，同时武器、材料数值也并未进行严格的平衡，敬请谅解。在后续的更新中我们会尽快将内容补全，还你一个完整的体验。"
+			]
 			icon: {
 				Count: 1
 				id: "tetra:scroll_rolled"
@@ -62,7 +52,6 @@
 			}]
 			shape: "hexagon"
 			size: 2.5d
-			subtitle: "更高级的锤子等级见右侧的高级金属相关任务"
 			tasks: [{
 				advancement: "tetra:art_of_forging/root"
 				criterion: ""
@@ -327,6 +316,7 @@
 			description: ["在远古城市的箱子里，我找到了&e三把暗淡失色的远古武器&r。笔记提到，只要&e注入邪恶之力&r它们便能重焕生机。可惜笔记到此再次戛然而止，似乎如何为它们注入邪恶之力还需要我亲自去探寻。"]
 			icon: "art_of_forging:ancient_blade"
 			id: "137C9220F86DD557"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "083CFDFAEA3DE401"
@@ -375,6 +365,7 @@
 			description: ["我尝试将电流通入几种常见的金属，但它们的电阻显然过高，导致电流在极短时间内迅速衰减，远未达到超导效果。于是，我转而以&e琥珀金&r作为基底，将&e陨石溶液&r注入其中，并安装了一些&e精密的电子元件&r。经过反复调试，我成功打造出了一种近乎实现超导性能的材料。"]
 			id: "6534A8367009AD68"
 			tasks: [{
+				count: 2L
 				id: "288B11EC345F9C3C"
 				item: "vvaddon:mine_ingot"
 				type: "item"
@@ -552,6 +543,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "另外两把武器正在设计中，敬请期待"
 			tasks: [{
 				id: "4740D1077991AF05"
 				item: "art_of_forging:encoded_canister"
@@ -731,6 +723,7 @@
 			id: "1395569F70AEFEE2"
 			shape: "pentagon"
 			size: 1.5d
+			subtitle: "纳米融合不消耗武器完整度"
 			tasks: [{
 				id: "5BBFAA1C222297B5"
 				item: "art_of_forging:nano_insectoid"
@@ -879,10 +872,12 @@
 			y: 6.0d
 		}
 		{
+			dependencies: ["4178108D392476B9"]
 			description: [
 				"在&e地牢&r深处，埋藏着现世最强弓的图纸。"
 				"经过特殊改造的无畏弓材，拥有远超普通弓材的力量，能够承受极高的张力，释放出强大的箭速。"
 			]
+			hide_dependency_lines: true
 			id: "5FC72D360093BE89"
 			tasks: [{
 				id: "5ACC547ECB1E3FA4"
@@ -1220,6 +1215,7 @@
 				item: "createdelightcore:emerald_coin"
 				type: "item"
 			}]
+			subtitle: "恶魔之眼由Alex洞穴的遗弃者掉落"
 			tasks: [
 				{
 					id: "7C5A873F3845C3F8"
@@ -1410,15 +1406,9 @@
 			dependencies: ["4178108D392476B9"]
 			hide_dependency_lines: true
 			id: "73F6088E76969E13"
-			rewards: [{
-				count: 3
-				id: "47A359E2BCD70480"
-				item: "art_of_forging:forged_steel_ingot"
-				type: "item"
-			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "双头锻造钢锤为七级锤"
+			subtitle: "双头锻造钢锤为七级锤，但是你需要先使用完全打磨的下界合金锤或镶嵌下界之星的下界合金锤才能打造锻造钢锤"
 			tasks: [{
 				id: "2A51FC7AAB387CD5"
 				item: "art_of_forging:forged_steel_ingot"
@@ -1428,6 +1418,8 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["4178108D392476B9"]
+			hide_dependency_lines: true
 			id: "45AEEC23471D3A98"
 			tasks: [{
 				id: "417975C36DDA120A"
@@ -1438,6 +1430,7 @@
 			y: 2.0d
 		}
 		{
+			can_repeat: true
 			dependencies: ["137C9220F86DD557"]
 			description: ["镇上的铁匠那里有好几套，拿其他部件找他换吧"]
 			icon: "art_of_forging:ancient_blade"
@@ -1464,6 +1457,7 @@
 					type: "item"
 				}
 				{
+					consume_items: true
 					id: "18DDA124D7045599"
 					item: "art_of_forging:demonic_flail"
 					type: "item"
@@ -1510,7 +1504,9 @@
 			y: 6.0d
 		}
 		{
+			dependencies: ["4178108D392476B9"]
 			description: ["我研究了世界上绝大多数性能卓越的&e纤维与皮革&r，并结合从异界学习到的知识，最终找到了一种制造高性能&e弓弦&r的方法。"]
+			hide_dependency_lines: true
 			icon: "art_of_forging:life_fiber"
 			id: "6A55E5F7C7309D1D"
 			tasks: [
@@ -1569,6 +1565,8 @@
 			y: 6.0d
 		}
 		{
+			dependencies: ["4178108D392476B9"]
+			hide_dependency_lines: true
 			id: "79324D33E24DFFB4"
 			tasks: [{
 				id: "5DF4C0EB6595C9DB"
@@ -1620,9 +1618,10 @@
 			description: ["村正之刃的专属金属"]
 			id: "5C1B7AAA928BCA00"
 			rewards: [{
-				id: "62BDDFE988F29066"
-				type: "xp_levels"
-				xp_levels: 15
+				exclude_from_claim_all: true
+				id: "10254CED41B6EDAF"
+				table_id: 1515464272228904394L
+				type: "random"
 			}]
 			shape: "hexagon"
 			size: 1.5d
@@ -1658,7 +1657,9 @@
 			y: 0.5d
 		}
 		{
+			dependencies: ["4178108D392476B9"]
 			description: ["现世最为强力的两把弓，我得好好研究一下"]
+			hide_dependency_lines: true
 			id: "37B4ABA102143DA3"
 			tasks: [
 				{
@@ -1694,20 +1695,28 @@
 			]
 			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤"]
 			id: "268643C6AE454B9F"
-			rewards: [{
-				id: "119CD0F8A13EBE0B"
-				item: "createdelightcore:emerald_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "119CD0F8A13EBE0B"
+					item: "createdelightcore:emerald_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "685036F931BCFD52"
+					table_id: 1515464272228904394L
+					type: "random"
+				}
+			]
 			tasks: [{
 				id: "6F0D1285271C87FA"
 				item: "alexscaves:pure_darkness"
 				type: "item"
 			}]
 			x: 9.5d
-			y: 8.0d
+			y: 8.5d
 		}
 	]
-	subtitle: ["暂属于未完成章节"]
-	title: "&3转·锻造之艺"
+	subtitle: [""]
+	title: "&3锻造之艺"
 }

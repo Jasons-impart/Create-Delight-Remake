@@ -1,4 +1,5 @@
 {
+	always_invisible: true
 	autofocus_id: "03950A91DF592F72"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
@@ -65,19 +66,11 @@
 				}
 			}
 			id: "752E66805BBFEC51"
-			rewards: [
-				{
-					id: "586C339149E32EB5"
-					item: "iceandfire:dread_queen_staff"
-					type: "item"
-				}
-				{
-					count: 4
-					id: "26AF4348E3278030"
-					item: "iceandfire:dragonsteel_ice_ingot"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "5912F833BE0C7138"
+				item: "dreadsteel:dreadsteel_shield"
+				type: "item"
+			}]
 			shape: "square"
 			size: 2.0d
 			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
@@ -170,59 +163,24 @@
 				tag: { }
 			}
 			id: "5981A5D70F26A7A5"
-			rewards: [
-				{
-					id: "681A11C211D0C1CC"
-					item: {
-						Count: 1
-						id: "netmusic:music_cd"
-						tag: {
-							NetMusicSongInfo: {
-								artists: ["The Journeymen"]
-								name: "500 Miles"
-								read_only: 0b
-								time: 193
-								url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
-								vip: 0b
-							}
+			rewards: [{
+				id: "681A11C211D0C1CC"
+				item: {
+					Count: 1
+					id: "netmusic:music_cd"
+					tag: {
+						NetMusicSongInfo: {
+							artists: ["The Journeymen"]
+							name: "500 Miles"
+							read_only: 0b
+							time: 193
+							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+							vip: 0b
 						}
 					}
-					type: "item"
 				}
-				{
-					id: "515BA11D4832D210"
-					item: {
-						Count: 1
-						id: "tetra:modular_sword"
-						tag: {
-							Damage: 0
-							EnchantmentMapping: { }
-							HideFlags: 1
-							RepairCost: 0
-							display: {
-								Name: "{\"text\":\"落叶归根\"}"
-							}
-							honing_progress: 565
-							id: "c15cbc25-d133-449b-8f6e-daaa6d995421"
-							"sword/basic_hilt_material": "basic_hilt/forged_beam"
-							"sword/blade": "sword/souleatingblade"
-							"sword/blade:quality": 2
-							"sword/echo_fuller_material": "echo_fuller/echo_fullerecho_shard"
-							"sword/fuller": "sword/echo_fuller"
-							"sword/grip_loop_material": "grip_loop/netherite"
-							"sword/guard": "sword/socket"
-							"sword/hilt": "sword/basic_hilt"
-							"sword/pommel": "sword/grip_loop"
-							"sword/socket_material": "sword_socket/socket_void_worm_eye"
-							"sword/souleatingblade_material": "souleatingblade/souleatingblade"
-							tetraticScaleY: 2.0f
-							tetraticScaleZ: 1.5f
-							weapon_attributes: "{\"parent\":\"bettercombat:claymore\",\"attributes\":{\"attack_range\":4.5,\"pose\":\"bettercombat:pose_two_handed_sword\",\"two_handed\":true,\"category\":\"claymore\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.75,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:claymore_swing\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"FORWARD_BOX\",\"damage_multiplier\":1.0,\"angle\":0.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_stab_left\",\"swing_sound\":{\"id\":\"bettercombat:claymore_stab\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.25,\"angle\":150.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slam\",\"swing_sound\":{\"id\":\"bettercombat:claymore_slam\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.0}}]}}"
-						}
-					}
-					type: "item"
-				}
-			]
+				type: "item"
+			}]
 			shape: "square"
 			size: 2.0d
 			subtitle: "踏上去往远方的路途"
@@ -252,30 +210,6 @@
 			dependencies: ["421576F1BE1DF7D9"]
 			icon: "ad_astra:glacio_globe"
 			id: "75605D2B058F2DA5"
-			rewards: [{
-				id: "669E5E55A340E71E"
-				item: {
-					Count: 1
-					id: "tetra:modular_bow"
-					tag: {
-						Damage: 0
-						HideFlags: 1
-						"bow/adjustable_strength_material": "adjustable_strength/bolt"
-						"bow/compound_string_material": "compound_string/warped_muscle"
-						"bow/dreadnought_stave_material": "dreadnought_stave/dragonsteel_lightning_ingot"
-						"bow/riser": "bow/adjustable_strength"
-						"bow/riser_tweak:bow/adjustable_strength": 0
-						"bow/stave": "bow/dreadnought_stave"
-						"bow/stave/settle_progress": 1585
-						"bow/stave:bow/remembrance_imprv": 0
-						"bow/string": "bow/compound_string"
-						"bow/string/settle_progress": 606
-						honing_progress: 129
-						id: "d7e485e6-c3d7-4097-84ec-40f8d7ec535c"
-					}
-				}
-				type: "item"
-			}]
 			shape: "square"
 			subtitle: "悚怖生物只可在&6霜原星&r召唤！"
 			tasks: [{
@@ -293,6 +227,12 @@
 			dependencies: ["03950A91DF592F72"]
 			description: ["         冰龙是巨大的双足爬行动物，但是其头部比火龙更大，头上有着有着三对向后的角和鼻头上的一根小角的头部。巨大的尾巴有着类似鱼尾的形状使其有火龙所不具有的能够在水下游泳并高速穿越海洋的能力。雄性冰龙翅膀后有浅色斑点，而雌龙的角更弯曲。冰龙有四种不同颜色，分别是：霜蓝（Blue）-暗白（White）宝靛（Sapphire）-纹银（Sliver）"]
 			id: "421576F1BE1DF7D9"
+			rewards: [{
+				count: 8
+				id: "0AAF39E39B0C9FC7"
+				item: "iceandfire:ice_dragon_blood"
+				type: "item"
+			}]
 			shape: "square"
 			tasks: [{
 				id: "2EAC482611B3A8B5"
@@ -313,6 +253,12 @@
 			dependencies: ["03950A91DF592F72"]
 			description: ["         与火龙和冰龙一样，电龙也是双足爬行动物，拥有巨大的翅膀、长长的尾巴、布满尖刺的背部和巨大的下巴。然而，它们有3对向后的角，而不是2对，它们背上的尖刺更长、更高，尾巴上有3对长尖刺。雄性电龙与雌性的不同之处在于雄性有带有渐变色的翅膀，而雌性与雄性的不同之处在于雌龙的角更弯曲。电龙有4种颜色：晶紫（Amethyst Purple）、夜黑（Dark Black）、铜赤（Copper Brown）和电青（Electric Blue）。"]
 			id: "46108940883CF8E5"
+			rewards: [{
+				count: 8
+				id: "3CD9E7D0CDBBC7AD"
+				item: "iceandfire:lightning_dragon_blood"
+				type: "item"
+			}]
 			shape: "square"
 			tasks: [{
 				id: "60FB93D4DAC247C3"
@@ -333,6 +279,12 @@
 			dependencies: ["03950A91DF592F72"]
 			description: ["         火龙是一种巨大的双足爬行动物，有一对巨大的，坚韧的蝙蝠状翅膀，强壮的后腿带有三只适于抓握的抓尖脚趾。相对中等的身体上有一排尖刺顺着脊椎排下来，有着较长的脖子和相对巨大的，有着两对向后的角的头部及露出巨大牙齿的下颚。还有一条和身体的其他部分一样长的，逐渐变细的尾巴。雄性火龙的翅膀上带有深色的火焰斑点，而雌性火龙则没有这个特征。他们有4种颜色：赤红（Red）、翡绿（Green）、沉金（Bronze）、烬灰（Gray）"]
 			id: "6F25C6A7F38F43E0"
+			rewards: [{
+				count: 8
+				id: "499C6E9470C465A0"
+				item: "iceandfire:fire_dragon_blood"
+				type: "item"
+			}]
 			shape: "square"
 			tasks: [{
 				id: "16977036C1FF4EF0"
@@ -352,8 +304,8 @@
 		{
 			dependencies: ["5981A5D70F26A7A5"]
 			description: [
-				"         火龙是漫游于火星上空的一种飞龙，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。"
-				"         冰龙是漫游于霜原星上空的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
+				"         火龙是存在于于火星和水星的一种飞龙，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。"
+				"         冰龙是存在于霜原星的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
 				"          电龙是漫游于金星上空的一种飞龙，拥有掌握雷霆和黑夜的强大力量，强横的闪电龙息能将一切化为飞灰，是传说中的强大存在。"
 				"          如今的他们被悚怖的力量囚禁在太空之中。"
 				"          那么，代价是什么呢？"
@@ -367,11 +319,28 @@
 				}
 			}
 			id: "03950A91DF592F72"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "584DECD090BB962C"
-				type: "random"
-			}]
+			rewards: [
+				{
+					id: "1CDFEF8302134AA6"
+					item: "iceandfire:dragonarmor_diamond_head"
+					type: "item"
+				}
+				{
+					id: "7A067E5F7329F660"
+					item: "iceandfire:dragonarmor_diamond_neck"
+					type: "item"
+				}
+				{
+					id: "2FD7B311C5EE0A21"
+					item: "iceandfire:dragonarmor_diamond_body"
+					type: "item"
+				}
+				{
+					id: "2E014F0E9A357DCE"
+					item: "iceandfire:dragonarmor_diamond_tail"
+					type: "item"
+				}
+			]
 			shape: "square"
 			subtitle: "以骨为芯，以血铸剑！"
 			tasks: [
@@ -424,87 +393,12 @@
 			hide_until_deps_complete: true
 			icon: "alexsmobs:void_worm_eye"
 			id: "1DD9F7C0F4BD2170"
-			rewards: [
-				{
-					id: "6C47E75030CA8A40"
-					item: {
-						Count: 1
-						id: "tetra:modular_sword"
-						tag: {
-							Damage: 0
-							EnchantmentMapping: {
-								"minecraft:looting": "sword/blade"
-								"minecraft:sharpness": "sword/blade"
-								"minecraft:soul_fire_aspect": "sword/blade"
-								"minecraft:sweeping": "sword/blade"
-								"minecraft:unbreaking": "sword/hilt"
-							}
-							Enchantments: [
-								{
-									id: "minecraft:soul_fire_aspect"
-									lvl: 3s
-								}
-								{
-									id: "minecraft:sharpness"
-									lvl: 7s
-								}
-								{
-									id: "minecraft:unbreaking"
-									lvl: 5s
-								}
-								{
-									id: "minecraft:sweeping"
-									lvl: 5s
-								}
-								{
-									id: "minecraft:looting"
-									lvl: 5s
-								}
-							]
-							HideFlags: 1
-							RepairCost: 0
-							display: {
-								Name: "{\"text\":\"终不似，少年游\"}"
-							}
-							honing_available: 1b
-							honing_count: 27
-							honing_progress: -11
-							id: "121f95fb-c92a-4ccd-affe-dfc6e9855521"
-							repairCount: 27
-							"sword/basic_hilt_material": "basic_hilt/end_rod"
-							"sword/blade": "sword/katana_blade"
-							"sword/blade:blade/benight": 3
-							"sword/blade:blade/bloodthirster": 1
-							"sword/blade:blade/conquering": 1
-							"sword/blade:blade/demon_eye": 1
-							"sword/blade:blade_hone/damage": 5
-							"sword/blade:blade_hone/speed": 5
-							"sword/blade:settled": 1
-							"sword/blade:sword/thousand_cold_nights_imprv": 0
-							"sword/fuller": "sword/reinforced_fuller"
-							"sword/grip_loop_material": "grip_loop/vobrivium_ingot"
-							"sword/guard": "sword/socket"
-							"sword/hilt": "sword/basic_hilt"
-							"sword/hilt:hilt_hone/damage": 5
-							"sword/hilt:hilt_hone/speed": 5
-							"sword/hilt:quality": 2
-							"sword/hilt:settled": 2
-							"sword/katana_blade_material": "katana_blade/dreadsteel_ingot"
-							"sword/pommel": "sword/grip_loop"
-							"sword/reinforced_fuller_material": "reinforced_fuller/bone"
-							"sword/socket_material": "sword_socket/sigil_of_eden"
-							weapon_attributes: "{\"parent\":\"bettercombat:katana\",\"attributes\":{\"attack_range\":3.5,\"pose\":\"bettercombat:pose_two_handed_katana\",\"two_handed\":true,\"category\":\"katana\",\"attacks\":[{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"VERTICAL_PLANE\",\"damage_multiplier\":1.2,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_vertical_right\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}},{\"hitbox\":\"HORIZONTAL_PLANE\",\"damage_multiplier\":0.8,\"angle\":120.0,\"upswing\":0.5,\"animation\":\"bettercombat:two_handed_slash_horizontal_left\",\"swing_sound\":{\"id\":\"bettercombat:katana_slash\",\"volume\":1.0,\"pitch\":1.0,\"randomness\":0.1}}]}}"
-						}
-					}
-					type: "item"
-				}
-				{
-					count: 5
-					id: "0F688A7D388C7A40"
-					item: "createdelightcore:netherite_coin"
-					type: "item"
-				}
-			]
+			rewards: [{
+				count: 5
+				id: "0F688A7D388C7A40"
+				item: "createdelightcore:netherite_coin"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 4.0d
 			subtitle: "欲买桂花同载酒，终不似，少年游。"
@@ -518,6 +412,7 @@
 							gateway: "createdelight:lightning_dragon"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -529,6 +424,7 @@
 							gateway: "createdelight:fire_dragon_eyes"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -540,6 +436,7 @@
 							gateway: "createdelight:ice_dragon"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -551,6 +448,7 @@
 							gateway: "createdelight:piercing_withering_trial"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -562,6 +460,7 @@
 							gateway: "createdelight:the_gate_of_eternal_cold"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
