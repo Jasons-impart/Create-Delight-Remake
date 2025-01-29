@@ -2189,14 +2189,15 @@
 			y: 13.0d
 		}
 		{
+			dependencies: ["71362ADA5C9546E8"]
 			id: "485EA96A33EC4B28"
 			tasks: [{
 				id: "2865B5ADA69A7DAC"
 				item: "frycooks_delight:canola_seeds"
 				type: "item"
 			}]
-			x: -14.5d
-			y: 14.0d
+			x: -15.0d
+			y: 13.5d
 		}
 		{
 			id: "71362ADA5C9546E8"
@@ -2207,8 +2208,8 @@
 				item: "frycooks_delight:canola"
 				type: "item"
 			}]
-			x: -14.5d
-			y: 12.0d
+			x: -15.0d
+			y: 11.0d
 		}
 		{
 			id: "114AA9A1BC21A2D7"
@@ -2217,18 +2218,43 @@
 				item: "frycooks_delight:wild_canola"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 13.0d
+			x: -14.0d
+			y: 12.0d
 		}
 		{
+			dependencies: [
+				"485EA96A33EC4B28"
+				"0BFA98351C335E32"
+				"353C807A73249762"
+				"00447BE7C21B02B8"
+				"523E1169BC5B80AD"
+				"12CA4339A9566EC6"
+				"035CE88B761A3988"
+				"13CAAAE84991CDB4"
+				"652AFA343C63239A"
+				"5CD0CA6226A7AA9C"
+				"4171C0F5296DB4E0"
+				"25D355E35E4F6ED4"
+				"34AA3ABF881130E8"
+				"01F54E8782E234DF"
+				"7057ECD802B88CF8"
+				"7B4425C1F497AF5D"
+				"06E773AD76617DBB"
+				"5C3173C9C60561CC"
+				"55E099F0FEC60364"
+				"5B63284DA90E1755"
+				"2182DA37E0BAE15A"
+				"5DE463CA0C57D5E3"
+				"13F215D55925DD38"
+			]
 			id: "34636258CDA46423"
 			tasks: [{
-				id: "1DB83B94C4CFBE16"
-				item: "createdieselgenerators:plant_oil_bucket"
+				id: "4E9779290CECD38D"
+				item: "create_bic_bit:mechanical_fryer"
 				type: "item"
 			}]
-			x: -14.5d
-			y: 15.5d
+			x: -15.0d
+			y: 16.5d
 		}
 		{
 			id: "523E1169BC5B80AD"
@@ -2237,8 +2263,8 @@
 				item: "create_bic_bit:raw_kroket"
 				type: "item"
 			}]
-			x: -15.5d
-			y: 17.0d
+			x: -16.0d
+			y: 19.5d
 		}
 		{
 			dependencies: ["523E1169BC5B80AD"]
@@ -2248,8 +2274,8 @@
 				item: "create_bic_bit:kroket"
 				type: "item"
 			}]
-			x: -15.5d
-			y: 18.5d
+			x: -16.0d
+			y: 20.5d
 		}
 		{
 			dependencies: ["10021A5C749BC1DD"]
@@ -2259,8 +2285,8 @@
 				item: "create_bic_bit:kroket_sandwich"
 				type: "item"
 			}]
-			x: -15.5d
-			y: 20.0d
+			x: -16.5d
+			y: 21.5d
 		}
 		{
 			dependencies: ["3A79CCB8D90E43FD"]
@@ -2270,8 +2296,8 @@
 				item: "create_bic_bit:ketchup_topped_kroket_sandwich"
 				type: "item"
 			}]
-			x: -16.0d
-			y: 21.5d
+			x: -17.0d
+			y: 22.5d
 		}
 		{
 			dependencies: ["3A79CCB8D90E43FD"]
@@ -2281,8 +2307,8 @@
 				item: "create_bic_bit:mayonnaise_topped_kroket_sandwich"
 				type: "item"
 			}]
-			x: -15.0d
-			y: 21.5d
+			x: -16.0d
+			y: 22.5d
 		}
 		{
 			dependencies: [
@@ -2295,8 +2321,8 @@
 				item: "create_bic_bit:mayonnaise_ketchup_topped_kroket_sandwich"
 				type: "item"
 			}]
-			x: -15.5d
-			y: 23.0d
+			x: -16.5d
+			y: 23.5d
 		}
 		{
 			id: "353C807A73249762"
@@ -2305,8 +2331,8 @@
 				item: "create_bic_bit:raw_frikandel"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 17.0d
+			x: -18.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["353C807A73249762"]
@@ -2316,8 +2342,8 @@
 				item: "create_bic_bit:frikandel"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 18.5d
+			x: -19.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["50B2F268D7FA20E2"]
@@ -2327,8 +2353,8 @@
 				item: "create_bic_bit:ketchup_topped_frikandel_sandwich"
 				type: "item"
 			}]
-			x: -14.0d
-			y: 21.5d
+			x: -21.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["32A230427948263F"]
@@ -2338,8 +2364,8 @@
 				item: "create_bic_bit:frikandel_sandwich"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 20.0d
+			x: -20.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["50B2F268D7FA20E2"]
@@ -2349,8 +2375,8 @@
 				item: "create_bic_bit:mayonnaise_topped_frikandel_sandwich"
 				type: "item"
 			}]
-			x: -13.0d
-			y: 21.5d
+			x: -21.0d
+			y: 18.5d
 		}
 		{
 			dependencies: [
@@ -2363,8 +2389,8 @@
 				item: "create_bic_bit:mayonnaise_ketchup_topped_frikandel_sandwich"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 23.0d
+			x: -22.0d
+			y: 17.5d
 		}
 		{
 			id: "652AFA343C63239A"
@@ -2373,8 +2399,8 @@
 				item: "create_bic_bit:raw_fries"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 17.0d
+			x: -14.0d
+			y: 19.5d
 		}
 		{
 			dependencies: ["652AFA343C63239A"]
@@ -2384,8 +2410,8 @@
 				item: "create_bic_bit:fries"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 18.5d
+			x: -14.0d
+			y: 20.5d
 		}
 		{
 			dependencies: ["34B8AC05C1142CAA"]
@@ -2395,8 +2421,8 @@
 				item: "create_bic_bit:wrapped_fries"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 20.0d
+			x: -13.5d
+			y: 21.5d
 		}
 		{
 			dependencies: ["2313931E680CCCEB"]
@@ -2406,8 +2432,8 @@
 				item: "create_bic_bit:wrapped_ketchup_topped_fries"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 21.5d
+			x: -14.0d
+			y: 22.5d
 		}
 		{
 			dependencies: ["2313931E680CCCEB"]
@@ -2417,8 +2443,8 @@
 				item: "create_bic_bit:wrapped_mayonnaise_topped_fries"
 				type: "item"
 			}]
-			x: -11.0d
-			y: 21.5d
+			x: -13.0d
+			y: 22.5d
 		}
 		{
 			dependencies: [
@@ -2431,8 +2457,8 @@
 				item: "create_bic_bit:wrapped_mayonnaise_ketchup_topped_fries"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 23.0d
+			x: -13.5d
+			y: 23.5d
 		}
 		{
 			id: "55E099F0FEC60364"
@@ -2441,8 +2467,8 @@
 				item: "create_deepfried:raw_corn_dog"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 17.0d
+			x: -12.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["55E099F0FEC60364"]
@@ -2452,8 +2478,8 @@
 				item: "create_deepfried:corn_dog"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 18.5d
+			x: -11.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["18F08463EC2E9678"]
@@ -2464,7 +2490,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: 21.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["18F08463EC2E9678"]
@@ -2474,8 +2500,8 @@
 				item: "createdelight:mayo_corn_dog"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 21.5d
+			x: -10.0d
+			y: 16.5d
 		}
 		{
 			dependencies: [
@@ -2488,8 +2514,8 @@
 				item: "corn_delight:classic_corn_dog"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 23.0d
+			x: -9.0d
+			y: 16.5d
 		}
 		{
 			id: "25D355E35E4F6ED4"
@@ -2498,8 +2524,8 @@
 				item: "farmersdelight:wheat_dough"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 17.0d
+			x: -15.0d
+			y: 19.5d
 		}
 		{
 			dependencies: ["25D355E35E4F6ED4"]
@@ -2509,8 +2535,8 @@
 				item: "create_bic_bit:sweet_dough"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 18.5d
+			x: -15.0d
+			y: 20.5d
 		}
 		{
 			dependencies: ["4DF40B7BE7CFC965"]
@@ -2520,8 +2546,8 @@
 				item: "create_bic_bit:speculaas"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 20.0d
+			x: -15.5d
+			y: 21.5d
 		}
 		{
 			dependencies: ["4DF40B7BE7CFC965"]
@@ -2531,8 +2557,8 @@
 				item: "create_bic_bit:kruidnoten"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 20.0d
+			x: -14.5d
+			y: 21.5d
 		}
 		{
 			id: "7B4425C1F497AF5D"
@@ -2541,8 +2567,8 @@
 				item: "create_bic_bit:unbaked_stroopwafel"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 17.0d
+			x: -12.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["7B4425C1F497AF5D"]
@@ -2552,8 +2578,8 @@
 				item: "create_bic_bit:stroopwafel"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 18.5d
+			x: -11.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["63899D7DA92EA3E1"]
@@ -2563,8 +2589,8 @@
 				item: "create_bic_bit:wrapped_stroopwafel"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 20.0d
+			x: -10.0d
+			y: 18.5d
 		}
 		{
 			dependencies: [
@@ -2577,8 +2603,8 @@
 				item: "create_bic_bit:wrapped_chocolate_glazed_stroopwafel"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 21.5d
+			x: -9.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["63899D7DA92EA3E1"]
@@ -2588,8 +2614,8 @@
 				item: "create_bic_bit:chocolate_glazed_stroopwafel"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 20.0d
+			x: -10.0d
+			y: 17.5d
 		}
 		{
 			id: "5CD0CA6226A7AA9C"
@@ -2598,8 +2624,8 @@
 				item: "ratatouille:salty_dough"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 17.0d
+			x: -18.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["5CD0CA6226A7AA9C"]
@@ -2609,8 +2635,8 @@
 				item: "create_bic_bit:oliebollen"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 18.5d
+			x: -19.0d
+			y: 14.5d
 		}
 		{
 			id: "34AA3ABF881130E8"
@@ -2619,8 +2645,8 @@
 				item: "create_bic_bit:raw_cheese_souffle"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 17.0d
+			x: -12.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["34AA3ABF881130E8"]
@@ -2630,8 +2656,8 @@
 				item: "create_bic_bit:cheese_souffle"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 18.5d
+			x: -11.0d
+			y: 14.5d
 		}
 		{
 			id: "00447BE7C21B02B8"
@@ -2640,8 +2666,8 @@
 				item: "create_bic_bit:raw_bitterballen"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 17.0d
+			x: -18.0d
+			y: 18.5d
 		}
 		{
 			dependencies: ["00447BE7C21B02B8"]
@@ -2651,7 +2677,7 @@
 				item: "create_bic_bit:bitterballen"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -19.0d
 			y: 18.5d
 		}
 		{
@@ -2661,8 +2687,8 @@
 				item: "create_bic_bit:raw_eggball"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 17.0d
+			x: -12.0d
+			y: 18.5d
 		}
 		{
 			dependencies: ["7057ECD802B88CF8"]
@@ -2672,7 +2698,7 @@
 				item: "create_bic_bit:eggball"
 				type: "item"
 			}]
-			x: 1.0d
+			x: -11.0d
 			y: 18.5d
 		}
 		{
@@ -2682,8 +2708,8 @@
 				item: "create_bic_bit:raw_churros"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 17.0d
+			x: -18.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["01F54E8782E234DF"]
@@ -2693,8 +2719,8 @@
 				item: "create_bic_bit:churros"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 18.5d
+			x: -19.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["64617AA24DBCFB81"]
@@ -2704,8 +2730,8 @@
 				item: "create_bic_bit:wrapped_churros"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 20.0d
+			x: -20.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["64617AA24DBCFB81"]
@@ -2715,8 +2741,8 @@
 				item: "create_bic_bit:coated_churros"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 20.0d
+			x: -20.0d
+			y: 16.5d
 		}
 		{
 			dependencies: [
@@ -2729,39 +2755,8 @@
 				item: "create_bic_bit:wrapped_coated_churros"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 21.5d
-		}
-		{
-			id: "19BD1566C1AD1533"
-			tasks: [{
-				id: "554E308E331A8B8D"
-				item: "create_bic_bit:raw_herring"
-				type: "item"
-			}]
-			x: 5.0d
-			y: 17.0d
-		}
-		{
-			dependencies: ["19BD1566C1AD1533"]
-			id: "75B33A43E1A4F60D"
-			tasks: [{
-				id: "4CDA67F395F2CBBB"
-				item: "create_bic_bit:cooked_herring"
-				type: "item"
-			}]
-			x: 5.0d
-			y: 18.5d
-		}
-		{
-			id: "0FE78B858DB14FBE"
-			tasks: [{
-				id: "107DCAD496C5524E"
-				item: "create_bic_bit:stamppot_bowl"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 17.0d
+			x: -21.0d
+			y: 16.5d
 		}
 		{
 			id: "06E773AD76617DBB"
@@ -2770,50 +2765,8 @@
 				item: "create_bic_bit:enderball"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 17.0d
-		}
-		{
-			id: "144B3C3670E242FD"
-			tasks: [{
-				id: "642525B0DBD4F427"
-				item: "create_bic_bit:crushed_nether_wart"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 17.0d
-		}
-		{
-			dependencies: ["144B3C3670E242FD"]
-			id: "01506CE758401748"
-			tasks: [{
-				id: "6DFB5F25164B891E"
-				item: "create_bic_bit:curdled_milk_bucket"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["01506CE758401748"]
-			id: "30F013F8FF383AC9"
-			tasks: [{
-				id: "0B64B56E2357BFBA"
-				item: "create_bic_bit:ketchup_bucket"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 20.0d
-		}
-		{
-			id: "3EABF9E26DCCE986"
-			tasks: [{
-				id: "3737BC8B47BA772F"
-				item: "create_bic_bit:mayonnaise_bucket"
-				type: "item"
-			}]
-			x: 11.0d
-			y: 17.0d
+			x: -12.0d
+			y: 19.5d
 		}
 		{
 			id: "593F05A29A568F41"
@@ -2822,28 +2775,30 @@
 				item: "create_bic_bit:sunflower_seeds"
 				type: "item"
 			}]
-			x: -16.5d
+			x: -16.0d
 			y: 12.0d
 		}
 		{
+			dependencies: ["593F05A29A568F41"]
 			id: "0BFA98351C335E32"
 			tasks: [{
 				id: "032357F1A6C76F33"
 				item: "create_bic_bit:crushed_sunflower_seeds"
 				type: "item"
 			}]
-			x: -16.5d
-			y: 14.0d
+			x: -16.0d
+			y: 13.5d
 		}
 		{
+			dependencies: ["0BFA98351C335E32"]
 			id: "15FDCA19E78454B5"
 			tasks: [{
 				id: "20607B9BBF47E602"
 				item: "create_bic_bit:roasted_sunflower_seeds"
 				type: "item"
 			}]
-			x: -16.5d
-			y: 15.5d
+			x: -17.0d
+			y: 13.5d
 		}
 		{
 			id: "035CE88B761A3988"
@@ -2852,8 +2807,8 @@
 				item: "create_deepfried:yuca_fries"
 				type: "item"
 			}]
-			x: -17.0d
-			y: 17.0d
+			x: -18.0d
+			y: 19.5d
 		}
 		{
 			id: "2182DA37E0BAE15A"
@@ -2862,8 +2817,8 @@
 				item: "create_deepfried:raw_tempura"
 				type: "item"
 			}]
-			x: -18.5d
-			y: 17.0d
+			x: -13.0d
+			y: 19.5d
 		}
 		{
 			dependencies: ["2182DA37E0BAE15A"]
@@ -2873,8 +2828,8 @@
 				item: "create_deepfried:tempura"
 				type: "item"
 			}]
-			x: -18.5d
-			y: 18.5d
+			x: -13.0d
+			y: 20.5d
 		}
 		{
 			id: "13CAAAE84991CDB4"
@@ -2883,8 +2838,8 @@
 				item: "createdelight:raw_calamari"
 				type: "item"
 			}]
-			x: -20.0d
-			y: 17.0d
+			x: -17.0d
+			y: 19.5d
 		}
 		{
 			dependencies: ["13CAAAE84991CDB4"]
@@ -2894,8 +2849,8 @@
 				item: "create_deepfried:calamari"
 				type: "item"
 			}]
-			x: -20.0d
-			y: 18.5d
+			x: -17.0d
+			y: 20.5d
 		}
 		{
 			dependencies: ["4DF40B7BE7CFC965"]
@@ -2905,8 +2860,8 @@
 				item: "create_deepfried:berliner"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 21.5d
+			x: -15.0d
+			y: 22.5d
 		}
 		{
 			dependencies: ["282C7703DF4076F0"]
@@ -2916,8 +2871,8 @@
 				item: "create_deepfried:honey_filled_berliner"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 23.0d
+			x: -15.5d
+			y: 23.5d
 		}
 		{
 			dependencies: ["282C7703DF4076F0"]
@@ -2927,8 +2882,8 @@
 				item: "create_deepfried:chocolate_filled_berliner"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 23.0d
+			x: -14.5d
+			y: 23.5d
 		}
 		{
 			dependencies: ["282C7703DF4076F0"]
@@ -2938,7 +2893,7 @@
 				item: "create_deepfried:coated_berliner"
 				type: "item"
 			}]
-			x: -7.5d
+			x: -15.0d
 			y: 24.5d
 		}
 		{
@@ -2952,8 +2907,8 @@
 				item: "create_deepfried:coated_honey_berliner"
 				type: "item"
 			}]
-			x: -8.0d
-			y: 26.0d
+			x: -15.5d
+			y: 25.5d
 		}
 		{
 			dependencies: [
@@ -2966,8 +2921,8 @@
 				item: "create_deepfried:coated_chocolate_berliner"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 26.0d
+			x: -14.5d
+			y: 25.5d
 		}
 		{
 			id: "5C3173C9C60561CC"
@@ -2976,8 +2931,8 @@
 				item: "create_deepfried:apfelkuchle"
 				type: "item"
 			}]
-			x: -21.5d
-			y: 17.0d
+			x: -14.0d
+			y: 13.5d
 		}
 		{
 			id: "13F215D55925DD38"
@@ -2986,8 +2941,8 @@
 				item: "create_deepfried:deepfried_chocolate_bar"
 				type: "item"
 			}]
-			x: -23.0d
-			y: 17.0d
+			x: -13.0d
+			y: 13.5d
 		}
 		{
 			id: "12CA4339A9566EC6"
@@ -2996,8 +2951,8 @@
 				item: "create_deepfried:fried_chicken"
 				type: "item"
 			}]
-			x: -24.5d
-			y: 17.0d
+			x: -12.0d
+			y: 13.5d
 		}
 		{
 			id: "4171C0F5296DB4E0"
@@ -3006,8 +2961,8 @@
 				item: "create_deepfried:raw_onion_rings"
 				type: "item"
 			}]
-			x: -26.0d
-			y: 17.0d
+			x: -12.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["4171C0F5296DB4E0"]
@@ -3017,8 +2972,8 @@
 				item: "create_deepfried:onion_rings"
 				type: "item"
 			}]
-			x: -26.0d
-			y: 18.5d
+			x: -11.0d
+			y: 15.5d
 		}
 		{
 			id: "5B63284DA90E1755"
@@ -3027,8 +2982,8 @@
 				item: "create_deepfried:blooming_onion"
 				type: "item"
 			}]
-			x: -27.5d
-			y: 17.0d
+			x: -18.0d
+			y: 13.5d
 		}
 		{
 			id: "5DE463CA0C57D5E3"
@@ -3037,8 +2992,8 @@
 				item: "create_deepfried:raw_panzerotto"
 				type: "item"
 			}]
-			x: -29.0d
-			y: 17.0d
+			x: -18.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["5DE463CA0C57D5E3"]
@@ -3048,8 +3003,8 @@
 				item: "create_deepfried:panzerotto"
 				type: "item"
 			}]
-			x: -29.0d
-			y: 18.5d
+			x: -19.0d
+			y: 15.5d
 		}
 	]
 	title: "&e精加工！"
