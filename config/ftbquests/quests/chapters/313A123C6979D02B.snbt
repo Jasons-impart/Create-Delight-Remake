@@ -2269,6 +2269,11 @@
 		}
 		{
 			id: "523E1169BC5B80AD"
+			rewards: [{
+				id: "5DA7D2AD046340D9"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "2F425F7D5F10DC1D"
 				item: "create_bic_bit:raw_kroket"
@@ -2281,9 +2286,9 @@
 			dependencies: ["523E1169BC5B80AD"]
 			id: "10021A5C749BC1DD"
 			rewards: [{
-				id: "48C26F8C780FCF47"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "21F1AE801B50F38E"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "09BD9CB2449D71AC"
@@ -2297,9 +2302,9 @@
 			dependencies: ["10021A5C749BC1DD"]
 			id: "3A79CCB8D90E43FD"
 			rewards: [{
-				id: "24E5E5C00EACB1D0"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "35E2D50E1B8E2AE2"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "197AEE924A635300"
@@ -2313,9 +2318,9 @@
 			dependencies: ["3A79CCB8D90E43FD"]
 			id: "1E3FB68F5450ECCA"
 			rewards: [{
-				id: "4B750C4DEC271DFF"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "007A31AB65A74F47"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "144D53060DD665FE"
@@ -2329,9 +2334,9 @@
 			dependencies: ["3A79CCB8D90E43FD"]
 			id: "3D12BFE5642B617B"
 			rewards: [{
-				id: "4C205C8E0C4DF68D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "52FD828A91C1B82D"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "3D8DA2BF8121B76F"
@@ -2348,9 +2353,9 @@
 			]
 			id: "4A73496857BA6252"
 			rewards: [{
-				id: "7BAA07A1C39D10CC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "28DDAAB7F2B77FFF"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "5103EB91ACEF918A"
@@ -2362,6 +2367,11 @@
 		}
 		{
 			id: "353C807A73249762"
+			rewards: [{
+				id: "4F9E508D6637D9A0"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "5631AC70A9DA9E7C"
 				item: "create_bic_bit:raw_frikandel"
@@ -2374,9 +2384,9 @@
 			dependencies: ["353C807A73249762"]
 			id: "32A230427948263F"
 			rewards: [{
-				id: "54E1B4D2D3F75086"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "2031C37D68D5535F"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "1EB894A224387BA6"
@@ -2390,9 +2400,9 @@
 			dependencies: ["50B2F268D7FA20E2"]
 			id: "7503CB403200D405"
 			rewards: [{
-				id: "366DB161EF3F16EC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "756A6BB81FE5CB2B"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "2B53725E6D6511BC"
@@ -2406,9 +2416,9 @@
 			dependencies: ["32A230427948263F"]
 			id: "50B2F268D7FA20E2"
 			rewards: [{
-				id: "05111E38CA9AC07B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "13AB4A76F2A45D90"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "6F4BB0D4AA075C9F"
@@ -2422,9 +2432,9 @@
 			dependencies: ["50B2F268D7FA20E2"]
 			id: "5A9490C1FEFF9CE7"
 			rewards: [{
-				id: "655345219310C954"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "6A86695451BCBB35"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "66B29A3A82557122"
@@ -2441,9 +2451,9 @@
 			]
 			id: "4284C4A3A5C556A2"
 			rewards: [{
-				id: "0FA88E1EDDF89BDC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "603EE55A8FC01C5C"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "116F2C8C41B444F5"
@@ -2455,6 +2465,11 @@
 		}
 		{
 			id: "652AFA343C63239A"
+			rewards: [{
+				id: "6511C42A5CDB5182"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "3F8DF6B2DDC6557E"
 				item: "create_bic_bit:raw_fries"
@@ -2467,9 +2482,9 @@
 			dependencies: ["652AFA343C63239A"]
 			id: "34B8AC05C1142CAA"
 			rewards: [{
-				id: "4ED0D73B18B63432"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "22C3D1516F9237F9"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "4221E8034F5BF8BB"
@@ -2483,9 +2498,9 @@
 			dependencies: ["34B8AC05C1142CAA"]
 			id: "2313931E680CCCEB"
 			rewards: [{
-				id: "398E2D9ED085AF39"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "5723667F3382359C"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "23DF3C03FF7FF020"
@@ -2499,9 +2514,9 @@
 			dependencies: ["2313931E680CCCEB"]
 			id: "48B7B0D1013F5987"
 			rewards: [{
-				id: "2E7203963206431B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "0B25416C8A2D2027"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "6129B613B95F2561"
@@ -2515,9 +2530,9 @@
 			dependencies: ["2313931E680CCCEB"]
 			id: "1D0D69C9A608C37E"
 			rewards: [{
-				id: "1BD7EC635DEDA22C"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "35C5E09F7E228DC0"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "3B4F764169E8C0C0"
@@ -2534,9 +2549,9 @@
 			]
 			id: "593B04A4B7A7B184"
 			rewards: [{
-				id: "15052506C5B1AB13"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "0F8CE9BFFA4A7509"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "4991B444E8114807"
@@ -2548,6 +2563,11 @@
 		}
 		{
 			id: "55E099F0FEC60364"
+			rewards: [{
+				id: "7372963CAE15D5D9"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "47D713E4AF7A9C81"
 				item: "create_deepfried:raw_corn_dog"
@@ -2560,9 +2580,9 @@
 			dependencies: ["55E099F0FEC60364"]
 			id: "18F08463EC2E9678"
 			rewards: [{
-				id: "59E012C706509430"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "28FA7FC093085235"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "1A6577A430FDF0E2"
@@ -2576,9 +2596,9 @@
 			dependencies: ["18F08463EC2E9678"]
 			id: "1480058083433461"
 			rewards: [{
-				id: "6DC64515F23A5D6F"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "61FEE712EBD02D81"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "548EA9A46100CD93"
@@ -2592,9 +2612,9 @@
 			dependencies: ["18F08463EC2E9678"]
 			id: "625CF26DC5B2880A"
 			rewards: [{
-				id: "4B1DB10EBB6D484C"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "1077968D420B8E8D"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "619C5FFCCA0BB4C5"
@@ -2611,9 +2631,9 @@
 			]
 			id: "72CEAAB315F31231"
 			rewards: [{
-				id: "513CF5F02E79006A"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "19020AA936CD06E9"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "2A43876CD6CD9703"
@@ -2625,6 +2645,11 @@
 		}
 		{
 			id: "25D355E35E4F6ED4"
+			rewards: [{
+				id: "452B1A1743456734"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "1E3BFFBED65D18E2"
 				item: "farmersdelight:wheat_dough"
@@ -2637,9 +2662,9 @@
 			dependencies: ["25D355E35E4F6ED4"]
 			id: "4DF40B7BE7CFC965"
 			rewards: [{
-				id: "5708CD7882DF6087"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "2C5549710A791D3C"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "7D197D2DECD7F458"
@@ -2653,9 +2678,9 @@
 			dependencies: ["4DF40B7BE7CFC965"]
 			id: "6C974347B695E599"
 			rewards: [{
-				id: "4AAC3BC5AA6CC89B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "3D5FA5FC81391A91"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "3B74AB09309E7ECC"
@@ -2669,9 +2694,9 @@
 			dependencies: ["4DF40B7BE7CFC965"]
 			id: "46282A8936C6DC36"
 			rewards: [{
-				id: "5C95FAA40A3609B2"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "4721948E43C5B20F"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "51E004A991A6CD2F"
@@ -2683,6 +2708,11 @@
 		}
 		{
 			id: "7B4425C1F497AF5D"
+			rewards: [{
+				id: "52B5EB6438FA7685"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "130570631BA6B514"
 				item: "create_bic_bit:unbaked_stroopwafel"
@@ -2695,9 +2725,9 @@
 			dependencies: ["7B4425C1F497AF5D"]
 			id: "63899D7DA92EA3E1"
 			rewards: [{
-				id: "6482229FCA7FDE34"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "51DA919493AFB4D1"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "2EFF86CDBB47C3AB"
@@ -2711,9 +2741,9 @@
 			dependencies: ["63899D7DA92EA3E1"]
 			id: "6F21F326C258F3B5"
 			rewards: [{
-				id: "7CC6AB77DF4ADEBC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "1CEC898A18F5C3EB"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "0B9E3A9F5D061505"
@@ -2730,9 +2760,9 @@
 			]
 			id: "16B782BD5AC93766"
 			rewards: [{
-				id: "6E2A4DC5F90524C7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "4CD3D91B6B3EBCC5"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "43D99BBECC2F10BB"
@@ -2746,9 +2776,9 @@
 			dependencies: ["63899D7DA92EA3E1"]
 			id: "58BC8525B628C47A"
 			rewards: [{
-				id: "1F228EDCAE682C9C"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "40B89166C63F7051"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "5D44111FF7DFD374"
@@ -2760,6 +2790,11 @@
 		}
 		{
 			id: "5CD0CA6226A7AA9C"
+			rewards: [{
+				id: "41B32F98455BC471"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "5EC8C7343C038CEA"
 				item: "ratatouille:salty_dough"
@@ -2772,9 +2807,9 @@
 			dependencies: ["5CD0CA6226A7AA9C"]
 			id: "7D021C89A24BFAFB"
 			rewards: [{
-				id: "2E18A153ACF8C67D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "2D6658A2B0D62712"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "58E69638B1CC1C80"
@@ -2786,6 +2821,11 @@
 		}
 		{
 			id: "34AA3ABF881130E8"
+			rewards: [{
+				id: "121F9EC6AFD48070"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "628BA0617234BD49"
 				item: "create_bic_bit:raw_cheese_souffle"
@@ -2798,9 +2838,9 @@
 			dependencies: ["34AA3ABF881130E8"]
 			id: "1E8B1CAC098614E3"
 			rewards: [{
-				id: "2912BD9B3742A734"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "7ED64B85675D7C4D"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "6CD00F687977E08F"
@@ -2812,6 +2852,11 @@
 		}
 		{
 			id: "00447BE7C21B02B8"
+			rewards: [{
+				id: "0E721563A7947106"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "1CCD32AD0FA64D4E"
 				item: "create_bic_bit:raw_bitterballen"
@@ -2824,9 +2869,9 @@
 			dependencies: ["00447BE7C21B02B8"]
 			id: "58B1987F935BE2BC"
 			rewards: [{
-				id: "0CCD65CBEE49409D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "188C0EB89688B071"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "79567AC632EAC83A"
@@ -2838,6 +2883,11 @@
 		}
 		{
 			id: "7057ECD802B88CF8"
+			rewards: [{
+				id: "0319806E804CF11B"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "7CFC6306D1390202"
 				item: "create_bic_bit:raw_eggball"
@@ -2850,9 +2900,9 @@
 			dependencies: ["7057ECD802B88CF8"]
 			id: "56AADE3F15ED5F6F"
 			rewards: [{
-				id: "7CB7F012EF74695F"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "084A039E59317D31"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "665B1D5592D8D703"
@@ -2864,6 +2914,11 @@
 		}
 		{
 			id: "01F54E8782E234DF"
+			rewards: [{
+				id: "43B4ED94FBF212BC"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "1D4F39A726E58720"
 				item: "create_bic_bit:raw_churros"
@@ -2876,9 +2931,9 @@
 			dependencies: ["01F54E8782E234DF"]
 			id: "64617AA24DBCFB81"
 			rewards: [{
-				id: "5A276199996CA93D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "2F63B5AAF611928B"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "69E946FBDB9D6C7B"
@@ -2892,9 +2947,9 @@
 			dependencies: ["64617AA24DBCFB81"]
 			id: "3536204C3E8FD0D0"
 			rewards: [{
-				id: "2E6FB23993CAC1A7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "1E138DC4AFE6F6DB"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "5770E8491D68511A"
@@ -2908,9 +2963,9 @@
 			dependencies: ["64617AA24DBCFB81"]
 			id: "78069DA51C5CCC1C"
 			rewards: [{
-				id: "46094FC664F95DCE"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "09F9ED4672124B7C"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "1AD88F0BE39B9D35"
@@ -2927,9 +2982,9 @@
 			]
 			id: "3EC01588F8B9B584"
 			rewards: [{
-				id: "7C6D15E2CEE32ABC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "6A7F56B9FF306D19"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "1EF07245942D2B6F"
@@ -2942,9 +2997,9 @@
 		{
 			id: "06E773AD76617DBB"
 			rewards: [{
-				id: "1502CC913E433C0D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "3BBA7F114FF762D6"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "41C242DB73A4C3DF"
@@ -3000,9 +3055,9 @@
 		{
 			id: "035CE88B761A3988"
 			rewards: [{
-				id: "1C1941D40465F3C5"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "440951F7FBBFA5C3"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "45E82DE0B2A3916A"
@@ -3014,6 +3069,11 @@
 		}
 		{
 			id: "2182DA37E0BAE15A"
+			rewards: [{
+				id: "6C11E1CA156464A2"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "26A40CEC9619A8EC"
 				item: "create_deepfried:raw_tempura"
@@ -3026,9 +3086,9 @@
 			dependencies: ["2182DA37E0BAE15A"]
 			id: "787F11B962981459"
 			rewards: [{
-				id: "3A5FBFFD2BC463B5"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "57F2C80C38FE5316"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "5B8D07218E059F08"
@@ -3040,6 +3100,11 @@
 		}
 		{
 			id: "13CAAAE84991CDB4"
+			rewards: [{
+				id: "50117DC9DAEB5A65"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "2F5622021E9D5D28"
 				item: "createdelight:raw_calamari"
@@ -3052,9 +3117,9 @@
 			dependencies: ["13CAAAE84991CDB4"]
 			id: "6B98891FB6E6A5D4"
 			rewards: [{
-				id: "7A88E0B3316AEB86"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "508D2E5A7AFE1C60"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "61B5CDB09C63038C"
@@ -3068,9 +3133,9 @@
 			dependencies: ["4DF40B7BE7CFC965"]
 			id: "282C7703DF4076F0"
 			rewards: [{
-				id: "477B92CB4A2BE8BC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "7F191333143DF558"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "419441C8543AADAF"
@@ -3084,9 +3149,9 @@
 			dependencies: ["282C7703DF4076F0"]
 			id: "1DEAB88CC2D31C5F"
 			rewards: [{
-				id: "50B7D4A03730939D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "455F13CFD1D6859E"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "3A5E7B23A485F7E0"
@@ -3100,9 +3165,9 @@
 			dependencies: ["282C7703DF4076F0"]
 			id: "49358C9634555CEE"
 			rewards: [{
-				id: "3F1D441EDF8059F8"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "40587CD62593FC78"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "453702F4E283A6AF"
@@ -3116,9 +3181,9 @@
 			dependencies: ["282C7703DF4076F0"]
 			id: "741EE8280B15D762"
 			rewards: [{
-				id: "116D93399F97009E"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "73C3C91FFE24FCBE"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "11E50FCF54A6BC26"
@@ -3135,9 +3200,9 @@
 			]
 			id: "7F481C2624CED65C"
 			rewards: [{
-				id: "0A73424CE5C2B2E5"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "0648E4B1E7752AB4"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "4CB527B8E72A0D30"
@@ -3154,9 +3219,9 @@
 			]
 			id: "39A0AE250BCBC146"
 			rewards: [{
-				id: "3D6BF7E1D20432EB"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "3EB541A8EDB6C11B"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "5D55C3D8D3255043"
@@ -3169,9 +3234,9 @@
 		{
 			id: "5C3173C9C60561CC"
 			rewards: [{
-				id: "6BB4C59232DE6E96"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "43A851B3C42DD32E"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "2C1F9962E2105B45"
@@ -3184,9 +3249,9 @@
 		{
 			id: "13F215D55925DD38"
 			rewards: [{
-				id: "01A95F182A0EF364"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "1DB4B6E8DD9A5F3E"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "4D24AB8E10A5DA49"
@@ -3199,9 +3264,9 @@
 		{
 			id: "12CA4339A9566EC6"
 			rewards: [{
-				id: "4697B21A3D3540DC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "46794CD1940E44BB"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "6F738240B39EFF25"
@@ -3213,6 +3278,11 @@
 		}
 		{
 			id: "4171C0F5296DB4E0"
+			rewards: [{
+				id: "060B881F25949768"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "297EC3E634147C9D"
 				item: "create_deepfried:raw_onion_rings"
@@ -3225,9 +3295,9 @@
 			dependencies: ["4171C0F5296DB4E0"]
 			id: "5463C5310FF26480"
 			rewards: [{
-				id: "07752CFA34B2F2E7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "4C4DB2A957EB2163"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "285E352863657D12"
@@ -3240,9 +3310,9 @@
 		{
 			id: "5B63284DA90E1755"
 			rewards: [{
-				id: "73B136151813C691"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "0EB3AC1110349FC5"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "22F49B41FDB11B47"
@@ -3254,6 +3324,11 @@
 		}
 		{
 			id: "5DE463CA0C57D5E3"
+			rewards: [{
+				id: "3740751D5021736C"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "6F01C51BB77DF75D"
 				item: "create_deepfried:raw_panzerotto"
@@ -3266,9 +3341,9 @@
 			dependencies: ["5DE463CA0C57D5E3"]
 			id: "65D80DC5EB1B6885"
 			rewards: [{
-				id: "3B45660D25E246AC"
-				item: "createdelightcore:copper_coin"
-				type: "item"
+				id: "6C940BFA33DDACA2"
+				type: "xp"
+				xp: 100
 			}]
 			tasks: [{
 				id: "019F3955279B19AB"
