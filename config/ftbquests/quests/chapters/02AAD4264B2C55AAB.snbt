@@ -1615,7 +1615,7 @@
 				"6EBD79B87E10DA7F"
 				"7779E241F787B373"
 			]
-			description: ["村正之刃的专属金属"]
+			description: [""]
 			id: "5C1B7AAA928BCA00"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -1625,6 +1625,7 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "村正之刃的专属金属"
 			tasks: [{
 				id: "68E8A2A882069137"
 				item: { Count: 50, id: "vvaddon:mine_ingot" }
@@ -1637,6 +1638,7 @@
 		{
 			dependencies: ["1395569F70AEFEE2"]
 			id: "3F79AE0388A78F0B"
+			subtitle: "使用带有纳米融合效果的武器击杀悚怖怪物获得"
 			tasks: [{
 				id: "6FCE7C18518CBA32"
 				item: "createdelight:dread_heart"
@@ -1717,6 +1719,5 @@
 			y: 8.5d
 		}
 	]
-	subtitle: [""]
 	title: "&3锻造之艺"
 }

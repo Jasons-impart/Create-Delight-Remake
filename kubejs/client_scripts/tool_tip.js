@@ -38,6 +38,7 @@ ItemEvents.tooltip(e => {
         "art_of_forging:dragon_soul",
         "art_of_forging:soul_ember",
         "art_of_forging:nano_insectoid",
+        'createdelight:dread_heart',
         'createdelight:prospector',
         'vintageimprovements:vacuum_chamber',
         "vintageimprovements:vibrating_table",

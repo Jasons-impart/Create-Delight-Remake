@@ -18,4 +18,36 @@ ServerEvents.recipes(e => {
         "vintageimprovements:nethersteel_wire",
         "createbigcannons:molten_nethersteel"
     ], "heated", 80)
+    e.recipes.create.mixing(
+        "createbigcannons:guncotton",
+        [
+            Fluid.of("alexscaves:acid", 100),
+            "minecraft:gunpowder",
+            "minecraft:paper"
+        ]
+    ).id("createbigcannons:mixing/guncotton")
+    e.recipes.create.mixing(
+        "createbigcannons:guncotton",
+        [
+            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            "minecraft:gunpowder",
+            "minecraft:paper"
+        ]
+    ).id("createbigcannons:mixing/guncotton_1")
+    e.recipes.create.mixing(
+        "createbigcannons:guncotton",
+        [
+            Fluid.of("alexscaves:acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "minecraft:paper"
+        ]
+    ).id("createbigcannons:mixing/guncotton_2")
+    e.recipes.create.mixing(
+        "createbigcannons:guncotton",
+        [
+            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "minecraft:paper"
+        ]
+    ).id("createbigcannons:mixing/guncotton_3")
 })

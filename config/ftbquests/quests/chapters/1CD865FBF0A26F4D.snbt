@@ -1,5 +1,5 @@
 {
-	autofocus_id: "2EA5136C0C3B87FE"
+	autofocus_id: "02C4A15FAC0DA7D4"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "1CD865FBF0A26F4D"
@@ -80,7 +80,7 @@
 				title: "锻造大师"
 				type: "checkmark"
 			}]
-			x: 0.0d
+			x: -2.0d
 			y: 0.0d
 		}
 		{
@@ -166,7 +166,7 @@
 				title: "村正之刃"
 				type: "checkmark"
 			}]
-			x: 0.0d
+			x: 0.5d
 			y: 3.0d
 		}
 		{
@@ -179,8 +179,8 @@
 				type: "item"
 			}]
 			title: "充能打击"
-			x: -2.0d
-			y: 4.5d
+			x: -1.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
@@ -209,7 +209,7 @@
 			]
 			title: "充能剑刃"
 			x: 0.0d
-			y: 4.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
@@ -221,8 +221,8 @@
 				type: "item"
 			}]
 			title: "撕裂"
-			x: 1.0d
-			y: 4.5d
+			x: 2.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
@@ -235,7 +235,7 @@
 			}]
 			title: "破析"
 			x: -1.0d
-			y: 4.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
@@ -246,8 +246,8 @@
 				item: "kinetic_pixel:pistonexciter"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 4.5d
+			x: 2.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
@@ -258,8 +258,8 @@
 				item: "ae2:singularity"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 6.0d
+			x: 1.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["02C4A15FAC0DA7D4"]
@@ -334,7 +334,7 @@
 				title: "千夜寒"
 				type: "checkmark"
 			}]
-			x: 4.5d
+			x: 5.0d
 			y: 3.0d
 		}
 		{
@@ -348,7 +348,7 @@
 			}]
 			title: "魔瞳"
 			x: 3.5d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["53D0EBBAB29AA8C9"]
@@ -386,8 +386,8 @@
 				}
 			]
 			title: "入夜"
-			x: 4.5d
-			y: 4.5d
+			x: 6.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["53D0EBBAB29AA8C9"]
@@ -405,8 +405,8 @@
 				type: "item"
 			}]
 			title: "征服者"
-			x: 5.5d
-			y: 4.5d
+			x: 6.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["67E5866F8FC27115"]
@@ -418,7 +418,7 @@
 				type: "item"
 			}]
 			title: "虚空蠕虫之眼"
-			x: 3.5d
+			x: 4.0d
 			y: 7.0d
 		}
 		{
@@ -431,7 +431,7 @@
 				type: "item"
 			}]
 			title: "伊甸图腾"
-			x: 5.5d
+			x: 6.0d
 			y: 7.0d
 		}
 		{
@@ -444,7 +444,7 @@
 				type: "item"
 			}]
 			title: "暴击"
-			x: 3.5d
+			x: 4.0d
 			y: 6.0d
 		}
 		{
@@ -458,7 +458,7 @@
 				type: "item"
 			}]
 			title: "吸血"
-			x: 5.5d
+			x: 6.0d
 			y: 6.0d
 		}
 		{
@@ -538,7 +538,7 @@
 				title: "锻造师之权"
 				type: "checkmark"
 			}]
-			x: -4.5d
+			x: -4.0d
 			y: 3.0d
 		}
 		{
@@ -576,7 +576,7 @@
 				}
 			]
 			title: "巨人杀手"
-			x: -4.5d
+			x: -4.0d
 			y: 4.5d
 		}
 		{
@@ -643,7 +643,7 @@
 				}
 			]
 			title: "无畏"
-			x: -3.5d
+			x: -2.5d
 			y: 4.5d
 		}
 		{
@@ -662,7 +662,7 @@
 				type: "item"
 			}]
 			x: -5.0d
-			y: 6.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
@@ -673,8 +673,8 @@
 				item: "iceandfire:cyclops_skull"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 6.5d
+			x: -3.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["02C4A15FAC0DA7D4"]
@@ -761,11 +761,9 @@
 		}
 		{
 			dependencies: ["0FCA1FD3752590FF"]
-			description: [
-				"救赎：净化世界，成为天神在人间的代言人"
-				"升级后的救赎之刃造成的伤害并不高，主要伤害来自&e打磨：众生平等&r，同时净化过程将会彻底除去&e吞噬诅咒&r"
-			]
+			description: ["升级后的救赎之刃造成的伤害并不高，主要伤害来自&e打磨：众生平等&r，同时净化过程将会彻底除去&e吞噬诅咒&r"]
 			id: "3D1917B4B8793167"
+			subtitle: "救赎：净化世界，成为天神在人间的代言人"
 			tasks: [{
 				id: "5A9A54E498C519A8"
 				item: "constructionwand:core_angel"
@@ -777,8 +775,9 @@
 		}
 		{
 			dependencies: ["0FCA1FD3752590FF"]
-			description: ["灾祸：在毁灭的道路上彻底一去不返"]
+			description: [""]
 			id: "6EB179DB9F84E7FD"
+			subtitle: "灾祸：在毁灭的道路上彻底一去不返"
 			tasks: [{
 				id: "2516868B210C311A"
 				item: "constructionwand:core_destruction"
@@ -790,9 +789,10 @@
 		}
 		{
 			dependencies: ["6EB179DB9F84E7FD"]
-			description: ["在受到伤害时反击敌人"]
+			description: [""]
 			icon: "the_bumblezone:bee_stinger"
 			id: "733A1F887053CABF"
+			subtitle: "在受到伤害时反击敌人"
 			tasks: [
 				{
 					count: 16L
@@ -812,8 +812,9 @@
 		}
 		{
 			dependencies: ["6EB179DB9F84E7FD"]
-			description: ["攻击目标时会随着造成伤害的次数的提升而提高伤害"]
+			description: [""]
 			id: "5A80C6825A3B5809"
+			subtitle: "攻击目标时会随着造成伤害的次数的提升而提高伤害"
 			tasks: [{
 				id: "02AB6582AE6F00AA"
 				item: "alexcaves_delight:cleaverofheavybone_knife"
@@ -893,7 +894,7 @@
 				item: "dreadsteel:dreadsteel_ingot"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 5.0d
 			y: 6.0d
 		}
 		{
@@ -905,7 +906,7 @@
 				item: "alexscaves:shadow_silk"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 5.0d
 			y: 7.0d
 		}
 		{
@@ -924,7 +925,7 @@
 				type: "checkmark"
 			}]
 			title: "稳固"
-			x: 0.0d
+			x: -2.0d
 			y: 1.5d
 		}
 		{

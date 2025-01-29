@@ -1474,7 +1474,9 @@
 			dependencies: ["0E515BE9EA2A0B2F"]
 			description: [""]
 			id: "043C01E333AD7139"
-			subtitle: "超级超级超级好用的多流体储存罐！（最多八种流体）"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "&4超级超级超级好用&r的多流体储存罐！（最多八种流体）"
 			tasks: [{
 				id: "3F3576DB3D33FC4B"
 				item: "createfluidstuffs:multi_fluid_tank"

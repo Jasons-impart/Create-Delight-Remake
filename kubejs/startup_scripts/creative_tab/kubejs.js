@@ -208,5 +208,9 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:electrolyzer',
         'createdelight:emergency_industrial_platform',
         'createdelight:universal_press',
+        'createdelight:dread_heart',
+        'createdelight:devil_eye',
+        'createdelight:demonic_codex',
+        'createdelight:otherworld_note'
     ])
 });  

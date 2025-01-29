@@ -65,15 +65,6 @@
 					type: "item"
 				}
 				{
-					command: "/gamerule keepInventory true"
-					elevate_perms: true
-					icon: "minecraft:totem_of_undying"
-					id: "341B02A3C4AD532F"
-					silent: true
-					title: "死亡不掉落"
-					type: "command"
-				}
-				{
 					id: "5B9581F0DD4D723E"
 					item: "sophisticatedbackpacks:backpack"
 					type: "item"
@@ -806,7 +797,7 @@
 				"XeKr(space.bilibili.com/5930630)的材质包"
 				"Qi-Month(https://github.com/Qi-Month)提供的部分代码"
 				"史莱姆li(https://b23.tv/1gjok8E)提供的工业平台的代码及其贴图"
-				"以及内测群中帮助我们内测的各位同学们的测试bug以及提出意见"
+				"以及内测群中帮助我们内测的各位同好们的测试bug以及提出意见"
 			]
 			icon: "minecraft:brick"
 			id: "6D88BDC3681A445F"
