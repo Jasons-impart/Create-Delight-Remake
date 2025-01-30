@@ -16,12 +16,12 @@ ServerEvents.recipes(e => {
     // 袋装咖啡豆
     e.recipes.minecraft.crafting_shapeless(
         "farmersrespite:coffee_beans_sack",
-        "9x createcafe:roasted_coffee_beans"
+        ["9x createcafe:roasted_coffee_beans"]
     )
         .id("farmersrespite:coffee_beans_sack")
     e.recipes.minecraft.crafting_shapeless(
         "9x createcafe:roasted_coffee_beans",
-        "farmersrespite:coffee_beans_sack"
+        ["farmersrespite:coffee_beans_sack"]
     )
         .id("farmersrespite:coffee_beans")
     // 咖啡豆粉碎

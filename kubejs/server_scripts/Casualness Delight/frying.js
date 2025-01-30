@@ -69,7 +69,8 @@ ServerEvents.recipes(e => {
     deep_frying('create_bic_bit:kroket', 'create_bic_bit:raw_kroket', 100)
     deep_frying('create_bic_bit:eggball', 'create_bic_bit:raw_eggball', 100)
     deep_frying('create_bic_bit:frikandel', 'create_bic_bit:raw_frikandel', 100)
-    deep_frying('create_bic_bit:fries', 'potato_slice', 100)
+    // TODO：直接加上会导致配方id冲突，因为原本输入产物写的有误就没生效，所以干脆先注释掉后面再修
+    // deep_frying('create_bic_bit:fries', 'casualness_delight:potato_slice', 100)
     deep_frying('create_bic_bit:churros', 'create_bic_bit:raw_churros', 100)
     deep_frying('create_deepfried:panzerotto', 'create_deepfried:raw_panzerotto', 100)
     deep_frying('create_deepfried:blooming_onion', 'farmersdelight:onion', 100)
