@@ -157,18 +157,11 @@
 		{
 			dependencies: ["3F7843954E17972C"]
 			id: "026142A9E3B05A2B"
-			rewards: [
-				{
-					id: "773A68652ED068FD"
-					item: "extradelight:oak_spice_rack"
-					type: "item"
-				}
-				{
-					id: "1BC8F4C5F0ACB929"
-					type: "xp"
-					xp: 100
-				}
-			]
+			rewards: [{
+				id: "1BC8F4C5F0ACB929"
+				type: "xp"
+				xp: 100
+			}]
 			tasks: [{
 				id: "1F17C6F7D9303CF6"
 				item: "culturaldelights:tortilla"
