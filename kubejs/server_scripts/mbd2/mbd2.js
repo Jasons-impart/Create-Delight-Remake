@@ -124,4 +124,15 @@ ServerEvents.recipes(e => {
     })
         .id("mbd2:mechanical_crafting/alloy_electric_furnace")
 
+    //能量输入口
+    e.shaped("mbd2:energy_in", [
+        "CAC",
+        "ABA",
+        "CAC"
+    ], {
+        A: "createaddition:capacitor",
+        B: "createaddition:modular_accumulator",
+        C: "create:brass_sheet"
+    })
+        .id("mbd2:energy_in")
 })
