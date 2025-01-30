@@ -37,6 +37,14 @@ ServerEvents.tags("item", e => {
         'crabbersdelight:cooked_shrimp',
         'oceanic_delight:shrimp_slices'
     ])
+    e.add("forge:shrimps", [
+        'crabbersdelight:shrimp',
+        'crabbersdelight:cooked_shrimp',
+        'oceanic_delight:shrimp_slices'
+    ])
+    e.add("forge:crab_meat", "crabbersdelight:crab_legs")
+
+    e.add("forge:crab_leg", "crabbersdelight:crab_legs")
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [

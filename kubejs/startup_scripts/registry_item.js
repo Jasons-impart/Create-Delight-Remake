@@ -114,6 +114,16 @@ StartupEvents.registry("item", e => {
                 .fastToEat()
                 .effect("minecraft:hunger", 200, 1, 1.0)
         })
+    e.create("createdelight:lime_cookie_dough")
+        .tag("forge:cookie_dough")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.lime_cookie_dough")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .fastToEat()
+                .effect("minecraft:hunger", 200, 1, 1.0)
+        })
 
     // 开酥相关
     e.create("createdelight:butter")
@@ -606,17 +616,17 @@ StartupEvents.registry("item", e => {
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")
-        .translationKey("item.createdelight.dread_heart") 
+        .translationKey("item.createdelight.dread_heart")
     //恶魔之眼
     e.create("createdelight:devil_eye")
         .rarity("epic")
-        .translationKey("item.createdelight.devil_eye") 
+        .translationKey("item.createdelight.devil_eye")
     //锻造钢板
     e.create("createdelight:forged_steel_sheet")
-    .translationKey("item.createdelight.forged_steel_sheet") 
+        .translationKey("item.createdelight.forged_steel_sheet")
     //恶魔典籍
     e.create("createdelight:demonic_codex")
         .rarity("epic")
-        .translationKey("item.createdelight.demonic_codex") 
-    
+        .translationKey("item.createdelight.demonic_codex")
+
 })
