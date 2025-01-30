@@ -3521,25 +3521,6 @@
             "type": "lightmanscurrency:coins"
           },
           "Product": {
-            "id": "create:honey",
-            "amount": 1000
-          },
-          "Quantity": 1,
-          "TradeRules": []
-        },
-        {
-          "TradeType": "PURCHASE",
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          },
-          "Product": {
             "id": "create:chocolate",
             "amount": 1000
           },
