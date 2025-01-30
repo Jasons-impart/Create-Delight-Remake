@@ -1,6 +1,6 @@
 name = "Create-Delight-Remake"
 author = "JSI"
-version = "0.3.0-gamma"
+version = "0.3.1.0"
 pack-format = "packwiz:1.1.0"
 
 [index]
