@@ -1,5 +1,5 @@
-name: 发布客户端补丁
-run-name: ${{ github.actor }} 正在发布客户端补丁🚀
+name: 发布补丁
+run-name: ${{ github.actor }} 正在发布补丁🚀
 on:
   push:
     branches:
@@ -41,7 +41,21 @@ jobs:
           fi
       - name: 获取最近的tag并配置环境变量
         run: |
-          latest_tag=$(git describe --tags --abbrev=0)
+          # 获取当前 commit 的 hash
+          current_commit=$(git rev-parse HEAD)
+          # 获取当前 commit 关联的 tag
+          current_commit_tags=$(git tag --points-at $current_commit)
+          if [ -z "$current_commit_tags" ]; then
+            # 当前 commit 没有关联 tag，直接取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | head -n 1)
+          else
+            # 当前 commit 有关联 tag，过滤掉这些 tag 后取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
+          fi
+          if [ -z "$latest_tag" ]; then
+            echo "No suitable tag found. Exiting."
+            exit 1
+          fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
       - name: 根据tag生成补丁
