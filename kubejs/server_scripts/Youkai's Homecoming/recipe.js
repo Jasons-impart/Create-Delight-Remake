@@ -14,7 +14,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:black_tea_bag',
         'youkaishomecoming:green_tea_bag',
-        'youkaishomecoming:oolong_tea_bag'])
+        'youkaishomecoming:oolong_tea_bag',
+        'youkaishomecoming:redbean_bag'])
     remove_recipes_id(e, [
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
@@ -34,20 +35,19 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, 'youkaishomecoming:coffee_powder', 'createcafe:coffee_grounds')
     e.replaceInput({}, 'youkaishomecoming:bowl_of_cream', 'createdelight:whipped_cream_bowl')
     e.replaceInput({}, 'youkaishomecoming:butter', 'createdelight:butter')
-    e.replaceInput({}, "createdelight:adzuki_beans_seed", "createdelight:adzuki_beans_seed")
     e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
     e.replaceInput({}, "youkaishomecoming:roe", "oceanic_delight:salmon_eggs")
-    e.replaceInput({}, "festival_delicacies:red_bean", "createdelight:adzuki_beans_seed")
-    e.replaceInput({id: "youkaishomecoming:apaki"}, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
-    e.replaceInput({id: "youkaishomecoming:avgolemono"}, "minecraft:glow_berries", "#forge:fruits/lemon")
-    e.replaceInput([{id: "youkaishomecoming:blazing_red_curry"}, {id: "youkaishomecoming:mapo_tofu"}], "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
-    e.replaceInput([{id: "youkaishomecoming:flesh_chocolate_mousse"}, {id: "youkaishomecoming:scarlet_devil_cake"}], "minecraft:wheat", "create:dough")
-    
+    e.replaceInput({}, "youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
+    e.replaceInput({ id: "youkaishomecoming:apaki" }, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
+    e.replaceInput({ id: "youkaishomecoming:avgolemono" }, "minecraft:glow_berries", "#forge:fruits/lemon")
+    e.replaceInput([{ id: "youkaishomecoming:blazing_red_curry" }, { id: "youkaishomecoming:mapo_tofu" }], "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
+    e.replaceInput([{ id: "youkaishomecoming:flesh_chocolate_mousse" }, { id: "youkaishomecoming:scarlet_devil_cake" }], "minecraft:wheat", "create:dough")
+
 
 
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
-    .id("youkaishomecoming:pressing/clay_saucer")
+        .id("youkaishomecoming:pressing/clay_saucer")
 
     create.sequenced_assembly("youkaishomecoming:red_velvet_cake", "ratatouille:cake_base", [
         create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("butchercraft:blood_fluid")]),
@@ -121,29 +121,40 @@ ServerEvents.recipes(e => {
         "#forge:mushrooms",
         Fluid.of("youkaishomecoming:mio", 1000)
     ])
-    .processingTime(1800)
-    .id("createdelight:vinegar_2")
+        .processingTime(1800)
+        .id("createdelight:vinegar_2")
     create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
-    .id("youkaishomecoming:milling/matcha")
+        .id("youkaishomecoming:milling/matcha")
 
     createdieselgenerators.basin_fermenting(
-        Fluid.of("youkaishomecoming:mio", 1000), 
+        Fluid.of("youkaishomecoming:mio", 1000),
         [
             "#forge:grain/rice",
             "#forge:grain/rice",
             "#forge:grain/rice",
             "#forge:grain/rice",
-             Fluid.water(1000)])
+            Fluid.water(1000)])
         .processingTime(1800)
         .id("youkaishomecoming:basin_fermenting/mio")
 
+    createdieselgenerators.basin_fermenting([
+        Fluid.of("youkaishomecoming:soy_sauce", 1000)
+    ], [
+        "youkaishomecoming:soybean",
+        "youkaishomecoming:soybean",
+        "youkaishomecoming:soybean",
+        "youkaishomecoming:soybean",
+        Fluid.water(1000)
+    ])
+        .processingTime(1800)
+        .id("youkaishomecoming:basin_fermenting/soy_sauce")
     //咖啡调配
     create.filling("youkaishomecoming:americano", ["youkaishomecoming:espresso", Fluid.water(250)])
-    .id("youkaishomecoming:filling/americano")
-    
+        .id("youkaishomecoming:filling/americano")
+
     create.deploying("youkaishomecoming:ristretto", ["youkaishomecoming:espresso", "createcafe:coffee_grounds"])
-    .id("youkaishomecoming:deploying/ristretto")
-    
+        .id("youkaishomecoming:deploying/ristretto")
+
     e.custom({
         type: "create:filling",
         ingredients: [
@@ -164,31 +175,31 @@ ServerEvents.recipes(e => {
     }).id("youkaishomecoming:filling/latte")
 
     create.filling("youkaishomecoming:con_panna", ["youkaishomecoming:ristretto", Fluid.of("createdelight:whipped_cream", 250)])
-    .id("youkaishomecoming:filling/con_panna")
+        .id("youkaishomecoming:filling/con_panna")
     create.filling("youkaishomecoming:macchiato", ["youkaishomecoming:espresso", Fluid.of("createdelight:whipped_cream", 250)])
-    .id("youkaishomecoming:filling/macchiato")
+        .id("youkaishomecoming:filling/macchiato")
     create.deploying("youkaishomecoming:affogato", ["youkaishomecoming:macchiato", "neapolitan:ice_cubes"])
-    .id("youkaishomecoming:deploying/affogato")
+        .id("youkaishomecoming:deploying/affogato")
     create.filling("youkaishomecoming:cappuccino", ["youkaishomecoming:latte", Fluid.of("createdelight:whipped_cream", 250)])
-    .id("youkaishomecoming:filling/cappuccino")
+        .id("youkaishomecoming:filling/cappuccino")
     create.filling("youkaishomecoming:mocha", ["youkaishomecoming:latte", Fluid.of("create:chocolate", 250)])
-    .id("youkaishomecoming:filling/mocha")
+        .id("youkaishomecoming:filling/mocha")
 
     let coffee_list = [
-        'espresso', 
-        'americano', 
-        'ristretto', 
-        'latte', 
-        'affogato', 
-        'con_panna', 
-        'cappuccino', 
-        'macchiato', 
+        'espresso',
+        'americano',
+        'ristretto',
+        'latte',
+        'affogato',
+        'con_panna',
+        'cappuccino',
+        'macchiato',
         'mocha']
-        coffee_list.forEach(coffee => {
+    coffee_list.forEach(coffee => {
         create.filling(`youkaishomecoming:${coffee}`, ["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)])
-        .id(`youkaishomecoming:filling/${coffee}_from_fluid`)
+            .id(`youkaishomecoming:filling/${coffee}_from_fluid`)
         create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)], `youkaishomecoming:${coffee}`)
-        .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
+            .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
     })
 
     brewing_2(e, "minecraft:water", ["createcafe:coffee_grounds"], "createdelight:espresso_fluid", "youkaishomecoming:espresso", 250)
@@ -212,19 +223,19 @@ ServerEvents.recipes(e => {
     brewing_2(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds"], "createdelight:con_panna_fluid", "youkaishomecoming:con_panna", 250)
     pouring(e, "youkaishomecoming:con_panna", "createdelight:con_panna_fluid")
 
-    
+
     brewing_2(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds", "#forge:milk/milk_bottle"], "createdelight:cappuccino_fluid", "youkaishomecoming:cappuccino", 250)
     brewing_2(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "#forge:milk/milk_bottle"], "createdelight:cappuccino_fluid", "youkaishomecoming:cappuccino", 250)
     pouring(e, "youkaishomecoming:cappuccino", "createdelight:cappuccino_fluid")
-    
+
 
     brewing_2(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato", 250)
     brewing_2(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato", 250)
     pouring(e, "youkaishomecoming:macchiato", "createdelight:macchiato_fluid")
 
-    
+
     brewing_2(e, "createdelight:espresso_fluid", ["ratatouille:cocoa_powder", "#forge:milk/milk_bottle"], "createdelight:mocha_fluid", "youkaishomecoming:mocha", 250)
     pouring(e, "youkaishomecoming:mocha", "createdelight:mocha_fluid")
 
-    
+
 })
