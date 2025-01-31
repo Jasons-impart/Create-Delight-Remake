@@ -40,21 +40,12 @@
 			}]
 			shape: "square"
 			subtitle: "补药做木锤呀"
-			tasks: [
-				{
-					advancement: "tetra:story/more_upgrades"
-					criterion: ""
-					id: "47E4C1E5FD157B6A"
-					type: "advancement"
-				}
-				{
-					advancement: "tetra:upgrades/hammer_2"
-					criterion: ""
-					id: "79A73FEDC46DF145"
-					title: "制作石锤"
-					type: "advancement"
-				}
-			]
+			tasks: [{
+				advancement: "tetra:story/more_upgrades"
+				criterion: ""
+				id: "47E4C1E5FD157B6A"
+				type: "advancement"
+			}]
 			title: "模块化开端"
 			x: 0.0d
 			y: 0.0d
