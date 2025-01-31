@@ -381,6 +381,8 @@
     "item.createdelight.forged_steel_sheet": "锻造钢板",
 
     "jei.BlazeBurnerSuperHeat": "烈焰人加热",
+    "jei.burnTime": "燃烧%stick",
+    "jei.amountConsumedPerTick": "每次消耗%smb",
 
     "mbd2.butchery": "屠宰室",
     "mbd2.hydropower_station": "大坝",

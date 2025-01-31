@@ -107,7 +107,7 @@
 		replace_in_loot_tables = "NONE"
 
 	[functional.jar]
-		enabled = false
+		enabled = true
 		#Jar liquid capacity: leave at 12 for pixel accuracy
 		#Range: 0 ~ 1024
 		capacity = 12
@@ -119,11 +119,11 @@
 		#Dynamically allows all small mobs inside jars depending on their hitbox size
 		jar_auto_detect = false
 		#Allow Jars to capture small mobs
-		jar_capture = false
+		jar_capture = true
 		#Allow Jars to hold cookies
-		jar_cookies = false
+		jar_cookies = true
 		#Allow Jars to hold liquids from bottles, buckets and bowls
-		jar_liquids = false
+		jar_liquids = true
 
 	[functional.cage]
 		enabled = true
@@ -405,7 +405,7 @@
 		quiver_pickup = true
 
 	[tools.slice_map]
-		enabled = false
+		enabled = true
 		#Multiplier that will be applied by slice maps to lower their range compared to normal maps
 		#Range: 0.0 ~ 1.0
 		range_multiplier = 0.25
