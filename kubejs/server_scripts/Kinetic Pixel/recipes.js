@@ -302,7 +302,7 @@ ServerEvents.recipes(e => {
     let iner = 'create:brass_sheet'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
         [
-            vintageimprovements.curving(iner, iner, 1),
+            vintageimprovements.curving(iner, iner, 3),
             create.deploying(iner, [iner, 'createbigcannons:guncotton']),
             create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
             create.pressing(iner, iner),
@@ -316,14 +316,14 @@ ServerEvents.recipes(e => {
     let iner_1 = 'create:brass_sheet'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
+            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
             vintageimprovements.curving(iner_1, iner_1, 2),
             create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
-            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
-            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true)
+            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget'])
         ]
     )
         .loops(1)
-        .transitionalItem(iner)
+        .transitionalItem(iner_1)
         .id("create_armorer:rbapb")
     
     let iner_3 = 'createbigcannons:autocannon_cartridge_sheet'
