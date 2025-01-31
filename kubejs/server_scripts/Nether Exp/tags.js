@@ -9,3 +9,6 @@ ServerEvents.tags("minecraft:item", e => {
     ])
     e.removeAllTagsFrom("netherexp:glowcheese")
 })
+ServerEvents.tags("minecraft:block", e => {
+    e.add("create:tree_attachments", "netherexp:shroomnight")
+})
