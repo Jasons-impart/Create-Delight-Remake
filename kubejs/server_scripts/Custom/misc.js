@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
     createdieselgenerators.basin_fermenting(["farmersdelight:rich_soil"], ["farmersdelight:organic_compost", Fluid.water(100), "#forge:mushrooms"])
     .processingTime(600)
     .id("createdelight:basin_fermenting/rich_soil")
-    createdieselgenerators.basin_fermenting(["mynethersdelight:resurgent_soil"], ["mynethersdelight:letios_compost", Fluid.lava(100), "#minecraft:candles"])
+    createdieselgenerators.basin_fermenting(["mynethersdelight:resurgent_soil"], ["mynethersdelight:letios_compost", Fluid.lava(100), ["minecraft:warped_fungus", "minecraft:crimson_fungus"]])
     .processingTime(600)
     .heatRequirement("heated")
     .id("createdelight:basin_fermenting/resurgent_soil")
