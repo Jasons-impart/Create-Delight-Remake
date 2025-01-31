@@ -126,6 +126,17 @@ ServerEvents.recipes(e => {
     create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
     .id("youkaishomecoming:milling/matcha")
 
+    createdieselgenerators.basin_fermenting(
+        Fluid.of("youkaishomecoming:mio", 1000), 
+        [
+            "#forge:grain/rice",
+            "#forge:grain/rice",
+            "#forge:grain/rice",
+            "#forge:grain/rice",
+             Fluid.water(1000)])
+        .processingTime(1800)
+        .id("youkaishomecoming:basin_fermenting/mio")
+
     //咖啡调配
     create.filling("youkaishomecoming:americano", ["youkaishomecoming:espresso", Fluid.water(250)])
     .id("youkaishomecoming:filling/americano")
