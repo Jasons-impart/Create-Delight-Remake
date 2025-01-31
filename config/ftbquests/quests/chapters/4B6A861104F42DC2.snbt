@@ -48,23 +48,11 @@
 					type: "advancement"
 				}
 				{
-					id: "2C11970271F1375D"
-					item: {
-						Count: 1
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/stone"
-							"double/basic_hammer_right_material": "basic_hammer/stone"
-							"double/basic_handle_material": "basic_handle/stick"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "ec271f92-1e7e-4c9a-aa0a-09f1a0d8fd37"
-						}
-					}
-					match_nbt: true
-					type: "item"
+					advancement: "tetra:upgrades/hammer_2"
+					criterion: ""
+					id: "79A73FEDC46DF145"
+					title: "制作石锤"
+					type: "advancement"
 				}
 			]
 			title: "模块化开端"
