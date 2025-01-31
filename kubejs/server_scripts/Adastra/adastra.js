@@ -191,6 +191,7 @@ ServerEvents.recipes(e => {
         D: "ad_astra:oxygen_gear"
     }
     ).id("ad_astra_giselle_addon:crafting/oxygen_can")
-    e.recipes.create.mixing(Fluid.of("ad_astra:cryo_fuel", 100), [Fluid.of("ad_astra:hydrogen", 500), Fluid.of("netherexp:ectoplasm", 500)])
-    .id("ad_astra:mixing/cryo_fuel")
+    e.recipes.vintageimprovements.pressurizing(Fluid.of("ad_astra:cryo_fuel", 100), [Fluid.of("ad_astra:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
+    .secondaryFluidInput(0)
+    .id("ad_astra:pressurizing/cryo_fuel")
 })
