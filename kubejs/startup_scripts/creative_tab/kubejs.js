@@ -211,6 +211,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:dread_heart',
         'createdelight:devil_eye',
         'createdelight:demonic_codex',
-        'createdelight:otherworld_note'
+        'createdelight:otherworld_note',
+        'createdelight:sky_copper_ingot'
     ])
 });  

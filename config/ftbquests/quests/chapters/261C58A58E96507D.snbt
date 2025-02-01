@@ -1736,6 +1736,33 @@
 			x: 13.5d
 			y: 12.0d
 		}
+		{
+			id: "630FA0478B7DAAAA"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "可以从机器中取出剩余的流体，支持绝大部分流体！"
+			tasks: [{
+				id: "574A5F305CD2C196"
+				item: "createfluidstuffs:bucket"
+				type: "item"
+			}]
+			title: "看看我们带来了什么！"
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			id: "0A0E7F0FE62B435D"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "可以取出少量流体从而可以进行过滤的一个标记 😋"
+			tasks: [{
+				id: "3AE0AC989B8696C9"
+				item: "createfluidstuffs:jar"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
 	]
 	title: "&3进阶研修班！"
 }

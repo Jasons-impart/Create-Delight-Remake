@@ -125,6 +125,7 @@ StartupEvents.registry("creative_mode_tab", e => {
         // 金属锭
         'createdelight:tin_ingot',
         'createdelight:bronze_ingot',
+        'createdelight:sky_copper_ingot',
         // 金属板
         'createdelight:forged_steel_sheet',
         // 金属粒
