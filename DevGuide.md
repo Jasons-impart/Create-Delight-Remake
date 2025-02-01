@@ -1,10 +1,15 @@
 # KubeJS相关开发文档链接
 - https://docs.qq.com/doc/DWVVpeGFrSE1sSGpj
 
-# 发布流程
-- （可选）修改pack.toml中的版本号
-- 提交代码到 test-release 或 release 分支
-- test-release发布的文件名会额外带上时间戳方便区分
+# 正式版本发布流程
+- 修改pack.toml中的版本号，并提交mr合并入main分支
+- 使用git给main分支上修改版本号的这个commit打上对应版本的tag（v0.3.x.x），并将tag推送到github上
+- 把main分支最新commit（即版本修改commit）推送到github上的 release 分支
+- 在github的[tags](https://github.com/Jasons-impart/Create-Delight-Remake/tags)页面从新版本的tag创建release，并填写改动信息
+- 【待自动化】github action自动产出后，将服务端、客户端、补丁下载下来提交到release上
+
+# 测试版本发布流程
+- 将代码推送到github的test-release分支
 - 到 https://github.com/Jasons-impart/Create-Delight-Remake/actions 查收结果
 
 # 增加客户端mod
