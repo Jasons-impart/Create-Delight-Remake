@@ -30,9 +30,9 @@
   "create_armorer.attachment.muzzle_pipe.name": "§a流体管道枪口",
   "create_armorer.attachment.grip_pipe.name": "§a流体管道握把",
 
-  "create_armorer.ammo.gas_pistol_ammo.name": "气动手枪弹",
-  "create_armorer.ammo.slap.name": "次口径脱壳穿甲弹",
-  "create_armorer.ammo.rbapb.name": "凸缘钝头穿甲弹",
+  "create_armorer.ammo.gas_pistol_ammo.name": "§6气动手枪弹",
+  "create_armorer.ammo.slap.name": "§d次口径脱壳穿甲弹",
+  "create_armorer.ammo.rbapb.name": "§e凸缘钝头穿甲弹",
   "create_armorer.ammo.melee_weapon.name": "近战武器",
 
   "create_armorer.tooltip.mg_platemag_flywheel": "枪口的驻锄可用于近战攻击",

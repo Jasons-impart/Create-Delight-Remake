@@ -101,5 +101,6 @@ StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
     'kinetic_pixel:specialsteelingot',
     'kinetic_pixel:componenttemplate',
     'kinetic_pixel:nitropropellant',
+    'kinetic_pixel:wastedbarrel',
   ])
 })

@@ -453,6 +453,7 @@ StartupEvents.registry("item", e => {
     // 陨铜锭
     e.create("createdelight:sky_copper_ingot")
         .translationKey("item.createdelight.sky_copper_ingot")
+        .fireResistant()
     // 元件外壳封头
     e.create("createdelight:cell_housing_curving_head")
         .translationKey("item.createdelight.cell_housing_curving_head")

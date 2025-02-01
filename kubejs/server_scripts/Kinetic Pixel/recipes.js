@@ -302,11 +302,10 @@ ServerEvents.recipes(e => {
     let iner = 'create:brass_sheet'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
         [
-            vintageimprovements.curving(iner, iner, 3),
-            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
-            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
+            create.cutting(iner, iner),
             create.pressing(iner, iner),
-            create.cutting(iner, iner)
+            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
+            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget'])
         ]
     )
         .loops(1)
@@ -316,10 +315,10 @@ ServerEvents.recipes(e => {
     let iner_1 = 'create:brass_sheet'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
-            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
-            vintageimprovements.curving(iner_1, iner_1, 2),
+            create.pressing(iner, iner),
             create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
-            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget'])
+            create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
+            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true)
         ]
     )
         .loops(1)
@@ -329,10 +328,10 @@ ServerEvents.recipes(e => {
     let iner_3 = 'createbigcannons:autocannon_cartridge_sheet'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createbigcannons:autocannon_cartridge_sheet',
         [
-            vintageimprovements.curving(iner_3, iner_3, 1),
+            create.cutting(iner, iner),
+            create.pressing(iner, iner),
             create.deploying(iner_3, [iner_3, 'createbigcannons:guncotton']),
-            create.deploying(iner_3, [iner_3, '#forge:gems/diamond']),
-            create.pressing(iner_3, iner_3)
+            create.deploying(iner_3, [iner_3, '#forge:gems/diamond'])
         ]
     )
         .loops(1)
@@ -342,7 +341,8 @@ ServerEvents.recipes(e => {
     let iner_4 = 'alexscaves:polymer_plate'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
         [
-            vintageimprovements.curving(iner_4, iner_4, 1),
+            create.cutting(iner, iner),
+            create.pressing(iner, iner),
             create.deploying(iner_4, [iner_4, 'createbigcannons:guncotton']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
