@@ -63,9 +63,14 @@ jobs:
       - name: 生成带mod本体的包 移动到workspace文件夹
         run: |
           ./packwiz curseforge export
-          mv *.zip ../full-release.zip
-          unzip ../full-release.zip -d ../full-release
-          ls ..
+          mkdir ../click_to_run_release
+          mv *.zip ../click_to_run_release/modpack.zip
+      - name: 下载HMCL启动器与jdk环境
+        run: |
+          curl https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.11/HMCL-3.6.11.exe
+          curl https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
+          mv HMCL-3.6.11.exe ../click_to_run_release
+          mv jdk-17.0.12_windows-x64_bin.msi ../click_to_run_release/jdk17.0.12_installer.msi
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
@@ -84,8 +89,8 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-full
-          path: ${{ env.artifacts_path }}/full-release/
+          name: "[懒人包]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
