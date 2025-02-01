@@ -67,8 +67,8 @@ jobs:
           mv *.zip ../click_to_run_release/modpack.zip
       - name: 下载HMCL启动器与jdk环境
         run: |
-          curl -o -L HMCL-3.6.11.exe https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.11/HMCL-3.6.11.exe
-          curl -o -L jdk17.0.12_installer.msi https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
+          curl -o HMCL-3.6.11.exe -L https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.11/HMCL-3.6.11.exe
+          curl -o jdk17.0.12_installer.msi -L https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
           mv HMCL-3.6.11.exe ../click_to_run_release
           mv jdk17.0.12_installer.msi ../click_to_run_release
       - name: 检测并生成mods meta信息
