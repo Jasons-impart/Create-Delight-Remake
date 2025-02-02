@@ -1,0 +1,26 @@
+{
+  "attributes": {
+    "attack_range": 3,
+    "category": "axe",
+    "attacks": [
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "angle": 90,
+        "upswing": 0.5,
+        "animation": "bettercombat:one_handed_slash_horizontal_right",
+        "swing_sound": {
+          "id": "bettercombat:axe_slash"
+        }
+      },
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "angle": 90,
+        "upswing": 0.5,
+        "animation": "bettercombat:one_handed_slash_horizontal_left",
+        "swing_sound": {
+          "id": "bettercombat:axe_slash"
+        }
+      }
+    ]
+  }
+}
