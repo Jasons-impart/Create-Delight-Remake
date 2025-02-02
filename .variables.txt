@@ -66,6 +66,6 @@ JDK_VENDOR=temurin
 JABBA_INSTALL_URL_SH=https://github.com/Jabba-Team/jabba/raw/main/install.sh
 JABBA_INSTALL_URL_PS=https://github.com/Jabba-Team/jabba/raw/main/install.ps1
 JABBA_INSTALL_VERSION=0.13.0
-SERVERSTARTERJAR_FORCE_FETCH=true
+SERVERSTARTERJAR_FORCE_FETCH=false
 SERVERSTARTERJAR_VERSION=latest
 USE_SSJ=true

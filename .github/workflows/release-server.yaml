@@ -113,7 +113,7 @@ jobs:
           path: ${{ github.workspace }}/main
       - name: 安装forge
         run: |
-          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
+          cd ${{ github.workspace }}/main && java -jar forge.jar nogui --installServer
       - name: 上传带forge核心的包
         uses: actions/upload-artifact@v4
         with:
