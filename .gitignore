@@ -22,10 +22,10 @@
 !/DevGuide.md
 !/client_jvm_args.example.txt
 !/shaderpacks
-!/.HOW-TO-RUN.md
-!/.install_java.ps1
-!/.install_java.sh
-!/.start.bat
-!/.start.ps1
-!/.start.sh
-!/.variables.txt
+!/HOW_TO_RUN_SERVER.md
+!/install_java.ps1
+!/install_java.sh
+!/start.bat
+!/start.ps1
+!/start.sh
+!/variables.txt

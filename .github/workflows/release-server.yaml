@@ -58,14 +58,19 @@ jobs:
           fi
       - name: 删除与服务端无关的文件
         run: |
-            mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
-            for prefix in "${prefixes[@]}"; do
-              echo "Deleting files with prefix: $prefix"
-              find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
-            done
-            rm ${{ github.workspace }}/main/pack.toml
-            rm ${{ github.workspace }}/main/index.toml
-            rm ${{ github.workspace }}/main/client_jvm_args.example.txt
+            # mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
+            # for prefix in "${prefixes[@]}"; do
+            #   echo "Deleting files with prefix: $prefix"
+            #   find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
+            # done
+            rm -f ${{ github.workspace }}/main/ModList0.4a.md
+            rm -f ${{ github.workspace }}/main/README.md
+            rm -f ${{ github.workspace }}/main/TODOlist.md
+            rm -f ${{ github.workspace }}/main/KubeJSStyleGuide.md
+            rm -f ${{ github.workspace }}/main/DevGuide.md
+            rm -f ${{ github.workspace }}/main/pack.toml
+            rm -f ${{ github.workspace }}/main/index.toml
+            rm -f ${{ github.workspace }}/main/client_jvm_args.example.txt
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
@@ -73,15 +78,6 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
-      - name: 重命名server相关文件
-        run: |
-          mv ${{ github.workspace }}/main/.HOW-TO-RUN.md ${{ github.workspace }}/main/HOW-TO-RUN.md
-          mv ${{ github.workspace }}/main/.install_java.ps1 ${{ github.workspace }}/main/install_java.ps1
-          mv ${{ github.workspace }}/main/.install_java.sh ${{ github.workspace }}/main/install_java.sh
-          mv ${{ github.workspace }}/main/.start.bat ${{ github.workspace }}/main/start.bat
-          mv ${{ github.workspace }}/main/.start.ps1 ${{ github.workspace }}/main/start.ps1
-          mv ${{ github.workspace }}/main/.start.sh ${{ github.workspace }}/main/start.sh
-          mv ${{ github.workspace }}/main/.variables.txt ${{ github.workspace }}/main/variables.txt
       - name: 根据pack.toml的mc与forge版本替换服务安装脚本配置
         env:
           MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
