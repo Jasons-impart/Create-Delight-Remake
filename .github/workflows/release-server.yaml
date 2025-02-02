@@ -111,6 +111,7 @@ jobs:
         with:
           name: "Server-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
+      # TODO：改成用server.jar安装
       # - name: 安装forge
       #   run: |
       #     cd ${{ github.workspace }}/main && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
