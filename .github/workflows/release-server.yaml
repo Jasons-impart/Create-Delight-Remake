@@ -65,6 +65,7 @@ jobs:
             done
             rm ${{ github.workspace }}/main/pack.toml
             rm ${{ github.workspace }}/main/index.toml
+            rm ${{ github.workspace }}/main/client_jvm_args.example.txt
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
@@ -82,6 +83,12 @@ jobs:
           mv ${{ github.workspace }}/main/.start.ps1 ${{ github.workspace }}/main/start.ps1
           mv ${{ github.workspace }}/main/.start.sh ${{ github.workspace }}/main/start.sh
           mv ${{ github.workspace }}/main/.variables.txt ${{ github.workspace }}/main/variables.txt
+      - name: 根据pack.toml的mc与forge版本替换服务安装脚本配置
+        run: |
+          sed -i "s/^MINECRAFT_VERSION=.*/MINECRAFT_VERSION=$MINECRAFT/" ${{ github.workspace }}/main/variables.txt
+          sed -i "s/^MODLOADER_VERSION=.*/MODLOADER_VERSION=$FORGE/" ${{ github.workspace }}/main/variables.txt
+          grep 'MINECRAFT_VERSION=' ${{ github.workspace }}/main/variables.txt
+          grep 'MODLOADER_VERSION=' ${{ github.workspace }}/main/variables.txt
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
