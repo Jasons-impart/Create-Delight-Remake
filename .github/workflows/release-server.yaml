@@ -63,14 +63,14 @@ jobs:
             #   echo "Deleting files with prefix: $prefix"
             #   find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
             # done
-            rm ${{ github.workspace }}/main/ModList0.4a.md
-            rm ${{ github.workspace }}/main/README.md
-            rm ${{ github.workspace }}/main/TODOlist.md
-            rm ${{ github.workspace }}/main/KubeJSStyleGuide.md
-            rm ${{ github.workspace }}/main/DevGuide.md
-            rm ${{ github.workspace }}/main/pack.toml
-            rm ${{ github.workspace }}/main/index.toml
-            rm ${{ github.workspace }}/main/client_jvm_args.example.txt
+            rm -f ${{ github.workspace }}/main/ModList0.4a.md
+            rm -f ${{ github.workspace }}/main/README.md
+            rm -f ${{ github.workspace }}/main/TODOlist.md
+            rm -f ${{ github.workspace }}/main/KubeJSStyleGuide.md
+            rm -f ${{ github.workspace }}/main/DevGuide.md
+            rm -f ${{ github.workspace }}/main/pack.toml
+            rm -f ${{ github.workspace }}/main/index.toml
+            rm -f ${{ github.workspace }}/main/client_jvm_args.example.txt
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
