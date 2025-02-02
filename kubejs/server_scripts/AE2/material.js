@@ -33,8 +33,8 @@ ServerEvents.recipes((event) => {
 
   // 人造钻石
   let coal_64 = [Fluid.of("minecraft:lava", 250)];
-  for (let i = 0; i < 8; i++) {
-    coal_64.push("minecraft:coal_block");
+  for (let i = 0; i < 4; i++) {
+    coal_64.push("createmetallurgy:coke_block");
   }
   vintageimprovements
     .pressurizing("createdelight:mmd_diamond", coal_64)

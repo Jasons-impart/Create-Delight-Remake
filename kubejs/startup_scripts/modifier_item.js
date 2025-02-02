@@ -51,6 +51,7 @@ ItemEvents.modification(e => {
         ["culturaldelights:cut_pickle", "farmersdelight:nourishment", 300, 1, 1],
         ["casualness_delight:raw_fried_dumpling", "minecraft:nausea", 600, 2, 1],
         ["create:blaze_cake", "mynethersdelight:b_pungent", 1200, 2, 1],
+        ["create:blaze_cake", "supplementaries:flammable", 1200, 2, 1],
         ["create:blaze_cake", "minecraft:strength", 600, 2, 1],
         ["create_central_kitchen:chocolate_cake_slice", "neapolitan:sugar_rush", 10, 1, 1],
         ['corn_delight:classic_corn_dog', "minecraft:resistance", 200, 1, 1],
