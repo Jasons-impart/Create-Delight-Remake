@@ -1,3 +1,16 @@
+This project includes these third party parts:
+1. forge: MIT
+    - Copyright (c) 2015-2017 Thomas Boerger <thomas@webhippie.de>
+    - [license detail](https://github.com/dockhippie/minecraft-forge/blob/master/LICENSE)
+2. ServerStarterJar: LGPL v2.1
+    - [license detail](https://github.com/neoforged/ServerStarterJar/blob/main/LICENSE)
+3. Minecraft-Java-Flags:
+    - Copyright (c) 2022 - 2023 brucethemoose
+    - Copyright (c) 2023 - 2024 Mukul Kedia
+    - [license detail](https://github.com/Mukul1127/Minecraft-Java-Flags/blob/main/LICENSE)
+
+Codes of this project defaults to MIT license:
+
 MIT License
 
 Copyright (c) 2024 Jasons impart

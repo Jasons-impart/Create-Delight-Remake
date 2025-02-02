@@ -91,6 +91,17 @@ jobs:
           sed -i "s/^MODLOADER_VERSION=.*/MODLOADER_VERSION=$FORGE/" ${{ github.workspace }}/main/variables.txt
           grep '^MINECRAFT_VERSION=' ${{ github.workspace }}/main/variables.txt
           grep '^MODLOADER_VERSION=' ${{ github.workspace }}/main/variables.txt
+      - name: 下载forge与ServerStarterJar
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
+        run: |
+          FORGE_URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          SERVER_JAR_URL="https://github.com/neoforged/ServerStarterJar/releases/latest/download/server.jar"
+          echo "$FORGE_URL"
+          echo "$SERVER_JAR_URL"
+          curl -L -o "${{ github.workspace }}/main/forge-$MINECRAFT-$FORGE-installer.jar" "$FORGE_URL"
+          curl -L -o ${{ github.workspace }}/main/server.jar "$SERVER_JAR_URL"
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
@@ -100,23 +111,16 @@ jobs:
         with:
           name: "Server-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
-      - name: 下载forge
-        env:
-          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-          FORGE: ${{ steps.read-forge.outputs.value }}
-        run: |
-          URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
-          echo "$URL"
-          curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
-      - name: 安装forge
-        run: |
-          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
-      - name: 上传带forge核心的包
-        uses: actions/upload-artifact@v4
-        with:
-          name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
-          path: ${{ github.workspace }}/main
-      - name: list file
-        run: |
-          ls ${{ github.workspace }}/main
+      # TODO：改成用server.jar安装
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }}/main && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
+      # - name: 上传带forge核心的包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+      #     path: ${{ github.workspace }}/main
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
