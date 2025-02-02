@@ -56,13 +56,15 @@ jobs:
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
-      - name: Read and delete packwiz ignore files
+      - name: 删除与服务端无关的文件
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
             for prefix in "${prefixes[@]}"; do
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
             done
+            rm ${{ github.workspace }}/main/pack.toml
+            rm ${{ github.workspace }}/main/index.toml
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
@@ -70,9 +72,16 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
-      - name: 重命名server jvm参数配置样例
+      - name: 重命名server相关文件
         run: |
           mv ${{ github.workspace }}/main/.user_jvm_args.example.txt ${{ github.workspace }}/main/user_jvm_args.example.txt
+          mv ${{ github.workspace }}/main/.HOW-TO-RUN.md ${{ github.workspace }}/main/HOW-TO-RUN.md
+          mv ${{ github.workspace }}/main/.install_java.ps1 ${{ github.workspace }}/main/install_java.ps1
+          mv ${{ github.workspace }}/main/.install_java.sh ${{ github.workspace }}/main/install_java.sh
+          mv ${{ github.workspace }}/main/.start.bat ${{ github.workspace }}/main/start.bat
+          mv ${{ github.workspace }}/main/.start.ps1 ${{ github.workspace }}/main/start.ps1
+          mv ${{ github.workspace }}/main/.start.sh ${{ github.workspace }}/main/start.sh
+          mv ${{ github.workspace }}/main/.variables.txt ${{ github.workspace }}/main/variables.txt
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
@@ -80,7 +89,7 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Server]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          name: "Server-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
       - name: 下载forge
         env:
