@@ -111,15 +111,15 @@ jobs:
         with:
           name: "Server-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
-      - name: 安装forge
-        run: |
-          cd ${{ github.workspace }}/main && java -jar forge.jar nogui --installServer
-      - name: 上传带forge核心的包
-        uses: actions/upload-artifact@v4
-        with:
-          name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
-          path: ${{ github.workspace }}/main
-      - name: list file
-        run: |
-          ls ${{ github.workspace }}/main
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }}/main && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
+      # - name: 上传带forge核心的包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+      #     path: ${{ github.workspace }}/main
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."
