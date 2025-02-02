@@ -75,7 +75,6 @@ jobs:
             done
       - name: 重命名server相关文件
         run: |
-          mv ${{ github.workspace }}/main/.user_jvm_args.example.txt ${{ github.workspace }}/main/user_jvm_args.example.txt
           mv ${{ github.workspace }}/main/.HOW-TO-RUN.md ${{ github.workspace }}/main/HOW-TO-RUN.md
           mv ${{ github.workspace }}/main/.install_java.ps1 ${{ github.workspace }}/main/install_java.ps1
           mv ${{ github.workspace }}/main/.install_java.sh ${{ github.workspace }}/main/install_java.sh
