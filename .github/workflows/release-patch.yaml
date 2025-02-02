@@ -108,14 +108,23 @@ jobs:
           done
 
           echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
-      - name: 从生成的补丁临时目录里删除打包会忽略的文件
+      - name: 从生成的补丁临时目录里删除无用文件
         run: |
-            mapfile -t names < ${{ github.workspace }}/.packwizignore
-            names+=("pack.toml")
-            for filename in "${names[@]}"; do
-              echo "Deleting files $filename"
-              find ${{ env.PATCH_DIR }} -name "${filename}" -exec rm {} +
-            done
+            # mapfile -t names < ${{ github.workspace }}/.packwizignore
+            # names+=("pack.toml")
+            # for filename in "${names[@]}"; do
+            #   echo "Deleting files $filename"
+            #   find ${{ env.PATCH_DIR }} -name "${filename}" -exec rm {} +
+            # done
+            rm ${{ env.PATCH_DIR }}/ModList0.4a.md
+            rm ${{ env.PATCH_DIR }}/README.md
+            rm ${{ env.PATCH_DIR }}/TODOlist.md
+            rm ${{ env.PATCH_DIR }}/KubeJSStyleGuide.md
+            rm ${{ env.PATCH_DIR }}/DevGuide.md
+            rm ${{ env.PATCH_DIR }}/pack.toml
+            rm ${{ env.PATCH_DIR }}/index.toml
+            rm ${{ env.PATCH_DIR }}/client_jvm_args.example.txt
+
       - name: 上传补丁
         uses: actions/upload-artifact@v4
         with:
