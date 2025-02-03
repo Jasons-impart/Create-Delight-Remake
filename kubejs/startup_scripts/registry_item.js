@@ -362,6 +362,18 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_fs_upgrade")
     e.create("createdelight:incomplete_graviton_tube", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_graviton_tube")
+    // 未完成的子弹
+    e.create("createdelight:incomplete_12g", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_12g")
+    e.create("createdelight:incomplete_slap", "create:sequenced_assembly")
+        .texture("create:item/brass_sheet")
+        .translationKey("item.createdelight.incomplete_slap")
+    e.create("createdelight:incomplete_rbapb", "create:sequenced_assembly")
+        .texture("create:item/brass_sheet")
+        .translationKey("item.createdelight.incomplete_rbapb")
+    e.create("createdelight:incomplete_gas_pistol_ammo", "create:sequenced_assembly")
+        .texture("create:item/copper_sheet")
+        .translationKey("item.createdelight.incomplete_gas_pistol_ammo")
 
 
     // 测试剑

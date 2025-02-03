@@ -379,6 +379,10 @@
     "item.createdelight.devil_eye": "恶魔之眼",
     "item.createdelight.demonic_codex": "恶魔典籍",
     "item.createdelight.forged_steel_sheet": "锻造钢板",
+    "item.createdelight.incomplete_12g": "未完成的12号口径霰弹",
+    "item.createdelight.incomplete_slap": "未完成的次口径脱壳穿甲弹",
+    "item.createdelight.incomplete_rbapb": "未完成的凸缘钝头穿甲弹",
+    "item.createdelight.incomplete_gas_pistol_ammo": "未完成的气动手枪弹",
 
     "jei.BlazeBurnerSuperHeat": "烈焰人加热",
     "jei.burnTime": "燃烧%stick",

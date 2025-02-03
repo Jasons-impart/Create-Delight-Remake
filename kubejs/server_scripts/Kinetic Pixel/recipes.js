@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
         "kinetic_pixel:enderalloyingotloot",
         "kinetic_pixel:endercsloot",
         "kinetic_pixel:tableloot",
-        "kinetic_pixel:shellloot"
+        "kinetic_pixel:shellloot",
+        "createbigcannons:cutting/autocannon_cartridge_sheet_copper",
+        "createbigcannons:cutting/autocannon_cartridge_sheet_gold"
     ])
     remove_recipes_output(e,
         [
@@ -299,7 +301,7 @@ ServerEvents.recipes(e => {
         }
     ).id("create_armorer:extended_mag_ca_3")
 
-    let iner = 'create:brass_sheet'
+    let iner = 'createdelight:incomplete_slap'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
         [
             create.cutting(iner, iner),
@@ -312,7 +314,7 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("create_armorer:slap")
 
-    let iner_1 = 'create:brass_sheet'
+    let iner_1 = 'createdelight:incomplete_rbapb'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
             create.pressing(iner, iner),
@@ -325,8 +327,8 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_1)
         .id("create_armorer:rbapb")
     
-    let iner_3 = 'createbigcannons:autocannon_cartridge_sheet'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createbigcannons:autocannon_cartridge_sheet',
+    let iner_3 = 'createdelight:incomplete_gas_pistol_ammo'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
         [
             create.cutting(iner, iner),
             create.pressing(iner, iner),
@@ -338,7 +340,7 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_3)
         .id("create_armorer:gas_pistol_ammo")
 
-    let iner_4 = 'alexscaves:polymer_plate'
+    let iner_4 = 'createdelight:incomplete_12g'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
         [
             create.cutting(iner, iner),

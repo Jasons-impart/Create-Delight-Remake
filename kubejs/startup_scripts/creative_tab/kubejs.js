@@ -212,6 +212,10 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:devil_eye',
         'createdelight:demonic_codex',
         'createdelight:otherworld_note',
-        'createdelight:sky_copper_ingot'
+        'createdelight:sky_copper_ingot',
+        'createdelight:incomplete_12g',
+        'createdelight:incomplete_slap',
+        'createdelight:incomplete_rbapb',
+        'createdelight:incomplete_gas_pistol_ammo'
     ])
 });  
