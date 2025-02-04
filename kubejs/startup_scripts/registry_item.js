@@ -366,7 +366,6 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_12g", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_12g")
     e.create("createdelight:incomplete_slap", "create:sequenced_assembly")
-        .texture("create:item/brass_sheet")
         .translationKey("item.createdelight.incomplete_slap")
     e.create("createdelight:incomplete_rbapb", "create:sequenced_assembly")
         .texture("create:item/brass_sheet")

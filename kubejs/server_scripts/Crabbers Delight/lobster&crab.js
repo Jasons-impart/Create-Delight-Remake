@@ -40,7 +40,6 @@ ServerEvents.tags("item", e => {
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "farmersdelight:cooking/jar_of_pickles",
         "alexsmobs:cooked_lobster_tail_campfire",
         "alexsmobs:cooked_lobster_tail_smoke"
     ])
