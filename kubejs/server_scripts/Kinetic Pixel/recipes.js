@@ -27,7 +27,7 @@ ServerEvents.recipes(e => {
     vintageimprovements.turning(
         'kinetic_pixel:barrel',
         'createmetallurgy:steel_ingot'
-    ).id("kinetic_pixel:barrel")
+    ).id("kinetic_pixel:barrelloot")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:pistol_revolver_torque",HasBulletInBarrel:1b}'),
         [

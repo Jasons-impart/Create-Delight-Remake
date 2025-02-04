@@ -1,6 +1,6 @@
 {
-  "model": "tacz:ammo/12g",
-  "texture": "tacz:ammo/uv/12g",
+  "model": "create_armorer:ammo/slap",
+  "texture": "create_armorer:ammo/uv/slap",
   "slot": "create_armorer:ammo/slot/slap",
   "shell": {
     "model": "create_armorer:shell/slap_shell",
