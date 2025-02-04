@@ -5,7 +5,7 @@
 		#Configure FPS Display mode
 		#Complete mode gives you min FPS count and average count
 		#Allowed Values: OFF, SIMPLE, ADVANCED
-		fpsDisplay = "ADVANCED"
+		fpsDisplay = "OFF"
 		#Shows GPU and memory usage onto FPS display
 		#Allowed Values: OFF, ON, GPU, RAM
 		fpsDisplaySystem = "ON"
@@ -173,3 +173,4 @@
 			enableBlockLightOnly = false
 			#Toggle Darkness on Overworld dimension
 			enableOnOverworld = true
+
