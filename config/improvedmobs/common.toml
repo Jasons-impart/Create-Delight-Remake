@@ -60,7 +60,7 @@
 	#[ATTRIBUTES, ARMOR, HELDITEMS, BLOCKBREAK, USEITEM, LADDER, STEAL, GUARDIAN, PARROT, TARGETVILLAGER, NEUTRALAGGRO, PEHKUI]
 	#added here will disable that feature completely.
 	#E.g. ["GUARDIAN"] will disable the guardian feature
-	"Flag Blacklist" = ["BLOCKBREAK", "LADDER", "STEAL", "PARROT", "TARGETVILLAGER", "NEUTRALAGGRO"]
+	"Flag Blacklist" = ["BLOCKBREAK", "LADDER", "STEAL", "PARROT", "TARGETVILLAGER", "NEUTRALAGGRO", "GUARDIAN"]
 	#Treat ATTRIBUTES flags as whitelist
 	"Attribute Whitelist" = false
 	#Treat ARMOR flags as whitelist
@@ -238,7 +238,7 @@
 	"Item Equip Chance" = 0.01
 	#Adds additional x*difficulty% to base item chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Item Chance add" = 0.2
+	"Item Chance add" = 0.1
 	#Should mobs drop the armor equipped through this mod? Will not change drops if the mob obtained the armor through other means (e.g. vanilla)
 	"Should drop equipment" = false
 
