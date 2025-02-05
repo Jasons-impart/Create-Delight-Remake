@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "alexscaves:cave_map"
     ])
-    e.replaceInput({}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
+    e.replaceInput({not: {type: "minecraft:smithing_trim"}}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
     e.replaceInput({ id: "create_oppenheimered:mixing/ice_cream_licoroot" }, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
     //硫磺，硫磺晶簇->硫粉
     e.recipes.create.crushing([
@@ -300,7 +300,7 @@ ServerEvents.recipes(e => {
         .id("block_of_chocolate_from_bar_of_black_chocolate")
 
     //统一拐杖糖
-    e.replaceInput({ input: "alexscaves:candy_cane" }, "alexscaves:candy_cane", "#createdelight:candy_cane")
+    e.replaceInput({ input: "alexscaves:candy_cane", not: {type: "minecraft:smithing_trim"}}, "alexscaves:candy_cane", "#createdelight:candy_cane")
 
     //拐杖糖打磨成尖拐杖糖
     e.recipes.vintageimprovements.polishing("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
