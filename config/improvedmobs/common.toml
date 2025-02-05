@@ -228,7 +228,7 @@
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Enchanting Addition" = 0.3
 	#Specify min and max enchanting levels according to difficulty. difficulty-minLevel-maxLevel
-	"Enchanting Calc" = ["0.0-5-10", "25.0-5-15", "50.0-10-17", "100.0-15-25", "200.0-20-30", "250.0-30-35"]
+	"Enchanting Calc" = ["0.0-0-5", "100.0-5-15", "150-15-25", "200.0-25-35", "250.0-30-40"]
 	#Blacklist enchantments from being applied to equipments
 	"Enchanting Blacklist" = []
 	#Turn the enchant blacklist to a whitelist
