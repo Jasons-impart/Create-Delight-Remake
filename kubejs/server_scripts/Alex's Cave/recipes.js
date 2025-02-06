@@ -5,8 +5,6 @@ ServerEvents.recipes(e => {
         "create_oppenheimered:filling/acid_radrook",
         "create_oppenheimered:filling/fissile_acid_to_waste",
         "alexscaves:uranium_rod",
-        "create_oppenheimered:mixing/azure_to_scarlet_neodymium",
-        "create_oppenheimered:mixing/scarlet_to_azure_neodymium",
         "alexscaves:nuclear_bomb",
         "create_oppenheimered:compacting/chocolate_to_chocolate_block",
         "create_oppenheimered:compacting/compacted_dough",
@@ -24,8 +22,8 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "alexscaves:cave_map"
     ])
-    e.replaceInput({not: {type: "minecraft:smithing_trim"}}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
-    e.replaceInput({ id: "create_oppenheimered:mixing/ice_cream_licoroot" }, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
+    // e.replaceInput({not: {type: "minecraft:smithing_trim"}}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
+    // e.replaceInput({ id: "create_oppenheimered:mixing/ice_cream_licoroot" }, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
     //硫磺，硫磺晶簇->硫粉
     e.recipes.create.crushing([
         'alexscaves:sulfur_dust',

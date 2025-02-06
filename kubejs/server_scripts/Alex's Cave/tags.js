@@ -16,23 +16,9 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonsteel_ice_hoe',
         'iceandfire:dragonsteel_lightning_hoe'])
 
-    e.add('alexscaves:galena_gauntlet_crystallization_items',
-        ['aether:zanite_sword',
-        'aether:zanite_shovel',
-        'aether:zanite_pickaxe',
-        'aether:zanite_axe',
-        'aether:zanite_hoe',
-        'aether:gravitite_sword',
-        'aether:gravitite_shovel',
-        'aether:gravitite_pickaxe',
-        'aether:gravitite_axe',
-        'aether:gravitite_hoe']
-    )
-
     e.add("forge:ingots/uranium", "alexscaves:uranium")
     // e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
     e.add("createdelight:candy_cane", [
-        "aether:candy_cane",
         "alexscaves:candy_cane",
         "create_confectionery:candy_cane"])
     e.add("forge:gelatin", [

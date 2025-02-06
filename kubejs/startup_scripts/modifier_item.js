@@ -1,18 +1,8 @@
 ItemEvents.modification(e => {
-    e.modify("deeperdarker:heart_of_the_deep", item => {
-        item.maxStackSize = 64
-    })
     // 饱和度计算公式为hunger*saturation*2
     let hungers = [
         ["vintagedelight:cheese_pizza_slice", 5, 0.7],
         ["ratatouille:cake_base", 7, 0.5],
-        ['aetherdelight:bowl_of_blue_berries', 6, 0.3],
-        ['aetherdelight:sweet_and_sour_soup', 6, 0.5],
-        ['aetherdelight:swet_pudding', 6.5, 0.7],
-        ['aetherdelight:bowl_of_ginger_cookies', 6, 0.8],
-        ['aetherdelight:festive_sweets', 6, 0.6],
-        ['aether:enchanted_berry', 3, 1],
-        ['aetherdelight:bowl_of_enchanted_berries', 9, 0.5],
         ['casualness_delight:cooked_donkey_meat', 6, 0.8],
         ['casualness_delight:donkey_burger', 10, 0.6],
         ['casualness_delight:roast_gluten', 7, 0.8],
