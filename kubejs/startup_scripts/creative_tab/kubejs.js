@@ -216,6 +216,19 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_12g',
         'createdelight:incomplete_slap',
         'createdelight:incomplete_rbapb',
-        'createdelight:incomplete_gas_pistol_ammo'
+        'createdelight:incomplete_gas_pistol_ammo',
+        'createdelight:incomplete_paper',
+        'createdelight:waste_paper',
+        'createdelight:unfinished_leather',
+        'createdelight:inferior_genetic_seed',
+        'createdelight:normal_genetic_seed',
+        'createdelight:refined_genetic_seed',
+        'createdelight:pure_genetic_seed',
+        'createdelight:flawless_genetic_seed',
+        'createdelight:bleak_electron_tube',
+        'createdelight:air_helmet',
+        'createdelight:air_chestplate',
+        'createdelight:air_leggings',
+        'createdelight:air_boots',
     ])
 });  
