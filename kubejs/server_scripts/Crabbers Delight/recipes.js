@@ -1,4 +1,9 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "crabbersdelight:lanternfish_from_barrel",
+        "crabbersdelight:lanternfish_barrel"
+
+    ])
     remove_recipes_output(e, [
         "crabbersdelight:raw_squid_tentacles",
         "crabbersdelight:raw_glow_squid_tentacles"

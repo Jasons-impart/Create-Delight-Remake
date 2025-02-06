@@ -1,5 +1,10 @@
 ServerEvents.recipes(e => {
     const {create, vintageimprovements} = e.recipes
+    //修改动力刷怪笼配方
+    e.replaceInput({ id: "create_mechanical_spawner:mechanical_spawner" }, "minecraft:emerald", "alexscaves:amber_monolith")
+    e.replaceInput([{ id: "create_mechanical_spawner:mechanical_spawner" }, { id: "create_mechanical_spawner:loot_collector" }], "create:brass_ingot", "createdelight:bronze_ingot")
+    e.replaceInput([{ id: "create_mechanical_spawner:mechanical_spawner" }, { id: "create_mechanical_spawner:loot_collector" }], "create:brass_sheet", "vintageimprovements:bronze_sheet")
+
     e.remove({mod: "create_mechanical_spawner", type: "create:mixing"})
     // vintageimprovements.vacuumizing('createdelight:inferior_genetic_seed', [
     //     Fluid.of("netherexp:ectoplasm", 200),

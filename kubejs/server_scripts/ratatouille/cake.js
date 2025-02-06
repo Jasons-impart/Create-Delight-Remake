@@ -3,9 +3,6 @@ ServerEvents.recipes(e => {
         "create:mixing/chocolate",
         "create:compacting/chocolate",
         "create:crafting/curiosities/cake",
-        "aether:skyroot_milk_bucket_moa_egg_cake",
-        "aether:skyroot_milk_bucket_cake",
-        "aether:moa_egg_cake",
         "minecraft:cake",
         "farmersdelight:cake_from_slices",
         "farmersdelight:cake_from_milk_bottle",
@@ -15,7 +12,8 @@ ServerEvents.recipes(e => {
         "create_central_kitchen:mixing/coffee_cake",
         "farmersrespite:coffee_cake_from_slices",
         "create_central_kitchen:cutting/chocolate_cake_slice",
-        "neapolitan:cake"
+        "neapolitan:cake",
+        "ratatouille:smoking/solid_sugar_block"
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(Fluid.of("ratatouille:mince_meat", 250), [
