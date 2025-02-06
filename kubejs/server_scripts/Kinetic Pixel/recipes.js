@@ -317,10 +317,10 @@ ServerEvents.recipes(e => {
     let iner_1 = 'createdelight:incomplete_rbapb'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
-            create.pressing(iner, iner),
+            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
             create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
             create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
-            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true)
+            create.pressing(iner, iner)
         ]
     )
         .loops(1)
