@@ -15,7 +15,9 @@ ServerEvents.recipes(e => {
         "protection_pixel:slingshotloot",
         "protection_pixel:anchorpointloot",
         "protection_pixel:buoyancyloot",
-        "protection_pixel:alloyplate"
+        "protection_pixel:alloyplate",
+        "protection_pixel:hookcannonloot",
+        "protection_pixel:hooklootw"
     ])
     e.recipes.create.cutting(
         '2x protection_pixel:smallnetheritesheet',

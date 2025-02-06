@@ -5,6 +5,10 @@ StartupEvents.modifyCreativeTab("protection_pixel:pp", e => {
     Item.of('createdelight:ice_dragonsteel_armorplate', '{Damage:0,armor:2.5d,toughness:1.5d,weight:1.5d}'),
     Item.of('createdelight:lightning_dragonsteel_armorplate', '{Damage:0,armor:2.5d,toughness:1.5d,weight:1.5d}')
   ])
+  e.remove([
+    'protection_pixel:hookcannon',
+    'protection_pixel:hookitem'
+  ])
 })
 // tetra
 StartupEvents.modifyCreativeTab("tetra:default", e => {
@@ -55,7 +59,8 @@ StartupEvents.modifyCreativeTab("torchmaster:creative_tab", e => {
 
 StartupEvents.modifyCreativeTab("ae2:main", e => {
   e.add([
-    'createdelight:universal_press'
+    'createdelight:universal_press',
+    'createdelight:bleak_electron_tube'
   ])
 })
 

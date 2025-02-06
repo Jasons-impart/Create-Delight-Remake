@@ -179,6 +179,21 @@ StartupEvents.registry("creative_mode_tab", e => {
           'createdelight:coil',
           // 边境碎块
           'createdelight:fragment_of_border',
+          // 杂项
+          'createdelight:incomplete_paper',
+          'createdelight:waste_paper',
+          // 基因种子
+          'createdelight:unfinished_leather',
+          'createdelight:inferior_genetic_seed',
+          'createdelight:normal_genetic_seed',
+          'createdelight:refined_genetic_seed',
+          'createdelight:pure_genetic_seed',
+          'createdelight:flawless_genetic_seed',
+          // 盔甲
+          'createdelight:air_helmet',
+          'createdelight:air_chestplate',
+          'createdelight:air_leggings',
+          'createdelight:air_boots',  
         ])
 })
   
