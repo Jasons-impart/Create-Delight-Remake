@@ -3,7 +3,8 @@ ServerEvents.recipes(e => {
         "netherexp:wither_bone_block",
         "netherexp:glowcheese",
         "netherexp:nether_pizza",
-        "netherexp:roasted_bone"
+        "netherexp:roasted_bone",
+        "netherexp:stonecutting/from_pale_soul_slate/indented"
     ])
     const {create, kubejs, vintageimprovements, farmersdelight} = e.recipes
     e.replaceInput({not: [{id: "tetracelium:cutting/ham"}, {id: "farmersdelight:cutting/ham"}]}, "farmersdelight:ham", "#forge:ham")
