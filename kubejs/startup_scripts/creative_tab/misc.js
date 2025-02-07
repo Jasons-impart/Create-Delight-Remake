@@ -1,3 +1,44 @@
+const Inf_Fluid = [
+  "minecraft:water",
+  "minecraft:lava",
+  "alexscaves:acid",
+  "alexscaves:purple_soda",
+  "ratatouille:cocoa_liquor",
+  "createdelight:egg_yolk",
+  "createcafe:melted_sugar",
+  "create:honey",
+  "createdelight:vinegar",
+  "createmetallurgy:molten_iron",
+  "createmetallurgy:molten_gold",
+  "createmetallurgy:molten_copper",
+  "createmetallurgy:molten_zinc",
+  "createmetallurgy:molten_brass",
+  "createmetallurgy:molten_tungsten",
+  "createmetallurgy:molten_steel",
+  "createmetallurgy:molten_netherite",
+  "createmetallurgy:molten_aluminum",
+  "createmetallurgy:molten_lead",
+  "createmetallurgy:molten_nickel",
+  "createmetallurgy:molten_osmium",
+  "createmetallurgy:molten_silver",
+  "createmetallurgy:molten_tin",
+  "createmetallurgy:molten_invar",
+  "createmetallurgy:molten_electrum",
+  "createmetallurgy:molten_bronze",
+  "createmetallurgy:molten_constantan",
+  "createmetallurgy:molten_void_steel",
+  "createdelight:molten_andesite",
+  "createdelight:molten_desh",
+  "createdelight:molten_ostrum",
+  "createdelight:molten_calorite",
+  "createdelight:molten_scarlet_neodymium",
+  "createdelight:molten_azure_neodymium",
+  "createdelight:molten_fire_steel",
+  "createdelight:molten_ice_steel",
+  "createdelight:molten_lightning_steel",
+  "createdelight:molten_forged_steel",
+];
+
 // 机素防护
 StartupEvents.modifyCreativeTab("protection_pixel:pp", e => {
   e.add([
@@ -26,9 +67,9 @@ StartupEvents.modifyCreativeTab("art_of_forging:art_of_forging", e => {
 })
 // epp
 StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
-  e.add([
-    Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:lava"}}'),
-  ])
+  Inf_Fluid.forEach((f) => {
+  e.add(Item.of("expatternprovider:infinity_cell", `{record:{"#c":"ae2:f",id:"${f}"}}`))
+    });
   e.remove([
     "expatternprovider:assembler_matrix_frame",
     "expatternprovider:assembler_matrix_wall",

@@ -84,20 +84,6 @@ ServerEvents.recipes((event) => {
     .centrifugation("expatternprovider:fishbig", "minecraft:pufferfish")
     .id("createdelight:fishbig");
 
-  // 无限水元件
-  create
-    .sequenced_assembly(
-      Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:water"}}'),
-      "ae2:cell_component_1k",
-      create.filling("createdelight:incomplete_infinity_cell", [
-        "createdelight:incomplete_infinity_cell",
-        Fluid.of("minecraft:water", 1000),
-      ])
-    )
-    .loops(512)
-    .transitionalItem("createdelight:incomplete_infinity_cell")
-    .id("createdelight:infinity_water_cell");
-
   // 无限圆石配方
   create.mechanical_crafting(
     Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:i",id:"minecraft:cobblestone"}}'),
@@ -118,17 +104,6 @@ ServerEvents.recipes((event) => {
     H: "ae2:spatial_cell_component_128",
     I: "megacells:bulk_cell_component",
   }).id("createdelight:inf_cobblestone");
-
-  // 无限熔岩盘
-  let iner_b = "createdelight:incomplete_infinity_cell"
-  create.sequenced_assembly(
-    Item.of("expatternprovider:infinity_cell", '{record:{"#c":"ae2:f",id:"minecraft:lava"}}'),
-    "ae2:cell_component_1k",
-    create.filling(iner_b, [iner_b, Fluid.of("minecraft:lava", 1000)])
-  )
-    .loops(512)
-    .transitionalItem(iner_b)
-    .id("createdelight:infinity_cell_lava")
 
   // 大宗存储组件
   event.replaceInput(
