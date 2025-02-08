@@ -102,7 +102,7 @@ ServerEvents.recipes(e => {
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
             create.deploying(iner, [iner, "iceandfire:dread_shard"]),
             create.filling(iner, [iner, Fluid.of("createdelight:molten_fire_steel", 30)]),
-            create.deploying(iner, [iner, "alexscaves:occult_gem"]),
+            create.deploying(iner, [iner, "art_of_forging:fragment_of_eden"]),
             create.filling(iner, [iner, Fluid.of("createdelight:molten_ice_steel", 30)]),
             create.deploying(iner, [iner, "createdelight:dread_heart"]),
             create.filling(iner, [iner, Fluid.of("createdelight:molten_lightning_steel", 30)])
