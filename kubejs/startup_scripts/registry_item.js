@@ -630,5 +630,15 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:demonic_codex")
         .rarity("epic")
         .translationKey("item.createdelight.demonic_codex") 
-    
+    //悚怖锻造模板
+    let dread_upgrade = e.create("createdelight:dread_upgrade_smithing_template", "smithing_template")
+    .armorIcons()
+    .ingotIcon()
+    dread_upgrade.appliesToText = Text.translate("item.createdelight.smithing_template.dread_upgrade.applies_to").blue()
+    dread_upgrade.ingredientsText = Text.translate("item.createdelight.smithing_template.dread_upgrade.ingredients").blue()
+    dread_upgrade.appliesToSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.base_slot_description").blue()
+    dread_upgrade.ingredientSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.additions_slot_description").blue()
+    dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
+
 })
+
