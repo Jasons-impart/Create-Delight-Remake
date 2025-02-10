@@ -290,3 +290,15 @@ function make_cake(e, input, output) {
     ])
     .id(`neapolitan:deploying/${output.split(":")[1]}`)
 }
+/**
+ * 
+ * @param {Special.FluidTag} fluidTag 
+ * @param {?number} amount
+ * @param {?Internal.CompoundTag_} tag
+ * @returns {Internal.CompoundTag_}
+ */
+function FluidIngredients(fluidTag, amount, tag) {
+    amount = amount || 1000
+    tag = tag || {}
+    return {fluidTag: fluidTag, amount: amount, tag: tag}
+}
