@@ -77,7 +77,8 @@ ServerEvents.recipes(e => {
             "AAA"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`
+            B: `#iceandfire:scales/dragon/${text}`,
+            C: "art_of_forging:nano_insectoid"
         }).id(`iceandfire:dragonsteel_${text}_chestplate`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_leggings`, [
             "ACA",
