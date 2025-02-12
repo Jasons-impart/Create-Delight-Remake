@@ -230,5 +230,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:air_chestplate',
         'createdelight:air_leggings',
         'createdelight:air_boots',
+        'createdelight:ferrouslime_bucket',
     ])
 });  
