@@ -199,16 +199,19 @@ ServerEvents.recipes(e => {
         ]
     ).id("alexscaves:mixing/ferrouslime_ball")
     //富铁粘液（暂未注册，注册后可使用）
-    // e.recipes.create.mixing(
-    //     Fluid.of("createdelight:ferrouslime", 90),
-    //     [
-    //         Fluid.of("createdelight:slime", 90),
-    //         '#forge:dusts/iron'
-    //     ]
-    // ).id("alexscaves:mixing/ferrouslime")
-    // e.recipes.create.compacting(
-    //     'alexscaves:ferrouslime',
-    //     Fluid.of("createdelight:ferrouslime", 90)
-    // ).id("alexscaves:compacting/ferrouslime")
-    //
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:ferrouslime", 90),
+        [
+            Fluid.of("createdelight:slime", 90),
+            '#forge:dusts/iron'
+        ]
+    ).id("alexscaves:mixing/ferrouslime")
+    e.recipes.create.compacting(
+        'alexscaves:ferrouslime_ball',
+        Fluid.of("createdelight:ferrouslime", 90)
+    ).id("alexscaves:compacting/ferrouslime")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:ferrouslime", 90),
+        'alexscaves:ferrouslime_ball'
+    ).heated().id("createdelight:mixing/ferrouslime")
 })

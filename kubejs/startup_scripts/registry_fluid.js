@@ -140,6 +140,15 @@ StartupEvents.registry("fluid", e => {
         .translationKey("item.createdelight.slime_bucket")
         .createAttributes()
         .tickDelay(20)
+    // 富铁粘液
+    e.create("createdelight:ferrouslime")
+        .thickTexture(0x52546b)
+        .bucketColor(0x52546b)
+        .translationKey("fluid.createdelight.ferrouslime")
+        .translationKey("block.createdelight.ferrouslime")
+        .translationKey("item.createdelight.ferrouslime_bucket")
+        .createAttributes()
+        .tickDelay(20)
     //氡气
     e.create("createdelight:radon")
         .thinTexture(0XA0FFDA)

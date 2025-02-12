@@ -83,6 +83,8 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:unrefined_sugar_bucket',
         'createdelight:unfermented_paper_pulp_bucket',
         'createdelight:paper_pulp_bucket',
+        'createdelight:slime_bucket',
+        'createdelight:ferrouslime_bucket',
         // 气体桶
         'createdelight:radon_bucket',
         // 食物相关流体
@@ -91,7 +93,6 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:nut_milk_bucket',
         'createdelight:whipped_cream_bucket',
         'createdelight:vinegar_bucket',
-        'createdelight:slime_bucket',
         // 奶昔及对应冰激凌
         'createdelight:vanilla_ice_cream_bucket',
         'createdelight:vanilla_milkshake_bucket',

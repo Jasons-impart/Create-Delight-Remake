@@ -91,7 +91,8 @@ ServerEvents.tags("block", e => {
         "neapolitan:strawberry_bush",
         "neapolitan:vanilla_vine",
         "createdelight:adzuki_beans_seed",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "vintagedelight:ghost_pepper_crop"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_crop",
