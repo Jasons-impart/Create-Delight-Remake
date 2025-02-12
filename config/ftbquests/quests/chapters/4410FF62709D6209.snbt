@@ -1149,6 +1149,7 @@
 		{
 			dependencies: ["0B2B86FAF7742C2F"]
 			id: "647F51CF16CC6693"
+			subtitle: "让你的护甲不再简单的放在盔甲架上的帅气逼人的超级架子()"
 			tasks: [{
 				id: "2454F14604642D13"
 				item: "protection_pixel:armorhanger"

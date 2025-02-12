@@ -32,6 +32,7 @@
 							Level: 0
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -43,6 +44,7 @@
 							Level: 1
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
@@ -54,6 +56,7 @@
 							Level: 2
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 			]
@@ -73,6 +76,7 @@
 						AmmoId: "create_armorer:slap"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -4.0d
@@ -96,6 +100,7 @@
 						AttachmentId: "create_armorer:sight_standard"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.9880952380952195d
@@ -119,6 +124,7 @@
 						AttachmentId: "create_armorer:sight_medium_distance"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.4880952380952195d
@@ -142,6 +148,7 @@
 						AttachmentId: "create_armorer:scope_telephoto"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.98809523809522d
@@ -173,6 +180,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 5.0d
@@ -204,6 +212,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.0d
@@ -235,6 +244,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 5.0d
@@ -266,6 +276,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.0d
@@ -297,6 +308,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 5.0d
@@ -328,6 +340,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 5.0d
@@ -359,6 +372,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.0d
@@ -390,6 +404,7 @@
 						HasBulletInBarrel: 1b
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: 3.0d
@@ -413,6 +428,7 @@
 						AttachmentId: "create_armorer:muzzle_refit_lava_perfusion_bottle"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.9880952380952195d
@@ -436,6 +452,7 @@
 						AttachmentId: "create_armorer:muzzle_refit_brass_retractor"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.4880952380952195d
@@ -459,6 +476,7 @@
 						AttachmentId: "create_armorer:grip_wooden"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.9880952380952195d
@@ -482,6 +500,7 @@
 						AttachmentId: "create_armorer:grip_gantry_shaft"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.4880952380952195d
@@ -500,6 +519,7 @@
 						AttachmentId: "create_armorer:extended_mag_ca_1"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.9880952380952195d
@@ -518,6 +538,7 @@
 						AttachmentId: "create_armorer:extended_mag_ca_2"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -7.4880952380952195d
@@ -536,6 +557,7 @@
 						AttachmentId: "create_armorer:extended_mag_ca_3"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -8.98809523809522d
@@ -794,6 +816,7 @@
 						AmmoId: "create_armorer:rbapb"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -3.0d
@@ -811,6 +834,7 @@
 						AmmoId: "create_armorer:gas_pistol_ammo"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -2.0d
@@ -828,6 +852,7 @@
 						AmmoId: "tacz:12g"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -1.0d
