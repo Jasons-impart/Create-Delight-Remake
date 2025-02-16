@@ -39,3 +39,9 @@ EntityEvents.spawned(e => {
         }
     })
 })
+
+PlayerEvents.tick(e => {
+    if (e.player.vehicle && e.player.vehicle.getType() == "ad_astra:lander" && e.player.deltaMovement > 0) {
+        e.player.potionEffects.add("minecraft:resistance", 20)
+    }
+})
