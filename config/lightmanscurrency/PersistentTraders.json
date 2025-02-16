@@ -621,6 +621,23 @@
         {
           "TradeType": "SALE",
           "SellItem": {
+            "ID": "culturaldelights:avocado_pit",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
             "ID": "fruitsdelight:durian_sapling",
             "Count": 1
           },
