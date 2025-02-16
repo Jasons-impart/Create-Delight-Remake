@@ -42,13 +42,13 @@ ServerEvents.recipes(e => {
     e.recipes.create.filling("design_decor:industrial_gear",
         [
             "create:cogwheel",
-            Fluid.of("createmetallurgy:molten_steel", 250)
+            Fluid.of("createmetallurgy:molten_steel", 10)
         ]
     ).id("design_decor:item_application/industrial_gear")
     e.recipes.create.filling("design_decor:industrial_gear_large",
         [
             "create:large_cogwheel",
-            Fluid.of("createmetallurgy:molten_steel", 250)
+            Fluid.of("createmetallurgy:molten_steel", 10)
         ]
     ).id("design_decor:item_application/industrial_gear_large")
     //行星齿轮
