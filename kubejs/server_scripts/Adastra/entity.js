@@ -21,7 +21,8 @@ ServerEvents.tags("entity_type", e => {
         "iceandfire:amphithere",
         "iceandfire:hydra",
         "iceandfire:lightning_dragon",
-        "alexsmobs:cosmic_cod"
+        "alexsmobs:cosmic_cod",
+        "ad_astra:glacian_ram"
     ])
 })
 
