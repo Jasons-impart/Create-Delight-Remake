@@ -71,12 +71,6 @@ ServerEvents.recipes(e => {
         "farmersdelight:straw",
         Item.of("2x farmersdelight:rice").withChance(0.5)
     ], 400)
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "farmersdelight:rice_panicle" }],
-        result: [{ item: "farmersdelight:rice", count: 3 }, { item: "farmersdelight:straw", count: 1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("tetracelium:cutting/rice_panicle")
     // 蛋液适配
     e.recipes.create.emptying([
         Fluid.of("createdelight:egg_yolk", 250),

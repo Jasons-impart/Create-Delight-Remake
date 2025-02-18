@@ -1,10 +1,5 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "oceanic_delight:sea_pickle_slices",
-        "oceanic_delight:sea_pickle_roll_slice",
-        "oceanic_delight:shrimp_cutting",
-        "oceanic_delight:fish_egg_roll_slice",
-        "oceanic_delight:wild_sea_grape_cutting",
         "oceanic_delight:egg_roll",
         "oceanic_delight:fried_shrimp"
     ])
@@ -46,23 +41,6 @@ ServerEvents.recipes(e => {
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari"}, "culturaldelights:raw_calamari", "oceanic_delight:squid_tentacles")
     e.replaceInput({id: "crabbersdelight:sea_pickle_juice"}, "minecraft:sea_pickle", "#forge:sea_pickles")
-    cutting_3(e, "minecraft:sea_pickle", [
-        ['oceanic_delight:sea_pickle_slices', 2]
-    ])
-    cutting_3(e, 'crabbersdelight:cooked_shrimp', [
-        ['oceanic_delight:shrimp_slices', 2]
-    ])
-    cutting_3(e, 'oceanic_delight:sea_pickle_roll', [
-        ['oceanic_delight:sea_pickle_roll_slice', 3]
-    ])
-    cutting_3(e, 'oceanic_delight:fish_egg_roll', [
-        ['oceanic_delight:fish_egg_roll_slice', 3]
-    ])
-    cutting_3(e, 'oceanic_delight:wild_sea_grape', [
-        ['oceanic_delight:sea_grape'],
-        ['minecraft:kelp', 3],
-        ['minecraft:kelp', 2, 0.6]
-    ])
     // 虾仁薯片
     e.recipes.create.mixing(
         'oceanic_delight:shrimp_chips',

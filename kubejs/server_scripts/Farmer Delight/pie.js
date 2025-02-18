@@ -91,7 +91,6 @@ ServerEvents.recipes(e => {
         ],
         "casualness_delight:quiche_lorraine", 1.0, 200
     ).id("createdelight:cooking/quiche_lorraine")
-    cutting(e, "casualness_delight:quiche_lorraine", [["casualness_delight:quiche_lorraine_slice", 4]])
     e.recipes.farmersdelight.cooking(
         [
             "#forge:eggs",
