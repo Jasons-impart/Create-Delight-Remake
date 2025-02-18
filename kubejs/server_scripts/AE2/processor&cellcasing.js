@@ -77,10 +77,28 @@ ServerEvents.recipes((event) => {
     .curving("ae2:printed_silicon", "ae2:silicon")
     .head("ae2:silicon_press")
     .id("createdelight:universal_press_11");
+
+  
   vintageimprovements
-    .curving("createdelight:universal_press", "minecraft:iron_block")
-    .head("createdelight:universal_press")
-    .id("createdelight:universal_press_12");
+    .curving("ae2:engineering_processor_press", "minecraft:iron_block")
+    .head("ae2:engineering_processor_press")
+    .id("createdelight:engineering_processor_press_copy");
+  vintageimprovements
+    .curving("megacells:accumulation_processor_press", "minecraft:iron_block")
+    .head("megacells:accumulation_processor_press")
+    .id("createdelight:accumulation_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:calculation_processor_press", "minecraft:iron_block")
+    .head("ae2:calculation_processor_press")
+    .id("createdelight:calculation_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:logic_processor_press", "minecraft:iron_block")
+    .head("ae2:logic_processor_press")
+    .id("createdelight:logic_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:silicon_press", "minecraft:iron_block")
+    .head("ae2:silicon_press")
+    .id("createdelight:silicon_press_copy");
 
   let custom_inscribe = (result, middle, other) => {
     event
