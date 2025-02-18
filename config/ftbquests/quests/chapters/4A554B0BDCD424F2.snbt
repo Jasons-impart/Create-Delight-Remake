@@ -1,0 +1,534 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "4A554B0BDCD424F2"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "alexscaves:waste_drum"
+	id: "4A554B0BDCD424F2"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"毒化洞穴是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该洞穴，可能会受到致命的“辐照”效果。（下图上了夜视）"
+				"&4进入方法：使用&6硫磺晶体&4搭建传送门框架，使用硫粉激活。"
+			]
+			id: "24CCC43BD4994237"
+			size: 2.0d
+			subtitle: "我超，核！"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_toxic_caves"
+				criterion: ""
+				id: "6D3908F689FC6AAE"
+				title: "前往毒化洞穴"
+				type: "advancement"
+			}]
+			title: "毒化洞穴"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: [
+				"通过击杀核能苦力怕掉落"
+				"携带在身上时，每隔一段时间会给予玩家长达90秒的&e辐照&r效果"
+			]
+			id: "3AC9CB2DD01DF26C"
+			subtitle: "一枚仍在跳动着、散发着大量辐射的裂变核心，与一般核弹的核心并无结构上的差异。"
+			tasks: [{
+				id: "09588432DA9210BE"
+				item: "alexscaves:fissile_core"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: ["击杀舐脑魔概率掉落。"]
+			id: "0BB080BE230820D4"
+			tasks: [{
+				id: "75EF471122AA3860"
+				item: "alexscaves:charred_remnant"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: ["由伽马蟑螂掉落。"]
+			id: "28A5AF919EA1D256"
+			subtitle: "黏糊糊恶心心"
+			tasks: [{
+				id: "35B1BE0B6FE8F33D"
+				item: "alexscaves:toxic_paste"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0BB080BE230820D4"]
+			description: [
+				"将此方块摆放成2*2*2的立方体结构，可以成为核能熔炉。"
+				"核能熔炉能像高炉一样烧炼高炉能烧的所有物品，但是需要铀棒作为燃料，并且拥有更高的烧炼效率。消耗一根铀棒约能烧炼 60 个物品。"
+				"消耗铀棒烧炼物品之后，核能熔炉会蓄积核废料，一根铀棒产生一份核废料，核能熔炉最多可以储存 9 份核废料&4（注意不是 10 份，达到 10 就爆炸了）&r。"
+			]
+			id: "2D4E281C315BCD00"
+			rewards: [{
+				count: 2
+				id: "64B98EB0C85FC34B"
+				item: "alexscaves:nuclear_furnace_component"
+				type: "item"
+			}]
+			subtitle: "你拿核能干这个？"
+			tasks: [{
+				id: "360A7166F9C06366"
+				item: "alexscaves:nuclear_furnace_component"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["3AC9CB2DD01DF26C"]
+			description: [
+				"手持并右键点击一个爆炸物（如TNT，核弹）与其绑定，之后右键点击方块或空气可以将之前绑定的爆炸物引爆。"
+				""
+				"使用它引爆100格开外的爆炸物时，玩家会取得进度&a[红色大按钮]&r。"
+			]
+			id: "169C19FDDB6F979C"
+			subtitle: "红色大按钮"
+			tasks: [{
+				id: "5CA895F25882C693"
+				item: "alexscaves:remote_detonator"
+				type: "item"
+			}]
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["3AC9CB2DD01DF26C"]
+			description: [
+				"长按右键发射镭射持续造成 1点高频率的伤害并施加时长为40秒的辐照，击中方块会爆炸并留下烧焦痕迹。在拥有附魔 &dX-Ray&r 后，镭射将穿透方块。"
+				"伤害类型为爆炸伤害。射线无法穿透生物，但由于会造成爆炸，所以可以在小范围内群体攻击。"
+				"拥有&d Gamma Ray &r附魔后，施加的辐照效果等级提升至V。"
+			]
+			id: "60300E709CE1566B"
+			subtitle: "我有射线枪，救我！"
+			tasks: [{
+				id: "40B768F60F25B70F"
+				item: "alexscaves:raygun"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["3AC9CB2DD01DF26C"]
+			description: [
+				"极其强大的核武器，原型为现实中的原子弹。可以像TNT一样被打火石和红石信号点燃。"
+				"点燃之后，附近的核能警报器会发出警报声且发出声波粒子，提醒玩家应该尽快撤离爆炸范围或用剪刀拆除核弹。"
+				"点燃后玩家甚至可以坐在上面，这么做之后，玩家会取得进度&5[不要走开，精彩马上回来]"
+				"&r如果你后悔了当初点燃核弹的行为，使用剪刀右击点燃的核弹就可以取消爆炸，并且核弹会变为物品形式，同时玩家取得进度&a[剪断红线]&r。"
+			]
+			id: "7357729E32CC0F74"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "「吾即死神，三千世界所殁者」这句话并非玩笑，此等力量即能毁灭世界，也能形成威慑、维持和平。"
+			tasks: [{
+				id: "70BE1907E1851F1C"
+				item: "alexscaves:nuclear_bomb"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: [
+				"由混凝土合成，或是在毒化洞穴的战利品箱中获取。可用于合成水泥砖块。"
+				"可以投掷并击碎硬度较低的方块如木头、下界石英、下界岩、矿石、玻璃等，被击碎的方块相当于被挖掘会有掉落物和经验所以说可以用来挖矿，无法击碎石头、矿物块、水泥等硬度较高的方块。砸到生物会造成2到3点的伤害。"
+			]
+			id: "3B5B1576609DBD01"
+			subtitle: "可以丢出去？"
+			tasks: [{
+				id: "09DC37B19F6464CB"
+				item: "alexscaves:cinder_brick"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: ["使用玻璃瓶在酸液上方的各种大小的地热通口右键获得。"]
+			id: "41A630472C0B89E8"
+			subtitle: "有毒气体"
+			tasks: [{
+				id: "1624D32D41998A98"
+				item: "alexscaves:radon_bottle"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			description: ["挖掘毒化洞穴中的硫磺晶簇和硫磺晶芽获得。"]
+			id: "4D56AEA0F0397AE3"
+			subtitle: "也许很有用？"
+			tasks: [{
+				id: "2D79CA5E2B3F5D02"
+				item: "alexscaves:sulfur_dust"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			id: "2F6C3FD71E5A23A4"
+			tasks: [{
+				id: "0E051D0C6C041F00"
+				item: "alexscaves:uranium"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2F6C3FD71E5A23A4"]
+			id: "6F743E8912CBE355"
+			tasks: [{
+				id: "3D523FE01D882141"
+				item: "alexscaves:uranium_rod"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["1EB46E853627F4CA"]
+			description: [
+				"可以在一定程度上减弱辐照效果，如携带焦化残骸等物品或身处毒化洞穴中时不再会每隔一段时间受到辐照效果。但它无法抵御太过强大的辐照效果，如掉入核能高炉顶部的开口和承受核爆受到的高等级辐照效果。"
+				""
+				"除此之外，还可以减弱酸液带来的伤害及其附加的腐蚀盔甲耐久的效果。"
+				""
+				"集齐全套防化套装后，会取得进度&a[绝命毒师]&r。"
+			]
+			id: "52CE811AC67111D9"
+			rewards: [
+				{
+					id: "1B0DF3AC5A7FC578"
+					item: "minecraft:armor_stand"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "62E6B551D39B912F"
+					item: "alexscaves:polymer_plate"
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "51C884DF0F63CF42"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "21534A26426F4225"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4DD64B6E8B72391C"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "78DD38CA30BE3A2D"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"41A630472C0B89E8"
+				"28A5AF919EA1D256"
+				"4D56AEA0F0397AE3"
+			]
+			id: "1EB46E853627F4CA"
+			shape: "gear"
+			size: 1.3d
+			subtitle: "毒化合金"
+			tasks: [{
+				id: "34F82009DF9989CF"
+				item: "alexscaves:polymer_plate"
+				type: "item"
+			}]
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["24CCC43BD4994237"]
+			id: "178CC854157FCC93"
+			rewards: [{
+				id: "4A6AF6BD0EC177EB"
+				item: "alexscaves:radgill"
+				random_bonus: 2
+				type: "item"
+			}]
+			tasks: [{
+				id: "5CEB212FACA67B0A"
+				item: "alexscaves:radgill"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7357729E32CC0F74"]
+			description: [
+				"撼地斯拉蛋不同于其它的蛋，它无法自然孵化。玩家需要在其周围引发核爆（例如核弹、核能苦力怕和核能熔炉的爆炸），随后幼年撼地斯拉就会破壳而出。"
+				"使用带有精准采集工具可完整挖掘，否则不会有任何掉落物。"
+				"使用镐类工具可以加快挖掘速度，但同样的，若没有精准采集，仍不会有任何掉落物。"
+				"不会被踩碎。"
+			]
+			id: "0A46E5009997FC46"
+			rewards: [{
+				id: "501F314603336F6E"
+				item: "alexscaves:tremorzilla_egg"
+				type: "item"
+			}]
+			subtitle: "这货会跳舞？"
+			tasks: [{
+				id: "13093A370F145892"
+				item: "alexscaves:tremorzilla_egg"
+				type: "item"
+			}]
+			title: "撼地斯拉蛋"
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4D56AEA0F0397AE3"]
+			id: "70CB30AB7935FF41"
+			subtitle: "美食!"
+			tasks: [
+				{
+					id: "105CA6AE203AEDD5"
+					item: "alexscaves:spelunkie"
+					type: "item"
+				}
+				{
+					id: "3AAE4E993BB83D68"
+					item: "alexscaves:slam"
+					type: "item"
+				}
+				{
+					id: "5CFB196E11A58A8D"
+					item: "alexscaves:green_soylent"
+					type: "item"
+				}
+			]
+			title: "绿色食品"
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0A46E5009997FC46"]
+			description: [
+				"撼地斯拉可以通过喂食废料桶来驯服，通常需要4-10个废料桶来驯服，保险起见，可以多准备一些废料桶。驯服后，玩家可以命令它游荡/停留/跟随。当然可以用拴绳牵住。"
+				"对撼地斯拉使用琥珀珍品或板块碎片可以消耗对应物品将它转换为“复古”和“爆燃”形态，再次使用会将其变回普通形态。不同形态除外观外和一般的撼地斯拉没有区别。"
+				"如果在它们周围将音乐唱片放入唱片机的话，它们就会前后摆动双臂并一蹦一跳地开始跳舞，无论它们先前在什么状态下。"
+			]
+			icon: "alexscaves:waste_drum"
+			id: "7F044576F5F1C173"
+			rewards: [{
+				count: 3
+				id: "68E472C76BB6D588"
+				item: "alexscaves:waste_drum"
+				random_bonus: 7
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "这货会跳舞？"
+			tasks: [
+				{
+					advancement: "alexscaves:alexscaves/tame_tremorzilla"
+					criterion: ""
+					icon: "alexscaves:spawn_egg_tremorzilla"
+					id: "04C2BE56F5CB0946"
+					title: "驯服一只撼地斯拉"
+					type: "advancement"
+				}
+				{
+					count: 10L
+					id: "1921D296DDBF4990"
+					item: { Count: 10, id: "alexscaves:waste_drum" }
+					type: "item"
+				}
+			]
+			title: "怪物之王"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0BB080BE230820D4"]
+			description: [
+				"当被红石信号激活或即将发生核爆时，会持续响起防空警报，此时方块四周会出现声波粒子。"
+				"声音可以传到250格左右"
+			]
+			id: "442D4D0DFEC60850"
+			subtitle: "请谨慎在多人游戏使用，这可能会导致一些不必要的麻烦"
+			tasks: [{
+				id: "7E35B7712C57AA48"
+				item: "alexscaves:nuclear_siren"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["41A630472C0B89E8"]
+			description: ["当被红石信号激活时，会发出亮度等级为10的光，同时内部的发光器会顺时针旋转并向两侧发出绿光，可使用染料右击染色。"]
+			id: "4CCB420F60E9BBB1"
+			tasks: [{
+				id: "64BB2BBADA633AF4"
+				item: "alexscaves:siren_light"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["7F044576F5F1C173"]
+			id: "0162885B4AB59A87"
+			subtitle: "撼地斯拉的破坏方块无法关闭，谨慎使用"
+			tasks: [{
+				id: "0D993CDFCF222A9D"
+				title: "注意！"
+				type: "checkmark"
+			}]
+			x: 10.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0A46E5009997FC46"]
+			id: "49A5B0BB85819A62"
+			rewards: [{
+				id: "0B349C285237C50A"
+				item: "alexcaves_delight:tremorzillaamlette"
+				random_bonus: 2
+				type: "item"
+			}]
+			subtitle: "多么独特的味道！"
+			tasks: [{
+				id: "4810853931890E99"
+				item: "alexcaves_delight:tremorzillaamlette"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["178CC854157FCC93"]
+			id: "733FE417E7F179DE"
+			rewards: [{
+				id: "145C6E3E5CE5F600"
+				item: "alexscaves:cooked_radgill"
+				random_bonus: 2
+				type: "item"
+			}]
+			tasks: [{
+				id: "114981041AE246F6"
+				item: "alexscaves:cooked_radgill"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["178CC854157FCC93"]
+			description: [
+				"毒化洞穴唯一的友好生物，不会像原版猫一样看见玩家就会逃走，免疫酸液伤害。"
+				""
+				"驯服方式：手持辐鳃鱼喂食射线猫有概率将其驯服。仅需喂食两只射线猫各一个辐鳃鱼可使它们繁殖"
+				""
+				"右键可命令被驯服的射线猫坐下，跟随，徘徊。虽然射线猫无法帮助玩家战斗，但具备吓退核能苦力怕的能力，并且会不定时期吸收玩家身上的辐照效果。"
+			]
+			id: "6D1A1E1289AF609D"
+			subtitle: "家人们，看到一只猫，它想和我回家！"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/tame_raycat"
+				criterion: ""
+				icon: "alexscaves:spawn_egg_raycat"
+				id: "3EC822B0479B4552"
+				title: "驯服一只射线猫"
+				type: "advancement"
+			}]
+			title: "射线猫计划"
+			x: 0.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["7357729E32CC0F74"]
+			description: [
+				"可在&6驾驶潜水艇期间&r手持右击发射，每次发射后需等待极短的冷却时间才能再次发射；"
+				"造成相当于核能苦力怕的爆炸（可破坏地形并施加 40 分钟 辐照 II 效果）"
+				"核能鱼雷在接触到空气 / 任意固体方块、生物后就会立刻爆炸"
+				"在水下则会沿一条固定的直线弹道飞行（无视流体阻力 ，重力影响）"
+				"核能鱼雷在水下的射程有限，在持续移动一定距离后便会自动爆炸；"
+				"&c切忌在陆地驾驶潜水艇期间发射任何种类的鱼雷，因为被发射的鱼雷会立刻在潜水艇所在位置爆炸，对潜水艇和玩家造成损伤。&r"
+			]
+			id: "56699F4F160EB0FE"
+			rewards: [{
+				id: "66AD70C0649C6A12"
+				item: "alexscaves_torpedoes:torpedo_nuclear"
+				type: "item"
+			}]
+			subtitle: "可以发射了"
+			tasks: [{
+				id: "5C8C81D953DF2D7C"
+				item: "alexscaves_torpedoes:torpedo_nuclear"
+				title: "核能鱼雷"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 1.5d
+		}
+	]
+	title: "&2毒化世界&r"
+}
