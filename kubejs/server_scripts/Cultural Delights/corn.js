@@ -20,7 +20,6 @@ ServerEvents.recipes(e => {
         "corn_delight:integration/create/splashing/tortilla_raw",
         "corn_delight:cooking/creamed_corn",
         "corn_delight:taco",
-        "corn_delight:cutting/wild_corn",
         "corn_delight:corn_from_crate",
         "corn_delight:organic_compost_from_corncob",
         "corn_delight:cob_pipe",
@@ -50,16 +49,6 @@ ServerEvents.recipes(e => {
         "9x culturaldelights:corn_kernels",
         "corn_delight:corn_kernel_bag"
     ).id("corn_delight:corn_kernels")
-    cutting(e, "corn_delight:wild_corn", [
-        ["culturaldelights:corn_kernels"],
-        ["culturaldelights:corn_kernels", 1, 0.5]
-    ])
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{item: "culturaldelights:corn_cob"}],
-        result: [{item: "culturaldelights:corn_kernels", count: 4}, {item: "farmersdelight:straw", count: 1}],
-        tool: {type: "farmersdelight:tool_action", action: "blade_cut"}
-    }).id("tetracelium:cutting/corn_cob")
     threshing(e,
         "culturaldelights:corn_cob",
         [

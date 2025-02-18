@@ -8,7 +8,6 @@ ServerEvents.tags("item", e => {
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "culturaldelights:cutting/wild_cucumbers",
         "vintagedelight:cutting/cucumber_cutting",
         "culturaldelights:cutting/cut_cucumber",
     ])
@@ -60,10 +59,6 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
-    cutting(e, "culturaldelights:wild_cucumbers", [
-        ["vintagedelight:cucumber_seeds"],
-        ["minecraft:green_dye"]
-    ])
     cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
     cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
