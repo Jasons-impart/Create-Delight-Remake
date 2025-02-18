@@ -13,8 +13,8 @@
 			dependencies: [
 				"64E5E20F279E1544"
 				"450B37F01A318678"
-				"2D588A416405B36C"
 			]
+			description: ["首先，你需要使用&e熔铸盆&r与&e熔铸盖&r将铜和锌熔融获取熔融铜和熔融锌。然后将其通入&e工作盆&r，并进行搅拌。最后将产出的流体通入到铸造台/铸造盆即可。使用工作盆的自动输出产物机制能省很多事。"]
 			id: "0E515BE9EA2A0B2F"
 			rewards: [{
 				id: "0DD667B4E11E8329"
@@ -24,6 +24,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "具体合成方式见描述"
 			tasks: [{
 				id: "5FE59F26BC3E6AF3"
 				item: "create:brass_ingot"
@@ -55,6 +56,7 @@
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
+			description: ["本整合包的大部分合金都采用了使用&e熔融金属&r合成的配方。你需要用到这套组件来将金属融化。部分合金只能使用&e熔铸搅拌器&r制作。"]
 			id: "450B37F01A318678"
 			rewards: [{
 				count: 2
@@ -62,6 +64,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "用于产出熔融金属"
 			tasks: [
 				{
 					id: "1EA44E62FD8B2C8B"
@@ -73,12 +76,8 @@
 					item: "createmetallurgy:foundry_lid"
 					type: "item"
 				}
-				{
-					id: "695BC7A033948DDF"
-					item: "createmetallurgy:refractory_mortar"
-					type: "item"
-				}
 			]
+			title: "熔融金属"
 			x: -3.5d
 			y: 0.5d
 		}
@@ -91,6 +90,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "用于将熔融金属制作为块"
 			tasks: [{
 				id: "02DFC08AE036A576"
 				item: "createmetallurgy:casting_basin"
@@ -109,6 +109,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "用于将熔融金属制作为特定物品"
 			tasks: [
 				{
 					id: "76501C8010EE1DDA"
@@ -571,6 +572,7 @@
 				"2C4BC15C42ABB286"
 				"0E515BE9EA2A0B2F"
 			]
+			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
 			id: "6731C7B5A0DADBAA"
 			rewards: [
 				{
@@ -626,7 +628,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "只能用来切割玻璃的垃圾（"
+			subtitle: "切割"
 			tasks: [{
 				id: "47D4C3F2CBA8FD8A"
 				item: "vintageimprovements:laser"
@@ -701,8 +703,8 @@
 		}
 		{
 			dependencies: [
-				"6731C7B5A0DADBAA"
 				"6C17235C107747E6"
+				"5CB8CBDC5886673E"
 			]
 			id: "78F0F6D3D2A93E3F"
 			rewards: [{
@@ -906,6 +908,7 @@
 				"20D619F0AF190C4A"
 				"4075F51792830B6B"
 			]
+			description: ["该流体用于烈焰人可使烈焰人&e超级加热&r。"]
 			id: "15BF957B2F2FE765"
 			rewards: [{
 				count: 2
@@ -920,8 +923,8 @@
 				type: "item"
 			}]
 			title: "生物柴油！"
-			x: 7.5d
-			y: 13.25d
+			x: -7.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["50C3559D684B2A7E"]
@@ -939,8 +942,8 @@
 				type: "item"
 			}]
 			title: "植物（燃）油"
-			x: 9.0d
-			y: 13.25d
+			x: -5.5d
+			y: -4.5d
 		}
 		{
 			dependencies: [
@@ -961,13 +964,13 @@
 				type: "item"
 			}]
 			title: "不准喝！"
-			x: 7.5d
-			y: 11.75d
+			x: -7.0d
+			y: -3.0d
 		}
 		{
-			dependencies: ["4075F51792830B6B"]
 			icon: "frycooks_delight:canola_seeds"
 			id: "50C3559D684B2A7E"
+			min_required_tasks: 1
 			rewards: [{
 				count: 2
 				id: "29B1C17635BD1422"
@@ -998,12 +1001,17 @@
 					item: "vintagedelight:roasted_peanut"
 					type: "item"
 				}
+				{
+					id: "725256C002A5BEB1"
+					item: "create_bic_bit:crushed_sunflower_seeds"
+					type: "item"
+				}
 			]
-			x: 9.0d
-			y: 11.75d
+			x: -5.5d
+			y: -3.0d
 		}
 		{
-			dependencies: ["00A97860884CEAE7"]
+			dependencies: ["16E85851D21CB6A3"]
 			hide_until_deps_visible: true
 			id: "0C49A6D118E480B4"
 			rewards: [{
@@ -1012,13 +1020,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "与工作盆配合以发酵"
 			tasks: [{
 				id: "7A2068EA2FE0DC4C"
 				item: "createdieselgenerators:basin_lid"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 9.75d
+			x: -5.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1057,8 +1066,8 @@
 				}
 			]
 			title: "发酵"
-			x: 8.5d
-			y: 10.75d
+			x: -7.0d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -1219,6 +1228,7 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "需要熔融为流体"
 			tasks: [{
 				id: "30ADC99EADD5B3F2"
 				item: "create:zinc_ingot"
@@ -1258,7 +1268,6 @@
 			dependencies: [
 				"3EBFCA3ADB47A6E1"
 				"2E21EDC4A314B7FD"
-				"15BF957B2F2FE765"
 			]
 			id: "4BD0A02C133DC060"
 			rewards: [{
@@ -1762,6 +1771,34 @@
 			}]
 			x: 0.0d
 			y: 6.0d
+		}
+		{
+			dependencies: ["6731C7B5A0DADBAA"]
+			id: "5CB8CBDC5886673E"
+			min_required_tasks: 1
+			tasks: [{
+				id: "4F9621F173054CC1"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "create:blaze_cake"
+							}
+							{
+								Count: 1b
+								id: "createdieselgenerators:biodiesel_bucket"
+							}
+						]
+					}
+				}
+				title: "用于超级加热的物品"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 3.5d
 		}
 	]
 	title: "&3进阶研修班！"
