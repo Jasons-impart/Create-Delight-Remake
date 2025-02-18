@@ -141,13 +141,12 @@ ServerEvents.recipes(e => {
     // 红宝石巧克力
     e.recipes.create.mixing(
         [
-            Fluid.of("create_confectionery:ruby_chocolate", 250),
-            "minecraft:glass_bottle"
+            Fluid.of("create_confectionery:ruby_chocolate", 250)
         ],
         [
             "ratatouille:cocoa_solids",
             "ratatouille:cocoa_butter",
-            "minecraft:dragon_breath",
+            Fluid.of("create_central_kitchen:dragon_breath", 250),
             "minecraft:sugar"
         ]
     )
