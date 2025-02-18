@@ -10,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			description: ["安山合金需要使用&e安山岩&r和&e铁粒&r或者&e锌粒&r制作。使用&e搅拌机&r能消耗更少的材料。"]
 			icon: "create:andesite_alloy"
 			id: "510B2EE25982FD73"
 			rewards: [{
@@ -57,6 +58,7 @@
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
+			description: ["齿轮之间可以通过耦合传输应力。"]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -84,6 +86,7 @@
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
+			description: ["右键以产生应力，按住shift可使其反转。"]
 			hide_until_deps_visible: true
 			id: "183724705FA6D24C"
 			rewards: [{
@@ -160,6 +163,7 @@
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
+			description: ["使用&e安山合金&r右击&e放置的去皮原木&r即可制作。"]
 			id: "7029D6C489D44144"
 			rewards: [
 				{
@@ -175,6 +179,7 @@
 					type: "random"
 				}
 			]
+			subtitle: "自带连接纹理好看"
 			tasks: [{
 				id: "3B6F668D8EA70651"
 				item: "create:andesite_casing"
@@ -211,6 +216,7 @@
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
+			description: ["可以不用置物台，只要其下方有物品就会处理。"]
 			id: "621E3093612F5D2C"
 			rewards: [{
 				count: 5
@@ -248,6 +254,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
+			description: ["需配合&e工作盆&r使用，且接入转速需&e大于32&r。"]
 			id: "6BCFF368CB1C1FA4"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -268,6 +275,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
+			description: ["用于砍伐&e木质物品&r，且自带连锁。朝上摆放时可进行切割配方。"]
 			hide_until_deps_visible: true
 			id: "372234CE950277CE"
 			rewards: [{
@@ -321,6 +329,13 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
+			description: [
+				"可用于批量处理物品。对应关系如下："
+				"岩浆-批量熔炼-高炉"
+				"水-批量洗涤-无原版对应"
+				"火焰-批量烟熏-烟熏炉"
+				"灵魂火-批量缠魂-无原版对应"
+			]
 			hide_until_deps_visible: true
 			id: "762CD49FCDC889E2"
 			rewards: [{
@@ -702,6 +717,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "用于制作弹簧"
 			tasks: [{
 				id: "0853123B927D34DA"
 				item: "vintageimprovements:spring_coiling_machine"
@@ -739,6 +755,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "传输应力！"
 			tasks: [{
 				id: "36CEF17E06B64B00"
 				item: "create:shaft"
@@ -1107,7 +1124,9 @@
 		}
 		{
 			dependencies: ["621E3093612F5D2C"]
+			description: ["用于制作杆状材料和线状材料。使用金属锭制作杆，使用金属板制作线。"]
 			id: "4BA2635FA5EA807D"
+			subtitle: "亚基"
 			tasks: [{
 				id: "2EFD1A38D1D357FE"
 				item: "createaddition:rolling_mill"
