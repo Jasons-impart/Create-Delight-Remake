@@ -5,12 +5,12 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "alexscaves:waste_drum"
 	id: "4A554B0BDCD424F2"
-	order_index: 5
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
-				"毒化洞穴是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该洞穴，可能会受到致命的“辐照”效果。（下图上了夜视）"
+				"毒化世界是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该世界，可能会受到致命的“辐照”效果。（下图上了夜视）"
 				"&4进入方法：使用&6硫磺晶体&4搭建传送门框架，使用硫粉激活。"
 			]
 			id: "24CCC43BD4994237"
@@ -20,10 +20,10 @@
 				advancement: "alexscaves:alexscaves/discover_toxic_caves"
 				criterion: ""
 				id: "6D3908F689FC6AAE"
-				title: "前往毒化洞穴"
+				title: "前往毒化世界"
 				type: "advancement"
 			}]
-			title: "毒化洞穴"
+			title: "毒化世界"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -84,6 +84,7 @@
 			}]
 			subtitle: "你拿核能干这个？"
 			tasks: [{
+				count: 2L
 				id: "360A7166F9C06366"
 				item: "alexscaves:nuclear_furnace_component"
 				type: "item"
@@ -126,7 +127,10 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["3AC9CB2DD01DF26C"]
+			dependencies: [
+				"3AC9CB2DD01DF26C"
+				"6F743E8912CBE355"
+			]
 			description: [
 				"极其强大的核武器，原型为现实中的原子弹。可以像TNT一样被打火石和红石信号点燃。"
 				"点燃之后，附近的核能警报器会发出警报声且发出声波粒子，提醒玩家应该尽快撤离爆炸范围或用剪刀拆除核弹。"
@@ -189,6 +193,7 @@
 		}
 		{
 			dependencies: ["24CCC43BD4994237"]
+			description: ["挖掘辐射铀矿石掉落的合成材料"]
 			id: "2F6C3FD71E5A23A4"
 			tasks: [{
 				id: "0E051D0C6C041F00"
@@ -200,7 +205,9 @@
 		}
 		{
 			dependencies: ["2F6C3FD71E5A23A4"]
+			description: ["核燃料，会发出亮度等级为8的光。周围会出现绿色辐射粒子。"]
 			id: "6F743E8912CBE355"
+			subtitle: "热棒"
 			tasks: [{
 				id: "3D523FE01D882141"
 				item: "alexscaves:uranium_rod"
@@ -344,6 +351,12 @@
 		{
 			dependencies: ["4D56AEA0F0397AE3"]
 			id: "70CB30AB7935FF41"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7549F1A0196E1EAA"
+				table_id: 6485826240718891201L
+				type: "random"
+			}]
 			subtitle: "美食!"
 			tasks: [
 				{
