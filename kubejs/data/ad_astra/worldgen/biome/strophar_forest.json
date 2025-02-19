@@ -1,0 +1,70 @@
+{
+    "carvers": {
+      "air": [
+        "minecraft:cave",
+        "minecraft:cave_extra_underground",
+        "minecraft:canyon"
+      ]
+    },
+    "downfall": 0.0,
+    "effects": {
+      "fog_color": 0,
+      "mood_sound": {
+        "block_search_extent": 8,
+        "offset": 2.0,
+        "sound": "minecraft:ambient.cave",
+        "tick_delay": 6000
+      },
+      "sky_color": 1447444,
+      "water_color": 4159204,
+      "water_fog_color": 329011
+    },
+    "features": [
+      [],
+      [],
+      [],
+      [],
+      [],
+      [],
+      [
+        "ad_astra:moon_cheese_ore",
+        "ad_astra:moon_desh_ore",
+        "ad_astra:moon_ice_shard_ore",
+        "ad_astra:moon_iron_ore",
+        "ad_astra:moon_soul_soil"
+      ],
+      [
+        "ad_astra:moss_replace_moon_stone",
+        "ad_astra:gravel_replace_moon_stone",
+        "ad_astra:forest_moss_carpet",
+        "ad_astra:underweed",
+        "ad_astra:strophar_mushroom_small",
+        "ad_astra:huge_strophar_mushroom"
+      ]
+    ],
+    "has_precipitation": false,
+    "spawn_costs": {
+      "ad_astra:star_crawler": {
+        "charge": 0.6,
+        "energy_budget": 0.015
+      }
+    },
+    "spawners": {
+      "ambient": [],
+      "axolotls": [],
+      "creature": [],
+      "misc": [],
+      "monster": [
+        {
+          "type": "ad_astra:star_crawler",
+          "maxCount": 3,
+          "minCount": 1,
+          "weight": 100
+        }
+      ],
+      "underground_water_creature": [],
+      "water_ambient": [],
+      "water_creature": []
+    },
+    "temperature": 0.7
+  }
