@@ -10,7 +10,6 @@
 		{ count: 5, item: "corn_delight:cornbread_stuffing" }
 		{ count: 2, item: "ends_delight:ender_congee" }
 		{ count: 2, item: "ends_delight:dragon_breath_and_chorus_soup" }
-		{ item: "oceansdelight:bowl_of_guardian_soup" }
 		{ count: 5, item: "farmersdelight:stuffed_potato", weight: 50.0f }
 		{ count: 5, item: "farmersdelight:dumplings", weight: 50.0f }
 		{ count: 5, item: "farmersdelight:mutton_wrap" }

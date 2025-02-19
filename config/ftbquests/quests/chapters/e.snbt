@@ -6,7 +6,7 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "alexscaves:scarlet_magnet"
 	id: "4E5A1B3CF93FA385"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -588,10 +588,7 @@
 			y: 5.0d
 		}
 		{
-			dependencies: [
-				"68419F2554E332BE"
-				"24317CED18E77A85"
-			]
+			dependencies: ["68419F2554E332BE"]
 			hide_until_deps_complete: true
 			id: "23179BF31371F0E8"
 			tasks: [{
