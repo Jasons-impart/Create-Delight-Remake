@@ -1,0 +1,36 @@
+{
+  "type": "ad_astra:moon",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "ad_astra:moon",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "ad_astra:strophar_forest",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.5
+          }
+        },
+        {
+          "biome": "ad_astra:lunar_wastelands",
+          "parameters": {
+            "temperature": 0,
+            "humidity": 0,
+            "continentalness": 0,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
