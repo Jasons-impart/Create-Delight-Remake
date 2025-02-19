@@ -499,23 +499,6 @@
 			y: 20.0d
 		}
 		{
-			dependencies: ["4D5D0EB44019FF26"]
-			description: [
-				"它可以直接加速其相邻母岩的生长。"
-				""
-				"仅上下两个黑色的面接受供能"
-			]
-			id: "1304DFC8174FBE2F"
-			tasks: [{
-				id: "685AB16A4C3F8A41"
-				item: "ae2:growth_accelerator"
-				type: "item"
-			}]
-			title: "晶体催生器"
-			x: -2.0d
-			y: 10.5d
-		}
-		{
 			dependencies: [
 				"2BA4167BDF2A0A8F"
 				"7A800596FF9EEB84"
@@ -728,7 +711,10 @@
 		}
 		{
 			dependencies: ["7AF08EA4FB3D9A15"]
-			description: ["区块内有神秘方块时，陨石罗盘会高速旋转；大范围内都没有神秘方块则会低速旋转。"]
+			description: [
+				"为了获取AE中的重要物品：&e压印模板&r与&e赛特斯石英母岩&r，你需要使用&e陨石罗盘&r寻找陨石。"
+				"区块内有陨石时，陨石罗盘会高速旋转；大范围内都没有陨石则会低速旋转。"
+			]
 			id: "437D00BF338DC859"
 			subtitle: "使用陨石罗盘可以寻找到最近的陨石（实际上是神秘方块）"
 			tasks: [{
@@ -767,7 +753,7 @@
 				"7FA8DE176FAB9348"
 				"141A6861778724F6"
 			]
-			description: ["累积压印模板是神秘方块中无法获取的压印模板，需要手动合成。"]
+			description: ["累积压印模板是神秘方块中&e无法获取&r的压印模板，需要手动合成。使用压缩机合成。"]
 			id: "6B02622B0BBD5191"
 			subtitle: "mega"
 			tasks: [{
@@ -806,7 +792,10 @@
 		}
 		{
 			dependencies: ["04D1535475BCBF5C"]
-			description: ["此为本包的压印器的某种程度上的代替品。你需要将模板放在冲压机上（可以使用扳手拆卸下来）"]
+			description: [
+				"此为本包的压印器的某种程度上的代替品。你需要将模板放在冲压机上（可以使用扳手拆卸下来）"
+				"{ \"text\": \"点此查看处理器的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
+			]
 			id: "54B49FF6433539AD"
 			size: 1.5d
 			subtitle: "冲压机压芯片...?"
@@ -821,8 +810,9 @@
 		{
 			dependencies: ["7AF08EA4FB3D9A15"]
 			description: [
-				"只有&e赛特斯石英簇&r才能产出&e赛特斯石英&r，否则会产出&e赛特斯石英粉&r。"
+				"对于赛特斯石英晶体来说，只有&e赛特斯石英簇&r才能产出&e赛特斯石英&r，否则会产出&e赛特斯石英粉&r。"
 				"&4！！机械动力的钻头破坏赛特斯石英簇不会产生任何掉落物！&r如果想使用机械动力自动化请使用&e拿着镐子的机械手&r。"
+				"当然在前期，你也可以通过与以&e充能器&r为工作方块的村民交易获取赛特斯石英。"
 			]
 			id: "4CA521FDEEC0D70C"
 			subtitle: "通过赛特斯石英母岩获取"
@@ -917,44 +907,79 @@
 		{
 			dependencies: ["54B49FF6433539AD"]
 			id: "28B664503324B3B4"
-			tasks: [{
-				id: "7A7E604066058DDA"
-				item: "ae2:printed_calculation_processor"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "7A7E604066058DDA"
+					item: "ae2:printed_calculation_processor"
+					type: "item"
+				}
+				{
+					id: "022C33505E0487A3"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
+			]
 			x: 13.0d
 			y: 5.5d
 		}
 		{
 			dependencies: ["54B49FF6433539AD"]
 			id: "32C24154E42D19B4"
-			tasks: [{
-				id: "1E3C9CEC5A845614"
-				item: "ae2:printed_logic_processor"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "1E3C9CEC5A845614"
+					item: "ae2:printed_logic_processor"
+					type: "item"
+				}
+				{
+					id: "2882055462E4137C"
+					item: "minecraft:gold_ingot"
+					type: "item"
+				}
+			]
 			x: 13.0d
 			y: 6.5d
 		}
 		{
 			dependencies: ["54B49FF6433539AD"]
 			id: "72A994126A41FFE4"
-			tasks: [{
-				id: "29B88A1D8D833B38"
-				item: "ae2:printed_engineering_processor"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "29B88A1D8D833B38"
+					item: "ae2:printed_engineering_processor"
+					type: "item"
+				}
+				{
+					id: "77432DAB30705DA7"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:gems/diamond"
+						}
+					}
+					title: "钻石"
+					type: "item"
+				}
+			]
 			x: 13.0d
 			y: 8.5d
 		}
 		{
 			dependencies: ["54B49FF6433539AD"]
 			id: "5381E9280F17BBEA"
-			tasks: [{
-				id: "09D5015097DB8393"
-				item: "megacells:printed_accumulation_processor"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "09D5015097DB8393"
+					item: "megacells:printed_accumulation_processor"
+					type: "item"
+				}
+				{
+					id: "7E437AF3C769EC87"
+					item: "megacells:sky_steel_ingot"
+					type: "item"
+				}
+			]
 			x: 13.0d
 			y: 9.5d
 		}
@@ -1038,7 +1063,9 @@
 			id: "7F381046ADE230B3"
 			tasks: [{
 				elapsedTime: 1L
+				icon: "ae2:flawless_budding_quartz"
 				id: "7DEB81D8C9326606"
+				title: "母岩"
 				type: "questsadditions:time"
 			}]
 			title: "母岩"
@@ -1102,7 +1129,7 @@
 			y: 9.5d
 		}
 		{
-			dependencies: ["4CA521FDEEC0D70C"]
+			dependencies: ["7EAD0599C58FF4F5"]
 			id: "369B714E261109AF"
 			size: 1.25d
 			subtitle: "给赛特斯石英充能即可获得"
@@ -1148,6 +1175,7 @@
 				"4D5D0EB44019FF26"
 				"1C5E7268A9F2C953"
 			]
+			description: ["用于连接机器与传递频道。"]
 			id: "4620D1D5AC59723B"
 			subtitle: "最多传递8个频道"
 			tasks: [{
@@ -1743,6 +1771,7 @@
 		{
 			dependencies: ["13F8520CAB935F98"]
 			id: "7078F886F791DE6E"
+			subtitle: "ae重要的材料"
 			tasks: [{
 				id: "64A8523636ACE0CB"
 				item: "ae2:formation_core"
@@ -1754,6 +1783,7 @@
 		{
 			dependencies: ["13F8520CAB935F98"]
 			id: "1E94EA825476A68C"
+			subtitle: "ae重要的材料"
 			tasks: [{
 				id: "3EC7E59FB2852155"
 				item: "ae2:annihilation_core"
@@ -1772,6 +1802,7 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
+			subtitle: "放置方块或者丢出掉落物"
 			tasks: [{
 				id: "6A88B7195B497866"
 				item: "ae2:formation_plane"
@@ -1790,6 +1821,7 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
+			subtitle: "破坏方块或者收集掉落物"
 			tasks: [{
 				id: "050978E7ABA01E14"
 				item: "ae2:annihilation_plane"
@@ -1878,9 +1910,9 @@
 				"21E3872C6B9D4947"
 			]
 			description: [
-				"使用方法：获取一对量子缠绕态奇点，将其中一个放入一个量子环，另一个放入你的终端。"
+				"使用方法：获取&e一对量子缠绕态奇点&r，将其中一个放入&e一个量子环&r，另一个放入&e你的终端&r。"
 				"安装量子桥卡后终端能够&e自动充电&r。"
-				"将通用终端作为前置只是为了更醒目，实际是可以插入任何终端的。"
+				"将通用终端作为前置只是为了更醒目，实际是可以插入任何无线终端的。"
 			]
 			id: "3D5FFC62705AC5C0"
 			tasks: [{
@@ -1962,6 +1994,7 @@
 			y: 6.5d
 		}
 		{
+			description: ["{ \"text\": \"点此查看元件外壳的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			id: "3D3870D8A017E2A4"
 			min_required_tasks: 1
 			subtitle: "四个里做一个即可完成任务"
@@ -1996,6 +2029,7 @@
 				"12E2980D7E112C9E"
 				"3D3870D8A017E2A4"
 			]
+			description: ["{ \"text\": \"点此查看存储元件的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			icon: {
 				Count: 1
 				id: "ae2:item_storage_cell_1k"
@@ -2226,6 +2260,49 @@
 			}]
 			x: 1.0d
 			y: 3.5d
+		}
+		{
+			dependencies: ["4CA521FDEEC0D70C"]
+			description: [
+				"如果没有发展其他科技的话，请使用ae的充能器。该充能器需要配合ae的曲柄使用。"
+				"使用newage的充能器需要同时输入应力和电。"
+			]
+			id: "7EAD0599C58FF4F5"
+			tasks: [{
+				id: "11B54C6955C66924"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "create_new_age:energiser_t1"
+							}
+							{
+								Count: 1b
+								id: "create_new_age:energiser_t2"
+							}
+							{
+								Count: 1b
+								id: "create_new_age:energiser_t3"
+							}
+							{
+								Count: 1b
+								id: "createaddition:tesla_coil"
+							}
+							{
+								Count: 1b
+								id: "ae2:charger"
+							}
+						]
+					}
+				}
+				type: "item"
+			}]
+			title: "用于充能的机器"
+			x: -2.0d
+			y: 9.5d
 		}
 	]
 	title: "&9应用能源2"

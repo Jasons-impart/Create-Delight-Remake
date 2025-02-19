@@ -201,7 +201,7 @@
     "tetra.module.sword/knife.description": "一把刀片，可用于制作，在切菜板上切割物品，并从草中收获稻草。",
     "tetra.module.sword/knife.material_name": "%s 小刀",
     "tetra.module.sword/knife.prefix": "%s",
-    "item.tetracelium.dummy_knife_blade": "厨刀",
+    "item.tetracelium.dummy_knife_blade": "模块化刀",
     "tetra.material.straw": "稻草",
     "tetra.material.straw.prefix": "稻草",
     "tetra.material.canvas": "帆布",
