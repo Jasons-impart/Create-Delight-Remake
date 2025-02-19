@@ -5,7 +5,7 @@
 	group: "0E7AEC0D0D9C1B1C"
 	icon: "alexscaves:submarine"
 	id: "747E24C142A0FBEA"
-	order_index: 7
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -29,7 +29,20 @@
 		}
 		{
 			dependencies: ["475F0BF3666A12AB"]
+			description: ["可用于酿造渊视药水、制作深海寿司卷，也可直接食用或烹饪为熟灯笼鱼后食用。"]
 			id: "33609F4D3717AC13"
+			rewards: [{
+				count: 3
+				id: "0AAA9C6BF26B8A1E"
+				item: {
+					Count: 1
+					id: "minecraft:potion"
+					tag: {
+						Potion: "minecraft:awkward"
+					}
+				}
+				type: "item"
+			}]
 			tasks: [{
 				id: "52108ABD2ECDE440"
 				item: "alexscaves:lanternfish"
@@ -40,6 +53,11 @@
 		}
 		{
 			dependencies: ["33609F4D3717AC13"]
+			description: [
+				"类似于夜视，可以让玩家在水中也能拥有较为良好的视野，对在渊海陷窟中的探索很有帮助。获得渊视效果时，会取得进度&a[眼中灯塔]&r。"
+				""
+				"配合夜视效果使用效果会更加明显"
+			]
 			id: "75CC6920608A6193"
 			rewards: [{
 				id: "6C3496EC2F854AC7"
@@ -69,6 +87,12 @@
 		{
 			dependencies: ["475F0BF3666A12AB"]
 			id: "3AB0158904BD71EC"
+			rewards: [{
+				id: "34DF48BF78DC4DEC"
+				item: "alexscaves:bioluminesscence"
+				random_bonus: 2
+				type: "item"
+			}]
 			tasks: [{
 				id: "786A42ED7DD98457"
 				item: "alexscaves:bioluminesscence"
@@ -95,7 +119,13 @@
 		}
 		{
 			dependencies: ["33609F4D3717AC13"]
+			description: [
+				"挖掘渊海陷窟中的固体贻贝有概率掉落，或在战利品箱中获取。"
+				""
+				"也可以使用窥愿珍珠与海雪合成获取。"
+			]
 			id: "4A19E68507D34B59"
+			subtitle: "用于放在渊海祭坛上交易"
 			tasks: [{
 				id: "764D5EE937AD6FAE"
 				item: "alexscaves:pearl"
@@ -106,6 +136,13 @@
 		}
 		{
 			dependencies: ["3AB0158904BD71EC"]
+			description: [
+				"使用乒乓球树海绵和生物荧光质合成，在水中右键使用后可以迅速上升至水面，一次性物品。"
+				""
+				"玩家本质上是在骑乘一个高速上浮的实体，所以在上升的过程中按下shift即可停止上升。"
+				""
+				"首次获得时，会取得进度&a[减压病]&r。"
+			]
 			id: "09191975D3CAC64F"
 			tasks: [{
 				id: "78996BDD6CC42D47"
@@ -126,6 +163,7 @@
 				"好感度提升到一定程度后不会与玩家敌对，会主动帮助玩家战斗（但是不会跟随玩家），同时取得进度&a[情同手足]&r。"
 			]
 			id: "79B8A649678C0C69"
+			subtitle: "大衮之令"
 			tasks: [{
 				id: "14741D35FE8D648D"
 				item: "alexscaves:abyssal_altar"
@@ -148,6 +186,7 @@
 		{
 			dependencies: ["4A30A6D199AE29FB"]
 			id: "6064CB76A7832C2A"
+			subtitle: "由碎船兽被击杀后掉落。"
 			tasks: [{
 				id: "605495B7E0004898"
 				item: "alexscaves:enigmatic_engine"
@@ -319,6 +358,12 @@
 				"3A84281CE6B202B1"
 			]
 			id: "51C710C28386E158"
+			rewards: [{
+				count: 2
+				id: "4FA90E0C6B53F35C"
+				item: "alexscaves:deep_sea_sushi_roll"
+				type: "item"
+			}]
 			tasks: [{
 				id: "4F46041331E2FC33"
 				item: "alexscaves:deep_sea_sushi_roll"
@@ -329,7 +374,23 @@
 		}
 		{
 			dependencies: ["475F0BF3666A12AB"]
+			description: [
+				"固着在渊海陷窟的海底和岩壁上，在渊海陷窟中随处可见。类似于海泡菜和蜡烛，一个方块内可以存在多个，最多五个。可以用镐挖掘，挖掘大概率掉落它们本身，小概率会掉落珍珠。使用带有时运附魔的工具挖掘可以增加珍珠的掉落概率。"
+				""
+				"与深潜者交易也有可能得到。"
+				""
+				"对着它使用海雪可以使其繁殖，使该方块内的贻贝增加一个。"
+				""
+				"贻贝在陆地上和水中都可以被放置，但只有在水中的贻贝可以使用海雪繁殖。"
+				""
+				"破坏其附着的方块或使用活塞将其推动也可以使它被破坏，但在非玩家直接破坏的情况下，无论该方块内有多少个贻贝，都只会掉落一个贻贝的掉落物。"
+			]
 			id: "689FDBFA71B753DF"
+			rewards: [{
+				id: "4CE29A6A48F19F5F"
+				item: "alexscaves:cooked_mussel"
+				type: "item"
+			}]
 			tasks: [{
 				id: "298095263608234E"
 				item: "alexscaves:mussel"
@@ -350,7 +411,9 @@
 		}
 		{
 			dependencies: ["4A30A6D199AE29FB"]
+			description: ["用于合成撼地斯拉蛋。"]
 			id: "397579D4AA9FD0E2"
+			subtitle: "击杀碎船兽固定掉落一个"
 			tasks: [{
 				id: "3D3DDF1F0280A618"
 				item: "alexscaves:immortal_embryo"
@@ -401,13 +464,14 @@
 				id: "02C84ACD19F1CD43"
 				title: "击杀碎船兽"
 				type: "kill"
-				value: 100L
+				value: 1L
 			}]
 			x: 0.0d
 			y: 9.0d
 		}
 		{
 			dependencies: ["79B8A649678C0C69"]
+			description: ["用于查看深潜者对玩家的好感度。处于背包或物品栏时，窥愿珍珠会根据深潜者当前的好感度变色，鼠标置于窥愿珍珠上可显示当前颜色的具体描述。"]
 			id: "21616D66B4184170"
 			tasks: [{
 				id: "3C61F33CA7E19BCB"
@@ -419,6 +483,13 @@
 		}
 		{
 			dependencies: ["79B8A649678C0C69"]
+			description: [
+				"与深潜者和深潜者骑士交易获取。"
+				""
+				"右击丢出，可以形成一片墨水云，进入其中的生物会获得5秒的失明效果。"
+				""
+				"与深潜者族群的好感度为”警惕“时，深潜者们也会对玩家使用它以防止被玩家发现。"
+			]
 			id: "3064DB15B17A0C92"
 			tasks: [{
 				id: "19D5AE570A66EE93"
@@ -430,6 +501,11 @@
 		}
 		{
 			dependencies: ["79B8A649678C0C69"]
+			description: [
+				"与深潜者法师交易获取。"
+				""
+				"右击丢出，可以形成一片荧光墨水云，进入其中的生物会获得5秒的失明和15秒的发光效果。"
+			]
 			id: "095B9BA10D480D11"
 			tasks: [{
 				id: "0ABAB2290FC38757"
@@ -441,14 +517,20 @@
 		}
 		{
 			dependencies: ["6064CB76A7832C2A"]
+			description: [
+				"使用20个铜块，1个奥秘引擎，6个深海玻璃搭建。搭建后，会产生一个潜水艇载具实体。"
+				"{image:createdelight:textures/gui/submarine.png width:100 height:100 align:center}"
+			]
 			id: "3EBE8C557492A57D"
 			size: 1.5d
 			tasks: [{
 				advancement: "alexscaves:alexscaves/ride_submarine"
 				criterion: ""
 				id: "62C50BCB2CD6B0D2"
+				title: "打造一艘潜艇"
 				type: "advancement"
 			}]
+			title: "打造一艘潜艇"
 			x: 0.5d
 			y: 12.5d
 		}
@@ -459,6 +541,7 @@
 				advancement: "alexscaves:alexscaves/stalked_by_deep_one"
 				criterion: ""
 				id: "69B1C5011E27B98F"
+				title: "初见碎船兽"
 				type: "advancement"
 			}]
 			x: 0.0d

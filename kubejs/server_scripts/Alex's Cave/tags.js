@@ -41,6 +41,23 @@ ServerEvents.tags("item", e => {
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
+    e.add("alexscaves:sweetish_fish", [
+        "alexscaves:sweetish_fish_blue",
+        "alexscaves:sweetish_fish_red",
+        "alexscaves:sweetish_fish_yellow",
+        "alexscaves:sweetish_fish_green",
+        "alexscaves:sweetish_fish_pink"
+    ])
+    e.add("alexscaves:ice_cream_scoop", [
+        "alexscaves:vanilla_ice_cream_scoop",
+        "alexscaves:chocolate_ice_cream_scoop",
+        "alexscaves:sweetberry_ice_cream_scoop"
+    ])
+    e.add("alexscaves:ice_cream", [
+        "alexscaves:vanilla_ice_cream",
+        "alexscaves:chocolate_ice_cream",
+        "alexscaves:sweetberry_ice_cream"
+    ])
     e.removeAll("alexscaves:restricted_biome_locators")
 })
 
