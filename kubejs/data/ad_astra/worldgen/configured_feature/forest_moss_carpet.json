@@ -22,10 +22,11 @@
             }
           },
           {
-            "type": "minecraft:block_predicate_filter",
+            "type": "block_predicate_filter",
             "predicate": {
               "type": "minecraft:matching_blocks",
-              "blocks": "minecraft:air"
+              "offset": [0, -1, 0],
+              "blocks": ["minecraft:gravel", "ad_astra:moon_stone"]
             }
           }
         ]

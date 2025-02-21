@@ -14,14 +14,6 @@
       {
         "type": "minecraft:heightmap",
         "heightmap": "WORLD_SURFACE"
-      },
-      {
-        "type": "block_predicate_filter",
-        "predicate": {
-          "type": "minecraft:matching_blocks",
-          "offset": [0, -1, 0],
-          "blocks": ["minecraft:gravel"]
-        }
       }
     ]
   }
