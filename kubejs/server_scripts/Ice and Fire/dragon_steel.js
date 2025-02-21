@@ -1,4 +1,9 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "iceandfire:dragonforge/dragonsteel_fire_ingot",
+        "iceandfire:dragonforge/dragonsteel_ice_ingot",
+        "iceandfire:dragonforge/dragonsteel_lightning_ingot"
+    ])
     const {createmetallurgy} = e.recipes
     metal_production_line_7(e, ["iceandfire:dragonsteel_fire_block", "iceandfire:dragonsteel_fire_ingot", "createdelight:molten_fire_steel"], "heated", 160)
     metal_production_line_7(e, ["iceandfire:dragonsteel_ice_block", "iceandfire:dragonsteel_ice_ingot", "createdelight:molten_ice_steel"], "heated", 160)
