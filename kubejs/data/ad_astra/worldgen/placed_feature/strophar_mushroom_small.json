@@ -14,15 +14,6 @@
       {
         "type": "minecraft:heightmap",
         "heightmap": "WORLD_SURFACE"
-      },
-      {
-        "type": "block_predicate_filter",
-        "predicate": {
-          "type": "minecraft:would_survive",
-          "state": {
-            "Name": "ad_astra:strophar_mushroom"
-          }
-        }
       }
     ]
   }
