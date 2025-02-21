@@ -13,6 +13,13 @@
 				"异寂空谷以恐怖的黑暗和诡谲的黑魔法为主题。这里的生物多为发生了异变的诡异生物，而这里的居民都是不欢迎外来者的邪教徒。此处被深邃的黑暗笼罩着，玩家在这里的视野会被缩短，同时光源放出的光也会变得更加微弱。往远处看，玩家只能看到一个个猩红的眼球。危险悄然潜伏于黑暗之中......"
 				"&4进入方法：使用&e泥胚&4搭建传送门框架，使用恶意碎片激活。"
 			]
+			icon: {
+				Count: 1
+				id: "citadel:icon_item"
+				tag: {
+					IconLocation: "alexscaves:textures/misc/advancement/icon/forlorn_hollows.png"
+				}
+			}
 			id: "0B95654E79A80C3D"
 			size: 2.0d
 			subtitle: "好臭......"

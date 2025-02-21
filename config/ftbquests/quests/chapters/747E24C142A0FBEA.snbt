@@ -401,6 +401,7 @@
 		}
 		{
 			id: "63412B7D4D837898"
+			subtitle: "恭喜你发现了隐藏物品，极小概率在渊海陷窟战利品箱中找到"
 			tasks: [{
 				id: "4781E3B23F4C9F5B"
 				item: "alexscaves:game_controller"
