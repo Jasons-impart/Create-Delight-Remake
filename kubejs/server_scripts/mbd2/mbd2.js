@@ -135,4 +135,18 @@ ServerEvents.recipes(e => {
         C: "create:brass_sheet"
     })
         .id("mbd2:energy_in")
+    
+    e.recipes.create.mechanical_crafting("mbd2:hydropower_amplifier", [
+        "AABAA",
+        "ACDCA",
+        "BDEDB",
+        "ACDCA",
+        "AABAA"
+    ], {
+        A: "createdelight:sky_steel_casing",
+        B: "ad_astra:fan",
+        C: "createdelight:forged_steel_sheet",
+        D: "ad_astra:engine_frame",
+        E: "createdelight:forged_steel_block"
+    })
 })
