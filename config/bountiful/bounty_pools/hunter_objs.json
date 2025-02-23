@@ -1,53 +1,5 @@
 {
     "content": {
-		"hunter_obj_zombie": {
-			"type": "entity",
-			"content": "minecraft:zombie",
-			"amount": {
-				"min": 1,
-				"max": 16
-			},
-			"unitWorth": 250
-		},
-		"hunter_obj_skeleton": {
-			"type": "entity",
-			"content": "minecraft:skeleton",
-			"amount": {
-				"min": 1,
-				"max": 16
-			},
-			"unitWorth": 250
-		},
-		"hunter_obj_creeper": {
-			"type": "entity",
-			"content": "minecraft:creeper",
-			"amount": {
-				"min": 1,
-				"max": 16
-			},
-			"unitWorth": 400,
-			"weightMult": 0.5
-		},
-		"hunter_obj_husk": {
-			"type": "entity",
-			"content": "minecraft:husk",
-			"amount": {
-				"min": 1,
-				"max": 16
-			},
-			"unitWorth": 400,
-			"weightMult": 0.75
-		},
-		"hunter_obj_stray": {
-			"type": "entity",
-			"content": "minecraft:stray",
-			"amount": {
-				"min": 1,
-				"max": 16
-			},
-			"unitWorth": 400,
-			"weightMult": 0.75
-		},
 		"hunter_obj_wither_skeleton": {
 			"type": "entity",
 			"content": "minecraft:wither_skeleton",
