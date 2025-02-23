@@ -167,6 +167,8 @@ StartupEvents.registry("creative_mode_tab", e => {
         .translationKey("itemGroup.createdelight.misc")
         .icon(() => Item.of("createdelight:fragment_of_border"))
         .content(() => [
+          // 构件
+          'createdelight:magnetic_mechanism',
           // 火箭核心
           'createdelight:first_stage_rocket_core',
           'createdelight:second_stage_rocket_core',
