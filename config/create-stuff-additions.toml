@@ -30,5 +30,5 @@
 	enableFanDroneModule = true
 	enableMagnetDroneModule = true
 	enableVaultDroneModule = true
-	MagnetModuleBlockLimitation = false
+	MagnetModuleBlockLimitation = true
 
