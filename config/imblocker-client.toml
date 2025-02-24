@@ -15,7 +15,7 @@ recoveredScreens = ["minecraft:net.minecraft.client.gui.screens.ChatScreen", "co
 useExperimental = true
 #Disable IME when typing commands
 checkCommandChat = true
-#Checking every tick is not efficient, how about check once every several tick?
+#Check once every several milliseconds
 #Range: > 1
-checkInterval = 2
+checkIntervalMilli = 100
 

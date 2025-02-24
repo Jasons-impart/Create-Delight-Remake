@@ -15,3 +15,12 @@ ServerEvents.tags("item", e => {
         'create_sa:copper_jetpack_chestplate',
     ])
 })
+
+ServerEvents.tags("fluid", e => {
+    e.add("craete_sa:fuel_fluid", 
+        "#forge:diesel",
+        "#forge:biodiesel",
+        "#forge:gasoline",
+        "createdelight:fuel_mixtures"
+    )
+})

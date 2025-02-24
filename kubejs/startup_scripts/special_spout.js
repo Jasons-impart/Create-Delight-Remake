@@ -58,58 +58,25 @@ function fillFuel(fluid, simulate, item) {
     return 0
 }
 CreateEvents.spoutHandler(e => {
-    let tankId = [
-        "create_sa:small_filling_tank",
-        "create_sa:medium_filling_tank",
-        "create_sa:large_filling_tank",
-        "create_sa:small_fueling_tank",
-        "create_sa:medium_fueling_tank",
-        "create_sa:large_fueling_tank"
-    ]
 
-    e.add(
-        "createdelight:depot_filling_tank_spout_interaction",
-        ["create:depot", "create:weighted_ejector"],
-        (block, fluid, simulate) => {
-            let inventory = block.getInventory()
-            if (inventory.isEmpty())
-                return 0
-            let item = inventory.getAllItems().get(0)
-            if (tankId.indexOf(item.id) != -1) {
-                item.getOrCreateTag()
-                if (item.nbt.isEmpty()) {
-                    item.nbt = { tagStock: 0 }
-                }
-                let nbt = item.nbt
-                for (let i = 0; i < 6; i++) {
-                    let fluidMultipler = getFuelMultipler(fluid)
-                    if (fluidMultipler == 0)
-                        return 0
-                    let maxAmount = 800 * Math.pow(2, i % 3)
-                    let fluidAmount = Math.min(maxAmount - nbt.tagStock, fluid.amount / 10 / fluidMultipler) * 10
-                    const { pos, level } = block
-                    const { x, y, z } = pos
-                    if (fluidAmount > 0 && nbt.tagStock <= maxAmount) {
-                        if (item.id == tankId[i] && ((i < 3 && fluid.id == "minecraft:water") || (i >= 3 && fluid.id != "minecraft:water"))) {
-                            if (!simulate) {
-                                level.server.runCommandSilent(`playsound create:spout block @a[x=${x},y=${y+2},z=${z},distance=..12] ${x} ${y+2} ${z}`)
-                                nbt.tagStock = nbt.tagStock + fluidAmount / 10
-                            }
-                            return fluidAmount * fluidMultipler
-                        }
-                    }
-                }
-            }
-            if (item.hasTag("create_sa:fillable") || item.hasTag("create_sa:fuelable")) {
-                item.getOrCreateTag()
-                if (item.hasTag("create_sa:fillable") && fluid.id == "minecraft:water")
-                    return fillWater(fluid, simulate, item)
-                if (item.hasTag("create_sa:fuelable") && fluid.id != "minecraft:water")
-                    return fillFuel(fluid, simulate, item)
-            }
-            return 0
-        }
-    )
+    // e.add(
+    //     "createdelight:depot_filling_tank_spout_interaction",
+    //     ["create:depot", "create:weighted_ejector"],
+    //     (block, fluid, simulate) => {
+    //         let inventory = block.getInventory()
+    //         if (inventory.isEmpty())
+    //             return 0
+    //         let item = inventory.getAllItems().get(0)
+    //         if (item.hasTag("create_sa:fillable") || item.hasTag("create_sa:fuelable")) {
+    //             item.getOrCreateTag()
+    //             if (item.hasTag("create_sa:fillable") && fluid.id == "minecraft:water")
+    //                 return fillWater(fluid, simulate, item)
+    //             if (item.hasTag("create_sa:fuelable") && fluid.id != "minecraft:water")
+    //                 return fillFuel(fluid, simulate, item)
+    //         }
+    //         return 0
+    //     }
+    // )
     e.add("createdelight:budding_certus_grow_spout_interaction",
         ["ae2:flawless_budding_quartz", "ae2:flawed_budding_quartz", "ae2:chipped_budding_quartz", "ae2:damaged_budding_quartz"],
         (block, fluid, simulate) => {

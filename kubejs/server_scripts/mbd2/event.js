@@ -1,4 +1,5 @@
-const $ContentModifier = Java.loadClass("com.lowdragmc.mbd2.api.recipe.content.ContentModifier")
+const $MBDMultiblockMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDMultiblockMachine")
+const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPartMachine")
 /**
  * 
  * @param {Internal.Level} level 
@@ -85,6 +86,7 @@ MBDMachineEvents.onRemoved("mbd2:reactor_rod", e => {
 })
 
 MBDMachineEvents.onBeforeRecipeModify("mbd2:centrifuge", e => {
+
     /**
      * @type {Internal.KineticBlockEntity}
      */
@@ -94,7 +96,7 @@ MBDMachineEvents.onBeforeRecipeModify("mbd2:centrifuge", e => {
     function linear(val, start, end) {
         return val * (end - start) + start
     }
-    let durationMultipler = li446near(be.speed / 256, 4, 1)
+    let durationMultipler = linear(be.speed / 256, 4, 1)
     let count = item.getCount()
     if (count >= 16 && count <= item.getMaxStackSize()) {
         durationMultipler *= linear((count - 16)/(item.getMaxStackSize() - 16), 1, 2)
@@ -102,5 +104,4 @@ MBDMachineEvents.onBeforeRecipeModify("mbd2:centrifuge", e => {
     let oldRecipe = e.event.recipe.copy()
     oldRecipe.duration *= durationMultipler
     e.event.setRecipe(oldRecipe)
-    console.log(`recipe_modified. itemcount:${count}, durationMultipler:${1 / durationMultipler}`)
 })
