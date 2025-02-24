@@ -1,22 +1,5 @@
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
-        'create_sa:brass_exoskeleton_chestplate',
-        'create_sa:andesite_exoskeleton_chestplate',
-        'create_sa:copper_exoskeleton_chestplate',
-        'create_sa:grapplin_whisk',
-        'create_sa:portable_drill',
-        'create_sa:flamethrower',
-        'create_sa:block_picker',
-        'create_sa:creative_filling_tank',
-        'create_sa:copper_magnet',
-        'create_sa:slime_helmet',
-        'create_sa:slime_boots',
-        'create_sa:small_filling_tank',
-        'create_sa:medium_filling_tank',
-        'create_sa:large_filling_tank',
-        'create_sa:small_fueling_tank',
-        'create_sa:medium_fueling_tank',
-        'create_sa:large_fueling_tank',
         'dreadsteel:kit_default',
         'dreadsteel:kit_white',
         'dreadsteel:kit_black',
@@ -47,45 +30,33 @@ ItemEvents.tooltip(e => {
     clearAddCtrlTooltip(e, [
         
     ])
-    clearAddShiftCtrlTooltip(e, [
-        'create_sa:brass_jetpack_chestplate',
-        'create_sa:andesite_jetpack_chestplate',
-        'create_sa:copper_jetpack_chestplate',
-    ])
-    addFuelAndWater(e, [
-        'create_sa:brass_jetpack_chestplate',
-        'create_sa:brass_exoskeleton_chestplate',
-        'create_sa:portable_drill',
-    ])
-    addFuel(e, [
-        'create_sa:andesite_jetpack_chestplate',
-        'create_sa:andesite_exoskeleton_chestplate',
-        'create_sa:grapplin_whisk',
-        'create_sa:flamethrower',
-    ])
-    addWater(e, [
-        'create_sa:copper_jetpack_chestplate',
-        'create_sa:copper_exoskeleton_chestplate',
-        'create_sa:block_picker',
-    ])
-    addStock1(e, [
-        'create_sa:small_filling_tank',
-        'create_sa:small_fueling_tank',
-    ])
-    addStock2(e, [
-        'create_sa:medium_filling_tank',
-        'create_sa:medium_fueling_tank',
-    ])
-    addStock3(e, [
-        'create_sa:large_filling_tank',
-        'create_sa:large_fueling_tank',
-    ])
-    addAir(e, [
-        'create:netherite_backtank',
-        'create:copper_backtank',
-        'create_jetpack:jetpack',
-        'create_jetpack:netherite_jetpack',
-    ])
+    // clearAddShiftCtrlTooltip(e, [
+    //     'create_sa:brass_jetpack_chestplate',
+    //     'create_sa:andesite_jetpack_chestplate',
+    //     'create_sa:copper_jetpack_chestplate',
+    // ])
+    // addFuelAndWater(e, [
+    //     'create_sa:brass_jetpack_chestplate',
+    //     'create_sa:brass_exoskeleton_chestplate',
+    //     'create_sa:portable_drill',
+    // ])
+    // addFuel(e, [
+    //     'create_sa:andesite_jetpack_chestplate',
+    //     'create_sa:andesite_exoskeleton_chestplate',
+    //     'create_sa:grapplin_whisk',
+    //     'create_sa:flamethrower',
+    // ])
+    // addWater(e, [
+    //     'create_sa:copper_jetpack_chestplate',
+    //     'create_sa:copper_exoskeleton_chestplate',
+    //     'create_sa:block_picker',
+    // ])
+    // addAir(e, [
+    //     'create:netherite_backtank',
+    //     'create:copper_backtank',
+    //     'create_jetpack:jetpack',
+    //     'create_jetpack:netherite_jetpack',
+    // ])
 })
 let tooltips = [
     ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],

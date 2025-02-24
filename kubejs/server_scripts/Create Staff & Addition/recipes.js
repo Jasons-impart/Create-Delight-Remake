@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
         "create_sa:experience_axe_recipe",
         "create_sa:experience_sword_recipe",
         "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
-        "create_sa:zinc_handle_recipe"
+        "create_sa:zinc_handle_recipe",
+        "create_sa:block_picker_recipe"
     ])
     remove_recipes_output(e, [
         "create_sa:brass_cube",
