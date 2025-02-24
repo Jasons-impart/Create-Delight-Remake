@@ -214,4 +214,15 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:ferrouslime", 90),
         'alexscaves:ferrouslime_ball'
     ).heated().id("createdelight:mixing/ferrouslime")
+    //磁悬浮组件
+    let iner_6 = "createdelight:incomplete_magnetic_mechanism"
+    e.recipes.create.sequenced_assembly('createdelight:magnetic_mechanism', 'vintageimprovements:vanadium_sheet', [
+            e.recipes.create.filling(iner_6, [iner_6, Fluid.of("createdelight:ferrouslime", 90)]),
+            e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:scarlet_neodymium_ingot"]),
+            e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:azure_neodymium_ingot"]),
+            e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:tesla_bulb"])
+    ])
+        .loops(1)
+        .transitionalItem(iner_6)
+        .id("alexscaves:magnetic_mechanism")
 })

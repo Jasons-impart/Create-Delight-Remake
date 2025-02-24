@@ -484,7 +484,12 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:planet_gear")
         .translationKey("item.createdelight.planet_gear")
         .rarity("uncommon")
-
+    // 磁悬浮构件
+    e.create("createdelight:magnetic_mechanism")
+        .rarity("uncommon")
+        .translationKey("item.createdelight.magnetic_mechanism")
+    e.create("createdelight:incomplete_magnetic_mechanism", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_magnetic_mechanism")
     // 矿石注册
     let clusters = [
         ["overworld_metal", "common"],

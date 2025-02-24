@@ -1,0 +1,22 @@
+{
+    "trigger": {
+          "type": "tetra:apply_hit_effects"
+        },
+        "effect": "createdelight:frozen",
+        "outcome":{
+        "type": "tetra:multiple",
+        "outcomes": [{
+            "type": "tetra:apply_effect",
+            "effect": "minecraft:slowness",
+            "entity": "target",
+            "duration": 100,
+            "amplifier": 2
+        },
+        {
+            "type": "tetra:apply_effect",
+            "effect": "minecraft:weakness",
+            "entity": "target",
+            "duration": 100,
+            "amplifier": 2
+        }]}
+    }
