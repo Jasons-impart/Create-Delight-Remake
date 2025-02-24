@@ -152,3 +152,10 @@
 	# Valid values: true, false
 	dispenseWater = true
 
+# Recipe related properties
+[recipes]
+	# If enabled, the Frying Pan and Grill will inherit all the cooking recipes from the
+	# vanilla Campfire.
+	# Valid values: true, false
+	inheritCampfireRecipes = true
+
