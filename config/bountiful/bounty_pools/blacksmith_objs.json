@@ -11,7 +11,7 @@
         },
         "blacksmith_raw_tin": {
             "type": "item",
-            "content": "minecraft:raw_tin",
+            "content": "createdelight:raw_tin",
             "amount": {
                 "min": 1,
                 "max": 32
@@ -31,7 +31,7 @@
         },
         "blacksmith_raw_tin_uncommon": {
             "type": "item",
-            "content": "minecraft:raw_tin",
+            "content": "createdelight:raw_tin",
             "rarity": "UNCOMMON",
             "weightMult": 0.5,
             "amount": {
