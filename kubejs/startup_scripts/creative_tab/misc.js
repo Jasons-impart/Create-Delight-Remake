@@ -75,7 +75,8 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "expatternprovider:assembler_matrix_wall",
     "expatternprovider:assembler_matrix_pattern",
     "expatternprovider:assembler_matrix_crafter",
-    "expatternprovider:assembler_matrix_speed"
+    "expatternprovider:assembler_matrix_speed",
+    'expatternprovider:assembler_matrix_glass',
   ])
 })
 
