@@ -71,10 +71,6 @@ StartupEvents.modifyCreativeTab("create:base", e => {
   // create_sa
   StartupEvents.modifyCreativeTab("create_sa:create_stuff_additions_tab", e => {
     e.remove([
-      'create_sa:brass_drone_item',
-      'create_sa:drone_controller',
-      'create_sa:fan_component',
-      'create_sa:vault_component',
       'create_sa:blazing_pickaxe',
       'create_sa:blazing_shovel',
       'create_sa:blazing_axe',
