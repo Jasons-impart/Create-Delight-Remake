@@ -2,6 +2,7 @@
 !/.gitignore
 !/.github
 !/config
+!/donate_list.json
 !/defaultconfigs
 !/kubejs
 !/mods
