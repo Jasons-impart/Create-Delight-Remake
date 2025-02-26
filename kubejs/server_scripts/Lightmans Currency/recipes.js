@@ -8,7 +8,9 @@ ServerEvents.recipes(e => {
         "lightmanscurrency:wallet_gold",
         "lightmanscurrency:wallet_emerald",
         "lightmanscurrency:wallet_diamond",
-        "lightmanscurrency:wallet_netherite"
+        "lightmanscurrency:wallet_netherite",
+        "lctech:battery",
+        "lctech:battery_large"
     ])
     remove_recipes_id(e, [
         "lightmanscurrency:coinmint",
@@ -43,4 +45,10 @@ ServerEvents.recipes(e => {
         "lightmanscurrency:wallet/wallet_nether_star",
         "lightmanscurrency:wallet/upgrade_wallet_copper_to_wallet_nether_star"
     ])
+    e.replaceInput([
+        {id: "lightmanscurrency:item_trader_interface"},
+        {id: "lctech:fluid_trader_interface"},
+        {id: "lctech:energy_trader_interface"}
+    ], "minecraft:iron_ingot", "createutilities:void_steel_ingot")
+    e.replaceInput({}, "lctech:battery", "createaddition:modular_accumulator")
 })
