@@ -398,7 +398,7 @@
 			dependencies: ["73A7209A4AF710F8"]
 			hide_dependency_lines: true
 			id: "4905CB8A4C6492C0"
-			subtitle: "火龙会在火星上生成"
+			subtitle: "火龙会在火星上生成，不过火星上只有地表龙"
 			tasks: [{
 				id: "0F6DACC79F280CD2"
 				item: "iceandfire:fire_dragon_blood"
@@ -541,7 +541,7 @@
 			dependencies: ["6D431DA73BB7D209"]
 			hide_dependency_lines: true
 			id: "64C8D6A690AB8AC0"
-			subtitle: "电龙会在金星上生成"
+			subtitle: "电龙会在金星上生成，地表和地底都会有"
 			tasks: [{
 				id: "551430ED380415BE"
 				item: "iceandfire:lightning_dragon_blood"
@@ -1130,7 +1130,7 @@
 			dependencies: ["73A7209A4AF710F8"]
 			hide_dependency_lines: true
 			id: "01A002D240B8DF64"
-			subtitle: "火龙会在火星上生成"
+			subtitle: "在金星会生成地下的火龙巢"
 			tasks: [{
 				id: "716EDC4071098967"
 				item: "iceandfire:fire_dragon_blood"
@@ -1142,6 +1142,7 @@
 		{
 			dependencies: ["0EF849425CE2BC23"]
 			id: "036F26ACC5571523"
+			subtitle: "{ \"text\": \"点此进入应用能源章节\", \"underlined\": \"true\",\"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7AF08EA4FB3D9A15\" } }"
 			tasks: [
 				{
 					id: "4BF701DCD27E1160"
@@ -1238,6 +1239,7 @@
 			dependencies: ["7317362ABAA2113E"]
 			hide_until_deps_visible: true
 			id: "0F620AFF09E036D9"
+			subtitle: "火龙会在地表和地下生成"
 			tasks: [{
 				entity: "iceandfire:fire_dragon"
 				icon: "iceandfire:fire_dragon_heart"
@@ -1313,6 +1315,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "冰龙会在地表和地下生成"
 			tasks: [{
 				entity: "iceandfire:ice_dragon"
 				icon: "iceandfire:ice_dragon_heart"
@@ -1334,6 +1337,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_beast"
 				icon: "iceandfire:spawn_egg_dread_beast"
@@ -1354,6 +1358,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_ghoul"
 				icon: "iceandfire:spawn_egg_dread_ghoul"
@@ -1374,6 +1379,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_horse"
 				icon: "iceandfire:spawn_egg_dread_horse"
@@ -1382,8 +1388,8 @@
 				value: 1L
 			}]
 			title: "奇幻生物：悚怖尸骑战马"
-			x: 22.5d
-			y: 0.0d
+			x: 21.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
@@ -1394,6 +1400,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_knight"
 				icon: "iceandfire:spawn_egg_dread_knight"
@@ -1414,6 +1421,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_lich"
 				icon: "iceandfire:spawn_egg_lich"
@@ -1422,8 +1430,8 @@
 				value: 1L
 			}]
 			title: "奇幻生物：悚怖尸巫"
-			x: 21.0d
-			y: 1.5d
+			x: 22.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0F5E110E8E1F3CDD"]
@@ -1434,6 +1442,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "悚怖生物只会于悚陵中生成"
 			tasks: [{
 				entity: "iceandfire:dread_scuttler"
 				icon: "iceandfire:spawn_egg_dread_scuttler"
@@ -1562,6 +1571,17 @@
 			}]
 			x: 8.5d
 			y: 3.0d
+		}
+		{
+			dependencies: ["5E48823AD99E93CC"]
+			id: "69B062EC75FF9471"
+			tasks: [{
+				id: "6177CB1FD53F98C9"
+				item: "iceandfire:dread_key"
+				type: "item"
+			}]
+			x: 24.0d
+			y: 0.0d
 		}
 	]
 	title: "&e群星之旅！"

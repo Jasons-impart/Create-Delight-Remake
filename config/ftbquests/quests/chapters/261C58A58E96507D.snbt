@@ -787,6 +787,7 @@
 		}
 		{
 			dependencies: ["78F0F6D3D2A93E3F"]
+			description: ["右键可查看&e当前区块&r是否拥有原油。本包的原油是无限的，所以只会显示\"探测到大量原油\"。"]
 			hide_until_deps_visible: true
 			id: "1AE450CBC3C7EBFE"
 			size: 1.5d
@@ -1210,6 +1211,7 @@
 			id: "6C17235C107747E6"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "由煤炭/木炭烧制而成"
 			tasks: [{
 				id: "5F2A5E3601CDD204"
 				item: "createmetallurgy:coke"
@@ -1798,6 +1800,20 @@
 				type: "item"
 			}]
 			x: 5.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["78F0F6D3D2A93E3F"]
+			description: ["{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"]
+			id: "6C34D84E6184954A"
+			size: 1.5d
+			subtitle: "矿物再生途径"
+			tasks: [{
+				id: "62B4478491536428"
+				item: "createoreexcavation:drilling_machine"
+				type: "item"
+			}]
+			x: 7.5d
 			y: 3.5d
 		}
 	]
