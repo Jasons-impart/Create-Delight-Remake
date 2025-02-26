@@ -13,7 +13,14 @@
 			subtitle: "要致富先撸树"
 			tasks: [{
 				id: "58B487784A6E8673"
-				item: "minecraft:oak_log"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+				title: "木头"
 				type: "item"
 			}]
 			x: 0.0d
@@ -96,23 +103,12 @@
 			dependencies: ["1E3EFD702068AAB3"]
 			id: "29612F7DE666ABE0"
 			tasks: [{
-				id: "5BBE4A2DDD6EAD7B"
-				item: {
-					Count: 1
-					id: "tetra:modular_double"
-					tag: {
-						Damage: 0
-						"double/basic_hammer_left_material": "basic_hammer/oak"
-						"double/basic_hammer_right_material": "basic_hammer/oak"
-						"double/basic_handle_material": "basic_handle/stick"
-						"double/handle": "double/basic_handle"
-						"double/head_left": "double/basic_hammer_left"
-						"double/head_right": "double/basic_hammer_right"
-						id: "69afb399-3059-4adc-a311-f0d3c31f6d7c"
-					}
-				}
-				type: "item"
+				advancement: "tetra:upgrades/root"
+				criterion: ""
+				id: "14C662B9622BABB7"
+				type: "advancement"
 			}]
+			title: "制作一把锤子"
 			x: 2.0d
 			y: -1.5d
 		}
@@ -121,9 +117,10 @@
 			id: "28F46DBD52786B23"
 			subtitle: "详见辉煌往昔章节"
 			tasks: [{
-				id: "594FA9C191482501"
-				item: "tetra:basic_workbench"
-				type: "item"
+				advancement: "tetra:upgrades/workbench"
+				criterion: ""
+				id: "66D64EB6E37A2E7F"
+				type: "advancement"
 			}]
 			x: 2.0d
 			y: -3.0d
@@ -271,13 +268,32 @@
 		}
 		{
 			dependencies: ["1E3EFD702068AAB3"]
+			description: ["{ \"text\": \"点此进入应用能源章节\", \"underlined\": \"true\",\"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7AF08EA4FB3D9A15\" } }"]
 			id: "64A2D69617806E74"
+			min_required_tasks: 1
 			subtitle: "详见应用能源2"
-			tasks: [{
-				id: "550030C4CFDEA385"
-				item: "ae2:certus_quartz_crystal"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "550030C4CFDEA385"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
+				{
+					id: "02DB8709B4931C5A"
+					item: "ae2:sky_stone_block"
+					type: "item"
+				}
+				{
+					icon: "ae2:sky_stone_block"
+					id: "48474BEFE8366716"
+					observe_type: 0
+					timer: 0L
+					title: "看到陨石"
+					to_observe: "ae2:sky_stone_block"
+					type: "observation"
+				}
+			]
+			title: "应用能源2"
 			x: 2.0d
 			y: 3.5d
 		}
