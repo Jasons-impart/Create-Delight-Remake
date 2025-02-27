@@ -30,6 +30,7 @@
 				item: "createoreexcavation:drill"
 				type: "item"
 			}]
+			subtitle: "挖掘矿簇"
 			tasks: [{
 				id: "06BEEC5B7EA482E4"
 				item: "createoreexcavation:drilling_machine"
@@ -41,7 +42,6 @@
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
-			description: [""]
 			id: "7DC98E34AECFBB5C"
 			subtitle: "使用探矿仪来寻找矿物痕迹"
 			tasks: [{
@@ -54,10 +54,16 @@
 			y: -2.0d
 		}
 		{
+			description: [
+				"本包对该mod进行了一些优化："
+				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
+				"2.将单独的矿脉整合为某类型的矿簇，玩家不再需要再找很多的矿脉。"
+			]
 			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "本包对这个mod进行了一些优化"
 			tasks: [{
 				id: "1D7AB28B86CF3039"
 				title: "矿物再生科技！"
