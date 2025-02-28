@@ -83,11 +83,12 @@
     "block.mbd2.butchery_room": "屠宰室核心",
     "block.mbd2.create_in": "应力输入接口",
     "block.mbd2.energy_in": "能量输入口",
-    "block.mbd2.hydropower_station": "大坝核心",
     "block.mbd2.reactor": "核反应堆",
     "block.mbd2.reactor_rod": "核反应棒",
     "block.mbd2.reactor_vent": "核反应堆输出口",
+    "block.mbd2.hydropower_station": "大坝核心",
     "block.mbd2.hydropower_station_fan": "大坝扇叶",
+    "block.mbd2.hydropower_amplifier": "大坝增幅器",
     "block.mbd2.monster_liquid": "怪物压缩核心",
     "block.createdelight.coil":"线圈",
 
