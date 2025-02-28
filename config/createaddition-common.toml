@@ -5,7 +5,7 @@
 [general]
 	#Forge Energy conversion rate (in FE/t at 256 RPM, value is the FE/t generated and consumed is at 256rpm).
 	#Range: > 0
-	fe_at_max_rpm = 3333
+	fe_at_max_rpm = 640
 	#Max stress for the Alternator and Electric Motor (in SU at 256 RPM).
 	#Range: > 0
 	max_stress = 8192
@@ -86,7 +86,7 @@
 	accumulator_max_output = 500000
 	#Accumulator internal capacity per block in FE.
 	#Range: > 0
-	accumulator_capacity = 10000000
+	accumulator_capacity = 2000000
 	#Accumulator max multiblock height.
 	#Range: 1 ~ 8
 	accumulator_max_height = 8
