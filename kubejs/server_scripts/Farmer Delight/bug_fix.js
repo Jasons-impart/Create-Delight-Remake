@@ -16,14 +16,6 @@ ServerEvents.recipes(e => {
         ]
     ).id("create:filling/compat/farmersdelight/milk_bottle")
 })
-
-LootJS.modifiers(e => {
-    e.addLootTableModifier("minecraft:chests/village/village_plains_house")
-        .replaceLoot("festival_delicacies:rice", "farmersdelight:rice")
-    e.addLootTableModifier("minecraft:chests/village/village_taiga_house")
-        .replaceLoot("festival_delicacies:rice", "farmersdelight:rice")
-})
-
 ServerEvents.compostableRecipes(e => {
     let compostables = [
        ['createdelight:adzuki_beans_seed', 0.3],

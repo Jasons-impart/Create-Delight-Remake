@@ -235,6 +235,7 @@
 				"7D7F82D2E50E2CDF"
 				"3D02EA3A30EE1933"
 			]
+			description: ["注意：特斯拉线圈并不能作为&e序列组装&r中&e充能&r的执行机器。"]
 			hide_until_deps_complete: true
 			id: "5CAD93F8620EA320"
 			subtitle: "特斯拉球！从此不再输入应力！"

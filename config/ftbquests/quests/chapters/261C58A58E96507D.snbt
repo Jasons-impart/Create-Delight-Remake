@@ -1389,6 +1389,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "使用钢和末影粉制作"
 			tasks: [{
 				id: "5FB26A6FB3BA9B85"
 				item: "createutilities:void_steel_ingot"
