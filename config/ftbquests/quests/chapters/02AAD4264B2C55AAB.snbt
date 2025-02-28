@@ -64,7 +64,6 @@
 		}
 		{
 			dependencies: ["73F6088E76969E13"]
-			description: [""]
 			id: "38CD78E43A6497DC"
 			subtitle: "在沉船或水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
 			tasks: [{
@@ -87,7 +86,6 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "双头沃布里钢锤为七级锤"
 			tasks: [{
 				id: "36BD3E1BEBBF6A21"
 				item: "art_of_forging:vobrivium_ingot"
@@ -1408,7 +1406,7 @@
 			id: "73F6088E76969E13"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "双头锻造钢锤为七级锤，但是你需要先使用完全打磨的下界合金锤或镶嵌下界之星的下界合金锤才能打造锻造钢锤"
+			subtitle: "使用陨石废液，金属碎片，下界合金制作"
 			tasks: [{
 				id: "2A51FC7AAB387CD5"
 				item: "art_of_forging:forged_steel_ingot"
