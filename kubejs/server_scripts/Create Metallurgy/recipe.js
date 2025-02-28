@@ -1,5 +1,7 @@
 ServerEvents.recipes(e => {
-    const {createmetallurgy, create} = e.recipes
+    const {createmetallurgy, create, minecraft} = e.recipes
+    minecraft.stonecutting("createmetallurgy:graphite_rod_mold", "createmetallurgy:graphite_blank_mold")
+    .id("createmetallurgy:graphite_rod_mold_stonecutting")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
