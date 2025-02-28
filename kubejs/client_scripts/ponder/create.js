@@ -1,3 +1,4 @@
+// todo: 做汉化键
 Ponder.registry((event) => {
   // 序列装配
   event
