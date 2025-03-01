@@ -722,6 +722,7 @@
 				"1.你对于整合包探索的越深，击杀的怪物越多，难度就会越高。"
 				"2.当你击杀了一定数量的怪物或者进入新的维度，难度就会提升。具体的数值请在右侧查看。"
 				"3.以及每次死亡后难度都会下降一定的百分比，且死亡时难度越高百分比越低。"
+				"另外需要注意的一点：&e目前同一ftb队伍下的玩家除了死亡，难度是同升降的。&r"
 				"&etips:如果要查看难度可以使用/improvedmob指令"
 			]
 			icon: "art_of_forging:shards_of_malice"
@@ -730,8 +731,11 @@
 			size: 2.0d
 			subtitle: "{ \"text\": \"难度索引\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1D6981F32D6C7E04\" } }"
 			tasks: [{
-				id: "3771E3B5CEC979A2"
-				type: "checkmark"
+				id: "164F48ADC20B7193"
+				stat: "minecraft:mob_kills"
+				title: "击杀一个生物"
+				type: "stat"
+				value: 1
 			}]
 			title: "难度系统"
 			x: 5.0d
