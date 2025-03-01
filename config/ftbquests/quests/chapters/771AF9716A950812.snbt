@@ -193,9 +193,8 @@
 			icon: "createdieselgenerators:diesel_engine"
 			id: "20B3ECF56011C11A"
 			rewards: [{
-				count: 4
-				id: "28462675C443A1BC"
-				item: "create_confectionery:caramelized_marshmellow_on_a_stick"
+				id: "70152393AC9F25F1"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			shape: "hexagon"
@@ -650,6 +649,15 @@
 				{
 					id: "3F7CCFB5CF2E6287"
 					item: "lightmanscurrency:portable_gem_terminal"
+					type: "item"
+				}
+				{
+					id: "0B7813944165E392"
+					item: {
+						Count: 1
+						id: "lightmanscurrency:wallet_leather"
+						tag: { }
+					}
 					type: "item"
 				}
 			]

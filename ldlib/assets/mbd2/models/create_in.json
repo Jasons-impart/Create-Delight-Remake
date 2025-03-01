@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"0": "mbd2:block/andesite_casing",
-		"1": "mbd2:block/gearbox",
-		"particle": "mbd2:block/andesite_casing"
+		"0": "create:block/andesite_casing",
+		"1": "create:block/gearbox",
+		"particle": "create:block/andesite_casing"
 	},
 	"elements": [
 		{
@@ -69,7 +69,7 @@
 			"scale": [0.25, 0.25, 0.25]
 		},
 		"gui": {
-			"rotation": [30, 135, 0],
+			"rotation": [30, 225, 0],
 			"scale": [0.625, 0.625, 0.625]
 		},
 		"fixed": {
