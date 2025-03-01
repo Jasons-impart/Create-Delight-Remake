@@ -30,3 +30,19 @@
 - 当前会生成相对于最近一个git tag的补丁包
 - 由于简单的覆盖无法处理删除文件的情况，并不能保证补丁能100%正常运作。暂时没有写bat以支持删除对应文件的计划。
 - 对于mods文件夹下的改动，因为涉及到mod本体，不会包含在补丁包中，取而代之的是一个mod变化列表文件，放在补丁包根目录。
+
+# 关于整合包已有的优化模组（供新增时参考）
+- Embeddium
+  - 渲染优化 https://www.mcmod.cn/class/12028.html
+- Sodium/Embeddium Extras
+  - 渲染优化 https://www.mcmod.cn/class/5312.html
+- CullLessLeaves Reforged
+  - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
+- Flerovium
+  - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
+- ServerCore
+  - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
+- Placebo
+  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
+- FerriteCore
+  - 内存占用优化 https://www.mcmod.cn/class/3888.html
