@@ -150,5 +150,14 @@ ServerEvents.tags("block", e => {
         "neapolitan:mint",
         "neapolitan:vanilla_vine"
     ])
-
+    e.add("sereneseasons:greenhouse_glass", 
+        "crystal_clear:andesite_clear_glass_casing",
+        "crystal_clear:andesite_glass_casing",
+        "crystal_clear:copper_clear_glass_casing",
+        "crystal_clear:copper_glass_casing",
+        "crystal_clear:brass_clear_glass_casing",
+        "crystal_clear:brass_glass_casing",
+        "crystal_clear:train_clear_glass_casing",
+        "crystal_clear:train_glass_casing"
+    )
 })
