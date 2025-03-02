@@ -69,43 +69,43 @@ ServerEvents.recipes(e => {
         .id("mbd2:mechanical_crafting/hydropower_station_fan")
 
     //核反应堆
-    e.recipes.kubejs.shaped("mbd2:reactor_vent", [
-        "AAA",
-        "BAB",
-        "BCB"
-    ], {
-        A: "alexscaves:polymer_plate",
-        B: "create_new_age:reactor_casing",
-        C: "createaddition:modular_accumulator"
-    })
-        .id("mbd2:reactor_vent")
+    // e.recipes.kubejs.shaped("mbd2:reactor_vent", [
+    //     "AAA",
+    //     "BAB",
+    //     "BCB"
+    // ], {
+    //     A: "alexscaves:polymer_plate",
+    //     B: "create_new_age:reactor_casing",
+    //     C: "createaddition:modular_accumulator"
+    // })
+    //     .id("mbd2:reactor_vent")
 
-    e.recipes.create.mechanical_crafting("mbd2:reactor", [
-        "AAAAA",
-        "ABCBA",
-        "ACDCA",
-        "ABCBA",
-        "AAAAA"
-    ], {
-        A: "create_new_age:reactor_casing",
-        B: "alexscaves:polymer_plate",
-        C: "vintageimprovements:uranium_sheet",
-        D: "mbd2:reactor_rod"
-    })
-        .id("mbd2:mechanical_crafting/reactor")
+    // e.recipes.create.mechanical_crafting("mbd2:reactor", [
+    //     "AAAAA",
+    //     "ABCBA",
+    //     "ACDCA",
+    //     "ABCBA",
+    //     "AAAAA"
+    // ], {
+    //     A: "create_new_age:reactor_casing",
+    //     B: "alexscaves:polymer_plate",
+    //     C: "vintageimprovements:uranium_sheet",
+    //     D: "mbd2:reactor_rod"
+    // })
+    //     .id("mbd2:mechanical_crafting/reactor")
 
-    e.recipes.create.mechanical_crafting("mbd2:reactor_rod", [
-        "ABBBA",
-        " CDC ",
-        " CDC ",
-        "ABBBA"
-    ], {
-        A: "create_new_age:reactor_casing",
-        B: "alexscaves:polymer_plate",
-        C: "create_new_age:reactor_glass",
-        D: "alexscaves:uranium_rod"
-    })
-        .id("mbd2:mechanical_crafting/reactor_rod")
+    // e.recipes.create.mechanical_crafting("mbd2:reactor_rod", [
+    //     "ABBBA",
+    //     " CDC ",
+    //     " CDC ",
+    //     "ABBBA"
+    // ], {
+    //     A: "create_new_age:reactor_casing",
+    //     B: "alexscaves:polymer_plate",
+    //     C: "create_new_age:reactor_glass",
+    //     D: "alexscaves:uranium_rod"
+    // })
+    //     .id("mbd2:mechanical_crafting/reactor_rod")
 
     //合金电炉
     e.recipes.create.mechanical_crafting("mbd2:alloy_electric_furnace", [
