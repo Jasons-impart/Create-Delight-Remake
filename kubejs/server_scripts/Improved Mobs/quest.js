@@ -17,7 +17,7 @@ function UpdateRank(player, value) {
 }
 /**
  * 
- * @param {Internal.ServerPlayer} player 
+ * @param {Internal.ServerPlayer} player
  * @returns {number}
  */
 function GetPlayerDifficulty(player) {
@@ -40,7 +40,7 @@ FTBQuestsEvents.customReward(e => {
             else
                 e.player.persistentData.putBoolean("disableRankChange", !disableRankChange)
             if (disableRankChange)
-                e.player.tell("以关闭难度变化！")
+                e.player.tell("已关闭难度变化！")
             else
                 e.player.tell("已开启难度变化！")
         }
