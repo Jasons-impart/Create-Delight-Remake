@@ -1,0 +1,7 @@
+{
+    "name": "create_armorer.gun.sniper_semi_clockwork",
+    "display": "create_armorer:sniper_semi_clockwork_display",
+    "data": "create_armorer:sniper_semi_clockwork_data",
+    "type": "sniper",
+    "sort": 350
+}

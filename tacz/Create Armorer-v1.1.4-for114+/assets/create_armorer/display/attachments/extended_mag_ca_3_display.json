@@ -1,0 +1,7 @@
+{
+  "slot": "create_armorer:attachment/slot/extended_mag_ca_3",
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_big",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

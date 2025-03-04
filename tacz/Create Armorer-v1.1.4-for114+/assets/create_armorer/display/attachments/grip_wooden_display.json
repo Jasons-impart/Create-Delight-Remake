@@ -1,0 +1,9 @@
+{
+  "slot": "create_armorer:attachment/slot/grip_wooden",
+  "model": "create_armorer:attachment/grip_wooden",
+  "texture": "create_armorer:attachment/uv/grip_wooden",
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

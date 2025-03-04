@@ -1,0 +1,7 @@
+{
+    "name": "create_armorer.gun.rifle_assult_crane",
+    "display": "create_armorer:rifle_assult_crane_display",
+    "data": "create_armorer:rifle_assult_crane_data",
+    "type": "rifle",
+    "sort": 350
+}

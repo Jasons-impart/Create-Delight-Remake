@@ -1,0 +1,8 @@
+{
+    "name": "create_armorer.gun.mg_platemag_flywheel",
+    "display": "create_armorer:mg_platemag_flywheel_display",
+    "data": "create_armorer:mg_platemag_flywheel_data",
+    "tooltip": "create_armorer.tooltip.mg_platemag_flywheel",
+    "type": "mg",
+    "sort": 350
+}

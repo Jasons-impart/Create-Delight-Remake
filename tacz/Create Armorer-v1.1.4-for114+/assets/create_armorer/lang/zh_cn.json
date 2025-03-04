@@ -1,0 +1,55 @@
+{
+  "pack.create_armorer.name": "机动军械师",
+  "pack.create_armorer.desc": "基于[机械动力]二创的一系列武器",
+
+  "create_armorer.gun.pistol_revolver_torque": "\"扭矩\" 转轮手枪",
+  "create_armorer.gun.shotgun_pump_bearing": "\"轴承\" 泵动式霰弹枪",
+  "create_armorer.gun.shotgun_db_stone": "\"磐石\" 双管霰弹枪",
+  "create_armorer.gun.smg_auto_crank": "\"曲柄\" 冲锋枪",
+  "create_armorer.gun.pistol_auto_stress": "\"应力\" 自动手枪",
+  "create_armorer.gun.mg_platemag_flywheel": "\"飞轮\" 通用机枪",
+  "create_armorer.gun.rifle_assult_crane": "\"起重机\" 突击步枪",
+  "create_armorer.gun.sniper_semi_clockwork": "\"发条\" 狙击步枪",
+  "create_armorer.gun.special_melee_wrench": "扳手",
+  "create_armorer.gun.special_melee_atomic": "原子分解机",
+  "create_armorer.gun.mg_gatling_metal_storm": "\"金属风暴\" 转管机枪",
+
+  "create_armorer.attachment.scope_telephoto.name": "长焦镜头",
+  "create_armorer.attachment.sight_standard.name": "标准镜头",
+  "create_armorer.attachment.sight_medium_distance.name": "中距镜头",
+  "create_armorer.attachment.sight_reflex.name": "反射式瞄准镜",
+  "create_armorer.attachment.muzzle_refit_brass_retractor.name": "\"轴承\"改装：黄铜收束器",
+  "create_armorer.attachment.muzzle_refit_iron_spike.name": "扳手改装：铁制攻击头",
+  "create_armorer.attachment.muzzle_refit_energy_blade.name": "原子分解机改装：能量刀刃",
+  "create_armorer.attachment.muzzle_refit_lava_perfusion_bottle.name": "\"起重机\"改装：岩浆灌注瓶",
+  "create_armorer.attachment.muzzle_refit_bigger_cylinder.name": "\"飞轮\"改装：大号气缸",
+  "create_armorer.attachment.extended_mag_ca_1.name": "安山合金弹匣",
+  "create_armorer.attachment.extended_mag_ca_2.name": "§9铜制弹匣",
+  "create_armorer.attachment.extended_mag_ca_3.name": "§5黄铜弹匣",
+  "create_armorer.attachment.grip_gantry_shaft.name": "起重机杆握把",
+  "create_armorer.attachment.grip_wooden.name": "木质握把",
+
+  "create_armorer.attachment.scope_pipe.name": "§a流体管道瞄准镜",
+  "create_armorer.attachment.muzzle_pipe.name": "§a流体管道枪口",
+  "create_armorer.attachment.grip_pipe.name": "§a流体管道握把",
+
+  "create_armorer.ammo.gas_pistol_ammo.name": "气动手枪弹",
+  "create_armorer.ammo.slap.name": "次口径脱壳穿甲弹",
+  "create_armorer.ammo.rbapb.name": "凸缘钝头穿甲弹",
+  "create_armorer.ammo.melee_weapon.name": "近战武器",
+
+  "create_armorer.tooltip.mg_platemag_flywheel": "枪口的驻锄可用于近战攻击",
+  "create_armorer.tooltip.special_melee_wrench": "请仅使用近战攻击",
+  "create_armorer.tooltip.special_melee_atomic": "请仅使用近战攻击",
+
+  "create_armorer.ammo.melee_weapon.tooltip": "本物品无法合成，使用此物品为弹药的武器请仅使用近战攻击",
+
+  "create_armorer.tooltip.attachment.muzzle_refit_brass_retractor": "§6+ 解锁近战攻击",
+  "create_armorer.tooltip.attachment.scope_telephoto": "§7这不是可颂！请勿食用！",
+  "create_armorer.tooltip.attachment.muzzle_refit_iron_spike": "§6+ 强化近战攻击",
+  "create_armorer.tooltip.attachment.muzzle_refit_energy_blade": "§6+ 强化近战攻击",
+
+  "create_armorer.tooltip.attachment.scope_pipe": "请搭配传奇枪包'EMX 逆境重科'使用",
+  "create_armorer.tooltip.attachment.muzzle_pipe": "请搭配传奇枪包'EMX 逆境重科'使用",
+  "create_armorer.tooltip.attachment.grip_pipe": "请搭配传奇枪包'EMX 逆境重科'使用"
+}

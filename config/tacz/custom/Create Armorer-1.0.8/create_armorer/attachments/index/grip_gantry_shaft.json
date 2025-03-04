@@ -1,6 +1,0 @@
-{
-  "name": "create_armorer.attachment.grip_gantry_shaft.name",
-  "display": "create_armorer:grip_gantry_shaft_display",
-  "data": "create_armorer:grip_gantry_shaft_data",
-  "type": "grip"
-}

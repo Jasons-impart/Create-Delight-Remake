@@ -1,0 +1,19 @@
+{
+  "weight": 1.3,
+  "armor_ignore":{
+    "addend": -0.1
+  },
+  "ignite": {
+    "entity": true,
+    "block": false
+  },
+  "rpm": {
+    "addend": -120
+  },
+  "head_shot":{
+    "addend": 0.2
+  },
+  "damage": {
+    "addend": -1
+  }
+}

@@ -1,7 +1,0 @@
-{
-    "name": "create_armorer.gun.smg_auto_crank",
-    "display": "create_armorer:smg_auto_crank_display",
-    "data": "create_armorer:smg_auto_crank_data",
-    "type": "smg",
-    "sort": 350
-}

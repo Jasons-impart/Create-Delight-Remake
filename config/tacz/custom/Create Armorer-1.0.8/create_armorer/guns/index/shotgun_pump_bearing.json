@@ -1,7 +1,0 @@
-{
-    "name": "create_armorer.gun.shotgun_pump_bearing",
-    "display": "create_armorer:shotgun_pump_bearing_display",
-    "data": "create_armorer:shotgun_pump_bearing_data",
-    "type": "shotgun",
-    "sort": 351
-}

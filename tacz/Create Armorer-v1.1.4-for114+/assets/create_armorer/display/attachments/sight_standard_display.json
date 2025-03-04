@@ -1,0 +1,14 @@
+{
+  "slot": "create_armorer:attachment/slot/sight_standard",
+  "model": "create_armorer:attachment/sight_standard",
+  "texture": "create_armorer:attachment/uv/sight_standard",
+  "zoom": [
+    2
+  ],
+  "scope": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

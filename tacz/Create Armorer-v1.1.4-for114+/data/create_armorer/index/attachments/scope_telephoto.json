@@ -1,0 +1,7 @@
+{
+  "name": "create_armorer.attachment.scope_telephoto.name",
+  "display": "create_armorer:scope_telephoto_display",
+  "data": "create_armorer:scope_telephoto_data",
+  "tooltip": "create_armorer.tooltip.attachment.scope_telephoto",
+  "type": "scope"
+}
