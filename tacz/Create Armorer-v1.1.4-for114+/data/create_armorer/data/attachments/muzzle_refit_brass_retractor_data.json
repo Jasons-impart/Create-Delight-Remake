@@ -1,0 +1,27 @@
+{
+  "weight": 0.75,
+  "inaccuracy": {
+    "addend": -1
+  },
+  "aim_inaccuracy": {
+    "addend": -1
+  },
+  "recoil": {
+    "yaw": {
+      "addend": 0.25
+    },
+    "pitch": {
+      "addend": 0.5
+    }
+  },
+  "melee": {
+    "distance": 3,
+    "range_angle": 25,
+    "damage": 8.5,
+    "knockback": 0.6,
+    "prep": 0.17
+  },
+  "armor_ignore":{
+    "addend": 0.1
+  }
+}

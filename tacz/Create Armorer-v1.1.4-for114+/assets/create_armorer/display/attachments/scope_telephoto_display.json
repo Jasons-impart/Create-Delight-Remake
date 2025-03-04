@@ -1,0 +1,15 @@
+{
+  "slot": "create_armorer:attachment/slot/scope_telephoto",
+  "model": "create_armorer:attachment/scope_telephoto",
+  "texture": "create_armorer:attachment/uv/scope_telephoto",
+  "zoom": [
+    4,
+    8
+  ],
+  "scope": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_big",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

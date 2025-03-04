@@ -1,0 +1,49 @@
+{
+    "model": "create_armorer:gun/shotgun_db_stone_geo",
+    "texture": "create_armorer:gun/uv/shotgun_db_stone",
+    "lod": {
+        "model": "create_armorer:gun/lod/shotgun_db_stone_lod",
+        "texture": "create_armorer:gun/lod/shotgun_db_stone_lod"
+    },
+    "hud": "create_armorer:gun/hud/shotgun_db_stone",
+    "slot": "create_armorer:gun/slot/shotgun_db_stone",
+    "animation": "create_armorer:shotgun_db_stone",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 1
+    },
+    "sounds": {
+        "shoot": "create_armorer:shotgun_db_stone/shotgun_db_stone_shoot",
+        "shoot_3p": "create_armorer:shotgun_db_stone/shotgun_db_stone_shoot",
+        "reload_empty": "create_armorer:shotgun_db_stone/shotgun_db_stone_reload_empty",
+        "reload_tactical": "create_armorer:shotgun_db_stone/shotgun_db_stone_reload_tactical",
+        "inspect": "create_armorer:shotgun_db_stone/shotgun_db_stone_inspect",
+        "inspect_empty": "create_armorer:shotgun_db_stone/shotgun_db_stone_inspect_empty",
+        "draw": "create_armorer:shotgun_db_stone/shotgun_db_stone_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:shotgun_db_stone/shotgun_db_stone_put_away",
+        "silence": "create_armorer:shotgun_db_stone/shotgun_db_stone_shoot",
+        "silence_3p": "create_armorer:shotgun_db_stone/shotgun_db_stone_shoot"
+    }
+}

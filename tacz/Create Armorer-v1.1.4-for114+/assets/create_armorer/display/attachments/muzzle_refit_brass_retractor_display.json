@@ -1,0 +1,9 @@
+{
+  "slot": "create_armorer:attachment/slot/muzzle_refit_brass_retractor",
+  "model": "create_armorer:attachment/muzzle_refit_brass_retractor",
+  "texture": "create_armorer:attachment/uv/muzzle_refit_brass_retractor",
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

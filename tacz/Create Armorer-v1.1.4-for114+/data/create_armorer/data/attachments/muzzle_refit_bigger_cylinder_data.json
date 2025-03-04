@@ -1,0 +1,33 @@
+{
+  "weight": 0.75,
+  "recoil": {
+    "yaw": {
+      "multiplier": 2
+    },
+    "pitch": {
+      "multiplier": 2
+    }
+  },
+  "inaccuracy": {
+    "addend": 2
+  },
+  "ammo_speed": {
+    "addend": 60
+  },
+  "effective_range": {
+    "addend": 10
+  },
+  "rpm": {
+    "addend": 120
+  },
+  "silence": {
+    "distance_addend": 10,
+    "use_silence_sound": false
+  },
+  "damage": {
+    "addend": 1
+  },
+  "head_shot":{
+    "addend": -0.25
+  }
+}

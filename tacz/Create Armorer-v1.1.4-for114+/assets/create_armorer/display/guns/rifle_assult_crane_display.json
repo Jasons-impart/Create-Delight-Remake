@@ -1,0 +1,56 @@
+{
+    "model": "create_armorer:gun/rifle_assult_crane_geo",
+    "texture": "create_armorer:gun/uv/rifle_assult_crane",
+    "lod": {
+        "model": "create_armorer:gun/lod/rifle_assult_crane_lod",
+        "texture": "create_armorer:gun/lod/rifle_assult_crane_lod"
+    },
+    "hud": "create_armorer:gun/hud/rifle_assult_crane",
+    "slot": "create_armorer:gun/slot/rifle_assult_crane",
+    "animation": "create_armorer:rifle_assult_crane",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                1,
+                1,
+                1
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 1
+    },
+    "shell": {
+        "initial_velocity": [5, 2, 1],
+        "random_velocity": [1, 1, 0.25],
+        "acceleration": [0.0, -10, 0.0],
+        "angular_velocity": [360, -1200, 90],
+        "living_time": 1.0
+    },
+    "sounds": {
+        "shoot": "create_armorer:rifle_assult_crane/rifle_assult_crane_shoot",
+        "shoot_3p": "create_armorer:rifle_assult_crane/rifle_assult_crane_shoot",
+        "reload_empty": "create_armorer:rifle_assult_crane/rifle_assult_crane_reload",
+        "reload_tactical": "create_armorer:rifle_assult_crane/rifle_assult_crane_reload",
+        "inspect": "create_armorer:rifle_assult_crane/rifle_assult_crane_inspect",
+        "inspect_empty": "create_armorer:rifle_assult_crane/rifle_assult_crane_inspect",
+        "draw": "create_armorer:rifle_assult_crane/rifle_assult_crane_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:rifle_assult_crane/rifle_assult_crane_put_away",
+        "silence": "create_armorer:rifle_assult_crane/rifle_assult_crane_silence",
+        "silence_3p": "create_armorer:rifle_assult_crane/rifle_assult_crane_silence"
+    }
+}

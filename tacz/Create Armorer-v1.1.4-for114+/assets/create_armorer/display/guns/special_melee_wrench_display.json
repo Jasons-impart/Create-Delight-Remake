@@ -1,0 +1,38 @@
+{
+    "model": "create_armorer:gun/special_melee_wrench_geo",
+    "texture": "create_armorer:gun/uv/special_melee_wrench",
+    "lod": {
+        "model": "create_armorer:gun/lod/special_melee_wrench_lod",
+        "texture": "create_armorer:gun/lod/special_melee_wrench_lod"
+    },
+    "hud": "create_armorer:gun/hud/special_melee_wrench",
+    "slot": "create_armorer:gun/slot/special_melee_wrench",
+    "animation": "create_armorer:special_melee_wrench",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                1,
+                1,
+                1
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "inspect": "create_armorer:special_melee_wrench/special_melee_wrench_inspect",
+        "inspect_empty": "create_armorer:special_melee_wrench/special_melee_wrench_inspect",
+        "draw": "create_armorer:special_melee_wrench/special_melee_wrench_draw",
+        "dry_fire": "create_armorer:misc/wrench_dry_fire"
+    }
+}

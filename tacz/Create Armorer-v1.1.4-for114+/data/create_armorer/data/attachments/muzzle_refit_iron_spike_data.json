@@ -1,0 +1,19 @@
+{
+  "weight": 1,
+  "melee": {
+    "distance": 1,
+    "range_angle": 45,
+    "cooldown": 0,
+    "damage": 22,
+    "knockback": 0.1,
+    "prep": 0.17,
+    "effects": [
+      {
+        "id": "minecraft:nausea",
+        "time": 6,
+        "amplifier": 1,
+        "hide_particles": true
+      }
+    ]
+  }
+}

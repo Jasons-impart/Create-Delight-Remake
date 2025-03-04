@@ -1,0 +1,49 @@
+{
+    "model": "create_armorer:gun/sniper_semi_clockwork_geo",
+    "texture": "create_armorer:gun/uv/sniper_semi_clockwork",
+    "lod": {
+        "model": "create_armorer:gun/lod/sniper_semi_clockwork_lod",
+        "texture": "create_armorer:gun/lod/sniper_semi_clockwork_lod"
+    },
+    "hud": "create_armorer:gun/hud/sniper_semi_clockwork",
+    "slot": "create_armorer:gun/slot/sniper_semi_clockwork",
+    "animation": "create_armorer:sniper_semi_clockwork",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                1,
+                1,
+                1
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 1
+    },
+    "sounds": {
+        "shoot": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_shoot",
+        "shoot_3p": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_shoot",
+        "reload_empty": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_reload",
+        "reload_tactical": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_reload",
+        "inspect": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_inspect",
+        "inspect_empty": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_inspect",
+        "draw": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_draw",
+        "dry_fire": "create_armorer:misc/dry_fire",
+        "put_away": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_put_away",
+        "silence": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_silence",
+        "silence_3p": "create_armorer:sniper_semi_clockwork/sniper_semi_clockwork_silence"
+    }
+}
