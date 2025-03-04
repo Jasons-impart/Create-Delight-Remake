@@ -1482,6 +1482,55 @@
 			x: 15.5d
 			y: 37.0d
 		}
+		{
+			description: ["储电量200000AE，每使用一次消耗1600AE能量，故充满电后最多处理125个方块。"]
+			id: "297A189F528D10A4"
+			tasks: [{
+				id: "5E24CF58EBDF8D3B"
+				item: "ae2:entropy_manipulator"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 25.5d
+		}
+		{
+			description: [
+				"消耗染色球（或染料、雪球）与能量，给方块染色，类似于IC刷子。"
+				""
+				"也可以使用雪球给线缆去色（染成“Fluix默认色”）。"
+				""
+				"装填方法：将染色器装入ME驱动器或者ME箱子中，然后将染色球（或染料、雪球）装入其中即可。"
+				""
+				"shift + 鼠标滚轮 切换当前使用的颜色（限于染色器内包含的染色球颜色）。"
+			]
+			id: "5DCD387EB13E4176"
+			tasks: [{
+				id: "1ECC46D4523256D2"
+				item: {
+					Count: 1
+					id: "ae2:color_applicator"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 27.5d
+		}
+		{
+			description: [
+				"使用电能的武器，攻击力为3心，能储存8000ae，每次攻击用掉300ae。通过本模组的充能器充电，或者其它模组能够给物品充电的机械也行。"
+				""
+				"攻击时，可无视护甲防御。"
+			]
+			id: "6A1DA2E9D646E269"
+			tasks: [{
+				id: "0BB1E00AFB68B7DC"
+				item: "ae2:charged_staff"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 25.5d
+		}
 	]
 	title: "&9应用能源2"
 }

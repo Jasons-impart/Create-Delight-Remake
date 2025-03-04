@@ -1,0 +1,42 @@
+Ponder.registry(event => {
+    event.create(["ae2:storage_bus"])
+        .scene("createdelight:storage_bus",
+            "存储总线的使用",
+            "createdelight:ponder_storage_bus",
+            (scene, util) => {
+                scene.showBasePlate()
+                scene.idle(20)
+                scene.world.showSection([1, 1, 1, 1, 1, 3], Direction.DOWN)
+                scene.text(60, "存储总线可以将外界的存储并入到AE网络中")
+                scene.idle(80)
+                scene.world.showSection([2, 1, 2, 4, 1, 2], Direction.DOWN)
+                scene.idle(10)
+                scene.world.showSection([4, 1, 3, 4, 2, 3], Direction.DOWN)
+                scene.addKeyframe()
+                scene.idle(10)
+                scene.rotateCameraY(-180)
+                scene.idle(40)
+                let item1 = scene.world.createItemEntity(
+                    [4.5, 5, 3.5],
+                    [0, 0, 0],
+                    "ae2:certus_quartz_crystal")
+                scene.idle(15)
+                scene.world.modifyEntity(item1, (e) => {
+                    e.kill()
+                })
+                scene.idle(40)
+                scene.showControls(40, [2, 1.5, 2.75], "right")
+                    .withItem("ae2:certus_quartz_crystal")
+
+            })
+    event.create(["ae2:storage_bus", "#ae2:interface"])
+        .scene("createdelight:storage_bus_interface_interaction",
+            "存储总线与ME接口的互动",
+            "createdelight:ponder_storage_bus_interface_interaction",
+            (scene, util) => {
+                scene.showBasePlate()
+                scene.idle(20)
+                scene.world.showSection([1, 1, 1, 1, 1, 3], Direction.DOWN)
+                scene.world.showSection([1, 1, 2, 3, 1, 2], Direction.DOWN)
+            })
+})

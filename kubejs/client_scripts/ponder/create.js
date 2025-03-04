@@ -6,7 +6,7 @@ Ponder.registry((event) => {
     .scene(
       "createdelight:sequenced_assembly",
       "序列装配",
-      "kubejs:sequenced_assembly",
+      "createdelight:ponder_sequenced_assembly",
       (scene, util) => {
         scene.showBasePlate();
 
