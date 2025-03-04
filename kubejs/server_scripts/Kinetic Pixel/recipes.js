@@ -354,4 +354,25 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem(iner_4)
         .id("tacz:12g")
+    
+    create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
+        create.deploying("create:fluid_pipe", ["create:fluid_pipe", "ad_astra:gas_tank"])
+    )
+    .loops(2)
+    .transitionalItem("create:fluid_pipe")
+    .id("create_armorer:muzzle_refit_bigger_cylinder")
+    
+    create.filling(Item.of('tacz:modern_kinetic_gun', '{GunId:"create_armorer:special_melee_wrench"}'), [
+        "create:wrench",
+        Fluid.of("createdelight:malice_solution", 1000)
+    ]).id("create_armorer:special_melee_wrench")
+
+    kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_iron_spike"}'), [
+        "AAA",
+        "B  "
+    ], {
+        A: "#forge:plates/steel",
+        B: "#forge:nuggets/steel"
+    })
+    .id("create_armorer:muzzle_refit_iron_spike")
 })
