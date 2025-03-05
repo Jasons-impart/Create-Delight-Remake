@@ -1,5 +1,5 @@
 Ponder.registry(event => {
-    event.create("#ae2:interface")
+    event.create(["ae2:interface", "ae2:cable_interface"])
         .scene(
             "createdelight:interface",
             "ME接口的使用",

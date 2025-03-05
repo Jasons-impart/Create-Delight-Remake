@@ -1,5 +1,5 @@
 Ponder.registry(event => {
-    event.create(["ae2:flawless_budding_quartz", "ae2:flawed_budding_quartz", "ae2:chipped_budding_quartz", "ae2:damaged_budding_quartz"])
+    event.create(["ae2:flawless_budding_quartz", "ae2:flawed_budding_quartz", "ae2:chipped_budding_quartz", "ae2:damaged_budding_quartz", "ae2:certus_quartz_crystal"])
         .scene(
             "createdelight:ae_budding_quartz_obtain",
             "赛特斯石英母岩的生成",
@@ -29,7 +29,7 @@ Ponder.registry(event => {
                     scene.world.showSection(list[1], Direction.DOWN)
                     scene.idle(5)
                 })
-                scene.text(60, "母岩会和神秘方块出现在一起").attachKeyFrame()
+                scene.text(60, "母岩会和神秘方块一起出现在陨石中").attachKeyFrame()
                 scene.idle(60)
 
                 block_list.forEach(list => {

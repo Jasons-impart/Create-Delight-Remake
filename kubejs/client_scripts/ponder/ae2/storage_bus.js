@@ -29,7 +29,7 @@ Ponder.registry(event => {
                     .withItem("ae2:certus_quartz_crystal")
 
             })
-    event.create(["ae2:storage_bus", "#ae2:interface"])
+    event.create(["ae2:storage_bus", "ae2:interface", "ae2:cable_interface"])
         .scene("createdelight:storage_bus_interface_interaction",
             "存储总线与ME接口的互动",
             "createdelight:ponder_storage_bus_interface_interaction",
