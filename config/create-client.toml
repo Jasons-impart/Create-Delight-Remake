@@ -117,7 +117,7 @@
 	[client.ponder]
 		#.
 		#Slow down a ponder scene whenever there is text on screen.
-		comfyReading = true
+		comfyReading = false
 		#.
 		#Show additional info in the ponder view and reload scene scripts more frequently.
 		editingMode = true
