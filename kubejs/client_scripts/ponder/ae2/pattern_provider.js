@@ -1,5 +1,5 @@
 Ponder.registry(event => {
-    event.create(["#ae2:pattern_provider"])
+    event.create(["ae2:pattern_provider", "ae2:cable_pattern_provider"])
         .scene(
             "createdelight:pattern_provider",
             "样板供应器的使用",
@@ -62,7 +62,7 @@ Ponder.registry(event => {
 
             }
         )
-    event.create(["#ae2:pattern_provider", "#ae2:interface"])
+    event.create(["ae2:pattern_provider", "ae2:cable_pattern_provider", "ae2:interface", "ae2:cable_interface"])
         .scene(
             "createdelight:pattern_provider_interaction",
             "样板供应器与ME接口的联动",

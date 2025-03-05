@@ -17,6 +17,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["7E49F4273623EEBF"]
 			id: "615044EF882C2451"
 			rewards: [{
 				id: "738564DF50BED6E1"
@@ -697,6 +698,132 @@
 			}]
 			x: -13.0d
 			y: -2.0d
+		}
+		{
+			id: "7E49F4273623EEBF"
+			tasks: [{
+				id: "011CA0ACB9AB5512"
+				item: "minecraft:chest"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7E49F4273623EEBF"]
+			id: "649BCED892537120"
+			subtitle: "限量不限类的物品容器"
+			tasks: [{
+				id: "241F940740690E07"
+				item: "quark:crate"
+				type: "item"
+			}]
+			x: -13.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7E49F4273623EEBF"]
+			id: "268EA9B525679B29"
+			subtitle: "一个格子，能存2048个物品"
+			tasks: [{
+				id: "7BA5B3C445C62800"
+				item: "functionalstorage:oak_1"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "5388314C6C4F0116"
+			subtitle: "两个格子，每格能存1024个物品"
+			tasks: [{
+				id: "2C866EE4E5904128"
+				item: "functionalstorage:oak_2"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "4CAEA6C92517B991"
+			subtitle: "四个格子，每格能存512个物品"
+			tasks: [{
+				id: "58DE1C20EBECDFDA"
+				item: "functionalstorage:oak_4"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "4ED30BB3B015BE83"
+			subtitle: "压缩抽屉的两类的版本"
+			tasks: [{
+				id: "02D65FA265D22551"
+				item: "functionalstorage:simple_compacting_drawer"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "2640BF2D3981D603"
+			subtitle: "会同时显示某物品的打包和解包状态（如果有）"
+			tasks: [{
+				id: "1581B761A132D293"
+				item: "functionalstorage:compacting_drawer"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			description: [
+				"它可以将各种抽屉整合，然后它就会拥有其他抽屉的内容。"
+				"使用&e连接工具&r右击会将其存入连接工具内，此后&e点击其他抽屉&r便可将该抽屉连入连接工具记载的存储控制器。"
+				"向存储控制器内使用物流方式输入物品时，物品会被自动送往合适的已连接的抽屉。从存储控制器使用物流方式取出物品，物品也会被从合适的抽屉中取出。"
+			]
+			id: "4D61C8CADAF10D6E"
+			size: 1.5d
+			subtitle: "人称小AE"
+			tasks: [{
+				id: "7FC9DAE6CA3D8619"
+				item: "functionalstorage:storage_controller"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "2AE07B93F6BDC908"
+			tasks: [{
+				id: "3F733345FDC256C1"
+				item: {
+					Count: 1
+					id: "functionalstorage:linking_tool"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["268EA9B525679B29"]
+			id: "5200300840269F9E"
+			tasks: [{
+				id: "5454B73CE30FC6EC"
+				item: "functionalstorage:configuration_tool"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 7.5d
 		}
 	]
 	title: "&e经典存储"
