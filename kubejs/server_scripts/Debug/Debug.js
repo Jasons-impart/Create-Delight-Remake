@@ -50,11 +50,12 @@ const handleChatCommand = (event, command, message, target) => {
         player.runCommandSilent(`tellraw @s "§4已清除所有BUFF"`);
         event.cancel();
         break;
-      case "-kle":
-        server.runCommandSilent("kill @e[type=!player]");
-        server.runCommandSilent(`tellraw ${target} "§4所有实体已清除"`);
-        event.cancel();
-        break;
+      //未知原因报错
+      // case "-kle":
+      //   server.runCommandSilent("kill @e[type=!minecraft:player]");
+      //   server.runCommandSilent(`tellraw ${target} "§4所有实体已清除"`);
+      //   event.cancel();
+      //   break;
     }
   }
 };

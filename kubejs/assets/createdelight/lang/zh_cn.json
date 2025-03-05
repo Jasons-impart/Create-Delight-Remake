@@ -406,7 +406,7 @@
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
-    "message.createdelight.conventcommand": "§6潜行+右键§r获取物品ID\n输入§6-kli§r删除所有掉落物\n输入§6-kle§r清除玩家之外的所有实体\n输入§6-efg§r获得[夜视 力量 抗性]buff\n输入§6-efc§r清除自身所有buff",
+    "message.createdelight.conventcommand": "§6潜行+右键§r获取物品ID\n输入§6-kli§r删除所有掉落物\n输入§6-efg§r获得[夜视 力量 抗性]buff\n输入§6-efc§r清除自身所有buff",
     "message.createdelight.debug": "§4验证开发者用户信息中§r\n§a身份正确§r\n§4欢迎回来!%s§r",
     "message.createdelight.east": "东",
     "message.createdelight.logIn": "你好%s\n欢迎来到§e悠然乐事§r!\n更多§6详细信息§r请查询§4任务书§r",
