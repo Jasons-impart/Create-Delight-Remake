@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "createdelight:item/molten_calorite_bucket"
-  }
-}

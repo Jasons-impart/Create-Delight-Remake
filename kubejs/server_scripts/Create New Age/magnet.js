@@ -56,7 +56,7 @@ ServerEvents.recipes(e => {
         [
             "create_new_age:fluxuated_magnetite",
             Fluid.of("createmetallurgy:molten_netherite", 180),
-            Fluid.of("createdelight:molten_azure_neodymium", 180)
+            Fluid.of("createdelightcore:molten_azure_neodymium", 180)
         ]
     ).heated().id("create_new_age:shaped/netherite_magnet_1")
     e.recipes.vintageimprovements.pressurizing(
@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
         [
             "create_new_age:fluxuated_magnetite",
             Fluid.of("createmetallurgy:molten_netherite", 180),
-            Fluid.of("createdelight:molten_scarlet_neodymium", 180),
+            Fluid.of("createdelightcore:molten_scarlet_neodymium", 180),
         ]
     ).heated().id("create_new_age:shaped/netherite_magnet_2")
     // 碳刷
@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
         [
             e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
             e.recipes.create.deploying(iner_4, [iner_4, 'createmetallurgy:graphite']),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelight:molten_andesite",250)])
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelightcore:molten_andesite",250)])
         ]
     )
         .loops(4)

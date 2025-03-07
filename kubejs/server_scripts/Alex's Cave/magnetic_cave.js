@@ -82,7 +82,7 @@ ServerEvents.recipes(e => {
 
     //赤汝、青汝合金
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_scarlet_neodymium", 90),
+        Fluid.of("createdelightcore:molten_scarlet_neodymium", 90),
         [
             Fluid.of("createmetallurgy:molten_iron", 180),
             "alexscaves:raw_scarlet_neodymium",
@@ -91,7 +91,7 @@ ServerEvents.recipes(e => {
     ).heatRequirement("superheated").id("createdelight:alloying/molten_scarlet_neodymium")
 
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_azure_neodymium", 90),
+        Fluid.of("createdelightcore:molten_azure_neodymium", 90),
         [
             Fluid.of("createmetallurgy:molten_iron", 180),
             "alexscaves:raw_azure_neodymium",
@@ -103,7 +103,7 @@ ServerEvents.recipes(e => {
         [
             'alexscaves:block_of_scarlet_neodymium',
             'alexscaves:scarlet_neodymium_ingot',
-            'createdelight:molten_scarlet_neodymium'
+            'createdelightcore:molten_scarlet_neodymium'
         ], "heated", 100
     )
 
@@ -111,7 +111,7 @@ ServerEvents.recipes(e => {
         [
             'alexscaves:block_of_azure_neodymium',
             'alexscaves:azure_neodymium_ingot',
-            'createdelight:molten_azure_neodymium'
+            'createdelightcore:molten_azure_neodymium'
         ], "heated", 100
     )
 
@@ -179,14 +179,14 @@ ServerEvents.recipes(e => {
         'alexscaves:seeking_arrow',
         [
             'minecraft:arrow',
-            Fluid.of("createdelight:molten_scarlet_neodymium", 10)
+            Fluid.of("createdelightcore:molten_scarlet_neodymium", 10)
         ]
     ).id("alexscaves:filling/seeking_arrow")
     e.recipes.create.mixing(
         "alexscaves:seeking_arrow",
         [
             "minecraft:arrow",
-            Fluid.of("createdelight:molten_scarlet_neodymium", 15)
+            Fluid.of("createdelightcore:molten_scarlet_neodymium", 15)
         ]
     ).id("alexscaves:mixing/seeking_arrow")
 
@@ -200,24 +200,24 @@ ServerEvents.recipes(e => {
     ).id("alexscaves:mixing/ferrouslime_ball")
     //富铁粘液（暂未注册，注册后可使用）
     e.recipes.create.mixing(
-        Fluid.of("createdelight:ferrouslime", 90),
+        Fluid.of("createdelightcore:ferrouslime", 90),
         [
-            Fluid.of("createdelight:slime", 90),
+            Fluid.of("createdelightcore:slime", 90),
             '#forge:dusts/iron'
         ]
     ).id("alexscaves:mixing/ferrouslime")
     e.recipes.create.compacting(
         'alexscaves:ferrouslime_ball',
-        Fluid.of("createdelight:ferrouslime", 90)
+        Fluid.of("createdelightcore:ferrouslime", 90)
     ).id("alexscaves:compacting/ferrouslime")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:ferrouslime", 90),
+        Fluid.of("createdelightcore:ferrouslime", 90),
         'alexscaves:ferrouslime_ball'
     ).heated().id("createdelight:mixing/ferrouslime")
     //磁悬浮组件
     let iner_6 = "createdelight:incomplete_magnetic_mechanism"
     e.recipes.create.sequenced_assembly('createdelight:magnetic_mechanism', 'vintageimprovements:vanadium_sheet', [
-            e.recipes.create.filling(iner_6, [iner_6, Fluid.of("createdelight:ferrouslime", 90)]),
+            e.recipes.create.filling(iner_6, [iner_6, Fluid.of("createdelightcore:ferrouslime", 90)]),
             e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:scarlet_neodymium_ingot"]),
             e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:azure_neodymium_ingot"]),
             e.recipes.create.deploying(iner_6, [iner_6, "alexscaves:tesla_bulb"])

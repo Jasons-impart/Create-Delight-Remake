@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "9x alexscaves:toxic_paste",
         [Fluid.of("alexscaves:acid").withAmount(100),
-        Fluid.of("createdelight:slime", 90),
+        Fluid.of("createdelightcore:slime", 90),
             "minecraft:mud"
         ]
     ).heated()

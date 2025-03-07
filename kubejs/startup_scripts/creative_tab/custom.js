@@ -57,58 +57,6 @@ StartupEvents.registry("creative_mode_tab", e => {
         'createdelight:braised_intestines_in_brown_sauce',
         'createdelight:empty_popsicle',
       ])
-    // 流体
-    e.create("createdelight:fluid")
-        .translationKey("itemGroup.createdelight.fluid")
-        .icon(() => Item.of("createdelight:fuel_mixtures_bucket"))
-        .content(() => [
-        // 熔融液体
-        'createdelight:molten_andesite_bucket',
-        'createdelight:molten_desh_bucket',
-        'createdelight:molten_ostrum_bucket',
-        'createdelight:molten_calorite_bucket',
-        'createdelight:molten_scarlet_neodymium_bucket',
-        'createdelight:molten_azure_neodymium_bucket',
-        'createdelight:fire_dragon_blood_bucket',
-        'createdelight:molten_fire_steel_bucket',
-        'createdelight:ice_dragon_blood_bucket',
-        'createdelight:molten_ice_steel_bucket',
-        'createdelight:lightning_dragon_blood_bucket',
-        'createdelight:molten_lightning_steel_bucket',
-        'createdelight:molten_forged_steel_bucket',
-        // 工业大生产液体
-        'createdelight:fuel_mixtures_bucket',
-        'createdelight:sky_solution_bucket',
-        'createdelight:spent_liquor_bucket',
-        'createdelight:unrefined_sugar_bucket',
-        'createdelight:unfermented_paper_pulp_bucket',
-        'createdelight:paper_pulp_bucket',
-        'createdelight:slime_bucket',
-        'createdelight:ferrouslime_bucket',
-        // 气体桶
-        'createdelight:radon_bucket',
-        // 食物相关流体
-        'createdelight:cake_batter_bucket',
-        'createdelight:egg_yolk_bucket',
-        'createdelight:nut_milk_bucket',
-        'createdelight:whipped_cream_bucket',
-        'createdelight:vinegar_bucket',
-        // 奶昔及对应冰激凌
-        'createdelight:vanilla_ice_cream_bucket',
-        'createdelight:vanilla_milkshake_bucket',
-        'createdelight:chocolate_ice_cream_bucket',
-        'createdelight:chocolate_milkshake_bucket',
-        'createdelight:strawberry_ice_cream_bucket',
-        'createdelight:strawberry_milkshake_bucket',
-        'createdelight:banana_ice_cream_bucket',
-        'createdelight:banana_milkshake_bucket',
-        'createdelight:mint_ice_cream_bucket',
-        'createdelight:mint_milkshake_bucket',
-        'createdelight:adzuki_ice_cream_bucket',
-        'createdelight:adzuki_milkshake_bucket',
-        // 特殊流体
-        'createdelight:malice_solution_bucket',
-      ])
     e.create("createdelight:ore")
         .translationKey("itemGroup.createdelight.ore")
         .icon(() => Item.of("createdelight:raw_tin"))
@@ -200,4 +148,35 @@ StartupEvents.registry("creative_mode_tab", e => {
           'createdelight:air_boots',  
         ])
 })
-  
+StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
+  e.add([
+    // 熔融液体
+    'createdelight:fire_dragon_blood_bucket',
+    'createdelight:ice_dragon_blood_bucket',
+    'createdelight:lightning_dragon_blood_bucket',
+    // 工业大生产液体
+    'createdelight:fuel_mixtures_bucket',
+    'createdelight:sky_solution_bucket',
+    'createdelight:spent_liquor_bucket',
+    'createdelight:unrefined_sugar_bucket',
+    'createdelight:unfermented_paper_pulp_bucket',
+    'createdelight:paper_pulp_bucket',
+    // 气体桶
+    'createdelight:radon_bucket',
+    // 食物相关流体
+    'createdelight:cake_batter_bucket',
+    'createdelight:egg_yolk_bucket',
+    'createdelight:nut_milk_bucket',
+    'createdelight:whipped_cream_bucket',
+    'createdelight:vinegar_bucket',
+    // 奶昔及对应冰激凌
+    'createdelight:vanilla_milkshake_bucket',
+    'createdelight:chocolate_milkshake_bucket',
+    'createdelight:strawberry_milkshake_bucket',
+    'createdelight:banana_milkshake_bucket',
+    'createdelight:mint_milkshake_bucket',
+    'createdelight:adzuki_milkshake_bucket',
+    // 特殊流体
+    'createdelight:malice_solution_bucket',
+  ])
+})

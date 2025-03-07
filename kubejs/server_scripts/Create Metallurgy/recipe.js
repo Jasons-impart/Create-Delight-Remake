@@ -125,14 +125,14 @@ ServerEvents.recipes(e => {
         ], 100, "heated"
     ).id("createmetallurgy:mixing/alloying_brass")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [
             "minecraft:andesite",
             Fluid.of("createmetallurgy:molten_iron", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_iron")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [
             "minecraft:andesite",
             Fluid.of("createmetallurgy:molten_zinc", 20)
