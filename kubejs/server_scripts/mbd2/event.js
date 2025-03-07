@@ -1,5 +1,5 @@
-// const $MBDMultiblockMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDMultiblockMachine")
-// const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPartMachine")
+const $MBDMultiblockMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDMultiblockMachine")
+const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPartMachine")
 // /**
 //  * 
 //  * @param {Internal.Level} level 
@@ -105,3 +105,14 @@
 //     oldRecipe.duration *= durationMultipler
 //     e.event.setRecipe(oldRecipe)
 // })
+MBDMachineEvents.onBeforeRecipeWorking("mbd2:hydropower_station", e => {
+    /**
+     * @type {Internal.MBDMultiblockMachine}
+     */
+    let machine = e.event.machine
+    let mainFacing = machine.frontFacing.get()
+    let fanFacing = machine.getParts().get(0).frontFacing.get()
+    if (!(mainFacing.clockWise.equals(fanFacing) || mainFacing.counterClockWise.equals(fanFacing)))
+        e.event.setCanceled(true)
+    
+})
