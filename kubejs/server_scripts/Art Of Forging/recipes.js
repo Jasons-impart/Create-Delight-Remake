@@ -81,12 +81,12 @@ ServerEvents.recipes(e => {
         .id("tetra:thousand_cold_night_scroll")
 
     metal_production_line_3(e,
-        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelight:molten_forged_steel"], "superheated", 160)
+        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelightcore:molten_forged_steel"], "superheated", 160)
     kubejs.shapeless("createdelight:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
         .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
     kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelight:forged_steel_block")
         .id("art_of_forging:forged_steel_block")
-    createmetallurgy.alloying(Fluid.of("createdelight:molten_forged_steel", 360), [
+    createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360), [
         "tetra:metal_scrap",
         "tetra:metal_scrap",
         "tetra:metal_scrap",
@@ -101,11 +101,11 @@ ServerEvents.recipes(e => {
         let iner = "art_of_forging:forged_steel_ingot"
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
             create.deploying(iner, [iner, "iceandfire:dread_shard"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_fire_steel", 30)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_fire_steel", 30)]),
             create.deploying(iner, [iner, "art_of_forging:fragment_of_eden"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_ice_steel", 30)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 30)]),
             create.deploying(iner, [iner, "createdelight:dread_heart"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_lightning_steel", 30)])
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_lightning_steel", 30)])
         ])
             .loops(1)
             .transitionalItem(iner)

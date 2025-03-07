@@ -183,7 +183,7 @@ ServerEvents.recipes(e => {
 
     e.recipes.createmetallurgy.casting_in_basin(
         "create:andesite_casing",
-        ["#forge:stripped_logs", Fluid.of("createdelight:molten_andesite", 90)], 70, true)
+        ["#forge:stripped_logs", Fluid.of("createdelightcore:molten_andesite", 90)], 70, true)
         .id("create:casting_in_basin/andesite_casing")
     // 墨囊配方
     let iner_3 = "ratatouille:sausage_casing"

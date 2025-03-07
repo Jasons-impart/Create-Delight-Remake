@@ -151,11 +151,11 @@
 		{
 			dependencies: ["7DB6E13EE8EF2082"]
 			description: ["将海带放入工作盆中，&e使用压缩机在加热条件&r下处理即可生成黏液。"]
-			icon: "createdelight:slime_bucket"
+			icon: "createdelightcore:slime_bucket"
 			id: "2F4B0A78F86BB9D1"
 			tasks: [{
 				id: "76D768F54377CC59"
-				item: "createdelight:slime_bucket"
+				item: "createdelightcore:slime_bucket"
 				type: "item"
 			}]
 			x: 7.0d

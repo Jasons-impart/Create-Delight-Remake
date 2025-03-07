@@ -1,0 +1,16 @@
+#Whether to enable the drop report
+disableDropReport = false
+#Threshold for drop reporting.
+#Range: > 0
+itemThreshold = 100
+#If this option is enabled, the drop report will be counted by a single drop entity, not by the number of items in it
+ignoreStackCount = false
+#Money Chain used for money calculating
+moneyChain = "main"
+#Whether to use money for teleporting
+useMoneyTeleport = true
+#Coin used for waystone teleporting per unit.
+#It's the base value of the chain.
+#Range: > 1
+teleportCost = 45
+

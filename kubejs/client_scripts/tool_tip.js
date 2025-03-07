@@ -30,33 +30,15 @@ ItemEvents.tooltip(e => {
     clearAddCtrlTooltip(e, [
         
     ])
-    // clearAddShiftCtrlTooltip(e, [
-    //     'create_sa:brass_jetpack_chestplate',
-    //     'create_sa:andesite_jetpack_chestplate',
-    //     'create_sa:copper_jetpack_chestplate',
-    // ])
-    // addFuelAndWater(e, [
-    //     'create_sa:brass_jetpack_chestplate',
-    //     'create_sa:brass_exoskeleton_chestplate',
-    //     'create_sa:portable_drill',
-    // ])
-    // addFuel(e, [
-    //     'create_sa:andesite_jetpack_chestplate',
-    //     'create_sa:andesite_exoskeleton_chestplate',
-    //     'create_sa:grapplin_whisk',
-    //     'create_sa:flamethrower',
-    // ])
-    // addWater(e, [
-    //     'create_sa:copper_jetpack_chestplate',
-    //     'create_sa:copper_exoskeleton_chestplate',
-    //     'create_sa:block_picker',
-    // ])
-    // addAir(e, [
-    //     'create:netherite_backtank',
-    //     'create:copper_backtank',
-    //     'create_jetpack:jetpack',
-    //     'create_jetpack:netherite_jetpack',
-    // ])
+    clearAddShiftCtrlTooltip(e, [
+
+    ])
+    addAir(e, [
+        'create:netherite_backtank',
+        'create:copper_backtank',
+        'create_jetpack:jetpack',
+        'create_jetpack:netherite_jetpack',
+    ])
 })
 let tooltips = [
     ["createfluidstuffs:multi_fluid_tank", "§6来自海上机械师的神奇储罐", "§6From the Sea of Mechanical Engineers"],
