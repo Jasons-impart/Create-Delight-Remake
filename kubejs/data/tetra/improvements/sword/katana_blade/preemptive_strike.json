@@ -7,7 +7,7 @@
             "honed": 1
         },
         "effects": {
-	    "art_of_forging:slaughtering": [300,99]
+            "createdelight:forstall": [5, 3]
         }
     }
 ]
