@@ -4,7 +4,7 @@ PlayerEvents.tick(e => {
 
 
     let item = player.mainHandItem
-    if (TetraUtil.getItem(item) == null)
+    if (TetraUtil.getItem(item))
         return
     if (!TetraUtil.itemHasEffect(item, "createdelight:forstall"))
         return
