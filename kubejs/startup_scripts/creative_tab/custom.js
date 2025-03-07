@@ -162,7 +162,7 @@ StartupEvents.registry("creative_mode_tab", e => {
         .content(() => [
            'createdelight:electrolyzer',
            'createdelight:emergency_industrial_platform',
-           
+           'mbd2:mbd_gadgets',
         ])
     e.create("createdelight:misc")
         .translationKey("itemGroup.createdelight.misc")

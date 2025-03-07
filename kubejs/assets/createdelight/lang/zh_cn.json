@@ -475,5 +475,11 @@
     "tooltip.createdelight.shift_kit_default": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_white": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
-    "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色"
+    "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+
+    
+    "createdelight.effect.forstall.name": "先发制人",
+    "createdelight.effect.forstall.tooltip": "下一次造成的伤害变为§e%s§r倍当§e%s§r秒不攻击时",
+    "tetra.stats.createdelight:forstall": "先发制人",
+    "tetra.stats.createdelight:forstall.tooltip_short": "一段时间不攻击后的下次攻击强化"
 }

@@ -151,3 +151,9 @@ StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
     'kinetic_pixel:wastedbarrel',
   ])
 })
+
+StartupEvents.modifyCreativeTab("minecraft:redstone_blocks", e => {
+  e.remove([
+    'mbd2:mbd_gadgets'
+  ])
+})
