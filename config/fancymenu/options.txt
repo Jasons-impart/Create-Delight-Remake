@@ -1,7 +1,7 @@
 ##[general]
 
 I:default_gui_scale = '-1';
-B:play_vanilla_menu_music = 'false';
+B:play_vanilla_menu_music = 'true';
 B:force_fullscreen = 'false';
 
 
@@ -60,7 +60,7 @@ D:anchor_overlay_hover_charging_time_seconds = '2.0';
 ##[ui]
 
 I:context_menu_hover_open_speed = '1';
-S:ui_theme = 'dark';
+S:ui_theme = 'light';
 F:ui_scale = '2.0';
 B:play_ui_click_sounds = 'true';
 B:enable_ui_text_shadow = 'false';
