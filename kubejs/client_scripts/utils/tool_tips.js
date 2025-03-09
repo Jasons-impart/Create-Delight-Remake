@@ -83,59 +83,6 @@ function clearAddShiftCtrlTooltip(event, items) {
  * @param { Internal.ItemTooltipEventJS } event 
  * @param { Internal.ItemStack_[] } items 
  */
-function addFuelAndWater(event, items) {
-    items.forEach(item => {
-        event.addAdvanced(item, (item, advanced, text) => {
-            let fuel = item.nbt.tagFuel
-            if(fuel == undefined){
-                fuel = 0
-            }
-            let water = item.nbt.tagWater
-            if(water == undefined){
-                water = 0
-            }
-            text.add(Text.translate("tooltip.createdelight.water", water))
-            text.add(Text.translate("tooltip.createdelight.fuel", fuel))
-        })
-    });
-}
-/**
- * 
- * @param { Internal.ItemTooltipEventJS } event 
- * @param { Internal.ItemStack_[] } items 
- */
-function addFuel(event, items) {
-    items.forEach(item => {
-        event.addAdvanced(item, (item, advanced, text) => {
-            let fuel = item.nbt.tagFuel
-            if(fuel == undefined){
-                fuel = 0
-            }
-            text.add(Text.translate("tooltip.createdelight.fuel", fuel))
-        })
-    });
-}
-/**
- * 
- * @param { Internal.ItemTooltipEventJS } event 
- * @param { Internal.ItemStack_[] } items 
- */
-function addWater(event, items) {
-    items.forEach(item => {
-        event.addAdvanced(item, (item, advanced, text) => {
-            let water = item.nbt.tagWater
-            if(water == undefined){
-                water = 0
-            }
-            text.add(Text.translate("tooltip.createdelight.water", water))
-        })
-    });
-}
-/**
- * 
- * @param { Internal.ItemTooltipEventJS } event 
- * @param { Internal.ItemStack_[] } items 
- */
 function addAir(event, items) {
     items.forEach(item => {
         event.addAdvanced(item, (item, advanced, text) => {
