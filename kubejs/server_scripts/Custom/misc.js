@@ -12,4 +12,7 @@ ServerEvents.recipes(e => {
     .processingTime(600)
     .heatRequirement("heated")
     .id("createdelight:basin_fermenting/resurgent_soil")
+
+    create.filling("createdelight:fuel_hotcream", ["mynethersdelight:powder_cannon", Fluid.of("createdelight:fuel_mixtures", 50)])
+    .id("createdelight:filling/fuel_hotcream")
 })
