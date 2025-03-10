@@ -44,7 +44,7 @@ Ponder.registry(event => {
                 scene.showBasePlate()
                 scene.world.showSection([0, 1, 0, 3, 1, 2], Direction.DOWN)
                 scene.world.showSection([2, 2, 2], Direction.DOWN)
-                scene.idle(20)
+                scene.idle(40)
                 scene.world.setBlocks([2, 2, 1], false, "ae2:small_quartz_bud")
                 scene.world.showSection([2, 2, 1], Direction.UP)
                 scene.idle(20)
