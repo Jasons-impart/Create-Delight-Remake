@@ -15,6 +15,9 @@ Ponder.tags(event => {
             "ae2:fluix_covered_cable",
             "ae2:fluix_covered_dense_cable",
             "ae2:fluix_smart_cable",
-            "ae2:fluix_smart_dense_cable"]
+            "ae2:fluix_smart_dense_cable",
+            "ae2:io_port",
+            "ae2:import_bus",
+            "ae2:export_bus"]
     )
 })
