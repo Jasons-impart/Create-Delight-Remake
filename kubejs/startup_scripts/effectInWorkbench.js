@@ -31,7 +31,8 @@ ClientEvents.init(event => {
     }
 
 
-    simpleRegWorkbenchBar('createdelight:forstall',5)
+    simpleRegWorkbenchBar('createdelight:forstall', 5)
+    simpleRegWorkbenchBar('createdelight:overwhelm', 100)
     // simpleRegWorkbenchBar('yi:power',10000)
     // simpleRegWorkbenchBar('yi:vibration',50)
     // simpleRegWorkbenchBar('yi:mana_addition',10)
