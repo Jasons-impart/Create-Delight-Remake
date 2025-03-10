@@ -325,6 +325,10 @@ StartupEvents.registry("item", e => {
                 .saturation(0.6)
         })
         .translationKey("item.createdelight.empty_riceball")
+
+    e.create("createdelight:fuel_hotcream")
+        .tag("create:blaze_burner_fuel/special")
+        .translationKey("item.createdelight.fuel_hotcream")
     //未完成的寿司
     e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
         .translationKey("item.createdelight.sushi_unrolledroll")
