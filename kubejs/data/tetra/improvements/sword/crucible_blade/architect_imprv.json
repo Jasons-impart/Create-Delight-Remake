@@ -6,13 +6,11 @@
         "effects": {
             "truesweep": 1,
             "sweeping": 1,
-            "severing": [ 50, 4 ],
+            "createdelight:overwhelm": 5,
             "vvaddon:strengtheffect": 1,
-	        "armorPenetration": 30,
-            "art_of_forging:goliath_slayer": 100
+	        "armorPenetration": 30
         },
         "attributes": {
-            "generic.attack_damage": 10,
             "generic.attack_speed": -0.1
         },
         "models": [
