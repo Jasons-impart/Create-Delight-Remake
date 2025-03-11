@@ -1,0 +1,14 @@
+{
+  "weight": 0.25,
+  "recoil": {
+    "yaw": {
+      "multiplier": 0.97
+    }
+  },
+  "inaccuracy": {
+    "multiplier": 0.88
+  },
+  "ads": {
+    "addend": -0.03
+  }
+}

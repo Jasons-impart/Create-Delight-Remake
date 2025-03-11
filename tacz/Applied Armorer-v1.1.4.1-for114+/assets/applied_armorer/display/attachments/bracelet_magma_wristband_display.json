@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/bracelet_magma_wristband",
+  "model": "applied_armorer:attachment/bracelet_magma_wristband",
+  "texture": "applied_armorer:attachment/uv/bracelet_magma_wristband",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_small",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_small"
+  }
+}

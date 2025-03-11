@@ -1,0 +1,61 @@
+{
+    "model": "applied_armorer:gun/niklas_pistol_semi_pride_geo",
+    "texture": "applied_armorer:gun/uv/niklas_pistol_semi_pride",
+    "lod": {
+        "model": "applied_armorer:gun/lod/niklas_pistol_semi_pride_lod",
+        "texture": "applied_armorer:gun/lod/niklas_pistol_semi_pride_lod"
+    },
+    "hud": "applied_armorer:gun/hud/niklas_pistol_semi_pride",
+    "slot": "applied_armorer:gun/slot/niklas_pistol_semi_pride",
+    "animation": "applied_armorer:niklas_pistol_semi_pride",
+    "use_default_animation": "pistol",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "shell": {
+        "initial_velocity": [8.0, 5.0, -0.5],
+        "random_velocity": [2.5, 1.5, 0.25],
+        "acceleration": [0.0, -20, 0.0],
+        "angular_velocity": [360, -720, 90],
+        "living_time": 1.0
+    },
+    "muzzle_flash": {
+        "texture": "applied_armorer:misc/blue_pixel_muzzle_flash",
+        "scale": 1
+    },
+    "sounds": {
+        "melee_bayonet": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_melee_attack",
+        "shoot": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_shoot",
+        "shoot_3p": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_shoot_3p",
+        "reload_empty": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_reload_empty",
+        "reload_tactical": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_reload_tactical",
+        "inspect": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_inspect",
+        "inspect_empty": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_inspect_empty",
+        "draw": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_draw",
+        "dry_fire": "applied_armorer:misc/en_dry_fire",
+        "put_away": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_put_away",
+        "silence": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_silence",
+        "fire_select": "applied_armorer:misc/select_mode",
+        "silence_3p": "applied_armorer:niklas_pistol_semi_pride/niklas_pistol_semi_pride_silence_3p",
+        "flesh_hit": "applied_armorer:misc/flesh_hit",
+        "head_hit": "applied_armorer:misc/head_hit",
+        "kill": "applied_armorer:misc/kill"
+    }
+}

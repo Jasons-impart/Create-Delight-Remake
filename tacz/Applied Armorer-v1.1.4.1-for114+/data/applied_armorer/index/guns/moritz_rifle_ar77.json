@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_rifle_ar77",
+    "display": "applied_armorer:moritz_rifle_ar77_display",
+    "data": "applied_armorer:moritz_rifle_ar77_data",
+    "tooltip": "tooltip.moritz_rifle_ar77",
+    "type": "rifle",
+    "sort": 401
+}

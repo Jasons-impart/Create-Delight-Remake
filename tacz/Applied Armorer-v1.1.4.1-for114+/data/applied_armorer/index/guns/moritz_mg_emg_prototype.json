@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_mg_emg_prototype",
+    "display": "applied_armorer:moritz_mg_emg_prototype_display",
+    "data": "applied_armorer:moritz_mg_emg_prototype_data",
+    "tooltip": "tooltip.moritz_mg_emg_prototype",
+    "type": "mg",
+    "sort": 401
+}

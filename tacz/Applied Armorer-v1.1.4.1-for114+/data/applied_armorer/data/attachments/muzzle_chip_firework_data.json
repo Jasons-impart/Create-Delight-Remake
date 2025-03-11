@@ -1,0 +1,34 @@
+{
+  "weight": 0,
+  "explosion": {
+     "explode": true,
+     "radius": {
+      "addend": 1
+     },
+     "damage": {
+      "addend": 8
+     },
+     "knockback": false,
+     "destroy_block": false
+  },
+  "damage": {
+    "multiplier": 0.75
+  },
+  "armor_ignore":{
+    "addend": -0.2
+  },
+  "knockback": {
+    "addend": 0.3
+  },
+  "rpm": {
+    "multiplier": 0.85
+  },
+  "recoil": {
+    "yaw": {
+    "multiplier": 1.5
+    },
+    "pitch": {
+    "multiplier": 1.75
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "model": "applied_armorer:gun/moritz_mg_emg_prototype_geo",
+    "texture": "applied_armorer:gun/uv/moritz_mg_emg_prototype",
+    "lod": {
+        "model": "applied_armorer:gun/lod/moritz_mg_emg_prototype_lod",
+        "texture": "applied_armorer:gun/lod/moritz_mg_emg_prototype_lod"
+    },
+    "hud": "applied_armorer:gun/hud/moritz_mg_emg_prototype",
+    "slot": "applied_armorer:gun/slot/moritz_mg_emg_prototype",
+    "animation": "applied_armorer:moritz_mg_emg_prototype",
+    "use_default_animation": "rifle",
+    "show_crosshair": true,
+    "third_person_animation": "default",
+    "ammo_count_style": "percent",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                1,
+                1,
+                1
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "shoot": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_shoot",
+        "shoot_3p": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_shoot_3p",
+        "reload_empty": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_reload",
+        "reload_tactical": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_reload",
+        "inspect": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_inspect",
+        "inspect_empty": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_inspect",
+        "draw": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_draw",
+        "dry_fire": "applied_armorer:misc/en_dry_fire",
+        "put_away": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_put_away",
+        "silence": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_silence",
+        "fire_select": "applied_armorer:misc/select_mode",
+        "silence_3p": "applied_armorer:moritz_mg_emg_prototype/moritz_mg_emg_prototype_silence_3p",
+        "flesh_hit": "applied_armorer:misc/flesh_hit",
+        "head_hit": "applied_armorer:misc/head_hit",
+        "kill": "applied_armorer:misc/kill"
+    }
+}

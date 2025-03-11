@@ -1,0 +1,8 @@
+{
+  "slot": "applied_armorer:ammo/slot/cluster_quartz_bullet",
+  "tracer_color": "#4e97ff",
+  "shell": {
+    "model": "applied_armorer:shell/cluster_quartz_bullet_shell",
+    "texture": "applied_armorer:shell/cluster_quartz_bullet_shell"
+  }
+}

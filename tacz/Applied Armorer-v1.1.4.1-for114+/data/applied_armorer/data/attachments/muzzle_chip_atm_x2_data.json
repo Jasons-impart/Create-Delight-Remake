@@ -1,0 +1,11 @@
+{
+  "weight": 0,
+  "recoil": {
+    "yaw": {
+    "multiplier": 2
+    },
+    "pitch": {
+    "multiplier": 0
+    }
+  }
+}

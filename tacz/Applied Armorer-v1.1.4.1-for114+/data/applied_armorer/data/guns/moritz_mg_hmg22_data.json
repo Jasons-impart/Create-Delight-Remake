@@ -1,0 +1,102 @@
+{
+  "ammo": "applied_armorer:fluix_battery",
+  "ammo_amount": 80,
+  "extended_mag_ammo_amount": [
+    120,
+    160,
+    200
+  ],
+  "bolt": "open_bolt",
+  "rpm": 250,
+  "bullet": {
+    "life": 1,
+    "bullet_amount": 1,
+    "damage": 10,
+    "tracer_count_interval": 0,
+    "extra_damage": {
+      "armor_ignore": 0.35,
+      "head_shot_multiplier": 1.5,
+      "damage_adjust": [
+        {"distance": 50, "damage": 10},
+        {"distance": 100, "damage": 9},
+        {"distance": "infinite", "damage": 8}
+      ]
+    },
+    "speed": 450,
+    "gravity": 0.15,
+    "knockback": 0,
+    "friction": 0.015,
+    "ignite": false,
+    "ignite_entity_time": 6,
+    "pierce": 1
+  },
+  "reload": {
+    "type": "fuel",
+    "feed": {
+      "empty": 3.67,
+      "tactical": 3.67
+    },
+    "cooldown": {
+      "empty": 4.5,
+      "tactical": 4.5
+    }
+  },
+  "draw_time": 1.13,
+  "put_away_time": 0.625,
+  "aim_time": 0.25,
+  "sprint_time": 0.2,
+  "weight": 5.75,
+  "movement_speed": {
+    "base": 0.0,
+    "aim": -0.2,
+    "reload": -0.15
+  },
+  "crawl_recoil_multiplier": 0.25,
+  "fire_mode": [
+    "auto"
+  ],
+  "recoil": {
+    "pitch": [
+      {"time": 0, "value": [0.75, 0.75]},
+      {"time": 0.25, "value": [0.75, 0.75]},
+      {"time": 0.4, "value": [-0.175, -0.175]},
+      {"time": 0.7, "value": [0.04, 0.04]},
+      {"time": 1, "value": [0, 0]}
+    ],
+    "yaw": [
+      {"time": 0, "value": [-0.25, 0.25]},
+      {"time": 0.25, "value": [-0.25, 0.25]},
+      {"time": 0.4, "value": [0, 0]}
+    ]
+  },
+  "inaccuracy": {
+    "stand": 3,
+    "move": 3.5,
+    "sneak": 2.25,
+    "lie": 1.75,
+    "aim": 0.1
+  },
+  "melee": {
+    "distance": 1,
+    "cooldown": 1.0,
+    "default": {
+      "animation_type": "melee_stock",
+      "distance": 1.25,
+      "range_angle": 30,
+      "damage": 7,
+      "knockback": 1,
+      "prep": 0.1
+    }
+  },
+  "builtin_attachments": {
+    "scope": "applied_armorer:si_xs_07"
+  },
+  "script": "applied_armorer:moritz_mg_hmg22_logic",
+  "allow_attachment_types": [
+    "extended_mag",
+    "scope",
+    "stock",
+    "muzzle",
+    "grip"
+  ]
+}

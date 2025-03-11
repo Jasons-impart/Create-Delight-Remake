@@ -1,0 +1,6 @@
+{
+  "name": "applied_armorer.attachment.grip_light.name",
+  "display": "applied_armorer:grip_light_display",
+  "data": "applied_armorer:grip_light_data",
+  "type": "grip"
+}

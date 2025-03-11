@@ -1,0 +1,8 @@
+{
+  "slot": "applied_armorer:ammo/slot/etched_quartz_bullet",
+  "tracer_color": "#53a5ff",
+  "shell": {
+    "model": "applied_armorer:shell/etched_quartz_bullet_shell",
+    "texture": "applied_armorer:shell/etched_quartz_bullet_shell"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/bracelet_exo",
+  "model": "applied_armorer:attachment/bracelet_exo",
+  "texture": "applied_armorer:attachment/uv/bracelet_exo",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_small",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_small"
+  }
+}

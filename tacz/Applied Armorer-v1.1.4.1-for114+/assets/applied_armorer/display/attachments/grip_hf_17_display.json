@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/grip_hf_17",
+  "model": "applied_armorer:attachment/grip_hf_17",
+  "texture": "applied_armorer:attachment/uv/grip_hf_17",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_big",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_big"
+  }
+}

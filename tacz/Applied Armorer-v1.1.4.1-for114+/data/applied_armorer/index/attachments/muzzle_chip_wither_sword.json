@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_wither_sword.name",
+  "display": "applied_armorer:muzzle_chip_wither_sword_display",
+  "data": "applied_armorer:muzzle_chip_wither_sword_data",
+  "tooltip": "tooltip.attachment.muzzle_chip_wither_sword",
+  "type": "muzzle"
+}
