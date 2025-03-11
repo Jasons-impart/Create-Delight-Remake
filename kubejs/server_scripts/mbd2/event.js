@@ -111,8 +111,12 @@ MBDMachineEvents.onBeforeRecipeWorking("mbd2:hydropower_station", e => {
      */
     let machine = e.event.machine
     let mainFacing = machine.frontFacing.get()
-    let fanFacing = machine.getParts().get(0).frontFacing.get()
-    if (!(mainFacing.clockWise.equals(fanFacing) || mainFacing.counterClockWise.equals(fanFacing)))
-        e.event.setCanceled(true)
+    machine.getParts().forEach(part => {
+        if (part.name == "mbd2:hydropower_station_fan") {
+            let fanFacing = part.frontFacing.get()
+            if (!(mainFacing.clockWise.equals(fanFacing) || mainFacing.counterClockWise.equals(fanFacing)))
+                e.event.setCanceled(true)
+        }
+    })
     
 })
