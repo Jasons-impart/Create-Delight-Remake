@@ -124,29 +124,6 @@
 	# 
 	#-----------------------------------------------------
 	#
-	# Multiplies the trade reward by this much for bonus Trades! 0 or 1 set here disables bonus Trades.
-	#
-	#Range: 0 ~ 256
-	beeQueenBonusTradeRewardMultiplier = 3
-	# 
-	#-----------------------------------------------------
-	#
-	# How long in ticks that bonus Trades will last for before the Bee Queen asks for a new item.
-	# Setting this to 0 disables bonus Trades. Anything less than a minute (1200) will not broadcast request message to players
-	#
-	#Range: 0 ~ 2000000
-	beeQueenBonusTradeDurationInTicks = 24000
-	# 
-	#-----------------------------------------------------
-	#
-	# How many boosted trades are allowed until the bonus Trade is depleted until the queen requests a new item
-	# Setting this to 0 disables bonus Trades.
-	#
-	#Range: 0 ~ 1000000
-	beeQueenBonusTradeAmountTillSatified = 24
-	# 
-	#-----------------------------------------------------
-	#
 	# Whether to allow special trades to activate during certain days of the year.
 	#
 	beeQueenSpecialDayTrades = true
