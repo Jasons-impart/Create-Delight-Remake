@@ -14,7 +14,7 @@ EntityEvents.drops(e => {
             return
 
         let weapon = player.getItemInHand("main_hand")
-        if (TetraUtil.getItem(weapon) == null)
+        if (TetraUtil.getItem(weapon) == null && !TetraUtil.itemHasEffect(weapon, "art_of_forging:nano_fused"))
             return
         let level = TetraUtil.getEffectLevel(weapon, "art_of_forging:nano_fused")
         e.addDrop(item, level / 100)
