@@ -146,9 +146,9 @@ ServerEvents.recipes(e => {
         "   "
     ],
         {
-            A: "alexscaves:scarlet_neodymium_ingot",
+            A: "alexscaves:raw_scarlet_neodymium",
             B: "minecraft:quartz",
-            C: "alexscaves:azure_neodymium_ingot",
+            C: "alexscaves:raw_azure_neodymium",
             D: "create_new_age:overcharged_iron_sheet"
         })
         .id("alexscaves:telecore")
@@ -157,8 +157,8 @@ ServerEvents.recipes(e => {
     let iner_5 = "ad_astra:steel_nugget"
     e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", "ad_astra:steel_nugget",
         [
-            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:azure_neodymium_ingot"]),
-            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:scarlet_neodymium_ingot"])
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_azure_neodymium"]),
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_scarlet_neodymium"])
         ]
     )
         .transitionalItem(iner_5)

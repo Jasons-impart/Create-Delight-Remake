@@ -1,7 +1,5 @@
 StartupEvents.registry("block", e => {
     e.create("createdelight:adzuki_beans", "crop")
-        .translationKey("block.createdelight.adzuki_beans")
-        .renderType("cutout")
         .age(6, age => {
             age.shape(0, 0, 0, 0, 16, 2, 16)
             age.shape(1, 0, 0, 0, 16, 4, 16)
@@ -11,10 +9,8 @@ StartupEvents.registry("block", e => {
             age.shape(5, 0, 0, 0, 16, 16, 16)
             age.shape(6, 0, 0, 0, 16, 16, 16)
         })
-        .growTick((tickevent) => 25)
-        .bonemeal(info => {
-            return 1
-        })
+        .growTick((tickevent) => 5)
+        .bonemeal(info => info.random.nextInt(2))
         .dropSeed(true)
         .crop("createdelight:adzuki_beans_seed", 1)
         .texture(0, "neapolitan:block/flowering_adzuki_sprouts_stage0")
@@ -28,19 +24,17 @@ StartupEvents.registry("block", e => {
             seed.texture("neapolitan:item/adzuki_beans")
             seed.translationKey("item.createdelight.adzuki_beans_seed")
         })
-    e.create("createdelight:artemisia_argyi", "crop")
-        .translationKey("block.createdelight.artemisia_argyi")
         .renderType("cutout")
+        .translationKey("block.createdelight.adzuki_beans")
+    e.create("createdelight:artemisia_argyi", "crop")
         .age(3, age => {
             age.shape(0, 0, 0, 0, 16, 2, 16)
             age.shape(1, 0, 0, 0, 16, 4, 16)
             age.shape(2, 0, 0, 0, 16, 8, 16)
             age.shape(3, 0, 0, 0, 16, 12, 16)
         })
-        .growTick((tickevent) => 25)
-        .bonemeal(info => {
-            return 1
-        })
+        .growTick((tickevent) => 5)
+        .bonemeal(info => info.random.nextInt(2))
         .dropSeed(true)
         .crop('festival_delicacies:artemisia_argyi', 1)
         .crop('festival_delicacies:artemisia_argyi', 0.5)
@@ -52,5 +46,7 @@ StartupEvents.registry("block", e => {
             seed.texture("createdelight:item/artemisia_argyi_seed")
             seed.translationKey("item.createdelight.adzuki_beans_seed")
         })
+        .renderType("cutout")
+        .translationKey("block.createdelight.artemisia_argyi")
 
 })
