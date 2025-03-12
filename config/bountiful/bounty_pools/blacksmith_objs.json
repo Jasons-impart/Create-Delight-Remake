@@ -11,7 +11,7 @@
         },
         "blacksmith_raw_tin": {
             "type": "item",
-            "content": "createdelight:raw_tin",
+            "content": "createdelightcore:raw_tin",
             "amount": {
                 "min": 1,
                 "max": 32
@@ -31,7 +31,7 @@
         },
         "blacksmith_raw_tin_uncommon": {
             "type": "item",
-            "content": "createdelight:raw_tin",
+            "content": "createdelightcore:raw_tin",
             "rarity": "UNCOMMON",
             "weightMult": 0.5,
             "amount": {
@@ -144,7 +144,7 @@
         },
         "blacksmith_bronze_ingot": {
             "type": "item",
-            "content": "createdelight:bronze_ingot",
+            "content": "createdelightcore:bronze_ingot",
             "rarity": "RARE",
             "weightMult": 0.25,
             "amount": {

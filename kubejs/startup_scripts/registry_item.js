@@ -177,60 +177,6 @@ StartupEvents.registry("item", e => {
             food.hunger(2)
                 .saturation(0.25)
         })
-    // 生炸虾仁
-    e.create("createdelight:unfried_shrimp")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_shrimp")
-        .food(food => {
-            food.hunger(4)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生鸡块
-    e.create("createdelight:raw_chicken_chip")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_chicken_chip")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生猪排
-    e.create("createdelight:raw_tonkatsu")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_tonkatsu")
-        .food(food => {
-            food.hunger(4)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸鱼
-    e.create("createdelight:raw_fish")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_fish")
-        .food(food => {
-            food.hunger(3)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸土豆
-    e.create("createdelight:unfried_potato")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_potato")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸鸡腿
-    e.create("createdelight:unfried_chicken_leg")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_chicken_leg")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
         .maxStackSize(64)
@@ -239,7 +185,6 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
         })
-
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)

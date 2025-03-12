@@ -4235,7 +4235,7 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "createdelight:bronze_ingot",
+            "ID": "createdelightcore:bronze_ingot",
             "Count": 32
           },
           "Price": {
@@ -5273,7 +5273,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelight:raw_tin",
+            "ID": "createdelightcore:raw_tin",
             "Count": 40
           },
           "Price": {

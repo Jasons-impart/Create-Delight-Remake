@@ -149,6 +149,14 @@ ServerEvents.recipes(e => {
         ]
     ).id("create_deepfried:compat/farmersdelight/mixing/raw_tempura")
     e.recipes.create.mixing(
+        "createdelightcore:unfried_calamari",
+        [
+            "create:wheat_flour",
+            "createdelight:raw_calamari",
+            Fluid.of("minecraft:water", 50)
+        ]
+    ).id("create_deepfried:mixing/unfried_calamari")
+    e.recipes.create.mixing(
         "create_deepfried:raw_tempura",
         [
             "create:wheat_flour",
