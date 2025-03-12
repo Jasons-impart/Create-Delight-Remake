@@ -139,6 +139,8 @@ ServerEvents.tags("block", e => {
         "vinery:taiga_grape_bush_white",
         "oceanic_delight:sea_grape_plant",
         "neapolitan:small_banana_frond",
+        "neapolitan:banana_frond",
+        "neapolitan:large_banana_frond",
         "neapolitan:mint",
         "neapolitan:strawberry_bush",
         "neapolitan:vanilla_vine",
