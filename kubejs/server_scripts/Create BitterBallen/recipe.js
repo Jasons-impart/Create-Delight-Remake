@@ -200,6 +200,14 @@ ServerEvents.recipes(e => {
             Fluid.of("create_bic_bit:ketchup", 250)
         ]
     ).id("create_deepfried:filling/classic_corn_dog_from_mayo_corn_dog")
+
+    e.recipes.kubejs.shaped("create_bic_bit:wrapped_coated_churros",
+        [["minecraft:air", "create_bic_bit:churros"],
+        ["minecraft:air", "minecraft:paper"]])
+        .id("create_bic_bit:crafting/wrapped_coated_churros")
+    e.recipes.create.deploying("create_bic_bit:wrapped_coated_churros",
+        ["create_bic_bit:coated_churros", "minecraft:paper"])
+        .id("create_bic_bit:deploying/wrapped_coated_churros")
 })
 
 ServerEvents.tags("minecraft:item", e => {
