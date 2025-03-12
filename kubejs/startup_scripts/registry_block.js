@@ -100,12 +100,12 @@ StartupEvents.registry("block", (e) => {
 
 
     
-    e.create("createdelight:forged_steel_block")
-        .soundType("metal")
-        .hardness(7)
-        .resistance(7)
-        .tag("minecraft:mineable/pickaxe")
-        .tag("minecraft:needs_iron_tool")
-        .translationKey("block.createdelight.forged_steel_block")
-        .requiresTool(true)
+  e.create("createdelight:forged_steel_block")
+      .soundType("metal")
+      .hardness(7)
+      .resistance(7)
+      .tag("minecraft:mineable/pickaxe")
+      .tag("minecraft:needs_iron_tool")
+      .translationKey("block.createdelight.forged_steel_block")
+      .requiresTool(true)
 });
