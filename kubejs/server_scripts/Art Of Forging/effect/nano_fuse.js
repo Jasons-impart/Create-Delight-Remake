@@ -14,15 +14,10 @@ EntityEvents.drops(e => {
             return
 
         let weapon = player.getItemInHand("main_hand")
-        if (!weapon.hasNBT())
-            return 
-        let nano_fused_count = 0
-        weapon.nbt.getAllKeys().forEach(str => {
-            if (str.endsWith("nano_fused")) {
-                nano_fused_count++
-            }
-        })
-        e.addDrop(item, nano_fused_count * 0.25)
+        if (TetraUtil.getItem(weapon) == null)
+            return
+        let level = TetraUtil.getEffectLevel(weapon, "art_of_forging:nano_fused")
+        e.addDrop(item, level / 100)
     }
     addNanoFuseLoot(e, "alexscaves:teletor", "art_of_forging:nano_insectoid")
     addNanoFuseLoot(e, "alexscaves:magnetron", "art_of_forging:nano_insectoid")
