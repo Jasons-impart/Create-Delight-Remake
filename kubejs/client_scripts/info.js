@@ -1,4 +1,4 @@
-let info = [["createdelight:fragment_of_border", "使用边界碎块右击边界碎块召唤瞻远者", "TEST"]];
+let info = [["createdelightcore:fragment_of_border", "使用边界碎块右击边界碎块召唤瞻远者", "TEST"]];
 
 info.forEach(([key, zh_cn, en_us]) => {
   // 添加 key

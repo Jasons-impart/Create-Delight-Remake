@@ -434,7 +434,7 @@
 			subtitle: "到处都是"
 			tasks: [{
 				id: "1B9A8E459ADA60C9"
-				item: "createdelight:tin_ingot"
+				item: "createdelightcore:tin_ingot"
 				type: "item"
 			}]
 			x: 2.25d
@@ -644,7 +644,7 @@
 			id: "424AE3AE68EED3C2"
 			rewards: [{
 				id: "4EA444F2073E1415"
-				item: "createdelight:bronze_ingot"
+				item: "createdelightcore:bronze_ingot"
 				random_bonus: 15
 				type: "item"
 			}]
@@ -653,7 +653,7 @@
 			subtitle: "铜锡合金"
 			tasks: [{
 				id: "0B1E8E58AA6E6FC2"
-				item: "createdelight:bronze_ingot"
+				item: "createdelightcore:bronze_ingot"
 				type: "item"
 			}]
 			x: 4.0d

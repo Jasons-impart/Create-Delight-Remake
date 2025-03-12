@@ -51,13 +51,13 @@ ServerEvents.recipes(e => {
     ).heated().id("oceanic_delight:shrimp_chips")
     // 炸虾仁系列
     e.recipes.create.mixing(
-        "createdelight:unfried_shrimp",
+        "createdelightcore:unfried_shrimp",
         [
             'oceanic_delight:shrimp_slices',
             "create:wheat_flour",
             Fluid.of("createdelight:egg_yolk", 100)
         ]
-    ).id("createdelight:unfried_shrimp")
+    ).id("createdelightcore:unfried_shrimp")
 })
 
 ServerEvents.tags("item", e => {

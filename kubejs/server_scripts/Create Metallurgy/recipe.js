@@ -36,8 +36,8 @@ ServerEvents.recipes(e => {
         "createdelight:dirty_tin_dust",
         "createdelight:tin_dust",
         "create:crushed_raw_tin",
-        "createdelight:raw_tin",
-        "createdelight:tin_nugget"])
+        "createdelightcore:raw_tin",
+        "createdelightcore:tin_nugget"])
     metal_production_line_5(e, [
         "createdelight:dirty_silver_dust",
         "createdelight:silver_dust",

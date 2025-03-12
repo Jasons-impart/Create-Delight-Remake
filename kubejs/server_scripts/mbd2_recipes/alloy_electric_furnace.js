@@ -27,7 +27,7 @@ ServerEvents.recipes(e => {
     //青铜锭
     e.recipes.mbd2.alloy_electric_furnace()
         .inputItems("3x #forge:ingots/copper", "#forge:ingots/tin")
-        .outputItems("4x createdelight:bronze_ingot")
+        .outputItems("4x createdelightcore:bronze_ingot")
         .inputFE(1000)
     //钢锭
     e.recipes.mbd2.alloy_electric_furnace()
@@ -61,7 +61,7 @@ ServerEvents.recipes(e => {
         .inputFE(1000)
     e.recipes.mbd2.alloy_electric_furnace()
         .inputItems("#forge:dusts/tin")
-        .outputItems("createdelight:tin_ingot")
+        .outputItems("createdelightcore:tin_ingot")
         .inputFE(1000)
     e.recipes.mbd2.alloy_electric_furnace()
         .inputItems("#forge:dusts/desh")

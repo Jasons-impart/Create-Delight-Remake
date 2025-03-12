@@ -147,6 +147,6 @@ ServerEvents.recipes(e => {
         B: "ad_astra:fan",
         C: "createdelight:forged_steel_sheet",
         D: "ad_astra:steel_engine",
-        E: "createdelight:forged_steel_block"
+        E: "createdelightcore:forged_steel_block"
     })
 })

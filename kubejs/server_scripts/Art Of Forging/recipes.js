@@ -81,10 +81,10 @@ ServerEvents.recipes(e => {
         .id("tetra:thousand_cold_night_scroll")
 
     metal_production_line_3(e,
-        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelightcore:molten_forged_steel"], "superheated", 160)
-    kubejs.shapeless("createdelight:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
+        ["createdelightcore:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelightcore:molten_forged_steel"], "superheated", 160)
+    kubejs.shapeless("createdelightcore:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
         .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
-    kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelight:forged_steel_block")
+    kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelightcore:forged_steel_block")
         .id("art_of_forging:forged_steel_block")
     createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360), [
         "tetra:metal_scrap",
