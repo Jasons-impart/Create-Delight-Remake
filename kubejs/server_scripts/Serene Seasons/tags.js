@@ -94,7 +94,8 @@ ServerEvents.tags("block", e => {
         "createdelight:artemisia_argyi_seed",
         "vintagedelight:ghost_pepper_crop",
         "createdelight:adzuki_beans",
-        "createdelight:artemisia_argyi"
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_crop",
@@ -115,7 +116,8 @@ ServerEvents.tags("block", e => {
         "neapolitan:mint",
         "neapolitan:vanilla_vine",
         "createdelight:artemisia_argyi_seed",
-        "createdelight:artemisia_argyi"
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_plant",
@@ -147,7 +149,8 @@ ServerEvents.tags("block", e => {
         "createdelight:adzuki_beans_seed",
         "createdelight:artemisia_argyi_seed",
         "createdelight:adzuki_beans",
-        "createdelight:artemisia_argyi"
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_crop",

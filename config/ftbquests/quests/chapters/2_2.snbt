@@ -1341,7 +1341,8 @@
 			]
 			description: [
 				"使用方法：获取&e一对量子缠绕态奇点&r，将其中一个放入&e一个量子环&r，另一个放入&e你的终端&r。"
-				"安装量子桥卡后终端能够&e自动充电&r。"
+				"安装量子桥卡后，你的无线终端可以&e无视距离和维度&r访问你的网络，且终端能够&e自动充电&r。"
+				"以及需要保证你的量子环处于强加载状态。"
 				"将通用终端作为前置只是为了更醒目，实际是可以插入任何无线终端的。"
 			]
 			id: "5D59D0F5DD574ACE"
@@ -1380,6 +1381,10 @@
 		}
 		{
 			dependencies: ["4EB97C2DFB8A6E76"]
+			description: [
+				""
+				"{ \"text\": \"点此进入自动化相关章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3ACFB4AE35155456\" } }"
+			]
 			id: "7A07E43D011E6FCE"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -1474,6 +1479,7 @@
 				type: "random"
 			}]
 			size: 1.5d
+			subtitle: "生产物质球与奇点"
 			tasks: [{
 				id: "1F810C447FFD7234"
 				item: "ae2:condenser"
