@@ -562,7 +562,11 @@ StartupEvents.registry("item", e => {
         .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
+    
+    //采血器
+    e.create("createdelight:blood_collection_device")
+        .translationKey("item.createdelight.blood_collection_device")
+    
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]
     seed_quality.forEach(q => {
