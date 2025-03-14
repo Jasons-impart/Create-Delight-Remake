@@ -26,3 +26,14 @@ ServerEvents.tags("minecraft:item", e => {
         ]
     )
 })
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:crops", [
+        "festival_delicacies:fennel",
+        "festival_delicacies:chinese_cabbage",
+        "festival_delicacies:eggplant",
+        "festival_delicacies:garlic_chive",
+        "festival_delicacies:garlic",
+        "festival_delicacies:greenonion"
+    ])
+})

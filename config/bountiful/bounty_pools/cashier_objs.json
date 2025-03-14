@@ -3182,7 +3182,7 @@
         },
         "cashier_obj_glow_squid_tentacles": {
             "type": "item",
-            "content": "oceanicdelight:glow_squid_tentacles",
+            "content": "oceanic_delight:glow_squid_tentacles",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3192,7 +3192,7 @@
         },
         "cashier_obj_squid_tentacles": {
             "type": "item",
-            "content": "oceanicdelight:squid_tentacles",
+            "content": "oceanic_delight:squid_tentacles",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3202,7 +3202,7 @@
         },
         "cashier_obj_shrimp_slices": {
             "type": "item",
-            "content": "oceanicdelight:shrimp_slices",
+            "content": "oceanic_delight:shrimp_slices",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3212,7 +3212,7 @@
         },
         "cashier_obj_sea_pickle_slices": {
             "type": "item",
-            "content": "oceanicdelight:sea_pickle_slices",
+            "content": "oceanic_delight:sea_pickle_slices",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3222,7 +3222,7 @@
         },
         "cashier_obj_sea_grape_juice": {
             "type": "item",
-            "content": "oceanicdelight:sea_grape_juice",
+            "content": "oceanic_delight:sea_grape_juice",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3232,7 +3232,7 @@
         },
         "cashier_obj_elder_guardian_eye": {
             "type": "item",
-            "content": "oceanicdelight:elder_guardian_eye",
+            "content": "oceanic_delight:elder_guardian_eye",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3242,7 +3242,7 @@
         },
         "cashier_obj_salmon_eggs": {
             "type": "item",
-            "content": "oceanicdelight:salmon_eggs",
+            "content": "oceanic_delight:salmon_eggs",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3252,7 +3252,7 @@
         },
         "cashier_obj_ancient_fish_eggs": {
             "type": "item",
-            "content": "oceanicdelight:ancient_fish_eggs",
+            "content": "oceanic_delight:ancient_fish_eggs",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3262,7 +3262,7 @@
         },
         "cashier_obj_sea_grape": {
             "type": "item",
-            "content": "oceanicdelight:sea_grape",
+            "content": "oceanic_delight:sea_grape",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3272,7 +3272,7 @@
         },
         "cashier_obj_stuffed_pufferfish": {
             "type": "item",
-            "content": "oceanicdelight:stuffed_pufferfish",
+            "content": "oceanic_delight:stuffed_pufferfish",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3282,7 +3282,7 @@
         },
         "cashier_obj_bowl_of_paella": {
             "type": "item",
-            "content": "oceanicdelight:bowl_of_paella",
+            "content": "oceanic_delight:bowl_of_paella",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3292,7 +3292,7 @@
         },
         "cashier_obj_paella_plate": {
             "type": "item",
-            "content": "oceanicdelight:paella_plate",
+            "content": "oceanic_delight:paella_plate",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3302,7 +3302,7 @@
         },
         "cashier_obj_squid_and_pickles": {
             "type": "item",
-            "content": "oceanicdelight:squid_and_pickles",
+            "content": "oceanic_delight:squid_and_pickles",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3312,7 +3312,7 @@
         },
         "cashier_obj_shrimp_rice": {
             "type": "item",
-            "content": "oceanicdelight:shrimp_rice",
+            "content": "oceanic_delight:shrimp_rice",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3322,7 +3322,7 @@
         },
         "cashier_obj_pasta_with_eyeball": {
             "type": "item",
-            "content": "oceanicdelight:pasta_with_eyeball",
+            "content": "oceanic_delight:pasta_with_eyeball",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3332,7 +3332,7 @@
         },
         "cashier_obj_shrimp_stew": {
             "type": "item",
-            "content": "oceanicdelight:shrimp_stew",
+            "content": "oceanic_delight:shrimp_stew",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3342,7 +3342,7 @@
         },
         "cashier_obj_fish_egg_noodle_soup": {
             "type": "item",
-            "content": "oceanicdelight:fish_egg_noodle_soup",
+            "content": "oceanic_delight:fish_egg_noodle_soup",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3352,7 +3352,7 @@
         },
         "cashier_obj_globular_rice": {
             "type": "item",
-            "content": "oceanicdelight:globular_rice",
+            "content": "oceanic_delight:globular_rice",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3362,7 +3362,7 @@
         },
         "cashier_obj_shrimp_roll": {
             "type": "item",
-            "content": "oceanicdelight:shrimp_roll",
+            "content": "oceanic_delight:shrimp_roll",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3372,7 +3372,7 @@
         },
         "cashier_obj_glow_squid_stew": {
             "type": "item",
-            "content": "oceanicdelight:glow_squid_stew",
+            "content": "oceanic_delight:glow_squid_stew",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3382,7 +3382,7 @@
         },
         "cashier_obj_fish_egg_roll_slice": {
             "type": "item",
-            "content": "oceanicdelight:fish_egg_roll_slice",
+            "content": "oceanic_delight:fish_egg_roll_slice",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3392,7 +3392,7 @@
         },
         "cashier_obj_fish_egg_roll": {
             "type": "item",
-            "content": "oceanicdelight:fish_egg_roll",
+            "content": "oceanic_delight:fish_egg_roll",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3402,7 +3402,7 @@
         },
         "cashier_obj_sea_pickle_roll": {
             "type": "item",
-            "content": "oceanicdelight:sea_pickle_roll",
+            "content": "oceanic_delight:sea_pickle_roll",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3412,7 +3412,7 @@
         },
         "cashier_obj_sea_pickle_roll_slice": {
             "type": "item",
-            "content": "oceanicdelight:sea_pickle_roll_slice",
+            "content": "oceanic_delight:sea_pickle_roll_slice",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3422,7 +3422,7 @@
         },
         "cashier_obj_steamed_beef": {
             "type": "item",
-            "content": "oceanicdelight:steamed_beef",
+            "content": "oceanic_delight:steamed_beef",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3432,7 +3432,7 @@
         },
         "cashier_obj_takoyaki": {
             "type": "item",
-            "content": "oceanicdelight:takoyaki",
+            "content": "oceanic_delight:takoyaki",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3442,7 +3442,7 @@
         },
         "cashier_obj_shrimp_chips": {
             "type": "item",
-            "content": "oceanicdelight:shrimp_chips",
+            "content": "oceanic_delight:shrimp_chips",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3452,7 +3452,7 @@
         },
         "cashier_obj_fried_shrimp": {
             "type": "item",
-            "content": "oceanicdelight:fried_shrimp",
+            "content": "oceanic_delight:fried_shrimp",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3462,7 +3462,7 @@
         },
         "cashier_obj_sea_salad": {
             "type": "item",
-            "content": "oceanicdelight:sea_salad",
+            "content": "oceanic_delight:sea_salad",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3472,7 +3472,7 @@
         },
         "cashier_obj_caesar_salad": {
             "type": "item",
-            "content": "oceanicdelight:caesar_salad",
+            "content": "oceanic_delight:caesar_salad",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3482,7 +3482,7 @@
         },
         "cashier_obj_potato_salad": {
             "type": "item",
-            "content": "oceanicdelight:potato_salad",
+            "content": "oceanic_delight:potato_salad",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3492,7 +3492,7 @@
         },
         "cashier_obj_squid_salad": {
             "type": "item",
-            "content": "oceanicdelight:squid_salad",
+            "content": "oceanic_delight:squid_salad",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3502,7 +3502,7 @@
         },
         "cashier_obj_seafood_skewer": {
             "type": "item",
-            "content": "oceanicdelight:seafood_skewer",
+            "content": "oceanic_delight:seafood_skewer",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3512,7 +3512,7 @@
         },
         "cashier_obj_caviar_toast": {
             "type": "item",
-            "content": "oceanicdelight:caviar_toast",
+            "content": "oceanic_delight:caviar_toast",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3522,7 +3522,7 @@
         },
         "cashier_obj_sponge_cake_slice": {
             "type": "item",
-            "content": "oceanicdelight:sponge_cake_slice",
+            "content": "oceanic_delight:sponge_cake_slice",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3532,7 +3532,7 @@
         },
         "cashier_obj_sponge_cake": {
             "type": "item",
-            "content": "oceanicdelight:sponge_cake",
+            "content": "oceanic_delight:sponge_cake",
             "amount": {
                 "min": 1,
                 "max": 10
@@ -3623,7 +3623,7 @@
         "cashier_obj_plate_of_stuffed_pufferfish": {
             "type": "item",
             "rarity": "RARE",
-            "content": "oceanicdelight:late_of_stuffed_pufferfish",
+            "content": "oceanic_delight:late_of_stuffed_pufferfish",
             "amount": {
                 "min": 1,
                 "max": 10
