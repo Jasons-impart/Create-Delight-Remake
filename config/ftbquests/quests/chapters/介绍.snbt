@@ -1,0 +1,865 @@
+{
+	autofocus_id: "55C42BCE0E399B3D"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "介绍"
+	group: ""
+	icon: "create:goggles"
+	id: "771AF9716A950812"
+	images: [{
+		height: 5.0d
+		image: "citadel:textures/gui/book/icon_default.png"
+		rotation: 0.0d
+		width: 5.0d
+		x: 0.0d
+		y: 0.0d
+	}]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"&l&4默认键位&r&r："
+				"&4R&r键可查询物品合成方式"
+				"&4U&r键可查询物品可合成物品"
+				"&4M&r打开世界地图"
+				"&4N&r打开领地地图"
+				"&4B&r直接打开背包"
+				"&4~&r可进行连锁挖掘"
+				"&4F5&r可切换越肩视角"
+				"单击&n&9蓝色下划线&r&r字体可跳转至对应章节"
+			]
+			id: "55C42BCE0E399B3D"
+			rewards: [
+				{
+					id: "6AFE6C12EEE2D122"
+					item: "solcarrot:food_book"
+					type: "item"
+				}
+				{
+					id: "3A50D0EA5E13508D"
+					item: {
+						Count: 1
+						id: "minecraft:stone_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "246296375B15F358"
+					item: {
+						Count: 1
+						id: "minecraft:stone_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 32
+					id: "20B54EFCD4A263B3"
+					item: "farmersdelight:stuffed_potato"
+					type: "item"
+				}
+				{
+					id: "5B9581F0DD4D723E"
+					item: "sophisticatedbackpacks:backpack"
+					type: "item"
+				}
+				{
+					id: "4A7F83BA42DBE15E"
+					item: "createdelight:emergency_industrial_platform"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 4.0d
+			subtitle: "原来你也玩机械动力悠然乐事！"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				disable_toast: true
+				icon: "minecraft:grass_block"
+				id: "2664A2E2CC659A77"
+				title: "原来你也玩机械动力悠然乐事！"
+				type: "dimension"
+			}]
+			title: "悠然乐事"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["64FB1FEC4F9721B7"]
+			description: ["注意！本整合包动物&e直接杀死&r&4不会掉落任何完整肉类&r！所有动物&4必须&r使用&4屠刀右键&r杀死！"]
+			icon: "minecraft:mutton"
+			id: "46F1F92929FC8F9F"
+			rewards: [{
+				id: "412F13F6349E82FE"
+				item: {
+					Count: 1
+					id: "netmusic:music_cd"
+					tag: {
+						NetMusicSongInfo: {
+							artists: ["The Journeymen"]
+							name: "500 Miles"
+							read_only: 0b
+							time: 193
+							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+							vip: 0b
+						}
+					}
+				}
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "本整合包添加了屠宰乐事"
+			tasks: [
+				{
+					id: "42B95E73286FD639"
+					type: "checkmark"
+				}
+				{
+					id: "1893FAE83B06F440"
+					item: {
+						Count: 1
+						id: "butchercraft:butcher_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "屠宰相关"
+			x: 6.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
+			icon: "minecraft:cartography_table"
+			id: "428692AFFB20055B"
+			rewards: [{
+				id: "262C632976BB2F34"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "注意不要认领太多！！！"
+			tasks: [{
+				id: "66BE628B0EBBFBC7"
+				type: "checkmark"
+			}]
+			title: "认领区块相关"
+			x: -3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["本整合包增加了一系列来自alex的生物，如有不了解的问题可以查看&4任务书内相关章节&r"]
+			icon: "alexsmobs:maraca"
+			id: "48EC662CDE792B76"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2B8162301619CFFC"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					id: "66043C64D616DE6D"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					id: "23111F2B1BC1612C"
+					item: "alexsmobs:animal_dictionary"
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"来自Alex的生物\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"329597CAA8B8D983\" } }"
+			tasks: [{
+				id: "3ED4156434322595"
+				type: "checkmark"
+			}]
+			title: "各式各样的生物"
+			x: -5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["59350A53C2738BD9"]
+			description: ["&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"]
+			icon: "createdieselgenerators:diesel_engine"
+			id: "20B3ECF56011C11A"
+			rewards: [{
+				id: "70152393AC9F25F1"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "注意柴油动力里的燃料"
+			tasks: [{
+				id: "495948214572F723"
+				title: "柴油动力！"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab"]
+			icon: {
+				Count: 1
+				id: "minecraft:player_head"
+				tag: {
+					SkullOwner: {
+						Id: [I;
+							-1481240249
+							609436865
+							-2133274348
+							1779033550
+						]
+						Name: "hk11238981"
+						Properties: {
+							textures: [{
+								Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY1NTc5MTg4NCwKICAicHJvZmlsZUlkIiA6ICJhN2I2MTE0NzI0NTM0NGMxODBkOGQxMTQ2YTA5ZTVjZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJoazExMjM4OTgxIiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTg1NzljYmY1OGUyYmQyNWJiOTJjMTJmYTc3MGE2NTYxYzY1MzZjZTkxOGVkZjNmYjQzOGNiMmEyYTljMzIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+							}]
+						}
+					}
+				}
+			}
+			id: "51C6C4C1530A4D3F"
+			rewards: [
+				{
+					id: "0B50564E9D4DD276"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1481240249
+									609436865
+									-2133274348
+									1779033550
+								]
+								Name: "hk11238981"
+								Properties: {
+									textures: [{
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY1NTc5MTg4NCwKICAicHJvZmlsZUlkIiA6ICJhN2I2MTE0NzI0NTM0NGMxODBkOGQxMTQ2YTA5ZTVjZSIsCiAgInByb2ZpbGVOYW1lIiA6ICJoazExMjM4OTgxIiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2JhMTg1NzljYmY1OGUyYmQyNWJiOTJjMTJmYTc3MGE2NTYxYzY1MzZjZTkxOGVkZjNmYjQzOGNiMmEyYTljMzIiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "241BD5E1A96302DD"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-19249855
+									-1347729812
+									-1806167094
+									-302317712
+								]
+								Name: "SSWTLZZ"
+								Properties: {
+									textures: [{
+										Signature: "Uh0Qtx6+tD0RDr7lST6BcfwyAD5g0vRIp7XZeirY2uaEptWNuricgauDeqBVbQygZCgvXnfm4qlWmmcJTNuUZSJVw+gPldDZ6phUxWiij4pCpDhUKBvnbg2XEZhql+32d5jGh1bfl024lBJkWZRSoNXtgJfQXwPp08vMvmSz8/2hYYdAyT6TBVR3tahyvhZ5F4u9VfRxcJmC5lys4MwB/dRGq4wyNqu0/LI5KgDEzNdfCa+AwOetxNhwXX+qIs8bGFKWUZVfTeNgVmAuAslfhzbocqe7jd+u4bpLDS1Yg9vURCG1RZr7kzwJp+GQRfgwP1Pdsbs7ZpJ+JSkS1N+Hq/moRsyUsbdK2j4sIJdJRsARppRpHhpsEjt33O6ZO6skTWwzaBpZ4OG34D7QTTTUUshaEYl1/VkCzDtD+HhpvbIrnSyekJ/05M9u2GSh+4TcG9+wH4zuN3CswgUi6Zc8IbPgVQXfremfHuluX8ndyrXd7aP0ilUH/J7M191sv1WkGb12XI13ejbOK8wKaY1WIA4D89lJQLA+as0sbpZGo6PJZX79pndIWtNFGzEy6lo7vj0sJyLe7lnLGmcqbKQDH0AcYj2LUnS+bCGite0Xdy7VVciPu/QzHhn2ja94Jg7EQ2mt8P9X0Oabrc0c7ksvlnzkrjMbFcj+DsXsPaoRtnY="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcyNjkyMTQ5OTkzOSwKICAicHJvZmlsZUlkIiA6ICJmZWRhNDU0MWFmYWI0NjZjOTQ1ODEzY2FlZGZhZmY3MCIsCiAgInByb2ZpbGVOYW1lIiA6ICJTU1dUTFpaIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2EwM2FlY2UwZjNmNTJiODBmYTM4YTY0Yjc3ZmI4NjhhMGU0ZTFhNGZkMDc5YmFlZGNjNjQxNDYwNTA5Y2U0NDUiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfSwKICAgICJDQVBFIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9jZDlkODJhYjE3ZmQ5MjAyMmRiZDRhODZjZGU0YzM4MmE3NTQwZTExN2ZhZTdiOWEyODUzNjU4NTA1YTgwNjI1IgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5F2DBE9583D7C349"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1636838176
+									1114391272
+									-1202169318
+									583422121
+								]
+								Name: "AzureCrab"
+								Properties: {
+									CustomSkinLoaderInfo: [
+										{
+											Value: "http://textures.minecraft.net/texture/2367068abcafaa719a14290261af6b77d1504bb6320478d7c7a39ca65de26ff"
+										}
+										{
+											Value: "default"
+										}
+										{
+											Value: "https://littleskin.cn/csl/textures/50daee1b9ed2aa85e260e9af3010f7f2bd078dfc40aec032f8f51fa438f69144"
+										}
+										{
+											Value: "null"
+										}
+									]
+									textures: [{
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzY0MTkxNzU1NSwKICAicHJvZmlsZUlkIiA6ICI5ZTZmZDRlMDQyNmM0MmU4Yjg1ODVhMWEyMmM2NTBhOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBenVyZUNyYWIiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM2NzA2OGFiY2FmYWE3MTlhMTQyOTAyNjFhZjZiNzdkMTUwNGJiNjMyMDQ3OGQ3YzdhMzljYTY1ZGUyNmZmIgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "578FA43FB27A8CA2"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									1261805926
+									-375570114
+									-2005167455
+									916362293
+								]
+								Name: "LightLeaves"
+								Properties: {
+									textures: [{
+										Signature: "ImiCgtmO6eYxZkivnDPj3O/pfokAnFKU29teKbrplQtNCttu/f7Y1AEimNigCgoNdErasaYQT3d9OO4dq1Eddrl+goSqWX7hGBzlEpScC0bvZhaZtEpgGK+60cf8pSiYnF75yLwsQJBGE8f7M6RNJD0JNqrfBQ2ERmixk4f7tu9aHEFPgSRjzMNm8Bw4frk7v9khX5KR/ciiBbbV/XKfZhUHXAoON6YQ2zyRzEhYhtZ3egVec2udLezko2De85CN2XEwbB/NIkJbY7IwqiKAHbM1EXL0lSKfca3bzTv3ovfDPh5sj9pDT8zdJyNRJpFyuyCnuPHnKaDtpkvsADAxsUE48t13pZG2xq3FF3U2cv9NM/vxWg8p4CNInkKGAoQnxw1Y/qfTWwjRMeGLe3NC2IP3fPJlk3r0jLnqw7+8yCa1Rl+d84cknvtyvUmxBfFCJW8aYiUCrlh+nsOvzqZKJBWsDGqydt4kvoiJy3jNwp3pMjAeGtxao1xLpVuSqx5UsXwsKoA4xC//oImT4+zmzhFhK/t5HcFsZO7vuA7qhRXuwq7ZVV40RsPNyq0DSaTLxubH2QuX419AWZZ81Rq4/362f3lLMQlEgoIPrQznhc7Vo8nhajw1W+Ck1FkIMJLLxfi0RFzZdVnq0uaqn0l0XSCmQO1oIb15UCLHp50bwZg="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTM3MjUzNywKICAicHJvZmlsZUlkIiA6ICI0YjM1YTE2NmU5OWQ0MTNlODg3YjkyYTEzNjllOTQzNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMaWdodExlYXZlcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS84NTU2MTkxNzc1YmVmYTlmMDgxYjUwMTMzYTFiZTUyNmEwNTIzY2YwMDVlZWNkNzVhMjA4MTczMTEwYzRiNzFkIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "07EC3F27C3E38286"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-432334341
+									-1248770919
+									-1171671115
+									1451100674
+								]
+								Name: "C_Pearl"
+								Properties: {
+									textures: [{
+										Signature: "khhHAfxjC29VRUYT4M62yaHw+JVnqFOuIDk3hhgXLHNUrj+cR3pBkqYGvFZmYmo+XzL1hEsgVwJtMYrI/U/eaF0wbac0PTAXxxdrVn/nM7zIl5sRoqQMoyJtM2j3LJSo6DGh6CkMlNoZ7Gqq3x1akwN5wKzXdV8NF+YmATq7UZ5KiuIxzrJZttIYTrZ+Cd/EFworyln2vzadZBgk3+A8jpFacfhZXozoS6eWjy5VDrDYlFchz2J3QrJhiVj9Eqb3OskaiVvmfsy90a7buIUl2dzQJJa8unLuin4jjjLy49Vu65F+TaU8i3WUZ7hKBvcnODrnDfLJF2z+5gPk3RW9jTV8Fc33HGCV382VN8eGdaVGuw+KSFzsBdCtHlv2Rje5CkwdvJ1QuM+uYkO6fZinR79vsrM5k37IDZjilw4kCG6Rgo/Ec6EoqjKASwJLJXYYJU0UsGiC5tk//dZ98PSmIooICrG6L/p+6iX/R9nJJyEwsixxFUt7cC1R+jbwWbmXL6FEa54FVskyf7zfBLXYL1G1fZ2IFVOvgAy9KoGTJQACMMs7wh9PwtOT86VW61OrQEcYowxrcq/U4hmJXNJ27JEm6d8W3JmJ9hK7y+hOvgo9p/l6q14AIIfgqCP4ZkGamoOQQIKYfbrPmXKTxQhyIudCncs1y0nDgomDQr439yY="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTQ5MTY1NSwKICAicHJvZmlsZUlkIiA6ICJlNjNiMTlmYmI1OTE0NDk5YmEyOWI3YjU1NjdlMGEwMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJDX1BlYXJsIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzMyMTkyZGJhOGRjZWNkMTM3MGViNjM0NDIzOTY0ZDM0M2JjOGU4Mjc3ZTY4OTA5YTE5NGY2YjBlNjliZjk2ZDgiLAogICAgICAibWV0YWRhdGEiIDogewogICAgICAgICJtb2RlbCIgOiAic2xpbSIKICAgICAgfQogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "36D51F4EC81717E9"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									2084299552
+									-718976588
+									-1530253716
+									-445470636
+								]
+								Name: "nanchuan211"
+								Properties: {
+									textures: [{
+										Signature: "q7MyX/NQm/TyBwzlupeoIb6O1Ue90MGKspcHYzOv+Q9h8qCke5OHvGfoE9EpQQKdnOaCYEah35HiR/qIxDM4Ne4/ocMVP8hu8tfMuPqLi3pu9X15p5RNN8HazAbKxoZTDL0j0roW19tzfQvi8KyoZazdjl1Uoc5kI/iZWoDQzPvjR5BoyxXVYmaaorot/wUi1KXr6+KwQ4U3Wjc9MsRAXE1Qej0ABR2/ydahN9vLGtlzO679JAArMCJTlk6/mIl3De8J4FNi7hGwFybb8giCWfXKqSx0juD1FSbL7SFLEy0+7gTz3I39GorNNfLlU5w2WZQMaH4swVEkw/sjddbti20NZuqmOroejCI3UEpRGeja7iMb82V1tdmyoJaRR1ipyQyVXhNgHRJIQDYNgOgDBnJZAelsL513Qoyy+TUHBKzeJFshxS/Y/oEO6MZgwwa6VA++2Ty7ziZyEMg3jhhC/EHuOExJb4VmpeAcaSf3+1J75egD9GZ3bCAeQu4VNzyn9qb1/lb/JcqX1CtizYS6u+PiQA93wT1CNTXyiJQYMs6Hfv7jAcC1vryNQjLXkr0CErLYXZh3E7q2pyDJVn+hIggZXqxGjL5ISYZBffZp35EsFmYOy16JtZy2AwMpF/fwONq4CvXTHfzAVWIAv/BMHWNxR8IoyxBDIwYewLpyYCs="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTM1NjU1NywKICAicHJvZmlsZUlkIiA6ICI3YzNiZTMyMGQ1MjU0OWI0YTRjYTJlNmNlNTcyYTg1NCIsCiAgInByb2ZpbGVOYW1lIiA6ICJuYW5jaHVhbjIxMSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8yNGViM2FkNWZlMWU5YzI2ZTI4M2RmMjhlMzdhM2I1YjM4MDk3ZWUxNDYxNDBkNmUxMjk2OWI5ZjlhNjA3Mzg5IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q5ZDgyYWIxN2ZkOTIwMjJkYmQ0YTg2Y2RlNGMzODJhNzU0MGUxMTdmYWU3YjlhMjg1MzY1ODUwNWE4MDYyNSIKICAgIH0KICB9Cn0="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "094A6A88D6F240BE"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1960145443
+									-948351405
+									-2025608280
+									671325087
+								]
+								Name: "LuJiChi"
+								Properties: {
+									textures: [{
+										Signature: "qQmSx1BZLxVQDY9EVTIhepepmMzXcNmX5PZABEQbA7BiHZ1ilxy4mWiNqy3ciQMJBSwV5EzEIjLRbERlYFGcqEiJDmw4ufGUiYWRK/oXGurElKSTIXfLdsXJkW5dMIr+hjWQ4z8wnCu3Hsv0QwwaF9/NVyHBmYHE7Brx/MxCGicTK8yzzLggQUsCo71lUT9GCr9pKvWkUa2WITxOuBlN72rDyrlhd4gZDb/tNC4g/16ZhhWi8oTbN95nXe9AchgXBHkaQGS/0obbd7XwRa08yABUvZf18q67PLyHqkNlzxNIRrs/StOOqOuIzWpuX1NOjTdrbiZoALabY55cqs1Fmkj7VuZulpf8bBXaIKB28EQHBKaYB2YMjJoTzs22YU0wObMQJIs1Yq1wBGr2yMhSnWA8z+iyrtMhATf4n4NL3M8xed34hRvQP9WYGxCWMIPcKCWvPL6kxZ0a9PPy5cwgogz4AgUS/h14E/Qj1gVlZwnLsmLGjMe+NlXk/ug2IYvqQnwtBC4jHXqIsc3CM3FpXeLDYnh//5BaU3bHaM0E7Xq2sp2DqTfpVcBr0OZpC6KLhdeBOUpIScn7dTFhd8xDFc+fCxcS1Y5fQ6Cxtr3t5S9pXJ7N5UCa9Z+mHmHtQgT9Lpa3jlG+4gKkUDJmG3EoZlx0P1R0YQ0yMFvSvCxUU6E="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTYzMjU4MjA0MSwKICAicHJvZmlsZUlkIiA6ICI4YjJhOGRkZGM3Nzk0ZTUzODc0M2FiYTgyODAzOWI5ZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJMdUppQ2hpIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2M3NmFhY2U1NWJiYjNiZjI1MjQzZWEwYzA5NjNhYTJlZjA1YWE2ZDRiZjRiMTU5ZTMyNDNmNDI0OGFjYjYwYjMiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2NkOWQ4MmFiMTdmZDkyMDIyZGJkNGE4NmNkZTRjMzgyYTc1NDBlMTE3ZmFlN2I5YTI4NTM2NTg1MDVhODA2MjUiCiAgICB9CiAgfQp9"
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0B20D4FC70E1B78F"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1158104552
+									692932033
+									-1863527532
+									-755201732
+								]
+								Name: "zhongxiaoli"
+								Properties: {
+									textures: [{
+										Signature: "uYBxaO3kRE6oWr/Pv3fYo32NPNZIn4WifPJG5cbC1LABGfcaCw1PM52E0WaL+lPlToNq2/WwY9cOuo8YQcy/JPHDTzjt87SMXaxbcgPUqnSFUroraKGAOBCmWTGs8PiKhBCst3eZ6QixtWEaaHjt+OZXqVR+ZYGYleOCOkeynZnM9VSWiB8bX4vdCSiF48fMPSKssbriWig9jhiPFzk9/4lVWUW5hmWdYvCL5gl+tRwIyjQBDBUZDwz2Qj9ERuVCKuH5dqpHVs0GeHQJKC1c2RZe0m0JCbqFk5ZjoomG6UB4thOHzFDqprqhDkixlckJ57G2VF8cJNXJiM2LTD22Az94ed6dKGrU+M/O6FcinP0Rze41chuQW1HcPlPFV8SvYq5G40lLEwoYTeRuUb+G3OhYinecmbkwPsJOwNgfjEzciF5/n70iUmF6vy+rK2ECtoTRtcVCHQ0dgCulNO255j8gMxGQMjUnVN5wifG08EhI29J5BIuNFKpLZQln6AE+UNUSurkzDOrDiBGICnilsYXvmT/ifpmV9haHjtXe1c9ZfAe3yejJafAHPtQzd3Nif2g3uMDTjHFm12tVJtJJafeKUn8lNjUalZfr/2meEDlxwNVgU0EaLf9FBol3CuUkIxJf0Q4BECOch1F1raYC9fV4qT6LReksg67ok9w50vI="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NDU5MTQ1NCwKICAicHJvZmlsZUlkIiA6ICJiYWY4YmExODI5NGQ0ZGMxOTBlY2QzOTRkMmZjODkzYyIsCiAgInByb2ZpbGVOYW1lIiA6ICJ6aG9uZ3hpYW9saSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8zY2JjMzIzODRiZjI4MzU5YTY2MzA5OGNhYWNiODAwZTg1MmU5NzliYjBjYzBmNTY0Y2JmNDAzMzc0NGE0MTM1IiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "383A225A4940D56F"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-217075502
+									-775731664
+									-2014396546
+									2032217639
+								]
+								Name: "cawyyds"
+								Properties: {
+									CustomSkinLoaderInfo: [
+										{
+											Value: "http://textures.minecraft.net/texture/e135e1e549aa7946c45c84f213011d9613bb36ed68c3c8c15ba0a10d6eef9da0"
+										}
+										{
+											Value: "default"
+										}
+										{
+											Value: "https://littleskin.cn/csl/textures/8301df130be56a550dc6e7b4a8baa16056a4d7f1c95c778f444bf2be59314933"
+										}
+										{
+											Value: "null"
+										}
+									]
+									textures: [{
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzY5MTEzOTk4MSwKICAicHJvZmlsZUlkIiA6ICJmMzBmYjBkMmQxYzM0NjMwODdlZWJmN2U3OTIxMmUyNyIsCiAgInByb2ZpbGVOYW1lIiA6ICJjYXd5eWRzIiwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2UxMzVlMWU1NDlhYTc5NDZjNDVjODRmMjEzMDExZDk2MTNiYjM2ZWQ2OGMzYzhjMTViYTBhMTBkNmVlZjlkYTAiCiAgICB9CiAgfQp9"
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2AC4056C950F302F"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									1376215344
+									-879016060
+									-1660820385
+									-1224002400
+								]
+								Name: "JIAFALSEDREAM"
+								Properties: {
+									textures: [{
+										Signature: "j64R9r2MdUYaPPi2KfphBHTRGYOrqNj0cGbFiQgIEsSFN2145FV9QHwqK1Og/L0bPKxMvEEu2xE0PqiL+4HKR2K79eLk7Vrqnmb86L5YYGwEcGOzQ3n0vDvqXSVAAwCCAKoOlVl6sDq/eZujlGumg43pbUzcm4+KIwQWLWX9xTxN6TXsPSs5kaFS/JbuQYBJv1grfc/Tzx+bUpHh9rKyAM5LbEYv8MUCim/6EMCCISotR5BhNsKAkZjXIIqlgbnFtgXc7NTiXMFDZhERT5PR4Ms/JiayfgtkyTThDNnIEvmdAofjt2v9DP29XJ65+1fa5fr7ymXtWSI9qJav373xebnP8KW2PTp0G4zYySKGTfgaU7pRX68LRwEdomfoEOXl/ZySThTtGRhYAYa5zomaif3D87FYDgk/CRBjm5MVpc85jM5PXCKfmGL10tQ5yzZAkjoLvznJPenHpVfGK1V3kTYQ7wb8tSSjPsO9pBaN4FbqrAXn67Ch0WAi+hbetL/VCuNkLMtjDH1ka/6wU3wMO0Yd6cOv2hLxAHC2MN44wuj3f8Ow3eoJGQ5NkThBx3i+IfS60hKgd+ei1C1BhV5jw7pqFy7JgKEC8L9ZTCCKN1d9X4GbmOIZ53aFWN7DkGwd+uU6x403sqqrguHcHyBtunCSjmLOIGejOBQqiGPEmGA="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzc3Mjc3MzUxNywKICAicHJvZmlsZUlkIiA6ICI1MjA3NjEzMGNiOWI0Nzg0OWQwMWU0NWZiNzBiMzRhMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJKSUFGQUxTRURSRUFNIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwZDkwMmEyNjM0MTUwNDAxMmY5MmZlZWM4MzVmMDMxNWYwYTUwYmMxYjc4YzdkMzViNGQ4MTM2MTlmNWY1YWUiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y5YTc2NTM3NjQ3OTg5ZjlhMGI2ZDAwMWUzMjBkYWM1OTFjMzU5ZTllNjFhMzFmNGNlMTFjODhmMjA3ZjBhZDQiCiAgICB9CiAgfQp9"
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "感谢所有参加本整合包制作的人员，以下排名不分先后"
+			tasks: [{
+				id: "5A5A247D1BBC3F07"
+				title: "致谢"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"本整合包的武器系统主要由tetra的工具和武器模板提供，详细的玩法流程可以参考任务书相关章节&4昔人已逝"
+				"Tetra 模组的内容围绕着模块化物品展开，并致力于将之与冒险、科技等其它概念融合在一起。"
+			]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					"double/basic_hammer_left_material": "basic_hammer/oak"
+					"double/basic_hammer_right_material": "basic_hammer/oak"
+					"double/basic_handle_material": "basic_handle/stick"
+					"double/handle": "double/basic_handle"
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_right": "double/basic_hammer_right"
+					id: "8d9f4d4f-cc7b-40a7-94e2-c6ed432839d9"
+				}
+			}
+			id: "398AE54EB6F55F0D"
+			rewards: [
+				{
+					id: "1393B922F7BDC12F"
+					item: "tetra:pristine_diamond"
+					type: "item"
+				}
+				{
+					id: "4FBED8D2403798A6"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"锻造之艺，就在其中\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"4745D3F50C44D020\" } }"
+			tasks: [{
+				id: "77549F0D9F837A05"
+				title: "锻造大师"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["机械动力（Create）是一个围绕着建筑、装饰和机械的新兴模组，所添加的元素旨在为玩家提供全新的建筑与自动化体验，并尽可能多地为玩家预留自定义空间。在机器与能源方面，模组做出了极大的创新。机器不再由传统科技模组中乏味的电线供能，而是需要玩家搭建机械传动系统驱动。&4任务书中的相关内容&f会引导大家制造一个实用的机器。"]
+			id: "59350A53C2738BD9"
+			rewards: [{
+				id: "1C88A34D02858755"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"欢迎来到机械动力！世界就在你的手中！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"510B2EE25982FD73\" } }"
+			tasks: [{
+				advancement: "create:andesite_alloy"
+				criterion: ""
+				id: "61C25092F1AD6E14"
+				type: "advancement"
+			}]
+			title: "欢迎来到机械动力"
+			x: 0.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "minecraft:wheat"
+			id: "64FB1FEC4F9721B7"
+			rewards: [{
+				id: "306A1996A10BFBA9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34D9D292CE6F683E\" } }"
+			tasks: [{
+				id: "731BA1C9CD625DBF"
+				title: "开始你的农耕生活吧！"
+				type: "checkmark"
+			}]
+			title: "刀耕火种"
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["398AE54EB6F55F0D"]
+			description: [
+				"这个模组向 Tetra 添加了 47 个新模块，您可以制作这些模块。他们中的许多受到现实生活中的武器和流行文化武器的启发。这个模组还改变了简单的地牢箱子的战利品表。现在，每个卷轴都应该有自己的重量和稀有度，以使某些示意图更难获得。"
+				"融化你的金属，锻造你的意志,欢迎来到锻造之艺！"
+				"&4(相关攻略可以任务书中查询)"
+				"&d汉化由野营组提供,十分感谢，如有意见，立刻删除。"
+			]
+			icon: "art_of_forging:sigil_of_eden"
+			id: "1B04B860E2651AEF"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "Art of Forging"
+			tasks: [{
+				id: "3340C7309B991317"
+				title: "锻造的艺术"
+				type: "checkmark"
+			}]
+			title: "锻造之艺"
+			x: -6.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"]
+			icon: {
+				Count: 1
+				id: "lightmanscurrency:wallet_netherite"
+				tag: {
+					AutoConvert: 1b
+				}
+			}
+			id: "7429D7F92D04A8BB"
+			rewards: [
+				{
+					id: "02176C222B0B79F4"
+					item: "createdelightcore:gold_coin"
+					type: "item"
+				}
+				{
+					id: "3F7CCFB5CF2E6287"
+					item: "lightmanscurrency:portable_gem_terminal"
+					type: "item"
+				}
+				{
+					id: "0B7813944165E392"
+					item: {
+						Count: 1
+						id: "lightmanscurrency:wallet_leather"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"玩转货币！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34C9A7E928820147\" } }"
+			tasks: [{
+				id: "6B34FD5059C856EC"
+				title: "货币系统！"
+				type: "checkmark"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: ["注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"]
+			icon: "createmetallurgy:sturdy_whisk"
+			id: "64B9CFE4337A3EAA"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"6731C7B5A0DADBAA\" } }"
+			tasks: [{
+				id: "39FA137A00BB30A2"
+				title: "末地"
+				type: "checkmark"
+			}]
+			title: "熔炼相关"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["7429D7F92D04A8BB"]
+			description: [
+				"本整合包的货币分为五类：&7铁币 &c铜币 &e金币 &2绿宝石币 &8下届合金币"
+				"你&4无法&r将低级货币合成高级货币，但&a可以&r可逆向分解（为什么呢？"
+			]
+			id: "360AB2F07EC4E939"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "197EB50F53658370"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			title: "-&c这是...一枚货币！-"
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["64B9CFE4337A3EAA"]
+			description: ["每条&e处理方式&r的增产数量&4不同&r，请&e自行计算&r"]
+			icon: "createmetallurgy:gold_dust"
+			id: "3027E5E07BE0B171"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"15F92D3DE8FAB8A2\" } }"
+			tasks: [{
+				id: "4B0B25EBBB30F627"
+				type: "checkmark"
+			}]
+			title: "矿物处理流程"
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"整合包添加了难度系统。难度系统有自己一套独立的计算方式："
+				"1.你对于整合包探索的越深，击杀的怪物越多，难度就会越高。"
+				"2.当你击杀了一定数量的怪物或者进入新的维度，难度就会提升。具体的数值请在右侧查看。"
+				"3.以及每次死亡后难度都会下降一定的百分比，且死亡时难度越高百分比越低。"
+				"另外需要注意的一点：&e目前同一ftb队伍下的玩家除了死亡，难度是同升降的。&r"
+				"&etips:如果要查看难度可以使用/improvedmob指令"
+			]
+			icon: "art_of_forging:shards_of_malice"
+			id: "28A38E3B4EE9EFEC"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"难度索引\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1D6981F32D6C7E04\" } }"
+			tasks: [{
+				id: "164F48ADC20B7193"
+				stat: "minecraft:mob_kills"
+				title: "击杀一个生物"
+				type: "stat"
+				value: 1
+			}]
+			title: "难度系统"
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			id: "3911F2778F70E4B9"
+			rewards: [{
+				auto: "no_toast"
+				id: "74C0F3379C69CD7C"
+				item: "ftbquests:book"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			tasks: [{
+				disable_toast: true
+				elapsedTime: 1L
+				gameTime: "system"
+				icon: "ftbquests:book"
+				id: "70B3E3406AC6EB91"
+				title: "任务系统"
+				type: "questsadditions:time"
+			}]
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			icon: "minecraft:totem_of_undying"
+			id: "34B1006074300964"
+			rewards: [{
+				command: "/gamerule keepInventory true"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "the_bumblezone:essence_continuity"
+					tag: {
+						abilityUseRemaining: 1
+					}
+				}
+				id: "373492C37EFDB4A2"
+				silent: true
+				title: "死亡不掉落"
+				type: "command"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			tasks: [{
+				id: "62F8B86872E2D83B"
+				title: "死亡不掉落"
+				type: "checkmark"
+			}]
+			x: -3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["51C6C4C1530A4D3F"]
+			description: [
+				"特别鸣谢(排名不分先后)："
+				"CFPAOrg(cfpa.team)的模组翻译"
+				"XeKr(space.bilibili.com/5930630)的材质包"
+				"Qi-Month(https://github.com/Qi-Month)提供的部分代码"
+				"史莱姆li(https://b23.tv/1gjok8E)提供的工业平台的代码及其贴图"
+				"以及内测群中帮助我们内测的各位同好们的测试bug以及提出意见"
+			]
+			icon: "minecraft:brick"
+			id: "6D88BDC3681A445F"
+			rewards: [{
+				id: "6FE2492283ED6A85"
+				item: "minecraft:enchanted_golden_apple"
+				title: "你们每个人都值得一个附魔金苹果！"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "感谢所有mc社区开发者和玩家们，是你们的优秀作品构成了整合包的砖瓦"
+			tasks: [{
+				id: "294ED5BD3E8222C1"
+				title: "致谢"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"本整合包加入了sleep tight，晚上入睡的时候记得在床头插火把，不然0光环境下入睡会有怪物把你吓醒导致无法入睡哦。"
+				"多夜在同一张床上入睡会获得经验buff，鼓励大家尽可能在自家的床上美美入睡"
+			]
+			icon: "sleep_tight:night_bag"
+			id: "1D22CD4640CF708B"
+			rewards: [{
+				id: "3D453E490D7229BC"
+				item: "minecraft:torch"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "每每在家里的床上入睡，我总感觉到无比的安心"
+			tasks: [{
+				id: "7FE779185C94F65D"
+				title: "有道理"
+				type: "checkmark"
+			}]
+			title: "安然入睡"
+			x: 3.0d
+			y: -1.0d
+		}
+	]
+	title: "介绍"
+}

@@ -1,0 +1,689 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "史前世界"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "alexscaves:dinosaur_nugget"
+	id: "08647BF807EC9951"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"原始世界以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"
+				"&4进入方法：使用&7石灰岩（机械动力的）&4搭建传送门框架，使用骨头激活。"
+			]
+			id: "5C43147A8657C3D9"
+			size: 2.0d
+			subtitle: "原始人，启洞！"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/discover_primordial_caves"
+				criterion: ""
+				id: "6164200B248E9199"
+				title: "前往史前世界"
+				type: "advancement"
+			}]
+			title: "史前世界"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: [
+				"洞穴角龙啃食地上长出的卷叶蕨后会使其变为蕨菜，此时破坏即可得到蕨菜。但这并非是蕨菜的唯一获取方式，玩家还可以在原始人遗迹的战利品箱中发现它。"
+				"需要注意的是，蕨菜在地上过一段时间后，如果没有被破坏，会重新长成卷叶蕨"
+			]
+			id: "6AA5DA7F114BB2F8"
+			tasks: [{
+				id: "15BABCEB5881A5A3"
+				item: "alexscaves:fiddlehead"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			id: "63921A7821A17AAB"
+			tasks: [{
+				id: "087287B09D5AD497"
+				item: "alexscaves:tree_star"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			id: "38E550D21F26F5A0"
+			tasks: [{
+				id: "058C52410D3EAF62"
+				item: "alexscaves:pine_nuts"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"63921A7821A17AAB"
+				"38E550D21F26F5A0"
+				"6AA5DA7F114BB2F8"
+			]
+			id: "0CFD677D1EB3B847"
+			subtitle: "不仅可以补充维生素，也可以解除眩晕"
+			tasks: [{
+				id: "58465B23D1292C7E"
+				item: "alexscaves:serene_salad"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: ["可以在原始洞穴的顶端和地面找到它，包裹着日光琥珀。用镐即可破坏。"]
+			id: "304303BF98E147F9"
+			rewards: [{
+				id: "0C233306B702FA09"
+				item: "alexscaves:amber_curiosity"
+				type: "item"
+			}]
+			tasks: [{
+				count: 8L
+				id: "280DAE6FCE576D3C"
+				item: "alexscaves:amber"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: ["光源方块，是原始洞穴的光源，可以用镐破坏。"]
+			id: "4D6604F85F2D6867"
+			subtitle: "洞顶之上凝聚千万年耀阳精华的恒永光辉"
+			tasks: [{
+				id: "4D53F93A4ECEEFD8"
+				item: "alexscaves:ambersol"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["6AA5DA7F114BB2F8"]
+			description: [
+				"使用蕨类植物制作的建筑方块，会被一些生物拿来筑巢。"
+				""
+				"恐龙蛋在蕨草块上能孵化得更快。"
+			]
+			id: "41EAF3036CC3B838"
+			tasks: [{
+				id: "3EC3FF43951CD0A5"
+				item: "alexscaves:fern_thatch"
+				type: "item"
+			}]
+			x: -4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3D3F02C18B30D9D0"]
+			id: "5F021C9A8492642C"
+			subtitle: "*BONK*"
+			tasks: [{
+				id: "4D0B69E6019FE814"
+				item: {
+					Count: 1
+					id: "alexscaves:primitive_club"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -2.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: [
+				"击杀三叶虾掉落"
+				"可直接食用或烹饪为熟三叶虾尾后食用，也可以用于驯服地底翼龙"
+			]
+			id: "4848E0F5A240A6C9"
+			tasks: [{
+				id: "0A19C45D31781A54"
+				item: "alexscaves:trilocaris_tail"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["4848E0F5A240A6C9"]
+			id: "54DD7424BBD9ED64"
+			tasks: [{
+				id: "57A1C0E54A6EFB2D"
+				item: "alexscaves:primordial_soup"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["3D3F02C18B30D9D0"]
+			description: ["使用沸腾煲右击生物可以将其喂食，之后生物会攻击周围的其他生物。"]
+			id: "42636B787B03B2F6"
+			subtitle: "狂！！！"
+			tasks: [{
+				id: "137FB5AE6703FEC4"
+				item: "alexscaves:seething_stew"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			id: "3D3F02C18B30D9D0"
+			tasks: [{
+				id: "44E82154DE0D03EA"
+				item: "alexscaves:heavy_bone"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			id: "446B51A2BCC2C316"
+			tasks: [{
+				id: "04AC05FFEE8A254C"
+				item: "alexscaves:cooked_dinosaur_chop"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["446B51A2BCC2C316"]
+			id: "73A47C934FC5AB13"
+			subtitle: "🦖🦖🦖🦖🦖🦖🦖"
+			tasks: [{
+				id: "74E664698503AAC2"
+				item: "alexscaves:dinosaur_nugget"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: ["长按右键蓄力，蓄力完成后松开可以向前投掷"]
+			id: "76FB631588448D5C"
+			subtitle: "应该使用尖的那一端"
+			tasks: [{
+				id: "7F09AD6D4448F7A7"
+				item: "alexscaves:limestone_spear"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"167D70EB2245F91E"
+				"3D3F02C18B30D9D0"
+			]
+			id: "22397D2C9BB4A736"
+			rewards: [
+				{
+					count: 2
+					id: "65E67DE700D17EDC"
+					item: "alexscaves:heavy_bone"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6D3E44ED81F95472"
+					item: "alexscaves:tough_hide"
+					random_bonus: 6
+					type: "item"
+				}
+				{
+					id: "089F86026C10D12B"
+					item: "minecraft:armor_stand"
+					type: "item"
+				}
+			]
+			subtitle: "由皮毛和骨骼粗制而成的古老荣耀象征"
+			tasks: [
+				{
+					id: "108BA690AC5603F0"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "765F63F0C053C3CC"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_tunic"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3EB5481ADA221F9B"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_pants"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["304303BF98E147F9"]
+			description: [
+				"使用不含精准采集、等级为石镐及以上的镐类工具挖掘琥珀时，有极小的概率掉落，可用于制作琥珀石碑和灾厄触媒。"
+				"使用含有时运的镐可以增加掉落率"
+				"也可以使用粉碎轮"
+				"也可用于更改恐龙（如撼地龙、遗迹恐手龙）和撼地斯拉的外观。"
+			]
+			id: "51EBB8CB2DE0FBB9"
+			subtitle: "精品琥珀"
+			tasks: [{
+				id: "56E2D5EC7D349A8C"
+				item: "alexscaves:amber_curiosity"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["304303BF98E147F9"]
+			description: [
+				"根据所处生物群系，生成当前生物群系中会生成的生物。"
+				"生成的生物取决于当前生物群系以及附近的生物种类，优先生成生物群系中会生成但是周围没有的生物。"
+				"生成之后，将随机生成其他生物，当前生成的生物可以通过看琥珀内的生物模型来确定。"
+				"可以通过合成获取，也会在原始洞穴群系中自然生成。"
+				"琥珀石碑生成生物所需的平均时间极长，默认为平均32000ticks（约26.6分钟）生成一次生物"
+			]
+			id: "1E245C25CFFE0E50"
+			subtitle: "防止生物灭绝的石碑"
+			tasks: [{
+				id: "568078360A426277"
+				item: "alexscaves:amber_monolith"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["51EBB8CB2DE0FBB9"]
+			id: "1CBA3ADA5EE74EA0"
+			tasks: [{
+				id: "24DD1BE53A1232CC"
+				item: "alexscaves:ominous_catalyst"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["438D0BE4505D129E"]
+			description: [""]
+			id: "23FC5BBFD397D0C4"
+			subtitle: "击杀暝煌龙后掉落。"
+			tasks: [{
+				id: "77CDA2B61B8DD9F7"
+				item: "alexscaves:tectonic_shard"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			id: "167D70EB2245F91E"
+			tasks: [{
+				id: "609B80053308738D"
+				item: "alexscaves:tough_hide"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1CBA3ADA5EE74EA0"]
+			description: ["属于亡灵生物，亡灵杀手效果对其有效"]
+			id: "438D0BE4505D129E"
+			subtitle: "深锁于火山之心的巨兽，灵魂在承受数亿年的熔岩洗礼后已无惧火焰。"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/summon_luxtructosaurus"
+				criterion: ""
+				id: "4A9EEE96C8A88749"
+				title: "召唤暝煌龙"
+				type: "advancement"
+			}]
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["63921A7821A17AAB"]
+			description: [
+				"将星树果放在手上会吸引洞穴角龙。你无法驯服它们，但可以给它们喂食星树果使其繁殖。"
+				"繁殖后，它们会在原地产下一枚洞穴角龙蛋并在蛋的下方铺好蕨草块。如果你企图踩碎它们的蛋，同样会吸引它们的仇恨。"
+			]
+			id: "1971AAA19BD8E5C7"
+			subtitle: "有时，它会低下头吃地下的卷叶蕨，之后留下一个蕨菜。"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/breed_grottoceratops"
+				criterion: ""
+				id: "1234B8DA9E560D5E"
+				title: "驯服一只洞穴角龙"
+				type: "advancement"
+			}]
+			x: -4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"5F021C9A8492642C"
+				"0CFD677D1EB3B847"
+			]
+			description: [
+				"使用原始大棒击晕它，在撼地龙眩晕时对它喂食幽静沙拉，每次都有一定概率驯服，如此反复操作即可。"
+				"驯服后可以设置跟随，游荡，呆在原地，会帮助玩家战斗。驯服后也可骑乘（无需鞍），骑乘时左键生物会使撼地龙对其发起攻击，默认可按G键使用技能嘶吼，会使附近生物恐惧并逃跑，技能有一定冷却时间。酷炫~"
+				"玩家骑乘时也可手持一些食物（如幽静沙拉）喂食它帮助它回复生命。"
+				"每过一段时间，撼地龙就会大吼一声，使周围的生物进入恐慌状态并迅速逃跑，在与生物战斗之前，撼地龙也会大吼。撼地龙的嘶吼会对大部分生物（僵尸、骷髅、 洞穴角龙甚至遗弃者等）造成10秒的虚弱效果，但对一些极为强大的生物（如暝煌龙、凋灵）无任何效果。战吼"
+				"对小型生物（包括玩家）会使用连续撕咬，此时撼地龙会咬住生物并甩头，造成连续3次伤害并且把生物击飞。 "
+			]
+			id: "5D21C1927E6D2D4E"
+			size: 1.5d
+			subtitle: "这些大家伙听到音乐以后居然和鹦鹉一样摇头晃脑起来。 但侏罗纪时代的恐龙怎么会有墨镜的？"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/tame_tremorsaurus"
+				criterion: ""
+				id: "6D5A783980F23F1C"
+				title: "驯服一只撼地龙"
+				type: "advancement"
+			}]
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4848E0F5A240A6C9"]
+			description: [
+				"可以通过喂食三叶虾尾驯服，驯服后可设置跟随，游荡，停留。"
+				"地底翼龙蛋孵化时，若玩家在其周围，则孵化出的小地底翼龙会认玩家为主。"
+				"你可以给两只地底翼龙喂食生鳕鱼使它们繁殖，但它们有可能会出现进行了繁殖行为却没有产下卵的情况。你也可以在洞穴较高处的地方寻找它们的巢穴以获取地底翼龙蛋。"
+				"右键可以抓住它的脚，然后默认按住空格，它会向上飞一段距离（同时消耗它的体力槽），然后会悬停在空中，按下方向键会带着玩家开始滑翔。真的很。"
+				"体力槽会随时间补满。"
+			]
+			id: "659DAF65F5F19578"
+			subtitle: "起飞！"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/tame_subterranodon"
+				criterion: ""
+				id: "58C463BC912FB7AE"
+				title: "驯服地底翼龙"
+				type: "advancement"
+			}]
+			title: "驯服地底翼龙"
+			x: 3.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0CFD677D1EB3B847"]
+			id: "5B184A8711524524"
+			subtitle: "结合成就名怎么感觉怪怪的"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/tame_vallumraptor"
+				criterion: ""
+				id: "12996CCB28430858"
+				title: "驯服阔鼻迅猛龙"
+				type: "advancement"
+			}]
+			x: -6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: [
+				"如果在原始生物（除三叶虾）周围将音乐唱片放入唱片机的话，它们就会手舞足蹈地开始跳舞，无论它们先前在什么状态下。"
+				""
+				"在进入跳舞状态后，除非音乐结束，否则它们不会结束此状态，即使被攻击也会边跳舞边还击。"
+			]
+			hide_dependency_lines: true
+			id: "5FEB500C86C4262A"
+			subtitle: "A~~~~~~~"
+			tasks: [{
+				id: "061B7B6912BB9877"
+				title: "彩蛋"
+				type: "checkmark"
+			}]
+			x: 5.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			description: ["对原始世界的生物（除三叶虾）使用琥珀珍品或板块碎片可以消耗对应物品将它转换为“复古”和“爆燃”形态，再次使用会将其变回普通形态。不同形态除外观外和一般的遗迹恐手龙没有区别。"]
+			hide_dependency_lines: true
+			id: "4F8AB610C9119A96"
+			tasks: [{
+				id: "1C4EC7D9C920AB79"
+				title: "外观切换"
+				type: "checkmark"
+			}]
+			x: 5.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["23FC5BBFD397D0C4"]
+			description: [
+				"你无法让它帮你战斗，但你可以在技能充能满后使用特殊能力键来使用它的特殊能力：践踏。在使用技能后，擎天龙会抬起前足并践踏大地，将周围高于自身脚底的方块变为掉落物。你可以利用它来进行建筑之前的地形修整。"
+				""
+				"使用该特殊能力时，会取得进度&a[到处都在摇晃]&r。该技能无伤害。"
+				""
+				"和大多数食草恐龙一样，你可以通过给它们喂食星树果来使它们繁殖。完成繁殖后，它们会筑巢并产下一枚擎天龙蛋。"
+				"如果它们处于可骑乘状态，那么骑乘的优先级会高于给它们喂食星树果。"
+			]
+			id: "70ED6328277A5639"
+			size: 1.5d
+			tasks: [{
+				advancement: "alexscaves:alexscaves/atlatitan_stomp"
+				criterion: ""
+				id: "072B9D75056349D8"
+				title: "使用擎天龙的特殊技能"
+				type: "advancement"
+			}]
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4848E0F5A240A6C9"]
+			description: [
+				"可以对遗迹恐手龙喂食原始汤，喂食后它会自动推倒周围的树木，并取得进度&a[恐龙伐木工]&r。一种非常快速的砍树方式。"
+				""
+				"将星树果放在手上会吸引遗迹恐手龙。你也可以给两只遗迹恐手龙喂食星树果使它们繁殖。繁殖过后，遗迹恐手龙会做出刨坑的动作，同时把自己的遗迹恐手龙蛋产在一个蕨草块上。给幼年期的遗迹恐手龙喂食星树果可以加快其生长。"
+			]
+			id: "071706219EA51C18"
+			tasks: [{
+				advancement: "alexscaves:alexscaves/feed_relicheirus"
+				criterion: ""
+				icon: "alexscaves:pewen_branch"
+				id: "60CED8A01D0ACFAB"
+				title: "让恐手龙伐木"
+				type: "advancement"
+			}]
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"76FB631588448D5C"
+				"23FC5BBFD397D0C4"
+			]
+			description: [
+				"使用灭绝长矛进行近战攻击可以造成9点伤害同时使目标着火5秒，并召唤撼地龙灵魂对目标造成额外3点"
+				"手持灭绝长矛按住使用键可以进行蓄力，同时召唤3个洞穴角龙灵魂环绕在玩家四周，此过程中若玩家受到伤害将消耗1个洞穴角龙灵魂并完全抵挡此次伤害。松开使用键后释放，灭绝长矛即会掷出，蓄力时间越长投掷距离越远，若击中生物则对其造成10点伤害并使目标着火5秒，同时召唤地底翼龙灵魂将目标抓起，上升9格后抛下。"
+				"被掷出的灭绝长矛在落地1秒后会自动回到掷出者手中，同时在落点处产生一次爆炸，对周围生物造成伤害并点燃附近方块。"
+			]
+			id: "471D8A04755851E6"
+			size: 1.5d
+			subtitle: "小心别弄丢了"
+			tasks: [{
+				id: "051A9CD8ED00B461"
+				item: {
+					Count: 1
+					id: "alexscaves:extinction_spear"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["23FC5BBFD397D0C4"]
+			id: "3722C9E25A14C4A2"
+			rewards: [
+				{
+					count: 6
+					id: "34E5D14F037256D6"
+					item: "alexscaves:tectonic_shard"
+					random_bonus: 9
+					type: "item"
+				}
+				{
+					id: "5D330674989354A2"
+					item: "minecraft:armor_stand"
+					type: "item"
+				}
+			]
+			size: 1.5d
+			tasks: [
+				{
+					id: "08389D2BF1AA2C8F"
+					item: {
+						Count: 1
+						id: "alexscaves_torpedoes:tectonic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "23BB747DBD67042F"
+					item: {
+						Count: 1
+						id: "alexscaves_torpedoes:tectonic_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6BBBD5EA336991C2"
+					item: {
+						Count: 1
+						id: "alexscaves_torpedoes:tectonic_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "23B1568B99325516"
+					item: {
+						Count: 1
+						id: "alexscaves_torpedoes:tectonic_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 7.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["5C43147A8657C3D9"]
+			hide_dependency_lines: true
+			id: "338DDAB937B02FD6"
+			rewards: [
+				{
+					id: "5F3974C5CB60E273"
+					item: "alexscaves:tectonic_shard"
+					random_bonus: 7
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "0B7D8E0DC86D77C2"
+					table_id: 7772018159856264947L
+					type: "choice"
+				}
+			]
+			size: 1.5d
+			tasks: [
+				{
+					id: "55178CFDCF1A8FCF"
+					item: "alexscaves:subterranodon_egg"
+					type: "item"
+				}
+				{
+					id: "4EE103B4B4357D49"
+					item: "alexscaves:vallumraptor_egg"
+					type: "item"
+				}
+				{
+					id: "6C85F7C33966E7D1"
+					item: "alexscaves:grottoceratops_egg"
+					type: "item"
+				}
+				{
+					id: "5BFC5A7E2D01358F"
+					item: "alexscaves:tremorsaurus_egg"
+					type: "item"
+				}
+				{
+					id: "0E6A766AF76AA436"
+					item: "alexscaves:relicheirus_egg"
+					type: "item"
+				}
+				{
+					id: "0D48F6BEB5563C44"
+					item: "alexscaves:atlatitan_egg"
+					type: "item"
+				}
+			]
+			title: "收集所有龙蛋吧"
+			x: 5.0d
+			y: 1.5d
+		}
+	]
+	title: "&a史前世界"
+}

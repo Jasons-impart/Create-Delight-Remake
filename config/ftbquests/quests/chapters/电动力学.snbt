@@ -1,0 +1,276 @@
+{
+	autofocus_id: "49BCC2D259AA3A40"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "电动力学"
+	group: "14CFC96B5B37F10B"
+	icon: "create_new_age:generator_coil"
+	id: "166D72966DCC8AED"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["14B30C2FB9869ED8"]
+			id: "49BCC2D259AA3A40"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				icon: "create_new_age:carbon_brushes"
+				id: "2958CB31B1C8615E"
+				stat: "minecraft:play_time"
+				title: "电动力学！"
+				type: "stat"
+				value: 1
+			}]
+			title: "电动力学！"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["49BCC2D259AA3A40"]
+			id: "308240AF43C34596"
+			shape: "square"
+			size: 1.5d
+			subtitle: "应力消耗大，发电速度快！但是&e发电效率&r与周围&4磁铁种类&r相关"
+			tasks: [{
+				id: "406BE659C1A1026D"
+				item: "create_new_age:generator_coil"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["49BCC2D259AA3A40"]
+			id: "1A9F59D70BF97DBE"
+			shape: "square"
+			size: 1.5d
+			subtitle: "地下可以挖掘"
+			tasks: [{
+				id: "222FEC05C97D983F"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			title: "基础磁铁"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1A9F59D70BF97DBE"]
+			id: "540221D9F9074842"
+			tasks: [{
+				id: "3844ED46485E974B"
+				item: "create_new_age:redstone_magnet"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["540221D9F9074842"]
+			id: "40318D164805A089"
+			tasks: [{
+				id: "01A62171A625BB5E"
+				item: "create_new_age:layered_magnet"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["40318D164805A089"]
+			id: "4C75ABFBB5D7E5B6"
+			tasks: [{
+				id: "6F0BBDEB8BBACC3F"
+				item: "create_new_age:fluxuated_magnetite"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["4C75ABFBB5D7E5B6"]
+			id: "714228072C8EDC92"
+			tasks: [{
+				id: "0C0D3E5C3A2DC66F"
+				item: "create_new_age:netherite_magnet"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1A9F59D70BF97DBE"]
+			id: "5E075B9E7A889DF2"
+			secret: true
+			tasks: [
+				{
+					id: "778BDFA2C9308649"
+					item: "alexscaves:block_of_scarlet_neodymium"
+					type: "item"
+				}
+				{
+					id: "3D5C30DC1309147F"
+					item: "alexscaves:block_of_azure_neodymium"
+					type: "item"
+				}
+			]
+			title: "磁铁维度的特殊产物"
+			x: -3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["1A9F59D70BF97DBE"]
+			id: "6E3A76F7FF67BCF7"
+			subtitle: "{ \"text\": \"增产及再生\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"380C3F9A1B590C90\" } }"
+			tasks: [{
+				id: "5D247A680A63B6C1"
+				item: "alexscaves:energized_galena_neutral"
+				type: "item"
+			}]
+			title: "磁铁再生"
+			x: -3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["308240AF43C34596"]
+			id: "043FA550A6E77DE9"
+			subtitle: "收集电能！（最多8个线圈）"
+			tasks: [{
+				id: "7B2A3380150275B6"
+				item: "create_new_age:carbon_brushes"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2034DC15562715B2"]
+			id: "5586CC958FF191C5"
+			subtitle: "减速！增大扭矩！"
+			tasks: [{
+				id: "755BB9E2B8990342"
+				item: "createdelight:planet_gear"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["49BCC2D259AA3A40"]
+			id: "2034DC15562715B2"
+			shape: "square"
+			size: 1.5d
+			subtitle: "转化效率更高！应力更强！"
+			tasks: [{
+				id: "28BEB553111D0273"
+				item: "create_new_age:basic_motor"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["49BCC2D259AA3A40"]
+			id: "36E5C4C6A8E9DAB5"
+			shape: "square"
+			size: 1.5d
+			subtitle: "采用尖端放电进行充能"
+			tasks: [{
+				id: "706355E893B4CE8C"
+				item: "create_new_age:energiser_t1"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["2034DC15562715B2"]
+			id: "657B0199F1F6BC9A"
+			tasks: [{
+				id: "010E4549CE7BA651"
+				item: "create_new_age:advanced_motor"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["657B0199F1F6BC9A"]
+			id: "183ED0CEDF627017"
+			tasks: [{
+				id: "3FC4E3A01DE47555"
+				item: "create_new_age:reinforced_motor"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["36E5C4C6A8E9DAB5"]
+			id: "40D0657E9DDB5663"
+			subtitle: "激光激发！"
+			tasks: [{
+				id: "2CD1A33502541B2A"
+				item: "create_new_age:energiser_t2"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["40D0657E9DDB5663"]
+			id: "7D7F82D2E50E2CDF"
+			subtitle: "钻石充能！"
+			tasks: [{
+				id: "7BA290D7428578CF"
+				item: "create_new_age:energiser_t3"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"7D7F82D2E50E2CDF"
+				"3D02EA3A30EE1933"
+			]
+			description: ["注意：特斯拉线圈并不能作为&e序列组装&r中&e充能&r的执行机器。"]
+			hide_until_deps_complete: true
+			id: "5CAD93F8620EA320"
+			subtitle: "特斯拉球！从此不再输入应力！"
+			tasks: [{
+				id: "65EE18293E245C55"
+				item: "createaddition:tesla_coil"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["5586CC958FF191C5"]
+			id: "037F074C7A3AACF5"
+			subtitle: "超频！400%人类感谢！"
+			tasks: [{
+				id: "0029A7C17CA33063"
+				item: "create_new_age:basic_motor_extension"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["037F074C7A3AACF5"]
+			id: "4346D9DC0525D683"
+			subtitle: "超到冒烟！1000%的人类感谢！"
+			tasks: [{
+				id: "0232BB698CCD4636"
+				item: "create_new_age:advanced_motor_extension"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 6.5d
+		}
+	]
+	title: "&3电动力学"
+}

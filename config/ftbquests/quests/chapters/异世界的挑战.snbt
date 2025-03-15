@@ -1,0 +1,473 @@
+{
+	autofocus_id: "03950A91DF592F72"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "异世界的挑战"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "minecraft:wither_skeleton_skull"
+	id: "2F14272613261E70"
+	images: [
+		{
+			height: 9.0d
+			image: "ad_astra:textures/painting/the_milky_way.png"
+			rotation: 0.0d
+			width: 14.0d
+			x: 2.0d
+			y: -7.5d
+		}
+		{
+			height: 3.0d
+			image: "enhanced_boss_bars:textures/gui/boss_bars/wither_storm.png"
+			rotation: 0.0d
+			width: 15.0d
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_fire"
+			rotation: 0.0d
+			width: 4.0d
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_ice"
+			rotation: 0.0d
+			width: 4.0d
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:item/dragon_skull_lightning"
+			rotation: 0.0d
+			width: 4.0d
+			x: 6.0d
+			y: -0.5d
+		}
+	]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["75605D2B058F2DA5"]
+			description: [
+				"         漆黑的冰霜蔓延到尸骨之上，在世界上那最寒冷的边境，埋葬着一股极其强大的邪恶力量...... "
+				"                                                  ——《异兽手记·竦怖军团》"
+			]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_gate_of_eternal_cold"
+				}
+			}
+			id: "752E66805BBFEC51"
+			rewards: [{
+				id: "5912F833BE0C7138"
+				item: "dreadsteel:dreadsteel_shield"
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
+			tasks: [{
+				id: "0F69834EF0A45187"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:the_gate_of_eternal_cold"
+					}
+				}
+				type: "item"
+			}]
+			title: "&1凛冬之寒"
+			x: 2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"悼念者的心灵容不得一丝轻浮"
+				"庄严的枪支寄予着哀悼"
+				"黑枪敬向逝者，白枪指向生者"
+				"葬礼只消肃穆，无需招摇"
+				"如果你在荒漠中发现一座美丽的沙丘"
+				"请不要将其毁坏，无数逝去的蝴蝶正安眠于此。"
+				"                                                                 ——ego 圣宣"
+			]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:piercing_withering_trial"
+				}
+			}
+			id: "6DC960C9CBFEEAE9"
+			rewards: [
+				{
+					id: "12D539EA04083668"
+					item: "minecraft:nether_star"
+					type: "item"
+				}
+				{
+					id: "42B1448B3D9C1EE3"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "灵魂&4&k222&r&r破散，万&4&k222&r&r物&4&k222&r&r枯萎&4&k222&r&r"
+			tasks: [
+				{
+					id: "1DD719232C694C72"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					type: "item"
+				}
+				{
+					checkItem: false
+					entity: "minecraft:wither_skeleton"
+					icon: "minecraft:wither_rose"
+					id: "698D4B35B0E483C1"
+					nbt: { }
+					type: "questsadditions:killnbt"
+					value: 12L
+				}
+			]
+			title: "&4刺骨&r&k111&r&c穿心&r......"
+			x: 2.0d
+			y: 7.0d
+		}
+		{
+			description: [""]
+			icon: {
+				Count: 1
+				id: "explorerscompass:explorerscompass"
+				tag: { }
+			}
+			id: "5981A5D70F26A7A5"
+			rewards: [{
+				id: "681A11C211D0C1CC"
+				item: {
+					Count: 1
+					id: "netmusic:music_cd"
+					tag: {
+						NetMusicSongInfo: {
+							artists: ["The Journeymen"]
+							name: "500 Miles"
+							read_only: 0b
+							time: 193
+							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+							vip: 0b
+						}
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			subtitle: "踏上去往远方的路途"
+			tasks: [{
+				id: "6A12F0955527C663"
+				item: {
+					Count: 1
+					id: "tetra:modular_double"
+					tag: {
+						Damage: 0
+						"double/basic_hammer_left_material": "basic_hammer/netherite"
+						"double/basic_hammer_right_material": "basic_hammer/netherite"
+						"double/basic_handle_material": "basic_handle/forged_beam"
+						"double/handle": "double/basic_handle"
+						"double/head_left": "double/basic_hammer_left"
+						"double/head_right": "double/basic_hammer_right"
+						id: "301b2e18-9048-415f-979b-c3105a0f09b5"
+					}
+				}
+				type: "item"
+			}]
+			title: "背井离乡"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["421576F1BE1DF7D9"]
+			icon: "ad_astra:glacio_globe"
+			id: "75605D2B058F2DA5"
+			shape: "square"
+			subtitle: "悚怖生物只可在&6霜原星&r召唤！"
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				icon: "ad_astra:glacio_globe"
+				id: "513C79094CBC7FB5"
+				title: "霜原星"
+				type: "dimension"
+			}]
+			title: "无垠之牢！"
+			x: 2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["03950A91DF592F72"]
+			description: ["         冰龙是巨大的双足爬行动物，但是其头部比火龙更大，头上有着有着三对向后的角和鼻头上的一根小角的头部。巨大的尾巴有着类似鱼尾的形状使其有火龙所不具有的能够在水下游泳并高速穿越海洋的能力。雄性冰龙翅膀后有浅色斑点，而雌龙的角更弯曲。冰龙有四种不同颜色，分别是：霜蓝（Blue）-暗白（White）宝靛（Sapphire）-纹银（Sliver）"]
+			id: "421576F1BE1DF7D9"
+			rewards: [{
+				count: 8
+				id: "0AAF39E39B0C9FC7"
+				item: "iceandfire:ice_dragon_blood"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "2EAC482611B3A8B5"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:ice_dragon"
+					}
+				}
+				type: "item"
+			}]
+			title: "踏冰而行！"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["03950A91DF592F72"]
+			description: ["         与火龙和冰龙一样，电龙也是双足爬行动物，拥有巨大的翅膀、长长的尾巴、布满尖刺的背部和巨大的下巴。然而，它们有3对向后的角，而不是2对，它们背上的尖刺更长、更高，尾巴上有3对长尖刺。雄性电龙与雌性的不同之处在于雄性有带有渐变色的翅膀，而雌性与雄性的不同之处在于雌龙的角更弯曲。电龙有4种颜色：晶紫（Amethyst Purple）、夜黑（Dark Black）、铜赤（Copper Brown）和电青（Electric Blue）。"]
+			id: "46108940883CF8E5"
+			rewards: [{
+				count: 8
+				id: "3CD9E7D0CDBBC7AD"
+				item: "iceandfire:lightning_dragon_blood"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "60FB93D4DAC247C3"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:lightning_dragon"
+					}
+				}
+				type: "item"
+			}]
+			title: "雷霆之势！"
+			x: 6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["03950A91DF592F72"]
+			description: ["         火龙是一种巨大的双足爬行动物，有一对巨大的，坚韧的蝙蝠状翅膀，强壮的后腿带有三只适于抓握的抓尖脚趾。相对中等的身体上有一排尖刺顺着脊椎排下来，有着较长的脖子和相对巨大的，有着两对向后的角的头部及露出巨大牙齿的下颚。还有一条和身体的其他部分一样长的，逐渐变细的尾巴。雄性火龙的翅膀上带有深色的火焰斑点，而雌性火龙则没有这个特征。他们有4种颜色：赤红（Red）、翡绿（Green）、沉金（Bronze）、烬灰（Gray）"]
+			id: "6F25C6A7F38F43E0"
+			rewards: [{
+				count: 8
+				id: "499C6E9470C465A0"
+				item: "iceandfire:fire_dragon_blood"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "16977036C1FF4EF0"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:fire_dragon_eyes"
+					}
+				}
+				type: "item"
+			}]
+			title: "欲火奋战！"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"         火龙是存在于于火星和水星的一种飞龙，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。"
+				"         冰龙是存在于霜原星的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
+				"          电龙是漫游于金星上空的一种飞龙，拥有掌握雷霆和黑夜的强大力量，强横的闪电龙息能将一切化为飞灰，是传说中的强大存在。"
+				"          如今的他们被悚怖的力量囚禁在太空之中。"
+				"          那么，代价是什么呢？"
+			]
+			icon: {
+				Count: 1
+				id: "iceandfire:dragon_skull_fire"
+				tag: {
+					DragonAge: 75
+					Stage: 4
+				}
+			}
+			id: "03950A91DF592F72"
+			rewards: [
+				{
+					id: "1CDFEF8302134AA6"
+					item: "iceandfire:dragonarmor_diamond_head"
+					type: "item"
+				}
+				{
+					id: "7A067E5F7329F660"
+					item: "iceandfire:dragonarmor_diamond_neck"
+					type: "item"
+				}
+				{
+					id: "2FD7B311C5EE0A21"
+					item: "iceandfire:dragonarmor_diamond_body"
+					type: "item"
+				}
+				{
+					id: "2E014F0E9A357DCE"
+					item: "iceandfire:dragonarmor_diamond_tail"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "以骨为芯，以血铸剑！"
+			tasks: [
+				{
+					id: "51A17304C5A4DE7E"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "iceandfire:dragon_skulls"
+						}
+					}
+					title: "Any #iceandfire:dragon_skulls"
+					type: "item"
+				}
+				{
+					entity: "iceandfire:fire_dragon"
+					id: "3D9FB8E1509639D3"
+					type: "kill"
+					value: 1L
+				}
+				{
+					entity: "iceandfire:ice_dragon"
+					id: "6F625D59A3A810C3"
+					type: "kill"
+					value: 1L
+				}
+				{
+					entity: "iceandfire:lightning_dragon"
+					id: "4D5200445210DF7C"
+					type: "kill"
+					value: 1L
+				}
+			]
+			title: "巨龙之首"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"752E66805BBFEC51"
+				"6DC960C9CBFEEAE9"
+			]
+			description: [
+				"嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
+				"{@pagebreak}"
+				"虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，0.4再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			icon: "alexsmobs:void_worm_eye"
+			id: "1DD9F7C0F4BD2170"
+			rewards: [{
+				count: 5
+				id: "0F688A7D388C7A40"
+				item: "createdelightcore:netherite_coin"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 4.0d
+			subtitle: "欲买桂花同载酒，终不似，少年游。"
+			tasks: [
+				{
+					id: "07B355A54F127F2D"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:lightning_dragon"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "4B60256CE1B8C7F4"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:fire_dragon_eyes"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "6DE0D6292BDBB6E4"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:ice_dragon"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "28C2E8815759D132"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:piercing_withering_trial"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "39D85D0AE1EA91E7"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:the_gate_of_eternal_cold"
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+			]
+			title: "打破时空之门"
+			x: 2.0d
+			y: -10.0d
+		}
+	]
+	subtitle: ["泪如灰落，绣如星宿"]
+	title: "&1异世界的挑战！"
+}
