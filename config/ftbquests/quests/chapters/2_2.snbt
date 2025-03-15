@@ -543,6 +543,25 @@
 				"{@pagebreak}"
 			]
 			id: "7DC2E1B0BA456F63"
+			rewards: [
+				{
+					count: 32
+					id: "53053DF20725BD83"
+					item: "ae2:fluix_glass_cable"
+					type: "item"
+				}
+				{
+					count: 7
+					id: "7DB6F0A30EDD6554"
+					item: "ae2:storage_bus"
+					type: "item"
+				}
+				{
+					id: "51C5ABA7FF3187E5"
+					item: "ae2:crafting_terminal"
+					type: "item"
+				}
+			]
 			size: 2.0d
 			subtitle: "不想搓一堆AE玩意的看过来"
 			tasks: [{
