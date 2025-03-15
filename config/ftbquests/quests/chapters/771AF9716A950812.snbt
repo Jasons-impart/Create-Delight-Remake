@@ -69,6 +69,11 @@
 					item: "sophisticatedbackpacks:backpack"
 					type: "item"
 				}
+				{
+					id: "4A7F83BA42DBE15E"
+					item: "createdelight:emergency_industrial_platform"
+					type: "item"
+				}
 			]
 			shape: "hexagon"
 			size: 4.0d
