@@ -13,9 +13,12 @@
 			dependencies: [
 				"64E5E20F279E1544"
 				"450B37F01A318678"
+				"7B19835EE0378486"
 			]
+			dependency_requirement: "one_completed"
 			description: ["首先，你需要使用&e熔铸盆&r与&e熔铸盖&r将铜和锌熔融获取熔融铜和熔融锌。然后将其通入&e工作盆&r，并进行搅拌。最后将产出的流体通入到铸造台/铸造盆即可。使用工作盆的自动输出产物机制能省很多事。"]
 			id: "0E515BE9EA2A0B2F"
+			min_required_dependencies: 2
 			rewards: [{
 				id: "0DD667B4E11E8329"
 				item: "create:brass_ingot"
@@ -139,7 +142,7 @@
 				item: "create:copper_casing"
 				type: "item"
 			}]
-			x: -6.0d
+			x: -7.0d
 			y: 3.5d
 		}
 		{
@@ -157,7 +160,7 @@
 				item: "create:spout"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -5.5d
 			y: 3.5d
 		}
 		{
@@ -183,7 +186,7 @@
 				}
 			]
 			title: "流体运输"
-			x: -9.5d
+			x: -10.5d
 			y: 3.5d
 		}
 		{
@@ -201,7 +204,7 @@
 				item: "create:fluid_tank"
 				type: "item"
 			}]
-			x: -7.5d
+			x: -8.5d
 			y: 5.0d
 		}
 		{
@@ -218,7 +221,7 @@
 				item: "create:item_drain"
 				type: "item"
 			}]
-			x: -6.0d
+			x: -7.0d
 			y: 5.0d
 		}
 		{
@@ -236,7 +239,7 @@
 				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
-			x: -7.5d
+			x: -8.5d
 			y: 3.5d
 		}
 		{
@@ -1843,6 +1846,22 @@
 			title: "直接制作烈焰人燃烧室"
 			x: -9.5d
 			y: -1.0d
+		}
+		{
+			description: [
+				"使用搅拌器可以将&e铜粒&r和&e锌粒&r直接加热搅拌为&e黄铜粒&r。但是&4效率非常非常的低&r。"
+				"对于不考虑效率，且不想制作熔铸那一套物品的玩家可以考虑使用这种方法。"
+			]
+			id: "7B19835EE0378486"
+			size: 1.25d
+			subtitle: "懒得搓熔铸系列的可以看过来"
+			tasks: [{
+				id: "23E64C531DA4981A"
+				item: "create:brass_nugget"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 3.5d
 		}
 	]
 	title: "&3进阶研修班！"
