@@ -13,4 +13,6 @@ ServerEvents.recipes(e => {
     .id("createdelightcore:raw_tin_from_raw_tin_block")
     e.recipes.minecraft.blasting("createdelightcore:tin_ingot", "createdelightcore:raw_tin")
     e.recipes.minecraft.smelting("createdelightcore:tin_ingot", "createdelightcore:raw_tin")
+    e.recipes.minecraft.blasting("createdelightcore:tin_block", "createdelightcore:raw_tin_block")
+    e.recipes.minecraft.smelting("createdelightcore:tin_block", "createdelightcore:raw_tin_block")
 })

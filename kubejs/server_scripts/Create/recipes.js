@@ -12,6 +12,9 @@ ServerEvents.recipes(e => {
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot"
     ])
+    // 新增配方：粗锌块烧成锌块
+    e.recipes.minecraft.blasting("create:zinc_block", "create:raw_zinc_block")
+    e.recipes.minecraft.smelting("create:zinc_block", "create:raw_zinc_block")
     // 黄铜机械手
     e.replaceInput({ id: "create:crafting/kinetics/deployer" }, "create:electron_tube", "#forge:spring/between_500_2_1000")
     // 新增配方：玫瑰石英
