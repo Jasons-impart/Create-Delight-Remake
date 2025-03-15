@@ -118,11 +118,11 @@ ServerEvents.recipes(e => {
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
     e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_brass", 10),
+        Fluid.of("createmetallurgy:molten_brass", 30),
         [
-            Fluid.of("createmetallurgy:molten_copper", 5),
-            Fluid.of("createmetallurgy:molten_zinc", 5)
-        ], 100, "heated"
+            Fluid.of("createmetallurgy:molten_copper", 15),
+            Fluid.of("createmetallurgy:molten_zinc", 15)
+        ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_brass")
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:molten_andesite", 270),

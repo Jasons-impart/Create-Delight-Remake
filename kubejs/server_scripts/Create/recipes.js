@@ -107,6 +107,10 @@ ServerEvents.recipes(e => {
         E: "create:brass_casing"
     }
     ).id("create:crafting/kinetics/mechanical_arm")
+
+    e.recipes.create.mixing("2x create:brass_nugget", ["#forge:nuggets/copper", "#forge:nuggets/zinc"], 400)
+        .heated().id("create:mixing/brass_nugget")
+
     let iner = "create:incomplete_precision_mechanism"
     e.recipes.create.sequenced_assembly("create:precision_mechanism", "create:golden_sheet", [
         e.recipes.create.deploying(iner, [iner, "create:cogwheel"]),
@@ -127,6 +131,15 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_2)
         .loops(1)
         .id("create:crafting/materials/electron_tube")
+    {
+        let iner = "createdelight:incomplete_electron_tube"
+        e.recipes.create.sequenced_assembly(["create:electron_tube", "create:iron_sheet"], "create:iron_sheet", [
+            e.recipes.create.deploying(iner, [iner, "create:polished_rose_quartz"])
+        ])
+            .transitionalItem(iner_2)
+            .loops(1)
+            .id("create:crafting/materials/electron_tube_2")
+    }
     e.recipes.createaddition.charging("create:electron_tube", "createdelight:bleak_electron_tube", 10000, 40000)
         .id("create:charging/bleak_electron_tube")
     e.recipes.create_new_age.energising("create:electron_tube", "createdelight:bleak_electron_tube", 10000)
@@ -287,4 +300,5 @@ ServerEvents.recipes(e => {
         C: "create:empty_blaze_burner",
         D: "#mynethersdelight:bullet_pepper"
     }).id("create:shaped/blaze_burner")
+
 })
