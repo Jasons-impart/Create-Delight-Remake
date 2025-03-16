@@ -2603,7 +2603,7 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "DisplayName": "不要搞丢了！搞丢了得花1天才能再买",
+          "DisplayName": "交换时记得把钱取出来！！\n不要搞丢了！搞丢了得花1天才能再买",
           "BarterItem": {
             "ID": "createdelightcore:iron_coin",
             "Count": 5

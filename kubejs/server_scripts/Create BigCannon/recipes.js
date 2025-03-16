@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "createbigcannons:compacting/forge_nethersteel_nugget"
+        "createbigcannons:compacting/forge_nethersteel_nugget",
+        "quark:building/crafting/compressed/gunpowder_sack_uncompress"
     ])
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createbigcannons:molten_nethersteel", 90),
