@@ -123,14 +123,6 @@ ServerEvents.recipes(e => {
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
     ).id("vintagedelight:bread_from_smelting")
-    // 面团
-    e.recipes.create.mixing(
-        "create:dough",
-        [
-            Fluid.of("water", 50),
-            "create:wheat_flour"
-        ]
-    ).id("create:mixing/dough_by_mixing")
     // 蛋黄面团
     e.recipes.create.mixing(
         "farmersdelight:wheat_dough",
@@ -150,8 +142,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "ratatouille:salty_dough",
         [
-            Fluid.of("createdelight:egg_yolk", 100),
-            "2x create:wheat_flour",
+            "farmersdelight:wheat_dough",
             "#forge:salt"
         ]
     )

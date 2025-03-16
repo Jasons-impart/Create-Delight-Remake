@@ -55,22 +55,13 @@ ServerEvents.recipes(e => {
         .heated()
         .id("createdelight:mixing/butter")
     // 开酥
-    e.recipes.create.mixing(
-        "createdelight:oil_dough",
-        [
-            "#forge:animal_oil",
-            "create:wheat_flour",
-            Fluid.of("water", 50)
-        ]
-    ).id("createdelight:mixing/oil_dough")
     e.recipes.kubejs.shapeless(
         "createdelight:oil_dough",
         [
             "#forge:animal_oil",
-            "create:wheat_flour",
-            "water_bucket"
+            "create:dough"
         ]
-    ).id("createdelight:crafting/oil_dough").replaceIngredient("water_bucket", "bucket")
+    ).id("createdelight:crafting/oil_dough")
     let iner = "createdelight:oil_dough_with_butter"
     e.recipes.create.sequenced_assembly("4x createdelight:puff_pastry", "createdelight:oil_dough", [
         e.recipes.create.deploying(iner, [iner, "#forge:animal_oil"]),

@@ -484,6 +484,10 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:unfinished_leather")
         .translationKey("item.createdelight.unfinished_leather")
 
+    //干酵母
+    e.create("createdelight:dry_yeast")
+        .translationKey("item.createdelight.dry_yeast")
+
     // DEBUG工具
     e.create("createdelight:debug_reload_tool")
         .translationKey("item.createdelight.debug_reload_tool")

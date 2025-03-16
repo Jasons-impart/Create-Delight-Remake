@@ -64,24 +64,6 @@ ServerEvents.recipes(e => {
         ],
         "culturaldelights:corn_kernels"
     ).id("createdelight:milling/corn_flour")
-    e.recipes.kubejs.shapeless(
-        "3x culturaldelights:corn_dough",
-        [
-            "minecraft:water_bucket",
-            "3x createdelight:corn_flour"
-        ]
-    ).replaceIngredient("minecraft:water_bucket", "minecraft:bucket").id("corn_delight:crafting/corn_dough")
-    e.recipes.create.mixing(
-        "culturaldelights:corn_dough",
-        [
-            Fluid.of("water", 50),
-            "createdelight:corn_flour"
-        ]
-    ).id("corn_delight:mixing/corn_dough")
-    e.recipes.create.splashing(
-        "culturaldelights:corn_dough",
-        "createdelight:corn_flour"
-    ).id("corn_delight:splashing/corn_dough")
     e.recipes.create.pressing(
         [
             "corn_delight:tortilla_raw",
