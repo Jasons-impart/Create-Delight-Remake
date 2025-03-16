@@ -71,8 +71,6 @@
   "tetra.material.socket_pristine_lapis.prefix": "§9无瑕青金石+§r",
   "tetra.material.socket_amethyst": "镶嵌紫水晶",
   "tetra.material.socket_amethyst.prefix": "§d紫水晶§r",
-  "tetra.material.socket_pristine_amethyst": "镶嵌无瑕紫水晶",
-  "tetra.material.socket_pristine_amethyst.prefix": "§d无瑕紫水晶+§r",
   "tetra.material.socket_ender_pearl": "末影珍珠",
   "tetra.material.socket_ender_pearl.prefix": "§3末影珍珠§r",
   "item.tetra.modular.repair_material.tooltip": "放入修复该部件所需的材料",
@@ -1130,7 +1128,6 @@
   "item.tetra.pristine_emerald": "无瑕绿宝石",
   "tetra.shatter_emerald_action.label": "打碎",
   "item.tetra.pristine_lapis": "无瑕青金石",
-  "item.tetra.pristine_amethyst": "无瑕紫水晶",
   "tetra.shatter_lapis_action.label": "打碎",
   "item.tetra.pristine_gem.description": "在用于改进物品时产生更多增益。可以在加工台上破碎，可能会产出多个普通的品质的宝石 \n \n §8掉落物受时运附魔影响",
   "item.tetra.dragon_sinew": "龙筋",
@@ -2755,5 +2752,33 @@
   "tetra.material.shadow_silk": "黑暗丝绸",
   "tetra.material.singularity.prefix": "§1奇点§r",
   "tetra.material.singularity": "§1奇点§r",
-  "tetra.variant.sword_socket/singularity":"§1奇点§r"
+  "tetra.variant.sword_socket/singularity":"§1奇点§r",
+
+  "item.tetra.pristine_amethyst": "无瑕紫水晶",
+  "tetra.shatter_amethyst_action.label": "打碎",
+  "tetra.material.socket_pristine_amethyst": "镶嵌无瑕紫水晶",
+  "tetra.material.socket_pristine_amethyst.prefix": "§d无瑕紫水晶+§r",
+  "tetra.variant.sword_socket/pristine_amethyst": "镶嵌[§d紫水晶+§r]",
+  "tetra.variant.sword_socket/pristine_amethyst.description": "一颗宝石，被装进了剑刃与剑柄的连接处。这颗宝石被附上了魔咒，并且会为剑的使用者提供魔法增益。\n \n这颗宝石质地无瑕，能提供更好的效果。",
+  "tetra.variant.double_socket/pristine_amethyst": "镶嵌[§d紫水晶+§r]",
+  "tetra.variant.double_socket/pristine_amethyst.description": "一颗宝石，被装进了工具的顶端。这颗宝石被附上了魔咒，并且会为工具的使用者提供魔法增益。\n \n这颗宝石质地无瑕，能提供更好的效果。",
+  "tetra.variant.single_socket/pristine_amethyst": "镶嵌[§d紫水晶+§r]",
+  "tetra.variant.single_socket/pristine_amethyst.description": "一颗宝石，被装进了头部与手柄的连接处。这颗宝石被附上了魔咒，并且会为工具的使用者提供魔法增益。\n \n这颗宝石质地无瑕，能提供更好的效果。",
+  
+  "tetra.material.socket_bleak_electron_tube": "超频电子管",
+  "tetra.material.socket_bleak_electron_tube.prefix": "§d超频电子管§r",
+  "tetra.variant.sword_socket/bleak_electron_tube": "镶嵌[§d超频电子管§r]",
+  "tetra.variant.sword_socket/bleak_electron_tube.description": "一枚电子元件，被装进了剑刃与剑柄的连接处。这枚元件会放大剑的伤害能力。",
+  "tetra.variant.double_socket/bleak_electron_tube": "镶嵌[§d超频电子管§r]",
+  "tetra.variant.double_socket/bleak_electron_tube.description": "一枚电子元件，被装进了工具的顶端。这枚元件会放大工具的伤害能力。",
+  "tetra.variant.single_socket/bleak_electron_tube": "镶嵌[§d超频电子管§r]",
+  "tetra.variant.single_socket/bleak_electron_tube.description": "一枚电子元件，被装进了头部与手柄的连接处。这枚元件会放大工具的伤害能力。",
+
+  "tetra.variant.sword_socket/precision_mechanism": "镶嵌[精密构件]",
+  "tetra.variant.sword_socket/precision_mechanism.description": "一组精密机械结构，被装进了剑刃与剑柄的连接处。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。",
+  "tetra.variant.double_socket/precision_mechanism": "镶嵌[精密构件]",
+  "tetra.variant.double_socket/precision_mechanism.description": "一组精密机械结构，被装进了工具的顶端。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。",
+  "tetra.variant.single_socket/precision_mechanism": "镶嵌[精密构件]",
+  "tetra.variant.single_socket/precision_mechanism.description": "一组精密机械结构，被装进了头部与手柄的连接处。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。"
+  
 }
