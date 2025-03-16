@@ -93,14 +93,6 @@ ServerEvents.recipes(e => {
         "create_bic_bit:sweet_dough",
         [
             Fluid.of("create:honey", 100),
-            Fluid.of("createdelight:egg_yolk", 50),
-            "create:wheat_flour"
-        ]
-    ).id("create_bic_bit:filling/sweet_dough_recipe")
-    e.recipes.create.mixing(
-        "create_bic_bit:sweet_dough",
-        [
-            Fluid.of("create:honey", 100),
             "farmersdelight:wheat_dough"
         ]
     ).id("create_bic_bit:compat/farmersdelight/sweet_dough_recipe2")

@@ -4,7 +4,8 @@ ServerEvents.tags("item", (e) => {
 ServerEvents.recipes((e) => {
   remove_recipes_id(e, [
     "createdieselgenerators:crafting/engine_piston_from_rods",
-    "createdieselgenerators:compacting/plant_oil"
+    "createdieselgenerators:compacting/plant_oil",
+    "createdieselgenerators:basin_fermenting/dough"
   ]);
   // 替换安山合金
   e.replaceInput(

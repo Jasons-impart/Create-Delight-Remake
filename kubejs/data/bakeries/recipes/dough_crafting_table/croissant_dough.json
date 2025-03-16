@@ -1,0 +1,10 @@
+
+{
+  "type": "bakeries:dough_crafting_table",
+  "count": 4,
+  "ingredient":
+  {
+    "item": "createdelight:puff_pastry"
+  },
+  "result": "bakeries:croissant_dough"
+}
