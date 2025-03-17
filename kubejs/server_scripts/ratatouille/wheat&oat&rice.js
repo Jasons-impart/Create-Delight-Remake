@@ -101,20 +101,6 @@ ServerEvents.recipes(e => {
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
     // 燕麦面团
-    e.recipes.create.mixing(
-        "vintagedelight:oat_dough",
-        [
-            Fluid.of("createdelight:egg_yolk", 50),
-            "vintagedelight:raw_oats"
-        ]
-    ).id("vintagedelight:oat_dough_from_eggs")
-    e.recipes.kubejs.shapeless(
-        "vintagedelight:oat_dough",
-        [
-            "#forge:eggs",
-            "3x vintagedelight:raw_oats"
-        ]
-    ).id("vintagedelight:oat_dough_from_eggs_manual_only")
     e.recipes.minecraft.smoking(
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
@@ -123,30 +109,6 @@ ServerEvents.recipes(e => {
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
     ).id("vintagedelight:bread_from_smelting")
-    // 蛋黄面团
-    e.recipes.create.mixing(
-        "farmersdelight:wheat_dough",
-        [
-            Fluid.of("createdelight:egg_yolk", 50),
-            "create:wheat_flour"
-        ]
-    ).id("farmersdelight:wheat_dough_from_eggs")
-    e.recipes.kubejs.shapeless(
-        "3x farmersdelight:wheat_dough",
-        [
-            "#forge:eggs",
-            "3x create:wheat_flour"
-        ]
-    ).id("farmersdelight:crafting/wheat_dough_manual_only")
-    // 咸面团
-    e.recipes.create.mixing(
-        "ratatouille:salty_dough",
-        [
-            "farmersdelight:wheat_dough",
-            "#forge:salt"
-        ]
-    )
-        .id("create:mixing/salty_dough")
     // 燕麦相关食物合成
     e.replaceInput({ id: "vintagedelight:fruity_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
     e.replaceInput({ id: "vintagedelight:deluxe_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")

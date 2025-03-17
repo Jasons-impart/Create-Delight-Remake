@@ -569,7 +569,10 @@ StartupEvents.registry("item", e => {
     
     //采血器
     e.create("createdelight:blood_collection_device")
-        .translationKey("item.createdelight.blood_collection_device")
+    .translationKey("item.createdelight.blood_collection_device")
+    //针
+    e.create("createdelight:needle")
+        .translationKey("item.createdelight.needle")
     
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]
