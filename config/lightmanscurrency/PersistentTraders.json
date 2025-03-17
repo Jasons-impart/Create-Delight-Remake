@@ -3120,25 +3120,6 @@
             "type": "lightmanscurrency:coins"
           },
           "Product": {
-            "id": "createcafe:melted_sugar",
-            "amount": 1000
-          },
-          "Quantity": 3,
-          "TradeRules": []
-        },
-        {
-          "TradeType": "PURCHASE",
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          },
-          "Product": {
             "id": "createcafe:filling",
             "amount": 1000
           },
