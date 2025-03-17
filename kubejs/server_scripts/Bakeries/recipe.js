@@ -1,11 +1,12 @@
 ServerEvents.recipes(e => {
-    const { create, createdieselgenerators, vintageimprovements, kubejs, createaddition } = e.recipes
+    const { create, createdieselgenerators, vintageimprovements, kubejs, createaddition, minecraft } = e.recipes
     remove_recipes_output(e, [
         "create:dough",
         "farmersdelight:wheat_dough",
         "vintagedelight:oat_dough",
         "bakeries:sweet_dough",
         "bakeries:whole_wheat_dough",
+        "bakeries:whole_wheat_flour",
         "bakeries:whole_wheat_flour_bag",
         "bakeries:salted_dough",
         "bakeries:pastry",
@@ -68,6 +69,9 @@ ServerEvents.recipes(e => {
     create.mixing("bakeries:sweet_dough", ["farmersdelight:wheat_dough", "minecraft:sugar"])
         .id("bakeries:mixing/sweet_dough")
     cutting_3(e, "minecraft:cooked_porkchop", [["bakeries:meat_floss", 4]])
+
+    minecraft.smelting("minecraft:bread", "bakeries:whole_wheat_dough")
+    .id("bakeries:smelting/whole_wheat_dough")
     //酥皮
     kubejs.shaped("createdelight:puff_pastry",
         [
