@@ -20,7 +20,7 @@ TetraUtil.getItem = function(itemStack) {
  */
 TetraUtil.getItemEffects = function(item) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffects()
+    return itemClass.getEffects(item)
 }
 /**
  * 

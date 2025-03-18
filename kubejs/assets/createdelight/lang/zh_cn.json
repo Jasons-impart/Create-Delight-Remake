@@ -407,5 +407,13 @@
     "createdelight.effect.overwhelm.name": "威压",
     "createdelight.effect.overwhelm.tooltip": "造成的伤害额外增加敌人当前血量的§e%s%%§r",
     "tetra.stats.createdelight:overwhelm": "威压",
-    "tetra.stats.createdelight:overwhelm.tooltip_short": "根据敌人当前血量增加伤害"
+    "tetra.stats.createdelight:overwhelm.tooltip_short": "根据敌人当前血量增加伤害",
+    "createdelight.effect.frozen.name": "冰冻",
+    "createdelight.effect.frozen.tooltip": "攻击时对敌人施加§e%s§r秒的冰冻效果",
+    "tetra.stats.createdelight:frozen": "冰冻",
+    "tetra.stats.createdelight:frozen.tooltip_short": "攻击时对敌人施加冰冻效果",
+    "createdelight.effect.irradiation.name": "辐照",
+    "createdelight.effect.irradiation.tooltip": "手持时每30秒承受§e%s§r级的辐照效果，持续§e%s§r秒（会累加）",
+    "tetra.stats.createdelight:irradiation": "辐照",
+    "tetra.stats.createdelight:irradiation.tooltip_short": "手持时持续承受辐照效果"
 }
