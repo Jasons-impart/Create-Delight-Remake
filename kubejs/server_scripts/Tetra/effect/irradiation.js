@@ -1,8 +1,8 @@
 PlayerEvents.tick(e => {
     if (e.level.time % (30 * 20) == 0) {
         let player = e.player
-        let item = TetraUtil.getItem(player.mainHandItem)
-        if (item != null) {
+        let item = player.mainHandItem
+        if (item.item instanceof $ModularItem) {
             if (TetraUtil.itemHasEffect(item, "createdelight:irradiation")) {
                 let level = TetraUtil.getEffectLevel(item, "createdelight:irradiation")
                 let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:irradiation")
