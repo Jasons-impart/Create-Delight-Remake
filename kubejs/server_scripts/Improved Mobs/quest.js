@@ -34,7 +34,7 @@ FTBQuestsEvents.customReward(e => {
             UpdateRank(e.player, -s.split("_")[1])
         }
         else if (s == "change_rank_change_state") {
-            let disableRankChange = e.player.persistentData.get("disableRankChange")
+            let disableRankChange = e.player.persistentData.getBoolean("disableRankChange")
             if (disableRankChange == null)
                 e.player.persistentData.putBoolean("disableRankChange", true)
             else
