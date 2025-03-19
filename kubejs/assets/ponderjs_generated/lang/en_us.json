@@ -1,6 +1,10 @@
 {
+  "createdelight.ponder.tag.ae2_machine_non_cost_channel": "不消耗频道的物件",
+  "createdelight.ponder.tag.ae2_machine_non_cost_channel.description": "它们处于频道中不会消耗频道",
   "createdelight.ponder.tag.ae2": "应用能源2",
   "createdelight.ponder.tag.ae2.description": "集存储，物流，自动化一身的强大mod",
+  "createdelight.ponder.tag.ae2_machine_cost_channel": "消耗频道的物件",
+  "createdelight.ponder.tag.ae2_machine_cost_channel.description": "它们处于网络中时会消耗一个频道",
   "createdelight.ponder.ae_budding_quartz_grow.header": "赛特斯石英母岩的生长",
   "createdelight.ponder.ae_budding_quartz_grow.text_1": "赛特斯石英母岩会随着时间生长",
   "createdelight.ponder.ae_budding_quartz_grow.text_2": "在生长过程中，赛特斯石英母岩有概率降低一个等级（除了无瑕母岩）",
