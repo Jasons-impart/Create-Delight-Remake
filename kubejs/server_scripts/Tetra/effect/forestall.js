@@ -1,21 +1,18 @@
-
 PlayerEvents.tick(e => {
     const { player } = e
-
-
     let item = player.mainHandItem
-    if (TetraUtil.getItem(item))
+    if (!TetraUtil.getItem(item))
         return
     if (!TetraUtil.itemHasEffect(item, "createdelight:forstall"))
         return
     let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:forstall")
     let name = "tetra_effect_forstall_countdown"
-    let count = player.persistentData.get(name)
+    let count = player.persistentData.getInt(name)
     if (count == null)
         player.persistentData.putInt(name, efficiency * 20)
     else if (count > 0) {
-        if (count == 20) {
-            player.level.playSound(player, player.pos, "minecraft:block.chain.place", "players", 100, 1)
+        if (count == 1) {
+            player.sendData("tetra_effect_forstall_countdown_playsound", {})
         }
         player.persistentData.putInt(name, --count)
     }
