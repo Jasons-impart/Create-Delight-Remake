@@ -78,31 +78,30 @@
 				"使用时需要指定机器的输入面和输出面，以及何种情况下才会工作。"
 			]
 			id: "39DF3E07789374D0"
-			rewards: [{
-				id: "2BA1FCE09F344292"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			shape: "square"
-			size: 1.5d
-			subtitle: "财源滚滚来！"
-			tasks: [
+			rewards: [
 				{
-					id: "05FEA15D96E022B2"
+					id: "68AF25CAEBBE458E"
 					item: "lightmanscurrency:item_trader_interface"
 					type: "item"
 				}
 				{
-					id: "304E500AD437C67B"
+					id: "3728E5B064659978"
 					item: "lctech:fluid_trader_interface"
 					type: "item"
 				}
 				{
-					id: "1A98188264272486"
+					id: "70DA4D07E873533F"
 					item: "lctech:energy_trader_interface"
 					type: "item"
 				}
 			]
+			shape: "square"
+			size: 1.5d
+			subtitle: "财源滚滚来！"
+			tasks: [{
+				id: "4213E569BE7FCE2D"
+				type: "checkmark"
+			}]
 			title: "交易自动化"
 			x: 3.0d
 			y: 3.0d
