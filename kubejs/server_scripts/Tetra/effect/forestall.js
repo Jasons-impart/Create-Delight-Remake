@@ -1,7 +1,7 @@
 PlayerEvents.tick(e => {
     const { player } = e
     let item = player.mainHandItem
-    if (!TetraUtil.getItem(item))
+    if (!(item.item instanceof $ModularItem))
         return
     if (!TetraUtil.itemHasEffect(item, "createdelight:forstall"))
         return
@@ -12,7 +12,7 @@ PlayerEvents.tick(e => {
         player.persistentData.putInt(name, efficiency * 20)
     else if (count > 0) {
         if (count == 1) {
-            player.sendData("tetra_effect_forstall_countdown_playsound", {})
+            player.sendData("kubejs_player_playsound", {soundEvent: "minecraft:block.chain.place"})
         }
         player.persistentData.putInt(name, --count)
     }
@@ -27,7 +27,6 @@ global.TetraForstallAttackEffect = function (e) {
         return
     let item = player.mainHandItem
 
-    // console.log(item.getItem().getClass())
     if (item.item instanceof $ModularItem) {
         if (TetraUtil.itemHasEffect(item, "createdelight:forstall")) {
             let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:forstall")
