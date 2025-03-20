@@ -43,6 +43,7 @@
 !/quark-common.toml
 !/vintageimprovements*
 xaerominimap_entities.json
+!/world-gen.json
 !/ad_astra*
 !/sereneseasons
 !/chat_heads.json5
