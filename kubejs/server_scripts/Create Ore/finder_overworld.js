@@ -3,6 +3,8 @@ const $OreVeinAtlasItem = Java.loadClass("com.tom.createores.item.OreVeinAtlasIt
 
 ItemEvents.rightClicked("createdelight:prospector", e => {
     const { player, level } = e 
+    if (player.cooldowns.isOnCooldown(e.item.item))
+        return
     const MAX_SEARCH_DIST_IN_BLOCK = 16 // 最大搜索距离
     const BLOCK_SIZE = 16 // 区块大小
 
@@ -34,15 +36,16 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
         Math.floor(pos.x / BLOCK_SIZE),
         Math.floor(pos.z / BLOCK_SIZE)
     )
-    let message = Component.literal("最近的矿脉是")
+    let message = Component.translate("message.createdelight.nearest_vein")
                 .append(info.getName().color(Color.YELLOW))
     if (direction == 'Same Point') {
-        message = message.append(", §2就在你脚下")
+        message = message
+        .append(Component.translate("message.createdelight.underfoot"))
     } else {
-        message = message.append(", 位于")
-            .append(direction.color(Color.YELLOW))
-            .append(`方§e${distance}§r米`)
+        message = message
+        .append(Component.translate("message.createdelight.at", direction.getString(), distance))
     }
     player.swing()
+    player.addItemCooldown(e.item.item, 60)
     player.setStatusMessage(message)
 })

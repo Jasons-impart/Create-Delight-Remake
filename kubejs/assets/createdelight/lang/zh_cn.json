@@ -367,6 +367,9 @@
     "message.createdelight.southeast": "东北",
     "message.createdelight.southwest": "西南",
     "message.createdelight.west": "西",
+    "message.createdelight.nearest_vein": "最近的矿脉是",
+    "message.createdelight.underfoot": ", §2就在你脚下",
+    "message.createdelight.at": ", 位于§e%s方§r§e%s§r米",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
