@@ -18,8 +18,7 @@ ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
         if (dragon.isTame() && dragon.isAlive()) {
             let maxhp = dragon.maxHealth
             let damage = Math.max(50, maxhp * 0.1)
-            e.server.runCommandSilent(`damage ${dragon.uuid} ${damage}`)
-            e.player.doHurtTarget(entity)
+            dragon.attack(damage)
             if (dragon.type == "iceandfire:fire_dragon") {
                 e.player.give("iceandfire:fire_dragon_blood")
             }
