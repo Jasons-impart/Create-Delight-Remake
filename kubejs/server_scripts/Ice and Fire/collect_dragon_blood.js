@@ -1,5 +1,4 @@
 const $EntityDragonBase = Java.loadClass("com.github.alexthe666.iceandfire.entity.EntityDragonBase")
-const $DamageTypeBuilder = Java.loadClass("Damagetype")
 ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
     if (e.player.cooldowns.isOnCooldown("createdelight:blood_collection_device"))
         return
@@ -18,7 +17,7 @@ ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
         if (dragon.isTame() && dragon.isAlive()) {
             let maxhp = dragon.maxHealth
             let damage = Math.max(50, maxhp * 0.1)
-            dragon.attack(e.player.damageSources().generic(), damage)
+            dragon.attack(e.player.damageSources().genericKill(), damage)
             if (dragon.type == "iceandfire:fire_dragon") {
                 e.player.give("iceandfire:fire_dragon_blood")
             }

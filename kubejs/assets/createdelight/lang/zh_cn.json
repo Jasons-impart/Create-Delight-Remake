@@ -418,5 +418,17 @@
     "createdelight.effect.irradiation.name": "辐照",
     "createdelight.effect.irradiation.tooltip": "手持时每30秒承受§e%s§r级的辐照效果，持续§e%s§r秒（会累加）",
     "tetra.stats.createdelight:irradiation": "辐照",
-    "tetra.stats.createdelight:irradiation.tooltip_short": "手持时持续承受辐照效果"
+    "tetra.stats.createdelight:irradiation.tooltip_short": "手持时持续承受辐照效果",
+    "createdelight.effect.fire_dragon_restraint.name": "火龙克制",
+    "createdelight.effect.fire_dragon_restraint.tooltip": "对火龙额外造成§e%s§r点伤害",
+    "tetra.stats.createdelight:fire_dragon_restraint": "火龙克制",
+    "tetra.stats.createdelight:fire_dragon_restraint.tooltip_short": "对火龙额外造成伤害",
+    "createdelight.effect.ice_dragon_restraint.name": "冰龙克制",
+    "createdelight.effect.ice_dragon_restraint.tooltip": "对冰龙额外造成§e%s§r点伤害",
+    "tetra.stats.createdelight:ice_dragon_restraint": "冰龙克制",
+    "tetra.stats.createdelight:ice_dragon_restraint.tooltip_short": "对冰龙额外造成伤害",
+    "createdelight.effect.lightning_dragon_restraint.name": "电龙克制",
+    "createdelight.effect.lightning_dragon_restraint.tooltip": "对电龙额外造成§e%s§r点伤害",
+    "tetra.stats.createdelight:lightning_dragon_restraint": "电龙克制",
+    "tetra.stats.createdelight:lightning_dragon_restraint.tooltip_short": "对电龙额外造成伤害"
 }
