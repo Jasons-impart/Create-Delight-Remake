@@ -430,5 +430,9 @@
     "createdelight.effect.lightning_dragon_restraint.name": "电龙克制",
     "createdelight.effect.lightning_dragon_restraint.tooltip": "对电龙额外造成§e%s§r点伤害",
     "tetra.stats.createdelight:lightning_dragon_restraint": "电龙克制",
-    "tetra.stats.createdelight:lightning_dragon_restraint.tooltip_short": "对电龙额外造成伤害"
+    "tetra.stats.createdelight:lightning_dragon_restraint.tooltip_short": "对电龙额外造成伤害",
+    "createdelight.effect.life_drain.name": "生命汲取",
+    "createdelight.effect.life_drain.tooltip": "造成伤害时会回复伤害值的§e%s%%§r的血量",
+    "tetra.stats.createdelight:life_drain": "生命汲取",
+    "tetra.stats.createdelight:life_drain.tooltip_short": "造成伤害时会回复伤害值一定比例的血量"
 }
