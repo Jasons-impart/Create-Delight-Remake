@@ -10,8 +10,8 @@ global.TetraDragonRestraintEvent = function (e) {
 
     if (item.item instanceof $ModularItem) {
         ["ice", "fire", "lightning"].forEach(dragonType => {
-            if (TetraUtil.itemHasEffect(item, `${dragonType}_dragon_restraint`)) {
-                let level = TetraUtil.getEffectLevel(item, `${dragonType}_dragon_restraint`)
+            if (TetraUtil.itemHasEffect(item, `createdelight:${dragonType}_dragon_restraint`)) {
+                let level = TetraUtil.getEffectLevel(item, `createdelight:${dragonType}_dragon_restraint`)
                 if (e.entity.type == `iceandfire:${dragonType}_dragon`)
                     e.setAmount(e.amount + level)
             }
