@@ -1,0 +1,30 @@
+{
+    "key": "uranium",
+    "category": "gem",
+    "primary": 6,
+    "secondary": 2.9,
+    "tertiary": 0,
+    "durability": 1200,
+    "integrityCost": 2,
+    "integrityGain": 2,
+    "magicCapacity": 150,
+    "toolLevel": "minecraft:iron",
+    "toolEfficiency": 8,
+    "tints": {
+      "glyph": "00ff00",
+      "texture": "00ff00"
+    },
+    "effects": {
+        "createdelight:irradiated":15
+    },
+    "textures": ["shiny", "crude"],
+    "material": {
+        "items": ["alexscaves:uranium"]
+    },
+    "improvements": {
+        "arrested": 0
+    },
+    "requiredTools": {
+        "hammer_dig": 4
+    }
+}
