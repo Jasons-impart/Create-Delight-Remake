@@ -779,6 +779,7 @@ ServerEvents.recipes((event) => {
         "ae2:certus_quartz_crystal"
       ]
     ).secondaryFluidInput(0)
+    .id("vintageimprovements:pressurizing/polished_rose_quartz")
   // 荧石再生
   vintageimprovements
     .pressurizing(
