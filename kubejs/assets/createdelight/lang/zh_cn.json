@@ -436,6 +436,9 @@
     "createdelight.tip.resurgent_soil_special_crop": "复生土上的爆弹椒会长成一种特殊的变种作物。",
     "createdelight.tip.obtain_blaze_burner_from_powder_cannon": "本包的烈焰人燃烧室可通过爆弹椒相关产物获取。",
     "createdelight.tip.check_ore_spawn": "对矿石使用\"显示物品配方\"键可以查看其生成的大致高度。",
+    "createdelight.tip.check_rank": "使用/improvedmobs指令可以查看你的当前难度。",
+    "createdelight.tip.memory_sweep_lag": "内存清扫的卡顿可被解决，详细内容请参考mcmod页面上该mod的介绍。",
+    "createdelight.tip.dread_update_smithing_template": "悚怖锻造模板可以在悚陵中的\"悚怖女皇\"所在层数的四个箱子中获取。",
     
 
     
