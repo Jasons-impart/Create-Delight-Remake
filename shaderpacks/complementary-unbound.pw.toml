@@ -1,0 +1,13 @@
+name = "Complementary Shaders - Unbound"
+filename = "ComplementaryUnbound_r5.4.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "239542849d064ab0ac9758a3e6278c310ace0a04"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6137622
+project-id = 385587
