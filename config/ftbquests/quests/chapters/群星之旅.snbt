@@ -10,7 +10,7 @@
 		tag: { }
 	}
 	id: "532EAAE67364C491"
-	order_index: 7
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -795,7 +795,6 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["78F0F6D3D2A93E3F"]
 			icon: "ad_astra:earth_globe"
 			id: "112566BE4CAC8023"
 			rewards: [{
