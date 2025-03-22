@@ -102,7 +102,7 @@
 				item: "createmetallurgy:foundry_mixer"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -3.5d
 			y: 0.0d
 		}
 		{
@@ -130,7 +130,7 @@
 				title: "用于超级加热的物品"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.0d
 			y: -5.5d
 		}
 		{
@@ -153,7 +153,7 @@
 				item: "createmetallurgy:steel_ingot"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.0d
 			y: -3.5d
 		}
 		{
@@ -167,8 +167,8 @@
 				item: "createoreexcavation:drilling_machine"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -1.5d
+			x: 10.5d
+			y: -6.75d
 		}
 		{
 			dependencies: ["70CA8C3E0DEBBE1A"]
@@ -178,7 +178,7 @@
 				item: "createdieselgenerators:oil_scanner"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: -3.5d
 		}
 		{
@@ -244,7 +244,7 @@
 				}
 			]
 			title: "石油大亨的第一步！"
-			x: 3.5d
+			x: 3.0d
 			y: -3.5d
 		}
 		{
@@ -256,7 +256,7 @@
 				title: "抽取原油"
 				type: "checkmark"
 			}]
-			x: 5.0d
+			x: 4.5d
 			y: -3.5d
 		}
 		{
@@ -281,7 +281,7 @@
 				}
 			]
 			title: "流体抽屉，谁用谁知道"
-			x: 6.5d
+			x: 6.0d
 			y: -3.5d
 		}
 		{
@@ -293,7 +293,7 @@
 				item: "createdieselgenerators:distillation_controller"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 7.5d
 			y: -3.5d
 		}
 		{
@@ -305,7 +305,7 @@
 				type: "checkmark"
 			}]
 			title: "石油"
-			x: 9.5d
+			x: 9.0d
 			y: -4.5d
 		}
 		{
@@ -317,7 +317,7 @@
 				type: "checkmark"
 			}]
 			title: "柴油"
-			x: 9.5d
+			x: 9.0d
 			y: -2.5d
 		}
 		{
@@ -333,7 +333,7 @@
 				title: "混合燃料"
 				type: "checkmark"
 			}]
-			x: 11.0d
+			x: 10.5d
 			y: -3.5d
 		}
 		{
@@ -343,7 +343,7 @@
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: 9.5d
+			x: 9.0d
 			y: -3.5d
 		}
 		{
@@ -357,7 +357,7 @@
 				item: "createdieselgenerators:diesel_engine"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -374,7 +374,7 @@
 				item: "createdieselgenerators:large_diesel_engine"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 10.5d
 			y: 0.0d
 		}
 		{
@@ -385,7 +385,7 @@
 				item: "createdieselgenerators:engine_piston"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: -1.5d
 		}
 		{
@@ -404,7 +404,7 @@
 				item: "createdieselgenerators:engine_silencer"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 4.5d
 			y: 1.5d
 		}
 		{
@@ -417,7 +417,7 @@
 				item: "createdelightcore:bronze_block"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.0d
 			y: 0.0d
 		}
 		{
@@ -432,7 +432,7 @@
 				item: "createdieselgenerators:huge_diesel_engine"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.5d
 			y: 1.5d
 		}
 		{
@@ -452,7 +452,7 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 0.0d
+			x: -1.0d
 			y: 4.0d
 		}
 		{
@@ -472,7 +472,7 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 8.0d
 			y: 4.0d
 		}
 		{
@@ -490,7 +490,7 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 10.5d
 			y: 4.0d
 		}
 		{
@@ -507,7 +507,7 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 9.5d
 			y: 2.5d
 		}
 		{
@@ -524,7 +524,7 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 9.5d
 			y: 5.5d
 		}
 	]

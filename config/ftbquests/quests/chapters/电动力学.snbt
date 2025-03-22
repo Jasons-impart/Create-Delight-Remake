@@ -36,8 +36,8 @@
 				type: "item"
 			}]
 			title: "基础磁铁"
-			x: 6.0d
-			y: 2.0d
+			x: 4.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -47,8 +47,8 @@
 				item: "create_new_age:redstone_magnet"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 3.5d
+			x: 4.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["540221D9F9074842"]
@@ -58,8 +58,8 @@
 				item: "create_new_age:layered_magnet"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 4.5d
+			x: 4.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["40318D164805A089"]
@@ -69,8 +69,8 @@
 				item: "create_new_age:fluxuated_magnetite"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 5.5d
+			x: 4.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["4C75ABFBB5D7E5B6"]
@@ -80,8 +80,8 @@
 				item: "create_new_age:netherite_magnet"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 6.5d
+			x: 4.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -100,8 +100,8 @@
 				}
 			]
 			title: "磁铁维度的特殊产物"
-			x: 5.0d
-			y: 3.5d
+			x: 3.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -113,8 +113,8 @@
 				type: "item"
 			}]
 			title: "磁铁再生"
-			x: 7.0d
-			y: 3.5d
+			x: 5.0d
+			y: 5.5d
 		}
 		{
 			id: "043FA550A6E77DE9"
@@ -124,8 +124,8 @@
 				item: "create_new_age:carbon_brushes"
 				type: "item"
 			}]
-			x: 6.0d
-			y: -2.0d
+			x: 2.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2034DC15562715B2"]
@@ -136,7 +136,7 @@
 				item: "createdelight:planet_gear"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 11.5d
 			y: 1.5d
 		}
 		{
@@ -150,7 +150,7 @@
 				item: "create_new_age:basic_motor"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 11.5d
 			y: 0.0d
 		}
 		{
@@ -164,7 +164,7 @@
 				item: "create_new_age:energiser_t1"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 9.5d
 			y: -1.5d
 		}
 		{
@@ -175,7 +175,7 @@
 				item: "create_new_age:advanced_motor"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 13.5d
 			y: 0.0d
 		}
 		{
@@ -186,7 +186,7 @@
 				item: "create_new_age:reinforced_motor"
 				type: "item"
 			}]
-			x: 17.5d
+			x: 15.0d
 			y: 0.0d
 		}
 		{
@@ -198,7 +198,7 @@
 				item: "create_new_age:energiser_t2"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 11.5d
 			y: -1.5d
 		}
 		{
@@ -210,7 +210,7 @@
 				item: "create_new_age:energiser_t3"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 13.5d
 			y: -1.5d
 		}
 		{
@@ -227,7 +227,7 @@
 				item: "createaddition:tesla_coil"
 				type: "item"
 			}]
-			x: 17.5d
+			x: 15.0d
 			y: -1.5d
 		}
 		{
@@ -239,7 +239,7 @@
 				item: "create_new_age:basic_motor_extension"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 13.5d
 			y: 1.5d
 		}
 		{
@@ -251,10 +251,11 @@
 				item: "create_new_age:advanced_motor_extension"
 				type: "item"
 			}]
-			x: 17.5d
+			x: 15.0d
 			y: 1.5d
 		}
 		{
+			dependencies: ["3C0CC0322271185F"]
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
@@ -312,6 +313,7 @@
 			dependencies: [
 				"353609AE16A7254A"
 				"007A93F26730F6F0"
+				"60FB53FC9A4FE2EE"
 			]
 			id: "3CB8FDF09F47FD4F"
 			rewards: [{
@@ -340,10 +342,10 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: -2.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["2F0B3291F14AAA89"]
+			dependencies: ["3CB8FDF09F47FD4F"]
 			hide_until_deps_visible: true
 			id: "3C1D019487D99479"
 			rewards: [{
@@ -370,7 +372,7 @@
 				}
 			]
 			title: "传电"
-			x: 8.5d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
@@ -387,8 +389,8 @@
 				item: "create_new_age:generator_coil"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 0.0d
+			x: 4.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3C1D019487D99479"]
@@ -404,7 +406,7 @@
 				item: "createaddition:portable_energy_interface"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 6.0d
 			y: 1.5d
 		}
 		{
@@ -436,18 +438,18 @@
 				}
 			]
 			title: "连接器"
-			x: 10.0d
+			x: 7.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["2F0B3291F14AAA89"]
+			dependencies: ["3CB8FDF09F47FD4F"]
 			id: "7DA3417CB0E6E7DB"
 			tasks: [{
 				id: "48FA24AEF202F105"
 				item: "createaddition:capacitor"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 6.0d
 			y: -1.5d
 		}
 		{
@@ -465,7 +467,7 @@
 				item: "createaddition:modular_accumulator"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 7.5d
 			y: -1.5d
 		}
 		{
@@ -484,7 +486,44 @@
 				type: "item"
 			}]
 			title: "电生磁磁生电"
-			x: 12.0d
+			x: 9.5d
+			y: 0.0d
+		}
+		{
+			id: "60FB53FC9A4FE2EE"
+			tasks: [{
+				id: "28655933F0C77994"
+				item: "createaddition:copper_spool"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2D030C52645E7DDD"]
+			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
+			id: "3C0CC0322271185F"
+			rewards: [
+				{
+					id: "248F1DFBE3FEBBEE"
+					item: "createdelightcore:gold_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "7D207E3447F37F15"
+					table_id: 5347970608351672481L
+					type: "random"
+				}
+			]
+			size: 1.0d
+			subtitle: "更高效的合金方式"
+			tasks: [{
+				id: "0E2FF72DF6085C45"
+				item: "createmetallurgy:foundry_mixer"
+				type: "item"
+			}]
+			x: -2.0d
 			y: 0.0d
 		}
 	]
