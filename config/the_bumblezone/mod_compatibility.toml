@@ -267,3 +267,10 @@
 		#
 		allowLootrCompat = true
 
+	["Mod Compatibility Options"."Create Compat"]
+		#----------------------------
+		#
+		# Allow Honey and Royal Jelly fluids to spawn Create's Limestone when they touch Lava.
+		#
+		allowCreateLimestoneForHoneyLavaCompat = false
+
