@@ -545,7 +545,7 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["提升你对Boss造成的伤害"]
+			description: ["提升你攻击时附带的基于当前生命值的额外伤害"]
 			icon: "iceandfire:cyclops_skull"
 			id: "6E604A0095BFDCCD"
 			tasks: [
@@ -650,7 +650,7 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["镶嵌巨人独眼会使你的锻造师裁决剑对Boss额外造成50%的伤害"]
+			description: ["镶嵌巨人独眼会使你的锻造师裁决剑的攻击附带基于当前生命值的伤害"]
 			id: "0D6639C88DEF9063"
 			tasks: [{
 				id: "2E562F97309DB0E0"
@@ -668,7 +668,7 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["镶嵌巨人颅骨会使你的锻造师裁决剑对Boss额外造成100%的伤害"]
+			description: ["镶嵌巨人颅骨会使你的锻造师裁决剑的攻击附带更多基于当前生命值的伤害"]
 			id: "26C93DC1910A6A9A"
 			tasks: [{
 				id: "0366A076D59C7BB9"
