@@ -2619,7 +2619,9 @@
               "Type": "lightmanscurrency:player_trade_limit"
             }
           ],
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2636,7 +2638,9 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2654,7 +2658,9 @@
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2673,7 +2679,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2692,7 +2700,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2711,7 +2721,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         }
       ]
     },
@@ -3705,7 +3717,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "vintagedelight:oat_dough",
-            "Count": 8
+            "Count": 4
           },
           "Price": {
             "Value": [
@@ -3755,8 +3767,42 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
+            "ID": "bakeries:flour",
+            "Count": 24
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
             "ID": "create:dough",
-            "Count": 32
+            "Count": 16
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "bakeries:whole_wheat_dough",
+            "Count": 24
           },
           "Price": {
             "Value": [
@@ -3773,7 +3819,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:salty_dough",
-            "Count": 16
+            "Count": 8
           },
           "Price": {
             "Value": [
@@ -3790,7 +3836,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:oil_dough",
-            "Count": 16
+            "Count": 8
           },
           "Price": {
             "Value": [
@@ -3858,7 +3904,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:corn_dough",
-            "Count": 28
+            "Count": 14
           },
           "Price": {
             "Value": [
@@ -3875,7 +3921,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "corn_delight:tortilla_raw",
-            "Count": 28
+            "Count": 14
           },
           "Price": {
             "Value": [
@@ -3892,7 +3938,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:tortilla_chips",
-            "Count": 48
+            "Count": 24
           },
           "Price": {
             "Value": [
@@ -4011,7 +4057,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_dough",
-            "Count": 4
+            "Count": 2
           },
           "Price": {
             "Value": [
@@ -5553,7 +5599,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:bread",
-            "Count": 16
+            "Count": 12
           },
           "Price": {
             "Value": [
