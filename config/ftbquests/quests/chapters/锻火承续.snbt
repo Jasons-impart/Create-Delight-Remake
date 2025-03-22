@@ -166,6 +166,7 @@
 				title: "村正之刃"
 				type: "checkmark"
 			}]
+			title: "高频村雨"
 			x: 0.5d
 			y: 3.0d
 		}
@@ -239,7 +240,7 @@
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
-			description: ["对满血敌人造成的伤害将额外提升200%"]
+			description: ["一段时间内不攻击后的第一次攻击会对敌人造成额外伤害"]
 			id: "4AAA5BB44805E5A2"
 			tasks: [{
 				id: "4B2DF53B67996206"
@@ -251,7 +252,7 @@
 		}
 		{
 			dependencies: ["3F2289F40B3CEEEA"]
-			description: ["村正之刃镶嵌奇点后将会大幅度提升造成的伤害，并强化右键蓄力的充能打击的效果，在充能打击命中敌人后将会在三秒后自动再次对敌人造成充能打击的伤害"]
+			description: ["高频村雨镶嵌奇点后将会大幅度提升造成的伤害，并强化右键蓄力的充能打击的效果，在充能打击命中敌人后将会在三秒后自动再次对敌人造成充能打击的伤害"]
 			id: "51238C6B9E481CD1"
 			tasks: [{
 				id: "58E2D55D89CCDEB6"
@@ -463,7 +464,7 @@
 		}
 		{
 			dependencies: ["02C4A15FAC0DA7D4"]
-			description: ["锻造师之权有三个高级打磨以及两个特殊镶嵌，对Boss专武"]
+			description: ["锻造师裁决剑有三个高级打磨以及两个特殊镶嵌，对Boss专武"]
 			hide_dependency_lines: true
 			icon: {
 				Count: 1
@@ -538,6 +539,7 @@
 				title: "锻造师之权"
 				type: "checkmark"
 			}]
+			title: "锻造师裁决剑"
 			x: -4.0d
 			y: 3.0d
 		}
@@ -648,7 +650,7 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["镶嵌巨人独眼会使你的锻造师之权对Boss额外造成50%的伤害"]
+			description: ["镶嵌巨人独眼会使你的锻造师裁决剑对Boss额外造成50%的伤害"]
 			id: "0D6639C88DEF9063"
 			tasks: [{
 				id: "2E562F97309DB0E0"
@@ -666,7 +668,7 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["镶嵌巨人颅骨会使你的锻造师之权对Boss额外造成100%的伤害"]
+			description: ["镶嵌巨人颅骨会使你的锻造师裁决剑对Boss额外造成100%的伤害"]
 			id: "26C93DC1910A6A9A"
 			tasks: [{
 				id: "0366A076D59C7BB9"

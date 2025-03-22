@@ -1,0 +1,16 @@
+{
+    "trigger": {
+          "type": "tetra:apply_hit_effects"
+        },
+        "effect": "createdelight:shocking",
+        "outcome":{
+        "type": "tetra:multiple",
+        "outcomes": [{
+            "type": "tetra:apply_effect",
+            "effect": "createaddition:shocking",
+            "entity": "target",
+            "duration": 40,
+            "amplifier": 1
+        }
+        ]}
+    }
