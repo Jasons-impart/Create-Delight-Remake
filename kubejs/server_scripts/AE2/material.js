@@ -190,10 +190,8 @@ ServerEvents.recipes((event) => {
   );
 
   //包层线缆使用强化纤维制作
-  kubejs.shaped("8x ae2:fluix_covered_cable", [
-    "AAA",
-    "ABA",
-    "AAA",
+  kubejs.shaped("2x ae2:fluix_covered_cable", [
+    "ABA"
   ],
     {
       A: "ae2:fluix_glass_cable",
