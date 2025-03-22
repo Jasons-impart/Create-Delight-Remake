@@ -2705,6 +2705,8 @@
    "tetra/schematic/sword/cataclysm_blade/catastrophe/retribution_2.description": "蜂刺",
    "tetra/schematic/sword/cataclysm_blade/catastrophe/retribution_2.slot1": "蜜蜂的毒刺会反击试图伤害它们的人，灾祸之刃也是。",
 
+
+
   "tetra.variant.evernight_dagger/evernight_dagger": "§4永夜匕首§r",
   "tetra/schematic/sword/evernight_dagger.name": "§4永夜匕首§r",
   "tetra/schematic/sword/evernight_dagger.description": "§4夜幕永在§r",
@@ -2715,8 +2717,8 @@
   "tetra.module.sword/evernight_dagger.name":"§4永夜匕首§r",
 
   "tetra.variant.sword_socket/sigil_of_eden":"§4伊甸图腾§r",
-  "tetra.material.precision_mechanism": "精密构件",
-  "tetra.material.precision_mechanism.prefix": "精密构件",
+  "tetra.material.precision_mechanism": "§e精密构件§r",
+  "tetra.material.precision_mechanism.prefix": "§e精密构件§r",
   "tetra.material.cockatrice_eye.prefix":"鸡蛇之眼", 
   "tetra.material.cockatrice_eye": "鸡蛇之眼",
   "tetra.material.cyclops_eye.prefix":"§5巨人独眼§r", 
@@ -2738,21 +2740,24 @@
   "tetra.material.dragonsteel_lightning_ingot": "§5龙霆钢§r",
   "tetra.material.dreadsteel_ingot.prefix":"§7悚怖钢§r", 
   "tetra.material.dreadsteel_ingot": "§7悚怖钢§r",
-  "tetra.material.mine_ingot.prefix": "超导金属",
-  "tetra.material.mine_ingot": "超导金属",
+  "tetra.material.mine_ingot.prefix": "§1超导金属§r",
+  "tetra.material.mine_ingot": "§1超导金属§r",
   "tetra.material.resonant_metal.prefix": "谐振金属",
   "tetra.material.resonant_metal": "谐振金属",
   "tetra.material.dragon_heart.prefix": "龙心脏",
   "tetra.material.dragon_heart": "龙心脏",
-  "tetra.material.pure_darkness.prefix": "纯粹黑暗",
-  "tetra.material.pure_darkness": "纯粹黑暗",
-  "tetra.material.totem_of_undying.prefix": "不死图腾",
-  "tetra.material.totem_of_undying": "不死图腾",
-  "tetra.material.shadow_silk.prefix": "黑暗丝绸",
-  "tetra.material.shadow_silk": "黑暗丝绸",
+  "tetra.material.pure_darkness.prefix": "§0纯粹黑暗§r",
+  "tetra.material.pure_darkness": "§0纯粹黑暗§r",
+  "tetra.material.totem_of_undying.prefix": "§e不死图腾§r",
+  "tetra.material.totem_of_undying": "§e不死图腾§r",
+  "tetra.material.shadow_silk.prefix": "§0暗影丝绸§r",
+  "tetra.material.shadow_silk": "§0暗影丝绸§r",
   "tetra.material.singularity.prefix": "§1奇点§r",
   "tetra.material.singularity": "§1奇点§r",
   "tetra.variant.sword_socket/singularity":"§1奇点§r",
+  "tetra.material.immortal_embryo": "&d永恒胚胎&r",
+  "tetra.variant.sword_socket/immortal_embryo": "&d永恒胚胎&r",
+
 
   "item.tetra.pristine_amethyst": "无瑕紫水晶",
   "tetra.shatter_amethyst_action.label": "打碎",
@@ -2775,10 +2780,10 @@
   "tetra.variant.single_socket/bleak_electron_tube.description": "一枚电子元件，被装进了头部与手柄的连接处。这枚元件会放大工具的伤害能力。",
 
   "tetra.variant.sword_socket/precision_mechanism": "镶嵌[精密构件]",
-  "tetra.variant.sword_socket/precision_mechanism.description": "一组精密机械结构，被装进了剑刃与剑柄的连接处。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。",
+  "tetra.variant.sword_socket/precision_mechanism.description": "一组精密机械结构，被装进了剑刃与剑柄的连接处。这组机械结构能动态调整剑的状态，从而加速打磨。",
   "tetra.variant.double_socket/precision_mechanism": "镶嵌[精密构件]",
-  "tetra.variant.double_socket/precision_mechanism.description": "一组精密机械结构，被装进了工具的顶端。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。",
+  "tetra.variant.double_socket/precision_mechanism.description": "一组精密机械结构，被装进了工具的顶端。这组机械结构能动态调整工具的状态，从而加速打磨。",
   "tetra.variant.single_socket/precision_mechanism": "镶嵌[精密构件]",
-  "tetra.variant.single_socket/precision_mechanism.description": "一组精密机械结构，被装进了头部与手柄的连接处。这组机械结构能动态调整剑的状态，从而加快打磨值的增长。"
+  "tetra.variant.single_socket/precision_mechanism.description": "一组精密机械结构，被装进了头部与手柄的连接处。这组机械结构能动态调整剑的状态，从而加速打磨。"
   
 }

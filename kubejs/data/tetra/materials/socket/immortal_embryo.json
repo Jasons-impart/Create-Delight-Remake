@@ -1,0 +1,31 @@
+
+{
+    "key": "immortal_embryo",
+    "hidden": true,
+    "category": "socket",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 100,
+    "integrityCost": 1,
+    "integrityGain": 0,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "attributes": {
+        "forge:reach_distance": 1,
+        "forge:attack_range": 1
+    },
+    "effects": {
+        "art_of_forging:life_fiber_loss":[1,0],
+        "intuit": 5
+    },
+    "tints": {
+        "glyph": "bd9cf6",
+        "texture": "bd9cf6"
+    },
+    "experienceCost": 30,
+    "material": {
+        "items": ["alexscaves:immortal_embryo"]
+    }
+}

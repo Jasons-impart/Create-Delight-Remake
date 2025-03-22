@@ -6,7 +6,7 @@
         "effects": {
             "truesweep": 1,
             "sweeping": 1,
-            "createdelight:overwhelm": 5,
+            "createdelight:overwhelm": 4,
             "vvaddon:strengtheffect": 1,
 	        "armorPenetration": 30
         },
