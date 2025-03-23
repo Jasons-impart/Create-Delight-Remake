@@ -62,6 +62,8 @@
     "block.mbd2.alloy_electric_furnace": "合金电炉核心",
     "block.createdelight.andesite_import_bus": "安山输入总线",
     "block.createdelight.andesite_export_bus": "安山输出总线",
+    "block.createdelight.forged_steel_import_bus": "锻造钢输入总线",
+    "block.createdelight.forged_steel_export_bus": "锻造钢输出总线",
     "block.mbd2.butchery_room": "屠宰室核心",
     "block.mbd2.create_in": "应力输入接口",
     "block.mbd2.energy_in": "能量输入口",

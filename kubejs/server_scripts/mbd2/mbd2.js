@@ -1,7 +1,18 @@
 ServerEvents.recipes(e => {
-    //安山输入总线
+    //安山总线
     e.recipes.create.item_application("createdelight:andesite_import_bus", ["create:andesite_casing", "functionalstorage:controller_extension"])
     .id("createdelight:andesite_import_bus")
+    e.recipes.kubejs.shapeless("createdelight:andesite_export_bus", "createdelight:andesite_import_bus")
+    .id("createdelight:andesite_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless("createdelight:andesite_import_bus", "createdelight:andesite_export_bus")
+    .id("createdelight:andesite_import_bus_from_export_bus")
+    //锻造钢总线
+    e.recipes.create.item_application("createdelight:forged_steel_import_bus", ["createdelightcore:forge_steel_casing", "functionalstorage:controller_extension"])
+    .id("createdelight:forged_steel_import_bus")
+    e.recipes.kubejs.shapeless("createdelight:forged_steel_export_bus", "createdelight:forged_steel_import_bus")
+    .id("createdelight:forged_steel_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless("createdelight:forged_steel_import_bus", "createdelight:forged_steel_export_bus")
+    .id("createdelight:forged_steel_import_bus_from_export_bus")
     //屠宰室核心
     e.shaped("mbd2:butchery_room", [
         "ABA",
@@ -13,10 +24,6 @@ ServerEvents.recipes(e => {
         C: "create:precision_mechanism"
     })
         .id("mbd2:butchery_room")
-    e.recipes.kubejs.shapeless("createdelight:andesite_export_bus", "createdelight:andesite_import_bus")
-    .id("createdelight:andesite_export_bus_from_import_bus")
-    e.recipes.kubejs.shapeless("createdelight:andesite_import_bus", "createdelight:andesite_export_bus")
-    .id("createdelight:andesite_import_bus_from_export_bus")
     //屠宰入口
     // e.shaped("mbd2:butchery_in", [
     //     "ABA",
@@ -131,17 +138,17 @@ ServerEvents.recipes(e => {
     })
         .id("mbd2:mechanical_crafting/alloy_electric_furnace")
 
-    //能量输入口
-    e.shaped("mbd2:energy_in", [
-        "CAC",
-        "ABA",
-        "CAC"
-    ], {
-        A: "createaddition:capacitor",
-        B: "createaddition:modular_accumulator",
-        C: "create:brass_sheet"
-    })
-        .id("mbd2:energy_in")
+    // //能量输入口
+    // e.shaped("mbd2:energy_in", [
+    //     "CAC",
+    //     "ABA",
+    //     "CAC"
+    // ], {
+    //     A: "createaddition:capacitor",
+    //     B: "createaddition:modular_accumulator",
+    //     C: "create:brass_sheet"
+    // })
+    //     .id("mbd2:energy_in")
     
     e.recipes.create.mechanical_crafting("mbd2:hydropower_amplifier", [
         "AABAA",

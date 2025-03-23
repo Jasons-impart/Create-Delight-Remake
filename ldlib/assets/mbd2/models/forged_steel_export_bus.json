@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "mbd2:block/forged_steel_export_bus",
+    "side": "createdelightcore:block/forge_steel_casing",
+    "top": "createdelightcore:block/forge_steel_casing"
+  }
+}
