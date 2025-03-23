@@ -1,0 +1,11 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+	"front": "ae2:block/dense_energy_cell_1",
+	"top": "ae2:block/dense_energy_cell_tb",
+	"side": "ae2:block/dense_energy_cell_side_1",
+	"bottom": "ae2:block/dense_energy_cell_tb"
+   }
+   
+}
+	
