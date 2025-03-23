@@ -2,14 +2,6 @@ ServerEvents.recipes(e => {
     //屠宰山羊
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:goat_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -38,14 +30,6 @@ ServerEvents.recipes(e => {
     //屠宰羊
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:sheep_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -74,14 +58,6 @@ ServerEvents.recipes(e => {
     //屠宰牛
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:cow_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -111,14 +87,6 @@ ServerEvents.recipes(e => {
     //屠宰猪
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:pig_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -148,14 +116,6 @@ ServerEvents.recipes(e => {
     //屠宰鸡
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:chicken_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -176,14 +136,6 @@ ServerEvents.recipes(e => {
     //屠宰黑兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:black_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -205,14 +157,6 @@ ServerEvents.recipes(e => {
     //屠宰棕兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:brown_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -234,14 +178,6 @@ ServerEvents.recipes(e => {
     //屠宰斑点兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:splotched_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -263,14 +199,6 @@ ServerEvents.recipes(e => {
     //屠宰金兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:gold_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -292,14 +220,6 @@ ServerEvents.recipes(e => {
     //屠宰盐腌兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:salt_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -321,14 +241,6 @@ ServerEvents.recipes(e => {
     //屠宰白兔
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:white_rabbit_carcass")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -350,14 +262,6 @@ ServerEvents.recipes(e => {
     //屠宰牛头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:cow_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -374,14 +278,6 @@ ServerEvents.recipes(e => {
     //屠宰羊头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:sheep_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -398,14 +294,6 @@ ServerEvents.recipes(e => {
     //屠宰猪头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:pig_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -421,14 +309,6 @@ ServerEvents.recipes(e => {
     //屠宰山羊头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:goat_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -444,14 +324,6 @@ ServerEvents.recipes(e => {
     //屠宰鸡头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:chicken_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -468,14 +340,6 @@ ServerEvents.recipes(e => {
     //屠宰棕兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_brown_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -492,14 +356,6 @@ ServerEvents.recipes(e => {
     //屠宰金兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_gold_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -516,14 +372,6 @@ ServerEvents.recipes(e => {
     //屠宰盐腌兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_salt_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -540,14 +388,6 @@ ServerEvents.recipes(e => {
     //屠宰斑点兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_splotched_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -564,14 +404,6 @@ ServerEvents.recipes(e => {
     //屠宰白兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_white_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)
@@ -588,14 +420,6 @@ ServerEvents.recipes(e => {
     //屠宰黑兔头
     e.recipes.mbd2.butchery()
      .inputItems("butchercraft:rabbit_black_head_item")
-     .chance(0.0, builder => builder
-        .inputItems(Item.of("butchercraft:skinning_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:bone_saw", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:gut_knife", "{Damage:0}"))
-        .inputItems(Item.of("butchercraft:butcher_knife", "{Damage:0}"))
-        .inputItems("3x minecraft:bucket")
-        .inputItems("2x minecraft:glass_bottle")
-    )
      .perTick(builder => builder
         .inputFE(20)
         .inputStress(1024)

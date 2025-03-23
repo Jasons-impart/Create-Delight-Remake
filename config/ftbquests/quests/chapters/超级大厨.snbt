@@ -3845,6 +3845,7 @@
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]
+			description: ["多方块中要保证至少存在一个输入总线和输出总线，这样你的机器才能正常的输入和输出。"]
 			id: "73992E846A016357"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -3854,20 +3855,21 @@
 			}]
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "自动屠宰"
 			tasks: [
 				{
 					id: "3607B57D20FF2A7D"
-					item: "mbd2:butchery_in"
-					type: "item"
-				}
-				{
-					id: "1B0E6E585176E952"
 					item: "mbd2:butchery_room"
 					type: "item"
 				}
 				{
-					id: "7A84E0490EDB3714"
-					item: "mbd2:butchery_out"
+					id: "653629602F3356C2"
+					item: "createdelight:andesite_import_bus"
+					type: "item"
+				}
+				{
+					id: "7FA8FD03950D99A5"
+					item: "createdelight:andesite_export_bus"
 					type: "item"
 				}
 			]

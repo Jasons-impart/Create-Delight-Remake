@@ -1,37 +1,44 @@
 ServerEvents.recipes(e => {
+    //安山输入总线
+    e.recipes.create.item_application("createdelight:andesite_import_bus", ["create:andesite_casing", "functionalstorage:controller_extension"])
+    .id("createdelight:andesite_import_bus")
     //屠宰室核心
     e.shaped("mbd2:butchery_room", [
         "ABA",
         "BCB",
         "ABA"
     ], {
-        A: "create:industrial_iron_block",
+        A: "create:andesite_casing",
         B: "create:andesite_alloy",
         C: "create:precision_mechanism"
     })
         .id("mbd2:butchery_room")
+    e.recipes.kubejs.shapeless("createdelight:andesite_export_bus", "createdelight:andesite_import_bus")
+    .id("createdelight:andesite_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless("createdelight:andesite_import_bus", "createdelight:andesite_export_bus")
+    .id("createdelight:andesite_import_bus_from_export_bus")
     //屠宰入口
-    e.shaped("mbd2:butchery_in", [
-        "ABA",
-        "BCB",
-        "ABA"
-    ], {
-        A: "create:industrial_iron_block",
-        B: "create:andesite_alloy",
-        C: "vintageimprovements:redstone_module"
-    })
-        .id("mbd2:butchery_in")
+    // e.shaped("mbd2:butchery_in", [
+    //     "ABA",
+    //     "BCB",
+    //     "ABA"
+    // ], {
+    //     A: "create:industrial_iron_block",
+    //     B: "create:andesite_alloy",
+    //     C: "vintageimprovements:redstone_module"
+    // })
+    //     .id("mbd2:butchery_in")
     //屠宰出口
-    e.shaped("mbd2:butchery_out", [
-        "ABA",
-        "BCB",
-        "ABA"
-    ], {
-        A: "create:andesite_alloy",
-        B: "create:industrial_iron_block",
-        C: "create:precision_mechanism"
-    })
-        .id("mbd2:butchery_out")
+    // e.shaped("mbd2:butchery_out", [
+    //     "ABA",
+    //     "BCB",
+    //     "ABA"
+    // ], {
+    //     A: "create:andesite_alloy",
+    //     B: "create:industrial_iron_block",
+    //     C: "create:precision_mechanism"
+    // })
+    //     .id("mbd2:butchery_out")
     e.shaped("mbd2:create_in", [
         " A ",
         "ABA",
