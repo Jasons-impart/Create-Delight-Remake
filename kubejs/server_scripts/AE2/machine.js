@@ -49,8 +49,6 @@ ServerEvents.recipes((event) => {
     ).id(`createdelight:${c}_dye_matter`)
   })
 
-
-
   // ME量子链接仓
   create.mechanical_crafting(
     "ae2:quantum_link",
