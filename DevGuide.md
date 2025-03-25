@@ -48,3 +48,13 @@
   - 内存占用优化 https://www.mcmod.cn/class/3888.html
 - Noisium
   - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
+
+# 考虑中的优化模组
+- Vanillin
+  - 实体渲染优化 https://www.curseforge.com/minecraft/mc-mods/vanillin
+  - 注：不兼容光影
+- Chunk Sending
+  - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
+- Krypton Reforged
+  - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
+  - 建议**仅服务端**安装
