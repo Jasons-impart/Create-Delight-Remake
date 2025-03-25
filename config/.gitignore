@@ -41,7 +41,7 @@
 !/treechop-common.toml
 !/waystones-common.toml
 !/vinery
-# !/quark-common.toml
+!/quark-common.toml
 !/vintageimprovements*
 xaerominimap_entities.json
 !/world-gen.json
