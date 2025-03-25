@@ -41,7 +41,7 @@ ServerEvents.recipes(e => {
     createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 50), ["#forge:flour", "minecraft:sugar", Fluid.water(250)])
         .processingTime(300)
         .id("bakeries:basin_fermenting/yeast")
-    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 500), ["createdelight:dry_yeast", Fluid.water(250)].concat(multi_item("#forge:flour", 3)))
+    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 500), ["createdelight:dry_yeast", Fluid.water(500)].concat(multi_item("#forge:flour", 3)))
         .processingTime(300)
         .id("bakeries:basin_fermenting/yeast_2")
     vintageimprovements.vacuumizing([Fluid.water(200), "createdelight:dry_yeast"], Fluid.of("createdelight:yeast", 250))
