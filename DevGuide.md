@@ -49,6 +49,12 @@
 - Noisium
   - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
 
+# 考虑中的实用模组
+- Better ModList
+  - http://mcmod.cn/class/16643.html
+- Stack Refill
+  - https://www.mcmod.cn/class/7064.html
+
 # 考虑中的优化模组
 - Vanillin
   - 实体渲染优化 https://www.curseforge.com/minecraft/mc-mods/vanillin
@@ -58,3 +64,39 @@
 - Krypton Reforged
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
   - 建议**仅服务端**安装
+- 别创建新世界！
+  - 点击单人游戏不会自动打开世界创建界面 https://www.mcmod.cn/class/12532.html
+- Acedium
+  - 使用NV专用OpenGL扩展提高fps https://www.mcmod.cn/class/16808.html
+- Async Locator
+  - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
+
+# 考虑中的内容模组
+- 地牢浮现之时 - 海洋扩展
+  - https://www.mcmod.cn/class/13131.html
+- Aquamirae
+  - 海灵物语 https://www.mcmod.cn/class/5011.html
+- Tide
+  - 潮汐 https://www.mcmod.cn/class/13540.html
+- Mmobs
+  - Mowzie的生物 https://www.mcmod.cn/class/984.html
+- Bosses of Mass Destruction
+  - 添加4个boss https://www.mcmod.cn/class/12887.html
+- 溺亡者之嚎
+  - 添加1个boss https://www.mcmod.cn/class/16470.html
+- 生于混沌
+  - 体量太大，不一定好做兼容 https://www.mcmod.cn/class/8006.html
+
+# 考虑中的外饰模组
+- Beautify
+  - 添加装饰品 https://www.mcmod.cn/class/7263.html
+- Chimes
+  - 添加风铃 https://www.mcmod.cn/class/6988.html
+- Clutter
+  - https://www.mcmod.cn/class/9330.html
+- Convenient Decor
+  - https://www.mcmod.cn/class/9143.html
+- Lucky's Cozy Home: Refurnished
+  - https://www.mcmod.cn/class/9931.html
+- Dark Paintings
+  - https://www.mcmod.cn/class/8079.html
