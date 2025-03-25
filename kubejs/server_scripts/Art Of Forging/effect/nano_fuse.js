@@ -10,7 +10,7 @@ EntityEvents.drops(e => {
         if (e.entity.type != entity)
             return
         
-        if (!player.isPlayer())
+        if (player == null || !player.isPlayer())
             return
 
         let weapon = player.getItemInHand("main_hand")

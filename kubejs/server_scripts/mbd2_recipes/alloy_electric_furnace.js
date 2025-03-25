@@ -16,7 +16,7 @@ ServerEvents.recipes(e => {
         .inputFE(1000)
     //下界合金锭
     e.recipes.mbd2.alloy_electric_furnace()
-        .inputItems("3x #forge:ingots/iron", "3x minecraft:netherite_scrap")
+        .inputItems("3x #forge:ingots/gold", "3x minecraft:netherite_scrap")
         .outputItems("minecraft:netherite_ingot")
         .inputFE(1000)
     //琥珀金锭
