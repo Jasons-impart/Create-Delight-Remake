@@ -19,23 +19,6 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "bakeries:cheese_cocoa_toast_dough" }, "minecraft:cocoa_beans", "ratatouille:dried_cocoa_nibs")
     e.replaceOutput({}, "bakeries:salt", "vintagedelight:salt")
     e.replaceOutput({}, "bakeries:butter_cube", "createdelight:butter")
-    //酵母
-    create.filling("bakeries:bottle_yeast", ["minecraft:glass_bottle", Fluid.of("createdelight:yeast", 250)])
-        .id("bakeries:filling/bottle_yeast")
-    create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:yeast", 250)], "bakeries:bottle_yeast")
-        .id("bakeries:emptying/bottle_yeast")
-    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 50), ["#forge:flour", "minecraft:sugar", Fluid.water(250)])
-        .processingTime(300)
-        .id("bakeries:basin_fermenting/yeast")
-    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 500), ["3x #forge:flour", "3x minecraft:sugar", Fluid.of("createdelight:yeast", 250), Fluid.water(250)])
-        .processingTime(600)
-        .id("bakeries:basin_fermenting/yeast_2")
-    vintageimprovements.vacuumizing([Fluid.water(200), "createdelight:dry_yeast"], Fluid.of("createdelight:yeast", 250))
-        .secondaryFluidOutput(0)
-        .id("createdelight:vacuumizing/dry_yeast")
-    create.mixing(Fluid.of("createdelight:yeast", 250), [Fluid.water(200), "createdelight:dry_yeast"])
-        .id("createdelight:mixing/yeast_fluid")
-
     /**
      * 
      * @param {InputItem_} item 
@@ -50,6 +33,23 @@ ServerEvents.recipes(e => {
         }
         return list
     }
+    //酵母
+    create.filling("bakeries:bottle_yeast", ["minecraft:glass_bottle", Fluid.of("createdelight:yeast", 250)])
+        .id("bakeries:filling/bottle_yeast")
+    create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:yeast", 250)], "bakeries:bottle_yeast")
+        .id("bakeries:emptying/bottle_yeast")
+    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 50), ["#forge:flour", "minecraft:sugar", Fluid.water(250)])
+        .processingTime(300)
+        .id("bakeries:basin_fermenting/yeast")
+    createdieselgenerators.basin_fermenting(Fluid.of("createdelight:yeast", 500), ["createdelight:dry_yeast", Fluid.water(250)].concat(multi_item("#forge:flour", 3)))
+        .processingTime(300)
+        .id("bakeries:basin_fermenting/yeast_2")
+    vintageimprovements.vacuumizing([Fluid.water(200), "createdelight:dry_yeast"], Fluid.of("createdelight:yeast", 250))
+        .secondaryFluidOutput(0)
+        .id("createdelight:vacuumizing/dry_yeast")
+    create.mixing(Fluid.of("createdelight:yeast", 250), [Fluid.water(200), "createdelight:dry_yeast"])
+        .id("createdelight:mixing/yeast_fluid")
+
     //面团
     createdieselgenerators.basin_fermenting(["16x bakeries:whole_wheat_dough", Item.of("create:wheat_flour", 16).withChance(0.25)], multi_item("createdelight:dry_yeast", 4).concat(multi_item("create:wheat_flour", 16)).concat(Fluid.water(800)))
         .processingTime(400)
@@ -71,7 +71,7 @@ ServerEvents.recipes(e => {
     cutting_3(e, "minecraft:cooked_porkchop", [["bakeries:meat_floss", 4]])
 
     minecraft.smelting("minecraft:bread", "bakeries:whole_wheat_dough")
-    .id("bakeries:smelting/whole_wheat_dough")
+        .id("bakeries:smelting/whole_wheat_dough")
     //酥皮
     kubejs.shaped("createdelight:puff_pastry",
         [

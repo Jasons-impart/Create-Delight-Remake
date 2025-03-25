@@ -51,4 +51,12 @@ ServerEvents.recipes(e => {
             "minecraft:paper"
         ]
     ).id("createbigcannons:mixing/guncotton_3")
+    e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_bronze", 10), "createbigcannons:bronze_scrap")
+    .id("createbigcannon:melting/bronze_scrap")
+    e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_steel", 10), "createbigcannons:steel_scrap")
+    .id("createbigcannon:melting/steel_scrap")
+    e.recipes.kubejs.shapeless("createdelightcore:bronze_ingot", "9x createbigcannons:bronze_scrap")
+    .id("createdelightcore:bronze_ingot_from_bronze_scrap")
+    e.recipes.kubejs.shapeless("createmetallurgy:steel_ingot", "9x createbigcannons:steel_scrap")
+    .id("createdelightcore:steel_ingot_from_steel_scrap")
 })
