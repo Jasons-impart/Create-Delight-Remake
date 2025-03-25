@@ -328,12 +328,12 @@ ServerEvents.recipes(e => {
         .id("create_armorer:rbapb")
     
     let iner_3 = 'createdelight:incomplete_gas_pistol_ammo'
-    create.sequenced_assembly(Item.of('4x tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
         [
             create.cutting(iner, iner),
             create.pressing(iner, iner),
             create.deploying(iner_3, [iner_3, 'createbigcannons:guncotton']),
-            create.deploying(iner_3, [iner_3, '#forge:gems/diamond'])
+            create.deploying(iner_3, [iner_3, '#forge:nuggets/bronze'])
         ]
     )
         .loops(1)
