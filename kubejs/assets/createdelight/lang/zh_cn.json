@@ -441,6 +441,12 @@
     "createdelight.tip.check_rank": "使用/improvedmobs指令可以查看你的当前难度。",
     "createdelight.tip.memory_sweep_lag": "内存清扫的卡顿可被解决，详细内容请参考mcmod页面上该mod的介绍。",
     "createdelight.tip.dread_update_smithing_template": "悚怖锻造模板可以在悚陵中的\"悚怖女皇\"所在层数的四个箱子中获取。",
+    "createdelight.tip.stress_generator_efficiency": "接近满效率的发电机线圈的效率约为交流发电机的两倍。",
+    "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成（当然除了玩家）",
+    "createdelight.tip.mosquito_repellent_stew": "觉得绯红蚊子很烦？尝试做一碗驱蚊炖菜。",
+    "createdelight.tip.bettercombat_tweak": "本包的bettercombat以去掉前摇，且攻击范围增加了一倍，请放心使用。",
+    "createdelight.tip.bread_tweak": "本包的面包及面团需要使用酵母制作，酵母需要通过发酵获取。",
+    
     
 
     
