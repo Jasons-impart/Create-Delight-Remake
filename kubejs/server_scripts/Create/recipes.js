@@ -147,9 +147,9 @@ ServerEvents.recipes(e => {
         .id("create:charging/bleak_electron_tube")
     e.recipes.create_new_age.energising("create:electron_tube", "createdelight:bleak_electron_tube", 10000)
         .id("create:energising/bleak_electron_tube")
-    e.recipes.vintageimprovements.turning("6x create:chute", "createbigcannons:cast_iron_block")
+    e.recipes.vintageimprovements.turning("8x create:chute", "#forge:storage_blocks/iron")
         .id("create:crafting/kinetics/chute_2")
-    e.recipes.vintageimprovements.turning("3x create:item_vault", "createbigcannons:cast_iron_block")
+    e.recipes.vintageimprovements.turning("3x create:item_vault", "#forge:storage_blocks/iron")
         .id("create:crafting/kinetics/item_vault_2")
     e.recipes.vintageimprovements.turning("3x create:fluid_tank", "minecraft:copper_block")
         .id("create:crafting/kinetics/fluid_tank_2")
@@ -189,9 +189,37 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.curving("3x create:fluid_pipe", "#forge:plates/bronze", 4)
         .id("create:crafting/kinetics/fluid_pipe_from_bronze_2")
 
+    //钨制作铁相关物品
+    e.recipes.kubejs.shaped("12x create:chute", [
+        [
+            ["#forge:plates/tungsten"],
+            ["#forge:ingots/tungsten"],
+            ["#forge:plates/tungsten"]
+        ]
+    ])
+        .id("create:crafting/kinetics/chute_from_tungsten")
+    e.recipes.kubejs.shaped("3x create_connected:item_silo", [
+        [
+            "#forge:plates/tungsten",
+            "minecraft:barrel",
+            "#forge:plates/tungsten"
+        ]
+    ])
+        .id("create_connected:crafting/kinetics/item_silo_from_tungsten")
+    e.recipes.kubejs.shaped("3x create:item_vault", [
+        ["#forge:plates/tungsten"],
+        ["minecraft:barrel"],
+        ["#forge:plates/tungsten"]
+    ])
+        .id("create:crafting/kinetics/fluid_tank_from_tungsten")
+    e.recipes.vintageimprovements.turning("9x create:item_vault", "#forge:storage_blocks/tungsten")
+        .id("create:crafting/kinetics/item_vault_from_tungsten_2")
+
     //坚固板的另一个配方
-    e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "createmetallurgy:steel_ingot")
-        .id("vintageimprovements:hammering/sturdy_sheet")
+    e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "#forge:ingots/steel")
+        .id("vintageimprovements:hammering/sturdy_sheet_from_steel")
+    e.recipes.vintageimprovements.hammering("create:sturdy_sheet", "#forge:ingots/tungsten")
+        .id("vintageimprovements:hammering/sturdy_sheet_from_tungsten")
     e.recipes.createmetallurgy.casting_in_basin(
         "create:railway_casing",
         ["create:brass_casing", Fluid.of("createmetallurgy:molten_steel", 90)], 70, true)
