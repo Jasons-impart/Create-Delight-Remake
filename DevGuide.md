@@ -7,6 +7,7 @@
 - 把main分支最新commit（即版本修改commit）推送到github上的 release 分支
 - 在github的[tags](https://github.com/Jasons-impart/Create-Delight-Remake/tags)页面从新版本的tag创建release，并填写改动信息
 - 【待自动化】github action自动产出后，将服务端、客户端、补丁下载下来提交到release上
+- 踢一脚Jason让他更新[Gist](https://gist.github.com/JasonQ1123/14894447c0cf3254e307a1793efcefa4)，以实现标题界面的新版本提示，对应config/fancymenu/customization/craete.txt
 
 # 测试版本发布流程
 - 将代码推送到github的test-release分支
@@ -58,6 +59,13 @@
   - http://mcmod.cn/class/16643.html
 - Stack Refill
   - https://www.mcmod.cn/class/7064.html
+- Just Enough Breeding
+  - JEI显示生物繁殖信息 https://www.mcmod.cn/class/11660.html
+- 卓越火炬
+  - 可配置的生物生成阻止火把 https://www.mcmod.cn/class/9896.html
+- Overflowing Bars （vs 已有的Colorful Heart）
+  - 显示护甲/生命值了多少层 https://www.mcmod.cn/class/10074.html
+
 
 # 考虑中的优化模组
 - Vanillin
@@ -74,22 +82,57 @@
   - 使用NV专用OpenGL扩展提高fps https://www.mcmod.cn/class/16808.html
 - Async Locator
   - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
+- Fast Paintings
+  - 优化画的渲染 https://www.mcmod.cn/class/10999.html
+- Icterine
+  - 优化获取物品触发的事件 https://www.mcmod.cn/class/13180.html
+- Mobtimizations - Entity Performance Fixes
+  - 服务器实体性能优化模组 https://www.mcmod.cn/class/13755.html
+
 
 # 考虑中的内容模组
-- 地牢浮现之时 - 海洋扩展
-  - https://www.mcmod.cn/class/13131.html
-- Aquamirae
-  - 海灵物语 https://www.mcmod.cn/class/5011.html
+- 拾光定影
+  - 拍照 https://www.mcmod.cn/class/12905.html
 - Tide
   - 潮汐 https://www.mcmod.cn/class/13540.html
+- 地牢浮现之时 - 海洋扩展
+  - https://www.mcmod.cn/class/13131.html
 - Mmobs
   - Mowzie的生物 https://www.mcmod.cn/class/984.html
+- Rustic Engineer
+  - 机械风生物 https://www.mcmod.cn/class/15150.html
+- Aquamirae
+  - 海灵物语 https://www.mcmod.cn/class/5011.html
 - Bosses of Mass Destruction
   - 添加4个boss https://www.mcmod.cn/class/12887.html
 - 溺亡者之嚎
   - 添加1个boss https://www.mcmod.cn/class/16470.html
 - 生于混沌
   - 体量太大，不一定好做兼容 https://www.mcmod.cn/class/8006.html
+- Ghosts
+  - https://www.mcmod.cn/class/8029.html
+- 灾变
+  - https://www.mcmod.cn/class/5214.html
+- Legendary Monsters
+  - https://www.mcmod.cn/class/12933.html
+- 迎战
+  - https://www.mcmod.cn/class/4204.html
+- Mokels Bossfight: Kinora
+  - https://www.mcmod.cn/class/15496.html
+- Mokels The Shattered Goddess
+  - https://www.mcmod.cn/class/15290.html
+- Mutated Items / Items to Mobs
+  - https://www.mcmod.cn/class/10256.html
+- Mythic Mounts
+  - https://www.mcmod.cn/class/7192.html
+- ATi Structures
+  - https://www.mcmod.cn/class/17109.html
+- Species
+  - https://www.mcmod.cn/class/10307.html
+- It Takes a Pillage
+  - https://www.mcmod.cn/class/7622.html
+- [WAB]Wan's Ancient Beasts
+  - https://www.mcmod.cn/class/16975.html
 
 # 考虑中的外饰模组
 - Beautify
@@ -104,3 +147,25 @@
   - https://www.mcmod.cn/class/9931.html
 - Dark Paintings
   - https://www.mcmod.cn/class/8079.html
+- Handcrafted
+  - https://www.mcmod.cn/class/9261.html
+- Macaw的门
+  - https://www.mcmod.cn/class/2574.html
+- Macaw的桥梁
+  - https://www.mcmod.cn/class/2040.html
+- Macaw's Stairs
+  - https://www.mcmod.cn/class/16896.html
+- Plushie Buddies
+  - 装饰性玩偶 https://www.mcmod.cn/class/15793.html
+- Serene Shrubbery
+  - 加7种花卉 https://www.mcmod.cn/class/8356.html
+- Simple hats
+  - https://www.mcmod.cn/class/8846.html
+- Tanuki Decor
+  - https://www.mcmod.cn/class/13280.html
+- 群青：重织
+  - https://www.mcmod.cn/class/13041.html
+- VerdantVibes
+  - https://www.mcmod.cn/class/13000.html
+- Lucky's Wardrobe
+  - https://www.mcmod.cn/class/15310.html
