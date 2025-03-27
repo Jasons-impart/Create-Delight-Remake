@@ -42,7 +42,8 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"true"
-resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","tacz_resources","mod_resources","vanilla","Moonlight Mods Dynamic Assets","netherexp:jne_retextures","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","file/Torchmaster Remaster.zip","file/Squareful v3.15forMC1.20.1.zip","file/XK Highlight Block.zip"]
+resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","tacz_resources","mod_resources","vanilla","Moonlight Mods Dynamic Assets","netherexp:jne_retextures","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","file/Torchmaster Remaster.zip","file/Adventurer\u0027sChest_v2[Lootr].zip"]
+incompatibleResourcePacks:["file/Torchmaster Remaster.zip","file/Adventurer\u0027sChest_v2[Lootr].zip"]
 incompatibleResourcePacks:["file/Torchmaster Remaster.zip"]
 lastServer:
 lang:zh_cn
