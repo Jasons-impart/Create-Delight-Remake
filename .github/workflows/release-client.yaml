@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 发布🚀
     steps:
-      - name: Check out repository code
+      - name: 获取仓库代码
         uses: actions/checkout@v4
       - name: 读取包名
         uses: SebRollen/toml-action@v1.2.0
@@ -32,7 +32,7 @@ jobs:
           echo ${{ steps.read-version.outputs.value }}
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
-            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+            echo "VERSION_SUFFIX=-test-only-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
@@ -45,9 +45,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repository: wanquanw/packwiz-build
           run-id: 12769245242
-      - name: List files in the repository
-        run: |
-            ls ${{ github.workspace }}  
       - name: 重命名HMCL配置和options
         run: |
           mv .hmclversion.cfg hmclversion.cfg
@@ -57,6 +54,9 @@ jobs:
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
           mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz-build ./packwiz
           chmod +x ./packwiz
+      - name: 写版本号文件供fancymenu展现在游戏首页
+        run: |
+          echo "# ${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" > ${{ github.workspace }}/config/fancymenu/assets/version.md
       - name: 更新index
         run: |
           ./packwiz refresh
