@@ -28,4 +28,5 @@ ItemEvents.modification(e => {
     modify('createaddition:biomass_pellet_block', 0)
     modify("mynethersdelight:magma_cake_slice", 5000)
     modify("mynethersdelight:hot_cream_cone", 3000)
+    modify('createdelight:fuel_hotcream', 10000)
 })

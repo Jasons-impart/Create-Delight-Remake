@@ -48,6 +48,10 @@
   - 内存占用优化 https://www.mcmod.cn/class/3888.html
 - Noisium
   - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
+- fastboot
+  - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
+- Saturn
+ - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
 
 # 考虑中的实用模组
 - Better ModList
