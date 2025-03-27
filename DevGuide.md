@@ -129,6 +129,10 @@
   - https://www.mcmod.cn/class/17109.html
 - Species
   - https://www.mcmod.cn/class/10307.html
+- It Takes a Pillage
+  - https://www.mcmod.cn/class/7622.html
+- [WAB]Wan's Ancient Beasts
+  - https://www.mcmod.cn/class/16975.html
 
 # 考虑中的外饰模组
 - Beautify
@@ -157,3 +161,11 @@
   - 加7种花卉 https://www.mcmod.cn/class/8356.html
 - Simple hats
   - https://www.mcmod.cn/class/8846.html
+- Tanuki Decor
+  - https://www.mcmod.cn/class/13280.html
+- 群青：重织
+  - https://www.mcmod.cn/class/13041.html
+- VerdantVibes
+  - https://www.mcmod.cn/class/13000.html
+- Lucky's Wardrobe
+  - https://www.mcmod.cn/class/15310.html
