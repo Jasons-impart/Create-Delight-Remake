@@ -64,6 +64,12 @@ ServerEvents.recipes(e => {
         ],
         "culturaldelights:corn_kernels"
     ).id("createdelight:milling/corn_flour")
+    e.recipes.create.mixing("culturaldelights:corn_dough", [
+        Fluid.water(50),
+        "createdelight:corn_flour"
+    ]).id("culturaldelights:mixing/corn_dough")
+    e.recipes.create.splashing("culturaldelights:corn_dough", "createdelight:corn_flour")
+    .id("culturaldelights:splashing/corn_dough")
     e.recipes.create.pressing(
         [
             "corn_delight:tortilla_raw",

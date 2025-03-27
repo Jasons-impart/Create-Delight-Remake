@@ -101,6 +101,10 @@ ServerEvents.recipes(e => {
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
     // 燕麦面团
+    e.recipes.create.mixing("vintagedelight:oat_dough", [
+        Fluid.of("createdelight:egg_yolk", 50),
+        "vintagedelight:raw_oats"
+    ]).id("vintagedelight:mixing/oat_dough")
     e.recipes.minecraft.smoking(
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
