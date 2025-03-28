@@ -3,7 +3,8 @@ ServerEvents.recipes(e => {
         "createutilities:shaped/gearcube",
         "createutilities:shaped/void_chest",
         "createmetallurgy:alloying/void_steel",
-        "createutilities:mixing/void_steel_ingot"
+        "createutilities:mixing/void_steel_ingot",
+        "functionalstorage:ender_drawer"
     ])
     metal_production_line_3(e, [
         "createutilities:void_steel_block",
@@ -55,5 +56,12 @@ ServerEvents.recipes(e => {
             "createutilities:graviton_tube"
         ]
     ).id("createutilities:shaped/void_motor")
+    e.recipes.create.item_application(
+        "functionalstorage:ender_drawer",
+        [
+            "#functionalstorage:drawer",
+            "createutilities:graviton_tube"
+        ]
+    ).id("functionalstorage:ender_drawer")
 
 })
