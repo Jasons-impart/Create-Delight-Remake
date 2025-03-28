@@ -3,6 +3,6 @@
 		"cashier_objs"
 	],
 	"rewards": [
-		"_money_rews"
+		"cashier_money_rews"
 	]
 }
