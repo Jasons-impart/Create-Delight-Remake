@@ -3,13 +3,13 @@ type = fancymenu_layout
 layout-meta {
   identifier = title_screen
   render_custom_elements_behind_vanilla = false
-  last_edited_time = 1743060623246
+  last_edited_time = 1743180118707
   is_enabled = true
   randommode = false
   randomgroup = 1
   randomonlyfirsttime = false
   layout_index = 0
-  [loading_requirement_container_meta:0e1f4dd3-2d10-441d-8d6c-f60791e2a6f2-1743060607211] = [groups:][instances:]
+  [loading_requirement_container_meta:e5fd5ba5-6b36-439d-bfa0-adee0e18b470-1743179952465] = [groups:][instances:]
 }
 
 menu_background {
@@ -196,63 +196,7 @@ element {
 }
 
 element {
-  interactable = true
-  source = MIT License Copyright (c) 2025 JSI Production Team
-  source_mode = direct
-  shadow = true
-  scale = 1.0
-  base_color = #FFFFFFFF
-  text_border = 2
-  line_spacing = 2
-  enable_scrolling = true
-  auto_line_wrapping = true
-  remove_html_breaks = true
-  code_block_single_color = #737373FF
-  code_block_multi_color = #565656FF
-  headline_line_color = #A9A9A9FF
-  separation_line_color = #A9A9A9FF
-  hyperlink_color = #0771FCFF
-  quote_color = #818181FF
-  quote_indent = 8.0
-  quote_italic = false
-  bullet_list_dot_color = #A9A9A9FF
-  bullet_list_indent = 8.0
-  bullet_list_spacing = 3.0
-  parse_markdown = true
-  element_type = text_v2
-  instance_identifier = 12563cbd-fa8d-42a5-bba4-aa6178fb67e1-1736901950967
-  appearance_delay = no_delay
-  appearance_delay_seconds = 1.0
-  fade_in_v2 = no_fading
-  fade_in_speed = 1.0
-  fade_out = no_fading
-  fade_out_speed = 1.0
-  base_opacity = 1.0
-  auto_sizing = false
-  auto_sizing_base_screen_width = 2560
-  auto_sizing_base_screen_height = 1496
-  sticky_anchor = false
-  anchor_point = bottom-right
-  x = -197
-  y = -25
-  width = 207
-  height = 12
-  stretch_x = false
-  stretch_y = false
-  stay_on_screen = true
-  element_loading_requirement_container_identifier = 8f16e670-7a42-455f-acf0-f7fd79c020f5-1736901950967
-  [loading_requirement_container_meta:8f16e670-7a42-455f-acf0-f7fd79c020f5-1736901950967] = [groups:][instances:]
-  enable_parallax = false
-  parallax_intensity = 0.5
-  invert_parallax = false
-  animated_offset_x = 0
-  animated_offset_y = 0
-  load_once_per_session = false
-  in_editor_color = #FFC800FF
-}
-
-element {
-  interactable = true
+  interactable = false
   source = [source:web]https://gist.githubusercontent.com/JasonQ1123/14894447c0cf3254e307a1793efcefa4/raw/cf0417ff080215be875c11d32f7c7d9c61c0334f/version_file.md
   source_mode = resource
   shadow = true
@@ -260,7 +204,7 @@ element {
   base_color = #FFFFFFFF
   text_border = 2
   line_spacing = 1
-  enable_scrolling = true
+  enable_scrolling = false
   auto_line_wrapping = true
   remove_html_breaks = true
   code_block_single_color = #737373FF
@@ -310,15 +254,15 @@ element {
 }
 
 element {
-  interactable = true
+  interactable = false
   source = [source:local]/config/fancymenu/assets/version.md
   source_mode = resource
   shadow = true
-  scale = 0.75
+  scale = 1
   base_color = #FFFFFFFF
   text_border = 2
   line_spacing = 2
-  enable_scrolling = true
+  enable_scrolling = false
   auto_line_wrapping = true
   remove_html_breaks = true
   code_block_single_color = #737373FF
@@ -344,13 +288,13 @@ element {
   base_opacity = 1.0
   auto_sizing = true
   auto_sizing_base_screen_width = 2560
-  auto_sizing_base_screen_height = 1496
+  auto_sizing_base_screen_height = 1380
   sticky_anchor = false
-  anchor_point = bottom-left
-  x = -19
-  y = -15
-  width = 61
-  height = 22
+  anchor_point = bottom-right
+  x = 0
+  y = 0
+  width = 320
+  height = 24
   stretch_x = false
   stretch_y = false
   stay_on_screen = true
@@ -493,11 +437,11 @@ vanilla_button {
   auto_sizing_base_screen_width = 2560
   auto_sizing_base_screen_height = 1496
   sticky_anchor = false
-  anchor_point = bottom-right
-  x = -157
-  y = -12
-  width = 152
-  height = 10
+  anchor_point = bottom-left
+  x = 0
+  y = 0
+  width = 0
+  height = 0
   stretch_x = false
   stretch_y = false
   stay_on_screen = true

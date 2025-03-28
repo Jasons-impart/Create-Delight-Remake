@@ -32,7 +32,7 @@ jobs:
           echo ${{ steps.read-version.outputs.value }}
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
             VERSION_SUFFIX=$(date +%m%d%H%M)
-            echo "VERSION_SUFFIX=-test-only-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+            echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
@@ -55,8 +55,16 @@ jobs:
           mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz-build ./packwiz
           chmod +x ./packwiz
       - name: 写版本号文件供fancymenu展现在游戏首页
+        # 格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
+        # |||
+        # Create-Delight-Remake x.x.x.x xxxx
+        # MIT License Copyright (c) 2025 JSI Production Team
+        # |||
         run: |
-          echo "# ${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" > ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "|||" > ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} test build ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "|||" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
       - name: 更新index
         run: |
           ./packwiz refresh
@@ -89,11 +97,11 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-test-build-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Client]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite"
+          name: "[Client]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite"
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
