@@ -1,0 +1,532 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Alloy_Innovation"
+	group: "14CFC96B5B37F10B"
+	icon: "createdieselgenerators:large_diesel_engine"
+	id: "507D13CF7AF6ECB1"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			hide_dependency_lines: false
+			id: "3D3A0D7960113A8F"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "不要把宝贝丢进去了"
+			tasks: [{
+				id: "21480179484DDC51"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 0.0d
+		}
+		{
+			id: "391B8317C493EB62"
+			tasks: [{
+				id: "7FE2CAB95B9221EB"
+				item: "minecraft:obsidian"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"391B8317C493EB62"
+				"3D3A0D7960113A8F"
+			]
+			id: "1CD1D60A28A20E6A"
+			tasks: [{
+				id: "3F3848CAF70CDF4E"
+				item: "create:sturdy_sheet"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 0.0d
+		}
+		{
+			id: "1746BAF63124A53E"
+			rewards: [{
+				id: "78F1436063A09F50"
+				item: "createmetallurgy:raw_wolframite"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "常见于地狱30-36层"
+			tasks: [{
+				id: "69B87436B6F93D9C"
+				item: "createmetallurgy:raw_wolframite"
+				type: "item"
+			}]
+			x: -5.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"1CD1D60A28A20E6A"
+				"1746BAF63124A53E"
+			]
+			id: "2D030C52645E7DDD"
+			tasks: [{
+				id: "75B8820F49D1D58D"
+				item: "createmetallurgy:sturdy_whisk"
+				type: "item"
+			}]
+			x: -5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2D030C52645E7DDD"]
+			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
+			id: "0081008C6EAA4D86"
+			rewards: [
+				{
+					id: "259ECA1D386DC448"
+					item: "createdelightcore:gold_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "3FFA49EF4D830F44"
+					table_id: 5347970608351672481L
+					type: "random"
+				}
+			]
+			size: 2.0d
+			subtitle: "更高效的合金方式"
+			tasks: [{
+				id: "1E8A464F274843C9"
+				item: "createmetallurgy:foundry_mixer"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 0.0d
+		}
+		{
+			id: "2679AF6D14DACBE5"
+			min_required_tasks: 1
+			subtitle: "推荐使用生物柴油"
+			tasks: [{
+				id: "53F7007AFAC84C9F"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "create:blaze_cake"
+							}
+							{
+								Count: 1b
+								id: "createdieselgenerators:biodiesel_bucket"
+							}
+						]
+					}
+				}
+				title: "用于超级加热的物品"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -5.5d
+		}
+		{
+			dependencies: [
+				"0081008C6EAA4D86"
+				"2679AF6D14DACBE5"
+			]
+			id: "70CA8C3E0DEBBE1A"
+			rewards: [{
+				id: "79474E5EC8729368"
+				item: "createmetallurgy:steel_ingot"
+				random_bonus: 9
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "唉，炼钢"
+			tasks: [{
+				id: "72B53E11A7EC4236"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["70CA8C3E0DEBBE1A"]
+			description: ["{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"]
+			id: "2D54323E3C0276BA"
+			size: 1.5d
+			subtitle: "矿物再生途径"
+			tasks: [{
+				id: "3A77D08086D870B0"
+				item: "createoreexcavation:drilling_machine"
+				type: "item"
+			}]
+			x: 10.5d
+			y: -6.75d
+		}
+		{
+			dependencies: ["70CA8C3E0DEBBE1A"]
+			id: "1ADBDFB31928124D"
+			tasks: [{
+				id: "3AC97109BB7FD888"
+				item: "createdieselgenerators:oil_scanner"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -3.5d
+		}
+		{
+			icon: "createdieselgenerators:crude_oil_bucket"
+			id: "61A945984843E55A"
+			rewards: [{
+				id: "54DF3F51674B42C0"
+				item: "createdieselgenerators:lighter"
+				type: "item"
+			}]
+			shape: "square"
+			size: 3.0d
+			subtitle: "&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"
+			tasks: [{
+				icon: "createdieselgenerators:crude_oil_bucket"
+				id: "3EC3BC0630EC3A9C"
+				stat: "minecraft:play_time"
+				title: "开始石油时代"
+				type: "stat"
+				value: 1
+			}]
+			title: "石油科技"
+			x: -7.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["70CA8C3E0DEBBE1A"]
+			description: ["抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
+			hide_until_deps_visible: true
+			icon: "createdieselgenerators:pumpjack_crank"
+			id: "43B45F9D2DC4BD3E"
+			rewards: [{
+				id: "4013E54D1442DFC7"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			subtitle: "非常难做的抽油机，强烈建议对照思索建造"
+			tasks: [
+				{
+					id: "21730CD203A63AFB"
+					item: "createdieselgenerators:pumpjack_bearing"
+					type: "item"
+				}
+				{
+					id: "7166F10AFA1A094F"
+					item: "createdieselgenerators:pumpjack_head"
+					type: "item"
+				}
+				{
+					id: "5FC6CE5E5190C4B9"
+					item: "createdieselgenerators:pumpjack_hole"
+					type: "item"
+				}
+				{
+					id: "3F59BADB72CC0EA3"
+					item: "createdieselgenerators:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "4140E609BECE9455"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+			]
+			title: "石油大亨的第一步！"
+			x: 3.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["43B45F9D2DC4BD3E"]
+			icon: "createdieselgenerators:crude_oil_bucket"
+			id: "47B2FB8DDEE47B05"
+			tasks: [{
+				id: "5DF4474C308B083B"
+				title: "抽取原油"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["47B2FB8DDEE47B05"]
+			dependency_requirement: "one_completed"
+			id: "267240568A1BB492"
+			tasks: [
+				{
+					id: "0C9E60F77517FEFE"
+					item: "functionalstorage:fluid_1"
+					type: "item"
+				}
+				{
+					id: "0ABC784D199BD1DF"
+					item: "functionalstorage:fluid_2"
+					type: "item"
+				}
+				{
+					id: "6EC0FD4F601552ED"
+					item: "functionalstorage:fluid_4"
+					type: "item"
+				}
+			]
+			title: "流体抽屉，谁用谁知道"
+			x: 6.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["267240568A1BB492"]
+			id: "16E31AE06BF8CE13"
+			subtitle: "根据思索搭建分馏塔，得到石油与柴油"
+			tasks: [{
+				id: "10CD9BD0B5F80CE7"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			x: 7.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["16E31AE06BF8CE13"]
+			icon: "ad_astra:oil_bucket"
+			id: "0117161F32078657"
+			tasks: [{
+				id: "6110D54177D45057"
+				type: "checkmark"
+			}]
+			title: "石油"
+			x: 9.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["16E31AE06BF8CE13"]
+			icon: "createdieselgenerators:diesel_bucket"
+			id: "02FF343A1ECB8B11"
+			tasks: [{
+				id: "1E2E08CD25A6D504"
+				type: "checkmark"
+			}]
+			title: "柴油"
+			x: 9.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"0117161F32078657"
+				"02FF343A1ECB8B11"
+				"5E4816310314FCC1"
+			]
+			icon: "createdelight:fuel_mixtures_bucket"
+			id: "5E140131805871A2"
+			tasks: [{
+				id: "3BED3ECBD51EE277"
+				title: "混合燃料"
+				type: "checkmark"
+			}]
+			x: 10.5d
+			y: -3.5d
+		}
+		{
+			id: "5E4816310314FCC1"
+			tasks: [{
+				id: "6065466A62B8D4CF"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: 9.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"1ED5B843E29AD75C"
+				"20B3A29ADFDF1D4A"
+			]
+			id: "692E9718A4E1F811"
+			tasks: [{
+				id: "30022DFADCCBA646"
+				item: "createdieselgenerators:diesel_engine"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"692E9718A4E1F811"
+				"5E140131805871A2"
+			]
+			id: "1AAA21CD44B36815"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "单位空间下极致的应力效率"
+			tasks: [{
+				id: "750CF6A3EF8B1390"
+				item: "createdieselgenerators:large_diesel_engine"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70CA8C3E0DEBBE1A"]
+			id: "1ED5B843E29AD75C"
+			tasks: [{
+				id: "6F99C4F1B72D1E54"
+				item: "createdieselgenerators:engine_piston"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["692E9718A4E1F811"]
+			hide_until_deps_visible: true
+			id: "0C33D433CB5C97E5"
+			rewards: [{
+				count: 3
+				id: "7248F08CB9202DB7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "安安静静的多好😋"
+			tasks: [{
+				id: "79DC39D870E2C4AF"
+				item: "createdieselgenerators:engine_silencer"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0081008C6EAA4D86"]
+			id: "20B3A29ADFDF1D4A"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "6305A4B7302F47F0"
+				item: "createdelightcore:bronze_block"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"20B3A29ADFDF1D4A"
+				"70CA8C3E0DEBBE1A"
+			]
+			id: "077D7F05BCC451B1"
+			subtitle: "单个机器应力更多 \\n 显卡：可以（但心里觉得不行）"
+			tasks: [{
+				id: "47D6C1D000257107"
+				item: "createdieselgenerators:huge_diesel_engine"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0081008C6EAA4D86"]
+			id: "55E42ECE1CE4E99F"
+			rewards: [{
+				id: "71560EB111A78F2D"
+				item: "createutilities:void_steel_ingot"
+				random_bonus: 9
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "使用钢和末影粉制作"
+			tasks: [{
+				id: "13E41F90BC43CE98"
+				item: "createutilities:void_steel_ingot"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["55E42ECE1CE4E99F"]
+			hide_until_deps_visible: true
+			id: "07C28031281E5458"
+			rewards: [{
+				id: "61144D017386312F"
+				item: "createutilities:graviton_tube"
+				random_bonus: 3
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			tasks: [{
+				id: "4D6509A6133A6093"
+				item: "createutilities:graviton_tube"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["07C28031281E5458"]
+			id: "6E72DE4840B74D26"
+			rewards: [{
+				count: 2
+				id: "6CDECE1FD2DCC957"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "7E8F512707C3D437"
+				item: "createutilities:void_motor"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["07C28031281E5458"]
+			id: "5963D03427D10BDF"
+			rewards: [{
+				count: 2
+				id: "2A60C4793C323F83"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3A8416116E24A115"
+				item: "createutilities:void_tank"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["07C28031281E5458"]
+			id: "5D3980866B824F15"
+			rewards: [{
+				count: 2
+				id: "70B19FD37572B125"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "68E0A2128888812E"
+				item: "createutilities:void_battery"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 5.5d
+		}
+	]
+	title: "&3合金突破"
+}
