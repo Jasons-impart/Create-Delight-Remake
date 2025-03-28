@@ -28,10 +28,8 @@ jobs:
       - name: 生成整合包nightly构建后缀
         id: set_version_prefix
         run: |
-          echo ${{ steps.read-modpackname.outputs.value }}
-          echo ${{ steps.read-version.outputs.value }}
           if [[ $GITHUB_REF == refs/heads/test-release ]]; then
-            VERSION_SUFFIX=$(date +%m%d%H%M)
+            VERSION_SUFFIX="nighly-build-${{ github.run_number }}"
             echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
@@ -62,7 +60,7 @@ jobs:
         # |||
         run: |
           echo "|||" > ${{ github.workspace }}/config/fancymenu/assets/version.md
-          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} test build ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
           echo "|||" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
       - name: 更新index
@@ -97,7 +95,7 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-test-build-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
