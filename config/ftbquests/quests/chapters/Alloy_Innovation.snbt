@@ -9,21 +9,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["3BAC2E9A7359CF70"]
-			hide_dependency_lines: false
-			id: "3D3A0D7960113A8F"
-			shape: "hexagon"
-			size: 2.0d
-			subtitle: "不要把宝贝丢进去了"
-			tasks: [{
-				id: "21480179484DDC51"
-				item: "create:crushing_wheel"
-				type: "item"
-			}]
-			x: -9.0d
-			y: 0.0d
-		}
-		{
 			id: "391B8317C493EB62"
 			tasks: [{
 				id: "7FE2CAB95B9221EB"
@@ -34,11 +19,14 @@
 			y: -2.0d
 		}
 		{
-			dependencies: [
-				"391B8317C493EB62"
-				"3D3A0D7960113A8F"
-			]
+			dependencies: ["391B8317C493EB62"]
 			id: "1CD1D60A28A20E6A"
+			rewards: [{
+				count: 2
+				id: "5FD901B88A8B5D57"
+				item: "create:sturdy_sheet"
+				type: "item"
+			}]
 			tasks: [{
 				id: "3F3848CAF70CDF4E"
 				item: "create:sturdy_sheet"
@@ -48,6 +36,7 @@
 			y: 0.0d
 		}
 		{
+			description: ["常见于地狱30-36层"]
 			id: "1746BAF63124A53E"
 			rewards: [{
 				id: "78F1436063A09F50"
@@ -55,7 +44,6 @@
 				random_bonus: 4
 				type: "item"
 			}]
-			subtitle: "常见于地狱30-36层"
 			tasks: [{
 				id: "69B87436B6F93D9C"
 				item: "createmetallurgy:raw_wolframite"
@@ -82,19 +70,11 @@
 			dependencies: ["2D030C52645E7DDD"]
 			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
 			id: "0081008C6EAA4D86"
-			rewards: [
-				{
-					id: "259ECA1D386DC448"
-					item: "createdelightcore:gold_coin"
-					type: "item"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "3FFA49EF4D830F44"
-					table_id: 5347970608351672481L
-					type: "random"
-				}
-			]
+			rewards: [{
+				id: "259ECA1D386DC448"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			size: 2.0d
 			subtitle: "更高效的合金方式"
 			tasks: [{
@@ -106,9 +86,9 @@
 			y: 0.0d
 		}
 		{
+			description: ["可使用生物柴油"]
 			id: "2679AF6D14DACBE5"
 			min_required_tasks: 1
-			subtitle: "推荐使用生物柴油"
 			tasks: [{
 				id: "53F7007AFAC84C9F"
 				item: {
@@ -138,6 +118,8 @@
 				"0081008C6EAA4D86"
 				"2679AF6D14DACBE5"
 			]
+			dependency_requirement: "one_completed"
+			description: ["唉，炼钢"]
 			id: "70CA8C3E0DEBBE1A"
 			rewards: [{
 				id: "79474E5EC8729368"
@@ -145,14 +127,25 @@
 				random_bonus: 9
 				type: "item"
 			}]
-			shape: "hexagon"
+			shape: "circle"
 			size: 2.0d
-			subtitle: "唉，炼钢"
-			tasks: [{
-				id: "72B53E11A7EC4236"
-				item: "createmetallurgy:steel_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "72B53E11A7EC4236"
+					item: "createmetallurgy:steel_ingot"
+					type: "item"
+				}
+				{
+					id: "001ACC66816D721A"
+					item: "createmetallurgy:steel_block"
+					type: "item"
+				}
+				{
+					id: "2C99EB23A278921A"
+					item: "ad_astra:steel_nugget"
+					type: "item"
+				}
+			]
 			x: -1.0d
 			y: -3.5d
 		}
@@ -160,6 +153,7 @@
 			dependencies: ["70CA8C3E0DEBBE1A"]
 			description: ["{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"]
 			id: "2D54323E3C0276BA"
+			shape: "hexagon"
 			size: 1.5d
 			subtitle: "矿物再生途径"
 			tasks: [{
@@ -206,7 +200,7 @@
 		}
 		{
 			dependencies: ["70CA8C3E0DEBBE1A"]
-			description: ["抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
+			description: ["组装方式可看：https://www.bilibili.com/video/BV1z1421Z7ax \\n抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
 			hide_until_deps_visible: true
 			icon: "createdieselgenerators:pumpjack_crank"
 			id: "43B45F9D2DC4BD3E"
@@ -286,8 +280,8 @@
 		}
 		{
 			dependencies: ["267240568A1BB492"]
+			description: ["根据思索搭建分馏塔，得到石油与柴油"]
 			id: "16E31AE06BF8CE13"
-			subtitle: "根据思索搭建分馏塔，得到石油与柴油"
 			tasks: [{
 				id: "10CD9BD0B5F80CE7"
 				item: "createdieselgenerators:distillation_controller"
@@ -366,7 +360,12 @@
 				"5E140131805871A2"
 			]
 			id: "1AAA21CD44B36815"
-			shape: "hexagon"
+			rewards: [{
+				id: "3C70F5DD03156E31"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "circle"
 			size: 2.0d
 			subtitle: "单位空间下极致的应力效率"
 			tasks: [{
@@ -410,7 +409,14 @@
 		{
 			dependencies: ["0081008C6EAA4D86"]
 			id: "20B3A29ADFDF1D4A"
-			shape: "hexagon"
+			rewards: [{
+				count: 2
+				id: "4A10FBD8D0716968"
+				item: "createdelightcore:bronze_ingot"
+				random_bonus: 6
+				type: "item"
+			}]
+			shape: "circle"
 			size: 2.0d
 			tasks: [{
 				id: "6305A4B7302F47F0"
@@ -437,6 +443,8 @@
 		}
 		{
 			dependencies: ["0081008C6EAA4D86"]
+			dependency_requirement: "one_completed"
+			description: ["使用钢和末影粉制作"]
 			id: "55E42ECE1CE4E99F"
 			rewards: [{
 				id: "71560EB111A78F2D"
@@ -444,14 +452,20 @@
 				random_bonus: 9
 				type: "item"
 			}]
-			shape: "hexagon"
+			shape: "circle"
 			size: 2.0d
-			subtitle: "使用钢和末影粉制作"
-			tasks: [{
-				id: "13E41F90BC43CE98"
-				item: "createutilities:void_steel_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "13E41F90BC43CE98"
+					item: "createutilities:void_steel_ingot"
+					type: "item"
+				}
+				{
+					id: "33A43C3288E5B487"
+					item: "createutilities:void_steel_block"
+					type: "item"
+				}
+			]
 			x: -1.0d
 			y: 4.0d
 		}
@@ -526,6 +540,17 @@
 			}]
 			x: 9.5d
 			y: 5.5d
+		}
+		{
+			dependencies: ["0081008C6EAA4D86"]
+			description: ["{ \"text\": \"点击跳转对应章节\", \"color\" : \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"49BCC2D259AA3A40\" } }"]
+			icon: "create_new_age:generator_coil"
+			id: "5520A571B3019083"
+			shape: "hexagon"
+			size: 2.0d
+			title: "接触电力"
+			x: -3.5d
+			y: 4.0d
 		}
 	]
 	title: "&3合金突破"

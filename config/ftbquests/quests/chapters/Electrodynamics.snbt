@@ -255,7 +255,6 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["3C0CC0322271185F"]
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
@@ -311,7 +310,6 @@
 		}
 		{
 			dependencies: [
-				"353609AE16A7254A"
 				"007A93F26730F6F0"
 				"60FB53FC9A4FE2EE"
 			]
@@ -335,17 +333,8 @@
 			y: 0.0d
 		}
 		{
-			id: "353609AE16A7254A"
-			tasks: [{
-				id: "5006F4AA130A295F"
-				item: "ad_astra:steel_plate"
-				type: "item"
-			}]
-			x: 4.0d
-			y: -1.5d
-		}
-		{
 			dependencies: ["3CB8FDF09F47FD4F"]
+			dependency_requirement: "one_completed"
 			hide_until_deps_visible: true
 			id: "3C1D019487D99479"
 			rewards: [{
@@ -382,6 +371,11 @@
 				"1A9F59D70BF97DBE"
 			]
 			id: "2F0B3291F14AAA89"
+			rewards: [{
+				id: "22635BC82C9D788A"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -411,6 +405,7 @@
 		}
 		{
 			dependencies: ["3C1D019487D99479"]
+			dependency_requirement: "one_completed"
 			hide_until_deps_visible: true
 			id: "7506866B743A60C1"
 			rewards: [{
@@ -444,6 +439,11 @@
 		{
 			dependencies: ["3CB8FDF09F47FD4F"]
 			id: "7DA3417CB0E6E7DB"
+			rewards: [{
+				id: "7204F07714B3B84B"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
 			tasks: [{
 				id: "48FA24AEF202F105"
 				item: "createaddition:capacitor"
@@ -491,40 +491,19 @@
 		}
 		{
 			id: "60FB53FC9A4FE2EE"
+			rewards: [{
+				id: "3A2B1568A7FFAF54"
+				item: "createaddition:copper_spool"
+				random_bonus: 3
+				type: "item"
+			}]
 			tasks: [{
 				id: "28655933F0C77994"
 				item: "createaddition:copper_spool"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 4.0d
 			y: -1.5d
-		}
-		{
-			dependencies: ["2D030C52645E7DDD"]
-			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
-			id: "3C0CC0322271185F"
-			rewards: [
-				{
-					id: "248F1DFBE3FEBBEE"
-					item: "createdelightcore:gold_coin"
-					type: "item"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "7D207E3447F37F15"
-					table_id: 5347970608351672481L
-					type: "random"
-				}
-			]
-			size: 1.0d
-			subtitle: "更高效的合金方式"
-			tasks: [{
-				id: "0E2FF72DF6085C45"
-				item: "createmetallurgy:foundry_mixer"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 0.0d
 		}
 	]
 	title: "&3电动力学"
