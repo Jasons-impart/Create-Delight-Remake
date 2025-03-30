@@ -3741,7 +3741,7 @@
 			id: "5825F4FC47DC9435"
 			tasks: [{
 				id: "052B66F41D22ACDC"
-				item: "frycooks_delight:fried_onion_ring"
+				item: "create_deepfried:onion_rings"
 				type: "item"
 			}]
 			x: -17.5d
