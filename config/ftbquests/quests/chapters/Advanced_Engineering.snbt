@@ -25,14 +25,26 @@
 				random_bonus: 15
 				type: "item"
 			}]
-			shape: "hexagon"
+			shape: "circle"
 			size: 2.0d
 			subtitle: "具体合成方式见描述"
-			tasks: [{
-				id: "5FE59F26BC3E6AF3"
-				item: "create:brass_ingot"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "5FE59F26BC3E6AF3"
+					item: "create:brass_ingot"
+					type: "item"
+				}
+				{
+					id: "426ADF96E207EABA"
+					item: "create:brass_block"
+					type: "item"
+				}
+				{
+					id: "31C8AE310A9A736D"
+					item: "create:brass_nugget"
+					type: "item"
+				}
+			]
 			title: "黄铜科技！"
 			x: -1.5d
 			y: 0.0d
@@ -41,19 +53,20 @@
 			dependencies: ["467AE0EF8AF5ACAF"]
 			id: "16E85851D21CB6A3"
 			rewards: [{
-				exclude_from_claim_all: true
-				id: "4B539E12EF0C10AC"
-				table_id: 5347970608351672481L
-				type: "random"
+				count: 2
+				id: "0B563C2077A17709"
+				item: "createbigcannons:cast_iron_ingot"
+				random_bonus: 6
+				type: "item"
 			}]
-			shape: "hexagon"
+			shape: "circle"
 			size: 1.5d
-			subtitle: "匠魂动力（？）"
 			tasks: [{
 				id: "611B7E2C375DC0F4"
 				item: "createbigcannons:cast_iron_ingot"
 				type: "item"
 			}]
+			title: "匠魂动力（？）"
 			x: -8.0d
 			y: 0.0d
 		}
@@ -208,6 +221,7 @@
 		}
 		{
 			dependencies: ["271924B430C340EC"]
+			description: ["烈焰人可以直接通入液体燃料进入加热状态，可通过JEI查看烈焰人的使用方式来查询可用的液体燃料。"]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -216,7 +230,6 @@
 				type: "item"
 			}]
 			size: 2.0d
-			subtitle: "烈焰人目前可以直接通入液体燃料"
 			tasks: [{
 				id: "17C73E73E0CB50DC"
 				item: "create:blaze_burner"
@@ -228,6 +241,11 @@
 		}
 		{
 			id: "271924B430C340EC"
+			rewards: [{
+				id: "2EB9B926E40CA656"
+				item: "mynethersdelight:powder_cannon"
+				type: "item"
+			}]
 			size: 1.0d
 			tasks: [{
 				id: "2B10D1A86D127809"
@@ -246,7 +264,7 @@
 				random_bonus: 7
 				type: "item"
 			}]
-			shape: "square"
+			shape: "circle"
 			size: 1.5d
 			tasks: [{
 				id: "11798106DE02AB07"
@@ -279,11 +297,17 @@
 		}
 		{
 			dependencies: ["3BAC2E9A7359CF70"]
+			description: ["丢几个粗铁进去试试吧。但可不要手抖把宝贝丢进去了。"]
 			hide_dependency_lines: false
 			id: "28B3247AF854504D"
-			shape: "hexagon"
+			rewards: [{
+				count: 4
+				id: "49CBF0D9445B612A"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			shape: "circle"
 			size: 2.0d
-			subtitle: "不要把宝贝丢进去了"
 			tasks: [{
 				id: "12D220D8F367FD29"
 				item: "create:crushing_wheel"
@@ -371,7 +395,9 @@
 			dependencies: [
 				"13743FB52F43BE38"
 				"395CE84DC5201E94"
+				"49A6C50C6A8821CE"
 			]
+			description: ["本包添加了前期可用的概率产出配方：机械手对铁板使用磨制玫瑰石英，详见JEI"]
 			id: "2CBBADBE62382C1B"
 			rewards: [{
 				id: "0F9BBFA37C52A031"
@@ -451,6 +477,7 @@
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
+			description: ["用大齿轮（从上方）或传动杆（从轴向）输入应力，变速后的应力会相应地从另一个地方输出。"]
 			id: "69C328EB588AA7E7"
 			rewards: [{
 				count: 3
@@ -459,12 +486,12 @@
 				type: "item"
 			}]
 			size: 1.5d
-			subtitle: "QQ群的答案！"
 			tasks: [{
 				id: "2BB79617657D47A1"
 				item: "create:rotation_speed_controller"
 				type: "item"
 			}]
+			title: "QQ群的答案！"
 			x: 5.0d
 			y: 5.5d
 		}
@@ -617,9 +644,10 @@
 			hide_until_deps_visible: true
 			id: "0C49A6D118E480B4"
 			rewards: [{
-				count: 2
-				id: "0F67D115425F4A86"
-				item: "createdelightcore:copper_coin"
+				count: 4
+				id: "456895E48D65BE21"
+				item: "minecraft:bone_meal"
+				random_bonus: 4
 				type: "item"
 			}]
 			subtitle: "与工作盆配合以发酵"
@@ -772,7 +800,7 @@
 				"你可以通过种植&e烟药竹（注意不是爆弹椒）&r，其最终会长成一个&e类似竹子&r的作物。"
 				"其生长的时候会&e在竹子上&r长出爆弹椒，使用&e剪刀&r即可将其剪下。"
 				"在&e砧板&r上切爆弹椒即可获取烈焰粉，使用&e烈焰粉与木棍&r可制作烈焰棒。"
-				"基于烟药竹极快的生长速度与较多的产量，该方案是可行的。"
+				"不用担心，烟药竹的生长速度极快，你很快就能做出一个烈焰人燃烧室"
 			]
 			id: "33623A848B5FF55A"
 			optional: true
@@ -834,6 +862,69 @@
 			}]
 			x: -4.0d
 			y: 5.0d
+		}
+		{
+			dependencies: [
+				"2B3F1B42F03F00F3"
+				"0F1F1C12B4CCEB7F"
+			]
+			id: "49A6C50C6A8821CE"
+			rewards: [{
+				id: "427A150424D14904"
+				item: "create:polished_rose_quartz"
+				random_bonus: 3
+				type: "item"
+			}]
+			tasks: [{
+				id: "3E827C02231A3C1F"
+				item: "create:polished_rose_quartz"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.5d
+		}
+		{
+			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
+			id: "0F1F1C12B4CCEB7F"
+			rewards: [{
+				id: "60A0FA2F1B7736D8"
+				item: "createmetallurgy:sandpaper_belt"
+				type: "item"
+			}]
+			tasks: [{
+				id: "57B5AF31B472642F"
+				item: {
+					Count: 1
+					id: "create:sand_paper"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -3.0d
+		}
+		{
+			id: "2B3F1B42F03F00F3"
+			tasks: [{
+				id: "13B50D3DE9C50346"
+				item: "create:rose_quartz"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["28B3247AF854504D"]
+			description: ["{ \"text\": \"点击跳转柴油动力章节\", \"color\": \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"21F08AD894E17DAD\" } }"]
+			icon: "createmetallurgy:steel_ingot"
+			id: "21F08AD894E17DAD"
+			shape: "hexagon"
+			size: 2.0d
+			title: "进入合金突破"
+			x: 16.0d
+			y: 0.0d
 		}
 	]
 	title: "&3黄铜时代！"

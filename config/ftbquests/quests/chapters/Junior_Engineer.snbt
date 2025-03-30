@@ -19,7 +19,7 @@
 				table_id: 6730734086547045908L
 				type: "random"
 			}]
-			shape: "hexagon"
+			shape: "gear"
 			size: 3.0d
 			subtitle: "按住w可以进行俺寻思"
 			tasks: [{
@@ -67,6 +67,7 @@
 				type: "random"
 			}]
 			shape: "gear"
+			size: 1.5d
 			subtitle: "传输应力！"
 			tasks: [
 				{
@@ -224,7 +225,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.5d
 			subtitle: "铿！铿！铿！"
 			tasks: [{
@@ -688,7 +689,7 @@
 		}
 		{
 			dependencies: ["610ED0789BAF7EFC"]
-			hide_dependency_lines: false
+			hide_dependency_lines: true
 			hide_until_deps_visible: true
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
@@ -696,7 +697,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			shape: "rsquare"
+			shape: "circle"
 			size: 1.5d
 			subtitle: "你最基础的动力源！"
 			tasks: [{
