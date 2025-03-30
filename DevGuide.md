@@ -55,17 +55,16 @@
  - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
 
 # 考虑中的实用模组
-- Better ModList
-  - http://mcmod.cn/class/16643.html
-- Stack Refill
-  - https://www.mcmod.cn/class/7064.html
-- Just Enough Breeding
-  - JEI显示生物繁殖信息 https://www.mcmod.cn/class/11660.html
 - 卓越火炬
   - 可配置的生物生成阻止火把 https://www.mcmod.cn/class/9896.html
 - Overflowing Bars （vs 已有的Colorful Heart）
   - 显示护甲/生命值了多少层 https://www.mcmod.cn/class/10074.html
-
+- Better ModList
+  - http://mcmod.cn/class/16643.html
+  - 已尝试，会弄乱标题画面，并且无法正确识别mod是否为前置
+- Stack Refill
+  - https://www.mcmod.cn/class/7064.html
+  - 整合包当前使用已经会refill，但丢弃的时候不会refill，加入这个mod丢弃时会refill。
 
 # 考虑中的优化模组
 - Vanillin
@@ -76,19 +75,21 @@
 - Krypton Reforged
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
   - 建议**仅服务端**安装
-- 别创建新世界！
-  - 点击单人游戏不会自动打开世界创建界面 https://www.mcmod.cn/class/12532.html
 - Acedium
   - 使用NV专用OpenGL扩展提高fps https://www.mcmod.cn/class/16808.html
-- Async Locator
-  - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
 - Fast Paintings
   - 优化画的渲染 https://www.mcmod.cn/class/10999.html
-- Icterine
-  - 优化获取物品触发的事件 https://www.mcmod.cn/class/13180.html
 - Mobtimizations - Entity Performance Fixes
   - 服务器实体性能优化模组 https://www.mcmod.cn/class/13755.html
-
+- AllTheLeaks (Memory Leak Fix)
+  - https://www.mcmod.cn/class/17405.html
+- 修复GPU内存泄漏
+  - 和上面的AllTheLeaks不重合可以一起，https://www.mcmod.cn/class/11863.html
+- Let Me Despawn
+  - 让拿起物品的怪物也会消失 https://www.mcmod.cn/class/7415.html
+- **有问题且停更，不加** Async Locator
+  - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
+  - 测试过会导致locate不返回结果
 
 # 考虑中的内容模组
 - 拾光定影
@@ -135,11 +136,13 @@
   - https://www.mcmod.cn/class/16975.html
 
 # 考虑中的外饰模组
+- Rainbows!
+  - 增加彩虹 https://www.mcmod.cn/class/16847.html
 - Beautify
   - 添加装饰品 https://www.mcmod.cn/class/7263.html
 - Chimes
   - 添加风铃 https://www.mcmod.cn/class/6988.html
-- Clutter
+- Cluttered
   - https://www.mcmod.cn/class/9330.html
 - Convenient Decor
   - https://www.mcmod.cn/class/9143.html
@@ -151,10 +154,18 @@
   - https://www.mcmod.cn/class/9261.html
 - Macaw的门
   - https://www.mcmod.cn/class/2574.html
+- Macaw的活板门
+  - https://www.mcmod.cn/class/2918.html
 - Macaw的桥梁
   - https://www.mcmod.cn/class/2040.html
 - Macaw's Stairs
   - https://www.mcmod.cn/class/16896.html
+- Macaw的栅栏与墙
+  - https://www.mcmod.cn/class/4795.html
+- Macaw 的窗户
+  - https://www.mcmod.cn/class/2565.html
+- Macaw的画
+  - https://www.mcmod.cn/class/5498.html
 - Plushie Buddies
   - 装饰性玩偶 https://www.mcmod.cn/class/15793.html
 - Serene Shrubbery
@@ -169,3 +180,11 @@
   - https://www.mcmod.cn/class/13000.html
 - Lucky's Wardrobe
   - https://www.mcmod.cn/class/15310.html
+- MrCrayfish 的家具
+  - https://www.mcmod.cn/class/15668.html
+- Fantasy的家具
+  - https://www.mcmod.cn/class/6455.html
+- 添加一些毛绒玩具
+  - https://www.mcmod.cn/class/15185.html
+- [DF]Diagonal Fences
+  - https://www.mcmod.cn/class/6701.html
