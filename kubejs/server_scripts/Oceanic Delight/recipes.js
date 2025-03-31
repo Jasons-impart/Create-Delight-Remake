@@ -1,7 +1,9 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "oceanic_delight:egg_roll",
-        "oceanic_delight:fried_shrimp"
+        "oceanic_delight:fried_shrimp",
+        "tetracelium:shrimp_cutting",
+        "oceanic_delight:shrimp_cutting"
     ])
     remove_recipes_output(e, [
         "culturaldelights:cooked_calamari"
@@ -41,6 +43,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari"}, "culturaldelights:raw_calamari", "oceanic_delight:squid_tentacles")
     e.replaceInput({id: "crabbersdelight:sea_pickle_juice"}, "minecraft:sea_pickle", "#forge:sea_pickles")
+    cutting_3(e, "crabbersdelight:cooked_shrimp", [["oceanic_delight:shrimp_slices", 1]])
     // 虾仁薯片
     e.recipes.create.mixing(
         'oceanic_delight:shrimp_chips',
@@ -54,7 +57,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:unfried_shrimp",
         [
             'oceanic_delight:shrimp_slices',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelightcore:unfried_shrimp")

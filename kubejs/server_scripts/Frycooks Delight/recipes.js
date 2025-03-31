@@ -34,7 +34,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:unfried_potato",
         [
             "minecraft:potato",
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("frycooks_delight:mixing/unfried_potato")
@@ -42,7 +42,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:unfried_chicken_leg",
         [
             'butchercraft:chicken_leg',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("frycooks_delight:mixing/unfried_chicken_leg")

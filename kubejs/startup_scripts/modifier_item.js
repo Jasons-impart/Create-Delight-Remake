@@ -66,4 +66,7 @@ ItemEvents.modification(e => {
     e.modify("butchercraft:boots", item => {
         item.maxDamage = 195
     })
+    e.modify("bakeries:bread_knife", item => {
+        item.maxDamage = 100
+    })
 })

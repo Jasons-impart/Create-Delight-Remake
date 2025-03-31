@@ -1260,8 +1260,8 @@
 	"gamerule.keepWallet" : "死亡时保留钱包",
 	"gamerule.coinDropPercent" : "死亡后钱币掉落的百分比",
 
-	"entity.minecraft.villager.lightmanscurrency.banker": "银行家",
-	"entity.minecraft.villager.lightmanscurrency.cashier": "收银员",
+	"entity.minecraft.villager.banker": "银行家",
+	"entity.minecraft.villager.cashier": "收银员",
 
 	"tooltip.lightmanscurrency.chocolate_coin.healing": "恢复%s点生命。",
 

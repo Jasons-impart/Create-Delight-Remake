@@ -1,7 +1,7 @@
 
 {
   "type": "bakeries:dough_crafting_table",
-  "count": 4,
+  "count": 1,
   "ingredient":
   {
     "item": "createdelight:puff_pastry"

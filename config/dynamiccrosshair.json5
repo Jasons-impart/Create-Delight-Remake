@@ -1,7 +1,7 @@
 {
 	"dynamicCrosshair": false,
 	"disableDebugCrosshair": false,
-	"thirdPersonCrosshair": false,
+	"thirdPersonCrosshair": true,
 	"hideWithScreen": true,
 	"hideWithMap": true,
 	"fixCenteredCrosshair": false,
@@ -79,11 +79,11 @@
 			"coalesce": true
 		},
 		"holdingBlock": {
-			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/diamond-large.png",
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/diamond.png",
 			"overrideColor": false,
 			"customColor": -5588020,
 			"enableBlend": true,
-			"coalesce": true
+			"coalesce": false
 		},
 		"interact": {
 			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/brackets.png",
@@ -116,10 +116,10 @@
 			"coalesce": true
 		},
 		"modIncorrectTool": {
-			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-open-diagonal.png",
-			"overrideColor": false,
-			"customColor": -5588020,
-			"enableBlend": true,
+			"style": "dynamiccrosshair:textures/gui/sprites/crosshair/cross-diagonal-small.png",
+			"overrideColor": true,
+			"customColor": -65536,
+			"enableBlend": false,
 			"coalesce": true
 		}
 	},
