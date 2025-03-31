@@ -13,14 +13,18 @@ ServerEvents.recipes(e => {
         "farmersrespite:coffee_cake_from_slices",
         "create_central_kitchen:cutting/chocolate_cake_slice",
         "neapolitan:cake",
-        "ratatouille:smoking/solid_sugar_block"
+        "ratatouille:smoking/solid_sugar_block",
+        "luncheonmeatsdelight:integration/create/mixing/flesh_mud",
+        "luncheonmeatsdelight:integration/create/mixing/flesh_mud_2"
     ])
     // 肉酱配方修改
-    e.recipes.create.mixing(Fluid.of("ratatouille:mince_meat", 250), [
-        "#forge:meat/raw",
-        "#forge:salt",
-        "butchercraft:fat"
-    ]
+    e.recipes.create.mixing(
+        Fluid.of("luncheonmeatsdelight:flesh_mud", 250),
+        [
+            "#forge:meat/raw",
+            "#forge:salt",
+            "bakeries:flour"
+        ]
     ).id("create:mixing/mince_meat")
 
     // 蛋糕相关
@@ -29,7 +33,7 @@ ServerEvents.recipes(e => {
         [
             Fluid.of("minecraft:milk", 250),
             Fluid.of("createdelight:egg_yolk", 250),
-            '2x create:wheat_flour',
+            '2x bakeries:flour',
             "minecraft:sugar"
         ]
     ).id("create:mixing/cake_batter")

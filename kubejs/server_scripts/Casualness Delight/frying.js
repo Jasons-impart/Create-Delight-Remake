@@ -116,7 +116,7 @@ ServerEvents.recipes(e => {
         'createdelightcore:unfried_fish',
         [
             "#minecraft:fishes",
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_fish")
@@ -124,7 +124,7 @@ ServerEvents.recipes(e => {
         'createdelightcore:unfried_tonkatsu',
         [
             'minecraft:porkchop',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_tonkatsu")
@@ -132,7 +132,7 @@ ServerEvents.recipes(e => {
         'createdelightcore:unfried_chicken_chip',
         [
             'butchercraft:chicken_breast',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_chicken_chip")

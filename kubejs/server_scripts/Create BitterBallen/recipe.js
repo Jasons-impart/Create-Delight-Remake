@@ -50,7 +50,8 @@ ServerEvents.recipes(e => {
     )
     e.replaceInput({}, Fluid.of("create_bic_bit:frying_oil"), Fluid.of("createdieselgenerators:plant_oil"))
     e.replaceOutput({}, "create_bic_bit:unripe_cheese", "casualness_delight:raw_cheese_wheel")
-    e.replaceInput({id: "create_bic_bit:compat/farmersdelight/raw_churros_recipe2"}, "farmersdelight:wheat_dough", "create:dough")
+    e.replaceInput({id: "create_bic_bit:compat/farmersdelight/raw_churros_recipe2"}, "farmersdelight:wheat_dough", "bakeries:whole_wheat_dough")
+    e.replaceInput({id: "create_bic_bit:mixing/raw_churros_recipe"}, "create:wheat_flour", "bakeries:flour")
     e.recipes.create.mixing(Fluid.of("create_bic_bit:ketchup", 250), [
         Fluid.of("create_central_kitchen:tomato_sauce", 250),
         "create_bic_bit:crushed_nether_wart",
@@ -66,7 +67,7 @@ ServerEvents.recipes(e => {
         "create_bic_bit:crushed_nether_wart"
     ]).heated()
     .id("create_bic_bit:mixing/curdled_milk")
-    e.recipes.create.compacting("vintagedelight:cheese_curds", Fluid.of("create_bic_bit:curdled_milk", 250))
+    e.recipes.create.compacting("ad_astra:cheese", Fluid.of("create_bic_bit:curdled_milk", 250))
     threshing(e, "minecraft:sunflower", [
         "create_bic_bit:sunflower_seeds",
         Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)
@@ -85,7 +86,7 @@ ServerEvents.recipes(e => {
         'create_bic_bit:raw_cheese_souffle',
         [
             "#forge:cheese",
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/raw_cheese_souffle")
@@ -100,7 +101,7 @@ ServerEvents.recipes(e => {
         'create_bic_bit:raw_frikandel',
         [
             '#forge:meat/processed/raw',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/frikandel_recipe")
@@ -108,7 +109,7 @@ ServerEvents.recipes(e => {
         'create_bic_bit:raw_kroket',
         [
             '#forge:meat/processed/raw',
-            "2x create:wheat_flour",
+            "2x bakeries:flour",
             'createdelight:butter',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
@@ -117,7 +118,7 @@ ServerEvents.recipes(e => {
         '2x create_bic_bit:raw_bitterballen',
         [
             '#forge:meat/processed/raw',
-            "create:wheat_flour",
+            'bakeries:flour',
             'createdelight:butter',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
@@ -126,7 +127,7 @@ ServerEvents.recipes(e => {
         'create_bic_bit:raw_eggball',
         [
             'mynethersdelight:boiled_egg',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_bic_bit:mixing/raw_eggball")
@@ -135,7 +136,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "create_deepfried:raw_tempura",
         [
-            "create:wheat_flour",
+            'bakeries:flour',
             "#forge:seafood",
             Fluid.of("minecraft:water", 50)
         ]
@@ -143,7 +144,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "createdelightcore:unfried_calamari",
         [
-            "create:wheat_flour",
+            'bakeries:flour',
             "createdelight:raw_calamari",
             Fluid.of("minecraft:water", 50)
         ]
@@ -151,7 +152,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "create_deepfried:raw_tempura",
         [
-            "create:wheat_flour",
+            'bakeries:flour',
             '3x #forge:vegetables',
             Fluid.of("minecraft:water", 50)
         ]
@@ -160,7 +161,7 @@ ServerEvents.recipes(e => {
         'create_deepfried:raw_onion_rings',
         [
             'some_assembly_required:sliced_onion',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:compat/farmersdelight/mixing/raw_onion_rings2")

@@ -1,6 +1,6 @@
 {
   "type": "bakeries:dough_crafting_table",
-  "count": 6,
+  "count": 4,
   "ingredient":
   {
     "item": "bakeries:sweet_dough"

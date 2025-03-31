@@ -23,7 +23,7 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/lemon_tart",
         "ends_delight:food/chorus_fruit_pie"
     ])
-    baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 600)
+    baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 100)
     e.recipes.kubejs.shapeless(
         "silentsdelight:sculk_catalyst_pie_crust",
         [
