@@ -69,14 +69,25 @@ ServerEvents.recipes(e => {
     cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
-        "2x vintagedelight:salt_dust",
+        Fluid.of("bakeries:salt_water", 250),
         [
             Fluid.of("water", 250),
             "vintagedelight:salt_dust"
         ]
     )
-        .heated()
         .id("ratatouille:salt")
+    e.recipes.create.mixing(
+        "vintagedelight:salt_dust",
+        Fluid.of("bakeries:salt_water", 250)
+    )
+        .heated()
+        .id("vintagedelight:salt_water2salt_dust")
+    e.recipes.minecraft.smelting(
+        "vintagedelight:salt_bucket",
+        'bakeries:salt_water_bucket',
+        0.7,
+        200
+    ).id("vintagedelight:salt_from_smelting")
     e.recipes.kubejs.shapeless(
         "4x vintagedelight:salt_dust",
         "vintagedelight:salt_bucket"
