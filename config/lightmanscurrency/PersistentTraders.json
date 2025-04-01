@@ -6301,7 +6301,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelight:dirty_calorite_dust",
+            "ID": "createdelight:calorite_dust",
             "Count": 64
           },
           "Rules": [
