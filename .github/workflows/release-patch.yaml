@@ -1,133 +1,52 @@
 name: 发布补丁
-run-name: ${{ github.actor }} 正在发布补丁🚀
+
 on:
   push:
     branches:
-      - test-release
       - release
+      - test-release  # 可以根据需要修改为你的目标分支
 
 jobs:
-  Release:
+  generate-patches:
     runs-on: ubuntu-latest
-    name: 发布🚀
     steps:
-      - name: Check out repository code
-        uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 0
-          fetch-tags: true
-      - name: 读取包名
-        uses: SebRollen/toml-action@v1.2.0
-        id: read-modpackname
-        with:
-          file: ${{ github.workspace }}/pack.toml
-          field: 'name'
-      - name: 读取版本号
-        uses: SebRollen/toml-action@v1.2.0
-        id: read-version
-        with:
-          file: ${{ github.workspace }}/pack.toml
-          field: 'version'
-      - name: 生成整合包nightly构建后缀
-        id: set_version_prefix
-        run: |
-          echo ${{ steps.read-modpackname.outputs.value }}
-          echo ${{ steps.read-version.outputs.value }}
-          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
-            VERSION_SUFFIX=$(date +%m%d%H%M)
-            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
-          else
-            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
-          fi
-      - name: 获取最近的tag并配置环境变量
-        run: |
-          # 获取当前 commit 的 hash
-          current_commit=$(git rev-parse HEAD)
-          # 获取当前 commit 关联的 tag
-          current_commit_tags=$(git tag --points-at $current_commit)
-          if [ -z "$current_commit_tags" ]; then
-            # 当前 commit 没有关联 tag，直接取最新 tag
-            latest_tag=$(git tag --sort=-creatordate | head -n 1)
-          else
-            # 当前 commit 有关联 tag，过滤掉这些 tag 后取最新 tag
-            latest_tag=$(git tag --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
-          fi
-          if [ -z "$latest_tag" ]; then
-            echo "No suitable tag found. Exiting."
-            exit 1
-          fi
-          echo "最近的tag是: $latest_tag"
-          echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
-      - name: 根据tag生成补丁
-        run: |
-          temp_dir=$(mktemp -d)
-          # 创建合并记录文件
-          mods_changes="$temp_dir/mods_changes.txt"
-          touch "$mods_changes"
+          fetch-depth: 0  # 获取全量历史记录
 
-          # 获取所有有变化的文件及变化类型
-          git diff --name-status ${{ env.LATEST_TAG }} HEAD | while IFS=$'\t' read -r status file; do
-            echo "file: $file"
-            echo "status: $status"
-            if [[ $file == mods/* ]]; then
-              case $status in
-                A)
-                  echo "添加: $file" >> "$mods_changes"
-                  ;;
-                D)
-                  echo "删除: $file" >> "$mods_changes"
-                  ;;
-                R*)
-                  old_file=$(echo "$file" | cut -d$'\t' -f1)
-                  new_file=$(echo "$file" | cut -d$'\t' -f2)
-                  echo "升/降级: $old_file -> $new_file" >> "$mods_changes"
-                  ;;
-              esac
-            else
-              case $status in
-                A|M)
-                  if [ -e "$file" ]; then
-                    target_dir="$temp_dir/$(dirname "$file")"
-                    mkdir -p "$target_dir"
-                    cp -rL "$file" "$target_dir"
-                  fi
-                  ;;
-                R*)
-                  new_file=$(echo "$file" | cut -d$'\t' -f2)
-                  if [ -e "$new_file" ]; then
-                    target_dir="$temp_dir/$(dirname "$new_file")"
-                    mkdir -p "$target_dir"
-                    cp -rL "$new_file" "$target_dir"
-                  fi
-                  ;;
-                D)
-                  echo "文件 $file 已删除，跳过复制。"
-                  ;;
-              esac
-            fi
-          done
-
-          echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
-      - name: 从生成的补丁临时目录里删除无用文件
+      - name: Get previous tag
+        id: prev_tag
         run: |
-            # mapfile -t names < ${{ github.workspace }}/.packwizignore
-            # names+=("pack.toml")
-            # for filename in "${names[@]}"; do
-            #   echo "Deleting files $filename"
-            #   find ${{ env.PATCH_DIR }} -name "${filename}" -exec rm {} +
-            # done
-            rm -f ${{ env.PATCH_DIR }}/ModList0.4a.md
-            rm -f ${{ env.PATCH_DIR }}/README.md
-            rm -f ${{ env.PATCH_DIR }}/TODOlist.md
-            rm -f ${{ env.PATCH_DIR }}/KubeJSStyleGuide.md
-            rm -f ${{ env.PATCH_DIR }}/DevGuide.md
-            rm -f ${{ env.PATCH_DIR }}/pack.toml
-            rm -f ${{ env.PATCH_DIR }}/index.toml
-            rm -f ${{ env.PATCH_DIR }}/client_jvm_args.example.txt
+          PREV_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1))
+          echo "prev_tag=$PREV_TAG" >> $GITHUB_OUTPUT
+        shell: bash
 
-      - name: 上传补丁
-        uses: actions/upload-artifact@v4
+      - name: Generate Linux patch script
+        run: |
+          git diff ${{ steps.prev_tag.outputs.prev_tag }} HEAD > linux_patch.diff
+          cat << EOF > apply_linux_patch.sh
+#!/bin/bash
+git apply linux_patch.diff
+EOF
+          chmod +x apply_linux_patch.sh
+        shell: bash
+
+      - name: Generate Windows patch script
+        run: |
+          git diff ${{ steps.prev_tag.outputs.prev_tag }} HEAD > windows_patch.diff
+          cat << EOF > apply_windows_patch.bat
+@echo off
+git apply windows_patch.diff
+EOF
+        shell: bash
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
         with:
-          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
-          path: ${{ env.PATCH_DIR }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+          name: patch-scripts
+          path: |
+            linux_patch.diff
+            apply_linux_patch.sh
+            windows_patch.diff
+            apply_windows_patch.bat    
