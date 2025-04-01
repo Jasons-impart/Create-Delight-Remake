@@ -138,6 +138,7 @@
 							gateway: "createdelight:piercing_withering_trial"
 						}
 					}
+					match_nbt: true
 					type: "item"
 				}
 				{
