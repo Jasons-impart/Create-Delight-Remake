@@ -73,11 +73,11 @@ ServerEvents.recipes(e => {
         "BCB",
         " B "
     ],
-    {
-        A: "createdelight:demonic_codex",
-        B: "art_of_forging:shards_of_malice",
-        C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
-    })
+        {
+            A: "createdelight:demonic_codex",
+            B: "art_of_forging:shards_of_malice",
+            C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
+        })
         .id("tetra:thousand_cold_night_scroll")
 
     metal_production_line_3(e,
@@ -271,4 +271,19 @@ ServerEvents.recipes(e => {
                 "#mynethersdelight:hoglin_hide",
                 "alexscaves:tough_hide"]
         ])
+    {
+        let iner = "createdelight:forged_steel_sheet"
+        create.sequenced_assembly("art_of_forging:encoded_canister", iner, [
+            vintageimprovements.curving(iner, iner)
+            .head("art_of_forging:encoded_canister"),
+            create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
+            create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
+            create.deploying(iner, [iner, "#forge:dusts/redstone"]),
+            create.deploying(iner, [iner, "createdelight:forged_steel_sheet"]),
+            create.pressing(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("art_of_forging:encoded_canister")
+    }
 })
