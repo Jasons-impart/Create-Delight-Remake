@@ -74,13 +74,4 @@ StartupEvents.registry("block", (e) => {
   .requiresTool(false)
   .translationKey("block.createdelight.packaged_ammo");
 
-  // 线圈
-  e.create("createdelight:coil")
-    .translationKey("block.createdelight.coil")
-    .soundType("metal")
-    .hardness(10)
-    .resistance(10)
-    .tagBlock(`minecraft:mineable/pickaxe`)
-    .tagBlock(`minecraft:needs_iron_tool`)
-    .requiresTool(true);
 });

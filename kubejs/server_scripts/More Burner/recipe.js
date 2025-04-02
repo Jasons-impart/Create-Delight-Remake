@@ -9,15 +9,25 @@ ServerEvents.recipes(e => {
     ])
     vintageimprovements.coiling("moreburners:copper_coil", "create:copper_sheet")
     .id("moreburners:coiling/copper_coil")
-    kubejs.shaped("createdelight:coil", [
+    kubejs.shaped("createdelightcore:copper_coil_casing", [
         "AAA",
-        "A A",
+        "ABA",
         "AAA"
     ],
     {
-        A: "moreburners:copper_coil"
+        A: "moreburners:copper_coil",
+        B: "createdelightcore:steel_casing"
     })
-    .id("createdelight:coil")
+    .id("createdelight:copper_coil")
+    {
+        let iner = "createdelightcore:steel_casing"
+        create.sequenced_assembly("createdelightcore:copper_coil_casing", iner, [
+            create.deploying(iner, [iner, "moreburners:copper_coil"])
+        ])
+            .loops(3)
+            .transitionalItem(iner)
+            .id("createdelight:sequenced_assembly/copper_coil_casing")
+    }
     let iner_1 = "create:sturdy_sheet"
     create.sequenced_assembly("moreburners:heat_upgrade", iner_1, [
         create.deploying(iner_1, [iner_1, "moreburners:copper_coil"]),
@@ -34,7 +44,7 @@ ServerEvents.recipes(e => {
     ],
     {
         A: "ae2:quartz_glass",
-        B: "createdelight:coil",
+        B: "createdelightcore:copper_coil_casing",
         C: "ad_astra:steel_plate",
         D: "create:andesite_casing",
         E: "create:empty_blaze_burner",

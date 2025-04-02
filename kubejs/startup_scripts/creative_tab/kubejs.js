@@ -159,7 +159,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:iron_casing',
         'createdelight:space_casing',
         'createdelight:sky_steel_casing',
-        'createdelight:coil',
         'createdelight:cow_zip',
         'createdelight:sheep_zip',
         'createdelight:chicken_zip',
