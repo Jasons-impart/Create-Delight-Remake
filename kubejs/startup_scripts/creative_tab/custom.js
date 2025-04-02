@@ -89,8 +89,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:iron_casing',
       'createdelight:space_casing',
       'createdelight:sky_steel_casing',
-      // 线圈
-      'createdelight:coil',
       // 杂项
       'createdelight:incomplete_paper',
       'createdelight:waste_paper',
