@@ -131,7 +131,7 @@ jobs:
 
       - name: Archive artifacts
         run: |
-          zip -jr patch.zip \
+          zip -r patch.zip \
             added_files.txt \
             deleted_files.txt \
             deploy-linux.sh \
