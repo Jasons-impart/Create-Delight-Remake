@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - test-patch
+      - release
 
 jobs:
   Release:
@@ -27,6 +28,15 @@ jobs:
         with:
           file: ${{ github.workspace }}/pack.toml
           field: 'version'
+      - name: 生成整合包nightly构建后缀
+        id: set_version_prefix
+        run: |
+          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
+            VERSION_SUFFIX="nighly-build-${{ github.run_number }}"
+            echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+          else
+            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
+          fi
       - name: 获取最近的tag并配置环境变量
         run: |
           # 获取当前 commit 的 hash
@@ -135,7 +145,7 @@ jobs:
       - name: 上传补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}"
+          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: |
             deleted_files.txt
             deploy-patch.sh

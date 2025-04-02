@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} 正在发布客户端新版本🚀
 on:
   push:
     branches:
-      - test-release
+      - test-client
       - release
 
 jobs:
