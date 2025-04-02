@@ -129,18 +129,14 @@ jobs:
           echo 操作完成！
           EOF
 
-      - name: Archive artifacts
-        run: |
-          zip -r patch.zip \
-            added_files.txt \
-            deleted_files.txt \
-            deploy-linux.sh \
-            deploy-windows.bat \
-            patch/
-
       - name: 上传补丁
         uses: actions/upload-artifact@v4
         with:
           name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}"
-          path: patch
+          path: |
+            added_files.txt
+            deleted_files.txt
+            deploy-linux.sh
+            deploy-windows.bat
+            patch/
       - run: echo "🍏 This job's status is ${{ job.status }}."
