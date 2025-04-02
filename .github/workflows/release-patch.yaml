@@ -69,64 +69,67 @@ jobs:
 
       - name: Create Linux script
         run: |
-          cat << 'EOF' > deploy-linux.sh
+          cat << 'EOF' > deploy-patch.sh
           #!/bin/bash
-          echo "正在应用补丁..."
+          echo "Applying Patch..."
           BASE_DIR=$(dirname "$(readlink -f "$0")")
           
-          # 处理删除
+          # files to be deleted
           if [ -f "$BASE_DIR/deleted_files.txt" ]; then
-            echo "正在处理删除/重命名文件..."
             while IFS= read -r line; do
               if [ -f "$file" ]; then
-                rm -v "$file" || echo "无法删除 $file"
+                rm -v "$file" || echo "Cannot delete $file"
               fi
             done < "$BASE_DIR/deleted_files.txt"
           fi
 
-          # 处理文件更新/新增
-          while IFS= read -r file; do
-            target_dir=$(dirname "$file")
-            mkdir -p "$target_dir"
-            mv -v "$BASE_DIR/patch/$file" "$file" || echo "无法复制 $file"
-          done < "$BASE_DIR/added_files.txt"
+          # move patched files to right place
+          cp -r "patch" "."
+
+          # remove patch folder
+          rm -rf "patch"
 
           echo -e "\n操作完成！"
           EOF
 
       - name: Create Windows script
         run: |
-          cat << 'EOF' > deploy-windows.bat
+          cat << 'EOF' > deploy-patch.bat
           @echo off
           setlocal enabledelayedexpansion
-          echo 正在应用补丁...
-          set "BASE_DIR=%~dp0"
-          
-          REM 处理文件删除
-          if exist "%BASE_DIR%deleted_files.txt" (
-            echo 正在清理已删除文件...
-            for /f "delims=" %%f in (%BASE_DIR%deleted_files.txt) do (
-              set "file=%%f"
-              if exist "!file!" (
-                del /f /q "!file!" >nul && echo 已删除: !file!
-              )
-            )
+
+          rem files to be deleted
+          set "pathFile=deleted_files.txt"
+
+          rem Check if the file exists
+          if not exist "%pathFile%" (
+              echo File %pathFile% doesn't exist.
+              exit /b 1
           )
 
-          REM 处理文件更新/新增
-          for /f "delims=" %%f in (%BASE_DIR%added_files.txt) do (
-            set "file=%%f"
-            set "target_dir=!file:\=/!"
-            for %%d in ("!target_dir!") do set "target_dir=%%~pd"
-            mkdir "!target_dir!" >nul 2>&1
-            if exist "%BASE_DIR%patch\!file!" (
-              move /y "%BASE_DIR%patch\!file!" "!file!" >nul && echo 已复制: !file!
-            ) else (
-              echo 文件不存在: !file!
-            )
+          rem read line by line and remove files
+          for /f "usebackq delims=" %%a in ("%pathFile%") do (
+              rem Convert Linux-style to Windows-style path
+              set "path=%%a"
+              set "path=!path:/=\!"
+              
+              rem Check if file exists and delete it
+              if exist "!path!" (
+                  echo Deleting: !path!
+                  del "!path!"
+                  if errorlevel 1 (
+                      echo Error when delete !path!
+                  )
+              ) else (
+                  echo File !path! doesn't exist.
+              )
           )
-          
-          echo 操作完成！
+
+          rem move patched files to right place
+          xcopy /E /I /Y "patch" "."
+          rd /S /Q "patch"
+
+          endlocal
           EOF
 
       - name: 上传补丁
@@ -134,9 +137,8 @@ jobs:
         with:
           name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}"
           path: |
-            added_files.txt
             deleted_files.txt
-            deploy-linux.sh
-            deploy-windows.bat
+            deploy-patch.sh
+            deploy-patch.bat
             patch/
       - run: echo "🍏 This job's status is ${{ job.status }}."
