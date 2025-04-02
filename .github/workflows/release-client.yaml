@@ -28,7 +28,7 @@ jobs:
       - name: 生成整合包nightly构建后缀
         id: set_version_prefix
         run: |
-          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
+          if [[ $GITHUB_REF != refs/heads/release ]]; then
             VERSION_SUFFIX="nighly-build-${{ github.run_number }}"
             echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
