@@ -3,8 +3,7 @@ run-name: ${{ github.actor }} 正在发布补丁🚀
 on:
   push:
     branches:
-      - test-release
-      - release
+      - test-patch
 
 jobs:
   Release:
@@ -28,17 +27,6 @@ jobs:
         with:
           file: ${{ github.workspace }}/pack.toml
           field: 'version'
-      - name: 生成整合包nightly构建后缀
-        id: set_version_prefix
-        run: |
-          echo ${{ steps.read-modpackname.outputs.value }}
-          echo ${{ steps.read-version.outputs.value }}
-          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
-            VERSION_SUFFIX=$(date +%m%d%H%M)
-            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
-          else
-            echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
-          fi
       - name: 获取最近的tag并配置环境变量
         run: |
           # 获取当前 commit 的 hash
@@ -58,76 +46,101 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
-      - name: 根据tag生成补丁
+      - name: Prepare patch files
         run: |
-          temp_dir=$(mktemp -d)
-          # 创建合并记录文件
-          mods_changes="$temp_dir/mods_changes.txt"
-          touch "$mods_changes"
+          # 生成完整差异报告
+          git diff --name-status ${{ env.LATEST_TAG }} HEAD > diff_report.txt
+          
+          # 解析差异报告
+          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt
+          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt
+          grep -E '^[A|M]' diff_report.txt | cut -f2 > added_files.txt
+          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt
+          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt
 
-          # 获取所有有变化的文件及变化类型
-          git diff --name-status ${{ env.LATEST_TAG }} HEAD | while IFS=$'\t' read -r status file; do
-            echo "file: $file"
-            echo "status: $status"
-            if [[ $file == mods/* ]]; then
-              case $status in
-                A)
-                  echo "添加: $file" >> "$mods_changes"
-                  ;;
-                D)
-                  echo "删除: $file" >> "$mods_changes"
-                  ;;
-                R*)
-                  old_file=$(echo "$file" | cut -d$'\t' -f1)
-                  new_file=$(echo "$file" | cut -d$'\t' -f2)
-                  echo "升/降级: $old_file -> $new_file" >> "$mods_changes"
-                  ;;
-              esac
-            else
-              case $status in
-                A|M)
-                  if [ -e "$file" ]; then
-                    target_dir="$temp_dir/$(dirname "$file")"
-                    mkdir -p "$target_dir"
-                    cp -rL "$file" "$target_dir"
-                  fi
-                  ;;
-                R*)
-                  new_file=$(echo "$file" | cut -d$'\t' -f2)
-                  if [ -e "$new_file" ]; then
-                    target_dir="$temp_dir/$(dirname "$new_file")"
-                    mkdir -p "$target_dir"
-                    cp -rL "$new_file" "$target_dir"
-                  fi
-                  ;;
-                D)
-                  echo "文件 $file 已删除，跳过复制。"
-                  ;;
-              esac
-            fi
-          done
+          # 创建补丁目录
+          mkdir -p patch
 
-          echo "PATCH_DIR=$temp_dir" >> $GITHUB_ENV
-      - name: 从生成的补丁临时目录里删除无用文件
+          # 复制新增/修改文件
+          while IFS= read -r file; do
+            mkdir -p "patch/$(dirname "$file")"
+            cp "$file" "patch/$file"
+          done < added_files.txt
+
+      - name: Create Linux script
         run: |
-            # mapfile -t names < ${{ github.workspace }}/.packwizignore
-            # names+=("pack.toml")
-            # for filename in "${names[@]}"; do
-            #   echo "Deleting files $filename"
-            #   find ${{ env.PATCH_DIR }} -name "${filename}" -exec rm {} +
-            # done
-            rm -f ${{ env.PATCH_DIR }}/ModList0.4a.md
-            rm -f ${{ env.PATCH_DIR }}/README.md
-            rm -f ${{ env.PATCH_DIR }}/TODOlist.md
-            rm -f ${{ env.PATCH_DIR }}/KubeJSStyleGuide.md
-            rm -f ${{ env.PATCH_DIR }}/DevGuide.md
-            rm -f ${{ env.PATCH_DIR }}/pack.toml
-            rm -f ${{ env.PATCH_DIR }}/index.toml
-            rm -f ${{ env.PATCH_DIR }}/client_jvm_args.example.txt
+          cat << 'EOF' > deploy-linux.sh
+          #!/bin/bash
+          echo "正在应用补丁..."
+          BASE_DIR=$(dirname "$(readlink -f "$0")")
+          
+          # 处理删除
+          if [ -f "$BASE_DIR/deleted_files.txt" ]; then
+            echo "正在处理删除/重命名文件..."
+            while IFS= read -r line; do
+              if [ -f "$file" ]; then
+                rm -v "$file" || echo "无法删除 $file"
+              fi
+            done < "$BASE_DIR/deleted_files.txt"
+          fi
+
+          # 处理文件更新/新增
+          while IFS= read -r file; do
+            target_dir=$(dirname "$file")
+            mkdir -p "$target_dir"
+            mv -v "$BASE_DIR/patch/$file" "$file" || echo "无法复制 $file"
+          done < "$BASE_DIR/added_files.txt"
+
+          echo -e "\n操作完成！"
+          EOF
+
+      - name: Create Windows script
+        run: |
+          cat << 'EOF' > deploy-windows.bat
+          @echo off
+          setlocal enabledelayedexpansion
+          echo 正在应用补丁...
+          set "BASE_DIR=%~dp0"
+          
+          REM 处理文件删除
+          if exist "%BASE_DIR%deleted_files.txt" (
+            echo 正在清理已删除文件...
+            for /f "delims=" %%f in (%BASE_DIR%deleted_files.txt) do (
+              set "file=%%f"
+              if exist "!file!" (
+                del /f /q "!file!" >nul && echo 已删除: !file!
+              )
+            )
+          )
+
+          REM 处理文件更新/新增
+          for /f "delims=" %%f in (%BASE_DIR%added_files.txt) do (
+            set "file=%%f"
+            set "target_dir=!file:\=/!"
+            for %%d in ("!target_dir!") do set "target_dir=%%~pd"
+            mkdir "!target_dir!" >nul 2>&1
+            if exist "%BASE_DIR%patch\!file!" (
+              move /y "%BASE_DIR%patch\!file!" "!file!" >nul && echo 已复制: !file!
+            ) else (
+              echo 文件不存在: !file!
+            )
+          )
+          
+          echo 操作完成！
+          EOF
+
+      - name: Archive artifacts
+        run: |
+          zip -jr patch.zip \
+            added_files.txt \
+            deleted_files.txt \
+            deploy-linux.sh \
+            deploy-windows.bat \
+            patch/
 
       - name: 上传补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
-          path: ${{ env.PATCH_DIR }}
+          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}"
+          path: patch
       - run: echo "🍏 This job's status is ${{ job.status }}."
