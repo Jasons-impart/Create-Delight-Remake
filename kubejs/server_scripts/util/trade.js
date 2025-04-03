@@ -11,9 +11,7 @@ TradeUtil.replaceVillageTradeIndex = function(e, villager, trades, index) {
     //     e.removeVanillaTrades([villager], index)
     // else
     e.removeModdedTrades([villager], index)
-    trades.forEach(trade => {
-        e.addTrade(villager, index, trade[0], trade[1])
-    })
+    this.addVillageTradeIndex(e, villager, trades, index)
 }
 /**
  * 

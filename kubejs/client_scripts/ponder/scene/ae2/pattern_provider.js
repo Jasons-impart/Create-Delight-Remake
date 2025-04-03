@@ -62,6 +62,67 @@ Ponder.registry(event => {
 
             }
         )
+        .scene(
+            "createdelight:ae_crafting_parallel",
+            "自动合成的并行",
+            "createdelight:ponder_ae_crafting_parallel",
+            (scene, util) => {
+                scene.world.showSection([1, 0, 0, 8, 0, 8], Direction.UP)
+                scene.idle(20)
+                scene.world.showSection([1, 1, 0, 1, 1, 3], Direction.DOWN)
+                scene.idle(10)
+                for (let index = 0; index < 4; index++) {
+                    scene.world.showSection([0, index, 4], Direction.DOWN)
+                    scene.idle(5)
+                }
+                scene.world.showSection([1, 1, 4, 1, 1, 5], Direction.DOWN)
+                scene.idle(10)
+                scene.world.showSection([1, 3, 4], Direction.DOWN)
+                scene.idle(40)
+                scene.text(60, "使用多个样板供应器可以做到多个机器的并行").attachKeyFrame()
+                scene.idle(80)
+                scene.text(60, "内存卡可以复制机器的配置以及将其中配置应用于机器，当然样板供应器也不例外")
+                scene.idle(80)
+                scene.text(60, "使用内存卡shift右击样板供应器……").attachKeyFrame()
+                scene.idle(20)
+                scene.showControls(40, [1.5, 2, 3.5], "down")
+                .whileSneaking()
+                .withItem("ae2:memory_card")
+                scene.idle(60)
+                scene.text(60, "样板供应器会将其中样板的信息也存入内存卡中")
+                scene.idle(60)
+                scene.world.showSection([2, 1, 3, 2, 1, 5], Direction.DOWN)
+                scene.idle(20)
+                scene.world.showSection([2, 3, 4], Direction.DOWN)
+                scene.text(60, "然后再使用内存卡右击目标的样板供应器……").attachKeyFrame()
+                scene.idle(40)
+                scene.showControls(40, [2.5, 2, 3.5], "down")
+                .withItem("ae2:memory_card")
+                scene.idle(20)
+                scene.world.modifyBlock([2, 1, 3], bs => bs.with("push_direction", "south"), false)
+                scene.idle(40)
+                scene.text(40, "内存卡会消耗物品栏中的空白样板，并依照其记录的样板复制到目标样板供应器中").attachKeyFrame()
+                scene.idle(60)
+                scene.text(80, "然后以此类推，建造并行")
+                scene.idle(20)
+                for (let index = 1; index <= 5; index++) {
+                    scene.world.showSection([2 + index, 1, 3, 2 + index, 1, 5], Direction.DOWN)
+                    scene.world.showSection([2 + index, 3, 4], Direction.DOWN)
+                    scene.idle(5)
+                }
+                scene.idle(10)
+                scene.world.showSection([2, 1, 0, 7, 1, 1], Direction.DOWN)
+                scene.idle(10)
+                scene.world.showSection([1, 1, 6, 8, 1, 6], Direction.DOWN)
+                scene.world.showSection([8, 1, 0, 8, 1, 6], Direction.DOWN)
+                scene.idle(10)
+                scene.rotateCameraY(90)
+                scene.idle(40)
+                scene.rotateCameraY(90)
+                scene.idle(40)
+                scene.world.showSection([1, 2, 5, 7, 2, 6], Direction.DOWN)
+            }
+        )
     event.create(["ae2:pattern_provider", "ae2:cable_pattern_provider", "ae2:interface", "ae2:cable_interface"])
         .scene(
             "createdelight:pattern_provider_interaction",
