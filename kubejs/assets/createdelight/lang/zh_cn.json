@@ -485,5 +485,9 @@
     "tetra.material.uranium": "铀晶",
     "tetra.material.uranium.prefix": "铀晶",
     "tetra.stats.createdelight:irradiated": "辐照",
-    "tetra.stats.createdelight:irradiated.tooltip_short": "对生物施加5秒的辐照2效果"
+    "tetra.stats.createdelight:irradiated.tooltip_short": "对生物施加5秒的辐照2效果",
+    "createdelight.effect.fiber_proliferation.name": "生命增殖",
+    "createdelight.effect.fiber_proliferation.tooltip": "击杀特定生物有§e%s%%§r的概率掉落§e%s§r个生命纤维",
+    "tetra.stats.createdelight:fiber_proliferation": "生命汲取",
+    "tetra.stats.createdelight:fiber_proliferation.tooltip_short": "击杀特定生物有一定概率掉落生命纤维"
 }
