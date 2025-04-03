@@ -39,6 +39,7 @@ ClientEvents.init(event => {
     simpleRegWorkbenchBar('createdelight:fire_dragon_restraint', 30)
     simpleRegWorkbenchBar('createdelight:lightning_dragon_restraint', 30)
     simpleRegWorkbenchBar('createdelight:life_drain', 100)
+    simpleRegWorkbenchBar('createdelight:fiber_proliferation', 100)
     // simpleRegWorkbenchBar('yi:power',10000)
     // simpleRegWorkbenchBar('yi:vibration',50)
     // simpleRegWorkbenchBar('yi:mana_addition',10)
