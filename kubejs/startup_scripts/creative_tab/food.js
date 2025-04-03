@@ -1,3 +1,10 @@
+// 农夫乐事
+StartupEvents.modifyCreativeTab("farmersdelight:farmersdelight", e => {
+  e.remove([
+   'culturaldelights:cucumber',
+   'culturaldelights:cucumber_crate' 
+  ])
+})
 // 玉米乐事
 StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
     e.remove([
