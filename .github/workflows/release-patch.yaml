@@ -77,6 +77,23 @@ jobs:
             cp "$file" "patch/$file"
           done < added_files.txt
 
+          # 移除客户端only的mod
+          mapfile -t prefixes < .clientonlymodlist
+          for prefix in "${prefixes[@]}"; do
+            echo "Deleting files with prefix: $prefix"
+            find patch/mods -name "${prefix}*" -exec rm {} +
+          done
+
+          # 移除无用文件
+          rm -f patch/ModList0.4a.md
+          rm -f patch/README.md
+          rm -f patch/TODOlist.md
+          rm -f patch/KubeJSStyleGuide.md
+          rm -f patch/DevGuide.md
+          rm -f patch/pack.toml
+          rm -f patch/index.toml
+          rm -f patch/client_jvm_args.example.txt
+
       - name: Create Linux script
         run: |
           cat << 'EOF' > deploy-patch.sh
