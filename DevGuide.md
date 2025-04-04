@@ -10,7 +10,7 @@
 - 踢一脚Jason让他更新[Gist](https://gist.github.com/JasonQ1123/14894447c0cf3254e307a1793efcefa4)，以实现标题界面的新版本提示，对应config/fancymenu/customization/craete.txt
 
 # 测试版本发布流程
-- 将代码推送到github的test-release分支
+- 将代码推送到github的test-client / test-server / test-patch分支，分别生成对应的测试版本
 - 到 https://github.com/Jasons-impart/Create-Delight-Remake/actions 查收结果
 
 # 增加客户端mod
