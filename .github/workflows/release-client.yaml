@@ -29,7 +29,7 @@ jobs:
         id: set_version_prefix
         run: |
           if [[ $GITHUB_REF != refs/heads/release ]]; then
-            VERSION_SUFFIX="nighly-build-${{ github.run_number }}"
+            VERSION_SUFFIX="-nighly-build-${{ github.run_number }}"
             echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
@@ -95,11 +95,11 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          name: "[ClickToRun]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Client]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}-${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite"
+          name: "[Client]${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-lite"
           path: ${{ env.artifacts_path }}/lite-release/
       - run: echo "🍏 This job's status is ${{ job.status }}."
