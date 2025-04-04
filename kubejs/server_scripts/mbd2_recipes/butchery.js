@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     //屠宰山羊
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:goat_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -25,9 +25,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:goat_head_item")
         .outputItems("butchercraft:goat_hide")
         .outputFluids("butchercraft:blood_fluid")
-        .id("mbd2:butcher/goat")
+        .id("createdelight:butcher/goat")
     //屠宰羊
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:sheep_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -52,9 +52,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:sheep_head_item")
         .outputItems("butchercraft:sheep_hide")
         .outputFluids("butchercraft:blood_fluid")
-        .id("mbd2:butcher/sheep")
+        .id("createdelight:butcher/sheep")
     //屠宰牛
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:cow_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -80,9 +80,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:cow_head_item")
         .outputItems("butchercraft:cow_hide")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 3000))
-        .id("mbd2:butcher/cow")
+        .id("createdelight:butcher/cow")
     //屠宰猪
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:pig_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -108,9 +108,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:pig_hide")
         .outputItems("2x farmersdelight:ham")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 2000))
-        .id("mbd2:butcher/pig")
+        .id("createdelight:butcher/pig")
     //屠宰鸡
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:chicken_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -127,9 +127,9 @@ ServerEvents.recipes(e => {
         .outputItems("5x butchercraft:fat")
         .outputItems("butchercraft:chicken_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/chicken")
+        .id("createdelight:butcher/chicken")
     //屠宰黑兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:black_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -147,9 +147,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_black_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/black_rabbit")
+        .id("createdelight:butcher/black_rabbit")
     //屠宰棕兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:brown_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -167,9 +167,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_brown_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/brown_rabbit")
+        .id("createdelight:butcher/brown_rabbit")
     //屠宰斑点兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:splotched_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -187,9 +187,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_splotched_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/splotched_rabbit")
+        .id("createdelight:butcher/splotched_rabbit")
     //屠宰金兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:gold_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -207,9 +207,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_gold_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/gold_rabbit")
+        .id("createdelight:butcher/gold_rabbit")
     //屠宰盐腌兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:salt_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -227,9 +227,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_salt_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/salt_rabbit")
+        .id("createdelight:butcher/salt_rabbit")
     //屠宰白兔
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:white_rabbit_carcass")
         .perTick(builder => builder
             .inputStress(1024)
@@ -247,9 +247,9 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:rabbit_foot")
         .outputItems("butchercraft:rabbit_white_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
-        .id("mbd2:butcher/white_rabbit")
+        .id("createdelight:butcher/white_rabbit")
     //屠宰牛头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:cow_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -262,9 +262,9 @@ ServerEvents.recipes(e => {
         .outputItems("8x butchercraft:beef_scraps")
         .outputItems("5x butchercraft:leather_scrap")
         .outputItems("2x butchercraft:horn")
-        .id("mbd2:butcher/cow_head")
+        .id("createdelight:butcher/cow_head")
     //屠宰羊头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:sheep_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -277,9 +277,9 @@ ServerEvents.recipes(e => {
         .outputItems("8x butchercraft:lamb_scraps")
         .outputItems("5x butchercraft:leather_scrap")
         .outputItems("3x minecraft:string")
-        .id("mbd2:butcher/sheep_head")
+        .id("createdelight:butcher/sheep_head")
     //屠宰猪头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:pig_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -291,9 +291,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:tongue")
         .outputItems("8x butchercraft:pork_scraps")
         .outputItems("3x butchercraft:leather_scrap")
-        .id("mbd2:butcher/pig_head")
+        .id("createdelight:butcher/pig_head")
     //屠宰山羊头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:goat_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -305,9 +305,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:tongue")
         .outputItems("8x butchercraft:goat_scraps")
         .outputItems("4x butchercraft:leather_scrap")
-        .id("mbd2:butcher/goat_head")
+        .id("createdelight:butcher/goat_head")
     //屠宰鸡头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:chicken_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -320,9 +320,9 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:beak")
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems("minecraft:feather")
-        .id("mbd2:butcher/chicken_head")
+        .id("createdelight:butcher/chicken_head")
     //屠宰棕兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_brown_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -335,9 +335,9 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:brown_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:brown_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_brown_head")
+        .id("createdelight:butcher/rabbit_brown_head")
     //屠宰金兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_gold_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -350,9 +350,9 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:gold_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:gold_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_gold_head")
+        .id("createdelight:butcher/rabbit_gold_head")
     //屠宰盐腌兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_salt_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -365,9 +365,9 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:salt_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:salt_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_salt_head")
+        .id("createdelight:butcher/rabbit_salt_head")
     //屠宰斑点兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_splotched_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -380,9 +380,9 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:splotched_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:splotched_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_splotched_head")
+        .id("createdelight:butcher/rabbit_splotched_head")
     //屠宰白兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_white_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -395,9 +395,9 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:white_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:white_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_white_head")
+        .id("createdelight:butcher/rabbit_white_head")
     //屠宰黑兔头
-    e.recipes.mbd2.butchery()
+    e.recipes.createdelight.butchery()
         .inputItems("butchercraft:rabbit_black_head_item")
         .perTick(builder => builder
             .inputStress(1024)
@@ -410,5 +410,5 @@ ServerEvents.recipes(e => {
         .outputItems("2x butchercraft:leather_scrap")
         .outputItems(Item.of("butchercraft:black_bunny_ears", "{Damage:0}"))
         .outputItems(Item.of("butchercraft:black_bunny_tail", "{Damage:0}"))
-        .id("mbd2:butcher/rabbit_black_head")
+        .id("createdelight:butcher/rabbit_black_head")
 })

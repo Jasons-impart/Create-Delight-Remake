@@ -1,5 +1,25 @@
 const $MBDMultiblockMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDMultiblockMachine")
 const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPartMachine")
+// 大坝与转子同向才可工作
+MBDMachineEvents.onBeforeRecipeWorking("createdelight:hydropower_station", e => {
+    /**
+     * @type {Internal.MBDMultiblockMachine}
+     */
+    let machine = e.event.machine
+    let mainFacing = machine.frontFacing.get()
+    machine.getParts().forEach(ipart => {
+        /**
+         * @type {Internal.MBDPartMachine}
+         */
+        let part = ipart
+        if (part.definition.id() == "createdelight:hydropower_station_fan") {
+            let fanFacing = part.frontFacing.get()
+            if (!(mainFacing.clockWise.equals(fanFacing) || mainFacing.counterClockWise.equals(fanFacing)))
+                e.event.setCanceled(true)
+        }
+    })
+    
+})
 // /**
 //  * 
 //  * @param {Internal.Level} level 
@@ -105,22 +125,3 @@ const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPar
 //     oldRecipe.duration *= durationMultipler
 //     e.event.setRecipe(oldRecipe)
 // })
-MBDMachineEvents.onBeforeRecipeWorking("mbd2:hydropower_station", e => {
-    /**
-     * @type {Internal.MBDMultiblockMachine}
-     */
-    let machine = e.event.machine
-    let mainFacing = machine.frontFacing.get()
-    machine.getParts().forEach(ipart => {
-        /**
-         * @type {Internal.MBDPartMachine}
-         */
-        let part = ipart
-        if (part.definition.id() == "mbd2:hydropower_station_fan") {
-            let fanFacing = part.frontFacing.get()
-            if (!(mainFacing.clockWise.equals(fanFacing) || mainFacing.counterClockWise.equals(fanFacing)))
-                e.event.setCanceled(true)
-        }
-    })
-    
-})

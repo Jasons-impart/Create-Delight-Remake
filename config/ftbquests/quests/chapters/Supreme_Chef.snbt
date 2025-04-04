@@ -3859,7 +3859,7 @@
 			tasks: [
 				{
 					id: "3607B57D20FF2A7D"
-					item: "mbd2:butchery_room"
+					item: "createdelight:butchery_room"
 					type: "item"
 				}
 				{
