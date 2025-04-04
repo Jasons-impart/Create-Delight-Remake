@@ -12,6 +12,16 @@
 		"type": "tetra:locked",
 		"key": "tetra:bow/stave/dreadnought_stave"
 	},
+	"translation": {
+		"primaryAttributes": {
+			"tetra:draw_speed": -1,
+			"tetra:draw_strength": 2
+		},
+		"tertiaryAttributes": {
+			"tetra:draw_speed": 1,
+			"tetra:draw_strength": 1
+		}
+	},
 	"outcomes": [
 		{
 			"material": {
