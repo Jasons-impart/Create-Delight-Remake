@@ -58,40 +58,25 @@ if not "!MAJOR_VER!"=="!RECOMMENDED_JAVA_VER!" (
     exit /b 1
 )
 
-@REM 检测生成的服务器JAR文件，如果没有则调用Forge安装服务器
-if not exist server.jar (
-    echo No server.jar found, installing Forge server...
+@REM 检测安装完毕后生成的run.bat文件，如果没有则调用Forge安装服务器
+echo Checking run.bat server existence...
+if not exist run.bat (
+    echo No run.bat found, installing Forge server...
     %JAVA% -jar forge.jar --installServer
     if errorlevel 1 (
         echo Forge install error, please check error message above
         pause
         exit /b 1
     )
-    if not exist server.jar (
-       echo Forge install succeed but server.jar not found, please check if server.jar exists in current directory
+    if not exist run.bat (
+       echo Forge install succeed but run.bat not found, please check if run.bat exists in current directory
        pause
        exit /b 1 
     )
 )
 
-@REM 检查EULA
-findstr /i "eula=true" eula.txt >nul 2>&1
-if errorlevel 1 (
-    echo Mojang's EULA has not yet been accepted. In order to run a Minecraft server, you must accept Mojang's EULA.
-    echo Mojang's EULA is available to read at https://aka.ms/MinecraftEULA
-    echo If you agree to Mojang's EULA then type 'I agree' below and press Enter.
-    set /p input="Enter your response: "
-    if /i "!input!"=="I agree" (
-        echo You have agreed to Mojang's EULA. The server will now start.
-        echo eula=true > eula.txt
-    ) else (
-        echo You did not agree to the EULA. The server cannot start.
-        pause
-        exit /b 1
-    )
-)
-
 @REM 写入默认配置
+echo Writing default config...
 if not exist server.properties (
     echo !JVM_ARGS! > user_jvm_args.txt
     echo allow-flight=true >> server.properties
@@ -99,8 +84,8 @@ if not exist server.properties (
     echo max-players=8 >> server.properties
 )
 
-@REM @REM 启动服务器
-@REM echo Launching server...
-@REM call ./run.bat
+@REM 启动服务器
+echo Launching server...
+run.bat
 
 endlocal

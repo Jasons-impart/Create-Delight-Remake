@@ -82,11 +82,11 @@ jobs:
           FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
           FORGE_URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
-          SERVER_JAR_URL="https://github.com/neoforged/ServerStarterJar/releases/latest/download/server.jar"
           echo "$FORGE_URL"
-          echo "$SERVER_JAR_URL"
-          curl -L -o "${{ github.workspace }}/main/forge-$MINECRAFT-$FORGE-installer.jar" "$FORGE_URL"
-          curl -L -o ${{ github.workspace }}/main/server.jar "$SERVER_JAR_URL"
+          curl -L -o "${{ github.workspace }}/main/forge.jar" "$FORGE_URL"
+          # SERVER_JAR_URL="https://github.com/neoforged/ServerStarterJar/releases/latest/download/server.jar"
+          # echo "$SERVER_JAR_URL"
+          # curl -L -o ${{ github.workspace }}/main/server.jar "$SERVER_JAR_URL"
       - name: 服务端启动bat脚本改为CRLF
         run: |
           sudo apt-get install dos2unix
