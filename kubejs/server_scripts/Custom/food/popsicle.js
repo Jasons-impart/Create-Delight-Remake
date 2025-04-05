@@ -52,6 +52,7 @@ ServerEvents.recipes(e => {
     make_popsicle("fruitsdelight:hamimelon_popsicle", "fruitsdelight:hamimelon_slice", Fluid.of("fruitsdelight:hamimelon_juice", 250))
     make_popsicle("fruitsdelight:kiwi_popsicle", "fruitsdelight:kiwi", Fluid.of("fruitsdelight:kiwi_juice", 250))
     make_popsicle("casualness_delight:green_tongue", "minecraft:slime_ball", Fluid.of("createdelightcore:slime", 90))
+    make_popsicle("collectorsreap:lime_popsicle", "#forge:fruits/lime", Fluid.of("createdelight:limeade", 250))
     // make_popsicle("youkaishomecoming:milk_popsicle", "#forge:milk/milk_bottle", Fluid.of("minecraft:milk", 250))
     // e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "#forge:ice_cubes"])
     // .id("createdelight:deploying/big_popsicle")

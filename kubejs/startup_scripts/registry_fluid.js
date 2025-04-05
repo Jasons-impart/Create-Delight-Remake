@@ -134,7 +134,9 @@ StartupEvents.registry("fluid", e => {
         ["strawberry", 0xf4bcea],
         ["banana", 0xfce285],
         ["mint", 0x8bf1ac],
-        ["adzuki", 0xfcc4b3]
+        ["adzuki", 0xfcc4b3],
+        ["lime", 0x35b71a],
+        ["pomegranate", 0xc62700]
     ]
     icecream_list.forEach((list) => {
         e.create(`createdelight:${list[0]}_milkshake`)
@@ -162,4 +164,29 @@ StartupEvents.registry("fluid", e => {
             .translationKey(`fluid.createdelight.${fluid[0]}_fluid`)
             .translationKey(`block.createdelight.${fluid[0]}_fluid`)
         })
+    
+        e.create("createdelight:limeade")
+        .thinTexture(0X35B71A)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.limeade")
+        
+        e.create("createdelight:berry_limeade")
+        .thinTexture(0XC62700)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.berry_limeade")
+        
+        e.create("createdelight:pink_limeade")
+        .thinTexture(0XFCA997)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.pink_limeade")
+        
+        e.create("createdelight:mint_limeade")
+        .thinTexture(0X17CC19)
+        .noBlock()
+        .noBucket()
+        .translationKey("fluid.createdelight.mint_limeade")
+
 })
