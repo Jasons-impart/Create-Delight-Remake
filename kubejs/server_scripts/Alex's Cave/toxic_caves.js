@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
       .id("alexscaves:pressurizing/toxic_paste")
 
   //离心核废料
-  e.recipes.vintageimprovements.centrifugation(
+  centrifugation(e,
       ["4x alexscaves:uranium_shard",
           Fluid.of("alexscaves:acid").withAmount(250)
       ],

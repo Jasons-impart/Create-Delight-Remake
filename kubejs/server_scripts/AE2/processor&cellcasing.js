@@ -406,8 +406,7 @@ ServerEvents.recipes((event) => {
       "ae2:sky_dust",
     ])
     .id("createdelight:regeneration_of_redstone_1");
-  vintageimprovements
-    .centrifugation(
+centrifugation(event,
       ["4x #forge:dusts/redstone", Fluid.of("createdelight:spent_liquor", 250)],
       Fluid.of("createdelight:sky_solution", 250)
     )

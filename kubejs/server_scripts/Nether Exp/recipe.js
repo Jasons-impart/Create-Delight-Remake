@@ -36,8 +36,8 @@ ServerEvents.recipes(e => {
 
     create.compacting(Fluid.of("netherexp:ectoplasm", 200), "netherexp:wraithing_flesh")
     .id("netherexp:compating/wraithing_flesh")
-    vintageimprovements.centrifugation(["minecraft:rotten_flesh", Fluid.of("netherexp:ectoplasm", 100)], "netherexp:wraithing_flesh")
+    centrifugation(e, ["minecraft:rotten_flesh", Fluid.of("netherexp:ectoplasm", 100)], "netherexp:wraithing_flesh")
     .id("netherexp:centrifugation/wraithing_flesh")
-    vintageimprovements.centrifugation(["minecraft:pumpkin", Fluid.of("netherexp:ectoplasm", 500)], "netherexp:sorrowsquash")
+    centrifugation(e, ["minecraft:pumpkin", Fluid.of("netherexp:ectoplasm", 500)], "netherexp:sorrowsquash")
     .id("netherexp:centrifugation/sorrowsquash")
 })
