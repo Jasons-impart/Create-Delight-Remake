@@ -1,0 +1,271 @@
+{
+    "content": {
+		"guardian_obj_zombie": {
+			"type": "entity",
+			"content": "minecraft:zombie",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 500
+		},
+		"guardian_obj_skeleton": {
+			"type": "entity",
+			"content": "minecraft:skeleton",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 500
+		},
+		"guardian_obj_creeper": {
+			"type": "entity",
+			"content": "minecraft:creeper",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+		"guardian_obj_husk": {
+			"type": "entity",
+			"content": "minecraft:husk",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+		"guardian_obj_stray": {
+			"type": "entity",
+			"content": "minecraft:stray",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+        
+		"guardian_obj_zombie_uncommon": {
+			"type": "entity",
+			"content": "minecraft:zombie",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 500
+		},
+		"guardian_obj_skeleton_uncommon": {
+			"type": "entity",
+			"content": "minecraft:skeleton",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 500
+		},
+		"guardian_obj_creeper_uncommon": {
+			"type": "entity",
+			"content": "minecraft:creeper",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+		"guardian_obj_husk_uncommon": {
+			"type": "entity",
+			"content": "minecraft:husk",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+		"guardian_obj_stray_uncommon": {
+			"type": "entity",
+			"content": "minecraft:stray",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 800,
+			"weightMult": 0.5
+		},
+		"guardian_obj_pillager": {
+			"type": "entity",
+			"content": "minecraft:pillager",
+            "rarity": "UNCOMMON",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 900,
+			"weightMult": 0.6
+		},
+		"guardian_obj_zombie_rare": {
+			"type": "entity",
+			"content": "minecraft:zombie",
+            "rarity": "RARE",
+			"amount": {
+				"min": 6,
+				"max": 16
+			},
+			"unitWorth": 800,
+			"weightMult": 0.8
+		},
+		"guardian_obj_skeleton_rare": {
+			"type": "entity",
+			"content": "minecraft:skeleton",
+            "rarity": "RARE",
+			"amount": {
+				"min": 6,
+				"max": 16
+			},
+			"unitWorth": 800,
+			"weightMult": 0.8
+		},
+		"guardian_obj_creeper_rare": {
+			"type": "entity",
+			"content": "minecraft:creeper",
+            "rarity": "RARE",
+			"amount": {
+				"min": 6,
+				"max": 16
+			},
+			"unitWorth": 800,
+			"weightMult": 0.4
+		},
+		"guardian_obj_husk_rare": {
+			"type": "entity",
+			"content": "minecraft:husk",
+            "rarity": "RARE",
+			"amount": {
+				"min": 6,
+				"max": 16
+			},
+			"unitWorth": 800,
+			"weightMult": 0.4
+		},
+		"guardian_obj_stray_rare": {
+			"type": "entity",
+			"content": "minecraft:stray",
+            "rarity": "RARE",
+			"amount": {
+				"min": 6,
+				"max": 16
+			},
+			"unitWorth": 800,
+			"weightMult": 0.4
+		},
+		"guardian_obj_pillager_rare": {
+			"type": "entity",
+			"content": "minecraft:pillager",
+            "rarity": "RARE",
+			"amount": {
+				"min": 3,
+				"max": 8
+			},
+			"unitWorth": 900,
+			"weightMult": 0.6
+		},
+		"guardian_obj_creeper_epic": {
+			"type": "entity",
+			"content": "minecraft:creeper",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 8,
+				"max": 16
+			},
+			"unitWorth": 1200,
+			"weightMult": 0.4
+		},
+		"guardian_obj_husk_epic": {
+			"type": "entity",
+			"content": "minecraft:husk",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 8,
+				"max": 16
+			},
+			"unitWorth": 1200,
+			"weightMult": 0.4
+		},
+		"guardian_obj_stray_epic": {
+			"type": "entity",
+			"content": "minecraft:stray",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 8,
+				"max": 16
+			},
+			"unitWorth": 1200,
+			"weightMult": 0.4
+		},
+		"guardian_obj_pillager_epic": {
+			"type": "entity",
+			"content": "minecraft:pillager",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 8,
+				"max": 16
+			},
+			"unitWorth": 1500,
+			"weightMult": 0.2
+		},
+		"guardian_obj_vindicator_epic": {
+			"type": "entity",
+			"content": "minecraft:vindicator",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 2,
+				"max": 6
+			},
+			"unitWorth": 2000,
+			"weightMult": 0.2
+		},
+		"guardian_obj_evoker": {
+			"type": "entity",
+			"content": "minecraft:evoker",
+            "rarity": "EPIC",
+			"amount": {
+				"min": 1,
+				"max": 1
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.2
+		},
+		"guardian_obj_evoker_legendary": {
+			"type": "entity",
+			"content": "minecraft:evoker",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 1,
+				"max": 4
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.1
+		},
+		"guardian_obj_ravager": {
+			"type": "entity",
+			"content": "minecraft:ravager",
+            "rarity": "LEGENDARY",
+			"amount": {
+				"min": 1,
+				"max": 2
+			},
+			"unitWorth": 9000,
+			"weightMult": 0.2
+		}
+    }
+}

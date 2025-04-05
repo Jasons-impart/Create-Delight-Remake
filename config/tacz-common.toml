@@ -31,6 +31,7 @@
 	IgniteEntity = true
 
 [other]
+	#Deprecated: now move to .minecraft/tacz/tacz-pre.toml or <your version>/tacz/tacz-pre.toml
 	#When enabled, the reload command will not overwrite the default model file under config
 	DefaultPackDebug = true
 	#The farthest sound distance of the target, including minecarts type
@@ -44,6 +45,4 @@
 	#The maximum latency (in milliseconds) for the server hitbox latency fix saved
 	#Range: 250.0 ~ 1.7976931348623157E308
 	ServerHitboxLatencyMaxSaveMs = 1000.0
-	#The gun pack that the client player needs to download, needs to fill in the URL and the SHA1 value of the file
-	ClientGunPackDownloadUrls = []
 

@@ -14,30 +14,6 @@ StartupEvents.registry("fluid", e => {
         .translationKey("item.createdelight.whipped_cream_bucket")
         .createAttributes()
         .tickDelay(10)
-    // 熔融流体
-    let molten_fluids = [
-        "andesite",
-        "desh", 
-        "ostrum", 
-        "calorite", 
-        "scarlet_neodymium", 
-        "azure_neodymium",
-        "fire_steel",
-        "ice_steel",
-        "lightning_steel",
-        "forged_steel"
-    ]
-    molten_fluids.forEach(molten_fluid => {
-        e.create(`createdelight:molten_${molten_fluid}`)
-            .stillTexture(`createdelight:fluid/molten_${molten_fluid}/still`)
-            .flowingTexture(`createdelight:fluid/molten_${molten_fluid}/flowing`)
-            .translationKey(`fluid.createdelight.molten_${molten_fluid}`)
-            .translationKey(`block.createdelight.molten_${molten_fluid}`)
-            .translationKey(`item.createdelight.molten_${molten_fluid}_bucket`)
-            .tag("forge:molten_materials")
-            .createAttributes()
-            .tickDelay(20)
-    });
 
     // 龙血相关
     let bloods = [
@@ -131,15 +107,6 @@ StartupEvents.registry("fluid", e => {
         .noBlock()
         .translationKey("fluid.createdelight.vinegar")
         .translationKey("item.createdelight.vinegar_bucket")
-    //黏液
-    e.create("createdelight:slime")
-        .thickTexture(0x04FF00)
-        .bucketColor(0x04FF00)
-        .translationKey("fluid.createdelight.slime")
-        .translationKey("block.createdelight.slime")
-        .translationKey("item.createdelight.slime_bucket")
-        .createAttributes()
-        .tickDelay(20)
     //氡气
     e.create("createdelight:radon")
         .thinTexture(0XA0FFDA)
@@ -153,6 +120,13 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.unrefined_sugar")
         .translationKey("block.createdelight.unrefined_sugar")
         .translationKey("item.createdelight.unrefined_sugar_bucket")
+    //酵母
+    e.create("createdelight:yeast")
+    .thickTexture(0x9B897E)
+    .translationKey("fluid.createdelight.yeast")
+    .translationKey("block.createdelight.yeast")
+    .translationKey("item.createdelight.yeast_bucket")
+
     //冰淇淋流体
     let icecream_list = [
         ["vanilla", 0xfceeca],
@@ -165,16 +139,6 @@ StartupEvents.registry("fluid", e => {
         ["pomegranate", 0xc62700]
     ]
     icecream_list.forEach((list) => {
-        e.create(`createdelight:${list[0]}_ice_cream`)
-            .stillTexture(`createdelight:fluid/${list[0]}_ice_cream/${list[0]}_ice_cream_still`)
-            .flowingTexture(`createdelight:fluid/${list[0]}_ice_cream/${list[0]}_ice_cream_flow`)
-            .bucketColor(list[1])
-            .translationKey(`fluid.createdelight.${list[0]}_ice_cream`)
-            .translationKey(`block.createdelight.${list[0]}_ice_cream`)
-            .translationKey(`item.createdelight.${list[0]}_ice_cream_bucket`)
-            .createAttributes()
-            .tickDelay(20)
-
         e.create(`createdelight:${list[0]}_milkshake`)
             .thinTexture(list[1])
             .bucketColor(list[1])

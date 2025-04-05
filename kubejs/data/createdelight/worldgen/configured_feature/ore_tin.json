@@ -6,7 +6,7 @@
 		"targets": [
 			{
 				"state": {
-					"Name": "createdelight:tin_ore"
+					"Name": "createdelightcore:tin_ore"
 				},
 				"target": {
 					"predicate_type": "minecraft:tag_match",
@@ -15,7 +15,7 @@
 			},
 			{
 				"state": {
-					"Name": "createdelight:deepslate_tin_ore"
+					"Name": "createdelightcore:deepslate_tin_ore"
 				},
 				"target": {
 					"predicate_type": "minecraft:tag_match",

@@ -1,0 +1,21 @@
+ServerEvents.tags("item", e => {
+  e.add("butchercraft:carcass", [
+    'butchercraft:cow_carcass',
+    'butchercraft:sheep_carcass',
+    'butchercraft:pig_carcass',
+    'butchercraft:chicken_carcass',
+    'butchercraft:goat_carcass',
+    '#butchercraft:rabbit_carcass',
+    'butchercraft:cow_head_item',
+    'butchercraft:sheep_head_item',
+    'butchercraft:pig_head_item',
+    'butchercraft:chicken_head_item',
+    'butchercraft:goat_head_item',
+    'butchercraft:rabbit_salt_head_item',
+    'butchercraft:rabbit_splotched_head_item',
+    'butchercraft:rabbit_white_head_item',
+    'butchercraft:rabbit_black_head_item',
+    'butchercraft:rabbit_brown_head_item',
+    'butchercraft:rabbit_gold_head_item',
+  ])
+})

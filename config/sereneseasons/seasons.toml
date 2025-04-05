@@ -20,7 +20,7 @@
 	#10 - 12 = Early/Mid/Late Winter
 	starting_sub_season = 1
 	#If the season should progress on a server with no players online
-	progress_season_while_offline = true
+	progress_season_while_offline = false
 
 [aesthetic_settings]
 	#Change the grass color based on the current season

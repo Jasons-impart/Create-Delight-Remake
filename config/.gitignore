@@ -15,6 +15,7 @@
 !/trades
 !/bountiful
 !/bettercombat
+!/ae2
 !/alexsmobs.toml
 !/alexscaves_biome_generation
 !/dynamiccrosshair.json5
@@ -34,15 +35,18 @@
 !/imblocker-client.toml
 !/improvedmobs
 !/butchercraft-common.toml
+!/pickupnotifier
 !/shouldersurfing-client.toml
 !/tacz
 !/tacz-common.toml
+!/tips.json
 !/treechop-common.toml
 !/waystones-common.toml
 !/vinery
 !/quark-common.toml
 !/vintageimprovements*
 xaerominimap_entities.json
+!/world-gen.json
 !/ad_astra*
 !/sereneseasons
 !/chat_heads.json5
@@ -59,3 +63,5 @@ xaerominimap_entities.json
 !/vvaddon.toml
 !/moreburners-common.toml
 !/sleep_tight-common.toml
+!/embeddium++.toml
+!/fml.toml

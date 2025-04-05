@@ -28,8 +28,8 @@ ServerEvents.recipes(e => {
     e.recipes.create.sequenced_assembly("create_new_age:reinforced_motor", "create_new_age:advanced_motor",
         [
             e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 250)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_azure_neodymium", 250)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:molten_scarlet_neodymium", 250)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 250)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 250)]),
             e.recipes.create.deploying(iner_2, [iner_2, "create_new_age:overcharged_diamond"]),
             e.recipes.create.deploying(iner_2, [iner_2, "createaddition:brass_rod"])
         ]
@@ -42,13 +42,13 @@ ServerEvents.recipes(e => {
     e.recipes.create.filling("design_decor:industrial_gear",
         [
             "create:cogwheel",
-            Fluid.of("createmetallurgy:molten_steel", 250)
+            Fluid.of("createmetallurgy:molten_steel", 10)
         ]
     ).id("design_decor:item_application/industrial_gear")
     e.recipes.create.filling("design_decor:industrial_gear_large",
         [
             "create:large_cogwheel",
-            Fluid.of("createmetallurgy:molten_steel", 250)
+            Fluid.of("createmetallurgy:molten_steel", 10)
         ]
     ).id("design_decor:item_application/industrial_gear_large")
     //行星齿轮

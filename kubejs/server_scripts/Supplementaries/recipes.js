@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_output(e, [
+        "supplementaries:sugar_cube"
+    ])
     // 古式墨水
     let iner_1 = "minecraft:glass_bottle"
     e.recipes.create.sequenced_assembly('supplementaries:antique_ink', 'minecraft:glass_bottle', 

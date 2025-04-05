@@ -1,0 +1,196 @@
+{
+    "content": {
+        "guardian_obj_chainmail_helmet": {
+            "type": "item",
+            "content": "minecraft:chainmail_helmet",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.25
+        },
+        "guardian_obj_chainmail_chestplate": {
+            "type": "item",
+            "content": "minecraft:chainmail_chestplate",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.25
+        },
+        "guardian_obj_chainmail_leggings": {
+            "type": "item",
+            "content": "minecraft:chainmail_leggings",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.25
+        },
+        "guardian_obj_chainmail_boots": {
+            "type": "item",
+            "content": "minecraft:chainmail_boots",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.25
+        },
+        "guardian_obj_arrow": {
+            "type": "item",
+            "content": "minecraft:arrow",
+            "amount": {
+                "min": 1,
+                "max": 16
+            },
+            "unitWorth": 100,
+			"weightMult": 0.25
+        },
+        "guardian_obj_copper_sword": {
+            "type": "item",
+            "content": "create_sa:copper_sword",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.25
+        },
+        "guardian_obj_iron_helmet": {
+            "type": "item",
+            "content": "minecraft:iron_helmet",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 2700,
+			"weightMult": 0.15
+        },
+        "guardian_obj_iron_chestplate": {
+            "type": "item",
+            "content": "minecraft:iron_chestplate",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 2700,
+			"weightMult": 0.15
+        },
+        "guardian_obj_iron_leggings": {
+            "type": "item",
+            "content": "minecraft:iron_leggings",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 2700,
+			"weightMult": 0.15
+        },
+        "guardian_obj_iron_boots": {
+            "type": "item",
+            "content": "minecraft:iron_boots",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 2700,
+			"weightMult": 0.15
+        },
+        "guardian_obj_iron_sword": {
+            "type": "item",
+            "content": "minecraft:iron_sword",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 1,
+                "max": 1
+            },
+            "unitWorth": 1800,
+			"weightMult": 0.15
+        },
+        "guardian_obj_arrow_uncommon": {
+            "type": "item",
+            "content": "minecraft:arrow",
+            "rarity": "UNCOMMON",
+            "amount": {
+                "min": 8,
+                "max": 24
+            },
+            "unitWorth": 100,
+			"weightMult": 0.1
+        },
+        "guardian_obj_arrow_rare": {
+            "type": "item",
+            "content": "minecraft:arrow",
+            "rarity": "RARE",
+            "amount": {
+                "min": 16,
+                "max": 32
+            },
+            "unitWorth": 100,
+			"weightMult": 0.1
+        },
+        "guardian_obj_iron_ingot": {
+            "type": "item",
+            "content": "minecraft:iron_ingot",
+            "rarity": "RARE",
+            "amount": {
+                "min": 4,
+                "max": 10
+            },
+            "unitWorth": 900,
+			"weightMult": 0.1
+        },
+        "guardian_obj_diamond": {
+            "type": "item",
+            "content": "minecraft:diamond",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 1,
+                "max": 2
+            },
+            "unitWorth": 6400,
+			"weightMult": 0.1
+        },
+        "guardian_obj_arrow_epic": {
+            "type": "item",
+            "content": "minecraft:arrow",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 32,
+                "max": 48
+            },
+            "unitWorth": 100,
+			"weightMult": 0.15
+        },
+        "guardian_obj_arrow_legendary": {
+            "type": "item",
+            "content": "minecraft:arrow",
+            "rarity": "EPIC",
+            "amount": {
+                "min": 48,
+                "max": 64
+            },
+            "unitWorth": 100,
+			"weightMult": 0.1
+        },
+        "guardian_obj_diamond_legendary": {
+            "type": "item",
+            "content": "minecraft:diamond",
+            "rarity": "LEGENDARY",
+            "amount": {
+                "min": 3,
+                "max": 4
+            },
+            "unitWorth": 6400,
+			"weightMult": 0.1
+        }
+    }
+}

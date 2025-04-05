@@ -16,7 +16,7 @@
 	"generic.attack_damage": 2
     },
     "effects": {
-        "art_of_forging:goliath_slayer": 50,
+        "createdelight:overwhelm": 4,
         "intuit": 5   
     },
     "tints": {

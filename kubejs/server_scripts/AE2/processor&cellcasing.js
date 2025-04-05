@@ -23,6 +23,8 @@ function make_growing_cluster(e, transitionItems, fluid, amount) {
 ServerEvents.recipes((event) => {
   const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
 
+  event.remove({id: "create:mixing/compat/ae2/fluix_crystal"})
+
   event.remove({ id: "expatternprovider:cobblestone_cell" });
   event.remove({ id: "expatternprovider:water_cell" });
   event.remove({ id: "megacells:cells/standard/bulk_item_cell" });
@@ -77,10 +79,28 @@ ServerEvents.recipes((event) => {
     .curving("ae2:printed_silicon", "ae2:silicon")
     .head("ae2:silicon_press")
     .id("createdelight:universal_press_11");
+
+  
   vintageimprovements
-    .curving("createdelight:universal_press", "minecraft:iron_block")
-    .head("createdelight:universal_press")
-    .id("createdelight:universal_press_12");
+    .curving("ae2:engineering_processor_press", "minecraft:iron_block")
+    .head("ae2:engineering_processor_press")
+    .id("createdelight:engineering_processor_press_copy");
+  vintageimprovements
+    .curving("megacells:accumulation_processor_press", "minecraft:iron_block")
+    .head("megacells:accumulation_processor_press")
+    .id("createdelight:accumulation_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:calculation_processor_press", "minecraft:iron_block")
+    .head("ae2:calculation_processor_press")
+    .id("createdelight:calculation_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:logic_processor_press", "minecraft:iron_block")
+    .head("ae2:logic_processor_press")
+    .id("createdelight:logic_processor_press_copy");
+  vintageimprovements
+    .curving("ae2:silicon_press", "minecraft:iron_block")
+    .head("ae2:silicon_press")
+    .id("createdelight:silicon_press_copy");
 
   let custom_inscribe = (result, middle, other) => {
     event
@@ -336,11 +356,11 @@ ServerEvents.recipes((event) => {
 
   // 陨钢锭
   create
-    .mixing("2x megacells:sky_steel_ingot", [
-      "#forge:ingots/iron",
-      "ae2:charged_certus_quartz_crystal",
-      "ae2:sky_stone_block",
-      Fluid.of("minecraft:lava", 250),
+    .mixing("16x megacells:sky_steel_ingot", [
+      "8x #forge:ingots/iron",
+      "8x ae2:charged_certus_quartz_crystal",
+      "8x ae2:sky_stone_block",
+      Fluid.of("minecraft:lava", 500),
     ])
     .id("createdelight:sky_steel_ingot");
 
@@ -737,13 +757,29 @@ ServerEvents.recipes((event) => {
     .id("create:compat/crushing/certus_quartz_dust");
 
   create
-    .mixing("2x ae2:certus_quartz_crystal", [
-      Fluid.water(250),
-      "ae2:certus_quartz_dust",
-      "ae2:charged_certus_quartz_crystal",
+    .mixing("16x ae2:certus_quartz_crystal", [
+      Fluid.water(500),
+      "8x ae2:certus_quartz_dust",
+      "8x ae2:charged_certus_quartz_crystal",
     ])
     .id("create:compat/mixing/certus_quartz_crystal");
-
+  create
+    .mixing("16x ae2:fluix_crystal", [
+      Fluid.water(500),
+      "8x minecraft:redstone",
+      "8x ae2:charged_certus_quartz_crystal",
+      "8x minecraft:quartz"
+    ])
+    .id("create:mixing/compat/ae2/fluix_crystal");
+  // 使用赛特斯石英直接产磨制玫瑰石英
+  vintageimprovements
+    .pressurizing(
+      "create:polished_rose_quartz", [
+        FluidIngredients("forge:molten_iron", 90),
+        "ae2:certus_quartz_crystal"
+      ]
+    ).secondaryFluidInput(0)
+    .id("vintageimprovements:pressurizing/polished_rose_quartz")
   // 荧石再生
   vintageimprovements
     .pressurizing(

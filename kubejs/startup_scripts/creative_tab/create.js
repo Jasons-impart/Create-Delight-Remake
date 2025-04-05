@@ -29,14 +29,6 @@ StartupEvents.modifyCreativeTab("create:base", e => {
     ])
   })
   
-  // 柴油动力
-  StartupEvents.modifyCreativeTab("createdieselgenerators:cdg_creative_tab", e => {
-    e.remove([
-      'createdieselgenerators:kelp_handle',
-      'createdieselgenerators:chemical_sprayer',
-      'createdieselgenerators:chemical_sprayer_lighter'
-    ])
-  })
   // 机械动力：新世代
   StartupEvents.modifyCreativeTab("create_new_age:create_new_age_tab", e => {
     e.remove([
@@ -79,10 +71,6 @@ StartupEvents.modifyCreativeTab("create:base", e => {
   // create_sa
   StartupEvents.modifyCreativeTab("create_sa:create_stuff_additions_tab", e => {
     e.remove([
-      'create_sa:brass_drone_item',
-      'create_sa:drone_controller',
-      'create_sa:fan_component',
-      'create_sa:vault_component',
       'create_sa:blazing_pickaxe',
       'create_sa:blazing_shovel',
       'create_sa:blazing_axe',
@@ -123,5 +111,11 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     Item.of('ad_astra:tier_2_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
     Item.of('ad_astra:tier_3_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
     Item.of('ad_astra:tier_4_rocket', '{BotariumData:{StoredFluids:[{Amount:0L,Fluid:"minecraft:empty"}]}}').strongNBT(),
+  ])
+})
+//加农炮
+StartupEvents.modifyCreativeTab("createbigcannons:base", e => {
+  e.remove([
+    'createbigcannons:molten_bronze_bucket'
   ])
 })

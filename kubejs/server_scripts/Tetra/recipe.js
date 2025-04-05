@@ -94,4 +94,12 @@ ServerEvents.recipes(e => {
     .id("tetra:rolling/forged_beam")
     create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
     .id("tetra:deploying/forged_bolt")
+    vintageimprovements.pressurizing([
+        Item.of("art_of_forging:nano_insectoid").withChance(0.95),
+        "3x tetra:metal_scrap",
+        Item.of("2x tetra:metal_scrap").withChance(0.5),
+        Item.of("2x tetra:metal_scrap").withChance(0.25)], [
+            "art_of_forging:nano_insectoid",
+            "art_of_forging:forged_steel_ingot"
+        ]).id("tetra:pressurizing/metal_scrap")
 })

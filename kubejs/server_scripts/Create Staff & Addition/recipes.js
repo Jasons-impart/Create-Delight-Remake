@@ -11,14 +11,8 @@ ServerEvents.recipes(e => {
         "create_sa:experience_axe_recipe",
         "create_sa:experience_sword_recipe",
         "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
-        "create_sa:zinc_handle_recipe"
-    ])
-    remove_recipes_output(e, [
-        "create_sa:brass_cube",
-        "create_sa:drone_controller",
-        "create_sa:fan_component",
-        "create_sa:vault_component",
-        "create_sa:brass_drone_item",
+        "create_sa:zinc_handle_recipe",
+        "create_sa:block_picker_recipe"
     ])
     e.replaceInput({mod: "create_sa" }, 'create_sa:zinc_handle', '#forge:rods/zinc')
     e.replaceInput({id: "create_sa:copper_magnet_recipe"}, "minecraft:netherite_ingot", "alexscaves_torpedoes:pocket_magnet")

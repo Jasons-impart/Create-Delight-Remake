@@ -14,5 +14,26 @@ ServerEvents.tags("minecraft:item", e => {
         'festival_delicacies:garlic_chive_egg_boiled_dumpling',
         'festival_delicacies:dandelion_leaf_boiled_dumpling',
         'festival_delicacies:pufferfish_boiled_dumpling',
-        'festival_delicacies:rabbit_meat_boiled_dumpling'])
+        'festival_delicacies:rabbit_meat_boiled_dumpling'
+    ])
+    e.add("forge:seeds", 
+        [
+            'festival_delicacies:chinese_cabbage_seeds',
+            'festival_delicacies:eggplant_seeds',
+            'festival_delicacies:garlic_chive_seeds',
+            'festival_delicacies:fennel_seeds',
+            'festival_delicacies:garlic'
+        ]
+    )
+})
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:crops", [
+        "festival_delicacies:fennel",
+        "festival_delicacies:chinese_cabbage",
+        "festival_delicacies:eggplant",
+        "festival_delicacies:garlic_chive",
+        "festival_delicacies:garlic",
+        "festival_delicacies:greenonion"
+    ])
 })

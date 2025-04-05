@@ -1,6 +1,6 @@
 {
     "fluid": "ad_astra:hydrogen",
     "burnTime": 20,
-    "superHeat": true,
+    "superHeat": false,
     "amountConsumedPerTick": 1
 }

@@ -91,7 +91,11 @@ ServerEvents.tags("block", e => {
         "neapolitan:strawberry_bush",
         "neapolitan:vanilla_vine",
         "createdelight:adzuki_beans_seed",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "vintagedelight:ghost_pepper_crop",
+        "createdelight:adzuki_beans",
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:summer_crops", [
         "vintagedelight:oat_crop",
@@ -111,7 +115,9 @@ ServerEvents.tags("block", e => {
         "oceanic_delight:sea_grape_plant",
         "neapolitan:mint",
         "neapolitan:vanilla_vine",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:autumn_crops", [
         "frycooks_delight:canola_plant",
@@ -135,11 +141,16 @@ ServerEvents.tags("block", e => {
         "vinery:taiga_grape_bush_white",
         "oceanic_delight:sea_grape_plant",
         "neapolitan:small_banana_frond",
+        "neapolitan:banana_frond",
+        "neapolitan:large_banana_frond",
         "neapolitan:mint",
         "neapolitan:strawberry_bush",
         "neapolitan:vanilla_vine",
         "createdelight:adzuki_beans_seed",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "createdelight:adzuki_beans",
+        "createdelight:artemisia_argyi",
+        "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:winter_crops", [
         "createcafe:cassava_crop",
@@ -149,5 +160,14 @@ ServerEvents.tags("block", e => {
         "neapolitan:mint",
         "neapolitan:vanilla_vine"
     ])
-
+    e.add("sereneseasons:greenhouse_glass", 
+        "crystal_clear:andesite_clear_glass_casing",
+        "crystal_clear:andesite_glass_casing",
+        "crystal_clear:copper_clear_glass_casing",
+        "crystal_clear:copper_glass_casing",
+        "crystal_clear:brass_clear_glass_casing",
+        "crystal_clear:brass_glass_casing",
+        "crystal_clear:train_clear_glass_casing",
+        "crystal_clear:train_glass_casing"
+    )
 })

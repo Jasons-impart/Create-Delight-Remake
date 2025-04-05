@@ -22,4 +22,5 @@ ServerEvents.recipes(e => {
         melting_block("#createbigcannons:block_nethersteel", "createbigcannons:molten_nethersteel", 120)
         melting_block("#forge:storage_blocks/steel", "createmetallurgy:molten_steel", 120)
         melting_block("#forge:storage_blocks/netherite", "createmetallurgy:molten_netherite", 120)
+        melting_block("#forge:storage_blocks/electrum", "createmetallurgy:molten_electrum", 120)
 })

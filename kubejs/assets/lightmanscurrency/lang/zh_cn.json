@@ -801,6 +801,9 @@
 	"item.lightmanscurrency.coin_chest_magnet_upgrade_3": "磁铁升级 (金)",
 	"item.lightmanscurrency.coin_chest_magnet_upgrade_4": "磁铁升级 (绿宝石)",
 	"item.lightmanscurrency.coin_chest_security_upgrade": "保险柜升级",
+	"item.lightmanscurrency.interaction_upgrade_1": "交互升级 (绿宝石)",
+	"item.lightmanscurrency.interaction_upgrade_2": "交互升级 (钻石)",
+	"item.lightmanscurrency.interaction_upgrade_3": "交互升级 (下界合金)",
 
 	"item.lightmanscurrency.upgrade_smithing_template": "锻造模板",
 	"item.lightmanscurrency.upgrade_smithing_template.tooltip": "莱特曼的货币升级模板",
@@ -1257,8 +1260,8 @@
 	"gamerule.keepWallet" : "死亡时保留钱包",
 	"gamerule.coinDropPercent" : "死亡后钱币掉落的百分比",
 
-	"entity.minecraft.villager.lightmanscurrency.banker": "银行家",
-	"entity.minecraft.villager.lightmanscurrency.cashier": "收银员",
+	"entity.minecraft.villager.banker": "银行家",
+	"entity.minecraft.villager.cashier": "收银员",
 
 	"tooltip.lightmanscurrency.chocolate_coin.healing": "恢复%s点生命。",
 
@@ -1411,6 +1414,7 @@
 	"tooltip.lightmanscurrency.upgrade.coin_chest.protection.warning":"你没有打开这个钱币箱的权限！",
 	"tooltip.lightmanscurrency.upgrade.void.1": "使商人清空从顾客处购得的所有商品",
 	"tooltip.lightmanscurrency.upgrade.void.2": "仅供管理员使用，目的是防止伪创造模式下的商人货物堆满",  
+	"tooltip.lightmanscurrency.upgrade.interaction":"将交易终端可接入的交易设备或交易的数目增加%s",
 	"tooltip.lightmanscurrency.colored_item":"颜色: %s",
 	"tooltip.lightmanscurrency.credit": "%s",
 	"tooltip.lightmanscurrency.outofstock": "无存货",

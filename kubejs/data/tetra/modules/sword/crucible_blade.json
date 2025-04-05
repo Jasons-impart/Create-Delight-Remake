@@ -20,7 +20,7 @@
 			"sweeping": 1,
 			"abilityCombo": [ 5, 2 ],
 			"abilityExhilarated": [ 8, 2 ],
-                        "art_of_forging:goliath_slayer": 50
+			"createdelight:overwhelm": 4
 		},
 		"tools": {
 			"cut": [ 2, 3 ]

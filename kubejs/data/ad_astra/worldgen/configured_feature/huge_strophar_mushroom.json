@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:huge_brown_mushroom",
+  "config": {
+    "cap_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "ad_astra:strophar_cap"
+      }
+    },
+    "stem_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "ad_astra:strophar_stem"
+      }
+    }
+  }
+}

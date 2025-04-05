@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} 正在发布服务端新版本🚀
 on:
   push:
     branches:
-      - test-release
+      - test-server
       - release
 
 jobs:
@@ -39,30 +39,30 @@ jobs:
         with:
           file: ${{ github.workspace }}/main/pack.toml
           field: 'versions.forge'
-      - name: 输出版本号和包名
-        run: |
-          echo ${{ steps.read-modpackname.outputs.value }}
-          echo ${{ steps.read-version.outputs.value }}
-          echo ${{ steps.read-forge.outputs.value }}
-          echo ${{ steps.read-minecraft.outputs.value }}
       - name: 生成整合包nightly构建后缀
         id: set_version_prefix
         run: |
-          echo ${{ steps.read-modpackname.outputs.value }}
-          echo ${{ steps.read-version.outputs.value }}
-          if [[ $GITHUB_REF == refs/heads/test-release ]]; then
-            VERSION_SUFFIX=$(date +%m%d%H%M)
-            echo "VERSION_SUFFIX=-$VERSION_SUFFIX" >> $GITHUB_OUTPUT
+          if [[ $GITHUB_REF != refs/heads/release ]]; then
+            VERSION_SUFFIX="-nighly-build-${{ github.run_number }}"
+            echo "VERSION_SUFFIX=$VERSION_SUFFIX" >> $GITHUB_OUTPUT
           else
             echo "VERSION_SUFFIX=" >> $GITHUB_OUTPUT
           fi
-      - name: Read and delete packwiz ignore files
+      - name: 删除与服务端无关的文件
         run: |
-            mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
-            for prefix in "${prefixes[@]}"; do
-              echo "Deleting files with prefix: $prefix"
-              find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
-            done
+            # mapfile -t prefixes < ${{ github.workspace }}/main/.packwizignore
+            # for prefix in "${prefixes[@]}"; do
+            #   echo "Deleting files with prefix: $prefix"
+            #   find ${{ github.workspace }}/main -name "${prefix}*" -exec rm {} +
+            # done
+            rm -f ${{ github.workspace }}/main/ModList0.4a.md
+            rm -f ${{ github.workspace }}/main/README.md
+            rm -f ${{ github.workspace }}/main/TODOlist.md
+            rm -f ${{ github.workspace }}/main/KubeJSStyleGuide.md
+            rm -f ${{ github.workspace }}/main/DevGuide.md
+            rm -f ${{ github.workspace }}/main/pack.toml
+            rm -f ${{ github.workspace }}/main/index.toml
+            rm -f ${{ github.workspace }}/main/client_jvm_args.example.txt
       - name: Read and delete mods
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/main/.clientonlymodlist
@@ -70,9 +70,26 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/main/mods -name "${prefix}*" -exec rm {} +
             done
-      - name: 重命名server jvm参数配置样例
+      - name: 根据pack.toml的mc与forge版本替换服务安装脚本配置
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          mv ${{ github.workspace }}/main/.user_jvm_args.example.txt ${{ github.workspace }}/main/user_jvm_args.example.txt
+          sed -i "s/^MINECRAFT_VERSION=.*/MINECRAFT_VERSION=$MINECRAFT/" ${{ github.workspace }}/main/variables.txt
+          sed -i "s/^MODLOADER_VERSION=.*/MODLOADER_VERSION=$FORGE/" ${{ github.workspace }}/main/variables.txt
+          grep '^MINECRAFT_VERSION=' ${{ github.workspace }}/main/variables.txt
+          grep '^MODLOADER_VERSION=' ${{ github.workspace }}/main/variables.txt
+      - name: 下载forge与ServerStarterJar
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
+        run: |
+          FORGE_URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          SERVER_JAR_URL="https://github.com/neoforged/ServerStarterJar/releases/latest/download/server.jar"
+          echo "$FORGE_URL"
+          echo "$SERVER_JAR_URL"
+          curl -L -o "${{ github.workspace }}/main/forge-$MINECRAFT-$FORGE-installer.jar" "$FORGE_URL"
+          curl -L -o ${{ github.workspace }}/main/server.jar "$SERVER_JAR_URL"
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}/main
@@ -80,25 +97,18 @@ jobs:
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Server]-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          name: "Server-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
           path: ${{ github.workspace }}/main
-      - name: 下载forge
-        env:
-          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-          FORGE: ${{ steps.read-forge.outputs.value }}
-        run: |
-          URL="https://maven.minecraftforge.net/net/minecraftforge/forge/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
-          echo "$URL"
-          curl -L -o ${{ github.workspace }}/main/forge-installer.jar "$URL"
-      - name: 安装forge
-        run: |
-          cd ${{ github.workspace }}/main && java -jar forge-installer.jar nogui --installServer
-      - name: 上传带forge核心的包
-        uses: actions/upload-artifact@v4
-        with:
-          name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
-          path: ${{ github.workspace }}/main
-      - name: list file
-        run: |
-          ls ${{ github.workspace }}/main
+      # TODO：改成用server.jar安装
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }}/main && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
+      # - name: 上传带forge核心的包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+      #     path: ${{ github.workspace }}/main
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}/main
       - run: echo "🍏 This job's status is ${{ job.status }}."

@@ -5,7 +5,7 @@ autoSuggestions:true
 chatColors:true
 chatLinks:true
 chatLinksPrompt:true
-enableVsync:true
+enableVsync:false
 entityShadows:true
 forceUnicodeFont:false
 discrete_mouse_scroll:false
@@ -31,19 +31,20 @@ glintStrength:0.75
 damageTiltStrength:1.0
 highContrast:false
 gamma:1.0
-renderDistance:8
-simulationDistance:12
+renderDistance:5
+simulationDistance:5
 entityDistanceScaling:1.0
 guiScale:0
 particles:0
-maxFps:120
-graphicsMode:1
+maxFps:260
+graphicsMode:0
 ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"true"
-resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","file/Squareful v3.15forMC1.20.1.zip","mod_resources","vanilla","netherexp:conflicting_retextures","Moonlight Mods Dynamic Assets","netherexp:jne_retextures","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","programmer_art"]
-incompatibleResourcePacks:[]
+resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","tacz_resources","mod_resources","vanilla","Moonlight Mods Dynamic Assets","netherexp:jne_retextures","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","file/Torchmaster Remaster.zip","file/Adventurer\u0027sChest_v2[Lootr].zip"]
+incompatibleResourcePacks:["file/Torchmaster Remaster.zip","file/Adventurer\u0027sChest_v2[Lootr].zip"]
+incompatibleResourcePacks:["file/Torchmaster Remaster.zip"]
 lastServer:
 lang:zh_cn
 soundDevice:""

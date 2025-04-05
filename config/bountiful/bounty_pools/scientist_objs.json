@@ -69,7 +69,7 @@
         },
         "scientist_obj_bronze_block": {
             "type": "item",
-            "content": "createdelight:bronze_block",
+            "content": "createdelightcore:bronze_block",
             "rarity": "UNCOMMON",
             "amount": {
                 "min": 1,

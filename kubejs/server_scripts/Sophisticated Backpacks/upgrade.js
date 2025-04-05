@@ -1,4 +1,7 @@
 ServerEvents.recipes((e) => {
+  remove_recipes_id(e, [
+    "sophisticatedbackpacks:stack_upgrade_omega_tier"
+  ])
   // 替换配方：堆叠升级T0.5
   e.shaped("sophisticatedbackpacks:stack_upgrade_starter_tier", ["AAA", "ABA", "AAA"], {
     A: "minecraft:copper_ingot",

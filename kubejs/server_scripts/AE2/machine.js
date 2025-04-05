@@ -49,8 +49,6 @@ ServerEvents.recipes((event) => {
     ).id(`createdelight:${c}_dye_matter`)
   })
 
-
-
   // ME量子链接仓
   create.mechanical_crafting(
     "ae2:quantum_link",
@@ -398,7 +396,7 @@ ServerEvents.recipes((event) => {
   create
     .item_application("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"])
     .id("createdelight:sky_stone_tank");
-  kubejs.shapeless("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"]);
+  kubejs.shapeless("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"]).id("ae2:misc/tank_sky_stone");
 
   // 原料缓存器
   create

@@ -1,38 +1,54 @@
 ServerEvents.recipes(e => {
+    //安山总线
+    e.recipes.create.item_application(
+        "createdelight:andesite_import_bus", 
+        [
+            "create:andesite_casing",
+            "functionalstorage:controller_extension"
+        ]
+    )
+        .id("createdelight:andesite_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:andesite_export_bus",
+        "createdelight:andesite_import_bus"
+    )
+        .id("createdelight:andesite_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:andesite_import_bus",
+        "createdelight:andesite_export_bus"
+    )
+        .id("createdelight:andesite_import_bus_from_export_bus")
+    //锻造钢总线
+    e.recipes.create.item_application(
+        "createdelight:forged_steel_import_bus",
+        [
+            "createdelightcore:forge_steel_casing",
+            "functionalstorage:controller_extension"
+        ]
+    )
+        .id("createdelight:forged_steel_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:forged_steel_export_bus",
+        "createdelight:forged_steel_import_bus"
+    )
+        .id("createdelight:forged_steel_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:forged_steel_import_bus",
+        "createdelight:forged_steel_export_bus"
+    )
+        .id("createdelight:forged_steel_import_bus_from_export_bus")
     //屠宰室核心
-    e.shaped("mbd2:butchery_room", [
+    e.shaped("createdelight:butchery_room", [
         "ABA",
         "BCB",
         "ABA"
     ], {
-        A: "create:industrial_iron_block",
+        A: "create:andesite_casing",
         B: "create:andesite_alloy",
         C: "create:precision_mechanism"
     })
-        .id("mbd2:butchery_room")
-    //屠宰入口
-    e.shaped("mbd2:butchery_in", [
-        "ABA",
-        "BCB",
-        "ABA"
-    ], {
-        A: "create:industrial_iron_block",
-        B: "create:andesite_alloy",
-        C: "vintageimprovements:redstone_module"
-    })
-        .id("mbd2:butchery_in")
-    //屠宰出口
-    e.shaped("mbd2:butchery_out", [
-        "ABA",
-        "BCB",
-        "ABA"
-    ], {
-        A: "create:andesite_alloy",
-        B: "create:industrial_iron_block",
-        C: "create:precision_mechanism"
-    })
-        .id("mbd2:butchery_out")
-    e.shaped("mbd2:create_in", [
+        .id("createdelight:butchery_room")
+    e.shaped("createdelight:create_in", [
         " A ",
         "ABA",
         " A "
@@ -40,8 +56,8 @@ ServerEvents.recipes(e => {
         A: "create:cogwheel",
         B: "create:gearbox"
     })
-        .id("mbd2:create_in")
-    e.recipes.create.mechanical_crafting("mbd2:hydropower_station", [
+        .id("createdelight:create_in")
+    e.recipes.create.mechanical_crafting("createdelight:hydropower_station", [
         "AAAAA",
         "ABBCA",
         "ABDCA",
@@ -53,9 +69,9 @@ ServerEvents.recipes(e => {
         C: "minecraft:quartz",
         D: "vintageimprovements:redstone_module"
     })
-        .id("mbd2:mechanical_crafting/hydropower_station")
+        .id("createdelight:mechanical_crafting/hydropower_station")
 
-    e.recipes.create.mechanical_crafting("mbd2:hydropower_station_fan", [
+    e.recipes.create.mechanical_crafting("createdelight:hydropower_station_fan", [
         " A A ",
         "ABBBA",
         " BCB ",
@@ -66,49 +82,10 @@ ServerEvents.recipes(e => {
         B: "ae2:sky_dust",
         C: "create:shaft"
     })
-        .id("mbd2:mechanical_crafting/hydropower_station_fan")
-
-    //核反应堆
-    e.recipes.kubejs.shaped("mbd2:reactor_vent", [
-        "AAA",
-        "BAB",
-        "BCB"
-    ], {
-        A: "alexscaves:polymer_plate",
-        B: "create_new_age:reactor_casing",
-        C: "createaddition:modular_accumulator"
-    })
-        .id("mbd2:reactor_vent")
-
-    e.recipes.create.mechanical_crafting("mbd2:reactor", [
-        "AAAAA",
-        "ABCBA",
-        "ACDCA",
-        "ABCBA",
-        "AAAAA"
-    ], {
-        A: "create_new_age:reactor_casing",
-        B: "alexscaves:polymer_plate",
-        C: "vintageimprovements:uranium_sheet",
-        D: "mbd2:reactor_rod"
-    })
-        .id("mbd2:mechanical_crafting/reactor")
-
-    e.recipes.create.mechanical_crafting("mbd2:reactor_rod", [
-        "ABBBA",
-        " CDC ",
-        " CDC ",
-        "ABBBA"
-    ], {
-        A: "create_new_age:reactor_casing",
-        B: "alexscaves:polymer_plate",
-        C: "create_new_age:reactor_glass",
-        D: "alexscaves:uranium_rod"
-    })
-        .id("mbd2:mechanical_crafting/reactor_rod")
+        .id("createdelight:mechanical_crafting/hydropower_station_fan")
 
     //合金电炉
-    e.recipes.create.mechanical_crafting("mbd2:alloy_electric_furnace", [
+    e.recipes.create.mechanical_crafting("createdelight:alloy_electric_furnace", [
         "ABBBA",
         "ACCCA",
         "ADEDA",
@@ -122,6 +99,20 @@ ServerEvents.recipes(e => {
         E: "vintageimprovements:redstone_module",
         F: "create:sturdy_sheet"
     })
-        .id("mbd2:mechanical_crafting/alloy_electric_furnace")
+        .id("createdelight:mechanical_crafting/alloy_electric_furnace")
 
+    e.recipes.create.mechanical_crafting("createdelight:hydropower_amplifier", [
+        "AABAA",
+        "ACDCA",
+        "BDEDB",
+        "ACDCA",
+        "AABAA"
+    ], {
+        A: "createdelight:sky_steel_casing",
+        B: "ad_astra:fan",
+        C: "createdelight:forged_steel_sheet",
+        D: "ad_astra:steel_engine",
+        E: "createdelightcore:forged_steel_block"
+    })
+        .id("createdelight:mechanical_crafting/hydropower_amplifier")
 })

@@ -11,7 +11,6 @@ ServerEvents.recipes(e => {
         "farmersdelight:integration/create/mixing/pie_crust_from_mixing",
         "silentsdelight:sculk_catalyst_pie_crust",
         "silentsdelight:sculk_catalyst_pie",
-        "aether:moa_egg_pumpkin_pie",
         "create_central_kitchen:crafting/pumpkin_pie",
         "farmersdelight:chocolate_pie",
         "farmersdelight:apple_pie",
@@ -24,7 +23,7 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/lemon_tart",
         "ends_delight:food/chorus_fruit_pie"
     ])
-    baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 600)
+    baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 100)
     e.recipes.kubejs.shapeless(
         "silentsdelight:sculk_catalyst_pie_crust",
         [
@@ -92,7 +91,6 @@ ServerEvents.recipes(e => {
         ],
         "casualness_delight:quiche_lorraine", 1.0, 200
     ).id("createdelight:cooking/quiche_lorraine")
-    cutting(e, "casualness_delight:quiche_lorraine", [["casualness_delight:quiche_lorraine_slice", 4]])
     e.recipes.farmersdelight.cooking(
         [
             "#forge:eggs",

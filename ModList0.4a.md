@@ -124,9 +124,6 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
 ## Adventure
 
-1. [天境（The Aether）](https://www.mcmod.cn/class/94.html)aa
-
-    任务线：世界之旅－你上天堂了
 2. [Alex的生物（Alex&apos;s Mobs）](https://www.mcmod.cn/class/3318.html)aa
 
     任务线：生活小技巧－动物朋友们
@@ -216,7 +213,6 @@ md格式在各个编辑器上标准不统一。每次使用回车从A行切换�
 
      幽匿料理  ***任务线：大厨 - 血脉觉醒  - 已完成***
    * [夸克乐事(Quark&apos;s Delight)](https://www.mcmod.cn/class/13356.html)kjs兼容（还没写
-   * [天境乐事（Aether Delight）](https://www.mcmod.cn/class/13308.html) aa
 2. [一起火锅(EveryXHotpot)](https://www.mcmod.cn/class/12735.html)aa
 
    ***任务线：大厨－血脉觉醒-火锅  - 已完成***

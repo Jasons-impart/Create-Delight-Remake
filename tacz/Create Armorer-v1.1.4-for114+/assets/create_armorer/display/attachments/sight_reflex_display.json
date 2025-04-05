@@ -1,0 +1,14 @@
+{
+  "slot": "create_armorer:attachment/slot/sight_reflex",
+  "model": "create_armorer:attachment/sight_reflex",
+  "texture": "create_armorer:attachment/uv/sight_reflex",
+  "zoom": [
+    1.5
+  ],
+  "sight": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "create_armorer:misc/attachment_install_small",
+    "uninstall": "create_armorer:misc/attachment_uninstall"
+  }
+}

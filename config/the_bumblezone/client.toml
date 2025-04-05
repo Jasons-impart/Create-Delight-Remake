@@ -16,6 +16,12 @@ playSempiternalSanctumMusic = true
 #  Will default to normal block textures instead.
 #
 disableEssenceBlockShaders = false
+# 
+#-----------------------------------------------------
+#
+# Display Bee Queen's speech bubble that shows possible trades you can do.
+#
+showBeeQueenSpeechBubble = true
 
 ["The Bumblezone Client Dimension Options"]
 	# 
@@ -162,10 +168,4 @@ disableEssenceBlockShaders = false
 	# Turn this on if Variant Bee's model is messed up by another mod or resourcepack. Requires restart.
 	#
 	useBackupModelForVariantBee = false
-	# 
-	#-----------------------------------------------------
-	#
-	# Whether to show the item on the Bee Queen that the Queen wants for Bonus Trades.
-	#
-	renderBeeQueenBonusTradeItem = true
 

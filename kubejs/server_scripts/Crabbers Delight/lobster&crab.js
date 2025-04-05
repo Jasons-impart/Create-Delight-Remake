@@ -48,17 +48,11 @@ ServerEvents.tags("item", e => {
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "farmersdelight:cooking/jar_of_pickles",
         "alexsmobs:cooked_lobster_tail_campfire",
         "alexsmobs:cooked_lobster_tail_smoke"
     ])
     e.replaceInput({ id: "farmersdelight:cooking/stuffed_nautilus_shell" }, "#forge:cooked_fishes", "#alexsmobs:shoebill_foodstuffs")
     e.replaceInput({ id: "farmersdelight:cooking/crab_cakes" }, "crabbersdelight:crab", "#crabbersdelight:crab")
-    cutting(e, "crabbersdelight:cooked_crab", [
-        ["crabbersdelight:crab_legs", 4],
-        ["quark:crab_shell", 2],
-        ["crabbersdelight:crab_legs", 1, 0.3]
-    ])
     cutting(e, "crabbersdelight:clawster", [
         ["alexsmobs:lobster_tail"],
         ["alexsmobs:lobster_tail", 1, 0.3]

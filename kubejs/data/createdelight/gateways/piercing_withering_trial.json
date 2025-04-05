@@ -15,10 +15,6 @@
                 {
                     "entity": "minecraft:wither_skeleton",
                     "count": 10
-                },
-				{
-                    "entity": "iceandfire:cockatrice",
-                    "count": 2
                 }
 			],
 			"modifiers": [
@@ -73,10 +69,6 @@
                 {
                     "entity": "minecraft:wither_skeleton",
                     "count": 16
-                },
-				{
-                    "entity": "iceandfire:cockatrice",
-                    "count": 2
                 }
 			],
 			"modifiers": [
@@ -130,10 +122,6 @@
                 {
                     "entity": "minecraft:wither_skeleton",
                     "count": 16
-                },
-				{
-                    "entity": "iceandfire:cockatrice",
-                    "count": 4
                 }
 			],
 			"modifiers": [

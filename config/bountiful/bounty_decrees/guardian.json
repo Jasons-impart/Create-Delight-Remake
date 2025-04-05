@@ -1,0 +1,9 @@
+{
+	"objectives": [
+		"guardian_objs"
+	],
+	"rewards": [
+		"_money_rews",
+		"guardian_rews"
+	]
+}

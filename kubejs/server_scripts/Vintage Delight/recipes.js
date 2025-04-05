@@ -8,12 +8,17 @@ ServerEvents.tags("item", e => {
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "culturaldelights:cutting/wild_cucumbers",
         "vintagedelight:cutting/cucumber_cutting",
         "culturaldelights:cutting/cut_cucumber",
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
+    e.replaceOutput({ id: "vintagedelight:cooking/cheese_curds" }, "vintagedelight:cheese_curds", "ad_astra:cheese")
+    // 燕麦磨粉
+    e.recipes.create.milling(
+        Item.of("bakeries:flour").withChance(0.5),
+        'vintagedelight:raw_oats'
+    ).id("vintagedelight:integration/bakeries/milling/flour")
     // 腊肠
     e.recipes.vintagedelight.fermenting(
         "5x createdelight:salami",
@@ -60,22 +65,29 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
-    cutting(e, "culturaldelights:wild_cucumbers", [
-        ["vintagedelight:cucumber_seeds"],
-        ["minecraft:green_dye"]
-    ])
     cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
     cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
-        "2x vintagedelight:salt_dust",
+        Fluid.of("bakeries:salt_water", 250),
         [
             Fluid.of("water", 250),
             "vintagedelight:salt_dust"
         ]
     )
-        .heated()
         .id("ratatouille:salt")
+    e.recipes.create.mixing(
+        "vintagedelight:salt_dust",
+        Fluid.of("bakeries:salt_water", 250)
+    )
+        .heated()
+        .id("vintagedelight:salt_water2salt_dust")
+    e.recipes.minecraft.smelting(
+        "vintagedelight:salt_bucket",
+        'bakeries:salt_water_bucket',
+        0.7,
+        200
+    ).id("vintagedelight:salt_from_smelting")
     e.recipes.kubejs.shapeless(
         "4x vintagedelight:salt_dust",
         "vintagedelight:salt_bucket"

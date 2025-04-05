@@ -66,20 +66,6 @@ StartupEvents.registry("block", (e) => {
       .tagBlock(`minecraft:needs_iron_tool`)
       .requiresTool(false);
   });
-  // 边界碎片
-  e.create("createdelight:fragment_of_border")
-    .model("ftbquests:block/barrier")
-    .defaultTranslucent()
-    .suffocating(true)
-    .noDrops()
-    .fullBlock(false)
-    .lightLevel(15)
-    .hardness(400)
-    .resistance(100)
-    .translationKey("block.createdelight.fragment_of_border")
-    .soundType("metal")
-    .tagBlock(`minecraft:mineable/pickaxe`)
-    .tagBlock(`minecraft:needs_iron_tool`);
 
     
   // 打包弹药
@@ -88,24 +74,4 @@ StartupEvents.registry("block", (e) => {
   .requiresTool(false)
   .translationKey("block.createdelight.packaged_ammo");
 
-  // 线圈
-  e.create("createdelight:coil")
-    .translationKey("block.createdelight.coil")
-    .soundType("metal")
-    .hardness(10)
-    .resistance(10)
-    .tagBlock(`minecraft:mineable/pickaxe`)
-    .tagBlock(`minecraft:needs_iron_tool`)
-    .requiresTool(true);
-
-
-    
-    e.create("createdelight:forged_steel_block")
-        .soundType("metal")
-        .hardness(7)
-        .resistance(7)
-        .tag("minecraft:mineable/pickaxe")
-        .tag("minecraft:needs_iron_tool")
-        .translationKey("block.createdelight.forged_steel_block")
-        .requiresTool(true)
 });

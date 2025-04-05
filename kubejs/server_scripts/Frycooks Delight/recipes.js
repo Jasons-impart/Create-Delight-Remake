@@ -31,18 +31,18 @@ ServerEvents.recipes(e => {
         ], 200)
     // 生炸鸡腿，生炸土豆
     e.recipes.create.mixing(
-        "createdelight:unfried_potato",
+        "createdelightcore:unfried_potato",
         [
             "minecraft:potato",
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("frycooks_delight:mixing/unfried_potato")
     e.recipes.create.mixing(
-        "createdelight:unfried_chicken_leg",
+        "createdelightcore:unfried_chicken_leg",
         [
             'butchercraft:chicken_leg',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
     ).id("frycooks_delight:mixing/unfried_chicken_leg")

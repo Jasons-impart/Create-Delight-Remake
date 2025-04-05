@@ -71,12 +71,6 @@ ServerEvents.recipes(e => {
         "farmersdelight:straw",
         Item.of("2x farmersdelight:rice").withChance(0.5)
     ], 400)
-    e.custom({
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: "farmersdelight:rice_panicle" }],
-        result: [{ item: "farmersdelight:rice", count: 3 }, { item: "farmersdelight:straw", count: 1 }],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("tetracelium:cutting/rice_panicle")
     // 蛋液适配
     e.recipes.create.emptying([
         Fluid.of("createdelight:egg_yolk", 250),
@@ -107,20 +101,10 @@ ServerEvents.recipes(e => {
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
     // 燕麦面团
-    e.recipes.create.mixing(
-        "vintagedelight:oat_dough",
-        [
-            Fluid.of("createdelight:egg_yolk", 50),
-            "vintagedelight:raw_oats"
-        ]
-    ).id("vintagedelight:oat_dough_from_eggs")
-    e.recipes.kubejs.shapeless(
-        "vintagedelight:oat_dough",
-        [
-            "#forge:eggs",
-            "3x vintagedelight:raw_oats"
-        ]
-    ).id("vintagedelight:oat_dough_from_eggs_manual_only")
+    e.recipes.create.mixing("vintagedelight:oat_dough", [
+        Fluid.of("createdelight:egg_yolk", 50),
+        "vintagedelight:raw_oats"
+    ]).id("vintagedelight:mixing/oat_dough")
     e.recipes.minecraft.smoking(
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
@@ -129,39 +113,6 @@ ServerEvents.recipes(e => {
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
     ).id("vintagedelight:bread_from_smelting")
-    // 面团
-    e.recipes.create.mixing(
-        "create:dough",
-        [
-            Fluid.of("water", 50),
-            "create:wheat_flour"
-        ]
-    ).id("create:mixing/dough_by_mixing")
-    // 蛋黄面团
-    e.recipes.create.mixing(
-        "farmersdelight:wheat_dough",
-        [
-            Fluid.of("createdelight:egg_yolk", 50),
-            "create:wheat_flour"
-        ]
-    ).id("farmersdelight:wheat_dough_from_eggs")
-    e.recipes.kubejs.shapeless(
-        "3x farmersdelight:wheat_dough",
-        [
-            "#forge:eggs",
-            "3x create:wheat_flour"
-        ]
-    ).id("farmersdelight:crafting/wheat_dough_manual_only")
-    // 咸面团
-    e.recipes.create.mixing(
-        "ratatouille:salty_dough",
-        [
-            Fluid.of("createdelight:egg_yolk", 100),
-            "2x create:wheat_flour",
-            "#forge:salt"
-        ]
-    )
-        .id("create:mixing/salty_dough")
     // 燕麦相关食物合成
     e.replaceInput({ id: "vintagedelight:fruity_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
     e.replaceInput({ id: "vintagedelight:deluxe_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")

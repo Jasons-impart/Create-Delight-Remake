@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/orientable",
+    "textures": {
+      "front": "mbd2:block/andesite_export_bus",
+      "side": "create:block/andesite_casing",
+      "top": "create:block/andesite_casing"
+    }
+  }

@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cutting/raw_calamari",
-        "culturaldelights:cutting/raw_calamari_from_glowsquid"
+        "culturaldelights:cutting/raw_calamari_from_glowsquid",
+        "culturaldelights:cutting/wild_cucumbers"
     ])
     e.recipes.kubejs.shapeless(
         "createdelight:raw_empanada",
@@ -27,7 +28,21 @@ ServerEvents.recipes(e => {
     cutting_3(e, 'culturaldelights:squid', [
         ['oceanic_delight:squid_tentacles', 2],
         ['minecraft:ink_sac', 3, 0.5]
-    ])    
+    ])
+    e.custom({
+        type: "farmersdelight:cutting",
+        ingredients: [{ item: "culturaldelights:wild_cucumbers" }],
+        result: [{item: "vintagedelight:cucumber_seeds"}, {item: "minecraft:green_dye"}],
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" } 
+    }).id("culturaldelights:cutting/wild_cucumbers")
+    e.recipes.farmersdelight.cutting(
+        "culturaldelights:wild_cucumbers",
+        "#forge:tools/knives",
+        [
+            "vintagedelight:cucumber_seeds",
+            "minecraft:green_dye"
+        ]
+    ).id("culturaldelights:cutting/wild_cucumbers_2")
     // 热带鱼寿司
     e.shapeless(
         "2x culturaldelights:tropical_roll",

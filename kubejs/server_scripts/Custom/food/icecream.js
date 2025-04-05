@@ -44,21 +44,21 @@ ServerEvents.recipes(e => {
         )
         .id(`createdelight:emptying/${outputFluidMilkshake.split(":")[1]}`)
     }
-    make_ice_cream(e, "create:bar_of_chocolate", "createdelight:chocolate_ice_cream", "createdelight:chocolate_milkshake", "neapolitan:chocolate_ice_cream", "neapolitan:chocolate_milkshake")
-    make_ice_cream(e, "neapolitan:roasted_adzuki_beans", "createdelight:adzuki_ice_cream", "createdelight:adzuki_milkshake", "neapolitan:adzuki_ice_cream", "neapolitan:adzuki_milkshake")
-    make_ice_cream(e, "neapolitan:dried_vanilla_pods", "createdelight:vanilla_ice_cream", "createdelight:vanilla_milkshake", "neapolitan:vanilla_ice_cream", "neapolitan:vanilla_milkshake")
-    make_ice_cream(e, "#forge:fruits/banana", "createdelight:banana_ice_cream", "createdelight:banana_milkshake", "neapolitan:banana_ice_cream", "neapolitan:banana_milkshake")
-    make_ice_cream(e, "neapolitan:strawberries", "createdelight:strawberry_ice_cream", "createdelight:strawberry_milkshake", "neapolitan:strawberry_ice_cream", "neapolitan:strawberry_milkshake")
-    make_ice_cream(e, "neapolitan:mint_leaves", "createdelight:mint_ice_cream", "createdelight:mint_milkshake", "neapolitan:mint_ice_cream", "neapolitan:mint_milkshake")
+    make_ice_cream(e, "create:bar_of_chocolate", "createdelightcore:chocolate_ice_cream", "createdelight:chocolate_milkshake", "neapolitan:chocolate_ice_cream", "neapolitan:chocolate_milkshake")
+    make_ice_cream(e, "neapolitan:roasted_adzuki_beans", "createdelightcore:adzuki_ice_cream", "createdelight:adzuki_milkshake", "neapolitan:adzuki_ice_cream", "neapolitan:adzuki_milkshake")
+    make_ice_cream(e, "neapolitan:dried_vanilla_pods", "createdelightcore:vanilla_ice_cream", "createdelight:vanilla_milkshake", "neapolitan:vanilla_ice_cream", "neapolitan:vanilla_milkshake")
+    make_ice_cream(e, "#forge:fruits/banana", "createdelightcore:banana_ice_cream", "createdelight:banana_milkshake", "neapolitan:banana_ice_cream", "neapolitan:banana_milkshake")
+    make_ice_cream(e, "neapolitan:strawberries", "createdelightcore:strawberry_ice_cream", "createdelight:strawberry_milkshake", "neapolitan:strawberry_ice_cream", "neapolitan:strawberry_milkshake")
+    make_ice_cream(e, "neapolitan:mint_leaves", "createdelightcore:mint_ice_cream", "createdelight:mint_milkshake", "neapolitan:mint_ice_cream", "neapolitan:mint_milkshake")
     make_ice_cream(e, "#forge:fruits/lime", "createdelight:lime_ice_cream", "createdelight:lime_milkshake", "collectorsreap:lime_ice_cream", "collectorsreap:lime_milkshake")
     make_ice_cream(e, "#forge:fruits/pomegranate", "createdelight:pomegranate_ice_cream", "createdelight:pomegranate_milkshake", "collectorsreap:pomegranate_ice_cream", "collectorsreap:pomegranate_milkshake")
     let iner_1 = "minecraft:bowl"
     create.sequenced_assembly("neapolitan:neapolitan_ice_cream",
         iner_1,
         [
-            create.filling(iner_1, [iner_1, Fluid.of("createdelight:chocolate_ice_cream", 100)]),
-            create.filling(iner_1, [iner_1, Fluid.of("createdelight:vanilla_ice_cream", 100)]),
-            create.filling(iner_1, [iner_1, Fluid.of("createdelight:strawberry_ice_cream", 100)])
+            create.filling(iner_1, [iner_1, Fluid.of("createdelightcore:chocolate_ice_cream", 100)]),
+            create.filling(iner_1, [iner_1, Fluid.of("createdelightcore:vanilla_ice_cream", 100)]),
+            create.filling(iner_1, [iner_1, Fluid.of("createdelightcore:strawberry_ice_cream", 100)])
         ]
     )
     .loops(1)

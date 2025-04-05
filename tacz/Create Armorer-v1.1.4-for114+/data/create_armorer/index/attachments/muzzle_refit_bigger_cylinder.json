@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.muzzle_refit_bigger_cylinder.name",
+  "display": "create_armorer:muzzle_refit_bigger_cylinder_display",
+  "data": "create_armorer:muzzle_refit_bigger_cylinder_data",
+  "type": "muzzle"
+}

@@ -1,7 +1,4 @@
 ServerEvents.recipes(e => {
-    remove_recipes_output(e, [
-        "create_enchantment_industry:experience_rotor",
-    ])
     remove_recipes_id(e, [
         "create:crafting/materials/rose_quartz",
         "createmetallurgy:belt_grinder",

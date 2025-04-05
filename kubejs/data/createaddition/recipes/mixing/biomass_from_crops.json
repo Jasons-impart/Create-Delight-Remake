@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+	{
+      "tag": "forge:crops"
+    },
+    {
+      "tag": "forge:crops"
+    }
+  ],
+  "results": [
+    {
+      "item": "createaddition:biomass",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+	 "front": "ae2:block/energy_cell_0",
+	 "top": "ae2:block/energy_cell_tb",
+	 "side": "ae2:block/energy_cell_side_0",
+	 "bottom": "ae2:block/energy_cell_tb"
+	}
+	
+}

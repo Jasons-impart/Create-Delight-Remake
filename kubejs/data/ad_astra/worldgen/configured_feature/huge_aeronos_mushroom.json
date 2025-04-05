@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:huge_red_mushroom",
+  "config": {
+    "cap_provider": {
+      "type": "simple_state_provider",
+      "state": {
+        "Name": "ad_astra:aeronos_cap"
+      }
+    },
+    "stem_provider": {
+      "type": "simple_state_provider",
+      "state": {
+        "Name": "ad_astra:aeronos_stem"
+      }
+    }
+  }
+}
