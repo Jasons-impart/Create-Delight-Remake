@@ -14,11 +14,11 @@ ServerEvents.recipes(e => {
             .inputFE(100)
           )
       let big = e.recipes.createdelight.big_centrifugation()
-      let inputItemCount = originalRecipe.ingredients.size()
+      .inputRPM(32)
       originalRecipe.ingredients.forEach(ingr => {
         if (originalRecipe.fluidResults.isEmpty())
-          small.inputItems(ingr.asStack().withCount(inputItemCount))
-        big.inputItems(ingr.asStack().withCount(inputItemCount))
+          small.inputItems(ingr.asStack())
+        big.inputItems(ingr.asStack())
       })
       originalRecipe.fluidIngredients.forEach(ingr => {
         big.inputFluids(ingr.matchingFluidStacks)
