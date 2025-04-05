@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
     ).id("alexscaves:charging/energized_galena_neutral")
 
     //充能方铅岩离心成两种方铅岩
-    e.recipes.vintageimprovements.centrifugation(
+    centrifugation(e,
         [
             Item.of("alexscaves:energized_galena_scarlet").withChance(0.5),
             Item.of("alexscaves:energized_galena_azure").withChance(0.5)

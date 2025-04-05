@@ -201,11 +201,11 @@ function metal_production_line_5(event, metal) {
     ])
         .superheated()
         .id(`vintageimprovements:pressurizing/${metal[0].split(":")[1]}`)
-    event.recipes.vintageimprovements.centrifugation(
+    centrifugation(event,
         [metal[1], Item.of(metal[1]).withChance(0.25), Item.of(byProduct[0]).withChance(byProduct[1])],
         metal[0])
         .id(`vintageimprovements:centrifugation/${metal[0].split(":")[1]}`)
-    event.recipes.vintageimprovements.centrifugation(
+    centrifugation(event,
         [Item.of(metal[4], 12), Item.of(metal[4], 6).withChance(0.25)],
         metal[2])
         .id(`vintageimprovements:centrifugation/${metal[4].split(":")[1]}`)

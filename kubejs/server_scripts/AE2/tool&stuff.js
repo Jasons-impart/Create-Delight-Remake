@@ -80,8 +80,7 @@ ServerEvents.recipes((event) => {
   event.remove({ output: "megacells:mega_pattern_provider" });
 
   // 鱼大嘿嘿
-  vintageimprovements
-    .centrifugation("expatternprovider:fishbig", "minecraft:pufferfish")
+centrifugation(event, "expatternprovider:fishbig", "minecraft:pufferfish")
     .id("createdelight:fishbig");
 
   // 无限圆石配方
