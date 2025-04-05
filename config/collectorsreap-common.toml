@@ -143,6 +143,8 @@
 	vanilla_gummy = true
 	yellow_tea_gummy = true
 	yucca_gummy = true
+	platinum_bass_roe = true
+	tiger_prawn_roe = true
 
 [Behavior]
 	#Whether Lime Bushes require Bee pollination to reach final growth stage.
