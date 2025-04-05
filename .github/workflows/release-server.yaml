@@ -89,6 +89,7 @@ jobs:
           curl -L -o ${{ github.workspace }}/main/server.jar "$SERVER_JAR_URL"
       - name: 服务端启动bat脚本改为CRLF
         run: |
+          sudo apt-get install unix2dos
           unix2dos ${{ github.workspace }}/main/start.bat
       - name: list remained files & mods
         run: |
