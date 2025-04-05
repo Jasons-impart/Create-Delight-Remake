@@ -75,6 +75,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:desh_dust',
       'createdelight:ostrum_dust',
       'createdelight:calorite_dust',
+      // 铀
+      "createdelight:uranium_dust",
+      "createdelight:enriched_uraniumdust",
+      "createdelight:depleted_uranium_dust",
       // 杂项
       'createdelight:mmd_diamond',
       'createdelight:phase_transition_iron',
