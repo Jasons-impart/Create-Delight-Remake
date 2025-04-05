@@ -122,10 +122,10 @@ StartupEvents.registry("fluid", e => {
         .translationKey("item.createdelight.unrefined_sugar_bucket")
     //酵母
     e.create("createdelight:yeast")
-    .thickTexture(0x9B897E)
-    .translationKey("fluid.createdelight.yeast")
-    .translationKey("block.createdelight.yeast")
-    .translationKey("item.createdelight.yeast_bucket")
+        .thickTexture(0x9B897E)
+        .translationKey("fluid.createdelight.yeast")
+        .translationKey("block.createdelight.yeast")
+        .translationKey("item.createdelight.yeast_bucket")
 
     //冰淇淋流体
     let icecream_list = [
@@ -135,8 +135,8 @@ StartupEvents.registry("fluid", e => {
         ["banana", 0xfce285],
         ["mint", 0x8bf1ac],
         ["adzuki", 0xfcc4b3],
-        ["lime", 0x35b71a],
-        ["pomegranate", 0xc62700]
+        ["lime", 0xd4f4aa],
+        ["pomegranate", 0xf9a8af]
     ]
     icecream_list.forEach((list) => {
         e.create(`createdelight:${list[0]}_milkshake`)
@@ -164,29 +164,25 @@ StartupEvents.registry("fluid", e => {
             .translationKey(`fluid.createdelight.${fluid[0]}_fluid`)
             .translationKey(`block.createdelight.${fluid[0]}_fluid`)
         })
-    
         e.create("createdelight:limeade")
-        .thinTexture(0X35B71A)
-        .noBlock()
-        .noBucket()
-        .translationKey("fluid.createdelight.limeade")
-        
+            .thinTexture(0X35B71A)
+            .noBlock()
+            .noBucket()
+            .translationKey("fluid.createdelight.limeade")
         e.create("createdelight:berry_limeade")
-        .thinTexture(0XC62700)
-        .noBlock()
-        .noBucket()
-        .translationKey("fluid.createdelight.berry_limeade")
-        
+            .thinTexture(0XC62700)
+            .noBlock()
+            .noBucket()
+            .translationKey("fluid.createdelight.berry_limeade")
         e.create("createdelight:pink_limeade")
-        .thinTexture(0XFCA997)
-        .noBlock()
-        .noBucket()
-        .translationKey("fluid.createdelight.pink_limeade")
-        
+            .thinTexture(0XFCA997)
+            .noBlock()
+            .noBucket()
+            .translationKey("fluid.createdelight.pink_limeade")
         e.create("createdelight:mint_limeade")
-        .thinTexture(0X17CC19)
-        .noBlock()
-        .noBucket()
-        .translationKey("fluid.createdelight.mint_limeade")
+            .thinTexture(0X17CC19)
+            .noBlock()
+            .noBucket()
+            .translationKey("fluid.createdelight.mint_limeade")
 
 })

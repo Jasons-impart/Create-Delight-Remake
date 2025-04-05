@@ -199,5 +199,10 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         "createdelight:uranium_dust",
         "createdelight:enriched_uraniumdust",
         "createdelight:depleted_uranium_dust",
+        'createdelight:yeast_bucket',
+        'createdelight:pomegranate_milkshake_bucket',
+        'createdelight:lime_milkshake_bucket',
+        'createdelight:dry_yeast',
+        'createdelight:lime_cookie_dough'
     ])
 });  

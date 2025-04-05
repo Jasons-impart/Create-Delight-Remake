@@ -5,11 +5,29 @@ ServerEvents.recipes(e => {
         "collectorsreap:pomegranate_cake",
         "collectorsreap:lime_cookie"
     ])
+    remove_recipes_id(e, [
+        "collectorsreap:cutting/clam", 
+    ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
     e.replaceInput({}, "collectorsreap:cooked_tiger_prawn", "#forge:shrimps")
     make_cake(e, "collectorsreap:lime", "collectorsreap:lime_cake")
     make_cake(e, "collectorsreap:pomegranate", "collectorsreap:pomegranate_cake")
+    //蛤蜊肉
+    farmersdelight.cutting(
+        'collectorsreap:clam',
+        "#forge:tools/knives",
+        [
+            'collectorsreap:clam_meat',
+            Item.of("collectorsreap:lunar_pearl").withChance(0.1)
+        ]
+    ).id("collectorsreap:cutting/clam_1")
+    e.custom({
+        type: "farmersdelight:cutting",
+        ingredients: [{ item: "collectorsreap:clam" }],
+        result: [{ item: "collectorsreap:clam_meat" }, { item: "collectorsreap:lunar_pearl", chance: 0.1 }],
+        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
+    }).id("collectorsreap:cutting/clam_2")
     //蜜饯
     create.filling(
         'collectorsreap:candied_lime',

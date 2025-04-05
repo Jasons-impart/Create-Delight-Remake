@@ -76,6 +76,7 @@ ServerEvents.recipes(e => {
     sushi(e, "farmersdelight:salmon_slice", "2x farmersdelight:salmon_roll")
     sushi(e, "farmersdelight:cod_slice", "2x farmersdelight:cod_roll")
     sushi(e, "#forge:raw_clam", "2x collectorsreap:clam_roll")
+    sushi_with_kelp(e, "collectorsreap:uni", "2x collectorsreap:uni_roll")
     sushi_with_kelp(e, "crabbersdelight:tropical_fish_slice", "2x culturaldelights:tropical_roll")
     sushi_with_kelp(e, "#forge:cooked_eggs", "2x culturaldelights:egg_roll")
     sushi_with_kelp(e, "#forge:tentacles", "2x culturaldelights:calamari_roll")

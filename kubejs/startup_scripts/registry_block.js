@@ -66,12 +66,4 @@ StartupEvents.registry("block", (e) => {
       .tagBlock(`minecraft:needs_iron_tool`)
       .requiresTool(false);
   });
-
-    
-  // 打包弹药
-  e.create("createdelight:packaged_ammo")
-  .soundType("metal")
-  .requiresTool(false)
-  .translationKey("block.createdelight.packaged_ammo");
-
 });

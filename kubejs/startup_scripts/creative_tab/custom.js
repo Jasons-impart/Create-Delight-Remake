@@ -18,6 +18,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:whipped_cream_bowl',
     'createdelight:butter',
     // 面团及其直接产物
+    'createdelight:dry_yeast',
     'createdelight:oil_dough',
     'createdelight:puff_pastry',
     'createdelight:board_noodles',
@@ -32,6 +33,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:chocolate_cookie_dough',
     'createdelight:honey_cookie_dough',
     'createdelight:sweet_berry_cookie_dough',
+    'createdelight:lime_cookie_dough',
     // 生食物
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',
@@ -133,6 +135,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:nut_milk_bucket',
     'createdelight:whipped_cream_bucket',
     'createdelight:vinegar_bucket',
+    'createdelight:yeast_bucket',
     // 奶昔及对应冰激凌
     'createdelight:vanilla_milkshake_bucket',
     'createdelight:chocolate_milkshake_bucket',
@@ -140,6 +143,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:banana_milkshake_bucket',
     'createdelight:mint_milkshake_bucket',
     'createdelight:adzuki_milkshake_bucket',
+    'createdelight:lime_milkshake_bucket',
+    'createdelight:pomegranate_milkshake_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])
