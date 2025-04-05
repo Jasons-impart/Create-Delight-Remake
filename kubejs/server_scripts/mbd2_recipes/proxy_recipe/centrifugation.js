@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
             .inputFE(100)
           )
       let big = e.recipes.createdelight.big_centrifugation()
-      .inputRPM(32)
+        .inputRPM(32)
       originalRecipe.ingredients.forEach(ingr => {
         if (originalRecipe.fluidResults.isEmpty())
           small.inputItems(ingr.asStack())
@@ -51,16 +51,19 @@ function centrifugation(e, results, ingredients, processingTime, minimalRPM) {
   let input = MBDProxyRecipeUtil.convertInput(ingredients)
   let output = MBDProxyRecipeUtil.convertOutput(results)
   let mbdRecipe = e.recipes.createdelight.big_centrifugation()
-    .inputItems([input[0]])
-    .inputFluids([input[1]])
     .inputRPM(32)
-  output[0].forEach(out => {
-    if (out instanceof OutputItem) {
-      mbdRecipe.chance(out.chance, builder => builder.outputItems(out))
-    }
-    else
-      mbdRecipe.outputItems(out)
-  })
+  if (input[0].length != 0)
+    mbdRecipe.inputItems([input[0]])
+  if (input[1].length != 0)
+    mbdRecipe.inputFluids([input[1]])
+
+    output[0].forEach(out => {
+      if (out instanceof OutputItem) {
+        mbdRecipe.chance(out.chance, builder => builder.outputItems(out))
+      }
+      else
+        mbdRecipe.outputItems(out)
+    })
   mbdRecipe.outputFluids(output[1])
   return vintageRecipe
 }
