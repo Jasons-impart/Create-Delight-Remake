@@ -196,5 +196,8 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:air_boots',
         'createdelight:magnetic_mechanism',
         'createdelight:incomplete_magnetic_mechanism',
+        "createdelight:uranium_dust",
+        "createdelight:enriched_uraniumdust",
+        "createdelight:depleted_uranium_dust",
     ])
 });  
