@@ -79,9 +79,7 @@ if not exist run.bat (
 echo Writing default config...
 if not exist server.properties (
     echo !JVM_ARGS! > user_jvm_args.txt
-    echo allow-flight=true >> server.properties
-    echo motd=Create Delight Remake !MODPACK_VERSION! >> server.properties
-    echo max-players=8 >> server.properties
+    @REM 经测试此刻对server.properties的写入会在后续被覆盖，因此不再写入allow_flight等字段
 )
 
 @REM 启动服务器
