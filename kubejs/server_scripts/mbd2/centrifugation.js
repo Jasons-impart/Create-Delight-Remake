@@ -3,18 +3,19 @@ MBDMachineEvents.onBeforeRecipeModify("createdelight:big_centrifuge", e => {
      * @type {Internal.MBDMultiblockMachine}
      */
     let multiblock = e.event.machine
-    let maxSpeed = -1
+    let maxSpeed = 32
     multiblock.parts.forEach(part => {
         /**
          * @type {Internal.MBDPartMachine}
          */
         let partMachine = part
         if (partMachine.definition.id() == "createdelight:create_in") {
+            console.log(partMachine.definition.id())
             /**
              * @type {Internal.KineticBlockEntity}
              */
             let kineticInput = partMachine.machineHolder
-            maxSpeed = Math.max(kineticInput.speed, speed)
+            maxSpeed = Math.max(Math.abs(kineticInput.speed), maxSpeed)
         }
     })
     function linear(val, start, end) {
