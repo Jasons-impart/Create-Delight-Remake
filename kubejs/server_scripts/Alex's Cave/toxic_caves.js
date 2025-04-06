@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "create:crushing/raw_uranium"
+    ])
   //铀矿打粉
   e.recipes.create.crushing(
     [
