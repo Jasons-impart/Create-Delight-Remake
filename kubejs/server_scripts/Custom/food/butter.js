@@ -12,14 +12,19 @@ ServerEvents.tags("item", e => {
 ServerEvents.recipes(e => {
     e.replaceInput({ id: "mynethersdelight:cooking/crimson_stroganoff" }, "#forge:milk", "#forge:whipped_cream")
     e.recipes.create.mixing(
-        [
-            Fluid.of("createdelight:whipped_cream", 250),
-            Fluid.water(250)
-        ],
+        Fluid.of("createdelight:whipped_cream", 250),
         Fluid.of("milk", 500)
     )
         .heated()
         .id("createdelight:mixing/whipped_cream")
+    centrifugation(e, 
+        [
+            Fluid.of("createdelight:whipped_cream", 750),
+            Fluid.of("minecraft:water", 250)
+        ], 
+        Fluid.of("minecraft:milk", 1000)
+    )
+        .id("createdelight:big_centrifugation/whipped_cream")
     e.recipes.create.emptying(
         [
             Fluid.of("createdelight:whipped_cream", 250),
