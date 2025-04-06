@@ -22,7 +22,7 @@ const isDeveloper = (playerUsername) => playerNames.includes(playerUsername);
 
 ItemEvents.rightClicked((event) => {
   const { item, player, server } = event;
-  if (player.crouching && player.mainHandItem !== "minecraft:air" && isDeveloper(player.username)) {
+  if (player.crouching && player.mainHandItem !== "minecraft:air" && isDeveloper(player.username) && player.mainHandItem !== "createdelight:debug_reload_tool" && player.mainHandItem!== "createdelight:debug_info_tool") {
     if (player.mainHandItem === item.id) {
       player.runCommandSilent("kubejs hand");
     }
