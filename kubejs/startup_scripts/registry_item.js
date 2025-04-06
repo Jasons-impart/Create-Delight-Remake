@@ -500,8 +500,12 @@ StartupEvents.registry("item", e => {
 
     // DEBUG工具
     e.create("createdelight:debug_reload_tool")
+        .rarity("epic")
+        .texture("minecraft:item/stick")
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
+        .rarity("epic")
+        .texture("minecraft:item/stick")
         .translationKey("item.createdelight.debug_info_tool")
 
     /**

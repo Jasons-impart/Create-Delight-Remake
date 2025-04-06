@@ -84,6 +84,10 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       // 杂项
       'createdelight:mmd_diamond',
       'createdelight:phase_transition_iron',
+      'createdelight:fuel_hotcream',
+      'createdelight:blood_collection_device',
+      'createdelight:needle',
+      'createdelight:dread_upgrade_smithing_template',
       // 构件
       'createdelight:magnetic_mechanism',
       // 火箭核心

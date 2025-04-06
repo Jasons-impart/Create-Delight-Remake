@@ -52,13 +52,17 @@ ServerEvents.recipes(e => {
             "4x minecraft:bowl"
         ]
     ).id("createdelight:crafting/whipped_cream_bowl").replaceIngredient("createdelight:whipped_cream_bucket", "minecraft:bucket")
-    e.recipes.create.mixing(
+    e.recipes.create.compacting(
         "createdelight:butter",
-        Fluid.of("createdelight:whipped_cream", 250),
-        200
+        Fluid.of("createdelight:whipped_cream", 250)
     )
-        .heated()
-        .id("createdelight:mixing/butter")
+        .id("createdelight:compacting/butter")
+    e.recipes.kubejs.shapeless(
+        '4x createdelight:butter',
+        'createdelight:whipped_cream_bucket'
+    )
+        .replaceIngredient('createdelight:whipped_cream_bucket', 'minecraft:bucket')
+        .id('createdelight:crafting/butter')
     // 开酥
     e.recipes.kubejs.shapeless(
         "createdelight:oil_dough",
