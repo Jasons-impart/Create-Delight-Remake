@@ -72,7 +72,7 @@ function package_item(event, item, storage_block, package_item_number) {
 /**
  * 
  * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_[] } inputs //No tags!!!
+ * @param { InputItem_[] } inputs 
  * @param { OutputItem_ } output 
  * @param { number } count 
  */
@@ -84,11 +84,25 @@ function combination(event, inputs, output, count) {
         result: output
     }
     inputs.forEach(input => {
-        recipe.ingredients.push({
-            item: input
-        })
+        recipe.ingredients.push(Ingredient.of(input))
     });
     event.custom(recipe).id(`refurbished_furniture:combining/${output.split(":")[1]}`)
+    //增加机动兼容
+    if (inputs.length == 2)
+        event.recipes.create.deploying(output, inputs)
+            .id(`create:deploying/${output.split(":")[1]}`)
+    else if (inputs.length > 2) {
+        let deploy_list = []
+        for (let index = 1; index < inputs.length; index++) {
+            let ingr = inputs[index];
+            deploy_list.push(event.recipes.create.deploying(inputs[0], [inputs[0], ingr]))
+        }
+        event.recipes.create.sequenced_assembly(output, inputs[0], deploy_list)
+        .loops(1)
+        .transitionalItem(inputs[0])
+        .id(`create:sequenced_assembly/${output.split(":")[1]}`)
+    }
+        
 }
 
 /**
@@ -288,7 +302,7 @@ function make_cake(e, input, output) {
         "minecraft:cake",
         input
     ])
-    .id(`neapolitan:deploying/${output.split(":")[1]}`)
+        .id(`neapolitan:deploying/${output.split(":")[1]}`)
 }
 /**
  * 
@@ -300,5 +314,5 @@ function make_cake(e, input, output) {
 function FluidIngredients(fluidTag, amount, tag) {
     amount = amount || 1000
     tag = tag || {}
-    return {fluidTag: fluidTag, amount: amount, tag: tag}
+    return { fluidTag: fluidTag, amount: amount, tag: tag }
 }
