@@ -117,13 +117,10 @@ StartupEvents.modifyCreativeTab("ae2:main", e => {
     'createdelight:logic_processor_inscribed',
     'createdelight:item_cell_housing_blank',
     'createdelight:fluid_cell_housing_blank',
-    'createdelight:mega_fluid_cell_housing_blank',
     'createdelight:initial_processing_of_item_cell_housing',
     'createdelight:initial_processing_of_fluid_cell_housing',
-    'createdelight:initial_processing_of_mega_fluid_cell_housing',
     'createdelight:unformed_item_cell_housing',
-    'createdelight:unformed_item_cell_housing',
-    'createdelight:unformed_mega_fluid_cell_housing',
+    'createdelight:unformed_fluid_cell_housing',
     'createdelight:quartz_glass_parts',
     'createdelight:quartz_vibrant_glass_parts',
     'createdelight:cell_housing_curving_head',
@@ -135,8 +132,11 @@ StartupEvents.modifyCreativeTab("megacells:tab", e => {
     'createdelight:initial_processing_of_printed_accumulation_processor',
     'createdelight:accumulation_processor_inscribed',
     'createdelight:mega_item_cell_housing_blank',
+    'createdelight:mega_fluid_cell_housing_blank',
     'createdelight:initial_processing_of_mega_item_cell_housing',
+    'createdelight:initial_processing_of_mega_fluid_cell_housing',
     'createdelight:unformed_mega_item_cell_housing',
+    'createdelight:unformed_mega_fluid_cell_housing',
   ])
 })
 
