@@ -1,4 +1,10 @@
 ServerEvents.tags("item", e => {
+    e.add("sereneseasons:crops", [
+        "#sereneseasons:spring_crops",
+        "#sereneseasons:summer_crops",
+        "#sereneseasons:autumn_crops",
+        "#sereneseasons:winter_crops"
+    ])
     e.add("sereneseasons:spring_crops", [
         "frycooks_delight:canola_seeds",
         "vintagedelight:cucumber_seeds",
@@ -77,6 +83,12 @@ ServerEvents.tags("item", e => {
 })
 
 ServerEvents.tags("block", e => {
+    e.add("sereneseasons:crops", [
+        "#sereneseasons:spring_crops",
+        "#sereneseasons:summer_crops",
+        "#sereneseasons:autumn_crops",
+        "#sereneseasons:winter_crops"
+    ])
     e.add("sereneseasons:spring_crops", [
         "frycooks_delight:canola_plant",
         "vintagedelight:cucumber_crop",
