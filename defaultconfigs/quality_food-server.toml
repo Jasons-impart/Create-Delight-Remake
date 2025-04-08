@@ -9,7 +9,7 @@ crop_target_chance = 0.6
 seed_chance_multiplier = 0.25
 #Define multipliers to be applied per farmland on crops - Syntax: <index>;<crop>;<farmland>;<multiplier> (the index defines the sequence in which they will be checked - the first matching one is applied)
 #Example: ["2;minecraft:wheat;#farmersdelight:terrain;0.75", "3;#minecraft:crops;farmersdelight:rich_soil;1.25"]
-farmland_config = ["1;#sereneseasons:crops;farmersdelight:rich_soil;1.0", "2;#sereneseasons:crops;farmersdelight:rich_soil_farmland;1.0", "3;#sereneseasons:crops;mynethersdelight:resurgent_soil;1.5", "4;#sereneseasons:crops;mynethersdelight:resurgent_soil_farmland;1.5", "5;#sereneseasons:crops;minecraft:farmland;0.00000001", "6;#sereneseasons:crops;#farmersdelight:terrain;0"]
+farmland_config = ["1;#sereneseasons:crops;farmersdelight:rich_soil;1.0", "2;#sereneseasons:crops;farmersdelight:rich_soil_farmland;1.0", "3;#sereneseasons:crops;mynethersdelight:resurgent_soil;1.5", "4;#sereneseasons:crops;mynethersdelight:resurgent_soil_farmland;1.5", "5;#sereneseasons:crops;minecraft:farmland;0", "6;#sereneseasons:crops;#farmersdelight:terrain;0"]
 
 [Crafting]
 	#Define recipes (namespace:path) which should not result in quality being applied (e.g. when the items can be converted back and forth)
@@ -30,7 +30,7 @@ farmland_config = ["1;#sereneseasons:crops;farmersdelight:rich_soil;1.0", "2;#se
 	min_weight = 0.0
 	#The chance for a quality to occur (with no luck or other bonus)
 	#Range: 0.0 ~ 1.0
-	chance = 0.10000000149011612
+	chance = 0.05
 	#A chance multiplier for dropped crops (from a fully grown crop)
 	#Range: 0.0 ~ 5.0
 	crop_multiplier = 1.0
@@ -64,7 +64,7 @@ farmland_config = ["1;#sereneseasons:crops;farmersdelight:rich_soil;1.0", "2;#se
 	min_weight = 1.0
 	#The chance for a quality to occur (with no luck or other bonus)
 	#Range: 0.0 ~ 1.0
-	chance = 0.029999999329447746
+	chance = 0.015
 	#A chance multiplier for dropped crops (from a fully grown crop)
 	#Range: 0.0 ~ 5.0
 	crop_multiplier = 0.8999999761581421
@@ -98,7 +98,7 @@ farmland_config = ["1;#sereneseasons:crops;farmersdelight:rich_soil;1.0", "2;#se
 	min_weight = 1.75
 	#The chance for a quality to occur (with no luck or other bonus)
 	#Range: 0.0 ~ 1.0
-	chance = 0.004999999888241291
+	chance = 0.0025
 	#A chance multiplier for dropped crops (from a fully grown crop)
 	#Range: 0.0 ~ 5.0
 	crop_multiplier = 0.75
