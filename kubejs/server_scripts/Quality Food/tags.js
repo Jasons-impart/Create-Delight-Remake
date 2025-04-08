@@ -1,5 +1,6 @@
 ServerEvents.tags("block", e => {
     Ingredient.of([
+        "@vintagedelight",
         "@culturaldelights",
         "@fruitsdelight",
         "@collectorsreap",
