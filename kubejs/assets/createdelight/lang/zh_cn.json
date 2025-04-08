@@ -383,6 +383,7 @@
     "message.createdelight.nearest_vein": "最近的矿脉是",
     "message.createdelight.underfoot": ", §2就在你脚下",
     "message.createdelight.at": ", 位于§e%s方§r§e%s§r米",
+    "message.createdelight.degree_of_damage": "损坏度：%s",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
@@ -456,7 +457,6 @@
     "createdelight.tip.mosquito_repellent_stew": "觉得绯红蚊子很烦？尝试做一碗驱蚊炖菜。",
     "createdelight.tip.bettercombat_tweak": "本包的bettercombat以去掉前摇，且攻击范围增加了一倍，请放心使用。",
     "createdelight.tip.bread_tweak": "本包的面包及面团需要使用酵母制作，酵母需要通过发酵获取。",
-    
     
 
     
