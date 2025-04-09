@@ -1,0 +1,85 @@
+{
+  "Events": [
+    {
+      "ID": "builtin/christmas",
+      "dates": {
+        "start": {
+          "month": 12,
+          "day": 1
+        },
+        "end": {
+          "month": 12,
+          "day": 31
+        }
+      },
+      "replacementRate": 0.1,
+      "replacementItemT1": "lightmanscurrency:coin_chocolate_copper",
+      "replacementItemT2": "lightmanscurrency:coin_chocolate_iron",
+      "replacementItemT3": "lightmanscurrency:coin_chocolate_gold",
+      "replacementItemT4": "lightmanscurrency:coin_chocolate_emerald",
+      "replacementItemT5": "lightmanscurrency:coin_chocolate_diamond",
+      "replacementItemT6": "lightmanscurrency:coin_chocolate_netherite",
+      "startingRewards": [
+        {
+          "ID": "lightmanscurrency:coin_chocolate_gold",
+          "Count": 32
+        }
+      ],
+      "startingRewardMessage": {
+        "translate": "message.lightmanscurrency.seasonal_event.christmas"
+      }
+    },
+    {
+      "ID": "builtin/valentines",
+      "dates": {
+        "start": {
+          "month": 2,
+          "day": 13
+        },
+        "end": {
+          "month": 2,
+          "day": 15
+        }
+      },
+      "replacementRate": 0.1,
+      "replacementItemT1": "lightmanscurrency:coin_chocolate_copper",
+      "replacementItemT2": "lightmanscurrency:coin_chocolate_iron",
+      "replacementItemT3": "lightmanscurrency:coin_chocolate_gold",
+      "replacementItemT4": "lightmanscurrency:coin_chocolate_emerald",
+      "replacementItemT5": "lightmanscurrency:coin_chocolate_diamond",
+      "replacementItemT6": "lightmanscurrency:coin_chocolate_netherite",
+      "startingRewards": [
+        {
+          "ID": "lightmanscurrency:coin_chocolate_gold",
+          "Count": 32
+        }
+      ],
+      "startingRewardMessage": {
+        "translate": "message.lightmanscurrency.seasonal_event.valentines"
+      }
+    },
+    {
+      "ID": "builtin/birthday",
+      "dates": {
+        "start": {
+          "month": 3,
+          "day": 29
+        },
+        "end": {
+          "month": 3,
+          "day": 29
+        }
+      },
+      "startingRewards": [
+        {
+          "ID": "lightmanscurrency:coin_ancient",
+          "Count": 5,
+          "Tag": "{RandomCoin:1b}"
+        }
+      ],
+      "startingRewardMessage": {
+        "translate": "message.lightmanscurrency.seasonal_event.birthday"
+      }
+    }
+  ]
+}
