@@ -53,11 +53,24 @@ MBDMachineEvents.onRecipeWorking("createdelight:fission_reactor", e => {
 
     // console.log(recipe.getId())
     // console.log(customData.getDouble("degree_of_damage"))
-    if (recipe.getId() == "createdelight:fission_react/empty") {
+    if (recipe.id == "createdelight:fission_react/empty") {
         customData.putDouble("degree_of_damage", multiblock.customData.getDouble("degree_of_damage") + 0.01)
     }
     else if (customData.getDouble("degree_of_damage") > 0) {
         customData.putDouble("degree_of_damage", Math.max(0, multiblock.customData.getDouble("degree_of_damage") - 0.005))
+    }
+})
+
+MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
+    let event = e.event
+    const {machine, recipe} = event
+    let recipeLogic = machine.recipeLogic
+    let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
+    // console.log(`fluid.getFluidInTank(1).amount: ${fluid.getFluidInTank(1).amount}, capacity: ${fluid.getTankCapacity(1)}`)
+    if (recipe.id == "createdelight:fission_react/empty") {
+        //输入槽位有流体且输出槽位流体非满时，使连续工作的空配方失效
+        if (!fluid.getFluidInTank(0).empty && fluid.getFluidInTank(1).amount != fluid.getTankCapacity(1))
+            recipeLogic.markLastRecipeDirty()
     }
 })
 
