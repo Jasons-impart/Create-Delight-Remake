@@ -84,9 +84,9 @@ ServerEvents.recipes((event) => {
   })
   let iner = "createdelight:incomplete_annihilation_core"
   create.sequenced_assembly("ae2:annihilation_core", "minecraft:iron_nugget", [
-    create.deploying(iner, [iner, "#forge:dusts/fluix"]),
     create.deploying(iner, [iner, "#forge:gems/quartz"]),
     create.deploying(iner, [iner, "ae2:logic_processor"]),
+    create.deploying(iner, [iner, "#forge:dusts/fluix"]),
   ])
     .transitionalItem(iner)
     .loops(1)
