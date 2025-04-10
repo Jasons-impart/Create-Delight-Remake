@@ -67,7 +67,7 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     let recipeLogic = machine.recipeLogic
     let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
     // console.log(`fluid.getFluidInTank(1).amount: ${fluid.getFluidInTank(1).amount}, capacity: ${fluid.getTankCapacity(1)}`)
-    if (recipe.id == "createdelight:fission_react/empty") {
+    if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
         //输入槽位有流体且输出槽位流体非满时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty && fluid.getFluidInTank(1).amount != fluid.getTankCapacity(1))
             recipeLogic.markLastRecipeDirty()
@@ -144,11 +144,12 @@ function nuclearDiffusionByCount(level, pos, size, list, degree_of_damage) {
         list.set(`${pos.x},${pos.y},${pos.z}`, age)
         positions.forEach(position => {
             if (list.get(`${position.x},${position.y},${position.z}`) == null) {
-                nuclearDiffusionByAge(level, position, age - 1, list, degree_of_damage)
+                nuclearDiffusionByCount(level, position, age - 1, list, degree_of_damage)
             }
         })
     }
 }
+let _reactor_map = new Map()
 MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
     const { level, pos, machineStateName } = e.event.machine
     // console.log(machineStateName)
@@ -158,7 +159,8 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
             /**
              * @type {Map<string, number>}
              */
-            let map = new Map()
+            let map = _reactor_map
+            map.clear()
             //理论上只有一个控制器
             /**
              * @type {Internal.MBDMultiblockMachine}
