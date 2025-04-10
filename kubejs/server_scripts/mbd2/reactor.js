@@ -144,11 +144,12 @@ function nuclearDiffusionByCount(level, pos, size, list, degree_of_damage) {
         list.set(`${pos.x},${pos.y},${pos.z}`, age)
         positions.forEach(position => {
             if (list.get(`${position.x},${position.y},${position.z}`) == null) {
-                nuclearDiffusionByAge(level, position, age - 1, list, degree_of_damage)
+                nuclearDiffusionByCount(level, position, age - 1, list, degree_of_damage)
             }
         })
     }
 }
+let _reactor_map = new Map()
 MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
     const { level, pos, machineStateName } = e.event.machine
     // console.log(machineStateName)
@@ -158,7 +159,8 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
             /**
              * @type {Map<string, number>}
              */
-            let map = new Map()
+            let map = _reactor_map
+            map.clear()
             //理论上只有一个控制器
             /**
              * @type {Internal.MBDMultiblockMachine}
