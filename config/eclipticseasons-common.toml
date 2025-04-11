@@ -1,0 +1,83 @@
+
+[Season]
+	#The lasting days of each term, while 4 seasons in 1 year, 6 terms in 1 season.
+	#Range: 1 ~ 5000
+	LastingDaysOfEachTerm = 7
+	#The index of the initial solar term, and note it only can be used to first start the world with the mod.
+	#Range: 1 ~ 24
+	InitialSolarTermIndex = 1
+	#Enable solar term change inform.
+	EnableInform = true
+	#Whether send inform with icon.
+	EnableInformIcon = true
+	#Whether to pop up the solar term reminder when the calendar item cannot be placed.
+	CalendarItemHint = false
+	#In summer, the days are long and the nights are short, while in winter, the days are short and the nights are long.
+	DynamicDaylightDuration = true
+	#Which dimensions will have season effects? Note that it must be natrual and have time lapse.
+	ValidDimensions = ["minecraft:overworld"]
+	#If snow falls during cold weather, it will gradually cover all solid blocks and grass.
+	SnowyWinter = true
+	#Snow will not appear in overly bright areas, here define restriction levels.
+	NotSnowyNearGlowingBlock = true
+	#Snow will not appear in overly bright areas.
+	#Range: 1 ~ 15
+	NotSnowyNearGlowingBlockLevel = 10
+
+[Weather]
+	#Enable solar term weather system with biome.
+	UseSolarWeather = true
+	#Set the percentage multiplier of the probability of rain, the range should be between 0 and 1000.
+	#Range: 0 ~ 1000
+	RainChancePercentMultiplier = 40
+	#Set the percentage multiplier of the probability of thunder in the rain, the range should be between 0 and 1000.
+	#Range: 0 ~ 1000
+	ThunderChancePercentMultiplier = 20
+
+[Temperature]
+	#Ice or snow layer will melt in warm time.
+	IceAndSnowMelt = false
+	#It will snow in cold time.
+	IceAndSnow = false
+	#Add heat stroke effect in summer noon while in hot biome.
+	HeatStroke = true
+
+[Crop]
+	#Enable crop season control.
+	EnableSeasonalCrop = true
+	#How much chance can crop grow in wrong season.
+	#Range: 0.0 ~ 1.0
+	CropGrowChanceInWrongSeason = 0.05
+	#Enable crop humidity control.
+	EnableCropHumidityControl = true
+	#How much base chance can crop grow in wrong humidity.
+	#Range: 1.0E-4 ~ 0.9999
+	CropGrowChanceInWrongHumidity = 0.25
+	#The maximum effective diameter of the greenhouse.
+	#Range: 5 ~ 256
+	GreenHouseMaxDiameter = 32
+	#The maximum effective diameter of the greenhouse.
+	#Range: 3 ~ 128
+	GreenHouseMaxHeight = 10
+	#The possibility of crops not growing when there is insufficient sunlight in green house.
+	#Range: 0 ~ 10000
+	DarkGreenhouseFailChance = 2000
+	#Whether to enable complex shape checking.
+	ComplexGreenHouseCheck = true
+	#If a crop is not registered for a season or humid type, default values will be used.
+	RegisterCropDefaultValue = false
+
+[Compat]
+	#Compatible with mods using SereneSeasons' CropTag.
+	SereneSeasonsCropTag = true
+
+[Debug]
+	#Enable debug option to detect illegal use of functions.
+	LogIllegalUse = false
+	#Without snowy block under the light blocks which level is 0.
+	NotSnowyUnderLight0 = false
+	#Snow overlay block if has full collision shape not just full render shape.
+	SnowyFullCollisionShape = false
+	#Snow can cover the block which would lights.
+	NotSnowOverlayGlowingBlock = false
+

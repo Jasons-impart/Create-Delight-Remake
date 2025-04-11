@@ -24,6 +24,7 @@
 !/collectorsreap-common.toml
 !/curios-client.toml
 !/curios-common.toml
+!/eclipticseasons-common.toml
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
@@ -48,7 +49,6 @@
 xaerominimap_entities.json
 !/world-gen.json
 !/ad_astra*
-!/sereneseasons
 !/chat_heads.json5
 !/xbob.json
 !/the_bumblezone
