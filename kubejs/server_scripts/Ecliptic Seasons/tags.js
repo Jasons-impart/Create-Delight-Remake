@@ -25,7 +25,6 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:kiwi_leaves",
         "fruitsdelight:kiwi_sapling",
         "fruitsdelight:cranberry",
-        "fruitsdelight:hamimelon_seeds",
         "neapolitan:mint_sprout",
         "vinery:red_grape_seeds",
         "vinery:white_grape_seeds",
@@ -81,6 +80,7 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:ghost_pepper_seeds",
         "vinery:savanna_grape_seeds_red",
         "vinery:savanna_grape_seeds_white",
-        "createcafe:cassava_seeds"
+        "createcafe:cassava_seeds",
+        "fruitsdelight:hamimelon_seeds",
     )
 })
