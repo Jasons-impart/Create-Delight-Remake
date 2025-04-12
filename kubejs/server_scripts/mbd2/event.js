@@ -43,47 +43,6 @@ const $MBDPartMachine = Java.loadClass("com.lowdragmc.mbd2.common.machine.MBDPar
 //         })
 //     }
 // }
-// MBDMachineEvents.onTick("mbd2:reactor_rod", e => {
-//     const { level, pos, machineStateName } = e.event.machine
-//     if (machineStateName == "working") {
-//         /**
-//          * @type {Map<string, number>}
-//          */
-//         let map = new Map()
-//         let time = level.time
-//         if (time % 200 == 0) {
-//             nuclearDiffusionByAge(level, pos, 7, map)
-//             map.forEach((age, position) => {
-//                 let poslist = position.split(",")
-//                 let x = parseInt(poslist[0])
-//                 let y = parseInt(poslist[1])
-//                 let z = parseInt(poslist[2])
-
-//                 // let particle = Utils.particleOptions(`dust 1 0 0 1`)
-//                 // level.spawnParticles(particle, false, x + 0.5, y + 0.5, z + 0.5, 0, 1, 0, 1, 0.5)
-//                 level.getEntitiesWithin(AABB.of(x + 1, y + 1, z + 1, x - 1, y - 1, z - 1)).forEach(entity => {
-//                     if (entity.isLiving()) {
-//                         /**
-//                          * @type {Internal.LivingEntity}
-//                          */
-//                         let livingEntity = entity
-//                         livingEntity.potionEffects.add("alexscaves:irradiated", 12000, 4, true, true)
-//                     }
-//                 })
-//             })
-//         }
-//     }
-// })
-
-// MBDMachineEvents.onRemoved("mbd2:reactor_rod", e => {
-//     const { level, pos, machineStateName } = e.event.machine
-//     if (machineStateName == "working" || machineStateName == "waiting") {
-//         level.createExplosion(pos.x, pos.y, pos.z)
-//         .causesFire(false)
-//         .explosionMode("block")
-//         .explode()
-//     }
-// })
 
 // MBDMachineEvents.onBeforeRecipeModify("createdelight:small_centrifugation", e => {
 
