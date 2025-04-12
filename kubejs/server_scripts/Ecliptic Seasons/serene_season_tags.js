@@ -6,6 +6,7 @@ ServerEvents.tags("item", e => {
         "#sereneseasons:winter_crops"
     ])
     e.add("sereneseasons:spring_crops", [
+        "minecraft:oak_sapling",
         "frycooks_delight:canola_seeds",
         "vintagedelight:cucumber_seeds",
         "festival_delicacies:eggplant_seeds",
@@ -23,6 +24,8 @@ ServerEvents.tags("item", e => {
         "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:summer_crops", [
+		"minecraft:mangrove_propagule",
+        "minecraft:oak_sapling",
         "vintagedelight:oat_seeds",
         "vintagedelight:ghost_pepper_seeds",
         "culturaldelights:avocado_pit",
@@ -44,6 +47,7 @@ ServerEvents.tags("item", e => {
         "createdelight:artemisia_argyi_seed"
     ])
     e.add("sereneseasons:autumn_crops", [
+        "minecraft:oak_sapling",
         "frycooks_delight:canola_seeds",
         "vintagedelight:peanut",
         "vintagedelight:oat_seeds",
@@ -70,9 +74,11 @@ ServerEvents.tags("item", e => {
         "neapolitan:strawberry_pips",
         "neapolitan:vanilla_pods",
         "createdelight:adzuki_beans_seed",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "trailandtales_delight:lantern_fruit_seeds"
     ])
     e.add("sereneseasons:winter_crops", [
+        "minecraft:oak_sapling",
         "createcafe:cassava_seeds",
         "createcafe:coffee_beans",
         "festival_delicacies:chinese_cabbage_seeds",
@@ -90,6 +96,9 @@ ServerEvents.tags("block", e => {
         "#sereneseasons:winter_crops"
     ])
     e.add("sereneseasons:spring_crops", [
+		"minecraft:birch_sapling",
+		"minecraft:spruce_sapling",
+		"minecraft:cherry_sapling",
         "frycooks_delight:canola_plant",
         "vintagedelight:cucumber_crop",
         "festival_delicacies:eggplant",
@@ -110,6 +119,8 @@ ServerEvents.tags("block", e => {
         "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:summer_crops", [
+		"minecraft:jungle_sapling",
+		"minecraft:acacia_sapling",
         "vintagedelight:oat_crop",
         "vintagedelight:ghost_pepper_crop",
         "culturaldelights:avocado_pit",
@@ -132,6 +143,9 @@ ServerEvents.tags("block", e => {
         "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:autumn_crops", [
+		"minecraft:birch_sapling",
+		"minecraft:spruce_sapling",
+		"minecraft:dark_oak_sapling",
         "frycooks_delight:canola_plant",
         "vintagedelight:peanut_crop",
         "vintagedelight:oat_crop",
@@ -165,6 +179,7 @@ ServerEvents.tags("block", e => {
         "festival_delicacies:garlic_chive"
     ])
     e.add("sereneseasons:winter_crops", [
+		"minecraft:spruce_sapling",
         "createcafe:cassava_crop",
         "createcafe:coffee_crop",
         "festival_delicacies:chinese_cabbage",

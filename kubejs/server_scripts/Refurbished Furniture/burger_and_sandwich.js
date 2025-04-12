@@ -114,5 +114,25 @@ ServerEvents.recipes(e => {
         "#forge:crops/tomato",
         "#forge:crops/onion"
     ], "collectorsreap:prawn_po_boy", 1)
+    combination(e, [
+        "minecraft:bread",
+        "#forge:salad_ingredients",
+        "alexscaves:tectonic_shard",
+        "#forge:ham"
+    ], "cavedelight:lux_and_ham_sandwich", 1)
+    combination(e, [
+        "minecraft:bread",
+        "#forge:salad_ingredients",
+        "alexscaves:tectonic_shard",
+        "minecraft:porkchop"
+    ], "cavedelight:lux_and_ham_sandwich", 1)
+    combination(e, [
+        "minecraft:bread",
+        "alexscaves:pine_nuts",
+        "alexscaves:pine_nuts",
+        "alexscaves:pine_nuts",
+        "alexscaves:pewen_sap"
+    ], "cavedelight:pine_and_sap_sandwich", 1)
+    
 
 })

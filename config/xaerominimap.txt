@@ -115,7 +115,7 @@ displayClaims:true
 displayCurrentClaim:true
 claimsFillOpacity:46
 claimsBorderOpacity:80
-infoDisplayOrder:coords:overworld_coords:chunk_coords:angles:dimension:biome:weather:light_level:time:real_time:highlights:light_overlay_indicator:manual_cave_mode_indicator:custom_sub_world
+infoDisplayOrder:coords:overworld_coords:chunk_coords:angles:dimension:biome:weather:light_level:time:real_time:highlights:light_overlay_indicator:manual_cave_mode_indicator:custom_sub_world:season
 infoDisplay:coords:true:15:-1
 infoDisplay:overworld_coords:false:15:-1
 infoDisplay:chunk_coords:false:15:-1
@@ -130,4 +130,5 @@ infoDisplay:highlights:true:15:-1
 infoDisplay:light_overlay_indicator:true:15:-1
 infoDisplay:manual_cave_mode_indicator:true:15:-1
 infoDisplay:custom_sub_world:true:15:-1
+infoDisplay:season:true:15:-1
 module;id=xaerominimap:minimap;active=true;x=0;y=0;centered=false;fromRight=false;fromBottom=false;flippedVer=false;flippedHor=false;

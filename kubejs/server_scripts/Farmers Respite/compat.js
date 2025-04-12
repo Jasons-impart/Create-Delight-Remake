@@ -53,7 +53,7 @@ ServerEvents.recipes(e => {
         Fluid.of("fruitsdelight:lychee_cherry_tea", 1000),
         [
             Fluid.of("farmersrespite:green_tea", 1000),
-            "fruitsdelight:lychee",
+            "trailandtales_delight:dried_cherry_petal",
             "minecraft:cherry_leaves"
         ]
     )
@@ -61,7 +61,7 @@ ServerEvents.recipes(e => {
     brewing(e, "farmersrespite:green_tea",
         [
             "fruitsdelight:lychee",
-            "minecraft:cherry_leaves"
+            "trailandtales_delight:cherry_petal"
         ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
     )
     e.recipes.create.mixing(

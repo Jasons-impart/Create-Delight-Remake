@@ -41,8 +41,9 @@ const Inf_Fluid = [
   "createdelightcore:molten_ice_steel",
   "createdelightcore:molten_lightning_steel",
   "createdelightcore:molten_forged_steel",
+  "netherexp:ectoplasm",
+  "the_bumblezone:sugar_water_still"
 ];
-
 ServerEvents.recipes((event) => {
   const { create } = event.recipes;
   Inf_Fluid.forEach((f) => {

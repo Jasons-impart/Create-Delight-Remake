@@ -54,12 +54,12 @@ ServerEvents.recipes(e => {
     e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("neapolitan:haunting/white_strawberries")
     
     
-    cutting_3(e, "neapolitan:banana_bunch", [
+    cutting_2(e, "neapolitan:banana_bunch", [
         ["neapolitan:banana", 2],
         ["neapolitan:banana", 1, 0.5],
         ["neapolitan:banana", 1, 0.25]
     ])
-    cutting_3(e, "neapolitan:banana_bundle", [
+    cutting_2(e, "neapolitan:banana_bundle", [
         ["neapolitan:banana", 9]
     ])
 

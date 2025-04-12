@@ -28,8 +28,6 @@ ServerEvents.tags("minecraft:item", e => {
         "neapolitan:mint_sprout",
         "vinery:red_grape_seeds",
         "vinery:white_grape_seeds",
-        "vinery:taiga_grape_seeds_red",
-        "vinery:taiga_grape_seeds_white",
         "vinery:dark_cherry_leaves",
         "farmersdelight:onion",
         "farmersdelight:cabbage_seeds"
@@ -72,15 +70,16 @@ ServerEvents.tags("minecraft:item", e => {
         "vinery:jungle_grape_seeds_white",
         "farmersrespite:tea_seeds"
     )
-    e.add("eclipticseasons:crops/dry_average", 
-        "vintagedelight:oat_seeds"
-    )
-    e.add("eclipticseasons:crops/dry_moist", 
+    e.add("eclipticseasons:crops/dry_moist",
+        "vinery:taiga_grape_seeds_red",
+        "vinery:taiga_grape_seeds_white",
         "neapolitan:vanilla_pods",
         "vintagedelight:ghost_pepper_seeds",
         "vinery:savanna_grape_seeds_red",
         "vinery:savanna_grape_seeds_white",
         "createcafe:cassava_seeds",
         "fruitsdelight:hamimelon_seeds",
+        "vintagedelight:oat_seeds",
+        "trailandtales_delight:lantern_fruit_seeds"
     )
 })
