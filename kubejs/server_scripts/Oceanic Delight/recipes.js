@@ -33,8 +33,8 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/onion"
     ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
-    cutting_3(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
-    cutting_3(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])
+    cutting_2(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
+    cutting_2(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])
 
     //Oceanic delight
     e.replaceInput({}, "oceanic_delight:shrimp", "oceanic_delight:shrimp_slices")
@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
     e.replaceOutput({id: "culturaldelights:cutting/raw_calamari"}, "culturaldelights:raw_calamari", "oceanic_delight:squid_tentacles")
     e.replaceInput({id: "crabbersdelight:sea_pickle_juice"}, "minecraft:sea_pickle", "#forge:sea_pickles")
-    cutting_3(e, "crabbersdelight:cooked_shrimp", [["oceanic_delight:shrimp_slices", 1]])
+    cutting_2(e, "crabbersdelight:cooked_shrimp", [["oceanic_delight:shrimp_slices", 1]])
     // 虾仁薯片
     e.recipes.create.mixing(
         'oceanic_delight:shrimp_chips',

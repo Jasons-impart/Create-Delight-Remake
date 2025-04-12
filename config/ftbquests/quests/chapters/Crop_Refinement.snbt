@@ -583,7 +583,6 @@
 				item: "culturaldelights:chicken_taco"
 				type: "item"
 			}]
-			title: "鸡肉塔可"
 			x: -15.5d
 			y: 8.25d
 		}
@@ -852,8 +851,8 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "384DB273FC61434B"
-				item: "createaddition:chocolate_cake"
+				id: "16B2A6B6E927C4D6"
+				item: "neapolitan:chocolate_cake"
 				type: "item"
 			}]
 			x: -8.5d
@@ -883,13 +882,13 @@
 				xp: 100
 			}]
 			tasks: [{
-				block: "culturaldelights:wild_corn"
-				block_type: 0
-				checkItem: false
-				id: "4ED45D2BAC221002"
-				title: "野生玉米！"
-				type: "questsadditions:break"
-				value: 1L
+				icon: "culturaldelights:wild_corn"
+				id: "5C647FC43607F33C"
+				observe_type: 0
+				timer: 0L
+				title: "野生玉米"
+				to_observe: "culturaldelights:wild_corn"
+				type: "observation"
 			}]
 			x: -15.5d
 			y: -0.75d
@@ -902,13 +901,13 @@
 				xp: 100
 			}]
 			tasks: [{
-				block: "corn_delight:wild_corn"
-				block_type: 0
-				checkItem: false
-				id: "6D85E4640994601A"
-				title: "野生玉米！"
-				type: "questsadditions:break"
-				value: 1L
+				icon: "corn_delight:wild_corn"
+				id: "7B67BFE5A9A4775E"
+				observe_type: 0
+				timer: 0L
+				title: "野生玉米"
+				to_observe: "corn_delight:wild_corn"
+				type: "observation"
 			}]
 			title: "野生玉米"
 			x: -13.5d
@@ -1045,8 +1044,8 @@
 				xp: 100
 			}]
 			tasks: [{
-				id: "490D640076283B8D"
-				item: "corn_delight:corn_dog"
+				id: "6E6ABDCC35618D7A"
+				item: "create_deepfried:corn_dog"
 				type: "item"
 			}]
 			x: -16.0d
@@ -1193,7 +1192,7 @@
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "相当于一格水源"
+			subtitle: "可灌溉周围19*19的水"
 			tasks: [{
 				id: "641E0A2EE11F696E"
 				item: "ratatouille:irrigation_tower"
@@ -1245,8 +1244,8 @@
 			dependencies: ["1B018B0BAD7887C5"]
 			id: "4EDF6EF1AE913E61"
 			tasks: [{
-				id: "07264BF1CE781726"
-				item: "refurbished_furniture:bread_slice"
+				id: "3DCCB0DF80C6BB45"
+				item: "some_assembly_required:bread_slice"
 				type: "item"
 			}]
 			x: -5.5d
@@ -1920,13 +1919,13 @@
 		{
 			id: "756CE4E7CC0F6F7D"
 			tasks: [{
-				block: "farmersdelight:wild_rice"
-				block_type: 0
-				checkItem: false
-				id: "2A94878ED5E766D7"
-				title: "野生稻米！"
-				type: "questsadditions:break"
-				value: 1L
+				icon: "farmersdelight:wild_rice"
+				id: "40B32B1191898A9C"
+				observe_type: 0
+				timer: 0L
+				title: "野生稻米"
+				to_observe: "farmersdelight:wild_rice"
+				type: "observation"
 			}]
 			x: 7.5d
 			y: 11.0d
@@ -1934,14 +1933,13 @@
 		{
 			id: "55396FEE3139B9DA"
 			tasks: [{
-				block: "vintagedelight:wild_oats"
-				block_type: 0
-				checkItem: false
 				icon: "vintagedelight:wild_oats"
-				id: "4DEB6CAA99BFFCF2"
-				title: "野生燕麦！"
-				type: "questsadditions:break"
-				value: 1L
+				id: "2E543D69C2CA21F0"
+				observe_type: 0
+				timer: 0L
+				title: "野生燕麦"
+				to_observe: "vintagedelight:wild_oats"
+				type: "observation"
 			}]
 			x: -13.5d
 			y: 11.0d
@@ -2215,9 +2213,13 @@
 		{
 			id: "114AA9A1BC21A2D7"
 			tasks: [{
-				id: "3413C03388A9218C"
-				item: "frycooks_delight:wild_canola"
-				type: "item"
+				icon: "frycooks_delight:wild_canola"
+				id: "4913045E6743A96E"
+				observe_type: 0
+				timer: 0L
+				title: "野生油菜"
+				to_observe: "frycooks_delight:wild_canola"
+				type: "observation"
 			}]
 			x: -1.5d
 			y: 11.0d

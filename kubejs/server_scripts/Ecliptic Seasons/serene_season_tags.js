@@ -74,7 +74,8 @@ ServerEvents.tags("item", e => {
         "neapolitan:strawberry_pips",
         "neapolitan:vanilla_pods",
         "createdelight:adzuki_beans_seed",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "trailandtales_delight:lantern_fruit_seeds"
     ])
     e.add("sereneseasons:winter_crops", [
         "minecraft:oak_sapling",

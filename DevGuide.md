@@ -17,7 +17,7 @@
 - ResourceLocation 中严禁包含大写字母和其他无效字符。
 - 所有自定义配方都应该配有有意义的 id，配方id命名空间使用createdelight。
 - 以新配方替换原配方时，最好用相同的配方 id 直接覆盖。
-- 小刀的配方应当使用cutting_3函数增加，其会将tetra的模块化刀的配方一并加入。
+- 小刀的配方应当使用cutting_2函数增加，其会将tetra的模块化刀的配方一并加入。
 - 需要加入离心机的配方时请考虑使用centrifugation函数，其会加入三种离心机（vintageimprovement，小型，大型）的配方。
 
 ## 加入mod规范

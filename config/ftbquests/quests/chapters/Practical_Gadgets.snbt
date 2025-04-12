@@ -96,13 +96,13 @@
 			subtitle: "春困秋乏夏打盹，睡不醒的冬三月😴"
 			tasks: [
 				{
-					id: "14EE4000084D36A9"
-					item: "sereneseasons:calendar"
+					id: "3497AF0AA1C6B349"
+					item: "eclipticseasons:calendar"
 					type: "item"
 				}
 				{
-					id: "07478C11C7FDD9B5"
-					item: "sereneseasons:season_sensor"
+					id: "024EBB35D5AF9683"
+					item: "eclipticseasons:hygrometer"
 					type: "item"
 				}
 			]

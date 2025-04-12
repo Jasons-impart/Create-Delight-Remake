@@ -1140,25 +1140,21 @@
 					xp: 100
 				}
 			]
-			tasks: [
-				{
-					id: "14B639983ED964AF"
-					item: "farmersrespite:wild_coffee_bush"
-					type: "item"
-				}
-				{
-					id: "1F77634367F54513"
-					item: "farmersrespite:coffee_berries"
-					type: "item"
-				}
-			]
+			tasks: [{
+				icon: "farmersrespite:wild_coffee_bush"
+				id: "10A5EB493D4A8DBB"
+				observe_type: 0
+				timer: 0L
+				title: "野生咖啡丛"
+				to_observe: "farmersrespite:wild_coffee_bush"
+				type: "observation"
+			}]
 			title: "下界咖啡"
 			x: -26.5d
 			y: 4.0d
 		}
 		{
 			dependencies: ["2BE1586D9D67F9EA"]
-			description: [""]
 			id: "5AC8741B75B3670A"
 			rewards: [
 				{

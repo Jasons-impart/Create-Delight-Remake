@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
         "minecraft:nether_wart"
     ], "netherexp:nether_pizza", 1)
 
-    cutting_3(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
+    cutting_2(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
 
     farmersdelight.cooking(["netherexp:cerebrage", "warped_fungus", "#netherexp:cooked_hogham"], "netherexp:roasted_bone", 5.0, 200, "minecraft:bone")
     .id("netherexp:cooking/roasted_bone")

@@ -292,13 +292,13 @@
 		}
 		{
 			dependencies: ["16E31AE06BF8CE13"]
-			icon: "ad_astra:oil_bucket"
+			icon: "createdieselgenerators:gasoline_bucket"
 			id: "0117161F32078657"
 			tasks: [{
 				id: "6110D54177D45057"
 				type: "checkmark"
 			}]
-			title: "石油"
+			title: "汽油"
 			x: 9.0d
 			y: -4.5d
 		}
@@ -318,7 +318,6 @@
 			dependencies: [
 				"0117161F32078657"
 				"02FF343A1ECB8B11"
-				"5E4816310314FCC1"
 			]
 			icon: "createdelight:fuel_mixtures_bucket"
 			id: "5E140131805871A2"
@@ -328,16 +327,6 @@
 				type: "checkmark"
 			}]
 			x: 10.5d
-			y: -3.5d
-		}
-		{
-			id: "5E4816310314FCC1"
-			tasks: [{
-				id: "6065466A62B8D4CF"
-				item: "create:mechanical_mixer"
-				type: "item"
-			}]
-			x: 9.0d
 			y: -3.5d
 		}
 		{
