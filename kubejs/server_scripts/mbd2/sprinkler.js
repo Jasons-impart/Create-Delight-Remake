@@ -24,7 +24,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
         let x = 0, z = 0;
         let random = machine.level.random
         let vx = 0, vz = 0
-        let y = random.nextDouble() * 2 - 1
+        let y = random.nextDouble() - 1
         if (random.nextBoolean()) {
             x = (random.nextDouble() + 1) * (random.nextInt(2) * 2 - 1)
             vz = random.nextDouble() * 2 - 1
@@ -34,7 +34,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
             vx = random.nextDouble() * 2 - 1
         }
         let vec = Vec3d.atCenterOf(machine.pos)
-            .add([0.0, y * 0.3, 0.0])
+            .add([0.0, y * 0.3 - 0.1, 0.0])
             .add([x * 0.3, 0.0, z * 0.3])
         try {
             let level = machine.level
