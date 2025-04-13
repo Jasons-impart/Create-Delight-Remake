@@ -122,12 +122,6 @@ ServerEvents.recipes(e => {
     ], "cavedelight:lux_and_ham_sandwich", 1)
     combination(e, [
         "minecraft:bread",
-        "#forge:salad_ingredients",
-        "alexscaves:tectonic_shard",
-        "minecraft:porkchop"
-    ], "cavedelight:lux_and_ham_sandwich", 1)
-    combination(e, [
-        "minecraft:bread",
         "alexscaves:pine_nuts",
         "alexscaves:pine_nuts",
         "alexscaves:pine_nuts",

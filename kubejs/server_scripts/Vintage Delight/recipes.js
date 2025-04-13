@@ -14,6 +14,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
     e.replaceOutput({ id: "vintagedelight:cooking/cheese_curds" }, "vintagedelight:cheese_curds", "ad_astra:cheese")
+
     // 燕麦磨粉
     e.recipes.create.milling(
         Item.of("bakeries:flour").withChance(0.5),
@@ -225,4 +226,47 @@ ServerEvents.recipes(e => {
     .id("create:filling/emptying/vintagedelight/vinegar_bottle")
     e.recipes.create.emptying(["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)], "vintagedelight:vinegar_mason_jar")
     .id("create:filling/emptying/vintagedelight/vinegar_jar")
+
+        
+    e.recipes.vintagedelight.fermenting(["3x alexscaves:carmine_froglight", "minecraft:glass_bottle"], [
+        "minecraft:slime_block",
+        "minecraft:slime_block",
+        "alexscaves:amber_curiosity",
+        "#forge:dusts/redstone",
+        "vintagedelight:salt_block",
+        "vintagedelight:vinegar_bottle"
+    ])
+    .processingTime(2400)
+    .id("vintagedelight:fermenting/carmine_froglight_from_fermenting")
+    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:ochre_froglight", [
+        Fluid.of("createdelightcore:slime", 810),
+        "minecraft:blaze_powder",
+        "minecraft:magma_cream",
+        "vintagedelight:salt_block",
+        Fluid.of("createdelight:vinegar", 250)
+    ]).id("vintagedelight:basin_fermenting/ochre_froglight")
+    
+    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:verdant_froglight", [
+        Fluid.of("createdelightcore:slime", 810),
+        "#forge:dusts/glowstone",
+        "minecraft:glow_berries",
+        "vintagedelight:salt_block",
+        Fluid.of("createdelight:vinegar", 250)
+    ]).id("vintagedelight:basin_fermenting/verdant_froglight")
+    
+    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:pearlescent_froglight", [
+        Fluid.of("createdelightcore:slime", 810),
+        "minecraft:prismarine_crystal",
+        "minecraft:sea_pickle",
+        "vintagedelight:salt_block",
+        Fluid.of("createdelight:vinegar", 250)
+    ]).id("vintagedelight:basin_fermenting/pearlescent_froglight")
+    
+    e.recipes.createdieselgenerators.basin_fermenting("2x alexscaves:carmine_froglight", [
+        Fluid.of("createdelightcore:slime", 810),
+        "#forge:dusts/redstone",
+        "alexscaves:amber_curiosity",
+        "vintagedelight:salt_block",
+        Fluid.of("createdelight:vinegar", 250)
+    ]).id("vintagedelight:basin_fermenting/carmine_froglight")
 })
