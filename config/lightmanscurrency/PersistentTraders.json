@@ -5154,13 +5154,7 @@
       "ID": "technology_help_trade",
       "Name": "给大忙人的科技补助",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-        {
-          "Limit": 10,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "SALE",
