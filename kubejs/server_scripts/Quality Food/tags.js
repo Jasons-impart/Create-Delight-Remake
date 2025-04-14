@@ -1,4 +1,10 @@
 ServerEvents.tags("block", e => {
+    e.add("quality_food:quality_blocks",
+        "minecraft:grass",
+        "minecraft:tall_grass",
+        "minecraft:fern",
+        "minecraft:large_fern"
+    )
     Ingredient.of([
         "@vintagedelight",
         "@culturaldelights",
@@ -23,6 +29,16 @@ ServerEvents.tags("block", e => {
         "neapolitan:small_banana_frond",
         "neapolitan:banana_frond",
         "neapolitan:large_banana_frond",
-        "neapolitan:mint"
+        "neapolitan:mint",
+        "minecraft:grass",
+        "minecraft:tall_grass",
+        "minecraft:fern",
+        "minecraft:large_fern",
+        "fruitsdelight:lemon_tree",
+        "fruitsdelight:blueberry_bush",
+        "fruitsdelight:cranberry_bush"
+    )
+    e.add("quality_food:quality_blocks", 
+        "#createdelight:quality_crops"
     )
 })
