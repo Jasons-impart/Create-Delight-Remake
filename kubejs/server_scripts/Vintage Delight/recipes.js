@@ -228,7 +228,7 @@ ServerEvents.recipes(e => {
     .id("create:filling/emptying/vintagedelight/vinegar_jar")
 
         
-    e.recipes.vintagedelight.fermenting(["3x alexscaves:carmine_froglight", "minecraft:glass_bottle"], [
+    e.recipes.vintagedelight.fermenting("3x alexscaves:carmine_froglight", [
         "minecraft:slime_block",
         "minecraft:slime_block",
         "alexscaves:amber_curiosity",
@@ -236,6 +236,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:salt_block",
         "vintagedelight:vinegar_bottle"
     ])
+    .secondaryOutput("minecraft:glass_bottle")
     .processingTime(2400)
     .id("vintagedelight:fermenting/carmine_froglight_from_fermenting")
     e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:ochre_froglight", [
