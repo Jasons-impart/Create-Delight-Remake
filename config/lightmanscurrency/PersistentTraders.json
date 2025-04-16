@@ -740,23 +740,6 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "youkaishomecoming:redbean",
-            "Count": 1
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
             "ID": "frycooks_delight:canola_seeds",
             "Count": 1
           },
@@ -2376,30 +2359,6 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "youkaishomecoming:pods",
-            "Count": 128
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "youkaishomecoming:redbean",
             "Count": 128
           },
           "Rules": [

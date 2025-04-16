@@ -54,35 +54,35 @@ ServerEvents.recipes(e => {
     make_popsicle("casualness_delight:green_tongue", "minecraft:slime_ball", Fluid.of("createdelightcore:slime", 90))
     make_popsicle("collectorsreap:lime_popsicle", "#forge:fruits/lime", Fluid.of("createdelight:limeade", 250))
     // make_popsicle("youkaishomecoming:milk_popsicle", "#forge:milk/milk_bottle", Fluid.of("minecraft:milk", 250))
-    // e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "#forge:ice_cubes"])
-    // .id("createdelight:deploying/big_popsicle")
+    e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "#forge:ice_cubes"])
+    .id("createdelight:deploying/big_popsicle")
     // 牛奶冰棍特殊处理
-    // e.recipes.kubejs.shaped(
-    //     "youkaishomecoming:milk_popsicle",
-    //     [
-    //         "  A",
-    //         " A ",
-    //         "B  "
-    //     ], {
-    //         A: "#forge:milk/milk_bottle",
-    //         B: "createdelight:empty_popsicle"
-    //     }
-    // ).id("createdelight:shaped/milk_popsicle")
-    // e.custom({
-    //     type: "create:filling",
-    //     ingredients: [
-    //         {
-    //             item: "createdelight:empty_popsicle"
-    //         },
-    //         {
-    //             amount: 250,
-    //             fluidTag: "forge:milk"
-    //         }
-    //     ],
-    //     results: [
-    //         {
-    //             item: "youkaishomecoming:milk_popsicle"
-    //         }
-    //     ]
-    // }).id("createdelight:filling/milk_popsicle")
+    e.recipes.kubejs.shaped(
+        "youkaishomecoming:milk_popsicle",
+        [
+            "  A",
+            " A ",
+            "B  "
+        ], {
+            A: "#forge:milk/milk_bottle",
+            B: "createdelight:empty_popsicle"
+        }
+    ).id("createdelight:shaped/milk_popsicle")
+    e.custom({
+        type: "create:filling",
+        ingredients: [
+            {
+                item: "createdelight:empty_popsicle"
+            },
+            {
+                amount: 250,
+                fluidTag: "forge:milk"
+            }
+        ],
+        results: [
+            {
+                item: "youkaishomecoming:milk_popsicle"
+            }
+        ]
+    }).id("createdelight:filling/milk_popsicle")
 })
