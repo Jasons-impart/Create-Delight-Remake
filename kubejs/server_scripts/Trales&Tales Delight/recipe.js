@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "trailandtales_delight:ancient_coffee",
         "trailandtales_delight:torchflower_tea",
         "trailandtales_delight:cherry_petal_tea",
-        "trailandtales_delight:pitcher_plant_tea"
+        "trailandtales_delight:pitcher_plant_tea",
+        "trailandtales_delight:dried_cherry_petal"
 
     ])
     e.replaceInput({}, "trailandtales_delight:cheese_slice", "#forge:cheese")
