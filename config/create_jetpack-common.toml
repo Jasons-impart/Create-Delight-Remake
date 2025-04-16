@@ -9,7 +9,7 @@
 	#Range: 0.01 ~ 100.0
 	horizontal = 0.06
 	#Range: 0.01 ~ 100.0
-	vertical = 0.6
+	vertical = 0.4
 	#Range: 0.01 ~ 100.0
 	acceleration = 0.6
 	#Range: -100.0 ~ 0.0

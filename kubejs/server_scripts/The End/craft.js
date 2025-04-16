@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "ends_delight:dragon_tooth",
         "4x minecraft:glass_bottle"
     ])
+    .id("minecraft:dragon_breath_from_dragon_tooth")
     e.recipes.farmersdelight.cooking(
         [
             "#forge:shulker_meat",

@@ -14,7 +14,6 @@ JEIEvents.hideItems((e) => {
     "ad_astra:iron_plate",
     "ad_astra:iron_rod",
     "ad_astra:steel_ingot",
-    "create_enchantment_industry:experience_rotor",
     "quark:potato_crate",
     "createaddition:diamond_grit",
     "ad_astra:steel_block",

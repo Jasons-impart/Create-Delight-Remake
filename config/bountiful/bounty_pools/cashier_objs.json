@@ -5,7 +5,7 @@
             "content": "casualness_delight:spicy_strips",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
@@ -14,7 +14,7 @@
             "content": "forge:meat/cubed/raw",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
@@ -23,7 +23,7 @@
             "content": "forge:meat/scrap/cooked",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
@@ -32,7 +32,7 @@
             "content": "fruitsdelight:jello",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200
         },
@@ -41,7 +41,7 @@
             "content": "culturaldelights:tortilla_chips",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200
         },
@@ -50,7 +50,7 @@
             "content": "corn_delight:tortilla_raw",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
@@ -59,7 +59,7 @@
             "content": "minecraft:dried_kelp",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200
         },
@@ -68,7 +68,7 @@
             "content": "alexsdelight:maggot_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200
         },
@@ -77,7 +77,7 @@
             "content": "crabbersdelight:coral_crunch",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
@@ -86,7 +86,7 @@
             "content": "farmersrespite:nether_wart_sourdough",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
@@ -95,7 +95,7 @@
             "content": "forge:offal/cooked",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
@@ -104,7 +104,7 @@
             "content": "ends_delight:chorus_sauce",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 500
         },
@@ -113,7 +113,7 @@
             "content": "fruitsdelight:hawberry_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 600
         },
@@ -122,7 +122,7 @@
             "content": "forge:meat/cubed/raw",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 500
         },
@@ -131,7 +131,7 @@
             "content": "forge:sausage",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 700
         },
@@ -140,7 +140,7 @@
             "content": "forge:ground_meat/cooked",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 500
         },
@@ -149,7 +149,7 @@
             "content": "supplementaries:cookies",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
@@ -158,7 +158,7 @@
             "content": "create_confectionery:bar_of_caramel",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -167,7 +167,7 @@
             "content": "culturaldelights:tortilla",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
@@ -176,7 +176,7 @@
             "content": "corn_delight:cornbread",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -185,7 +185,7 @@
             "content": "fruitsdelight:hawberry_sheet",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -194,7 +194,7 @@
             "content": "fruitsdelight:kiwi_popsicle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -203,7 +203,7 @@
             "content": "fruitsdelight:hamimelon_popsicle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -212,7 +212,7 @@
             "content": "fruitsdelight:hawberry_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -221,7 +221,7 @@
             "content": "culturaldelights:smoked_tomato",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -230,7 +230,7 @@
             "content": "crabbersdelight:jar_of_pickles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -239,7 +239,7 @@
             "content": "crabbersdelight:kelp_shake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -248,7 +248,7 @@
             "content": "crabbersdelight:sea_pickle_juice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -257,7 +257,7 @@
             "content": "create_central_kitchen:chocolate_cake_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 600
         },
@@ -266,7 +266,7 @@
             "content": "create_central_kitchen:honey_cake_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 500
         },
@@ -275,7 +275,7 @@
             "content": "some_assembly_required:bread_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 700
         },
@@ -284,7 +284,7 @@
             "content": "some_assembly_required:toasted_bread_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
@@ -293,7 +293,7 @@
             "content": "casualness_delight:green_tongue",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1100
         },
@@ -302,7 +302,7 @@
             "content": "casualness_delight:roast_gluten",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -311,7 +311,7 @@
             "content": "create_confectionery:candy_cane",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000
         },
@@ -320,7 +320,7 @@
             "content": "create_central_kitchen:pumpkin_pie_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 500
         },
@@ -330,7 +330,7 @@
             "content": "createdelight:raw_hotdog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1300
         },
@@ -340,7 +340,7 @@
             "content": "createdelight:cooked_hotdog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -350,7 +350,7 @@
             "content": "fruitsdelight:juice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1700
         },
@@ -360,7 +360,7 @@
             "content": "fruitsdelight:jelly",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -370,7 +370,7 @@
             "content": "create_confectionery:hot_chocolate_bottle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -380,7 +380,7 @@
             "content": "minecraft:bread",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -390,7 +390,7 @@
             "content": "vintagedelight:kimchi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -400,7 +400,7 @@
             "content": "vintagedelight:roasted_peanut",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1100
         },
@@ -410,7 +410,7 @@
             "content": "vintagedelight:pickled_pepper",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -420,7 +420,7 @@
             "content": "vintagedelight:pickled_onion",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -430,7 +430,7 @@
             "content": "vintagedelight:pickled_beetroot",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -440,7 +440,7 @@
             "content": "vintagedelight:oatmeal",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -450,7 +450,7 @@
             "content": "corn_delight:creamy_corn_drink",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -480,7 +480,7 @@
             "content": "corn_delight:grilled_corn",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1100
         },
@@ -490,7 +490,7 @@
             "content": "corn_delight:boiled_corn",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -500,7 +500,7 @@
             "content": "fruitsdelight:blueberry_muffin",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1600
         },
@@ -510,7 +510,7 @@
             "content": "create_confectionery:honey_candy",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -520,7 +520,7 @@
             "content": "create_confectionery:soothing_hot_chocolate",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -530,7 +530,7 @@
             "content": "casualness_delight:potato_chip",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -540,7 +540,7 @@
             "content": "casualness_delight:quiche_lorraine_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -550,7 +550,7 @@
             "content": "casualness_delight:stargazy_pie_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1600
         },
@@ -560,7 +560,7 @@
             "content": "alexsmobs:mosquito_repellent_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -570,7 +570,7 @@
             "content": "fruitsdelight:jelly_bread",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -580,7 +580,7 @@
             "content": "farmersdelight:cooked_salmon_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -590,7 +590,7 @@
             "content": "farmersdelight:cooked_cod_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -600,7 +600,7 @@
             "content": "farmersdelight:cooked_bacon",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -610,7 +610,7 @@
             "content": "farmersdelight:hot_cocoa",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -620,7 +620,7 @@
             "content": "farmersdelight:apple_cider",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -630,7 +630,7 @@
             "content": "farmersdelight:melon_juice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -640,7 +640,7 @@
             "content": "crabbersdelight:cooked_tropical_fish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -650,7 +650,7 @@
             "content": "crabbersdelight:cooked_pufferfish_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -660,7 +660,7 @@
             "content": "crabbersdelight:cooked_tropical_fish_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200
         },
@@ -670,7 +670,7 @@
             "content": "farmersdelight:cooked_mutton_chops",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -680,7 +680,7 @@
             "content": "farmersdelight:nether_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -690,7 +690,7 @@
             "content": "culturaldelights:avocado_toast",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1600
         },
@@ -700,7 +700,7 @@
             "content": "culturaldelights:pickle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -710,7 +710,7 @@
             "content": "culturaldelights:smoked_eggplant",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -720,7 +720,7 @@
             "content": "culturaldelights:calamari_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -730,7 +730,7 @@
             "content": "culturaldelights:elote",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -740,7 +740,7 @@
             "content": "corn_delight:caramel_popcorn",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -750,7 +750,7 @@
             "content": "vintagedelight:salted_salmon",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -760,7 +760,7 @@
             "content": "fruitsdelight:baked_pear",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -770,7 +770,7 @@
             "content": "fruitsdelight:baked_durian",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1500
         },
@@ -780,7 +780,7 @@
             "content": "vintagedelight:honey_roasted_peanut",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -790,7 +790,7 @@
             "content": "vintagedelight:salted_cod",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -800,7 +800,7 @@
             "content": "vintagedelight:surstromming",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -810,7 +810,7 @@
             "content": "alexsmobs:cooked_lobster_tail",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -820,7 +820,7 @@
             "content": "quark:cooked_crab_leg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -830,7 +830,7 @@
             "content": "minecraft:cooked_salmon",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -840,7 +840,7 @@
             "content": "minecraft:cooked_cod",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -850,7 +850,7 @@
             "content": "minecraft:cooked_rabbit",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -860,7 +860,7 @@
             "content": "minecraft:cooked_chicken",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -870,7 +870,7 @@
             "content": "minecraft:cooked_mutton",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -880,7 +880,7 @@
             "content": "casualness_delight:phantom_puff",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -890,7 +890,7 @@
             "content": "minecraft:baked_potato",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -900,7 +900,7 @@
             "content": "fruitsdelight:durian_pie",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -910,7 +910,7 @@
             "content": "fruitsdelight:fig_tart",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -920,7 +920,7 @@
             "content": "fruitsdelight:lemon_tart",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -930,7 +930,7 @@
             "content": "ends_delight:chorus_flower_pie",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -940,7 +940,7 @@
             "content": "ends_delight:roasted_shulker_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -950,7 +950,7 @@
             "content": "ends_delight:dried_endermite_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -960,7 +960,7 @@
             "content": "ends_delight:roasted_dragon_meat_cuts",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -970,7 +970,7 @@
             "content": "createdelight:chocolate_candy",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3600
         },
@@ -980,7 +980,7 @@
             "content": "casualness_delight:spring_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -990,7 +990,7 @@
             "content": "forge:bars/chocolate",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1000,7 +1000,7 @@
             "content": "createdelight:glazed_berries",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1010,7 +1010,7 @@
             "content": "create_confectionery:caramelized_marshmellow_on_a_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1020,7 +1020,7 @@
             "content": "farmersdelight:mixed_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1030,7 +1030,7 @@
             "content": "culturaldelights:creamed_corn",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1040,7 +1040,7 @@
             "content": "culturaldelights:tropical_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1050,7 +1050,7 @@
             "content": "culturaldelights:pufferfish_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1060,7 +1060,7 @@
             "content": "corn_delight:corn_dog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1070,7 +1070,7 @@
             "content": "createcafe:oreo",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1080,7 +1080,7 @@
             "content": "createdelight:milk_tea",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1090,7 +1090,7 @@
             "content": "createdelight:cafe",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1100,7 +1100,7 @@
             "content": "farmersrespite:blazing_chili",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1110,7 +1110,7 @@
             "content": "createdelight:boiled_dumpling",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1120,7 +1120,7 @@
             "content": "fruitsdelight:pineapple_pie",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1130,7 +1130,7 @@
             "content": "alexsmobs:cooked_moose_ribs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1140,7 +1140,7 @@
             "content": "alexsmobs:cooked_kangaroo_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1150,7 +1150,7 @@
             "content": "alexsmobs:cooked_catfish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1160,7 +1160,7 @@
             "content": "casualness_delight:cooked_donkey_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1170,7 +1170,7 @@
             "content": "minecraft:cooked_beef",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1180,7 +1180,7 @@
             "content": "forge:cheese",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1190,7 +1190,7 @@
             "content": "casualness_delight:tonkatsu",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1200,7 +1200,7 @@
             "content": "casualness_delight:fried_fish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1210,7 +1210,7 @@
             "content": "vintagedelight:pb_j",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3600
         },
@@ -1220,7 +1220,7 @@
             "content": "vintagedelight:cucumber_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1230,7 +1230,7 @@
             "content": "vintagedelight:pickled_egg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1240,7 +1240,7 @@
             "content": "vintagedelight:pickled_pitcher_pod",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1250,7 +1250,7 @@
             "content": "vintagedelight:deluxe_granola_bar",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1260,7 +1260,7 @@
             "content": "culturaldelights:empanada",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1270,7 +1270,7 @@
             "content": "casualness_delight:fried_chicken_chip",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1280,7 +1280,7 @@
             "content": "alexsdelight:cooked_bison",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1290,7 +1290,7 @@
             "content": "alexsdelight:cooked_bunfungus",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1300,7 +1300,7 @@
             "content": "alexsdelight:bison_patty",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -1310,7 +1310,7 @@
             "content": "alexsdelight:gongylidia_bruschetta",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1320,7 +1320,7 @@
             "content": "farmersdelight:ratatouille",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1330,7 +1330,7 @@
             "content": "farmersdelight:bacon_and_eggs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1340,7 +1340,7 @@
             "content": "farmersdelight:bone_broth",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1350,7 +1350,7 @@
             "content": "farmersdelight:cabbage_rolls",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1360,7 +1360,7 @@
             "content": "farmersdelight:salmon_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1370,7 +1370,7 @@
             "content": "mynethersdelight:hot_cream_cone",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1380,7 +1380,7 @@
             "content": "crabbersdelight:fish_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1390,7 +1390,7 @@
             "content": "crabbersdelight:bisque",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1400,7 +1400,7 @@
             "content": "crabbersdelight:clam_chowder",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1410,7 +1410,7 @@
             "content": "crabbersdelight:shrimp_fried_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1420,7 +1420,7 @@
             "content": "butchercraft:cooked_goat_chop",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1430,7 +1430,7 @@
             "content": "mynethersdelight:cooked_loin",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1440,7 +1440,7 @@
             "content": "mynethersdelight:sausage_and_potatoes",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -1450,7 +1450,7 @@
             "content": "mynethersdelight:hotdog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1460,7 +1460,7 @@
             "content": "crabbersdelight:crab_legs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1470,7 +1470,7 @@
             "content": "crabbersdelight:cooked_frog_leg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1480,7 +1480,7 @@
             "content": "crabbersdelight:cooked_shrimp",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1490,7 +1490,7 @@
             "content": "crabbersdelight:cooked_clawster",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 4500
         },
@@ -1500,7 +1500,7 @@
             "content": "crabbersdelight:cooked_crab",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 4500
         },
@@ -1510,7 +1510,7 @@
             "content": "crabbersdelight:cooked_clam_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1520,7 +1520,7 @@
             "content": "alexsdelight:cooked_loose_moose_rib",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1530,7 +1530,7 @@
             "content": "alexsdelight:cooked_bunfungus_drumstick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1540,7 +1540,7 @@
             "content": "alexsdelight:cooked_catfish_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1550,7 +1550,7 @@
             "content": "mynethersdelight:boiled_egg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1560,7 +1560,7 @@
             "content": "casualness_delight:donkey_burger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1570,7 +1570,7 @@
             "content": "alexsmobs:kangaroo_burger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -1580,7 +1580,7 @@
             "content": "minecraft:golden_carrot",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1590,7 +1590,7 @@
             "content": "iceandfire:lightning_dragon_flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6000
         },
@@ -1600,7 +1600,7 @@
             "content": "iceandfire:ice_dragon_flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6200
         },
@@ -1610,7 +1610,7 @@
             "content": "iceandfire:fire_dragon_flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6000
         },
@@ -1620,7 +1620,7 @@
             "content": "fruitsdelight:pear_with_rock_sugar",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
@@ -1630,7 +1630,7 @@
             "content": "fruitsdelight:orange_chicken",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -1640,7 +1640,7 @@
             "content": "fruitsdelight:fig_chicken_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -1650,7 +1650,7 @@
             "content": "fruitsdelight:orange_marinated_pork",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1660,7 +1660,7 @@
             "content": "fruitsdelight:lychee_chicken",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -1670,7 +1670,7 @@
             "content": "fruitsdelight:pineapple_marinated_pork",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1680,7 +1680,7 @@
             "content": "fruitsdelight:bowl_of_pineapple_fried_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
@@ -1690,7 +1690,7 @@
             "content": "createcafe:mango_milk_tea",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1700,7 +1700,7 @@
             "content": "casualness_delight:bowl_of_sweet_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
@@ -1710,7 +1710,7 @@
             "content": "ends_delight:stuffed_rice_cake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1720,7 +1720,7 @@
             "content": "ends_delight:ender_bamboo_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
@@ -1730,7 +1730,7 @@
             "content": "ends_delight:ender_sausage",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -1740,7 +1740,7 @@
             "content": "ends_delight:shulker_omelette",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1750,7 +1750,7 @@
             "content": "ends_delight:smoked_dragon_leg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5200
         },
@@ -1760,7 +1760,7 @@
             "content": "ends_delight:roasted_dragon_meat",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5000
         },
@@ -1770,7 +1770,7 @@
             "content": "culturaldelights:mutton_sandwich",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -1780,7 +1780,7 @@
             "content": "culturaldelights:hearty_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1790,7 +1790,7 @@
             "content": "culturaldelights:fish_taco",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -1800,7 +1800,7 @@
             "content": "culturaldelights:eggplant_burger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -1810,7 +1810,7 @@
             "content": "culturaldelights:pork_wrap",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -1820,7 +1820,7 @@
             "content": "vintagedelight:chocolate_nut_granola_bar",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1800
         },
@@ -1830,7 +1830,7 @@
             "content": "culturaldelights:midori_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -1840,7 +1840,7 @@
             "content": "corn_delight:classic_corn_dog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -1850,7 +1850,7 @@
             "content": "corn_delight:corn_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
@@ -1860,7 +1860,7 @@
             "content": "farmersdelight:pumpkin_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -1870,7 +1870,7 @@
             "content": "farmersdelight:baked_cod_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -1880,7 +1880,7 @@
             "content": "farmersdelight:noodle_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -1890,7 +1890,7 @@
             "content": "farmersdelight:pasta_with_meatballs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -1900,7 +1900,7 @@
             "content": "farmersdelight:pasta_with_mutton_chop",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -1910,7 +1910,7 @@
             "content": "farmersdelight:mushroom_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
@@ -1920,7 +1920,7 @@
             "content": "farmersdelight:roasted_mutton_chops",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -1930,7 +1930,7 @@
             "content": "farmersdelight:vegetable_noodles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -1940,7 +1940,7 @@
             "content": "farmersdelight:steak_and_potatoes",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -1950,7 +1950,7 @@
             "content": "farmersdelight:fried_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
@@ -1960,7 +1960,7 @@
             "content": "farmersdelight:fish_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -1970,7 +1970,7 @@
             "content": "farmersdelight:vegetable_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -1980,7 +1980,7 @@
             "content": "farmersdelight:chicken_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -1990,7 +1990,7 @@
             "content": "farmersdelight:beef_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -2000,7 +2000,7 @@
             "content": "farmersdelight:kelp_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1900
         },
@@ -2010,7 +2010,7 @@
             "content": "farmersdelight:stuffed_potato",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
@@ -2020,7 +2020,7 @@
             "content": "farmersdelight:dumplings",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -2030,7 +2030,7 @@
             "content": "farmersdelight:mutton_wrap",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -2040,7 +2040,7 @@
             "content": "culturaldelights:fried_eggplant_pasta",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2050,7 +2050,7 @@
             "content": "farmersdelight:smoked_ham",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2060,7 +2060,7 @@
             "content": "farmersdelight:barbecue_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -2070,7 +2070,7 @@
             "content": "farmersdelight:fruit_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
@@ -2080,7 +2080,7 @@
             "content": "farmersdelight:glow_berry_custard",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
@@ -2090,7 +2090,7 @@
             "content": "farmersdelight:bacon_sandwich",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2100,7 +2100,7 @@
             "content": "farmersdelight:hamburger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3300
         },
@@ -2110,7 +2110,7 @@
             "content": "farmersdelight:chicken_sandwich",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2120,7 +2120,7 @@
             "content": "farmersdelight:egg_sandwich",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -2130,7 +2130,7 @@
             "content": "alexsdelight:kangaroo_pasta",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2140,7 +2140,7 @@
             "content": "alexsdelight:bunfungus_sandwich",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -2150,7 +2150,7 @@
             "content": "alexsdelight:bison_burger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2160,7 +2160,7 @@
             "content": "farmersdelight:shepherds_pie",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2170,7 +2170,7 @@
             "content": "farmersdelight:honey_glazed_ham",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3300
         },
@@ -2180,7 +2180,7 @@
             "content": "farmersdelight:stuffed_pumpkin",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2190,7 +2190,7 @@
             "content": "farmersdelight:grilled_salmon",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2200,7 +2200,7 @@
             "content": "farmersdelight:squid_ink_pasta",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3500
         },
@@ -2210,7 +2210,7 @@
             "content": "farmersdelight:roast_chicken",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2220,7 +2220,7 @@
             "content": "mynethersdelight:strider_with_grilled_fungus",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2230,7 +2230,7 @@
             "content": "mynethersdelight:breakfast_sampler",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -2240,7 +2240,7 @@
             "content": "mynethersdelight:blue_tenderloin_steak",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2250,7 +2250,7 @@
             "content": "butchercraft:cooked_goat_roast",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3300
         },
@@ -2260,7 +2260,7 @@
             "content": "butchercraft:cooked_pork_ribs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2270,7 +2270,7 @@
             "content": "crabbersdelight:seafood_gumbo",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3500
         },
@@ -2280,7 +2280,7 @@
             "content": "crabbersdelight:squid_kebob",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2290,7 +2290,7 @@
             "content": "crabbersdelight:clam_bake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -2300,7 +2300,7 @@
             "content": "crabbersdelight:stuffed_nautilus_shell",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2310,7 +2310,7 @@
             "content": "crabbersdelight:shrimp_skewer",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2320,7 +2320,7 @@
             "content": "crabbersdelight:surf_and_turf",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3600
         },
@@ -2330,7 +2330,7 @@
             "content": "crabbersdelight:crab_cakes",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2340,7 +2340,7 @@
             "content": "silentsdelight:sculk_shrieker_shake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2350,7 +2350,7 @@
             "content": "silentsdelight:heartburger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2360,7 +2360,7 @@
             "content": "silentsdelight:plate_of_warden_heart",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3700
         },
@@ -2370,7 +2370,7 @@
             "content": "silentsdelight:sculk_catalyst_pie_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2380,7 +2380,7 @@
             "content": "silentsdelight:sculk_vein_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
@@ -2390,7 +2390,7 @@
             "content": "silentsdelight:sculk_barbecue_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2400,7 +2400,7 @@
             "content": "alexsdelight:lobster_pasta",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3600
         },
@@ -2410,7 +2410,7 @@
             "content": "alexsdelight:acacia_blossom_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
@@ -2420,7 +2420,7 @@
             "content": "alexsdelight:kangaroo_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
@@ -2430,7 +2430,7 @@
             "content": "silentsdelight:sculk_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2440,7 +2440,7 @@
             "content": "silentsdelight:baked_warden_ear_on_a_stick",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3300
         },
@@ -2450,7 +2450,7 @@
             "content": "silentsdelight:warden_ear_fried_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2460,7 +2460,7 @@
             "content": "silentsdelight:sculk_sensor_tendril_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -2470,7 +2470,7 @@
             "content": "silentsdelight:sculk_sensor_tendril_roll_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
@@ -2480,7 +2480,7 @@
             "content": "silentsdelight:sculk_sensor_sprinkles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
@@ -2490,7 +2490,7 @@
             "content": "mynethersdelight:spicy_noodle_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2500,7 +2500,7 @@
             "content": "mynethersdelight:plate_of_ghasta_with_cream",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3600
         },
@@ -2510,7 +2510,7 @@
             "content": "mynethersdelight:spicy_cotton",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2520,7 +2520,7 @@
             "content": "mynethersdelight:plate_of_cold_striderloaf",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2530,7 +2530,7 @@
             "content": "mynethersdelight:plate_of_striderloaf",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2540,7 +2540,7 @@
             "content": "mynethersdelight:bleeding_tartar",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3300
         },
@@ -2550,7 +2550,7 @@
             "content": "mynethersdelight:deviled_egg",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -2560,7 +2560,7 @@
             "content": "mynethersdelight:crimson_stroganoff",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2570,7 +2570,7 @@
             "content": "mynethersdelight:strider_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2580,7 +2580,7 @@
             "content": "mynethersdelight:hot_cream",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2590,7 +2590,7 @@
             "content": "mynethersdelight:ghast_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3500
         },
@@ -2600,7 +2600,7 @@
             "content": "mynethersdelight:spicy_skewer",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
@@ -2610,7 +2610,7 @@
             "content": "mynethersdelight:chilidog",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
@@ -2620,7 +2620,7 @@
             "content": "mynethersdelight:spicy_hoglin_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3400
         },
@@ -2630,7 +2630,7 @@
             "content": "mynethersdelight:hot_wings",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
@@ -2640,7 +2640,7 @@
             "content": "mynethersdelight:magma_cake_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2700
         },
@@ -2650,7 +2650,7 @@
             "content": "mynethersdelight:rock_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
@@ -2660,7 +2660,7 @@
             "content": "mynethersdelight:spicy_curry",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3500
         },
@@ -3182,57 +3182,57 @@
         },
         "cashier_obj_glow_squid_tentacles": {
             "type": "item",
-            "content": "cashier_obj_glow_squid_tentacles",
+            "content": "oceanic_delight:glow_squid_tentacles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200,
             "rarity": "COMMON"
         },
         "cashier_obj_squid_tentacles": {
             "type": "item",
-            "content": "cashier_obj_squid_tentacles",
+            "content": "oceanic_delight:squid_tentacles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200,
             "rarity": "COMMON"
         },
         "cashier_obj_shrimp_slices": {
             "type": "item",
-            "content": "cashier_obj_shrimp_slices",
+            "content": "oceanic_delight:shrimp_slices",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 250,
             "rarity": "COMMON"
         },
         "cashier_obj_sea_pickle_slices": {
             "type": "item",
-            "content": "cashier_obj_sea_pickle_slices",
+            "content": "oceanic_delight:sea_pickle_slices",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 200,
             "rarity": "COMMON"
         },
         "cashier_obj_sea_grape_juice": {
             "type": "item",
-            "content": "cashier_obj_sea_grape_juice",
+            "content": "oceanic_delight:sea_grape_juice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350,
             "rarity": "UNCOMMON"
         },
         "cashier_obj_elder_guardian_eye": {
             "type": "item",
-            "content": "cashier_obj_elder_guardian_eye",
+            "content": "oceanic_delight:elder_guardian_eye",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3242,37 +3242,37 @@
         },
         "cashier_obj_salmon_eggs": {
             "type": "item",
-            "content": "cashier_obj_salmon_eggs",
+            "content": "oceanic_delight:salmon_eggs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300,
             "rarity": "COMMON"
         },
         "cashier_obj_ancient_fish_eggs": {
             "type": "item",
-            "content": "cashier_obj_ancient_fish_eggs",
+            "content": "oceanic_delight:ancient_fish_eggs",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 450,
             "rarity": "UNCOMMON"
         },
         "cashier_obj_sea_grape": {
             "type": "item",
-            "content": "cashier_obj_sea_grape",
+            "content": "oceanic_delight:sea_grape",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 250,
             "rarity": "COMMON"
         },
         "cashier_obj_stuffed_pufferfish": {
             "type": "item",
-            "content": "cashier_obj_stuffed_pufferfish",
+            "content": "oceanic_delight:stuffed_pufferfish",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3282,7 +3282,7 @@
         },
         "cashier_obj_bowl_of_paella": {
             "type": "item",
-            "content": "cashier_obj_bowl_of_paella",
+            "content": "oceanic_delight:bowl_of_paella",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3292,7 +3292,7 @@
         },
         "cashier_obj_paella_plate": {
             "type": "item",
-            "content": "cashier_obj_paella_plate",
+            "content": "oceanic_delight:paella_plate",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3302,7 +3302,7 @@
         },
         "cashier_obj_squid_and_pickles": {
             "type": "item",
-            "content": "cashier_obj_squid_and_pickles",
+            "content": "oceanic_delight:squid_and_pickles",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3312,7 +3312,7 @@
         },
         "cashier_obj_shrimp_rice": {
             "type": "item",
-            "content": "cashier_obj_shrimp_rice",
+            "content": "oceanic_delight:shrimp_rice",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3322,7 +3322,7 @@
         },
         "cashier_obj_pasta_with_eyeball": {
             "type": "item",
-            "content": "cashier_obj_pasta_with_eyeball",
+            "content": "oceanic_delight:pasta_with_eyeball",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3332,7 +3332,7 @@
         },
         "cashier_obj_shrimp_stew": {
             "type": "item",
-            "content": "cashier_obj_shrimp_stew",
+            "content": "oceanic_delight:shrimp_stew",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3342,7 +3342,7 @@
         },
         "cashier_obj_fish_egg_noodle_soup": {
             "type": "item",
-            "content": "cashier_obj_fish_egg_noodle_soup",
+            "content": "oceanic_delight:fish_egg_noodle_soup",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3352,17 +3352,17 @@
         },
         "cashier_obj_globular_rice": {
             "type": "item",
-            "content": "cashier_obj_globular_rice",
+            "content": "oceanic_delight:globular_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800,
             "rarity": "COMMON"
         },
         "cashier_obj_shrimp_roll": {
             "type": "item",
-            "content": "cashier_obj_shrimp_roll",
+            "content": "oceanic_delight:shrimp_roll",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3372,7 +3372,7 @@
         },
         "cashier_obj_glow_squid_stew": {
             "type": "item",
-            "content": "cashier_obj_glow_squid_stew",
+            "content": "oceanic_delight:glow_squid_stew",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3382,47 +3382,47 @@
         },
         "cashier_obj_fish_egg_roll_slice": {
             "type": "item",
-            "content": "cashier_obj_fish_egg_roll_slice",
+            "content": "oceanic_delight:fish_egg_roll_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950,
             "rarity": "COMMON"
         },
         "cashier_obj_fish_egg_roll": {
             "type": "item",
-            "content": "cashier_obj_fish_egg_roll",
+            "content": "oceanic_delight:fish_egg_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200,
             "rarity": "UNCOMMON"
         },
         "cashier_obj_sea_pickle_roll": {
             "type": "item",
-            "content": "cashier_obj_sea_pickle_roll",
+            "content": "oceanic_delight:sea_pickle_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800,
             "rarity": "COMMON"
         },
         "cashier_obj_sea_pickle_roll_slice": {
             "type": "item",
-            "content": "cashier_obj_sea_pickle_roll_slice",
+            "content": "oceanic_delight:sea_pickle_roll_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950,
             "rarity": "COMMON"
         },
         "cashier_obj_steamed_beef": {
             "type": "item",
-            "content": "cashier_obj_steamed_beef",
+            "content": "oceanic_delight:steamed_beef",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3432,7 +3432,7 @@
         },
         "cashier_obj_takoyaki": {
             "type": "item",
-            "content": "cashier_obj_takoyaki",
+            "content": "oceanic_delight:takoyaki",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3442,67 +3442,67 @@
         },
         "cashier_obj_shrimp_chips": {
             "type": "item",
-            "content": "cashier_obj_shrimp_chips",
+            "content": "oceanic_delight:shrimp_chips",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1000,
             "rarity": "COMMON"
         },
         "cashier_obj_fried_shrimp": {
             "type": "item",
-            "content": "cashier_obj_fried_shrimp",
+            "content": "oceanic_delight:fried_shrimp",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1100,
             "rarity": "COMMON"
         },
         "cashier_obj_sea_salad": {
             "type": "item",
-            "content": "cashier_obj_sea_salad",
+            "content": "oceanic_delight:sea_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850,
             "rarity": "COMMON"
         },
         "cashier_obj_caesar_salad": {
             "type": "item",
-            "content": "cashier_obj_caesar_salad",
+            "content": "oceanic_delight:caesar_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950,
             "rarity": "COMMON"
         },
         "cashier_obj_potato_salad": {
             "type": "item",
-            "content": "cashier_obj_potato_salad",
+            "content": "oceanic_delight:potato_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850,
             "rarity": "COMMON"
         },
         "cashier_obj_squid_salad": {
             "type": "item",
-            "content": "cashier_obj_squid_salad",
+            "content": "oceanic_delight:squid_salad",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 900,
             "rarity": "COMMON"
         },
         "cashier_obj_seafood_skewer": {
             "type": "item",
-            "content": "cashier_obj_seafood_skewer",
+            "content": "oceanic_delight:seafood_skewer",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3512,7 +3512,7 @@
         },
         "cashier_obj_caviar_toast": {
             "type": "item",
-            "content": "cashier_obj_caviar_toast",
+            "content": "oceanic_delight:caviar_toast",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3522,20 +3522,20 @@
         },
         "cashier_obj_sponge_cake_slice": {
             "type": "item",
-            "content": "cashier_obj_sponge_cake_slice",
+            "content": "oceanic_delight:sponge_cake_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1200,
             "rarity": "COMMON"
         },
         "cashier_obj_sponge_cake": {
             "type": "item",
-            "content": "cashier_obj_sponge_cake",
+            "content": "oceanic_delight:sponge_cake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 1300,
             "rarity": "COMMON"
@@ -3543,497 +3543,497 @@
         "cashier_obj_raw_lamprey": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_raw_lamprey",
+            "content": "youkaishomecoming:raw_lamprey",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_cooked_flesh": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_cooked_flesh",
+            "content": "youkaishomecoming:cooked_flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
         "cashier_obj_flesh": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_flesh",
+            "content": "youkaishomecoming:flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 380
         },
         "cashier_obj_roasted_lamprey_fillet": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_roasted_lamprey_fillet",
+            "content": "youkaishomecoming:roasted_lamprey_fillet",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 750
         },
         "cashier_obj_raw_lamprey_fillet": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_raw_lamprey_fillet",
+            "content": "youkaishomecoming:raw_lamprey_fillet",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 700
         },
         "cashier_obj_roasted_lamprey": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_roasted_lamprey",
+            "content": "youkaishomecoming:roasted_lamprey",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 750
         },
         "cashier_obj_pods": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_pods",
+            "content": "youkaishomecoming:pods",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 250
         },
         "cashier_obj_soybean": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_soybean",
+            "content": "youkaishomecoming:soybean",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 280
         },
         "cashier_obj_plate_of_stuffed_pufferfish": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_plate_of_stuffed_pufferfish",
+            "content": "oceanic_delight:late_of_stuffed_pufferfish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3000
         },
         "cashier_obj_bun": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_bun",
+            "content": "youkaishomecoming:bun",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 250
         },
         "cashier_obj_tobiko_gunkan": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_tobiko_gunkan",
+            "content": "youkaishomecoming:tobiko_gunkan",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_tutu_congee": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_tutu_congee",
+            "content": "youkaishomecoming:tutu_congee",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
         "cashier_obj_steamed_egg_in_bamboo": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_steamed_egg_in_bamboo",
+            "content": "youkaishomecoming:steamed_egg_in_bamboo",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 750
         },
         "cashier_obj_doughnut": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_doughnut",
+            "content": "youkaishomecoming:doughnut",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_higi_chocolate": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_higi_chocolate",
+            "content": "youkaishomecoming:higi_chocolate",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950
         },
         "cashier_obj_higi_doughnut": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_higi_doughnut",
+            "content": "youkaishomecoming:higi_doughnut",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 900
         },
         "cashier_obj_fairy_candy": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_fairy_candy",
+            "content": "youkaishomecoming:fairy_candy",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
         "cashier_obj_candy_apple": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_candy_apple",
+            "content": "youkaishomecoming:candy_apple",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
         "cashier_obj_pork_rice_ball": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_pork_rice_ball",
+            "content": "youkaishomecoming:pork_rice_ball",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_oyaki": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_oyaki",
+            "content": "youkaishomecoming:oyaki",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
         "cashier_obj_koishi_mousse": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_koishi_mousse",
+            "content": "youkaishomecoming:koishi_mousse",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
         "cashier_obj_yakumo_inari": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_yakumo_inari",
+            "content": "youkaishomecoming:yakumo_inari",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
         "cashier_obj_sekibankiyaki": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_sekibankiyaki",
+            "content": "youkaishomecoming:sekibankiyaki",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3100
         },
         "cashier_obj_senbei": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_senbei",
+            "content": "youkaishomecoming:senbei",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 250
         },
         "cashier_obj_onigili": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_onigili",
+            "content": "youkaishomecoming:onigili",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_yashouma_dango": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_yashouma_dango",
+            "content": "youkaishomecoming:yashouma_dango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_sakura_mochi": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_sakura_mochi",
+            "content": "youkaishomecoming:sakura_mochi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_matcha": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_matcha",
+            "content": "youkaishomecoming:matcha",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_cooked_mandrake_root": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_cooked_mandrake_root",
+            "content": "youkaishomecoming:cooked_mandrake_root",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 700
         },
         "cashier_obj_roe": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_roe",
+            "content": "youkaishomecoming:roe",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2900
         },
         "cashier_obj_coffee_mochi": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_coffee_mochi",
+            "content": "youkaishomecoming:coffee_mochi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2800
         },
         "cashier_obj_tsukimi_dango": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_tsukimi_dango",
+            "content": "youkaishomecoming:tsukimi_dango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 3200
         },
         "cashier_obj_mochi": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_mochi",
+            "content": "youkaishomecoming:mochi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_oily_bean_curd": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_oily_bean_curd",
+            "content": "youkaishomecoming:oily_bean_curd",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 650
         },
         "cashier_obj_tofu": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_tofu",
+            "content": "youkaishomecoming:tofu",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_matcha_mochi": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_matcha_mochi",
+            "content": "youkaishomecoming:matcha_mochi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2600
         },
         "cashier_obj_blazing_red_curry": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_blazing_red_curry",
+            "content": "youkaishomecoming:blazing_red_curry",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_avgolemono": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_avgolemono",
+            "content": "youkaishomecoming:avgolemono",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_apaki": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_apaki",
+            "content": "youkaishomecoming:apaki",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 900
         },
         "cashier_obj_shaved_ice_over_rice": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_shaved_ice_over_rice",
+            "content": "youkaishomecoming:shaved_ice_over_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_assorted_dango": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_assorted_dango",
+            "content": "youkaishomecoming:assorted_dango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_mitarashi_dango": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_mitarashi_dango",
+            "content": "youkaishomecoming:mitarashi_dango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 330
         },
         "cashier_obj_kinako_dango": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_kinako_dango",
+            "content": "youkaishomecoming:kinako_dango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 320
         },
         "cashier_obj_big_popsicle": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_big_popsicle",
+            "content": "youkaishomecoming:big_popsicle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_milk_popsicle": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_milk_popsicle",
+            "content": "youkaishomecoming:milk_popsicle",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 330
         },
         "cashier_obj_red_velvet_cake": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_red_velvet_cake",
+            "content": "youkaishomecoming:red_velvet_cake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2000
         },
         "cashier_obj_red_velvet_cake_slice": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_red_velvet_cake_slice",
+            "content": "youkaishomecoming:red_velvet_cake_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950
         },
         "cashier_obj_flesh_feast": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_flesh_feast",
+            "content": "youkaishomecoming:flesh_feast",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5000
         },
         "cashier_obj_raw_flesh_feast": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_raw_flesh_feast",
+            "content": "youkaishomecoming:raw_flesh_feast",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5200
         },
         "cashier_obj_chest_of_heart_throbbing_surprise": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_chest_of_heart_throbbing_surprise",
+            "content": "youkaishomecoming:chest_of_heart_throbbing_surprise",
             "amount": {
                 "min": 1,
                 "max": 1
@@ -4043,550 +4043,550 @@
         "cashier_obj_scarlet_devil_cake": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_scarlet_devil_cake",
+            "content": "youkaishomecoming:scarlet_devil_cake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_flesh_chocolate_mousse": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_flesh_chocolate_mousse",
+            "content": "youkaishomecoming:flesh_chocolate_mousse",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 4800
         },
         "cashier_obj_bowl_of_flesh_feast": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_bowl_of_flesh_feast",
+            "content": "youkaishomecoming:bowl_of_flesh_feast",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5100
         },
         "cashier_obj_flesh_stew": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_flesh_stew",
+            "content": "youkaishomecoming:flesh_stew",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
         "cashier_obj_lions_head": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_lions_head",
+            "content": "youkaishomecoming:lions_head",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
         "cashier_obj_canned_flesh": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_canned_flesh",
+            "content": "youkaishomecoming:canned_flesh",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5400
         },
         "cashier_obj_flesh_roll": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_flesh_roll",
+            "content": "youkaishomecoming:flesh_roll",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
         "cashier_obj_flesh_dumplings": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_flesh_dumplings",
+            "content": "youkaishomecoming:flesh_dumplings",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_bowl_of_heart_throbbing_surprise": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_bowl_of_heart_throbbing_surprise",
+            "content": "youkaishomecoming:bowl_of_heart_throbbing_surprise",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6000
         },
         "cashier_obj_udumbara_cake": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_udumbara_cake",
+            "content": "youkaishomecoming:udumbara_cake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
         "cashier_obj_mapo_tofu": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_mapo_tofu",
+            "content": "youkaishomecoming:mapo_tofu",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
         "cashier_obj_grilled_eel_over_rice": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_grilled_eel_over_rice",
+            "content": "youkaishomecoming:grilled_eel_over_rice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2100
         },
         "cashier_obj_tuscan_salmon": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_tuscan_salmon",
+            "content": "youkaishomecoming:tuscan_salmon",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
         "cashier_obj_mushroom_soup": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_mushroom_soup",
+            "content": "youkaishomecoming:mushroom_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_higan_soup": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_higan_soup",
+            "content": "youkaishomecoming:higan_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
         "cashier_obj_longevity_noodles": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_longevity_noodles",
+            "content": "youkaishomecoming:longevity_noodles",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_miso_soup": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_miso_soup",
+            "content": "youkaishomecoming:miso_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_seafood_miso_soup": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_seafood_miso_soup",
+            "content": "youkaishomecoming:seafood_miso_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_poor_god_soup": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_poor_god_soup",
+            "content": "youkaishomecoming:poor_god_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 750
         },
         "cashier_obj_power_soup": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_power_soup",
+            "content": "youkaishomecoming:power_soup",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_shirayuki": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_shirayuki",
+            "content": "youkaishomecoming:shirayuki",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
         "cashier_obj_sweet_ormosia_mochi_mixed_boiled": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_sweet_ormosia_mochi_mixed_boiled",
+            "content": "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
         "cashier_obj_tofu_burger": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_tofu_burger",
+            "content": "youkaishomecoming:tofu_burger",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950
         },
         "cashier_obj_stinky_tofu": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_stinky_tofu",
+            "content": "youkaishomecoming:stinky_tofu",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_sauce_grilled_fish": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_sauce_grilled_fish",
+            "content": "youkaishomecoming:sauce_grilled_fish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_pastitsio": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_pastitsio",
+            "content": "youkaishomecoming:pastitsio",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 800
         },
         "cashier_obj_imitation_bear_paw": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_imitation_bear_paw",
+            "content": "youkaishomecoming:imitation_bear_paw",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5000
         },
         "cashier_obj_dried_fish": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_dried_fish",
+            "content": "youkaishomecoming:dried_fish",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 300
         },
         "cashier_obj_bamboo_mizuyokan": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_bamboo_mizuyokan",
+            "content": "youkaishomecoming:bamboo_mizuyokan",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
         "cashier_obj_tarte_lune": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_tarte_lune",
+            "content": "youkaishomecoming:tarte_lune",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_tarte_lune_slice": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_tarte_lune_slice",
+            "content": "youkaishomecoming:tarte_lune_slice",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 950
         },
         "cashier_obj_scarlet_mist": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_scarlet_mist",
+            "content": "youkaishomecoming:scarlet_mist",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
         "cashier_obj_wind_priestesses": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_wind_priestesses",
+            "content": "youkaishomecoming:wind_priestesses",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
         "cashier_obj_moon_rocket": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_moon_rocket",
+            "content": "youkaishomecoming:moon_rocket",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 5500
         },
         "cashier_obj_lemon_black_tea": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_lemon_black_tea",
+            "content": "youkaishomecoming:lemon_black_tea",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_peach_tapioca": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_peach_tapioca",
+            "content": "youkaishomecoming:peach_tapioca",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_peach_yatsuhashi": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_peach_yatsuhashi",
+            "content": "youkaishomecoming:peach_yatsuhashi",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 330
         },
         "cashier_obj_daiginjo": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_daiginjo",
+            "content": "youkaishomecoming:daiginjo",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6000
         },
         "cashier_obj_dassai": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "cashier_obj_dassai",
+            "content": "youkaishomecoming:dassai",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 6200
         },
         "cashier_obj_full_moons_eve": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_full_moons_eve",
+            "content": "youkaishomecoming:full_moons_eve",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
         "cashier_obj_tengu_tango": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_tengu_tango",
+            "content": "youkaishomecoming:tengu_tango",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2300
         },
         "cashier_obj_sparrow_sake": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_sparrow_sake",
+            "content": "youkaishomecoming:sparrow_sake",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_mead": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_mead",
+            "content": "youkaishomecoming:mead",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 850
         },
         "cashier_obj_mio": {
             "type": "item",
             "rarity": "UNCOMMON",
-            "content": "cashier_obj_mio",
+            "content": "youkaishomecoming:mio",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 900
         },
         "cashier_obj_mocha": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_mocha",
+            "content": "youkaishomecoming:mocha",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_cappuccino": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_cappuccino",
+            "content": "youkaishomecoming:cappuccino",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 380
         },
         "cashier_obj_blood_curd": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_blood_curd",
+            "content": "youkaishomecoming:blood_curd",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         },
         "cashier_obj_seven_colored_yokan": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_seven_colored_yokan",
+            "content": "youkaishomecoming:seven_colored_yokan",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2500
         },
         "cashier_obj_espresso": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_espresso",
+            "content": "youkaishomecoming:espresso",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 320
         },
         "cashier_obj_americano": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_americano",
+            "content": "youkaishomecoming:americano",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 350
         },
         "cashier_obj_ristretto": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_ristretto",
+            "content": "youkaishomecoming:ristretto",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 330
         },
         "cashier_obj_latte": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_latte",
+            "content": "youkaishomecoming:latte",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 380
         },
         "cashier_obj_macchiato": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "cashier_obj_macchiato",
+            "content": "youkaishomecoming:macchiato",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 400
         },
         "cashier_obj_affogato": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_affogato",
+            "content": "youkaishomecoming:affogato",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2200
         },
         "cashier_obj_con_panna": {
             "type": "item",
             "rarity": "RARE",
-            "content": "cashier_obj_con_panna",
+            "content": "youkaishomecoming:con_panna",
             "amount": {
                 "min": 1,
-                "max": 10
+                "max": 3
             },
             "unitWorth": 2400
         }

@@ -7,6 +7,18 @@
 		"primaryAttributes": {
 			"generic.attack_damage": 3
 		},
+		"secondaryAttributes": {
+			"generic.attack_speed": -2
+		},
+		"primaryEffects": {
+			"skewering": 1
+		},
+		"secondaryEffects": {
+			"armorPenetration": 3
+		},
+		"tertiaryEffects": {
+			"armorPenetration": 1
+		},
 		"durability": 4,
 		"integrity": -3,
 		"magicCapacity": 3

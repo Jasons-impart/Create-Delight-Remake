@@ -3,10 +3,11 @@ ServerEvents.recipes(e => {
         "netherexp:wither_bone_block",
         "netherexp:glowcheese",
         "netherexp:nether_pizza",
-        "netherexp:roasted_bone"
+        "netherexp:roasted_bone",
+        "netherexp:stonecutting/from_pale_soul_slate/indented"
     ])
     const {create, kubejs, vintageimprovements, farmersdelight} = e.recipes
-    e.replaceInput({not: [{id: "tetracelium:cutting/ham"}, {id: "farmersdelight:cutting/ham"}]}, "farmersdelight:ham", "#forge:ham")
+    e.replaceInput({not: [{id: "tetracelium:cutting/ham"}, {id: "farmersdelight:cutting/ham"}, {id:"farmersdelight:smoked_ham"}]}, "farmersdelight:ham", "#forge:ham")
     e.replaceInput({not: [{id: "tetracelium:cutting/smoked_ham"}, {id: "farmersdelight:cutting/smoked_ham"}]}, "farmersdelight:smoked_ham", "#forge:cooked_ham")
 
     cutting(e, "netherexp:hogham", [['mynethersdelight:hoglin_loin', 2], ['minecraft:bone', 1]])
@@ -28,15 +29,15 @@ ServerEvents.recipes(e => {
         "minecraft:nether_wart"
     ], "netherexp:nether_pizza", 1)
 
-    cutting_3(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
+    cutting_2(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
 
     farmersdelight.cooking(["netherexp:cerebrage", "warped_fungus", "#netherexp:cooked_hogham"], "netherexp:roasted_bone", 5.0, 200, "minecraft:bone")
     .id("netherexp:cooking/roasted_bone")
 
     create.compacting(Fluid.of("netherexp:ectoplasm", 200), "netherexp:wraithing_flesh")
     .id("netherexp:compating/wraithing_flesh")
-    vintageimprovements.centrifugation(["minecraft:rotten_flesh", Fluid.of("netherexp:ectoplasm", 100)], "netherexp:wraithing_flesh")
+    centrifugation(e, ["minecraft:rotten_flesh", Fluid.of("netherexp:ectoplasm", 100)], "netherexp:wraithing_flesh")
     .id("netherexp:centrifugation/wraithing_flesh")
-    vintageimprovements.centrifugation(["minecraft:pumpkin", Fluid.of("netherexp:ectoplasm", 500)], "netherexp:sorrowsquash")
+    centrifugation(e, ["minecraft:pumpkin", Fluid.of("netherexp:ectoplasm", 500)], "netherexp:sorrowsquash")
     .id("netherexp:centrifugation/sorrowsquash")
 })

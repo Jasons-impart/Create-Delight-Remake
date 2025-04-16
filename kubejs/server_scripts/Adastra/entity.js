@@ -21,7 +21,8 @@ ServerEvents.tags("entity_type", e => {
         "iceandfire:amphithere",
         "iceandfire:hydra",
         "iceandfire:lightning_dragon",
-        "alexsmobs:cosmic_cod"
+        "alexsmobs:cosmic_cod",
+        "ad_astra:glacian_ram"
     ])
 })
 
@@ -38,4 +39,10 @@ EntityEvents.spawned(e => {
             e.entity.setItemSlot("feet", Item.of('createdelight:air_boots', '{Damage:0,RepairCost:1,Unbreakable:1b}').enchant('ad_astra_giselle_addon:gravity_normalizing', 1).enchant('minecraft:vanishing_curse', 1))
         }
     })
+})
+
+PlayerEvents.tick(e => {
+    if (e.player.vehicle && e.player.vehicle.getType() == "ad_astra:lander" && e.player.deltaMovement > 0) {
+        e.player.potionEffects.add("minecraft:resistance", 20)
+    }
 })

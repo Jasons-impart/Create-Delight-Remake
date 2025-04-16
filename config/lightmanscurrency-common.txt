@@ -1,0 +1,349 @@
+#Level of debug messages to be shown in the logs.
+#0-All debug messages. 1-Warnings/Errors only. 2-Errors only. 3-No debug messages.
+#Note: All debug messages will still be sent debug.log regardless of settings.
+#Range: 0 -> 3
+#Default: 0
+debugLevel=0
+
+#Crafting Settings
+#/reload required for any changes made to take effect.
+[crafting]
+	#Whether Network Traders can be crafted.
+	#Disabling will not remove any existing Network Traders from the world, nor prevent their use.
+	#Disabling does NOT disable the recipes of Network Upgrades or the Trading Terminals.
+	#Default: true
+	canCraftNetworkTrader=true
+	
+	#Whether Trader Interface blocks can be crafted.
+	#Disabling will not remove any existing Trader Interfaces from the world, nor prevent their use.
+	#Default: true
+	canCraftTraderInterface=true
+	
+	#Whether Auction Stand blocks can be crafted.
+	#Disabling will not remove any existing Auction Stands from the world, nor prevent their use.
+	#Default: true
+	canCraftAuctionStand=true
+	
+	#Whether Tax Blocks can be crafted.
+	#Disabling will not remove any existing Tax Blocks from the world, nor prevent their use.
+	#Default: true
+	canCraftTaxCollector=true
+	
+	#Whether ATM Cards can be crafted.
+	#Disabling will not remove any existing ATM Cards from the world, nor prevent their use.
+	#Default: false
+	canCraftATMCard=true
+	
+	#Coin Mint Crafting
+	[crafting.coin_mint]
+		#Whether the Coin Mint machine can be crafted.
+		#Disabling will not remove and exist Coin Mints from the world, nor prevent their use.
+		#Default: true
+		canCraftCoinMint=true
+		
+		#Whether or not built-in coin mint recipes that turn resources into coins will be loaded.
+		#Default: true
+		canMint=true
+		
+		#Whether or not built-in coin mint recipes that turn coins back into resources will be loaded.
+		#Default: false
+		canMelt=false
+		
+		#Specific Minting Options
+		#Does nothing if 'canMint' is already false/disabled.
+		[crafting.coin_mint.mint]
+			#Whether the default mint recipe to mint copper coins from copper ingots will be loaded.
+			#Default: true
+			copper=true
+			
+			#Whether the default mint recipe to mint iron coins from iron ingots will be loaded.
+			#Default: true
+			iron=true
+			
+			#Whether the default mint recipe to mint gold coins from gold ingots will be loaded.
+			#Default: true
+			gold=true
+			
+			#Whether the default mint recipe to mint emerald coins from emeralds will be loaded.
+			#Default: true
+			emerald=true
+			
+			#Whether the default mint recipe to mint diamond coins from diamonds will be loaded.
+			#Default: true
+			diamond=true
+			
+			#Whether the default mint recipe to mint netherite coins from netherite ingots will be loaded.
+			#Default: true
+			netherite=true
+			
+		#Specific Melting Options
+		#Does nothing if 'canMelt' is already false/disabled.
+		[crafting.coin_mint.melt]
+			#Whether the default mint recipe to melt copper coins back into copper ingots will be loaded.
+			#Default: true
+			copper=true
+			
+			#Whether the default mint recipe to melt iron coins back into iron ingots will be loaded.
+			#Default: true
+			iron=true
+			
+			#Whether the default mint recipe to melt gold coins back into gold ingots will be loaded.
+			#Default: true
+			gold=true
+			
+			#Whether the default mint recipe to melt emerald coins back into emeralds will be loaded.
+			#Default: true
+			emerald=true
+			
+			#Whether the default mint recipe to melt diamond coins back into diamonds will be loaded.
+			#Default: true
+			diamond=true
+			
+			#Whether the default mint recipe to melt netherite coins back into netherite ingots will be loaded.
+			#Default: true
+			netherite=true
+			
+	#Money Chest Crafting
+	[crafting.money_chest]
+		#Whether the Money Chest can be crafted.
+		#Disabling will not remove any existing Money Chests from the world, nor prevent their use.
+		#Disabling does NOT disable the recipes of Money Chest Upgrades.
+		#Default: true
+		canCraftCoinChest=true
+		
+		#Whether the Money Chest Exchange Upgrade can be crafted.
+		#Disabling will not remove any existing Money Chest Exchange Upgrades from the world, nor prevent their use.
+		#Default: true
+		canCraftExchangeUpgrade=true
+		
+		#Whether the Money Chest Magnet Upgrades can be crafted.
+		#Disabling will not remove any existing Money Chest Magnet Upgrades from the world, nor prevent their use.
+		#Default: true
+		canCraftMagnetUpgrade=true
+		
+		#Whether the Money Chest Bank Upgrade can be crafted.
+		#Disabling will not remove any existing Money Chest Bank Upgrades from the world, nor prevent their use.
+		#Default: true
+		canCraftBankUpgrade=true
+		
+		#Whether the Money Chest Security Upgrades can be crafted.
+		#Disabling will not remove any existing Money Chest Security Upgrades from the world, nor prevent their use.
+		#Default: true
+		canCraftSecurityUpgrade=true
+		
+#Event Settings
+[events]
+	#Whether the Chocolate Event Coins will be added to the coin data.
+	#Note: Disabling will not remove any Chocolate Coin items that already exist, this simply makes them no longer function as money
+	#Default: true
+	chocolate=false
+	
+	#Whether custom events defined in the 'SeasonalEvent.json' config can give players a one-time reward for logging in during the event.
+	#Default: true
+	startingRewards=true
+	
+	#Whether custom events can replace a portion (or all) of the default loot with custom event loot.
+	#Default: true
+	lootReplacements=true
+	
+#Villager Related Settings
+#Note: Any changes to villagers requires a full reboot to be applied due to how Minecraft/Forge registers trades.
+[villagers]
+	#Whether the wandering trader will have additional trades that allow you to buy misc items with money.
+	#Default: true
+	addCustomWanderingTrades=true
+	
+	#Whether the banker villager profession will have any registered trades. The banker sells Lightman's Currency items for coins.
+	#Default: true
+	addBanker=true
+	
+	#Whether the cashier villager profession will have any registered trades.. The cashier sells an amalgamation of vanilla traders products for coins.
+	#Default: true
+	addCashier=true
+	
+	#Villager Trade Modification
+	#Note: Changes made only apply to newly generated trades. Villagers with trades already defined will not be changed.
+	[villagers.modification]
+		#Whether vanilla villagers should have the Emeralds from their trades replaced with coins.
+		#Default: false
+		changeVanillaTrades=true
+		
+		#Whether villagers added by other mods should have the Emeralds from their trades replaced with coins.
+		#Default: false
+		changeModdedTrades=true
+		
+		#Whether the wandering trader should have the emeralds from their trades replaced with the default replacement coin.
+		#Default: false
+		changeWanderingTrades=true
+		
+		#The default coin to replace a trades emeralds with.
+		#May seperate and define villager type specific entries by adding multiple items seperated by '-' with region
+		defaultEmeraldReplacementItem="createdelightcore:copper_coin"
+		
+		#List of replacement coin overrides.
+		#Each entry must be formatted as follows: "mod:some_profession_type-SUB_ENTRY-SUB_ENTRY-..."
+		#You may use "minecraft:wandering_trader" as a profession id to override the vanilla Wandering Trader
+		#
+		#Each sub-entry must be formatted as either of the following: "r;minecraft:villager_type;ITEM_ENTRY" to define an entry specific to an in-game region (villagers from `mincraft:snow` or `minecraft:desert` regions, etc.)
+		#with the exception of a single 'default' entry with no defined villager type/region "...-ITEM_ENTRY-..."
+		#
+		#Each item-entry is either 1 or 2 item ids (e.g. "mod:coin_item" or "mod:coin_item_1;mod:coin_item_2".
+		#When two are given, the first will replace the cost items (items the player must pay the villager) and the second will replace the result (items the player will be paid by the villager)
+		#Every trader not on this list will use the default trader coin defined above.
+		professionEmeraldReplacementOverrides=["minecraft:fletcher-createdelightcore:iron_coin","minecraft:toolsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:weaponsmith-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:fisherman-createdelightcore:iron_coin","minecraft:mason-createdelightcore:iron_coin","minecraft:armorer-createdelightcore:copper_coin;createdelightcore:iron_coin","minecraft:leatherworker-createdelightcore:iron_coin"]
+		
+#Loot Options
+[loot]
+	#T1 loot item.
+	#Leave blank ("") to not spawn T1 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":1, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_copper"
+	lootItemT1="createdelightcore:iron_coin"
+	
+	#T2 loot item.
+	#Leave blank ("") to not spawn T2 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":2, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_iron"
+	lootItemT2="createdelightcore:copper_coin"
+	
+	#T3 loot item.
+	#Leave blank ("") to not spawn T3 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":3, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_gold"
+	lootItemT3="createdelightcore:gold_coin"
+	
+	#T4 loot item.
+	#Leave blank ("") to not spawn T4 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":4, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_emerald"
+	lootItemT4="createdelightcore:emerald_coin"
+	
+	#T5 loot item.
+	#Leave blank ("") to not spawn T5 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":5, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_diamond"
+	lootItemT5="createdelightcore:netherite_coin"
+	
+	#T6 loot item.
+	#Leave blank ("") to not spawn T6 loot.
+	#Applies to loot table loot type "lightmanscurrency:configured_item" with "tier":6, which is used in all "lightmanscurrency:loot_addons" loot tables configured below.
+	#Default: "lightmanscurrency:coin_netherite"
+	lootItemT6="minecraft:air"
+	
+	#Entity Loot Settings.
+	[loot.entities]
+		#Whether coins can be dropped by entities.
+		#Default: true
+		enabled=false
+		
+		#Whether coins can be dropped by entities that were spawned by the vanilla spawner.
+		#Default: false
+		allowSpawnedDrops=false
+		
+		#Whether modded machines that emulate player behaviour can trigger coin drops from entities.
+		#Set to false to help prevent autmated coin farming.
+		#Default: true
+		allowFakePlayerDrops=true
+		
+		#Entity Drop Lists. Accepts the following inputs:
+		#Entity IDs. e.g. "minecraft:cow"
+		#Entity Tags. e.g. "#minecraft:skeletons"
+		#Every entity provided by a mod. e.g. "minecraft:*"
+		#Note: If an entity meets multiple criteria, it will drop the lowest tier loot that matches (starting with normal T1 -> T6 then boss T1 -> T6)
+		[loot.entities.lists]
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier1" loot table.
+			#Requires a player kill to trigger coin drops.
+			T1=["minecraft:slime","minecraft:silverfish","alexsmobs:cosmic_cod","alexsmobs:fly","alexsmobs:raccoon","alexsmobs:stradpole"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier2" loot table.
+			#Requires a player kill to trigger coin drops.
+			T2=["minecraft:zombie","minecraft:skeleton","minecraft:creeper","minecraft:spider","minecraft:cave_spider","minecraft:husk","minecraft:stray","minecraft:zombie_villager","minecraft:drowned","alexsmobs:bone_serpent","alexsmobs:anaconda","alexsmobs:froststalker","alexsmobs:rattlesnake","alexsmobs:rockey_roller","alexsmobs:skreecher","alexsmobs:soul_vulture","alexsmobs:tarantula_hawk"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier3" loot table.
+			#Requires a player kill to trigger coin drops.
+			T3=["minecraft:guardian","minecraft:elder_guardian","minecraft:phantom","minecraft:blaze","minecraft:ghast","minecraft:hoglin","minecraft:piglin_brute","minecraft:piglin","minecraft:zombified_piglin","alexsmobs:crimson_mosquito","alexsmobs:dropbear","alexsmobs:guster","alexsmobs:skelewag","alexsmobs:tusklin"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier4" loot table.
+			#Requires a player kill to trigger coin drops.
+			T4=["minecraft:enderman","minecraft:shulker","#minecraft:raiders","alexsmobs:enderiophage","alexsmobs:farseer","alexsmobs:murmur","alexsmobs:straddler"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier5" loot table.
+			#Requires a player kill to trigger coin drops.
+			T5=["minecraft:wither_skeleton"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/entity/tier6" loot table.
+			#Requires a player kill to trigger coin drops.
+			T6=["alexsmobs:mimicube"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier1" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT1=[]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier2" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT2=[]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier3" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT3=[]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier4" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT4=["minecraft:warden"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier5" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT5=["minecraft:ender_dragon"]
+			
+			#List of Entities that will drop loot from the "lightmanscurrency:loot_addons/boss/tier6" loot table.
+			#Does NOT require a player kill to trigger coin drops.
+			BossT6=["minecraft:wither","alexsmobs:void_worm"]
+			
+	#Chest Loot Settings
+	[loot.chests]
+		#Whether coins can spawn in chests.
+		#Default: true
+		enabled=false
+		
+		#Chest Spawn Lists
+		[loot.chests.lists]
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier1" loot table.
+			T1=["minecraft:chests/underwater_ruin_small","minecraft:chests/underwater_ruin_big"]
+			
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier2" loot table.
+			T2=[]
+			
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier3" loot table.
+			T3=["minecraft:chests/jungle_temple","minecraft:chests/nether_bridge","minecraft:chests/simple_dungeon","minecraft:chests/ruined_portal"]
+			
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier4" loot table.
+			T4=["minecraft:chests/stronghold_crossing","minecraft:chests/stronghold_corridor","minecraft:chests/stronghold_library","minecraft:chests/ancient_city"]
+			
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier5" loot table.
+			T5=["minecraft:chests/buried_treasure","minecraft:chests/bastion_hoglin_stable","minecraft:chests/bastion_bridge","minecraft:chests/bastion_other","minecraft:chests/bastion_treasure","minecraft:chests/end_city_treasure"]
+			
+			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier6" loot table.
+			T6=[]
+			
+#Structure Settings
+#Requires a /reload command to be applied correctly
+[structures]
+	#Whether new village structures will have a chance to spawn in vanilla villages
+	#Default: true
+	villageHouses=true
+	
+	#Whether new structures will have a chance to spawn in ancient cities
+	#Default: true
+	ancientCity=true
+	
+	#Whether new special structures designed for Integrated Dungeons and Structures compatibility can spawn
+	#Does nothing if IDAS is not installed
+	#Default: true
+	idasStructures=true
+	
+[compat]
+	#Whether the Impactor compat will be initialized.
+	#Requires a full server reboot for changes to be applied!
+	#Default: true
+	impactorModule=true
+	

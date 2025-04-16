@@ -1,0 +1,26 @@
+{
+    "entries": [
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "minecraft:resistance",
+                    "level": 1,
+                    "time": 100
+                }
+            ],
+            "ingredient": [
+                {
+                    "item": "trailandtales_delight:pitcher_taro"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 180,
+            "nutrition": 8,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.5,
+            "size": 2,
+            "stir_time": 60
+        }
+    ]
+}

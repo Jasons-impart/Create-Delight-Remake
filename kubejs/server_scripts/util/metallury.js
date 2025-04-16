@@ -201,14 +201,26 @@ function metal_production_line_5(event, metal) {
     ])
         .superheated()
         .id(`vintageimprovements:pressurizing/${metal[0].split(":")[1]}`)
-    event.recipes.vintageimprovements.centrifugation(
+    centrifugation(event,
         [metal[1], Item.of(metal[1]).withChance(0.25), Item.of(byProduct[0]).withChance(byProduct[1])],
         metal[0])
         .id(`vintageimprovements:centrifugation/${metal[0].split(":")[1]}`)
-    event.recipes.vintageimprovements.centrifugation(
+    centrifugation(event,
         [Item.of(metal[4], 12), Item.of(metal[4], 6).withChance(0.25)],
         metal[2])
         .id(`vintageimprovements:centrifugation/${metal[4].split(":")[1]}`)
+    event.recipes.createdelight.small_centrifugation()
+    .outputItems([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])])
+    .chance(0.5, builder => builder.outputItems(Item.of(metal[1])))
+    .inputItems(metal[0])
+    .perTick(builder => builder.inputFE(100))
+    .id(`createdelight:centrifugation/${metal[0].split(":")[1]}`)
+    event.recipes.createdelight.small_centrifugation()
+    .outputItems([Item.of(metal[4], 12)])
+    .chance(0.5, builder => builder.outputItems(Item.of(metal[4], 6)))
+    .inputItems(metal[2])
+    .perTick(builder => builder.inputFE(100))
+    .id(`createdelight:centrifugation/${metal[4].split(":")[1]}`)
     event.recipes.vintageimprovements.vibrating(
         Item.of(metal[4], 18),
         metal[2])

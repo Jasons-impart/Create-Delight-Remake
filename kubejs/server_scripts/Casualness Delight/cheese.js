@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
         "ad_astra:cheese",
         "ad_astra:cheese"
     ], "createdelight:raw_cheese_pizza", 1)
-    baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 1200)
+    baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 300)
     e.recipes.farmersdelight.cooking([
         "minecraft:sweet_berries",
         "minecraft:sweet_berries",

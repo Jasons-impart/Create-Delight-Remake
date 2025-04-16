@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"0": "mbd2:block/alloy_electric_furnace_base",
-		"1": "mbd2:block/alloy_electric_furnace_side",
+		"1": "createdelightcore:block/forge_steel_casing",
 		"particle": "mbd2:block/alloy_electric_furnace_base"
 	},
 	"elements": [

@@ -1,5 +1,7 @@
 ServerEvents.recipes(e => {
-    const {createmetallurgy, create} = e.recipes
+    const {createmetallurgy, create, minecraft} = e.recipes
+    minecraft.stonecutting("createmetallurgy:graphite_rod_mold", "createmetallurgy:graphite_blank_mold")
+    .id("createmetallurgy:graphite_rod_mold_stonecutting")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
@@ -34,8 +36,8 @@ ServerEvents.recipes(e => {
         "createdelight:dirty_tin_dust",
         "createdelight:tin_dust",
         "create:crushed_raw_tin",
-        "createdelight:raw_tin",
-        "createdelight:tin_nugget"])
+        "createdelightcore:raw_tin",
+        "createdelightcore:tin_nugget"])
     metal_production_line_5(e, [
         "createdelight:dirty_silver_dust",
         "createdelight:silver_dust",
@@ -116,21 +118,21 @@ ServerEvents.recipes(e => {
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
     e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_brass", 10),
+        Fluid.of("createmetallurgy:molten_brass", 30),
         [
-            Fluid.of("createmetallurgy:molten_copper", 5),
-            Fluid.of("createmetallurgy:molten_zinc", 5)
-        ], 100, "heated"
+            Fluid.of("createmetallurgy:molten_copper", 15),
+            Fluid.of("createmetallurgy:molten_zinc", 15)
+        ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_brass")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [
             "minecraft:andesite",
             Fluid.of("createmetallurgy:molten_iron", 20)
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_iron")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [
             "minecraft:andesite",
             Fluid.of("createmetallurgy:molten_zinc", 20)

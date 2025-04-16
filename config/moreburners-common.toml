@@ -15,7 +15,7 @@
 		#The max amount of energy capacity.
 		max_capacity = 500000
 		#The amount of energy consumed per tick.
-		energy_cost = 10000
+		energy_cost = 1800
 		#The value to multiply on the energy consumed per tick when heating.
 		energy_multiplier_1 = 1.0
 		#The value to multiply on the energy consumed per tick when super heating.

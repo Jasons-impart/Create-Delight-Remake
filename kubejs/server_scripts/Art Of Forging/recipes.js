@@ -73,20 +73,20 @@ ServerEvents.recipes(e => {
         "BCB",
         " B "
     ],
-    {
-        A: "createdelight:demonic_codex",
-        B: "art_of_forging:shards_of_malice",
-        C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
-    })
+        {
+            A: "createdelight:demonic_codex",
+            B: "art_of_forging:shards_of_malice",
+            C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
+        })
         .id("tetra:thousand_cold_night_scroll")
 
     metal_production_line_3(e,
-        ["createdelight:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelight:molten_forged_steel"], "superheated", 160)
-    kubejs.shapeless("createdelight:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
+        ["createdelightcore:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelightcore:molten_forged_steel"], "superheated", 160)
+    kubejs.shapeless("createdelightcore:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
         .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
-    kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelight:forged_steel_block")
+    kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelightcore:forged_steel_block")
         .id("art_of_forging:forged_steel_block")
-    createmetallurgy.alloying(Fluid.of("createdelight:molten_forged_steel", 360), [
+    createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360), [
         "tetra:metal_scrap",
         "tetra:metal_scrap",
         "tetra:metal_scrap",
@@ -101,11 +101,11 @@ ServerEvents.recipes(e => {
         let iner = "art_of_forging:forged_steel_ingot"
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
             create.deploying(iner, [iner, "iceandfire:dread_shard"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_fire_steel", 30)]),
-            create.deploying(iner, [iner, "alexscaves:occult_gem"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_ice_steel", 30)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_fire_steel", 30)]),
+            create.deploying(iner, [iner, "art_of_forging:fragment_of_eden"]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 30)]),
             create.deploying(iner, [iner, "createdelight:dread_heart"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:molten_lightning_steel", 30)])
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_lightning_steel", 30)])
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -271,4 +271,19 @@ ServerEvents.recipes(e => {
                 "#mynethersdelight:hoglin_hide",
                 "alexscaves:tough_hide"]
         ])
+    {
+        let iner = "createdelight:forged_steel_sheet"
+        create.sequenced_assembly("art_of_forging:encoded_canister", iner, [
+            vintageimprovements.curving(iner, iner)
+            .head("art_of_forging:encoded_canister"),
+            create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
+            create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
+            create.deploying(iner, [iner, "#forge:dusts/redstone"]),
+            create.deploying(iner, [iner, "createdelight:forged_steel_sheet"]),
+            create.pressing(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("art_of_forging:encoded_canister")
+    }
 })

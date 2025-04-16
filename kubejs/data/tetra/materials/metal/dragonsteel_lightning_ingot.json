@@ -11,7 +11,7 @@
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 10,
      "effects": {
-        "art_of_forging:stormcaller": [ 3, 20 ]
+            "createdelight:shocking":1
         },
     "tints": {
       "glyph": "5c069d",

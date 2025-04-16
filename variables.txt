@@ -1,0 +1,13 @@
+# 配置java版本
+#    如果要指定特定版本java，请指定完整路径并用"括起来，且中间需要使用\\分割
+#    例如：
+#        set JAVA="C:\\Program Files\\Java\\jdk-17\\bin\\java"
+JAVA="C:\\Program Files\\Java\\jdk-17\\bin\\java"
+
+# 配置jvm参数
+#    如果要修改分配的内存，可修改-Xms和-Xmx的值
+JVM_ARGS=-Xms6G -Xmx6G -XX:+UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=0 -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=70 -XX:-G1UseAdaptiveIHOP -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:MaxTenuringThreshold=15 -XX:SurvivorRatio=6 -XX:G1MixedGCLiveThresholdPercent=60 -XX:G1MixedGCCountTarget=6
+
+# 整合包版本和推荐的JAVA版本，请勿修改
+MODPACK_VERSION=v0.3.2.4
+RECOMMENDED_JAVA_VER=17

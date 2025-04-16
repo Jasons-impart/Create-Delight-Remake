@@ -22,7 +22,7 @@ const isDeveloper = (playerUsername) => playerNames.includes(playerUsername);
 
 ItemEvents.rightClicked((event) => {
   const { item, player, server } = event;
-  if (player.crouching && player.mainHandItem !== "minecraft:air" && isDeveloper(player.username)) {
+  if (player.crouching && player.mainHandItem !== "minecraft:air" && isDeveloper(player.username) && player.mainHandItem !== "createdelight:debug_reload_tool" && player.mainHandItem!== "createdelight:debug_info_tool") {
     if (player.mainHandItem === item.id) {
       player.runCommandSilent("kubejs hand");
     }
@@ -50,11 +50,12 @@ const handleChatCommand = (event, command, message, target) => {
         player.runCommandSilent(`tellraw @s "§4已清除所有BUFF"`);
         event.cancel();
         break;
-      case "-kle":
-        server.runCommandSilent("kill @e[type=!player]");
-        server.runCommandSilent(`tellraw ${target} "§4所有实体已清除"`);
-        event.cancel();
-        break;
+      //未知原因报错
+      // case "-kle":
+      //   server.runCommandSilent("kill @e[type=!minecraft:player]");
+      //   server.runCommandSilent(`tellraw ${target} "§4所有实体已清除"`);
+      //   event.cancel();
+      //   break;
     }
   }
 };

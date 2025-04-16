@@ -16,23 +16,9 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonsteel_ice_hoe',
         'iceandfire:dragonsteel_lightning_hoe'])
 
-    e.add('alexscaves:galena_gauntlet_crystallization_items',
-        ['aether:zanite_sword',
-        'aether:zanite_shovel',
-        'aether:zanite_pickaxe',
-        'aether:zanite_axe',
-        'aether:zanite_hoe',
-        'aether:gravitite_sword',
-        'aether:gravitite_shovel',
-        'aether:gravitite_pickaxe',
-        'aether:gravitite_axe',
-        'aether:gravitite_hoe']
-    )
-
     e.add("forge:ingots/uranium", "alexscaves:uranium")
     // e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
     e.add("createdelight:candy_cane", [
-        "aether:candy_cane",
         "alexscaves:candy_cane",
         "create_confectionery:candy_cane"])
     e.add("forge:gelatin", [
@@ -54,6 +40,23 @@ ServerEvents.tags("item", e => {
     e.add("create_new_age:magnet", [
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
+    ])
+    e.add("alexscaves:sweetish_fish", [
+        "alexscaves:sweetish_fish_blue",
+        "alexscaves:sweetish_fish_red",
+        "alexscaves:sweetish_fish_yellow",
+        "alexscaves:sweetish_fish_green",
+        "alexscaves:sweetish_fish_pink"
+    ])
+    e.add("alexscaves:ice_cream_scoop", [
+        "alexscaves:vanilla_ice_cream_scoop",
+        "alexscaves:chocolate_ice_cream_scoop",
+        "alexscaves:sweetberry_ice_cream_scoop"
+    ])
+    e.add("alexscaves:ice_cream", [
+        "alexscaves:vanilla_ice_cream",
+        "alexscaves:chocolate_ice_cream",
+        "alexscaves:sweetberry_ice_cream"
     ])
     e.removeAll("alexscaves:restricted_biome_locators")
 })

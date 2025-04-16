@@ -1,0 +1,564 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Practical_Gadgets"
+	group: "445171CC29E98940"
+	icon: "supplementaries:globe"
+	id: "48C4F6C2F22DBB96"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			id: "7DD6AE3D040FB1AE"
+			rewards: [{
+				id: "6561BBAFBBA66251"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "上传你的大作！"
+			tasks: [
+				{
+					id: "446015A99AE27594"
+					item: "immersive_paintings:painting"
+					type: "item"
+				}
+				{
+					id: "049DEA23DCF33C1B"
+					item: "immersive_paintings:graffiti"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			description: [" &l具体操作方法详见&4https://www.mcmod.cn/post/3679.html&r"]
+			id: "7D65EC61C0EDC6D7"
+			rewards: [
+				{
+					id: "1225859249BFB5E4"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					id: "3191FB1774A49B8B"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "可以让朋友听到你的网易云音乐歌单！"
+			tasks: [
+				{
+					id: "03AB8D012E0A416C"
+					item: "netmusic:computer"
+					type: "item"
+				}
+				{
+					id: "32E337C247C2468B"
+					item: "netmusic:cd_burner"
+					type: "item"
+				}
+				{
+					id: "073D688CD1DA79D1"
+					item: "netmusic:music_player"
+					type: "item"
+				}
+				{
+					id: "6FB063DB4FB39174"
+					item: "netmusic:music_cd"
+					type: "item"
+				}
+			]
+			title: "音乐大师"
+			x: 1.0d
+			y: 2.0d
+		}
+		{
+			id: "6DACD46450CD6DFD"
+			rewards: [
+				{
+					id: "02B62F82E52A2E06"
+					item: {
+						Count: 1
+						id: "supplementaries:bubble_blower"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "037602B0115E8329"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "春困秋乏夏打盹，睡不醒的冬三月😴"
+			tasks: [
+				{
+					id: "3497AF0AA1C6B349"
+					item: "eclipticseasons:calendar"
+					type: "item"
+				}
+				{
+					id: "024EBB35D5AF9683"
+					item: "eclipticseasons:hygrometer"
+					type: "item"
+				}
+			]
+			title: "季节变换"
+			x: -0.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["05D6B228BA11656D"]
+			description: [
+				"esc选项-控制界面。搜索“将动物装上车”来绑定自己喜欢的快捷键。"
+				"骑马或本体接近马车后，按下快捷键拖走马车。"
+			]
+			id: "11584A30A7E1004D"
+			rewards: [
+				{
+					id: "32D5ED5DAAF30976"
+					item: {
+						Count: 1
+						id: "supplementaries:slingshot"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "387C85143272CD6D"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "开了光影非常惬意！"
+			tasks: [{
+				id: "13DC070521D92E6E"
+				item: "astikorcarts:supply_cart"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -2.5d
+		}
+		{
+			id: "6EA2CC5B89935877"
+			rewards: [{
+				id: "7EE41CB3B2AE365D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "右键随机放置物品栏内建筑方块。非常适合做旧。"
+			tasks: [{
+				id: "104D8D8F7FCD9F7B"
+				item: "quark:trowel"
+				type: "item"
+			}]
+			title: "建筑小帮手"
+			x: 2.5d
+			y: -4.0d
+		}
+		{
+			id: "2983A2F4EF48C2EC"
+			rewards: [
+				{
+					id: "4802D1FCD078C6EE"
+					item: "quark:abacus"
+					type: "item"
+				}
+				{
+					id: "36E7C0B06F21050B"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6C0A4800B9155FAA"
+				item: "dummmmmmy:target_dummy"
+				type: "item"
+			}]
+			title: "试验伤害"
+			x: -0.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["7DD6AE3D040FB1AE"]
+			id: "1BE43F6D6EF3FE1E"
+			rewards: [{
+				id: "719586DE121ECEEA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "让你的大作熠熠生辉！"
+			tasks: [
+				{
+					id: "693A77DD22C6304D"
+					item: "immersive_paintings:glow_painting"
+					type: "item"
+				}
+				{
+					id: "4FA34B3B090668B6"
+					item: "immersive_paintings:glow_graffiti"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: -2.5d
+		}
+		{
+			id: "05D6B228BA11656D"
+			rewards: [
+				{
+					id: "7D25F82C2EF50879"
+					item: "minecraft:horse_spawn_egg"
+					type: "item"
+				}
+				{
+					id: "20467FDFFDFAF955"
+					item: "minecraft:saddle"
+					type: "item"
+				}
+				{
+					id: "17B4FC8865A84152"
+					item: "minecraft:iron_horse_armor"
+					type: "item"
+				}
+				{
+					id: "5AE7A679ED9A2010"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "顶针的小马珍珠我也想要！"
+			tasks: [{
+				icon: "minecraft:horse_spawn_egg"
+				id: "6B439399C415F881"
+				observe_type: 5
+				timer: 0L
+				to_observe: "minecraft:horse"
+				type: "observation"
+			}]
+			title: "风驰电掣~"
+			x: -3.5d
+			y: -4.0d
+		}
+		{
+			description: [
+				"可以用来标记家的位置，注意：&e太远了会消耗经验"
+				"再注意：使用传送石、传送石座、传送石盘无需消耗经验"
+			]
+			icon: "waystones:waystone"
+			id: "0082C5BEB96B1114"
+			rewards: [
+				{
+					id: "00D3F2F86D28DEE6"
+					item: "waystones:waystone"
+					type: "item"
+				}
+				{
+					id: "65735F2BEDDE37C3"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "好耶！我可以传送了！"
+			tasks: [{
+				id: "333F068D4B5273B9"
+				title: "指路石"
+				type: "checkmark"
+			}]
+			x: -3.5d
+			y: -1.0d
+		}
+		{
+			description: ["选择3×3的空地，将合成蓝图右键放置，共有九个位置，空手或者机械动力扳手右键设置合成配方（可以JEI拖入或者直接点击小加号，点击小加号可以使用tag进行合成），设置完成后右键直接合成一次，蹲下右键可一次合成一组（没有一组就全都消耗掉），设置完成后千万不要用机械动力扳手右键（会直接消除合成配方）"]
+			id: "60B88C2A6488DC81"
+			rewards: [{
+				id: "298CAC0E9DFF9765"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "霍！这不是植物魔法的工厂环吗"
+			tasks: [{
+				id: "64BF60DCF2763E29"
+				item: "create:crafting_blueprint"
+				type: "item"
+			}]
+			title: "另类合成"
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			id: "22051C1DF80F99F0"
+			rewards: [
+				{
+					count: 8
+					id: "32E6C10F0925B193"
+					item: "minecraft:golden_carrot"
+					type: "item"
+				}
+				{
+					id: "3D9C8F2E7020D7EF"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			subtitle: "用你的作物对敌人打出大量伤害吧"
+			tasks: [{
+				id: "378DF02C718C7A99"
+				item: {
+					Count: 1
+					id: "create:potato_cannon"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"这种珍珠大部分都可以制作，使用后会召唤一个传送门，其中会刷新敌怪。当你打败一个波次后会给予奖励，直到打完。"
+				"每个珍珠出现的怪与奖励都不尽相同，请具体珍珠具体分析（"
+			]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:fire_dragon_eyes"
+				}
+			}
+			id: "10BDEBCE995C859F"
+			rewards: [{
+				id: "65DFC099F3D2DA99"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:basic/slime"
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "challenge yourself!（并非）"
+			tasks: [{
+				id: "52495AB9F6070A8B"
+				title: "任意传送门珍珠！"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -2.5d
+		}
+		{
+			id: "12B765C2EB5EA318"
+			subtitle: "千万千万千万不要用砂轮祛除附魔"
+			tasks: [
+				{
+					id: "06EE530AF5BF713A"
+					item: "supplementaries:bomb"
+					type: "item"
+				}
+				{
+					id: "55AB06B6F2758234"
+					item: "supplementaries:bomb_blue"
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: 0.5d
+		}
+		{
+			id: "583669122E2EA4D1"
+			subtitle: "随身携带大量箭矢！"
+			tasks: [{
+				id: "3D6FA95501A6E5F1"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							SelectedSlot: 0
+							Size: 6
+						}
+					}
+					id: "supplementaries:quiver"
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.0d
+		}
+		{
+			id: "45C57ED333F98DD0"
+			tasks: [{
+				id: "7552AB3C589754B2"
+				item: {
+					Count: 1
+					id: "supplementaries:rope_arrow"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 2.5d
+			y: 0.5d
+		}
+		{
+			id: "0BBA9C91E11CD035"
+			subtitle: "仿古字体真好看(╹ڡ╹ )"
+			tasks: [{
+				id: "015A04155C069811"
+				item: "supplementaries:antique_ink"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 0.5d
+		}
+		{
+			id: "1541C0ACC9DF2368"
+			subtitle: "别吃！千万别吃！"
+			tasks: [{
+				id: "28FE293829D98FB6"
+				item: "supplementaries:soap"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 2.0d
+		}
+		{
+			id: "6041752A590B6123"
+			subtitle: "试试带到头上？"
+			tasks: [{
+				id: "0877AC7861ED6A7A"
+				item: "supplementaries:confetti_popper"
+				type: "item"
+			}]
+			x: 1.0d
+			y: -1.0d
+		}
+		{
+			description: ["输入红石信号可以在一定范围内播放标题，强烈推荐搭配列车实现列车到站广播"]
+			id: "156F31EC2CF275E0"
+			subtitle: " 大喇叭"
+			tasks: [{
+				id: "2D280FE00F5F4F4D"
+				item: "supplementaries:speaker_block"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			id: "3EF308A8E1AD1782"
+			subtitle: "豪庭！"
+			tasks: [{
+				id: "73C79EAE75CF273D"
+				item: {
+					Count: 1
+					id: "supplementaries:flute"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2983A2F4EF48C2EC"]
+			id: "2DD6A240264C4584"
+			rewards: [{
+				id: "00FDF20C499C05AB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "练枪专用靶！"
+			tasks: [{
+				id: "3FD566F6933EF227"
+				item: "tacz:target"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["2DD6A240264C4584"]
+			id: "3A119AC2F95DA502"
+			rewards: [{
+				id: "58BCBB21257E83D2"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "移动靶！"
+			tasks: [{
+				id: "586EE9D3B499DE45"
+				item: "tacz:target_minecart"
+				type: "item"
+			}]
+			x: -0.5d
+			y: -1.0d
+		}
+		{
+			id: "7403332ED2924419"
+			subtitle: "长度宽度一次性搞定！"
+			tasks: [{
+				id: "5827196A98AC0265"
+				item: "quark:abacus"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 0.5d
+		}
+		{
+			id: "5D9CE12CE2600E0F"
+			rewards: [{
+				id: "216D7D4B63EF7CF9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "具有物理效果的流体！可以制作TNT！"
+			tasks: [{
+				id: "2E76BAA817568B7F"
+				item: "supplementaries:lumisene_bottle"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 0.5d
+		}
+		{
+			id: "2EEABCBF9AAE4919"
+			rewards: [{
+				id: "0AC53B67FDBC108B"
+				item: "minecraft:sponge"
+				type: "item"
+			}]
+			subtitle: "吃一口试试？"
+			tasks: [{
+				id: "1A47B5EB98A08CF8"
+				item: "alexsmobs:rainbow_jelly"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 2.0d
+		}
+		{
+			id: "2401E978A7BA9B2F"
+			subtitle: "展示你的枪械"
+			tasks: [{
+				id: "469D4B243EADD65C"
+				item: "tacz:statue"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -4.0d
+		}
+	]
+	title: "实用小玩意"
+}

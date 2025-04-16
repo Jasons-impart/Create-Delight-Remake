@@ -10,7 +10,7 @@ ServerEvents.recipes(e => {
         "ad_astra:desh_plate",
         "vintageimprovements:desh_rod",
         "vintageimprovements:desh_wire",
-        "createdelight:molten_desh"],
+        "createdelightcore:molten_desh"],
         "heated",
         80)
     metal_production_line_6(e, [
@@ -20,7 +20,7 @@ ServerEvents.recipes(e => {
         "ad_astra:ostrum_plate",
         "vintageimprovements:ostrum_rod",
         "vintageimprovements:ostrum_wire",
-        "createdelight:molten_ostrum"],
+        "createdelightcore:molten_ostrum"],
         "heated",
         80)
     metal_production_line_6(e, [
@@ -30,17 +30,17 @@ ServerEvents.recipes(e => {
         "ad_astra:calorite_plate",
         "vintageimprovements:calorite_rod",
         "vintageimprovements:calorite_wire",
-        "createdelight:molten_calorite"],
+        "createdelightcore:molten_calorite"],
         "heated",
         80)
-    createmetallurgy.melting(Fluid.of("createdelight:molten_desh", 90), "createdelight:dirty_desh_dust")
+    createmetallurgy.melting(Fluid.of("createdelightcore:molten_desh", 90), "createdelight:dirty_desh_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_desh_from_dirty_desh_dust")
-    createmetallurgy.melting(Fluid.of("createdelight:molten_ostrum", 90), "createdelight:dirty_ostrum_dust")
+    createmetallurgy.melting(Fluid.of("createdelightcore:molten_ostrum", 90), "createdelight:dirty_ostrum_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_ostrum_from_dirty_ostrum_dust")
 
-    createmetallurgy.melting(Fluid.of("createdelight:molten_calorite", 90), "createdelight:dirty_calorite_dust")
+    createmetallurgy.melting(Fluid.of("createdelightcore:molten_calorite", 90), "createdelight:dirty_calorite_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_calorite_from_dirty_calorite_dust")
 

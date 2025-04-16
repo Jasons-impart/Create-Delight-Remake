@@ -55,14 +55,14 @@ ServerEvents.recipes(e => {
     ).id("casualness_delight:crafting_shaped_plant/deep_frying_pan")
     // 炸
     deep_frying("casualness_delight:potato_chip", "casualness_delight:potato_slice", 100)
-    deep_frying("casualness_delight:fried_fish", 'createdelight:raw_fish', 100)
-    deep_frying("casualness_delight:tonkatsu", 'createdelight:raw_tonkatsu', 100)
-    deep_frying("casualness_delight:fried_chicken_chip", 'createdelight:raw_chicken_chip', 100)
+    deep_frying("casualness_delight:fried_fish", 'createdelightcore:unfried_fish', 100)
+    deep_frying("casualness_delight:tonkatsu", 'createdelightcore:unfried_tonkatsu', 100)
+    deep_frying("casualness_delight:fried_chicken_chip", 'createdelightcore:unfried_chicken_chip', 100)
     deep_frying("casualness_delight:spring_roll", "casualness_delight:raw_spring_roll", 100)
     deep_frying("casualness_delight:fried_dumpling", "casualness_delight:raw_fried_dumpling", 100)
     deep_frying("create_bic_bit:fries", "create_bic_bit:raw_fries", 100)
-    deep_frying('frycooks_delight:fried_potato', 'createdelight:unfried_potato', 100)
-    deep_frying('frycooks_delight:fried_chicken_leg', 'createdelight:unfried_chicken_leg', 100)
+    deep_frying('frycooks_delight:fried_potato', 'createdelightcore:unfried_potato', 100)
+    deep_frying('frycooks_delight:fried_chicken_leg', 'createdelightcore:unfried_chicken_leg', 100)
     deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
     deep_frying('create_deepfried:onion_rings', 'create_deepfried:raw_onion_rings', 100)
     deep_frying('create_bic_bit:cheese_souffle', 'create_bic_bit:raw_cheese_souffle', 100)
@@ -80,11 +80,11 @@ ServerEvents.recipes(e => {
     deep_frying('create_deepfried:tempura', 'create_deepfried:raw_tempura', 100)
     deep_frying('create_deepfried:berliner', 'create_bic_bit:sweet_dough', 100)
     deep_frying('create_deepfried:deepfried_chocolate_bar', 'create:bar_of_chocolate', 100)
-    deep_frying('create_deepfried:calamari', 'createdelight:raw_calamari', 100)
+    deep_frying('create_deepfried:calamari', 'createdelightcore:unfried_calamari', 100)
     deep_frying('create_bic_bit:bitterballen', 'create_bic_bit:raw_bitterballen', 100)
     deep_frying('create_bic_bit:oliebollen', 'ratatouille:salty_dough', 100)
     deep_frying('youkaishomecoming:oily_bean_curd', 'youkaishomecoming:tofu', 100)
-    deep_frying('oceanic_delight:fried_shrimp', "createdelight:unfried_shrimp", 100)
+    deep_frying('oceanic_delight:fried_shrimp', "createdelightcore:unfried_shrimp", 100)
     deep_frying('create_bic_bit:enderball', 'minecraft:ender_pearl', 100)
     deep_frying('create_deepfried:corn_dog', 'create_deepfried:raw_corn_dog', 100)
     e.recipes.kubejs.shapeless(
@@ -113,26 +113,26 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "casualness_delight:crafting_shaped/raw_fried_dumpling"}, "minecraft:porkchop", "#forge:meat/raw")
     // 生炸鸡，炸鱼，炸猪排
     e.recipes.create.mixing(
-        'createdelight:raw_fish',
+        'createdelightcore:unfried_fish',
         [
             "#minecraft:fishes",
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_fish")
     e.recipes.create.mixing(
-        'createdelight:raw_tonkatsu',
+        'createdelightcore:unfried_tonkatsu',
         [
             'minecraft:porkchop',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_tonkatsu")
     e.recipes.create.mixing(
-        'createdelight:raw_chicken_chip',
+        'createdelightcore:unfried_chicken_chip',
         [
             'butchercraft:chicken_breast',
-            "create:wheat_flour",
+            'bakeries:flour',
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_chicken_chip")

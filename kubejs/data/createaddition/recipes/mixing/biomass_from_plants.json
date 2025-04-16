@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+	{
+      "tag": "createaddition:plants"
+    },
+    {
+      "tag": "createaddition:plants"
+    },
+    {
+      "tag": "createaddition:plants"
+    }
+  ],
+  "results": [
+    {
+      "item": "createaddition:biomass",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

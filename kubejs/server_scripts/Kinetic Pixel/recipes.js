@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
         "kinetic_pixel:enderalloyingotloot",
         "kinetic_pixel:endercsloot",
         "kinetic_pixel:tableloot",
-        "kinetic_pixel:shellloot"
+        "kinetic_pixel:shellloot",
+        "createbigcannons:cutting/autocannon_cartridge_sheet_copper",
+        "createbigcannons:cutting/autocannon_cartridge_sheet_gold"
     ])
     remove_recipes_output(e,
         [
@@ -25,7 +27,7 @@ ServerEvents.recipes(e => {
     vintageimprovements.turning(
         'kinetic_pixel:barrel',
         'createmetallurgy:steel_ingot'
-    ).id("kinetic_pixel:barrel")
+    ).id("kinetic_pixel:barrelloot")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:pistol_revolver_torque",HasBulletInBarrel:1b}'),
         [
@@ -299,50 +301,50 @@ ServerEvents.recipes(e => {
         }
     ).id("create_armorer:extended_mag_ca_3")
 
-    let iner = 'create:brass_sheet'
+    let iner = 'createdelight:incomplete_slap'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
         [
-            vintageimprovements.curving(iner, iner, 1),
-            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
-            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget']),
+            create.cutting(iner, iner),
             create.pressing(iner, iner),
-            create.cutting(iner, iner)
+            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
+            create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget'])
         ]
     )
         .loops(1)
         .transitionalItem(iner)
         .id("create_armorer:slap")
 
-    let iner_1 = 'create:brass_sheet'
+    let iner_1 = 'createdelight:incomplete_rbapb'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
-            vintageimprovements.curving(iner_1, iner_1, 2),
+            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
             create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
             create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
-            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true)
+            create.pressing(iner, iner)
         ]
     )
         .loops(1)
-        .transitionalItem(iner)
+        .transitionalItem(iner_1)
         .id("create_armorer:rbapb")
     
-    let iner_3 = 'createbigcannons:autocannon_cartridge_sheet'
-    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'createbigcannons:autocannon_cartridge_sheet',
+    let iner_3 = 'createdelight:incomplete_gas_pistol_ammo'
+    create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
         [
-            vintageimprovements.curving(iner_3, iner_3, 1),
+            create.cutting(iner, iner),
+            create.pressing(iner, iner),
             create.deploying(iner_3, [iner_3, 'createbigcannons:guncotton']),
-            create.deploying(iner_3, [iner_3, '#forge:gems/diamond']),
-            create.pressing(iner_3, iner_3)
+            create.deploying(iner_3, [iner_3, '#forge:nuggets/bronze'])
         ]
     )
         .loops(1)
         .transitionalItem(iner_3)
         .id("create_armorer:gas_pistol_ammo")
 
-    let iner_4 = 'alexscaves:polymer_plate'
+    let iner_4 = 'createdelight:incomplete_12g'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
         [
-            vintageimprovements.curving(iner_4, iner_4, 1),
+            create.cutting(iner, iner),
+            create.pressing(iner, iner),
             create.deploying(iner_4, [iner_4, 'createbigcannons:guncotton']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
@@ -352,4 +354,25 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem(iner_4)
         .id("tacz:12g")
+    
+    create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
+        create.deploying("create:fluid_pipe", ["create:fluid_pipe", "ad_astra:gas_tank"])
+    )
+    .loops(2)
+    .transitionalItem("create:fluid_pipe")
+    .id("create_armorer:muzzle_refit_bigger_cylinder")
+    
+    create.filling(Item.of('tacz:modern_kinetic_gun', '{GunId:"create_armorer:special_melee_wrench"}'), [
+        "create:wrench",
+        Fluid.of("createdelight:malice_solution", 1000)
+    ]).id("create_armorer:special_melee_wrench")
+
+    kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_iron_spike"}'), [
+        "AAA",
+        "B  "
+    ], {
+        A: "#forge:plates/steel",
+        B: "#forge:nuggets/steel"
+    })
+    .id("create_armorer:muzzle_refit_iron_spike")
 })

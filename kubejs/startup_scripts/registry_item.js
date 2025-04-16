@@ -114,6 +114,16 @@ StartupEvents.registry("item", e => {
                 .fastToEat()
                 .effect("minecraft:hunger", 200, 1, 1.0)
         })
+    e.create("createdelight:lime_cookie_dough")
+        .tag("forge:cookie_dough")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.lime_cookie_dough")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .fastToEat()
+                .effect("minecraft:hunger", 200, 1, 1.0)
+        })
 
     // 开酥相关
     e.create("createdelight:butter")
@@ -177,60 +187,6 @@ StartupEvents.registry("item", e => {
             food.hunger(2)
                 .saturation(0.25)
         })
-    // 生炸虾仁
-    e.create("createdelight:unfried_shrimp")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_shrimp")
-        .food(food => {
-            food.hunger(4)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生鸡块
-    e.create("createdelight:raw_chicken_chip")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_chicken_chip")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生猪排
-    e.create("createdelight:raw_tonkatsu")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_tonkatsu")
-        .food(food => {
-            food.hunger(4)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸鱼
-    e.create("createdelight:raw_fish")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.raw_fish")
-        .food(food => {
-            food.hunger(3)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸土豆
-    e.create("createdelight:unfried_potato")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_potato")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
-    // 生炸鸡腿
-    e.create("createdelight:unfried_chicken_leg")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.unfried_chicken_leg")
-        .food(food => {
-            food.hunger(2)
-                .saturation(0.5)
-                .effect("minecraft:hunger", 600, 1, 0.5)
-        })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
         .maxStackSize(64)
@@ -239,7 +195,6 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
         })
-
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)
@@ -325,6 +280,10 @@ StartupEvents.registry("item", e => {
                 .saturation(0.6)
         })
         .translationKey("item.createdelight.empty_riceball")
+
+    e.create("createdelight:fuel_hotcream")
+        .tag("create:blaze_burner_fuel/special")
+        .translationKey("item.createdelight.fuel_hotcream")
     //未完成的寿司
     e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
         .translationKey("item.createdelight.sushi_unrolledroll")
@@ -362,6 +321,17 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_fs_upgrade")
     e.create("createdelight:incomplete_graviton_tube", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_graviton_tube")
+    // 未完成的子弹
+    e.create("createdelight:incomplete_12g", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_12g")
+    e.create("createdelight:incomplete_slap", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_slap")
+    e.create("createdelight:incomplete_rbapb", "create:sequenced_assembly")
+        .texture("create:item/brass_sheet")
+        .translationKey("item.createdelight.incomplete_rbapb")
+    e.create("createdelight:incomplete_gas_pistol_ammo", "create:sequenced_assembly")
+        .texture("create:item/copper_sheet")
+        .translationKey("item.createdelight.incomplete_gas_pistol_ammo")
 
 
     // 测试剑
@@ -453,6 +423,7 @@ StartupEvents.registry("item", e => {
     // 陨铜锭
     e.create("createdelight:sky_copper_ingot")
         .translationKey("item.createdelight.sky_copper_ingot")
+        .fireResistant()
     // 元件外壳封头
     e.create("createdelight:cell_housing_curving_head")
         .translationKey("item.createdelight.cell_housing_curving_head")
@@ -472,7 +443,12 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:planet_gear")
         .translationKey("item.createdelight.planet_gear")
         .rarity("uncommon")
-
+    // 磁悬浮构件
+    e.create("createdelight:magnetic_mechanism")
+        .rarity("uncommon")
+        .translationKey("item.createdelight.magnetic_mechanism")
+    e.create("createdelight:incomplete_magnetic_mechanism", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_magnetic_mechanism")
     // 矿石注册
     let clusters = [
         ["overworld_metal", "common"],
@@ -518,10 +494,18 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:unfinished_leather")
         .translationKey("item.createdelight.unfinished_leather")
 
+    //干酵母
+    e.create("createdelight:dry_yeast")
+        .translationKey("item.createdelight.dry_yeast")
+
     // DEBUG工具
     e.create("createdelight:debug_reload_tool")
+        .rarity("epic")
+        .texture("minecraft:item/stick")
         .translationKey("item.createdelight.debug_reload_tool")
     e.create("createdelight:debug_info_tool")
+        .rarity("epic")
+        .texture("minecraft:item/stick")
         .translationKey("item.createdelight.debug_info_tool")
 
     /**
@@ -596,7 +580,14 @@ StartupEvents.registry("item", e => {
         .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
+    
+    //采血器
+    e.create("createdelight:blood_collection_device")
+    .translationKey("item.createdelight.blood_collection_device")
+    //针
+    e.create("createdelight:needle")
+        .translationKey("item.createdelight.needle")
+    
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]
     seed_quality.forEach(q => {
@@ -606,17 +597,27 @@ StartupEvents.registry("item", e => {
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")
-        .translationKey("item.createdelight.dread_heart") 
+        .translationKey("item.createdelight.dread_heart")
     //恶魔之眼
     e.create("createdelight:devil_eye")
         .rarity("epic")
-        .translationKey("item.createdelight.devil_eye") 
+        .translationKey("item.createdelight.devil_eye")
     //锻造钢板
     e.create("createdelight:forged_steel_sheet")
-    .translationKey("item.createdelight.forged_steel_sheet") 
+        .translationKey("item.createdelight.forged_steel_sheet")
     //恶魔典籍
     e.create("createdelight:demonic_codex")
         .rarity("epic")
         .translationKey("item.createdelight.demonic_codex") 
-    
+    //悚怖锻造模板
+    let dread_upgrade = e.create("createdelight:dread_upgrade_smithing_template", "smithing_template")
+    .armorIcons()
+    .ingotIcon()
+    dread_upgrade.appliesToText = Text.translate("item.createdelight.smithing_template.dread_upgrade.applies_to").blue()
+    dread_upgrade.ingredientsText = Text.translate("item.createdelight.smithing_template.dread_upgrade.ingredients").blue()
+    dread_upgrade.appliesToSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.base_slot_description").blue()
+    dread_upgrade.ingredientSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.additions_slot_description").blue()
+    dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
+
 })
+

@@ -42,14 +42,14 @@
 
 	
 	"art_of_forging.effect.dragon_mist.name": "龙之雾",
-	"art_of_forging.effect.dragon_mist.tooltip": "一种雾气，持续§e%s秒§r，并有§e%s概率§r被召唤。",
+	"art_of_forging.effect.dragon_mist.tooltip": "使用时有概率产生不可被装瓶的龙息，持续§e%s秒§r（§e%%s概率§r被召唤）。",
 	"tetra.stats.art_of_forging:dragon_mist": "龙之雾",
 	"tetra.stats.art_of_forging:dragon_mist.tooltip_short": "一种有机会被召唤的雾气",
 	  
 	"art_of_forging.effect.disorienting.name": "惑乱",
-	"art_of_forging.effect.disorienting.tooltip": "以§e%s效能§r造成减速、虚弱和混乱，持续§e%s秒§r。",
+	"art_of_forging.effect.disorienting.tooltip": "造成§e%s§r级缓慢、虚弱和混乱，持续§e%s秒§r。",
 	"tetra.stats.art_of_forging:disorienting": "惑乱",
-	"tetra.stats.art_of_forging:disorienting.tooltip_short": "以§e%s效能§r造成减速、虚弱和混乱，持续§e%s秒§r",
+	"tetra.stats.art_of_forging:disorienting.tooltip_short": "造成§e%s§r级缓慢、虚弱和混乱，持续§e%s秒§r§r",
 	  
 	"art_of_forging.effect.vengeance.name": "复仇",
 	"art_of_forging.effect.vengeance.tooltip": "生命值较低时会额外造成§e%s百分比§r伤害（当你生命值在§e%s颗心§r或以下时）。",
@@ -214,7 +214,7 @@
 	"item.art_of_forging.esoteric_codex": "神秘典籍",
 	"item.art_of_forging.mark_of_the_architect": "锻造师的遗稿",
 	"item.art_of_forging.shockwave_chamber": "震荡腔室",
-	"item.art_of_forging.devils_soul_gem": "黑暗宝珠",
+	"item.art_of_forging.devils_soul_gem": "焰魔宝石",
 	
 	"item.art_of_forging.dragon_soul": "龙之灵魂",
 	"item.art_of_forging.shards_of_malice": "恶意碎片",
@@ -234,10 +234,10 @@
 
 
 	"tetra.material.forged_steel_ingot": "锻造钢锭",
-	"tetra.material.forged_steel_ingot.prefix": "锻造钢锭",
+	"tetra.material.forged_steel_ingot.prefix": "锻造钢",
 
     "tetra.material.vobrivium_ingot": "沃布里钢锭",
-    "tetra.material.vobrivium_ingot.prefix": "沃布里钢锭",
+    "tetra.material.vobrivium_ingot.prefix": "沃布里钢",
 
     "tetra.material.vobrite_crystal": "沃伯瑞水晶",
     "tetra.material.vobrite_crystal.prefix": "§b沃伯瑞水晶§r",
@@ -249,7 +249,7 @@
 	"tetra.material.fang_charm.prefix": "§e尖牙护符§r",
 
 	"tetra.material.endsteel_ingot": "终末钢锭",
-	"tetra.material.endsteel_ingot.prefix": "终末钢锭",
+	"tetra.material.endsteel_ingot.prefix": "终末钢",
 
 	"tetra.material.life_fiber": "生命纤维",
 	"tetra.material.life_fiber.prefix": "§c生命纤维§r",
@@ -736,18 +736,18 @@
     "tetra.synergy.double/quarry_hammer": "采石锤",
     "tetra.synergy.double/mjolnir": "雷神之锤",
     "tetra.synergy.double/dual_throwing_axe": "双面斧",
-	"tetra.synergy.sword/murasama": "村正之刃",
-	"tetra.synergy.sword/architects_crucible": "锻造师之权",
+	"tetra.synergy.sword/murasama": "高频村雨",
+	"tetra.synergy.sword/architects_crucible": "锻造师裁决剑",
 	"tetra.synergy.sword/thousand_cold_nights": "千夜寒",
 	"tetra.synergy.bow/remembrance_stave": "追忆之弓",
 
 
 
-	"tetra/schematic/katana/murasama_blade.name": "村正之刃",
-	"tetra/schematic/katana/murasama_blade.description": "将你的刀剑升级为来自未来的村正之刃。",
-	"tetra/schematic/katana/murasama_blade.slot1": "村正之刃",
+	"tetra/schematic/katana/murasama_blade.name": "高频村雨",
+	"tetra/schematic/katana/murasama_blade.description": "将你的刀剑升级为来自未来的高频村雨。",
+	"tetra/schematic/katana/murasama_blade.slot1": "高频村雨",
 	
-	"tetra.improvement.sword/murasama_imprv.name": "村正之刃",
+	"tetra.improvement.sword/murasama_imprv.name": "高频村雨",
 	"tetra.improvement.sword/murasama_imprv.description": "能量剑刃",
 	
 	"tetra/schematic/double/basic_hammer/utilize.name": "复用",
@@ -807,12 +807,12 @@
     "tetra/schematic/double/soul_fire_scythe/hone_soul_fire_3.name": "打磨：魂灼之刃III",
     "tetra/schematic/double/soul_fire_scythe/hone_soul_fire_3.description": "进一步提升技能效果，敌人会燃烧10秒，如果双倍打磨则为16秒，同时魔法伤害增加到7，如果双倍打磨则为10。",
 
-	"tetra/schematic/crucible/architects_crucible.name": "锻造师之权",
-	"tetra/schematic/crucible/architects_crucible.description": "改进你的裁决剑刃，并将其升级为真正的锻造师之权.",
-	"tetra/schematic/crucible/architects_crucible.slot1": "锻造师之权",
+	"tetra/schematic/crucible/architects_crucible.name": "锻造师裁决剑",
+	"tetra/schematic/crucible/architects_crucible.description": "改进你的裁决剑刃，并将其升级为真正的锻造师裁决剑.",
+	"tetra/schematic/crucible/architects_crucible.slot1": "锻造师裁决剑",
 
 	"tetra.improvement.sword/architect_imprv.name": "违禁之物",
-	"tetra.improvement.sword/architect_imprv.description": "令你的锻造师之权真正降临现实",
+	"tetra.improvement.sword/architect_imprv.description": "将锻造师裁决剑再临人间",
 
     "tetra.improvement.blade/esoteric_tier.name": "秘刃",
     "tetra.improvement.blade/esoteric_tier.prefix": "秘刃",
@@ -1034,13 +1034,13 @@
     "item.tetra.scroll.tetra/rending_scissor_complete.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
     "item.tetra.scroll.sword/katana/murasama_blade.prefix": "锻造之艺 第  ？章",
-    "item.tetra.scroll.sword/katana/murasama_blade.name": "村正",
-    "item.tetra.scroll.sword/katana/murasama_blade.description": "包含来自另一个世界的知识，教授如何锻造村正之刃",
+    "item.tetra.scroll.sword/katana/murasama_blade.name": "高频村雨",
+    "item.tetra.scroll.sword/katana/murasama_blade.description": "包含来自另一个世界的知识，教授如何锻造高频村雨",
     "item.tetra.scroll.sword/katana/murasama_blade.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
 	"item.tetra.scroll.sword/crucible/architects_crucible_blade.prefix": "锻造之艺 第零章",
-    "item.tetra.scroll.sword/crucible/architects_crucible_blade.name": "锻造师之权",
-    "item.tetra.scroll.sword/crucible/architects_crucible_blade.description": "包含制造锻造师之权所需的全部禁忌知识",
+    "item.tetra.scroll.sword/crucible/architects_crucible_blade.name": "锻造师裁决剑",
+    "item.tetra.scroll.sword/crucible/architects_crucible_blade.description": "包含制造锻造师裁决剑所需的全部禁忌知识",
     "item.tetra.scroll.sword/crucible/architects_crucible_blade.description_extended": "§7[§8shift + 右键§7]§8 阅读更多",
 
     "item.tetra.scroll.sword/thousand_cold_nights.prefix": "锻造之艺 第  ？章",
@@ -1100,7 +1100,7 @@
     "tetra.advancements.art_of_forging.eerie_fuller.description": "使用纳米融合打磨武器杀死看守者，夺取其令人垂涎的碎片作为剑附层！",
 
     "tetra.advancements.art_of_forging.architects_crucible.title": "绝对宽恕",
-    "tetra.advancements.art_of_forging.architects_crucible.description": "改造你的裁决剑剑刃并揭示其真正的力量，重铸为锻造师之权",
+    "tetra.advancements.art_of_forging.architects_crucible.description": "改造你的裁决剑剑刃并揭示其真正的力量，重铸为锻造师裁决剑",
 
     "tetra.advancements.art_of_forging.murasama_blade.title": "必有血雨腥风",
     "tetra.advancements.art_of_forging.murasama_blade.description": "将武士刀升级为传说中的村正之刃",
@@ -1151,7 +1151,7 @@
     "tetra.advancements.scrolls.get_scroll_rending_scissors.description": "获得传说中的撕裂剪刃卷轴",
 
     "tetra.advancements.scrolls.get_scroll_architects_crucible.title": "锻造之艺",
-    "tetra.advancements.scrolls.get_scroll_architects_crucible.description": "获得升级版锻造师之权卷轴",
+    "tetra.advancements.scrolls.get_scroll_architects_crucible.description": "获得升级版锻造师裁决剑卷轴",
 
     "art_of_forging.advancements.materials.forged_steel.title": "古代钢铁",
     "art_of_forging.advancements.materials.forged_steel.description": "熔炼一些谐振合金，制成一块锻造钢锭",
@@ -1199,7 +1199,7 @@
 
     "item.tetra.scroll.art_of_forging.details": "§l§n锻造之艺§r \n锻造，是将金属塑性为任何你想要的东西的技艺。从前只有古老的铁匠和锻造之神才能参与的郑重工艺，但我已经发现了一种新的创造自己工具的方法。我将我的知识传授给你，希望你能最终锻造出自己的杰作。  r§l§n焰形剑§r \n焰形剑不仅在战斗中印象深刻，而且设计非常精致。它带有标志性的焰浪形刀片，非常适合造成导致对手流血的打击。也许是有意或无意设计的，一旦受伤，你可以把刀刃磨尖以令敌人着火。  r§l§n战斧§r \n一种强大而经典的武器。主要用于攻城，显然；这种武器将刀、斧和长矛的特点结合成一体。最适合穿透敌人的盔甲，以及从他们的坐骑上击落并对他们造成伤害。  r§l§n狼牙棒§r \n对于任何装甲对手来说，狼牙棒是一种致命的武器。这种重击可以无视盔甲，造成毁灭性的打击。当然有损失速度。在你的武器库里有这种卑劣的武器，可以在战场上征服敌人。  r§l§n无畏弓§r \n无畏弓是速度和狂暴的完美结合，让游侠能够向敌人发射一连串的箭矢。完美地撞倒那些挡在你路上的人，并让你复仇。可用于改造弓和弩。  r§l§n武士刀§r \n这是一把来自东方的武器，其精致的工艺和完美的刀锋使其成为追求顶级品质的战士的理想选择。锋利无比的武士刀能够轻松将任何物体切成碎片。  r§l§n复合弓弦§r \n复合弓弦通过缠绕两根弓弦而非单根弓弦制成。虽然这会略微减缓拉弦速度，但其强大的原始力量弥补了这一点，使得箭矢的威力远超普通弓弦。与无畏弓结合使用，这一搭配堪称远程作战的完美组合。  r§l§n采石锤§r \n锤子内含潜力。通过利用它内部的特定领域，你可以解锁采石锤。利于钻探隧道和挖掘孔洞，能够毫不费力地切掉地球。如果你想要一种可以快速处理石头和矿石的工具，那么你已经找到了完美的物品。 \n§l§n音调之刃§r \n一把刀，精心制作，类似于乐器，这种武器通过独特的能力弥补其低伤害。刀片能够调节敌人的谐振频率，导致他们相当长的时间失去方向感。  r§c§l§n裁决剑§r \n§k这页无法理解且已被撕裂。或许缺少某些东西？§r",
     "item.tetra.scroll.otherworldly.details": "§l§n异界§r \n 在玩弄一个废弃的破碎传送门后，我成功地找到了连接此世界和异域现实世界的纽带。",
-    "item.tetra.scroll.true_crucible.details": "§c§l§n锻造师之权§r \n 锻造师之权是由恶意和怨恨锻造的强大武器。它本身就是一件强大的武器，而像锻造师一样锻造它可以让它获得奥秘的特性，将部分物理伤害转化为形而上的伤害。",
+    "item.tetra.scroll.true_crucible.details": "§c§l§n锻造师裁决剑§r \n 锻造师裁决剑是由恶意和怨恨锻造的强大武器。它本身就是一件强大的武器，而像锻造师一样锻造它可以让它获得奥秘的特性，彻底无视敌人护甲。",
 	
     "art_of_forging.effect.esoteric_edge.name": "秘术之刃",
     "art_of_forging.effect.esoteric_edge.tooltip": "转化你造成的 §e%s%%§r 伤害为魔法伤害。",

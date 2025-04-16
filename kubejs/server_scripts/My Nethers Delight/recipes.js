@@ -35,7 +35,7 @@ ServerEvents.recipes(e => {
     ).id("mynethersdelight:boiled_egg_from_campfire_cooking")
 
     
-    cutting_3(e, "mynethersdelight:ghasta_with_cream", [
+    cutting_2(e, "mynethersdelight:ghasta_with_cream", [
         ["mynethersdelight:ghasta_with_cream", 1, 0.9],
         ["mynethersdelight:ghasta", 1]
     ])

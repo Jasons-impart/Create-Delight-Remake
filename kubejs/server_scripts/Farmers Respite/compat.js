@@ -5,8 +5,7 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/mangosteen_tea",
         "farmersdelight:cooking/lychee_cherry_tea",
         "farmersdelight:cooking/hawberry_tea",
-        "ends_delight:food/chorus_flower_tea",
-        "farmersrespite:cutting/rose_bush"
+        "ends_delight:food/chorus_flower_tea"
     ])
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:peach_tea", 500),
@@ -54,7 +53,7 @@ ServerEvents.recipes(e => {
         Fluid.of("fruitsdelight:lychee_cherry_tea", 1000),
         [
             Fluid.of("farmersrespite:green_tea", 1000),
-            "fruitsdelight:lychee",
+            "trailandtales_delight:dried_cherry_petal",
             "minecraft:cherry_leaves"
         ]
     )
@@ -62,7 +61,7 @@ ServerEvents.recipes(e => {
     brewing(e, "farmersrespite:green_tea",
         [
             "fruitsdelight:lychee",
-            "minecraft:cherry_leaves"
+            "trailandtales_delight:cherry_petal"
         ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
     )
     e.recipes.create.mixing(
@@ -92,9 +91,6 @@ ServerEvents.recipes(e => {
             "ends_delight:dried_chorus_flower"
         ], "create_central_kitchen:chorus_flower_tea", "ends_delight:chorus_flower_tea"
     )
-    cutting_3(e, "minecraft:rose_bush", [['farmersrespite:rose_hips', 2]])
-    cutting_3(e, 'farmersrespite:coffee_cake', [['farmersrespite:coffee_cake_slice', 7]])
-    cutting_3(e, 'farmersrespite:rose_hip_pie', [['farmersrespite:rose_hip_pie_slice', 4]])
     e.recipes.create.haunting("farmersrespite:yellow_tea_leaves", "farmersrespite:green_tea_leaves")
     .id("farmersrespite:haunting/yellow_tea_leaves")
     e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")

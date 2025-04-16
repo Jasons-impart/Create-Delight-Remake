@@ -24,7 +24,7 @@
                   }
                 }
               ],
-              "name": "createdelight:tin_ore"
+              "name": "createdelightcore:tin_ore"
             },
             {
               "type": "minecraft:item",

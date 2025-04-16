@@ -6,17 +6,17 @@ ServerEvents.recipes(e => {
         "vintageimprovements:andesite_sheet",
         "vintageimprovements:andesite_rod",
         "vintageimprovements:andesite_wire",
-        "createdelight:molten_andesite"
+        "createdelightcore:molten_andesite"
     ],
     "heated",
     60)
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [Fluid.of("createmetallurgy:molten_iron", 20), "andesite"])
     .heatRequirement("heated")
     .id("createmetallurgy:alloying/molten_andesite_1")
     e.recipes.createmetallurgy.alloying(
-        Fluid.of("createdelight:molten_andesite", 270),
+        Fluid.of("createdelightcore:molten_andesite", 270),
         [Fluid.of("createmetallurgy:molten_zinc", 20), "andesite"])
     .heatRequirement("heated")
     .id("createmetallurgy:alloying/molten_andesite_2")

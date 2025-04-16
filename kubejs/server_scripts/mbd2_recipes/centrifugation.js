@@ -1,0 +1,130 @@
+
+ServerEvents.recipes(e => {
+  e.forEachRecipe(
+    [{type: "vintageimprovements:centrifugation"}], recipe => {
+    let prevIngr = recipe.json.get("ingredients").getAsJsonArray()
+    let prevResult = recipe.json.get("results").getAsJsonArray()
+    let newIngr = []
+    let newRes = []
+    let hasFluid = false
+
+    prevIngr.forEach(ingr => {
+      if (ingr.asJsonObject.get("fluid") != null || ingr.asJsonObject.get("fluidTag") != null)
+        hasFluid = true
+      newIngr.push(ingr)
+    })
+    prevResult.forEach(res => {
+      console.log(`res: ${res.toString()}`)
+      if (res.asJsonObject.get("fluid") != null || res.asJsonObject.get("fluidTag") != null)
+        hasFluid = true
+      newRes.push(res)
+    })
+
+    if (newIngr.length > 1 || hasFluid)
+      return
+    e.recipes.createdelight.small_centrifugation()
+    .perTick(builder => builder
+      .inputFE(100)
+    )
+    .inputItems(newIngr)
+    .outputItems(newRes)
+  })
+  
+  e.recipes.createdelight.big_centrifugation()
+    .inputItems('alexscaves:unrefined_waste')
+    .duration(500)
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .outputItems('5x alexscaves:uranium_shard')
+    .outputFluids(Fluid.of("alexscaves:acid", 250))
+    .id("createdelight:big_centrifugation/unrefined_waste")
+  e.recipes.createdelight.big_centrifugation()
+    .inputItems('createdelight:uranium_dust')
+    .duration(1000)
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .chance(0.1, builder => builder
+      .outputItems('createdelight:enriched_uraniumdust')
+    )
+    .chance(0.9, builder => builder
+     .outputItems("createdelight:depleted_uranium_dust")
+    )
+    .id("createdelight:big_centrifugation/uranium_dust")
+    //液体离心
+    //双液体组分液体离心
+    let fluidSeparation_2_fluids = [
+      [["createmetallurgy:molten_brass", 500], ["createmetallurgy:molten_copper", 250], ["createmetallurgy:molten_zinc", 250]],
+      [["createmetallurgy:molten_bronze", 500], ["createmetallurgy:molten_tin", 125], ["createmetallurgy:molten_copper", 375]],
+      [["createmetallurgy:molten_electrum", 500], ["createmetallurgy:molten_silver", 250], ["createmetallurgy:molten_gold", 250]],
+      [["createbigcannons:molten_nethersteel", 300], ["createmetallurgy:molten_steel", 50], ["createmetallurgy:molten_netherite", 50]],
+      [["createdelight:vanilla_milkshake", 750], ["createdelightcore:vanilla_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:chocolate_milkshake", 750], ["createdelightcore:chocolate_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:strawberry_milkshake", 750], ["createdelightcore:strawberry_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:banana_milkshake", 750], ["createdelightcore:banana_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:mint_milkshake", 750], ["createdelightcore:mint_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:pomegranate_milkshake", 750], ["createdelightcore:pomegranate_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:lime_milkshake", 750], ["createdelightcore:lime_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:adzuki_milkshake", 750], ["createdelightcore:adzuki_ice_cream", 250], ["minecraft:milk", 500]],
+    ]
+    fluidSeparation_2_fluids.forEach(fluid => {
+      e.recipes.createdelight.big_centrifugation()
+        .inputFluids(Fluid.of(fluid[0][0], fluid[0][1]))
+        .outputFluids(Fluid.of(fluid[1][0], fluid[1][1]))
+        .outputFluids(Fluid.of(fluid[2][0], fluid[2][1]))
+        .duration(100)
+        .perTick(builder => builder
+          .inputRPM(32)
+        )
+        .id(`createdelight:big_centrifugation/separation/${fluid[0][0].split(":")[1]}`)
+    })
+  //液固混合液体离心
+  e.recipes.createdelight.big_centrifugation()
+    .inputFluids(Fluid.of("createdelightcore:ferrouslime", 900))
+    .outputFluids(Fluid.of("createdelightcore:slime", 900))
+    .outputItems("10x createmetallurgy:iron_dust")
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .id("createdelight:big_centrifugation/separation/ferrouslime")
+  //巧克力离心
+  e.recipes.createdelight.big_centrifugation()
+    .inputFluids(Fluid.of("create:chocolate", 250))
+    .outputItems("ratatouille:cocoa_butter")
+    .outputItems("ratatouille:cocoa_solids")
+    .outputItems("minecraft:sugar")
+    .outputFluids(Fluid.of("minecraft:milk", 250))
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .id("createdelight:big_centrifugation/separation/chocolate")
+  e.recipes.createdelight.big_centrifugation()
+    .inputFluids(Fluid.of("create_confectionery:ruby_chocolate", 250))
+    .outputItems("ratatouille:cocoa_butter")
+    .outputItems("ratatouille:cocoa_solids")
+    .outputItems("minecraft:sugar")
+    .outputFluids(Fluid.of("create_central_kitchen:dragon_breath", 250))
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .id("createdelight:big_centrifugation/separation/ruby_chocolate")
+  e.recipes.createdelight.big_centrifugation()
+    .inputFluids(Fluid.of("create_confectionery:white_chocolate", 250))
+    .outputItems("ratatouille:cocoa_butter")
+    .outputItems("minecraft:sugar")
+    .outputFluids(Fluid.of("minecraft:milk", 250))
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .id("createdelight:big_centrifugation/separation/white_chocolate")
+  e.recipes.createdelight.big_centrifugation()
+    .inputFluids(Fluid.of("create_confectionery:black_chocolate", 250))
+    .outputItems("ratatouille:cocoa_butter")
+    .outputItems("ratatouille:cocoa_solids")
+    .outputFluids(Fluid.of("minecraft:milk", 250))
+    .perTick(builder => builder
+      .inputRPM(32)
+    )
+    .id("createdelight:big_centrifugation/separation/black_chocolate")
+})

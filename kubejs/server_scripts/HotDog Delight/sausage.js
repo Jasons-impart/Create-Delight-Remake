@@ -5,6 +5,10 @@ ServerEvents.recipes(e => {
         "hotdog_delight:porkcook",
         "hotdog_delight:codrecp_2",
     ])
+    e.recipes.create.cutting(
+        "2x ratatouille:sausage_casing",
+        "minecraft:slime_ball"
+    ).id("create:cutting/sausage")
     e.recipes.create.mixing(
         "hotdog_delight:cod_sausage",
         [

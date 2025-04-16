@@ -621,6 +621,23 @@
         {
           "TradeType": "SALE",
           "SellItem": {
+            "ID": "culturaldelights:avocado_pit",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
             "ID": "fruitsdelight:durian_sapling",
             "Count": 1
           },
@@ -1072,11 +1089,18 @@
             "ID": "minecraft:carrot",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1089,11 +1113,18 @@
             "ID": "minecraft:potato",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1106,11 +1137,18 @@
             "ID": "minecraft:beetroot",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1123,11 +1161,18 @@
             "ID": "createcafe:cassava_root",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1140,11 +1185,18 @@
             "ID": "farmersdelight:cabbage",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1157,11 +1209,18 @@
             "ID": "farmersdelight:tomato",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1174,11 +1233,18 @@
             "ID": "farmersdelight:onion",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1191,11 +1257,18 @@
             "ID": "culturaldelights:eggplant",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1208,11 +1281,18 @@
             "ID": "festival_delicacies:chinese_cabbage",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1225,11 +1305,18 @@
             "ID": "festival_delicacies:greenonion",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1242,11 +1329,18 @@
             "ID": "festival_delicacies:eggplant",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1259,11 +1353,18 @@
             "ID": "festival_delicacies:garlic_chive",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1276,11 +1377,18 @@
             "ID": "vintagedelight:peanut",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1293,11 +1401,18 @@
             "ID": "vintagedelight:ghost_pepper",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1310,11 +1425,18 @@
             "ID": "vintagedelight:cucumber",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1327,11 +1449,18 @@
             "ID": "minecraft:wheat",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1344,11 +1473,18 @@
             "ID": "alexsmobs:banana",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1361,11 +1497,18 @@
             "ID": "createcafe:cassava_root",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1378,11 +1521,18 @@
             "ID": "culturaldelights:avocado",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1395,11 +1545,18 @@
             "ID": "culturaldelights:corn_cob",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1412,11 +1569,18 @@
             "ID": "mynethersdelight:bullet_pepper",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1429,11 +1593,18 @@
             "ID": "vintagedelight:gearo_berry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1446,11 +1617,18 @@
             "ID": "nethervinery:crimson_grape",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1463,11 +1641,18 @@
             "ID": "nethervinery:warped_grape",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1480,11 +1665,18 @@
             "ID": "vinery:cherry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1497,11 +1689,18 @@
             "ID": "vinery:red_grape",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1514,11 +1713,18 @@
             "ID": "vinery:white_grape",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1531,11 +1737,18 @@
             "ID": "vinery:savanna_grapes_red",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1548,11 +1761,18 @@
             "ID": "vinery:savanna_grapes_white",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1565,11 +1785,18 @@
             "ID": "vinery:taiga_grapes_red",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1582,11 +1809,18 @@
             "ID": "vinery:taiga_grapes_white",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1599,11 +1833,18 @@
             "ID": "vinery:jungle_grapes_red",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1616,11 +1857,18 @@
             "ID": "vinery:jungle_grapes_white",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1633,11 +1881,18 @@
             "ID": "fruitsdelight:pear",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1650,11 +1905,18 @@
             "ID": "fruitsdelight:hawberry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1667,11 +1929,18 @@
             "ID": "fruitsdelight:lychee",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1684,11 +1953,18 @@
             "ID": "fruitsdelight:mango",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1701,11 +1977,18 @@
             "ID": "fruitsdelight:persimmon",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1718,11 +2001,18 @@
             "ID": "fruitsdelight:peach",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1735,11 +2025,18 @@
             "ID": "fruitsdelight:orange",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1752,11 +2049,18 @@
             "ID": "fruitsdelight:mangosteen",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1769,11 +2073,18 @@
             "ID": "fruitsdelight:bayberry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1786,11 +2097,18 @@
             "ID": "fruitsdelight:kiwi",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1803,11 +2121,18 @@
             "ID": "fruitsdelight:fig",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1820,11 +2145,18 @@
             "ID": "fruitsdelight:blueberry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1837,11 +2169,18 @@
             "ID": "fruitsdelight:lemon",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1854,11 +2193,18 @@
             "ID": "fruitsdelight:cranberry",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1871,11 +2217,18 @@
             "ID": "fruitsdelight:pineapple",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1888,11 +2241,18 @@
             "ID": "oceanic_delight:sea_grape",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1905,11 +2265,18 @@
             "ID": "farmersrespite:green_tea_leaves",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1922,11 +2289,18 @@
             "ID": "farmersrespite:yellow_tea_leaves",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1939,11 +2313,18 @@
             "ID": "farmersrespite:black_tea_leaves",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1956,11 +2337,18 @@
             "ID": "frycooks_delight:canola",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1973,11 +2361,18 @@
             "ID": "youkaishomecoming:pods",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -1990,11 +2385,18 @@
             "ID": "neapolitan:mint_leaves",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -2007,11 +2409,18 @@
             "ID": "neapolitan:vanilla_pods",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -2024,11 +2433,18 @@
             "ID": "neapolitan:strawberries",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -2054,13 +2470,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:beef",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2071,13 +2494,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:chicken",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -2088,13 +2518,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:mutton",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -2105,13 +2542,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:rabbit",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -2122,13 +2566,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsdelight:raw_bison",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -2139,13 +2590,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsdelight:raw_bunfungus",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -2156,13 +2614,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsmobs:kangaroo_meat",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2173,13 +2638,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:tripe",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2190,13 +2662,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:stomach",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2207,13 +2686,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:lung",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2224,13 +2710,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:liver",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2241,13 +2734,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:kidney",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2258,13 +2758,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:heart",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2275,13 +2782,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "butchercraft:brain",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2294,6 +2808,13 @@
             "ID": "butchercraft:leather_scrap",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -2311,6 +2832,13 @@
             "ID": "butchercraft:sinew",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -2328,6 +2856,13 @@
             "ID": "butchercraft:fat",
             "Count": 128
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -2343,13 +2878,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cod",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2360,13 +2902,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:salmon",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2377,13 +2926,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:tropical_fish",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2394,13 +2950,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:squid",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2411,13 +2974,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:glow_squid",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -2552,7 +3122,7 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "DisplayName": "不要搞丢了！搞丢了得花1天才能再买",
+          "DisplayName": "交换时记得把钱取出来！！\n不要搞丢了！搞丢了得花1天才能再买",
           "BarterItem": {
             "ID": "createdelightcore:iron_coin",
             "Count": 5
@@ -2568,7 +3138,9 @@
               "Type": "lightmanscurrency:player_trade_limit"
             }
           ],
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2585,7 +3157,9 @@
             "ID": "lightmanscurrency:wallet_copper",
             "Count": 1
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2603,7 +3177,9 @@
             "ID": "lightmanscurrency:wallet_iron",
             "Count": 1
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2622,7 +3198,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2641,7 +3219,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         },
         {
           "TradeType": "BARTER",
@@ -2660,7 +3240,9 @@
             "Count": 1,
             "Tag": "{AutoConvert:1b}"
           },
-          "IgnoreNBT": [3]
+          "IgnoreNBT": [
+            3
+          ]
         }
       ]
     },
@@ -2864,7 +3446,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2883,7 +3471,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2902,7 +3496,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2921,7 +3521,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2940,7 +3546,13 @@
             "amount": 1000
           },
           "Quantity": 4,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2959,7 +3571,13 @@
             "amount": 1000
           },
           "Quantity": 3,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2978,7 +3596,13 @@
             "amount": 1000
           },
           "Quantity": 3,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -2997,7 +3621,13 @@
             "amount": 1000
           },
           "Quantity": 2,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3016,7 +3646,13 @@
             "amount": 1000
           },
           "Quantity": 4,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3035,7 +3671,13 @@
             "amount": 1000
           },
           "Quantity": 2,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3054,26 +3696,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
-        },
-        {
-          "TradeType": "PURCHASE",
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          },
-          "Product": {
-            "id": "createcafe:melted_sugar",
-            "amount": 1000
-          },
-          "Quantity": 3,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3092,7 +3721,13 @@
             "amount": 1000
           },
           "Quantity": 5,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3111,7 +3746,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3130,7 +3771,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3149,7 +3796,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3168,7 +3821,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3187,7 +3846,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3206,7 +3871,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3225,7 +3896,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3244,7 +3921,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3263,7 +3946,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3282,7 +3971,13 @@
             "amount": 1000
           },
           "Quantity": 4,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3301,7 +3996,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3320,7 +4021,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3339,7 +4046,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3358,7 +4071,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3377,7 +4096,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3396,7 +4121,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3415,7 +4146,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3434,7 +4171,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3453,7 +4196,13 @@
             "amount": 1000
           },
           "Quantity": 8,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3491,7 +4240,13 @@
             "amount": 1000
           },
           "Quantity": 2,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3510,7 +4265,13 @@
             "amount": 1000
           },
           "Quantity": 3,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3529,7 +4290,13 @@
             "amount": 1000
           },
           "Quantity": 2,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3548,7 +4315,13 @@
             "amount": 1000
           },
           "Quantity": 2,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3567,7 +4340,13 @@
             "amount": 1000
           },
           "Quantity": 1,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         },
         {
           "TradeType": "PURCHASE",
@@ -3586,7 +4365,13 @@
             "amount": 1000
           },
           "Quantity": 3,
-          "TradeRules": []
+          "TradeRules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ]
         }
       ]
     },
@@ -3601,17 +4386,24 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:cocoa_butter",
-            "Count": 8
+            "Count": 64
           },
           "SellItem2": {
             "ID": "ratatouille:cocoa_solids",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -3622,13 +4414,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:cocoa_powder",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -3641,6 +4440,13 @@
             "ID": "createcafe:coffee_grounds",
             "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -3656,13 +4462,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "vintagedelight:raw_oats",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -3673,13 +4486,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "vintagedelight:oat_dough",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -3690,13 +4510,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:wheat_kernels",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3707,13 +4534,44 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:wheat_flour",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "bakeries:flour",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3724,13 +4582,44 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:dough",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "bakeries:whole_wheat_dough",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3741,13 +4630,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:salty_dough",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -3758,13 +4654,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:oil_dough",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -3775,13 +4678,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "mynethersdelight:ghast_dough",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -3792,13 +4702,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:corn_kernels",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3809,13 +4726,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:corn_flour",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -3826,13 +4750,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:corn_dough",
-            "Count": 28
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3843,13 +4774,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "corn_delight:tortilla_raw",
-            "Count": 28
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -3860,13 +4798,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:tortilla_chips",
-            "Count": 48
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3877,13 +4822,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cocoa_beans",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -3894,13 +4846,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:dried_cocoa_beans",
-            "Count": 28
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3911,13 +4870,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ratatouille:dried_cocoa_nibs",
-            "Count": 48
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -3928,13 +4894,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "farmersdelight:raw_pasta",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3945,13 +4918,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:puff_pastry",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -3962,13 +4942,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "farmersdelight:pie_crust",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -3979,13 +4966,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_dough",
-            "Count": 4
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 32
               }
             ],
             "Chain": "main",
@@ -3996,13 +4990,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo",
-            "Count": 1
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 64
               }
             ],
             "Chain": "main",
@@ -4013,13 +5014,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_crushed",
-            "Count": 2
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 32
               }
             ],
             "Chain": "main",
@@ -4032,6 +5040,13 @@
             "ID": "createcafe:tapioca_flour",
             "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -4049,6 +5064,13 @@
             "ID": "createcafe:raw_boba",
             "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -4066,6 +5088,13 @@
             "ID": "createcafe:boba",
             "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -4084,13 +5113,7 @@
       "ID": "technology_help_trade",
       "Name": "给大忙人的科技补助",
       "OwnerName": "JSI宇宙第一无敌公司",
-      "Rules": [
-        {
-          "Limit": 10,
-          "ForgetTime": 86400000,
-          "Type": "lightmanscurrency:player_trade_limit"
-        }
-      ],
+      "Rules": [],
       "Trades": [
         {
           "TradeType": "SALE",
@@ -4184,7 +5207,7 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "createdelight:bronze_ingot",
+            "ID": "createdelightcore:bronze_ingot",
             "Count": 32
           },
           "Price": {
@@ -4520,7 +5543,7 @@
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
-          "Limit": 81,
+          "Limit": 100,
           "ForgetTime": 86400000,
           "Type": "lightmanscurrency:player_trade_limit"
         }
@@ -4532,13 +5555,13 @@
             "Value": [
               {
                 "Coin": "createdelightcore:iron_coin",
-                "Amount": 3
+                "Amount": 9
               }
             ],
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           },
-          "Quantity": 9999999,
+          "Quantity": 1000000,
           "TradeRules": []
         }
       ]
@@ -4560,13 +5583,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_iron",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -4577,13 +5607,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_gold",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 12
               }
             ],
             "Chain": "main",
@@ -4594,13 +5631,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_copper",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -4611,13 +5655,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_zinc",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -4628,13 +5679,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_silver",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4645,13 +5703,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:crushed_raw_wolframite",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4662,13 +5727,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:crushed_raw_desh",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4679,13 +5751,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:crushed_raw_ostrum",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 11
               }
             ],
             "Chain": "main",
@@ -4696,13 +5775,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:crushed_raw_tin",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -4713,13 +5799,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:crushed_raw_calorite",
-            "Count": 4
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -4730,13 +5823,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:dirty_iron_dust",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -4747,13 +5847,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:dirty_gold_dust",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 11
               }
             ],
             "Chain": "main",
@@ -4764,13 +5871,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:dirty_copper_dust",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -4781,13 +5895,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:dirty_zinc_dust",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -4798,13 +5919,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_silver_dust",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4815,13 +5943,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:dirty_wolframite_dust",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -4832,13 +5967,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_desh_dust",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4849,13 +5991,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_ostrum_dust",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 11
               }
             ],
             "Chain": "main",
@@ -4866,13 +6015,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_calorite_dust",
-            "Count": 4
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -4883,13 +6039,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_tin_dust",
-            "Count": 32
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -4900,13 +6063,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:iron_dust",
-            "Count": 9
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -4917,13 +6087,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:gold_dust",
-            "Count": 9
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -4934,13 +6111,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:copper_dust",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -4951,13 +6135,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:zinc_dust",
-            "Count": 15
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -4968,13 +6159,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:silver_dust",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -4985,13 +6183,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:wolframite_dust",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5002,13 +6207,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_desh_dust",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5019,13 +6231,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:dirty_ostrum_dust",
-            "Count": 9
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -5035,14 +6254,21 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelight:dirty_calorite_dust",
-            "Count": 3
+            "ID": "createdelight:calorite_dust",
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 20
               }
             ],
             "Chain": "main",
@@ -5053,13 +6279,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createdelight:tin_dust",
-            "Count": 24
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -5070,13 +6303,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:raw_iron",
-            "Count": 15
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -5087,13 +6327,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:raw_gold",
-            "Count": 15
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -5104,13 +6351,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:raw_copper",
-            "Count": 40
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -5121,13 +6375,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "create:raw_zinc",
-            "Count": 25
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 9
               }
             ],
             "Chain": "main",
@@ -5138,13 +6399,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "iceandfire:raw_silver",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5155,13 +6423,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createmetallurgy:raw_wolframite",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5172,13 +6447,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ad_astra:raw_desh",
-            "Count": 10
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5189,13 +6471,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ad_astra:raw_ostrum",
-            "Count": 15
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 9
               }
             ],
             "Chain": "main",
@@ -5206,13 +6495,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "ad_astra:raw_calorite",
-            "Count": 5
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 12
               }
             ],
             "Chain": "main",
@@ -5222,14 +6518,21 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelight:raw_tin",
-            "Count": 40
+            "ID": "createdelightcore:raw_tin",
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -5249,13 +6552,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_porkchop",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5266,13 +6576,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_mutton",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5283,13 +6600,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_chicken",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5300,13 +6624,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_rabbit",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5317,13 +6648,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_cod",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5334,13 +6672,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:cooked_salmon",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5351,13 +6696,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsdelight:cooked_bison",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 6
               }
             ],
             "Chain": "main",
@@ -5368,13 +6720,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsdelight:cooked_bunfungus",
-            "Count": 4
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -5385,13 +6744,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsmobs:cooked_moose_ribs",
-            "Count": 4
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -5402,13 +6768,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsmobs:boiled_emu_egg",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -5419,13 +6792,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsmobs:cooked_kangaroo_meat",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5436,13 +6816,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "alexsmobs:cooked_catfish",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5453,13 +6840,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "crabbersdelight:cooked_tropical_fish",
-            "Count": 6
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -5470,13 +6864,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:cooked_squid",
-            "Count": 8
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 8
               }
             ],
             "Chain": "main",
@@ -5487,13 +6888,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "mynethersdelight:cooked_loin",
-            "Count": 12
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -5504,13 +6912,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:popcorn",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -5521,13 +6936,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:bread",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 5
               }
             ],
             "Chain": "main",
@@ -5538,13 +6960,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "fruitsdelight:dried_persimmon",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -5555,13 +6984,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "vintagedelight:roasted_peanut",
-            "Count": 48
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -5572,13 +7008,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "fruitsdelight:baked_durian",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -5589,13 +7032,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "minecraft:dried_kelp",
-            "Count": 48
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",
@@ -5606,13 +7056,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "fruitsdelight:baked_pear",
-            "Count": 16
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 4
               }
             ],
             "Chain": "main",
@@ -5623,13 +7080,20 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "culturaldelights:smoked_eggplant",
-            "Count": 48
+            "Count": 64
           },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
           "Price": {
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 1
+                "Amount": 2
               }
             ],
             "Chain": "main",

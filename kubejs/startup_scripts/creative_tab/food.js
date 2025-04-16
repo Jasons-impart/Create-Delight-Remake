@@ -1,3 +1,10 @@
+// 农夫乐事
+StartupEvents.modifyCreativeTab("farmersdelight:farmersdelight", e => {
+  e.remove([
+   'culturaldelights:cucumber',
+   'culturaldelights:cucumber_crate' 
+  ])
+})
 // 玉米乐事
 StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
     e.remove([
@@ -17,57 +24,92 @@ StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
       "corn_delight:tortilla_chip",
     ])
   })
-  // 油炸
-  StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
-    e.remove([
-      'create_bic_bit:unripe_cheese',
-      'create_bic_bit:waxed_unripe_cheese',
-      'create_bic_bit:young_cheese',
-      'create_bic_bit:waxed_young_cheese',
-      'create_bic_bit:aged_cheese',
-      'create_bic_bit:waxed_aged_cheese',
-      'create_bic_bit:unripe_cheese_wedge',
-      'create_bic_bit:young_cheese_wedge',
-      'create_bic_bit:aged_cheese_wedge',
-      'create_bic_bit:crystallised_oil',
-      'create_bic_bit:frying_oil_bottle',
-      'create_bic_bit:frying_oil_bucket'
-    ])
-  })
-  StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
-    e.remove([
-      "frycooks_delight:burnt_morsel",
-      "frycooks_delight:canola_oil",
-      "frycooks_delight:fried_fish_slice",
-      "frycooks_delight:fried_onion_ring",
-      "frycooks_delight:hot_grease_bucket",
-      "frycooks_delight:lard",
-      "frycooks_delight:lard_block",
-    ])
-  })
-  StartupEvents.modifyCreativeTab("create_deepfried:deepfried", e => {
-    e.remove([
-      "create_deepfried:apple_slices",
-      "create_deepfried:chicken_nuggets",
-      "create_deepfried:fish_and_chips",
-      "create_deepfried:raw_chicken_nuggets",
-      "create_deepfried:raw_springroll",
-      "create_deepfried:springroll",
-      "create_deepfried:yuca",
-    ])
-  })
-  //节日乐事
-  StartupEvents.modifyCreativeTab("festival_delicacies:festival_delicacies", e => {
-    e.remove([
-      'festival_delicacies:rice',
-      'festival_delicacies:red_bean'
-    ])
-    e.add([
-        'createdelight:adzuki_beans_seed',
-        "createdelight:artemisia_argyi_seed"
-      ]
-    )
-  })
+// 油炸
+StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
+  e.remove([
+    'create_bic_bit:unripe_cheese',
+    'create_bic_bit:waxed_unripe_cheese',
+    'create_bic_bit:young_cheese',
+    'create_bic_bit:waxed_young_cheese',
+    'create_bic_bit:aged_cheese',
+    'create_bic_bit:waxed_aged_cheese',
+    'create_bic_bit:unripe_cheese_wedge',
+    'create_bic_bit:young_cheese_wedge',
+    'create_bic_bit:aged_cheese_wedge',
+    'create_bic_bit:crystallised_oil',
+    'create_bic_bit:frying_oil_bottle',
+    'create_bic_bit:frying_oil_bucket'
+  ])
+})
+StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
+  e.remove([
+    "frycooks_delight:burnt_morsel",
+    "frycooks_delight:canola_oil",
+    "frycooks_delight:fried_fish_slice",
+    "frycooks_delight:fried_onion_ring",
+    "frycooks_delight:hot_grease_bucket",
+    "frycooks_delight:lard",
+    "frycooks_delight:lard_block",
+  ])
+})
+StartupEvents.modifyCreativeTab("create_deepfried:deepfried", e => {
+  e.remove([
+    "create_deepfried:apple_slices",
+    "create_deepfried:chicken_nuggets",
+    "create_deepfried:fish_and_chips",
+    "create_deepfried:raw_chicken_nuggets",
+    "create_deepfried:raw_springroll",
+    "create_deepfried:springroll",
+    "create_deepfried:yuca",
+  ])
+})
+//节日乐事
+StartupEvents.modifyCreativeTab("festival_delicacies:festival_delicacies", e => {
+  e.remove([
+    'festival_delicacies:rice',
+    'festival_delicacies:red_bean'
+  ])
+  e.add([
+      'createdelight:adzuki_beans_seed',
+      "createdelight:artemisia_argyi_seed"
+    ]
+  )
+})
+// 烘焙坊
+StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
+  e.remove([
+   "bakeries:blender",
+   'bakeries:cheese_cube',
+   'bakeries:cocoa_powder',
+   'bakeries:whole_wheat_flour_bag',
+   'bakeries:whole_wheat_flour',
+   'bakeries:salt_scraper_rake',
+   'bakeries:salt',
+   'bakeries:tomato',
+   'bakeries:bottle_butter',
+   'bakeries:bottle_milk',
+   'bakeries:bottle_cream',
+   'bakeries:yeast_tank',
+   'bakeries:cheese_tank',
+   'bakeries:olive',
+   'bakeries:black_white_concrete',
+   'bakeries:butter_cube',
+   'bakeries:flour_sieve',
+   'bakeries:oven',
+  ])
+})
+StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {
+  e.remove([
+    'bakeries:salted_dough',
+    'bakeries:cocoa_dough', 
+    'bakeries:pastry',
+  ])
+})
+StartupEvents.modifyCreativeTab("vintagedelight:vintage_tab", e => {
+  e.remove([
+    "vintagedelight:cheese_curds"
+  ])
+})
 
 //那不勒斯风味
 StartupEvents.registry("minecraft:creative_mode_tab", e => {

@@ -28,6 +28,38 @@
             }
           }
         }
+      },
+      "single/head": {
+        "single/quarter_staff_head": {
+          "conditions": [
+            {
+              "type": "module",
+              "key": "single/long_handle_material",
+              "value": "long_handle/stick",
+              "conditions": [
+                {
+                  "type": "module",
+                  "key": "single/quarter_staff_head_material",
+                  "value": "quarter_staff_head/oak",
+                  "config": {
+                    "scaleY": 25.75,
+                    "scaleZ": 1.5,
+                    "attributes": {
+                      "parent": "bettercombat:battlestaff"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "config": {
+            "scaleY": 1.75,
+            "scaleZ": 1.5,
+            "attributes": {
+              "parent": "bettercombat:battlestaff"
+            }
+          }
+        }
       }
     }
   }

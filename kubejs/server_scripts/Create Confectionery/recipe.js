@@ -5,4 +5,12 @@ ServerEvents.recipes(e => {
         "4x minecraft:sugar",
         "neapolitan:mint_leaves"
     ])
+    create.mixing(
+        "2x create_confectionery:honey_candy",
+        [
+            "2x minecraft:sugar",
+            'bakeries:flour',
+            Fluid.of("create:honey", 250)
+        ]
+    ).id("create_confectionery:honey_candy_recipe")
 })

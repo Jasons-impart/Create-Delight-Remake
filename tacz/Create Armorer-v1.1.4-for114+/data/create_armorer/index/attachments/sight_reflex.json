@@ -1,0 +1,6 @@
+{
+  "name": "create_armorer.attachment.sight_reflex.name",
+  "display": "create_armorer:sight_reflex_display",
+  "data": "create_armorer:sight_reflex_data",
+  "type": "scope"
+}

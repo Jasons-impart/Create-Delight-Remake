@@ -11,8 +11,8 @@
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 10,
      "effects": {
-     "art_of_forging:disorienting":[20,2]
-        },
+        "createdelight:frozen":15
+      },
     "tints": {
       "glyph": "0fcce6",
       "texture": "0fcce6"

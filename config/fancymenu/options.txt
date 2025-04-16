@@ -1,7 +1,7 @@
 ##[general]
 
 I:default_gui_scale = '-1';
-B:play_vanilla_menu_music = 'false';
+B:play_vanilla_menu_music = 'true';
 B:force_fullscreen = 'false';
 
 
@@ -43,12 +43,14 @@ B:show_singleplayer_screen_world_icons = 'true';
 
 ##[layout_editor]
 
+B:layout_editor_grid_snapping = 'true';
 B:anchor_overlay_change_anchor_on_area_hover = 'true';
 B:show_layout_editor_grid = 'true';
 B:anchor_overlay_change_anchor_on_element_hover = 'true';
 S:anchor_overlay_visibility_mode = 'dragging';
 B:anchor_overlay_show_all_connection_lines = 'false';
 S:anchor_overlay_color_base_override = '';
+F:layout_editor_grid_snapping_strength = '1.0';
 I:layout_editor_grid_size = '10';
 B:invert_anchor_overlay_color = 'false';
 S:anchor_overlay_color_border_override = '';
@@ -60,7 +62,7 @@ D:anchor_overlay_hover_charging_time_seconds = '2.0';
 ##[ui]
 
 I:context_menu_hover_open_speed = '1';
-S:ui_theme = 'dark';
+S:ui_theme = 'light';
 F:ui_scale = '2.0';
 B:play_ui_click_sounds = 'true';
 B:enable_ui_text_shadow = 'false';
@@ -77,4 +79,9 @@ B:debug_overlay_show_resources_category = 'true';
 
 ##[tutorial]
 
-B:welcome_screen_shown = 'true';
+B:show_welcome_screen = 'false';
+
+
+##[keyframe_editor]
+
+B:arrow_keys_move_preview = 'false';

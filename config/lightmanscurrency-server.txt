@@ -1,0 +1,446 @@
+#Notification Settings
+[notifications]
+	#The maximum number of notifications each player and/or machine can have before old entries are deleted.
+	#Lower if you encounter packet size problems.
+	#Range: 0 -> 2147483647
+	#Default: 500
+	limit=500
+	
+#Machine Protection Settings
+[machine_protection]
+	#Whether illegally broken traders (such as being replaced with /setblock, or modded machines that break blocks) will safely eject their block/contents into a temporary storage area for the owner to collect safely.
+	#If disabled, illegally broken traders will throw their items on the ground, and can thus be griefed by modded machines.
+	#Value ignored if anarchyMode is enabled!
+	#Default: true
+	safeEjection=true
+	
+	#Whether block break protection will be disabled completely.
+	#Enable with caution as this will allow players to grief and rob other players shops and otherwise protected machinery.
+	#Default: false
+	anarchyMode=false
+	
+	#A list of dimension ids that are quarantined from all cross-dimensional interactions.
+	#This includes disabling Trader Interfaces, Network Traders & Terminals (personal trader interactions & cash registers will still function), and all Bank Account access.
+	#Mostly intended to be used to allow the existence of 'Creative Dimensions' where money can be cheated in by your average player, but should not affect a players inventory/bank balance in the 'normal' dimensions.
+	quarantinedDimensions=[]
+	
+#Coin Mint Settings
+[coin_mint]
+	#Default number of ticks it takes to process a Coin Mint recipe.
+	#Does not apply to Coin Mint recipes with a defined "duration" input.
+	#Range: 1 -> 72000
+	#Default: 100
+	defaultMintDuration=100
+	
+	#The volume of the noise played whenever the Coin Mint finishes the crafting process.
+	#Range: 0.0 -> 1.0
+	#Default: 0.5
+	soundVolume=0.5
+	
+#Wallet Settings
+[wallet]
+	#The lowest level wallet capable of exchanging coins.
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
+	#Default: 1
+	exchangeLevel=1
+	
+	#The lowest level wallet capable of automatically collecting coins while equipped.
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
+	#Default: 2
+	pickupLevel=2
+	
+	#The lowest level wallet capable of allowing transfers to/from your bank account.
+	#0-Copper Wallet; 1-Iron Wallet; 2-Gold Wallet; 3-Emerald Wallet; 4-Diamond Wallet; 5-Netherite Wallet; 6-Nether Star Wallet; 7-No Wallet
+	#Range: 0 -> 7
+	#Default: 5
+	bankLevel=5
+	
+	#Whether wallets can have additional slots added by using an upgrade item on them from their inventory
+	#By default diamonds are the only valid upgrade item, but this can be changed by a datapack
+	#Default: true
+	allowCapacityUpgrade=true
+	
+	#Whether Wallet Drops should be manually spawned into the world instead of the default behaviour of being passed to the PlayerDropsEvent
+	#Wallet Drops will be either the Wallet itself, or the coins dropped when the `coinDropPercent` game rule is greater than 0.
+	#Default: false
+	manualDropOverride=false
+	
+#Money Bag Settings
+#Important Note: Money Bag Attributes are only validated when the item is first created or loaded from file, so config changes may not be reflected immediately.
+[money_bag]
+	#The base Attack Damage that an empty Money Bag will have (not counting the base 1 attack damage the player has)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 1.0
+	baseAttack=1.0
+	
+	#The additional Attack Damage added by each additional size (up to a size of 3)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 3.0
+	attackPerBagSize=3.0
+	
+	#The base Attack Speed that an empty Money Bag will have (not counting the base 4 attack speed the player has)
+	#Is negative because you typically want to make weapons such as these attack slower (vanilla sword attack speed is 1.5, which can be obtained with a value of -2.5)
+	#Range: -4.0 -> 0.0
+	#Default: -2.0
+	baseAttackSpeed=-2.0
+	
+	#The additional Attack Speed added by each additional size (up to a size of 3)
+	#Is negative because you typically want to make weapons such as these attack slower
+	#Note: If the total attack speed additions are more than -4.0, the player will be unable to get a full-strength attack with that size of Money Bag.
+	#Range: -4.0 -> 0.0
+	#Default: -0.5
+	attackSpeedPerBagSize=-0.5
+	
+	#The base fall damage per distance an empty Money Bag will have
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 0.5
+	baseFallDamage=0.5
+	
+	#The additional fall damage per distance added by each additional size (up to a size of 3)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 1.0
+	fallDamagePerBagSize=1.0
+	
+	#The base fall damage limit an empty Money Bag will have
+	#Range: 0 -> 2147483647
+	#Default: 30
+	baseFallDamageLimit=30
+	
+	#The additional fall damage limit added by each additional size (up to a size of 3)
+	#Range: 0 -> 2147483647
+	#Default: 10
+	fallDamageLimitPerBagSize=10
+	
+	#The chance of the Money Bag dropping a random coin when it's used to attack another entity or when it falls a significant distance
+	#0.0 is a 0% chance, and 1.0 is a 100% chance
+	#Range: 0.0 -> 1.0
+	#Default: 0.0
+	coinLossChance=0.0
+	
+	#The minimum distance a Money Bag must fall before it has a chance to drop coins when it lands
+	#Range: 0 -> 2147483647
+	#Default: 2
+	coinLossFallDistance=2
+	
+#Upgrade Settings
+[upgrades]
+	#Item Capacity Upgrade
+	[upgrades.item_capacity]
+		#The amount of item storage added by the first Item Capacity Upgrade (Iron)
+		#Range: 1 -> 6400
+		#Default: 192
+		itemCapacity1=192
+		
+		#The amount of item storage added by the first Item Capacity Upgrade (Gold)
+		#Range: 2 -> 6400
+		#Default: 384
+		itemCapacity2=384
+		
+		#The amount of item storage added by the first Item Capacity Upgrade (Diamond)
+		#Range: 3 -> 6400
+		#Default: 576
+		itemCapacity3=576
+		
+		#The amount of item storage added by the first Item Capacity Upgrade (Netherite)
+		#Range: 4 -> 6400
+		#Default: 1152
+		itemCapacity4=1152
+		
+	#Interaction Upgrade
+	[upgrades.interaction_upgrade]
+		#The amount of bonus selections added by the Interaction Upgrade (Emerald)
+		#Range: 1 -> 100
+		#Default: 5
+		interactionCount1=5
+		
+		#The amount of bonus selections added by the Interaction Upgrade (Diamond)
+		#Range: 1 -> 100
+		#Default: 10
+		interactionCount2=10
+		
+		#The amount of bonus selections added by the Interaction Upgrade (Netherite)
+		#Range: 1 -> 100
+		#Default: 15
+		interactionCount3=15
+		
+	#Money Chest Magnet Upgrade
+	[upgrades.money_chest_magnet]
+		#The radius (in meters) of the Money Chest Magnet Upgrade (Copper)'s coin collection.
+		#Range: 1 -> 50
+		#Default: 4
+		radius1=4
+		
+		#The radius (in meters) of the Money Chest Magnet Upgrade (Iron)'s coin collection.
+		#Range: 2 -> 50
+		#Default: 6
+		radius2=6
+		
+		#The radius (in meters) of the Money Chest Magnet Upgrade (Gold)'s coin collection.
+		#Range: 3 -> 50
+		#Default: 8
+		radius3=8
+		
+		#The radius (in meters) of the Money Chest Magnet Upgrade (Emerald)'s coin collection.
+		#Range: 4 -> 50
+		#Default: 10
+		radius4=10
+		
+#Enchantment Settings
+[enchantments]
+	#The desired delay (in ticks) between Money Mending & Coin Magnet ticks. This value will be ignored in favor of 'maxTickDelay' if the server is overloaded and/or falling behind.
+	#Increase if my enchantments are causing extreme lag.
+	#Note: 20 ticks = 1s
+	#Range: 1 -> 2147483647
+	#Default: 20
+	tickDelay=20
+	
+	#The cost required to repair a single item durability point with the Money Mending enchantment.
+	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+	#Default: "coin;1-createdelightcore:iron_coin"
+	moneyMendingRepairCost="coin;1-createdelightcore:iron_coin"
+	
+	#A list of base cost overrides to be applied to specific items!
+	#Each entry should be formatted as "baseCost|namespace:some_item,namespace:some_item_2,#namespace:some_tag..."
+	#where 'baseCost' is a Money Value input
+	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+	moneyMendingItemOverrides=[]
+	
+	#A list of bonus costs to be applied to items with the given enchantments
+	#Each entry should be formatted as either of the following:
+	#"bonusCost|namespace:some_enchantment|maxLevelCalculation" OR
+	#"bonusCost|namespace:some_enchantment"
+	#where 'bonusCost' is a Money Value input
+	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+	moneyMendingBonusForEnchantments=["coin;4-createdelightcore:iron_coin|minecraft:infinity|1"]
+	
+	#The coin collection radius of the Coin Magnet I enchantment.
+	#Range: 1 -> 50
+	#Default: 5
+	coinMagnetBaseRange=5
+	
+	#The increase in the coin collection radius added by each additional level of the Coin Magnet enchantment.
+	#Range: 1 -> 50
+	#Default: 2
+	coinMagnetLeveledRange=2
+	
+	#The final level of Coin Magnet that will result in increased range calculations.
+	#Increase if you have another mod that increases the max level of the Coin Magnet enchantment
+	#and you wish for those levels to actually apply an effect.
+	#Range: 3 -> 2147483647
+	#Default: 10
+	coinMagnetCalculationLevelCap=10
+	
+#Auction House Settings
+[auction_house]
+	#Whether the Auction House will be automatically generated and accessible.
+	#If disabled after players have interacted with it, items & money in the auction house cannot be accessed until re-enabled.
+	#If disabled, it is highly recommended that you also disable the 'crafting.allowAuctionStandCrafting' option in the common config.
+	#Default: true
+	enabled=true
+	
+	#Whether the Auction House will appear in the trading terminal.
+	#If false, you will only be able to access the Auction House from an Auction Stand.
+	#Default: true
+	visibleOnTerminal=true
+	
+	#The minimum number of days an auction can have its duration set to.
+	#If given a 0 day minimum, the minimum auction duration will be 1 hour.
+	#Range: 0 -> 2147483647
+	#Default: 0
+	minimumDuration=0
+	
+	#The maxumim number of day an auction can have its duration set to.
+	#Range: 1 -> 2147483647
+	#Default: 30
+	maximumDuration=30
+	
+#Bank Account Settings
+[bank_accounts]
+	#The interest rate that bank accounts will earn just by existing.
+	#Setting to 0 will disable interesting and all interest-related ticks from happening.
+	#Note: Rate of 1.0 will result in doubling the accounts money each interest tick.
+	#Rate of 0.01 is equal to a 1% interest rate.
+	#Range: 0.0 -> 1.0
+	#Default: 0.0
+	interest=0.0
+	
+	#Whether interest applied to small amounts of money are guaranteed to give at least *some* money as long as there's money in the account.
+	#Example 1% interest applied to a bank account with only 1 copper coin will always give *at least* 1 copper coin.
+	#Default: true
+	forceInterest=true
+	
+	#Whether players will receive a personal notification whenever their bank account collects interest.
+	#Regardless of this value, the bank accounts logs will always display the interest interaction.
+	#Default: true
+	interestNotification=true
+	
+	#The number of minecraft ticks that will pass before interest is applied.
+	#Helpful Notes:
+	#1s = 20 ticks
+	#1m = 1200 ticks
+	#1h = 72000 ticks
+	#1 day = 1728000 ticks
+	#1 week = 12096000 ticks
+	#30 days = 51840000 ticks
+	#365 days = 630720000 ticks
+	#Range: 1200 -> 630720000
+	#Default: 1728000
+	interestDelay=1728000
+	
+	#A list of upper interest limits.
+	#Example:
+	#Adding "coin;1-lightmanscurrency:coin_netherite" to this list will make it so that players will get no more than 1 netherite coin worth of interest even if they would normally get more.
+	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+	interestUpperLimits=[]
+	
+#Network Terminal Settings
+[terminal]
+	#Whether the /lcterminal command will exist allowing players to access the Trading Terminal without the physical item/block
+	#Default: false
+	lcterminalCommand=false
+	
+	#Whether Traders with no defined Custom Name will be sorted to the bottom of the Trader list on the Network Terminal.
+	#Default: false
+	sortUnnamedTradersToBottom=false
+	
+#Paygate Settings
+[paygate]
+	#The maximum number of ticks that a paygate can be set to output a redstone signal for.
+	#Note: 20t = 1s
+	#Range: 0 -> 2147483647
+	#Default: 1200
+	maxRedstoneDuration=1200
+	
+#Command Trader Settings
+[command_trader]
+	#The maximum permission level that can be set and used by a command trader
+	#Range: 0 -> 4
+	#Default: 4
+	maxPermissionLevel=4
+	
+#Player <-> Player Trading Options
+[player_trading]
+	#The maximum distance allowed between players in order for a player trade to persist.
+	#-1 will always allow trading regardless of dimension.
+	#0 will allow infinite distance but require that both players be in the same dimension.
+	#Range: -1.0 -> 1.7976931348623157E308
+	#Default: -1.0
+	maxPlayerDistance=-1.0
+	
+#Tax Settings
+[taxes]
+	#Whether Tax Collectors can only be activated by an Admin in LC Admin Mode.
+	#Will not prevent players from crafting, placing, or configuring Tax Collectors.
+	#Default: false
+	adminOnlyActivation=false
+	
+	#The maximum tax rate (in %) a Tax Collector is allowed to enforce.
+	#Note: The sum of multiple tax collectors rates can still exceed this number.
+	#If a machine reaches a total tax rate of 100% it will forcible prevent all monetary interactions until this is resolved.
+	#Range: 1 -> 99
+	#Default: 25
+	maxTaxRate=25
+	
+	#The maximum radius of a Tax Collectors area in meters.
+	#Range: 16 -> 2147483647
+	#Default: 256
+	maxRadius=256
+	
+	#The maximum height of a Tax Collectors area in meters.
+	#Range: 8 -> 2147483647
+	#Default: 64
+	maxHeight=64
+	
+	#The maximum vertical offset of a Tax Collectors area in meters.
+	#Note: Vertical offset can be negative, so this will also enforce the lowest value.
+	#Range: 4 -> 2147483647
+	#Default: 32
+	maxVertOffset=32
+	
+#Chocolate Coin Settings
+[chocolate_coins]
+	#Whether the Chocolate Coins will give players custom potion and/or healing effects on consumption.
+	#Default: true
+	chocolateEffects=true
+	
+#Mod Compat Options
+[compat]
+	#Claim Purchasing Settings for FTB Chunks, Cadmus, & Flan
+	[compat.claim_purchasing]
+		#Whether the '/lcclaims buy claim' command will be accessible to players.
+		#Default: false
+		allowClaimPurchase=false
+		
+		#The price per claim chunk purchased.
+		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+		#Default: "coin;1-createdelightcore:gold_coin,2-createdelightcore:copper_coin,1-createdelightcore:iron_coin"
+		claimPrice="coin;1-createdelightcore:copper_coin"
+		
+		#The maximum number of extra claim chunks allowed to be purchased with this command.
+		#Note: This count includes extra claim chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
+		#Range: 1 -> 2147483647
+		#Default: 1000000
+		maxClaimCount=1000000
+		
+		#Whether the `/lcclaims buy forceload` command will be accessible to players.
+		#Default: false
+		allowForceloadPurchase=false
+		
+		#The price per forceload chunk purchased.
+		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+		#Default: "coin;152-createdelightcore:netherite_coin,3-createdelightcore:emerald_coin,6-createdelightcore:gold_coin,6-createdelightcore:copper_coin,1-createdelightcore:iron_coin"
+		forceloadPrice="coin;1000-createdelightcore:netherite_coin"
+		
+		#The maximum number of extra forceload chunks allowed to be purchased with this command.
+		#Note: This count includes extra forceload chunks given to the player/team via normal FTB Chunks methods as well (if applicable).
+		#Range: 1 -> 2147483647
+		#Default: 100
+		maxForceloadCount=100
+		
+		#Flan Settings
+		[compat.claim_purchasing.flan]
+			#Blocks that will be added with each 'claim' purchased
+			#Range: 1 -> 64
+			#Default: 256
+			blocksPerChunk=64
+			
+	#Lightman's Discord Compat Settings.
+	[compat.ldi]
+		#The channel where users can run the currency commands and where currency related announcements will be made.
+		#Default: "000000000000000000"
+		channel="000000000000000000"
+		
+		#Prefix for currency commands.
+		#Default: "!"
+		prefix="!"
+		
+		#Whether the !search command should limit its search results to only Network Traders, or if it should list all traders.
+		#Default: true
+		limitSearchToNetwork=true
+		
+		#Currency Bot Notification Options
+		[compat.ldi.notifications]
+			#Whether a notification will appear in the currency bot channel when a Network Trader is created.
+			#Notification will have a 60 second delay to allow them time to customize the traders name, etc.
+			#Default: true
+			networkTraderBuilt=true
+			
+			#Whether a notification will appear in the currency bot channel when a player starts an auction.
+			#Default: true
+			auctionCreated=true
+			
+			#Whether a notification will appear in the currency bot channel when a Persistent Auction is created automatically.
+			#Requires that auction house creation notifications also be enabled.
+			#Default: true
+			auctionPersistentCreations=true
+			
+			#Whether a notification will appear in the currency bot channel when an Auction is cancelled in the Auction House.
+			#Default: false
+			auctionCancelled=false
+			
+			#Whether a notification will appear in the currency bot channel when an Auction is completed and had a bidder.
+			#Default: true
+			auctionWon=true
+			

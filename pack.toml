@@ -1,13 +1,13 @@
 name = "Create-Delight-Remake"
 author = "JSI"
-version = "0.3.1.1"
+version = "0.3.2.5"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "3c5c4a7e2d1a9bc59e12fbc11abe0ba5f77ccb5419734db1ccf2bb54e2c9a13e"
+hash = "0c78e618fc9b3e547a6368984d78e2d5f892563ab23a0df61372c7bd7fa0839f"
 
 [versions]
-forge = "47.3.22"
+forge = "47.4.0"
 minecraft = "1.20.1"

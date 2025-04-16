@@ -2,6 +2,7 @@
 !/.gitignore
 !/.github
 !/config
+!/donate_list.json
 !/defaultconfigs
 !/kubejs
 !/mods
@@ -9,6 +10,8 @@
 !/ModList0.4a.md
 !/README.md
 !/icon.png
+!/server-icon.png
+!/tacz
 !/hotai
 !/TODOlist.md
 !/ldlib
@@ -19,7 +22,9 @@
 !/.hmclversion.cfg
 !/.clientonlymodlist
 !/.options.txt
-!/.user_jvm_args.example.txt
 !/DevGuide.md
 !/client_jvm_args.example.txt
 !/shaderpacks
+!/start.bat
+!/start.sh
+!/variables.txt
