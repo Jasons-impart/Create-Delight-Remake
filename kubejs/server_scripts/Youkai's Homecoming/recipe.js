@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight, createdieselgenerators } = e.recipes
+    const { create, farmersdelight, createdieselgenerators, youkaishomecoming } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")
@@ -15,7 +15,13 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:black_tea_bag',
         'youkaishomecoming:green_tea_bag',
         'youkaishomecoming:oolong_tea_bag',
-        'youkaishomecoming:redbean_bag'])
+        'youkaishomecoming:redbean_bag',
+        'youkaishomecoming:green_coffee_bean',
+        'youkaishomecoming:coffee_beans',
+        'youkaishomecoming:coffee_powder',
+        'youkaishomecoming:coffee_bean_bag',
+        'youkaishomecoming:doughnut'
+    ])
     remove_recipes_id(e, [
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
@@ -41,11 +47,16 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, "youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
     e.replaceInput({ id: "youkaishomecoming:apaki" }, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
     e.replaceInput({ id: "youkaishomecoming:avgolemono" }, "minecraft:glow_berries", "#forge:fruits/lemon")
-    e.replaceInput([{ id: "youkaishomecoming:blazing_red_curry" }, { id: "youkaishomecoming:mapo_tofu" }], "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
-    e.replaceInput([{ id: "youkaishomecoming:flesh_chocolate_mousse" }, { id: "youkaishomecoming:scarlet_devil_cake" }], "minecraft:wheat", "create:dough")
+    e.replaceInput({ output: ["youkaishomecoming:blazing_red_curry", "youkaishomecoming:mapo_tofu"] }, "minecraft:blaze_powder", "#mynethersdelight:hot_spice")
+    e.replaceInput({ output: ["youkaishomecoming:flesh_chocolate_mousse", "youkaishomecoming:scarlet_devil_cake"] }, "minecraft:wheat", "create:dough")
+    e.replaceInput({ output: [
+        "youkaishomecoming:sakura_mochi",
+        "youkaishomecoming:seven_colored_yokan"
+    ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
+    e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
 
-
-
+    youkaishomecoming.drying_rack("trailandtales_delight:dried_cherry_petal", "trailandtales_delight:cherry_petal")
+    .id("youkaishomecoming:dried_cherry_petal_drying")
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
         .id("youkaishomecoming:pressing/clay_saucer")
 
@@ -70,17 +81,17 @@ ServerEvents.recipes(e => {
         '#forge:salt'
     ])
         .id('youkaishomecoming:compacting/tofu')
-    cutting_3(e, "youkaishomecoming:mandrake_root",
+    cutting_2(e, "youkaishomecoming:mandrake_root",
         [
             ["youkaishomecoming:stripped_mandrake_root", 1]
         ]
     )
-    cutting_3(e, "youkaishomecoming:raw_lamprey",
+    cutting_2(e, "youkaishomecoming:raw_lamprey",
         [
             ["youkaishomecoming:raw_lamprey_fillet", 1]
         ]
     )
-    cutting_3(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
+    cutting_2(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
 
     e.custom({
         "type": "youkaishomecoming:simple_fermentation",
@@ -114,6 +125,32 @@ ServerEvents.recipes(e => {
         "time": 2400
     })
         .id("cratedelight:vinegar")
+        
+    e.custom({
+        "type": "youkaishomecoming:simple_fermentation",
+        "ingredients": [
+            {
+                tag: "forge:mushrooms"
+            },
+            {
+                tag: "forge:flour"
+            },
+            {
+                item: "minecraft:sugar"
+            }
+        ],
+        "inputFluid": {
+            "amount": 250,
+            "fluid": "minecraft:water"
+        },
+        "outputFluid": {
+            "amount": 250,
+            "fluid": "createdelight:yeast"
+        },
+        "results": [],
+        "time": 2400
+    })
+        .id("createdelight:simple_fermentation/yeast")
     createdieselgenerators.basin_fermenting([
         "4x vintagedelight:organic_mash",
         Fluid.of("createdelight:vinegar", 1000)

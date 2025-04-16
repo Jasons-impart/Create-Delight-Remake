@@ -80,6 +80,7 @@ ServerEvents.tags("minecraft:item", e => {
         "createcafe:cassava_seeds",
         "fruitsdelight:hamimelon_seeds",
         "vintagedelight:oat_seeds",
-        "trailandtales_delight:lantern_fruit_seeds"
+        "trailandtales_delight:lantern_fruit_seeds",
+        "youkaishomecoming:soybean"
     )
 })
