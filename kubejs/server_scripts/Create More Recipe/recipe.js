@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         Fluid.of("ratatouille:cake_batter", 500),
         "minecraft:snowball"
     ])
-    .heatRequirement("frozen")
+    // .heatRequirement("frozen")
+    // .heatRequirement("cooled")
     .id("cmr:compacting/frozen_cake_base")
     create.filling("cmr:frozen_cake", ["cmr:frozen_cake_base", Fluid.of("netherexp:ectoplasm", 250)])
     .id("cmr:filling/frozen_cake")
