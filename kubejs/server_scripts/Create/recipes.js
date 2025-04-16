@@ -261,6 +261,14 @@ ServerEvents.recipes(e => {
         .loops(2)
         .id("create:sequenced_assembly/tiny_tnt")
 
+    e.recipes.kubejs.shaped("2x create:empty_blaze_burner", [
+        " A ",
+        "ABA",
+        " A "
+    ], {
+        A: "#forge:plates/cast_iron",
+        B: "minecraft:netherrack"
+    }).id("create:empty_blaze_burner_from_cast_iron")
     //deco和create的工业铁块互切
     e.recipes.minecraft.stonecutting("design_decor:industrial_plating_block", "create:industrial_iron_block")
         .id("industrial_plating_block_from_industrial_iron_block")
