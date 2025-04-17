@@ -243,7 +243,7 @@ debugLevel=0
 		#Whether modded machines that emulate player behaviour can trigger coin drops from entities.
 		#Set to false to help prevent autmated coin farming.
 		#Default: true
-		allowFakePlayerDrops=true
+		allowFakePlayerDrops=false
 		
 		#Entity Drop Lists. Accepts the following inputs:
 		#Entity IDs. e.g. "minecraft:cow"
@@ -311,16 +311,16 @@ debugLevel=0
 			T1=["minecraft:chests/underwater_ruin_small","minecraft:chests/underwater_ruin_big"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier2" loot table.
-			T2=[]
+			T2=["minecraft:chests/jungle_temple","minecraft:chests/nether_bridge","minecraft:chests/simple_dungeon","minecraft:chests/ruined_portal"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier3" loot table.
-			T3=["minecraft:chests/jungle_temple","minecraft:chests/nether_bridge","minecraft:chests/simple_dungeon","minecraft:chests/ruined_portal"]
+			T3=["minecraft:chests/stronghold_crossing","minecraft:chests/stronghold_corridor","minecraft:chests/stronghold_library","minecraft:chests/ancient_city"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier4" loot table.
-			T4=["minecraft:chests/stronghold_crossing","minecraft:chests/stronghold_corridor","minecraft:chests/stronghold_library","minecraft:chests/ancient_city"]
+			T4=["minecraft:chests/buried_treasure","minecraft:chests/bastion_hoglin_stable","minecraft:chests/bastion_bridge","minecraft:chests/bastion_other","minecraft:chests/bastion_treasure","minecraft:chests/end_city_treasure"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier5" loot table.
-			T5=["minecraft:chests/buried_treasure","minecraft:chests/bastion_hoglin_stable","minecraft:chests/bastion_bridge","minecraft:chests/bastion_other","minecraft:chests/bastion_treasure","minecraft:chests/end_city_treasure"]
+			T5=[]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier6" loot table.
 			T6=[]
