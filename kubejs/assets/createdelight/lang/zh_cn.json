@@ -78,6 +78,8 @@
     "block.createdelight.small_centrifugation": "小型离心机",
     "block.createdelight.fission_fuel_assembly": "裂变燃料组件",
     "block.createdelight.fission_reactor": "裂变反应堆控制器",
+    "block.createdelight.sell_bin": "出货箱",
+    "block.createdelight.sprinkler": "加湿器",
 
     "createdelight.fire_dragon_eyes": "§4火龙试炼",
     "createdelight.ice_dragon": "§9冰龙试炼",

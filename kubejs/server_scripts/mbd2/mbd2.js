@@ -115,4 +115,21 @@ ServerEvents.recipes(e => {
         E: "createdelightcore:forged_steel_block"
     })
         .id("createdelight:mechanical_crafting/hydropower_amplifier")
+    e.recipes.kubejs.shaped("createdelight:sprinkler", [
+        " A ",
+        "ABA",
+        " A "
+    ], {
+        A: "create:fluid_pipe",
+        B: "create:fluid_tank"
+    }).id("createdelight:sprinkler")
+    e.recipes.kubejs.shaped("createdelight:sell_bin", [
+        "ABA",
+        "ACA",
+        "AAA"
+    ], {
+        A: "#minecraft:planks",
+        B: "#forge:chests",
+        C: "lightmanscurrency:trading_core"
+    }).id("createdelight:sell_bin")
 })
