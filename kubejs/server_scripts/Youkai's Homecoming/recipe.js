@@ -20,7 +20,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:coffee_beans',
         'youkaishomecoming:coffee_powder',
         'youkaishomecoming:coffee_bean_bag',
-        'youkaishomecoming:doughnut'
+        'youkaishomecoming:doughnut',
+        'youkaishomecoming:ice_cube'
     ])
     remove_recipes_id(e, [
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
