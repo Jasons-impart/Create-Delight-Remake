@@ -190,11 +190,11 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
 })
 
 ItemEvents.rightClicked("minecraft:stick", e => {
-    /**
-     * @type {Internal.NuclearBombEntity}
-     */
-    let explosion = $ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(e.level)
-    explosion.setPos(e.entity.position())
-    explosion.setSize(2)
-    e.level.addFreshEntity(explosion)
+    // /**
+    //  * @type {Internal.NuclearBombEntity}
+    //  */
+    // let explosion = $ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(e.level)
+    // explosion.setPos(e.entity.position())
+    // explosion.setSize(2)
+    // e.level.addFreshEntity(explosion)
 })

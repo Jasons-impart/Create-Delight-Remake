@@ -1,3 +1,9 @@
+const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")
+const $TraderData = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderData")
+const $ItemTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.item.tradedata.ItemTradeData")
+const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
+const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
+
 let TradeUtil = {}
 /**
  * 
@@ -6,7 +12,7 @@ let TradeUtil = {}
  * @param {[InputItem_[], InputItem_][]} trades
  * @param {number} index 
  */
-TradeUtil.replaceVillageTradeIndex = function(e, villager, trades, index) {
+TradeUtil.replaceVillageTradeIndex = function (e, villager, trades, index) {
     // if (villager.startsWith("minecraft:") || !villager.includes(":"))
     //     e.removeVanillaTrades([villager], index)
     // else
@@ -20,8 +26,27 @@ TradeUtil.replaceVillageTradeIndex = function(e, villager, trades, index) {
  * @param {[InputItem_[], InputItem_][]} trades
  * @param {number} index 
  */
-TradeUtil.addVillageTradeIndex = function(e, villager, trades, index) {
-   trades.forEach(trade => {
-       e.addTrade(villager, index, trade[0], trade[1])
-   }) 
+TradeUtil.addVillageTradeIndex = function (e, villager, trades, index) {
+    trades.forEach(trade => {
+        e.addTrade(villager, index, trade[0], trade[1])
+    })
 }
+/**
+ * 
+ * @returns {Internal.TraderAPIImpl}
+ */
+TradeUtil.getTradeAPI = function () {
+    return $TraderAPI.API
+}
+
+ItemEvents.rightClicked("minecraft:stick", e => {
+    // let trader = TradeUtil.getTradeAPI().GetTrader(false, 4)
+    // e.player.tell(trader.getTradeData().stream().filter(traderData => {
+    //     /**
+    //      * @type {Internal.ItemTradeData}
+    //      */
+    //     let itemTradeData = traderData
+    //     return itemTradeData.getSellItem(0).is("festival_delicacies:chinese_cabbage")
+    // }).findFirst().get().getCost().coreValue)
+    // e.player.tell(e.level.dayTime())
+})
