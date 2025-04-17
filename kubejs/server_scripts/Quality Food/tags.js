@@ -16,7 +16,6 @@ ServerEvents.tags("block", e => {
         "@frycooks_delight",
         "@corn_delight",
         "@youkaishomecoming",
-        "@vinery",
         "@nethervinery"
     ]).stacks.forEach(item => {
         if ((item.id.endsWith("_crate") || item.id.endsWith("_bag")) && item.block) {
