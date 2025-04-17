@@ -14,7 +14,10 @@ ServerEvents.tags("block", e => {
         "@mynethersdelight",
         "@oceanic_delight",
         "@frycooks_delight",
-        "@corn_delight"
+        "@corn_delight",
+        "@youkaishomecoming",
+        "@vinery",
+        "@nethervinery"
     ]).stacks.forEach(item => {
         if ((item.id.endsWith("_crate") || item.id.endsWith("_bag")) && item.block) {
             e.add("quality_food:quality_blocks", item.id)
@@ -36,7 +39,9 @@ ServerEvents.tags("block", e => {
         "minecraft:large_fern",
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
-        "fruitsdelight:cranberry_bush"
+        "fruitsdelight:cranberry_bush",
+        "nethervinery:crimson_grape_bush",
+        "nethervinery:warped_grape_bush"
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops"

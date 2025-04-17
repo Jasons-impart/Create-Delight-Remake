@@ -11,6 +11,7 @@ MBDMachineEvents.onPlaced("createdelight:sell_bin", e => {
     machine.customData.putUUID("owner", player.uuid)
 })
 
+
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     if (e.event.machine.level.dayTime() != 1000) return
 
