@@ -6,8 +6,14 @@
  * @param { number } time // default 80ticks
  */
 function metal_production_line(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    .minHeatRequirement(6)
+    .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 10), metal[2])
@@ -45,8 +51,14 @@ function metal_production_line(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_2(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    .minHeatRequirement(6)
+    .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 10), metal[2])
@@ -76,8 +88,14 @@ function metal_production_line_2(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_3(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[3]}`, 810), metal[0])
+    .minHeatRequirement(6)
+    .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 90), metal[2])
@@ -124,8 +142,14 @@ function metal_production_line_4(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_6(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[6]}`, 810), metal[0])
+    .minHeatRequirement(6)
+    .processingTime(time)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 10), metal[2])
@@ -164,8 +188,15 @@ function metal_production_line_6(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_7(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+    .minHeatRequirement(6)
+    .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_basin(metal[0], Fluid.of(`${metal[2]}`, 810))
@@ -195,7 +226,7 @@ byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2
 function metal_production_line_5(event, metal) {
     let byProduct = byProductMap.get(metal[1])
     event.recipes.vintageimprovements.pressurizing(
-        [Item.of(metal[0], 2)], [
+        [Item.of(metal[0], 2), Item.of(metal[0], 1).withChance(0.66)], [
         Fluid.of("vintageimprovements:sulfuric_acid", 100),
         metal[3]
     ])

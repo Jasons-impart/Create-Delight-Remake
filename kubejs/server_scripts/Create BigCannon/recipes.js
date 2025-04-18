@@ -59,4 +59,13 @@ ServerEvents.recipes(e => {
     .id("createdelightcore:bronze_ingot_from_bronze_scrap")
     e.recipes.kubejs.shapeless("createmetallurgy:steel_ingot", "9x createbigcannons:steel_scrap")
     .id("createdelightcore:steel_ingot_from_steel_scrap")
+    metal_production_line_6(e, [
+        "createbigcannons:cast_iron_block",
+        "createbigcannons:cast_iron_ingot",
+        "createbigcannons:cast_iron_nugget",
+        "vintageimprovements:cast_iron_sheet",
+        "vintageimprovements:cast_iron_rod",
+        "vintageimprovements:cast_iron_wire",
+        "createbigcannons:molten_cast_iron"
+    ], "heated", 80)
 })
