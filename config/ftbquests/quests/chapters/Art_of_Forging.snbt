@@ -802,36 +802,10 @@
 			size: 2.0d
 			subtitle: "追忆之弓的魔改暂未完成，敬请期待"
 			tasks: [{
-				icon: {
-					Count: 1
-					id: "tetra:modular_bow"
-					tag: {
-						Damage: 0
-						HideFlags: 1
-						"bow/basic_string_material": "basic_string/string"
-						"bow/dreadnought_stave_material": "dreadnought_stave/glacian"
-						"bow/stave": "bow/dreadnought_stave"
-						"bow/stave/settle_progress": 440
-						"bow/stave:bow/remembrance_imprv": 0
-						"bow/string": "bow/basic_string"
-						"bow/string/settle_progress": 354
-						honing_progress: 175
-						id: "d4ab1461-3d7b-4dfe-a021-9026be7392fa"
-					}
-				}
-				id: "1E04E00274A409A3"
-				item: {
-					Count: 1
-					id: "tetra:modular_bow"
-					tag: {
-						Damage: 0
-						"bow/stave:bow/remembrance_imprv": 0
-					}
-				}
-				match_nbt: true
-				title: "追忆之弓"
-				type: "item"
-				weak_nbt_match: true
+				advancement: "tetra:art_of_forging/remembrance_upgrade"
+				criterion: ""
+				id: "29821F39429E2463"
+				type: "advancement"
 			}]
 			title: "&5追忆之弓&r"
 			x: -8.0d

@@ -21,7 +21,7 @@
                 "type": "tetra:not",
                 "requirement": {
                     "type": "tetra:improvement",
-                    "improvement": "blade/life_fiber_loss"
+                    "improvement": "blade/life_steal"
                 }
             }
         ]
@@ -29,15 +29,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "minecraft:enchanted_golden_apple"],
-                "count": 4
+                "items":[ "alexscaves:corrodent_teeth"],
+                "count": 16
             },
             "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/life_fiber_loss": 1
+                "blade/life_steal": 1
             }
         }
     ]

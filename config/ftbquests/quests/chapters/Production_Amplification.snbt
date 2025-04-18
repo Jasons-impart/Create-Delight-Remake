@@ -200,7 +200,7 @@
 		}
 		{
 			dependencies: ["7BC0279C33CBC043"]
-			description: ["将未完成的皮革在&e动力锯上切割&r即可完成制皮革。"]
+			description: ["将未完成的皮革在&e使用鼓风机进行冷冻&r即可完成制皮革。"]
 			id: "6A53F67B1A396606"
 			rewards: [{
 				count: 32

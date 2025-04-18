@@ -11,7 +11,9 @@
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 10,
      "effects": {
-            "createdelight:shocking":1
+            "createdelight:shocking":1,
+            "createdelight:ice_dragon_restraint":2,
+            "createdelight:fire_dragon_restraint":2
         },
     "tints": {
       "glyph": "5c069d",

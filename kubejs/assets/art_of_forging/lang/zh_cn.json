@@ -928,15 +928,15 @@
     "tetra.improvement.blade/goliath_tier.description": "对高血量目标造成更多伤害",
 
     "tetra/schematic/sword/crucible/hone_goliath_1.name": "路径：巨人杀手I",
-    "tetra/schematic/sword/crucible/hone_goliath_1.description": "碾碎巨人独眼用于强化剑刃，对高血量目标额外造成25%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_1.description": "碾碎巨人独眼用于强化剑刃，攻击时额外附带目标2%%当前生命值的伤害。",
     "tetra/schematic/sword/crucible/hone_goliath_1.slot1": "巨人独眼",
 
     "tetra/schematic/sword/crucible/hone_goliath_2.name": "打磨：巨人杀手II",
-    "tetra/schematic/sword/crucible/hone_goliath_2.description": "碾碎巨人独眼用于强化剑刃，对高血量目标额外造成50%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_2.description": "碾碎巨人独眼用于强化剑刃，攻击时额外附带目标3%%当前生命值的伤害。",
     "tetra/schematic/sword/crucible/hone_goliath_2.slot1": "巨人独眼",
 
     "tetra/schematic/sword/crucible/hone_goliath_3.name": "打磨：巨人杀手III",
-    "tetra/schematic/sword/crucible/hone_goliath_3.description": "碾碎巨人颅骨用于强化剑刃，对高血量目标额外造成100%%伤害。",
+    "tetra/schematic/sword/crucible/hone_goliath_3.description": "碾碎巨人颅骨用于强化剑刃，攻击时额外附带目标4%%当前生命值的伤害。",
     "tetra/schematic/sword/crucible/hone_goliath_3.slot1": "独眼巨人颅骨",
 
 
