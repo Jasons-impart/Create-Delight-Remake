@@ -33,15 +33,25 @@ ServerEvents.recipes(e => {
         "createdelightcore:molten_calorite"],
         "heated",
         80)
-    createmetallurgy.melting(Fluid.of("createdelightcore:molten_desh", 90), "createdelight:dirty_desh_dust")
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_desh", 90), Fluid.of("createmetallurgy:molten_slag", 30)], "createdelight:dirty_desh_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_desh_from_dirty_desh_dust")
-    createmetallurgy.melting(Fluid.of("createdelightcore:molten_ostrum", 90), "createdelight:dirty_ostrum_dust")
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_ostrum", 90), Fluid.of("createmetallurgy:molten_slag", 30)], "createdelight:dirty_ostrum_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_ostrum_from_dirty_ostrum_dust")
 
-    createmetallurgy.melting(Fluid.of("createdelightcore:molten_calorite", 90), "createdelight:dirty_calorite_dust")
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_calorite", 90), Fluid.of("createmetallurgy:molten_slag", 30)], "createdelight:dirty_calorite_dust")
         .heatRequirement("heated")
         .id("createmetallurgy:melting/molten_calorite_from_dirty_calorite_dust")
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_desh", 90), Fluid.of("createmetallurgy:molten_slag", 45)], "#forge:raw_materials/desh")
+        .heatRequirement("heated")
+        .id("createmetallurgy:melting/molten_desh_from_raw_desh")
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_ostrum", 90), Fluid.of("createmetallurgy:molten_slag", 45)], "#forge:raw_materials/ostrum")
+        .heatRequirement("heated")
+        .id("createmetallurgy:melting/molten_ostrum_from_raw_ostrum")
+
+    createmetallurgy.melting([Fluid.of("createdelightcore:molten_calorite", 90), Fluid.of("createmetallurgy:molten_slag", 45)], "#forge:raw_materials/calorite")
+        .heatRequirement("heated")
+        .id("createmetallurgy:melting/molten_calorite_from_raw_calorite")
 
 })

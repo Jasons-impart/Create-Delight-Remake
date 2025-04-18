@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {create, iceandfire, minecraft, kubejs} = e.recipes
+    const { create, iceandfire, minecraft, kubejs,vintageimprovements } = e.recipes
     remove_recipes_output(e, [
         "dreadsteel:dreadsteel_helmet",
         "dreadsteel:dreadsteel_chestplate",
@@ -19,7 +19,7 @@ ServerEvents.recipes(e => {
         "iceandfire:dragonsteel_lightning_boots"
     ])
     create.filling("ends_delight:raw_dragon_meat", ["#createdelight:dragon_flesh", Fluid.of("create_central_kitchen:dragon_breath", 250)])
-    e.replaceInput({id: "iceandfire:dragon_meal"}, "#iceandfire:dragon_food_meat", "#forge:meat/raw")
+    e.replaceInput({ id: "iceandfire:dragon_meal" }, "#iceandfire:dragon_food_meat", "#forge:meat/raw")
     create.haunting(Item.of("iceandfire:rotten_egg").withChance(0.25), "minecraft:egg").id("iceandfire:haunting/rotten_egg")
     iceandfire.dragonforge(
         "minecraft:dragon_breath",
@@ -46,7 +46,7 @@ ServerEvents.recipes(e => {
         "iceandfire:dragonsteel_lightning_chestplate",
         "iceandfire:dragonsteel_lightning_leggings",
         "iceandfire:dragonsteel_lightning_boots"
-      ]
+    ]
     let ifl = ["ice", "fire", "lightning"]
     armor.forEach(item => {
         let res
@@ -59,9 +59,9 @@ ServerEvents.recipes(e => {
         else
             res = "dreadsteel:dreadsteel_boots"
         minecraft.smithing_transform(res, "createdelight:dread_upgrade_smithing_template", item, "dreadsteel:dreadsteel_ingot")
-        .id(`dreadsteel:smithing_transform/${res.split(':')[1]}_from_${item.split(':')[1]}`)
-      })
-      ifl.forEach(text => {
+            .id(`dreadsteel:smithing_transform/${res.split(':')[1]}_from_${item.split(':')[1]}`)
+    })
+    ifl.forEach(text => {
         let ingot = `iceandfire:dragonsteel_${text}_ingot`
         kubejs.shaped(`iceandfire:dragonsteel_${text}_helmet`, [
             "ACA",
@@ -108,4 +108,6 @@ ServerEvents.recipes(e => {
         B: "createdelight:dread_heart",
         C: "createdelight:dread_upgrade_smithing_template"
     }).id("createdelight:dread_upgrade_smithing_template")
+    vintageimprovements.vacuumizing(["butchercraft:chicken_skull_head_item", "iceandfire:cockatrice_eye"],
+         ["iceandfire:cockatrice_skull", "butchercraft:eyeball"])
 })
