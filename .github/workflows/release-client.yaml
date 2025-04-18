@@ -41,8 +41,8 @@ jobs:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: wanquanw/packwiz-build
-          run-id: 12769245242
+          repository: packwiz/packwiz
+          run-id: 12858009936
       - name: 重命名HMCL配置和options
         run: |
           mv .hmclversion.cfg hmclversion.cfg
@@ -50,7 +50,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz-build ./packwiz
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
           chmod +x ./packwiz
       - name: 写版本号文件供fancymenu展现在游戏首页
         # 格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
