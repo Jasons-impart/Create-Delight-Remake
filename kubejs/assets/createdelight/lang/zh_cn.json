@@ -393,6 +393,7 @@
     "message.createdelight.underfoot": ", §2就在你脚下",
     "message.createdelight.at": ", 位于§e%s方§r§e%s§r米",
     "message.createdelight.degree_of_damage": "损坏度：%s",
+    "message.createdelight.sell_bin_hint": "你出售了出货箱（位于（%s））中的内容，你获得了%s",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
