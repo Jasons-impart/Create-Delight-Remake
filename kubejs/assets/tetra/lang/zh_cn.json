@@ -693,7 +693,7 @@
   "tetra.stats.jab.level": "猛刺伤害",
   "tetra.stats.jab.tooltip": "副手持有时可以右击攻击生物，造成§e%s§r点伤害并产生击中效果。触发等于物品攻击力的冷却时间。",
   "tetra.stats.armorPenetration": "穿甲",
-  "tetra.stats.armorPenetration.tooltip": "无视目标§e%s§r点护甲值",
+  "tetra.stats.armorPenetration.tooltip": "无视目标§e%s§r护甲值",
   "tetra.stats.crushing": "粉碎",
   "tetra.stats.crushing.tooltip": "无论敌方护甲值高低，至少造成§e%s§r点伤害",
   "tetra.stats.skewering": "穿击",
@@ -2620,7 +2620,7 @@
    "tetra.improvement.blade/slashing.name": "撕裂",
    "tetra.improvement.blade/slashing.description": "智能剑刃会在命中后对敌人造成严重的流血状态",
    "tetra/schematic/sword/katana/hone_preemptive_strike.name": "先发制人",
-   "tetra/schematic/sword/katana/hone_preemptive_strike.description": "在刀鞘部位装上激发器,可将刀刃快速弹出刀鞘,加强冲击力,对满血敌人造成的首次伤害将额外提升200%%。",
+   "tetra/schematic/sword/katana/hone_preemptive_strike.description": "在刀鞘部位装上激发器,可将刀刃快速弹出刀鞘,加强冲击力,对满血敌人造成的首次伤害将额外提升100%%。",
    "tetra/schematic/sword/katana/hone_preemptive_strike.slot1": "活塞激发器",
    "tetra.improvement.blade/preemptive_strike.name": "先发制人",
    "tetra.improvement.blade/preemptive_strike.description": "刀鞘上的活塞会在突发遭遇战时帮助你解围",
@@ -2755,8 +2755,8 @@
   "tetra.material.singularity.prefix": "§1奇点§r",
   "tetra.material.singularity": "§1奇点§r",
   "tetra.variant.sword_socket/singularity":"§1奇点§r",
-  "tetra.material.immortal_embryo": "&d永恒胚胎&r",
-  "tetra.variant.sword_socket/immortal_embryo": "&d永恒胚胎&r",
+  "tetra.material.immortal_embryo": "§d永恒胚胎§r",
+  "tetra.variant.sword_socket/immortal_embryo": "§d永恒胚胎§r",
 
 
   "item.tetra.pristine_amethyst": "无瑕紫水晶",

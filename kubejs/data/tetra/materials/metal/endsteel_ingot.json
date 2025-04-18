@@ -6,7 +6,7 @@
     "secondary": 4,
     "tertiary": 6,
     "durability": 2000,
-    "integrityCost": 4,
+    "integrityCost": 3,
     "integrityGain": 10,
     "magicCapacity": 80,
     "toolLevel": "minecraft:netherite",

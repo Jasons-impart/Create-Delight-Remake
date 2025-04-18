@@ -19,5 +19,7 @@
     },
     "textures": ["heavy", "metal" ],
     "material": { "items": [ "vvaddon:mine_ingot" ] },
-    "requiredTools": { "hammer_dig": "minecraft:netherite_ingot" }
+    "requiredTools": {
+      "hammer_dig": 8
+  }
   }

@@ -1,13 +1,13 @@
 [
     {
-        "key": "blade/preemptive_strike",
-        "level": 1,
+        "key":"blade/life_fiber_loss",
         "integrity": -1,
+        "level": 1,
         "aspects": {
             "honed": 1
         },
         "effects": {
-            "createdelight:forstall": [5, 2]
+            "art_of_forging:life_fiber_loss": [ 1, 10 ]
         }
     }
 ]

@@ -11,6 +11,11 @@
     "magicCapacity": 120,
     "toolLevel": 7,
     "toolEfficiency": 10,
+    "effects": {
+      "art_of_forging:infernal_rebuke": [ 3, 40 ],
+      "createdelight:ice_dragon_restraint":2,
+      "createdelight:lightning_dragon_restraint":2
+    },
     "tints": {
       "glyph": "910d13",
       "texture": "910d13"
