@@ -58,15 +58,15 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
                 decreasedSecond.shrink(second.count)
 
             let multiplier = JavaMath.floor(JavaMath.sqrt(2 / (
-                (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)
-                 + (firstQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))) + 0.5)
+                (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))
+                + (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)))) + 0.5)
             values += multiplier * tradeData.getCost().coreValue * 4
         }
 
     })
     let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
-    // todo: 改成i18n
-    player.tell(Component.ofString(`你出售了出货箱中的内容，你获得了${coinValue.getText().getString()}`))
+    if (!coinValue.empty)
+        player.tell(Component.translate("message.createdelight.sell_bin_hint", e.event.machine.pos.toShortString(), coinValue.getText().getString()))
     $MoneyAPI.API.GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
 
 })

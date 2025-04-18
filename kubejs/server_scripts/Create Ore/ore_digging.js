@@ -49,6 +49,12 @@ BlockEvents.broken(e => {
 ServerEvents.tags("minecraft:block", e => [
     e.add("createdelight:cluster_mineable",
         "#forge:stone",
-        "minecraft:netherrack"
+        "minecraft:netherrack",
+        "ad_astra:moon_stone",
+        "ad_astra:mars_stone",
+        "ad_astra:venus_sandstone",
+        "ad_astra:mercury_stone",
+        "ad_astra:glacio_stone",
+        "ad_astra:venus_stone"
     )
 ])

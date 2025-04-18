@@ -42,6 +42,7 @@
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
+			description: ["矿脉所在的区块的石头中有概率挖出矿脉对应的矿物！"]
 			id: "7DC98E34AECFBB5C"
 			subtitle: "使用探矿仪来寻找矿物痕迹"
 			tasks: [{
