@@ -6,8 +6,14 @@
  * @param { number } time // default 80ticks
  */
 function metal_production_line(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+        .minHeatRequirement(6)
+        .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 10), metal[2])
@@ -45,8 +51,14 @@ function metal_production_line(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_2(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
+        .minHeatRequirement(6)
+        .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 10), metal[2])
@@ -76,8 +88,14 @@ function metal_production_line_2(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_3(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[3]}`, 810), metal[0])
+        .minHeatRequirement(6)
+        .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 90), metal[2])
@@ -124,8 +142,14 @@ function metal_production_line_4(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_6(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[6]}`, 810), metal[0])
+        .minHeatRequirement(6)
+        .processingTime(time)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 10), metal[2])
@@ -164,8 +188,15 @@ function metal_production_line_6(event, metal, heat, time) {
  * @param { number } time // default 80ticks
  */
 function metal_production_line_7(event, metal, heat, time) {
-    event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
-        .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+    // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+    //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
+
+    let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[2]}`, 810), metal[0])
+        .minHeatRequirement(6)
+        .processingTime(100)
+    if (heat == "superheat")
+        bulk.minHeatRequirement(9)
+    bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
     event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 90), metal[1])
         .heatRequirement(heat).processingTime(0.5 * time).id(`createmetallurgy:melting/${metal[1].split(":")[1]}`)
     event.recipes.createmetallurgy.casting_in_basin(metal[0], Fluid.of(`${metal[2]}`, 810))
@@ -190,7 +221,7 @@ byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2
 /**
  * 
  * @param { Internal.RecipesEventJS_ } event 
- * @param { InputItem_[] } metal //dirty_dust, dust, crushed_raw_ore, raw_ore, nugget
+ * @param { InputItem_[] } metal //dirty_dust, dust, crushed_raw_ore, raw_ore, nugget, ingot
  */
 function metal_production_line_5(event, metal) {
     let byProduct = byProductMap.get(metal[1])
@@ -210,17 +241,17 @@ function metal_production_line_5(event, metal) {
         metal[2])
         .id(`vintageimprovements:centrifugation/${metal[4].split(":")[1]}`)
     event.recipes.createdelight.small_centrifugation()
-    .outputItems([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])])
-    .chance(0.5, builder => builder.outputItems(Item.of(metal[1])))
-    .inputItems(metal[0])
-    .perTick(builder => builder.inputFE(100))
-    .id(`createdelight:centrifugation/${metal[0].split(":")[1]}`)
+        .outputItems([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])])
+        .chance(0.5, builder => builder.outputItems(Item.of(metal[1])))
+        .inputItems(metal[0])
+        .perTick(builder => builder.inputFE(100))
+        .id(`createdelight:centrifugation/${metal[0].split(":")[1]}`)
     event.recipes.createdelight.small_centrifugation()
-    .outputItems([Item.of(metal[4], 12)])
-    .chance(0.5, builder => builder.outputItems(Item.of(metal[4], 6)))
-    .inputItems(metal[2])
-    .perTick(builder => builder.inputFE(100))
-    .id(`createdelight:centrifugation/${metal[4].split(":")[1]}`)
+        .outputItems([Item.of(metal[4], 12)])
+        .chance(0.5, builder => builder.outputItems(Item.of(metal[4], 6)))
+        .inputItems(metal[2])
+        .perTick(builder => builder.inputFE(100))
+        .id(`createdelight:centrifugation/${metal[4].split(":")[1]}`)
     event.recipes.vintageimprovements.vibrating(
         Item.of(metal[4], 18),
         metal[2])
@@ -229,10 +260,12 @@ function metal_production_line_5(event, metal) {
         .id(`create:splashing/${metal[2].split(":")[1]}`)
     event.recipes.create.splashing([metal[1], Item.of(byProduct[0]).withChance(byProduct[1])], metal[0])
         .id(`createmetallurgy:splashing/${metal[0].split(":")[1]}`)
-    event.recipes.create.crushing([metal[2], Item.of("create:experience_nugget").withChance(0.75)], metal[3])
-        .id(`create:crushing/${metal[3].split(":")[1]}`)
-    event.recipes.create.milling([metal[0], Item.of(metal[0]).withChance(0.25)], metal[2])
-        .id(`create:milling/${metal[2].split(":")[1]}`)
+    if (event.findRecipeIds(`createmetallurgy:milling/${metal[3].split(":")[1]}`).isEmpty())
+        event.recipes.create.crushing([metal[2], Item.of("create:experience_nugget").withChance(0.75)], metal[3])
+            .id(`createmetallurgy:crushing/${metal[3].split(":")[1]}`)
+    if (event.findRecipeIds(`createmetallurgy:milling/${metal[2].split(":")[1]}`).isEmpty())
+        event.recipes.create.milling([metal[0], Item.of(metal[0]).withChance(0.25)], metal[2])
+            .id(`createmetallurgy:milling/${metal[2].split(":")[1]}`)
 
 }
 

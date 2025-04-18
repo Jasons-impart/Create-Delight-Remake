@@ -373,6 +373,8 @@
 
     "createdelight.butchery": "屠宰室",
     "createdelight.alloy_electric_furnace": "合金电炉",
+    "createdelight.big_centrifugation": "大型离心机",
+    "createdelight.small_centrifugation": "小型离心机",
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
