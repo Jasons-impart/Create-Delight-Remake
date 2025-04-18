@@ -1,7 +1,5 @@
 ServerEvents.recipes(e => {
-    const {createmetallurgy, create, minecraft} = e.recipes
-    minecraft.stonecutting("createmetallurgy:graphite_rod_mold", "createmetallurgy:graphite_blank_mold")
-    .id("createmetallurgy:graphite_rod_mold_stonecutting")
+    const { createmetallurgy, create, minecraft, vintageimprovements } = e.recipes
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
@@ -62,46 +60,46 @@ ServerEvents.recipes(e => {
         "createdelight:crushed_raw_calorite",
         "ad_astra:raw_calorite",
         "ad_astra:calorite_nugget"])
-    
+
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
         "createmetallurgy:alloying/steel",
         "createmetallurgy:alloying/electrum",
         "createmetallurgy:alloying/brass"
     ])
-    
-    e.replaceInput({mod: "createmetallurgy"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
 
-    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
-    [
-        Fluid.of("createmetallurgy:molten_gold", 90),
-        "netherite_scrap"])
-    .heatRequirement("superheated")
-    .id("createmetallurgy:alloying/netherite")
-    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_steel", 270), 
-    [
-        Fluid.of("createmetallurgy:molten_iron", 270),
-        "#forge:coal_coke"        
-    ])
-    .heatRequirement("superheated")
-    .id("createmetallurgy:alloying/steel")
+    e.replaceInput({ mod: "createmetallurgy" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 90),
+            "netherite_scrap"])
+        .heatRequirement("superheated")
+        .id("createmetallurgy:alloying/netherite")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_steel", 270),
+        [
+            Fluid.of("createmetallurgy:molten_iron", 270),
+            "#forge:coal_coke"
+        ])
+        .heatRequirement("superheated")
+        .id("createmetallurgy:alloying/steel")
 
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_electrum", 30),
         [
             Fluid.of("createmetallurgy:molten_silver", 15),
             Fluid.of("createmetallurgy:molten_gold", 15)
         ])
-    .processingTime(40)
-    .heatRequirement("heated")
-    .id("createmetallurgy:alloying/electrum")
+        .processingTime(40)
+        .heatRequirement("heated")
+        .id("createmetallurgy:alloying/electrum")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_brass", 30),
-    [
-        Fluid.of("createmetallurgy:molten_zinc", 15),
-        Fluid.of("createmetallurgy:molten_copper", 15)
-    ])
-    .processingTime(40)
-    .heatRequirement("heated")
-    .id("createmetallurgy:alloying/molten_brass")
+        [
+            Fluid.of("createmetallurgy:molten_zinc", 15),
+            Fluid.of("createmetallurgy:molten_copper", 15)
+        ])
+        .processingTime(40)
+        .heatRequirement("heated")
+        .id("createmetallurgy:alloying/molten_brass")
 
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_bronze", 40),
@@ -153,4 +151,16 @@ ServerEvents.recipes(e => {
             "createmetallurgy:graphite_plate_mold"
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
+    {
+        let iner = "minecraft:deepslate_bricks"
+        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", iner, [
+            e.recipes.vintageimprovements.curving(iner, iner, 1),
+            e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
+            e.recipes.vintageimprovements.polishing(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
+        .id("createmetallurgy:sequenced_assembly/industrial_crucible")
+    }
 })
