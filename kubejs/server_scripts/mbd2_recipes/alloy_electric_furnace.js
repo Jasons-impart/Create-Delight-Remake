@@ -76,7 +76,7 @@ ServerEvents.recipes(e => {
         .outputItems("ad_astra:calorite_ingot")
         .inputFE(1000)
     e.recipes.createdelight.alloy_electric_furnace()
-        .inputItems("#forge:dusts/wolframite")
+        .inputItems("#forge:dusts/tungsten")
         .outputItems("createmetallurgy:tungsten_ingot")
         .inputFE(1000)
 })

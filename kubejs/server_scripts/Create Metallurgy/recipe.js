@@ -151,16 +151,4 @@ ServerEvents.recipes(e => {
             "createmetallurgy:graphite_plate_mold"
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
-    {
-        let iner = "minecraft:deepslate_bricks"
-        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", iner, [
-            e.recipes.vintageimprovements.curving(iner, iner, 1),
-            e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
-            e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
-            e.recipes.vintageimprovements.polishing(iner, iner)
-        ])
-        .loops(1)
-        .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
-        .id("createmetallurgy:sequenced_assembly/industrial_crucible")
-    }
 })

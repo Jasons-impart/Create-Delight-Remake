@@ -94,6 +94,7 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:spent_liquor", 250),
         Fluid.of("createmetallurgy:molten_netherite", 30)
     ])
+        .heatRequirement("superheated")
         .id("art_of_forging:alloying/molten_forged_steel")
     create.pressing("createdelight:forged_steel_sheet", "art_of_forging:forged_steel_ingot")
         .id("art_of_forging:pressing/forged_steel_sheet")
@@ -275,15 +276,15 @@ ServerEvents.recipes(e => {
         let iner = "createdelight:forged_steel_sheet"
         create.sequenced_assembly("art_of_forging:encoded_canister", iner, [
             vintageimprovements.curving(iner, iner)
-            .head("art_of_forging:encoded_canister"),
+                .head("art_of_forging:encoded_canister"),
             create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
             create.deploying(iner, [iner, "megacells:printed_accumulation_processor"]),
             create.deploying(iner, [iner, "#forge:dusts/redstone"]),
             create.deploying(iner, [iner, "createdelight:forged_steel_sheet"]),
             create.pressing(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("art_of_forging:encoded_canister")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("art_of_forging:encoded_canister")
     }
 })
