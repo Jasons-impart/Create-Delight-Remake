@@ -7,7 +7,7 @@
 
 [speed]
 	#Range: 0.01 ~ 100.0
-	horizontal = 0.06
+	horizontal = 0.02
 	#Range: 0.01 ~ 100.0
 	vertical = 0.4
 	#Range: 0.01 ~ 100.0
