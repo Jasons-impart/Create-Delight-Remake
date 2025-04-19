@@ -6,7 +6,7 @@
  * @param {number} value 
  */
 function UpdateRank(player, value) {
-    if (player.persistentData.get("disableRankChange"))
+    if (player.persistentData.getBoolean("disableRankChange"))
         return
     value = (GetPlayerDifficulty(player) + value) < 0 ? -GetPlayerDifficulty(player) : value
     player.getServer().runCommandSilent(`/improvedmobs difficulty player ${player.username} add ${value}`)
@@ -44,6 +44,5 @@ FTBQuestsEvents.customReward(e => {
             else
                 e.player.tell("已开启难度变化！")
         }
-
     })
 })
