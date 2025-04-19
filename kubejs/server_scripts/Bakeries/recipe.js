@@ -178,11 +178,8 @@ ServerEvents.recipes(e => {
     )
         .processingTime(200)
         .id("bakeries:mixing/meat_floss")
-    blast_and_smelting(e,
-        'bakeries:whole_wheat_dough',
-        "minecraft:bread",
-        0.7, 100
-    )
+    e.recipes.minecraft.smoking("minecraft:bread", "bakeries:whole_wheat_dough", 0.7, 100)
+       .id("bakeries:bread_from_whole_wheat_dough")
 
     //酥皮
     kubejs.shapeless(
