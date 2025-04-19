@@ -1,4 +1,4 @@
-const $FluidFX = Java.loadClass("com.simibubi.create.content.fluids.FluidFX")
+
 MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
     let event = e.event
     const { machine } = event
@@ -20,7 +20,6 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
     let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
     if (fluid) {
         // console.log("hahaha")
-        let particle = $FluidFX.getFluidParticle(fluid.getFluidInTank(0).fluid).writeToString()
         let x = 0, z = 0;
         let random = machine.level.random
         let vx = 0, vz = 0
@@ -39,9 +38,10 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
         try {
             let level = machine.level
             // console.log(machine.level)
+
             level.getPlayers().forEach(player => {
                 /**@type {Internal.Player} */(player).sendData("spawn_create_particle", {
-                particle: particle,
+                fluid: Fluid.of(fluid.getFluidInTank(0).fluid).getId(),
                 x: vec.x(),
                 y: vec.y(),
                 z: vec.z(),
