@@ -18,6 +18,7 @@ StartupEvents.registry("item", e => {
             .tag(`forge:dirty_dusts/${metal}`)
             .tag(`forge:dirty_dusts`)
     })
+    
     e.create("createdelight:uranium_dust")
         .maxStackSize(64)
         .translationKey("item.createdelight.uranium_dust")
@@ -32,8 +33,11 @@ StartupEvents.registry("item", e => {
         .tag("forge:dusts")
         .translationKey("item.createdelight.depleted_uranium_dust")
     try {
-        depleted_uranium_dust.rarity("alexscaves:nuclear")
-        enriched_uraniumdust.rarity("alexscaves:nuclear")
+        if (!Utils.server.dedicated) {
+            console.log("Non dedicated server, apply alexscaves rarity")
+            depleted_uranium_dust.rarity("alexscaves:nuclear")
+            enriched_uraniumdust.rarity("alexscaves:nuclear")
+        }
     } catch (error) {
         console.log(error)
     }
