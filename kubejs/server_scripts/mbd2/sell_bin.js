@@ -20,48 +20,52 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         return
     let items = e.event.machine.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let values = 0
-    TradeUtil.getTradeAPI().GetTrader(false, 4).getTradeData().forEach(tradeData => {
-        /**@type {Internal.ItemTradeData} */
-        let itemTradeData = tradeData
-        let first = itemTradeData.getSellItem(0)
-        let second = itemTradeData.getSellItem(1)
-
-        // 定义减少物品的函数
-        /**
-         * 
-         * @param {Internal.ItemStack} item 
-         * @returns {Internal.ItemStack}
-         */
-        function getItem(item) {
-            if (item.empty) return false; // 如果物品为空，直接返回 false
-
-            let slot = items.find(item); // 查找物品所在槽位
-            if (slot == -1) return false; // 如果没有找到，返回 false
-            if (items.getStackInSlot(slot).count >= item.count) {
-                return items.getStackInSlot(slot)
+    let traderId = [4, 5, 9, 13]
+    traderId.forEach(id => {
+        TradeUtil.getTradeAPI().GetTrader(false, id).getTradeData().forEach(tradeData => {
+            /**@type {Internal.ItemTradeData} */
+            let itemTradeData = tradeData
+            let first = itemTradeData.getSellItem(0)
+            let second = itemTradeData.getSellItem(1)
+    
+            // 定义减少物品的函数
+            /**
+             * 
+             * @param {Internal.ItemStack} item 
+             * @returns {Internal.ItemStack}
+             */
+            function getItem(item) {
+                if (item.empty) return false; // 如果物品为空，直接返回 false
+    
+                let slot = items.find(item); // 查找物品所在槽位
+                if (slot == -1) return false; // 如果没有找到，返回 false
+                if (items.getStackInSlot(slot).count >= item.count) {
+                    return items.getStackInSlot(slot)
+                }
+                return false
             }
-            return false
-        }
-        // 循环减少物品
-        while (true) {
-            let decreasedFirst = getItem(first)
-            let decreasedSecond = getItem(second)
-            let firstQuality = $QualityUtils.getQuality(decreasedFirst)
-            let secondQuality = $QualityUtils.getQuality(decreasedSecond)
-            // 如果两个物品都无法减少，结束循环
-            if (!(decreasedFirst || decreasedSecond)) {
-                break;
+            // 循环减少物品
+            while (true) {
+                let decreasedFirst = getItem(first)
+                let decreasedSecond = getItem(second)
+                let firstQuality = $QualityUtils.getQuality(decreasedFirst)
+                let secondQuality = $QualityUtils.getQuality(decreasedSecond)
+                // 如果两个物品都无法减少，结束循环
+                if (!(decreasedFirst || decreasedSecond)) {
+                    break;
+                }
+                if (typeof decreasedFirst != "boolean")
+                    decreasedFirst.shrink(first.count)
+                if (typeof decreasedSecond != "boolean")
+                    decreasedSecond.shrink(second.count)
+    
+                let multiplier = JavaMath.floor(JavaMath.sqrt(2 / (
+                    (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))
+                    + (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)))) + 0.5)
+                values += multiplier * tradeData.getCost().coreValue * 4
             }
-            if (typeof decreasedFirst != "boolean")
-                decreasedFirst.shrink(first.count)
-            if (typeof decreasedSecond != "boolean")
-                decreasedSecond.shrink(second.count)
-
-            let multiplier = JavaMath.floor(JavaMath.sqrt(2 / (
-                (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))
-                + (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)))) + 0.5)
-            values += multiplier * tradeData.getCost().coreValue * 4
-        }
+    
+        })
 
     })
     let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
