@@ -81,7 +81,9 @@ jobs:
           mapfile -t prefixes < .clientonlymodlist
           for prefix in "${prefixes[@]}"; do
             echo "Deleting files with prefix: $prefix"
-            find patch/mods -name "${prefix}*" -exec rm {} +
+            if [ -d "patch/mods" ]; then
+              find patch/mods -name "${prefix}*" -exec rm {} +
+            fi
           done
 
           # 移除无用文件
