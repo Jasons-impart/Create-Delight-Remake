@@ -41,8 +41,8 @@ jobs:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: packwiz/packwiz
-          run-id: 12858009936
+          repository: Jasons-impart/packwiz
+          run-id: 14558970721
       - name: 重命名HMCL配置和options
         run: |
           mv .hmclversion.cfg hmclversion.cfg
