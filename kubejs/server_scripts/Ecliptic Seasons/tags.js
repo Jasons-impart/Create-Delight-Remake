@@ -83,4 +83,5 @@ ServerEvents.tags("minecraft:item", e => {
         "trailandtales_delight:lantern_fruit_seeds",
         "youkaishomecoming:soybean"
     )
+    e.add("minecraft:ice", "neapolitan:ice_cubes")
 })
