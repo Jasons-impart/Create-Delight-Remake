@@ -125,7 +125,7 @@ ServerEvents.recipes(e => {
         ],
         "time": 2400
     })
-        .id("cratedelight:vinegar")
+        .id("createdelight:vinegar")
         
     e.custom({
         "type": "youkaishomecoming:simple_fermentation",
