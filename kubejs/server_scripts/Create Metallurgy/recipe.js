@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
     ])
 
     e.replaceInput({ mod: "createmetallurgy" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
-
+    e.replaceInput({output: "createmetallurgy:coke"}, "#forge:ores/coal", "#minecraft:coals")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
