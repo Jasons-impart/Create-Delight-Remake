@@ -9,7 +9,7 @@ crop_target_chance = 0.6
 seed_chance_multiplier = 0.25
 #Define multipliers to be applied per farmland on crops - Syntax: <index>;<crop>;<farmland>;<multiplier> (the index defines the sequence in which they will be checked - the first matching one is applied)
 #Example: ["2;minecraft:wheat;#farmersdelight:terrain;0.75", "3;#minecraft:crops;farmersdelight:rich_soil;1.25"]
-farmland_config = ["1;#createdelight:quality_crops;farmersdelight:rich_soil;5.0", "2;#createdelight:quality_crops;farmersdelight:rich_soil_farmland;5.0", "3;#createdelight:quality_crops;mynethersdelight:resurgent_soil;7.5", "4;#createdelight:quality_crops;mynethersdelight:resurgent_soil_farmland;7.5", "5;#createdelight:quality_crops;minecraft:farmland;0", "6;#createdelight:quality_crops;#farmersdelight:terrain;0"]
+farmland_config = ["1;#createdelight:quality_crops;farmersdelight:rich_soil;5.0", "2;#createdelight:quality_crops;farmersdelight:rich_soil_farmland;5.0", "3;#createdelight:quality_crops;supplementaries:planter;6.0", "4;#createdelight:quality_crops;mynethersdelight:resurgent_soil;7.5", "5;#createdelight:quality_crops;mynethersdelight:resurgent_soil_farmland;7.5", "6;#createdelight:quality_crops;minecraft:farmland;0", "7;#createdelight:quality_crops;#farmersdelight:terrain;0"]
 
 [Crafting]
 	#Define recipes (namespace:path) which should not result in quality being applied (e.g. when the items can be converted back and forth)
