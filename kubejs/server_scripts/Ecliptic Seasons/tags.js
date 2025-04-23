@@ -43,8 +43,6 @@ ServerEvents.tags("minecraft:item", e => {
     )
     e.add("eclipticseasons:crops/moist_moist", 
         "collectorsreap:lime_seeds",
-        "fruitsdelight:mango_leaves",
-        "fruitsdelight:mango_sapling",
         "fruitsdelight:persimmon_leaves",
         "fruitsdelight:persimmon_sapling",
         "fruitsdelight:peach_leaves",
@@ -65,9 +63,7 @@ ServerEvents.tags("minecraft:item", e => {
         "vinery:dark_cherry_sapling",
         "createcafe:coffee_beans"
     )    
-    e.add("eclipticseasons:crops/average_humid", 
-        "vinery:jungle_grape_seeds_red",
-        "vinery:jungle_grape_seeds_white",
+    e.add("eclipticseasons:crops/average_humid",
         "farmersrespite:tea_seeds"
     )
     e.add("eclipticseasons:crops/dry_moist",
@@ -82,6 +78,12 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:oat_seeds",
         "trailandtales_delight:lantern_fruit_seeds",
         "youkaishomecoming:soybean"
+    )
+    e.add("eclipticseasons:crops/dry_humid",
+        "fruitsdelight:mango_leaves",
+        "fruitsdelight:mango_sapling",
+        "vinery:jungle_grape_seeds_white",
+        "vinery:jungle_grape_seeds_red"
     )
     e.add("minecraft:ice", "neapolitan:ice_cubes")
 })

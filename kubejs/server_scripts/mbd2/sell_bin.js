@@ -52,13 +52,17 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             while (true) {
                 let decreasedFirst = first != null ? getMaxCountItem(first) : null; // 若 first 为 null，则结果为 null
                 let decreasedSecond = second != null ? getMaxCountItem(second) : null; // 若 second 为 null，则结果为 null
+                let firstQuality = $QualityUtils.getQuality(decreasedFirst)
+                let secondQuality = $QualityUtils.getQuality(decreasedSecond)
                 let firstRate = decreasedFirst ? (decreasedFirst.count / (first?.count || 1)) : Infinity;
                 let secondRate = decreasedSecond ? (decreasedSecond.count / (second?.count || 1)) : Infinity;
+                firstRate = (first != null && firstRate === Infinity) ? 0 : firstRate;
+                secondRate = (second != null && secondRate === Infinity) ? 0 : secondRate;
+                
                 let minRate = Math.min(firstRate, secondRate);
                 let firstCount = decreasedFirst ? Math.floor((first?.count || 0) * minRate) : 0;
                 let secondCount = decreasedSecond ? Math.floor((second?.count || 0) * minRate) : 0;
-                if (firstRate != Infinity || secondRate != Infinity)
-                player.tell(`minRate: ${minRate}, firstCount: ${firstCount}, secondCount: ${secondCount}`)
+                // player.tell(`minRate: ${minRate}, firstCount: ${firstCount}, secondCount: ${secondCount}`)
                 // 如果没有任何减少，结束交易
                 if (firstCount === 0 && secondCount === 0) break;
 
@@ -69,9 +73,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
                 if (decreasedSecond && secondCount > 0) {
                     decreasedSecond.shrink(secondCount);
                 }
-
-                let firstQuality = $QualityUtils.getQuality(decreasedFirst)
-                let secondQuality = $QualityUtils.getQuality(decreasedSecond)
+                // player.tell(`firstQuality: ${firstQuality} secondQuality: ${secondQuality}`)
                 let multiplier = Math.floor(JavaMath.sqrt(2 / (
                     (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))
                     + (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)))) + 0.5)
