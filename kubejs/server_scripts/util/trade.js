@@ -41,12 +41,4 @@ TradeUtil.getTradeAPI = function () {
 
 ItemEvents.rightClicked("minecraft:stick", e => {
     // let trader = TradeUtil.getTradeAPI().GetTrader(false, 4)
-    // e.player.tell(trader.getTradeData().stream().filter(traderData => {
-    //     /**
-    //      * @type {Internal.ItemTradeData}
-    //      */
-    //     let itemTradeData = traderData
-    //     return itemTradeData.getSellItem(0).is("festival_delicacies:chinese_cabbage")
-    // }).findFirst().get().getCost().coreValue)
-    // e.player.tell(e.level.dayTime())
 })

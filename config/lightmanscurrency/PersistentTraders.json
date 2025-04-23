@@ -2450,6 +2450,318 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:pomegranate_slice",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:lime",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:powdery_cannon",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "mynethersdelight:bullet_pepper",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:crimson_fungus",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:warped_fungus",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:brown_mushroom",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:red_mushroom",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:portobello",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "youkaishomecoming:pods",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "youkaishomecoming:mandrake_root",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "youkaishomecoming:mandrake_flower",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "youkaishomecoming:udumbara_flower",
+            "Count": 128
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 18
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
       ]
     },
@@ -2993,7 +3305,224 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "culturaldelights:glow_squid",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:tiger_prawn",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:urchin",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:platinum_bass",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:clam",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "crabbersdelight:clam",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "youkaishomecoming:raw_lamprey",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "collectorsreap:chieftain_crab_meat",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "crabbersdelight:crab",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
         }
+      
       ]
     },
     {
