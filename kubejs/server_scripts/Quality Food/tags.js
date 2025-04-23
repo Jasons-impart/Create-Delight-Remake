@@ -39,8 +39,18 @@ ServerEvents.tags("block", e => {
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
         "fruitsdelight:cranberry_bush",
+        "vinery:red_grape_bush",
+        "vinery:white_grape_bush",
+        "vinery:savanna_grape_bush_red",
+        "vinery:savanna_grape_bush_white",
+        "vinery:taiga_grape_bush_red",
+        "vinery:taiga_grape_bush_white",
+        "vinery:jungle_grape_bush_red",
+        "vinery:jungle_grape_bush_white",
         "nethervinery:crimson_grape_bush",
-        "nethervinery:warped_grape_bush"
+        "nethervinery:warped_grape_bush",
+        "collectorsreap:pomegranate_bush",
+        "collectorsreap:lime_bush"
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops"

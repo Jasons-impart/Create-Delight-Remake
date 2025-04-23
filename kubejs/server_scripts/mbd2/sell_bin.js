@@ -28,45 +28,56 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             let first = itemTradeData.getSellItem(0)
             let second = itemTradeData.getSellItem(1)
     
-            // 定义减少物品的函数
             /**
              * 
              * @param {Internal.ItemStack} item 
              * @returns {Internal.ItemStack}
              */
-            function getItem(item) {
-                if (item.empty) return false; // 如果物品为空，直接返回 false
-    
-                let slot = items.find(item); // 查找物品所在槽位
-                if (slot == -1) return false; // 如果没有找到，返回 false
-                if (items.getStackInSlot(slot).count >= item.count) {
-                    return items.getStackInSlot(slot)
+            function getMaxCountItem(item) {
+                if (item == null) return false
+                let max = -1
+                let maxi = -1
+                for (let index = 0; index < items.slots; index++) {
+                    let element = items.getStackInSlot(index)
+                    if (element != null && element.count > max && element.is(item)) {
+                        maxi = index
+                        max = element.count
+                    }
                 }
-                return false
+                if (maxi == -1)
+                    return false
+                return items.getStackInSlot(maxi)
             }
             // 循环减少物品
             while (true) {
-                let decreasedFirst = getItem(first)
-                let decreasedSecond = getItem(second)
+                let decreasedFirst = first != null ? getMaxCountItem(first) : null; // 若 first 为 null，则结果为 null
+                let decreasedSecond = second != null ? getMaxCountItem(second) : null; // 若 second 为 null，则结果为 null
+                let firstRate = decreasedFirst ? (decreasedFirst.count / (first?.count || 1)) : Infinity;
+                let secondRate = decreasedSecond ? (decreasedSecond.count / (second?.count || 1)) : Infinity;
+                let minRate = Math.min(firstRate, secondRate);
+                let firstCount = decreasedFirst ? Math.floor((first?.count || 0) * minRate) : 0;
+                let secondCount = decreasedSecond ? Math.floor((second?.count || 0) * minRate) : 0;
+                if (firstRate != Infinity || secondRate != Infinity)
+                player.tell(`minRate: ${minRate}, firstCount: ${firstCount}, secondCount: ${secondCount}`)
+                // 如果没有任何减少，结束交易
+                if (firstCount === 0 && secondCount === 0) break;
+
+                // 减少库存中的物品数量
+                if (decreasedFirst && firstCount > 0) {
+                    decreasedFirst.shrink(firstCount);
+                }
+                if (decreasedSecond && secondCount > 0) {
+                    decreasedSecond.shrink(secondCount);
+                }
+
                 let firstQuality = $QualityUtils.getQuality(decreasedFirst)
                 let secondQuality = $QualityUtils.getQuality(decreasedSecond)
-                // 如果两个物品都无法减少，结束循环
-                if (!(decreasedFirst || decreasedSecond)) {
-                    break;
-                }
-                if (typeof decreasedFirst != "boolean")
-                    decreasedFirst.shrink(first.count)
-                if (typeof decreasedSecond != "boolean")
-                    decreasedSecond.shrink(second.count)
-    
-                let multiplier = JavaMath.floor(JavaMath.sqrt(2 / (
+                let multiplier = Math.floor(JavaMath.sqrt(2 / (
                     (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : 1))
                     + (secondQuality.level() != 0 ? $QualityConfig.getChance(secondQuality) : (firstQuality.level() != 0 ? $QualityConfig.getChance(firstQuality) : 1)))) + 0.5)
-                values += multiplier * tradeData.getCost().coreValue * 4
+                values += minRate * multiplier * tradeData.getCost().coreValue * 4
             }
-    
         })
-
     })
     let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
     if (!coinValue.empty)
