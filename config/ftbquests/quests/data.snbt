@@ -18,6 +18,7 @@
 	}
 	pause_game: true
 	progression_mode: "linear"
+	show_lock_icons: true
 	title: "机械动力：悠然乐事"
 	version: 13
 }
