@@ -4,7 +4,6 @@ ServerEvents.tags("item", e => {
     e.add("forge:seeds", "vintagedelight:peanut")
     e.add("forge:seeds", "vintagedelight:cucumber_seeds")
     e.add("forge:seeds", "vintagedelight:ghost_pepper_seeds")
-    e.add("forge:seeds", "vintagedelight:gearo_berry")
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
