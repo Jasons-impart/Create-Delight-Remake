@@ -2170,6 +2170,7 @@
 			}]
 			subtitle: "交付这些物品就可以下降十级难度！"
 			tasks: [{
+				consume_items: true
 				id: "154772CE9D75B183"
 				item: "createdelightcore:gold_coin"
 				type: "item"
