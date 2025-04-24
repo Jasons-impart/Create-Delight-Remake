@@ -121,6 +121,7 @@
 			dependency_requirement: "one_completed"
 			description: ["唉，炼钢"]
 			id: "70CA8C3E0DEBBE1A"
+			min_required_tasks: 1
 			rewards: [{
 				id: "79474E5EC8729368"
 				item: "createmetallurgy:steel_ingot"
@@ -195,8 +196,8 @@
 				value: 1
 			}]
 			title: "石油科技"
-			x: -7.5d
-			y: -4.5d
+			x: -10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["70CA8C3E0DEBBE1A"]
@@ -540,6 +541,51 @@
 			title: "接触电力"
 			x: -3.5d
 			y: 4.0d
+		}
+		{
+			dependencies: ["0081008C6EAA4D86"]
+			description: ["使用铸铁和钨制作。需要注意的是固金板不是通过辊压机而是杠杆锤制作。"]
+			id: "580C77852E71B685"
+			size: 2.0d
+			subtitle: "制作工业坩埚"
+			tasks: [{
+				id: "0117107DD13A9887"
+				item: "createmetallurgy:obdurium_ingot"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["580C77852E71B685"]
+			description: ["可以装载多种流体，安装熔铸炉组件能使其变为熔铸炉。其最大大小为5*4*5，使用扳手可以在其表面开窗。"]
+			id: "0C0CD2BD5935D4CC"
+			subtitle: "某种多流体储罐"
+			tasks: [{
+				id: "757E747FAED0BFE1"
+				item: "createmetallurgy:industrial_crucible"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["0C0CD2BD5935D4CC"]
+			description: [
+				"它可以做到&e熔炼金属，制作合金，甚至生物熔炼&r。"
+				"值得一提的是它的热量机制，是根据它下方的&e所有烈焰人的热度&r来计算的。普通燃烧的烈焰人是1，超级燃烧的烈焰人是2。"
+				"它拥有直接熔融块的能力，不过需要热量满足要求。"
+				"它也可以直接制作合金。只要其中拥有原材料且有热量即可。"
+			]
+			id: "20972AEC6EE6D9F8"
+			subtitle: "多方块大炉子"
+			tasks: [{
+				id: "7FBA9B1076F350D6"
+				item: "createmetallurgy:foundry_unit"
+				type: "item"
+			}]
+			x: -3.5d
+			y: -7.0d
 		}
 	]
 	title: "&3合金突破"

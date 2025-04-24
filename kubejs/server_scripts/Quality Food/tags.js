@@ -50,7 +50,20 @@ ServerEvents.tags("block", e => {
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
         "collectorsreap:pomegranate_bush",
-        "collectorsreap:lime_bush"
+        "collectorsreap:lime_bush",
+        'fruitsdelight:bayberry_leaves',
+        'fruitsdelight:kiwi_leaves',
+        'fruitsdelight:fig_leaves',
+        'fruitsdelight:durian_leaves',
+        'fruitsdelight:pear_leaves',
+        'fruitsdelight:hawberry_leaves',
+        'fruitsdelight:lychee_leaves',
+        'fruitsdelight:mango_leaves',
+        'fruitsdelight:persimmon_leaves',
+        'fruitsdelight:peach_leaves',
+        'fruitsdelight:orange_leaves', 
+        'fruitsdelight:apple_leaves',
+        'fruitsdelight:mangosteen_leaves'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops"
