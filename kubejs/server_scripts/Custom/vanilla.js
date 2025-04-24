@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
     .id("createdelight:filling/golden_carrot")
 
     createmetallurgy.casting_in_basin(
-        "quark:golden_carrot_crate", 
+        "cratedelight:golden_carrot_crate", 
         ["farmersdelight:carrot_crate", Fluid.of("createmetallurgy:molten_gold", 450)], 100, true)
     .id("createdelight:casting_in_basin/golden_carrot_crate")
 

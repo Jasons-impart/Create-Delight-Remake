@@ -4,7 +4,7 @@
 	clock_block = true
 	redstone_illuminator = true
 	crank = true
-	cog_block = false
+	cog_block = true
 	gold_door = true
 	gold_trapdoor = true
 	lock_block = true
