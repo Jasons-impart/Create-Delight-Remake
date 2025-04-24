@@ -40,7 +40,9 @@ ServerEvents.recipes(e => {
        "bakeries:berry_bread_dough",
        "bakeries:mould_toast_dough",
        "bakeries:cheese_cocoa_toast_dough",
-       "bakeries:brown_sugar_roll_dough"
+       "bakeries:brown_sugar_roll_dough",
+       "bakeries:focaccia"
+       
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -51,7 +53,10 @@ ServerEvents.recipes(e => {
         "bakeries:salted_dough",
         "bakeries:pastry",
         "bakeries:cocoa_dough",
-        "bakeries:cocoa_powder"
+        "bakeries:cocoa_powder",
+        "bakeries:olive_oil",
+        "bakeries:ground_coffee",
+        "bakeries:coffee_bean"
     ])
     e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
 
@@ -316,7 +321,7 @@ ServerEvents.recipes(e => {
         ] 
     ).id("bakeries:cheese_cocoa_toast_dough_manual_only")
     {
-        let iner = "bakeries:round_bread_dough"
+        let iner = "bakeries:mould"
         create.sequenced_assembly("bakeries:mould_cheese_cocoa_toast_dough", iner,
             [
                 create.deploying(iner, [iner, "bakeries:round_bread_dough"]),
@@ -357,7 +362,8 @@ ServerEvents.recipes(e => {
         ['bakeries:country_bread_dough', 'bakeries:country_bread', 300],
         ['bakeries:ciabatta_dough', 'bakeries:ciabatta', 160],
         ['bakeries:mould_toast_dough', 'bakeries:mould_toast', 400],
-        ['bakeries:mould_cheese_cocoa_toast_dough', 'bakeries:mould_cheese_cocoa_toast', 400]
+        ['bakeries:mould_cheese_cocoa_toast_dough', 'bakeries:mould_cheese_cocoa_toast', 400],
+        ['bakeries:focaccia_dough', 'bakeries:focaccia', 200]
     ]
     breads.forEach(([dough, bread, time]) => {
         baking(e, dough, bread, 1, "food", time)
@@ -396,7 +402,23 @@ ServerEvents.recipes(e => {
     //     ]
     // }).id("bakeries:demolding/mould_cheese_cocoa_toast")
 
-
+    kubejs.shaped("bakeries:focaccia_dough", [
+        "ABC",
+        " D "
+    ], {
+        A: "#forge:vegetables/onion",
+        B: "#forge:vegetables/tomato",
+        C: "frycooks_delight:canola_oil",
+        D: "ratatouille:salty_dough"
+    })
+    .id("bakeries:focaccia")
+    create.mixing("bakeries:focaccia_dough", [
+        Fluid.of("createdieselgenerators:plant_oil", 250),
+        "#forge:vegetables/onion",
+        "#forge:vegetables/tomato",
+        "ratatouille:salty_dough"
+    ])
+    .id("bakeries:mixing/focaccia")
     //其他
     vintageimprovements.vacuumizing(
         [

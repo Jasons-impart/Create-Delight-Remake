@@ -23,7 +23,7 @@ ServerEvents.recipes(e => {
         "alexscaves:cave_map"
     ])
     // e.replaceInput({not: {type: "minecraft:smithing_trim"}}, "#forge:raw_materials/uranium", "#forge:ingots/uranium")
-    // e.replaceInput({ id: "create_oppenheimered:mixing/ice_cream_licoroot" }, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
+    e.replaceInput({ id: "create_oppenheimered:mixing/ice_cream_licoroot" }, "alexscaves:licoroot", "neapolitan:dried_vanilla_pod_block")
 
 
     //粉碎珍珠出海洋玻璃碎片

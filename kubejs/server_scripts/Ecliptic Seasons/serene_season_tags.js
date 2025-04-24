@@ -38,7 +38,8 @@ ServerEvents.tags("item", e => {
         "oceanic_delight:sea_grape",
         "neapolitan:mint_sprout",
         "neapolitan:vanilla_pods",
-        "createdelight:artemisia_argyi_seed"
+        "createdelight:artemisia_argyi_seed",
+        "youkaishomecoming:mandrake_root"
     ])
     e.add("sereneseasons:autumn_crops", [
         "minecraft:oak_sapling",

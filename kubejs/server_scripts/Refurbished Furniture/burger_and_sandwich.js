@@ -13,43 +13,43 @@ ServerEvents.recipes(e => {
     combination(e, [
         "some_assembly_required:burger_bun",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/beetroot",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/beetroot",
         "alexsdelight:bison_patty"], "alexsdelight:bison_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "#culturaldelights:smoked_regular_eggplants",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato"
+        "#forge:vegetables/tomato"
     ], "culturaldelights:eggplant_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion"
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion"
     ], "farmersdelight:hamburger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "silentsdelight:warden_heart_patty",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion"
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion"
     ], "silentsdelight:heartburger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion",
         "ad_astra:cheese"
     ], "vintagedelight:cheese_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion",
         "ad_astra:cheese",
         "#forge:cooked_eggs",
         "#forge:cooked_bacon"
@@ -58,16 +58,16 @@ ServerEvents.recipes(e => {
         "some_assembly_required:burger_bun",
         "collectorsreap:baked_portobello_cap",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion",
     ], "collectorsreap:portobello_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "collectorsreap:chieftain_claw",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion",
     ], "collectorsreap:land_and_sea_burger", 1)
     //三明治
     combination(e, [
@@ -75,7 +75,7 @@ ServerEvents.recipes(e => {
         "#alexsdelight:cooked_kangaroo",
         "#alexsdelight:cooked_kangaroo",
         "#forge:salad_ingredients",
-        "#forge:crops/carrot"
+        "#forge:vegetables/carrot"
     ], "alexsmobs:kangaroo_burger", 1)
     combination(e, [
         "minecraft:bread",
@@ -87,7 +87,7 @@ ServerEvents.recipes(e => {
         "minecraft:bread",
         "#forge:cooked_mutton",
         "#forge:cooked_eggs",
-        "#forge:crops/beetroot"
+        "#forge:vegetables/beetroot"
     ], "culturaldelights:mutton_sandwich", 1)
     combination(e, [
         "minecraft:bread",
@@ -98,21 +98,21 @@ ServerEvents.recipes(e => {
         "minecraft:bread",
         "#forge:cooked_chicken",
         "#forge:salad_ingredients",
-        "#forge:crops/carrot"
+        "#forge:vegetables/carrot"
     ], "farmersdelight:chicken_sandwich", 1)
     combination(e, [
         "minecraft:bread",
         "#forge:cooked_bacon",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato"
+        "#forge:vegetables/tomato"
     ], "farmersdelight:bacon_sandwich", 1)
     combination(e, [
         "minecraft:bread",
         "#forge:shrimps",
         "#forge:eggs",
         "#forge:salad_ingredients",
-        "#forge:crops/tomato",
-        "#forge:crops/onion"
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion"
     ], "collectorsreap:prawn_po_boy", 1)
     combination(e, [
         "minecraft:bread",
