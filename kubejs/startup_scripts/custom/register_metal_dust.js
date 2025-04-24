@@ -33,8 +33,8 @@ StartupEvents.registry("item", e => {
         .tag("forge:dusts")
         .translationKey("item.createdelight.depleted_uranium_dust")
     try {
-        if (!Utils.server.dedicated) {
-            console.log("Non dedicated server, apply alexscaves rarity")
+        if (Platform.isClientEnvironment()) {
+            console.info("On client, apply alexscaves rarity")
             depleted_uranium_dust.rarity("alexscaves:nuclear")
             enriched_uraniumdust.rarity("alexscaves:nuclear")
         }

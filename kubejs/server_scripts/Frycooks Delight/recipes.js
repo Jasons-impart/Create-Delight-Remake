@@ -46,4 +46,8 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("frycooks_delight:mixing/unfried_chicken_leg")
+    e.recipes.create.filling("frycooks_delight:canola_oil", ["minecraft:glass_bottle", Fluid.of("createdieselgenerators:plant_oil", 250)])
+    .id("frycooks_delight:filling/canola_oil")
+    e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdieselgenerators:plant_oil", 250)], "frycooks_delight:canola_oil")
+    .id("frycooks_delight:emptying/canola_oil")
 })

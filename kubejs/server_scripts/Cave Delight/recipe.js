@@ -8,5 +8,4 @@ ServerEvents.recipes(e => {
     ])
     cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
     cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
-    // brewing(e, )
 })
