@@ -2139,21 +2139,13 @@
 				type: "custom"
 			}]
 			subtitle: "交付这些物品就可以提升十级难度！"
-			tasks: [
-				{
-					consume_items: true
-					count: 8L
-					id: "464B36CA12B5D392"
-					item: "art_of_forging:shards_of_malice"
-					type: "item"
-				}
-				{
-					consume_items: true
-					id: "49B6C5C5DFD1F23B"
-					item: "art_of_forging:fragment_of_eden"
-					type: "item"
-				}
-			]
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "464B36CA12B5D392"
+				item: "art_of_forging:shards_of_malice"
+				type: "item"
+			}]
 			title: "觉得难度太低了？"
 			x: 11.5d
 			y: -0.5d
@@ -2178,9 +2170,7 @@
 			}]
 			subtitle: "交付这些物品就可以下降十级难度！"
 			tasks: [{
-				consume_items: true
-				count: 3L
-				id: "7F595CBBAD183079"
+				id: "154772CE9D75B183"
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
