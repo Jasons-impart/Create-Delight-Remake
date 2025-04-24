@@ -272,6 +272,7 @@
 		{
 			dependencies: ["4B090FE6593322AC"]
 			id: "137B5A8B8C7EA6A2"
+			subtitle: "粉碎轮粉碎"
 			tasks: [{
 				id: "55E0BF1A0DF778B0"
 				item: "create:crushed_raw_iron"
@@ -283,39 +284,43 @@
 		{
 			dependencies: ["4B090FE6593322AC"]
 			id: "47E95A5286A80075"
+			subtitle: "通过压缩机"
 			tasks: [{
 				id: "213263254430005F"
 				item: "createmetallurgy:dirty_iron_dust"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 6.0d
 		}
 		{
 			dependencies: ["47E95A5286A80075"]
 			id: "6F32D461564F952D"
+			subtitle: "离心机或者鼓风机洗涤"
 			tasks: [{
 				id: "679683474CEA2CA3"
 				item: "createmetallurgy:iron_dust"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 7.5d
 		}
 		{
 			dependencies: ["6F32D461564F952D"]
 			id: "0458A8485A72A1C7"
+			subtitle: "熔融"
 			tasks: [{
 				id: "632092F4B351D611"
 				item: "createmetallurgy:molten_iron_bucket"
 				type: "item"
 			}]
-			x: 2.0d
+			x: 3.0d
 			y: 9.0d
 		}
 		{
 			dependencies: ["137B5A8B8C7EA6A2"]
 			id: "4972D38A770A8022"
+			subtitle: "粉碎轮粉碎"
 			tasks: [{
 				id: "5FE496D0E90A30D1"
 				item: "createmetallurgy:dirty_iron_dust"
@@ -327,6 +332,7 @@
 		{
 			dependencies: ["4972D38A770A8022"]
 			id: "23DBCDC7BE8D7207"
+			subtitle: "离心机或者鼓风机洗涤"
 			tasks: [{
 				id: "4AE27F3570C5B172"
 				item: "createmetallurgy:iron_dust"
@@ -338,6 +344,7 @@
 		{
 			dependencies: ["23DBCDC7BE8D7207"]
 			id: "6EAE2A71D355B4F4"
+			subtitle: "熔融"
 			tasks: [{
 				id: "26DC4A594FE3CFFD"
 				item: "createmetallurgy:molten_iron_bucket"
@@ -349,6 +356,7 @@
 		{
 			dependencies: ["137B5A8B8C7EA6A2"]
 			id: "7E52E474B3645158"
+			subtitle: "震动机或者离心机"
 			tasks: [{
 				id: "2B675C54A010DA80"
 				item: "minecraft:iron_nugget"
@@ -371,6 +379,7 @@
 		{
 			dependencies: ["137B5A8B8C7EA6A2"]
 			id: "65050B6C6BE04373"
+			subtitle: "烧制"
 			tasks: [{
 				id: "76404E8D5B5F89DB"
 				item: "minecraft:iron_ingot"
@@ -413,6 +422,18 @@
 			title: "糖果洞穴"
 			x: -3.0d
 			y: 1.5d
+		}
+		{
+			dependencies: ["4B090FE6593322AC"]
+			id: "3D3AFC1CCA6F2D06"
+			subtitle: "直接熔融"
+			tasks: [{
+				id: "7406D5DCDD61A844"
+				item: "createmetallurgy:molten_iron_bucket"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.0d
 		}
 	]
 	title: "&e矿物再生！"

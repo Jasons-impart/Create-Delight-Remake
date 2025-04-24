@@ -170,4 +170,6 @@ ServerEvents.recipes(e => {
         .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
         .id("createmetallurgy:sequenced_assembly/industrial_crucible")
     }
+    vintageimprovements.hammering("createmetallurgy:obdurium_sheet", "#forge:ingots/obdurium")
+    .id("createmetallurgy:hammering/obdurium_sheet")
 })
