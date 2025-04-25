@@ -97,6 +97,12 @@ jobs:
           rm -f patch/index.toml
           rm -f patch/client_jvm_args.example.txt
 
+          # 更新fancymenu版本文件
+          echo "|||" > patch/config/fancymenu/assets/version.md
+          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> patch/config/fancymenu/assets/version.md
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> patch/config/fancymenu/assets/version.md
+          echo "|||" >> patch/config/fancymenu/assets/version.md
+
       - name: Create Linux script
         run: |
           cat << 'EOF' > deploy-patch.sh
@@ -170,7 +176,7 @@ jobs:
           )
 
           rem move patched files to right place
-          xcopy /E /I /Y "patch" "."
+          %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
           rd /S /Q "patch"
 
           endlocal
