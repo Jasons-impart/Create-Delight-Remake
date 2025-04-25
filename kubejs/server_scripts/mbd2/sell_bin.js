@@ -13,7 +13,7 @@ MBDMachineEvents.onPlaced("createdelight:sell_bin", e => {
 
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
-    if (e.event.machine.level.dayTime() != 1000) return
+    if ((e.event.machine.level.dayTime() % 24000) != 1000) return
 
     let player = e.event.machine.level.getPlayerByUUID(e.event.machine.customData.getUUID("owner"))
     if (player == null)
