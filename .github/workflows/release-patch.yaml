@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - test-patch
+      - test-release
       - release
 
 jobs:
