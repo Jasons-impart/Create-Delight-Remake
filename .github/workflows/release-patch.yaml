@@ -98,6 +98,7 @@ jobs:
           rm -f patch/client_jvm_args.example.txt
 
           # 更新fancymenu版本文件
+          mkdir -p patch/config/fancymenu/assets
           echo "|||" > patch/config/fancymenu/assets/version.md
           echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> patch/config/fancymenu/assets/version.md
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> patch/config/fancymenu/assets/version.md
