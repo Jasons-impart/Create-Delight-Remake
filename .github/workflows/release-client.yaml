@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - test-client
+      - test-release
       - release
 
 jobs:
@@ -60,7 +61,7 @@ jobs:
         # |||
         run: |
           echo "|||" > ${{ github.workspace }}/config/fancymenu/assets/version.md
-          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }} ${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
+          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
           echo "|||" >> ${{ github.workspace }}/config/fancymenu/assets/version.md
       - name: 更新index
