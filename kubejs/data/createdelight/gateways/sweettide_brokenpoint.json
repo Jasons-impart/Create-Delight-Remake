@@ -1,0 +1,283 @@
+{
+	"size": "large",
+	"color": "#CD9B9B",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:caniac",
+					"count": 12,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:caniac",
+					"rolls": 12
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:gumbeeper",
+					"count": 8,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.3
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:gumbeeper",
+					"rolls": 8
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 150
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:caramel_cube",
+					"count": 12,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:caramel_cube",
+					"rolls": 12
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:licowitch",
+					"count": 12,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:licowitch",
+					"rolls": 8
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:licowitch",
+					"count": 6,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				},
+				{
+					"entity": "alexscaves:caramel_cube",
+					"count": 6,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				},
+				{
+					"entity": "alexscaves:caniac",
+					"count": 6,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:sweettide_brokenpoint"}}
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:sundae",
+                        "count": 2,
+						"nbt" : {"alexscaves":"alexscaves:gingerbread_man_steals"}}
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		}
+	],
+    "failures": [
+		{
+			"type": "gateways:explosion",
+			"strength": 6,
+			"fire": true,
+			"block_damage": true
+			}
+	]
+}
