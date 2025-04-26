@@ -47,6 +47,22 @@
 			x: 6.0d
 			y: -0.5d
 		}
+		{
+			height: 4.0d
+			image: "casualness_delight:item/bowl_of_sweet_rice"
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			height: 4.0d
+			image: "alexscaves:item/caramel"
+			rotation: 0.0d
+			width: 4.0d
+			x: 9.5d
+			y: 3.0d
+		}
 	]
 	order_index: 8
 	quest_links: [ ]
@@ -463,10 +479,111 @@
 					match_nbt: true
 					type: "item"
 				}
+				{
+					id: "7499BC28E0B9A76B"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:sweettide_brokenpoint"
+						}
+					}
+					type: "item"
+				}
 			]
 			title: "打破时空之门"
 			x: 2.0d
 			y: -10.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: ["这是一个童话世界一般的地方，这里的一切都由糖果构成。在这里你无需担心饥饿，因为你所看到的一切都是可食用的；你也无须担心黑暗，多亏了日光软糖，这里亮如白昼。当然，尽管这里看起来像是一个适合散步的公园，但在甜美的外表下，同样隐藏着一些危险。"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:candy_cavity"
+				}
+			}
+			id: "1DAA7B2A273EF5C1"
+			rewards: [
+				{
+					id: "4C478C584B27E071"
+					item: "alexscaves:sundae"
+					type: "item"
+				}
+				{
+					id: "3D8F16BCD5E3A23E"
+					item: "alexscaves:biome_treat"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "进入糖果洞穴"
+			tasks: [
+				{
+					biome: "alexscaves:candy_cavity"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:candy_cavity"
+						}
+					}
+					id: "2380BF20AE8DF17E"
+					type: "biome"
+				}
+				{
+					count: 5L
+					id: "41B7966934ED9368"
+					item: { Count: 5, id: "alexscaves:radiant_essence" }
+					type: "item"
+				}
+			]
+			title: "甜蜜的负担"
+			x: 5.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["1DAA7B2A273EF5C1"]
+			description: ["糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。坐落在最高的甘草蔓上的女巫塔既是它们的家，也是它们探索邪恶甜食配方的地方。"]
+			id: "604734C6B3F31B97"
+			rewards: [
+				{
+					count: 2
+					id: "7D886BF3A3A345EA"
+					item: "alexscaves:sundae"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1462C63C5E2000C6"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:sweettide_brokenpoint"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "纯真幻想"
+			tasks: [{
+				id: "7336BD406157D807"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:sweettide_brokenpoint"
+					}
+				}
+				type: "item"
+			}]
+			title: "糖分临界点"
+			x: 9.5d
+			y: 3.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]
