@@ -39,7 +39,7 @@ FTBQuestsEvents.customReward(e => {
                 e.player.persistentData.putBoolean("disableRankChange", true)
             else
                 e.player.persistentData.putBoolean("disableRankChange", !disableRankChange)
-            if (disableRankChange)
+            if (!disableRankChange)
                 e.player.tell("已关闭难度变化！")
             else
                 e.player.tell("已开启难度变化！")
