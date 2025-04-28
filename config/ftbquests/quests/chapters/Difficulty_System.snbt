@@ -1019,6 +1019,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "100难度以上时击杀掉落鸡蛇之眼的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:cockatrice"
@@ -1102,6 +1103,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_ghoul"
@@ -1120,6 +1122,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_knight"
@@ -1138,6 +1141,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_lich"
@@ -1173,6 +1177,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_thrall"
@@ -1743,6 +1748,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "100难度以上时玩家击杀有概率掉落伊甸碎片"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither_skeleton"
@@ -1797,6 +1803,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
+			subtitle: "100难度以上时击杀掉落伊甸图腾的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither"
