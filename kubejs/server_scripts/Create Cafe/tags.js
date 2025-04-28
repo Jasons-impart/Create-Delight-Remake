@@ -55,3 +55,10 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:empty_boba_cup'])
     e.add("forge:coffee_grounds", "createcafe:coffee_grounds")
 })
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:crops", 
+        "createcafe:cassava_crop",
+        "createcafe:coffee_crop"
+    )
+})
