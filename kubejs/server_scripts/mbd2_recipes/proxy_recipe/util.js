@@ -1,10 +1,10 @@
-let MBDProxyRecipeUtil = {}
+let RecipeUtil = {}
 /**
  * 
  * @param {(Internal.InputFluid_|InputItem_)[]} originalInput
  * @returns {[Internal.Itemstack_[], Internal.InputFluid_[]]}
  */
-MBDProxyRecipeUtil.convertInput = function(originalInput) {
+RecipeUtil.convertInput = function(originalInput) {
     let ret = [[], []]
     if (!(originalInput instanceof Array))
         originalInput = [originalInput]
@@ -42,7 +42,7 @@ MBDProxyRecipeUtil.convertInput = function(originalInput) {
  * @param {(Internal.OutputFluid_|OutputItem_)[]} originalOutput
  * @returns {[OutputItem_[], Internal.OutputFluid_[]]}
  */
-MBDProxyRecipeUtil.convertOutput = function(originalOutput) {
+RecipeUtil.convertOutput = function(originalOutput) {
     let ret = [[], []]
     if (!(originalOutput instanceof Array))
         originalOutput = [originalOutput]

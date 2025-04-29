@@ -1,5 +1,5 @@
 Ponder.registry(event => {
-    event.create(["ae2:pattern_provider", "ae2:crafting_unit"])
+    event.create(["ae2:pattern_provider", "ae2:crafting_unit", "ae2:molecular_assembler"])
         .scene(
             "createdelight:ae_crafting_system",
             "AE的自动合成系统",

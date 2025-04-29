@@ -118,7 +118,10 @@
 - **有问题且停更，不加** Async Locator
   - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
   - 测试过会导致locate不返回结果
-
+- Radium Reforged
+  - 泛用的优化mod，锂的forge迁移版 https://www.mcmod.cn/class/5580.html
+- Nolijium
+  - 调整各种效果 https://www.mcmod.cn/class/18050.html
 # 考虑中的内容模组
 - 拾光定影
   - 拍照 https://www.mcmod.cn/class/12905.html

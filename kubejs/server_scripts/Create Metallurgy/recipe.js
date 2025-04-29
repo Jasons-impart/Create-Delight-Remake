@@ -172,4 +172,10 @@ ServerEvents.recipes(e => {
     }
     vintageimprovements.hammering("createmetallurgy:obdurium_sheet", "#forge:ingots/obdurium")
     .id("createmetallurgy:hammering/obdurium_sheet")
+    entity_melting(e, Fluid.of("createdelight:fire_dragon_blood", 5000), "iceandfire:fire_dragon", 4)
+    .id("createmetallurgy:entity_melting/fire_dragon")
+    entity_melting(e, Fluid.of("createdelight:ice_dragon_blood", 5000), "iceandfire:ice_dragon", 4)
+    .id("createmetallurgy:entity_melting/ice_dragon")
+    entity_melting(e, Fluid.of("createdelight:lightning_dragon_blood", 5000), "iceandfire:lightning_dragon", 4)
+    .id("createmetallurgy:entity_melting/lightning_dragon")
 })

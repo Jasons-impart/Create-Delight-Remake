@@ -9,8 +9,8 @@ function metal_production_line(event, metal, heat, time) {
     // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
     //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
     let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-    .minHeatRequirement(6)
-    .processingTime(100)
+        .minHeatRequirement(6)
+        .processingTime(100)
     if (heat == "superheat")
         bulk.minHeatRequirement(9)
     bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
@@ -54,8 +54,8 @@ function metal_production_line_2(event, metal, heat, time) {
     // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[4]}`, 810), metal[0])
     //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
     let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[4]}`, 810), metal[0])
-    .minHeatRequirement(6)
-    .processingTime(100)
+        .minHeatRequirement(6)
+        .processingTime(100)
     if (heat == "superheat")
         bulk.minHeatRequirement(9)
     bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
@@ -91,8 +91,8 @@ function metal_production_line_3(event, metal, heat, time) {
     // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[3]}`, 810), metal[0])
     //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
     let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[3]}`, 810), metal[0])
-    .minHeatRequirement(6)
-    .processingTime(100)
+        .minHeatRequirement(6)
+        .processingTime(100)
     if (heat == "superheat")
         bulk.minHeatRequirement(9)
     bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
@@ -145,8 +145,8 @@ function metal_production_line_6(event, metal, heat, time) {
     // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[6]}`, 810), metal[0])
     //     .heatRequirement(heat).processingTime(time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
     let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[6]}`, 810), metal[0])
-    .minHeatRequirement(6)
-    .processingTime(time)
+        .minHeatRequirement(6)
+        .processingTime(time)
     if (heat == "superheat")
         bulk.minHeatRequirement(9)
     bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
@@ -190,10 +190,10 @@ function metal_production_line_6(event, metal, heat, time) {
 function metal_production_line_7(event, metal, heat, time) {
     // event.recipes.createmetallurgy.melting(Fluid.of(`${metal[2]}`, 810), metal[0])
     //     .heatRequirement(heat).processingTime(2 * time).id(`createmetallurgy:melting/${metal[0].split(":")[1]}`)
-    
+
     let bulk = event.recipes.createmetallurgy.bulk_melting(Fluid.of(`${metal[2]}`, 810), metal[0])
-    .minHeatRequirement(6)
-    .processingTime(100)
+        .minHeatRequirement(6)
+        .processingTime(100)
     if (heat == "superheat")
         bulk.minHeatRequirement(9)
     bulk.id(`createmetallurgy:bulk_melting/${metal[0].split(":")[1]}`)
@@ -268,4 +268,42 @@ function metal_production_line_5(event, metal) {
             .id(`createmetallurgy:milling/${metal[2].split(":")[1]}`)
 
 }
-
+/**
+ * 
+ * @param {Internal.RecipesEventJS_} e 
+ * @param {(OutputItem_ | Internal.OutputFluid_)[]} results 
+ * @param {Special.EntityType} entity 
+ * @param {number} damage 
+ * @param {(OutputItem_ | Internal.OutputFluid_)[]} [ingredient] 
+ * @param {number} [maxHeatRequirement] 
+ * @param {number} [minHeatRequirement] 
+ */
+function entity_melting(e, results, entity, damage, ingredient, maxHeatRequirement, minHeatRequirement) {
+    let input = RecipeUtil.convertInput(ingredient)
+    let output = RecipeUtil.convertInput(results)
+    let ingr = []
+    let res = []
+    input[0].forEach(item => {
+        ingr.push(Ingredient.of(item))
+    })
+    input[1].forEach(item => {
+        ingr.push(item.toJson())
+    })
+    output[0].forEach(item => {
+        res.push(Ingredient.of(item))
+    })
+    output[1].forEach(item => {
+        res.push(item.toJson())
+    })
+    return e.custom({
+        "type": "createmetallurgy:entity_melting",
+        "entity": {
+            "type": entity,
+            "damage": damage
+        },
+        "ingredients": ingr,
+        "maxHeatRequirement": maxHeatRequirement || 50,
+        "minHeatRequirement": minHeatRequirement || 9,
+        "results": res
+    })
+}
