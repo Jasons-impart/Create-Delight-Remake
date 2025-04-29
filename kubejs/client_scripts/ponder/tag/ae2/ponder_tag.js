@@ -7,6 +7,7 @@ Ponder.tags(event => {
         [
             "ae2:interface",
             "ae2:pattern_provider",
+            "ae2:molecular_assembler",
             "ae2:crafting_unit",
             "ae2:storage_bus",
             "ae2:certus_quartz_crystal",
