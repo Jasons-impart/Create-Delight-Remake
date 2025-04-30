@@ -1,5 +1,6 @@
 @echo off
 setlocal enabledelayedexpansion
+chcp 65001
 
 @REM 配置文件路径
 set "filePath=variables.txt"
