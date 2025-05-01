@@ -112,15 +112,15 @@ StartupEvents.registry("fluid", e => {
             .translationKey(`item.createdelight.${list[0]}_milkshake_bucket`)
     })
     let coffee_fluid = [
-        ['espresso', 0x120A08],
+        ['espresso', 0x8D5528],
         ['americano', 0x120A08],
-        ['ristretto', 0x120A08],
-        ['latte', 0x120A08],
-        ['affogato', 0x120A08],
-        ['con_panna', 0x120A08],
-        ['cappuccino', 0x120A08],
-        ['macchiato', 0x120A08],
-        ['mocha', 0x120A08]]
+        ['ristretto', 0x572E18],
+        ['latte', 0xE2AD78],
+        ['affogato', 0xF2D2BA],
+        ['con_panna', 0x864F26],
+        ['cappuccino', 0xBA894B],
+        ['macchiato', 0x9B5F32],
+        ['mocha', 0x975b21]]
     coffee_fluid.forEach(fluid => {
         e.create(`createdelight:${fluid[0]}_fluid`)
             .noBlock()
