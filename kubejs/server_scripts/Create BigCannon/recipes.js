@@ -51,6 +51,40 @@ ServerEvents.recipes(e => {
             "minecraft:paper"
         ]
     ).id("createbigcannons:mixing/guncotton_3")
+
+    e.recipes.create.mixing(
+        "5x createbigcannons:guncotton",
+        [
+            Fluid.of("alexscaves:acid", 100),
+            "minecraft:gunpowder",
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createbigcannons:mixing/guncotton_from_graycotton")
+    e.recipes.create.mixing(
+        "5x createbigcannons:guncotton",
+        [
+            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            "minecraft:gunpowder",
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createbigcannons:mixing/guncotton_from_graycotton_1")
+    e.recipes.create.mixing(
+        "5x createbigcannons:guncotton",
+        [
+            Fluid.of("alexscaves:acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createbigcannons:mixing/guncotton_from_graycotton_2")
+    e.recipes.create.mixing(
+        "5x createbigcannons:guncotton",
+        [
+            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createbigcannons:mixing/guncotton_from_graycotton_3")
+    
     e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_bronze", 10), "createbigcannons:bronze_scrap")
     .id("createbigcannon:melting/bronze_scrap")
     e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_steel", 10), "createbigcannons:steel_scrap")

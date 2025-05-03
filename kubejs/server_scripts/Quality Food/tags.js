@@ -63,7 +63,8 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:peach_leaves',
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
-        'fruitsdelight:mangosteen_leaves'
+        'fruitsdelight:mangosteen_leaves',
+        'minecraft:sweet_berry_bush'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops"
