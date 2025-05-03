@@ -1,0 +1,26 @@
+{
+	id: "242FE4E90996015E"
+	loot_size: 1
+	order_index: 19
+	rewards: [
+		{
+			item: {
+				Count: 1
+				id: "alexscaves:hood_of_darkness"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "alexscaves:cloak_of_darkness"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+	]
+	title: "荒芜装备"
+}

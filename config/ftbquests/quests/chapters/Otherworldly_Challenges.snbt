@@ -497,7 +497,7 @@
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
-			description: ["这是一个童话世界一般的地方，这里的一切都由糖果构成。在这里你无需担心饥饿，因为你所看到的一切都是可食用的；你也无须担心黑暗，多亏了日光软糖，这里亮如白昼。当然，尽管这里看起来像是一个适合散步的公园，但在甜美的外表下，同样隐藏着一些危险。"]
+			description: ["         这是一个童话世界一般的地方，这里的一切都由糖果构成。在这里你无需担心饥饿，因为你所看到的一切都是可食用的；你也无须担心黑暗，多亏了日光软糖，这里亮如白昼。当然，尽管这里看起来像是一个适合散步的公园，但在甜美的外表下，同样隐藏着一些危险。"]
 			icon: {
 				Count: 1
 				id: "alexscaves:cave_codex"
@@ -546,7 +546,7 @@
 		}
 		{
 			dependencies: ["1DAA7B2A273EF5C1"]
-			description: ["糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。坐落在最高的甘草蔓上的女巫塔既是它们的家，也是它们探索邪恶甜食配方的地方。"]
+			description: ["      他们正在从维度中逃出，准备迎接来自糖果洞穴的攻势吧......真是麻烦......（本挑战含有破坏地形的生物，请慎重使用）。"]
 			id: "604734C6B3F31B97"
 			rewards: [
 				{
@@ -569,7 +569,7 @@
 				}
 			]
 			shape: "square"
-			subtitle: "纯真幻想"
+			subtitle: "这个裂隙的周围让人感到安心，也许这并不是一件坏事"
 			tasks: [{
 				id: "7336BD406157D807"
 				item: {
@@ -583,6 +583,106 @@
 			}]
 			title: "糖分临界点"
 			x: 9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"         这个群系以恐怖的黑暗和诡谲的黑魔法为主题。这里的生物多为发生了异变的诡异生物，而这里的居民都是不欢迎外来者的邪教徒。此处被深邃的黑暗笼罩着，玩家在这里的视野会被缩短，同时光源放出的光也会变得更加微弱。往远处看，玩家只能看到一个个猩红的眼球。危险悄然潜伏于黑暗之中......"
+				"         整个异寂空谷由泥胚、秽岩和粪岩组成，部分表面覆盖着粪岩瓦和粪块，在洞穴的岩壁上会生成多孔秽岩和窥视秽岩。地形断层较大，使其看起来更像峡谷。"
+			]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:forlorn_hollows"
+				}
+			}
+			id: "5FAB57491FCB9546"
+			rewards: [
+				{
+					id: "28190A1D2AED6079"
+					item: "createdelight:otherworld_note"
+					type: "item"
+				}
+				{
+					count: 10
+					id: "4AF55BE209FD636D"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "进入寂静空谷"
+			tasks: [
+				{
+					biome: "alexscaves:forlorn_hollows"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:forlorn_hollows"
+						}
+					}
+					id: "32D4E730B2E24A1D"
+					type: "biome"
+				}
+				{
+					count: 5L
+					id: "3E6714D801650340"
+					item: { Count: 5, id: "alexscaves:pure_darkness" }
+					type: "item"
+				}
+			]
+			title: "寂静无声"
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5FAB57491FCB9546"]
+			description: ["         这些让人感到恐惧的生物凭空出现......我看到了，它们在注视着我，我必须......"]
+			id: "3EDBF935ABBBD2D7"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "39A4BD29EF33B082"
+					table_id: 2607554398810145118L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "451F8D7309677CE8"
+					table_id: 1515464272228904394L
+					type: "loot"
+				}
+				{
+					count: 2
+					id: "145DE3A58AC8A9B3"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:dark"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "自从我深入这片区域，周围的一切仿佛都无声无息"
+			tasks: [{
+				id: "00A85E2D08724AA1"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:dark"
+					}
+				}
+				type: "item"
+			}]
+			title: "荒芜旷野"
+			x: -4.5d
 			y: 3.0d
 		}
 	]

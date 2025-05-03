@@ -5,8 +5,8 @@
 		{
 			"entities": [
 				{
-					"entity": "alexscaves:caniac",
-					"count": 12,
+					"entity": "alexscaves:watcher",
+					"count": 24,
 					"nbt": {
 						"AgeTicks": 1680000,
 						"ActiveEffects": [
@@ -40,15 +40,8 @@
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "alexscaves:caniac",
+					"entity": "alexscaves:watcher",
 					"rolls": 12
-				},
-				{
-					"type": "gateways:stack",
-					"stack": {
-                        "item": "alexscaves:frostmint_spear",
-                        "count": 1,
-						"nbt" : {"alexscaves":"alexscaves:frostmint_spear"}}
 				}
 			],
 			"max_wave_time": 1200,
@@ -57,8 +50,23 @@
 		{
 			"entities": [
 				{
-					"entity": "alexscaves:gumbeeper",
-					"count": 8,
+					"entity": "alexscaves:underzealot",
+					"count": 12,
+					"nbt": {
+						"AgeTicks": 1680000,
+						"ActiveEffects": [
+							{
+								"forge:id": "minecraft:instant_health",
+								"Amplifier": 16,
+								"Duration": 20,
+								"ShowParticles": 0
+							}
+						]
+					}
+				},
+				{
+					"entity": "alexscaves:gloomoth",
+					"count": 2,
 					"nbt": {
 						"AgeTicks": 1680000,
 						"ActiveEffects": [
@@ -97,15 +105,20 @@
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "alexscaves:gumbeeper",
+					"entity": "alexscaves:underzealot",
+					"rolls": 8
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:gloomoth",
 					"rolls": 8
 				},
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "alexscaves:biome_treat",
+                        "item": "alexscaves:desolate_dagger",
                         "count": 1,
-						"nbt" : {"alexscaves":"alexscaves:biome_treat"}}
+						"nbt" : {"alexscaves":"alexscaves:desolate_dagger"}}
 				}
 			],
 			"max_wave_time": 1200,
@@ -114,7 +127,7 @@
 		{
 			"entities": [
 				{
-					"entity": "alexscaves:caramel_cube",
+					"entity": "alexscaves:corrodent",
 					"count": 12,
 					"nbt": {
 						"AgeTicks": 1680000,
@@ -149,8 +162,8 @@
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "alexscaves:caramel_cube",
-					"rolls": 12
+					"entity": "alexscaves:corrodent",
+					"rolls": 24
 				}
 			],
 			"max_wave_time": 1200,
@@ -159,7 +172,7 @@
 		{
 			"entities": [
 				{
-					"entity": "alexscaves:licowitch",
+					"entity": "alexscaves:vesper",
 					"count": 12,
 					"nbt": {
 						"AgeTicks": 1680000,
@@ -194,15 +207,15 @@
 			"rewards": [
 				{
 					"type": "gateways:entity_loot",
-					"entity": "alexscaves:licowitch",
+					"entity": "alexscaves:vesper",
 					"rolls": 8
 				},
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "alexscaves:sugar_staff",
+                        "item": "alexscaves:vesper_stew",
                         "count": 1,
-						"nbt" : {"alexscaves":"alexscaves:sugar_staff"}}
+						"nbt" : {"alexscaves":"alexscaves:vesper_stew"}}
 				}
 			],
 			"max_wave_time": 1200,
@@ -211,44 +224,14 @@
 		{
 			"entities": [
 				{
-					"entity": "alexscaves:licowitch",
-					"count": 6,
+					"entity": "alexscaves:forsaken",
+					"count": 1,
 					"nbt": {
 						"AgeTicks": 1680000,
 						"ActiveEffects": [
 							{
 								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
-				},
-				{
-					"entity": "alexscaves:caramel_cube",
-					"count": 6,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
-				},
-				{
-					"entity": "alexscaves:caniac",
-					"count": 6,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
+								"Amplifier": 160,
 								"Duration": 20,
 								"ShowParticles": 0
 							}
@@ -260,33 +243,33 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": 0.2
+					"value": 0.7
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.2 
+					"value": -0.4 
 				}
 			],
 			"rewards": [
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "gateways:gate_pearl", 
+                        "item": "alexscaves:dreadbow",
                         "count": 1,
-                        "nbt" : {"gateway":"createdelight:sweettide_brokenpoint"}}
+						"nbt" : {"alexscaves":"alexscaves:dreadbow"}}
 				},
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "alexscaves:sundae",
+                        "item": "gateways:gate_pearl", 
                         "count": 2,
-						"nbt" : {"alexscaves":"alexscaves:gingerbread_man_steals"}}
+                        "nbt" : {"gateway":"createdelight:dark"}}
 				}
 			],
 			"max_wave_time": 1200,

@@ -61,7 +61,6 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(2)
     .id("createdelight:sequenced_assembly/piercing_withering_trial")
-
     //添加恶魂试炼
     e.shaped(Item.of('gateways:gate_pearl', '{gateway:"createdelight:ghast_trial"}'), [
         "AAA",
@@ -71,4 +70,32 @@ ServerEvents.recipes(e => {
         A: "minecraft:ghast_tear",
         B: "minecraft:ender_pearl"
     })
+    //添加配方：糖分临界点合成
+
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:sweettide_brokenpoint"}')).withChance(4.0),
+        Item.of("minecarft:ender_pearl").withChance(0.01),
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:caramel"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:biome_treat"]),
+        create.cutting(incomplete, incomplete),
+        create.filling(incomplete, [incomplete, Fluid.of("alexscaves:purple_soda", 250)]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:sundae"])
+    ]).transitionalItem(incomplete).loops(3)
+    .id("createdelight:sequenced_assembly/sweettide_brokenpoint")
+    //添加配方：糖分临界点合成
+
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:dark"}')).withChance(2.0),
+        Item.of("minecarft:ender_pearl").withChance(0.01),
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:occult_gem"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:corrodent_teeth"]),
+        create.cutting(incomplete, incomplete),
+        create.filling(incomplete, [incomplete, Fluid.of("butchercraft:blood_fluid", 250)]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:pure_darkness"])
+    ]).transitionalItem(incomplete).loops(3)
+    .id("createdelight:sequenced_assembly/dark")
 })
