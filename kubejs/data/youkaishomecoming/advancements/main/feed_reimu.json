@@ -1,0 +1,1134 @@
+{
+  "parent": "youkaishomecoming:main/trade_danmaku",
+  "criteria": {
+    "youkaishomecoming:affogato": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:affogato"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:americano": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:americano"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:apaki": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:apaki"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:assorted_dango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:assorted_dango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:avgolemono": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:avgolemono"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:bamboo_mizuyokan": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:bamboo_mizuyokan"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:big_popsicle": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:big_popsicle"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:black_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:black_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:blazing_red_curry": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:blazing_red_curry"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:bowl_of_heart_throbbing_surprise": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:bowl_of_heart_throbbing_surprise"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:bun": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:bun"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:candy_apple": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:candy_apple"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:cappuccino": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:cappuccino"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:coffee_mochi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:coffee_mochi"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:con_panna": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:con_panna"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:cooked_mandrake_root": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:cooked_mandrake_root"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:cornflower_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:cornflower_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:daiginjo": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:daiginjo"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:dassai": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:dassai"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:dried_fish": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:dried_fish"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:espresso": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:espresso"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:fairy_candy": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:fairy_candy"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:full_moons_eve": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:full_moons_eve"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:genmai_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:genmai_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:green_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:green_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:green_water": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:green_water"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:grilled_eel_over_rice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:grilled_eel_over_rice"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:higan_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:higan_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:higi_chocolate": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:higi_chocolate"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:imitation_bear_paw": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:imitation_bear_paw"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:kinako_dango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:kinako_dango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:koishi_mousse": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:koishi_mousse"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:latte": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:latte"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:lions_head": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:lions_head"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:longevity_noodles": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:longevity_noodles"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:macchiato": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:macchiato"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mapo_tofu": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mapo_tofu"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:matcha_mochi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:matcha_mochi"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mead": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mead"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:milk_popsicle": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:milk_popsicle"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mio": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mio"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:miso_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:miso_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mitarashi_dango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mitarashi_dango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mocha": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mocha"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mochi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mochi"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:mushroom_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:mushroom_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:oily_bean_curd": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:oily_bean_curd"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:onigili": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:onigili"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:oolong_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:oolong_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:oyaki": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:oyaki"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:pastitsio": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:pastitsio"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:poor_god_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:poor_god_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:pork_rice_ball": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:pork_rice_ball"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:power_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:power_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:ristretto": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:ristretto"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:roasted_lamprey": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:roasted_lamprey"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:roasted_lamprey_fillet": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:roasted_lamprey_fillet"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:roe": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:roe"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:saidi_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:saidi_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sakura_honey_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sakura_honey_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sakura_mochi": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sakura_mochi"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sauce_grilled_fish": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sauce_grilled_fish"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:seafood_miso_soup": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:seafood_miso_soup"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sekibankiyaki": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sekibankiyaki"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:senbei": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:senbei"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:seven_colored_yokan": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:seven_colored_yokan"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:shaved_ice_over_rice": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:shaved_ice_over_rice"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:shirayuki": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:shirayuki"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sparrow_sake": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sparrow_sake"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:steamed_egg_in_bamboo": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:steamed_egg_in_bamboo"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:stinky_tofu": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:stinky_tofu"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tea_mocha": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tea_mocha"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tengu_tango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tengu_tango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tobiko_gunkan": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tobiko_gunkan"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tofu": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tofu"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tofu_burger": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tofu_burger"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tsukimi_dango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tsukimi_dango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tuscan_salmon": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tuscan_salmon"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:tutu_congee": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:tutu_congee"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:udumbara_cake": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:udumbara_cake"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:white_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:white_tea"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:wind_priestesses": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:wind_priestesses"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:yakumo_inari": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:yakumo_inari"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    },
+    "youkaishomecoming:yashouma_dango": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:yashouma_dango"
+          ]
+        }
+      },
+      "trigger": "youkaishomecoming:feed_reimu"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.youkaishomecoming.advancements.main.feed_reimu.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "youkaishomecoming:reimu_hairband",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.youkaishomecoming.advancements.main.feed_reimu.title"
+    }
+  },
+  "requirements": [
+    [
+      "youkaishomecoming:bamboo_mizuyokan"
+    ],
+    [
+      "youkaishomecoming:dried_fish"
+    ],
+    [
+      "youkaishomecoming:imitation_bear_paw"
+    ],
+    [
+      "youkaishomecoming:pastitsio"
+    ],
+    [
+      "youkaishomecoming:sauce_grilled_fish"
+    ],
+    [
+      "youkaishomecoming:stinky_tofu"
+    ],
+    [
+      "youkaishomecoming:tofu_burger"
+    ],
+    [
+      "youkaishomecoming:seven_colored_yokan"
+    ],
+    [
+      "youkaishomecoming:mio"
+    ],
+    [
+      "youkaishomecoming:mead"
+    ],
+    [
+      "youkaishomecoming:sparrow_sake"
+    ],
+    [
+      "youkaishomecoming:daiginjo"
+    ],
+    [
+      "youkaishomecoming:dassai"
+    ],
+    [
+      "youkaishomecoming:tengu_tango"
+    ],
+    [
+      "youkaishomecoming:full_moons_eve"
+    ],
+    [
+      "youkaishomecoming:wind_priestesses"
+    ],
+    [
+      "youkaishomecoming:espresso"
+    ],
+    [
+      "youkaishomecoming:americano"
+    ],
+    [
+      "youkaishomecoming:ristretto"
+    ],
+    [
+      "youkaishomecoming:latte"
+    ],
+    [
+      "youkaishomecoming:affogato"
+    ],
+    [
+      "youkaishomecoming:con_panna"
+    ],
+    [
+      "youkaishomecoming:cappuccino"
+    ],
+    [
+      "youkaishomecoming:macchiato"
+    ],
+    [
+      "youkaishomecoming:mocha"
+    ],
+    [
+      "youkaishomecoming:roasted_lamprey"
+    ],
+    [
+      "youkaishomecoming:roasted_lamprey_fillet"
+    ],
+    [
+      "youkaishomecoming:cooked_mandrake_root"
+    ],
+    [
+      "youkaishomecoming:roe"
+    ],
+    [
+      "youkaishomecoming:tofu"
+    ],
+    [
+      "youkaishomecoming:oily_bean_curd"
+    ],
+    [
+      "youkaishomecoming:mochi"
+    ],
+    [
+      "youkaishomecoming:tsukimi_dango"
+    ],
+    [
+      "youkaishomecoming:coffee_mochi"
+    ],
+    [
+      "youkaishomecoming:matcha_mochi"
+    ],
+    [
+      "youkaishomecoming:sakura_mochi"
+    ],
+    [
+      "youkaishomecoming:yashouma_dango"
+    ],
+    [
+      "youkaishomecoming:onigili"
+    ],
+    [
+      "youkaishomecoming:senbei"
+    ],
+    [
+      "youkaishomecoming:sekibankiyaki"
+    ],
+    [
+      "youkaishomecoming:yakumo_inari"
+    ],
+    [
+      "youkaishomecoming:koishi_mousse"
+    ],
+    [
+      "youkaishomecoming:bun"
+    ],
+    [
+      "youkaishomecoming:oyaki"
+    ],
+    [
+      "youkaishomecoming:pork_rice_ball"
+    ],
+    [
+      "youkaishomecoming:tobiko_gunkan"
+    ],
+    [
+      "youkaishomecoming:tutu_congee"
+    ],
+    [
+      "youkaishomecoming:steamed_egg_in_bamboo"
+    ],
+    [
+      "youkaishomecoming:higi_chocolate"
+    ],
+    [
+      "youkaishomecoming:fairy_candy"
+    ],
+    [
+      "youkaishomecoming:candy_apple"
+    ],
+    [
+      "youkaishomecoming:milk_popsicle"
+    ],
+    [
+      "youkaishomecoming:big_popsicle"
+    ],
+    [
+      "youkaishomecoming:kinako_dango"
+    ],
+    [
+      "youkaishomecoming:mitarashi_dango"
+    ],
+    [
+      "youkaishomecoming:assorted_dango"
+    ],
+    [
+      "youkaishomecoming:shaved_ice_over_rice"
+    ],
+    [
+      "youkaishomecoming:green_tea"
+    ],
+    [
+      "youkaishomecoming:white_tea"
+    ],
+    [
+      "youkaishomecoming:black_tea"
+    ],
+    [
+      "youkaishomecoming:oolong_tea"
+    ],
+    [
+      "youkaishomecoming:cornflower_tea"
+    ],
+    [
+      "youkaishomecoming:tea_mocha"
+    ],
+    [
+      "youkaishomecoming:saidi_tea"
+    ],
+    [
+      "youkaishomecoming:sakura_honey_tea"
+    ],
+    [
+      "youkaishomecoming:genmai_tea"
+    ],
+    [
+      "youkaishomecoming:green_water"
+    ],
+    [
+      "youkaishomecoming:apaki"
+    ],
+    [
+      "youkaishomecoming:avgolemono"
+    ],
+    [
+      "youkaishomecoming:blazing_red_curry"
+    ],
+    [
+      "youkaishomecoming:grilled_eel_over_rice"
+    ],
+    [
+      "youkaishomecoming:higan_soup"
+    ],
+    [
+      "youkaishomecoming:longevity_noodles"
+    ],
+    [
+      "youkaishomecoming:miso_soup"
+    ],
+    [
+      "youkaishomecoming:seafood_miso_soup"
+    ],
+    [
+      "youkaishomecoming:poor_god_soup"
+    ],
+    [
+      "youkaishomecoming:power_soup"
+    ],
+    [
+      "youkaishomecoming:shirayuki"
+    ],
+    [
+      "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled"
+    ],
+    [
+      "youkaishomecoming:tuscan_salmon"
+    ],
+    [
+      "youkaishomecoming:mushroom_soup"
+    ],
+    [
+      "youkaishomecoming:lions_head"
+    ],
+    [
+      "youkaishomecoming:mapo_tofu"
+    ],
+    [
+      "youkaishomecoming:udumbara_cake"
+    ],
+    [
+      "youkaishomecoming:bowl_of_heart_throbbing_surprise"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "youkaishomecoming:reimu_reward"
+    ]
+  },
+  "sends_telemetry_event": true
+}
