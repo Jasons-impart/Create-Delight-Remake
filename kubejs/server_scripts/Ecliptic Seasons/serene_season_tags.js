@@ -2,6 +2,7 @@ ServerEvents.tags("item", e => {
 
     e.add("eclipticseasons:crops/all_seasons",
         "neapolitan:vanilla_pods",
+        "miners_delight:cave_carrot"
     )
     e.add("eclipticseasons:crops/spring_autumn",
         "frycooks_delight:canola_seeds",

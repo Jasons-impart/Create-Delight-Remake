@@ -127,6 +127,21 @@ ServerEvents.recipes(e => {
         "alexscaves:pine_nuts",
         "alexscaves:pewen_sap"
     ], "cavedelight:pine_and_sap_sandwich", 1)
-    
+    combination(e, [
+        "minecraft:bread",
+        "miners_delight:vegan_patty",
+        "#forge:vegetables/cabbage",
+        "#forge:vegetables/tomato",
+        "#forge:vegetables/onion"
+    ], "miners_delight:vegan_hamburger", 1)
+    combination(e, [
+        "minecraft:bread",
+        "culturaldelights:cooked_squid"
+    ], "miners_delight:squid_sandwich", 1)
+    combination(e, [
+        "minecraft:bread",
+        "miners_delight:cooked_arthropod",
+        "miners_delight:cooked_arthropod"
+    ], "miners_delight:insect_sandwich", 1)
 
 })

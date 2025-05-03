@@ -61,7 +61,8 @@ ServerEvents.tags("minecraft:item", e => {
         "neapolitan:banana_frond",
         "oceanic_delight:sea_grape",
         "vinery:dark_cherry_sapling",
-        "createcafe:coffee_beans"
+        "createcafe:coffee_beans",
+        "miners_delight:cave_carrot"
     )    
     e.add("eclipticseasons:crops/average_humid",
         "farmersrespite:tea_seeds"

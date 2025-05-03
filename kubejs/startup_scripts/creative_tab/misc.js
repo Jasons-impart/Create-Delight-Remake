@@ -164,7 +164,6 @@ StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
   e.remove([
     'kinetic_pixel:firearmworktable',
     'kinetic_pixel:wildgraycotton',
-    'kinetic_pixel:graycotton',
     'kinetic_pixel:graycottonseed',
     'kinetic_pixel:bambooshell',
     'kinetic_pixel:bambooshell',
