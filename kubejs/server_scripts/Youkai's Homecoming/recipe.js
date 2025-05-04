@@ -54,6 +54,7 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:sakura_mochi",
         "youkaishomecoming:seven_colored_yokan"
     ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
+    e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
 
     youkaishomecoming.drying_rack("trailandtales_delight:dried_cherry_petal", "trailandtales_delight:cherry_petal")
