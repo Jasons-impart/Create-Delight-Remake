@@ -13,7 +13,7 @@ EntityEvents.drops(e => {
             return
 
         let weapon = player.getItemInHand("main_hand")
-        if (TetraUtil.getItem(weapon) == null && !TetraUtil.itemHasEffect(weapon, "art_of_forging:beheading"))
+        if (!(weapon.item instanceof $ModularItem) || !TetraUtil.itemHasEffect(weapon, "art_of_forging:beheading"))
             return
         let level = TetraUtil.getEffectLevel(weapon, "art_of_forging:beheading")
         e.addDrop(item, level / 100)
