@@ -58,6 +58,23 @@ function clearAddCtrlTooltip(event, items) {
  * @param { Internal.ItemTooltipEventJS } event 
  * @param { Internal.ItemStack_[] } items 
  */
+/**
+ * 
+ * @param { Internal.ItemTooltipEventJS } event 
+ * @param { Internal.ItemStack_[] } items 
+ */
+function addCtrlTooltip(event, items) {
+    items.forEach(item => {
+        event.addAdvanced(item, (item, advanced, text) => {
+            if (!event.ctrl) {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
+            } else {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
+                text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`))
+            }
+        })
+    })
+}
 function clearAddShiftCtrlTooltip(event, items) {
     items.forEach(item => {
         event.addAdvanced(item, (item, advanced, text) => {

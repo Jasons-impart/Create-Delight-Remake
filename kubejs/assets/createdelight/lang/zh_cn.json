@@ -167,6 +167,7 @@
     "fluid.createdelight.ghastly_grenache": "可怕的歌海娜",
     "fluid.createdelight.lava_fizz": "岩浆菲士",
     "fluid.createdelight.nether_fizz": "下界菲士",
+    "fluid.createdelight.overheated_steam": "高温蒸汽",
 
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",
@@ -457,6 +458,8 @@
     "tooltip.createdelight.shift_kit_white": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
+    "tooltip.createdelight.ctrl_sprinkler": "§7通入§b水§7后可增加§b湿度§7，范围以§b正下方方块§7为中心§b半径为5的球体",
+    "tooltip.createdelight.ctrl_sell_bin": "§7每天早上§b7:00§7会自动出售出货箱中的§b能够出售的食物§7，可出售食物列表请查看§b系统商店",
 
     "createdelight.tip.brass": "本包的最初的黄铜配方已被修改，你需要先使用熔铸盆融化金属后才能进行合金。当然你也可以选择使用粒来合成。",
     "createdelight.tip.foundry_basin_output": "熔铸盆拥有与工作盆类似的自动输出功能，但你需要在输出的面使用扳手右击才能使其开口。",
