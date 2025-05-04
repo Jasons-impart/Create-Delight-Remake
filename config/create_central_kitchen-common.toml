@@ -21,7 +21,7 @@
 	#.
 	#Pie items in this list will not be included in pie overhaul
 	#[@cui:RequiresReload:both]
-	pieOverhaulBlackList = []
+	pieOverhaulBlackList = ["minecraft:pumpkin_pie"]
 	#.
 	#For harvester to function properly, turning on this support will cause the collision shape of the overweight crop block to disappear.
 	#[@cui:RequiresReload:server]

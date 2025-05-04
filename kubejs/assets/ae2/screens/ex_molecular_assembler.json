@@ -1,0 +1,77 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/ex_molecular_assembler.png",
+    "srcRect": [0, 0, 176, 197]
+  },
+  "slots": {
+    "EX_1": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_2": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_3": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_4": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_5": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_6": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_7": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "EX_8": {
+      "left": 29,
+      "top": 30,
+      "grid": "BREAK_AFTER_3COLS"
+    },
+    "MACHINE_OUTPUT": {
+      "left": 126,
+      "top": 48
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ex_molecular_assembler"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "images": {
+    "progressBar": {
+      "texture": "guis/ex_molecular_assembler.png",
+      "srcRect": [148, 201, 6, 18]
+    }
+  },
+  "widgets": {
+    "progressBar": {
+      "left": 148,
+      "top": 48
+    }
+  }
+}

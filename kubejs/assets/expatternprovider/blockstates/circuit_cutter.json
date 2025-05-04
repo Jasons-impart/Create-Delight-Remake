@@ -1,0 +1,224 @@
+{
+  "variants": {
+    "facing=down,working=false,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 90
+    },
+    "facing=down,working=false,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 90
+    },
+    "facing=down,working=false,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 90
+    },
+    "facing=down,working=false,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 90
+    },
+    "facing=down,working=true,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 90
+    },
+    "facing=down,working=true,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 90
+    },
+    "facing=down,working=true,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 90
+    },
+    "facing=down,working=true,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 90
+    },
+    "facing=east,working=false,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 90
+    },
+    "facing=east,working=false,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 90
+    },
+    "facing=east,working=false,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 90
+    },
+    "facing=east,working=false,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 90
+    },
+    "facing=east,working=true,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 90
+    },
+    "facing=east,working=true,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 90
+    },
+    "facing=east,working=true,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 90
+    },
+    "facing=east,working=true,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 90
+    },
+    "facing=north,working=false,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_off"
+    },
+    "facing=north,working=false,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off"
+    },
+    "facing=north,working=false,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off"
+    },
+    "facing=north,working=false,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off"
+    },
+    "facing=north,working=true,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_on"
+    },
+    "facing=north,working=true,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on"
+    },
+    "facing=north,working=true,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on"
+    },
+    "facing=north,working=true,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on"
+    },
+    "facing=south,working=false,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 180
+    },
+    "facing=south,working=false,spin=1": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 180
+    },
+    "facing=south,working=false,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 180
+    },
+    "facing=south,working=false,spin=3": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 180
+    },
+    "facing=south,working=true,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 180
+    },
+    "facing=south,working=true,spin=1": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 180
+    },
+    "facing=south,working=true,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 180
+    },
+    "facing=south,working=true,spin=3": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 180
+    },
+    "facing=up,working=false,spin=0": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 270
+    },
+    "facing=up,working=false,spin=1": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 270
+    },
+    "facing=up,working=false,spin=2": {
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 270
+    },
+    "facing=up,working=false,spin=3": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "x": 270
+    },
+    "facing=up,working=true,spin=0": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 270
+    },
+    "facing=up,working=true,spin=1": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 270
+    },
+    "facing=up,working=true,spin=2": {
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 270
+    },
+    "facing=up,working=true,spin=3": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "x": 270
+    },
+    "facing=west,working=false,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 270
+    },
+    "facing=west,working=false,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 270
+    },
+    "facing=west,working=false,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 270
+    },
+    "facing=west,working=false,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_off",
+      "y": 270
+    },
+    "facing=west,working=true,spin=0": {
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 270
+    },
+    "facing=west,working=true,spin=1": {
+      "ae2:z": 270,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 270
+    },
+    "facing=west,working=true,spin=2": {
+      "ae2:z": 180,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 270
+    },
+    "facing=west,working=true,spin=3": {
+      "ae2:z": 90,
+      "model": "expatternprovider:block/circuit_cutter_on",
+      "y": 270
+    }
+  }
+}

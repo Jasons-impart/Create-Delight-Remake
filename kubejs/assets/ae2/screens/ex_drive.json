@@ -1,0 +1,37 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/ex_drive.png",
+    "srcRect": [0, 0, 176, 199]
+  },
+  "slots": {
+    "STORAGE_CELL": {
+      "left": 34,
+      "top": 16,
+      "grid": "BREAK_AFTER_2COLS"
+    },
+    "EX_1": {
+      "left": 109,
+      "top": 16,
+      "grid": "BREAK_AFTER_2COLS"
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ex_drive"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "widgets": {
+    "openPriority": {
+      "left": 154,
+      "top": 0
+    }
+  }
+}

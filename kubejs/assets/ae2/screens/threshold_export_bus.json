@@ -1,0 +1,15 @@
+{
+  "$schema": "schema.json",
+  "includes": ["io_bus.json"],
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.threshold_export_bus"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  }
+}

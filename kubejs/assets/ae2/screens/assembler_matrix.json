@@ -1,0 +1,52 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/assembler_matrix.png",
+    "srcRect": [0, 0, 195, 199]
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.assembler_matrix"
+      },
+      "position": {
+        "left": 7,
+        "top": 6
+      }
+    },
+    "player_inventory_title": {
+      "text": {
+        "translate": "container.inventory"
+      },
+      "position": {
+        "left": 7,
+        "bottom": 93
+      }
+    }
+  },
+  "slots": {
+    "PLAYER_INVENTORY": {
+      "left": 8,
+      "bottom": 82,
+      "grid": "BREAK_AFTER_9COLS"
+    },
+    "PLAYER_HOTBAR": {
+      "left": 8,
+      "bottom": 24,
+      "grid": "HORIZONTAL"
+    }
+  },
+  "widgets": {
+    "scrollbar": {
+      "left": 175,
+      "top": 31
+    },
+    "search": {
+      "left": 7,
+      "top": 17,
+      "width": 65,
+      "height": 10
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "expatternprovider:block/crystal_fixer",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "expatternprovider:block/crystal_fixer",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "expatternprovider:block/crystal_fixer",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "expatternprovider:block/crystal_fixer",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "expatternprovider:block/crystal_fixer"
+    },
+    "facing=west": {
+      "model": "expatternprovider:block/crystal_fixer",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

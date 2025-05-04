@@ -1,0 +1,30 @@
+{
+  "$schema": "schema.json",
+  "includes": ["io_port.json"],
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ex_io_port"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "slots": {
+    "TOOLBOX": {
+      "bottom": 52,
+      "right": -10,
+      "grid": "BREAK_AFTER_3COLS"
+    }
+  },
+  "widgets": {
+    "toolbox": {
+      "right": -2,
+      "bottom": 60,
+      "width": 68,
+      "height": 68
+    }
+  }
+}
