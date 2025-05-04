@@ -1,0 +1,18 @@
+{
+    DataVersion: 3465,
+    size: [3, 3, 3],
+    data: [
+        {pos: [1, 0, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {channelsUp: 0, connections: ["up"], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [0, 1, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {connections: [], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 1, 0], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {connections: [], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 1, 1], state: "expatternprovider:caner{facing:north,spin:0,waterlogged:false}", nbt: {ForgeCaps: {}, id: "expatternprovider:caner", internalCurrentPower: 0.0d, inv: {item0: {}}, proxy: {p: 0}, target: {Count: -101b, id: "minecraft:air"}, visual: {}}},
+        {pos: [1, 1, 2], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {connections: [], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [2, 1, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {connections: [], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 2, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {p: 0}, id: "ae2:fluix_glass_cable", visual: {channelsDown: 0, connections: ["down"], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}}
+    ],
+    entities: [],
+    palette: [
+        "ae2:cable_bus{light_level:0,waterlogged:false}",
+        "expatternprovider:caner{facing:north,spin:0,waterlogged:false}"
+    ]
+}

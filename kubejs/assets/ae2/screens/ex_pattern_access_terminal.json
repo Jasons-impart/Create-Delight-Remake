@@ -1,0 +1,54 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ex_pattern_access_terminal"
+      },
+      "position": {
+        "left": 21,
+        "top": 11
+      }
+    },
+    "player_inventory_title": {
+      "text": {
+        "translate": "container.inventory"
+      },
+      "position": {
+        "left": 21,
+        "bottom": 93
+      }
+    }
+  },
+  "slots": {
+    "PLAYER_INVENTORY": {
+      "left": 22,
+      "bottom": 82,
+      "grid": "BREAK_AFTER_9COLS"
+    },
+    "PLAYER_HOTBAR": {
+      "left": 22,
+      "bottom": 24,
+      "grid": "HORIZONTAL"
+    }
+  },
+  "widgets": {
+    "scrollbar": {
+      "left": 189,
+      "top": 52
+    },
+    "search_out": {
+      "left": 32,
+      "top": 25,
+      "width": 65,
+      "height": 10
+    },
+    "search_in": {
+      "left": 32,
+      "top": 38,
+      "width": 65,
+      "height": 10
+    }
+  }
+}

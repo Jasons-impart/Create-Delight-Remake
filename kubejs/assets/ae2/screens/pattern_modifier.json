@@ -1,0 +1,36 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "slots": {
+    "ENCODED_PATTERN": {
+      "left": 8,
+      "top": 39,
+      "grid": "BREAK_AFTER_9COLS"
+    },
+    "EX_1": {
+      "left": 58,
+      "top": 35,
+      "grid": "HORIZONTAL"
+    },
+    "EX_2": {
+      "left": 101,
+      "top": 35,
+      "grid": "HORIZONTAL"
+    },
+    "EX_3": {
+      "left": 53,
+      "top": 67,
+      "grid": "HORIZONTAL"
+    },
+    "EX_4": {
+      "left": 8,
+      "top": 16,
+      "grid": "HORIZONTAL"
+    },
+    "EX_5": {
+      "left": 62,
+      "top": 16,
+      "grid": "HORIZONTAL"
+    }
+  }
+}

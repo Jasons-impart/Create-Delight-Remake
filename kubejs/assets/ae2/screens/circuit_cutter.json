@@ -1,0 +1,45 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/circuit_cutter.png",
+    "srcRect": [0, 0, 176, 170]
+  },
+  "slots": {
+    "MACHINE_INPUT": {
+      "left": 28,
+      "top": 37
+    },
+    "STORAGE": {
+      "left": 46,
+      "top": 37
+    },
+    "MACHINE_OUTPUT": {
+      "left": 109,
+      "top": 37
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.circuit_cutter"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "images": {
+    "progressBar": {
+      "texture": "guis/circuit_cutter.png",
+      "srcRect": [178, 36, 6, 18]
+    }
+  },
+  "widgets": {
+    "progressBar": {
+      "left": 131,
+      "top": 36
+    }
+  }
+}

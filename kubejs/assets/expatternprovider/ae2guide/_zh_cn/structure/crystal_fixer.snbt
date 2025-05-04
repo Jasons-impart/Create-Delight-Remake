@@ -1,0 +1,16 @@
+{
+    DataVersion: 3337,
+    size: [2, 2, 1],
+    data: [
+        {pos: [0, 0, 0], state: "expatternprovider:crystal_fixer{facing:up}"},
+        {pos: [0, 1, 0], state: "ae2:damaged_budding_quartz"},
+        {pos: [1, 0, 0], state: "expatternprovider:crystal_fixer{facing:up}"},
+        {pos: [1, 1, 0], state: "ae2:chipped_budding_quartz"}
+    ],
+    entities: [],
+    palette: [
+        "expatternprovider:crystal_fixer{facing:up}",
+        "ae2:chipped_budding_quartz",
+        "ae2:damaged_budding_quartz"
+    ]
+}

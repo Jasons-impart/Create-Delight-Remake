@@ -1,0 +1,15 @@
+{
+  "$schema": "schema.json",
+  "includes": ["ex_interface.json"],
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.oversize_interface"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  }
+}
