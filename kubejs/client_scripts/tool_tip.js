@@ -30,6 +30,10 @@ ItemEvents.tooltip(e => {
     clearAddCtrlTooltip(e, [
         
     ])
+    addCtrlTooltip(e, [
+        "createdelight:sprinkler",
+        'createdelight:sell_bin',
+    ])
     clearAddShiftCtrlTooltip(e, [
 
     ])
