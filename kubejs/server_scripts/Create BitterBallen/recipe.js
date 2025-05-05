@@ -67,7 +67,10 @@ ServerEvents.recipes(e => {
         "create_bic_bit:crushed_nether_wart"
     ]).heated()
     .id("create_bic_bit:mixing/curdled_milk")
-    e.recipes.create.compacting("vintagedelight:cheese_curds", Fluid.of("create_bic_bit:curdled_milk", 250))
+    e.recipes.create.compacting(
+        "vintagedelight:cheese_curds",
+        Fluid.of("create_bic_bit:curdled_milk", 250)
+    ).id("create_bic_bit:compacting/cheese_curds")
     threshing(e, "minecraft:sunflower", [
         "create_bic_bit:sunflower_seeds",
         Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)

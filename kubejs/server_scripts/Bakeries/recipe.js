@@ -60,6 +60,8 @@ ServerEvents.recipes(e => {
     ])
     e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
 
+    //展示框
+    e.replaceInput({ id: "bakeries:menu_blcok"}, "minecraft:gray_wool", "minecraft:item_frame")
     // 模具
     vintageimprovements.curving(
         'bakeries:mould',
@@ -346,6 +348,33 @@ ServerEvents.recipes(e => {
             .id("bakeries:sequenced_assembly/mould_cheese_cocoa_toast_dough_2")
 
     }
+    {
+        let iner = "bakeries:baguette"
+        create.sequenced_assembly("2x bakeries:baguette_with_filling", iner,
+            [
+                create.cutting(iner, iner),
+                create.deploying(iner, [iner, "#forge:vegetables/tomato"]),
+                create.deploying(iner, [iner, "#forge:cooked_pork"]),
+                create.cutting(iner, iner)
+            ]
+        )
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequenced_assembly/baguette_with_filling")
+    }
+    {
+        let iner = 'bakeries:croissant'
+        create.sequenced_assembly('2x bakeries:tomato_cheese_croissant_sandwich', iner, 
+            [
+                create.cutting(iner, iner),
+                create.deploying(iner, [iner, '#forge:vegetables/tomato']),
+                create.deploying(iner, [iner, '#forge:cheese']),
+            ]
+        )
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequenced_assembly/tomato_cheese_croissant_sandwich")
+    }
 
     //烤面包
     let breads = [
@@ -446,4 +475,8 @@ ServerEvents.recipes(e => {
         '6x bakeries:country_bread_slice',
         'bakeries:country_bread' 
     ).id("bakeries:cutting/country_bread")
+})
+ServerEvents.tags("item", e => {
+    e.removeAllTagsFrom('bakeries:cheese_cube')
+    e.removeAllTagsFrom("vintagedelight:cheese_slice")
 })

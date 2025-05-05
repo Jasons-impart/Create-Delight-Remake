@@ -16,7 +16,7 @@ ServerEvents.recipes(e => {
 
     make_cake(e, "trailandtales_delight:cherry_petal", "trailandtales_delight:cherry_cake")
 
-    brewing(e, "farmersrespite:coffee", [
+    brewing(e, "createdelight:espresso_fluid", [
         "trailandtales_delight:baked_pitcher_pod", 
         "trailandtales_delight:baked_torchflower_seeds"],
     "createdelight:ancient_coffee",
@@ -39,22 +39,46 @@ ServerEvents.recipes(e => {
     create.mixing(Fluid.of("createdelight:ancient_coffee", 1000), [
         "trailandtales_delight:baked_pitcher_pod", 
         "trailandtales_delight:baked_torchflower_seeds",
-        Fluid.of("farmersrespite:coffee", 1000)
+        Fluid.of("createdelight:espresso_fluid", 1000)
     ]).id("createdelight:mixing/ancient_coffee")
+    create.filling("trailandtales_delight:ancient_coffee", 
+        [
+            Fluid.of("createdelight:ancient_coffee", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/ancient_coffee")
     create.mixing(Fluid.of("createdelight:torchflower_tea", 1000), [
         "minecraft:sugar", 
         "minecraft:torchflower",
         Fluid.of("farmersrespite:yellow_tea", 1000)
     ]).id("createdelight:mixing/torchflower_tea")
+    create.filling("trailandtales_delight:torchflower_tea",
+        [
+            Fluid.of("createdelight:torchflower_tea", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/torchflower_tea")
     create.mixing(Fluid.of("createdelight:cherry_petal_tea", 1000), [
         "minecraft:sugar", 
         "trailandtales_delight:dried_cherry_petal",
         Fluid.of("farmersrespite:yellow_tea", 1000)
     ]).id("createdelight:mixing/cherry_petal_tea")
+    create.filling("trailandtales_delight:cherry_petal_tea",
+        [
+            Fluid.of("createdelight:cherry_petal_tea", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/cherry_petal_tea")
     create.mixing(Fluid.of("createdelight:pitcher_plant_tea", 1000), [
         "trailandtales_delight:baked_pitcher_pod", 
         "trailandtales_delight:baked_torchflower_seeds",
         Fluid.of("farmersrespite:green_tea", 1000)
     ]).id("createdelight:mixing/pitcher_plant_tea")
+    create.filling("trailandtales_delight:pitcher_plant_tea",
+        [
+            Fluid.of("createdelight:pitcher_plant_tea", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/pitcher_plant_tea")
 
 })
