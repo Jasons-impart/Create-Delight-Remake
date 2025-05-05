@@ -5,6 +5,22 @@ StartupEvents.modifyCreativeTab("farmersdelight:farmersdelight", e => {
    'culturaldelights:cucumber_crate' 
   ])
 })
+//农夫暇事
+StartupEvents.modifyCreativeTab("farmersrespite:main", e => {
+  e.remove([
+   'farmersrespite:coffee',
+   'farmersrespite:long_coffee',
+   'farmersrespite:strong_coffee'
+  ])
+})
+//食物与饮品
+StartupEvents.modifyCreativeTab("minecraft:food_and_drinks", e => {
+  e.remove([
+    'farmersrespite:coffee',
+    'farmersrespite:long_coffee',
+    'farmersrespite:strong_coffee' 
+  ])
+})
 // 玉米乐事
 StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
     e.remove([
@@ -88,6 +104,7 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:bottle_butter',
    'bakeries:bottle_milk',
    'bakeries:bottle_cream',
+   "bakeries:fermentation_tank",
    'bakeries:yeast_tank',
    'bakeries:cheese_tank',
    'bakeries:olive',
@@ -95,6 +112,17 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:butter_cube',
    'bakeries:flour_sieve',
    'bakeries:oven',
+   'bakeries:moka_pot',
+   'bakeries:moka_pot_fill',
+   "bakeries:iced_american",
+   "bakeries:iced_latte",
+   "bakeries:brown_sugar_latte",
+   "bakeries:cream_bingle_coffee",
+   'bakeries:drink_cup',
+   "bakeries:olive_oil",
+   'bakeries:raw_coffee_bean',
+   'bakeries:coffee_bean',
+   'bakeries:ground_coffee',
   ])
 })
 StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {
@@ -106,7 +134,38 @@ StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab",
 })
 StartupEvents.modifyCreativeTab("vintagedelight:vintage_tab", e => {
   e.remove([
-    "vintagedelight:cheese_curds"
+    "vintagedelight:cheese_slice"
+  ])
+})
+StartupEvents.modifyCreativeTab("trailandtales_delight:item", e => {
+  e.remove([
+    'trailandtales_delight:curd_block',
+    'trailandtales_delight:cheese_wheel',
+    'trailandtales_delight:cheese_slice'
+  ])
+})
+StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
+  e.remove([
+    'youkaishomecoming:redbean',
+    'youkaishomecoming:coffee_berries',
+    'youkaishomecoming:green_coffee_bean',
+    'youkaishomecoming:coffee_beans',
+    'youkaishomecoming:coffee_powder',
+    'youkaishomecoming:tea_seeds',
+    'youkaishomecoming:tea_leaves',
+    'youkaishomecoming:green_tea_leaves',
+    'youkaishomecoming:black_tea_leaves',
+    'youkaishomecoming:oolong_tea_leaves',
+    'youkaishomecoming:redbean_bag',
+    'youkaishomecoming:coffee_bean_bag',
+    'youkaishomecoming:tea_leaf_bag',
+    'youkaishomecoming:green_tea_bag',
+    'youkaishomecoming:black_tea_bag',
+    'youkaishomecoming:oolong_tea_bag',
+    'youkaishomecoming:butter',
+    'youkaishomecoming:doughnut',
+    'youkaishomecoming:blood_bottle',
+    'youkaishomecoming:bowl_of_cream',
   ])
 })
 

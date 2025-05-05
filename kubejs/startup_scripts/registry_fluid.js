@@ -112,9 +112,10 @@ StartupEvents.registry("fluid", e => {
             .translationKey(`block.createdelight.${list[0]}_milkshake`)
             .translationKey(`item.createdelight.${list[0]}_milkshake_bucket`)
     })
+    //咖啡流体
     let coffee_fluid = [
         ['espresso', 0x8D5528],
-        ['americano', 0x120A08],
+        ['americano', 0x53443d],
         ['ristretto', 0x572E18],
         ['latte', 0xE2AD78],
         ['affogato', 0xF2D2BA],

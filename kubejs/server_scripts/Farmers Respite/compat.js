@@ -95,4 +95,12 @@ ServerEvents.recipes(e => {
     .id("farmersrespite:haunting/yellow_tea_leaves")
     e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")
     .id("farmersrespite:haunting/black_tea_leaves")
+    e.recipes.farmersdelight.cooking(
+        [
+            '#forge:cooked_fishes/cod',
+            "farmersrespite:black_tea_leaves",
+            '#festival_delicacies:cabbage',
+            "createdelight:empty_riceball"
+        ], 'farmersrespite:black_cod', 0.5, 200, "minecraft:bowl"
+    ).id('farmersrespite:black_cod')
 })

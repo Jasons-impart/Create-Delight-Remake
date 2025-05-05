@@ -1,7 +1,7 @@
 /**
  * @param { Internal.RecipesEventJS_ } event 
  * @param { Internal.FluidStackJS_ } base 
- * @param { InputItem_[] } inputs 
+ * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
  * @param {number} [amount]
@@ -51,7 +51,7 @@ function brewing(event, base, inputs, fluid, output, amount) {
  * 无倾倒的煮茶
  * @param { Internal.RecipesEventJS_ } event 
  * @param { Internal.FluidStackJS_ } base 
- * @param { InputItem_[] } inputs 
+ * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
  * @param {number} [amount]

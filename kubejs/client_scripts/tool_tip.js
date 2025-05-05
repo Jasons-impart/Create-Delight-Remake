@@ -26,6 +26,7 @@ ItemEvents.tooltip(e => {
         'vintageimprovements:vacuum_chamber',
         "vintageimprovements:vibrating_table",
         'vintageimprovements:lathe',
+        'vintagedelight:cheese_curds',
     ])
     clearAddCtrlTooltip(e, [
         
@@ -33,6 +34,7 @@ ItemEvents.tooltip(e => {
     addCtrlTooltip(e, [
         "createdelight:sprinkler",
         'createdelight:sell_bin',
+        'vintagedelight:cheese_mold',
     ])
     clearAddShiftCtrlTooltip(e, [
 
