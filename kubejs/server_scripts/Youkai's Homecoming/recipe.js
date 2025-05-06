@@ -21,7 +21,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:coffee_powder',
         'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:doughnut',
-        'youkaishomecoming:ice_cube'
+        'youkaishomecoming:ice_cube',
+        "youkaishomecoming:kettle",
     ])
     remove_recipes_id(e, [
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
@@ -33,9 +34,12 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:mandrake_root_cutting',
         'youkaishomecoming:raw_lamprey_cutting',
         "youkaishomecoming:red_velvet_cake_slice",
-        "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting"
+        "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting",
     ])
-    remove_recipes_type(e, ["youkaishomecoming:moka_pot"]);
+    remove_recipes_type(e, [
+        "youkaishomecoming:moka_pot",
+        "youkaishomecoming:kettle"
+    ]);
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:black_tea_leaves', 'farmersrespite:black_tea_leaves')
@@ -268,7 +272,25 @@ ServerEvents.recipes(e => {
         create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)], `youkaishomecoming:${coffee}`)
             .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
     })
+    let tea_list = [
+        "scarlet_tea",
+        "lemon_black_tea",
+        "tea_mocha",
+        "saidi_tea",
+        "white_tea",
+        "cornflower_tea",
+        "sakura_honey_tea",
+        "genmai_tea",
+        "green_water"
+    ]
+    tea_list.forEach(tea => {
+        create.filling(`youkaishomecoming:${tea}`, ["minecraft:glass_bottle", Fluid.of(`createdelight:${tea}`, 250)])
+            .id(`youkaishomecoming:filling/${tea}`)
+        create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${tea}`, 250)], `youkaishomecoming:${tea}`)
+            .id(`youkaishomecoming:emptying/${tea}`) 
+    })
 
+    pouring(e, Item.of('minecraft:potion', '{Potion:"minecraft:water"}').strongNBT(), "minecraft:water")
     brewing(e, "minecraft:water", ["createcafe:coffee_grounds", "createcafe:coffee_grounds"], "createdelight:espresso_fluid", "youkaishomecoming:espresso")
     brewing(e, "minecraft:water", ["createcafe:coffee_grounds"], "createdelight:americano_fluid", "youkaishomecoming:americano")
     brewing(e, "createdelight:espresso_fluid", ["createcafe:coffee_grounds"], "createdelight:ristretto_fluid", "youkaishomecoming:ristretto")
@@ -278,9 +300,17 @@ ServerEvents.recipes(e => {
     brewing(e, "createdelight:espresso_fluid", ["ratatouille:cocoa_powder", "#forge:milk/milk_bottle"], "createdelight:mocha_fluid", "youkaishomecoming:mocha")
     brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl", "#forge:milk/milk_bottle"], "createdelight:cappuccino_fluid", "youkaishomecoming:cappuccino")
     brewing(e, "createdelight:espresso_fluid", ["createdelight:whipped_cream_bowl"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato")
+    brewing(e, "butchercraft:blood_fluid", ["farmersrespite:black_tea_leaves"], "createdelight:scarlet_tea", "youkaishomecoming:scarlet_tea")
+    brewing(e, "farmersrespite:black_tea", ["fruitsdelight:lemon_slice", "minecraft:sugar"], "createdelight:lemon_black_tea", "youkaishomecoming:lemon_black_tea")
+    brewing(e, "farmersrespite:black_tea", ["ratatouille:cocoa_powder", "#forge:milk/milk_bottle"], "createdelight:tea_mocha", "youkaishomecoming:tea_mocha")
+    brewing(e, "farmersrespite:black_tea", ["minecraft:sugar", "minecraft:sugar"], "createdelight:saidi_tea", "youkaishomecoming:saidi_tea")
+    brewing(e, "minecraft:water", ["minecraft:cornflower", "minecraft:cornflower"], "createdelight:cornflower_tea", "youkaishomecoming:cornflower_tea")
+    brewing(e, "minecraft:water", ["trailandtales_delight:dried_cherry_petal", "minecraft:honey_bottle"], "createdelight:sakura_honey_tea", "youkaishomecoming:sakura_honey_tea")
+    brewing(e, "farmersrespite:green_tea", ["#forge:crops/rice", "#forge:crops/rice"], "createdelight:genmai_tea", "youkaishomecoming:genmai_tea")
+    brewing(e, "minecraft:water", ["#forge:salad_ingredients/cabbage", "#forge:salad_ingredients/cabbage"], "createdelight:green_water", "youkaishomecoming:green_water")
+    brewing(e, "minecraft:water", ["youkaishomecoming:white_tea_leaves", "youkaishomecoming:white_tea_leaves"], "createdelight:white_tea", "youkaishomecoming:white_tea")
     brewing_2(e, "minecraft:water", ["createdelight:whipped_cream_bowl", "createcafe:coffee_grounds"], "createdelight:macchiato_fluid", "youkaishomecoming:macchiato")
 
-    // pouring(e, Item.of('minecraft:potion', '{Potion:"minecraft:water"}').strongNBT(), "minecraft:water")
     // pouring(e, "youkaishomecoming:espresso", "createdelight:espresso_fluid")
     // pouring(e, "youkaishomecoming:americano", "createdelight:americano_fluid")
     // pouring(e, "youkaishomecoming:ristretto", "createdelight:ristretto_fluid")
@@ -291,4 +321,87 @@ ServerEvents.recipes(e => {
     // pouring(e, "youkaishomecoming:mocha", "createdelight:mocha_fluid")
     // pouring(e, "youkaishomecoming:cappuccino", "createdelight:cappuccino_fluid")
     // pouring(e, "youkaishomecoming:macchiato", "createdelight:macchiato_fluid")
+    create.mixing(
+        Fluid.of("createdelight:scarlet_tea", 1000),
+        [
+            Fluid.of("butchercraft:blood_fluid", 1000),
+            "farmersrespite:black_tea_leaves"
+        ]
+    ).id("youkaishomecoming:mixing/scarlet_tea")
+    create.mixing(
+        Fluid.of("createdelight:lemon_black_tea", 1000),
+        [
+            Fluid.of("farmersrespite:black_tea", 1000),
+            "fruitsdelight:lemon_slice",
+            "minecraft:sugar"
+        ]
+    ).id("youkaishomecoming:mixing/lemon_black_tea")
+    e.custom({
+        type: "create:mixing",
+        heatRequirement: "heated",
+        ingredients: [
+            {
+                item: "ratatouille:cocoa_powder"
+            },
+            {
+                amount: 250,
+                fluidTag: "forge:milk"
+            },
+            {
+                amount: 1000,
+                fluid: "farmersrespite:black_tea",
+                nbt: {}
+            }
+        ],
+        results: [
+            {
+                amount: 1000,
+                fluid: "createdelight:tea_mocha"
+            }
+        ]
+    }).id("youkaishomecoming:mixing/tea_mocha")
+    create.mixing(
+        Fluid.of("createdelight:saidi_tea", 1000),
+        [
+            Fluid.of("farmersrespite:black_tea", 1000),
+            "minecraft:sugar",
+            "minecraft:sugar"
+        ]
+    ).id("youkaishomecoming:mixing/saidi_tea")
+    create.mixing(
+        Fluid.of("createdelight:cornflower_tea", 500),
+        [
+            Fluid.of("minecraft:water", 500),
+            "minecraft:cornflower"
+        ]
+    ).id("youkaishomecoming:mixing/cornflower_tea")
+    create.mixing(
+        Fluid.of("createdelight:sakura_honey_tea", 500),
+        [
+            Fluid.of("minecraft:water", 500),
+            Fluid.of("create:honey", 250),
+            "trailandtales_delight:dried_cherry_petal"
+        ] 
+    ).id("youkaishomecoming:mixing/sakura_honey_tea")
+    create.mixing(
+        Fluid.of("createdelight:genmai_tea", 500),
+        [
+            Fluid.of("farmersrespite:green_tea", 500),
+            "#forge:crops/rice",
+        ] 
+    ).id("youkaishomecoming:mixing/genmai_tea")
+    create.mixing(
+        Fluid.of("createdelight:green_water", 500),
+        [
+            Fluid.of("minecraft:water", 500),
+            "#forge:salad_ingredients/cabbage",
+        ]
+    ).id("youkaishomecoming:mixing/green_water")
+    create.mixing(
+        Fluid.of("createdelight:white_tea", 500),
+        [
+            Fluid.of("minecraft:water", 500),
+            "youkaishomecoming:white_tea_leaves",
+        ]
+    ).id("youkaishomecoming:mixing/white_tea")
 })

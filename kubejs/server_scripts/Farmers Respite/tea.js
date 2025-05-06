@@ -36,11 +36,11 @@ ServerEvents.recipes(e => {
             "minecraft:nether_wart"
         ]
     ).heated().id("farmersrespite:mixing/purulent_tea")
+    brewing(e, "minecraft:water", ["minecraft:dandelion", "minecraft:dandelion"], "farmersrespite:dandelion_tea", 'farmersrespite:dandelion_tea')
     e.recipes.create.mixing(
-        Fluid.of("farmersrespite:dandelion_tea", 1000),
+        Fluid.of("farmersrespite:dandelion_tea", 500),
         [
-            Fluid.water(1000),
-            "#farmersrespite:tea_leaves",
+            Fluid.water(500),
             "minecraft:dandelion"
         ]
     ).heated().id("farmersrespite:mixing/dandelion_tea")

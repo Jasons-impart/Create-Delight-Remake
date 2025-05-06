@@ -168,6 +168,18 @@
     "fluid.createdelight.lava_fizz": "岩浆菲士",
     "fluid.createdelight.nether_fizz": "下界菲士",
     "fluid.createdelight.overheated_steam": "高温蒸汽",
+    "fluid.createdelight.scarlet_tea": "红魔馆茶",
+    "fluid.createdelight.lemon_black_tea": "柠檬红茶",
+    "fluid.createdelight.tea_mocha": "摩卡茶",
+    "fluid.createdelight.saidi_tea": "埃及糖茶",
+    "fluid.createdelight.cornflower_tea": "矢车菊茶",
+    "fluid.createdelight.sakura_honey_tea": "樱花蜜茶",
+    "fluid.createdelight.genmai_tea": "玄米茶",
+    "fluid.createdelight.green_water": "青汁",
+    "fluid.createdelight.white_tea": "白茶",
+
+    "fluid.createdelight.dragon_breath_soda": "龙息汽水",
+
 
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",

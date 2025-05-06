@@ -65,8 +65,8 @@ ItemEvents.modification(e => {
     /**
      * 
      * @param {Internal.Ingredient_} food 
-     * @param {number} [polyphenols_duration] 时间以s为单位
-     * @param {number} [polyphenols_strength]
+     * @param {number} polyphenols_duration 时间以s为单位
+     * @param {number} polyphenols_strength
      * @param {number} [sober_duration] 以s为单位,若不填则不添加
      * @param {number} [thick_duration] 以s为单位,若不填则不添加
      */
@@ -90,6 +90,65 @@ ItemEvents.modification(e => {
             } 
         })
     }
+// 黄茶效果修改,食物id,持续时间（s）,强度
+    /**
+     * 
+     * @param {Internal.Ingredient_} food 
+     * @param {number} polyphenols_duration 时间以s为单位
+     * @param {number} polyphenols_strength
+     * @param {number} [sober_duration] 以s为单位,若不填则不添加
+     * @param {number} [smoothing_duration] 以s为单位,若不填则不添加
+     */
+    let yellow_tea_effect = function (food, polyphenols_duration, polyphenols_strength, sober_duration, smoothing_duration) {
+        e.modify(food, item => {
+            item.foodProperties = food => {
+                food.removeEffect("minecraft:resistance")
+                food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
+                if (sober_duration == undefined) {
+                    return
+                }
+                else {
+                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
+                }
+                if (smoothing_duration == undefined) {
+                    return
+                }
+                else {
+                    food.effect("youkaishomecoming:smoothing", 20 * smoothing_duration, 0, 1)
+                }
+            } 
+        })
+    }
+// 绿茶效果修改,食物id,持续时间（s）,强度
+    /**
+     * 
+     * @param {Internal.Ingredient_} food 
+     * @param {number} [polyphenols_duration] 时间以s为单位
+     * @param {number} [polyphenols_strength]
+     * @param {number} [sober_duration] 以s为单位,若不填则不添加
+     * @param {number} [haste_duration] 以s为单位,若不填则不添加
+     */
+    let green_tea_effect = function (food, polyphenols_duration, polyphenols_strength, sober_duration, haste_duration) {
+        e.modify(food, item => {
+            item.foodProperties = food => {
+                food.removeEffect("minecraft:haste")
+                food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
+                if (sober_duration == undefined) {
+                    return
+                }
+                else {
+                    food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
+                }
+                if (haste_duration == undefined) {
+                    return
+                }
+                else {
+                    food.effect("minecraft:haste", 20 * haste_duration, 0, 1)
+                }
+            } 
+        })
+    }
+
 // 咖啡效果修改,食物id,持续时间（s）,强度
     /**
      * 
@@ -150,6 +209,33 @@ ItemEvents.modification(e => {
     food_effects("create_central_kitchen:chocolate_cake_slice", "neapolitan:sugar_rush", 2, 1)
     food_effects('corn_delight:classic_corn_dog', "minecraft:resistance", 10, 1)
     food_effects('corn_delight:classic_corn_dog', "minecraft:fire_resistance", 10, 1)
+    //紫颂果食物传送效果
+    food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
+    //奥利奥效果
+    e.modify('createcafe:oreo', item => {
+        item.foodProperties = food => {
+            food.effect("minecraft:speed", 400, 1, 1)
+            food.effect("minecraft:regeneration", 400, 1, 1)
+            food.effect("minecraft:resistance", 400, 1, 1)
+            food.effect("minecraft:fire_resistance", 400, 1, 1)
+            food.effect("minecraft:absorption", 400, 1, 1)
+        }
+    })
+    // e.modify('createcafe:oreo_milk_tea', item => {
+    //     item.foodProperties = food => {
+    //         food.removeEffect("minecraft:speed")
+    //         food.effect("minecraft:speed", 400, 1, 1)
+    //         food.removeEffect("minecraft:regeneration")
+    //         food.effect("minecraft:regeneration", 400, 1, 1)
+    //         food.removeEffect("minecraft:resistance")
+    //         food.effect("minecraft:resistance", 400, 1, 1)
+    //         food.removeEffect("minecraft:fire_resistance")
+    //         food.effect("minecraft:fire_resistance", 400, 1, 1)
+    //         food.removeEffect("minecraft:absorption")
+    //         food.effect("minecraft:absorption", 400, 1, 1)
+    //     }
+    // })
 
     maxDamage_change("butchercraft:apron", 240)
     maxDamage_change("butchercraft:gloves", 225)
@@ -187,10 +273,66 @@ ItemEvents.modification(e => {
     red_tea_effect("farmersrespite:strong_black_tea", 30, 1, 30, 30)
     red_tea_effect("collectorsreap:pomegranate_black_tea", 60, 0, 60, 30)
     red_tea_effect("collectorsreap:black_tea_gummy", 20, 2, 20, 10)
+    red_tea_effect('ends_delight:chorus_fruit_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('ends_delight:bubble_tea', 45, 0, 45, 20)
+    red_tea_effect('fruitsdelight:mango_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:banana_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:cherry_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:strawberry_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:mango_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:peach_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:blueberry_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:sweetberry_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:avocado_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:vanilla_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:oreo_milk_tea', 45, 0, 45, 20)
     e.modify("farmersrespite:black_cod", item => {
         item.foodProperties = food => {
             food.removeEffect("farmersrespite:caffeinated")
             food.effect("youkaishomecoming:thick", 600, 0, 1)
+        }
+    })
+
+    yellow_tea_effect('farmersrespite:yellow_tea', 60, 0, 60, 30)
+    yellow_tea_effect('farmersrespite:long_yellow_tea', 90, 0, 90, 45)
+    yellow_tea_effect('farmersrespite:strong_yellow_tea', 30, 1, 30, 30)
+    yellow_tea_effect('trailandtales_delight:torchflower_tea', 45, 0, 45, 20)
+    yellow_tea_effect('trailandtales_delight:cherry_petal_tea', 45, 0, 45, 20)
+    yellow_tea_effect('fruitsdelight:hawberry_tea', 45, 0, 45, 20)
+    yellow_tea_effect('fruitsdelight:peach_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:lychee_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:pumpkin_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:kiwi_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:orange_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:persimmon_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect('createcafe:durian_milk_tea', 45, 0, 45, 20)
+    yellow_tea_effect("collectorsreap:yellow_tea_gummy", 20, 2, 20, 10)
+    
+
+    green_tea_effect('farmersrespite:green_tea', 60, 1, 60, 30)
+    green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)
+    green_tea_effect('farmersrespite:strong_green_tea', 30, 2, 30, 30)
+    green_tea_effect('collectorsreap:lime_green_tea', 45, 0, 45, 20)
+    green_tea_effect('alexcaves_delight:tree_star_tea', 45, 0, 45, 20)
+    green_tea_effect('fruitsdelight:mangosteen_tea', 45, 0, 45, 20)
+    green_tea_effect('trailandtales_delight:pitcher_plant_tea', 45, 0, 45, 20)
+    green_tea_effect('fruitsdelight:lychee_cherry_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:lemon_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:fig_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:grape_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:pineapple_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:apple_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:blood_orange_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:watermelon_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('cavedelight:fiddlehead_tea', 45, 0, 45, 20)
+    green_tea_effect('farmersrespite:green_tea_cookie', 20, 0, 20, 10)
+    green_tea_effect('createdelight:green_tea_cookie_dough', 10, 0)
+    e.modify("collectorsreap:green_tea_gummy", item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:haste")
+            food.effect("youkaishomecoming:tea_polyphenols", 400, 2, 1)
+            food.effect("youkaishomecoming:sober", 400, 0, 1)
+            food.effect("minecraft:haste", 200, 2, 1)
         }
     })
 })
