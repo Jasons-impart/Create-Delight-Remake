@@ -336,30 +336,30 @@ ServerEvents.recipes(e => {
             "minecraft:sugar"
         ]
     ).id("youkaishomecoming:mixing/lemon_black_tea")
-    e.custom({
-        type: "create:mixing",
-        heatRequirement: "heated",
-        ingredients: [
-            {
-                item: "ratatouille:cocoa_powder"
-            },
-            {
-                amount: 250,
-                fluidTag: "forge:milk"
-            },
-            {
-                amount: 1000,
-                fluid: "farmersrespite:black_tea",
-                nbt: {}
-            }
-        ],
-        results: [
-            {
-                amount: 1000,
-                fluid: "createdelight:tea_mocha"
-            }
-        ]
-    }).id("youkaishomecoming:mixing/tea_mocha")
+    // e.custom({
+    //     type: "create:mixing",
+    //     heatRequirement: "heated",
+    //     ingredients: [
+    //         {
+    //             item: "ratatouille:cocoa_powder"
+    //         },
+    //         {
+    //             amount: 250,
+    //             fluidTag: "forge:milk"
+    //         },
+    //         {
+    //             amount: 1000,
+    //             fluid: "farmersrespite:black_tea",
+    //             nbt: {}
+    //         }
+    //     ],
+    //     results: [
+    //         {
+    //             amount: 1000,
+    //             fluid: "createdelight:tea_mocha"
+    //         }
+    //     ]
+    // }).id("youkaishomecoming:mixing/tea_mocha")
     create.mixing(
         Fluid.of("createdelight:saidi_tea", 1000),
         [

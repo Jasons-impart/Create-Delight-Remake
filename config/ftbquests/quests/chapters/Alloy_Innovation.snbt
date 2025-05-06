@@ -19,7 +19,10 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["391B8317C493EB62"]
+			dependencies: [
+				"391B8317C493EB62"
+				"61A945984843E55A"
+			]
 			id: "1CD1D60A28A20E6A"
 			rewards: [{
 				count: 2
@@ -118,7 +121,6 @@
 				"0081008C6EAA4D86"
 				"2679AF6D14DACBE5"
 			]
-			dependency_requirement: "one_completed"
 			description: ["唉，炼钢"]
 			id: "70CA8C3E0DEBBE1A"
 			min_required_tasks: 1
@@ -399,6 +401,7 @@
 		{
 			dependencies: ["0081008C6EAA4D86"]
 			id: "20B3A29ADFDF1D4A"
+			min_required_tasks: 1
 			rewards: [{
 				count: 2
 				id: "4A10FBD8D0716968"
@@ -408,11 +411,23 @@
 			}]
 			shape: "circle"
 			size: 2.0d
-			tasks: [{
-				id: "6305A4B7302F47F0"
-				item: "createdelightcore:bronze_block"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "6305A4B7302F47F0"
+					item: "createdelightcore:bronze_block"
+					type: "item"
+				}
+				{
+					id: "29B2C475B43E3FAC"
+					item: "createdelightcore:bronze_ingot"
+					type: "item"
+				}
+				{
+					id: "46440B535427FCAC"
+					item: "createdelightcore:bronze_nugget"
+					type: "item"
+				}
+			]
 			x: -1.0d
 			y: 0.0d
 		}
@@ -436,6 +451,7 @@
 			dependency_requirement: "one_completed"
 			description: ["使用钢和末影粉制作"]
 			id: "55E42ECE1CE4E99F"
+			min_required_tasks: 1
 			rewards: [{
 				id: "71560EB111A78F2D"
 				item: "createutilities:void_steel_ingot"

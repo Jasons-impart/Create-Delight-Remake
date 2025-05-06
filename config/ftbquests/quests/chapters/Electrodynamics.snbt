@@ -10,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["5520A571B3019083"]
 			id: "49BCC2D259AA3A40"
 			shape: "square"
 			size: 3.0d
@@ -255,6 +256,7 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["49BCC2D259AA3A40"]
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
