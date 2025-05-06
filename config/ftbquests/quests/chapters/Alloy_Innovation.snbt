@@ -19,7 +19,10 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["391B8317C493EB62"]
+			dependencies: [
+				"391B8317C493EB62"
+				"61A945984843E55A"
+			]
 			id: "1CD1D60A28A20E6A"
 			rewards: [{
 				count: 2

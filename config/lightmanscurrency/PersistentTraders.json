@@ -3,7 +3,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "seed_trader",
-      "Name": "买虚拟种子，种赛博作物",
+      "Name": "种子出售",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Trades": [
         {
@@ -810,7 +810,7 @@
     {
       "Type": "lightmanscurrency:slot_machine_trader",
       "ID": "slot_machine_coin",
-      "Name": "ALLIN!!（现实里不要赌！）",
+      "Name": "神秘摇奖机",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Price": {
         "Value": [
@@ -882,7 +882,7 @@
     {
       "Type": "lctech:fluid_trader",
       "ID": "entity_spawn_fluid_trader",
-      "Name": "奇怪的生物流体",
+      "Name": "刷怪液出售",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Trades": [
         {
@@ -1073,7 +1073,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "ingredients_trader",
-      "Name": "农民伯伯辛苦了！",
+      "Name": "农作物回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
@@ -2768,7 +2768,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "animal_ingredients_trader",
-      "Name": "好浓的血腥味啊",
+      "Name": "动物产品回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
@@ -3947,7 +3947,7 @@
     {
       "Type": "lctech:fluid_trader",
       "ID": "fluid_trade",
-      "Name": "回收好喝（可能也不好喝）的",
+      "Name": "流体回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
@@ -4906,7 +4906,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "rough_machining_food_trade",
-      "Name": "纯纯工业美食（粗加工回收）",
+      "Name": "粗加工回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [],
       "Trades": [
@@ -5639,7 +5639,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "technology_help_trade",
-      "Name": "给大忙人的科技补助",
+      "Name": "科技相关物品商店",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [],
       "Trades": [
@@ -5790,6 +5790,50 @@
         {
           "TradeType": "SALE",
           "SellItem": {
+            "ID": "createutilities:void_steel_ingot",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createmetallurgy:obdurium_ingot",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
             "ID": "createaddition:electrum_ingot",
             "Count": 32
           },
@@ -5813,13 +5857,8 @@
           "TradeType": "SALE",
           "SellItem": {
             "ID": "create:blaze_cake",
-            "Count": 16
+            "Count": 8
           },
-          "Rules": [
-            {
-              "Type": "lightmanscurrency:player_list"
-            }
-          ],
           "Price": {
             "Value": [
               {
@@ -5904,11 +5943,6 @@
             "Count": 1,
             "Tag": "{BlockEntityTag:{ForgeCaps:{},Items:[{Count:64b,Slot:0b,id:\"ae2:white_smart_cable\"},{Count:7b,Slot:1b,id:\"ae2:storage_bus\"},{Count:1b,Slot:2b,id:\"ae2:crafting_terminal\"},{Count:1b,Slot:3b,id:\"ae2:crystal_resonance_generator\"}],id:\"minecraft:chest\"},display:{Name:'{\"italic\":false,\"extra\":[{\"text\":\"\"},{\"bold\":true,\"italic\":true,\"underlined\":true,\"color\":\"gold\",\"text\":\"AE简易存储组合包\"}],\"text\":\"\"}'}}"
           },
-          "Rules": [
-            {
-              "Type": "lightmanscurrency:player_list"
-            }
-          ],
           "Price": {
             "Value": [
               {
@@ -6121,7 +6155,7 @@
     {
       "Type": "lctech:energy_trader",
       "ID": "electricity_trade",
-      "Name": "挖矿（记得给你终端上满顶级升级",
+      "Name": "电力回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
@@ -6151,7 +6185,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "ore_trade",
-      "Name": "回收你家里的矿",
+      "Name": "矿物及其加工态回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [
         {
@@ -7126,7 +7160,7 @@
     {
       "Type": "lightmanscurrency:item_trader",
       "ID": "smoke_food_trade",
-      "Name": "稍微烤制的食物的回收",
+      "Name": "烤制食物回收",
       "OwnerName": "JSI宇宙第一无敌公司",
       "Rules": [],
       "Trades": [
@@ -7681,6 +7715,258 @@
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           }
+        }
+      ]
+    },
+    {
+      "Type": "lightmanscurrency:item_trader",
+      "ID": "resource_trader",
+      "Name": "资源交易商店（矿脉相关）",
+      "OwnerName": "JSI宇宙第一无敌公司",
+      "Trades": [
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:copper_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:iron_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:zinc_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelightcore:tin_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:iron_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:coal",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:gold_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "iceandfire:silver_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:diamond",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createmetallurgy:tungsten_ingot",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:ancient_debris",
+            "Count": 64
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:emerald_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ]
         }
       ]
     }

@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createdelightcore:gold_coin"
 	id: "785EA502775C1402"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
