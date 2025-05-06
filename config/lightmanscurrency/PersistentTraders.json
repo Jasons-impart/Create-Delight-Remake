@@ -3522,7 +3522,6 @@
             "type": "lightmanscurrency:coins"
           }
         }
-      
       ]
     },
     {
@@ -5650,74 +5649,11 @@
             "ID": "create:brass_ingot",
             "Count": 16
           },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "createmetallurgy:steel_ingot",
-            "Count": 64
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "create:precision_mechanism",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "create:electron_tube",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "create:andesite_alloy",
-            "Count": 64
-          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -5736,231 +5672,14 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "createdelightcore:bronze_ingot",
-            "Count": 32
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "createaddition:electrum_ingot",
-            "Count": 32
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "create:blaze_cake",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ad_astra:desh_ingot",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 3
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ad_astra:ostrum_ingot",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 4
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ad_astra:calorite_ingot",
-            "Count": 16
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "minecraft:chest",
-            "Count": 1,
-            "Tag": "{BlockEntityTag:{ForgeCaps:{},Items:[{Count:64b,Slot:0b,id:\"ae2:white_smart_cable\"},{Count:7b,Slot:1b,id:\"ae2:storage_bus\"},{Count:1b,Slot:2b,id:\"ae2:crafting_terminal\"},{Count:1b,Slot:3b,id:\"ae2:crystal_resonance_generator\"}],id:\"minecraft:chest\"},display:{Name:'{\"italic\":false,\"extra\":[{\"text\":\"\"},{\"bold\":true,\"italic\":true,\"underlined\":true,\"color\":\"gold\",\"text\":\"AE简易存储组合包\"}],\"text\":\"\"}'}}"
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 3
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:calculation_processor",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:logic_processor",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:engineering_processor",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "megacells:accumulation_processor",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:formation_core",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:annihilation_core",
-            "Count": 8
-          },
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:emerald_coin",
-                "Amount": 1
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "SALE",
-          "SellItem": {
-            "ID": "ae2:certus_quartz_crystal",
+            "ID": "createmetallurgy:steel_ingot",
             "Count": 64
           },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
           "Price": {
             "Value": [
               {
@@ -5975,14 +5694,422 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "ae2:fluix_crystal",
-            "Count": 64
+            "ID": "create:precision_mechanism",
+            "Count": 8
           },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
           "Price": {
             "Value": [
               {
-                "Coin": "createdelightcore:emerald_coin",
+                "Coin": "createdelightcore:gold_coin",
                 "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:electron_tube",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:andesite_alloy",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 1
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createdelightcore:bronze_ingot",
+            "Count": 32
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "createaddition:electrum_ingot",
+            "Count": 32
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "create:blaze_cake",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:desh_ingot",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 7
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:ostrum_ingot",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 10
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ad_astra:calorite_ingot",
+            "Count": 16
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 13
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "minecraft:chest",
+            "Count": 1,
+            "Tag": "{BlockEntityTag:{ForgeCaps:{},Items:[{Count:64b,Slot:0b,id:\"ae2:white_smart_cable\"},{Count:7b,Slot:1b,id:\"ae2:storage_bus\"},{Count:1b,Slot:2b,id:\"ae2:crafting_terminal\"},{Count:1b,Slot:3b,id:\"ae2:crystal_resonance_generator\"}],id:\"minecraft:chest\"},display:{Name:'{\"italic\":false,\"extra\":[{\"text\":\"\"},{\"bold\":true,\"italic\":true,\"underlined\":true,\"color\":\"gold\",\"text\":\"AE简易存储组合包\"}],\"text\":\"\"}'}}"
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:calculation_processor",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:logic_processor",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:engineering_processor",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "megacells:accumulation_processor",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:formation_core",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:annihilation_core",
+            "Count": 8
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              },
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:certus_quartz_crystal",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "ae2:fluix_crystal",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Type": "lightmanscurrency:player_list"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
               }
             ],
             "Chain": "main",

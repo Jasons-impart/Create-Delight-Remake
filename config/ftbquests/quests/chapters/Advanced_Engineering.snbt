@@ -18,7 +18,7 @@
 			description: ["首先，你需要使用&e熔铸盆&r与&e熔铸盖&r将铜和锌熔融获取熔融铜和熔融锌。然后将其通入&e工作盆&r，并进行搅拌。最后将产出的流体通入到铸造台/铸造盆即可。使用工作盆的自动输出产物机制能省很多事。"]
 			icon: "create:brass_block"
 			id: "0E515BE9EA2A0B2F"
-			min_required_dependencies: 2
+			min_required_tasks: 1
 			rewards: [{
 				id: "0DD667B4E11E8329"
 				item: "create:brass_ingot"

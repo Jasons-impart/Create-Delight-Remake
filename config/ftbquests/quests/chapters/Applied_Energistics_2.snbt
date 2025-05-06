@@ -1556,6 +1556,39 @@
 			x: 6.0d
 			y: 25.5d
 		}
+		{
+			dependencies: ["4CBACEC15826AB34"]
+			id: "2ECB5D9BB46CE329"
+			tasks: [{
+				id: "0D9B00DAD1058F42"
+				item: "ae2:fluix_dust"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 28.5d
+		}
+		{
+			dependencies: ["2ECB5D9BB46CE329"]
+			id: "4F6B70A38ACBA2AC"
+			tasks: [{
+				id: "2F45528FD47CE37F"
+				item: "ae2:formation_core"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 27.5d
+		}
+		{
+			dependencies: ["2ECB5D9BB46CE329"]
+			id: "7A9629CF8E2BC6F1"
+			tasks: [{
+				id: "640B15B47C7E6B6B"
+				item: "ae2:annihilation_core"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 28.5d
+		}
 	]
 	title: "&9应用能源2"
 }
