@@ -61,7 +61,7 @@ ServerEvents.recipes(e => {
     brewing(e, "farmersrespite:green_tea",
         [
             "#forge:fruits/lychee",
-            "trailandtales_delight:cherry_petal"
+            "trailandtales_delight:dried_cherry_petal"
         ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
     )
     e.recipes.create.mixing(

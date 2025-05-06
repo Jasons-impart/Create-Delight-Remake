@@ -27,7 +27,11 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:pumpkin_milk_tea',
         'createcafe:apple_milk_tea',
         'createcafe:cherry_milk_tea',
-        'createcafe:oreo_milk_tea'
+        'createcafe:oreo_milk_tea',
+        'createcafe:strawberry_milk_tea',
+        'createcafe:avocado_milk_tea',
+        'createcafe:vanilla_milk_tea',
+        'createcafe:blood_orange_milk_tea',
     ])
 
     e.add("create:upright_on_belt", [
@@ -60,7 +64,11 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:empty_boba_cup',
         'createcafe:strawberry_iced_coffee',
         'createcafe:vanilla_iced_coffee',
-        'createcafe:mint_iced_coffee'
+        'createcafe:mint_iced_coffee',
+        'createcafe:strawberry_milk_tea',
+        'createcafe:avocado_milk_tea',
+        'createcafe:vanilla_milk_tea',
+        'createcafe:blood_orange_milk_tea',
     ])
     e.add("forge:coffee_grounds", "createcafe:coffee_grounds")
 })

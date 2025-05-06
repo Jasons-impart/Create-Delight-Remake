@@ -41,6 +41,7 @@ StartupEvents.registry("fluid", e => {
     .tag("forge:milk")
     simpleFluid("createdelight:tree_star_tea", 0x6ca30e, true, false, false)
     simpleFluid("createdelight:jellyfish_soda", 0x85d5f0, true, false, false)
+    simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
     simpleFluid("createdelight:vinegar", 0x570000, true, false)
     simpleFluid("createdelight:radon", 0XA0FFDA, true, false)
     simpleFluid("createdelight:unrefined_sugar", 0XBCB998)
@@ -54,6 +55,16 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:cherry_petal_tea", 0XF28bC8, true, false, false)
     simpleFluid("createdelight:pitcher_plant_tea", 0X8Af2C9, true, false, false)
     simpleFluid("createdelight:fiddlehead_tea", 0x44451B, true, false, false)
+    simpleFluid("createdelight:scarlet_tea", 0x82332a, true, false, false)
+    simpleFluid("createdelight:lemon_black_tea", 0x64352a, true, false, false)
+    simpleFluid("createdelight:tea_mocha", 0x815026, true, false, false)
+    simpleFluid("createdelight:saidi_tea", 0xb02f2f, true, false, false)
+    simpleFluid("createdelight:cornflower_tea", 0xa97549, true, false, false)
+    simpleFluid("createdelight:sakura_honey_tea", 0xe497a8, true, false, false)
+    simpleFluid("createdelight:genmai_tea", 0xb8a32f, true, false, false)
+    simpleFluid("createdelight:green_water", 0x79ad5c, true, false, false)
+    simpleFluid("createdelight:white_tea", 0xdbcfaa, true, false, false)
+
     simpleFluid("createdelight:overheated_steam", 0xF5F5F5, false, false, false)
 
     let vinery_fluid_list = [
@@ -173,5 +184,5 @@ StartupEvents.registry("fluid", e => {
         .translationKey("fluid.createdelight.egg_yolk")
         .translationKey("block.createdelight.egg_yolk")
         .translationKey("item.createdelight.egg_yolk_bucket")
-
+    
 })

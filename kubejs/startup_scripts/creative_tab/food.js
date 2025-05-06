@@ -166,6 +166,11 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:doughnut',
     'youkaishomecoming:blood_bottle',
     'youkaishomecoming:bowl_of_cream',
+    'youkaishomecoming:black_tea',
+    'youkaishomecoming:green_tea',
+    'youkaishomecoming:moon_rocket',
+    "youkaishomecoming:kettle",
+    "youkaishomecoming:oolong_tea",
   ])
 })
 

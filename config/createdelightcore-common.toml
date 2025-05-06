@@ -1,5 +1,5 @@
 #Whether to enable the drop report
-disableDropReport = false
+disableDropReport = true
 #Threshold for drop reporting.
 #Range: > 0
 itemThreshold = 100
