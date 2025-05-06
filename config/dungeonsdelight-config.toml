@@ -1,0 +1,12 @@
+
+["Dungeon's Delight Config"]
+
+	["Dungeon's Delight Config"."Balance Configuration"]
+		#Configuration for features that may impact gameplay in a large way
+		#Should Farmer's Delight stick foods grant strength? (default: true)
+		fdStickFoodsGrantStrength = true
+		#Should Farmer's Delight glowing foods grant perception? (default: true)
+		fdGlowingFoodsGrantPerception = true
+		#Enables all compat items even if their mods aren't installed, mostly useful for modpacks wanting to repurpose the items (default: false)
+		forceEnableCompatItems = false
+

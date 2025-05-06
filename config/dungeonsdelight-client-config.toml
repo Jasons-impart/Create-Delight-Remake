@@ -1,0 +1,14 @@
+
+["Dungeon's Delight Client Config"]
+
+	["Dungeon's Delight Client Config"."Client Configuration"]
+		#Client Configuration Toggles
+		#Should spawner blocks emit green flame particles? (default: true)
+		spawnersEmitGreenFlames = true
+		#Should the Voracity status effect overlay a texture? (default: true)
+		voracityOverlay = true
+		#Should the Voracity overlay be half transparent for easier visibility? (default: false)
+		voracityTransparency = false
+		#Should the Ravenous Rush status effect overlay a texture? (default: true)
+		ravenousRushOverlay = true
+
