@@ -173,7 +173,15 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     "youkaishomecoming:oolong_tea",
   ])
 })
-
+StartupEvents.modifyCreativeTab("miners_delight:miners_delight", e => {
+  e.remove([
+   'miners_delight:squid',
+   'miners_delight:glow_squid',
+   'miners_delight:baked_squid',
+   'miners_delight:tentacles',
+   'miners_delight:baked_tentacles' 
+  ])
+})
 //那不勒斯风味
 StartupEvents.registry("minecraft:creative_mode_tab", e => {
   e.create("neapolitan:neapolitan")

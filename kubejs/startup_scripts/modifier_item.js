@@ -7,20 +7,12 @@ ItemEvents.modification(e => {
      * @param {number} [saturation] 饱和度,默认为0.5,固定递进为0.5
      */
     let food_hungers = function (food, hunger, saturation) {
+        hunger = hunger || 3
+        saturation = saturation || 0.5
         e.modify(food, item => {
             item.foodProperties = food => {
-                if (hunger == undefined) {
-                    food.hunger(3)
-                }
-                else {
-                    food.hunger(hunger)
-                }
-                if (saturation == undefined) {
-                    food.saturation(0.5)
-                }
-                else {
-                    food.saturation(saturation/hunger) 
-                }
+                food.hunger(hunger)
+                food.saturation(saturation/hunger)
             }
         })
     }
@@ -34,17 +26,11 @@ ItemEvents.modification(e => {
      * @param {number} [probability] 概率,若不填则默认为1
      */
     let food_effects = function(food, effect, duration, strength, probability) {
+        duration = duration || 10
+        strength = strength || 0
+        probability = probability || 1
         e.modify(food, item => {
             item.foodProperties = food => {
-                if(duration == undefined) {
-                    duration = 10 
-                }
-                if(strength == undefined) {
-                    strength = 0
-                }
-                if(probability == undefined) {
-                    probability = 1 
-                }
                 food.effect(effect, 20 * duration, strength, probability)
             }
         })
@@ -75,16 +61,10 @@ ItemEvents.modification(e => {
             item.foodProperties = food => {
                 food.removeEffect("farmersrespite:caffeinated")
                 food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration == undefined) {
-                    return
-                }
-                else {
+                if (sober_duration !== undefined) {
                     food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
                 }
-                if (thick_duration == undefined) {
-                    return
-                }
-                else {
+                if (thick_duration !== undefined) {
                     food.effect("youkaishomecoming:thick", 20 * thick_duration, 0, 1)
                 }
             } 
@@ -104,16 +84,10 @@ ItemEvents.modification(e => {
             item.foodProperties = food => {
                 food.removeEffect("minecraft:resistance")
                 food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration == undefined) {
-                    return
-                }
-                else {
+                if (sober_duration !== undefined) {
                     food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
                 }
-                if (smoothing_duration == undefined) {
-                    return
-                }
-                else {
+                if (smoothing_duration !== undefined) {
                     food.effect("youkaishomecoming:smoothing", 20 * smoothing_duration, 0, 1)
                 }
             } 
@@ -123,8 +97,8 @@ ItemEvents.modification(e => {
     /**
      * 
      * @param {Internal.Ingredient_} food 
-     * @param {number} [polyphenols_duration] 时间以s为单位
-     * @param {number} [polyphenols_strength]
+     * @param {number} polyphenols_duration 时间以s为单位
+     * @param {number} polyphenols_strength
      * @param {number} [sober_duration] 以s为单位,若不填则不添加
      * @param {number} [haste_duration] 以s为单位,若不填则不添加
      */
@@ -133,16 +107,10 @@ ItemEvents.modification(e => {
             item.foodProperties = food => {
                 food.removeEffect("minecraft:haste")
                 food.effect("youkaishomecoming:tea_polyphenols", 20 * polyphenols_duration, polyphenols_strength, 1)
-                if (sober_duration == undefined) {
-                    return
-                }
-                else {
+                if (sober_duration !== undefined) {
                     food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
                 }
-                if (haste_duration == undefined) {
-                    return
-                }
-                else {
+                if (haste_duration !== undefined) {
                     food.effect("minecraft:haste", 20 * haste_duration, 0, 1)
                 }
             } 
@@ -164,10 +132,7 @@ ItemEvents.modification(e => {
                 food.removeEffect("youkaishomecoming:caffeinated")
                 food.removeEffect("youkaishomecoming:sober")
                 food.effect("farmersrespite:caffeinated", 20 * caffeinated_duration, caffeinated_strength, 1)
-                if (sober_duration == undefined) {
-                    return
-                }
-                else {
+                if (sober_duration !== undefined) {
                     food.effect("youkaishomecoming:sober", 20 * sober_duration, 0, 1)
                 }
             } 
@@ -199,7 +164,12 @@ ItemEvents.modification(e => {
 
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
-    food_effects("culturaldelights:glow_squid", "minecraft:glowing", 6, 1)
+    e.modify("culturaldelights:glow_squid", item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:glowing")
+            food.effect("minecraft:glowing", 120, 1, 1)
+        }
+    })
     food_effects("mynethersdelight:ghast_dough", "minecraft:levitation", 6, 1)
     food_effects("culturaldelights:pickle", "farmersdelight:nourishment", 10, 1)
     food_effects("culturaldelights:cut_pickle", "farmersdelight:nourishment", 15, 1)

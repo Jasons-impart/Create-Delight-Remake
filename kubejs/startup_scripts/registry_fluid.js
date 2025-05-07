@@ -65,8 +65,6 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:green_water", 0x79ad5c, true, false, false)
     simpleFluid("createdelight:white_tea", 0xdbcfaa, true, false, false)
 
-    simpleFluid("createdelight:overheated_steam", 0xF5F5F5, false, false, false)
-
     let vinery_fluid_list = [
         ["apple_juice", 0xeed4a7],
         ["mead", 0xeac88a],
