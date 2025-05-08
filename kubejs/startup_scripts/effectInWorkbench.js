@@ -1,8 +1,6 @@
 
 //来自kubejs交流群 忆然群友的代码
 
-let $ItemEffect = Java.loadClass("se.mickelus.tetra.effect.ItemEffect")
-
 if (Platform.isClientEnvironment())
     ClientEvents.init(event => {
         let $StatFormat = Java.loadClass("se.mickelus.tetra.gui.stats.getter.StatFormat");
@@ -42,6 +40,7 @@ if (Platform.isClientEnvironment())
         simpleRegWorkbenchBar('createdelight:lightning_dragon_restraint', 30)
         simpleRegWorkbenchBar('createdelight:life_drain', 100)
         simpleRegWorkbenchBar('createdelight:fiber_proliferation', 100)
+        simpleRegWorkbenchBar('createdelight:charge', 20)
         // simpleRegWorkbenchBar('yi:power',10000)
         // simpleRegWorkbenchBar('yi:vibration',50)
         // simpleRegWorkbenchBar('yi:mana_addition',10)
