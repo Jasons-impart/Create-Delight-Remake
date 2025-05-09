@@ -32,13 +32,14 @@
 	#GLOBAL: Serverwide difficulty value
 	#PLAYERMAX: Maximum difficulty of players in a 256 radius around the position
 	#PLAYERMEAN: Average difficulty of players in a 256 radius around the position
+	#PLAYERSUM: Sum of difficulty of players in a 256 radius around the position. There is no upper limit for this so max difficulty can be higher than the limit! You crazy if you use this
 	#DISTANCE: Uses the distance to the position defined in Center Position to define the difficulty
 	#DISTANCESPAWN: Uses the distance to the world spawn to define the difficulty
 	#If the type is any of the distance types the functionality of Difficulty Increase is changed to the following where the 1. value is the minimum distance and the 2. is the difficulty that applies. 
 	#E.g. ["0-0","1000-5"] translates to 0 difficulty between 0-1000 distance and 5 difficulty for distance >= 1000
 	#You can also define it as a triple x-y-z instead where z is the increase per block in for that area.
 	#E.g. ["0-0-0.1","1000-5-1"] the difficulty increases between 0-1000 by 0.1 per block and >= 1000 by 1 per block with a starting value of 5
-	#Allowed Values: GLOBAL, PLAYERMAX, PLAYERMEAN, DISTANCE, DISTANCESPAWN
+	#Allowed Values: GLOBAL, PLAYERMAX, PLAYERMEAN, PLAYERSUM, DISTANCE, DISTANCESPAWN
 	"Difficulty type" = "PLAYERMEAN"
 	#Position used for DISTANCE difficulty type
 	"Center Position" = "0-0"
@@ -114,6 +115,14 @@
 	#Chance that a mob will be affected by size changes
 	#Range: 0.0 ~ 1.0
 	"Size Chance" = 0.5
+	#Whether vanillas clamped regional difficulty should be used. 
+	#See https://minecraft.wiki/w/Difficulty#Clamped_regional_difficulty
+	#Allowed Values: OFF, ON, ADD
+	"Use Vanilla Difficulty" = "OFF"
+	#The max value for vanilla difficulty scaling. As clamped regional difficulty returns a value between 0 and 1
+	#Thus difficulty will be regional difficulty * max
+	#Range: 0.0 ~ 1.7976931348623157E308
+	"Vanilla Max" = 250.0
 
 #Settings regarding custom ai for mobs
 [ai]

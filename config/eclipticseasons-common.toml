@@ -23,8 +23,6 @@
 	#Snow will not appear in overly bright areas.
 	#Range: 1 ~ 15
 	NotSnowyNearGlowingBlockLevel = 10
-	#Set it true to initialize weather and snow when loading the mod or level for the first time.
-	ShouldInitWeather = true
 
 [Weather]
 	#Enable solar term weather system with biome.
@@ -35,6 +33,8 @@
 	#Set the percentage multiplier of the probability of thunder in the rain, the range should be between 0 and 1000.
 	#Range: 0 ~ 1000
 	ThunderChancePercentMultiplier = 20
+	#Set it true to initialize weather and snow when loading the mod or level for the first time.
+	ShouldInitWeather = false
 
 [Temperature]
 	#Ice or snow layer will melt in warm time.
@@ -70,6 +70,8 @@
 	RegisterCropDefaultValue = false
 	#Force all crops to use compatibility mode for growth control, not just those tagged as eclipticseasons:natural_plants.
 	ForceCompatMode = false
+	#Build a simple greenhouse without core blocks and humidity modifiers.
+	SimpleGreenHouseMode = false
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
@@ -84,4 +86,8 @@
 	SnowyFullCollisionShape = false
 	#Snow can cover the block which would lights.
 	NotSnowOverlayGlowingBlock = false
+
+[Map]
+	#The map color of blocks will change during snow.
+	ChangeMapColor = true
 
