@@ -156,17 +156,17 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]$MODPACK_NAME-$MODPACK_VERSION"
+          name: "[ClickToRun]${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Client]$MODPACK_NAME-$MODPACK_VERSION-lite"
+          name: "[Client]${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}-lite"
           path: ${{ env.artifacts_path }}/lite-release/
       - name: 上传manifest.json用于客户端补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "$MODPACK_NAME-$MODPACK_VERSION-manifest"
+          name: "${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}-manifest"
           path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
   # # 服务端相关任务（并行执行）
