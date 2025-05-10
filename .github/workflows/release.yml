@@ -372,7 +372,7 @@ jobs:
       - name: 移除mods并加入manifest.json
         run: |
           rm -rf patch/mods
-          list manifest
+          ls manifest
           mv manifest/manifest.json patch
           cat patch/manifest.json
       - name: 上传客户端补丁
