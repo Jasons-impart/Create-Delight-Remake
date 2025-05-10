@@ -372,8 +372,6 @@ jobs:
       - name: 移除mods并加入manifest.json
         run: |
           rm -rf patch/mods
-          ls .
-          ls "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
           mv manifest.json patch
           cat patch/manifest.json
       - name: 上传客户端补丁
