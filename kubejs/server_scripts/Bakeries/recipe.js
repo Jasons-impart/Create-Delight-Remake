@@ -59,9 +59,13 @@ ServerEvents.recipes(e => {
         "bakeries:coffee_bean"
     ])
     e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
-
+    e.remove({type: "bakeries:blender"})
+    
+    
     //展示框
     e.replaceInput({ id: "bakeries:menu_blcok"}, "minecraft:gray_wool", "minecraft:item_frame")
+    create.mixing("4x bakeries:honey_butter", [FluidIngredients("forge:honey", 250), "2x createdelight:butter"])
+    .id("bakeries:mixing/honey_butter")
     // 模具
     vintageimprovements.curving(
         'bakeries:mould',
