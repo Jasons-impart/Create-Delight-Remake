@@ -356,10 +356,29 @@ jobs:
 
           endlocal
           EOF
-      - name: 上传补丁
+      - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          name: "[ServerPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          path: |
+            deleted_files.txt
+            deploy-patch.sh
+            deploy-patch.bat
+            patch/
+      - name: 下载manifest.json
+        uses: actions/download-artifact@v4
+        with:
+          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
+      - name: 移除mods并加入manifest.json
+        run: |
+          rm -rf patch/mods
+          list manifest
+          mv manifest/manifest.json patch
+          cat patch/manifest.json
+      - name: 上传客户端补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[ClientPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
           path: |
             deleted_files.txt
             deploy-patch.sh
