@@ -77,11 +77,17 @@ jobs:
     env:  # Job 级环境变量（简化读取变量）
       MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
-      VERSION_SUFFIX: ${{ needs.common_steps.outputs.version_sufffix }}
       MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
       VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
     steps:
+      - name: 打印环境变量
+        run: |
+          echo "Modpack Name: $MODPACK_NAME"
+          echo "Modpack Version: $MODPACK_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+          echo "Forge Version: $FORGE_VERSION"
+          echo "Version File Path: $VERSION_FILE_PATH"
       - name: 检出代码
         uses: actions/checkout@v4
         with:
