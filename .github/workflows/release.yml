@@ -76,6 +76,8 @@ jobs:
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
       VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
+      HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
+      JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
     if: >                       # 条件判断：release分支 或 test-client 分支触发
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
@@ -122,6 +124,50 @@ jobs:
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> $VERSION_FILE_PATH
           echo "|||" >> $VERSION_FILE_PATH
           cat $VERSION_FILE_PATH
+      - name: 更新文件索引
+        run: |
+          ./packwiz refresh
+      - name: 生成带mod本体的包 移动到workspace文件夹
+        run: |
+          ./packwiz curseforge export
+          mkdir ../click_to_run_release
+          mv *.zip ../click_to_run_release/modpack.zip
+      - name: 下载HMCL启动器与jdk环境
+        run: |
+          curl -o HMCL-3.6.11.exe -L $HMCL_DOWNLOAD_URL
+          curl -o jdk17.0.12_installer.msi -L $JAVA_DOWNLOAD_URL
+          mv HMCL-3.6.11.exe ../click_to_run_release
+          mv jdk17.0.12_installer.msi ../click_to_run_release
+      - name: 检测并生成mods meta信息
+        run: |
+          ./packwiz curseforge detect
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成不带mod本体的包
+        run: |
+          ./packwiz curseforge export
+          mv *.zip ../lite-release.zip
+          unzip ../lite-release.zip -d ../lite-release
+          ls ..
+      - name: Workaround actions/upload-artifact#176
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+      - name: 上传懒人包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[ClickToRun]$MODPACK_NAME-$MODPACK_VERSION"
+          path: ${{ env.artifacts_path }}/click_to_run_release/
+      - name: 上传不带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[Client]$MODPACK_NAME-$MODPACK_VERSION-lite"
+          path: ${{ env.artifacts_path }}/lite-release/
+      - name: 上传manifest.json用于客户端补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "$MODPACK_NAME-$MODPACK_VERSION-manifest"
+          path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
   # # 服务端相关任务（并行执行）
   # server-tasks:
