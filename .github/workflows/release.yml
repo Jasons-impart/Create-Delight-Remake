@@ -1,0 +1,114 @@
+name: 发布版本
+
+on:
+  push:
+    branches:
+      - release-aio
+      - test-release-aio
+      # - release          # 匹配主发布分支
+      # - 'test-*'         # 匹配所有 test- 开头的分支（通配符）
+
+jobs:
+  # 公共步骤（所有分支都需要执行的前置操作）
+  common-steps:
+    runs-on: ubuntu-latest
+    outputs:
+      modpack_name: ${{ steps.read-modpackname.outputs.value }}
+      modpack_ver: ${{ steps.generate_modpack_version.outputs.VERSION }}
+      mc_version: ${{ steps.read-minecraft.outputs.value }}
+      forge_version: ${{ steps.read-forge.outputs.value }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 读取整合包名
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-modpackname
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'name'
+      - name: 读取整合包版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'version'
+      - name: 读取mc版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-minecraft
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'versions.minecraft'
+      - name: 读取forge版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-forge
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'versions.forge'
+      - name: 生成整合包带测试后缀版本号
+        id: generate_modpack_version
+        run: |
+          if [[ "$BRANCH_NAME" == *test* ]]; then
+            VERSION="${{ steps.read-version.outputs.value }}-test-build-${{ github.run_number }}"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          else
+            VERSION="${{ steps.read-version.outputs.value }}"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          fi
+      - name: 输出读取的变量用作验证
+        run: |
+          echo "Modpack Name: ${{ steps.read-modpackname.outputs.value }}"
+          echo "Modpack Version: ${{ steps.read-version.outputs.value }}"
+          echo "Version Suffix: ${{ steps.set_version_sufffix.outputs.VERSION_SUFFIX }}"
+          echo "Modpack Full Version: ${{ steps.generate_modpack_version.outputs.VERSION }}"
+          echo "Minecraft Version: ${{ steps.read-minecraft.outputs.value }}"
+          echo "Forge Version: ${{ steps.read-forge.outputs.value }}"
+
+  # 客户端相关任务（并行执行）
+  # client-tasks:
+  #   needs: common-steps       # 依赖公共步骤完成
+  #   runs-on: ubuntu-latest
+  #   if: >                       # 条件判断：release分支 或 test-client-* 分支触发
+  #     github.ref_name == 'release' || 
+  #     startsWith(github.ref_name, 'test-client-')
+  #   env:  # Job 级环境变量（简化读取变量）
+  #     MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
+  #     MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
+  #     VERSION_SUFFIX: ${{ needs.common_steps.outputs.version_sufffix }}
+  #     MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
+  #     FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
+  #   steps:
+  #     - name: 执行客户端专属操作
+  #       run: |
+  #         echo "🔧 执行客户端构建/测试（分支: ${{ github.ref_name }}）"
+  #         # 实际项目中替换为客户端相关命令（如 npm run build:client）
+
+  # # 服务端相关任务（并行执行）
+  # server-tasks:
+  #   needs: common-steps
+  #   runs-on: ubuntu-latest
+  #   if: >                       # 条件判断：release分支 或 test-server-* 分支触发
+  #     github.ref_name == 'release' || 
+  #     startsWith(github.ref_name, 'test-server-')
+  #   steps:
+  #     - name: 执行服务端专属操作
+  #       run: |
+  #         echo "⚙️ 执行服务端编译/集成测试（分支: ${{ github.ref_name }}）"
+  #         # 实际项目中替换为服务端相关命令（如 mvn clean package）
+
+  # 补丁相关任务，依赖客户端相关任务的manifest.json
+  # patch-tasks:
+  #   needs: client-tasks
+  #   runs-on: ubuntu-latest
+  #   if: >                       # 条件判断：release分支 或 test-patch-* 分支触发
+  #     github.ref_name == 'release' || 
+  #     startsWith(github.ref_name, 'test-patch-')
+  #   steps:
+  #     - name: 检出代码
+  #       uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 0
+  #         fetch-tags: true
+      
+
