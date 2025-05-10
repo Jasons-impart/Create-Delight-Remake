@@ -78,7 +78,7 @@ jobs:
       VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
       HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
       JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
-    if: >                       # 条件判断：release分支 或 test-client 分支触发
+    if: >
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client')
@@ -169,18 +169,85 @@ jobs:
           name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
           path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
-  # # 服务端相关任务（并行执行）
-  # server-tasks:
-  #   needs: common-steps
-  #   runs-on: ubuntu-latest
-  #   if: >                       # 条件判断：release分支 或 test-server-* 分支触发
-  #     github.ref_name == 'release' || 
-  #     startsWith(github.ref_name, 'test-server-')
-  #   steps:
-  #     - name: 执行服务端专属操作
-  #       run: |
-  #         echo "⚙️ 执行服务端编译/集成测试（分支: ${{ github.ref_name }}）"
-  #         # 实际项目中替换为服务端相关命令（如 mvn clean package）
+  # 服务端相关任务（并行执行）
+  server-tasks:
+    needs: common-steps
+    runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
+    if: >
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-release') ||
+      startsWith(github.ref_name, 'test-server')
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 删除与服务端无关的文件
+        run: |
+            # mapfile -t prefixes < ${{ github.workspace }}/.packwizignore
+            # for prefix in "${prefixes[@]}"; do
+            #   echo "Deleting files with prefix: $prefix"
+            #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
+            # done
+            rm -f ${{ github.workspace }}/ModList0.4a.md
+            rm -f ${{ github.workspace }}/README.md
+            rm -f ${{ github.workspace }}/TODOlist.md
+            rm -f ${{ github.workspace }}/KubeJSStyleGuide.md
+            rm -f ${{ github.workspace }}/DevGuide.md
+            rm -f ${{ github.workspace }}/pack.toml
+            rm -f ${{ github.workspace }}/index.toml
+            rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+      - name: 删除客户端only模组
+        run: |
+            mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
+            for prefix in "${prefixes[@]}"; do
+              echo "Deleting files with prefix: $prefix"
+              find ${{ github.workspace }}/mods -name "${prefix}*" -exec rm {} +
+            done
+      - name: 根据pack.toml的整合包版本替换服务安装脚本配置
+        env:
+          MODPACK: ${{ steps.read-version.outputs.value }}
+        run: |
+          sed -i "s/^MODPACK_VERSION=.*/MODPACK_VERSION=$MODPACK/" ${{ github.workspace }}/variables.txt
+          grep '^MODPACK_VERSION=' ${{ github.workspace }}/variables.txt
+      - name: 下载forge与ServerStarterJar
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
+        run: |
+          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          echo "$FORGE_URL"
+          curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
+      - name: 服务端启动bat脚本改为CRLF
+        run: |
+          sudo apt-get install dos2unix
+          unix2dos ${{ github.workspace }}/start.bat
+      - name: list remained files & mods
+        run: |
+          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/mods
+      - name: 上传带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "Server-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: ${{ github.workspace }}
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }} && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
+      # - name: 上传带forge核心的包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+      #     path: ${{ github.workspace }}
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}
 
   # 补丁相关任务，依赖客户端相关任务的manifest.json
   patch-tasks:
@@ -192,7 +259,7 @@ jobs:
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
       VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
-    if: >                       # 条件判断：release分支 或 test-patch 分支触发
+    if: >
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-patch')
@@ -272,7 +339,7 @@ jobs:
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
           echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "$MODPACK_NAME $MODPACK_VERSION" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
