@@ -134,10 +134,10 @@ jobs:
           mv *.zip ../click_to_run_release/modpack.zip
       - name: 下载HMCL启动器与jdk环境
         run: |
-          curl -o HMCL-3.6.11.exe -L $HMCL_DOWNLOAD_URL
-          curl -o jdk17.0.12_installer.msi -L $JAVA_DOWNLOAD_URL
-          mv HMCL-3.6.11.exe ../click_to_run_release
-          mv jdk17.0.12_installer.msi ../click_to_run_release
+          curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
+          curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
+          mv HMCL.jar ../click_to_run_release
+          mv jdk17.msi ../click_to_run_release
       - name: 检测并生成mods meta信息
         run: |
           ./packwiz curseforge detect
