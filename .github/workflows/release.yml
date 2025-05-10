@@ -1,4 +1,5 @@
 name: 发布版本
+run-name: 正在发布新版本🚀
 
 on:
   push:
@@ -61,29 +62,59 @@ jobs:
         run: |
           echo "Modpack Name: ${{ steps.read-modpackname.outputs.value }}"
           echo "Modpack Version: ${{ steps.read-version.outputs.value }}"
-          echo "Version Suffix: ${{ steps.set_version_sufffix.outputs.VERSION_SUFFIX }}"
           echo "Modpack Full Version: ${{ steps.generate_modpack_version.outputs.VERSION }}"
           echo "Minecraft Version: ${{ steps.read-minecraft.outputs.value }}"
           echo "Forge Version: ${{ steps.read-forge.outputs.value }}"
 
   # 客户端相关任务（并行执行）
-  # client-tasks:
-  #   needs: common-steps       # 依赖公共步骤完成
-  #   runs-on: ubuntu-latest
-  #   if: >                       # 条件判断：release分支 或 test-client-* 分支触发
-  #     github.ref_name == 'release' || 
-  #     startsWith(github.ref_name, 'test-client-')
-  #   env:  # Job 级环境变量（简化读取变量）
-  #     MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
-  #     MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
-  #     VERSION_SUFFIX: ${{ needs.common_steps.outputs.version_sufffix }}
-  #     MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
-  #     FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
-  #   steps:
-  #     - name: 执行客户端专属操作
-  #       run: |
-  #         echo "🔧 执行客户端构建/测试（分支: ${{ github.ref_name }}）"
-  #         # 实际项目中替换为客户端相关命令（如 npm run build:client）
+  client-tasks:
+    needs: common-steps       # 依赖公共步骤完成
+    runs-on: ubuntu-latest
+    if: >                       # 条件判断：release分支 或 test-client 分支触发
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-client')
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
+      VERSION_SUFFIX: ${{ needs.common_steps.outputs.version_sufffix }}
+      MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
+      VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 安装 Packwiz 打包软件
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "Linux 64-bit x86"
+          path: ${{ github.workspace }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Jasons-impart/packwiz
+          run-id: 14558970721
+      - name: 挪动packwiz到根目录
+        run: |
+          # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
+          chmod +x ./packwiz
+      - name: 重命名HMCL配置和options
+        run: |
+          mv .hmclversion.cfg hmclversion.cfg
+          mv .options.txt options.txt
+      - name: 写版本号文件供fancymenu展现在游戏首页
+        # 格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
+        # |||
+        # Create-Delight-Remake x.x.x.x xxxx
+        # MIT License Copyright (c) 2025 JSI Production Team
+        # |||
+        run: |
+          echo "|||" > $VERSION_FILE_PATH
+          echo "$MODPACK_NAME $MODPACK_VERSION" >> $VERSION_FILE_PATH
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> $VERSION_FILE_PATH
+          echo "|||" >> $VERSION_FILE_PATH
+          cat $VERSION_FILE_PATH
 
   # # 服务端相关任务（并行执行）
   # server-tasks:
