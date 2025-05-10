@@ -70,18 +70,18 @@ jobs:
   client-tasks:
     needs: common-steps       # 依赖公共步骤完成
     runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
     if: >                       # 条件判断：release分支 或 test-client 分支触发
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client')
     steps:
       - name: 测试环境变量
-        env:  # Job 级环境变量（简化读取变量）
-          MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
-          MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
-          MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
-          FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
-          VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
         run: |
           echo "Modpack Name: $MODPACK_NAME"
           echo "Modpack Version: $MODPACK_VERSION"
