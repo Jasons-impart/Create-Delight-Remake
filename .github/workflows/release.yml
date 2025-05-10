@@ -49,6 +49,7 @@ jobs:
       - name: 生成整合包带测试后缀版本号
         id: generate_modpack_version
         run: |
+          BRANCH_NAME="${{ github.ref_name }}"
           if [[ "$BRANCH_NAME" == *test* ]]; then
             VERSION="${{ steps.read-version.outputs.value }}-test-build-${{ github.run_number }}"
             echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
