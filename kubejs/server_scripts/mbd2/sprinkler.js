@@ -33,7 +33,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
         }
     } else {
         if (hl != 0)
-            manager.addMap(solidBlockPos, SeasonUtil.createHumidityControlProvider(hl, rl, 500))
+            manager.addHumidityControlProvider(solidBlockPos, SeasonUtil.createHumidityControlProvider(hl, rl, 500))
     }
     let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
     if (fluid) {
