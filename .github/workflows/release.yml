@@ -74,13 +74,13 @@ jobs:
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client')
-    env:  # Job 级环境变量（简化读取变量）
-      MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
-      MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
-      MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
-      FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
-      VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
     steps:
+      - env:  # Job 级环境变量（简化读取变量）
+          MODPACK_NAME: ${{ needs.common_steps.outputs.modpack_name }}
+          MODPACK_VERSION: ${{ needs.common_steps.outputs.modpack_ver }}
+          MC_VERSION: ${{ needs.common_steps.outputs.mc_version }}
+          FORGE_VERSION: ${{ needs.common_steps.outputs.forge_version }}
+          VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
       - name: 打印环境变量
         run: |
           echo "Modpack Name: $MODPACK_NAME"
