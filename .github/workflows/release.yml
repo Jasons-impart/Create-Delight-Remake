@@ -156,17 +156,17 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}"
+          name: "[ClickToRun]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Client]${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}-lite"
+          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-lite"
           path: ${{ env.artifacts_path }}/lite-release/
       - name: 上传manifest.json用于客户端补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "${{env.MODPACK_NAME}}-${{env.MODPACK_VERSION}}-manifest"
+          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
           path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
   # # 服务端相关任务（并行执行）
@@ -183,17 +183,185 @@ jobs:
   #         # 实际项目中替换为服务端相关命令（如 mvn clean package）
 
   # 补丁相关任务，依赖客户端相关任务的manifest.json
-  # patch-tasks:
-  #   needs: client-tasks
-  #   runs-on: ubuntu-latest
-  #   if: >                       # 条件判断：release分支 或 test-patch-* 分支触发
-  #     github.ref_name == 'release' || 
-  #     startsWith(github.ref_name, 'test-patch-')
-  #   steps:
-  #     - name: 检出代码
-  #       uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 0
-  #         fetch-tags: true
-      
+  patch-tasks:
+    needs: client-tasks
+    runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
+    if: >                       # 条件判断：release分支 或 test-patch 分支触发
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-release') ||
+      startsWith(github.ref_name, 'test-patch')
+    steps:
+      - name: 测试环境变量
+        run: |
+          echo "Modpack Name: $MODPACK_NAME"
+          echo "Modpack Version: $MODPACK_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+          echo "Forge Version: $FORGE_VERSION"
+          echo "Version File Path: $VERSION_FILE_PATH"
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: 获取最近的tag并配置环境变量
+        run: |
+          # 获取当前 commit 的 hash
+          current_commit=$(git rev-parse HEAD)
+          # 获取当前 commit 关联的 tag
+          current_commit_tags=$(git tag --points-at $current_commit)
+          if [ -z "$current_commit_tags" ]; then
+            # 当前 commit 没有关联 tag，直接取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | head -n 1)
+          else
+            # 当前 commit 有关联 tag，过滤掉这些 tag 后取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
+          fi
+          if [ -z "$latest_tag" ]; then
+            echo "No suitable tag found. Exiting."
+            exit 1
+          fi
+          echo "最近的tag是: $latest_tag"
+          echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+      - name: 准备补丁文件
+        run: |
+          # 生成完整差异报告
+          git diff --name-status ${{ env.LATEST_TAG }} HEAD > diff_report.txt
+          cat diff_report.txt
+          
+          # 解析差异报告
+          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt
+          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt
+          grep -E '^[A|M]' diff_report.txt | cut -f2 > added_files.txt
+          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt
+          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt
 
+          # 创建补丁目录
+          mkdir -p patch
+
+          # 复制新增/修改文件
+          while IFS= read -r file; do
+            mkdir -p "patch/$(dirname "$file")"
+            cp "$file" "patch/$file"
+          done < added_files.txt
+
+          # 移除客户端only的mod
+          mapfile -t prefixes < .clientonlymodlist
+          for prefix in "${prefixes[@]}"; do
+            echo "Deleting files with prefix: $prefix"
+            if [ -d "patch/mods" ]; then
+              find patch/mods -name "${prefix}*" -exec rm {} +
+            fi
+          done
+
+          # 移除无用文件
+          rm -f patch/ModList0.4a.md
+          rm -f patch/README.md
+          rm -f patch/TODOlist.md
+          rm -f patch/KubeJSStyleGuide.md
+          rm -f patch/DevGuide.md
+          rm -f patch/pack.toml
+          rm -f patch/index.toml
+          rm -f patch/client_jvm_args.example.txt
+
+          # 更新fancymenu版本文件
+          mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
+          echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "${{ steps.read-modpackname.outputs.value }} ${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
+
+      - name: 生成linux脚本
+        run: |
+          cat << 'EOF' > deploy-patch.sh
+          #!/bin/bash
+          echo "Applying Patch..."
+          BASE_DIR=$(dirname "$(readlink -f "$0")")
+
+          # files to be deleted
+          if [ -f "$BASE_DIR/deleted_files.txt" ]; then
+            while IFS= read -r line; do
+              file_path="$BASE_DIR/$line"
+              if [ -f "$file_path" ]; then
+                rm -v "$file_path" || { echo "Error: Cannot delete $file_path"; exit 1; }
+              else
+                echo "Error: File $file_path not found for deletion"
+              fi
+            done < "$BASE_DIR/deleted_files.txt"
+          else
+            echo "Error: $BASE_DIR/deleted_files.txt not found"
+          fi
+
+          # move patched files to right place
+          if [ -d "patch" ]; then
+            cp -r "patch" "." || { echo "Error: Failed to copy 'patch' directory"; exit 1; }
+          else
+            echo "Error: 'patch' directory not found"
+          fi
+
+          # remove patch folder
+          if [ -d "patch" ]; then
+            rm -rf "patch" || { echo "Error: Failed to remove 'patch' directory"; exit 1; }
+          else
+            echo "Error: 'patch' directory not found for removal"
+          fi
+
+          echo -e "\nDone!"
+
+          EOF
+
+      - name: 生成windows脚本
+        run: |
+          cat << 'EOF' > deploy-patch.bat
+          @echo off
+          setlocal enabledelayedexpansion
+          chcp 65001
+
+          rem files to be deleted
+          set "pathFile=deleted_files.txt"
+
+          rem Check if the file exists
+          if not exist "%pathFile%" (
+              echo File %pathFile% doesn't exist.
+              exit /b 1
+          )
+
+          rem read line by line and remove files
+          for /f "usebackq delims=" %%a in ("%pathFile%") do (
+              rem Convert Linux-style to Windows-style path
+              set "path=%%a"
+              set "path=!path:/=\!"
+              
+              rem Check if file exists and delete it
+              if exist "!path!" (
+                  echo Deleting: !path!
+                  del "!path!"
+                  if errorlevel 1 (
+                      echo Error when delete !path!
+                  )
+              ) else (
+                  echo File !path! doesn't exist.
+              )
+          )
+
+          rem move patched files to right place
+          %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
+          rd /S /Q "patch"
+
+          endlocal
+          EOF
+      - name: 上传补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[Patch]-${{ env.LATEST_TAG }}-to-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}"
+          path: |
+            deleted_files.txt
+            deploy-patch.sh
+            deploy-patch.bat
+            patch/
