@@ -5,10 +5,12 @@
 global.TetraChargeAttackEffect = function(e) {
     const {entity, source} = e
     const {player} = source
-    let item = player.mainHandItem
-    if (!player.player)
+    if (player == null || !player.player)
         return
-    if (!item.item instanceof $ModularItem || !TetraUtil.itemHasEffect(item, "createdelight:charge"))
+    let item = player.mainHandItem
+    if (item == null || item.empty)
+        return
+    if (!(item.item instanceof $ModularItem) || !TetraUtil.itemHasEffect(item, "createdelight:charge"))
         return
     let level = TetraUtil.getEffectLevel(item, "createdelight:charge")
     let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:charge")

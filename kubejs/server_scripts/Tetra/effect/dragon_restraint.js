@@ -4,7 +4,7 @@
  */
 global.TetraDragonRestraintEvent = function (e) {
     let player = e.getSource().getPlayer()
-    if (!player || !player.isPlayer())
+    if (player == null || !player.isPlayer())
         return
     let item = player.mainHandItem
 
