@@ -5,7 +5,7 @@
 global.TetraOverwhelmAttackEffect = function (e) {
     let player = e.getSource().getPlayer()
     let entity = e.getEntity()
-    if (!player || !player.isPlayer())
+    if (player == null || !player.isPlayer())
         return
     let item = player.mainHandItem
     if (item.item instanceof $ModularItem) {

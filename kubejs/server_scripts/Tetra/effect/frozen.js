@@ -6,7 +6,7 @@ const $EntityDataProvider = Java.loadClass("com.github.alexthe666.iceandfire.ent
  */
 global.TetraFrozenAttackEffect = function(e) {
     let player = e.source.player
-    if (!player || !player.isPlayer()) return
+    if (player == null || !player.isPlayer()) return
     let item = player.mainHandItem
     if (!(item.item instanceof $ModularItem) || !TetraUtil.itemHasEffect(item, "createdelight:frozen")) return
     let level = TetraUtil.getEffectLevel(item, "createdelight:frozen")
