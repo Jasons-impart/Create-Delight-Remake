@@ -44,9 +44,14 @@ StartupEvents.modifyCreativeTab("create:base", e => {
       'create_new_age:heat_pipe',
       'create_new_age:stirling_engine',
       'create_new_age:basic_solar_heating_plate',
-      'create_new_age:advanced_solar_heating_plate'
+      'create_new_age:advanced_solar_heating_plate',
+      'create_new_age:reactor_rod',
+      'create_new_age:reactor_heat_vent',
+      'create_new_age:reactor_fuel_acceptor',
+      'create_new_age:solid_corium',
+      'create_new_age:corium',
     ])
-    e.addAfter('create_new_age:fluxuated_magnetite', [
+    e.add([
       'alexscaves:block_of_scarlet_neodymium',
       'alexscaves:block_of_azure_neodymium'
     ])
@@ -116,6 +121,8 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
 //加农炮
 StartupEvents.modifyCreativeTab("createbigcannons:base", e => {
   e.remove([
-    'createbigcannons:molten_bronze_bucket'
+    'createbigcannons:molten_bronze_bucket',
+    'createbigcannons:molten_steel_bucket',
+    'createbigcannons:basin_foundry_lid'
   ])
 })

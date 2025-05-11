@@ -9,6 +9,9 @@ ServerEvents.recipes(e => {
         "quark:berry_sack",
         "quark:glowberry_sack"
     ])
+    remove_recipes_id(e, [
+       "quark:building/crafting/compressed/potato_crate_uncompress", 
+    ])
     e.recipes.create.mixing(
         Fluid.of("create_enchantment_industry:experience", 10),
         'quark:ancient_fruit'

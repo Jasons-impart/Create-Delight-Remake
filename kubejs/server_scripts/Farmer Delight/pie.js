@@ -21,7 +21,8 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/durian_pie",
         "farmersdelight:cooking/fig_tart",
         "farmersdelight:cooking/lemon_tart",
-        "ends_delight:food/chorus_fruit_pie"
+        "ends_delight:food/chorus_fruit_pie",
+        "minecraft:pumpkin_pie"
     ])
     baking(e, "createdelight:puff_pastry", "farmersdelight:pie_crust", 1, "food", 100)
     e.recipes.kubejs.shapeless(
