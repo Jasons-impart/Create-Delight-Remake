@@ -339,5 +339,9 @@ ServerEvents.recipes(e => {
         C: "create:empty_blaze_burner",
         D: "#mynethersdelight:bullet_pepper"
     }).id("create:shaped/blaze_burner")
-
+    //锌板
+    e.recipes.create.pressing(
+        'vintageimprovements:zinc_sheet',
+        "create:zinc_ingot"
+    ).id("vintageimprovements:pressing/zinc_sheet_from_zinc_ingot")
 })

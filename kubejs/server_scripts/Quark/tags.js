@@ -3,4 +3,7 @@ ServerEvents.tags("item", e => {
         "quark:paper_lantern",
         "quark:paper_lantern_sakura"
     ])
+    e.removeAllTagsFrom([
+        'quark:potato_crate'
+    ])
 })
