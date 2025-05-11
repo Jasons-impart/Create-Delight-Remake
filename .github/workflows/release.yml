@@ -4,10 +4,8 @@ run-name: 正在发布新版本🚀
 on:
   push:
     branches:
-      - release-aio
-      - test-release-aio
-      # - release          # 匹配主发布分支
-      # - 'test-*'         # 匹配所有 test- 开头的分支（通配符）
+      - release        # 匹配主发布分支
+      - test-*         # 匹配所有 test- 开头的分支（通配符）
 
 jobs:
   # 公共步骤（所有分支都需要执行的前置操作）
@@ -221,7 +219,7 @@ jobs:
           MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
           FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
           echo "$FORGE_URL"
           curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
       - name: 服务端启动bat脚本改为CRLF
