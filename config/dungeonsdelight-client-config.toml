@@ -12,5 +12,5 @@
 		ravenousRushOverlay = true
 		#Client Configuration Toggles
 		#Should monster effects have special background textures? (default: true)
-		monsterEffectBackground = true
+		monsterEffectBackground = false
 
