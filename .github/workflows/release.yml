@@ -219,7 +219,7 @@ jobs:
           MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
           FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MINECRAFT-$FORGE/forge-$MINECRAFT-$FORGE-installer.jar"
+          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
           echo "$FORGE_URL"
           curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
       - name: 服务端启动bat脚本改为CRLF
