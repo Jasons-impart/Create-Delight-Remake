@@ -1,5 +1,19 @@
 ServerEvents.recipes(e => {
-    const { createmetallurgy, create, minecraft, vintageimprovements } = e.recipes
+    remove_recipes_id(e, [
+       "vintageimprovements:craft/grinder_belt",
+       "vintageimprovements:craft/belt_grinder"
+    ])
+    const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
+    kubejs.shaped( 
+        'createmetallurgy:sandpaper_belt',
+        [
+            "AAA",
+            "A A",
+            "AAA"
+        ], {
+            A: "#create:sandpaper"
+        }
+    ).id("createmetallurgy:crafting/materials/sandpaper_belt")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
@@ -164,7 +178,8 @@ ServerEvents.recipes(e => {
             e.recipes.vintageimprovements.curving(iner, iner, 1),
             e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
             e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
-            e.recipes.vintageimprovements.polishing(iner, iner)
+            // e.recipes.vintageimprovements.polishing(iner, iner)
+            e.recipes.createmetallurgy.grinding(iner, iner)
         ])
         .loops(1)
         .transitionalItem("createmetallurgy:incomplete_industrial_crucible")

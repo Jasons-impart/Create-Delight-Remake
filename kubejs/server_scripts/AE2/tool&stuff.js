@@ -1,5 +1,5 @@
 ServerEvents.recipes((event) => {
-  const { kubejs, vintageimprovements, create, minecraft } = event.recipes;
+  const { kubejs, vintageimprovements, create, minecraft, createmetallurgy } = event.recipes;
 
 
 
@@ -23,7 +23,8 @@ ServerEvents.recipes((event) => {
       create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:energy_cell"]),
       create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:engineering_processor"]),
       create.deploying("createdelight:incomplete_entropy_manipulator", ["createdelight:incomplete_entropy_manipulator", "ae2:fluix_crystal"]),
-      vintageimprovements.polishing("createdelight:incomplete_entropy_manipulator", "createdelight:incomplete_entropy_manipulator"),
+      // vintageimprovements.polishing("createdelight:incomplete_entropy_manipulator", "createdelight:incomplete_entropy_manipulator"),
+      createmetallurgy.grinding("createdelight:incomplete_entropy_manipulator", "createdelight:incomplete_entropy_manipulator"),
     ])
     .transitionalItem("createdelight:incomplete_entropy_manipulator")
     .loops(1)
@@ -37,7 +38,8 @@ ServerEvents.recipes((event) => {
         "createdelight:incomplete_charged_staff",
         "ae2:charged_certus_quartz_crystal",
       ]),
-      vintageimprovements.polishing("createdelight:incomplete_charged_staff", "createdelight:incomplete_charged_staff"),
+      // vintageimprovements.polishing("createdelight:incomplete_charged_staff", "createdelight:incomplete_charged_staff"),
+      createmetallurgy.grinding("createdelight:incomplete_charged_staff", "createdelight:incomplete_charged_staff"),
     ])
     .transitionalItem("createdelight:incomplete_charged_staff")
     .loops(1)

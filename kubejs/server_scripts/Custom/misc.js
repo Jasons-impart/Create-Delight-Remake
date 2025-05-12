@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {create, createdieselgenerators, vintageimprovements, createaddition} = e.recipes
+    const {create, createdieselgenerators, vintageimprovements, createaddition, createmetallurgy} = e.recipes
     create.crushing(["12x createdieselgenerators:wood_chip",
         Item.of("createdieselgenerators:wood_chip", 4).withChance(0.5),
         Item.of("farmersdelight:tree_bark", 1).withChance(0.75)],
@@ -15,7 +15,8 @@ ServerEvents.recipes(e => {
 
     create.filling("createdelight:fuel_hotcream", ["mynethersdelight:powder_cannon", Fluid.of("createdelight:fuel_mixtures", 50)])
     .id("createdelight:filling/fuel_hotcream")
-    vintageimprovements.polishing("createdelight:needle", "#forge:rods/iron")
+    // vintageimprovements.polishing("createdelight:needle", "#forge:rods/iron")
+    createmetallurgy.grinding("createdelight:needle", "#forge:rods/iron")
     .id("createdelight:polishing/needle")
     {
         let iner = "alexscaves:polymer_plate"

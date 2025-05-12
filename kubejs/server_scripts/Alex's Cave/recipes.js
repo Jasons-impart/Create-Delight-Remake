@@ -64,8 +64,10 @@ ServerEvents.recipes(e => {
     e.replaceInput({ input: "alexscaves:candy_cane", not: {type: "minecraft:smithing_trim"}}, "alexscaves:candy_cane", "#createdelight:candy_cane")
 
     //拐杖糖打磨成尖拐杖糖
-    e.recipes.vintageimprovements.polishing("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
-        .id("alexscaves:polishing/sharpened_candy_cane")
+    // e.recipes.vintageimprovements.polishing("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
+    //     .id("alexscaves:polishing/sharpened_candy_cane")
+    e.recipes.createmetallurgy.grinding("alexscaves:sharpened_candy_cane", "#createdelight:candy_cane")
+       .id("alexscaves:grinding/sharpened_candy_cane")
 
     //拐杖糖粉碎成薄荷糖粉
     e.recipes.create.crushing([Item.of("3x alexscaves:peppermint_powder"), Item.of("2x alexscaves:peppermint_powder").withChance(0.5)], [["alexscaves:sharpened_candy_cane", "#createdelight:candy_cane"]])

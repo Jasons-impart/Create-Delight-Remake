@@ -45,7 +45,8 @@ ServerEvents.recipes(e => {
        "bakeries:mould_toast_dough",
        "bakeries:cheese_cocoa_toast_dough",
        "bakeries:brown_sugar_roll_dough",
-       "bakeries:focaccia"
+       "bakeries:focaccia",
+       "bakeries:drink_cup"
        
     ])
     remove_recipes_output(e, [

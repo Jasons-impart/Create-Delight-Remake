@@ -24,9 +24,6 @@ ItemEvents.tooltip(e => {
         "art_of_forging:nano_insectoid",
         'createdelight:dread_heart',
         'createdelight:prospector',
-        'vintageimprovements:vacuum_chamber',
-        "vintageimprovements:vibrating_table",
-        'vintageimprovements:lathe',
         'vintagedelight:cheese_curds',
     ])
     clearAddCtrlTooltip(e, [
