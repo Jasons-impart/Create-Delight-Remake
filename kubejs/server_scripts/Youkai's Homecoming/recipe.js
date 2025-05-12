@@ -35,6 +35,8 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:raw_lamprey_cutting',
         "youkaishomecoming:red_velvet_cake_slice",
         "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting",
+        "youkaishomecoming:redbean_from_redbean_bag",
+        "youkaishomecoming:tea_leaves_from_tea_leaf_bag"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",

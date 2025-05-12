@@ -23,7 +23,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "kinetic_pixel" }, "create:precision_mechanism", "vintageimprovements:steel_spring")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
 
-    const { create, vintageimprovements, kubejs, minecraft } = e.recipes
+    const { create, vintageimprovements, kubejs, minecraft, createmetallurgy } = e.recipes
     vintageimprovements.turning(
         'kinetic_pixel:barrel',
         'createmetallurgy:steel_ingot'
@@ -317,7 +317,8 @@ ServerEvents.recipes(e => {
     let iner_1 = 'createdelight:incomplete_rbapb'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
         [
-            vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
+            // vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
+            createmetallurgy.grinding(iner_1, iner_1),
             create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
             create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
             create.pressing(iner, iner)

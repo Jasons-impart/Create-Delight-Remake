@@ -126,3 +126,10 @@ StartupEvents.modifyCreativeTab("createbigcannons:base", e => {
     'createbigcannons:basin_foundry_lid'
   ])
 })
+//经典改进
+StartupEvents.modifyCreativeTab("vintageimprovements:vintage_improvement_tab", e => {
+  e.remove([
+    'vintageimprovements:belt_grinder',
+    'vintageimprovements:grinder_belt'
+  ]) 
+})
