@@ -72,6 +72,8 @@
 	ForceCompatMode = false
 	#Build a simple greenhouse without core blocks and humidity modifiers.
 	SimpleGreenHouseMode = false
+	#Enabled to make the Humidifier stop converting inputs/outputs.
+	NoCostHumidifier = false
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
