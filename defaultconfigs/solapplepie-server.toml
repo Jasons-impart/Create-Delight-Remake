@@ -4,7 +4,7 @@
 	# they will get the benefits associated with that threshold.
 	#
 	#
-	thresholds = [2.0, 5.0, 7.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 60.0, 70.0, 80.0, 90.0, 100.0]
+	thresholds = [5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 60.0, 70.0, 80.0]
 	# 
 	# Define custom benefits here. Each entry in the list corresponds to a benefit that will be obtained
 	# at the corresponding diversity threshold defined the list above. For example, the first entry in
@@ -32,7 +32,7 @@
 	# and Slowness I below the corresponding threshold.
 	#
 	#
-	benefitsUnparsed = ["effect,speed,0", "attribute,generic.max_health,1", "attribute,generic.max_health,1;effect,haste,0", "attribute,generic.max_health,1;effect,strength,0;effect,night_vision,0", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,regeneration,0", "attribute,generic.max_health,1;effect,speed,1", "attribute,generic.max_health,1;effect,strength,0", "attribute,generic.max_health,1;effect,luck,0", "attribute,generic.max_health,1;attribute,generic.knockback_resistance,1", "attribute,generic.max_health,1;attribute,generic.speed,2", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,haste,1", "attribute,generic.max_health,1;effect,strength,1", "attribute,generic.max_health,1;attribute,generic.armor_toughness,2", "attribute,generic.max_health,1;effect,strength,2", "attribute,generic.max_health,1;effect,luck,1"]
+	benefitsUnparsed = ["effect,speed,0", "effect,haste,0", "effect,strength,0;effect,night_vision,0", "effect,regeneration,0", "effect,speed,1", "effect,alexsmobs:mosquito_repellent,0", "effect,strength,0", "effect,luck,0", "effect,haste,1", "effect,youkaishomecoming:refreshing,0", "effect,strength,1", "effect,strength,2", "effect,luck,1"]
 	# The minimum number of foods a player needs to eat before any benefits are applied.
 	#
 	#
@@ -69,7 +69,7 @@
 	#
 	#
 	#Range: 1 ~ 1000
-	queueSize = 32
+	queueSize = 64
 
 [Advanced]
 	# These config options all affect the technical details of how diversity is calculated.
@@ -95,7 +95,7 @@
 	#
 	#
 	#Range: 0 ~ 1000
-	endDecay = 32
+	endDecay = 64
 	#
 	# How many meals in the past should the diversity time penalty start to apply.
 	# **Needs to be less than queueSize and less than or equal to endDecay!!!**
