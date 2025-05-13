@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, iceandfire, minecraft, kubejs,vintageimprovements } = e.recipes
+    const { create, iceandfire, minecraft, kubejs, vintageimprovements, createmetallurgy } = e.recipes
     remove_recipes_output(e, [
         "dreadsteel:dreadsteel_helmet",
         "dreadsteel:dreadsteel_chestplate",
@@ -109,5 +109,16 @@ ServerEvents.recipes(e => {
         C: "createdelight:dread_upgrade_smithing_template"
     }).id("createdelight:dread_upgrade_smithing_template")
     vintageimprovements.vacuumizing(["butchercraft:chicken_skull_head_item", "iceandfire:cockatrice_eye"],
-         ["iceandfire:cockatrice_skull", "butchercraft:eyeball"])
+        ["iceandfire:cockatrice_skull", "butchercraft:eyeball"])
+    {
+        let iner = "supplementaries:key"
+        create.sequenced_assembly("iceandfire:dread_key", iner, [
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 90)]),
+            create.deploying(iner, [iner, "iceandfire:dread_shard"]),
+            vintageimprovements.hammering(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("iceandfire:sequenced_assembly/dread_key")
+    }
 })
