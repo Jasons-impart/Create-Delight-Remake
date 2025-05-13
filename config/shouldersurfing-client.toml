@@ -288,3 +288,9 @@
 	#Whether to center sounds made by the player.
 	center_player_sounds = false
 
+[integrations]
+
+	[integrations.epicfight]
+		#Whether to allow target lock-on when camera is decoupled.
+		decoupled_camera_lock_on = false
+

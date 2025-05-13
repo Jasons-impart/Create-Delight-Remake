@@ -15,5 +15,6 @@
     "speed": 256.0,
     "strength": 40960.0,
     "burn_rate": 2
-  }
+  },
+  "burner_multiplier": 1.0
 }
