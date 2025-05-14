@@ -299,7 +299,7 @@
 [terminal]
 	#Whether the /lcterminal command will exist allowing players to access the Trading Terminal without the physical item/block
 	#Default: false
-	lcterminalCommand=false
+	lcterminalCommand=true
 	
 	#Whether Traders with no defined Custom Name will be sorted to the bottom of the Trader list on the Network Terminal.
 	#Default: false
