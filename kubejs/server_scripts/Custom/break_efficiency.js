@@ -1,0 +1,33 @@
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:mineable/pickaxe", 
+        'createdelight:andesite_import_bus',
+        'createdelight:andesite_export_bus',
+        'createdelight:forged_steel_export_bus',
+        'createdelight:forged_steel_import_bus',
+        'createdelight:hydropower_amplifier',
+        'createdelight:steel_export_bus',
+        'createdelight:steel_import_bus',
+        'createdelight:alloy_electric_furnace',
+        'createdelight:big_centrifuge',
+        'createdelight:hydropower_station_fan',
+        'createdelight:create_in',
+        'createdelight:butchery_room',
+        'createdelight:sky_steel_casing',
+        'createdelight:electrolyzer', 
+        'createdelight:small_centrifugation', 
+        'createdelight:sprinkler',
+        'createdelight:hydropower_station', 
+        'createdelight:fission_reactor'
+    )
+    e.add("minecraft:mineable/axe",
+        'createdelight:andesite_import_bus', 
+        'createdelight:andesite_export_bus', 
+        'createdelight:steel_export_bus', 
+        'createdelight:steel_import_bus', 
+        'createdelight:alloy_electric_furnace', 
+        'createdelight:big_centrifuge', 
+        'createdelight:create_in', 
+        'createdelight:butchery_room',
+        'createdelight:sell_bin'
+    )
+})
