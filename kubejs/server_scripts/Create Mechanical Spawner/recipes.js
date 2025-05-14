@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
     for (let index = 0; index < 8; index++) {
         inferior_genetic_seed_input.push("createaddition:biomass")
     }
-    inferior_genetic_seed_input.push("ae2:quantum_entangled_singularity")
+    inferior_genetic_seed_input.push("ae2:singularity")
     vintageimprovements.vacuumizing('16x createdelight:inferior_genetic_seed', inferior_genetic_seed_input.concat(Fluid.of("netherexp:ectoplasm", 250)))
     .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed_2")
     

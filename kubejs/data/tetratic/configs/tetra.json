@@ -82,6 +82,13 @@
             "parent": "bettercombat:claymore"
           }
         }
+      },
+      "sword/evernight_dagger": {
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:dagger"
+          }
+        }
       }
     },
     "single/head": {
