@@ -74,6 +74,8 @@
 	SimpleGreenHouseMode = false
 	#Enabled to make the Humidifier stop converting inputs/outputs.
 	NoCostHumidifier = false
+	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
+	UseBoxDistance = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.

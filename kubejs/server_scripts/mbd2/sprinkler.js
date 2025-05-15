@@ -13,7 +13,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
         tmpSolidBlockPos = tmpSolidBlockPos.below()
     customData.putIntArray("solidBlockPos", [tmpSolidBlockPos.x, tmpSolidBlockPos.y, tmpSolidBlockPos.z])
     let hl = 1
-    let rl = 25
+    let rl = 4
     let rawOldSolidBlockPos = customData.getIntArray("oldSolidBlockPos")
     let rawSolidBlockPos = customData.getIntArray("solidBlockPos")
     let solidBlockPos = [rawSolidBlockPos[0], rawSolidBlockPos[1], rawSolidBlockPos[2]]
