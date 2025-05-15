@@ -1,8 +1,6 @@
 const $Mob = Java.loadClass("net.minecraft.world.entity.Mob")
 const $MobSpawnType = Java.loadClass("net.minecraft.world.entity.MobSpawnType")
 EntityEvents.drops(e => {
-    if (true)
-        return
     const { entity, source } = e
     let player = source.player
     if (player == null || !player.isPlayer() || player.isFake())

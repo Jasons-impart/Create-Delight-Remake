@@ -1,0 +1,43 @@
+
+[createrailwaysnavigator_common_config]
+
+	[createrailwaysnavigator_common_config.permissions]
+		#Minimum permission level required to edit the global navigator settings. 0 allows everyone to edit these settings. (Default: 0)
+		#Range: 0 ~ 4
+		global_settings_permission_level = 0
+
+	[createrailwaysnavigator_common_config.navigation]
+		#If activated, used trains are excluded from the route search for all following route parts. This prevents the same train from being suggested multiple times in the same route and forces the navigator to use other trains instead. Normally, however, there are no problems, so this option can be left off if in doubt. (Default: OFF)
+		exclude_trains = false
+		#How much transfers should be avoided. Higher values try to use fewer transfers, even if this increases the travel time. (Default: 5000)
+		#Range: > 1000
+		transfer_cost = 10000
+
+	[createrailwaysnavigator_common_config.train_data_calculation]
+		#When activated, CRN calculates the transit times of the trains and does not use the calculations from Create. CRN is much more accurate, while Create calculates an average. (Default: ON)
+		custom_transit_time_calculation = true
+		#When activated, CRN uses the transit times provided by Create (if available) when initializing. When turned off, the initialization may take longer. (Default: ON)
+		use_create_transit_times_on_init = true
+		#[in Cycles]
+		#How often the calculated time for a route section between two stations must deviate from the current reference value before the reference value is updated. (Default: 3)
+		#Range: 1 ~ 16
+		total_duration_deviation_buffer_size = 3
+		#[in Ticks]
+		#Deviations of the calculated time for a route section between two stations from the reference value that are smaller than the threshold value are not taken into account. (Default: 50)
+		#Range: 0 ~ 1000
+		total_duration_deviation_threshold = 50
+		#[in Ticks]
+		#How many ticks the real-time can deviate from the scheduled time before the train is considered delayed. (Default: 500)
+		#Range: 100 ~ 24000
+		schedule_deviation_threshold = 500
+		#[In Cycles]
+		#(ONLY WORKS FOR TRAINS WITH DYNAMIC DELAYS! Trains without dynamic delays do this every new schedule section by default.)
+		# 
+		#Every X cycles the scheduled times are updated to the current real-time data. (Default: 2; Disabled: 0)
+		#Range: > 0
+		auto_reset_timings = 2
+
+	[createrailwaysnavigator_common_config.debug]
+		#Prints more details to the console to better observe the behavior of CRN. Only relevant for debugging.
+		advanced_logging = false
+
