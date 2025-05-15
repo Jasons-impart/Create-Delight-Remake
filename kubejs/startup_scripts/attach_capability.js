@@ -6,15 +6,20 @@ CapabilityEvents.dynamicItem(e => {
             .getEnergyStored(i =>
                 i.nbt.getInt("energy")
             )
-            .getMaxEnergyStored(i => 1000000)
+            .getMaxEnergyStored(i => {
+                if (i.nbt.getInt("maxEnergy") == 0)
+                    i.nbt.putInt("maxEnergy", 1000000)
+                return i.nbt.getInt("maxEnergy")
+            })
             .receiveEnergy((item, amount, simulate) => {
+                if (item.nbt.getInt("maxEnergy") == 0)
+                    item.nbt.putInt("maxEnergy", 1000000)
                 let energy = item.nbt.getInt("energy")
-                let received = Math.min(1000000 - energy, amount)
+                let received = Math.min(item.nbt.getInt("maxEnergy") - energy, amount)
                 if (!simulate) {
                     item.nbt.putInt("energy", energy + received)
                 }
                 return received
             })
     )
-
 })

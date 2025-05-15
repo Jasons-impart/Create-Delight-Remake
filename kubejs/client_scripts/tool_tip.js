@@ -94,10 +94,11 @@ ItemEvents.tooltip(e => {
     e.addAdvanced('lightmanscurrency:atm_card', (item, advanced, text) => {
         text.remove(1)
     })
-    e.addAdvancedToAll((item, advanced, text) => {
-        if (item.item instanceof $ModularItem && TetraUtil.itemHasEffect(item, "createdelight:charge")){
-            let energy = item.nbt.getInt("energy")
-            text.add(`${energy}FE/1000000FE`)
-        }
-    })
+    // e.addAdvancedToAll((item, advanced, text) => {
+    //     if (item.item instanceof $ModularItem && TetraUtil.itemHasEffect(item, "createdelight:charge")){
+    //         let energy = item.nbt.getInt("energy")
+    //         let maxEnergy = item.nbt.getInt("maxEnergy")
+    //         text.add(`${energy}FE/${maxEnergy}FE`)
+    //     }
+    // })
 })
