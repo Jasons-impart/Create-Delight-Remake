@@ -100,7 +100,7 @@
   "createdelight.ponder.pattern_provider_interaction.header": "样板供应器与ME接口的联动",
   "createdelight.ponder.pattern_provider_interaction.text_1": "当样板供应器与ME接口接触时……",
   "createdelight.ponder.pattern_provider_interaction.text_2": "样板供应器会直接将原料输入到ME接口所在的网络",
-  "createdelight.ponder.quantum_network_bridge.header": "使用量子往桥将网络传递到远端",
+  "createdelight.ponder.quantum_network_bridge.header": "使用量子网桥将网络传递到远端",
   "createdelight.ponder.quantum_network_bridge.text_1": "量子网桥可用于网络的传输",
   "createdelight.ponder.quantum_network_bridge.text_2": "为了搭建一个量子环结构，你需要八个量子环和一个量子链接仓",
   "createdelight.ponder.quantum_network_bridge.text_3": "连接量子环和网络只能通过围绕量子连接仓的四个量子环方块",

@@ -21,7 +21,8 @@ Ponder.tags(event => {
             "ae2:io_port",
             "ae2:import_bus",
             "ae2:export_bus",
-            "ae2:controller"]
+            "ae2:controller",
+            "ae2:quantum_ring"]
     )
 })
 

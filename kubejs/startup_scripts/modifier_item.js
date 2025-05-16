@@ -305,4 +305,42 @@ ItemEvents.modification(e => {
             food.effect("minecraft:haste", 200, 2, 1)
         }
     })
+    e.modify([
+    'nethervinery:blazewine_pinot',
+    'nethervinery:netherite_nectar',
+    'nethervinery:ghastly_grenache',
+    'nethervinery:lava_fizz',
+    'nethervinery:nether_fizz',
+    'nethervinery:improved_lava_fizz',
+    'nethervinery:improved_nether_fizz',
+    'vinery:apple_juice',
+    'vinery:mead',
+    'vinery:apple_cider',
+    'vinery:apple_wine',
+    'vinery:mellohi_wine',
+    'vinery:glowing_wine',
+    'vinery:solaris_wine',
+    'vinery:noir_wine',
+    'vinery:red_wine',
+    'vinery:strad_wine',
+    'vinery:cherry_wine',
+    'vinery:cristel_wine',
+    'vinery:creepers_crush',
+    'vinery:kelp_cider',
+    'vinery:lilitu_wine',
+    'vinery:jo_special_mixture',
+    'vinery:eiswein',
+    'vinery:aegis_wine',
+    'vinery:bolvar_wine',
+    'vinery:chorus_wine',
+    'vinery:villagers_fright',
+    'vinery:clark_wine',
+    'vinery:magnetic_wine',
+    'vinery:stal_wine',
+    'vinery:chenet_wine',
+    'vinery:bottle_mojang_noir',
+    'vinery:jellie_wine']
+, item => {
+    item.setCraftingRemainingItem("vinery:wine_bottle")
+})
 })
