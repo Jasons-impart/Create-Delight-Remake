@@ -2,7 +2,7 @@ Ponder.registry(e => {
     e.create(["ae2:quantum_ring", "ae2:quantum_link"])
         .scene(
             "createdelight:quantum_network_bridge",
-            "使用量子往桥将网络传递到远端",
+            "使用量子网桥将网络传递到远端",
             "createdelight:ponder_quantum_network_bridge",
             (scene, util) => {
                 scene.world.showSection([0, 0, 0, 9, 0, 9], Direction.UP)
