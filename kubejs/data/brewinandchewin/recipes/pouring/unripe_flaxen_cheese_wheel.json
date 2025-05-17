@@ -1,0 +1,13 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 1000,
+  "container": {
+    "item": "minecraft:honeycomb"
+  },
+  "filling": false,
+  "fluid": "create_bic_bit:curdled_milk",
+  "output": {
+    "item": "brewinandchewin:unripe_flaxen_cheese_wheel"
+  },
+  "strict": false
+}

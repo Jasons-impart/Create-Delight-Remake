@@ -6,6 +6,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:cheese_pizza",
         "vintagedelight:cheese_pizza_from_slices",
         "vintagedelight:cutting/cheese_pizza_from_cutting",
+        "vintagedelight:cutting/cheese_wheel_from_cutting",
         "casualness_delight:cutting_cheese_wheel",
         "refurbished_furniture:cutting/cooked_meatlovers_pizza",
         "refurbished_furniture:cutting/cooked_vegetable_pizza",
@@ -32,6 +33,7 @@ ServerEvents.recipes(e => {
     ).id("casualness_delight:cooking/phantom_puff")
     // 奶酪相关
     cutting(e, "casualness_delight:cheese_wheel", [["casualness_delight:cheese_wheel_slice", 7]])
+    cutting_2(e, "vintagedelight:cheese_wheel", [["ad_astra:cheese", 4]])
     e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
