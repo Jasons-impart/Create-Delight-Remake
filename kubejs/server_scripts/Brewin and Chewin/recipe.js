@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "brewinandchewin:filling/create/unripe_flaxen_cheese_wheel",
         "brewinandchewin:cutting/flaxen_cheese_wheel",
-        "brewinandchewin:fermenting/jerky"
+        "brewinandchewin:fermenting/jerky",
+        "brewinandchewin:emptying/create/honey_bottle",
+        "brewinandchewin:filling/create/honey_bottle"
     ])
     e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")
