@@ -61,6 +61,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       // 金属板
       'createdelight:forged_steel_sheet',
       'createdelight:andesite_alloy_nugget',
+      // 板材
+      'createdelight:carbon_plate',
+      'createdelight:aviation_fibers_sheet',
       // 粉碎粗金属
       'createdelight:crushed_raw_desh',
       'createdelight:crushed_raw_ostrum',
@@ -81,6 +84,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       "createdelight:uranium_dust",
       "createdelight:enriched_uraniumdust",
       "createdelight:depleted_uranium_dust",
+      //石墨粉
+      'createdelight:carbon_dust',
       // 杂项
       'createdelight:mmd_diamond',
       'createdelight:phase_transition_iron',
@@ -95,6 +100,19 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:second_stage_rocket_core',
       'createdelight:third_stage_rocket_core',
       'createdelight:fourth_stage_rocket_core',
+      //火箭部件
+      'createdelight:basic_cabin',
+      'createdelight:basic_panel',
+      'createdelight:basic_crystal_panel',
+      'createdelight:advanced_cabin',
+      'createdelight:advanced_panel',
+      'createdelight:advanced_crystal_panel',
+      'createdelight:explorer_cabin',
+      'createdelight:explorer_panel',
+      'createdelight:holographic_interface_panel',
+      'createdelight:flare_cabin',
+      'createdelight:flare_panel',
+      'createdelight:quantum_field_panel',
       //外壳
       'createdelight:iron_casing',
       'createdelight:space_casing',
@@ -131,6 +149,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:unrefined_sugar_bucket',
     'createdelight:unfermented_paper_pulp_bucket',
     'createdelight:paper_pulp_bucket',
+    'createdelight:light_crude_oil_bucket',
+    'createdelight:ethylene_fluid_bucket',
+    'createdelight:lubricating_oil_bucket',
     // 气体桶
     'createdelight:radon_bucket',
     // 食物相关流体

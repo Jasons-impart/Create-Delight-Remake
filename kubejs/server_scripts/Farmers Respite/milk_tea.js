@@ -31,6 +31,7 @@ ServerEvents.recipes(e => {
         ["forge:fruits/apple", "farmersrespite:green_tea", "createcafe:apple_tea"],
         ["forge:fruits/lemon", "farmersrespite:green_tea", "createcafe:lemon_tea"],
         ["forge:fruits/melon_slice", "farmersrespite:green_tea", "createcafe:watermelon_tea"],
+        ["forge:fruits/lime", "farmersrespite:green_tea", "createcafe:lime_tea"],
         ["forge:fruits/pumpkin_slice", "farmersrespite:yellow_tea", "createcafe:pumpkin_tea"],
         ["forge:fruits/kiwi", "farmersrespite:yellow_tea", "createcafe:kiwi_tea"],
         ["forge:fruits/orange", "farmersrespite:yellow_tea", "createcafe:orange_tea"],
@@ -48,6 +49,7 @@ ServerEvents.recipes(e => {
         ["forge:cafe/oreo_crushed", "farmersrespite:black_tea", "createcafe:oreo_tea"],
         ["forge:chorus_fruits", "farmersrespite:black_tea", "create_central_kitchen:chorus_fruit_milk_tea"],
         ["forge:fruits/strawberry", "farmersrespite:black_tea", "createcafe:strawberry_tea"],
+        ["forge:fruits/pomegranate", "farmersrespite:black_tea", "createcafe:pomegranate_tea"],
     ]
     milk_teas.forEach(milk_tea => {
         e.custom({

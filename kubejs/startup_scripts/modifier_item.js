@@ -256,6 +256,7 @@ ItemEvents.modification(e => {
     red_tea_effect('createcafe:avocado_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:vanilla_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:oreo_milk_tea', 45, 0, 45, 20)
+    red_tea_effect('createcafe:pomegranate_tea', 45, 0, 45, 20)
     e.modify("farmersrespite:black_cod", item => {
         item.foodProperties = food => {
             food.removeEffect("farmersrespite:caffeinated")
@@ -294,6 +295,7 @@ ItemEvents.modification(e => {
     green_tea_effect('createcafe:apple_milk_tea', 45, 0, 45, 20)
     green_tea_effect('createcafe:blood_orange_milk_tea', 45, 0, 45, 20)
     green_tea_effect('createcafe:watermelon_milk_tea', 45, 0, 45, 20)
+    green_tea_effect('createcafe:lime_tea', 45, 0, 45, 20)
     green_tea_effect('cavedelight:fiddlehead_tea', 45, 0, 45, 20)
     green_tea_effect('farmersrespite:green_tea_cookie', 20, 0, 20, 10)
     green_tea_effect('createdelight:green_tea_cookie_dough', 10, 0)
