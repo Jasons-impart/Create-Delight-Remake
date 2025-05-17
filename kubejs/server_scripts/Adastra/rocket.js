@@ -1,4 +1,18 @@
 ServerEvents.recipes(e => {
+    //航空纤维板
+    e.recipes.create.mixing(
+        'createdelight:aviation_fibers_sheet',
+        [
+            "createdelight:carbon_dust",
+            "ad_astra:steel_plate",
+            "protection_pixel:reinforcedfiber",
+            Fluid.of("createdelight:ethylene_fluid", 100)
+        ]
+    )
+        .heated()
+        .id("createdelight:mixing/aviation_fibers_sheet")
+    //舱体板
+    
     //动力合成器添加：一级火箭
     e.recipes.create.mechanical_crafting("ad_astra:tier_1_rocket", [
         "  A  ",

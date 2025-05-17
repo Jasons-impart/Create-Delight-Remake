@@ -1,5 +1,11 @@
 new Schema("createdieselgenerators:basin_fermenting")
     .simpleKey("results", "outputFluidOrItemArray")
     .simpleKey("ingredients", "inputFluidOrItemArray")
-    .simpleKey("heatRequirement", "nonEmptyString", "superheated" || "heated")
+    .simpleKey("heatRequirement", "nonEmptyString", "heated" || "superheated")
     .simpleKey("processingTime", "doubleNumber", 100)
+
+new Schema("createdieselgenerators:distillation")
+    .simpleKey("results", "outputFluidArray")
+    .simpleKey("ingredients", "inputFluidArray")
+    .simpleKey("processingTime", "doubleNumber", 100)
+    .simpleKey("heatRequirement", "nonEmptyString", "heated" || "superheated")

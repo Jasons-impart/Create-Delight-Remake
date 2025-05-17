@@ -32,6 +32,8 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:avocado_milk_tea',
         'createcafe:vanilla_milk_tea',
         'createcafe:blood_orange_milk_tea',
+        'createcafe:pomegranate_milk_tea',
+        'createcafe:lime_milk_tea',
     ])
 
     e.add("create:upright_on_belt", [
@@ -69,8 +71,11 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:avocado_milk_tea',
         'createcafe:vanilla_milk_tea',
         'createcafe:blood_orange_milk_tea',
+        'createcafe:pomegranate_milk_tea',
+        'createcafe:lime_milk_tea',
     ])
     e.add("forge:coffee_grounds", "createcafe:coffee_grounds")
+    e.add("forge:fruits/pomegranate", "collectorsreap:pomegranate_seeds")
 })
 
 ServerEvents.tags("minecraft:block", e => {

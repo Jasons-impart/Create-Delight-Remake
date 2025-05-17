@@ -17,6 +17,7 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner_1, [iner_1, "#createaddition:high_current_spools"]),
             e.recipes.create.deploying(iner_1,[iner_1, "alexscaves:azure_neodymium_ingot"]),
             e.recipes.create.deploying(iner_1, [iner_1, "alexscaves:scarlet_neodymium_ingot"]),
+            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createdelight:lubricating_oil", 100)]),
             e.recipes.create.deploying(iner_1, [iner_1, "create:brass_sheet"]),
         ]
     )
@@ -30,6 +31,7 @@ ServerEvents.recipes(e => {
             e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 250)]),
             e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 250)]),
             e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 250)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:lubricating_oil", 100)]),
             e.recipes.create.deploying(iner_2, [iner_2, "create_new_age:overcharged_diamond"]),
             e.recipes.create.deploying(iner_2, [iner_2, "createaddition:brass_rod"])
         ]
@@ -58,7 +60,7 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner_3, [iner_3, "create:precision_mechanism"]),
             e.recipes.create.deploying(iner_3, [iner_3, "design_decor:industrial_gear"]),
             e.recipes.create.deploying(iner_3, [iner_3, 'design_decor:industrial_gear_large']),
-            e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdieselgenerators:plant_oil", 250)])
+            e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:lubricating_oil", 100)])
         ]
     )
         .loops(1)

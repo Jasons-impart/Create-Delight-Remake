@@ -1,4 +1,68 @@
 StartupEvents.registry("item", e => {
+    // 注册火箭相关物品
+    let rocket_tier = [
+        ["basic", "common"],
+        ["advanced", "uncommon"],
+        ["explorer", "rare"],
+        ["flare", "epic"]
+    ]
+    rocket_tier.forEach(tier => {
+        // 舱体
+        e.create(`createdelight:${tier[0]}_cabin`)
+            .rarity(tier[1])
+            .maxStackSize(1)
+            .translationKey(`item.createdelight.${tier[0]}_cabin`)
+            .tag(`createdelight:cabins`)
+            .tag(`createdelight:cabins/${tier[0]}`)
+        e.create(`createdelight:incomplete_${tier[0]}_cabin`, "create:sequenced_assembly")
+            .rarity(tier[1])
+            .translationKey(`item.createdelight.incomplete_${tier[0]}_cabin`)
+        // 舱板
+        e.create(`createdelight:${tier[0]}_panel`)
+            .rarity(tier[1])
+            .maxStackSize(16)
+            .translationKey(`item.createdelight.${tier[0]}_panel`)
+            .tag(`createdelight:panels`)
+            .tag(`createdelight:panels/${tier[0]}`)
+        e.create(`createdelight:incomplete_${tier[0]}_panel`, "create:sequenced_assembly")
+            .rarity(tier[1])
+            .translationKey(`item.createdelight.incomplete_${tier[0]}_panel`)
+    })
+    // 火箭面板
+    e.create("createdelight:basic_crystal_panel")
+        .rarity("common")
+        .maxStackSize(1)
+        .translationKey("item.createdelight.basic_crystal_panel")
+    e.create("createdelight:advanced_crystal_panel")
+        .rarity("uncommon")
+        .maxStackSize(1)
+        .translationKey("item.createdelight.advanced_crystal_panel")
+    e.create("createdelight:holographic_interface_panel")
+        .rarity("rare")
+        .maxStackSize(1)
+        .translationKey("item.createdelight.holographic_interface_panel")
+    e.create("createdelight:quantum_field_panel")
+        .rarity("epic")
+        .maxStackSize(1)
+        .translationKey("item.createdelight.quantum_field_panel")
+    // 注册碳粉
+    e.create("createdelight:carbon_dust")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.carbon_dust")
+        .tag("forge:dusts")
+        .tag("forge:dusts/carbon")
+    // 碳板
+    e.create("createdelight:carbon_plate")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.carbon_plate")
+        .tag("forge:plates")
+        .tag("forge:plates/carbon")
+    // 航空纤维板
+    e.create("createdelight:aviation_fibers_sheet")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.aviation_fibers_sheet")
+        .tag("forge:plates")
+        .tag("forge:plates/aviation_fibers")
     // 安山合金粒
     e.create("createdelight:andesite_alloy_nugget")
         .maxStackSize(64)

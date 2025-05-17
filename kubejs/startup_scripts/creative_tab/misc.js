@@ -264,7 +264,7 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     "ad_astra:iron_rod",
     "ad_astra:steel_ingot",
     "ad_astra:steel_block",
-  ]) 
+  ])
 })
 
 StartupEvents.modifyCreativeTab("ad_astra_giselle_addon:tab", e => {

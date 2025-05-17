@@ -17,6 +17,7 @@ ServerEvents.compostableRecipes(e => {
      ['festival_delicacies:jujube', 0.5],
      ['culturaldelights:corn_cob', 0.3],
      ['culturaldelights:eggplant', 0.3],
+     ['createcafe:cassava_root', 0.3],
   ]
   compostables.forEach(compostable => {
       e.add(compostable[0], compostable[1]) 
