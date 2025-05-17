@@ -1,0 +1,10 @@
+{
+  "type": "youkaishomecoming:drying_rack",
+  "category": "misc",
+  "cookingtime": 9600,
+  "experience": 0.0,
+  "ingredient": {
+    "tag": "brewinandchewin:raw_meats"
+  },
+  "result": "brewinandchewin:jerky"
+}

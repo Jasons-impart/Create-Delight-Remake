@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
         Fluid.of("createdelight:vinegar", 250),
         Fluid.of("minecraft:milk", 1000),
-        "create_bic_bit:crushed_nether_wart"
+        "createdelight:dry_yeast"
     ]).heated()
     .id("create_bic_bit:mixing/curdled_milk")
     e.recipes.create.compacting(

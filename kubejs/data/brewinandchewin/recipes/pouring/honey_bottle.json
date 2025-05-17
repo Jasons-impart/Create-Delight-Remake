@@ -1,0 +1,10 @@
+{
+  "type": "brewinandchewin:keg_pouring",
+  "amount": 250,
+  "filling": true,
+  "fluid": "create:honey",
+  "output": {
+    "item": "minecraft:honey_bottle"
+  },
+  "strict": false
+}
