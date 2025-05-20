@@ -6,6 +6,22 @@
 	#Default: 2147483647
 	itemTraderRenderLimit=2147483647
 	
+	#A list of item ids or item tags that should be rendered by Item Traders at a different scale.
+	#Should be formatted as "namespace:item_id;SCALE" where SCALE is decimal number between 0.0 and 1.0 (exclusive)
+	#Scale of 1.0 will be drawn at full size, Scale of 0.0 will not draw at all
+	#Can define an item tag instead of an item by formatting as "#namespace:item_tag;SCALE" instead
+	itemScaleOverrides=["#lightmanscurrency:display_half_size;0.5"]
+	
+	#Whether the Gacha Machine should display the items within the gacha balls
+	#Enabling will double the number of items being rendered, and can cause FPS issues near Gacha Machines
+	#Default: false
+	gachaMachineFullRender=false
+	
+	#Whether the Gacha Ball should render the item inside
+	#Enabling will double the number of items being rendered, and can cause FPS issues near Gacha Machines
+	#Default: true
+	gachaBallFullRender=true
+	
 #Time Formatting Settings
 [time]
 	#How Notification Timestamps are displayed.
