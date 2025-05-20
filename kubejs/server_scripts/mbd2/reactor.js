@@ -1,4 +1,8 @@
 const $ACEntityRegistry = Java.loadClass("com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry")
+const $ForgeEnergyRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.ForgeEnergyRecipeCapability")
+const $FluidRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.FluidRecipeCapability")
+
+
 /**
  * 
  * @param {Internal.MBDMachine} machine 
@@ -63,13 +67,32 @@ MBDMachineEvents.onRecipeWorking("createdelight:fission_reactor", e => {
 
 MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     let event = e.event
-    const {machine, recipe} = event
-    let recipeLogic = machine.recipeLogic
-    let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
+    const { machine, recipe } = event
     // console.log(`fluid.getFluidInTank(1).amount: ${fluid.getFluidInTank(1).amount}, capacity: ${fluid.getTankCapacity(1)}`)
     if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
-        //输入槽位有流体且输出槽位流体非满时，使连续工作的空配方失效
-        if (!fluid.getFluidInTank(0).empty && fluid.getFluidInTank(1).amount != fluid.getTankCapacity(1))
+        let recipeLogic = machine.recipeLogic
+        let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
+        let energy = machine.getCapability(ForgeCapabilities.ENERGY).orElse(null)
+        let maxEnergyOutput = 0
+        let maxFluidOutput = 0
+        machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
+            /**
+             * @type {Internal.MBDRecipe}
+             */
+            let mbdRecipe = r
+            mbdRecipe.getOutputContents($ForgeEnergyRecipeCapability.CAP).forEach(con => {
+                if (maxEnergyOutput < con.getContent())
+                    maxEnergyOutput = con.getContent()
+            })
+            mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
+                if (maxFluidOutput < con.getContent().getAmount())
+                    maxFluidOutput = con.getContent().getAmount()
+            })
+        })
+        //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
+        if (!fluid.getFluidInTank(0).empty &&
+            fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1) &&
+            energy.getEnergyStored() + maxEnergyOutput <= energy.getMaxEnergyStored())
             recipeLogic.markLastRecipeDirty()
     }
 })
@@ -189,12 +212,4 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
     }
 })
 
-ItemEvents.rightClicked("minecraft:stick", e => {
-    // /**
-    //  * @type {Internal.NuclearBombEntity}
-    //  */
-    // let explosion = $ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(e.level)
-    // explosion.setPos(e.entity.position())
-    // explosion.setSize(2)
-    // e.level.addFreshEntity(explosion)
-})
+
