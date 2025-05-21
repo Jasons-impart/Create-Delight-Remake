@@ -43,8 +43,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:lightning_dragon_blood", 
-                        "count": 8,
-                        "nbt" : {"giceandfire":"iceandfire:lightning_dragon_blood"}}
+                        "count": 8
+					}
 				}
 			],
 			"max_wave_time": 1200,
@@ -91,12 +91,12 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dragonscales_amythest", 
-                        "count": 18,
-                        "nbt" : {"iceandfire":"iceandfire:dragonscales_amythest"}}
+                        "count": 18
+					}
 				}
 			],
 			"max_wave_time": 1200,
-			"setup_time": 150
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -139,12 +139,12 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dragonforge_lightning_brick", 
-                        "count": 8,
-                        "nbt" : {"iceandfire":"iceandfire:dragonforge_lightning_brick"}}
+                        "count": 8
+					}
 				}
 			],
 			"max_wave_time": 1200,
-			"setup_time": 200
+			"setup_time": 300
 		}
 	],
 	"rewards": [

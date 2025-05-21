@@ -31,8 +31,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "minecraft:ghast_tear", 
-                        "count": 3,
-                        "nbt" : {"iceandfirey":"iceandfire:ice_dragon_blood"}}
+                        "count": 3
+					}
 				}
 			],
 			"max_wave_time": 600,
