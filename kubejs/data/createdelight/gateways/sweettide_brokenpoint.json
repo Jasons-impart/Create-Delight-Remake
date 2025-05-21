@@ -264,8 +264,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "alexscaves:sundae",
-                        "count": 2,
-						"nbt" : {"alexscaves":"alexscaves:gingerbread_man_steals"}}
+                        "count": 2
+					}
 				}
 			],
 			"max_wave_time": 1200,
