@@ -1,0 +1,167 @@
+{
+    "entries": [
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:silverfish_thorax"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 13,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.8,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:spider_meat"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 13,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 1,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "CARB",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:slime_noodles"
+            },
+            "max_time": 360,
+            "min_time": 300,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": {
+                "item": "collectorsreap:platinum_bass"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.2,
+            "size": 3,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "collectorsreap:platinum_bass_slice"
+                },
+                {
+                    "item": "collectorsreap:clam_meat"
+                }
+            ],
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": {
+                "item": "collectorsreap:uni"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.2,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": {
+                "item": "collectorsreap:tiger_prawn"
+            },
+            "max_time": 120,
+            "min_time": 60,
+            "nutrition": 12,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.5,
+            "size": 3,
+            "stir_time": 40
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "collectorsreap:corrosion",
+                    "level": 0,
+                    "time": 400
+                }
+            ],
+            "ingredient": {
+                "item": "collectorsreap:lime"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.0,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "collectorsreap:volatility",
+                    "level": 0,
+                    "time": 400
+                }
+            ],
+            "ingredient": {
+                "item": "collectorsreap:pomegranate_slice"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.0,
+            "size": 1,
+            "stir_time": 60
+        },
+        {
+            "type": "VEG",
+            "effects": [
+                {
+                    "effect": "collectorsreap:volatility",
+                    "level": 0,
+                    "time": 1200
+                }
+            ],
+            "ingredient": {
+                "item": "collectorsreap:pomegranate"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 6,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 0.0,
+            "size": 4,
+            "stir_time": 60
+        }
+    ]
+}
