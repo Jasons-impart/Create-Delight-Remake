@@ -9,4 +9,8 @@ ServerEvents.tags("minecraft:item", e => {
         "createdelight:mercury_ore_cluster",
         "createdelight:venus_ore_cluster", 
         "createdelight:glacio_ore_cluster"])
+    e.add("createoreexcavation:drills_diamonds", 
+        "createoreexcavation:diamond_drill",
+        "createoreexcavation:netherite_drill"
+    )
 })

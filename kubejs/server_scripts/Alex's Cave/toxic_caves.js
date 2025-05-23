@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         [
             Fluid.of("createdieselgenerators:diesel", 10),
             Fluid.of("createdieselgenerators:gasoline", 10)
-        ], 
+        ],
         Fluid.of("createdieselgenerators:crude_oil", 100), 100
     )
         .heatRequirement("heated")
@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
         [
             Fluid.of("createdelight:light_crude_oil", 100),
             Fluid.of("createdelight:ethylene_gas", 50),
-        ], 
+        ],
         [
             Fluid.of("createdieselgenerators:crude_oil", 100),
             'vintageimprovements:vanadium_nugget'
@@ -63,6 +63,26 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:ethylene_fluid", 100),
         Fluid.of("createdelight:ethylene_gas", 100), 40
     ).id("createdelight:liquefaction/ethylene_gas")
+    //乙烯乙醇互相制作
+    e.recipes.vintageimprovements.pressurizing(
+        Fluid.of("createdieselgenerators:ethanol", 250), [
+        Fluid.of("alexscaves:acid", 50),
+        Fluid.water(250),
+        Fluid.of("createdelight:ethylene_fluid", 250)
+    ])
+        .secondaryFluidInput(0)
+        .heated()
+        .id("createdelight:pressurizing/ethanol_from_ethylene")
+    e.recipes.vintageimprovements.pressurizing(
+        [
+            Fluid.of("createdelight:ethylene_gas", 250),
+            Fluid.water(250)], [
+        Fluid.of("vintageimprovements:sulfuric_acid", 50),
+        Fluid.of("createdieselgenerators:ethanol", 250)
+    ])
+        .secondaryFluidOutput(0)
+        .heated()
+        .id("createdelight:pressurizing/ethylene_gas_from_ethanol")
     // 聚合物板
     e.recipes.vintageimprovements.pressurizing(
         'alexscaves:polymer_plate',
@@ -102,11 +122,11 @@ ServerEvents.recipes(e => {
     {
         let iner = "create_new_age:incomplete_fuel"
         e.recipes.create.sequenced_assembly('create_new_age:nuclear_fuel', "ad_astra:steel_plate", [
-                e.recipes.vintageimprovements.curving(iner, iner, 1), 
-                e.recipes.create.deploying(iner, [iner, 'createdelight:carbon_plate']),
-                e.recipes.create.deploying(iner, [iner, '#createdelight:fisson_fuel']),
-                e.recipes.create.pressing(iner, iner)
-            ]
+            e.recipes.vintageimprovements.curving(iner, iner, 1),
+            e.recipes.create.deploying(iner, [iner, 'createdelight:carbon_plate']),
+            e.recipes.create.deploying(iner, [iner, '#createdelight:fisson_fuel']),
+            e.recipes.create.pressing(iner, iner)
+        ]
         )
             .loops(1)
             .transitionalItem(iner)
@@ -171,15 +191,15 @@ ServerEvents.recipes(e => {
         "ACDCA",
         "AABAA"
     ],
-    {
-        A: "ad_astra:steel_plate",
-        B: "minecraft:tnt",
-        C: "alexscaves:uranium_rod",
-        D: "alexscaves:fissile_core",
-        E: "alexscaves:block_of_uranium"
-    }).id("alexscaves:nuclear_bomb")
+        {
+            A: "ad_astra:steel_plate",
+            B: "minecraft:tnt",
+            C: "alexscaves:uranium_rod",
+            D: "alexscaves:fissile_core",
+            E: "alexscaves:block_of_uranium"
+        }).id("alexscaves:nuclear_bomb")
 
-  
+
     //氡气相关
     e.recipes.vintageimprovements.pressurizing(
         [
