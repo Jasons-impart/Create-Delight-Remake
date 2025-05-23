@@ -1,0 +1,2214 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	default_repeatable_quest: true
+	filename: "Difficulty_System"
+	group: "445171CC29E98940"
+	icon: "alexscaves:pure_darkness"
+	id: "1D6981F32D6C7E04"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			can_repeat: true
+			disable_toast: true
+			id: "4AD0B673F5112388"
+			rewards: [{
+				auto: "enabled"
+				id: "7A666E84666AE366"
+				tags: ["rank_1"]
+				team_reward: false
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:zombie"
+				icon: "minecraft:zombie_spawn_egg"
+				id: "47C243C807F6471B"
+				type: "kill"
+				value: 15L
+			}]
+			x: 8.5d
+			y: -0.5d
+		}
+		{
+			id: "2DF7214D268E18E5"
+			rewards: [{
+				auto: "no_toast"
+				id: "55146A03C4C37D89"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:skeleton"
+				id: "4BFF28AC54C44AF6"
+				type: "kill"
+				value: 15L
+			}]
+			x: 8.5d
+			y: 0.5d
+		}
+		{
+			id: "3D3BD75B7BFB0506"
+			rewards: [{
+				auto: "no_toast"
+				id: "2467236918A20505"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:creeper"
+				id: "1BE3810415FE2CEA"
+				type: "kill"
+				value: 15L
+			}]
+			x: 8.5d
+			y: 1.5d
+		}
+		{
+			id: "238C6F47D0064BA0"
+			rewards: [{
+				auto: "no_toast"
+				id: "222C4CF8A5E19852"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:drowned"
+				id: "5BFE62A8F1F387DC"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 2.5d
+		}
+		{
+			id: "2B8E399B6B1D147E"
+			rewards: [{
+				auto: "no_toast"
+				id: "1C0F9583E2E23EDD"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:vindicator"
+				id: "69715611B92C7B81"
+				type: "kill"
+				value: 5L
+			}]
+			x: 8.5d
+			y: 4.5d
+		}
+		{
+			id: "4F3232C0D657DCA8"
+			rewards: [{
+				auto: "no_toast"
+				id: "7C6589EDD0A57189"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:evoker"
+				id: "0F391EC502D90113"
+				type: "kill"
+				value: 3L
+			}]
+			x: 8.5d
+			y: 5.5d
+		}
+		{
+			id: "7127F4F92F12FB55"
+			rewards: [{
+				auto: "no_toast"
+				id: "7B3290D16FA34698"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:pillager"
+				id: "392029BD19371107"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 6.5d
+		}
+		{
+			id: "7CCED6F3F7D29A5B"
+			rewards: [{
+				auto: "no_toast"
+				id: "00F0F7AE0C5526C4"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:ravager"
+				id: "047598503AC0BA00"
+				type: "kill"
+				value: 3L
+			}]
+			x: 8.5d
+			y: 7.5d
+		}
+		{
+			id: "357EAD05A833A30D"
+			rewards: [{
+				auto: "no_toast"
+				id: "7483B292D4329F7C"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:husk"
+				id: "2E68CAE00AFE6EEB"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 3.5d
+		}
+		{
+			id: "7026F96FF4A2090D"
+			rewards: [{
+				auto: "no_toast"
+				id: "3DCD02CC68142CA5"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:corrupted_lunarian"
+				id: "384B6BEE631C92EB"
+				type: "kill"
+				value: 15L
+			}]
+			x: 3.5d
+			y: -0.5d
+		}
+		{
+			id: "439C88556A06BC1A"
+			rewards: [{
+				auto: "no_toast"
+				id: "7C7476ABAE52EDFB"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:martian_raptor"
+				id: "0DBEEB9433CE814C"
+				type: "kill"
+				value: 15L
+			}]
+			x: 3.5d
+			y: 0.5d
+		}
+		{
+			id: "17030F34FB47F625"
+			rewards: [{
+				auto: "no_toast"
+				id: "4113B491539654F9"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:mogler"
+				id: "34CD4405D800C187"
+				type: "kill"
+				value: 10L
+			}]
+			x: 3.5d
+			y: 1.5d
+		}
+		{
+			id: "60BBC80F6D531538"
+			rewards: [{
+				auto: "no_toast"
+				id: "219544A7D3188814"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:pygro_brute"
+				id: "167BBA76240CB24F"
+				type: "kill"
+				value: 10L
+			}]
+			x: 3.5d
+			y: 2.5d
+		}
+		{
+			id: "00A1AF448FDB99AF"
+			rewards: [{
+				auto: "no_toast"
+				id: "56FBA71FB0E5287E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:star_crawler"
+				id: "36C7FAE835E2FAA8"
+				type: "kill"
+				value: 10L
+			}]
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			id: "4C1025D9F32E07D0"
+			rewards: [{
+				auto: "no_toast"
+				id: "6507E892172DA915"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:sulfur_creeper"
+				id: "68342DE31CA3BA15"
+				type: "kill"
+				value: 10L
+			}]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			id: "79F63BDE5586B4C3"
+			rewards: [{
+				auto: "no_toast"
+				id: "5837EFF3734C86F4"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:zombified_mogler"
+				id: "383E4ED0782CDF8A"
+				type: "kill"
+				value: 10L
+			}]
+			x: 3.5d
+			y: 5.5d
+		}
+		{
+			id: "5514737146A23355"
+			rewards: [{
+				auto: "no_toast"
+				id: "12FC2DCD102471A2"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "ad_astra:zombified_pygro"
+				id: "16F1FC453F67F1BE"
+				type: "kill"
+				value: 20L
+			}]
+			x: 3.5d
+			y: 6.5d
+		}
+		{
+			id: "45D19B68221BE30C"
+			rewards: [{
+				auto: "no_toast"
+				id: "1938BF2EF7AD0A5F"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:atlatitan"
+				id: "7AC7E1F55D1306A6"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: -0.5d
+		}
+		{
+			id: "12A481631C12C736"
+			rewards: [{
+				auto: "no_toast"
+				id: "0EBC73F50C5AD359"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:boundroid"
+				id: "5ABE4D7B72EB1EE2"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 0.5d
+		}
+		{
+			id: "789A53F7EC13942F"
+			rewards: [{
+				auto: "no_toast"
+				id: "5D4E1FC6867DEC44"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:brainiac"
+				id: "53A5DABE3F224172"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			id: "14D601904239A265"
+			rewards: [{
+				auto: "no_toast"
+				id: "10DFD6F8DB4C18FA"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:caniac"
+				id: "64CABB37AEA2C120"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 2.5d
+		}
+		{
+			id: "1F83BACDD9FD59C7"
+			rewards: [{
+				auto: "no_toast"
+				id: "47EA380A237B6B32"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:caramel_cube"
+				id: "09D3762BA41B62B8"
+				type: "kill"
+				value: 20L
+			}]
+			x: 4.5d
+			y: 3.5d
+		}
+		{
+			id: "308AE4AAF45C8ADF"
+			rewards: [{
+				auto: "no_toast"
+				id: "3A6B82D3A00565B8"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:ferrouslime"
+				id: "2633E8587A9DB7F3"
+				type: "kill"
+				value: 20L
+			}]
+			x: 4.5d
+			y: 4.5d
+		}
+		{
+			id: "179D62A3DE368CB2"
+			rewards: [{
+				auto: "no_toast"
+				id: "6F390810E6BE9C3B"
+				tags: ["rank_3"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:forsaken"
+				id: "7E65BB45E09281DD"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 5.5d
+		}
+		{
+			id: "4602DD3F2AE5F9D8"
+			rewards: [{
+				auto: "no_toast"
+				id: "1074E5684150E023"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:gammaroach"
+				id: "78ECA48587C6C8C4"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			id: "1D12336272BA612E"
+			rewards: [{
+				auto: "no_toast"
+				id: "7D44DEEA105F5C72"
+				tags: ["rank_3"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:gum_worm"
+				id: "6896C41D5480AA4A"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 7.5d
+		}
+		{
+			id: "506FFA49B3DCF772"
+			rewards: [{
+				auto: "no_toast"
+				id: "529D9B26B02AC4CD"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:gumbeeper"
+				id: "0C3B634653B4C591"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 8.5d
+		}
+		{
+			id: "6417824FDF9FB948"
+			rewards: [{
+				auto: "no_toast"
+				id: "66279C90696C0DB7"
+				tags: ["rank_3"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:hullbreaker"
+				id: "1057D69DAD4B0AA2"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 9.5d
+		}
+		{
+			id: "7966688DF29BE383"
+			rewards: [{
+				auto: "no_toast"
+				id: "4DCF5DC22F66FA0C"
+				tags: ["rank_5"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:luxtructosaurus"
+				id: "7ED6A87F495A8C86"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 10.5d
+		}
+		{
+			id: "15433883C73360DF"
+			rewards: [{
+				auto: "no_toast"
+				id: "041D8051DAEFE712"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:mine_guardian"
+				id: "408C0A39218950AA"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 11.5d
+		}
+		{
+			id: "48B4B3A8DFCC2315"
+			rewards: [{
+				auto: "no_toast"
+				id: "7C0CD662CD2A0F00"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:notor"
+				id: "2AD870B6F37A4B26"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 12.5d
+		}
+		{
+			id: "3F97B2107C0EA3E5"
+			rewards: [{
+				auto: "no_toast"
+				id: "57BD148565760858"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:nucleeper"
+				id: "625962D087173B42"
+				type: "kill"
+				value: 5L
+			}]
+			x: 4.5d
+			y: 13.5d
+		}
+		{
+			id: "1E087AE55A6D96B1"
+			rewards: [{
+				auto: "no_toast"
+				id: "0382BE34F9DBEC8A"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:teletor"
+				id: "462B56F8C9B064EB"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 14.5d
+		}
+		{
+			id: "252811F87FD481B5"
+			rewards: [{
+				auto: "no_toast"
+				id: "318D8BFD2CF57C8E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:tremorsaurus"
+				id: "3DE0D4B2379496D2"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.5d
+			y: 15.5d
+		}
+		{
+			id: "3AC14DCF793B7D5B"
+			rewards: [{
+				auto: "no_toast"
+				id: "0ECE3759FB9066E6"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:underzealot"
+				id: "2FD9226BF1420D9D"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 16.5d
+		}
+		{
+			id: "5B943FB632CC448B"
+			rewards: [{
+				auto: "no_toast"
+				id: "5AE31AC5173110F1"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:watcher"
+				id: "7BF2CE17D3484C4C"
+				type: "kill"
+				value: 10L
+			}]
+			x: 4.5d
+			y: 17.5d
+		}
+		{
+			can_repeat: false
+			id: "5499DBB6A21AA6B4"
+			tasks: [{
+				id: "26B48C7A592567F5"
+				title: "alex洞穴"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			can_repeat: false
+			id: "2036E765F669976F"
+			tasks: [{
+				id: "07F05820F5CC5C40"
+				title: "adastra"
+				type: "checkmark"
+			}]
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			can_repeat: false
+			id: "69203D38506E49E1"
+			tasks: [{
+				id: "7FE5174955107042"
+				title: "alex生物"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+		{
+			id: "69666A4FC6CE31C6"
+			rewards: [{
+				auto: "no_toast"
+				id: "3F51CCFAE2C5A01E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:bone_serpent"
+				id: "16894C63AC2A0561"
+				type: "kill"
+				value: 5L
+			}]
+			x: 5.5d
+			y: -0.5d
+		}
+		{
+			id: "1BD0C2E6458BC85B"
+			rewards: [{
+				auto: "no_toast"
+				id: "2CB382B20C3799B0"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:cachalot_whale"
+				id: "29B212DEDD3C3C7D"
+				type: "kill"
+				value: 1L
+			}]
+			x: 5.5d
+			y: 0.5d
+		}
+		{
+			id: "4238FEE389946CE6"
+			rewards: [{
+				auto: "no_toast"
+				id: "786D304306C70BCB"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:crimson_mosquito"
+				id: "65226A34540D1822"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 1.5d
+		}
+		{
+			id: "584F7669253599CF"
+			rewards: [{
+				auto: "no_toast"
+				id: "73536B82ADFFB9F5"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:farseer"
+				id: "1CAE7FBFD75302A3"
+				type: "kill"
+				value: 1L
+			}]
+			x: 5.5d
+			y: 2.5d
+		}
+		{
+			id: "5B968B58F96F7ED0"
+			rewards: [{
+				auto: "no_toast"
+				id: "093B8D8759CCDD8D"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:froststalker"
+				id: "0E41319444E890D4"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 3.5d
+		}
+		{
+			id: "071AE216602ECA5F"
+			rewards: [{
+				auto: "no_toast"
+				id: "3DFF0987337EC849"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:guster"
+				id: "75A9D8B10158E8FA"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 4.5d
+		}
+		{
+			id: "5927186F13044567"
+			rewards: [{
+				auto: "no_toast"
+				id: "223E6F05391D07C2"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:mimicube"
+				id: "4CFD700E0AFED602"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 5.5d
+		}
+		{
+			id: "12D5D9D1F2F2FB81"
+			rewards: [{
+				auto: "no_toast"
+				id: "08994A5BDD11805E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:murmur"
+				id: "248B4E6967B3B301"
+				type: "kill"
+				value: 5L
+			}]
+			x: 5.5d
+			y: 6.5d
+		}
+		{
+			id: "787727C0DA5857EE"
+			rewards: [{
+				auto: "no_toast"
+				id: "084116A0678665B6"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:skelewag"
+				id: "7FFE8D08F72F0587"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 7.5d
+		}
+		{
+			id: "1F661AABF68EA67B"
+			rewards: [{
+				auto: "no_toast"
+				id: "38D1EF1AE0370EB6"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:skreecher"
+				id: "67A47C0006BE88D1"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 8.5d
+		}
+		{
+			id: "3C6F7CFF5CBE28EC"
+			rewards: [{
+				auto: "no_toast"
+				id: "59EAC6A5EDE93BFE"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:straddler"
+				id: "31EB1A45A5BC2ECC"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 9.5d
+		}
+		{
+			id: "73543AF897759A0B"
+			rewards: [{
+				auto: "no_toast"
+				id: "6078BFA6FE82EEF5"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:stradpole"
+				id: "65B2F255AE43B667"
+				type: "kill"
+				value: 20L
+			}]
+			x: 5.5d
+			y: 10.5d
+		}
+		{
+			id: "26BBC5606C512B32"
+			rewards: [{
+				auto: "no_toast"
+				id: "2B61208153A3BBBA"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:rocky_roller"
+				id: "516A1893C1AFA01F"
+				type: "kill"
+				value: 5L
+			}]
+			x: 5.5d
+			y: 11.5d
+		}
+		{
+			id: "6D342B89ECD60DBF"
+			rewards: [{
+				auto: "no_toast"
+				id: "3B2483F046B82A12"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:soul_vulture"
+				id: "38AEF121A5532552"
+				type: "kill"
+				value: 10L
+			}]
+			x: 5.5d
+			y: 12.5d
+		}
+		{
+			id: "20752C37E41DF847"
+			rewards: [{
+				auto: "no_toast"
+				id: "37D806BF134F911E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexsmobs:void_worm"
+				id: "41157BE7046FD894"
+				type: "kill"
+				value: 2L
+			}]
+			x: 5.5d
+			y: 13.5d
+		}
+		{
+			can_repeat: false
+			id: "361A0537D532D41E"
+			tasks: [{
+				id: "0B958327AC5677A3"
+				title: "creeper overhaul"
+				type: "checkmark"
+			}]
+			x: 6.5d
+			y: -1.5d
+		}
+		{
+			id: "4DE0A214E1A3AC06"
+			rewards: [{
+				auto: "no_toast"
+				id: "2605450AE62163B3"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "creeperoverhaul:ocean_creeper"
+				id: "1D047DE5D85F8D68"
+				type: "kill"
+				value: 15L
+			}]
+			x: 6.5d
+			y: -0.5d
+		}
+		{
+			id: "64DB689DC8DD87CD"
+			rewards: [{
+				auto: "no_toast"
+				id: "1D8E1E80FB1C6594"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "creeperoverhaul:cave_creeper"
+				id: "074CF1436FCA6768"
+				type: "kill"
+				value: 15L
+			}]
+			x: 6.5d
+			y: 0.5d
+		}
+		{
+			id: "0894CF098F74C722"
+			rewards: [{
+				auto: "no_toast"
+				id: "502D399FE0149710"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "100难度以上时击杀掉落鸡蛇之眼的概率更高"
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:cockatrice"
+				id: "5FAE38F9C354B16D"
+				type: "kill"
+				value: 10L
+			}]
+			x: 7.5d
+			y: -0.5d
+		}
+		{
+			id: "0D5200954D9EA779"
+			rewards: [{
+				auto: "no_toast"
+				id: "10D0F8498F63DA64"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:cyclops"
+				id: "06B7A7AFB96F37F0"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 0.5d
+		}
+		{
+			can_repeat: false
+			id: "73B1EE6B7623F612"
+			tasks: [{
+				id: "39B09E3B431FDB78"
+				title: "ice and fire"
+				type: "checkmark"
+			}]
+			x: 7.5d
+			y: -1.5d
+		}
+		{
+			id: "1035D4B215A3C59D"
+			rewards: [{
+				auto: "no_toast"
+				id: "253DE66D01AC5F39"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:deathworm"
+				id: "44D1BCA1BE3BDE9D"
+				type: "kill"
+				value: 3L
+			}]
+			x: 7.5d
+			y: 1.5d
+		}
+		{
+			id: "69B733FABA53FD22"
+			rewards: [{
+				auto: "no_toast"
+				id: "12C9659655A4DEF3"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_beast"
+				id: "045120ED0045EAC0"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 2.5d
+		}
+		{
+			id: "5A377D2C9AF3B4EE"
+			rewards: [{
+				auto: "no_toast"
+				id: "4820011B13315DE0"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_ghoul"
+				id: "6B94082446BB3CE4"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 3.5d
+		}
+		{
+			id: "5207A190C8AEC42F"
+			rewards: [{
+				auto: "no_toast"
+				id: "506BA9323A9D1C0C"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_knight"
+				id: "3263232CD3417285"
+				type: "kill"
+				value: 4L
+			}]
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			id: "34878AD3AE3D32F9"
+			rewards: [{
+				auto: "no_toast"
+				id: "11532A2140A7B514"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_lich"
+				id: "61584B9B52801550"
+				type: "kill"
+				value: 3L
+			}]
+			x: 7.5d
+			y: 5.5d
+		}
+		{
+			id: "2A61258CE450C5FF"
+			rewards: [{
+				id: "18403FC3B25080E6"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_lich_skull"
+				id: "4DE0568CB6811EFD"
+				type: "kill"
+				value: 8L
+			}]
+			x: 7.5d
+			y: 6.5d
+		}
+		{
+			id: "467FC138CCA6A893"
+			rewards: [{
+				auto: "no_toast"
+				id: "40674D5B4EB50DD1"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_thrall"
+				id: "1655870ED212D6D8"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 7.5d
+		}
+		{
+			id: "616C643785FCCA28"
+			rewards: [{
+				auto: "no_toast"
+				id: "5CF1618EDB6FBCD1"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:dread_scuttler"
+				id: "352A4ABFEED89679"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 8.5d
+		}
+		{
+			id: "5AA3046CBC8378B4"
+			rewards: [{
+				auto: "no_toast"
+				id: "4173D320BFF51F4E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:fire_dragon"
+				id: "75C2BF6B98B5379F"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 9.5d
+		}
+		{
+			id: "1E9B0CAE280D2628"
+			rewards: [{
+				auto: "no_toast"
+				id: "29C4B90FD9DF81E9"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:ghost"
+				id: "454ACAAE4B054645"
+				type: "kill"
+				value: 10L
+			}]
+			x: 7.5d
+			y: 10.5d
+		}
+		{
+			id: "2B13CEC2FD61108C"
+			rewards: [{
+				auto: "no_toast"
+				id: "6E66CAF4E9ED5460"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:gorgon"
+				id: "228D1C1687F68907"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 11.5d
+		}
+		{
+			id: "00DB49072D1C8389"
+			rewards: [{
+				auto: "no_toast"
+				id: "1194FE87DC2573DF"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:hydra"
+				id: "22A2C1E396B8E842"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 12.5d
+		}
+		{
+			id: "14B2B25EB7A7CE12"
+			rewards: [{
+				auto: "no_toast"
+				id: "313D58DDDA6CFC57"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:ice_dragon"
+				id: "3D489FCD861CE99F"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 13.5d
+		}
+		{
+			id: "752391949DAE4AE9"
+			rewards: [{
+				auto: "no_toast"
+				id: "24C23B1B83D324CA"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:lightning_dragon"
+				id: "1E311C43D8F42CF1"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 14.5d
+		}
+		{
+			id: "7819A4744AC88D23"
+			rewards: [{
+				auto: "no_toast"
+				id: "1AB82D708A90A8DE"
+				tags: ["rank_3"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:myrmex_queen"
+				id: "39CF5D3E7BD4C07C"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 15.5d
+		}
+		{
+			id: "726CE9D287A3B0F7"
+			rewards: [{
+				auto: "no_toast"
+				id: "04B792AA575DDA33"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:myrmex_royal"
+				id: "41187F16A68907A2"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 16.5d
+		}
+		{
+			id: "7F003930E7412F6D"
+			rewards: [{
+				auto: "no_toast"
+				id: "5BEA3BFACB30558E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:myrmex_sentinel"
+				id: "19A61137F5BFE8C9"
+				type: "kill"
+				value: 2L
+			}]
+			x: 7.5d
+			y: 17.5d
+		}
+		{
+			id: "59D669D2AA259F6A"
+			rewards: [{
+				auto: "no_toast"
+				id: "63CD4730A099152F"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:myrmex_swarmer"
+				id: "5C9977D34E6327BF"
+				type: "kill"
+				value: 3L
+			}]
+			x: 7.5d
+			y: 18.5d
+		}
+		{
+			id: "04CEC8648F326384"
+			rewards: [{
+				auto: "no_toast"
+				id: "131D22DCDD1DC4D1"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:myrmex_worker"
+				id: "5B8588B1CF6C444E"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 19.5d
+		}
+		{
+			id: "1A32ECD3B52EE467"
+			rewards: [{
+				auto: "no_toast"
+				id: "3BC3587A70ADA6A8"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:pixie"
+				id: "4A3B1EA08B265A23"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 20.5d
+		}
+		{
+			id: "08F0BD7C691B510A"
+			rewards: [{
+				auto: "no_toast"
+				id: "45B6E1E58ECF4D7D"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:sea_serpent"
+				id: "4DFA71C7F96FE33D"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 21.5d
+		}
+		{
+			id: "6C86F9DC8C2ADDE4"
+			rewards: [{
+				auto: "no_toast"
+				id: "15FC6846EE6D54F2"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:siren"
+				id: "02A0EC88C2836DCE"
+				type: "kill"
+				value: 3L
+			}]
+			x: 7.5d
+			y: 22.5d
+		}
+		{
+			id: "5D320AB9B4F450D5"
+			rewards: [{
+				auto: "no_toast"
+				id: "61A596B8EF8B3490"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:stymphalian_bird"
+				id: "6EAFEBD8A51CBC31"
+				type: "kill"
+				value: 5L
+			}]
+			x: 7.5d
+			y: 23.5d
+		}
+		{
+			id: "26F83487B5719890"
+			rewards: [{
+				auto: "no_toast"
+				id: "0EE9665B3D75B510"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "iceandfire:troll"
+				id: "15CE4F727EFA012A"
+				type: "kill"
+				value: 2L
+			}]
+			x: 7.5d
+			y: 24.5d
+		}
+		{
+			id: "7E85663D7903D439"
+			rewards: [{
+				auto: "no_toast"
+				id: "3DAF501811781F52"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "alexscaves:atlatitan"
+				id: "22F42A2107C5BFF3"
+				type: "kill"
+				value: 1L
+			}]
+			x: 7.5d
+			y: 25.5d
+		}
+		{
+			can_repeat: false
+			id: "34726E8C88B9EB24"
+			tasks: [{
+				id: "7BA60C47F54B8919"
+				title: "原版"
+				type: "checkmark"
+			}]
+			x: 8.5d
+			y: -1.5d
+		}
+		{
+			id: "471651C38BE4FE34"
+			rewards: [{
+				auto: "no_toast"
+				id: "7BC79A7ADF1A815B"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:blaze"
+				id: "3E47A1F886C44947"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 8.5d
+		}
+		{
+			id: "72138BBBC18D3ED7"
+			rewards: [{
+				auto: "no_toast"
+				id: "4DE5B1FAC2D3D0EF"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:ghast"
+				id: "402FB9AB04FD5A1C"
+				type: "kill"
+				value: 5L
+			}]
+			x: 8.5d
+			y: 9.5d
+		}
+		{
+			id: "16C8265CA0ADD163"
+			rewards: [{
+				auto: "no_toast"
+				id: "6661CA2C52DD234B"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:enderman"
+				id: "08A42136F5144A24"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 10.5d
+		}
+		{
+			id: "71ED248EDC4F4D27"
+			rewards: [{
+				auto: "no_toast"
+				id: "154D9F266AAC6CF1"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:endermite"
+				id: "37D0E6A0A12A820D"
+				type: "kill"
+				value: 5L
+			}]
+			x: 8.5d
+			y: 11.5d
+		}
+		{
+			id: "57ABB9798D503640"
+			rewards: [{
+				auto: "no_toast"
+				id: "1D66595B9A14C449"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:guardian"
+				id: "254A32D79EFB7B5C"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 12.5d
+		}
+		{
+			id: "50C45D9226C2ACE4"
+			rewards: [{
+				auto: "no_toast"
+				id: "4B0791EA00BCE9DA"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:elder_guardian"
+				id: "75B4BBFE4FC6DDCE"
+				type: "kill"
+				value: 2L
+			}]
+			x: 8.5d
+			y: 13.5d
+		}
+		{
+			id: "1D12CFA971404488"
+			rewards: [{
+				auto: "no_toast"
+				id: "6A3B7323D0CC89A2"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:shulker"
+				id: "4427A3AC6B8FCF26"
+				type: "kill"
+				value: 5L
+			}]
+			x: 8.5d
+			y: 14.5d
+		}
+		{
+			id: "4D284DAC345B9D4C"
+			rewards: [{
+				auto: "no_toast"
+				id: "6EC4A444B03C0705"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:witch"
+				id: "4B4453C6D92050EB"
+				type: "kill"
+				value: 3L
+			}]
+			x: 8.5d
+			y: 15.5d
+		}
+		{
+			id: "0EB5BB2A8176E05A"
+			rewards: [{
+				auto: "no_toast"
+				id: "61F9F04A1655BE71"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:piglin_brute"
+				id: "0795CC5F0AE9E6B3"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 16.5d
+		}
+		{
+			id: "123602DEF42CEE9F"
+			rewards: [{
+				auto: "no_toast"
+				id: "6E53B828BD66F82E"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:silverfish"
+				id: "5427ED1E84EFFB18"
+				type: "kill"
+				value: 20L
+			}]
+			x: 8.5d
+			y: 17.5d
+		}
+		{
+			icon: "minecraft:slime_spawn_egg"
+			id: "4FA9CD05A58478D2"
+			rewards: [{
+				auto: "no_toast"
+				id: "4C76D876E253E9A5"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:slime"
+				id: "1723A01A34D76DAE"
+				type: "kill"
+				value: 20L
+			}]
+			x: 8.5d
+			y: 18.5d
+		}
+		{
+			id: "7B9DF906A8DB8343"
+			rewards: [{
+				auto: "no_toast"
+				id: "4AD56DF86BD8CE91"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:vex"
+				id: "6D2181A55232E43B"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 19.5d
+		}
+		{
+			id: "4B30855336A413D1"
+			rewards: [{
+				auto: "no_toast"
+				id: "32DDFF5DDE94B5FF"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "100难度以上时玩家击杀有概率掉落伊甸碎片"
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:wither_skeleton"
+				id: "64B94D79777E27AF"
+				type: "kill"
+				value: 10L
+			}]
+			x: 8.5d
+			y: 20.5d
+		}
+		{
+			id: "588B5547097CD746"
+			rewards: [{
+				auto: "no_toast"
+				id: "755E170406E785DE"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:spider"
+				id: "7DB7A0FA6613C76B"
+				type: "kill"
+				value: 15L
+			}]
+			x: 8.5d
+			y: 21.5d
+		}
+		{
+			id: "320413567ECFCE7E"
+			rewards: [{
+				auto: "no_toast"
+				id: "2205E246497CAEAC"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:magma_cube"
+				id: "37EB0AB02C4BACEC"
+				type: "kill"
+				value: 15L
+			}]
+			x: 8.5d
+			y: 22.5d
+		}
+		{
+			id: "43FFC94D6739DE8D"
+			rewards: [{
+				auto: "no_toast"
+				id: "57CC799792BBAACF"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			subtitle: "100难度以上时击杀掉落伊甸图腾的概率更高"
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:wither"
+				id: "2856158FBBAFD5C4"
+				type: "kill"
+				value: 1L
+			}]
+			x: 8.5d
+			y: 23.5d
+		}
+		{
+			id: "7D93E6AE4F074976"
+			rewards: [{
+				auto: "no_toast"
+				id: "22EFE867AE3F050B"
+				tags: ["rank_3"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:ender_dragon"
+				id: "3F85F992103C13C6"
+				type: "kill"
+				value: 1L
+			}]
+			x: 8.5d
+			y: 24.5d
+		}
+		{
+			id: "63AD65600AA48A55"
+			rewards: [{
+				auto: "no_toast"
+				id: "3740153259508E61"
+				tags: ["rank_5"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "minecraft:warden"
+				id: "069862876F9A888D"
+				type: "kill"
+				value: 1L
+			}]
+			x: 8.5d
+			y: 25.5d
+		}
+		{
+			can_repeat: false
+			id: "29B36819331EA036"
+			tasks: [{
+				id: "41294F240F5EB613"
+				title: "其他"
+				type: "checkmark"
+			}]
+			x: 9.5d
+			y: -1.5d
+		}
+		{
+			id: "665657DBF829E67E"
+			rewards: [{
+				id: "4F034A398BE51F56"
+				tags: ["rank_1"]
+				type: "custom"
+			}]
+			tasks: [{
+				disable_toast: true
+				entity: "quark:forgotten"
+				id: "4634B4289B1F2D83"
+				type: "kill"
+				value: 5L
+			}]
+			x: 9.5d
+			y: -0.5d
+		}
+		{
+			can_repeat: false
+			id: "6AD592C5D877F7D9"
+			tasks: [{
+				id: "6864CBC3667BCF9F"
+				title: "前往维度"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			can_repeat: false
+			id: "3E31AAF7CCC313C2"
+			rewards: [{
+				auto: "no_toast"
+				id: "0DA94722AEFA2190"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "minecraft:the_nether"
+				id: "512E507326460AAA"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: -0.5d
+		}
+		{
+			can_repeat: false
+			id: "4F77814A449F3968"
+			rewards: [{
+				auto: "no_toast"
+				id: "481922F2036E7126"
+				tags: ["rank_15"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "minecraft:the_end"
+				id: "31AA2E5B2E4863BD"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 0.5d
+		}
+		{
+			can_repeat: false
+			id: "04F7B5A6ED4ED323"
+			rewards: [{
+				auto: "no_toast"
+				id: "04C85D72724876C5"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "ad_astra:moon"
+				id: "153B4C7C18331BE4"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			can_repeat: false
+			id: "278C9D58069DE93B"
+			rewards: [{
+				auto: "no_toast"
+				id: "1E1E72FB7DB5C653"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "ad_astra:mars"
+				id: "45F249D085BD1F9A"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 2.5d
+		}
+		{
+			can_repeat: false
+			id: "0CE83324A8693828"
+			rewards: [{
+				auto: "no_toast"
+				id: "6709ED07E49B701E"
+				tags: ["rank_15"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "ad_astra:venus"
+				id: "18271CA69E5E4542"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 3.5d
+		}
+		{
+			can_repeat: false
+			id: "3AF7DEA0A45A629E"
+			rewards: [{
+				auto: "no_toast"
+				id: "7C305A4302758618"
+				tags: ["rank_15"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "ad_astra:mercury"
+				id: "58FF754464282364"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 4.5d
+		}
+		{
+			can_repeat: false
+			id: "04076AD658A0CDA2"
+			rewards: [{
+				auto: "no_toast"
+				id: "3AD07B0BFEE8AEBD"
+				tags: ["rank_20"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "ad_astra:glacio"
+				id: "3ECE1826BD2A8101"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 5.5d
+		}
+		{
+			can_repeat: false
+			id: "1E006E5F7EF406DC"
+			rewards: [{
+				auto: "no_toast"
+				id: "518BA77B732B168C"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:abyssal_chasm_dimension"
+				id: "0ABAFDDE3718F8B8"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 6.5d
+		}
+		{
+			can_repeat: false
+			id: "5D9FF74DE128963C"
+			rewards: [{
+				auto: "no_toast"
+				id: "08CEF4AC12B4CBDC"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:candy_cavity_dimension"
+				id: "253D73D5DF86F700"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 7.5d
+		}
+		{
+			can_repeat: false
+			id: "6DE1EB89B19C119A"
+			rewards: [{
+				auto: "no_toast"
+				id: "56B39890976B6D14"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:forlorn_hollows_dimension"
+				id: "69FA9C531CABE582"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 8.5d
+		}
+		{
+			can_repeat: false
+			id: "56368693D5E17355"
+			rewards: [{
+				auto: "no_toast"
+				id: "64916FE2121C3DCE"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:magnetic_caves_dimension"
+				id: "05D930F96870C735"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 9.5d
+		}
+		{
+			can_repeat: false
+			id: "02CDAAFB14D1E36A"
+			rewards: [{
+				auto: "no_toast"
+				id: "2995B82DBD88454A"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:primordial_caves_dimension"
+				id: "790A922C98A787A7"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 10.5d
+		}
+		{
+			can_repeat: false
+			id: "6BAB2267F7D6D0D7"
+			rewards: [{
+				auto: "no_toast"
+				id: "75004E4133FD5E49"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "createdelight:toxic_caves_dimension"
+				id: "41485D4FC4B403F8"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 11.5d
+		}
+		{
+			can_repeat: false
+			id: "114303FA5068E64C"
+			rewards: [{
+				auto: "no_toast"
+				id: "24FB76C5C2144549"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			tasks: [{
+				dimension: "the_bumblezone:the_bumblezone"
+				id: "26802E04183218E8"
+				type: "dimension"
+			}]
+			x: 2.5d
+			y: 12.5d
+		}
+		{
+			can_repeat: false
+			id: "19F7D16F2E003480"
+			tasks: [{
+				id: "6A08DE376B14F5A8"
+				title: "难度提升"
+				type: "checkmark"
+			}]
+			x: 11.5d
+			y: -1.5d
+		}
+		{
+			id: "56CE633A8A8DE8AB"
+			rewards: [{
+				id: "4A69624C154FCC12"
+				tags: ["rank_10"]
+				type: "custom"
+			}]
+			subtitle: "交付这些物品就可以提升十级难度！"
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "464B36CA12B5D392"
+				item: "art_of_forging:shards_of_malice"
+				type: "item"
+			}]
+			title: "觉得难度太低了？"
+			x: 11.5d
+			y: -0.5d
+		}
+		{
+			can_repeat: false
+			id: "5CA456D3407F3AFB"
+			tasks: [{
+				id: "750EAC7BE640D75A"
+				title: "难度降低"
+				type: "checkmark"
+			}]
+			x: 12.5d
+			y: -1.5d
+		}
+		{
+			id: "5CDA9A91051633A4"
+			rewards: [{
+				id: "5132D1EFBB7446BD"
+				tags: ["unrank_10"]
+				type: "custom"
+			}]
+			subtitle: "交付这些物品就可以下降十级难度！"
+			tasks: [{
+				consume_items: true
+				id: "154772CE9D75B183"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			title: "觉得难度太高了？"
+			x: 12.5d
+			y: -0.5d
+		}
+		{
+			description: [
+				"如果你是第一次领取这个任务的奖励，则你的难度将不再发生变化&4（交付物品的任务与玩家死亡也不会变化）&r。"
+				"此后的重复完成任务，领取奖励则是切换难度是否要变化。"
+				"此任务是为了解决&e不想要难度系统的玩家&r的难度焦虑，同时也是为因死亡难以保持难度的&e较高难度的玩家&r服务。"
+				"实际上，经过我们包的各种削弱，我们整合包的难度系统在100难度以下都是较为安全的。"
+			]
+			id: "4CA7F329E5D39D5B"
+			rewards: [{
+				id: "4105A52905074F27"
+				tags: ["change_rank_change_state"]
+				type: "custom"
+			}]
+			size: 2.0d
+			subtitle: "难度是否要提升或者降低"
+			tasks: [{
+				id: "4156F5EFC8ADAA2B"
+				title: "切换难度升降状态"
+				type: "checkmark"
+			}]
+			x: 15.0d
+			y: -1.0d
+		}
+	]
+	title: "难度索引"
+}

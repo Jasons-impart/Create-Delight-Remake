@@ -17,8 +17,12 @@ ServerEvents.recipes(e => {
         "protection_pixel:buoyancyloot",
         "protection_pixel:alloyplate",
         "protection_pixel:hookcannonloot",
-        "protection_pixel:hooklootw"
+        "protection_pixel:hooklootw",
+        // "protection_pixel:typhoonloot",
+        // "protection_pixel:nightdemonloot"
+
     ])
+    e.replaceInput({output: "protection_pixel:steelcorecannonshell"}, "create:andesite_alloy", "#forge:ingots/cast_iron")
     e.recipes.create.cutting(
         '2x protection_pixel:smallnetheritesheet',
         "#forge:plates/netherite"
@@ -210,9 +214,9 @@ ServerEvents.recipes(e => {
         {
             A: "create:brass_ingot",
             B: "create:brass_sheet",
-            C: "createaddition:tesla_coil",
+            C: "alexscaves:tesla_bulb",
             D: "createmetallurgy:steel_ingot",
-            E: "minecraft:netherite_scrap",
+            E: "create_new_age:layered_magnet",
             F: "create_sa:brass_exoskeleton_chestplate",
             G: "minecraft:redstone",
             H: "createaddition:electrum_sheet",
@@ -360,6 +364,42 @@ ServerEvents.recipes(e => {
         }
 
     ).id("protection_pixel:buoyancyloot")
+    
+    // e.recipes.create.mechanical_crafting("protection_pixel:typhoon_chestplate",
+    //     [
+    //         "ABCBA",
+    //         "DEFED",
+    //         "EGHGE",
+    //         "EE EE"
+    //     ],
+    //     {
+    //         A: "create:fluid_pipe",
+    //         B: "createdelight:planet_gear",
+    //         C: "create:electron_tube",
+    //         D: "#forge:ingots/steel",
+    //         E: "#forge:plates/brass",
+    //         F: "create_sa:brass_exoskeleton_chestplate",
+    //         G: "#forge:plates/steel",
+    //         H: "create:fluid_tank"
+    //     }
+
+    // ).id("protection_pixel:typhoonloot")
+    // e.recipes.create.mechanical_crafting("protection_pixel:nightdemon_helmet",
+    //     [
+    //         "ABCBA",
+    //         "DEFED",
+    //         " ABA "
+    //     ],
+    //     {
+    //         A: "#forge:plates/steel",
+    //         B: "ae2:fluix_crystal",
+    //         C: "alexscaves:pure_darkness",
+    //         D: "#forge:plates/brass",
+    //         E: "minecraft:glass_pane",
+    //         F: "create_sa:brass_helmet"
+    //     }
+
+    // ).id("protection_pixel:nightdemonloot")
     e.findRecipes({ mod: "protection_pixel", output: "#protection_pixel:alloy" }).forEach(recipe => {
         let result = recipe.originalRecipeResult
         let ingredient = recipe.json.getAsJsonObject("ingredient").get("item").getAsString()

@@ -1,0 +1,465 @@
+{
+	autofocus_id: "696A502F48B90A6E"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Production_Amplification"
+	group: "445171CC29E98940"
+	icon: "minecraft:paper"
+	id: "380C3F9A1B590C90"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"本章并非必须完成的内容"
+				"旨在介绍整合包添加的常用&e基础材料&r增产方式的流程，以帮助搭建基础材料增产产线"
+				"（即通过更多工序，来提高相同原料消耗下的产量）"
+			]
+			id: "696A502F48B90A6E"
+			shape: "hexagon"
+			size: 3.0d
+			tasks: [{
+				id: "7D75C5D7AE7DC679"
+				title: "增产及再生"
+				type: "checkmark"
+			}]
+			x: 7.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4290279E12E3E104"]
+			description: ["量产以上材料中的一种就可以开始大量生产纸啦。"]
+			disable_toast: true
+			icon: "minecraft:bamboo"
+			id: "73B0EDFE6627F286"
+			min_required_tasks: 1
+			tasks: [
+				{
+					id: "6E2F11B28D889BB2"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:papers_raw_material"
+						}
+					}
+					title: "粗纤维物品"
+					type: "item"
+				}
+				{
+					id: "3BDA9E48D4D4A208"
+					item: "minecraft:bamboo"
+					type: "item"
+				}
+			]
+			title: "竹子/树皮/木屑/草杆"
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			description: ["整合包中纸的直接合成材料由甘蔗改为了竹子或树皮\\n这条产线可实现以&e一根竹子为原料造纸20张或一个树皮/木屑/草杆造纸10张&r"]
+			icon: "minecraft:paper"
+			id: "4290279E12E3E104"
+			size: 1.5d
+			tasks: [{
+				id: "7975E64E2E111876"
+				title: "纸"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["73B0EDFE6627F286"]
+			description: [
+				"将竹子和水在&e加热条件下混合搅拌&r，即可生成未发酵的纸浆。"
+				"树皮/草杆/木屑无需加热，和水&e直接混合搅拌&r便可生成待发酵的纸浆。"
+			]
+			icon: "createdelight:unfermented_paper_pulp_bucket"
+			id: "43F6BF796F22AAA4"
+			tasks: [{
+				id: "6BDD2808FD34EBFE"
+				item: "createdelight:unfermented_paper_pulp_bucket"
+				type: "item"
+			}]
+			title: "待发酵的纸浆"
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["43F6BF796F22AAA4"]
+			description: ["将待发酵的纸浆&e装入盖上盖板的工作盆&r，静待十秒，待发酵的纸浆会变为纸浆。"]
+			icon: "createdelight:paper_pulp_bucket"
+			id: "567401BBABA2F521"
+			tasks: [{
+				id: "0476DD778CFF0198"
+				item: "createdelight:paper_pulp_bucket"
+				type: "item"
+			}]
+			title: "纸浆"
+			x: 3.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["204821A79F00A472"]
+			description: ["将未完成的纸在&e动力辊压机下辊压&r即可完成造纸。"]
+			id: "1D67B2FB94BBC108"
+			rewards: [{
+				count: 128
+				id: "2117AAA0B14AD4B7"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			tasks: [{
+				count: 128L
+				id: "253AE23AD596B3AE"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			description: [""]
+			icon: "minecraft:leather"
+			id: "06C244AEF0521053"
+			size: 1.5d
+			subtitle: "这条产线可实现以&e一个仙人掌/菠萝苗/腐肉/粗布以及少量海带&r为原料制皮革两张"
+			tasks: [{
+				id: "40E317D6E625386E"
+				title: "皮革"
+				type: "checkmark"
+			}]
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["567401BBABA2F521"]
+			description: [
+				"将纸浆加入工作盆中，&e使用压缩机在加热条件&r下处理即可生成未完成的纸。"
+				"此外，压缩机中还会产生水，记得及时排出，否则会阻碍机器的运行。"
+			]
+			id: "204821A79F00A472"
+			tasks: [{
+				id: "4E7DC54ED521E193"
+				item: "createdelight:incomplete_paper"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7DB6E13EE8EF2082"]
+			description: ["将海带放入工作盆中，&e使用压缩机在加热条件&r下处理即可生成黏液。"]
+			icon: "createdelightcore:slime_bucket"
+			id: "2F4B0A78F86BB9D1"
+			tasks: [{
+				id: "76D768F54377CC59"
+				item: "createdelightcore:slime_bucket"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["06C244AEF0521053"]
+			description: ["量产以上四种材料均可实现大量制皮革。"]
+			disable_toast: true
+			icon: "minecraft:cactus"
+			id: "5F7A132E1CFCEED3"
+			tasks: [{
+				id: "62522B721B4D3B1F"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "createdelight:leather_ingredient"
+					}
+				}
+				title: "Any #createdelight:leather_ingredient"
+				type: "item"
+			}]
+			title: "仙人掌/菠萝苗/腐肉/粗布"
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"2F4B0A78F86BB9D1"
+				"5F7A132E1CFCEED3"
+			]
+			description: ["将四种材料中的任意一种和黏液一同加入工作盆中，&e使用压缩机在加热条件&r下处理即可生成未完成的皮革。"]
+			id: "7BC0279C33CBC043"
+			tasks: [{
+				id: "399C0324166379C4"
+				item: "createdelight:unfinished_leather"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7BC0279C33CBC043"]
+			description: ["将未完成的皮革在&e使用鼓风机进行冷冻&r即可完成制皮革。"]
+			id: "6A53F67B1A396606"
+			rewards: [{
+				count: 32
+				id: "3B4D8AF2B2759B0F"
+				item: "minecraft:leather"
+				type: "item"
+			}]
+			tasks: [{
+				consume_items: false
+				count: 32L
+				id: "58EC8F17A20201BD"
+				item: { Count: 196, id: "minecraft:leather" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["06C244AEF0521053"]
+			disable_toast: true
+			id: "7DB6E13EE8EF2082"
+			tasks: [{
+				id: "78E72C0CC160411B"
+				item: "minecraft:kelp"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			description: [""]
+			icon: "createdelight:empty_popsicle"
+			id: "25D83E425182488C"
+			size: 1.5d
+			subtitle: "炎炎夏日，谁不想来一根美味的冰棍呢"
+			tasks: [{
+				id: "32380D2704EB738D"
+				title: "冰棍"
+				type: "checkmark"
+			}]
+			title: "老冰棍"
+			x: 9.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["25D83E425182488C"]
+			description: ["只需要这三种简单的材料就就可以做冰棍吃辣！"]
+			disable_toast: true
+			icon: "minecraft:stick"
+			id: "023619EAA38A6E01"
+			tasks: [
+				{
+					id: "6D081A8B12E19F4C"
+					item: "minecraft:sugar"
+					type: "item"
+				}
+				{
+					id: "761A993419A043F9"
+					item: "minecraft:stick"
+					type: "item"
+				}
+				{
+					id: "58DD33B24CD4BD75"
+					item: "minecraft:ice"
+					type: "item"
+				}
+			]
+			x: 9.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["023619EAA38A6E01"]
+			description: ["&e木棍按顺序安装冰和糖&r，即可获得小时候最爱的老冰棍。在此基础上使用注液器可制作五种不同口味的冰棍~"]
+			id: "0A543B37AFB16CBF"
+			tasks: [{
+				id: "51B2C033054E4E40"
+				item: "createdelight:empty_popsicle"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "547E4FDEDAA71D80"
+			tasks: [{
+				id: "59882BF0B6C437B4"
+				item: "fruitsdelight:hamimelon_popsicle"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "4267DB5D75E45824"
+			tasks: [{
+				id: "0605615A8045F434"
+				item: "farmersdelight:melon_popsicle"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "292CCEA750146A0D"
+			tasks: [{
+				id: "4D9AA75B1FA94360"
+				item: "ends_delight:chorus_fruit_popsicle"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "0DAA9DB744D92804"
+			tasks: [{
+				id: "10F8DDAA52E4024E"
+				item: "casualness_delight:green_tongue"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "6FECC7B7059EF446"
+			tasks: [{
+				id: "720CFD0B86F0810F"
+				item: "fruitsdelight:kiwi_popsicle"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 3.0d
+		}
+		{
+			id: "4458E27C5252B296"
+			size: 1.5d
+			tasks: [{
+				id: "6DFC07744EB495D2"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			title: "磁铁再生"
+			x: 12.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "7B70E01AFD2682DF"
+			tasks: [{
+				id: "58ED58AA2DE0EE84"
+				item: "minecraft:iron_nugget"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "67745081E83C9431"
+			tasks: [{
+				id: "23D9612B406CCC0F"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "70ECE9227BC282F8"
+			tasks: [{
+				id: "6BC5E1F4FDAF8DE5"
+				item: "minecraft:deepslate"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"7B70E01AFD2682DF"
+				"70ECE9227BC282F8"
+				"67745081E83C9431"
+			]
+			id: "022B6494C59BA440"
+			tasks: [{
+				id: "493F5B3144D2A520"
+				item: "alexscaves:galena"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"022B6494C59BA440"
+				"394CADE1D352FDFE"
+				"6D3C402FFD2589A4"
+			]
+			id: "66B9F063DCC82118"
+			tasks: [{
+				id: "69D5CBDED0ABC5AC"
+				item: "alexscaves:energized_galena_neutral"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["022B6494C59BA440"]
+			id: "394CADE1D352FDFE"
+			tasks: [{
+				id: "7221DEE65BAA4939"
+				item: "alexscaves:energized_galena_scarlet"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["022B6494C59BA440"]
+			id: "6D3C402FFD2589A4"
+			tasks: [{
+				id: "0402B4D2746DCBAA"
+				item: "alexscaves:energized_galena_azure"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["66B9F063DCC82118"]
+			id: "0D13653994741380"
+			tasks: [{
+				id: "5C54750DA5464D59"
+				item: "minecraft:iron_block"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"0D13653994741380"
+				"66B9F063DCC82118"
+			]
+			id: "500DE3AE5B0CD3B2"
+			tasks: [{
+				id: "7D4696529891FBE0"
+				item: "create_new_age:magnetite_block"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 6.0d
+		}
+	]
+	title: "增产小技巧"
+}

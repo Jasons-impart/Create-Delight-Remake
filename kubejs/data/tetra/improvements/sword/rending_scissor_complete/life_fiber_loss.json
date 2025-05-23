@@ -1,0 +1,13 @@
+[
+    {
+        "key":"blade/life_fiber_loss",
+        "integrity": -1,
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "art_of_forging:life_fiber_loss": [ 1, 10 ]
+        }
+    }
+]

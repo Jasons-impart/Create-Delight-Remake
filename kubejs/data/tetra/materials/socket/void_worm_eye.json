@@ -13,8 +13,8 @@
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-        "generic.attack_damage": 5,
-        "forge:reach_distance":2,
+        "generic.attack_damage": 2,
+        "forge:reach_distance":1,
         "forge:attack_range":1
     },
     "effects": {

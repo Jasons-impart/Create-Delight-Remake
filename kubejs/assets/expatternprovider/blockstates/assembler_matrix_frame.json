@@ -1,0 +1,82 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_block_off"
+      },
+      "when": {
+        "powered": "false",
+        "shape": "block"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_block_on"
+      },
+      "when": {
+        "powered": "true",
+        "shape": "block"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_off",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "powered": "false",
+        "shape": "column_x"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_on",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "powered": "true",
+        "shape": "column_x"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_off"
+      },
+      "when": {
+        "powered": "false",
+        "shape": "column_y"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_on"
+      },
+      "when": {
+        "powered": "true",
+        "shape": "column_y"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_off",
+        "x": 90
+      },
+      "when": {
+        "powered": "false",
+        "shape": "column_z"
+      }
+    },
+    {
+      "apply": {
+        "model": "expatternprovider:block/assembler_matrix/frame_column_on",
+        "x": 90
+      },
+      "when": {
+        "powered": "true",
+        "shape": "column_z"
+      }
+    }
+  ]
+}

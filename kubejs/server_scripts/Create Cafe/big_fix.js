@@ -7,7 +7,7 @@ ServerEvents.recipes(e => {
     ])
     const {create} = e.recipes
     create.mixing("createcafe:oreo_dough", [
-        "create:wheat_flour",
+        "bakeries:flour",
         "ratatouille:cocoa_powder",
         Fluid.water(250)
     ])

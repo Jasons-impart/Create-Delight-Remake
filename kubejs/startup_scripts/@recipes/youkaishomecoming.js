@@ -1,0 +1,6 @@
+new Schema("youkaishomecoming:drying_rack")
+    .simpleKey("result", "outputItem")
+    .simpleKey("ingredient", "inputItemArray")
+    .simpleKey("cookingtime", "doubleNumber", 200)
+    .simpleKey("experience", "doubleNumber", 0.0)
+    .simpleKey("category", "anyString", "misc")

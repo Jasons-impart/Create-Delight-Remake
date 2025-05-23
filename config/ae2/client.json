@@ -9,7 +9,7 @@
     "useTerminalUseLargeFont": false,
     "useColoredCraftingStatus": true,
     "PowerUnit_comment": "Power unit shown in AE UIs",
-    "PowerUnit": "ae",
+    "PowerUnit": "fe",
     "showDebugGuiOverlays_comment": "Show debugging GUI overlays",
     "showDebugGuiOverlays": false,
     "showPlacementPreview_comment": "Show a preview of part and facade placement",
@@ -22,7 +22,7 @@
     "terminalMargin": 25
   },
   "terminals": {
-    "terminalStyle": "small",
+    "terminalStyle": "full",
     "pinAutoCraftedItems_comment": "Pin items that the player auto-crafts to the top of the terminal",
     "pinAutoCraftedItems": true
   },

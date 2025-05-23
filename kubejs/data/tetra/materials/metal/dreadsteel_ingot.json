@@ -5,13 +5,19 @@
     "secondary": 4,
     "tertiary": 5,
     "durability": 1800,
-    "integrityCost": 2,
+    "integrityCost": 3,
     "integrityGain": 9,
     "magicCapacity": 150,
     "toolLevel": "minecraft:netherite",
     "toolEfficiency": 11,
         "effects": {
-            "art_of_forging:devouring": [ 0, 5 ]
+            "art_of_forging:devouring": [ 0, 5 ],
+            "createdelight:ice_dragon_restraint":9,
+            "createdelight:lightning_dragon_restraint":9,
+            "createdelight:fire_dragon_restraint":9,
+            "art_of_forging:infernal_rebuke": [ 3, 40 ],
+            "createdelight:shocking":1,
+            "createdelight:frozen":15
         },
     "tints": {
       "glyph": "910d13",

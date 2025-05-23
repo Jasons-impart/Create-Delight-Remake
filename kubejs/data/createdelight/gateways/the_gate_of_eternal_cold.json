@@ -123,7 +123,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dragonsteel_ice_ingot", 
-                        "count": 1}
+                        "count": 1
+					}
                 }
 			],
 			"max_wave_time": 1400,
@@ -188,8 +189,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dread_knight_sword", 
-                        "count": 1,
-                        "nbt": {"Damage":0}}
+                        "count": 1
+					}
                 }
 			],
 			"max_wave_time": 1600,
@@ -262,8 +263,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "lightmanscurrency:coin_emerald", 
-                        "count": 2,
-                        "nbt": {"gateway":"lightmanscurrency:coins"}}
+                        "count": 2
+					}
                 }
 			],
 			"max_wave_time": 2000,
@@ -336,8 +337,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dread_queen_sword", 
-                        "count": 1,
-                        "nbt": {"Damage":0}}
+                        "count": 1
+					}
                 }
 			],
 			"max_wave_time": 2000,

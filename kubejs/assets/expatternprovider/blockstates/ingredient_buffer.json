@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "expatternprovider:block/ingredient_buffer"
+    }
+  }
+}

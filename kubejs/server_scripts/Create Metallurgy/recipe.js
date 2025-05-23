@@ -1,7 +1,19 @@
 ServerEvents.recipes(e => {
-    const {createmetallurgy, create, minecraft} = e.recipes
-    minecraft.stonecutting("createmetallurgy:graphite_rod_mold", "createmetallurgy:graphite_blank_mold")
-    .id("createmetallurgy:graphite_rod_mold_stonecutting")
+    remove_recipes_id(e, [
+       "vintageimprovements:craft/grinder_belt",
+       "vintageimprovements:craft/belt_grinder"
+    ])
+    const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
+    kubejs.shaped( 
+        'createmetallurgy:sandpaper_belt',
+        [
+            "AAA",
+            "A A",
+            "AAA"
+        ], {
+            A: "#create:sandpaper"
+        }
+    ).id("createmetallurgy:crafting/materials/sandpaper_belt")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
         "createmetallurgy:copper_dust",
@@ -36,8 +48,8 @@ ServerEvents.recipes(e => {
         "createdelight:dirty_tin_dust",
         "createdelight:tin_dust",
         "create:crushed_raw_tin",
-        "createdelight:raw_tin",
-        "createdelight:tin_nugget"])
+        "createdelightcore:raw_tin",
+        "createdelightcore:tin_nugget"])
     metal_production_line_5(e, [
         "createdelight:dirty_silver_dust",
         "createdelight:silver_dust",
@@ -62,46 +74,53 @@ ServerEvents.recipes(e => {
         "createdelight:crushed_raw_calorite",
         "ad_astra:raw_calorite",
         "ad_astra:calorite_nugget"])
-    
+
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
         "createmetallurgy:alloying/steel",
         "createmetallurgy:alloying/electrum",
         "createmetallurgy:alloying/brass"
     ])
-    
-    e.replaceInput({mod: "createmetallurgy"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
 
-    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30), 
-    [
-        Fluid.of("createmetallurgy:molten_gold", 90),
-        "netherite_scrap"])
-    .heatRequirement("superheated")
-    .id("createmetallurgy:alloying/netherite")
-    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_steel", 270), 
-    [
-        Fluid.of("createmetallurgy:molten_iron", 270),
-        "#forge:coal_coke"        
-    ])
-    .heatRequirement("superheated")
-    .id("createmetallurgy:alloying/steel")
+    e.replaceInput({ mod: "createmetallurgy" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({output: "createmetallurgy:coke"}, "#forge:ores/coal", "#minecraft:coals")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
+        [
+            Fluid.of("createmetallurgy:molten_gold", 90),
+            "netherite_scrap"])
+        .heatRequirement("superheated")
+        .id("createmetallurgy:alloying/netherite")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_steel", 270),
+        [
+            Fluid.of("createmetallurgy:molten_iron", 270),
+            "#forge:coal_coke"
+        ])
+        .heatRequirement("superheated")
+        .id("createmetallurgy:alloying/steel")
 
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_electrum", 30),
         [
             Fluid.of("createmetallurgy:molten_silver", 15),
             Fluid.of("createmetallurgy:molten_gold", 15)
         ])
-    .processingTime(40)
-    .heatRequirement("heated")
-    .id("createmetallurgy:alloying/electrum")
+        .processingTime(40)
+        .heatRequirement("heated")
+        .id("createmetallurgy:alloying/electrum")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_brass", 30),
-    [
-        Fluid.of("createmetallurgy:molten_zinc", 15),
-        Fluid.of("createmetallurgy:molten_copper", 15)
-    ])
-    .processingTime(40)
-    .heatRequirement("heated")
-    .id("createmetallurgy:alloying/molten_brass")
+        [
+            Fluid.of("createmetallurgy:molten_zinc", 15),
+            Fluid.of("createmetallurgy:molten_copper", 15)
+        ])
+        .processingTime(40)
+        .heatRequirement("heated")
+        .id("createmetallurgy:alloying/molten_brass")
+    createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_obdurium", 150),
+        [
+            Fluid.of("createbigcannons:molten_cast_iron", 90),
+            Fluid.of("createmetallurgy:molten_tungsten", 60)
+        ])
+        .heatRequirement("superheated")
+        .id("createmetallurgy:alloying/molten_obdurium_from_fluid")
 
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_bronze", 40),
@@ -118,11 +137,11 @@ ServerEvents.recipes(e => {
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
     e.recipes.create.mixing(
-        Fluid.of("createmetallurgy:molten_brass", 10),
+        Fluid.of("createmetallurgy:molten_brass", 30),
         [
-            Fluid.of("createmetallurgy:molten_copper", 5),
-            Fluid.of("createmetallurgy:molten_zinc", 5)
-        ], 100, "heated"
+            Fluid.of("createmetallurgy:molten_copper", 15),
+            Fluid.of("createmetallurgy:molten_zinc", 15)
+        ], 150, "heated"
     ).id("createmetallurgy:mixing/alloying_brass")
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:molten_andesite", 270),
@@ -153,4 +172,25 @@ ServerEvents.recipes(e => {
             "createmetallurgy:graphite_plate_mold"
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
+    {
+        let iner = "minecraft:deepslate_bricks"
+        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", iner, [
+            e.recipes.vintageimprovements.curving(iner, iner, 1),
+            e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
+            // e.recipes.vintageimprovements.polishing(iner, iner)
+            e.recipes.createmetallurgy.grinding(iner, iner)
+        ])
+        .loops(1)
+        .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
+        .id("createmetallurgy:sequenced_assembly/industrial_crucible")
+    }
+    vintageimprovements.hammering("createmetallurgy:obdurium_sheet", "#forge:ingots/obdurium")
+    .id("createmetallurgy:hammering/obdurium_sheet")
+    entity_melting(e, Fluid.of("createdelight:fire_dragon_blood", 5000), "iceandfire:fire_dragon", 4)
+    .id("createmetallurgy:entity_melting/fire_dragon")
+    entity_melting(e, Fluid.of("createdelight:ice_dragon_blood", 5000), "iceandfire:ice_dragon", 4)
+    .id("createmetallurgy:entity_melting/ice_dragon")
+    entity_melting(e, Fluid.of("createdelight:lightning_dragon_blood", 5000), "iceandfire:lightning_dragon", 4)
+    .id("createmetallurgy:entity_melting/lightning_dragon")
 })

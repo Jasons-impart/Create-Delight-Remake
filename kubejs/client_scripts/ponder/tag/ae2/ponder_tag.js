@@ -1,0 +1,75 @@
+Ponder.tags(event => {
+    event.createTag(
+        "createdelight:ae2",
+        "ae2:controller",
+        "应用能源2",
+        "集存储，物流，自动化一身的强大mod",
+        [
+            "ae2:interface",
+            "ae2:pattern_provider",
+            "ae2:molecular_assembler",
+            "ae2:crafting_unit",
+            "ae2:storage_bus",
+            "ae2:certus_quartz_crystal",
+            "ae2:annihilation_plane",
+            "ae2:formation_plane",
+            "ae2:fluix_glass_cable",
+            "ae2:fluix_covered_cable",
+            "ae2:fluix_covered_dense_cable",
+            "ae2:fluix_smart_cable",
+            "ae2:fluix_smart_dense_cable",
+            "ae2:io_port",
+            "ae2:import_bus",
+            "ae2:export_bus",
+            "ae2:controller",
+            "ae2:quantum_ring"]
+    )
+})
+
+Ponder.tags(event => {
+    event.createTag(
+        "createdelight:ae2_machine_cost_channel",
+        "ae2:drive",
+        "消耗频道的物件",
+        "它们处于网络中时会消耗一个频道",
+        [
+            "ae2:pattern_provider",
+            "ae2:crafting_unit",
+            "ae2:io_port",
+            "ae2:interface",
+            "ae2:chest",
+            "ae2:drive",
+            "ae2:spatial_anchor",
+            "ae2:spatial_io_port",
+            "ae2:spatial_pylon",
+            "ae2:storage_bus",
+            "ae2:import_bus",
+            "ae2:export_bus",
+            "ae2:annihilation_plane",
+            "ae2:formation_plane",
+            "ae2:terminal",
+            "ae2:me_p2p_tunnel"
+        ])
+})
+
+Ponder.tags(event => {
+
+    event.createTag(
+        "createdelight:ae2_machine_non_cost_channel",
+        "ae2:inscriber",
+        "不消耗频道的物件",
+        "它们处于频道中不会消耗频道",
+        [
+            "ae2:molecular_assembler",
+            "ae2:dense_energy_cell",
+            "ae2:energy_cell",
+            "ae2:growth_accelerator",
+            "ae2:vibration_chamber",
+            "ae2:energy_acceptor",
+            "ae2:charger",
+            "ae2:inscriber",
+            "ae2:condenser",
+            "ae2:semi_dark_monitor",
+            "ae2:controller"
+        ])
+})

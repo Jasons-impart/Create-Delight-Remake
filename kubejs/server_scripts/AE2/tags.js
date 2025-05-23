@@ -18,3 +18,16 @@ ServerEvents.tags("item", (e) => {
   e.add("createdelight:sky_stone", "ae2:sky_dust");
   e.add("createdelight:redstone", "minecraft:redstone");
 });
+
+ServerEvents.tags("block", e => {
+  e.add("ae2:growth_acceleratable", 
+    "farmersrespite:tea_bush",
+    "farmersrespite:small_tea_bush",
+    "neapolitan:vanilla_vine",
+    "neapolitan:strawberry_bush",
+    "neapolitan:small_banana_frond",
+    "neapolitan:banana_frond",
+    "neapolitan:large_banana_frond",
+    "neapolitan:mint"
+  )
+})

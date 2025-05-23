@@ -1,0 +1,11 @@
+[ {
+    "modules": ["sword/rending_scissor_complete"],
+    "moduleVariants": ["sword_socket/immortal_embryo"],
+    "visibilityKey": "sword_socket/immortal_embryo",
+    "effects": {
+        "art_of_forging:life_fiber_loss": [1,0]
+    },
+    "attributes": {
+	"generic.attack_damage": 5
+   }
+}]

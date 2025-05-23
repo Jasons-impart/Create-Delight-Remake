@@ -72,7 +72,7 @@ function package_item(event, item, storage_block, package_item_number) {
 /**
  * 
  * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_[] } inputs //No tags!!!
+ * @param { InputItem_[] } inputs 
  * @param { OutputItem_ } output 
  * @param { number } count 
  */
@@ -84,11 +84,25 @@ function combination(event, inputs, output, count) {
         result: output
     }
     inputs.forEach(input => {
-        recipe.ingredients.push({
-            item: input
-        })
+        recipe.ingredients.push(Ingredient.of(input))
     });
     event.custom(recipe).id(`refurbished_furniture:combining/${output.split(":")[1]}`)
+    //增加机动兼容
+    if (inputs.length == 2)
+        event.recipes.create.deploying(output, inputs)
+            .id(`create:deploying/${output.split(":")[1]}`)
+    else if (inputs.length > 2) {
+        let deploy_list = []
+        for (let index = 1; index < inputs.length; index++) {
+            let ingr = inputs[index];
+            deploy_list.push(event.recipes.create.deploying(inputs[0], [inputs[0], ingr]))
+        }
+        event.recipes.create.sequenced_assembly(output, inputs[0], deploy_list)
+        .loops(1)
+        .transitionalItem(inputs[0])
+        .id(`create:sequenced_assembly/${output.split(":")[1]}`)
+    }
+        
 }
 
 /**
@@ -202,26 +216,14 @@ function cutting(event, input, outputs) {
  * @param { any[] } outputs 
  */
 function cutting_1(event, input, outputs) {
-    let recipe = {
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: input }],
-        result: [],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }
     let result = []
     outputs.forEach(output => {
         let id = output[0]
         let count = output.length > 1 ? output[1] : 1
         let chance = output.length > 2 ? output[2] : 1
-        recipe.result.push({
-            item: id,
-            count: count,
-            chance: chance
-        })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
     event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${outputs[0][0].split(":")[0]}:food/${outputs[0][0].split(":")[1]}`)
-    event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**
  * @param { Internal.RecipesEventJS } event 
@@ -251,33 +253,6 @@ function cutting_2(event, input, outputs) {
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**
- * @param { Internal.RecipesEventJS } event 
- * @param { InputItem_ } input 
- * @param { any[] } outputs 
- */
-function cutting_3(event, input, outputs) {
-    let recipe = {
-        type: "farmersdelight:cutting",
-        ingredients: [{ item: input }],
-        result: [],
-        tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }
-    let result = []
-    outputs.forEach(output => {
-        let id = output[0]
-        let count = output.length > 1 ? output[1] : 1
-        let chance = output.length > 2 ? output[2] : 1
-        recipe.result.push({
-            item: id,
-            count: count,
-            chance: chance
-        })
-        result.push(Item.of(`${count}x ${id}`).withChance(chance))
-    });
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`${input.split(":")[0]}:cutting/${input.split(":")[1]}`)
-    event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
-}
-/**
  * 
  * @param { Internal.RecipesEventJS } e 
  * @param { InputItem_ } input 
@@ -288,7 +263,7 @@ function make_cake(e, input, output) {
         "minecraft:cake",
         input
     ])
-    .id(`neapolitan:deploying/${output.split(":")[1]}`)
+        .id(`neapolitan:deploying/${output.split(":")[1]}`)
 }
 /**
  * 
@@ -300,5 +275,5 @@ function make_cake(e, input, output) {
 function FluidIngredients(fluidTag, amount, tag) {
     amount = amount || 1000
     tag = tag || {}
-    return {fluidTag: fluidTag, amount: amount, tag: tag}
+    return { fluidTag: fluidTag, amount: amount, tag: tag }
 }

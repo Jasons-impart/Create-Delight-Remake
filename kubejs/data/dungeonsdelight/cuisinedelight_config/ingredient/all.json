@@ -1,0 +1,90 @@
+{
+    "entries": [
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:silverfish_thorax"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 13,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 0.8,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "MEAT",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:spider_meat"
+            },
+            "max_time": 180,
+            "min_time": 60,
+            "nutrition": 13,
+            "overcook_penalty": 0.3,
+            "raw_penalty": 1,
+            "size": 2,
+            "stir_time": 60
+        },
+        {
+            "type": "CARB",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:slime_noodles"
+            },
+            "max_time": 360,
+            "min_time": 300,
+            "nutrition": 8,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:ghast_tentacle"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 1,
+            "stir_time": 80
+        },
+        {
+            "type": "SEAFOOD",
+            "effects": [],
+            "ingredient": {
+                "item": "dungeonsdelight:ghast_calamari"
+            },
+            "max_time": 240,
+            "min_time": 120,
+            "nutrition": 7,
+            "overcook_penalty": 0.5,
+            "raw_penalty": 1.0,
+            "size": 2,
+            "stir_time": 80
+        },
+        {
+            "type": "VEG",
+            "effects": [],
+            "ingredient": [
+                {
+                    "item": "dungeonsdelight:rotbulb"
+                }
+            ],
+            "max_time": 360,
+            "min_time": 240,
+            "nutrition": 5,
+            "overcook_penalty": 0.2,
+            "raw_penalty": 0.8,
+            "size": 2,
+            "stir_time": 60
+        }
+    ]
+}

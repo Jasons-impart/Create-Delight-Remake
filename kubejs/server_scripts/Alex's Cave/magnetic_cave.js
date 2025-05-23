@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
     ).id("alexscaves:charging/energized_galena_neutral")
 
     //充能方铅岩离心成两种方铅岩
-    e.recipes.vintageimprovements.centrifugation(
+    centrifugation(e,
         [
             Item.of("alexscaves:energized_galena_scarlet").withChance(0.5),
             Item.of("alexscaves:energized_galena_azure").withChance(0.5)
@@ -146,9 +146,9 @@ ServerEvents.recipes(e => {
         "   "
     ],
         {
-            A: "alexscaves:scarlet_neodymium_ingot",
+            A: "alexscaves:raw_scarlet_neodymium",
             B: "minecraft:quartz",
-            C: "alexscaves:azure_neodymium_ingot",
+            C: "alexscaves:raw_azure_neodymium",
             D: "create_new_age:overcharged_iron_sheet"
         })
         .id("alexscaves:telecore")
@@ -157,8 +157,8 @@ ServerEvents.recipes(e => {
     let iner_5 = "ad_astra:steel_nugget"
     e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", "ad_astra:steel_nugget",
         [
-            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:azure_neodymium_ingot"]),
-            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:scarlet_neodymium_ingot"])
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_azure_neodymium"]),
+            e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_scarlet_neodymium"])
         ]
     )
         .transitionalItem(iner_5)

@@ -1,0 +1,450 @@
+name: 发布版本
+run-name: 正在发布新版本🚀
+
+on:
+  push:
+    branches:
+      - release        # 匹配主发布分支
+      - test-*         # 匹配所有 test- 开头的分支（通配符）
+
+jobs:
+  # 公共步骤（所有分支都需要执行的前置操作）
+  common-steps:
+    runs-on: ubuntu-latest
+    outputs:
+      modpack_name: ${{ steps.read-modpackname.outputs.value }}
+      modpack_ver: ${{ steps.generate_modpack_version.outputs.VERSION }}
+      mc_version: ${{ steps.read-minecraft.outputs.value }}
+      forge_version: ${{ steps.read-forge.outputs.value }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 读取整合包名
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-modpackname
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'name'
+      - name: 读取整合包版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-version
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'version'
+      - name: 读取mc版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-minecraft
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'versions.minecraft'
+      - name: 读取forge版本号
+        uses: SebRollen/toml-action@v1.2.0
+        id: read-forge
+        with:
+          file: ${{ github.workspace }}/pack.toml
+          field: 'versions.forge'
+      - name: 生成整合包带测试后缀版本号
+        id: generate_modpack_version
+        run: |
+          BRANCH_NAME="${{ github.ref_name }}"
+          if [[ "$BRANCH_NAME" == *test* ]]; then
+            VERSION="${{ steps.read-version.outputs.value }}-test-build-${{ github.run_number }}"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          else
+            VERSION="${{ steps.read-version.outputs.value }}"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          fi
+      - name: 输出读取的变量用作验证
+        run: |
+          echo "Modpack Name: ${{ steps.read-modpackname.outputs.value }}"
+          echo "Modpack Version: ${{ steps.read-version.outputs.value }}"
+          echo "Modpack Full Version: ${{ steps.generate_modpack_version.outputs.VERSION }}"
+          echo "Minecraft Version: ${{ steps.read-minecraft.outputs.value }}"
+          echo "Forge Version: ${{ steps.read-forge.outputs.value }}"
+
+  # 客户端相关任务（并行执行）
+  client-tasks:
+    needs: common-steps       # 依赖公共步骤完成
+    runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
+      HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
+      JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
+    if: >
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-release') ||
+      startsWith(github.ref_name, 'test-client')
+    steps:
+      - name: 测试环境变量
+        run: |
+          echo "Modpack Name: $MODPACK_NAME"
+          echo "Modpack Version: $MODPACK_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+          echo "Forge Version: $FORGE_VERSION"
+          echo "Version File Path: $VERSION_FILE_PATH"
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 安装 Packwiz 打包软件
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "Linux 64-bit x86"
+          path: ${{ github.workspace }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Jasons-impart/packwiz
+          run-id: 14558970721
+      - name: 挪动packwiz到根目录
+        run: |
+          # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
+          chmod +x ./packwiz
+      - name: 重命名HMCL配置和options
+        run: |
+          mv .hmclversion.cfg hmclversion.cfg
+          mv .options.txt options.txt
+      - name: 写版本号文件供fancymenu展现在游戏首页
+        # 格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
+        # |||
+        # Create-Delight-Remake x.x.x.x xxxx
+        # MIT License Copyright (c) 2025 JSI Production Team
+        # |||
+        run: |
+          echo "|||" > $VERSION_FILE_PATH
+          echo "$MODPACK_NAME $MODPACK_VERSION" >> $VERSION_FILE_PATH
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> $VERSION_FILE_PATH
+          echo "|||" >> $VERSION_FILE_PATH
+          cat $VERSION_FILE_PATH
+      - name: 更新文件索引
+        run: |
+          ./packwiz refresh
+      - name: 生成带mod本体的包 移动到workspace文件夹
+        run: |
+          ./packwiz curseforge export
+          mkdir ../click_to_run_release
+          mv *.zip ../click_to_run_release/modpack.zip
+      - name: 下载HMCL启动器与jdk环境
+        run: |
+          curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
+          curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
+          mv HMCL.jar ../click_to_run_release
+          mv jdk17.msi ../click_to_run_release
+      - name: 检测并生成mods meta信息
+        run: |
+          ./packwiz curseforge detect
+      - name: 更新index
+        run: |
+          ./packwiz refresh
+      - name: 生成不带mod本体的包
+        run: |
+          ./packwiz curseforge export
+          mv *.zip ../lite-release.zip
+          unzip ../lite-release.zip -d ../lite-release
+          ls ..
+      - name: Workaround actions/upload-artifact#176
+        run: |
+          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+      - name: 上传懒人包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[ClickToRun]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: ${{ env.artifacts_path }}/click_to_run_release/
+      - name: 上传不带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-lite"
+          path: ${{ env.artifacts_path }}/lite-release/
+      - name: 上传manifest.json用于客户端补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
+          path: ${{ env.artifacts_path }}/lite-release/manifest.json
+
+  # 服务端相关任务（并行执行）
+  server-tasks:
+    needs: common-steps
+    runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
+    if: >
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-release') ||
+      startsWith(github.ref_name, 'test-server')
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1 # 只取最新提交，加速
+      - name: 删除与服务端无关的文件
+        run: |
+            # mapfile -t prefixes < ${{ github.workspace }}/.packwizignore
+            # for prefix in "${prefixes[@]}"; do
+            #   echo "Deleting files with prefix: $prefix"
+            #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
+            # done
+            rm -f ${{ github.workspace }}/ModList0.4a.md
+            rm -f ${{ github.workspace }}/README.md
+            rm -f ${{ github.workspace }}/TODOlist.md
+            rm -f ${{ github.workspace }}/KubeJSStyleGuide.md
+            rm -f ${{ github.workspace }}/DevGuide.md
+            rm -f ${{ github.workspace }}/pack.toml
+            rm -f ${{ github.workspace }}/index.toml
+            rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+      - name: 删除客户端only模组
+        run: |
+            mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
+            for prefix in "${prefixes[@]}"; do
+              echo "Deleting files with prefix: $prefix"
+              find ${{ github.workspace }}/mods -name "${prefix}*" -exec rm {} +
+            done
+      - name: 根据pack.toml的整合包版本替换服务安装脚本配置
+        env:
+          MODPACK: ${{ steps.read-version.outputs.value }}
+        run: |
+          sed -i "s/^MODPACK_VERSION=.*/MODPACK_VERSION=$MODPACK/" ${{ github.workspace }}/variables.txt
+          grep '^MODPACK_VERSION=' ${{ github.workspace }}/variables.txt
+      - name: 下载forge与ServerStarterJar
+        env:
+          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
+          FORGE: ${{ steps.read-forge.outputs.value }}
+        run: |
+          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
+          echo "$FORGE_URL"
+          curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
+      - name: 服务端启动bat脚本改为CRLF
+        run: |
+          sudo apt-get install dos2unix
+          unix2dos ${{ github.workspace }}/start.bat
+      - name: list remained files & mods
+        run: |
+          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}/mods
+      - name: 上传带mod包
+        uses: actions/upload-artifact@v4
+        with:
+          name: "Server-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          path: ${{ github.workspace }}
+      # - name: 安装forge
+      #   run: |
+      #     cd ${{ github.workspace }} && java -jar forge-$MINECRAFT-$FORGE-installer.jar nogui --installServer
+      # - name: 上传带forge核心的包
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: SELF-USE-ONLY-DONT-DISTRIBUTE-${{ steps.read-modpackname.outputs.value }}-${{ steps.read-version.outputs.value }}${{ steps.set_version_prefix.outputs.VERSION_SUFFIX }}-server
+      #     path: ${{ github.workspace }}
+      # - name: list file
+      #   run: |
+      #     ls ${{ github.workspace }}
+
+  # 补丁相关任务，依赖客户端相关任务的manifest.json
+  patch-tasks:
+    needs: [common-steps, client-tasks]
+    runs-on: ubuntu-latest
+    env:  # Job 级环境变量（简化读取变量）
+      MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
+      MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
+      MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
+      FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
+      VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
+    if: >
+      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'test-release') ||
+      startsWith(github.ref_name, 'test-patch')
+    steps:
+      - name: 测试环境变量
+        run: |
+          echo "Modpack Name: $MODPACK_NAME"
+          echo "Modpack Version: $MODPACK_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+          echo "Forge Version: $FORGE_VERSION"
+          echo "Version File Path: $VERSION_FILE_PATH"
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+      - name: 获取最近的tag并配置环境变量
+        run: |
+          # 获取当前 commit 的 hash
+          current_commit=$(git rev-parse HEAD)
+          # 获取当前 commit 关联的 tag
+          current_commit_tags=$(git tag --points-at $current_commit)
+          if [ -z "$current_commit_tags" ]; then
+            # 当前 commit 没有关联 tag，直接取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | head -n 1)
+          else
+            # 当前 commit 有关联 tag，过滤掉这些 tag 后取最新 tag
+            latest_tag=$(git tag --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
+          fi
+          if [ -z "$latest_tag" ]; then
+            echo "No suitable tag found. Exiting."
+            exit 1
+          fi
+          echo "最近的tag是: $latest_tag"
+          echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+      - name: 准备补丁文件
+        run: |
+          # 生成完整差异报告
+          git diff --name-status ${{ env.LATEST_TAG }} HEAD > diff_report.txt
+          cat diff_report.txt
+          
+          # 解析差异报告
+          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt
+          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt
+          grep -E '^[A|M]' diff_report.txt | cut -f2 > added_files.txt
+          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt
+          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt
+
+          # 创建补丁目录
+          mkdir -p patch
+
+          # 复制新增/修改文件
+          while IFS= read -r file; do
+            mkdir -p "patch/$(dirname "$file")"
+            cp "$file" "patch/$file"
+          done < added_files.txt
+
+          # 移除客户端only的mod
+          mapfile -t prefixes < .clientonlymodlist
+          for prefix in "${prefixes[@]}"; do
+            echo "Deleting files with prefix: $prefix"
+            if [ -d "patch/mods" ]; then
+              find patch/mods -name "${prefix}*" -exec rm {} +
+            fi
+          done
+
+          # 移除无用文件
+          rm -f patch/ModList0.4a.md
+          rm -f patch/README.md
+          rm -f patch/TODOlist.md
+          rm -f patch/KubeJSStyleGuide.md
+          rm -f patch/DevGuide.md
+          rm -f patch/pack.toml
+          rm -f patch/index.toml
+          rm -f patch/client_jvm_args.example.txt
+
+          # 更新fancymenu版本文件
+          mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
+          echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "$MODPACK_NAME $MODPACK_VERSION" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
+
+      - name: 生成linux脚本
+        run: |
+          cat << 'EOF' > deploy-patch.sh
+          #!/bin/bash
+          echo "Applying Patch..."
+          BASE_DIR=$(dirname "$(readlink -f "$0")")
+
+          # files to be deleted
+          if [ -f "$BASE_DIR/deleted_files.txt" ]; then
+            while IFS= read -r line; do
+              file_path="$BASE_DIR/$line"
+              if [ -f "$file_path" ]; then
+                rm -v "$file_path" || { echo "Error: Cannot delete $file_path"; exit 1; }
+              else
+                echo "Error: File $file_path not found for deletion"
+              fi
+            done < "$BASE_DIR/deleted_files.txt"
+          else
+            echo "Error: $BASE_DIR/deleted_files.txt not found"
+          fi
+
+          # move patched files to right place
+          if [ -d "patch" ]; then
+            cp -r "patch" "." || { echo "Error: Failed to copy 'patch' directory"; exit 1; }
+          else
+            echo "Error: 'patch' directory not found"
+          fi
+
+          # remove patch folder
+          if [ -d "patch" ]; then
+            rm -rf "patch" || { echo "Error: Failed to remove 'patch' directory"; exit 1; }
+          else
+            echo "Error: 'patch' directory not found for removal"
+          fi
+
+          echo -e "\nDone!"
+
+          EOF
+
+      - name: 生成windows脚本
+        run: |
+          cat << 'EOF' > deploy-patch.bat
+          @echo off
+          setlocal enabledelayedexpansion
+          chcp 65001
+
+          rem files to be deleted
+          set "pathFile=deleted_files.txt"
+
+          rem Check if the file exists
+          if not exist "%pathFile%" (
+              echo File %pathFile% doesn't exist.
+              exit /b 1
+          )
+
+          rem read line by line and remove files
+          for /f "usebackq delims=" %%a in ("%pathFile%") do (
+              rem Convert Linux-style to Windows-style path
+              set "path=%%a"
+              set "path=!path:/=\!"
+              
+              rem Check if file exists and delete it
+              if exist "!path!" (
+                  echo Deleting: !path!
+                  del "!path!"
+                  if errorlevel 1 (
+                      echo Error when delete !path!
+                  )
+              ) else (
+                  echo File !path! doesn't exist.
+              )
+          )
+
+          rem move patched files to right place
+          %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
+          rd /S /Q "patch"
+
+          endlocal
+          EOF
+      - name: 上传服务器补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[ServerPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          path: |
+            deleted_files.txt
+            deploy-patch.sh
+            deploy-patch.bat
+            patch/
+      - name: 下载manifest.json
+        uses: actions/download-artifact@v4
+        with:
+          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
+      - name: 移除mods并加入manifest.json
+        run: |
+          rm -rf patch/mods
+          mv manifest.json patch
+          cat patch/manifest.json
+      - name: 上传客户端补丁
+        uses: actions/upload-artifact@v4
+        with:
+          name: "[ClientPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          path: |
+            deleted_files.txt
+            deploy-patch.sh
+            deploy-patch.bat
+            patch/

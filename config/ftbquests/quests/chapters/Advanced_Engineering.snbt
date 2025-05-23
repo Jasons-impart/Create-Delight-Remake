@@ -1,0 +1,938 @@
+{
+	autofocus_id: "0E515BE9EA2A0B2F"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Advanced_Engineering"
+	group: "14CFC96B5B37F10B"
+	icon: "create:rotation_speed_controller"
+	id: "261C58A58E96507D"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"7B19835EE0378486"
+				"2D588A416405B36C"
+			]
+			dependency_requirement: "one_completed"
+			description: ["首先，你需要使用&e熔铸盆&r与&e熔铸盖&r将铜和锌熔融获取熔融铜和熔融锌。然后将其通入&e工作盆&r，并进行搅拌。最后将产出的流体通入到铸造台/铸造盆即可。使用工作盆的自动输出产物机制能省很多事。"]
+			icon: "create:brass_block"
+			id: "0E515BE9EA2A0B2F"
+			min_required_tasks: 1
+			rewards: [{
+				id: "0DD667B4E11E8329"
+				item: "create:brass_ingot"
+				random_bonus: 15
+				type: "item"
+			}]
+			shape: "circle"
+			size: 2.0d
+			subtitle: "具体合成方式见描述"
+			tasks: [
+				{
+					id: "5FE59F26BC3E6AF3"
+					item: "create:brass_ingot"
+					type: "item"
+				}
+				{
+					id: "426ADF96E207EABA"
+					item: "create:brass_block"
+					type: "item"
+				}
+				{
+					id: "31C8AE310A9A736D"
+					item: "create:brass_nugget"
+					type: "item"
+				}
+			]
+			title: "黄铜科技！"
+			x: -1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			id: "16E85851D21CB6A3"
+			rewards: [{
+				count: 2
+				id: "0B563C2077A17709"
+				item: "createbigcannons:cast_iron_ingot"
+				random_bonus: 6
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.5d
+			tasks: [{
+				id: "611B7E2C375DC0F4"
+				item: "createbigcannons:cast_iron_ingot"
+				type: "item"
+			}]
+			title: "匠魂动力（？）"
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			description: ["本整合包的大部分合金都采用了使用&e熔融金属&r合成的配方。你需要用到这套组件来将金属融化。部分合金只能使用&e熔铸搅拌器&r制作。"]
+			id: "450B37F01A318678"
+			rewards: [{
+				count: 2
+				id: "5BA3552FDA493892"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "用于产出熔融金属"
+			tasks: [
+				{
+					id: "1EA44E62FD8B2C8B"
+					item: "createmetallurgy:foundry_basin"
+					type: "item"
+				}
+				{
+					id: "379A5FAEA8882DA0"
+					item: "createmetallurgy:foundry_lid"
+					type: "item"
+				}
+			]
+			title: "熔融金属"
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["450B37F01A318678"]
+			id: "2D588A416405B36C"
+			rewards: [{
+				count: 2
+				id: "372D4FA051ADBF1E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "用于将熔融金属制作为块"
+			tasks: [{
+				id: "02DFC08AE036A576"
+				item: "createmetallurgy:casting_basin"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["450B37F01A318678"]
+			icon: "createmetallurgy:casting_table"
+			id: "3CC5C997C5AC7D30"
+			rewards: [{
+				count: 2
+				id: "7ADA66637FE80436"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "用于将熔融金属制作为特定物品"
+			tasks: [
+				{
+					id: "76501C8010EE1DDA"
+					item: "createmetallurgy:casting_table"
+					type: "item"
+				}
+				{
+					id: "5E3DE8CA20AF5075"
+					item: "createmetallurgy:graphite_blank_mold"
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "040CED5705ED7E24"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1B52B085F00D8173"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "滋滋滋"
+			tasks: [{
+				id: "369E713E29509822"
+				item: "create:spout"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["59D4427F4F6B657B"]
+			id: "63D229AF8283C3AA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "52ADB662463243D3"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "可以说是最浪漫的管道之一了"
+			tasks: [
+				{
+					id: "2C9F5AAC68E5CF65"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+				{
+					id: "526DC193DB14D26A"
+					item: "create:mechanical_pump"
+					type: "item"
+				}
+			]
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["59D4427F4F6B657B"]
+			id: "4E885A428CBCE708"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3403EC301BD08A0C"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "我比铁桶更能装！"
+			tasks: [{
+				id: "50146030198E7AC4"
+				item: "create:fluid_tank"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "68D83C4DA9C39673"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1C6550F0E18C8C5D"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			tasks: [{
+				id: "500408E6C78A6D8A"
+				item: "create:item_drain"
+				type: "item"
+			}]
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["271924B430C340EC"]
+			description: ["烈焰人可以直接通入液体燃料进入加热状态，可通过JEI查看烈焰人的使用方式来查询可用的液体燃料。"]
+			id: "467AE0EF8AF5ACAF"
+			rewards: [{
+				id: "3CF78ADD5C4D6540"
+				item: "create:empty_blaze_burner"
+				random_bonus: 7
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "17C73E73E0CB50DC"
+				item: "create:blaze_burner"
+				type: "item"
+			}]
+			title: "获得烈焰人燃烧室！"
+			x: -10.0d
+			y: 0.0d
+		}
+		{
+			id: "271924B430C340EC"
+			rewards: [{
+				id: "2EB9B926E40CA656"
+				item: "mynethersdelight:powder_cannon"
+				type: "item"
+			}]
+			size: 1.0d
+			tasks: [{
+				id: "2B10D1A86D127809"
+				item: "create:empty_blaze_burner"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			id: "3E3B411612B17907"
+			rewards: [{
+				id: "1AA6C50F92C87D84"
+				item: "create:brass_casing"
+				random_bonus: 7
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.5d
+			tasks: [{
+				id: "11798106DE02AB07"
+				item: "create:brass_casing"
+				type: "item"
+			}]
+			title: "黄铜机械"
+			x: 1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2CBBADBE62382C1B"]
+			hide_until_deps_visible: true
+			id: "3BAC2E9A7359CF70"
+			rewards: [{
+				count: 3
+				id: "4080CDCAC21E2425"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			subtitle: "超大合成！"
+			tasks: [{
+				id: "5C4595D491E8C1EA"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			description: ["丢几个粗铁进去试试吧。但可不要手抖把宝贝丢进去了。"]
+			hide_dependency_lines: false
+			id: "28B3247AF854504D"
+			rewards: [{
+				count: 4
+				id: "49CBF0D9445B612A"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 2.0d
+			tasks: [{
+				id: "12D220D8F367FD29"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			id: "31418813B6B9A004"
+			rewards: [{
+				count: 3
+				id: "013276F5CBE08DCC"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "80！80！80！"
+			tasks: [{
+				id: "1B360AE31D3A7A34"
+				item: "vintageimprovements:helve_hammer"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["3E3B411612B17907"]
+			hide_until_deps_visible: true
+			id: "524FCF85B06F1CE0"
+			rewards: [{
+				count: 3
+				id: "76D6896B543505B2"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "指指点点"
+			tasks: [{
+				id: "31173383667DB2B8"
+				item: "create:brass_hand"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["524FCF85B06F1CE0"]
+			id: "13743FB52F43BE38"
+			rewards: [{
+				count: 3
+				id: "472EE17E2F0851FE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "自动指指点点"
+			tasks: [{
+				id: "74E658C6E76EDC05"
+				item: "create:deployer"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			id: "7E36D7C58C06D08B"
+			shape: "rsquare"
+			size: 1.0d
+			subtitle: "对远处指指点点！"
+			tasks: [{
+				id: "6FA461103958B62C"
+				item: {
+					Count: 1
+					id: "create:extendo_grip"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"13743FB52F43BE38"
+				"395CE84DC5201E94"
+				"49A6C50C6A8821CE"
+			]
+			description: ["本包添加了前期可用的概率产出配方：机械手对铁板使用磨制玫瑰石英，详见JEI"]
+			id: "2CBBADBE62382C1B"
+			rewards: [{
+				id: "0F9BBFA37C52A031"
+				item: "create:electron_tube"
+				random_bonus: 15
+				type: "item"
+			}]
+			tasks: [{
+				id: "25BA77B8EFFB67FF"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"13743FB52F43BE38"
+				"610ED0789BAF7EFC"
+			]
+			id: "575185F2DB0AD44C"
+			rewards: [{
+				id: "2428B7E60526AAB1"
+				item: "create:precision_mechanism"
+				random_bonus: 5
+				type: "item"
+			}]
+			subtitle: "现在需要弹簧啦"
+			tasks: [{
+				id: "0D48FEFF57AE1DA1"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"575185F2DB0AD44C"
+				"3BAC2E9A7359CF70"
+			]
+			id: "5A16AE172A0C7772"
+			rewards: [{
+				count: 3
+				id: "3B66A1BC20F104B6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "也是进厂了家人们"
+			tasks: [{
+				id: "7B4BBEC84095C5DC"
+				item: "vintageimprovements:lathe"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			id: "0B6FD35E76DC3EE0"
+			rewards: [{
+				count: 3
+				id: "7A76199D4171E5DB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "飞转的手"
+			tasks: [{
+				id: "2B9EEA536D65A70A"
+				item: "create:mechanical_arm"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			description: ["用大齿轮（从上方）或传动杆（从轴向）输入应力，变速后的应力会相应地从另一个地方输出。"]
+			id: "69C328EB588AA7E7"
+			rewards: [{
+				count: 3
+				id: "0A9411D071AB190C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "2BB79617657D47A1"
+				item: "create:rotation_speed_controller"
+				type: "item"
+			}]
+			title: "QQ群的答案！"
+			x: 5.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			id: "0A04D9A2087C0960"
+			rewards: [{
+				count: 3
+				id: "242DBD4C516C4D06"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "不要激光笔照别人眼睛哦"
+			tasks: [{
+				id: "22CA2058E0599792"
+				item: "vintageimprovements:laser_item"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"575185F2DB0AD44C"
+				"0A04D9A2087C0960"
+			]
+			id: "18051C145E36D885"
+			invisible: true
+			rewards: [{
+				count: 3
+				id: "5CA1C6AB5EAC7B77"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "切割"
+			tasks: [{
+				id: "47D4C3F2CBA8FD8A"
+				item: "vintageimprovements:laser"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"20D619F0AF190C4A"
+				"4075F51792830B6B"
+			]
+			description: ["该流体用于烈焰人可使烈焰人&e超级加热&r。"]
+			id: "15BF957B2F2FE765"
+			rewards: [{
+				count: 2
+				id: "713B01A89207FD5B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "烈焰人：好喝"
+			tasks: [{
+				id: "4023150209C55861"
+				item: "createdieselgenerators:biodiesel_bucket"
+				type: "item"
+			}]
+			title: "生物柴油！"
+			x: -8.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["50C3559D684B2A7E"]
+			id: "20D619F0AF190C4A"
+			rewards: [{
+				count: 2
+				id: "2414B99904241192"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "也可以拿来油炸食物"
+			tasks: [{
+				id: "25A6AE99D2DE67C7"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
+			title: "植物（燃）油"
+			x: -9.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["2FDF02F66210FC78"]
+			id: "4075F51792830B6B"
+			rewards: [{
+				count: 2
+				id: "718B5DFDBE681E05"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "工业乙醇喝了小心失明+中毒"
+			tasks: [{
+				id: "7F9F9DF7B1EE51B0"
+				item: "createdieselgenerators:ethanol_bucket"
+				type: "item"
+			}]
+			title: "不准喝！"
+			x: -8.0d
+			y: 4.5d
+		}
+		{
+			icon: "frycooks_delight:canola_seeds"
+			id: "50C3559D684B2A7E"
+			min_required_tasks: 1
+			rewards: [{
+				count: 2
+				id: "29B1C17635BD1422"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "榨油"
+			tasks: [
+				{
+					id: "4B2D6F58AAF8DC50"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:seeds"
+						}
+					}
+					title: "种子"
+					type: "item"
+				}
+				{
+					id: "48BA910C9BFF6566"
+					item: "frycooks_delight:canola_seeds"
+					type: "item"
+				}
+				{
+					id: "369A6369B2237BE9"
+					item: "vintagedelight:roasted_peanut"
+					type: "item"
+				}
+				{
+					id: "725256C002A5BEB1"
+					item: "create_bic_bit:crushed_sunflower_seeds"
+					type: "item"
+				}
+			]
+			x: -9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			hide_until_deps_visible: true
+			id: "0C49A6D118E480B4"
+			rewards: [{
+				count: 4
+				id: "456895E48D65BE21"
+				item: "minecraft:bone_meal"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "与工作盆配合以发酵"
+			tasks: [{
+				id: "7A2068EA2FE0DC4C"
+				item: "createdieselgenerators:basin_lid"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0C49A6D118E480B4"]
+			id: "2FDF02F66210FC78"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2AADF272C3140250"
+					table_id: 6485826240718891201L
+					type: "choice"
+				}
+				{
+					count: 2
+					id: "3A2E9705616346DE"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "5465B512AA1D1662"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fermentable"
+						}
+					}
+					title: "用于发酵的东西"
+					type: "item"
+				}
+				{
+					id: "60DB43B9DCBB7471"
+					item: "minecraft:bone_meal"
+					type: "item"
+				}
+			]
+			title: "发酵"
+			x: -8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			id: "35B43C124186578F"
+			rewards: [{
+				id: "12AD0464E38E363F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "超超超方便的"
+			tasks: [{
+				id: "443AED8DD1F1757F"
+				item: "create_connected:empty_fan_catalyst"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["35B43C124186578F"]
+			hide_until_deps_visible: true
+			id: "7EBD14D46E6E2CF1"
+			rewards: [{
+				id: "262332588DA18160"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "20EF1694803F00BE"
+					item: "create_connected:fan_blasting_catalyst"
+					type: "item"
+				}
+				{
+					id: "5BCCAEC3AB03E2ED"
+					item: "create_connected:fan_smoking_catalyst"
+					type: "item"
+				}
+				{
+					id: "5019DCAFCD20D09C"
+					item: "create_connected:fan_splashing_catalyst"
+					type: "item"
+				}
+				{
+					id: "113246D46AE07AC6"
+					item: "create_connected:fan_haunting_catalyst"
+					type: "item"
+				}
+				{
+					id: "7CBFD2B1B860ED9F"
+					item: "create_connected:fan_freezing_catalyst"
+					type: "item"
+				}
+			]
+			title: "鼓风机触媒们"
+			x: -1.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["0E515BE9EA2A0B2F"]
+			description: [""]
+			id: "043C01E333AD7139"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "&4超级超级超级好用&r的多流体储存罐！（最多八种流体）"
+			tasks: [{
+				id: "3F3576DB3D33FC4B"
+				item: "createfluidstuffs:multi_fluid_tank"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["450B37F01A318678"]
+			id: "630FA0478B7DAAAA"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "安山桶可以从机器中取出剩余的流体，支持绝大部分流体！\\n  非常适合手搓黄铜时使用 \\n\\n 安山罐可以取出少量流体从而可以进行过滤的一个标记 😋"
+			tasks: [
+				{
+					id: "574A5F305CD2C196"
+					item: "createfluidstuffs:bucket"
+					type: "item"
+				}
+				{
+					id: "26FD9BF000DE9F1C"
+					item: "createfluidstuffs:jar"
+					type: "item"
+				}
+			]
+			title: "看看我们带来了什么！"
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["271924B430C340EC"]
+			description: [
+				"本包加入了&e直接使用空烈焰人燃烧室制作烈焰人燃烧室&r的配方。"
+				"你可以通过种植&e烟药竹（注意不是爆弹椒）&r，其最终会长成一个&e类似竹子&r的作物。"
+				"其生长的时候会&e在竹子上&r长出爆弹椒，使用&e剪刀&r即可将其剪下。"
+				"在&e砧板&r上切爆弹椒即可获取烈焰粉，使用&e烈焰粉与木棍&r可制作烈焰棒。"
+				"不用担心，烟药竹的生长速度极快，你很快就能做出一个烈焰人燃烧室"
+			]
+			id: "33623A848B5FF55A"
+			optional: true
+			subtitle: "找不到或者不想去下界要塞的可以尝试"
+			tasks: [
+				{
+					id: "7B385B9EE1537E56"
+					item: "mynethersdelight:bullet_pepper"
+					type: "item"
+				}
+				{
+					id: "3A690D04CC539C6F"
+					item: "mynethersdelight:powder_cannon"
+					type: "item"
+				}
+			]
+			title: "直接制作烈焰人燃烧室"
+			x: -12.0d
+			y: -1.5d
+		}
+		{
+			description: [
+				"使用搅拌器可以将&e铜粒&r和&e锌粒&r直接加热搅拌为&e黄铜粒&r。但是&4效率非常非常的低&r（1/4速度）。"
+				"对于不考虑效率，且不想制作熔铸那一套物品的玩家可以考虑使用这种方法。"
+			]
+			id: "7B19835EE0378486"
+			shape: "gear"
+			size: 2.0d
+			subtitle: "懒得搓熔铸系列的可以看过来"
+			tasks: [{
+				id: "23E64C531DA4981A"
+				item: "create:brass_nugget"
+				type: "item"
+			}]
+			x: -1.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["450B37F01A318678"]
+			icon: "minecraft:copper_ingot"
+			id: "59D4427F4F6B657B"
+			size: 1.5d
+			tasks: [{
+				id: "43181ED4AE8334C4"
+				title: "流体运输"
+				type: "checkmark"
+			}]
+			title: "流体处理"
+			x: -6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["59D4427F4F6B657B"]
+			id: "3626C98B27069A0C"
+			tasks: [{
+				id: "612DF86D48D58754"
+				item: "create:copper_casing"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"2B3F1B42F03F00F3"
+				"0F1F1C12B4CCEB7F"
+			]
+			id: "49A6C50C6A8821CE"
+			rewards: [{
+				id: "427A150424D14904"
+				item: "create:polished_rose_quartz"
+				random_bonus: 3
+				type: "item"
+			}]
+			tasks: [{
+				id: "3E827C02231A3C1F"
+				item: "create:polished_rose_quartz"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -1.5d
+		}
+		{
+			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
+			id: "0F1F1C12B4CCEB7F"
+			rewards: [{
+				id: "60A0FA2F1B7736D8"
+				item: "createmetallurgy:sandpaper_belt"
+				type: "item"
+			}]
+			tasks: [{
+				id: "57B5AF31B472642F"
+				item: {
+					Count: 1
+					id: "create:sand_paper"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 7.0d
+			y: -3.0d
+		}
+		{
+			id: "2B3F1B42F03F00F3"
+			tasks: [{
+				id: "13B50D3DE9C50346"
+				item: "create:rose_quartz"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"28B3247AF854504D"
+				"61A945984843E55A"
+			]
+			description: ["{ \"text\": \"点击跳转柴油动力章节\", \"color\": \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"21F08AD894E17DAD\" } }"]
+			icon: "createmetallurgy:steel_ingot"
+			id: "21F08AD894E17DAD"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "690F85F11A0E0B23"
+				type: "checkmark"
+			}]
+			title: "进入合金突破"
+			x: 16.0d
+			y: 0.0d
+		}
+	]
+	title: "&3黄铜时代！"
+}

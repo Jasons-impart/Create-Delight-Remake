@@ -1,0 +1,141 @@
+{
+	"size": "small",
+	"color": "#FFFAF0",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "minecraft:ghast",
+					"count": 3
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:ghast_tear", 
+                        "count": 3
+					}
+				}
+			],
+			"max_wave_time": 600,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:ghast",
+					"count": 5
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.3
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:ghast_tear", 
+                        "count": 5
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:ghast",
+					"count": 8
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 20
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.4
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:ghast_tear", 
+                        "count": 10
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		}
+	],
+	"rewards": [
+		{
+			"type": "gateways:stack",
+			"stack":{
+			"item": "mynethersdelight:ghasta",
+			"count": 5
+		}
+		}
+	],
+	"failures": [
+		{
+			"type": "gateways:explosion",
+			"strength": 2,
+			"fire": true,
+			"block_damage": true
+			}
+	]
+}

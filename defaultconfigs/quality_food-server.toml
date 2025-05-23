@@ -1,0 +1,129 @@
+#Luck will affect how often each quality will be tried for (10 luck * 0.1 multiplier -> + 0.75 rolls, resulting in 1 guaranteed (baseline) and 75% chance for another)
+#Range: 0.0 ~ 10.0
+luck_multiplier = 0.075
+#The chance of quality crops dropping its own quality (also affects other qualities) - It affects a multiplier which is calculated as: <crop_target_chance> / <quality.chance>Meaning for Gold it would result in a multiplier of 20 (0.6 / 0.03) -> The chances for all qualities would then be: 20 * 0.10 (iron) = 2 (100%) | 20 * 0.03 (gold) = 0.6 (60%) | 20 * 0.005 = 0.1 (10%)
+#Range: 0.0 ~ 1.0
+crop_target_chance = 0.6
+#Multiplier on top of the crop target chance
+#Range: 0.0 ~ 100.0
+seed_chance_multiplier = 0.25
+#Define multipliers to be applied per farmland on crops - Syntax: <index>;<crop>;<farmland>;<multiplier> (the index defines the sequence in which they will be checked - the first matching one is applied)
+#Example: ["2;minecraft:wheat;#farmersdelight:terrain;0.75", "3;#minecraft:crops;farmersdelight:rich_soil;1.25"]
+farmland_config = ["1;#createdelight:quality_crops;farmersdelight:rich_soil;5.0", "2;#createdelight:quality_crops;farmersdelight:rich_soil_farmland;5.0", "3;#createdelight:quality_crops;supplementaries:planter;6.0", "4;#createdelight:quality_crops;mynethersdelight:resurgent_soil;7.5", "5;#createdelight:quality_crops;mynethersdelight:resurgent_soil_farmland;7.5", "6;#createdelight:quality_crops;minecraft:farmland;0", "7;#createdelight:quality_crops;#farmersdelight:terrain;0"]
+
+[Crafting]
+	#Define recipes (namespace:path) which should not result in quality being applied (e.g. when the items can be converted back and forth)
+	no_quality_recipes = ["minecraft:hay_block", "minecraft:wheat", "quark:building/crafting/compressed/apple_crate", "quark:building/crafting/compressed/apple_crate_uncompress", "quark:building/crafting/compressed/beetroot_crate", "quark:building/crafting/compressed/beetroot_crate_uncompress", "quark:building/crafting/compressed/berry_sack", "quark:building/crafting/compressed/berry_sack_uncompress", "quark:building/crafting/compressed/carrot_crate", "quark:building/crafting/compressed/carrot_crate_uncompress", "quark:building/crafting/compressed/chorus_fruit_block", "quark:building/crafting/compressed/chorus_fruit_block_uncompress", "quark:building/crafting/compressed/cocoa_bean_sack", "quark:building/crafting/compressed/cocoa_bean_sack_uncompress", "quark:building/crafting/compressed/glowberry_sack", "quark:building/crafting/compressed/glowberry_sack_uncompress", "quark:building/crafting/compressed/golden_apple_crate", "quark:building/crafting/compressed/golden_apple_crate_uncompress", "quark:building/crafting/compressed/golden_carrot_crate", "quark:building/crafting/compressed/golden_carrot_crate_uncompress", "quark:building/crafting/compressed/potato_crate", "quark:building/crafting/compressed/potato_crate_uncompress", "quark:building/crafting/compressed/sugar_cane_block", "quark:building/crafting/compressed/sugar_cane_block_uncompress", "farmersdelight:carrot_crate", "farmersdelight:carrot_from_crate", "farmersdelight:potato_crate", "farmersdelight:potato_from_crate", "farmersdelight:beetroot_crate", "farmersdelight:beetroot_from_crate", "farmersdelight:cabbage_crate", "farmersdelight:cabbage", "farmersdelight:tomato_crate", "farmersdelight:tomato", "farmersdelight:onion_crate", "farmersdelight:onion", "farmersdelight:rice_bale", "farmersdelight:rice_panicle", "farmersdelight:rice_bag", "farmersdelight:rice_from_bag", "vinery:white_grape_crate", "vinery:white_grape", "vinery:red_grape_crate", "vinery:red_grape", "vinery:cherry_crate", "vinery:cherries", "vinery:apple_crate", "vinery:apples", "supplementaries:sugar_cube", "supplementaries:sugar_cube_uncrafting", "cratedelight:apple_crate", "cratedelight:apples", "cratedelight:beetroot_crate", "cratedelight:beetroots", "cratedelight:berry_crate", "cratedelight:berries", "cratedelight:brown_mushroom_crate", "cratedelight:brown_mushroom", "cratedelight:carrot_crate", "cratedelight:carrots", "cratedelight:cocoabeans_bag", "cratedelight:cocoabeans", "cratedelight:cod_crate", "cratedelight:cod", "cratedelight:egg_crate", "cratedelight:eggs", "cratedelight:glowberry_crate", "cratedelight:glowberries", "cratedelight:golden_apple_crate", "cratedelight:golden_apple", "cratedelight:golden_carrot_crate", "cratedelight:golden_carrot", "cratedelight:potato_crate", "cratedelight:potatoes", "cratedelight:red_mushroom_crate", "cratedelight:red_mushroom", "cratedelight:salmon_crate", "cratedelight:salmon", "cratedelight:stacked_melons", "cratedelight:melons", "cratedelight:stacked_pumpkins", "cratedelight:pumpkins", "cratedelight:sugar_bag", "cratedelight:sugar", "alexsmobs:banana_crate", "alexsmobs:bananas", "alexsmobs:caiman_egg_crate", "alexsmobs:caiman_egg", "alexsmobs:crocodile_egg_crate", "alexsmobs:crocodile_egg", "alexsmobs:emu_egg_crate", "alexsmobs:emu_egg", "alexsmobs:platypus_egg_crate", "alexsmobs:platypus_egg", "alexsmobs:terrapin_egg_crate", "alexsmobs:terrapin_egg", "betterend:end_fish_crate", "betterend:end_fish", "create:wheat_flour_bag", "create:wheat_flour", "diamond_apples:diamond_apple_crate", "diamond_apples:diamond_apples", "farmersdelight:stacked_melons", "farmersdelight:stacked_pumpkins", "jagmkiwis:kiwi_egg_crate", "jagmkiwis:kiwi_egg", "jagmkiwis:kiwi_fruit_crate", "jagmkiwis:kiwi_fruit", "naturalist:bass_crate", "naturalist:bass", "naturalist:catfish_crate", "naturalist:catfish", "naturalist:duck_egg_crate", "naturalist:duck_eggs", "nutritious_feast:blueberry_crate", "nutritious_feast:blueberries", "farm_and_charm:lettuce_bag", "farm_and_charm:lettuce", "farm_and_charm:tomato_bag", "farm_and_charm:tomato", "farm_and_charm:carrot_bag", "farm_and_charm:carrot_from_bag", "farm_and_charm:potato_bag", "farm_and_charm:potato_from_bag", "farm_and_charm:onion_bag", "farm_and_charm:onion_from_bag", "farm_and_charm:beetroot_bag", "farm_and_charm:beetroot_from_bag", "farm_and_charm:corn_bag", "farm_and_charm:corn_from_bag", "farm_and_charm:strawberry_bag", "farm_and_charm:strawberry_from_bag", "farm_and_charm:flour_bag", "farm_and_charm:flour_from_bag", "farm_and_charm:oat_ball", "farm_and_charm:oat_from_ball", "farm_and_charm:barley_ball", "farm_and_charm:barley_from_ball"]
+	#Define recipes (namespace:path) which should result in the quality should be always be applied to the result (only if all ingredients have the same quality)
+	retain_quality_recipes = ["minecraft:sugar_from_sugar_cane", "minecraft:sugar_from_honey_bottle", "cratedelight:stacked_melons", "cratedelight:melons", "cratedelight:stacked_pumpkins", "cratedelight:pumpkins", "farmersdelight:stacked_melons", "farmersdelight:stacked_pumpkins"]
+	#Defines whether (de)compacting should be handled automatically (in terms of retaining quality)
+	handle_compacting = true
+	#Attempt to handle recipes involving seed items automatically (to avoid having to add all of them to the retain_quality_recipes config)
+	handle_seed_recipes = true
+
+[IRON]
+	#The weight of the quality (relevant for crafting - average weight from the quality of the ingredients determine affect the resulting quality)
+	#Range: 0.0 ~ 100.0
+	weight = 1.0
+	#The min. weight of the quality (chance for quality when crafting: (average_weight - min_weight) / (weight / min_weight)
+	#Range: 0.0 ~ 100.0
+	min_weight = 0.5
+	#The chance for a quality to occur (with no luck or other bonus)
+	#Range: 0.0 ~ 1.0
+	chance = 0.1
+	#A chance multiplier for dropped crops (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	crop_multiplier = 1.0
+	#A chance multiplier for dropped seeds (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	seed_multiplier = 1.0
+	#By how much the duration of the effect will get multiplied (beneficial) or divided (harmful) for
+	#Range: 1.0 ~ 100.0
+	duration_multiplier = 1.5
+	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
+	#Range: 0.0 ~ 1.0
+	probability_addition = 0.10000000149011612
+	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
+	#Range: 0 ~ 255
+	amplifier_addition = 1
+	#By how much the nutrition will get multiplied for
+	#Range: 1.0 ~ 100.0
+	nutrition_multiplier = 1.5
+	#By how much the saturation will get multiplied for
+	#Range: 1.0 ~ 100.0
+	saturation_multiplier = 1.25
+	#List of effects this rarity can grant (the item can be a tag) (<item>;<effect>;<chance>;<duration>;<amplifier>;<probability>)
+	effect_list = []
+
+[GOLD]
+	#The weight of the quality (relevant for crafting - average weight from the quality of the ingredients determine affect the resulting quality)
+	#Range: 0.0 ~ 100.0
+	weight = 2.0
+	#The min. weight of the quality (chance for quality when crafting: (average_weight - min_weight) / (weight / min_weight)
+	#Range: 0.0 ~ 100.0
+	min_weight = 1.0
+	#The chance for a quality to occur (with no luck or other bonus)
+	#Range: 0.0 ~ 1.0
+	chance = 0.05
+	#A chance multiplier for dropped crops (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	crop_multiplier = 0.8999999761581421
+	#A chance multiplier for dropped seeds (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	seed_multiplier = 0.8999999761581421
+	#By how much the duration of the effect will get multiplied (beneficial) or divided (harmful) for
+	#Range: 1.0 ~ 100.0
+	duration_multiplier = 2.0
+	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
+	#Range: 0.0 ~ 1.0
+	probability_addition = 0.20000000298023224
+	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
+	#Range: 0 ~ 255
+	amplifier_addition = 2
+	#By how much the nutrition will get multiplied for
+	#Range: 1.0 ~ 100.0
+	nutrition_multiplier = 2.0
+	#By how much the saturation will get multiplied for
+	#Range: 1.0 ~ 100.0
+	saturation_multiplier = 1.5
+	#List of effects this rarity can grant (the item can be a tag) (<item>;<effect>;<chance>;<duration>;<amplifier>;<probability>)
+	effect_list = []
+
+[DIAMOND]
+	#The weight of the quality (relevant for crafting - average weight from the quality of the ingredients determine affect the resulting quality)
+	#Range: 0.0 ~ 100.0
+	weight = 3.0
+	#The min. weight of the quality (chance for quality when crafting: (average_weight - min_weight) / (weight / min_weight)
+	#Range: 0.0 ~ 100.0
+	min_weight = 1.75
+	#The chance for a quality to occur (with no luck or other bonus)
+	#Range: 0.0 ~ 1.0
+	chance = 0.0025
+	#A chance multiplier for dropped crops (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	crop_multiplier = 0.75
+	#A chance multiplier for dropped seeds (from a fully grown crop)
+	#Range: 0.0 ~ 5.0
+	seed_multiplier = 0.75
+	#By how much the duration of the effect will get multiplied (beneficial) or divided (harmful) for
+	#Range: 1.0 ~ 100.0
+	duration_multiplier = 2.5
+	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
+	#Range: 0.0 ~ 1.0
+	probability_addition = 0.30000001192092896
+	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
+	#Range: 0 ~ 255
+	amplifier_addition = 3
+	#By how much the nutrition will get multiplied for
+	#Range: 1.0 ~ 100.0
+	nutrition_multiplier = 2.5
+	#By how much the saturation will get multiplied for
+	#Range: 1.0 ~ 100.0
+	saturation_multiplier = 1.75
+	#List of effects this rarity can grant (the item can be a tag) (<item>;<effect>;<chance>;<duration>;<amplifier>;<probability>)
+	effect_list = []
+
+[Compatibility]
+	#Handle Quark harvest & replant automatically (if you have custom behaviour configured regarding the quality block state turn this off)
+	quark_handle_config = true
+

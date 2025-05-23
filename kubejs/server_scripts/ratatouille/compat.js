@@ -1,0 +1,56 @@
+ServerEvents.recipes(e => {
+    const { vintageimprovements, create } = e.recipes
+    vintageimprovements.curving(
+        [
+            "ratatouille:chocolate_mold",
+            "create:bar_of_chocolate"
+        ],
+        "ratatouille:chocolate_mold_solid"
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/bar_of_chocolate")
+    vintageimprovements.curving(
+        [
+            "ratatouille:chocolate_mold",
+            "create_confectionery:bar_of_black_chocolate"
+        ],
+        "createdelightcore:black_chocolate_mold_solid"
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/bar_of_black_chocolate")
+    vintageimprovements.curving(
+        [
+            "ratatouille:chocolate_mold",
+            "create_confectionery:bar_of_white_chocolate"
+        ],
+        "createdelightcore:white_chocolate_mold_solid"
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/bar_of_white_chocolate")
+    vintageimprovements.curving(
+        [
+            "ratatouille:chocolate_mold",
+            "create_confectionery:bar_of_ruby_chocolate"
+        ],
+        "createdelightcore:ruby_chocolate_mold_solid"
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/bar_of_ruby_chocolate")
+    vintageimprovements.curving(
+        [
+            "ratatouille:cake_mold",
+            "ratatouille:cake_base"
+        ],
+        "ratatouille:cake_mold_baked"
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/cake_mold_baked")
+    create.mixing(
+        "ratatouille:salty_dough",
+        [
+            'bakeries:flour',
+            "vintagedelight:salt_dust",
+            Fluid.of("createdelight:egg_yolk", 50)
+        ]
+    ).id("create:mixing/salty_dough")
+})

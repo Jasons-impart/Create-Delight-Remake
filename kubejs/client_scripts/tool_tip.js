@@ -1,3 +1,4 @@
+
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
@@ -23,12 +24,15 @@ ItemEvents.tooltip(e => {
         "art_of_forging:nano_insectoid",
         'createdelight:dread_heart',
         'createdelight:prospector',
-        'vintageimprovements:vacuum_chamber',
-        "vintageimprovements:vibrating_table",
-        'vintageimprovements:lathe',
+        'vintagedelight:cheese_curds',
     ])
     clearAddCtrlTooltip(e, [
         
+    ])
+    addCtrlTooltip(e, [
+        "createdelight:sprinkler",
+        'createdelight:sell_bin',
+        'vintagedelight:cheese_mold',
     ])
     clearAddShiftCtrlTooltip(e, [
 
@@ -90,4 +94,11 @@ ItemEvents.tooltip(e => {
     e.addAdvanced('lightmanscurrency:atm_card', (item, advanced, text) => {
         text.remove(1)
     })
+    // e.addAdvancedToAll((item, advanced, text) => {
+    //     if (item.item instanceof $ModularItem && TetraUtil.itemHasEffect(item, "createdelight:charge")){
+    //         let energy = item.nbt.getInt("energy")
+    //         let maxEnergy = item.nbt.getInt("maxEnergy")
+    //         text.add(`${energy}FE/${maxEnergy}FE`)
+    //     }
+    // })
 })

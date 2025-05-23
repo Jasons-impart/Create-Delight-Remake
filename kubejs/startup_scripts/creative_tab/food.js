@@ -1,3 +1,29 @@
+// 农夫乐事
+StartupEvents.modifyCreativeTab("farmersdelight:farmersdelight", e => {
+  e.remove([
+   'culturaldelights:cucumber',
+   'culturaldelights:cucumber_crate',
+   'culturaldelights:cucumber_seeds',
+   'culturaldelights:raw_calamari',
+   'culturaldelights:cooked_calamari',
+  ])
+})
+//农夫暇事
+StartupEvents.modifyCreativeTab("farmersrespite:main", e => {
+  e.remove([
+   'farmersrespite:coffee',
+   'farmersrespite:long_coffee',
+   'farmersrespite:strong_coffee'
+  ])
+})
+//食物与饮品
+StartupEvents.modifyCreativeTab("minecraft:food_and_drinks", e => {
+  e.remove([
+    'farmersrespite:coffee',
+    'farmersrespite:long_coffee',
+    'farmersrespite:strong_coffee' 
+  ])
+})
 // 玉米乐事
 StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
     e.remove([
@@ -17,58 +43,279 @@ StartupEvents.modifyCreativeTab("corn_delight:corn_delight", e => {
       "corn_delight:tortilla_chip",
     ])
   })
-  // 油炸
-  StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
-    e.remove([
-      'create_bic_bit:unripe_cheese',
-      'create_bic_bit:waxed_unripe_cheese',
-      'create_bic_bit:young_cheese',
-      'create_bic_bit:waxed_young_cheese',
-      'create_bic_bit:aged_cheese',
-      'create_bic_bit:waxed_aged_cheese',
-      'create_bic_bit:unripe_cheese_wedge',
-      'create_bic_bit:young_cheese_wedge',
-      'create_bic_bit:aged_cheese_wedge',
-      'create_bic_bit:crystallised_oil',
-      'create_bic_bit:frying_oil_bottle',
-      'create_bic_bit:frying_oil_bucket'
-    ])
-  })
-  StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
-    e.remove([
-      "frycooks_delight:burnt_morsel",
-      "frycooks_delight:canola_oil",
-      "frycooks_delight:fried_fish_slice",
-      "frycooks_delight:fried_onion_ring",
-      "frycooks_delight:hot_grease_bucket",
-      "frycooks_delight:lard",
-      "frycooks_delight:lard_block",
-    ])
-  })
-  StartupEvents.modifyCreativeTab("create_deepfried:deepfried", e => {
-    e.remove([
-      "create_deepfried:apple_slices",
-      "create_deepfried:chicken_nuggets",
-      "create_deepfried:fish_and_chips",
-      "create_deepfried:raw_chicken_nuggets",
-      "create_deepfried:raw_springroll",
-      "create_deepfried:springroll",
-      "create_deepfried:yuca",
-    ])
-  })
-  //节日乐事
-  StartupEvents.modifyCreativeTab("festival_delicacies:festival_delicacies", e => {
-    e.remove([
-      'festival_delicacies:rice',
-      'festival_delicacies:red_bean'
-    ])
-    e.add([
-        'createdelight:adzuki_beans_seed',
-        "createdelight:artemisia_argyi_seed"
-      ]
-    )
-  })
+// 油炸
+StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
+  e.remove([
+    'create_bic_bit:unripe_cheese',
+    'create_bic_bit:waxed_unripe_cheese',
+    'create_bic_bit:young_cheese',
+    'create_bic_bit:waxed_young_cheese',
+    'create_bic_bit:aged_cheese',
+    'create_bic_bit:waxed_aged_cheese',
+    'create_bic_bit:unripe_cheese_wedge',
+    'create_bic_bit:young_cheese_wedge',
+    'create_bic_bit:aged_cheese_wedge',
+    'create_bic_bit:crystallised_oil',
+    'create_bic_bit:frying_oil_bottle',
+    'create_bic_bit:frying_oil_bucket'
+  ])
+})
+StartupEvents.modifyCreativeTab("frycooks_delight:frycooks_delight_tab", e => {
+  e.remove([
+    "frycooks_delight:burnt_morsel",
+    "frycooks_delight:fried_fish_slice",
+    "frycooks_delight:fried_onion_ring",
+    "frycooks_delight:hot_grease_bucket",
+    "frycooks_delight:lard",
+    "frycooks_delight:lard_block",
+  ])
+})
+StartupEvents.modifyCreativeTab("create_deepfried:deepfried", e => {
+  e.remove([
+    "create_deepfried:apple_slices",
+    "create_deepfried:chicken_nuggets",
+    "create_deepfried:fish_and_chips",
+    "create_deepfried:raw_chicken_nuggets",
+    "create_deepfried:raw_springroll",
+    "create_deepfried:springroll",
+    "create_deepfried:yuca",
+  ])
+})
+//节日乐事
+StartupEvents.modifyCreativeTab("festival_delicacies:festival_delicacies", e => {
+  e.remove([
+    'festival_delicacies:rice',
+    'festival_delicacies:red_bean'
+  ])
+  e.add([
+      'createdelight:adzuki_beans_seed',
+      "createdelight:artemisia_argyi_seed"
+    ]
+  )
+})
+// 烘焙坊
+StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
+  e.remove([
+   "bakeries:blender",
+   'bakeries:cheese_cube',
+   'bakeries:cocoa_powder',
+   'bakeries:whole_wheat_flour_bag',
+   'bakeries:whole_wheat_flour',
+   'bakeries:salt_scraper_rake',
+   'bakeries:salt',
+   'bakeries:tomato',
+   'bakeries:bottle_butter',
+   'bakeries:bottle_milk',
+   'bakeries:bottle_cream',
+   "bakeries:fermentation_tank",
+   'bakeries:yeast_tank',
+   'bakeries:cheese_tank',
+   'bakeries:olive',
+   'bakeries:black_white_concrete',
+   'bakeries:butter_cube',
+   'bakeries:flour_sieve',
+   'bakeries:oven',
+   'bakeries:moka_pot',
+   'bakeries:moka_pot_fill',
+   "bakeries:iced_american",
+   "bakeries:iced_latte",
+   "bakeries:brown_sugar_latte",
+   "bakeries:cream_bingle_coffee",
+   'bakeries:drink_cup',
+   "bakeries:olive_oil",
+   'bakeries:raw_coffee_bean',
+   'bakeries:coffee_bean',
+   'bakeries:ground_coffee',
+  ])
+})
+StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {
+  e.remove([
+    'bakeries:salted_dough',
+    'bakeries:cocoa_dough', 
+    'bakeries:pastry',
+  ])
+})
+//腌渍乐事
+StartupEvents.modifyCreativeTab("vintagedelight:vintage_tab", e => {
+  e.remove([
+    "vintagedelight:cheese_slice",
+    "vintagedelight:black_chef_hat",
+    "vintagedelight:blue_chef_hat",
+    "vintagedelight:green_chef_hat",
+    "vintagedelight:orange_chef_hat",
+    "vintagedelight:pink_chef_hat",
+    "vintagedelight:purple_chef_hat",
+    "vintagedelight:red_chef_hat",
+    "vintagedelight:white_chef_hat",
+    "vintagedelight:yellow_chef_hat",
+    "vintagedelight:magenta_chef_hat",
+    "vintagedelight:light_blue_chef_hat",
+    "vintagedelight:cyan_chef_hat",
+    "vintagedelight:lime_chef_hat",
+    "vintagedelight:gray_chef_hat",
+    "vintagedelight:brown_chef_hat",
+    "vintagedelight:light_gray_chef_hat",
+    "vintagedelight:pickle",
+    'vintagedelight:meat_pizza',
+    'vintagedelight:meat_pizza_slice',
+  ])
+})
+//樱途乐事
+StartupEvents.modifyCreativeTab("trailandtales_delight:item", e => {
+  e.remove([
+    'trailandtales_delight:curd_block',
+    'trailandtales_delight:cheese_wheel',
+    'trailandtales_delight:cheese_slice'
+  ])
+})
+//妖怪归家
+StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
+  e.remove([
+    'youkaishomecoming:redbean',
+    'youkaishomecoming:coffee_berries',
+    'youkaishomecoming:green_coffee_bean',
+    'youkaishomecoming:coffee_beans',
+    'youkaishomecoming:coffee_powder',
+    'youkaishomecoming:tea_seeds',
+    'youkaishomecoming:tea_leaves',
+    'youkaishomecoming:green_tea_leaves',
+    'youkaishomecoming:black_tea_leaves',
+    'youkaishomecoming:oolong_tea_leaves',
+    'youkaishomecoming:redbean_bag',
+    'youkaishomecoming:coffee_bean_bag',
+    'youkaishomecoming:tea_leaf_bag',
+    'youkaishomecoming:green_tea_bag',
+    'youkaishomecoming:black_tea_bag',
+    'youkaishomecoming:oolong_tea_bag',
+    'youkaishomecoming:butter',
+    'youkaishomecoming:doughnut',
+    'youkaishomecoming:blood_bottle',
+    'youkaishomecoming:bowl_of_cream',
+    'youkaishomecoming:black_tea',
+    'youkaishomecoming:green_tea',
+    'youkaishomecoming:moon_rocket',
+    "youkaishomecoming:kettle",
+    "youkaishomecoming:oolong_tea",
+  ])
+})
+//矿工乐事
+StartupEvents.modifyCreativeTab("miners_delight:miners_delight", e => {
+  e.remove([
+   'miners_delight:squid',
+   'miners_delight:glow_squid',
+   'miners_delight:baked_squid',
+   'miners_delight:tentacles',
+   'miners_delight:baked_tentacles' 
+  ])
+})
+//中央厨房
+StartupEvents.modifyCreativeTab("create_central_kitchen:base", e => {
+  e.remove([
+   'create_central_kitchen:pumpkin_pie_slice',
+   'create_central_kitchen:cherry_pie_slice',
+   'create_central_kitchen:truffle_pie_slice',
+   'create_central_kitchen:mulberry_pie_slice',
+   'create_central_kitchen:yucca_cake_slice',
+   'create_central_kitchen:aloe_cake_slice',
+   'create_central_kitchen:passionfruit_cake_slice',
+   'create_central_kitchen:pumpkin_cake_slice',
+   'create_central_kitchen:sweet_berry_cake_slice',
 
+  ])
+})
+//海洋乐事
+StartupEvents.modifyCreativeTab("oceanic_delight:oceanic_delight", e => {
+  e.remove([
+   'oceanic_delight:egg_roll',
+   'oceanic_delight:shrimp' 
+  ]) 
+})
+//下界乐事
+StartupEvents.modifyCreativeTab("mynethersdelight:main", e => {
+  e.remove([
+   'mynethersdelight:roasted_sausage',
+   'mynethersdelight:hoglin_sausage' 
+  ])
+})
+//蟹农乐事
+StartupEvents.modifyCreativeTab("crabbersdelight:test_tab", e => {
+  e.remove([
+    'crabbersdelight:raw_squid_tentacles',
+    'crabbersdelight:raw_glow_squid_tentacles',
+    'crabbersdelight:cooked_squid_tentacles',
+    'crabbersdelight:cooked_glow_squid_tentacles',
+  ]) 
+})
+//屠宰乐事
+StartupEvents.modifyCreativeTab("butchercraft:items", e => {
+  e.remove([
+    'butchercraft:sausage_block_item',
+    'butchercraft:cooked_sausage_block_item',
+    'butchercraft:sausage_linked',
+    'butchercraft:sausage',
+    'butchercraft:cooked_sausage'
+  ]) 
+})
+//奶茶
+StartupEvents.modifyCreativeTab("createcafe:create_cafe_fluids", e => {
+  e.remove([
+    "createcafe:aloe_tea_bucket",
+    "createcafe:apricot_tea_bucket",
+    "createcafe:barberry_tea_bucket",
+    "createcafe:blackberry_tea_bucket",
+    "createcafe:caramel_syrup_bucket",
+    "createcafe:citron_tea_bucket",
+    "createcafe:coconut_iced_coffee",
+    "createcafe:coconut_syrup_bucket",
+    "createcafe:coconut_tea_bucket",
+    "createcafe:dragonfruit_tea_bucket",
+    "createcafe:gooseberry_tea_bucket",
+    "createcafe:grapefruit_tea_bucket",
+    "createcafe:guava_tea_bucket",
+    "createcafe:jackfruit_tea_bucket",
+    "createcafe:lavender_tea_bucket",
+    "createcafe:mana_tea_bucket",
+    "createcafe:mandarin_tea_bucket",
+    "createcafe:papaya_tea_bucket",
+    "createcafe:passionfruit_tea_bucket",
+    "createcafe:plum_tea_bucket",
+    "createcafe:pomelo_tea_bucket",
+    "createcafe:raspberry_iced_coffee",
+    "createcafe:raspberry_syrup_bucket",
+    "createcafe:raspberry_tea_bucket",
+    "createcafe:redlove_tea_bucket",
+    "createcafe:starfruit_tea_bucket",
+    "createcafe:tamarind_tea_bucket",
+    "createcafe:yucca_tea_bucket",
+  ]) 
+})
+StartupEvents.modifyCreativeTab("createcafe:create_cafe_items", e => {
+  e.remove([
+    "createcafe:aloe_milk_tea",
+    "createcafe:apricot_milk_tea",
+    "createcafe:barberry_milk_tea",
+    "createcafe:blackberry_milk_tea",
+    "createcafe:citron_milk_tea",
+    "createcafe:coconut_milk_tea",
+    "createcafe:dragonfruit_milk_tea",
+    "createcafe:gooseberry_milk_tea",
+    "createcafe:grapefruit_milk_tea",
+    "createcafe:guava_milk_tea",
+    "createcafe:jackfruit_milk_tea",
+    "createcafe:lavender_milk_tea",
+    "createcafe:mana_berry_milk_tea",
+    "createcafe:mandarin_milk_tea",
+    "createcafe:papaya_milk_tea",
+    "createcafe:passionfruit_milk_tea",
+    "createcafe:plum_milk_tea",
+    "createcafe:pomelo_milk_tea",
+    "createcafe:raspberry_milk_tea",
+    "createcafe:redlove_milk_tea",
+    "createcafe:starfruit_milk_tea",
+    "createcafe:tamarind_milk_tea",
+    "createcafe:yucca_milk_tea",
+  ]) 
+})
 //那不勒斯风味
 StartupEvents.registry("minecraft:creative_mode_tab", e => {
   e.create("neapolitan:neapolitan")

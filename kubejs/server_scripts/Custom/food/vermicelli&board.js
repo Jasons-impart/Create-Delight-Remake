@@ -1,19 +1,9 @@
 ServerEvents.recipes(e => {
     e.replaceInput({ id: "mynethersdelight:cooking/spicy_noodle_soup" }, "mynethersdelight:ghasta", "createdelight:vermicelli")
     // 挂面合成
-    e.custom({
-        type: "ratatouille:squeezing",
-        ingredients: [
-            {
-                item: "create:dough"
-            }
-        ],
-        results: [
-            {
-                item: "createdelight:vermicelli"
-            }
-        ]
-    }).id("ratatouille:squeezing/vermicelli")
+    e.recipes.ratatouille.squeezing(
+        "createdelight:vermicelli", "bakeries:whole_wheat_dough"
+    ).id("ratatouille:squeezing/vermicelli")
     // 挂面相关
     e.recipes.farmersdelight.cooking(
         [
@@ -49,12 +39,12 @@ ServerEvents.recipes(e => {
         .id("casualness_delight:cooking/beef_noodles")
         .container("bowl")
     // 板面相关
-    e.recipes.create.sequenced_assembly("4x createdelight:board_noodles", "create:dough", [
-        e.recipes.create.pressing("create:dough", "create:dough"),
-        e.recipes.create.cutting("create:dough", "create:dough")
+    e.recipes.create.sequenced_assembly("4x createdelight:board_noodles", "bakeries:whole_wheat_dough", [
+        e.recipes.create.pressing("bakeries:whole_wheat_dough", "bakeries:whole_wheat_dough"),
+        e.recipes.create.cutting("bakeries:whole_wheat_dough", "bakeries:whole_wheat_dough")
     ])
-        .transitionalItem("create:dough")
+        .transitionalItem("bakeries:whole_wheat_dough")
         .loops(2)
         .id("createdelight:recipes/board_noodles")
-    cutting(e, "create:dough", [["createdelight:board_noodles"]])
+    cutting(e, "bakeries:whole_wheat_dough", [["createdelight:board_noodles"]])
 })

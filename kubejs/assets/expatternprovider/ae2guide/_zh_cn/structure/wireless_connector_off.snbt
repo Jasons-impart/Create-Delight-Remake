@@ -1,0 +1,23 @@
+{
+    DataVersion: 3465,
+    size: [5, 1, 4],
+    data: [
+        {pos: [0, 0, 0], state: "ae2:creative_energy_cell", nbt: {ForgeCaps: {}, id: "ae2:creative_energy_cell", proxy: {g: 4913L, p: 0}, visual: {}}},
+        {pos: [1, 0, 0], state: "ae2:controller{state:online,type:block}", nbt: {ForgeCaps: {}, id: "ae2:controller", internalCurrentPower: 0.0d, proxy: {g: 4913L, p: 0}, visual: {}}},
+        {pos: [1, 0, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 4913L, p: 0}, id: "ae2:white_smart_cable", visual: {channelsNorth: 0, channelsSouth: 0, connections: ["north", "south"], missingChannel: 0b, powered: 1b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 0, 2], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 4913L, p: 0}, id: "ae2:white_smart_cable", visual: {channelsNorth: 0, channelsSouth: 0, connections: ["north", "south"], missingChannel: 0b, powered: 1b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 0, 3], state: "expatternprovider:wireless_connect{connected:false}", nbt: {ForgeCaps: {}, freq: 0L, id: "expatternprovider:wireless_connect", proxy: {g: 4913L, p: 0}, visual: {}}},
+        {pos: [4, 0, 0], state: "expatternprovider:wireless_connect{connected:false}", nbt: {ForgeCaps: {}, freq: 0L, id: "expatternprovider:wireless_connect", proxy: {g: 4922L, p: 0}, visual: {}}},
+        {pos: [4, 0, 1], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 4922L, p: 0}, id: "ae2:black_smart_cable", visual: {channelsNorth: 1, channelsSouth: 1, connections: ["north", "south"], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [4, 0, 2], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 4922L, p: 0}, id: "ae2:black_smart_cable", visual: {channelsNorth: 1, channelsSouth: 1, connections: ["north", "south"], missingChannel: 0b, powered: 0b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [4, 0, 3], state: "ae2:drive{facing:east,spin:0}", nbt: {ForgeCaps: {}, id: "ae2:drive", inv: {item0: {Count: 1b, id: "ae2:item_storage_cell_256k", tag: {}}, item1: {Count: 1b, id: "ae2:item_storage_cell_64k", tag: {}}, item2: {Count: 1b, id: "ae2:item_storage_cell_16k", tag: {}}, item3: {Count: 1b, id: "ae2:item_storage_cell_64k", tag: {}}, item4: {Count: 1b, id: "ae2:item_storage_cell_16k", tag: {}}, item5: {Count: 1b, id: "ae2:item_storage_cell_64k", tag: {}}, item6: {Count: 1b, id: "ae2:item_storage_cell_16k", tag: {}}, item7: {Count: 1b, id: "ae2:item_storage_cell_16k", tag: {}}, item8: {Count: 1b, id: "ae2:item_storage_cell_4k", tag: {}}, item9: {Count: 1b, id: "ae2:item_storage_cell_16k", tag: {}}}, priority: 0, proxy: {g: 4922L, p: 0}, visual: {cell0: {id: "ae2:item_storage_cell_256k", state: "empty"}, cell1: {id: "ae2:item_storage_cell_64k", state: "empty"}, cell2: {id: "ae2:item_storage_cell_16k", state: "empty"}, cell3: {id: "ae2:item_storage_cell_64k", state: "empty"}, cell4: {id: "ae2:item_storage_cell_16k", state: "empty"}, cell5: {id: "ae2:item_storage_cell_64k", state: "empty"}, cell6: {id: "ae2:item_storage_cell_16k", state: "empty"}, cell7: {id: "ae2:item_storage_cell_16k", state: "empty"}, cell8: {id: "ae2:item_storage_cell_4k", state: "empty"}, cell9: {id: "ae2:item_storage_cell_16k", state: "empty"}, online: 0b}}}
+    ],
+    entities: [],
+    palette: [
+        "ae2:creative_energy_cell",
+        "ae2:controller{state:online,type:block}",
+        "ae2:cable_bus{light_level:0,waterlogged:false}",
+        "expatternprovider:wireless_connect{connected:false}",
+        "ae2:drive{facing:east,spin:0}"
+    ]
+}

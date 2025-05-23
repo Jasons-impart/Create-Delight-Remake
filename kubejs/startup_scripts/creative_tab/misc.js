@@ -106,7 +106,43 @@ StartupEvents.modifyCreativeTab("torchmaster:creative_tab", e => {
 StartupEvents.modifyCreativeTab("ae2:main", e => {
   e.add([
     'createdelight:universal_press',
-    'createdelight:bleak_electron_tube'
+    'createdelight:bleak_electron_tube',
+    'createdelight:redstone_paste',
+    'createdelight:glowstone_paste',
+    'createdelight:initial_processing_of_printed_engineering_processor',
+    'createdelight:initial_processing_of_printed_calculation_processor',
+    'createdelight:initial_processing_of_printed_logic_processor',
+    'createdelight:engineering_processor_inscribed',
+    'createdelight:calculation_processor_inscribed',
+    'createdelight:logic_processor_inscribed',
+    'createdelight:item_cell_housing_blank',
+    'createdelight:fluid_cell_housing_blank',
+    'createdelight:initial_processing_of_item_cell_housing',
+    'createdelight:initial_processing_of_fluid_cell_housing',
+    'createdelight:unformed_item_cell_housing',
+    'createdelight:unformed_fluid_cell_housing',
+    'createdelight:quartz_glass_parts',
+    'createdelight:quartz_vibrant_glass_parts',
+    'createdelight:cell_housing_curving_head',
+  ])
+})
+StartupEvents.modifyCreativeTab("megacells:tab", e => {
+  e.add([
+    'createdelight:sky_stone_paste',
+    'createdelight:initial_processing_of_printed_accumulation_processor',
+    'createdelight:accumulation_processor_inscribed',
+    'createdelight:mega_item_cell_housing_blank',
+    'createdelight:mega_fluid_cell_housing_blank',
+    'createdelight:initial_processing_of_mega_item_cell_housing',
+    'createdelight:initial_processing_of_mega_fluid_cell_housing',
+    'createdelight:unformed_mega_item_cell_housing',
+    'createdelight:unformed_mega_fluid_cell_housing',
+  ])
+  e.remove([
+    "megacells:mega_interface",
+    "megacells:mega_pattern_provider",
+    'megacells:cable_mega_interface',
+    'megacells:cable_mega_pattern_provider',
   ])
 })
 
@@ -117,6 +153,34 @@ StartupEvents.modifyCreativeTab("iceandfire:items", e => {
     'dreadsteel:kit_white',
     'dreadsteel:kit_black',
     'dreadsteel:kit_bronze',
+  ])
+  e.remove([
+    "iceandfire:dragonsteel_fire_sword",
+    "iceandfire:dragonsteel_fire_pickaxe",
+    "iceandfire:dragonsteel_fire_axe",
+    "iceandfire:dragonsteel_fire_shovel",
+    "iceandfire:dragonsteel_fire_hoe",
+    "iceandfire:dragonsteel_ice_pickaxe",
+    "iceandfire:dragonsteel_ice_sword",
+    "iceandfire:dragonsteel_ice_axe",
+    "iceandfire:dragonsteel_ice_shovel",
+    "iceandfire:dragonsteel_ice_hoe",
+    "iceandfire:dragonsteel_lightning_sword",
+    "iceandfire:dragonsteel_lightning_pickaxe",
+    "iceandfire:dragonsteel_lightning_axe",
+    "iceandfire:dragonsteel_lightning_shovel",
+    "iceandfire:dragonsteel_lightning_hoe",
+    "iceandfire:copper_axe",
+    "iceandfire:copper_hoe",
+    "iceandfire:copper_pickaxe",
+    "iceandfire:copper_shovel",
+    "iceandfire:copper_sword",
+    "iceandfire:copper_nugget",
+    "iceandfire:armor_copper_metal_boots",
+    "iceandfire:armor_copper_metal_chestplate",
+    "iceandfire:armor_copper_metal_helmet",
+    "iceandfire:armor_copper_metal_leggings",
+    
   ])
 })
 
@@ -130,11 +194,22 @@ StartupEvents.modifyCreativeTab("minecraft:ingredients", e => {
   ])
 })
 
+StartupEvents.modifyCreativeTab("minecraft:redstone_blocks", e => {
+  e.remove([
+    'mbd2:mbd_gadgets'
+  ])
+})
+
+StartupEvents.modifyCreativeTab("minecraft:building_blocks", e => {
+  e.remove([
+    'quark:potato_crate',
+  ])
+})
+
 StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
   e.remove([
     'kinetic_pixel:firearmworktable',
     'kinetic_pixel:wildgraycotton',
-    'kinetic_pixel:graycotton',
     'kinetic_pixel:graycottonseed',
     'kinetic_pixel:bambooshell',
     'kinetic_pixel:bambooshell',
@@ -156,8 +231,69 @@ StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
   ])
 })
 
-StartupEvents.modifyCreativeTab("minecraft:redstone_blocks", e => {
+StartupEvents.modifyCreativeTab("ad_astra:main", e => {
   e.remove([
-    'mbd2:mbd_gadgets'
+    'ad_astra:etrionic_blast_furnace',
+    'ad_astra:fuel_refinery',
+    'ad_astra:oxygen_loader',
+    'ad_astra:cryo_freezer',
+    'ad_astra:steel_rod',
+    'ad_astra:etrium_ingot',
+    'ad_astra:etrium_nugget',
+    'ad_astra:etrium_plate',
+    'ad_astra:etrium_rod',
+    'ad_astra:oil_bucket',
+    'ad_astra:oil_bucket',
+    'ad_astra:etrium_factory_block',
+    'ad_astra:encased_etrium_block',
+    'ad_astra:etrium_plateblock',
+    'ad_astra:etrium_panel',
+    'ad_astra:etrium_block',
+    "ad_astra:compressor",
+    "ad_astra:nasa_workbench",
+    "ad_astra:water_pump",
+    "ad_astra:wrench",
+    "ad_astra:steel_cable",
+    "ad_astra:desh_cable",
+    "ad_astra:desh_fluid_pipe",
+    "ad_astra:ostrum_fluid_pipe",
+    "ad_astra:cable_duct",
+    "ad_astra:fluid_pipe_duct",
+    "ad_astra:coal_generator",
+    "ad_astra:iron_plate",
+    "ad_astra:iron_rod",
+    "ad_astra:steel_ingot",
+    "ad_astra:steel_block",
   ])
+})
+
+StartupEvents.modifyCreativeTab("ad_astra_giselle_addon:tab", e => {
+  e.remove([
+    'ad_astra_giselle_addon:automation_nasa_workbench',
+    'ad_astra_giselle_addon:gravity_normalizer',
+  ]) 
+})
+
+StartupEvents.modifyCreativeTab("the_bumblezone:main_tab", e => {
+  e.remove([
+    'the_bumblezone:honey_bucket'
+  ]) 
+})
+
+StartupEvents.modifyCreativeTab("refurbished_furniture:creative_tab", e => {
+  e.remove([
+    'refurbished_furniture:sea_salt',
+    'refurbished_furniture:wheat_flour',
+    'refurbished_furniture:dough',
+    'refurbished_furniture:cheese',
+    'refurbished_furniture:bread_slice',
+    'refurbished_furniture:toast',
+    'refurbished_furniture:knife',
+  ]) 
+})
+
+StartupEvents.modifyCreativeTab("minecraft:functional_blocks", e => {
+  e.remove([
+    "quark:iron_ladder",
+  ]) 
 })

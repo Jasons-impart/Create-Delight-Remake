@@ -1,0 +1,54 @@
+{
+  "block.cratedelight.apple_crate": "箱装苹果",
+  "block.cratedelight.berry_crate": "箱装浆果",
+  "block.cratedelight.glowberry_crate": "箱装荧光浆果",
+  "block.cratedelight.egg_crate": "箱装鸡蛋",
+  "block.cratedelight.salmon_crate": "箱装生鲑鱼",
+  "block.cratedelight.cod_crate": "箱装生鳕鱼",
+  "block.cratedelight.cocoabeans_bag": "袋装可可豆",
+  "block.cratedelight.sugar_bag": "袋装糖",
+  "block.cratedelight.salt_bag": "袋装盐",
+  "block.cratedelight.gunpowder_bag": "袋装火药",
+  "block.cratedelight.ground_cinnamon_bag": "袋装肉桂粉",
+  "block.cratedelight.golden_apple_crate": "箱装金苹果",
+
+  "block.cratedelight.end_fish_crate": "箱装生末地鱼",
+  "block.cratedelight.duck_egg_crate": "箱装鸭蛋",
+  "block.cratedelight.catfish_crate": "箱装生鲶鱼",
+  "block.cratedelight.bass_crate": "箱装生的鲈鱼",
+  "block.cratedelight.peanut_crate": "箱装花生",
+  "block.cratedelight.wheat_flour_bag": "袋装小麦粉",
+  "block.cratedelight.ender_dust_bag": "袋装末影尘",
+  "block.cratedelight.powdered_obsidian_bag": "袋装粉末黑曜石",
+  "block.cratedelight.cinder_flour_bag": "袋装余烬面粉",
+  "block.cratedelight.blueberry_crate": "箱装蓝莓",
+  "block.cratedelight.red_mushroom_crate": "箱装红蘑菇",
+  "block.cratedelight.brown_mushroom_crate": "箱装棕蘑菇",
+
+  "block.cratedelight.emu_egg_crate": "箱装鸸鹋蛋",
+  "block.cratedelight.terrapin_egg_crate": "箱装龟蛋",
+  "block.cratedelight.crocodile_egg_crate": "箱装鳄鱼蛋",
+  "block.cratedelight.caiman_egg_crate": "箱装凯门鳄蛋",
+  "block.cratedelight.platypus_egg_crate": "箱装鸭嘴兽蛋",
+  "block.cratedelight.banana_crate": "箱装香蕉",
+  "block.cratedelight.golden_carrot_crate": "箱装金胡萝卜",
+  "block.cratedelight.kiwi_egg_crate": "箱装奇异果蛋",
+  "block.cratedelight.kiwifruit_crate": "箱装奇异果",
+
+  "block.cratedelight.carrot_crate": "箱装胡萝卜",
+  "block.cratedelight.potato_crate": "箱装土豆",
+  "block.cratedelight.beetroot_crate": "箱装甜菜根",
+
+  "block.cratedelight.black_berry_crate": "箱装黑莓",
+  "block.cratedelight.green_berry_crate": "箱装绿莓",
+  "block.cratedelight.orange_berry_crate": "箱装橙莓",
+  "block.cratedelight.yellow_berry_crate": "箱装黄莓",
+  "block.cratedelight.purple_berry_crate": "箱装紫莓",
+
+  "block.cratedelight.cookie_bag": "袋装饼干",
+
+  "block.cratedelight.diamond_apple_crate": "箱装钻石苹果",
+
+  "itemGroup.cratedelight": "装箱乐事",
+  "createdelight.sweettide_brokenpoint": "糖分临界点"
+}

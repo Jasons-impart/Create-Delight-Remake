@@ -1,0 +1,97 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/ex_inscriber.png",
+    "srcRect": [0, 0, 176, 187]
+  },
+  "slots": {
+    "INSCRIBER_PLATE_TOP": {
+      "left": 45,
+      "top": 27
+    },
+    "EX_1": {
+      "left": 45,
+      "top": 27
+    },
+    "EX_2": {
+      "left": 45,
+      "top": 27
+    },
+    "EX_3": {
+      "left": 45,
+      "top": 27
+    },
+    "MACHINE_INPUT": {
+      "left": 63,
+      "top": 50
+    },
+    "EX_7": {
+      "left": 63,
+      "top": 50
+    },
+    "EX_8": {
+      "left": 63,
+      "top": 50
+    },
+    "EX_9": {
+      "left": 63,
+      "top": 50
+    },
+    "INSCRIBER_PLATE_BOTTOM": {
+      "left": 45,
+      "top": 73
+    },
+    "EX_4": {
+      "left": 45,
+      "top": 73
+    },
+    "EX_5": {
+      "left": 45,
+      "top": 73
+    },
+    "EX_6": {
+      "left": 45,
+      "top": 73
+    },
+    "MACHINE_OUTPUT": {
+      "left": 113,
+      "top": 51
+    },
+    "EX_10": {
+      "left": 113,
+      "top": 51
+    },
+    "EX_11": {
+      "left": 113,
+      "top": 51
+    },
+    "EX_12": {
+      "left": 113,
+      "top": 51
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ex_inscriber"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "images": {
+    "progressBar": {
+      "texture": "guis/ex_inscriber.png",
+      "srcRect": [135, 188, 6, 18]
+    }
+  },
+  "widgets": {
+    "progressBar": {
+      "left": 135,
+      "top": 50
+    }
+  }
+}

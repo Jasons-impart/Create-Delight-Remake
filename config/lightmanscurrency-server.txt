@@ -67,6 +67,63 @@
 	#Default: false
 	manualDropOverride=false
 	
+#Money Bag Settings
+#Important Note: Money Bag Attributes are only validated when the item is first created or loaded from file, so config changes may not be reflected immediately.
+[money_bag]
+	#The base Attack Damage that an empty Money Bag will have (not counting the base 1 attack damage the player has)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 1.0
+	baseAttack=1.0
+	
+	#The additional Attack Damage added by each additional size (up to a size of 3)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 3.0
+	attackPerBagSize=3.0
+	
+	#The base Attack Speed that an empty Money Bag will have (not counting the base 4 attack speed the player has)
+	#Is negative because you typically want to make weapons such as these attack slower (vanilla sword attack speed is 1.5, which can be obtained with a value of -2.5)
+	#Range: -4.0 -> 0.0
+	#Default: -2.0
+	baseAttackSpeed=-2.0
+	
+	#The additional Attack Speed added by each additional size (up to a size of 3)
+	#Is negative because you typically want to make weapons such as these attack slower
+	#Note: If the total attack speed additions are more than -4.0, the player will be unable to get a full-strength attack with that size of Money Bag.
+	#Range: -4.0 -> 0.0
+	#Default: -0.5
+	attackSpeedPerBagSize=-0.5
+	
+	#The base fall damage per distance an empty Money Bag will have
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 0.5
+	baseFallDamage=0.5
+	
+	#The additional fall damage per distance added by each additional size (up to a size of 3)
+	#Range: 0.0 -> 3.4028235E38
+	#Default: 1.0
+	fallDamagePerBagSize=1.0
+	
+	#The base fall damage limit an empty Money Bag will have
+	#Range: 0 -> 2147483647
+	#Default: 30
+	baseFallDamageLimit=30
+	
+	#The additional fall damage limit added by each additional size (up to a size of 3)
+	#Range: 0 -> 2147483647
+	#Default: 10
+	fallDamageLimitPerBagSize=10
+	
+	#The chance of the Money Bag dropping a random coin when it's used to attack another entity or when it falls a significant distance
+	#0.0 is a 0% chance, and 1.0 is a 100% chance
+	#Range: 0.0 -> 1.0
+	#Default: 0.0
+	coinLossChance=0.0
+	
+	#The minimum distance a Money Bag must fall before it has a chance to drop coins when it lands
+	#Range: 0 -> 2147483647
+	#Default: 2
+	coinLossFallDistance=2
+	
 #Upgrade Settings
 [upgrades]
 	#Item Capacity Upgrade
@@ -242,7 +299,7 @@
 [terminal]
 	#Whether the /lcterminal command will exist allowing players to access the Trading Terminal without the physical item/block
 	#Default: false
-	lcterminalCommand=false
+	lcterminalCommand=true
 	
 	#Whether Traders with no defined Custom Name will be sorted to the bottom of the Trader list on the Network Terminal.
 	#Default: false

@@ -10,7 +10,8 @@ ServerEvents.recipes(e => {
     // tetra切刀兼容
     e.forEachRecipe({ 'type': 'farmersdelight:cutting'}, recipes => {
         let data = JSON.parse(recipes.json.toString())
-        let id = 'tetracelium:' + recipes.getId().split(':')[1]
+        let id = 'tetracelium:' + recipes.getId().split(':')[1] 
+        + "from_" + recipes.getId().split(':')[0]
         // 提取配方的id，并重组成新id【避免冲突】
         if (input_black_list.indexOf(data.ingredients[0]?.item) == -1 && data.tool?.tag == "forge:tools/knives") {
             // 判断这个配方是否使用tag判断工具、tag是否为刀

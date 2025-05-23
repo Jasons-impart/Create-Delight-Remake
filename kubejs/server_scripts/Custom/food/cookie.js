@@ -32,7 +32,8 @@ ServerEvents.recipes(e => {
         ["4x createdelight:bayberry_cookie_dough", "fruitsdelight:bayberry", "fruitsdelight:bayberry_cookie"],
         ["4x createdelight:green_tea_cookie_dough", "farmersrespite:green_tea_leaves", "farmersrespite:green_tea_cookie"],
         ["4x createdelight:sweet_berry_cookie_dough", "minecraft:sweet_berries", "farmersdelight:sweet_berry_cookie"],
-        ["4x createdelight:honey_cookie_dough", "minecraft:honeycomb", "farmersdelight:honey_cookie"]
+        ["4x createdelight:honey_cookie_dough", "minecraft:honeycomb", "farmersdelight:honey_cookie"],
+        ["4x createdelight:lime_cookie_dough", "#forge:fruits/lime", "collectorsreap:lime_cookie"]
     ]
     recipes.forEach(([result, input, cookie]) => {
         e.recipes.create.mixing(
@@ -41,7 +42,7 @@ ServerEvents.recipes(e => {
                 input,
                 "minecraft:sugar",
                 "#forge:animal_oil",
-                "2x create:wheat_flour",
+                "bakeries:flour",
                 Fluid.of("createdelight:egg_yolk", 50)
             ]
         ).id(`createdelight:mixing/${result.split(":")[1]}_1`)
@@ -51,12 +52,10 @@ ServerEvents.recipes(e => {
                 input,
                 Fluid.of("create:honey", 50),
                 "createdelight:butter",
-                "2x create:wheat_flour",
+                "bakeries:flour",
                 Fluid.of("createdelight:egg_yolk", 50)
             ]
         ).id(`createdelight:mixing/${result.split(":")[1]}_2`)
-        baking(e, result.split(" ")[1], cookie, 4, "food", 200)
-    });
-    recipes.forEach(([result, input]) => {
+        baking(e, result.split(" ")[1], cookie, 4, "food", 100)
     });
 })

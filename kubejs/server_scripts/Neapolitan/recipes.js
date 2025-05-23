@@ -54,19 +54,19 @@ ServerEvents.recipes(e => {
     e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("neapolitan:haunting/white_strawberries")
     
     
-    cutting_3(e, "neapolitan:banana_bunch", [
+    cutting_2(e, "neapolitan:banana_bunch", [
         ["neapolitan:banana", 2],
         ["neapolitan:banana", 1, 0.5],
         ["neapolitan:banana", 1, 0.25]
     ])
-    cutting_3(e, "neapolitan:banana_bundle", [
+    cutting_2(e, "neapolitan:banana_bundle", [
         ["neapolitan:banana", 9]
     ])
 
     e.recipes.farmersdelight.cooking([
         "2x createdelight:adzuki_beans_seed",
         "minecraft:beetroot",
-        "#forge:crops/carrot",
+        "#forge:vegetables/carrot",
         "#forge:mushrooms"
     ], "neapolitan:adzuki_stew", 10.0, 200, "minecraft:bowl")
     .id("neapolitan:cooking/adzuki_stew")
@@ -74,7 +74,7 @@ ServerEvents.recipes(e => {
     e.recipes.farmersdelight.cooking([
         "createdelight:adzuki_beans_seed",
         "neapolitan:dried_banana",
-        "#forge:crops/carrot",
+        "#forge:vegetables/carrot",
         "#forge:pumpkins"
     ], "neapolitan:adzuki_curry", 10.0, 200, "minecraft:bowl")
     .id("neapolitan:cooking/adzuki_curry")

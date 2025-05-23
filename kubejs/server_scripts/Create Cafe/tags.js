@@ -3,7 +3,11 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:iced_coffee',
         'createcafe:iced_coffee_milk',
         'createcafe:caramel_iced_coffee',
-        'createcafe:banana_iced_coffee'])
+        'createcafe:banana_iced_coffee',
+        'createcafe:strawberry_iced_coffee',
+        'createcafe:vanilla_iced_coffee',
+        'createcafe:mint_iced_coffee',
+    ])
     e.add("createdelight:milk_tea", [
         'createcafe:pineapple_milk_tea',
         'createcafe:blueberry_milk_tea',
@@ -23,7 +27,14 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:pumpkin_milk_tea',
         'createcafe:apple_milk_tea',
         'createcafe:cherry_milk_tea',
-        'createcafe:oreo_milk_tea'])
+        'createcafe:oreo_milk_tea',
+        'createcafe:strawberry_milk_tea',
+        'createcafe:avocado_milk_tea',
+        'createcafe:vanilla_milk_tea',
+        'createcafe:blood_orange_milk_tea',
+        'createcafe:pomegranate_milk_tea',
+        'createcafe:lime_milk_tea',
+    ])
 
     e.add("create:upright_on_belt", [
         'createcafe:pineapple_milk_tea',
@@ -52,5 +63,24 @@ ServerEvents.tags("minecraft:item", e => {
         'createcafe:iced_coffee_cup',
         'createcafe:iced_coffee_cup_ice',
         'createcafe:boba_cup',
-        'createcafe:empty_boba_cup'])
+        'createcafe:empty_boba_cup',
+        'createcafe:strawberry_iced_coffee',
+        'createcafe:vanilla_iced_coffee',
+        'createcafe:mint_iced_coffee',
+        'createcafe:strawberry_milk_tea',
+        'createcafe:avocado_milk_tea',
+        'createcafe:vanilla_milk_tea',
+        'createcafe:blood_orange_milk_tea',
+        'createcafe:pomegranate_milk_tea',
+        'createcafe:lime_milk_tea',
+    ])
+    e.add("forge:coffee_grounds", "createcafe:coffee_grounds")
+    e.add("forge:fruits/pomegranate", "collectorsreap:pomegranate_seeds")
+})
+
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:crops", 
+        "createcafe:cassava_crop",
+        "createcafe:coffee_crop"
+    )
 })

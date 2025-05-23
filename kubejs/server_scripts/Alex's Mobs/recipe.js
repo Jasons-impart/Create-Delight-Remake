@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
 
 ServerEvents.recipes(e => {
   e.recipes.kubejs.shapeless(
-    "createdelight:fragment_of_border",
+    "createdelightcore:fragment_of_border",
     [
       "alexsmobs:shattered_dimensional_carver",
       "ae2:singularity",

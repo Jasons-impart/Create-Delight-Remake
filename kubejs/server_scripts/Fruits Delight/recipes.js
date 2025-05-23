@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_output(e, [
+        "fruitsdelight:apple_crate"
+    ])
     e.replaceInput({ mod: "fruitsdelight", input: "minecraft:slime_ball" }, "minecraft:slime_ball", "#forge:gelatin")
     e.recipes.create.mixing(
         Fluid.of("fruitsdelight:kiwi_juice", 250),

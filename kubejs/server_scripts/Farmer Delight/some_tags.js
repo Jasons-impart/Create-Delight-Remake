@@ -60,7 +60,8 @@ ServerEvents.tags("item", e => {
         "silentsdelight:warden_heart",
         "silentsdelight:minced_warden_heart",
         "silentsdelight:minced_warden_heart",
-        "casualness_delight:raw_donkey_meat"        
+        "casualness_delight:raw_donkey_meat",
+        "luncheonmeatsdelight:minced_pork"     
     ])
     e.add("forge:meat/processed/raw", [
         "#forge:meat/processed/raw/beef",
@@ -83,7 +84,8 @@ ServerEvents.tags("item", e => {
         'butchercraft:ground_pork',
         'butchercraft:cubed_pork',
         'butchercraft:pork_stewmeat',
-        'farmersdelight:bacon'
+        'farmersdelight:bacon',
+        'luncheonmeatsdelight:minced_pork'
     ])
     e.add("forge:meat/processed/raw/chicken", [
         'farmersdelight:chicken_cuts',

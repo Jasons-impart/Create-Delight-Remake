@@ -1,0 +1,11 @@
+{
+  "block.create_bs.copper_item_vault": "铜物品保险库",
+  "block.create_bs.crystal_item_vault": "水晶物品保险库",
+  "block.create_bs.diamond_item_vault": "钻石物品保险库",
+  "block.create_bs.emerald_item_vault": "绿宝石物品保险库",
+  "block.create_bs.gold_item_vault": "金物品保险库",
+  "block.create_bs.iron_item_vault": "铁物品保险库",
+  "block.create_bs.netherite_item_vault": "下界合金物品保险库",
+  "block.create_bs.obsidian_item_vault": "黑曜石物品保险库",
+  "block.create_bs.wooden_item_vault": "木物品保险库"
+}

@@ -1,0 +1,36 @@
+
+["Create Railways Navigator Config"]
+	#The language that should be used for announcements of the navigator. Can be different from the game's language settings. (Default: Default)
+	#Allowed Values: DEFAULT, ENGLISH, GERMAN, DUTCH, POLISH, CHINESE_SIMPLIFIED, SAXON, BAVARIAN, SPANISH, RUSSIAN, FRENCH, KOREAN, SWEDISH, PORTUGUESE, BASQUE, ITALIAN, JAPANESE, PORTUGUESE_BRAZILIAN, UKRAINIAN, ARABIC, CZECH, GERMAN_SWITZERLAND, ROMANIAN, TURKISH
+	language = "DEFAULT"
+	#The unit to be used to represent speed. (Default: KMH)
+	#Allowed Values: MS, KMH, MPH, FTS, KT, CMS
+	speed_unit = "KMH"
+	#Display Time Format. (Default: Hours 24)
+	#Allowed Values: TICKS, HOURS_24, HOURS_12
+	time_format = "HOURS_24"
+
+	["Create Railways Navigator Config".general]
+		#[in Ticks]
+		#The next stop or information about the start of the journey is announced in the specified number of ticks before the scheduled arrival at the next station. (Default: 600, 30 real life seconds)
+		#Range: 100 ~ 1000
+		next_stop_announcement = 600
+		#[in Ticks]
+		#This value indicates how accurately the real-time data should be displayed. By default, only deviations above 10 in-game minutes (167 ticks, approx. 8 real life seconds) are displayed. The lower the value, the more accurate the real-time data but also the more often deviations from the schedule occur. (Default: 167, 10 in-game minutes)
+		#Range: 1 ~ 1000
+		realtime_precision_threshold = 167
+		#[in Ticks]
+		#How early a train should be shown on the display. (Default: 1200, 1 real life minute)
+		#Range: 100 ~ 24000
+		display_lead_time = 1200
+
+	["Create Railways Navigator Config".route_overlay]
+		#Scale of the route overlay UI. (Default: 0.75)
+		#Range: 0.25 ~ 2.0
+		scale = 0.75
+		#If active, you will receive short toasts about important events on your trip, e.g. delays, changes, ... (Default: ON)
+		notifications = true
+		#The position on your screen where you want the overlay to appear. (Default: Top Left)
+		#Allowed Values: TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT
+		position = "TOP_LEFT"
+

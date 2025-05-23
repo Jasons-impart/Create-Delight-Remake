@@ -133,25 +133,18 @@ debugLevel=0
 		
 #Event Settings
 [events]
-	#Whether advancements will give players chocolate coins as a reward for playing during the event.
-	#Note: Disabling will disable the entire `/lcadmin events reward` command used by the functions to give the reward.
-	#Default: true
-	advancementRewards=false
-	
 	#Whether the Chocolate Event Coins will be added to the coin data.
-	#Note: Disabling will not remove any Chocolate Coin items that already exist.
+	#Note: Disabling will not remove any Chocolate Coin items that already exist, this simply makes them no longer function as money
 	#Default: true
 	chocolate=false
 	
-	#Whether the Chocolate Event Coins will replace a small portion of the default coin loot drops during the event.
-	#See "chocolateRate" to customize the replacement rate
+	#Whether custom events defined in the 'SeasonalEvent.json' config can give players a one-time reward for logging in during the event.
 	#Default: true
-	chocolateDrops=true
+	startingRewards=true
 	
-	#The percentage of Chocolate Coins being dropped instead of normal coins while an event is active.
-	#Range: 0.0 -> 1.0
-	#Default: 0.1
-	chocolateRate=0.1
+	#Whether custom events can replace a portion (or all) of the default loot with custom event loot.
+	#Default: true
+	lootReplacements=true
 	
 #Villager Related Settings
 #Note: Any changes to villagers requires a full reboot to be applied due to how Minecraft/Forge registers trades.
@@ -250,7 +243,7 @@ debugLevel=0
 		#Whether modded machines that emulate player behaviour can trigger coin drops from entities.
 		#Set to false to help prevent autmated coin farming.
 		#Default: true
-		allowFakePlayerDrops=true
+		allowFakePlayerDrops=false
 		
 		#Entity Drop Lists. Accepts the following inputs:
 		#Entity IDs. e.g. "minecraft:cow"
@@ -318,16 +311,16 @@ debugLevel=0
 			T1=["minecraft:chests/underwater_ruin_small","minecraft:chests/underwater_ruin_big"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier2" loot table.
-			T2=[]
+			T2=["minecraft:chests/jungle_temple","minecraft:chests/nether_bridge","minecraft:chests/simple_dungeon","minecraft:chests/ruined_portal"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier3" loot table.
-			T3=["minecraft:chests/jungle_temple","minecraft:chests/nether_bridge","minecraft:chests/simple_dungeon","minecraft:chests/ruined_portal"]
+			T3=["minecraft:chests/stronghold_crossing","minecraft:chests/stronghold_corridor","minecraft:chests/stronghold_library","minecraft:chests/ancient_city"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier4" loot table.
-			T4=["minecraft:chests/stronghold_crossing","minecraft:chests/stronghold_corridor","minecraft:chests/stronghold_library","minecraft:chests/ancient_city"]
+			T4=["minecraft:chests/buried_treasure","minecraft:chests/bastion_hoglin_stable","minecraft:chests/bastion_bridge","minecraft:chests/bastion_other","minecraft:chests/bastion_treasure","minecraft:chests/end_city_treasure"]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier5" loot table.
-			T5=["minecraft:chests/buried_treasure","minecraft:chests/bastion_hoglin_stable","minecraft:chests/bastion_bridge","minecraft:chests/bastion_other","minecraft:chests/bastion_treasure","minecraft:chests/end_city_treasure"]
+			T5=[]
 			
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier6" loot table.
 			T6=[]
@@ -347,4 +340,10 @@ debugLevel=0
 	#Does nothing if IDAS is not installed
 	#Default: true
 	idasStructures=true
+	
+[compat]
+	#Whether the Impactor compat will be initialized.
+	#Requires a full server reboot for changes to be applied!
+	#Default: true
+	impactorModule=true
 	

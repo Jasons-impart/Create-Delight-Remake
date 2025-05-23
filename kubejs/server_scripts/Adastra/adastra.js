@@ -3,7 +3,10 @@ ServerEvents.recipes(e => {
     remove_recipes_type(e, [
         "ad_astra:refining",
         "ad_astra:cryo_freezing",
-        "ad_astra:nasa_workbench"
+        "ad_astra:nasa_workbench",
+        "ad_astra:compressing",
+        "ad_astra:oxygen_loading",
+        "ad_astra:alloying",
     ])
     remove_recipes_output(e, [
         "ad_astra:compressor",
@@ -98,11 +101,12 @@ ServerEvents.recipes(e => {
     }).id("ad_astra:energizer")
     //石墨
     e.recipes.kubejs.shapeless(
-        'createmetallurgy:graphite', [
-        "8x #minecraft:coals",
-        "minecraft:clay_ball"
-    ]
-    ).id("createmetallurgy:graphite")
+        'createmetallurgy:graphite',
+        [
+            "8x #minecraft:coals",
+            "minecraft:clay_ball"
+        ]
+    ).id("createmetallurgy:crafting/materials/graphite")
     //替换配方：氧气装载机
     e.recipes.kubejs.shaped('createdelight:electrolyzer', [
         "AAA",

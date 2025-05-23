@@ -50,6 +50,8 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "#forge:fruits/banana", "createdelightcore:banana_ice_cream", "createdelight:banana_milkshake", "neapolitan:banana_ice_cream", "neapolitan:banana_milkshake")
     make_ice_cream(e, "neapolitan:strawberries", "createdelightcore:strawberry_ice_cream", "createdelight:strawberry_milkshake", "neapolitan:strawberry_ice_cream", "neapolitan:strawberry_milkshake")
     make_ice_cream(e, "neapolitan:mint_leaves", "createdelightcore:mint_ice_cream", "createdelight:mint_milkshake", "neapolitan:mint_ice_cream", "neapolitan:mint_milkshake")
+    make_ice_cream(e, "#forge:fruits/lime", "createdelightcore:lime_ice_cream", "createdelight:lime_milkshake", "collectorsreap:lime_ice_cream", "collectorsreap:lime_milkshake")
+    make_ice_cream(e, "#forge:fruits/pomegranate", "createdelightcore:pomegranate_ice_cream", "createdelight:pomegranate_milkshake", "collectorsreap:pomegranate_ice_cream", "collectorsreap:pomegranate_milkshake")
     let iner_1 = "minecraft:bowl"
     create.sequenced_assembly("neapolitan:neapolitan_ice_cream",
         iner_1,

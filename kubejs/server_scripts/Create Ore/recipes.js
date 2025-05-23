@@ -80,7 +80,7 @@ ServerEvents.recipes(e => {
         Item.of("create:raw_zinc").withChance(0.6),
         Item.of("minecraft:coal").withChance(0.5),
         Item.of("minecraft:raw_copper").withChance(0.25),
-        Item.of("createdelight:raw_tin").withChance(0.25)
+        Item.of("createdelightcore:raw_tin").withChance(0.25)
     ],
     ["createdelight:overworld_metal_ore_cluster"])
     .id("vintageimprovements:vibrating/raw_ore_from_overworld_metal_ore_cluster")

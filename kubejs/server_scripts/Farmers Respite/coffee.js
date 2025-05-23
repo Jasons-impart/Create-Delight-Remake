@@ -1,14 +1,24 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "create_central_kitchen:mixing/coffee",
-        "create_central_kitchen:filling/coffee"
+        "create_central_kitchen:filling/coffee",
+        "farmersrespite:brewing/coffee_from_water",
+        "farmersrespite:filling/coffee",
+        "farmersrespite:filling/long_coffee",
+        "farmersrespite:brewing/long_coffee_from_coffee",
+        "farmersrespite:filling/strong_coffee",
+        "farmersrespite:brewing/strong_coffee_from_coffee",
+        "farmersrespite:emptying/coffee",
+        "farmersrespite:emptying/long_coffee",
+        "farmersrespite:emptying/strong_coffee",
+
     ])
     // 咖啡
     e.recipes.create.mixing(
-        Fluid.of("farmersrespite:coffee", 500),
+        Fluid.of("createdelight:americano_fluid", 1000),
         [
             "createcafe:coffee_grounds",
-            Fluid.of("water", 500)
+            Fluid.of("water", 1000)
         ]
     )
         .heated()
@@ -31,32 +41,11 @@ ServerEvents.recipes(e => {
             Item.of("2x createcafe:coffee_grounds").withChance(0.25)
         ], "farmersrespite:coffee_beans"
     ).id("farmersrespite:milling/coffee_beans")
-    e.custom({
-        "type": "farmersrespite:brewing",
-        "base": {
-            "count": 1000,
-            "fluid": "minecraft:water"
-        },
-        "cookingtime": 2400,
-        "experience": 0.35,
-        "ingredients": [
-            {
-                "item": "createcafe:coffee_grounds"
-            },
-            {
-                "item": "createcafe:coffee_grounds"
-            }
-        ],
-        "result": {
-            "count": 1000,
-            "fluid": "farmersrespite:coffee"
-        }
-    }).id("farmersrespite:brewing/coffee_from_water")
     e.recipes.create.filling(
         "createcafe:iced_coffee",
         [
             "createcafe:iced_coffee_cup_ice",
-            Fluid.of("farmersrespite:coffee", 250)
+            Fluid.of("createdelight:americano_fluid", 250)
         ]
     ).id("createcafe:filling/coffee/iced_coffee_filling")
 })

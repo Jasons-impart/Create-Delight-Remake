@@ -1,0 +1,15 @@
+{
+    DataVersion: 3465,
+    size: [4, 1, 1],
+    data: [
+        {pos: [0, 0, 0], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 3066L, p: 0}, id: "ae2:fluix_glass_cable", visual: {channelsEast: 2, channelsWest: 2, connections: ["west", "east"], missingChannel: 0b, powered: 1b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [1, 0, 0], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 3066L, p: 0}, id: "ae2:fluix_glass_cable", visual: {channelsEast: 1, channelsWest: 2, connections: ["west", "east"], missingChannel: 0b, powered: 1b}}, hasRedstone: 2, id: "ae2:cable_bus", north: {blocking_mode: "NO", gn: {g: 3066L, p: 0}, id: "expatternprovider:ex_pattern_provider_part", lock_crafting_mode: "NONE", pattern_access_terminal: "YES", priority: 0, returnInv: [], sendList: [], visual: {missingChannel: 0b, powered: 1b}}, visual: {}}},
+        {pos: [2, 0, 0], state: "ae2:cable_bus{light_level:0,waterlogged:false}", nbt: {ForgeCaps: {}, cable: {gn: {g: 3066L, p: 0}, id: "ae2:fluix_glass_cable", visual: {channelsEast: 1, channelsWest: 1, connections: ["west", "east"], missingChannel: 0b, powered: 1b}}, hasRedstone: 2, id: "ae2:cable_bus", visual: {}}},
+        {pos: [3, 0, 0], state: "expatternprovider:ex_pattern_provider{push_direction:all}", nbt: {ForgeCaps: {}, blocking_mode: "NO", id: "expatternprovider:ex_pattern_provider", lock_crafting_mode: "NONE", pattern_access_terminal: "YES", priority: 0, proxy: {g: 3066L, p: 0}, returnInv: [], sendList: [], visual: {}}}
+    ],
+    entities: [],
+    palette: [
+        "ae2:cable_bus{light_level:0,waterlogged:false}",
+        "expatternprovider:ex_pattern_provider{push_direction:all}"
+    ]
+}

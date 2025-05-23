@@ -1,0 +1,32 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/precise_storage_bus.png",
+    "srcRect": [0, 0, 176, 256]
+  },
+  "slots": {
+    "CONFIG": {
+      "left": 8,
+      "top": 34,
+      "grid": "BREAK_AFTER_9COLS"
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.precise_storage_bus"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "widgets": {
+    "openPriority": {
+      "left": 154,
+      "top": 0
+    }
+  }
+}

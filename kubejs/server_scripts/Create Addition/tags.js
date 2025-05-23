@@ -14,6 +14,9 @@ ServerEvents.tags("item", e => {
         "minecraft:gold_ingot",
         "iceandfire:silver_ingot"
     ])
+    e.add("curios:bracelet", [
+        'createaddition:electrum_amulet'
+    ])
 })
 ServerEvents.tags("fluid", e => {
     e.removeAllTagsFrom("createaddition:seed_oil")

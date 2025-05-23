@@ -335,7 +335,7 @@
 	#[-1 to disable this behaviour]
 	#The minimum amount of fluid blocks the hose pulley needs to find before deeming it an infinite source.
 	#Range: > -1
-	hosePulleyBlockThreshold = 10000
+	hosePulleyBlockThreshold = 2500
 	#.
 	#Whether hose pulleys should continue filling up above-threshold sources.
 	fillInfinite = false
@@ -418,7 +418,7 @@
 		#.
 		#Amount of game ticks between shots of the cannon. Higher => Slower
 		#Range: > 1
-		schematicannonDelay = 10
+		schematicannonDelay = 2
 		#.
 		#Amount of blocks a Schematicannon can print per Gunpowder item provided.
 		#Range: > 1

@@ -29,15 +29,15 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexscaves:corrodent_teeth"],
-                "count": 16
+                "items":[ "minecraft:enchanted_golden_apple"],
+                "count": 4
             },
             "experienceCost": 15,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "blade/bloodthirster": 1
+                "blade/life_fiber_loss": 1
             }
         }
     ]

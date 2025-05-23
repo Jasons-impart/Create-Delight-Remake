@@ -53,15 +53,15 @@ ServerEvents.recipes(e => {
         Fluid.of("fruitsdelight:lychee_cherry_tea", 1000),
         [
             Fluid.of("farmersrespite:green_tea", 1000),
-            "fruitsdelight:lychee",
-            "minecraft:cherry_leaves"
+            "trailandtales_delight:dried_cherry_petal",
+            "#forge:fruits/lychee"
         ]
     )
         .heated().id("fruitsdelight:mixing/flowing_lychee_cherry_tea")
     brewing(e, "farmersrespite:green_tea",
         [
-            "fruitsdelight:lychee",
-            "minecraft:cherry_leaves"
+            "#forge:fruits/lychee",
+            "trailandtales_delight:dried_cherry_petal"
         ], "fruitsdelight:lychee_cherry_tea", "fruitsdelight:lychee_cherry_tea"
     )
     e.recipes.create.mixing(
@@ -95,4 +95,12 @@ ServerEvents.recipes(e => {
     .id("farmersrespite:haunting/yellow_tea_leaves")
     e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")
     .id("farmersrespite:haunting/black_tea_leaves")
+    e.recipes.farmersdelight.cooking(
+        [
+            '#forge:cooked_fishes/cod',
+            "farmersrespite:black_tea_leaves",
+            '#festival_delicacies:cabbage',
+            "createdelight:empty_riceball"
+        ], 'farmersrespite:black_cod', 0.5, 200, "minecraft:bowl"
+    ).id('farmersrespite:black_cod')
 })

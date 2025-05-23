@@ -2,7 +2,7 @@ ServerEvents.recipes(e => {
     const {create, vintageimprovements} = e.recipes
     //修改动力刷怪笼配方
     e.replaceInput({ id: "create_mechanical_spawner:mechanical_spawner" }, "minecraft:emerald", "alexscaves:amber_monolith")
-    e.replaceInput([{ id: "create_mechanical_spawner:mechanical_spawner" }, { id: "create_mechanical_spawner:loot_collector" }], "create:brass_ingot", "createdelight:bronze_ingot")
+    e.replaceInput([{ id: "create_mechanical_spawner:mechanical_spawner" }, { id: "create_mechanical_spawner:loot_collector" }], "create:brass_ingot", "createdelightcore:bronze_ingot")
     e.replaceInput([{ id: "create_mechanical_spawner:mechanical_spawner" }, { id: "create_mechanical_spawner:loot_collector" }], "create:brass_sheet", "vintageimprovements:bronze_sheet")
 
     e.remove({mod: "create_mechanical_spawner", type: "create:mixing"})
@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
     for (let index = 0; index < 8; index++) {
         inferior_genetic_seed_input.push("createaddition:biomass")
     }
-    inferior_genetic_seed_input.push("ae2:quantum_entangled_singularity")
+    inferior_genetic_seed_input.push("ae2:singularity")
     vintageimprovements.vacuumizing('16x createdelight:inferior_genetic_seed', inferior_genetic_seed_input.concat(Fluid.of("netherexp:ectoplasm", 250)))
     .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed_2")
     

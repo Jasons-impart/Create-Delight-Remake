@@ -7,8 +7,8 @@ ServerEvents.recipes(e => {
     ]
     logs.forEach(log => {
         e.recipes.create.cutting(
-            log[0],
-            log[1]
+            log[1],
+            log[0]
         ).id("create:cutting/" + log[0].split(":")[1])
         e.custom({
             type: "farmersdelight:cutting",

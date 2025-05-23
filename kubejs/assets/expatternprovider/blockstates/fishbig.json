@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "expatternprovider:block/fishbig",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "expatternprovider:block/fishbig"
+    },
+    "facing=south": {
+      "model": "expatternprovider:block/fishbig",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "expatternprovider:block/fishbig",
+      "y": 270
+    }
+  }
+}

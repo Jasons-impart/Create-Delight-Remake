@@ -1,0 +1,26 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/ingredient_buffer.png",
+    "srcRect": [0, 0, 176, 192]
+  },
+  "slots": {
+    "STORAGE": {
+      "left": 8,
+      "top": 21,
+      "grid": "BREAK_AFTER_9COLS"
+    }
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.ingredient_buffer"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  }
+}

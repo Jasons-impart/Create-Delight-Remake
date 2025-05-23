@@ -1,0 +1,44 @@
+{
+    "replace": true,
+    "slots": [ "sword/blade" ],
+    "materialSlotCount": 1,
+    "hone": true,
+    "rarity": "temporary",
+    "displayType": "improvement",
+    "glyph": {
+        "tint": "c91649",
+        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureX": 208
+    },
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [
+            {
+                "type": "tetra:module",
+                "module": "sword/rending_scissor_complete"
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "blade/life_steal"
+                }
+            }
+        ]
+    },
+    "outcomes": [
+        {
+            "material": {
+                "items":[ "alexscaves:corrodent_teeth"],
+                "count": 16
+            },
+            "experienceCost": 15,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
+            "improvements": {
+                "blade/life_steal": 1
+            }
+        }
+    ]
+}

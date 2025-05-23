@@ -13,7 +13,7 @@
     "toolLevel": 0,
     "toolEfficiency": 0,
     "attributes": {
-        "generic.attack_damage": 5
+        "generic.attack_damage": 2
     },
     "effects": {
             "criticalStrike": [ 20, 2 ],

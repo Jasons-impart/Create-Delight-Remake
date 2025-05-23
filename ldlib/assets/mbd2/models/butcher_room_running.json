@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "mbd2:block/butcher_input_up",
-		"1": "mbd2:block/butcher_input_side",
+		"0": "create:block/andesite_casing",
+		"1": "create:block/andesite_casing",
 		"2": "mbd2:block/butcher_room_on",
 		"particle": "mbd2:block/butcher_room_on"
 	},

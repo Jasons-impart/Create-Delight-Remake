@@ -58,5 +58,10 @@ ServerEvents.recipes((event) => {
     { id: 'functionalstorage:compacting_drawer' },
     'minecraft:stone',
     '#forge:stone'
+  );
+  event.replaceInput(
+    { id: 'functionalstorage:simple_compacting_drawer' },
+    'minecraft:stone',
+    '#forge:stone'
   )
 });

@@ -1,0 +1,144 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Ecliptic_Seasons"
+	group: "7D0A1432AAAD0EBA"
+	icon: "eclipticseasons:calendar"
+	id: "1E7A476EE0C13AD1"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"节气（Ecliptic Seasons）是一个关于四季的优质的国创mod。它将mc分为了24个节气，每6个节气为一个季节，每24个节气一年。每种作物都有限定的季节。"
+				"另外与静谧四季不同的是，节气加入了“湿度”这一属性。作物同样会受到这一属性的影响。"
+			]
+			icon: "eclipticseasons:calendar"
+			id: "3B3E70D786746A30"
+			rewards: [{
+				id: "40D0199185DFF0E9"
+				item: "eclipticseasons:calendar"
+				type: "item"
+			}]
+			size: 2.0d
+			subtitle: "国创的优质季节mod"
+			tasks: [{
+				id: "680EF26E2A118539"
+				title: "节气"
+				type: "checkmark"
+			}]
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3B3E70D786746A30"]
+			description: [
+				"不同的群系或者相同的群系下不同的节气下的湿度都不尽相同。作物的生长受其记载的&e湿度&r的影响，且作物生长一般是处于湿度区间的&e最中间&r时生长的最快。"
+				"露天种植作物可以考虑在&e平原或者森林等温和的群系&r中种植。不建议在&e自然湿度为干旱的地区&r种植作物，因为这些地区除了&e耐干燥及以下&r的作物，其他的都不能够生长，&e无论是否使用温室调节湿度以及季节&r。"
+				"查看湿度需使用&e湿度计&r。玩家持有时显示其所处位置&e调整后的湿度&r。湿度计可依附在方块上，此时它显示的湿度为所处方块的&e自然湿度&r。"
+			]
+			id: "0CEBCFFF0052D7F9"
+			subtitle: "对于作物的生长非常重要"
+			tasks: [{
+				id: "2859BEE983AFAA86"
+				item: "eclipticseasons:hygrometer"
+				type: "item"
+			}]
+			title: "湿度系统"
+			x: -5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["0CEBCFFF0052D7F9"]
+			description: [
+				"如果在湿度不适宜的地区还想种植的话，可以考虑使用&e调整湿度的物件&r。&e这些东西只能在温室中起效。&r"
+				"原版节气mod使用&e木格栅&r调整湿度。可以调整以其为中心，直径为9的正方体的范围内的湿度。"
+				"向&e其中加入湿海绵，下方放置热源&r（营火，岩浆块），可使范围内的&e湿度+1&r，但一段时间后湿海绵会变干。干海绵在其中时会&e降低范围内的湿度&r，一段时间后变为湿海绵。"
+				"本包中加入了一个&e加湿器&r，向其中&e通入水&r，它会使得以其正下方的非空气方块为中心，直径为9的正方体内的湿度+1。"
+			]
+			id: "4AACEDD23E29D699"
+			min_required_tasks: 1
+			subtitle: "配合温室使用"
+			tasks: [
+				{
+					id: "218B7AE97B15AC6D"
+					item: "createdelight:sprinkler"
+					type: "item"
+				}
+				{
+					id: "2F41473908A6A501"
+					item: "eclipticseasons:block_in_wooden_grate_block"
+					type: "item"
+				}
+			]
+			title: "调整湿度"
+			x: -5.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["3B3E70D786746A30"]
+			description: [
+				"与静谧四季的单纯一层玻璃不同，节气的温室要求其尽量是一个&e封闭空间&r。建造温室可以使用&e任意完整方块&r搭建。"
+				"只有在温室中，调节湿度的物件与温室核心才会生效。"
+			]
+			id: "7A77AFB51F30050D"
+			tasks: [{
+				id: "052822DB565BBC14"
+				title: "搭建温室"
+				type: "checkmark"
+			}]
+			x: -2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7A77AFB51F30050D"]
+			description: [
+				"温室之心只有&e在温室中&r才会生效。它可以&e改变温室内的季节&r，范围为以其为圆心半径16格的球体。"
+				"将&e心髓插入空的温室之心室&r可以制作出对应季节的温室之心。温室心髓的获取方式请参考&e该mod的进度&r。&e完成其所有的任务会赠送每种季节的温室心髓各两个&r。"
+				"另外，玩家可以制作&e祈年令&r，将其用于&e空白的悬挂告示牌&r可将其转变。然后上面会显示任务，&e交付其记载的物品&r即可完成任务，任务的奖励为温室之心髓。祈年令上的任务会&e随时间变化&r，一个季节的任务只会有对应的心髓。"
+			]
+			id: "7F5621A87886AAA7"
+			subtitle: "调整温室中的季节"
+			tasks: [{
+				id: "7C9607EDAB8C47AA"
+				item: "eclipticseasons:greenhouse_core_container"
+				type: "item"
+			}]
+			title: "温室之心"
+			x: 0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3B3E70D786746A30"]
+			description: ["对作物使用，可以查看其位于什么带，是否位处于温室中，以及生长的概率。"]
+			id: "30BC5575C304C513"
+			subtitle: "对作物使用"
+			tasks: [{
+				id: "14FDE6DAED3BA5DF"
+				item: "eclipticseasons:growth_detector"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3B3E70D786746A30"]
+			description: ["在夏季，玩家在被太阳直射下会获得中暑buff，其会时不时模糊玩家视野。只要玩家身上带一些冰即可，拥有冰标签的物品都可以。"]
+			id: "17FC2C40CFB768E0"
+			rewards: [{
+				id: "581182DE32617B36"
+				item: "neapolitan:ice_cubes"
+				type: "item"
+			}]
+			subtitle: "一个小机制"
+			tasks: [{
+				id: "5C383928A0B8613C"
+				title: "中暑"
+				type: "checkmark"
+			}]
+			x: -8.0d
+			y: 1.5d
+		}
+	]
+	title: "&e四时行焉"
+}

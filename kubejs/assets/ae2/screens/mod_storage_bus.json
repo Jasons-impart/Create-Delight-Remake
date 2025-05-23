@@ -1,0 +1,31 @@
+{
+  "$schema": "schema.json",
+  "includes": ["common/common.json", "common/player_inventory.json"],
+  "background": {
+    "texture": "guis/mod_storage_bus.png",
+    "srcRect": [0, 0, 176, 142]
+  },
+  "text": {
+    "dialog_title": {
+      "text": {
+        "translate": "gui.expatternprovider.mod_storage_bus"
+      },
+      "position": {
+        "left": 8,
+        "top": 6
+      }
+    }
+  },
+  "widgets": {
+    "filter_input": {
+      "left": 8,
+      "top": 27,
+      "width": 120,
+      "height": 12
+    },
+    "openPriority": {
+      "left": 154,
+      "top": 0
+    }
+  }
+}

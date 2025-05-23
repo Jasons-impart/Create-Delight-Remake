@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+	{
+      "tag": "minecraft:leaves"
+    },
+    {
+      "tag": "minecraft:leaves"
+    },
+    {
+      "tag": "minecraft:leaves"
+    }
+  ],
+  "results": [
+    {
+      "item": "createaddition:biomass",
+      "count": 1
+    }
+  ],
+  "heatRequirement": "heated"
+}

@@ -326,7 +326,7 @@
 
 	[Mobs.Others]
 		#True if dread liches are allowed to spawn
-		"Spawn Liches" = false
+		"Spawn Liches" = true
 		#Dread Lich spawn weight. Lower = lower chance to spawn
 		#Range: 1 ~ 10000
 		"Lich Spawn Weight" = 2

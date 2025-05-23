@@ -1,0 +1,9 @@
+{
+  "type": "bakeries:dough_crafting_table",
+  "count": 1,
+  "ingredient":
+  {
+    "item": "ratatouille:salty_dough"
+  },
+  "result": "bakeries:baguette_dough"
+}

@@ -42,8 +42,8 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:ice_dragon_blood", 
-                        "count": 8,
-                        "nbt" : {"iceandfirey":"iceandfire:ice_dragon_blood"}}
+                        "count": 8
+					}
 				}
 			],
 			"max_wave_time": 1200,
@@ -94,12 +94,12 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dragonscales_white", 
-                        "count": 18,
-                        "nbt" : {"iceandfire":"iceandfire:dragonscales_white"}}
+                        "count": 18
+					}
 				}
 			],
 			"max_wave_time": 1200,
-			"setup_time": 150
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -146,12 +146,12 @@
 					"type": "gateways:stack",
 					"stack": {
                         "item": "iceandfire:dragonforge_ice_brick", 
-                        "count": 8,
-                        "nbt" : {"iceandfire":"iceandfire:dragonforge_ice_brick"}}
+                        "count": 8
+					}
 				}
 			],
 			"max_wave_time": 1200,
-			"setup_time": 200
+			"setup_time": 300
 		}
 	],
 	"rewards": [

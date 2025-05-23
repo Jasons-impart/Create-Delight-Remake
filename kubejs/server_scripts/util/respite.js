@@ -1,7 +1,7 @@
 /**
  * @param { Internal.RecipesEventJS_ } event 
  * @param { Internal.FluidStackJS_ } base 
- * @param { InputItem_[] } inputs 
+ * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
  * @param {number} [amount]
@@ -51,7 +51,7 @@ function brewing(event, base, inputs, fluid, output, amount) {
  * 无倾倒的煮茶
  * @param { Internal.RecipesEventJS_ } event 
  * @param { Internal.FluidStackJS_ } base 
- * @param { InputItem_[] } inputs 
+ * @param { InputItem_[] } inputs 最多输入为2个
  * @param { Internal.FluidStackJS_ } fluid 
  * @param { OutputItem_ } output 
  * @param {number} [amount]
@@ -92,7 +92,7 @@ function brewing_2(event, base, inputs, fluid, output, amount) {
  * @param {Internal.FluidStackJS_} fluid 
  */
 function pouring(event, input, fluid) {
-    
+    let ingr = Ingredient.of(input)
     event.custom({
         "type": "farmersrespite:kettle_pouring",
         "amount": 250,
@@ -100,8 +100,6 @@ function pouring(event, input, fluid) {
             "item": "minecraft:glass_bottle"
         },
         "fluid": fluid,
-        "output": {
-            "item": input
-        }
-    }).id(`farmersrespite:pouring/${input.split(":")[1]}`)
+        "output": ingr
+    }).id(`farmersrespite:pouring/${ingr.getFirst().getId().split(":")[1]}`)
 }

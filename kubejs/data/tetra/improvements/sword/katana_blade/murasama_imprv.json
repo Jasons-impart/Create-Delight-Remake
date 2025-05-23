@@ -6,7 +6,7 @@
             "truesweep":1,
             "armorPenetration": 30,
             "bleeding": 5,
-            "vvaddon:charge": 1
+            "createdelight:charge": [4, 10000]
         },
         "attributes": {
             "generic.attack_speed": 0.5

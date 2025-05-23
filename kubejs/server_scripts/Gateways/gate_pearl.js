@@ -6,7 +6,7 @@ ServerEvents.recipes(e => {
         "ABA"
     ], {
         A: "iceandfire:ice_dragon_blood",
-        B: 'iceandfire:dragon_skull_ice',
+        B: "iceandfire:dragon_skull_ice",
         C: "#iceandfire:scales/dragon/ice",
         D: "minecraft:nether_star"
     })
@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         "ABA"
     ], {
         A: "iceandfire:fire_dragon_blood",
-        B: 'iceandfire:dragon_skull_fire',
+        B: "iceandfire:dragon_skull_fire",
         C: "#iceandfire:scales/dragon/fire",
         D: "minecraft:nether_star"
     })
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         "ABA"
     ], {
         A: "iceandfire:lightning_dragon_blood",
-        B: 'iceandfire:dragon_skull_lightning',
+        B: "iceandfire:dragon_skull_lightning",
         C: "#iceandfire:scales/dragon/lightning",
         D: "minecraft:nether_star"
     })
@@ -61,4 +61,14 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(2)
     .id("createdelight:sequenced_assembly/piercing_withering_trial")
+
+    //添加恶魂试炼
+    e.shaped(Item.of('gateways:gate_pearl', '{gateway:"createdelight:ghast_trial"}'), [
+        "AAA",
+        "ABA",
+        "AAA"
+    ], {
+        A: "minecraft:ghast_tear",
+        B: "minecraft:ender_pearl"
+    })
 })
