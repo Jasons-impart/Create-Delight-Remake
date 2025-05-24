@@ -348,6 +348,14 @@ ServerEvents.recipes(e => {
         B: "#forge:gems/fluix",
         C: Item.of('ae2:energy_cell', '{internalCurrentPower:200000.0d,internalMaxPower:200000.0d}').strongNBT()
     }).id("applied_armorer:fluix_battery")
+    kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:grip_sl_2"}'), [
+        "   ",
+        "ABA",
+        "   "
+    ], {
+        A: "ae2:charged_certus_quartz_crystal",
+        B: Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:grip_lf11"}').strongNBT()
+    }).id("applied_armorer:grip_sl_2")
     custom_inscribe(
         Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:extended_mid_mag_aa_1"}'),
         Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:extended_mag_aa_1"}').strongNBT(),
@@ -499,7 +507,7 @@ ServerEvents.recipes(e => {
     transform_fluid(Item.of('tacz:ammo', '{AmmoId:"applied_armorer:hard_core_quartz_bullet"}'), "createdelight:spent_liquor", [
         "#forge:dusts/ender_pearl",
         "#forge:dusts/certus_quartz",
-        Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}').strongNBT()
+        Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').strongNBT()
     ]).id("applied_armorer:hard_core_quartz_bullet")
     transform_fluid(Item.of('tacz:ammo', '{AmmoId:"applied_armorer:etched_quartz_bullet"}'), "createdelight:spent_liquor", [
         "#forge:dusts/ender_pearl",
