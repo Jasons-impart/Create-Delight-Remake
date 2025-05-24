@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.block.worckbench_applied_armorer",
+  "display": "applied_armorer:worckbench_applied_armorer_display",
+  "data": "applied_armorer:worckbench_applied_armorer_data",
+  "id": "tacz:workbench_c",
+  "sort": 5
+}

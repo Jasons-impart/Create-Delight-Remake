@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.niklas_pistol_semi_union",
+    "display": "applied_armorer:niklas_pistol_semi_union_display",
+    "data": "applied_armorer:niklas_pistol_semi_union_data",
+    "tooltip": "tooltip.niklas_pistol_semi_union",
+    "type": "pistol",
+    "sort": 400
+}

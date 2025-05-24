@@ -1,0 +1,13 @@
+{
+  "model": "applied_armorer:attachment/si_pride_default",
+  "texture": "applied_armorer:attachment/uv/si_pride_default",
+  "zoom": [
+    1.25
+  ],
+  "sight": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_small",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_small"
+  }
+}

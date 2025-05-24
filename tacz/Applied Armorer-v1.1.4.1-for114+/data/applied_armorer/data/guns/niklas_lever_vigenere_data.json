@@ -1,0 +1,99 @@
+{
+  "ammo": "applied_armorer:hard_core_quartz_bullet",
+  "ammo_amount": 11,
+  "extended_mag_ammo_amount": [
+    11,
+    11,
+    11
+  ],
+  "bolt": "manual_action",
+  "rpm": 300,
+  "bullet": {
+    "life": 0.9,
+    "bullet_amount": 1,
+    "damage": 24,
+    "tracer_count_interval": 0,
+    "extra_damage": {
+      "armor_ignore": 0.35,
+      "head_shot_multiplier": 1.75,
+      "damage_adjust": [
+        {"distance": 60, "damage": 24},
+        {"distance": 120, "damage": 22},
+        {"distance": "infinite", "damage": 20}
+      ]
+    },
+    "speed": 380,
+    "gravity": 0.15,
+    "knockback": 0,
+    "friction": 0.015,
+    "ignite": false,
+    "ignite_entity_time": 6,
+    "pierce": 2
+  },
+  "reload": {
+    "type": "magazine",
+    "feed": {
+      "empty": 2.38,
+      "tactical": 2.38
+    },
+    "cooldown": {
+      "empty": 3.875,
+      "tactical": 3.04
+    }
+  },
+  "draw_time": 0.71,
+  "put_away_time": 0.5,
+  "aim_time": 0.1,
+  "bolt_action_time": 0.67,
+  "sprint_time": 0.2,
+  "weight": 2.77,
+  "movement_speed": {
+    "base": 0.0,
+    "aim": -0.15,
+    "reload": -0.07
+  },
+  "crawl_recoil_multiplier": 0.25,
+  "fire_mode": [
+    "semi"
+  ],
+  "recoil": {
+    "pitch": [
+      {"time": 0, "value": [1.75, 1.75]},
+      {"time": 0.3, "value": [1.75, 1.75]},
+      {"time": 0.5, "value": [-0.35, -0.35]},
+      {"time": 0.75, "value": [0.2, 0.2]},
+      {"time": 1.0, "value": [0, 0]},
+      {"time": 1.2, "value": [0, 0]}
+    ],
+    "yaw": [
+      {"time": 0, "value": [-0.3, 0.3]},
+      {"time": 0.3, "value": [-0.3, 0.3]},
+      {"time": 0.5, "value": [0, 0]}
+    ]
+  },
+  "inaccuracy": {
+    "stand": 0.5,
+    "move": 1,
+    "sneak": 0.3,
+    "lie": 0.15,
+    "aim": 0.01
+  },
+  "melee": {
+    "distance": 1,
+    "cooldown": 1.0,
+    "default": {
+      "animation_type": "melee_stock",
+      "distance": 1.25,
+      "range_angle": 30,
+      "damage": 5,
+      "knockback": 1,
+      "prep": 0.1
+    }
+  },
+  "allow_attachment_types": [
+    "scope",
+    "stock",
+    "muzzle",
+    "grip"
+  ]
+}

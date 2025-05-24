@@ -1,0 +1,70 @@
+{
+    "model": "applied_armorer:gun/niklas_smg_freedom_geo",
+    "texture": "applied_armorer:gun/uv/niklas_smg_freedom",
+    "lod": {
+        "model": "applied_armorer:gun/lod/niklas_smg_freedom_lod",
+        "texture": "applied_armorer:gun/lod/niklas_smg_freedom_lod"
+    },
+    "hud": "applied_armorer:gun/hud/niklas_smg_freedom",
+    "slot": "applied_armorer:gun/slot/niklas_smg_freedom",
+    "animation": "applied_armorer:niklas_smg_freedom",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "shell": {
+        "initial_velocity": [5, 2, 1],
+        "random_velocity": [1, 1, 0.25],
+        "acceleration": [0.0, -10, 0.0],
+        "angular_velocity": [360, -1200, 90],
+        "living_time": 1.0
+    },
+    "muzzle_flash": {
+        "texture": "applied_armorer:misc/blue_pixel_muzzle_flash",
+        "scale": 1.5
+    },
+    "text_show": {
+        "ammo_display": {
+          "scale": 0.6,
+          "align": "center",
+          "shadow": false,
+          "color": "#c279ff",
+          "light": 15,
+          "text": "%ammo_count%"
+        }
+    },
+    "sounds": {
+        "shoot": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_shoot",
+        "shoot_3p": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_shoot_3p",
+        "reload_empty": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_reload_empty",
+        "reload_tactical": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_reload_tactical",
+        "inspect": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_inspect",
+        "inspect_empty": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_inspect_empty",
+        "draw": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_draw",
+        "dry_fire": "applied_armorer:misc/en_dry_fire",
+        "put_away": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_put_away",
+        "silence": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_silence",
+        "fire_select": "applied_armorer:misc/select_mode",
+        "silence_3p": "applied_armorer:niklas_smg_freedom/niklas_smg_freedom_silence_3p",
+        "flesh_hit": "applied_armorer:misc/flesh_hit",
+        "head_hit": "applied_armorer:misc/head_hit",
+        "kill": "applied_armorer:misc/kill"
+    }
+}

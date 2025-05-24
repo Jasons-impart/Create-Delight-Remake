@@ -1,0 +1,6 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_firefly.name",
+  "display": "applied_armorer:muzzle_chip_firefly_display",
+  "data": "applied_armorer:muzzle_chip_firefly_data",
+  "type": "muzzle"
+}

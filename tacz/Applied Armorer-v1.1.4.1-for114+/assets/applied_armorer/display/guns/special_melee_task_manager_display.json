@@ -1,0 +1,45 @@
+{
+    "model": "applied_armorer:gun/special_melee_task_manager_geo",
+    "texture": "applied_armorer:gun/uv/special_melee_task_manager",
+    "lod": {
+        "model": "applied_armorer:gun/lod/special_melee_task_manager_lod",
+        "texture": "applied_armorer:gun/lod/special_melee_task_manager_lod"
+    },
+    "hud": "applied_armorer:gun/hud/special_melee_task_manager",
+    "slot": "applied_armorer:gun/slot/special_melee_task_manager",
+    "animation": "applied_armorer:special_melee_task_manager",
+    "show_crosshair": true,
+    "ammo_count_style": "percent",
+    "state_machine": "applied_armorer:special_melee_task_manager_state_machine",
+    "iron_zoom": 1,
+    "third_person_animation": "default",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "inspect": "applied_armorer:special_melee_task_manager/special_melee_task_manager_inspect",
+        "melee_stock": "applied_armorer:special_melee_task_manager/special_melee_task_manager_melee_stock",
+        "melee_bayonet": "applied_armorer:special_melee_task_manager/special_melee_task_manager_melee",
+        "inspect_empty": "applied_armorer:special_melee_task_manager/special_melee_task_manager_inspect",
+        "draw": "applied_armorer:special_melee_task_manager/special_melee_task_manager_draw",
+        "dry_fire": "applied_armorer:special_melee_task_manager/void",
+        "put_away": "applied_armorer:special_melee_task_manager/special_melee_task_manager_put_away",
+        "fire_select": "applied_armorer:misc/select_mode"
+    }
+}

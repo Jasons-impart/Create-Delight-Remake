@@ -1,0 +1,10 @@
+{
+  "weight": 1,
+  "ads": {
+    "addend": 0.075
+  },
+  "effective_range": {
+    "multiplier": 1.1
+  },
+  "extended_mag_level": 2
+}

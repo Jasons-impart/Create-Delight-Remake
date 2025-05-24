@@ -1,0 +1,14 @@
+{
+  "slot": "applied_armorer:attachment/slot/si_zako_2403",
+  "model": "applied_armorer:attachment/si_zako_2403",
+  "texture": "applied_armorer:attachment/uv/si_zako_2403",
+  "zoom": [
+    1.5
+  ],
+  "sight": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_zako_2403",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_zako_2403"
+  }
+}

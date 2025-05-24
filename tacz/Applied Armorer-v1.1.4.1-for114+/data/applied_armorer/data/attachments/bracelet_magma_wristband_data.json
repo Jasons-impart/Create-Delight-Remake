@@ -1,0 +1,6 @@
+{
+  "weight": 0.15,
+  "ignite": {
+    "entity": true
+  }
+}

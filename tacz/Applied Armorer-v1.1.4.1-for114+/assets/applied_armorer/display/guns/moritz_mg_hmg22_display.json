@@ -1,0 +1,55 @@
+{
+    "model": "applied_armorer:gun/moritz_mg_hmg22_geo",
+    "texture": "applied_armorer:gun/uv/moritz_mg_hmg22",
+    "lod": {
+        "model": "applied_armorer:gun/lod/moritz_mg_hmg22_lod",
+        "texture": "applied_armorer:gun/lod/moritz_mg_hmg22_lod"
+    },
+    "state_machine": "applied_armorer:moritz_mg_hmg22",
+    "hud": "applied_armorer:gun/hud/moritz_mg_hmg22",
+    "slot": "applied_armorer:gun/slot/moritz_mg_hmg22",
+    "animation": "applied_armorer:moritz_mg_hmg22",
+    "use_default_animation": "rifle",
+    "third_person_animation": "default",
+    "ammo_count_style": "percent",
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "muzzle_flash": {
+        "texture": "applied_armorer:misc/blue_pixel_muzzle_flash",
+        "scale": 1.5
+    },
+    "sounds": {
+        "shoot": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_shoot",
+        "shoot_3p": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_shoot_3p",
+        "reload_empty": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_reload",
+        "reload_tactical": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_reload",
+        "inspect": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_inspect",
+        "inspect_empty": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_inspect",
+        "draw": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_draw",
+        "dry_fire": "applied_armorer:misc/en_dry_fire",
+        "put_away": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_put_away",
+        "silence": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_silence",
+        "fire_select": "applied_armorer:misc/select_mode",
+        "silence_3p": "applied_armorer:moritz_mg_hmg22/moritz_mg_hmg22_silence_3p",
+        "flesh_hit": "applied_armorer:misc/flesh_hit",
+        "head_hit": "applied_armorer:misc/head_hit",
+        "kill": "applied_armorer:misc/kill"
+    }
+}

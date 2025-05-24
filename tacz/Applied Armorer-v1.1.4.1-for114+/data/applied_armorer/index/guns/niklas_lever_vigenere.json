@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.niklas_lever_vigenere",
+    "display": "applied_armorer:niklas_lever_vigenere_display",
+    "data": "applied_armorer:niklas_lever_vigenere_data",
+    "tooltip": "tooltip.niklas_lever_vigenere",
+    "type": "rifle",
+    "sort": 400
+}

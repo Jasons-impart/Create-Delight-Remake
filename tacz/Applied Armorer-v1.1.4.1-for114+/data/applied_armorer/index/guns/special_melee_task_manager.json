@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.special_melee_task_manager",
+    "display": "applied_armorer:special_melee_task_manager_display",
+    "data": "applied_armorer:special_melee_task_manager_data",
+    "tooltip": "tooltip.special_melee_task_manager",
+    "type": "rpg",
+    "sort": 400
+}

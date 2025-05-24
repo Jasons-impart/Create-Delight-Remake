@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_mg_hmg22",
+    "display": "applied_armorer:moritz_mg_hmg22_display",
+    "data": "applied_armorer:moritz_mg_hmg22_data",
+    "tooltip": "tooltip.moritz_mg_hmg22",
+    "type": "mg",
+    "sort": 400
+}

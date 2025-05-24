@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_tutorial_sword_mastery.name",
+  "display": "applied_armorer:muzzle_chip_tutorial_sword_mastery_display",
+  "data": "applied_armorer:muzzle_chip_tutorial_sword_mastery_data",
+  "tooltip": "tooltip.attachment.muzzle_chip_tutorial_sword_mastery",
+  "type": "muzzle"
+}

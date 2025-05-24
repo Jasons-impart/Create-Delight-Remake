@@ -1,0 +1,22 @@
+{
+  "slot": "applied_armorer:ammo/slot/fluix_infused_grenade",
+  "shell": {
+    "model": "applied_armorer:shell/fluix_infused_grenade_shell",
+    "texture": "applied_armorer:shell/fluix_infused_grenade_shell"
+  },
+  "entity": {
+    "model": "applied_armorer:ammo_entity/fluix_infused_grenade_entity",
+    "texture": "applied_armorer:ammo_entity/fluix_infused_grenade_entity"
+  },
+  "particle": {
+    "name": "portal",
+    "delta": [
+      0,
+      0,
+      0
+    ],
+    "speed": 0.001,
+    "life_time": 20,
+    "count": 10
+  }
+}

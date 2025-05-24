@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_sniper_semi_k30",
+    "display": "applied_armorer:moritz_sniper_semi_k30_display",
+    "data": "applied_armorer:moritz_sniper_semi_k30_data",
+    "tooltip": "tooltip.moritz_sniper_semi_k30",
+    "type": "sniper",
+    "sort": 400
+}

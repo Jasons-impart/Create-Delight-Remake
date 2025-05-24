@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/bayonet_er",
+  "model": "applied_armorer:attachment/bayonet_er",
+  "texture": "applied_armorer:attachment/uv/bayonet_er",
+  "sounds": {
+    "install": "applied_armorer:misc/bayonet_install",
+    "uninstall": "applied_armorer:misc/bayonet_uninstall"
+  }
+}

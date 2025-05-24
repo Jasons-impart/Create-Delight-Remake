@@ -1,0 +1,92 @@
+{
+  "script": "applied_armorer:niklas_pistol_double_win_win",
+  "ammo": "applied_armorer:etched_quartz_bullet",
+  "rpm": 600,
+  "bullet": {
+    "life": 0.6,
+    "bullet_amount": 1,
+    "damage": 9,
+    "tracer_count_interval": 0,
+    "extra_damage": {
+      "armor_ignore": 0.1,
+      "head_shot_multiplier": 1.25,
+      "damage_adjust": [
+        {"distance": 15, "damage": 9},
+        {"distance": 35, "damage": 8},
+        {"distance": "infinite", "damage": 7}
+      ]
+    },
+    "speed": 180,
+    "gravity": 0.15,
+    "knockback": 0.1,
+    "friction": 0.025,
+    "ignite": false,
+    "ignite_entity_time": 6,
+    "pierce": 0
+  },
+  "ammo_amount": 34,
+  "bolt": "open_bolt",
+  "reload": {
+    "type": "magazine",
+    "feed": {
+      "empty": 1.63,
+      "tactical": 1.04
+    },
+    "cooldown": {
+      "empty": 2.29,
+      "tactical": 1.54
+    }
+  },
+  "script_param": {
+    "reload_tactical_feed": 1.92,
+    "reload_tactical_cooldown": 3.03,
+    "reload_last_feed": 2.15,
+    "reload_last_cooldown": 3.18,
+    "reload_empty_feed": 2.55,
+    "reload_empty_cooldown": 3.28
+  },
+  "draw_time": 0.95,
+  "put_away_time": 1,
+  "aim_time": 0.2,
+  "sprint_time": 0.3,
+  "weight": 2.7,
+  "fire_mode": [
+    "semi",
+    "burst"
+  ],
+  "burst_data": {
+    "continuous_shoot": true,
+    "count": 1,
+    "bpm": 1200,
+    "min_interval": 0.25
+  },
+  "allow_attachment_types": [
+  ],
+  "recoil": {
+    "pitch": [
+      {"time": 0, "value": [0.8, 0.8]},
+      {"time": 0.4, "value": [0.8, 0.8]},
+      {"time": 0.65, "value": [-0.2, -0.2]},
+      {"time": 0.85, "value": [0.1, 0.1]},
+      {"time": 1.1, "value": [0, 0]},
+      {"time": 1.2, "value": [0, 0]}
+    ],
+    "yaw": [
+      {"time": 0, "value": [-0.25, 0.25]},
+      {"time": 0.5, "value": [0, 0]}
+    ]
+  },
+  "builtin_attachments": {
+  },
+  "melee": {
+    "distance": 0,
+    "cooldown": 0.5
+  },
+  "inaccuracy": {
+    "stand": 3,
+    "move": 4,
+    "sneak": 2.5,
+    "lie": 2,
+    "aim": 1
+  }
+}

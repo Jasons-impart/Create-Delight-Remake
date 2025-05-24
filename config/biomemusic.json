@@ -56,6 +56,6 @@
   },
   "maxConcurrentSounds": {
     "desc:": "Set the maximum amount of times the same sound can play at the same time. Limits the amount of lag spamming sounds can create. Default = 10",
-    "maxConcurrentSounds": 10
+    "maxConcurrentSounds": 1000
   }
 }

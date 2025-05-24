@@ -1,0 +1,6 @@
+{
+  "name": "applied_armorer.attachment.muzzle_classic.name",
+  "display": "applied_armorer:muzzle_classic_display",
+  "data": "applied_armorer:muzzle_classic_data",
+  "type": "muzzle"
+}

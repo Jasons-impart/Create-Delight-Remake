@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.bracelet_aerial_wristband.name",
+  "display": "applied_armorer:bracelet_aerial_wristband_display",
+  "data": "applied_armorer:bracelet_aerial_wristband_data",
+  "tooltip": "tooltip.attachment.bracelet_aerial_wristband",
+  "type": "stock"
+}

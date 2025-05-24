@@ -1,0 +1,20 @@
+{
+  "weight": 0.25,
+  "ads": {
+    "addend": 0.015
+  },
+  "inaccuracy": {
+    "multiplier": 0.6
+  },
+  "aim_inaccuracy": {
+    "multiplier": 0.5
+  },
+  "recoil": {
+    "yaw": {
+    "multiplier": 1.025
+    },
+    "pitch": {
+    "multiplier": 0.95
+    }
+  }
+}

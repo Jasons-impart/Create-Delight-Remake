@@ -1,0 +1,19 @@
+{
+  "weight": 1,
+  "melee": {
+    "distance": 1,
+    "range_angle": 30,
+    "cooldown": 0,
+    "damage": 11,
+    "knockback": 0.1,
+    "prep": 0.17,
+    "effects": [
+      {
+        "id": "minecraft:wither",
+        "time": 5,
+        "amplifier": 3,
+        "hide_particles": false
+      }
+    ]
+  }
+}

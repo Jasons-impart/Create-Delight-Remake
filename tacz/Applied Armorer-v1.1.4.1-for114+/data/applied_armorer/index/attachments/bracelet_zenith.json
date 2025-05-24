@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.bracelet_zenith.name",
+  "display": "applied_armorer:bracelet_zenith_display",
+  "data": "applied_armorer:bracelet_zenith_data",
+  "tooltip": "tooltip.attachment.bracelet_zenith",
+  "type": "stock"
+}

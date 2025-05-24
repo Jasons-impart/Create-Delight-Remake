@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.niklas_pistol_double_win_win",
+    "display": "applied_armorer:niklas_pistol_double_win_win_display",
+    "data": "applied_armorer:niklas_pistol_double_win_win_data",
+    "tooltip": "tooltip.niklas_pistol_double_win_win",
+    "type": "pistol",
+    "sort": 403
+}

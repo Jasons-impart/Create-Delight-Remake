@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/bracelet_koeis_armband",
+  "model": "applied_armorer:attachment/bracelet_koeis_armband",
+  "texture": "applied_armorer:attachment/uv/bracelet_koeis_armband",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_small",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_small"
+  }
+}

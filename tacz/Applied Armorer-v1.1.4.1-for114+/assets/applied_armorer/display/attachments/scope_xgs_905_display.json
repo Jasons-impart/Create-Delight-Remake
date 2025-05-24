@@ -1,0 +1,16 @@
+{
+  "slot": "applied_armorer:attachment/slot/scope_xgs_905",
+  "model": "applied_armorer:attachment/scope_xgs_905",
+  "texture": "applied_armorer:attachment/uv/scope_xgs_905",
+  "zoom": [
+    4,
+    8,
+    15
+  ],
+  "scope": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_big",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_big"
+  }
+}

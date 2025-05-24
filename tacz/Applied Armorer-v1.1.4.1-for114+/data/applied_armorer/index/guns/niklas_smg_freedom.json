@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.niklas_smg_freedom",
+    "display": "applied_armorer:niklas_smg_freedom_display",
+    "data": "applied_armorer:niklas_smg_freedom_data",
+    "tooltip": "tooltip.niklas_smg_freedom",
+    "type": "smg",
+    "sort": 400
+}

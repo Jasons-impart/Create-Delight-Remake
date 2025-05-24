@@ -1,0 +1,17 @@
+{
+  "weight": 0.25,
+  "ads": {
+    "addend": -0.025
+  },
+  "inaccuracy": {
+    "multiplier": 1.25
+  },
+  "effective_range": {
+    "multiplier": 1.1
+  },
+  "recoil": {
+    "pitch": {
+    "multiplier": 0.8
+    }
+  }
+}

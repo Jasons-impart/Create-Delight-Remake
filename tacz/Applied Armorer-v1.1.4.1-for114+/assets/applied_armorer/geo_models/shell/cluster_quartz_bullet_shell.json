@@ -1,0 +1,47 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 8,
+				"texture_height": 8,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
+			},
+			"bones": [
+				{
+					"name": "shell",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-0.4375, -0.4375, 1.5],
+							"size": [0.875, 0.875, 0.125],
+							"uv": {
+								"north": {"uv": [2, 2], "uv_size": [1, 1]},
+								"east": {"uv": [3, 2], "uv_size": [0.25, 1]},
+								"south": {"uv": [3, 0], "uv_size": [1, 1]},
+								"west": {"uv": [3, 3], "uv_size": [0.25, 1]},
+								"up": {"uv": [4, 0], "uv_size": [1, 0.25]},
+								"down": {"uv": [4, 1.25], "uv_size": [1, -0.25]}
+							}
+						},
+						{
+							"origin": [-0.375, -0.375, -1.5],
+							"size": [0.75, 0.75, 3],
+							"uv": {
+								"north": {"uv": [3, 1], "uv_size": [0.75, 0.75]},
+								"east": {"uv": [0, 0], "uv_size": [3, 0.75]},
+								"south": {"uv": [2, 3], "uv_size": [0.75, 0.75]},
+								"west": {"uv": [0, 1], "uv_size": [3, 0.75]},
+								"up": {"uv": [0, 2], "uv_size": [0.75, 3]},
+								"down": {"uv": [1, 5], "uv_size": [0.75, -3]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

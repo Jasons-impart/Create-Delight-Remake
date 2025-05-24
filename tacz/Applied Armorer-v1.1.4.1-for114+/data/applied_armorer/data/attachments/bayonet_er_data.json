@@ -1,0 +1,16 @@
+{
+  "weight": 0.28,
+  "recoil": {
+    "pitch": {
+    "multiplier": 0.85
+    }
+  },
+  "melee": {
+    "distance": 4,
+    "range_angle": 30,
+    "cooldown": 0,
+    "damage": 13,
+    "knockback": 0.05,
+    "prep": 0.17
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "ammo": "applied_armorer:etched_quartz_bullet",
+  "ammo_amount": 20,
+  "extended_mag_ammo_amount": [
+    27,
+    34,
+    40
+  ],
+  "bolt": "open_bolt",
+  "rpm": 840,
+  "bullet": {
+    "life": 1,
+    "bullet_amount": 1,
+    "damage": 10,
+    "tracer_count_interval": 0,
+    "extra_damage": {
+      "armor_ignore": 0.25,
+      "head_shot_multiplier": 1.5,
+      "damage_adjust": [
+        {"distance": 40, "damage": 10},
+        {"distance": 80, "damage": 9},
+        {"distance": "infinite", "damage": 8}
+      ]
+    },
+    "speed": 360,
+    "gravity": 0.15,
+    "knockback": 0,
+    "friction": 0.015,
+    "ignite": false,
+    "ignite_entity_time": 6,
+    "pierce": 1
+  },
+  "reload": {
+    "type": "magazine",
+    "feed": {
+      "empty": 1.5,
+      "tactical": 1.5
+    },
+    "cooldown": {
+      "empty": 2.67,
+      "tactical": 2.67
+    }
+  },
+  "draw_time": 0.75,
+  "put_away_time": 0.58,
+  "aim_time": 0.2,
+  "sprint_time": 0.2,
+  "weight": 2.85,
+  "movement_speed": {
+    "base": 0.0,
+    "aim": -0.1,
+    "reload": -0.05
+  },
+  "crawl_recoil_multiplier": 0.25,
+  "fire_mode": [
+    "auto",
+    "semi"
+  ],
+  "recoil": {
+    "pitch": [
+      {"time": 0, "value": [0.4, 0.4]},
+      {"time": 0.2, "value": [0.4, 0.4]},
+      {"time": 0.3, "value": [-0.05, -0.05]},
+      {"time": 0.5, "value": [0, 0]}
+    ],
+    "yaw": [
+      {"time": 0, "value": [-0.2, 0.2]},
+      {"time": 0.2, "value": [-0.2, 0.2]},
+      {"time": 0.35, "value": [0, 0]}
+    ]
+  },
+  "inaccuracy": {
+    "stand": 2,
+    "move": 3,
+    "sneak": 1.5,
+    "lie": 1,
+    "aim": 0.1
+  },
+  "melee": {
+    "distance": 1,
+    "cooldown": 1.0,
+    "default": {
+      "animation_type": "melee_stock",
+      "distance": 1.25,
+      "range_angle": 30,
+      "damage": 7,
+      "knockback": 1,
+      "prep": 0.1
+    }
+  },
+  "builtin_attachments": {
+    "scope": "applied_armorer:si_xs_07"
+  },
+  "allow_attachment_types": [
+    "extended_mag",
+    "scope",
+    "stock",
+    "muzzle",
+    "grip"
+  ]
+}

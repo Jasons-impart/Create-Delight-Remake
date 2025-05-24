@@ -1,0 +1,7 @@
+{
+  // 请填写枪包的主要命名空间
+  "namespace": "applied_armorer"
+//  "dependencies": {
+//     "tacz": "[1.0.3,)"
+//  }
+}

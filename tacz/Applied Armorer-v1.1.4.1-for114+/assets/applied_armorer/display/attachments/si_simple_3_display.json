@@ -1,0 +1,14 @@
+{
+  "slot": "applied_armorer:attachment/slot/si_simple_3",
+  "model": "applied_armorer:attachment/si_simple_3",
+  "texture": "applied_armorer:attachment/uv/si_simple_3",
+  "zoom": [
+    1.33
+  ],
+  "sight": true,
+  "fov": 70.0,
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_small",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_small"
+  }
+}

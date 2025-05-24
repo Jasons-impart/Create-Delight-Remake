@@ -1,0 +1,9 @@
+{
+  "slot": "applied_armorer:attachment/slot/muzzle_chip_tutorial_sword_mastery",
+  "model": "applied_armorer:attachment/muzzle_chip_tutorial_sword_mastery",
+  "texture": "applied_armorer:attachment/uv/muzzle_chip_tutorial_sword_mastery",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_big",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_big"
+  }
+}

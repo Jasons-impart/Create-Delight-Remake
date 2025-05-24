@@ -31,3 +31,6 @@ ServerEvents.tags("block", e => {
     "neapolitan:mint"
   )
 })
+ServerEvents.tags("fluid", e => {
+  e.add("createdelight:spent_liquor", "createdelight:spent_liquor")
+})
