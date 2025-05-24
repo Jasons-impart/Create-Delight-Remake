@@ -35,5 +35,6 @@ ServerEvents.recipes(e => {
         .id(`doaddonfluids:filling/${grape[1].split(":")[1]}`)
         e.recipes.create.emptying(["vinery:wine_bottle", Fluid.of(grape[1], 250)], grape[0])
         .id(`doaddonfluids:emptying/${grape[0].split(":")[1]}`)
+        pouring(e, grape[0], grape[1], "vinery:wine_bottle")
     })
 })

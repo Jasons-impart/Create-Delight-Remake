@@ -5,13 +5,12 @@ ServerEvents.recipes(e => {
          */
         let recipe = r.getOriginalRecipe()
         let res = recipe.getResultItem(null)
-        let resFluid = Fluid.of(`createdelight:${res.id.toString().split(":")[1]}`, 250)
+        let resFluid = Fluid.of(`createdelight:${res.id.toString().split(":")[1]}`, 1000)
         e.recipes.create.filling(res, ["vinery:wine_bottle", resFluid])
             .id(`createdelight:filling/${res.id.toString().split(":")[1]}`)
         e.recipes.create.emptying(["vinery:wine_bottle", resFluid], res)
             .id(`createdelight:emptying/${res.id.toString().split(":")[1]}`)
-        if (res.is("vinery:bottle_mojang_noir") || res.is("vinery:jellie_wine") || res.is("vinery:apple_wine"))
-            return
+        pouring(e, res, resFluid.id, "vinery:wine_bottle")
         let fluid = recipe.getJuiceType().split("_")
         let fluidId = ""
         let prefix = fluid[0]
@@ -31,8 +30,8 @@ ServerEvents.recipes(e => {
             prefix = "doaddonfluids:" + prefix
             fluidId = prefix + "_grapejuice"
         }
-        let ingrs = [Fluid.of(fluidId, recipe.getJuiceAmount() * 10)]
-
+        let ingrs = [Fluid.of(fluidId, 1000)]
+        let originIngrs = []
         recipe.ingredients.forEach(i => {
             i.stacks.forEach(ingr => {
                 if (ingr.is("minecraft:honey_bottle"))
@@ -43,8 +42,14 @@ ServerEvents.recipes(e => {
                     ingrs.push(Fluid.of(`createdelight:${ingr.id.split(":")[1]}`, 250))
                 else
                     ingrs.push(Ingredient.of(ingr))
+                originIngrs.push(Ingredient.of(ingr))
             })
         })
+        fermenting(e, resFluid, originIngrs, Fluid.of(fluidId, 1000))
+        .id(`brewinandchewin:fermenting/${res.id.toString().split(":")[1]}`)
+        r.remove()
+        if (res.is("vinery:bottle_mojang_noir") || res.is("vinery:jellie_wine") || res.is("vinery:apple_wine"))
+            return
         e.recipes.createdieselgenerators.basin_fermenting(
             resFluid, ingrs)
             .id(`createdelight:basin_fermenting/${res.id.toString().split(":")[1]}`)
