@@ -313,14 +313,14 @@ ServerEvents.recipes(e => {
         ]
     }).id("create_oppenheimered:filling/gingerbread_sweet_roll")
     // 移动燃料接口
-    e.recipes.kubejs.shapeless(
-        'railways:portable_fuel_interface',
-        [
-            "#forge:spring/between_500_2_1000",
-            "create:railway_casing",
-            "create:chute"
-        ]
-    ).id("railways:crafting/portable_fuel_interface")
+    // e.recipes.kubejs.shapeless(
+    //     'railways:portable_fuel_interface',
+    //     [
+    //         "#forge:spring/between_500_2_1000",
+    //         "create:railway_casing",
+    //         "create:chute"
+    //     ]
+    // ).id("railways:crafting/portable_fuel_interface")
     // 精密构件
     e.recipes.create.deploying(
         "create:precision_mechanism",
