@@ -1,3 +1,6 @@
+const $PieBlock = Java.loadClass("vectorwing.farmersdelight.common.block.PieBlock")
+const $CheeseWheelBlock = Java.loadClass("umpaz.brewinandchewin.common.block.CheeseWheelBlock")
+const $Integer = Java.loadClass("java.lang.Integer")
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "refurbished_furniture:cheese",
@@ -6,6 +9,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:cheese_pizza",
         "vintagedelight:cheese_pizza_from_slices",
         "vintagedelight:cutting/cheese_pizza_from_cutting",
+        "vintagedelight:cutting/cheese_wheel_from_cutting",
         "casualness_delight:cutting_cheese_wheel",
         "refurbished_furniture:cutting/cooked_meatlovers_pizza",
         "refurbished_furniture:cutting/cooked_vegetable_pizza",
@@ -32,6 +36,7 @@ ServerEvents.recipes(e => {
     ).id("casualness_delight:cooking/phantom_puff")
     // 奶酪相关
     cutting(e, "casualness_delight:cheese_wheel", [["casualness_delight:cheese_wheel_slice", 7]])
+    cutting_2(e, "vintagedelight:cheese_wheel", [["ad_astra:cheese", 4]])
     e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
@@ -73,9 +78,30 @@ ServerEvents.recipes(e => {
 
 BlockEvents.rightClicked(e => {
     const { player, block } = e;
-    if (player.mainHandItem.hasTag("forge:tools/knives") && block.id === "vintagedelight:cheese_wheel") {
-        block.set("air");
-        block.popItem("4x ad_astra:cheese");
-        e.cancel()
+    if (player.mainHandItem.hasTag("forge:tools/knives")) {
+        if (block.id === "vintagedelight:cheese_wheel") {
+            let prop = block.properties
+            let bites = parseInt(prop.get("bites"))
+            if (bites != 3) {
+                prop.put("bites", (bites + 1).toString())
+                block.set(block.id, prop)
+            }
+            else
+                block.set("air")
+            block.popItem("ad_astra:cheese")
+            e.cancel()
+        }
+        else if (block.id === "brewinandchewin:flaxen_cheese_wheel") {
+            let prop = block.properties
+            let servings = parseInt(prop.get("servings"))
+            if (servings != 0) {
+                prop.put("servings", (servings - 1).toString())
+                block.set(block.id, prop)
+            }
+            else
+                block.set("air")
+            block.popItem("ad_astra:cheese")
+            e.cancel()
+        }
     }
 })
