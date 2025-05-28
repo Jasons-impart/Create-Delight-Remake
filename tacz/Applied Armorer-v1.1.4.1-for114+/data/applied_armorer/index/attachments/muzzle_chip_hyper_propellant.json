@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_hyper_propellant.name",
+  "display": "applied_armorer:muzzle_chip_hyper_propellant_display",
+  "data": "applied_armorer:muzzle_chip_hyper_propellant_data",
+  "tooltip": "tooltip.attachment.muzzle_chip_hyper_propellant",
+  "type": "muzzle"
+}

@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_shotgun_sg914",
+    "display": "applied_armorer:moritz_shotgun_sg914_display",
+    "data": "applied_armorer:moritz_shotgun_sg914_data",
+    "tooltip": "tooltip.moritz_shotgun_sg914",
+    "type": "shotgun",
+    "sort": 400
+}

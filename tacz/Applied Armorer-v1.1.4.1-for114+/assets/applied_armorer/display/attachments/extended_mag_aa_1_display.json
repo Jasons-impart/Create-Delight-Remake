@@ -1,0 +1,7 @@
+{
+  "slot": "applied_armorer:attachment/slot/extended_mag_aa_1",
+  "sounds": {
+    "install": "applied_armorer:misc/attachment_install_mag",
+    "uninstall": "applied_armorer:misc/attachment_uninstall_mag"
+  }
+}

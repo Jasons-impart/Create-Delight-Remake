@@ -1,0 +1,45 @@
+{
+    "model": "applied_armorer:gun/niklas_pistol_double_win_win_geo",
+    "texture": "applied_armorer:gun/uv/niklas_pistol_double_win_win",
+    "lod": {
+        "model": "applied_armorer:gun/lod/niklas_pistol_double_win_win_lod",
+        "texture": "applied_armorer:gun/lod/niklas_pistol_double_win_win_lod"
+    },
+    "hud": "applied_armorer:gun/hud/niklas_pistol_double_win_win",
+    "slot": "applied_armorer:gun/slot/niklas_pistol_double_win_win",
+    "animation": "applied_armorer:niklas_pistol_double_win_win",
+    "state_machine": "applied_armorer:niklas_pistol_double_win_win",
+    "use_default_animation": "pistol",
+    "third_person_animation": "default",
+    "show_crosshair": true,
+    "transform": {
+        "scale": {
+            "thirdperson": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "ground": [
+                0.6,
+                0.6,
+                0.6
+            ],
+            "fixed": [
+                1.2,
+                1.2,
+                1.2
+            ]
+        }
+    },
+    "sounds": {
+        "shoot_3p": "applied_armorer:niklas_pistol_double_win_win/niklas_pistol_double_win_win_shoot_3p",
+        "draw": "applied_armorer:niklas_pistol_double_win_win/niklas_pistol_double_win_win_draw",
+        "dry_fire": "applied_armorer:misc/en_dry_fire",
+        "fire_select": "applied_armorer:misc/select_mode",
+        "put_away": "applied_armorer:niklas_pistol_double_win_win/niklas_pistol_double_win_win_put_away",
+        "silence_3p": "applied_armorer:niklas_pistol_double_win_win/niklas_pistol_double_win_win_silence_3p",
+        "flesh_hit": "applied_armorer:misc/flesh_hit",
+        "head_hit": "applied_armorer:misc/head_hit",
+        "kill": "applied_armorer:misc/kill"
+    }
+}

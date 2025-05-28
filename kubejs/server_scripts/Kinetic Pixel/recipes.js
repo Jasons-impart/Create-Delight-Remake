@@ -13,8 +13,7 @@ ServerEvents.recipes(e => {
             'kinetic_pixel:andesitealloycompressionsheet',
             'kinetic_pixel:specialsteelcompressionsheet',
             'kinetic_pixel:specialsteelingot',
-            'kinetic_pixel:nitropropellant',
-            'tacz:gun_smith_table'
+            'kinetic_pixel:nitropropellant'
         ]
     )
     e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "ad_astra:steel_plate")

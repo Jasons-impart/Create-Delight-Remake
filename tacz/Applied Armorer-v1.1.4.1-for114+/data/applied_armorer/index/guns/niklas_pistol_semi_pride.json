@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.niklas_pistol_semi_pride",
+    "display": "applied_armorer:niklas_pistol_semi_pride_display",
+    "data": "applied_armorer:niklas_pistol_semi_pride_data",
+    "tooltip": "tooltip.niklas_pistol_semi_pride",
+    "type": "pistol",
+    "sort": 402
+}

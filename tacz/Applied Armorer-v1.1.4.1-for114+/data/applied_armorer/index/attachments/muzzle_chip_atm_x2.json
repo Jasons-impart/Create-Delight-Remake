@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_atm_x2.name",
+  "display": "applied_armorer:muzzle_chip_atm_x2_display",
+  "data": "applied_armorer:muzzle_chip_atm_x2_data",
+  "tooltip": "tooltip.attachment.muzzle_chip_atm_x2",
+  "type": "muzzle"
+}

@@ -1,0 +1,8 @@
+{
+  "whitelist": [
+
+  ],
+  "blacklist": [
+    "^applied_armorer:.*$"
+  ]
+}

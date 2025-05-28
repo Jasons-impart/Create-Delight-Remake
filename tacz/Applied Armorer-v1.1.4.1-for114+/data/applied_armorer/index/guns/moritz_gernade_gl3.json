@@ -1,0 +1,8 @@
+{
+    "name": "applied_armorer.gun.moritz_gernade_gl3",
+    "display": "applied_armorer:moritz_gernade_gl3_display",
+    "data": "applied_armorer:moritz_gernade_gl3_data",
+    "tooltip": "tooltip.moritz_gernade_gl3",
+    "type": "rpg",
+    "sort": 401
+}

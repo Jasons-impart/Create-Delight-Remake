@@ -1,0 +1,34 @@
+{
+  "weight": 0,
+  "explosion": {
+    "explode": true,
+    "radius": {
+      "addend": -4.5
+    },
+    "damage": {
+      "addend": -30
+    },
+    "knockback": false,
+    "destroy_block": false
+  },
+  "ammo_speed": {
+    "addend": 120
+  },
+  "head_shot":{
+    "addend": 0.5
+  },
+  "damage": {
+    "addend": 50
+  },
+  "armor_ignore":{
+    "addend": 0.33
+  },
+  "recoil": {
+    "yaw": {
+    "multiplier": 2
+    },
+    "pitch": {
+    "multiplier": 2
+    }
+  }
+}

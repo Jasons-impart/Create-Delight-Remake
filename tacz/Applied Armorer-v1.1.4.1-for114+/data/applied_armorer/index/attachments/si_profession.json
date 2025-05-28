@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.si_profession.name",
+  "display": "applied_armorer:si_profession_display",
+  "data": "applied_armorer:si_profession_data",
+  "tooltip": "tooltip.attachment.si_profession",
+  "type": "scope"
+}

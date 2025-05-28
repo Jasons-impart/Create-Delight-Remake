@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.extended_mid_mag_aa_1.name",
+  "display": "applied_armorer:extended_mid_mag_aa_1_display",
+  "data": "applied_armorer:extended_mid_mag_aa_1_data",
+  "tooltip": "tooltip.attachment.extended_mid_mag_aa_1",
+  "type": "extended_mag"
+}

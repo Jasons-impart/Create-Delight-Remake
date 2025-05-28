@@ -1,0 +1,11 @@
+{
+  "weight": 0.35,
+  "recoil": {
+    "pitch": {
+      "multiplier": 0.95
+    }
+  },
+  "ads": {
+    "addend": 0.02
+  }
+}

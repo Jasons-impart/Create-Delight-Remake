@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.bracelet_exo.name",
+  "display": "applied_armorer:bracelet_exo_display",
+  "data": "applied_armorer:bracelet_exo_data",
+  "tooltip": "tooltip.attachment.bracelet_exo",
+  "type": "stock"
+}

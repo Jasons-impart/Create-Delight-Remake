@@ -1,0 +1,24 @@
+{
+  "weight": 0,
+  "ignite": {
+    "entity": true,
+    "block": false
+  },
+  "head_shot":{
+    "addend": 0.5
+  },
+  "effective_range": {
+    "multiplier": 0.9
+  },
+  "rpm": {
+    "multiplier": 1.2
+  },
+  "recoil": {
+    "yaw": {
+    "multiplier": 1.15
+    },
+    "pitch": {
+    "multiplier": 1.2
+    }
+  }
+}

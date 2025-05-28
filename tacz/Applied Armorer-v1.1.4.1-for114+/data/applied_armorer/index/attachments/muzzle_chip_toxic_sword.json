@@ -1,0 +1,7 @@
+{
+  "name": "applied_armorer.attachment.muzzle_chip_toxic_sword.name",
+  "display": "applied_armorer:muzzle_chip_toxic_sword_display",
+  "data": "applied_armorer:muzzle_chip_toxic_sword_data",
+  "tooltip": "tooltip.attachment.muzzle_chip_toxic_sword",
+  "type": "muzzle"
+}
