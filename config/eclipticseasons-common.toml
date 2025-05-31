@@ -42,7 +42,7 @@
 	#It will snow in cold time.
 	IceAndSnow = false
 	#Add heat stroke effect in summer noon while in hot biome.
-	HeatStroke = true
+	HeatStroke = false
 
 [Crop]
 	#Enable crop season control.
