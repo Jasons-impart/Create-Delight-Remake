@@ -55,10 +55,10 @@ ServerEvents.recipes(e => {
     //液体离心
     //双液体组分液体离心
     let fluidSeparation_2_fluids = [
-      [["createmetallurgy:molten_brass", 500], ["createmetallurgy:molten_copper", 250], ["createmetallurgy:molten_zinc", 250]],
-      [["createmetallurgy:molten_bronze", 500], ["createmetallurgy:molten_tin", 125], ["createmetallurgy:molten_copper", 375]],
-      [["createmetallurgy:molten_electrum", 500], ["createmetallurgy:molten_silver", 250], ["createmetallurgy:molten_gold", 250]],
-      [["createbigcannons:molten_nethersteel", 300], ["createmetallurgy:molten_steel", 50], ["createmetallurgy:molten_netherite", 50]],
+      [["createmetallurgy:molten_brass", 180], ["createmetallurgy:molten_copper", 90], ["createmetallurgy:molten_zinc", 90]],
+      [["createmetallurgy:molten_bronze", 360], ["createmetallurgy:molten_tin", 90], ["createmetallurgy:molten_copper", 270]],
+      [["createmetallurgy:molten_electrum", 180], ["createmetallurgy:molten_silver", 90], ["createmetallurgy:molten_gold", 90]],
+      [["createbigcannons:molten_nethersteel", 360], ["createmetallurgy:molten_steel", 90], ["createmetallurgy:molten_netherite", 90]],
       [["createdelight:vanilla_milkshake", 750], ["createdelightcore:vanilla_ice_cream", 250], ["minecraft:milk", 500]],
       [["createdelight:chocolate_milkshake", 750], ["createdelightcore:chocolate_ice_cream", 250], ["minecraft:milk", 500]],
       [["createdelight:strawberry_milkshake", 750], ["createdelightcore:strawberry_ice_cream", 250], ["minecraft:milk", 500]],

@@ -54,7 +54,7 @@ ServerEvents.recipes(e => {
     // 特斯拉充电线圈
     let iner_2 = "createdelight:incomplete_tesla_coil"
     e.recipes.create.sequenced_assembly("createaddition:tesla_coil", "create_new_age:energiser_t3", [
-        e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_brass", 250)]),
+        e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_brass", 90)]),
         e.recipes.create.deploying(iner_2, [iner_2, "alexscaves:tesla_bulb"])
     ])
         .transitionalItem(iner_2)

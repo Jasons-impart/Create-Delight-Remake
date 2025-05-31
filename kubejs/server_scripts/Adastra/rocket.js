@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
+    const { kubejs, create, create_new_age, vintageimprovements } = e.recipes
     //航空纤维板
-    e.recipes.create.mixing(
+    create.mixing(
         'createdelight:aviation_fibers_sheet',
         [
             "createdelight:carbon_dust",
@@ -12,136 +13,256 @@ ServerEvents.recipes(e => {
         .heated()
         .id("createdelight:mixing/aviation_fibers_sheet")
     //舱体板
-    
-    //动力合成器添加：一级火箭
-    e.recipes.create.mechanical_crafting("ad_astra:tier_1_rocket", [
-        "  A  ",
-        " BBB ",
-        " B B ",
-        " BFB ",
-        " BBB ",
-        "CDDDC",
-        "CEEEC"
-    ], {
-        A: "ad_astra:rocket_nose_cone",
-        B: "#forge:storage_blocks/steel",
-        C: "ad_astra:rocket_fin",
-        D: "ad_astra:steel_tank",
-        E: "ad_astra:steel_engine",
-        F: "createdelight:first_stage_rocket_core"
-    })
-    //动力合成器添加：二级火箭
-    e.recipes.create.mechanical_crafting("ad_astra:tier_2_rocket", [
-        "  A  ",
-        " BBB ",
-        " B B ",
-        " BFB ",
-        " BBB ",
-        "CDDDC",
-        "CEEEC"
-    ], {
-        A: "ad_astra:rocket_nose_cone",
-        B: "#forge:storage_blocks/steel",
-        C: "ad_astra:rocket_fin",
-        D: "ad_astra:desh_tank",
-        E: "ad_astra:desh_engine",
-        F: "createdelight:second_stage_rocket_core"
-    })
-    //动力合成器添加：三级火箭
-    e.recipes.create.mechanical_crafting("ad_astra:tier_3_rocket", [
-        "  A  ",
-        " BBB ",
-        " B B ",
-        " BFB ",
-        " BBB ",
-        "CDDDC",
-        "CEEEC"
-    ], {
-        A: "ad_astra:rocket_nose_cone",
-        B: "#forge:storage_blocks/steel",
-        C: "ad_astra:rocket_fin",
-        D: "ad_astra:ostrum_tank",
-        E: "ad_astra:ostrum_engine",
-        F: "createdelight:third_stage_rocket_core"
-    })
-    //动力合成器添加：四级火箭
-    e.recipes.create.mechanical_crafting("ad_astra:tier_4_rocket", [
-        "  A  ",
-        " BBB ",
-        " B B ",
-        " BFB ",
-        " BBB ",
-        "CDDDC",
-        "CEEEC"
-    ], {
-        A: "ad_astra:rocket_nose_cone",
-        B: "#forge:storage_blocks/steel",
-        C: "ad_astra:rocket_fin",
-        D: "ad_astra:calorite_tank",
-        E: "ad_astra:calorite_engine",
-        F: "createdelight:fourth_stage_rocket_core"
-    })
-    //序列组装：一阶火箭核心
-    let iner_1 = "createdelight:incomplete_first_stage_rocket_core"
-    e.recipes.create.sequenced_assembly([
-        Item.of("createdelight:first_stage_rocket_core").withChance(8),
-        Item.of("minecraft:nether_star").withChance(0.5),
-        Item.of("createbigcannons:nethersteel_block").withChance(1.5)
-    ],"createbigcannons:nethersteel_block", [
-        e.recipes.vintageimprovements.turning(iner_1, iner_1),
-        e.recipes.create.deploying(iner_1, [iner_1, 'immersive_aircraft:gyroscope']),
-        e.recipes.create.deploying(iner_1, [iner_1, "minecraft:nether_star"]),
-        e.recipes.create_new_age.energising(iner_1, iner_1, 4000)
-    ])
-        .transitionalItem(iner_1)
+{
+    let iner = 'createdelight:incomplete_basic_panel'
+    create.sequenced_assembly('createdelight:basic_panel', 'createdelight:aviation_fibers_sheet',
+        [
+            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.pressing(iner, iner)
+        ]
+    )
         .loops(1)
-        .id("createdelight:first_stage_rocket_core")
-    //序列组装：二阶火箭核心
-    let iner_2 = "createdelight:incomplete_second_stage_rocket_core"
-    e.recipes.create.sequenced_assembly([
-        Item.of("createdelight:second_stage_rocket_core").withChance(8),
-        Item.of("ad_astra:desh_block").withChance(2)
-    ],"ad_astra:desh_block", [
-        e.recipes.vintageimprovements.turning(iner_2, iner_2),
-        e.recipes.create.deploying(iner_2, [iner_2, "ad_astra:ice_shard"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "iceandfire:cyclops_eye"]),
-        e.recipes.create.deploying(iner_2, [iner_2, 'iceandfire:cockatrice_eye']),
-        e.recipes.create_new_age.energising(iner_2, iner_2, 40000)
-    ])
-        .transitionalItem(iner_2)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/basic_panel")
+}
+{
+    let iner = 'createdelight:incomplete_advanced_panel'
+    create.sequenced_assembly('createdelight:advanced_panel', 'createdelight:aviation_fibers_sheet',
+        [
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_desh", 180)]),
+            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.pressing(iner, iner)
+        ]
+    )
+       .loops(1)
+       .transitionalItem(iner)
+       .id("createdelight:sequenced_assembly/advanced_panel")
+    create.filling(
+        "createdelight:advanced_panel",
+        [
+            "createdelight:basic_panel",
+            Fluid.of("createdelightcore:molten_desh", 180)
+        ]
+    ).id("createdelight:filling/advanced_panel")
+}
+{
+    let iner = "createdelight:incomplete_explorer_panel"
+    create.sequenced_assembly('createdelight:explorer_panel', 'createdelight:aviation_fibers_sheet', 
+        [
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ostrum", 180)]),
+            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.deploying(iner, [iner, 'create_new_age:overcharged_iron_sheet']),
+            create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.pressing(iner, iner),
+            create_new_age.energising(iner, iner, 4000)
+        ]
+    )
         .loops(1)
-        .id("createdelight:second_stage_rocket_core")
-    //序列组装：三阶火箭核心
-    let iner_3 = "createdelight:incomplete_third_stage_rocket_core"
-    e.recipes.create.sequenced_assembly([
-        Item.of("createdelight:third_stage_rocket_core").withChance(8),
-        Item.of('ae2:engineering_processor').withChance(1),
-        Item.of("ad_astra:ostrum_block").withChance(1)
-    ],"ad_astra:ostrum_block", [
-        e.recipes.vintageimprovements.turning(iner_3, iner_3),
-        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:engineering_processor']),
-        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
-        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
-        e.recipes.create_new_age.energising(iner_3, iner_3, 400000)
-    ])
-        .transitionalItem(iner_3)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/explorer_panel")
+}
+{
+    let iner = "createdelight:incomplete_flare_panel"
+    create.sequenced_assembly('createdelight:flare_panel', 'createdelight:aviation_fibers_sheet', 
+        [
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_calorite", 180)]),
+            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.deploying(iner, [iner, 'create_new_age:overcharged_golden_sheet']),
+            create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.pressing(iner, iner),
+            create_new_age.energising(iner, iner, 8000)
+        ]
+    )
         .loops(1)
-        .id("createdelight:third_stage_rocket_core")
-    //序列组装：四阶火箭核心
-    let iner_4 = "createdelight:incomplete_fourth_stage_rocket_core"
-    e.recipes.create.sequenced_assembly([
-        Item.of("createdelight:fourth_stage_rocket_core").withChance(8),
-        Item.of('ae2:engineering_processor').withChance(0.5),
-        Item.of("ad_astra:calorite_block").withChance(1.5),
-    ],"ad_astra:calorite_block", [
-        e.recipes.vintageimprovements.turning(iner_4, iner_4),
-        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:engineering_processor']),
-        e.recipes.create.deploying(iner_3, [iner_3, 'ae2:fluix_crystal']),
-        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:fire_dragon_blood", 500)]),
-        e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createdelight:lightning_dragon_blood", 500)]),
-        e.recipes.create_new_age.energising(iner_4, iner_4, 800000)
-    ])
-        .transitionalItem(iner_4)
-        .loops(1)
-        .id("createdelight:fourth_stage_rocket_core")
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/flare_panel")
+}
+    //舱体
+    create.mechanical_crafting(
+        'createdelight:basic_cabin',
+        [
+            "ABA",
+            "ACA",
+            "ADA",
+            "AEA"
+        ], {
+            A: 'createdelight:basic_panel',
+            B: '#forge:glass_panes',
+            C: 'createdelight:basic_crystal_panel',
+            D: '#create:seats',
+            E: 'ad_astra:steel_engine'
+        }
+    ).id("createdelight:mechanical_crafting/basic_cabin")
+    create.mechanical_crafting(
+        'createdelight:advanced_cabin',
+        [
+            "ABA",
+            "ACA",
+            "ADA",
+            "AEA"
+        ], {
+            A: 'createdelight:advanced_panel',
+            B: '#forge:glass_panes',
+            C: 'createdelight:advanced_crystal_panel',
+            D: '#create:seats',
+            E: 'ad_astra:desh_engine'
+        }
+    ).id("createdelight:mechanical_crafting/advanced_cabin")
+    create.mechanical_crafting(
+        'createdelight:explorer_cabin',
+        [
+            "ABA",
+            "ACA",
+            "ADA",
+            "AEA"
+        ], {
+            A: 'createdelight:explorer_panel',
+            B: '#forge:glass_panes',
+            C: 'createdelight:holographic_interface_panel',
+            D: '#create:seats',
+            E: 'ad_astra:ostrum_engine'
+        }
+    ).id("createdelight:mechanical_crafting/explorer_cabin")
+    create.mechanical_crafting(
+        'createdelight:flare_cabin',
+        [
+            "ABA",
+            "ACA",
+            "ADA",
+            "AEA"
+        ], {
+            A: 'createdelight:flare_panel',
+            B: '#forge:glass_panes',
+            C: 'createdelight:quantum_field_panel',
+            D: '#create:seats',
+            E: 'ad_astra:calorite_engine'
+        }
+    ).id("createdelight:mechanical_crafting/flare_cabin")
+    //面板合成
+    create.mechanical_crafting(
+        'createdelight:basic_crystal_panel',
+        [
+            "AAA",
+            "ABA",
+            "ACA",
+            "AAA"
+        ], {
+            A: "ad_astra:steel_plate",
+            B: "immersive_aircraft:gyroscope",
+            C: "minecraft:nether_star"
+        }
+    ).id("createdelight:mechanical_crafting/basic_crystal_panel")
+    create.mechanical_crafting(
+        'createdelight:advanced_crystal_panel',
+        [
+            "AAA",
+            "ABA",
+            "ACA",
+            "AAA"
+        ], {
+            A: 'ad_astra:desh_plate',
+            B: "immersive_aircraft:gyroscope",
+            C: 'iceandfire:cyclops_eye'
+        }
+    ).id("createdelight:mechanical_crafting/advanced_crystal_panel")
+    create.mechanical_crafting(
+        'createdelight:holographic_interface_panel',
+        [
+            " A ",
+            "BBB",
+            "CDC"
+        ], {
+            A: "minecraft:light_blue_stained_glass_pane",
+            B: 'createutilities:polished_amethyst',
+            C: "ad_astra:ostrum_plate",
+            D: 'ae2:calculation_processor'
+        }
+    ).id("createdelight:mechanical_crafting/holographic_interface_panel")
+    create.mechanical_crafting(
+        'createdelight:quantum_field_panel',
+        [
+            "  A  ",
+            "BBCBB",
+            "BDEFB",
+            "BBBBB"
+        ], {
+            A: 'ae2:quantum_entangled_singularity',
+            B: 'ad_astra:calorite_plate',
+            C: "ae2:quantum_link",
+            D: 'ae2:calculation_processor',
+            E: 'ae2:logic_processor',
+            F: 'ae2:engineering_processor'
+        }
+    ).id("createdelight:mechanical_crafting/quantum_field_panel")
+    //火箭合成
+    create.mechanical_crafting(
+        'ad_astra:tier_1_rocket',
+        [
+            " A ",
+            "BCB",
+            "D D"
+        ], {
+            A: 'ad_astra:rocket_nose_cone',
+            B: 'ad_astra:steel_tank',
+            C: 'createdelight:basic_cabin',
+            D: 'ad_astra:steel_engine'
+        }
+    ).id("createdelight:mechanical_crafting/tier_1_rocket")
+    create.mechanical_crafting(
+        'ad_astra:tier_2_rocket',
+        [
+            "  A  ",
+            " BCB ",
+            " DED ",
+            "FG GF"
+        ], {
+            A: 'ad_astra:rocket_nose_cone',
+            B: 'ad_astra:steel_plate',
+            C: 'createdelight:advanced_panel',
+            D: 'ad_astra:desh_tank',
+            E: 'createdelight:advanced_cabin',
+            F: 'ad_astra:rocket_fin',
+            G: 'ad_astra:desh_engine'
+        }
+    ).id("createdelight:mechanical_crafting/tier_2_rocket")
+    create.mechanical_crafting(
+        'ad_astra:tier_3_rocket',
+        [
+            "  A  ",
+            " BCB ",
+            " CEC ",
+            "FDDDF",
+            "FGGGF"
+        ], {
+            A: 'ad_astra:rocket_nose_cone',
+            B: 'ad_astra:steel_plate',
+            C: 'createdelight:explorer_panel',
+            D: 'ad_astra:ostrum_tank',
+            E: 'createdelight:explorer_cabin',
+            F: 'ad_astra:rocket_fin',
+            G: 'ad_astra:ostrum_engine'
+        }
+    ).id("createdelight:mechanical_crafting/tier_3_rocket")
+    create.mechanical_crafting(
+        'ad_astra:tier_4_rocket',
+        [
+            "  A  ",
+            " BCB ",
+            " CEC ",
+            " CDC ",
+            "FDGDF",
+            "DG GD",
+            "G   G"
+        ], {
+            A: 'ad_astra:rocket_nose_cone',
+            B: 'ad_astra:steel_plate',
+            C: 'createdelight:flare_panel',
+            D: 'ad_astra:calorite_tank',
+            E: 'createdelight:flare_cabin',
+            F: 'ad_astra:rocket_fin',
+            G: 'ad_astra:calorite_engine'
+        }
+    ).id("createdelight:mechanical_crafting/tier_4_rocket")
 })

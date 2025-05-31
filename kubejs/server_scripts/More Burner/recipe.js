@@ -31,7 +31,7 @@ ServerEvents.recipes(e => {
     let iner_1 = "create:sturdy_sheet"
     create.sequenced_assembly("moreburners:heat_upgrade", iner_1, [
         create.deploying(iner_1, [iner_1, "moreburners:copper_coil"]),
-        create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_brass", 250)]),
+        create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_brass", 90)]),
         vintageimprovements.hammering(iner_1, iner_1)
     ])
     .loops(1)

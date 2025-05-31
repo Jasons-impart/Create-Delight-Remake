@@ -186,7 +186,7 @@ ServerEvents.recipes(e => {
         "alexscaves:seeking_arrow",
         [
             "minecraft:arrow",
-            Fluid.of("createdelightcore:molten_scarlet_neodymium", 15)
+            Fluid.of("createdelightcore:molten_scarlet_neodymium", 20)
         ]
     ).id("alexscaves:mixing/seeking_arrow")
 

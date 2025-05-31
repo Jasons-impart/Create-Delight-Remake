@@ -45,7 +45,7 @@
 			shape: "square"
 			tasks: [{
 				id: "1DE6A4A8FC0CEC85"
-				item: "createdelight:first_stage_rocket_core"
+				item: "createdelight:basic_crystal_panel"
 				type: "item"
 			}]
 			x: -2.0d
@@ -223,7 +223,7 @@
 			shape: "square"
 			tasks: [{
 				id: "673936FE60BF78AB"
-				item: "createdelight:second_stage_rocket_core"
+				item: "createdelight:advanced_crystal_panel"
 				type: "item"
 			}]
 			x: 4.0d
@@ -388,7 +388,7 @@
 			shape: "square"
 			tasks: [{
 				id: "7B6AAE6075EA0A08"
-				item: "createdelight:third_stage_rocket_core"
+				item: "createdelight:holographic_interface_panel"
 				type: "item"
 			}]
 			x: 10.0d
@@ -531,7 +531,7 @@
 			shape: "square"
 			tasks: [{
 				id: "061B087AD9D340E5"
-				item: "createdelight:fourth_stage_rocket_core"
+				item: "createdelight:quantum_field_panel"
 				type: "item"
 			}]
 			x: 16.0d

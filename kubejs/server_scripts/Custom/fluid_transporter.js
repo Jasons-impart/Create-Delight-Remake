@@ -5,7 +5,7 @@ ServerEvents.recipes(e => {
         'createfluidstuffs:multi_fluid_tank',
         [
             'create:fluid_tank',
-            Fluid.of("createmetallurgy:molten_brass", 500)
+            Fluid.of("createmetallurgy:molten_brass", 270)
         ]
     ).id("createfluidstuffs:multi_fluid_tank")
 })

@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
 
     create.filling("minecraft:golden_apple", ["minecraft:apple", Fluid.of("createmetallurgy:molten_gold", 450)])
     .id("createdelight:filling/golden_apple")
-    create.filling("minecraft:golden_carrot", ["minecraft:carrot", Fluid.of("createmetallurgy:molten_gold", 50)])
+    create.filling("minecraft:golden_carrot", ["minecraft:carrot", Fluid.of("createmetallurgy:molten_gold", 30)])
     .id("createdelight:filling/golden_carrot")
 
     createmetallurgy.casting_in_basin(

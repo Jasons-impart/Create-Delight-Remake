@@ -102,11 +102,11 @@ ServerEvents.recipes(e => {
         let iner = "art_of_forging:forged_steel_ingot"
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
             create.deploying(iner, [iner, "iceandfire:dread_shard"]),
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_fire_steel", 30)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_fire_steel", 90)]),
             create.deploying(iner, [iner, "art_of_forging:fragment_of_eden"]),
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 30)]),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ice_steel", 90)]),
             create.deploying(iner, [iner, "createdelight:dread_heart"]),
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_lightning_steel", 30)])
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_lightning_steel", 90)])
         ])
             .loops(1)
             .transitionalItem(iner)

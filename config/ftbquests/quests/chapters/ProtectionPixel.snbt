@@ -1561,6 +1561,12 @@
 						}
 					}
 					id: "protection_pixel:powerengine"
+					tag: {
+						Inventory: {
+							Items: [ ]
+							Size: 9
+						}
+					}
 				}
 				id: "4C9885BB5DF42836"
 				stat: "minecraft:play_time"
