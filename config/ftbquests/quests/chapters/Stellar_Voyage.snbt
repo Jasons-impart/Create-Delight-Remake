@@ -33,7 +33,7 @@
 			id: "5C9FA20C255A3BFC"
 			tasks: [{
 				id: "009523844DA486BD"
-				item: "createbigcannons:nethersteel_ingot"
+				item: "ad_astra:steel_plate"
 				type: "item"
 			}]
 			x: -2.0d
@@ -209,7 +209,7 @@
 				item: "ad_astra:desh_ingot"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 4.0d
 			y: 3.0d
 		}
 		{
@@ -217,7 +217,6 @@
 				"4A07C2D2DACFBFE8"
 				"4CBAD5F7903EBC40"
 				"605F75F85D1E9394"
-				"4AC2410412B59E7D"
 			]
 			id: "0A0BB141AA2503D6"
 			shape: "square"
@@ -381,7 +380,6 @@
 		{
 			dependencies: [
 				"393E1E2F429F9972"
-				"4905CB8A4C6492C0"
 				"37ACACC4F00E1811"
 			]
 			id: "19C23E7C7BF7589F"
@@ -393,19 +391,6 @@
 			}]
 			x: 10.0d
 			y: 5.0d
-		}
-		{
-			dependencies: ["73A7209A4AF710F8"]
-			hide_dependency_lines: true
-			id: "4905CB8A4C6492C0"
-			subtitle: "火龙会在火星上生成，不过火星上只有地表龙"
-			tasks: [{
-				id: "0F6DACC79F280CD2"
-				item: "iceandfire:fire_dragon_blood"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -523,8 +508,6 @@
 		{
 			dependencies: [
 				"0EF849425CE2BC23"
-				"64C8D6A690AB8AC0"
-				"01A002D240B8DF64"
 				"036F26ACC5571523"
 			]
 			id: "3EA892144D1A02BF"
@@ -536,19 +519,6 @@
 			}]
 			x: 16.0d
 			y: 5.0d
-		}
-		{
-			dependencies: ["6D431DA73BB7D209"]
-			hide_dependency_lines: true
-			id: "64C8D6A690AB8AC0"
-			subtitle: "电龙会在金星上生成，地表和地底都会有"
-			tasks: [{
-				id: "551430ED380415BE"
-				item: "iceandfire:lightning_dragon_blood"
-				type: "item"
-			}]
-			x: 15.0d
-			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -621,7 +591,7 @@
 				item: "ad_astra:cheese"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 3.0d
 			y: 3.0d
 		}
 		{
@@ -634,7 +604,7 @@
 				item: "ad_astra:ice_shard"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 2.0d
 			y: 3.0d
 		}
 		{
@@ -977,22 +947,14 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["393E1E2F429F9972"]
 			id: "37ACACC4F00E1811"
-			tasks: [
-				{
-					id: "73672501A08F3EAE"
-					item: "ae2:engineering_processor"
-					type: "item"
-				}
-				{
-					id: "4C9157F994EB6E3E"
-					item: "ae2:charged_certus_quartz_crystal"
-					type: "item"
-				}
-			]
-			x: 11.0d
-			y: 6.0d
+			tasks: [{
+				id: "73672501A08F3EAE"
+				item: "ae2:calculation_processor"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["74102256002B6071"]
@@ -1126,20 +1088,6 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["73A7209A4AF710F8"]
-			hide_dependency_lines: true
-			id: "01A002D240B8DF64"
-			subtitle: "在金星会生成地下的火龙巢"
-			tasks: [{
-				id: "716EDC4071098967"
-				item: "iceandfire:fire_dragon_blood"
-				type: "item"
-			}]
-			x: 15.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["0EF849425CE2BC23"]
 			id: "036F26ACC5571523"
 			subtitle: "{ \"text\": \"点此进入应用能源章节\", \"underlined\": \"true\",\"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7AF08EA4FB3D9A15\" } }"
 			tasks: [
@@ -1149,13 +1097,18 @@
 					type: "item"
 				}
 				{
-					id: "6E4DE5BA96ACC1F6"
-					item: "ae2:charged_certus_quartz_crystal"
+					id: "44B0F65D63A1131E"
+					item: "ae2:logic_processor"
+					type: "item"
+				}
+				{
+					id: "61CFFEF251773ADA"
+					item: "ae2:calculation_processor"
 					type: "item"
 				}
 			]
 			x: 17.0d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
