@@ -5,7 +5,9 @@ ServerEvents.recipes(e => {
         "brewinandchewin:cutting/flaxen_cheese_wheel",
         "brewinandchewin:fermenting/jerky",
         "brewinandchewin:emptying/create/honey_bottle",
-        "brewinandchewin:filling/create/honey_bottle"
+        "brewinandchewin:filling/create/honey_bottle",
+        "brewinandchewin:fermenting/kippers"
+        
     ])
     e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")
@@ -24,6 +26,11 @@ ServerEvents.recipes(e => {
         "#forge:sea_pickles",
         "minecraft:honey_bottle"
     ], 2500)
-
     .id("brewinandchewin:fermenting/pickled_pickles")
+    vintagedelight.fermenting("2x brewinandchewin:kippers", [
+        "#forge:raw_fishes",
+        "#forge:raw_fishes",
+        "minecraft:dried_kelp",
+        "#forge:salt"
+    ]).id("brewinandchewin:fermenting/kippers")
 })

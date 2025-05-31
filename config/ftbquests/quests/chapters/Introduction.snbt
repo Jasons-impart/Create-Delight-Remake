@@ -92,48 +92,22 @@
 		}
 		{
 			dependencies: ["64FB1FEC4F9721B7"]
-			description: ["注意！本整合包动物&e直接杀死&r&4不会掉落任何完整肉类&r！所有动物&4必须&r使用&4屠刀右键&r杀死！"]
-			icon: "minecraft:mutton"
+			description: ["整合包增加了节气mod，该mod修改了作物的生长，且机制较为复杂。在种植作物时请一定要阅读相关章节！"]
+			icon: "eclipticseasons:calendar"
 			id: "46F1F92929FC8F9F"
 			rewards: [{
-				id: "412F13F6349E82FE"
-				item: {
-					Count: 1
-					id: "netmusic:music_cd"
-					tag: {
-						NetMusicSongInfo: {
-							artists: ["The Journeymen"]
-							name: "500 Miles"
-							read_only: 0b
-							time: 193
-							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
-							vip: 0b
-						}
-					}
-				}
+				id: "2381C107B8FB38E9"
+				item: "eclipticseasons:hygrometer"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "本整合包添加了屠宰乐事"
-			tasks: [
-				{
-					id: "42B95E73286FD639"
-					type: "checkmark"
-				}
-				{
-					id: "1893FAE83B06F440"
-					item: {
-						Count: 1
-						id: "butchercraft:butcher_knife"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "屠宰相关"
+			subtitle: "本整合包添加了节气"
+			tasks: [{
+				id: "42B95E73286FD639"
+				type: "checkmark"
+			}]
+			title: "种植相关"
 			x: 6.0d
 			y: -6.0d
 		}
