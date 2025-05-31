@@ -28,9 +28,9 @@ ServerEvents.recipes(e => {
     let iner_2 = "createdelight:incomplete_reinforced_motor"
     e.recipes.create.sequenced_assembly("create_new_age:reinforced_motor", "create_new_age:advanced_motor",
         [
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 250)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 250)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 250)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 90)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 90)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 90)]),
             e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:lubricating_oil", 100)]),
             e.recipes.create.deploying(iner_2, [iner_2, "create_new_age:overcharged_diamond"]),
             e.recipes.create.deploying(iner_2, [iner_2, "createaddition:brass_rod"])
@@ -83,11 +83,11 @@ ServerEvents.recipes(e => {
     let iner_4 = "create_new_age:basic_motor_extension"
     e.recipes.create.sequenced_assembly("create_new_age:advanced_motor_extension", "create_new_age:basic_motor_extension",
         [
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_void_steel", 250)]),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_void_steel", 90)]),
             e.recipes.create.deploying(iner_4, [iner_4, "ae2:logic_processor"]),
             e.recipes.create.deploying(iner_4, [iner_4, "ae2:calculation_processor"]),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_silver", 250)]),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_brass", 250)])
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_silver", 90)]),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_brass", 90)])
         ]
     )
        .loops(4)

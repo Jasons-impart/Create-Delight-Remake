@@ -31,18 +31,47 @@ StartupEvents.registry("fluid", e => {
         ret.translationKey("fluid.createdelight." + id.split(":")[1])
         return ret
     }
+        /**
+     * 
+     * @param {string} id 
+     * @param {boolean} [hasBlock] 默认为true
+     * @param {boolean} [hasBucket] 默认为true
+     * @param {ResourceLocation_} resourcelocation 默认存放在createdelight/asset/fluid/id下,且必须为still及flowing两个
+     * @returns 
+     */
+    let textureFluid = function (id, hasBlock, hasBucket, resourcelocation) {
+        let ret = e.create(id)
+        hasBlock = hasBlock == null ? true : hasBlock
+        hasBucket = hasBucket == null ? true : hasBucket
+        resourcelocation = resourcelocation == null? `createdelight:fluid/${id.split(":")[1]}` : resourcelocation
+
+
+        if (!hasBlock)
+            ret.noBlock()
+        else
+            ret.translationKey("block.createdelight." + id.split(":")[1])
+        if (!hasBucket)
+            ret.noBucket()
+        else {
+            ret.translationKey("item.createdelight." + id.split(":")[1] + "_bucket")
+        }
+        ret.translationKey("fluid.createdelight." + id.split(":")[1])
+        ret.stillTexture(resourcelocation + "/still")
+        ret.flowingTexture(resourcelocation + "/flowing")
+        return ret
+    }
+
     simpleFluid("createdelight:fuel_mixtures", 0X8470FF)
     simpleFluid("createdelight:light_crude_oil", 0X8B7E66)
     simpleFluid("createdelight:ethylene_gas", 0XF0FFFF, true, false, false)
     simpleFluid("createdelight:ethylene_fluid", 0XE6E6FA)
-    simpleFluid("createdelight:lubricating_oil", 0XFFC125, false)
     simpleFluid("createdelight:malice_solution", 0X33E6EF, false)
     simpleFluid("createdelight:sky_solution", 0X494949, false)
     simpleFluid("createdelight:spent_liquor", 0X99ffcd)
     simpleFluid("createdelight:paper_pulp", 0xF0FFFF)
     simpleFluid("createdelight:unfermented_paper_pulp", 0xF0FFFF, false)
     simpleFluid("createdelight:nut_milk", 0xf5e7c2, true, false)
-    .tag("forge:milk")
+        .tag("forge:milk")
     simpleFluid("createdelight:tree_star_tea", 0x6ca30e, true, false, false)
     simpleFluid("createdelight:jellyfish_soda", 0x85d5f0, true, false, false)
     simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
@@ -68,6 +97,25 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:genmai_tea", 0xb8a32f, true, false, false)
     simpleFluid("createdelight:green_water", 0x79ad5c, true, false, false)
     simpleFluid("createdelight:white_tea", 0xdbcfaa, true, false, false)
+    
+    textureFluid("createdelight:lubricating_oil")
+    textureFluid("createdelight:cake_batter")
+    textureFluid("createdelight:egg_yolk")
+    textureFluid("createdelight:whipped_cream")
+        .createAttributes()
+        .tickDelay(10)
+    let bloods = [
+        "fire_dragon",
+        "ice_dragon",
+        "lightning_dragon"
+    ]
+    bloods.forEach(blood => {
+        textureFluid(`createdelight:${blood}_blood`)
+            .tag("forge:bloods")
+            .createAttributes()
+            .tickDelay(10)
+    })
+
 
     let vinery_fluid_list = [
         ["apple_juice", 0xeed4a7],
@@ -144,47 +192,5 @@ StartupEvents.registry("fluid", e => {
             .translationKey(`fluid.createdelight.${fluid[0]}_fluid`)
             .translationKey(`block.createdelight.${fluid[0]}_fluid`)
     })
-
-    // 鲜奶油
-    e.create("createdelight:whipped_cream")
-        .stillTexture("createdelight:fluid/whipped_cream/still")
-        .flowingTexture("createdelight:fluid/whipped_cream/flowing")
-        .translationKey("fluid.createdelight.whipped_cream")
-        .translationKey("block.createdelight.whipped_cream")
-        .translationKey("item.createdelight.whipped_cream_bucket")
-        .createAttributes()
-        .tickDelay(10)
-
-    // 龙血相关
-    let bloods = [
-        "fire_dragon",
-        "ice_dragon",
-        "lightning_dragon"
-    ]
-    bloods.forEach(blood => {
-        e.create(`createdelight:${blood}_blood`)
-            .stillTexture(`createdelight:fluid/${blood}_blood/still`)
-            .flowingTexture(`createdelight:fluid/${blood}_blood/flowing`)
-            .translationKey(`fluid.createdelight.${blood}_blood`)
-            .translationKey(`block.createdelight.${blood}_blood`)
-            .translationKey(`item.createdelight.${blood}_blood_bucket`)
-            .tag("forge:bloods")
-            .createAttributes()
-            .tickDelay(10)
-    })
-    
-    //蛋黄以及蛋糕糊
-    e.create("createdelight:cake_batter")
-        .stillTexture("ratatouille:fluid/cake_batter_still")
-        .flowingTexture("ratatouille:fluid/cake_batter_flow")
-        .translationKey("fluid.createdelight.cake_batter")
-        .translationKey("block.createdelight.cake_batter")
-        .translationKey("item.createdelight.cake_batter_bucket")
-    e.create("createdelight:egg_yolk")
-        .stillTexture("ratatouille:fluid/egg_yolk_still")
-        .flowingTexture("ratatouille:fluid/egg_yolk_flow")
-        .translationKey("fluid.createdelight.egg_yolk")
-        .translationKey("block.createdelight.egg_yolk")
-        .translationKey("item.createdelight.egg_yolk_bucket")
     
 })

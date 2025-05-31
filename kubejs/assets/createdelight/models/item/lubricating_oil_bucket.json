@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "createdelight:item/lubricating_oil_bucket"
+  }
+}

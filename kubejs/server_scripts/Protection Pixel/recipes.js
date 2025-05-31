@@ -408,7 +408,7 @@ ServerEvents.recipes(e => {
         e.remove({ id: id })
         e.recipes.create.sequenced_assembly(result, ingredient,
             [
-                e.recipes.create.filling(ingredient, [ingredient, Fluid.of("createmetallurgy:molten_steel").withAmount(250)]),
+                e.recipes.create.filling(ingredient, [ingredient, Fluid.of("createmetallurgy:molten_steel").withAmount(90)]),
                 e.recipes.vintageimprovements.hammering(ingredient, ingredient),
                 e.recipes.create.deploying(ingredient, [ingredient, "create:sturdy_sheet"]),
                 e.recipes.create.deploying(ingredient, [ingredient, "createmetallurgy:tungsten_sheet"]),

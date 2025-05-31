@@ -18,6 +18,25 @@ ServerEvents.recipes(e => {
         "createdelight:andesite_export_bus"
     )
         .id("createdelight:andesite_import_bus_from_export_bus")
+    //钢总线
+    e.recipes.create.item_application(
+        "createdelight:steel_import_bus",
+        [
+            "createdelightcore:steel_casing",
+            "functionalstorage:controller_extension"
+        ]
+    )
+       .id("createdelight:steel_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:steel_export_bus",
+        "createdelight:steel_import_bus"
+    )
+       .id("createdelight:steel_export_bus_from_import_bus")
+    e.recipes.kubejs.shapeless(
+        "createdelight:steel_import_bus",
+        "createdelight:steel_export_bus"
+    )
+      .id("createdelight:steel_import_bus_from_export_bus")
     //锻造钢总线
     e.recipes.create.item_application(
         "createdelight:forged_steel_import_bus",

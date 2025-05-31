@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
         [
             e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
             e.recipes.create.deploying(iner_4, [iner_4, 'createmetallurgy:graphite']),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelightcore:molten_andesite",250)])
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelightcore:molten_andesite",90)])
         ]
     )
         .loops(4)
