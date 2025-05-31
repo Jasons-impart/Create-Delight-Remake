@@ -1,7 +1,7 @@
 ServerEvents.recipes(e => {
     //安山总线
     e.recipes.create.item_application(
-        "createdelight:andesite_import_bus", 
+        "createdelight:andesite_import_bus",
         [
             "create:andesite_casing",
             "functionalstorage:controller_extension"
@@ -26,17 +26,17 @@ ServerEvents.recipes(e => {
             "functionalstorage:controller_extension"
         ]
     )
-       .id("createdelight:steel_import_bus")
+        .id("createdelight:steel_import_bus")
     e.recipes.kubejs.shapeless(
         "createdelight:steel_export_bus",
         "createdelight:steel_import_bus"
     )
-       .id("createdelight:steel_export_bus_from_import_bus")
+        .id("createdelight:steel_export_bus_from_import_bus")
     e.recipes.kubejs.shapeless(
         "createdelight:steel_import_bus",
         "createdelight:steel_export_bus"
     )
-      .id("createdelight:steel_import_bus_from_export_bus")
+        .id("createdelight:steel_import_bus_from_export_bus")
     //锻造钢总线
     e.recipes.create.item_application(
         "createdelight:forged_steel_import_bus",
@@ -151,4 +151,52 @@ ServerEvents.recipes(e => {
         B: "#forge:chests",
         C: "lightmanscurrency:trading_core"
     }).id("createdelight:sell_bin")
+
+    e.recipes.create.mechanical_crafting("createdelight:big_centrifuge", [
+        "AABAA",
+        "ACCDA",
+        "BCEDA",
+        "ACDDA",
+        "AABAA"
+    ], {
+        A: "createdelightcore:steel_casing",
+        B: "createdelight:magnetic_mechanism",
+        C: "#forge:ingots/scarlet_neodymium",
+        D: "#forge:ingots/azure_neodymium",
+        E: "alexscaves:heart_of_iron"
+    }).id("createdelight:mechanical_crafting/big_centrifuge")
+    e.recipes.create.mechanical_crafting("createdelight:centrifuge_rotor", [
+        " A A ",
+        "ABABA",
+        " ACA ",
+        "ABABA",
+        " A A "
+    ], {
+        A: "#forge:plates/aviation_fibers",
+        B: "#forge:spring/over_1000",
+        C: "vintageimprovements:centrifuge"
+    }).id("createdelight:mechanical_crafting/centrifuge_rotor")
+    e.recipes.create.mechanical_crafting("createdelight:fission_fuel_assembly", [
+        "AAAAA",
+        "ABCBA",
+        "ABCBA",
+        "AAAAA"
+    ], {
+        A: "create_new_age:reactor_casing",
+        B: "alexscaves:uranium_rod",
+        C: "alexscaves:fissile_core"
+    }).id("createdelight:mechanical_crafting/fission_fuel_assembly")
+    e.recipes.create.mechanical_crafting("createdelight:fission_reactor", [
+        "AAAAA",
+        "ABCBA",
+        "ADEDA",
+        "ABCBA",
+        "AAAAA"
+    ], {
+        A: "create_new_age:reactor_casing",
+        B: "ae2:engineering_processor",
+        C: "alexscaves:fissile_core",
+        D: "ae2:logic_processor",
+        E: "vintageimprovements:redstone_module"
+    }).id("createdelight:mechanical_crafting/fission_reactor")
 })
