@@ -99,15 +99,30 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
         'fruitsdelight:mangosteen_leaves',
-        'minecraft:sweet_berry_bush'
+        'minecraft:sweet_berry_bush',
     )
     e.add("quality_food:quality_blocks", 
-        "#createdelight:quality_crops"
+        "#createdelight:quality_crops",
+        "minecraft:sea_pickle",
+        "minecraft:moss_block",
+
     )
 })
 
 ServerEvents.tags("item", e => {
     e.add("quality_food:material_whitelist", [
+        'farmersdelight:brown_mushroom_colony',
+        'farmersrespite:coffee_beans',
+        'farmersdelight:red_mushroom_colony', 
+        'mynethersdelight:crimson_fungus_colony', 
+        'mynethersdelight:warped_fungus_colony', 
+        'collectorsreap:portobello_colony',
+        'minecraft:brown_mushroom', 
+        'minecraft:red_mushroom', 
+        'collectorsreap:portobello', 
+        'minecraft:crimson_fungus', 
+        'minecraft:warped_fungus',
+        'minecraft:kelp',
         'create:cinder_flour',
         'ratatouille:salty_dough', 
         'ratatouille:wheat_kernels', 
@@ -198,5 +213,7 @@ ServerEvents.tags("item", e => {
         'youkaishomecoming:dried_mandrake_flower', 
         'collectorsreap:pomegranate', 
         'collectorsreap:lime_popsicle', 
-        'collectorsreap:urchin'])
+        'collectorsreap:urchin',
+        'brewinandchewin:unripe_scarlet_cheese_wheel',
+    ])
 })

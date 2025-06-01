@@ -28,7 +28,19 @@ ServerEvents.tags("block", e => {
     "neapolitan:small_banana_frond",
     "neapolitan:banana_frond",
     "neapolitan:large_banana_frond",
-    "neapolitan:mint"
+    "neapolitan:mint",
+    "farmersdelight:brown_mushroom_colony", 
+    "farmersdelight:red_mushroom_colony", 
+    "mynethersdelight:crimson_fungus_colony", 
+    "mynethersdelight:warped_fungus_colony", 
+    "collectorsreap:portobello_colony",
+    "minecraft:brown_mushroom", 
+    "minecraft:red_mushroom", 
+    "collectorsreap:portobello", 
+    "minecraft:crimson_fungus",
+    "minecraft:warped_fungus",
+    "mynethersdelight:powdery_cannon",
+    "mynethersdelight:bullet_pepper"
   )
 })
 ServerEvents.tags("fluid", e => {
