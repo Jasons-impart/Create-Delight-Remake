@@ -4,6 +4,6 @@ ServerEvents.tags("minecraft:item", e => {
         "mynethersdelight:ghasta"
     )
     e.add("createdelight:silverfish_meat",
-        "dungeonsdelight:silverfish_thorax",
+        "dungeonsdelight:silverfish_abdomen",
         "miners_delight:silverfish_eggs")
 })
