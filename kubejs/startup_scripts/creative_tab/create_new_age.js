@@ -1,0 +1,26 @@
+StartupEvents.modifyCreativeTab("create_new_age:create_new_age_tab", e => {
+  e.remove([
+    'create_new_age:copper_wire',
+    'create_new_age:overcharged_diamond_wire',
+    'create_new_age:overcharged_iron_wire',
+    'create_new_age:overcharged_golden_wire',
+    'create_new_age:blank_circuit',
+    'create_new_age:electrical_connector',
+    'create_new_age:copper_circuit',
+    'create_new_age:heater',
+    'create_new_age:heat_pump',
+    'create_new_age:heat_pipe',
+    'create_new_age:stirling_engine',
+    'create_new_age:basic_solar_heating_plate',
+    'create_new_age:advanced_solar_heating_plate',
+    'create_new_age:reactor_rod',
+    'create_new_age:reactor_heat_vent',
+    'create_new_age:reactor_fuel_acceptor',
+    'create_new_age:solid_corium',
+    'create_new_age:corium',
+  ])
+  e.add([
+    'alexscaves:block_of_scarlet_neodymium',
+    'alexscaves:block_of_azure_neodymium'
+  ])
+})

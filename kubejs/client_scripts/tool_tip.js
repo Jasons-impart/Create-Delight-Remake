@@ -33,6 +33,12 @@ ItemEvents.tooltip(e => {
         "createdelight:sprinkler",
         'createdelight:sell_bin',
         'vintagedelight:cheese_mold',
+        'createdelight:fuel_hotcream',
+        'createdelight:blood_collection_device',
+        'luncheonmeatsdelight:luncheon_meat_can',
+        'luncheonmeatsdelight:can_shell_small_toast',
+        'bakeries:mould_toast',
+        'bakeries:mould_cheese_cocoa_toast',
     ])
     clearAddShiftCtrlTooltip(e, [
 
@@ -52,11 +58,6 @@ let tooltips = [
     ['createdieselgenerators:large_diesel_engine', "§4下面有错误, 最多应为32768su", "§4-> the following contains an error, should be up to 32768su"],
     ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su"],
     ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
-    ["createdelight:oat_bread", "§9生命恢复（00:03）", "§9Regeneration(00:03)"],
-    ["culturaldelights:pickle", "§9滋养（00:30）", "§9Nourishment(00:30)"],
-    ["culturaldelights:cut_pickle", "§9滋养（00:15）", "§9Nourishment(00:15)"],
-    ['create_central_kitchen:chocolate_cake_slice', "§9甜蜜冲刺（00:10）", "§9Sugar Rush(00:10)"],
-    ['create_central_kitchen:chocolate_cake_slice', "§9能量冲击（00:10）", "§9Sugar Rush(00:10)"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
     // ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
     // ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],

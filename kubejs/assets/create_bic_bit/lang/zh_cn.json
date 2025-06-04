@@ -130,6 +130,10 @@
     "create_bic_bit.ponder.mechanical_fryer.header" : "使用机械炸锅处理物品",
     "create_bic_bit.ponder.mechanical_fryer.text_1" : "使用炸锅和盆，可以油炸一些食品",
     "create_bic_bit.ponder.mechanical_fryer.text_2" : "将盆装满炸油",
-    "create_bic_bit.ponder.mechanical_fryer.text_3" : "油炸需要烈焰燃烧器的热量"
-  }
+    "create_bic_bit.ponder.mechanical_fryer.text_3" : "油炸需要烈焰燃烧器的热量",
+
+    "effect.create_bic_bit.unanchored.description": "随机传送玩家",
+    "effect.create_bic_bit.oiled_up.description": "使玩家随机掉落物品、从梯子摔落、水中漂浮，但下雨时获得飞行能力"
+
+}
   

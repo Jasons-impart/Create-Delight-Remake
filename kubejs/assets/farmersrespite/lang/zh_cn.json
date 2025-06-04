@@ -40,6 +40,7 @@
     "block.farmersrespite.yellow_tea_leaves_sack": "袋装乌龙茶叶",
     "death.attack.farmersrespite.witherRoots": "%1$s不慎在花园中凋零了",
     "effect.farmersrespite.caffeinated": "咖啡冲击",
+    "effect.farmersrespite.caffeinated.description": "增加攻击速度和攻击伤害",
     "farmersdelight.tooltip.gamblers_tea": "有50%的概率获得发光效果，或者获得凋零效果",
     "farmersdelight.tooltip.long_gamblers_tea": "有50%的概率获得发光效果，或者获得凋零效果",
     "farmersdelight.tooltip.long_purulent_tea": "延长1个效果15秒",

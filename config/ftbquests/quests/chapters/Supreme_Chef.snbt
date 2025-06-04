@@ -144,8 +144,8 @@
 				type: "item"
 			}]
 			title: "我寻思这能用厨锅做"
-			x: -16.5d
-			y: 1.0d
+			x: -16.46666666666666d
+			y: 1.9809523809523881d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -1877,59 +1877,6 @@
 			y: 6.5d
 		}
 		{
-			dependencies: ["0DB5F873297C3601"]
-			id: "16DFD4344F249ED4"
-			rewards: [{
-				id: "6CFDB8C4C079EA29"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "一起火锅吧"
-			tasks: [{
-				id: "7D49BD565C0E23C6"
-				item: "everyxhotpot:hotpot"
-				type: "item"
-			}]
-			x: -16.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["16DFD4344F249ED4"]
-			id: "476E63AA4FCC1020"
-			rewards: [{
-				id: "7F0E4A245635847A"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "饭前准备"
-			tasks: [
-				{
-					id: "5B994406BDBCF08D"
-					item: "everyxhotpot:hotpot_small_plate"
-					type: "item"
-				}
-				{
-					id: "357140BF4BE4EBDB"
-					item: "everyxhotpot:hotpot_long_plate"
-					type: "item"
-				}
-				{
-					id: "43AF86A0D637EBD0"
-					item: "everyxhotpot:hotpot_chopstick"
-					type: "item"
-				}
-				{
-					id: "23F6DE1E2E3286DF"
-					item: "everyxhotpot:hotpot_spice_pack"
-					type: "item"
-				}
-			]
-			x: -15.0d
-			y: 3.0d
-		}
-		{
 			dependencies: ["1E01FC2BE0941E79"]
 			id: "5C0A0EDD9E99B4A8"
 			rewards: [{
@@ -2672,7 +2619,7 @@
 			}]
 			title: "Alex生物？"
 			x: -15.0d
-			y: 1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -3674,7 +3621,7 @@
 			}]
 			title: "美味无需多盐！"
 			x: -15.0d
-			y: 0.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["393F7F1F2698D4EB"]
@@ -3686,7 +3633,7 @@
 			}]
 			title: "时间的味道！"
 			x: -14.0d
-			y: 0.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["110EED3EE1EDAA42"]
@@ -3826,7 +3773,7 @@
 			}]
 			title: "&e九转大肠"
 			x: -17.0d
-			y: -0.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["236182632D72C634"]
@@ -3837,7 +3784,7 @@
 				type: "item"
 			}]
 			x: -16.0d
-			y: -0.5d
+			y: 0.5d
 		}
 		{
 			dependencies: ["5EB3B636A6FEA921"]

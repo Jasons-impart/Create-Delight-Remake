@@ -185,8 +185,8 @@
   "effect.farmersdelight.nourishment": "滋养",
   "effect.farmersdelight.comfort": "舒适",
 
-  "effect.farmersdelight.nourishment.0.desc": "你不会再消耗饥饿值，除非需要借以恢复生命值。",
-  "effect.farmersdelight.comfort.0.desc": "使你对饥饿、缓慢和虚弱效果免疫。",
+  "effect.farmersdelight.nourishment.description": "不再消耗除回复生命以外原因的饥饿值",
+  "effect.farmersdelight.comfort.description": "免疫饥饿、缓慢和虚弱效果",
 
   "enchantment.farmersdelight.backstabbing": "背刺",
   "enchantment.farmersdelight.backstabbing.desc": "增加从后攻击目标时的伤害。",
@@ -288,5 +288,38 @@
   "farmersdelight.jei.decomposition.accelerators": "周围有以下催化物时加快",
   "farmersdelight.jei.info.straw": "用于合成的干燥植物纤维。使用小刀破坏草类植物或作物方块可以获得。",
   "farmersdelight.jei.info.knife": "小刀是轻量的近战武器。你可以用它们从草类植物中获得草秆，也可以击杀动物以获得副掉落物。",
-  "farmersdelight.jei.info.ham": "从猪或疣猪兽腿上切下的一大块肉。剑太大了，想切下它你得找一把更轻的工具……"
+  "farmersdelight.jei.info.ham": "从猪或疣猪兽腿上切下的一大块肉。剑太大了，想切下它你得找一把更轻的工具……",
+
+  "block.farmersdelight.cherry_cabinet": "Cherry Cabinet",
+  "block.farmersdelight.bamboo_cabinet": "Bamboo Cabinet",
+
+  "block.farmersdelight.hanging_canvas_sign": "Hanging Canvas Sign",
+  "block.farmersdelight.white_hanging_canvas_sign": "White Hanging Canvas Sign",
+  "block.farmersdelight.orange_hanging_canvas_sign": "Orange Hanging Canvas Sign",
+  "block.farmersdelight.magenta_hanging_canvas_sign": "Magenta Hanging Canvas Sign",
+  "block.farmersdelight.light_blue_hanging_canvas_sign": "Light Blue Hanging Canvas Sign",
+  "block.farmersdelight.yellow_hanging_canvas_sign": "Yellow Hanging Canvas Sign",
+  "block.farmersdelight.lime_hanging_canvas_sign": "Lime Hanging Canvas Sign",
+  "block.farmersdelight.pink_hanging_canvas_sign": "Pink Hanging Canvas Sign",
+  "block.farmersdelight.gray_hanging_canvas_sign": "Gray Hanging Canvas Sign",
+  "block.farmersdelight.light_gray_hanging_canvas_sign": "Light Gray Hanging Canvas Sign",
+  "block.farmersdelight.cyan_hanging_canvas_sign": "Cyan Hanging Canvas Sign",
+  "block.farmersdelight.purple_hanging_canvas_sign": "Purple Hanging Canvas Sign",
+  "block.farmersdelight.blue_hanging_canvas_sign": "Blue Hanging Canvas Sign",
+  "block.farmersdelight.brown_hanging_canvas_sign": "Brown Hanging Canvas Sign",
+  "block.farmersdelight.green_hanging_canvas_sign": "Green Hanging Canvas Sign",
+  "block.farmersdelight.red_hanging_canvas_sign": "Red Hanging Canvas Sign",
+  "block.farmersdelight.black_hanging_canvas_sign": "Black Hanging Canvas Sign",
+
+  "farmersdelight.block.skillet.underwater": "Can't cook while flooded...",
+  "farmersdelight.item.skillet.underwater": "Can't cook underwater...",
+
+  "farmersdelight.jei.info.wild_cabbages": "Cabbages can be commonly found as a wild plant in beach coasts.",
+  "farmersdelight.jei.info.wild_beetroots": "Beetroot can be commonly found as a wild plant in beach coasts.",
+  "farmersdelight.jei.info.wild_carrots": "Carrots can be commonly found as a wild plant in temperate lands, such as plains and forests.",
+  "farmersdelight.jei.info.wild_onions": "Onions can be commonly found as a wild plant in temperate lands, such as plains and forests.",
+  "farmersdelight.jei.info.wild_potatoes": "Potatoes can be commonly found as a wild plant in cold lands, such as mountains and taigas.",
+  "farmersdelight.jei.info.wild_tomatoes": "Tomatoes can be commonly found as a wild plant in arid lands, such as savannas and deserts.",
+  "farmersdelight.jei.info.wild_rice": "Rice can be commonly found as a wild plant in the ponds of wet lands, such as swamps and jungles."
 }
+

@@ -1,0 +1,41 @@
+{
+  "itemGroup.cmr": "Create More Recipes",
+
+  "create.recipe.fan_custom.fan": "Fan behind a block",
+  "create.recipe.fan_custom": "Fan with custom block",
+  "create.recipe.block_spout": "Block Spouting",
+  "create.recipe.heat_requirement.cooled": "Cooled",
+  "create.recipe.heat_requirement.frozen": "Frozen",
+
+  "block.cmr.snowman_cooler": "Snowman Cooler",
+  "block.cmr.empty_snowman_cooler": "Empty Snowman Cooler",
+  "block.cmr.block_spout": "Block Spout",
+  "block.cmr.smithing_press": "Smithing Press",
+
+  "item.cmr.frozen_cake": "Frozen Cake",
+  "item.cmr.frozen_cake_base": "Frozen Cake Base",
+
+  "cmr.ponder.empty_snowman_cooler.header": "Using Empty Snowman Coolers",
+  "cmr.ponder.empty_snowman_cooler.text_1": "Right-click a Snowman with the empty cooler to capture it",
+  "cmr.ponder.empty_snowman_cooler.text_2": "Alternatively, Snowmen can be collected from their Spawners directly",
+  "cmr.ponder.empty_snowman_cooler.text_3": "You now have an ideal cold source for various machines",
+
+  "cmr.ponder.snowman_cooler.header": "Feeding Snowman Coolers",
+  "cmr.ponder.snowman_cooler.text_1": "Snowman Coolers can provide Cold to Items processed in a Basin",
+  "cmr.ponder.snowman_cooler.text_2": "For this, the Snowman has to be fed with cold items",
+  "cmr.ponder.snowman_cooler.text_3": "With a Snow Cake, the Cooler can reach an even stronger level of cold",
+  "cmr.ponder.snowman_cooler.text_4": "The feeding process can be automated using Deployers or Mechanical Arms",
+
+  "cmr.ponder.smithing.header": "Processing Items with the Smithing Press",
+  "cmr.ponder.smithing.text_1": "The Smithing Press can process items provided beneath it",
+  "cmr.ponder.smithing.text_2": "The Input item can be placed on a Depot under the Press",
+  "cmr.ponder.smithing.text_3": "The Template can be placed by right clicking the top or the bottom of the Press",
+  "cmr.ponder.smithing.text_4": "The Addition can be placed by right clicking the sides of the Press",
+
+  "cmr.ponder.block_spout.header": "Filling Blocks using a Block Spout",
+  "cmr.ponder.block_spout.text_1": "The Block Spout can modify block beneath it with fluid",
+  "cmr.ponder.block_spout.text_2": "The content of a Block Spout cannot be accessed manually",
+  "cmr.ponder.block_spout.text_3": "Instead, Pipes can be used to supply it with fluids",
+  "cmr.ponder.block_spout.text_4": "The Input block can be placed under the Block Spout"
+
+}
