@@ -127,8 +127,6 @@
   - 拍照 https://www.mcmod.cn/class/12905.html
 - Tide
   - 潮汐 https://www.mcmod.cn/class/13540.html
-- 地牢浮现之时 - 海洋扩展
-  - https://www.mcmod.cn/class/13131.html
 - Mmobs
   - Mowzie的生物 https://www.mcmod.cn/class/984.html
 - Rustic Engineer
@@ -149,6 +147,8 @@
   - https://www.mcmod.cn/class/12933.html
 - 迎战
   - https://www.mcmod.cn/class/4204.html
+- 突变生物
+  - 拟与生物科技相联 https://www.mcmod.cn/class/10081.html
 - Mokels Bossfight: Kinora
   - https://www.mcmod.cn/class/15496.html
 - Mokels The Shattered Goddess

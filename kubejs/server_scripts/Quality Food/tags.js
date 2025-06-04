@@ -100,6 +100,8 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:apple_leaves',
         'fruitsdelight:mangosteen_leaves',
         'minecraft:sweet_berry_bush',
+        'mynethersdelight:powdery_cane',
+        'mynethersdelight:bullet_pepper'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops",
