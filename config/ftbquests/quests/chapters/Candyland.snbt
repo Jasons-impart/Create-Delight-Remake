@@ -38,13 +38,13 @@
 			id: "2CC1BC6ACE08C47A"
 			rewards: [{
 				id: "2AD00BA8AFCFDC5E"
-				item: "alexscaves:caramel"
+				item: "create_confectionery:bar_of_caramel"
 				random_bonus: 2
 				type: "item"
 			}]
 			tasks: [{
 				entity: "alexscaves:caramel_cube"
-				icon: "alexscaves:caramel"
+				icon: "create_confectionery:bar_of_caramel"
 				id: "6E2A924B448CC879"
 				title: "击杀焦糖怪"
 				type: "kill"
@@ -427,7 +427,7 @@
 				type: "item"
 			}]
 			x: 3.5d
-			y: -2.8d
+			y: -3.0d
 		}
 		{
 			dependencies: ["35A44DD49F796034"]
@@ -1001,6 +1001,16 @@
 			}]
 			x: -2.0d
 			y: 3.0d
+		}
+		{
+			id: "0501DD97040BC06D"
+			tasks: [{
+				id: "41B0CD4618CB03F2"
+				item: "alexscaves:candy_cane"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -4.5d
 		}
 	]
 	title: "&d糖果世界"

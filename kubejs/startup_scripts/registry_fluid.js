@@ -154,7 +154,7 @@ StartupEvents.registry("fluid", e => {
         simpleFluid(`createdelight:${list[0]}`, list[1], list[2], false, false)
     })
 
-    //冰淇淋流体
+    //奶昔流体
     let icecream_list = [
         ["vanilla", 0xfceeca],
         ["chocolate", 0xefa385],
@@ -163,7 +163,8 @@ StartupEvents.registry("fluid", e => {
         ["mint", 0x8bf1ac],
         ["adzuki", 0xfcc4b3],
         ["lime", 0xd4f4aa],
-        ["pomegranate", 0xf9a8af]
+        ["pomegranate", 0xf9a8af],
+        ["sweetberry", 0xe97285]
     ]
     icecream_list.forEach((list) => {
         e.create(`createdelight:${list[0]}_milkshake`)

@@ -5,7 +5,7 @@ ServerEvents.recipes(e => {
         "cmr:frozen_cake"
     ])
     create.compacting("cmr:frozen_cake_base", [
-        Fluid.of("ratatouille:cake_batter", 500),
+        Fluid.of("createdelight:cake_batter", 500),
         "minecraft:snowball"
     ])
     // .heatRequirement("frozen")

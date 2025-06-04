@@ -1,0 +1,27 @@
+{
+  "effect.netherexp.fogsight.description": "无效果",
+  "effect.netherexp.unbounded_speed.description": "在灵魂沙上行走时，将移动速度提升至正常行走速度，并增加灵魂卷须中灵阶怪出现的概率",
+  "effect.netherexp.betrayed.description": "禁止玩家放置方块，使大多数敌对生物在未被攻击时忽略用户，并为产生浓厚红雾",
+  "effect.netherexp.speed_immunity.description": "使玩家免疫速度",
+  "effect.netherexp.slowness_immunity.description": "使玩家免疫缓慢",
+  "effect.netherexp.strength_immunity.description": "使玩家免疫力量",
+  "effect.netherexp.jump_boost_immunity.description": "使玩家免疫跳跃提升",
+  "effect.netherexp.regeneration_immunity.description": "使玩家免疫生命恢复",
+  "effect.netherexp.fire_resistance_immunity.description": "使玩家免疫抗火",
+  "effect.netherexp.water_breathing_immunity.description": "使玩家免疫水下呼吸",
+  "effect.netherexp.invisibility_immunity.description": "使玩家免疫隐身",
+  "effect.netherexp.weakness_immunity.description": "使玩家免疫虚弱",
+  "effect.netherexp.poison_immunity.description": "使玩家免疫中毒",
+  "effect.netherexp.resistance_immunity.description": "使玩家免疫抗性提升",
+  "effect.netherexp.absorption_immunity.description": "使玩家免疫伤害吸收",
+  "effect.netherexp.haste_immunity.description": "使玩家免疫急迫",
+  "effect.netherexp.mining_fatigue_immunity.description": "使玩家免疫挖掘疲劳",
+  "effect.netherexp.darkness_immunity.description": "使玩家免疫黑暗",
+  "effect.netherexp.levitation_immunity.description": "使玩家免疫飘浮",
+  "effect.netherexp.hunger_immunity.description": "使玩家免疫饥饿",
+  "effect.netherexp.wither_immunity.description": "使玩家免疫凋零",
+  "effect.netherexp.luck_immunity.description": "使玩家免疫幸运",
+  "effect.netherexp.unluck_immunity.description": "使玩家免疫霉运",
+  "effect.netherexp.brain_damage_immunity.description": "使玩家免疫脑损"
+
+}

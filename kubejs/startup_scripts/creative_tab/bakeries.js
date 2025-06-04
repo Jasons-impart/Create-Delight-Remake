@@ -1,0 +1,45 @@
+StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
+  e.remove([
+   "bakeries:blender",
+   'bakeries:cheese_cube',
+   'bakeries:cocoa_powder',
+   'bakeries:whole_wheat_flour_bag',
+   'bakeries:whole_wheat_flour',
+   'bakeries:salt_scraper_rake',
+   'bakeries:salt',
+   'bakeries:tomato',
+   'bakeries:bottle_butter',
+   'bakeries:bottle_milk',
+   'bakeries:bottle_cream',
+   "bakeries:fermentation_tank",
+   'bakeries:yeast_tank',
+   'bakeries:cheese_tank',
+   'bakeries:olive',
+   'bakeries:black_white_concrete',
+   'bakeries:butter_cube',
+   'bakeries:flour_sieve',
+   'bakeries:oven',
+   'bakeries:moka_pot',
+   'bakeries:moka_pot_fill',
+   "bakeries:iced_american",
+   "bakeries:iced_latte",
+   "bakeries:brown_sugar_latte",
+   "bakeries:cream_bingle_coffee",
+   'bakeries:drink_cup',
+   "bakeries:olive_oil",
+   'bakeries:raw_coffee_bean',
+   'bakeries:coffee_bean',
+   'bakeries:ground_coffee',
+  ])
+  e.add([
+   'bakeries:mould_toast',
+   'bakeries:mould_cheese_cocoa_toast', 
+  ])
+})
+StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {
+  e.remove([
+    'bakeries:salted_dough',
+    'bakeries:cocoa_dough', 
+    'bakeries:pastry',
+  ])
+})

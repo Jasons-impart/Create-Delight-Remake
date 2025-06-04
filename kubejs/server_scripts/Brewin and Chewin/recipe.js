@@ -6,12 +6,12 @@ ServerEvents.recipes(e => {
         "brewinandchewin:fermenting/jerky",
         "brewinandchewin:emptying/create/honey_bottle",
         "brewinandchewin:filling/create/honey_bottle",
-        "brewinandchewin:fermenting/kippers"
-        
+        "brewinandchewin:fermenting/kippers",
+        "brewinandchewin:flaxen_cheese_wheel_from_wedges",
+        "vintagedelight:cheese_wheel_from_slices"
     ])
     e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")
-    e.replaceInput({id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({}, "#brewinandchewin:cheese_wedges", "#forge:cheese")
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",

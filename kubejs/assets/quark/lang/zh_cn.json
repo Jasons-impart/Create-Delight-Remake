@@ -1077,6 +1077,7 @@
 	"item.quark.shiba_spawn_egg": "柴犬刷怪蛋",
 
 	"effect.quark.resilience": "稳定",
+	"effect.quark.resilience.description": "增加击退抗性",
 
 	"entity.quark.pickarang": "皮卡镖",
 	"entity.quark.chest_passenger": "运输船",

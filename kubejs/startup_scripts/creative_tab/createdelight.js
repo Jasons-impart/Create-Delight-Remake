@@ -165,6 +165,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:adzuki_milkshake_bucket',
     'createdelight:lime_milkshake_bucket',
     'createdelight:pomegranate_milkshake_bucket',
+    'createdelight:sweetberry_milkshake_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])

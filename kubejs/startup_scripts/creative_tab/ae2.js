@@ -1,0 +1,23 @@
+StartupEvents.modifyCreativeTab("ae2:main", e => {
+  e.add([
+    'createdelight:universal_press',
+    'createdelight:bleak_electron_tube',
+    'createdelight:redstone_paste',
+    'createdelight:glowstone_paste',
+    'createdelight:initial_processing_of_printed_engineering_processor',
+    'createdelight:initial_processing_of_printed_calculation_processor',
+    'createdelight:initial_processing_of_printed_logic_processor',
+    'createdelight:engineering_processor_inscribed',
+    'createdelight:calculation_processor_inscribed',
+    'createdelight:logic_processor_inscribed',
+    'createdelight:item_cell_housing_blank',
+    'createdelight:fluid_cell_housing_blank',
+    'createdelight:initial_processing_of_item_cell_housing',
+    'createdelight:initial_processing_of_fluid_cell_housing',
+    'createdelight:unformed_item_cell_housing',
+    'createdelight:unformed_fluid_cell_housing',
+    'createdelight:quartz_glass_parts',
+    'createdelight:quartz_vibrant_glass_parts',
+    'createdelight:cell_housing_curving_head',
+  ])
+})

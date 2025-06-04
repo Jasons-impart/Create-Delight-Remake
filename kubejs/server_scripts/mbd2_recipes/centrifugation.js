@@ -36,7 +36,7 @@ ServerEvents.recipes(e => {
     .perTick(builder => builder
       .inputRPM(32)
     )
-    .outputItems('5x alexscaves:uranium_shard')
+    .outputItems('3x alexscaves:uranium_shard')
     .outputFluids(Fluid.of("alexscaves:acid", 250))
     .id("createdelight:big_centrifugation/unrefined_waste")
   e.recipes.createdelight.big_centrifugation()
@@ -67,6 +67,7 @@ ServerEvents.recipes(e => {
       [["createdelight:pomegranate_milkshake", 750], ["createdelightcore:pomegranate_ice_cream", 250], ["minecraft:milk", 500]],
       [["createdelight:lime_milkshake", 750], ["createdelightcore:lime_ice_cream", 250], ["minecraft:milk", 500]],
       [["createdelight:adzuki_milkshake", 750], ["createdelightcore:adzuki_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createdelight:sweetberry_milkshake", 750], ["createdelightcore:sweetberry_ice_cream", 250], ["minecraft:milk", 500]],
     ]
     fluidSeparation_2_fluids.forEach(fluid => {
       e.recipes.createdelight.big_centrifugation()

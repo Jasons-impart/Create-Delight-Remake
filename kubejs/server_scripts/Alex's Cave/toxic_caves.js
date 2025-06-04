@@ -1,9 +1,27 @@
 ServerEvents.recipes(e => {
+    const { create, vintageimprovements } = e.recipes;
     remove_recipes_id(e, [
         "create:crushing/raw_uranium",
         "create_new_age:thorium/thorium_crushing",
-        "create_new_age:thorium_multiplication"
+        "create_new_age:thorium_multiplication",
+        "alexscaves:nuclear_furnace_component"
     ])
+  // 辐鳃鱼（和桶）量产
+  vintageimprovements
+    .pressurizing(
+      [Item.of("alexscaves:radgill").withChance(0.01), Fluid.of("minecraft:lava", 250)],
+      ["#minecraft:fishes", Fluid.of("alexscaves:acid", 1000)]
+    )
+    .heated()
+    .id("createdelight:radgill");
+  vintageimprovements
+    .pressurizing(
+      [Item.of("alexscaves:radgill_bucket").withChance(0.05), Fluid.of("minecraft:lava", 250)],
+      ["#createdelight:fish_buckets", Fluid.of("alexscaves:acid", 1000)]
+    )
+    .heated()
+    .id("createdelight:radgill_bucket");
+
     //铀矿打粉
     e.recipes.create.crushing(
         [
@@ -65,24 +83,38 @@ ServerEvents.recipes(e => {
     ).id("createdelight:liquefaction/ethylene_gas")
     //乙烯乙醇互相制作
     e.recipes.vintageimprovements.pressurizing(
-        Fluid.of("createdieselgenerators:ethanol", 250), [
-        Fluid.of("alexscaves:acid", 50),
-        Fluid.water(250),
-        Fluid.of("createdelight:ethylene_fluid", 250)
-    ])
+        Fluid.of("createdieselgenerators:ethanol", 250), 
+        [
+            Fluid.of("alexscaves:acid", 50),
+            Fluid.water(250),
+            Fluid.of("createdelight:ethylene_fluid", 250)
+        ]
+    )
         .secondaryFluidInput(0)
         .heated()
         .id("createdelight:pressurizing/ethanol_from_ethylene")
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:ethylene_gas", 250),
-            Fluid.water(250)], [
-        Fluid.of("vintageimprovements:sulfuric_acid", 50),
-        Fluid.of("createdieselgenerators:ethanol", 250)
-    ])
+            Fluid.water(250)
+        ], [
+            Fluid.of("vintageimprovements:sulfuric_acid", 50),
+            Fluid.of("createdieselgenerators:ethanol", 250)
+        ]
+    )
         .secondaryFluidOutput(0)
         .heated()
         .id("createdelight:pressurizing/ethylene_gas_from_ethanol")
+    //润滑油合成
+    e.recipes.vintageimprovements.pressurizing(
+       Fluid.of("createdelight:lubricating_oil", 100), 
+       [
+            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            Fluid.of("createdelight:ethylene_fluid", 250),
+            'vintageimprovements:vanadium_nugget',
+
+       ], 500
+    ).superheated().id("createdelight:pressurizing/lubricating_oil")
     // 聚合物板
     e.recipes.vintageimprovements.pressurizing(
         'alexscaves:polymer_plate',
@@ -151,25 +183,45 @@ ServerEvents.recipes(e => {
 
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
-        "9x alexscaves:toxic_paste",
+        "27x alexscaves:toxic_paste",
         [
-            Fluid.of("alexscaves:acid").withAmount(100),
-            Fluid.of("createdelightcore:slime", 90),
+            'createdelight:depleted_uranium_dust',
+            Fluid.of("createdelightcore:slime", 270),
             "minecraft:mud"
         ]
     )
         .heated()
         .id("alexscaves:pressurizing/toxic_paste")
-
-    //离心核废料
-    centrifugation(e,
+    //硫芯蛋糕卷
+    e.recipes.create.deploying(
+        '2x alexscaves:spelunkie',
         [
-            "4x alexscaves:uranium_shard",
-            Fluid.of("alexscaves:acid").withAmount(250)
-        ],
-        ["alexscaves:unrefined_waste"]
-    ).id("alexscaves:centrifugation/uranium_shard")
-
+            'minecraft:bread',
+            'alexscaves:sulfur_dust'
+        ]
+    ).id("alexscaves:spelunkie")
+    //猛汉午餐肉
+    {
+        let iner = 'luncheonmeatsdelight:luncheon_meat_can'
+        e.recipes.create.sequenced_assembly('alexscaves:slam', iner, 
+            [
+                e.recipes.create.deploying(iner, [iner, 'alexscaves:sulfur_dust']),
+                e.recipes.create.deploying(iner, [iner, 'minecraft:bone_meal'])
+            ] 
+        )
+            .loops(1)
+            .transitionalItem(iner)
+            .id("alexscaves:slam")
+    }
+    //铀块
+    e.recipes.kubejs.shapeless(
+        "alexscaves:block_of_uranium",
+        '9x createdelight:enriched_uraniumdust'
+    ).id("alexscaves:block_of_uranium")
+    e.recipes.kubejs.shapeless(
+        '9x createdelight:enriched_uraniumdust',
+        "alexscaves:block_of_uranium"
+    ).id("alexscaves:uranium_from_block")
     //铀棒
     let iner_1 = "alexscaves:block_of_uranium"
     e.recipes.create.sequenced_assembly("3x alexscaves:uranium_rod", iner_1,
@@ -183,21 +235,32 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner_1)
         .loops(1)
         .id("alexscaves:uranium_rod")
+    //裂变核心
+    e.recipes.create.mechanical_crafting("alexscaves:fissile_core", 
+    [
+        "ABA",
+        "ACA",
+        "AAA", 
+    ], {
+        A: 'create:iron_sheet',
+        B: 'createdelight:bleak_electron_tube',
+        C: 'createdelight:enriched_uraniumdust'
+    }).id("create_oppenheimered:compacting/nuclear_fissile_core")
     //核弹
     e.recipes.create.mechanical_crafting("alexscaves:nuclear_bomb", [
-        "AABAA",
-        "ACDCA",
-        "ACECA",
-        "ACDCA",
-        "AABAA"
-    ],
-        {
-            A: "ad_astra:steel_plate",
-            B: "minecraft:tnt",
-            C: "alexscaves:uranium_rod",
-            D: "alexscaves:fissile_core",
-            E: "alexscaves:block_of_uranium"
-        }).id("alexscaves:nuclear_bomb")
+        "AAAAAAA",
+        "ABBBBBA",
+        "ABCCCBA",
+        "ABCDCBA",
+        "ABCCCBA",
+        "ABBBBBA",
+        "AAAAAAA"
+    ], {
+        A: "ad_astra:steel_plate",
+        B: "minecraft:tnt",
+        C: "alexscaves:block_of_uranium",
+        D: "alexscaves:fissile_core"
+    }).id("alexscaves:nuclear_bomb")
 
 
     //氡气相关

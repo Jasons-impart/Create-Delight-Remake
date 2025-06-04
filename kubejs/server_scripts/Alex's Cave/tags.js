@@ -16,12 +16,13 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonsteel_ice_hoe',
         'iceandfire:dragonsteel_lightning_hoe',
     ])
-
+    e.add("neapolitan:ice_cream", [
+        'createdelightcore:sweetberry_ice_cream'
+    ])
     e.add("forge:ingots/uranium", "alexscaves:uranium")
     // e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
     e.add("createdelight:candy_cane", [
         "alexscaves:candy_cane",
-        "create_confectionery:candy_cane",
     ])
     e.add("forge:gelatin", [
         'alexscaves:gelatin_red',
@@ -93,6 +94,18 @@ ServerEvents.tags("item", e => {
     e.add("createdelight:fisson_fuel", [
         'createdelight:enriched_uraniumdust',
         'create_new_age:radioactive_thorium'
+    ])
+    e.add("createdelight:mint_candy", [
+        'neapolitan:mint_candies',
+        'alexscaves:frostmint'
+    ])
+    e.add("alexscaves:ice_cream_scoop", [
+        'createdelightcore:strawberry_ice_cream_scoop',
+        'createdelightcore:banana_ice_cream_scoop',
+        'createdelightcore:mint_ice_cream_scoop',
+        'createdelightcore:adzuki_ice_cream_scoop',
+        'createdelightcore:pomegranate_ice_cream_scoop',
+        'createdelightcore:lime_ice_cream_scoop',
     ])
     e.removeAll("alexscaves:restricted_biome_locators")
 })

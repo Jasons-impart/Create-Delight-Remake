@@ -245,5 +245,11 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:flare_cabin',
         'createdelight:flare_panel',
         'createdelight:quantum_field_panel',
+        'createdelight:incomplete_basic_panel',
+        'createdelight:incomplete_advanced_panel',
+        'createdelight:incomplete_explorer_panel',
+        'createdelight:incomplete_flare_panel',
+        'createdelight:sweetberry_milkshake_bucket',
+        'createdelight:incomplete_neapolitan_ice_cream',
     ])
 });  

@@ -179,6 +179,20 @@ ItemEvents.modification(e => {
     food_effects("create_central_kitchen:chocolate_cake_slice", "neapolitan:sugar_rush", 2, 1)
     food_effects('corn_delight:classic_corn_dog', "minecraft:resistance", 10, 1)
     food_effects('corn_delight:classic_corn_dog', "minecraft:fire_resistance", 10, 1)
+    food_effects('create_confectionery:bar_of_caramel', "alexscaves:sugar_rush", 10, 0, 0.04)
+    e.modify('alexscaves:caramel', item => {
+        item.foodProperties = food => {
+            food.removeEffect("alexscaves:sugar_rush")
+        }
+    })
+    food_effects("alexscaves:frostmint", "neapolitan:berserking", 60)
+    food_effects('alexscaves:peppermint_powder', "neapolitan:berserking", 60)
+    food_effects("alexscaves:candy_cane", "neapolitan:berserking", 45)
+    food_effects('createcafe:mint_iced_coffee', "neapolitan:berserking", 60)
+    food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
+    food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
+    food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
+
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)

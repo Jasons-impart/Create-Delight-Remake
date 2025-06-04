@@ -391,6 +391,23 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_fs_upgrade")
     e.create("createdelight:incomplete_graviton_tube", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_graviton_tube")
+    e.create("createdelight:incomplete_neapolitan_ice_cream", "create:sequenced_assembly")
+        .food(f => {
+            f.hunger(8)
+                .saturation(0.3)
+                .eaten(ea => {
+                    ea.player.setTicksFrozen(ea.player.getTicksFrozen() + 200)
+                    ea.server.scheduleInTicks(1, func => {
+                        if(!ea.player.isCreative()) {
+                            if(!ea.player.getInventory().add("minecraft:bowl")) {
+                                ea.player.drop("minecraft:bowl", false)
+                            }
+                        }
+                    })
+                })
+        })
+        .translationKey("item.createdelight.incomplete_neapolitan_ice_cream")
+        .tag("neapolitan:ice_cream")
     // 未完成的子弹
     e.create("createdelight:incomplete_12g", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_12g")

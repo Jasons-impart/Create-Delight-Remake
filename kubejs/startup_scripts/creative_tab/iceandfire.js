@@ -1,0 +1,37 @@
+StartupEvents.modifyCreativeTab("iceandfire:items", e => {
+  e.add([
+    'dreadsteel:dreadsteel_ingot',
+    'dreadsteel:kit_default',
+    'dreadsteel:kit_white',
+    'dreadsteel:kit_black',
+    'dreadsteel:kit_bronze',
+  ])
+  e.remove([
+    "iceandfire:dragonsteel_fire_sword",
+    "iceandfire:dragonsteel_fire_pickaxe",
+    "iceandfire:dragonsteel_fire_axe",
+    "iceandfire:dragonsteel_fire_shovel",
+    "iceandfire:dragonsteel_fire_hoe",
+    "iceandfire:dragonsteel_ice_pickaxe",
+    "iceandfire:dragonsteel_ice_sword",
+    "iceandfire:dragonsteel_ice_axe",
+    "iceandfire:dragonsteel_ice_shovel",
+    "iceandfire:dragonsteel_ice_hoe",
+    "iceandfire:dragonsteel_lightning_sword",
+    "iceandfire:dragonsteel_lightning_pickaxe",
+    "iceandfire:dragonsteel_lightning_axe",
+    "iceandfire:dragonsteel_lightning_shovel",
+    "iceandfire:dragonsteel_lightning_hoe",
+    "iceandfire:copper_axe",
+    "iceandfire:copper_hoe",
+    "iceandfire:copper_pickaxe",
+    "iceandfire:copper_shovel",
+    "iceandfire:copper_sword",
+    "iceandfire:copper_nugget",
+    "iceandfire:armor_copper_metal_boots",
+    "iceandfire:armor_copper_metal_chestplate",
+    "iceandfire:armor_copper_metal_helmet",
+    "iceandfire:armor_copper_metal_leggings",
+    
+  ])
+})
