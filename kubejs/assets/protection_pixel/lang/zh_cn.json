@@ -35,7 +35,7 @@
     "gui.protection_pixel.reactor.label_nun": "12345",
     "gui.protection_pixel.zong.button_empty": "拆卸插板",
 
-    "info.protection.table": "按TAB键激活界面",
+    "info.protection.table": "按RSHIFT键激活界面",
     "info.protection.table2": "§c需要岩浆供应",
     "info.protection_pixel.air": "空气剩余：",
     "info.protection_pixel.anchorpoint": "§6阻尼器可以大幅削减摔伤，脚底的刺钉让真正的勇者永不后退。",
