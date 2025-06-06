@@ -6,6 +6,8 @@ StartupEvents.modifyCreativeTab("protection_pixel:pp", e => {
   ])
   e.remove([
     'protection_pixel:hookcannon',
-    'protection_pixel:hookitem'
+    'protection_pixel:hookitem',
+    'protection_pixel:suspjetpack',
+    'protection_pixel:chestplatelining'
   ])
 })
