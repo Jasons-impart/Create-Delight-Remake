@@ -78,7 +78,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:ostrum_dust',
         'createdelight:calorite_dust',
         'createdelight:incomplete_layered_magnet',
-        'createdelight:incomplete_tesla_coil',
         'createdelight:incomplete_alternator',
         'createdelight:incomplete_diesel_engine',
         'createdelight:incomplete_electric_motor',

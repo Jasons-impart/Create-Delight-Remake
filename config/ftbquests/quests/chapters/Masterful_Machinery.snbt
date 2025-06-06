@@ -8,9 +8,9 @@
 		Count: 1
 		id: "tacz:modern_kinetic_gun"
 		tag: {
-			GunCurrentAmmoCount: 16
-			GunFireMode: "SEMI"
-			GunId: "create_armorer:pistol_auto_stress"
+			GunCurrentAmmoCount: 100
+			GunFireMode: "AUTO"
+			GunId: "applied_armorer:moritz_mg_emg_prototype"
 			HasBulletInBarrel: 1b
 		}
 	}
@@ -103,8 +103,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.9880952380952195d
-			y: 1.7976190476190403d
+			x: -7.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["05AC1CD132C52AA9"]
@@ -127,8 +127,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.4880952380952195d
-			y: 1.7976190476190403d
+			x: -8.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["041E9BF9C6308286"]
@@ -151,8 +151,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.98809523809522d
-			y: 1.7976190476190403d
+			x: -10.0d
+			y: 7.0d
 		}
 		{
 			dependencies: [
@@ -183,8 +183,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 5.0d
-			y: 1.0d
+			x: 6.25d
+			y: 2.75d
 		}
 		{
 			dependencies: [
@@ -215,8 +215,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 3.0d
-			y: 1.0d
+			x: 4.25d
+			y: 2.75d
 		}
 		{
 			dependencies: [
@@ -247,8 +247,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 5.0d
-			y: 5.0d
+			x: 6.25d
+			y: 6.75d
 		}
 		{
 			dependencies: [
@@ -279,8 +279,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 3.0d
-			y: 7.0d
+			x: 4.25d
+			y: 8.75d
 		}
 		{
 			dependencies: [
@@ -311,8 +311,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 5.0d
-			y: 7.0d
+			x: 6.25d
+			y: 8.75d
 		}
 		{
 			dependencies: [
@@ -343,8 +343,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 5.0d
-			y: 3.0d
+			x: 6.25d
+			y: 4.75d
 		}
 		{
 			dependencies: [
@@ -375,8 +375,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 3.0d
-			y: 3.0d
+			x: 4.25d
+			y: 4.75d
 		}
 		{
 			dependencies: [
@@ -407,8 +407,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: 3.0d
-			y: 5.0d
+			x: 4.25d
+			y: 6.75d
 		}
 		{
 			dependencies: ["3AECBFE9F68326C1"]
@@ -431,8 +431,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.9880952380952195d
-			y: 3.2976190476190403d
+			x: -7.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["3AECBFE9F68326C1"]
@@ -455,8 +455,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.4880952380952195d
-			y: 3.2976190476190403d
+			x: -8.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["3AECBFE9F68326C1"]
@@ -479,8 +479,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.9880952380952195d
-			y: 4.79761904761904d
+			x: -7.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["3AECBFE9F68326C1"]
@@ -503,8 +503,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.4880952380952195d
-			y: 4.79761904761904d
+			x: -8.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["3AECBFE9F68326C1"]
@@ -522,8 +522,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -5.9880952380952195d
-			y: 6.29761904761904d
+			x: -7.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["03E7B3B4BF96CFBC"]
@@ -541,8 +541,8 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -7.4880952380952195d
-			y: 6.29761904761904d
+			x: -8.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["49F951A0088D5C0F"]
@@ -560,12 +560,11 @@
 				match_nbt: true
 				type: "item"
 			}]
-			x: -8.98809523809522d
-			y: 6.29761904761904d
+			x: -10.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["5C9DFDBC0105016B"]
-			hide_dependent_lines: true
 			id: "13DBF28DFB189647"
 			rewards: [{
 				id: "7BEA9C182FA53F85"
@@ -579,12 +578,11 @@
 				item: "kinetic_pixel:pistonexciter"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 1.0d
+			x: 2.25d
+			y: 2.75d
 		}
 		{
 			dependencies: ["5C9DFDBC0105016B"]
-			hide_dependent_lines: true
 			id: "1B0CBFCC0DDE3160"
 			rewards: [{
 				id: "57034CB58F03B1CB"
@@ -598,12 +596,11 @@
 				item: "kinetic_pixel:barrel"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 5.0d
+			x: 2.25d
+			y: 6.75d
 		}
 		{
 			dependencies: ["5C9DFDBC0105016B"]
-			hide_dependent_lines: true
 			id: "6AF83156027D923D"
 			rewards: [{
 				id: "5F29D307F3DEB3CB"
@@ -617,12 +614,11 @@
 				item: "kinetic_pixel:ammunitionbox"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 7.0d
+			x: 2.25d
+			y: 8.75d
 		}
 		{
 			dependencies: ["5C9DFDBC0105016B"]
-			hide_dependent_lines: true
 			id: "76B59336E9D5034A"
 			rewards: [{
 				id: "03F5418B3873485C"
@@ -636,8 +632,8 @@
 				item: "kinetic_pixel:strikerexciter"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 3.0d
+			x: 2.25d
+			y: 4.75d
 		}
 		{
 			icon: "tacz:gun_smith_table"
@@ -701,10 +697,11 @@
 			}]
 			title: "枪械制作！"
 			x: -2.5d
-			y: 4.0d
+			y: 1.5d
 		}
 		{
-			dependencies: ["168836201ED24533"]
+			dependencies: ["4A3D2C33E49D1ACB"]
+			hide_dependent_lines: true
 			icon: {
 				Count: 1
 				ForgeCaps: {
@@ -746,10 +743,11 @@
 				value: 1
 			}]
 			x: -0.5d
-			y: 4.0d
+			y: 6.0d
 		}
 		{
-			dependencies: ["168836201ED24533"]
+			dependencies: ["4A3D2C33E49D1ACB"]
+			hide_dependent_lines: true
 			id: "3AECBFE9F68326C1"
 			tasks: [{
 				icon: {
@@ -774,11 +772,11 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -4.5d
-			y: 4.0d
+			x: -4.523809523809518d
+			y: 6.123809523809513d
 		}
 		{
-			dependencies: ["168836201ED24533"]
+			dependencies: ["4A3D2C33E49D1ACB"]
 			icon: {
 				Count: 1
 				id: "tacz:ammo_box"
@@ -857,6 +855,1719 @@
 			}]
 			x: -1.0d
 			y: 7.5d
+		}
+		{
+			dependencies: ["168836201ED24533"]
+			icon: {
+				Count: 1
+				id: "tacz:modern_kinetic_gun"
+				tag: {
+					GunCurrentAmmoCount: 1
+					GunFireMode: "SEMI"
+					GunId: "create_armorer:special_melee_wrench"
+					HasBulletInBarrel: 1b
+				}
+			}
+			id: "4A3D2C33E49D1ACB"
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 1
+						GunFireMode: "SEMI"
+						GunId: "create_armorer:special_melee_wrench"
+						HasBulletInBarrel: 1b
+					}
+				}
+				id: "3C054F9466B24240"
+				stat: "minecraft:play_time"
+				title: "机动枪械"
+				type: "stat"
+				value: 1
+			}]
+			x: -2.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["168836201ED24533"]
+			icon: {
+				Count: 1
+				id: "tacz:modern_kinetic_gun"
+				tag: {
+					GunCurrentAmmoCount: 1
+					GunFireMode: "SEMI"
+					GunId: "applied_armorer:special_melee_task_manager"
+					HasBulletInBarrel: 1b
+				}
+			}
+			id: "040055671B026118"
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 1
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:special_melee_task_manager"
+						HasBulletInBarrel: 1b
+					}
+				}
+				id: "33E81D0A649971E0"
+				stat: "minecraft:play_time"
+				title: "应用能源枪械"
+				type: "stat"
+				value: 1
+			}]
+			x: -2.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["040055671B026118"]
+			icon: {
+				Count: 1
+				id: "tacz:ammo_box"
+				tag: {
+					Creative: 1b
+				}
+			}
+			id: "1FE65EE620098050"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "tacz:ammo_box"
+					tag: {
+						Creative: 1b
+					}
+				}
+				id: "0339452A6761D305"
+				stat: "minecraft:play_time"
+				title: "子弹制作"
+				type: "stat"
+				value: 1
+			}]
+			x: -2.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["1FE65EE620098050"]
+			id: "2A8462E426CD5578"
+			tasks: [{
+				id: "69C6FA9CA87C685B"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "applied_armorer:etched_quartz_bullet"
+					}
+				}
+				type: "item"
+			}]
+			x: -4.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1FE65EE620098050"]
+			id: "59B56F92B991AF69"
+			tasks: [{
+				id: "4881C72422735EB8"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "applied_armorer:fluix_infused_grenade"
+					}
+				}
+				type: "item"
+			}]
+			x: -3.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1FE65EE620098050"]
+			id: "06EA565753996219"
+			tasks: [{
+				id: "557BD5A447B3478F"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "applied_armorer:fluix_battery"
+					}
+				}
+				type: "item"
+			}]
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1FE65EE620098050"]
+			id: "2FD1005F92819A98"
+			tasks: [{
+				id: "7333D061AE7E0587"
+				item: {
+					Count: 1
+					id: "tacz:ammo"
+					tag: {
+						AmmoId: "applied_armorer:cluster_quartz_bullet"
+					}
+				}
+				type: "item"
+			}]
+			x: -1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["1FE65EE620098050"]
+			dependency_requirement: "one_completed"
+			id: "731726C5095EE87D"
+			tasks: [
+				{
+					id: "3144D9CA5E2A8F71"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 0
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "6E1F3D589DE4AAC5"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 1
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+				{
+					id: "498B0825555306B1"
+					item: {
+						Count: 1
+						id: "tacz:ammo_box"
+						tag: {
+							Level: 2
+						}
+					}
+					match_nbt: true
+					type: "item"
+				}
+			]
+			title: "弹药盒"
+			x: -2.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["040055671B026118"]
+			hide_dependent_lines: true
+			id: "7FECB515427743F5"
+			tasks: [{
+				icon: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+					id: "kinetic_pixel:heatpoweredfirearmblueprint"
+					tag: {
+						Inventory: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+				}
+				id: "7C35D46687354973"
+				stat: "minecraft:play_time"
+				title: "枪械配件"
+				type: "stat"
+				value: 1
+			}]
+			x: -4.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["040055671B026118"]
+			hide_dependent_lines: true
+			icon: {
+				Count: 1
+				ForgeCaps: {
+					Parent: {
+						Items: [ ]
+						Size: 32
+					}
+				}
+				id: "kinetic_pixel:laboratorialfirearmblueprint"
+				tag: {
+					Inventory: {
+						Items: [ ]
+						Size: 32
+					}
+				}
+			}
+			id: "27D41B0BD0B3BD0F"
+			tasks: [{
+				icon: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+					id: "kinetic_pixel:laboratorialfirearmblueprint"
+					tag: {
+						Inventory: {
+							Items: [ ]
+							Size: 32
+						}
+					}
+				}
+				id: "5D62D01711F57CC7"
+				stat: "minecraft:play_time"
+				title: "武器枪械"
+				type: "stat"
+				value: 1
+			}]
+			x: -0.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "6C2A3471FADAF612"
+			rewards: [{
+				id: "76FEAD2E04D8BD3E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "1AD90AEBFCC31F02"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_double_sided_mirror"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "66EED6C56D557C7E"
+			rewards: [{
+				id: "57DB9F6374DF7FE6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "7610DF9D6FE9D0BA"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_profession"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "72D8BF910E9E8B9C"
+			rewards: [{
+				id: "32473CBAFC1FB186"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4739B75C05F4C237"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:scope_xgs_905"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "54DB0880E6B40002"
+			rewards: [{
+				id: "3BB96D0985AD3524"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5BD349CDE09304AB"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_simple_3"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "3E13DB402CC36D7E"
+			rewards: [{
+				id: "64D60E1BAF32F0E0"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			secret: true
+			shape: "square"
+			tasks: [{
+				id: "1A49A844B5C57977"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_zako_2403"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -13.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["518B828FC2AAC867"]
+			id: "06C08CFB55B4F80B"
+			rewards: [{
+				id: "587D013090A440BD"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "1A2100A371E94745"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_ms_12"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["06C08CFB55B4F80B"]
+			id: "123DBB64731265D4"
+			rewards: [{
+				id: "1B875615BEC89F96"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "25D5A4A3F06D1C6F"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:scope_ms_14"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "518B828FC2AAC867"
+			rewards: [{
+				id: "22D380216858581E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "36A1A2ACCCB0EAC2"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:sight_type_3741"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "011C5CFE22EA60AF"
+			rewards: [{
+				id: "1066FECBE22F61B6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			secret: true
+			shape: "square"
+			tasks: [{
+				id: "2004EBB73365CFBE"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:si_pricision"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "498360B8E6E97289"
+			rewards: [{
+				id: "5F30E04969750BCA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "29BE3FCEA614E48B"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_niklas"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"319A79F4EB35D62B"
+				"5928AF3BDF92B561"
+				"6F9DF54A4CD9649F"
+				"6273FD07B657D7F2"
+				"46BBBA4D913FD623"
+				"498360B8E6E97289"
+				"03565BB44112A3CE"
+			]
+			id: "49FE92524A2B66A9"
+			rewards: [{
+				id: "10212AAD82FA4916"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "3D2E798096C52F7A"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_zenith"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "46BBBA4D913FD623"
+			rewards: [{
+				id: "58529358A6FDF9CA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "558B42FFE1F4306D"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_broken_handcuffs"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "03565BB44112A3CE"
+			rewards: [{
+				id: "1480C7C041BB3916"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5F9DA4B7005FB654"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_aerial_wristband"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "5928AF3BDF92B561"
+			rewards: [{
+				id: "5BB5CCBC7EBC47E5"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4BADA04C947656F3"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_broken_watch"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "6273FD07B657D7F2"
+			rewards: [{
+				id: "51F03DCA4A113961"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "20E6EBE493FB9731"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_koeis_armband"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "6F9DF54A4CD9649F"
+			rewards: [{
+				id: "427C84315A0EC04D"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "54BA031A5449A674"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_magma_wristband"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["498360B8E6E97289"]
+			id: "319A79F4EB35D62B"
+			rewards: [{
+				id: "15DA410146BC4706"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "0F44EEBAF7B151AB"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bracelet_exo"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["356A9F526BBFB2CF"]
+			id: "72C9BB2B864706B1"
+			rewards: [{
+				id: "330616CBD5D94896"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "50B74C44A61A9B18"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_commander"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "5E873D5923370072"
+			rewards: [{
+				id: "475003AF0C453465"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "790DD123D31382DE"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_classic"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "356A9F526BBFB2CF"
+			rewards: [{
+				id: "22BA089F44A33294"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "538945A9ED474C4E"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_ns_1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "57F32EA47B975F5B"
+			rewards: [{
+				id: "2F363F1BD53375FE"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4808B3CA85314BF1"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_bs_mod4"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["564E8C4BA5D3447F"]
+			id: "5E479FBEB0078BE0"
+			rewards: [{
+				id: "4E759128B2BCD6C9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "7A51BA61C87CF5AB"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bayonet_er"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "564E8C4BA5D3447F"
+			rewards: [{
+				id: "05F0E773A637BD69"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "184DF06C0C19B868"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:bayonet_gladius"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["46B66FF2D0E0B1EF"]
+			id: "237B431451000737"
+			rewards: [{
+				id: "2620A5D205C8D01B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "06BDC2765F402BB5"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_hyper_propellant"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "20DDA05E76C78B12"
+			rewards: [{
+				id: "50DC66F12FB82032"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "2260011FEA23AF91"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_pcs_x1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3A128AFFAF1DB0E7"]
+			id: "46B66FF2D0E0B1EF"
+			rewards: [{
+				id: "29B8389F188BE5D8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "712A2A009A89F53B"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_firework"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["237B431451000737"]
+			id: "73F0EA8B1B0C6A28"
+			rewards: [{
+				id: "5F4C1F3DFDB00C51"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "68AB7BB466D74DD7"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_fat_boy"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "3A128AFFAF1DB0E7"
+			rewards: [{
+				id: "2550C852BB80B840"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "3C1A4EFADFE6CCDB"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_firefly"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["20DDA05E76C78B12"]
+			id: "0F86247AECE3083E"
+			rewards: [{
+				id: "0A826E55840ED57F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5F8B9FB0195FF7B7"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:muzzle_chip_atm_x2"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["186EC0DB9B0D46C5"]
+			id: "29C786FF6B53657D"
+			rewards: [{
+				id: "58649BD44ACF2025"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "02DDDB37A2FF70E1"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mid_mag_aa_1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "674DD28821392CA0"
+			rewards: [{
+				id: "17E933EA3AA5B201"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "397FAE54231C5EDC"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_battery_aa_1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "186EC0DB9B0D46C5"
+			rewards: [{
+				id: "6BC72804258C8B17"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "2BE5A54B4D431D19"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mag_aa_1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["4D5F313EC681CF5F"]
+			id: "4D7E2740A43C5CA1"
+			rewards: [{
+				id: "000A8ACDBB00919E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4524AA37266C7825"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mid_mag_aa_2"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -6.5d
+		}
+		{
+			dependencies: ["5C433278556583FF"]
+			id: "39838BEF5FE32FF7"
+			rewards: [{
+				id: "55DC32F613002B32"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "330994C7EE0AF05C"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mid_mag_aa_3"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["674DD28821392CA0"]
+			id: "567C0410C7454789"
+			rewards: [{
+				id: "0330DCF8B7260984"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "3822B711F4022D02"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_battery_aa_2"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["567C0410C7454789"]
+			id: "43C24A896949F91D"
+			rewards: [{
+				id: "3CA6136345C28911"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4173D603827FF8D1"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_battery_aa_3"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["186EC0DB9B0D46C5"]
+			id: "4D5F313EC681CF5F"
+			rewards: [{
+				id: "6FF755352F82C9AA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "4A40E36C2CF2A9DF"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mag_aa_2"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["4D5F313EC681CF5F"]
+			id: "5C433278556583FF"
+			rewards: [{
+				id: "460A73C91DEE85C7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "20009F6C089F1770"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:extended_mag_aa_3"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["31A8B9BFFDDFEF4B"]
+			id: "353119E3FE9D459C"
+			rewards: [{
+				id: "3A0E9DDD665D6D22"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "59632A5781BF2BA6"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_lf11"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["31A8B9BFFDDFEF4B"]
+			id: "0950C45A92D1BFB7"
+			rewards: [{
+				id: "5F5AC58441FCFCF9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "55B7A7CD29997656"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_hf_17"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -8.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "4F9C59BB2D6838FF"
+			rewards: [{
+				id: "017082CBE6D0036E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "324B821BBEE50E41"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_storm"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["7FECB515427743F5"]
+			id: "31A8B9BFFDDFEF4B"
+			rewards: [{
+				id: "1A90272D6DC4B2B3"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "06BD45F320F2E18C"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_eazy"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["353119E3FE9D459C"]
+			id: "01F8455B00D724AA"
+			rewards: [{
+				id: "19A1BEEE621314D2"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "69804EC718DDDF42"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_sl_2"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["31A8B9BFFDDFEF4B"]
+			id: "57C5F961389B424E"
+			rewards: [{
+				id: "6BEB9ED42078D83B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "0E304974CCB54C10"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_static_1"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -7.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["31A8B9BFFDDFEF4B"]
+			id: "43A40E5CFA84ABE5"
+			rewards: [{
+				id: "7D59A209143CD54E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "7C22E0B9949058D5"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_stable"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -11.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0950C45A92D1BFB7"]
+			id: "23E7198E3584E26F"
+			rewards: [{
+				id: "1A4A15D4631FFBEA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "1B6F8240A0BFA88E"
+				item: {
+					Count: 1
+					id: "tacz:attachment"
+					tag: {
+						AttachmentId: "applied_armorer:grip_light"
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: -10.0d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"41379D4080831AC3"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "750DA07855A5FBA9"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "1B22C5E838E7A771"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 17
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:niklas_pistol_semi_union"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 2.25d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"6439A41387534751"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "5682000C6ABC2998"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "279484B46EE95110"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 17
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:niklas_pistol_semi_right"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 6.25d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"750DA07855A5FBA9"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "6439A41387534751"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "299FD1CE1E2F08DC"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 10
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:niklas_pistol_semi_pride"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 4.25d
+			y: 0.75d
+		}
+		{
+			dependencies: [
+				"750DA07855A5FBA9"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "20C7D6C2ECBF047D"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "070A8289DE5CEB3B"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 34
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:niklas_pistol_double_win_win"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 2.25d
+			y: -1.25d
+		}
+		{
+			dependencies: [
+				"3B7B1DE0BFAE9EDF"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "23BF14E8ADCC8848"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "5AC726F416EEDE73"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 7
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:moritz_sniper_semi_k30"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 6.25d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"082A581449C7765F"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "3B7B1DE0BFAE9EDF"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "348727696AD9561C"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 11
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:niklas_lever_vigenere"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 4.25d
+			y: -5.25d
+		}
+		{
+			dependencies: [
+				"7FD31B79A0230C99"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "082A581449C7765F"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "5AC4600EAEB49EB9"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 20
+						GunFireMode: "AUTO"
+						GunId: "applied_armorer:moritz_rifle_ar77"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 4.25d
+			y: -3.25d
+		}
+		{
+			dependencies: [
+				"082A581449C7765F"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "20C2A457A62D4AFC"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "5CDB15632163EF6C"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 4
+						GunFireMode: "AUTO"
+						GunId: "applied_armorer:moritz_shotgun_sg914"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 6.25d
+			y: -3.25d
+		}
+		{
+			dependencies: [
+				"0C65B4740D9042EF"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "7FD31B79A0230C99"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "58781FC955A107EC"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 16
+						GunFireMode: "AUTO"
+						GunId: "applied_armorer:niklas_smg_freedom"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 2.25d
+			y: -3.25d
+		}
+		{
+			dependencies: [
+				"4C4A68A2BBFD3079"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "02F499E3D04E4111"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "2094E929D5DDF14B"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 100
+						GunFireMode: "AUTO"
+						GunId: "applied_armorer:moritz_mg_emg_prototype"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 6.25d
+			y: -1.25d
+		}
+		{
+			dependencies: [
+				"7FD31B79A0230C99"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "4C4A68A2BBFD3079"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "46A41393E139C0C3"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 80
+						GunFireMode: "AUTO"
+						GunId: "applied_armorer:moritz_mg_hmg22"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 4.25d
+			y: -1.25d
+		}
+		{
+			dependencies: [
+				"3B7B1DE0BFAE9EDF"
+				"27D41B0BD0B3BD0F"
+			]
+			id: "354EC4F4581F9B6F"
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "590C8E7683FCEC38"
+				item: {
+					Count: 1
+					id: "tacz:modern_kinetic_gun"
+					tag: {
+						GunCurrentAmmoCount: 3
+						GunFireMode: "SEMI"
+						GunId: "applied_armorer:moritz_gernade_gl3"
+						HasBulletInBarrel: 1b
+					}
+				}
+				match_nbt: true
+				type: "item"
+			}]
+			x: 2.25d
+			y: -5.25d
 		}
 	]
 	title: "&3精械锐制"

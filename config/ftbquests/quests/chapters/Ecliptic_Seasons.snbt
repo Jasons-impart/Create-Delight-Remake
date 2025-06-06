@@ -5,7 +5,7 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "eclipticseasons:calendar"
 	id: "1E7A476EE0C13AD1"
-	order_index: 4
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{

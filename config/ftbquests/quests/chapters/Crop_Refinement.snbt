@@ -6,7 +6,7 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "ratatouille:thresher"
 	id: "313A123C6979D02B"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -967,14 +967,14 @@
 				"1FC0F9A8F53A97AF"
 				"6E548E73843D4F9A"
 			]
-			description: ["使用脱模机进行脱模(&4不用抹油!&r)"]
+			description: [""]
 			id: "5F28D0293B01B5D3"
 			rewards: [{
 				id: "747914B0093CC820"
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "一定一定记得抹油(bushi)"
+			subtitle: "使用脱模机进行脱模"
 			tasks: [{
 				id: "1B6AA25756ABF0E1"
 				item: "ratatouille:chocolate_mold_solid"
@@ -1313,8 +1313,8 @@
 			dependencies: ["3119FC900915CDC9"]
 			id: "44A62F16404E5921"
 			tasks: [{
-				id: "49D8EF5136FF7449"
-				item: "mynethersdelight:magma_cake"
+				id: "2FF9A8398825FD19"
+				item: "mynethersdelight:magma_cake_block"
 				type: "item"
 			}]
 			x: -10.0d

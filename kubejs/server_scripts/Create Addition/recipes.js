@@ -51,15 +51,6 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .loops(1)
         .id("createaddition:crafting/modular_accumulator_electrum")
-    // 特斯拉充电线圈
-    let iner_2 = "createdelight:incomplete_tesla_coil"
-    e.recipes.create.sequenced_assembly("createaddition:tesla_coil", "create_new_age:energiser_t3", [
-        e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_brass", 90)]),
-        e.recipes.create.deploying(iner_2, [iner_2, "alexscaves:tesla_bulb"])
-    ])
-        .transitionalItem(iner_2)
-        .loops(1)
-        .id("createaddition:mechanical_crafting/tesla_coil")
     // 发电机
     let iner_3 = "createdelight:incomplete_alternator"
     e.recipes.create.sequenced_assembly("createaddition:alternator", "create:shaft", [

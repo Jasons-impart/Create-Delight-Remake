@@ -215,23 +215,6 @@
 			y: -1.5d
 		}
 		{
-			dependencies: [
-				"7D7F82D2E50E2CDF"
-				"3D02EA3A30EE1933"
-			]
-			description: ["注意：特斯拉线圈并不能作为&e序列组装&r中&e充能&r的执行机器。"]
-			hide_until_deps_complete: true
-			id: "5CAD93F8620EA320"
-			subtitle: "特斯拉球！从此不再输入应力！"
-			tasks: [{
-				id: "65EE18293E245C55"
-				item: "createaddition:tesla_coil"
-				type: "item"
-			}]
-			x: 15.0d
-			y: -1.5d
-		}
-		{
 			dependencies: ["5586CC958FF191C5"]
 			id: "037F074C7A3AACF5"
 			subtitle: "超频！400%人类感谢！"

@@ -403,8 +403,6 @@ StartupEvents.registry("item", e => {
     // 未完成相关
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_layered_magnet")
-    e.create("createdelight:incomplete_tesla_coil", "create:sequenced_assembly")
-        .translationKey("item.createdelight.incomplete_tesla_coil")
     e.create("createdelight:incomplete_alternator", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_alternator")
     e.create("createdelight:incomplete_diesel_engine", "create:sequenced_assembly")
