@@ -47,7 +47,7 @@
 				}
 				type: "item"
 			}]
-			x: -16.5d
+			x: -17.0d
 			y: 14.5d
 		}
 		{
@@ -82,7 +82,7 @@
 				}
 				type: "item"
 			}]
-			x: -17.5d
+			x: -18.0d
 			y: 14.5d
 		}
 		{
@@ -117,7 +117,7 @@
 				}
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.0d
 			y: 14.5d
 		}
 		{
@@ -153,7 +153,7 @@
 				}
 				type: "item"
 			}]
-			x: -17.5d
+			x: -18.0d
 			y: 15.5d
 		}
 		{
@@ -175,7 +175,7 @@
 				}
 				type: "item"
 			}]
-			x: -16.5d
+			x: -17.0d
 			y: 16.5d
 		}
 		{
@@ -188,7 +188,6 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "进物品栏点开人物左上角的饰品栏就可以装上啦"
 			tasks: [{
 				id: "4703FA85822A3C05"
 				item: {
@@ -221,6 +220,7 @@
 				}
 				type: "item"
 			}]
+			subtitle: "基础燃料"
 			tasks: [{
 				id: "06D0940C91F82690"
 				item: {
@@ -369,7 +369,7 @@
 				type: "item"
 			}]
 			x: -20.25d
-			y: 7.5d
+			y: 6.75d
 		}
 		{
 			dependencies: ["1FC8DD4F0E8BEE74"]
@@ -393,7 +393,7 @@
 				type: "item"
 			}]
 			x: -20.25d
-			y: 10.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["3779745DA8DFCF88"]
@@ -518,7 +518,7 @@
 				type: "item"
 			}]
 			x: -21.75d
-			y: 8.25d
+			y: 6.75d
 		}
 		{
 			dependencies: ["11ABD5170197DB76"]
@@ -902,8 +902,8 @@
 				}
 				type: "item"
 			}]
-			x: -6.75d
-			y: 11.25d
+			x: -3.75d
+			y: 8.25d
 		}
 		{
 			dependencies: ["7BB851EFB976FB25"]
@@ -1074,7 +1074,7 @@
 				type: "item"
 			}]
 			x: -20.25d
-			y: 9.0d
+			y: 11.25d
 		}
 		{
 			dependencies: ["7DA0DBC367B11449"]
@@ -1097,8 +1097,8 @@
 				}
 				type: "item"
 			}]
-			x: -5.25d
-			y: 11.25d
+			x: -3.75d
+			y: 9.75d
 		}
 		{
 			dependencies: ["7BB851EFB976FB25"]
@@ -1179,8 +1179,8 @@
 				}
 				type: "item"
 			}]
-			x: -9.5d
-			y: 14.5d
+			x: -8.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["4698C27222F61E5E"]
@@ -1251,8 +1251,8 @@
 				}
 				type: "item"
 			}]
-			x: -9.5d
-			y: 15.5d
+			x: -8.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4698C27222F61E5E"]
@@ -1280,6 +1280,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "水罐"
 			tasks: [{
 				id: "7A23707CC9195E9D"
 				item: {
@@ -1327,6 +1328,7 @@
 			]
 			shape: "octagon"
 			size: 2.0d
+			subtitle: "可以装配的护甲！"
 			tasks: [{
 				id: "35014F871B3EEDD6"
 				item: "protection_pixel:armorloadplatform"
@@ -1472,7 +1474,7 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -16.5d
+			x: -17.0d
 			y: 13.0d
 		}
 		{
@@ -1507,7 +1509,7 @@
 				}
 				type: "item"
 			}]
-			x: -16.5d
+			x: -17.0d
 			y: 15.5d
 		}
 		{
@@ -1542,7 +1544,7 @@
 				}
 				type: "item"
 			}]
-			x: -15.5d
+			x: -16.0d
 			y: 15.5d
 		}
 		{
@@ -1551,6 +1553,7 @@
 			id: "459FD9D8D4F1C5FE"
 			shape: "square"
 			size: 1.5d
+			subtitle: "需要在盔甲装配台上进行装备"
 			tasks: [{
 				icon: {
 					Count: 1
@@ -1584,6 +1587,7 @@
 			id: "4698C27222F61E5E"
 			shape: "square"
 			size: 1.5d
+			subtitle: "需要再盔甲装配台上进行装卸"
 			tasks: [{
 				icon: "protection_pixel:pneumaticgrenade"
 				id: "3E0FD299AFAE48FE"
@@ -1592,7 +1596,7 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -10.5d
+			x: -10.0d
 			y: 13.0d
 		}
 		{
@@ -1611,6 +1615,173 @@
 			}]
 			x: -10.5d
 			y: 14.5d
+		}
+		{
+			dependencies: ["4698C27222F61E5E"]
+			id: "552C8A53571F55FB"
+			rewards: [{
+				count: 3
+				id: "01D6201008ABF63A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "614013FFCCA3315F"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 3
+						}
+					}
+					id: "protection_pixel:cannonarm"
+				}
+				type: "item"
+			}]
+			x: -9.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["4698C27222F61E5E"]
+			id: "6E870E574A675417"
+			rewards: [{
+				count: 3
+				id: "44E25D1FE3CCF658"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "47018676AA210895"
+				item: {
+					Count: 1
+					ForgeCaps: {
+						Parent: {
+							Items: [ ]
+							Size: 3
+						}
+					}
+					id: "protection_pixel:blooddialysisdevice"
+				}
+				type: "item"
+			}]
+			x: -9.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["552C8A53571F55FB"]
+			id: "5CD4E054A1B7935F"
+			rewards: [{
+				id: "631809DB1EE5D563"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			tasks: [{
+				id: "51208DD2C264DC40"
+				item: "protection_pixel:steelcorecannonshell"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 16.5d
+		}
+		{
+			dependencies: ["7DA0DBC367B11449"]
+			id: "1886F230887EDCB8"
+			rewards: [{
+				id: "6AFC4DE8E1C93C97"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "687C1CB4BF451D62"
+				item: {
+					Count: 1
+					id: "protection_pixel:typhoon_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.75d
+			y: 11.25d
+		}
+		{
+			dependencies: ["1886F230887EDCB8"]
+			id: "2A3ACA9DE26AD1C5"
+			rewards: [{
+				id: "2328F95D54F73804"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "1C2E8F93A4D3BDC7"
+				item: {
+					Count: 1
+					id: "protection_pixel:typhoonas_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -5.25d
+			y: 11.25d
+		}
+		{
+			dependencies: ["1FC8DD4F0E8BEE74"]
+			id: "7083D6BA1E22C599"
+			rewards: [{
+				id: "1770A73F8F122D27"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "3ED55F74039D07ED"
+				item: {
+					Count: 1
+					id: "protection_pixel:nightdemon_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -20.25d
+			y: 8.25d
+		}
+		{
+			dependencies: ["7083D6BA1E22C599"]
+			id: "09E85F32F91510F7"
+			rewards: [{
+				count: 3
+				id: "5F9D513FE670F875"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				id: "141B5AB38C97FA99"
+				item: {
+					Count: 1
+					id: "protection_pixel:nightdemonas_helmet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -21.75d
+			y: 8.25d
 		}
 	]
 	title: "&3蒸汽动力铠甲！"

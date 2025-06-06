@@ -5,6 +5,7 @@ StartupEvents.modifyCreativeTab("createaddition:main", e => {
     'createaddition:biomass_pellet',
     'createaddition:straw',
     'createaddition:seed_oil_bucket',
-    'createaddition:bioethanol_bucket'
+    'createaddition:bioethanol_bucket',
+    'createaddition:tesla_coil'
   ])
 })

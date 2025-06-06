@@ -16,7 +16,7 @@ conductivityMultiplier = 1.0
 maxPathfindingDepth = 32
 #Multiplier of energising speed
 #Range: 0.0 ~ 1.7976931348623157E308
-energiserSpeedMultiplier = 10.0
+energiserSpeedMultiplier = 50.0
 #Multiplier for the temperature at which components overheat. Set to -1 to disable overheating.
 #Range: -1.0 ~ 1.7976931348623157E308
 overheatingMultiplier = 1.0
