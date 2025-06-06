@@ -1,0 +1,29 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 1000,
+    "fluid": "brewinandchewin:salty_folly"
+  },
+  "experience": 2.0,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "item": "minecraft:wither_rose"
+    },
+    {
+      "item": "minecraft:ink_sac"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "recipe_book_tab": "drinks",
+  "result": {
+    "count": 1000,
+    "fluid": "brewinandchewin:withering_dross"
+  },
+  "temperature": 5
+}

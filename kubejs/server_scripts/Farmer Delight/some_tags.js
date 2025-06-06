@@ -61,7 +61,8 @@ ServerEvents.tags("item", e => {
         "silentsdelight:minced_warden_heart",
         "silentsdelight:minced_warden_heart",
         "casualness_delight:raw_donkey_meat",
-        "luncheonmeatsdelight:minced_pork"     
+        "luncheonmeatsdelight:minced_pork",
+        'miners_delight:arthropod'  
     ])
     e.add("forge:meat/processed/raw", [
         "#forge:meat/processed/raw/beef",
@@ -163,7 +164,9 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:cooked_cod_sausage',
         'hotdog_delight:squid_ink_sausage',
         'hotdog_delight:glow_squid_ink_sausage',
-        'hotdog_delight:pumpkin_sausage'
+        'hotdog_delight:pumpkin_sausage',
+        'butchercraft:cooked_blood_sausage',
+        'dungeonsdelight:cooked_snifferwurst',
     ])
     e.add("forge:sausage/raw", [
         "ratatouille:raw_sausage",
@@ -172,7 +175,9 @@ ServerEvents.tags("item", e => {
         'hotdog_delight:pork_sausage',
         'hotdog_delight:squid_ink_sausage',
         'hotdog_delight:glow_squid_ink_sausage',
-        'hotdog_delight:pumpkin_sausage'
+        'hotdog_delight:pumpkin_sausage',
+        'butchercraft:blood_sausage',
+        'dungeonsdelight:snifferwurst'
     ])
     e.remove("forge:vegetables/ghost_pepper", [
         "vintagedelight:ghost_pepper"

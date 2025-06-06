@@ -1,0 +1,26 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "basefluid": {
+    "count": 500,
+    "fluid": "minecraft:milk"
+  },
+  "experience": 1.0,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "ratatouille:cocoa_powder"
+    },
+    {
+      "item": "ratatouille:cocoa_powder"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "item": "brewinandchewin:cocoa_fudge"
+  },
+  "temperature": 2
+}

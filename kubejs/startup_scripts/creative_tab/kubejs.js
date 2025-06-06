@@ -251,5 +251,8 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_flare_panel',
         'createdelight:sweetberry_milkshake_bucket',
         'createdelight:incomplete_neapolitan_ice_cream',
+        'createdelight:wrapped_fries_ghasta',
+        'createdelight:enchanted_golden_lantern_fruit',
+        'createdelight:enchanted_golden_carrot',
     ])
 });  

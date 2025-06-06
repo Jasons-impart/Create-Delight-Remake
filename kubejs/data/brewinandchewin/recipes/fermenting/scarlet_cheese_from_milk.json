@@ -5,13 +5,13 @@
     "fluid": "minecraft:milk"
   },
   "experience": 1.0,
-  "fermentingtime": 2400,
+  "fermentingtime": 4800,
   "ingredients": [
     {
-      "item": "createdelight:dry_yeast"
+      "item": "minecraft:crimson_fungus"
     },
     {
-      "item": "vintagedelight:vinegar_bottle"
+      "item": "minecraft:nether_wart"
     },
     {
       "item": "minecraft:sugar"
@@ -20,7 +20,7 @@
   "recipe_book_tab": "meals",
   "result": {
     "count": 1000,
-    "fluid": "create_bic_bit:curdled_milk"
+    "fluid": "brewinandchewin:scarlet_cheese"
   },
-  "temperature": 4
+  "temperature": 5
 }

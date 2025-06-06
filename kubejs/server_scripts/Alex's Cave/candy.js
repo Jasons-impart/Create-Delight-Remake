@@ -2,7 +2,10 @@ ServerEvents.recipes(e => {
   remove_recipes_id(e, [
    "create:sandpaper_polishing/rose_quartz",
    "alexscaves:hot_chocolate_bottle",
-   "create_oppenheimered:sequenced_assembly/peppermint_mocha"
+   "create_oppenheimered:sequenced_assembly/peppermint_mocha",
+   "create_oppenheimered:mixing/ice_cream_licoroot",
+   "create_oppenheimered:mixing/ice_cream_chocolate",
+   "create_oppenheimered:mixing/ice_cream_sweetberry",
   ])
   //焦糖
   e.replaceInput({mod: "alexscaves"}, 'alexscaves:caramel', 'create_confectionery:bar_of_caramel')

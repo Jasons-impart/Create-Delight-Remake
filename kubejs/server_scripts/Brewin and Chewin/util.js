@@ -34,7 +34,7 @@ function fermenting(e, result, ingredients, inputFluid, experience, fermentingti
         }
     }
     inputFluid = Fluid.of(inputFluid)
-    fermentingtime = fermentingtime || 9600
+    fermentingtime = fermentingtime || 4800
     experience = experience || 1.0
     temperature = temperature || 3
     let json = {

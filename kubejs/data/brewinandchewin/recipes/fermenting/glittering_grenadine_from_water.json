@@ -2,25 +2,25 @@
   "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 1000,
-    "fluid": "create:honey"
+    "fluid": "minecraft:water"
   },
   "experience": 1.0,
   "fermentingtime": 4800,
   "ingredients": [
     {
-      "item": "minecraft:wheat"
+      "item": "minecraft:glow_berries"
     },
     {
-      "item": "minecraft:wheat_seeds"
+      "item": "minecraft:glowstone_dust"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "item": "minecraft:glow_ink_sac"
     }
   ],
   "recipe_book_tab": "drinks",
   "result": {
     "count": 1000,
-    "fluid": "brewinandchewin:mead"
+    "fluid": "brewinandchewin:glittering_grenadine"
   },
-  "temperature": 3
+  "temperature": 2
 }

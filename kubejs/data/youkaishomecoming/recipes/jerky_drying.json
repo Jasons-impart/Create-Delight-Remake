@@ -4,7 +4,7 @@
   "cookingtime": 9600,
   "experience": 0.0,
   "ingredient": {
-    "tag": "brewinandchewin:raw_meats"
+    "tag": "forge:meat/raw"
   },
   "result": "brewinandchewin:jerky"
 }

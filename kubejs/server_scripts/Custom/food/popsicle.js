@@ -2,8 +2,8 @@ ServerEvents.recipes(e => {
     // 老冰棍
 
     e.recipes.kubejs.shaped("createdelight:empty_popsicle", [
-        "  A",
-        "AB ",
+        " AA",
+        "ABA",
         "CA "
     ],
         {
@@ -55,6 +55,7 @@ ServerEvents.recipes(e => {
     make_popsicle("collectorsreap:lime_popsicle", "#forge:fruits/lime", Fluid.of("createdelight:limeade", 250))
     // make_popsicle("youkaishomecoming:milk_popsicle", "#forge:milk/milk_bottle", Fluid.of("minecraft:milk", 250))
     e.recipes.create.deploying("youkaishomecoming:big_popsicle", ["createdelight:empty_popsicle", "#forge:ice_cubes"])
+    e.recipes.create.deploying('mynethersdelight:tear_popsicle', ['createdelight:empty_popsicle', "minecraft:ghast_tear"])
     .id("createdelight:deploying/big_popsicle")
     // 牛奶冰棍特殊处理
     e.recipes.kubejs.shaped(

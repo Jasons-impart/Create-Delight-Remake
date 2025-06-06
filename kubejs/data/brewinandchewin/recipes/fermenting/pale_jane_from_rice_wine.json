@@ -2,25 +2,28 @@
   "type": "brewinandchewin:fermenting",
   "basefluid": {
     "count": 1000,
-    "fluid": "minecraft:milk"
+    "fluid": "brewinandchewin:rice_wine"
   },
   "experience": 1.0,
   "fermentingtime": 2400,
   "ingredients": [
     {
-      "item": "createdelight:dry_yeast"
+      "item": "minecraft:honey_bottle"
     },
     {
-      "item": "vintagedelight:vinegar_bottle"
+      "item": "farmersdelight:tree_bark"
+    },
+    {
+      "item": "minecraft:lily_of_the_valley"
     },
     {
       "item": "minecraft:sugar"
     }
   ],
-  "recipe_book_tab": "meals",
+  "recipe_book_tab": "drinks",
   "result": {
     "count": 1000,
-    "fluid": "create_bic_bit:curdled_milk"
+    "fluid": "brewinandchewin:pale_jane"
   },
   "temperature": 4
 }
