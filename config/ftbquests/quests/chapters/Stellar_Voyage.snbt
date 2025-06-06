@@ -29,7 +29,7 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["7B9BACB0DA054015"]
+			dependencies: ["112566BE4CAC8023"]
 			id: "5C9FA20C255A3BFC"
 			tasks: [{
 				id: "009523844DA486BD"
@@ -37,7 +37,7 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 3.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["5C9FA20C255A3BFC"]
@@ -49,13 +49,13 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 5.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
-				"7E2F6C2D394DF5BF"
 				"0400549196F5FAF2"
 				"44AFA37DFF9E8915"
+				"3ACCC6776573054D"
 			]
 			id: "1B5FA80114C3721D"
 			shape: "diamond"
@@ -70,7 +70,7 @@
 				type: "item"
 			}]
 			x: -2.0d
-			y: 6.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["7B9BACB0DA054015"]
@@ -89,7 +89,7 @@
 				}
 			]
 			x: -1.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["7B9BACB0DA054015"]
@@ -114,10 +114,10 @@
 			]
 			title: "火箭必备"
 			x: -3.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
-			dependencies: ["7B9BACB0DA054015"]
+			dependencies: ["43DFD256A8DE6F1E"]
 			id: "71E2C3861961DD7E"
 			subtitle: "电解器"
 			tasks: [{
@@ -126,11 +126,11 @@
 				type: "item"
 			}]
 			title: "生存必须要素之&3氧气"
-			x: -3.5d
-			y: 3.5d
+			x: 0.5d
+			y: 4.5d
 		}
 		{
-			dependencies: ["7B9BACB0DA054015"]
+			dependencies: ["5C9FA20C255A3BFC"]
 			id: "43DFD256A8DE6F1E"
 			subtitle: "可以多存一点气体以备不时之需"
 			tasks: [{
@@ -146,7 +146,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["112566BE4CAC8023"]
+			dependencies: ["452A86465793FB59"]
 			hide_until_deps_visible: true
 			id: "7B9BACB0DA054015"
 			subtitle: "先得有航天服才能在外太空生存"
@@ -196,8 +196,8 @@
 					type: "item"
 				}
 			]
-			x: -2.0d
-			y: 2.0d
+			x: -5.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
@@ -214,9 +214,9 @@
 		}
 		{
 			dependencies: [
+				"605F75F85D1E9394"
 				"4A07C2D2DACFBFE8"
 				"4CBAD5F7903EBC40"
-				"605F75F85D1E9394"
 			]
 			id: "0A0BB141AA2503D6"
 			shape: "square"
@@ -226,7 +226,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["605F75F85D1E9394"]
@@ -237,8 +237,8 @@
 				item: "ad_astra:oxygen_distributor"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 1.5d
+			x: 5.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["393E1E2F429F9972"]
@@ -290,7 +290,7 @@
 					type: "item"
 				}
 			]
-			x: 11.5d
+			x: 8.0d
 			y: 3.0d
 		}
 		{
@@ -309,7 +309,7 @@
 				}
 				type: "item"
 			}]
-			x: 5.0d
+			x: 5.5d
 			y: 6.0d
 		}
 		{
@@ -322,14 +322,14 @@
 				item: "iceandfire:cockatrice_eye"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 2.5d
 			y: 6.0d
 		}
 		{
 			dependencies: [
-				"0A0BB141AA2503D6"
 				"6DA847612E447E6F"
 				"56433824E17AD60E"
+				"41F385DB9F6DD174"
 			]
 			id: "06F0D095C15C8744"
 			shape: "diamond"
@@ -344,7 +344,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 6.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["605F75F85D1E9394"]
@@ -363,7 +363,7 @@
 				}
 			]
 			x: 5.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["74102256002B6071"]
@@ -390,13 +390,13 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
-				"19C23E7C7BF7589F"
 				"579B80DF6028712F"
 				"7F0D01776D3307B3"
+				"72B5FC7E3248FA6E"
 			]
 			id: "3107234236C3448D"
 			shape: "diamond"
@@ -411,7 +411,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 6.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["393E1E2F429F9972"]
@@ -425,8 +425,8 @@
 				}
 				type: "item"
 			}]
-			x: 11.5d
-			y: 4.0d
+			x: 12.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["393E1E2F429F9972"]
@@ -436,7 +436,7 @@
 				item: "ad_astra:oxygen_sensor"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 11.0d
 			y: 2.0d
 		}
 		{
@@ -518,13 +518,13 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
-				"3EA892144D1A02BF"
 				"2C2CC8DE3AB75D35"
 				"1ACFB4504A2EBCAF"
+				"17582A7CF6AC7154"
 			]
 			id: "626093D757B36F5C"
 			shape: "diamond"
@@ -539,7 +539,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 6.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["605F75F85D1E9394"]
@@ -554,8 +554,8 @@
 				type: "item"
 			}]
 			title: "小车车"
-			x: 6.5d
-			y: 2.5d
+			x: 6.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["112566BE4CAC8023"]
@@ -592,7 +592,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 3.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
@@ -605,7 +605,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
@@ -717,7 +717,7 @@
 				type: "item"
 			}]
 			title: "清洁能源！"
-			x: 6.0d
+			x: 5.5d
 			y: 4.5d
 		}
 		{
@@ -761,8 +761,8 @@
 				type: "item"
 			}]
 			title: "我就是牛顿！"
-			x: 6.5d
-			y: 3.5d
+			x: 2.0d
+			y: 3.0d
 		}
 		{
 			icon: "ad_astra:earth_globe"
@@ -794,8 +794,8 @@
 				item: "ad_astra:oxygen_bucket"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 5.0d
+			x: 0.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["36ADB91429D6B418"]
@@ -905,7 +905,7 @@
 			]
 			title: "火箭必备"
 			x: 3.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["393E1E2F429F9972"]
@@ -924,7 +924,7 @@
 				}
 			]
 			x: 11.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["393E1E2F429F9972"]
@@ -944,7 +944,7 @@
 			]
 			title: "火箭必备"
 			x: 9.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			id: "37ACACC4F00E1811"
@@ -953,8 +953,8 @@
 				item: "ae2:calculation_processor"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 5.0d
+			x: 11.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["74102256002B6071"]
@@ -1065,7 +1065,7 @@
 				}
 			]
 			x: 17.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["0EF849425CE2BC23"]
@@ -1085,7 +1085,7 @@
 			]
 			title: "火箭必备"
 			x: 15.0d
-			y: 7.5d
+			y: 9.0d
 		}
 		{
 			id: "036F26ACC5571523"
@@ -1107,8 +1107,8 @@
 					type: "item"
 				}
 			]
-			x: 17.0d
-			y: 5.0d
+			x: 17.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["0159488B430D5B90"]
@@ -1407,7 +1407,7 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["7B9BACB0DA054015"]
+			dependencies: ["5C9FA20C255A3BFC"]
 			id: "436A84764BE8B157"
 			shape: "hexagon"
 			subtitle: "可以用普通盔甲附魔后，携带特殊氧气瓶即可进入太空！！！"
@@ -1441,7 +1441,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["7B9BACB0DA054015"]
+			dependencies: ["5C9FA20C255A3BFC"]
 			id: "3A27FB3A1AA8D320"
 			shape: "hexagon"
 			subtitle: "从此以后，太空如履平地！"
@@ -1521,8 +1521,8 @@
 				}
 				type: "item"
 			}]
-			x: 8.5d
-			y: 3.0d
+			x: 9.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["5E48823AD99E93CC"]
@@ -1534,6 +1534,143 @@
 			}]
 			x: 24.0d
 			y: 0.0d
+		}
+		{
+			dependencies: [
+				"7E2F6C2D394DF5BF"
+				"19C3D2C0599F3988"
+			]
+			id: "3ACCC6776573054D"
+			rewards: [{
+				id: "3041F599CA949F9C"
+				item: "createdelight:basic_panel"
+				random_bonus: 4
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "55CA5E3643475228"
+				item: "createdelight:basic_cabin"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["452A86465793FB59"]
+			id: "19C3D2C0599F3988"
+			tasks: [{
+				id: "69E583C539A485FA"
+				item: "createdelight:basic_panel"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["5C9FA20C255A3BFC"]
+			id: "452A86465793FB59"
+			tasks: [{
+				id: "65EDF9D46E4EF7F5"
+				item: "createdelight:aviation_fibers_sheet"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["605F75F85D1E9394"]
+			id: "3DB06046AEDC0460"
+			tasks: [{
+				id: "343871EEEF0641F4"
+				item: "createdelight:advanced_panel"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"0A0BB141AA2503D6"
+				"3DB06046AEDC0460"
+			]
+			id: "41F385DB9F6DD174"
+			rewards: [{
+				id: "538BF3B813AECE7C"
+				item: "createdelight:advanced_panel"
+				random_bonus: 5
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				id: "7A28A6174C1AA528"
+				item: "createdelight:advanced_cabin"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"19C23E7C7BF7589F"
+				"607D62FBDA30947D"
+			]
+			id: "72B5FC7E3248FA6E"
+			rewards: [{
+				id: "0ABD4ECD69E04F60"
+				item: "createdelight:explorer_panel"
+				random_bonus: 4
+				type: "item"
+			}]
+			tasks: [{
+				id: "5CAFC7F7691A9EC8"
+				item: "createdelight:explorer_cabin"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["393E1E2F429F9972"]
+			id: "607D62FBDA30947D"
+			tasks: [{
+				id: "321638D91BE876A9"
+				item: "createdelight:explorer_panel"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"3EA892144D1A02BF"
+				"37FF4D9450224650"
+			]
+			id: "17582A7CF6AC7154"
+			rewards: [{
+				id: "7479ECA8A5C60702"
+				item: "createdelight:flare_panel"
+				random_bonus: 4
+				type: "item"
+			}]
+			tasks: [{
+				id: "4740B9C2F37F74C2"
+				item: "createdelight:flare_cabin"
+				type: "item"
+			}]
+			x: 16.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0EF849425CE2BC23"]
+			id: "37FF4D9450224650"
+			tasks: [{
+				id: "5D8AFBC5EC58DD52"
+				item: "createdelight:flare_panel"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 4.5d
 		}
 	]
 	title: "&e群星之旅！"
