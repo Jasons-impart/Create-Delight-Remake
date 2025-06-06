@@ -1,0 +1,22 @@
+{
+  "type": "brewinandchewin:fermenting",
+  "experience": 1.0,
+  "fermentingtime": 4800,
+  "ingredients": [
+    {
+      "tag": "brewinandchewin:raw_meats"
+    },
+    {
+      "tag": "brewinandchewin:raw_meats"
+    },
+    {
+      "tag": "brewinandchewin:raw_meats"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 3,
+    "item": "brewinandchewin:jerky"
+  },
+  "temperature": 4
+}

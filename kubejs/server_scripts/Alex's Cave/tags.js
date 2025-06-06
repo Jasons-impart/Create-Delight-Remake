@@ -120,4 +120,15 @@ ServerEvents.tags("minecraft:block", e => {
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
+    e.add("forge:ice_cream_block", [
+        'alexscaves:vanilla_ice_cream',
+        'alexscaves:chocolate_ice_cream',
+        'alexscaves:sweetberry_ice_cream',
+        'neapolitan:strawberry_ice_cream_block',
+        'neapolitan:banana_ice_cream_block',
+        'neapolitan:banana_ice_cream_block',
+        'neapolitan:adzuki_ice_cream_block',
+        'collectorsreap:lime_ice_cream_block',
+        'collectorsreap:pomegranate_ice_cream_block',
+    ])
 })

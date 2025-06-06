@@ -350,6 +350,48 @@ StartupEvents.registry("item", e => {
                 .saturation(0.6)
         })
         .translationKey("item.createdelight.empty_riceball")
+    //纸包炸恶魂意面
+    e.create("createdelight:wrapped_fries_ghasta")
+        .food(f => {
+            f.hunger(8)
+                .saturation(0.6)
+                .eaten(ea => {
+                    ea.server.scheduleInTicks(1, func => {
+                        if(!ea.player.isCreative()) {
+                            if(!ea.player.getInventory().add('create_bic_bit:dirty_paper')) {
+                                ea.player.drop('create_bic_bit:dirty_paper', false)
+                            }
+                        }
+                    })
+                })
+        })
+        .translationKey("item.createdelight.wrapped_fries_ghasta")
+    //附魔金灯笼果
+    e.create("createdelight:enchanted_golden_lantern_fruit")
+        .texture("trailandtales_delight:item/golden_lantern_fruit")
+        .rarity("epic")
+        .food(f => {
+            f.hunger(4)
+                .saturation(1.5)
+                .effect("minecraft:fire_resistance", 6000, 0, 1.0)
+                .effect("minecraft:absorption", 3600, 3, 1.0)
+                .effect("minecraft:regeneration", 400, 2, 1.0)
+                .effect("minecraft:resistance", 3600, 0, 1.0)
+        })
+        .glow(true)
+        .translationKey("item.createdelight.enchanted_golden_lantern_fruit")
+    //附魔金胡萝卜
+    e.create("createdelight:enchanted_golden_carrot")
+        .texture("minecraft:item/golden_carrot")
+        .rarity("rare")
+        .food(f => {
+            f.hunger(6)
+                .saturation(1.2)
+                .effect("minecraft:saturation", 600, 0, 1.0)
+                .effect("farmersdelight:nourishment", 3600, 0, 1.0)
+        })
+        .glow(true)
+        .translationKey("item.createdelight.enchanted_golden_carrot")
 
     e.create("createdelight:fuel_hotcream")
         .tag("create:blaze_burner_fuel/special")

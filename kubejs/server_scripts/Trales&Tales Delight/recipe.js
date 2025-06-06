@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {create} = e.recipes
+    const {create, create_new_age} = e.recipes
     remove_recipes_output(e, [
         "trailandtales_delight:cheese_wheel",
         "trailandtales_delight:cherry_cake",
@@ -80,5 +80,25 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ]
     ).id("createdelight:filling/pitcher_plant_tea")
-
+    create.filling(
+        'trailandtales_delight:golden_lantern_fruit',
+        [
+            'trailandtales_delight:lantern_fruit',
+            Fluid.of("createmetallurgy:molten_gold", 450)
+        ]
+    ).id("createdelight:filling/golden_lantern_fruit")
+{
+    let iner = 'trailandtales_delight:lantern_fruit'
+    create.sequenced_assembly('createdelight:enchanted_golden_lantern_fruit', iner,
+        [
+            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 120)]),
+            create.deploying(iner, [iner, "minecraft:gold_block"]),
+            create.deploying(iner, [iner, "minecraft:gold_block"]),
+            create_new_age.energising(iner, iner, 2000000)
+        ]
+    )
+        .loops(4)
+        .transitionalItem(iner)
+        .id("createdelight:crafting/enchanted_golden_lantern_fruit")
+}
 })

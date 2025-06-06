@@ -87,6 +87,7 @@ ServerEvents.recipes(e => {
     deep_frying('oceanic_delight:fried_shrimp', "createdelightcore:unfried_shrimp", 100)
     deep_frying('create_bic_bit:enderball', 'minecraft:ender_pearl', 100)
     deep_frying('create_deepfried:corn_dog', 'create_deepfried:raw_corn_dog', 100)
+    deep_frying('mynethersdelight:fries_ghasta', 'mynethersdelight:ghasta', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [

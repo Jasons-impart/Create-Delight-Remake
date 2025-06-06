@@ -41,7 +41,7 @@ ItemEvents.tooltip(e => {
         'bakeries:mould_cheese_cocoa_toast',
     ])
     clearAddShiftCtrlTooltip(e, [
-
+        'brewinandchewin:keg'
     ])
     addAir(e, [
         'create:netherite_backtank',

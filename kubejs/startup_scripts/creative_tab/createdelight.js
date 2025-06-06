@@ -39,6 +39,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_calamari',
     'createdelight:raw_cheese_pizza',
     // 食物
+    'createdelight:wrapped_fries_ghasta',
     'createdelight:oat_bread',
     'createdelight:ketchup_corn_dog',
     'createdelight:mayo_corn_dog',
@@ -49,6 +50,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:boiling_water_cabbage',
     'createdelight:braised_intestines_in_brown_sauce',
     'createdelight:empty_popsicle',
+    'createdelight:enchanted_golden_lantern_fruit',
+    'createdelight:enchanted_golden_carrot',
   ])
 })
 StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {

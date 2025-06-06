@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "mynethersdelight:hotdog",
         [
-            "ratatouille:sausage",
+            "#forge:sausage/cooked",
             "#forge:bread"
         ]
     ).id("mynethersdelight:hotdog")

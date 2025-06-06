@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {createdieselgenerators, create, vintagedelight} = e.recipes
+    const {create, vintagedelight, kubejs} = e.recipes
     remove_recipes_id(e, [
         "brewinandchewin:filling/create/unripe_flaxen_cheese_wheel",
         "brewinandchewin:cutting/flaxen_cheese_wheel",
@@ -8,7 +8,19 @@ ServerEvents.recipes(e => {
         "brewinandchewin:filling/create/honey_bottle",
         "brewinandchewin:fermenting/kippers",
         "brewinandchewin:flaxen_cheese_wheel_from_wedges",
-        "vintagedelight:cheese_wheel_from_slices"
+        "vintagedelight:cheese_wheel_from_slices",
+        "culturaldelights:fermenting/pickle",
+        "brewinandchewin:fermenting/kimchi",
+        "brewinandchewin:pizza",
+        "brewinandchewin:pizza_from_slices",
+        "brewinandchewin:cutting/pizza",
+        "brewinandchewin:quiche_from_slices",
+        "brewinandchewin:quiche_from_mushroom",
+        "brewinandchewin:quiche_from_bacon",
+        "brewinandchewin:cutting/quiche",
+        "brewinandchewin:cooking/sweet_berry_jam",
+        "brewinandchewin:cooking/glow_berry_marmalade",
+        "brewinandchewin:cooking/apple_jelly"
     ])
     e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")
@@ -33,4 +45,64 @@ ServerEvents.recipes(e => {
         "minecraft:dried_kelp",
         "#forge:salt"
     ]).id("brewinandchewin:fermenting/kippers")
+    kubejs.shapeless(
+        'brewinandchewin:scarlet_cheese_wheel',
+        '4x brewinandchewin:scarlet_cheese_wedge'
+    ).id("brewinandchewin:scarlet_cheese_wheel_from_wedges")
+    frementing_3(e, "minecraft:water",
+        [
+            "ratatouille:wheat_kernels",
+            "createdelight:dry_yeast"
+        ], 
+        "brewinandchewin:beer",
+        "brewinandchewin:beer",
+        3, 4800
+    )
+    frementing_3(e, "minecraft:water",
+        [
+            "#forge:crops/potato",
+            "ratatouille:wheat_kernels",
+            'culturaldelights:corn_kernels'
+        ],
+        "brewinandchewin:vodka",
+        "brewinandchewin:vodka",
+        3, 4800
+    )
+    frementing_3(e, "create:honey", 
+        [
+            "ratatouille:wheat_kernels",
+            "minecraft:sweet_berries"
+        ],
+        "brewinandchewin:mead",
+        "brewinandchewin:mead",
+        3, 4800
+    )
+    frementing_3(e, "minecraft:water", 
+        [
+            "#forge:crops/rice",
+            'createdelight:dry_yeast'
+        ],
+        'brewinandchewin:rice_wine',
+        'brewinandchewin:rice_wine',
+        3, 4800
+    )
+    frementing_3(e, "brewinandchewin:strongroot_ale", 
+        [
+            "minecraft:iron_ingot",
+            "minecraft:crimson_fungus",
+            "minecraft:nether_wart",
+            "ratatouille:wheat_kernels"
+        ], 
+        "brewinandchewin:steel_toe_stout",
+        "brewinandchewin:steel_toe_stout",
+        1, 4800
+    )
+    frementing_3(e, "brewinandchewin:vodka", 
+        [
+            'butchercraft:blood_fluid_bottle'
+        ],
+        'brewinandchewin:bloody_mary',
+        'brewinandchewin:bloody_mary',
+        4, 4800
+    )
 })
