@@ -384,6 +384,7 @@ jobs:
           # remove patch folder
           if [ -d "patch" ]; then
             rm -rf "patch" || { echo "Error: Failed to remove 'patch' directory"; exit 1; }
+            rm -rf "deleted_files.txt" || { echo "Error: Failed to remove 'deleted_files.txt'"; exit 1; }
           else
             echo "Error: 'patch' directory not found for removal"
           fi
@@ -429,6 +430,7 @@ jobs:
           rem move patched files to right place
           %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
           rd /S /Q "patch"
+          rd deleted_files.txt
 
           endlocal
           EOF
