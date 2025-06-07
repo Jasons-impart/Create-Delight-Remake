@@ -271,6 +271,20 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+      - name: 安装 Packwiz 打包软件
+        id: download-artifact
+        uses: actions/download-artifact@v4
+        with:
+          pattern: "Linux 64-bit x86"
+          path: ${{ github.workspace }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: Jasons-impart/packwiz
+          run-id: 14558970721
+      - name: 挪动packwiz到根目录
+        run: |
+          # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
+          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
+          chmod +x ./packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
           # 获取当前 commit 的 hash
@@ -370,6 +384,7 @@ jobs:
           # remove patch folder
           if [ -d "patch" ]; then
             rm -rf "patch" || { echo "Error: Failed to remove 'patch' directory"; exit 1; }
+            rm -rf "deleted_files.txt" || { echo "Error: Failed to remove 'deleted_files.txt'"; exit 1; }
           else
             echo "Error: 'patch' directory not found for removal"
           fi
@@ -415,6 +430,7 @@ jobs:
           rem move patched files to right place
           %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
           rd /S /Q "patch"
+          rd deleted_files.txt
 
           endlocal
           EOF
@@ -427,15 +443,21 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
+      - name: 检测并生成mods meta信息（packwiz将会自动移除cf可下载mod）
+        run: |
+          ./packwiz curseforge detect
+      - name: 更新index
+        run: |
+          ./packwiz refresh
       - name: 下载manifest.json
         uses: actions/download-artifact@v4
         with:
           name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
-      - name: 移除mods并加入manifest.json
+      - name: 更新patch中的mod，并加入manifest.json
         run: |
           rm -rf patch/mods
+          mv mods patch
           mv manifest.json patch
-          cat patch/manifest.json
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:
