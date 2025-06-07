@@ -457,6 +457,7 @@ jobs:
         run: |
           rm -rf patch/mods
           mv mods patch
+          rm -rf patch/mods/*.pw.toml
           mv manifest.json patch
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
