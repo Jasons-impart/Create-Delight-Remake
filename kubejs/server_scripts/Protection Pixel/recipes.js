@@ -135,22 +135,22 @@ ServerEvents.recipes(e => {
         }
     )
         .id("protection_pixel:hunterloot")
-    e.recipes.create.mechanical_crafting("protection_pixel:nightdemon_helmet",
-        [
-            "ABCBA",
-            "DEFED",
-            " ABA "
-        ],
-        {
-            A: "#forge:plates/steel",
-            B: "ae2:fluix_crystal",
-            C: "alexscaves:pure_darkness",
-            D: "#forge:plates/brass",
-            E: "minecraft:glass_pane",
-            F: "create_sa:brass_helmet"
-        }
+    // e.recipes.create.mechanical_crafting("protection_pixel:nightdemon_helmet",
+    //     [
+    //         "ABCBA",
+    //         "DEFED",
+    //         " ABA "
+    //     ],
+    //     {
+    //         A: "#forge:plates/steel",
+    //         B: "ae2:fluix_crystal",
+    //         C: "alexscaves:pure_darkness",
+    //         D: "#forge:plates/brass",
+    //         E: "minecraft:glass_pane",
+    //         F: "create_sa:brass_helmet"
+    //     }
 
-    ).id("protection_pixel:nightdemonloot")
+    // ).id("protection_pixel:nightdemonloot")
     e.recipes.create.mechanical_crafting("protection_pixel:breaker_chestplate",
         [
             "ABCBA",
@@ -384,25 +384,25 @@ ServerEvents.recipes(e => {
 
     ).id("protection_pixel:buoyancyloot")
     
-    e.recipes.create.mechanical_crafting("protection_pixel:typhoon_chestplate",
-        [
-            "ABCBA",
-            "DEFED",
-            "EGHGE",
-            "EE EE"
-        ],
-        {
-            A: "create:fluid_pipe",
-            B: "createdelight:planet_gear",
-            C: "create:electron_tube",
-            D: "#forge:ingots/steel",
-            E: "#forge:plates/brass",
-            F: "create_sa:brass_exoskeleton_chestplate",
-            G: "#forge:plates/steel",
-            H: "create:fluid_tank"
-        }
+    // e.recipes.create.mechanical_crafting("protection_pixel:typhoon_chestplate",
+    //     [
+    //         "ABCBA",
+    //         "DEFED",
+    //         "EGHGE",
+    //         "EE EE"
+    //     ],
+    //     {
+    //         A: "create:fluid_pipe",
+    //         B: "createdelight:planet_gear",
+    //         C: "create:electron_tube",
+    //         D: "#forge:ingots/steel",
+    //         E: "#forge:plates/brass",
+    //         F: "create_sa:brass_exoskeleton_chestplate",
+    //         G: "#forge:plates/steel",
+    //         H: "create:fluid_tank"
+    //     }
 
-    ).id("protection_pixel:typhoonloot")
+    // ).id("protection_pixel:typhoonloot")
     e.findRecipes({ mod: "protection_pixel", output: "#protection_pixel:alloy" }).forEach(recipe => {
         let result = recipe.originalRecipeResult
         let ingredient = recipe.json.getAsJsonObject("ingredient").get("item").getAsString()
