@@ -1,35 +1,20 @@
 
 ["Combustion Reactor"]
 	#The time interval consumed each time: time>-11
-	Time = 0.0
-	#Show time left of reactor in inventury
-	"Tip in inventury" = true
+	time = 0.0
 
 ["Brass plates"]
-	#change armor value
 	Armor = 2.0
-	#change toughness value
 	Toughness = 1.0
-	#change weight value
 	Weight = 2.0
 
 ["Iron plates"]
-	#change armor value
 	Armor = 1.0
-	#change toughness value
 	Toughness = 0.0
-	#change weight value
 	Weight = 1.0
 
 ["Alloy plates"]
-	#change armor value
 	Armor = 2.0
-	#change toughness value
 	Toughness = 1.0
-	#change weight value
 	Weight = 1.5
-
-["Firstperson render"]
-	#false recommanded with vanilla minecraft
-	enable = false
 
