@@ -39,6 +39,10 @@ ItemEvents.tooltip(e => {
         'luncheonmeatsdelight:can_shell_small_toast',
         'bakeries:mould_toast',
         'bakeries:mould_cheese_cocoa_toast',
+        'eclipticseasons:spring_greenhouse_core',
+        'eclipticseasons:summer_greenhouse_core',
+        'eclipticseasons:autumn_greenhouse_core',
+        'eclipticseasons:winter_greenhouse_core',
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg'
@@ -59,15 +63,6 @@ let tooltips = [
     ['createdieselgenerators:huge_diesel_engine', "§4下面有错误, 最多应为40960su", "§4-> the following contains an error, should be up to 40960su"],
     ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
-    // ["createdelight:overworld_metal_ore_cluster", "512su/RPM", "512su/RPM"],
-    // ["createdelight:overworld_noble_metal_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    // ["createdelight:nether_ore_cluster", "1536su/RPM", "1536su/RPM"],
-    // ["createdelight:moon_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    // ["createdelight:mars_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    // ["createdelight:mars_gemstone_cluster", "1536su/RPM", "1536su/RPM"],
-    // ["createdelight:mercury_ore_cluster", "1024su/RPM", "1024su/RPM"],
-    // ["createdelight:venus_ore_cluster", "2048su/RPM", "2048su/RPM"],
-    // ["createdelight:glacio_ore_cluster", "2048su/RPM", "2048su/RPM"],
 ]
 tooltips.forEach(([key, zh_cn, en_us]) => {
     // 添加 key

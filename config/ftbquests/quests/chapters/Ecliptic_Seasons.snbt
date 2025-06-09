@@ -10,148 +10,13 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"节气（Ecliptic Seasons）是一个关于四季的优质的国创mod。它将mc分为了24个节气，每6个节气为一个季节，每24个节气一年。每种作物都有限定的季节。"
-				"另外与静谧四季不同的是，节气加入了“湿度”这一属性。作物同样会受到这一属性的影响。"
-			]
 			icon: "eclipticseasons:calendar"
-			id: "3B3E70D786746A30"
+			id: "3F7431683708E805"
 			rewards: [{
-				id: "40D0199185DFF0E9"
+				id: "2AB1F8597F80D803"
 				item: "eclipticseasons:calendar"
 				type: "item"
 			}]
-			size: 2.0d
-			subtitle: "国创的优质季节mod"
-			tasks: [{
-				id: "680EF26E2A118539"
-				title: "节气"
-				type: "checkmark"
-			}]
-			x: -5.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["3B3E70D786746A30"]
-			description: [
-				"湿度有五级，可通过&e湿度计&r查看。"
-				"作物或种子会提示所需湿度，超出范围1级大幅减慢生长，超出2级及以上停止生长（即使在温室）。"
-				"不同生物群系有不同&e自然湿度&r，部分可能随季节变化。"
-				"{@pagebreak}"
-				"如果想要具体的了解原理，我们需要定义一个概念：作物的&e实际生长湿度区间&r。默认情况下，这个区间是作物标注的“适宜湿度”&e向前后各扩展一级湿度&r。例如，适宜湿度为“一般”的作物，其实际可生长湿度为“干燥”、“一般”和“湿润”。"
-				"作物处于不在区间内的湿度的群系则完全无法生长，&e即使使用温室调节湿度&r。"
-				"举例来说，适宜湿度为“一般”的作物可以在“干燥”和“湿润”的环境下缓慢生长，但在“干旱”（如热带草原）或“潮湿”（如丛林）等湿度下完全无法生长，即使使用温室调节也无效。"
-			]
-			id: "0CEBCFFF0052D7F9"
-			subtitle: "对于作物的生长非常重要"
-			tasks: [{
-				id: "2859BEE983AFAA86"
-				item: "eclipticseasons:hygrometer"
-				type: "item"
-			}]
-			title: "湿度系统"
-			x: -5.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["0CEBCFFF0052D7F9"]
-			description: [
-				"如果在湿度不适宜的地区还想种植的话，可以考虑使用&e调整湿度的物件&r。&e这些东西只能在温室中起效。&r"
-				"原版节气mod使用&e木格栅&r调整湿度。可以调整以其为中心，直径为9的正方体的范围内的湿度。"
-				"向&e其中加入湿海绵，下方放置热源&r（营火，岩浆块），可使范围内的&e湿度+1&r，但一段时间后湿海绵会变干。干海绵在其中时会&e降低范围内的湿度&r，一段时间后变为湿海绵。"
-				"本包中加入了一个&e加湿器&r，向其中&e通入水&r，它会使得以其正下方的非空气方块为中心，直径为9的正方体内的湿度+1。"
-			]
-			id: "4AACEDD23E29D699"
-			min_required_tasks: 1
-			subtitle: "配合温室使用"
-			tasks: [
-				{
-					id: "218B7AE97B15AC6D"
-					item: "createdelight:sprinkler"
-					type: "item"
-				}
-				{
-					id: "2F41473908A6A501"
-					item: "eclipticseasons:block_in_wooden_grate_block"
-					type: "item"
-				}
-			]
-			title: "调整湿度"
-			x: -5.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["3B3E70D786746A30"]
-			description: [
-				"与静谧四季的单纯一层玻璃不同，节气的温室要求其尽量是一个&e封闭空间&r。建造温室可以使用&e任意完整方块&r搭建。"
-				"只有在温室中，调节湿度的物件与温室核心才会生效。"
-			]
-			id: "7A77AFB51F30050D"
-			tasks: [{
-				id: "052822DB565BBC14"
-				title: "搭建温室"
-				type: "checkmark"
-			}]
-			x: -2.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["7A77AFB51F30050D"]
-			description: [
-				"温室之心只有&e在温室中&r才会生效。它可以&e改变温室内的季节&r，范围为以其为圆心半径16格的球体。"
-				"将&e心髓插入空的温室之心室&r可以制作出对应季节的温室之心。温室心髓的获取方式请参考&e该mod的进度&r。&e完成其所有的任务会赠送每种季节的温室心髓各两个&r。"
-				"另外，玩家可以制作&e祈年令&r，将其用于&e空白的悬挂告示牌&r可将其转变。然后上面会显示任务，&e交付其记载的物品&r即可完成任务，任务的奖励为温室之心髓。祈年令上的任务会&e随时间变化&r，一个季节的任务只会有对应的心髓。"
-			]
-			id: "7F5621A87886AAA7"
-			subtitle: "调整温室中的季节"
-			tasks: [{
-				id: "7C9607EDAB8C47AA"
-				item: "eclipticseasons:greenhouse_core_container"
-				type: "item"
-			}]
-			title: "温室之心"
-			x: 0.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["3B3E70D786746A30"]
-			description: ["对作物使用，可以查看其位于什么带，是否位处于温室中，以及生长的概率。"]
-			id: "30BC5575C304C513"
-			subtitle: "对作物使用"
-			tasks: [{
-				id: "14FDE6DAED3BA5DF"
-				item: "eclipticseasons:growth_detector"
-				type: "item"
-			}]
-			x: -8.0d
-			y: 1.5d
-		}
-		{
-			icon: "eclipticseasons:calendar"
-			id: "3F7431683708E805"
-			rewards: [
-				{
-					id: "2AB1F8597F80D803"
-					item: "eclipticseasons:calendar"
-					type: "item"
-				}
-				{
-					id: "6ACC52B42E3D3403"
-					item: {
-						Count: 1
-						id: "eclipticseasons:broom"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7C3C024C69AF6AD5"
-					item: "eclipticseasons:growth_detector"
-					type: "item"
-				}
-			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "在这里将会详细讲述本整合包的&e种植系统"
@@ -165,6 +30,14 @@
 		}
 		{
 			dependencies: ["3F7431683708E805"]
+			description: [
+				"种子有对应&9湿度需求&r，&4偏移1级&r大幅&e减慢生长&r，&4偏移2级&r及以上时&4即使在温室&r也&e停止生长&r"
+				"不同生物群系有不同&e自然湿度&r，且部分&e随季节变化&r"
+				""
+				"&l如果&9未调节前环境湿度&r&l不在&e适宜区间&r&l里（如 &a\"一般\"&r&l湿度作物在沙漠&4\"干旱\"&r&l、丛林&1\"潮湿\"&r&l中种植），即使用&e温室调节至合适湿度&r&l，&4也无法生长"
+				""
+				"总结一下：&n&l&4环境湿度偏移2级以上时作物无论如何都无法生长"
+			]
 			icon: "eclipticseasons:hygrometer"
 			id: "276D47755231DF3D"
 			rewards: [{
@@ -174,6 +47,7 @@
 			}]
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "湿度有&e五级&r，为&4干旱&r、&6干燥&r、&a一般&r、&9湿润&r、&1潮湿"
 			tasks: [{
 				icon: "eclipticseasons:hygrometer"
 				id: "273B22BE81543AB3"
@@ -190,14 +64,21 @@
 			description: ["本整合包将一年分为了24个节气，每6个节气为一个季节。每种作物都有各自&e限定的季节&r（作物种子有介绍季节），这是限定作物生长的基础要素，如若&4不满足则作物无法生长&r"]
 			icon: "eclipticseasons:seasonal_prayer_scroll"
 			id: "23BC02E012D1552A"
-			rewards: [{
-				id: "2CE7DEEADB66F06C"
-				item: "eclipticseasons:seasonal_prayer_scroll"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "2CE7DEEADB66F06C"
+					item: "eclipticseasons:seasonal_prayer_scroll"
+					type: "item"
+				}
+				{
+					id: "79E15BE1BE8AFFC8"
+					item: "eclipticseasons:calendar"
+					type: "item"
+				}
+			]
 			shape: "rsquare"
 			size: 1.5d
-			subtitle: "&a春雨惊春清谷天&r，&e夏满芒夏暑相连&r。&6秋处露秋寒霜降&r，&9冬雪雪冬小大寒&r。"
+			subtitle: "&a春雨惊春清谷天&r，&e夏满芒夏暑相连&r；&6秋处露秋寒霜降&r，&9冬雪雪冬小大寒&r。"
 			tasks: [{
 				icon: "eclipticseasons:seasonal_prayer_scroll"
 				id: "51226499D18DBF70"
@@ -213,6 +94,11 @@
 		{
 			dependencies: ["23BC02E012D1552A"]
 			id: "56613C5A6B0E0D7B"
+			rewards: [{
+				id: "2C9C1BD094852DD6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			subtitle: "放置在墙上以时刻查看所处&e节气&r及&4季节"
 			tasks: [{
 				id: "258F40991B262C65"
@@ -224,8 +110,14 @@
 		}
 		{
 			dependencies: ["23BC02E012D1552A"]
+			description: [""]
 			id: "1CA8EA85843EF28C"
-			subtitle: "右键&e悬挂告示牌&r以生成&4季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r（季节交替时可能出现任务不会刷新）"
+			rewards: [{
+				id: "270759CF327E9F1C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "右键&e悬挂告示牌&r以生成&e季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r（季节交替时可能出现任务不会刷新）"
 			tasks: [{
 				id: "09705BF93C951999"
 				item: "eclipticseasons:seasonal_prayer_scroll"
@@ -235,20 +127,35 @@
 			y: -10.5d
 		}
 		{
-			dependencies: ["6B4F29BE507962AA"]
+			dependencies: [
+				"203EEC3502CFCD78"
+				"1CA8EA85843EF28C"
+			]
 			id: "1CFB30F10E804F6C"
+			rewards: [{
+				id: "74D715C06EC84BF6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
 			subtitle: "&e温室之心髓&r的&4承载容器&r，&4反季节种植&r的必须物品，通过放置对应&e心髓&4模拟对应季节&r以满足对应作物需求"
 			tasks: [{
 				id: "470A3B12C6336DD4"
 				item: "eclipticseasons:greenhouse_core_container"
 				type: "item"
 			}]
+			title: "季节调节"
 			x: -6.0d
 			y: -10.5d
 		}
 		{
 			dependencies: ["276D47755231DF3D"]
 			id: "2F2CA6806F0CD304"
+			rewards: [{
+				id: "5B5901D50411261F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			subtitle: "右键&4空气&r或者&e蹲下右键&r可以将其放置在墙上，且会根据&4湿度的不同&r产生&e不同的红石信号强度"
 			tasks: [{
 				id: "42D3FD9C84F46C20"
@@ -259,28 +166,13 @@
 			y: -14.5d
 		}
 		{
-			dependencies: [
-				"2F2CA6806F0CD304"
-				"56613C5A6B0E0D7B"
-				"1CA8EA85843EF28C"
-			]
-			id: "6B4F29BE507962AA"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				icon: "eclipticseasons:growth_detector"
-				id: "307D4421E0D84BC5"
-				stat: "minecraft:play_time"
-				title: "温室系统"
-				type: "stat"
-				value: 1
-			}]
-			x: -8.5d
-			y: -12.5d
-		}
-		{
 			dependencies: ["3F7431683708E805"]
 			id: "5EB49D6BD352F9C8"
+			rewards: [{
+				id: "140DB4DA5A0E24ED"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			subtitle: "&e右键作物&r即可查看&a生长环境&r及&4生长状况"
 			tasks: [{
 				id: "230A4E321C82150A"
@@ -293,6 +185,11 @@
 		{
 			dependencies: ["1CFB30F10E804F6C"]
 			id: "6AE0FF6A10361E54"
+			rewards: [{
+				id: "658200D2F2F56B8F"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			subtitle: "通过完成&e祈年令&r中的&a春季任务&r获得"
 			tasks: [{
 				id: "290024519487054D"
@@ -305,6 +202,11 @@
 		{
 			dependencies: ["1CFB30F10E804F6C"]
 			id: "7F2E916E70B8313A"
+			rewards: [{
+				id: "24BAE03238F005B7"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			subtitle: "通过完成&4祈年令&r中的&e夏季任务&r获得"
 			tasks: [{
 				id: "7425B6CEA71238AC"
@@ -317,6 +219,11 @@
 		{
 			dependencies: ["1CFB30F10E804F6C"]
 			id: "1F8E3E1911FEE4AD"
+			rewards: [{
+				id: "39528A942A900E0D"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			subtitle: "通过完成&4祈年令&r中的&6秋季任务&r获得"
 			tasks: [{
 				id: "00ADFBCD29112E72"
@@ -329,6 +236,11 @@
 		{
 			dependencies: ["1CFB30F10E804F6C"]
 			id: "66F5A5EB8670C7FC"
+			rewards: [{
+				id: "0BAFEA2B62C07023"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
 			subtitle: "通过完成&4祈年令&r中的&9冬季任务&r获得"
 			tasks: [{
 				id: "7363009191B81C11"
@@ -341,6 +253,11 @@
 		{
 			dependencies: ["6AE0FF6A10361E54"]
 			id: "02CB1BC17F114B92"
+			rewards: [{
+				id: "2AE1586DE9D7C058"
+				item: "eclipticseasons:spring_greenhouse_core"
+				type: "item"
+			}]
 			subtitle: "使用&a春季温室心髓&r右键&4温室之心室"
 			tasks: [{
 				icon: "eclipticseasons:spring_greenhouse_core"
@@ -357,6 +274,11 @@
 		{
 			dependencies: ["7F2E916E70B8313A"]
 			id: "29A529AF2485F9EA"
+			rewards: [{
+				id: "2DA063ED1180B663"
+				item: "eclipticseasons:summer_greenhouse_core"
+				type: "item"
+			}]
 			subtitle: "使用&e夏季温室心髓&r右键&4温室之心室"
 			tasks: [{
 				icon: "eclipticseasons:summer_greenhouse_core"
@@ -373,6 +295,11 @@
 		{
 			dependencies: ["1F8E3E1911FEE4AD"]
 			id: "7D4138054FBCB4DD"
+			rewards: [{
+				id: "1FFC900DBE445D5B"
+				item: "eclipticseasons:autumn_greenhouse_core"
+				type: "item"
+			}]
 			subtitle: "使用&6秋季温室心髓&r右键&4温室之心室"
 			tasks: [{
 				icon: "eclipticseasons:autumn_greenhouse_core"
@@ -389,6 +316,11 @@
 		{
 			dependencies: ["66F5A5EB8670C7FC"]
 			id: "3E6812C5510C38C1"
+			rewards: [{
+				id: "00CCEA986438D47C"
+				item: "eclipticseasons:winter_greenhouse_core"
+				type: "item"
+			}]
 			subtitle: "使用&9冬季温室心髓&r右键&4温室之心室"
 			tasks: [{
 				icon: "eclipticseasons:winter_greenhouse_core"
@@ -405,6 +337,12 @@
 		{
 			dependencies: ["3F7431683708E805"]
 			id: "3ABFE09AE61E86C9"
+			rewards: [{
+				id: "4C0848530C3945A8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可以扫除&9冬天&r覆盖在&e方块表面的雪"
 			tasks: [{
 				id: "5EE35F97B841AF8F"
 				item: {
@@ -420,26 +358,66 @@
 			y: -15.0d
 		}
 		{
-			dependencies: ["6B4F29BE507962AA"]
-			id: "36E1127A11CC3BDE"
-			tasks: [{
-				id: "07C4BD0A9C63BEF4"
-				item: "eclipticseasons:block_in_wooden_grate_block"
+			dependencies: [
+				"2F2CA6806F0CD304"
+				"203EEC3502CFCD78"
+			]
+			description: [""]
+			id: "4FFA56EA6130D27B"
+			rewards: [{
+				id: "3EC32F7739D7FBF7"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "square"
+			subtitle: "&e加湿器&r使用时&4消耗水增加&91级湿度，&e湿度调节木格栅&r使用时需要放置&9湿海绵&4增加&91级湿度&r（下方放置&4营火&r）或&6干海绵&4降低&61级湿度"
+			tasks: [
+				{
+					id: "5D95248DF8932DCB"
+					item: "createdelight:sprinkler"
+					type: "item"
+				}
+				{
+					id: "02DA1FDC0BDE2121"
+					item: "eclipticseasons:block_in_wooden_grate_block"
+					type: "item"
+				}
+			]
+			title: "湿度调节"
 			x: -6.0d
 			y: -14.5d
 		}
 		{
-			dependencies: ["6B4F29BE507962AA"]
-			id: "4FFA56EA6130D27B"
-			tasks: [{
-				id: "5D95248DF8932DCB"
-				item: "createdelight:sprinkler"
+			dependencies: [
+				"2F2CA6806F0CD304"
+				"56613C5A6B0E0D7B"
+				"1CA8EA85843EF28C"
+			]
+			description: [
+				"&l&9搭建要求&r：&4任意完整方块&r构成的&4完全&e封闭空间&r（&4不可超过32*32&r）"
+				"&l&9生效条件&r：只有&4在温室&r中&e湿度调节与季节调节&r&4才会生效&r"
+				"&l&9季节调节&r：使用&e温室之心&r模拟&e对应季节&r，作用范围以&e温室之心&r为&4中心半径16格以内&r的&e方形空间&r"
+				"&l&9湿度调节&r：使用&e加湿器&r或&e湿度调节格栅&r进行&9加湿&r或&6除湿&r（后续会增加&e除湿机&r），作用范围以&e加湿器下方非空气方块&r为&4中心半径4格以内&r的&e方形空间&r"
+			]
+			id: "203EEC3502CFCD78"
+			rewards: [{
+				id: "685B7694023B1389"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -13.5d
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "想要&e反季节&r种植作物？想要在&4干燥地区&r种植&9湿润作物&r？&4看这里就对了！"
+			tasks: [{
+				icon: "eclipticseasons:growth_detector"
+				id: "6503ADC5C04017D1"
+				stat: "minecraft:play_time"
+				title: "温室系统！"
+				type: "stat"
+				value: 1
+			}]
+			x: -8.5d
+			y: -12.5d
 		}
 	]
 	title: "&e四时行焉"

@@ -1,4 +1,11 @@
 {
+	icon: {
+		Count: 1
+		id: "farmersdelight:iron_knife"
+		tag: {
+			Damage: 0
+		}
+	}
 	id: "467863873CF4CF6D"
 	loot_size: 1
 	order_index: 8
@@ -47,6 +54,66 @@
 			item: {
 				Count: 1
 				id: "ends_delight:purpur_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "trailandtales_delight:cherry_iron_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 100.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "dungeonsdelight:iron_cleaver"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 100.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "dungeonsdelight:flint_cleaver"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 20.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "dungeonsdelight:golden_cleaver"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 5.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "dungeonsdelight:stained_knife"
+				tag: {
+					Damage: 0
+				}
+			}
+			weight: 3.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "trailandtales_delight:sniffer_eggshell_knife"
 				tag: {
 					Damage: 0
 				}

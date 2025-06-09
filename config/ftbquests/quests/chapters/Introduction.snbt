@@ -95,18 +95,11 @@
 			description: ["整合包增加了节气mod，该mod修改了作物的生长，且机制较为复杂。在种植作物时请一定要阅读相关章节！"]
 			icon: "eclipticseasons:calendar"
 			id: "46F1F92929FC8F9F"
-			rewards: [
-				{
-					id: "2381C107B8FB38E9"
-					item: "eclipticseasons:hygrometer"
-					type: "item"
-				}
-				{
-					id: "247408D029AAC8DC"
-					item: "eclipticseasons:calendar"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "75D0AD5AC35C363E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"季节系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1E7A476EE0C13AD1\" } }"
@@ -690,7 +683,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			title: "-&c这是...一枚货币！-"
+			title: "- &c这是...一枚货币!&r-"
 			x: -6.0d
 			y: 6.0d
 		}

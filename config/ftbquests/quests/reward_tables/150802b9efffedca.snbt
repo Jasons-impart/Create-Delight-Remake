@@ -1,4 +1,5 @@
 {
+	icon: "iceandfire:dragonsteel_ice_ingot"
 	id: "150802B9EFFFEDCA"
 	loot_size: 1
 	order_index: 18

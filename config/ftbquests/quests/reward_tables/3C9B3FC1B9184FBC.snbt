@@ -1,4 +1,5 @@
 {
+	icon: "vinery:white_grape_seeds"
 	id: "3C9B3FC1B9184FBC"
 	loot_size: 1
 	order_index: 10

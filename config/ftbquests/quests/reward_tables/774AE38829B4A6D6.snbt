@@ -1,17 +1,17 @@
 {
+	icon: "quark:clear_shard"
 	id: "774AE38829B4A6D6"
 	loot_size: 1
 	order_index: 5
 	rewards: [
 		{ item: "minecraft:dirt" }
 		{ item: "minecraft:mangrove_roots" }
-		{ item: "minecraft:glass" }
 		{ item: "minecraft:dead_tube_coral_block" }
 		{ item: "minecraft:cut_red_sandstone_slab" }
 		{ item: "minecraft:cobweb" }
-		{ item: "create:wheat_flour" }
-		{ item: "minecraft:beetroot_seeds" }
 		{ count: 8, item: "minecraft:iron_nugget" }
+		{ count: 8, item: "quark:clear_shard" }
+		{ count: 4, item: "vinery:coarse_dirt_slab" }
 	]
 	title: "垃圾"
 }

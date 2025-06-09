@@ -1,8 +1,6 @@
-StartupEvents.modifyCreativeTab("create:base", e => {
-  e.add([
-    "create:chocolate_bucket",
-    "create:honey_bucket",
-    "createdelight:planet_gear",
+StartupEvents.modifyCreativeTab("petrolsparts:base", e => {
+  e.remove([
+    'petrolsparts:hydraulic_transmission',
     'petrolsparts:coaxial_gear',
     'petrolsparts:large_coaxial_gear',
     'petrolsparts:double_cardan_shaft',

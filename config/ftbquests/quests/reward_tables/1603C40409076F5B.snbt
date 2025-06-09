@@ -1,4 +1,5 @@
 {
+	icon: "ends_delight:dragon_leg"
 	id: "1603C40409076F5B"
 	loot_size: 1
 	order_index: 7
