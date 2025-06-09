@@ -89,9 +89,10 @@
 			y: 0.0d
 		}
 		{
-			description: ["可使用生物柴油"]
+			description: [""]
 			id: "2679AF6D14DACBE5"
 			min_required_tasks: 1
+			subtitle: "可使用生物柴油"
 			tasks: [{
 				id: "53F7007AFAC84C9F"
 				item: {
@@ -121,7 +122,7 @@
 				"0081008C6EAA4D86"
 				"2679AF6D14DACBE5"
 			]
-			description: ["唉，炼钢"]
+			description: [""]
 			id: "70CA8C3E0DEBBE1A"
 			min_required_tasks: 1
 			rewards: [{
@@ -132,6 +133,7 @@
 			}]
 			shape: "circle"
 			size: 2.0d
+			subtitle: "唉，炼钢"
 			tasks: [
 				{
 					id: "72B53E11A7EC4236"
@@ -154,11 +156,11 @@
 		}
 		{
 			dependencies: ["70CA8C3E0DEBBE1A"]
-			description: ["{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"]
+			description: [""]
 			id: "2D54323E3C0276BA"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "矿物再生途径"
+			subtitle: "{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
 			tasks: [{
 				id: "3A77D08086D870B0"
 				item: "createoreexcavation:drilling_machine"
@@ -443,8 +445,8 @@
 				item: "createdieselgenerators:huge_diesel_engine"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 1.5d
+			x: 0.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["0081008C6EAA4D86"]

@@ -2499,6 +2499,7 @@
 			id: "02F499E3D04E4111"
 			shape: "rsquare"
 			size: 2.0d
+			subtitle: "终极武器！"
 			tasks: [{
 				id: "2094E929D5DDF14B"
 				item: {
