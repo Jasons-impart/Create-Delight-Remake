@@ -1,4 +1,5 @@
 {
+	icon: "createcafe:vanilla_milk_tea"
 	id: "5A02489A40F4E8C1"
 	loot_size: 1
 	order_index: 2
@@ -19,5 +20,5 @@
 		{ item: "createcafe:iced_coffee_milk" }
 		{ item: "createcafe:iced_coffee" }
 	]
-	title: "奶茶！"
+	title: "奶茶咖啡！！"
 }

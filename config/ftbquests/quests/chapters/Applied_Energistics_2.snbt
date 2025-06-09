@@ -198,8 +198,8 @@
 				item: "megacells:cell_component_4m"
 				type: "item"
 			}]
-			x: 24.0d
-			y: 37.0d
+			x: 19.0d
+			y: 38.0d
 		}
 		{
 			hide_dependency_lines: true
@@ -215,8 +215,8 @@
 				item: "megacells:cell_component_1m"
 				type: "item"
 			}]
-			x: 23.0d
-			y: 37.0d
+			x: 18.0d
+			y: 38.0d
 		}
 		{
 			hide_dependency_lines: true
@@ -232,8 +232,8 @@
 				item: "megacells:cell_component_16m"
 				type: "item"
 			}]
-			x: 25.0d
-			y: 37.0d
+			x: 20.0d
+			y: 38.0d
 		}
 		{
 			hide_dependency_lines: true
@@ -249,8 +249,8 @@
 				item: "megacells:cell_component_64m"
 				type: "item"
 			}]
-			x: 26.0d
-			y: 37.0d
+			x: 21.0d
+			y: 38.0d
 		}
 		{
 			hide_dependency_lines: true
@@ -266,8 +266,8 @@
 				item: "megacells:cell_component_256m"
 				type: "item"
 			}]
-			x: 27.0d
-			y: 37.0d
+			x: 22.0d
+			y: 38.0d
 		}
 		{
 			dependencies: ["4161DF34D43BF779"]
@@ -667,7 +667,7 @@
 				type: "item"
 			}]
 			x: 1.0d
-			y: 36.0d
+			y: 34.5d
 		}
 		{
 			dependencies: ["355B0356B722C742"]
@@ -678,7 +678,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 36.0d
+			y: 34.5d
 		}
 		{
 			dependencies: ["355B0356B722C742"]
@@ -689,7 +689,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 35.5d
+			y: 34.0d
 		}
 		{
 			dependencies: ["355B0356B722C742"]
@@ -700,7 +700,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 35.5d
+			y: 34.0d
 		}
 		{
 			dependencies: [
@@ -718,7 +718,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 35.0d
+			y: 33.5d
 		}
 		{
 			dependencies: [
@@ -733,7 +733,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 36.0d
+			y: 34.5d
 		}
 		{
 			dependencies: ["76D8D89E020E58D7"]
@@ -764,7 +764,7 @@
 				type: "checkmark"
 			}]
 			x: -3.0d
-			y: 40.0d
+			y: 38.25d
 		}
 		{
 			dependencies: ["7BD1FAA99970A4B2"]
@@ -780,7 +780,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 40.0d
+			y: 38.25d
 		}
 		{
 			dependencies: [
@@ -801,7 +801,7 @@
 				}
 			]
 			x: 0.0d
-			y: 37.5d
+			y: 36.0d
 		}
 		{
 			dependencies: [
@@ -822,7 +822,7 @@
 				}
 			]
 			x: 1.0d
-			y: 37.0d
+			y: 35.5d
 		}
 		{
 			dependencies: [
@@ -843,7 +843,7 @@
 				}
 			]
 			x: 2.0d
-			y: 37.0d
+			y: 35.5d
 		}
 		{
 			dependencies: [
@@ -871,7 +871,7 @@
 				}
 			]
 			x: 3.0d
-			y: 37.0d
+			y: 35.5d
 		}
 		{
 			dependencies: [
@@ -892,7 +892,7 @@
 				}
 			]
 			x: 4.0d
-			y: 37.5d
+			y: 36.0d
 		}
 		{
 			dependencies: ["355B0356B722C742"]

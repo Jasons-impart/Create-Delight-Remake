@@ -933,6 +933,25 @@
 			x: 16.0d
 			y: 0.0d
 		}
+		{
+			dependencies: ["3BAC2E9A7359CF70"]
+			id: "5A7DF2A39D8808D4"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "68494F133C35A9BF"
+				table_id: 6730734086547045908L
+				type: "loot"
+			}]
+			subtitle: "超超超超巨大"
+			tasks: [{
+				id: "48488CE320D91D96"
+				item: "petrolsparts:colossal_cogwheel"
+				type: "item"
+			}]
+			title: "齿轮教父！"
+			x: 9.5d
+			y: -2.0d
+		}
 	]
 	title: "&3黄铜时代！"
 }

@@ -1,17 +1,18 @@
 {
+	icon: "minecraft:wheat_seeds"
 	id: "341A06B78D03A5E6"
 	loot_size: 1
 	order_index: 13
 	rewards: [
-		{ item: "minecraft:wheat_seeds" }
+		{ item: "minecraft:wheat_seeds", weight: 5.0f }
 		{ item: "minecraft:pumpkin_seeds" }
 		{ item: "minecraft:melon_seeds" }
 		{ item: "minecraft:beetroot_seeds" }
 		{ item: "fruitsdelight:durian_sapling" }
 		{ item: "fruitsdelight:lemon_seeds" }
 		{ item: "createcafe:cassava_seeds" }
-		{ item: "farmersdelight:cabbage_seeds" }
-		{ item: "farmersdelight:tomato_seeds" }
+		{ item: "farmersdelight:cabbage_seeds", weight: 5.0f }
+		{ item: "farmersdelight:tomato_seeds", weight: 5.0f }
 		{ item: "culturaldelights:cucumber_seeds" }
 		{ item: "culturaldelights:eggplant_seeds" }
 		{ item: "culturaldelights:eggplant_seeds" }

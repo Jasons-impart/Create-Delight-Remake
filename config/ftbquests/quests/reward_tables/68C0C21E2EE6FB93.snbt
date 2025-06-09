@@ -1,4 +1,11 @@
 {
+	icon: {
+		Count: 1
+		id: "minecraft:potion"
+		tag: {
+			Potion: "minecraft:healing"
+		}
+	}
 	id: "68C0C21E2EE6FB93"
 	loot_size: 1
 	order_index: 6

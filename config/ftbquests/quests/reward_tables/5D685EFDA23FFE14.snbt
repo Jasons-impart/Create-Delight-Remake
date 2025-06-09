@@ -1,4 +1,5 @@
 {
+	icon: "create:large_cogwheel"
 	id: "5D685EFDA23FFE14"
 	loot_size: 1
 	order_index: 3
@@ -27,6 +28,11 @@
 		{ item: "create:mechanical_plough" }
 		{ item: "create:mechanical_harvester" }
 		{ item: "create:millstone" }
+		{ count: 16, item: "petrolsparts:coaxial_gear" }
+		{ count: 8, item: "petrolsparts:large_coaxial_gear" }
+		{ count: 4, item: "petrolsparts:differential" }
+		{ count: 4, item: "petrolsparts:planetary_gearset" }
+		{ item: "create_pattern_schematics:empty_pattern_schematic" }
 	]
 	title: "机械动力初级物品"
 }

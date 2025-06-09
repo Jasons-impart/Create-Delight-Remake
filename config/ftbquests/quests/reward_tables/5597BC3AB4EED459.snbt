@@ -1,4 +1,9 @@
 {
+	icon: {
+		Count: 1
+		id: "nethervinery:nether_fizz"
+		tag: { }
+	}
 	id: "5597BC3AB4EED459"
 	loot_size: 1
 	order_index: 11
@@ -67,9 +72,6 @@
 				}
 			}
 		}
-		{ item: "createcafe:blood_orange_milk_tea" }
-		{ item: "createcafe:orange_milk_tea" }
-		{ item: "createcafe:vanilla_milk_tea" }
 	]
 	title: "酒与奶茶"
 }

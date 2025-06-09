@@ -1,4 +1,5 @@
 {
+	icon: "create:fluid_pipe"
 	id: "1ECB2C18081DB52B"
 	loot_size: 1
 	order_index: 4

@@ -10,7 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["安山合金需要使用&e安山岩&r和&e铁粒&r或者&e锌粒&r制作。使用&e搅拌机&r能消耗更少的材料。"]
+			description: ["安山合金需要使用&e安山岩&r和&e铁粒&r或者&e锌粒&r制作。使用&e搅拌机&r能使消耗材料减半！"]
 			icon: "create:andesite_alloy"
 			id: "510B2EE25982FD73"
 			rewards: [{
@@ -21,7 +21,7 @@
 			}]
 			shape: "gear"
 			size: 3.0d
-			subtitle: "按住w可以进行俺寻思"
+			subtitle: "按住&4w&r可以进行&e俺寻思"
 			tasks: [{
 				id: "64F7AFEB80123DB9"
 				item: "create:andesite_alloy"
@@ -40,6 +40,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "&e最最最基础&r的工具！"
 			tasks: [
 				{
 					id: "5395211DB2CE0109"
@@ -80,6 +81,26 @@
 					item: "create:large_cogwheel"
 					type: "item"
 				}
+				{
+					id: "4D892DCC9833BDC1"
+					item: "petrolsparts:coaxial_gear"
+					type: "item"
+				}
+				{
+					id: "2F410CAE72190DE3"
+					item: "petrolsparts:large_coaxial_gear"
+					type: "item"
+				}
+				{
+					id: "343098E139A0F2CB"
+					item: "petrolsparts:differential"
+					type: "item"
+				}
+				{
+					id: "5FE16785ADD55A8B"
+					item: "petrolsparts:planetary_gearset"
+					type: "item"
+				}
 			]
 			title: "浪漫从此刻开始"
 			x: 5.5d
@@ -95,15 +116,27 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "每SU消耗数个牛排！"
-			tasks: [{
-				id: "0335E6DD3EF4025F"
-				item: "create:hand_crank"
-				type: "item"
-			}]
+			subtitle: "每SU消耗&e数个牛排！"
+			tasks: [
+				{
+					id: "0335E6DD3EF4025F"
+					item: "create:hand_crank"
+					type: "item"
+				}
+				{
+					id: "02E6FA99D897C50C"
+					item: "create_connected:crank_wheel"
+					type: "item"
+				}
+				{
+					id: "5B545717014DA214"
+					item: "create_connected:large_crank_wheel"
+					type: "item"
+				}
+			]
 			title: "手动应力"
 			x: 7.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
@@ -131,7 +164,7 @@
 			}]
 			title: "小水车吱呀吱悠悠地转"
 			x: 4.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
@@ -160,7 +193,7 @@
 			}]
 			title: "更慢！但是更强！"
 			x: 6.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -180,7 +213,7 @@
 					type: "random"
 				}
 			]
-			subtitle: "自带连接纹理好看"
+			subtitle: "自带连接纹理好看捏"
 			tasks: [{
 				id: "3B6F668D8EA70651"
 				item: "create:andesite_casing"
@@ -207,13 +240,14 @@
 					type: "item"
 				}
 			]
+			subtitle: "前期最&4最可靠&r的动力源！"
 			tasks: [{
 				id: "56CDC20305BC3092"
 				item: "create:windmill_bearing"
 				type: "item"
 			}]
 			x: 4.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -272,7 +306,7 @@
 				type: "item"
 			}]
 			x: 10.5d
-			y: 5.25d
+			y: 5.5d
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
@@ -291,7 +325,7 @@
 				type: "item"
 			}]
 			x: 9.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
@@ -309,7 +343,7 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -351,7 +385,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["510B2EE25982FD73"]
@@ -363,6 +397,7 @@
 				type: "random"
 			}]
 			shape: "square"
+			subtitle: "可以&e搓电梯&r惹！"
 			tasks: [{
 				icon: "create:contraption_controls"
 				id: "400724AF4FD7D46C"
@@ -372,7 +407,7 @@
 				value: 1
 			}]
 			x: 0.5d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -407,13 +442,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "&e旋转结构&r的&4核心"
 			tasks: [{
 				id: "54C1D5ED9BA355FE"
 				item: "create:mechanical_bearing"
 				type: "item"
 			}]
 			x: -0.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -424,6 +460,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "使用&e动力&r，可以&e移动动态结构&r的活塞"
 			tasks: [
 				{
 					id: "0B2A23C227259611"
@@ -453,7 +490,7 @@
 			]
 			title: "动力活塞"
 			x: -1.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -464,6 +501,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "&e固定轨道&r的&4动态结构搬运设施"
 			tasks: [
 				{
 					id: "05D2FCCB23621758"
@@ -477,7 +515,7 @@
 				}
 			]
 			x: 2.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -488,6 +526,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "动态结构的&4骨架"
 			tasks: [
 				{
 					id: "7D3F670A3C8971C3"
@@ -507,6 +546,7 @@
 							]
 						}
 					}
+					title: "任意底盘"
 					type: "item"
 				}
 				{
@@ -517,7 +557,7 @@
 			]
 			title: "底盘们"
 			x: -1.0d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -541,7 +581,7 @@
 				}
 			]
 			x: 1.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -552,6 +592,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "&4打胶！必须打胶！不打胶怎么成型？"
 			tasks: [{
 				id: "3BB66EC5E84A07C4"
 				item: {
@@ -564,7 +605,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
@@ -578,6 +619,7 @@
 			secret: true
 			shape: "rsquare"
 			size: 1.5d
+			subtitle: "恭喜！你已经掌握了机械动力&e最强大&r的工具了！"
 			tasks: [{
 				advancement: "create:cart_pickup"
 				criterion: ""
@@ -586,7 +628,7 @@
 			}]
 			title: "&e手劲真大！"
 			x: 0.5238095238095255d
-			y: 5.002380952380939d
+			y: 5.502380952380939d
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
@@ -604,7 +646,7 @@
 				type: "item"
 			}]
 			x: 9.0d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["510B2EE25982FD73"]
@@ -620,7 +662,7 @@
 				item: "create:empty_schematic"
 				type: "item"
 			}]
-			x: -2.0d
+			x: -1.5d
 			y: -1.0d
 		}
 		{
@@ -638,7 +680,7 @@
 				type: "item"
 			}]
 			title: "把蓝图写入游戏中！"
-			x: -2.0d
+			x: -1.5d
 			y: 1.0d
 		}
 		{
@@ -669,7 +711,7 @@
 				type: "item"
 			}]
 			title: "论机械动力为什么能称之为神"
-			x: -4.0d
+			x: -3.0d
 			y: 0.0d
 		}
 		{
@@ -685,11 +727,13 @@
 				value: 1
 			}]
 			x: 5.5d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
-			dependencies: ["610ED0789BAF7EFC"]
-			hide_dependency_lines: true
+			dependencies: [
+				"610ED0789BAF7EFC"
+				"28CB30AB88780BC7"
+			]
 			hide_until_deps_visible: true
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
@@ -697,20 +741,21 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			shape: "circle"
+			shape: "rsquare"
 			size: 1.5d
-			subtitle: "你最基础的动力源！"
+			subtitle: "你最&4经济&r的动力源！"
 			tasks: [{
 				id: "2FF7DF66C79D6B20"
 				item: "create:steam_engine"
 				type: "item"
 			}]
 			title: "&e汽笛轰鸣！"
-			x: 15.75d
-			y: 0.0d
+			x: 5.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
+			hide_dependent_lines: true
 			id: "4492593A688BA447"
 			rewards: [{
 				count: 5
@@ -724,7 +769,7 @@
 				item: "vintageimprovements:spring_coiling_machine"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 8.0d
 			y: -1.5d
 		}
 		{
@@ -746,7 +791,7 @@
 			}]
 			title: "基础机械"
 			x: 10.5d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["510B2EE25982FD73"]
@@ -770,6 +815,7 @@
 				"4492593A688BA447"
 				"4BA2635FA5EA807D"
 			]
+			hide_dependent_lines: true
 			id: "610ED0789BAF7EFC"
 			rewards: [{
 				count: 5
@@ -867,7 +913,7 @@
 			}]
 			title: "基础传动装置"
 			x: 5.5d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -889,9 +935,14 @@
 					item: "create_connected:shear_pin"
 					type: "item"
 				}
+				{
+					id: "37268F64D9236E8A"
+					item: "petrolsparts:double_cardan_shaft"
+					type: "item"
+				}
 			]
 			x: 7.0d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -915,7 +966,7 @@
 				}
 			]
 			x: 4.0d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -939,7 +990,7 @@
 				}
 			]
 			x: 4.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -966,7 +1017,7 @@
 				}
 			]
 			x: 5.5d
-			y: -5.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -995,7 +1046,7 @@
 				}
 			]
 			x: 6.5d
-			y: -4.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -1019,7 +1070,7 @@
 				}
 			]
 			x: 7.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
@@ -1048,7 +1099,7 @@
 				}
 			]
 			x: 4.5d
-			y: -4.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -1124,10 +1175,13 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["621E3093612F5D2C"]
+			dependencies: [
+				"621E3093612F5D2C"
+				"1CED61E7F780F38C"
+			]
 			description: ["用于制作杆状材料和线状材料。使用金属锭制作杆，使用金属板制作线。"]
 			id: "4BA2635FA5EA807D"
-			subtitle: "亚基"
+			subtitle: "亚基（bushi）"
 			tasks: [{
 				id: "2EFD1A38D1D357FE"
 				item: "createaddition:rolling_mill"
@@ -1135,6 +1189,19 @@
 			}]
 			x: 12.5d
 			y: 0.0d
+		}
+		{
+			dependencies: ["3956BF6CE5009F66"]
+			id: "1BCE23E2FB6C4C33"
+			subtitle: "&e重复工程&r的好帮手！"
+			tasks: [{
+				id: "5715EB2A34F50AFA"
+				item: "create_pattern_schematics:empty_pattern_schematic"
+				type: "item"
+			}]
+			title: "模式蓝图"
+			x: -1.5d
+			y: -2.5d
 		}
 	]
 	title: "&2初级工程师"

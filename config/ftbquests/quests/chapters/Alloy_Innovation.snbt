@@ -1,4 +1,5 @@
 {
+	autofocus_id: "0081008C6EAA4D86"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Alloy_Innovation"
@@ -551,12 +552,21 @@
 		}
 		{
 			dependencies: ["0081008C6EAA4D86"]
-			description: ["{ \"text\": \"点击跳转对应章节\", \"color\" : \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"49BCC2D259AA3A40\" } }"]
+			description: [""]
 			icon: "create_new_age:generator_coil"
 			id: "5520A571B3019083"
 			shape: "hexagon"
 			size: 2.0d
-			title: "接触电力"
+			subtitle: "{ \"text\": \"点击跳转对应章节\", \"color\" : \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"49BCC2D259AA3A40\" } }"
+			tasks: [{
+				icon: "create_new_age:generator_coil"
+				id: "46669CBC1E8ACF47"
+				stat: "minecraft:play_time"
+				title: "电力时代"
+				type: "stat"
+				value: 1
+			}]
+			title: "电力时代"
 			x: -3.5d
 			y: 4.0d
 		}

@@ -1,4 +1,5 @@
 {
+	icon: "minecraft:emerald"
 	id: "4A37CEEEFC07F8A1"
 	loot_size: 1
 	order_index: 0

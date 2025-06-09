@@ -1,4 +1,5 @@
 {
+	icon: "tetra:pristine_amethyst"
 	id: "1CD4E0DD3154FC5C"
 	loot_size: 1
 	order_index: 17
@@ -7,9 +8,8 @@
 		{ item: "tetra:pristine_diamond" }
 		{ item: "minecraft:lapis_lazuli" }
 		{ item: "tetra:pristine_lapis" }
-		{ item: "createdelightcore:emerald_coin" }
 		{ item: "tetra:pristine_emerald" }
-		{ item: "minecraft:amethyst_shard" }
+		{ item: "minecraft:amethyst_shard", weight: 5.0f }
 		{ item: "tetra:pristine_amethyst" }
 		{ item: "minecraft:ender_pearl" }
 	]
