@@ -1,4 +1,5 @@
 {
+	autofocus_id: "3F7431683708E805"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Ecliptic_Seasons"
@@ -124,6 +125,321 @@
 			}]
 			x: -8.0d
 			y: 1.5d
+		}
+		{
+			icon: "eclipticseasons:calendar"
+			id: "3F7431683708E805"
+			rewards: [
+				{
+					id: "2AB1F8597F80D803"
+					item: "eclipticseasons:calendar"
+					type: "item"
+				}
+				{
+					id: "6ACC52B42E3D3403"
+					item: {
+						Count: 1
+						id: "eclipticseasons:broom"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7C3C024C69AF6AD5"
+					item: "eclipticseasons:growth_detector"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "在这里将会详细讲述本整合包的&e种植系统"
+			tasks: [{
+				id: "1DFBDB020846B386"
+				title: "节气更迭"
+				type: "checkmark"
+			}]
+			x: -16.0d
+			y: -13.0d
+		}
+		{
+			dependencies: ["3F7431683708E805"]
+			icon: "eclipticseasons:hygrometer"
+			id: "276D47755231DF3D"
+			rewards: [{
+				id: "42DFD40202267F46"
+				item: "eclipticseasons:hygrometer"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				icon: "eclipticseasons:hygrometer"
+				id: "273B22BE81543AB3"
+				stat: "minecraft:play_time"
+				title: "湿度系统"
+				type: "stat"
+				value: 1
+			}]
+			x: -13.0d
+			y: -14.5d
+		}
+		{
+			dependencies: ["3F7431683708E805"]
+			description: ["本整合包将一年分为了24个节气，每6个节气为一个季节。每种作物都有各自&e限定的季节&r（作物种子有介绍季节），这是限定作物生长的基础要素，如若&4不满足则作物无法生长&r"]
+			icon: "eclipticseasons:seasonal_prayer_scroll"
+			id: "23BC02E012D1552A"
+			rewards: [{
+				id: "2CE7DEEADB66F06C"
+				item: "eclipticseasons:seasonal_prayer_scroll"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "&a春雨惊春清谷天&r，&e夏满芒夏暑相连&r。&6秋处露秋寒霜降&r，&9冬雪雪冬小大寒&r。"
+			tasks: [{
+				icon: "eclipticseasons:seasonal_prayer_scroll"
+				id: "51226499D18DBF70"
+				stat: "minecraft:play_time"
+				title: "季节系统"
+				type: "stat"
+				value: 1
+			}]
+			title: "季节系统"
+			x: -13.0d
+			y: -11.5d
+		}
+		{
+			dependencies: ["23BC02E012D1552A"]
+			id: "56613C5A6B0E0D7B"
+			subtitle: "放置在墙上以时刻查看所处&e节气&r及&4季节"
+			tasks: [{
+				id: "258F40991B262C65"
+				item: "eclipticseasons:calendar"
+				type: "item"
+			}]
+			x: -11.0d
+			y: -12.5d
+		}
+		{
+			dependencies: ["23BC02E012D1552A"]
+			id: "1CA8EA85843EF28C"
+			subtitle: "右键&e悬挂告示牌&r以生成&4季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r（季节交替时可能出现任务不会刷新）"
+			tasks: [{
+				id: "09705BF93C951999"
+				item: "eclipticseasons:seasonal_prayer_scroll"
+				type: "item"
+			}]
+			x: -11.0d
+			y: -10.5d
+		}
+		{
+			dependencies: ["6B4F29BE507962AA"]
+			id: "1CFB30F10E804F6C"
+			subtitle: "&e温室之心髓&r的&4承载容器&r，&4反季节种植&r的必须物品，通过放置对应&e心髓&4模拟对应季节&r以满足对应作物需求"
+			tasks: [{
+				id: "470A3B12C6336DD4"
+				item: "eclipticseasons:greenhouse_core_container"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -10.5d
+		}
+		{
+			dependencies: ["276D47755231DF3D"]
+			id: "2F2CA6806F0CD304"
+			subtitle: "右键&4空气&r或者&e蹲下右键&r可以将其放置在墙上，且会根据&4湿度的不同&r产生&e不同的红石信号强度"
+			tasks: [{
+				id: "42D3FD9C84F46C20"
+				item: "eclipticseasons:hygrometer"
+				type: "item"
+			}]
+			x: -11.0d
+			y: -14.5d
+		}
+		{
+			dependencies: [
+				"2F2CA6806F0CD304"
+				"56613C5A6B0E0D7B"
+				"1CA8EA85843EF28C"
+			]
+			id: "6B4F29BE507962AA"
+			shape: "rsquare"
+			size: 1.5d
+			tasks: [{
+				icon: "eclipticseasons:growth_detector"
+				id: "307D4421E0D84BC5"
+				stat: "minecraft:play_time"
+				title: "温室系统"
+				type: "stat"
+				value: 1
+			}]
+			x: -8.5d
+			y: -12.5d
+		}
+		{
+			dependencies: ["3F7431683708E805"]
+			id: "5EB49D6BD352F9C8"
+			subtitle: "&e右键作物&r即可查看&a生长环境&r及&4生长状况"
+			tasks: [{
+				id: "230A4E321C82150A"
+				item: "eclipticseasons:growth_detector"
+				type: "item"
+			}]
+			x: -16.0d
+			y: -11.0d
+		}
+		{
+			dependencies: ["1CFB30F10E804F6C"]
+			id: "6AE0FF6A10361E54"
+			subtitle: "通过完成&e祈年令&r中的&a春季任务&r获得"
+			tasks: [{
+				id: "290024519487054D"
+				item: "eclipticseasons:spring_greenhouse_essence"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -12.0d
+		}
+		{
+			dependencies: ["1CFB30F10E804F6C"]
+			id: "7F2E916E70B8313A"
+			subtitle: "通过完成&4祈年令&r中的&e夏季任务&r获得"
+			tasks: [{
+				id: "7425B6CEA71238AC"
+				item: "eclipticseasons:summer_greenhouse_essence"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -11.0d
+		}
+		{
+			dependencies: ["1CFB30F10E804F6C"]
+			id: "1F8E3E1911FEE4AD"
+			subtitle: "通过完成&4祈年令&r中的&6秋季任务&r获得"
+			tasks: [{
+				id: "00ADFBCD29112E72"
+				item: "eclipticseasons:autumn_greenhouse_essence"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -10.0d
+		}
+		{
+			dependencies: ["1CFB30F10E804F6C"]
+			id: "66F5A5EB8670C7FC"
+			subtitle: "通过完成&4祈年令&r中的&9冬季任务&r获得"
+			tasks: [{
+				id: "7363009191B81C11"
+				item: "eclipticseasons:winter_greenhouse_essence"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -9.0d
+		}
+		{
+			dependencies: ["6AE0FF6A10361E54"]
+			id: "02CB1BC17F114B92"
+			subtitle: "使用&a春季温室心髓&r右键&4温室之心室"
+			tasks: [{
+				icon: "eclipticseasons:spring_greenhouse_core"
+				id: "4906F93CEF44E7A9"
+				observe_type: 0
+				timer: 0L
+				title: "春季温室之心"
+				to_observe: "eclipticseasons:spring_greenhouse_core"
+				type: "observation"
+			}]
+			x: -3.0d
+			y: -12.0d
+		}
+		{
+			dependencies: ["7F2E916E70B8313A"]
+			id: "29A529AF2485F9EA"
+			subtitle: "使用&e夏季温室心髓&r右键&4温室之心室"
+			tasks: [{
+				icon: "eclipticseasons:summer_greenhouse_core"
+				id: "3D44914F7948BFAB"
+				observe_type: 0
+				timer: 0L
+				title: "夏季温室之心"
+				to_observe: "eclipticseasons:summer_greenhouse_core"
+				type: "observation"
+			}]
+			x: -3.0d
+			y: -11.0d
+		}
+		{
+			dependencies: ["1F8E3E1911FEE4AD"]
+			id: "7D4138054FBCB4DD"
+			subtitle: "使用&6秋季温室心髓&r右键&4温室之心室"
+			tasks: [{
+				icon: "eclipticseasons:autumn_greenhouse_core"
+				id: "5A738E34057C16AC"
+				observe_type: 0
+				timer: 0L
+				title: "秋季温室之心"
+				to_observe: "eclipticseasons:autumn_greenhouse_core"
+				type: "observation"
+			}]
+			x: -3.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["66F5A5EB8670C7FC"]
+			id: "3E6812C5510C38C1"
+			subtitle: "使用&9冬季温室心髓&r右键&4温室之心室"
+			tasks: [{
+				icon: "eclipticseasons:winter_greenhouse_core"
+				id: "34D2DAAFEDFAF357"
+				observe_type: 0
+				timer: 0L
+				title: "冬季温室之心"
+				to_observe: "eclipticseasons:winter_greenhouse_core"
+				type: "observation"
+			}]
+			x: -3.0d
+			y: -9.0d
+		}
+		{
+			dependencies: ["3F7431683708E805"]
+			id: "3ABFE09AE61E86C9"
+			tasks: [{
+				id: "5EE35F97B841AF8F"
+				item: {
+					Count: 1
+					id: "eclipticseasons:broom"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.0d
+			y: -15.0d
+		}
+		{
+			dependencies: ["6B4F29BE507962AA"]
+			id: "36E1127A11CC3BDE"
+			tasks: [{
+				id: "07C4BD0A9C63BEF4"
+				item: "eclipticseasons:block_in_wooden_grate_block"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -14.5d
+		}
+		{
+			dependencies: ["6B4F29BE507962AA"]
+			id: "4FFA56EA6130D27B"
+			tasks: [{
+				id: "5D95248DF8932DCB"
+				item: "createdelight:sprinkler"
+				type: "item"
+			}]
+			x: -6.0d
+			y: -13.5d
 		}
 	]
 	title: "&e四时行焉"

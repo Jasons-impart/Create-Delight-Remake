@@ -91,25 +91,32 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["64FB1FEC4F9721B7"]
+			dependencies: ["55C42BCE0E399B3D"]
 			description: ["整合包增加了节气mod，该mod修改了作物的生长，且机制较为复杂。在种植作物时请一定要阅读相关章节！"]
 			icon: "eclipticseasons:calendar"
 			id: "46F1F92929FC8F9F"
-			rewards: [{
-				id: "2381C107B8FB38E9"
-				item: "eclipticseasons:hygrometer"
-				type: "item"
-			}]
-			shape: "hexagon"
+			rewards: [
+				{
+					id: "2381C107B8FB38E9"
+					item: "eclipticseasons:hygrometer"
+					type: "item"
+				}
+				{
+					id: "247408D029AAC8DC"
+					item: "eclipticseasons:calendar"
+					type: "item"
+				}
+			]
+			shape: "pentagon"
 			size: 2.0d
-			subtitle: "本整合包添加了节气"
+			subtitle: "{ \"text\": \"季节系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1E7A476EE0C13AD1\" } }"
 			tasks: [{
 				id: "42B95E73286FD639"
 				type: "checkmark"
 			}]
 			title: "种植相关"
-			x: 6.0d
-			y: -6.0d
+			x: 4.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -566,7 +573,7 @@
 			y: -5.0d
 		}
 		{
-			dependencies: ["55C42BCE0E399B3D"]
+			dependencies: ["46F1F92929FC8F9F"]
 			icon: "minecraft:wheat"
 			id: "64FB1FEC4F9721B7"
 			rewards: [{
@@ -583,8 +590,8 @@
 				type: "checkmark"
 			}]
 			title: "刀耕火种"
-			x: 4.0d
-			y: -4.0d
+			x: 6.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["398AE54EB6F55F0D"]
@@ -592,7 +599,7 @@
 				"这个模组向 Tetra 添加了 47 个新模块，您可以制作这些模块。他们中的许多受到现实生活中的武器和流行文化武器的启发。这个模组还改变了简单的地牢箱子的战利品表。现在，每个卷轴都应该有自己的重量和稀有度，以使某些示意图更难获得。"
 				"融化你的金属，锻造你的意志,欢迎来到锻造之艺！"
 				"&4(相关攻略可以任务书中查询)"
-				"&d汉化由野营组提供,十分感谢，如有意见，立刻删除。"
+				""
 			]
 			icon: "art_of_forging:sigil_of_eden"
 			id: "1B04B860E2651AEF"
