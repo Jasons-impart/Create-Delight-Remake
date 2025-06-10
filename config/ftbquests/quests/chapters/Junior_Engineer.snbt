@@ -59,6 +59,7 @@
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
+			dependency_requirement: "one_completed"
 			description: ["齿轮之间可以通过耦合传输应力。"]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
