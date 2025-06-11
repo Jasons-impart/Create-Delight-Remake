@@ -96,7 +96,7 @@
 			y: 22.65d
 		}
 	]
-	order_index: 5
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -952,9 +952,9 @@
 				"如果没有发展其他科技的话，请使用ae的充能器。该充能器需要配合ae的曲柄使用。"
 				"使用newage的充能器需要同时输入应力和电。"
 			]
-			id: "6809B16089E6CDA2"
+			id: "305456433E7FA867"
 			tasks: [{
-				id: "7BDC6AEC4CF89C84"
+				id: "542B6A8AC9BB427C"
 				item: {
 					Count: 1
 					id: "itemfilters:or"

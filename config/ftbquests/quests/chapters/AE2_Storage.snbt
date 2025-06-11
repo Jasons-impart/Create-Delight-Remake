@@ -1,0 +1,1160 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "AE2_Storage"
+	group: "14CFC96B5B37F10B"
+	icon: "ae2:drive"
+	id: "467649501F6EE065"
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"实际上AE网络&e不需要控制器&r也可以运行。只要网络供能，那该网络就会有8个频道。因此你可以使用这个发电机来供能。"
+				"对于只想要一个大箱子的人来说，这无疑是最方便的方法。配合&e存储总线&r与保险箱或者抽屉一系列，你甚至&e不需要制作其他的ae元件&r便可得到一个巨大的箱子。"
+				"{@pagebreak}"
+				"下图为一个简单的实例。使用存储总线连接需要接入网络的容器即可，此处为保险箱。&4商店内有一个ae套件，提供了下图所有的物品（除了保险箱）&r。"
+				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
+				"{@pagebreak}"
+			]
+			id: "08AE06F7D87E51A6"
+			rewards: [
+				{
+					count: 64
+					id: "4D47C8F45DC6E3C7"
+					item: "ae2:fluix_glass_cable"
+					type: "item"
+				}
+				{
+					count: 7
+					id: "1FA12EB6FBBDD004"
+					item: "ae2:storage_bus"
+					type: "item"
+				}
+				{
+					id: "4B035F246F1BA3C0"
+					item: "ae2:crafting_terminal"
+					type: "item"
+				}
+			]
+			size: 2.0d
+			subtitle: "我只想要一个大箱子"
+			tasks: [{
+				id: "061E186C237A20C1"
+				item: "ae2:crystal_resonance_generator"
+				type: "item"
+			}]
+			title: "无需搓元件也能享受AE终端"
+			x: -1.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["08AE06F7D87E51A6"]
+			id: "3BF64357C387ED95"
+			subtitle: "来看这里"
+			tasks: [{
+				id: "59078A44FEFC7F22"
+				type: "checkmark"
+			}]
+			title: "不想搓ae元件，好麻烦"
+			x: -1.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["3BF64357C387ED95"]
+			description: ["最简单的大箱子制作方法，贴上储存总线，放上线缆并供能，最后贴上终端就可以得到一个大箱子啦（&c注意！一个ae网络只能有一个ae的发电机）"]
+			id: "3A06B3588F8E8EF0"
+			subtitle: "经典，且简单"
+			tasks: [{
+				id: "12BD1F2AEEAEFBE3"
+				item: "create:item_vault"
+				type: "item"
+			}]
+			x: -3.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["3BF64357C387ED95"]
+			id: "18DA8913CB88355A"
+			subtitle: "快来加入抽屉神教吧！"
+			tasks: [{
+				id: "4814A1F6B4D8B7B9"
+				item: "functionalstorage:oak_1"
+				type: "item"
+			}]
+			title: "抽屉"
+			x: 0.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["3A06B3588F8E8EF0"]
+			id: "4E01833C223617F0"
+			subtitle: "品质越高的保险库存的物品就越多"
+			tasks: [{
+				id: "05A8283DD60CA8D8"
+				title: "大箱子们"
+				type: "checkmark"
+			}]
+			title: "保险库们"
+			x: -5.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["4E01833C223617F0"]
+			id: "5591947F6CE4756C"
+			tasks: [{
+				id: "1B6C0C6567A8F86F"
+				item: "create:item_vault"
+				type: "item"
+			}]
+			x: -6.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["4E01833C223617F0"]
+			id: "78C8F144C74956DC"
+			tasks: [{
+				id: "220DDFA7A0D62923"
+				item: "create_bs:wooden_item_vault"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["5591947F6CE4756C"]
+			id: "117A768EFB5A4D54"
+			tasks: [{
+				id: "07AD686E03BF69FB"
+				item: "create_bs:copper_item_vault"
+				type: "item"
+			}]
+			x: -7.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["074FF237F4652DEF"]
+			id: "3B920E6D51F4150F"
+			tasks: [{
+				id: "77A569993D9BBB9A"
+				item: "create_bs:emerald_item_vault"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["117A768EFB5A4D54"]
+			id: "074FF237F4652DEF"
+			tasks: [{
+				id: "692441407B528A2E"
+				item: "create_bs:iron_item_vault"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -6.5d
+		}
+		{
+			dependencies: [
+				"3B920E6D51F4150F"
+				"074FF237F4652DEF"
+			]
+			id: "618DC8994C531F75"
+			tasks: [{
+				id: "1EF0DEDA4D35F839"
+				item: "create_bs:gold_item_vault"
+				type: "item"
+			}]
+			x: -9.5d
+			y: -6.5d
+		}
+		{
+			dependencies: ["618DC8994C531F75"]
+			id: "71D6FFE01A6056A9"
+			tasks: [{
+				id: "485DBB4F76274678"
+				item: "create_bs:crystal_item_vault"
+				type: "item"
+			}]
+			x: -9.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["71D6FFE01A6056A9"]
+			id: "7DC0AEE145163CE4"
+			tasks: [{
+				id: "751E2A0EF21984D0"
+				item: "create_bs:diamond_item_vault"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["7DC0AEE145163CE4"]
+			id: "4021111008903A2F"
+			tasks: [{
+				id: "1BA5E011FF091A09"
+				item: "create_bs:obsidian_item_vault"
+				type: "item"
+			}]
+			x: -7.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["7DC0AEE145163CE4"]
+			id: "7A5A069B4F26B3C1"
+			tasks: [{
+				id: "0D9A0BC64F7821E2"
+				item: "create_bs:netherite_item_vault"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -8.5d
+		}
+		{
+			dependencies: ["18DA8913CB88355A"]
+			description: ["可以通过&e链接工具&f把抽屉绑定到&e储存控制器&f上，不过储存控制器是有范围的，所以需要&e储存扩展器&f。你问它有什么用？当然是跟保险箱一样，在储存控制器上贴上总线，线缆，终端并供能就可以访问和控制器链接的所有抽屉"]
+			id: "4CF9A79598D96F6A"
+			rewards: [
+				{
+					id: "601A29295DB4D086"
+					item: {
+						Count: 1
+						id: "functionalstorage:linking_tool"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "14915927F9AF8A29"
+					item: "functionalstorage:controller_extension"
+					type: "item"
+				}
+				{
+					id: "2A5029996940F7D6"
+					item: "functionalstorage:configuration_tool"
+					type: "item"
+				}
+			]
+			subtitle: "人称小AE"
+			tasks: [{
+				id: "035DE3354677ED0E"
+				item: "functionalstorage:storage_controller"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["18DA8913CB88355A"]
+			description: ["军械库类似于保险库，不可以像箱子一样直接访问，不过可以与&e储存控制器&f链接并通过&e终端&f访问库存。可以储存不可堆叠的物品，比如武器。"]
+			id: "79975FF8C3821C69"
+			subtitle: "另类保险库"
+			tasks: [{
+				id: "156006207FD62369"
+				item: "functionalstorage:armory_cabinet"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["18DA8913CB88355A"]
+			id: "5D865728219846B2"
+			subtitle: "会同时显示某物品的打包和解包状态（如果有）"
+			tasks: [{
+				id: "222ED8054490C6B9"
+				item: "functionalstorage:compacting_drawer"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["18DA8913CB88355A"]
+			id: "6514C4BDC732476A"
+			subtitle: "为抽屉增加额外功能"
+			tasks: [{
+				id: "45AE9FC867C3417D"
+				title: "功能插件们"
+				type: "checkmark"
+			}]
+			x: 3.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["6514C4BDC732476A"]
+			description: ["被它升级后的抽屉具有与原版漏斗很像的功能，掉落物会漏进去"]
+			id: "3136F8D7ABB66D0C"
+			tasks: [{
+				id: "13DC7551EA1BF903"
+				item: "functionalstorage:collector_upgrade"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["6514C4BDC732476A"]
+			description: ["从相邻带物品栏的方块往抽屉里抽入物品"]
+			id: "26A08E489D6C506C"
+			tasks: [{
+				id: "3FB631E86F0B6AE4"
+				item: "functionalstorage:puller_upgrade"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -8.5d
+		}
+		{
+			dependencies: ["6514C4BDC732476A"]
+			description: ["删除超出上限的物品"]
+			id: "20444D4DFF827734"
+			tasks: [{
+				id: "00B762CC216D8BC8"
+				item: "functionalstorage:void_upgrade"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -10.5d
+		}
+		{
+			dependencies: ["6514C4BDC732476A"]
+			description: ["从抽屉里往相邻带物品栏的方块输出物品"]
+			id: "20A9651A8F129DFD"
+			tasks: [{
+				id: "0341669C6A7622F8"
+				item: "functionalstorage:pusher_upgrade"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -9.5d
+		}
+		{
+			dependencies: ["6514C4BDC732476A"]
+			id: "3B3EDB9C47875D74"
+			subtitle: "增加抽屉的最大储量"
+			tasks: [
+				{
+					id: "74628308A93134D0"
+					item: "functionalstorage:copper_upgrade"
+					type: "item"
+				}
+				{
+					id: "1E85E7C88F41B9B3"
+					item: "functionalstorage:gold_upgrade"
+					type: "item"
+				}
+				{
+					id: "5D901822434CFEA9"
+					item: "functionalstorage:diamond_upgrade"
+					type: "item"
+				}
+				{
+					id: "3A09C1B0156BC02F"
+					item: "functionalstorage:netherite_upgrade"
+					type: "item"
+				}
+			]
+			x: 3.0d
+			y: -9.0d
+		}
+		{
+			dependencies: ["08AE06F7D87E51A6"]
+			id: "3C94E103DF3BC823"
+			tasks: [{
+				id: "05B9AB674789E254"
+				title: "AE，启动！"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["3C94E103DF3BC823"]
+			description: ["需要供能。多个me控制器放在一起时会相连。为AE网络供能并提供频道，不过在此章节里你不太需要它。"]
+			id: "15B8BBCFE27CD2D0"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4A2E899F05046D94"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			size: 2.0d
+			subtitle: "AE的核心"
+			tasks: [{
+				id: "040A303EBE3CF34D"
+				item: "ae2:controller"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["15B8BBCFE27CD2D0"]
+			description: [
+				"我们都知道机械动力里的应力系统的规则：当应力网络内&e机器的应力消耗大于网络所提供的应力&r时，整个应力网络就会&e过载&r。"
+				"而AE的频道系统也类似。ae的许多机器都会&e消耗一个频道&r，而当&e一条线缆能够提供的频道小于线缆上消耗频道的机器的数量&r时，AE网络同样会过载。"
+			]
+			id: "106C503DBEFAED81"
+			size: 1.0d
+			subtitle: "机器与频道"
+			tasks: [{
+				id: "6AB7BBE707B24EBC"
+				item: "createdelight:iron_casing"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"106C503DBEFAED81"
+				"0B51D01823292EC9"
+			]
+			description: [
+				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
+				""
+			]
+			id: "05D7688036D40AE4"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "50FEC657E3D7C1E8"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			size: 1.5d
+			tasks: [{
+				id: "501CE0ECEB196B6D"
+				item: "ae2:drive"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["106C503DBEFAED81"]
+			id: "2EAA35BF40FB182A"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "41B722EEA4830F96"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			size: 1.5d
+			subtitle: "生产物质球与奇点"
+			tasks: [{
+				id: "0A18195B948CC8EC"
+				item: "ae2:condenser"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["106C503DBEFAED81"]
+			description: [
+				""
+				"{ \"text\": \"点此进入自动化相关章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3ACFB4AE35155456\" } }"
+			]
+			id: "1A5CDC6917D4345C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "60FC8C6F22B824D4"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "自动化"
+			tasks: [{
+				id: "3D15B268FD18EBFC"
+				item: "ae2:pattern_provider"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"05D7688036D40AE4"
+				"7777519D3A23C2C7"
+			]
+			description: ["{ \"text\": \"点此查看存储元件的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
+			icon: {
+				Count: 1
+				id: "ae2:item_storage_cell_1k"
+				tag: { }
+			}
+			id: "4EC043194AF40AC4"
+			tasks: [{
+				id: "3C1A436707A6EB38"
+				title: "存储元件"
+				type: "checkmark"
+			}]
+			x: 4.5d
+			y: 9.0d
+		}
+		{
+			description: ["{ \"text\": \"点此查看元件外壳的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
+			id: "7777519D3A23C2C7"
+			min_required_tasks: 1
+			subtitle: "四个里做一个即可完成任务"
+			tasks: [
+				{
+					id: "6532ECCDEBDC2A02"
+					item: "ae2:item_cell_housing"
+					type: "item"
+				}
+				{
+					id: "21E506C4750FA008"
+					item: "ae2:fluid_cell_housing"
+					type: "item"
+				}
+				{
+					id: "1BF88044724E3728"
+					item: "megacells:mega_item_cell_housing"
+					type: "item"
+				}
+				{
+					id: "602C3D744A37713A"
+					item: "megacells:mega_fluid_cell_housing"
+					type: "item"
+				}
+			]
+			title: "ME元件外壳"
+			x: 4.5d
+			y: 11.0d
+		}
+		{
+			dependencies: ["4EC043194AF40AC4"]
+			id: "3A84C79A5EBED973"
+			subtitle: "其实我更喜欢叫它硬盘）"
+			tasks: [{
+				id: "369F7848D617A229"
+				title: "储存组件们"
+				type: "checkmark"
+			}]
+			x: 7.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "19B6EF70C5C690A0"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "74D6338C67CC0815"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "1EDBD2E1865C2178"
+				item: "ae2:cell_component_1k"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "0107A9F88B402867"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7A7245AED9469E8E"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "5F7047A8B1FCBA9F"
+				item: "ae2:cell_component_4k"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "1F1DC2924E1AF1E3"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4AF04F21B5C0AA07"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "39F97E76A9F2D901"
+				item: "ae2:cell_component_16k"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "55F0CCAFAE6D8E95"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6EBA7B8160504C84"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "3CEA0B6B887FC75C"
+				item: "ae2:cell_component_64k"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "4A48CF1796837CBF"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "032FD1D021F28E99"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "4BB9551004A2BA7A"
+				item: "ae2:cell_component_256k"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "0D4E454AFF39C1E1"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "19712117C7DD6AF5"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "2491D5D433C68BDF"
+				item: "megacells:cell_component_1m"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "176A534D7757779E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "584CCA023D6F663C"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "5D6DF992FAE37763"
+				item: "megacells:cell_component_4m"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "511398D18A2E5F5E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "585958641F23FF52"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "71705014B54F4A56"
+				item: "megacells:cell_component_16m"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "01B97BC520BD2053"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5B0AE16F430550BD"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "4C7F43EB1E89E407"
+				item: "megacells:cell_component_64m"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["3A84C79A5EBED973"]
+			hide_dependency_lines: true
+			id: "460FBC0EA63CE22D"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "012E1AF723FA106C"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			tasks: [{
+				id: "6F9F23602BCE66A5"
+				item: "megacells:cell_component_256m"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["05D7688036D40AE4"]
+			id: "328FC706631222E9"
+			subtitle: "合成普通的照明面板即可"
+			tasks: [{
+				id: "09E0A231A2C3E972"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:illuminated_panel"
+					}
+				}
+				title: "Any #ae2:illuminated_panel"
+				type: "item"
+			}]
+			title: "照明面板"
+			x: -1.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["328FC706631222E9"]
+			description: ["可以使用其访问AE网络的存储。"]
+			id: "397829BA5DDD0B7F"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "73DE09174A0E4C7C"
+					table_id: 367842927525151968L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "1EA803F622F9B7F4"
+					table_id: 367842927525151968L
+					type: "random"
+				}
+			]
+			subtitle: "最基础的终端"
+			tasks: [{
+				id: "048F1D26625104B6"
+				item: "ae2:terminal"
+				type: "item"
+			}]
+			x: -3.25d
+			y: 9.0d
+		}
+		{
+			dependencies: ["397829BA5DDD0B7F"]
+			id: "45AF2B6B2E0C53A2"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0C507653D2AE76DA"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			subtitle: "用于管理样板"
+			tasks: [{
+				id: "20E174E05B87C4CF"
+				item: "ae2:pattern_encoding_terminal"
+				type: "item"
+			}]
+			x: -4.75d
+			y: 8.0d
+		}
+		{
+			dependencies: ["397829BA5DDD0B7F"]
+			id: "16D27498A669E663"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4D76A189AF4272FD"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			subtitle: "相比于普通终端附加了个合成功能"
+			tasks: [{
+				id: "7B6C14482F6379D2"
+				item: "ae2:crafting_terminal"
+				type: "item"
+			}]
+			x: -4.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["397829BA5DDD0B7F"]
+			id: "0F844891015AC97E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2EF814E4CC6FC22A"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			subtitle: "用于编写样板"
+			tasks: [{
+				id: "7A93B40B74EB6E14"
+				item: "ae2:pattern_access_terminal"
+				type: "item"
+			}]
+			x: -4.75d
+			y: 10.0d
+		}
+		{
+			dependencies: ["16D27498A669E663"]
+			id: "53B9C32DE375CA79"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "0D16F50CB66BC58E"
+					table_id: 367842927525151968L
+					type: "random"
+				}
+				{
+					id: "69B8E8A45B6FCCA9"
+					item: "ae2:wireless_booster"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "130040B036DA32DE"
+				item: "ae2:wireless_crafting_terminal"
+				type: "item"
+			}]
+			x: -6.75d
+			y: 9.0d
+		}
+		{
+			dependencies: ["45AF2B6B2E0C53A2"]
+			id: "65108BBE9196309E"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "5D59181AE064F154"
+					table_id: 367842927525151968L
+					type: "random"
+				}
+				{
+					id: "5C7A0F5593F24405"
+					item: "ae2:wireless_booster"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "45F69101EAA7CB0B"
+				item: "ae2wtlib:wireless_pattern_encoding_terminal"
+				type: "item"
+			}]
+			x: -6.75d
+			y: 8.0d
+		}
+		{
+			dependencies: ["0F844891015AC97E"]
+			id: "3F4D28BD754C09AE"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3F276E74157CECAD"
+					table_id: 367842927525151968L
+					type: "random"
+				}
+				{
+					id: "4C6181F870D232C8"
+					item: "ae2:wireless_booster"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "0FE30C85742091CC"
+					item: "ae2wtlib:wireless_pattern_access_terminal"
+					type: "item"
+				}
+				{
+					id: "1AE449F6E6642834"
+					item: "expatternprovider:wireless_ex_pat"
+					type: "item"
+				}
+			]
+			x: -6.75d
+			y: 10.0d
+		}
+		{
+			dependencies: ["397829BA5DDD0B7F"]
+			id: "0A0C5687C12AC0F5"
+			tasks: [{
+				id: "794812BAB94920A8"
+				item: "ae2:wireless_terminal"
+				type: "item"
+			}]
+			x: -3.25d
+			y: 11.5d
+		}
+		{
+			dependencies: [
+				"65108BBE9196309E"
+				"53B9C32DE375CA79"
+				"3F4D28BD754C09AE"
+				"0A0C5687C12AC0F5"
+			]
+			id: "7488BEAEFA05C2AA"
+			rewards: [{
+				id: "08F1A5F652716AEF"
+				item: "ae2:wireless_booster"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "哈哈！我成了！"
+			tasks: [{
+				id: "2661DA3F8369EBF8"
+				item: "ae2wtlib:wireless_universal_terminal"
+				type: "item"
+			}]
+			x: -11.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["67C0556009A49A92"]
+			description: ["其中可以塞入无限信号增幅器，可用于增加信号覆盖范围，最多可堆叠64个。"]
+			id: "0B51D01823292EC9"
+			subtitle: "将其放入网络中，然后使用移动终端shift右键绑定，你便可以在一定范围内访问到你的网络"
+			tasks: [{
+				id: "3141B9103AC30CC1"
+				item: "ae2:wireless_access_point"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 11.0d
+		}
+		{
+			id: "67C0556009A49A92"
+			subtitle: "用于合成各种和无线相关的物品"
+			tasks: [{
+				id: "7E1850B9B927EEB7"
+				item: "ae2:wireless_receiver"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["67C0556009A49A92"]
+			description: [
+				"可以将其接入的AE网络&e无线传输&r到别的位置。"
+				"耗电曲线相当恐怖，属于一分钱一分货，十分钱六分货的那种，且范围有限。"
+			]
+			id: "5D79E39B5F14FC5A"
+			size: 1.0d
+			subtitle: "短距离内的AE网络无线传输"
+			tasks: [
+				{
+					id: "4489A28803498C6D"
+					item: "expatternprovider:wireless_connect"
+					type: "item"
+				}
+				{
+					id: "7C2798BC7E1C99D7"
+					item: "expatternprovider:wireless_tool"
+					type: "item"
+				}
+			]
+			x: 4.5d
+			y: 13.0d
+		}
+		{
+			dependencies: [
+				"15B8BBCFE27CD2D0"
+				"37602625EB8C5460"
+			]
+			id: "5A1BDACB580F9129"
+			tasks: [{
+				id: "641CA52F579A0239"
+				item: "createdelight:space_casing"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 5.5d
+		}
+		{
+			dependencies: [
+				"5A1BDACB580F9129"
+				"15B8BBCFE27CD2D0"
+				"4EF2A414ADA718B6"
+				"05D7688036D40AE4"
+			]
+			description: [
+				"每个量子网桥由&e8个ME量子环围绕一个ME量子链接仓&r构成，放置方向不限"
+				"两个量子网桥为一对，需要在链接仓内放置&e成对的量子缠绕态奇点&r，当&e两端都被加载且都有电时&r工作"
+			]
+			id: "1091641256B0E30C"
+			size: 1.5d
+			subtitle: "可以跨维度访问ME网络"
+			tasks: [
+				{
+					count: 8L
+					id: "1E8FD179F797EFBD"
+					item: "ae2:quantum_ring"
+					type: "item"
+				}
+				{
+					id: "5A6E5D0DCD12527C"
+					item: "ae2:quantum_link"
+					type: "item"
+				}
+			]
+			title: "量子网桥"
+			x: -8.5d
+			y: 5.5d
+		}
+		{
+			dependencies: ["37602625EB8C5460"]
+			description: ["将末影粉与奇点放一起，然后使用爆炸物（比如tnt）将它们炸成量子缠绕态奇点。"]
+			id: "4EF2A414ADA718B6"
+			subtitle: "使用tnt炸出"
+			tasks: [{
+				id: "53C4D5F59144E0FC"
+				item: "ae2:quantum_entangled_singularity"
+				match_nbt: false
+				type: "item"
+			}]
+			x: -8.5d
+			y: 3.0d
+		}
+		{
+			id: "37602625EB8C5460"
+			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
+			tasks: [{
+				id: "3B6DDCAEE96D070F"
+				item: "ae2:singularity"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5A1BDACB580F9129"]
+			description: [
+				"用于&4加载所在ME网络经过的所有区块及维度&r。可以配合量子网桥使用。"
+				"若一个ME网络经过主世界和下界两个维度，则你需要在主世界和下界分别放置一个与该网络相连的空间锚，才能确保这个网络在两个维度所经过的区块都被加载。"
+			]
+			id: "548ACB7AEFD5E1DE"
+			rewards: [
+				{
+					id: "66634E5C2B7251D1"
+					item: "ae2:spatial_cell_component_128"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "338ECDCDBF1B6621"
+					item: {
+						Count: 1
+						id: "megacells:mega_energy_cell"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			size: 1.0d
+			subtitle: "卡服神器"
+			tasks: [{
+				id: "7BA0188925941627"
+				item: "ae2:spatial_anchor"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1091641256B0E30C"]
+			description: [
+				"使用方法：获取&e一对量子缠绕态奇点&r，将其中一个放入&e一个量子环&r，另一个放入&e你的终端&r。"
+				"安装量子桥卡后，你的无线终端可以&e无视距离和维度&r访问你的网络，且终端能够&e自动充电&r。"
+				"以及需要保证你的量子环处于强加载状态。"
+				"将通用终端作为前置只是为了更醒目，实际是可以插入任何无线终端的。"
+			]
+			id: "523CC92B15E7341E"
+			size: 1.5d
+			subtitle: "无线储存的终极形态！"
+			tasks: [{
+				id: "0B982F1DA15A8253"
+				item: "ae2wtlib:quantum_bridge_card"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 5.5d
+		}
+		{
+			description: [
+				"消耗染色球（或染料、雪球）与能量，给方块染色，类似于IC刷子。"
+				""
+				"也可以使用雪球给线缆去色（染成“Fluix默认色”）。"
+				""
+				"装填方法：将染色器装入ME驱动器或者ME箱子中，然后将染色球（或染料、雪球）装入其中即可。"
+				""
+				"shift + 鼠标滚轮 切换当前使用的颜色（限于染色器内包含的染色球颜色）。"
+			]
+			id: "5B1FE048249D6374"
+			tasks: [{
+				id: "1697AD17CA5104EA"
+				item: {
+					Count: 1
+					id: "ae2:color_applicator"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 2.0d
+			y: -0.5d
+		}
+		{
+			description: ["储电量200000AE，每使用一次消耗1600AE能量，故充满电后最多处理125个方块。"]
+			id: "2D2D6BFD75BBCDB6"
+			tasks: [{
+				id: "502716273B28DA96"
+				item: "ae2:entropy_manipulator"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.5d
+		}
+		{
+			description: [
+				"使用电能的武器，攻击力为3心，能储存8000ae，每次攻击用掉300ae。通过本模组的充能器充电，或者其它模组能够给物品充电的机械也行。"
+				""
+				"攻击时，可无视护甲防御。"
+			]
+			id: "03E528F58B572D48"
+			tasks: [{
+				id: "6704F40DCD791E08"
+				item: "ae2:charged_staff"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.5d
+		}
+	]
+	title: "储存篇"
+}
