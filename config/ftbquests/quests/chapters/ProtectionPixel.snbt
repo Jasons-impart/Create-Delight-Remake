@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "ProtectionPixel"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: {
 		Count: 1
 		id: "protection_pixel:hammer_helmet"
@@ -12,7 +13,7 @@
 		}
 	}
 	id: "4410FF62709D6209"
-	order_index: 8
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -139,6 +140,7 @@
 				type: "item"
 			}]
 			shape: "square"
+			subtitle: "可&e一定程度&r抵御&9冰龙攻击"
 			tasks: [{
 				id: "1E85750DB3CA2396"
 				item: {
@@ -1132,6 +1134,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "记得给你的&e稚嫩脚丫&r穿上&4防护&r哦"
 			tasks: [{
 				id: "56415C82C9566FBD"
 				item: {
@@ -1149,7 +1152,7 @@
 		{
 			dependencies: ["0B2B86FAF7742C2F"]
 			id: "647F51CF16CC6693"
-			subtitle: "让你的护甲不再简单的放在盔甲架上的帅气逼人的超级架子()"
+			subtitle: "让你的护甲&e不再简单&r的放在盔甲架上的&4帅气逼人&r的&4超级架子&r()"
 			tasks: [{
 				id: "2454F14604642D13"
 				item: "protection_pixel:armorhanger"
@@ -1296,6 +1299,7 @@
 			y: 15.5d
 		}
 		{
+			dependencies: ["7F309BD2C1A2AE67"]
 			icon: "protection_pixel:armorloadplatform"
 			id: "0B2B86FAF7742C2F"
 			rewards: [
@@ -1326,9 +1330,9 @@
 					type: "item"
 				}
 			]
-			shape: "octagon"
-			size: 2.0d
-			subtitle: "可以装配的护甲！"
+			shape: "hexagon"
+			size: 1.0d
+			subtitle: "可&4自定义&r的护甲！"
 			tasks: [{
 				id: "35014F871B3EEDD6"
 				item: "protection_pixel:armorloadplatform"
@@ -1457,6 +1461,7 @@
 			id: "070D0FA6E93393BB"
 			shape: "square"
 			size: 1.5d
+			subtitle: "&4不装插板&r的盔甲&4脆的跟纸&r一样~"
 			tasks: [{
 				icon: {
 					Count: 1
@@ -1495,6 +1500,7 @@
 				type: "item"
 			}]
 			shape: "square"
+			subtitle: "可&e一定程度&r抵御&4火龙攻击"
 			tasks: [{
 				id: "155848978AA617F7"
 				item: {
@@ -1530,6 +1536,7 @@
 				type: "item"
 			}]
 			shape: "square"
+			subtitle: "可&e一定程度&r抵御&5雷龙攻击"
 			tasks: [{
 				id: "785F6D5027C6AFEC"
 				item: {
@@ -1553,7 +1560,7 @@
 			id: "459FD9D8D4F1C5FE"
 			shape: "square"
 			size: 1.5d
-			subtitle: "需要在盔甲装配台上进行装备"
+			subtitle: "&4什么&r？你问我为什么&e穿了护甲走不动&r？你是不是&4忘了装动力&r了！"
 			tasks: [{
 				icon: {
 					Count: 1
@@ -1587,7 +1594,6 @@
 			id: "4698C27222F61E5E"
 			shape: "square"
 			size: 1.5d
-			subtitle: "需要再盔甲装配台上进行装卸"
 			tasks: [{
 				icon: "protection_pixel:pneumaticgrenade"
 				id: "3E0FD299AFAE48FE"

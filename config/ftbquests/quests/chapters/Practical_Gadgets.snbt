@@ -559,6 +559,25 @@
 			x: 4.0d
 			y: -4.0d
 		}
+		{
+			id: "4BF7D2B0AED85E9E"
+			subtitle: "你的&4工业基地小帮手！"
+			tasks: [{
+				id: "0AF2130439A1F574"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "createdelight:platform"
+					}
+				}
+				title: "任意应急工业平台"
+				type: "item"
+			}]
+			title: "应急工业平台"
+			x: 4.0d
+			y: -2.5d
+		}
 	]
 	title: "实用小玩意"
 }

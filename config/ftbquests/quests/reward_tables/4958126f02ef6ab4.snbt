@@ -1,0 +1,14 @@
+{
+	id: "4958126F02EF6AB4"
+	loot_size: 1
+	order_index: 19
+	rewards: [
+		{ item: "createdelight:emergency_industrial_platform" }
+		{ item: "createdelight:emergency_industrial_platform_block" }
+		{ item: "createdelight:emergency_industrial_platform_dark" }
+		{ item: "createdelight:emergency_industrial_platform_dark_block" }
+		{ item: "createdelight:emergency_industrial_platform_lime" }
+		{ item: "createdelight:emergency_industrial_platform_lime_block" }
+	]
+	title: "应急工业平台"
+}

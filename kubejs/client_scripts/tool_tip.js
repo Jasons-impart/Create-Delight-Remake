@@ -12,7 +12,6 @@ ItemEvents.tooltip(e => {
         "createdieselgenerators:distillation_controller",
         "createmetallurgy:wolframite_ore",
         "vintageimprovements:belt_grinder",
-        "createdelight:emergency_industrial_platform",
         "art_of_forging:devils_soul_gem",
         "art_of_forging:eerie_shard",
         "art_of_forging:heart_of_ender",
@@ -45,7 +44,13 @@ ItemEvents.tooltip(e => {
         'eclipticseasons:winter_greenhouse_core',
     ])
     clearAddShiftCtrlTooltip(e, [
-        'brewinandchewin:keg'
+        'brewinandchewin:keg',
+        "createdelight:emergency_industrial_platform",
+        "createdelight:emergency_industrial_platform_block",
+        "createdelight:emergency_industrial_platform_dark",
+        "createdelight:emergency_industrial_platform_dark_block",
+        "createdelight:emergency_industrial_platform_lime",
+        "createdelight:emergency_industrial_platform_lime_block",
     ])
     addAir(e, [
         'create:netherite_backtank',

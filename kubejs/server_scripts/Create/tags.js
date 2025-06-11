@@ -3,6 +3,15 @@ ServerEvents.tags("minecraft:item", e => {
         "mynethersdelight:magma_cake_slice",
         "mynethersdelight:hot_cream_cone"
     ])
+    e.add("create:cogwheel", [
+        'create:cogwheel',
+        'create:large_cogwheel',
+        'petrolsparts:coaxial_gear',
+        'petrolsparts:large_coaxial_gear',
+        'petrolsparts:differential',
+        'petrolsparts:planetary_gearset',
+        'petrolsparts:colossal_cogwheel'        
+    ])
 })
 
 ServerEvents.tags("minecraft:fluid", e => {

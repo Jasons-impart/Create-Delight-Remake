@@ -10,86 +10,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			id: "391B8317C493EB62"
-			tasks: [{
-				id: "7FE2CAB95B9221EB"
-				item: "minecraft:obsidian"
-				type: "item"
-			}]
-			x: -7.0d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"391B8317C493EB62"
-				"61A945984843E55A"
-			]
-			id: "1CD1D60A28A20E6A"
-			rewards: [{
-				count: 2
-				id: "5FD901B88A8B5D57"
-				item: "create:sturdy_sheet"
-				type: "item"
-			}]
-			tasks: [{
-				id: "3F3848CAF70CDF4E"
-				item: "create:sturdy_sheet"
-				type: "item"
-			}]
-			x: -7.0d
-			y: 0.0d
-		}
-		{
-			description: ["常见于地狱30-36层"]
-			id: "1746BAF63124A53E"
-			rewards: [{
-				id: "78F1436063A09F50"
-				item: "createmetallurgy:raw_wolframite"
-				random_bonus: 4
-				type: "item"
-			}]
-			tasks: [{
-				id: "69B87436B6F93D9C"
-				item: "createmetallurgy:raw_wolframite"
-				type: "item"
-			}]
-			x: -5.5d
-			y: -2.0d
-		}
-		{
-			dependencies: [
-				"1CD1D60A28A20E6A"
-				"1746BAF63124A53E"
-			]
-			id: "2D030C52645E7DDD"
-			tasks: [{
-				id: "75B8820F49D1D58D"
-				item: "createmetallurgy:sturdy_whisk"
-				type: "item"
-			}]
-			x: -5.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["2D030C52645E7DDD"]
-			description: ["需要配合&e玻璃熔铸盖&r与&e熔铸盆&r使用。"]
-			id: "0081008C6EAA4D86"
-			rewards: [{
-				id: "259ECA1D386DC448"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
-			size: 2.0d
-			subtitle: "更高效的合金方式"
-			tasks: [{
-				id: "1E8A464F274843C9"
-				item: "createmetallurgy:foundry_mixer"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 0.0d
-		}
-		{
 			description: [""]
 			id: "2679AF6D14DACBE5"
 			min_required_tasks: 1
@@ -119,10 +39,7 @@
 			y: -5.5d
 		}
 		{
-			dependencies: [
-				"0081008C6EAA4D86"
-				"2679AF6D14DACBE5"
-			]
+			dependencies: ["2679AF6D14DACBE5"]
 			description: [""]
 			id: "70CA8C3E0DEBBE1A"
 			min_required_tasks: 1
@@ -180,29 +97,6 @@
 			}]
 			x: 1.5d
 			y: -3.5d
-		}
-		{
-			icon: "createdieselgenerators:crude_oil_bucket"
-			id: "61A945984843E55A"
-			rewards: [{
-				id: "54DF3F51674B42C0"
-				item: "createdieselgenerators:lighter"
-				type: "item"
-			}]
-			shape: "square"
-			size: 3.0d
-			subtitle: "&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"
-			tasks: [{
-				icon: "createdieselgenerators:crude_oil_bucket"
-				id: "3EC3BC0630EC3A9C"
-				stat: "minecraft:play_time"
-				title: "开始石油时代"
-				type: "stat"
-				value: 1
-			}]
-			title: "石油科技"
-			x: -10.5d
-			y: 0.0d
 		}
 		{
 			dependencies: ["70CA8C3E0DEBBE1A"]
@@ -402,35 +296,23 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["0081008C6EAA4D86"]
+			dependencies: ["16E85851D21CB6A3"]
 			id: "20B3A29ADFDF1D4A"
 			min_required_tasks: 1
 			rewards: [{
-				count: 2
 				id: "4A10FBD8D0716968"
 				item: "createdelightcore:bronze_ingot"
-				random_bonus: 6
+				random_bonus: 7
 				type: "item"
 			}]
 			shape: "circle"
 			size: 2.0d
-			tasks: [
-				{
-					id: "6305A4B7302F47F0"
-					item: "createdelightcore:bronze_block"
-					type: "item"
-				}
-				{
-					id: "29B2C475B43E3FAC"
-					item: "createdelightcore:bronze_ingot"
-					type: "item"
-				}
-				{
-					id: "46440B535427FCAC"
-					item: "createdelightcore:bronze_nugget"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "29B2C475B43E3FAC"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "&e燃料&r！&4动力&r！"
 			x: -1.0d
 			y: 0.0d
 		}
@@ -450,171 +332,191 @@
 			y: -1.5d
 		}
 		{
-			dependencies: ["0081008C6EAA4D86"]
-			dependency_requirement: "one_completed"
-			description: ["使用钢和末影粉制作"]
-			id: "55E42ECE1CE4E99F"
-			min_required_tasks: 1
+			dependencies: [
+				"20D619F0AF190C4A"
+				"4075F51792830B6B"
+			]
+			description: ["该流体用于烈焰人可使烈焰人&e超级加热&r。"]
+			id: "15BF957B2F2FE765"
 			rewards: [{
-				id: "71560EB111A78F2D"
-				item: "createutilities:void_steel_ingot"
-				random_bonus: 9
+				count: 2
+				id: "713B01A89207FD5B"
+				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "circle"
-			size: 2.0d
+			subtitle: "烈焰人：好喝"
+			tasks: [{
+				id: "4023150209C55861"
+				item: "createdieselgenerators:biodiesel_bucket"
+				type: "item"
+			}]
+			title: "生物柴油！"
+			x: 15.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["50C3559D684B2A7E"]
+			id: "20D619F0AF190C4A"
+			rewards: [{
+				count: 2
+				id: "2414B99904241192"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "也可以拿来油炸食物"
+			tasks: [{
+				id: "25A6AE99D2DE67C7"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
+			title: "植物（燃）油"
+			x: 13.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["2FDF02F66210FC78"]
+			id: "4075F51792830B6B"
+			rewards: [{
+				count: 2
+				id: "718B5DFDBE681E05"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "工业乙醇喝了小心失明+中毒"
+			tasks: [{
+				id: "7F9F9DF7B1EE51B0"
+				item: "createdieselgenerators:ethanol_bucket"
+				type: "item"
+			}]
+			title: "不准喝！"
+			x: 15.0d
+			y: -1.0d
+		}
+		{
+			icon: "frycooks_delight:canola_seeds"
+			id: "50C3559D684B2A7E"
+			min_required_tasks: 1
+			rewards: [{
+				count: 2
+				id: "29B1C17635BD1422"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "榨油"
 			tasks: [
 				{
-					id: "13E41F90BC43CE98"
-					item: "createutilities:void_steel_ingot"
+					id: "4B2D6F58AAF8DC50"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:seeds"
+						}
+					}
+					title: "种子"
 					type: "item"
 				}
 				{
-					id: "33A43C3288E5B487"
-					item: "createutilities:void_steel_block"
+					id: "48BA910C9BFF6566"
+					item: "frycooks_delight:canola_seeds"
+					type: "item"
+				}
+				{
+					id: "369A6369B2237BE9"
+					item: "vintagedelight:roasted_peanut"
+					type: "item"
+				}
+				{
+					id: "725256C002A5BEB1"
+					item: "create_bic_bit:crushed_sunflower_seeds"
 					type: "item"
 				}
 			]
-			x: -1.0d
-			y: 4.0d
+			x: 13.5d
+			y: -2.5d
 		}
 		{
-			dependencies: ["55E42ECE1CE4E99F"]
 			hide_until_deps_visible: true
-			id: "07C28031281E5458"
+			id: "0C49A6D118E480B4"
 			rewards: [{
-				id: "61144D017386312F"
-				item: "createutilities:graviton_tube"
-				random_bonus: 3
+				count: 4
+				id: "456895E48D65BE21"
+				item: "minecraft:bone_meal"
+				random_bonus: 4
 				type: "item"
 			}]
-			shape: "square"
-			size: 1.5d
+			subtitle: "与工作盆配合以发酵"
 			tasks: [{
-				id: "4D6509A6133A6093"
-				item: "createutilities:graviton_tube"
+				id: "7A2068EA2FE0DC4C"
+				item: "createdieselgenerators:basin_lid"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 4.0d
+			x: 15.0d
+			y: -4.0d
 		}
 		{
-			dependencies: ["07C28031281E5458"]
-			id: "6E72DE4840B74D26"
-			rewards: [{
-				count: 2
-				id: "6CDECE1FD2DCC957"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			size: 2.0d
-			tasks: [{
-				id: "7E8F512707C3D437"
-				item: "createutilities:void_motor"
-				type: "item"
-			}]
-			x: 10.5d
-			y: 4.0d
+			dependencies: ["0C49A6D118E480B4"]
+			id: "2FDF02F66210FC78"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "2AADF272C3140250"
+					table_id: 6485826240718891201L
+					type: "choice"
+				}
+				{
+					count: 2
+					id: "3A2E9705616346DE"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "5465B512AA1D1662"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fermentable"
+						}
+					}
+					title: "用于发酵的东西"
+					type: "item"
+				}
+				{
+					id: "60DB43B9DCBB7471"
+					item: "minecraft:bone_meal"
+					type: "item"
+				}
+			]
+			title: "发酵"
+			x: 15.0d
+			y: -2.5d
 		}
 		{
-			dependencies: ["07C28031281E5458"]
-			id: "5963D03427D10BDF"
+			icon: "createdieselgenerators:crude_oil_bucket"
+			id: "61A945984843E55A"
 			rewards: [{
-				count: 2
-				id: "2A60C4793C323F83"
-				item: "createdelightcore:copper_coin"
+				id: "54DF3F51674B42C0"
+				item: "createdieselgenerators:lighter"
 				type: "item"
 			}]
-			tasks: [{
-				id: "3A8416116E24A115"
-				item: "createutilities:void_tank"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["07C28031281E5458"]
-			id: "5D3980866B824F15"
-			rewards: [{
-				count: 2
-				id: "70B19FD37572B125"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			tasks: [{
-				id: "68E0A2128888812E"
-				item: "createutilities:void_battery"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 5.5d
-		}
-		{
-			dependencies: ["0081008C6EAA4D86"]
-			description: [""]
-			icon: "create_new_age:generator_coil"
-			id: "5520A571B3019083"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"点击跳转对应章节\", \"color\" : \"blue\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"49BCC2D259AA3A40\" } }"
+			subtitle: "&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"
 			tasks: [{
-				icon: "create_new_age:generator_coil"
-				id: "46669CBC1E8ACF47"
+				icon: "createdieselgenerators:crude_oil_bucket"
+				id: "3EC3BC0630EC3A9C"
 				stat: "minecraft:play_time"
-				title: "电力时代"
+				title: "开始石油时代"
 				type: "stat"
 				value: 1
 			}]
-			title: "电力时代"
-			x: -3.5d
-			y: 4.0d
-		}
-		{
-			dependencies: ["0081008C6EAA4D86"]
-			description: ["使用铸铁和钨制作。需要注意的是固金板不是通过辊压机而是杠杆锤制作。"]
-			id: "580C77852E71B685"
-			size: 2.0d
-			subtitle: "制作工业坩埚"
-			tasks: [{
-				id: "0117107DD13A9887"
-				item: "createmetallurgy:obdurium_ingot"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -3.5d
-		}
-		{
-			dependencies: ["580C77852E71B685"]
-			description: ["可以装载多种流体，安装熔铸炉组件能使其变为熔铸炉。其最大大小为5*4*5，使用扳手可以在其表面开窗。"]
-			id: "0C0CD2BD5935D4CC"
-			subtitle: "某种多流体储罐"
-			tasks: [{
-				id: "757E747FAED0BFE1"
-				item: "createmetallurgy:industrial_crucible"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -5.5d
-		}
-		{
-			dependencies: ["0C0CD2BD5935D4CC"]
-			description: [
-				"它可以做到&e熔炼金属，制作合金，甚至生物熔炼&r。"
-				"值得一提的是它的热量机制，是根据它下方的&e所有烈焰人的热度&r来计算的。普通燃烧的烈焰人是1，超级燃烧的烈焰人是2。"
-				"它拥有直接熔融块的能力，不过需要热量满足要求。"
-				"它也可以直接制作合金。只要其中拥有原材料且有热量即可。"
-			]
-			id: "20972AEC6EE6D9F8"
-			subtitle: "多方块大炉子"
-			tasks: [{
-				id: "7FBA9B1076F350D6"
-				item: "createmetallurgy:foundry_unit"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -7.0d
+			title: "石油科技"
+			x: -1.0d
+			y: 3.0d
 		}
 	]
-	title: "&3合金突破"
+	title: "&5石油化工"
 }

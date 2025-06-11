@@ -10,7 +10,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["5520A571B3019083"]
 			id: "49BCC2D259AA3A40"
 			shape: "square"
 			size: 3.0d
@@ -27,6 +26,7 @@
 			y: -4.5d
 		}
 		{
+			dependencies: ["2F0B3291F14AAA89"]
 			id: "1A9F59D70BF97DBE"
 			shape: "square"
 			size: 1.5d
@@ -37,8 +37,8 @@
 				type: "item"
 			}]
 			title: "基础磁铁"
-			x: 4.0d
-			y: 4.0d
+			x: 6.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -48,8 +48,8 @@
 				item: "create_new_age:redstone_magnet"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 5.5d
+			x: 8.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["540221D9F9074842"]
@@ -59,8 +59,8 @@
 				item: "create_new_age:layered_magnet"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 6.5d
+			x: 10.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["40318D164805A089"]
@@ -70,8 +70,8 @@
 				item: "create_new_age:fluxuated_magnetite"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 7.5d
+			x: 11.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["4C75ABFBB5D7E5B6"]
@@ -81,8 +81,8 @@
 				item: "create_new_age:netherite_magnet"
 				type: "item"
 			}]
-			x: 4.0d
-			y: 8.5d
+			x: 13.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -101,8 +101,8 @@
 				}
 			]
 			title: "磁铁维度的特殊产物"
-			x: 3.0d
-			y: 5.5d
+			x: 7.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -114,8 +114,8 @@
 				type: "item"
 			}]
 			title: "磁铁再生"
-			x: 5.0d
-			y: 5.5d
+			x: 7.5d
+			y: 2.5d
 		}
 		{
 			id: "043FA550A6E77DE9"
@@ -126,7 +126,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 2.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["2034DC15562715B2"]
@@ -239,7 +239,10 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["49BCC2D259AA3A40"]
+			dependencies: [
+				"49BCC2D259AA3A40"
+				"16E85851D21CB6A3"
+			]
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
@@ -255,6 +258,7 @@
 				item: "createaddition:electrum_ingot"
 				type: "item"
 			}]
+			title: "步入&5电力时代&r！"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -353,7 +357,6 @@
 			dependencies: [
 				"3CB8FDF09F47FD4F"
 				"043FA550A6E77DE9"
-				"1A9F59D70BF97DBE"
 			]
 			id: "2F0B3291F14AAA89"
 			rewards: [{
@@ -369,7 +372,7 @@
 				type: "item"
 			}]
 			x: 4.0d
-			y: 2.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["3C1D019487D99479"]
@@ -491,5 +494,5 @@
 			y: -1.5d
 		}
 	]
-	title: "&3电动力学"
+	title: "&5电动力学"
 }

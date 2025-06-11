@@ -82,7 +82,8 @@ ServerEvents.recipes(e => {
         "createmetallurgy:alloying/brass"
     ])
 
-    e.replaceInput({ mod: "createmetallurgy" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({ id: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createmetallurgy:steel_ingot")
     e.replaceInput({output: "createmetallurgy:coke"}, "#forge:ores/coal", "#minecraft:coals")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
@@ -116,7 +117,7 @@ ServerEvents.recipes(e => {
         .id("createmetallurgy:alloying/molten_brass")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_obdurium", 150),
         [
-            Fluid.of("createbigcannons:molten_cast_iron", 90),
+            Fluid.of("createmetallurgy:molten_steel", 90),
             Fluid.of("createmetallurgy:molten_tungsten", 60)
         ])
         .heatRequirement("superheated")
@@ -173,12 +174,11 @@ ServerEvents.recipes(e => {
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
     {
-        let iner = "minecraft:deepslate_bricks"
-        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", iner, [
-            e.recipes.vintageimprovements.curving(iner, iner, 1),
+        let iner = "createmetallurgy:incomplete_industrial_crucible"
+        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'createfluidstuffs:multi_fluid_tank', [
+            e.recipes.create.pressing(iner, iner),
             e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
             e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
-            // e.recipes.vintageimprovements.polishing(iner, iner)
             e.recipes.createmetallurgy.grinding(iner, iner)
         ])
         .loops(1)
