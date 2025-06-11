@@ -2,7 +2,7 @@
 	autofocus_id: "6CB83B142B7FB707"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "Classic_Storage"
+	filename: "Storage_with_AE2"
 	group: "14CFC96B5B37F10B"
 	icon: {
 		Count: 1
@@ -680,7 +680,6 @@
 				item: "ae2:crafting_terminal"
 				type: "item"
 			}]
-			title: "AE终端连通万物"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -692,7 +691,6 @@
 				item: "ae2:wireless_crafting_terminal"
 				type: "item"
 			}]
-			title: "随时随地访问仓库"
 			x: 0.0d
 			y: 1.5d
 		}
@@ -740,7 +738,6 @@
 		{
 			dependencies: ["4D21060946DAD49C"]
 			id: "5E25B67858E6E950"
-			subtitle: "连接子存储网络"
 			tasks: [{
 				id: "027346D2EE52B860"
 				item: "ae2:interface"
@@ -976,7 +973,6 @@
 		{
 			description: ["存储640个物品(无视物品的堆叠上限，只计数量)"]
 			id: "525EEC0BD9930D59"
-			subtitle: "前期的杂物存放处"
 			tasks: [{
 				id: "10E98E30B2374575"
 				item: "quark:crate"
