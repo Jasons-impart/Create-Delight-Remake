@@ -352,7 +352,7 @@ ServerEvents.recipes((event) => {
         "butchercraft:blood_fluid_bucket",
         "2x butchercraft:kidney",
         "butchercraft:heart",
-        '2x farmersdelight:ham',
+        "2x farmersdelight:ham",
         "16x minecraft:bone",
         "10x butchercraft:pork_stewmeat",
         "12x butchercraft:pork_scraps",
@@ -513,22 +513,30 @@ ServerEvents.recipes((event) => {
           `butchercraft:${ani}_carcass`,
           Item.of("minecraft:bucket"),
         ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of("butchercraft:skinning_knife"),
-        ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of("butchercraft:bone_saw"),
-        ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of("butchercraft:gut_knife"),
-        ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of("butchercraft:butcher_knife"),
-        ]),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of("butchercraft:skinning_knife"),
+          ])
+          .keepHeldItem(),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of("butchercraft:bone_saw"),
+          ])
+          .keepHeldItem(),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of("butchercraft:gut_knife"),
+          ])
+          .keepHeldItem(),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of("butchercraft:butcher_knife"),
+          ])
+          .keepHeldItem(),
       ])
       .transitionalItem(`butchercraft:${ani}_carcass`)
       .loops(1)
@@ -553,18 +561,24 @@ ServerEvents.recipes((event) => {
           `butchercraft:${ani}_carcass`,
           Item.of("minecraft:glass_bottle"),
         ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of(Item.of("butchercraft:gut_knife")),
-        ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of(Item.of("minecraft:shears")),
-        ]),
-        create.deploying(`butchercraft:${ani}_carcass`, [
-          `butchercraft:${ani}_carcass`,
-          Item.of(Item.of("butchercraft:skinning_knife")),
-        ]),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of(Item.of("butchercraft:gut_knife")),
+          ])
+          .keepHeldItem(),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of(Item.of("minecraft:shears")),
+          ])
+          .keepHeldItem(),
+        create
+          .deploying(`butchercraft:${ani}_carcass`, [
+            `butchercraft:${ani}_carcass`,
+            Item.of(Item.of("butchercraft:skinning_knife")),
+          ])
+          .keepHeldItem(),
       ])
       .transitionalItem(`butchercraft:${ani}_carcass`)
       .loops(1)

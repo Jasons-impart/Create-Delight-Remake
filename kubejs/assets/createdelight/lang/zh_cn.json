@@ -190,7 +190,6 @@
 
     "fluid.createdelight.dragon_breath_soda": "龙息汽水",
 
-
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",
     "item.createdelight.artemisia_argyi_seed": "艾草种子",
@@ -450,6 +449,10 @@
     "item.createdelight.emergency_industrial_platform_lime_block": "应急工业平台-黄绿方纹",
     "item.createdelight.emergency_industrial_platform_dark": "应急工业平台-深色",
     "item.createdelight.emergency_industrial_platform_dark_block": "应急工业平台-深色方纹",
+    "item.createdelight.air_helmet": "空气头盔",
+    "item.createdelight.air_chestplate": "空气胸甲",
+    "item.createdelight.air_leggings": "空气护腿",
+    "item.createdelight.air_boots": "空气靴子",
 
     "item.createdelight.smithing_template.dread_upgrade.additions_slot_description": "放入悚怖钢",
     "item.createdelight.smithing_template.dread_upgrade.applies_to": "龙钢装备",
