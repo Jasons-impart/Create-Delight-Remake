@@ -109,6 +109,7 @@
 		{
 			dependencies: ["5F76D0BDF2B71728"]
 			id: "6575B9B559D65549"
+			shape: "rsquare"
 			size: 1.5d
 			subtitle: "这是本包加入的，可用于&e所有压印操作&r的模板。需要使用五种模板合成。"
 			tasks: [{

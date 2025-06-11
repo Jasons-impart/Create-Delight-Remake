@@ -5,7 +5,7 @@
 	group: "14CFC96B5B37F10B"
 	icon: "ae2:drive"
 	id: "467649501F6EE065"
-	order_index: 6
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -290,35 +290,6 @@
 			}]
 			x: 6.0d
 			y: -9.5d
-		}
-		{
-			dependencies: ["6514C4BDC732476A"]
-			id: "3B3EDB9C47875D74"
-			subtitle: "增加抽屉的最大储量"
-			tasks: [
-				{
-					id: "74628308A93134D0"
-					item: "functionalstorage:copper_upgrade"
-					type: "item"
-				}
-				{
-					id: "1E85E7C88F41B9B3"
-					item: "functionalstorage:gold_upgrade"
-					type: "item"
-				}
-				{
-					id: "5D901822434CFEA9"
-					item: "functionalstorage:diamond_upgrade"
-					type: "item"
-				}
-				{
-					id: "3A09C1B0156BC02F"
-					item: "functionalstorage:netherite_upgrade"
-					type: "item"
-				}
-			]
-			x: 3.0d
-			y: -9.0d
 		}
 		{
 			id: "3C94E103DF3BC823"
