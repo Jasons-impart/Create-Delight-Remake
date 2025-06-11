@@ -185,7 +185,6 @@
 
     "fluid.createdelight.dragon_breath_soda": "龙息汽水",
 
-
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",
     "item.createdelight.artemisia_argyi_seed": "艾草种子",
@@ -439,6 +438,10 @@
     "item.createdelight.wrapped_fries_ghasta": "纸包炸恶魂意面",
     "item.createdelight.enchanted_golden_lantern_fruit": "附魔金灯笼果",
     "item.createdelight.enchanted_golden_carrot": "附魔金胡萝卜",
+    "item.createdelight.air_helmet": "空气头盔",
+    "item.createdelight.air_chestplate": "空气胸甲",
+    "item.createdelight.air_leggings": "空气护腿",
+    "item.createdelight.air_boots": "空气靴子",
 
     "item.createdelight.smithing_template.dread_upgrade.additions_slot_description": "放入悚怖钢",
     "item.createdelight.smithing_template.dread_upgrade.applies_to": "龙钢装备",
