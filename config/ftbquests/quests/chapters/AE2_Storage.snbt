@@ -9,47 +9,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			description: [
-				"实际上AE网络&e不需要控制器&r也可以运行。只要网络供能，那该网络就会有8个频道。因此你可以使用这个发电机来供能。"
-				"对于只想要一个大箱子的人来说，这无疑是最方便的方法。配合&e存储总线&r与保险箱或者抽屉一系列，你甚至&e不需要制作其他的ae元件&r便可得到一个巨大的箱子。"
-				"{@pagebreak}"
-				"下图为一个简单的实例。使用存储总线连接需要接入网络的容器即可，此处为保险箱。&4商店内有一个ae套件，提供了下图所有的物品（除了保险箱）&r。"
-				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
-				"{@pagebreak}"
-			]
-			id: "08AE06F7D87E51A6"
-			rewards: [
-				{
-					count: 64
-					id: "4D47C8F45DC6E3C7"
-					item: "ae2:fluix_glass_cable"
-					type: "item"
-				}
-				{
-					count: 7
-					id: "1FA12EB6FBBDD004"
-					item: "ae2:storage_bus"
-					type: "item"
-				}
-				{
-					id: "4B035F246F1BA3C0"
-					item: "ae2:crafting_terminal"
-					type: "item"
-				}
-			]
-			size: 2.0d
-			subtitle: "我只想要一个大箱子"
-			tasks: [{
-				id: "061E186C237A20C1"
-				item: "ae2:crystal_resonance_generator"
-				type: "item"
-			}]
-			title: "无需搓元件也能享受AE终端"
-			x: -1.5d
-			y: -0.5d
-		}
-		{
-			dependencies: ["08AE06F7D87E51A6"]
 			id: "3BF64357C387ED95"
 			subtitle: "来看这里"
 			tasks: [{
@@ -362,7 +321,6 @@
 			y: -9.0d
 		}
 		{
-			dependencies: ["08AE06F7D87E51A6"]
 			id: "3C94E103DF3BC823"
 			tasks: [{
 				id: "05B9AB674789E254"

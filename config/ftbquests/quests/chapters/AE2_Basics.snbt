@@ -30,8 +30,8 @@
 				type: "checkmark"
 			}]
 			title: "应用能源的开始"
-			x: -3.0d
-			y: 4.5d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3066F516B382ED92"]
@@ -46,16 +46,16 @@
 				item: "ae2:meteorite_compass"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -0.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["5D34BFD68D039806"]
-			description: [
-				"陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"
-				"与神秘方块伴生的还有&e不同损坏等级的赛特斯石英母岩&r。使用&e非精准采集&r的工具采集时会使其&e降低一个等级&r。"
-				"而&e无暇&r无论怎样都会降低一个等级，所以请使用&e机械动力的矿车装配站&r或者&eae的空间塔&r将其带走，这边建议使用矿车装配站。"
+			dependencies: [
+				"5D34BFD68D039806"
+				"3066F516B382ED92"
 			]
+			dependency_requirement: "one_started"
+			description: ["陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"]
 			id: "5F76D0BDF2B71728"
 			size: 1.5d
 			subtitle: "借由他人，寻找自我"
@@ -69,81 +69,60 @@
 				type: "observation"
 			}]
 			title: "神秘方块"
-			x: 4.5d
-			y: -0.5d
+			x: 14.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
 			id: "362C07EFCC319B53"
-			tasks: [{
-				id: "6B014A5E41CA009F"
-				item: "ae2:logic_processor_press"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["5F76D0BDF2B71728"]
-			id: "656F2C5214D9B663"
-			tasks: [{
-				id: "5EA334AA1FD79BA6"
-				item: "ae2:calculation_processor_press"
-				type: "item"
-			}]
-			x: 3.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["5F76D0BDF2B71728"]
-			id: "52DF97EF52409678"
 			subtitle: "累积压印模板是神秘方块中&e无法获取&r的压印模板，需要手动合成。使用压缩机合成。"
-			tasks: [{
-				id: "1529252D611B6BE5"
-				item: "megacells:accumulation_processor_press"
-				type: "item"
-			}]
-			x: 4.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["5F76D0BDF2B71728"]
-			id: "152D3A92E9282EC4"
-			tasks: [{
-				id: "4C708B3BB24F5AF2"
-				item: "ae2:engineering_processor_press"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 2.0d
-		}
-		{
-			dependencies: ["5F76D0BDF2B71728"]
-			id: "4651E2E1F44F61DE"
-			tasks: [{
-				id: "5726C53806D96731"
-				item: "ae2:silicon_press"
-				type: "item"
-			}]
-			x: 6.5d
-			y: 1.0d
+			tasks: [
+				{
+					id: "6B014A5E41CA009F"
+					item: "ae2:logic_processor_press"
+					type: "item"
+				}
+				{
+					id: "04BEBDCEADE9F516"
+					item: "ae2:calculation_processor_press"
+					type: "item"
+				}
+				{
+					id: "356B6B4092310E4D"
+					item: "ae2:engineering_processor_press"
+					type: "item"
+				}
+				{
+					id: "1EAD25787E0C446D"
+					item: "ae2:silicon_press"
+					type: "item"
+				}
+				{
+					id: "7ABB2103CE2CFF3F"
+					item: "megacells:accumulation_processor_press"
+					type: "item"
+				}
+			]
+			x: 16.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
 			id: "6575B9B559D65549"
+			size: 1.5d
 			subtitle: "这是本包加入的，可用于&e所有压印操作&r的模板。需要使用五种模板合成。"
 			tasks: [{
 				id: "45C1258D2F8952A7"
 				item: "createdelight:universal_press"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -2.5d
+			x: 18.25d
+			y: 0.0d
 		}
 		{
 			dependencies: [
-				"362C07EFCC319B53"
 				"75ADE83D3C9349B4"
+				"6575B9B559D65549"
 			]
 			id: "0A9347D7B9C4CCA6"
 			tasks: [
@@ -158,13 +137,13 @@
 					type: "item"
 				}
 			]
-			x: 2.5d
-			y: 5.0d
+			x: 20.5d
+			y: 2.0d
 		}
 		{
 			dependencies: [
-				"656F2C5214D9B663"
 				"75ADE83D3C9349B4"
+				"6575B9B559D65549"
 			]
 			id: "7BC423F0E58DD8AD"
 			tasks: [
@@ -179,13 +158,13 @@
 					type: "item"
 				}
 			]
-			x: 3.5d
-			y: 4.0d
+			x: 20.5d
+			y: 1.0d
 		}
 		{
 			dependencies: [
-				"52DF97EF52409678"
 				"75ADE83D3C9349B4"
+				"6575B9B559D65549"
 			]
 			id: "2566F69ABAA08D17"
 			tasks: [
@@ -200,13 +179,13 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
-			y: 5.0d
+			x: 20.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
-				"152D3A92E9282EC4"
 				"75ADE83D3C9349B4"
+				"6575B9B559D65549"
 			]
 			id: "31652DC839BBACE4"
 			tasks: [
@@ -228,13 +207,13 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
-			y: 4.0d
+			x: 20.5d
+			y: -1.0d
 		}
 		{
 			dependencies: [
-				"4651E2E1F44F61DE"
 				"75ADE83D3C9349B4"
+				"6575B9B559D65549"
 			]
 			id: "6B582DEB6F5ADB6F"
 			tasks: [
@@ -249,8 +228,8 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
-			y: 5.0d
+			x: 20.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["638505D6DDD35EF8"]
@@ -265,8 +244,8 @@
 				item: "vintageimprovements:curving_press"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 8.0d
+			x: 22.75d
+			y: 0.0d
 		}
 		{
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
@@ -279,43 +258,76 @@
 				title: "使用机械动力吧"
 				type: "checkmark"
 			}]
-			x: 4.5d
-			y: 11.0d
+			x: 25.5d
+			y: 0.0d
 		}
 		{
-			dependencies: ["5D34BFD68D039806"]
-			description: ["可以用同级母岩手动操作来进行升级，举个例子，可以手持赛特斯石英块右键赛特斯石英块来生成损坏的赛斯特石英母岩，不过概率是二分之一，也就是说，一个石英块一次性成为无暇母岩的概率是十六分之一，快来试试吧！"]
+			dependencies: [
+				"5D34BFD68D039806"
+				"3066F516B382ED92"
+			]
+			dependency_requirement: "one_started"
+			description: [
+				"每个母岩都有其损坏程度，使用非精准采集镐子会使母岩的损坏程度降低一级。而无暇母岩无论如何都会降一级。"
+				"无暇母岩请使用矿车装配站或空间塔搬运。"
+				""
+				"也可用同级母岩手动操作逐步升级到无暇母岩。"
+			]
 			icon: "ae2:flawless_budding_quartz"
 			id: "550924A31C631172"
 			subtitle: "欧非检测器"
-			tasks: [{
-				id: "7B00AB563ACF5113"
-				item: "ae2:flawless_budding_quartz"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "7B00AB563ACF5113"
+					item: "ae2:flawless_budding_quartz"
+					type: "item"
+				}
+				{
+					id: "671DBACF98EF17A8"
+					item: "ae2:flawed_budding_quartz"
+					type: "item"
+				}
+				{
+					id: "579ECA004FE78319"
+					item: "ae2:chipped_budding_quartz"
+					type: "item"
+				}
+				{
+					id: "5CA98279161AE95B"
+					item: "ae2:damaged_budding_quartz"
+					type: "item"
+				}
+				{
+					id: "0646D022C514D0F3"
+					item: "ae2:quartz_block"
+					type: "item"
+				}
+			]
 			title: "无暇的赛特斯石英母岩"
-			x: -3.0d
-			y: -4.5d
+			x: 3.5d
+			y: 0.0d
 		}
 		{
-			dependencies: ["550924A31C631172"]
-			description: ["侧面接触想要加速的方块，上下（或者说前后）接入线缆。"]
+			dependencies: ["6894705A95F46440"]
+			description: ["侧面加速，上下接电"]
 			id: "32871E311DB7FB8C"
+			shape: "circle"
+			size: 1.5d
 			subtitle: "可加速母岩与作物的生长"
 			tasks: [{
 				id: "6DC8E78A590F6AFD"
 				item: "ae2:growth_accelerator"
 				type: "item"
 			}]
-			x: -0.5d
-			y: -4.5d
+			x: 12.25d
+			y: 0.0d
 		}
 		{
-			dependencies: ["5C874A3DDFE9A50A"]
 			description: [
 				"如果没有发展其他科技的话，请使用ae的充能器。该充能器需要配合ae的曲柄使用。"
 				"使用newage的充能器需要同时输入应力和电。"
 			]
+			icon: "ae2:charger"
 			id: "6809B16089E6CDA2"
 			tasks: [{
 				id: "7BDC6AEC4CF89C84"
@@ -350,21 +362,29 @@
 				type: "item"
 			}]
 			title: "用于充能的机器"
-			x: -10.5d
-			y: -4.5d
+			x: 7.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["550924A31C631172"]
+			icon: "ae2:certus_quartz_crystal"
 			id: "5C874A3DDFE9A50A"
 			size: 1.5d
 			subtitle: "通过挖掘母岩上的赛特斯石英簇获取，如果赛特斯石英未长成则会获取到赛特斯石英粉"
-			tasks: [{
-				id: "41B3A0DC3C8769BB"
-				item: "ae2:certus_quartz_crystal"
-				type: "item"
-			}]
-			x: -7.5d
-			y: -4.5d
+			tasks: [
+				{
+					id: "41B3A0DC3C8769BB"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
+				{
+					id: "68180A3AABFFF1D9"
+					item: "ae2:certus_quartz_dust"
+					type: "item"
+				}
+			]
+			x: 5.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5C874A3DDFE9A50A"]
@@ -379,8 +399,8 @@
 				item: "ae2:certus_quartz_dust"
 				type: "item"
 			}]
-			x: -7.5d
-			y: -8.0d
+			x: 5.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["36598C420C3FA43F"]
@@ -390,8 +410,8 @@
 				item: "ae2:quartz_glass"
 				type: "item"
 			}]
-			x: -5.5d
-			y: -8.0d
+			x: 5.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1A01875DBBF93B00"]
@@ -401,8 +421,8 @@
 				item: "ae2:quartz_vibrant_glass"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -8.0d
+			x: 5.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1A01875DBBF93B00"]
@@ -419,8 +439,8 @@
 				item: "createdelight:quartz_glass_parts"
 				type: "item"
 			}]
-			x: -5.5d
-			y: -10.0d
+			x: 7.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["43FCBDCC68F16282"]
@@ -437,11 +457,15 @@
 				item: "createdelight:quartz_vibrant_glass_parts"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -10.0d
+			x: 7.0d
+			y: 4.5d
 		}
 		{
-			dependencies: ["5D34BFD68D039806"]
+			dependencies: [
+				"5D34BFD68D039806"
+				"550924A31C631172"
+			]
+			dependency_requirement: "one_started"
 			description: ["一个陨石可粉碎出多个陨石粉，而一个陨石粉就能烧制成陨石。"]
 			id: "26F96B707CE8F3DE"
 			subtitle: "可再生"
@@ -450,25 +474,26 @@
 				item: "ae2:sky_stone_block"
 				type: "item"
 			}]
-			x: -10.5d
-			y: -0.5d
+			x: 3.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["6809B16089E6CDA2"]
+			dependencies: [
+				"6809B16089E6CDA2"
+				"5C874A3DDFE9A50A"
+			]
 			id: "29D71BA5F51B8710"
 			tasks: [{
 				id: "5EB9D9C9B0854A1F"
 				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
-			x: -10.5d
-			y: -2.5d
+			x: 7.5d
+			y: 0.0d
 		}
 		{
-			dependencies: [
-				"26F96B707CE8F3DE"
-				"29D71BA5F51B8710"
-			]
+			dependencies: ["29D71BA5F51B8710"]
+			dependency_requirement: "all_started"
 			id: "03BBFC33D603A287"
 			subtitle: "将赛特斯石英水晶，铁锭，陨石块丢入岩浆中即可制作"
 			tasks: [{
@@ -476,8 +501,8 @@
 				item: "megacells:sky_steel_ingot"
 				type: "item"
 			}]
-			x: -13.5d
-			y: -0.5d
+			x: 7.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["26F96B707CE8F3DE"]
@@ -488,52 +513,54 @@
 				item: "ae2:sky_dust"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 1.5d
-		}
-		{
-			dependencies: ["391BA5D92F977F17"]
-			id: "096D32604AED77C9"
-			subtitle: "将陨石粉与水搅拌即可获取陨石溶液"
-			tasks: [{
-				id: "382C88948D4B6B27"
-				title: "陨石溶液"
-				type: "checkmark"
-			}]
-			x: -10.5d
+			x: 3.5d
 			y: 3.0d
 		}
 		{
-			dependencies: ["096D32604AED77C9"]
-			id: "113F318DEE8319EA"
-			subtitle: "将陨石溶液加热搅拌即可获取水与荧石"
-			tasks: [{
-				id: "5A2886EE0119355A"
-				item: "minecraft:glowstone_dust"
-				type: "item"
-			}]
-			x: -11.5d
+			dependencies: ["391BA5D92F977F17"]
+			dependency_requirement: "one_completed"
+			icon: "createdelight:sky_solution_bucket"
+			id: "096D32604AED77C9"
+			subtitle: "将陨石粉与水搅拌即可获取陨石溶液"
+			tasks: [
+				{
+					id: "5DCF3E4D9B04D236"
+					item: "createdelight:sky_solution_bucket"
+					type: "item"
+				}
+				{
+					id: "49E5A80BAEDE8B13"
+					type: "checkmark"
+				}
+			]
+			x: 3.5d
 			y: 4.5d
 		}
 		{
 			dependencies: ["096D32604AED77C9"]
-			icon: "minecraft:redstone"
+			dependency_requirement: "one_completed"
+			icon: "createdelight:spent_liquor_bucket"
 			id: "67C09A75769D6D7A"
 			subtitle: "将陨石溶液搅拌或者离心即可获取陨石废液与红石，合成处理器的重要材料"
 			tasks: [
-				{
-					id: "0B7267C0920FC6BD"
-					title: "陨石废液"
-					type: "checkmark"
-				}
 				{
 					id: "62AFBDD96C58C050"
 					item: "minecraft:redstone"
 					type: "item"
 				}
+				{
+					id: "1F929FA37A203B51"
+					item: "createdelight:spent_liquor_bucket"
+					type: "item"
+				}
+				{
+					id: "6FE0AE939362F44C"
+					item: "minecraft:glowstone_dust"
+					type: "item"
+				}
 			]
-			x: -9.5d
-			y: 4.5d
+			x: 3.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["29D71BA5F51B8710"]
@@ -545,8 +572,8 @@
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
-			x: -13.5d
-			y: -2.5d
+			x: 9.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3D10F05BC919CC4F"]
@@ -555,14 +582,15 @@
 				"细线缆传导8个频道，粗线缆传导32个频道，智能线缆能够显示频道占用数。"
 				"还有一个实用的知识：当你使用粗线缆连不上某个机器或者元件时，就请使用细线缆连接。最简单的一个例子就是，粗线缆上无法放置终端。"
 			]
+			icon: "ae2:purple_glass_cable"
 			id: "6894705A95F46440"
 			tasks: [{
 				id: "1A2D708E7BA9158F"
 				title: "关于线缆的选择"
 				type: "checkmark"
 			}]
-			x: -13.5d
-			y: -4.0d
+			x: 10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6894705A95F46440"]
@@ -582,8 +610,8 @@
 				type: "item"
 			}]
 			title: "ME玻璃线缆"
-			x: -13.5d
-			y: -5.5d
+			x: 10.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["489072B7A17F349C"]
@@ -603,75 +631,132 @@
 				type: "item"
 			}]
 			title: "ME包层线缆"
-			x: -13.5d
-			y: -7.0d
+			x: 10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["38D93D6E4F62BE49"]
 			id: "54ED0E26FB0C2F3F"
-			subtitle: "致密包层线缆的智能版本"
-			tasks: [{
-				id: "33E07AF78B7CFF90"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "ae2:smart_dense_cable"
+			shape: "square"
+			subtitle: "可传递32个通道的粗线缆"
+			tasks: [
+				{
+					id: "33E07AF78B7CFF90"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "ae2:smart_dense_cable"
+						}
 					}
+					title: "Any #ae2:smart_dense_cable"
+					type: "item"
 				}
-				title: "Any #ae2:smart_dense_cable"
-				type: "item"
-			}]
+				{
+					id: "5356E4ACDF3BF271"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "ae2:covered_dense_cable"
+						}
+					}
+					type: "item"
+				}
+			]
 			title: "致密线缆"
-			x: -13.5d
-			y: -8.5d
-		}
-		{
-			dependencies: ["38D93D6E4F62BE49"]
-			id: "337EC7151323D512"
-			subtitle: "同样包层，但是可以传递32个频道；不过不能在线缆的单格方块内放置小元件"
-			tasks: [{
-				id: "5D24C32FB2854551"
-				item: "ae2:fluix_covered_dense_cable"
-				type: "item"
-			}]
-			title: "ME致密包层线缆"
-			x: -12.0d
-			y: -7.0d
+			x: 10.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["3D10F05BC919CC4F"]
 			id: "1D626824C69C717C"
+			subtitle: "AE2基础制作原料之一"
 			tasks: [{
 				id: "5087B86DF875B8A2"
 				item: "ae2:fluix_dust"
 				type: "item"
 			}]
-			x: -15.5d
+			x: 9.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["38D93D6E4F62BE49"]
+			id: "56FD042D461B7B75"
+			shape: "square"
+			tasks: [{
+				id: "318CDA8DC064B0CE"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:smart_cable"
+					}
+				}
+				type: "item"
+			}]
+			title: "智能线缆"
+			x: 11.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3D10F05BC919CC4F"]
+			description: [
+				"实际上AE网络&e不需要控制器&r也可以运行。只要网络供能，那该网络就会有8个频道。因此你可以使用这个发电机来供能。"
+				"对于只想要一个大箱子的人来说，这无疑是最方便的方法。配合&e存储总线&r与保险箱或者抽屉一系列，你甚至&e不需要制作其他的ae元件&r便可得到一个巨大的箱子。"
+				"{@pagebreak}"
+				"下图为一个简单的实例。使用存储总线连接需要接入网络的容器即可，此处为保险箱。"
+				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
+				"{@pagebreak}"
+			]
+			id: "7634E055957264B6"
+			rewards: [
+				{
+					count: 64
+					id: "20FB53A589844D3A"
+					item: "ae2:fluix_glass_cable"
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6C1181E5B22F4E4D"
+					item: "ae2:storage_bus"
+					type: "item"
+				}
+				{
+					id: "1A4CAC584E7F8815"
+					item: "ae2:crafting_terminal"
+					type: "item"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "我只想要一个大箱子"
+			tasks: [{
+				id: "1F4DBDEFA177304F"
+				item: "ae2:crystal_resonance_generator"
+				type: "item"
+			}]
+			title: "一个AE终端访问整个仓库"
+			x: 9.0d
 			y: -4.0d
 		}
 		{
-			dependencies: ["1D626824C69C717C"]
-			id: "50EB21456574D20C"
+			dependencies: ["7634E055957264B6"]
+			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
+			icon: "create:item_vault"
+			id: "40D248D71EADF4A0"
+			size: 2.0d
+			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"467649501F6EE065\"} }"
 			tasks: [{
-				id: "325BD236E22D146C"
-				item: "ae2:annihilation_core"
-				type: "item"
+				id: "0842D2289722768A"
+				title: "使用机械动力吧"
+				type: "checkmark"
 			}]
-			x: -15.5d
-			y: -5.5d
-		}
-		{
-			dependencies: ["1D626824C69C717C"]
-			id: "415A65340E5ADD51"
-			tasks: [{
-				id: "396833D60E06A2D2"
-				item: "ae2:formation_core"
-				type: "item"
-			}]
-			x: -17.5d
+			title: "是时候搭建仓库了"
+			x: 12.5d
 			y: -4.0d
 		}
 	]
-	title: "产物篇"
+	title: "异星科技初探"
 }
