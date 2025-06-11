@@ -11,15 +11,15 @@
 		{
 			id: "23F7CDA2CF32FD87"
 			linked_quest: "630FA0478B7DAAAA"
-			x: -1.5d
-			y: 17.0d
+			x: 0.5d
+			y: 18.5d
 		}
 		{
 			id: "7D4B174BC4A98DC9"
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
 			size: 2.0d
-			x: 12.0d
+			x: 17.0d
 			y: 9.0d
 		}
 		{
@@ -27,22 +27,22 @@
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"
 			size: 2.0d
-			x: 12.0d
+			x: 17.0d
 			y: 12.0d
 		}
 		{
 			id: "5740D9FEF01DB38A"
 			linked_quest: "2CC8B87D086B3275"
 			size: 2.0d
-			x: -3.0d
-			y: 7.0d
+			x: -1.0d
+			y: 13.0d
 		}
 		{
 			id: "01AC440633233AC2"
 			linked_quest: "20B3A29ADFDF1D4A"
 			size: 2.0d
-			x: 0.0d
-			y: 7.0d
+			x: 2.0d
+			y: 13.0d
 		}
 	]
 	quests: [
@@ -64,7 +64,7 @@
 				type: "item"
 			}]
 			title: "这是？&e匠魂动力&r？"
-			x: -1.5d
+			x: 0.5d
 			y: 10.5d
 		}
 		{
@@ -129,8 +129,8 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 22.0d
+			x: 7.5d
+			y: 23.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -148,8 +148,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 20.0d
+			x: 9.0d
+			y: 21.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -174,8 +174,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: 20.0d
+			x: 6.0d
+			y: 21.5d
 		}
 		{
 			dependencies: [
@@ -200,8 +200,8 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 14.5d
+			x: 6.5d
+			y: 16.0d
 		}
 		{
 			dependencies: [
@@ -221,8 +221,8 @@
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 14.5d
+			x: 8.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -241,8 +241,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 21.0d
+			x: 8.5d
+			y: 22.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -258,8 +258,8 @@
 				item: "create_connected:empty_fan_catalyst"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 8.5d
+			x: 8.5d
+			y: 13.0d
 		}
 		{
 			dependencies: ["35B43C124186578F"]
@@ -298,8 +298,8 @@
 				}
 			]
 			title: "鼓风机触媒们"
-			x: 2.5d
-			y: 7.0d
+			x: 8.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -312,8 +312,8 @@
 				item: "createfluidstuffs:multi_fluid_tank"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 8.5d
+			x: 6.5d
+			y: 13.0d
 		}
 		{
 			dependencies: ["271924B430C340EC"]
@@ -355,8 +355,8 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 14.5d
+			x: 5.0d
+			y: 16.0d
 		}
 		{
 			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
@@ -377,8 +377,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: 13.0d
+			x: 3.5d
+			y: 15.5d
 		}
 		{
 			id: "2B3F1B42F03F00F3"
@@ -387,8 +387,8 @@
 				item: "create:rose_quartz"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 13.0d
+			x: 3.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -407,8 +407,8 @@
 				type: "item"
 			}]
 			title: "齿轮教父！"
-			x: 2.5d
-			y: 21.0d
+			x: 6.5d
+			y: 22.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -480,8 +480,8 @@
 				}
 			]
 			title: "融化流体！"
-			x: -0.5d
-			y: 14.5d
+			x: 1.5d
+			y: 16.0d
 		}
 		{
 			dependencies: [
@@ -508,8 +508,8 @@
 				}
 			]
 			title: "浇铸流体！"
-			x: -1.5d
-			y: 16.0d
+			x: 0.5d
+			y: 17.5d
 		}
 		{
 			dependencies: [
@@ -542,8 +542,8 @@
 				}
 			]
 			title: "融合流体！"
-			x: -2.5d
-			y: 14.5d
+			x: -0.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -567,8 +567,8 @@
 				type: "item"
 			}]
 			title: "浇筑模具"
-			x: -0.5d
-			y: 17.0d
+			x: 1.5d
+			y: 18.5d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -585,8 +585,8 @@
 				type: "checkmark"
 			}]
 			title: "&e什么&r？&4世界浇筑&r？"
-			x: -2.5d
-			y: 17.0d
+			x: -0.5d
+			y: 18.5d
 		}
 		{
 			dependencies: [
@@ -609,7 +609,7 @@
 				item: "create:brass_ingot"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 7.5d
 			y: 10.5d
 		}
 		{
@@ -622,8 +622,8 @@
 				type: "item"
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
-			x: 1.0d
-			y: 9.5d
+			x: 4.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -638,8 +638,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -1.5d
-			y: 13.0d
+			x: 0.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -655,8 +655,8 @@
 				item: "create:brass_hand"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 12.0d
+			x: 7.5d
+			y: 13.0d
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
@@ -673,8 +673,8 @@
 				item: "create:deployer"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 13.0d
+			x: 7.5d
+			y: 14.5d
 		}
 		{
 			dependencies: [
@@ -692,8 +692,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: 3.5d
-			y: 16.0d
+			x: 7.5d
+			y: 17.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -712,8 +712,8 @@
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 19.0d
+			x: 7.5d
+			y: 20.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -730,8 +730,8 @@
 				item: "create:rotation_speed_controller"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 16.0d
+			x: 6.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -748,8 +748,8 @@
 				item: "create:brass_funnel"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 18.0d
+			x: 6.5d
+			y: 19.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -766,8 +766,8 @@
 				item: "create:display_link"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 18.0d
+			x: 8.5d
+			y: 19.5d
 		}
 		{
 			dependencies: ["7B7258CB2FDF4243"]
@@ -784,8 +784,8 @@
 				item: "create:brass_tunnel"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 18.0d
+			x: 5.5d
+			y: 19.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -802,8 +802,8 @@
 				item: "create:smart_chute"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 17.0d
+			x: 6.0d
+			y: 18.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -820,8 +820,8 @@
 				item: "create:content_observer"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 17.0d
+			x: 9.0d
+			y: 18.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -838,8 +838,8 @@
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 16.0d
+			x: 9.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["307171D52C77BC74"]
@@ -850,8 +850,8 @@
 				item: "create:display_board"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 18.0d
+			x: 9.5d
+			y: 19.5d
 		}
 		{
 			id: "1CD1D60A28A20E6A"
@@ -868,7 +868,7 @@
 				type: "item"
 			}]
 			x: -3.5d
-			y: 13.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -887,8 +887,8 @@
 				item: "createmetallurgy:raw_wolframite"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 13.0d
+			x: -3.5d
+			y: 16.5d
 		}
 		{
 			dependencies: [
@@ -902,8 +902,8 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 14.5d
+			x: -2.0d
+			y: 16.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -915,8 +915,8 @@
 				type: "checkmark"
 			}]
 			title: "或者你也可以先跳过&4熔融搅拌器"
-			x: 1.0d
-			y: 11.5d
+			x: 4.0d
+			y: 11.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -935,7 +935,7 @@
 				type: "item"
 			}]
 			title: "大炼钢铁！"
-			x: 8.0d
+			x: 13.0d
 			y: 10.5d
 		}
 		{
@@ -955,8 +955,8 @@
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 14.0d
+			x: 13.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["20972AEC6EE6D9F8"]
@@ -969,8 +969,8 @@
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 18.0d
+			x: 13.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["580C77852E71B685"]
@@ -985,8 +985,8 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 16.5d
+			x: 13.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["7F309BD2C1A2AE67"]
@@ -1008,8 +1008,8 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 7.0d
+			x: 13.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
@@ -1029,8 +1029,8 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 4.5d
+			x: 13.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1048,8 +1048,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 8.0d
-			y: 3.0d
+			x: 13.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1066,8 +1066,8 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 3.5d
+			x: 11.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1084,8 +1084,8 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 3.5d
+			x: 14.5d
+			y: 4.0d
 		}
 	]
 	title: "&9合金突破"
