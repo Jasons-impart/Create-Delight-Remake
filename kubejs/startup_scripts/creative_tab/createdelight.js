@@ -179,7 +179,12 @@ StartupEvents.registry("creative_mode_tab", e => {
     .icon(() => Item.of("createdelight:electrolyzer"))
     .content(() => [
       'createdelight:electrolyzer',
-      'createdelight:emergency_industrial_platform',
+      "createdelight:emergency_industrial_platform",
+      "createdelight:emergency_industrial_platform_block",
+      "createdelight:emergency_industrial_platform_lime",
+      "createdelight:emergency_industrial_platform_lime_block",
+      "createdelight:emergency_industrial_platform_dark",
+      "createdelight:emergency_industrial_platform_dark_block",
       'mbd2:mbd_gadgets',
     ])
 })

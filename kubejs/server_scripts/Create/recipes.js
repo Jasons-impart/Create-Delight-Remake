@@ -12,6 +12,11 @@ ServerEvents.recipes(e => {
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot"
     ])
+    // 黑曜石粉末粉碎
+    e.recipes.create.milling(
+        Item.of("create:powdered_obsidian").withChance(0.3),
+        'minecraft:obsidian'
+    ).id("create:milling/powdered_obsidian")
     // 新增配方：粗锌块烧成锌块
     e.recipes.minecraft.blasting("create:zinc_block", "create:raw_zinc_block")
     e.recipes.minecraft.smelting("create:zinc_block", "create:raw_zinc_block")
@@ -323,7 +328,7 @@ ServerEvents.recipes(e => {
     ).id("railways:crafting/portable_fuel_interface")
     // 精密构件
     e.recipes.create.deploying(
-        "create:precision_mechanism",
+        "2x create:precision_mechanism",
         [
             "create:brass_sheet",
             "alexscaves:telecore"

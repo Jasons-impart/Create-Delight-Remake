@@ -20,7 +20,7 @@
 				type: "random"
 			}]
 			shape: "gear"
-			size: 3.0d
+			size: 2.0d
 			subtitle: "按住&4w&r可以进行&e俺寻思"
 			tasks: [{
 				id: "64F7AFEB80123DB9"
@@ -28,7 +28,7 @@
 				type: "item"
 			}]
 			title: "欢迎正式进入机械动力大家庭！"
-			x: 0.5d
+			x: -0.5d
 			y: 0.0d
 		}
 		{
@@ -54,12 +54,12 @@
 				}
 			]
 			title: "工程师必备！"
-			x: 0.5d
+			x: -0.5d
 			y: -2.5d
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
-			description: ["齿轮之间可以通过耦合传输应力。"]
+			description: [""]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -68,40 +68,20 @@
 				type: "random"
 			}]
 			shape: "gear"
-			size: 1.5d
+			size: 2.0d
 			subtitle: "传输应力！"
-			tasks: [
-				{
-					id: "0D4A0C37648D9E58"
-					item: "create:cogwheel"
-					type: "item"
+			tasks: [{
+				id: "5FE16785ADD55A8B"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "create:cogwheel"
+					}
 				}
-				{
-					id: "4765813A3921B058"
-					item: "create:large_cogwheel"
-					type: "item"
-				}
-				{
-					id: "4D892DCC9833BDC1"
-					item: "petrolsparts:coaxial_gear"
-					type: "item"
-				}
-				{
-					id: "2F410CAE72190DE3"
-					item: "petrolsparts:large_coaxial_gear"
-					type: "item"
-				}
-				{
-					id: "343098E139A0F2CB"
-					item: "petrolsparts:differential"
-					type: "item"
-				}
-				{
-					id: "5FE16785ADD55A8B"
-					item: "petrolsparts:planetary_gearset"
-					type: "item"
-				}
-			]
+				title: "任意齿轮"
+				type: "item"
+			}]
 			title: "浪漫从此刻开始"
 			x: 5.5d
 			y: 0.0d
@@ -197,7 +177,7 @@
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
-			description: ["使用&e安山合金&r右击&e放置的去皮原木&r即可制作。"]
+			description: [""]
 			id: "7029D6C489D44144"
 			rewards: [
 				{
@@ -213,14 +193,14 @@
 					type: "random"
 				}
 			]
-			subtitle: "自带连接纹理好看捏"
+			subtitle: "使用&e安山合金&r右击&e放置的去皮原木&r即可制作。"
 			tasks: [{
 				id: "3B6F668D8EA70651"
 				item: "create:andesite_casing"
 				type: "item"
 			}]
 			title: "机器之根本"
-			x: 8.0d
+			x: 8.5d
 			y: 0.0d
 		}
 		{
@@ -259,15 +239,15 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "circle"
-			size: 1.5d
+			shape: "gear"
+			size: 2.0d
 			subtitle: "铿！铿！铿！"
 			tasks: [{
 				id: "14A8664EEEAA4C30"
 				item: "create:mechanical_press"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.5d
 			y: 0.0d
 		}
 		{
@@ -285,7 +265,7 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
@@ -305,7 +285,7 @@
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 11.5d
 			y: 5.5d
 		}
 		{
@@ -324,7 +304,7 @@
 				item: "create:mechanical_saw"
 				type: "item"
 			}]
-			x: 9.5d
+			x: 10.5d
 			y: 4.5d
 		}
 		{
@@ -342,7 +322,7 @@
 				item: "create:mechanical_harvester"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 12.5d
 			y: 4.5d
 		}
 		{
@@ -359,7 +339,7 @@
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 9.5d
 			y: 1.0d
 		}
 		{
@@ -384,7 +364,7 @@
 				item: "create:encased_fan"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 13.0d
 			y: 3.5d
 		}
 		{
@@ -406,7 +386,7 @@
 				type: "stat"
 				value: 1
 			}]
-			x: 0.5d
+			x: -0.5d
 			y: 2.5d
 		}
 		{
@@ -430,7 +410,7 @@
 				}
 			]
 			title: "置物"
-			x: 7.0d
+			x: 7.5d
 			y: 1.0d
 		}
 		{
@@ -448,7 +428,7 @@
 				item: "create:mechanical_bearing"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -1.5d
 			y: 4.5d
 		}
 		{
@@ -489,7 +469,7 @@
 				}
 			]
 			title: "动力活塞"
-			x: -1.0d
+			x: -2.0d
 			y: 3.5d
 		}
 		{
@@ -514,7 +494,7 @@
 					type: "item"
 				}
 			]
-			x: 2.0d
+			x: 1.0d
 			y: 3.5d
 		}
 		{
@@ -556,7 +536,7 @@
 				}
 			]
 			title: "底盘们"
-			x: -1.0d
+			x: -2.0d
 			y: 2.5d
 		}
 		{
@@ -580,7 +560,7 @@
 					type: "item"
 				}
 			]
-			x: 1.5d
+			x: 0.5d
 			y: 4.5d
 		}
 		{
@@ -604,7 +584,7 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
+			x: 1.0d
 			y: 2.5d
 		}
 		{
@@ -627,7 +607,7 @@
 				type: "advancement"
 			}]
 			title: "&e手劲真大！"
-			x: 0.5238095238095255d
+			x: -0.4761904761904745d
 			y: 5.502380952380939d
 		}
 		{
@@ -645,7 +625,7 @@
 				item: "create:mechanical_plough"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 10.0d
 			y: 3.5d
 		}
 		{
@@ -662,7 +642,7 @@
 				item: "create:empty_schematic"
 				type: "item"
 			}]
-			x: -1.5d
+			x: -2.5d
 			y: -1.0d
 		}
 		{
@@ -680,7 +660,7 @@
 				type: "item"
 			}]
 			title: "把蓝图写入游戏中！"
-			x: -1.5d
+			x: -2.5d
 			y: 1.0d
 		}
 		{
@@ -711,7 +691,7 @@
 				type: "item"
 			}]
 			title: "论机械动力为什么能称之为神"
-			x: -3.0d
+			x: -4.5d
 			y: 0.0d
 		}
 		{
@@ -769,7 +749,7 @@
 				item: "vintageimprovements:spring_coiling_machine"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 9.0d
 			y: -1.5d
 		}
 		{
@@ -790,7 +770,7 @@
 				type: "advancement"
 			}]
 			title: "基础机械"
-			x: 10.5d
+			x: 11.5d
 			y: 2.5d
 		}
 		{
@@ -807,7 +787,7 @@
 				item: "create:shaft"
 				type: "item"
 			}]
-			x: 3.5d
+			x: 2.5d
 			y: 0.0d
 		}
 		{
@@ -836,7 +816,7 @@
 				type: "item"
 			}]
 			title: "高强度弹簧"
-			x: 14.0d
+			x: 15.0d
 			y: 0.0d
 		}
 		{
@@ -863,7 +843,7 @@
 				type: "item"
 			}]
 			title: "低强度弹簧"
-			x: 14.0d
+			x: 15.0d
 			y: -1.5d
 		}
 		{
@@ -890,7 +870,7 @@
 				type: "item"
 			}]
 			title: "超高强度弹簧"
-			x: 14.0d
+			x: 15.0d
 			y: 1.5d
 		}
 		{
@@ -1124,7 +1104,7 @@
 				type: "item"
 			}]
 			title: "简单装饰一下我的齿轮组们~"
-			x: 4.5d
+			x: 4.0d
 			y: -1.0d
 		}
 		{
@@ -1150,7 +1130,7 @@
 				type: "item"
 			}]
 			title: "超有工业风的齿轮组！"
-			x: 4.5d
+			x: 4.0d
 			y: 1.0d
 		}
 		{
@@ -1171,7 +1151,7 @@
 				type: "item"
 			}]
 			title: "电线"
-			x: 12.5d
+			x: 13.5d
 			y: 1.5d
 		}
 		{
@@ -1187,7 +1167,7 @@
 				item: "createaddition:rolling_mill"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 13.5d
 			y: 0.0d
 		}
 		{
@@ -1200,8 +1180,208 @@
 				type: "item"
 			}]
 			title: "模式蓝图"
-			x: -1.5d
+			x: -2.5d
 			y: -2.5d
+		}
+		{
+			dependencies: ["510B2EE25982FD73"]
+			description: [""]
+			id: "630FA0478B7DAAAA"
+			size: 1.0d
+			subtitle: "&e安山桶&r可以从机器中&4取出至多1000mB的流体&r！ \\n &e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r!"
+			tasks: [
+				{
+					id: "574A5F305CD2C196"
+					item: "createfluidstuffs:bucket"
+					type: "item"
+				}
+				{
+					id: "26FD9BF000DE9F1C"
+					item: "createfluidstuffs:jar"
+					type: "item"
+				}
+			]
+			title: "看看我们带来了什么！"
+			x: 1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "040CED5705ED7E24"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1B52B085F00D8173"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "滋滋滋"
+			tasks: [{
+				id: "369E713E29509822"
+				item: "create:spout"
+				type: "item"
+			}]
+			x: 10.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			id: "63D229AF8283C3AA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "52ADB662463243D3"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "可以说是最浪漫的管道之一了"
+			tasks: [
+				{
+					id: "2C9F5AAC68E5CF65"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+				{
+					id: "526DC193DB14D26A"
+					item: "create:mechanical_pump"
+					type: "item"
+				}
+			]
+			x: 10.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			id: "4E885A428CBCE708"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3403EC301BD08A0C"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "我比铁桶更能装！"
+			tasks: [{
+				id: "50146030198E7AC4"
+				item: "create:fluid_tank"
+				type: "item"
+			}]
+			x: 13.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "68D83C4DA9C39673"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1C6550F0E18C8C5D"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			tasks: [{
+				id: "500408E6C78A6D8A"
+				item: "create:item_drain"
+				type: "item"
+			}]
+			x: 13.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			id: "3626C98B27069A0C"
+			tasks: [{
+				id: "612DF86D48D58754"
+				item: "create:copper_casing"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["621E3093612F5D2C"]
+			id: "0DC2E7BC4657D633"
+			shape: "square"
+			tasks: [{
+				id: "5E2108FA929853BB"
+				item: "create:copper_sheet"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "7E1F6E3F2D263FA3"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1D5A546E9E2FF141"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "&e翻印&r任何&4书籍&r！包括&4附魔书&r！"
+			tasks: [{
+				id: "297695570FAE8B2D"
+				item: "create_enchantment_industry:printer"
+				type: "item"
+			}]
+			x: 11.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			id: "223ACB0E32376155"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "69111BC10EC11D07"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
+			subtitle: "伸出软管以&4抽取/排放&r流体"
+			tasks: [{
+				id: "0C9EB6B3C349BBDA"
+				item: "create:hose_pulley"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["223ACB0E32376155"]
+			id: "1523D6D5EF640B8C"
+			rewards: [{
+				id: "10C155E8AB63B3C2"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "现在需要&n&l&e2500格&4完整流体&r以实现无限流体！"
+			tasks: [{
+				id: "40A36B4463E024E8"
+				title: "无限流体"
+				type: "checkmark"
+			}]
+			x: 12.0d
+			y: -7.0d
+		}
+		{
+			dependencies: ["7029D6C489D44144"]
+			id: "3AD879C6A0CE2BF1"
+			subtitle: "&e更好用&r的漏斗"
+			tasks: [{
+				id: "07CD84648FE14137"
+				item: "create:andesite_funnel"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3AD879C6A0CE2BF1"]
+			id: "1628F4D511006B43"
+			subtitle: "&e分流！"
+			tasks: [{
+				id: "18F573D58201C0BE"
+				item: "create:andesite_tunnel"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 3.5d
 		}
 	]
 	title: "&2初级工程师"

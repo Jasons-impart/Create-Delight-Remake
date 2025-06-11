@@ -2,7 +2,6 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         
     ])
-
     //粉碎方铅岩获取铁粒和钒粒
     e.recipes.create.crushing([
         Item.of('minecraft:iron_nugget').withChance(0.15),

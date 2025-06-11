@@ -70,14 +70,15 @@
 					type: "item"
 				}
 				{
-					id: "4A7F83BA42DBE15E"
-					item: "createdelight:emergency_industrial_platform"
-					type: "item"
+					exclude_from_claim_all: true
+					id: "2A7A2C4C754A91B5"
+					table_id: 5284994430719191732L
+					type: "choice"
 				}
 			]
 			shape: "hexagon"
 			size: 4.0d
-			subtitle: "原来你也玩机械动力悠然乐事！"
+			subtitle: "欢迎来到齿轮盛宴的世界！"
 			tasks: [{
 				dimension: "minecraft:overworld"
 				disable_toast: true
@@ -86,7 +87,7 @@
 				title: "原来你也玩机械动力悠然乐事！"
 				type: "dimension"
 			}]
-			title: "悠然乐事"
+			title: "齿轮盛宴"
 			x: 0.0d
 			y: 0.0d
 		}

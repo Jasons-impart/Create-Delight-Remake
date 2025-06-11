@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Masterful_Machinery"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: {
 		Count: 1
 		id: "tacz:modern_kinetic_gun"
@@ -636,6 +637,7 @@
 			y: 4.75d
 		}
 		{
+			dependencies: ["7F309BD2C1A2AE67"]
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"
 			rewards: [
@@ -687,9 +689,69 @@
 					}
 					type: "item"
 				}
+				{
+					count: 10
+					id: "1654C646CA870413"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:hard_core_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "7613087E9D678426"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:etched_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "0377172480C1B029"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_infused_grenade"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "4F0A1A809733E68F"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_battery"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "44A946E5989DC0CC"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:cluster_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
 			]
 			shape: "octagon"
-			size: 2.0d
+			size: 1.0d
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"

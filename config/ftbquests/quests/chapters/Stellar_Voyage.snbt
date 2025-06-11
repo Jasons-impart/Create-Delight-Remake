@@ -1240,6 +1240,7 @@
 			}]
 			shape: "octagon"
 			size: 4.0d
+			subtitle: "你已完成了整合包目前已经制作完成的科技内容了，后续敬请期待吧！"
 			tasks: [{
 				icon: "minecraft:nether_star"
 				id: "19D545E15CF0A46A"
@@ -1673,5 +1674,5 @@
 			y: 4.5d
 		}
 	]
-	title: "&e群星之旅！"
+	title: "&4群星之旅"
 }
