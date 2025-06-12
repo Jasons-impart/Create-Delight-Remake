@@ -10,7 +10,7 @@
 		tag: { }
 	}
 	id: "532EAAE67364C491"
-	order_index: 12
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -414,7 +414,10 @@
 			y: 8.0d
 		}
 		{
-			dependencies: ["393E1E2F429F9972"]
+			dependencies: [
+				"393E1E2F429F9972"
+				"39D218E0652E1CE0"
+			]
 			id: "5150F8D990071EE6"
 			tasks: [{
 				id: "008B8CFE6F61C38C"

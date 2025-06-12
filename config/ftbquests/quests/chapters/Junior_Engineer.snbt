@@ -83,7 +83,7 @@
 				type: "item"
 			}]
 			title: "浪漫从此刻开始"
-			x: 5.5d
+			x: 6.5d
 			y: 0.0d
 		}
 		{
@@ -115,7 +115,7 @@
 				}
 			]
 			title: "手动应力"
-			x: 7.0d
+			x: 8.0d
 			y: 3.5d
 		}
 		{
@@ -143,7 +143,7 @@
 				type: "item"
 			}]
 			title: "小水车吱呀吱悠悠地转"
-			x: 4.5d
+			x: 5.5d
 			y: 4.5d
 		}
 		{
@@ -172,7 +172,7 @@
 				type: "item"
 			}]
 			title: "更慢！但是更强！"
-			x: 6.5d
+			x: 7.5d
 			y: 4.5d
 		}
 		{
@@ -200,7 +200,7 @@
 				type: "item"
 			}]
 			title: "机器之根本"
-			x: 8.5d
+			x: 10.0d
 			y: 0.0d
 		}
 		{
@@ -226,7 +226,7 @@
 				item: "create:windmill_bearing"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 5.0d
 			y: 3.5d
 		}
 		{
@@ -247,7 +247,7 @@
 				item: "create:mechanical_press"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 13.5d
 			y: 0.0d
 		}
 		{
@@ -264,7 +264,7 @@
 				item: "create:millstone"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 9.5d
 			y: -1.5d
 		}
 		{
@@ -285,7 +285,7 @@
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 13.5d
 			y: 5.5d
 		}
 		{
@@ -304,7 +304,7 @@
 				item: "create:mechanical_saw"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 12.5d
 			y: 4.5d
 		}
 		{
@@ -322,7 +322,7 @@
 				item: "create:mechanical_harvester"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 14.5d
 			y: 4.5d
 		}
 		{
@@ -339,7 +339,7 @@
 				item: "create:mechanical_drill"
 				type: "item"
 			}]
-			x: 9.5d
+			x: 11.0d
 			y: 1.0d
 		}
 		{
@@ -364,7 +364,7 @@
 				item: "create:encased_fan"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 15.0d
 			y: 3.5d
 		}
 		{
@@ -410,7 +410,7 @@
 				}
 			]
 			title: "置物"
-			x: 7.5d
+			x: 9.0d
 			y: 1.0d
 		}
 		{
@@ -625,7 +625,7 @@
 				item: "create:mechanical_plough"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 12.0d
 			y: 3.5d
 		}
 		{
@@ -706,14 +706,11 @@
 				type: "stat"
 				value: 1
 			}]
-			x: 5.5d
+			x: 6.5d
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"610ED0789BAF7EFC"
-				"28CB30AB88780BC7"
-			]
+			dependencies: ["28CB30AB88780BC7"]
 			hide_until_deps_visible: true
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
@@ -730,7 +727,7 @@
 				type: "item"
 			}]
 			title: "&e汽笛轰鸣！"
-			x: 5.5d
+			x: 6.5d
 			y: 5.5d
 		}
 		{
@@ -749,7 +746,7 @@
 				item: "vintageimprovements:spring_coiling_machine"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 10.5d
 			y: -1.5d
 		}
 		{
@@ -770,7 +767,7 @@
 				type: "advancement"
 			}]
 			title: "基础机械"
-			x: 11.5d
+			x: 13.5d
 			y: 2.5d
 		}
 		{
@@ -787,7 +784,7 @@
 				item: "create:shaft"
 				type: "item"
 			}]
-			x: 2.5d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -795,7 +792,6 @@
 				"4492593A688BA447"
 				"4BA2635FA5EA807D"
 			]
-			hide_dependent_lines: true
 			id: "610ED0789BAF7EFC"
 			rewards: [{
 				count: 5
@@ -816,7 +812,7 @@
 				type: "item"
 			}]
 			title: "高强度弹簧"
-			x: 15.0d
+			x: 19.5d
 			y: 0.0d
 		}
 		{
@@ -843,7 +839,7 @@
 				type: "item"
 			}]
 			title: "低强度弹簧"
-			x: 15.0d
+			x: 18.5d
 			y: -1.5d
 		}
 		{
@@ -870,7 +866,7 @@
 				type: "item"
 			}]
 			title: "超高强度弹簧"
-			x: 15.0d
+			x: 18.5d
 			y: 1.5d
 		}
 		{
@@ -892,7 +888,7 @@
 				value: 1
 			}]
 			title: "基础传动装置"
-			x: 5.5d
+			x: 6.5d
 			y: -2.5d
 		}
 		{
@@ -921,7 +917,7 @@
 					type: "item"
 				}
 			]
-			x: 7.0d
+			x: 8.0d
 			y: -2.5d
 		}
 		{
@@ -945,7 +941,7 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
+			x: 5.0d
 			y: -2.5d
 		}
 		{
@@ -969,7 +965,7 @@
 					type: "item"
 				}
 			]
-			x: 4.0d
+			x: 5.0d
 			y: -3.5d
 		}
 		{
@@ -996,7 +992,7 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
+			x: 6.5d
 			y: -5.5d
 		}
 		{
@@ -1025,7 +1021,7 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
+			x: 7.5d
 			y: -4.5d
 		}
 		{
@@ -1049,7 +1045,7 @@
 					type: "item"
 				}
 			]
-			x: 7.0d
+			x: 8.0d
 			y: -3.5d
 		}
 		{
@@ -1078,7 +1074,7 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
+			x: 5.5d
 			y: -4.5d
 		}
 		{
@@ -1104,7 +1100,7 @@
 				type: "item"
 			}]
 			title: "简单装饰一下我的齿轮组们~"
-			x: 4.0d
+			x: 5.0d
 			y: -1.0d
 		}
 		{
@@ -1130,7 +1126,7 @@
 				type: "item"
 			}]
 			title: "超有工业风的齿轮组！"
-			x: 4.0d
+			x: 5.0d
 			y: 1.0d
 		}
 		{
@@ -1151,8 +1147,8 @@
 				type: "item"
 			}]
 			title: "电线"
-			x: 13.5d
-			y: 1.5d
+			x: 17.0d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -1167,7 +1163,7 @@
 				item: "createaddition:rolling_mill"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 17.0d
 			y: 0.0d
 		}
 		{
@@ -1220,7 +1216,7 @@
 				item: "create:spout"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 12.0d
 			y: -4.5d
 		}
 		{
@@ -1245,7 +1241,7 @@
 					type: "item"
 				}
 			]
-			x: 10.0d
+			x: 12.0d
 			y: -3.0d
 		}
 		{
@@ -1263,7 +1259,7 @@
 				item: "create:fluid_tank"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 15.0d
 			y: -3.0d
 		}
 		{
@@ -1280,7 +1276,7 @@
 				item: "create:item_drain"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 15.0d
 			y: -4.5d
 		}
 		{
@@ -1291,7 +1287,7 @@
 				item: "create:copper_casing"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 13.5d
 			y: -4.0d
 		}
 		{
@@ -1303,7 +1299,7 @@
 				item: "create:copper_sheet"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 13.5d
 			y: -2.5d
 		}
 		{
@@ -1321,7 +1317,7 @@
 				item: "create_enchantment_industry:printer"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 13.0d
 			y: -5.5d
 		}
 		{
@@ -1339,7 +1335,7 @@
 				item: "create:hose_pulley"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 14.0d
 			y: -5.5d
 		}
 		{
@@ -1356,7 +1352,7 @@
 				title: "无限流体"
 				type: "checkmark"
 			}]
-			x: 12.0d
+			x: 14.0d
 			y: -7.0d
 		}
 		{
@@ -1368,7 +1364,7 @@
 				item: "create:andesite_funnel"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 10.0d
 			y: 2.0d
 		}
 		{
@@ -1380,9 +1376,9 @@
 				item: "create:andesite_tunnel"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 10.0d
 			y: 3.5d
 		}
 	]
-	title: "&2初级工程师"
+	title: "&2超级工程"
 }

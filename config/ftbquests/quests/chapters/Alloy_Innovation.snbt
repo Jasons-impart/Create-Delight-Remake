@@ -20,7 +20,7 @@
 			shape: "hexagon"
 			size: 2.0d
 			x: 17.0d
-			y: 9.0d
+			y: 6.0d
 		}
 		{
 			id: "7A11CD1763458CD5"
@@ -28,21 +28,15 @@
 			shape: "hexagon"
 			size: 2.0d
 			x: 17.0d
-			y: 12.0d
+			y: 15.0d
 		}
 		{
-			id: "5740D9FEF01DB38A"
-			linked_quest: "2CC8B87D086B3275"
+			id: "30F40F6C2AA7B4B8"
+			linked_quest: "00AF35D832509CB8"
+			shape: "hexagon"
 			size: 2.0d
-			x: -1.0d
-			y: 13.0d
-		}
-		{
-			id: "01AC440633233AC2"
-			linked_quest: "20B3A29ADFDF1D4A"
-			size: 2.0d
-			x: 2.0d
-			y: 13.0d
+			x: 17.0d
+			y: 10.5d
 		}
 	]
 	quests: [
@@ -112,28 +106,6 @@
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
-			description: [""]
-			hide_dependency_lines: false
-			id: "28B3247AF854504D"
-			rewards: [{
-				count: 4
-				id: "49CBF0D9445B612A"
-				item: "minecraft:raw_iron"
-				type: "item"
-			}]
-			shape: "circle"
-			size: 1.0d
-			subtitle: "&e别丢错了东西哦！"
-			tasks: [{
-				id: "12D220D8F367FD29"
-				item: "create:crushing_wheel"
-				type: "item"
-			}]
-			x: 7.5d
-			y: 23.5d
-		}
-		{
-			dependencies: ["3EB042CCCB8D54FA"]
 			id: "31418813B6B9A004"
 			rewards: [{
 				count: 3
@@ -148,8 +120,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 21.5d
+			x: 6.5d
+			y: 22.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -407,8 +379,8 @@
 				type: "item"
 			}]
 			title: "齿轮教父！"
-			x: 6.5d
-			y: 22.5d
+			x: 9.0d
+			y: 21.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -613,7 +585,6 @@
 			y: 10.5d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
 			id: "18946F125B654A46"
 			subtitle: "&e铜粒&r和&e锌粒&r也可以直接加热搅拌为&e黄铜粒&r，但是&4效率低的令人发指&r（原版速度的&41/4&r）"
 			tasks: [{
@@ -622,8 +593,8 @@
 				type: "item"
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
-			x: 4.0d
-			y: 10.0d
+			x: 7.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -908,7 +879,7 @@
 		{
 			dependencies: ["16E85851D21CB6A3"]
 			id: "3BC1BB77B76F6873"
-			subtitle: "然后直接用普通&e搅拌器&r融合"
+			subtitle: "直接用普通&e搅拌器&r融合"
 			tasks: [{
 				id: "07A1132B9D7B73E4"
 				title: "或者你也可以先跳过熔融搅拌器"
@@ -916,30 +887,10 @@
 			}]
 			title: "或者你也可以先跳过&4熔融搅拌器"
 			x: 4.0d
-			y: 11.0d
+			y: 10.0d
 		}
 		{
-			dependencies: ["4B6A896ECC72EA02"]
-			id: "7F309BD2C1A2AE67"
-			rewards: [{
-				id: "26F65C0F4303722B"
-				item: "createmetallurgy:steel_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			size: 2.0d
-			subtitle: "&e工业核心金属&r！&4钢铁&r！"
-			tasks: [{
-				id: "6ECAE64F14914FA5"
-				item: "createmetallurgy:steel_ingot"
-				type: "item"
-			}]
-			title: "大炼钢铁！"
-			x: 13.0d
-			y: 10.5d
-		}
-		{
-			dependencies: ["7F309BD2C1A2AE67"]
+			dependencies: ["6EB96008F21DAFBF"]
 			description: [""]
 			id: "580C77852E71B685"
 			rewards: [{
@@ -955,7 +906,7 @@
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 17.0d
 			y: 13.0d
 		}
 		{
@@ -969,8 +920,8 @@
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 17.5d
+			x: 21.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["580C77852E71B685"]
@@ -985,11 +936,11 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 15.5d
+			x: 19.5d
+			y: 13.0d
 		}
 		{
-			dependencies: ["7F309BD2C1A2AE67"]
+			dependencies: ["6EB96008F21DAFBF"]
 			dependency_requirement: "one_completed"
 			description: [""]
 			id: "55E42ECE1CE4E99F"
@@ -1008,7 +959,7 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 13.0d
+			x: 17.0d
 			y: 8.0d
 		}
 		{
@@ -1029,8 +980,8 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 5.5d
+			x: 19.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1048,8 +999,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 3.5d
+			x: 21.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1066,8 +1017,8 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 11.5d
-			y: 4.0d
+			x: 20.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1084,8 +1035,252 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
+			x: 20.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["4B6A896ECC72EA02"]
+			id: "6EB96008F21DAFBF"
+			rewards: [{
+				id: "2C30E3F28E8F7CB7"
+				item: "createmetallurgy:steel_ingot"
+				random_bonus: 7
+				type: "item"
+			}]
+			size: 2.0d
+			subtitle: "&e工业核心金属&r！&4钢铁&r！"
+			tasks: [{
+				id: "09380FFFDF782703"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			title: "大炼钢铁！"
+			x: 13.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["5A16AE172A0C7772"]
+			id: "7648C9537805FC1F"
+			subtitle: "对我使用&4G-code&r吧！"
+			tasks: [{
+				id: "731483EEC41B6E60"
+				item: {
+					Count: 1
+					id: "vintageimprovements:recipe_card"
+					tag: {
+						Items: { }
+						Recipe: { }
+						Results: { }
+					}
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: 22.5d
+		}
+		{
+			dependencies: ["31418813B6B9A004"]
+			id: "35C4EB6D268C0D28"
+			tasks: [
+				{
+					id: "3C578F2E7C5B1C30"
+					item: "minecraft:anvil"
+					type: "item"
+				}
+				{
+					id: "1D188D244CEB718C"
+					item: "minecraft:smithing_table"
+					type: "item"
+				}
+			]
+			title: "别忘了垫上！"
+			x: 5.5d
+			y: 22.5d
+		}
+		{
+			dependencies: ["45803DC9CD823262"]
+			id: "20E3F0F2C6AEFCCB"
+			rewards: [{
+				id: "3FBDF31C7FBC1982"
+				item: "vintageimprovements:redstone_module"
+				type: "item"
+			}]
+			subtitle: "&4有点晕..."
+			tasks: [{
+				id: "5904A026FCD7F18B"
+				item: "vintageimprovements:centrifuge"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 15.0d
+		}
+		{
+			dependencies: ["45803DC9CD823262"]
+			id: "1E36EA31696348CF"
+			rewards: [
+				{
+					id: "7F2F06737939F6F9"
+					item: {
+						Count: 1
+						id: "vintageimprovements:convex_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2791F1AB8475A303"
+					item: {
+						Count: 1
+						id: "vintageimprovements:concave_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "21EFB722CE8FBA97"
+					item: {
+						Count: 1
+						id: "vintageimprovements:w_shaped_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6C9E1F432A938344"
+					item: {
+						Count: 1
+						id: "vintageimprovements:v_shaped_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			subtitle: "也许可以换一个头试试？"
+			tasks: [{
+				id: "58F33E528958792C"
+				item: "vintageimprovements:curving_press"
+				type: "item"
+			}]
 			x: 14.5d
-			y: 4.0d
+			y: 15.0d
+		}
+		{
+			dependencies: ["45803DC9CD823262"]
+			id: "327F51B0505850F4"
+			subtitle: "&4别抖了，我已经吐了"
+			tasks: [{
+				id: "42BDDA54A60E2C02"
+				item: "vintageimprovements:vibrating_table"
+				type: "item"
+			}]
+			x: 12.5d
+			y: 16.0d
+		}
+		{
+			dependencies: ["6EB96008F21DAFBF"]
+			id: "45803DC9CD823262"
+			shape: "square"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "vintageimprovements:item/redstone_module"
+					}
+				}
+				id: "4AF0B29401072C37"
+				stat: "minecraft:play_time"
+				title: "高级处理机械"
+				type: "stat"
+				value: 1
+			}]
+			x: 13.0d
+			y: 14.5d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			id: "20B3A29ADFDF1D4A"
+			min_required_tasks: 1
+			rewards: [{
+				id: "4A10FBD8D0716968"
+				item: "createdelightcore:bronze_ingot"
+				random_bonus: 7
+				type: "item"
+			}]
+			shape: "circle"
+			size: 2.0d
+			subtitle: "&e内燃机&r的魅力！"
+			tasks: [{
+				id: "29B2C475B43E3FAC"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "&e燃料&r！&4动力&r！"
+			x: 2.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			id: "2CC8B87D086B3275"
+			rewards: [{
+				id: "18254A296BFA1213"
+				item: "createaddition:electrum_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			shape: "circle"
+			size: 2.0d
+			subtitle: "金银合金"
+			tasks: [{
+				id: "0D7814DAE3E5E1E1"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			title: "步入&5电力时代&r！"
+			x: -1.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["3EB042CCCB8D54FA"]
+			description: [""]
+			hide_dependency_lines: false
+			id: "1B63ED5F68D71F24"
+			rewards: [{
+				count: 4
+				id: "4BC8AC001A2E7875"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.0d
+			subtitle: "&e别丢错了东西哦！"
+			tasks: [{
+				id: "24A700BB34D9D347"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 23.5d
+		}
+		{
+			dependencies: ["45803DC9CD823262"]
+			id: "0933D2F482832D31"
+			subtitle: "&e第一次~被压缩成这样的我"
+			tasks: [{
+				id: "3F43DDE521840ACA"
+				item: "vintageimprovements:vacuum_chamber"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 16.0d
 		}
 	]
 	title: "&9合金突破"

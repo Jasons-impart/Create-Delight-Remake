@@ -13,7 +13,7 @@
 		}
 	}
 	id: "4410FF62709D6209"
-	order_index: 11
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -1299,7 +1299,7 @@
 			y: 15.5d
 		}
 		{
-			dependencies: ["7F309BD2C1A2AE67"]
+			dependencies: ["6EB96008F21DAFBF"]
 			icon: "protection_pixel:armorloadplatform"
 			id: "0B2B86FAF7742C2F"
 			rewards: [
@@ -1331,7 +1331,7 @@
 				}
 			]
 			shape: "hexagon"
-			size: 1.0d
+			size: 2.0d
 			subtitle: "可&4自定义&r的护甲！"
 			tasks: [{
 				id: "35014F871B3EEDD6"
