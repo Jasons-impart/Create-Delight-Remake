@@ -7,7 +7,7 @@
 	hide_quest_until_deps_complete: true
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 5
+	order_index: 6
 	quest_links: [
 		{
 			id: "2506A27C0B0452A8"
@@ -28,28 +28,10 @@
 			y: 3.5d
 		}
 		{
-			id: "4F3819A37EDEA9D9"
-			linked_quest: "0933D2F482832D31"
-			x: -5.0d
-			y: 1.5d
-		}
-		{
 			id: "5501FC4C7445761C"
 			linked_quest: "762CD49FCDC889E2"
 			x: -6.5d
 			y: 1.5d
-		}
-		{
-			id: "6439364616672038"
-			linked_quest: "327F51B0505850F4"
-			x: -6.0d
-			y: 5.5d
-		}
-		{
-			id: "6E98F3CBBFFF0FBA"
-			linked_quest: "20E3F0F2C6AEFCCB"
-			x: -7.0d
-			y: 5.5d
 		}
 	]
 	quests: [
@@ -385,11 +367,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"044C475554C01F99"
-				"327F51B0505850F4"
-				"20E3F0F2C6AEFCCB"
-			]
+			dependencies: ["044C475554C01F99"]
 			id: "22AE46F2DB5C872F"
 			tasks: [{
 				id: "769B9EE81969BE88"
@@ -400,10 +378,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: [
-				"17BE6A19EF732F33"
-				"0933D2F482832D31"
-			]
+			dependencies: ["17BE6A19EF732F33"]
 			id: "7E99FE558038EE94"
 			tasks: [{
 				id: "19F27E64C148DC72"

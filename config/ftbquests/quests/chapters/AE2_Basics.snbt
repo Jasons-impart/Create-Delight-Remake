@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "AE2_Basics"
-	group: "0E8A6F1771B90E2E"
+	group: "14CFC96B5B37F10B"
 	icon: "ae2:certus_quartz_crystal"
 	id: "51CFC40E4EEC9DE8"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -670,16 +670,11 @@
 		}
 		{
 			dependencies: ["7634E055957264B6"]
-			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
+			description: [""]
 			icon: "create:item_vault"
 			id: "40D248D71EADF4A0"
 			size: 2.0d
-			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"467649501F6EE065\"} }"
-			tasks: [{
-				id: "0842D2289722768A"
-				title: "使用机械动力吧"
-				type: "checkmark"
-			}]
+			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
 			title: "是时候搭建仓库了"
 			x: 12.5d
 			y: -4.0d

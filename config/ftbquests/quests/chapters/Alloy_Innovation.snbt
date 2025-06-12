@@ -6,7 +6,7 @@
 	group: "14CFC96B5B37F10B"
 	icon: "createmetallurgy:industrial_crucible"
 	id: "7DDE0F8620589E02"
-	order_index: 1
+	order_index: 2
 	quest_links: [
 		{
 			id: "23F7CDA2CF32FD87"
@@ -1098,115 +1098,8 @@
 			y: 22.5d
 		}
 		{
-			dependencies: ["45803DC9CD823262"]
-			id: "20E3F0F2C6AEFCCB"
-			rewards: [{
-				id: "3FBDF31C7FBC1982"
-				item: "vintageimprovements:redstone_module"
-				type: "item"
-			}]
-			subtitle: "&4有点晕..."
-			tasks: [{
-				id: "5904A026FCD7F18B"
-				item: "vintageimprovements:centrifuge"
-				type: "item"
-			}]
-			x: 11.5d
-			y: 15.0d
-		}
-		{
-			dependencies: ["45803DC9CD823262"]
-			id: "1E36EA31696348CF"
-			rewards: [
-				{
-					id: "7F2F06737939F6F9"
-					item: {
-						Count: 1
-						id: "vintageimprovements:convex_curving_head"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "2791F1AB8475A303"
-					item: {
-						Count: 1
-						id: "vintageimprovements:concave_curving_head"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "21EFB722CE8FBA97"
-					item: {
-						Count: 1
-						id: "vintageimprovements:w_shaped_curving_head"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "6C9E1F432A938344"
-					item: {
-						Count: 1
-						id: "vintageimprovements:v_shaped_curving_head"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			subtitle: "也许可以换一个头试试？"
-			tasks: [{
-				id: "58F33E528958792C"
-				item: "vintageimprovements:curving_press"
-				type: "item"
-			}]
-			x: 14.5d
-			y: 15.0d
-		}
-		{
-			dependencies: ["45803DC9CD823262"]
-			id: "327F51B0505850F4"
-			subtitle: "&4别抖了，我已经吐了"
-			tasks: [{
-				id: "42BDDA54A60E2C02"
-				item: "vintageimprovements:vibrating_table"
-				type: "item"
-			}]
-			x: 12.5d
-			y: 16.0d
-		}
-		{
-			dependencies: ["6EB96008F21DAFBF"]
-			id: "45803DC9CD823262"
-			shape: "square"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "ftbquests:custom_icon"
-					tag: {
-						Icon: "vintageimprovements:item/redstone_module"
-					}
-				}
-				id: "4AF0B29401072C37"
-				stat: "minecraft:play_time"
-				title: "高级处理机械"
-				type: "stat"
-				value: 1
-			}]
-			x: 13.0d
-			y: 14.5d
-		}
-		{
 			dependencies: ["16E85851D21CB6A3"]
+			description: ["&e内燃机&r的魅力！"]
 			id: "20B3A29ADFDF1D4A"
 			min_required_tasks: 1
 			rewards: [{
@@ -1217,7 +1110,7 @@
 			}]
 			shape: "circle"
 			size: 2.0d
-			subtitle: "&e内燃机&r的魅力！"
+			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
 			tasks: [{
 				id: "29B2C475B43E3FAC"
 				item: "createdelightcore:bronze_ingot"
@@ -1238,7 +1131,7 @@
 			}]
 			shape: "circle"
 			size: 2.0d
-			subtitle: "金银合金"
+			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
 			tasks: [{
 				id: "0D7814DAE3E5E1E1"
 				item: "createaddition:electrum_ingot"
@@ -1269,18 +1162,6 @@
 			}]
 			x: 7.5d
 			y: 23.5d
-		}
-		{
-			dependencies: ["45803DC9CD823262"]
-			id: "0933D2F482832D31"
-			subtitle: "&e第一次~被压缩成这样的我"
-			tasks: [{
-				id: "3F43DDE521840ACA"
-				item: "vintageimprovements:vacuum_chamber"
-				type: "item"
-			}]
-			x: 13.5d
-			y: 16.0d
 		}
 	]
 	title: "&9合金突破"
