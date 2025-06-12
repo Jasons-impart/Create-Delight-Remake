@@ -193,7 +193,7 @@
 					type: "random"
 				}
 			]
-			subtitle: "使用&e安山合金&r右击&e放置的去皮原木&r即可制作。"
+			subtitle: "手持&e安山合金&r右击&e放置的去皮原木&r即可制作。"
 			tasks: [{
 				id: "3B6F668D8EA70651"
 				item: "create:andesite_casing"
@@ -358,7 +358,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "粒子加工！"
+			subtitle: "原版熔炉离我远点我怕鼓风机误会"
 			tasks: [{
 				id: "73CC459904BCE0DA"
 				item: "create:encased_fan"
@@ -711,6 +711,7 @@
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
+			description: ["暂时还做不了，需要做出右边的弹簧哦。"]
 			hide_until_deps_visible: true
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
@@ -1181,10 +1182,13 @@
 		}
 		{
 			dependencies: ["510B2EE25982FD73"]
-			description: [""]
+			description: [
+				"&e安山桶&r可以从机器中&4取出至多2000mB的流体&r"
+				"&e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r"
+			]
 			id: "630FA0478B7DAAAA"
 			size: 1.0d
-			subtitle: "&e安山桶&r可以从机器中&4取出至多1000mB的流体&r！ \\n &e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r!"
+			subtitle: "简化和机械动力流体容器的交互"
 			tasks: [
 				{
 					id: "574A5F305CD2C196"
@@ -1378,6 +1382,143 @@
 			}]
 			x: 10.0d
 			y: 3.5d
+		}
+		{
+			dependencies: ["1CED61E7F780F38C"]
+			id: "20384B80AB55E637"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "超低成本输入输出物品解决方案"
+			tasks: [{
+				id: "37BD5246ACFD5BC0"
+				item: "create:chute"
+				type: "item"
+			}]
+			x: 17.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"610ED0789BAF7EFC"
+			]
+			id: "2221F35F24F80309"
+			shape: "square"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "vintageimprovements:item/redstone_module"
+					}
+				}
+				id: "6D7FCE92D9FEE2FC"
+				stat: "minecraft:play_time"
+				title: "高级处理机械"
+				type: "stat"
+				value: 1
+			}]
+			x: 21.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2221F35F24F80309"]
+			id: "78FFACEA1F198114"
+			rewards: [
+				{
+					id: "75C59ABDC4DFE472"
+					item: {
+						Count: 1
+						id: "vintageimprovements:convex_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0431C5D6902724E0"
+					item: {
+						Count: 1
+						id: "vintageimprovements:concave_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2945D732A09D28DD"
+					item: {
+						Count: 1
+						id: "vintageimprovements:w_shaped_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6525364ECF80D338"
+					item: {
+						Count: 1
+						id: "vintageimprovements:v_shaped_curving_head"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			subtitle: "也许可以换一个头试试？"
+			tasks: [{
+				id: "6D97DAC1CDDFE849"
+				item: "vintageimprovements:curving_press"
+				type: "item"
+			}]
+			x: 22.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["2221F35F24F80309"]
+			id: "297A4F0946513E66"
+			subtitle: "&e第一次~被压缩成这样的我"
+			tasks: [{
+				id: "28F7114C095A1F95"
+				item: "vintageimprovements:vacuum_chamber"
+				type: "item"
+			}]
+			x: 23.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["2221F35F24F80309"]
+			id: "78396753AA774D5F"
+			subtitle: "&4别抖了，我已经吐了"
+			tasks: [{
+				id: "64792C721B5BF7E8"
+				item: "vintageimprovements:vibrating_table"
+				type: "item"
+			}]
+			x: 23.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["2221F35F24F80309"]
+			id: "26DADC947426CD52"
+			rewards: [{
+				id: "2B9B5CF2ACDAF178"
+				item: "vintageimprovements:redstone_module"
+				type: "item"
+			}]
+			subtitle: "&4有点晕..."
+			tasks: [{
+				id: "50C79878D75B1DDE"
+				item: "vintageimprovements:centrifuge"
+				type: "item"
+			}]
+			x: 22.5d
+			y: 1.5d
 		}
 	]
 	title: "&2超级工程"
