@@ -1,106 +1,49 @@
 {
-	autofocus_id: "0081008C6EAA4D86"
+	autofocus_id: "22D01ADAD4616F68"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Petrochemical_Industry"
 	group: "14CFC96B5B37F10B"
-	icon: "createdieselgenerators:large_diesel_engine"
+	icon: "createdieselgenerators:engine_turbocharger"
 	id: "507D13CF7AF6ECB1"
 	order_index: 2
-	quest_links: [ ]
+	quest_links: [
+		{
+			id: "22D01ADAD4616F68"
+			linked_quest: "6EB96008F21DAFBF"
+			size: 2.0d
+			x: -16.0d
+			y: 4.0d
+		}
+		{
+			id: "01AC440633233AC2"
+			linked_quest: "20B3A29ADFDF1D4A"
+			size: 2.0d
+			x: -16.0d
+			y: 8.0d
+		}
+	]
 	quests: [
 		{
-			description: [""]
-			id: "2679AF6D14DACBE5"
-			min_required_tasks: 1
-			subtitle: "可使用生物柴油"
-			tasks: [{
-				id: "53F7007AFAC84C9F"
-				item: {
-					Count: 1
-					id: "itemfilters:or"
-					tag: {
-						items: [
-							{
-								Count: 1b
-								id: "create:blaze_cake"
-							}
-							{
-								Count: 1b
-								id: "createdieselgenerators:biodiesel_bucket"
-							}
-						]
-					}
-				}
-				title: "用于超级加热的物品"
-				type: "item"
-			}]
-			x: -1.0d
-			y: -5.5d
-		}
-		{
-			dependencies: ["2679AF6D14DACBE5"]
-			description: [""]
-			id: "70CA8C3E0DEBBE1A"
-			min_required_tasks: 1
-			rewards: [{
-				id: "79474E5EC8729368"
-				item: "createmetallurgy:steel_ingot"
-				random_bonus: 9
-				type: "item"
-			}]
-			shape: "circle"
-			size: 2.0d
-			subtitle: "唉，炼钢"
-			tasks: [
-				{
-					id: "72B53E11A7EC4236"
-					item: "createmetallurgy:steel_ingot"
-					type: "item"
-				}
-				{
-					id: "001ACC66816D721A"
-					item: "createmetallurgy:steel_block"
-					type: "item"
-				}
-				{
-					id: "2C99EB23A278921A"
-					item: "ad_astra:steel_nugget"
-					type: "item"
-				}
-			]
-			x: -1.0d
-			y: -3.5d
-		}
-		{
-			dependencies: ["70CA8C3E0DEBBE1A"]
-			description: [""]
-			id: "2D54323E3C0276BA"
-			shape: "hexagon"
-			size: 1.5d
-			subtitle: "{ \"text\": \"点此进入矿物再生章节\", \"underlined\": \"true\", \"color\": \"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
-			tasks: [{
-				id: "3A77D08086D870B0"
-				item: "createoreexcavation:drilling_machine"
-				type: "item"
-			}]
-			x: 10.5d
-			y: -6.75d
-		}
-		{
-			dependencies: ["70CA8C3E0DEBBE1A"]
+			dependencies: ["6EB96008F21DAFBF"]
 			id: "1ADBDFB31928124D"
+			shape: "square"
+			subtitle: "记得管道要连接到&4基岩&r上！"
 			tasks: [{
 				id: "3AC97109BB7FD888"
 				item: "createdieselgenerators:oil_scanner"
 				type: "item"
 			}]
-			x: 1.5d
-			y: -3.5d
+			title: "寻找原油！然后开发！"
+			x: -13.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["70CA8C3E0DEBBE1A"]
-			description: ["组装方式可看：https://www.bilibili.com/video/BV1z1421Z7ax \\n抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装好了。"]
+			dependencies: ["1ADBDFB31928124D"]
+			description: [
+				"组装方式可看：https://www.bilibili.com/video/BV1z1421Z7ax "
+				"抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装完毕"
+			]
 			hide_until_deps_visible: true
 			icon: "createdieselgenerators:pumpjack_crank"
 			id: "43B45F9D2DC4BD3E"
@@ -138,115 +81,45 @@
 				}
 			]
 			title: "石油大亨的第一步！"
-			x: 3.0d
-			y: -3.5d
+			x: -11.5d
+			y: 4.0d
 		}
 		{
-			dependencies: ["43B45F9D2DC4BD3E"]
-			icon: "createdieselgenerators:crude_oil_bucket"
-			id: "47B2FB8DDEE47B05"
-			tasks: [{
-				id: "5DF4474C308B083B"
-				title: "抽取原油"
-				type: "checkmark"
-			}]
-			x: 4.5d
-			y: -3.5d
-		}
-		{
-			dependencies: ["47B2FB8DDEE47B05"]
-			dependency_requirement: "one_completed"
-			id: "267240568A1BB492"
-			tasks: [
-				{
-					id: "0C9E60F77517FEFE"
-					item: "functionalstorage:fluid_1"
-					type: "item"
-				}
-				{
-					id: "0ABC784D199BD1DF"
-					item: "functionalstorage:fluid_2"
-					type: "item"
-				}
-				{
-					id: "6EC0FD4F601552ED"
-					item: "functionalstorage:fluid_4"
-					type: "item"
-				}
-			]
-			title: "流体抽屉，谁用谁知道"
-			x: 6.0d
-			y: -3.5d
-		}
-		{
-			dependencies: ["267240568A1BB492"]
-			description: ["根据思索搭建分馏塔，得到石油与柴油"]
+			dependencies: ["1ADBDFB31928124D"]
+			description: [""]
 			id: "16E31AE06BF8CE13"
+			rewards: [{
+				count: 9
+				id: "3864CCE25D855EC8"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			subtitle: "搭建&e分馏塔&r，从而开启&5石油炼化&r！"
 			tasks: [{
 				id: "10CD9BD0B5F80CE7"
 				item: "createdieselgenerators:distillation_controller"
 				type: "item"
 			}]
-			x: 7.5d
-			y: -3.5d
+			x: -11.5d
+			y: 5.5d
 		}
 		{
-			dependencies: ["16E31AE06BF8CE13"]
-			icon: "createdieselgenerators:gasoline_bucket"
-			id: "0117161F32078657"
-			tasks: [{
-				id: "6110D54177D45057"
-				type: "checkmark"
-			}]
-			title: "汽油"
-			x: 9.0d
-			y: -4.5d
-		}
-		{
-			dependencies: ["16E31AE06BF8CE13"]
-			icon: "createdieselgenerators:diesel_bucket"
-			id: "02FF343A1ECB8B11"
-			tasks: [{
-				id: "1E2E08CD25A6D504"
-				type: "checkmark"
-			}]
-			title: "柴油"
-			x: 9.0d
-			y: -2.5d
-		}
-		{
-			dependencies: [
-				"0117161F32078657"
-				"02FF343A1ECB8B11"
-			]
-			icon: "createdelight:fuel_mixtures_bucket"
-			id: "5E140131805871A2"
-			tasks: [{
-				id: "3BED3ECBD51EE277"
-				title: "混合燃料"
-				type: "checkmark"
-			}]
-			x: 10.5d
-			y: -3.5d
-		}
-		{
-			dependencies: [
-				"1ED5B843E29AD75C"
-				"20B3A29ADFDF1D4A"
-			]
+			dependencies: ["1A10B417B7C082DF"]
 			id: "692E9718A4E1F811"
+			size: 1.0d
+			subtitle: "吼吼吼！"
 			tasks: [{
 				id: "30022DFADCCBA646"
 				item: "createdieselgenerators:diesel_engine"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 0.0d
+			x: -10.5d
+			y: 9.0d
 		}
 		{
 			dependencies: [
 				"692E9718A4E1F811"
-				"5E140131805871A2"
+				"1A10B417B7C082DF"
 			]
 			id: "1AAA21CD44B36815"
 			rewards: [{
@@ -255,29 +128,18 @@
 				type: "item"
 			}]
 			shape: "circle"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "单位空间下极致的应力效率"
 			tasks: [{
 				id: "750CF6A3EF8B1390"
 				item: "createdieselgenerators:large_diesel_engine"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 0.0d
+			x: -10.5d
+			y: 7.0d
 		}
 		{
-			dependencies: ["70CA8C3E0DEBBE1A"]
-			id: "1ED5B843E29AD75C"
-			tasks: [{
-				id: "6F99C4F1B72D1E54"
-				item: "createdieselgenerators:engine_piston"
-				type: "item"
-			}]
-			x: 3.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["692E9718A4E1F811"]
+			dependencies: ["1A10B417B7C082DF"]
 			hide_until_deps_visible: true
 			id: "0C33D433CB5C97E5"
 			rewards: [{
@@ -286,163 +148,52 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "安安静静的多好😋"
+			subtitle: "&e不是&r？咋还&4反着改车&r？"
 			tasks: [{
 				id: "79DC39D870E2C4AF"
 				item: "createdieselgenerators:engine_silencer"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 1.5d
+			x: -11.5d
+			y: 9.5d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
-			id: "20B3A29ADFDF1D4A"
-			min_required_tasks: 1
-			rewards: [{
-				id: "4A10FBD8D0716968"
-				item: "createdelightcore:bronze_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			shape: "circle"
-			size: 2.0d
-			tasks: [{
-				id: "29B2C475B43E3FAC"
-				item: "createdelightcore:bronze_ingot"
-				type: "item"
-			}]
-			title: "&e燃料&r！&4动力&r！"
-			x: -1.0d
-			y: 0.0d
-		}
-		{
-			dependencies: [
-				"20B3A29ADFDF1D4A"
-				"70CA8C3E0DEBBE1A"
-			]
+			dependencies: ["1A10B417B7C082DF"]
 			id: "077D7F05BCC451B1"
-			subtitle: "单个机器应力更多 \\n 显卡：可以（但心里觉得不行）"
+			subtitle: "&e单个机器应力更多&r，但存在可能的&4崩溃问题"
 			tasks: [{
 				id: "47D6C1D000257107"
 				item: "createdieselgenerators:huge_diesel_engine"
 				type: "item"
 			}]
-			x: 0.5d
-			y: -1.5d
+			x: -9.5d
+			y: 8.0d
 		}
 		{
 			dependencies: [
-				"20D619F0AF190C4A"
-				"4075F51792830B6B"
+				"298F516A78786D39"
+				"4ACEFFEC7171C5BE"
 			]
-			description: ["该流体用于烈焰人可使烈焰人&e超级加热&r。"]
+			description: [""]
 			id: "15BF957B2F2FE765"
-			rewards: [{
-				count: 2
-				id: "713B01A89207FD5B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "烈焰人：好喝"
+			subtitle: "可使烈焰人&9超级加热&r"
 			tasks: [{
 				id: "4023150209C55861"
 				item: "createdieselgenerators:biodiesel_bucket"
 				type: "item"
 			}]
 			title: "生物柴油！"
-			x: 15.0d
-			y: 0.5d
+			x: -7.5d
+			y: 2.5d
 		}
 		{
-			dependencies: ["50C3559D684B2A7E"]
-			id: "20D619F0AF190C4A"
-			rewards: [{
-				count: 2
-				id: "2414B99904241192"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "也可以拿来油炸食物"
-			tasks: [{
-				id: "25A6AE99D2DE67C7"
-				item: "createdieselgenerators:plant_oil_bucket"
-				type: "item"
-			}]
-			title: "植物（燃）油"
-			x: 13.5d
-			y: -1.0d
-		}
-		{
-			dependencies: ["2FDF02F66210FC78"]
-			id: "4075F51792830B6B"
-			rewards: [{
-				count: 2
-				id: "718B5DFDBE681E05"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "工业乙醇喝了小心失明+中毒"
-			tasks: [{
-				id: "7F9F9DF7B1EE51B0"
-				item: "createdieselgenerators:ethanol_bucket"
-				type: "item"
-			}]
-			title: "不准喝！"
-			x: 15.0d
-			y: -1.0d
-		}
-		{
-			icon: "frycooks_delight:canola_seeds"
-			id: "50C3559D684B2A7E"
-			min_required_tasks: 1
-			rewards: [{
-				count: 2
-				id: "29B1C17635BD1422"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "榨油"
-			tasks: [
-				{
-					id: "4B2D6F58AAF8DC50"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:seeds"
-						}
-					}
-					title: "种子"
-					type: "item"
-				}
-				{
-					id: "48BA910C9BFF6566"
-					item: "frycooks_delight:canola_seeds"
-					type: "item"
-				}
-				{
-					id: "369A6369B2237BE9"
-					item: "vintagedelight:roasted_peanut"
-					type: "item"
-				}
-				{
-					id: "725256C002A5BEB1"
-					item: "create_bic_bit:crushed_sunflower_seeds"
-					type: "item"
-				}
-			]
-			x: 13.5d
-			y: -2.5d
-		}
-		{
+			dependencies: ["1ADBDFB31928124D"]
 			hide_until_deps_visible: true
 			id: "0C49A6D118E480B4"
 			rewards: [{
-				count: 4
-				id: "456895E48D65BE21"
-				item: "minecraft:bone_meal"
-				random_bonus: 4
+				id: "6211CFB60DEB1F1E"
+				item: "createdelight:dry_yeast"
+				random_bonus: 2
 				type: "item"
 			}]
 			subtitle: "与工作盆配合以发酵"
@@ -451,50 +202,15 @@
 				item: "createdieselgenerators:basin_lid"
 				type: "item"
 			}]
-			x: 15.0d
-			y: -4.0d
+			x: -11.5d
+			y: 2.5d
 		}
 		{
-			dependencies: ["0C49A6D118E480B4"]
-			id: "2FDF02F66210FC78"
-			rewards: [
-				{
-					exclude_from_claim_all: true
-					id: "2AADF272C3140250"
-					table_id: 6485826240718891201L
-					type: "choice"
-				}
-				{
-					count: 2
-					id: "3A2E9705616346DE"
-					item: "createdelightcore:copper_coin"
-					type: "item"
-				}
+			dependencies: [
+				"43B45F9D2DC4BD3E"
+				"16E31AE06BF8CE13"
+				"0C49A6D118E480B4"
 			]
-			tasks: [
-				{
-					id: "5465B512AA1D1662"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:fermentable"
-						}
-					}
-					title: "用于发酵的东西"
-					type: "item"
-				}
-				{
-					id: "60DB43B9DCBB7471"
-					item: "minecraft:bone_meal"
-					type: "item"
-				}
-			]
-			title: "发酵"
-			x: 15.0d
-			y: -2.5d
-		}
-		{
 			icon: "createdieselgenerators:crude_oil_bucket"
 			id: "61A945984843E55A"
 			rewards: [{
@@ -502,9 +218,9 @@
 				item: "createdieselgenerators:lighter"
 				type: "item"
 			}]
-			shape: "hexagon"
-			size: 2.0d
-			subtitle: "&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"
+			shape: "square"
+			size: 1.0d
+			subtitle: "&4警告！！！\\n&r一切柴油机燃料接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r都可能会&4爆炸&r！！！"
 			tasks: [{
 				icon: "createdieselgenerators:crude_oil_bucket"
 				id: "3EC3BC0630EC3A9C"
@@ -513,9 +229,166 @@
 				type: "stat"
 				value: 1
 			}]
-			title: "石油科技"
-			x: -1.0d
+			title: "石油炼化工艺！"
+			x: -9.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"20B3A29ADFDF1D4A"
+				"6EB96008F21DAFBF"
+			]
+			id: "1A10B417B7C082DF"
+			shape: "square"
+			subtitle: "&4毋庸置疑&r的&e魅力&r！"
+			tasks: [{
+				icon: "createdieselgenerators:engine_turbocharger"
+				id: "623600AC495BEF51"
+				stat: "minecraft:play_time"
+				title: "内燃机！"
+				type: "stat"
+				value: 1
+			}]
+			x: -13.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1A10B417B7C082DF"]
+			id: "1CD3AA0F0A453C62"
+			subtitle: "&e涡轮增压&r！我是&4超级改车王&r！"
+			tasks: [{
+				id: "3B1A79A5F2B4910D"
+				item: "createdieselgenerators:engine_turbocharger"
+				type: "item"
+			}]
+			x: -11.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["61A945984843E55A"]
+			id: "24FAD19B32A0FEBE"
+			subtitle: "&e直接分馏&r或者&4加工后分馏"
+			tasks: [{
+				id: "2F33D51054EC7BB5"
+				item: "createdieselgenerators:crude_oil_bucket"
+				type: "item"
+			}]
+			x: -7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["24FAD19B32A0FEBE"]
+			id: "5EB7ED288E82C023"
+			subtitle: "更&e彻底&r的应用原油！更&e快速&r的应用原油！"
+			tasks: [{
+				id: "341DDD982810CEBD"
+				item: "createdelight:light_crude_oil_bucket"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5EB7ED288E82C023"]
+			id: "65602AA94EEB3AA3"
+			tasks: [{
+				id: "611B55784533271A"
+				item: "createdelight:ethylene_fluid_bucket"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"5EB7ED288E82C023"
+				"24FAD19B32A0FEBE"
+			]
+			dependency_requirement: "one_completed"
+			id: "4E1668942F94DB7C"
+			tasks: [{
+				id: "506FFBD96BCD07CE"
+				item: "createdieselgenerators:diesel_bucket"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"5EB7ED288E82C023"
+				"24FAD19B32A0FEBE"
+			]
+			dependency_requirement: "one_completed"
+			id: "1033CA5B5B983290"
+			tasks: [{
+				id: "038B8611A3020142"
+				item: "createdieselgenerators:gasoline_bucket"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["5EB7ED288E82C023"]
+			id: "1568A6972CBA1592"
+			tasks: [{
+				id: "6ECE4DE5113C2789"
+				item: "createdelight:lubricating_oil_bucket"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"1033CA5B5B983290"
+				"4E1668942F94DB7C"
+			]
+			id: "59E1D11E91310AA3"
+			tasks: [{
+				id: "2DCB222EABDB4D1B"
+				item: "createdelight:fuel_mixtures_bucket"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0C49A6D118E480B4"]
+			id: "298F516A78786D39"
+			subtitle: "&e发酵&r！或者&4化工&r！"
+			tasks: [{
+				id: "296FAEBB86AEBF0C"
+				item: "createdieselgenerators:ethanol_bucket"
+				type: "item"
+			}]
+			x: -9.5d
 			y: 3.0d
+		}
+		{
+			dependencies: ["0C49A6D118E480B4"]
+			id: "4ACEFFEC7171C5BE"
+			subtitle: "植物油也能烧？&e启动&r！&4超级艾草动力&r！\\n——艾草大王如是说"
+			tasks: [{
+				id: "184A409B4937E3B1"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6EB96008F21DAFBF"]
+			id: "530B929865B8E11B"
+			subtitle: "油料存进可以&e防爆&r！&e豪用&r！"
+			tasks: [{
+				id: "485D76DD3071845C"
+				item: "createdieselgenerators:oil_barrel"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 2.5d
 		}
 	]
 	title: "&5石油化工"

@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "AE2_Basics"
-	group: "14CFC96B5B37F10B"
+	group: "0E8A6F1771B90E2E"
 	icon: "ae2:certus_quartz_crystal"
 	id: "51CFC40E4EEC9DE8"
-	order_index: 5
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -55,10 +55,10 @@
 				"3066F516B382ED92"
 			]
 			dependency_requirement: "one_started"
-			description: ["陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"]
+			description: [""]
 			id: "5F76D0BDF2B71728"
 			size: 1.5d
-			subtitle: "借由他人，寻找自我"
+			subtitle: "陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"
 			tasks: [{
 				icon: "ae2:mysterious_cube"
 				id: "4CC8B6972ACEA75A"
@@ -68,187 +68,113 @@
 				to_observe: "ae2:mysterious_cube"
 				type: "observation"
 			}]
-			title: "神秘方块"
+			title: "借由他人，寻找自我"
 			x: 14.5d
 			y: 0.0d
 		}
 		{
-			dependencies: ["5F76D0BDF2B71728"]
-			id: "362C07EFCC319B53"
-			subtitle: "累积压印模板是神秘方块中&e无法获取&r的压印模板，需要手动合成。使用压缩机合成。"
-			tasks: [
-				{
-					id: "6B014A5E41CA009F"
-					item: "ae2:logic_processor_press"
-					type: "item"
-				}
-				{
-					id: "04BEBDCEADE9F516"
-					item: "ae2:calculation_processor_press"
-					type: "item"
-				}
-				{
-					id: "356B6B4092310E4D"
-					item: "ae2:engineering_processor_press"
-					type: "item"
-				}
-				{
-					id: "1EAD25787E0C446D"
-					item: "ae2:silicon_press"
-					type: "item"
-				}
-				{
-					id: "7ABB2103CE2CFF3F"
-					item: "megacells:accumulation_processor_press"
-					type: "item"
-				}
+			dependencies: [
+				"559EBDEF50D42ED4"
+				"6DEFC96B803FBCCC"
+				"5BECCA0064521A89"
+				"5BB0AC8AD53D1A5A"
+				"01AA2552250F710A"
 			]
-			x: 16.5d
-			y: 0.0d
-		}
-		{
-			dependencies: ["5F76D0BDF2B71728"]
 			id: "6575B9B559D65549"
 			shape: "rsquare"
 			size: 1.5d
-			subtitle: "这是本包加入的，可用于&e所有压印操作&r的模板。需要使用五种模板合成。"
+			subtitle: "可用于&e所有压印操作&r的模板，需要使用五种模板合成。"
 			tasks: [{
 				id: "45C1258D2F8952A7"
 				item: "createdelight:universal_press"
 				type: "item"
 			}]
-			x: 18.25d
+			x: 19.5d
 			y: 0.0d
 		}
 		{
 			dependencies: [
-				"75ADE83D3C9349B4"
 				"6575B9B559D65549"
+				"6DEFC96B803FBCCC"
 			]
+			dependency_requirement: "one_completed"
 			id: "0A9347D7B9C4CCA6"
-			tasks: [
-				{
-					id: "2F70B939142DCB5A"
-					item: "ae2:printed_logic_processor"
-					type: "item"
-				}
-				{
-					id: "12DC852FC9356322"
-					item: "minecraft:gold_ingot"
-					type: "item"
-				}
-			]
-			x: 20.5d
-			y: 2.0d
+			tasks: [{
+				id: "2F70B939142DCB5A"
+				item: "ae2:printed_logic_processor"
+				type: "item"
+			}]
+			x: 21.5d
+			y: -2.0d
 		}
 		{
 			dependencies: [
-				"75ADE83D3C9349B4"
 				"6575B9B559D65549"
+				"5BECCA0064521A89"
 			]
+			dependency_requirement: "one_completed"
 			id: "7BC423F0E58DD8AD"
-			tasks: [
-				{
-					id: "72FCF7EBC8161DA4"
-					item: "ae2:printed_calculation_processor"
-					type: "item"
-				}
-				{
-					id: "7C7367CBB2FC92F1"
-					item: "ae2:certus_quartz_crystal"
-					type: "item"
-				}
-			]
-			x: 20.5d
+			tasks: [{
+				id: "72FCF7EBC8161DA4"
+				item: "ae2:printed_calculation_processor"
+				type: "item"
+			}]
+			x: 21.5d
 			y: 1.0d
 		}
 		{
 			dependencies: [
-				"75ADE83D3C9349B4"
 				"6575B9B559D65549"
+				"5BB0AC8AD53D1A5A"
 			]
+			dependency_requirement: "one_completed"
 			id: "2566F69ABAA08D17"
-			tasks: [
-				{
-					id: "6F3D1916A3D60AD8"
-					item: "megacells:printed_accumulation_processor"
-					type: "item"
-				}
-				{
-					id: "0068524FE0AFD731"
-					item: "megacells:sky_steel_ingot"
-					type: "item"
-				}
-			]
-			x: 20.5d
+			tasks: [{
+				id: "6F3D1916A3D60AD8"
+				item: "megacells:printed_accumulation_processor"
+				type: "item"
+			}]
+			x: 21.5d
 			y: 0.0d
 		}
 		{
 			dependencies: [
-				"75ADE83D3C9349B4"
 				"6575B9B559D65549"
+				"01AA2552250F710A"
 			]
+			dependency_requirement: "one_completed"
 			id: "31652DC839BBACE4"
-			tasks: [
-				{
-					id: "744D9D0847236596"
-					item: "ae2:printed_engineering_processor"
-					type: "item"
-				}
-				{
-					id: "53AB5F89D789DF83"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:gems/diamond"
-						}
-					}
-					title: "Any #forge:gems/diamond"
-					type: "item"
-				}
-			]
-			x: 20.5d
+			tasks: [{
+				id: "744D9D0847236596"
+				item: "ae2:printed_engineering_processor"
+				type: "item"
+			}]
+			x: 21.5d
 			y: -1.0d
 		}
 		{
 			dependencies: [
-				"75ADE83D3C9349B4"
 				"6575B9B559D65549"
+				"559EBDEF50D42ED4"
 			]
+			dependency_requirement: "one_completed"
 			id: "6B582DEB6F5ADB6F"
-			tasks: [
-				{
-					id: "2BC3BA1ED814A218"
-					item: "ae2:printed_silicon"
-					type: "item"
-				}
-				{
-					id: "6599F16406CAF301"
-					item: "ae2:silicon"
-					type: "item"
-				}
-			]
-			x: 20.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["638505D6DDD35EF8"]
-			description: [
-				"此为本包的压印器的某种程度上的代替品，用于合成电路板和处理器。你需要将模板放在冲压机上（可以使用扳手拆卸下来）"
-				"{ \"text\": \"点此查看处理器的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
-			]
-			id: "75ADE83D3C9349B4"
-			size: 1.5d
 			tasks: [{
-				id: "686ACB7AEE3E1285"
-				item: "vintageimprovements:curving_press"
+				id: "2BC3BA1ED814A218"
+				item: "ae2:printed_silicon"
 				type: "item"
 			}]
-			x: 22.75d
-			y: 0.0d
+			x: 21.5d
+			y: 2.0d
 		}
 		{
+			dependencies: [
+				"31652DC839BBACE4"
+				"7BC423F0E58DD8AD"
+				"0A9347D7B9C4CCA6"
+				"6B582DEB6F5ADB6F"
+				"2566F69ABAA08D17"
+			]
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
 			icon: "create:brass_hand"
 			id: "638505D6DDD35EF8"
@@ -259,7 +185,7 @@
 				title: "使用机械动力吧"
 				type: "checkmark"
 			}]
-			x: 25.5d
+			x: 25.0d
 			y: 0.0d
 		}
 		{
@@ -758,6 +684,65 @@
 			x: 12.5d
 			y: -4.0d
 		}
+		{
+			dependencies: ["5F76D0BDF2B71728"]
+			id: "5BECCA0064521A89"
+			tasks: [{
+				id: "5156F5466D50249B"
+				item: "ae2:calculation_processor_press"
+				type: "item"
+			}]
+			x: 17.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5F76D0BDF2B71728"]
+			id: "01AA2552250F710A"
+			tasks: [{
+				id: "75D0EC4AEABB4504"
+				item: "ae2:engineering_processor_press"
+				type: "item"
+			}]
+			x: 17.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5F76D0BDF2B71728"]
+			id: "6DEFC96B803FBCCC"
+			tasks: [{
+				id: "411A6B9EBA06BB95"
+				item: "ae2:logic_processor_press"
+				type: "item"
+			}]
+			x: 17.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5F76D0BDF2B71728"]
+			id: "559EBDEF50D42ED4"
+			tasks: [{
+				id: "4E87C715360DDE4A"
+				item: "ae2:silicon_press"
+				type: "item"
+			}]
+			x: 17.5d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"5BECCA0064521A89"
+				"01AA2552250F710A"
+			]
+			id: "5BB0AC8AD53D1A5A"
+			subtitle: "累积压印模板是神秘方块中&e无法获取&r的压印模板，需要手动合成。使用压缩机合成。"
+			tasks: [{
+				id: "024C7B14FF332775"
+				item: "megacells:accumulation_processor_press"
+				type: "item"
+			}]
+			x: 17.5d
+			y: 0.0d
+		}
 	]
-	title: "异星科技初探"
+	title: "&b异星科技"
 }

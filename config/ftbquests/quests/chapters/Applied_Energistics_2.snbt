@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Applied_Energistics_2"
-	group: "14CFC96B5B37F10B"
+	group: "0E8A6F1771B90E2E"
 	icon: "ae2:controller"
 	id: "274BEE49DE9A54AB"
 	images: [
@@ -96,7 +96,7 @@
 			y: 22.65d
 		}
 	]
-	order_index: 8
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -657,83 +657,6 @@
 			title: "神秘方块"
 			x: 2.0d
 			y: 32.0d
-		}
-		{
-			dependencies: ["355B0356B722C742"]
-			id: "5BECCA0064521A89"
-			tasks: [{
-				id: "5156F5466D50249B"
-				item: "ae2:calculation_processor_press"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 34.5d
-		}
-		{
-			dependencies: ["355B0356B722C742"]
-			id: "01AA2552250F710A"
-			tasks: [{
-				id: "75D0EC4AEABB4504"
-				item: "ae2:engineering_processor_press"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 34.5d
-		}
-		{
-			dependencies: ["355B0356B722C742"]
-			id: "6DEFC96B803FBCCC"
-			tasks: [{
-				id: "411A6B9EBA06BB95"
-				item: "ae2:logic_processor_press"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 34.0d
-		}
-		{
-			dependencies: ["355B0356B722C742"]
-			id: "559EBDEF50D42ED4"
-			tasks: [{
-				id: "4E87C715360DDE4A"
-				item: "ae2:silicon_press"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 34.0d
-		}
-		{
-			dependencies: [
-				"559EBDEF50D42ED4"
-				"6DEFC96B803FBCCC"
-				"5BECCA0064521A89"
-				"5BB0AC8AD53D1A5A"
-				"01AA2552250F710A"
-			]
-			id: "365D4592A0B49EA8"
-			subtitle: "这是本包加入的，可用于&e所有压印操作&r的模板。需要使用五种模板合成。"
-			tasks: [{
-				id: "1AEA0F1D9369F284"
-				item: "createdelight:universal_press"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 33.5d
-		}
-		{
-			dependencies: [
-				"5BECCA0064521A89"
-				"01AA2552250F710A"
-			]
-			id: "5BB0AC8AD53D1A5A"
-			subtitle: "累积压印模板是神秘方块中&e无法获取&r的压印模板，需要手动合成。使用压缩机合成。"
-			tasks: [{
-				id: "024C7B14FF332775"
-				item: "megacells:accumulation_processor_press"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 34.5d
 		}
 		{
 			dependencies: ["76D8D89E020E58D7"]

@@ -3,7 +3,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Classic_Storage"
-	group: "14CFC96B5B37F10B"
+	group: "0E8A6F1771B90E2E"
 	icon: {
 		Count: 1
 		id: "sophisticatedbackpacks:backpack"
@@ -13,7 +13,7 @@
 		}
 	}
 	id: "34EC8C9716956C8E"
-	order_index: 6
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{

@@ -4,22 +4,67 @@
 	default_quest_shape: ""
 	filename: "Mineral_Regeneration"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 4
-	quest_links: [ ]
+	order_index: 5
+	quest_links: [
+		{
+			id: "2506A27C0B0452A8"
+			linked_quest: "1B63ED5F68D71F24"
+			x: -5.0d
+			y: 3.5d
+		}
+		{
+			id: "10E2EED3156B3D14"
+			linked_quest: "1B63ED5F68D71F24"
+			x: -6.5d
+			y: 3.5d
+		}
+		{
+			id: "1EB5DEA6D19CE798"
+			linked_quest: "762CD49FCDC889E2"
+			x: -8.0d
+			y: 3.5d
+		}
+		{
+			id: "4F3819A37EDEA9D9"
+			linked_quest: "0933D2F482832D31"
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			id: "5501FC4C7445761C"
+			linked_quest: "762CD49FCDC889E2"
+			x: -6.5d
+			y: 1.5d
+		}
+		{
+			id: "6439364616672038"
+			linked_quest: "327F51B0505850F4"
+			x: -6.0d
+			y: 5.5d
+		}
+		{
+			id: "6E98F3CBBFFF0FBA"
+			linked_quest: "20E3F0F2C6AEFCCB"
+			x: -7.0d
+			y: 5.5d
+		}
+	]
 	quests: [
 		{
 			dependencies: ["00AF35D832509CB8"]
 			hide_dependent_lines: true
 			id: "532B2FC7E0826D5E"
+			shape: "square"
 			tasks: [{
 				id: "674772936F202FE0"
 				item: "createoreexcavation:extractor"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 0.5d
+			x: 3.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
@@ -30,6 +75,7 @@
 				item: "createoreexcavation:drill"
 				type: "item"
 			}]
+			shape: "square"
 			subtitle: "挖掘矿簇"
 			tasks: [{
 				id: "06BEEC5B7EA482E4"
@@ -42,19 +88,21 @@
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
-			description: ["矿脉所在的区块的石头中有概率挖出矿脉对应的矿物！"]
+			description: [""]
 			id: "7DC98E34AECFBB5C"
-			subtitle: "使用探矿仪来寻找矿物痕迹"
+			shape: "square"
+			subtitle: "使用&e探矿仪&r来寻找&4矿物痕迹"
 			tasks: [{
 				id: "76E5AF8D288B99E7"
 				item: "createdelight:prospector"
 				type: "item"
 			}]
 			title: "让我看看你在哪~"
-			x: 1.0d
-			y: -2.0d
+			x: 3.5d
+			y: 2.5d
 		}
 		{
+			dependencies: ["6EB96008F21DAFBF"]
 			description: [
 				"本包对该mod进行了一些优化："
 				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
@@ -64,14 +112,15 @@
 			id: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "本包对这个mod进行了一些优化"
+			subtitle: "进行&5虚空采矿&r吧！"
 			tasks: [{
 				id: "1D7AB28B86CF3039"
-				title: "矿物再生科技！"
+				title: "矿物再生！"
 				type: "checkmark"
 			}]
+			title: "虚空采矿"
 			x: 1.0d
-			y: 0.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7DC98E34AECFBB5C"]
@@ -132,8 +181,8 @@
 				}
 			]
 			title: "筛选矿脉"
-			x: 1.0d
-			y: -3.5d
+			x: 5.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["532B2FC7E0826D5E"]
@@ -143,8 +192,8 @@
 				item: "minecraft:water_bucket"
 				type: "item"
 			}]
-			x: -3.0d
-			y: 0.5d
+			x: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
@@ -246,160 +295,6 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["00AF35D832509CB8"]
-			icon: "createmetallurgy:foundry_mixer"
-			id: "15F92D3DE8FAB8A2"
-			subtitle: "本整合包的&4矿物增产&r步骤(以铁为例)"
-			tasks: [{
-				id: "2A9CC37CC50DC65B"
-				title: "矿物处理"
-				type: "checkmark"
-			}]
-			x: 1.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["15F92D3DE8FAB8A2"]
-			id: "4B090FE6593322AC"
-			tasks: [{
-				id: "6B3F3C6C3BCCB930"
-				item: "minecraft:raw_iron"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["4B090FE6593322AC"]
-			id: "137B5A8B8C7EA6A2"
-			subtitle: "粉碎轮粉碎"
-			tasks: [{
-				id: "55E0BF1A0DF778B0"
-				item: "create:crushed_raw_iron"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["4B090FE6593322AC"]
-			id: "47E95A5286A80075"
-			subtitle: "通过压缩机"
-			tasks: [{
-				id: "213263254430005F"
-				item: "createmetallurgy:dirty_iron_dust"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["47E95A5286A80075"]
-			id: "6F32D461564F952D"
-			subtitle: "离心机或者鼓风机洗涤"
-			tasks: [{
-				id: "679683474CEA2CA3"
-				item: "createmetallurgy:iron_dust"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["6F32D461564F952D"]
-			id: "0458A8485A72A1C7"
-			subtitle: "熔融"
-			tasks: [{
-				id: "632092F4B351D611"
-				item: "createmetallurgy:molten_iron_bucket"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["137B5A8B8C7EA6A2"]
-			id: "4972D38A770A8022"
-			subtitle: "粉碎轮粉碎"
-			tasks: [{
-				id: "5FE496D0E90A30D1"
-				item: "createmetallurgy:dirty_iron_dust"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["4972D38A770A8022"]
-			id: "23DBCDC7BE8D7207"
-			subtitle: "离心机或者鼓风机洗涤"
-			tasks: [{
-				id: "4AE27F3570C5B172"
-				item: "createmetallurgy:iron_dust"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["23DBCDC7BE8D7207"]
-			id: "6EAE2A71D355B4F4"
-			subtitle: "熔融"
-			tasks: [{
-				id: "26DC4A594FE3CFFD"
-				item: "createmetallurgy:molten_iron_bucket"
-				type: "item"
-			}]
-			x: 1.0d
-			y: 10.5d
-		}
-		{
-			dependencies: ["137B5A8B8C7EA6A2"]
-			id: "7E52E474B3645158"
-			subtitle: "震动机或者离心机"
-			tasks: [{
-				id: "2B675C54A010DA80"
-				item: "minecraft:iron_nugget"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["7E52E474B3645158"]
-			id: "5EB5A9C8EC954D78"
-			tasks: [{
-				id: "0FE6E72E15649120"
-				item: "createmetallurgy:molten_iron_bucket"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["137B5A8B8C7EA6A2"]
-			id: "65050B6C6BE04373"
-			subtitle: "烧制"
-			tasks: [{
-				id: "76404E8D5B5F89DB"
-				item: "minecraft:iron_ingot"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 7.5d
-		}
-		{
-			dependencies: ["137B5A8B8C7EA6A2"]
-			id: "479850F95DEE291B"
-			tasks: [{
-				id: "67670514C126967C"
-				item: "createmetallurgy:molten_iron_bucket"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 9.0d
-		}
-		{
 			dependencies: ["532B2FC7E0826D5E"]
 			id: "06FA036AE91410FC"
 			tasks: [{
@@ -408,8 +303,8 @@
 				type: "item"
 			}]
 			title: "蜂蜜世界"
-			x: -3.0d
-			y: -0.5d
+			x: 5.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["532B2FC7E0826D5E"]
@@ -420,21 +315,129 @@
 				type: "item"
 			}]
 			title: "糖果洞穴"
-			x: -3.0d
-			y: 1.5d
+			x: 5.0d
+			y: 5.5d
 		}
 		{
-			dependencies: ["4B090FE6593322AC"]
-			id: "3D3AFC1CCA6F2D06"
-			subtitle: "直接熔融"
+			dependencies: ["00AF35D832509CB8"]
+			id: "4E04056BA6BC96BD"
+			shape: "square"
+			subtitle: "那我就用&4铁&r的&e增产&r简单演示一下吧"
 			tasks: [{
-				id: "7406D5DCDD61A844"
-				item: "createmetallurgy:molten_iron_bucket"
+				id: "6F266DB394A6DAA2"
+				title: "什么？矿物增产？"
+				type: "checkmark"
+			}]
+			x: -1.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["4E04056BA6BC96BD"]
+			id: "17BE6A19EF732F33"
+			tasks: [{
+				id: "65F1E61DC5875D7A"
+				item: "minecraft:raw_iron"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 9.0d
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"17BE6A19EF732F33"
+				"1B63ED5F68D71F24"
+			]
+			id: "5AF371516B6F9605"
+			tasks: [{
+				id: "3EF87E2098BB0BB1"
+				item: "create:crushed_raw_iron"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"5AF371516B6F9605"
+				"1B63ED5F68D71F24"
+			]
+			id: "390B290FDE3760CB"
+			tasks: [{
+				id: "7941D85240ED3724"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"390B290FDE3760CB"
+				"762CD49FCDC889E2"
+			]
+			id: "678722D7C6137C3A"
+			tasks: [{
+				id: "5FAB7A5A3EA5BDF4"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"044C475554C01F99"
+				"327F51B0505850F4"
+				"20E3F0F2C6AEFCCB"
+			]
+			id: "22AE46F2DB5C872F"
+			tasks: [{
+				id: "769B9EE81969BE88"
+				item: "minecraft:iron_nugget"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"17BE6A19EF732F33"
+				"0933D2F482832D31"
+			]
+			id: "7E99FE558038EE94"
+			tasks: [{
+				id: "19F27E64C148DC72"
+				item: "createmetallurgy:dirty_iron_dust"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"7E99FE558038EE94"
+				"762CD49FCDC889E2"
+			]
+			id: "7397600556B17895"
+			tasks: [{
+				id: "11310A533C6A6D10"
+				item: "createmetallurgy:iron_dust"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["17BE6A19EF732F33"]
+			id: "044C475554C01F99"
+			tasks: [{
+				id: "427D3AF8BBA078FD"
+				item: "create:crushed_raw_iron"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 4.5d
 		}
 	]
-	title: "&5矿物再生"
+	title: "&3虚空采矿"
 }

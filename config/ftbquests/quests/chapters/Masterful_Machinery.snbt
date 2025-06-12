@@ -16,7 +16,7 @@
 		}
 	}
 	id: "55F5367DDD56CDDE"
-	order_index: 10
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -637,7 +637,7 @@
 			y: 4.75d
 		}
 		{
-			dependencies: ["7F309BD2C1A2AE67"]
+			dependencies: ["6EB96008F21DAFBF"]
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"
 			rewards: [
@@ -751,7 +751,7 @@
 				}
 			]
 			shape: "octagon"
-			size: 1.0d
+			size: 2.0d
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"

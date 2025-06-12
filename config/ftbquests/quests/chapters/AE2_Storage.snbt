@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "AE2_Storage"
-	group: "14CFC96B5B37F10B"
+	group: "0E8A6F1771B90E2E"
 	icon: "ae2:drive"
 	id: "467649501F6EE065"
-	order_index: 7
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -202,10 +202,13 @@
 				type: "item"
 			}]
 			x: 8.5d
-			y: 9.0d
+			y: 11.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"19B6EF70C5C690A0"
+			]
 			hide_dependency_lines: true
 			id: "0107A9F88B402867"
 			rewards: [{
@@ -220,10 +223,13 @@
 				type: "item"
 			}]
 			x: 8.5d
-			y: 8.0d
+			y: 10.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"0107A9F88B402867"
+			]
 			hide_dependency_lines: true
 			id: "1F1DC2924E1AF1E3"
 			rewards: [{
@@ -238,10 +244,13 @@
 				type: "item"
 			}]
 			x: 8.5d
-			y: 7.0d
+			y: 9.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"1F1DC2924E1AF1E3"
+			]
 			hide_dependency_lines: true
 			id: "55F0CCAFAE6D8E95"
 			rewards: [{
@@ -255,11 +264,14 @@
 				item: "ae2:cell_component_64k"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 9.0d
+			x: 8.5d
+			y: 8.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"55F0CCAFAE6D8E95"
+			]
 			hide_dependency_lines: true
 			id: "4A48CF1796837CBF"
 			rewards: [{
@@ -273,11 +285,14 @@
 				item: "ae2:cell_component_256k"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 8.0d
+			x: 8.5d
+			y: 7.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"4A48CF1796837CBF"
+			]
 			hide_dependency_lines: true
 			id: "0D4E454AFF39C1E1"
 			rewards: [{
@@ -292,10 +307,13 @@
 				type: "item"
 			}]
 			x: 9.5d
-			y: 7.0d
+			y: 11.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"0D4E454AFF39C1E1"
+			]
 			hide_dependency_lines: true
 			id: "176A534D7757779E"
 			rewards: [{
@@ -309,11 +327,14 @@
 				item: "megacells:cell_component_4m"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 9.0d
+			x: 9.5d
+			y: 10.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"176A534D7757779E"
+			]
 			hide_dependency_lines: true
 			id: "511398D18A2E5F5E"
 			rewards: [{
@@ -327,11 +348,14 @@
 				item: "megacells:cell_component_16m"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 8.0d
+			x: 9.5d
+			y: 9.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"511398D18A2E5F5E"
+			]
 			hide_dependency_lines: true
 			id: "01B97BC520BD2053"
 			rewards: [{
@@ -345,11 +369,14 @@
 				item: "megacells:cell_component_64m"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 7.0d
+			x: 9.5d
+			y: 8.0d
 		}
 		{
-			dependencies: ["3A84C79A5EBED973"]
+			dependencies: [
+				"3A84C79A5EBED973"
+				"01B97BC520BD2053"
+			]
 			hide_dependency_lines: true
 			id: "460FBC0EA63CE22D"
 			rewards: [{
@@ -363,8 +390,8 @@
 				item: "megacells:cell_component_256m"
 				type: "item"
 			}]
-			x: 11.5d
-			y: 9.0d
+			x: 9.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["05D7688036D40AE4"]
@@ -802,5 +829,5 @@
 			y: -1.5d
 		}
 	]
-	title: "储存篇"
+	title: "&b储存篇章"
 }
