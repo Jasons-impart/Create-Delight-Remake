@@ -912,11 +912,6 @@
 					item: "create_connected:shear_pin"
 					type: "item"
 				}
-				{
-					id: "37268F64D9236E8A"
-					item: "petrolsparts:double_cardan_shaft"
-					type: "item"
-				}
 			]
 			x: 8.0d
 			y: -2.5d
@@ -1521,5 +1516,5 @@
 			y: 1.5d
 		}
 	]
-	title: "&2超级工程"
+	title: "&2初识机械"
 }

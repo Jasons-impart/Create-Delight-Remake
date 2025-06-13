@@ -1331,7 +1331,7 @@
 				}
 			]
 			shape: "hexagon"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "可&4自定义&r的护甲！"
 			tasks: [{
 				id: "35014F871B3EEDD6"

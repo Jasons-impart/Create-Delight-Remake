@@ -751,7 +751,7 @@
 				}
 			]
 			shape: "octagon"
-			size: 2.0d
+			size: 1.0d
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"

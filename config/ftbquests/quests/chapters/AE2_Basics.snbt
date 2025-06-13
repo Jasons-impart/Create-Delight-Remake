@@ -5,7 +5,7 @@
 	group: "14CFC96B5B37F10B"
 	icon: "ae2:certus_quartz_crystal"
 	id: "51CFC40E4EEC9DE8"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -50,14 +50,12 @@
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"5D34BFD68D039806"
-				"3066F516B382ED92"
-			]
+			dependencies: ["3066F516B382ED92"]
 			dependency_requirement: "one_started"
 			description: [""]
 			id: "5F76D0BDF2B71728"
-			size: 1.5d
+			shape: "gear"
+			size: 2.0d
 			subtitle: "陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"
 			tasks: [{
 				icon: "ae2:mysterious_cube"
@@ -69,8 +67,8 @@
 				type: "observation"
 			}]
 			title: "借由他人，寻找自我"
-			x: 14.5d
-			y: 0.0d
+			x: 0.0d
+			y: -4.0d
 		}
 		{
 			dependencies: [
@@ -81,7 +79,7 @@
 				"01AA2552250F710A"
 			]
 			id: "6575B9B559D65549"
-			shape: "rsquare"
+			shape: "square"
 			size: 1.5d
 			subtitle: "可用于&e所有压印操作&r的模板，需要使用五种模板合成。"
 			tasks: [{
@@ -89,8 +87,8 @@
 				item: "createdelight:universal_press"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 0.0d
+			x: 3.75d
+			y: -4.0d
 		}
 		{
 			dependencies: [
@@ -104,8 +102,8 @@
 				item: "ae2:printed_logic_processor"
 				type: "item"
 			}]
-			x: 21.5d
-			y: -2.0d
+			x: 4.75d
+			y: -6.0d
 		}
 		{
 			dependencies: [
@@ -119,8 +117,8 @@
 				item: "ae2:printed_calculation_processor"
 				type: "item"
 			}]
-			x: 21.5d
-			y: 1.0d
+			x: 5.25d
+			y: -3.0d
 		}
 		{
 			dependencies: [
@@ -134,8 +132,8 @@
 				item: "megacells:printed_accumulation_processor"
 				type: "item"
 			}]
-			x: 21.5d
-			y: 0.0d
+			x: 5.75d
+			y: -4.0d
 		}
 		{
 			dependencies: [
@@ -149,8 +147,8 @@
 				item: "ae2:printed_engineering_processor"
 				type: "item"
 			}]
-			x: 21.5d
-			y: -1.0d
+			x: 5.25d
+			y: -5.0d
 		}
 		{
 			dependencies: [
@@ -164,35 +162,27 @@
 				item: "ae2:printed_silicon"
 				type: "item"
 			}]
-			x: 21.5d
-			y: 2.0d
+			x: 4.75d
+			y: -2.0d
 		}
 		{
-			dependencies: [
-				"31652DC839BBACE4"
-				"7BC423F0E58DD8AD"
-				"0A9347D7B9C4CCA6"
-				"6B582DEB6F5ADB6F"
-				"2566F69ABAA08D17"
-			]
+			dependencies: ["6575B9B559D65549"]
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
 			icon: "create:brass_hand"
 			id: "638505D6DDD35EF8"
-			size: 2.0d
+			shape: "square"
+			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
 			tasks: [{
 				id: "31761AF0BCF26D7D"
 				title: "使用机械动力吧"
 				type: "checkmark"
 			}]
-			x: 25.0d
-			y: 0.0d
+			x: 3.75d
+			y: -7.5d
 		}
 		{
-			dependencies: [
-				"5D34BFD68D039806"
-				"3066F516B382ED92"
-			]
+			dependencies: ["5D34BFD68D039806"]
 			dependency_requirement: "one_started"
 			description: [
 				"每个母岩都有其损坏程度，使用非精准采集镐子会使母岩的损坏程度降低一级。而无暇母岩无论如何都会降一级。"
@@ -687,8 +677,8 @@
 				item: "ae2:calculation_processor_press"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 1.0d
+			x: 2.25d
+			y: -3.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -698,8 +688,8 @@
 				item: "ae2:engineering_processor_press"
 				type: "item"
 			}]
-			x: 17.5d
-			y: -1.0d
+			x: 2.25d
+			y: -5.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -709,8 +699,8 @@
 				item: "ae2:logic_processor_press"
 				type: "item"
 			}]
-			x: 17.5d
-			y: -2.0d
+			x: 2.75d
+			y: -6.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -720,8 +710,8 @@
 				item: "ae2:silicon_press"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 2.0d
+			x: 2.75d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -735,8 +725,8 @@
 				item: "megacells:accumulation_processor_press"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 0.0d
+			x: 1.75d
+			y: -4.0d
 		}
 	]
 	title: "&b异星科技"
