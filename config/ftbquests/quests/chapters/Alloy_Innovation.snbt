@@ -4,39 +4,36 @@
 	default_quest_shape: ""
 	filename: "Alloy_Innovation"
 	group: "14CFC96B5B37F10B"
-	icon: "createmetallurgy:industrial_crucible"
+	icon: "create:mechanical_arm"
 	id: "7DDE0F8620589E02"
-	order_index: 2
+	order_index: 1
 	quest_links: [
 		{
 			id: "23F7CDA2CF32FD87"
 			linked_quest: "630FA0478B7DAAAA"
-			x: 0.5d
-			y: 18.5d
+			x: 4.5d
+			y: 9.0d
 		}
 		{
 			id: "7D4B174BC4A98DC9"
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
-			size: 2.0d
-			x: 17.0d
-			y: 6.0d
+			x: 3.5d
+			y: 16.5d
 		}
 		{
 			id: "7A11CD1763458CD5"
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"
-			size: 2.0d
-			x: 17.0d
-			y: 15.0d
+			x: 4.5d
+			y: 17.0d
 		}
 		{
 			id: "30F40F6C2AA7B4B8"
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
-			size: 2.0d
-			x: 17.0d
-			y: 10.5d
+			x: 5.5d
+			y: 16.5d
 		}
 	]
 	quests: [
@@ -50,7 +47,7 @@
 				type: "item"
 			}]
 			shape: "circle"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "你步入&e合金世界&r的&4第一块&r金属！"
 			tasks: [{
 				id: "611B7E2C375DC0F4"
@@ -58,7 +55,7 @@
 				type: "item"
 			}]
 			title: "这是？&e匠魂动力&r？"
-			x: 0.5d
+			x: -2.5d
 			y: 10.5d
 		}
 		{
@@ -83,7 +80,7 @@
 				type: "item"
 			}]
 			title: "获得烈焰人燃烧室！"
-			x: -5.0d
+			x: -6.0d
 			y: 10.5d
 		}
 		{
@@ -101,7 +98,7 @@
 				item: "create:empty_blaze_burner"
 				type: "item"
 			}]
-			x: -7.5d
+			x: -8.5d
 			y: 9.0d
 		}
 		{
@@ -120,8 +117,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 22.5d
+			x: 19.5d
+			y: 12.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -146,8 +143,8 @@
 				}
 				type: "item"
 			}]
-			x: 6.0d
-			y: 21.5d
+			x: 18.5d
+			y: 12.0d
 		}
 		{
 			dependencies: [
@@ -172,8 +169,8 @@
 				item: "create:electron_tube"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 16.0d
+			x: 14.0d
+			y: 12.0d
 		}
 		{
 			dependencies: [
@@ -193,8 +190,8 @@
 				item: "create:precision_mechanism"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 16.0d
+			x: 15.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -213,8 +210,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 22.5d
+			x: 17.5d
+			y: 12.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -224,14 +221,15 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			size: 1.0d
 			subtitle: "超超超方便的"
 			tasks: [{
 				id: "443AED8DD1F1757F"
 				item: "create_connected:empty_fan_catalyst"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 13.0d
+			x: 8.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["35B43C124186578F"]
@@ -242,6 +240,9 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
+			subtitle: "&e不与&r外界环境进行&e反应&r的&e鼓风机媒介"
 			tasks: [
 				{
 					id: "20EF1694803F00BE"
@@ -270,22 +271,23 @@
 				}
 			]
 			title: "鼓风机触媒们"
-			x: 8.5d
-			y: 14.5d
+			x: 8.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
 			description: [""]
 			id: "043C01E333AD7139"
-			size: 1.0d
+			shape: "gear"
+			size: 2.0d
 			subtitle: "&4超级超级超级好用&r的多流体储存罐！（最多八种流体）"
 			tasks: [{
 				id: "3F3576DB3D33FC4B"
 				item: "createfluidstuffs:multi_fluid_tank"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 13.0d
+			x: 10.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["271924B430C340EC"]
@@ -307,7 +309,7 @@
 				}
 			]
 			title: "直接制作烈焰人燃烧室"
-			x: -9.5d
+			x: -10.5d
 			y: 9.0d
 		}
 		{
@@ -327,8 +329,8 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 5.0d
-			y: 16.0d
+			x: 12.5d
+			y: 12.0d
 		}
 		{
 			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
@@ -349,8 +351,8 @@
 				}
 				type: "item"
 			}]
-			x: 3.5d
-			y: 15.5d
+			x: 11.5d
+			y: 12.5d
 		}
 		{
 			id: "2B3F1B42F03F00F3"
@@ -359,28 +361,8 @@
 				item: "create:rose_quartz"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["3EB042CCCB8D54FA"]
-			id: "5A7DF2A39D8808D4"
-			rewards: [{
-				count: 3
-				id: "3FDC5AACF2A8E7DD"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			size: 1.0d
-			subtitle: "超超超超巨大"
-			tasks: [{
-				id: "48488CE320D91D96"
-				item: "petrolsparts:colossal_cogwheel"
-				type: "item"
-			}]
-			title: "齿轮教父！"
-			x: 9.0d
-			y: 21.5d
+			x: 11.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -409,7 +391,7 @@
 				to_observe: "minecraft:blaze"
 				type: "observation"
 			}]
-			x: -7.5d
+			x: -8.5d
 			y: 12.0d
 		}
 		{
@@ -427,17 +409,20 @@
 				title: "&4下地狱喽！"
 				type: "dimension"
 			}]
-			x: -9.5d
+			x: -10.5d
 			y: 12.0d
 		}
 		{
-			dependencies: ["1BFF4599DDF0A236"]
+			dependencies: ["16E85851D21CB6A3"]
+			icon: "createmetallurgy:foundry_basin"
 			id: "45DE7575C6D8284E"
 			rewards: [{
 				id: "4B7FC6E96CE54841"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
 			subtitle: "熔铸盆&e最多&r只能容纳&49个同种物品！&r\\n使用时&e记得关闭&r熔铸盖上的&4观察窗&r哦！"
 			tasks: [
 				{
@@ -452,20 +437,23 @@
 				}
 			]
 			title: "融化流体！"
-			x: 1.5d
-			y: 16.0d
+			x: 1.0d
+			y: 12.0d
 		}
 		{
 			dependencies: [
 				"5A8FA422166974A0"
-				"1BFF4599DDF0A236"
+				"16E85851D21CB6A3"
 			]
+			icon: "createmetallurgy:casting_basin"
 			id: "0C68C84949B2A986"
 			rewards: [{
 				id: "0A0678B2C8B002AC"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
 			subtitle: "&e慢慢注佢&r~&4慢慢凝佢&r~"
 			tasks: [
 				{
@@ -480,21 +468,24 @@
 				}
 			]
 			title: "浇铸流体！"
-			x: 0.5d
-			y: 17.5d
+			x: 4.5d
+			y: 10.5d
 		}
 		{
 			dependencies: [
 				"45DE7575C6D8284E"
-				"1BFF4599DDF0A236"
 				"2D030C52645E7DDD"
+				"16E85851D21CB6A3"
 			]
+			icon: "createmetallurgy:foundry_mixer"
 			id: "5A8FA422166974A0"
 			rewards: [{
 				id: "7121702F1F43E0F2"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
 			subtitle: "使用时&e记得关闭&r玻璃熔铸盖上的&4观察窗&r哦！\\n别忘了熔铸盆可以&4直接输入&r到&e分液池&r哦！"
 			tasks: [
 				{
@@ -514,8 +505,8 @@
 				}
 			]
 			title: "融合流体！"
-			x: -0.5d
-			y: 16.0d
+			x: 1.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -539,8 +530,8 @@
 				type: "item"
 			}]
 			title: "浇筑模具"
-			x: 1.5d
-			y: 18.5d
+			x: 3.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -557,14 +548,14 @@
 				type: "checkmark"
 			}]
 			title: "&e什么&r？&4世界浇筑&r？"
-			x: -0.5d
-			y: 18.5d
+			x: 5.5d
+			y: 9.0d
 		}
 		{
 			dependencies: [
-				"16E85851D21CB6A3"
 				"18946F125B654A46"
 				"3BC1BB77B76F6873"
+				"0C68C84949B2A986"
 			]
 			dependency_requirement: "one_completed"
 			id: "4B6A896ECC72EA02"
@@ -574,18 +565,19 @@
 				random_bonus: 7
 				type: "item"
 			}]
-			size: 2.0d
+			size: 1.0d
 			subtitle: "从此正式进入&e机械动力中期阶段&r！可以开始做各种&4高级物品&r惹！"
 			tasks: [{
 				id: "5653C25A6C44E974"
 				item: "create:brass_ingot"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 9.0d
 			y: 10.5d
 		}
 		{
 			id: "18946F125B654A46"
+			size: 1.0d
 			subtitle: "&e铜粒&r和&e锌粒&r也可以直接加热搅拌为&e黄铜粒&r，但是&4效率低的令人发指&r（原版速度的&41/4&r）"
 			tasks: [{
 				id: "32211BB1EFA003B7"
@@ -593,24 +585,8 @@
 				type: "item"
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
-			x: 7.5d
-			y: 8.0d
-		}
-		{
-			dependencies: ["16E85851D21CB6A3"]
-			id: "1BFF4599DDF0A236"
-			shape: "square"
-			subtitle: "&4冶炼&r！&f启动&r！"
-			tasks: [{
-				icon: "createmetallurgy:industrial_crucible"
-				id: "4DABC2014362835E"
-				stat: "minecraft:play_time"
-				title: "冶金机械"
-				type: "stat"
-				value: 1
-			}]
-			x: 0.5d
-			y: 14.5d
+			x: 9.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -620,14 +596,15 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			size: 1.0d
 			subtitle: "我要对你&e指指点点"
 			tasks: [{
 				id: "61AF0CB4DE447DB3"
 				item: "create:brass_hand"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 13.0d
+			x: 11.5d
+			y: 10.5d
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
@@ -638,14 +615,16 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			shape: "gear"
+			size: 2.0d
 			subtitle: "神之手！我的神之手！回来了！"
 			tasks: [{
 				id: "5800325AA2E1CD95"
 				item: "create:deployer"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 14.5d
+			x: 14.5d
+			y: 10.5d
 		}
 		{
 			dependencies: [
@@ -663,11 +642,11 @@
 				type: "stat"
 				value: 1
 			}]
-			x: 7.5d
-			y: 17.5d
+			x: 14.5d
+			y: 13.5d
 		}
 		{
-			dependencies: ["1617656D855B84E9"]
+			dependencies: ["783AE5D1F35263E1"]
 			id: "3EB042CCCB8D54FA"
 			rewards: [{
 				count: 3
@@ -675,16 +654,16 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "rsquare"
-			size: 1.5d
+			shape: "gear"
+			size: 2.0d
 			subtitle: "从此开始&4动力合成&r！"
 			tasks: [{
 				id: "295AC43B4113918F"
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 20.5d
+			x: 18.5d
+			y: 10.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -701,8 +680,8 @@
 				item: "create:rotation_speed_controller"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 17.5d
+			x: 13.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -719,8 +698,8 @@
 				item: "create:brass_funnel"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 19.5d
+			x: 14.0d
+			y: 15.0d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -737,8 +716,8 @@
 				item: "create:display_link"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 19.5d
+			x: 15.0d
+			y: 15.0d
 		}
 		{
 			dependencies: ["7B7258CB2FDF4243"]
@@ -755,8 +734,8 @@
 				item: "create:brass_tunnel"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 19.5d
+			x: 14.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -773,8 +752,8 @@
 				item: "create:smart_chute"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 18.5d
+			x: 13.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -791,8 +770,8 @@
 				item: "create:content_observer"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 18.5d
+			x: 16.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -809,8 +788,8 @@
 				item: "create:mechanical_arm"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 17.5d
+			x: 16.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["307171D52C77BC74"]
@@ -821,8 +800,8 @@
 				item: "create:display_board"
 				type: "item"
 			}]
-			x: 9.5d
-			y: 19.5d
+			x: 15.0d
+			y: 16.5d
 		}
 		{
 			id: "1CD1D60A28A20E6A"
@@ -838,8 +817,8 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 15.5d
+			x: 1.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -858,8 +837,8 @@
 				item: "createmetallurgy:raw_wolframite"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 16.5d
+			x: 0.5d
+			y: 5.5d
 		}
 		{
 			dependencies: [
@@ -873,12 +852,13 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 16.0d
+			x: 1.0d
+			y: 7.0d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
+			dependencies: ["0C68C84949B2A986"]
 			id: "3BC1BB77B76F6873"
+			size: 1.0d
 			subtitle: "直接用普通&e搅拌器&r融合"
 			tasks: [{
 				id: "07A1132B9D7B73E4"
@@ -886,11 +866,14 @@
 				type: "checkmark"
 			}]
 			title: "或者你也可以先跳过&4熔融搅拌器"
-			x: 4.0d
-			y: 10.0d
+			x: 7.0d
+			y: 11.0d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: [
+				"6A2214FC1B93B320"
+				"6EB96008F21DAFBF"
+			]
 			description: [""]
 			id: "580C77852E71B685"
 			rewards: [{
@@ -899,18 +882,18 @@
 				random_bonus: 7
 				type: "item"
 			}]
-			size: 2.0d
+			size: 1.0d
 			subtitle: "太棒了！我可以开始制作&4大型冶金设施&r了！"
 			tasks: [{
 				id: "0117107DD13A9887"
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 17.0d
-			y: 13.0d
+			x: 5.5d
+			y: 14.5d
 		}
 		{
-			dependencies: ["20972AEC6EE6D9F8"]
+			dependencies: ["580C77852E71B685"]
 			description: ["可以容纳&e多种流体&r，安装&e熔铸炉组件&r以转变为&e熔铸炉&r\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
 			id: "0C0CD2BD5935D4CC"
 			shape: "square"
@@ -920,11 +903,11 @@
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
-			x: 21.0d
-			y: 13.0d
+			x: 6.5d
+			y: 15.5d
 		}
 		{
-			dependencies: ["580C77852E71B685"]
+			dependencies: ["0C0CD2BD5935D4CC"]
 			description: [
 				"&l&n&a热量机制&r：&e普通燃烧&r为&41TU&r，&9超级燃烧&r为是&42TU&r"
 				"&l&n&a执行配方&r：可以直接执行&e熔融配方&r、&e合金配方&r以及&4生物熔炼&r，但&e热量&r需要&4满足条件&r"
@@ -936,11 +919,14 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 13.0d
+			x: 6.5d
+			y: 17.0d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: [
+				"6A2214FC1B93B320"
+				"6EB96008F21DAFBF"
+			]
 			dependency_requirement: "one_completed"
 			description: [""]
 			id: "55E42ECE1CE4E99F"
@@ -952,15 +938,15 @@
 				type: "item"
 			}]
 			shape: "circle"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "什么？这是&4虚空传送&r？"
 			tasks: [{
 				id: "13E41F90BC43CE98"
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 17.0d
-			y: 8.0d
+			x: 3.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
@@ -980,8 +966,8 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 8.0d
+			x: 2.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -999,8 +985,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 21.0d
-			y: 8.0d
+			x: 1.0d
+			y: 17.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1017,8 +1003,8 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 20.5d
-			y: 9.0d
+			x: 2.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1035,11 +1021,11 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 20.5d
-			y: 7.0d
+			x: 1.0d
+			y: 15.5d
 		}
 		{
-			dependencies: ["4B6A896ECC72EA02"]
+			dependencies: ["6A2214FC1B93B320"]
 			id: "6EB96008F21DAFBF"
 			rewards: [{
 				id: "2C30E3F28E8F7CB7"
@@ -1047,7 +1033,7 @@
 				random_bonus: 7
 				type: "item"
 			}]
-			size: 2.0d
+			size: 1.0d
 			subtitle: "&e工业核心金属&r！&4钢铁&r！"
 			tasks: [{
 				id: "09380FFFDF782703"
@@ -1055,8 +1041,8 @@
 				type: "item"
 			}]
 			title: "大炼钢铁！"
-			x: 13.0d
-			y: 10.5d
+			x: 4.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["5A16AE172A0C7772"]
@@ -1075,8 +1061,8 @@
 				}
 				type: "item"
 			}]
-			x: 9.5d
-			y: 22.5d
+			x: 17.5d
+			y: 13.5d
 		}
 		{
 			dependencies: ["31418813B6B9A004"]
@@ -1094,12 +1080,12 @@
 				}
 			]
 			title: "别忘了垫上！"
-			x: 5.5d
-			y: 22.5d
+			x: 19.5d
+			y: 13.5d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
-			description: ["&e内燃机&r的魅力！"]
+			dependencies: ["6A2214FC1B93B320"]
+			description: [""]
 			id: "20B3A29ADFDF1D4A"
 			min_required_tasks: 1
 			rewards: [{
@@ -1109,7 +1095,7 @@
 				type: "item"
 			}]
 			shape: "circle"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
 			tasks: [{
 				id: "29B2C475B43E3FAC"
@@ -1117,11 +1103,11 @@
 				type: "item"
 			}]
 			title: "&e燃料&r！&4动力&r！"
-			x: 2.0d
-			y: 13.0d
+			x: 6.0d
+			y: 13.5d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
+			dependencies: ["6A2214FC1B93B320"]
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
@@ -1130,7 +1116,7 @@
 				type: "item"
 			}]
 			shape: "circle"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
 			tasks: [{
 				id: "0D7814DAE3E5E1E1"
@@ -1138,8 +1124,8 @@
 				type: "item"
 			}]
 			title: "步入&5电力时代&r！"
-			x: -1.0d
-			y: 13.0d
+			x: 3.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1152,17 +1138,38 @@
 				item: "minecraft:raw_iron"
 				type: "item"
 			}]
-			shape: "circle"
-			size: 1.0d
+			shape: "gear"
+			size: 2.0d
 			subtitle: "&e别丢错了东西哦！"
 			tasks: [{
 				id: "24A700BB34D9D347"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 23.5d
+			x: 22.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["0C68C84949B2A986"]
+			id: "6A2214FC1B93B320"
+			shape: "square"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "createmetallurgy:item/sturdy_whisk"
+					}
+				}
+				id: "5405A067E0489038"
+				stat: "minecraft:play_time"
+				title: "各种合金！"
+				type: "stat"
+				value: 1
+			}]
+			x: 4.5d
+			y: 13.5d
 		}
 	]
-	title: "&9合金突破"
+	title: "&9体系渐成 "
 }

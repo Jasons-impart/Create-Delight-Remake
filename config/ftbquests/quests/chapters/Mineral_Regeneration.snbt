@@ -33,6 +33,18 @@
 			x: -6.5d
 			y: 1.5d
 		}
+		{
+			id: "5F089DEDC62DC317"
+			linked_quest: "78396753AA774D5F"
+			x: -7.0d
+			y: 5.5d
+		}
+		{
+			id: "73EACFDD6452B3C1"
+			linked_quest: "26DADC947426CD52"
+			x: -6.0d
+			y: 5.5d
+		}
 	]
 	quests: [
 		{
@@ -93,7 +105,7 @@
 			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
 			shape: "hexagon"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "进行&5虚空采矿&r吧！"
 			tasks: [{
 				id: "1D7AB28B86CF3039"
@@ -367,7 +379,11 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["044C475554C01F99"]
+			dependencies: [
+				"044C475554C01F99"
+				"78396753AA774D5F"
+				"26DADC947426CD52"
+			]
 			id: "22AE46F2DB5C872F"
 			tasks: [{
 				id: "769B9EE81969BE88"
