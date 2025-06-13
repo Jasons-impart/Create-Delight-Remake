@@ -154,7 +154,7 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          name: "[ClickToUse]Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
@@ -437,7 +437,7 @@ jobs:
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[ServerPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          name: "[ServerPatch]${{ env.MODPACK_NAME }}-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
           path: |
             deleted_files.txt
             deploy-patch.sh
@@ -462,7 +462,7 @@ jobs:
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClientPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          name: "[ClientPatch]${{ env.MODPACK_NAME }}-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
           path: |
             deleted_files.txt
             deploy-patch.sh
