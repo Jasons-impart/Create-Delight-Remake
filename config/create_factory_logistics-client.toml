@@ -1,0 +1,4 @@
+#Style of font rendered inside stock keeper ui
+#Allowed Values: SMALL, LARGE, CREATE
+fontStyle = "CREATE"
+

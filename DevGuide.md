@@ -65,6 +65,12 @@
   - 渲染优化 https://www.mcmod.cn/class/12028.html
 - Sodium/Embeddium Extras
   - 渲染优化 https://www.mcmod.cn/class/5312.html
+- Vanillin
+  - 飞轮实体渲染优化 https://www.mcmod.cn/class/19260.html
+- Colorwheel
+  - 使得飞轮优化可以兼容光影 https://www.mcmod.cn/class/20111.html
+- Create Better FPS
+  - 机械动力在光影下的优化 https://www.mcmod.cn/class/18864.html
 - CullLessLeaves Reforged
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
@@ -95,9 +101,6 @@
   - 整合包当前使用已经会refill，但丢弃的时候不会refill，加入这个mod丢弃时会refill。
 
 # 考虑中的优化模组
-- Vanillin
-  - 实体渲染优化 https://www.curseforge.com/minecraft/mc-mods/vanillin
-  - 注：不兼容光影
 - Chunk Sending
   - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
 - Krypton Reforged
