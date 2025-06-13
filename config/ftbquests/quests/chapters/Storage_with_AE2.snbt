@@ -12,20 +12,20 @@
 			clothColor: 1908001
 		}
 	}
-	id: "34EC8C9716956C8E"
-	order_index: 6
+	id: "01CB4BE0BEAC0898"
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "1268F9D57D75D354"
+			id: "212D45FC4F877F5F"
 			rewards: [{
-				id: "3E56257A939EB869"
+				id: "535F70C0E19F6E54"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "546A45CF6C6EED31"
+				id: "11A0241BC9DD000D"
 				item: "sophisticatedbackpacks:crafting_upgrade"
 				type: "item"
 			}]
@@ -34,14 +34,14 @@
 		}
 		{
 			dependencies: ["43813D8660593458"]
-			id: "6CB83B142B7FB707"
+			id: "5A8842FB31F3AB40"
 			rewards: [{
-				id: "4BAC4AB52A76F032"
+				id: "0A61040FD291524C"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "75E3AD2464A4E6F0"
+				id: "37D6739D9291E915"
 				item: "sophisticatedbackpacks:upgrade_base"
 				type: "item"
 			}]
@@ -50,14 +50,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "7A13C2C9448883AF"
+			id: "4424B19F3B66AA95"
 			rewards: [{
-				id: "1E61B276B6114C37"
+				id: "7FABB822C8990F47"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "59745F6133515563"
+				id: "7013A03EBA53097C"
 				item: "sophisticatedbackpacks:pickup_upgrade"
 				type: "item"
 			}]
@@ -66,14 +66,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "12CE92727FB9400F"
+			id: "1D2518E88A97A7F8"
 			rewards: [{
-				id: "395D8244BF0FA867"
+				id: "628164600CC7B6B9"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "27BBD63A8D9E6AD6"
+				id: "1881E04FB7D279D5"
 				item: "sophisticatedbackpacks:filter_upgrade"
 				type: "item"
 			}]
@@ -82,14 +82,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "6862190534199A59"
+			id: "765AADF31F7DB126"
 			rewards: [{
-				id: "3AA3C0EF5D802422"
+				id: "190407A60B68EBC3"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "22B0D65326ACB905"
+				id: "68FCB3FF157A4AD8"
 				item: "sophisticatedbackpacks:magnet_upgrade"
 				type: "item"
 			}]
@@ -98,14 +98,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "461C6E26340FD370"
+			id: "78B26AA7D8186F36"
 			rewards: [{
-				id: "65D01AF8E79CDD8F"
+				id: "7029BB147B7CEA81"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "283C2DA2A9BC1088"
+				id: "5C303F64E47DC6E2"
 				item: "sophisticatedbackpacks:feeding_upgrade"
 				type: "item"
 			}]
@@ -114,14 +114,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "4B6F08D3619584DF"
+			id: "4EBB09AEBFCFECE0"
 			rewards: [{
-				id: "08528F83A9A5602D"
+				id: "12409598CE2259FB"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "04FAFD137C8B777C"
+				id: "7CF3ACDC2D64DECA"
 				item: "sophisticatedbackpacks:compacting_upgrade"
 				type: "item"
 			}]
@@ -130,14 +130,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "2269248762671B35"
+			id: "67788B043F6DCE54"
 			rewards: [{
-				id: "08C5644A739477B2"
+				id: "632994439C1BDFB7"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "36AC78A5DAA0DBF6"
+				id: "65BE7162C7253A10"
 				item: "sophisticatedbackpacks:void_upgrade"
 				type: "item"
 			}]
@@ -146,14 +146,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "29F7F2E0F7F20AF8"
+			id: "373308C1EBE1E8C3"
 			rewards: [{
-				id: "5B4A0C789A733CF5"
+				id: "6F76B1118CD1314E"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "6034A8D76F326E5A"
+				id: "079FED436BFFAB15"
 				item: "sophisticatedbackpacks:restock_upgrade"
 				type: "item"
 			}]
@@ -162,14 +162,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "6864F65415E69D8C"
+			id: "3BCC0DC31C77BB44"
 			rewards: [{
-				id: "6B1D02A3A2A5141C"
+				id: "45D1FA87A04D0D7D"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "58ADF368A39EF994"
+				id: "43A2EF9BEC5AD77C"
 				item: "sophisticatedbackpacks:deposit_upgrade"
 				type: "item"
 			}]
@@ -178,14 +178,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "17D94ADAABBE71A4"
+			id: "5CCAECABA50B98C1"
 			rewards: [{
-				id: "0A629573F1678CC6"
+				id: "5CE281090A5C7DC3"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "546239421C0653D0"
+				id: "45048619F5F7ABE8"
 				item: "sophisticatedbackpacks:refill_upgrade"
 				type: "item"
 			}]
@@ -194,14 +194,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "641A61495195B4B5"
+			id: "2A353F4DDE37E4B8"
 			rewards: [{
-				id: "0F88615CA51CDAEF"
+				id: "7F55D4E685380691"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "788DEFDF7F65D40E"
+				id: "1B8447A2F9059037"
 				item: "sophisticatedbackpacks:inception_upgrade"
 				type: "item"
 			}]
@@ -210,14 +210,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "69277AE7932158B1"
+			id: "207C5ECE5A2575C3"
 			rewards: [{
-				id: "3795665AB0398F40"
+				id: "028F345A4F31CC94"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "4426C2E07689C9E1"
+				id: "79ADF054003FDCE8"
 				item: "sophisticatedbackpacks:everlasting_upgrade"
 				type: "item"
 			}]
@@ -226,14 +226,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "2986E897F743884A"
+			id: "7E9BCC35149F5E41"
 			rewards: [{
-				id: "21EA8F15EBFE2047"
+				id: "5916D0E25F267660"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "0143F8A9C7B47BD9"
+				id: "61EAC57B4A25649E"
 				item: "sophisticatedbackpacks:smelting_upgrade"
 				type: "item"
 			}]
@@ -242,14 +242,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "1F30B72A2DA4C838"
+			id: "37A8048F625739E1"
 			rewards: [{
-				id: "623FBB2DA4A70C9E"
+				id: "36B3F77885C76A44"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "26CCFB41EC50DF4B"
+				id: "362ECE9A7C9B2739"
 				item: "sophisticatedbackpacks:smoking_upgrade"
 				type: "item"
 			}]
@@ -258,14 +258,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "0037B829D9FA68E4"
+			id: "4ADC5E70B4906069"
 			rewards: [{
-				id: "298CABD7CBBB8400"
+				id: "37E42FD2AF189D17"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "480A9C28080E40BB"
+				id: "0D3151FC00E3F190"
 				item: "sophisticatedbackpacks:blasting_upgrade"
 				type: "item"
 			}]
@@ -274,14 +274,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "2995C14095666E1E"
+			id: "4B9D0E5620B298F9"
 			rewards: [{
-				id: "2652FE87EC889ECD"
+				id: "5E3B47ABB8048009"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "0AE56238B00E5EDF"
+				id: "792A86DB377D8340"
 				item: "sophisticatedbackpacks:stonecutter_upgrade"
 				type: "item"
 			}]
@@ -290,14 +290,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "6AC880AE68D2D45A"
+			id: "79D47CF237686D87"
 			rewards: [{
-				id: "26D71AA52F746305"
+				id: "5EDE34D7EA22A4EA"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "06BB090F5174C40C"
+				id: "48583B450BEE6BD5"
 				item: "sophisticatedbackpacks:stack_upgrade_tier_1"
 				type: "item"
 			}]
@@ -306,14 +306,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "12986439CFFDF46A"
+			id: "56E17E4AF76E0098"
 			rewards: [{
-				id: "6BE4CD83436A2719"
+				id: "4A7568648A5072BD"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "6A7A53BFE83C89DB"
+				id: "76F293DBC25B7944"
 				item: "sophisticatedbackpacks:jukebox_upgrade"
 				type: "item"
 			}]
@@ -322,14 +322,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "2E50E758A549D655"
+			id: "5042ECEDE6CE024F"
 			rewards: [{
-				id: "52CE71FC192EE581"
+				id: "2F0309C35D5650A9"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "781D5913967808D3"
+				id: "23E72EBE0F7C4E48"
 				item: "sophisticatedbackpacks:tool_swapper_upgrade"
 				type: "item"
 			}]
@@ -338,14 +338,14 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
-			id: "6C07D22D95B3ED64"
+			id: "1D747AAD7D79127E"
 			rewards: [{
-				id: "7DBCB2019C83A2B1"
+				id: "402592EB51D17D32"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "61D922B4BEC0B992"
+				id: "1784E10227807F44"
 				item: "sophisticatedbackpacks:tank_upgrade"
 				type: "item"
 			}]
@@ -354,14 +354,14 @@
 		}
 		{
 			dependencies: ["6AC880AE68D2D45A"]
-			id: "67A1D17C6AFFB582"
+			id: "4E66415A14BA03F7"
 			rewards: [{
-				id: "4154F15CD42CF3FB"
+				id: "08C674016466CEC1"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "65D41AB93724E953"
+				id: "2D806074D412D6D9"
 				item: "sophisticatedbackpacks:stack_upgrade_tier_2"
 				type: "item"
 			}]
@@ -373,14 +373,14 @@
 				"67A1D17C6AFFB582"
 				"6AC880AE68D2D45A"
 			]
-			id: "15342988E94D8C86"
+			id: "2D1A56E47491C5AE"
 			rewards: [{
-				id: "31E072BA55203C0A"
+				id: "354EC4FB2A9BC067"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "7293EC6719E37DD4"
+				id: "73711C5F2A79B018"
 				item: "sophisticatedbackpacks:stack_upgrade_tier_3"
 				type: "item"
 			}]
@@ -393,14 +393,14 @@
 				"15342988E94D8C86"
 				"6AC880AE68D2D45A"
 			]
-			id: "66D3EF87F856DEA0"
+			id: "41E00136DAD74179"
 			rewards: [{
-				id: "7331BA5ED959C0C6"
+				id: "1D1045000D1CA71A"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "08D1A8DCCA271D67"
+				id: "39C89C1586EB6FEB"
 				item: "sophisticatedbackpacks:stack_upgrade_tier_4"
 				type: "item"
 			}]
@@ -409,14 +409,14 @@
 		}
 		{
 			dependencies: ["7A13C2C9448883AF"]
-			id: "1DD9F042EAD99A45"
+			id: "49B78958A956666C"
 			rewards: [{
-				id: "2D8EC2593D06E70E"
+				id: "61A2A10006A5CD2F"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "2FDE92EC1DDD46DB"
+				id: "5EF8D50380966835"
 				item: "sophisticatedbackpacks:advanced_pickup_upgrade"
 				type: "item"
 			}]
@@ -425,14 +425,14 @@
 		}
 		{
 			dependencies: ["12CE92727FB9400F"]
-			id: "13A62CE93299B5FB"
+			id: "5C7096109E9B1DC0"
 			rewards: [{
-				id: "2E34A9BB00DD9AAD"
+				id: "3376C783EBA899B5"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "53ACD7C0D698DF02"
+				id: "35C4DBFACEB25FA7"
 				item: "sophisticatedbackpacks:advanced_filter_upgrade"
 				type: "item"
 			}]
@@ -441,14 +441,14 @@
 		}
 		{
 			dependencies: ["6862190534199A59"]
-			id: "4D0A44C255CB9C5F"
+			id: "35C3D5E7871F00F0"
 			rewards: [{
-				id: "0DE0D9A0315D59DD"
+				id: "252570506F93DF4B"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "338BE78FB9293434"
+				id: "36A6D498B3C2EEC8"
 				item: "sophisticatedbackpacks:advanced_magnet_upgrade"
 				type: "item"
 			}]
@@ -457,14 +457,14 @@
 		}
 		{
 			dependencies: ["461C6E26340FD370"]
-			id: "34C26DD5E6377E97"
+			id: "718CAD0956C643E2"
 			rewards: [{
-				id: "67258640844F3A23"
+				id: "4EF963A45AFAFE94"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "5B4DE752E440BD3C"
+				id: "255C8E3C18864FC3"
 				item: "sophisticatedbackpacks:advanced_feeding_upgrade"
 				type: "item"
 			}]
@@ -473,14 +473,14 @@
 		}
 		{
 			dependencies: ["4B6F08D3619584DF"]
-			id: "1262900483306A0C"
+			id: "3C6AEDE920843788"
 			rewards: [{
-				id: "168E5AA475BF53AF"
+				id: "4B8707511DEC6ADD"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "73482DE7758F9A3B"
+				id: "01B04D828E078F1D"
 				item: "sophisticatedbackpacks:advanced_compacting_upgrade"
 				type: "item"
 			}]
@@ -489,14 +489,14 @@
 		}
 		{
 			dependencies: ["2269248762671B35"]
-			id: "2671A9CCA9CFB94E"
+			id: "0AA09567F9895950"
 			rewards: [{
-				id: "58472A660318967A"
+				id: "4D704E6F0DC8BF44"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "57C7A4AB6CECDF0C"
+				id: "7E1E7059FF8B1A07"
 				item: "sophisticatedbackpacks:advanced_void_upgrade"
 				type: "item"
 			}]
@@ -505,14 +505,14 @@
 		}
 		{
 			dependencies: ["2986E897F743884A"]
-			id: "0FEE33EF99BF377F"
+			id: "49B08ADFC492A264"
 			rewards: [{
-				id: "5CB730082CD7CEB1"
+				id: "011D3E86AABCBDE6"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "098AEA22ECBD6788"
+				id: "6D70D188389086E6"
 				item: "sophisticatedbackpacks:auto_smelting_upgrade"
 				type: "item"
 			}]
@@ -521,14 +521,14 @@
 		}
 		{
 			dependencies: ["1F30B72A2DA4C838"]
-			id: "37E6E726631DA05A"
+			id: "51119B3CC76CD366"
 			rewards: [{
-				id: "7982045A555C9C84"
+				id: "6A619BE379CDBF2B"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "76E284B3BDB5781E"
+				id: "2CCA6A7B9984366F"
 				item: "sophisticatedbackpacks:auto_smoking_upgrade"
 				type: "item"
 			}]
@@ -537,14 +537,14 @@
 		}
 		{
 			dependencies: ["0037B829D9FA68E4"]
-			id: "01B9BC213A708345"
+			id: "2C4FA234243F39F4"
 			rewards: [{
-				id: "7ED5B4251C02E064"
+				id: "72D7CF3CB0EA0531"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "778F94C4435C2CE0"
+				id: "688663C3AD0E2CB3"
 				item: "sophisticatedbackpacks:auto_blasting_upgrade"
 				type: "item"
 			}]
@@ -553,14 +553,14 @@
 		}
 		{
 			dependencies: ["2E50E758A549D655"]
-			id: "703FC2BEDF4C9BC7"
+			id: "5BA7E05BC3012EEA"
 			rewards: [{
-				id: "47522F40DA97D7A5"
+				id: "605AAE72B3DF302E"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "79B4860B6B59A071"
+				id: "6364188269B1B1D9"
 				item: "sophisticatedbackpacks:advanced_tool_swapper_upgrade"
 				type: "item"
 			}]
@@ -569,14 +569,14 @@
 		}
 		{
 			dependencies: ["29F7F2E0F7F20AF8"]
-			id: "5CDCD106FD89BAD6"
+			id: "51356C10E9A815D9"
 			rewards: [{
-				id: "6B58157E62F21393"
+				id: "2369CC5E915EDD25"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "7831352AD077DC94"
+				id: "58900521DCF6F556"
 				item: "sophisticatedbackpacks:advanced_restock_upgrade"
 				type: "item"
 			}]
@@ -585,14 +585,14 @@
 		}
 		{
 			dependencies: ["6864F65415E69D8C"]
-			id: "28C9A5E3525878DE"
+			id: "7697F30CAEF59836"
 			rewards: [{
-				id: "7C961FE5218BA950"
+				id: "48AF4CA0E547E10E"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "1A4C73EBBBB06E9D"
+				id: "4E67F41BDDF91419"
 				item: "sophisticatedbackpacks:advanced_deposit_upgrade"
 				type: "item"
 			}]
@@ -601,14 +601,14 @@
 		}
 		{
 			dependencies: ["17D94ADAABBE71A4"]
-			id: "6233FB9B5DD57C91"
+			id: "2AAB9FD3D957EA43"
 			rewards: [{
-				id: "3F73A36B2081DE13"
+				id: "6460D4462C7D1AFD"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
 			tasks: [{
-				id: "1066BA555F72B121"
+				id: "4F24D689E76BBC03"
 				item: "sophisticatedbackpacks:advanced_refill_upgrade"
 				type: "item"
 			}]
@@ -617,10 +617,10 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			id: "268EA9B525679B29"
+			id: "63A6454507797CF5"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{
-				id: "7BA5B3C445C62800"
+				id: "3668531804184C6D"
 				item: "functionalstorage:oak_1"
 				type: "item"
 			}]
@@ -629,16 +629,16 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			id: "4ED30BB3B015BE83"
+			id: "49B46FE0DA8CE1A8"
 			subtitle: "压缩抽屉的两类的版本"
 			tasks: [
 				{
-					id: "02D65FA265D22551"
+					id: "353837A5C18C3384"
 					item: "functionalstorage:simple_compacting_drawer"
 					type: "item"
 				}
 				{
-					id: "07F30598B92EF87F"
+					id: "2BB41B2773992EC6"
 					item: "functionalstorage:compacting_drawer"
 					type: "item"
 				}
@@ -648,9 +648,9 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			id: "2AE07B93F6BDC908"
+			id: "60F34A4EEE847B24"
 			tasks: [{
-				id: "3F733345FDC256C1"
+				id: "14548B40C97E2CFB"
 				item: {
 					Count: 1
 					id: "functionalstorage:linking_tool"
@@ -663,9 +663,9 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			id: "5200300840269F9E"
+			id: "656109883E440450"
 			tasks: [{
-				id: "5454B73CE30FC6EC"
+				id: "15384728C631311C"
 				item: "functionalstorage:configuration_tool"
 				type: "item"
 			}]
@@ -673,10 +673,10 @@
 			y: -3.0d
 		}
 		{
-			id: "0128B2E730D8FCB3"
+			id: "058BD79FFEA654A1"
 			shape: "square"
 			tasks: [{
-				id: "63D7CA3A5FBB5ABA"
+				id: "057F8D6C6948EB9C"
 				item: "ae2:crafting_terminal"
 				type: "item"
 			}]
@@ -685,9 +685,9 @@
 		}
 		{
 			dependencies: ["0128B2E730D8FCB3"]
-			id: "66BB6D3AD30D249B"
+			id: "3CA1606C15CE0DBC"
 			tasks: [{
-				id: "770E290F3095608E"
+				id: "48012ED076CDC4BC"
 				item: "ae2:wireless_crafting_terminal"
 				type: "item"
 			}]
@@ -696,10 +696,10 @@
 		}
 		{
 			dependencies: ["0128B2E730D8FCB3"]
-			id: "52A034C9BC79BD54"
+			id: "02CB85152D2D818A"
 			size: 1.0d
 			tasks: [{
-				id: "7B59E0EB23983B1A"
+				id: "25F1837824D2F723"
 				item: "ae2:fluix_glass_cable"
 				type: "item"
 			}]
@@ -708,15 +708,15 @@
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
-			id: "1C774B6F6F594D44"
+			id: "37B88749088FB2E4"
 			tasks: [
 				{
-					id: "77051DC239F680E4"
+					id: "2EC6535AA5C51C3E"
 					item: "ae2:drive"
 					type: "item"
 				}
 				{
-					id: "57DA1DB14625B61D"
+					id: "179D440A9B82D7B2"
 					item: "expatternprovider:ex_drive"
 					type: "item"
 				}
@@ -726,9 +726,9 @@
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
-			id: "4D21060946DAD49C"
+			id: "5CBEE5C13BADB864"
 			tasks: [{
-				id: "426E0972A30D61BA"
+				id: "2392F700088647A5"
 				item: "ae2:storage_bus"
 				type: "item"
 			}]
@@ -737,9 +737,9 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
-			id: "5E25B67858E6E950"
+			id: "439924F4EC78D2CC"
 			tasks: [{
-				id: "027346D2EE52B860"
+				id: "24AE47850CEE77C2"
 				item: "ae2:interface"
 				type: "item"
 			}]
@@ -748,15 +748,15 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
-			id: "65877729DB7620EF"
+			id: "07C252E24CFECE08"
 			tasks: [
 				{
-					id: "5434E09520731285"
+					id: "27ECC773418BC160"
 					item: "create:item_vault"
 					type: "item"
 				}
 				{
-					id: "6A8023BC6226CCCE"
+					id: "74555A10F18DC4CD"
 					item: {
 						Count: 1
 						id: "itemfilters:tag"
@@ -767,7 +767,7 @@
 					type: "item"
 				}
 				{
-					id: "7EC1193960BE8A53"
+					id: "642F14AA4E9ED3B4"
 					item: "create_connected:item_silo"
 					type: "item"
 				}
@@ -782,10 +782,10 @@
 				"使用&e连接工具&r右击会将其存入连接工具内，此后&e点击其他抽屉&r便可将该抽屉连入连接工具记载的存储控制器。"
 				"向存储控制器内使用物流方式输入物品时，物品会被自动送往合适的已连接的抽屉。从存储控制器使用物流方式取出物品，物品也会被从合适的抽屉中取出。"
 			]
-			id: "262E66AD49F385AC"
+			id: "2CA4B8BC9DCAE125"
 			subtitle: "人称小AE"
 			tasks: [{
-				id: "7B0C845C23643802"
+				id: "509B9887127DD39D"
 				item: "functionalstorage:storage_controller"
 				type: "item"
 			}]
@@ -799,9 +799,9 @@
 				"可以被RS和AE的外部储存面板／ME储存总线检索到，且可以通过提高优先级的方式让不可堆叠的物品直接进入军械柜，其他可堆叠的进入其他网络内的容器。"
 				"各种本体可以堆叠但因NBT而不能叠加的物品不可以进入军械柜 。（如各类方块，储罐）"
 			]
-			id: "09470B72A195876A"
+			id: "53C53310C7DDA31C"
 			tasks: [{
-				id: "4A1D070CCF8F0948"
+				id: "657623436E1A0558"
 				item: "functionalstorage:armory_cabinet"
 				type: "item"
 			}]
@@ -810,9 +810,9 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
-			id: "43813D8660593458"
+			id: "3B7CFE897753EC80"
 			tasks: [{
-				id: "769D44B2B6889E1B"
+				id: "40C94D5D88F4CBD7"
 				item: "sophisticatedbackpacks:backpack"
 				type: "item"
 			}]
@@ -821,9 +821,9 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			id: "28E3A94AB667BC29"
+			id: "340BFC06BA10C763"
 			tasks: [{
-				id: "6FF431B1F700C128"
+				id: "31260E3E231374D2"
 				item: "functionalstorage:fluid_1"
 				type: "item"
 			}]
@@ -836,30 +836,30 @@
 				"4ED30BB3B015BE83"
 				"28E3A94AB667BC29"
 			]
-			id: "1EB43DB20717F9BE"
+			id: "534DAE5FFF21AE30"
 			tasks: [
 				{
-					id: "0B110F9AE889CD19"
+					id: "7833A0D22FF2427B"
 					item: "functionalstorage:copper_upgrade"
 					type: "item"
 				}
 				{
-					id: "00E438B36A5D9372"
+					id: "4435F02A18AED3B0"
 					item: "functionalstorage:gold_upgrade"
 					type: "item"
 				}
 				{
-					id: "0CDEAD3BCCD81843"
+					id: "2CB9542CB6DFCF1A"
 					item: "functionalstorage:diamond_upgrade"
 					type: "item"
 				}
 				{
-					id: "3BC934464374127D"
+					id: "3B892049A5531361"
 					item: "functionalstorage:netherite_upgrade"
 					type: "item"
 				}
 				{
-					id: "3E349519993367CF"
+					id: "6A447C971CC68EE1"
 					item: "functionalstorage:iron_downgrade"
 					type: "item"
 				}
@@ -881,30 +881,30 @@
 				"收集升级：使得容器可以像漏斗一样收入掉落物"
 				"红石升级：用于选择输出信号的栏位"
 			]
-			id: "3E6A29C20A26AE57"
+			id: "3CB6975E3611F1E7"
 			tasks: [
 				{
-					id: "0A1A1D52FA447C3B"
+					id: "716A5837FEFEB385"
 					item: "functionalstorage:collector_upgrade"
 					type: "item"
 				}
 				{
-					id: "208250950A2443E5"
+					id: "21B7ED3FB7C837D0"
 					item: "functionalstorage:puller_upgrade"
 					type: "item"
 				}
 				{
-					id: "55C86989B1EA2034"
+					id: "4C5F16E5064C5AD6"
 					item: "functionalstorage:pusher_upgrade"
 					type: "item"
 				}
 				{
-					id: "2A5884229DC5058F"
+					id: "11DFAB5C1C5A30EB"
 					item: "functionalstorage:void_upgrade"
 					type: "item"
 				}
 				{
-					id: "5B17005F01279F45"
+					id: "7608D066C5864714"
 					item: {
 						Count: 1
 						id: "functionalstorage:redstone_upgrade"
@@ -919,10 +919,10 @@
 		}
 		{
 			dependencies: ["1C774B6F6F594D44"]
-			id: "1E2D3B6373DCB6D9"
+			id: "04DDCC0D34BCE845"
 			tasks: [
 				{
-					id: "5AE0AF3C09BD88D4"
+					id: "4B6600C3DC961715"
 					item: {
 						Count: 1
 						id: "ae2:item_storage_cell_1k"
@@ -931,7 +931,7 @@
 					type: "item"
 				}
 				{
-					id: "6DC97FC2CEBAEFDB"
+					id: "154D1930DD31ADFF"
 					item: {
 						Count: 1
 						id: "ae2:fluid_storage_cell_1k"
@@ -940,7 +940,7 @@
 					type: "item"
 				}
 				{
-					id: "39598CB7F2D4E4E4"
+					id: "04D11A87DF34215A"
 					item: {
 						Count: 1
 						id: "ae2things:disk_drive_1k"
@@ -949,7 +949,7 @@
 					type: "item"
 				}
 				{
-					id: "2F00C25E7A1862FA"
+					id: "41246FB573873F12"
 					item: {
 						Count: 1
 						id: "megacells:item_storage_cell_1m"
@@ -958,7 +958,7 @@
 					type: "item"
 				}
 				{
-					id: "6981AC00862DB803"
+					id: "5F9E2CA4DDC4B8EE"
 					item: {
 						Count: 1
 						id: "megacells:fluid_storage_cell_1m"
@@ -972,9 +972,9 @@
 		}
 		{
 			description: ["存储640个物品(无视物品的堆叠上限，只计数量)"]
-			id: "525EEC0BD9930D59"
+			id: "7112B291FA445E79"
 			tasks: [{
-				id: "10E98E30B2374575"
+				id: "2A13584F24B87C94"
 				item: "quark:crate"
 				type: "item"
 			}]

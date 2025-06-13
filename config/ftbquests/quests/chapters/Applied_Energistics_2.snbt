@@ -32,7 +32,7 @@
 			y: 23.5d
 		}
 		{
-			height: 1.0d
+			height: 0.8d
 			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
 			rotation: 0.0d
 			width: 1.0d
@@ -40,7 +40,7 @@
 			y: 23.5d
 		}
 		{
-			height: 1.0d
+			height: 0.8d
 			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
 			rotation: 0.0d
 			width: 1.0d
@@ -72,7 +72,7 @@
 			y: 22.65d
 		}
 		{
-			height: 1.0d
+			height: 0.8d
 			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
 			rotation: 0.0d
 			width: 1.0d
@@ -95,8 +95,368 @@
 			x: 6.0d
 			y: 22.65d
 		}
+		{
+			height: 3.2d
+			image: "createutilities:block/palettes/amethyst_tiles"
+			rotation: 0.0d
+			width: 3.2d
+			x: -3.0d
+			y: 32.0d
+		}
+		{
+			height: 3.0d
+			image: "ae2:part/cable/core/glass/purple"
+			rotation: 0.0d
+			width: 3.0d
+			x: -3.0d
+			y: 27.0d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:item/initial_processing_of_printed_accumulation_processor"
+			rotation: 0.0d
+			width: 3.0d
+			x: -3.5d
+			y: 39.0d
+		}
+		{
+			height: 1.2d
+			image: "ae2:block/sky_stone_tank"
+			rotation: 0.0d
+			width: 1.2d
+			x: 0.0d
+			y: 32.0d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:item/universal_press"
+			rotation: 0.0d
+			width: 4.0d
+			x: 2.0d
+			y: 35.0d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:item/incomplete_crystal_fixer"
+			rotation: 0.0d
+			width: 3.0d
+			x: 2.0d
+			y: 29.5d
+		}
+		{
+			height: 3.0d
+			hover: ["建议找到神秘方块后先完成此任务再破坏"]
+			image: "ae2:block/mysterious_cube_end_emissive"
+			rotation: 0.0d
+			width: 3.0d
+			x: 2.0d
+			y: 32.0d
+		}
+		{
+			height: 3.0d
+			image: "ae2:item/spatial_cell_component_2"
+			rotation: 0.0d
+			width: 3.0d
+			x: 12.0d
+			y: 29.5d
+		}
+		{
+			height: 1.0d
+			image: "ae2:item/certus_quartz_crystal_charged"
+			order: 2
+			rotation: 0.0d
+			width: 1.0d
+			x: 7.5d
+			y: 30.5d
+		}
+		{
+			height: 1.5d
+			image: "createdelight:item/quartz_vibrant_glass_parts"
+			rotation: 0.0d
+			width: 1.5d
+			x: 7.5d
+			y: 31.0d
+		}
+		{
+			height: 0.8d
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 7.0d
+			y: 23.5d
+		}
+		{
+			height: 1.0d
+			image: "ae2:item/certus_quartz_dust"
+			rotation: 0.0d
+			width: 1.0d
+			x: 8.0d
+			y: 23.0d
+		}
+		{
+			height: 1.1d
+			image: "ae2:item/certus_quartz_crystal"
+			order: 2
+			rotation: 0.0d
+			width: 1.1d
+			x: 4.5d
+			y: 30.5d
+		}
+		{
+			height: 1.0d
+			image: "ae2:item/certus_quartz_crystal"
+			rotation: 0.0d
+			width: 1.0d
+			x: 8.0d
+			y: 24.0d
+		}
+		{
+			height: 1.5d
+			image: "createdelight:item/quartz_glass_parts"
+			rotation: 0.0d
+			width: 1.5d
+			x: 4.5d
+			y: 31.0d
+		}
+		{
+			height: 3.0d
+			hover: ["此处为任意能源元件"]
+			image: "createdelight:textures/gui/ae2__dense_energy_cell_light.png"
+			order: 12
+			rotation: 0.0d
+			width: 3.0d
+			x: 25.0d
+			y: 29.0d
+		}
+		{
+			height: 3.0d
+			hover: ["空间塔(此处方块为空间IO接口)"]
+			image: "createdelight:textures/gui/ae2__spatial_io_port.png"
+			order: 13
+			rotation: 0.0d
+			width: 3.0d
+			x: 26.0d
+			y: 29.5d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 4
+			rotation: 0.0d
+			width: 3.0d
+			x: 28.0d
+			y: 27.5d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 8
+			rotation: 0.0d
+			width: 3.0d
+			x: 28.0d
+			y: 29.5d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 7
+			rotation: 0.0d
+			width: 3.0d
+			x: 26.0d
+			y: 25.5d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 5
+			rotation: 0.0d
+			width: 3.0d
+			x: 27.0d
+			y: 28.0d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 7
+			rotation: 0.0d
+			width: 3.0d
+			x: 27.0d
+			y: 29.0d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			order: 6
+			rotation: 0.0d
+			width: 3.0d
+			x: 26.0d
+			y: 27.0d
+		}
+		{
+			height: 3.0d
+			image: "createdelight:textures/gui/ae2__spatial_pylon.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: 26.0d
+			y: 28.5d
+		}
+		{
+			height: 3.0d
+			image: "ae2:block/controller_lights"
+			order: 1
+			rotation: 0.0d
+			width: 3.0d
+			x: 12.0d
+			y: 32.0d
+		}
+		{
+			height: 3.0d
+			image: "ae2:block/controller"
+			rotation: 0.0d
+			width: 3.0d
+			x: 12.0d
+			y: 32.0d
+		}
+		{
+			height: 1.0d
+			image: "minecraft:item/wooden_pickaxe"
+			rotation: 0.0d
+			width: 1.0d
+			x: 7.0d
+			y: 22.5d
+		}
+		{
+			height: 0.8d
+			hover: ["使用可以充能机器对赛特斯石英水晶充能"]
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: 6.0d
+			y: 31.0d
+		}
+		{
+			height: 3.0d
+			image: "expatternprovider:block/wireless_connect_off"
+			rotation: 0.0d
+			width: 3.0d
+			x: 19.0d
+			y: 27.0d
+		}
+		{
+			height: 1.5d
+			image: "createdelight:item/quantum_field_panel"
+			rotation: 0.0d
+			width: 1.5d
+			x: 19.0d
+			y: 27.0d
+		}
+		{
+			height: 2.0d
+			image: "ae2:item/spatial_storage_cell_128"
+			rotation: 0.0d
+			width: 2.0d
+			x: 17.0d
+			y: 31.5d
+		}
+		{
+			height: 2.0d
+			image: "megacells:item/cell/standard/item_storage_cell_256m"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.5d
+			y: 34.0d
+		}
+		{
+			height: 2.0d
+			image: "megacells:item/cell/standard/fluid_storage_cell_256m"
+			rotation: 0.0d
+			width: 2.0d
+			x: 13.0d
+			y: 37.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 2
+			rotation: 0.0d
+			width: 2.0d
+			x: 27.5d
+			y: 33.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 2
+			rotation: 0.0d
+			width: 2.0d
+			x: 25.5d
+			y: 32.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 3
+			rotation: 0.0d
+			width: 2.0d
+			x: 26.5d
+			y: 33.0d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: 25.5d
+			y: 33.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 25.5d
+			y: 34.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 3
+			rotation: 0.0d
+			width: 2.0d
+			x: 27.5d
+			y: 34.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 2
+			rotation: 0.0d
+			width: 2.0d
+			x: 27.5d
+			y: 35.5d
+		}
+		{
+			height: 2.0d
+			image: "createdelight:textures/gui/ae2_quantum_ring.png"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: 26.5d
+			y: 35.0d
+		}
+		{
+			height: 2.0d
+			hover: ["量子网桥"]
+			image: "createdelight:textures/gui/ae2_quantum_link.png"
+			order: 2
+			rotation: 0.0d
+			width: 2.0d
+			x: 26.5d
+			y: 34.0d
+		}
 	]
-	order_index: 8
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -521,6 +881,7 @@
 			]
 			icon: "ae2:flawless_budding_quartz"
 			id: "7F381046ADE230B3"
+			shape: "square"
 			tasks: [{
 				elapsedTime: 1L
 				icon: "ae2:flawless_budding_quartz"
@@ -562,6 +923,7 @@
 					type: "item"
 				}
 			]
+			shape: "rsquare"
 			size: 2.0d
 			subtitle: "不想搓一堆AE玩意的看过来"
 			tasks: [{
@@ -643,6 +1005,7 @@
 				"而&e无暇&r无论怎样都会降低一个等级，所以请使用&e机械动力的矿车装配站&r或者&eae的空间塔&r将其带走，这边建议使用矿车装配站。"
 			]
 			id: "355B0356B722C742"
+			shape: "square"
 			size: 1.5d
 			subtitle: "借由他人，寻找自我"
 			tasks: [{
@@ -742,7 +1105,7 @@
 				"区块内有陨石时，陨石罗盘会高速旋转；大范围内都没有陨石则会低速旋转。"
 			]
 			id: "3988ED516D114784"
-			subtitle: "使用陨石罗盘可以寻找到最近的陨石"
+			subtitle: "使用陨石罗盘可以寻找到最近的陨石(其实指的是神秘方块)"
 			tasks: [{
 				id: "192B5FF4023820C1"
 				item: "ae2:meteorite_compass"
@@ -756,6 +1119,7 @@
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
 			icon: "create:brass_hand"
 			id: "7BD1FAA99970A4B2"
+			shape: "rsquare"
 			size: 2.0d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
 			tasks: [{
@@ -787,6 +1151,7 @@
 				"7BBCB285DAC215D6"
 				"6DEFC96B803FBCCC"
 			]
+			icon: "ae2:printed_logic_processor"
 			id: "614A05331AB5461E"
 			tasks: [
 				{
@@ -808,6 +1173,7 @@
 				"7BBCB285DAC215D6"
 				"5BECCA0064521A89"
 			]
+			icon: "ae2:printed_calculation_processor"
 			id: "553A46B5D4145655"
 			tasks: [
 				{
@@ -829,6 +1195,7 @@
 				"7BBCB285DAC215D6"
 				"5BB0AC8AD53D1A5A"
 			]
+			icon: "megacells:printed_accumulation_processor"
 			id: "452DE0751B904A74"
 			tasks: [
 				{
@@ -850,6 +1217,7 @@
 				"7BBCB285DAC215D6"
 				"01AA2552250F710A"
 			]
+			icon: "ae2:printed_engineering_processor"
 			id: "6B3B3C96CDBD584F"
 			tasks: [
 				{
@@ -866,7 +1234,7 @@
 							value: "forge:gems/diamond"
 						}
 					}
-					title: "Any #forge:gems/diamond"
+					title: "Any #forge:gems/diamond(任何钻石词条物品)"
 					type: "item"
 				}
 			]
@@ -878,6 +1246,7 @@
 				"7BBCB285DAC215D6"
 				"559EBDEF50D42ED4"
 			]
+			icon: "ae2:printed_silicon"
 			id: "3F7C7683EF46745D"
 			tasks: [
 				{
@@ -910,6 +1279,7 @@
 		{
 			dependencies: ["7F381046ADE230B3"]
 			id: "292ADE53BBE862DB"
+			shape: "diamond"
 			size: 1.5d
 			subtitle: "通过挖掘母岩上的赛特斯石英簇获取，如果赛特斯石英未长成则会获取到赛特斯石英粉"
 			tasks: [{
@@ -923,6 +1293,7 @@
 		{
 			dependencies: ["6809B16089E6CDA2"]
 			id: "66F67F6540617C12"
+			shape: "diamond"
 			tasks: [{
 				id: "086F84CE78807206"
 				item: "ae2:charged_certus_quartz_crystal"
@@ -1002,6 +1373,7 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
+			shape: "square"
 			size: 2.0d
 			subtitle: "AEmod的核心"
 			tasks: [{
@@ -1015,6 +1387,7 @@
 		{
 			dependencies: ["66F67F6540617C12"]
 			id: "4CBACEC15826AB34"
+			shape: "diamond"
 			subtitle: "将赛特斯石英，下界石英，红石丢入水中即可获得"
 			tasks: [{
 				id: "39CBA19739044ABF"
@@ -1309,6 +1682,7 @@
 				"两个量子网桥为一对，需要在链接仓内放置&e成对的量子缠绕态奇点&r，当&e两端都被加载且都有电时&r工作"
 			]
 			id: "076496BBB9CAE9D5"
+			shape: "square"
 			size: 1.5d
 			subtitle: "可以跨维度访问ME网络"
 			tasks: [
