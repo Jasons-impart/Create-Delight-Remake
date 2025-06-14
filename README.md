@@ -8,9 +8,9 @@
 
 ![介绍图标](./kubejs/assets/createdelight/textures/images_for_readme/introduction.png)
 
-这款以 **_咕咕嘎嘎_** 为核心的休闲模组包，专为 Minecraft _1.20.1_ 版本打造！</br>
+这款以 **_咕咕嘎嘎_** 为核心的休闲模组包，在 Minecraft Forge 1.20.1 版本上运行！  
 魔改了**超 5000+配方**。  
-机械动力：齿轮颂歌 将各种 [机械动力与其附属模组](https://github.com/Creators-of-Create/Create) 和 [农夫乐事和乐事大家族](https://github.com/vectorwing/FarmersDelight) 融合，创造出一个值得探索与建造的奇妙世界！
+机械动力：齿轮颂歌 将各种 ***咕咕*** 和 ***嘎嘎*** 融合，创造出一个值得探索与建造的奇妙世界！
 
 ---
 
@@ -24,7 +24,7 @@
 
 ---
 
-### 核心亮点
+### 核心亮点（***咕咕嘎嘎***）
 
 1. **全新定制配方** - 专为农夫乐事模组设计！
 2. **多维世界探索** - 各种奇异、美丽甚至怪诞的维度等待发现
@@ -34,7 +34,7 @@
 6. **村庄与建筑革新** - 全面改造的村庄、建筑和传送门
 7. **内置光影与资源包** - 开箱即用的视觉增强
 8. **500+详细任务** - 手把手引导游戏进程
-9. **极致性能优化** - 仅需 **4GB** 内存即可流畅运行
+9. **极致性能优化** - 仅需 ***咕咕嘎嘎*** 内存即可流畅运行
 10. **150+高质量模组** - 精心挑选的游戏扩展
 
 ---
@@ -43,13 +43,13 @@
 
 ![配置图标](./kubejs/assets/createdelight/textures/images_for_readme/recommendation.png)
 
-- **最低内存：4-5GB**
-- **推荐内存：6-8GB**  
+- **最低内存：***咕咕嘎嘎*****
+- **推荐内存：***咕咕嘎嘎*****  
   本模组包经过深度优化，确保持续流畅的游戏体验，并将不断进行性能改进。
 
 ---
 
-## 未来计划
+## 未来计划***咕咕嘎嘎***
 
 ![计划图标](./kubejs/assets/createdelight/textures/images_for_readme/future_prospects.png)
 
@@ -89,7 +89,7 @@
 
 ---
 
-## 开发团队
+## 开发团队***咕咕嘎嘎***
 
 ![贡献者](./kubejs/assets/createdelight/textures/images_for_readme/coworker.png)  
 **特别鸣谢参与本项目的所有成员（排名不分先后）**
