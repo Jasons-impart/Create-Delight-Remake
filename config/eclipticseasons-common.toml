@@ -76,11 +76,13 @@
 	NoCostHumidifier = false
 	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
 	UseBoxDistance = true
-	#Send message to player if failed to use Bonemeal on crop.
+	#Send message to player if failed to use bone meal on crop.
 	BoneMealFailureMessage = true
 	#The working range of the Season Core block.
 	#Range: 4 ~ 31
 	SeasonCoreRange = 15
+	#Consume anyway if failed to use bone meal on crop.
+	BoneMealConsumeWhenFailure = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
