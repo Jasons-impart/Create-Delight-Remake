@@ -5,22 +5,14 @@
 	group: "0E8A6F1771B90E2E"
 	icon: "ae2:drive"
 	id: "467649501F6EE065"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
-			id: "3C94E103DF3BC823"
-			tasks: [{
-				id: "05B9AB674789E254"
-				title: "AE，启动！"
-				type: "checkmark"
-			}]
-			x: -1.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["3C94E103DF3BC823"]
-			description: ["需要供能。多个me控制器放在一起时会相连。为AE网络供能并提供频道，不过在此章节里你不太需要它。"]
+			description: [
+				"需要供能。多个me控制器放在一起时会相连。为AE网络供能并提供频道。"
+				"不过此章节你更多只会用它作为合成材料。"
+			]
 			id: "15B8BBCFE27CD2D0"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -28,38 +20,17 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
-			size: 2.0d
+			size: 1.5d
 			subtitle: "AE的核心"
 			tasks: [{
 				id: "040A303EBE3CF34D"
 				item: "ae2:controller"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 5.5d
+			x: 12.75d
+			y: -3.75d
 		}
 		{
-			dependencies: ["15B8BBCFE27CD2D0"]
-			description: [
-				"我们都知道机械动力里的应力系统的规则：当应力网络内&e机器的应力消耗大于网络所提供的应力&r时，整个应力网络就会&e过载&r。"
-				"而AE的频道系统也类似。ae的许多机器都会&e消耗一个频道&r，而当&e一条线缆能够提供的频道小于线缆上消耗频道的机器的数量&r时，AE网络同样会过载。"
-			]
-			id: "106C503DBEFAED81"
-			size: 1.0d
-			subtitle: "机器与频道"
-			tasks: [{
-				id: "6AB7BBE707B24EBC"
-				item: "createdelight:iron_casing"
-				type: "item"
-			}]
-			x: 2.0d
-			y: 5.5d
-		}
-		{
-			dependencies: [
-				"106C503DBEFAED81"
-				"0B51D01823292EC9"
-			]
 			description: [
 				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
 				""
@@ -71,17 +42,17 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
-			size: 1.5d
+			shape: "square"
+			size: 2.0d
 			tasks: [{
 				id: "501CE0ECEB196B6D"
 				item: "ae2:drive"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 9.0d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["106C503DBEFAED81"]
 			id: "2EAA35BF40FB182A"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -90,43 +61,20 @@
 				type: "random"
 			}]
 			size: 1.5d
-			subtitle: "生产物质球与奇点"
+			subtitle: "回收垃圾，生产物质球与奇点"
 			tasks: [{
 				id: "0A18195B948CC8EC"
 				item: "ae2:condenser"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 2.5d
-		}
-		{
-			dependencies: ["106C503DBEFAED81"]
-			description: [
-				""
-				"{ \"text\": \"点此进入自动化相关章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3ACFB4AE35155456\" } }"
-			]
-			id: "1A5CDC6917D4345C"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "60FC8C6F22B824D4"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			shape: "diamond"
-			size: 2.0d
-			subtitle: "自动化"
-			tasks: [{
-				id: "3D15B268FD18EBFC"
-				item: "ae2:pattern_provider"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 5.5d
+			x: 15.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
-				"05D7688036D40AE4"
 				"7777519D3A23C2C7"
+				"6B3F181B4E31BCE2"
+				"05D7688036D40AE4"
 			]
 			description: ["{ \"text\": \"点此查看存储元件的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			icon: {
@@ -135,19 +83,62 @@
 				tag: { }
 			}
 			id: "4EC043194AF40AC4"
-			tasks: [{
-				id: "3C1A436707A6EB38"
-				title: "存储元件"
-				type: "checkmark"
-			}]
-			x: 4.5d
-			y: 9.0d
+			subtitle: "其实我更习惯叫磁盘"
+			tasks: [
+				{
+					id: "7B87D26CB5D9E376"
+					item: {
+						Count: 1
+						id: "ae2:item_storage_cell_1k"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "6AF922B8BC896C49"
+					item: {
+						Count: 1
+						id: "ae2:fluid_storage_cell_1k"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "0B30204A8D9938CF"
+					item: {
+						Count: 1
+						id: "megacells:item_storage_cell_1m"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "1FF2601FA2B73394"
+					item: {
+						Count: 1
+						id: "megacells:fluid_storage_cell_1m"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "02232CF6E8D19A80"
+					item: {
+						Count: 1
+						id: "ae2things:disk_drive_1k"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			title: "各类存储元件"
+			x: 2.5d
+			y: 0.0d
 		}
 		{
 			description: ["{ \"text\": \"点此查看元件外壳的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			id: "7777519D3A23C2C7"
 			min_required_tasks: 1
-			subtitle: "四个里做一个即可完成任务"
 			tasks: [
 				{
 					id: "6532ECCDEBDC2A02"
@@ -169,232 +160,17 @@
 					item: "megacells:mega_fluid_cell_housing"
 					type: "item"
 				}
+				{
+					id: "334C1816694BA433"
+					item: "ae2things:disk_housing"
+					type: "item"
+				}
 			]
 			title: "ME元件外壳"
-			x: 4.5d
-			y: 11.0d
+			x: 2.0d
+			y: -1.5d
 		}
 		{
-			dependencies: ["4EC043194AF40AC4"]
-			id: "3A84C79A5EBED973"
-			subtitle: "其实我更喜欢叫它硬盘）"
-			tasks: [{
-				id: "369F7848D617A229"
-				title: "储存组件们"
-				type: "checkmark"
-			}]
-			x: 7.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["3A84C79A5EBED973"]
-			hide_dependency_lines: true
-			id: "19B6EF70C5C690A0"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "74D6338C67CC0815"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "1EDBD2E1865C2178"
-				item: "ae2:cell_component_1k"
-				type: "item"
-			}]
-			x: 8.5d
-			y: 11.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"19B6EF70C5C690A0"
-			]
-			hide_dependency_lines: true
-			id: "0107A9F88B402867"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "7A7245AED9469E8E"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "5F7047A8B1FCBA9F"
-				item: "ae2:cell_component_4k"
-				type: "item"
-			}]
-			x: 8.5d
-			y: 10.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"0107A9F88B402867"
-			]
-			hide_dependency_lines: true
-			id: "1F1DC2924E1AF1E3"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "4AF04F21B5C0AA07"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "39F97E76A9F2D901"
-				item: "ae2:cell_component_16k"
-				type: "item"
-			}]
-			x: 8.5d
-			y: 9.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"1F1DC2924E1AF1E3"
-			]
-			hide_dependency_lines: true
-			id: "55F0CCAFAE6D8E95"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "6EBA7B8160504C84"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "3CEA0B6B887FC75C"
-				item: "ae2:cell_component_64k"
-				type: "item"
-			}]
-			x: 8.5d
-			y: 8.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"55F0CCAFAE6D8E95"
-			]
-			hide_dependency_lines: true
-			id: "4A48CF1796837CBF"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "032FD1D021F28E99"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "4BB9551004A2BA7A"
-				item: "ae2:cell_component_256k"
-				type: "item"
-			}]
-			x: 8.5d
-			y: 7.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"4A48CF1796837CBF"
-			]
-			hide_dependency_lines: true
-			id: "0D4E454AFF39C1E1"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "19712117C7DD6AF5"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "2491D5D433C68BDF"
-				item: "megacells:cell_component_1m"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 11.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"0D4E454AFF39C1E1"
-			]
-			hide_dependency_lines: true
-			id: "176A534D7757779E"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "584CCA023D6F663C"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "5D6DF992FAE37763"
-				item: "megacells:cell_component_4m"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 10.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"176A534D7757779E"
-			]
-			hide_dependency_lines: true
-			id: "511398D18A2E5F5E"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "585958641F23FF52"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "71705014B54F4A56"
-				item: "megacells:cell_component_16m"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 9.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"511398D18A2E5F5E"
-			]
-			hide_dependency_lines: true
-			id: "01B97BC520BD2053"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "5B0AE16F430550BD"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "4C7F43EB1E89E407"
-				item: "megacells:cell_component_64m"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 8.0d
-		}
-		{
-			dependencies: [
-				"3A84C79A5EBED973"
-				"01B97BC520BD2053"
-			]
-			hide_dependency_lines: true
-			id: "460FBC0EA63CE22D"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "012E1AF723FA106C"
-				table_id: 367842927525151968L
-				type: "random"
-			}]
-			tasks: [{
-				id: "6F9F23602BCE66A5"
-				item: "megacells:cell_component_256m"
-				type: "item"
-			}]
-			x: 9.5d
-			y: 7.0d
-		}
-		{
-			dependencies: ["05D7688036D40AE4"]
 			id: "328FC706631222E9"
 			subtitle: "合成普通的照明面板即可"
 			tasks: [{
@@ -410,11 +186,14 @@
 				type: "item"
 			}]
 			title: "照明面板"
-			x: -1.25d
-			y: 9.0d
+			x: 4.5d
+			y: -1.5d
 		}
 		{
-			dependencies: ["328FC706631222E9"]
+			dependencies: [
+				"328FC706631222E9"
+				"05D7688036D40AE4"
+			]
 			description: ["可以使用其访问AE网络的存储。"]
 			id: "397829BA5DDD0B7F"
 			rewards: [
@@ -437,8 +216,8 @@
 				item: "ae2:terminal"
 				type: "item"
 			}]
-			x: -3.25d
-			y: 9.0d
+			x: 4.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["397829BA5DDD0B7F"]
@@ -449,14 +228,14 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
-			subtitle: "用于管理样板"
+			subtitle: "用于编写样板，自动化需要"
 			tasks: [{
 				id: "20E174E05B87C4CF"
 				item: "ae2:pattern_encoding_terminal"
 				type: "item"
 			}]
-			x: -4.75d
-			y: 8.0d
+			x: 3.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["397829BA5DDD0B7F"]
@@ -473,8 +252,8 @@
 				item: "ae2:crafting_terminal"
 				type: "item"
 			}]
-			x: -4.75d
-			y: 9.0d
+			x: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["397829BA5DDD0B7F"]
@@ -485,17 +264,17 @@
 				table_id: 367842927525151968L
 				type: "random"
 			}]
-			subtitle: "用于编写样板"
+			subtitle: "用于管理样板，自动化需要"
 			tasks: [{
 				id: "7A93B40B74EB6E14"
 				item: "ae2:pattern_access_terminal"
 				type: "item"
 			}]
-			x: -4.75d
-			y: 10.0d
+			x: 5.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["16D27498A669E663"]
+			dependencies: ["0A0C5687C12AC0F5"]
 			id: "53B9C32DE375CA79"
 			rewards: [
 				{
@@ -515,11 +294,11 @@
 				item: "ae2:wireless_crafting_terminal"
 				type: "item"
 			}]
-			x: -6.75d
-			y: 9.0d
+			x: 9.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["45AF2B6B2E0C53A2"]
+			dependencies: ["0A0C5687C12AC0F5"]
 			id: "65108BBE9196309E"
 			rewards: [
 				{
@@ -539,11 +318,11 @@
 				item: "ae2wtlib:wireless_pattern_encoding_terminal"
 				type: "item"
 			}]
-			x: -6.75d
-			y: 8.0d
+			x: 8.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["0F844891015AC97E"]
+			dependencies: ["0A0C5687C12AC0F5"]
 			id: "3F4D28BD754C09AE"
 			rewards: [
 				{
@@ -570,26 +349,29 @@
 					type: "item"
 				}
 			]
-			x: -6.75d
-			y: 10.0d
+			x: 10.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["397829BA5DDD0B7F"]
+			dependencies: [
+				"397829BA5DDD0B7F"
+				"3B6CEAAD30105F16"
+			]
 			id: "0A0C5687C12AC0F5"
 			tasks: [{
 				id: "794812BAB94920A8"
 				item: "ae2:wireless_terminal"
 				type: "item"
 			}]
-			x: -3.25d
-			y: 11.5d
+			title: "无线访问"
+			x: 9.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
 				"65108BBE9196309E"
 				"53B9C32DE375CA79"
 				"3F4D28BD754C09AE"
-				"0A0C5687C12AC0F5"
 			]
 			id: "7488BEAEFA05C2AA"
 			rewards: [{
@@ -605,32 +387,35 @@
 				item: "ae2wtlib:wireless_universal_terminal"
 				type: "item"
 			}]
-			x: -11.0d
-			y: 9.0d
+			x: 9.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["67C0556009A49A92"]
-			description: ["其中可以塞入无限信号增幅器，可用于增加信号覆盖范围，最多可堆叠64个。"]
+			description: [
+				"将其放入网络中，然后使用移动终端shift右键绑定，你便可以在一定范围内访问到你的网络"
+				"可以塞无线信号增幅器增加信号覆盖范围，最多64个。"
+			]
 			id: "0B51D01823292EC9"
-			subtitle: "将其放入网络中，然后使用移动终端shift右键绑定，你便可以在一定范围内访问到你的网络"
+			subtitle: "无线终端访问网络的接入点"
 			tasks: [{
 				id: "3141B9103AC30CC1"
 				item: "ae2:wireless_access_point"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 11.0d
+			x: 8.0d
+			y: 0.0d
 		}
 		{
 			id: "67C0556009A49A92"
-			subtitle: "用于合成各种和无线相关的物品"
 			tasks: [{
 				id: "7E1850B9B927EEB7"
 				item: "ae2:wireless_receiver"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 13.0d
+			title: "无线化"
+			x: 6.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["67C0556009A49A92"]
@@ -653,22 +438,19 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
-			y: 13.0d
+			x: 6.5d
+			y: 1.5d
 		}
 		{
-			dependencies: [
-				"15B8BBCFE27CD2D0"
-				"37602625EB8C5460"
-			]
+			dependencies: ["37602625EB8C5460"]
 			id: "5A1BDACB580F9129"
 			tasks: [{
 				id: "641CA52F579A0239"
 				item: "createdelight:space_casing"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 5.5d
+			x: 12.0d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -678,12 +460,13 @@
 				"05D7688036D40AE4"
 			]
 			description: [
+				"可以跨维度访问ME网络"
 				"每个量子网桥由&e8个ME量子环围绕一个ME量子链接仓&r构成，放置方向不限"
 				"两个量子网桥为一对，需要在链接仓内放置&e成对的量子缠绕态奇点&r，当&e两端都被加载且都有电时&r工作"
 			]
 			id: "1091641256B0E30C"
 			size: 1.5d
-			subtitle: "可以跨维度访问ME网络"
+			subtitle: "或许你应该先建好AE的自动化再做"
 			tasks: [
 				{
 					count: 8L
@@ -698,8 +481,8 @@
 				}
 			]
 			title: "量子网桥"
-			x: -8.5d
-			y: 5.5d
+			x: 12.75d
+			y: 0.0d
 		}
 		{
 			dependencies: ["37602625EB8C5460"]
@@ -712,8 +495,8 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: -8.5d
-			y: 3.0d
+			x: 11.0d
+			y: -1.0d
 		}
 		{
 			id: "37602625EB8C5460"
@@ -723,11 +506,10 @@
 				item: "ae2:singularity"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 1.0d
+			x: 10.5d
+			y: -3.0d
 		}
 		{
-			dependencies: ["5A1BDACB580F9129"]
 			description: [
 				"用于&4加载所在ME网络经过的所有区块及维度&r。可以配合量子网桥使用。"
 				"若一个ME网络经过主世界和下界两个维度，则你需要在主世界和下界分别放置一个与该网络相连的空间锚，才能确保这个网络在两个维度所经过的区块都被加载。"
@@ -757,8 +539,8 @@
 				item: "ae2:spatial_anchor"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 1.0d
+			x: 15.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["1091641256B0E30C"]
@@ -766,7 +548,7 @@
 				"使用方法：获取&e一对量子缠绕态奇点&r，将其中一个放入&e一个量子环&r，另一个放入&e你的终端&r。"
 				"安装量子桥卡后，你的无线终端可以&e无视距离和维度&r访问你的网络，且终端能够&e自动充电&r。"
 				"以及需要保证你的量子环处于强加载状态。"
-				"将通用终端作为前置只是为了更醒目，实际是可以插入任何无线终端的。"
+				""
 			]
 			id: "523CC92B15E7341E"
 			size: 1.5d
@@ -776,8 +558,8 @@
 				item: "ae2wtlib:quantum_bridge_card"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 5.5d
+			x: 12.75d
+			y: 2.25d
 		}
 		{
 			description: [
@@ -799,8 +581,8 @@
 				}
 				type: "item"
 			}]
-			x: 2.0d
-			y: -0.5d
+			x: 15.0d
+			y: -1.5d
 		}
 		{
 			description: ["储电量200000AE，每使用一次消耗1600AE能量，故充满电后最多处理125个方块。"]
@@ -810,8 +592,8 @@
 				item: "ae2:entropy_manipulator"
 				type: "item"
 			}]
-			x: 2.0d
-			y: -1.5d
+			x: 15.0d
+			y: -2.5d
 		}
 		{
 			description: [
@@ -825,8 +607,225 @@
 				item: "ae2:charged_staff"
 				type: "item"
 			}]
+			x: 15.0d
+			y: -3.5d
+		}
+		{
+			dependency_requirement: "one_completed"
+			id: "6B3F181B4E31BCE2"
+			tasks: [
+				{
+					id: "112370E121DD6375"
+					item: "ae2:cell_component_1k"
+					type: "item"
+				}
+				{
+					id: "2CD2383B398F2F50"
+					item: "ae2:cell_component_4k"
+					type: "item"
+				}
+				{
+					id: "2BEE5E9F5D450F99"
+					item: "ae2:cell_component_16k"
+					type: "item"
+				}
+				{
+					id: "55EE3C17CDB7B8A4"
+					item: "ae2:cell_component_64k"
+					type: "item"
+				}
+				{
+					id: "7E6062EC9580C51E"
+					item: "ae2:cell_component_256k"
+					type: "item"
+				}
+				{
+					id: "1A452ACC017C0952"
+					item: "megacells:cell_component_1m"
+					type: "item"
+				}
+				{
+					id: "7A8D5CF7FF82B61F"
+					item: "megacells:cell_component_4m"
+					type: "item"
+				}
+				{
+					id: "367A08579E7CA1F7"
+					item: "megacells:cell_component_16m"
+					type: "item"
+				}
+				{
+					id: "2AA4DA46E814B507"
+					item: "megacells:cell_component_64m"
+					type: "item"
+				}
+				{
+					id: "74B1E7E12BD9AFFF"
+					item: "megacells:cell_component_256m"
+					type: "item"
+				}
+			]
 			x: 3.0d
 			y: -1.5d
+		}
+		{
+			id: "589EED2DA50DE0F1"
+			subtitle: "序列组装配方更省材料"
+			tasks: [{
+				id: "72F0DC157603B8C2"
+				item: {
+					Count: 1
+					id: "ae2:energy_cell"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["589EED2DA50DE0F1"]
+			id: "3B6CEAAD30105F16"
+			subtitle: "序列组装配方更省材料"
+			tasks: [{
+				id: "66774A5254590B15"
+				item: {
+					Count: 1
+					id: "ae2:dense_energy_cell"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 9.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"1E7DEA74331684BC"
+			]
+			description: [
+				"首先需要明确的一点：它并没有&e直接的输入或者输出物品&r的能力。它只是能够将外界存储整合到AE存储中。"
+				"当你向网络中输入物品时，网络同时也会考虑将物品输入到存储总线所贴的容器中。这在自动合成中会起到重要的作用，具体使用方式后面会描述。"
+			]
+			id: "21B45DF11F4DEDEB"
+			subtitle: "将外界的存储整合进AE存储"
+			tasks: [{
+				id: "0BD3C8CD820BF141"
+				item: "ae2:storage_bus"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"1E7DEA74331684BC"
+			]
+			description: ["输入总线，顾名思义是将物品输入到网络中。使其&e贴住容器&r后它便会将容器里的物品输入至网络中。"]
+			id: "458445CB85B01EAC"
+			subtitle: "将外界容器的物品输入进网络"
+			tasks: [{
+				id: "10161D132C237268"
+				item: "ae2:import_bus"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"1E7DEA74331684BC"
+			]
+			id: "1BEF4A754211498E"
+			subtitle: "将网络的物品输出至外界容器中"
+			tasks: [{
+				id: "001803F8D7DC9BF7"
+				item: "ae2:export_bus"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"05D7688036D40AE4"
+			]
+			description: [
+				"ME接口是网络的&e交互接口&r，你可以将网络内的物品直接暴露出来，以便于使用其他mod（或者原版）的物流方式&e将物料导出&r，也可以使用的物流将物料&e送入AE网络&r。"
+				"对于导出，你需要在ME接口中设置过滤，这样ME接口便会被&e无时无刻的都被所过滤物料填满&r。"
+			]
+			id: "1E7DEA74331684BC"
+			subtitle: "网络的交互口"
+			tasks: [{
+				id: "128A4ED3860A238A"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:interface"
+					}
+				}
+				title: "Any #ae2:interface"
+				type: "item"
+			}]
+			title: "与外界交互"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"1E7DEA74331684BC"
+			]
+			description: [
+				"它拥有两个功能：破坏方块或者收集掉落物。"
+				"破坏方块模式时，它会将它前方的方块&e破坏并直接送到自身所在网络&r。"
+				"收集掉落物模式时，它会将它&e前方的掉落物收集到自身所在网络&r。"
+				"如果&e物品没法存储到自身网络&r时，破坏面板将不会工作。"
+				"可以利用这一点，配合&e存储总线的过滤&r来实现使破坏面板破坏&e特定&r的方块或者收集&e特定&r的掉落物。"
+			]
+			id: "1A36ACBD35C97BBE"
+			subtitle: "破坏与收集"
+			tasks: [{
+				id: "7E77DEDC6EFFE01A"
+				item: "ae2:annihilation_plane"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"62AA7E83D24E4093"
+				"1E7DEA74331684BC"
+			]
+			description: [
+				"它有两个功能：放置方块与投掷掉落物。"
+				"为放置方块模式时，当它所标记的物品&e被输入（例如使用输入总线）到网络&r里时，它便会&e放置&r那输入进网络里的方块。"
+				"为投掷掉落物模式时，当它所标记的物品被输入到网络里时，它便会将物品转为掉落物形式&e投掷&r出去。"
+				"如果觉得这个规则太麻烦了，可以直接使用&e主动ME成型面板&r。它可以&e直接&r将其过滤物品从网络里放置或者投掷出去。"
+			]
+			id: "1FA597D57F70B9B2"
+			min_required_tasks: 1
+			subtitle: "放置与投掷"
+			tasks: [
+				{
+					id: "3C2714E8148958B6"
+					item: "ae2:formation_plane"
+					type: "item"
+				}
+				{
+					id: "54687544FD8A0B14"
+					item: "expatternprovider:active_formation_plane"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 3.5d
 		}
 	]
 	title: "&b储存篇章"

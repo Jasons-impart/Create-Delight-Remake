@@ -13,7 +13,7 @@
 		}
 	}
 	id: "2CAE49FE48790F23"
-	order_index: 2
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -25,8 +25,8 @@
 				item: "ae2:printed_calculation_processor"
 				type: "item"
 			}]
-			x: 1.75d
-			y: -3.0d
+			x: -1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -42,11 +42,14 @@
 				item: "createdelight:initial_processing_of_printed_calculation_processor"
 				type: "item"
 			}]
-			x: 4.75d
-			y: -3.0d
+			x: 1.5d
+			y: -1.5d
 		}
 		{
-			dependencies: ["05D52AC3EBD5ACF6"]
+			dependencies: [
+				"05D52AC3EBD5ACF6"
+				"1551BA92CF2E1580"
+			]
 			hide_until_deps_visible: false
 			id: "55889D281FB84C4D"
 			tasks: [{
@@ -54,8 +57,8 @@
 				item: "createdelight:calculation_processor_inscribed"
 				type: "item"
 			}]
-			x: 7.75d
-			y: -3.0d
+			x: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["30AFE2C4EC9DBBDB"]
@@ -63,13 +66,14 @@
 			id: "070FCFD15EA22E5B"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "其他处理器类似"
 			tasks: [{
 				id: "342ECA2EE20C855C"
 				item: "ae2:calculation_processor"
 				type: "item"
 			}]
-			x: 10.75d
-			y: -3.0d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["534742BED850E751"]
@@ -83,8 +87,8 @@
 				type: "item"
 			}]
 			title: "直接无序合成"
-			x: 3.25d
-			y: -3.0d
+			x: 0.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["534742BED850E751"]
@@ -103,8 +107,8 @@
 				type: "item"
 			}]
 			title: "使用膏"
-			x: 3.25d
-			y: -2.0d
+			x: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["534742BED850E751"]
@@ -129,11 +133,10 @@
 				}
 			]
 			title: "使用压缩机处理"
-			x: 3.25d
-			y: -4.0d
+			x: 0.0d
+			y: -2.5d
 		}
 		{
-			dependencies: ["1551BA92CF2E1580"]
 			hide_until_deps_visible: false
 			id: "05D52AC3EBD5ACF6"
 			tasks: [{
@@ -141,8 +144,8 @@
 				item: "ae2:printed_silicon"
 				type: "item"
 			}]
-			x: 6.25d
-			y: -3.0d
+			x: 3.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["55889D281FB84C4D"]
@@ -178,23 +181,11 @@
 				}
 			]
 			title: "使用凹陷封头冲压"
-			x: 9.25d
-			y: -3.0d
+			x: 4.5d
+			y: -1.5d
 		}
 		{
-			dependencies: ["74A17F55703C7EDC"]
-			hide_until_deps_visible: false
-			id: "36DB558EE19C0129"
-			tasks: [{
-				id: "056C57B7681AC6F0"
-				item: "ae2:certus_quartz_crystal"
-				type: "item"
-			}]
-			x: -1.25d
-			y: -3.0d
-		}
-		{
-			dependencies: ["36DB558EE19C0129"]
+			dependencies: ["3F2537B88B8517A7"]
 			hide_until_deps_visible: false
 			icon: "createdelight:universal_press"
 			id: "23844625502BCC3B"
@@ -213,10 +204,15 @@
 					to_observe: "vintageimprovements:curving_press"
 					type: "observation"
 				}
+				{
+					id: "035DF3514DF0BE6F"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
 			]
-			title: "使用通用压印模板冲压"
-			x: 0.25d
-			y: -3.0d
+			title: "压印模板冲压赛特斯石英"
+			x: -3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["6F8DB4C688CDE79B"]
@@ -227,11 +223,11 @@
 				item: "createdelight:item_cell_housing_blank"
 				type: "item"
 			}]
-			x: 1.75d
-			y: 0.0d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["4878BCD4902197B0"]
+			dependencies: ["3F2537B88B8517A7"]
 			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "6F8DB4C688CDE79B"
@@ -250,22 +246,15 @@
 					to_observe: "vintageimprovements:curving_press"
 					type: "observation"
 				}
+				{
+					id: "20910B35741F5547"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
 			]
-			title: "使用元件外壳封头冲压"
-			x: 0.25d
-			y: 0.0d
-		}
-		{
-			dependencies: ["35D8B0B1F9C870F8"]
-			hide_until_deps_visible: false
-			id: "4878BCD4902197B0"
-			tasks: [{
-				id: "4E93DF101477488D"
-				item: "minecraft:iron_ingot"
-				type: "item"
-			}]
-			x: -1.25d
-			y: 0.0d
+			title: "元件外壳封头冲压铁锭"
+			x: -3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0A879354109B6029"]
@@ -290,8 +279,8 @@
 				}
 			]
 			title: "使用压缩机处理"
-			x: 3.25d
-			y: -1.0d
+			x: 0.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["0A879354109B6029"]
@@ -305,8 +294,8 @@
 				type: "item"
 			}]
 			title: "直接无序合成"
-			x: 3.25d
-			y: 0.0d
+			x: 0.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0A879354109B6029"]
@@ -325,8 +314,8 @@
 				type: "item"
 			}]
 			title: "使用膏"
-			x: 3.25d
-			y: 1.0d
+			x: 0.0d
+			y: 2.5d
 		}
 		{
 			dependencies: [
@@ -342,8 +331,8 @@
 				item: "createdelight:initial_processing_of_item_cell_housing"
 				type: "item"
 			}]
-			x: 4.75d
-			y: 0.0d
+			x: 1.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["51627CB273142F22"]
@@ -357,8 +346,8 @@
 				type: "item"
 			}]
 			title: "石英玻璃直接无序合成"
-			x: 6.25d
-			y: -1.0d
+			x: 3.0d
+			y: 0.5d
 		}
 		{
 			dependencies: [
@@ -367,15 +356,15 @@
 			]
 			hide_until_deps_visible: false
 			id: "300372C7A93BD7C5"
-			subtitle: "消耗0.25个石英玻璃"
+			subtitle: "等价于消耗0.25个石英玻璃"
 			tasks: [{
 				id: "729F8418B5976DAA"
 				item: "createdelight:quartz_glass_parts"
 				type: "item"
 			}]
 			title: "使用石英玻璃部件"
-			x: 6.25d
-			y: 1.0d
+			x: 3.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["5AB2EBBD2243DE6B"]
@@ -385,12 +374,13 @@
 			subtitle: "一个石英玻璃能处理为四个其对应的部件"
 			tasks: [{
 				elapsedTime: 1L
+				icon: "createdelight:cell_housing_curving_head"
 				id: "074988C6E5470F39"
 				type: "questsadditions:time"
 			}]
 			title: "使用元件外壳封头冲压"
-			x: 6.25d
-			y: 0.0d
+			x: 3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -405,8 +395,8 @@
 				item: "createdelight:unformed_item_cell_housing"
 				type: "item"
 			}]
-			x: 7.75d
-			y: 0.0d
+			x: 4.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["57F8817405EFEF38"]
@@ -419,8 +409,8 @@
 				item: "ae2:item_cell_housing"
 				type: "item"
 			}]
-			x: 10.75d
-			y: 0.0d
+			x: 7.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3087A516BF36628A"]
@@ -433,37 +423,28 @@
 				type: "questsadditions:time"
 			}]
 			title: "使用元件外壳封头冲压"
-			x: 9.25d
-			y: 0.0d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
-			dependencies: ["74A5DA81CE5D0581"]
-			hide_until_deps_visible: false
-			id: "5ACCE843604EB1CA"
-			tasks: [{
-				id: "5448D8645325A779"
-				item: "ae2:certus_quartz_crystal"
-				type: "item"
-			}]
-			x: -1.25d
-			y: 3.0d
-		}
-		{
-			dependencies: ["5ACCE843604EB1CA"]
+			dependencies: ["3F2537B88B8517A7"]
 			hide_until_deps_visible: false
 			id: "34D57250C41B9518"
-			tasks: [{
-				icon: "vintageimprovements:belt_grinder"
-				id: "0306A312B37635FE"
-				observe_type: 0
-				timer: 0L
-				title: "观察你的磨床"
-				to_observe: "vintageimprovements:belt_grinder"
-				type: "observation"
-			}]
-			title: "使用磨床打磨"
-			x: 0.25d
-			y: 3.0d
+			tasks: [
+				{
+					id: "3C078801F694F43D"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
+				{
+					id: "3F42AB1544695045"
+					item: "create:deployer"
+					type: "item"
+				}
+			]
+			title: "从赛特斯石英开始的序列组装"
+			x: -3.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
@@ -477,8 +458,8 @@
 				type: "item"
 			}]
 			title: "直接使用粉"
-			x: 1.75d
-			y: 3.0d
+			x: -1.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
@@ -503,8 +484,8 @@
 				}
 			]
 			title: "使用压缩机处理"
-			x: 1.75d
-			y: 2.0d
+			x: -1.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["34D57250C41B9518"]
@@ -522,8 +503,8 @@
 				}
 				type: "item"
 			}]
-			x: 1.75d
-			y: 4.0d
+			x: -1.5d
+			y: 5.5d
 		}
 		{
 			dependencies: [
@@ -541,8 +522,8 @@
 				type: "item"
 			}]
 			title: "与输入物一致的物品"
-			x: 3.25d
-			y: 3.0d
+			x: 0.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["290D330CC831FB79"]
@@ -555,32 +536,14 @@
 				type: "item"
 			}]
 			title: "安装处理器"
-			x: 4.75d
-			y: 3.0d
+			x: 1.5d
+			y: 4.5d
 		}
 		{
-			dependencies: ["79E21703C72C52C4"]
-			hide_until_deps_visible: false
-			id: "7850CD8A3597DC8B"
-			subtitle: "此处为石英玻璃"
-			tasks: [{
-				id: "4ED67FC99BA9BBEC"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "createdelight:quartz_glass"
-					}
-				}
-				title: "Any #createdelight:quartz_glass"
-				type: "item"
-			}]
-			title: "石英/聚能石英玻璃（或者其部件）"
-			x: 6.25d
-			y: 3.0d
-		}
-		{
-			dependencies: ["7850CD8A3597DC8B"]
+			dependencies: [
+				"5BD09E44BC234702"
+				"690EB66CF852144F"
+			]
 			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "1E75F90CA8E6E2EE"
@@ -590,8 +553,8 @@
 				type: "questsadditions:time"
 			}]
 			title: "使用元件外壳封头冲压"
-			x: 7.75d
-			y: 3.0d
+			x: 4.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1E75F90CA8E6E2EE"]
@@ -604,55 +567,8 @@
 				item: "ae2:cell_component_1k"
 				type: "item"
 			}]
-			x: 9.25d
-			y: 3.0d
-		}
-		{
-			dependencies: ["3F2537B88B8517A7"]
-			hide_until_deps_visible: false
-			id: "35D8B0B1F9C870F8"
-			shape: "square"
-			tasks: [{
-				elapsedTime: 1L
-				icon: "ae2:item_cell_housing"
-				id: "1093F89F026C91B5"
-				title: "元件外壳示例"
-				type: "questsadditions:time"
-			}]
-			title: "元件外壳示例"
-			x: -2.75d
-			y: 0.0d
-		}
-		{
-			dependencies: ["3F2537B88B8517A7"]
-			hide_until_deps_visible: false
-			icon: "ae2:calculation_processor"
-			id: "74A17F55703C7EDC"
-			shape: "square"
-			tasks: [{
-				elapsedTime: 1L
-				id: "6E840954BAE6BC13"
-				type: "questsadditions:time"
-			}]
-			title: "处理器示例"
-			x: -2.75d
-			y: -3.0d
-		}
-		{
-			dependencies: ["3F2537B88B8517A7"]
-			hide_until_deps_visible: false
-			id: "74A5DA81CE5D0581"
-			shape: "square"
-			subtitle: "当然也可以使用动力合成器或者手搓，此处不再赘述"
-			tasks: [{
-				elapsedTime: 1L
-				icon: "ae2:cell_component_1k"
-				id: "665A9C1D4EFAFD01"
-				title: "存储元件示例（使用序列组装）"
-				type: "questsadditions:time"
-			}]
-			x: -2.75d
-			y: 3.0d
+			x: 6.0d
+			y: 4.5d
 		}
 		{
 			description: [
@@ -668,8 +584,8 @@
 				title: "注意"
 				type: "checkmark"
 			}]
-			x: -5.0d
-			y: 0.0d
+			x: -4.5d
+			y: 1.5d
 		}
 		{
 			description: ["上一章节只讲了AE的存储，这一章节则会讲讲AE的物流与自动化。"]
@@ -682,8 +598,8 @@
 				title: "自动化"
 				type: "checkmark"
 			}]
-			x: -5.0d
-			y: -9.0d
+			x: -4.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["3ACFB4AE35155456"]
@@ -694,8 +610,8 @@
 				title: "物流与世界交互元件"
 				type: "checkmark"
 			}]
-			x: -1.5d
-			y: -9.0d
+			x: -0.5d
+			y: 12.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -720,8 +636,8 @@
 					type: "item"
 				}
 			]
-			x: -1.0d
-			y: -11.0d
+			x: 0.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -739,8 +655,8 @@
 				item: "ae2:annihilation_plane"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -11.0d
+			x: -1.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -752,8 +668,8 @@
 				item: "ae2:import_bus"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -7.0d
+			x: -2.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -764,8 +680,8 @@
 				item: "ae2:export_bus"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -7.0d
+			x: 0.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -780,8 +696,8 @@
 				item: "ae2:storage_bus"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -7.0d
+			x: -1.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -804,8 +720,8 @@
 				type: "item"
 			}]
 			title: "ME接口"
-			x: 0.0d
-			y: -7.0d
+			x: 1.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["3ACFB4AE35155456"]
@@ -820,8 +736,8 @@
 				title: "存储的优先级"
 				type: "checkmark"
 			}]
-			x: -5.0d
-			y: -11.0d
+			x: -4.0d
+			y: 10.0d
 		}
 		{
 			dependencies: [
@@ -840,8 +756,8 @@
 				title: "递归建网"
 				type: "checkmark"
 			}]
-			x: -1.0d
-			y: -5.5d
+			x: 0.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["62AA7E83D24E4093"]
@@ -852,8 +768,8 @@
 				title: "自动合成"
 				type: "checkmark"
 			}]
-			x: 2.0d
-			y: -9.0d
+			x: 3.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["79C92A2E1542C1A7"]
@@ -879,8 +795,8 @@
 				type: "item"
 			}]
 			title: "样板供应器"
-			x: 2.0d
-			y: -11.0d
+			x: 3.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["79C92A2E1542C1A7"]
@@ -899,8 +815,8 @@
 				item: "ae2:blank_pattern"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -11.0d
+			x: 4.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["79C92A2E1542C1A7"]
@@ -922,8 +838,8 @@
 				item: "ae2:me_p2p_tunnel"
 				type: "item"
 			}]
-			x: 7.0d
-			y: -9.0d
+			x: 8.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["51D17CDCB592067D"]
@@ -935,8 +851,8 @@
 				title: "调谐"
 				type: "checkmark"
 			}]
-			x: 7.0d
-			y: -11.5d
+			x: 8.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -948,8 +864,8 @@
 				item: "ae2:redstone_p2p_tunnel"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -14.0d
+			x: 5.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -964,8 +880,8 @@
 				item: "ae2:me_p2p_tunnel"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -14.0d
+			x: 6.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -977,8 +893,8 @@
 				item: "ae2:item_p2p_tunnel"
 				type: "item"
 			}]
-			x: 6.5d
-			y: -14.0d
+			x: 7.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -990,8 +906,8 @@
 				item: "ae2:fluid_p2p_tunnel"
 				type: "item"
 			}]
-			x: 7.5d
-			y: -14.0d
+			x: 8.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -1003,8 +919,8 @@
 				item: "ae2:fe_p2p_tunnel"
 				type: "item"
 			}]
-			x: 8.5d
-			y: -14.0d
+			x: 9.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3C9E15524517317A"]
@@ -1016,8 +932,8 @@
 				item: "ae2:light_p2p_tunnel"
 				type: "item"
 			}]
-			x: 9.5d
-			y: -14.0d
+			x: 10.5d
+			y: 7.0d
 		}
 		{
 			description: ["shift+右键机器可以保存AE的各种元件与机器的配置，右键机器将应用内存卡中的配置。"]
@@ -1046,8 +962,8 @@
 				type: "item"
 			}]
 			title: "CPU"
-			x: 1.0d
-			y: -11.0d
+			x: 2.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["0E63C201EF1FC4FB"]
@@ -1063,10 +979,58 @@
 				title: "与ME接口的特殊行为"
 				type: "checkmark"
 			}]
-			x: 2.0d
-			y: -13.0d
+			x: 3.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["79E21703C72C52C4"]
+			hide_until_deps_visible: false
+			id: "690EB66CF852144F"
+			subtitle: "消耗两个石英玻璃"
+			tasks: [{
+				count: 2L
+				id: "0F3B3513844EEED8"
+				item: "ae2:quartz_glass"
+				type: "item"
+			}]
+			title: "石英玻璃直接无序合成"
+			x: 3.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"79E21703C72C52C4"
+				"1F11EC5781998C5F"
+			]
+			hide_until_deps_visible: false
+			id: "5BD09E44BC234702"
+			subtitle: "等价于消耗0.25个石英玻璃"
+			tasks: [{
+				id: "1F4A789245801210"
+				item: "createdelight:quartz_glass_parts"
+				type: "item"
+			}]
+			title: "使用石英玻璃部件"
+			x: 3.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["690EB66CF852144F"]
+			hide_until_deps_visible: false
+			icon: "createdelight:cell_housing_curving_head"
+			id: "1F11EC5781998C5F"
+			subtitle: "一个石英玻璃能处理为四个其对应的部件"
+			tasks: [{
+				elapsedTime: 1L
+				icon: "createdelight:cell_housing_curving_head"
+				id: "43FE8A88EA3D9B66"
+				type: "questsadditions:time"
+			}]
+			title: "使用元件外壳封头冲压"
+			x: 3.0d
+			y: 4.5d
 		}
 	]
 	subtitle: ["AE2的机械动力合成"]
-	title: "&9AE2的增产小技巧"
+	title: "&9AE2组件合成"
 }
