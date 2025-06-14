@@ -60,7 +60,7 @@ ServerEvents.recipes(e => {
         .loops(1)
         .id("create:sequenced_assembly/coffee_cake")
     let iner = "ratatouille:cake_base"
-    e.recipes.create.sequenced_assembly("mynethersdelight:magma_cake", "ratatouille:cake_base", [
+    e.recipes.create.sequenced_assembly("mynethersdelight:magma_cake_block", "ratatouille:cake_base", [
         e.recipes.create.filling(iner, [iner, Fluid.lava(250)]),
         e.recipes.create.deploying(iner, [iner, "minecraft:gunpowder"]),
         e.recipes.create.deploying([iner, "minecraft:bucket"], [iner, "mynethersdelight:hot_cream"]),
@@ -68,7 +68,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner)
         .loops(1)
-        .id("mynethersdelight:magma_cake")
+        .id("mynethersdelight:crafting/magma_cake")
     e.recipes.create.compacting("create:blaze_cake_base", [
         Fluid.of("createdelight:cake_batter", 500),
         "create:cinder_flour"

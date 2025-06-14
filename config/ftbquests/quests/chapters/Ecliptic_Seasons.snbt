@@ -25,8 +25,9 @@
 				title: "节气更迭"
 				type: "checkmark"
 			}]
+			title: "季节更迭"
 			x: -16.0d
-			y: -13.0d
+			y: -11.5d
 		}
 		{
 			dependencies: ["3F7431683708E805"]
@@ -56,7 +57,7 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -13.0d
+			x: -13.5d
 			y: -14.5d
 		}
 		{
@@ -88,7 +89,7 @@
 				value: 1
 			}]
 			title: "季节系统"
-			x: -13.0d
+			x: -13.5d
 			y: -11.5d
 		}
 		{
@@ -180,7 +181,7 @@
 				type: "item"
 			}]
 			x: -16.0d
-			y: -11.0d
+			y: -9.5d
 		}
 		{
 			dependencies: ["1CFB30F10E804F6C"]
@@ -355,7 +356,7 @@
 				type: "item"
 			}]
 			x: -16.0d
-			y: -15.0d
+			y: -13.5d
 		}
 		{
 			dependencies: [
@@ -418,6 +419,48 @@
 			}]
 			x: -8.5d
 			y: -12.5d
+		}
+		{
+			dependencies: ["3F7431683708E805"]
+			description: [
+				"&e品质系统&r是本整合包对于&e食物等阶的划分系统&r，品质越高，食物提供的&e饱食度&r和&e效果强度&r&4越高&r、&e效果持续时间&r也会&4延长&r"
+				"&a&n&l如何制作品质食物&r：需要&e对应品质&r的食物原料进行制作，&4仅可手工制作&r，所有&4非手动操作的量产化配方均不可产生品质&r"
+				"&a&n&l如何生产品质食物原料&r：&4沃土&r种植作物可有&e概率产出高一级品质种子&r，种植后可产出对应品质作物"
+				"&a&n&l关于品质作物&r：&f铁&r等级以上作物可&4无视季节生长&r，&6金&r等级以上作物可&4无视湿度生长&r"
+			]
+			id: "23CA09FA74623C9F"
+			rewards: [{
+				id: "68B433624139C441"
+				item: {
+					Count: 1
+					id: "minecraft:wheat_seeds"
+					tag: {
+						quality_food: {
+							quality: 1
+						}
+					}
+				}
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "&e食物品质&r可分为3级：&f铁&r、&6金&r、&b钻"
+			tasks: [{
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "quality_food:item/diamond_overlay"
+					}
+				}
+				id: "710006CE4007B457"
+				stat: "minecraft:play_time"
+				title: "品质系统"
+				type: "stat"
+				value: 1
+			}]
+			x: -13.5d
+			y: -8.5d
 		}
 	]
 	title: "&e四时行焉"

@@ -11,7 +11,14 @@
 	}
 	id: "532EAAE67364C491"
 	order_index: 5
-	quest_links: [ ]
+	quest_links: [{
+		id: "4C59DB18E18B6B39"
+		linked_quest: "6EB96008F21DAFBF"
+		shape: "hexagon"
+		size: 2.0d
+		x: -5.0d
+		y: 0.0d
+	}]
 	quests: [
 		{
 			dependencies: ["112566BE4CAC8023"]
@@ -29,7 +36,10 @@
 			y: -2.0d
 		}
 		{
-			dependencies: ["112566BE4CAC8023"]
+			dependencies: [
+				"112566BE4CAC8023"
+				"6EB96008F21DAFBF"
+			]
 			id: "5C9FA20C255A3BFC"
 			tasks: [{
 				id: "009523844DA486BD"
@@ -768,6 +778,7 @@
 			y: 3.0d
 		}
 		{
+			dependencies: ["6EB96008F21DAFBF"]
 			icon: "ad_astra:earth_globe"
 			id: "112566BE4CAC8023"
 			rewards: [{

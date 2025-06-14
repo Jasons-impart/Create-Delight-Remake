@@ -571,18 +571,9 @@
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
-				icon: {
-					Count: 1
-					id: "minecraft:elytra"
-					tag: {
-						Damage: 0
-					}
-				}
-				id: "43BA1201DAA02500"
-				stat: "minecraft:fall_one_cm"
+				id: "7DE6E5BD8D3D1A81"
 				title: "准备起飞！"
-				type: "stat"
-				value: 4
+				type: "checkmark"
 			}]
 			x: -2.0d
 			y: -3.0d
