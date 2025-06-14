@@ -60,6 +60,22 @@
 - 由于简单的覆盖无法处理删除文件的情况，并不能保证补丁能100%正常运作。暂时没有写bat以支持删除对应文件的计划。
 - 对于mods文件夹下的改动，因为涉及到mod本体，不会包含在补丁包中，取而代之的是一个mod变化列表文件，放在补丁包根目录。
 
+# 开发相关tips记录
+
+## 环境配置
+- 推荐使用[VSCode](https://code.visualstudio.com/)或者[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows)开发
+
+## 杂项笔记
+- Kubejs的server/client脚本更改后可以直接在游戏内热加载`\kubejs reload server_scripts`，无需重启游戏
+  - 如果是修改了配方、标签、掉落表等，需要再执行`\reload`
+- 模组的配置也可以热更新，在esc-模组-搜索找到对应模组后配置即可
+  
+## 推荐阅读/链接
+- [KubeJS开发文档中文翻译](https://gumeng.gitbook.io/ce-shi)
+  - 翻译自[KubeJS官方wiki](https://wiki.latvian.dev/books/kubejs)
+- [中文 Minecraft Mod 开发指南 by Team CovertDragon](https://covertdragon.team)
+- [forge官方文档-中文](https://mcforge-cn.readthedocs.io/zh/latest/forgedev)
+
 # 关于整合包已有的优化模组（供新增时参考）
 - Embeddium
   - 渲染优化 https://www.mcmod.cn/class/12028.html
