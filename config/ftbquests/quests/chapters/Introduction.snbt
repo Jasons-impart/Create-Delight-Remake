@@ -93,7 +93,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["整合包增加了节气mod，该mod修改了作物的生长，且机制较为复杂。在种植作物时请一定要阅读相关章节！"]
+			description: ["整合包修改了作物的生长机制，且相较于原版有一定差距，种植前请阅读相关章节！"]
 			icon: "eclipticseasons:calendar"
 			id: "46F1F92929FC8F9F"
 			rewards: [{
