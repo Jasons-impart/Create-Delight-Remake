@@ -5,6 +5,96 @@
 	group: "14CFC96B5B37F10B"
 	icon: "ae2:certus_quartz_crystal"
 	id: "51CFC40E4EEC9DE8"
+	images: [
+		{
+			height: 1.0d
+			image: "ae2:block/small_quartz_bud"
+			rotation: 0.0d
+			width: 1.0d
+			x: 1.5d
+			y: -2.9d
+		}
+		{
+			height: 0.25d
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 0.5d
+			x: 2.25d
+			y: -2.0d
+		}
+		{
+			height: 0.25d
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 0.5d
+			x: 3.75d
+			y: -2.0d
+		}
+		{
+			height: 0.25d
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 0.5d
+			x: 5.25d
+			y: -2.0d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/medium_quartz_bud"
+			rotation: 0.0d
+			width: 1.0d
+			x: 3.0d
+			y: -2.9d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/large_quartz_bud"
+			rotation: 0.0d
+			width: 1.0d
+			x: 4.5d
+			y: -2.9d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/quartz_cluster"
+			rotation: 0.0d
+			width: 1.0d
+			x: 6.0d
+			y: -2.9d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/flawed_budding_quartz"
+			rotation: 0.0d
+			width: 1.0d
+			x: 1.5d
+			y: -2.0d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/chipped_budding_quartz"
+			rotation: 0.0d
+			width: 1.0d
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/damaged_budding_quartz"
+			rotation: 0.0d
+			width: 1.0d
+			x: 4.5d
+			y: -2.0d
+		}
+		{
+			height: 1.0d
+			image: "ae2:block/quartz_block"
+			rotation: 0.0d
+			width: 1.0d
+			x: 6.0d
+			y: -2.0d
+		}
+	]
 	order_index: 2
 	quest_links: [ ]
 	quests: [
@@ -68,7 +158,7 @@
 			}]
 			title: "借由他人，寻找自我"
 			x: 0.0d
-			y: -4.0d
+			y: 6.5d
 		}
 		{
 			dependencies: [
@@ -88,7 +178,7 @@
 				type: "item"
 			}]
 			x: 3.75d
-			y: -4.0d
+			y: 6.5d
 		}
 		{
 			dependencies: [
@@ -103,7 +193,7 @@
 				type: "item"
 			}]
 			x: 4.75d
-			y: -6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
@@ -118,7 +208,7 @@
 				type: "item"
 			}]
 			x: 5.25d
-			y: -3.0d
+			y: 7.5d
 		}
 		{
 			dependencies: [
@@ -133,7 +223,7 @@
 				type: "item"
 			}]
 			x: 5.75d
-			y: -4.0d
+			y: 6.5d
 		}
 		{
 			dependencies: [
@@ -148,7 +238,7 @@
 				type: "item"
 			}]
 			x: 5.25d
-			y: -5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: [
@@ -163,7 +253,7 @@
 				type: "item"
 			}]
 			x: 4.75d
-			y: -2.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["6575B9B559D65549"]
@@ -173,13 +263,9 @@
 			shape: "square"
 			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
-			tasks: [{
-				id: "31761AF0BCF26D7D"
-				title: "使用机械动力吧"
-				type: "checkmark"
-			}]
+			title: "使用机械动力"
 			x: 3.75d
-			y: -7.5d
+			y: 9.75d
 		}
 		{
 			dependencies: ["5D34BFD68D039806"]
@@ -229,14 +315,14 @@
 			description: ["侧面加速，上下接电"]
 			id: "32871E311DB7FB8C"
 			shape: "circle"
-			size: 1.5d
+			size: 1.0d
 			subtitle: "可加速母岩与作物的生长"
 			tasks: [{
 				id: "6DC8E78A590F6AFD"
 				item: "ae2:growth_accelerator"
 				type: "item"
 			}]
-			x: 12.25d
+			x: 15.0d
 			y: 0.0d
 		}
 		{
@@ -279,8 +365,8 @@
 				type: "item"
 			}]
 			title: "用于充能的机器"
-			x: 7.5d
-			y: -2.0d
+			x: 9.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["550924A31C631172"]
@@ -300,23 +386,23 @@
 					type: "item"
 				}
 			]
-			x: 5.5d
+			x: 7.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["5C874A3DDFE9A50A"]
 			description: [
-				"对其持续的注入陨石废液，可使其生长。需要注意的是只有&e最顶级的赛特斯石英簇&r才能使用粉碎成&e赛特斯石英粉&r。"
+				"对其持续的注入陨石废液，可使其生长。需要注意的是只有&e最顶级的赛特斯石英簇&r才能用粉碎轮制成&e赛特斯石英粉&r。"
 				"将&e赛特斯石英粉&r与&e充能赛特斯石英&r丢入水中即可获取&e两个赛特斯石英&r。"
 			]
 			id: "36598C420C3FA43F"
-			subtitle: "将赛特斯石英粉碎一下即可获取"
+			subtitle: "可再生"
 			tasks: [{
 				id: "08C88C679E443041"
 				item: "ae2:certus_quartz_dust"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 7.0d
 			y: 1.5d
 		}
 		{
@@ -327,7 +413,7 @@
 				item: "ae2:quartz_glass"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 7.0d
 			y: 3.0d
 		}
 		{
@@ -338,7 +424,7 @@
 				item: "ae2:quartz_vibrant_glass"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 7.0d
 			y: 4.5d
 		}
 		{
@@ -356,7 +442,7 @@
 				item: "createdelight:quartz_glass_parts"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.5d
 			y: 3.0d
 		}
 		{
@@ -374,7 +460,7 @@
 				item: "createdelight:quartz_vibrant_glass_parts"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.5d
 			y: 4.5d
 		}
 		{
@@ -405,26 +491,26 @@
 				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 9.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["29D71BA5F51B8710"]
 			dependency_requirement: "all_started"
 			id: "03BBFC33D603A287"
-			subtitle: "将赛特斯石英水晶，铁锭，陨石块丢入岩浆中即可制作"
+			subtitle: "将充能赛特斯石英水晶，铁锭，陨石块丢入岩浆中即可制作"
 			tasks: [{
 				id: "1C14B985B7714345"
 				item: "megacells:sky_steel_ingot"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 9.0d
 			y: 1.5d
 		}
 		{
 			dependencies: ["26F96B707CE8F3DE"]
 			id: "391BA5D92F977F17"
-			subtitle: "一个陨石可以粉碎出多个陨石粉，而一个陨石粉就可以再生为陨石"
+			subtitle: "1陨石粉碎得到n陨石粉，1陨石粉烧炼得到1陨石"
 			tasks: [{
 				id: "5B3C2371FBBED059"
 				item: "ae2:sky_dust"
@@ -450,15 +536,15 @@
 					type: "checkmark"
 				}
 			]
-			x: 3.5d
-			y: 4.5d
+			x: 5.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["096D32604AED77C9"]
 			dependency_requirement: "one_completed"
 			icon: "createdelight:spent_liquor_bucket"
 			id: "67C09A75769D6D7A"
-			subtitle: "将陨石溶液搅拌或者离心即可获取陨石废液与红石，合成处理器的重要材料"
+			subtitle: "陨石废液可用于赛特斯石英的再生"
 			tasks: [
 				{
 					id: "62AFBDD96C58C050"
@@ -476,8 +562,9 @@
 					type: "item"
 				}
 			]
-			x: 3.5d
-			y: 6.0d
+			title: "陨石废液"
+			x: 5.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["29D71BA5F51B8710"]
@@ -489,7 +576,7 @@
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 10.5d
 			y: 0.0d
 		}
 		{
@@ -506,7 +593,7 @@
 				title: "关于线缆的选择"
 				type: "checkmark"
 			}]
-			x: 10.5d
+			x: 13.5d
 			y: 0.0d
 		}
 		{
@@ -527,7 +614,7 @@
 				type: "item"
 			}]
 			title: "ME玻璃线缆"
-			x: 10.5d
+			x: 13.5d
 			y: 1.5d
 		}
 		{
@@ -548,7 +635,7 @@
 				type: "item"
 			}]
 			title: "ME包层线缆"
-			x: 10.5d
+			x: 13.5d
 			y: 3.0d
 		}
 		{
@@ -582,7 +669,7 @@
 				}
 			]
 			title: "致密线缆"
-			x: 10.0d
+			x: 13.0d
 			y: 4.5d
 		}
 		{
@@ -594,7 +681,7 @@
 				item: "ae2:fluix_dust"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 12.0d
 			y: 1.5d
 		}
 		{
@@ -613,7 +700,7 @@
 				type: "item"
 			}]
 			title: "智能线缆"
-			x: 11.0d
+			x: 14.0d
 			y: 4.5d
 		}
 		{
@@ -655,8 +742,8 @@
 				type: "item"
 			}]
 			title: "一个AE终端访问整个仓库"
-			x: 9.0d
-			y: -4.0d
+			x: 10.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7634E055957264B6"]
@@ -666,8 +753,8 @@
 			size: 2.0d
 			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
 			title: "是时候搭建仓库了"
-			x: 12.5d
-			y: -4.0d
+			x: 10.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -678,7 +765,7 @@
 				type: "item"
 			}]
 			x: 2.25d
-			y: -3.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -689,7 +776,7 @@
 				type: "item"
 			}]
 			x: 2.25d
-			y: -5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -700,7 +787,7 @@
 				type: "item"
 			}]
 			x: 2.75d
-			y: -6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -711,7 +798,7 @@
 				type: "item"
 			}]
 			x: 2.75d
-			y: -2.0d
+			y: 8.5d
 		}
 		{
 			dependencies: [
@@ -726,7 +813,44 @@
 				type: "item"
 			}]
 			x: 1.75d
-			y: -4.0d
+			y: 6.5d
+		}
+		{
+			dependencies: [
+				"67C09A75769D6D7A"
+				"36598C420C3FA43F"
+			]
+			dependency_requirement: "one_completed"
+			icon: "ae2:quartz_cluster"
+			id: "2605D36AED802BDB"
+			tasks: [
+				{
+					id: "10D8DB455D47D22D"
+					item: "ae2:small_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "134359FE59DA8D45"
+					item: "ae2:medium_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "5249A65D83458715"
+					item: "ae2:large_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "11F137D3D02E6CBD"
+					item: "ae2:quartz_cluster"
+					type: "item"
+				}
+				{
+					id: "0065356FE460CDFC"
+					type: "checkmark"
+				}
+			]
+			x: 5.0d
+			y: 0.0d
 		}
 	]
 	title: "&b异星科技"

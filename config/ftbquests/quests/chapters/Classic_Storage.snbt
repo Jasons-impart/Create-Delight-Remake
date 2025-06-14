@@ -673,6 +673,7 @@
 			y: -3.0d
 		}
 		{
+			description: ["AE的存储优先级是很重要的一个概念。当你将物品存入AE时，AE会&e遍历所有网络中的存储&r（ME驱动器，组件坞，存储总线等），然后根据他们的优先级排序，会&e优先存入优先级高的&r存储。当需要取出物品时，会&e优先取出优先级更低&r的存储里的物品。"]
 			id: "0128B2E730D8FCB3"
 			shape: "square"
 			tasks: [{
@@ -994,7 +995,7 @@
 				item: "quark:crate"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 0.0d
 			y: 3.0d
 		}
 		{
@@ -1036,6 +1037,18 @@
 				type: "item"
 			}]
 			x: 3.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5E25B67858E6E950"]
+			id: "41082888C1B71397"
+			tasks: [{
+				id: "183FA5540F702A98"
+				item: "ae2:fluix_glass_cable"
+				type: "item"
+			}]
+			title: "递归建立存储子网络"
+			x: 4.5d
 			y: 3.0d
 		}
 	]
