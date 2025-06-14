@@ -16,6 +16,8 @@
 	boring_night_bags = false
 	#Immediately attempt sleeping after laying down on a bed
 	sleep_immediately = true
+	#Makes players respawn by laying on their bed
+	respawn_laying = false
 
 	[misc.heartstone_mod_integration]
 		#Gives some benefit when sleeping next to somebody else. By default only works in conjunction with heartstone mod
@@ -105,9 +107,6 @@
 	xp_cost = 0
 
 [home_bed]
-	#Amount of nights needed to mark a bed as home bed
-	#Range: 1 ~ 50
-	required_nights = 8
 	#Percentage of xp added per tier of the effect. Setting to 1 doubles the effect
 	#Range: 0.0 ~ 1.0
 	invigorated_effect_xp = 0.1
@@ -116,6 +115,9 @@
 	max_level_cap = 100
 	#Makes respawning only possible when using your own Home Bed. Fight back the night!
 	only_respawn_in_home_bed = false
+	#Amount of nights needed to make a home bed start increasing levels
+	#Range: 1 ~ 50
+	required_nights_for_first_level_up = 8
 
 [nightmares]
 	apply_to_beds = false
@@ -132,6 +134,9 @@
 	#Refractory period after a nightmare in which you won't be able to sleep
 	#Range: 0 ~ 1000000
 	insomnia_duration = 0
+	#Chance multiplier to have a nightmare when sleeping in a special bed. A 'special bed' is simply any (likely modded) bed that cant be targeted by a villager and or bedbug. Increased chance since you would be skipping bedbugs encounter otherwise
+	#Range: 1.0 ~ 5.0
+	special_bed_nightmare_chance_mult = 1.2
 
 [wake_up_encounters]
 	#The game will perform x attempts to spawn a mod around each player every time they sleep.Increases likelihood of finding one. Note that actual value will also depend on local difficulty
@@ -146,11 +151,11 @@
 	min_radius = 2
 	#Range: 1 ~ 10
 	height = 3
-	#Mobs that can randomly wake up the player if sleeping in a dark place. Leave empty to use default spawning behavior. Add a weighted list in the following format (replace line bellow):
-	#[[bed.wake_up_encounters.alternative_whitelist]]
+	#Mobs that can randomly wake up the player if sleeping in a dark place. Leave empty to use default spawning behavior. Add a weighted list in the following format (replace line bellow with this example.This is a Toml map btw, check out its syntax):
+	#[[wake_up_encounters.alternative_whitelist]]
 	#			data = "minecraft:vindicator"
 	#			weight = 2
-	#[[bed.wake_up_encounters.alternative_whitelist]]
+	#[[wake_up_encounters.alternative_whitelist]]
 	#			data = "minecraft:creeper"
 	#			weight = 2
 	#
