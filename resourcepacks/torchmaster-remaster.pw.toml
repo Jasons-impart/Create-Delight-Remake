@@ -1,0 +1,13 @@
+name = "Torchmaster Remaster"
+filename = "Torchmaster Remaster.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "27b1682e4c81adaab68bf71cad40bb340091775a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4893379
+project-id = 941795

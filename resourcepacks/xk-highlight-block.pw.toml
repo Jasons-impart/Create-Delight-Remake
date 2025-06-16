@@ -1,0 +1,13 @@
+name = "XK Highlight Block"
+filename = "XK Highlight Block.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "98a07370d6681162de71b35168e0fd6725bdc3ce"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4666843
+project-id = 895320

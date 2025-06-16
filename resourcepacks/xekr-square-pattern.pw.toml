@@ -1,0 +1,13 @@
+name = "Squareful"
+filename = "Squareful v3.15forMC1.20.1.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5d6d94a152629d077106fef2e0b08eec7063e13a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4913161
+project-id = 338808
