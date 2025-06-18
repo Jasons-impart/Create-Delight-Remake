@@ -32,15 +32,3 @@ function hexToDecimal(hex) {
   hex = hex.replace(/^#/, "");
   return parseInt(hex, 16);
 }
-
-// TODO: JEI显示下次写
-
-ServerEvents.recipes((event) => {
-  const { kubejs } = event.recipes;
-
-  // 没想好咋写 这个是示例 名字以及两个颜色参数可选
-  kubejs.shapeless(createBackpack(54, 2, "咕咕嘎嘎", "#4b0082", "#F0FFFF"), [
-    "sophisticatedbackpacks:backpack",
-    "#forge:storage_blocks/iron",
-  ]);
-});
