@@ -82,7 +82,7 @@
 	#Range: 4 ~ 31
 	SeasonCoreRange = 15
 	#Consume anyway if failed to use bone meal on crop.
-	BoneMealConsumeWhenFailure = true
+	BoneMealConsumeOnFailure = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.

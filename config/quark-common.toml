@@ -1608,7 +1608,7 @@
 
 	[client.improved_tooltips]
 		"Attribute Tooltips" = true
-		"Food Tooltips" = true
+		"Food Tooltips" = false
 		"Shulker Tooltips" = true
 		"Map Tooltips" = true
 		"Enchanting Tooltips" = true
