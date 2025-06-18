@@ -815,25 +815,26 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
-				"本整合包加入了sleep tight，晚上入睡的时候记得在床头插火把，不然0光环境下入睡会有怪物把你吓醒导致无法入睡哦。"
-				"多夜在同一张床上入睡会获得经验buff，鼓励大家尽可能在自家的床上美美入睡"
+				"本整合包加入了舒适用品mod，提供了可堆叠的睡袋和吊床，使用它们时不会设置出生点，可安心随地入睡。"
+				"另外，吊床可以用于跳过白天。"
 			]
-			icon: "sleep_tight:night_bag"
 			id: "1D22CD4640CF708B"
-			rewards: [{
-				id: "3D453E490D7229BC"
-				item: "minecraft:torch"
-				type: "item"
-			}]
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "每每在家里的床上入睡，我总感觉到无比的安心"
-			tasks: [{
-				id: "7FE779185C94F65D"
-				title: "有道理"
-				type: "checkmark"
-			}]
-			title: "安然入睡"
+			subtitle: "（不设置出生点）"
+			tasks: [
+				{
+					id: "0FFE66CF52203454"
+					item: "comforts:sleeping_bag_white"
+					type: "item"
+				}
+				{
+					id: "29E8043EFBF6F43C"
+					item: "comforts:hammock_white"
+					type: "item"
+				}
+			]
+			title: "随地大小睡"
 			x: 3.0d
 			y: -1.0d
 		}
