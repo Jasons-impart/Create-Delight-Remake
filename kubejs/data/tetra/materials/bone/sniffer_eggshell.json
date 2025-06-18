@@ -11,8 +11,8 @@
   "toolLevel": "minecraft:gold",
   "toolEfficiency": 4,
   "tints": {
-    "glyph": "2e6a55",
-    "texture": "1f3637"
+    "glyph": "1f3637",
+    "texture": "2e6a55"
   },
   "textures": ["crude", "bone"],
   "material": {

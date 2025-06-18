@@ -11,8 +11,8 @@
   "toolLevel": "minecraft:diamond",
   "toolEfficiency": 7,
   "tints": {
-    "glyph": "4d4354",
-    "texture": "73657d"
+    "glyph": "73657d",
+    "texture": "4d4354"
   },
   "textures": ["crude", "bone"],
   "material": {
