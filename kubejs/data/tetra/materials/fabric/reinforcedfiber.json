@@ -1,0 +1,27 @@
+{
+  "key": "reinforcedfiber",
+  "category": "fabric",
+  "primary": 5.0,
+  "secondary": 3.2,
+  "tertiary": 6.4,
+  "durability": 400,
+  "integrityCost": 1,
+  "integrityGain": 8,
+  "magicCapacity": 60,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "c9c198",
+    "texture": "c9c198"
+  },
+  "textures": [
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": [ "protection_pixel:reinforcedfiber" ]
+  },
+  "requiredTools": {
+    "cut": "minecraft:stone"
+  }
+}

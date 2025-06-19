@@ -14,7 +14,7 @@
     "glyph": "2d1a5c",
     "texture": "854da2"
   },
-  "textures": ["crude", "bone"],
+  "textures": ["shiny", "crude"],
   "material": {
     "items": ["ends_delight:dragon_tooth"]
   },

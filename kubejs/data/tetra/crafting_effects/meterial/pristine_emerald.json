@@ -1,0 +1,30 @@
+{
+  "replace": true,
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:craft_type",
+        "craft": "module"
+      },
+      {
+        "type": "tetra:material",
+        "material": {
+          "items": [ "tetra:pristine_emerald" ]
+        }
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "type": "tetra:remove_improvements",
+      "improvements": [ "arrested" ]
+    },
+    {
+      "type": "tetra:apply_improvements",
+      "improvements": {
+        "pristine_emerald": 0
+      }
+    }
+  ]
+}

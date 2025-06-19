@@ -14,7 +14,7 @@
     "glyph": "efd386",
     "texture": "fcf9e7"
   },
-  "textures": ["heavy", "metal"],
+  "textures": ["shiny", "metal"],
   "material": {
     "items": ["createmetallurgy:obdurium_ingot"]
   },
