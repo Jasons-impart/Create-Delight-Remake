@@ -386,6 +386,7 @@
 			dependencies: [
 				"5AB2EBBD2243DE6B"
 				"300372C7A93BD7C5"
+				"51627CB273142F22"
 			]
 			dependency_requirement: "one_completed"
 			hide_until_deps_visible: false
@@ -544,6 +545,7 @@
 				"5BD09E44BC234702"
 				"690EB66CF852144F"
 			]
+			dependency_requirement: "one_completed"
 			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "1E75F90CA8E6E2EE"
@@ -1032,5 +1034,5 @@
 		}
 	]
 	subtitle: ["AE2的机械动力合成"]
-	title: "&9AE2组件合成与自动化"
+	title: "&b自动化合成"
 }

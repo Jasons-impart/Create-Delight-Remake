@@ -105,7 +105,7 @@
 			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
 			shape: "hexagon"
-			size: 1.0d
+			size: 2.0d
 			subtitle: "进行&5虚空采矿&r吧！"
 			tasks: [{
 				id: "1D7AB28B86CF3039"
@@ -430,5 +430,5 @@
 			y: 4.5d
 		}
 	]
-	title: "&3虚空采矿"
+	title: "&6虚空采矿"
 }

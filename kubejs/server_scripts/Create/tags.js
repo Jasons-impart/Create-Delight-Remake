@@ -12,6 +12,10 @@ ServerEvents.tags("minecraft:item", e => {
         // 'petrolsparts:planetary_gearset',
         // 'petrolsparts:colossal_cogwheel'
     ])
+    e.add("create_bs:vaults", [
+        'create:item_vault',
+        'create_connected:item_silo'
+    ])
 })
 
 ServerEvents.tags("minecraft:fluid", e => {

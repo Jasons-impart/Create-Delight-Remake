@@ -1,0 +1,24 @@
+{
+	id: "743B0B748B7CE8EC"
+	loot_size: 1
+	order_index: 20
+	rewards: [
+		{ item: "createcafe:iced_coffee", weight: 10.0f }
+		{ item: "createcafe:iced_coffee_milk" }
+		{ item: "createcafe:strawberry_iced_coffee" }
+		{ item: "createcafe:vanilla_iced_coffee" }
+		{ item: "createcafe:mint_iced_coffee" }
+		{ item: "createcafe:caramel_iced_coffee" }
+		{ item: "createcafe:banana_iced_coffee" }
+		{ item: "youkaishomecoming:espresso", weight: 10.0f }
+		{ item: "youkaishomecoming:americano" }
+		{ item: "youkaishomecoming:ristretto" }
+		{ item: "youkaishomecoming:latte" }
+		{ item: "youkaishomecoming:affogato" }
+		{ item: "youkaishomecoming:con_panna" }
+		{ item: "youkaishomecoming:cappuccino" }
+		{ item: "youkaishomecoming:macchiato" }
+		{ item: "youkaishomecoming:mocha" }
+	]
+	title: "COFFEE"
+}

@@ -91,6 +91,13 @@ ServerEvents.recipes(e => {
             "ends_delight:dried_chorus_flower"
         ], "create_central_kitchen:chorus_flower_tea", "ends_delight:chorus_flower_tea"
     )
+    e.recipes.create.filling(
+        'ends_delight:chorus_flower_tea',
+        [
+            "minecraft:glass_bottle",
+            Fluid.of("create_central_kitchen:chorus_flower_tea", 250)
+        ]
+    ).id("ends_delight:filling/chorus_flower_tea")
     e.recipes.create.haunting("farmersrespite:yellow_tea_leaves", "farmersrespite:green_tea_leaves")
     .id("farmersrespite:haunting/yellow_tea_leaves")
     e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")
