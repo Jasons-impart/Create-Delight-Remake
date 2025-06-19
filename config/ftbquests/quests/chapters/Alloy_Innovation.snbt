@@ -18,22 +18,25 @@
 			id: "7D4B174BC4A98DC9"
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
-			x: 3.5d
-			y: 16.5d
+			size: 2.0d
+			x: 2.5d
+			y: 18.5d
 		}
 		{
 			id: "7A11CD1763458CD5"
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"
+			size: 2.0d
 			x: 4.5d
-			y: 17.0d
+			y: 19.0d
 		}
 		{
 			id: "30F40F6C2AA7B4B8"
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
-			x: 5.5d
-			y: 16.5d
+			size: 2.0d
+			x: 6.5d
+			y: 18.5d
 		}
 	]
 	quests: [
@@ -577,7 +580,8 @@
 		}
 		{
 			id: "18946F125B654A46"
-			size: 1.0d
+			shape: "square"
+			size: 2.0d
 			subtitle: "&e铜粒&r和&e锌粒&r也可以直接加热搅拌为&e黄铜粒&r，但是&4效率低的令人发指&r（原版速度的&41/4&r）"
 			tasks: [{
 				id: "32211BB1EFA003B7"
@@ -586,7 +590,7 @@
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
 			x: 9.0d
-			y: 9.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]

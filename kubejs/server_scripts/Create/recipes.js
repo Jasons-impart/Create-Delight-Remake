@@ -36,6 +36,11 @@ ServerEvents.recipes(e => {
         "design_decor:cast_iron_boiler_large",
         "createbigcannons:cast_iron_block"
     ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder_large")
+    // 玫瑰石英
+    e.recipes.create.sandpaper_polishing(
+        'create:polished_rose_quartz',
+        'create:rose_quartz'
+    ).id("create:sandpaper_polishing/rose_quartz")
     // 动力锯切割：平滑玫瑰石英
     e.recipes.create.cutting(
         "create:polished_rose_quartz",

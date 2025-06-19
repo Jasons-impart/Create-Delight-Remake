@@ -8,6 +8,7 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "culturaldelights:cooked_calamari"
     ])
+    e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
     // 炙烤河豚寿司
     e.shapeless(
         "2x createdelight:fugu_roll",

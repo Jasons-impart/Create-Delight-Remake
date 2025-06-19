@@ -26,6 +26,7 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "casualness_delight:crafting_shaped/deep_frying_pan",
         "create_deepfried:mixing/raw_chicken_nuggets",
+        'dungeonsdelight:fried_ghast_calamari_from_smoking'
     ])
 
     // 油炸锅
@@ -88,6 +89,7 @@ ServerEvents.recipes(e => {
     deep_frying('create_bic_bit:enderball', 'minecraft:ender_pearl', 100)
     deep_frying('create_deepfried:corn_dog', 'create_deepfried:raw_corn_dog', 100)
     deep_frying('mynethersdelight:fries_ghasta', 'mynethersdelight:ghasta', 100)
+    deep_frying('dungeonsdelight:fried_ghast_calamari', 'createdelight:raw_ghast_calamari', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [
@@ -137,6 +139,14 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_chicken_chip")
+    e.recipes.create.mixing(
+        'createdelight:raw_ghast_calamari',
+        [
+            'dungeonsdelight:ghast_calamari',
+            'bakeries:flour',
+            Fluid.of("createdelight:egg_yolk", 100)
+        ]
+    ).id("createdelight:mixing/raw_ghast_calamari")
     // 玉米热狗
     e.recipes.create.mixing(
         "create_deepfried:raw_corn_dog",

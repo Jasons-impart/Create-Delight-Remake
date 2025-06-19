@@ -12,6 +12,7 @@ ServerEvents.recipes(e => {
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
+    e.replaceInput({id: "vintagedelight:cooking/pad_thai"}, "#forge:pasta", 'createdelight:vermicelli')
 
     // 燕麦磨粉
     e.recipes.create.milling(

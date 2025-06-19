@@ -1,0 +1,12 @@
+{
+	id: "07353B900F4DA13F"
+	loot_size: 1
+	order_index: 21
+	rewards: [
+		{ item: "farmersrespite:green_tea" }
+		{ item: "farmersrespite:yellow_tea" }
+		{ item: "farmersrespite:black_tea" }
+		{ item: "youkaishomecoming:white_tea" }
+	]
+	title: "TEA"
+}

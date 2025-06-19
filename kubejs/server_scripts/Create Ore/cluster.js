@@ -127,7 +127,6 @@ ServerEvents.recipes((event) => {
       600,
     )
     .drill("#createoreexcavation:drills_diamonds")
-    .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .stress(1024)
     .id("kubejs:mars_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation

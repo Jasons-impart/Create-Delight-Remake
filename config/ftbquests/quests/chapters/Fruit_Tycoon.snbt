@@ -6,7 +6,7 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "fruitsdelight:pineapple"
 	id: "2A806E6249A1DCA7"
-	order_index: 3
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -27,231 +27,199 @@
 				type: "checkmark"
 			}]
 			title: "超多超多水果"
-			x: -5.5d
-			y: -4.0d
+			x: -4.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏苹果树叶有几率获得。苹果树自然生成于&e森林与繁花森林群系&r。"
-				"在&4秋季&r收获。"
-			]
 			id: "43D20AFE4D13389F"
 			rewards: [{
 				id: "3891A6A378174A4A"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "苹果树生成于&e森林&r与&e繁花森林&r，或&e橡树树叶&r概率掉落"
 			tasks: [{
 				id: "7F92331C061AFCFC"
 				item: "minecraft:apple"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -6.5d
+			x: -8.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"食用后恢复饥饿值3点（）和饱和度1点（）。"
-				"是烹饪冰糖雪梨、梨汁、梨子果酱和烤梨的原料之一。"
-			]
 			id: "60A76054159A37F7"
 			rewards: [{
 				id: "2770636513A8A92E"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "梨树生成于&e桦木森林&r与&e原始桦木森林&r"
 			tasks: [{
 				id: "53A69FA2DB5CF273"
 				item: "fruitsdelight:pear"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -8.0d
 			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏山楂树叶有几率获得。山楂树自然生成于&e针叶林、原始云杉针叶林和原始松木针叶林群系&r。"
-				"在&4冬季&r收获。"
-			]
+			description: [""]
 			id: "0063494FD35EF1DE"
 			rewards: [{
 				id: "79A270158A99D91C"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "山楂树生成于&e针叶林&r、&e原始云杉针叶林&r和&e原始松木针叶林&r"
 			tasks: [{
 				id: "6768F71743BA80F1"
 				item: "fruitsdelight:hawberry"
 				type: "item"
 			}]
-			x: -7.0d
-			y: -1.5d
+			x: -6.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏芒果树叶有几率获得。芒果树自然生成于&e丛林和竹林群系&r。"
-				"在&4夏季&r收获。"
-			]
 			id: "1F65F7E3A19CA174"
 			rewards: [{
 				id: "6EBBB71D8AB9DD96"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "芒果树生成于&e丛林&r和&e竹林&r"
 			tasks: [{
 				id: "753AA597E2E60D62"
 				item: "fruitsdelight:mango"
 				type: "item"
 			}]
-			x: -5.0d
+			x: -3.0d
 			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏柿子树叶有几率获得。柿子树自然生成于&e积雪的针叶林和雪林群系&r。"
-				"在&4冬季&r收获。"
-			]
 			id: "3848C15C02538184"
 			rewards: [{
 				id: "244445E783401118"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "柿子树生成于&e积雪的针叶林&r和&e雪林&r"
 			tasks: [{
 				id: "3C4D413AFF543E18"
 				item: "fruitsdelight:persimmon"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -4.0d
+			x: -8.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏水蜜桃树叶有几率获得。水蜜桃树自然生成于&e稀疏的丛林群系&r。"
-				"在&4春季&r收获。"
-			]
 			id: "07886F18ABB7C8D1"
 			rewards: [{
 				id: "5D751EDC1FEC5A6A"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "水蜜桃树生成于&e稀疏丛林&r。"
 			tasks: [{
 				id: "72564063541AAF49"
 				item: "fruitsdelight:peach"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -5.0d
+			x: -7.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏橘子树叶有几率获得。橘子树自然生成于&e森林和繁花森林群系&r。"
-				"在&4秋季&r收获。"
-			]
+			description: [""]
 			id: "7EE6074FA3805A00"
 			rewards: [{
 				id: "07AF948CDD5E253E"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "橘子树自然生成于&e森林&r和&e繁花森林&r"
 			tasks: [{
 				id: "358377D636EA4E59"
 				item: "fruitsdelight:orange"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -2.0d
+			x: -8.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏山竹树叶有几率获得。山竹树自然生成于&e丛林、沼泽和红树林沼泽群系&r。"
-				"在&4夏季&r收获。"
-			]
 			id: "1CD404F45F375D7E"
 			rewards: [{
 				id: "3B4ED88E290DE0FF"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "山竹树生成于&e丛林&r、&e沼泽&r和&e红树林沼泽&r"
 			tasks: [{
 				id: "0C0BF2464140BE06"
 				item: "fruitsdelight:mangosteen"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -1.5d
+			x: -1.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"蔓越莓丛自然生成于&e丛林、沼泽、红树林沼泽和黑森林群系&r。"
-				"在&4秋季&r收获"
-			]
+			description: [""]
 			id: "25C77A4F65494D2A"
 			rewards: [{
 				id: "5C2DB668B57C47CA"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "蔓越莓丛生成于&e丛林&r、&e沼泽&r、&e红树林沼泽&r和&e黑森林&r"
 			tasks: [{
 				id: "43FDEB3499F228C4"
 				item: "fruitsdelight:cranberry"
 				type: "item"
 			}]
 			x: -5.0d
-			y: -1.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"自然生成于&e针叶林、原始云杉针叶林、原始松木针叶林、积雪的针叶林、雪林、沼泽、红树林沼泽、风袭丘陵、风袭森林群系&r。"
-				"可用骨粉催熟结果。结果后右击获得若干蓝莓。"
-				"附有精准采集的工具可采集本体。"
-				"也可用蓝莓直接在地面或耕地种植，有三个生长阶段。"
-				"在&4春季&r收获。"
-			]
+			description: [""]
 			id: "0127B9E281D268BF"
 			rewards: [{
 				id: "7687C54875C4BD7D"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "蓝莓自然生成于&e针叶林、原始云杉针叶林、原始松木针叶林、积雪的针叶林、雪林、沼泽、红树林沼泽、风袭丘陵、风袭森林群系&r"
 			tasks: [{
 				id: "28DFB858D2E0617D"
 				item: "fruitsdelight:blueberry"
 				type: "item"
 			}]
 			x: -3.0d
-			y: -1.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"自然生成于&e沙漠群系&r，破坏后获得若干哈密瓜片。"
-				"在&4夏季&r收获"
-			]
 			id: "2532FCB37BA9E159"
 			rewards: [{
 				id: "7A5C76F29A4633D0"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "哈密瓜生成于&e沙漠&r，破坏后可获得&e哈密瓜片"
 			tasks: [{
 				id: "59F56E1A2A4A486F"
 				item: "fruitsdelight:hamimelon_slice"
 				type: "item"
 			}]
 			x: -8.0d
-			y: -6.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
@@ -261,75 +229,65 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "西瓜生成于&e丛林&r，破坏后可获得&e西瓜片"
 			tasks: [{
 				id: "491F6CC83D8A0BA8"
 				item: "minecraft:melon_slice"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -3.0d
+			x: -8.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"自然生成于&e沙滩群系&r，破坏后获得一个菠萝。"
-				"不可直接食用。别想了，不能喂狼"
-				"是烹饪菠萝饭的原料之一。"
-				"在&4夏季&r收获"
-			]
+			description: ["别想了，不能&e喂狼"]
 			id: "59A6B34D8607FD6A"
 			rewards: [{
 				id: "39DB6648D8B9C2AA"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "菠萝生成于&e沙滩&r"
 			tasks: [{
 				id: "6136E372191F2637"
 				item: "fruitsdelight:pineapple"
 				type: "item"
 			}]
-			x: -6.0d
+			x: -4.0d
 			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"自然生成于&e平原群系&r，可用骨粉对其催熟结果。结果后右击获得若干黄柠檬。"
-				"破坏后无掉落物。附有精准采集的工具可采集本体。"
-				"在&4夏季&r收获。"
-			]
 			id: "0D00E629D80816CF"
 			rewards: [{
 				id: "2938225EE0D9ED91"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "黄柠檬生成于&e平原&r"
 			tasks: [{
 				id: "6C28EBAFF66B91FC"
 				item: "fruitsdelight:lemon"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -1.5d
+			x: -1.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"破坏荔枝树叶有几率获得。荔枝树自然生成于&e丛林和竹林群系&r。"
-				"在&4夏季&r收获。"
-			]
 			id: "6CB6E1848E1C721A"
 			rewards: [{
 				id: "072E1365A9CABEEC"
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "荔枝树生成于&e丛林&r和&e竹林&r。"
 			tasks: [{
 				id: "5A0D0FCBD4D6CF9B"
 				item: "fruitsdelight:lychee"
 				type: "item"
 			}]
-			x: -7.0d
+			x: -2.0d
 			y: -6.5d
 		}
 		{
@@ -340,329 +298,32 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "甜浆果丛生成于所有&e针叶林生物群系变种"
 			tasks: [{
 				id: "4AD04521009A25BE"
 				item: "minecraft:sweet_berries"
 				type: "item"
 			}]
 			x: -4.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["2B823CFAF4514D32"]
-			dependency_requirement: "one_started"
-			description: [
-				"利用糖、黄柠檬片（有的不需要）和若干对应水果，在厨锅中进行烹煮获得。"
-				""
-				"食用后恢复饥饿值6点和饱和度3点，并获得对应Buff效果。"
-				""
-				"任何果酱均可与面包、果丹皮、芒果合成果酱面包、果丹卷和生拌芒果，同时保留原材料果酱的Buff效果。"
-			]
-			icon: "fruitsdelight:apple_jelly"
-			id: "58B030E19968924C"
-			rewards: [{
-				id: "1DFD887AF7FDB14E"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "诱人的粘稠物"
-			tasks: [{
-				id: "55EBFED51D1FD4A3"
-				item: "fruitsdelight:lemon_slice"
-				type: "item"
-			}]
-			title: "果酱"
-			x: -2.0d
-			y: -5.0d
-		}
-		{
-			dependencies: ["58B030E19968924C"]
-			description: ["将果酱放在加热的炼药锅（下面放热源方块）内，用粘液球点击将其转化为对应的果冻"]
-			icon: "fruitsdelight:apple_jello"
-			id: "077CC191544E19C9"
-			rewards: [{
-				id: "46587BE46FA97934"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "04B004606B961E81"
-				item: "minecraft:slime_ball"
-				type: "item"
-			}]
-			title: "果冻"
-			x: -2.0d
-			y: -6.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"不可直接食用。如同铁砧一样会受到重力影响。"
-				"有三种生长阶段，到达第三阶段时会从树叶上掉落。若撞击到了生物，则生物会受到伤害。"
-			]
+			description: ["&e重力方块&r，不可直接食用，榴莲&e成熟后&r会&4从树叶上掉落&r并造成&4伤害"]
 			id: "1C4EA0FC584EFC28"
 			rewards: [{
 				id: "136C5E6002FA454F"
 				type: "xp"
 				xp: 100
 			}]
-			subtitle: "非常非常非常难找"
+			subtitle: "榴莲树极其少量自然生成于&e沼泽&r、&e红树林沼泽&r、&e丛林&r、&e竹林&r和&e稀疏的丛林"
 			tasks: [{
 				id: "29B15EDEB93F3CCC"
 				item: "fruitsdelight:durian"
 				type: "item"
 			}]
-			x: -9.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["08FD4AD67AD3D19E"]
-			hide_dependency_lines: true
-			id: "586F961AB5DF818C"
-			rewards: [{
-				id: "1F6068EDADA52E1B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			shape: "pentagon"
-			size: 2.0d
-			subtitle: "给你钱自己去买一个吧（"
-			tasks: [{
-				id: "68F7E59CF979626E"
-				title: "实在找不到榴莲可以看这里"
-				type: "checkmark"
-			}]
-			x: -10.0d
-			y: -8.0d
-		}
-		{
-			dependencies: ["08FD4AD67AD3D19E"]
-			description: [
-				"苹果汁拥有不同于其他果汁的合成方式。为什么？因为它是高贵的原版水果！"
-				"至于这两个西瓜汁......确实是不一样的物品哦。"
-			]
-			id: "2B823CFAF4514D32"
-			rewards: [{
-				id: "0338601E6DB30902"
-				type: "xp"
-				xp: 777
-			}]
-			subtitle: "与它们奇异的buff"
-			tasks: [
-				{
-					id: "1BA21C80B3C658D5"
-					item: "farmersrespite:strong_melon_juice"
-					type: "item"
-				}
-				{
-					id: "6B92DBF7E079BEC8"
-					item: "fruitsdelight:hamimelon_juice"
-					type: "item"
-				}
-				{
-					id: "24733E5C59EB0F35"
-					item: "fruitsdelight:orange_juice"
-					type: "item"
-				}
-				{
-					id: "57DFD5D93A3721EB"
-					item: "fruitsdelight:orange_juice"
-					type: "item"
-				}
-				{
-					id: "769DF8413E1DD555"
-					item: "fruitsdelight:pear_juice"
-					type: "item"
-				}
-				{
-					id: "421B45086F1619C8"
-					item: "fruitsdelight:bayberry_soup"
-					type: "item"
-				}
-				{
-					id: "585FC13C837E84BC"
-					item: "vintagedelight:apple_sauce_mason_jar"
-					type: "item"
-				}
-				{
-					id: "0784C14C3F5D6C24"
-					item: "farmersdelight:melon_juice"
-					type: "item"
-				}
-			]
-			title: "果汁"
-			x: -2.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["08FD4AD67AD3D19E"]
-			id: "74CA263FB9665711"
-			rewards: [{
-				id: "2811F385213ECC23"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [
-				{
-					id: "4FE967097E7AC3CB"
-					item: "fruitsdelight:bayberry_cookie"
-					type: "item"
-				}
-				{
-					id: "5B16E51D696C41EF"
-					item: "fruitsdelight:lemon_cookie"
-					type: "item"
-				}
-				{
-					id: "4297888DA6DB4A7A"
-					item: "fruitsdelight:persimmon_cookie"
-					type: "item"
-				}
-				{
-					id: "47D0A9BCB4D02B03"
-					item: "fruitsdelight:cranberry_cookie"
-					type: "item"
-				}
-			]
-			title: "美味曲奇！"
-			x: -2.0d
-			y: -3.0d
-		}
-		{
-			dependencies: ["58B030E19968924C"]
-			icon: {
-				Count: 1
-				id: "fruitsdelight:jelly_bread"
-				tag: {
-					JellyEffectRoot: [""]
-				}
-			}
-			id: "20D795F5D225C853"
-			rewards: [{
-				id: "5DAAFA0EC26F6975"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2E7F84CC4BF594E3"
-				title: "任意果酱面包"
-				type: "checkmark"
-			}]
-			x: -0.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["077CC191544E19C9"]
-			icon: "fruitsdelight:apple_jello_block"
-			id: "3DC27FEAA69DAB8C"
-			rewards: [{
-				id: "78E2818C6607D7A7"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "0F48545B224D5A97"
-				title: "任意果冻块"
-				type: "checkmark"
-			}]
-			x: -0.5d
-			y: -6.0d
-		}
-		{
-			dependencies: ["0063494FD35EF1DE"]
-			id: "52BBBD156FF79B36"
-			rewards: [{
-				id: "0246E71CC3D50B6A"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "15634A0DBADE7F3A"
-				item: "fruitsdelight:hawberry_sheet"
-				type: "item"
-			}]
-			x: -7.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["0063494FD35EF1DE"]
-			id: "6FAC9504C659A4B9"
-			rewards: [{
-				id: "4E3E814E2F6F113B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "23548AA7ABB2D8BA"
-				item: "fruitsdelight:hawberry_stick"
-				type: "item"
-			}]
-			x: -7.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["52BBBD156FF79B36"]
-			id: "4E7799B050314171"
-			rewards: [{
-				id: "7728BA7997ADFD5C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3462B2C339E748B1"
-				item: "fruitsdelight:hawberry_roll"
-				type: "item"
-			}]
-			x: -7.0d
-			y: 0.5d
-		}
-		{
-			dependencies: ["1CD404F45F375D7E"]
-			id: "5724F7D998F5C1D1"
-			rewards: [{
-				id: "5C3CB83A9F3ED841"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3E8819D753E50B03"
-				item: "fruitsdelight:mangosteen_cake"
-				type: "item"
-			}]
-			x: -8.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["3702E12E346906E0"]
-			id: "7A72B66BA5D90B3B"
-			rewards: [{
-				id: "79D3AB82A5DD2ECE"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6CB3949BD1F65CE4"
-				item: "fruitsdelight:orange_chicken"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["3702E12E346906E0"]
-			id: "0A4EACEFD0BCE44B"
-			rewards: [{
-				id: "7C3F079C445571F8"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "244F4DBED364644A"
-				item: "fruitsdelight:orange_marinated_pork"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -1.5d
+			x: -6.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["7EE6074FA3805A00"]
@@ -672,13 +333,14 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "或许不是酸的？"
 			tasks: [{
 				id: "71663D9234440E5E"
 				item: "fruitsdelight:orange_slice"
 				type: "item"
 			}]
-			x: -10.0d
-			y: -2.0d
+			x: -9.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3848C15C02538184"]
@@ -688,13 +350,14 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "我记得小时候吃的&e柿饼&r上面都有一层&e糖霜&r，&4老好吃了"
 			tasks: [{
 				id: "4B5F3F3A50F5C0D3"
 				item: "fruitsdelight:dried_persimmon"
 				type: "item"
 			}]
-			x: -10.0d
-			y: -4.0d
+			x: -9.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["1C4EA0FC584EFC28"]
@@ -704,45 +367,14 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "臭臭的，很好吃"
 			tasks: [{
 				id: "33725F1FF8F9BECF"
 				item: "fruitsdelight:durian_flesh"
 				type: "item"
 			}]
-			x: -10.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["5D5D9AF56FD02191"]
-			id: "6E9762DAD3DD2727"
-			rewards: [{
-				id: "5C61ECD796C4AD58"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6DBEEFC1D88EE8B5"
-				item: "fruitsdelight:baked_durian"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -6.5d
-		}
-		{
-			dependencies: ["5D5D9AF56FD02191"]
-			id: "7C4B28A0FFD96217"
-			rewards: [{
-				id: "096FC31296CF2435"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2AE49B1D91E9A8C0"
-				item: "fruitsdelight:durian_pie"
-				type: "item"
-			}]
-			x: -11.0d
-			y: -5.5d
+			x: -6.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["2532FCB37BA9E159"]
@@ -757,24 +389,8 @@
 				item: "fruitsdelight:hamimelon_popsicle"
 				type: "item"
 			}]
-			x: -8.0d
-			y: -7.5d
-		}
-		{
-			dependencies: ["6CB6E1848E1C721A"]
-			id: "20D39B2D476E5C34"
-			rewards: [{
-				id: "2BCCD0FAB44377E2"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "22CA0C6CD0963D86"
-				item: "fruitsdelight:lychee_chicken"
-				type: "item"
-			}]
-			x: -7.0d
-			y: -7.5d
+			x: -9.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["59A6B34D8607FD6A"]
@@ -789,103 +405,7 @@
 				item: "fruitsdelight:pineapple_slice"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -7.5d
-		}
-		{
-			dependencies: ["5C88DCFCF7F0DFD9"]
-			id: "7474CCAA0A97B34B"
-			rewards: [{
-				id: "59AA0307F7AFD7CD"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4D1EE0ED4384A8A5"
-				item: "fruitsdelight:pineapple_fried_rice"
-				type: "item"
-			}]
-			x: -7.0d
-			y: -8.5d
-		}
-		{
-			dependencies: ["5C88DCFCF7F0DFD9"]
-			id: "21F489D77AAAD08E"
-			rewards: [{
-				id: "22BDACCF572DABBC"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "298C291BE3EB24F6"
-				item: "fruitsdelight:pineapple_marinated_pork"
-				type: "item"
-			}]
-			x: -5.0d
-			y: -8.5d
-		}
-		{
-			dependencies: ["5C88DCFCF7F0DFD9"]
-			id: "4B6ACED1E73FB3B4"
-			rewards: [{
-				id: "29CBF1B240208D33"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5851A08896115DEA"
-				item: "fruitsdelight:pineapple_pie"
-				type: "item"
-			}]
-			x: -6.0d
-			y: -8.5d
-		}
-		{
-			dependencies: ["1F65F7E3A19CA174"]
-			id: "03953B81C3EDAD5F"
-			rewards: [{
-				id: "2F0EF5D665B7C2C4"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "207C01F21D2AA1B7"
-				item: "fruitsdelight:mango_salad"
-				type: "item"
-			}]
-			x: -5.0d
-			y: -7.5d
-		}
-		{
-			dependencies: ["60A76054159A37F7"]
-			id: "3DC53B26BCBE3C2B"
-			rewards: [{
-				id: "6B687286C2F74C50"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "783676C1F3F2315C"
-				item: "fruitsdelight:pear_with_rock_sugar"
-				type: "item"
-			}]
 			x: -4.0d
-			y: -7.5d
-		}
-		{
-			dependencies: ["60A76054159A37F7"]
-			id: "40D9F07DE336DA4E"
-			rewards: [{
-				id: "3F8ABF76B59E3E74"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "69B7F4D795348CCC"
-				item: "fruitsdelight:baked_pear"
-				type: "item"
-			}]
-			x: -3.0d
 			y: -7.5d
 		}
 		{
@@ -901,88 +421,8 @@
 				item: "fruitsdelight:lemon_slice"
 				type: "item"
 			}]
-			x: -6.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["25C77A4F65494D2A"]
-			id: "2BB23DDEC083DC23"
-			rewards: [{
-				id: "4674EF6C0CD5AB2D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "44EBCC730B8FE93E"
-				item: "fruitsdelight:cranberry_muffin"
-				type: "item"
-			}]
-			x: -5.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["0127B9E281D268BF"]
-			id: "70FDA3EF47E4A62F"
-			rewards: [{
-				id: "721F9F0E821D40D0"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7595B4E9F69ECC17"
-				item: "fruitsdelight:blueberry_muffin"
-				type: "item"
-			}]
-			x: -3.0d
-			y: -0.5d
-		}
-		{
-			dependencies: ["0D00E629D80816CF"]
-			id: "2C15E616766156E0"
-			rewards: [{
-				id: "67DA368AC473F1A6"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "54182FFC8EEF0F82"
-				item: "fruitsdelight:lemon_tart"
-				type: "item"
-			}]
-			x: -6.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["7C53FFA4AC6FEDC3"]
-			id: "6CDD6477837C02B6"
-			rewards: [{
-				id: "3006002F46883C0B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6055D138F2EB66A4"
-				item: "fruitsdelight:fig_tart"
-				type: "item"
-			}]
-			x: -1.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["7C53FFA4AC6FEDC3"]
-			id: "4415D01B05C146F7"
-			rewards: [{
-				id: "6FD4335EEC654B06"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "27213AE2F7E8F3EB"
-				item: "fruitsdelight:fig_pudding"
-				type: "item"
-			}]
-			x: -1.0d
-			y: -1.5d
+			x: 0.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
@@ -992,13 +432,14 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "无花果树生成于&e森林&r和&e繁花森林"
 			tasks: [{
 				id: "2D59E5F67E424863"
 				item: "fruitsdelight:fig"
 				type: "item"
 			}]
-			x: -2.0d
-			y: -2.0d
+			x: -1.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["08FD4AD67AD3D19E"]
@@ -1010,8 +451,173 @@
 				item: "quark:ancient_fruit"
 				type: "item"
 			}]
-			x: -3.5d
-			y: -5.0d
+			x: -8.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "0BC1A48C5F7E4AD0"
+			subtitle: "石榴生长于下界的&9诡异森林&r中"
+			tasks: [{
+				id: "1F41CD8451A6EB11"
+				item: "collectorsreap:pomegranate"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["0BC1A48C5F7E4AD0"]
+			id: "1ABB1CC7C1D6566E"
+			secret: true
+			subtitle: "种植于&9复生沃土&r上产生的特殊产物"
+			tasks: [{
+				id: "0AE3C77C5837336D"
+				item: "collectorsreap:stygian_pomegranate"
+				type: "item"
+			}]
+			x: -8.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0BC1A48C5F7E4AD0"]
+			id: "613F06C5E54E6D5F"
+			tasks: [
+				{
+					id: "41F8DAB66E7E995E"
+					item: "collectorsreap:pomegranate_slice"
+					type: "item"
+				}
+				{
+					id: "66EC9D39585B2EA1"
+					item: "collectorsreap:pomegranate_seeds"
+					type: "item"
+				}
+			]
+			x: -7.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "665D3BAA652CF952"
+			subtitle: "青柠生成于&e繁花森林"
+			tasks: [{
+				id: "23874BA4D63CB64E"
+				item: "collectorsreap:lime"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["665D3BAA652CF952"]
+			id: "237C17BBEC95EA6A"
+			tasks: [{
+				id: "4BE29C192B875F91"
+				item: "collectorsreap:lime_slice"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "44BEB5F11CE04C38"
+			tasks: [
+				{
+					id: "0F5D35C51DA740B2"
+					item: "trailandtales_delight:pitcher_plant"
+					type: "item"
+				}
+				{
+					id: "5902A4FB8EB1520E"
+					item: "minecraft:pitcher_pod"
+					type: "item"
+				}
+			]
+			x: -5.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["44BEB5F11CE04C38"]
+			id: "3210C1EEBB57D2E0"
+			tasks: [{
+				id: "61940B621E6FE5B2"
+				item: "trailandtales_delight:pitcher_taro"
+				type: "item"
+			}]
+			x: -5.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "6470CEFC832AE325"
+			subtitle: "牛油果树生成于&e稀疏丛林"
+			tasks: [{
+				id: "72C427233D498F45"
+				item: "culturaldelights:avocado"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "6FAEFDA0867E48CA"
+			subtitle: "黯紫浆果丛生成于&e黑森林&r"
+			tasks: [{
+				id: "6A2E55D520C849F1"
+				item: "vintagedelight:gearo_berry"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "057212DC8E0B9AF9"
+			subtitle: "紫颂果生成于&5末地外岛"
+			tasks: [{
+				id: "6EA7A323D0907869"
+				item: "minecraft:chorus_fruit"
+				type: "item"
+			}]
+			x: -1.0d
+			y: -4.5d
+		}
+		{
+			dependencies: ["08FD4AD67AD3D19E"]
+			id: "4E91F3B0C9186CF4"
+			subtitle: "发光浆果生成于&e繁茂洞穴&r中"
+			tasks: [{
+				id: "17F02FBF9F2F0281"
+				item: "minecraft:glow_berries"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["326F31C128FA35F7"]
+			id: "12B6BFA1A762F34A"
+			tasks: [{
+				id: "20208F06836CBA9E"
+				item: "farmersdelight:melon_popsicle"
+				type: "item"
+			}]
+			x: -9.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["43D20AFE4D13389F"]
+			id: "51F472789C359989"
+			tasks: [{
+				id: "0F028003BAA9D082"
+				item: "some_assembly_required:apple_slices"
+				type: "item"
+			}]
+			x: -9.0d
+			y: -3.5d
 		}
 	]
 	title: "&e水果大亨"

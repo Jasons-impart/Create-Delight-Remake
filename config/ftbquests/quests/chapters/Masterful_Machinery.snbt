@@ -750,8 +750,8 @@
 					type: "item"
 				}
 			]
-			shape: "octagon"
-			size: 1.0d
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"
@@ -2633,5 +2633,5 @@
 			y: -5.25d
 		}
 	]
-	title: "&3精械锐制"
+	title: "&6精械锐制"
 }
