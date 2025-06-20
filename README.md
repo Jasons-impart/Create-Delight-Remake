@@ -18,7 +18,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 <p align="center">
   
   <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="600" height="100">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="1013" height="174">
   </a>
   <br />
   <a href="https://github.com/JasonQ1123">
@@ -36,6 +36,8 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     整合包反馈交流群：856762964
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
+    <br />
+    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在Curseorge上下载整合包最新测试版 »</strong></a>
     <br />
     <br />
     <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
@@ -81,8 +83,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
   - [Discord](#discord)
   - [QQ](#qq)
 - [开发团队](#开发团队)
-  - [贡献者](#贡献者)
-  - [如何参与](#如何参与)
 - [支持我们](#支持我们)
 - [特别鸣谢](#特别鸣谢)
 
