@@ -1,0 +1,29 @@
+{
+  "key": "popped_chorus_fruit",
+  "category": "wood",
+  "primary":5.0,
+  "secondary": 0.4,
+  "tertiary": 6.0,
+  "durability": 227,
+  "integrityCost": 1,
+  "integrityGain": 8,
+  "magicCapacity": 100,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 4.0,
+  "tints": {
+    "glyph": "764c76",
+    "texture": "b58bb5"
+  },
+  "textures": [
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": ["minecraft:popped_chorus_fruit"]
+  },
+  "improvements": {
+    "hollow": 0
+  },
+  "requiredTools": {
+    "hammer_dig": 2    }
+}

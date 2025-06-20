@@ -1,0 +1,28 @@
+{
+    "key": "bamboo",
+    "category": "misc",
+    "primary": 1,
+    "secondary": 0.1,
+    "tertiary": 6,
+    "durability": 15,
+    "integrityCost": 1,
+    "integrityGain": 3,
+    "magicCapacity": 104,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "699022",
+        "texture": "5e8a24"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "improvements": {
+        "hollow": 0
+    },
+    "material": {
+        "items": [ "minecraft:bamboo","mynethersdelight:powder_cannon" ]
+    },
+    "features": [ "powder" ]
+}

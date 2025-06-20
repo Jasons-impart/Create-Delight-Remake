@@ -1,0 +1,23 @@
+{
+  "key": "obdurium",
+  "category": "metal",
+  "primary": 8.0,
+  "secondary": 4.2,
+  "tertiary": 2.1,
+  "durability": 733,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 80,
+  "toolLevel": "minecraft:diamond",
+  "toolEfficiency": 7.8,
+  "tints": {
+    "glyph": "efd386",
+    "texture": "fcf9e7"
+  },
+  "textures": ["shiny", "metal"],
+  "material": {
+    "items": ["createmetallurgy:obdurium_ingot"]
+  },
+  "requiredTools": {
+    "hammer_dig": 5    }
+}

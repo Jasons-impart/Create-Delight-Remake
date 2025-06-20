@@ -1,0 +1,27 @@
+{
+  "key": "end_stone",
+  "category": "stone",
+  "primary":5.0,
+  "secondary": 3.0,
+  "tertiary": 0,
+  "durability": 537,
+  "integrityCost": 1,
+  "integrityGain": 4,
+  "magicCapacity": 120,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 4.0,
+  "tints": {
+    "glyph": "dce1b0",
+    "texture": "b8b783"
+  },
+  "textures": [
+    "grainy",
+    "crude",
+    "default"
+  ],
+  "material": {
+    "items": ["minecraft:end_stone"]
+  },
+  "requiredTools": {
+    "hammer_dig": 3    }
+}
