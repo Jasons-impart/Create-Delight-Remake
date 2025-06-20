@@ -55,5 +55,7 @@ StartupEvents.modifyCreativeTab("createcafe:create_cafe_items", e => {
     "createcafe:starfruit_milk_tea",
     "createcafe:tamarind_milk_tea",
     "createcafe:yucca_milk_tea",
+    'createcafe:raspberry_iced_coffee',
+    'createcafe:coconut_iced_coffee',
   ]) 
 })

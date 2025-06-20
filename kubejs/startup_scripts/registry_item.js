@@ -265,6 +265,14 @@ StartupEvents.registry("item", e => {
             food.hunger(1)
                 .saturation(1)
         })
+    //生恶魂圈
+    e.create("createdelight:raw_ghast_calamari")
+        .maxStackSize(64)
+        .translationKey("item.createdelight.raw_ghast_calamari")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+        })
     // 生潘恩达炸饺
     e.create("createdelight:raw_empanada")
         .maxStackSize(64)

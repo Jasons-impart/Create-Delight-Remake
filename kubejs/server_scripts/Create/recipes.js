@@ -36,6 +36,11 @@ ServerEvents.recipes(e => {
         "design_decor:cast_iron_boiler_large",
         "createbigcannons:cast_iron_block"
     ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder_large")
+    // 玫瑰石英
+    e.recipes.create.sandpaper_polishing(
+        'create:polished_rose_quartz',
+        'create:rose_quartz'
+    ).id("create:sandpaper_polishing/rose_quartz")
     // 动力锯切割：平滑玫瑰石英
     e.recipes.create.cutting(
         "create:polished_rose_quartz",
@@ -318,14 +323,14 @@ ServerEvents.recipes(e => {
         ]
     }).id("create_oppenheimered:filling/gingerbread_sweet_roll")
     // 移动燃料接口
-    e.recipes.kubejs.shapeless(
-        'railways:portable_fuel_interface',
-        [
-            "#forge:spring/between_500_2_1000",
-            "create:railway_casing",
-            "create:chute"
-        ]
-    ).id("railways:crafting/portable_fuel_interface")
+    // e.recipes.kubejs.shapeless(
+    //     'railways:portable_fuel_interface',
+    //     [
+    //         "#forge:spring/between_500_2_1000",
+    //         "create:railway_casing",
+    //         "create:chute"
+    //     ]
+    // ).id("railways:crafting/portable_fuel_interface")
     // 精密构件
     e.recipes.create.deploying(
         "2x create:precision_mechanism",
@@ -344,9 +349,4 @@ ServerEvents.recipes(e => {
         C: "create:empty_blaze_burner",
         D: "#mynethersdelight:bullet_pepper"
     }).id("create:shaped/blaze_burner")
-    //锌板
-    e.recipes.create.pressing(
-        'vintageimprovements:zinc_sheet',
-        "create:zinc_ingot"
-    ).id("vintageimprovements:pressing/zinc_sheet_from_zinc_ingot")
 })

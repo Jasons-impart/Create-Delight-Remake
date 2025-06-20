@@ -353,6 +353,7 @@
     "item.createdelight.quartz_vibrant_glass_parts": "聚能石英玻璃部件",
     "item.createdelight.radon_bucket": "氡气桶",
     "item.createdelight.raw_calamari": "鱿鱼圈",
+    "item.createdelight.raw_ghast_calamari": "生恶魂触须圈",
     "item.createdelight.raw_cheese_pizza": "生奶酪披萨",
     "item.createdelight.raw_chicken_chip": "生鸡块",
     "item.createdelight.raw_empanada": "生恩潘纳达饺",
@@ -463,6 +464,7 @@
     "createdelight.alloy_electric_furnace": "合金电炉",
     "createdelight.big_centrifugation": "大型离心机",
     "createdelight.small_centrifugation": "小型离心机",
+    "createdelight.fission_reactor": "裂变反应堆",
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",

@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "culturaldelights:cutting/raw_calamari_from_glowsquid",
         "culturaldelights:cutting/wild_cucumbers"
     ])
+    e.replaceInput({id: "culturaldelights:cooking/eggplant_parmesan"}, "#forge:milk", "#forge:cheese")
     e.recipes.kubejs.shapeless(
         "createdelight:raw_empanada",
         [

@@ -765,29 +765,19 @@
 		{
 			dependencies: ["4D21060946DAD49C"]
 			id: "65877729DB7620EF"
-			tasks: [
-				{
-					id: "5434E09520731285"
-					item: "create:item_vault"
-					type: "item"
-				}
-				{
-					id: "6A8023BC6226CCCE"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "create_bs:vaults"
-						}
+			tasks: [{
+				id: "6A8023BC6226CCCE"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "create_bs:vaults"
 					}
-					type: "item"
 				}
-				{
-					id: "7EC1193960BE8A53"
-					item: "create_connected:item_silo"
-					type: "item"
-				}
-			]
+				title: "任意保险库"
+				type: "item"
+			}]
+			title: "保险库及其升级"
 			x: 1.5d
 			y: -1.5d
 		}

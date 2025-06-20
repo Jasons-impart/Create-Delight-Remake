@@ -68,6 +68,7 @@ ServerEvents.recipes(e => {
     ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
     e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
+    e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
 
     youkaishomecoming.drying_rack("trailandtales_delight:dried_cherry_petal", "trailandtales_delight:cherry_petal")
     .id("youkaishomecoming:dried_cherry_petal_drying")
