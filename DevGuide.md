@@ -103,6 +103,9 @@
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
 - Saturn
  - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
+- AllTheLeaks (Memory Leak Fix)
+  - https://www.mcmod.cn/class/17405.html
+  - 发现整合包以前用的memoryleakfix有问题，已替换为AllTheLeaks
 
 # 考虑中的实用模组
 - 卓越火炬
@@ -128,8 +131,6 @@
   - 优化画的渲染 https://www.mcmod.cn/class/10999.html
 - Mobtimizations - Entity Performance Fixes
   - 服务器实体性能优化模组 https://www.mcmod.cn/class/13755.html
-- AllTheLeaks (Memory Leak Fix)
-  - https://www.mcmod.cn/class/17405.html
 - 修复GPU内存泄漏
   - 和上面的AllTheLeaks不重合可以一起，https://www.mcmod.cn/class/11863.html
 - Let Me Despawn
