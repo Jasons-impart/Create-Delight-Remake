@@ -1,16 +1,62 @@
 # 机械动力：齿轮盛宴
+A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
-![卷首图](./kubejs/assets/createdelight/textures/images_for_readme/title.png)
+<!-- PROJECT SHIELDS -->
 
----
+![Version][version-shield]
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+![Community1][qq-shield1]
+[![MIT License][license-shield]][license-url]
+
+<!-- PROJECT LOGO -->
+
+<br />
+
+<p align="center">
+  
+  <a href="https://www.curseforge.com/minecraft/modpacks/create-leisurely-delight">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="600" height="100">
+  </a>
+  <br />
+  <a href="https://github.com/JasonQ1123">
+    <img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80">
+  </a>
+  <a href="https://github.com/SSWTLZZ69">
+    <img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80">
+  </a>
+  <a href="https://github.com/wanquanw">
+    <img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
+  <p align="center">
+    整合包反馈交流群：856762964
+    <br />
+    <a href="https://www.curseforge.com/minecraft/modpacks/create-leisurely-delight"><strong>在Curseforge上下载整合包正式版 »</strong></a>
+    <br />
+    <br />
+    <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
+    ·
+    <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">报告Bug</a>
+    ·
+    <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">提出新特性</a>
+  </p>
+
+</p>
+
+
+
 
 ## 介绍
 
 ![介绍图标](./kubejs/assets/createdelight/textures/images_for_readme/introduction.png)
 
-这款以 **_咕咕嘎嘎_** 为核心的休闲模组包，在 Minecraft Forge 1.20.1 版本上运行！  
+这款以 **_机械动力_** 为核心的休闲模组包，在 Minecraft Forge 1.20.1 版本上运行！  
 魔改了**超 5000+配方**。  
-机械动力：齿轮颂歌 将各种 ***咕咕*** 和 ***嘎嘎*** 融合，创造出一个值得探索与建造的奇妙世界！
+机械动力：齿轮盛宴 将各种 ***机械动力*** 和 ***嘎嘎*** 融合，创造出一个值得探索与建造的奇妙世界！
 
 ---
 
@@ -114,3 +160,18 @@
 ![团队头像](./kubejs/assets/createdelight/textures/images_for_readme/head.png)
 
 > _每一位从大一到已步入职场的团队成员在繁忙学业与工作中抽出时间参与其中，感谢你们的付出！_
+
+
+<!-- links -->
+[contributors-shield]: https://img.shields.io/github/contributors/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
+[contributors-url]: https://github.com/Jasons-impart/Create-Delight-Remake/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
+[forks-url]: https://github.com/Jasons-impart/Create-Delight-Remake/network/members
+[stars-shield]: https://img.shields.io/github/stars/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
+[stars-url]: https://github.com/Jasons-impart/Create-Delight-Remake/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
+[issues-url]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg
+[qq-shield1]:https://img.shields.io/badge/QQ1群-856762964-12B7F3?style=flat-square
+[version-shield]:https://img.shields.io/badge/Version-V0.4.5-2CB3A8?style=flat-square
+[license-shield]: https://img.shields.io/github/license/JasdewStarfield/Path-of-Truth.svg?style=flat-square
+[license-url]: https://github.com/Jasons-impart/Create-Delight-Remake/blob/readmeupdate/LICENSE
