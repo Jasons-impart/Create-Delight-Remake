@@ -339,7 +339,7 @@ centrifugation(event, "expatternprovider:fishbig", "minecraft:pufferfish")
 
   create
     .sequenced_assembly("ae2:wireless_crafting_terminal", "ae2:wireless_terminal", [
-      create.deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "#forge:workbench"]),
+      create.deploying("createdelight:incomplete_wireless_crafting_terminal", ["createdelight:incomplete_wireless_crafting_terminal", "minecraft:crafting_table"]),
       create.deploying("createdelight:incomplete_wireless_crafting_terminal", [
         "createdelight:incomplete_wireless_crafting_terminal",
         "ae2:calculation_processor",

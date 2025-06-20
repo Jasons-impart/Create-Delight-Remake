@@ -18,6 +18,7 @@ ServerEvents.recipes((event) => {
       600,
     )
     .stress(512)
+    .fluid(Fluid.water(500))
     .id("kubejs:overworld_metal_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation
     .drilling(
@@ -47,6 +48,7 @@ ServerEvents.recipes((event) => {
     )
     .stress(1024)
     .drill("#createoreexcavation:drills_diamonds")
+    .fluid(Fluid.water(500))
     .id("kubejs:overworld_noble_metal_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation
     .drilling(
@@ -101,6 +103,7 @@ ServerEvents.recipes((event) => {
     )
     .stress(1024)
     .drill("#createoreexcavation:drills_diamonds")
+    .fluid(Fluid.lava(500))
     .id("kubejs:moon_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation
     .drilling(
@@ -127,6 +130,7 @@ ServerEvents.recipes((event) => {
       600,
     )
     .drill("#createoreexcavation:drills_diamonds")
+    .fluid(Fluid.lava(500))
     .stress(1024)
     .id("kubejs:mars_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation
@@ -153,6 +157,7 @@ ServerEvents.recipes((event) => {
       "kubejs:mars_gemstone_cluster_ore",
       1000,
     )
+    .fluid(Fluid.lava(500))
     .drill("#createoreexcavation:drills_diamonds")
     .stress(1536)
     .id("kubejs:mars_gemstone_cluster")
@@ -180,6 +185,7 @@ ServerEvents.recipes((event) => {
       "kubejs:mercury_ore_cluster_ore",
       600,
     )
+    .fluid(Fluid.lava(500))
     .drill("#createoreexcavation:drills_diamonds")
     .stress(1024)
     .id("kubejs:mercury_ore_cluster_ore_drilling");
@@ -207,6 +213,7 @@ ServerEvents.recipes((event) => {
       "kubejs:venus_ore_cluster_ore",
       1000,
     )
+    .fluid(Fluid.lava(500))
     .stress(2048)
     .drill("createoreexcavation:netherite_drill")
     .id("kubejs:venus_ore_cluster");
@@ -233,6 +240,7 @@ ServerEvents.recipes((event) => {
       "kubejs:glacio_ore_cluster_ore",
       1000,
     )
+    .fluid(Fluid.lava(500))
     .stress(2048)
     .drill("createoreexcavation:netherite_drill")
     .id("kubejs:glacio_ore_cluster");
