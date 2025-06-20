@@ -116,10 +116,10 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 ### 详尽指引
 <p align="center">
   <a>
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_0.png" alt="Logo" width="962" height="963">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_1.png" alt="Logo" width="1679" height="904">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_2.png" alt="Logo" width="1987" height="752">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_3.png" alt="Logo" width="1825" height="1138">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_0.png" alt="Logo" width="500" height="500">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_1.png" alt="Logo" width="500" height="270">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_2.png" alt="Logo" width="500" height="190">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_3.png" alt="Logo" width="500" height="300">
   </a>
 
   
