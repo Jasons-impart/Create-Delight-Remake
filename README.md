@@ -39,6 +39,8 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     <br />
     <br />
     <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
+    .
+    <a href="https://xr5r5e86lk.feishu.cn/docx/LE9ud6DgXoBaQhxowJucOQVqnWb">信息汇总文档</a>
     ·
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">报告Bug</a>
     ·
