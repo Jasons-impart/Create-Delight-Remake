@@ -17,18 +17,8 @@ ServerEvents.recipes((event) => {
       "kubejs:overworld_metal_ore_cluster_ore",
       600,
     )
-    .stress(512)
-    .fluid(Fluid.water(500))
-    .id("kubejs:overworld_metal_ore_cluster_ore_drilling");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:overworld_metal_ore_cluster",
-      "kubejs:overworld_metal_ore_cluster_ore",
-      600,
-    )
     .stress(256)
-    .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .id("kubejs:overworld_metal_ore_cluster_ore_drilling_lubricating_oil");
+    .id("kubejs:overworld_metal_ore_cluster_ore_drilling");
 
   //主世界贵金属矿簇
   event.recipes.createoreexcavation
@@ -48,18 +38,7 @@ ServerEvents.recipes((event) => {
     )
     .stress(1024)
     .drill("#createoreexcavation:drills_diamonds")
-    .fluid(Fluid.water(500))
     .id("kubejs:overworld_noble_metal_ore_cluster_ore_drilling");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:overworld_noble_metal_ore_cluster",
-      "kubejs:overworld_noble_metal_ore_cluster_ore",
-      1000,
-    )
-    .stress(512)
-    .drill("#createoreexcavation:drills_diamonds")
-    .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .id("kubejs:overworld_noble_metal_ore_cluster_ore_drilling_lubricating_oil");
 
   //下界矿簇
   event.recipes.createoreexcavation
@@ -73,20 +52,10 @@ ServerEvents.recipes((event) => {
       "kubejs:nether_ore_cluster",
       600,
     )
-    .stress(1536)
+    .stress(768)
     .fluid(Fluid.lava(500))
     .drill("createoreexcavation:netherite_drill")
     .id("kubejs:nether_ore_cluster_drilling");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:nether_ore_cluster",
-      "kubejs:nether_ore_cluster",
-      600,
-    )
-    .stress(768)
-    .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .drill("createoreexcavation:netherite_drill")
-    .id("kubejs:nether_ore_cluster_drilling_lubricating_oil");
 
   //月球矿簇
   event.recipes.createoreexcavation
@@ -95,16 +64,6 @@ ServerEvents.recipes((event) => {
     .biomeWhitelist("createdelight:is_moon")
     .id("kubejs:moon_ore_cluster_ore");
 
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:moon_ore_cluster",
-      "kubejs:moon_ore_cluster_ore",
-      600,
-    )
-    .stress(1024)
-    .drill("#createoreexcavation:drills_diamonds")
-    .fluid(Fluid.lava(500))
-    .id("kubejs:moon_ore_cluster_ore_drilling");
   event.recipes.createoreexcavation
     .drilling(
       "createdelight:moon_ore_cluster",
@@ -130,16 +89,6 @@ ServerEvents.recipes((event) => {
       600,
     )
     .drill("#createoreexcavation:drills_diamonds")
-    .fluid(Fluid.lava(500))
-    .stress(1024)
-    .id("kubejs:mars_ore_cluster_ore_drilling");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:mars_ore_cluster",
-      "kubejs:mars_ore_cluster_ore",
-      600,
-    )
-    .drill("#createoreexcavation:drills_diamonds")
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .stress(512)
     .id("kubejs:mars_ore_cluster_ore_drilling_lubricating_oil");
@@ -151,16 +100,6 @@ ServerEvents.recipes((event) => {
     .biomeWhitelist("createdelight:is_mars")
     .id("kubejs:mars_gemstone_cluster_ore");
 
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:mars_gemstone_cluster",
-      "kubejs:mars_gemstone_cluster_ore",
-      1000,
-    )
-    .fluid(Fluid.lava(500))
-    .drill("#createoreexcavation:drills_diamonds")
-    .stress(1536)
-    .id("kubejs:mars_gemstone_cluster")
   event.recipes.createoreexcavation
     .drilling(
       "createdelight:mars_gemstone_cluster",
@@ -185,16 +124,6 @@ ServerEvents.recipes((event) => {
       "kubejs:mercury_ore_cluster_ore",
       600,
     )
-    .fluid(Fluid.lava(500))
-    .drill("#createoreexcavation:drills_diamonds")
-    .stress(1024)
-    .id("kubejs:mercury_ore_cluster_ore_drilling");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:mercury_ore_cluster",
-      "kubejs:mercury_ore_cluster_ore",
-      600,
-    )
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .drill("#createoreexcavation:drills_diamonds")
     .stress(512)
@@ -213,16 +142,6 @@ ServerEvents.recipes((event) => {
       "kubejs:venus_ore_cluster_ore",
       1000,
     )
-    .fluid(Fluid.lava(500))
-    .stress(2048)
-    .drill("createoreexcavation:netherite_drill")
-    .id("kubejs:venus_ore_cluster");
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:venus_ore_cluster",
-      "kubejs:venus_ore_cluster_ore",
-      1000,
-    )
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .drill("#createoreexcavation:drills_diamonds")
     .stress(1024)
@@ -234,16 +153,6 @@ ServerEvents.recipes((event) => {
     .biomeWhitelist("createdelight:is_glacio")
     .id("kubejs:glacio_ore_cluster_ore");
     
-  event.recipes.createoreexcavation
-    .drilling(
-      "createdelight:glacio_ore_cluster",
-      "kubejs:glacio_ore_cluster_ore",
-      1000,
-    )
-    .fluid(Fluid.lava(500))
-    .stress(2048)
-    .drill("createoreexcavation:netherite_drill")
-    .id("kubejs:glacio_ore_cluster");
   event.recipes.createoreexcavation
     .drilling(
       "createdelight:glacio_ore_cluster",
