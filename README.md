@@ -1,4 +1,4 @@
-# 机械动力：齿轮颂歌
+# 机械动力：齿轮盛宴
 
 ![卷首图](./kubejs/assets/createdelight/textures/images_for_readme/title.png)
 
