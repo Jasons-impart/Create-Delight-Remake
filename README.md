@@ -48,7 +48,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 </p>
 
 > [!IMPORTANT]
-> 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们提交issue！感激不尽！
+> 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们[反馈问题](https://xr5r5e86lk.feishu.cn/share/base/form/shrcnIDUxvX4oOvWSQaddJUht9b)！感激不尽！
 > PS：目前CF上1201最新版仍不可下载，请使用QQ或quark网盘进行下载
 
 欢迎来到齿轮盛宴的世界。
@@ -89,7 +89,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 ## 介绍
 <p align="center">
   <a>
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/introduction.png" alt="Logo" width="850" height="130">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/introduction.png" alt="Logo" width="850" height="200">
   </a>
 
 这款以 **_机械动力_** 为核心的大型深度魔改整合包，在 Minecraft Forge 1.20.1 版本上运行！  
@@ -100,17 +100,33 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 ### 核心模组
 #### 科技
+- [机械动力](https://www.curseforge.com/minecraft/mc-mods/create)及其附属
+- [应用能源2](https://www.curseforge.com/minecraft/mc-mods/applied-energistics-2)及其附属
 #### 农业
-#### 建筑
-#### 探索
+- [农夫乐事](https://www.curseforge.com/minecraft/mc-mods/farmers-delight)及其附属
+- [节气](https://www.curseforge.com/minecraft/mc-mods/ecliptic-seasons)
+- [Quality Food](https://www.curseforge.com/minecraft/mc-mods/quality-food)
+- [妖怪们的归家](https://www.curseforge.com/minecraft/mc-mods/youkais-homecoming)
+- [那不勒斯风味](https://www.curseforge.com/minecraft/mc-mods/neapolitan)
 #### 战斗
+- [怪物增强](https://www.curseforge.com/minecraft/mc-mods/improved-mobs)
+- [Tetra](https://www.curseforge.com/minecraft/mc-mods/tetra)及其附属
+- [Better Combat](https://www.curseforge.com/minecraft/mc-mods/better-combat-by-daedelus)
 
 ### 详尽指引
+<p align="center">
+  <a>
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_0.png" alt="Logo" width="962" height="963">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_1.png" alt="Logo" width="1679" height="904">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_2.png" alt="Logo" width="1987" height="752">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/ftbquests_3.png" alt="Logo" width="1825" height="1138">
+  </a>
+
   
 ### 深度魔改
 <p align="center">
   <a>
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/specificites.png" alt="Logo" width="850" height="130">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/specificites.png" alt="Logo" width="850" height="200">
   </a>
 
 1. **全新定制配方** - 专为农夫乐事模组设计！
@@ -128,7 +144,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 ## 上手指南
 <p align="center">
   <a>
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/recommendation.png" alt="Logo" width="850" height="130">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/recommendation.png" alt="Logo" width="850" height="200">
   </a>
 
 ### 配置要求
@@ -149,7 +165,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 ## 未来计划
 <p align="center">
   <a>
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/future_prospects.png" alt="Logo" width="850" height="130">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/future_prospects.png" alt="Logo" width="850" height="200">
   </a>
 
 
@@ -167,7 +183,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 ### Discord
 <p align="center">
   <a href = "https://discord.gg/VjZKDnCT">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/discord.png" alt="Logo" width="850" height="120">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/discord.png" alt="Logo" width="850" height="200">
   </a>
 
 - 参与国际社区讨论！
@@ -177,7 +193,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 <p align="center">
   <a href = "https://qm.qq.com/q/ajPFnOx65a">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/qq.png" alt="Logo" width="850" height="120">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/qq.png" alt="Logo" width="850" height="200">
   </a>
 
 - 参与中文社区讨论！
@@ -189,7 +205,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 <p align="center">
   <a href = "https://afdian.com/a/hk11238981">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/donation.png" alt="Logo" width="850" height="120">
+    <img src="kubejs/assets/createdelight/textures/images_for_readme/donation.png" alt="Logo" width="850" height="200">
   </a>
 
 您的支持是项目持续发展的动力！无论金额大小，每笔捐赠都将帮助我们：
@@ -239,6 +255,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 [issues-shield]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
 [issues-url]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg
 [qq-shield1]:https://img.shields.io/badge/QQ1群-856762964-12B7F3?style=flat-square
-[version-shield]:https://img.shields.io/badge/Version-V0.4.5-2CB3A8?style=flat-square
+[version-shield]:https://img.shields.io/badge/Version-V0.4.2.0-2CB3A8?style=flat-square
 [license-shield]: https://img.shields.io/github/license/JasdewStarfield/Path-of-Truth.svg?style=flat-square
 [license-url]: https://github.com/Jasons-impart/Create-Delight-Remake/blob/readmeupdate/LICENSE
