@@ -3,6 +3,7 @@ PlayerEvents.loggedIn(e => {
     const {level, player} = e
     let donate_list = JsonIO.read("donate_list.json")
     if (player.persistentData.get("notFirstLogin") == null) {
+        player.give("ftbquests:book")
         player.persistentData.putBoolean("notFirstLogin", true)
         let name = player.name.getString()
         let title = donate_list.get(name)
