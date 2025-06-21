@@ -278,10 +278,10 @@ ServerEvents.recipes((e) => {
       "ratatouille:wheat_kernels",
     ])
     .id("butchercraft:mixing/blood_sausage_mix");
-  e.recipes.create.compacting(Fluid.of("ratatouille:mince_meat", 250), [
-    "butchercraft:blood_sausage_mix",
-    "#forge:salt",
-  ]);
+  // e.recipes.create.compacting(Fluid.of("ratatouille:mince_meat", 250), [
+  //   "butchercraft:blood_sausage_mix",
+  //   "#forge:salt",
+  // ]);
 });
 
 ServerEvents.recipes((event) => {

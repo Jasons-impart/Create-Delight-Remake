@@ -659,7 +659,7 @@
 			id: "64B9CFE4337A3EAA"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"6731C7B5A0DADBAA\" } }"
+			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DDE0F8620589E02\" } }"
 			tasks: [{
 				id: "39FA137A00BB30A2"
 				title: "末地"
@@ -695,7 +695,7 @@
 			id: "3027E5E07BE0B171"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"15F92D3DE8FAB8A2\" } }"
+			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"37C42029C3527BCD\" } }"
 			tasks: [{
 				id: "4B0B25EBBB30F627"
 				type: "checkmark"

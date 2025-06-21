@@ -1,8 +1,13 @@
 ServerEvents.recipes((e) => {
+  remove_recipes_type(e, [
+    "createdieselgenerators:compression_molding",
+    "createdieselgenerators:casting"
+  ])
   remove_recipes_id(e, [
     "createdieselgenerators:crafting/engine_piston_from_rods",
     "createdieselgenerators:compacting/plant_oil",
-    "createdieselgenerators:basin_fermenting/dough"
+    "createdieselgenerators:basin_fermenting/dough",
+    "createdieselgenerators:crafting/burner"
   ]);
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/cast_iron")
@@ -98,4 +103,27 @@ ServerEvents.recipes((e) => {
         "youkaishomecoming:soybean"
       ])
   ).id("createdieselgenerators:compacting/plant_oil")
+  e.recipes.kubejs.shaped(
+    'createdieselgenerators:bulk_fermenter',
+    [
+      'createdieselgenerators:basin_lid',
+      'create:basin'
+    ]
+  ).id("createdieselgenerators:crafting/bulk_fermenter")
+  {
+    let iner = "create:iron_sheet"
+    e.recipes.create.sequenced_assembly('createdieselgenerators:sheet_metal_panel', iner, [
+      e.recipes.create.pressing(iner, iner)
+    ])
+      .loops(3)
+      .transitionalItem(iner)
+      .id("createdieselgenerators:crafting/sheet_metal_panel")
+  }
+  e.recipes.kubejs.shapeless(
+    'createdieselgenerators:andesite_girder',
+    [
+      "create:andesite_alloy",
+      "create:metal_girder"
+    ]
+  ).id("createdieselgenerators:crafting/andesite_girder")
 })

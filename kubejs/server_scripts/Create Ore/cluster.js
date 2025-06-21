@@ -71,7 +71,7 @@ ServerEvents.recipes((event) => {
       600,
     )
     .stress(512)
-    .drill("#createoreexcavation:drills_diamonds")
+    .drill("createoreexcavation:netherite_drill")
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .id("kubejs:moon_ore_cluster_ore_drilling_lubricating_oil");
 
@@ -88,7 +88,7 @@ ServerEvents.recipes((event) => {
       "kubejs:mars_ore_cluster_ore",
       600,
     )
-    .drill("#createoreexcavation:drills_diamonds")
+    .drill("createoreexcavation:netherite_drill")
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
     .stress(512)
     .id("kubejs:mars_ore_cluster_ore_drilling_lubricating_oil");
@@ -107,7 +107,7 @@ ServerEvents.recipes((event) => {
       1000,
     )
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .drill("#createoreexcavation:drills_diamonds")
+    .drill("createoreexcavation:netherite_drill")
     .stress(768)
     .id("kubejs:mars_gemstone_cluster_lubricating_oil")
 
@@ -125,7 +125,7 @@ ServerEvents.recipes((event) => {
       600,
     )
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .drill("#createoreexcavation:drills_diamonds")
+    .drill("createoreexcavation:netherite_drill")
     .stress(512)
     .id("kubejs:mercury_ore_cluster_ore_drilling_lubricating_oil");
 
@@ -143,7 +143,7 @@ ServerEvents.recipes((event) => {
       1000,
     )
     .fluid(Fluid.of("createdelight:lubricating_oil", 250))
-    .drill("#createoreexcavation:drills_diamonds")
+    .drill("createoreexcavation:netherite_drill")
     .stress(1024)
     .id("kubejs:venus_ore_cluster_lubricating_oil");
   //霜原星矿簇
