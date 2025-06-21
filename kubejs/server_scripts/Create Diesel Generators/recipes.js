@@ -7,7 +7,11 @@ ServerEvents.recipes((e) => {
     "createdieselgenerators:crafting/engine_piston_from_rods",
     "createdieselgenerators:compacting/plant_oil",
     "createdieselgenerators:basin_fermenting/dough",
-    "createdieselgenerators:crafting/burner"
+    "createdieselgenerators:crafting/burner",
+    "createdieselgenerators:cutting/bar_mold",
+    "createdieselgenerators:cutting/chain_mold",
+    "createdieselgenerators:cutting/bowl_mold",
+    "createdieselgenerators:cutting/lines_mold"
   ]);
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/cast_iron")
