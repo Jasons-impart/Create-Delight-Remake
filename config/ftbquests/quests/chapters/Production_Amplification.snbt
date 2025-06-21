@@ -53,7 +53,7 @@
 				}
 			]
 			title: "竹子/树皮/木屑/草杆"
-			x: 3.0d
+			x: 4.5d
 			y: 1.5d
 		}
 		{
@@ -66,7 +66,7 @@
 				title: "纸"
 				type: "checkmark"
 			}]
-			x: 3.0d
+			x: 4.5d
 			y: 0.0d
 		}
 		{
@@ -83,7 +83,7 @@
 				type: "item"
 			}]
 			title: "待发酵的纸浆"
-			x: 3.0d
+			x: 4.5d
 			y: 3.0d
 		}
 		{
@@ -97,7 +97,7 @@
 				type: "item"
 			}]
 			title: "纸浆"
-			x: 3.0d
+			x: 4.5d
 			y: 4.5d
 		}
 		{
@@ -116,7 +116,7 @@
 				item: "minecraft:paper"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 4.5d
 			y: 7.5d
 		}
 		{
@@ -130,7 +130,7 @@
 				title: "皮革"
 				type: "checkmark"
 			}]
-			x: 6.0d
+			x: 7.5d
 			y: 0.0d
 		}
 		{
@@ -145,7 +145,7 @@
 				item: "createdelight:incomplete_paper"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 4.5d
 			y: 6.0d
 		}
 		{
@@ -158,7 +158,7 @@
 				item: "createdelightcore:slime_bucket"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 8.5d
 			y: 1.5d
 		}
 		{
@@ -180,7 +180,7 @@
 				type: "item"
 			}]
 			title: "仙人掌/菠萝苗/腐肉/粗布"
-			x: 5.0d
+			x: 6.5d
 			y: 1.5d
 		}
 		{
@@ -195,7 +195,7 @@
 				item: "createdelight:unfinished_leather"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.5d
 			y: 3.0d
 		}
 		{
@@ -215,7 +215,7 @@
 				item: { Count: 196, id: "minecraft:leather" }
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.5d
 			y: 4.5d
 		}
 		{
@@ -227,116 +227,8 @@
 				item: "minecraft:kelp"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 7.5d
 			y: 1.5d
-		}
-		{
-			description: [""]
-			icon: "createdelight:empty_popsicle"
-			id: "25D83E425182488C"
-			size: 1.5d
-			subtitle: "炎炎夏日，谁不想来一根美味的冰棍呢"
-			tasks: [{
-				id: "32380D2704EB738D"
-				title: "冰棍"
-				type: "checkmark"
-			}]
-			title: "老冰棍"
-			x: 9.0d
-			y: 0.0d
-		}
-		{
-			dependencies: ["25D83E425182488C"]
-			description: ["只需要这三种简单的材料就就可以做冰棍吃辣！"]
-			disable_toast: true
-			icon: "minecraft:stick"
-			id: "023619EAA38A6E01"
-			tasks: [
-				{
-					id: "6D081A8B12E19F4C"
-					item: "minecraft:sugar"
-					type: "item"
-				}
-				{
-					id: "761A993419A043F9"
-					item: "minecraft:stick"
-					type: "item"
-				}
-				{
-					id: "58DD33B24CD4BD75"
-					item: "minecraft:ice"
-					type: "item"
-				}
-			]
-			x: 9.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["023619EAA38A6E01"]
-			description: ["&e木棍按顺序安装冰和糖&r，即可获得小时候最爱的老冰棍。在此基础上使用注液器可制作五种不同口味的冰棍~"]
-			id: "0A543B37AFB16CBF"
-			tasks: [{
-				id: "51B2C033054E4E40"
-				item: "createdelight:empty_popsicle"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0A543B37AFB16CBF"]
-			id: "547E4FDEDAA71D80"
-			tasks: [{
-				id: "59882BF0B6C437B4"
-				item: "fruitsdelight:hamimelon_popsicle"
-				type: "item"
-			}]
-			x: 9.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["0A543B37AFB16CBF"]
-			id: "4267DB5D75E45824"
-			tasks: [{
-				id: "0605615A8045F434"
-				item: "farmersdelight:melon_popsicle"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["0A543B37AFB16CBF"]
-			id: "292CCEA750146A0D"
-			tasks: [{
-				id: "4D9AA75B1FA94360"
-				item: "ends_delight:chorus_fruit_popsicle"
-				type: "item"
-			}]
-			x: 10.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["0A543B37AFB16CBF"]
-			id: "0DAA9DB744D92804"
-			tasks: [{
-				id: "10F8DDAA52E4024E"
-				item: "casualness_delight:green_tongue"
-				type: "item"
-			}]
-			x: 8.0d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0A543B37AFB16CBF"]
-			id: "6FECC7B7059EF446"
-			tasks: [{
-				id: "720CFD0B86F0810F"
-				item: "fruitsdelight:kiwi_popsicle"
-				type: "item"
-			}]
-			x: 10.0d
-			y: 3.0d
 		}
 		{
 			dependencies: ["1A9F59D70BF97DBE"]
@@ -348,7 +240,7 @@
 				type: "item"
 			}]
 			title: "磁铁再生"
-			x: 12.5d
+			x: 11.0d
 			y: 0.0d
 		}
 		{
@@ -359,7 +251,7 @@
 				item: "minecraft:iron_nugget"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 11.0d
 			y: 1.5d
 		}
 		{
@@ -370,7 +262,7 @@
 				item: "create_new_age:magnetite_block"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 10.0d
 			y: 1.5d
 		}
 		{
@@ -381,7 +273,7 @@
 				item: "minecraft:deepslate"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 12.0d
 			y: 1.5d
 		}
 		{
@@ -396,7 +288,7 @@
 				item: "alexscaves:galena"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 11.0d
 			y: 3.0d
 		}
 		{
@@ -411,7 +303,7 @@
 				item: "alexscaves:energized_galena_neutral"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 11.0d
 			y: 5.0d
 		}
 		{
@@ -422,7 +314,7 @@
 				item: "alexscaves:energized_galena_scarlet"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 10.0d
 			y: 4.0d
 		}
 		{
@@ -433,7 +325,7 @@
 				item: "alexscaves:energized_galena_azure"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 12.0d
 			y: 4.0d
 		}
 		{
@@ -444,7 +336,7 @@
 				item: "minecraft:iron_block"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 10.0d
 			y: 6.0d
 		}
 		{
@@ -458,7 +350,7 @@
 				item: "create_new_age:magnetite_block"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 12.0d
 			y: 6.0d
 		}
 	]

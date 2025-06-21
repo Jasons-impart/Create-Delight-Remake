@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createdelightcore:netherite_coin"
 	id: "00F7CEC38A8C570C"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{

@@ -1650,8 +1650,8 @@
 				item: "vintagedelight:oat"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 10.0d
+			x: -14.5d
+			y: 10.5d
 		}
 		{
 			dependencies: ["2C83375C95140953"]
@@ -1668,8 +1668,8 @@
 				item: "vintagedelight:raw_oats"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 12.0d
+			x: -14.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["23D4AFBB84D53445"]
@@ -1686,8 +1686,8 @@
 				item: "vintagedelight:oat_dough"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 14.0d
+			x: -14.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1702,8 +1702,8 @@
 				item: "vintagedelight:chocolate_nut_granola_bar"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 15.5d
+			x: -16.0d
+			y: 16.0d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1718,8 +1718,8 @@
 				item: "vintagedelight:fruity_granola_bar"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 15.5d
+			x: -13.0d
+			y: 16.0d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1734,8 +1734,8 @@
 				item: "vintagedelight:deluxe_granola_bar"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 16.0d
+			x: -14.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1750,8 +1750,8 @@
 				item: "createdelight:oat_bread"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 14.0d
+			x: -12.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1761,8 +1761,8 @@
 				item: "vintagedelight:overnight_oats"
 				type: "item"
 			}]
-			x: -12.5d
-			y: 14.0d
+			x: -16.5d
+			y: 14.5d
 		}
 		{
 			id: "33C78746BA212239"
@@ -1774,8 +1774,8 @@
 				item: "farmersdelight:rice_panicle"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 10.0d
+			x: -0.5d
+			y: 10.5d
 		}
 		{
 			dependencies: ["33C78746BA212239"]
@@ -1787,8 +1787,8 @@
 				item: "farmersdelight:rice"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 12.0d
+			x: -0.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1800,8 +1800,8 @@
 				item: "farmersdelight:cooked_rice"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 14.0d
+			x: -0.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1811,8 +1811,8 @@
 				item: "farmersdelight:fried_rice"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 14.0d
+			x: -2.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1822,8 +1822,8 @@
 				item: "crabbersdelight:shrimp_fried_rice"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 16.0d
+			x: -1.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1833,8 +1833,8 @@
 				item: "fruitsdelight:pineapple_fried_rice"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 12.0d
+			x: -2.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1844,8 +1844,8 @@
 				item: "casualness_delight:sweet_rice"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 12.0d
+			x: 1.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1873,8 +1873,8 @@
 				}
 			]
 			title: "寿司卷"
-			x: 5.5d
-			y: 14.0d
+			x: 1.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1891,8 +1891,8 @@
 					type: "item"
 				}
 			]
-			x: 4.5d
-			y: 16.0d
+			x: 0.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1902,8 +1902,8 @@
 				item: "ends_delight:stuffed_rice_cake"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 15.5d
+			x: 1.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1913,8 +1913,8 @@
 				item: "ends_delight:ender_bamboo_rice"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 15.5d
+			x: -2.5d
+			y: 16.0d
 		}
 		{
 			id: "756CE4E7CC0F6F7D"
@@ -1927,8 +1927,8 @@
 				to_observe: "farmersdelight:wild_rice"
 				type: "observation"
 			}]
-			x: 4.5d
-			y: 11.0d
+			x: 0.5d
+			y: 11.5d
 		}
 		{
 			id: "55396FEE3139B9DA"
@@ -1941,8 +1941,8 @@
 				to_observe: "vintagedelight:wild_oats"
 				type: "observation"
 			}]
-			x: -9.5d
-			y: 11.0d
+			x: -13.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["4756A869F0D350FF"]
@@ -1987,8 +1987,8 @@
 				value: 1
 			}]
 			title: "香肠！我的最爱！"
-			x: -3.5d
-			y: 12.0d
+			x: -7.5d
+			y: 12.5d
 		}
 		{
 			id: "6F18A16C7424367B"
@@ -2000,8 +2000,8 @@
 				type: "item"
 			}]
 			title: "动物胶制作而成~"
-			x: -3.5d
-			y: 10.0d
+			x: -7.5d
+			y: 10.5d
 		}
 		{
 			id: "3BACCE2383508E48"
@@ -2011,8 +2011,8 @@
 				type: "item"
 			}]
 			title: "富含胶质！"
-			x: -2.5d
-			y: 11.0d
+			x: -6.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["02D30A170E9BF2CF"]
@@ -2027,8 +2027,8 @@
 				value: 1
 			}]
 			title: "香肠！"
-			x: -3.5d
-			y: 14.0d
+			x: -7.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2038,8 +2038,8 @@
 				item: "hotdog_delight:cod_sausage"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 14.0d
+			x: -9.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2049,8 +2049,8 @@
 				item: "hotdog_delight:salmon_sausage"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 15.0d
+			x: -8.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2060,8 +2060,8 @@
 				item: "hotdog_delight:pork_sausage"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 15.5d
+			x: -7.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2078,8 +2078,8 @@
 					type: "item"
 				}
 			]
-			x: -4.5d
-			y: 13.0d
+			x: -8.5d
+			y: 13.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2090,8 +2090,8 @@
 				type: "item"
 			}]
 			title: "素食主义者！"
-			x: -2.5d
-			y: 13.0d
+			x: -6.5d
+			y: 13.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2101,8 +2101,8 @@
 				item: "butchercraft:blood_sausage"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 14.0d
+			x: -6.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2112,8 +2112,8 @@
 				item: "ratatouille:raw_sausage"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 15.0d
+			x: -6.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["6C2C2AB54095982B"]
@@ -2123,8 +2123,8 @@
 				item: "butchercraft:cooked_blood_sausage"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 14.0d
+			x: -5.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2134,8 +2134,8 @@
 				item: "ratatouille:sausage"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 15.0d
+			x: -5.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2145,8 +2145,8 @@
 				item: "createdelight:salami"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 16.0d
+			x: -5.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["360A879F7B48F457"]
@@ -2156,8 +2156,8 @@
 				item: "hotdog_delight:cooked_pork_sausage"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 16.5d
+			x: -7.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["4A51552941C49493"]
@@ -2167,8 +2167,8 @@
 				item: "hotdog_delight:cooked_salmon_sausage"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 16.0d
+			x: -9.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["7A275EC3F322D435"]
@@ -2178,8 +2178,8 @@
 				item: "hotdog_delight:cooked_cod_sausage"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 14.0d
+			x: -10.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["091A81917B17827D"]
@@ -2247,6 +2247,153 @@
 			}]
 			x: -3.0d
 			y: 7.0d
+		}
+		{
+			icon: "createdelight:empty_popsicle"
+			id: "25D83E425182488C"
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "炎炎夏日，谁不想来一根美味的冰棍呢"
+			tasks: [{
+				id: "32380D2704EB738D"
+				title: "冰棍"
+				type: "checkmark"
+			}]
+			title: "冰棍！"
+			x: 6.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["25D83E425182488C"]
+			disable_toast: true
+			icon: "minecraft:stick"
+			id: "023619EAA38A6E01"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "只需要这三种简单的材料就就可以做冰棍吃辣！"
+			tasks: [
+				{
+					id: "6D081A8B12E19F4C"
+					item: "minecraft:sugar"
+					type: "item"
+				}
+				{
+					id: "761A993419A043F9"
+					item: "minecraft:stick"
+					type: "item"
+				}
+				{
+					id: "58DD33B24CD4BD75"
+					item: "minecraft:ice"
+					type: "item"
+				}
+			]
+			title: "原材料"
+			x: 6.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["023619EAA38A6E01"]
+			description: ["在此基础上使用注液器可制作八种不同口味的冰棍~"]
+			id: "0A543B37AFB16CBF"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "最爱的老冰棍！"
+			tasks: [{
+				id: "51B2C033054E4E40"
+				item: "createdelight:empty_popsicle"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "547E4FDEDAA71D80"
+			tasks: [{
+				id: "59882BF0B6C437B4"
+				item: "fruitsdelight:hamimelon_popsicle"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "292CCEA750146A0D"
+			tasks: [{
+				id: "4D9AA75B1FA94360"
+				item: "ends_delight:chorus_fruit_popsicle"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "6FECC7B7059EF446"
+			tasks: [{
+				id: "720CFD0B86F0810F"
+				item: "fruitsdelight:kiwi_popsicle"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "0DAA9DB744D92804"
+			tasks: [{
+				id: "10F8DDAA52E4024E"
+				item: "casualness_delight:green_tongue"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "4267DB5D75E45824"
+			tasks: [{
+				id: "0605615A8045F434"
+				item: "farmersdelight:melon_popsicle"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "51290D98CF40F103"
+			tasks: [{
+				id: "68692C0658C43AA3"
+				item: "collectorsreap:lime_popsicle"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "1DD60D11040E9097"
+			tasks: [{
+				id: "11E7DE9B0BF9CAE3"
+				item: "youkaishomecoming:big_popsicle"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "7176370EB54DF33C"
+			tasks: [{
+				id: "36C52B1958DFF611"
+				item: "mynethersdelight:tear_popsicle"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 16.5d
 		}
 	]
 	title: "&e精加工！"
