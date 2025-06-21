@@ -6,7 +6,7 @@
 	group: "445171CC29E98940"
 	icon: "createdelightcore:gold_coin"
 	id: "785EA502775C1402"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -438,7 +438,7 @@
 				item: "lightmanscurrency:slot_machine"
 				type: "item"
 			}]
-			x: 0.5d
+			x: 0.0d
 			y: -7.0d
 		}
 		{
@@ -643,7 +643,7 @@
 				item: "lightmanscurrency:armor_display"
 				type: "item"
 			}]
-			x: -0.5d
+			x: -1.0d
 			y: -7.0d
 		}
 		{
@@ -678,6 +678,26 @@
 			title: "禁止苛税！"
 			x: 0.0d
 			y: -8.0d
+		}
+		{
+			dependencies: ["2B4939BD8F985C5A"]
+			id: "1A5FBD229E4557ED"
+			subtitle: "经典时尚小垃圾！"
+			tasks: [{
+				id: "08A0031402EDDE71"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "lightmanscurrency:traders/special/gacha_machine"
+					}
+				}
+				title: "任意扭蛋机"
+				type: "item"
+			}]
+			title: "扭蛋机"
+			x: 1.0d
+			y: -7.0d
 		}
 	]
 	title: "&e玩转经济！"

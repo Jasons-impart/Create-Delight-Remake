@@ -733,23 +733,32 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
+			icon: {
+				Count: 1
+				id: "butchercraft:butcher_knife"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "3911F2778F70E4B9"
 			rewards: [{
-				auto: "no_toast"
-				id: "74C0F3379C69CD7C"
-				item: "ftbquests:book"
+				id: "0E19FC41E068C6FF"
+				item: {
+					Count: 1
+					id: "butchercraft:butcher_knife"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
 			shape: "pentagon"
 			size: 1.5d
+			subtitle: "{ \"text\": \"屠宰系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"546D1BAE985F9945\" } }"
 			tasks: [{
-				disable_toast: true
-				elapsedTime: 1L
-				gameTime: "system"
-				icon: "ftbquests:book"
-				id: "70B3E3406AC6EB91"
-				title: "任务系统"
-				type: "questsadditions:time"
+				id: "001C8E2506E3E190"
+				title: "动物不掉落正常肉类？"
+				type: "checkmark"
 			}]
 			x: 3.0d
 			y: 1.0d

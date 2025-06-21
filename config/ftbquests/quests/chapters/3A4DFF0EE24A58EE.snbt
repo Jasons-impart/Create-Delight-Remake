@@ -1,0 +1,22 @@
+{
+	autofocus_id: "50711781910527C4"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "3A4DFF0EE24A58EE"
+	group: "14CFC96B5B37F10B"
+	icon: "createdelight:fission_reactor"
+	id: "3A4DFF0EE24A58EE"
+	order_index: 9
+	quest_links: [ ]
+	quests: [{
+		id: "50711781910527C4"
+		tasks: [{
+			id: "1052B5570115F20F"
+			title: "各类多方块"
+			type: "checkmark"
+		}]
+		x: -8.0d
+		y: -1.5d
+	}]
+	title: "&6超级多方块"
+}
