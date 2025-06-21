@@ -112,7 +112,7 @@
 				item: "ae2:guide"
 				type: "item"
 			}]
-			shape: "diamond"
+			shape: "hexagon"
 			size: 3.0d
 			tasks: [{
 				id: "51DC8678646551A6"
@@ -142,7 +142,6 @@
 		{
 			dependencies: ["3066F516B382ED92"]
 			dependency_requirement: "one_started"
-			description: [""]
 			id: "5F76D0BDF2B71728"
 			shape: "gear"
 			size: 2.0d

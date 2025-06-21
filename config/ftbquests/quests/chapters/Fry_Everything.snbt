@@ -6,7 +6,7 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "create_bic_bit:speculaas"
 	id: "460F6115CC591EBD"
-	order_index: 3
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{

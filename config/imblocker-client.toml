@@ -5,7 +5,17 @@ enableScreenRecovering = false
 #Here lists all Screens that is not in whitelist nor blacklist, 
 #so you may easily add those to whitelist/blacklist.
 recoveredScreens = ["minecraft:net.minecraft.client.gui.screens.ChatScreen", "configured:com.mrcrayfish.configured.client.screen.EditStringScreen"]
-#If your input method can't auto-switch to English state when using command syntax in chat field, set this option to DISABLE_IM may help, but note that you can only type English when typing command in this mode.
-#Allowed Values: IM_ENG_STATE, DISABLE_IM
-chatCommandInputType = "IM_ENG_STATE"
+#Checking every tick is not efficient, how about check once every several tick?
+#Range: > 1
+checkInterval = 2
+#Matched screens would disable your IME
+screenBlacklist = []
+#Matched input box would disable your IME
+inputBlacklist = []
+#Matched input box would enable your IME
+inputWhitelist = []
+#Disable this and let me know if input or control is messed up
+useExperimental = true
+#Disable IME when typing commands
+checkCommandChat = true
 

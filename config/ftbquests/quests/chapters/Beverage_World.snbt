@@ -6,7 +6,7 @@
 	group: "7D0A1432AAAD0EBA"
 	icon: "farmersrespite:kettle"
 	id: "7BB15ED66A00BABA"
-	order_index: 6
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -33,7 +33,7 @@
 			}]
 			title: "主世界咖啡"
 			x: 18.0d
-			y: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1E766468CDA08B92"]
@@ -59,7 +59,7 @@
 				type: "item"
 			}]
 			x: 19.0d
-			y: 0.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
@@ -88,7 +88,7 @@
 				type: "item"
 			}]
 			x: 20.5d
-			y: 1.0d
+			y: 5.0d
 		}
 		{
 			id: "0AA8A2C1A41EE9D2"
@@ -119,7 +119,7 @@
 			}]
 			title: "农夫暇事"
 			x: 13.0d
-			y: -1.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["0AA8A2C1A41EE9D2"]
@@ -168,7 +168,7 @@
 			}]
 			title: "&6COFFEE！！！"
 			x: 16.5d
-			y: 1.0d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -246,7 +246,7 @@
 			}]
 			title: "下界咖啡"
 			x: 18.0d
-			y: 2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2BE1586D9D67F9EA"]
@@ -270,7 +270,7 @@
 				type: "item"
 			}]
 			x: 19.0d
-			y: 2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["601F57B5FFA1BC38"]
@@ -344,7 +344,7 @@
 				type: "item"
 			}]
 			x: 23.5d
-			y: 1.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -355,7 +355,7 @@
 				type: "item"
 			}]
 			x: 23.5d
-			y: 2.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -365,8 +365,8 @@
 				item: "youkaishomecoming:ristretto"
 				type: "item"
 			}]
-			x: 25.0d
-			y: 0.5d
+			x: 25.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -377,7 +377,7 @@
 				type: "item"
 			}]
 			x: 23.5d
-			y: -0.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -388,7 +388,7 @@
 				type: "item"
 			}]
 			x: 24.5d
-			y: -0.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -398,8 +398,8 @@
 				item: "youkaishomecoming:con_panna"
 				type: "item"
 			}]
-			x: 22.5d
-			y: 2.5d
+			x: 25.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -409,8 +409,8 @@
 				item: "youkaishomecoming:cappuccino"
 				type: "item"
 			}]
-			x: 25.0d
-			y: 1.5d
+			x: 25.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -420,8 +420,8 @@
 				item: "youkaishomecoming:macchiato"
 				type: "item"
 			}]
-			x: 22.5d
-			y: -0.5d
+			x: 25.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["056A5311F04A37FB"]
@@ -432,7 +432,7 @@
 				type: "item"
 			}]
 			x: 24.5d
-			y: 2.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["640917EEDCC90DAA"]
@@ -443,7 +443,7 @@
 				type: "item"
 			}]
 			x: 23.5d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -454,7 +454,7 @@
 				type: "item"
 			}]
 			x: 23.0d
-			y: 5.5d
+			y: 9.5d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -465,7 +465,7 @@
 				type: "item"
 			}]
 			x: 24.0d
-			y: 5.5d
+			y: 9.5d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -476,7 +476,7 @@
 				type: "item"
 			}]
 			x: 25.0d
-			y: 5.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -487,7 +487,7 @@
 				type: "item"
 			}]
 			x: 22.0d
-			y: 5.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -498,7 +498,7 @@
 				type: "item"
 			}]
 			x: 22.0d
-			y: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["11D65F4D487B3B30"]
@@ -509,7 +509,272 @@
 				type: "item"
 			}]
 			x: 25.0d
-			y: 4.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "4A793D8D35E3A344"
+			tasks: [{
+				id: "78177BD20AB8CFF2"
+				item: "farmersrespite:green_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "7206C9AECA205069"
+			tasks: [{
+				id: "39DE9C16E9F865CF"
+				item: "farmersrespite:yellow_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["191A371DB8F3E198"]
+			id: "03321767C7214148"
+			tasks: [{
+				id: "672B679507553966"
+				item: "farmersrespite:black_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1313705681C5D01A"]
+			id: "1C3D0E4F090D4D83"
+			subtitle: "豪喝！"
+			tasks: [{
+				id: "629CC87E12AA19B7"
+				item: "youkaishomecoming:white_tea"
+				type: "item"
+			}]
+			x: 20.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "39F9DE1C7BA49DCB"
+			tasks: [{
+				id: "58AE5CA45FC21876"
+				item: "farmersrespite:strong_green_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "7417044C014A0204"
+			tasks: [{
+				id: "5EB782F2D28AC70A"
+				item: "farmersrespite:long_green_tea"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "1AE5385260941043"
+			tasks: [{
+				id: "79DB29E542411875"
+				item: "farmersrespite:strong_yellow_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -8.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "2D5D87E96FB2FEB4"
+			tasks: [{
+				id: "6F015FD8F29BD542"
+				item: "farmersrespite:long_yellow_tea"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -8.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "2D3B3F996379AEFF"
+			tasks: [{
+				id: "35EAE74212C69425"
+				item: "farmersrespite:long_black_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "2653E3EBEB44EA76"
+			tasks: [{
+				id: "6A019191009E5CBE"
+				item: "farmersrespite:strong_black_tea"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "139A7E9B0C6AC244"
+			tasks: [{
+				id: "3604396128BC80BF"
+				item: "trailandtales_delight:torchflower_tea"
+				type: "item"
+			}]
+			x: 25.0d
+			y: -7.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "6BDF5A9B93315A77"
+			tasks: [{
+				id: "079FE4FFCF0A3B78"
+				item: "trailandtales_delight:cherry_petal_tea"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "47309E49747AD449"
+			tasks: [{
+				id: "1A8064232834548E"
+				item: "fruitsdelight:hawberry_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -5.5d
+		}
+		{
+			dependencies: ["7206C9AECA205069"]
+			id: "15BE5C12DA50F2DE"
+			tasks: [{
+				id: "6C91869028EB2CEB"
+				item: "fruitsdelight:peach_tea"
+				type: "item"
+			}]
+			x: 25.0d
+			y: -6.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "10A6D1B808B067B7"
+			tasks: [{
+				id: "410C99FED99E8A86"
+				item: "fruitsdelight:lychee_cherry_tea"
+				type: "item"
+			}]
+			x: 24.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "27A5B3AE9C21AFE6"
+			tasks: [{
+				id: "3616EC3D617AC284"
+				item: "cavedelight:fiddlehead_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "5CF5A625C6131DB7"
+			tasks: [{
+				id: "7F2DF5118FA3D23C"
+				item: "youkaishomecoming:genmai_tea"
+				type: "item"
+			}]
+			x: 25.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "741C0EF251C139F6"
+			tasks: [{
+				id: "50EEDD4593428401"
+				item: "fruitsdelight:mangosteen_tea"
+				type: "item"
+			}]
+			x: 25.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "4C5264DDA144F7F5"
+			tasks: [{
+				id: "7D7FD6E0383A61E9"
+				item: "alexcaves_delight:tree_star_tea"
+				type: "item"
+			}]
+			x: 25.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["4A793D8D35E3A344"]
+			id: "1A31F3D2EFE5A933"
+			tasks: [{
+				id: "4AC039B17F575B32"
+				item: "trailandtales_delight:pitcher_plant_tea"
+				type: "item"
+			}]
+			x: 25.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "526F8D74062F28E6"
+			tasks: [{
+				id: "12566BF204E3D62E"
+				item: "youkaishomecoming:saidi_tea"
+				type: "item"
+			}]
+			x: 25.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "054F7B992E6D7205"
+			tasks: [{
+				id: "695BC9818E133CC1"
+				item: "fruitsdelight:mango_tea"
+				type: "item"
+			}]
+			x: 25.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "780C98AF47EA6C05"
+			tasks: [{
+				id: "736F219A02A12F02"
+				item: "youkaishomecoming:tea_mocha"
+				type: "item"
+			}]
+			x: 24.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["03321767C7214148"]
+			id: "2BF12C2A5F7CBE96"
+			tasks: [{
+				id: "1CBCD9E935B92CC4"
+				item: "youkaishomecoming:lemon_black_tea"
+				type: "item"
+			}]
+			x: 23.5d
+			y: 2.5d
 		}
 	]
 	title: "&e世界饮料"

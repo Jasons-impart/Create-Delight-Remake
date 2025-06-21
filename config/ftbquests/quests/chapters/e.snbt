@@ -1,0 +1,598 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "e"
+	group: "7D0A1432AAAD0EBA"
+	icon: "butchercraft:cooked_beef_ribs"
+	id: "546D1BAE985F9945"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "663D41A82205B3E3"
+			rewards: [
+				{
+					count: 9
+					id: "4ACD23EB869EB1F9"
+					item: "minecraft:carrot"
+					type: "item"
+				}
+				{
+					id: "617B2D91C3BC66BE"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "小猪是哪来的？"
+			tasks: [{
+				id: "4DF3449904ED3501"
+				item: "minecraft:porkchop"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "7ACB73C0E9FBD4A9"
+			rewards: [
+				{
+					count: 9
+					id: "33A59C23424F17EC"
+					item: "minecraft:wheat_seeds"
+					type: "item"
+				}
+				{
+					id: "19FF92D41FB7D6BD"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "小鲲是哪来的？"
+			tasks: [{
+				id: "3CB2C2682E49072E"
+				item: "minecraft:chicken"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "40EBFAF6221F7BC2"
+			rewards: [
+				{
+					count: 9
+					id: "3ACE8E226E05CA72"
+					item: "minecraft:carrot"
+					type: "item"
+				}
+				{
+					id: "42F19F10FC47564B"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "小麻辣兔头是哪来的？"
+			tasks: [{
+				id: "4A6D4A3483073092"
+				item: "minecraft:rabbit"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "7AB702E0298F4A91"
+			rewards: [
+				{
+					id: "120BBDABB70351E4"
+					item: "minecraft:hay_block"
+					type: "item"
+				}
+				{
+					id: "56FBDD99B3BC30F2"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "小羊是哪来的？"
+			tasks: [{
+				id: "22E0DB07A6173E2C"
+				item: "minecraft:mutton"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["39D73D0E0410E5C9"]
+			description: [
+				"&4已兼容机械动力!&r"
+				"挂肉勾用于大型牲畜，案板用于小型牲畜也可用于某些肉类的加工，任何肉类都可以用它试一试能不能剁得再碎一点"
+			]
+			id: "5EB3B636A6FEA921"
+			rewards: [{
+				id: "2D8490DDBEC0A43C"
+				type: "xp"
+				xp: 100
+			}]
+			shape: "hexagon"
+			subtitle: "加工，然后加工。"
+			tasks: [
+				{
+					id: "2FC965A8FCD1D5BA"
+					item: "butchercraft:meat_hook_item"
+					type: "item"
+				}
+				{
+					id: "0FEA6335A65B9BA0"
+					item: "butchercraft:butcher_block_block_item"
+					type: "item"
+				}
+			]
+			title: "屠户!"
+			x: 0.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "439CBC5217A0B311"
+			rewards: [{
+				id: "7050F5D1B303126F"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "小山羊哪来的"
+			tasks: [{
+				id: "2DF901FEA2A10081"
+				item: "butchercraft:goat_chop"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "628D902990D2B313"
+			tasks: [{
+				id: "0AB0192238574C4B"
+				item: "butchercraft:tripe"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "287B47F29C5123D2"
+			tasks: [{
+				id: "7C68AEDC2C6BA147"
+				item: "butchercraft:stomach"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "15B042CF0F3854B0"
+			tasks: [{
+				id: "3B8613CC8D2B145A"
+				item: "butchercraft:lung"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "06DDC818D9117DE2"
+			tasks: [{
+				id: "16F546908801AFDE"
+				item: "butchercraft:liver"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "104399BED9269054"
+			tasks: [{
+				id: "43A11F51C6683018"
+				item: "butchercraft:kidney"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "34E9739B060CCF21"
+			tasks: [{
+				id: "16FEDE96B28230A5"
+				item: "butchercraft:heart"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "1B0E85530446A5D1"
+			tasks: [{
+				id: "796F566F39AE3E2E"
+				item: "butchercraft:eyeball"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			description: ["多方块中要保证至少存在一个输入总线和输出总线，这样你的机器才能正常的输入和输出。"]
+			id: "73992E846A016357"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "0E177B573061A3EC"
+				table_id: 8614959000113369079L
+				type: "random"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "自动屠宰"
+			tasks: [
+				{
+					id: "3607B57D20FF2A7D"
+					item: "createdelight:butchery_room"
+					type: "item"
+				}
+				{
+					id: "653629602F3356C2"
+					item: "createdelight:andesite_import_bus"
+					type: "item"
+				}
+				{
+					id: "7FA8FD03950D99A5"
+					item: "createdelight:andesite_export_bus"
+					type: "item"
+				}
+			]
+			title: "多方块屠宰室"
+			x: 0.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["39D73D0E0410E5C9"]
+			icon: "butchercraft:cow_carcass"
+			id: "187103E9D7BA6BEB"
+			rewards: [{
+				id: "1AC84A92F6AFE42E"
+				type: "xp"
+				xp: 777
+			}]
+			secret: true
+			shape: "square"
+			tasks: [
+				{
+					id: "6BF537D6BF8FA61A"
+					item: "butchercraft:sheep_carcass"
+					type: "item"
+				}
+				{
+					id: "40497C1BB1333F49"
+					item: "butchercraft:pig_carcass"
+					type: "item"
+				}
+				{
+					id: "0C14A73C95D49EC2"
+					item: "butchercraft:chicken_carcass"
+					type: "item"
+				}
+				{
+					id: "601BC9AFE0F13C16"
+					item: "butchercraft:goat_carcass"
+					type: "item"
+				}
+				{
+					id: "09A4651EF08588B9"
+					item: "butchercraft:cow_carcass"
+					type: "item"
+				}
+				{
+					id: "738A5189B3E3CF06"
+					item: "butchercraft:black_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "6E1FFDCD5E8031AA"
+					item: "butchercraft:brown_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "6B9E5F942920AD84"
+					item: "butchercraft:splotched_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "198E409A83B0B995"
+					item: "butchercraft:gold_rabbit_carcass"
+					type: "item"
+				}
+				{
+					id: "3133ACFCA574EB41"
+					item: "butchercraft:white_rabbit_carcass"
+					type: "item"
+				}
+			]
+			title: "尸体派对"
+			x: 1.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["39D73D0E0410E5C9"]
+			icon: {
+				Count: 1
+				id: "butchercraft:cow_hood"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "60424801745632F0"
+			rewards: [{
+				id: "424A8543233E8067"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "带上头罩时同类生物会跟随你，并把你当成他们的老大"
+			tasks: [
+				{
+					id: "791FC39DC0349A50"
+					item: {
+						Count: 1
+						id: "butchercraft:cow_hood"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0E8B2162FC493AF0"
+					item: {
+						Count: 1
+						id: "butchercraft:pig_hood"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3C30F0D3814103CA"
+					item: {
+						Count: 1
+						id: "butchercraft:sheep_hood"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2DE489103F002192"
+					item: {
+						Count: 1
+						id: "butchercraft:goat_hood"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "327F9681C24EEFCA"
+					item: {
+						Count: 1
+						id: "butchercraft:chicken_mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6CB5D8E72D50C1D1"
+					item: {
+						Count: 1
+						id: "butchercraft:white_bunny_ears"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "首领帽子"
+			x: 1.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "6A4EC9BCCB5DD4B9"
+			tasks: [{
+				id: "6CEB7A30006F908C"
+				item: "butchercraft:brain"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -3.0d
+		}
+		{
+			description: ["右键牲畜获得尸体"]
+			id: "39D73D0E0410E5C9"
+			rewards: [
+				{
+					id: "6DCAA2CBEE744661"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "3757D93DAB3F48C2"
+					item: {
+						Count: 1
+						id: "butchercraft:skinning_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "507FD83DD968BB55"
+					item: {
+						Count: 1
+						id: "butchercraft:bone_saw"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "59C965595F41D9E8"
+					item: {
+						Count: 1
+						id: "butchercraft:gut_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			size: 1.0d
+			subtitle: "来一场酣畅淋漓的屠宰"
+			tasks: [{
+				id: "7AF368C25056875F"
+				item: {
+					Count: 1
+					id: "butchercraft:butcher_knife"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "不素之客"
+			x: 0.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["39D73D0E0410E5C9"]
+			description: ["套装能够避免“血迹斑斑”。喝牛奶并不会消除效果，并且僵尸似乎喜欢你身上的血腥味,也可以用肥皂搓一下身子去除"]
+			id: "17A67CA404197B97"
+			rewards: [
+				{
+					id: "771C95BBEF1CC0E7"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "4130DB9228E81E5A"
+					item: "butchercraft:soap"
+					type: "item"
+				}
+			]
+			subtitle: "冷酷，精准，高效，且专业。"
+			tasks: [
+				{
+					id: "1B8179805C31EC47"
+					item: {
+						Count: 1
+						id: "butchercraft:mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3E2FCAC349D987CB"
+					item: {
+						Count: 1
+						id: "butchercraft:paper_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2BEA60C2316ED80E"
+					item: {
+						Count: 1
+						id: "butchercraft:apron"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0DFAF204BF238DB1"
+					item: {
+						Count: 1
+						id: "butchercraft:gloves"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2CCD536CBA149A7C"
+					item: {
+						Count: 1
+						id: "butchercraft:boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "屠夫套装"
+			x: -0.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["5EB3B636A6FEA921"]
+			id: "5E77B30490CE96A9"
+			rewards: [
+				{
+					id: "71DB9C8310665C2F"
+					item: "minecraft:hay_block"
+					type: "item"
+				}
+				{
+					id: "6C0C5B07657ED08A"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "小牛是哪来的？"
+			tasks: [{
+				id: "53A81679D7AE4D35"
+				item: "minecraft:beef"
+				type: "item"
+			}]
+			x: -2.0d
+			y: -3.0d
+		}
+	]
+	title: "&e大口吃肉"
+}
