@@ -17,7 +17,12 @@ ServerEvents.recipes(e => {
         "create_bic_bit:compat/farmersdelight/bitterballen_recipe2",
         "create_bic_bit:deep_frying/bitterballen_recipe_2",
         "create_bic_bit:deep_frying/enderball_recipe",
-        "create_deepfried:deep_frying/corn_dog"
+        "create_deepfried:deep_frying/corn_dog",
+        "create_bic_bit:deep_frying/froglightverdant",
+        "create_bic_bit:deep_frying/froglightpearlescent",
+        "create_bic_bit:deep_frying/froglightochre",
+        "createdieselgenerators:basin_fermenting/golden_carrot",
+        "createdieselgenerators:basin_fermenting/golden_apple"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 

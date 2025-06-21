@@ -45,14 +45,12 @@ ServerEvents.recipes(e => {
                 originIngrs.push(Ingredient.of(ingr))
             })
         })
-        fermenting(e, resFluid, originIngrs, Fluid.of(fluidId, 1000))
+        brewinandchewin_fermenting(e, resFluid, originIngrs, Fluid.of(fluidId, 1000))
         .id(`brewinandchewin:fermenting/${res.id.toString().split(":")[1]}`)
         r.remove()
         if (res.is("vinery:bottle_mojang_noir") || res.is("vinery:jellie_wine") || res.is("vinery:apple_wine"))
             return
-        e.recipes.createdieselgenerators.basin_fermenting(
-            resFluid, ingrs)
-            .id(`createdelight:basin_fermenting/${res.id.toString().split(":")[1]}`)
+        fermenting(e, resFluid, ingrs)
         // console.log(`res: ${recipe.getResultItem(null).id}`)
         // console.log(`ingr: ${recipe.ingredients.get(0).stacks.toString()}`)
     })

@@ -238,35 +238,43 @@ ServerEvents.recipes(e => {
     .secondaryOutput("minecraft:glass_bottle")
     .processingTime(2400)
     .id("vintagedelight:fermenting/carmine_froglight_from_fermenting")
-    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:ochre_froglight", [
+    fermenting(e,"2x minecraft:ochre_froglight", [
         Fluid.of("createdelightcore:slime", 810),
         "minecraft:blaze_powder",
         "minecraft:magma_cream",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
-    ]).id("vintagedelight:basin_fermenting/ochre_froglight")
+    ])
+
+    fermenting(e,"2x minecraft:pearlescent_froglight", [
+        Fluid.of("createdelightcore:slime", 810),
+        'minecraft:prismarine_crystals',
+        'minecraft:sea_pickle',
+        "vintagedelight:salt_block",
+        Fluid.of("createdelight:vinegar", 250)
+    ])
     
-    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:verdant_froglight", [
+    fermenting(e,"2x minecraft:verdant_froglight", [
         Fluid.of("createdelightcore:slime", 810),
         "#forge:dusts/glowstone",
         "minecraft:glow_berries",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
-    ]).id("vintagedelight:basin_fermenting/verdant_froglight")
+    ])
     
-    e.recipes.createdieselgenerators.basin_fermenting("2x minecraft:pearlescent_froglight", [
+    fermenting(e,"2x minecraft:pearlescent_froglight", [
         Fluid.of("createdelightcore:slime", 810),
         "minecraft:prismarine_crystal",
         "minecraft:sea_pickle",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
-    ]).id("vintagedelight:basin_fermenting/pearlescent_froglight")
+    ])
     
-    e.recipes.createdieselgenerators.basin_fermenting("2x alexscaves:carmine_froglight", [
+    fermenting(e,"2x alexscaves:carmine_froglight", [
         Fluid.of("createdelightcore:slime", 810),
         "#forge:dusts/redstone",
         "alexscaves:amber_curiosity",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
-    ]).id("vintagedelight:basin_fermenting/carmine_froglight")
+    ])
 })

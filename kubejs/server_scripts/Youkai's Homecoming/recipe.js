@@ -36,7 +36,9 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:red_velvet_cake_slice",
         "youkaishomecoming:clay_saucer_from_clay_ball_stonecutting",
         "youkaishomecoming:redbean_from_redbean_bag",
-        "youkaishomecoming:tea_leaves_from_tea_leaf_bag"
+        "youkaishomecoming:tea_leaves_from_tea_leaf_bag",
+        "youkaishomecoming:copper_tank_from_copper_block_stonecutting",
+        "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",
@@ -160,30 +162,27 @@ ServerEvents.recipes(e => {
         "time": 2400
     })
         .id("createdelight:simple_fermentation/yeast")
-    createdieselgenerators.basin_fermenting([
+    fermenting(e,[
         "4x vintagedelight:organic_mash",
         Fluid.of("createdelight:vinegar", 1000)
     ], [
         "#forge:mushrooms",
         Fluid.of("youkaishomecoming:mio", 1000)
-    ])
-        .processingTime(1800)
-        .id("createdelight:vinegar_2")
+    ], 1800)
     create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
         .id("youkaishomecoming:milling/matcha")
 
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         Fluid.of("youkaishomecoming:mio", 1000),
         [
             "#forge:grain/rice",
             "#forge:grain/rice",
             "#forge:grain/rice",
             "#forge:grain/rice",
-            Fluid.water(1000)])
-        .processingTime(1800)
-        .id("youkaishomecoming:basin_fermenting/mio")
+            Fluid.water(1000)
+        ], 1800)
 
-    createdieselgenerators.basin_fermenting([
+    fermenting(e,[
         Fluid.of("youkaishomecoming:soy_sauce", 1000)
     ], [
         "youkaishomecoming:soybean",
@@ -191,9 +190,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:soybean",
         "youkaishomecoming:soybean",
         Fluid.water(1000)
-    ])
-        .processingTime(1800)
-        .id("youkaishomecoming:basin_fermenting/soy_sauce")
+    ], 1800)
+
     //咖啡调配
     create.filling(
         "youkaishomecoming:americano",

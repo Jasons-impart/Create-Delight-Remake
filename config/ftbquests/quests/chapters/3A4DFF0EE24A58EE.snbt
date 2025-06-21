@@ -8,15 +8,351 @@
 	id: "3A4DFF0EE24A58EE"
 	order_index: 9
 	quest_links: [ ]
-	quests: [{
-		id: "50711781910527C4"
-		tasks: [{
-			id: "1052B5570115F20F"
-			title: "各类多方块"
-			type: "checkmark"
-		}]
-		x: -8.0d
-		y: -1.5d
-	}]
+	quests: [
+		{
+			description: [
+				"&a&o&l如何使用&r：背包内有&e足够物品&r时，可以使用&e多方块搭建器&r&4右键搭建&r；或使用&eJEI查看多方块结构&r"
+				"&a&o&l注意事项&r：所有的&e多方块结构&r均需要&e输入输出口&r，&e输入输出口&r可以替换&e结构外壳&r中&4任意部位&r，注意&e每个输入输出口&r只能代理&4一种物品/流体&r"
+				"&a&o&l如何美化&r：&e多方块结构外壳&r可替换为对应&e玻璃机壳/通透玻璃机壳&r"
+			]
+			id: "50711781910527C4"
+			rewards: [{
+				id: "0769F728C3D12548"
+				item: "mbd2:mbd_gadgets"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "注意使用方法哦！"
+			tasks: [{
+				id: "1052B5570115F20F"
+				title: "各类多方块"
+				type: "checkmark"
+			}]
+			x: -9.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["50711781910527C4"]
+			id: "4750F90745C1AC83"
+			shape: "square"
+			size: 1.5d
+			subtitle: "直接煅烧粉末成锭！"
+			tasks: [{
+				id: "5121E13D78144256"
+				item: "createdelight:alloy_electric_furnace"
+				type: "item"
+			}]
+			x: -15.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["50711781910527C4"]
+			description: ["&4贴图暂未完工&r"]
+			id: "795B3440D2A059C0"
+			shape: "square"
+			size: 1.5d
+			subtitle: "终于有大型的离心机了o(╥﹏╥)o"
+			tasks: [{
+				id: "1521E518C159F84C"
+				item: "createdelight:big_centrifuge"
+				type: "item"
+			}]
+			x: -13.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"50711781910527C4"
+				"5EB3B636A6FEA921"
+			]
+			dependency_requirement: "one_completed"
+			id: "62C31EFDB74E7053"
+			shape: "square"
+			size: 1.5d
+			subtitle: "不用脏手的自动屠宰机！"
+			tasks: [{
+				id: "18205216CF2E1814"
+				item: "createdelight:butchery_room"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["50711781910527C4"]
+			description: [
+				"&4注意&r如果不用&e核反应堆玻璃&r或&e核反应堆砖块&r完全封闭核反应堆&4会导致核泄漏&r；"
+				"反应过程中&4不要拆除核反应堆&r！否则将会&4导致爆炸&r！"
+				"反应中&9冷却剂（水）&r不足会导致&e核反应堆损坏度增加&r，并最终&4到达100时爆炸&r，通入&9冷却剂（水）&r可以&2减少核反应堆损坏度&r"
+			]
+			id: "002D0D42090AF488"
+			shape: "square"
+			size: 1.5d
+			subtitle: "吼吼！会爆炸的！产电池超多的！"
+			tasks: [{
+				id: "04009BDC26E0C6C0"
+				item: "createdelight:fission_reactor"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["50711781910527C4"]
+			description: ["&9水&r和&9灵质&r均可推动&e水坝扇叶&r！&e多个串联&r以达到&4最大应力输出&r！"]
+			id: "0CF2923758C50BDC"
+			shape: "square"
+			size: 1.5d
+			subtitle: "使用水流的高低落差产生大量应力！"
+			tasks: [{
+				id: "125844F70951BEC2"
+				item: "createdelight:hydropower_station"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4750F90745C1AC83"]
+			id: "430E65B3634FB615"
+			tasks: [{
+				id: "20321E04A7B605A3"
+				item: "createdelight:forged_steel_export_bus"
+				type: "item"
+			}]
+			x: -15.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4750F90745C1AC83"]
+			id: "3210E23589296AAA"
+			tasks: [{
+				id: "3FB7B5D6D7ECB6C7"
+				item: "createdelight:forged_steel_import_bus"
+				type: "item"
+			}]
+			x: -16.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["4750F90745C1AC83"]
+			id: "76997548D7399476"
+			subtitle: "线圈越多并行数越高！"
+			tasks: [{
+				id: "66FB6BAD80FCAEAF"
+				item: "createdelightcore:copper_coil"
+				type: "item"
+			}]
+			x: -15.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["795B3440D2A059C0"]
+			id: "60C48AFEB801C5B9"
+			tasks: [{
+				id: "78B6047BC9E8723A"
+				item: "createdelight:steel_export_bus"
+				type: "item"
+			}]
+			x: -14.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["795B3440D2A059C0"]
+			id: "3977822A639B7764"
+			tasks: [{
+				id: "19D10CAA86FB1C0E"
+				item: "createdelight:steel_import_bus"
+				type: "item"
+			}]
+			x: -12.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["795B3440D2A059C0"]
+			description: ["&4贴图暂未完工&r"]
+			id: "5A33083E2AE4CD8E"
+			subtitle: "转子越多离心速度越快！并行数越高！"
+			tasks: [{
+				id: "24CBF657B4926D41"
+				item: "createdelight:centrifuge_rotor"
+				type: "item"
+			}]
+			x: -13.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "55586281A5B419EC"
+			tasks: [{
+				id: "13366C85ACD8651B"
+				item: "createdelight:andesite_export_bus"
+				type: "item"
+			}]
+			x: -10.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "3DF1491F97DC9347"
+			tasks: [{
+				id: "0482265CC79358B7"
+				item: "createdelight:andesite_import_bus"
+				type: "item"
+			}]
+			x: -8.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["795B3440D2A059C0"]
+			id: "5E772282E7FD2FAF"
+			tasks: [{
+				id: "6814071EB8DBD330"
+				item: "createdelight:create_in"
+				type: "item"
+			}]
+			x: -12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["002D0D42090AF488"]
+			id: "6E656BCC69FF38CE"
+			tasks: [{
+				id: "6EBC6A1D2161B569"
+				item: "createdelight:forged_steel_export_bus"
+				type: "item"
+			}]
+			x: -7.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["002D0D42090AF488"]
+			id: "63F28F88D52F65C3"
+			tasks: [{
+				id: "46E42484EF5727EB"
+				item: "createdelight:forged_steel_import_bus"
+				type: "item"
+			}]
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["002D0D42090AF488"]
+			id: "3A7C249AD7BED2F3"
+			subtitle: "这是什么？&9切伦科夫辐射&r？！布豪！快跑！"
+			tasks: [{
+				id: "3D80A2038816613A"
+				item: "createdelight:fission_fuel_assembly"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["0CF2923758C50BDC"]
+			id: "60E34448540FBA8F"
+			subtitle: "应力输出组件！"
+			tasks: [{
+				id: "5BF7329724D2C7FA"
+				item: "createdelight:hydropower_station_fan"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0CF2923758C50BDC"]
+			id: "170B8EF83381788A"
+			subtitle: "替换控制器上方的陨石砖以增加应力输出与转速！"
+			tasks: [{
+				id: "0141C4FF1D0AB2E2"
+				item: "createdelight:hydropower_amplifier"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "645BF6F786D3728C"
+			tasks: [{
+				id: "5D08863E28549A3E"
+				item: "create:item_drain"
+				type: "item"
+			}]
+			x: -10.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "4B9D884F5275A795"
+			tasks: [{
+				id: "3FEDCEF4C8210C17"
+				item: "create:mechanical_mixer"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "443ECA28798AD686"
+			tasks: [{
+				id: "68D92F4DACDD8C48"
+				item: "butchercraft:butcher_block_block_item"
+				type: "item"
+			}]
+			x: -9.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["0CF2923758C50BDC"]
+			id: "6426407A703CB26A"
+			subtitle: "坚~如~磐~石~"
+			tasks: [
+				{
+					id: "1EC7206D38517144"
+					item: "ae2:sky_stone_brick"
+					type: "item"
+				}
+				{
+					id: "49D6A0927AEEE8D8"
+					item: "ae2:sky_stone_brick_stairs"
+					type: "item"
+				}
+				{
+					id: "35EE7C576DAAF674"
+					item: "ae2:sky_stone_brick_wall"
+					type: "item"
+				}
+				{
+					id: "7F5D4EDB3C719C20"
+					item: "ae2:sky_stone_brick_slab"
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["002D0D42090AF488"]
+			id: "71C2F567D6BB7F7A"
+			tasks: [
+				{
+					id: "36DF511DAA5EC366"
+					item: "create_new_age:reactor_casing"
+					type: "item"
+				}
+				{
+					id: "55E02A719D88D354"
+					item: "create_new_age:reactor_glass"
+					type: "item"
+				}
+			]
+			x: -5.5d
+			y: 2.5d
+		}
+	]
 	title: "&6超级多方块"
 }

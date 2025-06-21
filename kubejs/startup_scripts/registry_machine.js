@@ -2,7 +2,7 @@ StartupEvents.registry("block", (event) => {
     const MODID = "createdelight:"
 
     let machinery = [
-        "electrolyzer",
+        // "electrolyzer",
         "emergency_industrial_platform",
         "emergency_industrial_platform_block",
         "emergency_industrial_platform_lime",
