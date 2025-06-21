@@ -6,6 +6,7 @@ StartupEvents.modifyCreativeTab("petrolsparts:base", e => {
     'petrolsparts:double_cardan_shaft',
     'petrolsparts:differential',
     'petrolsparts:planetary_gearset',
-    'petrolsparts:colossal_cogwheel'
+    'petrolsparts:colossal_cogwheel',
+    'petrolsparts:pneumatic_tube'
   ])
 })

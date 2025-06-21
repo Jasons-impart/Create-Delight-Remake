@@ -1,0 +1,6 @@
+{
+    "fluid": "createdelight:ethylene_fluid",
+    "burnTime": 30,
+    "superHeat": false,
+    "amountConsumedPerTick": 1
+}
