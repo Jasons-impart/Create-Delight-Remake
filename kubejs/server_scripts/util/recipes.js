@@ -277,3 +277,25 @@ function FluidIngredients(fluidTag, amount, tag) {
     tag = tag || {}
     return { fluidTag: fluidTag, amount: amount, tag: tag }
 }
+
+/**
+ * 
+ * @param {Internal.RecipesEventJS} e 
+ * @param {any[]} results 
+ * @param {any[]} inputs 
+ * @param {number} [processingTime] 
+ * @param {number} [heatRequirement]
+ */
+function fermenting(e, results, inputs, processingTime, heatRequirement){
+    processingTime = processingTime || 100
+    let basin_fermenting = e.recipes.createdieselgenerators.basin_fermenting(results, inputs)
+        .processingTime(processingTime)
+        // .id(`createdieselgenerators:basin_fermenting/${results[0].split(":")[1]}`)
+    let bulk_fermenting = e.recipes.createdieselgenerators.bulk_fermenting(results, inputs)
+        .processingTime(processingTime)
+        // .id(`createdieselgenerators:bulk_fermenting/${results[0].split(":")[1]}`)
+    if (heatRequirement) {
+        basin_fermenting.heatRequirement(heatRequirement)
+        bulk_fermenting.heatRequirement(heatRequirement)
+    }
+}

@@ -25,5 +25,7 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:moon_rocket',
     "youkaishomecoming:kettle",
     "youkaishomecoming:oolong_tea",
+    'youkaishomecoming:copper_tank',
+    'youkaishomecoming:copper_faucet'
   ])
 })

@@ -53,8 +53,8 @@
 				type: "item"
 			}]
 			title: "砧板！"
-			x: 4.510204081632651d
-			y: 2.0017006802721014d
+			x: -6.489795918367349d
+			y: 17.5017006802721d
 		}
 		{
 			icon: {
@@ -91,63 +91,6 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["0DB5F873297C3601"]
-			description: [
-				"煎锅:煎锅可以用于简单处理食物，比如煎鸡蛋或将肉烤熟。副手拿着食物，主手拿着煎锅靠近热源，然后按住右键稍等一会，食物就熟了。"
-				"你也可以潜行右击将煎锅放在热源上面，这样只需将食物右键放入就可以安心离开。不过注意，做好的食物会以掉落物的形式从煎锅中弹出来，所以还是不要离开太久为好。"
-				""
-				"厨锅:简简单单的食物已经无法满足玩家们的胃了，玩家们需要更加精美的食物。这时候，厨锅就派上了用场。与煎锅不同，你不能把厨锅拿在手上烹饪，\"它必须被放置在热源上(无需潜行，直接右键即可放置)。放置后，你可以右击打开厨锅的GUI，那里有和原版类似的合成，"
-				"打开即可看到各种食物的烹饪要求。烹好的食物会留在厨锅里。部分食物需要碗来盛装，你可以在厨锅中放入碗。"
-			]
-			id: "236182632D72C634"
-			rewards: [
-				{
-					id: "279C5B5A2E93B439"
-					item: {
-						Count: 1
-						id: "minecraft:flint_and_steel"
-						tag: {
-							Damage: 0
-						}
-					}
-					title: "打起火来！"
-					type: "item"
-				}
-				{
-					id: "1E8CDEB98602F01C"
-					type: "xp"
-					xp: 100
-				}
-				{
-					id: "22B7B69077015390"
-					item: "farmersdelight:cooking_pot"
-					type: "item"
-				}
-				{
-					id: "0F8752A8D77ACAB9"
-					item: {
-						Count: 1
-						id: "farmersdelight:skillet"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "拿好这套最泛用的厨具！......丢了就自己做一套咯"
-			tasks: [{
-				id: "5553B5232EF96069"
-				item: "farmersdelight:stove"
-				type: "item"
-			}]
-			title: "我寻思这能用厨锅做"
-			x: -18.5d
-			y: -0.5d
-		}
-		{
 			dependencies: ["7F9674CC778A157C"]
 			id: "0A57106C8D121016"
 			rewards: [
@@ -169,8 +112,8 @@
 				item: "farmersdelight:straw"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -0.5d
+			x: -6.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["0A57106C8D121016"]
@@ -194,8 +137,8 @@
 				item: "farmersdelight:canvas"
 				type: "item"
 			}]
-			x: 3.5d
-			y: -0.5d
+			x: -7.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["0EB163D03C1B6B44"]
@@ -219,8 +162,8 @@
 				item: "farmersdelight:tatami"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -0.5d
+			x: -8.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["0A57106C8D121016"]
@@ -244,8 +187,8 @@
 				item: "farmersdelight:organic_compost"
 				type: "item"
 			}]
-			x: 5.0d
-			y: -1.5d
+			x: -6.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["0A57106C8D121016"]
@@ -275,8 +218,8 @@
 				item: "farmersdelight:rope"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -1.5d
+			x: -7.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["730067CB89A4EA43"]
@@ -301,8 +244,8 @@
 				item: "farmersdelight:safety_net"
 				type: "item"
 			}]
-			x: 3.5d
-			y: -2.5d
+			x: -7.5d
+			y: 13.0d
 		}
 		{
 			id: "0DB5F873297C3601"
@@ -409,8 +352,8 @@
 				item: "farmersdelight:rich_soil"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -2.5d
+			x: -5.5d
+			y: 13.0d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -722,8 +665,8 @@
 				item: "farmersdelight:ham"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 2.0d
+			x: -5.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["7F9674CC778A157C"]
@@ -749,8 +692,8 @@
 				item: "minecraft:milk_bucket"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 2.0d
+			x: -8.0d
+			y: 17.5d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -1494,8 +1437,8 @@
 				item: "vintagedelight:fermenting_jar"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 2.000000000000007d
+			x: 3.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["37E0D4C31FF54DAA"]
@@ -1511,8 +1454,8 @@
 				item: "vintagedelight:salt_dust"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 4.505952380952351d
+			x: 3.5d
+			y: 4.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1528,8 +1471,8 @@
 				item: "minecraft:slime_block"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 2.505952380952351d
+			x: 1.5d
+			y: 2.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1544,8 +1487,8 @@
 				item: "culturaldelights:pickle"
 				type: "item"
 			}]
-			x: 11.0d
-			y: 6.505952380952351d
+			x: 2.5d
+			y: 6.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1560,8 +1503,8 @@
 				item: "vintagedelight:pickled_onion"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 6.505952380952351d
+			x: 4.5d
+			y: 6.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1576,8 +1519,8 @@
 				item: "vintagedelight:pickled_beetroot"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 5.505952380952351d
+			x: 5.5d
+			y: 5.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1592,8 +1535,8 @@
 				item: "vintagedelight:pickled_egg"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 4.505952380952351d
+			x: 1.5d
+			y: 4.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1608,8 +1551,8 @@
 				item: "vintagedelight:salted_cod"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 6.505952380952351d
+			x: 1.5d
+			y: 6.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1624,38 +1567,8 @@
 				item: "vintagedelight:salted_salmon"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 6.505952380952351d
-		}
-		{
-			dependencies: ["236182632D72C634"]
-			description: [
-				"现在，Alex动物也能被制作成更丰富的食物了！有些需要厨锅来制作。"
-				" "
-				"顺便，隆重向你介绍米其林十八星美味：蛆虫沙拉！"
-			]
-			id: "3F0DF109F13B594B"
-			rewards: [
-				{
-					id: "548D55D0FABFD54A"
-					item: "alexsdelight:maggot_salad"
-					type: "item"
-				}
-				{
-					id: "1AEC67283F5F3D81"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "这些新奇动物能吃吗？"
-			tasks: [{
-				id: "1E723108264639BB"
-				item: "alexsdelight:bison_burger"
-				type: "item"
-			}]
-			title: "Alex生物？"
-			x: -16.5d
-			y: -0.5d
+			x: 5.5d
+			y: 6.505952380952344d
 		}
 		{
 			dependencies: ["34D9D292CE6F683E"]
@@ -1709,8 +1622,8 @@
 				item: "vintagedelight:century_egg"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 3.505952380952351d
+			x: 1.5d
+			y: 3.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1720,8 +1633,8 @@
 				item: "createdelight:salami"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 4.505952380952351d
+			x: 5.5d
+			y: 4.505952380952344d
 		}
 		{
 			dependencies: ["2F7BE3A06FA611D6"]
@@ -1915,8 +1828,8 @@
 				item: "mynethersdelight:letios_compost"
 				type: "item"
 			}]
-			x: 5.5d
-			y: -0.5d
+			x: -5.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["45CCD6FE4E417959"]
@@ -1940,8 +1853,8 @@
 				item: "mynethersdelight:resurgent_soil"
 				type: "item"
 			}]
-			x: 6.5d
-			y: -0.5d
+			x: -4.5d
+			y: 15.0d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -1951,8 +1864,8 @@
 				item: "vintagedelight:kimchi"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 3.505952380952351d
+			x: 5.5d
+			y: 3.505952380952344d
 		}
 		{
 			dependencies: ["1E01FC2BE0941E79"]
@@ -2063,8 +1976,8 @@
 				item: "culturaldelights:cut_pickle"
 				type: "item"
 			}]
-			x: 11.0d
-			y: 7.505952380952351d
+			x: 2.5d
+			y: 7.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -2074,8 +1987,8 @@
 				item: "vintagedelight:surstromming"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 5.505952380952351d
+			x: 1.5d
+			y: 5.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -2085,8 +1998,8 @@
 				item: "vintagedelight:pickled_pepper"
 				type: "item"
 			}]
-			x: 14.0d
-			y: 2.505952380952351d
+			x: 5.5d
+			y: 2.505952380952344d
 		}
 		{
 			dependencies: ["325B0F5FB59CCCAE"]
@@ -2096,8 +2009,8 @@
 				item: "vintagedelight:vinegar_bottle"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 6.505952380952351d
+			x: 3.5d
+			y: 6.505952380952344d
 		}
 		{
 			dependencies: ["2D251E028B2B9D48"]
@@ -2107,8 +2020,8 @@
 				item: "vintagedelight:cheese_curds"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 7.505952380952351d
+			x: 3.5d
+			y: 7.505952380952344d
 		}
 		{
 			dependencies: ["2F6C826BB87782A4"]
@@ -2119,8 +2032,8 @@
 				type: "item"
 			}]
 			title: "无需发酵！"
-			x: 12.0d
-			y: 8.505952380952351d
+			x: 3.5d
+			y: 8.505952380952344d
 		}
 		{
 			dependencies: ["5FA144201D8ACD66"]
@@ -2131,8 +2044,8 @@
 				type: "item"
 			}]
 			title: "豪吃！😋"
-			x: 12.0d
-			y: 9.505952380952351d
+			x: 3.5d
+			y: 9.505952380952344d
 		}
 		{
 			dependencies: ["3113E45D7D1D9A4E"]
@@ -2226,32 +2139,8 @@
 				type: "item"
 			}]
 			title: "这是？！"
-			x: 3.5d
-			y: 3.5d
-		}
-		{
-			dependencies: ["236182632D72C634"]
-			id: "393F7F1F2698D4EB"
-			tasks: [{
-				id: "5CEB162619FE7B34"
-				item: "casualness_delight:raw_cheese_wheel"
-				type: "item"
-			}]
-			title: "美味无需多盐！"
-			x: -18.5d
-			y: -2.0d
-		}
-		{
-			dependencies: ["393F7F1F2698D4EB"]
-			id: "7B8F6ACA6D6FD780"
-			tasks: [{
-				id: "3C40483F25D6D906"
-				item: "casualness_delight:cheese_wheel"
-				type: "item"
-			}]
-			title: "时间的味道！"
-			x: -18.5d
-			y: -3.5d
+			x: -6.5d
+			y: 19.5d
 		}
 		{
 			dependencies: ["110EED3EE1EDAA42"]
@@ -2310,31 +2199,6 @@
 			}]
 			x: -11.0d
 			y: 6.0d
-		}
-		{
-			dependencies: ["236182632D72C634"]
-			id: "74A7EB9CD4EA66EB"
-			secret: true
-			subtitle: "不是，你 ......."
-			tasks: [{
-				id: "5025C3FC2AD44A15"
-				item: "createdelight:braised_intestines_in_brown_sauce"
-				type: "item"
-			}]
-			title: "&e九转大肠"
-			x: -17.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["236182632D72C634"]
-			id: "5CA97AC22D4938D0"
-			tasks: [{
-				id: "5E8976721437E966"
-				item: "createdelight:boiling_water_cabbage"
-				type: "item"
-			}]
-			x: -20.0d
-			y: -2.0d
 		}
 		{
 			dependencies: ["43993FFB4F29D713"]

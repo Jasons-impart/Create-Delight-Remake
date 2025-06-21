@@ -86,36 +86,30 @@ ServerEvents.recipes(e => {
         "create:wheat_flour"
     ).id("bakeries:integration/create/milling/whole_wheat_flour")
     //酵母
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         Fluid.of("createdelight:yeast", 250),
         [
             '#forge:mushrooms',
             "#forge:flour",
             'minecraft:sugar',
             Fluid.water(250)
-        ]
+        ], 300
     )
-        .processingTime(300)
-        .id("bakeries:basin_fermenting/yeast")
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         Fluid.of("createdelight:yeast", 500),
         [
             Fluid.of("createdelight:yeast", 250),
             "#forge:flour",
-        ]
+        ], 300
     )
-        .processingTime(300)
-        .id("bakeries:basin_fermenting/yeast_1")
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         Fluid.of("createdelight:yeast", 500),
         [
             "createdelight:dry_yeast",
             "#forge:flour",
             Fluid.water(500)
-        ]
+        ], 300
     )
-        .processingTime(300)
-        .id("bakeries:basin_fermenting/yeast_2")
     vintageimprovements.vacuumizing(
         [
             Fluid.water(200),
@@ -156,27 +150,24 @@ ServerEvents.recipes(e => {
         ]
     ).id("bakeries:mixing/whole_wheat_dough")
     create.splashing("bakeries:whole_wheat_dough", "create:wheat_flour").id("bakeries:splashing/whole_wheat_dough")
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         "5x create:dough",
-        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.water(250))
+        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.water(250)),
+        400
     )
-        .processingTime(400)
-        .id("create:basin_fermenting/dough")
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         "5x farmersdelight:wheat_dough",
-        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250))
+        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250)),
+        400
     )
-        .processingTime(400)
-        .id("farmersdelight:basin_fermenting/wheat_dough")
-    createdieselgenerators.basin_fermenting(
+    fermenting(e,
         "5x bakeries:sweet_dough",
         [
             "createdelight:dry_yeast",
             "minecraft:sugar"
-        ].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250))
+        ].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250)),
+        400
     )
-       .processingTime(400)
-       .id("bakeries:basin_fermenting/sweet_dough")
     create.mixing(
         "bakeries:sweet_dough",
         [

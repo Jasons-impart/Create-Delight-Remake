@@ -179,7 +179,6 @@ StartupEvents.registry("creative_mode_tab", e => {
     .translationKey("itemGroup.createdelight.machine")
     .icon(() => Item.of("createdelight:electrolyzer"))
     .content(() => [
-      'createdelight:electrolyzer',
       "createdelight:emergency_industrial_platform",
       "createdelight:emergency_industrial_platform_block",
       "createdelight:emergency_industrial_platform_lime",

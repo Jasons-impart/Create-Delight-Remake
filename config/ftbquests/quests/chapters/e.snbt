@@ -6,7 +6,14 @@
 	icon: "butchercraft:cooked_beef_ribs"
 	id: "546D1BAE985F9945"
 	order_index: 3
-	quest_links: [ ]
+	quest_links: [{
+		id: "3539BAA70F97B8AF"
+		linked_quest: "62C31EFDB74E7053"
+		shape: "square"
+		size: 2.0d
+		x: 0.0d
+		y: -1.5d
+	}]
 	quests: [
 		{
 			dependencies: ["39D73D0E0410E5C9"]
@@ -33,40 +40,6 @@
 			]
 			title: "屠户!"
 			x: -4.5d
-			y: -1.5d
-		}
-		{
-			dependencies: ["5EB3B636A6FEA921"]
-			description: ["多方块中要保证至少存在一个输入总线和输出总线，这样你的机器才能正常的输入和输出。"]
-			id: "73992E846A016357"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "0E177B573061A3EC"
-				table_id: 8614959000113369079L
-				type: "random"
-			}]
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "自动屠宰"
-			tasks: [
-				{
-					id: "3607B57D20FF2A7D"
-					item: "createdelight:butchery_room"
-					type: "item"
-				}
-				{
-					id: "653629602F3356C2"
-					item: "createdelight:andesite_import_bus"
-					type: "item"
-				}
-				{
-					id: "7FA8FD03950D99A5"
-					item: "createdelight:andesite_export_bus"
-					type: "item"
-				}
-			]
-			title: "多方块屠宰室"
-			x: -0.75d
 			y: -1.5d
 		}
 		{
