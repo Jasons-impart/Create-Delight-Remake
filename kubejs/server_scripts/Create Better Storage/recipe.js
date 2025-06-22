@@ -21,6 +21,6 @@ ServerEvents.recipes(e => {
         A: "minecraft:gold_block",
         B: "minecraft:diamond_block",
         C: "minecraft:netherite_ingot",
-        D: "create_bs:netherite_item_vault"
+        D: "create_bs:diamond_item_vault"
     })
 })
