@@ -2,6 +2,7 @@
 	consume_items: true
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
+	default_repeatable_quest: true
 	filename: "Unlock_Trade"
 	group: "445171CC29E98940"
 	icon: "createdelightcore:netherite_coin"
@@ -361,6 +362,7 @@
 			y: 2.0d
 		}
 		{
+			can_repeat: false
 			description: ["你可能发现了，系统中的一些交易为“你不在其白名单”的状态。想要解除这一状态，需要你在这里交付物品解锁。除非特殊说明，交付的物品即为在商店会解锁的物品。"]
 			id: "4F6ECCDD7821B95F"
 			size: 2.0d
