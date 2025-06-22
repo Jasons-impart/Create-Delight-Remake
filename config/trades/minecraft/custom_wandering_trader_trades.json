@@ -3,7 +3,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "lightmanscurrency:coin_gold",
+        "ID": "createdelightcore:gold_coin",
         "Count": 1
       },
       "Sell": {
@@ -17,7 +17,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "lightmanscurrency:coin_iron",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -31,7 +31,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "lightmanscurrency:coin_iron",
+        "ID": "createdelightcore:iron_coin",
         "Count": 5
       },
       "Sell": {
@@ -47,11 +47,11 @@
     {
       "Type": "lightmanscurrency:random_selection",
       "Price": {
-        "ID": "lightmanscurrency:coin_gold",
+        "ID": "createdelightcore:gold_coin",
         "Count": 2
       },
       "Price2": {
-        "ID": "lightmanscurrency:coin_iron",
+        "ID": "createdelightcore:iron_coin",
         "Count": 4
       },
       "SellTag": "lightmanscurrency:traders/display_case",
@@ -62,7 +62,7 @@
     {
       "Type": "lightmanscurrency:simple",
       "Price": {
-        "ID": "lightmanscurrency:coin_gold",
+        "ID": "createdelightcore:gold_coin",
         "Count": 4
       },
       "Sell": {
