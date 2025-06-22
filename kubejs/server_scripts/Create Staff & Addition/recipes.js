@@ -73,4 +73,19 @@ ServerEvents.recipes(e => {
         D: "create_sa:andesite_exoskeleton_chestplate"
     }
     ).id("create_sa:brass_exoskeleton_recipe")
+    e.recipes.create.mechanical_crafting(
+        "create_sa:andesite_exoskeleton_chestplate",
+        [
+            "ABCBA",
+            "AADAA",
+            "FEAEF"
+        ], {
+            A: "create:andesite_alloy",
+            B: "create:shaft",
+            C: "create:belt_connector",
+            D: "create_sa:heat_engine",
+            E: "#forge:ingots/zinc",
+            F: "#forge:stone"
+        }
+    ).id("create_sa:mechanical_crafting/andesite_exoskeleton_recipe")
 })

@@ -121,7 +121,7 @@ ServerEvents.recipes((e) => {
   {
     let iner = "create:iron_sheet"
     e.recipes.create.sequenced_assembly('createdieselgenerators:sheet_metal_panel', iner, [
-      e.recipes.create.pressing(iner, iner)
+      e.recipes.vintageimprovements.hammering(iner, iner)
     ])
       .loops(3)
       .transitionalItem(iner)
