@@ -190,7 +190,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab"]
+			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab,54shuige"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"
@@ -293,31 +293,6 @@
 									]
 									textures: [{
 										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzY0MTkxNzU1NSwKICAicHJvZmlsZUlkIiA6ICI5ZTZmZDRlMDQyNmM0MmU4Yjg1ODVhMWEyMmM2NTBhOSIsCiAgInByb2ZpbGVOYW1lIiA6ICJBenVyZUNyYWIiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM2NzA2OGFiY2FmYWE3MTlhMTQyOTAyNjFhZjZiNzdkMTUwNGJiNjMyMDQ3OGQ3YzdhMzljYTY1ZGUyNmZmIgogICAgfQogIH0KfQ=="
-									}]
-								}
-							}
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "578FA43FB27A8CA2"
-					item: {
-						Count: 1
-						id: "minecraft:player_head"
-						tag: {
-							SkullOwner: {
-								Id: [I;
-									1261805926
-									-375570114
-									-2005167455
-									916362293
-								]
-								Name: "LightLeaves"
-								Properties: {
-									textures: [{
-										Signature: "ImiCgtmO6eYxZkivnDPj3O/pfokAnFKU29teKbrplQtNCttu/f7Y1AEimNigCgoNdErasaYQT3d9OO4dq1Eddrl+goSqWX7hGBzlEpScC0bvZhaZtEpgGK+60cf8pSiYnF75yLwsQJBGE8f7M6RNJD0JNqrfBQ2ERmixk4f7tu9aHEFPgSRjzMNm8Bw4frk7v9khX5KR/ciiBbbV/XKfZhUHXAoON6YQ2zyRzEhYhtZ3egVec2udLezko2De85CN2XEwbB/NIkJbY7IwqiKAHbM1EXL0lSKfca3bzTv3ovfDPh5sj9pDT8zdJyNRJpFyuyCnuPHnKaDtpkvsADAxsUE48t13pZG2xq3FF3U2cv9NM/vxWg8p4CNInkKGAoQnxw1Y/qfTWwjRMeGLe3NC2IP3fPJlk3r0jLnqw7+8yCa1Rl+d84cknvtyvUmxBfFCJW8aYiUCrlh+nsOvzqZKJBWsDGqydt4kvoiJy3jNwp3pMjAeGtxao1xLpVuSqx5UsXwsKoA4xC//oImT4+zmzhFhK/t5HcFsZO7vuA7qhRXuwq7ZVV40RsPNyq0DSaTLxubH2QuX419AWZZ81Rq4/362f3lLMQlEgoIPrQznhc7Vo8nhajw1W+Ck1FkIMJLLxfi0RFzZdVnq0uaqn0l0XSCmQO1oIb15UCLHp50bwZg="
-										Value: "ewogICJ0aW1lc3RhbXAiIDogMTcxOTY2NTM3MjUzNywKICAicHJvZmlsZUlkIiA6ICI0YjM1YTE2NmU5OWQ0MTNlODg3YjkyYTEzNjllOTQzNSIsCiAgInByb2ZpbGVOYW1lIiA6ICJMaWdodExlYXZlcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS84NTU2MTkxNzc1YmVmYTlmMDgxYjUwMTMzYTFiZTUyNmEwNTIzY2YwMDVlZWNkNzVhMjA4MTczMTEwYzRiNzFkIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0KICB9Cn0="
 									}]
 								}
 							}
@@ -481,6 +456,31 @@
 									textures: [{
 										Signature: "j64R9r2MdUYaPPi2KfphBHTRGYOrqNj0cGbFiQgIEsSFN2145FV9QHwqK1Og/L0bPKxMvEEu2xE0PqiL+4HKR2K79eLk7Vrqnmb86L5YYGwEcGOzQ3n0vDvqXSVAAwCCAKoOlVl6sDq/eZujlGumg43pbUzcm4+KIwQWLWX9xTxN6TXsPSs5kaFS/JbuQYBJv1grfc/Tzx+bUpHh9rKyAM5LbEYv8MUCim/6EMCCISotR5BhNsKAkZjXIIqlgbnFtgXc7NTiXMFDZhERT5PR4Ms/JiayfgtkyTThDNnIEvmdAofjt2v9DP29XJ65+1fa5fr7ymXtWSI9qJav373xebnP8KW2PTp0G4zYySKGTfgaU7pRX68LRwEdomfoEOXl/ZySThTtGRhYAYa5zomaif3D87FYDgk/CRBjm5MVpc85jM5PXCKfmGL10tQ5yzZAkjoLvznJPenHpVfGK1V3kTYQ7wb8tSSjPsO9pBaN4FbqrAXn67Ch0WAi+hbetL/VCuNkLMtjDH1ka/6wU3wMO0Yd6cOv2hLxAHC2MN44wuj3f8Ow3eoJGQ5NkThBx3i+IfS60hKgd+ei1C1BhV5jw7pqFy7JgKEC8L9ZTCCKN1d9X4GbmOIZ53aFWN7DkGwd+uU6x403sqqrguHcHyBtunCSjmLOIGejOBQqiGPEmGA="
 										Value: "ewogICJ0aW1lc3RhbXAiIDogMTczNzc3Mjc3MzUxNywKICAicHJvZmlsZUlkIiA6ICI1MjA3NjEzMGNiOWI0Nzg0OWQwMWU0NWZiNzBiMzRhMCIsCiAgInByb2ZpbGVOYW1lIiA6ICJKSUFGQUxTRURSRUFNIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzEwZDkwMmEyNjM0MTUwNDAxMmY5MmZlZWM4MzVmMDMxNWYwYTUwYmMxYjc4YzdkMzViNGQ4MTM2MTlmNWY1YWUiCiAgICB9LAogICAgIkNBUEUiIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2Y5YTc2NTM3NjQ3OTg5ZjlhMGI2ZDAwMWUzMjBkYWM1OTFjMzU5ZTllNjFhMzFmNGNlMTFjODhmMjA3ZjBhZDQiCiAgICB9CiAgfQp9"
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7E77304D2CED8CAA"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									377114016
+									2061386530
+									-1491875607
+									-1689082453
+								]
+								Name: "54shuige"
+								Properties: {
+									textures: [{
+										Signature: "f0PZC11NS1eOz9lkqU+VHzIoYXxRzP4bn/s2g+lVxOYW7eON6YQkEjWIpkG8p8Bl6ce242hjH2D4/5mWsH7Dph0vnhXYJ12uLZFyrMUVum8wtrXQtXYODtzynR+k1h1OprfsSNXfSuS2t3Nrue1bYYmPnN9pwbf4bSR6Hs/Wh8QQUA2QmHkVu3n53V268ttSP/ImhURzIafoNifHUtx3UZWGIpHrXibFgPpZ+hFAjo3H5YbCho/I9hSoUGarfcLAHpteZSLW/T+MXFNtdOaB6/vqJEPTEJtsmy46mtLuE+4SpsJa868I27ZUjPeqaQO4fK4lW/07dafkxDqEu7PVcL++tVL+jimZVTkdllAyZ9DpUGqvJMcheLk5rQrbs+FMqvKrYVv5s8FJE5PYfMW6nTqsdZEC87GI1qC8gcgHurN/HLehKKFp9OkEHcKSieNv0/E35DLdsIEKinaXceUjhC/jEaxh0r0HoEDyvSvJXDUg7dkg4bjPDTKIoQkHT1AalR3VkpqnWneQgeWl6pEEe4HXEAQUruD2IsMa3KpWhqyRfXM3/X34oF1Yh86eMmYu9F2pnQRiR60I099e+oQPvq6QBltuS8RT9/OIgRtY1+ruxEfqkaponbWAwMJm7E7pqkEsvS54OVeXIdYupiym/W2V30yo0tzG1O9jY6HXKY0="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTc1MDUyNzkyMDI2OSwKICAicHJvZmlsZUlkIiA6ICIxNjdhNGRhMDdhZGU0MzIyYTcxM2M4ZTk5YjUyYTVhYiIsCiAgInByb2ZpbGVOYW1lIiA6ICI1NHNodWlnZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS81ZDBkYTI2YzliMzIyNzE2NmM4ZmI4NGVkZDI1YWYzNzRiY2M4ZWJjNzk2NTUxMGRiODIxZDcyYjI0NTdiYTcwIgogICAgfQogIH0KfQ=="
 									}]
 								}
 							}
@@ -659,7 +659,7 @@
 			id: "64B9CFE4337A3EAA"
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"6731C7B5A0DADBAA\" } }"
+			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DDE0F8620589E02\" } }"
 			tasks: [{
 				id: "39FA137A00BB30A2"
 				title: "末地"
@@ -695,7 +695,7 @@
 			id: "3027E5E07BE0B171"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"15F92D3DE8FAB8A2\" } }"
+			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"37C42029C3527BCD\" } }"
 			tasks: [{
 				id: "4B0B25EBBB30F627"
 				type: "checkmark"
@@ -733,23 +733,32 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
+			icon: {
+				Count: 1
+				id: "butchercraft:butcher_knife"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "3911F2778F70E4B9"
 			rewards: [{
-				auto: "no_toast"
-				id: "74C0F3379C69CD7C"
-				item: "ftbquests:book"
+				id: "0E19FC41E068C6FF"
+				item: {
+					Count: 1
+					id: "butchercraft:butcher_knife"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
 			shape: "pentagon"
 			size: 1.5d
+			subtitle: "{ \"text\": \"屠宰系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"546D1BAE985F9945\" } }"
 			tasks: [{
-				disable_toast: true
-				elapsedTime: 1L
-				gameTime: "system"
-				icon: "ftbquests:book"
-				id: "70B3E3406AC6EB91"
-				title: "任务系统"
-				type: "questsadditions:time"
+				id: "001C8E2506E3E190"
+				title: "动物不掉落正常肉类？"
+				type: "checkmark"
 			}]
 			x: 3.0d
 			y: 1.0d
@@ -815,25 +824,26 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
-				"本整合包加入了sleep tight，晚上入睡的时候记得在床头插火把，不然0光环境下入睡会有怪物把你吓醒导致无法入睡哦。"
-				"多夜在同一张床上入睡会获得经验buff，鼓励大家尽可能在自家的床上美美入睡"
+				"本整合包加入了舒适用品mod，提供了可堆叠的睡袋和吊床，使用它们时不会设置出生点，可安心随地入睡。"
+				"另外，吊床可以用于跳过白天。"
 			]
-			icon: "sleep_tight:night_bag"
 			id: "1D22CD4640CF708B"
-			rewards: [{
-				id: "3D453E490D7229BC"
-				item: "minecraft:torch"
-				type: "item"
-			}]
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "每每在家里的床上入睡，我总感觉到无比的安心"
-			tasks: [{
-				id: "7FE779185C94F65D"
-				title: "有道理"
-				type: "checkmark"
-			}]
-			title: "安然入睡"
+			subtitle: "（不设置出生点）"
+			tasks: [
+				{
+					id: "0FFE66CF52203454"
+					item: "comforts:sleeping_bag_white"
+					type: "item"
+				}
+				{
+					id: "29E8043EFBF6F43C"
+					item: "comforts:hammock_white"
+					type: "item"
+				}
+			]
+			title: "随地大小睡"
 			x: 3.0d
 			y: -1.0d
 		}

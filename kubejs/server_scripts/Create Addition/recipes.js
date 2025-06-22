@@ -12,7 +12,9 @@ ServerEvents.recipes(e => {
         "createaddition:compacting/biomass_pellet",
         "createaddition:crafting/biomass_pellet",
         "createaddition:crafting/biomass_pellet_block",
-        "createaddition:mixing/electrum"
+        "createaddition:mixing/electrum",
+        "createaddition:crafting/electrum_block",
+        "createaddition:crafting/electrum"
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"

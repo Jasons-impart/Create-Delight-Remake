@@ -1,6 +1,6 @@
 {
     "fluid": "createdieselgenerators:ethanol",
-    "burnTime": 10,
+    "burnTime": 40,
     "superHeat": false,
-    "amountConsumedPerTick" : 5
+    "amountConsumedPerTick" : 1
 }

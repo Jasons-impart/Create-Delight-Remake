@@ -24,21 +24,12 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.uranium_dust")
         .tag("forge:dusts/uranium")
         .tag("forge:dusts")
-    let enriched_uraniumdust = e.create("createdelight:enriched_uraniumdust")
+    e.create("createdelight:enriched_uraniumdust")
         .maxStackSize(64)
         .tag("forge:dusts")
         .translationKey("item.createdelight.enriched_uraniumdust")
-    let depleted_uranium_dust = e.create("createdelight:depleted_uranium_dust")
+    e.create("createdelight:depleted_uranium_dust")
         .maxStackSize(64)
         .tag("forge:dusts")
         .translationKey("item.createdelight.depleted_uranium_dust")
-    try {
-        if (Platform.isClientEnvironment()) {
-            console.info("On client, apply alexscaves rarity")
-            depleted_uranium_dust.rarity("alexscaves:nuclear")
-            enriched_uraniumdust.rarity("alexscaves:nuclear")
-        }
-    } catch (error) {
-        console.log(error)
-    }
 })

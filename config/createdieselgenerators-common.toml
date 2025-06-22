@@ -1,0 +1,7 @@
+
+["Common Config"]
+	#Capacity of Tools requiring Fluids in mB
+	"Capacity of Tools requiring Fluids" = 200
+	#Tool Capacity Enchantment Capacity Addition in mB
+	"Capacity Addition of Tools with Capacity Enchantment" = 100
+

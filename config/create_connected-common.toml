@@ -8,7 +8,6 @@ migrateCopycatsOnInitialize = true
 #.
 #Enable/disable features. Values on server override clients
 [features]
-	#.
 	fluid_vessel = true
 	item_silo = true
 	inverted_clutch = true
@@ -36,10 +35,13 @@ migrateCopycatsOnInitialize = true
 	copycat_beam = true
 	copycat_board = true
 	copycat_fence = true
-	bamboo_window = true
-	cherry_window = true
 	inventory_access_port = true
 	inventory_bridge = true
+	#.
+	kinetic_bridge = true
+	cross_connector = true
+	redstone_link_wildcard = true
+	kinetic_battery = true
 
 #.
 #Enable/disable categories of features. Disabling a category hides all related features. Values on server override clients

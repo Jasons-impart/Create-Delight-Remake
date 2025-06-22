@@ -18,9 +18,6 @@
     "material": {
         "items": ["minecraft:diamond","tetra:pristine_diamond"]
     },
-    "improvements": {
-        "arrested": 0
-    },
     "requiredTools": {
         "hammer_dig": 4
     },

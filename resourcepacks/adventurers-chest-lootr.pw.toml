@@ -1,0 +1,13 @@
+name = "Adventurer's Chest (Lootr)"
+filename = "Adventurer'sChest_v2[Lootr].zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "12245222d034741a864b20d1ad6cadb04425d801"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5284016
+project-id = 704616

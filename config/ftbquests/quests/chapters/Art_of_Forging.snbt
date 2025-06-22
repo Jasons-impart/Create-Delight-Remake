@@ -595,6 +595,7 @@
 				Count: 1
 				id: "tetra:modular_sword"
 				tag: {
+					Damage: 0
 					id: "art_of_forging/architects_crucible"
 					"sword/basic_hilt_material": "basic_hilt/forged_steel"
 					"sword/binding_material": "sword_binding/life_fiber"

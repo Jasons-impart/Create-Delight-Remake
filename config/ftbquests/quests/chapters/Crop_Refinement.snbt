@@ -429,7 +429,7 @@
 				item: "farmersdelight:vegetable_noodles"
 				type: "item"
 			}]
-			x: -3.0d
+			x: -2.0d
 			y: 7.0d
 		}
 		{
@@ -445,7 +445,7 @@
 				item: "farmersdelight:noodle_soup"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -5.0d
 			y: 6.0d
 		}
 		{
@@ -871,8 +871,8 @@
 				item: "createaddition:honey_cake"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 1.0d
+			x: -10.0d
+			y: 1.5d
 		}
 		{
 			id: "3E05DBF4E5BF11B1"
@@ -960,7 +960,7 @@
 				type: "item"
 			}]
 			x: -9.5d
-			y: 3.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -1226,7 +1226,7 @@
 				item: "mynethersdelight:spicy_noodle_soup"
 				type: "item"
 			}]
-			x: -2.5d
+			x: -2.0d
 			y: 6.0d
 		}
 		{
@@ -1237,7 +1237,7 @@
 				item: "minecraft:bread"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.0d
 			y: 6.0d
 		}
 		{
@@ -1248,7 +1248,7 @@
 				item: "some_assembly_required:bread_slice"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.0d
 			y: 7.0d
 		}
 		{
@@ -1259,7 +1259,7 @@
 				item: "refurbished_furniture:cheese_sandwich"
 				type: "item"
 			}]
-			x: -5.5d
+			x: -6.0d
 			y: 8.0d
 		}
 		{
@@ -1318,7 +1318,7 @@
 				type: "item"
 			}]
 			x: -10.0d
-			y: 2.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["264682461CB7D15A"]
@@ -1351,7 +1351,7 @@
 					type: "item"
 				}
 			]
-			x: -1.5d
+			x: -1.0d
 			y: 6.0d
 		}
 		{
@@ -1374,7 +1374,7 @@
 					type: "item"
 				}
 			]
-			x: -1.5d
+			x: -1.0d
 			y: 7.0d
 		}
 		{
@@ -1651,7 +1651,7 @@
 				type: "item"
 			}]
 			x: -14.5d
-			y: 10.0d
+			y: 10.5d
 		}
 		{
 			dependencies: ["2C83375C95140953"]
@@ -1669,7 +1669,7 @@
 				type: "item"
 			}]
 			x: -14.5d
-			y: 12.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["23D4AFBB84D53445"]
@@ -1687,7 +1687,7 @@
 				type: "item"
 			}]
 			x: -14.5d
-			y: 14.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1703,7 +1703,7 @@
 				type: "item"
 			}]
 			x: -16.0d
-			y: 15.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1719,7 +1719,7 @@
 				type: "item"
 			}]
 			x: -13.0d
-			y: 15.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1735,7 +1735,7 @@
 				type: "item"
 			}]
 			x: -14.5d
-			y: 16.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1751,7 +1751,7 @@
 				type: "item"
 			}]
 			x: -12.5d
-			y: 14.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["75806BDC4ACD5C35"]
@@ -1762,7 +1762,7 @@
 				type: "item"
 			}]
 			x: -16.5d
-			y: 14.0d
+			y: 14.5d
 		}
 		{
 			id: "33C78746BA212239"
@@ -1774,8 +1774,8 @@
 				item: "farmersdelight:rice_panicle"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 10.0d
+			x: -0.5d
+			y: 10.5d
 		}
 		{
 			dependencies: ["33C78746BA212239"]
@@ -1787,8 +1787,8 @@
 				item: "farmersdelight:rice"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 12.0d
+			x: -0.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1800,8 +1800,8 @@
 				item: "farmersdelight:cooked_rice"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 14.0d
+			x: -0.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1811,8 +1811,8 @@
 				item: "farmersdelight:fried_rice"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 14.0d
+			x: -2.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1822,8 +1822,8 @@
 				item: "crabbersdelight:shrimp_fried_rice"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 16.0d
+			x: -1.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1833,8 +1833,8 @@
 				item: "fruitsdelight:pineapple_fried_rice"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 12.0d
+			x: -2.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1844,8 +1844,8 @@
 				item: "casualness_delight:sweet_rice"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 12.0d
+			x: 1.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1873,8 +1873,8 @@
 				}
 			]
 			title: "寿司卷"
-			x: 8.5d
-			y: 14.0d
+			x: 1.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["4A5ECE0ACB949C1A"]
@@ -1891,8 +1891,8 @@
 					type: "item"
 				}
 			]
-			x: 7.5d
-			y: 16.0d
+			x: 0.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1902,8 +1902,8 @@
 				item: "ends_delight:stuffed_rice_cake"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 15.5d
+			x: 1.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["280C8D7F2C484FC6"]
@@ -1913,8 +1913,8 @@
 				item: "ends_delight:ender_bamboo_rice"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 15.5d
+			x: -2.5d
+			y: 16.0d
 		}
 		{
 			id: "756CE4E7CC0F6F7D"
@@ -1927,8 +1927,8 @@
 				to_observe: "farmersdelight:wild_rice"
 				type: "observation"
 			}]
-			x: 7.5d
-			y: 11.0d
+			x: 0.5d
+			y: 11.5d
 		}
 		{
 			id: "55396FEE3139B9DA"
@@ -1942,7 +1942,7 @@
 				type: "observation"
 			}]
 			x: -13.5d
-			y: 11.0d
+			y: 11.5d
 		}
 		{
 			dependencies: ["4756A869F0D350FF"]
@@ -1969,7 +1969,7 @@
 				item: "ends_delight:ender_noodle"
 				type: "item"
 			}]
-			x: -4.0d
+			x: -5.0d
 			y: 7.0d
 		}
 		{
@@ -1987,8 +1987,8 @@
 				value: 1
 			}]
 			title: "香肠！我的最爱！"
-			x: -14.5d
-			y: 20.5d
+			x: -7.5d
+			y: 12.5d
 		}
 		{
 			id: "6F18A16C7424367B"
@@ -2000,8 +2000,8 @@
 				type: "item"
 			}]
 			title: "动物胶制作而成~"
-			x: -14.5d
-			y: 18.5d
+			x: -7.5d
+			y: 10.5d
 		}
 		{
 			id: "3BACCE2383508E48"
@@ -2011,8 +2011,8 @@
 				type: "item"
 			}]
 			title: "富含胶质！"
-			x: -13.5d
-			y: 19.5d
+			x: -6.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["02D30A170E9BF2CF"]
@@ -2027,8 +2027,8 @@
 				value: 1
 			}]
 			title: "香肠！"
-			x: -14.5d
-			y: 22.5d
+			x: -7.5d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2038,8 +2038,8 @@
 				item: "hotdog_delight:cod_sausage"
 				type: "item"
 			}]
-			x: -16.0d
-			y: 22.5d
+			x: -9.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2049,8 +2049,8 @@
 				item: "hotdog_delight:salmon_sausage"
 				type: "item"
 			}]
-			x: -15.5d
-			y: 23.5d
+			x: -8.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2060,8 +2060,8 @@
 				item: "hotdog_delight:pork_sausage"
 				type: "item"
 			}]
-			x: -14.5d
-			y: 24.0d
+			x: -7.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2078,8 +2078,8 @@
 					type: "item"
 				}
 			]
-			x: -15.5d
-			y: 21.5d
+			x: -8.5d
+			y: 13.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2090,8 +2090,8 @@
 				type: "item"
 			}]
 			title: "素食主义者！"
-			x: -13.5d
-			y: 21.5d
+			x: -6.5d
+			y: 13.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2101,8 +2101,8 @@
 				item: "butchercraft:blood_sausage"
 				type: "item"
 			}]
-			x: -13.0d
-			y: 22.5d
+			x: -6.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2112,8 +2112,8 @@
 				item: "ratatouille:raw_sausage"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 23.5d
+			x: -6.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["6C2C2AB54095982B"]
@@ -2123,8 +2123,8 @@
 				item: "butchercraft:cooked_blood_sausage"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 22.5d
+			x: -5.0d
+			y: 14.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2134,8 +2134,8 @@
 				item: "ratatouille:sausage"
 				type: "item"
 			}]
-			x: -12.5d
-			y: 23.5d
+			x: -5.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2145,8 +2145,8 @@
 				item: "createdelight:salami"
 				type: "item"
 			}]
-			x: -12.5d
-			y: 24.5d
+			x: -5.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["360A879F7B48F457"]
@@ -2156,8 +2156,8 @@
 				item: "hotdog_delight:cooked_pork_sausage"
 				type: "item"
 			}]
-			x: -14.5d
-			y: 25.0d
+			x: -7.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["4A51552941C49493"]
@@ -2167,8 +2167,8 @@
 				item: "hotdog_delight:cooked_salmon_sausage"
 				type: "item"
 			}]
-			x: -16.5d
-			y: 24.5d
+			x: -9.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["7A275EC3F322D435"]
@@ -2178,1181 +2178,7 @@
 				item: "hotdog_delight:cooked_cod_sausage"
 				type: "item"
 			}]
-			x: -17.0d
-			y: 22.5d
-		}
-		{
-			dependencies: ["71362ADA5C9546E8"]
-			id: "485EA96A33EC4B28"
-			rewards: [{
-				count: 5
-				id: "568977BC54CB1267"
-				item: "frycooks_delight:canola_seeds"
-				type: "item"
-			}]
-			tasks: [{
-				id: "2865B5ADA69A7DAC"
-				item: "frycooks_delight:canola_seeds"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 12.5d
-		}
-		{
-			id: "71362ADA5C9546E8"
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "22B2BF0A22085629"
-				item: "frycooks_delight:canola"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 10.0d
-		}
-		{
-			id: "114AA9A1BC21A2D7"
-			tasks: [{
-				icon: "frycooks_delight:wild_canola"
-				id: "4913045E6743A96E"
-				observe_type: 0
-				timer: 0L
-				title: "野生油菜"
-				to_observe: "frycooks_delight:wild_canola"
-				type: "observation"
-			}]
-			x: -1.5d
-			y: 11.0d
-		}
-		{
-			dependencies: [
-				"485EA96A33EC4B28"
-				"0BFA98351C335E32"
-			]
-			dependency_requirement: "one_completed"
-			id: "34636258CDA46423"
-			rewards: [{
-				id: "6A671470DFF558AA"
-				item: "createdieselgenerators:plant_oil_bucket"
-				type: "item"
-			}]
-			shape: "hexagon"
-			size: 1.5d
-			tasks: [{
-				id: "4E9779290CECD38D"
-				item: "create_bic_bit:mechanical_fryer"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "523E1169BC5B80AD"
-			rewards: [{
-				id: "5DA7D2AD046340D9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2F425F7D5F10DC1D"
-				item: "create_bic_bit:raw_kroket"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["523E1169BC5B80AD"]
-			id: "10021A5C749BC1DD"
-			rewards: [{
-				id: "21F1AE801B50F38E"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "09BD9CB2449D71AC"
-				item: "create_bic_bit:kroket"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 19.5d
-		}
-		{
-			dependencies: ["10021A5C749BC1DD"]
-			id: "3A79CCB8D90E43FD"
-			rewards: [{
-				id: "35E2D50E1B8E2AE2"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "197AEE924A635300"
-				item: "create_bic_bit:kroket_sandwich"
-				type: "item"
-			}]
-			x: -5.0d
-			y: 20.5d
-		}
-		{
-			dependencies: ["3A79CCB8D90E43FD"]
-			id: "1E3FB68F5450ECCA"
-			rewards: [{
-				id: "007A31AB65A74F47"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "144D53060DD665FE"
-				item: "create_bic_bit:ketchup_topped_kroket_sandwich"
-				type: "item"
-			}]
-			x: -5.5d
-			y: 21.5d
-		}
-		{
-			dependencies: ["3A79CCB8D90E43FD"]
-			id: "3D12BFE5642B617B"
-			rewards: [{
-				id: "52FD828A91C1B82D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3D8DA2BF8121B76F"
-				item: "create_bic_bit:mayonnaise_topped_kroket_sandwich"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 21.5d
-		}
-		{
-			dependencies: [
-				"3D12BFE5642B617B"
-				"1E3FB68F5450ECCA"
-			]
-			id: "4A73496857BA6252"
-			rewards: [{
-				id: "28DDAAB7F2B77FFF"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5103EB91ACEF918A"
-				item: "create_bic_bit:mayonnaise_ketchup_topped_kroket_sandwich"
-				type: "item"
-			}]
-			x: -5.0d
-			y: 22.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "353C807A73249762"
-			rewards: [{
-				id: "4F9E508D6637D9A0"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5631AC70A9DA9E7C"
-				item: "create_bic_bit:raw_frikandel"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["353C807A73249762"]
-			id: "32A230427948263F"
-			rewards: [{
-				id: "2031C37D68D5535F"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1EB894A224387BA6"
-				item: "create_bic_bit:frikandel"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["50B2F268D7FA20E2"]
-			id: "7503CB403200D405"
-			rewards: [{
-				id: "756A6BB81FE5CB2B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2B53725E6D6511BC"
-				item: "create_bic_bit:ketchup_topped_frikandel_sandwich"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["32A230427948263F"]
-			id: "50B2F268D7FA20E2"
-			rewards: [{
-				id: "13AB4A76F2A45D90"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6F4BB0D4AA075C9F"
-				item: "create_bic_bit:frikandel_sandwich"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["50B2F268D7FA20E2"]
-			id: "5A9490C1FEFF9CE7"
-			rewards: [{
-				id: "6A86695451BCBB35"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "66B29A3A82557122"
-				item: "create_bic_bit:mayonnaise_topped_frikandel_sandwich"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 17.5d
-		}
-		{
-			dependencies: [
-				"7503CB403200D405"
-				"5A9490C1FEFF9CE7"
-			]
-			id: "4284C4A3A5C556A2"
-			rewards: [{
-				id: "603EE55A8FC01C5C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "116F2C8C41B444F5"
-				item: "create_bic_bit:mayonnaise_ketchup_topped_frikandel_sandwich"
-				type: "item"
-			}]
-			x: -10.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "652AFA343C63239A"
-			rewards: [{
-				id: "6511C42A5CDB5182"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3F8DF6B2DDC6557E"
-				item: "create_bic_bit:raw_fries"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["652AFA343C63239A"]
-			id: "34B8AC05C1142CAA"
-			rewards: [{
-				id: "22C3D1516F9237F9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4221E8034F5BF8BB"
-				item: "create_bic_bit:fries"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 19.5d
-		}
-		{
-			dependencies: ["34B8AC05C1142CAA"]
-			id: "2313931E680CCCEB"
-			rewards: [{
-				id: "5723667F3382359C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "23DF3C03FF7FF020"
-				item: "create_bic_bit:wrapped_fries"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 20.5d
-		}
-		{
-			dependencies: ["2313931E680CCCEB"]
-			id: "48B7B0D1013F5987"
-			rewards: [{
-				id: "0B25416C8A2D2027"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6129B613B95F2561"
-				item: "create_bic_bit:wrapped_ketchup_topped_fries"
-				type: "item"
-			}]
-			x: -2.5d
-			y: 21.5d
-		}
-		{
-			dependencies: ["2313931E680CCCEB"]
-			id: "1D0D69C9A608C37E"
-			rewards: [{
-				id: "35C5E09F7E228DC0"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3B4F764169E8C0C0"
-				item: "create_bic_bit:wrapped_mayonnaise_topped_fries"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 21.5d
-		}
-		{
-			dependencies: [
-				"1D0D69C9A608C37E"
-				"48B7B0D1013F5987"
-			]
-			id: "593B04A4B7A7B184"
-			rewards: [{
-				id: "0F8CE9BFFA4A7509"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4991B444E8114807"
-				item: "create_bic_bit:wrapped_mayonnaise_ketchup_topped_fries"
-				type: "item"
-			}]
-			x: -2.0d
-			y: 22.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "55E099F0FEC60364"
-			rewards: [{
-				id: "7372963CAE15D5D9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "47D713E4AF7A9C81"
-				item: "create_deepfried:raw_corn_dog"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["55E099F0FEC60364"]
-			id: "18F08463EC2E9678"
-			rewards: [{
-				id: "28FA7FC093085235"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1A6577A430FDF0E2"
-				item: "create_deepfried:corn_dog"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["18F08463EC2E9678"]
-			id: "1480058083433461"
-			rewards: [{
-				id: "61FEE712EBD02D81"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "548EA9A46100CD93"
-				item: "createdelight:ketchup_corn_dog"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["18F08463EC2E9678"]
-			id: "625CF26DC5B2880A"
-			rewards: [{
-				id: "1077968D420B8E8D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "619C5FFCCA0BB4C5"
-				item: "createdelight:mayo_corn_dog"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 15.5d
-		}
-		{
-			dependencies: [
-				"1480058083433461"
-				"625CF26DC5B2880A"
-			]
-			id: "72CEAAB315F31231"
-			rewards: [{
-				id: "19020AA936CD06E9"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2A43876CD6CD9703"
-				item: "corn_delight:classic_corn_dog"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "25D355E35E4F6ED4"
-			rewards: [{
-				id: "452B1A1743456734"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1E3BFFBED65D18E2"
-				item: "farmersdelight:wheat_dough"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["25D355E35E4F6ED4"]
-			id: "4DF40B7BE7CFC965"
-			rewards: [{
-				id: "2C5549710A791D3C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7D197D2DECD7F458"
-				item: "create_bic_bit:sweet_dough"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 19.5d
-		}
-		{
-			dependencies: ["4DF40B7BE7CFC965"]
-			id: "6C974347B695E599"
-			rewards: [{
-				id: "3D5FA5FC81391A91"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3B74AB09309E7ECC"
-				item: "create_bic_bit:speculaas"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 20.5d
-		}
-		{
-			dependencies: ["4DF40B7BE7CFC965"]
-			id: "46282A8936C6DC36"
-			rewards: [{
-				id: "4721948E43C5B20F"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "51E004A991A6CD2F"
-				item: "create_bic_bit:kruidnoten"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 20.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "7B4425C1F497AF5D"
-			rewards: [{
-				id: "52B5EB6438FA7685"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "130570631BA6B514"
-				item: "create_bic_bit:unbaked_stroopwafel"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["7B4425C1F497AF5D"]
-			id: "63899D7DA92EA3E1"
-			rewards: [{
-				id: "51DA919493AFB4D1"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2EFF86CDBB47C3AB"
-				item: "create_bic_bit:stroopwafel"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["63899D7DA92EA3E1"]
-			id: "6F21F326C258F3B5"
-			rewards: [{
-				id: "1CEC898A18F5C3EB"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "0B9E3A9F5D061505"
-				item: "create_bic_bit:wrapped_stroopwafel"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 17.5d
-		}
-		{
-			dependencies: [
-				"58BC8525B628C47A"
-				"6F21F326C258F3B5"
-			]
-			id: "16B782BD5AC93766"
-			rewards: [{
-				id: "4CD3D91B6B3EBCC5"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "43D99BBECC2F10BB"
-				item: "create_bic_bit:wrapped_chocolate_glazed_stroopwafel"
-				type: "item"
-			}]
-			x: 2.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["63899D7DA92EA3E1"]
-			id: "58BC8525B628C47A"
-			rewards: [{
-				id: "40B89166C63F7051"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5D44111FF7DFD374"
-				item: "create_bic_bit:chocolate_glazed_stroopwafel"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "5CD0CA6226A7AA9C"
-			rewards: [{
-				id: "41B32F98455BC471"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5EC8C7343C038CEA"
-				item: "ratatouille:salty_dough"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["5CD0CA6226A7AA9C"]
-			id: "7D021C89A24BFAFB"
-			rewards: [{
-				id: "2D6658A2B0D62712"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "58E69638B1CC1C80"
-				item: "create_bic_bit:oliebollen"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "34AA3ABF881130E8"
-			rewards: [{
-				id: "121F9EC6AFD48070"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "628BA0617234BD49"
-				item: "create_bic_bit:raw_cheese_souffle"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["34AA3ABF881130E8"]
-			id: "1E8B1CAC098614E3"
-			rewards: [{
-				id: "7ED64B85675D7C4D"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6CD00F687977E08F"
-				item: "create_bic_bit:cheese_souffle"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "00447BE7C21B02B8"
-			rewards: [{
-				id: "0E721563A7947106"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1CCD32AD0FA64D4E"
-				item: "create_bic_bit:raw_bitterballen"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 17.5d
-		}
-		{
-			dependencies: ["00447BE7C21B02B8"]
-			id: "58B1987F935BE2BC"
-			rewards: [{
-				id: "188C0EB89688B071"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "79567AC632EAC83A"
-				item: "create_bic_bit:bitterballen"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 17.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "7057ECD802B88CF8"
-			rewards: [{
-				id: "0319806E804CF11B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "7CFC6306D1390202"
-				item: "create_bic_bit:raw_eggball"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 17.5d
-		}
-		{
-			dependencies: ["7057ECD802B88CF8"]
-			id: "56AADE3F15ED5F6F"
-			rewards: [{
-				id: "084A039E59317D31"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "665B1D5592D8D703"
-				item: "create_bic_bit:eggball"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 17.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "01F54E8782E234DF"
-			rewards: [{
-				id: "43B4ED94FBF212BC"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1D4F39A726E58720"
-				item: "create_bic_bit:raw_churros"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["01F54E8782E234DF"]
-			id: "64617AA24DBCFB81"
-			rewards: [{
-				id: "2F63B5AAF611928B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "69E946FBDB9D6C7B"
-				item: "create_bic_bit:churros"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["64617AA24DBCFB81"]
-			id: "3536204C3E8FD0D0"
-			rewards: [{
-				id: "1E138DC4AFE6F6DB"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5770E8491D68511A"
-				item: "create_bic_bit:wrapped_churros"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["64617AA24DBCFB81"]
-			id: "78069DA51C5CCC1C"
-			rewards: [{
-				id: "09F9ED4672124B7C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1AD88F0BE39B9D35"
-				item: "create_bic_bit:coated_churros"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 15.5d
-		}
-		{
-			dependencies: [
-				"78069DA51C5CCC1C"
-				"3536204C3E8FD0D0"
-			]
-			id: "3EC01588F8B9B584"
-			rewards: [{
-				id: "6A7F56B9FF306D19"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "1EF07245942D2B6F"
-				item: "create_bic_bit:wrapped_coated_churros"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "06E773AD76617DBB"
-			rewards: [{
-				id: "3BBA7F114FF762D6"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "41C242DB73A4C3DF"
-				item: "create_bic_bit:enderball"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 18.5d
-		}
-		{
-			id: "593F05A29A568F41"
-			rewards: [{
-				count: 5
-				id: "695D716CC18A118B"
-				item: "create_bic_bit:sunflower_seeds"
-				type: "item"
-			}]
-			shape: "rsquare"
-			size: 1.5d
-			tasks: [{
-				id: "4DD0839B7EB0D548"
-				item: "create_bic_bit:sunflower_seeds"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 10.0d
-		}
-		{
-			dependencies: ["593F05A29A568F41"]
-			id: "0BFA98351C335E32"
-			tasks: [{
-				id: "032357F1A6C76F33"
-				item: "create_bic_bit:crushed_sunflower_seeds"
-				type: "item"
-			}]
-			x: -4.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["0BFA98351C335E32"]
-			id: "15FDCA19E78454B5"
-			rewards: [{
-				id: "7DBCD7BD15E78725"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "20607B9BBF47E602"
-				item: "create_bic_bit:roasted_sunflower_seeds"
-				type: "item"
-			}]
-			x: -5.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "035CE88B761A3988"
-			rewards: [{
-				id: "440951F7FBBFA5C3"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "45E82DE0B2A3916A"
-				item: "create_deepfried:yuca_fries"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "2182DA37E0BAE15A"
-			rewards: [{
-				id: "6C11E1CA156464A2"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "26A40CEC9619A8EC"
-				item: "create_deepfried:raw_tempura"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["2182DA37E0BAE15A"]
-			id: "787F11B962981459"
-			rewards: [{
-				id: "57F2C80C38FE5316"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5B8D07218E059F08"
-				item: "create_deepfried:tempura"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 19.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "13CAAAE84991CDB4"
-			rewards: [{
-				id: "50117DC9DAEB5A65"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2F5622021E9D5D28"
-				item: "createdelight:raw_calamari"
-				type: "item"
-			}]
-			x: -5.5d
-			y: 18.5d
-		}
-		{
-			dependencies: ["13CAAAE84991CDB4"]
-			id: "6B98891FB6E6A5D4"
-			rewards: [{
-				id: "508D2E5A7AFE1C60"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "61B5CDB09C63038C"
-				item: "create_deepfried:calamari"
-				type: "item"
-			}]
-			x: -5.5d
-			y: 19.5d
-		}
-		{
-			dependencies: ["4DF40B7BE7CFC965"]
-			id: "282C7703DF4076F0"
-			rewards: [{
-				id: "7F191333143DF558"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "419441C8543AADAF"
-				item: "create_deepfried:berliner"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 21.5d
-		}
-		{
-			dependencies: ["282C7703DF4076F0"]
-			id: "1DEAB88CC2D31C5F"
-			rewards: [{
-				id: "455F13CFD1D6859E"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "3A5E7B23A485F7E0"
-				item: "create_deepfried:honey_filled_berliner"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 22.5d
-		}
-		{
-			dependencies: ["282C7703DF4076F0"]
-			id: "49358C9634555CEE"
-			rewards: [{
-				id: "40587CD62593FC78"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "453702F4E283A6AF"
-				item: "create_deepfried:chocolate_filled_berliner"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 22.5d
-		}
-		{
-			dependencies: ["282C7703DF4076F0"]
-			id: "741EE8280B15D762"
-			rewards: [{
-				id: "73C3C91FFE24FCBE"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "11E50FCF54A6BC26"
-				item: "create_deepfried:coated_berliner"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 23.5d
-		}
-		{
-			dependencies: [
-				"741EE8280B15D762"
-				"1DEAB88CC2D31C5F"
-			]
-			id: "7F481C2624CED65C"
-			rewards: [{
-				id: "0648E4B1E7752AB4"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4CB527B8E72A0D30"
-				item: "create_deepfried:coated_honey_berliner"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 24.5d
-		}
-		{
-			dependencies: [
-				"741EE8280B15D762"
-				"49358C9634555CEE"
-			]
-			id: "39A0AE250BCBC146"
-			rewards: [{
-				id: "3EB541A8EDB6C11B"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "5D55C3D8D3255043"
-				item: "create_deepfried:coated_chocolate_berliner"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 24.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "5C3173C9C60561CC"
-			rewards: [{
-				id: "43A851B3C42DD32E"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "2C1F9962E2105B45"
-				item: "create_deepfried:apfelkuchle"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "13F215D55925DD38"
-			rewards: [{
-				id: "1DB4B6E8DD9A5F3E"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "4D24AB8E10A5DA49"
-				item: "create_deepfried:deepfried_chocolate_bar"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "12CA4339A9566EC6"
-			rewards: [{
-				id: "46794CD1940E44BB"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6F738240B39EFF25"
-				item: "create_deepfried:fried_chicken"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "4171C0F5296DB4E0"
-			rewards: [{
-				id: "060B881F25949768"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "297EC3E634147C9D"
-				item: "create_deepfried:raw_onion_rings"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["4171C0F5296DB4E0"]
-			id: "5463C5310FF26480"
-			rewards: [{
-				id: "4C4DB2A957EB2163"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "285E352863657D12"
-				item: "create_deepfried:onion_rings"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "5B63284DA90E1755"
-			rewards: [{
-				id: "0EB3AC1110349FC5"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "22F49B41FDB11B47"
-				item: "create_deepfried:blooming_onion"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 12.5d
-		}
-		{
-			dependencies: ["34636258CDA46423"]
-			id: "5DE463CA0C57D5E3"
-			rewards: [{
-				id: "3740751D5021736C"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "6F01C51BB77DF75D"
-				item: "create_deepfried:raw_panzerotto"
-				type: "item"
-			}]
-			x: -6.5d
-			y: 14.5d
-		}
-		{
-			dependencies: ["5DE463CA0C57D5E3"]
-			id: "65D80DC5EB1B6885"
-			rewards: [{
-				id: "6C940BFA33DDACA2"
-				type: "xp"
-				xp: 100
-			}]
-			tasks: [{
-				id: "019F3955279B19AB"
-				item: "create_deepfried:panzerotto"
-				type: "item"
-			}]
-			x: -7.5d
+			x: -10.0d
 			y: 14.5d
 		}
 		{
@@ -3368,14 +2194,206 @@
 			y: 3.0d
 		}
 		{
-			id: "26F22F8298BE5703"
+			dependencies: ["3119FC900915CDC9"]
+			id: "1BD8FB5FAF498B51"
 			tasks: [{
-				id: "05EED7FB0067DCD4"
-				item: "minecraft:sunflower"
+				id: "3D1111B02A0DEF5C"
+				item: "youkaishomecoming:red_velvet_cake"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 11.0d
+			x: -9.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "2EA6D9CB99C47336"
+			tasks: [{
+				id: "37BEE686B5200ACF"
+				item: "oceanic_delight:fish_egg_noodle_soup"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "31B98C0E3B8B0271"
+			tasks: [{
+				id: "79E9F3F8BF3EA72E"
+				item: "youkaishomecoming:longevity_noodles"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "57132F7A8D2C3B01"
+			tasks: [{
+				id: "750F7F94D7169C27"
+				item: "collectorsreap:prawn_noodles"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["52B972C68D42A749"]
+			id: "4F36DD433AB95EB7"
+			tasks: [{
+				id: "66BB4BE5EA3444B5"
+				item: "vintagedelight:pad_thai"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 7.0d
+		}
+		{
+			icon: "createdelight:empty_popsicle"
+			id: "25D83E425182488C"
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "炎炎夏日，谁不想来一根美味的冰棍呢"
+			tasks: [{
+				id: "32380D2704EB738D"
+				title: "冰棍"
+				type: "checkmark"
+			}]
+			title: "冰棍！"
+			x: 6.5d
+			y: 10.5d
+		}
+		{
+			dependencies: ["25D83E425182488C"]
+			disable_toast: true
+			icon: "minecraft:stick"
+			id: "023619EAA38A6E01"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "只需要这三种简单的材料就就可以做冰棍吃辣！"
+			tasks: [
+				{
+					id: "6D081A8B12E19F4C"
+					item: "minecraft:sugar"
+					type: "item"
+				}
+				{
+					id: "761A993419A043F9"
+					item: "minecraft:stick"
+					type: "item"
+				}
+				{
+					id: "58DD33B24CD4BD75"
+					item: "minecraft:ice"
+					type: "item"
+				}
+			]
+			title: "原材料"
+			x: 6.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["023619EAA38A6E01"]
+			description: ["在此基础上使用注液器可制作八种不同口味的冰棍~"]
+			id: "0A543B37AFB16CBF"
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "最爱的老冰棍！"
+			tasks: [{
+				id: "51B2C033054E4E40"
+				item: "createdelight:empty_popsicle"
+				type: "item"
+			}]
+			x: 6.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "547E4FDEDAA71D80"
+			tasks: [{
+				id: "59882BF0B6C437B4"
+				item: "fruitsdelight:hamimelon_popsicle"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "292CCEA750146A0D"
+			tasks: [{
+				id: "4D9AA75B1FA94360"
+				item: "ends_delight:chorus_fruit_popsicle"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "6FECC7B7059EF446"
+			tasks: [{
+				id: "720CFD0B86F0810F"
+				item: "fruitsdelight:kiwi_popsicle"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "0DAA9DB744D92804"
+			tasks: [{
+				id: "10F8DDAA52E4024E"
+				item: "casualness_delight:green_tongue"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 14.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "4267DB5D75E45824"
+			tasks: [{
+				id: "0605615A8045F434"
+				item: "farmersdelight:melon_popsicle"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 15.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "51290D98CF40F103"
+			tasks: [{
+				id: "68692C0658C43AA3"
+				item: "collectorsreap:lime_popsicle"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "1DD60D11040E9097"
+			tasks: [{
+				id: "11E7DE9B0BF9CAE3"
+				item: "youkaishomecoming:big_popsicle"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0A543B37AFB16CBF"]
+			id: "7176370EB54DF33C"
+			tasks: [{
+				id: "36C52B1958DFF611"
+				item: "mynethersdelight:tear_popsicle"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 16.5d
 		}
 	]
 	title: "&e精加工！"

@@ -258,5 +258,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:wrapped_fries_ghasta',
         'createdelight:enchanted_golden_lantern_fruit',
         'createdelight:enchanted_golden_carrot',
+        'createdelight:raw_ghast_calamari',
     ])
 });  

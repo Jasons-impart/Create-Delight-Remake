@@ -1,0 +1,19 @@
+[
+    {
+        "key": "sword/evernight_dagger_imprv",
+        "integrity": -1,
+        "effects": {
+                "art_of_forging:life_steal": [ 7, 50 ],
+               "vvaddon:nightvisioneffect": 1
+        },
+        "attributes": {
+            "generic.attack_damage": 7,
+            "generic.attack_speed": -0.5
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/euclidean_dagger/euclidean_dagger"
+            }
+        ]
+    }
+]

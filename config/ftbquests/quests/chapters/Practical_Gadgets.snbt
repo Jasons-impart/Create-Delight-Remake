@@ -5,7 +5,7 @@
 	group: "445171CC29E98940"
 	icon: "supplementaries:globe"
 	id: "48C4F6C2F22DBB96"
-	order_index: 5
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -577,6 +577,47 @@
 			title: "应急工业平台"
 			x: 4.0d
 			y: -2.5d
+		}
+		{
+			id: "21491709810AEF12"
+			rewards: [{
+				id: "521870B0616457AB"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可两个摞在一起成为大型篝火"
+			tasks: [{
+				count: 2L
+				id: "6A57687718DCD6A8"
+				item: "vinery:stackable_log"
+				type: "item"
+			}]
+			title: "改良篝火"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			id: "326977490BC20488"
+			rewards: [{
+				id: "57356282A3B3EFAA"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可以装两种不同的东西，但总体上限为64"
+			tasks: [
+				{
+					id: "6740DFF92A10E7E5"
+					item: "nethervinery:crimson_nether_bag"
+					type: "item"
+				}
+				{
+					id: "01EAECF63B5AFD09"
+					item: "nethervinery:warped_nether_bag"
+					type: "item"
+				}
+			]
+			x: 4.0d
+			y: 0.5d
 		}
 	]
 	title: "实用小玩意"

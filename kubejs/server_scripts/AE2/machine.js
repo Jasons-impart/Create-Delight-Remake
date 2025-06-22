@@ -94,7 +94,7 @@ ServerEvents.recipes((event) => {
   // ME样板供应器
   let iner_4 = "createdelight:incomplete_pattern_provider"
   create.sequenced_assembly("2x ae2:pattern_provider", "createdelight:iron_casing", [
-    create.deploying(iner_4, [iner_4, "#forge:workbench"]),
+    create.deploying(iner_4, [iner_4, "minecraft:crafting_table"]),
     create.deploying(iner_4, [iner_4, "ae2:annihilation_core"]),
     create.deploying(iner_4, [iner_4, "ae2:formation_core"]),
   ])
@@ -107,7 +107,7 @@ ServerEvents.recipes((event) => {
   let iner_5 = "createdelight:incomplete_molecular_assembler"
   create.sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
     create.deploying(iner_5, [iner_5, "#createdelight:quartz_glass"]),
-    create.deploying(iner_5, [iner_5, "#forge:workbench"]),
+    create.deploying(iner_5, [iner_5, "minecraft:crafting_table"]),
     create.deploying(iner_5, [iner_5, "ae2:annihilation_core"]),
     create.deploying(iner_5, [iner_5, "ae2:formation_core"]),
   ])

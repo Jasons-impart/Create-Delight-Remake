@@ -9,7 +9,7 @@
  * @param {number} [temperature]
  * @returns 
  */
-function fermenting(e, result, ingredients, inputFluid, experience, fermentingtime, temperature) {
+function brewinandchewin_fermenting(e, result, ingredients, inputFluid, experience, fermentingtime, temperature) {
     let ingrs = []
     if (!(ingredients instanceof Array)) {
         ingredients = [ingredients]

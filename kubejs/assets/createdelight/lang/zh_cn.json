@@ -353,6 +353,7 @@
     "item.createdelight.quartz_vibrant_glass_parts": "聚能石英玻璃部件",
     "item.createdelight.radon_bucket": "氡气桶",
     "item.createdelight.raw_calamari": "鱿鱼圈",
+    "item.createdelight.raw_ghast_calamari": "生恶魂触须圈",
     "item.createdelight.raw_cheese_pizza": "生奶酪披萨",
     "item.createdelight.raw_chicken_chip": "生鸡块",
     "item.createdelight.raw_empanada": "生恩潘纳达饺",
@@ -463,6 +464,7 @@
     "createdelight.alloy_electric_furnace": "合金电炉",
     "createdelight.big_centrifugation": "大型离心机",
     "createdelight.small_centrifugation": "小型离心机",
+    "createdelight.fission_reactor": "裂变反应堆",
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
@@ -482,6 +484,7 @@
     "message.createdelight.at": ", 位于§e%s方§r§e%s§r米",
     "message.createdelight.degree_of_damage": "损坏度：%s",
     "message.createdelight.sell_bin_hint": "你出售了出货箱（位于（%s））中的内容，你获得了%s",
+    "message.createdelight.first_summon_end_dragon": "§4PS：末影龙召唤过程中摧毁水晶会中止召唤进程， 末影龙的初始召唤如果被中止末地传送门也不会开启",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",

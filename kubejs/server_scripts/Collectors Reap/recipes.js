@@ -11,6 +11,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
     e.replaceInput({}, "collectorsreap:cooked_tiger_prawn", "#forge:shrimps")
+    e.replaceInput({id: "collectorsreap:food/prawn_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
     make_cake(e, "collectorsreap:lime", "collectorsreap:lime_cake")
     make_cake(e, "collectorsreap:pomegranate", "collectorsreap:pomegranate_cake")
     //蛤蜊肉

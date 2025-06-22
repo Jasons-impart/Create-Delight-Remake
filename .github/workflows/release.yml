@@ -154,7 +154,7 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToRun]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          name: "[ClickToUse]Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
@@ -193,6 +193,8 @@ jobs:
             #   echo "Deleting files with prefix: $prefix"
             #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
             # done
+            rm -rf ${{ github.workspace }}/resourcepacks
+            rm -rf ${{ github.workspace }}/shaderpacks
             rm -f ${{ github.workspace }}/ModList0.4a.md
             rm -f ${{ github.workspace }}/README.md
             rm -f ${{ github.workspace }}/TODOlist.md
@@ -201,6 +203,7 @@ jobs:
             rm -f ${{ github.workspace }}/pack.toml
             rm -f ${{ github.workspace }}/index.toml
             rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
@@ -437,7 +440,7 @@ jobs:
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[ServerPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          name: "[ServerPatch]${{ env.MODPACK_NAME }}-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
           path: |
             deleted_files.txt
             deploy-patch.sh
@@ -462,7 +465,7 @@ jobs:
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClientPatch]-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
+          name: "[ClientPatch]${{ env.MODPACK_NAME }}-${{ env.LATEST_TAG }}-to-${{ env.MODPACK_VERSION }}"
           path: |
             deleted_files.txt
             deploy-patch.sh

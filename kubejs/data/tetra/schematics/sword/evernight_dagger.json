@@ -4,7 +4,7 @@
     "materialSlotCount": 1,
     "materialRevealSlot": 0,
     "rarity": "temporary",
-    "displayType": "major",
+    "displayType": "improvement",
     "glyph": {
         "tint": "d8a800",
         "textureLocation": "tetra:textures/gui/aof_glyph.png",
@@ -17,6 +17,13 @@
             {
                 "type": "tetra:module",
                 "module": "sword/euclidean_dagger"
+            },
+            {
+                "type": "tetra:not",
+                "requirement": {
+                    "type": "tetra:improvement",
+                    "improvement": "sword/evernight_dagger_imprv"
+                }
             }
         ]
     },
@@ -29,8 +36,9 @@
             "requiredTools": {
                 "hammer_dig": 9
             },
-            "moduleKey": "sword/evernight_dagger",
-            "moduleVariant": "evernight_dagger/evernight_dagger"
+            "improvements": {
+                "sword/evernight_dagger_imprv": 0
+            }
         }
     ]
 }

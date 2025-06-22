@@ -11,14 +11,7 @@
 		{ item: "createcafe:sweetberry_milk_tea" }
 		{ item: "createcafe:pumpkin_milk_tea" }
 		{ item: "createcafe:apple_milk_tea" }
-		{ item: "createcafe:blood_orange_milk_tea" }
 		{ item: "createcafe:strawberry_milk_tea" }
-		{ item: "createcafe:banana_iced_coffee" }
-		{ item: "createcafe:caramel_iced_coffee" }
-		{ item: "createcafe:vanilla_iced_coffee" }
-		{ item: "createcafe:strawberry_iced_coffee" }
-		{ item: "createcafe:iced_coffee_milk" }
-		{ item: "createcafe:iced_coffee" }
 	]
-	title: "奶茶咖啡！！"
+	title: "奶茶！！"
 }

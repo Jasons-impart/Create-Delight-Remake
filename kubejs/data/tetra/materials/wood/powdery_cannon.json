@@ -1,0 +1,32 @@
+{
+  "key": "powdery_cannon",
+  "category": "wood",
+  "primary": 1,
+  "secondary": 0.1,
+  "tertiary": 6,
+  "durability": 10,
+  "integrityCost": 1,
+  "integrityGain": 3,
+  "magicCapacity": 100,
+  "toolLevel": "minecraft:gold",
+  "toolEfficiency": 5,
+  "tints": {
+    "glyph": "007f3f",
+    "texture": "007f3f"
+  },
+  "textures": [
+    "crude",
+    "wooden"
+  ],
+  "material": {
+    "items": [
+      "ynethersdelight:powdery_cannon"
+    ]
+  },
+  "effects": {
+    "unstable": 15
+  },
+  "requiredTools": {
+    "axe_dig": "minecraft:iron"
+  }
+}

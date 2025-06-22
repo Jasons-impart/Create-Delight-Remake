@@ -72,10 +72,17 @@
 	ForceCompatMode = false
 	#Build a simple greenhouse without core blocks and humidity modifiers.
 	SimpleGreenHouseMode = false
-	#Enabled to make the Humidifier stop converting inputs/outputs.
+	#If true, the Humidifier block will no longer consume blocks during conversion.
 	NoCostHumidifier = false
 	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
 	UseBoxDistance = true
+	#Send message to player if failed to use bone meal on crop.
+	BoneMealFailureMessage = true
+	#The working range of the Season Core block.
+	#Range: 4 ~ 31
+	SeasonCoreRange = 15
+	#Consume anyway if failed to use bone meal on crop.
+	BoneMealConsumeOnFailure = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.

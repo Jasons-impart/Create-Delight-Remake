@@ -1,0 +1,24 @@
+{
+    "key": "quartz",
+    "category": "gem",
+    "primary": 5,
+    "secondary": 4,
+    "tertiary": 3,
+    "durability": 600,
+    "integrityCost": 2,
+    "integrityGain": 2,
+    "magicCapacity": 90,
+    "toolLevel": "minecraft:stone",
+    "toolEfficiency": 5,
+    "tints": {
+        "glyph": "ffffff",
+        "texture": "ffffff"
+    },
+    "textures": ["shiny", "crude"],
+    "material": {
+        "items": ["minecraft:quartz"]
+    },
+    "requiredTools": {
+        "hammer_dig": 4
+    }
+}

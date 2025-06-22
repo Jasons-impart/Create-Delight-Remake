@@ -390,6 +390,18 @@
 			x: -13.5d
 			y: 2.5d
 		}
+		{
+			dependencies: ["0C49A6D118E480B4"]
+			id: "01CAAE3178150432"
+			subtitle: "终于可以大量发酵了！"
+			tasks: [{
+				id: "43B0B70AE335F922"
+				item: "createdieselgenerators:bulk_fermenter"
+				type: "item"
+			}]
+			x: -11.5d
+			y: 1.0d
+		}
 	]
 	title: "&5石油化工"
 }

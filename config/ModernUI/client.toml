@@ -11,7 +11,7 @@
 	backgroundColor = ["#99000000"]
 	#Add Gaussian blur effect to GUI background when opened.
 	#Disable this if you run into a problem or are on low-end PCs
-	blurEffect = true
+	blurEffect = false
 	#The kernel radius for gaussian convolution blur effect, 0 = disable.
 	#samples per pixel = ((radius * 2) + 1) * 2, sigma = radius / 2.
 	#Range: 0 ~ 18

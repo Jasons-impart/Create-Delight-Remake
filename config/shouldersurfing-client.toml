@@ -179,12 +179,37 @@
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				modifier_offset_z = 0.0
 
+	[camera.camera_drag]
+		#x-axis multiplier for camera drag.
+		#Range: 0.0 ~ 5.0
+		multiplier_axis_x = 0.0
+		#y-axis multiplier for camera drag.
+		#Range: 0.0 ~ 5.0
+		multiplier_axis_y = 0.0
+		#z-axis multiplier for camera drag.
+		#Range: 0.0 ~ 5.0
+		multiplier_axis_z = 0.0
+
+	[camera.camera_sway]
+		#The maximum x-axis angle in degrees. Set to 0 to disable.
+		#Range: -30.0 ~ 30.0
+		max_angle_axis_x = 0.0
+		#The maximum x-axis angle in degrees. Set to 0 to disable.
+		#Range: -30.0 ~ 30.0
+		max_angle_axis_z = 0.0
+		#The velocity of the player in blocks per second, where the maximum camera x-axis sway is applied.
+		#Range: 0.05 ~ 1000.0
+		max_velocity_axis_x = 5.0
+		#The velocity of the player in blocks per second, where the maximum camera z-axis sway is applied.
+		#Range: 0.05 ~ 1000.0
+		max_velocity_axis_z = 5.0
+
 [perspective]
 	#The default perspective when you load the game.
 	#Allowed Values: FIRST_PERSON, THIRD_PERSON_BACK, THIRD_PERSON_FRONT, SHOULDER_SURFING
 	default_perspective = "FIRST_PERSON"
 	#Whether or not to remember the last perspective used.
-	remember_last_perspective = false
+	remember_last_perspective = true
 	#Whether or not to replace the default third person perspective.
 	replace_default_perspective = false
 	#Whether or not the first person perspective is enabled.
@@ -258,6 +283,18 @@
 	#Item properties of an item, that when used, trigger the dynamic crosshair in adaptive mode.
 	adaptive_crosshair_use_item_properties = ["minecraft:pull", "minecraft:throwing"]
 
+	[crosshair.obstruction]
+		#When the crosshair type is static, shows an additional indicator on obstacles that stand between you and your target.
+		show_obstruction_indicator = true
+		#Only show the obstruction indicator when using items that would trigger the adaptive crosshair.
+		only_when_aiming = true
+		#Hide the obstruction indicator when it is too close to the main crosshair. Distance measured in scaled pixels.
+		#Range: > 0
+		min_distance_to_crosshair = 8
+		#Ignore obstructions that are too far away from the player. Distance measured in blocks. Set to 0 to disable.
+		#Range: 0.0 ~ 1.7976931348623157E308
+		max_distance_to_obstruction = 20.0
+
 	[crosshair.visibility]
 		#Crosshair visibility for first person.
 		#Allowed Values: ALWAYS, NEVER, WHEN_AIMING, WHEN_IN_RANGE, WHEN_AIMING_OR_IN_RANGE
@@ -272,19 +309,13 @@
 		#Allowed Values: ALWAYS, NEVER, WHEN_AIMING, WHEN_IN_RANGE, WHEN_AIMING_OR_IN_RANGE
 		shoulder_surfing = "ALWAYS"
 
-	[crosshair.obstruction]
-		#When the crosshair type is static, shows an additional indicator on obstacles that stand between you and your target.
-		show_obstruction_indicator = true
-		#Only show the obstruction indicator when using items that would trigger the adaptive crosshair.
-		only_when_aiming = true
-		#Hide the obstruction indicator when it is too close to the main crosshair. Distance measured in scaled pixels.
-		#Range: > 0
-		min_distance_to_crosshair = 8
-		#Ignore obstructions that are too far away from the player. Distance measured in blocks. Set to 0 to disable.
-		#Range: 0.0 ~ 1.7976931348623157E308
-		max_distance_to_obstruction = 20.0
-
 [audio]
 	#Whether to center sounds made by the player.
 	center_player_sounds = false
+
+[integrations]
+
+	[integrations.epicfight]
+		#Whether to allow target lock-on when camera is decoupled.
+		decoupled_camera_lock_on = false
 

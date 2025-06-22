@@ -60,11 +60,33 @@
 - 由于简单的覆盖无法处理删除文件的情况，并不能保证补丁能100%正常运作。暂时没有写bat以支持删除对应文件的计划。
 - 对于mods文件夹下的改动，因为涉及到mod本体，不会包含在补丁包中，取而代之的是一个mod变化列表文件，放在补丁包根目录。
 
+# 开发相关tips记录
+
+## 环境配置
+- 推荐使用[VSCode](https://code.visualstudio.com/)或者[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows)开发
+
+## 杂项笔记
+- Kubejs的server/client脚本更改后可以直接在游戏内热加载`\kubejs reload server_scripts`，无需重启游戏
+  - 如果是修改了配方、标签、掉落表等，需要再执行`\reload`
+- 模组的配置也可以热更新，在esc-模组-搜索找到对应模组后配置即可
+  
+## 推荐阅读/链接
+- [KubeJS开发文档中文翻译](https://gumeng.gitbook.io/ce-shi)
+  - 翻译自[KubeJS官方wiki](https://wiki.latvian.dev/books/kubejs)
+- [中文 Minecraft Mod 开发指南 by Team CovertDragon](https://covertdragon.team)
+- [forge官方文档-中文](https://mcforge-cn.readthedocs.io/zh/latest/forgedev)
+
 # 关于整合包已有的优化模组（供新增时参考）
 - Embeddium
   - 渲染优化 https://www.mcmod.cn/class/12028.html
 - Sodium/Embeddium Extras
   - 渲染优化 https://www.mcmod.cn/class/5312.html
+- Vanillin
+  - 飞轮实体渲染优化 https://www.mcmod.cn/class/19260.html
+- Colorwheel
+  - 使得飞轮优化可以兼容光影 https://www.mcmod.cn/class/20111.html
+- Create Better FPS
+  - 机械动力在光影下的优化 https://www.mcmod.cn/class/18864.html
 - CullLessLeaves Reforged
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
@@ -81,6 +103,9 @@
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
 - Saturn
  - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
+- AllTheLeaks (Memory Leak Fix)
+  - https://www.mcmod.cn/class/17405.html
+  - 发现整合包以前用的memoryleakfix有问题，已替换为AllTheLeaks
 
 # 考虑中的实用模组
 - 卓越火炬
@@ -95,9 +120,6 @@
   - 整合包当前使用已经会refill，但丢弃的时候不会refill，加入这个mod丢弃时会refill。
 
 # 考虑中的优化模组
-- Vanillin
-  - 实体渲染优化 https://www.curseforge.com/minecraft/mc-mods/vanillin
-  - 注：不兼容光影
 - Chunk Sending
   - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
 - Krypton Reforged
@@ -109,8 +131,6 @@
   - 优化画的渲染 https://www.mcmod.cn/class/10999.html
 - Mobtimizations - Entity Performance Fixes
   - 服务器实体性能优化模组 https://www.mcmod.cn/class/13755.html
-- AllTheLeaks (Memory Leak Fix)
-  - https://www.mcmod.cn/class/17405.html
 - 修复GPU内存泄漏
   - 和上面的AllTheLeaks不重合可以一起，https://www.mcmod.cn/class/11863.html
 - Let Me Despawn
