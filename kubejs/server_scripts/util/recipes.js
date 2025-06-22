@@ -292,7 +292,7 @@ function fermenting(e, results, inputs, processingTime, heatRequirement){
         .processingTime(processingTime)
         // .id(`createdieselgenerators:basin_fermenting/${results[0].split(":")[1]}`)
     let bulk_fermenting = e.recipes.createdieselgenerators.bulk_fermenting(results, inputs)
-        .processingTime(processingTime)
+        .processingTime(processingTime*0.5)
         // .id(`createdieselgenerators:bulk_fermenting/${results[0].split(":")[1]}`)
     if (heatRequirement) {
         basin_fermenting.heatRequirement(heatRequirement)
