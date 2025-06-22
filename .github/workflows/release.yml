@@ -201,6 +201,8 @@ jobs:
             rm -f ${{ github.workspace }}/pack.toml
             rm -f ${{ github.workspace }}/index.toml
             rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+            rm -f ${{ github.workspace }}/resourcepacks
+            rm -f ${{ github.workspace }}/shaderpacks
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
