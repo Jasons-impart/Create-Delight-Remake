@@ -1,0 +1,29 @@
+{
+  "key": "stridite",
+  "category": "metal",
+  "primary": 3.86,
+  "secondary": 6.4,
+  "tertiary": 5.4,
+  "durability": 123,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 144,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 8.0,
+  "effects": {
+    "fierySelf": [ 2, 0.1 ]
+  },
+  "aspects": {
+    "blazing": 1
+  },
+  "tints": {
+    "glyph": "766770",
+    "texture": "727072"
+  },
+  "textures": ["heavy", "metal"],
+  "material": {
+    "items": ["netherexp:stridite"]
+  },
+  "requiredTools": {
+    "hammer_dig": 5    }
+}

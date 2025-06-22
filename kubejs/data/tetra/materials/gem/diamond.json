@@ -16,9 +16,10 @@
     },
     "textures": ["shiny", "crude"],
     "material": {
-        "items": ["minecraft:diamond"]
+        "items": ["minecraft:diamond","tetra:pristine_diamond"]
     },
     "requiredTools": {
         "hammer_dig": 4
-    }
+    },
+    "features": [ "pristine" ]
 }

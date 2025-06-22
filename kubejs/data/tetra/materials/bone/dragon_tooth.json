@@ -1,24 +1,23 @@
 {
-    "key": "dragon_tooth",
-    "category": "bone",
-    "primary": 8,
-    "secondary": 2,
-    "tertiary": 6,
-    "durability": 1200,
-    "integrityCost": 2,
-    "integrityGain": 6,
-    "magicCapacity": 160,
-    "toolLevel": "minecraft:netherite",
-    "toolEfficiency": 8,
-    "tints": {
-        "glyph": "bone_glyph",
-        "texture": "bone"
-    },
-    "textures": ["bone", "crude"],
-    "material": {
-        "items": ["ends_delight:dragon_tooth"]
-    },
-    "requiredTools": {
-        "hammer_dig": 7
-    }
+  "key": "dragon_tooth",
+  "category": "bone",
+  "primary": 7.24,
+  "secondary": 2.0,
+  "tertiary": 6.0,
+  "durability": 1016,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 160,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 8,
+  "tints": {
+    "glyph": "2d1a5c",
+    "texture": "854da2"
+  },
+  "textures": ["shiny", "crude"],
+  "material": {
+    "items": ["ends_delight:dragon_tooth"]
+  },
+  "requiredTools": {
+    "hammer_dig": 5    }
 }

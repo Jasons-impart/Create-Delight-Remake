@@ -1,0 +1,23 @@
+{
+  "key": "half_dragon_egg_shell",
+  "category": "bone",
+  "primary":6.3,
+  "secondary": 3.0,
+  "tertiary": 4.0,
+  "durability": 973,
+  "integrityCost": 1,
+  "integrityGain": 5,
+  "magicCapacity": 200,
+  "toolLevel": "minecraft:diamond",
+  "toolEfficiency": 7,
+  "tints": {
+    "glyph": "73657d",
+    "texture": "4d4354"
+  },
+  "textures": ["crude", "bone"],
+  "material": {
+    "items": ["ends_delight:half_dragon_egg_shell"]
+  },
+  "requiredTools": {
+    "hammer_dig": 4    }
+}

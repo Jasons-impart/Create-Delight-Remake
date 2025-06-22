@@ -1,0 +1,33 @@
+{
+    "key": "emerald",
+    "category": "gem",
+    "primary": 5.5,
+    "secondary": 2.5,
+    "tertiary": 0,
+    "durability": 850,
+    "integrityCost": 2,
+    "integrityGain": 2,
+    "magicCapacity": 72,
+    "toolLevel": "minecraft:iron",
+    "toolEfficiency": 7,
+    "tints": {
+        "glyph": "emerald_glyph",
+        "texture": "emerald"
+    },
+    "textures": [
+        "shiny",
+        "crude"
+    ],
+    "material": {
+        "items": [
+            "minecraft:emerald","tetra:pristine_emerald"
+        ]
+    },
+    "improvements": {
+        "arrested": 0
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:stone"
+    },
+    "features": [ "pristine" ]
+}
