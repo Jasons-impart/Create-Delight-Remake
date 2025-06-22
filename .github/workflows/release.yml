@@ -193,6 +193,8 @@ jobs:
             #   echo "Deleting files with prefix: $prefix"
             #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
             # done
+            rm -rf ${{ github.workspace }}/resourcepacks
+            rm -rf ${{ github.workspace }}/shaderpacks
             rm -f ${{ github.workspace }}/ModList0.4a.md
             rm -f ${{ github.workspace }}/README.md
             rm -f ${{ github.workspace }}/TODOlist.md
@@ -201,6 +203,7 @@ jobs:
             rm -f ${{ github.workspace }}/pack.toml
             rm -f ${{ github.workspace }}/index.toml
             rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
