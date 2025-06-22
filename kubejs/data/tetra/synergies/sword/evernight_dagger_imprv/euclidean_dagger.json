@@ -1,0 +1,8 @@
+[
+    {
+        "modules": [ "sword/euclidean_dagger" ],
+        "matchSuffixed": true,
+        "improvements": [ "sword/evernight_dagger_imprv" ],
+        "name": "sword/evernight_dagger"
+    }
+]
