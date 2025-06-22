@@ -1,0 +1,56 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [ "double/head_left" ],
+    "slotSuffixes": [ "_left" ],
+    "improvements": [
+      "tetra:double/reaping_scythe/",
+      "tetra:double/shared_head/",
+      "tetra:double/shared/",
+      "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "materials": [ "tetra:wood/", "tetra:stone/", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+            "key": "reaping_scythe/",
+            "attributes": {
+                "generic.attack_damage": 1.2,
+                "generic.attack_speed": -1.53
+            },
+            "aspects": {
+                "block_breaker": 1,
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "sweepingStrike": 1,
+                "sweeping": 1,
+                "art_of_forging:beheading": 20
+            },
+            "durability": -10,
+            "extract": {
+                "primaryAttributes": {
+                    "generic.attack_damage": 1
+                },
+                "primaryEffects": {
+                    "art_of_forging:beheading": 3
+                },
+                "tertiaryEffects": {
+                    "art_of_forging:beheading": -2
+                },
+                "durability": 0.6,
+                "integrity": -1,
+                "magicCapacity": 1,
+                "glyph": {
+                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureX": 224,
+                    "textureY": 16
+                },
+                "availableTextures": [ "crude", "metal", "shiny" ],
+                "models": [{
+                    "location": "tetra:item/module/double/head/reaping_scythe/"
+                }]
+            }
+        }
+    ]
+}

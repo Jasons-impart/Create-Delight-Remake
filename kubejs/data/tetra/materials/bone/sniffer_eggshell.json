@@ -1,0 +1,27 @@
+{
+    "key": "sniffer_eggshell",
+    "category": "bone",
+    "primary": 9,
+    "secondary": 3,
+    "tertiary": 1,
+    "durability": 300,
+    "integrityCost": 5,
+    "integrityGain": 1,
+    "magicCapacity": 200,
+    "toolLevel": "minecraft:diamond",
+    "toolEfficiency": 4,
+    "tints": {
+        "glyph": "bone_glyph",
+        "texture": "bone"
+    },
+    "textures": ["bone", "crude"],
+    "material": {
+        "items": ["trailandtales_delight:sniffer_eggshell"]
+    },
+    "improvements": {
+        "arrested": 0
+    },
+    "requiredTools": {
+        "hammer_dig": 4
+    }
+}

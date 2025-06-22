@@ -607,13 +607,7 @@
 				}
 				{
 					id: "4F15F1EE7DFE1BA5"
-					item: {
-						Count: 1
-						id: "iceandfire:ghost_sword"
-						tag: {
-							Damage: 0
-						}
-					}
+					item: "iceandfire:ghost_ingot"
 					type: "item"
 				}
 			]

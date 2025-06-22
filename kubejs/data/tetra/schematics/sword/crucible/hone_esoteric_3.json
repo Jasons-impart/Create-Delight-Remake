@@ -17,7 +17,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:ghost_sword"],
+                "items":[ "iceandfire:ghost_ingot"],
                 "count": 1
             },
             "experienceCost": 30,

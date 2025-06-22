@@ -1,0 +1,55 @@
+{
+    "replace": true,
+    "type": "tetra:multi_major_module",
+    "slots": [
+        "double/head_left",
+        "double/head_right"
+    ],
+    "slotSuffixes": [
+        "_left",
+        "_right"
+    ],
+    "improvements": [
+        "tetra:double/soul_fire_scythe/",
+        "tetra:double/shared_head/",
+        "tetra:double/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "soul_fire_scythe/soul_fire_scythe",
+            "integrity": -1,
+            "attributes": {
+                "generic.attack_damage": 11,
+                "generic.attack_speed": -1.3
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "block_breaker": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "art_of_forging:knockback": [ 0.5, 0 ],
+                "art_of_forging:soul_charged": [ 1, 2 ],
+                "art_of_forging:beheading": 30,
+                "armorPenetration": 4,
+                "sweepingStrike": 1,
+                "sweeping": 1,
+                "truesweep": 1
+            },
+            "durability": 45,
+            "magicCapacity": 400,
+            "glyph": {
+                "tint": "22c0f3",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 240,
+                "textureY": 16
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/double/head/soul_fire_scythe/soul_fire"
+                }
+            ]
+        }
+    ]
+}
