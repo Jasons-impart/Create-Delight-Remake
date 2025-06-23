@@ -585,7 +585,7 @@
     "createdelight.tip.stress_generator_efficiency": "接近满效率的发电机线圈的效率约为交流发电机的两倍。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成（当然除了玩家）",
     "createdelight.tip.mosquito_repellent_stew": "觉得绯红蚊子很烦？尝试做一碗驱蚊炖菜。",
-    "createdelight.tip.bettercombat_tweak": "本包的bettercombat以去掉前摇，且攻击范围增加了一倍，请放心使用。",
+    "createdelight.tip.bettercombat_tweak": "本包的bettercombat已去掉前摇，且攻击范围增加了一倍，请放心使用。",
     "createdelight.tip.bread_tweak": "本包的部分面团需要使用酵母制作，酵母需要通过发酵获取。",
     "createdelight.tip.sulfur_obtain": "关于最初始的硫磺获取，可以考虑查看硫磺粒的获取方式。",
     "createdelight.tip.multiblock_build": "当背包中有足够的材料时，使用多方块搭建器右击多方块的控制器可以消耗材料，并直接搭建出整个多方块。",
