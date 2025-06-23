@@ -90,7 +90,7 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:yeast", 250),
         [
             '#forge:mushrooms',
-            "#forge:flour",
+            'create:wheat_flour',
             'minecraft:sugar',
             Fluid.water(250)
         ], 300
@@ -99,14 +99,14 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:yeast", 500),
         [
             Fluid.of("createdelight:yeast", 250),
-            "#forge:flour",
+            'create:wheat_flour',
         ], 300
     )
     fermenting(e,
         Fluid.of("createdelight:yeast", 500),
         [
             "createdelight:dry_yeast",
-            "#forge:flour",
+            'create:wheat_flour',
             Fluid.water(500)
         ], 300
     )
