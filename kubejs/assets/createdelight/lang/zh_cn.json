@@ -485,6 +485,7 @@
     "message.createdelight.degree_of_damage": "损坏度：%s",
     "message.createdelight.sell_bin_hint": "你出售了出货箱（位于（%s））中的内容，你获得了%s",
     "message.createdelight.first_summon_end_dragon": "§4PS：末影龙召唤过程中摧毁水晶会中止召唤进程， 末影龙的初始召唤如果被中止末地传送门也不会开启",
+    "message.createdelight.pipe": "流体管道至少需要两个开口！",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",

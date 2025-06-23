@@ -3309,30 +3309,6 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "culturaldelights:glow_squid",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 4
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
             "ID": "collectorsreap:tiger_prawn",
             "Count": 64
           },
