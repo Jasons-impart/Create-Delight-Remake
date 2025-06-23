@@ -187,6 +187,14 @@ ServerEvents.recipes(e => {
     e.recipes.minecraft.smoking("minecraft:bread", "bakeries:whole_wheat_dough", 0.7, 100)
        .id("bakeries:bread_from_whole_wheat_dough")
 
+    e.recipes.kubejs.shaped(
+        'minecraft:bread',
+        [
+            "AAA"
+        ], {
+            A: "minecraft:wheat"
+        }
+    ).id("minecraft:shapeless/bread")
     //酥皮
     kubejs.shapeless(
         "createdelight:puff_pastry",
