@@ -52,7 +52,7 @@ ServerEvents.recipes((event) => {
       "kubejs:nether_ore_cluster",
       600,
     )
-    .stress(768)
+    .stress(1536)
     .fluid(Fluid.lava(500))
     .drill("createoreexcavation:netherite_drill")
     .id("kubejs:nether_ore_cluster_drilling");
