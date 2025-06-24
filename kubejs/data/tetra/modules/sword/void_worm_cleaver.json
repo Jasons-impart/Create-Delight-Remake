@@ -1,0 +1,43 @@
+{
+	"replace": true,
+	"slots": [ "sword/blade" ],
+	"type": "tetra:basic_major_module",
+	"improvements": [
+		"tetra:sword/void_worm_cleaver/",
+		"tetra:sword/shared_blade/",
+		"tetra:sword/shared/",
+		"tetra:shared/"
+	],
+	"variants": [
+		{
+			"key": "void_worm_cleaver/void_worm_cleaver",
+			"integrity": -3,
+			"attributes": {
+				"generic.attack_speed": -3.1,
+				"generic.attack_damage": 10
+			},
+			"aspects": {
+				"edged_weapon": 2,
+				"breakable": 2
+			},
+			"durability": 90,
+			"tags":[
+				"forge:swords"
+			],
+			"effects": {
+				"sweeping": 1,
+				"crushing": 8,
+				"bleeding": [2, 2],
+				"abilityCombo": [25,25],
+				"abilityEcho": [3,1.2],
+				"lunge": 150
+			},
+			"magicCapacity": 500,
+			"glyph": {
+				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureX": 144
+			},
+			"models": [{ "location": "tetra:item/module/sword/blade/void_worm_cleaver/void_worm_cleaver" }]
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+    "key": "amethyst",
+    "category": "gem",
+    "primary": 5,
+    "secondary": 2.7,
+    "tertiary": 0,
+    "durability": 850,
+    "integrityCost": 2,
+    "integrityGain": 2,
+    "magicCapacity": 72,
+    "toolLevel": "minecraft:iron",
+    "toolEfficiency": 7,
+    "tints": {
+        "glyph": "af49f0",
+        "texture": "af49f0"
+    },
+    "textures": [
+        "shiny",
+        "crude"
+    ],
+    "material": {
+        "items": [ "minecraft:amethyst_shard","tetra:pristine_amethyst" ]
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:stone"
+    },
+    "features": [ "pristine" ]
+}

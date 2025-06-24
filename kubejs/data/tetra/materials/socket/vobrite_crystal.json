@@ -1,5 +1,6 @@
 {
     "key": "vobrite_crystal",
+    "hidden": true,
     "category": "socket",
     "primary": 0,
     "secondary": 0,

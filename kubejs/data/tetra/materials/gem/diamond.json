@@ -16,10 +16,17 @@
     },
     "textures": ["shiny", "crude"],
     "material": {
-        "items": ["minecraft:diamond","tetra:pristine_diamond"]
+        "items": [
+            "createdelight.mmd_diamond",
+            "minecraft:diamond",
+            "tetra:pristine_diamond"
+        ]
     },
     "requiredTools": {
         "hammer_dig": 4
+    },
+    "improvements": {
+        "arrested": 0
     },
     "features": [ "pristine" ]
 }

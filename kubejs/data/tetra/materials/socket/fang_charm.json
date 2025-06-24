@@ -1,5 +1,6 @@
 {
     "key": "fang_charm",
+    "hidden": true,
     "category": "socket",
     "primary": 0,
     "secondary": 0,
