@@ -25,3 +25,6 @@ ServerEvents.recipes(e => {
         }).id("farmersdelight:cutting/" + log[0].split(":")[1])
     });
 })
+BlockEvents.rightClicked('vinery:fermentation_barrel', e => {
+    e.cancel()
+})
