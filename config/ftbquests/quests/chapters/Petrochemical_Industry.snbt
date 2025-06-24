@@ -171,45 +171,8 @@
 		}
 		{
 			dependencies: [
-				"298F516A78786D39"
-				"4ACEFFEC7171C5BE"
-			]
-			description: [""]
-			id: "15BF957B2F2FE765"
-			subtitle: "可使烈焰人&9超级加热&r"
-			tasks: [{
-				id: "4023150209C55861"
-				item: "createdieselgenerators:biodiesel_bucket"
-				type: "item"
-			}]
-			title: "生物柴油！"
-			x: -7.5d
-			y: 2.5d
-		}
-		{
-			dependencies: ["1ADBDFB31928124D"]
-			hide_until_deps_visible: true
-			id: "0C49A6D118E480B4"
-			rewards: [{
-				id: "6211CFB60DEB1F1E"
-				item: "createdelight:dry_yeast"
-				random_bonus: 2
-				type: "item"
-			}]
-			subtitle: "与工作盆配合以发酵"
-			tasks: [{
-				id: "7A2068EA2FE0DC4C"
-				item: "createdieselgenerators:basin_lid"
-				type: "item"
-			}]
-			x: -11.5d
-			y: 2.5d
-		}
-		{
-			dependencies: [
 				"43B45F9D2DC4BD3E"
 				"16E31AE06BF8CE13"
-				"0C49A6D118E480B4"
 			]
 			icon: "createdieselgenerators:crude_oil_bucket"
 			id: "61A945984843E55A"
@@ -355,30 +318,6 @@
 			y: 4.0d
 		}
 		{
-			dependencies: ["0C49A6D118E480B4"]
-			id: "298F516A78786D39"
-			subtitle: "&e发酵&r！或者&4化工&r！"
-			tasks: [{
-				id: "296FAEBB86AEBF0C"
-				item: "createdieselgenerators:ethanol_bucket"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0C49A6D118E480B4"]
-			id: "4ACEFFEC7171C5BE"
-			subtitle: "植物油也能烧？&e启动&r！&4超级艾草动力&r！\\n——艾草大王如是说"
-			tasks: [{
-				id: "184A409B4937E3B1"
-				item: "createdieselgenerators:plant_oil_bucket"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 2.0d
-		}
-		{
 			dependencies: ["6EB96008F21DAFBF"]
 			id: "530B929865B8E11B"
 			subtitle: "油料存进可以&e防爆&r！&e豪用&r！"
@@ -389,18 +328,6 @@
 			}]
 			x: -13.5d
 			y: 2.5d
-		}
-		{
-			dependencies: ["0C49A6D118E480B4"]
-			id: "01CAAE3178150432"
-			subtitle: "终于可以大量发酵了！"
-			tasks: [{
-				id: "43B0B70AE335F922"
-				item: "createdieselgenerators:bulk_fermenter"
-				type: "item"
-			}]
-			x: -11.5d
-			y: 1.0d
 		}
 	]
 	title: "&5石油化工"

@@ -90,7 +90,7 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:yeast", 250),
         [
             '#forge:mushrooms',
-            "#forge:flour",
+            'create:wheat_flour',
             'minecraft:sugar',
             Fluid.water(250)
         ], 300
@@ -99,14 +99,14 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:yeast", 500),
         [
             Fluid.of("createdelight:yeast", 250),
-            "#forge:flour",
+            'create:wheat_flour',
         ], 300
     )
     fermenting(e,
         Fluid.of("createdelight:yeast", 500),
         [
             "createdelight:dry_yeast",
-            "#forge:flour",
+            'create:wheat_flour',
             Fluid.water(500)
         ], 300
     )
@@ -187,6 +187,14 @@ ServerEvents.recipes(e => {
     e.recipes.minecraft.smoking("minecraft:bread", "bakeries:whole_wheat_dough", 0.7, 100)
        .id("bakeries:bread_from_whole_wheat_dough")
 
+    e.recipes.kubejs.shaped(
+        'minecraft:bread',
+        [
+            "AAA"
+        ], {
+            A: "minecraft:wheat"
+        }
+    ).id("minecraft:shapeless/bread")
     //酥皮
     kubejs.shapeless(
         "createdelight:puff_pastry",

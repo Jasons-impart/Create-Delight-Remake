@@ -464,7 +464,7 @@
     "createdelight.alloy_electric_furnace": "合金电炉",
     "createdelight.big_centrifugation": "大型离心机",
     "createdelight.small_centrifugation": "小型离心机",
-    "createdelight.fission_reactor": "裂变反应堆",
+    "createdelight.fission_react": "裂变反应堆",
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
@@ -485,6 +485,7 @@
     "message.createdelight.degree_of_damage": "损坏度：%s",
     "message.createdelight.sell_bin_hint": "你出售了出货箱（位于（%s））中的内容，你获得了%s",
     "message.createdelight.first_summon_end_dragon": "§4PS：末影龙召唤过程中摧毁水晶会中止召唤进程， 末影龙的初始召唤如果被中止末地传送门也不会开启",
+    "message.createdelight.pipe": "流体管道至少需要两个开口！",
     
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
@@ -495,7 +496,6 @@
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§r§7，但是会将模具存储在§b机器内部",
     "tooltip.createdelight.shift_distillation_controller": "§b每个§7储罐都需要一个",
     "tooltip.createdelight.shift_wolframite_ore": "§7常见于§b地狱30-36层",
-    "tooltip.createdelight.shift_belt_grinder": "§bRPM≤16§7为低转速，§b16≤RPM≤64§7为中转速，§bRPM≥64为§7高转速",
     "tooltip.createdelight.shift_emergency_industrial_platform": "§7可展开§b白色风格§7的§b48*48§7的平台，§7放下后会显示其§b工作区域§7，请确保区域内§b没有重要方块",
     "tooltip.createdelight.shift_emergency_industrial_platform_block": "§7可展开§b白色方纹风格§7的§b48*48§7的平台，§7放下后会显示其§b工作区域§7，请确保区域内§b没有重要方块",
     "tooltip.createdelight.shift_emergency_industrial_platform_dark": "§7可展开§b黑色风格§7的§b48*48§7的平台，§7放下后会显示其§b工作区域§7，请确保区域内§b没有重要方块",
@@ -584,7 +584,7 @@
     "createdelight.tip.stress_generator_efficiency": "接近满效率的发电机线圈的效率约为交流发电机的两倍。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成（当然除了玩家）",
     "createdelight.tip.mosquito_repellent_stew": "觉得绯红蚊子很烦？尝试做一碗驱蚊炖菜。",
-    "createdelight.tip.bettercombat_tweak": "本包的bettercombat以去掉前摇，且攻击范围增加了一倍，请放心使用。",
+    "createdelight.tip.bettercombat_tweak": "本包的bettercombat已去掉前摇，且攻击范围增加了一倍，请放心使用。",
     "createdelight.tip.bread_tweak": "本包的部分面团需要使用酵母制作，酵母需要通过发酵获取。",
     "createdelight.tip.sulfur_obtain": "关于最初始的硫磺获取，可以考虑查看硫磺粒的获取方式。",
     "createdelight.tip.multiblock_build": "当背包中有足够的材料时，使用多方块搭建器右击多方块的控制器可以消耗材料，并直接搭建出整个多方块。",

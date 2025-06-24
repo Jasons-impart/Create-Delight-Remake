@@ -1,0 +1,87 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [64, 32],
+	"textures": {
+		"0": "butchercraft:block/entity/rabbit",
+		"particle": "butchercraft:block/entity/rabbit"
+	},
+	"elements": [
+		{
+			"name": "head",
+			"from": [5.5, 0, 6],
+			"to": [10.5, 4, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, -8, 12]},
+			"faces": {
+				"north": {"uv": [10.5, 2.5, 9.25, 4.5], "texture": "#0"},
+				"east": {"uv": [11.75, 2.5, 10.5, 4.5], "texture": "#0"},
+				"south": {"uv": [13, 2.5, 11.75, 4.5], "texture": "#0"},
+				"west": {"uv": [9.25, 2.5, 8, 4.5], "texture": "#0"},
+				"up": {"uv": [9.25, 2.5, 10.5, 0], "texture": "#0"},
+				"down": {"uv": [10.5, 0, 11.75, 2.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, 4, 4.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, 4, 4.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 120, 0],
+			"translation": [0, 8, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 120, 0],
+			"translation": [0, 8, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"ground": {
+			"translation": [0, 5, 0]
+		},
+		"gui": {
+			"rotation": [21, 145, 0],
+			"translation": [0, 3.75, 0]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
+		},
+		"fixed": {
+			"translation": [0, 4, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "head",
+			"origin": [8, 0, 8],
+			"color": 0,
+			"children": [
+				0,
+				{
+					"name": "earRight",
+					"origin": [8, 0, 11],
+					"color": 0,
+					"children": []
+				},
+				{
+					"name": "earLeft",
+					"origin": [8, 0, 11],
+					"color": 0,
+					"children": []
+				},
+				{
+					"name": "nose",
+					"origin": [8, 0, 11],
+					"color": 0,
+					"children": []
+				}
+			]
+		}
+	]
+}

@@ -1,5 +1,6 @@
 ServerEvents.recipes(e => {
-    const {vintageimprovements} = e.recipes
+    const {vintageimprovements, create, createmetallurgy} = e.recipes
+
     e.remove({output: '#vintageimprovements:small_springs'})
     remove_recipes_id(e, [
         "vintageimprovements:pressurizing/sulfur_trioxide",
@@ -33,6 +34,19 @@ ServerEvents.recipes(e => {
             '2x createutilities:polished_amethyst',
             Item.of('createutilities:polished_amethyst').withChance(0.5)
         ] ,
-       'minecraft:amethyst_shard',
-     ).id("createutilities:sandpaper_polishing/polished_amethyst")     
+        'minecraft:amethyst_shard'
+    ).id("createutilities:sandpaper_polishing/polished_amethyst")
+    {
+        let iner = 'vintageimprovements:incomplete_recipe_card'
+        create.sequenced_assembly("vintageimprovements:recipe_card", "create:brass_sheet",
+            [
+                create.deploying(iner, [iner, "minecraft:redstone"]),
+                create.pressing(iner, iner),
+                createmetallurgy.grinding(iner, iner)
+            ]
+        )
+            .loops(3)
+            .transitionalItem(iner)
+            .id("vintageimprovements:sequenced_assembly/recipe_card")
+    }
 })

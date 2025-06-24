@@ -76,19 +76,18 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
         let maxEnergyOutput = 0
         let maxFluidOutput = 0
         machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
-            /**
-             * @type {Internal.MBDRecipe}
-             */
-            let mbdRecipe = r
+            let mbdRecipe = machine.getModifiedRecipe(r)
             mbdRecipe.getOutputContents($ForgeEnergyRecipeCapability.CAP).forEach(con => {
                 if (maxEnergyOutput < con.getContent())
                     maxEnergyOutput = con.getContent()
             })
+            
             mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
                 if (maxFluidOutput < con.getContent().getAmount())
                     maxFluidOutput = con.getContent().getAmount()
             })
         })
+        
         //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty &&
             fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1) &&

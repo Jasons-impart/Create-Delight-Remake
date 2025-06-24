@@ -7,12 +7,17 @@ ServerEvents.recipes(e => {
         "quark:golden_apple_crate",
         "quark:golden_carrot_crate",
         "quark:berry_sack",
-        "quark:glowberry_sack"
+        "quark:glowberry_sack",
+        "quark:gunpowder_sack"
     ])
     //不要删除夸克的箱装方块拆解的配方，idas的建筑中会有。
     // remove_recipes_id(e, [
     //    "quark:building/crafting/compressed/potato_crate_uncompress", 
     // ])
+    e.shapeless(
+        "9x minecraft:gunpowder",
+        "quark:gunpowder_sack"
+    )
     e.recipes.create.mixing(
         Fluid.of("create_enchantment_industry:experience", 10),
         'quark:ancient_fruit'
