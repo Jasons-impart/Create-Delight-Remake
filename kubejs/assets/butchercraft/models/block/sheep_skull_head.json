@@ -1,0 +1,59 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "butchercraft:block/entity/sheep",
+		"particle": "butchercraft:block/entity/sheep"
+	},
+	"elements": [
+		{
+			"name": "head",
+			"from": [5, 1, 4],
+			"to": [11, 7, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 0, 8]},
+			"faces": {
+				"north": {"uv": [4, 4, 7, 7], "texture": "#1"},
+				"east": {"uv": [0, 4, 4, 7], "texture": "#1"},
+				"south": {"uv": [11, 4, 14, 7], "texture": "#1"},
+				"west": {"uv": [7, 4, 11, 7], "texture": "#1"},
+				"up": {"uv": [7, 4, 4, 0], "texture": "#1"},
+				"down": {"uv": [10, 0, 7, 4], "texture": "#1"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, 4, 4.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [70, 0, 0],
+			"translation": [0, 4, 4.5],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 120, 0],
+			"translation": [0, 8, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 120, 0],
+			"translation": [0, 8, 0],
+			"scale": [0.8, 0.8, 0.8]
+		},
+		"ground": {
+			"translation": [0, 5, 0]
+		},
+		"gui": {
+			"rotation": [21, 145, 0],
+			"translation": [0, 3.75, 0]
+		},
+		"head": {
+			"translation": [0, 14.5, 0]
+		},
+		"fixed": {
+			"translation": [0, 4, 0]
+		}
+	}
+}
