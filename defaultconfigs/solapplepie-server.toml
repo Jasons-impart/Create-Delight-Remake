@@ -32,7 +32,7 @@
 	# and Slowness I below the corresponding threshold.
 	#
 	#
-	benefitsUnparsed = ["effect,speed,0", "effect,haste,0", "effect,strength,0;effect,night_vision,0", "effect,regeneration,0", "effect,speed,1", "effect,alexsmobs:mosquito_repellent,0", "effect,strength,0", "effect,luck,0", "effect,haste,1", "effect,youkaishomecoming:refreshing,0", "effect,strength,1", "effect,strength,2", "effect,luck,1"]
+	benefitsUnparsed = ["effect,haste,0", "effect,strength,0", "effect,regeneration,0", "effect,alexsmobs:mosquito_repellent,0", "effect,strength,0", "effect,luck,0", "effect,haste,1", "effect,youkaishomecoming:refreshing,0", "effect,strength,1", "effect,strength,2", "effect,luck,1"]
 	# The minimum number of foods a player needs to eat before any benefits are applied.
 	#
 	#
