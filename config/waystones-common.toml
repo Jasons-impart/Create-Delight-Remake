@@ -104,7 +104,7 @@
 
 [compatibility]
 	#If enabled, JourneyMap waypoints will be created for each activated waystone.
-	displayWaystonesOnJourneyMap = true
+	displayWaystonesOnJourneyMap = false
 	#If enabled, JourneyMap waypoints will only be created if the mod 'JourneyMap Integration' is not installed
 	preferJourneyMapIntegration = true
 
