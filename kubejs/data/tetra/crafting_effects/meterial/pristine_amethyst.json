@@ -1,0 +1,26 @@
+{
+  "replace": true,
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:craft_type",
+        "craft": "module"
+      },
+      {
+        "type": "tetra:material",
+        "material": {
+          "items": [ "tetra:pristine_amethyst" ]
+        }
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "type": "tetra:apply_improvements",
+      "improvements": {
+        "pristine_amethyst": 0
+      }
+    }
+  ]
+}

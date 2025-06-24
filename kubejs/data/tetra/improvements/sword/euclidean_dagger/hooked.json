@@ -1,0 +1,52 @@
+[
+    {
+        "key": "blade/hooked",
+        "level": 1,
+        "aspects": {
+            "honed": 1
+        },
+        "effects": {
+            "backstab": 1
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/basic/improvements/hooked",
+                "tint": "inherit"
+            }
+        ]
+    },
+    {
+        "key": "blade/hooked",
+        "level": 2,
+        "integrity": -1,
+        "aspects": {
+            "honed": 2
+        },
+        "effects": {
+            "backstab": 2
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/basic/improvements/hooked",
+                "tint": "inherit"
+            }
+        ]
+    },
+    {
+        "key": "blade/hooked",
+        "level": 3,
+        "integrity": -1,
+        "aspects": {
+            "honed": 3
+        },
+        "effects": {
+            "backstab": 3
+        },
+        "models": [
+            {
+                "location": "tetra:item/module/sword/blade/basic/improvements/hooked",
+                "tint": "inherit"
+            }
+        ]
+    }
+]

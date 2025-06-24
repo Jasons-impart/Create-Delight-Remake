@@ -9,16 +9,4 @@
                 "jab": 50,
                 "criticalStrike": [ 15, 2 ]
     }
-},
-{
-    "modules": ["sword/evernight_dagger"],
-    "moduleVariants": ["sword_socket/sigil_of_eden"],
-    "visibilityKey": "sword_socket/sigil_of_eden",
-    "attributes": {
-        "generic.attack_damage": 8
-    },
-    "effects": {
-                "jab": 50,
-                "criticalStrike": [ 25, 2 ]
-    }
 }]

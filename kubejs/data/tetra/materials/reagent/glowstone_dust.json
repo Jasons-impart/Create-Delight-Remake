@@ -1,0 +1,28 @@
+{
+    "key": "glowstone_dust",
+    "hidden": true,
+    "category": "reagent",
+    "primary": 0,
+    "secondary": 0,
+    "tertiary": 0,
+    "durability": 0,
+    "integrityCost": 1,
+    "integrityGain": 1,
+    "magicCapacity": 0,
+    "toolLevel": 0,
+    "toolEfficiency": 0,
+    "tints": {
+        "glyph": "fff243",
+        "texture": "fff243"
+    },
+    "textures": [
+        "default"
+    ],
+    "effects": {
+        "art_of_forging:third_sight": 10
+    },
+    "material": {
+        "items": [ "minecraft:glowstone_dust" ]
+    },
+    "experienceCost": 2
+}

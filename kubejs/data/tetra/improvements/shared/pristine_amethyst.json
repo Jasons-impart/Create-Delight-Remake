@@ -1,0 +1,12 @@
+[
+  {
+    "key": "pristine_amethyst",
+    "attributes": {
+      "forge:reach_distance": 0.5,
+      "forge:attack_range": 0.5
+    },
+    "effects": {
+      "reaching": [ 6, 0.25 ]
+    }
+  }
+]
