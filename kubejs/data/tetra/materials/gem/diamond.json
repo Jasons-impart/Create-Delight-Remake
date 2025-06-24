@@ -17,7 +17,7 @@
     "textures": ["shiny", "crude"],
     "material": {
         "items": [
-            "createdelight.mmd_diamond",
+            "createdelight:mmd_diamond",
             "minecraft:diamond",
             "tetra:pristine_diamond"
         ]
