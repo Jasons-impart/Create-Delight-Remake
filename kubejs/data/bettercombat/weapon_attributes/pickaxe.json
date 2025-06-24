@@ -1,0 +1,18 @@
+{
+  "attributes": {
+    "attack_range": 3,
+    "category": "pickaxe",
+    "attacks": [
+      {
+        "hitbox": "VERTICAL_PLANE",
+        "damage_multiplier": 1,
+        "angle": 90,
+        "upswing": 0.5,
+        "animation": "bettercombat:one_handed_slam",
+        "swing_sound": {
+          "id": "bettercombat:pickaxe_swing"
+        }
+      }
+    ]
+  }
+}

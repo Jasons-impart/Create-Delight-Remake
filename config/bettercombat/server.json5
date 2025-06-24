@@ -54,7 +54,7 @@
 	// Combo is reset after idling `combo_reset_rate * weapon_cooldown`
 	"combo_reset_rate": 3.0,
 	// Multiplier for `attack_range`, during target lookup on both sides. Large sized entities may be colliding with weapon hitbox, but center of entities can have bigger distance than `attack_range`
-	"target_search_range_multiplier": 4.0,
+	"target_search_range_multiplier": 1.0,
 	// Total multiplier, (examples: +30% = 1.3, -30% = 0.7)
 	"dual_wielding_attack_speed_multiplier": 1.2000000476837158,
 	// Total multiplier, (examples: +30% = 1.3, -30% = 0.7)
