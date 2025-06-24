@@ -6,12 +6,9 @@ ServerEvents.recipes(e => {
         "createaddition:liquid_burning/biodiesel",
         "createaddition:liquid_burning/ethanol",
         "createaddition:liquid_burning/diesel",
-        "moreburners:ember_burner",
-        "moreburners:converter_cover",
         "createaddition:liquid_burning/plantoil",
         "createaddition:liquid_burning/biofuel",
         "createaddition:liquid_burning/lava",
         "createaddition:liquid_burning/crude_oil",
-        
     ])
 })
