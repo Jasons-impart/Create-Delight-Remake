@@ -398,7 +398,7 @@
   "item.butchercraft.stuffed_heart": "填馅心脏",
   "item.butchercraft.tongue": "生口条",
   "item.butchercraft.tripe": "生肠子",
-  "entity.minecraft.villager.slaugther": "屠宰商",
+  "entity.minecraft.villager.butchercraft.slaughter_profession": "肉铺老板",
   "itemGroup.butchercraft.items": "屠宰工艺物品",
   "effect.butchercraft.blood_lust": "血源统领"
 }
