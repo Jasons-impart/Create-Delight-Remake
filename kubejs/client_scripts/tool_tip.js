@@ -11,7 +11,6 @@ ItemEvents.tooltip(e => {
         "ratatouille:mechanical_demolder",
         "createdieselgenerators:distillation_controller",
         "createmetallurgy:wolframite_ore",
-        "vintageimprovements:belt_grinder",
         "art_of_forging:devils_soul_gem",
         "art_of_forging:eerie_shard",
         "art_of_forging:heart_of_ender",
