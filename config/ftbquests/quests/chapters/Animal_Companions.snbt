@@ -65,8 +65,8 @@
 				title: "节肢动物"
 				type: "questsadditions:time"
 			}]
-			x: 4.0d
-			y: -2.5d
+			x: 5.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
@@ -80,8 +80,8 @@
 				title: "软体动物"
 				type: "questsadditions:time"
 			}]
-			x: 4.5d
-			y: -1.0d
+			x: 5.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
@@ -95,8 +95,8 @@
 				title: "哺乳动物"
 				type: "questsadditions:time"
 			}]
-			x: 4.5d
-			y: 1.0d
+			x: 9.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
@@ -110,8 +110,8 @@
 				title: "水生生物"
 				type: "questsadditions:time"
 			}]
-			x: 4.0d
-			y: 2.0d
+			x: 0.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
@@ -125,8 +125,8 @@
 				title: "爬行动物"
 				type: "questsadditions:time"
 			}]
-			x: 2.5d
-			y: 3.0d
+			x: 5.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
@@ -140,8 +140,8 @@
 				title: "鸟类"
 				type: "questsadditions:time"
 			}]
-			x: 2.5d
-			y: -3.0d
+			x: 0.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["2D498ED418390340"]
@@ -168,8 +168,8 @@
 				type: "observation"
 			}]
 			title: "苍蝇"
-			x: 3.0d
-			y: -7.0d
+			x: 6.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["2D498ED418390340"]
@@ -198,7 +198,7 @@
 				}
 			]
 			title: "龙虾"
-			x: 4.0d
+			x: 6.5d
 			y: -7.0d
 		}
 		{
@@ -226,8 +226,8 @@
 				type: "observation"
 			}]
 			title: "蟑螂"
-			x: 5.0d
-			y: -7.0d
+			x: 6.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3F6EFB34EF491D4B"]
@@ -262,8 +262,8 @@
 					type: "item"
 				}
 			]
-			x: 5.0d
-			y: -8.5d
+			x: 8.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["2D498ED418390340"]
@@ -295,8 +295,8 @@
 				type: "advancement"
 			}]
 			title: "螳螂虾"
-			x: 6.0d
-			y: -7.0d
+			x: 5.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["6C115AB4149281C7"]
@@ -315,8 +315,8 @@
 				title: "一把水"
 				type: "advancement"
 			}]
-			x: 5.5d
-			y: -10.0d
+			x: 6.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["6C115AB4149281C7"]
@@ -332,8 +332,8 @@
 				item: "alexsmobs:shrimp_fried_rice"
 				type: "item"
 			}]
-			x: 6.5d
-			y: -10.0d
+			x: 5.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["2D498ED418390340"]
@@ -358,8 +358,8 @@
 				to_observe: "alexsmobs:leafcutter_ant"
 				type: "observation"
 			}]
-			x: 7.0d
-			y: -7.0d
+			x: 5.0d
+			y: -8.5d
 		}
 		{
 			dependencies: ["46EAAF318C57196E"]
@@ -373,8 +373,8 @@
 				title: "蚂蚁终结者"
 				type: "advancement"
 			}]
-			x: 7.0d
-			y: -8.5d
+			x: 4.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["46EAAF318C57196E"]
@@ -395,8 +395,8 @@
 				title: "就像一块沾了蚂蚁的松露"
 				type: "advancement"
 			}]
-			x: 8.5d
-			y: -9.0d
+			x: 5.0d
+			y: -9.5d
 		}
 		{
 			dependencies: ["46EAAF318C57196E"]
@@ -414,8 +414,8 @@
 				title: "蚁场"
 				type: "advancement"
 			}]
-			x: 8.0d
-			y: -10.0d
+			x: 6.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["2D498ED418390340"]
@@ -441,8 +441,8 @@
 				title: "遇见一只沙漠蛛蜂"
 				type: "advancement"
 			}]
-			x: 8.0d
-			y: -7.0d
+			x: 6.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["1D36D13A35180A3E"]
@@ -466,8 +466,8 @@
 				title: "驯服一只沙漠蛛蜂"
 				type: "advancement"
 			}]
-			x: 8.5d
-			y: -8.0d
+			x: 7.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["6D40B019C49B2AF0"]
@@ -493,8 +493,8 @@
 				to_observe: "alexsmobs:mimic_octopus"
 				type: "observation"
 			}]
-			x: 9.5d
-			y: -7.0d
+			x: 5.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["5E6EF6FD4C7F5B0C"]
@@ -511,8 +511,8 @@
 				title: "变幻莫测"
 				type: "checkmark"
 			}]
-			x: 9.5d
-			y: -8.5d
+			x: 5.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["6D40B019C49B2AF0"]
@@ -536,8 +536,8 @@
 				to_observe: "alexsmobs:giant_squid"
 				type: "observation"
 			}]
-			x: 10.5d
-			y: -7.0d
+			x: 7.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7937050D1F568DA3"]
@@ -555,8 +555,8 @@
 				item: "alexsmobs:lost_tentacle"
 				type: "item"
 			}]
-			x: 10.5d
-			y: -8.5d
+			x: 7.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["6D40B019C49B2AF0"]
@@ -586,8 +586,8 @@
 					type: "observation"
 				}
 			]
-			x: 11.5d
-			y: -7.0d
+			x: 7.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["1B36D2B9486430FD"]
@@ -620,8 +620,8 @@
 				to_observe: "alexsmobs:rain_frog"
 				type: "observation"
 			}]
-			x: 11.5d
-			y: -6.0d
+			x: 7.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -675,8 +675,8 @@
 				}
 			]
 			title: "灰熊"
-			x: 11.5d
-			y: -5.0d
+			x: 11.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -717,8 +717,8 @@
 				}
 			]
 			title: "瞪羚"
-			x: 11.5d
-			y: -4.0d
+			x: 12.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -745,8 +745,8 @@
 				type: "advancement"
 			}]
 			title: "大猩猩"
-			x: 11.5d
-			y: -3.0d
+			x: 13.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["252F78F22BBA6748"]
@@ -765,8 +765,8 @@
 				title: "彩蛋"
 				type: "checkmark"
 			}]
-			x: 13.0d
-			y: -3.0d
+			x: 15.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -794,8 +794,8 @@
 				type: "advancement"
 			}]
 			title: "卷尾猴"
-			x: 11.5d
-			y: -2.0d
+			x: 13.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -829,8 +829,8 @@
 					type: "item"
 				}
 			]
-			x: 11.5d
-			y: -1.0d
+			x: 13.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -875,8 +875,8 @@
 				}
 			]
 			title: "浣熊"
-			x: 11.5d
-			y: 0.0d
+			x: 9.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -909,8 +909,8 @@
 				type: "observation"
 			}]
 			title: "大象"
-			x: 11.5d
-			y: 1.0d
+			x: 13.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["6EAA339D4F200827"]
@@ -937,8 +937,8 @@
 				}
 			]
 			title: "驯服大象"
-			x: 13.0d
-			y: 0.5d
+			x: 15.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["6EAA339D4F200827"]
@@ -956,8 +956,8 @@
 				title: "盛装打扮"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 1.5d
+			x: 15.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -986,8 +986,8 @@
 				type: "observation"
 			}]
 			title: "雪豹"
-			x: 11.5d
-			y: 2.0d
+			x: 13.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1031,8 +1031,8 @@
 				}
 			]
 			title: "袋鼠"
-			x: 11.5d
-			y: 3.0d
+			x: 13.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["01D523FA3EA70A94"]
@@ -1053,8 +1053,8 @@
 				title: "攻击小袋鼠"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 2.5d
+			x: 15.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1090,8 +1090,8 @@
 				type: "observation"
 			}]
 			title: "鸭嘴兽"
-			x: 11.5d
-			y: 4.0d
+			x: 13.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1114,8 +1114,8 @@
 				type: "observation"
 			}]
 			title: "袋獾"
-			x: 11.5d
-			y: 5.0d
+			x: 13.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1140,8 +1140,8 @@
 				type: "observation"
 			}]
 			title: "老虎"
-			x: 11.5d
-			y: 6.0d
+			x: 13.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2C872785ACB6C74F"]
@@ -1159,8 +1159,8 @@
 				title: "虎视眈眈"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 6.0d
+			x: 15.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1189,8 +1189,8 @@
 				type: "observation"
 			}]
 			title: "食蚁兽"
-			x: 11.5d
-			y: 7.0d
+			x: 13.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7A2C0F3AEF9C09CF"]
@@ -1210,8 +1210,8 @@
 				title: "繁殖食蚁兽"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 7.0d
+			x: 15.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1238,8 +1238,8 @@
 				type: "advancement"
 			}]
 			title: "鬃狼"
-			x: 11.5d
-			y: 8.0d
+			x: 13.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1266,8 +1266,8 @@
 				type: "observation"
 			}]
 			title: "狮尾狒狒"
-			x: 11.5d
-			y: 9.0d
+			x: 13.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1294,8 +1294,8 @@
 				type: "observation"
 			}]
 			title: "跳鼠"
-			x: 11.5d
-			y: 10.0d
+			x: 12.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1323,8 +1323,8 @@
 				to_observe: "alexsmobs:rhinoceros"
 				type: "observation"
 			}]
-			x: 11.5d
-			y: 11.0d
+			x: 10.0d
+			y: -5.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1358,8 +1358,9 @@
 					type: "item"
 				}
 			]
-			x: 11.5d
-			y: 12.0d
+			title: "野牛"
+			x: 11.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["767D768BEE5484A6"]
@@ -1377,8 +1378,8 @@
 				title: "平原上的美景"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 11.5d
+			x: 10.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1409,8 +1410,8 @@
 				type: "observation"
 			}]
 			title: "蜜袋鼯"
-			x: 11.5d
-			y: 13.0d
+			x: 10.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["3406C96937AFB360"]
@@ -1434,8 +1435,8 @@
 				to_observe: "alexsmobs:skunk"
 				type: "observation"
 			}]
-			x: 11.5d
-			y: 14.0d
+			x: 9.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["0E55D456F9FEB190"]
@@ -1449,8 +1450,8 @@
 				title: "嬉皮士的气味"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 13.5d
+			x: 9.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["0E55D456F9FEB190"]
@@ -1469,8 +1470,8 @@
 				title: "臭鼬牌沐浴露"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 14.5d
+			x: 8.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1496,8 +1497,8 @@
 				title: "发现一群虎鲸"
 				type: "advancement"
 			}]
-			x: 11.5d
-			y: 15.0d
+			x: 2.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1521,8 +1522,8 @@
 				to_observe: "alexsmobs:seal"
 				type: "observation"
 			}]
-			x: 11.5d
-			y: 16.0d
+			x: 1.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["450FE48802B14A3A"]
@@ -1543,8 +1544,8 @@
 				item: "alexsmobs:music_disc_thime"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 15.5d
+			x: 1.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1577,8 +1578,8 @@
 				}
 			]
 			title: "抹香鲸"
-			x: 11.5d
-			y: 17.0d
+			x: 2.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["192FA26082D2D2E3"]
@@ -1595,8 +1596,8 @@
 				title: "拯救鲸鱼！"
 				type: "advancement"
 			}]
-			x: 13.0d
-			y: 16.5d
+			x: 3.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7DE4D2A722B1E8D3"]
@@ -1612,8 +1613,8 @@
 				item: "alexsdelight:lobster_pasta"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -10.0d
+			x: 8.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1642,8 +1643,8 @@
 					type: "item"
 				}
 			]
-			x: 11.5d
-			y: 18.0d
+			x: -2.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["08E78BF8E0F74568"]
@@ -1659,8 +1660,8 @@
 				item: "alexsmobs:shark_tooth_arrow"
 				type: "item"
 			}]
-			x: 11.5d
-			y: 19.5d
+			x: -3.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1691,8 +1692,8 @@
 					type: "item"
 				}
 			]
-			x: 10.5d
-			y: 18.0d
+			x: -2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1729,8 +1730,8 @@
 					type: "item"
 				}
 			]
-			x: 9.5d
-			y: 18.0d
+			x: 2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1750,8 +1751,8 @@
 				to_observe: "alexsmobs:comb_jelly"
 				type: "observation"
 			}]
-			x: 8.5d
-			y: 18.0d
+			x: 0.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1793,8 +1794,8 @@
 				}
 			]
 			title: "一区块的鱼"
-			x: 7.5d
-			y: 18.0d
+			x: -1.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1836,8 +1837,8 @@
 					type: "item"
 				}
 			]
-			x: 6.5d
-			y: 18.0d
+			x: -2.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1861,8 +1862,8 @@
 				to_observe: "alexsmobs:flying_fish"
 				type: "observation"
 			}]
-			x: 5.5d
-			y: 18.0d
+			x: -1.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["388B2A88515A4630"]
@@ -1892,8 +1893,8 @@
 				}
 			]
 			title: "如鱼得水"
-			x: 5.5d
-			y: 19.5d
+			x: -2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2CE5C6337A66E546"]
@@ -1925,8 +1926,8 @@
 				to_observe: "alexsmobs:mudskipper"
 				type: "observation"
 			}]
-			x: 4.5d
-			y: 18.0d
+			x: 0.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -1954,8 +1955,8 @@
 				to_observe: "alexsmobs:roadrunner"
 				type: "observation"
 			}]
-			x: 2.0d
-			y: -7.0d
+			x: 2.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["4743C926071C0585"]
@@ -1984,8 +1985,8 @@
 					type: "item"
 				}
 			]
-			x: 2.0d
-			y: -8.5d
+			x: 2.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2013,8 +2014,8 @@
 				to_observe: "alexsmobs:hummingbird"
 				type: "observation"
 			}]
-			x: 1.0d
-			y: -7.0d
+			x: 2.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["330DAC55A9465BE6"]
@@ -2035,8 +2036,8 @@
 				item: "alexsmobs:hummingbird_feeder"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -8.5d
+			x: 2.5d
+			y: -10.0d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2062,8 +2063,8 @@
 				to_observe: "alexsmobs:shoebill"
 				type: "observation"
 			}]
-			x: 0.0d
-			y: -7.0d
+			x: 2.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2095,8 +2096,8 @@
 				to_observe: "alexsmobs:crow"
 				type: "observation"
 			}]
-			x: -1.0d
-			y: -7.0d
+			x: 1.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2124,8 +2125,8 @@
 				to_observe: "alexsmobs:emu"
 				type: "observation"
 			}]
-			x: -2.0d
-			y: -7.0d
+			x: 0.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["36D42F9A4EC169F2"]
@@ -2167,8 +2168,8 @@
 				}
 			]
 			title: "内陆护腿"
-			x: -2.0d
-			y: -8.5d
+			x: 0.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2194,8 +2195,8 @@
 				to_observe: "alexsmobs:bald_eagle"
 				type: "observation"
 			}]
-			x: -3.0d
-			y: -7.0d
+			x: -0.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["37FE93B0077CB8B9"]
@@ -2225,8 +2226,8 @@
 					type: "item"
 				}
 			]
-			x: -3.0d
-			y: -8.5d
+			x: 0.0d
+			y: -10.5d
 		}
 		{
 			dependencies: ["37FE93B0077CB8B9"]
@@ -2244,8 +2245,8 @@
 				title: "致命一击"
 				type: "advancement"
 			}]
-			x: -4.0d
-			y: -8.5d
+			x: -1.0d
+			y: -10.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2271,8 +2272,8 @@
 				to_observe: "alexsmobs:seagull"
 				type: "observation"
 			}]
-			x: -4.0d
-			y: -7.0d
+			x: -1.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2302,8 +2303,8 @@
 				to_observe: "alexsmobs:toucan"
 				type: "observation"
 			}]
-			x: -5.0d
-			y: -7.0d
+			x: -2.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2333,8 +2334,8 @@
 				to_observe: "alexsmobs:potoo"
 				type: "observation"
 			}]
-			x: -6.0d
-			y: -7.0d
+			x: -2.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["2139307D0FFD9E7E"]
@@ -2366,8 +2367,8 @@
 				to_observe: "alexsmobs:blue_jay"
 				type: "observation"
 			}]
-			x: -7.0d
-			y: -7.0d
+			x: -2.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2395,8 +2396,8 @@
 				to_observe: "alexsmobs:crocodile"
 				type: "observation"
 			}]
-			x: 3.5d
-			y: 18.0d
+			x: 6.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["6E3A9BF0C60F56BA"]
@@ -2429,8 +2430,8 @@
 					type: "item"
 				}
 			]
-			x: 3.0d
-			y: 19.5d
+			x: 6.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["6E3A9BF0C60F56BA"]
@@ -2458,8 +2459,8 @@
 				title: "繁殖鳄鱼"
 				type: "advancement"
 			}]
-			x: 4.0d
-			y: 19.5d
+			x: 7.5d
+			y: 8.0d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2492,8 +2493,8 @@
 				to_observe: "alexsmobs:rattlesnake"
 				type: "observation"
 			}]
-			x: 2.5d
-			y: 18.0d
+			x: 6.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2523,8 +2524,8 @@
 				to_observe: "alexsmobs:komodo_dragon"
 				type: "observation"
 			}]
-			x: 1.5d
-			y: 18.0d
+			x: 5.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2550,8 +2551,8 @@
 				to_observe: "alexsmobs:alligator_snapping_turtle"
 				type: "observation"
 			}]
-			x: 0.5d
-			y: 18.0d
+			x: 5.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["5E652FD2F0B95DD7"]
@@ -2581,8 +2582,8 @@
 					type: "item"
 				}
 			]
-			x: 0.5d
-			y: 19.5d
+			x: 5.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2606,8 +2607,8 @@
 				to_observe: "alexsmobs:anaconda"
 				type: "observation"
 			}]
-			x: -0.5d
-			y: 18.0d
+			x: 4.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["52505BF5259BA8AC"]
@@ -2643,8 +2644,8 @@
 					type: "item"
 				}
 			]
-			x: -0.5d
-			y: 19.5d
+			x: 4.0d
+			y: 9.5d
 		}
 		{
 			dependencies: ["479251A439D11CC8"]
@@ -2676,8 +2677,8 @@
 				to_observe: "alexsmobs:terrapin"
 				type: "observation"
 			}]
-			x: -1.5d
-			y: 18.0d
+			x: 3.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
@@ -2691,8 +2692,8 @@
 				title: "主世界"
 				type: "dimension"
 			}]
-			x: -3.5d
-			y: -2.0d
+			x: -6.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
@@ -2706,7 +2707,7 @@
 				title: "下界"
 				type: "dimension"
 			}]
-			x: -5.5d
+			x: -7.5d
 			y: 0.0d
 		}
 		{
@@ -2721,8 +2722,8 @@
 				title: "末地"
 				type: "dimension"
 			}]
-			x: -3.5d
-			y: 2.0d
+			x: -6.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2746,8 +2747,8 @@
 				to_observe: "alexsmobs:sunbird"
 				type: "observation"
 			}]
-			x: -8.0d
-			y: -7.0d
+			x: -5.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["6E1EE3D2E983FA61"]
@@ -2770,8 +2771,8 @@
 				title: "耀阳之力"
 				type: "advancement"
 			}]
-			x: -8.0d
-			y: -8.5d
+			x: -5.5d
+			y: -11.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2790,8 +2791,8 @@
 				title: "同样是太恐怖删掉了"
 				type: "checkmark"
 			}]
-			x: -9.0d
-			y: -7.0d
+			x: -6.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["6F16590F869A0204"]
@@ -2822,8 +2823,8 @@
 				}
 			]
 			title: "洞穴蜈蚣护腿"
-			x: -9.0d
-			y: -8.5d
+			x: -6.5d
+			y: -11.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2853,8 +2854,8 @@
 				to_observe: "alexsmobs:mungus"
 				type: "observation"
 			}]
-			x: -10.0d
-			y: -7.0d
+			x: -7.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2886,8 +2887,8 @@
 				to_observe: "alexsmobs:guster"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -7.0d
+			x: -8.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2909,8 +2910,8 @@
 				to_observe: "alexsmobs:froststalker"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -6.0d
+			x: -9.5d
+			y: -9.5d
 		}
 		{
 			dependencies: ["45317DC3BB95D2B8"]
@@ -2944,8 +2945,8 @@
 					type: "item"
 				}
 			]
-			x: -12.5d
-			y: -6.0d
+			x: -11.0d
+			y: -9.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -2972,8 +2973,8 @@
 				to_observe: "alexsmobs:tusklin"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -5.0d
+			x: -9.5d
+			y: -8.5d
 		}
 		{
 			dependencies: ["5DABC6DD0D628556"]
@@ -2990,8 +2991,8 @@
 				item: "alexsmobs:pigshoes"
 				type: "item"
 			}]
-			x: -12.5d
-			y: -5.0d
+			x: -11.0d
+			y: -8.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3012,8 +3013,8 @@
 				to_observe: "alexsmobs:rocky_roller"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -4.0d
+			x: -9.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["41B610E94CA650B6"]
@@ -3047,8 +3048,8 @@
 					type: "item"
 				}
 			]
-			x: -12.5d
-			y: -4.0d
+			x: -11.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3072,8 +3073,8 @@
 				to_observe: "alexsmobs:flutter"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -3.0d
+			x: -9.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3094,8 +3095,8 @@
 				to_observe: "alexsmobs:skelewag"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: -2.0d
+			x: -9.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["72F0394531F2BD46"]
@@ -3153,8 +3154,8 @@
 					value: 50L
 				}
 			]
-			x: -12.5d
-			y: -2.0d
+			x: -11.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3190,8 +3191,8 @@
 					type: "item"
 				}
 			]
-			x: -11.0d
-			y: -1.0d
+			x: -9.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["171C7E008A154EDF"]
@@ -3207,8 +3208,8 @@
 				item: "alexsdelight:bunfungus_sandwich"
 				type: "item"
 			}]
-			x: -12.5d
-			y: -1.0d
+			x: -11.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3235,8 +3236,8 @@
 					type: "item"
 				}
 			]
-			x: -11.0d
-			y: 0.0d
+			x: -7.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3269,8 +3270,8 @@
 					type: "item"
 				}
 			]
-			x: -11.0d
-			y: 1.0d
+			x: -6.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["21EE69BCBAEB1981"]
@@ -3294,8 +3295,8 @@
 				item: "alexsmobs:sculk_boomer"
 				type: "item"
 			}]
-			x: -12.5d
-			y: 1.0d
+			x: -6.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3318,8 +3319,8 @@
 				to_observe: "alexsmobs:underminer"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 2.0d
+			x: -5.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["7504E14DA69AD9EA"]
@@ -3337,8 +3338,8 @@
 				title: "有鬼？"
 				type: "advancement"
 			}]
-			x: -12.5d
-			y: 2.0d
+			x: -5.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -3365,8 +3366,8 @@
 				type: "checkmark"
 			}]
 			title: "轻语灵"
-			x: -11.0d
-			y: 3.0d
+			x: -8.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3400,7 +3401,7 @@
 				}
 			]
 			x: -11.0d
-			y: 4.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3438,7 +3439,7 @@
 				}
 			]
 			x: -11.0d
-			y: 5.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["51A45ACF1582C283"]
@@ -3474,7 +3475,7 @@
 			]
 			title: "血液喷射器"
 			x: -12.5d
-			y: 5.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3503,7 +3504,7 @@
 				type: "observation"
 			}]
 			x: -11.0d
-			y: 6.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3535,7 +3536,7 @@
 				}
 			]
 			x: -11.0d
-			y: 7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["1DD6153130DC4731"]
@@ -3559,7 +3560,7 @@
 				type: "checkmark"
 			}]
 			x: -12.5d
-			y: 7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3590,7 +3591,7 @@
 				}
 			]
 			x: -11.0d
-			y: 8.0d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -3617,8 +3618,8 @@
 				}
 				type: "item"
 			}]
-			x: -12.5d
-			y: 3.0d
+			x: -8.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3652,7 +3653,7 @@
 				}
 			]
 			x: -11.0d
-			y: 9.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["4CE3E925A6CEA4A7"]
@@ -3676,7 +3677,7 @@
 				type: "item"
 			}]
 			x: -12.5d
-			y: 9.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3697,7 +3698,7 @@
 				type: "observation"
 			}]
 			x: -11.0d
-			y: 10.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3713,6 +3714,7 @@
 				"0-1个诡异肌，不受抢夺附魔影响。"
 			]
 			id: "6A73332F3547EA32"
+			size: 1.5d
 			subtitle: "“我不清楚在此之前这世上是否曾出现过诡异蚊鬼，但是经过我们生物科学部的不断尝试，我们终于发现了这种可怕怪物的秘密。”"
 			tasks: [{
 				icon: "alexsmobs:spawn_egg_warped_mosco"
@@ -3723,8 +3725,8 @@
 				to_observe: "alexsmobs:warped_mosco"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 11.0d
+			x: -10.5d
+			y: 5.25d
 		}
 		{
 			dependencies: ["6A73332F3547EA32"]
@@ -3743,8 +3745,8 @@
 				title: "攻击方式"
 				type: "checkmark"
 			}]
-			x: -13.5d
-			y: 10.5d
+			x: -12.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["6A73332F3547EA32"]
@@ -3779,8 +3781,8 @@
 					type: "item"
 				}
 			]
-			x: -13.5d
-			y: 11.5d
+			x: -10.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["7C03FBDCD77655A6"]
@@ -3797,6 +3799,7 @@
 				"黑曜石形态的炽岩各种音效也会有所改变。"
 			]
 			id: "5E3C70C3F70CE031"
+			size: 1.5d
 			subtitle: "“神奇的下界巨兽。身上时常会有熔岩流动，是因为它们体表的黑石鳞片在下界的高温下熔化导致。”"
 			tasks: [{
 				icon: "alexsmobs:spawn_egg_laviathan"
@@ -3807,8 +3810,8 @@
 				to_observe: "alexsmobs:laviathan"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 12.0d
+			x: -7.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["5E3C70C3F70CE031"]
@@ -3838,8 +3841,8 @@
 					type: "item"
 				}
 			]
-			x: -12.5d
-			y: 11.5d
+			x: -8.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5E3C70C3F70CE031"]
@@ -3857,8 +3860,8 @@
 				title: "熔岩湖巨兽"
 				type: "advancement"
 			}]
-			x: -12.5d
-			y: 12.5d
+			x: -6.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -3892,8 +3895,8 @@
 					type: "item"
 				}
 			]
-			x: -11.0d
-			y: 13.0d
+			x: -8.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -3925,8 +3928,8 @@
 					type: "item"
 				}
 			]
-			x: -11.0d
-			y: 14.0d
+			x: -8.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -3948,8 +3951,8 @@
 				to_observe: "alexsmobs:spectre"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 15.0d
+			x: -7.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -3976,8 +3979,8 @@
 				to_observe: "alexsmobs:enderiophage"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 16.0d
+			x: -5.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["63C3CE4E0436A6AC"]
@@ -4001,8 +4004,8 @@
 				item: "alexsmobs:capsid"
 				type: "item"
 			}]
-			x: -13.0d
-			y: 16.5d
+			x: -5.5d
+			y: 10.0d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -4030,8 +4033,8 @@
 				to_observe: "alexsmobs:cosmaw"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 17.0d
+			x: -4.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["3F57397F4636474E"]
@@ -4052,8 +4055,8 @@
 				to_observe: "alexsmobs:cosmic_cod"
 				type: "observation"
 			}]
-			x: -11.0d
-			y: 18.0d
+			x: -4.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["0D1C2B358358E634"]
@@ -4075,8 +4078,8 @@
 				item: "alexsmobs:cosmic_cod"
 				type: "item"
 			}]
-			x: -13.0d
-			y: 18.0d
+			x: -3.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["46A840BE69AA3FE8"]
@@ -4113,8 +4116,8 @@
 				to_observe: "alexsmobs:void_worm"
 				type: "observation"
 			}]
-			x: -7.0d
-			y: 18.0d
+			x: -5.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["7C0A47296C1C91B4"]
@@ -4142,7 +4145,7 @@
 				}
 			]
 			x: -3.5d
-			y: 18.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["7C0A47296C1C91B4"]
@@ -4158,8 +4161,8 @@
 				title: "攻击方式"
 				type: "checkmark"
 			}]
-			x: -7.5d
-			y: 16.0d
+			x: -7.0d
+			y: 13.0d
 		}
 		{
 			dependencies: ["7C0A47296C1C91B4"]
@@ -4170,8 +4173,8 @@
 				title: "进攻"
 				type: "checkmark"
 			}]
-			x: -6.5d
-			y: 16.0d
+			x: -7.0d
+			y: 15.0d
 		}
 		{
 			dependencies: ["521942F5C730C783"]
@@ -4200,8 +4203,8 @@
 				}
 				type: "item"
 			}]
-			x: -3.5d
-			y: 13.5d
+			x: -1.0d
+			y: 14.0d
 		}
 		{
 			dependencies: ["7A4B1B3974A84018"]
@@ -4232,8 +4235,8 @@
 				}
 				type: "item"
 			}]
-			x: 10.5d
-			y: -10.0d
+			x: 7.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["192FA26082D2D2E3"]
@@ -4274,8 +4277,8 @@
 					type: "item"
 				}
 			]
-			x: 13.0d
-			y: 17.5d
+			x: 2.0d
+			y: 3.0d
 		}
 		{
 			dependencies: ["63C3CE4E0436A6AC"]
@@ -4292,8 +4295,8 @@
 				item: "alexsmobs:enderiophage_rocket"
 				type: "item"
 			}]
-			x: -13.0d
-			y: 15.5d
+			x: -7.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["0D02B11D949BC139"]
@@ -4330,8 +4333,8 @@
 				item: "alexsmobs:transmutation_table"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 0.0d
+			x: -7.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["2A952709E62C7F2E"]
@@ -4348,8 +4351,8 @@
 				item: "alexsmobs:sopa_de_macaco"
 				type: "item"
 			}]
-			x: 13.0d
-			y: -2.0d
+			x: 15.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["6AA8FD4B9BF6CD7D"]
@@ -4376,8 +4379,8 @@
 				}
 				type: "item"
 			}]
-			x: -11.0d
-			y: -8.5d
+			x: -8.5d
+			y: -11.0d
 		}
 		{
 			dependencies: ["4805585F92709098"]
@@ -4404,8 +4407,8 @@
 				}
 				type: "item"
 			}]
-			x: 9.5d
-			y: 19.5d
+			x: 2.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["34F1729351474031"]
@@ -4421,8 +4424,8 @@
 				}
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.0d
+			x: -3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["34F1729351474031"]
@@ -4438,8 +4441,8 @@
 				}
 				type: "item"
 			}]
-			x: 1.5d
-			y: 4.0d
+			x: -3.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["34F1729351474031"]
@@ -4455,8 +4458,8 @@
 				}
 				type: "item"
 			}]
-			x: -0.5d
-			y: 4.5d
+			x: -3.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["34F1729351474031"]
@@ -4472,8 +4475,8 @@
 				}
 				type: "item"
 			}]
-			x: 0.5d
-			y: 4.5d
+			x: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["5679FB8E147767A0"]
@@ -4495,8 +4498,8 @@
 				}
 				type: "item"
 			}]
-			x: 13.0d
-			y: -1.0d
+			x: 15.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1EAAC1270DC6D4C3"]
@@ -4525,8 +4528,8 @@
 				}
 				type: "item"
 			}]
-			x: 13.0d
-			y: 4.5d
+			x: 15.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["279AA1CC6987C65C"]
@@ -4541,8 +4544,8 @@
 				item: "alexsdelight:gongylidia_bruschetta"
 				type: "item"
 			}]
-			x: 9.0d
-			y: -10.0d
+			x: 5.0d
+			y: -11.0d
 		}
 		{
 			dependencies: ["3FA20983B3E0604E"]
@@ -4559,8 +4562,8 @@
 				item: "alexsdelight:maggot_salad"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -8.5d
+			x: 7.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["767D768BEE5484A6"]
@@ -4583,8 +4586,8 @@
 					type: "item"
 				}
 			]
-			x: 13.0d
-			y: 12.5d
+			x: 11.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["01D523FA3EA70A94"]
@@ -4596,8 +4599,8 @@
 				item: "alexsdelight:kangaroo_pasta"
 				type: "item"
 			}]
-			x: 13.0d
-			y: 3.5d
+			x: 15.5d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -4792,8 +4795,8 @@
 				type: "checkmark"
 			}]
 			title: "恭喜你完成了这一章的所有任务"
-			x: 0.0d
-			y: 8.0d
+			x: 8.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["05239181F7424ABB"]
@@ -4816,8 +4819,8 @@
 				item: "alexsmobs:music_disc_daze"
 				type: "item"
 			}]
-			x: 14.5d
-			y: 15.5d
+			x: 1.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["2A130E907DF2A85B"]
@@ -4843,8 +4846,8 @@
 				item: "alexsmobs:mysterious_worm"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 16.5d
+			x: -5.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["7FFB5FAAC2F7B09F"]
@@ -4867,8 +4870,8 @@
 				}
 				type: "item"
 			}]
-			x: -3.5d
-			y: 11.5d
+			x: -3.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["584C6AB9A906D64B"]
@@ -4887,7 +4890,7 @@
 				type: "kill"
 				value: 1L
 			}]
-			x: -5.0d
+			x: -1.5d
 			y: 11.5d
 		}
 		{
@@ -4898,8 +4901,8 @@
 				item: "alexsmobs:farseer_arm"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 11.5d
+			x: 0.0d
+			y: 11.0d
 		}
 		{
 			dependencies: ["77FD4E812B965295"]
@@ -4917,7 +4920,7 @@
 				item: "alexsmobs:transmutation_table"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -2.0d
 			y: 9.5d
 		}
 		{
@@ -4932,8 +4935,8 @@
 				title: "两栖动物"
 				type: "questsadditions:time"
 			}]
-			x: 4.5d
-			y: 0.0d
+			x: 5.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["0F97A88646128947"]
@@ -4943,8 +4946,8 @@
 				item: "alexsmobs:lobster_tail"
 				type: "item"
 			}]
-			x: 4.0d
-			y: -8.5d
+			x: 8.0d
+			y: -7.0d
 		}
 		{
 			dependencies: ["329597CAA8B8D983"]
@@ -4957,7 +4960,7 @@
 				type: "checkmark"
 			}]
 			x: 0.0d
-			y: 3.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["2FA1DDD66F69F506"]
@@ -4995,8 +4998,8 @@
 				type: "observation"
 			}]
 			title: "&2蘑菇君"
-			x: -12.5d
-			y: -3.0d
+			x: -9.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["394502E95EC5440E"]
@@ -5007,8 +5010,8 @@
 				item: "alexsmobs:rainbow_jelly"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 19.5d
+			x: 0.0d
+			y: 8.5d
 		}
 	]
 	title: "&e动物朋友们"
