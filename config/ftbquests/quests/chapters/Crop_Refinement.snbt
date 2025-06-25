@@ -1083,7 +1083,7 @@
 			}]
 			title: ">_<好冷啊"
 			x: -5.5d
-			y: -6.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["24CF527B4E34E599"]
@@ -1120,8 +1120,8 @@
 				item: "ratatouille:thresher"
 				type: "item"
 			}]
-			x: -5.5d
-			y: -5.5d
+			x: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1139,7 +1139,7 @@
 			}]
 			title: "脱模！！！"
 			x: -1.5d
-			y: -6.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1156,49 +1156,7 @@
 				type: "item"
 			}]
 			title: "骨粉漫天飞舞~"
-			x: -1.5d
-			y: -5.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "7758504DF8D2C26A"
-			rewards: [{
-				id: "6E9D2E38C49677EF"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "无需电力的超级烤箱！"
-			tasks: [
-				{
-					id: "4CB9338AEDF96D9E"
-					item: "ratatouille:oven"
-					type: "item"
-				}
-				{
-					id: "203AA815EE33B017"
-					item: "ratatouille:oven_fan"
-					type: "item"
-				}
-			]
-			title: "经典烤箱！但是复古！"
 			x: -2.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "74B75BCF745A2B80"
-			rewards: [{
-				id: "5C56350DFD09980D"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "可灌溉周围19*19的水"
-			tasks: [{
-				id: "641E0A2EE11F696E"
-				item: "ratatouille:irrigation_tower"
-				type: "item"
-			}]
-			x: -4.5d
 			y: -5.0d
 		}
 		{

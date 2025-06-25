@@ -1,0 +1,8 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "create_new_age:block/motors/basic_motor_side",
+	"textures": {
+		"0": "create_new_age:block/golden_motor",
+		"particle": "create:block/brass_casing"
+	}
+}
