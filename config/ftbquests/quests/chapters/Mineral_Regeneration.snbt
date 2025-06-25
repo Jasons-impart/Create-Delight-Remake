@@ -4,10 +4,9 @@
 	default_quest_shape: ""
 	filename: "Mineral_Regeneration"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
-	order_index: 6
+	order_index: 5
 	quest_links: [
 		{
 			id: "2506A27C0B0452A8"

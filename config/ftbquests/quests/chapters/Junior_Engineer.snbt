@@ -10,6 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["39AF291933E03F4C"]
 			description: ["安山合金需要使用&e安山岩&r和&e铁粒&r或者&e锌粒&r制作。使用&e搅拌机&r能使消耗材料减半！"]
 			icon: "create:andesite_alloy"
 			id: "510B2EE25982FD73"
@@ -54,8 +55,8 @@
 				}
 			]
 			title: "工程师必备！"
-			x: -0.5d
-			y: -2.5d
+			x: 1.0d
+			y: -2.0d
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
@@ -1514,6 +1515,48 @@
 			}]
 			x: 22.5d
 			y: 1.5d
+		}
+		{
+			description: [
+				"整合包地形模组调整了安山岩的生成群系，请寻找 安山岩洞穴 群系。"
+				"可使用&4自然罗盘&r，或在有权限的情况下直接使用locate指令搜索terralith:cave/andesite_caves"
+			]
+			icon: "minecraft:andesite"
+			id: "39AF291933E03F4C"
+			min_required_tasks: 1
+			shape: "square"
+			size: 1.25d
+			subtitle: "找不到安山岩？"
+			tasks: [
+				{
+					id: "1F97BB75E7CEED51"
+					item: "minecraft:andesite"
+					type: "item"
+				}
+				{
+					id: "6D52E6963C707AD0"
+					item: {
+						Count: 1
+						id: "naturescompass:naturescompass"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			x: -0.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["02E1C25396B0F5EA"]
+			id: "24A55BD255EC03BD"
+			subtitle: "可置于工作盆过滤插槽中，限定工作盆产物对应配方"
+			tasks: [{
+				id: "214F6DEE2DAB5543"
+				item: "create:filter"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 2.5d
 		}
 	]
 	title: "&2初识机械"

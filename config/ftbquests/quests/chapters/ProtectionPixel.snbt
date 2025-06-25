@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "ProtectionPixel"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: {
 		Count: 1
 		id: "protection_pixel:hammer_helmet"
@@ -13,7 +12,7 @@
 		}
 	}
 	id: "4410FF62709D6209"
-	order_index: 7
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{

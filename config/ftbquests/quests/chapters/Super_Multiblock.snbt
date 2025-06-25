@@ -2,11 +2,11 @@
 	autofocus_id: "50711781910527C4"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "3A4DFF0EE24A58EE"
+	filename: "Super_Multiblock"
 	group: "14CFC96B5B37F10B"
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
-	order_index: 9
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{

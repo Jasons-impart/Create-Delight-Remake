@@ -185,7 +185,7 @@
 				title: "柴油动力！"
 				type: "checkmark"
 			}]
-			x: 0.0d
+			x: 2.0d
 			y: -8.0d
 		}
 		{
@@ -563,7 +563,7 @@
 				type: "advancement"
 			}]
 			title: "欢迎来到机械动力"
-			x: 0.0d
+			x: 1.25d
 			y: -5.0d
 		}
 		{
@@ -846,6 +846,60 @@
 			title: "随地大小睡"
 			x: 3.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"对于只想要一个大箱子的人来说，使用&4存储总线&r连接容器（箱子/保险箱/抽屉），然后再接上&4发电机&r并连上&4合成终端&r，就可以使用合成终端统一访问存储总线连接的所有容器。"
+				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
+				"{@pagebreak}"
+			]
+			icon: "minecraft:chest"
+			id: "14613C15CED4E5BA"
+			rewards: [
+				{
+					id: "1DEE7ECE353D06DB"
+					item: "ae2:crafting_terminal"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "7D32C3ACC3795DFD"
+					item: "ae2:white_smart_cable"
+					type: "item"
+				}
+				{
+					count: 7
+					id: "74E4729000B95426"
+					item: "ae2:storage_bus"
+					type: "item"
+				}
+				{
+					id: "34A88B382EE344BD"
+					item: "ae2:crystal_resonance_generator"
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 2.0d
+			tasks: [{
+				id: "6F6C53045817B0A9"
+				type: "checkmark"
+			}]
+			title: "想要一个大箱子"
+			x: -1.25d
+			y: -5.0d
+		}
+		{
+			dependencies: ["14613C15CED4E5BA"]
+			description: [""]
+			icon: "create:item_vault"
+			id: "2B0BD06F1DA084FF"
+			size: 2.0d
+			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
+			title: "也许我能够搭建更复杂的仓库？"
+			x: -2.0d
+			y: -8.0d
 		}
 	]
 	title: "介绍"
