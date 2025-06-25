@@ -522,6 +522,7 @@
     "tooltip.createdelight.shift_kit_black": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_kit_bronze": "§7于§b铁砧§7处使用，可改变§b悚怖钢§7系列物品§b颜色",
     "tooltip.createdelight.shift_cheese_curds": "§7放入§b奶酪模具§7中§b等待800t§7后转化为§b奶酪轮",
+    "tooltip.createdelight.shift_oven": "§7可§b批量§7烤制食物，速度§b超快！",
     "tooltip.createdelight.shift_keg": "§7可进行各种§b酒类§7的发酵，但需要注意§b温度",
     "tooltip.createdelight.ctrl_emergency_industrial_platform": "§7需放置在§by=-59§7以上，§b放入§7或在其§b上方丢下石头§7以展开平台",
     "tooltip.createdelight.ctrl_emergency_industrial_platform_block": "§7需放置在§by=-59§7以上，§b放入§7或在其§b上方丢下石头§7以展开平台",
@@ -543,6 +544,8 @@
     "tooltip.createdelight.ctrl_mould_toast": "§7放置后§b右键§7取出§b吐司",
     "tooltip.createdelight.ctrl_mould_cheese_cocoa_toast": "§7放置后§b右键§7取出§b奶酪可可吐司",
     "tooltip.createdelight.ctrl_keg": "§7在周围§b两格§7内放置§b热源§7和§b冷源§7以调整温度",
+    "tooltip.createdelight.ctrl_oven": "§7需要§b风量§7、§b热源§7和§b空间§7以烤制食物，更高效率需要更多的§b风量§7、§b热源§7和§b空间§7！",
+    "tooltip.createdelight.ctrl_oven_fan": "§7放置在§b烤箱侧面§7以增加烤箱§b风量",
 
 
     "createdelight.tip.brass": "本包的最初的黄铜配方已被修改，你需要先使用熔铸盆融化金属后才能进行合金。当然你也可以选择使用粒来合成。",

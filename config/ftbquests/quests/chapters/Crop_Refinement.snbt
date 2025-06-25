@@ -1082,8 +1082,8 @@
 				type: "item"
 			}]
 			title: ">_<好冷啊"
-			x: -5.5d
-			y: -5.5d
+			x: -6.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["24CF527B4E34E599"]
@@ -1120,7 +1120,7 @@
 				item: "ratatouille:thresher"
 				type: "item"
 			}]
-			x: -4.5d
+			x: -5.5d
 			y: -5.0d
 		}
 		{
@@ -1138,8 +1138,8 @@
 				type: "item"
 			}]
 			title: "脱模！！！"
-			x: -1.5d
-			y: -5.5d
+			x: -1.0d
+			y: -6.0d
 		}
 		{
 			dependencies: ["491266302FA9FE5D"]
@@ -1156,7 +1156,7 @@
 				type: "item"
 			}]
 			title: "骨粉漫天飞舞~"
-			x: -2.5d
+			x: -1.5d
 			y: -5.0d
 		}
 		{
@@ -2352,6 +2352,28 @@
 			}]
 			x: 7.0d
 			y: 16.5d
+		}
+		{
+			dependencies: ["491266302FA9FE5D"]
+			id: "2D408762276FD883"
+			tasks: [{
+				id: "167359D62F31BDDE"
+				item: "ratatouille:oven_fan"
+				type: "item"
+			}]
+			x: -4.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["491266302FA9FE5D"]
+			id: "2D06FF672ED6DE2E"
+			tasks: [{
+				id: "0E5D99CF214F9ACD"
+				item: "ratatouille:oven"
+				type: "item"
+			}]
+			x: -2.5d
+			y: -4.5d
 		}
 	]
 	title: "&e精加工！"
