@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "Masterful_Machinery"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: {
 		Count: 1
 		id: "tacz:modern_kinetic_gun"
@@ -16,7 +15,7 @@
 		}
 	}
 	id: "55F5367DDD56CDDE"
-	order_index: 8
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{

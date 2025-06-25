@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "AE2_Basics"
-	group: "14CFC96B5B37F10B"
+	group: "0E8A6F1771B90E2E"
 	icon: "ae2:certus_quartz_crystal"
 	id: "51CFC40E4EEC9DE8"
 	images: [
@@ -95,7 +95,7 @@
 			y: -2.0d
 		}
 	]
-	order_index: 2
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -267,7 +267,10 @@
 			y: 9.75d
 		}
 		{
-			dependencies: ["5D34BFD68D039806"]
+			dependencies: [
+				"5D34BFD68D039806"
+				"3066F516B382ED92"
+			]
 			dependency_requirement: "one_started"
 			description: [
 				"每个母岩都有其损坏程度，使用非精准采集镐子会使母岩的损坏程度降低一级。而无暇母岩无论如何都会降一级。"
@@ -277,6 +280,7 @@
 			]
 			icon: "ae2:flawless_budding_quartz"
 			id: "550924A31C631172"
+			min_required_tasks: 1
 			subtitle: "欧非检测器"
 			tasks: [
 				{
@@ -304,6 +308,10 @@
 					item: "ae2:quartz_block"
 					type: "item"
 				}
+				{
+					id: "4A0F91E1A50EFAFD"
+					type: "checkmark"
+				}
 			]
 			title: "无暇的赛特斯石英母岩"
 			x: 3.5d
@@ -321,7 +329,7 @@
 				item: "ae2:growth_accelerator"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 13.5d
 			y: 0.0d
 		}
 		{
@@ -543,6 +551,7 @@
 			dependency_requirement: "one_completed"
 			icon: "createdelight:spent_liquor_bucket"
 			id: "67C09A75769D6D7A"
+			min_required_tasks: 1
 			subtitle: "陨石废液可用于赛特斯石英的再生"
 			tasks: [
 				{
@@ -592,7 +601,7 @@
 				title: "关于线缆的选择"
 				type: "checkmark"
 			}]
-			x: 13.5d
+			x: 12.0d
 			y: 0.0d
 		}
 		{
@@ -613,7 +622,7 @@
 				type: "item"
 			}]
 			title: "ME玻璃线缆"
-			x: 13.5d
+			x: 12.0d
 			y: 1.5d
 		}
 		{
@@ -634,7 +643,7 @@
 				type: "item"
 			}]
 			title: "ME包层线缆"
-			x: 13.5d
+			x: 12.0d
 			y: 3.0d
 		}
 		{
@@ -668,7 +677,7 @@
 				}
 			]
 			title: "致密线缆"
-			x: 13.0d
+			x: 11.5d
 			y: 4.5d
 		}
 		{
@@ -680,7 +689,7 @@
 				item: "ae2:fluix_dust"
 				type: "item"
 			}]
-			x: 12.0d
+			x: 10.5d
 			y: 1.5d
 		}
 		{
@@ -699,61 +708,8 @@
 				type: "item"
 			}]
 			title: "智能线缆"
-			x: 14.0d
+			x: 12.5d
 			y: 4.5d
-		}
-		{
-			dependencies: ["3D10F05BC919CC4F"]
-			description: [
-				"实际上AE网络&e不需要控制器&r也可以运行。只要网络供能，那该网络就会有8个频道。因此你可以使用这个发电机来供能。"
-				"对于只想要一个大箱子的人来说，这无疑是最方便的方法。配合&e存储总线&r与保险箱或者抽屉一系列，你甚至&e不需要制作其他的ae元件&r便可得到一个巨大的箱子。"
-				"{@pagebreak}"
-				"下图为一个简单的实例。使用存储总线连接需要接入网络的容器即可，此处为保险箱。"
-				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
-				"{@pagebreak}"
-			]
-			id: "7634E055957264B6"
-			rewards: [
-				{
-					count: 64
-					id: "20FB53A589844D3A"
-					item: "ae2:fluix_glass_cable"
-					type: "item"
-				}
-				{
-					count: 7
-					id: "6C1181E5B22F4E4D"
-					item: "ae2:storage_bus"
-					type: "item"
-				}
-				{
-					id: "1A4CAC584E7F8815"
-					item: "ae2:crafting_terminal"
-					type: "item"
-				}
-			]
-			shape: "rsquare"
-			size: 2.0d
-			subtitle: "我只想要一个大箱子"
-			tasks: [{
-				id: "1F4DBDEFA177304F"
-				item: "ae2:crystal_resonance_generator"
-				type: "item"
-			}]
-			title: "一个AE终端访问整个仓库"
-			x: 10.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["7634E055957264B6"]
-			description: [""]
-			icon: "create:item_vault"
-			id: "40D248D71EADF4A0"
-			size: 2.0d
-			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
-			title: "是时候搭建仓库了"
-			x: 10.5d
-			y: 6.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]

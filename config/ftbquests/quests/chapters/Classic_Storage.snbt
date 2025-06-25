@@ -18,6 +18,7 @@
 	quests: [
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "1268F9D57D75D354"
 			rewards: [{
 				id: "3E56257A939EB869"
@@ -34,6 +35,7 @@
 		}
 		{
 			dependencies: ["43813D8660593458"]
+			dependency_requirement: "one_started"
 			id: "6CB83B142B7FB707"
 			rewards: [{
 				id: "4BAC4AB52A76F032"
@@ -50,6 +52,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "7A13C2C9448883AF"
 			rewards: [{
 				id: "1E61B276B6114C37"
@@ -66,6 +69,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "12CE92727FB9400F"
 			rewards: [{
 				id: "395D8244BF0FA867"
@@ -82,6 +86,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "6862190534199A59"
 			rewards: [{
 				id: "3AA3C0EF5D802422"
@@ -98,6 +103,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "461C6E26340FD370"
 			rewards: [{
 				id: "65D01AF8E79CDD8F"
@@ -114,6 +120,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "4B6F08D3619584DF"
 			rewards: [{
 				id: "08528F83A9A5602D"
@@ -130,6 +137,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "2269248762671B35"
 			rewards: [{
 				id: "08C5644A739477B2"
@@ -146,6 +154,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "29F7F2E0F7F20AF8"
 			rewards: [{
 				id: "5B4A0C789A733CF5"
@@ -162,6 +171,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "6864F65415E69D8C"
 			rewards: [{
 				id: "6B1D02A3A2A5141C"
@@ -178,6 +188,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "17D94ADAABBE71A4"
 			rewards: [{
 				id: "0A629573F1678CC6"
@@ -194,6 +205,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "641A61495195B4B5"
 			rewards: [{
 				id: "0F88615CA51CDAEF"
@@ -210,6 +222,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "69277AE7932158B1"
 			rewards: [{
 				id: "3795665AB0398F40"
@@ -226,6 +239,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "2986E897F743884A"
 			rewards: [{
 				id: "21EA8F15EBFE2047"
@@ -242,6 +256,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "1F30B72A2DA4C838"
 			rewards: [{
 				id: "623FBB2DA4A70C9E"
@@ -258,6 +273,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "0037B829D9FA68E4"
 			rewards: [{
 				id: "298CABD7CBBB8400"
@@ -274,6 +290,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "2995C14095666E1E"
 			rewards: [{
 				id: "2652FE87EC889ECD"
@@ -290,6 +307,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "6AC880AE68D2D45A"
 			rewards: [{
 				id: "26D71AA52F746305"
@@ -306,6 +324,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "12986439CFFDF46A"
 			rewards: [{
 				id: "6BE4CD83436A2719"
@@ -322,6 +341,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "2E50E758A549D655"
 			rewards: [{
 				id: "52CE71FC192EE581"
@@ -338,6 +358,7 @@
 		}
 		{
 			dependencies: ["6CB83B142B7FB707"]
+			dependency_requirement: "one_started"
 			id: "6C07D22D95B3ED64"
 			rewards: [{
 				id: "7DBCB2019C83A2B1"
@@ -354,6 +375,7 @@
 		}
 		{
 			dependencies: ["6AC880AE68D2D45A"]
+			dependency_requirement: "one_started"
 			id: "67A1D17C6AFFB582"
 			rewards: [{
 				id: "4154F15CD42CF3FB"
@@ -373,6 +395,7 @@
 				"67A1D17C6AFFB582"
 				"6AC880AE68D2D45A"
 			]
+			dependency_requirement: "one_started"
 			id: "15342988E94D8C86"
 			rewards: [{
 				id: "31E072BA55203C0A"
@@ -393,6 +416,7 @@
 				"15342988E94D8C86"
 				"6AC880AE68D2D45A"
 			]
+			dependency_requirement: "one_started"
 			id: "66D3EF87F856DEA0"
 			rewards: [{
 				id: "7331BA5ED959C0C6"
@@ -409,6 +433,7 @@
 		}
 		{
 			dependencies: ["7A13C2C9448883AF"]
+			dependency_requirement: "one_started"
 			id: "1DD9F042EAD99A45"
 			rewards: [{
 				id: "2D8EC2593D06E70E"
@@ -425,6 +450,7 @@
 		}
 		{
 			dependencies: ["12CE92727FB9400F"]
+			dependency_requirement: "one_started"
 			id: "13A62CE93299B5FB"
 			rewards: [{
 				id: "2E34A9BB00DD9AAD"
@@ -441,6 +467,7 @@
 		}
 		{
 			dependencies: ["6862190534199A59"]
+			dependency_requirement: "one_started"
 			id: "4D0A44C255CB9C5F"
 			rewards: [{
 				id: "0DE0D9A0315D59DD"
@@ -457,6 +484,7 @@
 		}
 		{
 			dependencies: ["461C6E26340FD370"]
+			dependency_requirement: "one_started"
 			id: "34C26DD5E6377E97"
 			rewards: [{
 				id: "67258640844F3A23"
@@ -473,6 +501,7 @@
 		}
 		{
 			dependencies: ["4B6F08D3619584DF"]
+			dependency_requirement: "one_started"
 			id: "1262900483306A0C"
 			rewards: [{
 				id: "168E5AA475BF53AF"
@@ -489,6 +518,7 @@
 		}
 		{
 			dependencies: ["2269248762671B35"]
+			dependency_requirement: "one_started"
 			id: "2671A9CCA9CFB94E"
 			rewards: [{
 				id: "58472A660318967A"
@@ -505,6 +535,7 @@
 		}
 		{
 			dependencies: ["2986E897F743884A"]
+			dependency_requirement: "one_started"
 			id: "0FEE33EF99BF377F"
 			rewards: [{
 				id: "5CB730082CD7CEB1"
@@ -521,6 +552,7 @@
 		}
 		{
 			dependencies: ["1F30B72A2DA4C838"]
+			dependency_requirement: "one_started"
 			id: "37E6E726631DA05A"
 			rewards: [{
 				id: "7982045A555C9C84"
@@ -537,6 +569,7 @@
 		}
 		{
 			dependencies: ["0037B829D9FA68E4"]
+			dependency_requirement: "one_started"
 			id: "01B9BC213A708345"
 			rewards: [{
 				id: "7ED5B4251C02E064"
@@ -553,6 +586,7 @@
 		}
 		{
 			dependencies: ["2E50E758A549D655"]
+			dependency_requirement: "one_started"
 			id: "703FC2BEDF4C9BC7"
 			rewards: [{
 				id: "47522F40DA97D7A5"
@@ -569,6 +603,7 @@
 		}
 		{
 			dependencies: ["29F7F2E0F7F20AF8"]
+			dependency_requirement: "one_started"
 			id: "5CDCD106FD89BAD6"
 			rewards: [{
 				id: "6B58157E62F21393"
@@ -585,6 +620,7 @@
 		}
 		{
 			dependencies: ["6864F65415E69D8C"]
+			dependency_requirement: "one_started"
 			id: "28C9A5E3525878DE"
 			rewards: [{
 				id: "7C961FE5218BA950"
@@ -601,6 +637,7 @@
 		}
 		{
 			dependencies: ["17D94ADAABBE71A4"]
+			dependency_requirement: "one_started"
 			id: "6233FB9B5DD57C91"
 			rewards: [{
 				id: "3F73A36B2081DE13"
@@ -617,6 +654,7 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
 			id: "268EA9B525679B29"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{
@@ -629,6 +667,7 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
 			id: "4ED30BB3B015BE83"
 			subtitle: "压缩抽屉的两类的版本"
 			tasks: [
@@ -648,6 +687,7 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
 			id: "2AE07B93F6BDC908"
 			tasks: [{
 				id: "3F733345FDC256C1"
@@ -663,6 +703,7 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
 			id: "5200300840269F9E"
 			tasks: [{
 				id: "5454B73CE30FC6EC"
@@ -673,6 +714,7 @@
 			y: -3.0d
 		}
 		{
+			dependency_requirement: "one_started"
 			description: ["AE的存储优先级是很重要的一个概念。当你将物品存入AE时，AE会&e遍历所有网络中的存储&r（ME驱动器，组件坞，存储总线等），然后根据他们的优先级排序，会&e优先存入优先级高的&r存储。当需要取出物品时，会&e优先取出优先级更低&r的存储里的物品。"]
 			id: "0128B2E730D8FCB3"
 			shape: "square"
@@ -687,6 +729,7 @@
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
+			dependency_requirement: "one_started"
 			id: "66BB6D3AD30D249B"
 			tasks: [
 				{
@@ -711,6 +754,7 @@
 		}
 		{
 			dependencies: ["0128B2E730D8FCB3"]
+			dependency_requirement: "one_started"
 			id: "52A034C9BC79BD54"
 			size: 1.0d
 			tasks: [{
@@ -718,11 +762,13 @@
 				item: "ae2:fluix_glass_cable"
 				type: "item"
 			}]
+			title: "使用线缆链接AE2机器（终端、总线等）"
 			x: 1.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
+			dependency_requirement: "one_started"
 			id: "1C774B6F6F594D44"
 			tasks: [
 				{
@@ -741,30 +787,35 @@
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
+			dependency_requirement: "one_started"
 			id: "4D21060946DAD49C"
 			tasks: [{
 				id: "426E0972A30D61BA"
 				item: "ae2:storage_bus"
 				type: "item"
 			}]
+			title: "ME存储总线连接非AE2的容器"
 			x: 3.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
+			dependency_requirement: "one_started"
 			id: "5E25B67858E6E950"
-			subtitle: "连接子存储网络"
 			tasks: [{
 				id: "027346D2EE52B860"
 				item: "ae2:interface"
 				type: "item"
 			}]
+			title: "ME接口可用于连接子存储网络"
 			x: 4.5d
 			y: 1.5d
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
+			dependency_requirement: "one_started"
 			id: "65877729DB7620EF"
+			subtitle: "务必试试酷炫的水晶保险库"
 			tasks: [{
 				id: "6A8023BC6226CCCE"
 				item: {
@@ -783,6 +834,7 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
+			dependency_requirement: "one_started"
 			description: [
 				"它可以将各种抽屉整合，然后它就会拥有其他抽屉的内容。"
 				"使用&e连接工具&r右击会将其存入连接工具内，此后&e点击其他抽屉&r便可将该抽屉连入连接工具记载的存储控制器。"
@@ -800,12 +852,14 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
+			dependency_requirement: "one_started"
 			description: [
 				"储存最多4096件不可堆叠物品"
 				"可以被RS和AE的外部储存面板／ME储存总线检索到，且可以通过提高优先级的方式让不可堆叠的物品直接进入军械柜，其他可堆叠的进入其他网络内的容器。"
 				"各种本体可以堆叠但因NBT而不能叠加的物品不可以进入军械柜 。（如各类方块，储罐）"
 			]
 			id: "09470B72A195876A"
+			subtitle: "存放不可堆叠物品"
 			tasks: [{
 				id: "4A1D070CCF8F0948"
 				item: "functionalstorage:armory_cabinet"
@@ -816,17 +870,20 @@
 		}
 		{
 			dependencies: ["4D21060946DAD49C"]
+			dependency_requirement: "one_started"
 			id: "43813D8660593458"
 			tasks: [{
 				id: "769D44B2B6889E1B"
 				item: "sophisticatedbackpacks:backpack"
 				type: "item"
 			}]
-			x: 4.5d
+			title: "背包也不是不可以作为一种容器"
+			x: 5.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
 			id: "28E3A94AB667BC29"
 			tasks: [{
 				id: "6FF431B1F700C128"
@@ -842,6 +899,7 @@
 				"4ED30BB3B015BE83"
 				"28E3A94AB667BC29"
 			]
+			dependency_requirement: "one_started"
 			id: "1EB43DB20717F9BE"
 			tasks: [
 				{
@@ -880,6 +938,7 @@
 				"4ED30BB3B015BE83"
 				"28E3A94AB667BC29"
 			]
+			dependency_requirement: "one_started"
 			description: [
 				"虚空升级：删除超出上限的物品"
 				"输出升级：向相邻容器输出物品"
@@ -925,6 +984,7 @@
 		}
 		{
 			dependencies: ["1C774B6F6F594D44"]
+			dependency_requirement: "one_started"
 			id: "1E2D3B6373DCB6D9"
 			tasks: [
 				{
@@ -986,7 +1046,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["52A034C9BC79BD54"]
@@ -1015,12 +1075,14 @@
 		}
 		{
 			dependencies: ["00C42597A26B0463"]
+			dependency_requirement: "one_started"
 			description: [
+				"在绑定好的无线终端中插入这张卡和缠绕态奇点，就可在无线接入点网络中有对应缠绕量子环的情况下任意距离访问网络"
 				"其实插完量子桥卡和奇点之后就可以把无线接入点拔了。"
 				"因为插无线接入点只是为了让终端绑定，绑定上了之后才能打开终端UI插卡和奇点。"
 			]
 			id: "5978CD53F52A976E"
-			subtitle: "在绑定好的无线终端中插入这张卡和缠绕态奇点，就可在无线接入点网络中有对应缠绕量子环的情况下任意距离访问网络"
+			subtitle: "任意距离访问网络"
 			tasks: [{
 				id: "4D6B72FC1DB235E9"
 				item: "ae2wtlib:quantum_bridge_card"
@@ -1031,6 +1093,7 @@
 		}
 		{
 			dependencies: ["5E25B67858E6E950"]
+			dependency_requirement: "one_started"
 			id: "41082888C1B71397"
 			tasks: [{
 				id: "183FA5540F702A98"
