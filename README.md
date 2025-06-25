@@ -37,7 +37,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
     <br />
-    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在Curseorge上下载整合包最新测试版 »</strong></a>
+    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在CurseForge上下载整合包最新测试版 »</strong></a>
     <br />
     <br />
     <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
@@ -71,20 +71,25 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
  
 ## 目录
 
-- [介绍](#介绍)
-  - [核心模组](#核心模组)
-  - [详尽指引](#详尽指引)
-  - [深度魔改](#深度魔改)
-- [上手指南](#上手指南)
-  - [配置要求](#配置要求)
-  - [安装步骤](#安装步骤)
-- [未来计划](#未来计划)
-- [社区支持](#社区支持)
-  - [Discord](#discord)
-  - [QQ](#qq)
-- [开发团队](#开发团队)
-- [支持我们](#支持我们)
-- [特别鸣谢](#特别鸣谢)
+- [机械动力：齿轮盛宴](#机械动力齿轮盛宴)
+  - [目录](#目录)
+  - [介绍](#介绍)
+    - [核心模组](#核心模组)
+      - [科技](#科技)
+      - [农业](#农业)
+      - [战斗](#战斗)
+    - [详尽指引](#详尽指引)
+    - [深度魔改](#深度魔改)
+  - [上手指南](#上手指南)
+    - [配置要求](#配置要求)
+    - [安装步骤](#安装步骤)
+  - [未来计划](#未来计划)
+  - [社区支持](#社区支持)
+    - [Discord](#discord)
+    - [QQ](#qq)
+  - [支持我们](#支持我们)
+  - [开发团队](#开发团队)
+  - [特别鸣谢](#特别鸣谢)
 
 ---
 
