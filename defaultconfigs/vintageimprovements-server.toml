@@ -24,7 +24,7 @@
 			mediumSpeedValue = 64
 			#.
 			#Allows sandpaper crafts on belt grinder, when recipes collides belt grinder recipe have priority.
-			allowSandpaperPolishingOnGrinder = true
+			allowSandpaperPolishingOnGrinder = false
 			#.
 			#Works only when "allowSandpaperPolishingOnGrinder" is true. Defines speed limits for sandpaper recipes on belt grinder.
 			#Range: 0 ~ 3
