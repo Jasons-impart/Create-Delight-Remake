@@ -66,6 +66,7 @@
 				"271924B430C340EC"
 				"1999728E6F67F8EF"
 			]
+			dependency_requirement: "one_completed"
 			description: ["也可直接通入&e液体燃料&r来进行&4加热&r，&l&n&4JEI查看&r"]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
@@ -320,6 +321,7 @@
 				"2B3F1B42F03F00F3"
 				"0F1F1C12B4CCEB7F"
 			]
+			dependency_requirement: "one_completed"
 			id: "49A6C50C6A8821CE"
 			rewards: [{
 				id: "427A150424D14904"
@@ -444,10 +446,7 @@
 			y: 12.0d
 		}
 		{
-			dependencies: [
-				"5A8FA422166974A0"
-				"16E85851D21CB6A3"
-			]
+			dependencies: ["16E85851D21CB6A3"]
 			icon: "createmetallurgy:casting_basin"
 			id: "0C68C84949B2A986"
 			rewards: [{
