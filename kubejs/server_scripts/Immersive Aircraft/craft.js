@@ -38,8 +38,8 @@ ServerEvents.recipes(e => {
         D: "immersive_aircraft:engine"
     })
     .id("immersive_aircraft:mechanical_crafting/quadrocopter")
-    // 动力合成器添加：固定旋翼机
-    e.recipes.create.mechanical_crafting("immersive_aircraft:gyrodyne", [
+    // 工作台添加：固定旋翼机
+    e.shaped("immersive_aircraft:gyrodyne", [
         " A ",
         "BCB",
         " D "
@@ -49,7 +49,7 @@ ServerEvents.recipes(e => {
         C: "immersive_aircraft:hull",
         D: "minecraft:grindstone"
     })
-    .id("immersive_aircraft:mechanical_crafting/gyrodyne")
+    .id("immersive_aircraft:gyrodyne")
     // 动力合成器添加：双翼机
     e.recipes.create.mechanical_crafting("immersive_aircraft:biplane", [
         "  A  ",
