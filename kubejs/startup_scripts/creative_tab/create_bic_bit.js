@@ -1,4 +1,4 @@
-StartupEvents.modifyCreativeTab("create_bic_bit:bicycles_bitterballen", e => {
+StartupEvents.modifyCreativeTab("create_bic_bit:tabs", e => {
   e.remove([
     'create_bic_bit:unripe_cheese',
     'create_bic_bit:waxed_unripe_cheese',

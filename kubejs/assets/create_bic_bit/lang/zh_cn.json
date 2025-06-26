@@ -84,6 +84,7 @@
     "item.create_bic_bit.kroket" : "荷兰炸肉卷",
     "item.create_bic_bit.raw_kroket" : "生荷兰肉卷",
     "item.create_bic_bit.oliebollen" : "荷兰油球",
+    "item.create_bic_bit.coated_oliebollen": "糖粉荷兰油球",
     "item.create_bic_bit.raw_fries" : "生薯条",
     "item.create_bic_bit.fries" : "薯条",
     "item.create_bic_bit.wrapped_fries" : "纸包薯条",
