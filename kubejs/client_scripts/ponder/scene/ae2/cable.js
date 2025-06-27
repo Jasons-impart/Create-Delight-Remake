@@ -9,7 +9,8 @@ Ponder.registry(event => {
             "createdelight:cable",
             "AE中的线缆",
             "createdelight:ponder_cable",
-            (scene, util) => {
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 4, 1, 1], Direction.DOWN)
@@ -34,7 +35,8 @@ Ponder.registry(event => {
             "createdelight:small_cable",
             "玻璃线缆与包层线缆",
             "createdelight:ponder_small_cable",
-            (scene, util) => {
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0], Direction.DOWN)
@@ -59,7 +61,9 @@ Ponder.registry(event => {
             "createdelight:covered_dense_cable",
             "致密包层线缆",
             "createdelight:ponder_covered_dense_cable",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 9, 0, 9], Direction.UP)
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 9, 1, 9], Direction.DOWN)

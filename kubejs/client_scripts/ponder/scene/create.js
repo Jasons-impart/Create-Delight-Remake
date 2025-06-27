@@ -7,7 +7,9 @@ Ponder.registry((event) => {
       "createdelight:sequenced_assembly",
       "序列装配",
       "createdelight:ponder_sequenced_assembly",
-      (scene, util) => {
+      
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
         scene.showBasePlate();
 
         // 设置转速(不设置默认256)

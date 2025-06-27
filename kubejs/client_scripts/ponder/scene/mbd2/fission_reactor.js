@@ -8,7 +8,9 @@ Ponder.registry(event => {
             "createdelight:fission_reactor",
             "裂变反应堆",
             "createdelight:ponder_fission_reactor",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 let textList = [

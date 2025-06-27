@@ -4,7 +4,9 @@ Ponder.registry(event => {
             "createdelight:pattern_provider",
             "样板供应器的使用",
             "createdelight:ponder_pattern_provider",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 7, 0, 7], Direction.UP)
                 scene.showBasePlate()
                 scene.idle(10)
@@ -20,7 +22,7 @@ Ponder.registry(event => {
                 scene.idle(60)
                 scene.showControls(20, [2.5, 3, 3.5], "down")
                     .rightClick()
-                    .withWrench()
+                    .withItem("create:wrench")
                 scene.idle(20)
                 scene.world.modifyBlock([2, 2, 3], state => state.with("push_direction", "down"), false)
                 scene.idle(20)
@@ -28,7 +30,6 @@ Ponder.registry(event => {
                 scene.idle(60)
                 scene.text(40, "当网络下达合成请求时……").attachKeyFrame()
                 scene.idle(20)
-
                 let iron_ingot = scene.world.createItemOnBelt(
                     [2, 1, 3],
                     Direction.down,
@@ -66,7 +67,9 @@ Ponder.registry(event => {
             "createdelight:ae_crafting_parallel",
             "自动合成的并行",
             "createdelight:ponder_ae_crafting_parallel",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([1, 0, 0, 8, 0, 8], Direction.UP)
                 scene.idle(20)
                 scene.world.showSection([1, 1, 0, 1, 1, 3], Direction.DOWN)
@@ -128,7 +131,9 @@ Ponder.registry(event => {
             "createdelight:pattern_provider_interaction",
             "样板供应器与ME接口的联动",
             "createdelight:ponder_pattern_provider_interaction",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([1, 1, 0, 4, 1, 1], Direction.DOWN)

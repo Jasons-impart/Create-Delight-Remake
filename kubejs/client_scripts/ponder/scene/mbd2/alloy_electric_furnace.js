@@ -7,7 +7,9 @@ Ponder.registry(event => {
             "createdelight:alloy_electric_furnace",
             "合金电炉",
             "createdelight:ponder_alloy_electric_furnace",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 for (let i = 0; i < 5; i++) {
