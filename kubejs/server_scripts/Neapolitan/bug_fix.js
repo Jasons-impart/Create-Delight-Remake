@@ -14,6 +14,8 @@ BlockEvents.rightClicked("neapolitan:milk_cauldron", e => {
     player.give("farmersdelight:milk_bottle")
     player.getItemInHand(hand).shrink(1)
     player.sendData("kubejs_player_playsound", { soundEvent: "minecraft:item.bottle.fill" })
+
+    e.cancel()
   }
   else if (player.getItemInHand(hand).is("farmersdelight:milk_bottle")) {
     level++
@@ -24,8 +26,9 @@ BlockEvents.rightClicked("neapolitan:milk_cauldron", e => {
       player.give("minecraft:glass_bottle")
       player.sendData("kubejs_player_playsound", { soundEvent: "minecraft:item.bottle.fill" })
     }
+
+    e.cancel()
   }
-  e.cancel()
 })
 
 BlockEvents.rightClicked("minecraft:cauldron", e => {
