@@ -346,7 +346,7 @@ ServerEvents.recipes(e => {
     ], {
         A: "megacells:sky_steel_ingot",
         B: "#forge:gems/fluix",
-        C: Item.of('ae2:energy_cell', '{internalCurrentPower:200000.0d,internalMaxPower:200000.0d}').strongNBT()
+        C: Item.of('ae2:energy_cell', '{internalCurrentPower:200000.0d}').weakNBT()
     }).id("applied_armorer:fluix_battery")
     kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:grip_sl_2"}'), [
         "   ",
