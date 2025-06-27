@@ -34,6 +34,7 @@ BlockEvents.rightClicked("neapolitan:milk_cauldron", e => {
 BlockEvents.rightClicked("minecraft:cauldron", e => {
   let { player, block, hand } = e
   if (player.getItemInHand(hand).is("farmersdelight:milk_bottle")) {
+    player.getItemInHand(hand).shrink(1)
     player.sendData("kubejs_player_playsound", { soundEvent: "minecraft:item.bottle.fill" })
     block.set("neapolitan:milk_cauldron", { level: "1" })
     e.cancel()
