@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:redbean_from_redbean_bag",
         "youkaishomecoming:tea_leaves_from_tea_leaf_bag",
         "youkaishomecoming:copper_tank_from_copper_block_stonecutting",
-        "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting"
+        "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting",
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",
@@ -72,8 +72,18 @@ ServerEvents.recipes(e => {
     e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
 
-    youkaishomecoming.drying_rack("trailandtales_delight:dried_cherry_petal", "trailandtales_delight:cherry_petal")
-    .id("youkaishomecoming:dried_cherry_petal_drying")
+    //豆浆
+    create.compacting(
+        Fluid.of("createdelight:soya_milk", 250),
+        [
+            Fluid.water(100),
+            'youkaishomecoming:soybean'
+        ]
+    ).heated().id("createdelight:compacting/soya_milk")
+    youkaishomecoming.drying_rack(
+        "trailandtales_delight:dried_cherry_petal",
+        "trailandtales_delight:cherry_petal"
+    ).id("youkaishomecoming:dried_cherry_petal_drying")
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
         .id("youkaishomecoming:pressing/clay_saucer")
 
@@ -95,11 +105,12 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:tofu',
         1.0, 200)
         .id('youkaishomecoming:tofu')
-    create.compacting('youkaishomecoming:tofu', [
-        '2x youkaishomecoming:soybean',
-        '#forge:salt'
-    ])
-        .id('youkaishomecoming:compacting/tofu')
+    create.mixing('youkaishomecoming:tofu', 
+        [
+            Fluid.of("createdelight:soya_milk", 250),
+            Fluid.of("bakeries:salt_water", 10)
+        ]
+    ).id('youkaishomecoming:compacting/tofu')
     cutting_2(e, "youkaishomecoming:mandrake_root", [["youkaishomecoming:stripped_mandrake_root", 1]])
     cutting_2(e, "youkaishomecoming:raw_lamprey", [["youkaishomecoming:raw_lamprey_fillet", 1]])
     cutting_2(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])

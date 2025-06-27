@@ -97,10 +97,12 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:genmai_tea", 0xb8a32f, true, false, false)
     simpleFluid("createdelight:green_water", 0x79ad5c, true, false, false)
     simpleFluid("createdelight:white_tea", 0xdbcfaa, true, false, false)
-    
+    simpleFluid("createdelight:soya_milk", 0xfef9c1, true, true, true)
+        .tag("forge:milk")
     textureFluid("createdelight:lubricating_oil")
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
+    textureFluid("createdelight:artificial_egg_yolk")
     textureFluid("createdelight:whipped_cream")
         .createAttributes()
         .tickDelay(10)

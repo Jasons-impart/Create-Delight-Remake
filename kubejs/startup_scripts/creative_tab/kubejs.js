@@ -28,6 +28,8 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:mint_milkshake_bucket',
         'createdelight:adzuki_milkshake_bucket',
         'createdelight:malice_solution_bucket',
+        'createdelight:artificial_egg_yolk_bucket',
+        'createdelight:soya_milk_bucket',
         'createdelight:corn_flour',
         'createdelight:whipped_cream_bowl',
         'createdelight:butter',

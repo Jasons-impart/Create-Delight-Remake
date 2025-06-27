@@ -52,32 +52,14 @@ ServerEvents.recipes(e => {
         ["forge:fruits/pomegranate", "farmersrespite:black_tea", "createcafe:pomegranate_tea"],
     ]
     milk_teas.forEach(milk_tea => {
-        e.custom({
-            type: "create:mixing",
-            heatRequirement: "heated",
-            ingredients: [
-                {
-                    tag: milk_tea[0]
-                },
-                {
-                    item: "minecraft:sugar"
-                },
-                {
-                    amount: 200,
-                    fluidTag: "forge:milk"
-                },
-                {
-                    amount: 100,
-                    fluid: milk_tea[1],
-                    nbt: {}
-                }
-            ],
-            results: [
-                {
-                    amount: 500,
-                    fluid: milk_tea[2]
-                }
+        e.recipes.create.mixing(
+            Fluid.of(milk_tea[2], 500),
+            [
+                milk_tea[0],
+                "minecraft:sugar",
+                FluidIngredients("forge:milk", 200),
+                Fluid.of(milk_tea[1], 100)
             ]
-        }).id(`createcafe:mixing/${milk_tea[2].split(":")[1]}_mixing`)
+        ).id(`createcafe:mixing/${milk_tea[2].split(":")[1]}_mixing`)
     });
 })

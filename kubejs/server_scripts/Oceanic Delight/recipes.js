@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
         [
             'oceanic_delight:shrimp_slices',
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelightcore:unfried_shrimp")
 })

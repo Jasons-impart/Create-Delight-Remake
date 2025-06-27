@@ -9,36 +9,16 @@ ServerEvents.recipes(e => {
     .id("ends_delight:mixing/chorus_fruit_wine")
     e.replaceInput({id: "ends_delight:crack_non_hatchable_dragon_egg"}, "ends_delight:non_hatchable_dragon_egg", "#forge:dragonegg")
     //紫颂果珍珠奶茶
-    e.custom({
-        type: "create:mixing",
-        heatRequirement: "heated",
-        ingredients: [
-            {
-                tag: "forge:chorus_fruits"
-            },
-            {
-                item: "ends_delight:ender_pearl_grain"
-            },
-            {
-                item: "minecraft:sugar"
-            },
-            {
-                amount: 200,
-                fluidTag: "forge:milk"
-            },
-            {
-                amount: 100,
-                fluid: "farmersrespite:black_tea",
-                nbt: {}
-            }
-        ],
-        results: [
-            {
-                amount: 500,
-                fluid: "create_central_kitchen:chorus_fruit_bubble_tea"
-            }
+    e.recipes.create.mixing(
+        Fluid.of("create_central_kitchen:chorus_fruit_bubble_tea", 500),
+        [
+            "#forge:chorus_fruits",
+            "ends_delight:ender_pearl_grain",
+            "minecraft:sugar",
+            FluidIngredients("forge:milk", 200),
+            Fluid.of("farmersrespite:black_tea", 100)
         ]
-    }).id("ends_delight:food/bubble_tea")
+    ).id("ends_delight:food/bubble_tea")
     let milktea_list = [
         "chorus_fruit_milk_tea",
         "chorus_fruit_wine"

@@ -31,8 +31,8 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         Fluid.of("createdelight:cake_batter", 1000),
         [
-            Fluid.of("minecraft:milk", 250),
-            Fluid.of("createdelight:egg_yolk", 250),
+            FluidIngredients("forge:milk", 250),
+            FluidIngredients("forge:egg_yolk", 250),
             '2x bakeries:flour',
             "minecraft:sugar"
         ]

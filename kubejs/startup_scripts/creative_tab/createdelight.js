@@ -156,6 +156,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     // 食物相关流体
     'createdelight:cake_batter_bucket',
     'createdelight:egg_yolk_bucket',
+    'createdelight:artificial_egg_yolk_bucket',
+    'createdelight:soya_milk_bucket',
     'createdelight:nut_milk_bucket',
     'createdelight:whipped_cream_bucket',
     'createdelight:vinegar_bucket',

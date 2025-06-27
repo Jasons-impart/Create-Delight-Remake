@@ -63,7 +63,7 @@ ServerEvents.recipes(e => {
         "minecraft:sugar"
     ]).id("create:mixing/ketchup_from_tomato_sauce")
     e.recipes.create.mixing(Fluid.of("create_bic_bit:mayonnaise", 250), [
-        Fluid.of("createdelight:egg_yolk", 100),
+            FluidIngredients("forge:egg_yolk", 100),
         Fluid.of("createdieselgenerators:plant_oil", 250)
     ]).id("create_bic_bit:mixing/mayonnaise_recipe")
     e.recipes.create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
@@ -95,7 +95,7 @@ ServerEvents.recipes(e => {
         [
             "#forge:cheese",
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/raw_cheese_souffle")
     e.recipes.create.mixing(
@@ -110,7 +110,7 @@ ServerEvents.recipes(e => {
         [
             '#forge:meat/processed/raw',
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/frikandel_recipe")
     e.recipes.create.mixing(
@@ -119,7 +119,7 @@ ServerEvents.recipes(e => {
             '#forge:meat/processed/raw',
             "2x bakeries:flour",
             'createdelight:butter',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/kroket_recipe")
     e.recipes.create.mixing(
@@ -128,7 +128,7 @@ ServerEvents.recipes(e => {
             '#forge:meat/processed/raw',
             'bakeries:flour',
             'createdelight:butter',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/bitterballen_recipe")
     e.recipes.create.mixing(
