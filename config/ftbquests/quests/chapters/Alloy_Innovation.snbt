@@ -152,7 +152,6 @@
 		}
 		{
 			dependencies: [
-				"395CE84DC5201E94"
 				"49A6C50C6A8821CE"
 				"783AE5D1F35263E1"
 			]
