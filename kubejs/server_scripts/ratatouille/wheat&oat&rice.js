@@ -80,8 +80,16 @@ ServerEvents.recipes(e => {
     e.recipes.create.emptying([
         Fluid.of("createdelight:egg_yolk", 1000),
         "ratatouille:egg_shell"
-    ], "alexsmobs:emu_egg"
-    ).id("create:emptying/emu_yolk")
+    ], "#forge:bigger_eggs"
+    ).id("create:emptying/more_yolk")
+    //人工蛋液适配
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:artificial_egg_yolk", 250),
+        [
+            Fluid.of("createdelight:soya_milk", 250),
+            Fluid.of("createdelightcore:slime", 30)
+        ]
+    ).id("createdelight:mixing/artificial_egg_yolk")
     // 面团相关
     // 恶魂面团
     e.recipes.kubejs.shapeless(
@@ -96,13 +104,13 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         "mynethersdelight:ghast_dough",
         [
-            Fluid.of("createdelight:egg_yolk", 100),
+            FluidIngredients("forge:egg_yolk", 100),
             "mynethersdelight:ghasmati"
         ]
     ).id("mynethersdelight:mixing/ghast_dough")
     // 燕麦面团
     e.recipes.create.mixing("vintagedelight:oat_dough", [
-        Fluid.of("createdelight:egg_yolk", 50),
+        FluidIngredients("forge:egg_yolk", 50),
         "vintagedelight:raw_oats"
     ]).id("vintagedelight:mixing/oat_dough")
     e.recipes.minecraft.smoking(

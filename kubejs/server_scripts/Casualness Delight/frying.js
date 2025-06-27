@@ -120,7 +120,7 @@ ServerEvents.recipes(e => {
         [
             "#minecraft:fishes",
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_fish")
     e.recipes.create.mixing(
@@ -128,7 +128,7 @@ ServerEvents.recipes(e => {
         [
             'minecraft:porkchop',
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_tonkatsu")
     e.recipes.create.mixing(
@@ -136,7 +136,7 @@ ServerEvents.recipes(e => {
         [
             'butchercraft:chicken_breast',
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_chicken_chip")
     e.recipes.create.mixing(
@@ -144,7 +144,7 @@ ServerEvents.recipes(e => {
         [
             'dungeonsdelight:ghast_calamari',
             'bakeries:flour',
-            Fluid.of("createdelight:egg_yolk", 100)
+            FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelight:mixing/raw_ghast_calamari")
     // 玉米热狗

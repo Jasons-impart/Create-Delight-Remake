@@ -152,12 +152,23 @@ ServerEvents.recipes(e => {
     create.splashing("bakeries:whole_wheat_dough", "create:wheat_flour").id("bakeries:splashing/whole_wheat_dough")
     fermenting(e,
         "5x create:dough",
-        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.water(250)),
+        ["createdelight:dry_yeast"]
+        .concat(multi_item("bakeries:flour", 5))
+        .concat(Fluid.water(250)),
         400
     )
     fermenting(e,
         "5x farmersdelight:wheat_dough",
-        ["createdelight:dry_yeast"].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250)),
+        ["createdelight:dry_yeast"]
+        .concat(multi_item("bakeries:flour", 5))
+        .concat(Fluid.of("createdelight:egg_yolk", 250)),
+        400
+    )
+    fermenting(e,
+        "5x farmersdelight:wheat_dough",
+        ["createdelight:dry_yeast"]
+        .concat(multi_item("bakeries:flour", 5))
+        .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
         400
     )
     fermenting(e,
@@ -165,7 +176,19 @@ ServerEvents.recipes(e => {
         [
             "createdelight:dry_yeast",
             "minecraft:sugar"
-        ].concat(multi_item("bakeries:flour", 5)).concat(Fluid.of("createdelight:egg_yolk", 250)),
+        ]
+        .concat(multi_item("bakeries:flour", 5))
+        .concat(Fluid.of("createdelight:egg_yolk", 250)),
+        400
+    )
+    fermenting(e,
+        "5x bakeries:sweet_dough",
+        [
+            "createdelight:dry_yeast",
+            "minecraft:sugar"
+        ]
+        .concat(multi_item("bakeries:flour", 5))
+        .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
         400
     )
     create.mixing(

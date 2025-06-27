@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
         [
             'bakeries:flour',
             "vintagedelight:salt_dust",
-            Fluid.of("createdelight:egg_yolk", 50)
+            FluidIngredients("forge:egg_yolk", 50)
         ]
     ).id("create:mixing/salty_dough")
 })

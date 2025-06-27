@@ -12,7 +12,6 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonegg_copper',
         'iceandfire:dragonegg_amythest',
         'iceandfire:dragonegg_silver',
-        'ends_delight:non_hatchable_dragon_egg',
         'minecraft:dragon_egg'
     ])
 })

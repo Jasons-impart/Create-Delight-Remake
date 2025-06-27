@@ -69,21 +69,11 @@ ServerEvents.recipes(e => {
             B: "createdelight:empty_popsicle"
         }
     ).id("createdelight:shaped/milk_popsicle")
-    e.custom({
-        type: "create:filling",
-        ingredients: [
-            {
-                item: "createdelight:empty_popsicle"
-            },
-            {
-                amount: 250,
-                fluidTag: "forge:milk"
-            }
-        ],
-        results: [
-            {
-                item: "youkaishomecoming:milk_popsicle"
-            }
+    e.recipes.create.filling(
+        "youkaishomecoming:milk_popsicle",
+        [
+            "createdelight:empty_popsicle",
+            FluidIngredients("minecraft:milk", 250)
         ]
-    }).id("createdelight:filling/milk_popsicle")
+    ).id("createdelight:filling/milk_popsicle")
 })

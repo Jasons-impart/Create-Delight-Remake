@@ -287,41 +287,20 @@ ServerEvents.recipes(e => {
     e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
         .id("industrial_iron_block_from_steel_ingot")
     // 甜甜圈
-    e.custom({
-        type: "create:filling",
-        ingredients: [
-            {
-                item: "frycooks_delight:plain_donut"
-            },
-            {
-                amount: 250,
-                fluidTag: "forge:milk"
-            }
-        ],
-        results: [
-            {
-                item: "create:sweet_roll"
-            }
+    e.recipes.create.filling(
+        "create:sweet_roll",
+        [
+            "frycooks_delight:plain_donut",
+            FluidIngredients("forge:milk", 250)
         ]
-    }).id("create:filling/sweet_roll")
-    e.custom({
-        type: "create:filling",
-        ingredients: [
-            {
-                item: "alexscaves:gingerbread_crumbs"
-            },
-            {
-                amount: 250,
-                fluidTag: "forge:milk"
-            }
-        ],
-        results: [
-            {
-                item: "create:sweet_roll",
-                count: 3
-            }
+    ).id("create:filling/sweet_roll")
+    e.recipes.create.filling(
+        "3x create:sweet_roll",
+        [
+            "alexscaves:gingerbread_crumbs",
+            FluidIngredients("forge:milk", 250)
         ]
-    }).id("create_oppenheimered:filling/gingerbread_sweet_roll")
+    ).id("create_oppenheimered:filling/gingerbread_sweet_roll")
     // 移动燃料接口
     // e.recipes.kubejs.shapeless(
     //     'railways:portable_fuel_interface',
