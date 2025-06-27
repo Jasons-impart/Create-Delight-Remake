@@ -8,7 +8,9 @@ Ponder.registry(event => {
             "createdelight:hydropower_station",
             "大型离心机",
             "createdelight:ponder_hydropower_station",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.world.showSection([0, 1, 0, 2, 19, 18], "down")
                 scene.idle(20)

@@ -1,10 +1,13 @@
+const $CreateSceneBuilder = Java.loadClass("com.simibubi.create.foundation.ponder.CreateSceneBuilder")
+
 Ponder.registry(event => {
     event.create("ae2:annihilation_plane")
     .scene(
         "createdelight:annihilation_plane",
         "破坏面板的使用",
         "createdelight:ponder_annihilation_plane", 
-        (scene, util) => {
+        (builder, util) => {
+            let scene = new $CreateSceneBuilder(builder)
             scene.showBasePlate()
             scene.idle(20)
             scene.world.showSection([2, 1, 1, 3, 1, 2], Direction.DOWN)
@@ -40,7 +43,9 @@ Ponder.registry(event => {
             "createdelight:annihilation_plane_filter",
             "使破坏面板破坏/收集特定的物品",
             "createdelight:ponder_annihilation_plane_filter", 
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.world.showSection([0, 1, 0, 3, 1, 2], Direction.DOWN)
                 scene.world.showSection([2, 2, 2], Direction.DOWN)

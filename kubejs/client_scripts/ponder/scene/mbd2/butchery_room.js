@@ -4,7 +4,9 @@ Ponder.registry(event => {
             "createdelight:butchery_room",
             "屠宰室",
             "createdelight:ponder_butchery_room",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 for (let i = 0; i < 4; i++) {

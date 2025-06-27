@@ -3,7 +3,9 @@ Ponder.registry(event => {
         .scene(
             "createdelight:ae_budding_quartz_obtain",
             "赛特斯石英母岩的生成",
-            (scene, util) => {
+            (builder, util) => {
+                
+                let scene = new $CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.idle(20)
@@ -40,7 +42,9 @@ Ponder.registry(event => {
         .scene(
             "createdelight:ae_budding_quartz_grow",
             "赛特斯石英母岩的生长",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.world.setBlocks([2, 1, 2], "ae2:flawed_budding_quartz")
@@ -101,7 +105,9 @@ Ponder.registry(event => {
         .scene(
             "createdelight:ae_budding_quartz_repair",
             "赛特斯石英母岩的修复",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.configureBasePlate(0, 0, 5)
                 scene.showBasePlate()
                 scene.world.setBlocks([2, 1, 2], "ae2:quartz_block")

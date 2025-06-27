@@ -3,7 +3,8 @@ Ponder.registry(event => {
         .scene("createdelight:import_export_bus",
             "输入总线与输出总线的使用",
             "createdelight:ponder_import_export_bus",
-            (scene, util) => {
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([4, 1, 3], Direction.DOWN)
@@ -81,7 +82,9 @@ Ponder.registry(event => {
         .scene("createdelight:bus_transport",
             "使用输入/输出总线配合存储总线进行物流",
             "createdelight:ponder_bus_transport",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 3, 1, 4], Direction.DOWN)

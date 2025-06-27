@@ -4,7 +4,9 @@ Ponder.registry(e => {
             "createdelight:quantum_network_bridge",
             "使用量子网桥将网络传递到远端",
             "createdelight:ponder_quantum_network_bridge",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 9, 0, 9], Direction.UP)
                 scene.idle(20)
                 scene.text(60, "量子网桥可用于网络的传输")

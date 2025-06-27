@@ -4,7 +4,9 @@ Ponder.registry(event => {
         "createdelight:molecular_assembler",
         "分子装配室的使用",
         "createdelight:ponder_molecular_assembler", 
-        (scene, util) => {
+        
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
             scene.showBasePlate()
             scene.idle(20)
             scene.world.showSection([0, 1, 0, 3, 1, 0], Direction.DOWN)

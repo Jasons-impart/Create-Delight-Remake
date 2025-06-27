@@ -7,7 +7,9 @@ Ponder.registry(event => {
             "createdelight:big_centrifuge",
             "大型离心机",
             "createdelight:ponder_big_centrifuge",
-            (scene, util) => {
+            
+            (builder, util) => {
+                let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 for (let i = 0; i < 4; i++) {

@@ -4,7 +4,8 @@ Ponder.registry(event => {
             "createdelight:interface",
             "ME接口的使用",
             "createdelight:ponder_ae_interface", 
-            (scene, util) => {
+        (builder, util) => {
+            let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([1, 1, 1, 1, 1, 3], Direction.DOWN)

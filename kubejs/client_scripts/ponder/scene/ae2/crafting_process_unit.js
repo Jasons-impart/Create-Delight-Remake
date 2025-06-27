@@ -4,7 +4,8 @@ Ponder.registry(event => {
             "createdelight:crafting_processing_unit",
             "CPU的搭建",
             "createdelight:ponder_crafting_processing_unit",
-            (scene, util) => {
+        (builder, util) => {
+            let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 8, 0, 8], Direction.DOWN)
                 scene.idle(20)
                 scene.text(40, "CPU的搭建有一定的规则……")

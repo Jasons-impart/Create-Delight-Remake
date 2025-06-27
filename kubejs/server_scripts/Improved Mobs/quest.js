@@ -1,12 +1,15 @@
 //想用任务增加难度系数的，在奖励里加一个自定义，然后加上标签：rank_难度等级，比如rank_1就会增加一级
 
+const $CrossPlatformStuff = Java.loadClass("io.github.flemmli97.improvedmobs.platform.CrossPlatformStuff")
+
 /**
  * 
  * @param {Internal.Player} player 
  * @param {number} value 
  */
 function UpdateRank(player, value) {
-    if (player.persistentData.getBoolean("disableRankChange"))
+    let diffData = $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
+    if (!diffData || diffData.paused())
         return
     value = (GetPlayerDifficulty(player) + value) < 0 ? -GetPlayerDifficulty(player) : value
     player.getServer().runCommandSilent(`/improvedmobs difficulty player ${player.username} add ${value}`)
@@ -21,7 +24,7 @@ function UpdateRank(player, value) {
  * @returns {number}
  */
 function GetPlayerDifficulty(player) {
-    return player.nbt.getCompound("ForgeCaps").getCompound("improvedmobs:player_cap").getFloat("IMDifficulty")
+    return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
 }
 
 FTBQuestsEvents.customReward(e => {
@@ -34,12 +37,9 @@ FTBQuestsEvents.customReward(e => {
             UpdateRank(e.player, -s.split("_")[1])
         }
         else if (s == "change_rank_change_state") {
-            let disableRankChange = e.player.persistentData.getBoolean("disableRankChange")
-            if (disableRankChange == null)
-                e.player.persistentData.putBoolean("disableRankChange", true)
-            else
-                e.player.persistentData.putBoolean("disableRankChange", !disableRankChange)
-            if (!disableRankChange)
+            let diffData = $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(e.player).get()
+            diffData.setPaused(!diffData.paused())
+            if (diffData.paused())
                 e.player.tell("已关闭难度变化！")
             else
                 e.player.tell("已开启难度变化！")

@@ -4,7 +4,8 @@ Ponder.registry(e => {
             "createdelight:io_port",
             "使用IO端口整理存储",
             "createdelight:ponder_io_port",
-            (scene, util) => {
+        (builder, util) => {
+            let scene = new $CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 9, 0, 9], Direction.UP)
                 scene.idle(20)
                 scene.world.showSection([3, 1, 4, 5, 1, 4], Direction.DOWN)
@@ -29,7 +30,8 @@ Ponder.registry(e => {
             "createdelight:io_port_output",
             "使用IO端口输出大量物品",
             "createdelight:ponder_io_port_output",
-            (scene, util) => {
+        (builder, util) => {
+            let scene = new $CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([1, 1, 4, 3, 1, 4], Direction.DOWN)
