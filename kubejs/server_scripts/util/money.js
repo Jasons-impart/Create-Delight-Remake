@@ -24,5 +24,7 @@ MoneyUtil.convertBaseValueToItems = function(value) {
      * @type {Internal.CoinValue}
      */
     let coinValue = $CoinValue.fromNumber(COIN_CHAIN_MAIN_VALUE, value)
-    return coinValue.getAsItemList()
+    if (coinValue.getAsItemList)
+        return coinValue.getAsItemList()
+    return ["minecraft:air"]
 }
