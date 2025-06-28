@@ -124,7 +124,6 @@ ServerEvents.recipes(e => {
     }
     create_new_age.energising("art_of_forging:vobrite_crystal", "2x art_of_forging:vobrite_crystal", 2000000)
         .id("art_of_forging:energising/vobrite_crystal")
-    createaddition.charging("art_of_forging:vobrite_crystal", "2x art_of_forging:vobrite_crystal", 2000000, 100000)
 
     {
         let iner = "art_of_forging:vobrivium_ingot"
