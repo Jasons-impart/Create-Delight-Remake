@@ -13,15 +13,6 @@ ServerEvents.recipes(e => {
         "create_new_age:reactor/reactor_heat_vent",
         "create_new_age:reactor/reactor_rod"
     ])
-    
-    // 充能和激发互相适配
-    e.forEachRecipe({type: "create_new_age:energising", mod: "create_new_age"}, r => {
-        let energy = r.json.get("energy_needed").asDouble
-        let input = r.getOriginalRecipeIngredients()
-        let output = r.getOriginalRecipeResult()
-        e.recipes.createaddition.charging(input, output, energy)
-        .id(`create_new_age:charging/${output.getId().split(":")[1]}`)
-    })
     e.forEachRecipe({type: "createaddition:charging", mod: "createaddition"}, r => {
         let energy = r.json.get("energy").asDouble
         let input = r.json.get("input").asJsonObject
@@ -31,6 +22,7 @@ ServerEvents.recipes(e => {
         e.recipes.create_new_age.energising(Ingredient.of(itemId, count), output, energy)
         .id(`createaddition:energising/${output.getId().split(":")[1]}`)
     })
+    e.remove({type: "createaddition:charging"})
     // 充能器
     e.recipes.kubejs.shaped(
         'create_new_age:energiser_t1',
@@ -70,11 +62,6 @@ ServerEvents.recipes(e => {
         .loops(3)
         .id("create_new_age:shaped/energiser_t3")
         .transitionalItem(iner)
-    e.recipes.createaddition.charging(
-        'createdelight:mmd_diamond',
-        'create_new_age:overcharged_diamond',
-        10000
-    ).id("createaddition:charging/mmd_diamond")
     e.recipes.create_new_age.energising(
         'createdelight:mmd_diamond',
         'create_new_age:overcharged_diamond',

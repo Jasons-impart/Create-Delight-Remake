@@ -153,8 +153,6 @@ ServerEvents.recipes(e => {
             .loops(1)
             .id("create:crafting/materials/electron_tube_2")
     }
-    e.recipes.createaddition.charging("create:electron_tube", "createdelight:bleak_electron_tube", 10000, 40000)
-        .id("create:charging/bleak_electron_tube")
     e.recipes.create_new_age.energising("create:electron_tube", "createdelight:bleak_electron_tube", 10000)
         .id("create:energising/bleak_electron_tube")
     e.recipes.vintageimprovements.turning("8x create:chute", "#forge:storage_blocks/iron")

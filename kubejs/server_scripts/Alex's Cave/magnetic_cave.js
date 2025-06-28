@@ -40,11 +40,6 @@ ServerEvents.recipes(e => {
         20000
     ).id("alexscaves:energising/energized_galena_neutral")
 
-    e.recipes.createaddition.charging(
-        "alexscaves:galena",
-        "alexscaves:energized_galena_neutral",
-        20000, 100000
-    ).id("alexscaves:charging/energized_galena_neutral")
 
     //充能方铅岩离心成两种方铅岩
     centrifugation(e,

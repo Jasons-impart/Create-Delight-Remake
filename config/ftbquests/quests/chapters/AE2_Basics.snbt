@@ -284,33 +284,49 @@
 			subtitle: "欧非检测器"
 			tasks: [
 				{
-					id: "7B00AB563ACF5113"
-					item: "ae2:flawless_budding_quartz"
-					type: "item"
+					icon: "ae2:quartz_block"
+					id: "694173139F49120F"
+					observe_type: 0
+					timer: 0L
+					title: "观察赛特斯石英块"
+					to_observe: "ae2:quartz_block"
+					type: "observation"
 				}
 				{
-					id: "671DBACF98EF17A8"
-					item: "ae2:flawed_budding_quartz"
-					type: "item"
+					icon: "ae2:damaged_budding_quartz"
+					id: "1DC8C57284446B78"
+					observe_type: 0
+					timer: 0L
+					title: "观察损坏的赛特斯石英母岩"
+					to_observe: "ae2:damaged_budding_quartz"
+					type: "observation"
 				}
 				{
-					id: "579ECA004FE78319"
-					item: "ae2:chipped_budding_quartz"
-					type: "item"
+					icon: "ae2:chipped_budding_quartz"
+					id: "0E35C9200054DB09"
+					observe_type: 0
+					timer: 0L
+					title: "观察开裂的赛特斯石英母岩"
+					to_observe: "ae2:chipped_budding_quartz"
+					type: "observation"
 				}
 				{
-					id: "5CA98279161AE95B"
-					item: "ae2:damaged_budding_quartz"
-					type: "item"
+					icon: "ae2:flawed_budding_quartz"
+					id: "2F5A9CE8535A3635"
+					observe_type: 0
+					timer: 0L
+					title: "观察有瑕的赛特斯石英母岩"
+					to_observe: "ae2:flawed_budding_quartz"
+					type: "observation"
 				}
 				{
-					id: "0646D022C514D0F3"
-					item: "ae2:quartz_block"
-					type: "item"
-				}
-				{
-					id: "4A0F91E1A50EFAFD"
-					type: "checkmark"
+					icon: "ae2:flawless_budding_quartz"
+					id: "5F89FA4EA9105583"
+					observe_type: 0
+					timer: 0L
+					title: "观察无瑕的赛特斯石英母岩"
+					to_observe: "ae2:flawless_budding_quartz"
+					type: "observation"
 				}
 			]
 			title: "无暇的赛特斯石英母岩"
@@ -360,10 +376,6 @@
 							}
 							{
 								Count: 1b
-								id: "createaddition:tesla_coil"
-							}
-							{
-								Count: 1b
 								id: "ae2:charger"
 							}
 						]
@@ -379,20 +391,14 @@
 			dependencies: ["550924A31C631172"]
 			icon: "ae2:certus_quartz_crystal"
 			id: "5C874A3DDFE9A50A"
+			min_required_tasks: 1
 			size: 1.5d
 			subtitle: "通过挖掘母岩上的赛特斯石英簇获取，如果赛特斯石英未长成则会获取到赛特斯石英粉"
-			tasks: [
-				{
-					id: "41B3A0DC3C8769BB"
-					item: "ae2:certus_quartz_crystal"
-					type: "item"
-				}
-				{
-					id: "68180A3AABFFF1D9"
-					item: "ae2:certus_quartz_dust"
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "41B3A0DC3C8769BB"
+				item: "ae2:certus_quartz_crystal"
+				type: "item"
+			}]
 			x: 7.0d
 			y: 0.0d
 		}
@@ -780,28 +786,40 @@
 			id: "2605D36AED802BDB"
 			tasks: [
 				{
-					id: "10D8DB455D47D22D"
-					item: "ae2:small_quartz_bud"
-					type: "item"
+					icon: "ae2:small_quartz_bud"
+					id: "3B07A38533F38D89"
+					observe_type: 0
+					timer: 0L
+					title: "观察小型赛特斯石英芽"
+					to_observe: "ae2:small_quartz_bud"
+					type: "observation"
 				}
 				{
-					id: "134359FE59DA8D45"
-					item: "ae2:medium_quartz_bud"
-					type: "item"
+					icon: "ae2:medium_quartz_bud"
+					id: "7CEACDF8E07BA6EF"
+					observe_type: 0
+					timer: 0L
+					title: "观察中型赛特斯石英芽"
+					to_observe: "ae2:medium_quartz_bud"
+					type: "observation"
 				}
 				{
-					id: "5249A65D83458715"
-					item: "ae2:large_quartz_bud"
-					type: "item"
+					icon: "ae2:large_quartz_bud"
+					id: "6D890FBCF6A13540"
+					observe_type: 0
+					timer: 0L
+					title: "观察大型赛特斯石英芽"
+					to_observe: "ae2:large_quartz_bud"
+					type: "observation"
 				}
 				{
-					id: "11F137D3D02E6CBD"
-					item: "ae2:quartz_cluster"
-					type: "item"
-				}
-				{
-					id: "0065356FE460CDFC"
-					type: "checkmark"
+					icon: "ae2:quartz_cluster"
+					id: "09A62BCE57F03A6A"
+					observe_type: 0
+					timer: 0L
+					title: "观察赛特斯石英簇"
+					to_observe: "ae2:quartz_cluster"
+					type: "observation"
 				}
 			]
 			x: 5.0d
