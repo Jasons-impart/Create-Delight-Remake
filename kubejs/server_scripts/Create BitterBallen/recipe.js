@@ -22,7 +22,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:deep_frying/froglightpearlescent",
         "create_bic_bit:deep_frying/froglightochre",
         "createdieselgenerators:basin_fermenting/golden_carrot",
-        "createdieselgenerators:basin_fermenting/golden_apple"
+        "createdieselgenerators:basin_fermenting/golden_apple",
+        "create_bic_bit:mixing/ketchup",
+        "create_bic_bit:compat/farmersdelight/raw_churros"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -55,8 +57,14 @@ ServerEvents.recipes(e => {
     )
     e.replaceInput({}, Fluid.of("create_bic_bit:frying_oil"), Fluid.of("createdieselgenerators:plant_oil"))
     e.replaceOutput({}, "create_bic_bit:unripe_cheese", "casualness_delight:raw_cheese_wheel")
-    e.replaceInput({id: "create_bic_bit:compat/farmersdelight/raw_churros_recipe2"}, "farmersdelight:wheat_dough", "bakeries:whole_wheat_dough")
-    e.replaceInput({id: "create_bic_bit:mixing/raw_churros_recipe"}, "create:wheat_flour", "bakeries:flour")
+    e.recipes.create.mixing(
+        'create_bic_bit:raw_churros',
+        [
+            "bakeries:flour",
+            "minecraft:sugar",
+            Fluid.water(100)
+        ]
+    ).id("create_bic_bit:mixing/raw_churros")
     e.recipes.create.mixing(Fluid.of("create_bic_bit:ketchup", 250), [
         Fluid.of("create_central_kitchen:tomato_sauce", 250),
         "create_bic_bit:crushed_nether_wart",
@@ -203,7 +211,7 @@ ServerEvents.recipes(e => {
     ).id("create_deepfried:filling/classic_corn_dog_from_mayo_corn_dog")
 
     e.recipes.kubejs.shaped("create_bic_bit:wrapped_coated_churros",
-        [["minecraft:air", "create_bic_bit:churros"],
+        [["minecraft:air", "create_bic_bit:coated_churros"],
         ["minecraft:air", "minecraft:paper"]])
         .id("create_bic_bit:crafting/wrapped_coated_churros")
     e.recipes.create.deploying("create_bic_bit:wrapped_coated_churros",
