@@ -23,6 +23,10 @@
 		#How early a train should be shown on the display. (Default: 1200, 1 real life minute)
 		#Range: 100 ~ 24000
 		display_lead_time = 1200
+		#[in Ticks]
+		#The interval in which the displays are updated with new information. Lower values can decrease performance and increase the network traffic, while larger values reduce the reaction speed of the displays. (Default: 50, Recommended: 50 - 100)
+		#Range: 20 ~ 200
+		display_refresh_rate = 50
 
 	["Create Railways Navigator Config".route_overlay]
 		#Scale of the route overlay UI. (Default: 0.75)
