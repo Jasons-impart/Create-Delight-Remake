@@ -9,5 +9,4 @@ JAVA="C:\\Program Files\\Java\\jdk-17\\bin\\java"
 JVM_ARGS=-Xms6G -Xmx6G -XX:+UnlockExperimentalVMOptions -XX:ThreadPriorityPolicy=0 -XX:+AlwaysPreTouch -XX:+UseG1GC -XX:InitiatingHeapOccupancyPercent=70 -XX:-G1UseAdaptiveIHOP -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:MaxTenuringThreshold=15 -XX:SurvivorRatio=6 -XX:G1MixedGCLiveThresholdPercent=60 -XX:G1MixedGCCountTarget=6
 
 # 整合包版本和推荐的JAVA版本，请勿修改
-MODPACK_VERSION=v0.3.2.4
 RECOMMENDED_JAVA_VER=17
