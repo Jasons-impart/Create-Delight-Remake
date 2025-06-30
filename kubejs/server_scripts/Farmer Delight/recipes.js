@@ -4,4 +4,7 @@ ServerEvents.recipes(e => {
         "create:emptying/compat/neapolitan/milk_bottle",
         "farmersdelight:wheat_dough"
     ])
+    remove_recipes_type(e, [
+        "farmersdelight:dough"
+    ])
 })
