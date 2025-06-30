@@ -69,6 +69,7 @@
     "block.createdelight.steel_export_bus": "钢输出总线",
     "block.createdelight.forged_steel_import_bus": "锻造钢输入总线",
     "block.createdelight.forged_steel_export_bus": "锻造钢输出总线",
+    "block.createdelight.modular_diesel_engine": "模块化柴油引擎",
     "block.createdelight.create_in": "应力输入总线",
     "block.createdelight.energy_in": "能量输入总线",
     "block.createdelight.hydropower_station_fan": "大坝扇叶",
