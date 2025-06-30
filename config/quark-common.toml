@@ -347,7 +347,7 @@
 	"Endermosh Music Disc" = true
 	"Parrot Eggs" = true
 	"Pathfinder Maps" = false
-	Pickarang = false
+	Pickarang = true
 	"Seed Pouch" = true
 	"Skull Pikes" = true
 	"Slime In A Bucket" = true
@@ -1351,7 +1351,7 @@
 	Forgotten = true
 	Foxhound = true
 	Shiba = true
-	Stonelings = false
+	Stonelings = true
 	Toretoise = false
 	Wraith = true
 
