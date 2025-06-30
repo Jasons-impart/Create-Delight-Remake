@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-  remove_recipes_id(e, [
+  remove_recipes_output(e, [
     "create_factory_logistics:network_link"
   ])
 })
