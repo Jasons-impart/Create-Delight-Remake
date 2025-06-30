@@ -1,0 +1,75 @@
+{
+  "replace": true,
+  "slots": [ "sword/blade" ],
+  "type": "tetra:basic_major_module",
+  "improvements": [
+    "tetra:sword/short_blade/",
+    "tetra:sword/shared_blade/",
+    "tetra:sword/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "materials": [ "tetra:stone/flint", "tetra:metal/", "tetra:gem/", "tetra:bone/" ],
+      "key": "knife/",
+      "aspects": {
+        "edged_weapon": 2,
+        "breakable": 2
+      },
+      "attributes": {
+        "generic.attack_speed": -1.6,
+        "generic.attack_damage": -2.5,
+        "generic.attack_knockback": -0.1
+      },
+      "tools": {
+        "blade_cut": 1
+      },
+      "durability": -20,
+      "tags": [ "forge:tools", "forge:tools/knives", "farmersdelight:straw_harvesters", "farmersdelight:tools/knives" ],
+      "extract": {
+        "primaryAttributes": {
+          "generic.attack_damage": 1
+        },
+        "tools": {
+          "cut": [ 0.7, 1 ],
+          "blade_cut": [ 1, 1 ]
+        },
+        "durability": 0.8,
+        "integrity": -1,
+        "magicCapacity": 1,
+        "glyph": { "textureLocation": "tetracelium:textures/gui/glyphs.png" },
+        "availableTextures": [ "metal", "shiny", "crude" ],
+        "models": [ { "location": "tetracelium:item/module/sword/blade/knife/" } ]
+      }
+    },
+    {
+      "key": "knife/cherry_iron_knife",
+      "aspects": {
+        "edged_weapon": 2,
+        "breakable": 2
+      },
+      "attributes": {
+        "generic.attack_speed": -1.6,
+        "generic.attack_damage": 3.5,
+        "generic.attack_knockback": -0.1
+      },
+      "tools": {
+        "blade_cut": 1
+      },
+      "durability": 721,
+      "tags": [ "forge:tools", "forge:tools/knives", "farmersdelight:straw_harvesters", "farmersdelight:tools/knives" ],
+      "integrity": -2,
+      "magicCapacity": 160,
+      "glyph": {
+        "tint": "b65a8b",
+        "textureLocation": "tetracelium:textures/gui/glyphs.png"
+      },
+      "models": [
+        {
+          "location": "tetra:item/moudle/sword/blade/knife/cherry_iron"
+        }
+      ]
+    }
+  ]
+}
+

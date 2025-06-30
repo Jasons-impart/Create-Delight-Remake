@@ -619,6 +619,26 @@
 			x: 4.0d
 			y: 0.5d
 		}
+		{
+			description: [
+				"&e本包添加了极其大量的结构，若要寻找某个结构，比起漫无目的的到处游荡，可以试试这个指南针"
+				"&e\"@\" 寻找模组，\"$\"搜寻标签"
+			]
+			id: "1CB33EA048068637"
+			subtitle: "寻找结构的好帮手"
+			tasks: [{
+				id: "43F4DFDF213411BA"
+				item: {
+					Count: 1
+					id: "explorerscompass:explorerscompass"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "探险家指南针"
+			x: 4.0d
+			y: 2.0d
+		}
 	]
 	title: "实用小玩意"
 }
