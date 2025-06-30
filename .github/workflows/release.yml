@@ -110,6 +110,11 @@ jobs:
         run: |
           mv .hmclversion.cfg hmclversion.cfg
           mv .options.txt options.txt
+      - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
+        run: |
+          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
+          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
+          grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
       - name: 写版本号文件供fancymenu展现在游戏首页
         # 格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
         # |||
@@ -211,12 +216,11 @@ jobs:
               echo "Deleting files with prefix: $prefix"
               find ${{ github.workspace }}/mods -name "${prefix}*" -exec rm {} +
             done
-      - name: 根据pack.toml的整合包版本替换服务安装脚本配置
-        env:
-          MODPACK: ${{ steps.read-version.outputs.value }}
+      - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
         run: |
-          sed -i "s/^MODPACK_VERSION=.*/MODPACK_VERSION=$MODPACK/" ${{ github.workspace }}/variables.txt
-          grep '^MODPACK_VERSION=' ${{ github.workspace }}/variables.txt
+          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
+          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
+          grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
       - name: 下载forge与ServerStarterJar
         env:
           MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
@@ -347,6 +351,9 @@ jobs:
           rm -f patch/pack.toml
           rm -f patch/index.toml
           rm -f patch/client_jvm_args.example.txt
+
+          # 更新更好的兼容检测配置
+          cp config/bcc-common.toml patch/config/
 
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
