@@ -23,31 +23,32 @@ ServerEvents.recipes(e => {
         "bakeries:blender"
     ])
     remove_recipes_id(e, [
-       "farmersdelight:wheat_dough_from_eggs",
-       "create:crafting/appliances/dough",
-       "create:splashing/wheat_flour",
-       "create:mixing/dough_by_mixing",
-       "bakeries:blender/bottle_cream",
-       "bakeries:blender/butter_cube",
-       "bakeries:bottle_milk",
-       "bakeries:butter_cube",
-       "bakeries:fermentation_tank",
-       "bakeries:black_white_concrete",
-       "bakeries:flour_sieve",
-       "bakeries:blender/meat_floss",
-       "bakeries:blender",
-       "bakeries:oven",
-       "bakeries:salt",
-       "bakeries:pineapple_bun_dough",
-       "bakeries:meat_floss_bread_dough",
-       "bakeries:salt_croissant_dough",
-       "bakeries:berry_bread_dough",
-       "bakeries:mould_toast_dough",
-       "bakeries:cheese_cocoa_toast_dough",
-       "bakeries:brown_sugar_roll_dough",
-       "bakeries:focaccia",
-       "bakeries:drink_cup"
-       
+        "farmersdelight:wheat_dough_from_eggs",
+        "create:crafting/appliances/dough",
+        "create:splashing/wheat_flour",
+        "create:mixing/dough_by_mixing",
+        "bakeries:blender/bottle_cream",
+        "bakeries:blender/butter_cube",
+        "bakeries:bottle_milk",
+        "bakeries:butter_cube",
+        "bakeries:fermentation_tank",
+        "bakeries:black_white_concrete",
+        "bakeries:flour_sieve",
+        "bakeries:blender/meat_floss",
+        "bakeries:blender",
+        "bakeries:oven",
+        "bakeries:salt",
+        "bakeries:pineapple_bun_dough",
+        "bakeries:meat_floss_bread_dough",
+        "bakeries:salt_croissant_dough",
+        "bakeries:berry_bread_dough",
+        "bakeries:mould_toast_dough",
+        "bakeries:cheese_cocoa_toast_dough",
+        "bakeries:brown_sugar_roll_dough",
+        "bakeries:focaccia",
+        "bakeries:drink_cup",
+        "bakeries:soak_coffee_cut_cake_base"
+
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -64,12 +65,15 @@ ServerEvents.recipes(e => {
         "bakeries:coffee_bean"
     ])
     e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
-    
-    
+
+
     //展示框
-    e.replaceInput({ id: "bakeries:menu_blcok"}, "minecraft:gray_wool", "minecraft:item_frame")
+    e.replaceInput({ id: "bakeries:menu_blcok" }, "minecraft:gray_wool", "minecraft:item_frame")
+    
+    e.replaceInput({}, "bakeries:bottle_cream", "bakeries:foamed_cream")
+    e.replaceInput({}, "bakeries:cake_paste_bucket", "createdelight:cake_batter_bucket")
     create.mixing("4x bakeries:honey_butter", [FluidIngredients("forge:honey", 250), "2x createdelight:butter"])
-    .id("bakeries:mixing/honey_butter")
+        .id("bakeries:mixing/honey_butter")
     // 模具
     vintageimprovements.curving(
         'bakeries:mould',
@@ -153,22 +157,22 @@ ServerEvents.recipes(e => {
     fermenting(e,
         "5x create:dough",
         ["createdelight:dry_yeast"]
-        .concat(multi_item("bakeries:flour", 5))
-        .concat(Fluid.water(250)),
+            .concat(multi_item("bakeries:flour", 5))
+            .concat(Fluid.water(250)),
         400
     )
     fermenting(e,
         "5x farmersdelight:wheat_dough",
         ["createdelight:dry_yeast"]
-        .concat(multi_item("bakeries:flour", 5))
-        .concat(Fluid.of("createdelight:egg_yolk", 250)),
+            .concat(multi_item("bakeries:flour", 5))
+            .concat(Fluid.of("createdelight:egg_yolk", 250)),
         400
     )
     fermenting(e,
         "5x farmersdelight:wheat_dough",
         ["createdelight:dry_yeast"]
-        .concat(multi_item("bakeries:flour", 5))
-        .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
+            .concat(multi_item("bakeries:flour", 5))
+            .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
         400
     )
     fermenting(e,
@@ -177,8 +181,8 @@ ServerEvents.recipes(e => {
             "createdelight:dry_yeast",
             "minecraft:sugar"
         ]
-        .concat(multi_item("bakeries:flour", 5))
-        .concat(Fluid.of("createdelight:egg_yolk", 250)),
+            .concat(multi_item("bakeries:flour", 5))
+            .concat(Fluid.of("createdelight:egg_yolk", 250)),
         400
     )
     fermenting(e,
@@ -187,8 +191,8 @@ ServerEvents.recipes(e => {
             "createdelight:dry_yeast",
             "minecraft:sugar"
         ]
-        .concat(multi_item("bakeries:flour", 5))
-        .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
+            .concat(multi_item("bakeries:flour", 5))
+            .concat(Fluid.of("createdelight:artificial_egg_yolk", 250)),
         400
     )
     create.mixing(
@@ -208,15 +212,15 @@ ServerEvents.recipes(e => {
         .processingTime(200)
         .id("bakeries:mixing/meat_floss")
     e.recipes.minecraft.smoking("minecraft:bread", "bakeries:whole_wheat_dough", 0.7, 100)
-       .id("bakeries:bread_from_whole_wheat_dough")
+        .id("bakeries:bread_from_whole_wheat_dough")
 
     e.recipes.kubejs.shaped(
         'minecraft:bread',
         [
             "AAA"
         ], {
-            A: "minecraft:wheat"
-        }
+        A: "minecraft:wheat"
+    }
     ).id("minecraft:shapeless/bread")
     //酥皮
     kubejs.shapeless(
@@ -229,23 +233,23 @@ ServerEvents.recipes(e => {
 
     //面胚
     {
-    let iner = "bakeries:sweet_dough"
-    create.sequenced_assembly("4x bakeries:round_bread_dough", iner, [
-        vintageimprovements.curving(iner, iner).mode(2),
-        create.cutting(iner, iner)
-    ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("bakeries:sequenced_assembly/round_bread_dough")
+        let iner = "bakeries:sweet_dough"
+        create.sequenced_assembly("4x bakeries:round_bread_dough", iner, [
+            vintageimprovements.curving(iner, iner).mode(2),
+            create.cutting(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequenced_assembly/round_bread_dough")
     }
     vintageimprovements.curving("2x bakeries:bagel_dough", "bakeries:sweet_dough").mode(1).id("bakeries:curving/bagel_dough")
     vintageimprovements.curving("2x bakeries:whole_wheat_bagel_dough", "bakeries:whole_wheat_dough").mode(1).id("bakeries:curving/whole_wheat_bagel_dough")
     {
         let iner = "ratatouille:salty_dough"
-        create.sequenced_assembly("2x bakeries:ciabatta_dough", iner, 
+        create.sequenced_assembly("2x bakeries:ciabatta_dough", iner,
             [
-            vintageimprovements.curving(iner, iner).mode(1),
-            create.cutting(iner, iner)
+                vintageimprovements.curving(iner, iner).mode(1),
+                create.cutting(iner, iner)
             ]
         )
             .loops(1)
@@ -256,11 +260,11 @@ ServerEvents.recipes(e => {
     createaddition.rolling("createdelight:puff_pastry", "bakeries:croissant_dough").id("bakeries:rolling/croissant_dough")
     createaddition.rolling("ratatouille:salty_dough", "bakeries:baguette_dough").id("bakeries:rolling/baguette_dough")
     kubejs.shapeless(
-       "bakeries:berry_bread_dough",
-       [
-           "bakeries:round_bread_dough",
-           "minecraft:sweet_berries"
-       ] 
+        "bakeries:berry_bread_dough",
+        [
+            "bakeries:round_bread_dough",
+            "minecraft:sweet_berries"
+        ]
     ).id("bakeries:berry_bread_dough_manual_only")
     create.deploying(
         "bakeries:berry_bread_dough",
@@ -295,7 +299,7 @@ ServerEvents.recipes(e => {
         [
             "bakeries:round_bread_dough",
             "bakeries:meat_floss"
-        ] 
+        ]
     ).id("bakeries:deploying/meat_floss_bread_dough")
     kubejs.shapeless(
         'bakeries:pineapple_bun_dough',
@@ -307,15 +311,15 @@ ServerEvents.recipes(e => {
     ).id("bakeries:pineapple_bun_dough_manual_only")
     {
         let iner = "bakeries:round_bread_dough"
-        create.sequenced_assembly('bakeries:pineapple_bun_dough', 'bakeries:round_bread_dough', 
+        create.sequenced_assembly('bakeries:pineapple_bun_dough', 'bakeries:round_bread_dough',
             [
                 create.deploying(iner, [iner, 'createdelight:butter']),
                 create.deploying(iner, [iner, "minecraft:sugar"])
             ]
         )
-           .loops(1)
-           .transitionalItem(iner)
-           .id("bakeries:sequenced_assembly/pineapple_bun_dough")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequenced_assembly/pineapple_bun_dough")
     }
     kubejs.shapeless(
         'bakeries:brown_sugar_roll_dough',
@@ -330,7 +334,7 @@ ServerEvents.recipes(e => {
         create.sequenced_assembly('bakeries:brown_sugar_roll_dough', iner,
             [
                 create.deploying(iner, [iner, 'createdelight:butter']),
-                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"])   
+                create.deploying(iner, [iner, "bakeries:brown_sugar_cube"])
             ]
         )
             .loops(1)
@@ -350,7 +354,7 @@ ServerEvents.recipes(e => {
             "bakeries:mould_toast_dough",
             "3x ad_astra:cheese",
             "3x ratatouille:cocoa_powder"
-        ] 
+        ]
     ).id("bakeries:cheese_cocoa_toast_dough_manual_only")
     {
         let iner = "bakeries:mould"
@@ -394,7 +398,7 @@ ServerEvents.recipes(e => {
     }
     {
         let iner = 'bakeries:croissant'
-        create.sequenced_assembly('2x bakeries:tomato_cheese_croissant_sandwich', iner, 
+        create.sequenced_assembly('2x bakeries:tomato_cheese_croissant_sandwich', iner,
             [
                 create.cutting(iner, iner),
                 create.deploying(iner, [iner, '#forge:vegetables/tomato']),
@@ -470,14 +474,14 @@ ServerEvents.recipes(e => {
         C: "frycooks_delight:canola_oil",
         D: "ratatouille:salty_dough"
     })
-    .id("bakeries:focaccia")
+        .id("bakeries:focaccia")
     create.mixing("bakeries:focaccia_dough", [
         Fluid.of("createdieselgenerators:plant_oil", 250),
         "#forge:vegetables/onion",
         "#forge:vegetables/tomato",
         "ratatouille:salty_dough"
     ])
-    .id("bakeries:mixing/focaccia")
+        .id("bakeries:mixing/focaccia")
     //其他
     vintageimprovements.vacuumizing(
         [
@@ -503,8 +507,52 @@ ServerEvents.recipes(e => {
     ).id("bakeries:cutting/cheese_cocoa_toast")
     create.cutting(
         '6x bakeries:country_bread_slice',
-        'bakeries:country_bread' 
+        'bakeries:country_bread'
     ).id("bakeries:cutting/country_bread")
+
+    create.filling("bakeries:paper_cup_cake_paste", ["bakeries:paper_cup", Fluid.of("createdelight:cake_batter", 250)])
+        .id("bakeries:filling/paper_cup_cake_paste")
+
+    baking(e, "bakeries:paper_cup_cake_paste", "bakeries:cup_cake", 1, "food", 100)
+
+    cutting_1(e, "ratatouille:cake_base", [["bakeries:cut_cake_base", 2]])
+    create.filling("bakeries:soak_coffee_cut_cake_base", ["bakeries:cut_cake_base", Fluid.of("createdelight:espresso_fluid", 250)])
+        .id("bakeries:filling/soak_coffee_cut_cake_base")
+    create.compacting("bakeries:foamed_cream", [Fluid.of("createdelight:whipped_cream", 250)])
+        .heated()
+        .id("bakeries:compacting/foamed_cream")
+    create.mixing("2x bakeries:cheese_cream", ["bakeries:foamed_cream", "#forge:cheese"])
+        .id("bakeries:mixing/cheese_cream")
+    create.filling("bakeries:crispy_dough", ["createdelight:oil_dough", FluidIngredients("forge:milk", 250)])
+        .id("bakeries:filling/crispy_dough")
+    create.cutting("8x bakeries:scone_dough", "bakeries:crispy_dough")
+        .id("bakeries:cutting/scone_dough")
+    {
+        let iner = "bakeries:mould"
+        create.sequenced_assembly("bakeries:mould_pound_cake_paste", "bakeries:mould", [
+            create.filling(iner, [iner, Fluid.of("createdelight:cake_batter", 500)]),
+            create.deploying(iner, [iner, "#forge:animal_oil"])
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("bakeries:sequence_assembly/mould_pound_cake_paste")
+    }
+    
+    baking(e, "bakeries:mould_pound_cake_paste", "bakeries:mould_pound_cake", 1, "food", 100)
+    
+    {
+        let iner = "bakeries:mould_two"
+        create.sequenced_assembly("bakeries:mould_carrot_cake_paste", "bakeries:mould_two", [
+            create.filling(iner, [iner, Fluid.of("createdelight:cake_batter", 500)]),
+            create.deploying(iner, [iner, "bakeries:brown_sugar_cube"]),
+            create.deploying(iner, [iner, "minecraft:carrots"])
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("bakeries:sequence_assembly/mould_carrot_cake_paste")
+    }
+    
+    baking(e, "bakeries:mould_carrot_cake_paste", "bakeries:mould_carrot_cake", 1, "food", 100)
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')

@@ -5,4 +5,6 @@ LootJS.modifiers(e => {
     .replaceLoot("youkaishomecoming:coffee_berries", "createcafe:coffee_fruit")
     e.addBlockLootModifier("youkaishomecoming:wild_redbean")
     .replaceLoot("youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
+    e.addBlockLootModifier("youkaishomecoming:wild_cucumber")
+    .replaceLoot("youkaishomecoming:cucumber", "vintagedelight:cucumber")
 })

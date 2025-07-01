@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:milk_popsicle",
         [
             "createdelight:empty_popsicle",
-            FluidIngredients("minecraft:milk", 250)
+            FluidIngredients("forge:milk", 250)
         ]
     ).id("createdelight:filling/milk_popsicle")
 })
