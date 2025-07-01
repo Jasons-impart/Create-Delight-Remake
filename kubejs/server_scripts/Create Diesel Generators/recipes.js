@@ -72,7 +72,7 @@ ServerEvents.recipes((e) => {
       .loops(1)
       .id("createdieselgenerators:crafting/diesel_engine");
   let iner2 = "createdelight:incomplete_large_diesel_engine";
-  e.recipes.create.sequenced_assembly("createdieselgenerators:large_diesel_engine", "createdieselgenerators:diesel_engine",
+  e.recipes.create.sequenced_assembly("createdelight:modular_diesel_engine", "createdieselgenerators:diesel_engine",
       [
         e.recipes.create.deploying(iner2, [iner2, "#forge:plates/bronze"]),
         e.recipes.create.pressing(iner2, iner2),
