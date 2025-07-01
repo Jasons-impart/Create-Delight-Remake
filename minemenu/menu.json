@@ -1,0 +1,124 @@
+{
+  "main": {
+    "0": {
+      "title": "打开钱包",
+      "icon": {
+        "stack": "{Count:1b,id:\"lightmanscurrency:wallet_leather\"}"
+      },
+      "action": {
+        "key": {
+          "key": "key.lightmanscurrency.open_wallet",
+          "toggle": false
+        }
+      }
+    },
+    "1": {
+      "title": "打开背包",
+      "icon": {
+        "stack": "{Count:1b,id:\"sophisticatedbackpacks:backpack\"}"
+      },
+      "action": {
+        "key": {
+          "key": "keybind.sophisticatedbackpacks.open_backpack",
+          "toggle": false
+        }
+      }
+    },
+    "2": {
+      "title": "打开AE无线终端",
+      "icon": {
+        "stack": "{Count:1b,id:\"ae2:wireless_crafting_terminal\"}"
+      },
+      "action": {
+        "key": {
+          "key": "key.ae2.wireless_terminal",
+          "toggle": false
+        }
+      }
+    },
+    "3": {
+      "title": "打开交易终端",
+      "icon": {
+        "stack": "{Count:1b,id:\"lightmanscurrency:portable_gem_terminal\"}"
+      },
+      "action": {
+        "command": {
+          "command": "/lcterminal",
+          "clipboard": false
+        }
+      }
+    },
+    "4": {
+      "title": "打开全息球",
+      "icon": {
+        "stack": "{Count:1b,id:\"tetra:basic_workbench\"}"
+      },
+      "action": {
+        "command": {
+          "command": "/kubejs custom_command openholo",
+          "clipboard": false
+        }
+      }
+    },
+    "5": {
+      "title": "开关武器挖掘方块的能力",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:netherite_sword\",tag:{Damage:0}}"
+      },
+      "action": {
+        "key": {
+          "key": "keybinds.bettercombat.toggle_mine_with_weapons",
+          "toggle": false
+        }
+      }
+    },
+    "6": {
+      "title": "离开载具（沉浸式飞机）",
+      "icon": {
+        "stack": "{Count:1b,id:\"immersive_aircraft:cargo_airship\"}"
+      },
+      "action": {
+        "key": {
+          "key": "key.immersive_aircraft.dismount",
+          "toggle": false
+        }
+      }
+    },
+    "7": {
+      "title": "打开地图",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:filled_map\"}"
+      },
+      "action": {
+        "key": {
+          "key": "gui.xaero_open_map",
+          "toggle": false
+        }
+      }
+    },
+    "8": {
+      "title": "打开任务",
+      "icon": {
+        "stack": "{Count:1b,id:\"ftbquests:book\"}"
+      },
+      "action": {
+        "key": {
+          "key": "key.ftbquests.quests",
+          "toggle": false
+        }
+      }
+    },
+    "9": {
+      "title": "传送回home",
+      "icon": {
+        "stack": "{Count:1b,id:\"minecraft:compass\"}"
+      },
+      "action": {
+        "command": {
+          "command": "/home",
+          "clipboard": false
+        }
+      }
+    }
+  }
+}
