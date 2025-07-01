@@ -71,7 +71,7 @@
 				item: "art_of_forging:vobrite_crystal"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 10.5d
 			y: 2.0d
 		}
 		{
@@ -91,7 +91,7 @@
 				item: "art_of_forging:vobrivium_ingot"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 9.5d
 			y: 4.0d
 		}
 		{
@@ -143,7 +143,7 @@
 				}
 			]
 			title: "龙钢"
-			x: 11.5d
+			x: 13.5d
 			y: 4.0d
 		}
 		{
@@ -155,7 +155,7 @@
 				item: "art_of_forging:fragment_of_eden"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 10.5d
 			y: 6.0d
 		}
 		{
@@ -180,7 +180,7 @@
 				type: "item"
 			}]
 			title: "&5终末钢&r"
-			x: 7.5d
+			x: 9.5d
 			y: 8.0d
 		}
 		{
@@ -421,6 +421,7 @@
 			dependencies: [
 				"22696D978F252230"
 				"73663A1DAA730035"
+				"3878166DA8BD9E19"
 			]
 			description: [
 				"我将两把武器随手放在一旁，翻阅着残破的恶魔典籍。忽然，一阵晕眩感席卷全身，脑海中仿佛跑马灯般闪现无数张牙舞爪的黑影，那些影子嘶吼着，挣扎着，仿佛下一秒就要将我彻底吞噬。"
@@ -921,7 +922,7 @@
 				item: "minecraft:dragon_breath"
 				type: "item"
 			}]
-			x: 7.5d
+			x: 9.5d
 			y: 6.0d
 		}
 		{
@@ -946,7 +947,7 @@
 				type: "item"
 			}]
 			title: "&3悚怖钢&r"
-			x: 11.5d
+			x: 13.5d
 			y: 8.0d
 		}
 		{
@@ -959,7 +960,7 @@
 				type: "item"
 			}]
 			title: "悚怖之心"
-			x: 11.5d
+			x: 13.5d
 			y: 6.0d
 		}
 		{
@@ -971,7 +972,7 @@
 				item: "iceandfire:dread_shard"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 14.5d
 			y: 6.0d
 		}
 		{
@@ -1050,7 +1051,7 @@
 				}
 				type: "item"
 			}]
-			x: 16.0d
+			x: 18.0d
 			y: 2.0d
 		}
 		{
@@ -1061,7 +1062,7 @@
 				item: "createdelight:bleak_electron_tube"
 				type: "item"
 			}]
-			x: 15.0d
+			x: 17.0d
 			y: 2.0d
 		}
 		{
@@ -1072,7 +1073,7 @@
 				item: "vintageimprovements:redstone_module"
 				type: "item"
 			}]
-			x: 14.0d
+			x: 16.0d
 			y: 2.0d
 		}
 		{
@@ -1087,7 +1088,7 @@
 				item: "createaddition:electrum_ingot"
 				type: "item"
 			}]
-			x: 15.5d
+			x: 17.5d
 			y: 0.0d
 		}
 		{
@@ -1413,7 +1414,7 @@
 				item: "art_of_forging:forged_steel_ingot"
 				type: "item"
 			}]
-			x: 9.5d
+			x: 11.5d
 			y: 0.0d
 		}
 		{
@@ -1425,7 +1426,7 @@
 				item: "ad_astra:calorite_ingot"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 14.5d
 			y: 2.0d
 		}
 		{
@@ -1470,6 +1471,7 @@
 			dependencies: ["6A55E5F7C7309D1D"]
 			description: ["由多股弓弦捻成的复合弓弦有着远超普通弓弦的韧性，这是我能制作的&e最强力的弓弦&r了"]
 			id: "260FA35907D280A1"
+			subtitle: "在卷轴配方页面翻一下就能找到"
 			tasks: [{
 				id: "461F57FC52992CC2"
 				item: {
@@ -1538,7 +1540,7 @@
 							value: "iceandfire:scales/dragon"
 						}
 					}
-					title: "Any #iceandfire:scales/dragon"
+					title: "龙鳞"
 					type: "item"
 				}
 				{
@@ -1560,7 +1562,7 @@
 				item: "art_of_forging:fragment_of_eden"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 12.5d
 			y: 6.0d
 		}
 		{
@@ -1580,7 +1582,7 @@
 				type: "item"
 			}]
 			title: "龙血"
-			x: 11.5d
+			x: 13.5d
 			y: 2.0d
 		}
 		{
@@ -1592,7 +1594,7 @@
 				item: "art_of_forging:heart_of_ender"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 8.5d
 			y: 6.0d
 		}
 		{
@@ -1604,7 +1606,7 @@
 				title: "陨石溶液"
 				type: "checkmark"
 			}]
-			x: 17.0d
+			x: 19.0d
 			y: 2.0d
 		}
 		{
@@ -1631,7 +1633,7 @@
 				type: "item"
 			}]
 			title: "超导金属"
-			x: 15.5d
+			x: 17.5d
 			y: 4.0d
 		}
 		{
@@ -1715,8 +1717,49 @@
 				type: "item"
 			}]
 			title: "&0纯粹黑暗&r"
-			x: 9.5d
+			x: 11.5d
 			y: 8.5d
+		}
+		{
+			dependencies: ["0EA01933D80DD801"]
+			description: ["我尝试将伊甸碎片嵌入剑柄之中，瞬间短剑便被邪恶的力量充盈。虽然&e攻击距离大幅缩短&r，但那散发着黑雾的刃锋却锋利无比，仿佛能直接撕裂灵魂。"]
+			id: "3878166DA8BD9E19"
+			tasks: [{
+				id: "23CD5074932BBC53"
+				item: {
+					Count: 1
+					id: "tetra:modular_sword"
+					tag: {
+						Damage: 0
+						"sword/blade": "sword/euclidean_dagger"
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4178108D392476B9"]
+			description: ["我将剑刃刺入&e凋灵骷髅&r的心脏，其心脏碎块自发汇集成一块散发出邪恶气息的碎片，或许可以用它打造一把&4锋利而致命的短剑&r。"]
+			hide_dependency_lines: true
+			id: "0EA01933D80DD801"
+			rewards: [{
+				id: "28D50FB32B602D54"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "100难度以上击杀凋灵骷髅可获得，任意难度下击杀凋灵也可获得"
+			tasks: [{
+				id: "6D425F3222F1226F"
+				item: "art_of_forging:fragment_of_eden"
+				type: "item"
+			}]
+			title: "&4凋零之遗&r"
+			x: 6.0d
+			y: 3.75d
 		}
 	]
 	title: "&3锻造之艺"

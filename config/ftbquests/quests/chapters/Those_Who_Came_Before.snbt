@@ -86,131 +86,11 @@
 		}
 		{
 			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: -3.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: -2.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
+			image: "minecraft:block/grass_block_snow"
 			rotation: 0.0d
 			width: 1.17d
 			x: -1.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 0.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 1.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 2.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 3.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 4.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 5.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 6.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 7.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 8.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 9.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 10.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 11.0d
-			y: -2.5d
-		}
-		{
-			height: 1.17d
-			image: "minecraft:block/grass_block_side"
-			rotation: 0.0d
-			width: 1.17d
-			x: 12.0d
-			y: -2.5d
+			y: -3.5d
 		}
 		{
 			height: 1.17d
@@ -2825,6 +2705,158 @@
 			x: -2.0d
 			y: 10.5d
 		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: -2.0d
+			y: -3.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 9.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: -3.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 2.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 5.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 7.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 8.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 4.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 1.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_side"
+			rotation: 0.0d
+			width: 1.17d
+			x: 11.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_side"
+			rotation: 0.0d
+			width: 1.17d
+			x: 10.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: 6.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: -4.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/dirt"
+			rotation: 0.0d
+			width: 1.17d
+			x: -2.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/dirt"
+			rotation: 0.0d
+			width: 1.17d
+			x: -1.0d
+			y: -2.5d
+		}
+		{
+			height: 1.0d
+			image: "eclipticseasons:block/snowy_tall_grass_top"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_side"
+			rotation: 0.0d
+			width: 1.17d
+			x: 12.0d
+			y: -2.5d
+		}
 	]
 	order_index: 1
 	quest_links: [ ]
@@ -3448,14 +3480,35 @@
 			dependencies: ["3821026AD7352739"]
 			description: ["&e原版&r的盾牌可用于改造"]
 			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "03664386DA7FE6DC"
 			shape: "rsquare"
-			tasks: [{
-				advancement: "tetra:upgrades/shield_upgrade"
-				criterion: ""
-				id: "3A5F987B65784F7E"
-				type: "advancement"
-			}]
+			tasks: [
+				{
+					advancement: "tetra:upgrades/shield_upgrade"
+					criterion: ""
+					id: "3A5F987B65784F7E"
+					type: "advancement"
+				}
+				{
+					id: "2ADEC2908A50664E"
+					item: {
+						Count: 1
+						id: "minecraft:shield"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "模块化盾牌"
 			x: 5.5d
 			y: -1.5d
 		}
@@ -3543,17 +3596,34 @@
 			hide_dependency_lines: true
 			id: "6B19B1391FB0509C"
 			shape: "rsquare"
-			tasks: [{
-				advancement: "tetra:upgrades/toolbelt"
-				criterion: ""
-				id: "4E98F97A2AB60256"
-				type: "advancement"
-			}]
+			tasks: [
+				{
+					advancement: "tetra:upgrades/toolbelt"
+					criterion: ""
+					id: "4E98F97A2AB60256"
+					type: "advancement"
+				}
+				{
+					id: "73A5C8481EE6B759"
+					item: {
+						Count: 1
+						id: "tetra:modular_toolbelt"
+						tag: {
+							id: "449e11a1-29af-49c0-8df4-a16401c1c051"
+							"toolbelt/belt": "toolbelt/belt"
+							"toolbelt/belt_material": "belt/rope"
+							"toolbelt/slot1": "toolbelt/strap_slot1"
+							"toolbelt/strap_slot1_material": "strap1/leather"
+						}
+					}
+					type: "item"
+				}
+			]
 			x: 6.5d
 			y: -1.5d
 		}
 		{
-			description: ["如果你是tetra新手，可以试试跟随这条任务线熟悉这个模组，希望者对你有所帮助"]
+			description: ["如果你是Tetra新手，可以试试跟随这条任务线熟悉这个模组，希望者对你有所帮助"]
 			icon: {
 				Count: 1
 				id: "tetra:modular_double"
@@ -3571,7 +3641,6 @@
 			id: "48DABAA5BA34BE62"
 			shape: "gear"
 			size: 1.5d
-			subtitle: "这里是tetra的任务线"
 			tasks: [{
 				id: "6B9A4AE3FD428E57"
 				type: "checkmark"
@@ -3586,10 +3655,7 @@
 			description: [
 				"&e锤子&r为tetra中独有且最重要的一项工具"
 				"它是tetra体系中加工各种工具的基础"
-				"用两个 &6木板 "
-				"和两个 &6木棍 &6木板"
-				"    &6木棍"
-				"可以合成一个木锤"
+				"{image:createdelight:textures/gui/woodenhammercrafting.png width:200 height:100 align:center}"
 			]
 			icon: {
 				Count: 1
@@ -3700,6 +3766,33 @@
 			title: "&e锻造锤"
 			x: 2.0d
 			y: 4.5d
+		}
+		{
+			dependencies: ["48DABAA5BA34BE62"]
+			description: [
+				"模块化工具在使用的过程中会累积“&e打磨值&r”（类似经验值，但是&4最多只能存储一次打磨需求的值&r），打磨值满后可在加工台上选择工具的任一&e主要模块&r进行打磨。"
+				"（例如双头工具的主要模块为手柄及其左、右头。）"
+				"打磨可提升部件的性能，并&e清空打磨值&r，待到再次累积满后可进行下一次打磨。"
+				"每次打磨都会使后续进行打磨时需要的打磨值增加。"
+				"&e“直觉”效果可以加快打磨值的获取。拥有“直觉”效果的材料可在全息球中查看。&r"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:diamond_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "764C6E27E31CD698"
+			shape: "hexagon"
+			size: 1.0d
+			tasks: [{
+				id: "330FF678C7C1A533"
+				type: "checkmark"
+			}]
+			title: "打磨"
+			x: -2.25d
+			y: -1.5d
 		}
 	]
 	title: "&2基础工艺"
