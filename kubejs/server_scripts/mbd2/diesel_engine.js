@@ -1,4 +1,4 @@
-MBDMachineEvents.onRightClick("createdelight:modular_diesel_engine", e => {
+MBDMachineEvents.onRightClick("createdelight:diesel_engine", e => {
   let player = e.event.player
   let machine = e.event.machine
   let heldItem = e.event.heldItem
@@ -66,16 +66,10 @@ MBDMachineEvents.onRightClick("createdelight:modular_diesel_engine", e => {
   }
 })
 
-MBDMachineEvents.onBeforeRecipeWorking("createdelight:modular_diesel_engine", e => {
+MBDMachineEvents.onBeforeRecipeWorking("createdelight:diesel_engine", e => {
   let machine = e.event.machine
   if(machine.machineStateName == "base"){
     machine.setMachineState("working")
-  }
-})
-MBDMachineEvents.onAfterRecipeWorking("createdelight:modular_diesel_engine", e => {
-  let machine = e.event.machine
-  if(machine.machineStateName == "mute"){
-    machine.setMachineState("mute")
   }
   if(machine.machineStateName == "turbo_mute"){
     machine.setMachineState("turbo")
@@ -84,46 +78,46 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:modular_diesel_engine", e =
 
 ServerEvents.recipes(e => {
   const {createdelight} = e.recipes
-  createdelight.modular_diesel_burning()
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdelight:fuel_mixtures", 2))
     .outputRPM(256)
-    .outputStress(65536)
-    .id("createdelight:modular_diesel_burning/fuel_mixtures")
-  createdelight.modular_diesel_burning()
+    .outputStress(25600)
+    .id("createdelight:diesel_burning/fuel_mixtures")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdieselgenerators:biodiesel", 1))
     .outputRPM(96)
-    .outputStress(24576)
-    .id("createdelight:modular_diesel_burning/biodiesel")
-  createdelight.modular_diesel_burning()
+    .outputStress(9600)
+    .id("createdelight:diesel_burning/biodiesel")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("ad_astra:cryo_fuel", 2))
     .outputRPM(192)
-    .outputStress(49152)
-    .id("createdelight:modular_diesel_burning/cryo_fuel")
-  createdelight.modular_diesel_burning()
+    .outputStress(19200)
+    .id("createdelight:diesel_burning/cryo_fuel")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdieselgenerators:diesel", 2))
     .outputRPM(128)
-    .outputStress(32768)
-    .id("createdelight:modular_diesel_burning/diesel")
-  createdelight.modular_diesel_burning()
+    .outputStress(12800)
+    .id("createdelight:diesel_burning/diesel")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdieselgenerators:ethanol", 1))
     .outputRPM(64)
-    .outputStress(16384)
-    .id("createdelight:modular_diesel_burning/ethanol")
-  createdelight.modular_diesel_burning()
+    .outputStress(6400)
+    .id("createdelight:diesel_burning/ethanol")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdieselgenerators:gasoline", 1))
     .outputRPM(96)
-    .outputStress(24576)
-    .id("createdelight:modular_diesel_burning/gasoline")
-  createdelight.modular_diesel_burning()
+    .outputStress(9600)
+    .id("createdelight:diesel_burning/gasoline")
+  createdelight.diesel_burning()
     .duration(20)
     .inputFluids(Fluid.of("createdieselgenerators:plant_oil", 1))
     .outputRPM(32)
-    .outputStress(8192)
-    .id("createdelight:modular_diesel_burning/plant_oil")
+    .outputStress(3200)
+    .id("createdelight:diesel_burning/plant_oil")    
 })

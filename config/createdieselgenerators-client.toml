@@ -3,7 +3,7 @@
 	#Fuel type tooltip on Buckets
 	"Fuel tooltips" = false
 	#Whenever Diesel Engines display in JEI
-	"Diesel Engine JEI Config" = true
+	"Diesel Engine JEI Config" = false
 	#Diesel Engines emit sounds on trains
 	"Diesel Engines emit sounds on trains" = true
 

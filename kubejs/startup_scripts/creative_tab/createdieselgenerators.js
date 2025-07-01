@@ -7,5 +7,8 @@ StartupEvents.modifyCreativeTab("createdieselgenerators:cdg_creative_tab", e => 
     'createdieselgenerators:burner',
     'createdieselgenerators:wire_cutters',
     'createdieselgenerators:hammer',
+    'createdieselgenerators:diesel_engine',
+    'createdieselgenerators:large_diesel_engine',
+    'createdieselgenerators:huge_diesel_engine'
   ])
 })
