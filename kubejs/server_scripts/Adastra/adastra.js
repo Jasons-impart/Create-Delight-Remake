@@ -120,17 +120,17 @@ ServerEvents.recipes(e => {
     }).id("ad_astra:oxygen_loader")
     // 混合燃料
     e.recipes.create.mixing(
-        Fluid.of("createdelight:fuel_mixtures", 50),
+        Fluid.of("createdelight:fuel_mixtures", 100),
         [
             Fluid.of("createdieselgenerators:gasoline", 50),
             Fluid.of("createdieselgenerators:diesel", 50)
         ]
     ).id("ad_astra:recipes/fuel_mixtures")
     e.recipes.create.mixing(
-        Fluid.of("createdelight:fuel_mixtures", 100),
+        Fluid.of("createdelight:fuel_mixtures", 200),
         [
-            Fluid.of("createdieselgenerators:gasoline", 100),
-            Fluid.of("createdieselgenerators:biodiesel", 150)
+            Fluid.of("createdieselgenerators:gasoline", 50),
+            Fluid.of("createdieselgenerators:biodiesel", 75)
         ]
     ).id("ad_astra:sub_recipes/fuel_mixtures")
     // 电子核心

@@ -33,8 +33,8 @@ ServerEvents.recipes(e => {
     //石油蒸馏
     e.recipes.createdieselgenerators.distillation(
         [
-            Fluid.of("createdieselgenerators:diesel", 10),
-            Fluid.of("createdieselgenerators:gasoline", 10)
+            Fluid.of("createdieselgenerators:diesel", 20),
+            Fluid.of("createdieselgenerators:gasoline", 20)
         ],
         Fluid.of("createdieselgenerators:crude_oil", 100), 100
     )
@@ -56,6 +56,7 @@ ServerEvents.recipes(e => {
         [
             Fluid.of("createdelight:light_crude_oil", 100),
             Fluid.of("createdelight:ethylene_gas", 50),
+            Item.of("vintageimprovements:vanadium_nugget").withChance(0.9)
         ],
         [
             Fluid.of("createdieselgenerators:crude_oil", 100),
@@ -67,10 +68,10 @@ ServerEvents.recipes(e => {
     //轻质油蒸馏
     e.recipes.createdieselgenerators.distillation(
         [
-            Fluid.of("createdelight:lubricating_oil", 10),
-            Fluid.of("createdieselgenerators:diesel", 40),
-            Fluid.of("createdieselgenerators:gasoline", 40),
-            Fluid.of("createdelight:ethylene_gas", 10)
+            Fluid.of("createdelight:lubricating_oil", 20),
+            Fluid.of("createdieselgenerators:diesel", 50),
+            Fluid.of("createdieselgenerators:gasoline", 50),
+            Fluid.of("createdelight:ethylene_gas", 20)
         ],
         Fluid.of("createdelight:light_crude_oil", 100), 20
     )
