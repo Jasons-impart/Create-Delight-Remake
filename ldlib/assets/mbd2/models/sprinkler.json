@@ -3,7 +3,7 @@
 	"texture_size": [32, 32],
 	"textures": {
 		"6": "mbd2:block/sprinkler",
-		"particle": "create:block/pipes_connected"
+		"particle": "minecraft:block/copper_block"
 	},
 	"elements": [
 		{
