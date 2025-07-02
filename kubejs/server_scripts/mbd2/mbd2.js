@@ -134,6 +134,17 @@ ServerEvents.recipes(e => {
         E: "createdelightcore:forged_steel_block"
     })
         .id("createdelight:mechanical_crafting/hydropower_amplifier")
+    e.recipes.kubejs.shaped("createdelight:dryer", [
+        "ABA",
+        "ACA",
+        "ADA"
+    ], {
+        A: "create:copper_bars",
+        B: "create:shaft",
+        C: "minecraft:magma_block",
+        D: "create:nozzle"
+    }).id("createdelight:dryer")
+    
     e.recipes.kubejs.shaped("createdelight:sprinkler", [
         " A ",
         "ABA",
