@@ -11,7 +11,7 @@ MBDMachineEvents.onTick("createdelight:dryer", e => {
     let s = Math.abs(be.speed)
     if (s == 0)
         return
-    console.log("speed:" + s)
+    // 0 <= s <= 16 范围为2，<= 64为4，<= 256为8
     if (s <= 16)
         rl = 2
     else if (s <= 64)
