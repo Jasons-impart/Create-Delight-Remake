@@ -35,6 +35,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:mortar", e => {
         /**@type {Internal.MillingRecipe} */
         let proxyMillingRecipe = proxyRecipe
         console.log(`proxyMillingRecipe: ${proxyMillingRecipe}`)
+        /**@type {Internal.MBDRecipeSchema$MBDRecipeJS} */
         var recipe = recipeType.recipeBuilder(null) // same as create recipe via kjs event
             .id(proxyRecipeId + "_mbd2")
             .duration(proxyMillingRecipe.processingDuration)
@@ -47,6 +48,6 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:mortar", e => {
         // If you want to skip this recipe
         // event.mbdRecipe = null;
         // set the result
-        event.mbdRecipe = recipe.buildRawRecipe();
+        event.mbdRecipe = recipe.buildMBDRecipe();
     }
 })
