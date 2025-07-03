@@ -2,18 +2,18 @@
   "fluid": "createdelight:fuel_mixtures",
   "sound_speed": 0.5,
   "normal": {
-    "speed": 192.0,
-    "strength": 24576.0,
-    "burn_rate": 2
+    "speed": 256.0,
+    "strength": 32768,
+    "burn_rate": 4
   },
   "modular": {
     "speed": 256.0,
-    "strength": 32768.0,
-    "burn_rate": 2
+    "strength": 65536,
+    "burn_rate": 4
   },
   "huge": {
     "speed": 256.0,
-    "strength": 40960.0,
+    "strength": 65536,
     "burn_rate": 2
   },
   "burner_multiplier": 1.0
