@@ -35,7 +35,6 @@
 				"486D272AFE1DBA5A"
 			]
 			description: ["&7注意，这是一张&6深奥的记录"]
-			hide_until_deps_complete: true
 			id: "5A514768646B5842"
 			rewards: [{
 				id: "3FA45E62C94F08DE"
@@ -149,7 +148,6 @@
 		}
 		{
 			dependencies: ["486D272AFE1DBA5A"]
-			hide_until_deps_complete: true
 			id: "7C3B7E9AE14D105E"
 			rewards: [{
 				id: "057932CD857C527E"
@@ -240,7 +238,6 @@
 			]
 			hide_dependent_lines: true
 			id: "486D272AFE1DBA5A"
-			invisible: true
 			shape: "gear"
 			size: 1.5d
 			subtitle: "战利品，购买或是制作"
@@ -437,7 +434,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "6FDF8AA5CDD805B5"
 			tasks: [{
 				id: "518EAD23A75FD3D0"
@@ -474,7 +470,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "09757593EF8E7D7A"
 			tasks: [{
 				id: "4C28481D0C7EF9DF"
@@ -511,7 +506,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "79245504AB8255E5"
 			tasks: [{
 				id: "62AF56E03D0967FE"
@@ -548,7 +542,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "30A2A8B3BCA32EBA"
 			tasks: [{
 				id: "3B6247310780BB94"
@@ -585,7 +578,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "5B1747A82943DE4C"
 			tasks: [{
 				id: "23AC7367DED4A313"
@@ -622,7 +614,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "7508EEE289D0B370"
 			tasks: [{
 				id: "5D694116D5DDDB87"
@@ -659,7 +650,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "5C23FF59757F3647"
 			tasks: [{
 				id: "09E96946F77E9FBE"
@@ -696,7 +686,6 @@
 				"3E31AAF7CCC313C2"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "52673C55C6CC0045"
 			tasks: [{
 				id: "7E8C34A124C5843C"
@@ -1009,7 +998,6 @@
 		{
 			dependencies: ["72908B9592992F33"]
 			description: ["&e原理图显示回响碎片制作的提取器能有更强大的功效，但是我们完全搞不懂这玩意儿的原理"]
-			hide_until_deps_complete: true
 			id: "6B5B949436182B1E"
 			rewards: [{
 				id: "628DF518BA78A2E1"
@@ -1071,7 +1059,6 @@
 		{
 			dependencies: ["72908B9592992F33"]
 			description: ["&e在获得原理图后，我们终于搞清楚了切石器的构造，现在我们可以使用更加坚固的金属来制作并升级切石器了"]
-			hide_until_deps_complete: true
 			id: "3F4A3F77501A2DAB"
 			rewards: [{
 				id: "4FF2D1089CC79D6B"
@@ -1118,7 +1105,6 @@
 		{
 			dependencies: ["72908B9592992F33"]
 			description: ["&e凿地器的原理图允许我们使用更加坚固的材料来制作并升级凿地器"]
-			hide_until_deps_complete: true
 			id: "79A590B109000F0E"
 			rewards: [{
 				id: "009C68FDFE6E44AD"
@@ -1363,7 +1349,6 @@
 				"074CC4506D4832EB"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "1DA6EC12BD524232"
 			shape: "pentagon"
 			tasks: [{
@@ -1441,7 +1426,6 @@
 				"28B55BF49C3B7D93"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "7D80A5762CA8F00E"
 			shape: "pentagon"
 			tasks: [{
@@ -1479,7 +1463,6 @@
 				"28B55BF49C3B7D93"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "4C48FD7CE4422182"
 			shape: "pentagon"
 			tasks: [{
@@ -1554,7 +1537,6 @@
 				"04614503BFA9459C"
 				"486D272AFE1DBA5A"
 			]
-			hide_until_deps_complete: true
 			id: "0268CA57AECC707A"
 			shape: "pentagon"
 			tasks: [{

@@ -2897,7 +2897,6 @@
 				"普通的工作台已经无法满足我对工具改造的需求了，于是我用刚刚做好的锤子对工作台也进行了改造。"
 				"&e（使用锤子右键原版工作台）&r"
 			]
-			hide_until_deps_complete: true
 			id: "3821026AD7352739"
 			rewards: [{
 				count: 4
@@ -2929,7 +2928,6 @@
 				"石锤虽然暂且可以胜任早期的打造任务，但是显然不是长久之计。于是我决定升级我的锤子。"
 				"升级锤子时，我不能手搓锤头，因此我需要重新制作一把锤子。我先在加工台上用&e铁锭&r做锤头来替换了锤子的一端，但这把一端是铁、一端是石的锤子，仍然不足以胜任打造钻石部件的任务。于是我将另一端也换成了铁锤头，成功获得了一把铁锤。"
 			]
-			hide_until_deps_complete: true
 			id: "0BAA9261B098316D"
 			rewards: [{
 				count: 4
@@ -2957,7 +2955,6 @@
 				"建议带上精准采集的&6三级(铁锤)&r以上&e锤子与&6一级&r以上&e羊角头&r再去探索锻造遗迹"
 				"锻造遗迹本身不刷怪，但是在某些房间中含有&9流浪者&r刷怪笼，请出发前确保你的战斗补给"
 			]
-			hide_until_deps_complete: true
 			id: "72908B9592992F33"
 			rewards: [{
 				id: "548FEB5152692E76"
@@ -3000,7 +2997,6 @@
 				"在遗迹中，我循着微光继续前行，最终找到了一个锻造加工台，其正上方悬挂着一把锻造锤，&e锻造台&r的精妙构造和斑驳的纹理无不诉说着岁月的痕迹。想必这一定是锻造师的心血结晶。"
 				"（锻造锤在无&e燃烧室&r加成下为&e五级&r锤等级）"
 			]
-			hide_until_deps_complete: true
 			icon: "tetra:forged_workbench"
 			id: "27BFF02187AC557B"
 			rewards: [{
@@ -3127,7 +3123,6 @@
 				"在&e全息球&r中可以查看各种材料的属性，也可以查看不同材料对应部件的数值与等级"
 				"等级&6越高&r的材料制作的部件等级&6越高&r"
 			]
-			hide_until_deps_complete: true
 			id: "31578474F05E7255"
 			rewards: [{
 				id: "4B19E52EC1E6EC90"
@@ -3199,7 +3194,6 @@
 			dependencies: ["56758B34C00AEFF3"]
 			dependency_requirement: "one_completed"
 			description: ["在遗迹中，我还发现了一些酷似电池的物品。这应该就是笔记中提到的热电池，只需将它们&e安装在锻造锤上&r，便能为其提供能量。"]
-			hide_dependency_lines: true
 			id: "7D85F4D95B6CC9FD"
 			rewards: [{
 				id: "2D6331C9515FDB39"
@@ -3224,8 +3218,8 @@
 				match_nbt: false
 				type: "item"
 			}]
-			x: 3.75d
-			y: 3.0d
+			x: 5.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["72908B9592992F33"]
@@ -3250,7 +3244,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["在挖矿时，我发现了一种&e闪烁着粒子效果的石头&r，出于好奇，我把它挖开了。这块石头与普通石头不同，我从中找到了一些奇特的矿石。&e用锤子在加工台上将其打碎后&r，发现了一些常见的矿石，偶尔还能获得罕见的宝石，甚至还有几颗毫无瑕疵的极品宝石。也许将这些宝石镶嵌在工具上，会带来更好的效果。"]
-			hide_until_deps_complete: true
 			id: "1AF1B7498D6B8705"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -3299,7 +3292,6 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["在打造钻石部件时，铁锤的硬度也已经不够了。我尝试用钻石制作锤头，但钻石难以成型。而铁锤显然无法打造黑曜石锤。于是我退而求其次，选择用硬度稍低但带有下界魔力的&e黑石&r来制作锤头，希望它能与钻石产生某种特殊反应，没想到居然成功了！"]
-			hide_until_deps_complete: true
 			id: "1E0BB246F04014C3"
 			rewards: [{
 				count: 4
@@ -3336,8 +3328,6 @@
 				"当然你也可以试试万能的 "
 				"{ \"text\": \"探险家指南针\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1CB33EA048068637\" } }"
 			]
-			hide_dependency_lines: true
-			hide_until_deps_complete: true
 			icon: "tetra:forged_wall"
 			id: "01FC78875A324DE3"
 			subtitle: "锻造遗迹"
@@ -3353,7 +3343,6 @@
 			dependencies: ["72908B9592992F33"]
 			description: ["工坊中有许多小型的板条箱，可以很轻松的使用锤子或者羊角锤打开，里面装着许多&e金属碎片和锻造锤配件&r。"]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
 			icon: "tetra:forged_crate"
 			id: "56758B34C00AEFF3"
 			subtitle: "板条箱"
@@ -3372,7 +3361,6 @@
 		}
 		{
 			dependencies: ["27BFF02187AC557B"]
-			description: [""]
 			id: "332D5E0455DC61E7"
 			optional: true
 			subtitle: "锻造锤在使用过程中可能会出现卡住的情况，使用锤子敲击卡住的锤头即可"
@@ -3439,7 +3427,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["&e原版&r的剑与&e农夫乐事&r的小刀可用于改造"]
-			hide_dependency_lines: true
 			id: "48056E10DEC79964"
 			shape: "rsquare"
 			tasks: [{
@@ -3458,7 +3445,6 @@
 				"打造工具的时候，经常要用到不同的工具，为了方便随时随地可以拿取工具，我做了一个架子用来放置常用的工具"
 				"在加工物品时消耗的工具顺序为&a背包内&r>&a工具架&r>&a锻造锤"
 			]
-			hide_until_deps_complete: true
 			id: "49F8C50AE9B68585"
 			rewards: [{
 				count: 4
@@ -3479,7 +3465,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["&e原版&r的盾牌可用于改造"]
-			hide_dependency_lines: true
 			icon: {
 				Count: 1
 				id: "minecraft:shield"
@@ -3515,7 +3500,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["&e原版&r的弓可用于改造"]
-			hide_dependency_lines: true
 			id: "3F5E3041FB441163"
 			shape: "rsquare"
 			tasks: [{
@@ -3533,7 +3517,6 @@
 				"&e原版&r镐、斧、锄等为双头工具，可用于改造。"
 				"Tetra的“扁斧”模块可以同时提供斧、锹的破坏效率和等级，也就意味着为双头工具一端安装扁斧，一端安装镐头便可以打造一把&e全能工具&r。"
 			]
-			hide_dependency_lines: true
 			icon: {
 				Count: 1
 				id: "minecraft:iron_pickaxe"
@@ -3557,7 +3540,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["&e原版&r的锹为单头工具，可用于改造"]
-			hide_dependency_lines: true
 			icon: {
 				Count: 1
 				id: "minecraft:iron_shovel"
@@ -3583,7 +3565,7 @@
 						value: "forge:tools/shovels"
 					}
 				}
-				title: "Any #forge:tools/shovels"
+				title: "任意锹类工具"
 				type: "item"
 			}]
 			title: "单头工具"
@@ -3593,7 +3575,6 @@
 		{
 			dependencies: ["3821026AD7352739"]
 			description: ["模块化腰带"]
-			hide_dependency_lines: true
 			id: "6B19B1391FB0509C"
 			shape: "rsquare"
 			tasks: [
