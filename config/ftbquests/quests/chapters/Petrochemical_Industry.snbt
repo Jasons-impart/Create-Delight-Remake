@@ -110,11 +110,11 @@
 			subtitle: "吼吼吼！"
 			tasks: [{
 				id: "30022DFADCCBA646"
-				item: "createdieselgenerators:diesel_engine"
+				item: "createdelight:diesel_engine"
 				type: "item"
 			}]
 			x: -10.5d
-			y: 9.0d
+			y: 8.5d
 		}
 		{
 			dependencies: [
@@ -132,11 +132,11 @@
 			subtitle: "单位空间下极致的应力效率"
 			tasks: [{
 				id: "750CF6A3EF8B1390"
-				item: "createdieselgenerators:large_diesel_engine"
+				item: "createdelight:modular_diesel_engine"
 				type: "item"
 			}]
 			x: -10.5d
-			y: 7.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["1A10B417B7C082DF"]
@@ -148,26 +148,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "&e不是&r？咋还&4反着改车&r？"
+			subtitle: "&e太吵了&r！实在是&4太吵了&r！"
 			tasks: [{
 				id: "79DC39D870E2C4AF"
 				item: "createdieselgenerators:engine_silencer"
 				type: "item"
 			}]
 			x: -11.5d
-			y: 9.5d
-		}
-		{
-			dependencies: ["1A10B417B7C082DF"]
-			id: "077D7F05BCC451B1"
-			subtitle: "&e单个机器应力更多&r，但存在可能的&4崩溃问题"
-			tasks: [{
-				id: "47D6C1D000257107"
-				item: "createdieselgenerators:huge_diesel_engine"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 8.0d
+			y: 9.0d
 		}
 		{
 			dependencies: [
@@ -225,7 +213,7 @@
 				type: "item"
 			}]
 			x: -11.5d
-			y: 6.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["61A945984843E55A"]
