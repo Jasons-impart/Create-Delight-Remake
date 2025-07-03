@@ -6,9 +6,6 @@ StartupEvents.modifyCreativeTab("createdieselgenerators:cdg_creative_tab", e => 
     Item.of('createdieselgenerators:mold', '{Mold:"createdieselgenerators:bar"}'),
     'createdieselgenerators:burner',
     'createdieselgenerators:wire_cutters',
-    'createdieselgenerators:hammer',
-    'createdieselgenerators:diesel_engine',
-    'createdieselgenerators:large_diesel_engine',
-    'createdieselgenerators:huge_diesel_engine'
+    'createdieselgenerators:hammer'
   ])
 })
