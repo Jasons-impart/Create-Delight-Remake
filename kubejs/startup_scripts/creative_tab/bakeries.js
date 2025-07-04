@@ -40,6 +40,7 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
   e.add([
    'bakeries:mould_toast',
    'bakeries:mould_cheese_cocoa_toast', 
+   'bakeries:mould_pound_cake'
   ])
 })
 StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {

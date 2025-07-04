@@ -549,6 +549,7 @@
     "tooltip.createdelight.ctrl_can_shell_small_toast": "§7放置后使用§b小刀§7取出§b小吐司",
     "tooltip.createdelight.ctrl_mould_toast": "§7放置后§b右键§7取出§b吐司",
     "tooltip.createdelight.ctrl_mould_cheese_cocoa_toast": "§7放置后§b右键§7取出§b奶酪可可吐司",
+    "tooltip.createdelight.ctrl_mould_pound_cake": "§7放置后§b右键§7取出§b磅蛋糕",
     "tooltip.createdelight.ctrl_keg": "§7在周围§b两格§7内放置§b热源§7和§b冷源§7以调整温度",
     "tooltip.createdelight.ctrl_oven": "§b下面§7放置§b烈焰人燃烧室§7以§b增加热量§7，§b侧面§7放置§b烤箱用鼓风机§7以§b增加风量§7，最大尺寸§b3*7*3",
     "tooltip.createdelight.ctrl_oven_fan": "§7放置在§b烤箱侧面§7以增加烤箱§b风量",

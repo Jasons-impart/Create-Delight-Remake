@@ -540,19 +540,19 @@ ServerEvents.recipes(e => {
     
     baking(e, "bakeries:mould_pound_cake_paste", "bakeries:mould_pound_cake", 1, "food", 100)
     
-    {
-        let iner = "bakeries:mould_two"
-        create.sequenced_assembly("bakeries:mould_carrot_cake_paste", "bakeries:mould_two", [
-            create.filling(iner, [iner, Fluid.of("createdelight:cake_batter", 500)]),
-            create.deploying(iner, [iner, "bakeries:brown_sugar_cube"]),
-            create.deploying(iner, [iner, "minecraft:carrots"])
-        ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("bakeries:sequence_assembly/mould_carrot_cake_paste")
-    }
+    // {
+    //     let iner = "bakeries:mould_two"
+    //     create.sequenced_assembly("bakeries:mould_carrot_cake_paste", "bakeries:mould_two", [
+    //         create.filling(iner, [iner, Fluid.of("createdelight:cake_batter", 500)]),
+    //         create.deploying(iner, [iner, "bakeries:brown_sugar_cube"]),
+    //         create.deploying(iner, [iner, "minecraft:carrots"])
+    //     ])
+    //     .loops(1)
+    //     .transitionalItem(iner)
+    //     .id("bakeries:sequence_assembly/mould_carrot_cake_paste")
+    // }
     
-    baking(e, "bakeries:mould_carrot_cake_paste", "bakeries:mould_carrot_cake", 1, "food", 100)
+    // baking(e, "bakeries:mould_carrot_cake_paste", "bakeries:mould_carrot_cake", 1, "food", 100)
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')
