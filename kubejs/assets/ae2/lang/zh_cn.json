@@ -1,4 +1,5 @@
 {
     "block.ae2.crystal_resonance_generator": "水晶谐振发电机",
-    "entity.minecraft.villager.ae2.fluix_researcher": "AE研究员"
+    "entity.minecraft.villager.ae2.fluix_researcher": "AE研究员",
+    "entity.minecraft.villager.ae2:fluix_researcher": "AE研究员"
 }
