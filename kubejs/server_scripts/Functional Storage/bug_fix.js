@@ -6,6 +6,7 @@ ServerEvents.recipes(e => {
 })
 ServerEvents.tags("block", e => {
     e.add('create:non_movable', [
-        "functionalstorage:storage_controller"
+        "functionalstorage:storage_controller",
+        "functionalstorage:framed_storage_controller"
     ])
 })
