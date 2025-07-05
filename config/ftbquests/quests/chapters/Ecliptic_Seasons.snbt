@@ -363,7 +363,6 @@
 				"2F2CA6806F0CD304"
 				"203EEC3502CFCD78"
 			]
-			description: [""]
 			id: "4FFA56EA6130D27B"
 			rewards: [{
 				id: "3EC32F7739D7FBF7"
@@ -371,7 +370,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "&e加湿器&r使用时&4消耗水增加&91级湿度，&e湿度调节木格栅&r使用时需要放置&9湿海绵&4增加&91级湿度&r（下方放置&4营火&r）或&6干海绵&4降低&61级湿度"
+			subtitle: "&e加湿器&r使用时&4消耗水增加&91级湿度\\n&e除湿机&r使用时&4消耗应力降低&91级湿度"
 			tasks: [
 				{
 					id: "5D95248DF8932DCB"
@@ -379,8 +378,8 @@
 					type: "item"
 				}
 				{
-					id: "02DA1FDC0BDE2121"
-					item: "eclipticseasons:block_in_wooden_grate_block"
+					id: "61CAB95C6DDBDDEC"
+					item: "createdelight:dryer"
 					type: "item"
 				}
 			]
