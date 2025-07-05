@@ -16,7 +16,8 @@ ServerEvents.recipes(e => {
         "iceandfire:dragonsteel_lightning_helmet",
         "iceandfire:dragonsteel_lightning_chestplate",
         "iceandfire:dragonsteel_lightning_leggings",
-        "iceandfire:dragonsteel_lightning_boots"
+        "iceandfire:dragonsteel_lightning_boots",
+        "iceandfire:copper_pile"
     ])
     create.filling("ends_delight:raw_dragon_meat", ["#createdelight:dragon_flesh", Fluid.of("create_central_kitchen:dragon_breath", 250)])
     e.replaceInput({ id: "iceandfire:dragon_meal" }, "#iceandfire:dragon_food_meat", "#forge:meat/raw")
@@ -121,4 +122,10 @@ ServerEvents.recipes(e => {
         .transitionalItem(iner)
         .id("iceandfire:sequenced_assembly/dread_key")
     }
+    kubejs.shapeless(
+        'iceandfire:copper_pile',
+        [
+            "2x create:copper_nugget"
+        ]
+    ).id("iceandfire:shapeless/copper_pile_manual_only")
 })

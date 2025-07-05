@@ -10,7 +10,8 @@ ServerEvents.recipes(e => {
         "create:pressing/sugar_cane",
         "design_decor:stonecutting/industrial_plating",
         "create:splashing/iceandfire/crushed_raw_silver",
-        "create:mixing/brass_ingot"
+        "create:mixing/brass_ingot",
+        "minecraft:iron_trapdoor",
     ])
     // 黑曜石粉末粉碎
     e.recipes.create.milling(
@@ -326,4 +327,14 @@ ServerEvents.recipes(e => {
         C: "create:empty_blaze_burner",
         D: "#mynethersdelight:bullet_pepper"
     }).id("create:shaped/blaze_burner")
+    // 铁活板门配方优化
+    e.recipes.kubejs.shaped(
+        "minecraft:iron_trapdoor",
+        [
+            "AA ",
+            "AA "
+        ], {
+            A: 'minecraft:iron_ingot'
+        }
+    ).id("create:shaped/iron_trapdoor_manual_only")
 })

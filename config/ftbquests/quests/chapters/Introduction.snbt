@@ -851,7 +851,7 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
 				"对于只想要一个大箱子的人来说，使用&4存储总线&r连接容器（箱子/保险箱/抽屉），然后再接上&4发电机&r并连上&4合成终端&r，就可以使用合成终端统一访问存储总线连接的所有容器。"
-				"{image:createdelight:textures/gui/simple_network_example.png width:256 height:137 align:center fit:true}"
+				"{image:createdelight:textures/gui/simple_network_example.png width:98 height:90 align:center}"
 				"{@pagebreak}"
 			]
 			icon: "minecraft:chest"
@@ -892,11 +892,15 @@
 		}
 		{
 			dependencies: ["14613C15CED4E5BA"]
-			description: [""]
 			icon: "create:item_vault"
 			id: "2B0BD06F1DA084FF"
 			size: 2.0d
 			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
+			tasks: [{
+				id: "7F9F4AEB3A405D6A"
+				title: "仓储系统！"
+				type: "checkmark"
+			}]
 			title: "也许我能够搭建更复杂的仓库？"
 			x: -2.0d
 			y: -8.0d
