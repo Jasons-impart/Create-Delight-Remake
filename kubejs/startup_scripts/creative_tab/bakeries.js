@@ -30,10 +30,17 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:raw_coffee_bean',
    'bakeries:coffee_bean',
    'bakeries:ground_coffee',
+   'bakeries:butter_flour_sand', 
+   'bakeries:whole_egg', 
+   'bakeries:raw_protein', 
+   'bakeries:raw_egg_yolk', 
+   'bakeries:fresh_cheese_cube', 
+   'bakeries:cake_base'
   ])
   e.add([
    'bakeries:mould_toast',
    'bakeries:mould_cheese_cocoa_toast', 
+   'bakeries:mould_pound_cake'
   ])
 })
 StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab", e => {
@@ -41,5 +48,9 @@ StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab",
     'bakeries:salted_dough',
     'bakeries:cocoa_dough', 
     'bakeries:pastry',
+    'bakeries:cake_paste_bucket', 
+    'bakeries:egg_yolk_paste_bucket', 
+    'bakeries:foamed_protein_bucket', 
+    'bakeries:mould_cake_paste'
   ])
 })

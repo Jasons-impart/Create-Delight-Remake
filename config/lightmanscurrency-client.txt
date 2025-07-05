@@ -106,6 +106,16 @@
 	#Default: true
 	notificationsInChat=true
 	
+#Tax Warning Settings
+[tax_warnings]
+	#Whether you should recieve a message in chat whenever you place a machine when server-wide taxes are enabled
+	#Default: true
+	serverTaxWarning=true
+	
+	#Whether you should recieve a message in chat whenever you place a machine in an area that another player is taxing
+	#Default: true
+	playerTaxWarning=true
+	
 #Slot Machine Animation Settings
 [slot_machine]
 	#The number of Minecraft ticks the slot machine animation will last.
