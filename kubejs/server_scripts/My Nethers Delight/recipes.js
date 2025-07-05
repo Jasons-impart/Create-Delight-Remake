@@ -5,7 +5,8 @@ ServerEvents.recipes(e => {
         "mynethersdelight:cooking/fries_ghasta",
         "mynethersdelight:toast_from_smoking",
         "mynethersdelight:toast_cooking",
-        "mynethersdelight:toast_from_campfire_cooking"
+        "mynethersdelight:toast_from_campfire_cooking",
+        "mynethersdelight:crafting/sugar_alt"
     ])
     const {create, kubejs, farmersdelight, create_new_age} = e.recipes
     e.replaceInput({mod:"mynethersdelight"}, "mynethersdelight:roasted_sausage", "#forge:sausage/cooked")

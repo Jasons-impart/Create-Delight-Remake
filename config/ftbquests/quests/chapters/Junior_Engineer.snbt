@@ -178,7 +178,6 @@
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
-			description: [""]
 			id: "7029D6C489D44144"
 			rewards: [
 				{
@@ -398,6 +397,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
+			subtitle: "&4注意！&r如有配方存在&e部分重叠&r请进行&4标记&r！"
 			tasks: [
 				{
 					id: "14E9814A24EFF05E"
@@ -1549,7 +1549,8 @@
 		{
 			dependencies: ["02E1C25396B0F5EA"]
 			id: "24A55BD255EC03BD"
-			subtitle: "可置于工作盆过滤插槽中，限定工作盆产物对应配方"
+			shape: "square"
+			subtitle: "可置于&e过滤插槽&r中，&4限定&r工作盆产物对应配方"
 			tasks: [{
 				id: "214F6DEE2DAB5543"
 				item: "create:filter"
