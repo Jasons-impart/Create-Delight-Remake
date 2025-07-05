@@ -4,3 +4,8 @@ ServerEvents.recipes(e => {
     //     "functionalstorage:framed_simple_compacting_drawer"
     // ])
 })
+ServerEvents.tags("block", e => {
+    e.add('create:non_movable', [
+        "functionalstorage:storage_controller"
+    ])
+})
