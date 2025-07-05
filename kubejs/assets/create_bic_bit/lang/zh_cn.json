@@ -134,7 +134,9 @@
     "create_bic_bit.ponder.mechanical_fryer.text_3" : "油炸需要烈焰燃烧器的热量",
 
     "effect.create_bic_bit.unanchored.description": "随机传送玩家",
-    "effect.create_bic_bit.oiled_up.description": "使玩家随机掉落物品、从梯子摔落、水中漂浮，但下雨时获得飞行能力"
+    "effect.create_bic_bit.oiled_up.description": "使玩家随机掉落物品、从梯子摔落、水中漂浮，但下雨时获得飞行能力",
+
+    "entity.create_bic_bit.herring": "鲱鱼"
 
 }
   
