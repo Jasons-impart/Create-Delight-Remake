@@ -1,0 +1,22 @@
+{
+  "hideShield": false,
+  "stopFire": false,
+  "villageSpawnPoint": false,
+  "stopNetherPortal": false,
+  "piglinTweaks": false,
+  "piglinWearNetherite": false,
+  "hoglinTweaks": false,
+  "moreSlime": false,
+  "mobThrowsMustDrop": false,
+  "bakaSilverFish": false,
+  "noPhantomSpawner": false,
+  "noPatrolSpawner": false,
+  "noCatSpawner": false,
+  "noVillageSiege": false,
+  "noWanderingTraderSpawner": false,
+  "betterKeepInv": false,
+  "doubleJump": false,
+  "adrenalineEffect": false,
+  "noRecipeBook": true,
+  "villagerLoveLessCooldown": false
+}
