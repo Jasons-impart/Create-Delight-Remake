@@ -39,6 +39,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:tea_leaves_from_tea_leaf_bag",
         "youkaishomecoming:copper_tank_from_copper_block_stonecutting",
         "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting",
+        "youkaishomecoming:cucumber_crate",
+        "youkaishomecoming:cucumber_seeds_from_cucumber_crate"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",
