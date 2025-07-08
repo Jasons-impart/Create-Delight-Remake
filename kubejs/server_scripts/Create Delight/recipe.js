@@ -23,4 +23,12 @@ ServerEvents.recipes(e => {
             .transitionalItem(iner)
             .id("createdelight:sequenced_assembly/copper_coil_casing")
     }
+
+    //深层锡矿石因未知原因没有粉碎轮配方，补充粉碎配方
+    e.recipes.create.crushing(["create:crushed_raw_tin",
+        Item.of("create:crushed_raw_tin").withChance(0.75),
+        Item.of("create:experience_nugget").withChance(0.75)
+    ],
+        "createdelightcore:deepslate_tin_ore")
+        .id("create:crushing/crushed_deepslate_tin_ore")
 })
