@@ -24,7 +24,9 @@ ServerEvents.recipes(e => {
         "createdieselgenerators:basin_fermenting/golden_carrot",
         "createdieselgenerators:basin_fermenting/golden_apple",
         "create_bic_bit:mixing/ketchup",
-        "create_bic_bit:compat/farmersdelight/raw_churros"
+        "create_bic_bit:compat/farmersdelight/raw_churros",
+        "create_bic_bit:mixing/mayonnaise",
+        "create:empty_youkaishomecoming_mayonnaise_bottle_of_youkaishomecoming_flowing_mayonnaise"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -237,4 +239,9 @@ ServerEvents.tags("minecraft:item", e => {
 LootJS.modifiers(e => {
     e.addBlockLootModifier("minecraft:dead_bush")
         .removeLoot('create_deepfried:yuca')
+})
+ServerEvents.tags("minecraft:item", e => {
+    e.add("forge:mayonnaise", [
+        'create_bic_bit:mayonnaise_bottle'
+    ])
 })

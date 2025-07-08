@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {create, vintagedelight, kubejs} = e.recipes
+    const {create, vintagedelight, kubejs, farmersdelight} = e.recipes
     remove_recipes_id(e, [
         "brewinandchewin:filling/create/unripe_flaxen_cheese_wheel",
         "brewinandchewin:cutting/flaxen_cheese_wheel",
@@ -108,4 +108,14 @@ ServerEvents.recipes(e => {
         'brewinandchewin:bloody_mary',
         4, 4800
     )
+    farmersdelight.cooking(
+        [
+            "#forge:cream",
+            "#festival_delicacies:onion",
+            "#forge:vegetables",
+            "#forge:bread"
+        ],
+        'brewinandchewin:creamy_onion_soup',
+        1, 200, "minecraft:bowl"
+    ).id("brewinandchewin:cooking/creamy_onion_soup")
 })

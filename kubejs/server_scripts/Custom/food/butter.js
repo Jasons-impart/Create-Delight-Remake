@@ -10,7 +10,7 @@ ServerEvents.tags("item", e => {
 })
 
 ServerEvents.recipes(e => {
-    e.replaceInput({ id: "mynethersdelight:cooking/crimson_stroganoff" }, "#forge:milk", "#forge:whipped_cream")
+    e.replaceInput({ id: "mynethersdelight:cooking/crimson_stroganoff" }, "#forge:milk", '#forge:cream')
     e.recipes.create.mixing(
         Fluid.of("createdelight:whipped_cream", 250),
         Fluid.of("milk", 500)
@@ -52,10 +52,11 @@ ServerEvents.recipes(e => {
             "4x minecraft:bowl"
         ]
     ).id("createdelight:crafting/whipped_cream_bowl").replaceIngredient("createdelight:whipped_cream_bucket", "minecraft:bucket")
-    e.recipes.create.compacting(
+    e.recipes.create.mixing(
         "createdelight:butter",
         Fluid.of("createdelight:whipped_cream", 250)
     )
+        .heated()
         .id("createdelight:compacting/butter")
     e.recipes.kubejs.shapeless(
         '4x createdelight:butter',

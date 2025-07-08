@@ -23,6 +23,9 @@ ItemEvents.tooltip(e => {
         'createdelight:dread_heart',
         'createdelight:prospector',
         'vintagedelight:cheese_curds',
+        'bakeries:cream_cake',
+        'bakeries:tiramisu',
+        'bakeries:cake_roll'
     ])
     clearAddCtrlTooltip(e, [
         

@@ -30,6 +30,6 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:cucumber', 
     'youkaishomecoming:cucumber_crate', 
     'youkaishomecoming:cucumber_seeds', 
-    'youkaishomecoming:wild_cucumber'
+    'youkaishomecoming:mayonnaise_bottle'
   ])
 })

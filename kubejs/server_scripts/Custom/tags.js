@@ -35,4 +35,7 @@ ServerEvents.tags("minecraft:item", e => {
         'minecraft:sniffer_egg',
         'alexscaves:tremorzilla_egg'
     ])
+    e.add("forge:cream", [
+        'createdelight:whipped_cream_bowl'
+    ])
 })

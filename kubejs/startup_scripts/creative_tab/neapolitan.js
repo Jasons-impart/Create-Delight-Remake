@@ -69,7 +69,6 @@ StartupEvents.registry("minecraft:creative_mode_tab", e => {
     'neapolitan:adzuki_ice_cream', 
     'neapolitan:neapolitan_ice_cream', 
     'neapolitan:strawberry_banana_smoothie', 
-    'neapolitan:ice_cubes', 
     'neapolitan:banana_bunch', 
     'neapolitan:chimpanzee_banner_pattern',
     'neapolitan:reflection_pottery_sherd', 

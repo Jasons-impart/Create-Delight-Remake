@@ -47,8 +47,8 @@ ServerEvents.recipes(e => {
         "bakeries:brown_sugar_roll_dough",
         "bakeries:focaccia",
         "bakeries:drink_cup",
-        "bakeries:soak_coffee_cut_cake_base"
-
+        "bakeries:soak_coffee_cut_cake_base",
+        "bakeries:mould_two",
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -523,10 +523,29 @@ ServerEvents.recipes(e => {
         .id("bakeries:compacting/foamed_cream")
     create.mixing("2x bakeries:cheese_cream", ["bakeries:foamed_cream", "#forge:cheese"])
         .id("bakeries:mixing/cheese_cream")
-    create.filling("bakeries:crispy_dough", ["createdelight:oil_dough", FluidIngredients("forge:milk", 250)])
-        .id("bakeries:filling/crispy_dough")
-    create.cutting("8x bakeries:scone_dough", "bakeries:crispy_dough")
+    // create.filling("bakeries:crispy_dough", ["createdelight:oil_dough", FluidIngredients("forge:milk", 250)])
+    //     .id("bakeries:filling/crispy_dough")
+    create.cutting("8x bakeries:scone_dough", 'createdelight:puff_pastry')
         .id("bakeries:cutting/scone_dough")
+    kubejs.shapeless(
+        "bakeries:cream_pumpkin_pie_dough",
+        [
+            "createdelight:puff_pastry",
+            "farmersdelight:pumpkin_slice",
+            "bakeries:foamed_cream"
+        ]
+    ).id("bakeries:cream_pumpkin_pie_dough")
+    baking(e, 'bakeries:cream_pumpkin_pie_dough', 'bakeries:cream_pumpkin_pie', 1, "food", 100)
+    cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake',4]])
+    e.custom({
+        "type": "bakeries:dough_crafting_table",
+        "count": 8,
+        "ingredient":
+        {
+            "item": "createdelight:puff_pastry"
+        },
+        "result": "bakeries:scone_dough"
+    }).id("bakeries:dough_crafting_table/scone_dough")
     {
         let iner = "bakeries:mould"
         create.sequenced_assembly("bakeries:mould_pound_cake_paste", "bakeries:mould", [
@@ -539,7 +558,42 @@ ServerEvents.recipes(e => {
     }
     
     baking(e, "bakeries:mould_pound_cake_paste", "bakeries:mould_pound_cake", 1, "food", 100)
-    
+    {
+        let iner = 'bakeries:cut_cake_base'
+        create.sequenced_assembly('bakeries:cream_cake', iner, [
+            create.filling(iner, [iner, Fluid.of("createdelight:whipped_cream", 250)]),
+            create.deploying(iner, [iner, "bakeries:cut_cake_base"]),
+            create.filling(iner, [iner, Fluid.of("createdelight:whipped_cream", 250)]),
+            create.deploying(iner, [iner, "#alexscaves:sweet_berries"])
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequence_assembly/cream_cake")
+    }
+    {
+        let iner = 'bakeries:cut_cake_base'
+        create.sequenced_assembly('bakeries:cream_cake', iner, [
+            create.deploying(iner, [iner, '#forge:cream']),
+            create.deploying(iner, [iner, "bakeries:cut_cake_base"]),
+            create.deploying(iner, [iner, '#forge:cream']),
+            create.deploying(iner, [iner, "#alexscaves:sweet_berries"])
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequence_assembly/cream_cake_2")
+    }
+    {
+        let iner = 'bakeries:soak_coffee_cut_cake_base'
+        create.sequenced_assembly('bakeries:tiramisu', iner, [
+            create.deploying(iner, [iner, 'bakeries:cheese_cream']),
+            create.deploying(iner, [iner, "bakeries:soak_coffee_cut_cake_base"]),
+            create.deploying(iner, [iner, 'bakeries:cheese_cream']),
+            create.deploying(iner, [iner, "ratatouille:cocoa_powder"])
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("bakeries:sequence_assembly/tiramisu")
+    }
     // {
     //     let iner = "bakeries:mould_two"
     //     create.sequenced_assembly("bakeries:mould_carrot_cake_paste", "bakeries:mould_two", [
@@ -553,6 +607,33 @@ ServerEvents.recipes(e => {
     // }
     
     // baking(e, "bakeries:mould_carrot_cake_paste", "bakeries:mould_carrot_cake", 1, "food", 100)
+    vintageimprovements.curving(
+        [
+            'bakeries:mould',
+            'bakeries:toast'
+        ],
+        'bakeries:mould_toast'
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/mould_toast")
+    vintageimprovements.curving(
+        [
+            'bakeries:mould',
+            'bakeries:cheese_cocoa_toast'
+        ],
+        'bakeries:mould_cheese_cocoa_toast'
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/mould_cheese_cocoa_toast")
+    vintageimprovements.curving(
+        [
+            'bakeries:mould',
+            'bakeries:pound_cake'
+        ],
+        'bakeries:mould_pound_cake'
+    )
+        .mode(2)
+        .id("vintageimprovements:curving/mould_pound_cake")
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')

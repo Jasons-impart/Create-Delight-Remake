@@ -35,7 +35,9 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:raw_protein', 
    'bakeries:raw_egg_yolk', 
    'bakeries:fresh_cheese_cube', 
-   'bakeries:cake_base'
+   'bakeries:cake_base',
+   'bakeries:mould_two',
+   'bakeries:carrot_cake'
   ])
   e.add([
    'bakeries:mould_toast',
@@ -51,6 +53,8 @@ StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab",
     'bakeries:cake_paste_bucket', 
     'bakeries:egg_yolk_paste_bucket', 
     'bakeries:foamed_protein_bucket', 
-    'bakeries:mould_cake_paste'
+    'bakeries:mould_cake_paste',
+    'bakeries:mould_carrot_cake_paste',
+    'bakeries:crispy_dough'
   ])
 })

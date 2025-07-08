@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "culturaldelights:smelting/tortilla_from_smoking" }, "culturaldelights:corn_dough", "corn_delight:tortilla_raw")
     e.replaceInput({ id: "corn_delight:cooking/corn_soup" }, "culturaldelights:corn_cob", "createdelight:corn_flour")
     e.replaceInput({ id: "culturaldelights:cooking/creamed_corn" }, "culturaldelights:corn_cob", "culturaldelights:corn_kernels")
-    e.replaceInput({ id: "culturaldelights:cooking/creamed_corn" }, "#forge:milk", "#forge:whipped_cream")
+    e.replaceInput({ id: "culturaldelights:cooking/creamed_corn" }, "#forge:milk", '#forge:cream')
     e.replaceInput({ id: "corn_delight:cooking/creamy_corn_drink" }, "culturaldelights:corn_cob", "createdelight:corn_flour")
     e.recipes.kubejs.shapeless(
         "9x culturaldelights:corn_kernels",
