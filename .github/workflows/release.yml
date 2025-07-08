@@ -311,6 +311,11 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
+      - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
+        run: |
+          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
+          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
+          grep 'modpack' config/bcc-common.toml
       - name: 准备补丁文件
         run: |
           # 生成完整差异报告
