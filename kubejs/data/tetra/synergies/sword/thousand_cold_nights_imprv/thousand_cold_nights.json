@@ -1,8 +1,6 @@
-[
-    {
-        "modules": [ "sword/katana_blade" ],
-        "matchSuffixed": true,
-        "improvements": [ "sword/thousand_cold_nights_imprv" ],
-        "name": "sword/thousand_cold_nights"
-    }
-]
+[{
+    "modules": [ "sword/katana_blade" ],
+    "matchSuffixed": true,
+    "improvements": [ "sword/thousand_cold_nights_imprv" ],
+    "name": "sword/thousand_cold_nights"
+}]

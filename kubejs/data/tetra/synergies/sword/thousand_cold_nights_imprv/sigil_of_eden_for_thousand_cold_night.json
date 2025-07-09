@@ -1,10 +1,11 @@
-[ {
-        "modules": [ "sword/katana_blade" ],
-        "matchSuffixed": true,
-        "improvements": [ "blade/bloodthirster" ],
-        "moduleVariants": ["sword_socket/sigil_of_eden"],
-        "visibilityKey": "sword_socket/sigil_of_eden",
-        "effects": {
-            "art_of_forging:life_steal": [ 1, 10 ]
-    }
+[{
+  "modules": [ "sword/katana_blade" ],
+  "hidden": true,
+  "matchSuffixed": true,
+  "improvements": [ "blade/bloodthirster" ],
+  "moduleVariants": ["sword_socket/sigil_of_eden"],
+  "visibilityKey": "sword_socket/sigil_of_eden",
+  "effects": {
+    "art_of_forging:life_steal": [ 1, 10 ]
+  }
 }]

@@ -1,14 +1,16 @@
-[ {
-        "modules": [ "sword/katana_blade" ],
-        "matchSuffixed": true,
-        "improvements": [ "sword/murasama_imprv" ],
-        "moduleVariants": ["sword_socket/singularity"],
-        "visibilityKey": "sword_socket/singularity",
-        "effects": {
-            "intuit": 5,
-            "abilityEcho": 1
+[{
+  "modules": [ "sword/katana_blade" ],
+  "hidden": true,
+  "matchSuffixed": true,
+  "improvements": [ "sword/murasama_imprv" ],
+  "moduleVariants": ["sword_socket/singularity"],
+  "visibilityKey": "sword_socket/singularity",
+  "effects": {
+    "intuit": 5,
+    "abilityEcho": 1
     },
     "attributes": {
-	"generic.attack_speed": 0.8
+	  "generic.attack_speed": 0.8,
+      "**generic.attack_damage": 0.1
    }
 }]
