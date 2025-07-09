@@ -63,6 +63,38 @@
 			x: 9.5d
 			y: 3.0d
 		}
+		{
+			height: 2.0d
+			image: "alexscaves:item/darkened_apple"
+			rotation: 0.0d
+			width: 2.0d
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			height: 2.0d
+			image: "alexscaves:textures/mob_effect/darkness_incarnate.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: 3.5d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/pure_darkness"
+			rotation: 0.0d
+			width: 3.0d
+			x: -4.5d
+			y: 3.0d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/cloak_of_darkness"
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.5d
+			y: 3.0d
+		}
 	]
 	order_index: 8
 	quest_links: [ ]
@@ -81,11 +113,20 @@
 				}
 			}
 			id: "752E66805BBFEC51"
-			rewards: [{
-				id: "5912F833BE0C7138"
-				item: "dreadsteel:dreadsteel_shield"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "408F4D8E4A3DC3F9"
+					item: "dreadsteel:dreadsteel_ingot"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2B8B4009B2FD138D"
+					item: "createdelight:dread_heart"
+					type: "item"
+				}
+			]
 			shape: "square"
 			size: 2.0d
 			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
@@ -106,15 +147,7 @@
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
-			description: [
-				"悼念者的心灵容不得一丝轻浮"
-				"庄严的枪支寄予着哀悼"
-				"黑枪敬向逝者，白枪指向生者"
-				"葬礼只消肃穆，无需招摇"
-				"如果你在荒漠中发现一座美丽的沙丘"
-				"请不要将其毁坏，无数逝去的蝴蝶正安眠于此。"
-				"                                                                 ——ego 圣宣"
-			]
+			description: ["         我们的创造打开了次元的裂缝，来自异界的扭曲生物蜂拥而至。它们以灵魂为食，用锋利的存在将生命的本质穿刺、撕裂、抽离。在这场试炼中，你将直面灵魂被枯萎化的恐惧——不是肉体的死亡，而是存在本身的缓慢凋零。你的灵魂将成为战场。异界生物会用它们独有的方式刺穿灵核，抽取生命力，将你的意志一点点风干成尘埃。每一次呼吸都可能让灵魂更加脆弱，每一次抵抗都可能加速腐朽。你能坚持多久，才会像那些被撕裂的灵魂一样，成为它们中的一员？"]
 			icon: {
 				Count: 1
 				id: "gateways:gate_pearl"
@@ -130,6 +163,7 @@
 					type: "item"
 				}
 				{
+					count: 2
 					id: "42B1448B3D9C1EE3"
 					item: {
 						Count: 1
@@ -140,10 +174,26 @@
 					}
 					type: "item"
 				}
+				{
+					count: 2
+					id: "0327A14ABFADFEA1"
+					item: "art_of_forging:devils_soul_gem"
+					type: "item"
+				}
+				{
+					id: "581683A2875961F6"
+					item: "art_of_forging:sigil_of_eden"
+					type: "item"
+				}
+				{
+					id: "3F4407F7AB5982B9"
+					item: "art_of_forging:fang_charm"
+					type: "item"
+				}
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "灵魂&4&k222&r&r破散，万&4&k222&r&r物&4&k222&r&r枯萎&4&k222&r&r"
+			subtitle: "&4当异界之物&r&kaaaa&r&4撕裂现实，灵魂便&r&kaaaa&r&4如花朵般被&r&kaaaa&r&4刺穿、凋零"
 			tasks: [
 				{
 					id: "1DD719232C694C72"
@@ -167,7 +217,7 @@
 					value: 12L
 				}
 			]
-			title: "&4刺骨&r&k111&r&c穿心&r......"
+			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
 			x: 2.0d
 			y: 7.0d
 		}
@@ -399,6 +449,8 @@
 			dependencies: [
 				"752E66805BBFEC51"
 				"6DC960C9CBFEEAE9"
+				"58C8AFFF5BDFF59C"
+				"604734C6B3F31B97"
 			]
 			description: [
 				"嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
@@ -409,12 +461,46 @@
 			hide_until_deps_complete: true
 			icon: "alexsmobs:void_worm_eye"
 			id: "1DD9F7C0F4BD2170"
-			rewards: [{
-				count: 5
-				id: "0F688A7D388C7A40"
-				item: "createdelightcore:netherite_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "0F688A7D388C7A40"
+					item: "createdelightcore:netherite_coin"
+					type: "item"
+				}
+				{
+					id: "5A1722FF3606A8B5"
+					item: "sophisticatedbackpacks:netherite_backpack"
+					type: "item"
+				}
+				{
+					id: "302890C7D4921C28"
+					item: "waystones:waystone"
+					type: "item"
+				}
+				{
+					id: "6503E6FE79EDC525"
+					item: {
+						Count: 1
+						id: "vinery:straw_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1B6EEBC4A00F5F96"
+					item: {
+						Count: 1
+						id: "supplementaries:flute"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
 			shape: "octagon"
 			size: 4.0d
 			subtitle: "欲买桂花同载酒，终不似，少年游。"
@@ -497,7 +583,7 @@
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
-			description: ["这是一个童话世界一般的地方，这里的一切都由糖果构成。在这里你无需担心饥饿，因为你所看到的一切都是可食用的；你也无须担心黑暗，多亏了日光软糖，这里亮如白昼。当然，尽管这里看起来像是一个适合散步的公园，但在甜美的外表下，同样隐藏着一些危险。"]
+			description: ["         这是一个童话世界一般的地方，这里的一切都由糖果构成。在这里你无需担心饥饿，因为你所看到的一切都是可食用的；你也无须担心黑暗，多亏了日光软糖，这里亮如白昼。当然，尽管这里看起来像是一个适合散步的公园，但在甜美的外表下，同样隐藏着一些危险。"]
 			icon: {
 				Count: 1
 				id: "alexscaves:cave_codex"
@@ -546,7 +632,7 @@
 		}
 		{
 			dependencies: ["1DAA7B2A273EF5C1"]
-			description: ["糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。坐落在最高的甘草蔓上的女巫塔既是它们的家，也是它们探索邪恶甜食配方的地方。"]
+			description: ["         糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。坐落在最高的甘草蔓上的女巫塔既是它们的家，也是它们探索邪恶甜食配方的地方。"]
 			id: "604734C6B3F31B97"
 			rewards: [
 				{
@@ -584,6 +670,109 @@
 			}]
 			title: "糖分临界点"
 			x: 9.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: ["         这里的寂静并非安宁，而是生物腐化的前奏；黑暗不是缺席光明，而是主动吞噬灵魂的活体瘟疫。你需要抵抗视觉的侵蚀——因为黯渊生物正通过你的视线侵入现实，而每一次凝视都可能成为它们寄生灵魂的通道。请记住，我们永在你的身边，以及&r&k\"看见\"即是被污染的开始&r......"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:forlorn_hollows"
+				}
+			}
+			id: "45A66CCB979164B1"
+			shape: "square"
+			subtitle: "你为什么&r&k在这里&r......"
+			tasks: [
+				{
+					biome: "alexscaves:forlorn_hollows"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:forlorn_hollows"
+						}
+					}
+					id: "5161BDBACBFA856B"
+					type: "biome"
+				}
+				{
+					id: "1FBD33E822222078"
+					item: "createdelight:devil_eye"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6D4E19B4873616F2"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+			]
+			title: "人生最寂寥的一天"
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["45A66CCB979164B1"]
+			description: ["         当空谷的寂静爬上你的脊背，当黑暗在视网膜上生根发芽，你是否还能分清……究竟是你凝视着深渊，还是深渊早已寄生在你的瞳孔之中？或是被遗弃者正在腐化你的灵魂......"]
+			id: "58C8AFFF5BDFF59C"
+			rewards: [
+				{
+					count: 4
+					id: "3D105D857FEFFFD6"
+					item: "alexscaves:pure_darkness"
+					type: "item"
+				}
+				{
+					id: "35751A48F09B995C"
+					item: "createdelight:devil_eye"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "577E00FE739536F5"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:infinite_and_dark_trials"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "721154A9BC3E556C"
+					item: {
+						Count: 1
+						id: "fruitsdelight:blueberry_custard"
+						tag: {
+							RepairCost: 0
+							display: {
+								Name: "{\"text\":\"喝点吧，对眼睛好\"}"
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "当寂静被撕裂，恐惧源自深渊中的凝视"
+			tasks: [{
+				id: "60CDE55C025C902B"
+				item: {
+					Count: 62
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:infinite_and_dark_trials"
+					}
+				}
+				type: "item"
+			}]
+			title: "黯渊之视"
+			x: -4.5d
 			y: 3.0d
 		}
 	]
