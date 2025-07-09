@@ -1,10 +1,10 @@
-[ {
-        "modules": [ "sword/katana_blade" ],
-        "matchSuffixed": true,
-        "improvements": [ "sword/thousand_cold_nights_imprv" ],
-        "moduleVariants": ["basic_hilt/dreadsteel_ingot"],
-        "visibilityKey": "basic_hilt/dreadsteel_ingot",
-        "effects": {
-            "art_of_forging:devouring": [ -2, 5 ]
-    }
+[{
+  "modules": [ "sword/katana_blade" ],
+  "matchSuffixed": true,
+  "improvements": [ "sword/thousand_cold_nights_imprv" ],
+  "moduleVariants": ["basic_hilt/dreadsteel_ingot"],
+  "visibilityKey": "basic_hilt/dreadsteel_ingot",
+  "effects": {
+    "art_of_forging:devouring": [ -2, 5 ]
+  }
 }]

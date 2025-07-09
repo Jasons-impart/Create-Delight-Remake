@@ -19,10 +19,11 @@
         "crude"
     ],
     "material": {
-        "items": [ "minecraft:amethyst_shard","tetra:pristine_amethyst" ]
+        "items": [ "minecraft:amethyst_shard","tetra:pristine_amethyst","createutilities:polished_amethyst" ]
     },
     "requiredTools": {
         "hammer_dig": "minecraft:stone"
     },
-    "features": [ "pristine" ]
+    "features": [ "pristine" ],
+    "features": [ "polished" ]
 }

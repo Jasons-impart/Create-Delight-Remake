@@ -1,0 +1,26 @@
+{
+  "replace": true,
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:craft_type",
+        "craft": "module"
+      },
+      {
+        "type": "tetra:material",
+        "material": {
+          "items": [ "minecraft:polished_granite","minecraft:polished_diorite","minecraft:polished_andesite","minecraft:polished_blackstone","createutilities:polished_amethyst" ]
+        }
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "type": "tetra:apply_improvements",
+      "improvements": {
+        "polished": 0
+      }
+    }
+  ]
+}
