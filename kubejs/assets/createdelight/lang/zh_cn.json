@@ -92,9 +92,11 @@
     "createdelight.fire_dragon_eyes": "§4火龙试炼",
     "createdelight.ice_dragon": "§9冰龙试炼",
     "createdelight.lightning_dragon": "§5雷龙试炼",
-    "createdelight.piercing_withering_trial": "§l§5穿刺枯萎试炼",
+    "createdelight.piercing_withering_trial": "§3枯萎穿刺试炼",
     "createdelight.the_gate_of_eternal_cold": "§9永寒悚怖之门",
     "createdelight.ghast_trial": "恶魂试炼",
+    "createdelight.sweettide_brokenpoint": "糖分临界点",
+    "createdelight.infinite_and_dark_trials": "§3黯渊之视",
 
     "fluid.createdelight.adzuki_milkshake": "红豆奶昔",
     "fluid.createdelight.affogato_fluid": "阿芙佳朵",

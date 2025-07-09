@@ -6,18 +6,7 @@
 			"entities": [
 				{
 					"entity": "alexscaves:caniac",
-					"count": 12,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
+					"count": 12
 				}
 			],
 			"modifiers": [
@@ -65,18 +54,7 @@
 			"entities": [
 				{
 					"entity": "alexscaves:gumbeeper",
-					"count": 8,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
+					"count": 8
 				}
 			],
 			"modifiers": [
@@ -134,18 +112,7 @@
 			"entities": [
 				{
 					"entity": "alexscaves:caramel_cube",
-					"count": 12,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
+					"count": 12
 				}
 			],
 			"modifiers": [
@@ -186,18 +153,7 @@
 			"entities": [
 				{
 					"entity": "alexscaves:licowitch",
-					"count": 12,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
+					"count": 12
 				}
 			],
 			"modifiers": [
@@ -231,18 +187,7 @@
 			"entities": [
 				{
 					"entity": "alexscaves:licowitch",
-					"count": 1,
-					"nbt": {
-						"AgeTicks": 1680000,
-						"ActiveEffects": [
-							{
-								"forge:id": "minecraft:instant_health",
-								"Amplifier": 16,
-								"Duration": 20,
-								"ShowParticles": 0
-							}
-						]
-					}
+					"count": 1
 				}
 			],
        
