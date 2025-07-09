@@ -1,7 +1,0 @@
-{
-  "parent": "youkaishomecoming:table/open_california/sauce_0",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "sauce": "youkaishomecoming:block/table/sauce/mayonnaise"
-  }
-}

@@ -37,6 +37,8 @@
 	SnowyTree = true
 	#Specify block IDs here to prevent those blocks from being covered by snow.
 	ForceBlocksNotSnowy = []
+	#Enable local calendar and local info synchronization.
+	EnableLocalInfoAndCalendar = false
 
 [Weather]
 	#Enable solar term weather system with biome.
@@ -115,4 +117,8 @@
 [Map]
 	#The map color of blocks will change during snow.
 	ChangeMapColor = true
+
+[Resource]
+	#Enable extra built-in snow definitions resourcepack for game.
+	ExtraSnowDefinitions = false
 

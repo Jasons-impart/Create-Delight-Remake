@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight, createdieselgenerators, youkaishomecoming } = e.recipes
+    const { create, farmersdelight, youkaishomecoming } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")

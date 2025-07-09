@@ -196,6 +196,13 @@ ItemEvents.modification(e => {
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
+    //鱼籽效果
+    food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
+    e.modify('youkaishomecoming:roe', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:conduit_power")
+        }
+    })
     //奥利奥效果
     e.modify('createcafe:oreo', item => {
         item.foodProperties = food => {

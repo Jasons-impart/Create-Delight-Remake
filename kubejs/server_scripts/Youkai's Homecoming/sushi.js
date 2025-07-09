@@ -5,7 +5,7 @@ ServerEvents.recipes(e => {
     "youkaishomecoming:california",
     "create_bic_bit:mayonnaise_bottle",
     [
-      "#forge:vegetables/cucumber",
+      '#forge:slices/cucumber',
       "youkaishomecoming:tamagoyaki_slice",
       "youkaishomecoming:imitation_crab"
     ]
