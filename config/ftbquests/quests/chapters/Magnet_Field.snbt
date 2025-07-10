@@ -169,10 +169,10 @@
 			]
 			title: "挖矿装置！"
 			x: 5.5d
-			y: 3.0d
+			y: 2.5d
 		}
 		{
-			dependencies: ["68419F2554E332BE"]
+			dependencies: ["3D02EA3A30EE1933"]
 			description: ["将其放于副手便可延展磁性工具的范围（铁，下界合金）。"]
 			id: "55819F6D302C7D1B"
 			subtitle: "伸缩机械手？？"
@@ -187,7 +187,7 @@
 				}
 				type: "item"
 			}]
-			x: 0.0d
+			x: 1.0d
 			y: 4.0d
 		}
 		{
@@ -211,10 +211,10 @@
 				}
 			]
 			x: 5.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
-			dependencies: ["68419F2554E332BE"]
+			dependencies: ["3D02EA3A30EE1933"]
 			description: ["有两种模式：吸引和推开。按住shift使用时会切换模式。"]
 			id: "39B8696FAAEB50BA"
 			subtitle: "超帅！超强！超实用！"
@@ -229,7 +229,7 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
+			x: 3.0d
 			y: 4.0d
 		}
 		{
@@ -334,172 +334,6 @@
 		}
 		{
 			dependencies: ["3D02EA3A30EE1933"]
-			id: "68419F2554E332BE"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "alexscaves_torpedoes:magnetic_helmet"
-					tag: {
-						Damage: 0
-					}
-				}
-				id: "7BA081336E5258F2"
-				stat: "minecraft:mob_kills"
-				title: "神奇妙妙工具"
-				type: "stat"
-				value: 1
-			}]
-			x: 2.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "0683561F46D42F14"
-			subtitle: "&4磁场特攻！"
-			tasks: [
-				{
-					id: "2E0E54EB6EC4D62C"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:scarlet_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "26136D62AF3F6F2B"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:scarlet_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "177B14A9CF53337B"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:scarlet_axe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "7986AE084E4E4916"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:scarlet_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "29D929A1FADA02DE"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:scarlet_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "赤钕工具"
-			x: 4.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "57C2C33BE5184E9F"
-			subtitle: "&4磁场特攻！"
-			tasks: [
-				{
-					id: "43634FFB57280E02"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:azure_sword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "36A6880A097FCCBA"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:azure_pickaxe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "51607CB1CFB10FF6"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:azure_axe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "2DA69FBF67D7E3CF"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:azure_shovel"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "3D067A0945F17791"
-					item: {
-						Count: 1
-						id: "alexscaves_torpedoes:azure_hoe"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-			]
-			title: "青钕工具"
-			x: 3.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "0E459F2AEB51742E"
-			subtitle: "命中后会造成小范围&3磁暴(强力击退效果)&r，同时&4摧毁红石粉&r；共有&e七发&r，全部消耗后需使用&9特斯拉球&r进行装填"
-			tasks: [{
-				id: "77372BE783F23888"
-				item: {
-					Count: 1
-					id: "alexscaves_torpedoes:pulsargun"
-					tag: { }
-				}
-				type: "item"
-			}]
-			x: 1.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
 			id: "2214DB76B8B59112"
 			subtitle: "&4顾名思义"
 			tasks: [{
@@ -507,26 +341,8 @@
 				item: "alexscaves:seeking_arrow"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 6.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "77627741CEC1306C"
-			subtitle: "可以永远的吸在铁磁性物品上，请一定要&4中途摘下&r从而&4暴毙"
-			tasks: [{
-				id: "6D93D59497A547E0"
-				item: {
-					Count: 1
-					id: "alexscaves_torpedoes:magnetic_helmet"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
 			x: 2.0d
-			y: 6.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3D02EA3A30EE1933"]
@@ -541,63 +357,6 @@
 			}]
 			x: 4.0d
 			y: 2.0d
-		}
-		{
-			dependencies: ["3D9DCFAF35EA9A37"]
-			id: "4E28121343C30603"
-			tasks: [{
-				id: "205A50D1FCF427EF"
-				item: "alexscaves_torpedoes:magnet_display"
-				type: "item"
-			}]
-			x: 5.5d
-			y: 1.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "28F5E47882C0A06D"
-			subtitle: "吸取铁磁性物品"
-			tasks: [{
-				id: "50258EAC09A21214"
-				item: {
-					Count: 1
-					id: "alexscaves_torpedoes:pocket_magnet"
-					tag: { }
-				}
-				type: "item"
-			}]
-			x: 0.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			id: "21A133E7A844CCFA"
-			subtitle: "有点硌脚的粘液靴子"
-			tasks: [{
-				id: "7D90936A799BA1AB"
-				item: {
-					Count: 1
-					id: "alexscaves_torpedoes:ferrousslime_boots"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 4.0d
-			y: 5.0d
-		}
-		{
-			dependencies: ["68419F2554E332BE"]
-			hide_until_deps_complete: true
-			id: "23179BF31371F0E8"
-			tasks: [{
-				id: "63497CDCEA27D163"
-				item: "alexscaves_torpedoes:torpedo_pulsar"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 3.0d
 		}
 	]
 	title: "&9磁场空间"

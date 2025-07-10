@@ -1394,10 +1394,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"6EB96008F21DAFBF"
-				"610ED0789BAF7EFC"
-			]
+			dependencies: ["610ED0789BAF7EFC"]
 			id: "2221F35F24F80309"
 			shape: "square"
 			tasks: [{
