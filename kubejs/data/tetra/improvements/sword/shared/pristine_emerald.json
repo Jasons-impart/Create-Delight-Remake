@@ -1,0 +1,13 @@
+[
+  {
+    "key": "pristine_emerald",
+    "effects": {
+      "criticalStrike": [15, 1]
+    },
+    "models": [
+      {
+        "location": "tetra:item/pristine"
+      }
+    ]
+  }
+]
