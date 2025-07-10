@@ -109,8 +109,8 @@
 			size: 1.0d
 			subtitle: "吼吼吼！"
 			tasks: [{
-				id: "30022DFADCCBA646"
-				item: "createdelight:diesel_engine"
+				id: "15E6D868014AB3E1"
+				item: "createdieselgenerators:diesel_engine"
 				type: "item"
 			}]
 			x: -10.5d
@@ -131,8 +131,8 @@
 			size: 1.0d
 			subtitle: "单位空间下极致的应力效率"
 			tasks: [{
-				id: "750CF6A3EF8B1390"
-				item: "createdelight:modular_diesel_engine"
+				id: "4903E879E49DC3F7"
+				item: "createdieselgenerators:large_diesel_engine"
 				type: "item"
 			}]
 			x: -10.5d

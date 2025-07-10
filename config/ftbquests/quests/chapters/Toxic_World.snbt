@@ -504,32 +504,6 @@
 			y: -3.5d
 		}
 		{
-			dependencies: ["7357729E32CC0F74"]
-			description: [
-				"可在&6驾驶潜水艇期间&r手持右击发射，每次发射后需等待极短的冷却时间才能再次发射；"
-				"造成相当于核能苦力怕的爆炸（可破坏地形并施加 40 分钟 辐照 II 效果）"
-				"核能鱼雷在接触到空气 / 任意固体方块、生物后就会立刻爆炸"
-				"在水下则会沿一条固定的直线弹道飞行（无视流体阻力 ，重力影响）"
-				"核能鱼雷在水下的射程有限，在持续移动一定距离后便会自动爆炸；"
-				"&c切忌在陆地驾驶潜水艇期间发射任何种类的鱼雷，因为被发射的鱼雷会立刻在潜水艇所在位置爆炸，对潜水艇和玩家造成损伤。&r"
-			]
-			id: "56699F4F160EB0FE"
-			rewards: [{
-				id: "66AD70C0649C6A12"
-				item: "alexscaves_torpedoes:torpedo_nuclear"
-				type: "item"
-			}]
-			subtitle: "可以发射了"
-			tasks: [{
-				id: "5C8C81D953DF2D7C"
-				item: "alexscaves_torpedoes:torpedo_nuclear"
-				title: "核能鱼雷"
-				type: "item"
-			}]
-			x: 5.0d
-			y: 1.5d
-		}
-		{
 			dependencies: ["2F6C3FD71E5A23A4"]
 			id: "07A709FF4C24E964"
 			tasks: [{
