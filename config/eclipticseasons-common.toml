@@ -14,7 +14,7 @@
 	CalendarItemHint = false
 	#In summer, the days are long and the nights are short, while in winter, the days are short and the nights are long.
 	DynamicDaylightDuration = true
-	#Which dimensions will have season effects? Note that it must be natrual and have time lapse.
+	#List of dimensions where season effects apply. Must be natural worlds with a day-night cycle.
 	ValidDimensions = ["minecraft:overworld"]
 	#If snow falls during cold weather, it will gradually cover all solid blocks and grass.
 	SnowyWinter = true
@@ -23,14 +23,30 @@
 	#Snow will not appear in overly bright areas.
 	#Range: 1 ~ 15
 	NotSnowyNearGlowingBlockLevel = 10
+	#Day time length of spring, divided into six periods according to the solar term table.
+	SpringDayTimes = [10500, 11000, 11500, 12000, 12500, 13000]
+	#Day time length of summer, divided into six periods according to the solar term table.
+	SummerDayTimes = [13500, 14000, 14500, 15000, 14500, 14000]
+	#Day time length of autumn, divided into six periods according to the solar term table.
+	AutumnDayTimes = [13500, 13000, 12500, 12000, 11500, 11000]
+	#Day time length of winter, divided into six periods according to the solar term table.
+	WinterDayTimes = [10500, 10000, 9500, 9000, 9500, 10000]
+	#Day time length of none season, divided into six periods according to the solar term table.
+	NoneDayTimes = [12000]
+	#Not just the top layer, now even the leaves below are dusted with frost and snow.
+	SnowyTree = true
+	#Specify block IDs here to prevent those blocks from being covered by snow.
+	ForceBlocksNotSnowy = []
+	#Enable local calendar and local info synchronization.
+	EnableLocalInfoAndCalendar = false
 
 [Weather]
 	#Enable solar term weather system with biome.
 	UseSolarWeather = true
-	#Set the percentage multiplier of the probability of rain, the range should be between 0 and 1000.
+	#Multiplier (0-1000) affecting how likely rain will occur.
 	#Range: 0 ~ 1000
 	RainChancePercentMultiplier = 40
-	#Set the percentage multiplier of the probability of thunder in the rain, the range should be between 0 and 1000.
+	#Multiplier (0-1000) affecting how likely thunder will occur.
 	#Range: 0 ~ 1000
 	ThunderChancePercentMultiplier = 20
 	#Set it true to initialize weather and snow when loading the mod or level for the first time.
@@ -61,7 +77,7 @@
 	#The maximum effective diameter of the greenhouse.
 	#Range: 3 ~ 128
 	GreenHouseMaxHeight = 10
-	#The possibility of crops not growing when there is insufficient sunlight in green house.
+	#Chance that crops fail to grow due to low sunlight inside the greenhouse.
 	#Range: 0 ~ 10000
 	DarkGreenhouseFailChance = 2000
 	#Whether to enable complex shape checking.
@@ -91,7 +107,7 @@
 [Debug]
 	#Enable debug option to detect illegal use of functions.
 	LogIllegalUse = false
-	#Without snowy block under the light blocks which level is 0.
+	#Disable snowy blocks beneath light sources with light level 0.
 	NotSnowyUnderLight0 = false
 	#Snow overlay block if has full collision shape not just full render shape.
 	SnowyFullCollisionShape = false
@@ -101,4 +117,8 @@
 [Map]
 	#The map color of blocks will change during snow.
 	ChangeMapColor = true
+
+[Resource]
+	#Enable extra built-in snow definitions resourcepack for game.
+	ExtraSnowDefinitions = false
 

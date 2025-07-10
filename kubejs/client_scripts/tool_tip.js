@@ -23,6 +23,9 @@ ItemEvents.tooltip(e => {
         'createdelight:dread_heart',
         'createdelight:prospector',
         'vintagedelight:cheese_curds',
+        'bakeries:cream_cake',
+        'bakeries:tiramisu',
+        'bakeries:cake_roll'
     ])
     clearAddCtrlTooltip(e, [
         
@@ -38,6 +41,7 @@ ItemEvents.tooltip(e => {
         'luncheonmeatsdelight:can_shell_small_toast',
         'bakeries:mould_toast',
         'bakeries:mould_cheese_cocoa_toast',
+        'bakeries:mould_pound_cake',
         'eclipticseasons:spring_greenhouse_core',
         'eclipticseasons:summer_greenhouse_core',
         'eclipticseasons:autumn_greenhouse_core',

@@ -179,6 +179,14 @@
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				modifier_offset_z = 0.0
 
+		[camera.offset.presets]
+			#A list of x-offset presets that can be toggled via the 'Toggle X-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_x = []
+			#A list of y-offset presets that can be toggled via the 'Toggle Y-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_y = []
+			#A list of z-offset presets that can be toggled via the 'Toggle Z-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_z = []
+
 	[camera.camera_drag]
 		#x-axis multiplier for camera drag.
 		#Range: 0.0 ~ 5.0

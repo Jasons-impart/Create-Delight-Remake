@@ -1,0 +1,27 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "minecraft:salmon_bucket"
+    }
+  ],
+  "result": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "count": 2,
+      "item": "farmersdelight:salmon_slice"
+    },
+    {
+      "item": "minecraft:bone_meal"
+    },
+    {
+      "chance": 0.5,
+      "item": "oceanic_delight:salmon_eggs"
+    }
+  ],
+  "tool": {
+    "tag": "forge:tools/knives"
+  }
+}

@@ -7,6 +7,8 @@
 		fdStickFoodsGrantStrength = true
 		#Should Farmer's Delight glowing foods grant perception? (default: true)
 		fdGlowingFoodsGrantPerception = true
-		#Enables all compat items even if their mods aren't installed, mostly useful for modpacks wanting to repurpose the items (default: false)
+		#Force enable all mod integration? (even if the corresponding mods are not installed), mostly useful for modpacks wanting to repurpose the items (default: false)
 		forceEnableCompatItems = false
+		#Disable all mod integration? (if this is set to false then some mods that are supported will feature new items to collaborate the features of both mods) (default: false)
+		disableContentIntegration = false
 
