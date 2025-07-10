@@ -5,7 +5,6 @@ ServerEvents.recipes(e => {
         "ad_astra:cryo_freezing",
         "ad_astra:nasa_workbench",
         "ad_astra:compressing",
-        "ad_astra:oxygen_loading",
         "ad_astra:alloying",
     ])
     remove_recipes_output(e, [
@@ -30,7 +29,7 @@ ServerEvents.recipes(e => {
         "ad_astra:steel_block",
         "ad_astra:etrionic_blast_furnace",
         "ad_astra:alloying/steel_ingot_from_alloying_iron_ingot_and_coals",
-        
+        "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     e.replaceInput({}, "ad_astra:steel_rod", "#forge:rods/steel")
