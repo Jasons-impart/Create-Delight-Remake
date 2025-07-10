@@ -751,6 +751,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "枪械制作台已经被移除，请看JEI制作对应枪械哦"
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"
