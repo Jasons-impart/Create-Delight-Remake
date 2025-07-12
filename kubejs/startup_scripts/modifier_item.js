@@ -1,4 +1,14 @@
 ItemEvents.modification(e => {
+// 抗火
+    /**
+     * 
+     * @param {Internal.Item} id 
+     */
+    let fire_resistance = function(id) {
+        e.modify(id, item => {
+            item.fireResistant = true
+        })
+    }
 // 食物修改,参数分别为食物id，饥饿值，饱和度
     /**
      * 
@@ -139,6 +149,22 @@ ItemEvents.modification(e => {
         })
     }
 
+    // 耐久修改
+    maxDamage_change("butchercraft:apron", 240)
+    maxDamage_change("butchercraft:gloves", 225)
+    maxDamage_change("butchercraft:mask", 165)
+    maxDamage_change("butchercraft:boots", 195)
+    maxDamage_change("bakeries:bread_knife", 100)
+
+    //抗火
+    fire_resistance("createmetallurgy:raw_wolframite_block")
+    fire_resistance("createmetallurgy:wolframite_ore")
+    fire_resistance("createmetallurgy:raw_wolframite")
+    fire_resistance("createmetallurgy:crushed_raw_wolframite")
+    fire_resistance("createmetallurgy:dirty_wolframite_dust")
+    fire_resistance("createmetallurgy:wolframite_dust")
+
+    // 食物效果修改
     food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
     food_hungers("ratatouille:cake_base", 7, 4.5)
     food_hungers("casualness_delight:cooked_donkey_meat", 6, 4.5)
@@ -161,7 +187,6 @@ ItemEvents.modification(e => {
     food_hungers("create:blaze_cake", 10, 7)
     food_hungers("oceanic_delight:shrimp_chips", 4, 5.5)
     food_hungers("create:sweet_roll", 8, 6)
-
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
     e.modify("culturaldelights:glow_squid", item => {
@@ -192,18 +217,17 @@ ItemEvents.modification(e => {
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
-
-    //紫颂果食物传送效果
+        //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
-    //鱼籽效果
+        //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
     e.modify('youkaishomecoming:roe', item => {
         item.foodProperties = food => {
             food.removeEffect("minecraft:conduit_power")
         }
     })
-    //奥利奥效果
+        //奥利奥效果
     e.modify('createcafe:oreo', item => {
         item.foodProperties = food => {
             food.effect("minecraft:speed", 400, 1, 1)
@@ -213,27 +237,7 @@ ItemEvents.modification(e => {
             food.effect("minecraft:absorption", 400, 1, 1)
         }
     })
-    // e.modify('createcafe:oreo_milk_tea', item => {
-    //     item.foodProperties = food => {
-    //         food.removeEffect("minecraft:speed")
-    //         food.effect("minecraft:speed", 400, 1, 1)
-    //         food.removeEffect("minecraft:regeneration")
-    //         food.effect("minecraft:regeneration", 400, 1, 1)
-    //         food.removeEffect("minecraft:resistance")
-    //         food.effect("minecraft:resistance", 400, 1, 1)
-    //         food.removeEffect("minecraft:fire_resistance")
-    //         food.effect("minecraft:fire_resistance", 400, 1, 1)
-    //         food.removeEffect("minecraft:absorption")
-    //         food.effect("minecraft:absorption", 400, 1, 1)
-    //     }
-    // })
-
-    maxDamage_change("butchercraft:apron", 240)
-    maxDamage_change("butchercraft:gloves", 225)
-    maxDamage_change("butchercraft:mask", 165)
-    maxDamage_change("butchercraft:boots", 195)
-    maxDamage_change("bakeries:bread_knife", 100)
-    
+    //咖啡效果
     coffee_effect('createcafe:strawberry_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:vanilla_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:mint_iced_coffee', 600, 0, 600)
@@ -258,7 +262,7 @@ ItemEvents.modification(e => {
     coffee_effect('createcafe:coffee_grounds', 30, 0, 30)
     coffee_effect('farmersrespite:coffee_cake_slice', 150, 0, 150)
 
-
+    // 红茶效果
     red_tea_effect("farmersrespite:black_tea", 60, 0, 60, 30)
     red_tea_effect("farmersrespite:long_black_tea", 90, 0, 90, 45)
     red_tea_effect("farmersrespite:strong_black_tea", 30, 1, 30, 30)
@@ -285,6 +289,7 @@ ItemEvents.modification(e => {
         }
     })
 
+    // 乌龙茶效果
     yellow_tea_effect('farmersrespite:yellow_tea', 60, 0, 60, 30)
     yellow_tea_effect('farmersrespite:long_yellow_tea', 90, 0, 90, 45)
     yellow_tea_effect('farmersrespite:strong_yellow_tea', 30, 1, 30, 30)
@@ -300,7 +305,7 @@ ItemEvents.modification(e => {
     yellow_tea_effect('createcafe:durian_milk_tea', 45, 0, 45, 20)
     yellow_tea_effect("collectorsreap:yellow_tea_gummy", 20, 2, 20, 10)
     
-
+    // 绿茶效果
     green_tea_effect('farmersrespite:green_tea', 60, 1, 60, 30)
     green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)
     green_tea_effect('farmersrespite:strong_green_tea', 30, 2, 30, 30)
@@ -328,6 +333,8 @@ ItemEvents.modification(e => {
             food.effect("minecraft:haste", 200, 2, 1)
         }
     })
+
+    //合成后返还酒瓶
     e.modify([
     'nethervinery:blazewine_pinot',
     'nethervinery:netherite_nectar',
@@ -362,8 +369,8 @@ ItemEvents.modification(e => {
     'vinery:stal_wine',
     'vinery:chenet_wine',
     'vinery:bottle_mojang_noir',
-    'vinery:jellie_wine']
-, item => {
-    item.setCraftingRemainingItem("vinery:wine_bottle")
-})
+    'vinery:jellie_wine'
+    ], item => {
+        item.setCraftingRemainingItem("vinery:wine_bottle")
+    })
 })
