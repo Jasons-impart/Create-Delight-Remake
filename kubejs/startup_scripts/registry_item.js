@@ -311,12 +311,21 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:braised_intestines_in_brown_sauce")
         .rarity("epic")
         .maxStackSize(16)
-        .translationKey("item.createdelight.braised_intestines_in_brown_sauce")
-        .food(food => {
-            food.hunger(20)
+        .food(f => {
+            f.hunger(20)
                 .saturation(1)
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
+                .eaten(ea => {
+                    ea.server.scheduleInTicks(1, func => {
+                        if(!ea.player.isCreative()) {
+                            if(!ea.player.getInventory().add('minecraft:bowl')) {
+                                ea.player.drop('minecraft:bowl', false)
+                            }
+                        }
+                    })
+                })
         })
+        .translationKey("item.createdelight.braised_intestines_in_brown_sauce")
     //清水白菜
     e.create("createdelight:boiling_water_cabbage")
         .rarity("uncommon")
