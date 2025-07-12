@@ -1,5 +1,13 @@
 ServerEvents.recipes((e) => {
   let {farmersdelight} = e.recipes
+  // 动物胶水洗生成粘液球
+  e.recipes.create.splashing(
+    [
+      'minecraft:slime_ball',
+      Item.of("minecraft:slime_ball").withChance(0.1)
+    ],
+    '#forge:gelatin'
+  ).id("butchercraft:splashing/gelatin")
   // 机械动力兼容相关
   const big_anms = [
     "beef",
