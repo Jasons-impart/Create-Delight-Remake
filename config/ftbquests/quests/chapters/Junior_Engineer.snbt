@@ -1340,6 +1340,10 @@
 		}
 		{
 			dependencies: ["223ACB0E32376155"]
+			description: [
+				"注：&4液体燃料&r都是不能无限的"
+				"JEI搜索 &e$bottomless&r 以确认无限流体有哪些。"
+			]
 			id: "1523D6D5EF640B8C"
 			rewards: [{
 				id: "10C155E8AB63B3C2"
