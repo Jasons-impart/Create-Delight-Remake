@@ -84,7 +84,7 @@
 				disable_toast: true
 				icon: "minecraft:grass_block"
 				id: "2664A2E2CC659A77"
-				title: "原来你也玩机械动力悠然乐事！"
+				title: "原来你也玩齿轮盛宴！"
 				type: "dimension"
 			}]
 			title: "齿轮盛宴"
@@ -914,7 +914,7 @@
 			]
 			icon: "createdelight:emergency_industrial_platform"
 			id: "73CE44DE53C68D82"
-			shape: "square"
+			shape: "gear"
 			subtitle: "使用前强烈建议阅读"
 			tasks: [{
 				id: "3ACEAE04CA785DAC"
@@ -925,12 +925,12 @@
 						value: "createdelight:platform"
 					}
 				}
-				title: "Any #createdelight:platform"
+				title: "工业平台"
 				type: "item"
 			}]
 			title: "关于平台这件事"
 			x: 0.0d
-			y: -3.0d
+			y: -3.5d
 		}
 	]
 	title: "介绍"
