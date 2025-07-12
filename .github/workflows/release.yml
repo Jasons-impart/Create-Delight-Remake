@@ -363,7 +363,7 @@ jobs:
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
           echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "$MODPACK_NAME $MODPACK_VERSION" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          echo "$MODPACK_NAME $MODPACK_VERSION (patch)" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
