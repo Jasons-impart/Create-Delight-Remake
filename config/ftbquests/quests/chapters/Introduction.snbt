@@ -905,6 +905,33 @@
 			x: -2.0d
 			y: -8.0d
 		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"1.平台生成时，最高层完整方块在结构方块&n下一格&r，平齐的为最上层的灯"
+				"2.注意以上内容，虽然淌水做机器真的很浪漫"
+				"3.尽管进度条是红的，但是&n空手&r也能挖掘"
+			]
+			icon: "createdelight:emergency_industrial_platform"
+			id: "73CE44DE53C68D82"
+			shape: "square"
+			subtitle: "使用前强烈建议阅读"
+			tasks: [{
+				id: "3ACEAE04CA785DAC"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "createdelight:platform"
+					}
+				}
+				title: "Any #createdelight:platform"
+				type: "item"
+			}]
+			title: "关于平台这件事"
+			x: 0.0d
+			y: -3.0d
+		}
 	]
 	title: "介绍"
 }
