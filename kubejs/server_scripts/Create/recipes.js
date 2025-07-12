@@ -13,6 +13,14 @@ ServerEvents.recipes(e => {
         "create:mixing/brass_ingot",
         "minecraft:iron_trapdoor",
     ])
+    // 闪长岩合成配方优化
+    e.recipes.create.mixing(
+        'minecraft:diorite',
+        [
+            '#forge:cobblestone/normal',
+            'minecraft:quartz'
+        ]
+    ).id("create:mixing/diorite")
     // 黑曜石粉末粉碎
     e.recipes.create.milling(
         Item.of("create:powdered_obsidian").withChance(0.3),
