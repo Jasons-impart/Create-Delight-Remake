@@ -76,9 +76,9 @@ ServerEvents.recipes(e => {
         Item.of("minecarft:ender_pearl").withChance(0.01),
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:radiant_essence"]),
-        create.compacting(incomplete, incomplete),
+        create.cutting(incomplete, incomplete),
         vintageimprovements.vibrating(incomplete, incomplete),
-        create.deploying(incomplete, [incomplete, "alexscaves:music_disc_tasty"]),
+        create.filling(incomplete, [incomplete, Fluid.of("alexscaves:purple_soda", 250)]),
         create.deploying(incomplete, [incomplete, "alexscaves:conversion_crucible"]),
         create.deploying(incomplete, [incomplete, "alexscaves:biome_treat"])
     ]).transitionalItem(incomplete).loops(4)
@@ -89,7 +89,7 @@ ServerEvents.recipes(e => {
         Item.of("minecarft:ender_pearl").withChance(0.01),
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:pure_darkness"]),
-        create.compacting(incomplete, incomplete),
+        create.cutting(incomplete, incomplete),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "createdelight:devil_eye"]),
         create.deploying(incomplete, [incomplete, "alexscaves:desolate_dagger"]),
