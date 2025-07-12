@@ -1,5 +1,4 @@
 {
-	autofocus_id: "03950A91DF592F72"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Otherworldly_Challenges"
@@ -94,6 +93,56 @@
 			width: 3.0d
 			x: -1.5d
 			y: 3.0d
+		}
+		{
+			height: 4.0d
+			image: "minecraft:item/campfire"
+			order: 3
+			rotation: 0.0d
+			width: 4.0d
+			x: 16.0d
+			y: -9.5d
+		}
+		{
+			height: 3.0d
+			image: "minecraft:block/campfire_fire"
+			rotation: 0.0d
+			width: 3.0d
+			x: 16.0d
+			y: -10.0d
+		}
+		{
+			height: 1.0d
+			image: "gateways:item/gate_pearl_med"
+			order: 2
+			rotation: 0.0d
+			width: 1.0d
+			x: 18.0d
+			y: -7.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:block/bookshelf"
+			rotation: 0.0d
+			width: 2.0d
+			x: 14.0d
+			y: -7.5d
+		}
+		{
+			height: 1.0d
+			image: "alexscaves:item/cave_book"
+			rotation: 0.0d
+			width: 1.0d
+			x: 14.0d
+			y: -7.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:block/respawn_anchor_top"
+			rotation: 0.0d
+			width: 2.0d
+			x: 18.0d
+			y: -7.5d
 		}
 	]
 	order_index: 8
@@ -774,6 +823,516 @@
 			title: "黯渊之视"
 			x: -4.5d
 			y: 3.0d
+		}
+		{
+			dependencies: [
+				"752E66805BBFEC51"
+				"604734C6B3F31B97"
+				"58C8AFFF5BDFF59C"
+				"6DC960C9CBFEEAE9"
+			]
+			hide_dependency_lines: true
+			icon: "iceandfire:dragon_flute"
+			id: "4245E55901A10324"
+			rewards: [{
+				id: "43BE1F5B913C206D"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 2.0d
+			tasks: [{
+				id: "5B2314DCA6DF60DD"
+				title: "冒险者凭证"
+				type: "checkmark"
+			}]
+			x: 16.0d
+			y: -10.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			id: "050AB9237E1A220F"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "38B21ED9E8F1D862"
+				table_id: 4333690453817390891L
+				type: "random"
+			}]
+			shape: "square"
+			tasks: [{
+				consume_items: true
+				count: 2L
+				id: "517B20A85A578CFE"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			title: "裂隙提取"
+			x: 17.0d
+			y: -7.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["050AB9237E1A220F"]
+			id: "1B98A52DE4C3C6C3"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "36C4580D211BA472"
+				table_id: 2681974185087507496L
+				type: "random"
+			}]
+			shape: "square"
+			tasks: [{
+				consume_items: true
+				count: 4L
+				id: "15B0A412BCE89168"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			title: "深度提取"
+			x: 17.0d
+			y: -5.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["1B98A52DE4C3C6C3"]
+			id: "05A7FB61F7778E1A"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "67E99604C5AA2463"
+				table_id: 2954034298782133295L
+				type: "random"
+			}]
+			shape: "square"
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "447A36CEE7F41E36"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			title: "定向提取"
+			x: 17.0d
+			y: -4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			id: "27C4A5AE4F8C6E95"
+			rewards: [
+				{
+					icon: "minecraft:amethyst_shard"
+					id: "4125B65A0886A004"
+					table_id: 2077532568744688732L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "662AF1A177DB5CED"
+					table_id: 1515464272228904394L
+					type: "random"
+				}
+			]
+			shape: "square"
+			tasks: [{
+				id: "394C4F8B9880263B"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			title: "材料提取"
+			x: 19.0d
+			y: -7.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			id: "32D4B900101497D2"
+			rewards: [
+				{
+					count: 4
+					id: "657D7F913CE6AD4B"
+					item: "minecraft:enchanted_golden_apple"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "05FB16E58EDFB226"
+					item: "trailandtales_delight:ancient_coffee"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3B0DB5506EFE9AAD"
+					item: "fruitsdelight:mango_jelly"
+					type: "item"
+				}
+			]
+			shape: "square"
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "2BF3D51E231C2C56"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			title: "战斗补给"
+			x: 19.0d
+			y: -5.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: {
+				Count: 1
+				id: "iceandfire:dread_knight_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3B31581A3A3C548D"
+			rewards: [{
+				count: 4
+				id: "20AAF852D67AECF2"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "65507523F59AA7A3"
+					item: {
+						Count: 1
+						id: "iceandfire:dread_knight_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "6B39BF31E5C04FBE"
+					item: {
+						Count: 1
+						id: "iceandfire:dread_queen_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2A5BFBA6ED60840E"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "263A2C90B92F70F6"
+					item: {
+						Count: 1
+						id: "iceandfire:dread_sword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "5F82B2711C359739"
+					item: "iceandfire:banner_pattern_dread"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "390F97CDEB338633"
+					item: "iceandfire:banner_pattern_weezer"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4B6C967DF851BBD9"
+					item: "iceandfire:banner_pattern_ice"
+					type: "item"
+				}
+			]
+			title: "研究：另一个世界"
+			x: 15.0d
+			y: -7.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: {
+				Count: 1
+				id: "alexscaves:sugar_staff"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "1E127C39C88ABD39"
+			rewards: [{
+				count: 4
+				id: "2469E127F10A2C7E"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "46ED3C7D63B70493"
+					item: {
+						Count: 1
+						id: "alexscaves:sack_of_sating"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "064038D10E1DE668"
+					item: "alexscaves:frostmint_spear"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "25A5975A6339F7B6"
+					item: {
+						Count: 1
+						id: "alexscaves:shot_gum"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "39698AD196FB994B"
+					item: {
+						Count: 1
+						id: "alexscaves:sugar_staff"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "研究：甜美的代价"
+			x: 15.0d
+			y: -4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: "minecraft:nether_star"
+			id: "2FE60E36A39610AF"
+			rewards: [{
+				count: 8
+				id: "22E5DE7FC17B4954"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "6D90B28B0E1E2BF9"
+					item: "art_of_forging:fang_charm"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "17F349317166C2A1"
+					item: "alexsmobs:soul_heart"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "0FA3ADFAA1610A1A"
+					item: "art_of_forging:sigil_of_eden"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "613AF56A73DBE820"
+					item: "art_of_forging:devils_soul_gem"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "7415A5EE950F6C1F"
+					item: "brewinandchewin:withering_dross"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "55CD7FAB4DEE88AB"
+					item: "minecraft:nether_star"
+					type: "item"
+				}
+			]
+			title: "研究：灵魂的本质"
+			x: 15.0d
+			y: -5.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: {
+				Count: 1
+				id: "alexscaves:desolate_dagger"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "65FA9F30F478E1D4"
+			rewards: [{
+				count: 2
+				id: "301033381D381217"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "151C650FADCA2D22"
+					item: {
+						Count: 1
+						id: "alexscaves:hood_of_darkness"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "752F82596F8868E7"
+					item: {
+						Count: 1
+						id: "alexscaves:cloak_of_darkness"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "3FAF364AAD2ADC67"
+					item: {
+						Count: 1
+						id: "alexscaves:desolate_dagger"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "30C581E85E7C9631"
+					item: {
+						Count: 1
+						id: "alexscaves:dreadbow"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "研究：深渊的空寂"
+			x: 15.0d
+			y: -2.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			id: "26DEC8F4AA322B38"
+			rewards: [{
+				id: "4FDCE0CB801D273E"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				consume_items: true
+				id: "63BE2BCD99D49C3C"
+				item: {
+					Count: 1
+					id: "minecraft:spawner"
+					tag: {
+						BlockEntityTag: {
+							SpawnData: {
+								entity: {
+									id: "minecraft:wither_skeleton"
+								}
+							}
+						}
+						display: {
+							Name: "{\"text\":\"Wither Skeleton Spawner\"}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			title: "研究：灵魂的封存"
+			x: 13.0d
+			y: -7.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			icon: "iceandfire:dragonscales_red"
+			id: "4969DC03C46C70C0"
+			rewards: [{
+				count: 2
+				id: "5FF61FAD54B89ABA"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: "3C4DBAB8C630E448"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "iceandfire:scales/dragon"
+						}
+					}
+					title: "Any #iceandfire:scales/dragon"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "4456D6F30A8A5AF0"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "iceandfire:dragon_bloods"
+						}
+					}
+					title: "Any #iceandfire:dragon_bloods"
+					type: "item"
+				}
+			]
+			title: "研究：流放之龙"
+			x: 13.0d
+			y: -5.5d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

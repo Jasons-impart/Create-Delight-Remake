@@ -178,7 +178,14 @@
 					"type": "gateways:entity_loot",
 					"entity": "alexscaves:licowitch",
 					"rolls": 8
-                }
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:sugar_staff", 
+                        "count": 1
+                    }
+				}
 			],
 			"max_wave_time": 1200,
 			"setup_time": 100
