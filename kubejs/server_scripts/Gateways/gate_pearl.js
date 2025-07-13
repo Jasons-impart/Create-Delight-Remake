@@ -37,8 +37,7 @@ ServerEvents.recipes(e => {
     const incomplete = "gateways:gate_pearl"
 
     create.sequenced_assembly([
-        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:the_gate_of_eternal_cold"}')).withChance(2.9),
-        Item.of("minecarft:ender_pearl").withChance(0.1),
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:the_gate_of_eternal_cold"}'))
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "iceandfire:dragonsteel_ice_ingot"]),
         create.cutting(incomplete, incomplete),
@@ -49,8 +48,7 @@ ServerEvents.recipes(e => {
     .id("createdelight:sequenced_assembly/the_gate_of_eternal_cold")
     //添加配方：枯萎穿刺试炼合成
     create.sequenced_assembly([
-        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:piercing_withering_trial"}')).withChance(2.0),
-        Item.of("minecarft:ender_pearl").withChance(0.01),
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:piercing_withering_trial"}'))
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "minecraft:wither_skeleton_skull"]),
         create.cutting(incomplete, incomplete),
@@ -72,8 +70,7 @@ ServerEvents.recipes(e => {
     })
     //添加配方：糖分临界点合成
     create.sequenced_assembly([
-        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:sweettide_brokenpoint"}')).withChance(5.0),
-        Item.of("minecarft:ender_pearl").withChance(0.01),
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:sweettide_brokenpoint"}'))
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:radiant_essence"]),
         create.cutting(incomplete, incomplete),
@@ -85,8 +82,7 @@ ServerEvents.recipes(e => {
     .id("createdelight:sequenced_assembly/sweettide_brokenpoint")
     ////添加配方：黯渊之视合成
     create.sequenced_assembly([
-        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:infinite_and_dark_trials"}')).withChance(7.0),
-        Item.of("minecarft:ender_pearl").withChance(0.01),
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:infinite_and_dark_trials"}'))
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:pure_darkness"]),
         create.cutting(incomplete, incomplete),
