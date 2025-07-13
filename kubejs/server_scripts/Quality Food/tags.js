@@ -68,6 +68,7 @@ ServerEvents.tags("block", e => {
         "minecraft:tall_grass",
         "minecraft:fern",
         "minecraft:large_fern",
+        "minecraft:cocoa",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',
         'fruitsdelight:fig_leaves',
@@ -80,7 +81,7 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:peach_leaves',
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
-        'fruitsdelight:mangosteen_leaves',
+        'fruitsdelight:mangosteen_leaves'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops",
