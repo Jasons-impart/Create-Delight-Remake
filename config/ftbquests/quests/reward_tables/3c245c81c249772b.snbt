@@ -1,0 +1,164 @@
+{
+	id: "3C245C81C249772B"
+	loot_crate: {
+		color: 16777215
+		drops: {
+			boss: 0
+			monster: 0
+			passive: 0
+		}
+		string_id: "_"
+	}
+	loot_size: 1
+	order_index: 22
+	rewards: [
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:basic/slime"
+				}
+			}
+			weight: 2.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:basic/enderman"
+				}
+			}
+			weight: 2.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:basic/blaze"
+				}
+			}
+			weight: 2.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:ghast_trial"
+				}
+			}
+			weight: 2.0f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:overworldian_nights"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:emerald_grove"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:endless/blaze"
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:ice_dragon"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:lightning_dragon"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:fire_dragon_eyes"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "gateways:hellish_fortress"
+				}
+			}
+			weight: 0.5f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:sweettide_brokenpoint"
+				}
+			}
+			weight: 0.1f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:infinite_and_dark_trials"
+				}
+			}
+			weight: 0.1f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_gate_of_eternal_cold"
+				}
+			}
+			weight: 0.1f
+		}
+		{
+			item: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:piercing_withering_trial"
+				}
+			}
+			weight: 0.1f
+		}
+	]
+	title: "裂隙提取"
+}

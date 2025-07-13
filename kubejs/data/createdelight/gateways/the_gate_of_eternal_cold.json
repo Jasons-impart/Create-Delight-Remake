@@ -6,19 +6,19 @@
 			"entities": [
 				{
 					"entity": "iceandfire:dread_knight",
-					"count": 1
+					"count": 4
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 1
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
-                    "count": 3
+                    "count": 6
                 },
                 {
                     "entity": "iceandfire:dread_beast",
-                    "count": 2
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_lich",
@@ -29,17 +29,17 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.0
+					"value": 1.4
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 5
+					"value": 8
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.40
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -53,6 +53,13 @@
 		     	}
             ],
 			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "createdelight:dread_heart", 
+                        "count": 4
+                    }
+				},
 				{
 					"type": "gateways:stack",
 					"stack": {
@@ -61,8 +68,8 @@
                         "nbt" : {"gateway":"createdelight:the_gate_of_eternal_cold"}}
 				}
 			],
-			"max_wave_time": 900,
-			"setup_time": 200
+			"max_wave_time": 1000,
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -72,19 +79,19 @@
 				},
                 {
 					"entity": "iceandfire:dread_knight",
-					"count": 2
+					"count": 4
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 2
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
-                    "count": 6
+                    "count": 8
                 },
                 {
                     "entity": "iceandfire:dread_beast",
-                    "count": 2
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_lich",
@@ -95,7 +102,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.10
+					"value": 1.40
 				},
 				{
 					"attribute": "generic.armor",
@@ -122,13 +129,27 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
+                        "item": "iceandfire:dragonscales_blue", 
+                        "count": 12
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:ice_dragon_blood", 
+                        "count": 8
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
                         "item": "iceandfire:dragonsteel_ice_ingot", 
-                        "count": 1
+                        "count": 2
 					}
                 }
 			],
-			"max_wave_time": 1400,
-			"setup_time": 200
+			"max_wave_time": 1600,
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -138,30 +159,30 @@
 				},
                 {
 					"entity": "iceandfire:dread_knight",
-					"count": 3
+					"count": 6
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 3
+                    "count": 6
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
-                    "count": 3
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_beast",
-                    "count": 3
+                    "count": 4
                 },
                 {
                     "entity": "iceandfire:dread_lich",
-                    "count": 3
+                    "count": 2
                 }
 			],
             "modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.00
+					"value": 1.60
 				},
 				{
 					"attribute": "generic.armor",
@@ -185,6 +206,20 @@
 		     	}
             ],
 			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:banner_pattern_dread", 
+                        "count": 1
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:dread_sword", 
+                        "count": 1
+					}
+                },
 				{
 					"type": "gateways:stack",
 					"stack": {
@@ -194,7 +229,7 @@
                 }
 			],
 			"max_wave_time": 1600,
-			"setup_time": 200
+			"setup_time": 300
 		},
 		{
 			"entities": [
@@ -212,15 +247,15 @@
 				},
                 {
 					"entity": "iceandfire:dread_knight",
-					"count": 4
+					"count": 8
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 4
+                    "count": 6
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
-                    "count": 6
+                    "count": 8
                 },
                 {
                     "entity": "iceandfire:dread_beast",
@@ -235,7 +270,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.20
+					"value": 1.80
 				},
 				{
 					"attribute": "generic.armor",
@@ -245,7 +280,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.50
+					"value": 0.60
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -262,8 +297,29 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
+                        "item": "iceandfire:frost_stew", 
+                        "count": 4
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
                         "item": "lightmanscurrency:coin_emerald", 
                         "count": 2
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:banner_pattern_ice", 
+                        "count": 1
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:banner_pattern_ice_head", 
+                        "count": 1
 					}
                 }
 			],
@@ -286,35 +342,35 @@
 				},
                 {
 					"entity": "iceandfire:dread_knight",
-					"count": 4
+					"count": 8
 				},
                 {
                     "entity": "iceandfire:dread_scuttler",
-                    "count": 4
+                    "count": 8
                 },
                 {
                     "entity": "iceandfire:dread_ghoul",
-                    "count": 6
+                    "count": 8
                 },
                 {
                     "entity": "iceandfire:dread_beast",
-                    "count": 6
+                    "count": 8
                 },
                 {
                     "entity": "iceandfire:dread_lich",
-                    "count": 2
+                    "count": 4
                 }
 			],
             "modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.20
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 5
+					"value": 6
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -336,7 +392,21 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
+                        "item": "dreadsteel:dreadsteel_ingot", 
+                        "count": 2
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
                         "item": "iceandfire:dread_queen_sword", 
+                        "count": 1
+					}
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "createdelight:dread_upgrade_smithing_template", 
                         "count": 1
 					}
                 }
