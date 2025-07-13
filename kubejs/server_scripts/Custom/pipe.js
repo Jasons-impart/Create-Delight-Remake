@@ -1,5 +1,6 @@
 let $Boolean = Java.loadClass("java.lang.Boolean")
-const inversedDirection = {west: "east",south: "north",north: "south",east: "west",up: "down",down: "up"}
+const inversedDirectionUpper = { "WEST": "EAST", "SOUTH": "NORTH", "NORTH": "SOUTH", "EAST": "WEST", "UP": "DOWN", "DOWN": "UP" }
+//右键切换管道开口，shift切换对面
 BlockEvents.rightClicked("create:fluid_pipe", event => {
   if (event.item.id != "minecraft:air" || event.hand != "MAIN_HAND") { return }
   let State = event.block.properties
@@ -13,132 +14,31 @@ BlockEvents.rightClicked("create:fluid_pipe", event => {
       i1++
     }
   }
-  let Face=event.facing
-  if (event.player.shiftKeyDown){
-    Face=inversedDirection[Face]
+  let Face = event.facing.toString().toUpperCase()
+  if (event.player.shiftKeyDown) {
+    Face = inversedDirectionUpper[Face]
   }
-  switch (Face) {
-    case "east":
-      if (State.east == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.EAST, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.EAST, $Boolean.TRUE))
-      return
-    case "west":
-      if (State.west == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.WEST, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.WEST, $Boolean.TRUE))
-      return
-    case "south":
-      if (State.south == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.SOUTH, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.SOUTH, $Boolean.TRUE))
-      return
-    case "north":
-      if (State.north == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.NORTH, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.NORTH, $Boolean.TRUE))
-      return
-    case "up":
-      if (State.up == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.UP, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.UP, $Boolean.TRUE))
-      return
-    case "down":
-      if (State.down == "true") {
-        if (i1 <= 2) {
-          event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
-          return
-        }
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.DOWN, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.DOWN, $Boolean.TRUE))
-      return
+  let Bool = BlockStates.getValue(BlockProperties[Face])
+  if (i1 <= 2 && Bool) {
+    event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
+    return
   }
+  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? $Boolean.FALSE : $Boolean.TRUE))
 })
+//右键切换管道箱开口，shift切换对面
 BlockEvents.rightClicked("create:encased_fluid_pipe", event => {
   if (event.item.id != "minecraft:air" || event.hand != "MAIN_HAND") { return }
-  let State = event.block.properties
   let BlockStates = event.block.blockState
   let Pos = event.block.pos
+  //动画和音效
   event.entity.swing()
   event.block.level.playSound(null, event.block.x, event.block.y, event.block.z, "minecraft:block.copper.place", "blocks", 0.6, 1.2)
-  let Face=event.facing
-  if (event.player.shiftKeyDown){
-    Face=inversedDirection[Face]
+  //功能实现
+  let Face = event.facing.toString().toUpperCase()
+  if (event.player.shiftKeyDown) {
+    Face = inversedDirectionUpper[Face]
   }
-  switch (Face) {
-    case "east":
-      if (State.east == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.EAST, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.EAST, $Boolean.TRUE))
-      return
-    case "west":
-      if (State.west == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.WEST, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.WEST, $Boolean.TRUE))
-      return
-    case "south":
-      if (State.south == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.SOUTH, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.SOUTH, $Boolean.TRUE))
-      return
-    case "north":
-      if (State.north == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.NORTH, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.NORTH, $Boolean.TRUE))
-      return
-    case "up":
-      if (State.up == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.UP, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.UP, $Boolean.TRUE))
-      return
-    case "down":
-      if (State.down == "true") {
-        event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.DOWN, $Boolean.FALSE))
-        return
-      }
-      event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties.DOWN, $Boolean.TRUE))
-      return
-  }
+  let Bool = BlockStates.getValue(BlockProperties[Face])
+  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? $Boolean.FALSE : $Boolean.TRUE))
+
 })
