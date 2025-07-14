@@ -30,18 +30,14 @@ ServerEvents.tags("minecraft:item", e => {
         "vinery:white_grape_seeds",
         "vinery:dark_cherry_leaves",
         "farmersdelight:onion",
-        "farmersdelight:cabbage_seeds"
-
-    )
-    e.add("eclipticseasons:crops/average_average", 
+        "farmersdelight:cabbage_seeds",
         "festival_delicacies:garlic_chive_seeds",
         "fruitsdelight:fig_leaves",
         "fruitsdelight:fig_sapling",
         "fruitsdelight:blueberry_bush",
         "vintagedelight:peanut"
-
     )
-    e.add("eclipticseasons:crops/moist_moist", 
+    e.add("eclipticseasons:crops/moist_humid", 
         "collectorsreap:lime_seeds",
         "fruitsdelight:persimmon_leaves",
         "fruitsdelight:persimmon_sapling",
@@ -54,8 +50,6 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:lemon_seeds",
         "fruitsdelight:lemon_tree",
         "neapolitan:strawberry_pips",
-    )
-    e.add("eclipticseasons:crops/moist_humid", 
         "fruitsdelight:durian_leaves",
         "fruitsdelight:durian_sapling",
         "neapolitan:banana_frond",
