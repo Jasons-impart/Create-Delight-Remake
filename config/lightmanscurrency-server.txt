@@ -321,6 +321,11 @@
 	
 #Command Trader Settings
 [command_trader]
+	#The permission level required to place the command trader block
+	#Range: 0 -> 2147483647
+	#Default: 2
+	placementPermissionLevel=2
+	
 	#The maximum permission level that can be set and used by a command trader
 	#Range: 0 -> 4
 	#Default: 4
