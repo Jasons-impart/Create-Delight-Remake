@@ -120,7 +120,6 @@ ServerEvents.tags("item", e => {
         'ratatouille:wheat_kernels', 
         'ratatouille:cocoa_solids', 
         'createdelight:corn_flour', 
-        'createdelight:whipped_cream_bowl', 
         'bakeries:foamed_cream',
         'createdelight:board_noodles', 
         'createdelight:vermicelli', 

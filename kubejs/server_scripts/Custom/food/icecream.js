@@ -14,7 +14,6 @@ ServerEvents.recipes(e => {
     function make_ice_cream(e, ingredient, outputFluidIcecream, outputFluidMilkshake, icecreamscoop, icecream, milkshake, icecreamblock) {
         e.remove({output: icecream, type: "crafting_shapeless"})
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:mixing"})
-        e.remove()
         e.recipes.createdelight.big_centrifugation()
             .inputFluids(Fluid.of(outputFluidMilkshake, 500))
             .outputFluids(Fluid.of("minecraft:milk", 250))

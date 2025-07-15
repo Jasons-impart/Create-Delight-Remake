@@ -103,9 +103,6 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
-    textureFluid("createdelight:whipped_cream")
-        .createAttributes()
-        .tickDelay(10)
     let bloods = [
         "fire_dragon",
         "ice_dragon",
