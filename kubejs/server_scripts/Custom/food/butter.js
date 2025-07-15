@@ -1,6 +1,6 @@
 ServerEvents.tags("item", e => {
     e.add("forge:whipped_cream", [
-        "createdelight:whipped_cream_bucket",
+        "cosmopolitan:cream_bucket",
         "createdelight:whipped_cream_bowl"
     ])
     e.add("forge:animal_oil", [
@@ -12,34 +12,27 @@ ServerEvents.tags("item", e => {
 ServerEvents.recipes(e => {
     e.replaceInput({ id: "mynethersdelight:cooking/crimson_stroganoff" }, "#forge:milk", '#forge:cream')
     e.recipes.create.mixing(
-        Fluid.of("createdelight:whipped_cream", 250),
+        Fluid.of("cosmopolitan:cream", 250),
         Fluid.of("milk", 500)
+    )
+        .id("createdelight:mixing/whipped_cream")
+    
+    e.recipes.create.mixing(
+        Fluid.of("cosmopolitan:condensed_milk", 250),
+        [Fluid.of("cosmopolitan:cream", 500), "minecraft:sugar"]
     )
         .heated()
         .id("createdelight:mixing/whipped_cream")
     centrifugation(e, 
         [
-            Fluid.of("createdelight:whipped_cream", 750),
+            Fluid.of("cosmopolitan:cream", 750),
             Fluid.of("minecraft:water", 250)
         ], 
         Fluid.of("minecraft:milk", 1000)
     )
         .id("createdelight:big_centrifugation/whipped_cream")
-    e.recipes.create.emptying(
-        [
-            Fluid.of("createdelight:whipped_cream", 250),
-            "minecraft:bowl"
-        ], "createdelight:whipped_cream_bowl"
-    ).id("createdelight:emptying/whipped_cream_bowl")
-    e.recipes.create.filling(
-        "createdelight:whipped_cream_bowl",
-        [
-            Fluid.of("createdelight:whipped_cream", 250),
-            "minecraft:bowl"
-        ]
-    ).id("createdelight:filling/whipped_cream_bowl")
     e.recipes.kubejs.shapeless(
-        "createdelight:whipped_cream_bucket",
+        "cosmopolitan:cream_bucket",
         [
             "minecraft:bucket",
             "4x createdelight:whipped_cream_bowl"
@@ -48,21 +41,21 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "4x createdelight:whipped_cream_bowl",
         [
-            "createdelight:whipped_cream_bucket",
+            "cosmopolitan:cream_bucket",
             "4x minecraft:bowl"
         ]
-    ).id("createdelight:crafting/whipped_cream_bowl").replaceIngredient("createdelight:whipped_cream_bucket", "minecraft:bucket")
+    ).id("createdelight:crafting/whipped_cream_bowl").replaceIngredient("cosmopolitan:cream_bucket", "minecraft:bucket")
     e.recipes.create.mixing(
         "createdelight:butter",
-        Fluid.of("createdelight:whipped_cream", 250)
+        Fluid.of("cosmopolitan:cream", 250)
     )
         .heated()
         .id("createdelight:compacting/butter")
     e.recipes.kubejs.shapeless(
         '4x createdelight:butter',
-        'createdelight:whipped_cream_bucket'
+        'cosmopolitan:cream_bucket'
     )
-        .replaceIngredient('createdelight:whipped_cream_bucket', 'minecraft:bucket')
+        .replaceIngredient('cosmopolitan:cream_bucket', 'minecraft:bucket')
         .id('createdelight:crafting/butter')
     // 开酥
     e.recipes.kubejs.shapeless(
