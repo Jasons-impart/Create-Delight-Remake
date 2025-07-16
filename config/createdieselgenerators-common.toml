@@ -4,4 +4,8 @@
 	"Capacity of Tools requiring Fluids" = 2000
 	#Tool Capacity Enchantment Capacity Addition in mB
 	"Capacity Addition of Tools with Capacity Enchantment" = 1000
+	#Canister Capacity in mB
+	"Capacity of Canisters" = 4000
+	#Canister Capacity Enchantment Capacity Addition in mB
+	"Capacity Addition of Capacity Enchantment in Canisters" = 1000
 
