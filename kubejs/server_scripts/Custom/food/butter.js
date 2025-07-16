@@ -12,14 +12,14 @@ ServerEvents.tags("item", e => {
 ServerEvents.recipes(e => {
     e.replaceInput({ id: "mynethersdelight:cooking/crimson_stroganoff" }, "#forge:milk", '#forge:cream')
     e.recipes.create.mixing(
-        Fluid.of("cosmopolitan:cream", 250),
-        Fluid.of("milk", 500)
+        Fluid.of("cosmopolitan:cream", 500),
+        Fluid.of("cosmopolitan:condensed_milk", 250)
     )
-        .id("createdelight:mixing/whipped_cream")
+        .id("createdelight:mixing/cream")
     
     e.recipes.create.mixing(
         Fluid.of("cosmopolitan:condensed_milk", 250),
-        [Fluid.of("cosmopolitan:cream", 500), "minecraft:sugar"]
+        [Fluid.of("minecraft:milk", 250), "minecraft:sugar"]
     )
         .heated()
         .id("createdelight:mixing/condensed_milk")
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
             Fluid.of("cosmopolitan:cream", 750),
             Fluid.of("minecraft:water", 250)
         ], 
-        Fluid.of("minecraft:milk", 1000)
+        [Fluid.of("minecraft:milk", 1000), "minecraft:sugar"]
     )
         .id("createdelight:big_centrifugation/whipped_cream")
     e.recipes.create.mixing(

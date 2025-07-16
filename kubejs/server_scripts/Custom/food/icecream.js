@@ -24,16 +24,16 @@ ServerEvents.recipes(e => {
             )
         .id(`createdelight:big_centrifugation/separation/${outputFluidMilkshake.split(":")[1]}`)
         create.mixing(
-            Fluid.of(outputFluidIcecream, 250),
+            Fluid.of(outputFluidIcecream, 750),
             [
                 ingredient,
-                Fluid.of("cosmopolitan:cream", 250),
+                Fluid.of("cosmopolitan:cream", 500),
                 Fluid.of("createcafe:melted_sugar", 250)
             ]
         ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
         create.mixing(
             icecreamscoop,
-            Fluid.of(outputFluidIcecream, 250)
+            Fluid.of(outputFluidIcecream, 750)
         ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
         kubejs.shapeless(
             icecreamblock,
