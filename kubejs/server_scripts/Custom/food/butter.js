@@ -35,7 +35,6 @@ ServerEvents.recipes(e => {
         "createdelight:butter",
         Fluid.of("cosmopolitan:cream", 250)
     )
-        .heated()
         .id("createdelight:compacting/butter")
     e.recipes.kubejs.shapeless(
         '4x createdelight:butter',
