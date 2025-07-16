@@ -85,7 +85,7 @@ ServerEvents.recipes(e => {
   e.recipes.create.filling(
     'alexscaves:sweet_puff',
     [
-      Fluid.of("createdelight:whipped_cream", 250),
+      Fluid.of("cosmopolitan:cream", 250),
       'create_deepfried:berliner'
     ]
   ).id("create_oppenheimered:mixing/sweet_puff_spinning")

@@ -103,9 +103,6 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
-    textureFluid("createdelight:whipped_cream")
-        .createAttributes()
-        .tickDelay(10)
     let bloods = [
         "fire_dragon",
         "ice_dragon",
@@ -166,7 +163,13 @@ StartupEvents.registry("fluid", e => {
         ["adzuki", 0xfcc4b3],
         ["lime", 0xd4f4aa],
         ["pomegranate", 0xf9a8af],
-        ["sweetberry", 0xe97285]
+        ["sweetberry", 0xe97285],
+        ["pumpkin", 0xfcb976],
+        ["beetroot", 0x960003],
+        ["apple", 0xf4d89b],
+        ["carrot", 0xfac88c],
+        ["glow_berry", 0xef8c33],
+        ["enhanced_fruit", 0xe9e55e]
     ]
     icecream_list.forEach((list) => {
         e.create(`createdelight:${list[0]}_milkshake`)

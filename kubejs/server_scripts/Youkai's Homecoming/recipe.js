@@ -246,21 +246,21 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:con_panna",
         [
             "youkaishomecoming:ristretto",
-            Fluid.of("createdelight:whipped_cream", 250)
+            Fluid.of("cosmopolitan:cream", 250)
         ]
     ).id("youkaishomecoming:filling/con_panna")
     create.filling(
         "youkaishomecoming:macchiato",
         [
             "youkaishomecoming:espresso",
-            Fluid.of("createdelight:whipped_cream", 250)
+            Fluid.of("cosmopolitan:cream", 250)
         ]
     ).id("youkaishomecoming:filling/macchiato")
     create.filling(
         "youkaishomecoming:cappuccino",
         [
             "youkaishomecoming:latte",
-            Fluid.of("createdelight:whipped_cream", 250)
+            Fluid.of("cosmopolitan:cream", 250)
         ]
     ).id("youkaishomecoming:filling/cappuccino")
     create.deploying(
