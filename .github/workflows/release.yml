@@ -391,7 +391,7 @@ jobs:
 
           # move patched files to right place
           if [ -d "patch" ]; then
-            cp -r "patch" "." || { echo "Error: Failed to copy 'patch' directory"; exit 1; }
+            cp -r "patch/." "." || { echo "Error: Failed to copy 'patch' directory"; exit 1; }
           else
             echo "Error: 'patch' directory not found"
           fi
