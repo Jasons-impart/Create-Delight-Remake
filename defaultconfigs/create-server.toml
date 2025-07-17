@@ -338,7 +338,7 @@
 	hosePulleyBlockThreshold = 2500
 	#.
 	#Whether hose pulleys should continue filling up above-threshold sources.
-	fillInfinite = false
+	fillInfinite = true
 	#.
 	#Configure which fluids can be drained infinitely.
 	#Allowed Values: ALLOW_ALL, DENY_ALL, ALLOW_BY_TAG, DENY_BY_TAG
