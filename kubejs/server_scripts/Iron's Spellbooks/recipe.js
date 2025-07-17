@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
                 middle: middle,
                 bottom: bottom,
             },
-            mode: "press",
+            mode: mode,
             result: result,
         })
     }
