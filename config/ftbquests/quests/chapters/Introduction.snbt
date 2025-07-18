@@ -932,6 +932,26 @@
 			x: 0.0d
 			y: -3.5d
 		}
+		{
+			dependencies: ["34B1006074300964"]
+			description: ["由于服务端FTB存在bug，故本包添加了简易组队，你现在按下“&3 T &r”，输入“&3/teams&r”，跟随指引便可实现快速组队 ！"]
+			id: "76A6FE2BF63799D6"
+			rewards: [{
+				command: "/teams"
+				id: "0661F5703358DF82"
+				type: "command"
+			}]
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "更快速的组队"
+			tasks: [{
+				id: "3A5A32C51AE0B9C4"
+				title: "FTB组队"
+				type: "checkmark"
+			}]
+			x: -7.0d
+			y: -2.75d
+		}
 	]
 	title: "介绍"
 }
