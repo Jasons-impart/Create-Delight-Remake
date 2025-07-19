@@ -17,9 +17,9 @@
 			icon: "alexscaves:scarlet_magnet"
 			id: "3D02EA3A30EE1933"
 			rewards: [{
-				id: "2AE0189BD76B4482"
-				item: "alexscaves_torpedoes:attractive_music_disc"
-				type: "item"
+				id: "7D179E43DEDC0DAF"
+				type: "xp"
+				xp: 100
 			}]
 			size: 1.5d
 			subtitle: "&4磁力风暴&r形成的&e异空间&r！"
