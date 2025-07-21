@@ -487,16 +487,11 @@
 			}]
 			shape: "gear"
 			size: 2.0d
-			subtitle: "使用时&e记得关闭&r玻璃熔铸盖上的&4观察窗&r哦！\\n别忘了熔铸盆可以&4直接输入&r到&e分液池&r哦！"
+			subtitle: "使用时&e记得关闭&r熔铸盖上的&4观察窗&r哦！\\n别忘了熔铸盆可以&4直接输入&r到&e分液池&r哦！"
 			tasks: [
 				{
 					id: "595D3C8E4908E5E0"
 					item: "createmetallurgy:foundry_basin"
-					type: "item"
-				}
-				{
-					id: "1F302B7289735D45"
-					item: "createmetallurgy:glassed_foundry_lid"
 					type: "item"
 				}
 				{
