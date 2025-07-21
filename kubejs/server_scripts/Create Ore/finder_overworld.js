@@ -43,7 +43,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
         .append(Component.translate("message.createdelight.underfoot"))
     } else {
         message = message
-        .append(Component.translate("message.createdelight.at", direction.getString(), distance))
+        .append(Component.translate("message.createdelight.at", direction, distance))
     }
     player.swing()
     player.addItemCooldown(e.item.item, 60)
