@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
       newIngr.push(ingr)
     })
     prevResult.forEach(res => {
-      console.log(`res: ${res.toString()}`)
+      // console.log(`res: ${res.toString()}`)
       if (res.asJsonObject.get("fluid") != null || res.asJsonObject.get("fluidTag") != null)
         hasFluid = true
       newRes.push(res)
