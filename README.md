@@ -33,7 +33,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
   <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
   <p align="center">
-    整合包反馈交流群：856762964
+    整合包反馈交流qq频道：pd06113710
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
     <br />
