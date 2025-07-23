@@ -11,7 +11,7 @@ MoreJSEvents.villagerTrades(e => {
   TradeUtil.replaceVillageTradeIndex(e, "bakeries:pistrinamaster", [
     [['4x createdelight:butter'], "2x createdelightcore:copper_coin"],
     [['4x bakeries:brown_sugar_cube'], "createdelightcore:copper_coin"],
-    [['createdelight:whipped_cream_bowl'], "createdelightcore:copper_coin"],
+    [['cosmopolitan:cream'], "createdelightcore:copper_coin"],
     [['bakeries:foamed_cream'], "createdelightcore:copper_coin"],
     [['bakeries:sweet_dough'], "2x createdelightcore:copper_coin"],
     [['bakeries:round_bread_dough'], "3x createdelightcore:copper_coin"],

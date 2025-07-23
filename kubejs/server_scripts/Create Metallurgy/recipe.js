@@ -1,18 +1,18 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-       "vintageimprovements:craft/grinder_belt",
-       "vintageimprovements:craft/belt_grinder"
+        "vintageimprovements:craft/grinder_belt",
+        "vintageimprovements:craft/belt_grinder"
     ])
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
-    kubejs.shaped( 
+    kubejs.shaped(
         'createmetallurgy:sandpaper_belt',
         [
             "AAA",
             "A A",
             "AAA"
         ], {
-            A: "#create:sandpaper"
-        }
+        A: "#create:sandpaper"
+    }
     ).id("createmetallurgy:crafting/materials/sandpaper_belt")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
@@ -82,9 +82,9 @@ ServerEvents.recipes(e => {
         "createmetallurgy:alloying/brass"
     ])
 
-    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
-    e.replaceInput({ id: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createmetallurgy:steel_ingot")
-    e.replaceInput({output: "createmetallurgy:coke"}, "#forge:ores/coal", "#minecraft:coals")
+    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
+    e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
@@ -181,16 +181,16 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
             e.recipes.createmetallurgy.grinding(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
-        .id("createmetallurgy:sequenced_assembly/industrial_crucible")
+            .loops(1)
+            .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
+            .id("createmetallurgy:sequenced_assembly/industrial_crucible")
     }
     vintageimprovements.hammering("createmetallurgy:obdurium_sheet", "#forge:ingots/obdurium")
-    .id("createmetallurgy:hammering/obdurium_sheet")
+        .id("createmetallurgy:hammering/obdurium_sheet")
     entity_melting(e, Fluid.of("createdelight:fire_dragon_blood", 5000), "iceandfire:fire_dragon", 4)
-    .id("createmetallurgy:entity_melting/fire_dragon")
+        .id("createmetallurgy:entity_melting/fire_dragon")
     entity_melting(e, Fluid.of("createdelight:ice_dragon_blood", 5000), "iceandfire:ice_dragon", 4)
-    .id("createmetallurgy:entity_melting/ice_dragon")
+        .id("createmetallurgy:entity_melting/ice_dragon")
     entity_melting(e, Fluid.of("createdelight:lightning_dragon_blood", 5000), "iceandfire:lightning_dragon", 4)
-    .id("createmetallurgy:entity_melting/lightning_dragon")
+        .id("createmetallurgy:entity_melting/lightning_dragon")
 })

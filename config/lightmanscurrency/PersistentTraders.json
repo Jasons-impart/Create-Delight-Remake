@@ -4721,7 +4721,7 @@
             "type": "lightmanscurrency:coins"
           },
           "Product": {
-            "id": "createdelight:whipped_cream",
+            "id": "cosmopolitan:cream",
             "amount": 1000
           },
           "Quantity": 10,
@@ -6174,6 +6174,30 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
+            "ID": "minecraft:raw_iron",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
             "ID": "create:crushed_raw_iron",
             "Count": 64
           },
@@ -6189,222 +6213,6 @@
               {
                 "Coin": "createdelightcore:copper_coin",
                 "Amount": 6
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:crushed_raw_gold",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 12
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:crushed_raw_copper",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:crushed_raw_zinc",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 6
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:crushed_raw_silver",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:crushed_raw_wolframite",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:crushed_raw_desh",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:crushed_raw_ostrum",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 11
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "create:crushed_raw_tin",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:crushed_raw_calorite",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -6438,487 +6246,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createmetallurgy:dirty_gold_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 11
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:dirty_copper_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:dirty_zinc_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 6
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_silver_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:dirty_wolframite_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 6
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_desh_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_ostrum_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 11
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_calorite_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 16
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_tin_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
             "ID": "createmetallurgy:iron_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 8
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:gold_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 16
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:copper_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 3
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:zinc_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 5
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:silver_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 10
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createmetallurgy:wolframite_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 10
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_desh_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 10
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:dirty_ostrum_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 16
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:calorite_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 20
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "createdelight:tin_dust",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 3
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "minecraft:raw_iron",
-            "Count": 64
-          },
-          "Rules": [
-            {
-              "Limit": 100,
-              "ForgetTime": 14400000,
-              "Type": "lightmanscurrency:player_trade_limit"
-            }
-          ],
-          "Price": {
-            "Value": [
-              {
-                "Coin": "createdelightcore:copper_coin",
-                "Amount": 4
-              }
-            ],
-            "Chain": "main",
-            "type": "lightmanscurrency:coins"
-          }
-        },
-        {
-          "TradeType": "PURCHASE",
-          "SellItem": {
-            "ID": "minecraft:raw_gold",
             "Count": 64
           },
           "Rules": [
@@ -6966,7 +6294,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "create:raw_zinc",
+            "ID": "create:crushed_raw_copper",
             "Count": 64
           },
           "Rules": [
@@ -6980,7 +6308,55 @@
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 9
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_copper_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:copper_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 3
               }
             ],
             "Chain": "main",
@@ -7014,6 +6390,366 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
+            "ID": "create:crushed_raw_silver",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_silver_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:silver_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 10
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "minecraft:raw_gold",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_gold",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 12
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_gold_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 12
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:gold_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 16
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:raw_zinc",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 4
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_zinc",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_zinc_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:zinc_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelightcore:raw_tin",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "create:crushed_raw_tin",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_tin_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 2
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:tin_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 3
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
             "ID": "createmetallurgy:raw_wolframite",
             "Count": 64
           },
@@ -7029,6 +6765,78 @@
               {
                 "Coin": "createdelightcore:copper_coin",
                 "Amount": 6
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:crushed_raw_wolframite",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:dirty_wolframite_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createmetallurgy:wolframite_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 10
               }
             ],
             "Chain": "main",
@@ -7062,6 +6870,78 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
+            "ID": "createdelight:crushed_raw_desh",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_desh_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 8
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:desh_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 10
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
             "ID": "ad_astra:raw_ostrum",
             "Count": 64
           },
@@ -7077,6 +6957,78 @@
               {
                 "Coin": "createdelightcore:copper_coin",
                 "Amount": 9
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:crushed_raw_ostrum",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 11
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_ostrum_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 11
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:ostrum_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 16
               }
             ],
             "Chain": "main",
@@ -7110,7 +7062,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "createdelightcore:raw_tin",
+            "ID": "createdelight:crushed_raw_calorite",
             "Count": 64
           },
           "Rules": [
@@ -7124,7 +7076,55 @@
             "Value": [
               {
                 "Coin": "createdelightcore:copper_coin",
-                "Amount": 2
+                "Amount": 16
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:dirty_calorite_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 16
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "PURCHASE",
+          "SellItem": {
+            "ID": "createdelight:calorite_dust",
+            "Count": 64
+          },
+          "Rules": [
+            {
+              "Limit": 100,
+              "ForgetTime": 14400000,
+              "Type": "lightmanscurrency:player_trade_limit"
+            }
+          ],
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 20
               }
             ],
             "Chain": "main",

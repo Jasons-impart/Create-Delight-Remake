@@ -36,6 +36,6 @@ ServerEvents.tags("minecraft:item", e => {
         'alexscaves:tremorzilla_egg'
     ])
     e.add("forge:cream", [
-        'createdelight:whipped_cream_bowl'
+        'cosmopolitan:cream'
     ])
 })
