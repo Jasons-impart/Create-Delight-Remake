@@ -33,11 +33,11 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
   <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
   <p align="center">
-    整合包反馈交流群：856762964
+    整合包反馈交流qq频道：pd06113710
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
     <br />
-    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在CurseForge上下载整合包最新测试版 »</strong></a>
+    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在CurseForge上下载整合包上一个大版本v0.3 »</strong></a>
     <br />
     <br />
     <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
@@ -53,11 +53,11 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 > [!IMPORTANT]
 > 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们[反馈问题](https://xr5r5e86lk.feishu.cn/share/base/form/shrcnIDUxvX4oOvWSQaddJUht9b)！感激不尽！
-> PS：目前CF上1201最新版仍不可下载，请使用QQ或quark网盘进行下载
+> PS：目前CF上1201最新版仍不可下载，请参考信息汇总文档的下载方式下载最新爸爸嫩
 
 欢迎来到齿轮盛宴的世界。
 
-本整合包由超级工程师SSWTLZZ69和超级大厨JasonQ以及自动化大神wanquanw联合开发
+本整合包由超级工程师SSWTLZZ69和超级大厨JasonQ以及自动化大神AzureCrab联合开发
 
 在这里你将体验到搭建产线的乐趣
 
