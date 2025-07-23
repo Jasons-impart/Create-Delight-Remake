@@ -271,7 +271,7 @@
 			y: 7.0d
 		}
 		{
-			description: [""]
+			description: ["         在旅途中，我无意间发现不同的材料与珍珠结合似乎有着神奇的力量，我想，我们终有一天会明白这一切......或许我们可以利用这些去到&kabcde&r，继续这场旅途的传奇，新的篇章就此开始......"]
 			icon: {
 				Count: 1
 				id: "explorerscompass:explorerscompass"
@@ -299,32 +299,46 @@
 			shape: "square"
 			size: 2.0d
 			subtitle: "踏上去往远方的路途"
-			tasks: [{
-				id: "6A12F0955527C663"
-				item: {
-					Count: 1
-					id: "tetra:modular_double"
-					tag: {
-						Damage: 0
-						"double/basic_hammer_left_material": "basic_hammer/netherite"
-						"double/basic_hammer_right_material": "basic_hammer/netherite"
-						"double/basic_handle_material": "basic_handle/forged_beam"
-						"double/handle": "double/basic_handle"
-						"double/head_left": "double/basic_hammer_left"
-						"double/head_right": "double/basic_hammer_right"
-						id: "301b2e18-9048-415f-979b-c3105a0f09b5"
-					}
+			tasks: [
+				{
+					days: 12
+					icon: "create:cuckoo_clock"
+					id: "3F18A006BA8B66E1"
+					type: "questsadditions:days"
 				}
-				type: "item"
-			}]
+				{
+					id: "68FCD19BC19F6739"
+					item: {
+						Count: 1
+						id: "tetra:modular_double"
+						tag: {
+							Damage: 0
+							"double/basic_hammer_left_material": "basic_hammer/netherite"
+							"double/basic_hammer_right_material": "basic_hammer/netherite"
+							"double/basic_handle_material": "basic_handle/forged_beam"
+							"double/handle": "double/basic_handle"
+							"double/head_left": "double/basic_hammer_left"
+							"double/head_right": "double/basic_hammer_right"
+							id: "5994b710-470b-49b1-bdf0-67373e539388"
+						}
+					}
+					type: "item"
+				}
+			]
 			title: "背井离乡"
 			x: 2.0d
 			y: 3.0d
 		}
 		{
 			dependencies: ["421576F1BE1DF7D9"]
+			description: ["它们被规则的力量束缚在此处，注定在寒风中消逝......"]
 			icon: "ad_astra:glacio_globe"
 			id: "75605D2B058F2DA5"
+			rewards: [{
+				id: "3AE7DC7A6DB39307"
+				item: "youkaishomecoming:big_popsicle"
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "悚怖生物只可在&6霜原星&r召唤！"
 			tasks: [{
@@ -831,6 +845,7 @@
 				"58C8AFFF5BDFF59C"
 				"6DC960C9CBFEEAE9"
 			]
+			description: ["         在经历了这些试炼后，我们在这些物品中发现了裂隙的痕迹，或许我们可以通过这些物品探究裂隙的本质，从而得到意想不到的成果。"]
 			hide_dependency_lines: true
 			icon: "iceandfire:dragon_flute"
 			id: "4245E55901A10324"
@@ -841,6 +856,7 @@
 			}]
 			shape: "rsquare"
 			size: 2.0d
+			subtitle: "何为裂隙"
 			tasks: [{
 				id: "5B2314DCA6DF60DD"
 				title: "冒险者凭证"
@@ -852,6 +868,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         在无边的“虚空”中，我们尝试利用现在的知识获取裂隙，不过范围似乎有点大了，无法高概率获得大型传送门，前路依旧遥远啊......“虚空”？你说的哪个虚空？"]
 			id: "050AB9237E1A220F"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -874,6 +891,7 @@
 		{
 			can_repeat: true
 			dependencies: ["050AB9237E1A220F"]
+			description: ["         我们发现在“虚空”深处这些裂隙更加常见，我们尝试加长“水桶”的“绳子”，接下来我们可以提取更多中型和大型的传送门裂隙了......&m不对啊，小型裂隙去哪里了？"]
 			id: "1B98A52DE4C3C6C3"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -896,6 +914,7 @@
 		{
 			can_repeat: true
 			dependencies: ["1B98A52DE4C3C6C3"]
+			description: ["         我们制作了“锚点”......真是不可名状之物，“虚空”的深处竟然有如此多的裂隙......我必须离开这里，资料已经足够让我们定向获得复杂的传送门裂隙，可恶......"]
 			id: "05A7FB61F7778E1A"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -918,6 +937,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["          在裂隙中提取物品，尽管效率不高，但是也许可以碰碰运气。"]
 			id: "27C4A5AE4F8C6E95"
 			rewards: [
 				{
@@ -946,6 +966,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         累了吧，过来坐坐......希望这些补给可以帮助你度过接下来的困难。"]
 			id: "32D4B900101497D2"
 			rewards: [
 				{
@@ -982,6 +1003,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         这些悚怖生物并不是来自霜原星，它们应该来自于更纯碎的空间......比如悚域？但是这里似乎已经变成他们的坚牢，就像霜原星上的悚怖生物一样，他们的灵魂紧紧束缚在这其中。话说，这些裂隙似乎也有控制生物在一定范围的能力，这是否会有关联呢？或许说这些裂隙并不是时间之间的通道，而是独立的世界？"]
 			icon: {
 				Count: 1
 				id: "iceandfire:dread_knight_sword"
@@ -1066,6 +1088,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         说实话，挺好吃的，这些魔法真的很神奇，我们是不是也能学会使用魔法呢？是不是有个叫“&k铁魔法&r”的来着？至于其他的，我也不知道有什么价值qwq"]
 			icon: {
 				Count: 1
 				id: "alexscaves:sugar_staff"
@@ -1128,6 +1151,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         在它们面前生命是多么脆弱......从这些现象表明，灵魂似乎是独立于肉体而存在，但是灵魂离去肉体仍然可以存在，肉体失去灵魂却会立刻死亡。我认为，灵魂的本质是意识与情感的载体，更是一种现实存在的实体，由灵体和灵识组成，灵识依附于灵体，就像灵魂与肉体......"]
 			icon: "minecraft:nether_star"
 			id: "2FE60E36A39610AF"
 			rewards: [{
@@ -1184,6 +1208,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         从枯萎穿刺试炼中我们似乎接触了灵魂的本质，但是这些物品的表现超乎我们的想象。它们是黑暗与灵魂的混合物，却展现出生命与吞噬的欲望，不对......它们是不是在看着我......"]
 			icon: {
 				Count: 1
 				id: "alexscaves:desolate_dagger"
@@ -1256,6 +1281,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         刷怪笼啊......真是奇特，明明在各个世界都有出现却让人捉摸不透其中的原理。这种生生不息的力量总是让人感到恐惧，它就像是把自然生成的怪物定向转移&m（似乎是替换？）&r在这区域中，也许裂隙的原理与此相似......"]
 			id: "26DEC8F4AA322B38"
 			rewards: [{
 				id: "4FDCE0CB801D273E"
