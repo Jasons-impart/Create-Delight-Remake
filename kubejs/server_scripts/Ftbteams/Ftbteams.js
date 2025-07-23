@@ -124,7 +124,11 @@ ServerEvents.commandRegistry(event => {
       var player = ctx.source.playerOrException;
       var server = ctx.source.server;
       var playerName = player.getName().getString();
+<<<<<<< HEAD
+      server.runCommandSilent(`tellraw ${playerName} {"text":"========齿轮盛宴组队系统========","color":"yellow"}`);
+=======
       server.runCommandSilent(`tellraw ${playerName} {"text":"========组队系统========","color":"yellow"}`);
+>>>>>>> 122ddfe74cb17307a9ee411298fc2eba29fb037a
       server.runCommandSilent(`tellraw ${playerName} [{"text":"【创建队伍】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams create"},"hoverEvent":{"action":"show_text","value":"创建队伍"}}, {"text":"        ","color":"yellow"}, {"text":"【查看队伍】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams info self"},"hoverEvent":{"action":"show_text","value":"查看当前队伍信息"}}]`);
       server.runCommandSilent(`tellraw ${playerName} [{"text":"【邀请玩家】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams invite"},"hoverEvent":{"action":"show_text","value":"邀请玩家加入队伍"}}, {"text":"        ","color":"yellow"}, {"text":"【踢出玩家】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams kick"},"hoverEvent":{"action":"show_text","value":"从队伍中踢出玩家"}}]`);
       server.runCommandSilent(`tellraw ${playerName} [{"text":"【队伍列表】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams list"},"hoverEvent":{"action":"show_text","value":"查看所有队伍"}}, {"text":"        ","color":"yellow"}, {"text":"【离开队伍】","color":"yellow","clickEvent":{"action":"run_command","value":"/teams leave"},"hoverEvent":{"action":"show_text","value":"退出队伍"}}]`);

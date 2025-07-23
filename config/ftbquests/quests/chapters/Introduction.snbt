@@ -934,7 +934,11 @@
 		}
 		{
 			dependencies: ["34B1006074300964"]
+<<<<<<< HEAD
+			description: ["齿轮盛宴添加了简易组队，现在你可以更方便 的和小伙伴组队，按下“&3 T &r”，输入“&3/teams&r”，跟随指引便可实现快速组队 ！"]
+=======
 			description: ["由于服务端FTB存在bug，故本包添加了简易组队，你现在按下“&3 T &r”，输入“&3/teams&r”，跟随指引便可实现快速组队 ！"]
+>>>>>>> 122ddfe74cb17307a9ee411298fc2eba29fb037a
 			id: "76A6FE2BF63799D6"
 			rewards: [{
 				command: "/teams"
@@ -949,6 +953,10 @@
 				title: "FTB组队"
 				type: "checkmark"
 			}]
+<<<<<<< HEAD
+			title: "齿轮盛宴组队"
+=======
+>>>>>>> 122ddfe74cb17307a9ee411298fc2eba29fb037a
 			x: -7.0d
 			y: -2.75d
 		}
