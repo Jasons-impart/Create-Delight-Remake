@@ -1,6 +1,6 @@
 {
   "fluid": "createdelight:fuel_mixtures",
-  "sound_speed": 0.5,
+  "sound_pitch": 0.9,
   "normal": {
     "speed": 256.0,
     "strength": 32768,

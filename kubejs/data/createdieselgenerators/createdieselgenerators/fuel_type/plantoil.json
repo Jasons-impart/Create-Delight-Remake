@@ -1,6 +1,6 @@
 {
   "fluid": "#forge:plantoil",
-  "sound_speed": 2,
+  "sound_pitch": 0.9,
   "normal": {
     "speed": 32,
     "strength": 4096.0,
