@@ -66,4 +66,13 @@ StartupEvents.registry("block", (e) => {
       .tagBlock(`minecraft:needs_iron_tool`)
       .requiresTool(false);
   });
+
+  e.create("createdelight:rune_stone")
+    .soundType("stone")
+    .hardness(100)
+    .resistance(100)
+    .tagBlock(`minecraft:mineable/pickaxe`)
+    .tagBlock("forge:needs_diamond_tool")
+    .translationKey("block.createdelight.rune_stone")
+
 });
