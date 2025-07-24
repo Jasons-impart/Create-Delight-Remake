@@ -27,7 +27,7 @@
 		"Normal oil chunks oil amount multiplier" = 1.0
 		"High oil chunks oil amount multiplier" = 3.0
 		"Max Oil Scanner Level" = 10000
-		"Infinite oil chunk threshold" = 2000000
-		"Oil chunk threshold" = 2000000
+		"Infinite oil chunk threshold" = 3000000
+		"Oil chunk threshold" = 3000000
 		"Oil chunk map scale" = 1.0
 
