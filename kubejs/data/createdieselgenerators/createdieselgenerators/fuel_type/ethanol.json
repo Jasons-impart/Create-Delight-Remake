@@ -1,6 +1,6 @@
 {
   "fluid": "#forge:ethanol",
-  "sound_speed": 1,
+  "sound_pitch": 0.9,
   "normal": {
     "speed": 72,
     "strength": 9216,

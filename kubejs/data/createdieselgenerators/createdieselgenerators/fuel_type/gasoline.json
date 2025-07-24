@@ -1,6 +1,6 @@
 {
   "fluid": "#forge:gasoline",
-  "sound_speed": 1,
+  "sound_pitch": 0.9,
   "normal": {
     "speed": 96,
     "strength": 12288,
