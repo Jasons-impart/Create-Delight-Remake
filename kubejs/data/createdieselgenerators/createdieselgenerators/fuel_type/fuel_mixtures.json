@@ -4,17 +4,17 @@
   "normal": {
     "speed": 256.0,
     "strength": 32768,
-    "burn_rate": 4
+    "burn_rate": 0.8
   },
   "modular": {
     "speed": 256.0,
     "strength": 65536,
-    "burn_rate": 4
+    "burn_rate": 0.8
   },
   "huge": {
     "speed": 256.0,
     "strength": 65536,
-    "burn_rate": 2
+    "burn_rate": 0.4
   },
   "burner_multiplier": 1.0
 }

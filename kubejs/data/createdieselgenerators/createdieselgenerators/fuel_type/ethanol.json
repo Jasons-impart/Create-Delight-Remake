@@ -4,17 +4,17 @@
   "normal": {
     "speed": 72,
     "strength": 9216,
-    "burn_rate": 2
+    "burn_rate": 0.4
   },
   "modular": {
     "speed": 72,
     "strength": 18432,
-    "burn_rate": 2
+    "burn_rate": 0.4
   },
   "huge": {
     "speed": 72,
     "strength": 18432,
-    "burn_rate": 1
+    "burn_rate": 0.2
   },
   "burner_multiplier": 1.0
 }
