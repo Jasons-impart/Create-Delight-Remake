@@ -560,25 +560,6 @@
 			y: -4.0d
 		}
 		{
-			id: "4BF7D2B0AED85E9E"
-			subtitle: "你的&4工业基地小帮手！"
-			tasks: [{
-				id: "0AF2130439A1F574"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "createdelight:platform"
-					}
-				}
-				title: "任意应急工业平台"
-				type: "item"
-			}]
-			title: "应急工业平台"
-			x: 4.0d
-			y: -2.5d
-		}
-		{
 			id: "21491709810AEF12"
 			rewards: [{
 				id: "521870B0616457AB"
@@ -638,6 +619,17 @@
 			title: "探险家指南针"
 			x: 4.0d
 			y: 2.0d
+		}
+		{
+			id: "41CC767271A4F1E1"
+			subtitle: "插上它就不怕夜间刷怪了"
+			tasks: [{
+				id: "4AC0E041C3913C04"
+				item: "torchmaster:megatorch"
+				type: "item"
+			}]
+			x: 4.0d
+			y: -2.5d
 		}
 	]
 	title: "实用小玩意"
