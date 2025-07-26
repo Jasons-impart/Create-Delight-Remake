@@ -63,7 +63,6 @@ StartupEvents.registry("fluid", e => {
 
     simpleFluid("createdelight:fuel_mixtures", 0X8470FF)
     simpleFluid("createdelight:light_crude_oil", 0X8B7E66)
-    simpleFluid("createdelight:ethylene_gas", 0XF0FFFF, true, false, false)
     simpleFluid("createdelight:ethylene_fluid", 0XE6E6FA)
     simpleFluid("createdelight:malice_solution", 0X33E6EF, false)
     simpleFluid("createdelight:sky_solution", 0X494949, false)
