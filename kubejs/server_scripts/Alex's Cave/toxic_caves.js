@@ -44,7 +44,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 50),
-            Fluid.of("createdelight:ethylene_gas", 20),
+            Fluid.of("createdelight:ethylene_fluid", 20),
             'createmetallurgy:coke'
         ],
         Fluid.of("createdieselgenerators:crude_oil", 100), 60, 1
@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 100),
-            Fluid.of("createdelight:ethylene_gas", 50),
+            Fluid.of("createdelight:ethylene_fluid", 50),
             Item.of("vintageimprovements:vanadium_nugget").withChance(0.9)
         ],
         [
@@ -71,17 +71,12 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:lubricating_oil", 20),
             Fluid.of("createdieselgenerators:diesel", 50),
             Fluid.of("createdieselgenerators:gasoline", 50),
-            Fluid.of("createdelight:ethylene_gas", 20)
+            Fluid.of("createdelight:ethylene_fluid", 20)
         ],
         Fluid.of("createdelight:light_crude_oil", 100), 20
     )
         .heatRequirement("heated")
         .id("createdelight:distillation/light_crude_oil")
-    //乙烯液化
-    e.recipes.vintageimprovements.pressurizing(
-        Fluid.of("createdelight:ethylene_fluid", 100),
-        Fluid.of("createdelight:ethylene_gas", 100), 40
-    ).id("createdelight:liquefaction/ethylene_gas")
     //乙烯乙醇互相制作
     e.recipes.vintageimprovements.pressurizing(
         Fluid.of("createdieselgenerators:ethanol", 250), 
@@ -96,7 +91,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:pressurizing/ethanol_from_ethylene")
     e.recipes.vintageimprovements.pressurizing(
         [
-            Fluid.of("createdelight:ethylene_gas", 250),
+            Fluid.of("createdelight:ethylene_fluid", 250),
             Fluid.water(250)
         ], [
             Fluid.of("vintageimprovements:sulfuric_acid", 50),
@@ -105,7 +100,7 @@ ServerEvents.recipes(e => {
     )
         .secondaryFluidOutput(0)
         .heated()
-        .id("createdelight:pressurizing/ethylene_gas_from_ethanol")
+        .id("createdelight:pressurizing/ethylene_fluid_from_ethanol")
     //润滑油合成
     e.recipes.vintageimprovements.pressurizing(
        Fluid.of("createdelight:lubricating_oil", 100), 
