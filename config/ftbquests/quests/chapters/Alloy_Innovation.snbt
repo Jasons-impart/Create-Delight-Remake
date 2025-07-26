@@ -1262,6 +1262,18 @@
 			x: -4.5d
 			y: 13.5d
 		}
+		{
+			dependencies: ["07C28031281E5458"]
+			id: "46E16005AA8F9C8A"
+			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨纬度&r）"
+			tasks: [{
+				id: "5DEF9B1874E79A03"
+				item: "functionalstorage:ender_drawer"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 14.0d
+		}
 	]
 	title: "&9体系渐成 "
 }

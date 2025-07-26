@@ -972,6 +972,37 @@
 			x: 4.0d
 			y: -1.5d
 		}
+		{
+			dependencies: [
+				"46E16005AA8F9C8A"
+				"7DED9A87C6CB80F0"
+				"07C28031281E5458"
+			]
+			id: "6D20D47B7F514221"
+			subtitle: "寻找群系与结构的位置"
+			tasks: [
+				{
+					id: "7494AC6EFB55C460"
+					item: {
+						Count: 1
+						id: "naturescompass:naturescompass"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "7609894C79E62F6D"
+					item: {
+						Count: 1
+						id: "explorerscompass:explorerscompass"
+						tag: { }
+					}
+					type: "item"
+				}
+			]
+			x: -3.5d
+			y: -1.5d
+		}
 	]
 	title: "&e来去自由！"
 }
