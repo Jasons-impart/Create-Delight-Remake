@@ -726,6 +726,9 @@ StartupEvents.registry("item", e => {
     //针
     e.create("createdelight:needle")
         .translationKey("item.createdelight.needle")
+    e.create("createdelight:quality_absorber")
+        .useDuration(item => 20)
+        .translationKey("item.createdelight.quality_absorber")
     
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]

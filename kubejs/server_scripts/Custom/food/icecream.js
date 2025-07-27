@@ -19,9 +19,6 @@ ServerEvents.recipes(e => {
             .outputFluids(Fluid.of("minecraft:milk", 250))
             .outputFluids(Fluid.of(outputFluidIcecream, 250))
             .duration(100)
-            .perTick(builder => builder
-            .inputRPM(32)
-            )
         .id(`createdelight:big_centrifugation/separation/${outputFluidMilkshake.split(":")[1]}`)
         create.mixing(
             Fluid.of(outputFluidIcecream, 750),
