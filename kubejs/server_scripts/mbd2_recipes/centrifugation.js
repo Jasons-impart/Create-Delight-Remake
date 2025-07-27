@@ -33,18 +33,12 @@ ServerEvents.recipes(e => {
   e.recipes.createdelight.big_centrifugation()
     .inputItems('alexscaves:unrefined_waste')
     .duration(500)
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .outputItems('3x alexscaves:uranium_shard')
     .outputFluids(Fluid.of("alexscaves:acid", 250))
     .id("createdelight:big_centrifugation/unrefined_waste")
   e.recipes.createdelight.big_centrifugation()
     .inputItems('createdelight:uranium_dust')
     .duration(1000)
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .chance(0.1, builder => builder
       .outputItems('createdelight:enriched_uraniumdust')
     )
@@ -66,19 +60,12 @@ ServerEvents.recipes(e => {
         .outputFluids(Fluid.of(fluid[1][0], fluid[1][1]))
         .outputFluids(Fluid.of(fluid[2][0], fluid[2][1]))
         .duration(100)
-        .perTick(builder => builder
-          .inputRPM(32)
-        )
         .id(`createdelight:big_centrifugation/separation/${fluid[0][0].split(":")[1]}`)
     })
   //液固混合液体离心
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("createdelightcore:ferrouslime", 900))
     .outputFluids(Fluid.of("createdelightcore:slime", 900))
-    .outputItems("10x createmetallurgy:iron_dust")
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/ferrouslime")
   //巧克力离心
   e.recipes.createdelight.big_centrifugation()
@@ -87,9 +74,6 @@ ServerEvents.recipes(e => {
     .outputItems("ratatouille:cocoa_solids")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:ruby_chocolate", 250))
@@ -97,26 +81,17 @@ ServerEvents.recipes(e => {
     .outputItems("ratatouille:cocoa_solids")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("create_central_kitchen:dragon_breath", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/ruby_chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:white_chocolate", 250))
     .outputItems("ratatouille:cocoa_butter")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/white_chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:black_chocolate", 250))
     .outputItems("ratatouille:cocoa_butter")
     .outputItems("ratatouille:cocoa_solids")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/black_chocolate")
 })
