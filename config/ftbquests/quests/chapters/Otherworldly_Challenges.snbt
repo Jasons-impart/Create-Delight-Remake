@@ -1359,6 +1359,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         真是可怕，这些龙族驾驭自然的力量，拥有着千钧之力。我们或许可以利用它们，对，利用它们的躯干和血液制作新的武器，这些自然力量也将为我们所用，我们的研究将会更进一步！不对啊，为什么这些龙都是固定高等级的龙啊......"]
 			icon: "iceandfire:dragonscales_red"
 			id: "4969DC03C46C70C0"
 			rewards: [{
@@ -1508,6 +1509,69 @@
 			title: "磁暴领域"
 			x: -5.0d
 			y: 3.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			description: ["         你说啊，是原本具有生命的它们利用磁力与金属变得强大，还是这些金属在磁力的影响下逐渐具有生命呢？他们在无人为干扰下发展出了全息投影等科技，真是令人震撼，或许这“虚空”不过也是科学的产物吧......"]
+			icon: "alexscaves:notor_gizmo"
+			id: "077FD8737EF5ABE0"
+			rewards: [{
+				count: 4
+				id: "7A0F5284DE1797A8"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					count: 4L
+					id: "74B9DDC9FD3102A0"
+					item: { Count: 4, id: "alexscaves:telecore" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "73848E0E1A766D3D"
+					item: { Count: 4, id: "alexscaves:heart_of_iron" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "18B2E149A57B79BC"
+					item: "alexscaves:holocoder"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "75DAB22D9978D981"
+					item: {
+						Count: 1
+						id: "alexscaves:resistor_shield"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "078F013F2EE2A00D"
+					item: {
+						Count: 1
+						id: "alexscaves:galena_gauntlet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "研究：科技与自然"
+			x: 13.0d
+			y: -4.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]
