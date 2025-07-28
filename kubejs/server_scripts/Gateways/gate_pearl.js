@@ -92,4 +92,16 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "alexscaves:dreadbow"])
     ]).transitionalItem(incomplete).loops(2)
     .id("createdelight:sequenced_assembly/infinite_and_dark_trials")
+    ////添加配方：磁暴领域合成
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:magnetic_storm_field"}'))
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:telecore"]),
+        create.cutting(incomplete, incomplete),
+        create.pressing(incomplete,incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:scarlet_neodymium_ingot"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:azure_neodymium_ingot"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:heart_of_iron"])
+    ]).transitionalItem(incomplete).loops(4)
+    .id("createdelight:sequenced_assembly/magnetic_storm_field")
 })

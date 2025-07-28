@@ -20,7 +20,7 @@
 			rotation: 0.0d
 			width: 15.0d
 			x: 2.0d
-			y: 7.0d
+			y: 11.5d
 		}
 		{
 			height: 4.0d
@@ -67,32 +67,32 @@
 			image: "alexscaves:item/darkened_apple"
 			rotation: 0.0d
 			width: 2.0d
-			x: -1.5d
-			y: 3.0d
+			x: 2.0d
+			y: 6.0d
 		}
 		{
 			height: 2.0d
 			image: "alexscaves:textures/mob_effect/darkness_incarnate.png"
 			rotation: 0.0d
 			width: 2.0d
-			x: -4.5d
-			y: 3.5d
+			x: 2.0d
+			y: 9.0d
 		}
 		{
 			height: 3.0d
 			image: "alexscaves:item/pure_darkness"
 			rotation: 0.0d
 			width: 3.0d
-			x: -4.5d
-			y: 3.0d
+			x: 2.0d
+			y: 8.5d
 		}
 		{
 			height: 3.0d
 			image: "alexscaves:item/cloak_of_darkness"
 			rotation: 0.0d
 			width: 3.0d
-			x: -1.5d
-			y: 3.0d
+			x: 2.0d
+			y: 6.0d
 		}
 		{
 			height: 4.0d
@@ -143,6 +143,39 @@
 			width: 2.0d
 			x: 18.0d
 			y: -7.5d
+		}
+		{
+			height: 6.0d
+			image: "minecraft:textures/painting/wither.png"
+			order: -1
+			rotation: 0.0d
+			width: 6.0d
+			x: 2.0d
+			y: 13.5d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:textures/misc/advancement/icon/magnetic_caves.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/tesla_bulb"
+			rotation: 0.0d
+			width: 3.0d
+			x: -5.0d
+			y: 3.0d
+		}
+		{
+			height: 3.0d
+			image: "createaddition:block/tesla_coil/lightning_new"
+			rotation: 0.0d
+			width: 3.0d
+			x: -5.0d
+			y: 3.0d
 		}
 	]
 	order_index: 8
@@ -195,7 +228,7 @@
 			y: -6.0d
 		}
 		{
-			dependencies: ["5981A5D70F26A7A5"]
+			dependencies: ["58C8AFFF5BDFF59C"]
 			description: ["         我们的创造打开了次元的裂缝，来自异界的扭曲生物蜂拥而至。它们以灵魂为食，用锋利的存在将生命的本质穿刺、撕裂、抽离。在这场试炼中，你将直面灵魂被枯萎化的恐惧——不是肉体的死亡，而是存在本身的缓慢凋零。你的灵魂将成为战场。异界生物会用它们独有的方式刺穿灵核，抽取生命力，将你的意志一点点风干成尘埃。每一次呼吸都可能让灵魂更加脆弱，每一次抵抗都可能加速腐朽。你能坚持多久，才会像那些被撕裂的灵魂一样，成为它们中的一员？"]
 			icon: {
 				Count: 1
@@ -268,7 +301,7 @@
 			]
 			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
 			x: 2.0d
-			y: 7.0d
+			y: 12.0d
 		}
 		{
 			description: ["         在旅途中，我无意间发现不同的材料与珍珠结合似乎有着神奇的力量，我想，我们终有一天会明白这一切......或许我们可以利用这些去到&kabcde&r，继续这场旅途的传奇，新的篇章就此开始......"]
@@ -668,7 +701,7 @@
 				}
 			]
 			shape: "square"
-			subtitle: "进入糖果洞穴"
+			subtitle: "品尝一下这里的糖果吧！"
 			tasks: [
 				{
 					biome: "alexscaves:candy_cavity"
@@ -680,6 +713,7 @@
 						}
 					}
 					id: "2380BF20AE8DF17E"
+					title: "访问糖果龋洞 (Candy Cavity)"
 					type: "biome"
 				}
 				{
@@ -746,6 +780,12 @@
 				}
 			}
 			id: "45A66CCB979164B1"
+			rewards: [{
+				count: 4
+				id: "118C8842E5DEB92A"
+				item: "alexscaves:darkened_apple"
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "你为什么&r&k在这里&r......"
 			tasks: [
@@ -759,6 +799,7 @@
 						}
 					}
 					id: "5161BDBACBFA856B"
+					title: "访问异寂空谷 (Forlorn Hollows)"
 					type: "biome"
 				}
 				{
@@ -774,8 +815,8 @@
 				}
 			]
 			title: "人生最寂寥的一天"
-			x: -1.5d
-			y: 3.0d
+			x: 2.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["45A66CCB979164B1"]
@@ -835,8 +876,8 @@
 				type: "item"
 			}]
 			title: "黯渊之视"
-			x: -4.5d
-			y: 3.0d
+			x: 2.0d
+			y: 8.5d
 		}
 		{
 			dependencies: [
@@ -844,6 +885,7 @@
 				"604734C6B3F31B97"
 				"58C8AFFF5BDFF59C"
 				"6DC960C9CBFEEAE9"
+				"40C3CA64ACD3B189"
 			]
 			description: ["         在经历了这些试炼后，我们在这些物品中发现了裂隙的痕迹，或许我们可以通过这些物品探究裂隙的本质，从而得到意想不到的成果。"]
 			hide_dependency_lines: true
@@ -1359,6 +1401,113 @@
 			title: "研究：流放之龙"
 			x: 13.0d
 			y: -5.5d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: ["        磁场是存在于磁体或电流周围的一种特殊物质，虽然看不见、摸不着，但它能对放入其中的磁体或电流产生力的作用。磁场是传递磁相互作用的一种场，具有方向性和强弱分布。"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:magnetic_caves"
+				}
+			}
+			id: "5E6A8FA25EB811DB"
+			rewards: [{
+				count: 4
+				id: "2B525C3F815EA374"
+				item: {
+					Count: 1
+					id: "vinery:magnetic_wine"
+					tag: { }
+				}
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "不是，磁力怎么这么难学（"
+			tasks: [
+				{
+					biome: "alexscaves:magnetic_caves"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:magnetic_caves"
+						}
+					}
+					id: "2DA4E5DF82D7D1CD"
+					title: "访问磁场洞穴 (Magnetic Caves)"
+					type: "biome"
+				}
+				{
+					count: 4L
+					id: "085E243DAAF5E0E0"
+					item: { Count: 4, id: "alexscaves:scarlet_neodymium_ingot" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "78A0AFD08A0791ED"
+					item: { Count: 4, id: "alexscaves:azure_neodymium_ingot" }
+					type: "item"
+				}
+			]
+			title: "同极相斥、异极相吸"
+			x: -1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["5E6A8FA25EB811DB"]
+			description: ["         一场突如其来的磁暴灾难席卷了这片维度，扭曲的磁场形成了一个危险的试炼场——“磁暴领域”。这里，强大的磁力乱流肆虐，金属物体悬浮翻滚，电磁脉冲不断干扰我们的行动。唯有真正的冒险者，才能穿越这片混沌，稳定这场试炼的核心。用你的智慧，防止他们利用磁力增强力量，这是&l胜利的关键！"]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:magnetic_storm_field"
+				}
+			}
+			id: "40C3CA64ACD3B189"
+			rewards: [
+				{
+					count: 2
+					id: "5A8B0E12F30E17C7"
+					item: "alexscaves:block_of_scarlet_neodymium"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "23F9C023514AF1B0"
+					item: "alexscaves:block_of_azure_neodymium"
+					type: "item"
+				}
+				{
+					id: "070C91E6586B2133"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:magnetic_storm_field"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "要么驾驭磁暴，要么被它吞噬！（这明明是高达吧......）"
+			tasks: [{
+				id: "21EACBFF38A847EE"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:magnetic_storm_field"
+					}
+				}
+				type: "item"
+			}]
+			title: "磁暴领域"
+			x: -5.0d
+			y: 3.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]
