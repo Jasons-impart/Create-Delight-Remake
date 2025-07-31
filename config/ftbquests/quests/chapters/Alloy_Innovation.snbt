@@ -558,7 +558,7 @@
 			rewards: [{
 				id: "6396FB873056F408"
 				item: "create:brass_ingot"
-				random_bonus: 7
+				random_bonus: 15
 				type: "item"
 			}]
 			size: 1.0d
@@ -645,12 +645,20 @@
 		{
 			dependencies: ["783AE5D1F35263E1"]
 			id: "3EB042CCCB8D54FA"
-			rewards: [{
-				count: 3
-				id: "1CAABE9416CBE270"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 3
+					id: "1CAABE9416CBE270"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "6985E53D18562529"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "从此开始&4动力合成&r！"
@@ -1129,12 +1137,20 @@
 			description: [""]
 			hide_dependency_lines: false
 			id: "1B63ED5F68D71F24"
-			rewards: [{
-				count: 4
-				id: "4BC8AC001A2E7875"
-				item: "minecraft:raw_iron"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 4
+					id: "4BC8AC001A2E7875"
+					item: "minecraft:raw_iron"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "2439857762A0E683"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "&e别丢错了东西哦！"
@@ -1273,6 +1289,44 @@
 			}]
 			x: 1.0d
 			y: 14.0d
+		}
+		{
+			dependencies: ["15BF957B2F2FE765"]
+			description: ["{image:createdelight:textures/gui/blue_fire.png width:400 height:200 align:center}"]
+			hide_until_deps_complete: true
+			id: "725D833A051677E2"
+			rewards: [
+				{
+					id: "0F329EFF6C649878"
+					item: "create:cart_assembler"
+					type: "item"
+				}
+				{
+					id: "27AD32E8E52AFB17"
+					item: "minecraft:rail"
+					type: "item"
+				}
+				{
+					id: "72C4DAF63666F26C"
+					item: "minecraft:lever"
+					type: "item"
+				}
+				{
+					id: "73459809A623ABC3"
+					item: "minecraft:minecart"
+					type: "item"
+				}
+			]
+			subtitle: "地狱的某个结构中存在无限燃烧的“&9超级燃烧&r”和“&e普通燃烧&r”的烈焰人燃烧室 ，也许你可以试试去寻找？"
+			tasks: [{
+				id: "606FC18C59A70E12"
+				structure: "create_structures_arise:obsidiantemple"
+				title: "彩蛋？彩蛋！"
+				type: "structure"
+			}]
+			title: "&4彩蛋？彩蛋！！！&r"
+			x: -2.5d
+			y: 18.5d
 		}
 	]
 	title: "&9体系渐成 "
