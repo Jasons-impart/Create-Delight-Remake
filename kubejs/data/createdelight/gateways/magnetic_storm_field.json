@@ -13,7 +13,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.4
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -35,7 +35,7 @@
 				{
 					"type": "gateways:entity_loot",
 					"entity": "alexscaves:teletor",
-					"rolls": 24
+					"rolls": 12
 				},
 				{
 					"type": "gateways:stack",
@@ -59,7 +59,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.armor",
@@ -121,7 +121,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -179,7 +179,7 @@
                 {
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.4
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -235,22 +235,22 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 8.0
+					"value": 10.0
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.0
+					"value": 6.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
 					"operation": "ADDITION",
-					"value": 0.8
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.1 
+					"value": 0.2 
 				}
 			],
 			"rewards": [
