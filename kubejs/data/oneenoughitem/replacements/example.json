@@ -1,0 +1,9 @@
+[
+    {
+        "matchItems": [
+            "quark:carrot_crate",
+            "farmersdelight:carrot_crate"
+        ],
+        "resultItems": "farmersdelight:carrot_crate"
+    }
+]
