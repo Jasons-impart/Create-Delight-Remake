@@ -69,7 +69,7 @@
 				}
 			],
 			"max_wave_time": 1000,
-			"setup_time": 300
+			"setup_time": 200
 		},
 		{
 			"entities": [
@@ -148,7 +148,7 @@
 					}
                 }
 			],
-			"max_wave_time": 1600,
+			"max_wave_time": 1800,
 			"setup_time": 300
 		},
 		{
@@ -228,7 +228,7 @@
 					}
                 }
 			],
-			"max_wave_time": 1600,
+			"max_wave_time": 1800,
 			"setup_time": 300
 		},
 		{
@@ -323,7 +323,7 @@
 					}
                 }
 			],
-			"max_wave_time": 2000,
+			"max_wave_time": 2200,
 			"setup_time": 300
 		},
         {
@@ -411,7 +411,7 @@
 					}
                 }
 			],
-			"max_wave_time": 2000,
+			"max_wave_time": 2200,
 			"setup_time": 300
 		}
     ],

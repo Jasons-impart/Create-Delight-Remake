@@ -20,7 +20,7 @@
 			rotation: 0.0d
 			width: 15.0d
 			x: 2.0d
-			y: 11.5d
+			y: 12.0d
 		}
 		{
 			height: 4.0d
@@ -68,7 +68,7 @@
 			rotation: 0.0d
 			width: 2.0d
 			x: 2.0d
-			y: 6.0d
+			y: 7.0d
 		}
 		{
 			height: 2.0d
@@ -76,7 +76,7 @@
 			rotation: 0.0d
 			width: 2.0d
 			x: 2.0d
-			y: 9.0d
+			y: 9.5d
 		}
 		{
 			height: 3.0d
@@ -84,7 +84,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: 8.5d
+			y: 9.0d
 		}
 		{
 			height: 3.0d
@@ -92,7 +92,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			height: 4.0d
@@ -151,7 +151,7 @@
 			rotation: 0.0d
 			width: 6.0d
 			x: 2.0d
-			y: 13.5d
+			y: 14.0d
 		}
 		{
 			height: 3.0d
@@ -176,6 +176,31 @@
 			width: 3.0d
 			x: -5.0d
 			y: 3.0d
+		}
+		{
+			height: 3.0d
+			image: "createdeco:block/palettes/decals/decal_radioactive"
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.5d
+			y: 6.5d
+		}
+		{
+			height: 2.0d
+			image: "mbd2:textures/gui/nuclear_base.png"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: 8.5d
+		}
+		{
+			height: 3.0d
+			image: "minecraft:textures/painting/bomb.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: -4.0d
+			y: 9.0d
 		}
 	]
 	order_index: 8
@@ -301,7 +326,7 @@
 			]
 			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
 			x: 2.0d
-			y: 12.0d
+			y: 13.0d
 		}
 		{
 			description: ["         在旅途中，我无意间发现不同的材料与珍珠结合似乎有着神奇的力量，我想，我们终有一天会明白这一切......或许我们可以利用这些去到&kabcde&r，继续这场旅途的传奇，新的篇章就此开始......"]
@@ -816,7 +841,7 @@
 			]
 			title: "人生最寂寥的一天"
 			x: 2.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["45A66CCB979164B1"]
@@ -877,7 +902,7 @@
 			}]
 			title: "黯渊之视"
 			x: 2.0d
-			y: 8.5d
+			y: 9.5d
 		}
 		{
 			dependencies: [
@@ -1359,6 +1384,7 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
+			description: ["         这些龙被困在外太空之中，无法踏出半步，就像那群悚怖生物一样。或许我们所创造的传送门与它们原理相近，或者说，传送门不仅是沟通两个维度的媒介，还可能是在这片维度中临时创造了一个有限制的小型维度，我们的研究似乎可以再进一步......"]
 			icon: "iceandfire:dragonscales_red"
 			id: "4969DC03C46C70C0"
 			rewards: [{
@@ -1508,6 +1534,297 @@
 			title: "磁暴领域"
 			x: -5.0d
 			y: 3.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: [
+				"         核裂变是指一个质量较重的原子核通过核反应过程分裂为两个或两个以上的中等质量的原子核的过程。并不是所有的原子核都能进行核裂变，只有因为质量过大而不稳定的原子核才会发生裂变。核裂变分为自发裂变和诱发裂变，顾名思义，自发裂变是指原子核非常不稳定，能够自发裂变成两个更稳定的中等质量原子核，而诱发裂变是需要人为提供一些能量或者刺激，激发不稳定的原子核变得更不稳定从而发生裂变。人类想要很好地控制核裂变，就需要利用诱发裂变，对核燃料“点火”。那利用什么来“点火”呢？答案是&m“打火石”&r“中子”。"
+				"{@pagebreak}"
+			]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:toxic_caves"
+				}
+			}
+			id: "74DAEA0F8EB80F79"
+			rewards: [{
+				count: 4
+				id: "493C6DE9D755BC52"
+				item: "alexscaves:spelunkie"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "核电真的好玩，信我，基地爆炸了真的很好玩"
+			tasks: [
+				{
+					biome: "alexscaves:toxic_caves"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:toxic_caves"
+						}
+					}
+					id: "1A88C4999A9F56B6"
+					title: "访问毒化洞穴 (Toxic Caves)"
+					type: "biome"
+				}
+				{
+					count: 4L
+					id: "31D09545FEF0C864"
+					item: { Count: 4, id: "alexscaves:uranium" }
+					type: "item"
+				}
+				{
+					id: "5926981CFB4374F8"
+					item: "alexscaves:fissile_core"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["74DAEA0F8EB80F79"]
+			description: [
+				"         当我们打开那道通往虚空的传送门时，我们发现，被释放的不仅是力量，还有扭曲的噩梦......「熔蚀之地」正是我们亲手创造的战场——核爆的灼热、剧毒的蔓延、腐蚀的啃噬与辐射的异变，本该是我们掌控的武器，如今却成了这些怪物的反抗手段。 "
+				"         这些从裂缝中爬出的存在，不受物理法则束缚，不惧寻常死亡。它们由扭曲的血肉构成，以辐射为食，以剧毒为饮，在腐蚀中增殖。而我们的任务，就是在这片被我们的创造污染至极点的炼狱中，将它们再度驱回那片洞窟。恐惧、绝望与疯狂，往往是比物理伤害更致命的敌人。"
+			]
+			id: "0D3EC9F585E0524B"
+			rewards: [
+				{
+					count: 4
+					id: "487FC0A6C61AA680"
+					item: "alexcaves_delight:tremorzillaamlette"
+					type: "item"
+				}
+				{
+					id: "3222AA6DEB969BC9"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:a_place_of_melting"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7A0908C813E4CBC7"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "338D31D0BF549100"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "43DC475F9B5BC80B"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4AE3AB2ADFC4987A"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 128
+					id: "27F0AA3591883662"
+					item: "alexscaves:hazmat_block"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "核电，轻而易举啊.jpg"
+			tasks: [{
+				id: "603B28DABFFD5AFF"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:a_place_of_melting"
+					}
+				}
+				type: "item"
+			}]
+			title: "熔蚀之地"
+			x: -4.0d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"5E6A8FA25EB811DB"
+				"74DAEA0F8EB80F79"
+			]
+			description: [
+				"         毒化洞穴是本模组第三个被加入的生物群系，是个以废土为主题的群系。这个黑暗且又危险的群系，遍地布满了有毒的酸液池和会喷毒气的地热喷口，此外还有带有辐射性的铀矿石也在此生成。由于这个群系的辐射性很强，所以这里的生物都是因受过辐射而变异的生物。玩家若是在没有穿戴防化服的情况下进入该洞穴，可能会受到致命的“辐照”效果。整个毒化洞穴由辐射石组成，这里除了会生成铀矿石之外，还会生成硫磺晶体。"
+				"{@pagebreak}"
+				"         磁场洞穴是本模组第一个被加入的生物群系，这个群系以特殊的磁力机制与机械生命为主题。这个黑暗的群系中到处都分布着发微光的赤钕柱和青钕柱，尖锐的方铅岩锥上放置着危险的特斯拉球作为光照，四处都闪烁着红色的和蓝色的电弧。玩家还可以看到小块的方铅岩从地面飘向天空，仿佛不受重力的影响一般。此外，大量的方铅铁矿石在此生成。整个磁场洞穴由方铅岩组成，部分方铅岩的生成会被充能方铅岩替换，拥有磁力的赤钕和青钕伫立在地面和岩壁上。这里会生成原版的部分敌对生物，以及5种新增的生物。"
+				"{@pagebreak}"
+				"         关于我为什么要以科学知识作为介绍这件事？因为我想在任务中为大家带来更多，同时将这些内容融入到任务的方方面面，使得这个故事更加严谨有趣，至于其他洞穴，魔法的力量真伟大，不是吗ovo"
+			]
+			icon: "minecraft:writable_book"
+			id: "06D9480B36272AEE"
+			shape: "diamond"
+			tasks: [{
+				id: "31BC15759015FFFA"
+				title: "科普时间"
+				type: "checkmark"
+			}]
+			title: "洞穴简介（大部分来自于“MC百科”）"
+			x: -1.5d
+			y: 4.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			description: ["          有一说一，到底是这些金属具有了生命，还是具有生命的生物与金属结合形成了这些东西？它们的科技水平超出我们的想象，无法理解它们在这洞穴中利用磁力是如何发展到这地步的，又是如何把这么高级的科技用得这么朴素的......神奇......"]
+			icon: "alexscaves:quarry_smasher"
+			id: "104A894FC3F93898"
+			rewards: [{
+				count: 4
+				id: "4C38EAC0F7009632"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "2539A51B33BF0310"
+					item: {
+						Count: 1
+						id: "alexscaves:galena_gauntlet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "65B66FFD30C29B5B"
+					item: "alexscaves:quarry"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "68946FCCF7E9805F"
+					item: "alexscaves:quarry_smasher"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "452B6C4443D24636"
+					item: {
+						Count: 1
+						id: "alexscaves:resistor_shield"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4FB17BA2823AC5ED"
+					item: "alexscaves:heart_of_iron"
+					type: "item"
+				}
+			]
+			title: "研究：科学与生命"
+			x: 13.0d
+			y: -4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			description: ["         这些生物总是令人感到恐惧，核能的力量固然强大，但是也不能将自己与辐射融为一体啊。经过我的观察，它们似乎早已失去自己的意志（除了那个爬行者......那就是天性跑不了的），只是依靠着对辐射的追求而生存。我们一定要合理利用这些力量，我可不想再看到这幅光景了......撼地斯拉？说来有趣的是，它的那个射线似乎是完全可控的，或许它们的方法是对的......"]
+			icon: "alexscaves:waste_drum"
+			id: "65AB4A781D191617"
+			rewards: [{
+				count: 4
+				id: "157F8F150698B8FA"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "0558258841E75332"
+					item: "alexscaves:waste_drum"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "61BDB7C6ECE957F4"
+					item: "alexscaves:nuclear_bomb"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "69B4E7DF1B233DD3"
+					item: {
+						Count: 1
+						id: "alexscaves:raygun"
+						tag: {
+							PrevRayX: -10.94635713973332d
+							PrevRayY: 2.0d
+							PrevRayZ: -1.5363073496079096d
+							PrevUseTime: 0
+							RayX: -10.953169283660591d
+							RayY: 2.0d
+							RayZ: -1.5240147608857182d
+							UseTime: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "47646F684545374F"
+					item: "alexscaves:music_disc_fusion"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "63AFDB6B2C69F42F"
+					item: "alexscaves:tremorzilla_egg"
+					type: "item"
+				}
+			]
+			title: "研究：异变突生"
+			x: 13.0d
+			y: -2.5d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

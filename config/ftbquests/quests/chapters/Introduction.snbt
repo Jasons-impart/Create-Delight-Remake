@@ -75,6 +75,17 @@
 					table_id: 5284994430719191732L
 					type: "choice"
 				}
+				{
+					count: 32
+					id: "5DBC3EB4C028758D"
+					item: "minecraft:torch"
+					type: "item"
+				}
+				{
+					id: "24B55A58810B25D4"
+					item: "minecraft:lantern"
+					type: "item"
+				}
 			]
 			shape: "hexagon"
 			size: 4.0d
@@ -96,11 +107,18 @@
 			description: ["整合包修改了作物的生长机制，且相较于原版有一定差距，种植前请阅读相关章节！"]
 			icon: "eclipticseasons:calendar"
 			id: "46F1F92929FC8F9F"
-			rewards: [{
-				id: "75D0AD5AC35C363E"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "75D0AD5AC35C363E"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					id: "4C6D361B17E4CD51"
+					item: "eclipticseasons:calendar"
+					type: "item"
+				}
+			]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"季节系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1E7A476EE0C13AD1\" } }"
@@ -523,12 +541,13 @@
 			id: "398AE54EB6F55F0D"
 			rewards: [
 				{
-					id: "1393B922F7BDC12F"
-					item: "tetra:pristine_diamond"
-					type: "item"
+					icon: "minecraft:amethyst_shard"
+					id: "05241A24FF23E9B3"
+					table_id: 2077532568744688732L
+					type: "random"
 				}
 				{
-					id: "4FBED8D2403798A6"
+					id: "520A1EC0079DEDAC"
 					item: "createdelightcore:copper_coin"
 					type: "item"
 				}
@@ -570,11 +589,24 @@
 			dependencies: ["46F1F92929FC8F9F"]
 			icon: "minecraft:wheat"
 			id: "64FB1FEC4F9721B7"
-			rewards: [{
-				id: "306A1996A10BFBA9"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "306A1996A10BFBA9"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					id: "786A5253311375EF"
+					item: {
+						Count: 1
+						id: "minecraft:iron_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34D9D292CE6F683E\" } }"
@@ -597,6 +629,11 @@
 			]
 			icon: "art_of_forging:sigil_of_eden"
 			id: "1B04B860E2651AEF"
+			rewards: [{
+				id: "1990ADBF46406434"
+				type: "xp_levels"
+				xp_levels: 10
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "Art of Forging"
@@ -657,6 +694,12 @@
 			description: ["注意！包内大部分合金的合成都需要使用&4熔融金属&r进行合成，具体合成方式请&e查询JEI&r！"]
 			icon: "createmetallurgy:sturdy_whisk"
 			id: "64B9CFE4337A3EAA"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "049AE46D3583467F"
+				table_id: 6730734086547045908L
+				type: "random"
+			}]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"更高效的合金方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DDE0F8620589E02\" } }"
@@ -677,6 +720,11 @@
 				"需要注意的是：售卖科技相关物品的商店只能在完成对应任务后才能解锁。"
 			]
 			id: "360AB2F07EC4E939"
+			rewards: [{
+				id: "76D33455C168D1DE"
+				item: "lightmanscurrency:portable_gem_terminal"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			tasks: [{
@@ -693,6 +741,12 @@
 			description: ["每条&e处理方式&r的增产数量&4不同&r，请&e自行计算&r"]
 			icon: "createmetallurgy:gold_dust"
 			id: "3027E5E07BE0B171"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3387AD132E45CF7E"
+				table_id: 2218915723137103147L
+				type: "random"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"矿物处理\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"37C42029C3527BCD\" } }"
@@ -717,6 +771,11 @@
 			]
 			icon: "art_of_forging:shards_of_malice"
 			id: "28A38E3B4EE9EFEC"
+			rewards: [{
+				id: "725831123DAED588"
+				type: "xp_levels"
+				xp_levels: 10
+			}]
 			shape: "pentagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"难度索引\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1D6981F32D6C7E04\" } }"
@@ -812,7 +871,7 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "感谢所有mc社区开发者和玩家们，是你们的优秀作品构成了整合包的砖瓦"
+			subtitle: "感谢所有mc社区开发者和玩家们，是你们的优秀作品构成了整合包的一砖一瓦"
 			tasks: [{
 				id: "294ED5BD3E8222C1"
 				title: "致谢"
@@ -828,6 +887,11 @@
 				"另外，吊床可以用于跳过白天。"
 			]
 			id: "1D22CD4640CF708B"
+			rewards: [{
+				id: "645514994AF06333"
+				item: "minecraft:white_bed"
+				type: "item"
+			}]
 			shape: "pentagon"
 			size: 1.5d
 			subtitle: "（不设置出生点）"
@@ -894,6 +958,11 @@
 			dependencies: ["14613C15CED4E5BA"]
 			icon: "create:item_vault"
 			id: "2B0BD06F1DA084FF"
+			rewards: [{
+				id: "6B76DFC8224BB90A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
 			size: 2.0d
 			subtitle: "{ \"text\": \"进入 仓储如此简单章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34EC8C9716956C8E\"} }"
 			tasks: [{
@@ -914,9 +983,23 @@
 			]
 			icon: "createdelight:emergency_industrial_platform"
 			id: "73CE44DE53C68D82"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "18C252FF6F312E84"
+					table_id: 5284994430719191732L
+					type: "loot"
+				}
+				{
+					id: "62B195C9CF62CA36"
+					type: "xp_levels"
+					xp_levels: 10
+				}
+			]
 			shape: "gear"
 			subtitle: "使用前强烈建议阅读"
 			tasks: [{
+				consume_items: true
 				id: "3ACEAE04CA785DAC"
 				item: {
 					Count: 1
