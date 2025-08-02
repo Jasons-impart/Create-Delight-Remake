@@ -99,6 +99,8 @@
 	SeasonCoreRange = 15
 	#Consume anyway if failed to use bone meal on crop.
 	BoneMealConsumeOnFailure = true
+	#If enabled, humidity check will transition smoothly instead of snapping.
+	CropHumidityTransition = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
@@ -117,8 +119,18 @@
 [Map]
 	#The map color of blocks will change during snow.
 	ChangeMapColor = true
+	#Delay updating the top block to snowy when height map changes during snowfall.
+	ServerRealisticSnowyChange = false
 
 [Resource]
 	#Enable extra built-in snow definitions resourcepack for game.
 	ExtraSnowDefinitions = false
+
+[Animal]
+	#Enable seasonal animal breed.
+	EnableSeasonalBreed = false
+	#Enable seasonal bee behavior, bee would like spring and not like winter and cold.
+	EnableSeasonalBee = false
+	#Enable seasonal fishing behavior, let enjoy summer.
+	EnableSeasonalFishing = false
 
