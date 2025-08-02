@@ -83,14 +83,6 @@
     },
     {
         "matchItems": [
-            "oceanic_delight:grilled_squid_tentacles",
-            "crabbersdelight:cooked_squid_tentacles",
-            "culturaldelights:cooked_calamari"
-        ],
-        "resultItems": "oceanic_delight:grilled_squid_tentacles"
-    },
-    {
-        "matchItems": [
             "farmersdelight:milk_bottle",
             "neapolitan:milk_bottle",
             "bakeries:bottle_milk"
@@ -150,20 +142,6 @@
             "forge:nuggets/copper"
         ],
         "resultItems": "create:copper_nugget"
-    },
-    {
-        "matchItems": [
-            "miners_delight:squid",
-            "culturaldelights:squid"
-        ],
-        "resultItems": "culturaldelights:squid"
-    },
-    {
-        "matchItems": [
-            "miners_delight:glow_squid",
-            "culturaldelights:glow_squid"
-        ],
-        "resultItems": "culturaldelights:glow_squid"
     },
     {
         "matchItems": [
