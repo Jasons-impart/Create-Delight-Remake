@@ -12,6 +12,7 @@ ServerEvents.recipes(e => {
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot",
         "minecraft:iron_trapdoor",
+        "create:filling/compat/neapolitan/milk_bottle",
     ])
     // 闪长岩合成配方优化
     e.recipes.create.mixing(

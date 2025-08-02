@@ -23,16 +23,14 @@ ServerEvents.recipes(e => {
         "brewinandchewin:cooking/apple_jelly",
         "brewinandchewin:filling/create/milk_bucket",
         "brewinandchewin:emptying/create/milk_bottle",
-        "brewinandchewin:emptying/create/milk_bucket"
+        "brewinandchewin:emptying/create/milk_bucket",
+        "brewinandchewin:filling/create/milk_bottle"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",
         Fluid.of("create_bic_bit:curdled_milk", 1000)
     ])
     .id("brewinandchewin:filling/create/unripe_flaxen_cheese_wheel")
-    cutting_2(e, "brewinandchewin:flaxen_cheese_wheel", [
-        ["ad_astra:cheese", 4]
-    ])
     vintagedelight.fermenting("2x brewinandchewin:pickled_pickles",[
         "#forge:sea_pickles",
         "#forge:sea_pickles",

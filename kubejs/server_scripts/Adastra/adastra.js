@@ -28,7 +28,8 @@ ServerEvents.recipes(e => {
         "ad_astra_giselle_addon:crafting/automation_nasa_workbench",
         "ad_astra:steel_block",
         "ad_astra:etrionic_blast_furnace",
-        "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water"
+        "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water",
+        "ad_astra:steel_ingot_from_steel_block"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
     // 新增配方：霜原木

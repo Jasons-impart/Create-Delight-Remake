@@ -67,6 +67,15 @@
     },
     {
         "matchItems": [
+            "vintagedelight:cheese_wheel",
+            "casualness_delight:cheese_wheel",
+            "brewinandchewin:flaxen_cheese_wheel",
+            "trailandtales_delight:cheese_wheel"
+        ],
+        "resultItems": "vintagedelight:cheese_wheel"
+    },
+    {
+        "matchItems": [
             "quark:crab_leg",
             "crabbersdelight:crab"
         ],
@@ -74,14 +83,6 @@
     },
     {
         "matchItems": [
-            "crabbersdelight:cooked_squid_tentacles",
-            "culturaldelights:cooked_calamari"
-        ],
-        "resultItems": "culturaldelights:cooked_calamari"
-    },
-    {
-        "matchItems": [
-            "#forge:milk/milk_bottle",
             "farmersdelight:milk_bottle",
             "neapolitan:milk_bottle",
             "bakeries:bottle_milk"
@@ -130,8 +131,7 @@
     {
         "matchItems": [
             "festival_delicacies:rice",
-            "farmersdelight:rice",
-            "#forge:crops/rice"
+            "farmersdelight:rice"
         ],
         "resultItems": "farmersdelight:rice"
     },
@@ -142,20 +142,6 @@
             "forge:nuggets/copper"
         ],
         "resultItems": "create:copper_nugget"
-    },
-    {
-        "matchItems": [
-            "miners_delight:squid",
-            "culturaldelights:squid"
-        ],
-        "resultItems": "culturaldelights:squid"
-    },
-    {
-        "matchItems": [
-            "miners_delight:glow_squid",
-            "culturaldelights:glow_squid"
-        ],
-        "resultItems": "culturaldelights:glow_squid"
     },
     {
         "matchItems": [
