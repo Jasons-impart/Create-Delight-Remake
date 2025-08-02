@@ -37,8 +37,6 @@ ServerEvents.recipes(e => {
         "culturaldelights:from_crate/cucumber",
 
     ])
-    e.replaceInput({ mod: "culturaldelights" }, "culturaldelights:cucumber", "vintagedelight:cucumber")
-    e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:pickle", "#forge:pickle")
     e.recipes.kubejs.shapeless(
         "vintagedelight:cucumber_crate",
         "9x vintagedelight:cucumber"
@@ -66,7 +64,6 @@ ServerEvents.recipes(e => {
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
     cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
-    cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
         Fluid.of("bakeries:salt_water", 250),

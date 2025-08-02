@@ -1,0 +1,269 @@
+[
+    {
+        "matchItems": [
+            "#forge:ingots/steel",
+            "ad_astra:steel_ingot",
+            "createmetallurgy:steel_ingot"
+        ],
+        "resultItems": "createmetallurgy:steel_ingot"
+    },
+    {
+        "matchItems": [
+            "forge:storage_blocks/steel",
+            "ad_astra:steel_block",
+            "createmetallurgy:steel_block"
+        ],
+        "resultItems": "createmetallurgy:steel_block"
+    },
+    {
+        "matchItems": [
+            "ad_astra:steel_rod",
+            "forge:rods/steel",
+            "vintageimprovements:steel_rod"
+        ],
+        "resultItems": "vintageimprovements:steel_rod"
+    },
+    {
+        "matchItems": [
+            "alexscaves:caramel",
+            "create_confectionery:bar_of_caramel"
+        ],
+        "resultItems": "create_confectionery:bar_of_caramel"
+    },
+    {
+        "matchItems": [
+            "alexscaves:candy_cane",
+            "create_confectionery:candy_cane"
+        ],
+        "resultItems": "create_confectionery:candy_cane"
+    },
+    {
+        "matchItems": [
+            "alexsmobs:banana",
+            "neapolitan:banana",
+            "forge:crops/banana"
+        ],
+        "resultItems": "neapolitan:banana"
+    },
+    {
+        "matchItems": [
+            "forge:salt",
+            "forge:dusts/salt",
+            "vintagedelight:salt_dust",
+            "ratatouille:salt",
+            "bakeries:salt"
+        ],
+        "resultItems": "vintagedelight:salt_dust"
+    },
+    {
+        "matchItems": [
+            "brewinandchewin:flaxen_cheese_wedge",
+            "ad_astra:cheese",
+            "casualness_delight:cheese_wheel_slice",
+            "vintagedelight:cheese_slice",
+            "trailandtales_delight:cheese_slice"
+        ],
+        "resultItems": "ad_astra:cheese"
+    },
+    {
+        "matchItems": [
+            "quark:crab_leg",
+            "crabbersdelight:crab"
+        ],
+        "resultItems": "crabbersdelight:crab"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:cooked_squid_tentacles",
+            "culturaldelights:cooked_calamari"
+        ],
+        "resultItems": "culturaldelights:cooked_calamari"
+    },
+    {
+        "matchItems": [
+            "#forge:milk/milk_bottle",
+            "farmersdelight:milk_bottle",
+            "neapolitan:milk_bottle",
+            "bakeries:bottle_milk"
+        ],
+        "resultItems": "farmersdelight:milk_bottle"
+    },
+    {
+        "matchItems": [
+            "create_bic_bit:unripe_cheese",
+            "casualness_delight:raw_cheese_wheel"
+        ],
+        "resultItems": "casualness_delight:raw_cheese_wheel"
+    },
+    {
+        "matchItems": [
+            "#createdeco:internal/plates/zinc_plates",
+            "#forge:plates/zinc",
+            "vintageimprovements:zinc_sheet",
+            "createaddition:zinc_sheet"
+        ],
+        "resultItems": "createaddition:zinc_sheet"
+    },
+    {
+        "matchItems": [
+            "#createdeco:internal/plates/andesite_plates",
+            "#forge:plates/andesite",
+            "vintageimprovements:andesite_sheet"
+        ],
+        "resultItems": "vintageimprovements:andesite_sheet"
+    },
+    {
+        "matchItems": [
+            "#forge:rods/zinc",
+            "create_sa:zinc_handle",
+            "vintageimprovements:zinc_rod"
+        ],
+        "resultItems": "vintageimprovements:zinc_rod"
+    },
+    {
+        "matchItems": [
+            "corn_delight:corn_seeds",
+            "culturaldelights:corn_kernels"
+        ],
+        "resultItems": "culturaldelights:corn_kernels"
+    },
+    {
+        "matchItems": [
+            "festival_delicacies:rice",
+            "farmersdelight:rice",
+            "#forge:crops/rice"
+        ],
+        "resultItems": "farmersdelight:rice"
+    },
+    {
+        "matchItems": [
+            "create:copper_nugget",
+            "iceandfire:copper_nugget",
+            "forge:nuggets/copper"
+        ],
+        "resultItems": "create:copper_nugget"
+    },
+    {
+        "matchItems": [
+            "miners_delight:squid",
+            "culturaldelights:squid"
+        ],
+        "resultItems": "culturaldelights:squid"
+    },
+    {
+        "matchItems": [
+            "miners_delight:glow_squid",
+            "culturaldelights:glow_squid"
+        ],
+        "resultItems": "culturaldelights:glow_squid"
+    },
+    {
+        "matchItems": [
+            "neapolitan:adzuki_beans",
+            "createdelight:adzuki_beans_seed",
+            "youkaishomecoming:redbean",
+            "festival_delicacies:red_bean"
+        ],
+        "resultItems": "createdelight:adzuki_beans_seed"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:ice_cube",
+            "neapolitan:ice_cubes",
+            "#forge:ice_cubes"
+        ],
+        "resultItems": "youkaishomecoming:ice_cube"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber_seeds",
+            "vintagedelight:cucumber_seeds"
+        ],
+        "resultItems": "vintagedelight:cucumber_seeds"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber",
+            "vintagedelight:cucumber"
+        ],
+        "resultItems": "vintagedelight:cucumber"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:pickle",
+            "culturaldelights:pickle",
+            "#forge:pickle"
+        ],
+        "resultItems": "culturaldelights:pickle"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:tea_seeds",
+            "farmersrespite:tea_seeds"
+        ],
+        "resultItems": "farmersrespite:tea_seeds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_berries",
+            "createcafe:coffee_fruit"
+        ],
+        "resultItems": "createcafe:coffee_fruit"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:green_tea_leaves",
+            "farmersrespite:green_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:green_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:oolong_tea_leaves",
+            "farmersrespite:yellow_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:yellow_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "farmersrespite:black_tea_leaves",
+            "youkaishomecoming:black_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:black_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_powder",
+            "createcafe:coffee_grounds"
+        ],
+        "resultItems": "createcafe:coffee_grounds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:bowl_of_cream",
+            "cosmopolitan:cream"
+        ],
+        "resultItems": "cosmopolitan:cream"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:butter",
+            "createdelight:butter"
+        ],
+        "resultItems": "createdelight:butter"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:blood_bottle",
+            "butchercraft:blood_fluid_bottle"
+        ],
+        "resultItems": "butchercraft:blood_fluid_bottle"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:roe",
+            "oceanic_delight:salmon_eggs"
+        ],
+        "resultItems": "oceanic_delight:salmon_eggs"
+    }
+]

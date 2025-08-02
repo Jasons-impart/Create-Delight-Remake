@@ -13,7 +13,7 @@
 		{ item: "createcafe:cassava_seeds" }
 		{ item: "farmersdelight:cabbage_seeds", weight: 5.0f }
 		{ item: "farmersdelight:tomato_seeds", weight: 5.0f }
-		{ item: "culturaldelights:cucumber_seeds" }
+		{ item: "vintagedelight:cucumber_seeds" }
 		{ item: "culturaldelights:eggplant_seeds" }
 		{ item: "culturaldelights:eggplant_seeds" }
 		{ item: "festival_delicacies:chinese_cabbage_seeds" }

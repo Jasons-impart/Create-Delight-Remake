@@ -64,7 +64,6 @@ ServerEvents.recipes(e => {
         "bakeries:ground_coffee",
         "bakeries:coffee_bean"
     ])
-    e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
 
 
     //展示框

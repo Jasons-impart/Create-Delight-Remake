@@ -12,7 +12,6 @@ ServerEvents.recipes(e => {
         "trailandtales_delight:dried_cherry_petal"
 
     ])
-    e.replaceInput({}, "trailandtales_delight:cheese_slice", "#forge:cheese")
 
     make_cake(e, "trailandtales_delight:cherry_petal", "trailandtales_delight:cherry_cake")
 
