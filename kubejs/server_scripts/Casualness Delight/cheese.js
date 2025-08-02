@@ -35,12 +35,10 @@ ServerEvents.recipes(e => {
         ], "2x casualness_delight:phantom_puff", 1.0, 200
     ).id("casualness_delight:cooking/phantom_puff")
     // 奶酪相关
-    cutting(e, "casualness_delight:cheese_wheel", [["casualness_delight:cheese_wheel_slice", 7]])
+    cutting(e, "casualness_delight:cheese_wheel", [["ad_astra:cheese", 7]])
     cutting_2(e, "vintagedelight:cheese_wheel", [["ad_astra:cheese", 4]])
-    e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
-    e.replaceOutput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     combination(e, [
         "create:dough",
         "minecraft:carrot",

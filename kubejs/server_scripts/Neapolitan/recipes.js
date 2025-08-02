@@ -20,7 +20,6 @@ ServerEvents.recipes(e => {
         "neapolitan:adzuki_stew"
     ])
     e.replaceInput({id: "neapolitan:ice"}, "neapolitan:ice_cubes", "#forge:ice_cubes")
-    e.replaceOutput({mod: "neapolitan"}, "neapolitan:ice_cubes", "youkaishomecoming:ice_cube")
     e.replaceInput({ not: { output: ["minecraft:packed_ice", Fluid.water(), "neapolitan:ice_cubes"] } }, "minecraft:ice", "#forge:ice_cubes")
     e.replaceInput({}, "neapolitan:chocolate_bar", "create:bar_of_chocolate")
     e.replaceInput({}, "neapolitan:adzuki_beans", "createdelight:adzuki_beans_seed")

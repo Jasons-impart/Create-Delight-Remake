@@ -25,9 +25,6 @@ ServerEvents.recipes(e => {
         "brewinandchewin:emptying/create/milk_bottle",
         "brewinandchewin:emptying/create/milk_bucket"
     ])
-    e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
-    e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")
-    e.replaceInput({}, "#brewinandchewin:cheese_wedges", "#forge:cheese")
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",
         Fluid.of("create_bic_bit:curdled_milk", 1000)

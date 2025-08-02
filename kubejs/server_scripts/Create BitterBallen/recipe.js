@@ -58,7 +58,6 @@ ServerEvents.recipes(e => {
     
     )
     e.replaceInput({}, Fluid.of("create_bic_bit:frying_oil"), Fluid.of("createdieselgenerators:plant_oil"))
-    e.replaceOutput({}, "create_bic_bit:unripe_cheese", "casualness_delight:raw_cheese_wheel")
     e.recipes.create.mixing(
         'create_bic_bit:raw_churros',
         [

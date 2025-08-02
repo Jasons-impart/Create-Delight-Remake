@@ -28,13 +28,9 @@ ServerEvents.recipes(e => {
         "ad_astra_giselle_addon:crafting/automation_nasa_workbench",
         "ad_astra:steel_block",
         "ad_astra:etrionic_blast_furnace",
-        "ad_astra:alloying/steel_ingot_from_alloying_iron_ingot_and_coals",
         "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
-    e.replaceInput({}, "ad_astra:steel_rod", "#forge:rods/steel")
-    e.replaceInput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
-    e.replaceOutput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
     // 新增配方：霜原木
     e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
