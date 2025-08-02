@@ -67,6 +67,15 @@
     },
     {
         "matchItems": [
+            "vintagedelight:cheese_wheel",
+            "casualness_delight:cheese_wheel",
+            "brewinandchewin:flaxen_cheese_wheel",
+            "trailandtales_delight:cheese_wheel"
+        ],
+        "resultItems": "vintagedelight:cheese_wheel"
+    },
+    {
+        "matchItems": [
             "quark:crab_leg",
             "crabbersdelight:crab"
         ],
@@ -74,14 +83,14 @@
     },
     {
         "matchItems": [
+            "oceanic_delight:grilled_squid_tentacles",
             "crabbersdelight:cooked_squid_tentacles",
             "culturaldelights:cooked_calamari"
         ],
-        "resultItems": "culturaldelights:cooked_calamari"
+        "resultItems": "oceanic_delight:grilled_squid_tentacles"
     },
     {
         "matchItems": [
-            "#forge:milk/milk_bottle",
             "farmersdelight:milk_bottle",
             "neapolitan:milk_bottle",
             "bakeries:bottle_milk"
@@ -130,8 +139,7 @@
     {
         "matchItems": [
             "festival_delicacies:rice",
-            "farmersdelight:rice",
-            "#forge:crops/rice"
+            "farmersdelight:rice"
         ],
         "resultItems": "farmersdelight:rice"
     },

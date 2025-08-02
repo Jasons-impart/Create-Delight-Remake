@@ -2,7 +2,10 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cutting/raw_calamari",
         "culturaldelights:cutting/raw_calamari_from_glowsquid",
-        "culturaldelights:cutting/wild_cucumbers"
+        "culturaldelights:cutting/wild_cucumbers",
+        "culturaldelights:corn_dough",
+        "culturaldelights:cutting/wild_corn",
+        "culturaldelights:cutting/corn_kernels",
     ])
     e.replaceInput({id: "culturaldelights:cooking/eggplant_parmesan"}, "#forge:milk", "#forge:cheese")
     e.recipes.kubejs.shapeless(
