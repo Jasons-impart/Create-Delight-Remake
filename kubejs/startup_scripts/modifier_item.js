@@ -205,14 +205,9 @@ ItemEvents.modification(e => {
     food_effects('corn_delight:classic_corn_dog', "minecraft:resistance", 10, 1)
     food_effects('corn_delight:classic_corn_dog', "minecraft:fire_resistance", 10, 1)
     food_effects('create_confectionery:bar_of_caramel', "alexscaves:sugar_rush", 10, 0, 0.04)
-    e.modify('alexscaves:caramel', item => {
-        item.foodProperties = food => {
-            food.removeEffect("alexscaves:sugar_rush")
-        }
-    })
     food_effects("alexscaves:frostmint", "neapolitan:berserking", 60)
     food_effects('alexscaves:peppermint_powder', "neapolitan:berserking", 60)
-    food_effects("alexscaves:candy_cane", "neapolitan:berserking", 45)
+    food_effects("create_confectionery:candy_cane", "neapolitan:berserking", 45)
     food_effects('createcafe:mint_iced_coffee', "neapolitan:berserking", 60)
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
@@ -222,7 +217,7 @@ ItemEvents.modification(e => {
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
-    e.modify('youkaishomecoming:roe', item => {
+    e.modify('oceanic_delight:salmon_eggs', item => {
         item.foodProperties = food => {
             food.removeEffect("minecraft:conduit_power")
         }

@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     const {create} = e.recipes
-    create.mixing("alexscaves:candy_cane", [
+    create.mixing("create_confectionery:candy_cane", [
         Fluid.water(250),
         "4x minecraft:sugar",
         "neapolitan:mint_leaves"

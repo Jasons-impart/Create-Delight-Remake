@@ -636,5 +636,4 @@ ServerEvents.recipes(e => {
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')
-    e.removeAllTagsFrom("vintagedelight:cheese_slice")
 })

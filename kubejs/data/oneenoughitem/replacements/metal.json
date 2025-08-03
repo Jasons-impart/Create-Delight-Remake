@@ -1,0 +1,85 @@
+[
+    {
+        "matchItems": [
+            "create:iron_sheet",
+            "ad_astra:iron_plate",
+            "#forge:plates/iron"
+        ],
+        "resultItems": "create:iron_sheet"
+    },
+    {
+        "matchItems": [
+            "createaddition:iron_rod",
+            "ad_astra:iron_rod",
+            "#forge:rods/iron"
+        ],
+        "resultItems": "createaddition:iron_rod"
+    },
+    {
+        "matchItems": [
+            "#forge:ingots/steel",
+            "ad_astra:steel_ingot",
+            "createmetallurgy:steel_ingot"
+        ],
+        "resultItems": "createmetallurgy:steel_ingot"
+    },
+    {
+        "matchItems": [
+            "#forge:storage_blocks/steel",
+            "ad_astra:steel_block",
+            "createmetallurgy:steel_block"
+        ],
+        "resultItems": "createmetallurgy:steel_block"
+    },
+    {
+        "matchItems": [
+            "ad_astra:steel_rod",
+            "#forge:rods/steel",
+            "vintageimprovements:steel_rod"
+        ],
+        "resultItems": "vintageimprovements:steel_rod"
+    },
+    {
+        "matchItems": [
+            "#createdeco:internal/plates/zinc_plates",
+            "#forge:plates/zinc",
+            "createdeco:zinc_sheet",
+            "vintageimprovements:zinc_sheet",
+            "createaddition:zinc_sheet"
+        ],
+        "resultItems": "createaddition:zinc_sheet"
+    },
+    {
+        "matchItems": [
+            "#createdeco:internal/plates/andesite_plates",
+            "#forge:plates/andesite",
+            "createdeco:andesite_sheet",
+            "vintageimprovements:andesite_sheet"
+        ],
+        "resultItems": "vintageimprovements:andesite_sheet"
+    },
+    {
+        "matchItems": [
+            "#forge:plates/netherite",
+            "createdeco:netherite_sheet",
+            "vintageimprovements:netherite_sheet"
+        ],
+        "resultItems": "vintageimprovements:netherite_sheet"
+    },
+    {
+        "matchItems": [
+            "#forge:rods/zinc",
+            "create_sa:zinc_handle",
+            "vintageimprovements:zinc_rod"
+        ],
+        "resultItems": "vintageimprovements:zinc_rod"
+    },
+    {
+        "matchItems": [
+            "create:copper_nugget",
+            "iceandfire:copper_nugget",
+            "#forge:nuggets/copper"
+        ],
+        "resultItems": "create:copper_nugget"
+    }
+]

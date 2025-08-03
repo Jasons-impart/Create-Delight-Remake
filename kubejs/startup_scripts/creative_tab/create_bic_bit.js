@@ -1,6 +1,5 @@
 StartupEvents.modifyCreativeTab("create_bic_bit:tabs", e => {
   e.remove([
-    'create_bic_bit:unripe_cheese',
     'create_bic_bit:waxed_unripe_cheese',
     'create_bic_bit:young_cheese',
     'create_bic_bit:waxed_young_cheese',
