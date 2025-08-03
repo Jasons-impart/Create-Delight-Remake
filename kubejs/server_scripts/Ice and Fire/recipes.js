@@ -1,5 +1,9 @@
 ServerEvents.recipes(e => {
     const { create, iceandfire, minecraft, kubejs, vintageimprovements, createmetallurgy } = e.recipes
+    remove_recipes_id(e, [
+        "iceandfire:copper_nuggets_to_ingot",
+        "iceandfire:copper_ingot_to_nuggets"
+    ])
     remove_recipes_output(e, [
         "dreadsteel:dreadsteel_helmet",
         "dreadsteel:dreadsteel_chestplate",
