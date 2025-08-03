@@ -199,5 +199,12 @@
             "oceanic_delight:salmon_eggs"
         ],
         "resultItems": "oceanic_delight:salmon_eggs"
+    },
+    {
+        "matchItems": [
+            "create:honey_bucket",
+            "the_bumblezone:honey_bucket"
+        ],
+        "resultItems": "create:honey_bucket"
     }
 ]

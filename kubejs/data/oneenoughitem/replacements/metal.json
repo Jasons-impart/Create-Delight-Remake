@@ -17,6 +17,36 @@
     },
     {
         "matchItems": [
+            "createaddition:copper_wire",
+            "create_new_age:copper_wire",
+            "#forge:wires/copper"
+        ],
+        "resultItems": "createaddition:copper_wire" 
+    },
+    {
+        "matchItems": [
+            "createbigcannons:molten_bronze_bucket",
+            "createmetallurgy:molten_bronze_bucket"
+        ],
+        "resultItems": "createmetallurgy:molten_bronze_bucket"
+    },
+    {
+        "matchItems": [
+            "create:copper_nugget",
+            "iceandfire:copper_nugget",
+            "#forge:nuggets/copper"
+        ],
+        "resultItems": "create:copper_nugget"
+    },
+    {
+        "matchItems": [
+            "createmetallurgy:molten_steel_bucket",
+            "createbigcannons:molten_steel_bucket"
+        ],
+        "resultItems": "createmetallurgy:molten_steel_bucket"
+    },
+    {
+        "matchItems": [
             "#forge:ingots/steel",
             "ad_astra:steel_ingot",
             "createmetallurgy:steel_ingot"
@@ -73,13 +103,5 @@
             "vintageimprovements:zinc_rod"
         ],
         "resultItems": "vintageimprovements:zinc_rod"
-    },
-    {
-        "matchItems": [
-            "create:copper_nugget",
-            "iceandfire:copper_nugget",
-            "#forge:nuggets/copper"
-        ],
-        "resultItems": "create:copper_nugget"
     }
 ]
