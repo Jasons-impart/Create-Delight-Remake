@@ -1,0 +1,41 @@
+[
+    {
+        "matchItems": [
+            "createdelightcore:iron_coin",
+            "createdeco:iron_coin",
+            "lightmanscurrency:coin_iron"
+        ],
+        "resultItems": "createdelightcore:iron_coin" 
+    },
+    {
+        "matchItems": [
+            "createdelightcore:copper_coin",
+            "createdeco:copper_coin",
+            "lightmanscurrency:coin_copper"
+        ],
+        "resultItems": "createdelightcore:copper_coin"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:gold_coin",
+            "createdeco:gold_coin",
+            "lightmanscurrency:coin_gold"
+        ],
+        "resultItems": "createdelightcore:gold_coin"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:emerald_coin",
+            "lightmanscurrency:coin_emerald"
+        ],
+        "resultItems": "createdelightcore:emerald_coin"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:netherite_coin",
+            "createdeco:netherite_coin",
+            "lightmanscurrency:coin_netherite"
+        ],
+        "resultItems": "createdelightcore:netherite_coin"
+    }
+]

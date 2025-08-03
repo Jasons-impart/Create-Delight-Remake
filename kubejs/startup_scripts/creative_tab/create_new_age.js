@@ -1,6 +1,5 @@
 StartupEvents.modifyCreativeTab("create_new_age:create_new_age_tab", e => {
   e.remove([
-    'create_new_age:copper_wire',
     'create_new_age:overcharged_diamond_wire',
     'create_new_age:overcharged_iron_wire',
     'create_new_age:overcharged_golden_wire',
