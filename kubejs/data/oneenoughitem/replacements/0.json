@@ -9,7 +9,7 @@
     },
     {
         "matchItems": [
-            "forge:storage_blocks/steel",
+            "#forge:storage_blocks/steel",
             "ad_astra:steel_block",
             "createmetallurgy:steel_block"
         ],
@@ -18,7 +18,7 @@
     {
         "matchItems": [
             "ad_astra:steel_rod",
-            "forge:rods/steel",
+            "#forge:rods/steel",
             "vintageimprovements:steel_rod"
         ],
         "resultItems": "vintageimprovements:steel_rod"
@@ -41,14 +41,20 @@
         "matchItems": [
             "alexsmobs:banana",
             "neapolitan:banana",
-            "forge:crops/banana"
+            "#forge:crops/banana"
         ],
         "resultItems": "neapolitan:banana"
     },
     {
         "matchItems": [
-            "forge:salt",
-            "forge:dusts/salt",
+            "#forge:dusts/salt",
+            "neapolitan:banana_crate",
+            "cratedelight:banana_crate"
+        ],
+        "resultItems": "cratedelight:banana_crate"
+    },
+    {
+        "matchItems": [
             "vintagedelight:salt_dust",
             "ratatouille:salt",
             "bakeries:salt"
@@ -100,6 +106,7 @@
         "matchItems": [
             "#createdeco:internal/plates/zinc_plates",
             "#forge:plates/zinc",
+            "createdeco:zinc_sheet",
             "vintageimprovements:zinc_sheet",
             "createaddition:zinc_sheet"
         ],
@@ -109,9 +116,18 @@
         "matchItems": [
             "#createdeco:internal/plates/andesite_plates",
             "#forge:plates/andesite",
+            "createdeco:andesite_sheet",
             "vintageimprovements:andesite_sheet"
         ],
         "resultItems": "vintageimprovements:andesite_sheet"
+    },
+    {
+        "matchItems": [
+            "#forge:plates/netherite",
+            "createdeco:netherite_sheet",
+            "vintageimprovements:netherite_sheet"
+        ],
+        "resultItems": "vintageimprovements:netherite_sheet"
     },
     {
         "matchItems": [
@@ -139,7 +155,7 @@
         "matchItems": [
             "create:copper_nugget",
             "iceandfire:copper_nugget",
-            "forge:nuggets/copper"
+            "#forge:nuggets/copper"
         ],
         "resultItems": "create:copper_nugget"
     },
@@ -177,8 +193,7 @@
     {
         "matchItems": [
             "vintagedelight:pickle",
-            "culturaldelights:pickle",
-            "#forge:pickle"
+            "culturaldelights:pickle"
         ],
         "resultItems": "culturaldelights:pickle"
     },

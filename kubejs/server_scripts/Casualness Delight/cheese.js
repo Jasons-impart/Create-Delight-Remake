@@ -87,17 +87,5 @@ BlockEvents.rightClicked(e => {
             block.popItem("ad_astra:cheese")
             e.cancel()
         }
-        else if (block.id === "brewinandchewin:flaxen_cheese_wheel") {
-            let prop = block.properties
-            let servings = parseInt(prop.get("servings"))
-            if (servings != 0) {
-                prop.put("servings", (servings - 1).toString())
-                block.set(block.id, prop)
-            }
-            else
-                block.set("air")
-            block.popItem("ad_astra:cheese")
-            e.cancel()
-        }
     }
 })

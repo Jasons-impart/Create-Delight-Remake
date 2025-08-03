@@ -81,5 +81,4 @@ ServerEvents.tags("minecraft:item", e => {
         "vinery:jungle_grape_seeds_red",
         "youkaishomecoming:mandrake_root"
     )
-    e.add("minecraft:ice", "neapolitan:ice_cubes")
 })

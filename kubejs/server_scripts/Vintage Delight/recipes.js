@@ -35,7 +35,6 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cucumber_crate",
         "culturaldelights:from_crate/cucumber",
-
     ])
     e.recipes.kubejs.shapeless(
         "vintagedelight:cucumber_crate",
@@ -72,7 +71,7 @@ ServerEvents.recipes(e => {
             "vintagedelight:salt_dust"
         ]
     )
-        .id("ratatouille:salt")
+        .id("vintagedelight:salt_dust")
     e.recipes.create.mixing(
         "vintagedelight:salt_dust",
         Fluid.of("bakeries:salt_water", 250)

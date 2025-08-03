@@ -1,8 +1,6 @@
 StartupEvents.modifyCreativeTab("brewinandchewin:brewinandchewin", e => {
   e.remove([
     'brewinandchewin:kimchi',
-    'brewinandchewin:flaxen_cheese_wedge',
-    'brewinandchewin:flaxen_cheese_wedge',
     'brewinandchewin:pizza_slice',
     'brewinandchewin:quiche',
     'brewinandchewin:quiche_slice',

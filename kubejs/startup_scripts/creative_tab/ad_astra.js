@@ -32,9 +32,5 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     "ad_astra:fluid_pipe_duct",
     "ad_astra:coal_generator",
     "ad_astra:iron_plate",
-    "ad_astra:iron_rod",
-    "ad_astra:steel_ingot",
-    "ad_astra:steel_block",
-
   ])
 })

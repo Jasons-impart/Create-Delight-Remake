@@ -1470,7 +1470,7 @@
         {
           "TradeType": "PURCHASE",
           "SellItem": {
-            "ID": "alexsmobs:banana",
+            "ID": "neapolitan:banana",
             "Count": 128
           },
           "Rules": [
