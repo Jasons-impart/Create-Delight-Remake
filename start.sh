@@ -58,11 +58,11 @@ MAJOR_VER=$(echo "$JAVA_VER" | cut -d'.' -f1)
 
 print_info "Detected Java version: $JAVA_VER (Major: $MAJOR_VER)"
 
-#if [ "$MAJOR_VER" != "$RECOMMENDED_JAVA_VER" ]; then
-#print_error "Detected Java version $MAJOR_VER, but Java $RECOMMENDED_JAVA_VER is recommended."
-#print_warning "If you know what you are doing, you can edit this script to remove this check."
-#exit 1
-#fi
+if [ "$MAJOR_VER" != "$RECOMMENDED_JAVA_VER" ]; then
+print_error "Detected Java version $MAJOR_VER, but Java $RECOMMENDED_JAVA_VER is recommended."
+print_warning "If you know what you are doing, you can edit this script to remove this check."
+exit 1
+fi
 print_success "Java version check passed."
 
 print_info "Checking if server is installed (looking for '$FORGE_RUN_SCRIPT')..."
