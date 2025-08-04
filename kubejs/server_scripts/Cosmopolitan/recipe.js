@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "cosmopolitan:general/wafer",
-        "cosmopolitan:create/pressing/wafer_cone"
+        "cosmopolitan:create/pressing/wafer_cone",
+        "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying"
     ])
     const {kubejs, create} = e.recipes
     kubejs.shapeless("cosmopolitan:wafer", [

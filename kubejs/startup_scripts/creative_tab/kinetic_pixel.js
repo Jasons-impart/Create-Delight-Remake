@@ -1,9 +1,6 @@
 StartupEvents.modifyCreativeTab("kinetic_pixel:kineticpixel", e => {
   e.remove([
     'kinetic_pixel:firearmworktable',
-    'kinetic_pixel:wildgraycotton',
-    'kinetic_pixel:graycottonseed',
-    'kinetic_pixel:bambooshell',
     'kinetic_pixel:bambooshell',
     Item.of('kinetic_pixel:pressurepoweredfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
     Item.of('kinetic_pixel:heatpoweredfirearmblueprint', '{Inventory:{Items:[],Size:32}}'),
