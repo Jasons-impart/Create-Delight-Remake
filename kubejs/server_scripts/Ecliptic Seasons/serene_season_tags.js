@@ -1,5 +1,25 @@
 ServerEvents.tags("item", e => {
-
+    e.remove("sereneseasons:spring_crops", [
+        "fruitsdelight:pear_sapling",
+        "fruitsdelight:peach_sapling",  
+    ])
+    e.remove("sereneseasons:summer_crops", [
+        "fruitsdelight:lychee_sapling",
+        "fruitsdelight:mango_sapling",
+        "fruitsdelight:mangosteen_sapling",
+        "fruitsdelight:bayberry_sapling",
+        "fruitsdelight:durian_sapling",
+    ])
+    e.remove("sereneseasons:autumn_crops", [
+        "fruitsdelight:orange_sapling",
+        "fruitsdelight:apple_sapling",
+        "fruitsdelight:fig_sapling",
+    ])
+    e.remove("sereneseasons:winter_crops", [
+        "fruitsdelight:hawberry_sapling",
+        "fruitsdelight:persimmon_sapling",
+        "fruitsdelight:kiwi_sapling",
+    ])
     e.add("eclipticseasons:crops/all_seasons",
         "neapolitan:vanilla_pods",
         "miners_delight:cave_carrot"
@@ -43,7 +63,6 @@ ServerEvents.tags("item", e => {
     )
 
     e.add("eclipticseasons:crops/summer",
-        "vinery:dark_cherry_sapling",
         "festival_delicacies:fennel_seeds",
         "youkaishomecoming:mandrake_root"
     )
@@ -65,5 +84,29 @@ ServerEvents.tags("item", e => {
     )
 
     e.add("eclipticseasons:crops/winter",
-        "createcafe:coffee_beans",)
+        "createcafe:coffee_beans")
+})
+
+ServerEvents.tags("block", e => {
+    e.remove("sereneseasons:spring_crops", [
+        "fruitsdelight:pear_sapling",
+        "fruitsdelight:peach_sapling",  
+    ])
+    e.remove("sereneseasons:summer_crops", [
+        "fruitsdelight:lychee_sapling",
+        "fruitsdelight:mango_sapling",
+        "fruitsdelight:mangosteen_sapling",
+        "fruitsdelight:bayberry_sapling",
+        "fruitsdelight:durian_sapling",
+    ])
+    e.remove("sereneseasons:autumn_crops", [
+        "fruitsdelight:orange_sapling",
+        "fruitsdelight:apple_sapling",
+        "fruitsdelight:fig_sapling",
+    ])
+    e.remove("sereneseasons:winter_crops", [
+        "fruitsdelight:hawberry_sapling",
+        "fruitsdelight:persimmon_sapling",
+        "fruitsdelight:kiwi_sapling",
+    ])
 })
