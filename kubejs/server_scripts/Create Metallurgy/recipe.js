@@ -85,6 +85,9 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
     e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
+    kubejs.shapeless("createmetallurgy:refractory_mortar", ["minecraft:water_bucket", "6x #minecraft:sand", "2x minecraft:clay_ball"])
+    .replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
+    .id("createmetallurgy:refractory_mortar")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
@@ -173,6 +176,13 @@ ServerEvents.recipes(e => {
             "createmetallurgy:graphite_plate_mold"
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
+    e.recipes.vintageimprovements.pressurizing("createmetallurgy:graphite", [
+        "#forge:coal_coke",
+        "#forge:coal_coke",
+        "minecraft:clay_ball"
+    ])
+    .superheated()
+    .id("createmetallurgy:pressurizing/graphite")
     {
         let iner = "createmetallurgy:incomplete_industrial_crucible"
         e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'createfluidstuffs:multi_fluid_tank', [

@@ -90,6 +90,7 @@ ServerEvents.recipes(e => {
     deep_frying('create_deepfried:corn_dog', 'create_deepfried:raw_corn_dog', 100)
     deep_frying('mynethersdelight:fries_ghasta', 'mynethersdelight:ghasta', 100)
     deep_frying('dungeonsdelight:fried_ghast_calamari', 'createdelight:raw_ghast_calamari', 100)
+    deep_frying('cosmopolitan:potato_pancakes', 'cosmopolitan:cut_potatoes', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [
