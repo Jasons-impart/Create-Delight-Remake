@@ -1,77 +1,99 @@
 #!/bin/bash
 
-# 开启 UTF-8 编码（大部分 Linux 默认已是）
-export LANG=en_US.UTF-8
+# --- Minecraft Modpack Server Starter for macOS/Linux ---
+# This version uses a more robust method to parse the config file.
 
-# 配置文件路径
-filePath="variables.txt"
+set -e
 
-if [ ! -f "$filePath" ]; then
-    echo "错误：未找到配置文件 $filePath"
-    echo "请确认你是否下载了正确的整合包"
-    exit 1
+CONFIG_FILE="variables.nix.txt"
+FORGE_INSTALLER_JAR="forge.jar"
+FORGE_RUN_SCRIPT="run.sh"
+
+print_info() { echo -e "\033[0;36m[INFO]\033[0m $1"; }
+print_success() { echo -e "\033[0;32m[SUCCESS]\033[0m $1"; }
+print_error() { echo -e "\033[0;31m[ERROR]\033[0m $1"; }
+print_warning() { echo -e "\033[0;33m[WARNING]\033[0m $1"; }
+
+if [ ! -f "$CONFIG_FILE" ]; then
+print_error "Config file '$CONFIG_FILE' not found!"
+print_error "Please create it and define variables like JAVA, RECOMMENDED_JAVA_VER, and JVM_ARGS."
+exit 1
 fi
 
-# 逐行解析变量文件
-while IFS= read -r line || [[ -n "$line" ]]; do
-    # 跳过空行和注释行
-    [[ -z "$line" || "$line" =~ ^# ]] && continue
-
-    # 按等号分割变量名和值
-    IFS='=' read -r varName varValue <<< "$line"
-
-    # 去除可能存在的空白
-    varName=$(echo "$varName" | xargs)
-    varValue=$(echo "$varValue" | xargs)
-
-    # 设置变量为环境变量
-    export "$varName=$varValue"
-    echo "$varName=$varValue"
-done < "$filePath"
-
-echo "正在检查 Java 是否存在..."
-if ! command -v "$JAVA" >/dev/null 2>&1; then
-    echo "未找到 Java，请安装 Java 17 并在 variables.txt 中正确设置 JAVA 路径（如 JAVA=/usr/bin/java）"
-    exit 1
+print_info "Loading configuration from $CONFIG_FILE..."
+# Use a while loop with process substitution to be robust against file formats
+while IFS='=' read -r key value || [[ -n "$key" ]]; do
+# Ignore comments and empty lines
+if [[ "$key" =~ ^\s*# ]] || [[ -z "$key" ]]; then
+    continue
 fi
-echo "Java 已找到"
+# Trim whitespace from key and value using sed (more robust than xargs)
+key=$(echo "$key" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+value=$(echo "$value" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
 
-# 获取 Java 主版本号
-JAVA_VER=$("$JAVA" -version 2>&1 | grep 'version' | sed -E 's/.*version "(.*)".*/\1/')
+if [[ -n "$key" ]]; then
+  print_info "  - Setting $key=$value"
+  export "$key=$value"
+fi
+done < <(tr -d '\r' < "$CONFIG_FILE") # This tr command removes Windows carriage returns (\r)
+
+if [ -z "$JAVA" ] || [ -z "$RECOMMENDED_JAVA_VER" ] || [ -z "$JVM_ARGS" ]; then
+print_error "One or more required variables (JAVA, RECOMMENDED_JAVA_VER, JVM_ARGS) are not set in $CONFIG_FILE."
+exit 1
+fi
+
+print_info "Checking Java existence..."
+if ! command -v "$JAVA" &> /dev/null; then
+print_error "Java command '$JAVA' not found!"
+print_error "Please install Java $RECOMMENDED_JAVA_VER and ensure '$JAVA' is in your system's PATH,"
+print_error "or set the full path to the java executable in '$CONFIG_FILE'."
+exit 1
+fi
+print_success "Java found at: $(command -v "$JAVA")"
+
+print_info "Detecting Java version..."
+JAVA_FULL_VERSION_STRING=$("$JAVA" -version 2>&1)
+JAVA_VER=$(echo "$JAVA_FULL_VERSION_STRING" | grep 'version' | sed -n 's/.*version "\(.*\)".*/\1/p')
 MAJOR_VER=$(echo "$JAVA_VER" | cut -d'.' -f1)
 
-echo "检测到 Java 版本: $JAVA_VER, 主版本号: $MAJOR_VER"
+print_info "Detected Java version: $JAVA_VER (Major: $MAJOR_VER)"
 
-if [ "$MAJOR_VER" != "$RECOMMENDED_JAVA_VER" ]; then
-    echo "错误：检测到的 Java 主版本为 $MAJOR_VER，但推荐使用 Java $RECOMMENDED_JAVA_VER 来运行本整合包"
-    echo "请安装 Java $RECOMMENDED_JAVA_VER 并在 variables.txt 中正确设置 JAVA 路径"
-    echo "或者，如果你知道你在做什么，可以修改本脚本并跳过此检测，但我们无法保证其可运行"
+#if [ "$MAJOR_VER" != "$RECOMMENDED_JAVA_VER" ]; then
+#print_error "Detected Java version $MAJOR_VER, but Java $RECOMMENDED_JAVA_VER is recommended."
+#print_warning "If you know what you are doing, you can edit this script to remove this check."
+#exit 1
+#fi
+print_success "Java version check passed."
+
+print_info "Checking if server is installed (looking for '$FORGE_RUN_SCRIPT')..."
+if [ ! -f "$FORGE_RUN_SCRIPT" ]; then
+print_warning "'$FORGE_RUN_SCRIPT' not found. Starting Forge server installation..."
+"$JAVA" -jar "$FORGE_INSTALLER_JAR" --installServer
+
+if [ ! -f "$FORGE_RUN_SCRIPT" ]; then
+    print_error "Forge installation failed. Could not find '$FORGE_RUN_SCRIPT' after running the installer."
+    print_error "Check the logs above for errors (e.g., network issues)."
     exit 1
 fi
-
-# 检查是否存在 run.bat（说明 Forge 已安装）
-echo "正在检查 run.bat 是否存在..."
-if [ ! -f "run.bat" ]; then
-    echo "未找到 run.bat，正在安装 Forge 服务端..."
-    "$JAVA" -jar forge.jar --installServer
-    if [ $? -ne 0 ]; then
-        echo "Forge 安装失败，请检查上方错误信息"
-        exit 1
-    fi
-    if [ ! -f "run.bat" ]; then
-        echo "Forge 安装成功，但未找到 run.bat，请确认当前目录中是否生成"
-        exit 1
-    fi
+print_success "Forge server installed successfully."
 fi
 
-# 写入默认配置
-echo "正在写入默认配置..."
-if [ ! -f "server.properties" ]; then
-    echo "$JVM_ARGS" > user_jvm_args.txt
-    # 注意：server.properties 和 eula.txt 会在服务端启动后生成
+print_info "Writing default configs..."
+if [ ! -f "user_jvm_args.txt" ]; then
+echo "$JVM_ARGS" > user_jvm_args.txt
+print_info "Created user_jvm_args.txt"
 fi
 
-# 启动服务端
-echo "正在启动服务器..."
-chmod +x run.sh
-./run.sh
+if [ ! -f "eula.txt" ] || ! grep -q "eula=true" "eula.txt"; then
+print_warning "EULA not accepted. Automatically setting eula=true."
+print_warning "By running this server, you are indicating your agreement to the Minecraft EULA (https://account.mojang.com/documents/minecraft_eula)."
+echo "eula=true" > eula.txt
+fi
+
+print_info "Making '$FORGE_RUN_SCRIPT' executable..."
+chmod +x "$FORGE_RUN_SCRIPT"
+
+print_success "All checks passed. Launching the server now..."
+echo "----------------------------------------------------"
+
+exec ./"$FORGE_RUN_SCRIPT" "$@"
