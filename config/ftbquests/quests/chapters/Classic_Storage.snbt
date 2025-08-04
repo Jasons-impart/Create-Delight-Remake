@@ -758,8 +758,8 @@
 			id: "52A034C9BC79BD54"
 			size: 1.0d
 			tasks: [{
-				id: "7B59E0EB23983B1A"
-				item: "ae2:fluix_glass_cable"
+				id: "7765019F8597E4C4"
+				item: "ae2:white_smart_cable"
 				type: "item"
 			}]
 			title: "使用线缆链接AE2机器（终端、总线等）"
@@ -815,7 +815,9 @@
 			dependencies: ["4D21060946DAD49C"]
 			dependency_requirement: "one_started"
 			id: "65877729DB7620EF"
-			subtitle: "务必试试酷炫的水晶保险库"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "前期最简单仓储方案，中后期务必试试酷炫的水晶保险库"
 			tasks: [{
 				id: "6A8023BC6226CCCE"
 				item: {
@@ -1096,8 +1098,8 @@
 			dependency_requirement: "one_started"
 			id: "41082888C1B71397"
 			tasks: [{
-				id: "183FA5540F702A98"
-				item: "ae2:fluix_glass_cable"
+				id: "791C0FEE19B0FA79"
+				item: "ae2:white_smart_cable"
 				type: "item"
 			}]
 			title: "递归建立存储子网络"
