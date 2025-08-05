@@ -1,106 +1,80 @@
 [
     {
         "matchItems": [
-            "create:iron_sheet",
-            "ad_astra:iron_plate",
-            "#forge:plates/iron"
+            "ad_astra:iron_plate"
         ],
         "resultItems": "create:iron_sheet"
     },
     {
         "matchItems": [
-            "createaddition:iron_rod",
-            "ad_astra:iron_rod",
-            "#forge:rods/iron"
+            "ad_astra:iron_rod"
         ],
         "resultItems": "createaddition:iron_rod"
     },
     {
         "matchItems": [
-            "createaddition:copper_wire",
-            "create_new_age:copper_wire",
-            "#forge:wires/copper"
+            "create_new_age:copper_wire"
         ],
         "resultItems": "createaddition:copper_wire" 
     },
     {
         "matchItems": [
-            "createbigcannons:molten_bronze_bucket",
-            "createmetallurgy:molten_bronze_bucket"
+            "createbigcannons:molten_bronze_bucket"
         ],
         "resultItems": "createmetallurgy:molten_bronze_bucket"
     },
     {
         "matchItems": [
-            "create:copper_nugget",
-            "iceandfire:copper_nugget",
-            "#forge:nuggets/copper"
+            "iceandfire:copper_nugget"
         ],
         "resultItems": "create:copper_nugget"
     },
     {
         "matchItems": [
-            "createmetallurgy:molten_steel_bucket",
             "createbigcannons:molten_steel_bucket"
         ],
         "resultItems": "createmetallurgy:molten_steel_bucket"
     },
     {
         "matchItems": [
-            "#forge:ingots/steel",
-            "ad_astra:steel_ingot",
-            "createmetallurgy:steel_ingot"
+            "ad_astra:steel_ingot"
         ],
         "resultItems": "createmetallurgy:steel_ingot"
     },
     {
         "matchItems": [
-            "#forge:storage_blocks/steel",
-            "ad_astra:steel_block",
-            "createmetallurgy:steel_block"
+            "ad_astra:steel_block"
         ],
         "resultItems": "createmetallurgy:steel_block"
     },
     {
         "matchItems": [
-            "ad_astra:steel_rod",
-            "#forge:rods/steel",
-            "vintageimprovements:steel_rod"
+            "ad_astra:steel_rod"
         ],
         "resultItems": "vintageimprovements:steel_rod"
     },
     {
         "matchItems": [
-            "#createdeco:internal/plates/zinc_plates",
-            "#forge:plates/zinc",
             "createdeco:zinc_sheet",
-            "vintageimprovements:zinc_sheet",
-            "createaddition:zinc_sheet"
+            "vintageimprovements:zinc_sheet"
         ],
         "resultItems": "createaddition:zinc_sheet"
     },
     {
         "matchItems": [
-            "#createdeco:internal/plates/andesite_plates",
-            "#forge:plates/andesite",
-            "createdeco:andesite_sheet",
-            "vintageimprovements:andesite_sheet"
+            "createdeco:andesite_sheet"
         ],
         "resultItems": "vintageimprovements:andesite_sheet"
     },
     {
         "matchItems": [
-            "#forge:plates/netherite",
-            "createdeco:netherite_sheet",
-            "vintageimprovements:netherite_sheet"
+            "createdeco:netherite_sheet"
         ],
         "resultItems": "vintageimprovements:netherite_sheet"
     },
     {
         "matchItems": [
-            "#forge:rods/zinc",
-            "create_sa:zinc_handle",
-            "vintageimprovements:zinc_rod"
+            "create_sa:zinc_handle"
         ],
         "resultItems": "vintageimprovements:zinc_rod"
     }
