@@ -3623,7 +3623,7 @@
         "cashier_obj_plate_of_stuffed_pufferfish": {
             "type": "item",
             "rarity": "RARE",
-            "content": "oceanic_delight:late_of_stuffed_pufferfish",
+            "content": "oceanic_delight:plate_of_stuffed_pufferfish",
             "amount": {
                 "min": 1,
                 "max": 3
