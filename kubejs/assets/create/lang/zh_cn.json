@@ -2564,7 +2564,7 @@
     "create.tooltip.holdForDescription": "按住 [%1$s] 可查看概要",
     "create.tooltip.keyCtrl": "Ctrl",
     "create.tooltip.keyShift": "Shift",
-    "create.tooltip.speedRequirement": "需求转速：%1$s",
+    "create.tooltip.speedRequirement": "需求转速：",
     "create.tooltip.speedRequirement.fast": "快",
     "create.tooltip.speedRequirement.medium": "中",
     "create.tooltip.speedRequirement.none": "无",

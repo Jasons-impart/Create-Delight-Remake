@@ -19,7 +19,6 @@
     },
     {
         "matchItems": [
-            "#forge:dusts/salt",
             "neapolitan:banana_crate"
         ],
         "resultItems": "cratedelight:banana_crate"
