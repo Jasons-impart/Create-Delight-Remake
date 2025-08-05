@@ -4,20 +4,6 @@
             "type": "MEAT",
             "effects": [],
             "ingredient": {
-                "item": "dungeonsdelight:silverfish_thorax"
-            },
-            "max_time": 180,
-            "min_time": 60,
-            "nutrition": 13,
-            "overcook_penalty": 0.3,
-            "raw_penalty": 0.8,
-            "size": 2,
-            "stir_time": 60
-        },
-        {
-            "type": "MEAT",
-            "effects": [],
-            "ingredient": {
                 "item": "dungeonsdelight:spider_meat"
             },
             "max_time": 180,
