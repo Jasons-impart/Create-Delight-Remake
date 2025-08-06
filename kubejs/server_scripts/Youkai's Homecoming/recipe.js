@@ -54,10 +54,10 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, 'youkaishomecoming:coffee_powder', 'createcafe:coffee_grounds')
     e.replaceInput({}, 'youkaishomecoming:bowl_of_cream', '#forge:cream')
     e.replaceInput({}, 'youkaishomecoming:butter', 'createdelight:butter')
+    e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
     e.replaceInput({}, "youkaishomecoming:roe", "oceanic_delight:salmon_eggs")
     e.replaceInput({}, "youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
-    e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({ id: "youkaishomecoming:apaki" }, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
     e.replaceInput({ id: "youkaishomecoming:avgolemono" }, "minecraft:glow_berries", "#forge:fruits/lemon")
     e.replaceInput({ output: [
