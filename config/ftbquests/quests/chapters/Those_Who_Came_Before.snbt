@@ -1595,7 +1595,7 @@
 			image: "minecraft:textures/gui/advancements/backgrounds/stone.png"
 			rotation: 0.0d
 			width: 1.17d
-			x: -4.0d
+			x: -5.0d
 			y: -0.5d
 		}
 		{
@@ -2857,6 +2857,342 @@
 			x: 12.0d
 			y: -2.5d
 		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 1.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 3.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 4.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 5.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 6.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 7.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 8.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 9.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 10.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 11.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 12.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 13.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 14.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 0.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 1.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 2.0d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 3.0d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 3.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 4.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 5.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 6.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 7.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 8.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 9.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 10.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 11.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 12.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/deepslate"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 13.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:textures/gui/advancements/backgrounds/stone.png"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: -0.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:textures/gui/advancements/backgrounds/stone.png"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 0.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:textures/gui/advancements/backgrounds/stone.png"
+			rotation: 0.0d
+			width: 1.17d
+			x: -4.0d
+			y: -0.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:textures/gui/advancements/backgrounds/stone.png"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: -0.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/bedrock"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 14.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/bedrock"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 15.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/bedrock"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: 16.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/bedrock"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 15.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/bedrock"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: 16.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/grass_block_snow"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: -2.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/dirt"
+			rotation: 0.0d
+			width: 1.17d
+			x: -5.0d
+			y: -1.5d
+		}
+		{
+			height: 1.17d
+			image: "minecraft:block/dirt"
+			rotation: 0.0d
+			width: 1.17d
+			x: -6.0d
+			y: -1.5d
+		}
 	]
 	order_index: 1
 	quest_links: [ ]
@@ -3049,7 +3385,7 @@
 				id: "01A6FA2B7630C275"
 				type: "advancement"
 			}]
-			title: "黑曜石锤！"
+			title: "黑曜石锤"
 			x: 0.0d
 			y: 4.5d
 		}
@@ -3263,7 +3599,12 @@
 		}
 		{
 			dependencies: ["3A31CFC2ECFA2682"]
-			description: ["在使用工具的过程中，我发现了一种提升性能的技巧：当&e双头工具&r的&e其中一个&r头部打磨&e五次&r后，&e下一次打磨&r可以&4直接提升工具的&e等级&r。此外，笔记中还提到为工具镶嵌&4下界之星&r可以进一步增强它的性能。通过这一系列操作，最终可以获得锻造等级高达八级的锤子。"]
+			description: [
+				"在使用工具的过程中，我发现了一种提升性能的方式：当&e双头工具&r的&e其中一个&r头部打磨&e五次&r后，&e下一次打磨&r可以&4直接提升工具的&e等级&r。此外，笔记中还提到为工具镶嵌&4下界之星&r可以进一步增强它的性能。通过这一系列操作，最终可以获得锻造等级高达八级的锻造锤。"
+				"在后续解锁更高级的材料后可以打造更加强大的锻造锤。"
+				"{ \"text\": \"龙钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"111C12092510C3F4\" } }"
+				"{ \"text\": \"终末钢/悚怖钢锤\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1F7DE13987C20264\" } }"
+			]
 			icon: "minecraft:nether_star"
 			id: "1AA8B7F6B283121A"
 			optional: true
@@ -3274,15 +3615,15 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "在打磨完全或是镶嵌下界之星中两种方法中选择一个即可打造出七级锤"
+			subtitle: "在打磨完全或是镶嵌下界之星中两种方法中达成一个即可打造出七级锤"
 			tasks: [{
 				id: "67CA9F03C6B83A4B"
 				title: "打造出七级锤"
 				type: "checkmark"
 			}]
 			title: "七级锤"
-			x: 0.0d
-			y: 7.5d
+			x: -1.5d
+			y: 6.0d
 		}
 		{
 			dependencies: [
@@ -3391,16 +3732,16 @@
 					xp_levels: 5
 				}
 			]
-			shape: "hexagon"
-			size: 1.5d
+			shape: "gear"
+			size: 2.0d
 			tasks: [{
 				id: "172F2C142B0D0166"
 				item: "art_of_forging:forged_steel_ingot"
 				type: "item"
 			}]
 			title: "新纪元"
-			x: 6.75d
-			y: 0.75d
+			x: 7.75d
+			y: 1.0d
 		}
 		{
 			dependencies: ["01D8FB94D56BB2E2"]
