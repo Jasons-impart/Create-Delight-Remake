@@ -32,6 +32,9 @@ ServerEvents.recipes(e => {
         "ad_astra:steel_ingot_from_steel_block"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
+    e.replaceInput({}, "ad_astra:steel_rod", "#forge:rods/steel")
+    e.replaceInput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
+    e.replaceOutput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
     // 新增配方：霜原木
     e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",

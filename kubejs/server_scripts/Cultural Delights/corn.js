@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         "corn_delight:tortilla",
         "corn_delight:tortilla_from_campfire_cooking",
         "corn_delight:tortilla_raw",
-    "corn_delight:integration/create/splashing/tortilla_raw",
+        "corn_delight:integration/create/splashing/tortilla_raw",
         "corn_delight:cooking/creamed_corn",
         "corn_delight:taco",
         "corn_delight:corn_from_crate",
