@@ -23,6 +23,4 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({ id: "crabbersdelight:squid_kebob" }, "crabbersdelight:cooked_squid_tentacles", "culturaldelights:cooked_calamari")
     e.replaceInput({id: "crabbersdelight:coral_crunch"}, "farmersdelight:milk_bottle", "#forge:milk/milk_bottle")
-    package_item(e, "culturaldelights:squid", "crabbersdelight:squid_barrel", 9)
-    package_item(e, "culturaldelights:glow_squid", "crabbersdelight:glow_squid_barrel", 9)
 })
