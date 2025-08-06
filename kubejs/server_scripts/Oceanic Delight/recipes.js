@@ -5,6 +5,9 @@ ServerEvents.recipes(e => {
         "tetracelium:shrimp_cutting",
         "oceanic_delight:shrimp_cutting"
     ])
+    remove_recipes_output(e, [
+        "culturaldelights:cooked_calamari"
+    ])
     e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
     // 炙烤河豚寿司
     e.shapeless(
@@ -36,6 +39,10 @@ ServerEvents.recipes(e => {
 
     //Oceanic delight
     e.replaceInput({}, "oceanic_delight:shrimp", "oceanic_delight:shrimp_slices")
+    e.replaceInput({}, "culturaldelights:raw_calamari", "#forge:tentacles")
+    e.replaceInput({}, "culturaldelights:cooked_calamari", "oceanic_delight:grilled_squid_tentacles")
+    e.replaceOutput({id: "culturaldelights:cutting/raw_calamari_from_glowsquid"}, "culturaldelights:raw_calamari", "oceanic_delight:glow_squid_tentacles")
+    e.replaceOutput({id: "culturaldelights:cutting/raw_calamari"}, "culturaldelights:raw_calamari", "oceanic_delight:squid_tentacles")
     e.replaceInput({id: "crabbersdelight:sea_pickle_juice"}, "minecraft:sea_pickle", "#forge:sea_pickles")
     cutting_2(e, "crabbersdelight:cooked_shrimp", [["oceanic_delight:shrimp_slices", 1]])
     // 虾仁薯片
@@ -61,5 +68,6 @@ ServerEvents.tags("item", e => {
     e.remove("forge:raw_fishes", [
         "crabbersdelight:pufferfish_slice"
     ])
+    e.removeAllTagsFrom("culturaldelights:raw_calamari")
     e.removeAllTagsFrom('oceanic_delight:shrimp')
 })

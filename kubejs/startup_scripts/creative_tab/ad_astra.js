@@ -8,6 +8,7 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     'ad_astra:fuel_refinery',
     'ad_astra:oxygen_loader',
     'ad_astra:cryo_freezer',
+    'ad_astra:steel_rod',
     'ad_astra:etrium_ingot',
     'ad_astra:etrium_nugget',
     'ad_astra:etrium_plate',
@@ -29,5 +30,9 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     "ad_astra:cable_duct",
     "ad_astra:fluid_pipe_duct",
     "ad_astra:coal_generator",
+    "ad_astra:iron_plate",
+    "ad_astra:iron_rod",
+    "ad_astra:steel_ingot",
+    "ad_astra:steel_block",
   ])
 })

@@ -1,5 +1,12 @@
 ServerEvents.recipes(e => {
     const {farmersdelight, kubejs} = e.recipes
+    remove_recipes_input(e, [
+        "miners_delight:baked_tentacles",
+        "miners_delight:tentacles", 
+        "miners_delight:squid", 
+        "miners_delight:glow_squid", 
+        "miners_delight:baked_squid"
+    ])
     remove_recipes_id(e, [
         "miners_delight:string_from_gossypium",
         "miners_delight:baked_squid",

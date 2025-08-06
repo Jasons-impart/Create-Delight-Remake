@@ -1,4 +1,10 @@
 ServerEvents.tags("minecraft:item", e => {
+    e.removeAllTagsFrom(
+        "miners_delight:baked_tentacles",
+        "miners_delight:tentacles", 
+        "miners_delight:squid", 
+        "miners_delight:glow_squid", 
+        "miners_delight:baked_squid")
     e.add("forge:cooked_fishes/squid", 
         'culturaldelights:cooked_squid'
     )
@@ -10,4 +16,5 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:squid",
         "culturaldelights:glow_squid"
     )
+    e.removeAllTagsFrom("culturaldelights:raw_calamari")
 })

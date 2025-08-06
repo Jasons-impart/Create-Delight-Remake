@@ -23,8 +23,12 @@ ServerEvents.recipes(e => {
     .id("cosmopolitan:mixing/gulime")
     create.filling("cosmopolitan:cream", ["minecraft:bowl", Fluid.of("cosmopolitan:cream", 250)])
     .id("cosmopolitan:filling/cream")
+    create.emptying( ["minecraft:bowl", Fluid.of("cosmopolitan:cream", 250)], "cosmopolitan:cream")
+    .id("cosmopolitan:emptying/cream")
     create.filling("cosmopolitan:cream_bucket", ["minecraft:bucket", Fluid.of("cosmopolitan:cream", 1000)])
     .id("cosmopolitan:filling/cream_bucket")
+    create.emptying( ["minecraft:bucket", Fluid.of("cosmopolitan:cream", 1000)], "cosmopolitan:cream_bucket")
+    .id("cosmopolitan:emptying/cream_bucket")
     create.mixing(Fluid.of("cosmopolitan:berry_syrup", 250), [
         "4x #forge:berries",
         Fluid.of("createcafe:melted_sugar", 500)

@@ -2,7 +2,9 @@ const $PlatformImpl = Java.loadClass("dev.architectury.platform.forge.PlatformIm
 ServerEvents.tags("minecraft:item", e => {
     e.removeAllTagsFrom([
         "bakeries:salted_dough",
+        "bakeries:salt",
         "bakeries:whole_wheat_flour",
+        'bakeries:bottle_milk',
         'bakeries:tomato',
         'bakeries:ground_coffee'
     ])
