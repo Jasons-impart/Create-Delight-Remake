@@ -17,7 +17,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:ectoplasm"],
+                "items":[ "art_of_forging:soul_ember"],
                 "count": 8
             },
             "experienceCost": 10,

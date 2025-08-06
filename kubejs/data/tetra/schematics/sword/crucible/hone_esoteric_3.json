@@ -17,7 +17,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "iceandfire:ghost_ingot"],
+                "items":[ "alexsmobs:soul_heart"],
                 "count": 1
             },
             "experienceCost": 30,

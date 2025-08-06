@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Forge_Heritage"
 	group: "57E934AC8166BC73"
+	hide_quest_details_until_startable: true
 	icon: {
 		Count: 1
 		id: "tetra:scroll_rolled"
@@ -182,7 +183,7 @@
 				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
-			title: "充能打击"
+			title: "充能"
 			x: -1.5d
 			y: 4.0d
 		}
@@ -555,7 +556,13 @@
 		{
 			dependencies: ["3E5B08E68CF610C0"]
 			description: ["提升你攻击时附带的基于当前生命值的额外伤害"]
-			icon: "iceandfire:cyclops_skull"
+			icon: {
+				Count: 1
+				id: "iceandfire:cyclops_eye"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6E604A0095BFDCCD"
 			tasks: [
 				{
@@ -592,15 +599,15 @@
 		}
 		{
 			dependencies: ["3E5B08E68CF610C0"]
-			description: ["穿透护甲，打磨达到三级时将无视目标护甲"]
-			icon: {
-				Count: 1
-				id: "iceandfire:ghost_sword"
-				tag: {
-					Damage: 0
-				}
-			}
+			description: [
+				"穿透护甲，打磨达到三级时将无视目标护甲"
+				"灵魂鹫百科页面，截图识别文字或扫描下方二维码访问"
+				"https://www.mcmod.cn/item/409426.html"
+				"{image:createdelight:textures/gui/linghunjiu_mcmod.png width:100 height:100 align:center}"
+			]
+			icon: "alexsmobs:soul_heart"
 			id: "4C7B6C7706868D7B"
+			subtitle: "灵魂之心由击杀灵魂等级大于二级的灵魂鹫掉落，详见McMod百科“灵魂鹫”页面"
 			tasks: [
 				{
 					count: 4L
@@ -616,7 +623,7 @@
 				}
 				{
 					id: "4F15F1EE7DFE1BA5"
-					item: "iceandfire:ghost_ingot"
+					item: "alexsmobs:soul_heart"
 					type: "item"
 				}
 			]
@@ -627,6 +634,7 @@
 		{
 			dependencies: ["3E5B08E68CF610C0"]
 			description: ["对高血量敌人造成额外伤害"]
+			icon: "alexscaves:tectonic_shard"
 			id: "4F63FF8CBA18857B"
 			tasks: [
 				{

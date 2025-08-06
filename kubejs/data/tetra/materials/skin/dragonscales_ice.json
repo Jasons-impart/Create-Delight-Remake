@@ -11,8 +11,8 @@
   "toolLevel": 0,
   "toolEfficiency": 0,
   "tints": {
-    "glyph": "bf0000",
-    "texture": "bf0000"
+    "glyph": "baffff",
+    "texture": "baffff"
   },
   "textures": [
         "metal",
