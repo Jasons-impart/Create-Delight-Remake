@@ -1,7 +1,8 @@
 //糖果洞穴
 StartupEvents.modifyCreativeTab("alexscaves:candy_cavity", e => {
   e.remove([
-    'alexscaves:hot_chocolate_bottle'
+    'alexscaves:hot_chocolate_bottle',
+    'alexscaves:caramel'
   ])
 })
 StartupEvents.modifyCreativeTab("alexscaves:toxic_caves", e => {
