@@ -16,9 +16,6 @@ ServerEvents.tags("item", e => {
         'iceandfire:dragonsteel_ice_hoe',
         'iceandfire:dragonsteel_lightning_hoe',
     ])
-    e.add("neapolitan:ice_cream", [
-        'createdelightcore:sweetberry_ice_cream'
-    ])
     e.add("forge:ingots/uranium", "alexscaves:uranium")
     // e.remove("forge:raw_materials/uranium", "alexscaves:uranium")
     e.add("createdelight:candy_cane", [

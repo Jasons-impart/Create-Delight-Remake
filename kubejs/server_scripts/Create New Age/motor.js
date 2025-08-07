@@ -3,13 +3,15 @@ ServerEvents.recipes(e => {
     let iner = "createdelight:incomplete_basic_motor"
     e.recipes.create.sequenced_assembly("create_new_age:basic_motor", "createaddition:electric_motor",
         [
-            e.recipes.create.deploying(iner, [iner, "#ad_astra:steel_plates"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:plates/steel"]),
+            e.recipes.create.deploying(iner, [iner, "vintageimprovements:steel_rod"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:plates/steel"]),
             e.recipes.create.deploying(iner, [iner, "vintageimprovements:steel_rod"])
         ]
     )
-        .loops(4)
+        .loops(1)
         .transitionalItem(iner)
-        .id("create_new_age:shaped/basic_motor")
+        .id("create_new_age:sequenced_assembly/basic_motor")
     //高级电机
     let iner_1 = "createdelight:incomplete_advanced_motor"
     e.recipes.create.sequenced_assembly("create_new_age:advanced_motor", "create_new_age:basic_motor",
@@ -17,28 +19,28 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner_1, [iner_1, "#createaddition:high_current_spools"]),
             e.recipes.create.deploying(iner_1,[iner_1, "alexscaves:azure_neodymium_ingot"]),
             e.recipes.create.deploying(iner_1, [iner_1, "alexscaves:scarlet_neodymium_ingot"]),
-            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createdelight:lubricating_oil", 100)]),
-            e.recipes.create.deploying(iner_1, [iner_1, "create:brass_sheet"]),
+            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createdelight:lubricating_oil", 200)]),
+            e.recipes.create.deploying(iner_1, [iner_1, "createaddition:brass_rod"]),
         ]
     )
-        .loops(4)
+        .loops(1)
         .transitionalItem(iner_1)
-        .id("create_new_age:shaped/advanced_motor")
+        .id("create_new_age:sequenced_assembly/advanced_motor")
     //超级电机
     let iner_2 = "createdelight:incomplete_reinforced_motor"
     e.recipes.create.sequenced_assembly("create_new_age:reinforced_motor", "create_new_age:advanced_motor",
         [
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 90)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 90)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 90)]),
-            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:lubricating_oil", 100)]),
-            e.recipes.create.deploying(iner_2, [iner_2, "create_new_age:overcharged_diamond"]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createmetallurgy:molten_void_steel", 450)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_azure_neodymium", 450)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_scarlet_neodymium", 450)]),
+            e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelight:lubricating_oil", 200)]),
+            e.recipes.create.deploying(iner_2, [iner_2, "ad_astra:etrionic_capacitor"]),
             e.recipes.create.deploying(iner_2, [iner_2, "createaddition:brass_rod"])
         ]
     )
-        .loops(4)
+        .loops(1)
         .transitionalItem(iner_2)
-        .id("create_new_age:reinforced_motor")
+        .id("create_new_age:sequenced_assembly/reinforced_motor")
 
     //工业齿轮
     e.recipes.create.filling("design_decor:industrial_gear",
@@ -76,21 +78,21 @@ ServerEvents.recipes(e => {
         B: "create:shaft",
         C: "create:precision_mechanism",
         D: "createdelight:planet_gear",
-        E: "create_connected:control_chip"
+        E: "ae2:logic_processor"
     })
     .id("create_new_age:shaped/basic_motor_extension")
     //超级电机超频器
     let iner_4 = "create_new_age:basic_motor_extension"
     e.recipes.create.sequenced_assembly("create_new_age:advanced_motor_extension", "create_new_age:basic_motor_extension",
         [
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_void_steel", 90)]),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_void_steel", 450)]),
             e.recipes.create.deploying(iner_4, [iner_4, "ae2:logic_processor"]),
             e.recipes.create.deploying(iner_4, [iner_4, "ae2:calculation_processor"]),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_silver", 90)]),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_brass", 90)])
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_electrum", 450)]),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createmetallurgy:molten_brass", 450)])
         ]
     )
-       .loops(4)
+       .loops(1)
        .transitionalItem(iner_4)
        .id("create_new_age:advanced_motor_extension")
 })
