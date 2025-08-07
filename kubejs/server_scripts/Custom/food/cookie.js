@@ -40,22 +40,10 @@ ServerEvents.recipes(e => {
             result,
             [
                 input,
-                "minecraft:sugar",
                 "#forge:animal_oil",
-                "bakeries:flour",
-                FluidIngredients("forge:egg_yolk", 50)
+                Fluid.of("createdelight:cake_batter", 100)
             ]
-        ).id(`createdelight:mixing/${result.split(":")[1]}_1`)
-        e.recipes.create.mixing(
-            result,
-            [
-                input,
-                Fluid.of("create:honey", 50),
-                "createdelight:butter",
-                "bakeries:flour",
-                FluidIngredients("forge:egg_yolk", 50)
-            ]
-        ).id(`createdelight:mixing/${result.split(":")[1]}_2`)
+        ).id(`createdelight:mixing/${result.split(":")[1]}`)
         baking(e, result.split(" ")[1], cookie, 4, "food", 100)
     });
 })

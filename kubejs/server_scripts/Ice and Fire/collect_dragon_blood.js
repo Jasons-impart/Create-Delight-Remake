@@ -14,7 +14,7 @@ ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
          * @type {Internal.EntityDragonBase}
          */
         let dragon = entity
-        if (dragon.isTame() && dragon.isAlive()) {
+        if (dragon.isTame() && dragon.isAlive() && !dragon.isDeadOrDying()) {
             let maxhp = dragon.maxHealth
             let damage = Math.max(50, maxhp * 0.1)
             dragon.attack(e.player.damageSources().genericKill(), damage)

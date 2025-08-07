@@ -42,14 +42,17 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:fluxuated_magnetite",
         [
+            Fluid.of("alexscaves:acid", 250),
             'create_new_age:overcharged_diamond',
             'create_new_age:overcharged_diamond',
             "create_new_age:layered_magnet",
             'minecraft:blaze_powder',
-            'minecraft:blaze_powder',
-            Fluid.of("alexscaves:acid", 250)
+            'minecraft:blaze_powder'
         ]
-    ).heated().id("create_new_age:fluxuated_magnetite")
+    )
+    .secondaryFluidInput(0)
+    .heated()
+    .id("create_new_age:fluxuated_magnetite")
     // 下届合金磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:netherite_magnet",

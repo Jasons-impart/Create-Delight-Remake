@@ -105,9 +105,9 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "#forge:fruits/pomegranate", "cosmopolitan:pomegranate_ice_cream",
         "createdelight:pomegranate_milkshake", 'createdelightcore:pomegranate_ice_cream_scoop',
         "collectorsreap:pomegranate_ice_cream", "collectorsreap:pomegranate_milkshake", 'collectorsreap:pomegranate_ice_cream_block')
-    make_ice_cream(e, '#alexscaves:sweet_berries', "cosmopolitan:sweetberry_ice_cream",
+    make_ice_cream(e, '#alexscaves:sweet_berries', "cosmopolitan:sweet_berry_ice_cream",
         "createdelight:sweetberry_milkshake", 'alexscaves:sweetberry_ice_cream_scoop',
-        "seasonals:sweet_berry_ice_cream", "seasonal:sweetberry_milkshake", 'seasonals:sweet_berry_ice_cream_block')
+        "seasonals:sweet_berry_ice_cream", "seasonal:sweet_berry_milkshake", 'seasonals:sweet_berry_ice_cream_block')
     make_ice_cream(e, "#seasonals:pumpkin_puree", "cosmopolitan:pumpkin_ice_cream",
         "createdelight:pumpkin_milkshake", "createdelightcore:pumpkin_ice_cream_scoop",
         "seasonals:pumpkin_ice_cream", "seasonals:pumpkin_milkshake", "seasonals:pumpkin_ice_cream_block")
@@ -126,17 +126,4 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "quark:ancient_fruit", "cosmopolitan:enchanted_fruit_ice_cream",
         "createdelight:enhanced_fruit_milkshake", "createdelightcore:enhanced_fruit_ice_cream_scoop",
         "cosmopolitan:enchanted_fruit_ice_cream", "cosmopolitan:enchanted_fruit_milkshake", "cosmopolitan:enchanted_fruit_ice_cream_block")
-    {
-        let iner = 'createdelight:incomplete_neapolitan_ice_cream'
-        create.sequenced_assembly("neapolitan:neapolitan_ice_cream", "minecraft:bowl",
-            [
-                create.deploying(iner, [iner, 'alexscaves:chocolate_ice_cream_scoop']),
-                create.deploying(iner, [iner, 'alexscaves:vanilla_ice_cream_scoop']),
-                create.deploying(iner, [iner, 'cosmopolitan:strawberry_ice_cream_scoop'])
-            ]
-        )
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:sequenced_assembly/neapolitan_ice_cream")
-    }
 })
