@@ -38,7 +38,7 @@
 	#Specify block IDs here to prevent those blocks from being covered by snow.
 	ForceBlocksNotSnowy = []
 	#Enable local calendar and local info synchronization.
-	EnableLocalInfoAndCalendar = false
+	EnableLocalInfoAndCalendar = true
 
 [Weather]
 	#Enable solar term weather system with biome.

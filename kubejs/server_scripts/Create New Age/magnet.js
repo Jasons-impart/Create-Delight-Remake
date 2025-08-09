@@ -75,11 +75,11 @@ ServerEvents.recipes(e => {
     e.recipes.create.sequenced_assembly('create_new_age:carbon_brushes', 'create:shaft',
         [
             e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
-            e.recipes.create.deploying(iner_4, [iner_4, 'createmetallurgy:graphite']),
-            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelightcore:molten_andesite",90)])
+            e.recipes.create.deploying(iner_4, [iner_4, "createdelight:carbon_plate"]),
+            e.recipes.create.filling(iner_4, [iner_4, Fluid.of("createdelightcore:molten_andesite",810)])
         ]
     )
-        .loops(4)
+        .loops(1)
         .transitionalItem(iner_4)
         .id("create_new_age:shaped/carbon_brushes")
 })

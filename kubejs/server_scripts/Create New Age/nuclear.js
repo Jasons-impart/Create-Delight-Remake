@@ -21,6 +21,15 @@ ServerEvents.recipes(e => {
         "create_new_age:thorium"
     ])
     .id("create_new_age:thorium_multiplication")
+    e.recipes.vintageimprovements.pressurizing("create_new_age:radioactive_thorium", [
+        Fluid.of("createdelightcore:nuclear_waste", 1000),
+        "create_new_age:thorium"
+    ])
+    .superheated()
+    .id("create_new_age:pressurizing/radioactive_thorium")
+    e.recipes.vintageimprovements.vacuumizing("alexscaves:unrefined_waste", Fluid.of("createdelightcore:nuclear_waste", 500))
+    .superheated()
+    .id("alexscaves:vacuumizing/unrefined_waste")
 })
 
 ServerEvents.tags("minecraft:block", e => {
