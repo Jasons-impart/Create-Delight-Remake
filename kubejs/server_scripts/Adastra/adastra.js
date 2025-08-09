@@ -197,4 +197,8 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(Fluid.of("ad_astra:cryo_fuel", 100), [Fluid.of("ad_astra:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
     .secondaryFluidInput(0)
     .id("ad_astra:pressurizing/cryo_fuel")
+    e.recipes.create.crushing(Item.of("ad_astra:aeronos_mushroom").withChance(0.2), "#ad_astra:aeronos_caps")
+    .id("ad_astra:crushing/aeronos_mushroom")
+    e.recipes.create.crushing(Item.of("ad_astra:strophar_mushroom").withChance(0.2), "#ad_astra:strophar_caps")
+    .id("ad_astra:crushing/strophar_mushroom")
 })

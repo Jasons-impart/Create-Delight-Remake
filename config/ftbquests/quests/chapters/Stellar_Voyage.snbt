@@ -1687,6 +1687,18 @@
 			x: 14.5d
 			y: 4.5d
 		}
+		{
+			dependencies: ["36ADB91429D6B418"]
+			id: "7E2BA55431C4D882"
+			subtitle: "放置的方块形式只能在外星发酵"
+			tasks: [{
+				id: "3960BB01082802BA"
+				item: "createdelightcore:phantom_compost"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.5d
+		}
 	]
 	title: "&4群星之旅"
 }

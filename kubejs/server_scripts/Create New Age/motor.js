@@ -1,4 +1,8 @@
 ServerEvents.recipes(e => {
+    remove_recipes_output(e, [
+        "create_new_age:basic_motor",
+        "create_new_age:advanced_motor"
+    ])
     //基础电机
     let iner = "createdelight:incomplete_basic_motor"
     e.recipes.create.sequenced_assembly("create_new_age:basic_motor", "createaddition:electric_motor",
