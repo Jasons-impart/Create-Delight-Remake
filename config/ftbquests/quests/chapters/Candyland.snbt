@@ -322,7 +322,7 @@
 			}]
 			tasks: [{
 				id: "6DD8771706A0A2BE"
-				item: "create_confectionery:candy_cane"
+				item: "alexscaves:candy_cane"
 				type: "item"
 			}]
 			x: 2.5d
@@ -1006,7 +1006,7 @@
 			id: "0501DD97040BC06D"
 			tasks: [{
 				id: "41B0CD4618CB03F2"
-				item: "create_confectionery:candy_cane"
+				item: "alexscaves:candy_cane"
 				type: "item"
 			}]
 			x: 5.5d
