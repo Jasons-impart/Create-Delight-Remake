@@ -212,7 +212,7 @@ ItemEvents.modification(e => {
     })
     food_effects("alexscaves:frostmint", "neapolitan:berserking", 60)
     food_effects('alexscaves:peppermint_powder', "neapolitan:berserking", 60)
-    food_effects("create_confectionery:candy_cane", "neapolitan:berserking", 45)
+    food_effects("alexscaves:candy_cane", "neapolitan:berserking", 45)
     food_effects('createcafe:mint_iced_coffee', "neapolitan:berserking", 60)
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)

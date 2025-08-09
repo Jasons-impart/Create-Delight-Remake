@@ -175,6 +175,12 @@ ServerEvents.recipes(e => {
   ).id("alexscaves:cutting/cookie_block")
   //统一拐杖糖
   e.replaceInput({ input: "alexscaves:candy_cane", not: {type: "minecraft:smithing_trim"}}, "alexscaves:candy_cane", "#createdelight:candy_cane")
+  e.replaceOutput("create_confectionery:candy_cane", "alexscaves:candy_cane")
+  create.mixing("alexscaves:candy_cane", [
+      Fluid.water(250),
+      "4x minecraft:sugar",
+      "neapolitan:mint_leaves"
+  ])
   //拐杖糖打磨成尖拐杖糖
   e.recipes.createmetallurgy.grinding(
     "alexscaves:sharpened_candy_cane", 
