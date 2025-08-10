@@ -51,9 +51,10 @@ ServerEvents.tags("block", e => {
         "@youkaishomecoming",
         "@nethervinery",
         "@dungeonsdelight",
-        "@ends_delight"
+        "@ends_delight",
+        "@crabbersdelight"
     ]).stacks.forEach(item => {
-        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag")) && item.block) {
+        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag") || item.id.endsWith("_barrel")) && item.block) {
             e.add("quality_food:quality_blocks", item.id)
         }
     })
