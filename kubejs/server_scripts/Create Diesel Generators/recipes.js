@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
       .transitionalItem(iner)
       .loops(1)
       .id("createdieselgenerators:crafting/diesel_engine");
-  let iner2 = "createdelight:incomplete_modular_diesel_engine";
+  let iner2 = "createdelight:incomplete_large_diesel_engine";
   e.recipes.create.sequenced_assembly("createdieselgenerators:large_diesel_engine", "createdieselgenerators:diesel_engine",
       [
         e.recipes.create.deploying(iner2, [iner2, "#forge:plates/bronze"]),
@@ -82,8 +82,21 @@ ServerEvents.recipes(e => {
     )
       .transitionalItem(iner2)
       .loops(3)
-      .id("createdieselgenerators:crafting/modular_diesel_engine");
-
+      .id("createdieselgenerators:crafting/modular_large_engine");
+  let iner3 = "createdelight:incomplete_huge_diesel_engine";
+  e.recipes.create.sequenced_assembly("createdieselgenerators:huge_diesel_engine", "#forge:storage_blocks/bronze",
+      [
+        e.recipes.vintageimprovements.turning(iner3, iner3),
+        e.recipes.create.deploying(iner3, [iner3, "create:steam_engine"]),
+        e.recipes.create.deploying(iner3, [iner3, "#forge:plates/steel"]),
+        e.recipes.create.deploying(iner3, [iner3, "create:steam_engine"]),
+        e.recipes.create.deploying(iner3, [iner3, "#forge:plates/steel"]),
+        e.recipes.create.pressing(iner3, iner3),
+      ]
+    )
+      .transitionalItem(iner3)
+      .loops(1)
+      .id("createdieselgenerators:crafting/huge_diesel_engine")
   e.recipes.vintageimprovements.turning("3x createdieselgenerators:oil_barrel", "#forge:storage_blocks/steel").id("createdieselgenerators:crafting/oil_barrel")
   fermenting(e,
     [
