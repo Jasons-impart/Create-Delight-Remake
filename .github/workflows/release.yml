@@ -79,7 +79,8 @@ jobs:
     if: >
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
-      startsWith(github.ref_name, 'test-client')
+      startsWith(github.ref_name, 'test-client') ||
+      startsWith(github.ref_name, 'test-patch')
     steps:
       - name: 测试环境变量
         run: |
