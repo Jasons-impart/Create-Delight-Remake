@@ -43,7 +43,7 @@ farmland_config = [
 	#The weight of the quality (relevant for crafting - average weight from the quality of the ingredients determine affect the resulting quality)
 	#Range: 0.0 ~ 100.0
 	weight = 1.0
-	#The min. weight of the quality (chance for quality when crafting: (average_weight - min_weight) / (weight - min_weight)
+	#The min. weight of the quality (chance for quality when crafting: (average_weight - min_weight) / (weight / min_weight)
 	#Range: 0.0 ~ 100.0
 	min_weight = 0.5
 	#The chance for a quality to occur (with no luck or other bonus)
