@@ -79,7 +79,8 @@ jobs:
     if: >
       github.ref_name == 'release' || 
       startsWith(github.ref_name, 'test-release') ||
-      startsWith(github.ref_name, 'test-client')
+      startsWith(github.ref_name, 'test-client') ||
+      startsWith(github.ref_name, 'test-patch')
     steps:
       - name: 测试环境变量
         run: |
@@ -358,6 +359,7 @@ jobs:
           rm -f patch/client_jvm_args.example.txt
 
           # 更新更好的兼容检测配置
+          mkdir -p patch/config/
           cp config/bcc-common.toml patch/config/
 
           # 更新fancymenu版本文件
