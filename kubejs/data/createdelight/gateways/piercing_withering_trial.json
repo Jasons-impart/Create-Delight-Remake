@@ -71,7 +71,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 1000,
+			"max_wave_time": 1400,
 			"setup_time": 300
 		},
 		{
@@ -142,7 +142,7 @@
 				}
 			],
 			
-			"max_wave_time": 1200,
+			"max_wave_time": 1600,
 			"setup_time": 300
 		},
 		{
@@ -212,7 +212,7 @@
 					    }
 				}
 			],
-			"max_wave_time": 1200,
+			"max_wave_time": 1600,
 			"setup_time": 300
 		},
         {
@@ -281,7 +281,7 @@
 					    }
 				}
 			],
-            "max_wave_time": 1400,
+            "max_wave_time": 1800,
 			"setup_time": 300
         },
 		{
@@ -332,8 +332,8 @@
 					    }
 				}
 			],
-            "max_wave_time": 1800,
-			"setup_time": 340
+            "max_wave_time": 2000,
+			"setup_time": 300
         }
      ],
 	"failures": [

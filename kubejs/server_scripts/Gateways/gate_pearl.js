@@ -88,8 +88,8 @@ ServerEvents.recipes(e => {
         create.cutting(incomplete, incomplete),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "createdelight:devil_eye"]),
-        create.deploying(incomplete, [incomplete, "alexscaves:desolate_dagger"]),
-        create.deploying(incomplete, [incomplete, "alexscaves:dreadbow"])
+        create.deploying(incomplete, [incomplete, "alexscaves:desolate_dagger"]).keepHeldItem(),
+        create.deploying(incomplete, [incomplete, "alexscaves:dreadbow"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(2)
     .id("createdelight:sequenced_assembly/infinite_and_dark_trials")
     ////添加配方：磁暴领域合成
@@ -104,4 +104,40 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "alexscaves:heart_of_iron"])
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/magnetic_storm_field")
+    ////添加配方：熔蚀之地合成
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:a_place_of_melting"}'))
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:uranium"]),
+        create.cutting(incomplete, incomplete),
+        create.pressing(incomplete,incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:fissile_core"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:nuclear_bomb"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:tremorzilla_egg"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(4)
+    .id("createdelight:sequenced_assembly/a_place_of_melting")
+    ////添加配方：远古终焉合成
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:the_ancient_end"}'))
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:heavy_bone"]),
+        create.pressing(incomplete,incomplete),
+        create.cutting(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:amber_curiosity"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:tectonic_shard"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:extinction_spear"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(4)
+    .id("createdelight:sequenced_assembly/the_ancient_end")
+    ////添加配方：自噬之潮合成
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:the_legacy_of_the_abyss"}'))
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:gazing_pearl"]),
+        create.pressing(incomplete,incomplete),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:magic_conch"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(4)
+    .id("createdelight:sequenced_assembly/the_legacy_of_the_abyss")
 })

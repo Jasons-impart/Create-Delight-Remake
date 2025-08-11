@@ -141,6 +141,13 @@
                         "item": "iceandfire:dragonforge_lightning_brick", 
                         "count": 8
 					}
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "createdelightcore:lightning_lily_cluster", 
+                        "count": 2
+					}
 				}
 			],
 			"max_wave_time": 1200,
