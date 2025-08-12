@@ -7,7 +7,6 @@ ServerEvents.tags("minecraft:item", e => {
         'youkaishomecoming:green_coffee_bean',
         'youkaishomecoming:redbean',
         "youkaishomecoming:cucumber",
-        "neapolitan:ice_cubes",
         "youkaishomecoming:roe"
     ])
     e.add('forge:tea_leaves/green', "farmersrespite:green_tea_leaves")

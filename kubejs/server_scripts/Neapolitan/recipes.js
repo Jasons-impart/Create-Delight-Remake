@@ -81,7 +81,3 @@ ServerEvents.recipes(e => {
     .id("neapolitan:cooking/adzuki_curry")
 
 })
-
-ServerEvents.tags("minecraft:item", e => {
-    e.removeAllTagsFrom(['neapolitan:milk_bottle'],)
-})

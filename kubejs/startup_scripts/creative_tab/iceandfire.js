@@ -32,6 +32,5 @@ StartupEvents.modifyCreativeTab("iceandfire:items", e => {
     "iceandfire:armor_copper_metal_chestplate",
     "iceandfire:armor_copper_metal_helmet",
     "iceandfire:armor_copper_metal_leggings",
-    
   ])
 })

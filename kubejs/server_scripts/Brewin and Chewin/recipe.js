@@ -23,7 +23,8 @@ ServerEvents.recipes(e => {
         "brewinandchewin:cooking/apple_jelly",
         "brewinandchewin:filling/create/milk_bucket",
         "brewinandchewin:emptying/create/milk_bottle",
-        "brewinandchewin:emptying/create/milk_bucket"
+        "brewinandchewin:emptying/create/milk_bucket",
+        "brewinandchewin:filling/create/milk_bottle"
     ])
     e.replaceOutput({}, "brewinandchewin:flaxen_cheese_wedge", "ad_astra:cheese")
     e.replaceInput({not: [{id: "brewinandchewin:flaxen_cheese_wheel_from_wedges"}]}, "brewinandchewin:flaxen_cheese_wedge", "#forge:cheese")

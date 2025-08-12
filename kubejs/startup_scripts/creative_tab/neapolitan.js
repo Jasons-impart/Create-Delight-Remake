@@ -18,7 +18,7 @@ StartupEvents.registry("minecraft:creative_mode_tab", e => {
     'neapolitan:magic_beans', 
     'neapolitan:strawberry_pips', 
     'neapolitan:mint_sprout', 
-    'neapolitan:banana_bundle', 
+    'neapolitan:banana_bundle',
     'neapolitan:banana_crate', 
     'neapolitan:adzuki_crate', 
     'neapolitan:roasted_adzuki_crate', 

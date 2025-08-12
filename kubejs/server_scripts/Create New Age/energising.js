@@ -56,10 +56,11 @@ ServerEvents.recipes(e => {
         'create_new_age:energiser_t2',
         [
             e.recipes.create.deploying(iner, [iner, 'create_new_age:overcharged_diamond']),
-            e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_core"])
+            e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_capacitor"]),
+            e.recipes.create.deploying(iner, [iner, "alexscaves:tesla_bulb"])
         ]
     )
-        .loops(3)
+        .loops(1)
         .id("create_new_age:shaped/energiser_t3")
         .transitionalItem(iner)
     e.recipes.create_new_age.energising(

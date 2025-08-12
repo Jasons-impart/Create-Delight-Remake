@@ -8,7 +8,16 @@ ServerEvents.recipes(e => {
         "miners_delight:baked_squid"
     ])
     remove_recipes_id(e, [
-        "miners_delight:string_from_gossypium"
+        "miners_delight:string_from_gossypium",
+        "miners_delight:baked_squid",
+        "miners_delight:baked_squid_smoking",
+        "miners_delight:baked_squid_campfire",
+        "miners_delight:cutting/squid",
+        "miners_delight:cutting/glow_squid",
+        "miners_delight:baked_tentacles",
+        "miners_delight:baked_tentacles_campfire",
+        "miners_delight:baked_tentacles_smoking",
+        "miners_delight:cutting/baked_squid",
     ])
     farmersdelight.cutting("miners_delight:gossypium", "#forge:shears", [
         "kinetic_pixel:graycotton", 

@@ -17,8 +17,8 @@
       "createdelight:lightning_dragon_restraint":2
     },
     "tints": {
-      "glyph": "910d13",
-      "texture": "910d13"
+      "glyph": "baffff",
+      "texture": "baffff"
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_fire_ingot" ] },

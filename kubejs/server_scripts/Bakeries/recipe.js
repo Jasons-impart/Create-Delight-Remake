@@ -66,7 +66,6 @@ ServerEvents.recipes(e => {
     ])
     e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
 
-
     //展示框
     e.replaceInput({ id: "bakeries:menu_blcok" }, "minecraft:gray_wool", "minecraft:item_frame")
     

@@ -16,4 +16,5 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:squid",
         "culturaldelights:glow_squid"
     )
+    e.removeAllTagsFrom("culturaldelights:raw_calamari")
 })

@@ -1,5 +1,7 @@
 /**
  * 根据两个坐标点计算方向，并返回对应方向的翻译文本（通过Text.translate函数获取）
+ * 
+ * 值得注意的是，mc的世界坐标系是+y向上的右手坐标系，故+x轴为东方时，+z轴是南方。
  * @param { number } x1 
  * @param { number } y1 
  * @param { number } x2 
@@ -31,11 +33,12 @@ function getDirection(x1, y1, x2, y2) {
         return dx > 0? DIRECTION_EAST : DIRECTION_WEST;
     }
     // 根据dx和dy的正负情况判断斜向方向
+    // 注意+z指向南方而-z指向北方
     if (dx > 0 && dy > 0) {
-        return DIRECTION_NORTHEAST;
+        return DIRECTION_SOUTHEAST;
     }
     if (dx > 0 && dy < 0) {
-        return DIRECTION_SOUTHEAST;
+        return DIRECTION_NORTHEAST;
     }
     if (dx < 0 && dy > 0) {
         return DIRECTION_SOUTHWEST;

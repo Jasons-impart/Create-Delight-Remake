@@ -281,8 +281,8 @@ function FluidIngredients(fluidTag, amount, tag) {
 /**
  * 
  * @param {Internal.RecipesEventJS} e 
- * @param {any[]} results 
- * @param {any[]} inputs 
+ * @param {(Internal.OutputFluid_|OutputItem_)[]} results 
+ * @param {(Internal.InputFluid_|InputItem_)[]} inputs 
  * @param {number} [processingTime] 
  * @param {number} [heatRequirement]
  */

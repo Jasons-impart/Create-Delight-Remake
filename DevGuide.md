@@ -1,5 +1,6 @@
 # KubeJS相关开发文档链接
 - https://docs.qq.com/doc/DWVVpeGFrSE1sSGpj
+- https://docs.mihono.cn/zh/modpack/kubejs/1.20.1/Introduction/Description
 
 # 编写代码相关
 ## 代码规范

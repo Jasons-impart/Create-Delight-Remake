@@ -71,11 +71,11 @@
       },
       "trigger": "youkaishomecoming:feed_reimu"
     },
-    "youkaishomecoming:black_tea": {
+    "farmersrespite:black_tea": {
       "conditions": {
         "item": {
           "items": [
-            "youkaishomecoming:black_tea"
+            "farmersrespite:black_tea"
           ]
         }
       },
@@ -241,11 +241,11 @@
       },
       "trigger": "youkaishomecoming:feed_reimu"
     },
-    "youkaishomecoming:green_tea": {
+    "farmersrespite:green_tea": {
       "conditions": {
         "item": {
           "items": [
-            "youkaishomecoming:green_tea"
+            "farmersrespite:green_tea"
           ]
         }
       },
@@ -481,11 +481,11 @@
       },
       "trigger": "youkaishomecoming:feed_reimu"
     },
-    "youkaishomecoming:oolong_tea": {
+    "farmersrespite:yellow_tea": {
       "conditions": {
         "item": {
           "items": [
-            "youkaishomecoming:oolong_tea"
+            "farmersrespite:yellow_tea"
           ]
         }
       },
@@ -571,11 +571,11 @@
       },
       "trigger": "youkaishomecoming:feed_reimu"
     },
-    "youkaishomecoming:roe": {
+    "oceanic_delight:salmon_eggs": {
       "conditions": {
         "item": {
           "items": [
-            "youkaishomecoming:roe"
+            "oceanic_delight:salmon_eggs"
           ]
         }
       },
@@ -954,7 +954,7 @@
       "youkaishomecoming:cooked_mandrake_root"
     ],
     [
-      "youkaishomecoming:roe"
+      "oceanic_delight:salmon_eggs"
     ],
     [
       "youkaishomecoming:tofu"
@@ -1041,16 +1041,16 @@
       "youkaishomecoming:shaved_ice_over_rice"
     ],
     [
-      "youkaishomecoming:green_tea"
+      "farmersrespite:green_tea"
     ],
     [
       "youkaishomecoming:white_tea"
     ],
     [
-      "youkaishomecoming:black_tea"
+      "farmersrespite:black_tea"
     ],
     [
-      "youkaishomecoming:oolong_tea"
+      "farmersrespite:yellow_tea"
     ],
     [
       "youkaishomecoming:cornflower_tea"

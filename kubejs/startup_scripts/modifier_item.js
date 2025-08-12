@@ -227,6 +227,11 @@ ItemEvents.modification(e => {
             food.removeEffect("minecraft:conduit_power")
         }
     })
+    e.modify('oceanic_delight:salmon_eggs', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:conduit_power")
+        }
+    })
         //奥利奥效果
     e.modify('createcafe:oreo', item => {
         item.foodProperties = food => {

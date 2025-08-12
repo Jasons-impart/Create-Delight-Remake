@@ -1,0 +1,477 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Materials"
+	group: "57E934AC8166BC73"
+	icon: "art_of_forging:endsteel_ingot"
+	id: "147FF9AE2E3A4650"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["73F6088E76969E13"]
+			id: "38CD78E43A6497DC"
+			size: 1.0d
+			subtitle: "在沉船或水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
+			tasks: [{
+				id: "41507FB3303D2212"
+				item: "art_of_forging:vobrite_crystal"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["38CD78E43A6497DC"]
+			description: ["我在锻造钢锭上安装了这种充满魔力的水晶，再为其充电便得到了这种质地坚韧的金属"]
+			id: "47ADAC6620C3FF87"
+			rewards: [{
+				count: 3
+				id: "5079660030621FF5"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "36BD3E1BEBBF6A21"
+				item: "art_of_forging:vobrivium_ingot"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"45AEEC23471D3A98"
+				"79324D33E24DFFB4"
+				"6BD5D68F02A01858"
+			]
+			description: [
+				"我将&e龙鳞、龙血和耐热金属&r混合在一起，在高温下搅拌，最终锻造出了带有龙之力的龙钢"
+				"龙钢蕴含着无比强大的龙之力，&e可以取代龙鳞在锻造中的位置并且不会被消耗，可以在锻造时节省一个龙鳞，但是需把耐热合金换成能耐更高温的锻造钢&r"
+			]
+			id: "63B03A277D459A65"
+			rewards: [
+				{
+					id: "20B238F56AC6FF8D"
+					item: "iceandfire:dragonsteel_fire_ingot"
+					type: "item"
+				}
+				{
+					id: "5823F1A9393BDD98"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					id: "629A1ADD49658201"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "双头龙钢锤为七级锤"
+			tasks: [
+				{
+					id: "7C61E5405BB8F177"
+					item: "iceandfire:dragonsteel_fire_ingot"
+					type: "item"
+				}
+				{
+					id: "0684B419D88E9743"
+					item: "iceandfire:dragonsteel_ice_ingot"
+					type: "item"
+				}
+				{
+					id: "3336D82836E71280"
+					item: "iceandfire:dragonsteel_lightning_ingot"
+					type: "item"
+				}
+			]
+			title: "龙钢"
+			x: 8.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "37009649B2B8EC6C"
+			size: 1.0d
+			subtitle: "使用带有纳米融合效果的武器击杀凋灵骷髅获得，直接击杀凋零也可获得"
+			tasks: [{
+				id: "5B78C6B3E560AF87"
+				item: "art_of_forging:fragment_of_eden"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"37009649B2B8EC6C"
+				"740D759F98D9A8CF"
+				"368633F5F14BEC91"
+			]
+			description: [""]
+			id: "691FF0ECF3FDC2ED"
+			rewards: [{
+				id: "49116D48A89919DF"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "双头终末钢锤为八级锤"
+			tasks: [{
+				id: "27225645CA88DA29"
+				item: "art_of_forging:endsteel_ingot"
+				type: "item"
+			}]
+			title: "&5终末钢&r"
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "740D759F98D9A8CF"
+			size: 1.0d
+			subtitle: "使用玻璃瓶对着末影龙吐出的龙息右键即可获得"
+			tasks: [{
+				id: "54A6FCF5194E2AFC"
+				item: "minecraft:dragon_breath"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"141E662DB7E1864B"
+				"19B357651B572CC7"
+				"1ABE35B8CAAB3F83"
+			]
+			description: [""]
+			id: "19419665C1CD0351"
+			rewards: [{
+				id: "21BDAED95057A629"
+				item: "dreadsteel:dreadsteel_ingot"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "双头悚怖钢锤为八级锤"
+			tasks: [{
+				id: "6BA056B9D68E4DF4"
+				item: "dreadsteel:dreadsteel_ingot"
+				type: "item"
+			}]
+			title: "&3悚怖钢&r"
+			x: 8.5d
+			y: 6.5d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "141E662DB7E1864B"
+			size: 1.0d
+			subtitle: "使用带有纳米融合效果的武器击杀悚怖怪物获得"
+			tasks: [{
+				id: "156579804A25CEAF"
+				item: "createdelight:dread_heart"
+				type: "item"
+			}]
+			title: "悚怖之心"
+			x: 8.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "19B357651B572CC7"
+			size: 1.0d
+			subtitle: "击杀悚怖怪物掉落"
+			tasks: [{
+				id: "39EA75ACC264A3EA"
+				item: "iceandfire:dread_shard"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "6EBD79B87E10DA7F"
+			size: 1.0d
+			tasks: [{
+				id: "48B5B9F5166ABCFC"
+				item: {
+					Count: 1
+					id: "ad_astra:etrionic_capacitor"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 13.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "7779E241F787B373"
+			size: 1.0d
+			tasks: [{
+				id: "7C71531E849872E6"
+				item: "createdelight:bleak_electron_tube"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			id: "01A60A138E892348"
+			size: 1.0d
+			tasks: [{
+				id: "3305046C8DF55CEE"
+				item: "vintageimprovements:redstone_module"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 0.5d
+		}
+		{
+			description: ["我尝试将电流通入几种常见的金属，但它们的电阻显然过高，导致电流在极短时间内迅速衰减，远未达到超导效果。于是，我转而以&e琥珀金&r作为基底，将&e陨石溶液&r注入其中，并安装了一些&e精密的电子元件&r。经过反复调试，我成功打造出了一种近乎实现超导性能的材料。"]
+			hide_dependency_lines: true
+			id: "4BA4050F5446B8E3"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "67436E5550395678"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			x: 12.5d
+			y: -1.5d
+		}
+		{
+			hide_dependency_lines: true
+			id: "73F6088E76969E13"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "使用陨石废液，金属碎片，下界合金制作"
+			tasks: [{
+				id: "2A51FC7AAB387CD5"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["73F6088E76969E13"]
+			hide_dependency_lines: true
+			id: "45AEEC23471D3A98"
+			size: 1.0d
+			tasks: [{
+				id: "417975C36DDA120A"
+				item: "ad_astra:calorite_ingot"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "1ABE35B8CAAB3F83"
+			size: 1.0d
+			subtitle: "100难度下击杀凋灵骷髅可获得，直接击杀凋零也可获得"
+			tasks: [{
+				id: "45F7301C7F8A7598"
+				item: "art_of_forging:fragment_of_eden"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["73F6088E76969E13"]
+			hide_dependency_lines: true
+			id: "79324D33E24DFFB4"
+			size: 1.0d
+			tasks: [{
+				id: "5DF4C0EB6595C9DB"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "iceandfire:dragon_bloods"
+					}
+				}
+				title: "Any #iceandfire:dragon_bloods"
+				type: "item"
+			}]
+			title: "龙血"
+			x: 8.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["47ADAC6620C3FF87"]
+			id: "368633F5F14BEC91"
+			size: 1.0d
+			subtitle: "使用纳米融合的武器击杀末影人获得"
+			tasks: [{
+				id: "6A7EEC2A56BF04CB"
+				item: "art_of_forging:heart_of_ender"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4BA4050F5446B8E3"]
+			icon: "createdelight:sky_solution_bucket"
+			id: "0CCB51A12AA2417F"
+			size: 1.0d
+			tasks: [{
+				id: "708AC65E50736AE3"
+				title: "陨石溶液"
+				type: "checkmark"
+			}]
+			x: 14.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"01A60A138E892348"
+				"0CCB51A12AA2417F"
+				"6EBD79B87E10DA7F"
+				"7779E241F787B373"
+			]
+			description: [""]
+			id: "5C1B7AAA928BCA00"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "10254CED41B6EDAF"
+				table_id: 1515464272228904394L
+				type: "random"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "高频村雨的专属金属"
+			tasks: [{
+				id: "68E8A2A882069137"
+				item: { Count: 50, id: "vvaddon:mine_ingot" }
+				type: "item"
+			}]
+			title: "超导金属"
+			x: 12.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"691FF0ECF3FDC2ED"
+				"19419665C1CD0351"
+			]
+			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤。"]
+			id: "268643C6AE454B9F"
+			rewards: [
+				{
+					id: "119CD0F8A13EBE0B"
+					item: "createdelightcore:emerald_coin"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "685036F931BCFD52"
+					table_id: 1515464272228904394L
+					type: "random"
+				}
+			]
+			size: 1.0d
+			tasks: [{
+				id: "6F0D1285271C87FA"
+				item: "alexscaves:pure_darkness"
+				type: "item"
+			}]
+			title: "&0纯粹黑暗&r"
+			x: 6.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["268643C6AE454B9F"]
+			icon: {
+				Count: 1
+				id: "tetra:modular_double"
+				tag: {
+					Damage: 0
+					HideFlags: 1
+					"double/basic_hammer_left_material": "basic_hammer/dreadsteel_ingot"
+					"double/basic_hammer_right_material": "basic_hammer/dreadsteel_ingot"
+					"double/basic_handle_material": "basic_handle/endsteel_ingot"
+					"double/binding": "double/socket"
+					"double/handle": "double/basic_handle"
+					"double/handle:quality": 1
+					"double/head_left": "double/basic_hammer_left"
+					"double/head_left:quality": 1
+					"double/head_right": "double/basic_hammer_right"
+					"double/head_right:quality": 1
+					"double/socket_material": "double_socket/pure_darkness"
+					honing_available: 1b
+					honing_progress: 0
+					id: "8d915422-603c-4361-90b2-37e8c59e407c"
+				}
+			}
+			id: "1F7DE13987C20264"
+			shape: "gear"
+			size: 2.0d
+			tasks: [{
+				id: "2CEC0F05F7FA31F9"
+				title: "最终的锻造锤"
+				type: "checkmark"
+			}]
+			x: 6.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["73F6088E76969E13"]
+			icon: "createdelightcore:molten_forged_steel_bucket"
+			id: "6BD5D68F02A01858"
+			tasks: [{
+				id: "3D9C0E05B90613AB"
+				item: "art_of_forging:forged_steel_ingot"
+				type: "item"
+			}]
+			title: "熔融锻造钢"
+			x: 7.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["63B03A277D459A65"]
+			id: "111C12092510C3F4"
+			tasks: [{
+				id: "61ED089516858741"
+				item: {
+					Count: 1
+					id: "tetra:modular_double"
+					tag: {
+						Damage: 0
+						HideFlags: 1
+						"double/basic_hammer_left_material": "basic_hammer/dragonsteel_ice_ingot"
+						"double/basic_hammer_right_material": "basic_hammer/dragonsteel_fire_ingot"
+						"double/basic_handle_material": "basic_handle/dragonsteel_lightning_ingot"
+						"double/handle": "double/basic_handle"
+						"double/handle:quality": 1
+						"double/head_left": "double/basic_hammer_left"
+						"double/head_left:quality": 1
+						"double/head_right": "double/basic_hammer_right"
+						"double/head_right:quality": 1
+						honing_progress: 590
+						id: "bcacb1a3-e6cc-41a2-9e6a-063568648dcc"
+					}
+				}
+				type: "item"
+			}]
+			title: "龙钢锤"
+			x: 10.0d
+			y: 3.5d
+		}
+	]
+	title: "材料百科"
+}

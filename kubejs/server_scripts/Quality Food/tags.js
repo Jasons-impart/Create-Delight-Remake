@@ -51,9 +51,10 @@ ServerEvents.tags("block", e => {
         "@youkaishomecoming",
         "@nethervinery",
         "@dungeonsdelight",
-        "@ends_delight"
+        "@ends_delight",
+        "@crabbersdelight"
     ]).stacks.forEach(item => {
-        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag")) && item.block) {
+        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag") || item.id.endsWith("_barrel")) && item.block) {
             e.add("quality_food:quality_blocks", item.id)
         }
     })
@@ -68,6 +69,16 @@ ServerEvents.tags("block", e => {
         "minecraft:tall_grass",
         "minecraft:fern",
         "minecraft:large_fern",
+        "vinery:red_grape_bush",
+        "vinery:white_grape_bush",
+        "vinery:savanna_grape_bush_red",
+        "vinery:savanna_grape_bush_white",
+        "vinery:taiga_grape_bush_red",
+        "vinery:taiga_grape_bush_white",
+        "vinery:jungle_grape_bush_red",
+        "vinery:jungle_grape_bush_white",
+        "nethervinery:crimson_grape_bush",
+        "nethervinery:warped_grape_bush",
         "minecraft:cocoa",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',

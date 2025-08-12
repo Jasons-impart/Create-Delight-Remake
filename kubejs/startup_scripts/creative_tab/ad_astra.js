@@ -14,7 +14,6 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     'ad_astra:etrium_plate',
     'ad_astra:etrium_rod',
     'ad_astra:oil_bucket',
-    'ad_astra:oil_bucket',
     'ad_astra:etrium_factory_block',
     'ad_astra:encased_etrium_block',
     'ad_astra:etrium_plateblock',
@@ -35,6 +34,5 @@ StartupEvents.modifyCreativeTab("ad_astra:main", e => {
     "ad_astra:iron_rod",
     "ad_astra:steel_ingot",
     "ad_astra:steel_block",
-
   ])
 })
