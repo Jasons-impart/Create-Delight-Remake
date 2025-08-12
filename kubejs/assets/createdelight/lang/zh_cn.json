@@ -681,6 +681,12 @@
     "tooltip.createdelight.order.entries.food": "食物",
     "tooltip.createdelight.order.entries.fast_food": "快餐",
     "tooltip.createdelight.order.entries.burger": "汉堡",
+    "tooltip.createdelight.order.entries.milk_tea": "奶茶",
+
+    "tooltip.craetedelight.order.entrie": "%s x%s-最低品质：%s",
+    
+    "tooltip.createdelight.order.customer.fast_food": "快餐店老板",
+
     "tooltip.createdelight.order.tier.1": "§a一般质量",
     "tooltip.createdelight.order.tier.2": "§e中质量",
     "tooltip.createdelight.order.tier.3": "§c高质量"

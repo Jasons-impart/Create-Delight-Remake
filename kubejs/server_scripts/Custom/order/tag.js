@@ -74,7 +74,7 @@ Order.orderProperties = {
 Order.customerProperties = {
     food: {
         entries: {
-            food: 1
+            food: [1, 0]
         },
         max_count: 2,
         base_continue_rate: 0.25,
@@ -84,8 +84,8 @@ Order.customerProperties = {
     },
     fast_food: {
         entries: {
-            fast_food: 1,
-            milk_tea: 1
+            fast_food: [1, 0],
+            milk_tea: [1, 0]
         },
         max_count: 3,
         base_continue_rate: 0.3,

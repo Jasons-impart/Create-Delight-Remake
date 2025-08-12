@@ -40,7 +40,8 @@ Order.create = function (player) {
     }
 
     let count = 0;
-    while (count < selected.max_count) {
+    let canceled = false
+    while (count < selected.max_count && !canceled) {
         for (const key in selected.entries) {
             if (!Object.prototype.hasOwnProperty.call(selected.entries, key)) continue;
             let entryVal = selected.entries[key];
@@ -54,13 +55,18 @@ Order.create = function (player) {
 
             let bonus = Math.sqrt(level);
             if (
-                Utils.random.nextFloat() < weight / allWeight &&
-                Utils.random.nextFloat() < selected.base_continue_rate * bonus
+                Utils.random.nextFloat() < weight / allWeight
             ) {
-                let amount = Order.orderProperties[key].base_count * Utils.random.nextFloat(1, bonus);
+                let amount = Order.orderProperties[key].base_count * Utils.random.nextFloat(1, bonus * 1.25);
                 // 格式: [类型, 数量, 最低品质要求]
-                order.entries.push([key, amount, minQuality]);
+                order.entries.push({
+                    id: key,
+                    count: parseInt(amount),
+                    minQuality: Math.min(3, Math.max(minQuality, 1))
+                });
                 count++;
+                if (Utils.random.nextFloat() >= selected.base_continue_rate * bonus)
+                    canceled = true
                 if (count >= selected.max_count) break;
             }
         }
@@ -86,7 +92,7 @@ Order.convertPackageToItemHandler = function (items) {
 
 /**
  * 检查多个订单是否依次可完成（共用扣减的库存）
- * @param {{type: string, entries: [[string, number, number]]}[]} orders 多个订单
+ * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}[]} orders 多个订单
  * @param {Internal.IItemHandler} items 玩家物品栏
  * @returns {boolean[]} 每个订单是否满足
  */
@@ -95,11 +101,13 @@ Order.checkAllPackages = function (orders, items) {
     let results = [];
 
     orders.forEach(order => {
-        let needed = order.entries.map(function (entry) {
-            var id = entry[0];
-            var count = entry[1];
-            var minQuality = entry[2];
-            return { id: id, count: count, minQuality: minQuality };
+        // entries 已经是 { id, count, minQuality }，直接深拷贝防止修改原数据
+        let needed = order.entries.map(function (e) {
+            return {
+                id: e.id,
+                count: e.count,
+                minQuality: e.minQuality
+            };
         });
 
         needed.forEach(req => {
@@ -165,4 +173,14 @@ Order.getFoodOrderProperty = function (item, type) {
     }
     return Math.max(Math.min(3, qualityLevel + level), 1)
 }
+
+ItemEvents.rightClicked("minecraft:paper", e => {
+    let ret = Order.create(e.player)
+    while (ret.entries.length == 0) {
+        ret = Order.create(e.player)
+    }
+    e.player.tell(ret)
+    e.item.addTagElement("createdelightOrderInfo", ret)
+    
+})
 

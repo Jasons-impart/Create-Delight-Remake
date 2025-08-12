@@ -15,6 +15,26 @@ ItemEvents.tooltip(e => {
             })
         if (added)
             text.add(comp)
-
+    })
+    e.addAdvanced("minecraft:paper", (item, advanced, text) => {
+        let comp = Component.empty()
+        /**
+         * Item.of('minecraft:paper', '{createdelightOrderInfo:{entries:[{count:70.0d,id:"food",minQuality:0.0d},{count:77.0d,id:"food",minQuality:0.0d}],type:"food"}}')
+         */
+        
+        /**
+         * @type {{count: number, id: string, minQuality: number}[]}
+         */
+        let entries = item.nbt.createdelightOrderInfo.entries
+        let type = item.nbt.createdelightOrderInfo.type
+        
+        text.add(Text.translate("tooltip.createdelight.order.customer." + type))
+        entries.forEach(value => {
+            let tmp = Text.translate("tooltip.craetedelight.order.entrie", 
+                Text.translate("tooltip.createdelight.order.entries." + value.id),
+                parseInt(value.count),
+                 Text.translate("tooltip.createdelight.order.tier." + value.minQuality))
+            text.add(tmp)
+        })
     })
 })
