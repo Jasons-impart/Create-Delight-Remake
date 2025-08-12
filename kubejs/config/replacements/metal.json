@@ -1,0 +1,14 @@
+[
+    {
+        "to_item": "minecraft:oak_log",
+        "from_items": {
+            "minecraft:spruce_log":  "minecraft:building_blocks",
+            "minecraft:jungle_log":  "minecraft:building_blocks",
+            "minecraft:birch_log":  "minecraft:building_blocks",
+            "minecraft:acacia_log":  "minecraft:building_blocks",
+            "minecraft:dark_oak_log":  "minecraft:building_blocks",
+            "minecraft:mangrove_log":  "minecraft:building_blocks",
+            "minecraft:cherry_log": "minecraft:building_blocks"
+        }
+    }
+]
