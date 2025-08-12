@@ -675,5 +675,13 @@
     "createdelight.effect.charge.name": "充能",
     "createdelight.effect.charge.tooltip": "攻击伤害增加§e%s§r，当且仅当消耗了武器中§e%s§r点电量",
     "tetra.stats.createdelight:charge": "充能",
-    "tetra.stats.createdelight:charge.tooltip_short": "消耗武器中的能量，造成伤害增加"
+    "tetra.stats.createdelight:charge.tooltip_short": "消耗武器中的能量，造成伤害增加",
+
+
+    "tooltip.createdelight.order.entries.food": "食物",
+    "tooltip.createdelight.order.entries.fast_food": "快餐",
+    "tooltip.createdelight.order.entries.burger": "汉堡",
+    "tooltip.createdelight.order.tier.1": "§a一般质量",
+    "tooltip.createdelight.order.tier.2": "§e中质量",
+    "tooltip.createdelight.order.tier.3": "§c高质量"
 }
