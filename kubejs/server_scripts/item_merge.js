@@ -25,12 +25,15 @@ ServerEvents.tags('minecraft:item', event => {
             // console.log("azdev: from_item: " + from_item)
             let tags = Item.of(from_item).getTags().toList()
             // console.log(tags)
-            tags.forEach(tag => {
-                // console.log("azdev: ")
-                // console.log(tag)
-                // console.log(tag.location())
-                event.add(tag.location(), to_item)
-            })
+            if (tags.length > 0) {
+                tags.forEach(tag => {
+                    // console.log("azdev: ")
+                    // console.log(tag)
+                    // console.log(tag.location())
+                    event.add(tag.location(), to_item)
+                })
+                event.removeAllTagsFrom(from_item)
+            }
         })
     })
 })

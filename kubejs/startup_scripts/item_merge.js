@@ -27,6 +27,7 @@ all_replacement_json_file.forEach(file => {
             let from_items = from_item_infos.keySet()
             from_items.forEach(from_item => {
                 let creative_tab = String(from_item_infos.getAsJsonPrimitive(from_item))
+                // 这里getAsJsonPrimitive得到的字符串会多出来 ""，因此需要用substring去掉，避免后续操作出问题
                 creative_tab = creative_tab.substring(1, creative_tab.length - 1)
                 // console.log("Azdev: creative_tab: " + creative_tab)
                 // console.log("Azdev: typeof" + typeof(creative_tab))
