@@ -133,6 +133,13 @@
 						"item": "iceandfire:dragonforge_fire_brick",
 						"count": 8
 					}
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+						"item": "createdelightcore:fire_lily_cluster",
+						"count": 2
+					}
 				}
 			],
 			"max_wave_time": 1200,
