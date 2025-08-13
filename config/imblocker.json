@@ -16,7 +16,11 @@
       "net.minecraft.client.gui.screens.OptionsScreen",
       "net.minecraftforge.client.gui.ModListScreen"
     ],
-    "commandInputMode": "IM_ENG_STATE"
+    "commandInputMode": "IM_ENG_STATE",
+    "primaryEnglishState": "CJK"
+  },
+  "advanceSettings": {
+    "enableCharSimulation": false
   },
   "windowsCompatibilitySettings": {
     "enableConversionStatusApi": true,
