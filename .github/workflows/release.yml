@@ -115,7 +115,7 @@ jobs:
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
-          sed -i -r 's/^title=(.*)/title=\1 | 版本\"$MODPACK_VERSION\"/' ${{ github.workspace }}/kubejs/config/client.properties
+          sed -i "s/^title=\(.*\)/title=\1 | 版本\"$MODPACK_VERSION\"/" ${{ github.workspace }}/kubejs/config/client.properties
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
@@ -318,7 +318,7 @@ jobs:
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
-          sed -i -r 's/^title=(.*)/title=\1 | 版本\"$MODPACK_VERSION\" (patched)/' kubejs/config/client.properties
+          sed -i "s/^title=\(.*\)/title=\1 | 版本\"$MODPACK_VERSION\" (patch)/" kubejs/config/client.properties
           grep 'modpack' config/bcc-common.toml
       - name: 准备补丁文件
         run: |
