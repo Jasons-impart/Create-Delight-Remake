@@ -35,11 +35,8 @@ ServerEvents.recipes(e => {
         ], "2x casualness_delight:phantom_puff", 1.0, 200
     ).id("casualness_delight:cooking/phantom_puff")
     // 奶酪相关
-    cutting(e, "casualness_delight:cheese_wheel", [["ad_astra:cheese", 7]])
-    e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
-    e.replaceOutput({ mod: "vintagedelight" }, "vintagedelight:cheese_slice", "ad_astra:cheese")
     combination(e, [
         "create:dough",
         "minecraft:carrot",
@@ -83,18 +80,6 @@ BlockEvents.rightClicked(e => {
             let bites = parseInt(prop.get("bites"))
             if (bites != 3) {
                 prop.put("bites", (bites + 1).toString())
-                block.set(block.id, prop)
-            }
-            else
-                block.set("air")
-            block.popItem("ad_astra:cheese")
-            e.cancel()
-        }    
-        else if (block.id === "brewinandchewin:flaxen_cheese_wheel") {
-            let prop = block.properties
-            let servings = parseInt(prop.get("servings"))
-            if (servings != 0) {
-                prop.put("servings", (servings - 1).toString())
                 block.set(block.id, prop)
             }
             else

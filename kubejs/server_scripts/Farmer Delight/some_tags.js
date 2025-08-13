@@ -132,8 +132,7 @@ ServerEvents.tags("item", e => {
     ])
     // 奶酪
     e.add("forge:cheese", [
-        "ad_astra:cheese",
-        "casualness_delight:cheese_wheel_slice"
+        "ad_astra:cheese"
     ])
     // 黄瓜
     e.add("culturaldelights:cucumbers", [
@@ -189,10 +188,6 @@ ServerEvents.tags("item", e => {
         "mynethersdelight:hoglin_sausage",
         "butchercraft:sausage",
         "butchercraft:cooked_sausage",
-        "festival_delicacies:rice",
-        "culturaldelights:cucumber",
-        "culturaldelights:cucumber_seeds",
-        "corn_delight:corn_seeds",
         "corn_delight:corn",
         "corn_delight:tortilla",
         "refurbished_furniture:knife",

@@ -1,0 +1,42 @@
+[
+    {
+        "matchItems": [
+            "miners_delight:squid"
+        ],
+        "resultItems": "culturaldelights:squid"
+    },
+    {
+        "matchItems": [
+            "miners_delight:glow_squid"
+        ],
+        "resultItems": "culturaldelights:glow_squid"
+    },
+    {
+        "matchItems": [
+            "miners_delight:baked_squid"
+        ],
+        "resultItems": "culturaldelights:cooked_squid"
+    },
+    {
+        "matchItems": [
+            "miners_delight:tentacles",
+            "crabbersdelight:raw_squid_tentacles",
+            "culturaldelights:raw_calamari"
+        ],
+        "resultItems": "oceanic_delight:squid_tentacles"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:raw_glow_squid_tentacles"
+        ],
+        "resultItems": "oceanic_delight:glow_squid_tentacles"
+    },
+    {
+        "matchItems": [
+            "crabbersdelight:cooked_squid_tentacles",
+            "miners_delight:baked_tentacles",
+            "culturaldelights:cooked_calamari"
+        ],
+        "resultItems": "oceanic_delight:grilled_squid_tentacles"
+    }
+]

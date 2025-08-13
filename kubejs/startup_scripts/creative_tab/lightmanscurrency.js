@@ -6,12 +6,7 @@ StartupEvents.modifyCreativeTab("lightmanscurrency:machines", e => {
   })
 StartupEvents.modifyCreativeTab("lightmanscurrency:coins", e => {
   e.remove([
-    'lightmanscurrency:coin_copper',
-    'lightmanscurrency:coin_iron',
-    'lightmanscurrency:coin_gold',
-    'lightmanscurrency:coin_emerald',
     'lightmanscurrency:coin_diamond',
-    'lightmanscurrency:coin_netherite',
     "lightmanscurrency:coinpile_copper",
     "lightmanscurrency:coinpile_iron",
     "lightmanscurrency:coinpile_gold",

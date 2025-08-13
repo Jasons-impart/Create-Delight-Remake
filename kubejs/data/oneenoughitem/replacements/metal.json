@@ -1,0 +1,81 @@
+[
+    {
+        "matchItems": [
+            "ad_astra:iron_plate"
+        ],
+        "resultItems": "create:iron_sheet"
+    },
+    {
+        "matchItems": [
+            "ad_astra:iron_rod"
+        ],
+        "resultItems": "createaddition:iron_rod"
+    },
+    {
+        "matchItems": [
+            "create_new_age:copper_wire"
+        ],
+        "resultItems": "createaddition:copper_wire" 
+    },
+    {
+        "matchItems": [
+            "createbigcannons:molten_bronze_bucket"
+        ],
+        "resultItems": "createmetallurgy:molten_bronze_bucket"
+    },
+    {
+        "matchItems": [
+            "iceandfire:copper_nugget"
+        ],
+        "resultItems": "create:copper_nugget"
+    },
+    {
+        "matchItems": [
+            "createbigcannons:molten_steel_bucket"
+        ],
+        "resultItems": "createmetallurgy:molten_steel_bucket"
+    },
+    {
+        "matchItems": [
+            "ad_astra:steel_ingot"
+        ],
+        "resultItems": "createmetallurgy:steel_ingot"
+    },
+    {
+        "matchItems": [
+            "ad_astra:steel_block"
+        ],
+        "resultItems": "createmetallurgy:steel_block"
+    },
+    {
+        "matchItems": [
+            "ad_astra:steel_rod"
+        ],
+        "resultItems": "vintageimprovements:steel_rod"
+    },
+    {
+        "matchItems": [
+            "createdeco:zinc_sheet",
+            "vintageimprovements:zinc_sheet"
+        ],
+        "resultItems": "createaddition:zinc_sheet"
+    },
+    {
+        "matchItems": [
+            "createdeco:andesite_sheet"
+        ],
+        "resultItems": "vintageimprovements:andesite_sheet"
+    },
+    {
+        "matchItems": [
+            "createdeco:netherite_sheet"
+        ],
+        "resultItems": "vintageimprovements:netherite_sheet"
+    },
+    {
+        "matchItems": [
+            "create_sa:zinc_handle"
+        ],
+        "resultItems": "vintageimprovements:zinc_rod"
+    }
+]
