@@ -329,3 +329,9 @@
 		#Whether to allow target lock-on when camera is decoupled.
 		decoupled_camera_lock_on = false
 
+	[integrations.curios]
+		#Items that when equipped in a curios slot, trigger the dynamic crosshair in adaptive mode. This config option supports regular expressions. The curios slot must be specified before the expression and is separated by an '@' character. Example: 'ring@angelring:.*_ring' matches 'angelring:diamond_ring' and 'angelring:angel_ring' when equipped in the 'ring' slot.
+		adaptive_crosshair_items = []
+		#Item properties of an item, that when equipped in a curios slot, trigger the dynamic crosshair in adaptive mode. Example: 'necklace@charged'
+		adaptive_crosshair_item_properties = []
+
