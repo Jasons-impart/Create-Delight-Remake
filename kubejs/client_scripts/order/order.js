@@ -9,18 +9,14 @@ ItemEvents.tooltip(e => {
                 let type = tag.location().path.split("/")[1]
                 comp.append(Text.translate("tooltip.createdelight.order.entries." + type))
                 .append('-')
-                .append(Text.translate("tooltip.createdelight.order.tier." + global.Order.getFoodOrderProperty(item, type)))
+                .append(Text.translate("tooltip.createdelight.order.tier." + global.Order.getGoodsOrderProperty(item, type)))
                 .append(' ')
                 added = true
             })
         if (added)
             text.add(comp)
     })
-    e.addAdvanced("minecraft:paper", (item, advanced, text) => {
-        let comp = Component.empty()
-        /**
-         * Item.of('minecraft:paper', '{createdelightOrderInfo:{entries:[{count:70.0d,id:"food",minQuality:0.0d},{count:77.0d,id:"food",minQuality:0.0d}],type:"food"}}')
-         */
+    e.addAdvanced("createdelight:order", (item, advanced, text) => {
         
         /**
          * @type {{count: number, id: string, minQuality: number}[]}

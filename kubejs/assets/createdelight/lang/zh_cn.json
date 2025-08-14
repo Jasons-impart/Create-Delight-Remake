@@ -434,6 +434,7 @@
     "item.createdelight.vermicelli": "挂面",
     "item.createdelight.vinegar_bucket": "醋桶",
     "item.createdelight.waste_paper": "碎纸",
+    "item.createdelight.unopened_order": "未开封的订单",
     "item.createdelight.whipped_cream_bowl": "鲜奶油",
     "item.createdelight.whipped_cream_bucket": "鲜奶油桶",
     "item.createdelight.yorkshire_pudding_and_beef": "牛排配约克郡布丁",
@@ -685,10 +686,16 @@
     "tooltip.createdelight.order.entries.food": "食物",
     "tooltip.createdelight.order.entries.fast_food": "快餐",
     "tooltip.createdelight.order.entries.burger": "汉堡",
+    "tooltip.createdelight.order.entries.sandwich": "三明治",
     "tooltip.createdelight.order.entries.milk_tea": "奶茶",
+    "tooltip.createdelight.order.entries.tea": "茶",
+    "tooltip.createdelight.order.entries.western_wine": "西洋酒",
+    "tooltip.createdelight.order.entries.drink": "饮品",
+    "tooltip.createdelight.order.entries.cookie": "曲奇",
 
     "tooltip.craetedelight.order.entrie": "%s x%s-最低品质：%s",
     
+    "tooltip.createdelight.order.customer.food": "食物采购商",
     "tooltip.createdelight.order.customer.fast_food": "快餐店老板",
 
     "tooltip.createdelight.order.tier.1": "§a一般质量",

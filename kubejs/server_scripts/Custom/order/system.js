@@ -61,7 +61,7 @@ Order.create = function (player) {
                 // 格式: [类型, 数量, 最低品质要求]
                 order.entries.push({
                     id: key,
-                    count: parseInt(amount),
+                    count: parseInt(amount) * 4,
                     minQuality: Math.min(3, Math.max(minQuality, 1))
                 });
                 count++;
@@ -91,44 +91,46 @@ Order.convertPackageToItemHandler = function (items) {
 }
 
 /**
- * 检查多个订单是否依次可完成（共用扣减的库存）
- * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}[]} orders 多个订单
- * @param {Internal.IItemHandler} items 玩家物品栏
- * @returns {boolean[]} 每个订单是否满足
+ * 检查多个订单是否依次可完成（共用扣减的库存），返回正负表示匹配与否
+ * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}[]} orders
+ * @param {Internal.IItemHandler} items
+ * @returns {number[]} 正数=完全匹配产出量，0=不完全匹配产出量
  */
 Order.checkAllPackages = function (orders, items) {
     let transfer = Order.convertPackageToItemHandler(items);
     let results = [];
 
     orders.forEach(order => {
-        // entries 已经是 { id, count, minQuality }，直接深拷贝防止修改原数据
-        let needed = order.entries.map(function (e) {
-            return {
-                id: e.id,
-                count: e.count,
-                minQuality: e.minQuality
-            };
-        });
+        let needed = order.entries.map(e => ({
+            id: e.id,
+            count: e.count,
+            minQuality: e.minQuality
+        }));
+
+        let matchedTypes = new Set();
 
         needed.forEach(req => {
             for (let i = 0; i < transfer.getSlots(); i++) {
                 let stack = transfer.getStackInSlot(i);
                 if (!stack.isEmpty() && stack.hasTag("createdelight:order/" + req.id)) {
-                    // 检查品质
-                    let foodQuality = Order.getFoodOrderProperty(stack, req.id) || 0;
+                    let foodQuality = Order.getGoodsOrderProperty(stack, req.id) || 0;
                     if (foodQuality < req.minQuality) continue;
 
                     let take = Math.min(req.count, stack.getCount());
                     if (take > 0) {
-                        stack.shrink(take); // 从可写库存扣除
+                        stack.shrink(take);
                         req.count -= take;
+                        matchedTypes.add(req.id);
                         if (req.count <= 0) break;
                     }
                 }
             }
         });
 
-        results.push(needed.every(n => n.count <= 0));
+        let fullyMatched = needed.every(n => n.count <= 0);
+        let output = matchedTypes.size;
+
+        results.push(fullyMatched ? output : 0);
     });
 
     return results;
@@ -159,7 +161,10 @@ Order.getPlayerRankLevel = function (player) {
  * @param {Internal.ItemStack} item 
  * @param {string} type
  */
-Order.getFoodOrderProperty = function (item, type) {
+Order.getGoodsOrderProperty = function (item, type) {
+    let goodsMap = CreateDelight.goodsMap.get(type)
+    if (goodsMap != null)
+        return goodsMap(item)
     let qualityLevel = $QualityUtils.getQuality(item).level()
     let complexity = $FoodList.getComplexity(new $FoodInstance(item.item))
     if (!item.hasTag("createdelight:order/" + type))
@@ -167,20 +172,19 @@ Order.getFoodOrderProperty = function (item, type) {
     let food = Order.orderProperties[type]
     let level = 0
     for (let index = 0; index < food.diversity.length; index++) {
-        level++
         if (complexity <= food.diversity[index])
             break
+        level++
     }
     return Math.max(Math.min(3, qualityLevel + level), 1)
 }
 
-ItemEvents.rightClicked("minecraft:paper", e => {
+ItemEvents.rightClicked("createdelight:unopened_order", e => {
+    e.player.getItemInHand(e.hand).shrink(1)
+    
     let ret = Order.create(e.player)
     while (ret.entries.length == 0) {
         ret = Order.create(e.player)
     }
-    e.player.tell(ret)
-    e.item.addTagElement("createdelightOrderInfo", ret)
-    
+    e.player.give(Item.of("createdelight:order", 1, {createdelightOrderInfo: ret}))
 })
-
