@@ -26,7 +26,7 @@ ItemEvents.tooltip(e => {
         
         text.add(Text.translate("tooltip.createdelight.order.customer." + type))
         entries.forEach(value => {
-            let tmp = Text.translate("tooltip.craetedelight.order.entrie", 
+            let tmp = Text.translate("tooltip.createdelight.order.entrie", 
                 Text.translate("tooltip.createdelight.order.entries." + value.id),
                 parseInt(value.count),
                  Text.translate("tooltip.createdelight.order.tier." + value.minQuality))

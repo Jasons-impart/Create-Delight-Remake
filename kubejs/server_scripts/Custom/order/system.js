@@ -16,64 +16,86 @@ Order.create = function (player) {
     let level = this.getPlayerRankLevel(player);
     let selected;
 
-    // 按概率选择客户类型
+    // --- 根据 chance 加权随机选择客户类型 ---
+    let weightedList = [];
+    let totalWeight = 0;
+
     for (let key in Order.customerProperties) {
         if (!Object.prototype.hasOwnProperty.call(Order.customerProperties, key)) continue;
         let element = Order.customerProperties[key];
-        let chance = Math.sqrt(level) / Math.sqrt(5) * 0.8 * element.chance; // 5 = maxLevel
-        if (Utils.random.nextFloat() <= chance) {
-            selected = element;
-            order.type = key;
-            break;
+        let weight = Math.sqrt(level) / Math.sqrt(5) * 0.8 * element.chance;
+        if (weight > 0) {
+            let entry = { key: key, element: element, weight: weight };
+            weightedList.push(entry);
+            totalWeight += weight;
+        }
+    }
+
+    if (weightedList.length > 0) {
+        let r = Utils.random.nextFloat() * totalWeight;
+        for (let i = 0; i < weightedList.length; i++) {
+            r -= weightedList[i].weight;
+            if (r <= 0) {
+                selected = weightedList[i].element;
+                order.type = weightedList[i].key;
+                break;
+            }
         }
     }
 
     if (!selected) return order;
 
-    // 计算总权重
-    let allWeight = 0;
+    // --- 准备条目权重列表 ---
+    const entriesList = [];
+    let totalEntryWeight = 0;
     for (const key in selected.entries) {
         if (!Object.prototype.hasOwnProperty.call(selected.entries, key)) continue;
         let entryVal = selected.entries[key];
-        let weight = Array.isArray(entryVal) ? entryVal[0] : entryVal; // 兼容旧写法
-        allWeight += weight;
+        let weight, minQuality;
+        if (Array.isArray(entryVal)) {
+            [weight, minQuality] = entryVal;
+        } else {
+            weight = entryVal;
+            minQuality = 0;
+        }
+        let entry = { key: key, weight: weight, minQuality: minQuality };
+        entriesList.push(entry);
+        totalEntryWeight += weight;
     }
 
+    // --- 生成订单条目，按加权随机选择 ---
     let count = 0;
-    let canceled = false
-    while (count < selected.max_count && !canceled) {
-        for (const key in selected.entries) {
-            if (!Object.prototype.hasOwnProperty.call(selected.entries, key)) continue;
-            let entryVal = selected.entries[key];
-            let weight, minQuality;
-            if (Array.isArray(entryVal)) {
-                [weight, minQuality] = entryVal;
-            } else {
-                weight = entryVal;
-                minQuality = 0; // 旧写法默认无品质要求
-            }
+    let canceled = false;
+    let bonus = Math.sqrt(level);
 
-            let bonus = Math.sqrt(level);
-            if (
-                Utils.random.nextFloat() < weight / allWeight
-            ) {
-                let amount = Order.orderProperties[key].base_count * Utils.random.nextFloat(1, bonus * 1.25);
-                // 格式: [类型, 数量, 最低品质要求]
-                order.entries.push({
-                    id: key,
-                    count: parseInt(amount) * 4,
-                    minQuality: Math.min(3, Math.max(minQuality, 1))
-                });
-                count++;
-                if (Utils.random.nextFloat() >= selected.base_continue_rate * bonus)
-                    canceled = true
-                if (count >= selected.max_count) break;
+    while (count < selected.max_count && !canceled && totalEntryWeight > 0) {
+        // 随机选一个条目
+        let r = Utils.random.nextFloat() * totalEntryWeight;
+        let chosenEntry;
+        for (let i = 0; i < entriesList.length; i++) {
+            r -= entriesList[i].weight;
+            if (r <= 0) {
+                chosenEntry = entriesList[i];
+                break;
             }
         }
+
+        if (!chosenEntry) break; // 防护
+
+        let amount = Order.orderProperties[chosenEntry.key].base_count * Utils.random.nextFloat(1, bonus * 1.25);
+        order.entries.push({
+            id: chosenEntry.key,
+            count: parseInt(amount) * 4,
+            minQuality: Math.min(3, Math.max(chosenEntry.minQuality, 1))
+        });
+
+        count++;
+        if (Utils.random.nextFloat() >= selected.base_continue_rate * bonus) canceled = true;
     }
 
     return order;
 };
+
 
 
 /**
@@ -181,10 +203,10 @@ Order.getGoodsOrderProperty = function (item, type) {
 
 ItemEvents.rightClicked("createdelight:unopened_order", e => {
     e.player.getItemInHand(e.hand).shrink(1)
-    
+
     let ret = Order.create(e.player)
     while (ret.entries.length == 0) {
         ret = Order.create(e.player)
     }
-    e.player.give(Item.of("createdelight:order", 1, {createdelightOrderInfo: ret}))
+    e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
 })

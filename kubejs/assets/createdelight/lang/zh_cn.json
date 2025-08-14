@@ -4,7 +4,6 @@
     "itemGroup.createdelight.machine": "齿轮盛宴 | 机器",
     "itemGroup.createdelight.ore": "齿轮盛宴 | 矿物",
     "itemGroup.createdelight.misc": "齿轮盛宴 | 杂项",
-
     "block.createdelight.adzuki_beans": "红豆",
     "block.createdelight.artemisia_argyi": "艾草",
     "block.createdelight.adzuki_milkshake": "红豆奶昔",
@@ -30,7 +29,7 @@
     "block.createdelight.enriched_sky_stone_block": "富集陨石",
     "block.createdelight.espresso_fluid": "意式浓缩",
     "block.createdelight.fire_dragon_blood": "火龙血",
-    "block.createdelight.fragment_of_border":"边境碎块",
+    "block.createdelight.fragment_of_border": "边境碎块",
     "block.createdelight.fuel_mixtures": "混合燃料",
     "block.createdelight.ice_dragon_blood": "冰龙血",
     "block.createdelight.iron_casing": "铁外壳",
@@ -94,7 +93,6 @@
     "block.createdelight.light_crude_oil": "轻质原油",
     "block.createdelight.ethylene_fluid": "液态乙烯",
     "block.createdelight.lubricating_oil": "润滑油",
-
     "createdelight.fire_dragon_eyes": "§4火龙试炼",
     "createdelight.ice_dragon": "§9冰龙试炼",
     "createdelight.lightning_dragon": "§5雷龙试炼",
@@ -107,7 +105,6 @@
     "createdelight.a_place_of_melting": "§2熔蚀之地",
     "createdelight.the_ancient_end": "§2远古终焉",
     "createdelight.the_legacy_of_the_abyss": "§1自噬之潮",
-
     "fluid.createdelight.adzuki_milkshake": "红豆奶昔",
     "fluid.createdelight.affogato_fluid": "阿芙佳朵",
     "fluid.createdelight.americano_fluid": "美式",
@@ -115,7 +112,6 @@
     "fluid.createdelight.cake_batter": "蛋糕糊",
     "fluid.createdelight.cappuccino_fluid": "卡布奇诺",
     "fluid.createdelight.chocolate_milkshake": "巧克力奶昔",
-    
     "fluid.createdelight.pumpkin_milkshake": "南瓜奶昔",
     "fluid.createdelight.beet_milkshake": "甜菜根奶昔",
     "fluid.createdelight.apple_milkshake": "苹果奶昔",
@@ -210,9 +206,7 @@
     "fluid.createdelight.light_crude_oil": "轻质原油",
     "fluid.createdelight.ethylene_fluid": "液态乙烯",
     "fluid.createdelight.lubricating_oil": "润滑油",
-
     "fluid.createdelight.dragon_breath_soda": "龙息汽水",
-
     "item.createdelight.accumulation_processor_inscribed": "待压印的累加处理器",
     "item.createdelight.adzuki_beans_seed": "红豆",
     "item.createdelight.artemisia_argyi_seed": "艾草种子",
@@ -222,8 +216,8 @@
     "item.createdelight.bayberry_cookie_dough": "杨梅曲奇面团",
     "item.createdelight.bleak_electron_tube": "超频电子管",
     "item.createdelight.board_noodles": "板面",
-    "item.createdelight.boiling_water_cabbage":"清水白菜",
-    "item.createdelight.braised_intestines_in_brown_sauce":"九转大肠",
+    "item.createdelight.boiling_water_cabbage": "清水白菜",
+    "item.createdelight.braised_intestines_in_brown_sauce": "九转大肠",
     "item.createdelight.bronze_ingot": "青铜锭",
     "item.createdelight.bronze_nugget": "青铜粒",
     "item.createdelight.butter": "黄油",
@@ -237,7 +231,6 @@
     "item.createdelight.lime_milkshake_bucket": "青柠奶昔桶",
     "item.createdelight.sweetberry_milkshake_bucket": "甜浆果奶昔桶",
     "item.createdelight.sweetberry_milkshake": "甜浆果奶昔",
-    
     "fluid.createdelight.pumpkin_milkshake_bucket": "南瓜奶昔桶",
     "fluid.createdelight.beet_milkshake_bucket": "甜菜根奶昔桶",
     "fluid.createdelight.apple_milkshake_bucket": "苹果奶昔桶",
@@ -487,19 +480,16 @@
     "item.createdelight.air_chestplate": "空气胸甲",
     "item.createdelight.air_leggings": "空气护腿",
     "item.createdelight.air_boots": "空气靴子",
-
     "item.createdelight.smithing_template.dread_upgrade.additions_slot_description": "放入悚怖钢",
     "item.createdelight.smithing_template.dread_upgrade.applies_to": "龙钢装备",
     "item.createdelight.smithing_template.dread_upgrade.base_slot_description": "放入龙钢装备",
     "item.createdelight.smithing_template.dread_upgrade.ingredients": "悚怖钢",
-
     "createdelight.butchery": "屠宰室",
     "createdelight.alloy_electric_furnace": "合金电炉",
     "createdelight.big_centrifugation": "大型离心机",
     "createdelight.small_centrifugation": "小型离心机",
     "createdelight.fission_react": "裂变反应堆",
     "createdelight.electrolyzer": "电解",
-
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
     "message.createdelight.conventcommand": "§6潜行+右键§r获取物品ID\n输入§6-kli§r删除所有掉落物\n输入§6-efg§r获得[夜视 力量 抗性]buff\n输入§6-efc§r清除自身所有buff",
@@ -520,7 +510,6 @@
     "message.createdelight.sell_bin_hint": "你出售了出货箱（位于（%s））中的内容，你获得了%s",
     "message.createdelight.first_summon_end_dragon": "§4PS：末影龙召唤过程中摧毁水晶会中止召唤进程， 末影龙的初始召唤如果被中止末地传送门也不会开启",
     "message.createdelight.pipe": "流体管道至少需要两个开口！",
-    
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
     "tooltip.createdelight.hold_ctrl_to_see_more_info": "§r§8按住 [§r§7Ctrl§r§8] 查看如何使用§r",
@@ -585,8 +574,6 @@
     "tooltip.createdelight.ctrl_keg": "§7在周围§b两格§7内放置§b热源§7和§b冷源§7以调整温度",
     "tooltip.createdelight.ctrl_oven": "§b下面§7放置§b烈焰人燃烧室§7以§b增加热量§7，§b侧面§7放置§b烤箱用鼓风机§7以§b增加风量§7，最大尺寸§b3*7*3",
     "tooltip.createdelight.ctrl_oven_fan": "§7放置在§b烤箱侧面§7以增加烤箱§b风量",
-
-
     "createdelight.tip.brass": "本包的最初的黄铜配方已被修改，你需要先使用熔铸盆融化金属后才能进行合金。当然你也可以选择使用粒来合成。",
     "createdelight.tip.foundry_basin_output": "熔铸盆拥有与工作盆类似的自动输出功能，但你需要在输出的面使用扳手右击才能使其开口。",
     "createdelight.tip.foundry_basin_working": "熔铸盆上方放置熔铸盖可进行金属熔化，放置玻璃熔铸盖和熔铸搅拌器可进行金属合金。",
@@ -632,11 +619,6 @@
     "createdelight.tip.sulfur_obtain": "关于最初始的硫磺获取，可以考虑查看硫磺粒的获取方式。",
     "createdelight.tip.multiblock_build": "当背包中有足够的材料时，使用多方块搭建器右击多方块的控制器可以消耗材料，并直接搭建出整个多方块。",
     "createdelight.tip.click_multiblock_comtroller": "shift右击多方块的控制器可以显示该多方块结构的预览。",
-
-    
-    
-
-    
     "createdelight.effect.forstall.name": "先发制人",
     "createdelight.effect.forstall.tooltip": "下一次造成的伤害变为§e%s§r倍当§e%s§r秒不攻击时",
     "tetra.stats.createdelight:forstall": "先发制人",
@@ -681,8 +663,6 @@
     "createdelight.effect.charge.tooltip": "攻击伤害增加§e%s§r，当且仅当消耗了武器中§e%s§r点电量",
     "tetra.stats.createdelight:charge": "充能",
     "tetra.stats.createdelight:charge.tooltip_short": "消耗武器中的能量，造成伤害增加",
-
-
     "tooltip.createdelight.order.entries.food": "食物",
     "tooltip.createdelight.order.entries.fast_food": "快餐",
     "tooltip.createdelight.order.entries.burger": "汉堡",
@@ -692,12 +672,30 @@
     "tooltip.createdelight.order.entries.western_wine": "西洋酒",
     "tooltip.createdelight.order.entries.drink": "饮品",
     "tooltip.createdelight.order.entries.cookie": "曲奇",
+    "tooltip.createdelight.order.entries.ice_cream": "冰淇淋",
+    "tooltip.createdelight.order.entries.fried_food": "炸物",
+    "tooltip.createdelight.order.entries.bread": "面包",
+    "tooltip.createdelight.order.entries.fruit": "水果",
+    "tooltip.createdelight.order.entries.vegetable": "蔬菜",
+    "tooltip.createdelight.order.entries.crop": "作物",
+    "tooltip.createdelight.order.entries.jam": "果酱",
+    "tooltip.createdelight.order.entries.jello": "果冻",
+    "tooltip.createdelight.order.entries.gummy": "软糖",
 
-    "tooltip.craetedelight.order.entrie": "%s x%s-最低品质：%s",
-    
+    "tooltip.createdelight.order.entrie": "%s x%s-最低品质：%s",
+
     "tooltip.createdelight.order.customer.food": "食物采购商",
     "tooltip.createdelight.order.customer.fast_food": "快餐店老板",
-
+    "tooltip.createdelight.order.customer.school_cafeteria": "学校食堂",
+    "tooltip.createdelight.order.customer.cafe": "咖啡厅",
+    "tooltip.createdelight.order.customer.fast_food_chain": "快餐连锁店",
+    "tooltip.createdelight.order.customer.high_end_restaurant": "高级餐厅",
+    "tooltip.createdelight.order.customer.convenience_store": "便利店",
+    "tooltip.createdelight.order.customer.dessert_factory": "甜品加工厂",
+    "tooltip.createdelight.order.customer.fitness_snack_bar": "健身房零食吧",
+    "tooltip.createdelight.order.customer.ice_cream_shop": "冰淇淋店",
+    "tooltip.createdelight.order.customer.home_meal_delivery": "家庭餐饮配送",
+    "tooltip.createdelight.order.customer.nightclub_bar": "夜店酒吧",
     "tooltip.createdelight.order.tier.1": "§a一般质量",
     "tooltip.createdelight.order.tier.2": "§e中质量",
     "tooltip.createdelight.order.tier.3": "§c高质量"
