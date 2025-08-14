@@ -2,9 +2,6 @@
 #You can add more entries using KubeJS
 #https://github.com/tom5454/Create-Ore-Excavation#kubejs
 importantInfo = true
-#Weight value for empty chunk
-#Range: > 1
-generationChance = 5000
 #Finite vein base amount
 #Range: > 1
 finiteAmountBase = 8000
@@ -13,4 +10,13 @@ defaultInfinite = true
 #Max number of extractor per ore vein, Set to 0 for infinite
 #Range: 0 ~ 64
 maxExtractorsPerVein = 0
+#Vein Finder 'Found Nearby' range in chunks
+#Range: 1 ~ 8
+veinFinderNear = 1
+#Vein Finder accuracy for 'Found traces of ...'
+#Range: 1 ~ 1000
+veinFinderFar = 25
+#Vein Finder use cooldown in ticks
+#Range: 10 ~ 1000
+veinFinderCd = 100
 

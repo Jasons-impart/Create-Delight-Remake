@@ -1,8 +1,7 @@
 const $ACEntityRegistry = Java.loadClass("com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry")
 const $ForgeEnergyRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.ForgeEnergyRecipeCapability")
 const $FluidRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capability.recipe.FluidRecipeCapability")
-
-
+const $SwitchWidget = Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SwitchWidget")
 /**
  * 
  * @param {Internal.MBDMachine} machine 
@@ -30,7 +29,20 @@ function CreateNuclearExplodeFromReactor(machine) {
     explosion.setSize(Math.sqrt((fission_fuel_assembly_count / 9 + 1)))
     machine.level.addFreshEntity(explosion)
 }
-
+MBDMachineEvents.onBeforeRecipeWorking("createdelight:fission_reactor", e => {
+    const event = e.event
+    const {machine} = event
+    if (!machine.customData.getBoolean("reactor_switch")) {
+        event.setCanceled(true)
+    }
+})
+MBDMachineEvents.onFuelRecipeModify("createdelight:fission_reactor", e => {
+    const event = e.event
+    const {machine} = event
+    if (!machine.customData.getBoolean("reactor_switch")) {
+        event.setCanceled(true)
+    }
+})
 MBDMachineEvents.onRecipeWorking("createdelight:fission_reactor", e => {
     const event = e.event
     const { machine, recipe } = event
@@ -40,15 +52,6 @@ MBDMachineEvents.onRecipeWorking("createdelight:fission_reactor", e => {
     let multiblock = machine
     let customData = multiblock.customData
     const { x, y, z } = multiblock.pos
-    multiblock.level.getEntitiesWithin(AABB.of(x + 3, y + 1, z + 3, x - 3, y - 1, z - 3)).forEach(entity => {
-        // console.log("sth")
-        if (entity.type == "minecraft:player") {
-            if (multiblock.level.time % 20 == 0) {
-                entity.setStatusMessage(Component.translate("message.createdelight.degree_of_damage",
-                    customData.getDouble("degree_of_damage")))
-            }
-        }
-    })
     if (!customData.getDouble("degree_of_damage"))
         customData.putDouble("degree_of_damage", 0)
     if (customData.getDouble("degree_of_damage") > 100) {
@@ -68,6 +71,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:fission_reactor", e => {
 MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     let event = e.event
     const { machine, recipe } = event
+
     // console.log(`fluid.getFluidInTank(1).amount: ${fluid.getFluidInTank(1).amount}, capacity: ${fluid.getTankCapacity(1)}`)
     if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
         let recipeLogic = machine.recipeLogic
@@ -81,13 +85,13 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
                 if (maxEnergyOutput < con.getContent())
                     maxEnergyOutput = con.getContent()
             })
-            
+
             mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
                 if (maxFluidOutput < con.getContent().getAmount())
                     maxFluidOutput = con.getContent().getAmount()
             })
         })
-        
+
         //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty &&
             fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1) &&
@@ -210,5 +214,26 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
         }
     }
 })
+MBDMachineEvents.onOpenUI("createdelight:fission_reactor", e => {
+    let event = e.event
+    const { machine } = event
 
-
+})
+MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
+    let event = e.event
+    const { machine, root } = event
+    
+    let label = root.getFirstWidgetById("degree_of_damage")
+    /**@type {SwitchWidget} */
+    let button = root.getFirstWidgetById("reactor_switch")
+    
+    if (button.pressed != machine.customData.getBoolean("reactor_switch"))
+        button.setPressed(machine.customData.getBoolean("reactor_switch"))
+    button.setOnPressCallback(data => {
+        if (!data.isRemote) {
+            machine.customData.putBoolean("reactor_switch", button.pressed)
+        }
+    })
+    label.setTextProvider(() => Component.translate("message.createdelight.degree_of_damage",
+        parseInt(machine.customData.getDouble("degree_of_damage") * 100) / 100))
+})

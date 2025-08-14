@@ -256,6 +256,14 @@
 	#Default: 30
 	maximumDuration=30
 	
+	#Whether the players are allowed to bid on their own Auctions
+	#Default: false
+	ownerBidding=false
+	
+	#Whether players are allowed to bid on an auction when they were also the previous bidder
+	#Default: false
+	doubleBidding=false
+	
 #Bank Account Settings
 [bank_accounts]
 	#The interest rate that bank accounts will earn just by existing.

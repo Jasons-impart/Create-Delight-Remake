@@ -7,8 +7,6 @@ ServerEvents.recipes(e => {
    "create_oppenheimered:mixing/ice_cream_chocolate",
    "create_oppenheimered:mixing/ice_cream_sweetberry",
   ])
-  //焦糖
-  e.replaceInput({mod: "alexscaves"}, 'alexscaves:caramel', 'create_confectionery:bar_of_caramel')
   //焦糖苹果
   e.recipes.kubejs.shapeless(
     "alexscaves:caramel_apple",
@@ -174,8 +172,6 @@ ServerEvents.recipes(e => {
     'alexscaves:cookie_block'
   ).id("alexscaves:cutting/cookie_block")
   //统一拐杖糖
-  e.replaceInput({ input: "alexscaves:candy_cane", not: {type: "minecraft:smithing_trim"}}, "alexscaves:candy_cane", "#createdelight:candy_cane")
-  e.replaceOutput({}, "create_confectionery:candy_cane", "alexscaves:candy_cane")
   e.recipes.create.mixing("alexscaves:candy_cane", [
       Fluid.water(250),
       "4x minecraft:sugar",

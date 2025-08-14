@@ -33,6 +33,4 @@ ServerEvents.recipes(e => {
         'createdeco:industrial_iron_hull',
         'createdeco:zinc_hull'
     ])
-    e.replaceInput({input: "#createdeco:internal/plates/zinc_plates"}, "#createdeco:internal/plates/zinc_plates", "#forge:plates/zinc")
-    e.replaceInput({input: "#createdeco:internal/plates/andesite_plates"}, "#createdeco:internal/plates/andesite_plates", "#forge:plates/andesite")
 })

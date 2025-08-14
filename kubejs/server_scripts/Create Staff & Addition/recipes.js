@@ -14,8 +14,6 @@ ServerEvents.recipes(e => {
         "create_sa:zinc_handle_recipe",
         "create_sa:block_picker_recipe"
     ])
-    e.replaceInput({mod: "create_sa" }, 'create_sa:zinc_handle', '#forge:rods/zinc')
-    e.replaceInput({id: "create_sa:copper_magnet_recipe"}, "minecraft:netherite_ingot", "alexscaves_torpedoes:pocket_magnet")
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly(
         [
