@@ -337,17 +337,92 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("createdelight:order/gummy",
         "#collectorsreap:gummies"
     )
+    e.add("createdelight:order/coffee",
+        "createcafe:iced_coffee",
+        "createcafe:iced_coffee_milk",
+        "createcafe:strawberry_iced_coffee",
+        "createcafe:vanilla_iced_coffee",
+        "createcafe:mint_iced_coffee",
+        "createcafe:caramel_iced_coffee",
+        "createcafe:banana_iced_coffee",
+        "youkaishomecoming:affogato",
+        "youkaishomecoming:con_panna",
+        "youkaishomecoming:cappuccino",
+        "youkaishomecoming:macchiato",
+        "youkaishomecoming:mocha",
+        "trailandtales_delight:ancient_coffee"
+    )
     e.add("createdelight:order/drink",
         "#createdelight:order/western_wine",
         "#createdelight:order/tea",
         "#createdelight:order/milk_tea",
-        "createdelight:order/western_wine"
+        "#createdelight:order/coffee"
     )
     e.add("createdelight:order/food",
         "#createdelight:order/fast_food",
         "#createdelight:order/cookie",
         "#createdelight:order/sandwich",
-        "createdelight:order/fried_food"
+        "createdelight:order/fried_food",
+        "#createdelight:order/bread"
+    )
+    e.add("createdelight:order/snack",
+        "#createdelight:order/jello",
+        "#createdelight:order/ice_cream",
+        "#createdelight:order/cookie"
+
+    )
+    e.add("createdelight:order/sushi",
+        "createdelight:fugu_roll",
+        "culturaldelights:egg_roll",
+        "alexscaves:deep_sea_sushi_roll",
+        "culturaldelights:pufferfish_roll",
+        "culturaldelights:chicken_roll_slice",
+        "culturaldelights:tropical_roll",
+        "culturaldelights:calamari_roll",
+        "farmersdelight:salmon_roll",
+        "farmersdelight:cod_roll",
+        "farmersdelight:kelp_roll",
+        "farmersdelight:kelp_roll_slice",
+        "oceanic_delight:shrimp_roll",
+        "oceanic_delight:sea_pickle_roll_slice",
+        "oceanic_delight:fish_egg_roll_slice",
+        "silentsdelight:sculk_sensor_tendril_roll",
+        "silentsdelight:sculk_sensor_tendril_roll_slice",
+        "collectorsreap:uni_roll",
+        "collectorsreap:clam_roll",
+        "cavedelight:trilocaris_roll",
+        "youkaishomecoming:egg_nigiri",
+        "youkaishomecoming:tuna_nigiri",
+        "youkaishomecoming:otoro_nigiri",
+        "youkaishomecoming:flesh_roll",
+        "oceanic_delight:sea_pickle_roll_slice",
+        "oceanic_delight:sea_pickle_roll",
+        "oceanic_delight:fish_egg_roll",
+        "oceanic_delight:fish_egg_roll_slice",
+        "youkaishomecoming:shinnko_maki",
+        "youkaishomecoming:shinnko_maki_slice",
+        "youkaishomecoming:kappa_maki",
+        "youkaishomecoming:kappa_maki_slice",
+        "youkaishomecoming:tekka_maki",
+        "youkaishomecoming:roe_california_roll",
+        "youkaishomecoming:roe_california_roll_slice",
+        "youkaishomecoming:salmon_lover_roll",
+        "youkaishomecoming:salmon_lover_roll_slice",
+        "youkaishomecoming:volcano_roll",
+        "youkaishomecoming:volcano_roll_slice",
+        "youkaishomecoming:rainbow_roll",
+        "youkaishomecoming:rainbow_roll_slice",
+        "youkaishomecoming:tekka_maki_slice",
+        "youkaishomecoming:egg_futomaki",
+        "youkaishomecoming:egg_futomaki_slice",
+        "youkaishomecoming:salmon_futomaki",
+        "youkaishomecoming:salmon_futomaki_slice",
+        "youkaishomecoming:rainbow_futomaki",
+        "youkaishomecoming:rainbow_futomaki_slice",
+        "youkaishomecoming:california_roll",
+        "youkaishomecoming:california_roll_slice",
+
+
     )
 
 })
@@ -427,108 +502,62 @@ Order.orderProperties = {
         diversity: [-1, -1, 99, 99],
         base_count: 16
     },
+    coffee: {
+        diversity: [-1, -1, 99, 99],
+        base_count: 32
+    },
+    snack: {
+        diversity: [-1, 0.3, 1, 99],
+        base_count: 32
+    },
+    sushi: {
+        diversity: [-1, 1, 3.5, 99],
+        base_count: 32
+    },
 }
-//应当让概率与稀有度从低到高牌序
+
 Order.customerProperties = {
-    food: {
+    coffee_shop: {
         entries: {
-            food: [1, 1] // [权重，最低品质]
-        },
-        max_count: 2, //单个订单最多包含的货物条目数量
-        base_continue_rate: 0.25, //生成一个条目后生成下一个的概率
-        rarity: "COMMON", //稀有度
-        chance: 1, //本订单生成概率
-        loot_table: ""
-    },
-    fast_food: {
-        entries: {
-            fast_food: [1, 1],
-            milk_tea: [1, 1]
+            coffee: [3, 2],   // 原高→中
+            bread: [2, 1],    // 原中→一般
+            cookie: [1, 1]    // 原中→一般
         },
         max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "UNCOMMON",
-        chance: 0.8,
-        loot_table: ""
-    },
-    school_cafeteria: {
-        entries: {
-            food: [5, 2],      // 主食概率最高
-            drink: [4, 1],     // 饮品略低
-            fruit: [3, 1]      // 水果最少
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "COMMON",
-        chance: 1,
-        loot_table: ""
-    },
-    cafe: {
-        entries: {
-            drink: [6, 2],      // 饮品最高
-            cookie: [4, 2],     // 曲奇中等
-            ice_cream: [3, 1],  // 冰淇淋低
-            bread: [2, 1]       // 面包最少
-        },
-        max_count: 3,
-        base_continue_rate: 0.25,
-        rarity: "UNCOMMON",
-        chance: 0.9,
-        loot_table: ""
-    },
-    fast_food_chain: {
-        entries: {
-            fast_food: [6, 2],   // 快餐最高
-            fried_food: [4, 2],  // 炸物中等
-            drink: [3, 1]        // 饮品最低
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
+        base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.85,
         loot_table: ""
     },
-    high_end_restaurant: {
+    milk_tea_store: {
         entries: {
-            western_wine: [5, 3],  // 西洋酒最高
-            vegetable: [4, 3],     // 蔬菜中等
-            crop: [3, 2]           // 作物最低
-        },
-        max_count: 3,
-        base_continue_rate: 0.2,
-        rarity: "RARE",
-        chance: 0.7,
-        loot_table: ""
-    },
-    convenience_store: {
-        entries: {
-            drink: [6, 1],  // 饮品最高
-            gummy: [4, 1],  // 软糖中等
-            bread: [3, 1]   // 面包最低
+            milk_tea: [3, 2], // 原高→中
+            tea: [2, 1],      // 原中→一般
+            snack: [1, 1]     // 原中→一般
         },
         max_count: 3,
         base_continue_rate: 0.35,
-        rarity: "COMMON",
-        chance: 1,
-        loot_table: ""
-    },
-    dessert_factory: {
-        entries: {
-            jam: [5, 2],    // 果酱最高
-            jello: [4, 2],  // 果冻中等
-            fruit: [3, 2]   // 水果最低
-        },
-        max_count: 3,
-        base_continue_rate: 0.25,
         rarity: "UNCOMMON",
         chance: 0.8,
         loot_table: ""
     },
-    fitness_snack_bar: {
+    western_restaurant: {
         entries: {
-            vegetable: [5, 2],  // 蔬菜高
-            fruit: [5, 2],      // 水果高
-            drink: [3, 2]       // 饮品低
+            western_wine: [3, 2], // 原高→中
+            bread: [2, 2],        // 原高→中
+            vegetable: [1, 1]     // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.45,
+        rarity: "RARE",
+        chance: 0.65,
+        loot_table: ""
+    },
+    ice_cream_vendor: {
+        entries: {
+            ice_cream: [3, 1], // 原中→一般
+            gummy: [2, 1],     // 原中→一般
+            jello: [1, 1]      // 原一般→一般
         },
         max_count: 3,
         base_continue_rate: 0.3,
@@ -536,42 +565,198 @@ Order.customerProperties = {
         chance: 0.9,
         loot_table: ""
     },
-    ice_cream_shop: {
+    fruit_wholesaler: {
         entries: {
-            ice_cream: [6, 2],  // 冰淇淋最高
-            gummy: [4, 2],      // 软糖中
-            cookie: [3, 2]      // 曲奇最低
+            fruit: [3, 1], // 原中→一般
+            crop: [2, 1]   // 原中→一般
         },
-        max_count: 3,
-        base_continue_rate: 0.2,
-        rarity: "RARE",
-        chance: 0.75,
-        loot_table: ""
-    },
-    home_meal_delivery: {
-        entries: {
-            food: [5, 2],   // 食物高
-            drink: [4, 2],  // 饮品中
-            crop: [2, 1]    // 作物低
-        },
-        max_count: 3,
-        base_continue_rate: 0.25,
+        max_count: 2,
+        base_continue_rate: 0.3,
         rarity: "COMMON",
         chance: 0.9,
         loot_table: ""
     },
-    nightclub_bar: {
+    countryside_bakery: {
         entries: {
-            western_wine: [6, 3],  // 西洋酒最高
-            drink: [4, 2],         // 饮品中
-            fried_food: [2, 2]     // 小吃最低
+            bread: [3, 1],   // 原中→一般
+            jam: [2, 1],     // 原中→一般
+            coffee: [1, 1]   // 原一般→一般
         },
         max_count: 3,
-        base_continue_rate: 0.2,
+        base_continue_rate: 0.35,
+        rarity: "COMMON",
+        chance: 0.85,
+        loot_table: ""
+    },
+    campus_store: {
+        entries: {
+            drink: [3, 1],   // 原中→一般
+            snack: [2, 1],   // 原中→一般
+            cookie: [1, 1]   // 原一般→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.35,
+        rarity: "COMMON",
+        chance: 0.95,
+        loot_table: ""
+    },
+    bar_owner: {
+        entries: {
+            western_wine: [3, 2], // 原高→中
+            coffee: [2, 1],       // 原中→一般
+            snack: [1, 1]         // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "UNCOMMON",
+        chance: 0.75,
+        loot_table: ""
+    },
+    breakfast_shop: {
+        entries: {
+            sandwich: [3, 1], // 原中→一般
+            drink: [2, 1],    // 原中→一般
+            coffee: [1, 1]    // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "COMMON",
+        chance: 0.9,
+        loot_table: ""
+    },
+    station_fast_food: {
+        entries: {
+            fast_food: [3, 1],  // 原中→一般
+            fried_food: [2, 1], // 原中→一般
+            drink: [1, 1]       // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.45,
+        rarity: "COMMON",
+        chance: 0.85,
+        loot_table: ""
+    },
+    park_snack_stall: {
+        entries: {
+            fried_food: [3, 1], // 原一般→一般
+            snack: [2, 1],      // 原一般→一般
+            ice_cream: [1, 1]   // 原一般→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.35,
+        rarity: "COMMON",
+        chance: 0.95,
+        loot_table: ""
+    },
+    high_end_dessert_shop: {
+        entries: {
+            cookie: [3, 3],    // 保持高品质
+            jam: [2, 3],       // 保持高品质
+            ice_cream: [1, 3]  // 保持高品质
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
         rarity: "RARE",
-        chance: 0.7,
+        chance: 0.55,
+        loot_table: ""
+    },
+    healthy_restaurant: {
+        entries: {
+            vegetable: [3, 2], // 原高→中
+            fruit: [2, 2],     // 原高→中
+            tea: [1, 1]        // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.35,
+        rarity: "UNCOMMON",
+        chance: 0.75,
+        loot_table: ""
+    },
+    party_catering: {
+        entries: {
+            fast_food: [3, 1],  // 原中→一般
+            drink: [2, 1],      // 原中→一般
+            fried_food: [1, 1]  // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.45,
+        rarity: "UNCOMMON",
+        chance: 0.8,
+        loot_table: ""
+    },
+    night_market_vendor: {
+        entries: {
+            snack: [3, 1],  // 原中→一般
+            fried_food: [2, 1], // 原中→一般
+            gummy: [1, 1]      // 原一般→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "COMMON",
+        chance: 0.9,
+        loot_table: ""
+    },
+    wedding_planner: {
+        entries: {
+            western_wine: [3, 3], // 保持高
+            bread: [2, 3],        // 保持高
+            fruit: [1, 3]         // 保持高
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "EPIC",
+        chance: 0.4,
+        loot_table: ""
+    },
+    farmers_market_vendor: {
+        entries: {
+            crop: [3, 1],  // 原中→一般
+            fruit: [2, 1]  // 原中→一般
+        },
+        max_count: 2,
+        base_continue_rate: 0.3,
+        rarity: "COMMON",
+        chance: 0.95,
+        loot_table: ""
+    },
+    ice_cream_shop: {
+        entries: {
+            ice_cream: [3, 2], // 原高→中
+            jello: [2, 1],     // 原中→一般
+            gummy: [1, 1]      // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.35,
+        rarity: "UNCOMMON",
+        chance: 0.8,
+        loot_table: ""
+    },
+    coffee_chain: {
+        entries: {
+            coffee: [3, 2], // 原高→中
+            cookie: [2, 1], // 原中→一般
+            jam: [1, 1]     // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.45,
+        rarity: "RARE",
+        chance: 0.6,
+        loot_table: ""
+    },
+    kids_playground_store: {
+        entries: {
+            gummy: [3, 1],  // 原一般→一般
+            jello: [2, 1],  // 原一般→一般
+            drink: [1, 1]   // 原中→一般
+        },
+        max_count: 3,
+        base_continue_rate: 0.3,
+        rarity: "COMMON",
+        chance: 0.95,
         loot_table: ""
     }
-}
+};
+
+
 
 Order.rankThreshold = [0, 10, 25, 50, 80, 120]
