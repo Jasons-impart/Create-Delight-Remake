@@ -1,6 +1,6 @@
 {
 	"size": "large",
-	"color": "#000080",
+	"color": "#006400",
 	"waves": [
 		{
 			"entities": [
@@ -13,7 +13,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 3.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -23,7 +23,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -75,7 +75,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 5.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -85,7 +85,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -197,7 +197,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 6.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -207,7 +207,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 1.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -257,7 +257,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 4.5
 				},
 				{
 					"attribute": "generic.armor",
@@ -267,7 +267,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 1.2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -325,12 +325,12 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.0
+					"value": 5.5
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.0
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -398,7 +398,12 @@
                 {
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 10
+					"value": 16
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.knockback_resistance",
