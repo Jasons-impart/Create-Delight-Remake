@@ -16,9 +16,9 @@ CreateDelightServerEvent.onCalculateGoodsQuality = function(id, itemFunc) {
     CreateDelight.goodsMap.put(id, itemFunc)
 }
 
-CreateDelightServerEvent.onCalculateGoodsQuality("burger", item => {
-    return 3
-})
+// CreateDelightServerEvent.onCalculateGoodsQuality("burger", item => {
+//     return 3
+// })
 
 
 
