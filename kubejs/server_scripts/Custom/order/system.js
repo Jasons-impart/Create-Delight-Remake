@@ -1,0 +1,244 @@
+const $FoodInstance = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodInstance")
+const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
+//订单系统
+//玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
+//设计的意义是为整合包中大量食物等物品寻求用途
+
+let Order = {}
+global.Order = Order
+
+/**
+ * 根据玩家来生成订单
+ * @param {Internal.Player} player 
+ */
+Order.create = function (player) {
+    let order = { entries: [] };
+    let level = this.getPlayerRankLevel(player);
+    let selected;
+
+    // --- 根据 chance 加权随机选择客户类型 ---
+    let weightedList = [];
+    let totalWeight = 0;
+
+    for (let key in Order.customerProperties) {
+        if (!Object.prototype.hasOwnProperty.call(Order.customerProperties, key)) continue;
+        let element = Order.customerProperties[key];
+        let weight = Math.sqrt(level) / Math.sqrt(5) * 0.8 * element.chance;
+        if (weight > 0) {
+            let entry = { key: key, element: element, weight: weight };
+            weightedList.push(entry);
+            totalWeight += weight;
+        }
+    }
+
+    if (weightedList.length > 0) {
+        let r = Utils.random.nextFloat() * totalWeight;
+        for (let i = 0; i < weightedList.length; i++) {
+            r -= weightedList[i].weight;
+            if (r <= 0) {
+                selected = weightedList[i].element;
+                order.type = weightedList[i].key;
+                break;
+            }
+        }
+    }
+
+    if (!selected) return order;
+
+    // --- 准备条目权重列表 ---
+    const entriesList = [];
+    let totalEntryWeight = 0;
+    for (const key in selected.entries) {
+        if (!Object.prototype.hasOwnProperty.call(selected.entries, key)) continue;
+        let entryVal = selected.entries[key];
+        let weight, minQuality;
+        if (Array.isArray(entryVal)) {
+            [weight, minQuality] = entryVal;
+        } else {
+            weight = entryVal;
+            minQuality = 0;
+        }
+        let entry = { key: key, weight: weight, minQuality: minQuality };
+        entriesList.push(entry);
+        totalEntryWeight += weight;
+    }
+
+    // --- 生成订单条目，按加权随机选择 ---
+    let count = 0;
+    let canceled = false;
+    let bonus = Math.sqrt(level);
+
+    while (count < selected.max_count && !canceled && totalEntryWeight > 0) {
+        // 随机选一个条目
+        let r = Utils.random.nextFloat() * totalEntryWeight;
+        let chosenEntry;
+        for (let i = 0; i < entriesList.length; i++) {
+            r -= entriesList[i].weight;
+            if (r <= 0) {
+                chosenEntry = entriesList[i];
+                break;
+            }
+        }
+
+        if (!chosenEntry) break; // 防护
+
+        let amount = Order.orderProperties[chosenEntry.key].base_count * Utils.random.nextFloat(1, bonus * 1.25);
+        order.entries.push({
+            id: chosenEntry.key,
+            count: parseInt(amount) * 4,
+            minQuality: Math.min(3, Math.max(chosenEntry.minQuality, 1))
+        });
+
+        count++;
+        if (Utils.random.nextFloat() >= selected.base_continue_rate * bonus) canceled = true;
+    }
+
+    return order;
+};
+
+
+
+/**
+ * @param {Internal.IItemHandler} items
+ * @returns {ItemStackTransfer} 
+ */
+Order.convertPackageToItemHandler = function (items) {
+    let transfer = new ItemStackTransfer()
+    items.allItems.forEach(item => {
+        $PackageItem.getContents(item).allItems.forEach(i => {
+            ItemTransferHelper.insertItemStacked(transfer, i, false)
+        })
+    })
+    return transfer
+}
+
+/**
+ * 检查多个订单是否依次可完成（共用扣减的库存），返回正负表示匹配与否
+ * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}[]} orders
+ * @param {Internal.IItemHandler} items
+ * @returns {number[]} 正数=完全匹配产出量，0=不完全匹配产出量
+ */
+Order.checkAllPackages = function (orders, items) {
+    let transfer = Order.convertPackageToItemHandler(items);
+    let results = [];
+
+    orders.forEach(order => {
+        let needed = order.entries.map(e => ({
+            id: e.id,
+            count: e.count,
+            minQuality: e.minQuality
+        }));
+
+        // 用于累积每个条目被哪些物品满足，以及品质和数量
+        let entryMap = {}; // {entryId: {totalQuality, totalCount, usedItemIds:Set}}
+        needed.forEach(req => {
+            entryMap[req.id] = { totalQuality: 0, totalCount: 0, usedItemIds: new Set() };
+        });
+
+        needed.forEach(req => {
+            for (let i = 0; i < transfer.getSlots(); i++) {
+                let stack = transfer.getStackInSlot(i);
+                if (!stack.isEmpty() && stack.hasTag("createdelight:order/" + req.id)) {
+                    let foodQuality = Order.getGoodsOrderProperty(stack, req.id) || 0;
+                    if (foodQuality < req.minQuality) continue;
+
+                    let take = Math.min(req.count, stack.getCount());
+                    if (take > 0) {
+                        stack.shrink(take);
+                        req.count -= take;
+
+                        let entry = entryMap[req.id];
+                        entry.totalQuality += foodQuality * take;
+                        entry.totalCount += take;
+                        entry.usedItemIds.add(stack.getId()); // 记录用于满足该条目的不同物品种类
+
+                        if (req.count <= 0) break;
+                    }
+                }
+            }
+        });
+
+        let fullyMatched = needed.every(n => n.count <= 0);
+        let output = 0;
+
+        if (fullyMatched) {
+            let sumWeightedQuality = 0;
+            let typeBonusSum = 0;
+
+            for (let id in entryMap) {
+                let entry = entryMap[id];
+                let avgQuality = entry.totalQuality / entry.totalCount;
+                sumWeightedQuality += avgQuality * entry.totalCount; // 按数量加权
+
+                // 每个条目使用物品种类数量占比作为奖励
+                let typeBonus = entry.usedItemIds.size; 
+                typeBonusSum += typeBonus;
+            }
+
+            let totalCount = Object.values(entryMap).reduce((acc, e) => acc + e.totalCount, 0);
+
+            // 最终得分 = 数量加权平均品质 × 条目物品种类奖励系数
+            let avgQualityOverall = sumWeightedQuality / totalCount;
+            let typeBonusOverall = typeBonusSum / needed.length; // 平均每条目的使用物品种类数
+            output = avgQualityOverall * typeBonusOverall;
+        }
+
+        results.push(output);
+    });
+
+    return results;
+};
+
+
+
+/**
+ * 
+ * @param {Internal.Player} player 
+ * @returns {number}
+ */
+Order.getPlayerRank = function (player) {
+    return player.persistentData.getInt("order_rank")
+}
+
+Order.getPlayerRankLevel = function (player) {
+    let rank = this.getPlayerRank(player)
+    let level = 0
+    for (let index = 0; index < Order.rankThreshold.length; index++) {
+        if (rank < Order.rankThreshold[index])
+            break
+        level = index + 1
+    }
+    return level
+}
+/**
+ * 
+ * @param {Internal.ItemStack} item 
+ * @param {string} type
+ */
+Order.getGoodsOrderProperty = function (item, type) {
+    let goodsMap = CreateDelight.goodsMap.get(type)
+    if (goodsMap != null)
+        return goodsMap(item)
+    let qualityLevel = $QualityUtils.getQuality(item).level()
+    let complexity = $FoodList.getComplexity(new $FoodInstance(item.item))
+    if (!item.hasTag("createdelight:order/" + type))
+        return
+    let food = Order.orderProperties[type]
+    let level = 0
+    for (let index = 0; index < food.diversity.length; index++) {
+        if (complexity <= food.diversity[index])
+            break
+        level++
+    }
+    return Math.max(Math.min(3, qualityLevel + level), 1)
+}
+
+ItemEvents.rightClicked("createdelight:unopened_order", e => {
+    e.player.getItemInHand(e.hand).shrink(1)
+
+    let ret = Order.create(e.player)
+    while (ret.entries.length == 0) {
+        ret = Order.create(e.player)
+    }
+    e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
+})
