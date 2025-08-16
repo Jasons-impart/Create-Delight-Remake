@@ -101,6 +101,8 @@
 	BoneMealConsumeOnFailure = true
 	#If enabled, humidity check will transition smoothly instead of snapping.
 	CropHumidityTransition = true
+	#Save environmental humidity modifiers to chunk file.
+	SaveChunkEnvironmentalHumidity = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
@@ -133,4 +135,6 @@
 	EnableSeasonalBee = false
 	#Enable seasonal fishing behavior, let enjoy summer.
 	EnableSeasonalFishing = false
+	#Greenhouse core would also work for animal check but not need a greenhouse.
+	EnableCoreWork = true
 

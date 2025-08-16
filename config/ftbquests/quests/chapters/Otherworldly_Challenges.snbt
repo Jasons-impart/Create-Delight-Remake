@@ -295,7 +295,7 @@
 			y: -9.0d
 		}
 	]
-	order_index: 8
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -432,7 +432,8 @@
 			y: 14.0d
 		}
 		{
-			description: ["         在旅途中，我无意间发现不同的材料与珍珠结合在一起时似乎有着神奇的力量，能够将维度撕裂......或许我们可以利用这些到达更远的地方，继续这场旅途的传奇，新的篇章将会就此开始......（本章节介绍会以第一人称叙述）"]
+			dependencies: ["4C520BFAB5B97C59"]
+			description: ["“真正的远方不在脚下，而在维度之间的裂隙之中。”"]
 			icon: {
 				Count: 1
 				id: "explorerscompass:explorerscompass"
@@ -951,6 +952,7 @@
 			y: 10.0d
 		}
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			description: ["         在经历了这些试炼后，我们在这些物品中发现了裂隙的痕迹，或许我们可以通过这些物品探究裂隙的本质，从而得到意想不到的成果。"]
 			hide_dependency_lines: true
 			icon: "iceandfire:dragon_flute"

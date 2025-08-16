@@ -1,6 +1,6 @@
 {
 	"size": "large",
-	"color": "#006400",
+	"color": "#4169E1",
 	"waves": [
 		{
 			"entities": [
@@ -21,7 +21,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.0
+					"value": 2.5
 				},
 				{
 					"attribute": "generic.armor",
@@ -31,7 +31,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.4
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -90,7 +90,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.0
+					"value": 6.5
 				},
 				{
 					"attribute": "generic.armor",
@@ -100,7 +100,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 2.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -151,12 +151,17 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 8.0
+					"value": 12.5
 				},
                 {
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
 					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.6
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -166,7 +171,7 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.1 
+					"value": 0.2 
 				}
 			],
 			"rewards": [
@@ -223,12 +228,12 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 6.5
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
-					"value": 10
+					"value": 12
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -298,8 +303,8 @@
 					    }
 				}
 			],
-			"max_wave_time": 1200,
-			"setup_time": 100
+			"max_wave_time": 600,
+			"setup_time": 60
 		}
     ],
 	"failures": [
