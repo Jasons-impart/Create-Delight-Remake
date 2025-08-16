@@ -129,7 +129,11 @@ Order.checkAllPackages = function (orders, items) {
             minQuality: e.minQuality
         }));
 
-        let matchedTypes = new Set();
+        // 用于累积每个条目被哪些物品满足，以及品质和数量
+        let entryMap = {}; // {entryId: {totalQuality, totalCount, usedItemIds:Set}}
+        needed.forEach(req => {
+            entryMap[req.id] = { totalQuality: 0, totalCount: 0, usedItemIds: new Set() };
+        });
 
         needed.forEach(req => {
             for (let i = 0; i < transfer.getSlots(); i++) {
@@ -142,7 +146,12 @@ Order.checkAllPackages = function (orders, items) {
                     if (take > 0) {
                         stack.shrink(take);
                         req.count -= take;
-                        matchedTypes.add(req.id);
+
+                        let entry = entryMap[req.id];
+                        entry.totalQuality += foodQuality * take;
+                        entry.totalCount += take;
+                        entry.usedItemIds.add(stack.getId()); // 记录用于满足该条目的不同物品种类
+
                         if (req.count <= 0) break;
                     }
                 }
@@ -150,13 +159,36 @@ Order.checkAllPackages = function (orders, items) {
         });
 
         let fullyMatched = needed.every(n => n.count <= 0);
-        let output = matchedTypes.size;
+        let output = 0;
 
-        results.push(fullyMatched ? output : 0);
+        if (fullyMatched) {
+            let sumWeightedQuality = 0;
+            let typeBonusSum = 0;
+
+            for (let id in entryMap) {
+                let entry = entryMap[id];
+                let avgQuality = entry.totalQuality / entry.totalCount;
+                sumWeightedQuality += avgQuality * entry.totalCount; // 按数量加权
+
+                // 每个条目使用物品种类数量占比作为奖励
+                let typeBonus = entry.usedItemIds.size; 
+                typeBonusSum += typeBonus;
+            }
+
+            let totalCount = Object.values(entryMap).reduce((acc, e) => acc + e.totalCount, 0);
+
+            // 最终得分 = 数量加权平均品质 × 条目物品种类奖励系数
+            let avgQualityOverall = sumWeightedQuality / totalCount;
+            let typeBonusOverall = typeBonusSum / needed.length; // 平均每条目的使用物品种类数
+            output = avgQualityOverall * typeBonusOverall;
+        }
+
+        results.push(output);
     });
 
     return results;
 };
+
 
 
 /**
