@@ -94,7 +94,8 @@
     },
     {
         "matchItems": [
-            "culturaldelights:cucumber"
+            "culturaldelights:cucumber",
+            "youkaishomecoming:cucumber"
         ],
         "resultItems": "vintagedelight:cucumber"
     },

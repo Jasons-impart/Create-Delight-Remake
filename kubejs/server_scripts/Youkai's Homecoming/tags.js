@@ -1,7 +1,6 @@
 ServerEvents.tags("minecraft:item", e => {
     e.removeAllTagsFrom([
         'youkaishomecoming:green_coffee_bean',
-        "youkaishomecoming:cucumber",
         "neapolitan:ice_cubes"
     ])
     e.add('forge:tea_leaves/green', "farmersrespite:green_tea_leaves")
