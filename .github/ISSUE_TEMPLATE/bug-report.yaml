@@ -1,0 +1,98 @@
+name: Bug Report
+description: 提交问题 Report bug
+labels: bug
+assignees: wanquanw
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # 检查整合包版本 Check if modpack version is newest
+        - 确认整合包版本是否为最新，看标题界面右下角两行小字，红框圈住位置会有 v0.x.x.x 形式的整合包版本
+        - 最新整合包版本可通过三个小人下方的公告确认
+        - 如果不是最新，请先更新到最新以避免反馈已修复的bug
+  - type: input
+    id: modpack-version
+    attributes:
+      label: 整合包版本 / Modpack Version
+      description: 如果是最新，请填写你的整合包版本（例如 v0.1.2.3）
+      placeholder: v0.x.x.x
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: |
+        # 确认是否有修改整合包 Make sure you or server holder haven't modify the modpack
+        - 请确认自己是否对整合包内的mod、kubejs脚本、mbd2文件等做了增删，整合包本体已经有大量的适配和兼容bug需要修复，制作组无法保证有额外精力解决玩家自行修改整合包后的报错和反馈。
+        - 如果是服务器游玩中的问题，请先联系服务器服主，确认服主是否正确安装了整合包，或是否对整合包服务端做了修改。
+  - type: input
+    id: modifications
+    attributes:
+      label: 修改情况 / Modifications
+      description: 请填写 "没有修改" 或具体修改内容（例如 "修改了XXX模组"）
+      placeholder: 没有修改 / 修改了xxx
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: |
+        # 错误日志 log
+        - 如果是崩溃或者明显的异常，请收集报错信息。一般可进入日志文件夹获取latest.log
+        - 使用 https://mclo.gs/ 网站保存自己的报错信息，得到一个报错分享链接
+  - type: input
+    id: error-log
+    attributes:
+      label: 错误报告链接 / Error log Link
+      description: 在这里贴上你的报错分享链接 Paste your error log link in the edit box.
+      placeholder: https://mclo.gs/...
+    validations:
+      required: false
+      
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 描述bug现象 / Describe the bug
+      description: 简明扼要说明bug是什么样的 A clear and concise description of what the bug is.
+      placeholder: 请清晰描述观察到的异常现象...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 复现方法 / To Reproduce
+      description: 复现这个bug的步骤（按顺序列出）Steps to reproduce the behavior
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 预期表现 / Expected behavior
+      description: 简明扼要说明没有bug的情况下，你预期应该发生什么 A clear and concise description of what you expected to happen.
+      placeholder: 我预期应该发生...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 截图 / Screenshots
+      description: 如果可能，贴上截图帮助你解释问题 If applicable, add screenshots to help explain your problem
+      placeholder: https://example.com/screenshot.jpg
+    validations:
+      required: false
+      
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 额外信息 / Additional context
+      description: 在这里补充你认为有必要的额外信息 Add any other context about the problem here.
+      placeholder: 例如：仅在服务器出现/特定装备触发...
+    validations:
+      required: false
