@@ -21,16 +21,5 @@ JEIEvents.hideItems((e) => {
     'createdeco:industrial_iron_coinstack',
     'createdeco:zinc_coin',
     'createdeco:zinc_coinstack',
-    // 无法合成的箱装/压缩物品
-    "fruitsdelight:apple_crate",
-    "quark:carrot_crate",
-    "quark:potato_crate",
-    "quark:beetroot_crate",
-    "quark:apple_crate",
-    "quark:golden_apple_crate",
-    "quark:golden_carrot_crate",
-    "quark:berry_sack",
-    "quark:glowberry_sack",
-    "quark:gunpowder_sack"
   ])
 })

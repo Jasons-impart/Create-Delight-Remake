@@ -19,12 +19,6 @@
     },
     {
         "matchItems": [
-            "neapolitan:banana_crate"
-        ],
-        "resultItems": "cratedelight:banana_crate"
-    },
-    {
-        "matchItems": [
             "ratatouille:salt",
             "bakeries:salt"
         ],
@@ -100,7 +94,8 @@
     },
     {
         "matchItems": [
-            "culturaldelights:cucumber"
+            "culturaldelights:cucumber",
+            "youkaishomecoming:cucumber"
         ],
         "resultItems": "vintagedelight:cucumber"
     },

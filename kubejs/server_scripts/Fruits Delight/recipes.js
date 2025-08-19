@@ -1,5 +1,6 @@
 ServerEvents.recipes(e => {
-    remove_recipes_output(e, [
+    remove_recipes_id(e, [
+        "fruitsdelight:apple_from_apple_crate",
         "fruitsdelight:apple_crate"
     ])
     e.replaceInput({ mod: "fruitsdelight", input: "minecraft:slime_ball" }, "minecraft:slime_ball", "#forge:gelatin")
