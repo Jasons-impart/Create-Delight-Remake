@@ -23,8 +23,8 @@ body:
     attributes:
       value: |
         # 确认是否有修改整合包 Make sure you or server holder haven't modify the modpack
-        - 请确认自己是否对整合包内的mod、kubejs脚本、mbd2文件等做了增删
-        - 如果是服务器游玩中的问题，请先联系服务器服主确认
+        - 请确认自己是否对整合包内的mod、kubejs脚本、mbd2文件等做了增删，整合包本体已经有大量的适配和兼容bug需要修复，制作组无法保证有额外精力解决玩家自行修改整合包后的报错和反馈。
+        - 如果是服务器游玩中的问题，请先联系服务器服主，确认服主是否正确安装了整合包，或是否对整合包服务端做了修改。
   - type: input
     id: modifications
     attributes:
@@ -38,12 +38,13 @@ body:
     attributes:
       value: |
         # 错误日志 log
-        - 使用 https://mclo.gs/ 网站保存报错信息
-        - 粘贴生成的报错分享链接
+        - 如果是崩溃或者明显的异常，请收集报错信息。一般可进入日志文件夹获取latest.log
+        - 使用 https://mclo.gs/ 网站保存自己的报错信息，得到一个报错分享链接
   - type: input
     id: error-log
     attributes:
-      label: 错误日志链接 / Error Log Link
+      label: 错误报告链接 / Error log Link
+      description: 在这里贴上你的报错分享链接 Paste your error log link in the edit box.
       placeholder: https://mclo.gs/...
     validations:
       required: false
