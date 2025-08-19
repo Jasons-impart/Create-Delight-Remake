@@ -1328,6 +1328,30 @@
 			x: -2.5d
 			y: 18.5d
 		}
+		{
+			dependencies: ["16E85851D21CB6A3"]
+			dependency_requirement: "one_completed"
+			description: [
+				"使用列表过滤器指定工作盆的产物为铸铁锭 以避免压出铁活板门。"
+				"整合包已为铁活板门增加熔融配方，可处理成熔融铁回收。"
+			]
+			id: "0AB663D8D3F3F9AB"
+			rewards: [{
+				id: "3CF6183C92074F97"
+				item: "create:filter"
+				type: "item"
+			}]
+			shape: "diamond"
+			subtitle: "玩机械动力不得不品的一环"
+			tasks: [{
+				id: "51551AFEC57EDC72"
+				item: "minecraft:iron_trapdoor"
+				type: "item"
+			}]
+			title: "woc！铁活板门"
+			x: -1.5d
+			y: 12.0d
+		}
 	]
 	title: "&9体系渐成 "
 }
