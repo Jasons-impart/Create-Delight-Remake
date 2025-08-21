@@ -13,7 +13,7 @@
     },
     "models": [
       {
-        "location": "tetra:item/moudle/single/head/shared/single_pristine"
+        "location": "tetra:item/module/single/head/shared/single_pristine"
       }
     ]
   }
