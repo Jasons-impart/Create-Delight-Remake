@@ -27,7 +27,6 @@
 				"&4B&r直接打开背包"
 				"&4~&r可进行连锁挖掘"
 				"&4F5&r可切换越肩视角"
-				"单击&n&9蓝色下划线&r&r字体可跳转至对应章节"
 			]
 			id: "55C42BCE0E399B3D"
 			rewards: [
@@ -111,27 +110,6 @@
 			title: "种植相关"
 			x: 4.0d
 			y: -4.0d
-		}
-		{
-			dependencies: ["55C42BCE0E399B3D"]
-			description: ["本整合包增加了FTBchunks以增加对于区块认领及区块强加载的相关支持，可以&4用n打开&rftbchunks的地图并进行&e区块认领和强加载&r等相关工作，使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r，具体相关指令详见&4https://www.mcmod.cn/class/3201.html&r"]
-			icon: "minecraft:cartography_table"
-			id: "428692AFFB20055B"
-			rewards: [{
-				id: "262C632976BB2F34"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			shape: "pentagon"
-			size: 1.5d
-			subtitle: "注意不要认领太多！！！"
-			tasks: [{
-				id: "66BE628B0EBBFBC7"
-				type: "checkmark"
-			}]
-			title: "认领区块相关"
-			x: -3.0d
-			y: 1.0d
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
@@ -764,35 +742,6 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["55C42BCE0E399B3D"]
-			icon: "minecraft:totem_of_undying"
-			id: "34B1006074300964"
-			rewards: [{
-				command: "/gamerule keepInventory true"
-				elevate_perms: true
-				icon: {
-					Count: 1
-					id: "the_bumblezone:essence_continuity"
-					tag: {
-						abilityUseRemaining: 1
-					}
-				}
-				id: "373492C37EFDB4A2"
-				silent: true
-				title: "死亡不掉落"
-				type: "command"
-			}]
-			shape: "pentagon"
-			size: 1.5d
-			tasks: [{
-				id: "62F8B86872E2D83B"
-				title: "死亡不掉落"
-				type: "checkmark"
-			}]
-			x: -3.0d
-			y: -1.0d
-		}
-		{
 			dependencies: ["51C6C4C1530A4D3F"]
 			description: [
 				"特别鸣谢(排名不分先后)："
@@ -914,7 +863,8 @@
 			]
 			icon: "createdelight:emergency_industrial_platform"
 			id: "73CE44DE53C68D82"
-			shape: "gear"
+			shape: "pentagon"
+			size: 1.5d
 			subtitle: "使用前强烈建议阅读"
 			tasks: [{
 				id: "3ACEAE04CA785DAC"
@@ -929,8 +879,8 @@
 				type: "item"
 			}]
 			title: "关于平台这件事"
-			x: 0.0d
-			y: -3.5d
+			x: -3.0d
+			y: -1.0d
 		}
 	]
 	title: "介绍"
