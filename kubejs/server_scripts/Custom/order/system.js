@@ -99,58 +99,99 @@ Order.create = function (player) {
 
 
 /**
- * @param {Internal.IItemHandler} items
+ * @param {ItemStackTransfer} items
  * @returns {ItemStackTransfer} 
  */
 Order.convertPackageToItemHandler = function (items) {
+    
     let transfer = new ItemStackTransfer()
-    items.allItems.forEach(item => {
-        $PackageItem.getContents(item).allItems.forEach(i => {
-            ItemTransferHelper.insertItemStacked(transfer, i, false)
-        })
-    })
+    transfer.setSize(81)
+    for (let index = 0; index < items.getSlots(); index++) {
+        let item = items.getStackInSlot(index)
+        if (!item.is("air"))
+            $PackageItem.getContents(item).allItems.forEach(i => {
+                ItemTransferHelper.insertItemStacked(transfer, i, false)
+            })
+    }
     return transfer
 }
 
 /**
  * 检查多个订单是否依次可完成（共用扣减的库存），返回正负表示匹配与否
  * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}[]} orders
- * @param {Internal.IItemHandler} items
+ * @param {ItemStackTransfer} items
  * @returns {number[]} 正数=完全匹配产出量，0=不完全匹配产出量
  */
 Order.checkAllPackages = function (orders, items) {
     let transfer = Order.convertPackageToItemHandler(items);
     let results = [];
 
+    // 计算条目内部“物品分布”的奖励：基尼系数 G = 1 - sum(p_i^2)，typeBonus = 1 + G ∈ [1,2)
+    function calcTypeBonus(countByType) {
+        let total = 0;
+        for (let k in countByType) total += countByType[k];
+        if (total <= 0) return 1;
+
+        let sumSquares = 0;
+        for (let k in countByType) {
+            let p = countByType[k] / total;
+            sumSquares += p * p;
+        }
+        let gini = 1 - sumSquares;
+        return 1 + gini;
+    }
+
+    // 获取一个稳定的“物品类型键”。（KubeJS 通常是 stack.id）
+    function getTypeKey(stack) {
+        // 优先使用 KubeJS 的字符串 id
+        if (typeof stack.id === 'string') return stack.id;
+        // 兼容可能存在的 getId()
+        if (typeof stack.getId === 'function') return String(stack.getId());
+        // 退路：尽力序列化
+        return String(stack);
+    }
+
     orders.forEach(order => {
+        if (order == null) {
+            results.push(0);
+            return;
+        }
+
         let needed = order.entries.map(e => ({
             id: e.id,
             count: e.count,
             minQuality: e.minQuality
         }));
 
-        // 用于累积每个条目被哪些物品满足，以及品质和数量
-        let entryMap = {}; // {entryId: {totalQuality, totalCount, usedItemIds:Set}}
+        // 每个条目记录：累计品质、数量、以及“按物品类型计数”的分布
+        let entryMap = {};
         needed.forEach(req => {
-            entryMap[req.id] = { totalQuality: 0, totalCount: 0, usedItemIds: new Set() };
+            entryMap[req.id] = {
+                totalQuality: 0,
+                totalCount: 0,
+                countByType: {}  // { typeKey: count }
+            };
         });
 
+        // 消耗库存满足条目
         needed.forEach(req => {
             for (let i = 0; i < transfer.getSlots(); i++) {
                 let stack = transfer.getStackInSlot(i);
                 if (!stack.isEmpty() && stack.hasTag("createdelight:order/" + req.id)) {
-                    let foodQuality = Order.getGoodsOrderProperty(stack, req.id) || 0;
+                    let foodQuality = Order.getGoodsOrderProperty(stack, req.id) || 1;
                     if (foodQuality < req.minQuality) continue;
 
                     let take = Math.min(req.count, stack.getCount());
                     if (take > 0) {
-                        stack.shrink(take);
-                        req.count -= take;
 
                         let entry = entryMap[req.id];
-                        entry.totalQuality += foodQuality * take;
+                        entry.totalQuality += (foodQuality - req.minQuality + 1) * take;
                         entry.totalCount += take;
-                        entry.usedItemIds.add(stack.getId()); // 记录用于满足该条目的不同物品种类
+
+                        let typeKey = stack.id;
+                        entry.countByType[typeKey] = (entry.countByType[typeKey] || 0) + take;
+                        stack.shrink(take);
+                        req.count -= take;
 
                         if (req.count <= 0) break;
                     }
@@ -162,25 +203,24 @@ Order.checkAllPackages = function (orders, items) {
         let output = 0;
 
         if (fullyMatched) {
-            let sumWeightedQuality = 0;
-            let typeBonusSum = 0;
+            // 这里是关键改动：把“条目奖励”直接乘进该条目的贡献里，再做数量加权平均
+            let sumWeightedWithBonus = 0;
+            let totalCountAll = 0;
 
             for (let id in entryMap) {
                 let entry = entryMap[id];
+                if (entry.totalCount <= 0) continue;
                 let avgQuality = entry.totalQuality / entry.totalCount;
-                sumWeightedQuality += avgQuality * entry.totalCount; // 按数量加权
+                let typeBonus = calcTypeBonus(entry.countByType);
 
-                // 每个条目使用物品种类数量占比作为奖励
-                let typeBonus = entry.usedItemIds.size; 
-                typeBonusSum += typeBonus;
+                sumWeightedWithBonus += avgQuality * entry.totalCount * typeBonus;
+                totalCountAll += entry.totalCount;
             }
 
-            let totalCount = Object.values(entryMap).reduce((acc, e) => acc + e.totalCount, 0);
-
-            // 最终得分 = 数量加权平均品质 × 条目物品种类奖励系数
-            let avgQualityOverall = sumWeightedQuality / totalCount;
-            let typeBonusOverall = typeBonusSum / needed.length; // 平均每条目的使用物品种类数
-            output = avgQualityOverall * typeBonusOverall;
+            if (totalCountAll > 0) {
+                // 最终“产出量/得分” = (Σ 每条目[平均品质 × 数量 × 条目种类奖励]) / 总数量
+                output = sumWeightedWithBonus / totalCountAll;
+            }
         }
 
         results.push(output);
@@ -188,6 +228,8 @@ Order.checkAllPackages = function (orders, items) {
 
     return results;
 };
+
+
 
 
 

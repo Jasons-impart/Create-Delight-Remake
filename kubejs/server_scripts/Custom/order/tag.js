@@ -1376,14 +1376,32 @@ Order.orderProperties = {
         diversity: [-1, -1, 3, 99],
         base_count: 16
     },
+    
+    pie: {
+        diversity: [0, 0, 99, 99],
+        base_count: 64
+    },
 }
 
-Order.customerProperties = {
-    coffee_shop: {
+Order.customerProperties = {// ===================== 矮人组织 =====================
+    dwarven_bakery: {
         entries: {
-            coffee: [3, 2],   // 原高→中
-            bread: [2, 1],    // 原中→一般
-            cookie: [1, 1]    // 原中→一般
+            bread: [3, 2],
+            sausage: [2, 1],
+            meat_dish: [2, 2]
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "COMMON",
+        chance: 0.9,
+        loot_table: ""
+    },
+
+    dwarven_brewery: {
+        entries: {
+            western_wine: [3, 2],
+            meat_dish: [2, 2],
+            barbecue: [2, 1]
         },
         max_count: 3,
         base_continue_rate: 0.4,
@@ -1391,232 +1409,194 @@ Order.customerProperties = {
         chance: 0.85,
         loot_table: ""
     },
-    milk_tea_store: {
+
+    dwarven_snack_hall: {
         entries: {
-            milk_tea: [3, 2], // 原高→中
-            tea: [2, 1],      // 原中→一般
-            snack: [1, 1]     // 原中→一般
+            cookie: [2, 1],
+            juice: [2, 1],
+            fried_food: [1, 1]
         },
         max_count: 3,
-        base_continue_rate: 0.35,
+        base_continue_rate: 0.5,
+        rarity: "COMMON",
+        chance: 0.8,
+        loot_table: ""
+    },
+
+    dwarven_feast_hall: {
+        entries: {
+            meat_dish: [3, 2],
+            bread: [2, 1],
+            staple_food: [2, 2]
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "UNCOMMON",
+        chance: 0.85,
+        loot_table: ""
+    },
+
+    // ===================== 精灵组织 =====================
+    elven_tea_house: {
+        entries: {
+            tea: [3, 2],
+            fruit: [2, 1],
+            salad: [2, 1]
+        },
+        max_count: 3,
+        base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.8,
         loot_table: ""
     },
-    western_restaurant: {
+
+    elven_patisserie: {
         entries: {
-            western_wine: [3, 2], // 原高→中
-            bread: [2, 2],        // 原高→中
-            vegetable: [1, 1]     // 原中→一般
+            dessert: [3, 2],
+            jam: [2, 1],
+            jello: [2, 1]
         },
         max_count: 3,
-        base_continue_rate: 0.45,
-        rarity: "RARE",
-        chance: 0.65,
-        loot_table: ""
-    },
-    ice_cream_vendor: {
-        entries: {
-            ice_cream: [3, 1], // 原中→一般
-            gummy: [2, 1],     // 原中→一般
-            jello: [1, 1]      // 原一般→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "COMMON",
-        chance: 0.9,
-        loot_table: ""
-    },
-    fruit_wholesaler: {
-        entries: {
-            fruit: [3, 1], // 原中→一般
-            crop: [2, 1]   // 原中→一般
-        },
-        max_count: 2,
-        base_continue_rate: 0.3,
-        rarity: "COMMON",
-        chance: 0.9,
-        loot_table: ""
-    },
-    countryside_bakery: {
-        entries: {
-            bread: [3, 1],   // 原中→一般
-            jam: [2, 1],     // 原中→一般
-            coffee: [1, 1]   // 原一般→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.35,
-        rarity: "COMMON",
-        chance: 0.85,
-        loot_table: ""
-    },
-    campus_store: {
-        entries: {
-            drink: [3, 1],   // 原中→一般
-            snack: [2, 1],   // 原中→一般
-            cookie: [1, 1]   // 原一般→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.35,
-        rarity: "COMMON",
-        chance: 0.95,
-        loot_table: ""
-    },
-    bar_owner: {
-        entries: {
-            western_wine: [3, 2], // 原高→中
-            coffee: [2, 1],       // 原中→一般
-            snack: [1, 1]         // 原中→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
+        base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.75,
         loot_table: ""
     },
-    breakfast_shop: {
+
+    elven_sushi_bar: {
         entries: {
-            sandwich: [3, 1], // 原中→一般
-            drink: [2, 1],    // 原中→一般
-            coffee: [1, 1]    // 原中→一般
+            sushi: [3, 2],
+            rice: [2, 2],
+            mixed_dish: [2, 1]
         },
         max_count: 3,
         base_continue_rate: 0.4,
-        rarity: "COMMON",
-        chance: 0.9,
+        rarity: "RARE",
+        chance: 0.7,
         loot_table: ""
     },
-    station_fast_food: {
+
+    elven_juice_corner: {
         entries: {
-            fast_food: [3, 1],  // 原中→一般
-            fried_food: [2, 1], // 原中→一般
-            drink: [1, 1]       // 原中→一般
+            juice: [3, 2],
+            popsicle: [2, 1],
+            gummy: [2, 1]
         },
         max_count: 3,
-        base_continue_rate: 0.45,
+        base_continue_rate: 0.5,
+        rarity: "COMMON",
+        chance: 0.8,
+        loot_table: ""
+    },
+
+    // ===================== 怪物组织 =====================
+    monster_feast_hall: {
+        entries: {
+            monster: [3, 2],
+            fried_food: [2, 1],
+            ice_cream: [1, 1]
+        },
+        max_count: 3,
+        base_continue_rate: 0.3,
+        rarity: "RARE",
+        chance: 0.7,
+        loot_table: ""
+    },
+
+    monster_lab: {
+        entries: {
+            meat_dish: [3, 2],
+            sauce: [2, 1],
+            snack: [2, 1]
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "RARE",
+        chance: 0.75,
+        loot_table: ""
+    },
+
+    monster_canteen: {
+        entries: {
+            milkshake: [3, 2],
+            popsicle: [2, 1],
+            jello: [2, 1]
+        },
+        max_count: 3,
+        base_continue_rate: 0.4,
+        rarity: "UNCOMMON",
+        chance: 0.7,
+        loot_table: ""
+    },
+
+    monster_grill: {
+        entries: {
+            barbecue: [3, 2],
+            fried_food: [2, 1],
+            sausage: [2, 1]
+        },
+        max_count: 3,
+        base_continue_rate: 0.3,
+        rarity: "RARE",
+        chance: 0.75,
+        loot_table: ""
+    },
+
+    // ===================== 人类组织 =====================
+    human_cafe: {
+        entries: {
+            coffee: [3, 2],
+            cake: [2, 1],
+            sandwich: [2, 1],
+            juice: [1, 1]
+        },
+        max_count: 4,
+        base_continue_rate: 0.4,
         rarity: "COMMON",
         chance: 0.85,
         loot_table: ""
     },
-    park_snack_stall: {
+
+    human_fast_food: {
         entries: {
-            fried_food: [3, 1], // 原一般→一般
-            snack: [2, 1],      // 原一般→一般
-            ice_cream: [1, 1]   // 原一般→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.35,
-        rarity: "COMMON",
-        chance: 0.95,
-        loot_table: ""
-    },
-    high_end_dessert_shop: {
-        entries: {
-            cookie: [3, 3],    // 保持高品质
-            jam: [2, 3],       // 保持高品质
-            ice_cream: [1, 3]  // 保持高品质
+            fast_food: [3, 2],
+            burger: [2, 1],
+            wrap: [2, 1]
         },
         max_count: 3,
         base_continue_rate: 0.4,
-        rarity: "RARE",
-        chance: 0.55,
+        rarity: "COMMON",
+        chance: 0.85,
         loot_table: ""
     },
-    healthy_restaurant: {
+
+    human_bakery: {
         entries: {
-            vegetable: [3, 2], // 原高→中
-            fruit: [2, 2],     // 原高→中
-            tea: [1, 1]        // 原中→一般
+            bread: [3, 2],
+            pie: [2, 1],
+            dessert: [2, 1]
         },
         max_count: 3,
-        base_continue_rate: 0.35,
-        rarity: "UNCOMMON",
-        chance: 0.75,
-        loot_table: ""
-    },
-    party_catering: {
-        entries: {
-            fast_food: [3, 1],  // 原中→一般
-            drink: [2, 1],      // 原中→一般
-            fried_food: [1, 1]  // 原中→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.45,
+        base_continue_rate: 0.4,
         rarity: "UNCOMMON",
         chance: 0.8,
         loot_table: ""
     },
-    night_market_vendor: {
+
+    human_tea_house: {
         entries: {
-            snack: [3, 1],  // 原中→一般
-            fried_food: [2, 1], // 原中→一般
-            gummy: [1, 1]      // 原一般→一般
+            tea: [3, 2],
+            milk_tea: [2, 1],
+            cookie: [2, 1]
         },
         max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "COMMON",
-        chance: 0.9,
-        loot_table: ""
-    },
-    wedding_planner: {
-        entries: {
-            western_wine: [3, 3], // 保持高
-            bread: [2, 3],        // 保持高
-            fruit: [1, 3]         // 保持高
-        },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "EPIC",
-        chance: 0.4,
-        loot_table: ""
-    },
-    farmers_market_vendor: {
-        entries: {
-            crop: [3, 1],  // 原中→一般
-            fruit: [2, 1]  // 原中→一般
-        },
-        max_count: 2,
-        base_continue_rate: 0.3,
-        rarity: "COMMON",
-        chance: 0.95,
-        loot_table: ""
-    },
-    ice_cream_shop: {
-        entries: {
-            ice_cream: [3, 2], // 原高→中
-            jello: [2, 1],     // 原中→一般
-            gummy: [1, 1]      // 原中→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.35,
+        base_continue_rate: 0.5,
         rarity: "UNCOMMON",
         chance: 0.8,
-        loot_table: ""
-    },
-    coffee_chain: {
-        entries: {
-            coffee: [3, 2], // 原高→中
-            cookie: [2, 1], // 原中→一般
-            jam: [1, 1]     // 原中→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.45,
-        rarity: "RARE",
-        chance: 0.6,
-        loot_table: ""
-    },
-    kids_playground_store: {
-        entries: {
-            gummy: [3, 1],  // 原一般→一般
-            jello: [2, 1],  // 原一般→一般
-            drink: [1, 1]   // 原中→一般
-        },
-        max_count: 3,
-        base_continue_rate: 0.3,
-        rarity: "COMMON",
-        chance: 0.95,
         loot_table: ""
     }
+
+
 };
 
 

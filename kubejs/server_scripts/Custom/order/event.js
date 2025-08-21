@@ -10,7 +10,7 @@ global.CreateDelight = CreateDelight
 /**
  * 
  * @param {string} id 
- * @param {(item: Internal.ItemStack) => number} itemFuenc
+ * @param {(item: Internal.ItemStack) => number} itemFunc
  */
 CreateDelightServerEvent.onCalculateGoodsQuality = function(id, itemFunc) {
     CreateDelight.goodsMap.put(id, itemFunc)
@@ -19,7 +19,3 @@ CreateDelightServerEvent.onCalculateGoodsQuality = function(id, itemFunc) {
 // CreateDelightServerEvent.onCalculateGoodsQuality("burger", item => {
 //     return 3
 // })
-
-
-
-
