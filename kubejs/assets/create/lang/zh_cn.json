@@ -1323,6 +1323,8 @@
     "create.materialChecklist.blocksNotLoaded": "*免责声明*\n\n由于相关区块未被加载，材料清单可能不准确",
     "create.mechanical_arm.deposit_to": "将物品存储至%1$s",
     "create.mechanical_arm.extract_from": "从%1$s中拿取物品",
+    "create.create.mechanical_arm.deposit_to": "将物品存储至%1$s",
+    "create.create.mechanical_arm.extract_from": "从%1$s中拿取物品",
     "create.mechanical_arm.points_outside_range": "由于距离限制，选定的交互点%1$s已被移除",
     "create.mechanical_arm.selection_mode.forced_round_robin": "强制轮询调度",
     "create.mechanical_arm.selection_mode.prefer_first": "第一目标优先",
