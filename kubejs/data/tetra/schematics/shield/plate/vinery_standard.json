@@ -1,0 +1,21 @@
+{
+  "replace": true,
+  "slots": [ "shield/plate" ],
+  "materialSlotCount": 1,
+  "displayType": "improvement",
+  "glyph": {
+    "textureY": 48
+  },
+  "requirement": {
+    "type": "tetra:module",
+    "module": "shield/tower"
+  },
+  "outcomes": [
+    {
+      "materials": [ "vinery:vinery_standard" ],
+      "improvements": {
+        "shield/vinery_standard": 1
+      }
+    }
+  ]
+}
