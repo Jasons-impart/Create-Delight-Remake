@@ -12,7 +12,10 @@
   },
   "outcomes": [
     {
-      "materials": [ "vinery:vinery_standard" ],
+      "material": {
+        "items":[ "vinery:vinery_standard" ],
+        "count": 1
+      } ,
       "improvements": {
         "shield/vinery_standard": 1
       }
