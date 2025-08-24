@@ -5,7 +5,7 @@
   },
   "pitchVariance": {
     "desc:": "Adds randomized pitch variance of up to the given value (e.g. 0.1), makes songs sound slightly different. default = 0",
-    "pitchVariance": 0.1
+    "pitchVariance": 0.0
   },
   "musicVariance": {
     "desc:": "Enables more varied music to be available for biomes chosen from similar other biomes, default = true",
