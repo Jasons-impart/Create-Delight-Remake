@@ -31,11 +31,6 @@
 			id: "55C42BCE0E399B3D"
 			rewards: [
 				{
-					id: "6AFE6C12EEE2D122"
-					item: "solcarrot:food_book"
-					type: "item"
-				}
-				{
 					id: "3A50D0EA5E13508D"
 					item: {
 						Count: 1
@@ -58,21 +53,9 @@
 					type: "item"
 				}
 				{
-					count: 32
-					id: "20B54EFCD4A263B3"
-					item: "farmersdelight:stuffed_potato"
-					type: "item"
-				}
-				{
 					id: "5B9581F0DD4D723E"
 					item: "sophisticatedbackpacks:backpack"
 					type: "item"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "2A7A2C4C754A91B5"
-					table_id: 5284994430719191732L
-					type: "choice"
 				}
 			]
 			shape: "hexagon"
@@ -857,30 +840,66 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
-				"1.平台生成时，最高层完整方块在结构方块&n下一格&r，平齐的为最上层的灯"
-				"2.注意以上内容，虽然淌水做机器真的很浪漫"
-				"3.尽管进度条是红的，但是&n空手&r也能挖掘"
+				"1.平台生成时，最高层完整方块在结构方块&e下一格&r，平齐的为最上层的灯。淌水做机器固然浪漫，但如果给你第二次机会，相信你会选择把他放在海平面往上一格。"
+				"2.平台会清空上方10格左右的高度的&e任何&r方块，请注意不要把你刚建好的小家给清空了。"
+				"3.&e空手&r也能挖掘（尽管玉mod提示不能）"
 			]
 			icon: "createdelight:emergency_industrial_platform"
 			id: "73CE44DE53C68D82"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1E32A53D5D4562AE"
+				table_id: 5284994430719191732L
+				type: "choice"
+			}]
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "使用前强烈建议阅读"
+			subtitle: "你的平地小帮手"
 			tasks: [{
-				id: "3ACEAE04CA785DAC"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "createdelight:platform"
-					}
-				}
-				title: "工业平台"
-				type: "item"
+				id: "2EDA340058E6D189"
+				type: "checkmark"
 			}]
-			title: "关于平台这件事"
+			title: "应急工业平台"
 			x: -3.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["55C42BCE0E399B3D"]
+			description: [
+				"本包加入了生活调味料以鼓励你品尝更多样的食物："
+				"每吃下一种新的食物都会让你的血量上限向最高数值迈进一步（详见任务送的萝卜图案书）"
+				"保持食物的多样性可以让你获得永久的增益buff（详见任务送的土豆图案书）"
+			]
+			icon: "farmersdelight:roast_chicken_block"
+			id: "3DE7B60F0534BA9D"
+			rewards: [
+				{
+					id: "352FB1834E4924C8"
+					item: "solapplepie:food_book"
+					type: "item"
+				}
+				{
+					id: "4D7C53B7A4C876C7"
+					item: "solcarrot:food_book"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "5E873DF4C5D94BFB"
+					item: "farmersdelight:stuffed_potato"
+					type: "item"
+				}
+			]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "尝遍世间百味肴"
+			tasks: [{
+				id: "479FE61BAFC91182"
+				type: "checkmark"
+			}]
+			title: "食物多样性"
+			x: -3.0d
+			y: 1.0d
 		}
 	]
 	title: "介绍"
