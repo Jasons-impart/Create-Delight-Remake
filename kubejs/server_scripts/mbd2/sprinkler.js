@@ -3,38 +3,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
     let event = e.event
     const { machine } = event
     const {customData, level} = machine
-    if (customData.getIntArray("solidBlockPos") != null) {
-        let array = customData.getIntArray("solidBlockPos")
-        customData.putIntArray("oldSolidBlockPos", [array[0], array[1], array[2]])
-    }
-
-    let tmpSolidBlockPos = machine.pos
-    while (level.getBlock(tmpSolidBlockPos.below()).getBlockState().isAir())
-        tmpSolidBlockPos = tmpSolidBlockPos.below()
-    customData.putIntArray("solidBlockPos", [tmpSolidBlockPos.x, tmpSolidBlockPos.y, tmpSolidBlockPos.z])
-    let hl = 1
-    let rl = 4
-    let rawOldSolidBlockPos = customData.getIntArray("oldSolidBlockPos")
-    let rawSolidBlockPos = customData.getIntArray("solidBlockPos")
-    let solidBlockPos = [rawSolidBlockPos[0], rawSolidBlockPos[1], rawSolidBlockPos[2]]
-    let oldSolidBlockPos = [rawOldSolidBlockPos[0], rawOldSolidBlockPos[1], rawOldSolidBlockPos[2]]
-    let manager = SeasonUtil.getSaveData(level)
-    if (oldSolidBlockPos != null && (oldSolidBlockPos[0] != solidBlockPos[0] || oldSolidBlockPos[1] != solidBlockPos[1] || oldSolidBlockPos[2] != solidBlockPos[2])) {
-            manager.removeHumidityControlProvider(oldSolidBlockPos)
-    }
-    let nearHumidityControlProvider = manager.queryHumidityControlProvider(solidBlockPos)
-    if (nearHumidityControlProvider != null
-        && hl == nearHumidityControlProvider.getLevel()
-
-        && rl == nearHumidityControlProvider.getRange()
-    ) {
-        if (nearHumidityControlProvider.getRemainTime() < 100000) {
-            nearHumidityControlProvider.addRemainTime(100)
-        }
-    } else {
-        if (hl != 0)
-            manager.addHumidityControlProvider(solidBlockPos, SeasonUtil.createHumidityControlProvider(hl, rl, 500))
-    }
+    
     let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
     if (fluid) {
         // console.log("hahaha")
@@ -79,6 +48,40 @@ MBDMachineEvents.onRecipeWorking("createdelight:sprinkler", e => {
             console.log(error)
             console.log("wtfisgoingon")
         }
+    }
+    if (level.time % 60 != 0)
+        return
+    if (customData.getIntArray("solidBlockPos") != null) {
+        let array = customData.getIntArray("solidBlockPos")
+        customData.putIntArray("oldSolidBlockPos", [array[0], array[1], array[2]])
+    }
+
+    let tmpSolidBlockPos = machine.pos
+    while (level.getBlock(tmpSolidBlockPos.below()).getBlockState().isAir())
+        tmpSolidBlockPos = tmpSolidBlockPos.below()
+    customData.putIntArray("solidBlockPos", [tmpSolidBlockPos.x, tmpSolidBlockPos.y, tmpSolidBlockPos.z])
+    let hl = 1
+    let rl = 4
+    let rawOldSolidBlockPos = customData.getIntArray("oldSolidBlockPos")
+    let rawSolidBlockPos = customData.getIntArray("solidBlockPos")
+    let solidBlockPos = [rawSolidBlockPos[0], rawSolidBlockPos[1], rawSolidBlockPos[2]]
+    let oldSolidBlockPos = [rawOldSolidBlockPos[0], rawOldSolidBlockPos[1], rawOldSolidBlockPos[2]]
+    let manager = SeasonUtil.getSaveData(level)
+    if (oldSolidBlockPos != null && (oldSolidBlockPos[0] != solidBlockPos[0] || oldSolidBlockPos[1] != solidBlockPos[1] || oldSolidBlockPos[2] != solidBlockPos[2])) {
+            manager.removeHumidityControlProvider(oldSolidBlockPos)
+    }
+    let nearHumidityControlProvider = manager.queryHumidityControlProvider(solidBlockPos)
+    if (nearHumidityControlProvider != null
+        && hl == nearHumidityControlProvider.getLevel()
+
+        && rl == nearHumidityControlProvider.getRange()
+    ) {
+        if (nearHumidityControlProvider.getRemainTime() < 100000) {
+            nearHumidityControlProvider.addRemainTime(100)
+        }
+    } else {
+        if (hl != 0)
+            manager.addHumidityControlProvider(solidBlockPos, SeasonUtil.createHumidityControlProvider(hl, rl, 500))
     }
 })
 MBDMachineEvents.onTick("createdelight:sprinkler", e => {

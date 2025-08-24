@@ -34,7 +34,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:mortar", e => {
         let proxyMillingRecipe = proxyRecipe
         console.log(`proxyMillingRecipe: ${proxyMillingRecipe}`)
         /**@type {Internal.MBDRecipeSchema$MBDRecipeJS} */
-        var recipe = recipeType.recipeBuilder() // same as create recipe via kjs event
+        let recipe = recipeType.recipeBuilder() // same as create recipe via kjs event
         recipe
             .duration(proxyMillingRecipe.processingDuration)
             .inputItems(input)
