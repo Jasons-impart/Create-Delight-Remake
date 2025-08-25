@@ -1,24 +1,31 @@
 [
     {
-        "key": "sword/murasama_imprv",
+        "materials": [
+            "tetra:dyes/"
+        ],
+        "key": "sword/murasama_imprv/",
         "integrity": -1,
         "effects": {
-            "truesweep":1,
+            "truesweep": 1,
             "armorPenetration": 30,
             "bleeding": 5,
-            "createdelight:charge": [4, 10000]
+            "createdelight:charge": [
+                4,
+                10000
+            ]
         },
         "attributes": {
             "generic.attack_speed": 0.5
         },
-        "models": [
-            {
-                "location": "tetra:item/module/sword/blade/murasama_blade/murasama_blade"
-            },
-            {
-                "location": "tetra:item/module/sword/blade/murasama_blade/murasama_blade_glow",
-                "emission": 15
-            }
-        ]
+        "extract": {
+            "availableTextures": [
+                "default"
+            ],
+            "models": [
+                {
+                    "location": "tetra:item/module/sword/blade/murasama_blade/"
+                }
+            ]
+        }
     }
 ]
