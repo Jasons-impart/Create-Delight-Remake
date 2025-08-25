@@ -41,6 +41,10 @@
         {
             "materials": [ "tetra:dyes/" ],
             "countFactor": 1,
+            "experienceFactor": 10,
+            "requiredTools": {
+                "hammer_dig": 9
+            },
             "improvements": {
                 "sword/murasama_imprv/": 0
             }
