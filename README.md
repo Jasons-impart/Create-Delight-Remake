@@ -53,7 +53,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 > [!IMPORTANT]
 > 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们[反馈问题](https://xr5r5e86lk.feishu.cn/share/base/form/shrcnIDUxvX4oOvWSQaddJUht9b)！感激不尽！
-> PS：目前CF上1201最新版仍不可下载，请参考信息汇总文档的下载方式下载最新爸爸嫩
+> PS：目前CF上1201最新版仍不可下载，请参考信息汇总文档的下载方式下载最新版本
 
 欢迎来到齿轮盛宴的世界。
 
@@ -63,7 +63,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 也能体验到沉浸式做菜的欢乐
 
-更能体验到丰富的世界之旅，怪物、美景层出不穷，美不胜收
+更能体验到丰富的世界之旅，怪物多样、美景层出不穷，美不胜收
 
 愿齿轮盛宴能给你带来盛宴一般的感受
 
