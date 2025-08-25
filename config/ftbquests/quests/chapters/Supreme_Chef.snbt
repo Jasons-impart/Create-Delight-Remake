@@ -307,12 +307,12 @@
 			size: 1.5d
 			subtitle: "快去收集吧"
 			tasks: [{
-				id: "259EA90014A27350"
+				id: "28BBB4D938B96370"
 				item: {
 					Count: 1
-					id: "minecraft:iron_hoe"
+					id: "itemfilters:tag"
 					tag: {
-						Damage: 0
+						value: "minecraft:hoes"
 					}
 				}
 				type: "item"
