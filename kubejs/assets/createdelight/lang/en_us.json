@@ -4,5 +4,10 @@
   "item.createdelight.emergency_industrial_platform_lime": "Emergency Industrial Platform Lime",
   "item.createdelight.emergency_industrial_platform_lime_block": "Emergency Industrial Platform Lime Block",
   "item.createdelight.emergency_industrial_platform_dark": "Emergency Industrial Platform Dark",
-  "item.createdelight.emergency_industrial_platform_dark_block": "Emergency Industrial Platform Dark Block"
+  "item.createdelight.emergency_industrial_platform_dark_block": "Emergency Industrial Platform Dark Block",
+
+  "tetra.material.feature.dragonfire": "dragonfire",
+  "tetra.material.feature.dragonfire.tooltip": "",
+  "tetra.material.feature.chillingfire": "chillingfire",
+  "tetra.material.feature.chillingfire.tooltip": ""
 }
