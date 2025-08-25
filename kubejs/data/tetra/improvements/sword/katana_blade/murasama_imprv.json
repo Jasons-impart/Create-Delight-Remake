@@ -4,6 +4,7 @@
             "tetra:dyes/"
         ],
         "key": "sword/murasama_imprv/",
+        "group": "murasama",
         "integrity": -1,
         "effects": {
             "truesweep": 1,

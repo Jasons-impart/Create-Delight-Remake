@@ -1,6 +1,7 @@
 [
     {
         "key": "sword/thousand_cold_nights_imprv",
+        "group": "thousand_cold_nights",
         "integrity": -1,
         "effects": {
             "severing": [ 10, 3 ],
