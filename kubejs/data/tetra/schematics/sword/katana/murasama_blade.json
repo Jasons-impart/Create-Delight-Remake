@@ -2,7 +2,7 @@
     "replace": true,
     "localizationKey": "katana/murasama_blade",
     "slots": [ "sword/blade" ],
-    "materialSlotCount": 0,
+    "materialSlotCount": 1,
     "rarity": "temporary",
     "displayType": "improvement",
     "glyph":{
@@ -39,12 +39,14 @@
     },
     "outcomes": [
         {
-            "experienceCost": 30,
+            "materials": [ "tetra:dyes/" ],
+            "countFactor": 1,
+            "experienceFactor": 10,
             "requiredTools": {
                 "hammer_dig": 9
             },
             "improvements": {
-                "sword/murasama_imprv": 0
+                "sword/murasama_imprv/": 0
             }
         }
     ]
