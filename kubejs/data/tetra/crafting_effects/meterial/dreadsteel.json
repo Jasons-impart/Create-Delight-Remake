@@ -1,0 +1,69 @@
+{
+    "replace": true,
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "dreadsteel"
+    }],
+    "requirement": {
+        "type": "tetra:and",
+        "requirements": [{
+            "type": "tetra:craft_type",
+            "craft": "module"
+        }, {
+            "type": "tetra:material",
+            "material": {
+                "items": ["dreadsteel:dreadsteel_ingot"]
+            }
+        }]
+    },
+    "outcomes": [{
+        "type": "tetra:apply_list",
+        "count": 1,
+        "effects": [{
+            "requirement": {
+                "type": "tetra:and",
+                "requirements": [{
+                    "type": "tetra:or",
+                    "requirements": [{
+                        "type": "tetra:aspect",
+                        "aspect": "edged_weapon"
+                    }, {
+                        "type": "tetra:aspect",
+                        "aspect": "blunt_weapon"
+                    }]
+                }, {
+                    "type": "tetra:aspect",
+                    "aspect": "block_breaker"
+                }]
+            },
+            "outcome": {
+                "type": "tetra:apply_enchantments",
+                "enchantments": {
+                    "minecraft:soul_fire_aspect": 2
+                }
+            }
+        }, {
+            "requirement": {
+                "type": "tetra:aspect",
+                "aspect": "block_breaker"
+            },
+            "outcome": {
+                "type": "tetra:apply_enchantments",
+                "enchantments": {
+                    "minecraft:soul_fire_aspect": 2
+                }
+            }
+        }, {
+            "requirement": {
+                "type": "tetra:aspect",
+                "aspect": "breakable"
+            },
+            "outcome": {
+                "type": "tetra:apply_enchantments",
+                "enchantments": {
+                    "minecraft:soul_fire_aspect": 2
+                }
+            }
+        }]
+    }]
+}
