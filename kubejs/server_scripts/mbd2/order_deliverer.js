@@ -23,10 +23,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
         if (element > 0) {
             console.log(`index: ${index}, element: ${element}`)
             storage.extractItem(index, 1, false)
-            let reward = Item.of('lightmanscurrency:ticket', element * 5, `{ 
-                TicketColor: ${Order.ticketColorMapping[Order.customerProperties[orders[index].type].reward]}, 
-                TicketID: -10 }`)
-                reward.setHoverName(Component.translate("item.createdelight.name." + Order.customerProperties[orders[index].type].reward).italic(false))
+            let reward = Order.getRewardContract(Order.customerProperties[orders[index].type].reward, element * 5)
             ItemTransferHelper.insertItemStacked(outputStorage, reward, false)
         }
     }

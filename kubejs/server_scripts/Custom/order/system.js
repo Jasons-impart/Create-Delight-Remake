@@ -1,5 +1,7 @@
 const $FoodInstance = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodInstance")
 const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
+const $AuctionTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.auction.tradedata.AuctionTradeData")
+const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity")
 //订单系统
 //玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
 //设计的意义是为整合包中大量食物等物品寻求用途
@@ -103,7 +105,7 @@ Order.create = function (player) {
  * @returns {ItemStackTransfer} 
  */
 Order.convertPackageToItemHandler = function (items) {
-    
+
     let transfer = new ItemStackTransfer()
     transfer.setSize(81)
     for (let index = 0; index < items.getSlots(); index++) {
@@ -283,4 +285,45 @@ ItemEvents.rightClicked("createdelight:unopened_order", e => {
         ret = Order.create(e.player)
     }
     e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
+})
+/**
+ * 
+ * @param {string} type 
+ * @param {number} count 
+ * @returns {Internal.ItemStack}
+ */
+Order.getRewardContract = function (type, count) {
+    let reward = Item.of('lightmanscurrency:ticket', count, `{ 
+        TicketColor: ${Order.ticketColorMapping[type]}, 
+        TicketID: -10 }`)
+    reward.setHoverName(Component.translate("item.createdelight.name." + type).italic(false))
+    return reward
+}
+
+Order.addOrderToAuction = function() {
+    let data = new $AuctionTradeData({})
+    data.auctionItems.add(Item.of("createdelight:unopened_order"))
+    data.setMinBidDifferent($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
+    data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:emerald_coin", 1).multiplyValue(Utils.random.nextFloat(0.25, 5)))
+    data.setDuration(1000 * 60 * 60 * 1)
+    TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, false)
+}
+
+ServerEvents.tick(e => {    
+    if (e.server.getLevel("minecraft:overworld").dayTime() % 24000 == 1000) {
+        let count = Utils.random.nextInt(0, 4)
+        console.log("count:" + count)
+        for (let i = 0; i < count; i++)
+            Order.addOrderToAuction()
+    }
+})
+
+ItemEvents.rightClicked("stick", e => {
+    const {level, player} = e
+    /**@type {Internal.BrassDroneEntity} */
+    let entity = level.createEntity("create_sa:brass_drone")
+    entity.setPos(player.pos)
+    entity.setShiftKeyDown(true)
+    player.tell(entity)
+    player.tell(level.addFreshEntity(entity))
 })

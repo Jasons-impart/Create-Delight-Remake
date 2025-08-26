@@ -82,7 +82,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
         let proxySequencedAssemblyRecipe = proxyRecipe
         /**@type {Internal.MBDRecipeSchema$MBDRecipeJS} */
         let resRecipe = recipeType.recipeBuilder() // same as create recipe via kjs event
-        resRecipe.inputItems(Ingredient.of(proxySequencedAssemblyRecipe.getIngredient(), 64 / proxySequencedAssemblyRecipe.loops + 1))
+        resRecipe.inputItems(Ingredient.of(proxySequencedAssemblyRecipe.getIngredient(), 64 / proxySequencedAssemblyRecipe.loops))
         // console.log(proxyRecipeId)
         if (proxySequencedAssemblyRecipe.sequence.size() > 1)
             proxySequencedAssemblyRecipe.sequence.forEach(recipe => {
@@ -95,12 +95,12 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
                 //     ingr.forEach(ingr => {
                 //         console.log(ingr.getFirst())
                 //     })
-                console.log("fluidIngr:")
-                console.log(fluidIngr)
-                if (fluidIngr != null && !fluidIngr.empty) {
-                    console.log(fluidIngr.get(0))
-                    console.log(fluidIngr.get(0).getMatchingFluidStacks())
-                }
+                // console.log("fluidIngr:")
+                // console.log(fluidIngr)
+                // if (fluidIngr != null && !fluidIngr.empty) {
+                //     console.log(fluidIngr.get(0))
+                //     console.log(fluidIngr.get(0).getMatchingFluidStacks())
+                // }
                 if (!fluidIngr.empty) {
                     let fluids = fluidIngr.get(0).getMatchingFluidStacks().map(fluid => {
                         let resAmount = fluid.amount * 64 / proxySequencedAssemblyRecipe.loops
@@ -129,7 +129,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
 
         resRecipe
             .duration(parseInt(Math.sqrt(proxySequencedAssemblyRecipe.loops) * 100))
-            .outputItems(Item.of(proxySequencedAssemblyRecipe.getResultItem(null), 64 / proxySequencedAssemblyRecipe.loops + 1))
+            .outputItems(Item.of(proxySequencedAssemblyRecipe.getResultItem(null), 64 / proxySequencedAssemblyRecipe.loops * proxySequencedAssemblyRecipe.getResultItem(null).count))
             .id(proxyRecipeId + "_mbd2")
         // console.log("changed:" + changed)
         if (changed)
@@ -138,10 +138,4 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
             event.mbdRecipe = null
         // console.log("on finish")
     }
-})
-
-MBDRecipeTypeEvents.onRecipeUI(e => {
-    let event = e.event
-    event.getRoot().getWidgetsById()
-    const {} = event
 })
