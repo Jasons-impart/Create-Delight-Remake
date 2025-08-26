@@ -1,0 +1,33 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "bakeries:mould"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "item": "bakeries:mould_toast_dough"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "bakeries:mould"
+        },
+        {
+          "item": "bakeries:round_bread_dough"
+        }
+      ],
+      "results": [
+        {
+          "item": "bakeries:mould"
+        }
+      ]
+    }
+  ],
+  "transitionalItem": {
+    "item": "bakeries:mould"
+  }
+}
