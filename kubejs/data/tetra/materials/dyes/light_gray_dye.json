@@ -1,0 +1,26 @@
+{
+  "key": "light_gray_dye",
+  "category": "dyes",
+  "hidden": true,
+  "hiddenOutcomes": true,
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 0,
+  "integrityCost": 0,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "C0C0C0",
+    "texture": "C0C0C0"
+  },
+  "textures": [
+    "default"
+  ],
+  "experienceCost": 3,
+  "material": {
+    "items": [ "minecraft:light_gray_dye" ]
+  }
+}

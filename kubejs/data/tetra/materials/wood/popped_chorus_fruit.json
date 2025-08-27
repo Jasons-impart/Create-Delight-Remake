@@ -15,6 +15,7 @@
     "texture": "b58bb5"
   },
   "textures": [
+    "metal",
     "crude",
     "default"
   ],

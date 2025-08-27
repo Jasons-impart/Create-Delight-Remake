@@ -3,12 +3,7 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:green_coffee_bean',
     'youkaishomecoming:coffee_beans',
     'youkaishomecoming:tea_leaves',
-    'youkaishomecoming:redbean_bag',
-    'youkaishomecoming:coffee_bean_bag',
     'youkaishomecoming:tea_leaf_bag',
-    'youkaishomecoming:green_tea_bag',
-    'youkaishomecoming:black_tea_bag',
-    'youkaishomecoming:oolong_tea_bag',
     'youkaishomecoming:doughnut',
     'youkaishomecoming:black_tea',
     'youkaishomecoming:green_tea',
@@ -17,8 +12,6 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     "youkaishomecoming:oolong_tea",
     'youkaishomecoming:copper_tank',
     'youkaishomecoming:copper_faucet',
-    'youkaishomecoming:cucumber', 
-    'youkaishomecoming:cucumber_crate', 
     'youkaishomecoming:cucumber_seeds', 
     'youkaishomecoming:mayonnaise_bottle'
   ])

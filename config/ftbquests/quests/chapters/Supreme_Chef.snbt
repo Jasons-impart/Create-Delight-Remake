@@ -307,12 +307,12 @@
 			size: 1.5d
 			subtitle: "快去收集吧"
 			tasks: [{
-				id: "259EA90014A27350"
+				id: "28BBB4D938B96370"
 				item: {
 					Count: 1
-					id: "minecraft:iron_hoe"
+					id: "itemfilters:tag"
 					tag: {
-						Damage: 0
+						value: "minecraft:hoes"
 					}
 				}
 				type: "item"
@@ -533,7 +533,7 @@
 			dependencies: ["3113E45D7D1D9A4E"]
 			description: [
 				"菌落现在可以在任何亮度下生长，而目生长速度有所增加:"
-				"菌落现在可以被骨粉催熟。但是注意一定要等到蘑菇进入菌落阶段才能使用骨粉催熟。(直接催熟未进入菌落阶段的蘑菇则会生成萨菇树)"
+				"菌落现在可以被骨粉催熟。但是注意一定要等到蘑菇进入菌落阶段才能使用骨粉催熟。(直接催熟未进入菌落阶段的蘑菇则会生成蘑菇树)"
 			]
 			id: "0FF64A9D58056F37"
 			rewards: [

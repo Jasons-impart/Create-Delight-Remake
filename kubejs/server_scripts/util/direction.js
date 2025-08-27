@@ -24,12 +24,16 @@ function getDirection(x1, y1, x2, y2) {
     const DIRECTION_SOUTHEAST = Text.translate("message.createdelight.southeast");
     const DIRECTION_SOUTHWEST = Text.translate("message.createdelight.southwest");
     const DIRECTION_NORTHWEST = Text.translate("message.createdelight.northwest");
-    // 当dx为0时，根据dy的正负判断南北方向
-    if (dx === 0) {
+
+    // tan(pi/8)，用于判断方向是否更接近 正方位
+    const thres = 2^(1/2) - 1
+
+    // 当dy绝对值显著大于（> tan(pi/8)）dx绝对值时，为南/北方向
+    if (Math.abs(dy) > thres * Math.abs(dx)) {
         return dy > 0? DIRECTION_SOUTH : DIRECTION_NORTH;
     }
-    // 当dy为0时，根据dx的正负判断东西方向
-    if (dy === 0) {
+    // 当dx绝对值显著大于（> tan(pi/8)）dy绝对值时，为东/西方向
+    if (Math.abs(dx) > thres * Math.abs(dy)) {
         return dx > 0? DIRECTION_EAST : DIRECTION_WEST;
     }
     // 根据dx和dy的正负情况判断斜向方向

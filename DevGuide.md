@@ -31,7 +31,7 @@
 - 与三明治mod兼容。如果有合适的流体则将其加入三明治的酱类兼容中。
 
 # 正式版本发布流程
-- 修改pack.toml中的版本号，并提交mr合并入main分支
+- 修改pack.toml中的版本号 和 README中的版本号，并提交mr合并入main分支
 - 使用git给main分支上修改版本号的这个commit打上对应版本的tag（v0.3.x.x），并将tag推送到github上
 - 把main分支最新commit（即版本修改commit）推送到github上的 release 分支
 - 在github的[tags](https://github.com/Jasons-impart/Create-Delight-Remake/tags)页面从新版本的tag创建release，并填写改动信息

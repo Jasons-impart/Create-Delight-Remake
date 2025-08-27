@@ -1,0 +1,24 @@
+[
+    {
+        "modules": ["single/cane_head", "single/basic_handle"],
+        "attributes": {
+            "forge:jump_strength": 0.4 ,
+            "forge:step_height_addition": 0.8,
+            "generic.movement_speed": 0.01
+        }
+    },
+    {
+        "modules": ["single/cane_head", "single/long_handle"],
+        "attributes": {
+            "forge:step_height_addition": 1.2
+        }
+    },
+    {
+        "modules": ["single/cane_head", "single/light_handle"],
+        "attributes": {
+            "forge:jump_strength": 1.2 ,
+            "forge:step_height_addition": 0.4,
+            "generic.movement_speed": 0.02
+        }
+    }
+]

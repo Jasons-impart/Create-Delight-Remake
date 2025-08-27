@@ -19,11 +19,6 @@ StartupEvents.modifyCreativeTab("minecraft:redstone_blocks", e => {
     'mbd2:mbd_gadgets'
   ])
 })
-StartupEvents.modifyCreativeTab("minecraft:building_blocks", e => {
-  e.remove([
-    'quark:potato_crate',
-  ])
-})
 StartupEvents.modifyCreativeTab("minecraft:functional_blocks", e => {
   e.remove([
     "quark:iron_ladder",

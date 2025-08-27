@@ -14,6 +14,18 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "collectorsreap:food/prawn_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
     make_cake(e, "collectorsreap:lime", "collectorsreap:lime_cake")
     make_cake(e, "collectorsreap:pomegranate", "collectorsreap:pomegranate_cake")
+    //虎虾剥壳
+    cutting(e, 'collectorsreap:cooked_tiger_prawn', [['oceanic_delight:shrimp_slices']])
+    //大饭团
+    kubejs.shapeless(
+        'collectorsreap:big_rice_ball',
+        [
+            "minecraft:dried_kelp",
+            "createdelight:empty_riceball",
+            "createdelight:empty_riceball",
+            "createdelight:empty_riceball"
+        ]
+    ).id("collectorsreap:food/big_rice_ball")
     //蛤蜊肉
     farmersdelight.cutting(
         'collectorsreap:clam',

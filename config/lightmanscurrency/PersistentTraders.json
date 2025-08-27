@@ -5494,7 +5494,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo",
-            "Count": 64
+            "Count": 80
           },
           "Rules": [
             {
@@ -5518,7 +5518,7 @@
           "TradeType": "PURCHASE",
           "SellItem": {
             "ID": "createcafe:oreo_crushed",
-            "Count": 64
+            "Count": 40
           },
           "Rules": [
             {

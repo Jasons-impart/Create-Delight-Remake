@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight, youkaishomecoming } = e.recipes
+    const { create, farmersdelight, youkaishomecoming, kubejs } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")
@@ -11,20 +11,16 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:butter',
         'youkaishomecoming:bowl_of_cream',
         'youkaishomecoming:tea_leaf_bag',
-        'youkaishomecoming:coffee_bean_bag',
-        'youkaishomecoming:black_tea_bag',
-        'youkaishomecoming:green_tea_bag',
-        'youkaishomecoming:oolong_tea_bag',
         'youkaishomecoming:redbean_bag',
         'youkaishomecoming:green_coffee_bean',
         'youkaishomecoming:coffee_beans',
         'youkaishomecoming:coffee_powder',
-        'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:doughnut',
         'youkaishomecoming:ice_cube',
         "youkaishomecoming:kettle",
     ])
     remove_recipes_id(e, [
+        'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
         'youkaishomecoming:oily_bean_curd_from_tofu_smoking',
@@ -41,6 +37,14 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting",
         "youkaishomecoming:cucumber_crate",
         "youkaishomecoming:cucumber_seeds_from_cucumber_crate",
+        "youkaishomecoming:cucumber_from_cucumber_crate",
+        "youkaishomecoming:cucumber_seeds",
+        "youkaishomecoming:green_tea_bag",
+        "youkaishomecoming:green_tea_leaves_from_green_tea_bag",
+        'youkaishomecoming:oolong_tea_bag',
+        "youkaishomecoming:oolong_tea_leaves_from_oolong_tea_bag",
+        "youkaishomecoming:black_tea_bag",
+        "youkaishomecoming:black_tea_leaves_from_black_tea_bag",
         "youkaishomecoming:mayonnaise_bottle",
         "youkaishomecoming:butter"
     ])
@@ -48,6 +52,9 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:moka_pot",
         "youkaishomecoming:kettle"
     ]);
+    e.replaceInput({id: "youkaishomecoming:imitation_crab"}, "minecraft:wheat", "bakeries:flour")
+    e.replaceInput({id: "youkaishomecoming:imitation_crab"}, "#forge:raw_fishes/cod", "#forge:raw_fishes")
+    e.replaceInput({mod: "youkaishomecoming", not: "youkaishomecoming:imitation_crab"}, "minecraft:wheat", "farmersdelight:rice")
     e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
     e.replaceInput({ id: "youkaishomecoming:apaki" }, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
     e.replaceInput({ id: "youkaishomecoming:avgolemono" }, "minecraft:glow_berries", "#forge:fruits/lemon")
@@ -66,7 +73,23 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
-
+    //饭团
+    kubejs.shapeless(
+        '2x youkaishomecoming:onigili',
+        [
+            "minecraft:dried_kelp",
+            "2x createdelight:empty_riceball",
+            "#forge:vegetables",
+        ]
+    ).id("youkaishomecoming:onigili")
+    farmersdelight.cooking(
+        [
+            "createdelight:empty_riceball",
+            "createdelight:empty_riceball",
+            '#forge:meat/processed/raw/pork',
+        ], '2x youkaishomecoming:pork_rice_ball',
+        1.0, 200
+    ).id("youkaishomecoming:pork_rice_ball")
     //豆浆
     create.compacting(
         Fluid.of("createdelight:soya_milk", 250),

@@ -25,5 +25,6 @@
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "dreadsteel:dreadsteel_ingot" ] },
-    "requiredTools": { "hammer_dig": 8 }
+    "requiredTools": { "hammer_dig": 8 },
+    "features": ["chillingfire"]
   }

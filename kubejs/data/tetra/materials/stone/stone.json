@@ -1,0 +1,27 @@
+{
+    "key": "stone",
+    "category": "stone",
+    "primary": 4,
+    "secondary": 3,
+    "tertiary": 0,
+    "durability": 131,
+    "integrityCost": 1,
+    "integrityGain": 4,
+    "magicCapacity": 90,
+    "toolLevel": "minecraft:stone",
+    "toolEfficiency": 4,
+    "tints": {
+        "glyph": "stone_glyph",
+        "texture": "9a9a9a"
+    },
+    "textures": [
+        "crude",
+        "default"
+    ],
+    "material": {
+        "tag": "forge:cobblestone/normal"
+    },
+    "requiredTools": {
+        "hammer_dig": "minecraft:wood"
+    }
+}

@@ -19,12 +19,6 @@
     },
     {
         "matchItems": [
-            "neapolitan:banana_crate"
-        ],
-        "resultItems": "cratedelight:banana_crate"
-    },
-    {
-        "matchItems": [
             "ratatouille:salt",
             "bakeries:salt"
         ],
@@ -100,7 +94,8 @@
     },
     {
         "matchItems": [
-            "culturaldelights:cucumber"
+            "culturaldelights:cucumber",
+            "youkaishomecoming:cucumber"
         ],
         "resultItems": "vintagedelight:cucumber"
     },
@@ -175,5 +170,29 @@
             "the_bumblezone:honey_bucket"
         ],
         "resultItems": "create:honey_bucket"
+    },
+    {
+        "matchItems": [
+            "netherexp:blue_nether_bricks"
+        ],
+        "resultItems": "quark:blue_nether_bricks"
+    },
+    {
+        "matchItems": [
+            "netherexp:blue_nether_brick_wall"
+        ],
+        "resultItems": "quark:blue_nether_bricks_wall"
+    },
+    {
+        "matchItems": [
+            "netherexp:blue_nether_brick_slab"
+        ],
+        "resultItems": "quark:blue_nether_bricks_slab"
+    },
+    {
+        "matchItems": [
+            "netherexp:blue_nether_brick_stairs"
+        ],
+        "resultItems": "quark:blue_nether_bricks_stairs"
     }
 ]

@@ -1,0 +1,29 @@
+{
+  "key": "extrastone",
+  "category": "stone",
+  "primary": 4,
+  "secondary": 3.5,
+  "tertiary": 0,
+  "durability": 180,
+  "integrityCost": 1,
+  "integrityGain": 4,
+  "magicCapacity": 90,
+  "toolLevel": "minecraft:stone",
+  "toolEfficiency": 4.5,
+  "tints": {
+    "glyph": "andesite_glyph",
+    "texture": "andesite"
+  },
+  "textures": [
+    "grainy",
+    "crude",
+    "default"
+  ],
+  "material": {
+    "tag": "createdelight:extrastone"
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:wood"
+  },
+  "features": [ "polished" ]
+}

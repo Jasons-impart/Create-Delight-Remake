@@ -1,6 +1,8 @@
 {
     "key": "andesite",
     "category": "stone",
+    "hidden": true,
+    "hiddenOutcomes": true,
     "primary": 4,
     "secondary": 3.5,
     "tertiary": 0,
@@ -24,6 +26,5 @@
     },
     "requiredTools": {
         "hammer_dig": "minecraft:wood"
-    },
-    "features": [ "polished" ]
+    }
 }
