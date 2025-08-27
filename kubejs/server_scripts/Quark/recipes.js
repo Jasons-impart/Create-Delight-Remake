@@ -10,6 +10,11 @@ ServerEvents.recipes(e => {
         "quark:glowberry_sack",
         "quark:gunpowder_sack"
     ])
+    remove_recipes_id(e, [
+        "quark:mobs/smelting/cooked_crab_leg",
+        "quark:mobs/smoking/cooked_crab_leg",
+        "quark:mobs/campfire/cooked_crab_leg"
+    ])
     //不要删除夸克的箱装方块拆解的配方，idas的建筑中会有。
     // remove_recipes_id(e, [
     //    "quark:building/crafting/compressed/potato_crate_uncompress", 

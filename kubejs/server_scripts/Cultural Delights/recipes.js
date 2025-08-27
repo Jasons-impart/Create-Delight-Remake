@@ -52,6 +52,16 @@ ServerEvents.recipes(e => {
             "createdelight:empty_riceball",
             "2x crabbersdelight:tropical_fish_slice"
         ]
-    )
-        .id("culturaldelights:tropical_roll")
+    ).id("culturaldelights:tropical_roll")
+    //饭团
+    e.recipes.kubejs.shapeless(
+        "2x culturaldelights:rice_ball",
+        [
+            "minecraft:dried_kelp",
+            "createdelight:empty_riceball",
+            "createdelight:empty_riceball",
+            "#alexscaves:sweet_berries",
+            "#forge:raw_fishes/salmon"
+        ]
+    ).id("culturaldelights:rice_ball")
 })

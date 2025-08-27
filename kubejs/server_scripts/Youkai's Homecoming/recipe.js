@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight, youkaishomecoming } = e.recipes
+    const { create, farmersdelight, youkaishomecoming, kubejs } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")
@@ -47,6 +47,9 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:moka_pot",
         "youkaishomecoming:kettle"
     ]);
+    e.replaceInput({id: "youkaishomecoming:imitation_crab"}, "minecraft:wheat", "bakeries:flour")
+    e.replaceInput({id: "youkaishomecoming:imitation_crab"}, "#forge:raw_fishes/cod", "#forge:raw_fishes")
+    e.replaceInput({mod: "youkaishomecoming", not: "youkaishomecoming:imitation_crab"}, "minecraft:wheat", "farmersdelight:rice")
     e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
     e.replaceInput({}, 'youkaishomecoming:black_tea_leaves', 'farmersrespite:black_tea_leaves')
@@ -74,7 +77,23 @@ ServerEvents.recipes(e => {
     e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
-
+    //饭团
+    kubejs.shapeless(
+        '2x youkaishomecoming:onigili',
+        [
+            "minecraft:dried_kelp",
+            "2x createdelight:empty_riceball",
+            "#forge:vegetables",
+        ]
+    ).id("youkaishomecoming:onigili")
+    farmersdelight.cooking(
+        [
+            "createdelight:empty_riceball",
+            "createdelight:empty_riceball",
+            '#forge:meat/processed/raw/pork',
+        ], '2x youkaishomecoming:pork_rice_ball',
+        1.0, 200
+    ).id("youkaishomecoming:pork_rice_ball")
     //豆浆
     create.compacting(
         Fluid.of("createdelight:soya_milk", 250),
