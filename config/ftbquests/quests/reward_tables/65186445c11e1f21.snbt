@@ -1,0 +1,17 @@
+{
+	id: "65186445C11E1F21"
+	loot_size: 1
+	order_index: 30
+	rewards: [
+		{ item: "youkaishomecoming:kiku" }
+		{ item: "youkaishomecoming:hakutsuru" }
+		{ item: "youkaishomecoming:kappa_village" }
+		{ item: "youkaishomecoming:suigei" }
+		{ item: "youkaishomecoming:daiginjo" }
+		{ item: "youkaishomecoming:dassai" }
+		{ item: "youkaishomecoming:tengu_tango" }
+		{ item: "youkaishomecoming:full_moons_eve" }
+		{ item: "youkaishomecoming:sparrow_sake" }
+	]
+	title: "妖怪们的归家酒饮"
+}

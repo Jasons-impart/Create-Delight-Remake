@@ -1045,35 +1045,6 @@
 		{
 			can_repeat: true
 			dependencies: ["4245E55901A10324"]
-			description: ["          在裂隙中提取物品，尽管效率不高，但是也许可以碰碰运气。"]
-			id: "27C4A5AE4F8C6E95"
-			rewards: [
-				{
-					icon: "minecraft:amethyst_shard"
-					id: "4125B65A0886A004"
-					table_id: 2077532568744688732L
-					type: "random"
-				}
-				{
-					exclude_from_claim_all: true
-					id: "662AF1A177DB5CED"
-					table_id: 1515464272228904394L
-					type: "random"
-				}
-			]
-			shape: "square"
-			tasks: [{
-				id: "394C4F8B9880263B"
-				item: "createdelight:otherworld_note"
-				type: "item"
-			}]
-			title: "材料提取"
-			x: 19.0d
-			y: -7.0d
-		}
-		{
-			can_repeat: true
-			dependencies: ["4245E55901A10324"]
 			description: ["         累了吧，过来坐坐......希望这些补给可以帮助你度过接下来的困难。"]
 			id: "32D4B900101497D2"
 			rewards: [
@@ -1081,18 +1052,26 @@
 					count: 4
 					id: "657D7F913CE6AD4B"
 					item: "minecraft:enchanted_golden_apple"
+					random_bonus: 2
 					type: "item"
 				}
 				{
 					count: 4
 					id: "05FB16E58EDFB226"
 					item: "trailandtales_delight:ancient_coffee"
+					random_bonus: 2
 					type: "item"
 				}
 				{
-					count: 4
-					id: "3B0DB5506EFE9AAD"
-					item: "fruitsdelight:mango_jelly"
+					id: "502ADE108F4A2EDF"
+					item: {
+						Count: 1
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:night_vision"
+						}
+					}
+					random_bonus: 1
 					type: "item"
 				}
 			]
@@ -1106,7 +1085,7 @@
 			}]
 			title: "战斗补给"
 			x: 19.0d
-			y: -5.5d
+			y: -7.0d
 		}
 		{
 			can_repeat: true
