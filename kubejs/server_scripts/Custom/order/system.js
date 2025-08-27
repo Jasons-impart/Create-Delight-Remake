@@ -143,16 +143,6 @@ Order.checkAllPackages = function (orders, items) {
         return 1 + gini;
     }
 
-    // 获取一个稳定的“物品类型键”。（KubeJS 通常是 stack.id）
-    function getTypeKey(stack) {
-        // 优先使用 KubeJS 的字符串 id
-        if (typeof stack.id === 'string') return stack.id;
-        // 兼容可能存在的 getId()
-        if (typeof stack.getId === 'function') return String(stack.getId());
-        // 退路：尽力序列化
-        return String(stack);
-    }
-
     orders.forEach(order => {
         if (order == null) {
             results.push(0);
@@ -316,14 +306,4 @@ ServerEvents.tick(e => {
         for (let i = 0; i < count; i++)
             Order.addOrderToAuction()
     }
-})
-
-ItemEvents.rightClicked("stick", e => {
-    const {level, player} = e
-    /**@type {Internal.BrassDroneEntity} */
-    let entity = level.createEntity("create_sa:brass_drone")
-    entity.setPos(player.pos)
-    entity.setShiftKeyDown(true)
-    player.tell(entity)
-    player.tell(level.addFreshEntity(entity))
 })

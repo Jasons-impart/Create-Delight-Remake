@@ -8,29 +8,52 @@ ItemEvents.tooltip(e => {
             .forEach(tag => {
                 let type = tag.location().path.split("/")[1]
                 comp.append(Text.translate("tooltip.createdelight.order.entries." + type))
-                .append('-')
-                .append(Text.translate("tooltip.createdelight.order.tier." + global.Order.getGoodsOrderProperty(item, type)))
-                .append(' ')
+                    .append('-')
+                    .append(Text.translate("tooltip.createdelight.order.tier." + global.Order.getGoodsOrderProperty(item, type)))
+                    .append(' ')
                 added = true
             })
         if (added)
             text.add(comp)
     })
     e.addAdvanced("createdelight:order", (item, advanced, text) => {
-        
-        /**
-         * @type {{count: number, id: string, minQuality: number}[]}
-         */
-        let entries = item.nbt.createdelightOrderInfo.entries
-        let type = item.nbt.createdelightOrderInfo.type
-        
-        text.add(Text.translate("tooltip.createdelight.order.customer." + type))
+        let info = item.nbt.createdelightOrderInfo
+        if (!info) return
+
+        let entries = info.entries
+        let type = info.type
+        let rewardType = global.Order.customerProperties[type].reward
+        let rewardAmount = 5 // 这里你也可以从 NBT 里取
+
+        // 标题
+        text.add(Text.translate("tooltip.createdelight.order.title",
+            Text.translate("tooltip.createdelight.order.customer." + type)
+        ))
+
+        // 空行
+        text.add("")
+
+        // 需求
+        text.add(Text.translate("tooltip.createdelight.order.require.title"))
         entries.forEach(value => {
-            let tmp = Text.translate("tooltip.createdelight.order.entrie", 
+            text.add(Text.translate(
+                "tooltip.createdelight.order.require.entry",
                 Text.translate("tooltip.createdelight.order.entries." + value.id),
-                parseInt(value.count),
-                 Text.translate("tooltip.createdelight.order.tier." + value.minQuality))
-            text.add(tmp)
+                value.count.toFixed(),
+                Text.translate("tooltip.createdelight.order.tier." + value.minQuality)
+            ))
         })
+
+        text.add("")
+
+        // 奖励
+        text.add(Text.translate("tooltip.createdelight.order.reward.title"))
+        text.add(Text.translate(
+            "tooltip.createdelight.order.reward.entry",
+            rewardAmount.toFixed(),
+            Text.translate("tooltip.createdelight.order.reward." + rewardType)
+        ))
     })
+
+
 })
