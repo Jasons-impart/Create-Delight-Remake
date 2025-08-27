@@ -18,9 +18,6 @@ ServerEvents.recipes(e => {
         "quark:building/crafting/compressed/glowberry_sack_uncompress",
         "quark:building/crafting/compressed/gunpowder_sack",
         "quark:building/crafting/compressed/gunpowder_sack_uncompress",
-    ])
-    
-    remove_recipes_id(e, [
         "quark:mobs/smelting/cooked_crab_leg",
         "quark:mobs/smoking/cooked_crab_leg",
         "quark:mobs/campfire/cooked_crab_leg"
