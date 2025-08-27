@@ -15,7 +15,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:gold_rabbit_zip',
     // 原材料
     'createdelight:corn_flour',
-    'createdelight:whipped_cream_bowl',
     'createdelight:butter',
     // 面团及其直接产物
     'createdelight:dry_yeast',
@@ -159,7 +158,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:artificial_egg_yolk_bucket',
     'createdelight:soya_milk_bucket',
     'createdelight:nut_milk_bucket',
-    'createdelight:whipped_cream_bucket',
     'createdelight:vinegar_bucket',
     'createdelight:yeast_bucket',
     // 奶昔及对应冰激凌

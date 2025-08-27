@@ -64,7 +64,6 @@ ServerEvents.recipes(e => {
         "bakeries:ground_coffee",
         "bakeries:coffee_bean"
     ])
-    e.replaceOutput({ mod: "bakeries" }, 'bakeries:salt', "vintagedelight:salt_dust")
 
 
     //展示框
@@ -518,7 +517,7 @@ ServerEvents.recipes(e => {
     cutting_1(e, "ratatouille:cake_base", [["bakeries:cut_cake_base", 2]])
     create.filling("bakeries:soak_coffee_cut_cake_base", ["bakeries:cut_cake_base", Fluid.of("createdelight:espresso_fluid", 250)])
         .id("bakeries:filling/soak_coffee_cut_cake_base")
-    create.compacting("bakeries:foamed_cream", [Fluid.of("createdelight:whipped_cream", 250)])
+    create.compacting("bakeries:foamed_cream", [Fluid.of("cosmopolitan:cream", 250)])
         .heated()
         .id("bakeries:compacting/foamed_cream")
     create.mixing("2x bakeries:cheese_cream", ["bakeries:foamed_cream", "#forge:cheese"])
@@ -561,9 +560,9 @@ ServerEvents.recipes(e => {
     {
         let iner = 'bakeries:cut_cake_base'
         create.sequenced_assembly('bakeries:cream_cake', iner, [
-            create.filling(iner, [iner, Fluid.of("createdelight:whipped_cream", 250)]),
+            create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
             create.deploying(iner, [iner, "bakeries:cut_cake_base"]),
-            create.filling(iner, [iner, Fluid.of("createdelight:whipped_cream", 250)]),
+            create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
             create.deploying(iner, [iner, "#alexscaves:sweet_berries"])
         ])
             .loops(1)
@@ -637,5 +636,4 @@ ServerEvents.recipes(e => {
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')
-    e.removeAllTagsFrom("vintagedelight:cheese_slice")
 })

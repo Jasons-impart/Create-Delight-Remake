@@ -14,7 +14,6 @@ ServerEvents.recipes(e => {
             .inputFE(100)
           )
       let big = e.recipes.createdelight.big_centrifugation()
-        .inputRPM(32)
       originalRecipe.ingredients.forEach(ingr => {
         if (originalRecipe.fluidResults.isEmpty())
           small.inputItems(ingr.asStack())
@@ -51,7 +50,6 @@ function centrifugation(e, results, ingredients, processingTime, minimalRPM) {
   let input = RecipeUtil.convertInput(ingredients)
   let output = RecipeUtil.convertOutput(results)
   let mbdRecipe = e.recipes.createdelight.big_centrifugation()
-    .inputRPM(32)
   if (input[0].length != 0)
     mbdRecipe.inputItems([input[0]])
   if (input[1].length != 0)

@@ -14,12 +14,20 @@
 			description: ["安山合金需要使用&e安山岩&r和&e铁粒&r或者&e锌粒&r制作。使用&e搅拌机&r能使消耗材料减半！"]
 			icon: "create:andesite_alloy"
 			id: "510B2EE25982FD73"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "03A6C0382A35B62D"
-				table_id: 6730734086547045908L
-				type: "random"
-			}]
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "03A6C0382A35B62D"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+				{
+					count: 32
+					id: "7C8331D4731D12BA"
+					item: "create:andesite_alloy"
+					type: "item"
+				}
+			]
 			shape: "gear"
 			size: 2.0d
 			subtitle: "按住&4w&r可以进行&e俺寻思"
@@ -183,7 +191,7 @@
 				{
 					id: "18145507F9554AC3"
 					item: "create:andesite_casing"
-					random_bonus: 4
+					random_bonus: 8
 					type: "item"
 				}
 				{
@@ -698,6 +706,20 @@
 		{
 			dependencies: ["1AAB7454C767D9DB"]
 			id: "28CB30AB88780BC7"
+			rewards: [
+				{
+					count: 8
+					id: "039FB9740003E8BD"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "03FB5026D74FF318"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
 			shape: "square"
 			tasks: [{
 				icon: "create:large_cogwheel"
@@ -754,12 +776,20 @@
 		{
 			dependencies: ["621E3093612F5D2C"]
 			id: "1CED61E7F780F38C"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "3538A2DC5F2DE82C"
-				table_id: 6730734086547045908L
-				type: "random"
-			}]
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3538A2DC5F2DE82C"
+					table_id: 6730734086547045908L
+					type: "random"
+				}
+				{
+					count: 32
+					id: "6E2FF56F78E5CCEB"
+					item: "create:iron_sheet"
+					type: "item"
+				}
+			]
 			shape: "square"
 			tasks: [{
 				advancement: "create:mechanical_press"
@@ -1181,6 +1211,8 @@
 			description: [
 				"&e安山桶&r可以从机器中&4取出至多2000mB的流体&r"
 				"&e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r"
+				""
+				"使用安山桶喂烈焰人燃烧室燃料时需要进入&e潜行状态&r再右键。"
 			]
 			id: "630FA0478B7DAAAA"
 			size: 1.0d
@@ -1282,6 +1314,20 @@
 		{
 			dependencies: ["0DC2E7BC4657D633"]
 			id: "3626C98B27069A0C"
+			rewards: [
+				{
+					count: 8
+					id: "3E0B3C5B18ACA874"
+					item: "create:copper_casing"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "4DA6BEAD93A001E7"
+					table_id: 2218915723137103147L
+					type: "random"
+				}
+			]
 			tasks: [{
 				id: "612DF86D48D58754"
 				item: "create:copper_casing"
@@ -1293,6 +1339,20 @@
 		{
 			dependencies: ["621E3093612F5D2C"]
 			id: "0DC2E7BC4657D633"
+			rewards: [
+				{
+					count: 16
+					id: "7D172F41E8881ACA"
+					item: "create:copper_sheet"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "0D9FFB495C882D17"
+					table_id: 2218915723137103147L
+					type: "random"
+				}
+			]
 			shape: "square"
 			tasks: [{
 				id: "5E2108FA929853BB"
@@ -1342,7 +1402,7 @@
 			dependencies: ["223ACB0E32376155"]
 			description: [
 				"注：&4液体燃料&r都是不能无限的"
-				"JEI搜索 &e$bottomless&r 以确认无限流体有哪些。"
+				"JEI搜索 &e$bottomless/allow&r 以确认无限流体有哪些。"
 			]
 			id: "1523D6D5EF640B8C"
 			rewards: [{

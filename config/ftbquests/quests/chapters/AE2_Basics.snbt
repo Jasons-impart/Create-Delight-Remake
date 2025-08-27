@@ -511,7 +511,7 @@
 			dependencies: ["29D71BA5F51B8710"]
 			dependency_requirement: "all_started"
 			id: "03BBFC33D603A287"
-			subtitle: "将充能赛特斯石英水晶，铁锭，陨石块丢入岩浆中即可制作"
+			subtitle: "将充能赛特斯石英水晶，铁锭，陨石丢入岩浆中即可制作"
 			tasks: [{
 				id: "1C14B985B7714345"
 				item: "megacells:sky_steel_ingot"

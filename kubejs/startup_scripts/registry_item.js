@@ -206,9 +206,6 @@ StartupEvents.registry("item", e => {
                 .effect("minecraft:hunger", 200, 1, 1.0)
                 .effect("minecraft:nausea", 200, 1, 1.0)
         })
-    e.create("createdelight:whipped_cream_bowl")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.whipped_cream_bowl")
     e.create("createdelight:oil_dough")
         .maxStackSize(64)
         .translationKey("item.createdelight.oil_dough")
@@ -424,6 +421,10 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_alternator")
     e.create("createdelight:incomplete_diesel_engine", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_diesel_engine")
+    e.create("createdelight:incomplete_huge_diesel_engine", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_huge_diesel_engine")
+    e.create("createdelight:incomplete_large_diesel_engine", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_large_diesel_engine")
     e.create("createdelight:incomplete_basic_motor", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_basic_motor")
     e.create("createdelight:incomplete_advanced_motor", "create:sequenced_assembly")
@@ -434,8 +435,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_carbon_brushes")
     e.create("createdelight:incomplete_electric_motor", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_electric_motor")
-    e.create("createdelight:incomplete_modular_diesel_engine", "create:sequenced_assembly")
-        .translationKey("item.createdelight.incomplete_modular_diesel_engine")
     e.create("createdelight:incompleted_modular_accumulator", "create:sequenced_assembly")
         .translationKey("item.createdelight.incompleted_modular_accumulator")
     e.create("createdelight:incomplete_electron_tube", "create:sequenced_assembly")
@@ -729,6 +728,9 @@ StartupEvents.registry("item", e => {
     //针
     e.create("createdelight:needle")
         .translationKey("item.createdelight.needle")
+    e.create("createdelight:quality_absorber")
+        .useDuration(item => 20)
+        .translationKey("item.createdelight.quality_absorber")
     
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]

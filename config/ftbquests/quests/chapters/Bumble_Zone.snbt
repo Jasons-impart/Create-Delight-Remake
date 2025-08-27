@@ -613,13 +613,9 @@
 				xp: 100
 			}]
 			tasks: [{
-				icon: "the_bumblezone:honey_cocoon"
-				id: "6858B7DCF90CD7A2"
-				observe_type: 0
-				timer: 0L
-				title: "蜂蜜茧"
-				to_observe: "the_bumblezone:honey_cocoon "
-				type: "observation"
+				id: "21DB3578AFAE8F09"
+				item: "the_bumblezone:honey_cocoon"
+				type: "item"
 			}]
 			x: -2.0d
 			y: 1.0d

@@ -1,0 +1,20 @@
+{
+  "fluid": "#forge:ethanol",
+  "sound_pitch": 0.9,
+  "normal": {
+    "speed": 72,
+    "strength": 9216,
+    "burn_rate": 0.1
+  },
+  "modular": {
+    "speed": 72,
+    "strength": 18432,
+    "burn_rate": 0.1
+  },
+  "huge": {
+    "speed": 72,
+    "strength": 18432,
+    "burn_rate": 0.05
+  },
+  "burner_multiplier": 1.0
+}

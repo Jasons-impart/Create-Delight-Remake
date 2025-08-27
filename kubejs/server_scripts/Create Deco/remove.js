@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
         "createdeco:compacting/industrial_iron_ingot",
         "create:industrial_iron_block_from_iron_ingots_stonecutting",
         "createdeco:netherite_ingot",
-        "quark:building/crafting/iron_ladder"
+        "quark:building/crafting/iron_ladder",
+        "createdeco:pressing/zinc_sheet",
+        "createdeco:pressing/andesite_sheet"
     ])
     remove_recipes_output(e, [
         'createdeco:andesite_sheet',
@@ -29,8 +31,6 @@ ServerEvents.recipes(e => {
         'createdeco:iron_hull',
         'createdeco:copper_hull',
         'createdeco:industrial_iron_hull',
-        'createdeco:zinc_hull',
+        'createdeco:zinc_hull'
     ])
-    e.replaceInput({input: "#createdeco:internal/plates/zinc_plates"}, "#createdeco:internal/plates/zinc_plates", "#forge:plates/zinc")
-    e.replaceInput({input: "#createdeco:internal/plates/andesite_plates"}, "#createdeco:internal/plates/andesite_plates", "#forge:plates/andesite")
 })

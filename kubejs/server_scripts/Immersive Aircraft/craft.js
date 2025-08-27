@@ -178,4 +178,10 @@ ServerEvents.recipes(e => {
             E: "immersive_aircraft:biplane"
         }
     ).id("man_of_many_planes:economy_plane")
+    // 调整风帆配方可用所有地毯
+    e.replaceInput(
+        { output: "immersive_aircraft:sail" },
+        "minecraft:white_carpet",
+        "#minecraft:wool_carpets"
+    )
 })

@@ -172,8 +172,8 @@ ServerEvents.recipes(e => {
     ], {
         A: "createdelightcore:steel_casing",
         B: "createdelight:magnetic_mechanism",
-        C: "#forge:ingots/scarlet_neodymium",
-        D: "#forge:ingots/azure_neodymium",
+        C: "alexscaves:azure_neodymium_ingot",
+        D: "alexscaves:scarlet_neodymium_ingot",
         E: "alexscaves:heart_of_iron"
     }).id("createdelight:mechanical_crafting/big_centrifuge")
     e.recipes.create.mechanical_crafting("createdelight:centrifuge_rotor", [

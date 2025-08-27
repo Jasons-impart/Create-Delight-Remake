@@ -1,0 +1,3 @@
+JAVA=java
+JVM_ARGS=-Xms4G -Xmx6G -XX:+UseG1GC -XX:+AlwaysPreTouch
+RECOMMENDED_JAVA_VER=17

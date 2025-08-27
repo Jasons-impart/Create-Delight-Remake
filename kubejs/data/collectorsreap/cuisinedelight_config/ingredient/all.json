@@ -4,7 +4,7 @@
             "type": "MEAT",
             "effects": [],
             "ingredient": {
-                "item": "dungeonsdelight:silverfish_thorax"
+                "item": "dungeonsdelight:silverfish_abdomen"
             },
             "max_time": 180,
             "min_time": 60,

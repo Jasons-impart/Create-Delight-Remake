@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         "design_decor:stonecutting/industrial_plating",
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot",
-        "minecraft:iron_trapdoor",
+        "create:filling/compat/neapolitan/milk_bottle",
     ])
     // 闪长岩合成配方优化
     e.recipes.create.mixing(
@@ -335,14 +335,7 @@ ServerEvents.recipes(e => {
         C: "create:empty_blaze_burner",
         D: "#mynethersdelight:bullet_pepper"
     }).id("create:shaped/blaze_burner")
-    // 铁活板门配方优化
-    e.recipes.kubejs.shaped(
-        "minecraft:iron_trapdoor",
-        [
-            "AA ",
-            "AA "
-        ], {
-            A: 'minecraft:iron_ingot'
-        }
-    ).id("create:shaped/iron_trapdoor_manual_only")
+    // 铁活板门可熔融回收铁
+    e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_iron", 360), "minecraft:iron_trapdoor")
+        .heatRequirement("heated").processingTime(180)
 })

@@ -65,7 +65,7 @@
                     "item": "vintagedelight:pickled_beetroot"
                 },
                 {
-                    "item": "vintagedelight:pickle"
+                    "item": "culturaldelights:pickle"
                 }
             ],
             "max_time": 360,

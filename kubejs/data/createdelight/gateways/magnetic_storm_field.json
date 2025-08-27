@@ -1,0 +1,290 @@
+{
+	"size": "large",
+	"color": "#483D8B",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:teletor",
+					"count": 12
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.1 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:teletor",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:telecore", 
+                        "count": 1
+					    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:ferrouslime",
+					"count": 8
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.3
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:ferrouslime",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 1,
+                        "nbt" : {"gateway":"createdelight:magnetic_storm_field"}}
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:galena_gauntlet", 
+                        "count": 1
+					    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 150
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:boundroid",
+					"count": 8
+				},
+				{
+					"entity": "alexscaves:notor",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:boundroid",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:notor",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:holocoder", 
+                        "count": 1
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:quarry_smasher", 
+                        "count": 1
+					    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:magnetron",
+					"count": 4
+				}
+			],
+			"modifiers": [
+                {
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.5
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:heart_of_iron", 
+                        "count": 2
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:quarry", 
+                        "count": 1
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 1,
+                        "nbt" : {"gateway":"createdelight:magnetic_storm_field"}}
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:magnetron",
+					"count": 1
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 10.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 6.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:block_of_scarlet_neodymium", 
+                        "count": 4
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:block_of_azure_neodymium", 
+                        "count": 4
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:resistor_shield", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		}
+    ],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": false
+    }]
+}

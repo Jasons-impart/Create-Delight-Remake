@@ -12,11 +12,6 @@
 	quests: [
 		{
 			id: "7D54AF3A775B6E9E"
-			rewards: [{
-				id: "648E7ECD2F0C521B"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "17418DAEEA91BD2E"
@@ -28,11 +23,6 @@
 		}
 		{
 			id: "7A608C48C3947975"
-			rewards: [{
-				id: "69BF3A0EB95C4294"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "02E3F757C7A0B05A"
@@ -44,11 +34,6 @@
 		}
 		{
 			id: "3A1374A5FCBE5558"
-			rewards: [{
-				id: "60801164831A2EAB"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 16L
 				id: "6FD81D14D36A11B2"
@@ -60,11 +45,6 @@
 		}
 		{
 			id: "2C75BC13E58E3293"
-			rewards: [{
-				id: "1EE1E9F04CBB4CD2"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 16L
 				id: "0332AD0CBF0A5718"
@@ -76,11 +56,6 @@
 		}
 		{
 			id: "027EEF0721C497D3"
-			rewards: [{
-				id: "43715E9E81A8162C"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "0688348A64449814"
@@ -92,11 +67,6 @@
 		}
 		{
 			id: "7794F6910AF7591C"
-			rewards: [{
-				id: "0391E1A5E8324A7F"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "0A4EEBE474158827"
@@ -108,11 +78,6 @@
 		}
 		{
 			id: "52CAEFBED4952D92"
-			rewards: [{
-				id: "59B4E2EE5E45E8AF"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "5EB0E9EE15FAB25A"
@@ -124,11 +89,6 @@
 		}
 		{
 			id: "50B7170A5AAEBA8A"
-			rewards: [{
-				id: "63AB3CD487A71EA7"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "70B8769F799B25FE"
@@ -140,11 +100,6 @@
 		}
 		{
 			id: "1219B75C2EB5BDD3"
-			rewards: [{
-				id: "1E499D344FA005FF"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "5C585492B1EC7D39"
@@ -156,11 +111,6 @@
 		}
 		{
 			id: "5B0583F6E1474359"
-			rewards: [{
-				id: "2B34E190FC96841E"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "1C6219D413B09470"
@@ -172,11 +122,6 @@
 		}
 		{
 			id: "555915045BD9EEC0"
-			rewards: [{
-				id: "23357F8613DB48D3"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "3466BE6753EB4F9B"
@@ -188,11 +133,6 @@
 		}
 		{
 			id: "611F3C0D64351D0F"
-			rewards: [{
-				id: "07E4392C9D8F2C1B"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "1EA3AE785C233920"
@@ -204,11 +144,6 @@
 		}
 		{
 			id: "7781E14E3569EDC6"
-			rewards: [{
-				id: "715E223B995EDD0E"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 64L
 				id: "5092344F051C7D74"
@@ -220,11 +155,6 @@
 		}
 		{
 			id: "3042E8CAEFF3F7CE"
-			rewards: [{
-				id: "647DB900930683F2"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 16L
 				id: "180E01E7F67EF1BA"
@@ -236,11 +166,6 @@
 		}
 		{
 			id: "6098CD2DFB98E121"
-			rewards: [{
-				id: "4CB4691EC03BAF81"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			tasks: [{
 				count: 16L
 				id: "0863767B88380B86"
@@ -252,11 +177,6 @@
 		}
 		{
 			id: "4FCBBE103FE7E9C7"
-			rewards: [{
-				id: "6C8241A46F6BD329"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "解锁戴斯"
 			tasks: [{
 				id: "58A7B13B97BFBF42"
@@ -272,11 +192,6 @@
 		}
 		{
 			id: "057F6F421273C4DC"
-			rewards: [{
-				id: "56EF0E092B20A7F5"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "解锁紫金"
 			tasks: [{
 				id: "37070498C25172CE"
@@ -292,11 +207,6 @@
 		}
 		{
 			id: "630E52E14877F5B7"
-			rewards: [{
-				id: "000B063460A20331"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "解锁耐热金属"
 			tasks: [{
 				id: "264849DB692791C6"
@@ -312,11 +222,6 @@
 		}
 		{
 			id: "63356DE1A41FB7E0"
-			rewards: [{
-				id: "384119C83C43BA8E"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L
@@ -329,11 +234,6 @@
 		}
 		{
 			id: "441F72B76AC3D7AC"
-			rewards: [{
-				id: "0DBBBED5D86F9A41"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L
@@ -346,11 +246,6 @@
 		}
 		{
 			id: "36114A8D5283E6E5"
-			rewards: [{
-				id: "2F4B5EF36DB6E947"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L

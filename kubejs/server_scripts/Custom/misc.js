@@ -1,11 +1,6 @@
 ServerEvents.recipes(e => {
     const {create, createdieselgenerators, vintageimprovements, createaddition, createmetallurgy} = e.recipes
     e.replaceInput({id: "explorerscompass:explorers_compass"}, "minecraft:cracked_stone_bricks", "#forge:ingots/steel")
-    create.crushing(["12x createdieselgenerators:wood_chip",
-        Item.of("createdieselgenerators:wood_chip", 4).withChance(0.5),
-        Item.of("farmersdelight:tree_bark", 1).withChance(0.75)],
-    "#minecraft:logs")
-    .id("createdelight:crushing/logs")
     fermenting(e,
         "farmersdelight:rich_soil", 
         [

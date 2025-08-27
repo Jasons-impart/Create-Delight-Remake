@@ -1,18 +1,18 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-       "vintageimprovements:craft/grinder_belt",
-       "vintageimprovements:craft/belt_grinder"
+        "vintageimprovements:craft/grinder_belt",
+        "vintageimprovements:craft/belt_grinder"
     ])
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
-    kubejs.shaped( 
+    kubejs.shaped(
         'createmetallurgy:sandpaper_belt',
         [
             "AAA",
             "A A",
             "AAA"
         ], {
-            A: "#create:sandpaper"
-        }
+        A: "#create:sandpaper"
+    }
     ).id("createmetallurgy:crafting/materials/sandpaper_belt")
     metal_production_line_5(e, [
         "createmetallurgy:dirty_copper_dust",
@@ -82,9 +82,12 @@ ServerEvents.recipes(e => {
         "createmetallurgy:alloying/brass"
     ])
 
-    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
-    e.replaceInput({ id: "createmetallurgy:alloying/obdurium"}, "create:andesite_alloy", "createmetallurgy:steel_ingot")
-    e.replaceInput({output: "createmetallurgy:coke"}, "#forge:ores/coal", "#minecraft:coals")
+    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
+    e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
+    kubejs.shapeless("createmetallurgy:refractory_mortar", ["minecraft:water_bucket", "6x #minecraft:sand", "2x minecraft:clay_ball"])
+    .replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
+    .id("createmetallurgy:refractory_mortar")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
@@ -133,7 +136,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         Fluid.of("createmetallurgy:molten_electrum", 30),
         [
-            Fluid.of("createmetallurgy:molten_sliver", 15),
+            Fluid.of("createmetallurgy:molten_silver", 15),
             Fluid.of("createmetallurgy:molten_gold", 15)
         ], 100, "heated"
     ).id("createmetallurgy:mixing/molten_electrum")
@@ -173,6 +176,13 @@ ServerEvents.recipes(e => {
             "createmetallurgy:graphite_plate_mold"
         ], 100, false
     ).id("createmetallurgy:casting_in_table/steel/plate")
+    e.recipes.vintageimprovements.pressurizing("createmetallurgy:graphite", [
+        "#forge:coal_coke",
+        "#forge:coal_coke",
+        "minecraft:clay_ball"
+    ])
+    .superheated()
+    .id("createmetallurgy:pressurizing/graphite")
     {
         let iner = "createmetallurgy:incomplete_industrial_crucible"
         e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'createfluidstuffs:multi_fluid_tank', [
@@ -181,16 +191,16 @@ ServerEvents.recipes(e => {
             e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
             e.recipes.createmetallurgy.grinding(iner, iner)
         ])
-        .loops(1)
-        .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
-        .id("createmetallurgy:sequenced_assembly/industrial_crucible")
+            .loops(1)
+            .transitionalItem("createmetallurgy:incomplete_industrial_crucible")
+            .id("createmetallurgy:sequenced_assembly/industrial_crucible")
     }
     vintageimprovements.hammering("createmetallurgy:obdurium_sheet", "#forge:ingots/obdurium")
-    .id("createmetallurgy:hammering/obdurium_sheet")
+        .id("createmetallurgy:hammering/obdurium_sheet")
     entity_melting(e, Fluid.of("createdelight:fire_dragon_blood", 5000), "iceandfire:fire_dragon", 4)
-    .id("createmetallurgy:entity_melting/fire_dragon")
+        .id("createmetallurgy:entity_melting/fire_dragon")
     entity_melting(e, Fluid.of("createdelight:ice_dragon_blood", 5000), "iceandfire:ice_dragon", 4)
-    .id("createmetallurgy:entity_melting/ice_dragon")
+        .id("createmetallurgy:entity_melting/ice_dragon")
     entity_melting(e, Fluid.of("createdelight:lightning_dragon_blood", 5000), "iceandfire:lightning_dragon", 4)
-    .id("createmetallurgy:entity_melting/lightning_dragon")
+        .id("createmetallurgy:entity_melting/lightning_dragon")
 })

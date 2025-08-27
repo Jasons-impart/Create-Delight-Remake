@@ -2,7 +2,13 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cutting/raw_calamari",
         "culturaldelights:cutting/raw_calamari_from_glowsquid",
-        "culturaldelights:cutting/wild_cucumbers"
+        "culturaldelights:cutting/wild_cucumbers",
+        "culturaldelights:corn_dough",
+        "culturaldelights:cutting/wild_corn",
+        "culturaldelights:cutting/corn_kernels",
+        "culturaldelights:smelting/cooked_calamari",
+        "culturaldelights:smelting/cooked_calamari_from_campfire",
+        "culturaldelights:smelting/cooked_calamari_from_smoking"
     ])
     e.replaceInput({id: "culturaldelights:cooking/eggplant_parmesan"}, "#forge:milk", "#forge:cheese")
     e.recipes.kubejs.shapeless(
@@ -29,6 +35,9 @@ ServerEvents.recipes(e => {
     cutting_2(e, 'culturaldelights:squid', [
         ['oceanic_delight:squid_tentacles', 2],
         ['minecraft:ink_sac', 3, 0.5]
+    ])
+    cutting_2(e, 'culturaldelights:cooked_squid', [
+        ['oceanic_delight:grilled_squid_tentacles', 3]
     ])
     e.custom({
         type: "farmersdelight:cutting",
@@ -64,4 +73,7 @@ ServerEvents.recipes(e => {
             "#forge:raw_fishes/salmon"
         ]
     ).id("culturaldelights:rice_ball")
+
+    package_item(e, "culturaldelights:squid", "crabbersdelight:squid_barrel", 9)
+    package_item(e, "culturaldelights:glow_squid", "crabbersdelight:glow_squid_barrel", 9)
 })

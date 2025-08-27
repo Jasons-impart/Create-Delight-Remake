@@ -1,4 +1,4 @@
-MBDMachineEvents.onBeforeRecipeModify("createdelight:big_centrifuge", e => {
+MBDMachineEvents.onAfterRecipeModify("createdelight:big_centrifuge", e => {
     /**
      * @type {Internal.MBDMultiblockMachine}
      */
@@ -10,7 +10,6 @@ MBDMachineEvents.onBeforeRecipeModify("createdelight:big_centrifuge", e => {
          */
         let partMachine = part
         if (partMachine.definition.id() == "createdelight:create_in") {
-            console.log(partMachine.definition.id())
             /**
              * @type {Internal.KineticBlockEntity}
              */

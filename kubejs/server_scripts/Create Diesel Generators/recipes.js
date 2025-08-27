@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+  const {create, createdieselgenerators, vintageimprovements, createaddition, createmetallurgy} = e.recipes
   remove_recipes_type(e, [
     "createdieselgenerators:compression_molding",
     "createdieselgenerators:casting",
@@ -18,8 +19,14 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/wire_cutters",
     "createdieselgenerators:crafting/hammer",
     "createdieselgenerators:crafting/huge_diesel_engine",
-    "createdieselgenerators:crafting/large_diesel_engine"
+    "createdieselgenerators:crafting/large_diesel_engine",
+    "createdieselgenerators:crushing/wood_chip_logs"
   ]);
+  create.crushing(["31x createdieselgenerators:wood_chip",
+      Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
+      Item.of("farmersdelight:tree_bark", 1).withChance(0.75)],
+  "#minecraft:logs")
+  .id("createdieselgenerators:crushing/wood_chip_logs/with_bark")
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/cast_iron")
   e.replaceInput({ id: "createdieselgenerators:basin_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
@@ -73,7 +80,7 @@ ServerEvents.recipes(e => {
       .transitionalItem(iner)
       .loops(1)
       .id("createdieselgenerators:crafting/diesel_engine");
-  let iner2 = "createdelight:incomplete_modular_diesel_engine";
+  let iner2 = "createdelight:incomplete_large_diesel_engine";
   e.recipes.create.sequenced_assembly("createdieselgenerators:large_diesel_engine", "createdieselgenerators:diesel_engine",
       [
         e.recipes.create.deploying(iner2, [iner2, "#forge:plates/bronze"]),
@@ -82,8 +89,21 @@ ServerEvents.recipes(e => {
     )
       .transitionalItem(iner2)
       .loops(3)
-      .id("createdieselgenerators:crafting/modular_diesel_engine");
-
+      .id("createdieselgenerators:crafting/modular_large_engine");
+  let iner3 = "createdelight:incomplete_huge_diesel_engine";
+  e.recipes.create.sequenced_assembly("createdieselgenerators:huge_diesel_engine", "#forge:storage_blocks/bronze",
+      [
+        e.recipes.vintageimprovements.turning(iner3, iner3),
+        e.recipes.create.deploying(iner3, [iner3, "create:steam_engine"]),
+        e.recipes.create.deploying(iner3, [iner3, "#forge:plates/steel"]),
+        e.recipes.create.deploying(iner3, [iner3, "create:steam_engine"]),
+        e.recipes.create.deploying(iner3, [iner3, "#forge:plates/steel"]),
+        e.recipes.create.pressing(iner3, iner3),
+      ]
+    )
+      .transitionalItem(iner3)
+      .loops(1)
+      .id("createdieselgenerators:crafting/huge_diesel_engine")
   e.recipes.vintageimprovements.turning("3x createdieselgenerators:oil_barrel", "#forge:storage_blocks/steel").id("createdieselgenerators:crafting/oil_barrel")
   fermenting(e,
     [

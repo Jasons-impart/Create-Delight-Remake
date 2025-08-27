@@ -1,17 +1,15 @@
 LootJS.modifiers(e => {
     e.addBlockLootModifier("culturaldelights:wild_corn")
         .replaceLoot("minecraft:wheat_seeds", "culturaldelights:corn_kernels")
-    e.addBlockLootModifier("corn_delight:wild_corn")
-        .replaceLoot("corn_delight:corn_seeds", "culturaldelights:corn_kernels")
 })
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "corn_delight:integration/create/milling/wild_corn",
-        "culturaldelights:cutting/corn_kernels",
+        "corn_delight:integration/create/milling/corn",
+        "corn_delight:cutting/corn",
         "corn_delight:integration/create/mixing/cornbread_batter_from_mixing",
         "corn_delight:cornbread_batter",
         "corn_delight:corn_crate",
-        "culturaldelights:corn_dough",
         "corn_delight:cutting/tortilla_chip",
         "corn_delight:tortilla_from_smoking",
         "corn_delight:tortilla",

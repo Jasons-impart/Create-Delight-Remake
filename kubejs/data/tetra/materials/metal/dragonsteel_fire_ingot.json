@@ -12,17 +12,17 @@
     "toolLevel": 7,
     "toolEfficiency": 10,
     "effects": {
-      "art_of_forging:infernal_rebuke": [ 3, 40 ],
       "createdelight:ice_dragon_restraint":2,
       "createdelight:lightning_dragon_restraint":2
     },
     "tints": {
-      "glyph": "910d13",
-      "texture": "910d13"
+      "glyph": "bf0000",
+      "texture": "bf0000"
     },
     "textures": [ "heavy", "metal" ],
     "material": { "items": [ "iceandfire:dragonsteel_fire_ingot" ] },
     "requiredTools": { 
         "hammer_dig": 7
-     }
+     },
+    "features": ["dragonfire"]
   }

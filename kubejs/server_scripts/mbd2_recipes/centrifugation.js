@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
       newIngr.push(ingr)
     })
     prevResult.forEach(res => {
-      console.log(`res: ${res.toString()}`)
+      // console.log(`res: ${res.toString()}`)
       if (res.asJsonObject.get("fluid") != null || res.asJsonObject.get("fluidTag") != null)
         hasFluid = true
       newRes.push(res)
@@ -33,18 +33,12 @@ ServerEvents.recipes(e => {
   e.recipes.createdelight.big_centrifugation()
     .inputItems('alexscaves:unrefined_waste')
     .duration(500)
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .outputItems('3x alexscaves:uranium_shard')
     .outputFluids(Fluid.of("alexscaves:acid", 250))
     .id("createdelight:big_centrifugation/unrefined_waste")
   e.recipes.createdelight.big_centrifugation()
     .inputItems('createdelight:uranium_dust')
     .duration(1000)
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .chance(0.1, builder => builder
       .outputItems('createdelight:enriched_uraniumdust')
     )
@@ -58,16 +52,7 @@ ServerEvents.recipes(e => {
       [["createmetallurgy:molten_brass", 180], ["createmetallurgy:molten_copper", 90], ["createmetallurgy:molten_zinc", 90]],
       [["createmetallurgy:molten_bronze", 360], ["createmetallurgy:molten_tin", 90], ["createmetallurgy:molten_copper", 270]],
       [["createmetallurgy:molten_electrum", 180], ["createmetallurgy:molten_silver", 90], ["createmetallurgy:molten_gold", 90]],
-      [["createbigcannons:molten_nethersteel", 540], ["createmetallurgy:molten_steel", 90], ["createmetallurgy:molten_netherite", 90]],
-      [["createdelight:vanilla_milkshake", 750], ["createdelightcore:vanilla_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:chocolate_milkshake", 750], ["createdelightcore:chocolate_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:strawberry_milkshake", 750], ["createdelightcore:strawberry_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:banana_milkshake", 750], ["createdelightcore:banana_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:mint_milkshake", 750], ["createdelightcore:mint_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:pomegranate_milkshake", 750], ["createdelightcore:pomegranate_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:lime_milkshake", 750], ["createdelightcore:lime_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:adzuki_milkshake", 750], ["createdelightcore:adzuki_ice_cream", 250], ["minecraft:milk", 500]],
-      [["createdelight:sweetberry_milkshake", 750], ["createdelightcore:sweetberry_ice_cream", 250], ["minecraft:milk", 500]],
+      [["createbigcannons:molten_nethersteel", 540], ["createmetallurgy:molten_steel", 90], ["createmetallurgy:molten_netherite", 90]]
     ]
     fluidSeparation_2_fluids.forEach(fluid => {
       e.recipes.createdelight.big_centrifugation()
@@ -75,19 +60,12 @@ ServerEvents.recipes(e => {
         .outputFluids(Fluid.of(fluid[1][0], fluid[1][1]))
         .outputFluids(Fluid.of(fluid[2][0], fluid[2][1]))
         .duration(100)
-        .perTick(builder => builder
-          .inputRPM(32)
-        )
         .id(`createdelight:big_centrifugation/separation/${fluid[0][0].split(":")[1]}`)
     })
   //液固混合液体离心
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("createdelightcore:ferrouslime", 900))
     .outputFluids(Fluid.of("createdelightcore:slime", 900))
-    .outputItems("10x createmetallurgy:iron_dust")
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/ferrouslime")
   //巧克力离心
   e.recipes.createdelight.big_centrifugation()
@@ -96,9 +74,6 @@ ServerEvents.recipes(e => {
     .outputItems("ratatouille:cocoa_solids")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:ruby_chocolate", 250))
@@ -106,26 +81,17 @@ ServerEvents.recipes(e => {
     .outputItems("ratatouille:cocoa_solids")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("create_central_kitchen:dragon_breath", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/ruby_chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:white_chocolate", 250))
     .outputItems("ratatouille:cocoa_butter")
     .outputItems("minecraft:sugar")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/white_chocolate")
   e.recipes.createdelight.big_centrifugation()
     .inputFluids(Fluid.of("create_confectionery:black_chocolate", 250))
     .outputItems("ratatouille:cocoa_butter")
     .outputItems("ratatouille:cocoa_solids")
     .outputFluids(Fluid.of("minecraft:milk", 250))
-    .perTick(builder => builder
-      .inputRPM(32)
-    )
     .id("createdelight:big_centrifugation/separation/black_chocolate")
 })

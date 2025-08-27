@@ -51,16 +51,14 @@ ServerEvents.tags("block", e => {
         "@youkaishomecoming",
         "@nethervinery",
         "@dungeonsdelight",
-        "@ends_delight"
+        "@ends_delight",
+        "@crabbersdelight"
     ]).stacks.forEach(item => {
-        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag")) && item.block) {
+        if ((item.id.endsWith("_crate") || item.id.endsWith("_bag") || item.id.endsWith("_barrel")) && item.block) {
             e.add("quality_food:quality_blocks", item.id)
         }
     })
     e.add("createdelight:quality_crops",
-        "#minecraft:crops",
-        "farmersrespite:tea_bush",
-        "farmersrespite:small_tea_bush",
         "neapolitan:vanilla_vine",
         "neapolitan:strawberry_bush",
         "neapolitan:small_banana_frond",
@@ -71,9 +69,6 @@ ServerEvents.tags("block", e => {
         "minecraft:tall_grass",
         "minecraft:fern",
         "minecraft:large_fern",
-        "fruitsdelight:lemon_tree",
-        "fruitsdelight:blueberry_bush",
-        "fruitsdelight:cranberry_bush",
         "vinery:red_grape_bush",
         "vinery:white_grape_bush",
         "vinery:savanna_grape_bush_red",
@@ -84,8 +79,7 @@ ServerEvents.tags("block", e => {
         "vinery:jungle_grape_bush_white",
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
-        "collectorsreap:pomegranate_bush",
-        "collectorsreap:lime_bush",
+        "minecraft:cocoa",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',
         'fruitsdelight:fig_leaves',
@@ -98,16 +92,23 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:peach_leaves',
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
-        'fruitsdelight:mangosteen_leaves',
-        'minecraft:sweet_berry_bush',
-        'mynethersdelight:powdery_cane',
-        'mynethersdelight:bullet_pepper'
+        'fruitsdelight:mangosteen_leaves'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops",
         "minecraft:sea_pickle",
         "minecraft:moss_block",
-
+        'mynethersdelight:powdery_cane',
+        'mynethersdelight:powdery_cannon',
+        'mynethersdelight:bullet_pepper',
+        'minecraft:sweet_berry_bush',
+        "nethervinery:crimson_grape_bush",
+        "nethervinery:warped_grape_bush",
+        "collectorsreap:pomegranate_bush",
+        "collectorsreap:lime_bush",
+        "fruitsdelight:lemon_tree",
+        "fruitsdelight:blueberry_bush",
+        "fruitsdelight:cranberry_bush"
     )
 })
 
@@ -130,7 +131,6 @@ ServerEvents.tags("item", e => {
         'ratatouille:wheat_kernels', 
         'ratatouille:cocoa_solids', 
         'createdelight:corn_flour', 
-        'createdelight:whipped_cream_bowl', 
         'bakeries:foamed_cream',
         'createdelight:board_noodles', 
         'createdelight:vermicelli', 
@@ -199,9 +199,6 @@ ServerEvents.tags("item", e => {
         'trailandtales_delight:cherry_petal', 
         'trailandtales_delight:dried_cherry_petal', 
         'trailandtales_delight:pitcher_plant', 
-        'farmersrespite:green_tea_leaves', 
-        'farmersrespite:yellow_tea_leaves', 
-        'farmersrespite:black_tea_leaves', 
         'farmersrespite:rose_hips', 
         'neapolitan:banana_bunch', 
         'vintagedelight:oat',
@@ -210,7 +207,6 @@ ServerEvents.tags("item", e => {
         'youkaishomecoming:pods', 
         'youkaishomecoming:udumbara_flower', 
         'youkaishomecoming:mandrake_root', 
-        'youkaishomecoming:white_tea_leaves', 
         'youkaishomecoming:matcha', 
         'youkaishomecoming:stripped_mandrake_root', 
         'youkaishomecoming:dried_mandrake_flower', 

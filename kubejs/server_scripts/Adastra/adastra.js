@@ -28,13 +28,10 @@ ServerEvents.recipes(e => {
         "ad_astra_giselle_addon:crafting/automation_nasa_workbench",
         "ad_astra:steel_block",
         "ad_astra:etrionic_blast_furnace",
-        "ad_astra:alloying/steel_ingot_from_alloying_iron_ingot_and_coals",
-        "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water"
+        "ad_astra:oxygen_loading/oxygen_from_oxygen_loading_water",
+        "ad_astra:steel_ingot_from_steel_block"
     ])
     e.replaceInput({ id: "ad_astra:oxygen_distributor" }, "ad_astra:oxygen_loader", "createdelight:electrolyzer")
-    e.replaceInput({}, "ad_astra:steel_rod", "#forge:rods/steel")
-    e.replaceInput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
-    e.replaceOutput({}, "ad_astra:steel_ingot", "createmetallurgy:steel_ingot")
     // 新增配方：霜原木
     e.recipes.kubejs.shapeless("ad_astra:glacian_log", [
         "#minecraft:logs",
@@ -197,4 +194,8 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(Fluid.of("ad_astra:cryo_fuel", 100), [Fluid.of("ad_astra:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
     .secondaryFluidInput(0)
     .id("ad_astra:pressurizing/cryo_fuel")
+    e.recipes.create.crushing(Item.of("ad_astra:aeronos_mushroom").withChance(0.2), "#ad_astra:aeronos_caps")
+    .id("ad_astra:crushing/aeronos_mushroom")
+    e.recipes.create.crushing(Item.of("ad_astra:strophar_mushroom").withChance(0.2), "#ad_astra:strophar_caps")
+    .id("ad_astra:crushing/strophar_mushroom")
 })

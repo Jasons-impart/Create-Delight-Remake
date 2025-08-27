@@ -7,12 +7,12 @@
   "enableRightPants": true,
   "baseVoxelSize": 1.15,
   "bodyVoxelWidthSize": 1.05,
-  "headVoxelSize": 1.111,
+  "headVoxelSize": 1.047,
   "renderDistanceLOD": 14,
   "enableSkulls": true,
   "enableSkullsItems": true,
   "skullVoxelSize": 1.1,
   "fastRender": true,
-  "compatibilityMode": false,
+  "compatibilityMode": true,
   "firstPersonPixelScaling": 1.1
 }

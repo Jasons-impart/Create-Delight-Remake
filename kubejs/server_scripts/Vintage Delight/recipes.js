@@ -13,7 +13,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
     e.replaceInput({id: "vintagedelight:cooking/pad_thai"}, "#forge:pasta", 'createdelight:vermicelli')
-
+    cutting_2(e, "vintagedelight:cheese_wheel", [["ad_astra:cheese", 4]])
     // 燕麦磨粉
     e.recipes.create.milling(
         Item.of("bakeries:flour").withChance(0.5),
@@ -35,10 +35,7 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "culturaldelights:cucumber_crate",
         "culturaldelights:from_crate/cucumber",
-
     ])
-    e.replaceInput({ mod: "culturaldelights" }, "culturaldelights:cucumber", "vintagedelight:cucumber")
-    e.replaceInput({ mod: "vintagedelight" }, "vintagedelight:pickle", "#forge:pickle")
     e.recipes.kubejs.shapeless(
         "vintagedelight:cucumber_crate",
         "9x vintagedelight:cucumber"
@@ -66,7 +63,6 @@ ServerEvents.recipes(e => {
         ], 3000
     ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
     cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
-    cutting(e, "vintagedelight:cucumber", [["culturaldelights:cut_cucumber", 2]])
     // 盐
     e.recipes.create.mixing(
         Fluid.of("bakeries:salt_water", 250),
@@ -75,7 +71,7 @@ ServerEvents.recipes(e => {
             "vintagedelight:salt_dust"
         ]
     )
-        .id("ratatouille:salt")
+        .id("vintagedelight:salt_dust")
     e.recipes.create.mixing(
         "vintagedelight:salt_dust",
         Fluid.of("bakeries:salt_water", 250)
