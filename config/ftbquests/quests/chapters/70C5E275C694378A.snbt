@@ -1,0 +1,3506 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "70C5E275C694378A"
+	group: "7D0A1432AAAD0EBA"
+	icon: {
+		Count: 1
+		id: "youkaishomecoming:reimu_hairband"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "70C5E275C694378A"
+	images: [
+		{
+			height: 8.0d
+			image: "createdelight:textures/gui/youkai_homecoming.png"
+			rotation: 0.0d
+			width: 10.0d
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -11.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -9.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -3.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -5.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -7.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -1.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -13.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/unconscious.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: 3.0d
+		}
+		{
+			click: "#6254079976AD075D"
+			height: 2.0d
+			hover: ["点击图片跳转到“无意识”Buff介绍"]
+			image: "youkaishomecoming:item/curio/koishi_hat"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: -10.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/plants/grape/leaves/leaves9_red"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -2.5d
+		}
+		{
+			height: 2.0d
+			image: "createcafe:block/coffee_stage3"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -12.5d
+		}
+		{
+			height: 2.0d
+			image: "neapolitan:block/flowering_adzuki_sprouts_stage6"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -8.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/plants/cucumber/vine7"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -4.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/plants/soybean/soybean_stage7"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -10.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/plants/tea/tea_stage3"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -6.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/plants/udumbara/udumbara_stage7"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -14.5d
+		}
+		{
+			height: 1.0d
+			image: "create_sa:textures/particle/steam_cloud_2.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -4.0d
+			y: -7.0d
+		}
+		{
+			height: 1.0d
+			image: "create_sa:textures/particle/steam_cloud_2.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -5.0d
+			y: -6.5d
+		}
+		{
+			height: 2.0d
+			image: "farmersdelight:block/stove_top_on"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.0d
+			y: -14.0d
+		}
+		{
+			height: 2.0d
+			image: "farmersdelight:item/rice_roll_medley_block"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -12.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/storage/shelf/spruce_wine_shelf_top"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.0d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.0d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.5d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			rotation: 0.0d
+			width: 1.0d
+			x: 15.5d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.5d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 15.5d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.0d
+			y: -15.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/food/simple/steamed_egg_in_bamboo"
+			rotation: 0.0d
+			width: 2.0d
+			x: 18.5d
+			y: -14.0d
+		}
+		{
+			click: "#7A8D79BA13378DAA"
+			height: 2.0d
+			hover: ["点击图片跳转到“幻昙华”Buff介绍"]
+			image: "ad_astra:textures/painting/moon.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: -14.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/drunk.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: 3.0d
+		}
+		{
+			height: 2.5d
+			image: "minecraft:item/campfire"
+			rotation: 0.0d
+			width: 2.5d
+			x: -4.5d
+			y: -6.0d
+		}
+		{
+			height: 1.0d
+			image: "create_sa:textures/particle/steam_cloud_2.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -5.0d
+			y: -7.5d
+		}
+		{
+			height: 2.0d
+			image: "farmersdelight:item/rice"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: -8.5d
+		}
+		{
+			height: 2.0d
+			image: "farmersrespite:textures/mob_effect/caffeinated.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.5d
+			y: -12.5d
+		}
+		{
+			click: "#73223F233DE74941"
+			height: 2.0d
+			hover: ["点击图片跳转到“醉酒”Buff介绍"]
+			image: "vinery:item/wine_box"
+			rotation: 0.0d
+			width: 2.0d
+			x: 18.5d
+			y: -15.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/phantom.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: 1.5d
+		}
+		{
+			height: 2.0d
+			image: "the_bumblezone:item/sugar_water_bottle"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: 4.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/spell/spell_sanae"
+			rotation: 0.0d
+			width: 2.0d
+			x: 5.5d
+			y: -12.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/spell/spell_reimu"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: -13.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/spell/spell_marisa"
+			rotation: 0.0d
+			width: 2.0d
+			x: 8.5d
+			y: -12.0d
+		}
+		{
+			height: 2.5d
+			image: "supplementaries:item/lunch_basket"
+			rotation: 0.0d
+			width: 2.5d
+			x: 7.0d
+			y: -11.5d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/saucer/bloody_flesh"
+			rotation: 0.0d
+			width: 3.0d
+			x: 5.5d
+			y: -10.0d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/food/bowl/tuscan_salmon"
+			order: 1
+			rotation: 0.0d
+			width: 3.0d
+			x: 7.0d
+			y: -9.0d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/saucer/blood_curd"
+			rotation: 0.0d
+			width: 3.0d
+			x: 8.5d
+			y: -10.0d
+		}
+		{
+			click: "#65E28EDD62D277F8"
+			height: 2.0d
+			hover: ["点击盘子跳转到“催眠”Buff介绍"]
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: 0.5d
+		}
+		{
+			click: "#16FEED37B931A291"
+			height: 2.0d
+			hover: ["点击曼德拉草跳转到“催情”Buff介绍"]
+			image: "youkaishomecoming:block/plants/mandrake/mandrake_stage7"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: -0.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/hypnosis.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: 0.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/aphrodisiac.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -1.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:textures/mob_effect/water_breathing.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: 4.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/caffeinated.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -3.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/tea_polyphenols.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -4.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/sober.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -6.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/smoothing.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -8.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/thick.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -9.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/refreshing.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.5d
+			y: -11.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/fairy.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: 1.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/higi.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: 0.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/native_god_bless.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: -1.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/youkaifying.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: -3.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/youkaified.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 19.0d
+			y: -4.5d
+		}
+		{
+			click: "#3A359158124360BA"
+			height: 3.0d
+			hover: ["点击图片跳转到“半妖怪化”Buff介绍"]
+			image: "youkaishomecoming:textures/mob_effect/youkaifying.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: 10.0d
+			y: 12.5d
+		}
+		{
+			click: "#5289A73FACD896CE"
+			height: 3.0d
+			hover: ["点击图片跳转到“妖怪化”Buff介绍"]
+			image: "youkaishomecoming:textures/mob_effect/youkaified.png"
+			rotation: 0.0d
+			width: 3.0d
+			x: 10.0d
+			y: 15.5d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: 10.0d
+			y: 10.5d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/food/flesh/flesh_chocolate_mousse"
+			rotation: 0.0d
+			width: 3.0d
+			x: 13.5d
+			y: 19.0d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/curio/rumia_hairband"
+			rotation: 0.0d
+			width: 3.0d
+			x: 13.5d
+			y: 24.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/unused/hakurei_gohei.png"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: 11.0d
+			y: 21.0d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/curio/reimu_hairband"
+			order: -1
+			rotation: 0.0d
+			width: 3.0d
+			x: 8.5d
+			y: 21.5d
+		}
+		{
+			height: 3.0d
+			hover: ["「梦想天生」"]
+			image: "youkaishomecoming:item/spell/spell_reimu"
+			rotation: 0.0d
+			width: 3.0d
+			x: 11.5d
+			y: 21.5d
+		}
+		{
+			height: 2.0d
+			image: "farmersdelight:block/basket_side"
+			rotation: 0.0d
+			width: 2.0d
+			x: 13.5d
+			y: 16.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/deco/donation_box_up"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: 8.0d
+		}
+		{
+			height: 2.5d
+			image: "youkaishomecoming:item/curio/straw_hat"
+			rotation: 0.0d
+			width: 2.5d
+			x: 4.0d
+			y: 9.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/curio/suwako_hat"
+			rotation: 0.0d
+			width: 2.0d
+			x: 4.0d
+			y: 12.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:block/deco/donation_box_side"
+			rotation: 0.0d
+			width: 2.0d
+			x: 10.0d
+			y: 19.0d
+		}
+		{
+			height: 2.5d
+			image: "youkaishomecoming:item/curio/koishi_hat"
+			rotation: 0.0d
+			width: 2.5d
+			x: 16.5d
+			y: 16.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:textures/mob_effect/fairy.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 2.0d
+			y: 9.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/curio/cirno_hairband"
+			rotation: 0.0d
+			width: 2.0d
+			x: 1.5d
+			y: 12.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/curio/cirno_wings"
+			order: -1
+			rotation: 0.0d
+			width: 2.0d
+			x: 1.5d
+			y: 12.5d
+		}
+		{
+			height: 3.0d
+			hover: ["恋符「极限火花」"]
+			image: "youkaishomecoming:item/spell/spell_marisa"
+			rotation: 0.0d
+			width: 3.0d
+			x: 10.0d
+			y: 23.5d
+		}
+		{
+			height: 3.0d
+			hover: ["反应「妖怪测谎仪」"]
+			image: "youkaishomecoming:item/spell/spell_koishi"
+			rotation: 0.0d
+			width: 3.0d
+			x: 16.5d
+			y: 19.0d
+		}
+		{
+			height: 3.0d
+			hover: [
+				"魍魉「二重黑死蝶」"
+				"结界「光与暗的网目」"
+			]
+			image: "youkaishomecoming:item/spell/spell_yukari"
+			rotation: 0.0d
+			width: 3.0d
+			x: 11.5d
+			y: 25.5d
+		}
+		{
+			height: 2.0d
+			image: "create:block/palettes/framed_glass"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			height: 2.0d
+			image: "create:block/palettes/framed_glass"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: 5.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/tuna_bucket"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: 2.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/lamprey_bucket"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.0d
+			y: 4.5d
+		}
+		{
+			height: 3.0d
+			hover: ["夜雀「午夜的合唱指挥」"]
+			image: "youkaishomecoming:item/spell/spell_mystia"
+			rotation: 0.0d
+			width: 3.0d
+			x: 16.5d
+			y: 21.5d
+		}
+		{
+			height: 3.0d
+			hover: ["秘术「一脉单传的弹幕」"]
+			image: "youkaishomecoming:item/spell/spell_sanae"
+			rotation: 0.0d
+			width: 3.0d
+			x: 8.5d
+			y: 25.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:item/cake"
+			rotation: 0.0d
+			width: 2.0d
+			x: 13.5d
+			y: 14.0d
+		}
+		{
+			height: 2.0d
+			image: "displaydelight:item/food_plate"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: 10.5d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/crops/dark_tea_leaves"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: 13.0d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:block/rose_bush_bottom"
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: 16.0d
+		}
+		{
+			height: 2.0d
+			image: "youkaishomecoming:item/bullet/star/light_gray"
+			rotation: 0.0d
+			width: 2.0d
+			x: 13.5d
+			y: 21.5d
+		}
+		{
+			height: 3.0d
+			hover: ["红符「绯红之王」"]
+			image: "youkaishomecoming:item/spell/spell_remilia"
+			rotation: 0.0d
+			width: 3.0d
+			x: 16.5d
+			y: 13.5d
+		}
+		{
+			height: 3.0d
+			hover: ["狱符「星星与条纹」"]
+			image: "youkaishomecoming:item/spell/spell_clownpiece"
+			rotation: 0.0d
+			width: 3.0d
+			x: 1.5d
+			y: 15.0d
+		}
+	]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"         妖怪们的归家是农夫乐事的附属模组。主要增加了以《东方Project》为主题的农作物与特色食物，以及东方中的角色，符卡，装饰等。"
+				"         《东方Project》，简称东方，是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列同人游戏、相关作品。它以及其二次创作所构成的覆盖游戏、动画、漫画、音乐、文学等诸多方面的领域。"
+			]
+			icon: "youkaishomecoming:udumbara_flower"
+			id: "3D7F0A98AE45B0B0"
+			rewards: [
+				{
+					count: 2
+					id: "329854A679864F0E"
+					item: "youkaishomecoming:scarlet_tea"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "604C62C372EC5009"
+					item: {
+						Count: 1
+						id: "netmusic:music_cd"
+						tag: {
+							NetMusicSongInfo: {
+								artists: ["のみこ"]
+								name: "Bad Apple!! feat. nomico"
+								read_only: 0b
+								time: 319
+								url: "https://music.163.com/song/media/outer/url?id=687506.mp3"
+								vip: 0b
+							}
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			size: 2.0d
+			subtitle: "Youkai's Homecoming"
+			tasks: [{
+				id: "060F4FAE7E3CFB47"
+				title: "妖怪们的归家"
+				type: "checkmark"
+			}]
+			x: 7.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         低矮的丛生植物，可在白桦树林、向日葵平原与竹林中找到，能种植在砂土、黏土、泥巴等贫瘠土地上。"]
+			id: "739AFFDAB8449F64"
+			rewards: [
+				{
+					count: 2
+					id: "5CF47D5D79DA5634"
+					item: "abnormals_delight:adzuki_cake_slice"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "287B09FCE471BDDE"
+					table_id: 5977768946323017310L
+					type: "choice"
+				}
+			]
+			shape: "square"
+			subtitle: "耐贫瘠赤小豆"
+			tasks: [{
+				count: 16L
+				id: "4B5A22A23465092C"
+				item: "createdelight:adzuki_beans_seed"
+				type: "item"
+			}]
+			title: "种下第一颗红豆"
+			x: -2.0d
+			y: -8.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         普通大小的作物，分布于黑森林、丛林与沼泽，可制成豆腐，豆荚能做毛豆麻薯。"]
+			icon: "youkaishomecoming:pods"
+			id: "45A3A549700C3793"
+			rewards: [
+				{
+					id: "0D96621E7B9DD05F"
+					item: "youkaishomecoming:pot_of_tofu_crab_stew"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7D7B4AD740BCC94C"
+					item: "youkaishomecoming:tofu"
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "不可或缺的作物"
+			tasks: [
+				{
+					count: 16L
+					id: "12E9F5A242594C4D"
+					item: "youkaishomecoming:soybean"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "1A884DB98D335D52"
+					item: { Count: 4, id: "youkaishomecoming:pods" }
+					type: "item"
+				}
+			]
+			title: "不要和凉水一起吃哦"
+			x: -2.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         破坏野生黄瓜获得，种子可以用于种植黄瓜，果实可以烹饪该模组的食物。"]
+			icon: "vintagedelight:cucumber"
+			id: "1DC61087B89E7B71"
+			rewards: [
+				{
+					id: "6AD39A6E43E87C10"
+					item: "vintagedelight:cucumber_salad"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "73B5AE83896570A7"
+					item: "youkaishomecoming:honey_glazed_cucumber"
+					random_bonus: 1
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "翠绿色的新生"
+			tasks: [
+				{
+					count: 16L
+					id: "41DED30DF3F5A7E3"
+					item: "vintagedelight:cucumber"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "3E93C487906BFC2A"
+					item: { Count: 4, id: "vintagedelight:cucumber" }
+					type: "item"
+				}
+			]
+			title: "瓜熟蒂落"
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         咖啡生成于丛林生物群系；咖啡果可通过案板切开获得咖啡豆，或直接吃掉；可种植在灰化土、泥巴和灵魂土上。"]
+			icon: "createcafe:coffee_beans"
+			id: "42F38B958F2CDAB0"
+			rewards: [
+				{
+					count: 2
+					id: "15FC0192510F3D27"
+					item: "farmersrespite:coffee_cake_slice"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "39349A54671D8FCF"
+					table_id: 5977768946323017310L
+					type: "choice"
+				}
+			]
+			shape: "square"
+			subtitle: "需营养咖啡树"
+			tasks: [
+				{
+					count: 16L
+					id: "360CB1F0CB7BD478"
+					item: { Count: 16, id: "createcafe:coffee_beans" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "619369F246C5EAB2"
+					item: { Count: 4, id: "createcafe:coffee_fruit" }
+					type: "item"
+				}
+			]
+			title: "咖啡因！好耶！"
+			x: -2.0d
+			y: -12.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         低矮灌木植物，分布于繁花森林、樱花树林、草甸与雪林，可种植于耕地，长成茶树，收获的茶叶能够制作成模组内的茶饮品。"
+				"         生茶叶需要在茶植株没有开花时右键获取，而茶植株开花后右键收获的物品为山茶花。生茶叶可以通过模组内的工艺制成不同种类的茶叶。"
+			]
+			icon: "youkaishomecoming:tea_leaves"
+			id: "65C058041032162F"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "3EE236748A9D519C"
+					table_id: 3097436474397803309L
+					type: "choice"
+				}
+				{
+					id: "03979A120A26E335"
+					item: "youkaishomecoming:steamer_rack"
+					type: "item"
+				}
+				{
+					id: "13DF645811EA9DC9"
+					item: "youkaishomecoming:steamer_lid"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "清闲的副业"
+			tasks: [
+				{
+					count: 4L
+					id: "28A830D4E9F706C6"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:tea_leaves"
+						}
+					}
+					title: "4x 任意茶叶"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "60742EC7CC4360CE"
+					item: { Count: 4, id: "farmersrespite:tea_seeds" }
+					type: "item"
+				}
+				{
+					id: "153B1A4BFBD09AFA"
+					item: "youkaishomecoming:camellia"
+					type: "item"
+				}
+			]
+			title: "茶香四溢，沁人心脾"
+			x: -2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         采摘野生葡萄获得，种子可以用于种植葡萄，果实可以制作成本模组食物/饮品。"
+				"         种植时需要在植株上放置绳子，让葡萄藤可以依附于绳子爬到高出生长，并且如果想让植株长得更高大些，需要使用剪刀剪去成熟葡萄藤的部分枝叶，随着生长，这部分葡萄藤将会变为植株的木质茎。成熟的葡萄将会垂挂于藤蔓之上，十分美妙且富有生机。"
+			]
+			icon: "youkaishomecoming:red_grape"
+			id: "60521CC89812A87E"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "4C304749C3444634"
+					table_id: 1418583867640513355L
+					type: "choice"
+				}
+				{
+					count: 16
+					id: "72C00DD63E3A9B66"
+					item: "farmersdelight:rope"
+					random_bonus: 16
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "甜蜜的藤蔓作物"
+			tasks: [
+				{
+					count: 16L
+					id: "521CEB36CB97D114"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:fruits/grape"
+						}
+					}
+					title: "16x 任意葡萄"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "7E726F13A9C8F1C7"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "youkaishomecoming:grape_seed"
+						}
+					}
+					title: "4x 任意葡萄种子"
+					type: "item"
+				}
+			]
+			title: "晶莹剔透"
+			x: -2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         月光植物，发现于沼泽，破坏野生幻昙华或幻昙华作物后获取幻昙华叶片。破坏任何生长阶段的幻昙华作物掉落1-2个幻昙华叶片，主手持有带时运附魔的工具可以提高掉落2个叶片的概率。（叶片就是种子）"
+				"         左键破坏或右键收获开花的幻昙华作物后可以获得幻昙花。幻昙华只在满月的夜晚下开花（非满月的夜晚下，最高生长到成熟前一级阶段），天亮后会逐渐枯萎（缩回地里去，逐渐变为最低一级生长阶段），使用非透明方块遮挡幻昙花上方即可暂停幻昙花的枯萎进度，使用幻月灯即可加速幻昙花的生长进程。"
+				"         需要注意的是，幻昙华开花10秒后就会凋谢，请尽快采摘！！！并且该作物植株不可使用骨粉催熟，右键采摘不会产出多余种子！！！"
+			]
+			id: "53E27901B2DD24AF"
+			rewards: [{
+				id: "5028B29117386F4C"
+				item: "youkaishomecoming:poor_god_soup"
+				random_bonus: 1
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "月光作物"
+			tasks: [{
+				count: 16L
+				id: "51406E53C273DB44"
+				item: { Count: 16, id: "youkaishomecoming:udumbara_seeds" }
+				type: "item"
+			}]
+			title: "残缺之月"
+			x: -2.0d
+			y: -14.0d
+		}
+		{
+			dependencies: ["45A3A549700C3793"]
+			description: ["         食用后恢复6点饥饿值和7点饱和度，并获得持续时间为10秒的“无意识”效果。"]
+			id: "4E445E64B2E79D3E"
+			shape: "square"
+			subtitle: "操纵无意识程度的能力"
+			tasks: [{
+				count: 4L
+				id: "0C80931BA8BF6377"
+				item: { Count: 4, id: "youkaishomecoming:koishi_mousse" }
+				type: "item"
+			}]
+			title: "啊......啊？刚才发生什么了？"
+			x: -4.5d
+			y: -10.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			icon: "youkaishomecoming:fairy_ice_crystal"
+			id: "6462CD448C3B791C"
+			shape: "square"
+			subtitle: "解锁各个效果需要完成对应任务（别忘了点这个）"
+			tasks: [{
+				id: "670CDD4DD90BBAC7"
+				title: "效果大全！"
+				type: "checkmark"
+			}]
+			title: "特殊效果大全！"
+			x: 18.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"6462CD448C3B791C"
+				"4E445E64B2E79D3E"
+			]
+			description: [
+				"         食用恋恋慕斯获取 20s 该效果或装备帽子先生于头盔栏且该物品不处于冷却状态时持续获得约 1s 该状态效果。"
+				"         当拥有此效果时玩家不会成为生物的攻击目标。但一些行为例如攻击生物、与装置交互（比如原版的箱子、漏斗）会使该效果立即消失，若玩家以装备帽子先生的方式获取的该效果则同时使此物品获得 10s 冷却。"
+				"         很有意思的小漏洞特性？：在携带此状态效果时被监守者察觉，会让监守者原地对着目标反复进行吼叫，且不移动。"
+			]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:koishi_mousse"
+			id: "6254079976AD075D"
+			rewards: [{
+				id: "3BB3E05CB7641DF5"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "2717F981FBF30787"
+				title: "无意识"
+				type: "checkmark"
+			}]
+			title: "无意识 (Unconscious)"
+			x: 18.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["65C058041032162F"]
+			description: [
+				"绿茶&l□&r  红茶&l□&r  黑茶&l□&r  白茶&l□&r  黄茶&l□&r  乌龙茶&l□&r"
+				"（排名不分先后，纯列表作用）"
+			]
+			id: "3FAEDAA973D6A546"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1D8B5ECE4429D8D8"
+					table_id: 3097436474397803309L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "2E950201D2ABD5C3"
+					table_id: 7374527325595499170L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+				{
+					count: 8
+					id: "6E87FB0FBB120799"
+					item: "farmersrespite:black_cod"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "品尝六种原味茶饮"
+			tasks: [{
+				advancement: "youkaishomecoming:main/tea_master"
+				criterion: ""
+				id: "1EF71A703D2D88C4"
+				type: "advancement"
+			}]
+			title: "小罐茶，大师作"
+			x: -4.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         蒸锅用于将蒸笼里的食物蒸熟。（注：与茶壶不同，蒸锅无法含水）。与厨锅一样，蒸锅需要底下有热源方块烧水才能蒸熟食物，热源的判定与厨锅相同。"
+				"         蒸锅主要作用为用于蒸熟食物，本身占据2单位空间（0.5格，1格内可以容纳4单位），使用蒸笼右键可以在上面堆叠，使用水桶右键将水倒进锅里，如果有热源就会开始烧水并开始冒烟，将自己上方的蒸笼里的食物蒸熟。（可以根据放下蒸锅时的提示搭建）并且蒸熟食物并不消耗水，蒸锅内的水会一直烧。盘装菜或者竹筒菜会严重阻碍蒸笼内的蒸汽流动，导致蒸笼加攻速度减慢。"
+				"         蒸锅最多处理17个蒸笼，蒸笼可以无限堆叠但多余的里面的食物不会被处理。最上方的蒸笼需要在其上方放置蒸笼盖才会开始处理。破坏蒸锅会导致其上方的蒸笼和蒸笼盖掉落类似脚手架。"
+			]
+			icon: "youkaishomecoming:steamer_pot"
+			id: "053162F4AF2CBBE7"
+			rewards: [
+				{
+					id: "578A808979D4BCD7"
+					item: "youkaishomecoming:steamed_egg_in_bamboo"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					count: 2
+					id: "024743237202C4E1"
+					item: "youkaishomecoming:steamer_rack"
+					random_bonus: 14
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "《食品用一级蒸汽机》"
+			tasks: [
+				{
+					id: "5C630C84A1DADC77"
+					item: "youkaishomecoming:steamer_rack"
+					type: "item"
+				}
+				{
+					id: "5F2589434DFBB158"
+					item: "youkaishomecoming:steamer_lid"
+					type: "item"
+				}
+				{
+					id: "04405F829EBB2708"
+					item: "youkaishomecoming:steamer_pot"
+					type: "item"
+				}
+			]
+			title: "蒸汽腾腾"
+			x: 16.0d
+			y: -13.5d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         用于制作寿司类食物，寿司类食物多数具有高属性和额外效果。"]
+			id: "5687AC7BF0D290C5"
+			rewards: [
+				{
+					count: 4
+					id: "34A0C691EBE9875E"
+					item: "farmersdelight:rice"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 4
+					id: "1FE535DCDEC0F3B7"
+					item: "minecraft:dried_kelp"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					id: "2A81D7D0AC25D598"
+					item: "youkaishomecoming:soy_sauce_bottle"
+					random_bonus: 1
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "给我寿司！！！！"
+			tasks: [{
+				id: "0BE3607E47E5EEF7"
+				item: "youkaishomecoming:cuisine_board"
+				type: "item"
+			}]
+			title: "寿司学徒"
+			x: 16.0d
+			y: -12.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         发酵桶用于酿造酱油和酒。使用方法为：将所需材料右键放入发酵桶（无需按顺序），在潜行状态下空手右键发酵桶可取出所有材料（除了水）。然后空手右键发酵桶盖上盖子，开始发酵。待发酵进度达到100%时发酵完成，可用对应容器（碗、玻璃瓶或竹子）舀出。"]
+			id: "3150B5F44439F2ED"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "7595D442FC61677D"
+					table_id: 1418583867640513355L
+					type: "choice"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "4FD24E36F27DBB2A"
+					table_id: 3225681585629777470L
+					type: "choice"
+				}
+			]
+			shape: "square"
+			subtitle: "生物科技！"
+			tasks: [{
+				id: "20803F20B77FF892"
+				item: "youkaishomecoming:fermentation_tank"
+				type: "item"
+			}]
+			title: "嗜酒如命"
+			x: 16.0d
+			y: -15.0d
+		}
+		{
+			dependencies: ["053162F4AF2CBBE7"]
+			id: "4B637A0F747EAB46"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "7D3AA552D1448D59"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 2
+					id: "6AC81439A159F68F"
+					item: "youkaishomecoming:rice_powder_pork"
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "在第十八层蒸笼蒸一个物品"
+			tasks: [{
+				advancement: "youkaishomecoming:main/max_steamer"
+				criterion: ""
+				id: "30CCD226B6165C99"
+				type: "advancement"
+			}]
+			title: "十八层竹塔"
+			x: 18.0d
+			y: -13.5d
+		}
+		{
+			dependencies: ["3150B5F44439F2ED"]
+			description: [""]
+			id: "722DEED68B0997D9"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "50BD334D35F33F37"
+				table_id: 1418583867640513355L
+				type: "choice"
+			}]
+			shape: "square"
+			subtitle: "醉酒效果达到最高级（5级）时取得进度"
+			tasks: [{
+				advancement: "youkaishomecoming:main/passed_out"
+				criterion: ""
+				id: "04A9CA7E878236F8"
+				type: "advancement"
+			}]
+			title: "烂醉如泥"
+			x: 18.0d
+			y: -15.0d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"60521CC89812A87E"
+			]
+			description: ["         提升攻击伤害，但摇晃屏幕。醉酒状态下无法再喝清醒饮品。醉酒状态可叠加至五层，层数越多摇晃越强烈，每层加2点伤害。当获得5级醉酒时获得成就-烂醉如泥。"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:champagne_bottle"
+			id: "73223F233DE74941"
+			rewards: [{
+				id: "2BF77F856F8AE577"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5983372BF0AE7DD7"
+				title: "醉酒"
+				type: "checkmark"
+			}]
+			title: "醉酒 (Drunk)"
+			x: 16.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["739AFFDAB8449F64"]
+			description: ["         食用后恢复饥饿值4点和饱和度4.8点。是制作甜豆沙麻薯杂煮和御手洗团子的原料之一（也是妖梦的半灵）。"]
+			id: "2A991696A2AF0A70"
+			rewards: [{
+				count: 2
+				id: "0F86A023446B4351"
+				item: "youkaishomecoming:sweet_ormosia_mochi_mixed_boiled"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "这个麻薯？真的甜吗......"
+			tasks: [{
+				count: 4L
+				id: "0AEF9378E95F7AB2"
+				item: { Count: 4, id: "youkaishomecoming:mochi" }
+				type: "item"
+			}]
+			title: "甜吗？"
+			x: -4.5d
+			y: -8.0d
+		}
+		{
+			dependencies: ["42F38B958F2CDAB0"]
+			description: [
+				"意式浓缩&l□&r 芮斯崔朵&l□&r 美式&l□&r 拿铁&l□&r 卡布奇诺&l□&r         玛琪雅朵&l□&r 康宝蓝&l□&r 摩卡&l□&r 阿芙佳朵&l□&r "
+				"（排名不分先后，纯列表作用）"
+			]
+			id: "16172E647A9E34D4"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "54F236AADC2C2968"
+					table_id: 8375300527209900268L
+					type: "random"
+				}
+				{
+					count: 2
+					id: "55D0404AA482142E"
+					item: "farmersrespite:coffee_cake_slice"
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "品尝所有咖啡"
+			tasks: [{
+				advancement: "youkaishomecoming:main/q_grader"
+				criterion: ""
+				id: "06E8CF1703228997"
+				type: "advancement"
+			}]
+			title: "咖啡大师"
+			x: -4.5d
+			y: -12.0d
+		}
+		{
+			dependencies: ["53E27901B2DD24AF"]
+			description: ["         幻月灯下方 3x3x3 内的幻昙华在夜间会把幻月灯当做满月，并且手持幻月灯且持有幻昙华效果时，在夜间激活全部幻昙华效果"]
+			id: "735DDC4E146DECBC"
+			rewards: [
+				{
+					count: 4
+					id: "1CDBA0765DBB4889"
+					item: "youkaishomecoming:full_moons_eve"
+					type: "item"
+				}
+				{
+					id: "3A634717CD15D0AE"
+					item: "youkaishomecoming:moon_lantern"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "昙花一现"
+			tasks: [{
+				id: "3DFCDC95CDD4675A"
+				item: "youkaishomecoming:udumbara_flower"
+				type: "item"
+			}]
+			title: "月圆之夜"
+			x: -4.5d
+			y: -14.0d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"735DDC4E146DECBC"
+			]
+			description: ["         自身和自身发射的投掷物不再发出声响。当落入虚空时会传送到世界顶端。月光下每3秒回血，且满月时在月光下受到的伤害大幅减少。"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:full_moons_eve"
+			id: "7A8D79BA13378DAA"
+			rewards: [{
+				id: "71B15E82867B7725"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "3812D49153690B4A"
+				title: "幻昙华 (Phantom)"
+				type: "checkmark"
+			}]
+			x: 16.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"735DDC4E146DECBC"
+				"0716EE4E51EA9137"
+				"1BF369C7B6D2126E"
+				"5687AC7BF0D290C5"
+				"722DEED68B0997D9"
+				"1DC61087B89E7B71"
+				"2A991696A2AF0A70"
+				"17D3A109F73E6FD6"
+				"4B637A0F747EAB46"
+				"60521CC89812A87E"
+				"3FAEDAA973D6A546"
+				"4E445E64B2E79D3E"
+				"16172E647A9E34D4"
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
+			id: "247D25DE94D4A024"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "0CA148AC13284309"
+					table_id: 7772018159856264947L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "655DE7FE7A8D6EEF"
+					table_id: 8375300527209900268L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "3B2573525B644947"
+					table_id: 3097436474397803309L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+			]
+			shape: "rsquare"
+			size: 2.0d
+			subtitle: "幻想乡一切皆有可能！（食用所有妖怪们的归家的食物）"
+			tasks: [{
+				advancement: "youkaishomecoming:main/enthusiastic"
+				criterion: ""
+				id: "67C549C181D26746"
+				type: "advancement"
+			}]
+			title: "幻想乡美食家！"
+			x: 7.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         草本植物，可以在黑森林群戏发现，曼德拉根在破坏野生曼德拉草或曼德拉草后获得，可以作为种子种在田里，收获时会产出曼德拉花和曼德拉根。"
+				"         曼德拉草深受炼药师们喜爱，它的根可以酿造出带有“催眠”效果的药水，花朵可以酿造出带有“催情”效果的药水。"
+			]
+			icon: "youkaishomecoming:mandrake_root"
+			id: "1BF369C7B6D2126E"
+			rewards: [
+				{
+					count: 3
+					id: "4ED61EF738552FA5"
+					item: {
+						Count: 1
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:healing"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "291F6F039221FB78"
+					item: {
+						Count: 1
+						id: "minecraft:potion"
+						tag: {
+							Potion: "minecraft:weakness"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "这个东西会叫唤吗......"
+			tasks: [
+				{
+					id: "1939216D1E05C029"
+					item: "youkaishomecoming:mandrake_root"
+					type: "item"
+				}
+				{
+					id: "62D44832F252E5AD"
+					item: "youkaishomecoming:mandrake_flower"
+					type: "item"
+				}
+			]
+			title: "曼德拉草？！"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"1BF369C7B6D2126E"
+			]
+			description: ["         通过酿造催眠药水获得，效果为拥有此状态效果的村民会无视你的罪行，例如你攻击他们也不会涨价或在其面前食用怪肉类食物不会触发灵梦的警告。"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:mandrake_root"
+			id: "65E28EDD62D277F8"
+			rewards: [{
+				id: "4DB2B97DF111D072"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "57BA60D67A3E1748"
+				title: "催眠"
+				type: "checkmark"
+			}]
+			title: "催眠 (Hypnosis)"
+			x: 16.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"1BF369C7B6D2126E"
+			]
+			description: ["         通过酿造催情药水获得，可以让动物进入繁殖状态（百科上说对玩家无效）。"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:mandrake_flower"
+			id: "16FEED37B931A291"
+			rewards: [{
+				id: "74B8423836607999"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5E568A1904851C57"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			x: 16.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			icon: {
+				Count: 1
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:water"
+				}
+			}
+			id: "1CC439738E5A030F"
+			shape: "square"
+			subtitle: "解锁各个效果需要完成对应任务（别忘了点这个）"
+			tasks: [{
+				id: "0D73BE2E9EB50460"
+				title: "基础效果大全！"
+				type: "checkmark"
+			}]
+			x: 16.0d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"42F38B958F2CDAB0"
+			]
+			description: ["（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"]
+			hide_dependency_lines: true
+			icon: "createcafe:coffee_grounds"
+			id: "37E286B11ED01CB9"
+			rewards: [{
+				id: "78EC1EE84D8ED9EF"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "提高玩家10％的攻击伤害"
+			tasks: [{
+				id: "561CFEEFDE78E6C7"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "咖啡因 (Caffeinated)"
+			x: 16.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"65C058041032162F"
+			]
+			description: ["（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:tea_leaves"
+			id: "01015CAC20939FE1"
+			rewards: [{
+				id: "20EF3D0C8F27C283"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "提高玩家5%的攻击速度，在阳光下每3s恢复生命值"
+			tasks: [{
+				id: "7741DD19F1399D21"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "茶多酚 (Tea Polyphenols)"
+			x: 16.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"1CC439738E5A030F"
+				"65C058041032162F"
+				"42F38B958F2CDAB0"
+			]
+			description: [
+				"                注意：清醒状态下无法再次饮用清醒饮品"
+				"（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"
+			]
+			hide_dependency_lines: true
+			icon: "trailandtales_delight:ancient_coffee"
+			id: "35E46B952A1F2DAD"
+			rewards: [{
+				id: "340936C05E3517B4"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "阻止周边幻翼生成，无法睡觉，无法妖怪化，免疫反胃"
+			tasks: [{
+				id: "616B9BAAC3897BA4"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "清醒 (Sober)"
+			x: 16.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"65C058041032162F"
+				"1CC439738E5A030F"
+			]
+			description: ["（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"]
+			hide_dependency_lines: true
+			icon: "farmersrespite:yellow_tea_leaves"
+			id: "21B8B14AD0EF29D9"
+			rewards: [{
+				id: "5550EE926946B4FD"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "免疫中毒效果，并提升玩家回血效率"
+			tasks: [{
+				id: "54CEE38FF92DA964"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "抚慰 (Smoothing)"
+			x: 16.0d
+			y: -7.5d
+		}
+		{
+			dependencies: [
+				"65C058041032162F"
+				"1CC439738E5A030F"
+			]
+			description: ["（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"]
+			hide_dependency_lines: true
+			icon: "farmersrespite:black_tea_leaves"
+			id: "3ABCE05AAE7D94B1"
+			rewards: [{
+				id: "1E3E19BE4A6A2D59"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "免疫凋零效果，且固定减少1点受到的伤害"
+			tasks: [{
+				id: "545BBAF265A99B61"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "醇厚 (Thick)"
+			x: 16.0d
+			y: -9.0d
+		}
+		{
+			dependencies: [
+				"65C058041032162F"
+				"1CC439738E5A030F"
+			]
+			description: ["（本效果在大部分同类食物中拥有，在此处不过多介绍获取方式）"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:white_tea_leaves"
+			id: "72EDAD2B712B9A04"
+			rewards: [{
+				id: "0C0AB7EADA10DBFF"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "免疫火焰伤害，并熄灭身上火焰"
+			tasks: [{
+				id: "6309744124F15B3D"
+				title: "催情 (Aphrodisiac)"
+				type: "checkmark"
+			}]
+			title: "清爽 (Refreshing)"
+			x: 16.0d
+			y: -10.5d
+		}
+		{
+			dependencies: [
+				"6462CD448C3B791C"
+				"480ED2CC514C6B62"
+			]
+			dependency_requirement: "all_started"
+			description: ["         通过食用妖精糖果或者佩戴琪露诺的蝴蝶结获得，让玩家能够使用弹幕，最大血量与攻击伤害减半，速度提升至120%，提升回血效率，最大火力-1，最大资源-4，弹幕判定-0.2。"]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:cirno_hairband"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "53F78CC685110E6F"
+			rewards: [{
+				id: "7D5D5092F2FA7552"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "6D4FC064F83AA2B8"
+				title: "无意识"
+				type: "checkmark"
+			}]
+			title: "妖精化 (fairy)"
+			x: 18.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6462CD448C3B791C"]
+			description: ["         食用秘仪甜甜圈或者秘仪巧克力获得，尽管效果很简单，但是它确实是特殊效果......"]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:higi_chocolate"
+			id: "1F3E75F5B6397370"
+			rewards: [{
+				id: "49C0C18A81AB388C"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "提高10%攻击力与10%移动速度，缓慢回血"
+			tasks: [{
+				id: "13F793FC6B18CD26"
+				title: "让玩家能够使用弹幕，最大血量与攻击伤害减半，速度提升至120%，提升回血效率，最大火力-1，最大资源-4，弹幕判定-0.2。"
+				type: "checkmark"
+			}]
+			title: "生命力 (Higi)"
+			x: 18.5d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"6462CD448C3B791C"
+				"1F63260D17F05213"
+			]
+			description: ["         通过穿戴诹访子的帽子时获得。持有效果时提升玩家触及距离和移动速度，具体为+20％速度，+1实体范围，+1方块范围。"]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:suwako_hat"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "5E037A837D8191E7"
+			rewards: [{
+				id: "52CC28984E737B3A"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			tasks: [{
+				id: "5C6066122C829BA4"
+				title: "让玩家能够使用弹幕，最大血量与攻击伤害减半，速度提升至120%，提升回血效率，最大火力-1，最大资源-4，弹幕判定-0.2。"
+				type: "checkmark"
+			}]
+			title: "土著神的祝福 (Native God Bless)"
+			x: 18.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6462CD448C3B791C"
+				"2BEF70CE526D3061"
+			]
+			description: [
+				"         食用怪肉类食物时或者饮用红魔馆红茶时可以获得1分钟的半妖怪化（怪肉为概率获得1分钟半妖怪化）。"
+				"         持有此效果时，怪肉类料理提供的饥饿值与饱和度提升至原有的两倍，并且如果继续食用怪肉类食物，每份食物将会为该效果增加1分钟持续时间。特殊的是，玩家在下界持有该效果时，会发生恋恋电话事件。"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:rumia_hairband"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3A359158124360BA"
+			rewards: [{
+				id: "144AD2E27779245B"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "你正在向妖怪转化中~"
+			tasks: [{
+				id: "481333B30E810364"
+				title: "半妖怪化 (Youkaifying)"
+				type: "checkmark"
+			}]
+			x: 18.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6462CD448C3B791C"
+				"0B8BEE27AFC5BF83"
+			]
+			description: [
+				"         饮用绯红迷雾可以获得1分钟的妖怪化，或者你可以通过让半妖怪化buff的持续时间超过5分钟，这时你将获得20分钟的妖怪化。"
+				"         在该状态下玩家将：+30％速度，+50％攻击伤害，+20最大生命值，并且在获得本效果后，每次食用怪肉食品都将增加4分钟的该效果持续时间，而且怪肉类料理提供的饥饿值与饱和度提升至原有的三倍，同时将料理名称中的“怪肉”二字替换为“&k好吃的肉&r”（仅改变显示）。"
+				"         然而，妖怪化仍旧是有代价的：玩家进行各种活动所消耗的饥饿值将大幅增加，同时进行某些原本不消耗饥饿值的动作（如原地不动，走路等）时也将消耗饥饿值。如果玩家过于饥饿，则本效果将自动解除。若需长时间保持该效果，则强烈建议进食能够提供滋养效果的食物。"
+			]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:scarlet_mist"
+			id: "5289A73FACD896CE"
+			rewards: [{
+				id: "71E55174E75F01CC"
+				type: "xp_levels"
+				xp_levels: 2
+			}]
+			shape: "square"
+			subtitle: "现在你是妖怪啦！"
+			tasks: [{
+				id: "6AD61F245D034121"
+				title: "妖怪化 (Youkaified)"
+				type: "checkmark"
+			}]
+			x: 18.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: [
+				"         持有半妖怪化或妖怪化状态后通过小刀杀死原版村民、大多数灾厄村民和女巫等人型生物时获得怪肉。"
+				"         怪肉食用后恢复2点饥饿值和0.6点饱和度，有一定概率获得半妖怪化和反胃效果。可用于烤制成烤怪肉和制作怪肉制品。"
+				"         在玩家进入妖怪化状态后，该物品的名称会变为“&k好吃的肉&r”，另外，半妖怪化状态与妖怪化状态下的玩家食用该物品会增加半妖怪化状态与妖怪化状态的持续时间，并享有额外饥饿值与饱和度加成，半妖怪化为4点饥饿值和1.2点饱和度，妖怪化为6点饥饿值和1.8点饱和度，即分别为无特殊状态下的2倍和3倍，本模组内怪肉制食品均有此特性。"
+			]
+			id: "042459BE846B6E1F"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5E47D43262E2DC7B"
+				table_id: 5077918012354645869L
+				type: "random"
+			}]
+			shape: "square"
+			subtitle: "不详的气味"
+			tasks: [{
+				id: "3A438BAC53F545C0"
+				item: "youkaishomecoming:flesh"
+				type: "item"
+			}]
+			title: "这是个什么玩意......"
+			x: 10.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["042459BE846B6E1F"]
+			id: "2BEF70CE526D3061"
+			rewards: [{
+				count: 2
+				id: "2EE0CD6758053F0B"
+				item: "youkaishomecoming:scarlet_tea"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "获得半妖怪化（小心灵梦哦）"
+			tasks: [{
+				advancement: "youkaishomecoming:main/first_time"
+				criterion: ""
+				id: "33FA94C7D6ECA28C"
+				type: "advancement"
+			}]
+			title: "向着妖怪转变......"
+			x: 10.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["042459BE846B6E1F"]
+			description: ["        无法直接食用，需放下并用碗右击获得盘装怪肉宴（最多可获得4次），完全食用后右击获得碗和骷髅头颅。半妖怪化或妖怪化后副手持玻璃瓶且通过小刀杀死原版村民、大多数灾厄村民和女巫等人型生物时获得瓶装血液（佩戴露米娅的发带后无需通过小刀击杀也可以获得瓶装血液）。"]
+			hide_dependency_lines: true
+			id: "6F4F9B45E17A6126"
+			invisible: true
+			optional: true
+			rewards: [{
+				id: "0F16C6B28EF5FBC0"
+				item: {
+					Count: 1
+					id: "trailandtales_delight:sniffer_eggshell_knife"
+					tag: {
+						Damage: 0
+						Enchantments: [{
+							id: "minecraft:sharpness"
+							lvl: 7s
+						}]
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "最重要的是火候！——汉尼拔"
+			tasks: [{
+				id: "45AEAB72C47F1F19"
+				item: "youkaishomecoming:flesh_feast"
+				type: "item"
+			}]
+			title: "做人的技巧！"
+			x: 13.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["2BEF70CE526D3061"]
+			id: "0B8BEE27AFC5BF83"
+			rewards: [{
+				count: 2
+				id: "56FD3628EBBC4E97"
+				item: "youkaishomecoming:scarlet_mist"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "灵梦，你为什么还不上班.jpg（获得妖怪化）"
+			tasks: [{
+				advancement: "youkaishomecoming:main/powerful_being"
+				criterion: ""
+				id: "7D6BD8F2198DE1AD"
+				type: "advancement"
+			}]
+			title: "是异变啊！灵梦！"
+			x: 10.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["160FB9E419A92C81"]
+			description: [
+				"         在玩家处于妖怪化期间，可以与其以怪肉巧克力慕斯作为货币进行交易："
+				""
+				"—————————————————————————————"
+				""
+				"          怪肉巧克力慕斯            交易物              数量"
+				"                    4                        红色环玉弹幕          8"
+				"                    4                        红色小玉弹幕          8"
+				"                    8                        红色中玉弹幕          8"
+				"                   16                      红色大玉弹幕           8"
+				"                   32                           红色激光               8"
+				""
+				"—————————————————————————————"
+			]
+			id: "31AB6B625A253F8F"
+			rewards: [{
+				count: 8
+				id: "52B7BD240D96E345"
+				item: "youkaishomecoming:flesh_chocolate_mousse"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "在妖怪化状态下与露米娅交易"
+			tasks: [{
+				advancement: "youkaishomecoming:main/trade_danmaku"
+				criterion: ""
+				id: "462B2061610839ED"
+				type: "advancement"
+			}]
+			title: "可口的交易"
+			x: 13.5d
+			y: 19.0d
+		}
+		{
+			dependencies: ["31AB6B625A253F8F"]
+			description: [
+				"         露米娅会出现在野生妖怪的家附近，中立单位，会主动攻击有半妖怪化效果的玩家，在野生妖怪的家中生成的露米娅在远离其出生点时会试图返回，不论其出生点与之距离的远近或其出生点所在区块是否被加载。"
+				"        战斗状态：临战状态身后出现两个白色四边形符阵"
+				"        生命值：40点"
+				"        战斗状态：临战状态身后出现两个白色四边形符阵"
+				"        攻击方式：弹幕攻击与近身攻击"
+				"        弹幕攻击：露米娅使用符卡 夜符⌈Night Bird⌋ 攻击，发射出的弹幕每个会产生6点伤害并为自身恢复8点生命值。"
+				"        近身攻击：在目标距离露米娅较近时，露米娅会操纵黑暗包围自己并向目标冲撞，冲撞伤害为40点且有较强的击退效果。"
+				"        掉落物："
+				"        1.红色环玉弹幕：5-10个"
+				"        2.黑色环玉弹幕：3-6个"
+			]
+			icon: "youkaishomecoming:red_circle_danmaku"
+			id: "69AAC8A157DAD845"
+			rewards: [
+				{
+					count: 16
+					id: "77DA01FB896B7A39"
+					item: "youkaishomecoming:flesh_chocolate_mousse"
+					random_bonus: 16
+					type: "item"
+				}
+				{
+					id: "5F19C48EB06CA9FB"
+					item: "youkaishomecoming:custom_spell_ring"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "操控黑暗的能力"
+			tasks: [{
+				entity: "youkaishomecoming:rumia"
+				id: "0D0AD922AEAB9650"
+				type: "kill"
+				value: 1L
+			}]
+			title: "「宵暗的妖怪」—露米娅"
+			x: 13.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["69AAC8A157DAD845"]
+			description: [
+				"         若露米娅在生命值全满时直接遭受来自其他实体包括下落的铁砧的致命伤害，则本次攻击的伤害被限制为10点，露米娅的强度则会转换为Extra难度，外观体现为头顶的发带被移除。"
+				"         额外的对决规则：露米娅以常规形式所遭受的伤害至多不超过10点非常规形式的伤害如：指令kill，生物击杀杖"
+				"        战斗状态：临战状态身后出现红色七芒星符阵。"
+				"        生命值：200点。"
+				"        攻击方式：弹幕攻击与近身攻击。"
+				"        弹幕攻击：露米娅使用符卡 夜符⌈Night Bird⌋ 攻击，与阶段1相比有着更高速且密集的弹幕，发射出的弹幕每个会产生12点伤害并为自身恢复40点生命值。"
+				"        近身攻击：在目标距离露米娅较近时，露米娅会操纵黑暗包围自己并向目标冲撞，冲撞伤害为80点且有较强的击退效果。"
+				"        掉落物："
+				"        1.红色环玉弹幕：5-10个"
+				"        2.黑色环玉弹幕：3-6个"
+				"        3.露米娅的发带：1个（使用弹幕击杀掉落）"
+				"      （露米娅的发带的介绍在第二页）"
+				"{@pagebreak}"
+				"         露米娅的发带："
+				"         佩戴时获得2点护甲值，且增加 25% 攻击伤害。"
+				"         获取方法：用弹幕击杀 ex露米娅掉落。         "
+				"         获取时得到进度：失落的记忆。"
+				"         效果：佩戴时提供持续的半妖怪化，击杀僵尸、骷髅、猪灵、凋零骷髅时必定掉落头颅。"
+				"         击杀村民、女巫、卫道士。掠夺者、唤魔者时不使用小刀也可掉落怪肉和血瓶（副手需手持空玻璃瓶），使用小刀时额外掉落。"
+				"         当玩家处于创造模式或处于非创造模式且拥有半妖怪化、妖怪化或妖精化状态效果时，玩家可以通过在物品栏内将鼠标光标悬浮在此物品上方的方式查看此物品的获取方法和用法，当玩家处于非创造模式且没有上述状态效果时，上述介绍文本将每行以三个全角问号（？）显示。"
+			]
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:rumia_hairband"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "10067A20519BC920"
+			rewards: [
+				{
+					count: 32
+					id: "07C876222E670729"
+					item: "youkaishomecoming:flesh_chocolate_mousse"
+					random_bonus: 32
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3A443E1DF7F67F53"
+					item: "youkaishomecoming:scarlet_mist"
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "露米娅的发带"
+			tasks: [{
+				id: "75CD1C55ABF472B2"
+				item: {
+					Count: 1
+					id: "youkaishomecoming:rumia_hairband"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "失落的记忆"
+			x: 13.5d
+			y: 24.0d
+		}
+		{
+			dependencies: ["6DBEECC86C2FCFD0"]
+			description: [
+				"         投喂灵梦妖怪的归家内所有正常食物(共88种）后，会得到灵梦的大蝴蝶结，并得到进度——满足的灵梦。"
+				"         当投喂其任意食物后，灵梦周围会持续散发极其微小的红色小圆圈粒子特效，粒子特效持续期间无法投喂。当投喂其任意列表中的食物后，会额外地短暂散发明显易见的红色爱心粒子特效。粒子特效的持续时间与所投喂其食物所提供的饥饿值有关，所提供的饥饿值越高，粒子特效的持续时间就越长，反之亦然，因此大部分不提供任何饥饿值的饮料类食品可以无间隔投喂（消化真好）。"
+				"         （投喂内容在下一页）"
+				"{@pagebreak}"
+				"竹筒水羊羹&l□&r 小鱼干&l□&r 赛熊掌&l□&r 地中海 &l□&r千层面&l□&r 酱烧鱼&l□&r 臭豆腐&l□&r 豆腐汉堡&l□&r 七色羊羹&l□&r 淇酒&l□&r 蜜酒&l□&r 雀酒&l□&r 大吟酿&l□&r 水獭祭&l□&r 天狗踊&l□&r 十四夜&l□&r 风祝&l□&r 意式浓缩&l□&r 美式&l□&r 芮斯崔朵&l□&r 拿铁&l□&r 阿芙佳朵&l□&r 康宝蓝&l□&r 卡布奇诺&l□&r 玛琪雅朵&l□&r 摩卡&l□&r 烤八目鳗&l□&r 烤八目鳗片&l□&r 烤曼德拉根&l□&r 三文鱼籽&l□&r 黄油&l□&r 豆腐&l□&r 油豆腐&l□&r 麻薯&l□&r 月见团子&l□&r 咖啡麻薯&l□&r 抹茶麻薯&l□&r 樱饼&l□&r 信州瘦马&l□&r 饭团&l□&r 仙贝&l□&r 生首烧&l□&r 八云豆包饭&l□&r 恋恋慕斯&l□&r 包子&l□&r 御烧&l□&r 猪肉饭团&l□&r 鱼子军舰&l□&r 筒粥&l□&r 竹筒蒸蛋&l□&r 甜甜圈&l□&r 秘仪巧克力&l□&r 秘仪甜甜圈&l□&r 妖精糖果&l□&r 苹果糖&l□&r 牛奶冰棍&l□&r 大冰棍儿&l□&r 黄豆粉团子&l□&r 御手洗团子&l□&r 三色团子&l□&r 儿童刨冰盖饭&l□&r 绿茶&l□&r 白茶&l□&r 红茶&l□&r 乌龙茶&l□&r 矢车菊茶&l□&r摩卡茶&l□&r 埃及糖茶&l□&r 樱花蜜茶&l□&r 玄米茶&l□&r 青汁&l□&r  拜占庭香草熏猪肉&l□&r鸡蛋柠檬汤&l□&r 烈焰红咖喱&l□&r 鳗鱼饭&l□&r 彼岸汤&l□&r 长寿面&l□&r 味噌汤&l□&r 海鲜味增汤&l□&r 穷神汤&l□&r 力量汤&l□&r 白雪&l□&r 甜豆沙麻薯杂煮&l□&r 蔬菜奶油三文鱼&l□&r 奶油蘑菇浓汤&l□&r 狮子头&l□&r 麻婆豆腐&l□&r 幻昙花羹&l□&r 碗装惊吓大冒险&l□&r"
+				"（<以上内容来自于minecraft模组百科>）"
+				"https://www.mcmod.cn/item/811602.html"
+				"         （灵梦的大蝴蝶结介绍在下一页）"
+				"{@pagebreak}"
+				"         佩戴时获得4点护甲值，本身具有 660 点耐久度，飞行不会损耗耐久。。"
+				"        当玩家处于创造模式或处于非创造模式且拥有半妖怪化、妖怪化或妖精化状态效果时，玩家可以通过在物品栏内将鼠标光标悬浮在此物品上方的方式查看此物品的获取方法和用法，当玩家处于非创造模式且没有上述状态效果时，上述介绍文本将每行以三个全角问号（？）显示。"
+				"        获取方法：玩家投喂灵梦各种食物掉落，默认情况下每个角色只可获得一次。也可通过使用露米娅的发带与「梦想天生」和任意两张符卡合成后获得（好消息，不用喂饱灵梦也可以拿发带了；坏消息，要先打过灵梦才行） 。"
+				"        效果：激活创造飞行。弹幕伤害穿透魔法防御。"
+			]
+			id: "296BE596F9B73E8E"
+			rewards: [
+				{
+					id: "291EC899C631E1DB"
+					item: "youkaishomecoming:spell_reimu"
+					type: "item"
+				}
+				{
+					id: "5A60CE1A0339E630"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:reimu_hairband"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "54D39C50C1047F6D"
+					table_id: 7772018159856264947L
+					title: "获取所有奖励"
+					type: "all_table"
+				}
+			]
+			shape: "square"
+			subtitle: "投喂灵梦本模组所有正常食物，她会把她的大蝴蝶结作为谢礼给你（也可通过使用露米娅的发带与「梦想天生」和任意两张符卡合成后获得）"
+			tasks: [
+				{
+					id: "6B797B208A8D1741"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:reimu_hairband"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "youkaishomecoming:main/feed_reimu"
+					criterion: ""
+					id: "1EABA243D220A7AC"
+					type: "advancement"
+				}
+			]
+			title: "满足的灵梦"
+			x: 8.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["6DBEECC86C2FCFD0"]
+			description: [
+				"         在村民面前第一次食用怪肉时，会得到短暂的黑暗效果 ，并得到警告——别吃这个，最后警告。再次食用怪肉后，在附近会刷出   博丽灵梦-乐园的巫女。并直接进入敌对状态。"
+				"         在妖怪化或半妖怪化状态下攻击村民，会得到短暂的黑暗效果 ，并得到警告——喝点茶冷静一下，最后警告。再次在妖怪化或半妖怪化状态下攻击村民后，在附近会刷出   博丽灵梦-乐园的巫女 。并直接进入敌对状态。"
+				"         在有着催眠状态的村民面前食用怪肉，不会得到警告，周围也不会因此生成灵梦（但要确保周围的村民身上都有着催眠状态...）。在妖怪化或半妖怪化状态下攻击带有催眠状态的村民，且周围村民带有催眠状态的情况下袭击村民，同样不会因此生成灵梦。"
+				"         可在博丽神社门口赛钱箱中投入8颗绿宝石或金锭召唤。"
+				"       （攻击介绍在下一页）"
+				"{@pagebreak}"
+				"         基础信息：生命值200点，玩家未拥有妖怪化buff将会一直回复生命值。"
+				"         攻击方式：弹幕攻击。"
+				"         挑战须知：玩家死亡后，灵梦仍会存在。半妖怪化状态下，灵梦会直接进入敌对状态。妖怪化状态下无反应。"
+				"         凋落物：用弹幕击杀博丽灵梦后，掉落「梦想天生」，并得到进度——赤色杀人魔。"
+				"       （「梦想天生」介绍在下一页）"
+				"{@pagebreak}"
+				"         「梦想天生」："
+				"         &7完全无法触碰的灵梦。不透明的透明人状态。"
+				"         &7好像是灵梦的究极奥义吧，似乎只是灵梦闭上眼睛，弹幕追踪敌人的位置自动射出而已的样子。"
+				"         &7顺便一提，刚开始这根本不是什么符卡，不过我给它安上了一个符卡的名字，让灵梦使出来玩了一下。要不然的话根本没有任何胜算。"
+				"         &7只有这个是天生拥有此能力的灵梦才能使出的符卡。因此名字上也用了天生二字。"
+				"         以自身为中心发射一圈伤害为4的追踪环玉弹幕。消耗1个红色环玉弹幕。需要瞄准目标发动。使用弹幕击败博丽灵梦掉落。"
+			]
+			icon: "youkaishomecoming:spell_reimu"
+			id: "190A9A7EDC051CAF"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1FEC8292FB6B8662"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					id: "206BFCD6CCE0FDDA"
+					type: "xp_levels"
+					xp_levels: 32
+				}
+				{
+					id: "3DBDCB465A17A268"
+					item: "youkaishomecoming:donation_box"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "赤色杀人魔（在空中飞翔程度的能力）"
+			tasks: [
+				{
+					entity: "youkaishomecoming:shrine_maiden"
+					id: "6C019BAFC3C6D123"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "7B5EB04E9239821C"
+					item: "youkaishomecoming:spell_reimu"
+					type: "item"
+				}
+			]
+			title: "「乐园的巫女」——博丽灵梦"
+			x: 11.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: ["         《东方Project》，简称东方，是日本同人游戏社团上海爱丽丝幻乐团所制作的一系列同人游戏、相关作品。它以及其二次创作所构成的覆盖游戏、动画、漫画、音乐、文学等诸多方面的领域。"]
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:suwako_hat"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2FA400CBF51BEF6F"
+			shape: "square"
+			subtitle: "什么是东方？"
+			tasks: [{
+				id: "0BDD857816D6864E"
+				title: "东方progect"
+				type: "checkmark"
+			}]
+			x: 7.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["0B8BEE27AFC5BF83"]
+			description: ["         野生妖怪的家，会自然生成于森林和平原生物群系。在新生成的野生妖怪的家结构内总是会附带生成一只 露米娅，此结构中的箱子里面有很多食材和食物，偶尔会有怪肉或怪肉料理。食用箱子里的怪肉料理是前期获得半妖怪化效果的主要方式。"]
+			id: "160FB9E419A92C81"
+			rewards: [{
+				count: 6
+				id: "49A5689BE3826CBB"
+				item: "youkaishomecoming:flesh"
+				random_bonus: 6
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "野生妖怪的家 (Youkai nest)"
+			tasks: [{
+				id: "11BE7BFBB90F811B"
+				structure: "youkaishomecoming:youkai_nest"
+				type: "structure"
+			}]
+			title: "妖怪的居所"
+			x: 13.5d
+			y: 16.5d
+		}
+		{
+			dependencies: ["0B8BEE27AFC5BF83"]
+			description: ["         博丽神社，自然生成于樱花树林生物群系。神社结构门口有赛钱箱，投入八颗绿宝石或金锭可召唤灵梦。此结构中的箱子里面有很多食材和食物，二楼有众多本模组的袋装红茶、袋装乌龙茶、袋装黄豆（前期找到这完全不缺食物）。"]
+			id: "6DBEECC86C2FCFD0"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1689EBB33F9DF575"
+					table_id: 1418583867640513355L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "239256706D91E079"
+					table_id: 7284682648027275041L
+					type: "random"
+				}
+			]
+			shape: "square"
+			subtitle: "博丽神社 (Hakurei Shrine)"
+			tasks: [{
+				id: "684B7F30AFFC144B"
+				structure: "youkaishomecoming:hakurei_shrine"
+				type: "structure"
+			}]
+			title: "幻想乡极东大结界边境的神社"
+			x: 10.0d
+			y: 19.0d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: ["         佩戴时获得盔甲值2点。在半妖怪化或妖怪化状态下使用稻草帽右键青蛙（不消耗物品），使青蛙戴上帽子。具体用法可见诹访子的帽子。"]
+			id: "076E9AE613DF24E2"
+			rewards: [
+				{
+					id: "6777C4577CD0F0C5"
+					item: "youkaishomecoming:frozen_frog_cold"
+					type: "item"
+				}
+				{
+					id: "3D07F47662E80E19"
+					item: "youkaishomecoming:frozen_frog_warm"
+					type: "item"
+				}
+				{
+					id: "5A9AD19169773EDE"
+					item: "youkaishomecoming:frozen_frog_temperate"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "哇！蛙蛙！"
+			tasks: [{
+				id: "196EC384BC511894"
+				item: {
+					Count: 1
+					id: "youkaishomecoming:straw_hat"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["076E9AE613DF24E2"]
+			description: [
+				"         佩戴时获得4点盔甲值和3点盔甲韧性并增加0.25点魔法伤害。"
+				"         当玩家处于创造模式或处于非创造模式且拥有半妖怪化、妖怪化或妖精化状态效果时，玩家可以通过在物品栏内将鼠标光标悬浮在此物品上方的方式查看此物品的获取方法和用途，当玩家处于非创造模式且没有上述状态效果时，上述介绍文本将每行以三个全角问号（？）显示。"
+				"         获取方法："
+				"         在半妖怪化或妖怪化状态下使用稻草帽右键青蛙（不消耗物品），使青蛙戴上帽子。当戴着稻草帽的青蛙在村民的目击下击杀了3种不同的灾厄村民时掉落。"
+				"         效果："
+				"         提供持续的土著神的祝福，使用青色和黄绿色弹幕时不消耗弹幕。"
+				"         注：青蛙攻击灾厄村民的时间不定，可能很久才会攻击一次（也就是说你最好把它们关在一块，用玻璃建个小单间）。"
+			]
+			id: "1F63260D17F05213"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "1636FB285215736C"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					id: "1C0568368241414A"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:suwako_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "信仰收集"
+			tasks: [{
+				id: "41159241EC0B5862"
+				item: {
+					Count: 1
+					id: "youkaishomecoming:suwako_hat"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 4.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["160FB9E419A92C81"]
+			description: [
+				"         佩戴时获得6点盔甲值和3点盔甲韧性。"
+				"         当玩家处于创造模式或处于非创造模式且拥有半妖怪化、妖怪化或妖精化状态效果时，玩家可以通过在物品栏内将鼠标光标悬浮在此物品上方的方式查看此物品的获取方法和用途，当玩家处于非创造模式且没有上述状态效果时，上述介绍文本将每行以三个全角问号（？）显示。"
+				"         获取方法："
+				"         玩家在下界中持有半妖怪化状态时会触发恋恋电话事件“我现在就去你那里哦”，在事件发生后成功抵挡住恋恋的三次袭击即可获得本物品。初次触发该事件会获得“这里是玛丽小姐～”进度。"
+				"         注：若在下界顶层（即上方基岩层，y>128）触发恋恋电话事件，在成功格挡后将会直接召唤出恋恋，恋恋电话事件也会被重置，无法获得帽子先生。"
+				"         事件机制："
+				"         在该事件发生前，玩家附近偶尔会出现很快散去的紫色粒子效果团，而后玩家将听到电话铃声，标志着事件正式开始。铃声一共会响三次，每次三声。在第三声电话铃响完后，玩家将遭到一次无视护甲的背刺，其伤害为100点（第一次伤害为19点），在大多数情况下足以当场杀死玩家。玩家可以使用盾牌格挡背刺。连续成功格挡三次即可完成挑战。"
+				"         小技巧：如果你有迅捷潜行附魔，听到铃声后什么都不用做，等第三声响完潜行一直往后退就行，看到恋恋后就可以停下来举盾防御了。"
+				"         在完成该挑战时，玩家必须满足以下需求："
+				"         1.挑战进行期间不得进入妖怪化。"
+				"         2.玩家不得使三次中的任何一次背刺成功。"
+				"         3.挑战期间不得死亡。"
+				"         成功获得帽子先生后，解锁进度“钢盔”。"
+				"         效果："
+				"         装备于玩家头盔栏且该物品不处于冷却时提供持续不断的无意识效果，抵挡一次灵梦警告效果（此操作会使帽子获得 60s 的冷却），使用红色弹幕和蓝色弹幕时不会产生消耗。"
+				"         注意："
+				"         帽子先生无法通过除经验修补魔咒外的任何原版方式修复。                   "
+			]
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:koishi_hat"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "622C543679BF77E8"
+			rewards: [
+				{
+					id: "58D48DE924213D02"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:koishi_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7E50C0B36896C228"
+					item: "youkaishomecoming:koishi_mousse"
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "“帽子先生是我的好朋友，戴着它能让我感到安宁......”"
+			tasks: [
+				{
+					id: "67345CB58848EA8E"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:koishi_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					advancement: "youkaishomecoming:main/mary_call"
+					criterion: ""
+					id: "51A5686491974537"
+					type: "advancement"
+				}
+			]
+			title: "这里是玛丽小姐~~"
+			x: 16.5d
+			y: 16.5d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: [
+				"         在雪原和雪滩的冰屋生成， 对装了有大量群系生成的mod的地图不是很友好（ 会主动攻击带有妖怪化 BUFF 的玩家）。"
+				"         战斗："
+				"         生命值：40点。"
+				"         攻击方式：发射弹幕。"
+				"         掉落物：2-3妖精冰晶（可以用来制作妖精糖果），淡蓝色中玉弹幕（30%几率掉落，限弹幕击杀），冻青蛙（30%几率掉落，限弹幕击杀）。"
+				"         特殊击杀：在使用物理，魔法，爆炸等伤害击杀琪露诺后，有一定概率随机召唤月下三妖精（桑尼米尔克，斯塔萨菲雅，露娜切露德）中的任意一个；使用爆炸，弹幕，窒息伤害击杀则不会召唤。这三个妖精被同样的方法击杀后也有一定几率召唤出琪露诺和另外两个妖精。也就是说你运气好可以一直套娃，虽然三妖精还没掉落物"
+				"         交易："
+				"         当玩家身上具有半妖怪化/妖怪化/妖精化效果时，可以使用冻青蛙进行交易，获得琪露诺的发带。"
+			]
+			icon: "youkaishomecoming:fairy_ice_crystal"
+			id: "6A06275C072AE4F0"
+			rewards: [{
+				count: 16
+				id: "5F8C9AB109A2960E"
+				item: "youkaishomecoming:frozen_frog_cold"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "世界第一的笨蛋！⑨（在空中飞翔和发射弹幕以及操纵冷气《变成baka》的程度的能力）"
+			tasks: [{
+				id: "18527477C8F979FB"
+				observe_type: 5
+				timer: 0L
+				title: "《观察琪露诺酱》"
+				to_observe: "youkaishomecoming:cirno"
+				type: "observation"
+			}]
+			title: "「冰之妖精」——琪露诺"
+			x: 1.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["6A06275C072AE4F0"]
+			description: [
+				"         琪露诺的翅膀："
+				"         不提供护甲值，佩戴时如果拥有妖精化则激活创造飞行。不具有耐久，因此无须担心损坏。与模组中其他头盔不同，琪露诺的翅膀无法被附魔。"
+				"         琪露诺的蝴蝶结："
+				"         佩戴时获得2点护甲值 ，本身具有 660 点耐久度，提供状态不会损耗耐久。"
+				"        当玩家处于创造模式或处于非创造模式且拥有半妖怪化、妖怪化或妖精化状态效果时，玩家可以通过在物品栏内将鼠标光标悬浮在此物品上方的方式查看此物品的获取方法和用法，当玩家处于非创造模式且没有上述状态效果时，上述介绍文本将每行以三个全角问号（？）显示。"
+				"          获取方法："
+				"         在有妖怪化、半妖怪化或妖精化状态下与琪露诺用16个绿色的冻青蛙交易获得，每个琪露诺只能交易一次。"
+				"         效果："
+				"         魔法伤害会冻结目标和冻结青蛙，持续提供妖精化，搭配琪露诺的翅膀可以激活创造飞行，使用淡蓝色弹幕时不消耗。"
+			]
+			icon: {
+				Count: 1
+				id: "youkaishomecoming:cirno_hairband"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2265CBB2249941E0"
+			rewards: [
+				{
+					count: 12
+					id: "5D2F9887A080209A"
+					item: "youkaishomecoming:fairy_ice_crystal"
+					type: "item"
+				}
+				{
+					id: "28121348183410CC"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:cirno_hairband"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "飞行程度的能力！"
+			tasks: [
+				{
+					id: "2CC526F9562F41DC"
+					item: {
+						Count: 1
+						id: "youkaishomecoming:cirno_hairband"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "781F7CB73F78C740"
+					item: "youkaishomecoming:cirno_wings"
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 12.5d
+		}
+		{
+			dependencies: ["6A06275C072AE4F0"]
+			description: [
+				"         可以朝目标丢出，落地后生成一只对应颜色青蛙。同时可以使用绿色的冻青蛙与琪露诺交易。"
+				"         获取："
+				"         琪露诺冻结对应颜色青蛙后掉落，用弹幕击败琪露诺后小概率掉落。"
+			]
+			id: "2A65ED174CF69AB7"
+			rewards: [{
+				id: "0185B9EF1ABC64C5"
+				item: "minecraft:frogspawn"
+				random_bonus: 1
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "被养青蛙折磨啊（"
+			tasks: [{
+				id: "3661911305A2418F"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "youkaishomecoming:frozen_frog"
+					}
+				}
+				title: "任意冻青蛙"
+				type: "item"
+			}]
+			title: "冻青蛙这一块"
+			x: -1.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["622C543679BF77E8"]
+			description: [
+				"         当玩家在 半妖怪化 BUFF 下企图在下界的基岩上层获取帽子先生时生成。"
+				"         生命值：200点。"
+				"         攻击方式：弹幕攻击10点（无视护甲）。使用大量的固定弹配合自机狙的攻击，对在地面的敌人有很高的威胁的同时自身也有不俗的空战能力。"
+				"         激光与小玉的固定弹限配上中玉的自机狙，即使没有额外的机制也不好对付呢。"
+				"         掉落物：反应「妖怪测谎仪」(弹幕击败掉落）。"
+				"        （反应「妖怪测谎仪」介绍在下一页）"
+				"{@pagebreak}"
+				"          反应「妖怪测谎仪」："
+				"          消耗一个蓝色激光，对周围的敌人造成华丽的范围攻击！"
+				"          使用弹幕击败古明地恋掉落。"
+			]
+			icon: "youkaishomecoming:spell_koishi"
+			id: "545E2B7AF3B7EAB9"
+			rewards: [
+				{
+					id: "31740283E150974D"
+					item: "youkaishomecoming:spell_koishi"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "7427691233F1128D"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "5219E118BC7C7AD9"
+					item: "youkaishomecoming:blue_laser"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "操纵无意识程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:komeiji_koishi"
+					id: "05A7BC4D3BBE0D2A"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "7064B6E0405FD191"
+					item: "youkaishomecoming:spell_koishi"
+					type: "item"
+				}
+			]
+			title: "「紧闭的恋之瞳」——古明地恋 "
+			x: 16.5d
+			y: 19.0d
+		}
+		{
+			dependencies: ["6DBEECC86C2FCFD0"]
+			description: [
+				"         若已触发过灵梦的一次警告，则下一次在村民面前食用怪肉时概率生成。并直接进入敌对状态。"
+				"         生命值：200点，限伤10点。"
+				"         攻击方式：弹幕攻击10点(无视护甲)，使用超华丽的星弹海与超高火力的魔炮淹没对手！ "
+				"         弹幕最重要的就是火力DA☆ZE！"
+				"         （恋符「极限火花」介绍在下一页）"
+				"{@pagebreak}"
+				"         恋符「极限火花」 ："
+				"         &7能给予对手超强火力的符卡。因为这个用起来很爽，所以会经常用。"
+				"         &7只是，与欢乐相反，这招的问题是破绽多多，而且不是那么难。"
+				"         &7顺便说一下，虽然这个是用迷你八卦炉放出的激光，目前正在研究怎样去改造才能放出扩散性的Master Spark。"
+				"         &7就算威力下降也不要紧，还是扩散的比较强。因为那是弹幕啊。"
+				"         释放强烈光和热的魔理沙招牌魔法，展开光束需要一定时间，威力与贯穿性能无出其右。要解决困难时火力才是第一选择！"
+				"         消耗1个白色激光。"
+				"         使用弹幕击败雾雨魔理沙时掉落。"
+			]
+			icon: "youkaishomecoming:spell_marisa"
+			id: "2D91D568EEFA33A7"
+			rewards: [
+				{
+					id: "318BE6CC309DD746"
+					item: "youkaishomecoming:spell_marisa"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "01FEFAD7D8A5B491"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "262D6C310B1D0A0A"
+					item: "youkaishomecoming:white_laser"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "使用魔法《借书不还》程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:kirisame_marisa"
+					id: "2841E1B0AD1CBFFE"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "2E11169C32191929"
+					item: "youkaishomecoming:spell_marisa"
+					type: "item"
+				}
+			]
+			title: "「普通的魔法使」——雾雨魔理沙"
+			x: 10.0d
+			y: 23.5d
+		}
+		{
+			dependencies: ["6DBEECC86C2FCFD0"]
+			description: [
+				"         使用非弹幕类伤害击败博丽灵梦时生成。"
+				"         生命值：200点。"
+				"         攻击方式：弹幕攻击10点（无视护甲），大量的固定弹随机弹与受击瞬移的配合，使得八云紫老婆婆在保护自己的同时能对敌人进行有效的打击，是一个很可怕的对手！"
+				"         黑死蝶与网目合为一体！封走位的激光弹与蝶弹加上高判定的大玉！受击瞬移强如怪物！拼尽全力战胜她！"
+				"         掉落物: 魍魉「二重黑死蝶」、结界「光与暗的网目」概率掉落其中一个 (弹幕击败掉落）。"
+				"         （魍魉「二重黑死蝶」、结界「光与暗的网目」介绍在下一页）"
+				"{@pagebreak}"
+				"          魍魉「二重黑死蝶」："
+				"         &7和幽幽子一样以纷飞的群蝶发动攻击的符卡。不过紫的这张符卡比起幽幽子来，惹人讨厌程度更上一层楼。"
+				"         &7和永眠之梦的蝴蝶不同，这里的蝴蝶是以被腐尸的气息所吸引而群聚在一起为印象的蝴蝶。"
+				"         &7真是令人毛骨悚然。"
+				"         以自身为中心，召唤出伤害为4的品红色与青色蝴蝶弹幕并向四周扩散。"
+				"         消耗1个品红色蝴蝶弹幕。"
+				"         使用弹幕击败八云紫掉落。"
+				"         结界「光与暗的网目」:"
+				"         &7被不可思议的光线所组成的编织针眼埋葬的符卡。"
+				"         &7紫究竟使用了什么力量才能射出如此复杂的激光呢……用了镜子吗？"
+				"        使用激光弹困住敌人的同时发射大玉与中玉攻击，是十分华丽的符卡。"
+				"         消耗一个红色激光。"
+				"         使用弹幕击败八云紫掉落。"
+			]
+			icon: "youkaishomecoming:spell_yukari_butterfly"
+			id: "45538B3ACB6A3CC4"
+			rewards: [
+				{
+					id: "49FC785F1B976515"
+					item: "youkaishomecoming:spell_yukari_laser"
+					type: "item"
+				}
+				{
+					id: "6255D41D49486D28"
+					item: "youkaishomecoming:spell_yukari_butterfly"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "495D4675F23B116C"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "442D5F381A5F5B65"
+					item: "youkaishomecoming:red_laser"
+					random_bonus: 8
+					type: "item"
+				}
+				{
+					count: 4
+					id: "268B42C28F269D6F"
+					item: "youkaishomecoming:magenta_butterfly_danmaku"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "操纵境界程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:yukari"
+					id: "77DDA04053CBF0F8"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "050AE66D106B3CFE"
+					item: "youkaishomecoming:spell_yukari_laser"
+					type: "item"
+				}
+				{
+					id: "51D24ACDB6BF88C4"
+					item: "youkaishomecoming:spell_yukari_butterfly"
+					type: "item"
+				}
+			]
+			title: "「境界的妖怪」——八云紫"
+			x: 11.5d
+			y: 25.5d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         在水域生物群系集群生成，死亡后掉落生八目鳗。"
+				"         中立生物，被攻击时会像幼年疣猪兽一样，逃窜一段时间以后进行近战回击，造成（简单1点/普通1点/困难1.5点）伤害。会主动攻击一次满血的鲑鱼、鳕鱼、热带鱼、发光鱿鱼、鱿鱼（有恶霸，这也太横了这）。"
+				"         用水桶右击可获得八目鳗桶，桶装后再放出来将会丢失仇恨。在岸上时其仍然会对仇恨目标进行近战攻击，但无法追击。"
+			]
+			icon: "youkaishomecoming:lamprey_bucket"
+			id: "17D3A109F73E6FD6"
+			rewards: [
+				{
+					count: 4
+					id: "7220CD8FCA97DA52"
+					item: "youkaishomecoming:roasted_lamprey_fillet"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6677737D7E7777BB"
+					item: "youkaishomecoming:grilled_eel_over_rice"
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "鳗！What can I say！"
+			tasks: [
+				{
+					id: "0B95FBD4E32C5028"
+					item: "youkaishomecoming:raw_lamprey"
+					type: "item"
+				}
+				{
+					entity: "youkaishomecoming:lamprey"
+					id: "69325038DBC91244"
+					type: "kill"
+					value: 4L
+				}
+			]
+			x: -2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3D7F0A98AE45B0B0"]
+			description: [
+				"         拥有生命值40点和盔甲值4点。中立生物，被攻击时会回击，造成（简单5点/普通8点/困难12点）伤害。"
+				"         生成于深海，死亡时掉落1~3级经验、3-6个生金枪鱼排并且5%概率掉落1个骨粉。用小刀杀死掉落1个金枪鱼大腹。用水桶右击可获得金枪鱼桶。"
+			]
+			icon: "youkaishomecoming:tuna_bucket"
+			id: "0716EE4E51EA9137"
+			rewards: [
+				{
+					count: 2
+					id: "30C1716B86883553"
+					item: "youkaishomecoming:otoro_nigiri"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "10C65245258818C0"
+					item: "youkaishomecoming:tuna_nigiri"
+					random_bonus: 2
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "人为刀俎，我为鱼肉（迫真）"
+			tasks: [
+				{
+					count: 4L
+					id: "0757E9B46E4494C8"
+					item: "youkaishomecoming:raw_tuna"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "4FC48D4357A73D1D"
+					item: "youkaishomecoming:otoro"
+					type: "item"
+				}
+				{
+					entity: "youkaishomecoming:tuna"
+					id: "0FDC0D100729904D"
+					type: "kill"
+					value: 4L
+				}
+			]
+			title: "金枪鱼"
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["17D3A109F73E6FD6"]
+			description: [
+				"         使用生八目鳗右键鹦鹉召唤（不消耗物品）。"
+				"         生命值：200点，限伤10点。"
+				"         攻击方式：弹幕攻击10点（无视护甲）,使用大量的中玉固定弹进行攻击（因为是二面的杂鱼妖怪所以难度并不高）。"
+				"         掉落物：夜雀「午夜的合唱指挥」(弹幕击败掉落） 。 "
+				"        （夜雀「午夜的合唱指挥」介绍在下一页）"
+				"{@pagebreak}"
+				"         夜雀「午夜的合唱指挥」 ："
+				"          &7Chorus Master就是指挥的意思。实际上不是米斯蒂娅唱的歌，而是使役魔们在合唱这样的。"
+				"         &7就算写的是午夜里中的合唱指挥，也没什么可怕的。就算是Chorus Master也不可怕。从一开始就不可怕。"
+				"         &7就是说，夜雀没什么可怕的？也是，只是个第二关的BOSS而已呢。"
+				"         使用6点伤害的大量中玉对前方扇形范围进行攻击。"
+				"         因为只是一个杂鱼boss的符卡所以并不会显得太强力。"
+				"         消耗1个绿色中玉弹幕。"
+				"         使用弹幕击败米斯蒂娅掉落。"
+			]
+			hide_dependency_lines: true
+			icon: "youkaishomecoming:spell_marisa"
+			id: "198964DA9E2EBFAB"
+			rewards: [
+				{
+					id: "1DB6660FC55DCB47"
+					item: "youkaishomecoming:spell_mystia"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "49FE9A74C44EA767"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "18AFF23006541DAB"
+					item: "youkaishomecoming:green_mentos_danmaku"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "用歌声迷惑人程度的能力（需先完成八目鳗任务）"
+			tasks: [
+				{
+					entity: "youkaishomecoming:mystia_lorelei"
+					id: "3B8F40BC767162BB"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "3100447131D5E3FC"
+					item: "youkaishomecoming:spell_mystia"
+					type: "item"
+				}
+			]
+			title: "「夜雀妖怪」——米斯蒂娅·萝蕾拉 "
+			x: 16.5d
+			y: 21.5d
+		}
+		{
+			dependencies: ["6DBEECC86C2FCFD0"]
+			description: [
+				"         若已触发过灵梦的一次警告，则下一次在村民面前食用怪肉时概率生成。并直接进入敌对状态。"
+				"         生命值：100，限伤10点"
+				"         攻击方式：弹幕攻击，当玩家位于空中时使用以环玉与小玉为主的固定弹进行攻击，当玩家位于地面时使用激光与环玉自机狙攻击（令人眼花撩乱的弹幕与多变的攻击方式，这就是你苗爷的奇迹之力口牙！）。"
+				"         掉落物：秘术「一脉单传的弹幕」(弹幕击败掉落）。"
+				"         （秘术「一脉单传的弹幕」介绍在下一页）"
+				"{@pagebreak}"
+				"          秘术「一脉单传的弹幕」："
+				"          以自身为中心，召唤出伤害为4的彩色星星弹幕并向四周呈现出星星的形状扩散，十分华丽。"
+				"         消耗1个绿色小星弹幕。"
+				"         使用弹幕击败东风谷早苗掉落。"
+			]
+			icon: "youkaishomecoming:spell_sanae"
+			id: "45610D3C4B007ED5"
+			rewards: [
+				{
+					id: "548FE58E03FA18C7"
+					item: "youkaishomecoming:spell_sanae"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "47236EF42247255C"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "29DB2505642DFCCC"
+					item: "youkaishomecoming:green_spark_danmaku"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "引发奇迹程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:kochiya_sanae"
+					id: "537D8F1C9CF4A3AC"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "05BB278EE3B99762"
+					item: "youkaishomecoming:spell_sanae"
+					type: "item"
+				}
+			]
+			title: "「山上的新人神明」——东风谷早苗 "
+			x: 8.5d
+			y: 25.5d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: [
+				"         弹幕的主要来源为露米娅和琪露诺的交易系统，其中露米娅可以交易到红色的环玉、小玉、蝴蝶、小星和激光弹幕，琪露诺可以交易到蓝色的环玉、小玉和中玉弹幕。同时，击杀某些boos同样可以掉落弹幕。"
+				"         对于小/中/大玉和星型弹幕来说，两个相同的弹幕可以合成下一级的弹幕（1大玉=2中玉=4小玉，1大星=2小星）。同时，同类弹幕可以通过染料+八个相同弹幕在工作台染成其他颜色的同类弹幕。"
+				"         符卡可以最大限度发挥弹幕的威力，大部分符卡可以通过用弹幕击杀对应角色获得，而自定义符卡可以通过任意符卡+墨囊/荧光墨囊合成（红符「绯红之王」和符卡符卡「星星与条纹」则是因为本整合包没有加车万女仆而无法召唤，具体见任务）。大部分符卡及其boos对应介绍都在下边对应任务中，可以通过把鼠标放在符卡图片上确认名字。"
+				"         （不同的符卡CD是分开的，可以同时使用，无限火力！）"
+			]
+			id: "0775224EAD50E581"
+			shape: "square"
+			tasks: [{
+				id: "7EA8535A490EE172"
+				title: "关于弹幕这件事"
+				type: "checkmark"
+			}]
+			x: 9.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6A06275C072AE4F0"]
+			description: ["         食用后恢复饥饿值2点和饱和度2.4点，并获得1min妖精化效果。通过与琪露诺交易或者击杀桑尼米尔克，斯塔萨菲雅，露娜切露德获得（也可以使用妖精冰晶烹饪）。"]
+			id: "480ED2CC514C6B62"
+			rewards: [{
+				count: 4
+				id: "340573F80CEECB81"
+				item: "youkaishomecoming:fairy_candy"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "我好像变成妖精了？"
+			tasks: [{
+				count: 4L
+				id: "61C691ED3B458141"
+				item: "youkaishomecoming:fairy_candy"
+				type: "item"
+			}]
+			title: "妖精糖果"
+			x: -1.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["7108D81901F00954"]
+			description: ["         饮用后获得1min茶多酚、30s醇厚和1min半妖怪化。"]
+			id: "2D225194755D9561"
+			rewards: [{
+				command: "/effect give @p youkaishomecoming:youkaifying 120 0"
+				id: "17A0444EF9299A83"
+				title: "获得两分钟半妖怪化效果"
+				type: "command"
+			}]
+			shape: "square"
+			subtitle: "妖怪们最爱的茶饮"
+			tasks: [{
+				count: 4L
+				id: "596D8E97446E4C77"
+				item: "youkaishomecoming:scarlet_tea"
+				type: "item"
+			}]
+			title: "红魔馆红茶"
+			x: 7.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["2D225194755D9561"]
+			description: [
+				"         饮用后可获得 醉酒Ⅱ（1:00）和 妖怪化（1:00）。"
+				"         配方如下：在发酵桶中放入 2 个玫瑰丛，1 个虞美人，2 个红色环玉弹幕，4 个瓶装血液。放入后右键发酵桶盖上盖子，等待发酵进度完成后盖子会自动打开，使用玻璃瓶右键发酵桶即可获得绯红迷雾，一个发酵桶可发酵 4 杯绯红迷雾。"
+			]
+			id: "62B370F21C77CE5C"
+			rewards: [{
+				command: "/effect give @p youkaishomecoming:youkaified 120 0"
+				id: "30333EBD36852296"
+				title: "获得两分钟妖怪化效果"
+				type: "command"
+			}]
+			shape: "square"
+			subtitle: "如玫瑰花般绽放"
+			tasks: [{
+				count: 4L
+				id: "076A5D0FD1D41DD5"
+				item: "youkaishomecoming:scarlet_mist"
+				type: "item"
+			}]
+			title: "绯红迷雾"
+			x: 7.0d
+			y: 16.5d
+		}
+		{
+			dependencies: ["042459BE846B6E1F"]
+			description: ["         食用后恢复12点饥饿值和12点饱和度，概率获得反胃效果或1小时35分钟的妖怪化效果。"]
+			id: "7D27625C61712AD0"
+			rewards: [{
+				count: 2
+				id: "37CFD46678CB2A95"
+				item: "youkaishomecoming:scarlet_mist"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "肉馅的蛋糕~"
+			tasks: [{
+				count: 4L
+				id: "3FE9B516E619E937"
+				item: "youkaishomecoming:scarlet_devil_cake"
+				type: "item"
+			}]
+			title: "猩红恶魔蛋糕"
+			x: 13.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: ["         半妖怪化或妖怪化后副手持玻璃瓶且通过小刀杀死原版村民、大多数灾厄村民和女巫等人型生物时获得。佩戴露米娅的发带后无需通过小刀击杀也可以获得瓶装血液。"]
+			id: "7108D81901F00954"
+			rewards: [{
+				count: 2
+				id: "5E02CF579465347B"
+				item: "youkaishomecoming:blood_curd"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "《草莓味的果汁》"
+			tasks: [{
+				count: 4L
+				id: "165E0786411ABFD7"
+				item: { Count: 4, id: "butchercraft:blood_fluid_bottle" }
+				type: "item"
+			}]
+			title: "瓶中血液"
+			x: 7.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["7D27625C61712AD0"]
+			description: [
+				"         使用猩红恶魔蛋糕右键蝙蝠召唤（因为本整合包未加车万女仆，具体召唤方式见任务“浓雾的吸血鬼”）。"
+				"         生命值：200点，限伤10点。"
+				"         攻击方式：弹幕攻击10点（无视护甲）,使用大量的大玉弹幕进行攻击。"
+				"         掉落物：红符「绯红之王」(弹幕击败掉落） 。 "
+				"        （红符「绯红之王」介绍在下一页）"
+				"{@pagebreak}"
+				"         红符「绯红之王」 ："
+				"         使用8点伤害的大量大玉对前方圆形范围进行攻击，十分强力。"
+				"         消耗1个红色大玉弹幕。"
+				"         使用弹幕击败蕾米莉亚・斯卡雷特掉落。"
+			]
+			icon: "youkaishomecoming:spell_remilia"
+			id: "51FD4F2ACBF93F98"
+			rewards: [
+				{
+					id: "468BD5E79D229163"
+					item: "youkaishomecoming:spell_remilia"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "7BC338673AAFA953"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "2F7C49040C0AE7B2"
+					item: "youkaishomecoming:red_bubble_danmaku"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "操纵命运的程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:remilia_scarlet"
+					id: "57F7AB6D7CFB4A2B"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "422A39282EBC3C57"
+					item: "youkaishomecoming:spell_remilia"
+					type: "item"
+				}
+			]
+			title: "「永远鲜红的幼月」——蕾米莉亚·斯卡雷特"
+			x: 16.5d
+			y: 13.5d
+		}
+		{
+			dependencies: ["2FA400CBF51BEF6F"]
+			description: [
+				"         在地狱击杀妖精召唤（因为本整合包未加车万女仆，具体召唤方式见任务“星条旗的小丑”）。"
+				"         生命值：200点，限伤10点。"
+				"         攻击方式：弹幕攻击10点（无视护甲），使用大量的持续存在的激光弹幕进行攻击。"
+				"         掉落物：狱符「星星与条纹」(弹幕击败掉落） 。 "
+				"        （狱符「星星与条纹」介绍在下一页）"
+				"{@pagebreak}"
+				"         狱符「星星与条纹」 ："
+				"         使用4点伤害的大量激光弹幕对目标进行持续攻击。"
+				"         消耗1个红色激光弹幕。"
+				"         使用弹幕击败克劳恩皮丝掉落。"
+			]
+			icon: "youkaishomecoming:spell_clownpiece"
+			id: "2B96D7585802C9AC"
+			rewards: [
+				{
+					id: "4223438ADA832C3A"
+					item: "youkaishomecoming:spell_clownpiece"
+					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "04C6D060411A7B1E"
+					table_id: 7772018159856264947L
+					type: "random"
+				}
+				{
+					count: 4
+					id: "17FA5A5E9143DCC2"
+					item: "youkaishomecoming:red_laser"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "使人发狂程度的能力"
+			tasks: [
+				{
+					entity: "youkaishomecoming:remilia_scarlet"
+					id: "551F629A0D65788F"
+					type: "kill"
+					value: 1L
+				}
+				{
+					id: "6339B864779E491E"
+					item: "youkaishomecoming:spell_clownpiece"
+					type: "item"
+				}
+			]
+			title: "「地狱的妖精」——克劳恩皮丝"
+			x: 1.5d
+			y: 15.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["7D27625C61712AD0"]
+			icon: "miners_delight:bat_wing"
+			id: "7CC89113577F9BC9"
+			rewards: [{
+				command: "/summon youkaishomecoming:remilia_scarlet"
+				id: "5AA39D5B81B134AF"
+				title: "召唤蕾米莉亚・斯卡雷特"
+				type: "command"
+			}]
+			shape: "square"
+			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
+			tasks: [
+				{
+					entity: "minecraft:bat"
+					id: "03F8B0643833C763"
+					type: "kill"
+					value: 4L
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "78518220EA93506B"
+					item: { Count: 12, id: "youkaishomecoming:scarlet_devil_cake" }
+					type: "item"
+				}
+			]
+			title: "浓雾的吸血鬼"
+			x: 15.0d
+			y: 12.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["2FA400CBF51BEF6F"]
+			icon: "minecraft:nether_star"
+			id: "21CB42610F849B52"
+			rewards: [{
+				command: "/summon youkaishomecoming:clownpiece"
+				id: "2580220D33238CCA"
+				title: "召唤克劳恩皮丝"
+				type: "command"
+			}]
+			shape: "square"
+			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
+			tasks: [
+				{
+					entity: "youkaishomecoming:fairy"
+					id: "00C658F151CEA55F"
+					type: "kill"
+					value: 12L
+				}
+				{
+					dimension: "minecraft:the_nether"
+					id: "622A13060BDF17EC"
+					title: "访问维度：下界（The Nether）"
+					type: "dimension"
+				}
+				{
+					id: "0DA3F02C485243BC"
+					title: "确认召唤克劳恩皮丝"
+					type: "checkmark"
+				}
+			]
+			title: "星条旗的小丑"
+			x: 4.0d
+			y: 15.0d
+		}
+		{
+			dependencies: [
+				"480ED2CC514C6B62"
+				"2265CBB2249941E0"
+			]
+			description: [
+				"         召唤方式：在使用物理，魔法，爆炸等伤害击杀琪露诺后，有一定概率随机召唤月下三妖精（桑尼米尔克，斯塔萨菲雅，露娜切露德）中的任意一个；使用爆炸，弹幕，窒息伤害击杀则不会召唤。"
+				"         攻击方式：发射密集的弹幕进行攻击（露娜+桑尼：为圆形环状弹幕；斯塔：环状弹幕+星型弹幕拖尾）。"
+				"         掉落物：1-4妖精糖果。"
+			]
+			icon: "youkaishomecoming:yellow_mentos_danmaku"
+			id: "3D4D941EEB188436"
+			rewards: [{
+				count: 4
+				id: "5FB4AFDB2D11040D"
+				item: "youkaishomecoming:fairy_candy"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "桑尼米尔克，斯塔萨菲雅，露娜切露德"
+			tasks: [
+				{
+					entity: "youkaishomecoming:sunny_milk"
+					id: "57D85406830F803A"
+					type: "kill"
+					value: 100L
+				}
+				{
+					entity: "youkaishomecoming:star_sapphire"
+					id: "3D0A9AC3630B58E0"
+					type: "kill"
+					value: 100L
+				}
+				{
+					entity: "youkaishomecoming:luna_child"
+					id: "686DDBC5E50DCC2A"
+					type: "kill"
+					value: 100L
+				}
+			]
+			title: "月下三妖精！"
+			x: -1.0d
+			y: 15.0d
+		}
+	]
+	title: "妖怪们的归家"
+}

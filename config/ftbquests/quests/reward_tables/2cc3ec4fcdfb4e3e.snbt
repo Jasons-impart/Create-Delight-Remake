@@ -1,0 +1,11 @@
+{
+	id: "2CC3EC4FCDFB4E3E"
+	loot_size: 1
+	order_index: 29
+	rewards: [
+		{ count: 2, item: "youkaishomecoming:red_grape_seeds", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:black_grape_seeds", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:white_grape_seeds", random_bonus: 2 }
+	]
+	title: "妖怪们的归家葡萄种子"
+}
