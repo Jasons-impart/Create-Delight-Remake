@@ -18,6 +18,9 @@ ServerEvents.recipes(e => {
         "quark:building/crafting/compressed/glowberry_sack_uncompress",
         "quark:building/crafting/compressed/gunpowder_sack",
         "quark:building/crafting/compressed/gunpowder_sack_uncompress",
+        "quark:mobs/smelting/cooked_crab_leg",
+        "quark:mobs/smoking/cooked_crab_leg",
+        "quark:mobs/campfire/cooked_crab_leg"
     ])
     e.recipes.create.mixing(
         Fluid.of("create_enchantment_industry:experience", 10),
