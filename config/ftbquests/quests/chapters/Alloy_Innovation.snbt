@@ -984,7 +984,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨维度&r）"
 			tasks: [{
 				id: "7E8F512707C3D437"
 				item: "createutilities:void_motor"
