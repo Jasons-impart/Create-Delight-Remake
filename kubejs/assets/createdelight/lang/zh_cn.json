@@ -498,6 +498,7 @@
     "createdelight.small_centrifugation": "小型离心机",
     "createdelight.fission_react": "裂变反应堆",
     "createdelight.electrolyzer": "电解",
+    "message.createdelight.show_bettercombat_mine_key": "注意：你按下了切换武器挖掘方块的功能按键（默认为“，”），此时拥有攻击动作的物品（例如斧子）将无法挖掘方块。\n如果要恢复原状则再次按下本按键即可。本信息不会出现第二次。",
 
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r（§4无暇无论如何都会受损§r）\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.capsid": "§4此行为将严重破坏平衡性,请不要进行此操作!!!",
