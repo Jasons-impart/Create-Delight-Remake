@@ -103,5 +103,17 @@
             "youkaishomecoming:redbean_bag"
         ],
         "resultItems": "neapolitan:adzuki_crate"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:red_grape_crate"
+        ],
+        "resultItems": "vinery:red_grape_bag"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:white_grape_crate"
+        ],
+        "resultItems": "vinery:white_grape_bag"
     }
 ]

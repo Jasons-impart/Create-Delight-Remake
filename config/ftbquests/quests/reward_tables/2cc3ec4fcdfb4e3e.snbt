@@ -3,9 +3,9 @@
 	loot_size: 1
 	order_index: 29
 	rewards: [
-		{ count: 2, item: "youkaishomecoming:red_grape_seeds", random_bonus: 2 }
-		{ count: 2, item: "youkaishomecoming:black_grape_seeds", random_bonus: 2 }
-		{ count: 2, item: "youkaishomecoming:white_grape_seeds", random_bonus: 2 }
+		{ count: 2, item: "vinery:red_grape_seeds", random_bonus: 2 }
+		{ count: 2, item: "vinery:taiga_grape_seeds_red", random_bonus: 2 }
+		{ count: 2, item: "vinery:white_grape_seeds", random_bonus: 2 }
 	]
 	title: "妖怪们的归家葡萄种子"
 }
