@@ -46,7 +46,6 @@ ItemEvents.tooltip(e => {
         'eclipticseasons:summer_greenhouse_core',
         'eclipticseasons:autumn_greenhouse_core',
         'eclipticseasons:winter_greenhouse_core',
-        'ratatouille:oven_fan',
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg',
@@ -56,7 +55,6 @@ ItemEvents.tooltip(e => {
         "createdelight:emergency_industrial_platform_dark_block",
         "createdelight:emergency_industrial_platform_lime",
         "createdelight:emergency_industrial_platform_lime_block",
-        "ratatouille:oven",
     ])
     addAir(e, [
         'create:netherite_backtank',
