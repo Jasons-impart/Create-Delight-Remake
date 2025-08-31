@@ -194,5 +194,41 @@
             "netherexp:blue_nether_brick_stairs"
         ],
         "resultItems": "quark:blue_nether_bricks_stairs"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:red_grape"
+        ],
+        "resultItems": "vinery:red_grape"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:red_grape_seeds"
+        ],
+        "resultItems": "vinery:red_grape_seeds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:white_grape"
+        ],
+        "resultItems": "vinery:white_grape"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:white_grape_seeds"
+        ],
+        "resultItems": "vinery:white_grape_seeds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:black_grape"
+        ],
+        "resultItems": "vinery:taiga_grapes_red"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:black_grape_seeds"
+        ],
+        "resultItems": "vinery:taiga_grape_seeds_red"
     }
 ]
