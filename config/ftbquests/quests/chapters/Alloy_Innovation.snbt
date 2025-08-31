@@ -1291,44 +1291,6 @@
 			y: 14.0d
 		}
 		{
-			dependencies: ["15BF957B2F2FE765"]
-			description: ["{image:createdelight:textures/gui/blue_fire.png width:400 height:200 align:center}"]
-			hide_until_deps_complete: true
-			id: "725D833A051677E2"
-			rewards: [
-				{
-					id: "0F329EFF6C649878"
-					item: "create:cart_assembler"
-					type: "item"
-				}
-				{
-					id: "27AD32E8E52AFB17"
-					item: "minecraft:rail"
-					type: "item"
-				}
-				{
-					id: "72C4DAF63666F26C"
-					item: "minecraft:lever"
-					type: "item"
-				}
-				{
-					id: "73459809A623ABC3"
-					item: "minecraft:minecart"
-					type: "item"
-				}
-			]
-			subtitle: "地狱的某个结构中存在无限燃烧的“&9超级燃烧&r”和“&e普通燃烧&r”的烈焰人燃烧室 ，也许你可以试试去寻找？"
-			tasks: [{
-				id: "606FC18C59A70E12"
-				structure: "create_structures_arise:obsidiantemple"
-				title: "彩蛋？彩蛋！"
-				type: "structure"
-			}]
-			title: "&4彩蛋？彩蛋！！！&r"
-			x: -2.5d
-			y: 18.5d
-		}
-		{
 			dependencies: ["16E85851D21CB6A3"]
 			dependency_requirement: "one_completed"
 			description: [
