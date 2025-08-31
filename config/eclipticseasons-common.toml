@@ -39,9 +39,11 @@
 	ForceBlocksNotSnowy = []
 	#Enable local calendar and local info synchronization.
 	EnableLocalInfoAndCalendar = true
+	#The timing of snowfall now varies within a certain range each year.
+	DynamicSnowTerm = true
 
 [Weather]
-	#Enable solar term weather system with biome.
+	#Enable the Ecliptic local weather system that adapts weather to each biome.
 	UseSolarWeather = true
 	#Multiplier (0-1000) affecting how likely rain will occur.
 	#Range: 0 ~ 1000
@@ -51,6 +53,10 @@
 	ThunderChancePercentMultiplier = 20
 	#Set it true to initialize weather and snow when loading the mod or level for the first time.
 	ShouldInitWeather = false
+	#Enable weather regions, linking specific biomes to particular weather to prevent scattered patterns.
+	EnableWeatherRegion = true
+	#Prevent rain from occurring in biomes without precipitation like desert.
+	NotRainInDesert = false
 
 [Temperature]
 	#Ice or snow layer will melt in warm time.
@@ -107,6 +113,8 @@
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
 	SereneSeasonsCropTag = true
+	#If a mod tries to query biome precipitation using the raw method, would adjust it to correctly ignore small biomes like rivers.
+	FixBiomePrecipitation = true
 
 [Debug]
 	#Enable debug option to detect illegal use of functions.
@@ -117,6 +125,12 @@
 	SnowyFullCollisionShape = false
 	#Snow can cover the block which would lights.
 	NotSnowOverlayGlowingBlock = false
+	#Enable the season definitions system.
+	EnableSeasonDefinition = false
+	#Disable chunk extra info cache cleanup.
+	DisableChunkCacheCleaner = false
+	#Disable unique rebinding for biome tags. Note that after disabling, tags may overlap.
+	DisableUniqueBiomeTagsRebinding = false
 
 [Map]
 	#The map color of blocks will change during snow.
