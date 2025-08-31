@@ -1,0 +1,610 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Beginning_of_Journey"
+	group: "0E7AEC0D0D9C1B1C"
+	icon: "minecraft:writable_book"
+	id: "1FBB3B0AC0A81E03"
+	images: [
+		{
+			height: 3.0d
+			image: "quark:block/black_crystal_lamp"
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			height: 2.0d
+			image: "ftbchunks:textures/faces/minecraft/slime.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 0.5d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "ftbchunks:textures/faces/minecraft/enderman.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "ftbchunks:textures/faces/minecraft/blaze.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.5d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "ftbchunks:textures/faces/minecraft/ghast.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: -5.0d
+			y: 4.0d
+		}
+		{
+			alpha: 150
+			height: 2.0d
+			image: "minecraft:block/fire_0"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.5d
+			y: 7.0d
+		}
+		{
+			height: 2.0d
+			image: "mynethersdelight:block/nether_stove_top_on"
+			order: -1
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.5d
+			y: 7.0d
+		}
+		{
+			height: 2.0d
+			image: "mynethersdelight:block/nether_stove_top_soul"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.5d
+			y: 9.5d
+		}
+		{
+			height: 1.0d
+			image: "ftbchunks:textures/faces/minecraft/wither_skeleton.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -2.5d
+			y: 8.5d
+		}
+		{
+			height: 1.0d
+			image: "ftbchunks:textures/faces/minecraft/piglin_brute.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -1.5d
+			y: 9.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:item/nether_star"
+			rotation: 0.0d
+			width: 2.0d
+			x: -2.55d
+			y: 10.0d
+		}
+		{
+			height: 1.0d
+			image: "ftbchunks:textures/faces/minecraft/blaze.png"
+			rotation: 0.0d
+			width: 1.0d
+			x: -3.5d
+			y: 9.5d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:block/hay_block_side"
+			rotation: 0.0d
+			width: 2.0d
+			x: 5.5d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "vinery:item/straw_hat_item"
+			rotation: 0.0d
+			width: 2.0d
+			x: 5.5d
+			y: 4.0d
+		}
+		{
+			height: 2.0d
+			image: "ad_astra:textures/painting/moon.png"
+			rotation: 0.0d
+			width: 2.0d
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			click: "#5981A5D70F26A7A5"
+			height: 3.0d
+			hover: ["点击跳转下一章节"]
+			image: "quark:block/black_crystal_lamp_on"
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.0d
+			y: -3.0d
+		}
+	]
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["         在旅途中，我无意间发现不同的材料与末影珍珠结合在一起时似乎有着神奇的力量，能够将维度撕裂......或许我们可以利用裂隙将不同维度的生物聚集与此，获取足够多的战利品，经过研究，我决定将这种现象称之为“裂隙”......（本章节以“gateway”模组为主题，以第一人称故事/相关内容作为介绍）"]
+			icon: "minecraft:ender_pearl"
+			id: "31628FC783AE3161"
+			rewards: [{
+				count: 4
+				id: "1FC2DFE800C615BE"
+				item: "minecraft:ender_pearl"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "一切的起点"
+			tasks: [{
+				id: "21DA432C0CE1DA4E"
+				title: "裂隙"
+				type: "checkmark"
+			}]
+			x: -1.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["31628FC783AE3161"]
+			description: [
+				"       Gate Pearl 分为 小型/普通/大型 三种，分别需要3×3×3/5×6×5/7×9×7 的空间才可进行传送门的生成。如果空间不足， Gate Pearl 将不会被消耗，并在聊天栏中发出提示：“没有足够的空间来开启传送门！”。   "
+				"       传送门本身在生成时并没有对实体物块的需求。只要空间足够，即使是单独的一个悬空方块也可以让传送门生成。但如果在传送门召唤敌怪时没有足够的实体物块让敌怪生成，传送门会在爆炸与一道闪电中消失，并提示：“传送门崩塌了，因为没有足够的空间来生成下一波生物！”。"
+				"       在测试中，小型/普通/大型 传送门分别需要至少 11×11/15×15/19×19 的实体物块来生成敌怪。"
+				"       在每个波次到来之前，会有固定的休息时间。每个波次都有固定的时长限制，超出时长限制而未击败全部敌怪会使传送门消失，并提示：“已超出当前波次的时间限制！”。"
+				"       通过每个波次后会获得相应波次的奖励，失败则执行失败惩罚。详细信息可以通过在物品栏中鼠标移动到 Gate Pearl 上按住shift显示。"
+				"       （如果您想获得大量特定资源或者是在想体验在怪物群里开无双的感觉，这个模组绝对是你的不二之选）"
+			]
+			id: "554ED4A8BCAAF378"
+			rewards: [{
+				id: "239E237A771B1C1A"
+				type: "xp_levels"
+				xp_levels: 12
+			}]
+			shape: "square"
+			subtitle: "若手上不曾沾满鲜血"
+			tasks: [{
+				advancement: "minecraft:adventure/kill_a_mob"
+				criterion: ""
+				id: "1A553A10A32488FD"
+				type: "advancement"
+			}]
+			title: "怪物猎人"
+			x: -1.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         史莱姆（Slime）是一种生成在部分区块地下和沼泽生物群系及其变种的敌对生物，因其作为凝胶生物，它的攻击速度可不是一般生物能够比拟的，并且这种生物还存在着许多不同种类的个体，掌握着多种多样的能力。"]
+			id: "0229C1C79FE257F3"
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "19DB7B117BABAF34"
+					table_id: 8248062892074393121L
+					type: "choice"
+				}
+				{
+					count: 8
+					id: "271D86DFE8F5AF83"
+					item: "casualness_delight:green_tongue"
+					random_bonus: 6
+					type: "item"
+				}
+				{
+					id: "797A66CEFC49932A"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:basic/slime"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "会跳的果冻（0.o）"
+			tasks: [{
+				id: "679D613BA78A5ECD"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:basic/slime"
+					}
+				}
+				type: "item"
+			}]
+			title: "粘液关卡"
+			x: 0.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         末影人（Enderman）是一种来自末地、会瞬移的高大黑色敌对生物，在各个维度都存在它的身影。如果你攻击这个生物或者与它对视，它就会变得充满敌意，并且立刻要冲过来袭击你，满世界地瞬移并且坚持不懈地追踪你，除非你赶上一个下雨天。不过，这个裂隙中，似乎存在着不一样的存在......"]
+			id: "6A98BCA222849318"
+			rewards: [
+				{
+					id: "254CB5D455C7833D"
+					item: "ends_delight:end_mixed_salad"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "74C58787CB5FBA8B"
+					item: "ends_delight:ender_congee"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "6C0D87F927721F94"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:basic/enderman"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "Darker than the night.（比夜晚更加黑暗。）"
+			tasks: [{
+				id: "78690DCDA7E3B137"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:basic/enderman"
+					}
+				}
+				type: "item"
+			}]
+			title: "末影人关卡"
+			x: 3.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         烈焰人（Blaze）是生成在下界要塞的飞行敌对生物，同时也是烈焰棒的主要来源，能够发射三个为一组的小火球，使用这种攻击时，它们会先着火3秒钟，接着在0.9秒中发射3个小火球，然后火焰熄灭并等待5秒后继续攻击。"]
+			id: "3C992FDB9AA8CA28"
+			rewards: [
+				{
+					count: 2
+					id: "5D2A4A56D3FEB44E"
+					item: "mynethersdelight:spicy_skewer"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "3293477C442DA126"
+					item: "culturaldelights:spicy_curry"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "6C8AD2540108F3C3"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:basic/slime"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "I'm fire !（吾身为火！）"
+			tasks: [{
+				id: "4EB10F9B466A7971"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:basic/blaze"
+					}
+				}
+				type: "item"
+			}]
+			title: "烈焰关卡"
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         恶魂（Ghast）是下界中一种会向玩家发射火球的巨大浮空敌对生物，你只会在玄武岩三角洲、下界荒地和灵魂沙峡谷生物群系中遇到恶魂——它们往往会避开下界菌森林，因为在那儿难以追踪猎物。当你击杀它们时，大概率会掉落恶魂之泪和火药，当然，你也可以试试与他们打“乒乓球”，那也不失为一种乐趣。（C418在Reddit上的一个AMA透露恶魂的音效源于他家的猫，猫在睡觉时被打扰就会发出这种声音）"]
+			id: "45902A2F17DBD52B"
+			rewards: [
+				{
+					id: "0EC511ECC3A4D1C6"
+					item: "mynethersdelight:twisted_ghasta"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1D40A33CB00FAA6F"
+					item: "mynethersdelight:bread_loaf"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "5118C453CE0254F0"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:ghast_trial"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "见鬼去吧！"
+			tasks: [{
+				id: "7F2810A85F577AAC"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:ghast_trial"
+					}
+				}
+				type: "item"
+			}]
+			x: -5.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["3C992FDB9AA8CA28"]
+			description: ["         事情的发展超出了我们的控制，越来越多的烈焰人从裂隙中涌出，它们变得越来越强而我们却逐渐变得虚弱，这场试炼无穷无尽。最终，我们只能选择放弃，让裂隙自毁来结束这无休止的战斗。不过我们的目的已经达成，这些烈焰棒可足够我们用好一阵子了......"]
+			id: "4321131AB2437B04"
+			rewards: [
+				{
+					id: "4DFE1B7A953A462F"
+					item: "mynethersdelight:spicy_curry"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "7C09CD86E8A2B563"
+					item: "mynethersdelight:spicy_noodle_soup"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "45FDB8ECAD4BDCE3"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:endless/blaze"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "烈火燎原"
+			tasks: [{
+				id: "079B1C693C9094E0"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:endless/blaze"
+					}
+				}
+				type: "item"
+			}]
+			title: "无尽烈焰关卡"
+			x: -2.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["4321131AB2437B04"]
+			description: ["         下界要塞（Nether Fortress）是一种自然生成于下界的结构，由许多桥梁、走廊与塔楼组成。但是实际上这些怪物并非来自于下届要塞，它们更加强大，令人恐惧。这让我们意识到，也许在某处，存在着不同于这个世界的结构，而裂隙正是两个世界或维度之间联系的桥梁。"]
+			id: "14BAD5E84CB36736"
+			rewards: [
+				{
+					id: "04E78EFFF1A84E6B"
+					item: "mynethersdelight:roast_stuffed_hoglin"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "3338A09151829760"
+					item: "brewinandchewin:fiery_fondue_pot"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "522925F773148068"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:hellish_fortress"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "阴森的要塞"
+			tasks: [{
+				id: "300C2D63A7B97E77"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:hellish_fortress"
+					}
+				}
+				type: "item"
+			}]
+			title: "地狱堡垒之门"
+			x: -2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         亡灵生物（Undead Mob）是一种生物族群，具有亡灵的性质。深邃的裂隙中，无数亡灵生物从中出现，组成一个军团，在皎洁的月光下向这方世界宣战。现在，拿起你的剑，阻止它们继续推进！“推开此门者，当以血肉为契，以亡魂为阶——生者铸王座，死者即权柄。”"]
+			id: "6F382488615A5891"
+			rewards: [
+				{
+					count: 2
+					id: "37B6CFC9966D9901"
+					item: "youkaishomecoming:tarte_lune"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "280BDF1CF387AD96"
+					item: "youkaishomecoming:full_moons_eve"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "2FB19D6B4E4A399D"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:overworldian_nights"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "永夜刻印"
+			tasks: [{
+				id: "1B5FCECAC9450A9C"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:overworldian_nights"
+					}
+				}
+				type: "item"
+			}]
+			title: "超凡夜之门"
+			x: 8.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["554ED4A8BCAAF378"]
+			description: ["         不知存在于何处的翡翠林之中，生物们过着如人类一般的生活。直到有一天，裂隙的出现将它们带离此处......它们被赋予了更加强大力量，却也只剩下了攻击的本能。接下来，击退他们，防止我们的家园收到破坏，以及，为我们的创造影响它们的生活而感到抱歉。"]
+			id: "36C956A6AAF25A0B"
+			rewards: [
+				{
+					count: 2
+					id: "38D5ECC5AC68743F"
+					item: "refurbished_furniture:cooked_vegetable_pizza"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "52746A83CF58717F"
+					item: "miners_delight:pasta_with_veggieballs"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "03FD63A9CF725699"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "gateways:emerald_grove"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "苍翠之中，隐藏着黑暗"
+			tasks: [{
+				id: "64506C61B3DB66B6"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "gateways:emerald_grove"
+					}
+				}
+				type: "item"
+			}]
+			title: "翡翠林门户"
+			x: 5.5d
+			y: 5.0d
+		}
+		{
+			dependencies: [
+				"45902A2F17DBD52B"
+				"14BAD5E84CB36736"
+				"36C956A6AAF25A0B"
+				"6F382488615A5891"
+				"0229C1C79FE257F3"
+				"6A98BCA222849318"
+			]
+			description: [
+				"                  “无论你身在何地，裂隙使我们相遇。”"
+				"{image:gateways:item/gate_pearl_large width:50 height:50 align:center}"
+			]
+			hide_dependency_lines: true
+			icon: {
+				Count: 1
+				id: "supplementaries:flute"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4C520BFAB5B97C59"
+			rewards: [{
+				id: "291D634299BD1891"
+				type: "xp_levels"
+				xp_levels: 12
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "解锁章节：异世界的挑战！"
+			tasks: [{
+				id: "4562C91F55455148"
+				title: "远方"
+				type: "checkmark"
+			}]
+			title: "旅途的中点"
+			x: -1.0d
+			y: -3.0d
+		}
+	]
+	title: "旅途的起始"
+}

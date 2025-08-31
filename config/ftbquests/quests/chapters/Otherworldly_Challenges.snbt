@@ -12,7 +12,7 @@
 			rotation: 0.0d
 			width: 14.0d
 			x: 2.0d
-			y: -7.5d
+			y: -14.0d
 		}
 		{
 			height: 3.0d
@@ -20,7 +20,7 @@
 			rotation: 0.0d
 			width: 15.0d
 			x: 2.0d
-			y: 11.5d
+			y: 13.5d
 		}
 		{
 			height: 4.0d
@@ -59,7 +59,7 @@
 			image: "alexscaves:item/caramel"
 			rotation: 0.0d
 			width: 4.0d
-			x: 9.5d
+			x: 9.0d
 			y: 3.0d
 		}
 		{
@@ -76,7 +76,7 @@
 			rotation: 0.0d
 			width: 2.0d
 			x: 2.0d
-			y: 9.0d
+			y: 10.5d
 		}
 		{
 			height: 3.0d
@@ -84,7 +84,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: 8.5d
+			y: 10.0d
 		}
 		{
 			height: 3.0d
@@ -92,7 +92,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			height: 4.0d
@@ -151,7 +151,7 @@
 			rotation: 0.0d
 			width: 6.0d
 			x: 2.0d
-			y: 13.5d
+			y: 16.0d
 		}
 		{
 			height: 3.0d
@@ -177,8 +177,125 @@
 			x: -5.0d
 			y: 3.0d
 		}
+		{
+			height: 2.0d
+			image: "alexscaves:item/uranium"
+			rotation: 0.0d
+			width: 2.0d
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			height: 3.0d
+			image: "createdeco:block/palettes/decals/decal_radioactive"
+			order: -1
+			rotation: 0.0d
+			width: 3.0d
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			height: 2.0d
+			image: "alexscaves:item/fissile_core"
+			rotation: 0.0d
+			width: 2.0d
+			x: -4.0d
+			y: 9.0d
+		}
+		{
+			height: 3.0d
+			image: "minecraft:textures/painting/wasteland.png"
+			order: -1
+			rotation: 0.0d
+			width: 3.0d
+			x: -4.0d
+			y: 9.0d
+		}
+		{
+			height: 2.0d
+			image: "fruitsdelight:block/persimmon_leaves"
+			rotation: 0.0d
+			width: 2.0d
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			height: 3.0d
+			image: "vinery:block/apple_leaves_0"
+			rotation: 0.0d
+			width: 3.0d
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			height: 3.0d
+			image: "vinery:item/apple_tree_sapling"
+			rotation: 0.0d
+			width: 3.0d
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			height: 2.0d
+			image: "alexscaves:item/tectonic_shard"
+			order: 1
+			rotation: 0.0d
+			width: 2.0d
+			x: 7.0d
+			y: 9.5d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/extinction_spear"
+			rotation: 0.0d
+			width: 3.0d
+			x: 8.5d
+			y: 8.0d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:block/amber_monolith_center"
+			order: -1
+			rotation: 0.0d
+			width: 3.0d
+			x: 8.0d
+			y: 8.5d
+		}
+		{
+			height: 4.0d
+			image: "iceandfire:textures/particles/sea_serpent_bubble.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 1.5d
+			y: -5.5d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/magic_conch"
+			rotation: 0.0d
+			width: 3.0d
+			x: 2.0d
+			y: -5.0d
+		}
+		{
+			height: 3.0d
+			image: "alexscaves:item/immortal_embryo"
+			rotation: 0.0d
+			width: 3.0d
+			x: 2.0d
+			y: -8.5d
+		}
+		{
+			height: 4.0d
+			image: "minecraft:block/seagrass"
+			order: -1
+			rotation: 0.0d
+			width: 4.0d
+			x: 2.0d
+			y: -9.0d
+		}
 	]
-	order_index: 8
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
@@ -208,10 +325,21 @@
 					item: "createdelight:dread_heart"
 					type: "item"
 				}
+				{
+					id: "40E213BB9803E42F"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:the_gate_of_eternal_cold"
+						}
+					}
+					type: "item"
+				}
 			]
 			shape: "square"
 			size: 2.0d
-			subtitle: "撕裂的维度皆被&1冻结&r......&8无声无息&r......"
+			subtitle: "撕裂的维度皆被冻结.....无声无息....."
 			tasks: [{
 				id: "0F69834EF0A45187"
 				item: {
@@ -225,7 +353,7 @@
 			}]
 			title: "&1凛冬之寒"
 			x: 2.0d
-			y: -6.0d
+			y: -14.0d
 		}
 		{
 			dependencies: ["58C8AFFF5BDFF59C"]
@@ -301,34 +429,42 @@
 			]
 			title: "&4刺骨&r&k111&r&4穿心&r&k111&r&4..."
 			x: 2.0d
-			y: 12.0d
+			y: 14.0d
 		}
 		{
-			description: ["         在旅途中，我无意间发现不同的材料与珍珠结合似乎有着神奇的力量，我想，我们终有一天会明白这一切......或许我们可以利用这些去到&kabcde&r，继续这场旅途的传奇，新的篇章就此开始......"]
+			dependencies: ["4C520BFAB5B97C59"]
+			description: ["“真正的远方不在脚下，而在维度之间的裂隙之中。”"]
 			icon: {
 				Count: 1
 				id: "explorerscompass:explorerscompass"
 				tag: { }
 			}
 			id: "5981A5D70F26A7A5"
-			rewards: [{
-				id: "681A11C211D0C1CC"
-				item: {
-					Count: 1
-					id: "netmusic:music_cd"
-					tag: {
-						NetMusicSongInfo: {
-							artists: ["The Journeymen"]
-							name: "500 Miles"
-							read_only: 0b
-							time: 193
-							url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
-							vip: 0b
+			rewards: [
+				{
+					id: "681A11C211D0C1CC"
+					item: {
+						Count: 1
+						id: "netmusic:music_cd"
+						tag: {
+							NetMusicSongInfo: {
+								artists: ["The Journeymen"]
+								name: "500 Miles"
+								read_only: 0b
+								time: 193
+								url: "https://music.163.com/song/media/outer/url?id=537690736.mp3"
+								vip: 0b
+							}
 						}
 					}
+					type: "item"
 				}
-				type: "item"
-			}]
+				{
+					id: "7EBC1154256E00EC"
+					item: "netmusic:music_player"
+					type: "item"
+				}
+			]
 			shape: "square"
 			size: 2.0d
 			subtitle: "踏上去往远方的路途"
@@ -340,30 +476,18 @@
 					type: "questsadditions:days"
 				}
 				{
-					id: "68FCD19BC19F6739"
-					item: {
-						Count: 1
-						id: "tetra:modular_double"
-						tag: {
-							Damage: 0
-							"double/basic_hammer_left_material": "basic_hammer/netherite"
-							"double/basic_hammer_right_material": "basic_hammer/netherite"
-							"double/basic_handle_material": "basic_handle/forged_beam"
-							"double/handle": "double/basic_handle"
-							"double/head_left": "double/basic_hammer_left"
-							"double/head_right": "double/basic_hammer_right"
-							id: "5994b710-470b-49b1-bdf0-67373e539388"
-						}
-					}
+					count: 12L
+					id: "7ED3FF454FD4E7C0"
+					item: { Count: 12, id: "minecraft:ender_pearl" }
 					type: "item"
 				}
 			]
-			title: "背井离乡"
+			title: "离地而居"
 			x: 2.0d
 			y: 3.0d
 		}
 		{
-			dependencies: ["421576F1BE1DF7D9"]
+			dependencies: ["771EC4A267899414"]
 			description: ["它们被规则的力量束缚在此处，注定在寒风中消逝......"]
 			icon: "ad_astra:glacio_globe"
 			id: "75605D2B058F2DA5"
@@ -383,7 +507,7 @@
 			}]
 			title: "无垠之牢！"
 			x: 2.0d
-			y: -4.0d
+			y: -12.0d
 		}
 		{
 			dependencies: ["03950A91DF592F72"]
@@ -469,7 +593,7 @@
 				"         火龙是存在于于火星和水星的一种飞龙，以他们卓越的喷火能力和飞行能力以及他们尽人皆知的血腥声望和相关文化著称。除此之外，他们一生中还会经历五个成长阶段，在此期间他们会逐渐变得更大、更强、更可怕。"
 				"         冰龙是存在于霜原星的一种飞龙，拥有不亚于火龙的知名度和与火龙完全对立的寒冰吐息。拥有同时掌控天空，陆地和海洋的能力。"
 				"          电龙是漫游于金星上空的一种飞龙，拥有掌握雷霆和黑夜的强大力量，强横的闪电龙息能将一切化为飞灰，是传说中的强大存在。"
-				"          如今的他们被悚怖的力量囚禁在太空之中。"
+				"          如今的他们被神秘的力量囚禁在太空之中。"
 				"          那么，代价是什么呢？"
 			]
 			icon: {
@@ -545,13 +669,16 @@
 			dependencies: [
 				"752E66805BBFEC51"
 				"6DC960C9CBFEEAE9"
-				"58C8AFFF5BDFF59C"
 				"604734C6B3F31B97"
+				"6F25C6A7F38F43E0"
+				"46108940883CF8E5"
+				"40C3CA64ACD3B189"
+				"5CA16011218562F8"
 			]
 			description: [
-				"嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
+				"       嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
 				"{@pagebreak}"
-				"虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，0.4再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
+				"         虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，之后再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
 			]
 			hide_dependency_lines: true
 			hide_until_deps_complete: true
@@ -575,17 +702,6 @@
 					type: "item"
 				}
 				{
-					id: "6503E6FE79EDC525"
-					item: {
-						Count: 1
-						id: "vinery:straw_hat"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
 					id: "1B6EEBC4A00F5F96"
 					item: {
 						Count: 1
@@ -596,86 +712,30 @@
 					}
 					type: "item"
 				}
+				{
+					count: 4
+					id: "31A1DAD1423A6D1E"
+					item: "cosmopolitan:autumn_tea"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "48C2D6C9D9E9A2A5"
+					item: "brewinandchewin:beer"
+					type: "item"
+				}
 			]
 			shape: "octagon"
 			size: 4.0d
 			subtitle: "欲买桂花同载酒，终不似，少年游。"
-			tasks: [
-				{
-					id: "07B355A54F127F2D"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:lightning_dragon"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					id: "4B60256CE1B8C7F4"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:fire_dragon_eyes"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					id: "6DE0D6292BDBB6E4"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:ice_dragon"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					id: "28C2E8815759D132"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:piercing_withering_trial"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					id: "39D85D0AE1EA91E7"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:the_gate_of_eternal_cold"
-						}
-					}
-					match_nbt: true
-					type: "item"
-				}
-				{
-					id: "7499BC28E0B9A76B"
-					item: {
-						Count: 1
-						id: "gateways:gate_pearl"
-						tag: {
-							gateway: "createdelight:sweettide_brokenpoint"
-						}
-					}
-					type: "item"
-				}
-			]
+			tasks: [{
+				id: "595C26D74E826250"
+				title: "为将来！干杯！"
+				type: "checkmark"
+			}]
 			title: "打破时空之门"
 			x: 2.0d
-			y: -10.0d
+			y: -18.0d
 		}
 		{
 			dependencies: ["5981A5D70F26A7A5"]
@@ -729,18 +789,24 @@
 		}
 		{
 			dependencies: ["1DAA7B2A273EF5C1"]
-			description: ["         糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。坐落在最高的甘草蔓上的女巫塔既是它们的家，也是它们探索邪恶甜食配方的地方。"]
+			description: ["         糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。这里曾因永恒的甜蜜庆典而繁荣，又因未知的魔法而变得荒芜。如今，这些魔法蔓延进入主世界，糖果女巫的力量将这里改造为类似于糖果洞穴的环境，我们必须将他们击退，维护我们赖以生存的世界！"]
 			id: "604734C6B3F31B97"
 			rewards: [
 				{
-					count: 2
+					count: 4
 					id: "7D886BF3A3A345EA"
 					item: "alexscaves:sundae"
+					random_bonus: 8
 					type: "item"
 				}
 				{
-					count: 2
-					id: "1462C63C5E2000C6"
+					count: 4
+					id: "3DD3748BE34B3AFB"
+					item: "alexscaves:biome_treat"
+					type: "item"
+				}
+				{
+					id: "343AB0FADD97BDB9"
 					item: {
 						Count: 1
 						id: "gateways:gate_pearl"
@@ -766,7 +832,7 @@
 				type: "item"
 			}]
 			title: "糖分临界点"
-			x: 9.5d
+			x: 9.0d
 			y: 3.0d
 		}
 		{
@@ -816,7 +882,7 @@
 			]
 			title: "人生最寂寥的一天"
 			x: 2.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["45A66CCB979164B1"]
@@ -835,7 +901,6 @@
 					type: "item"
 				}
 				{
-					count: 2
 					id: "577E00FE739536F5"
 					item: {
 						Count: 1
@@ -861,6 +926,13 @@
 					}
 					type: "item"
 				}
+				{
+					count: 2
+					id: "29DA18B41746EC41"
+					item: "alexscaves:darkened_apple"
+					random_bonus: 3
+					type: "item"
+				}
 			]
 			shape: "square"
 			subtitle: "当寂静被撕裂，恐惧源自深渊中的凝视"
@@ -877,16 +949,10 @@
 			}]
 			title: "黯渊之视"
 			x: 2.0d
-			y: 8.5d
+			y: 10.0d
 		}
 		{
-			dependencies: [
-				"752E66805BBFEC51"
-				"604734C6B3F31B97"
-				"58C8AFFF5BDFF59C"
-				"6DC960C9CBFEEAE9"
-				"40C3CA64ACD3B189"
-			]
+			dependencies: ["5981A5D70F26A7A5"]
 			description: ["         在经历了这些试炼后，我们在这些物品中发现了裂隙的痕迹，或许我们可以通过这些物品探究裂隙的本质，从而得到意想不到的成果。"]
 			hide_dependency_lines: true
 			icon: "iceandfire:dragon_flute"
@@ -1140,7 +1206,7 @@
 			}
 			id: "1E127C39C88ABD39"
 			rewards: [{
-				count: 4
+				count: 2
 				id: "2469E127F10A2C7E"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1197,7 +1263,7 @@
 			icon: "minecraft:nether_star"
 			id: "2FE60E36A39610AF"
 			rewards: [{
-				count: 8
+				count: 4
 				id: "22E5DE7FC17B4954"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1363,7 +1429,6 @@
 			icon: "iceandfire:dragonscales_red"
 			id: "4969DC03C46C70C0"
 			rewards: [{
-				count: 2
 				id: "5FF61FAD54B89ABA"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1470,15 +1535,17 @@
 			id: "40C3CA64ACD3B189"
 			rewards: [
 				{
-					count: 2
+					count: 6
 					id: "5A8B0E12F30E17C7"
 					item: "alexscaves:block_of_scarlet_neodymium"
+					random_bonus: 6
 					type: "item"
 				}
 				{
-					count: 2
+					count: 6
 					id: "23F9C023514AF1B0"
 					item: "alexscaves:block_of_azure_neodymium"
+					random_bonus: 6
 					type: "item"
 				}
 				{
@@ -1517,7 +1584,7 @@
 			icon: "alexscaves:notor_gizmo"
 			id: "077FD8737EF5ABE0"
 			rewards: [{
-				count: 4
+				count: 2
 				id: "7A0F5284DE1797A8"
 				item: "createdelight:otherworld_note"
 				type: "item"
@@ -1572,6 +1639,741 @@
 			title: "研究：科技与自然"
 			x: 13.0d
 			y: -4.0d
+		}
+		{
+			dependencies: ["5981A5D70F26A7A5"]
+			description: ["         核裂变是指一个质量较重的原子核通过核反应过程分裂为两个或两个以上的中等质量的原子核的过程。 并不是所有的原子核都能进行核裂变，只有因为质量过大而不稳定的原子核才会发生裂变。 核裂变分为自发裂变和诱发裂变，顾名思义，自发裂变是指原子核非常不稳定，能够自发裂变成两个更稳定的中等质量原子核，而诱发裂变是需要人为提供一些能量或者刺激，激发不稳定的原子核变得更不稳定从而发生裂变。"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:toxic_caves"
+				}
+			}
+			id: "1FB6A60AE6645FA6"
+			rewards: [
+				{
+					id: "234867201E8D27CC"
+					item: "alexscaves:green_soylent"
+					type: "item"
+				}
+				{
+					id: "397231B0C6EB765E"
+					item: "alexscaves:slam"
+					type: "item"
+				}
+				{
+					id: "1FAD01A2EDF06968"
+					item: "alexscaves:spelunkie"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "RGB(8,229,1)"
+			tasks: [
+				{
+					biome: "alexscaves:toxic_caves"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:toxic_caves"
+						}
+					}
+					id: "00AA9F7F0ACB9C4A"
+					title: "访问毒化洞穴 (Toxic Caves)"
+					type: "biome"
+				}
+				{
+					count: 2L
+					id: "6C84EB5BDF2109A7"
+					item: { Count: 2, id: "alexscaves:fissile_core" }
+					type: "item"
+				}
+				{
+					id: "0DEF21AB1C0A68EC"
+					item: "alexscaves:nuclear_bomb"
+					type: "item"
+				}
+			]
+			title: "这里......充斥着辐射......"
+			x: -1.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1FB6A60AE6645FA6"]
+			description: [
+				"         当我打开那道通往虚空的传送门时，我发现，被释放的不仅是来自毒化洞穴的生物，还有扭曲到极致的力量。「熔蚀之地」正是由我们创造的战场——核爆的灼热、剧毒的蔓延、无节制的腐化，本该是我们掌控的武器，如今却成了这些怪物的攻击手段。"
+				"         这些从裂缝中爬出的存在，不惧死亡。它们的躯体由血肉或是机械构成，散发着辐射，积蓄着力量。而现在，在这片被污染至极点的炼狱中，拼尽全力！将它们再度驱逐回毒化洞窟！"
+			]
+			id: "5CA16011218562F8"
+			rewards: [
+				{
+					count: 2
+					id: "132250D8A3401126"
+					item: "alexscaves:block_of_uranium"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 4
+					id: "322B6DDEB7567562"
+					item: "alexcaves_delight:tremorzillaamlette"
+					type: "item"
+				}
+				{
+					id: "7CEC7B262C1B6E9C"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:a_place_of_melting"
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2B4CA1E564926664"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_mask"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0659D035ED427C24"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "788C5A8B4DD66079"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "368B5E88B4566401"
+					item: {
+						Count: 1
+						id: "alexscaves:hazmat_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "剧毒、腐蚀与辐射交织而成的炼狱"
+			tasks: [{
+				id: "7A6448D7184201F1"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:a_place_of_melting"
+					}
+				}
+				type: "item"
+			}]
+			title: "熔蚀之地"
+			x: -4.0d
+			y: 9.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			description: ["         辐射的影响给我们造成了无法忘却的噩梦，我再也不想回到这里......他和磁力洞穴不同，不同于机械，这里更偏向于血肉的异变，或许我们可以利用这力量创造出更加强大的生物，比如撼地斯拉......"]
+			icon: "alexscaves:nuclear_bomb"
+			id: "5876369997D4C0FD"
+			rewards: [{
+				count: 2
+				id: "75C12421C25F46E5"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "17BCE5EAFEEB7B67"
+					item: "alexscaves:nuclear_bomb"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "69B438660920BCB2"
+					item: "alexscaves:tremorzilla_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "79AEC64522FC1637"
+					item: {
+						Count: 1
+						id: "alexscaves:raygun"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "236E30913793136D"
+					item: "alexscaves:music_disc_fusion"
+					type: "item"
+				}
+			]
+			title: "研究：辐射与剧毒"
+			x: 13.0d
+			y: -2.5d
+		}
+		{
+			description: ["         原始世界以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:primordial_caves"
+				}
+			}
+			id: "17D22A4364052C8A"
+			rewards: [
+				{
+					count: 2
+					id: "5E54590DD74CD00C"
+					item: "cavedelight:boiled_dino_egg"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6E1F4610F19E44E0"
+					item: "alexscaves:cooked_trilocaris_tail"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 4
+					id: "23D46346F8ACF2C7"
+					item: "alexscaves:pine_nuts"
+					random_bonus: 8
+					type: "item"
+				}
+				{
+					count: 2
+					id: "66487197BBD7E043"
+					item: "alexscaves:dinosaur_nugget"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 2
+					id: "48A75023AFB0A436"
+					item: "alexscaves:serene_salad"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1F801463DA277E1C"
+					item: "cavedelight:cooked_curious_insect"
+					random_bonus: 4
+					type: "item"
+				}
+				{
+					count: 2
+					id: "16C472C62972115D"
+					item: "cavedelight:cooked_trilocaris_slice"
+					random_bonus: 4
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "生命总能找到出路"
+			tasks: [
+				{
+					biome: "alexscaves:primordial_caves"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:primordial_caves"
+						}
+					}
+					id: "2A5CE9AFDE3E8441"
+					title: "访问原始洞穴 (Primordial Caves)"
+					type: "biome"
+				}
+				{
+					count: 4L
+					id: "0A5B8B94DBD9B66A"
+					item: { Count: 4, id: "alexscaves:amber_curiosity" }
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2D6F675384E4F9B5"
+					item: { Count: 4, id: "alexscaves:tectonic_shard" }
+					type: "item"
+				}
+			]
+			title: "时间之外别有洞天"
+			x: 5.0d
+			y: 6.0d
+		}
+		{
+			dependencies: [
+				"5E6A8FA25EB811DB"
+				"1FB6A60AE6645FA6"
+				"17D22A4364052C8A"
+				"1DAA7B2A273EF5C1"
+				"45A66CCB979164B1"
+			]
+			description: ["         一部分洞穴介绍为mc模组百科中的介绍，其详细介绍可在洞穴相关任务中查看。另一部分则为其主题的相关知识和原理，尽管有些不够专业，但我觉得还是比较有趣的（"]
+			id: "06B035939A77A146"
+			rewards: [{
+				id: "7E64ACA6D340A660"
+				type: "xp_levels"
+				xp_levels: 12
+			}]
+			shape: "rsquare"
+			tasks: [{
+				id: "1BCDD7C04724047E"
+				title: "关于洞穴这件事"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["17D22A4364052C8A"]
+			description: ["        在远古纪元的终末，一场超越认知的灾难撕裂了大地与时间本身。  大陆板块剧烈扭曲、碰撞、崩裂，远古巨兽在混沌中苏醒， 维度逐渐扭曲，形成了原始洞穴。沉眠于地壳深处的骸骨与熔岩交织成扭曲的试炼场；复苏于火山之中的恶兽因腐蚀带来毁灭的起始......我们必须与它们死战到底，阻止他们给这方世界带来毁灭！"]
+			icon: {
+				Count: 1
+				id: "gateways:gate_pearl"
+				tag: {
+					gateway: "createdelight:the_ancient_end"
+				}
+			}
+			id: "26026BB720BEE529"
+			rewards: [
+				{
+					id: "45E0A2454AD4F062"
+					item: "cavedelight:roasted_grottoceratops"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					count: 4
+					id: "04D79017F048C141"
+					item: "alexscaves:amber"
+					random_bonus: 8
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4A8D5FFCBF726C96"
+					item: "alexscaves:ambersol"
+					random_bonus: 8
+					type: "item"
+				}
+				{
+					count: 4
+					id: "01C0F2791FD3B7BC"
+					item: "alexscaves:amber_monolith"
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "在亡灵的低吟与恐龙的咆哮中，寻回灭绝世界的真相"
+			tasks: [{
+				id: "79452B5D33977452"
+				item: {
+					Count: 64
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:the_ancient_end"
+					}
+				}
+				type: "item"
+			}]
+			title: "远古终焉"
+			x: 8.0d
+			y: 8.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["4245E55901A10324"]
+			description: [
+				"         深锁于火山之心的巨兽，灵魂在承受数亿年的熔岩洗礼后已无惧火焰。这头巨兽正是导致了原始洞穴里许多恐龙灭绝的元凶。"
+				"                                                                       ——《洞穴概论》"
+				"{@pagebreak}"
+				"         在研究中，我们发现了记载这些生物的书籍《洞穴概论》。在它的记载中，远古洞穴经历过一次大灭绝，元凶正式暝煌龙 (Luxtructosaurus)。我们进一步发现暝煌龙的力量来自于被囚禁的灵魂与火山，在解除了它的囚禁后，擎天龙重现于世间。至于关于维度撕裂......暝煌龙对于灵魂的囚禁似乎来自于自然力量，也就是说，这些传送门是否在自然中也有存在呢？"
+			]
+			icon: {
+				Count: 1
+				id: "alexscaves:extinction_spear"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "25F1D62F49948829"
+			rewards: [{
+				count: 2
+				id: "60C6878ABD512B81"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "25A304741C8BFE03"
+					item: {
+						Count: 1
+						id: "alexscaves:extinction_spear"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "7821A42CB76008FA"
+					item: "alexscaves:limestone_spear"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "1F5E45860CDA4D0B"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_pants"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "6692EBC033C19D81"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_tunic"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "359B20307FFBA5D5"
+					item: {
+						Count: 1
+						id: "alexscaves:primordial_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4DCD39636DAE0A6B"
+					item: "alexscaves:relicheirus_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "666890C00697F119"
+					item: "alexscaves:atlatitan_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "4DC94799BDF6D90E"
+					item: "alexscaves:tremorsaurus_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "3FCE9706C64767EC"
+					item: "alexscaves:grottoceratops_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "0E0942E9489604BB"
+					item: "alexscaves:vallumraptor_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "658A51F0EEF6C23B"
+					item: "alexscaves:subterranodon_egg"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "7564F5FB84E1CAEE"
+					item: "alexcaves_delight:cleaverofheavybone_knife"
+					type: "item"
+				}
+			]
+			title: "研究：远古之力"
+			x: 13.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["421576F1BE1DF7D9"]
+			icon: {
+				Count: 1
+				id: "alexscaves:cave_codex"
+				tag: {
+					CaveBiome: "alexscaves:abyssal_chasm"
+				}
+			}
+			id: "44FE97D55D97EB03"
+			rewards: [
+				{
+					id: "2FFBD57F6FACA01F"
+					item: "alexcaves_delight:ammletfromembryo"
+					random_bonus: 1
+					type: "item"
+				}
+				{
+					id: "48746D470C09848D"
+					item: "collectorsreap:sea_wrap"
+					random_bonus: 1
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "雷厉风行"
+			tasks: [
+				{
+					biome: "alexscaves:abyssal_chasm"
+					icon: {
+						Count: 1
+						id: "alexscaves:cave_codex"
+						tag: {
+							CaveBiome: "alexscaves:abyssal_chasm"
+						}
+					}
+					id: "24ACB36C44E61249"
+					title: "访问渊海陷窟 (Abyssal Chasm)"
+					type: "biome"
+				}
+				{
+					id: "42D7F8C29A26AA19"
+					item: "alexscaves:immortal_embryo"
+					type: "item"
+				}
+				{
+					id: "718D42B8AECF772F"
+					item: {
+						Count: 1
+						id: "alexscaves:magic_conch"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "036DDEEF6B999A97"
+					item: {
+						Count: 1
+						id: "alexscaves:ortholance"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4DEB74D113CDE327"
+					item: {
+						Count: 1
+						id: "alexscaves:sea_staff"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "沧海之下"
+			x: 2.0d
+			y: -5.0d
+		}
+		{
+			dependencies: ["44FE97D55D97EB03"]
+			description: ["         我曾以无上的意志与禁忌的知识，窥探深海的奥秘，试图创造足以撼动世界的力量——但那些沉睡于深渊的梦境，那些被我从渊海深渊召唤而出的造物，如今已不再受控。它们由我的创造来到此地，却以毁灭回应我的行为......潮水缠绕着记忆的碎片，深渊鱼群啃噬着理性的边界，而那头由我亲手唤醒的“深海主宰”，正带着难以理解的力量，向这片维度发起反噬。"]
+			id: "771EC4A267899414"
+			rewards: [
+				{
+					count: 2
+					id: "0C6D2FF2D3C0E0B5"
+					item: "youkaishomecoming:rainbow_roll"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "68DE038038463156"
+					item: "oceanic_delight:paella_plate"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					count: 2
+					id: "450D2592C9AC3605"
+					item: "oceanic_delight:ancient_fish_eggs"
+					random_bonus: 2
+					type: "item"
+				}
+				{
+					id: "1D2BEC1228E9AED6"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:the_legacy_of_the_abyss"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "Lasting Morale"
+			tasks: [{
+				id: "435DA7E238B5E388"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:the_legacy_of_the_abyss"
+					}
+				}
+				type: "item"
+			}]
+			title: "自噬之潮"
+			x: 2.0d
+			y: -8.5d
+		}
+		{
+			dependencies: ["4245E55901A10324"]
+			description: ["         渊海中没有光明，深不见底......海底并不是真正意义上的基岩层，而是在虚空中更为远大的区域，我们尝试窥见一丝光亮，就如我们在虚空中打捞裂隙一样，但是事与愿违，我们并不能观测到任何事务。不过令我们意外的是，这些生物似乎只能在渊海自由活动，他们的力量来自于水源（除了那个法师......它好烦啊qwq），也就是说，我们或许可以利用自然的力量，到达虚空深处，得到我们需要的东西。"]
+			icon: {
+				Count: 1
+				id: "alexscaves:magic_conch"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "149A332CEBB63F49"
+			rewards: [{
+				id: "524F904DF97AC4E3"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					consume_items: true
+					id: "5EA70192466F2E58"
+					item: "alexscaves:ink_bomb"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "2AE96234D1E4026C"
+					item: "alexscaves:glow_ink_bomb"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "6643DB1A980D0465"
+					item: {
+						Count: 1
+						id: "alexscaves:magic_conch"
+						tag: {
+							Damage: 0
+						}
+					}
+					only_from_crafting: false
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "76DB463543E92D26"
+					item: {
+						Count: 1
+						id: "alexscaves:sea_staff"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "49EF0F4B12AD2987"
+					item: {
+						Count: 1
+						id: "alexscaves:ortholance"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "60E3AE30AF16AAD0"
+					item: {
+						Count: 1
+						id: "minecraft:trident"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "0B3E268D273247FB"
+					item: "minecraft:conduit"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "61B8C5253EE85DAE"
+					item: "alexscaves:submarine"
+					type: "item"
+				}
+			]
+			title: "研究：渊海之下"
+			x: 15.0d
+			y: -1.0d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

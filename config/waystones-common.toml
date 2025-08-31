@@ -80,7 +80,7 @@
 
 [worldGen]
 	#Set to 'DEFAULT' to only generate the normally textured waystones. Set to 'MOSSY' or 'SANDY' to generate all as that variant. Set to 'BIOME' to make the style depend on the biome it is generated in.
-	#Allowed Values: DEFAULT, MOSSY, SANDY, BIOME
+	#Allowed Values: DEFAULT, MOSSY, SANDY, BLACKSTONE, DEEPSLATE, END_STONE, BIOME
 	worldGenStyle = "BIOME"
 	#Approximate chunk distance between waystones generated freely in world generation. Set to 0 to disable generation.
 	frequency = 25

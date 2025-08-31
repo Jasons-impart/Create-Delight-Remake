@@ -27,7 +27,6 @@ StartupEvents.modifyCreativeTab("iceandfire:items", e => {
     "iceandfire:copper_pickaxe",
     "iceandfire:copper_shovel",
     "iceandfire:copper_sword",
-    "iceandfire:copper_nugget",
     "iceandfire:armor_copper_metal_boots",
     "iceandfire:armor_copper_metal_chestplate",
     "iceandfire:armor_copper_metal_helmet",

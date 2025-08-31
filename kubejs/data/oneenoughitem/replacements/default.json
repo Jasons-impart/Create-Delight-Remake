@@ -1,0 +1,174 @@
+[
+    {
+        "matchItems": [
+            "alexscaves:caramel"
+        ],
+        "resultItems": "create_confectionery:bar_of_caramel"
+    },
+    {
+        "matchItems": [
+            "create_confectionery:candy_cane"
+        ],
+        "resultItems": "alexscaves:candy_cane"
+    },
+    {
+        "matchItems": [
+            "alexsmobs:banana"
+        ],
+        "resultItems": "neapolitan:banana"
+    },
+    {
+        "matchItems": [
+            "ratatouille:salt",
+            "bakeries:salt"
+        ],
+        "resultItems": "vintagedelight:salt_dust"
+    },
+    {
+        "matchItems": [
+            "brewinandchewin:flaxen_cheese_wedge",
+            "casualness_delight:cheese_wheel_slice",
+            "vintagedelight:cheese_slice",
+            "trailandtales_delight:cheese_slice"
+        ],
+        "resultItems": "ad_astra:cheese"
+    },
+    {
+        "matchItems": [
+            "casualness_delight:cheese_wheel",
+            "brewinandchewin:flaxen_cheese_wheel",
+            "trailandtales_delight:cheese_wheel"
+        ],
+        "resultItems": "vintagedelight:cheese_wheel"
+    },
+    {
+        "matchItems": [
+            "quark:crab_leg"
+        ],
+        "resultItems": "crabbersdelight:crab"
+    },
+    {
+        "matchItems": [
+            "neapolitan:milk_bottle",
+            "bakeries:bottle_milk"
+        ],
+        "resultItems": "farmersdelight:milk_bottle"
+    },
+    {
+        "matchItems": [
+            "create_bic_bit:unripe_cheese"
+        ],
+        "resultItems": "casualness_delight:raw_cheese_wheel"
+    },
+    {
+        "matchItems": [
+            "corn_delight:corn_seeds"
+        ],
+        "resultItems": "culturaldelights:corn_kernels"
+    },
+    {
+        "matchItems": [
+            "festival_delicacies:rice"
+        ],
+        "resultItems": "farmersdelight:rice"
+    },
+    {
+        "matchItems": [
+            "neapolitan:adzuki_beans",
+            "youkaishomecoming:redbean",
+            "festival_delicacies:red_bean"
+        ],
+        "resultItems": "createdelight:adzuki_beans_seed"
+    },
+    {
+        "matchItems": [
+            "neapolitan:ice_cubes"
+        ],
+        "resultItems": "youkaishomecoming:ice_cube"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber_seeds"
+        ],
+        "resultItems": "vintagedelight:cucumber_seeds"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber",
+            "youkaishomecoming:cucumber"
+        ],
+        "resultItems": "vintagedelight:cucumber"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:pickle"
+        ],
+        "resultItems": "culturaldelights:pickle"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:tea_seeds"
+        ],
+        "resultItems": "farmersrespite:tea_seeds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_berries"
+        ],
+        "resultItems": "createcafe:coffee_fruit"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:green_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:green_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:oolong_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:yellow_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:black_tea_leaves"
+        ],
+        "resultItems": "farmersrespite:black_tea_leaves"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_powder"
+        ],
+        "resultItems": "createcafe:coffee_grounds"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:bowl_of_cream"
+        ],
+        "resultItems": "cosmopolitan:cream"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:butter"
+        ],
+        "resultItems": "createdelight:butter"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:blood_bottle"
+        ],
+        "resultItems": "butchercraft:blood_fluid_bottle"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:roe"
+        ],
+        "resultItems": "oceanic_delight:salmon_eggs"
+    },
+    {
+        "matchItems": [
+            "the_bumblezone:honey_bucket"
+        ],
+        "resultItems": "create:honey_bucket"
+    }
+]

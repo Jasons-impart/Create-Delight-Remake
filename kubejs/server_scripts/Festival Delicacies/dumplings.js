@@ -60,7 +60,6 @@ ServerEvents.recipes(e => {
         "festival_delicacies:wonton/pork_carrot_wonton_recipe",
         "festival_delicacies:wonton/pork_carrot_wonton_recipe_2"
     ])
-    e.replaceInput({id: "farmersdelight:cooking/dumplings"}, "#forge:dough", "create:dough")
     dumpling(e, [
         'create:dough',
         "butchercraft:pork_stewmeat",

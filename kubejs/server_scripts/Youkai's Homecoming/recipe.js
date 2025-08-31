@@ -11,20 +11,16 @@ ServerEvents.recipes(e => {
         'youkaishomecoming:butter',
         'youkaishomecoming:bowl_of_cream',
         'youkaishomecoming:tea_leaf_bag',
-        'youkaishomecoming:coffee_bean_bag',
-        'youkaishomecoming:black_tea_bag',
-        'youkaishomecoming:green_tea_bag',
-        'youkaishomecoming:oolong_tea_bag',
         'youkaishomecoming:redbean_bag',
         'youkaishomecoming:green_coffee_bean',
         'youkaishomecoming:coffee_beans',
         'youkaishomecoming:coffee_powder',
-        'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:doughnut',
         'youkaishomecoming:ice_cube',
         "youkaishomecoming:kettle",
     ])
     remove_recipes_id(e, [
+        'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
         'youkaishomecoming:oily_bean_curd_from_tofu_smoking',
@@ -41,6 +37,14 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:copper_faucet_from_copper_ingot_stonecutting",
         "youkaishomecoming:cucumber_crate",
         "youkaishomecoming:cucumber_seeds_from_cucumber_crate",
+        "youkaishomecoming:cucumber_from_cucumber_crate",
+        "youkaishomecoming:cucumber_seeds",
+        "youkaishomecoming:green_tea_bag",
+        "youkaishomecoming:green_tea_leaves_from_green_tea_bag",
+        'youkaishomecoming:oolong_tea_bag',
+        "youkaishomecoming:oolong_tea_leaves_from_oolong_tea_bag",
+        "youkaishomecoming:black_tea_bag",
+        "youkaishomecoming:black_tea_leaves_from_black_tea_bag",
         "youkaishomecoming:mayonnaise_bottle",
         "youkaishomecoming:butter"
     ])
@@ -48,16 +52,7 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:moka_pot",
         "youkaishomecoming:kettle"
     ]);
-    e.replaceInput({}, 'youkaishomecoming:green_tea_leaves', 'farmersrespite:green_tea_leaves')
-    e.replaceInput({}, 'youkaishomecoming:oolong_tea_leaves', 'farmersrespite:yellow_tea_leaves')
-    e.replaceInput({}, 'youkaishomecoming:black_tea_leaves', 'farmersrespite:black_tea_leaves')
-    e.replaceInput({}, 'youkaishomecoming:coffee_powder', 'createcafe:coffee_grounds')
-    e.replaceInput({}, 'youkaishomecoming:bowl_of_cream', '#forge:cream')
-    e.replaceInput({}, 'youkaishomecoming:butter', 'createdelight:butter')
     e.replaceInput({ mod: 'youkaishomecoming' }, 'minecraft:cocoa_beans', "create:bar_of_chocolate")
-    e.replaceInput({}, "youkaishomecoming:blood_bottle", "butchercraft:blood_fluid_bottle")
-    e.replaceInput({}, "youkaishomecoming:roe", "oceanic_delight:salmon_eggs")
-    e.replaceInput({}, "youkaishomecoming:redbean", "createdelight:adzuki_beans_seed")
     e.replaceInput({ id: "youkaishomecoming:apaki" }, "minecraft:pink_petals", "neapolitan:dried_vanilla_pods")
     e.replaceInput({ id: "youkaishomecoming:avgolemono" }, "minecraft:glow_berries", "#forge:fruits/lemon")
     e.replaceInput({ output: [

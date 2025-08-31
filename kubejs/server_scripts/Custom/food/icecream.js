@@ -107,7 +107,7 @@ ServerEvents.recipes(e => {
         "collectorsreap:pomegranate_ice_cream", "collectorsreap:pomegranate_milkshake", 'collectorsreap:pomegranate_ice_cream_block')
     make_ice_cream(e, '#alexscaves:sweet_berries', "cosmopolitan:sweet_berry_ice_cream",
         "createdelight:sweetberry_milkshake", 'alexscaves:sweetberry_ice_cream_scoop',
-        "seasonals:sweet_berry_ice_cream", "seasonal:sweet_berry_milkshake", 'seasonals:sweet_berry_ice_cream_block')
+        "seasonals:sweet_berry_ice_cream", "createdelight:sweet_berry_milkshake", 'seasonals:sweet_berry_ice_cream_block')
     make_ice_cream(e, "#seasonals:pumpkin_puree", "cosmopolitan:pumpkin_ice_cream",
         "createdelight:pumpkin_milkshake", "createdelightcore:pumpkin_ice_cream_scoop",
         "seasonals:pumpkin_ice_cream", "seasonals:pumpkin_milkshake", "seasonals:pumpkin_ice_cream_block")

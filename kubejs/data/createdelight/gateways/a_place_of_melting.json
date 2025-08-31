@@ -1,0 +1,261 @@
+{
+	"size": "large",
+	"color": "#ADFF2F",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:brainiac",
+					"count": 12
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.6
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:brainiac",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:slam",
+                        "count": 4
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:radon_bottle",
+                        "count": 4
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:waste_drum",
+                        "count": 1
+					    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:brainiac",
+					"count": 8
+				},
+				{
+					"entity": "alexscaves:gammaroach",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.4
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 10
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:brainiac",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:gammaroach",
+					"rolls": 12
+				},
+								{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:polymer_plate", 
+                        "count": 4
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:spelunkie", 
+                        "count": 4
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:a_place_of_melting"}}
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 150
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:nucleeper",
+					"count": 4
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 4.2
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 10.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4 
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:nucleeper",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:nuclear_bomb", 
+                        "count": 1
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:raygun", 
+                        "count": 1
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:music_disc_fusion", 
+                        "count": 1
+							 }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:tremorzilla",
+					"count": 1
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 14.0
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 10.0
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 2.0
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:tremorzilla",
+					"rolls": 6
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:block_of_uranium", 
+                        "count": 4
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexscaves:tremorzilla_egg", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		}
+    ],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": false
+    }]
+}
