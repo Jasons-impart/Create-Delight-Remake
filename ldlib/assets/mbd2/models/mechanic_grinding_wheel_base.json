@@ -1,0 +1,59 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"parent": "block/block",
+	"textures": {
+		"pivot": "block/grindstone_pivot",
+		"leg": "block/dark_oak_log"
+	},
+	"elements": [
+		{
+			"from": [12, 0, 6],
+			"to": [14, 5, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, 0]},
+			"faces": {
+				"north": {"uv": [2, 9, 4, 14], "texture": "#leg"},
+				"east": {"uv": [10, 16, 6, 9], "texture": "#leg"},
+				"south": {"uv": [12, 9, 14, 14], "texture": "#leg"},
+				"west": {"uv": [6, 9, 10, 16], "texture": "#leg"},
+				"down": {"uv": [12, 6, 14, 10], "texture": "#leg", "cullface": "down"}
+			}
+		},
+		{
+			"from": [2, 0, 6],
+			"to": [4, 5, 10],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, 0]},
+			"faces": {
+				"north": {"uv": [12, 9, 14, 14], "texture": "#leg"},
+				"east": {"uv": [10, 14, 6, 9], "texture": "#leg"},
+				"south": {"uv": [2, 9, 4, 14], "texture": "#leg"},
+				"west": {"uv": [6, 9, 10, 14], "texture": "#leg"},
+				"down": {"uv": [2, 6, 4, 10], "texture": "#leg", "cullface": "down"}
+			}
+		},
+		{
+			"from": [12, 5, 5],
+			"to": [14, 11, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, 0]},
+			"faces": {
+				"north": {"uv": [6, 0, 8, 6], "texture": "#pivot"},
+				"east": {"uv": [0, 0, 6, 6], "texture": "#pivot"},
+				"south": {"uv": [6, 0, 8, 6], "texture": "#pivot"},
+				"up": {"uv": [8, 0, 10, 6], "texture": "#pivot"},
+				"down": {"uv": [8, 0, 10, 6], "texture": "#pivot"}
+			}
+		},
+		{
+			"from": [2, 5, 5],
+			"to": [4, 11, 11],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, -2, 0]},
+			"faces": {
+				"north": {"uv": [6, 0, 8, 6], "texture": "#pivot"},
+				"south": {"uv": [6, 0, 8, 6], "texture": "#pivot"},
+				"west": {"uv": [0, 0, 6, 6], "texture": "#pivot"},
+				"up": {"uv": [8, 0, 10, 6], "texture": "#pivot"},
+				"down": {"uv": [8, 0, 10, 6], "texture": "#pivot"}
+			}
+		}
+	]
+}
