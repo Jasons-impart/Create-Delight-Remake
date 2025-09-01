@@ -1,7 +1,7 @@
 MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
     let event = e.event
-    const {machine} = event
-    const {level, holder} = machine
+    const { machine } = event
+    const { level, holder } = machine
     /**@type {Internal.KineticBlockEntity} */
     let be = holder
     let interval = Math.max(5, Math.floor((40 - (35 * Math.abs(be.speed) / 256)) / 5) * 5)
@@ -15,7 +15,6 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
         let item = input.getStackInSlot(index)
         let quality = $QualityUtils.getQuality(item)
         let ret = ItemTransferHelper.insertItemStacked(output, item, true)
-        console.log(ret)
         if (ret.is("air")) {
             if (quality.level() > 0) {
                 item.nbt.remove($QualityUtils.QUALITY_TAG)
@@ -23,5 +22,23 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
             ItemTransferHelper.insertItemStacked(output, item, false)
             input.extractItem(index, item.count, false, false)
         }
+    }
+})
+
+MBDMachineEvents.onRightClick("createdelight:mechanic_grinding_wheel", e => {
+    let event = e.event
+    const { heldItem, player, hand, machine } = event
+    const { holder, level } = machine
+    if (heldItem.damageableItem) {
+        let damage = Math.floor(Math.sqrt(Math.abs(holder.speed)) / 4 + 0.5)
+        player.playSound("minecraft:block.grindstone.use")
+        let itemClass = TetraUtil.getItem(heldItem)
+        if (itemClass != null) {
+            if (!itemClass.isBroken(heldItem)) {
+                let multipler = Math.max(0, itemClass.getHoningProgress(heldItem) / itemClass.getHoningLimit(heldItem) - 0.2) / 0.8
+                itemClass.tickHoningProgression(player, heldItem, Math.ceil(damage * multipler))
+            }
+        }
+        heldItem.hurtAndBreak(damage, player, player => player.broadcastBreakEvent(hand))
     }
 })
