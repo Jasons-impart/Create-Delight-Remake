@@ -1,0 +1,119 @@
+[
+    {
+        "matchItems": [
+            "quark:gunpowder_sack"
+        ],
+        "resultItems": "cratedelight:gunpowder_bag"
+    },
+    {
+        "matchItems": [
+            "quark:glowberry_sack"
+        ],
+        "resultItems": "cratedelight:glowberry_crate"
+    },
+    {
+        "matchItems": [
+            "quark:berry_sack"
+        ],
+        "resultItems": "cratedelight:berry_crate"
+    },
+    {
+        "matchItems": [
+            "quark:golden_carrot_crate"
+        ],
+        "resultItems": "cratedelight:golden_carrot_crate"
+    },
+    {
+        "matchItems": [
+            "quark:golden_apple_crate"
+        ],
+        "resultItems": "cratedelight:golden_apple_crate"
+    },
+    {
+        "matchItems": [
+            "quark:beetroot_crate"
+        ],
+        "resultItems": "farmersdelight:beetroot_crate"
+    },
+    {
+        "matchItems": [
+            "quark:carrot_crate"
+        ],
+        "resultItems": "farmersdelight:carrot_crate"
+    },
+    {
+        "matchItems": [
+            "fruitsdelight:apple_crate",
+            "vinery:apple_bag",
+            "quark:apple_crate"
+        ],
+        "resultItems": "cratedelight:apple_crate"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:oolong_tea_bag"
+        ],
+        "resultItems": "farmersrespite:yellow_tea_leaves_sack"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:black_tea_bag"
+        ],
+        "resultItems": "farmersrespite:black_tea_leaves_sack"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:green_tea_bag"
+        ],
+        "resultItems": "farmersrespite:green_tea_leaves_sack"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_bean_bag"
+        ],
+        "resultItems": "farmersrespite:coffee_beans_sack"
+    },
+    {
+        "matchItems": [
+            "corn_delight:corn_crate"
+        ],
+        "resultItems": "culturaldelights:corn_cob_crate"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:cucumber_crate",
+            "youkaishomecoming:cucumber_crate"
+        ],
+        "resultItems": "vintagedelight:cucumber_crate"
+    },
+    {
+        "matchItems": [
+            "quark:potato_crate"
+        ],
+        "resultItems": "farmersdelight:potato_crate"
+    },
+    {
+        "matchItems": [
+            "neapolitan:banana_crate"
+        ],
+        "resultItems": "cratedelight:banana_crate"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:redbean_bag"
+        ],
+        "resultItems": "neapolitan:adzuki_crate"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:red_grape_crate"
+        ],
+        "resultItems": "vinery:red_grape_bag"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:white_grape_crate"
+        ],
+        "resultItems": "vinery:white_grape_bag"
+    }
+]

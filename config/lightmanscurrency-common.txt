@@ -345,9 +345,19 @@ debugLevel=0
 	#Default: true
 	idasStructures=true
 	
-[compat]
-	#Whether the Impactor compat will be initialized.
-	#Requires a full server reboot for changes to be applied!
+#Mixin Options
+[mixins]
+	#Whether coins given to a player with the /give command should be intercepted by the players wallet if one is equipped
 	#Default: true
-	impactorModule=true
+	giveCommandIntercept=true
 	
+	#Whether coins give to the player via Forges ItemHandlerHelper utilities should be intercepted by the players wallet if one is equipped
+	#Default: true
+	itemHelperIntercept=true
+	
+	[mixins.compat]
+		#Whether the Impactor compat will be initialized.
+		#Requires a full server reboot for changes to be applied!
+		#Default: true
+		impactorModule=true
+		

@@ -1,0 +1,14 @@
+{
+	id: "2AFC4E1002D1C32D"
+	loot_size: 1
+	order_index: 27
+	rewards: [
+		{ count: 2, item: "youkaishomecoming:green_tea", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:white_tea", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:black_tea", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:oolong_tea", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:dark_tea", random_bonus: 2 }
+		{ count: 2, item: "youkaishomecoming:yellow_tea", random_bonus: 2 }
+	]
+	title: "妖怪们的归家基础茶饮"
+}

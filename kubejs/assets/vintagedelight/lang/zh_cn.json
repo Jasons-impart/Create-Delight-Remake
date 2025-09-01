@@ -151,7 +151,7 @@
     "vintagedelight.jei.info.salt_block": "放置在水源附近以产盐",
     "vintagedelight.jei.info.evaporator": "放置在水源附近，以比盐块快得多的速度产盐",
     "vintagedelight.jei.info.organic_compost": "腌制醪糟，用作强效肥料，或用于合成有机肥料",
-    "vintagedelight.jei.info.cheese_wheel": "将4个奶酪凝乳放入奶酪模具中以制作奶酪轮",
+    "vintagedelight.jei.info.cheese_wheel": "将4个奶酪凝乳放入奶酪模具中以制作淡黄奶酪轮\n或使用蜜脾制作未熟成奶酪轮，随后熟成为淡黄奶酪轮",
     "vintagedelight.advancement.root": "腌渍乐事",
     "vintagedelight.advancement.root.desc": "来腌制吧！",
     "vintagedelight.advancement.harvest_salt": "咸咸的",

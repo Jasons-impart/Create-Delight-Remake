@@ -264,6 +264,29 @@
 	#Default: false
 	doubleBidding=false
 	
+	#The percentage of the final bid that will be collected as a fee instead of being given to the auctions owner when the auction is completed
+	#Range: 0 -> 99
+	#Default: 0
+	auctionFeeRate=0
+	
+	#A flat fee paid on the creation of an auction by the player submitting it
+	#If they are unable to pay this fee, they will not be able to submit any auctions
+	#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
+	#Default: "null;empty"
+	auctionSubmitFee="null;empty"
+	
+	#Whether the auction fees collected should be stored in the server-wide tax collector as taxes
+	#Includes both the submission fee and the fee taken from the final bid
+	#Useful for those who wish to keep trade of auction fees collected, and/or don't want money to destroyed in this process
+	#Default: true
+	storeFeeInServerTax=true
+	
+	#The maximum number of pending auctions each player is allowed to have
+	#Set to 0 to only allow auctions to be posted by admins in LC Admin Mode, or to limit the Auction House to only Persistent Auctions
+	#Range: 0 -> 2147483647
+	#Default: 2147483647
+	playerLimit=2147483647
+	
 #Bank Account Settings
 [bank_accounts]
 	#The interest rate that bank accounts will earn just by existing.

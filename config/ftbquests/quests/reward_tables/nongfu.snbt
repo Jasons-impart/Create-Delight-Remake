@@ -120,6 +120,20 @@
 			}
 			weight: 3.0f
 		}
+		{
+			item: {
+				Count: 1
+				id: "trailandtales_delight:sniffer_eggshell_knife"
+				tag: {
+					Damage: 0
+					Enchantments: [{
+						id: "minecraft:sharpness"
+						lvl: 7s
+					}]
+				}
+			}
+			weight: 0.01f
+		}
 	]
 	title: "刀具奖励"
 }

@@ -1,0 +1,13 @@
+{
+	id: "52F54D2F62F1CE5E"
+	loot_size: 1
+	order_index: 26
+	rewards: [
+		{ count: 16, item: "minecraft:mud", random_bonus: 16 }
+		{ count: 16, item: "minecraft:coarse_dirt", random_bonus: 16 }
+		{ count: 16, item: "minecraft:soul_soil", random_bonus: 16 }
+		{ count: 16, item: "minecraft:podzol", random_bonus: 16 }
+		{ count: 16, item: "minecraft:clay", random_bonus: 16 }
+	]
+	title: "妖怪们的归家作物要求土壤"
+}

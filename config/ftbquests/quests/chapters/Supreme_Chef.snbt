@@ -2028,7 +2028,7 @@
 			id: "5FA144201D8ACD66"
 			tasks: [{
 				id: "45D86C2E0F997AAF"
-				item: "vintagedelight:cheese_wheel"
+				item: "brewinandchewin:flaxen_cheese_wheel"
 				type: "item"
 			}]
 			title: "无需发酵！"
