@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "70C5E275C694378A"
+	filename: "Youkais_Homecoming"
 	group: "7D0A1432AAAD0EBA"
 	icon: {
 		Count: 1
@@ -3502,5 +3502,5 @@
 			y: 15.0d
 		}
 	]
-	title: "妖怪们的归家"
+	title: "东方幻想乡"
 }
