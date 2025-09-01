@@ -1197,7 +1197,7 @@
 			id: "1F8E1A0CC8F3C899"
 			tasks: [{
 				id: "3C02B646D4B013BB"
-				item: "frycooks_delight:plain_donut"
+				item: "create_deepfried:donut"
 				type: "item"
 			}]
 			x: 1.0d

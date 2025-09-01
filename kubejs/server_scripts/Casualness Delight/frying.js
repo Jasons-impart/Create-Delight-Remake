@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
     deep_frying("create_bic_bit:fries", "create_bic_bit:raw_fries", 100)
     deep_frying('frycooks_delight:fried_potato', 'createdelightcore:unfried_potato', 100)
     deep_frying('frycooks_delight:fried_chicken_leg', 'createdelightcore:unfried_chicken_leg', 100)
-    deep_frying('frycooks_delight:plain_donut', 'farmersdelight:wheat_dough', 100)
+    deep_frying('frycooks_delight:plain_donut', 'create_deepfried:raw_donut', 100)
     deep_frying('create_deepfried:onion_rings', 'create_deepfried:raw_onion_rings', 100)
     deep_frying('create_bic_bit:cheese_souffle', 'create_bic_bit:raw_cheese_souffle', 100)
     deep_frying('create_bic_bit:kroket', 'create_bic_bit:raw_kroket', 100)
@@ -91,6 +91,7 @@ ServerEvents.recipes(e => {
     deep_frying('mynethersdelight:fries_ghasta', 'mynethersdelight:ghasta', 100)
     deep_frying('dungeonsdelight:fried_ghast_calamari', 'createdelight:raw_ghast_calamari', 100)
     deep_frying('cosmopolitan:potato_pancakes', 'cosmopolitan:cut_potatoes', 100)
+    deep_frying('create_deepfried:arancini', 'create_deepfried:raw_arancini', 100)
     e.recipes.kubejs.shapeless(
         "casualness_delight:fish_and_chips",
         [

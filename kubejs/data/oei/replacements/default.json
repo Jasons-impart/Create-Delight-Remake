@@ -224,5 +224,11 @@
             "youkaishomecoming:black_grape_seeds"
         ],
         "resultItems": "vinery:taiga_grape_seeds_red"
+    },
+    {
+        "matchItems": [
+            "frycooks_delight:plain_donut"
+        ],
+        "resultItems": "create_deepfried:donut"
     }
 ]
