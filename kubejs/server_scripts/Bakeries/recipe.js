@@ -39,12 +39,12 @@ ServerEvents.recipes(e => {
         "bakeries:oven",
         "bakeries:salt",
         "bakeries:pineapple_bun_dough",
-        "bakeries:meat_floss_bread_dough",
         "bakeries:salt_croissant_dough",
         "bakeries:berry_bread_dough",
         "bakeries:mould_toast_dough",
         "bakeries:cheese_cocoa_toast_dough",
         "bakeries:brown_sugar_roll_dough",
+        "bakeries:meat_floss_bread_roll",
         "bakeries:focaccia",
         "bakeries:drink_cup",
         "bakeries:soak_coffee_cut_cake_base",
@@ -287,19 +287,19 @@ ServerEvents.recipes(e => {
         ]
     ).id("bakeries:deploying/salt_croissant_dough")
     kubejs.shapeless(
-        "bakeries:meat_floss_bread_dough",
+        "bakeries:meat_floss_bread_roll",
         [
-            "bakeries:round_bread_dough",
+            "bakeries:sliced_toast",
             "bakeries:meat_floss"
         ]
-    ).id("bakeries:meat_floss_bread_dough_manual_only")
+    ).id("bakeries:meat_floss_bread_roll_manual_only")
     create.deploying(
-        "bakeries:meat_floss_bread_dough",
+        "bakeries:meat_floss_bread_roll",
         [
-            "bakeries:round_bread_dough",
+            "bakeries:sliced_toast",
             "bakeries:meat_floss"
         ]
-    ).id("bakeries:deploying/meat_floss_bread_dough")
+    ).id("bakeries:deploying/meat_floss_bread_roll")
     kubejs.shapeless(
         'bakeries:pineapple_bun_dough',
         [
@@ -418,7 +418,6 @@ ServerEvents.recipes(e => {
         ['bakeries:baguette_dough', 'bakeries:baguette', 200],
         ['bakeries:croissant_dough', 'bakeries:croissant', 200],
         ['bakeries:salt_croissant_dough', 'bakeries:salt_croissant', 220],
-        ['bakeries:meat_floss_bread_dough', 'bakeries:meat_floss_bread', 300],
         ['bakeries:brown_sugar_roll_dough', 'bakeries:brown_sugar_roll', 200],
         ['bakeries:pineapple_bun_dough', 'bakeries:pineapple_bun', 200],
         ['bakeries:country_bread_dough', 'bakeries:country_bread', 300],

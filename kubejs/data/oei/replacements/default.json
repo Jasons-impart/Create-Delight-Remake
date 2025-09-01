@@ -224,5 +224,12 @@
             "youkaishomecoming:black_grape_seeds"
         ],
         "resultItems": "vinery:taiga_grape_seeds_red"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:matcha",
+            "bakeries:matcha_powder"
+        ],
+        "resultItems": "youkaishomecoming:matcha"
     }
 ]
