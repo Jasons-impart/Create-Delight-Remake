@@ -227,9 +227,14 @@
     },
     {
         "matchItems": [
-            "youkaishomecoming:matcha",
             "bakeries:matcha_powder"
         ],
         "resultItems": "youkaishomecoming:matcha"
+    },
+    {
+        "matchItems": [
+            "frycooks_delight:plain_donut"
+        ],
+        "resultItems": "create_deepfried:donut"
     }
 ]
