@@ -26,7 +26,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/ketchup",
         "create_bic_bit:compat/farmersdelight/raw_churros",
         "create_bic_bit:mixing/mayonnaise",
-        "create:empty_youkaishomecoming_mayonnaise_bottle_of_youkaishomecoming_flowing_mayonnaise"
+        "create:empty_youkaishomecoming_mayonnaise_bottle_of_youkaishomecoming_flowing_mayonnaise",
+        "create_deepfried:deep_frying/donut",
+        "create_deepfried:compat/farmersdelight/deep_frying/arancini"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -218,6 +220,13 @@ ServerEvents.recipes(e => {
     e.recipes.create.deploying("create_bic_bit:wrapped_coated_churros",
         ["create_bic_bit:coated_churros", "minecraft:paper"])
         .id("create_bic_bit:deploying/wrapped_coated_churros")
+    e.recipes.create.deploying(
+        'create_deepfried:raw_donut',
+        [
+            'farmersdelight:wheat_dough',
+            "minecraft:stick"
+        ]
+    ).keepHeldItem().id("create_deepfried:deploying/raw_donut")
 })
 
 ServerEvents.tags("minecraft:item", e => {
