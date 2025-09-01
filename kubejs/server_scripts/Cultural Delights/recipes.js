@@ -28,6 +28,9 @@ ServerEvents.recipes(e => {
             "minecraft:dried_kelp"
         ]
     ).id("culturaldelights:egg_roll")
+    cutting_2(e, 'vintagedelight:cucumber',[
+        ['culturaldelights:cut_cucumber', 2]
+    ])
     cutting_2(e, 'culturaldelights:glow_squid', [
         ['oceanic_delight:glow_squid_tentacles', 2],
         ['minecraft:glow_ink_sac', 3, 0.5]
