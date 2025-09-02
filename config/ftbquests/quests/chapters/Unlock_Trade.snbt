@@ -12,6 +12,12 @@
 	quests: [
 		{
 			id: "7D54AF3A775B6E9E"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "573303E67651AA32"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "17418DAEEA91BD2E"
@@ -23,6 +29,12 @@
 		}
 		{
 			id: "7A608C48C3947975"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "28C7939A0F5FBEFE"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "02E3F757C7A0B05A"
@@ -34,6 +46,12 @@
 		}
 		{
 			id: "3A1374A5FCBE5558"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "2CFE90AC17DF4C7A"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 16L
 				id: "6FD81D14D36A11B2"
@@ -45,6 +63,12 @@
 		}
 		{
 			id: "2C75BC13E58E3293"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6A595D480AEB32E3"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 16L
 				id: "0332AD0CBF0A5718"
@@ -56,6 +80,12 @@
 		}
 		{
 			id: "027EEF0721C497D3"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4981AB4D4934A8ED"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "0688348A64449814"
@@ -67,6 +97,12 @@
 		}
 		{
 			id: "7794F6910AF7591C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "71E67BED8BD74C25"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "0A4EEBE474158827"
@@ -78,6 +114,12 @@
 		}
 		{
 			id: "52CAEFBED4952D92"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3612193510C12676"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "5EB0E9EE15FAB25A"
@@ -89,6 +131,12 @@
 		}
 		{
 			id: "50B7170A5AAEBA8A"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "576DB7F516735A5C"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "70B8769F799B25FE"
@@ -100,6 +148,12 @@
 		}
 		{
 			id: "1219B75C2EB5BDD3"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5C20AC0EF126EC0E"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "5C585492B1EC7D39"
@@ -111,6 +165,12 @@
 		}
 		{
 			id: "5B0583F6E1474359"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3081725AC206A31F"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "1C6219D413B09470"
@@ -122,6 +182,12 @@
 		}
 		{
 			id: "555915045BD9EEC0"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "1416AA9D0A3C2CBC"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "3466BE6753EB4F9B"
@@ -133,6 +199,12 @@
 		}
 		{
 			id: "611F3C0D64351D0F"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "571A23ED58FF4745"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "1EA3AE785C233920"
@@ -144,6 +216,12 @@
 		}
 		{
 			id: "7781E14E3569EDC6"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7E94862A4DCD8112"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "5092344F051C7D74"
@@ -155,6 +233,12 @@
 		}
 		{
 			id: "3042E8CAEFF3F7CE"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "601858FB3AD4103E"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 16L
 				id: "180E01E7F67EF1BA"
@@ -166,6 +250,12 @@
 		}
 		{
 			id: "6098CD2DFB98E121"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "689A8CDFD3E5F215"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 16L
 				id: "0863767B88380B86"
@@ -177,6 +267,12 @@
 		}
 		{
 			id: "4FCBBE103FE7E9C7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "5914FD88721A85D0"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "解锁戴斯"
 			tasks: [{
 				id: "58A7B13B97BFBF42"
@@ -192,6 +288,12 @@
 		}
 		{
 			id: "057F6F421273C4DC"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "58C5D3D9AECFC84C"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "解锁紫金"
 			tasks: [{
 				id: "37070498C25172CE"
@@ -207,6 +309,12 @@
 		}
 		{
 			id: "630E52E14877F5B7"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "07CAFAF08CBE2262"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "解锁耐热金属"
 			tasks: [{
 				id: "264849DB692791C6"
@@ -222,6 +330,12 @@
 		}
 		{
 			id: "63356DE1A41FB7E0"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6D78680FD048795D"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L
@@ -234,6 +348,12 @@
 		}
 		{
 			id: "441F72B76AC3D7AC"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "3FA77512E37574BF"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L
@@ -246,6 +366,12 @@
 		}
 		{
 			id: "36114A8D5283E6E5"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "6671669B0F094B57"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			subtitle: "于商店解锁其产物"
 			tasks: [{
 				count: 16L
@@ -272,6 +398,12 @@
 		}
 		{
 			id: "02FD263E4D2BFD82"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7B9DEE75A55B6D08"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "4C0BB2845A4E927D"
@@ -283,6 +415,12 @@
 		}
 		{
 			id: "256EC76BA5595E4C"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "4A096A376FA3CD2E"
+				table_id: 8248062892074393121L
+				type: "random"
+			}]
 			tasks: [{
 				count: 64L
 				id: "142FE90DA9EF717A"
