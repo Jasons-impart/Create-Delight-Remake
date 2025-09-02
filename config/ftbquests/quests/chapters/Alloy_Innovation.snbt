@@ -19,8 +19,8 @@
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
 			size: 2.0d
-			x: 2.5d
-			y: 18.5d
+			x: 3.0d
+			y: 17.5d
 		}
 		{
 			id: "7A11CD1763458CD5"
@@ -35,8 +35,8 @@
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			x: 6.5d
-			y: 18.5d
+			x: 6.0d
+			y: 17.5d
 		}
 	]
 	quests: [
@@ -875,10 +875,7 @@
 			y: 11.0d
 		}
 		{
-			dependencies: [
-				"6A2214FC1B93B320"
-				"6EB96008F21DAFBF"
-			]
+			dependencies: ["6EB96008F21DAFBF"]
 			description: [""]
 			id: "580C77852E71B685"
 			rewards: [{
@@ -894,8 +891,8 @@
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 5.5d
-			y: 14.5d
+			x: 6.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["580C77852E71B685"]
@@ -908,8 +905,8 @@
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 15.5d
+			x: 7.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["0C0CD2BD5935D4CC"]
@@ -924,14 +921,11 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 17.0d
+			x: 7.5d
+			y: 18.0d
 		}
 		{
-			dependencies: [
-				"6A2214FC1B93B320"
-				"6EB96008F21DAFBF"
-			]
+			dependencies: ["6EB96008F21DAFBF"]
 			dependency_requirement: "one_completed"
 			description: [""]
 			id: "55E42ECE1CE4E99F"
@@ -950,8 +944,8 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 14.5d
+			x: 3.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
@@ -971,8 +965,8 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 15.5d
+			x: 1.5d
+			y: 16.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -990,8 +984,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 17.0d
+			x: 0.0d
+			y: 18.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1008,8 +1002,8 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 17.0d
+			x: 1.5d
+			y: 18.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1026,11 +1020,10 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 15.5d
+			x: 0.0d
+			y: 16.5d
 		}
 		{
-			dependencies: ["6A2214FC1B93B320"]
 			id: "6EB96008F21DAFBF"
 			rewards: [{
 				id: "2C30E3F28E8F7CB7"
@@ -1091,6 +1084,7 @@
 		{
 			dependencies: ["6A2214FC1B93B320"]
 			description: [""]
+			icon: "createdieselgenerators:diesel_engine"
 			id: "20B3A29ADFDF1D4A"
 			min_required_tasks: 1
 			rewards: [{
@@ -1099,8 +1093,8 @@
 				random_bonus: 7
 				type: "item"
 			}]
-			shape: "circle"
-			size: 1.0d
+			shape: "hexagon"
+			size: 2.0d
 			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
 			tasks: [{
 				id: "29B2C475B43E3FAC"
@@ -1109,10 +1103,11 @@
 			}]
 			title: "&e燃料&r！&4动力&r！"
 			x: 6.0d
-			y: 13.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["6A2214FC1B93B320"]
+			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
 			rewards: [{
 				id: "18254A296BFA1213"
@@ -1120,8 +1115,8 @@
 				random_bonus: 11
 				type: "item"
 			}]
-			shape: "circle"
-			size: 1.0d
+			shape: "hexagon"
+			size: 2.0d
 			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
 			tasks: [{
 				id: "0D7814DAE3E5E1E1"
@@ -1130,7 +1125,7 @@
 			}]
 			title: "步入&5电力时代&r！"
 			x: 3.0d
-			y: 13.5d
+			y: 14.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1163,7 +1158,10 @@
 			y: 10.5d
 		}
 		{
-			dependencies: ["0C68C84949B2A986"]
+			dependencies: [
+				"0C68C84949B2A986"
+				"6EB96008F21DAFBF"
+			]
 			id: "6A2214FC1B93B320"
 			shape: "square"
 			tasks: [{
@@ -1181,7 +1179,7 @@
 				value: 1
 			}]
 			x: 4.5d
-			y: 13.5d
+			y: 12.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1287,8 +1285,8 @@
 				item: "functionalstorage:ender_drawer"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 14.0d
+			x: 0.0d
+			y: 15.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -1313,6 +1311,26 @@
 			title: "woc！铁活板门"
 			x: -1.5d
 			y: 12.0d
+		}
+		{
+			dependencies: ["6EB96008F21DAFBF"]
+			id: "70B8B43D6B542EEC"
+			subtitle: "烈焰蛋糕可在系统商店购买"
+			tasks: [
+				{
+					id: "3DB6190089DFA24D"
+					item: "create:blaze_cake"
+					type: "item"
+				}
+				{
+					id: "50DC7EC602F76442"
+					item: "createdieselgenerators:biodiesel_bucket"
+					type: "item"
+				}
+			]
+			title: "超级燃烧"
+			x: 4.5d
+			y: 14.0d
 		}
 	]
 	title: "&9体系渐成 "

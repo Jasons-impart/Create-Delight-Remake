@@ -437,7 +437,7 @@
 				item: "create:mechanical_bearing"
 				type: "item"
 			}]
-			x: -1.5d
+			x: 0.5d
 			y: 4.5d
 		}
 		{
@@ -569,7 +569,7 @@
 					type: "item"
 				}
 			]
-			x: 0.5d
+			x: -1.5d
 			y: 4.5d
 		}
 		{
@@ -1619,6 +1619,22 @@
 			}]
 			x: 9.0d
 			y: 2.5d
+		}
+		{
+			dependencies: ["3ACA3A7FE20E59D2"]
+			description: ["系统商店里可购买不同效率的刷石机，无需自己手动搭建！"]
+			id: "3632F5C2ADEFDB3B"
+			shape: "gear"
+			size: 1.5d
+			subtitle: "需要刷石机？为什么不直接买呢？"
+			tasks: [{
+				id: "58E960049DE490EF"
+				item: "cobblefordays:tier_5"
+				type: "item"
+			}]
+			title: "刷石机"
+			x: 3.0d
+			y: 4.5d
 		}
 	]
 	title: "&2初识机械"

@@ -5,4 +5,7 @@ new Schema("ratatouille:threshing")
 new Schema("ratatouille:squeezing")
     .simpleKey("results", "outputFluidOrItemArray")
     .simpleKey("ingredients", "inputFluidOrItemArray")
-    
+new Schema("ratatouille:baking")
+    .simpleKey("results", "outputFluidOrItemArray")
+    .simpleKey("ingredients", "inputFluidOrItemArray")
+    .simpleKey("processingTime", "doubleNumber", 200)

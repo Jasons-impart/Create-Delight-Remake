@@ -69,14 +69,8 @@
 [Crop]
 	#Enable crop season control.
 	EnableSeasonalCrop = true
-	#[Deprecated]How much chance can crop grow in wrong season.
-	#Range: 0.0 ~ 1.0
-	CropGrowChanceInWrongSeason = 0.05
 	#Enable crop humidity control.
 	EnableCropHumidityControl = true
-	#[Deprecated]How much base chance can crop grow in wrong humidity.
-	#Range: 1.0E-4 ~ 0.9999
-	CropGrowChanceInWrongHumidity = 0.25
 	#The maximum effective diameter of the greenhouse.
 	#Range: 5 ~ 256
 	GreenHouseMaxDiameter = 32
@@ -151,4 +145,15 @@
 	EnableSeasonalFishing = false
 	#Greenhouse core would also work for animal check but not need a greenhouse.
 	EnableCoreWork = true
+	#Seasons in which bees are able to pollinate crops and flowers.
+	#Default: [SPRING]
+	BeePollinateSeasons = ["SPRING"]
+	#Seasons in which bees are generally active outside the hive.
+	#Default: [SPRING, SUMMER, AUTUMN]
+	BeeActiveSeasons = ["SPRING", "SUMMER", "AUTUMN"]
+	#Seasons during which fishing is allowed or more effective.
+	#Default: [SUMMER]
+	FishingSeasons = ["SUMMER"]
+	#Reduce fish availability during thunderstorms.
+	LessFishInThunder = false
 

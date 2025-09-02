@@ -1,9 +1,14 @@
-JEIEvents.addItems((e) => {
+JEIEvents.addItems(e => {
   e.add([
     'create_connected:fan_freezing_catalyst'
-  ]);
-});
-JEIEvents.hideItems((e) => {
+  ])
+})
+JEIEvents.addFluids(e => {
+  e.add([
+    "minecraft:milk"
+  ])
+})
+JEIEvents.hideItems(e => {
   e.hide([
     // 使用创造模式物品栏移除一直失败，被迫使用JEI隐藏。
     // 其他情况下，能用创造模式物品栏移除就用创造模式物品栏移除
