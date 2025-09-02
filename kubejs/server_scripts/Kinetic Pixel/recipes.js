@@ -375,4 +375,9 @@ ServerEvents.recipes(e => {
         B: "#forge:nuggets/steel"
     })
     .id("create_armorer:muzzle_refit_iron_spike")
+    threshing(e,  'kinetic_pixel:graycotton', [
+        '2x minecraft:string',
+        Item.of('2x minecraft:string').withChance(0.5),
+        'kinetic_pixel:graycottonseed'
+    ], 200)
 })
