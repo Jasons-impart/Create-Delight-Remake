@@ -296,7 +296,7 @@ Order.addOrderToAuction = function() {
     data.setMinBidDifferent($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:emerald_coin", 1).multiplyValue(Utils.random.nextFloat(0.25, 5)))
     data.setDuration(1000 * 60 * 60 * 1)
-    TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, false)
+    TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, null, false)
 }
 
 ServerEvents.tick(e => {    
