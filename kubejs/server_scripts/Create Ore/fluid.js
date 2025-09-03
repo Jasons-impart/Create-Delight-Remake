@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
         '{"text": "可可原浆"}',
         "ratatouille:cocoa_liquor_bucket")
         .placement(128, 8, 1919810)
-        .biomeWhitelist("craetedelight:has_cocoa_liquor")
+        .biomeWhitelist("createdelight:has_cocoa_liquor")
         .id("createdelight:cocoa_liquor_vein")
     e.recipes.createoreexcavation.vein(
         '{"text": "蜂蜜"}',
@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
 
 ServerEvents.tags("minecraft:worldgen/biome", e => {
     e.add("createdelight:has_cryo_fuel", "ad_astra:glacio_ice_peaks")
-    e.add("craetedelight:has_cocoa_liquor", ["alexscaves:candy_cavity"])
+    e.add("createdelight:has_cocoa_liquor", ["alexscaves:candy_cavity"])
     e.add("createdelight:has_honey",
         [
             "the_bumblezone:crystal_canyon",

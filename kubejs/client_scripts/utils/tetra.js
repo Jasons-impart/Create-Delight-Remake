@@ -8,7 +8,7 @@ let TetraUtil = {}
  */
 TetraUtil.getItem = function(itemStack) {
     let item = itemStack.item
-    if (!item instanceof $ModularItem)
+    if (!(item instanceof $ModularItem))
         return null
     return item
 }
