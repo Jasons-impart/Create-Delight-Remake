@@ -1,10 +1,8 @@
 ServerEvents.recipes(e => {
     const {create, create_new_age} = e.recipes
     remove_recipes_output(e, [
-        "trailandtales_delight:cheese_wheel",
         "trailandtales_delight:cherry_cake",
         "trailandtales_delight:curd_block",
-        "trailandtales_delight:cheese_slice",
         "trailandtales_delight:ancient_coffee",
         "trailandtales_delight:torchflower_tea",
         "trailandtales_delight:cherry_petal_tea",

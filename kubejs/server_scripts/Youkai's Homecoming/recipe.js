@@ -4,22 +4,15 @@ ServerEvents.recipes(e => {
         .heated()
         .id("create:compacting/ash")
     remove_recipes_output(e, [
-        'youkaishomecoming:green_tea_leaves',
-        'youkaishomecoming:oolong_tea_leaves',
-        'youkaishomecoming:black_tea_leaves',
         'youkaishomecoming:tofu',
-        'youkaishomecoming:butter',
-        'youkaishomecoming:bowl_of_cream',
         'youkaishomecoming:tea_leaf_bag',
-        'youkaishomecoming:redbean_bag',
         'youkaishomecoming:green_coffee_bean',
         'youkaishomecoming:coffee_beans',
-        'youkaishomecoming:coffee_powder',
-        'youkaishomecoming:doughnut',
         'youkaishomecoming:ice_cube',
         "youkaishomecoming:kettle",
     ])
     remove_recipes_id(e, [
+        'youkaishomecoming:redbean_bag',
         'youkaishomecoming:coffee_bean_bag',
         'youkaishomecoming:oily_bean_curd_from_tofu_campfire',
         'youkaishomecoming:oily_bean_curd_from_tofu_smelting',
@@ -78,7 +71,6 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:seven_colored_yokan"
     ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
     e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
-    e.replaceInput({output: "youkaishomecoming:higi_doughnut"}, "youkaishomecoming:doughnut", "frycooks_delight:plain_donut")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
     //饭团
     kubejs.shapeless(
