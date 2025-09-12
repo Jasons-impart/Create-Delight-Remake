@@ -297,7 +297,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.filling(
         "create:sweet_roll",
         [
-            "frycooks_delight:plain_donut",
+            "create_deepfried:donut",
             FluidIngredients("forge:milk", 250)
         ]
     ).id("create:filling/sweet_roll")

@@ -5,7 +5,7 @@
             "effects": [],
             "ingredient": [
                 {
-                    "item": "culturaldelights:raw_calamari"
+                    "item": "oceanic_delight:squid_tentacles"
                 }
             ],
             "max_time": 120,

@@ -1,6 +1,5 @@
 ServerEvents.recipes(e => {
     const {create} = e.recipes
-    e.replaceInput({}, "create_confectionery:candy_cane", "#createdelight:candy_cane")
     create.mixing(
         "2x create_confectionery:honey_candy",
         [

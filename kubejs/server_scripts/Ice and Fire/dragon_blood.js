@@ -11,9 +11,6 @@ ServerEvents.recipes(e => {
         "iceandfire:copper_axe",
         "iceandfire:copper_hoe"
     ])
-    remove_recipes_output(e, [
-        "iceandfire:copper_nugget"
-    ])
     // 火龙
     e.recipes.create.mixing(
         Fluid.of("createdelight:fire_dragon_blood", 30),

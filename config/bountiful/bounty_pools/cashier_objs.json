@@ -2717,7 +2717,7 @@
         "cashier_obj_cheese_wheel": {
             "type": "item",
             "rarity": "EPIC",
-            "content": "vintagedelight:cheese_wheel",
+            "content": "brewinandchewin:flaxen_cheese_wheel",
             "amount": {
                 "min": 1,
                 "max": 5
@@ -3673,7 +3673,7 @@
         "cashier_obj_doughnut": {
             "type": "item",
             "rarity": "COMMON",
-            "content": "youkaishomecoming:doughnut",
+            "content": "create_deepfried:donut",
             "amount": {
                 "min": 1,
                 "max": 3
