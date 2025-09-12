@@ -42,7 +42,7 @@ ao:true
 prioritizeChunkUpdates:0
 biomeBlendRadius:2
 renderClouds:"true"
-resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","vanilla","tacz_resources","mod_resources","Moonlight Mods Dynamic Assets","file/Squareful v3.15forMC1.20.1.zip","file/Squareful_ColorfulHeart_Compact.zip","file/XK Highlight Block.zip","netherexp:jne_emissive","netherexp:jne_retextures","file/Torchmaster Remaster.zip","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","file/LCVP_CreateStyle_v1.7.zip"]
+resourcePacks:["file/Minecraft-Mod-Language-Modpack-Converted-1.20.1.zip","vanilla","tacz_resources","mod_resources","Moonlight Mods Dynamic Assets","file/Squareful v3.15forMC1.20.1.zip","file/Squareful_ColorfulHeart_Compact.zip","file/XK Highlight Block.zip","netherexp:jne_emissive","netherexp:jne_retextures","file/Torchmaster Remaster.zip","file/Create DG Sound Replacement 1.0 [1.20-1.20.1].zip","file/LCVP_CreateStyle_v1.7.zip","eclipticseasons.extra_snow"]
 incompatibleResourcePacks:["file/Torchmaster Remaster.zip","file/LCVP_CreateStyle_v1.7.zip"]
 lastServer:
 lang:zh_cn
