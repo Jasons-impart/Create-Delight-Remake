@@ -9,7 +9,6 @@ ServerEvents.recipes(e => {
         "neapolitan:vanilla_chocolate_fingers",
         "neapolitan:chocolate_bar",
         "neapolitan:chocolate_spider_eye",
-        "neapolitan:milk_bottle",
         "neapolitan:vanilla_cake",
         "neapolitan:chocolate_cake",
         "neapolitan:strawberry_cake",

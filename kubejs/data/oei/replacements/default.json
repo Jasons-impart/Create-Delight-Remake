@@ -233,7 +233,8 @@
     },
     {
         "matchItems": [
-            "frycooks_delight:plain_donut"
+            "frycooks_delight:plain_donut",
+            "youkaishomecoming:doughnut"
         ],
         "resultItems": "create_deepfried:donut"
     }

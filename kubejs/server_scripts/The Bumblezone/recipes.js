@@ -48,8 +48,6 @@ ServerEvents.recipes(e => {
       Fluid.of("create:honey", 250)
     ]
   ).id("create:filling/honey_bottle")
-  e.replaceInput({ mod: "the_bumblezone" }, "the_bumblezone:honey_bucket", "create:honey_bucket")
-  e.replaceOutput({ mod: "the_bumblezone" }, "the_bumblezone:honey_bucket", "create:honey_bucket")
   e.recipes.kubejs.shapeless(
     "create:honey_bucket",
     [

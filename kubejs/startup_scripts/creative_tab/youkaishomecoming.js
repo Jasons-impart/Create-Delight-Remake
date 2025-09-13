@@ -4,7 +4,6 @@ StartupEvents.modifyCreativeTab("youkaishomecoming:youkais_homecoming", e => {
     'youkaishomecoming:coffee_beans',
     'youkaishomecoming:tea_leaves',
     'youkaishomecoming:tea_leaf_bag',
-    'youkaishomecoming:doughnut',
     'youkaishomecoming:black_tea',
     'youkaishomecoming:green_tea',
     'youkaishomecoming:moon_rocket',

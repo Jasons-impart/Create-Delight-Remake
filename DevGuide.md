@@ -37,6 +37,7 @@
 - 在github的[tags](https://github.com/Jasons-impart/Create-Delight-Remake/tags)页面从新版本的tag创建release，并填写改动信息
 - 【待自动化】github action自动产出后，将服务端、客户端、补丁下载下来提交到release上
 - 踢一脚Jason让他更新[Gist](https://gist.github.com/JasonQ1123/14894447c0cf3254e307a1793efcefa4)，以实现标题界面的新版本提示，对应config/fancymenu/customization/craete.txt
+- 更新README.md的版本号标识，修改结尾的links里的版本号即可。
 
 # 测试版本发布流程
 - 将代码推送到github的test-client / test-server / test-patch分支，分别生成对应的测试版本
