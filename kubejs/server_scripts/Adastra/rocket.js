@@ -19,6 +19,7 @@ ServerEvents.recipes(e => {
         [
             create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
             create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.deploying(iner, [iner, 'tetra:forged_mesh']),
             create.pressing(iner, iner)
         ]
     )
@@ -28,33 +29,22 @@ ServerEvents.recipes(e => {
 }
 {
     let iner = 'createdelight:incomplete_advanced_panel'
-    create.sequenced_assembly('createdelight:advanced_panel', 'createdelight:aviation_fibers_sheet',
+    create.sequenced_assembly('createdelight:advanced_panel', 'createdelight:basic_panel',
         [
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_desh", 180)]),
-            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
-            create.deploying(iner, [iner, 'tetra:forged_bolt']),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_desh", 90)]),
             create.pressing(iner, iner)
         ]
     )
        .loops(1)
        .transitionalItem(iner)
        .id("createdelight:sequenced_assembly/advanced_panel")
-    create.filling(
-        "createdelight:advanced_panel",
-        [
-            "createdelight:basic_panel",
-            Fluid.of("createdelightcore:molten_desh", 180)
-        ]
-    ).id("createdelight:filling/advanced_panel")
 }
 {
     let iner = "createdelight:incomplete_explorer_panel"
-    create.sequenced_assembly('createdelight:explorer_panel', 'createdelight:aviation_fibers_sheet', 
+    create.sequenced_assembly('createdelight:explorer_panel', 'createdelight:advanced_panel', 
         [
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ostrum", 180)]),
-            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_ostrum", 90)]),
             create.deploying(iner, [iner, 'create_new_age:overcharged_iron_sheet']),
-            create.deploying(iner, [iner, 'tetra:forged_bolt']),
             create.pressing(iner, iner),
             create_new_age.energising(iner, iner, 4000)
         ]
@@ -65,12 +55,10 @@ ServerEvents.recipes(e => {
 }
 {
     let iner = "createdelight:incomplete_flare_panel"
-    create.sequenced_assembly('createdelight:flare_panel', 'createdelight:aviation_fibers_sheet', 
+    create.sequenced_assembly('createdelight:flare_panel', 'createdelight:explorer_panel', 
         [
-            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_calorite", 180)]),
-            create.deploying(iner, [iner, 'protection_pixel:heatresistantceramicsheet']),
+            create.filling(iner, [iner, Fluid.of("createdelightcore:molten_calorite", 90)]),
             create.deploying(iner, [iner, 'create_new_age:overcharged_golden_sheet']),
-            create.deploying(iner, [iner, 'tetra:forged_bolt']),
             create.pressing(iner, iner),
             create_new_age.energising(iner, iner, 8000)
         ]
