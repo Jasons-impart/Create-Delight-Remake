@@ -264,6 +264,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 [issues-url]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg
 [qq-shield1]:https://img.shields.io/badge/QQ1群-856762964-12B7F3?style=flat-square
 [release-version-shield]:https://img.shields.io/badge/正式版本-V0.4.6.6-2CB3A8?style=flat-square
-[test-version-shield]:https://img.shields.io/badge/测试版本-V0.4.6.8-yellow?style=flat-square
+[test-version-shield]:https://img.shields.io/badge/测试版本-V0.4.6.9-yellow?style=flat-square
 [license-shield]: https://img.shields.io/github/license/JasdewStarfield/Path-of-Truth.svg?style=flat-square
 [license-url]: https://github.com/Jasons-impart/Create-Delight-Remake/blob/readmeupdate/LICENSE
