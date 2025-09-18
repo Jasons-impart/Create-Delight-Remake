@@ -266,7 +266,7 @@
 			subtitle: "下界的&4炎热气候&r已经帮你把&e咖啡豆&r&4焙烧好了&r(*╹▽╹*)"
 			tasks: [{
 				id: "636C8A8C1AEC56A1"
-				item: "farmersrespite:coffee_beans"
+				item: "createcafe:coffee_beans"
 				type: "item"
 			}]
 			x: 19.0d

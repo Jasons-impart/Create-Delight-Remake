@@ -86,8 +86,8 @@ ServerEvents.recipes(e => {
             "minecraft:honey_block"
        ] 
     ).id("collectorsreap:integration/create/mixing/gummy/glow_berries")
-    e.replaceInput({id: "collectorsreap:integration/create/mixing/gummy/coffee"}, "farmersrespite:coffee_beans", "createcafe:coffee_grounds")
-    e.replaceInput({id: "collectorsreap:gummy/coffee"}, "farmersrespite:coffee_beans", "createcafe:coffee_grounds")
+    e.replaceInput({id: "collectorsreap:integration/create/mixing/gummy/coffee"}, "createcafe:coffee_beans", "createcafe:coffee_grounds")
+    e.replaceInput({id: "collectorsreap:gummy/coffee"}, "createcafe:coffee_beans", "createcafe:coffee_grounds")
 
     //果饮
     kubejs.shapeless(
