@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
         [
             "createcafe:coffee_grounds",
             Item.of("2x createcafe:coffee_grounds").withChance(0.25)
-        ], "farmersrespite:coffee_beans"
+        ], "createcafe:coffee_beans"
     ).id("farmersrespite:milling/coffee_beans")
     e.recipes.create.filling(
         "createcafe:iced_coffee",

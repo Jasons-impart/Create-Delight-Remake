@@ -131,6 +131,12 @@
     },
     {
         "matchItems": [
+            "farmersrespite:coffee_beans"
+        ],
+        "resultItems": "createcafe:coffee_beans"
+    },
+    {
+        "matchItems": [
             "youkaishomecoming:coffee_powder"
         ],
         "resultItems": "createcafe:coffee_grounds"
