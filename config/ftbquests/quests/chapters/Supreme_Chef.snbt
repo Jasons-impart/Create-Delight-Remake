@@ -1882,8 +1882,8 @@
 			dependencies: ["1E01FC2BE0941E79"]
 			id: "004A1891036E8C29"
 			tasks: [{
-				id: "368A6E71E6BB885B"
-				item: "festival_delicacies:uncooked_sweet_zongzi"
+				id: "4B15E2FDAAEB6B3F"
+				item: "festival_delicacies:uncooked_meat_zongzi"
 				type: "item"
 			}]
 			x: -17.0d
