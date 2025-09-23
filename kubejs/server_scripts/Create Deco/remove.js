@@ -5,7 +5,15 @@ ServerEvents.recipes(e => {
         "createdeco:netherite_ingot",
         "quark:building/crafting/iron_ladder",
         "createdeco:pressing/zinc_sheet",
-        "createdeco:pressing/andesite_sheet"
+        "createdeco:pressing/andesite_sheet",
+        "createdeco:copper_coin",
+        "createdeco:iron_coin",
+        "createdeco:gold_coin",
+        "createdeco:netherite_coin",
+        "createdeco:pressing/coins/copper_coin",
+        "createdeco:pressing/coins/iron_coin",
+        "createdeco:pressing/coins/gold_coin",
+        "createdeco:pressing/coins/netherite_coin"
     ])
     remove_recipes_output(e, [
         'createdeco:netherite_nugget',
