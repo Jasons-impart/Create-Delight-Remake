@@ -584,6 +584,7 @@
     "tooltip.createdelight.ctrl_mould_cheese_cocoa_toast": "§7放置后§b右键§7取出§b奶酪可可吐司",
     "tooltip.createdelight.ctrl_mould_pound_cake": "§7放置后§b右键§7取出§b磅蛋糕",
     "tooltip.createdelight.ctrl_keg": "§7在周围§b两格§7内放置§b热源§7和§b冷源§7以调整温度",
+    "tooltip.createdelight.ctrl_graycottonseed": "§7需种植在§b砂土§7上",
 
     "createdelight.tip.advanced_alloy": "部分合金在初始阶段只能使用熔铸搅拌器合成，例如钢。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成（当然除了玩家）",
