@@ -49,6 +49,10 @@ ServerEvents.recipes(e => {
         "bakeries:drink_cup",
         "bakeries:soak_coffee_cut_cake_base",
         "bakeries:mould_two",
+        "bakeries:coffee_table",
+        "bakeries:sofa",
+        "bakeries:sofa_light_gray",
+        "bakeries:sofa_red",
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
