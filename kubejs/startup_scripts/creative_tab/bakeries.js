@@ -36,7 +36,11 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:cake_base',
    'bakeries:mould_two',
    'bakeries:carrot_cake',
-   'bakeries:matcha_latte'
+   'bakeries:matcha_latte',
+   'bakeries:coffee_table',
+   'bakeries:sofa',
+   'bakeries:sofa_light_gray',
+   'bakeries:sofa_red'
   ])
   e.add([
    'bakeries:mould_toast',
