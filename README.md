@@ -9,7 +9,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-![Community1][qq-shield1]
+[![Community1][qqpd-shield]](https://pd.qq.com/s/dqw9s142x)
 [![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
@@ -34,7 +34,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
   <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
   <p align="center">
-    整合包反馈交流qq频道：pd06113710
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
     <br />
@@ -86,7 +85,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     - [安装步骤](#安装步骤)
   - [未来计划](#未来计划)
   - [社区支持](#社区支持)
-    - [Discord](#discord)
     - [QQ](#qq)
   - [支持我们](#支持我们)
   - [开发团队](#开发团队)
@@ -188,15 +186,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 ## 社区支持
 
-### Discord
-<p align="center">
-  <a href = "https://discord.gg/VjZKDnCT">
-    <img src="kubejs/assets/createdelight/textures/images_for_readme/discord.png" alt="Logo" width="850" height="200">
-  </a>
-
-- 参与国际社区讨论！
-- 随时向我们反馈意见！
-
 ### QQ
 
 <p align="center">
@@ -262,8 +251,8 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 [stars-url]: https://github.com/Jasons-impart/Create-Delight-Remake/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
 [issues-url]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg
-[qq-shield1]:https://img.shields.io/badge/QQ1群-856762964-12B7F3?style=flat-square
-[release-version-shield]:https://img.shields.io/badge/正式版本-V0.4.6.10-2CB3A8?style=flat-square
-[test-version-shield]:https://img.shields.io/badge/测试版本-V0.4.6.10-yellow?style=flat-square
+[qqpd-shield]: https://img.shields.io/badge/QQ频道-pd06113710-12B7F3?style=flat-square
+[release-version-shield]: https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?label=%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC&color=2CB3A8
+[test-version-shield]: https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?include_prereleases&label=%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC&color=yellow
 [license-shield]: https://img.shields.io/github/license/JasdewStarfield/Path-of-Truth.svg?style=flat-square
 [license-url]: https://github.com/Jasons-impart/Create-Delight-Remake/blob/readmeupdate/LICENSE
