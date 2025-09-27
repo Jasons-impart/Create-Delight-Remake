@@ -185,65 +185,6 @@
 		}
 		{
 			height: 2.0d
-			image: "youkaishomecoming:block/storage/shelf/spruce_wine_shelf_top"
-			rotation: 0.0d
-			width: 2.0d
-			x: 16.0d
-			y: -15.5d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.0d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.5d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			rotation: 0.0d
-			width: 1.0d
-			x: 15.5d
-			y: -16.0d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.5d
-			y: -15.5d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 15.5d
-			y: -15.5d
-		}
-		{
-			height: 1.0d
-			image: "youkaishomecoming:item/bottle/wine/champagne_bottle"
-			order: 1
-			rotation: 0.0d
-			width: 1.0d
-			x: 16.0d
-			y: -15.5d
-		}
-		{
-			height: 2.0d
 			image: "youkaishomecoming:item/food/simple/steamed_egg_in_bamboo"
 			rotation: 0.0d
 			width: 2.0d
@@ -757,14 +698,6 @@
 		}
 		{
 			height: 2.0d
-			image: "youkaishomecoming:item/crops/dark_tea_leaves"
-			rotation: 0.0d
-			width: 2.0d
-			x: 7.0d
-			y: 13.0d
-		}
-		{
-			height: 2.0d
 			image: "minecraft:block/rose_bush_bottom"
 			rotation: 0.0d
 			width: 2.0d
@@ -796,6 +729,84 @@
 			width: 3.0d
 			x: 1.5d
 			y: 15.0d
+		}
+		{
+			height: 3.0d
+			image: "youkaishomecoming:item/food/drink/scarlet_tea"
+			rotation: 0.0d
+			width: 3.0d
+			x: 7.0d
+			y: 13.0d
+		}
+		{
+			height: 2.0d
+			image: "minecraft:block/barrel_top"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.0d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 15.5d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.0d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 1
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.5d
+			y: -16.0d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 2
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.5d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 2
+			rotation: 0.0d
+			width: 1.0d
+			x: 15.5d
+			y: -15.5d
+		}
+		{
+			height: 1.0d
+			image: "vinery:item/wine_bottle"
+			order: 2
+			rotation: 0.0d
+			width: 1.0d
+			x: 16.0d
+			y: -15.5d
+		}
+		{
+			height: 2.0d
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 2.0d
+			x: 16.0d
+			y: -15.5d
 		}
 	]
 	order_index: 8
@@ -884,14 +895,16 @@
 			id: "45A3A549700C3793"
 			rewards: [
 				{
-					id: "0D96621E7B9DD05F"
-					item: "youkaishomecoming:pot_of_tofu_crab_stew"
+					count: 4
+					id: "7D7B4AD740BCC94C"
+					item: "youkaishomecoming:tofu"
+					random_bonus: 4
 					type: "item"
 				}
 				{
 					count: 4
-					id: "7D7B4AD740BCC94C"
-					item: "youkaishomecoming:tofu"
+					id: "442B8A273E22EFD0"
+					item: "youkaishomecoming:oily_bean_curd"
 					random_bonus: 4
 					type: "item"
 				}
@@ -1006,6 +1019,7 @@
 			rewards: [
 				{
 					exclude_from_claim_all: true
+					icon: "youkaishomecoming:tea_mocha"
 					id: "3EE236748A9D519C"
 					table_id: 3097436474397803309L
 					type: "choice"
@@ -1043,11 +1057,6 @@
 					item: { Count: 4, id: "farmersrespite:tea_seeds" }
 					type: "item"
 				}
-				{
-					id: "153B1A4BFBD09AFA"
-					item: "youkaishomecoming:camellia"
-					type: "item"
-				}
 			]
 			title: "茶香四溢，沁人心脾"
 			x: -2.0d
@@ -1063,17 +1072,17 @@
 			id: "60521CC89812A87E"
 			rewards: [
 				{
-					exclude_from_claim_all: true
-					id: "4C304749C3444634"
-					table_id: 1418583867640513355L
-					type: "choice"
-				}
-				{
 					count: 16
 					id: "72C00DD63E3A9B66"
 					item: "farmersdelight:rope"
 					random_bonus: 16
 					type: "item"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "365E7D8B9F4AFDB1"
+					table_id: 7284682648027275041L
+					type: "random"
 				}
 			]
 			shape: "square"
@@ -1094,12 +1103,12 @@
 				}
 				{
 					count: 4L
-					id: "7E726F13A9C8F1C7"
+					id: "0EA88FA7B3A8DF4A"
 					item: {
 						Count: 1
 						id: "itemfilters:tag"
 						tag: {
-							value: "youkaishomecoming:grape_seed"
+							value: "vinery:grape_seeds"
 						}
 					}
 					title: "4x 任意葡萄种子"
@@ -1205,13 +1214,6 @@
 			rewards: [
 				{
 					exclude_from_claim_all: true
-					id: "1D8B5ECE4429D8D8"
-					table_id: 3097436474397803309L
-					title: "获取所有奖励"
-					type: "all_table"
-				}
-				{
-					exclude_from_claim_all: true
 					id: "2E950201D2ABD5C3"
 					table_id: 7374527325595499170L
 					title: "获取所有奖励"
@@ -1223,6 +1225,12 @@
 					item: "farmersrespite:black_cod"
 					random_bonus: 8
 					type: "item"
+				}
+				{
+					icon: "youkaishomecoming:tea_mocha"
+					id: "2D47997D82971417"
+					table_id: 3097436474397803309L
+					type: "random"
 				}
 			]
 			shape: "square"
@@ -1328,15 +1336,15 @@
 			rewards: [
 				{
 					exclude_from_claim_all: true
-					id: "7595D442FC61677D"
-					table_id: 1418583867640513355L
+					id: "4FD24E36F27DBB2A"
+					table_id: 3225681585629777470L
 					type: "choice"
 				}
 				{
 					exclude_from_claim_all: true
-					id: "4FD24E36F27DBB2A"
-					table_id: 3225681585629777470L
-					type: "choice"
+					id: "3EC09EE50B1106FA"
+					table_id: 7284682648027275041L
+					type: "random"
 				}
 			]
 			shape: "square"
@@ -1384,12 +1392,20 @@
 			dependencies: ["3150B5F44439F2ED"]
 			description: [""]
 			id: "722DEED68B0997D9"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "50BD334D35F33F37"
-				table_id: 1418583867640513355L
-				type: "choice"
-			}]
+			rewards: [
+				{
+					exclude_from_claim_all: true
+					id: "627B5774BC22361A"
+					table_id: 7284682648027275041L
+					type: "random"
+				}
+				{
+					exclude_from_claim_all: true
+					id: "75B2F92A263D2F3F"
+					table_id: 7284682648027275041L
+					type: "random"
+				}
+			]
 			shape: "square"
 			subtitle: "醉酒效果达到最高级（5级）时取得进度"
 			tasks: [{
@@ -1409,7 +1425,7 @@
 			]
 			description: ["         提升攻击伤害，但摇晃屏幕。醉酒状态下无法再喝清醒饮品。醉酒状态可叠加至五层，层数越多摇晃越强烈，每层加2点伤害。当获得5级醉酒时获得成就-烂醉如泥。"]
 			hide_dependency_lines: true
-			icon: "youkaishomecoming:champagne_bottle"
+			icon: "brewinandchewin:beer"
 			id: "73223F233DE74941"
 			rewards: [{
 				id: "2BF77F856F8AE577"
@@ -2432,14 +2448,14 @@
 			rewards: [
 				{
 					exclude_from_claim_all: true
-					id: "1689EBB33F9DF575"
-					table_id: 1418583867640513355L
+					id: "239256706D91E079"
+					table_id: 7284682648027275041L
 					type: "random"
 				}
 				{
 					exclude_from_claim_all: true
-					id: "239256706D91E079"
-					table_id: 7284682648027275041L
+					id: "371A6B54B74E6BFD"
+					table_id: 7772018159856264947L
 					type: "random"
 				}
 			]
@@ -3466,7 +3482,7 @@
 				"         攻击方式：发射密集的弹幕进行攻击（露娜+桑尼：为圆形环状弹幕；斯塔：环状弹幕+星型弹幕拖尾）。"
 				"         掉落物：1-4妖精糖果。"
 			]
-			icon: "youkaishomecoming:yellow_mentos_danmaku"
+			icon: "minecraft:spawner"
 			id: "3D4D941EEB188436"
 			rewards: [{
 				count: 4
@@ -3482,19 +3498,19 @@
 					entity: "youkaishomecoming:sunny_milk"
 					id: "57D85406830F803A"
 					type: "kill"
-					value: 100L
+					value: 1L
 				}
 				{
 					entity: "youkaishomecoming:star_sapphire"
 					id: "3D0A9AC3630B58E0"
 					type: "kill"
-					value: 100L
+					value: 1L
 				}
 				{
 					entity: "youkaishomecoming:luna_child"
 					id: "686DDBC5E50DCC2A"
 					type: "kill"
-					value: 100L
+					value: 1L
 				}
 			]
 			title: "月下三妖精！"
@@ -3502,5 +3518,5 @@
 			y: 15.0d
 		}
 	]
-	title: "东方幻想乡"
+	title: "&e东方幻想乡"
 }
