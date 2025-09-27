@@ -75,7 +75,7 @@
 	"error.gateways.wave_failed": "传送门崩塌了，因为没有足够的空间来生成下一波生物！",
 	"error.gateways.too_far": "传送门崩塌了，因为当前波次中某一个生物超出了最大范围！",
 	"error.gateways.wave_elapsed": "已超出当前波次的时间限制！",
-	"error.gateways.entity_discarded": "网关内爆是因为有一个实体没有被杀死就被移除了",
+	"error.gateways.entity_discarded": "传送门崩塌了，因为有一个实体没有被杀死就被移除了。检查你是否在和平模式下开启的传送门",
 
     "appmode.gateways.after_wave": "应用于波次 %s.",
     "appmode.gateways.after_every_n_waves": "每隔 %s 波应用一次。最多应用 %s.",
