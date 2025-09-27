@@ -1,4 +1,5 @@
 // 移除初始水晶无敌避免偶发问题
+/*
 let crystal_sp = 0;
 EntityEvents.spawned("minecraft:end_crystal", (event) => {
   const { entity, server, player } = event;
@@ -10,3 +11,4 @@ EntityEvents.spawned("minecraft:end_crystal", (event) => {
     }
   }
 });
+*/
