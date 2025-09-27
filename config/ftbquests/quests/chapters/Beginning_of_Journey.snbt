@@ -233,6 +233,7 @@
 						gateway: "gateways:basic/slime"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "粘液关卡"
@@ -279,6 +280,7 @@
 						gateway: "gateways:basic/enderman"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "末影人关卡"
@@ -326,6 +328,7 @@
 						gateway: "gateways:basic/blaze"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "烈焰关卡"
@@ -373,6 +376,7 @@
 						gateway: "createdelight:ghast_trial"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			x: -5.0d
@@ -418,6 +422,7 @@
 						gateway: "gateways:endless/blaze"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "无尽烈焰关卡"
@@ -464,6 +469,7 @@
 						gateway: "gateways:hellish_fortress"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "地狱堡垒之门"
@@ -512,6 +518,7 @@
 						gateway: "gateways:overworldian_nights"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "超凡夜之门"
@@ -560,6 +567,7 @@
 						gateway: "gateways:emerald_grove"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "翡翠林门户"
