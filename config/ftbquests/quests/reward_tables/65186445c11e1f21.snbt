@@ -1,7 +1,7 @@
 {
 	id: "65186445C11E1F21"
 	loot_size: 1
-	order_index: 30
+	order_index: 29
 	rewards: [
 		{ item: "youkaishomecoming:kiku" }
 		{ item: "youkaishomecoming:hakutsuru" }
