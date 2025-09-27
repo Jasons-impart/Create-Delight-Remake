@@ -21,6 +21,9 @@
 - 小刀的配方应当使用cutting_2函数增加，其会将tetra的模块化刀的配方一并加入。
 - 需要加入离心机的配方时请考虑使用centrifugation函数，其会加入三种离心机（vintageimprovement，小型，大型）的配方。
 
+### commit规范
+- 可以参考https://www.conventionalcommits.org/zh-hans/v1.0.0/#%e7%ba%a6%e5%ae%9a%e5%bc%8f%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83
+
 ## 加入mod规范
 
 ### 加入食物类型mod
