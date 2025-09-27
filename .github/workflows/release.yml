@@ -162,17 +162,17 @@ jobs:
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
-          name: "[ClickToUse]Client-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          name: "[Client][ClickToUse]-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
-          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-lite"
+          name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ env.artifacts_path }}/lite-release/
       - name: 上传manifest.json用于客户端补丁
         uses: actions/upload-artifact@v4
         with:
-          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
+          name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
           path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
   # 服务端相关任务（并行执行）
@@ -251,7 +251,7 @@ jobs:
       - name: 上传带forge核心的包
         uses: actions/upload-artifact@v4
         with:
-          name: "ClickToUse-Server-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
+          name: "Server-ClickToUse-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
           path: ${{ github.workspace }}
 
   # 补丁相关任务，依赖客户端相关任务的manifest.json
@@ -475,7 +475,7 @@ jobs:
       - name: 下载manifest.json
         uses: actions/download-artifact@v4
         with:
-          name: "${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
+          name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
         run: |
           rm -rf patch/mods
