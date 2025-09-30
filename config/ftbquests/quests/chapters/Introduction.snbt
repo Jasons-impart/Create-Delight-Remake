@@ -19,14 +19,9 @@
 	quests: [
 		{
 			description: [
-				"&l&4默认键位&r&r："
-				"&4R&r键可查询物品合成方式"
-				"&4U&r键可查询物品可合成物品"
-				"&4M&r打开世界地图"
-				"&4N&r打开领地地图"
-				"&4B&r直接打开背包"
-				"&4~&r可进行连锁挖掘"
-				"&4F5&r可切换越肩视角"
+				"qq或微信扫码看整合包相关信息与FAQ文档："
+				""
+				"{image:createdelight:textures/images_for_readme/document_qr_code.png width:100 height:100 align:center}"
 			]
 			id: "55C42BCE0E399B3D"
 			rewards: [
