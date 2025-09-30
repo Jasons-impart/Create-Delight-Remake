@@ -7,6 +7,12 @@ playWrathOfHiveEffectMusic = true
 # 
 #-----------------------------------------------------
 #
+# Display Bee Queen's speech bubble that shows possible trades you can do.
+#
+showBeeQueenSpeechBubble = true
+# 
+#-----------------------------------------------------
+#
 # If on, Bee-ware of the Temple by LudoCrypt will play when you are in Sempiternal Sanctum.
 #
 playSempiternalSanctumMusic = true
@@ -16,12 +22,6 @@ playSempiternalSanctumMusic = true
 #  Will default to normal block textures instead.
 #
 disableEssenceBlockShaders = false
-# 
-#-----------------------------------------------------
-#
-# Display Bee Queen's speech bubble that shows possible trades you can do.
-#
-showBeeQueenSpeechBubble = true
 
 ["The Bumblezone Client Dimension Options"]
 	# 
