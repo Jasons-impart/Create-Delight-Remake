@@ -12,7 +12,7 @@
 		{
 			description: [
 				"磁场洞穴以特殊的磁力机制与机械生命为主题。这个黑暗的群系中到处都分布着发微光的赤钕柱和青钕柱，尖锐的方铅岩锥上放置着危险的特斯拉球作为光照，四处都闪烁着红色的和蓝色的电弧。玩家还可以看到小块的方铅岩从地面飘向天空，仿佛不受重力的影响一般。"
-				"&4进入方法：使用&5磁铁矿块&4搭建传送门框架，使用充能钻石激活。"
+				"&4进入方法：使用&5磁铁矿块&4搭建传送门框架，使用&5充电钻石&4激活。"
 			]
 			icon: "alexscaves:scarlet_magnet"
 			id: "3D02EA3A30EE1933"
@@ -23,13 +23,25 @@
 			}]
 			size: 1.5d
 			subtitle: "&4磁力风暴&r形成的&e异空间&r！"
-			tasks: [{
-				biome: "alexscaves:magnetic_caves"
-				icon: "alexscaves:scarlet_magnet"
-				id: "0DF24A26AE7DB999"
-				title: "前往磁力洞窟！"
-				type: "biome"
-			}]
+			tasks: [
+				{
+					id: "484B3976008BA481"
+					item: "create_new_age:magnetite_block"
+					type: "item"
+				}
+				{
+					id: "459B85FD9980F75E"
+					item: "create_new_age:overcharged_diamond"
+					type: "item"
+				}
+				{
+					biome: "alexscaves:magnetic_caves"
+					icon: "alexscaves:scarlet_magnet"
+					id: "0DF24A26AE7DB999"
+					title: "前往磁力洞窟！"
+					type: "biome"
+				}
+			]
 			title: "磁场空间"
 			x: 2.0d
 			y: 2.0d

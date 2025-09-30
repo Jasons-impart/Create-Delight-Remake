@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         "farmersrespite:emptying/coffee",
         "farmersrespite:emptying/long_coffee",
         "farmersrespite:emptying/strong_coffee",
-
+        "farmersrespite:milling/coffee_beans"
     ])
     // 咖啡
     e.recipes.create.mixing(
@@ -48,4 +48,19 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:americano_fluid", 250)
         ]
     ).id("createcafe:filling/coffee/iced_coffee_filling")
+})
+
+BlockEvents.rightClicked( e => {
+    const {player, hand, block} = e
+    if(block.id == "minecraft:basalt" || block.id == "minecraft:polished_basalt" || block.id == "minecraft:smooth_basalt" || block.id == "minecraft:magma_block"){
+        let heldItem = player.getItemInHand(hand)
+        if(heldItem.is("createcafe:roasted_coffee_beans")){
+            block.up.set("farmersrespite:coffee_bush")
+            block.up.up.set("farmersrespite:coffee_bush", {half: "upper"})
+            player.swing(hand)
+            if(!player.isCreative()){
+                player.setItemInHand(hand, heldItem.withCount(heldItem.count - 1))
+            }
+        }
+    }
 })

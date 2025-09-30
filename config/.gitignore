@@ -70,3 +70,7 @@ xaerominimap_entities.json
 !/simplebackups-common.toml
 !/bcc-common.toml
 !/biome_replacer.properties
+!/NoChatReports
+/NoChatReports/*
+!/NoChatReports/NCR-Client.json
+!/iris_shader_folder.properties

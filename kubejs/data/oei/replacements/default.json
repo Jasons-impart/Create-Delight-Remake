@@ -137,6 +137,12 @@
     },
     {
         "matchItems": [
+            "farmersrespite:coffee_beans"
+        ],
+        "resultItems": "createcafe:roasted_coffee_beans"
+    },
+    {
+        "matchItems": [
             "youkaishomecoming:bowl_of_cream"
         ],
         "resultItems": "cosmopolitan:cream"

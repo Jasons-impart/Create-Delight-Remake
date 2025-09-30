@@ -544,7 +544,7 @@
 	"Renewable Spore Blossoms" = true
 	"Replace Scaffolding" = true
 	"Safer Creatures" = true
-	"Shulker Packing" = true
+	"Shulker Packing" = false
 	"Simple Harvest" = true
 	"Slabs To Blocks" = true
 	"Slimes To Magma Cubes" = true

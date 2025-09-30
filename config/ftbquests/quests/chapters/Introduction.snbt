@@ -151,7 +151,7 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab,54shuige"]
+			description: ["hk11238981, nanchuan211, LightLeaves, zhongxiaoli, C_Pearl, LuJiChi, SSWTLZZ, JIAFALSEDREAM,AzureCrab,54shuige,soridLu,GEcharacter"]
 			icon: {
 				Count: 1
 				id: "minecraft:player_head"
@@ -442,6 +442,56 @@
 									textures: [{
 										Signature: "f0PZC11NS1eOz9lkqU+VHzIoYXxRzP4bn/s2g+lVxOYW7eON6YQkEjWIpkG8p8Bl6ce242hjH2D4/5mWsH7Dph0vnhXYJ12uLZFyrMUVum8wtrXQtXYODtzynR+k1h1OprfsSNXfSuS2t3Nrue1bYYmPnN9pwbf4bSR6Hs/Wh8QQUA2QmHkVu3n53V268ttSP/ImhURzIafoNifHUtx3UZWGIpHrXibFgPpZ+hFAjo3H5YbCho/I9hSoUGarfcLAHpteZSLW/T+MXFNtdOaB6/vqJEPTEJtsmy46mtLuE+4SpsJa868I27ZUjPeqaQO4fK4lW/07dafkxDqEu7PVcL++tVL+jimZVTkdllAyZ9DpUGqvJMcheLk5rQrbs+FMqvKrYVv5s8FJE5PYfMW6nTqsdZEC87GI1qC8gcgHurN/HLehKKFp9OkEHcKSieNv0/E35DLdsIEKinaXceUjhC/jEaxh0r0HoEDyvSvJXDUg7dkg4bjPDTKIoQkHT1AalR3VkpqnWneQgeWl6pEEe4HXEAQUruD2IsMa3KpWhqyRfXM3/X34oF1Yh86eMmYu9F2pnQRiR60I099e+oQPvq6QBltuS8RT9/OIgRtY1+ruxEfqkaponbWAwMJm7E7pqkEsvS54OVeXIdYupiym/W2V30yo0tzG1O9jY6HXKY0="
 										Value: "ewogICJ0aW1lc3RhbXAiIDogMTc1MDUyNzkyMDI2OSwKICAicHJvZmlsZUlkIiA6ICIxNjdhNGRhMDdhZGU0MzIyYTcxM2M4ZTk5YjUyYTVhYiIsCiAgInByb2ZpbGVOYW1lIiA6ICI1NHNodWlnZSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS81ZDBkYTI2YzliMzIyNzE2NmM4ZmI4NGVkZDI1YWYzNzRiY2M4ZWJjNzk2NTUxMGRiODIxZDcyYjI0NTdiYTcwIgogICAgfQogIH0KfQ=="
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4E161D4D1650BD46"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-1616982806
+									551241010
+									-1427583748
+									-1547248723
+								]
+								Name: "soridLu"
+								Properties: {
+									textures: [{
+										Signature: "tAi1AGZj8wcf9c4+31F/T0CKNCM42NtlPuwLMvXd7vx8aI2OhwOlx1GMZN49uxO/n096DmEH9BK9xlSFV7bPNKGDZ3y63PfZZT7MZVpbyBV8XdpJMAR6+OlcMykuFnOhB1YYKC5pW/pOdr801b+kn9EiVs6LX8zU5bnFAgjFPpt9Nbjn5dwJ0O+tl6P0RhjarIDicTZ9JLonBmvntlb0gi8W3ovdZgpmuyKYqY1rMRVe48xeAoULFd/ecsFscCs0e7LMBMM5glmBr3NW4eVHCSRpUk84aId7ASBFTaIRC241psq7l3JgGUkg5AGskNQqJhXmJqmjWQrbEF+BAYusw5T68OZZGCJGvDNIRk+A92oSRk5fjcQNij39XVo+RmHwUtc7M1R0h70ZllRhf6LEOfaDKAtAyxaIN+q7qL1F4eCn5WZ5SRslIXfgxlX5+8stuyigXUlQ+WVKj1Q9Jv0sXVeo6JQxj78iy8AkWT16LfbWMvPnlCwYpGwzxiK+P30hjSkzF7e7acosA3R/E01ba0UO97vki+D8CGD+uI60V/lWxO0XIhMBQf7wXY0R7SgQXf3RVe3ZjAIhegEKVVJ8ZGdexLVoG6sdbZ88eI5w8zPgkdmF+cJdJJyc2sFaXYgDHmiNMIFTTd4jZKi0icjb8tpVOjisKYQsUC+7M0R07L4="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTc1ODcxOTYxNjg4NiwKICAicHJvZmlsZUlkIiA6ICI5ZjllY2NlYTIwZGI0NTMyYWFlOGNjZmNhM2M2ZGJhZCIsCiAgInByb2ZpbGVOYW1lIiA6ICJzb3JpZEx1IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzVkM2FhMThiNTg4ODM2MjIzZjM4ZmVlMWIzZjI3YTcxODJhZDMwZGNjYjBlNGUwYjFlYWJhODU2ZDRhMDViNGEiCiAgICB9CiAgfQp9"
+									}]
+								}
+							}
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "30923EA197B8B962"
+					item: {
+						Count: 1
+						id: "minecraft:player_head"
+						tag: {
+							SkullOwner: {
+								Id: [I;
+									-350174944
+									-1836956972
+									-1417477286
+									-1848689067
+								]
+								Name: "GEcharacter"
+								Properties: {
+									textures: [{
+										Signature: "bDoZzW9ZmPXob63ta0HtS5jOiOA8FN9pLKHar5VpD2ICwHfg2pnVqviGoHxn0PYD6SLXqYLIMF4ZoX5waPw+ylmL2hJKUcjrgxrW8UXZtshRiihfG5QhJYJOwlXsGt0X0Qp4uMEr4qQFAv2eJ3Pe6zWZCFF31Vc0WfoKi8yFLyr+nDnbt/5o4lERejemBmieR++kpsgs6TaoxOUJwu/9GlA/Br/SXKLm40MDchheJh4xDb0uMKbhEUH5acmwxCGukvGXW5EGedv84r4vJZOoMTekp9IsbSiNp4MkwFRCpYGY7oSP4p1UDSMEAm+6m7ACIL4LEwdVAkpZ2PKqBRrdg/uVuUQYmlnkju/TBAVgI0jh5AzFL1Z2Ag/3sWlyrHSk7RxW3lZbRQf+Lexe+7WEm8SbKtF4EZN/ScPVyOlyZ/l01fgnPIlYXodUhX5RdtP2x7oVplhXASFgu3ylGvO1nD6oPayWvNULEmve/n+sIvIqb28yWzUa05SqYwikG/6h3Ma7WIJFYfxVN5ksHDkHeTF8tGv/OuGA5hKZ7unSBS+V1TtWp2Nyjz8JJOPuq7qoucv/hA2/LWFoKOijs+XjihkD6OVl/cFnHiqbI+Sqmz2YVdyHb3w0F5DHj0wWQCSE+u62q/1r2QJEvHPyzM6EFOK/uZZAQMQyla7a4/rQh0s="
+										Value: "ewogICJ0aW1lc3RhbXAiIDogMTc1ODcxOTY3MjA0MCwKICAicHJvZmlsZUlkIiA6ICJlYjIwYzEyMDkyODI0MmQ0YWI4MzAzNWE5MWNmM2U1NSIsCiAgInByb2ZpbGVOYW1lIiA6ICJHRWNoYXJhY3RlciIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xNzcxYWQwZTBiNjdjZTYxMDA0ZGM5ZTJmM2Q3YTFjYzhjMWRkZjRmNzJkZDg0ODcxOTY1NzQ1ZTk5YWNlYjBhIiwKICAgICAgIm1ldGFkYXRhIiA6IHsKICAgICAgICAibW9kZWwiIDogInNsaW0iCiAgICAgIH0KICAgIH0sCiAgICAiQ0FQRSIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q5ZDgyYWIxN2ZkOTIwMjJkYmQ0YTg2Y2RlNGMzODJhNzU0MGUxMTdmYWU3YjlhMjg1MzY1ODUwNWE4MDYyNSIKICAgIH0KICB9Cn0="
 									}]
 								}
 							}
@@ -842,7 +892,7 @@
 			description: [
 				"1.平台生成时，最高层完整方块在结构方块&e下一格&r，平齐的为最上层的灯。淌水做机器固然浪漫，但如果给你第二次机会，相信你会选择把他放在海平面往上一格。"
 				"2.平台会清空上方10格左右的高度的&e任何&r方块，请注意不要把你刚建好的小家给清空了。"
-				"3.&e空手&r也能挖掘（尽管玉mod提示不能）"
+				"3.&e空手&r也能挖掘（尽管模组“玉”提示不能挖掘）"
 			]
 			icon: "createdelight:emergency_industrial_platform"
 			id: "73CE44DE53C68D82"

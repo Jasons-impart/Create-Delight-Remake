@@ -36,7 +36,7 @@
 			rotation: 0.0d
 			width: 4.0d
 			x: 2.0d
-			y: -2.0d
+			y: -9.0d
 		}
 		{
 			height: 4.0d
@@ -267,15 +267,16 @@
 			rotation: 0.0d
 			width: 4.0d
 			x: 1.5d
-			y: -5.5d
+			y: -3.0d
 		}
 		{
 			height: 3.0d
+			hover: ["此任务依赖项为“离地而局”"]
 			image: "alexscaves:item/magic_conch"
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: -5.0d
+			y: -2.5d
 		}
 		{
 			height: 3.0d
@@ -283,7 +284,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 2.0d
-			y: -8.5d
+			y: -6.0d
 		}
 		{
 			height: 4.0d
@@ -292,7 +293,7 @@
 			rotation: 0.0d
 			width: 4.0d
 			x: 2.0d
-			y: -9.0d
+			y: -6.5d
 		}
 	]
 	order_index: 9
@@ -341,6 +342,7 @@
 			size: 2.0d
 			subtitle: "撕裂的维度皆被冻结.....无声无息....."
 			tasks: [{
+				consume_items: false
 				id: "0F69834EF0A45187"
 				item: {
 					Count: 1
@@ -349,6 +351,7 @@
 						gateway: "createdelight:the_gate_of_eternal_cold"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "&1凛冬之寒"
@@ -487,7 +490,7 @@
 			y: 3.0d
 		}
 		{
-			dependencies: ["771EC4A267899414"]
+			dependencies: ["421576F1BE1DF7D9"]
 			description: ["它们被规则的力量束缚在此处，注定在寒风中消逝......"]
 			icon: "ad_astra:glacio_globe"
 			id: "75605D2B058F2DA5"
@@ -529,11 +532,12 @@
 						gateway: "createdelight:ice_dragon"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "踏冰而行！"
 			x: 2.0d
-			y: -2.0d
+			y: -8.5d
 		}
 		{
 			dependencies: ["03950A91DF592F72"]
@@ -555,6 +559,7 @@
 						gateway: "createdelight:lightning_dragon"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "雷霆之势！"
@@ -581,6 +586,7 @@
 						gateway: "createdelight:fire_dragon_eyes"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "欲火奋战！"
@@ -674,6 +680,7 @@
 				"46108940883CF8E5"
 				"40C3CA64ACD3B189"
 				"5CA16011218562F8"
+				"771EC4A267899414"
 			]
 			description: [
 				"       嗨!看到这里说明你已经把gateway通关了，恭喜!!!"
@@ -942,12 +949,13 @@
 			tasks: [{
 				id: "60CDE55C025C902B"
 				item: {
-					Count: 62
+					Count: 1
 					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "createdelight:infinite_and_dark_trials"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "黯渊之视"
@@ -1545,6 +1553,7 @@
 			shape: "square"
 			subtitle: "要么驾驭磁暴，要么被它吞噬！（这明明是高达吧......）"
 			tasks: [{
+				consume_items: false
 				id: "21EACBFF38A847EE"
 				item: {
 					Count: 1
@@ -1553,6 +1562,7 @@
 						gateway: "createdelight:magnetic_storm_field"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "磁暴领域"
@@ -1770,6 +1780,7 @@
 						gateway: "createdelight:a_place_of_melting"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "熔蚀之地"
@@ -1985,12 +1996,13 @@
 			tasks: [{
 				id: "79452B5D33977452"
 				item: {
-					Count: 64
+					Count: 1
 					id: "gateways:gate_pearl"
 					tag: {
 						gateway: "createdelight:the_ancient_end"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "远古终焉"
@@ -2124,7 +2136,6 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["421576F1BE1DF7D9"]
 			icon: {
 				Count: 1
 				id: "alexscaves:cave_codex"
@@ -2204,7 +2215,7 @@
 			]
 			title: "沧海之下"
 			x: 2.0d
-			y: -5.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["44FE97D55D97EB03"]
@@ -2255,11 +2266,12 @@
 						gateway: "createdelight:the_legacy_of_the_abyss"
 					}
 				}
+				match_nbt: true
 				type: "item"
 			}]
 			title: "自噬之潮"
 			x: 2.0d
-			y: -8.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["4245E55901A10324"]

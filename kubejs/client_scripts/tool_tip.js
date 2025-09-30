@@ -48,6 +48,7 @@ ItemEvents.tooltip(e => {
         'eclipticseasons:summer_greenhouse_core',
         'eclipticseasons:autumn_greenhouse_core',
         'eclipticseasons:winter_greenhouse_core',
+        'kinetic_pixel:graycottonseed',
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg',
