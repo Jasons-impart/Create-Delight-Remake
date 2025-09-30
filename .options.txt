@@ -296,7 +296,7 @@ key_key.endergetic.booflo_slam:key.keyboard.x
 key_key.special_ability:key.keyboard.unknown
 key_key.raws_visual_keybinder.open_screen:key.keyboard.f10
 key_key.jade.config:key.keyboard.keypad.0
-key_key.jade.show_overlay:key.keyboard.keypad.1
+key_key.jade.show_overlay:key.keyboard.unknown
 key_key.jade.toggle_liquid:key.keyboard.keypad.2
 key_key.jade.show_recipes:key.keyboard.keypad.3
 key_key.jade.show_uses:key.keyboard.keypad.4
