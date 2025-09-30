@@ -1,9 +1,0 @@
-
-[Features]
-	#Disable Vanila Food(mushroom stew,rabbit stew,beetroot soup) Placement. Set to true if vanila food placement conflicts with other mods
-	Disable-Vanila-Food-Placement = false
-	#Should placeable tooltips be enabled?
-	Tooltips = true
-	#Should a message be enabled when attempting to place a food item?
-	Display-Message = true
-
