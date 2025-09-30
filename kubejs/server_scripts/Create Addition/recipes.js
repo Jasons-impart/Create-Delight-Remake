@@ -13,7 +13,6 @@ ServerEvents.recipes(e => {
         "createaddition:crafting/biomass_pellet",
         "createaddition:crafting/biomass_pellet_block",
         "createaddition:mixing/electrum",
-        "createaddition:crafting/electrum_block",
         "createaddition:crafting/electrum",
         "createaddition:mechanical_crafting/tesla_coil"
     ])
