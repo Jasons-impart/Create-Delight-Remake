@@ -189,6 +189,25 @@
 			x: 2.25d
 			y: -2.25d
 		}
+		{
+			icon: {
+				Count: 1
+				id: "minecraft:filled_map"
+				tag: {
+					map: 0
+				}
+			}
+			id: "01E37FF071C9F224"
+			shape: "square"
+			subtitle: "使用M键打开世界地图"
+			tasks: [{
+				id: "387FDCE35038E22C"
+				type: "checkmark"
+			}]
+			title: "地图"
+			x: 1.5d
+			y: 3.0d
+		}
 	]
 	title: "初始配置"
 }
