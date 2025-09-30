@@ -35,6 +35,14 @@
 		#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 		offset_z = 4.0
 
+		[camera.offset.presets]
+			#A list of x-offset presets that can be toggled via the 'Toggle X-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_x = []
+			#A list of y-offset presets that can be toggled via the 'Toggle Y-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_y = []
+			#A list of z-offset presets that can be toggled via the 'Toggle Z-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
+			presets_offset_z = []
+
 		[camera.offset.min]
 			#When x-offset is limited this is the minimum amount.
 			#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
@@ -179,14 +187,6 @@
 				#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 				modifier_offset_z = 0.0
 
-		[camera.offset.presets]
-			#A list of x-offset presets that can be toggled via the 'Toggle X-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
-			presets_offset_x = []
-			#A list of y-offset presets that can be toggled via the 'Toggle Y-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
-			presets_offset_y = []
-			#A list of z-offset presets that can be toggled via the 'Toggle Z-Offset Presets' keybind. WARNING: Duplicate entries can result in undefined behavior!
-			presets_offset_z = []
-
 	[camera.camera_drag]
 		#x-axis multiplier for camera drag.
 		#Range: 0.0 ~ 5.0
@@ -215,7 +215,7 @@
 [perspective]
 	#The default perspective when you load the game.
 	#Allowed Values: FIRST_PERSON, THIRD_PERSON_BACK, THIRD_PERSON_FRONT, SHOULDER_SURFING
-	default_perspective = "FIRST_PERSON"
+	default_perspective = "SHOULDER_SURFING"
 	#Whether or not to remember the last perspective used.
 	remember_last_perspective = true
 	#Whether or not to replace the default third person perspective.
@@ -230,6 +230,8 @@
 [player]
 	#Whether or not to adjust the player model transparency when view is obstructed. Changing this value may require a game restart to take full effect.
 	adjust_player_transparency = true
+	#Whether or not to turn the player model transparent when aiming. This config option only applies when adjust player transparency is enabled.
+	turn_player_transparent_when_aiming = false
 	#The angle at which the player will no longer be rendered when looking up. Set to 0 to disable.
 	#Range: 0.0 ~ 90.0
 	hide_player_when_looking_up_angle = 0.0
@@ -240,8 +242,6 @@
 	#The maximum angle to which the player y-rot follows the camera y-rot. This config option only applies when player y-rot follows camera option is enabled.
 	#Range: 0.0 ~ 180.0
 	player_y_rot_follow_angle_limit = 90.0
-	#Whether or not to turn the player model transparent when aiming. This config option only applies when adjust player transparency is enabled.
-	turn_player_transparent_when_aiming = false
 
 	[player.turning]
 		#Whether to turn the player when using an item. This config option only applies when camera is decoupled.
@@ -325,13 +325,13 @@
 
 [integrations]
 
-	[integrations.epicfight]
-		#Whether to allow target lock-on when camera is decoupled.
-		decoupled_camera_lock_on = false
-
 	[integrations.curios]
 		#Items that when equipped in a curios slot, trigger the dynamic crosshair in adaptive mode. This config option supports regular expressions. The curios slot must be specified before the expression and is separated by an '@' character. Example: 'ring@angelring:.*_ring' matches 'angelring:diamond_ring' and 'angelring:angel_ring' when equipped in the 'ring' slot.
 		adaptive_crosshair_items = []
 		#Item properties of an item, that when equipped in a curios slot, trigger the dynamic crosshair in adaptive mode. Example: 'necklace@charged'
 		adaptive_crosshair_item_properties = []
+
+	[integrations.epicfight]
+		#Whether to allow target lock-on when camera is decoupled.
+		decoupled_camera_lock_on = false
 

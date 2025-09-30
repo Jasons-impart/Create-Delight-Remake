@@ -73,6 +73,7 @@
 	platinum_bass = true
 	platinum_bass_bucket = true
 	platinum_bass_head = true
+	platinum_bass_roe = true
 	platinum_bass_slice = true
 	platinum_bass_spawn_egg = true
 	platinum_bass_stew = true
@@ -122,6 +123,7 @@
 	sweet_berry_gummy = true
 	tiger_prawn = true
 	tiger_prawn_bucket = true
+	tiger_prawn_roe = true
 	tiger_prawn_spawn_egg = true
 	uni = true
 	uni_roll = true
@@ -143,8 +145,6 @@
 	vanilla_gummy = true
 	yellow_tea_gummy = true
 	yucca_gummy = true
-	platinum_bass_roe = true
-	tiger_prawn_roe = true
 
 [Behavior]
 	#Whether Lime Bushes require Bee pollination to reach final growth stage.

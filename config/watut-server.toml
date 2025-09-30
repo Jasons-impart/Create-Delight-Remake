@@ -1,13 +1,15 @@
 
 #General mod settings
 [general]
+	#SETTING THESE SERVER SIDE SETTINGS TO FALSE WILL OVERRIDE ANY OF THE SAME CLIENT SETTINGS THAT ARE SET TO TRUE (for all clients)
+	dummySetting = true
 	#Disable new dynamic gui system and use old simple visual.
 	dynamicGuiUseOldSimpleGUIVisual = false
 	#Delay in ticks before sending a new image of a gui to other clients, 10 = twice a second, 0 = no delay, 20 = once a second, more frequent might affect performance and network load
 	#Range: > 5
 	dynamicGuiTickSendRateOfGUIUpdates = 10
 	#If enabled, only sends the initial image of a players gui, does not constantly update after it's been opened.
-	dynamicGuiDontSendConstantGUIUpdates = true
+	dynamicGuiDontSendConstantGUIUpdates = false
 	#Blur is used to prevent nasty aliasing/flicker artifacts at the cost of clarity
 	#Range: 0 ~ 2
 	dynamicGuiBlurLevel = 1
@@ -23,8 +25,6 @@
 	#How close another player has to be to another player to see what they're doing in GUI, item transferring, mouse movement, etc
 	#Range: > 0
 	distanceRequiredToShowGUIInfo = 10
-	#SETTING THESE SERVER SIDE SETTINGS TO FALSE WILL OVERRIDE ANY OF THE SAME CLIENT SETTINGS THAT ARE SET TO TRUE (for all clients)
-	dummySetting = true
 	#Enables or disables idle visual in the server player list tab screen
 	showIdleStatesInPlayerList = true
 	#Enables or disables idle visual above player head
