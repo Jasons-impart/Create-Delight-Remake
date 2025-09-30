@@ -6,6 +6,8 @@ enabled = true
 #- MODIFIED_SINCE_FULL - saves all files which changed after the last full backup
 #Allowed Values: FULL_BACKUPS, MODIFIED_SINCE_LAST, MODIFIED_SINCE_FULL
 backupType = "FULL_BACKUPS"
+#Should a save-all be forced before backup?
+saveAll = true
 #How often should a full backup be created if only modified files should be saved? This creates a full backup when x minutes are over and the next backup needs to be done. Once a year is default.
 #Range: 1 ~ 5259600
 fullBackupTimer = 525960
@@ -40,12 +42,6 @@ createSubDirs = false
 #Use an internal tick counter instead of the real world time. The value of the timer will be converted to ticks. When the timer is over, the backup will be created.
 #Keep in mind that lagging servers will result in larger gaps between two backups, e.g. 10 FPS in average will result in double the time set between backups.
 useTickCounter = false
-#Should a save-all be forced before backup?
-saveAll = true
-
-[mod_compat]
-	#Should backup notifications be sent to Discord by using mc2discord? (needs to be installed)
-	mc2discord = true
 
 #WARNING Please check your configuration before using permanently.
 #The backup system will ignore these paths and files.
@@ -63,4 +59,8 @@ saveAll = true
 	#Example: '.*\.temp$' excludes all files ending with .temp
 	#Leave empty to disable regex-based file exclusion
 	ignored_files_regex = ""
+
+[mod_compat]
+	#Should backup notifications be sent to Discord by using mc2discord? (needs to be installed)
+	mc2discord = true
 
