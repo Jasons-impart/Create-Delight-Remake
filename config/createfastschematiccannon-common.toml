@@ -1,0 +1,42 @@
+#Why does this configuration file have two languages: This is what my Chinese friend wanted, so I did it this way, haha.
+#_________________________________________________________________________________________ 
+#请注意： 在某些服务器核心内(Mohist/Arclight)，这个配置文件的修改必须要重启整个服务器才能生效！
+#Please note: In some server cores(Mohist/Arclight), modifications to this configuration file require a full server restart to take effect!
+#
+#__________________________________________________________________________________________
+#
+#Enable this change or not!
+#是否启用蓝图炮加速!
+EnableCannonSpeedUp = true
+#__________________________________________________________________________________________
+#
+#This variable represents the number of prints the blueprint cannon performs per tick, which is multiplicative with the print delay within the blueprint cannon.
+#[Blueprint Cannon Print Delay] is configured in Create and can be found at: Gameplay Settings/Schematics/Schematicannon/Schematicannon Delay.
+#If set to 20, and the [Blueprint Cannon Print Delay] is set to 1, then the print speed of the blueprint cannon would be 20 * 20 / 1 = 400 times.
+#The calculation formula is: Print Speed = Number of Prints per Tick (this configuration value) x Game Ticks (default is 20) / [Blueprint Cannon Print Delay] (default is 10).
+#这个变量代表每tick蓝图炮进行的打印次数，与蓝图炮内的打印延时是相乘关系
+#[蓝图炮打印延时]为机械动力本体配置，位于：Gameplay Settings/Schematics/Schematicannon/Schematicannon Delay 
+#如果设置为 20 ，[蓝图炮打印延时]设置为1 那么蓝图炮的打印速度为 20 * 20/1 = 400倍
+#计算公式为 ：    打印速度 = 每tick蓝图炮打印的次数（本配置值） x 游戏刻（默认为20） /  [蓝图炮打印延时]（默认为10）      
+#Range: 1 ~ 400
+SpeedupPerTick = 20
+#__________________________________________________________________________________________
+#
+#This is an experimental parameter used to reduce the game ticks of the blueprint cannon.
+#It specifies how many ticks should pass before executing the blueprint cannon code.
+#The default value in Create is 1, but you can increase it to reduce lag. However, be aware that this will make the blueprint cannon's response slower.
+#A suggested value is 5, which is four times slower than the default in Create, but the difference may not be noticeable. If you feel the blueprint cannon's response is too slow, consider lowering this value.
+#这个是实验性参数，用于减少蓝图炮的游戏刻
+#即每多少刻，执行一次蓝图炮代码
+#机械动力原版默认为 1 但是您可以将其改高来削减卡顿，但是注意，这会导致蓝图炮的反应变慢
+#建议的值 5 与机械动力原版相比慢了4倍，但是感觉不出来变化，如果觉得蓝图炮反应变慢，适当降低这个值
+#Range: 1 ~ 200
+lazyTick = 5
+#--------------------------------------------------------------------------
+#A list of blocks can't be clear or broke by cannon.
+#列表内的方块不会被蓝图炮摧毁，这可以阻止蓝图炮无尽锅炉bug
+blocks_unbreak = ["create:blaze_burner"]
+#Enable forbid message or not
+#当蓝图炮尝试破坏被禁止的方块时是否在控制台通知
+debug = true
+
