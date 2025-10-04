@@ -9,52 +9,32 @@ ServerEvents.recipes(e => {
         "2x ratatouille:sausage_casing",
         "minecraft:slime_ball"
     ).id("create:cutting/sausage")
-    e.recipes.create.mixing(
-        "hotdog_delight:cod_sausage",
+    
+    // 创建一个函数来简化香肠配方的定义
+    function addSausageRecipe(output, ingredient, recipeId) {
+        e.recipes.ratatouille.squeezing(
+            output,
+            [
+                "ratatouille:sausage_casing",
+                ingredient,
+                Fluid.of("luncheonmeatsdelight:flesh_mud", 250)
+            ]
+        ).id(recipeId)
+    }
+    
+    // 使用函数添加所有香肠配方
+    addSausageRecipe("hotdog_delight:cod_sausage", '#forge:raw_fishes/cod', "hotdog_delight:codsrecp")
+    addSausageRecipe("hotdog_delight:salmon_sausage", '#forge:raw_fishes/salmon', "hotdog_delight:salmonsrecp")
+    addSausageRecipe("hotdog_delight:pork_sausage", '#forge:pork/raw', "hotdog_delight:porksaurecp")
+    addSausageRecipe("hotdog_delight:squid_ink_sausage", 'oceanic_delight:squid_tentacles', "hotdog_delight:inksrecp")
+    addSausageRecipe("hotdog_delight:glow_squid_ink_sausage", 'oceanic_delight:glow_squid_tentacles', "hotdog_delight:glorecp")
+    addSausageRecipe("hotdog_delight:pumpkin_sausage", 'farmersdelight:pumpkin_slice', "hotdog_delight:pumpkinrecp")
+    e.recipes.ratatouille.squeezing(
+        "dungeonsdelight:snifferwurst",
         [
             "ratatouille:sausage_casing",
-            '#forge:raw_fishes/cod',
-            "#forge:salt"
+            Fluid.of("createdelightcore:slime", 250),
+            'dungeonsdelight:sniffer_shank'
         ]
-    ).id("hotdog_delight:codsrecp")
-    e.recipes.create.mixing(
-        "hotdog_delight:salmon_sausage",
-        [
-            "ratatouille:sausage_casing",
-            '#forge:raw_fishes/salmon',
-            "#forge:salt"
-        ]
-    ).id("hotdog_delight:salmonsrecp")
-    e.recipes.create.mixing(
-        "hotdog_delight:pork_sausage",
-        [
-            "ratatouille:sausage_casing",
-            '#forge:pork/raw',
-            "#forge:salt"
-        ]
-    ).id("hotdog_delight:porksaurecp")
-    e.recipes.create.mixing(
-        "hotdog_delight:squid_ink_sausage",
-        [
-            "ratatouille:sausage_casing",
-            'oceanic_delight:squid_tentacles',
-            "#forge:salt"
-        ]
-    ).id("hotdog_delight:inksrecp")
-    e.recipes.create.mixing(
-        "hotdog_delight:glow_squid_ink_sausage",
-        [
-            "ratatouille:sausage_casing",
-            'oceanic_delight:glow_squid_tentacles',
-            "#forge:salt"
-        ]
-    ).id("hotdog_delight:glorecp")
-    e.recipes.create.mixing(
-        "hotdog_delight:pumpkin_sausage",
-        [
-            "ratatouille:sausage_casing",
-            'farmersdelight:pumpkin_slice',
-            "#forge:salt"
-        ]
-    ).id("hotdog_delight:pumpkinrecp")
+    ).id("dungeonsdelight:monster_cooking/misc/snifferwurst")
 })

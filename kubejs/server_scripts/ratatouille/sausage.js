@@ -19,7 +19,8 @@ ServerEvents.recipes(e => {
         "ratatouille:raw_sausage",
         [
             "ratatouille:sausage_casing",
-            Fluid.of("luncheonmeatsdelight:flesh_mud", 250)
+            Fluid.of("luncheonmeatsdelight:flesh_mud", 250),
+            'minecraft:sugar'
         ]
     ).id("ratatouille:squeezing/raw_sausage")
     e.recipes.kubejs.shapeless(
