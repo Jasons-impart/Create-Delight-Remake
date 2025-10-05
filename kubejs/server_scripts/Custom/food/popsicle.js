@@ -90,3 +90,24 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:filling/milk_popsicle")
 })
+
+let popsicle_list = [
+    'createdelight:empty_popsicle',
+    'ends_delight:chorus_fruit_popsicle',
+    'farmersdelight:melon_popsicle',
+    'mynethersdelight:tear_popsicle',
+    'youkaishomecoming:milk_popsicle',
+    'fruitsdelight:hamimelon_popsicle',
+    'collectorsreap:lime_popsicle',
+    'fruitsdelight:kiwi_popsicle',
+    'casualness_delight:green_tongue'
+]
+popsicle_list.forEach(popsicle => {
+    ItemEvents.foodEaten(popsicle, e => {
+        e.entity.setTicksFrozen(e.entity.getTicksFrozen() + 80)
+    })
+})
+//大冰棍特例
+ItemEvents.foodEaten('youkaishomecoming:big_popsicle', e => {
+    e.entity.setTicksFrozen(e.entity.getTicksFrozen() + 160)
+})
