@@ -212,9 +212,16 @@ ItemEvents.modification(e => {
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
-        //紫颂果食物传送效果
+        //紫颂果食物传送效果'ends_delight:chorus_fruit_grain'
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_cookie", "fruitsdelight:chorus", 0.05)
+    food_effects("createdelight:chorus_cookie_dough", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_fruit_grain", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_flower_pie", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_flower_tea", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_fruit_pie_slice", "fruitsdelight:chorus", 0.05)
+        
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
     e.modify('oceanic_delight:salmon_eggs', item => {

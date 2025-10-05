@@ -69,6 +69,7 @@ let tooltips = [
     ['alexscaves:cave_map', "§l§4该物品已无实际用处，且不可按照显示的配方合成", "§l§4This item is no longer useful and cannot be crafted using the displayed recipe"],
     ['alexsmobs:shattered_dimensional_carver', "§4边界存在崩溃问题， 查看§4边境碎块§rJEI了解如何召唤瞻远者", "zzz"],
     ['createdelight:debug_reload_tool', "蹲下右键重载server脚本， 站立右键重载client脚本", "EMM"],
+    ['cosmopolitan:birch_cookie', "§9清除挖掘疲劳", "§9Clear Mining Fatigue"],
 ]
 tooltips.forEach(([key, zh_cn, en_us]) => {
     // 添加 key

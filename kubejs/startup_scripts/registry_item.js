@@ -94,107 +94,35 @@ StartupEvents.registry("item", e => {
         .maxStackSize(64)
         .translationKey("item.createdelight.vermicelli")
     // 注册曲奇面团
-    e.create("createdelight:persimmon_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.persimmon_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:lemon_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.lemon_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:oatmeal_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.oatmeal_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:green_tea_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.green_tea_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:cranberry_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.cranberry_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:bayberry_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.bayberry_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:chocolate_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.chocolate_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:honey_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.honey_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:sweet_berry_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.sweet_berry_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-    e.create("createdelight:lime_cookie_dough")
-        .tag("forge:cookie_dough")
-        .maxStackSize(64)
-        .translationKey("item.createdelight.lime_cookie_dough")
-        .food(food => {
-            food.hunger(1)
-                .saturation(1)
-                .fastToEat()
-                .effect("minecraft:hunger", 200, 1, 1.0)
-        })
-
+{
+    let CookieDough = [
+        "persimmon",
+        "lemon",
+        "oatmeal",
+        "green_tea",
+        "cranberry",
+        "bayberry",
+        "chocolate",
+        "honey",
+        "sweet_berry",
+        "lime",
+        "chorus",
+        "bat",
+        "paw"
+    ]
+    CookieDough.forEach(dough => {
+        e.create(`createdelight:${dough}_cookie_dough`)
+            .tag("forge:cookie_dough")
+            .maxStackSize(64)
+            .translationKey(`item.createdelight.${dough}_cookie_dough`)
+            .food(food => {
+                food.hunger(1)
+                    .saturation(1)
+                    .fastToEat()
+                    .effect("minecraft:hunger", 200, 1, 0.8)
+            })
+    })
+}
     // 开酥相关
     e.create("createdelight:butter")
         .maxStackSize(64)

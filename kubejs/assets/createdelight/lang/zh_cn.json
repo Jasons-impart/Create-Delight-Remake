@@ -234,10 +234,13 @@
     "item.createdelight.cell_housing_curving_head": "元件外壳封头",
     "item.createdelight.chocolate_cookie_dough": "巧克力曲奇面团",
     "item.createdelight.chocolate_milkshake_bucket": "巧克力奶昔桶",
+    "item.createdelight.chorus_cookie_dough": "紫颂曲奇面团",
     "item.createdelight.pomegranate_milkshake_bucket": "石榴奶昔桶",
     "item.createdelight.lime_milkshake_bucket": "青柠奶昔桶",
     "item.createdelight.sweetberry_milkshake_bucket": "甜浆果奶昔桶",
     "item.createdelight.sweetberry_milkshake": "甜浆果奶昔",
+    "item.createdelight.bat_cookie_dough": "蝙蝠曲奇面团",
+    "item.createdelight.paw_cookie_dough": "猫爪曲奇面团",
     
     "fluid.createdelight.pumpkin_milkshake_bucket": "南瓜奶昔桶",
     "fluid.createdelight.beet_milkshake_bucket": "甜菜根奶昔桶",

@@ -33,6 +33,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:honey_cookie_dough',
     'createdelight:sweet_berry_cookie_dough',
     'createdelight:lime_cookie_dough',
+    'createdelight:chorus_cookie_dough',
+    'createdelight:bat_cookie_dough',
+    'createdelight:paw_cookie_dough',
     // 生食物
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',
