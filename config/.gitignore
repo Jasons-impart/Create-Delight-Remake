@@ -8,7 +8,6 @@
 !/fancymenu
 !/iceandfire
 !/jei
-!/*lightman*
 !/modernui
 !/openloader
 # !/sound_physics_remastered
@@ -21,7 +20,6 @@
 !/alexscaves_biome_generation
 !/dynamiccrosshair.json5
 !/c2me.toml
-!/carryon-client.toml
 !/carryon-common.toml
 !/collectorsreap-common.toml
 !/curios-client.toml
@@ -30,9 +28,6 @@
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
-!/create*
-!/*delight*
-!/*xaero*
 !/iceandfire-client.toml
 !/iceandfire-common.toml
 !/imblocker-client.toml
@@ -50,7 +45,7 @@
 !/waystones-common.toml
 !/vinery
 !/quark-common.toml
-!/vintageimprovements*
+!/vintageimprovements-client.toml
 xaerominimap_entities.json
 !/world-gen.json
 !/ad_astra*

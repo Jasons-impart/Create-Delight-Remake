@@ -65,14 +65,14 @@
 	#The stack size for all Potions & Antidotes
 	#Range: 1 ~ 64
 	potion_stack_size = 16
-	#The stack size for Will O' Wisps
-	#Range: 1 ~ 64
-	will_o_wisp_stack_size = 40.0
-	#The amount of time Black Icicle deal Freezing Damage when shot or skewered
-	black_icicle_freeze_ticks = 500
 	#Forcefully disables stack size changes on Potions & Antidotes 
 	#Turn this on in-case you want the vanilla stack sizes for potions
 	force_disable_potion_stack_size = false
+	#The stack size for Will O' Wisps
+	#Range: 1 ~ 64
+	will_o_wisp_stack_size = 40
+	#The amount of time Black Icicle deal Freezing Damage when shot or skewered
+	black_icicle_freeze_ticks = 500
 	#How many bullets will be shot when a Shotgun Fist is fired
 	shotgun_fist_bullets = 25
 	#How many bullets will be shot when a Pump-Charge Shotgun is fired
@@ -101,6 +101,12 @@
 	wisp_emerging_chance = 50
 	#Wisps will turn the soul sand they emerged from into Suspicious Soul Sand
 	suspicious_soul_sand_from_wisp_emerging = true
+	#Suspicious Soul Sand made by wisps will randomly decay into regular soul sand
+	suspicious_soul_sand_decays = true
+	#Defines 1 in specified chance for wisp-made Suspicious Soul Sand to decay back to regular soul sand
+	suspicious_soul_sand_decay_odds = true
+	#The default loot table of a wisp-made Suspicious Soul Sand if both the biome and structure checks failed
+	suspicious_soul_sand_decay_default_loot_table = "archaeology/wisp_arch_default"
 	#Defines how ecto slabs will emerge from soul swirls 
 	#ALWAYS - has a chance to emerge whenever passed through 
 	#UNBOUNDED_SPEED_ONLY - can emerge only if inflicted with unbounded speed 
@@ -112,12 +118,6 @@
 	ecto_slab_emerging_chance = 40
 	#Defines 1 in specified chance for how often Ecto Slabs emerge from soul swirls if the player has Unbounded Speed
 	ecto_slab_emerging_with_unbounded_speed = 5
-	#Suspicious Soul Sand made by wisps will randomly decay into regular soul sand
-	suspicious_soul_sand_decays = true
-	#Defines 1 in specified chance for wisp-made Suspicious Soul Sand to decay back to regular soul sand
-	suspicious_soul_sand_decay_odds = true
-	#The default loot table of a wisp-made Suspicious Soul Sand if both the biome and structure checks failed
-	suspicious_soul_sand_decay_default_loot_table = "archaeology/wisp_arch_default"
 	#Immortal Carcasses turn back normal after the specified time in seconds has elapsed
 	#Range: 0 ~ 86400
 	carcass_immortal_cooldown = 1800
@@ -140,12 +140,12 @@
 	amplifier_immunity_reduction = true
 	#Ectoplasm will rust all nearby plated netherite blocks it comes in contact with
 	ectoplasm_rusts_netherite = true
+	#Ectoplasm slowly starts dealing freezing damage when in contact
+	ectoplasm_freezing_damage = true
 	#Soul Sand movement speed reduction will be less intrusive when enabled
 	reduce_soul_sand_slowness = false
 	#Soul Speed will no longer damage your boots when enabled
 	remove_soul_speed_durability_penalty = false
-	#Ectoplasm slowly starts dealing freezing damage when in contact
-	ectoplasm_freezing_damage = true
 	#Developer Mode enables various Loggers and other technical information for debugging sake 
 	#If you aren't a dev or someone with technical knowledge then keep it at "false" lol
 	dev_test_mode = false

@@ -10,19 +10,12 @@
 	EnableInform = true
 	#Whether send inform with icon.
 	EnableInformIcon = true
+	#Enable local calendar and local info synchronization.
+	EnableLocalInfoAndCalendar = true
 	#Whether to pop up the solar term reminder when the calendar item cannot be placed.
 	CalendarItemHint = false
 	#In summer, the days are long and the nights are short, while in winter, the days are short and the nights are long.
 	DynamicDaylightDuration = true
-	#List of dimensions where season effects apply. Must be natural worlds with a day-night cycle.
-	ValidDimensions = ["minecraft:overworld"]
-	#If snow falls during cold weather, it will gradually cover all solid blocks and grass.
-	SnowyWinter = true
-	#Snow will not appear in overly bright areas, here define restriction levels.
-	NotSnowyNearGlowingBlock = true
-	#Snow will not appear in overly bright areas.
-	#Range: 1 ~ 15
-	NotSnowyNearGlowingBlockLevel = 10
 	#Day time length of spring, divided into six periods according to the solar term table.
 	SpringDayTimes = [10500, 11000, 11500, 12000, 12500, 13000]
 	#Day time length of summer, divided into six periods according to the solar term table.
@@ -33,30 +26,37 @@
 	WinterDayTimes = [10500, 10000, 9500, 9000, 9500, 10000]
 	#Day time length of none season, divided into six periods according to the solar term table.
 	NoneDayTimes = [12000]
+	#List of dimensions where season effects apply. Must be natural worlds with a day-night cycle.
+	ValidDimensions = ["minecraft:overworld"]
+	#If snow falls during cold weather, it will gradually cover all solid blocks and grass.
+	SnowyWinter = true
 	#Not just the top layer, now even the leaves below are dusted with frost and snow.
 	SnowyTree = true
+	#Snow will not appear in overly bright areas, here define restriction levels.
+	NotSnowyNearGlowingBlock = true
+	#Snow will not appear in overly bright areas.
+	#Range: 1 ~ 15
+	NotSnowyNearGlowingBlockLevel = 10
 	#Specify block IDs here to prevent those blocks from being covered by snow.
 	ForceBlocksNotSnowy = []
-	#Enable local calendar and local info synchronization.
-	EnableLocalInfoAndCalendar = true
 	#The timing of snowfall now varies within a certain range each year.
 	DynamicSnowTerm = true
 
 [Weather]
 	#Enable the Ecliptic local weather system that adapts weather to each biome.
 	UseSolarWeather = true
+	#Enable weather regions, linking specific biomes to particular weather to prevent scattered patterns.
+	EnableWeatherRegion = true
+	#Prevent rain from occurring in biomes without precipitation like desert.
+	NotRainInDesert = false
+	#Set it true to initialize weather and snow when loading the mod or level for the first time.
+	ShouldInitWeather = false
 	#Multiplier (0-1000) affecting how likely rain will occur.
 	#Range: 0 ~ 1000
 	RainChancePercentMultiplier = 40
 	#Multiplier (0-1000) affecting how likely thunder will occur.
 	#Range: 0 ~ 1000
 	ThunderChancePercentMultiplier = 20
-	#Set it true to initialize weather and snow when loading the mod or level for the first time.
-	ShouldInitWeather = false
-	#Enable weather regions, linking specific biomes to particular weather to prevent scattered patterns.
-	EnableWeatherRegion = true
-	#Prevent rain from occurring in biomes without precipitation like desert.
-	NotRainInDesert = false
 
 [Temperature]
 	#Ice or snow layer will melt in warm time.
@@ -71,6 +71,12 @@
 	EnableSeasonalCrop = true
 	#Enable crop humidity control.
 	EnableCropHumidityControl = true
+	#If enabled, humidity check will transition smoothly instead of snapping.
+	CropHumidityTransition = true
+	#Send message to player if failed to use bone meal on crop.
+	BoneMealFailureMessage = true
+	#Consume anyway if failed to use bone meal on crop.
+	BoneMealConsumeOnFailure = true
 	#The maximum effective diameter of the greenhouse.
 	#Range: 5 ~ 256
 	GreenHouseMaxDiameter = 32
@@ -80,29 +86,44 @@
 	#Chance that crops fail to grow due to low sunlight inside the greenhouse.
 	#Range: 0 ~ 10000
 	DarkGreenhouseFailChance = 2000
-	#Whether to enable complex shape checking.
-	ComplexGreenHouseCheck = true
-	#[Deprecated]If a crop is not registered for a season or humid type, default values will be used.
-	RegisterCropDefaultValue = false
-	#Force all crops to use compatibility mode for growth control, not just those tagged as eclipticseasons:natural_plants.
-	ForceCompatMode = false
 	#Build a simple greenhouse without core blocks and humidity modifiers.
 	SimpleGreenHouseMode = false
 	#If true, the Humidifier block will no longer consume blocks during conversion.
 	NoCostHumidifier = false
-	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
-	UseBoxDistance = true
-	#Send message to player if failed to use bone meal on crop.
-	BoneMealFailureMessage = true
 	#The working range of the Season Core block.
 	#Range: 4 ~ 31
 	SeasonCoreRange = 15
-	#Consume anyway if failed to use bone meal on crop.
-	BoneMealConsumeOnFailure = true
-	#If enabled, humidity check will transition smoothly instead of snapping.
-	CropHumidityTransition = true
+	#Whether to enable complex shape checking.
+	ComplexGreenHouseCheck = true
+	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
+	UseBoxDistance = true
+	#[Deprecated]If a crop is not registered for a season or humid type, default values will be used.
+	RegisterCropDefaultValue = false
+	#Force all crops to use compatibility mode for growth control, not just those tagged as eclipticseasons:natural_plants.
+	ForceCompatMode = false
 	#Save environmental humidity modifiers to chunk file.
 	SaveChunkEnvironmentalHumidity = true
+
+[Animal]
+	#Enable seasonal animal breed.
+	EnableSeasonalBreed = false
+	#Enable seasonal bee behavior, bee would like spring and not like winter and cold.
+	EnableSeasonalBee = false
+	#Seasons in which bees are able to pollinate crops and flowers.
+	#Default: [SPRING]
+	BeePollinateSeasons = ["SPRING"]
+	#Seasons in which bees are generally active outside the hive.
+	#Default: [SPRING, SUMMER, AUTUMN]
+	BeeActiveSeasons = ["SPRING", "SUMMER", "AUTUMN"]
+	#Enable seasonal fishing behavior, let enjoy summer.
+	EnableSeasonalFishing = false
+	#Seasons during which fishing is allowed or more effective.
+	#Default: [SUMMER]
+	FishingSeasons = ["SUMMER"]
+	#Reduce fish availability during thunderstorms.
+	LessFishInThunder = false
+	#Greenhouse core would also work for animal check but not need a greenhouse.
+	EnableCoreWork = true
 
 [Compat]
 	#Compatible with mods using SereneSeasons' CropTag.
@@ -127,33 +148,12 @@
 	DisableUniqueBiomeTagsRebinding = false
 
 [Map]
-	#The map color of blocks will change during snow.
-	ChangeMapColor = true
 	#Delay updating the top block to snowy when height map changes during snowfall.
 	ServerRealisticSnowyChange = false
+	#The map color of blocks will change during snow.
+	ChangeMapColor = true
 
 [Resource]
 	#Enable extra built-in snow definitions resourcepack for game.
 	ExtraSnowDefinitions = false
-
-[Animal]
-	#Enable seasonal animal breed.
-	EnableSeasonalBreed = false
-	#Enable seasonal bee behavior, bee would like spring and not like winter and cold.
-	EnableSeasonalBee = false
-	#Enable seasonal fishing behavior, let enjoy summer.
-	EnableSeasonalFishing = false
-	#Greenhouse core would also work for animal check but not need a greenhouse.
-	EnableCoreWork = true
-	#Seasons in which bees are able to pollinate crops and flowers.
-	#Default: [SPRING]
-	BeePollinateSeasons = ["SPRING"]
-	#Seasons in which bees are generally active outside the hive.
-	#Default: [SPRING, SUMMER, AUTUMN]
-	BeeActiveSeasons = ["SPRING", "SUMMER", "AUTUMN"]
-	#Seasons during which fishing is allowed or more effective.
-	#Default: [SUMMER]
-	FishingSeasons = ["SUMMER"]
-	#Reduce fish availability during thunderstorms.
-	LessFishInThunder = false
 

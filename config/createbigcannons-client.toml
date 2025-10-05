@@ -3,15 +3,15 @@
 #Client-side config for Create Big Cannons.
 [client]
 	#.
-	#How many particles are in a Fluid Blob of any size.
-	#Range: 0 ~ 1000
-	fluidBlobParticleCount = 20
-	#.
 	showAutocannonPlumes = true
 	#.
 	showDropMortarPlumes = true
 	#.
 	showMortarStoneClouds = true
+	#.
+	#How many particles are in a Fluid Blob of any size.
+	#Range: 0 ~ 1000
+	fluidBlobParticleCount = 20
 	#.
 	#How many digits are after the angle decimal point on a block armor info tooltip.
 	#Range: 0 ~ 4
