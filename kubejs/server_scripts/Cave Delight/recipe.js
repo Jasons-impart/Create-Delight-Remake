@@ -6,6 +6,7 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "cavedelight:fiddlehead_tea"
     ])
+    e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "ratatouille:wheat_kernels")
     cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
     cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
     brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')

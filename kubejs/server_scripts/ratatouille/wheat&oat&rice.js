@@ -42,6 +42,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:oat_bread",
         "ratatouille:threshing/wheat_kernels",
         "vintagedelight:oatmeal_cookie",
+        "farmersdelight:wheat_dough_from_egg"
     ])
     // 脱粒
     threshing(e, "minecraft:wheat", [
