@@ -173,6 +173,12 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:lime_milkshake_bucket',
     'createdelight:pomegranate_milkshake_bucket',
     'createdelight:sweetberry_milkshake_bucket',
+    'createdelight:pumpkin_milkshake_bucket',
+    'createdelight:beetroot_milkshake_bucket',
+    'createdelight:apple_milkshake_bucket',
+    'createdelight:carrot_milkshake_bucket',
+    'createdelight:glow_berry_milkshake_bucket',
+    'createdelight:enhanced_fruit_milkshake_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])
