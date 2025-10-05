@@ -15,8 +15,12 @@ ServerEvents.recipes(e => {
     e.replaceInput({mod: "seasonals"}, "minecraft:wheat", "create:dough")
     const {create} = e.recipes
     make_cake(e, "#seasonals:pumpkin_puree", "seasonals:pumpkin_cake")
-    make_cake(e, "seasonals:roasted_beetroot", "seasonals:beetroot_cake")
-    make_cake(e, "#alexscaves:sweet_berries", "seasonals:sweet_berry_cake")
+    make_cake(e, "some_assembly_required:chopped_beetroot", "seasonals:beetroot_cake")
+    e.recipes.create.deploying('seasonals:sweet_berry_cake', [
+        "neapolitan:chocolate_cake",
+        '#alexscaves:sweet_berries'
+    ])
+        .id("neapolitan:deploying/sweet_berry_cake")
     
     create.filling("seasonals:glazed_sweet_berries", ["minecraft:sweet_berries", FluidIngredients("forge:honey", 50)])
     .id("seasonals:filling/glazed_sweet_berries")
