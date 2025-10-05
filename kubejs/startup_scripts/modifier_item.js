@@ -9,6 +9,18 @@ ItemEvents.modification(e => {
             item.fireResistant = true
         })
     }
+// 食物修改为快速食用
+    /**
+     * 
+     * @param {Internal.Item} food 
+     */
+    let food_fastToEat = function (food) {
+        e.modify(food, item => {
+            item.foodProperties = food => {
+                food.fastToEat()
+            }
+        })
+    }
 // 食物修改,参数分别为食物id，饥饿值，饱和度
     /**
      * 
@@ -179,6 +191,9 @@ ItemEvents.modification(e => {
     fire_resistance("createmetallurgy:crushed_raw_wolframite")
     fire_resistance("createmetallurgy:dirty_wolframite_dust")
     fire_resistance("createmetallurgy:wolframite_dust")
+    
+    // 食物修改为快速食用
+    food_fastToEat("ends_delight:chorus_fruit_popsicle")
 
     // 食物效果修改
     food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)

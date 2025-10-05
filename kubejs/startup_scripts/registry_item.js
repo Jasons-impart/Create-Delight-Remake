@@ -187,6 +187,7 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(2)
                 .saturation(0.25)
+                .fastToEat()
         })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
