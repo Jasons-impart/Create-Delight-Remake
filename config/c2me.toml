@@ -19,7 +19,7 @@ version = 3
 #  Available variables: is_windows, is_j9vm, is_client, cpus, mem_gb
 # 
 defaultGlobalExecutorParallelismExpression = "default"
-# (Default: 6) Configures the parallelism of global executor
+# (Default: 3) Configures the parallelism of global executor
 globalExecutorParallelism = "default"
 
 [generalOptimizations]
@@ -122,7 +122,7 @@ globalExecutorParallelism = "default"
 [noTickViewDistance]
 	# (Default: true) Whether to enable no-tick view distance
 	enabled = false
-	# (Default: 7) No-tick view distance max concurrent chunk loads 
+	# (Default: 4) No-tick view distance max concurrent chunk loads 
 	#  Lower this for a better latency and higher this for a faster loading
 	maxConcurrentChunkLoads = "default"
 	# (Default: true) Whether to use compatibility mode to send chunks 
@@ -137,7 +137,7 @@ globalExecutorParallelism = "default"
 	[clientSideConfig.modifyMaxVDConfig]
 		# (Default: true) Whether to modify maximum view distance
 		enabled = "default"
-		# (Default: 67) Max render distance allowed in game options
+		# (Default: 53) Max render distance allowed in game options
 		maxViewDistance = "default"
 
 [vanillaWorldGenOptimizations]

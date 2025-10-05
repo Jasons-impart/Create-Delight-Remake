@@ -56,6 +56,17 @@ ItemEvents.modification(e => {
             item.maxDamage = maxDamage
         }) 
     }
+// 最大堆叠修改,物品id,最大堆叠数
+    /**
+     * 
+     * @param {Internal.Item} item 
+     * @param {number} maxStackSize 最大堆叠数,默认为64
+     */
+    let maxStackSize_change = function (item, maxStackSize) {
+        e.modify(item, item => {
+            item.maxStackSize = maxStackSize
+        }) 
+    }
 
 // 红茶效果修改,食物id,持续时间（s）,强度
     /**
@@ -155,6 +166,11 @@ ItemEvents.modification(e => {
     maxDamage_change("butchercraft:mask", 165)
     maxDamage_change("butchercraft:boots", 195)
     maxDamage_change("bakeries:bread_knife", 100)
+
+    // 最大堆叠修改
+    maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
+    maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
+    maxStackSize_change('youkaishomecoming:big_popsicle', 64)
 
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
@@ -374,5 +390,5 @@ ItemEvents.modification(e => {
     'vinery:jellie_wine'
     ], item => {
         item.setCraftingRemainingItem("vinery:wine_bottle")
-    })
+    })    
 })
