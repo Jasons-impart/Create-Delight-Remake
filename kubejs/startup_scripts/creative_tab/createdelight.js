@@ -36,6 +36,13 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:chorus_cookie_dough',
     'createdelight:bat_cookie_dough',
     'createdelight:paw_cookie_dough',
+    // 未烤制玛芬
+    'createdelight:unbaked_red_velvet_cupcake',
+    'createdelight:unbaked_mixed_berry_muffin',
+    'createdelight:unbaked_chocolate_pumpkin_muffin',
+    'createdelight:unbaked_blueberry_muffin',
+    'createdelight:unbaked_cranberry_muffin',
+    'createdelight:unbaked_monster_muffin',
     // 生食物
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',

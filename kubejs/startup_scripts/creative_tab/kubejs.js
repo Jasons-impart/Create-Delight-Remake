@@ -268,5 +268,11 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:enchanted_golden_lantern_fruit',
         'createdelight:enchanted_golden_carrot',
         'createdelight:raw_ghast_calamari',
+        'createdelight:unbaked_red_velvet_cupcake',
+        'createdelight:unbaked_mixed_berry_muffin',
+        'createdelight:unbaked_chocolate_pumpkin_muffin',
+        'createdelight:unbaked_blueberry_muffin',
+        'createdelight:unbaked_cranberry_muffin',
+        'createdelight:unbaked_monster_muffin',
     ])
 });  
