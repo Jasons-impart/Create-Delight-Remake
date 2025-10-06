@@ -36,15 +36,6 @@ ServerEvents.recipes(e => {
         "4x redstone",
         "quartz"
     ])
-
-    e.recipes.minecraft.stonecutting(
-        "4x design_decor:cast_iron_boiler",
-        "createbigcannons:cast_iron_block"
-    ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder")
-    e.recipes.minecraft.stonecutting(
-        "design_decor:cast_iron_boiler_large",
-        "createbigcannons:cast_iron_block"
-    ).id("design_decor:stonecutting/cyllinder/cast_iron_cyllinder_large")
     // 玫瑰石英
     e.recipes.create.sandpaper_polishing(
         'create:polished_rose_quartz',
@@ -286,11 +277,6 @@ ServerEvents.recipes(e => {
         A: "#forge:plates/cast_iron",
         B: "minecraft:netherrack"
     }).id("create:empty_blaze_burner_from_cast_iron")
-    //deco和create的工业铁块互切
-    e.recipes.minecraft.stonecutting("design_decor:industrial_plating_block", "create:industrial_iron_block")
-        .id("industrial_plating_block_from_industrial_iron_block")
-    e.recipes.minecraft.stonecutting("create:industrial_iron_block", "design_decor:industrial_plating_block")
-        .id("industrial_iron_block_from_industrial_plating_block")
     e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
         .id("industrial_iron_block_from_steel_ingot")
     // 甜甜圈
