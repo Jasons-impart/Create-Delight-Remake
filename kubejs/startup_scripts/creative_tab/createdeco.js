@@ -10,12 +10,6 @@ StartupEvents.modifyCreativeTab("createdeco:props_tab", e => {
     'createdeco:gold_coinstack',
     'createdeco:netherite_coinstack',
     'createdeco:brass_coinstack',
-    'createdeco:netherite_nugget',
-    "createdeco:andesite_hull",
-    'createdeco:brass_hull',
-    'createdeco:iron_hull',
-    'createdeco:copper_hull',
-    'createdeco:industrial_iron_hull',
-    'createdeco:zinc_hull'
+    'createdeco:netherite_nugget'
   ])
 })
