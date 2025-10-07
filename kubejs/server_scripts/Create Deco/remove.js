@@ -26,12 +26,6 @@ ServerEvents.recipes(e => {
         'createdeco:industrial_iron_coin',
         'createdeco:industrial_iron_coinstack',
         'createdeco:zinc_coin',
-        'createdeco:zinc_coinstack',
-        'createdeco:andesite_hull',
-        'createdeco:brass_hull',
-        'createdeco:iron_hull',
-        'createdeco:copper_hull',
-        'createdeco:industrial_iron_hull',
-        'createdeco:zinc_hull'
+        'createdeco:zinc_coinstack'
     ])
 })

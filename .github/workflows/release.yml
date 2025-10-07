@@ -302,11 +302,11 @@ jobs:
           # 获取当前 commit 关联的 tag
           current_commit_tags=$(git tag --points-at $current_commit)
           if [ -z "$current_commit_tags" ]; then
-            # 当前 commit 没有关联 tag，直接取最新 tag
-            latest_tag=$(git tag --sort=-creatordate | head -n 1)
+            # 当前 commit 没有关联 tag，取HEAD所处分支上最新 tag
+            latest_tag=$(git tag --merged HEAD --sort=-creatordate | head -n 1)
           else
-            # 当前 commit 有关联 tag，过滤掉这些 tag 后取最新 tag
-            latest_tag=$(git tag --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
+            # 当前 commit 有关联 tag，过滤掉这些 tag 后取HEAD所处分支上最新 tag
+            latest_tag=$(git tag --merged HEAD --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
           fi
           if [ -z "$latest_tag" ]; then
             echo "No suitable tag found. Exiting."

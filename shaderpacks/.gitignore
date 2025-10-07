@@ -1,8 +1,13 @@
 /*
 !/.gitignore
 !/complementary_glowing_ores.txt
-!/complementary-unbound.pw.toml
+# Complementary r5.6仅有modrinth版本, cf上为5.1.1
+!/ComplementaryUnbound_r5.6.zip
 !/bsl-shaders.pw.toml
+!/bliss-shader.pw.toml
+
+# 仅为了这些文件能被删掉而保留，后续会清理
+!/complementary-unbound.pw.toml
+!/Bliss_v2.1.1_(Chocapic13_Shaders_edit).zip
 !/Euphoria_Complementary_r5.5.1_Patches_1.6.3_Patched.zip
-!/BSL_v10.0_Patched.zip
 !/ComplementaryUnbound_r5.5.1_Patched.zip

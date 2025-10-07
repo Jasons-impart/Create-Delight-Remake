@@ -10,19 +10,12 @@
 	EnableInform = true
 	#Whether send inform with icon.
 	EnableInformIcon = true
+	#Enable local calendar and local info synchronization.
+	EnableLocalInfoAndCalendar = true
 	#Whether to pop up the solar term reminder when the calendar item cannot be placed.
 	CalendarItemHint = false
 	#In summer, the days are long and the nights are short, while in winter, the days are short and the nights are long.
 	DynamicDaylightDuration = true
-	#List of dimensions where season effects apply. Must be natural worlds with a day-night cycle.
-	ValidDimensions = ["minecraft:overworld"]
-	#If snow falls during cold weather, it will gradually cover all solid blocks and grass.
-	SnowyWinter = true
-	#Snow will not appear in overly bright areas, here define restriction levels.
-	NotSnowyNearGlowingBlock = true
-	#Snow will not appear in overly bright areas.
-	#Range: 1 ~ 15
-	NotSnowyNearGlowingBlockLevel = 10
 	#Day time length of spring, divided into six periods according to the solar term table.
 	SpringDayTimes = [10500, 11000, 11500, 12000, 12500, 13000]
 	#Day time length of summer, divided into six periods according to the solar term table.
@@ -33,30 +26,30 @@
 	WinterDayTimes = [10500, 10000, 9500, 9000, 9500, 10000]
 	#Day time length of none season, divided into six periods according to the solar term table.
 	NoneDayTimes = [12000]
-	#Not just the top layer, now even the leaves below are dusted with frost and snow.
-	SnowyTree = true
-	#Specify block IDs here to prevent those blocks from being covered by snow.
-	ForceBlocksNotSnowy = []
-	#Enable local calendar and local info synchronization.
-	EnableLocalInfoAndCalendar = true
+	#List of dimensions where season effects apply. Must be natural worlds with a day-night cycle.
+	ValidDimensions = ["minecraft:overworld"]
 	#The timing of snowfall now varies within a certain range each year.
 	DynamicSnowTerm = true
+	#Enable the season definitions system.
+	EnableSeasonDefinition = false
 
 [Weather]
 	#Enable the Ecliptic local weather system that adapts weather to each biome.
 	UseSolarWeather = true
-	#Multiplier (0-1000) affecting how likely rain will occur.
-	#Range: 0 ~ 1000
-	RainChancePercentMultiplier = 40
-	#Multiplier (0-1000) affecting how likely thunder will occur.
-	#Range: 0 ~ 1000
-	ThunderChancePercentMultiplier = 20
-	#Set it true to initialize weather and snow when loading the mod or level for the first time.
-	ShouldInitWeather = false
 	#Enable weather regions, linking specific biomes to particular weather to prevent scattered patterns.
 	EnableWeatherRegion = true
 	#Prevent rain from occurring in biomes without precipitation like desert.
 	NotRainInDesert = false
+	#Set it true to initialize weather and snow when loading the mod or level for the first time.
+	ShouldInitWeather = false
+	#Multiplier (0-1000) affecting the chance of rain. Higher values make rain more likely.
+	#Range: 0 ~ 1000
+	RainChancePercentMultiplier = 40
+	#Multiplier (0-1000) affecting the chance of thunder. Higher values make thunder more likely.
+	#Range: 0 ~ 1000
+	ThunderChancePercentMultiplier = 20
+	#Clear rain or thunder status after the player sleeps.
+	ClearAfterSleep = false
 
 [Temperature]
 	#Ice or snow layer will melt in warm time.
@@ -71,89 +64,122 @@
 	EnableSeasonalCrop = true
 	#Enable crop humidity control.
 	EnableCropHumidityControl = true
+	#If enabled, humidity check will transition smoothly instead of snapping.
+	CropHumidityTransition = true
+	#Send message to player if failed to use bone meal on crop.
+	BoneMealFailureMessage = true
+	#Consume anyway if failed to use bone meal on crop.
+	BoneMealConsumeOnFailure = true
 	#The maximum effective diameter of the greenhouse.
 	#Range: 5 ~ 256
 	GreenHouseMaxDiameter = 32
-	#The maximum effective diameter of the greenhouse.
+	#The maximum effective height of the greenhouse.
 	#Range: 3 ~ 128
 	GreenHouseMaxHeight = 10
-	#Chance that crops fail to grow due to low sunlight inside the greenhouse.
-	#Range: 0 ~ 10000
-	DarkGreenhouseFailChance = 2000
-	#Whether to enable complex shape checking.
-	ComplexGreenHouseCheck = true
-	#[Deprecated]If a crop is not registered for a season or humid type, default values will be used.
-	RegisterCropDefaultValue = false
-	#Force all crops to use compatibility mode for growth control, not just those tagged as eclipticseasons:natural_plants.
-	ForceCompatMode = false
 	#Build a simple greenhouse without core blocks and humidity modifiers.
 	SimpleGreenHouseMode = false
 	#If true, the Humidifier block will no longer consume blocks during conversion.
 	NoCostHumidifier = false
-	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
-	UseBoxDistance = true
-	#Send message to player if failed to use bone meal on crop.
-	BoneMealFailureMessage = true
 	#The working range of the Season Core block.
 	#Range: 4 ~ 31
 	SeasonCoreRange = 15
-	#Consume anyway if failed to use bone meal on crop.
-	BoneMealConsumeOnFailure = true
-	#If enabled, humidity check will transition smoothly instead of snapping.
-	CropHumidityTransition = true
+	#Whether to enable complex shape checking.
+	ComplexGreenHouseCheck = true
+	#Calculate the working range of the greenhouse block by box distance and not Euclidean range.
+	UseBoxDistance = true
+	#[Deprecated]If a crop is not registered for a season or humid type, default values will be used.
+	RegisterCropDefaultValue = false
+	#Force all crops to use compatibility mode for growth control, not just those tagged as eclipticseasons:natural_plants.
+	ForceCompatMode = false
 	#Save environmental humidity modifiers to chunk file.
 	SaveChunkEnvironmentalHumidity = true
-
-[Compat]
-	#Compatible with mods using SereneSeasons' CropTag.
-	SereneSeasonsCropTag = true
-	#If a mod tries to query biome precipitation using the raw method, would adjust it to correctly ignore small biomes like rivers.
-	FixBiomePrecipitation = true
-
-[Debug]
-	#Enable debug option to detect illegal use of functions.
-	LogIllegalUse = false
-	#Disable snowy blocks beneath light sources with light level 0.
-	NotSnowyUnderLight0 = false
-	#Snow overlay block if has full collision shape not just full render shape.
-	SnowyFullCollisionShape = false
-	#Snow can cover the block which would lights.
-	NotSnowOverlayGlowingBlock = false
-	#Enable the season definitions system.
-	EnableSeasonDefinition = false
-	#Disable chunk extra info cache cleanup.
-	DisableChunkCacheCleaner = false
-	#Disable unique rebinding for biome tags. Note that after disabling, tags may overlap.
-	DisableUniqueBiomeTagsRebinding = false
-
-[Map]
-	#The map color of blocks will change during snow.
-	ChangeMapColor = true
-	#Delay updating the top block to snowy when height map changes during snowfall.
-	ServerRealisticSnowyChange = false
-
-[Resource]
-	#Enable extra built-in snow definitions resourcepack for game.
-	ExtraSnowDefinitions = false
+	#Chance that crops fail to grow inside the greenhouse due to insufficient light. Higher values make failure more likely.
+	#Range: 0 ~ 10000
+	LowLightGreenhouseFailChance = 2000
 
 [Animal]
 	#Enable seasonal animal breed.
 	EnableSeasonalBreed = false
 	#Enable seasonal bee behavior, bee would like spring and not like winter and cold.
 	EnableSeasonalBee = false
-	#Enable seasonal fishing behavior, let enjoy summer.
-	EnableSeasonalFishing = false
-	#Greenhouse core would also work for animal check but not need a greenhouse.
-	EnableCoreWork = true
 	#Seasons in which bees are able to pollinate crops and flowers.
 	#Default: [SPRING]
 	BeePollinateSeasons = ["SPRING"]
 	#Seasons in which bees are generally active outside the hive.
 	#Default: [SPRING, SUMMER, AUTUMN]
 	BeeActiveSeasons = ["SPRING", "SUMMER", "AUTUMN"]
+	#Enable seasonal fishing behavior, let enjoy summer.
+	EnableSeasonalFishing = false
 	#Seasons during which fishing is allowed or more effective.
 	#Default: [SUMMER]
 	FishingSeasons = ["SUMMER"]
 	#Reduce fish availability during thunderstorms.
 	LessFishInThunder = false
+	#Season Core affects animals even without a greenhouse.
+	SeasonCoreAffectsAnimals = true
+
+[Compat]
+	#Compatible with mods using SereneSeasons' CropTag.
+	SereneSeasonsCropTag = true
+	#If a mod tries to query biome precipitation using the raw method, would adjust it to correctly ignore small biomes like rivers.
+	FixBiomePrecipitation = true
+	#If true, saplings will be ignored when applying Serene Seasons crop tags.
+	#Set to false if you want saplings to also follow seasonal crop rules.
+	SereneSeasonsCropTagIgnoreSapling = true
+	#Crops should get automatic humidity values based on seasons from Serene Season Crop Tag.
+	SereneSeasonCropTagBasedHumidity = true
+	#A blacklist of mods whose crops should NOT get automatic humidity values based on seasons.
+	#Add mod IDs here to prevent seasonal humidity assignment.
+	#Example: ["vinery", "meadow"]
+	ModsWithoutSereneSeasonBasedHumidity = []
+	#When a mod tries to query global weather parameters directly instead of using our API, Solar Weather will determine the result based on a weighted vote from the areas around players.
+	#Range: 0.0 ~ 1.0
+	WeatherVotePercent = 0.5
+
+[Debug]
+	#“Enable logging for illegal function usage.
+	LogIllegalUse = false
+	#Disable snowy blocks beneath light sources with light level 0.
+	NotSnowyUnderLight0 = false
+	#Snow can cover the block which would lights.
+	NotSnowOverlayGlowingBlock = false
+	#Disable chunk extra info cache cleanup.
+	DisableChunkCacheCleaner = false
+	#Disable unique rebinding for biome tags. Note that after disabling, tags may overlap.
+	DisableUniqueBiomeTagsRebinding = false
+	#Set to false to disable tag which stops block from snowy is tagged with "eclipticseasons:snow_overlay_cannot_survive_on".
+	DisableSnowOverlayControlTag = false
+	#Disable cauldron enhancement, they will no longer turn into snow-filled or ice-filled cauldrons when it snows.
+	DisableIceOrSnowCauldron = false
+
+[Map]
+	#The map color of blocks will change during snow.
+	ChangeMapColor = true
+
+[Resource]
+	#Enable extra built-in snow definitions resourcepack for game.
+	ExtraSnowDefinitions = false
+
+[Snow]
+	#If snow falls during cold weather in warm biomes, it will gradually cover all solid blocks and grass.
+	SnowyWinter = true
+	#Not just the top layer, now even the leaves below are dusted with frost and snow.
+	SnowyTree = true
+	#Snow will not appear in overly bright areas, here define restriction levels.
+	NotSnowyNearGlowingBlock = true
+	#Snow will not appear in overly bright areas.
+	#Range: 1 ~ 15
+	NotSnowyNearGlowingBlockLevel = 10
+	#Specify block IDs here to prevent those blocks from being covered by snow.
+	ForceBlocksNotSnowy = []
+	#Snow Line Height, define like ["#c:is_cold/overworld", 200].
+	BiomeSnowLines = []
+	#Snowfall is now bound to world position rather than only to biomes. This allows for more location-based operations, such as snow sweeping and localized snowfall events.
+	SnowInWorld = false
+	#When SnowInWorld is enabled, update chunk state on load based on differences from previous state records.
+	ForceSnowyChunkUpdate = true
+	#When SnowInWorld is enabled, blocks like full blocks under snow layers will have a snowy appearance.
+	SnowCoverUnderBlocks = true
+	#When SnowInWorld is enabled, snow may melt when stepped on due to heat.
+	SnowStepMelt = false
 
