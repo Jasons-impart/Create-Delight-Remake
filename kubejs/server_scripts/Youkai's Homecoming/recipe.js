@@ -77,7 +77,7 @@ ServerEvents.recipes(e => {
 
     e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
-        .id(`ratatouille:baking/${recipe.getOriginalRecipeIngredients().getId().split(":")[1]}`)
+        .id(`ratatouille:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
     })
 
     //饭团
