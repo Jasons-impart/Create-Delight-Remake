@@ -194,6 +194,9 @@ ItemEvents.modification(e => {
     
     // 食物修改为快速食用
     food_fastToEat("ends_delight:chorus_fruit_popsicle")
+    food_fastToEat('fruitsdelight:blueberry_muffin')
+    food_fastToEat('fruitsdelight:cranberry_muffin')
+    food_fastToEat('bakeries:cup_cake')
 
     // 食物效果修改
     food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
@@ -243,7 +246,7 @@ ItemEvents.modification(e => {
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
-        //紫颂果食物传送效果'ends_delight:chorus_fruit_grain'
+        //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:chorus_cookie", "fruitsdelight:chorus", 0.05)
@@ -252,6 +255,22 @@ ItemEvents.modification(e => {
     food_effects("ends_delight:chorus_flower_pie", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:chorus_flower_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:chorus_fruit_pie_slice", "fruitsdelight:chorus", 0.05)
+    food_effects("cosmopolitan:chorus_fruit_popsicle_double", "fruitsdelight:chorus", 0.05)
+        //冰棍抗火效果
+    food_effects('youkaishomecoming:milk_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('fruitsdelight:hamimelon_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('fruitsdelight:kiwi_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('youkaishomecoming:big_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('mynethersdelight:tear_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('farmersdelight:melon_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('ends_delight:chorus_fruit_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('casualness_delight:green_tongue', "minecraft:fire_resistance", 10)
+    food_effects('collectorsreap:lime_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:berry_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('createdelight:empty_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
+    food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
+    food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
         
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
