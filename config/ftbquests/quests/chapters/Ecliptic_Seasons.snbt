@@ -12,24 +12,11 @@
 		{
 			icon: "eclipticseasons:calendar"
 			id: "3F7431683708E805"
-			rewards: [
-				{
-					id: "2AB1F8597F80D803"
-					item: "eclipticseasons:calendar"
-					type: "item"
-				}
-				{
-					id: "0BF394873A6FDCF5"
-					item: {
-						Count: 1
-						id: "patchouli:guide_book"
-						tag: {
-							"patchouli:book": "eclipticseasons:seasons_chronicle"
-						}
-					}
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "2AB1F8597F80D803"
+				item: "eclipticseasons:calendar"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "在这里将会详细讲述本整合包的&e种植系统"
