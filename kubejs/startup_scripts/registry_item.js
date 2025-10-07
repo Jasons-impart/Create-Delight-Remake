@@ -134,6 +134,32 @@ StartupEvents.registry("item", e => {
             .translationKey(`item.createdelight.unbaked_${muffin}`)
     })
 
+    //注册冰棍中间形态
+    let popsicle_list = [
+        'empty',
+        'chorus_fruit',
+        'tear',
+        'milk',
+        'hamimelon',
+        'lime',
+        'kiwi',
+        'berry',
+        'big'
+    ]
+    popsicle_list.forEach(popsicle => {
+        e.create(`createdelight:${popsicle}_popsicle_mold_filled`)
+            .tag("forge:popsicle_mold_filled")
+            .translationKey(`item.createdelight.${popsicle}_popsicle_mold_filled`)
+        e.create(`createdelight:${popsicle}_popsicle_mold_solid`)
+            .tag("forge:popsicle_mold_solid")
+            .translationKey(`item.createdelight.${popsicle}_popsicle_mold_solid`)
+    })
+        e.create("createdelight:green_tongue_mold_filled")
+            .tag("forge:popsicle_mold_filled")
+            .translationKey("item.createdelight.green_tongue_mold_filled")
+        e.create("createdelight:green_tongue_mold_solid")
+            .tag("forge:popsicle_mold_solid")
+            .translationKey("item.createdelight.green_tongue_mold_solid")
 
     // 开酥相关
     e.create("createdelight:butter")
@@ -187,6 +213,7 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(2)
                 .saturation(0.25)
+                .fastToEat()
         })
     // 鱿鱼圈
     e.create("createdelight:raw_calamari")
