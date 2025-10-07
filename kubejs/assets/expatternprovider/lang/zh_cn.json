@@ -3,6 +3,7 @@
   "block.expatternprovider.ex_pattern_provider": "ME扩展样板供应器",
   "block.expatternprovider.ex_interface": "ME扩展接口",
   "block.expatternprovider.wireless_connect": "ME无线连接器",
+  "block.expatternprovider.wireless_hub": "ME无线集线器",
   "block.expatternprovider.ingredient_buffer": "ME原料缓存器",
   "block.expatternprovider.ex_drive": "ME扩展驱动器",
   "block.expatternprovider.ex_molecular_assembler": "扩展分子装配室",
