@@ -110,6 +110,12 @@
 - AllTheLeaks (Memory Leak Fix)
   - https://www.mcmod.cn/class/17405.html
   - 发现整合包以前用的memoryleakfix有问题，已替换为AllTheLeaks
+- C2ME - forge
+  - https://www.mcmod.cn/class/21774.html
+  - 优化区块的并行生成、I/O、加载
+- Create: Fast Schematic Cannon
+  - https://www.mcmod.cn/class/22205.html
+  - 降低蓝图炮的占用
 
 # 考虑中的实用模组
 - 卓越火炬
