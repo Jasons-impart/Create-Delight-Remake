@@ -1,7 +1,7 @@
 {
 	id: "743B0B748B7CE8EC"
 	loot_size: 1
-	order_index: 20
+	order_index: 19
 	rewards: [
 		{ item: "createcafe:iced_coffee", weight: 10.0f }
 		{ item: "createcafe:iced_coffee_milk" }
