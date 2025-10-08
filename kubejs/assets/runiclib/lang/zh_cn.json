@@ -38,6 +38,23 @@
   "effect.runiclib.venom.description": "随时间推移对使用者造成致命伤害。",
   "effect.runiclib.water_walking": "凌波微步",
   "effect.runiclib.water_walking.description": "允许使用者在水面行走。",
+  "effect.runiclib.adrenaline": "肾上腺素涌动",
+  "effect.runiclib.adrenaline.description": "生命值占生命上限的比例越低，使用者的移动速度越快。",
+  "effect.runiclib.burning_thorns": "燃烧荆棘",
+  "effect.runiclib.burning_thorns.description": "使攻击者燃烧。",
+  "effect.runiclib.caffeinated": "咖啡因兴奋",
+  "effect.runiclib.caffeinated.description": "小幅提升所有主要属性。",
+  "effect.runiclib.caffeine_crash": "咖啡因消退",
+  "effect.runiclib.caffeine_crash.description": "小幅降低所有主要属性。",
+  "effect.runiclib.lesser_strength": "力量(弱化)",
+  "effect.runiclib.lesser_strength.description": "增加+1.0点攻击伤害。",
+  "effect.runiclib.lesser_weakness": "虚弱(弱化)",
+  "effect.runiclib.lesser_weakness.description": "减少-1.0点攻击伤害。",
+  "effect.runiclib.retaliation": "反击",
+  "effect.runiclib.retaliation.description": "对攻击者造成伤害。",
+  "effect.runiclib.shatterspleen": "脾脏破裂",
+  "effect.runiclib.shatterspleen.description": "使承受的伤害按倍数增加。",
+
 
   "runiclib.generic.burning_retaliation_chance": "灼热反噬概率",
   "runiclib.generic.burning_retaliation_length": "灼热反噬时长",
@@ -50,4 +67,5 @@
   "runiclib.generic.retaliation_chance": "反噬概率",
   "runiclib.generic.vulnerability_chance": "破绽暴露概率",
   "runiclib.generic.vulnerability_multiplier": "易伤倍率"
+
 }
