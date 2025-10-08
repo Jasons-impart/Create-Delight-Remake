@@ -97,25 +97,26 @@
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
-- Placebo
-  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
-- FerriteCore
-  - 内存占用优化 https://www.mcmod.cn/class/3888.html
+- Radium Reforged
+  - 优化各种原版机制计算方法 https://www.mcmod.cn/class/5580.html
+- moestweaks
+  - 关闭配方书 https://www.mcmod.cn/class/17039.html
 - Noisium
   - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
+- C2ME - forge
+  - 优化区块生成、I/O、加载 https://www.mcmod.cn/class/21774.html
+- FerriteCore
+  - 内存占用优化 https://www.mcmod.cn/class/3888.html
+- Placebo
+  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
 - fastboot
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
-- Saturn
- - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
 - AllTheLeaks (Memory Leak Fix)
-  - https://www.mcmod.cn/class/17405.html
-  - 发现整合包以前用的memoryleakfix有问题，已替换为AllTheLeaks
-- C2ME - forge
-  - https://www.mcmod.cn/class/21774.html
-  - 优化区块的并行生成、I/O、加载
+  - 修复内存泄漏 https://www.mcmod.cn/class/17405.html
 - Create: Fast Schematic Cannon
-  - https://www.mcmod.cn/class/22205.html
-  - 降低蓝图炮的占用
+  - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
+- Krypton Reforged
+  - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
 
 # 考虑中的实用模组
 - 卓越火炬
@@ -130,11 +131,8 @@
   - 整合包当前使用已经会refill，但丢弃的时候不会refill，加入这个mod丢弃时会refill。
 
 # 考虑中的优化模组
-- Chunk Sending
+- Chunk Sending 
   - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
-- Krypton Reforged
-  - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
-  - 建议**仅服务端**安装
 - Acedium
   - 使用NV专用OpenGL扩展提高fps https://www.mcmod.cn/class/16808.html
 - Fast Paintings
