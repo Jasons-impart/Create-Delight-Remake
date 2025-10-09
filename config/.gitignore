@@ -70,3 +70,4 @@ xaerominimap_entities.json
 /NoChatReports/*
 !/NoChatReports/NCR-Client.json
 !/iris_shader_folder.properties
+!/advancements_tracker-client.toml
