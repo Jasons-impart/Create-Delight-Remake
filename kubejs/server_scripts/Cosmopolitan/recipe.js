@@ -4,7 +4,7 @@ ServerEvents.recipes(e => {
         "cosmopolitan:create/pressing/wafer_cone",
         "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying"
     ])
-    const {kubejs, create} = e.recipes
+    const {kubejs, create, create_new_age} = e.recipes
     kubejs.shapeless("cosmopolitan:wafer", [
         "farmersdelight:wheat_dough",
         "ratatouille:cocoa_powder"
@@ -29,4 +29,23 @@ ServerEvents.recipes(e => {
         "4x #forge:berries",
         Fluid.of("createcafe:melted_sugar", 500)
     ]).heated().id("cosmopolitan:mixing/cream_bucket")
+    {
+        let iner = 'cosmopolitan:arbutus_berries'
+        create.sequenced_assembly("createdelight:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
+            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 120)]),
+            create.deploying(iner, [iner, "minecraft:gold_block"]),
+            create.deploying(iner, [iner, "minecraft:gold_block"]),
+            create_new_age.energising(iner, iner, 2000000)
+        ])
+        .loops(4)
+        .transitionalItem(iner)
+        .id("createdelight:enchanted_golden_arbutus_berries")
+    }
+    create.filling(
+        'cosmopolitan:golden_arbutus_berries',
+        [
+            'cosmopolitan:arbutus_berries',
+            Fluid.of("createmetallurgy:molten_gold", 450)
+        ]
+    ).id("cosmopolitan:filling/golden_arbutus_berries")
 })
