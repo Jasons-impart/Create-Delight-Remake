@@ -249,5 +249,11 @@
             "cosmopolitan:fiddlehead"
         ],
         "resultItems": "alexscaves:fiddlehead"
+    },
+    {
+        "matchItems": [
+            "quark:moss_paste"
+        ],
+        "resultItems": "miners_delight:moss"
     }
 ]

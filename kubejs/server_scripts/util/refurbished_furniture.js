@@ -26,9 +26,12 @@ function combination(event, inputs, output, count) {
             let ingr = inputs[index];
             deploy_list.push(event.recipes.create.deploying(inputs[0], [inputs[0], ingr]))
         }
+        let trans = Item.of(`createdelight:incomplete_${output.split(":")[1]}`)
+        if (trans.isEmpty())
+            trans = inputs[0]
         event.recipes.create.sequenced_assembly(output, inputs[0], deploy_list)
         .loops(1)
-        .transitionalItem(inputs[0])
+        .transitionalItem(trans)
         .id(`create:sequenced_assembly/${output.split(":")[1]}`)
     }
         

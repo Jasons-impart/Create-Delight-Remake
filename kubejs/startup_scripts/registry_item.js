@@ -665,6 +665,38 @@ StartupEvents.registry("item", e => {
         e.create(`createdelight:incomplete_${item.split(":")[1]}`, "create:sequenced_assembly")
             .translationKey(`item.createdelight.incomplete_${item}`)
     })
+    let incomplete_burger = [
+        "alexsdelight:bison_burger",
+        "culturaldelights:eggplant_burger",
+        "farmersdelight:hamburger",
+        "silentsdelight:heartburger",
+        "vintagedelight:cheese_burger",
+        "vintagedelight:deluxe_burger",
+        "collectorsreap:portobello_burger",
+        "collectorsreap:land_and_sea_burger"
+    ].forEach(item => {
+        e.create(`createdelight:incomplete_${item.split(":")[1]}`, "create:sequenced_assembly")
+            .texture("create_central_kitchen:item/incomplete_hamburger")
+            .translationKey(`item.createdelight.incomplete_${item}`)
+    })
+    let incomplete_sandwich = [
+        "alexsmobs:kangaroo_burger",
+        "alexsdelight:bunfungus_sandwich",
+        "culturaldelights:mutton_sandwich",
+        "farmersdelight:egg_sandwich",
+        "farmersdelight:chicken_sandwich",
+        "farmersdelight:bacon_sandwich",
+        "collectorsreap:prawn_po_boy",
+        "cavedelight:lux_and_ham_sandwich",
+        "cavedelight:pine_and_sap_sandwich",
+        "miners_delight:vegan_hamburger",
+        "miners_delight:squid_sandwich",
+        "miners_delight:insect_sandwich"
+    ].forEach(item => {
+        e.create(`createdelight:incomplete_${item.split(":")[1]}`, "create:sequenced_assembly")
+            .texture("create_central_kitchen:incomplete_bacon_sandwich")
+            .translationKey(`item.createdelight.incomplete_${item}`)
+    })
     // // AE: 未完成的 熵变机械臂 充能手杖 样板
     // ["charged_staff", "entropy_manipulator", "blank_pattern"]
     // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")

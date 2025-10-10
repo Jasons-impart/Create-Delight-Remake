@@ -109,6 +109,10 @@ ServerEvents.recipes(e => {
         "trailandtales_delight:dried_cherry_petal",
         "trailandtales_delight:cherry_petal"
     ).id("youkaishomecoming:dried_cherry_petal_drying")
+    ratatouille.baking(
+        "trailandtales_delight:dried_cherry_petal",
+        "trailandtales_delight:cherry_petal"
+    ).id("youkaishomecoming:baking/dried_cherry_petal")
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
         .id("youkaishomecoming:pressing/clay_saucer")
 
