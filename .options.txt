@@ -108,7 +108,7 @@ key_key.spectatorOutlines:key.keyboard.unknown
 key_key.swapOffhand:key.keyboard.f
 key_key.saveToolbarActivator:key.keyboard.unknown
 key_key.loadToolbarActivator:key.keyboard.unknown
-key_key.advancements:key.keyboard.l
+key_key.advancements:key.keyboard.unknown
 key_key.hotbar.1:key.keyboard.1
 key_key.hotbar.2:key.keyboard.2
 key_key.hotbar.3:key.keyboard.3
@@ -236,6 +236,8 @@ key_tetra.toolbelt.binding.restock:key.keyboard.unknown
 key_tetra.toolbelt.binding.open:key.keyboard.unknown
 key_tetra.toolbelt.binding.secondary_use:key.keyboard.unknown
 key_key.taczaddon.switch_gun.desc:key.keyboard.tab
+key_advancements_tracker.keys.show_widget:key.keyboard.l:ALT
+key_advancements_tracker.keys.show_overview:key.keyboard.l
 key_key.immersive_aircraft.fallback_control_left:key.keyboard.unknown
 key_key.immersive_aircraft.fallback_control_right:key.keyboard.unknown
 key_key.immersive_aircraft.fallback_control_forward:key.keyboard.unknown

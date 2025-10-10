@@ -1,7 +1,7 @@
 {
 	id: "727701800F2CDE21"
 	loot_size: 1
-	order_index: 25
+	order_index: 24
 	rewards: [
 		{ count: 4, item: "cosmopolitan:glimmering_gulime", random_bonus: 8 }
 		{ count: 4, item: "cosmopolitan:chorus_gulime", random_bonus: 8 }

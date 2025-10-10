@@ -49,13 +49,7 @@ ItemEvents.tooltip(e => {
         'kinetic_pixel:graycottonseed',
     ])
     clearAddShiftCtrlTooltip(e, [
-        'brewinandchewin:keg',
-        "createdelight:emergency_industrial_platform",
-        "createdelight:emergency_industrial_platform_block",
-        "createdelight:emergency_industrial_platform_dark",
-        "createdelight:emergency_industrial_platform_dark_block",
-        "createdelight:emergency_industrial_platform_lime",
-        "createdelight:emergency_industrial_platform_lime_block",
+        'brewinandchewin:keg'
     ])
     addAir(e, [
         'create:netherite_backtank',

@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const { create, farmersdelight, youkaishomecoming, kubejs } = e.recipes
+    const { create, farmersdelight, youkaishomecoming, kubejs, ratatouille } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
         .id("create:compacting/ash")
@@ -74,6 +74,12 @@ ServerEvents.recipes(e => {
     ]}, "minecraft:cherry_leaves", "trailandtales_delight:cherry_petal")
     e.replaceInput({}, "youkaishomecoming:tea_leaves", "#forge:tea_leaves/green")
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
+
+    e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {
+        ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
+        .id(`ratatouille:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
+    })
+
     //饭团
     kubejs.shapeless(
         '2x youkaishomecoming:onigili',
