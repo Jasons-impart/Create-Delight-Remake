@@ -12,10 +12,11 @@ ServerEvents.recipes(e => {
     //汉堡
     combination(e, [
         "some_assembly_required:burger_bun",
+        "alexsdelight:bison_patty",
         "#forge:salad_ingredients",
         "#forge:vegetables/tomato",
-        "#forge:vegetables/beetroot",
-        "alexsdelight:bison_patty"], "alexsdelight:bison_burger", 1)
+        "#forge:vegetables/beetroot"
+    ], "alexsdelight:bison_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
         "#culturaldelights:smoked_regular_eggplants",
@@ -38,21 +39,21 @@ ServerEvents.recipes(e => {
     ], "silentsdelight:heartburger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
+        "ad_astra:cheese",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
         "#forge:vegetables/tomato",
-        "#forge:vegetables/onion",
-        "ad_astra:cheese"
+        "#forge:vegetables/onion"
     ], "vintagedelight:cheese_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
+        "#forge:cooked_bacon",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
         "#forge:vegetables/tomato",
         "#forge:vegetables/onion",
         "ad_astra:cheese",
-        "#forge:cooked_eggs",
-        "#forge:cooked_bacon"
+        "#forge:cooked_eggs"
     ], "vintagedelight:deluxe_burger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
@@ -116,8 +117,8 @@ ServerEvents.recipes(e => {
     ], "collectorsreap:prawn_po_boy", 1)
     combination(e, [
         "minecraft:bread",
-        "#forge:salad_ingredients",
         "alexscaves:tectonic_shard",
+        "#forge:salad_ingredients",
         "#forge:ham"
     ], "cavedelight:lux_and_ham_sandwich", 1)
     combination(e, [

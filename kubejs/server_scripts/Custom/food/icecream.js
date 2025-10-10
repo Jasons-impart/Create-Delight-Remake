@@ -32,15 +32,6 @@ ServerEvents.recipes(e => {
             icecreamscoop,
             Fluid.of(outputFluidIcecream, 750)
         ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
-        kubejs.shapeless(
-            icecreamblock,
-            [
-                icecreamscoop,
-                icecreamscoop,
-                icecreamscoop,
-                icecreamscoop,
-            ]
-        ).id(`createdelight:storage/${icecreamblock.split(":")[1]}`)
         create.deploying(
             icecream,
             [
