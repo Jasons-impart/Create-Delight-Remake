@@ -2,7 +2,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "cosmopolitan:general/wafer",
         "cosmopolitan:create/pressing/wafer_cone",
-        "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying"
+        "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying",
+        "cosmopolitan:farmersdelight/cutting/fern"
     ])
     const {kubejs, create, create_new_age} = e.recipes
     kubejs.shapeless("cosmopolitan:wafer", [
@@ -48,4 +49,25 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_gold", 450)
         ]
     ).id("cosmopolitan:filling/golden_arbutus_berries")
+    cutting(e,  'minecraft:fern',
+        [
+            ["minecraft:wheat_seeds"],
+            ['alexscaves:fiddlehead', 1, 0.75],
+            ['alexscaves:fiddlehead', 1, 0.25]
+        ]
+    )
+    cutting(e,  'minecraft:large_fern',
+        [
+            ["minecraft:wheat_seeds"],
+            ['alexscaves:fiddlehead'],
+            ['alexscaves:fiddlehead', 1, 0.25]
+        ]
+    )
+    cutting(e,  'alexscaves:curly_fern',
+        [
+            ["minecraft:wheat_seeds"],
+            ['alexscaves:fiddlehead'],
+            ['alexscaves:fiddlehead', 1, 0.25]
+        ]
+    )
 })

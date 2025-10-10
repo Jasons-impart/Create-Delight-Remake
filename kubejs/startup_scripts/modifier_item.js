@@ -198,7 +198,7 @@ ItemEvents.modification(e => {
     food_fastToEat('fruitsdelight:cranberry_muffin')
     food_fastToEat('bakeries:cup_cake')
 
-    // 食物效果修改
+    // 食物饱食度修改
     food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
     food_hungers("ratatouille:cake_base", 7, 4.5)
     food_hungers("casualness_delight:cooked_donkey_meat", 6, 4.5)
@@ -221,6 +221,9 @@ ItemEvents.modification(e => {
     food_hungers("create:blaze_cake", 10, 7)
     food_hungers("oceanic_delight:shrimp_chips", 4, 5.5)
     food_hungers("create:sweet_roll", 8, 6)
+    food_hungers("alexscaves:fiddlehead", 1, 0.5)
+
+    // 食物效果修改
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
     e.modify("culturaldelights:glow_squid", item => {
@@ -246,6 +249,7 @@ ItemEvents.modification(e => {
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
+    food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
         //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
