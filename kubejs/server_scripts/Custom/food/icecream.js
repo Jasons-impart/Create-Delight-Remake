@@ -127,3 +127,6 @@ ServerEvents.recipes(e => {
         "createdelight:enhanced_fruit_milkshake", "createdelightcore:enhanced_fruit_ice_cream_scoop",
         "cosmopolitan:enchanted_fruit_ice_cream", "cosmopolitan:enchanted_fruit_milkshake", "cosmopolitan:enchanted_fruit_ice_cream_block")
 })
+ItemEvents.rightClicked("createdelight:incomplete_neapolitan_ice_cream", e => {
+    e.player.sendData("kubejs_player_playsound", {soundEvent: "neapolitan:item.ice_cream.eat"})
+})
