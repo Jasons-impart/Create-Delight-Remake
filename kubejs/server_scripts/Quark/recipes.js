@@ -22,6 +22,7 @@ ServerEvents.recipes(e => {
         "quark:mobs/smoking/cooked_crab_leg",
         "quark:mobs/campfire/cooked_crab_leg"
     ])
+    e.replaceInput({id: "quark:automation/crafting/feeding_trough"}, "minecraft:wheat", "farmersdelight:straw")
     e.recipes.create.mixing(
         Fluid.of("create_enchantment_industry:experience", 10),
         'quark:ancient_fruit'

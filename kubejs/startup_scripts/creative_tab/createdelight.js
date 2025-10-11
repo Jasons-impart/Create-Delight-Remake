@@ -33,6 +33,16 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:honey_cookie_dough',
     'createdelight:sweet_berry_cookie_dough',
     'createdelight:lime_cookie_dough',
+    'createdelight:chorus_cookie_dough',
+    'createdelight:bat_cookie_dough',
+    'createdelight:paw_cookie_dough',
+    // 未烤制玛芬
+    'createdelight:unbaked_red_velvet_cupcake',
+    'createdelight:unbaked_mixed_berry_muffin',
+    'createdelight:unbaked_chocolate_pumpkin_muffin',
+    'createdelight:unbaked_blueberry_muffin',
+    'createdelight:unbaked_cranberry_muffin',
+    'createdelight:unbaked_monster_muffin',
     // 生食物
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',
@@ -52,6 +62,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:empty_popsicle',
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
+    'createdelight:enchanted_golden_arbutus_berries',
   ])
 })
 StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
@@ -170,6 +181,12 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:lime_milkshake_bucket',
     'createdelight:pomegranate_milkshake_bucket',
     'createdelight:sweetberry_milkshake_bucket',
+    'createdelight:pumpkin_milkshake_bucket',
+    'createdelight:beetroot_milkshake_bucket',
+    'createdelight:apple_milkshake_bucket',
+    'createdelight:carrot_milkshake_bucket',
+    'createdelight:glow_berry_milkshake_bucket',
+    'createdelight:enhanced_fruit_milkshake_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])
@@ -179,12 +196,6 @@ StartupEvents.registry("creative_mode_tab", e => {
     .translationKey("itemGroup.createdelight.machine")
     .icon(() => Item.of("createdelight:electrolyzer"))
     .content(() => [
-      "createdelight:emergency_industrial_platform",
-      "createdelight:emergency_industrial_platform_block",
-      "createdelight:emergency_industrial_platform_lime",
-      "createdelight:emergency_industrial_platform_lime_block",
-      "createdelight:emergency_industrial_platform_dark",
-      "createdelight:emergency_industrial_platform_dark_block",
       'mbd2:mbd_gadgets',
     ])
 })

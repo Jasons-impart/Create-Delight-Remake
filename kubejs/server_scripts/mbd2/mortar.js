@@ -26,13 +26,15 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:mortar", e => {
     let event = e.event;
     const {recipeType, proxyTypeId, proxyType, proxyRecipeId, proxyRecipe} = event;
 
+    // console.log(` : ${proxyRecipe}`)
+    // console.log(`proxyTypeId: ${proxyTypeId}`)
     // make sure the recipe type is correct
     if (proxyTypeId.toString() === "create:milling") {
         
         let input = proxyRecipe.getIngredients()[0]; // we assume the ingredients has and only has one item.
         /**@type {Internal.MillingRecipe} */
         let proxyMillingRecipe = proxyRecipe
-        console.log(`proxyMillingRecipe: ${proxyMillingRecipe}`)
+        // console.log(`proxyMillingRecipe: ${proxyMillingRecipe}`)
         /**@type {Internal.MBDRecipeSchema$MBDRecipeJS} */
         let recipe = recipeType.recipeBuilder() // same as create recipe via kjs event
         recipe

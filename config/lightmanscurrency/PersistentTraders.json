@@ -3606,7 +3606,7 @@
         {
           "TradeType": "SALE",
           "SellItem": {
-            "ID": "createdelight:emergency_industrial_platform",
+            "ID": "industrial_platform:industrial_platform",
             "Count": 1
           },
           "Price": {

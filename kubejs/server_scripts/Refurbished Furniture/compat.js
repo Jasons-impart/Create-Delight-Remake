@@ -29,6 +29,6 @@ ServerEvents.recipes(e => {
         'some_assembly_required:toasted_bread_slice',
         'culturaldelights:cut_avocado'
     ], 'culturaldelights:avocado_toast', 1)
-    
+    e.replaceInput({type: "refurbished_furniture:workbench_constructing"}, "minecraft:wheat", "farmersdelight:straw")
 
 })

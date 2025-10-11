@@ -60,14 +60,15 @@
 - 修改variables.txt中的`JAVA_ARGS=`后面的内容
 
 # 关于整合包升级补丁
-- 当前会生成相对于最近一个git tag的补丁包
-- 由于简单的覆盖无法处理删除文件的情况，并不能保证补丁能100%正常运作。暂时没有写bat以支持删除对应文件的计划。
+- 当前会生成相对于最近一个git tag的补丁包，并附带一个bat用于删除被移除的文件。
+- 会在升级后的版本加上`(patch)`以示区分。
 - 对于mods文件夹下的改动，因为涉及到mod本体，不会包含在补丁包中，取而代之的是一个mod变化列表文件，放在补丁包根目录。
 
 # 开发相关tips记录
 
 ## 环境配置
 - 推荐使用[VSCode](https://code.visualstudio.com/)或者[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows)开发
+- 如果想使用AI IDE，推荐[Trae CN](https://www.trae.cn/)
 
 ## 杂项笔记
 - Kubejs的server/client脚本更改后可以直接在游戏内热加载`\kubejs reload server_scripts`，无需重启游戏
@@ -97,19 +98,26 @@
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
-- Placebo
-  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
-- FerriteCore
-  - 内存占用优化 https://www.mcmod.cn/class/3888.html
+- Radium Reforged
+  - 优化各种原版机制计算方法 https://www.mcmod.cn/class/5580.html
+- moestweaks
+  - 关闭配方书 https://www.mcmod.cn/class/17039.html
 - Noisium
   - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
+- C2ME - forge
+  - 优化区块生成、I/O、加载 https://www.mcmod.cn/class/21774.html
+- FerriteCore
+  - 内存占用优化 https://www.mcmod.cn/class/3888.html
+- Placebo
+  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
 - fastboot
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
-- Saturn
- - 修复了占用大量内存的内存泄露，如生物群系温度缓存、ticking tracker、生物 AI 清除等 https://www.mcmod.cn/class/7722.html
 - AllTheLeaks (Memory Leak Fix)
-  - https://www.mcmod.cn/class/17405.html
-  - 发现整合包以前用的memoryleakfix有问题，已替换为AllTheLeaks
+  - 修复内存泄漏 https://www.mcmod.cn/class/17405.html
+- Create: Fast Schematic Cannon
+  - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
+- Krypton Reforged
+  - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
 
 # 考虑中的实用模组
 - 卓越火炬
@@ -124,11 +132,8 @@
   - 整合包当前使用已经会refill，但丢弃的时候不会refill，加入这个mod丢弃时会refill。
 
 # 考虑中的优化模组
-- Chunk Sending
+- Chunk Sending 
   - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
-- Krypton Reforged
-  - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
-  - 建议**仅服务端**安装
 - Acedium
   - 使用NV专用OpenGL扩展提高fps https://www.mcmod.cn/class/16808.html
 - Fast Paintings
@@ -139,13 +144,12 @@
   - 和上面的AllTheLeaks不重合可以一起，https://www.mcmod.cn/class/11863.html
 - Let Me Despawn
   - 让拿起物品的怪物也会消失 https://www.mcmod.cn/class/7415.html
+- Nolijium
+  - 调整各种效果 https://www.mcmod.cn/class/18050.html
 - **有问题且停更，不加** Async Locator
   - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
   - 测试过会导致locate不返回结果
-- Radium Reforged
-  - 泛用的优化mod，锂的forge迁移版 https://www.mcmod.cn/class/5580.html
-- Nolijium
-  - 调整各种效果 https://www.mcmod.cn/class/18050.html
+
 # 考虑中的内容模组
 - 拾光定影
   - 拍照 https://www.mcmod.cn/class/12905.html

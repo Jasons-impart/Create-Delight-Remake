@@ -2,7 +2,7 @@ StartupEvents.modifyCreativeTab("minecraft:food_and_drinks", e => {
   e.remove([
     'farmersrespite:coffee',
     'farmersrespite:long_coffee',
-    'farmersrespite:strong_coffee' 
+    'farmersrespite:strong_coffee',
   ])
 })
 StartupEvents.modifyCreativeTab("minecraft:ingredients", e => {

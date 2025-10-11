@@ -24,7 +24,8 @@ ServerEvents.recipes(e => {
         "brewinandchewin:filling/create/milk_bucket",
         "brewinandchewin:emptying/create/milk_bottle",
         "brewinandchewin:emptying/create/milk_bucket",
-        "brewinandchewin:filling/create/milk_bottle"
+        "brewinandchewin:filling/create/milk_bottle",
+        "cosmopolitan:brewinandchewin/fermenting/root_beer"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",
@@ -102,6 +103,16 @@ ServerEvents.recipes(e => {
         'brewinandchewin:bloody_mary',
         'brewinandchewin:bloody_mary',
         4, 4800
+    )
+    frementing_3(e, "cosmopolitan:birch_sap", 
+        [
+            "minecraft:hanging_roots",
+            "farmersdelight:tree_bark",
+            "ratatouille:wheat_kernels"
+        ],
+        "cosmopolitan:root_beer",
+        'cosmopolitan:root_beer',
+        3, 9600
     )
     farmersdelight.cooking(
         [

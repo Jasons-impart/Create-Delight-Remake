@@ -243,5 +243,17 @@
             "youkaishomecoming:doughnut"
         ],
         "resultItems": "create_deepfried:donut"
+    },
+    {
+        "matchItems": [
+            "cosmopolitan:fiddlehead"
+        ],
+        "resultItems": "alexscaves:fiddlehead"
+    },
+    {
+        "matchItems": [
+            "quark:moss_paste"
+        ],
+        "resultItems": "miners_delight:moss"
     }
 ]

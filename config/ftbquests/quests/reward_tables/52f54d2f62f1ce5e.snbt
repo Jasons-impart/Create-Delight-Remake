@@ -1,7 +1,7 @@
 {
 	id: "52F54D2F62F1CE5E"
 	loot_size: 1
-	order_index: 26
+	order_index: 25
 	rewards: [
 		{ count: 16, item: "minecraft:mud", random_bonus: 16 }
 		{ count: 16, item: "minecraft:coarse_dirt", random_bonus: 16 }

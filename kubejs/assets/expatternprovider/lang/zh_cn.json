@@ -3,6 +3,7 @@
   "block.expatternprovider.ex_pattern_provider": "ME扩展样板供应器",
   "block.expatternprovider.ex_interface": "ME扩展接口",
   "block.expatternprovider.wireless_connect": "ME无线连接器",
+  "block.expatternprovider.wireless_hub": "ME无线集线器",
   "block.expatternprovider.ingredient_buffer": "ME原料缓存器",
   "block.expatternprovider.ex_drive": "ME扩展驱动器",
   "block.expatternprovider.ex_molecular_assembler": "扩展分子装配室",
@@ -36,6 +37,7 @@
   "item.expatternprovider.active_formation_plane": "ME主动成型面板",
   "item.expatternprovider.precise_export_bus": "ME精确输出总线",
   "item.expatternprovider.wireless_ex_pat": "无线扩展样板管理终端",
+  "item.expatternprovider.precise_storage_bus": "ME精确存储总线",
   "infinity.tooltip": "它是一个无限的来源。",
   "packaged_device.error.tooltip": "无效",
   "packaged_device.tooltip": "设备：%s",
@@ -140,15 +142,12 @@
   "block.expatternprovider.oversize_interface": "ME超大型接口",
   "item.expatternprovider.oversize_interface_part": "ME超大型接口",
   "gui.expatternprovider.oversize_interface": "ME超大型接口",
-  "gui.expatternprovider.precise_export_bus": "ME精确存储总线",
-  "gui.expatternprovider.precise_export_bus.set_amount": "使用鼠标中键来设置数量",
   "block.expatternprovider.silicon_block": "硅块",
   "item.expatternprovider.threshold_export_bus": "ME阈值输出总线",
   "gui.expatternprovider.threshold_export_bus": "ME阈值输出总线",
   "gui.expatternprovider.threshold_export_bus.greater": "超过阈值时工作",
   "gui.expatternprovider.threshold_export_bus.lower": "低于阈值时工作",
 
-  "gui.expatternprovider.ex_molecular_assembler": "扩展分子装配室",  
   "block.expatternprovider.assembler_matrix_frame": "装配矩阵框架",
   "block.expatternprovider.assembler_matrix_wall": "装配矩阵外壳",
   "block.expatternprovider.assembler_matrix_pattern": "装配矩阵样板核心",
@@ -158,8 +157,5 @@
   "gui.expatternprovider.assembler_matrix.tooltip": "搜索样板",
   "gui.expatternprovider.assembler_matrix.pattern": "只接受合成样板",
   "gui.expatternprovider.assembler_matrix.threads": "正在进行的合成： %s",
-  "gui.expatternprovider.assembler_matrix.cancel": "停止所有合成并归还原材料",
-  "gui.expatternprovider.ex_molecular_assembler.next": "下一项合成",
-  "gui.expatternprovider.ex_molecular_assembler.pre": "上一项合成",
-  "gui.expatternprovider.ex_molecular_assembler.number": "合成作业 %s"
+  "gui.expatternprovider.assembler_matrix.cancel": "停止所有合成并归还原材料"
 }

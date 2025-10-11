@@ -32,15 +32,6 @@ ServerEvents.recipes(e => {
             icecreamscoop,
             Fluid.of(outputFluidIcecream, 750)
         ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
-        kubejs.shapeless(
-            icecreamblock,
-            [
-                icecreamscoop,
-                icecreamscoop,
-                icecreamscoop,
-                icecreamscoop,
-            ]
-        ).id(`createdelight:storage/${icecreamblock.split(":")[1]}`)
         create.deploying(
             icecream,
             [
@@ -126,4 +117,7 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "quark:ancient_fruit", "cosmopolitan:enchanted_fruit_ice_cream",
         "createdelight:enhanced_fruit_milkshake", "createdelightcore:enhanced_fruit_ice_cream_scoop",
         "cosmopolitan:enchanted_fruit_ice_cream", "cosmopolitan:enchanted_fruit_milkshake", "cosmopolitan:enchanted_fruit_ice_cream_block")
+})
+ItemEvents.rightClicked("createdelight:incomplete_neapolitan_ice_cream", e => {
+    e.player.sendData("kubejs_player_playsound", {soundEvent: "neapolitan:item.ice_cream.eat"})
 })

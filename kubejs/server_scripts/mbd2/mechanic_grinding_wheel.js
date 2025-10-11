@@ -15,6 +15,7 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
         let item = input.getStackInSlot(index)
         let quality = $QualityUtils.getQuality(item)
         let ret = ItemTransferHelper.insertItemStacked(output, item, true)
+        // console.log(ret)
         if (ret.is("air")) {
             if (quality.level() > 0) {
                 item.nbt.remove($QualityUtils.QUALITY_TAG)

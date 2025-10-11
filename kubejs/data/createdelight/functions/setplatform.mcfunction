@@ -1,4 +1,0 @@
-execute if block ~ ~ ~ #createdelight:platform[facing=north] positioned ~ ~-5 ~ run place template createdelight:emergency_industrial_platform
-execute if block ~ ~ ~ #createdelight:platform[facing=east] positioned ~-47 ~-5 ~ run place template createdelight:emergency_industrial_platform
-execute if block ~ ~ ~ #createdelight:platform[facing=south] positioned ~-47 ~-5 ~-47 run place template createdelight:emergency_industrial_platform
-execute if block ~ ~ ~ #createdelight:platform[facing=west] positioned ~ ~-5 ~-47 run place template createdelight:emergency_industrial_platform

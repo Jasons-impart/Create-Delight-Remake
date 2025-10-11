@@ -8,11 +8,17 @@ migrateCopycatsOnInitialize = true
 #.
 #Enable/disable features. Values on server override clients
 [features]
+	#.
+	kinetic_bridge = true
 	fluid_vessel = true
+	cross_connector = true
 	item_silo = true
 	inverted_clutch = true
 	empty_fan_catalyst = true
 	parallel_gearbox = true
+	redstone_link_wildcard = true
+	kinetic_battery = true
+	inventory_access_port = true
 	centrifugal_clutch = true
 	copycat_slab = true
 	overstress_clutch = true
@@ -34,14 +40,8 @@ migrateCopycatsOnInitialize = true
 	linked_transmitter = true
 	copycat_beam = true
 	copycat_board = true
-	copycat_fence = true
-	inventory_access_port = true
 	inventory_bridge = true
-	#.
-	kinetic_bridge = true
-	cross_connector = true
-	redstone_link_wildcard = true
-	kinetic_battery = true
+	copycat_fence = true
 
 #.
 #Enable/disable categories of features. Disabling a category hides all related features. Values on server override clients

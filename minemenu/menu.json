@@ -1,7 +1,7 @@
 {
   "main": {
     "0": {
-      "title": "´ò¿ªÇ®°ü",
+      "title": "æ‰“å¼€é’±åŒ…",
       "icon": {
         "stack": "{Count:1b,id:\"lightmanscurrency:wallet_leather\"}"
       },
@@ -13,7 +13,7 @@
       }
     },
     "1": {
-      "title": "´ò¿ª±³°ü",
+      "title": "æ‰“å¼€èƒŒåŒ…",
       "icon": {
         "stack": "{Count:1b,id:\"sophisticatedbackpacks:backpack\"}"
       },
@@ -25,7 +25,7 @@
       }
     },
     "2": {
-      "title": "´ò¿ªAEÎŞÏßÖÕ¶Ë",
+      "title": "æ‰“å¼€AEæ— çº¿ç»ˆç«¯",
       "icon": {
         "stack": "{Count:1b,id:\"ae2:wireless_crafting_terminal\"}"
       },
@@ -37,7 +37,7 @@
       }
     },
     "3": {
-      "title": "´ò¿ª½»Ò×ÖÕ¶Ë",
+      "title": "æ‰“å¼€äº¤æ˜“ç»ˆç«¯",
       "icon": {
         "stack": "{Count:1b,id:\"lightmanscurrency:portable_gem_terminal\"}"
       },
@@ -49,7 +49,7 @@
       }
     },
     "4": {
-      "title": "´ò¿ªÈ«Ï¢Çò",
+      "title": "æ‰“å¼€å…¨æ¯çƒ",
       "icon": {
         "stack": "{Count:1b,id:\"tetra:basic_workbench\"}"
       },
@@ -61,7 +61,7 @@
       }
     },
     "5": {
-      "title": "¿ª¹ØÎäÆ÷ÍÚ¾ò·½¿éµÄÄÜÁ¦",
+      "title": "å¼€å…³æ­¦å™¨æŒ–æ˜æ–¹å—çš„èƒ½åŠ›",
       "icon": {
         "stack": "{Count:1b,id:\"minecraft:netherite_sword\",tag:{Damage:0}}"
       },
@@ -73,7 +73,7 @@
       }
     },
     "6": {
-      "title": "Àë¿ªÔØ¾ß£¨³Á½şÊ½·É»ú£©",
+      "title": "ç¦»å¼€è½½å…·ï¼ˆæ²‰æµ¸å¼é£æœºï¼‰",
       "icon": {
         "stack": "{Count:1b,id:\"immersive_aircraft:cargo_airship\"}"
       },
@@ -85,7 +85,7 @@
       }
     },
     "7": {
-      "title": "´ò¿ªµØÍ¼",
+      "title": "æ‰“å¼€åœ°å›¾",
       "icon": {
         "stack": "{Count:1b,id:\"minecraft:filled_map\"}"
       },
@@ -97,7 +97,7 @@
       }
     },
     "8": {
-      "title": "´ò¿ªÈÎÎñ",
+      "title": "æ‰“å¼€ä»»åŠ¡",
       "icon": {
         "stack": "{Count:1b,id:\"ftbquests:book\"}"
       },
@@ -109,7 +109,7 @@
       }
     },
     "9": {
-      "title": "´«ËÍ»Øhome",
+      "title": "ä¼ é€å›home",
       "icon": {
         "stack": "{Count:1b,id:\"minecraft:compass\"}"
       },

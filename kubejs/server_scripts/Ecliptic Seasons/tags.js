@@ -56,7 +56,8 @@ ServerEvents.tags("minecraft:item", e => {
         "oceanic_delight:sea_grape",
         "vinery:dark_cherry_sapling",
         "createcafe:coffee_beans",
-        "miners_delight:cave_carrot"
+        "miners_delight:cave_carrot",
+        'alexscaves:fiddlehead'
     )    
     e.add("eclipticseasons:crops/average_humid",
         "farmersrespite:tea_seeds"

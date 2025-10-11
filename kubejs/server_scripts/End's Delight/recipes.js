@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-       "ends_delight:food/chorus_fruit_milk_tea" 
+       "ends_delight:food/chorus_fruit_milk_tea",
+       "ends_delight:food/chorus_cookie"
     ])
     e.recipes.create.mixing(Fluid.of("create_central_kitchen:chorus_fruit_wine", 250), [
         "minecraft:sugar", Ingredient.of("#forge:chorus_fruits", 2)

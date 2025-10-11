@@ -2,7 +2,6 @@ StartupEvents.modifyCreativeTab("ratatouille:base", e => {
   e.remove([
     'ratatouille:compost_residue',
     'ratatouille:boil_stone',
-    'ratatouille:ripen_matter',
     'ratatouille:ripen_matter_fold',
     'ratatouille:compost_mass',
     'ratatouille:bio_gas_bucket',
@@ -10,5 +9,27 @@ StartupEvents.modifyCreativeTab("ratatouille:base", e => {
     'ratatouille:bio_gas',
     'ratatouille:compost_tea',
     'ratatouille:compost_residue_fluid',
+  ])
+  e.add([
+    'createdelight:empty_popsicle_mold_filled',
+    'createdelight:empty_popsicle_mold_solid',
+    'createdelight:chorus_fruit_popsicle_mold_filled',
+    'createdelight:chorus_fruit_popsicle_mold_solid',
+    'createdelight:tear_popsicle_mold_filled',
+    'createdelight:tear_popsicle_mold_solid',
+    'createdelight:milk_popsicle_mold_filled',
+    'createdelight:milk_popsicle_mold_solid',
+    'createdelight:hamimelon_popsicle_mold_filled',
+    'createdelight:hamimelon_popsicle_mold_solid',
+    'createdelight:lime_popsicle_mold_filled',
+    'createdelight:lime_popsicle_mold_solid',
+    'createdelight:kiwi_popsicle_mold_filled',
+    'createdelight:kiwi_popsicle_mold_solid',
+    'createdelight:berry_popsicle_mold_filled',
+    'createdelight:berry_popsicle_mold_solid',
+    'createdelight:big_popsicle_mold_filled',
+    'createdelight:big_popsicle_mold_solid',
+    'createdelight:green_tongue_mold_filled',
+    'createdelight:green_tongue_mold_solid',
   ])
 })

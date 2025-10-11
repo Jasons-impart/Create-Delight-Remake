@@ -18,7 +18,8 @@ ServerEvents.recipes(e => {
         "create:mixing/normal_chocolate",
         "farmersdelight:cooking/hot_cocoa",
         "create_central_kitchen:emptying/hot_cocoa",
-        "create_central_kitchen:filling/hot_cocoa"
+        "create_central_kitchen:filling/hot_cocoa",
+        "ratatouille:freezing/chocolate_mold_filled"
     ])
     e.replaceInput({ mod: "createcafe" }, "minecraft:cocoa_beans", "ratatouille:cocoa_powder")
     // 热可可
@@ -188,4 +189,8 @@ ServerEvents.recipes(e => {
     )
         .heated()
         .id("create_confectionery:hot_chocolate_recipe")
+    freezing(e, "ratatouille:chocolate_mold_filled", 'ratatouille:chocolate_mold_solid', 60)
+    freezing(e, 'createdelightcore:black_chocolate_mold_filled', 'createdelightcore:black_chocolate_mold_solid', 60)
+    freezing(e, 'createdelightcore:white_chocolate_mold_filled', 'createdelightcore:white_chocolate_mold_solid', 60)
+    freezing(e, 'createdelightcore:ruby_chocolate_mold_filled', 'createdelightcore:ruby_chocolate_mold_solid', 60)
 })

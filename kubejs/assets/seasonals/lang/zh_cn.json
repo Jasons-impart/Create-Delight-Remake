@@ -1,0 +1,8 @@
+{
+  "itemGroup.seasonals.seasonals": "季节风味",
+  "item.seasonals.red_velvet_cupcake": "红丝绒玛芬",
+  "item.seasonals.mixed_berry_muffin": "什锦浆果玛芬",
+  "item.seasonals.chocolate_pumpkin_muffin": "巧克力南瓜玛芬",
+  "effect.seasonals.rooted.description": "获得100%击退抗性、更高护甲值，并禁止跳跃。",
+  "effect.seasonals.stuffed.description": "禁用食物消耗，饥饿值和饱和度将迅速填充。但在效果结束时，所有饥饿值和饱和度将迅速丢失。"
+}

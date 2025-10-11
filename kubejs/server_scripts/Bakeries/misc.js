@@ -4,7 +4,7 @@ BlockEvents.rightClicked("bakeries:paper_cup", e => {
         let prop = block.properties
         
         let fill = prop.get("fill")
-        player.tell(fill)
+        // player.tell(fill)
         if (parseInt(prop.get("pile")) == 4 && fill == "false") {
             prop.put("fill", "true")
             block.set(block.id, prop)

@@ -19,14 +19,9 @@
 	quests: [
 		{
 			description: [
-				"&l&4默认键位&r&r："
-				"&4R&r键可查询物品合成方式"
-				"&4U&r键可查询物品可合成物品"
-				"&4M&r打开世界地图"
-				"&4N&r打开领地地图"
-				"&4B&r直接打开背包"
-				"&4~&r可进行连锁挖掘"
-				"&4F5&r可切换越肩视角"
+				"qq或微信扫码看整合包相关信息与FAQ文档："
+				""
+				"{image:createdelight:textures/images_for_readme/document_qr_code.png width:100 height:100 align:center}"
 			]
 			id: "55C42BCE0E399B3D"
 			rewards: [
@@ -781,7 +776,8 @@
 				"CFPAOrg(cfpa.team)的模组翻译"
 				"XeKr(space.bilibili.com/5930630)的材质包"
 				"Qi-Month(https://github.com/Qi-Month)提供的部分代码"
-				"史莱姆li(https://b23.tv/1gjok8E)提供的工业平台的代码及其贴图"
+				"史莱姆li(https://b23.tv/1gjok8E)提供的部分代码"
+				"song_5007(https://space.bilibili.com/263315)的优化帮助"
 				"以及内测群中帮助我们内测的各位同好们的测试bug以及提出意见"
 			]
 			icon: "minecraft:brick"
@@ -890,17 +886,26 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
-				"1.平台生成时，最高层完整方块在结构方块&e下一格&r，平齐的为最上层的灯。淌水做机器固然浪漫，但如果给你第二次机会，相信你会选择把他放在海平面往上一格。"
-				"2.平台会清空上方10格左右的高度的&e任何&r方块，请注意不要把你刚建好的小家给清空了。"
-				"3.&e空手&r也能挖掘（尽管模组“玉”提示不能挖掘）"
+				"&e空手右键&r工业平台调节平台类型"
+				"&e空手潜行右键&r调节是否会向上向下填充（默认&e会&r）"
+				"使用任意石头&e右键&r平台以展开平台"
+				"平台展开时会自动&e对齐区块&r，建议使用时使用F3+G确认区块边界"
+				""
+				"总共提供5种平台："
+				"轻型工业平台（1x1区块，由混凝土与深板岩瓦组成）"
+				"重型工业平台（3x3区块，由混凝土与深板岩瓦组成）"
+				"轻型棋盘格平台（1x1区块，由黄黑白浅灰四种混凝土组成）"
+				"重型棋盘格平台（3x3区块，由黄黑白浅灰四种混凝土组成）"
+				"无限流体池（1x1区块，62格深，共12152方块空位用于制造机械动力无限流体池）"
+				""
+				"注：流体池平台记得放低一格避免展开后直接落到池底摔死"
 			]
-			icon: "createdelight:emergency_industrial_platform"
+			icon: "industrial_platform:industrial_platform"
 			id: "73CE44DE53C68D82"
 			rewards: [{
-				exclude_from_claim_all: true
-				id: "1E32A53D5D4562AE"
-				table_id: 5284994430719191732L
-				type: "choice"
+				id: "17A4A3A3EB7B6C34"
+				item: "industrial_platform:industrial_platform"
+				type: "item"
 			}]
 			shape: "pentagon"
 			size: 1.5d

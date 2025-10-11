@@ -12,8 +12,7 @@
 			description: [
 				"在选项 - 视频设置中修改相关的视频配置。"
 				"其中&e渲染距离&r是影响帧率的关键配置。"
-				"光影配置请选择&e整合包自带&r的名称中带有 &ecolorwheel&r 的光影。"
-				"Colorwheel支持的光影很少，仅有BSL 10.0、Complementary 5.5.1、Complementary with Euphoria 5.5.1 + 1.6.3、Bliss (某特定测试版)。推荐使用&nComplementary with Euphoria&r，光影设置已经有汉化。"
+				"光影配置请选择整合包自带且名字&e不是&r&4红色&r的光影，推荐&dEuphoria&r。"
 				""
 				"&l&n选用其他不兼容的光影可能导致看到特定方块时崩溃&r&r。"
 			]
@@ -188,6 +187,41 @@
 			title: "JEI"
 			x: 2.25d
 			y: -2.25d
+		}
+		{
+			icon: {
+				Count: 1
+				id: "minecraft:filled_map"
+				tag: {
+					map: 0
+				}
+			}
+			id: "01E37FF071C9F224"
+			shape: "square"
+			subtitle: "使用M键打开世界地图"
+			tasks: [{
+				id: "387FDCE35038E22C"
+				type: "checkmark"
+			}]
+			title: "地图"
+			x: 0.75d
+			y: 3.0d
+		}
+		{
+			description: [
+				"长按&eR&r键开启快捷MineMenu菜单，试试这些快捷功能吧。"
+				"支持自定义哦~"
+			]
+			icon: "bakeries:menu_block"
+			id: "7E32D2138C67E518"
+			shape: "square"
+			subtitle: "一键回家的含金量懂不懂啊"
+			tasks: [{
+				id: "266A26FD317370C8"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: 3.0d
 		}
 	]
 	title: "初始配置"

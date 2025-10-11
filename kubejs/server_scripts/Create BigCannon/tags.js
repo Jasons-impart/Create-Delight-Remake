@@ -6,4 +6,8 @@ ServerEvents.tags("minecraft:item", e => {
 })
 ServerEvents.tags("minecraft:fluid", e => {
     e.removeAllTagsFrom("createbigcannons:molten_bronze")
+    e.add("createdelight:acid", 
+        "vintageimprovements:sulfuric_acid",
+    "alexscaves:acid")
 })
+

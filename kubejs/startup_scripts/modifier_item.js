@@ -9,6 +9,18 @@ ItemEvents.modification(e => {
             item.fireResistant = true
         })
     }
+// 食物修改为快速食用
+    /**
+     * 
+     * @param {Internal.Item} food 
+     */
+    let food_fastToEat = function (food) {
+        e.modify(food, item => {
+            item.foodProperties = food => {
+                food.fastToEat()
+            }
+        })
+    }
 // 食物修改,参数分别为食物id，饥饿值，饱和度
     /**
      * 
@@ -54,6 +66,17 @@ ItemEvents.modification(e => {
     let maxDamage_change = function (item, maxDamage) {
         e.modify(item, item => {
             item.maxDamage = maxDamage
+        }) 
+    }
+// 最大堆叠修改,物品id,最大堆叠数
+    /**
+     * 
+     * @param {Internal.Item} item 
+     * @param {number} maxStackSize 最大堆叠数,默认为64
+     */
+    let maxStackSize_change = function (item, maxStackSize) {
+        e.modify(item, item => {
+            item.maxStackSize = maxStackSize
         }) 
     }
 
@@ -156,6 +179,11 @@ ItemEvents.modification(e => {
     maxDamage_change("butchercraft:boots", 195)
     maxDamage_change("bakeries:bread_knife", 100)
 
+    // 最大堆叠修改
+    maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
+    maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
+    maxStackSize_change('youkaishomecoming:big_popsicle', 64)
+
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
     fire_resistance("createmetallurgy:wolframite_ore")
@@ -163,8 +191,14 @@ ItemEvents.modification(e => {
     fire_resistance("createmetallurgy:crushed_raw_wolframite")
     fire_resistance("createmetallurgy:dirty_wolframite_dust")
     fire_resistance("createmetallurgy:wolframite_dust")
+    
+    // 食物修改为快速食用
+    food_fastToEat("ends_delight:chorus_fruit_popsicle")
+    food_fastToEat('fruitsdelight:blueberry_muffin')
+    food_fastToEat('fruitsdelight:cranberry_muffin')
+    food_fastToEat('bakeries:cup_cake')
 
-    // 食物效果修改
+    // 食物饱食度修改
     food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
     food_hungers("ratatouille:cake_base", 7, 4.5)
     food_hungers("casualness_delight:cooked_donkey_meat", 6, 4.5)
@@ -187,6 +221,9 @@ ItemEvents.modification(e => {
     food_hungers("create:blaze_cake", 10, 7)
     food_hungers("oceanic_delight:shrimp_chips", 4, 5.5)
     food_hungers("create:sweet_roll", 8, 6)
+    food_hungers("alexscaves:fiddlehead", 1, 0.5)
+
+    // 食物效果修改
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
     e.modify("culturaldelights:glow_squid", item => {
@@ -212,9 +249,33 @@ ItemEvents.modification(e => {
     food_effects('abnormals_delight:mint_cake_slice', "neapolitan:berserking")
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
+    food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
         //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_cookie", "fruitsdelight:chorus", 0.05)
+    food_effects("createdelight:chorus_cookie_dough", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_fruit_grain", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_flower_pie", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_flower_tea", "fruitsdelight:chorus", 0.05)
+    food_effects("ends_delight:chorus_fruit_pie_slice", "fruitsdelight:chorus", 0.05)
+    food_effects("cosmopolitan:chorus_fruit_popsicle_double", "fruitsdelight:chorus", 0.05)
+        //冰棍抗火效果
+    food_effects('youkaishomecoming:milk_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('fruitsdelight:hamimelon_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('fruitsdelight:kiwi_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('youkaishomecoming:big_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('mynethersdelight:tear_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('farmersdelight:melon_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('ends_delight:chorus_fruit_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('casualness_delight:green_tongue', "minecraft:fire_resistance", 10)
+    food_effects('collectorsreap:lime_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:berry_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('createdelight:empty_popsicle', "minecraft:fire_resistance", 10)
+    food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
+    food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
+    food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
+        
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
     e.modify('oceanic_delight:salmon_eggs', item => {
@@ -367,5 +428,5 @@ ItemEvents.modification(e => {
     'vinery:jellie_wine'
     ], item => {
         item.setCraftingRemainingItem("vinery:wine_bottle")
-    })
+    })    
 })
