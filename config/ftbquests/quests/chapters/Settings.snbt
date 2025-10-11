@@ -204,7 +204,23 @@
 				type: "checkmark"
 			}]
 			title: "地图"
-			x: 1.5d
+			x: 0.75d
+			y: 3.0d
+		}
+		{
+			description: [
+				"长按&eR&r键开启快捷MineMenu菜单，试试这些快捷功能吧。"
+				"支持自定义哦~"
+			]
+			icon: "bakeries:menu_block"
+			id: "7E32D2138C67E518"
+			shape: "square"
+			subtitle: "一键回家的含金量懂不懂啊"
+			tasks: [{
+				id: "266A26FD317370C8"
+				type: "checkmark"
+			}]
+			x: 2.5d
 			y: 3.0d
 		}
 	]
