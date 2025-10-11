@@ -210,4 +210,16 @@ ServerEvents.recipes(e => {
         D: "ae2:logic_processor",
         E: "vintageimprovements:redstone_module"
     }).id("createdelight:mechanical_crafting/fission_reactor")
+    e.recipes.kubejs.shaped("createdelight:order_deliverer", [
+        " A ",
+        "BCB",
+        " D "
+    ], {
+        A: "createdelight:unopened_order",
+        B: "lightmanscurrency:trading_core",
+        C: "#forge:chests",
+        D: "#create:table_cloths"
+    })
+    .id("createdelight:order_deliverer")
+    e.recipes.kubejs.shapeless("createdelight:contract_executor", "createdelight:order_deliverer")
 })
