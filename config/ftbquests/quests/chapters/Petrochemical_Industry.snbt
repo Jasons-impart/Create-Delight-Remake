@@ -165,8 +165,14 @@
 			icon: "createdieselgenerators:crude_oil_bucket"
 			id: "61A945984843E55A"
 			rewards: [{
-				id: "54DF3F51674B42C0"
-				item: "createdieselgenerators:lighter"
+				id: "7D4A6E933F19184E"
+				item: {
+					Count: 1
+					id: "minecraft:flint_and_steel"
+					tag: {
+						Damage: 0
+					}
+				}
 				type: "item"
 			}]
 			shape: "square"
