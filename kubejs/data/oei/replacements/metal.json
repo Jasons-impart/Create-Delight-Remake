@@ -62,9 +62,9 @@
     },
     {
         "matchItems": [
-            "createdeco:andesite_sheet"
+            "vintageimprovements:andesite_sheet"
         ],
-        "resultItems": "vintageimprovements:andesite_sheet"
+        "resultItems": "createdeco:andesite_sheet"
     },
     {
         "matchItems": [
