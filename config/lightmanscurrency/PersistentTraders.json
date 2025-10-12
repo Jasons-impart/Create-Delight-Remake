@@ -6147,13 +6147,13 @@
             "Value": [
               {
                 "Coin": "createdelightcore:iron_coin",
-                "Amount": 9
+                "Amount": 1
               }
             ],
             "Chain": "main",
             "type": "lightmanscurrency:coins"
           },
-          "Quantity": 1000000,
+          "Quantity": 100000,
           "TradeRules": []
         }
       ]
