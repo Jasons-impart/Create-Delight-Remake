@@ -1,0 +1,36 @@
+
+[doll]
+	#Whether dolls can be thrown by players
+	#玩偶是否可以被玩家丢出
+	DollCanBeThrown = true
+	#Whether dolls can be pushed by water flow
+	#玩偶是否会被水流推动
+	DollAffectedByWater = true
+	#Whether dolls are affected by gravity
+	#玩偶是否受重力影响
+	DollAffectedByGravity = true
+	#Whether throwing dolls produces particle effects
+	#丢出玩偶时是否产生粒子效果
+	DollThrowParticleEffect = true
+	#Whether thrown dolls can knockback other entities
+	#被丢出的玩偶是否能击退其他实体
+	DollCanKnockbackEntities = true
+	#The knockback force of thrown dolls, the larger the value, the stronger the knockback effect
+	#被丢出的玩偶的击退效果强度，数值越大击退效果越强
+	#Range: 0.0 ~ 10.0
+	DollKnockbackForce = 1.0
+	#Whether dolls can be placed directly on other entities
+	#玩偶是否可以直接放置在其他实体上
+	DollCanMountEntities = true
+	#Enable dolls spawning on phantoms
+	#启用幻翼附带玩偶生成
+	EnablePhantomDollSpawn = true
+	#Chance for phantom to spawn with a doll
+	#幻翼附带玩偶的生成概率
+	#Range: 0.0 ~ 1.0
+	PhantomDollSpawnChance = 0.01
+	#Ticks for phantom spawned doll to exist, set to 0 to disable despawn
+	#幻翼附带玩偶的存在时间，设为 -1 则不会消失
+	#Range: > -1
+	PhantomDollExistTicks = 3600
+
