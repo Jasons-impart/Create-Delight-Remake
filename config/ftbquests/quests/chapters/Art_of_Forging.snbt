@@ -600,7 +600,7 @@
 		}
 		{
 			dependencies: ["4178108D392476B9"]
-			description: ["远古城市中埋藏着许多在锻造时能够大放异彩的材料，我打算前往收集一些。"]
+			description: ["远古城市(ancient city)中埋藏着许多在锻造时能够大放异彩的材料，我打算前往收集一些。"]
 			hide_dependency_lines: true
 			id: "033C857187DC6731"
 			rewards: [{
