@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
         "create:andesite_alloy_block",
         "create:andesite_alloy",
         "createdelight:andesite_alloy_nugget",
-        "vintageimprovements:andesite_sheet",
+        "createdeco:andesite_sheet",
         "vintageimprovements:andesite_rod",
         "vintageimprovements:andesite_wire",
         "createdelightcore:molten_andesite"

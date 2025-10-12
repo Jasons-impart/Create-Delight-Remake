@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
         .loops(3)
         .id("create_sa:hydraulic_engine_recipe")
     let iner_2 = "create_sa:incomplete_heat_engine"
-    e.recipes.create.sequenced_assembly("create_sa:heat_engine", "vintageimprovements:andesite_sheet", [
+    e.recipes.create.sequenced_assembly("create_sa:heat_engine", "createdeco:andesite_sheet", [
         e.recipes.create.deploying(iner_2, [iner_2, "create:cogwheel"]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:zinc_nugget"]),
         e.recipes.create.deploying(iner_2, [iner_2, "create:copper_nugget"]),

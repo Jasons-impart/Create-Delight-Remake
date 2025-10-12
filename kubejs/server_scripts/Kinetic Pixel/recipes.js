@@ -57,7 +57,7 @@ ServerEvents.recipes(e => {
             B: "kinetic_pixel:barrel",
             C: "create_sa:heat_engine",
             D: "#minecraft:logs",
-            E: "vintageimprovements:andesite_sheet",
+            E: "createdeco:andesite_sheet",
             F: "kinetic_pixel:ammunitionbox",
             G: "kinetic_pixel:pistonexciter"
         })
@@ -265,7 +265,7 @@ ServerEvents.recipes(e => {
             "ADA"
         ],
         {
-            A: "vintageimprovements:andesite_sheet",
+            A: "createdeco:andesite_sheet",
             B: "create_sa:heat_engine",
             C: "create:andesite_alloy",
             D: "kinetic_pixel:ammunitionbox"
