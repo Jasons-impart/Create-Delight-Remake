@@ -189,11 +189,34 @@ ServerEvents.recipes(e => {
         .heated()
         .id("alexscaves:pressurizing/toxic_paste")
     //硫芯蛋糕卷
-    e.recipes.create.deploying(
-        '2x alexscaves:spelunkie',
+    {
+        let iner = "bakeries:cut_cake_base"
+        e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
+            e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:cream"]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("alexcaves:sequenced_assembly/spelunkie")
+    }
+    {
+        let iner = "bakeries:cut_cake_base"
+        e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
+            e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
+            e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("alexcaves:sequenced_assembly/spelunkie_2")
+    }
+    e.recipes.kubejs.shapeless(
+        "alexscaves:spelunkie",
         [
-            'minecraft:bread',
-            'alexscaves:sulfur_dust'
+            'bakeries:cut_cake_base',
+            "#forge:cream",
+            "alexscaves:sulfur_dust"
         ]
     ).id("alexscaves:spelunkie")
     //猛汉午餐肉

@@ -30,6 +30,12 @@ ServerEvents.recipes(e => {
         "4x #forge:berries",
         Fluid.of("createcafe:melted_sugar", 500)
     ]).heated().id("cosmopolitan:mixing/cream_bucket")
+    create.compacting([
+            Fluid.of("cosmopolitan:birch_sap", 10),
+            '4x createdieselgenerators:wood_chip',
+            Item.of("farmersdelight:tree_bark").withChance(0.5)
+        ], "minecraft:birch_log"
+    ).heated().id("cosmopolitan:compacting/birch_sap")
     {
         let iner = 'cosmopolitan:arbutus_berries'
         create.sequenced_assembly("createdelight:enchanted_golden_arbutus_berries", 'cosmopolitan:arbutus_berries', [
@@ -70,4 +76,57 @@ ServerEvents.recipes(e => {
             ['alexscaves:fiddlehead', 1, 0.25]
         ]
     )
+    {
+        let iner = "bakeries:cut_cake_base"
+        create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [
+            create.filling(iner, [iner, Fluid.of("cosmopolitan:berry_syrup", 250)]),
+            create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("cosmopolitan:sequenced_assembly/jelly_roll")
+    }
+    kubejs.shapeless(
+        "cosmopolitan:jelly_roll",
+        [
+            "bakeries:cut_cake_base",
+            "cosmopolitan:berry_syrup_bottle"
+        ]
+    ).id("cosmopolitan:farmersdelight/jelly_roll").replaceIngredient("cosmopolitan:berry_syrup", "minecraft:glass_bottle")
+    {
+        let iner = "bakeries:cut_cake_base"
+        create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
+            create.filling(iner, [iner, Fluid.of("create:chocolate", 250)]),
+            create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("cosmopolitan:sequenced_assembly/chocolate_roll_from_chocolate")
+    }
+    kubejs.shapeless(
+        "cosmopolitan:chocolate_roll",
+        [
+            "bakeries:cut_cake_base",
+            "create:bar_of_chocolate"
+        ]
+    ).id("cosmopolitan:farmersdelight/chocolate_roll_from_chocolate")
+    {
+        let iner = "bakeries:cut_cake_base"
+        create.sequenced_assembly('cosmopolitan:ink_roll', iner, [
+            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:ink", 250)]),
+            create.deploying(iner, [iner, "minecraft:glow_ink_sac"]),
+            create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("cosmopolitan:sequenced_assembly/ink_roll")
+    }
+    kubejs.shapeless(
+        "cosmopolitan:ink_roll",
+        [
+            "bakeries:cut_cake_base",
+            'minecraft:ink_sac',
+            'minecraft:glow_ink_sac'
+        ]
+    ).id("cosmopolitan:farmersdelight/ink_roll")
 })
