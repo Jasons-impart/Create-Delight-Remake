@@ -1386,7 +1386,7 @@ Order.orderProperties = {
 Order.customerProperties = {// ===================== 矮人组织 =====================
     dwarven_bakery: {
         entries: {
-            bread: [3, 2],
+            bread: [3, 2], //权重，最低品质
             sausage: [2, 1],
             meat_dish: [2, 2]
         },
@@ -1603,4 +1603,5 @@ Order.ticketColorMapping = {
 }
 
 
-Order.rankThreshold = [0, 10, 25, 50, 80, 120]
+
+Order.reputation.threshold = [0, 10, 25, 50, 80, 120]

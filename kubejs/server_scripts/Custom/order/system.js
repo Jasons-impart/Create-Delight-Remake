@@ -299,10 +299,37 @@ Order.addOrderToAuction = function() {
     TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, null, false)
 }
 
+Order.reputation = {}
+
+/**
+ * 
+ * @param {Internal.Player} player 
+ */
+Order.reputation.getRawValue = function(player) {
+    if (player.persistentData.getInt("order_reputation") == 0)
+        player.persistentData.putInt("order_reputation", 0)
+    return player.persistentData.getInt("order_reputation")
+}
+
+/**
+ * 
+ * @param {Internal.Player} player 
+ */
+Order.reputation.getLevel = function(player) {
+    let value = this.getRawValue(player)
+    let level = 0
+    for (let index = 0; index < this.threshold.length; index++) {
+        let element = this.threshold[index]
+        level ++
+        if (value >= element)
+            break
+    }
+    return level
+}
+
 ServerEvents.tick(e => {    
     if (e.server.getLevel("minecraft:overworld").dayTime() % 24000 == 1000) {
         let count = Utils.random.nextInt(0, 4)
-        console.log("count:" + count)
         for (let i = 0; i < count; i++)
             Order.addOrderToAuction()
     }
