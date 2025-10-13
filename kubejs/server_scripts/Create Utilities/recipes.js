@@ -13,6 +13,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:molten_void_steel"
     ],
         "heated", 60)
+    e.replaceInput({id: "createutilities:item_application/void_casing"}, "minecraft:obsidian", "ae2:smooth_sky_stone_block")
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createmetallurgy:molten_void_steel", 90),
         [
@@ -23,7 +24,7 @@ ServerEvents.recipes(e => {
     
     e.recipes.createmetallurgy.casting_in_basin(
         "createutilities:void_casing",
-        ["minecraft:obsidian", Fluid.of("createmetallurgy:molten_void_steel", 90)], 70, true)
+        ["ae2:smooth_sky_stone_block", Fluid.of("createmetallurgy:molten_void_steel", 90)], 70, true)
         .id("createutilities:casting_in_basin/void_casing")
     let iner = "createdelight:incomplete_graviton_tube"
     e.recipes.create.sequenced_assembly("4x createutilities:graviton_tube", "createutilities:void_steel_sheet", [
