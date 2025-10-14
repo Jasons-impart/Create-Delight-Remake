@@ -50,6 +50,7 @@ StartupEvents.registry("fluid", e => {
             ret.noBlock()
         else
             ret.translationKey("block.createdelight." + id.split(":")[1])
+            ret.flowingTexture(resourcelocation + "/flowing")
         if (!hasBucket)
             ret.noBucket()
         else {
@@ -57,7 +58,6 @@ StartupEvents.registry("fluid", e => {
         }
         ret.translationKey("fluid.createdelight." + id.split(":")[1])
         ret.stillTexture(resourcelocation + "/still")
-        ret.flowingTexture(resourcelocation + "/flowing")
         return ret
     }
 
@@ -106,12 +106,8 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
-    e.create("createdelight:lush_confiture")
-        .noBlock()
-        .noBucket()
-        .stillTexture("createdelight:fluid/lush_confiture/still")
-        .luminosity(15)
-        .translationKey("fluid.createdelight.lush_confiture")
+    textureFluid("createdelight:lush_confiture", false, false)
+
     let bloods = [
         "fire_dragon",
         "ice_dragon",
@@ -182,11 +178,10 @@ StartupEvents.registry("fluid", e => {
     ]
     icecream_list.forEach((list) => {
         e.create(`createdelight:${list[0]}_milkshake`)
+            .noBlock()
+            .noBucket()
             .thinTexture(list[1])
-            .bucketColor(list[1])
             .translationKey(`fluid.createdelight.${list[0]}_milkshake`)
-            .translationKey(`block.createdelight.${list[0]}_milkshake`)
-            .translationKey(`item.createdelight.${list[0]}_milkshake_bucket`)
     })
     //咖啡流体
     let coffee_fluid = [
@@ -205,7 +200,6 @@ StartupEvents.registry("fluid", e => {
             .noBucket()
             .thinTexture(fluid[1])
             .translationKey(`fluid.createdelight.${fluid[0]}_fluid`)
-            .translationKey(`block.createdelight.${fluid[0]}_fluid`)
     })
     
 })

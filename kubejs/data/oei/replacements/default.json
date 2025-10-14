@@ -261,5 +261,11 @@
             "vintageimprovements:sulfur_chunk"
         ],
         "resultItems": "alexscaves:sulfur_dust"
+    },
+    {
+        "matchItems": [
+            "collectorsreap:pomegranate_smoothie"
+        ],
+        "resultItems": "collectorsreap:pomegranate_milkshake"
     }
 ]
