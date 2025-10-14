@@ -7,6 +7,7 @@ ServerEvents.recipes(e => {
     ])
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 
+        "collectorsreap:food/pomegranate_smoothie"
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
