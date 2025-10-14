@@ -108,6 +108,7 @@ ServerEvents.tags("item", e => {
     e.remove("alexscaves:ferns", [
         'alexscaves:fiddlehead'
     ])
+    e.removeAllTagsFrom("vintageimprovements:sulfur_chunk")
 })
 
 ServerEvents.tags("minecraft:block", e => {

@@ -4,7 +4,11 @@ ServerEvents.recipes(e => {
         "create:crushing/raw_uranium",
         "create_new_age:thorium/thorium_crushing",
         "create_new_age:thorium_multiplication",
-        "alexscaves:nuclear_furnace_component"
+        "alexscaves:nuclear_furnace_component",
+        "vintageimprovements:craft/sulfur_item_to_nuggets",
+        "vintageimprovements:craft/sulfur_block_to_items",
+        "vintageimprovements:craft/sulfur_items_to_block",
+        
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements
@@ -161,13 +165,6 @@ ServerEvents.recipes(e => {
             .id("create_new_age:thorium/nuclear_fuel")
     }
     //硫磺，硫磺晶簇->硫粉
-    e.recipes.create.crushing(
-        [
-            'alexscaves:sulfur_dust',
-            Item.of('alexscaves:sulfur_dust').withChance(0.25)
-        ],
-        'vintageimprovements:sulfur'
-    ).id("alexscaves:crushing/sulfur_dust_2")
     //硫磺晶体生长
     make_growing_cluster(e, [
         "alexscaves:sulfur_dust",
