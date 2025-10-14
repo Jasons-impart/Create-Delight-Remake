@@ -117,6 +117,7 @@
   "effect.bakeries.enjoy": "享受",
   "effect.bakeries.enjoy.description": "拥有此效果时，免疫所有负面效果，提升回血速度。",
   "effect.bakeries.soft": "柔软",
+  "effect.bakeries.soft.description": "提升护甲值和击退抗性并反弹攻击者",
 
   "entity.generic.shake": "摇晃",
   "entity.minecraft.villager.bakeries.pistrinamaster": "面包师",

@@ -4,7 +4,12 @@ ServerEvents.recipes(e => {
         "create:crushing/raw_uranium",
         "create_new_age:thorium/thorium_crushing",
         "create_new_age:thorium_multiplication",
-        "alexscaves:nuclear_furnace_component"
+        "alexscaves:nuclear_furnace_component",
+        "vintageimprovements:craft/sulfur_item_to_nuggets",
+        "vintageimprovements:craft/sulfur_block_to_items",
+        "vintageimprovements:craft/sulfur_items_to_block",
+        "vintageimprovements:craft/sulfur_nuggets_to_item",
+        
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements
@@ -161,13 +166,6 @@ ServerEvents.recipes(e => {
             .id("create_new_age:thorium/nuclear_fuel")
     }
     //硫磺，硫磺晶簇->硫粉
-    e.recipes.create.crushing(
-        [
-            'alexscaves:sulfur_dust',
-            Item.of('alexscaves:sulfur_dust').withChance(0.25)
-        ],
-        'vintageimprovements:sulfur'
-    ).id("alexscaves:crushing/sulfur_dust_2")
     //硫磺晶体生长
     make_growing_cluster(e, [
         "alexscaves:sulfur_dust",
@@ -189,11 +187,34 @@ ServerEvents.recipes(e => {
         .heated()
         .id("alexscaves:pressurizing/toxic_paste")
     //硫芯蛋糕卷
-    e.recipes.create.deploying(
-        '2x alexscaves:spelunkie',
+    {
+        let iner = "bakeries:cut_cake_base"
+        e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
+            e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
+            e.recipes.create.deploying(iner, [iner, "#forge:cream"]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("alexcaves:sequenced_assembly/spelunkie")
+    }
+    {
+        let iner = "bakeries:cut_cake_base"
+        e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
+            e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
+            e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("alexcaves:sequenced_assembly/spelunkie_2")
+    }
+    e.recipes.kubejs.shapeless(
+        "alexscaves:spelunkie",
         [
-            'minecraft:bread',
-            'alexscaves:sulfur_dust'
+            'bakeries:cut_cake_base',
+            "#forge:cream",
+            "alexscaves:sulfur_dust"
         ]
     ).id("alexscaves:spelunkie")
     //猛汉午餐肉

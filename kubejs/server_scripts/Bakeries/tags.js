@@ -4,7 +4,8 @@ ServerEvents.tags("minecraft:item", e => {
         "bakeries:salted_dough",
         "bakeries:whole_wheat_flour",
         'bakeries:tomato',
-        'bakeries:ground_coffee'
+        'bakeries:ground_coffee',
+        "bakeries:whole_egg"
     ])
     e.remove("forge:dough", "bakeries:whole_wheat_dough")
     e.add('some_assembly_required:sandwich_bread', [

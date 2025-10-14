@@ -255,5 +255,11 @@
             "quark:moss_paste"
         ],
         "resultItems": "miners_delight:moss"
+    },
+    {
+        "matchItems": [
+            "vintageimprovements:sulfur_chunk"
+        ],
+        "resultItems": "alexscaves:sulfur_dust"
     }
 ]

@@ -98,10 +98,20 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:white_tea", 0xdbcfaa, true, false, false)
     simpleFluid("createdelight:soya_milk", 0xfef9c1, true, true, true)
         .tag("forge:milk")
+    simpleFluid("createdelight:spring_soda", 0x7fe3b3, true, false, false)
+    simpleFluid("createdelight:summer_cordial", 0xf4b12e, true, false, false)
+    simpleFluid("createdelight:autumn_tea", 0xf46d44, true, false, false)
+    simpleFluid("createdelight:winter_glogg", 0xa9275e, true, false, false)
     textureFluid("createdelight:lubricating_oil")
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
+    e.create("createdelight:lush_confiture")
+        .noBlock()
+        .noBucket()
+        .stillTexture("createdelight:fluid/lush_confiture/still")
+        .luminosity(15)
+        .translationKey("fluid.createdelight.lush_confiture")
     let bloods = [
         "fire_dragon",
         "ice_dragon",
