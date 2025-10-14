@@ -60,4 +60,3 @@ TetraUtil.getEffectLevel = function(item, effect) {
     let itemClass = TetraUtil.getItem(item)
     return itemClass.getEffectLevel(item, $ItemEffect.get(effect))
 }
-
