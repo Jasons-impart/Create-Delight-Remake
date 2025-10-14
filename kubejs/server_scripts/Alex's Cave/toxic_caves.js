@@ -8,6 +8,7 @@ ServerEvents.recipes(e => {
         "vintageimprovements:craft/sulfur_item_to_nuggets",
         "vintageimprovements:craft/sulfur_block_to_items",
         "vintageimprovements:craft/sulfur_items_to_block",
+        "vintageimprovements:craft/sulfur_nuggets_to_item",
         
     ])
   // 辐鳃鱼（和桶）量产
