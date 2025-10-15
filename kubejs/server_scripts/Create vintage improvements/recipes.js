@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "vintageimprovements:rolling/netherite_plate",
         "vintageimprovements:rolling/nethersteel_rod",
         "vintageimprovements:rolling/nethersteel_plate",
-        "vintageimprovements:rolling/andesite_plate"
+        "vintageimprovements:rolling/andesite_plate",
+        "vintageimprovements:crushing/scoria_recycling"
     ])
     vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_trioxide", 1000),

@@ -6,6 +6,15 @@
 	# What skin variations of Variant Bees can spawn! Add more bee textures to this folder assets\the_bumblezone\textures\entity\bee_variants and define the bee in this config!
 	#
 	variantBeeTypes = ["redtail_bee", "green_bee", "blue_bee", "white_bee", "ukraine_bee", "trans_bee", "asexual_bee", "agender_bee", "aroace_bee", "aromantic_bee", "bisexual_bee", "pan_bee", "enby_bee", "reverse_bee", "neapolitan_bee", "rainbow_bee"]
+	# 
+	#-----------------------------------------------------
+	#
+	# Rates for Variant Bees to spawn when doing normal mob spawning over time.
+	# Will not affect spawnrates of this mob from worldgen generating chunks.
+	# For the worldgen spawning rates, overriding the biome json with a datapack is required.
+	#
+	#Range: 0.0 ~ 1.0
+	variantBeeAfterWorldgenSpawnRate = 0.05
 
 ["Beehemoth Options"]
 	# 

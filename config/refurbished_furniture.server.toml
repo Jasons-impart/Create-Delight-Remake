@@ -159,3 +159,11 @@
 	# Valid range: 0 to 64 (inclusive)
 	maxBounceHeight = 8.0
 
+# Television related properties
+[television]
+	# If enabled, when the weather is thunder, the television will strangely loose signal.
+	# There should be no reason this should happen, none at all. It might be a good idea
+	# to turn your television off until it clears up.
+	# Valid values: true, false
+	looseSignalDuringThunderstorm = true
+
