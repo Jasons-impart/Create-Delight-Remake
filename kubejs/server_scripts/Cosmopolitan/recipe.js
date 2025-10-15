@@ -29,7 +29,7 @@ ServerEvents.recipes(e => {
     .id("cosmopolitan:filling/cream_bucket")
     create.mixing(Fluid.of("cosmopolitan:berry_syrup", 250), [
         "4x #forge:berries",
-        Fluid.of("createcafe:melted_sugar", 500)
+        Fluid.of("createdelight:base_syrup", 500)
     ]).heated().id("cosmopolitan:mixing/cream_bucket")
     create.compacting([
             Fluid.of("cosmopolitan:birch_sap", 10),
@@ -37,6 +37,10 @@ ServerEvents.recipes(e => {
             Item.of("farmersdelight:tree_bark").withChance(0.5)
         ], "minecraft:birch_log"
     ).heated().id("cosmopolitan:compacting/birch_sap")
+    create.compacting(
+        'cosmopolitan:berry_syrup_block',
+        Fluid.of("cosmopolitan:berry_syrup", 1000)
+    ).id("cosmopolitan:compacting/berry_syrup_block")
     create.mixing(
         Fluid.of("createdelight:lush_confiture", 125),
         [
