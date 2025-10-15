@@ -222,6 +222,9 @@ ItemEvents.modification(e => {
     food_hungers("oceanic_delight:shrimp_chips", 4, 5.5)
     food_hungers("create:sweet_roll", 8, 6)
     food_hungers("alexscaves:fiddlehead", 1, 0.5)
+    food_hungers("createcafe:oreo_half", 5, 5)
+    food_hungers("createcafe:oreo_crashed", 5, 2.5)
+    food_hungers("createcafe:oreo", 12, 18)
 
     // 食物效果修改
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
