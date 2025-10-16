@@ -8,7 +8,6 @@ ServerEvents.recipes(e => {
         "create_connected:crafting/kinetics/empty_fan_catalyst_from_seething",
         "quark:tweaks/crafting/utility/bent/paper",
         "create:pressing/sugar_cane",
-        "design_decor:stonecutting/industrial_plating",
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot",
         "create:filling/compat/neapolitan/milk_bottle",

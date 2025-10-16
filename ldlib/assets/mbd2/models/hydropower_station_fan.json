@@ -5,8 +5,8 @@
 	"textures": {
 		"2": "create:block/cogwheel_axis",
 		"3": "create:block/axis_top",
-		"4": "design_decor:block/industrial_gear_large",
-		"particle": "design_decor:block/industrial_gear_large"
+		"4": "create:block/water_wheel",
+		"particle": "create:block/water_wheel"
 	},
 	"elements": [
 		{
