@@ -346,7 +346,7 @@ ServerEvents.recipes(e => {
     ], {
         A: "#forge:storage_blocks/sky_steel",
         B: "ae2:fluix_block",
-        C: Item.of('megacells:mega_energy_cell', {internalCurrentPower:12800000}).weakNBT()
+        C: Item.of('megacells:mega_energy_cell', { internalCurrentPower: 12800000 }).weakNBT()
     }).id("applied_armorer:fluix_battery")
     kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:grip_sl_2"}'), [
         "   ",
@@ -497,7 +497,7 @@ ServerEvents.recipes(e => {
         Item.of('tacz:modern_kinetic_gun', '{GunId:"applied_armorer:niklas_lever_vigenere"}').weakNBT(),
         "ae2:energy_card"
     ).id("applied_armorer:moritz_gernade_gl3")
-    
+
 
     transform_fluid(Item.of('tacz:ammo', '{AmmoId:"applied_armorer:cluster_quartz_bullet"}'), "createdelight:spent_liquor", [
         "#forge:dusts/ender_pearl",

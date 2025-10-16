@@ -400,6 +400,7 @@
     "item.createdelight.unfried_potato": "生炸土豆",
     "item.createdelight.unfried_shrimp": "生炸虾仁",
     "item.createdelight.universal_press": "通用压印模板",
+    "item.createdelight.ultimate_universal_press": "终极通用压印模板",
     "item.createdelight.unrefined_sugar_bucket": "未精炼的糖汁桶",
     "item.createdelight.yeast_bucket": "酵母",
     "item.createdelight.venus_ore_cluster": "金星矿簇",
@@ -612,6 +613,24 @@
     "createdelight.tip.tacz_gun": "tacz的默认枪械已被移除, 取而代之的是机动军械师和应用军械师枪械包的枪械。",
     "createdelight.tip.void_stuff": "虚空系列物品提供了远程传输流体, 电力, 应力的方案。",
     "createdelight.tip.arbutus_berries": "不知道怎么获取杜鹃莓? 试试破坏杜鹃树叶吧！",
+
+    
+    "item.createdelight.omni_cell_housing_blank": "全能存储元件外壳坯件",
+    "item.createdelight.complex_omni_cell_housing_blank": "复杂全能存储元件外壳坯件",
+    "item.createdelight.quantum_omni_cell_housing_blank": "量子存储元件外壳坯件",
+    "item.createdelight.initial_processing_of_omni_cell_housing": "未加工的全能存储元件外壳",
+    "item.createdelight.initial_processing_of_complex_omni_cell_housing": "未加工的复杂全能存储元件外壳",
+    "item.createdelight.initial_processing_of_quantum_omni_cell_housing": "未加工的量子存储元件外壳",
+    "item.createdelight.unformed_omni_cell_housing": "未成形的全能存储元件外壳",
+    "item.createdelight.unformed_complex_omni_cell_housing": "未成形的复杂全能存储元件外壳",
+    "item.createdelight.unformed_quantum_omni_cell_housing": "未成形的量子存储元件外壳",
+    
+    "item.createdelight.initial_processing_of_printed_omni_link_processor": "未加工的全能链路处理器",
+    "item.createdelight.omni_link_processor_inscribed": "待压印的全能链路处理器",
+    "item.createdelight.initial_processing_of_printed_complex_link_processor": "未加工的复杂链路处理器",
+    "item.createdelight.complex_link_processor_inscribed": "待压印的复杂链路处理器",
+    "item.createdelight.initial_processing_of_printed_multidimensional_expansion_processor": "未加工的多维展开处理器",
+    "item.createdelight.multidimensional_expansion_processor_inscribed": "待压印的多维展开处理器",
 
     "createdelight.effect.charge.name": "充能",
     "createdelight.effect.charge.tooltip": "攻击伤害增加§e%s§r, 当且仅当消耗了武器中§e%s§r点电量",
