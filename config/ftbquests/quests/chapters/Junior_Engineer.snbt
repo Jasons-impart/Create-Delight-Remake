@@ -1636,6 +1636,66 @@
 			x: 3.0d
 			y: 4.5d
 		}
+		{
+			dependencies: ["6BCFF368CB1C1FA4"]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						2
+						6
+					]
+					Deployed: 0b
+					File: "speed_controller.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "138349D0C340DBCB"
+			rewards: [{
+				id: "075A017A3D85C731"
+				item: {
+					Count: 1
+					id: "create:schematic"
+					tag: {
+						Anchor: {
+							X: 0
+							Y: 0
+							Z: 0
+						}
+						Bounds: [
+							2
+							2
+							6
+						]
+						Deployed: 0b
+						File: "speed_controller.nbt"
+						Mirror: "NONE"
+						Owner: "AzureCrab"
+						Rotation: "NONE"
+					}
+				}
+				type: "item"
+			}]
+			shape: "gear"
+			size: 1.5d
+			subtitle: "大小齿轮就可以变速"
+			tasks: [{
+				id: "2F1C525AFDAA7DC8"
+				type: "checkmark"
+			}]
+			title: "转速不够快怎么办？"
+			x: 16.0d
+			y: 5.5d
+		}
 	]
 	title: "&2初识机械"
 }
