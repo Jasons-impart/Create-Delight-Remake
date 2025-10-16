@@ -367,9 +367,10 @@ ServerEvents.recipes((event) => {
   // 奇点
   create.cutting("ae2:singularity", "create:mechanical_saw").id("createdelight:singularity_1");
   create
-    .crushing("ae2:singularity", "#design_decor:crushing_wheels")
+    .crushing("ae2:singularity", "create:crushing_wheel")
     .id("createdelight:singularity_2");
-  create.milling("ae2:singularity", "#design_decor:millstones").id("createdelight:singularity_3");
+  // 增加这个配方会继承到粉碎轮，导致粉碎轮粉碎石磨也能产生奇点，因此需要移除
+  // create.milling("ae2:singularity", "create:millstone").id("createdelight:singularity_3");
 
   // 陨石再生
   create.milling("4x ae2:sky_dust", "ae2:sky_stone_block").id("createdelight:sky_dust_1");
