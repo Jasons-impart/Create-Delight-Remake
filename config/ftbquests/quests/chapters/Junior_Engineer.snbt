@@ -677,7 +677,15 @@
 				"651AE0D14323B352"
 				"3956BF6CE5009F66"
 			]
-			description: ["蓝图大炮左上角放入火药（一个火药大概能打几百个方块别放多了），右上角可以放入书或者剪贴板（可以统计需要的材料），将蓝图结构放置完成后放入蓝图大炮左侧就可以准备打印结构了，紧贴蓝图大炮摆放容器并放置所需材料，调整蓝图大炮设置后即可点击△开始打印&4（注意：蓝图大炮打印流体储罐，保险库以及蓄电池会有问题，需要打印完后拆掉一个角后重新放置）"]
+			description: [
+				"蓝图大炮使用说明："
+				"&b左上角&r放入&e火药&r"
+				"可选：&b右上角&r放入&e书&r或&e剪贴板&r，可得所需&n材料清单&r"
+				"手持&d蓝图&r将结构放置&e部署完毕&r后，放入蓝图大炮&b左侧&r"
+				"紧贴蓝图大炮摆放&d容器&r并放置&d所需材料&r"
+				"调整蓝图大炮设置后即可点击开始按钮结构"
+				"注意：蓝图大炮打印部分结构 &n如传送带，保险库，流体储罐等&r 会有问题，需要自己修复"
+			]
 			id: "68C809838E2F09A8"
 			rewards: [
 				{
@@ -1638,6 +1646,7 @@
 		}
 		{
 			dependencies: ["6BCFF368CB1C1FA4"]
+			description: ["制作一个蓝图桌打开 &e&lspeed_controller.nbt&r&r 看看吧"]
 			icon: {
 				Count: 1
 				id: "create:schematic"
@@ -1661,28 +1670,8 @@
 			}
 			id: "138349D0C340DBCB"
 			rewards: [{
-				id: "075A017A3D85C731"
-				item: {
-					Count: 1
-					id: "create:schematic"
-					tag: {
-						Anchor: {
-							X: 0
-							Y: 0
-							Z: 0
-						}
-						Bounds: [
-							2
-							2
-							6
-						]
-						Deployed: 0b
-						File: "speed_controller.nbt"
-						Mirror: "NONE"
-						Owner: "AzureCrab"
-						Rotation: "NONE"
-					}
-				}
+				id: "479ADB2A2D6BEF73"
+				item: "create:empty_schematic"
 				type: "item"
 			}]
 			shape: "gear"
@@ -1693,8 +1682,49 @@
 				type: "checkmark"
 			}]
 			title: "转速不够快怎么办？"
-			x: 16.0d
-			y: 5.5d
+			x: 13.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["762CD49FCDC889E2"]
+			description: ["制作一个蓝图桌打开 &e&lfan_array.nbt&r&r 看看吧"]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						2
+						6
+					]
+					Deployed: 0b
+					File: "speed_controller.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "54A95B216D182FBF"
+			rewards: [{
+				id: "151ED917D3CCC1A4"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			size: 1.5d
+			subtitle: "鼓风机阵列启动"
+			tasks: [{
+				id: "5352E093129BDDD9"
+				type: "checkmark"
+			}]
+			title: "鼓风机处理太慢？"
+			x: 16.5d
+			y: 4.5d
 		}
 	]
 	title: "&2初识机械"

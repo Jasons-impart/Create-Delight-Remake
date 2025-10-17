@@ -1,3 +1,5 @@
 *
 !/.gitignore
 !/speed_controller.nbt
+!/fan_array.nbt
+!/brass_casting.nbt
