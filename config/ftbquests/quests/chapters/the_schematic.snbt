@@ -844,19 +844,24 @@
 			dependencies: ["486D272AFE1DBA5A"]
 			id: "51620E8D395C2FFF"
 			tasks: [{
-				id: "40396AC6139D1B80"
+				id: "2195AFD38C7FF662"
 				item: {
 					Count: 1
 					id: "tetra:scroll_rolled"
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								effects: ["tetra:stone_expertise"]
-								glyphs: [I;2]
+								effects: ["tetra:scale_expertise"]
+								glyphs: [I;
+									6
+									7
+									6
+									8
+								]
 								intricate: 0b
-								key: "stone_expertise"
+								key: "scale_expertise"
 								material: 0
-								ribbon: "9a9a9a"
+								ribbon: "75a03e"
 							}]
 						}
 					}
