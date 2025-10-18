@@ -295,4 +295,13 @@ ServerEvents.recipes(e => {
         .id("alexscaves:filling/radon_bottle")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)], "alexscaves:radon_bottle")
         .id("alexscaves:emptying/radon")
+
+    e.recipes.vintageimprovements.pressurizing(
+        Item.of("alexscaves:uranium_shard", 1).withChance(0.1),
+        Fluid.of("alexscaves:acid", 500),
+        160
+    )
+    .superheated()
+    .id("alexscaves:pressurizing/uranium_shard")
+    
 })
