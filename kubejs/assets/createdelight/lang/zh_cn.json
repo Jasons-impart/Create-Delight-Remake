@@ -193,6 +193,8 @@
     "fluid.createdelight.mint_syrup": "薄荷糖浆",
     "fluid.createdelight.banana_syrup": "香蕉糖浆",
     "fluid.createdelight.filling": "馅料",
+    "fluid.createdelight.lush_confiture_jelly": "繁茂果酱",
+    "fluid.createdelight.lush_confiture_jello": "繁茂熔融果冻",
 
     "fluid.createdelight.dragon_breath_soda": "龙息汽水",
 
@@ -223,6 +225,7 @@
     "item.createdelight.unbaked_blueberry_muffin": "未烤制的蓝莓玛芬",
     "item.createdelight.unbaked_cranberry_muffin": "未烤制的蔓越莓玛芬",
     "item.createdelight.unbaked_monster_muffin": "未烤制的怪物玛芬",
+    "item.createdelight.lush_confiture_jello_item": "繁茂果冻",
 
     
     "item.createdelight.corn_flour": "玉米面粉",

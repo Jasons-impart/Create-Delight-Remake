@@ -258,6 +258,17 @@ StartupEvents.registry("item", e => {
                 .saturation(0.7)
                 .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
+    // 繁茂果冻
+    e.create("createdelight:lush_confiture_jello_item")
+        .food(food => {
+            food.hunger(1)
+                .saturation(0.5)
+                .effect("cosmopolitan:tracer", 600, 1, 1.0)
+                .effect("cosmopolitan:phototaxis", 600, 1, 1.0)
+        })
+        .tag("fruitsdelight:jello")
+        .tag("diet:sugars")
+        .translationKey("item.createdelight.lush_confiture_jello_item")
     // 九转大肠
     e.create("createdelight:braised_intestines_in_brown_sauce")
         .rarity("epic")

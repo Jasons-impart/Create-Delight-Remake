@@ -3,5 +3,6 @@ ServerEvents.tags("minecraft:block", e => {
         'ratatouille:frozen_block', 
         'iceandfire:dragonscale_blue', 
         'cmr:snowman_cooler', 
-        'brewinandchewin:ice_crate'])
+        'brewinandchewin:ice_crate'
+    ])
 })
