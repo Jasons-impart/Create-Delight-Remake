@@ -6,7 +6,7 @@ ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
     if (!entity || !entity.living)
         return
     //限制主手使用
-    if (!e.player.mainHandItem == "createdelight:blood_collection_device" || !e.player.offHandItem == "minecraft:glass_bottle")
+    if (!(e.player.mainHandItem == "createdelight:blood_collection_device" && e.player.offHandItem == "minecraft:glass_bottle"))
         return
 
     if (entity instanceof $EntityDragonBase) {
