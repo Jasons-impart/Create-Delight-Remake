@@ -267,5 +267,11 @@
             "collectorsreap:pomegranate_smoothie"
         ],
         "resultItems": "collectorsreap:pomegranate_milkshake"
+    },
+    {
+        "matchItems": [
+            "cosmopolitan:lush_confiture_bottle"
+        ],
+        "resultItems": "createdelightcore:lush_confiture_jelly_bottle"
     }
 ]
