@@ -6,3 +6,9 @@ ServerEvents.tags("minecraft:block", e => {
         'brewinandchewin:ice_crate'
     ])
 })
+ServerEvents.tags("minecraft:item", e => {
+    e.add("cosmopolitan:carotene_sources", [
+        'createdelight:enchanted_golden_carrot',
+        "create_bic_bit:stamppot_bowl"
+    ])
+})
