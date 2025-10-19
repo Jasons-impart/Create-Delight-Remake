@@ -344,7 +344,6 @@ ServerEvents.recipes(e => {
         '2x vintageimprovements:centrifuge',
         '2x vintageimprovements:curving_press',
         '8x create:gearbox',
-        '2x createaddition:rolling_mill'
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
             res,

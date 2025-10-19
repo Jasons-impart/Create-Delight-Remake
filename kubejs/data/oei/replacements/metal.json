@@ -77,11 +77,5 @@
             "create_sa:zinc_handle"
         ],
         "resultItems": "vintageimprovements:zinc_rod"
-    },
-    {
-        "matchItems": [
-            "createaddition:electrum_block"
-        ],
-        "resultItems": "createdelightcore:electrum_block"
     }
 ]
