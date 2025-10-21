@@ -833,7 +833,7 @@
 			subtitle: "攻击目标时会随着造成伤害的次数的提升而提高伤害"
 			tasks: [{
 				id: "02AB6582AE6F00AA"
-				item: "alexcaves_delight:cleaverofheavybone_knife"
+				item: "alexscaves:heavy_bone"
 				type: "item"
 			}]
 			title: "屠杀"

@@ -1708,12 +1708,6 @@
 					type: "item"
 				}
 				{
-					count: 4
-					id: "322B6DDEB7567562"
-					item: "alexcaves_delight:tremorzillaamlette"
-					type: "item"
-				}
-				{
 					id: "7CEC7B262C1B6E9C"
 					item: {
 						Count: 1
@@ -2124,12 +2118,6 @@
 					item: "alexscaves:subterranodon_egg"
 					type: "item"
 				}
-				{
-					consume_items: true
-					id: "7564F5FB84E1CAEE"
-					item: "alexcaves_delight:cleaverofheavybone_knife"
-					type: "item"
-				}
 			]
 			title: "研究：远古之力"
 			x: 13.0d
@@ -2144,20 +2132,12 @@
 				}
 			}
 			id: "44FE97D55D97EB03"
-			rewards: [
-				{
-					id: "2FFBD57F6FACA01F"
-					item: "alexcaves_delight:ammletfromembryo"
-					random_bonus: 1
-					type: "item"
-				}
-				{
-					id: "48746D470C09848D"
-					item: "collectorsreap:sea_wrap"
-					random_bonus: 1
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "48746D470C09848D"
+				item: "collectorsreap:sea_wrap"
+				random_bonus: 1
+				type: "item"
+			}]
 			shape: "square"
 			subtitle: "雷厉风行"
 			tasks: [
