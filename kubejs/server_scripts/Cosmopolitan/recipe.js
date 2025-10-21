@@ -247,4 +247,13 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:lush_confiture_jelly", 50)
         ]
     ).id("cosmopolitan:filling/tuber_puree_cone_with_confiture")
+    kubejs.shaped(
+        'alexscaves:wafer_cookie_block',
+        [
+            "AA",
+            "AA"
+        ], {
+            A:'cosmopolitan:wafer'
+        }
+    ).id("alexscaves:wafer_cookie_block")
 })

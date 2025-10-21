@@ -7,19 +7,13 @@ ServerEvents.recipes(e => {
         "culturaldelights:avocado_toast",
         "create_central_kitchen:sequenced_assembly/chicken_sandwich",
         "create_central_kitchen:sequenced_assembly/bacon_sandwich",
-        "create_central_kitchen:sequenced_assembly/egg_sandwich"
+        "create_central_kitchen:sequenced_assembly/egg_sandwich",
+        "refurbished_furniture:frying/sweet_berry_jam",
+        "refurbished_furniture:frying/glow_berry_jam",
     ])
     remove_recipes_input(e, [
         'refurbished_furniture:toast'
     ])
-    combination(e, [
-        'some_assembly_required:toasted_bread_slice',
-        'refurbished_furniture:sweet_berry_jam'
-    ], 'refurbished_furniture:sweet_berry_jam_toast', 1)
-    combination(e, [
-        'some_assembly_required:toasted_bread_slice',
-        'refurbished_furniture:glow_berry_jam'
-    ], 'refurbished_furniture:glow_berry_jam_toast', 1)
     combination(e, [
         'some_assembly_required:bread_slice',
         'ad_astra:cheese',
