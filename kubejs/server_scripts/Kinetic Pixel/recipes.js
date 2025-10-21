@@ -182,7 +182,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: "create:precision_mechanism"
         }
     )
@@ -196,7 +196,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}').strongNBT()
         }
     )
@@ -210,7 +210,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}').strongNBT()
         }
     ).id("create_armorer:scope_telephoto")
