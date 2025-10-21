@@ -273,5 +273,23 @@
             "cosmopolitan:lush_confiture_bottle"
         ],
         "resultItems": "createdelightcore:lush_confiture_jelly_bottle"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:apple_sauce_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:apple_jelly"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:sweet_berry_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:sweetberry_jelly"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:glow_berry_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:glowberry_jelly"
     }
 ]
