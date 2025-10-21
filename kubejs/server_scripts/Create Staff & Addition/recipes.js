@@ -15,15 +15,28 @@ ServerEvents.recipes(e => {
         "create_sa:block_picker_recipe"
     ])
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
-    e.recipes.create.sequenced_assembly( "create_sa:hydraulic_engine", "create:precision_mechanism",[
-            e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_copper", 450)]),
-            e.recipes.create.deploying(iner_1, [iner_1, "create:fluid_pipe"]),
-            e.recipes.create.filling(iner_1, [iner_1, Fluid.water(250)])
-        ]
+    e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:precision_mechanism", [
+        e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_copper", 450)]),
+        e.recipes.create.deploying(iner_1, [iner_1, "create:fluid_pipe"]),
+        e.recipes.create.filling(iner_1, [iner_1, Fluid.water(250)])
+    ]
     )
         .loops(1)
         .transitionalItem(iner_1)
         .id("create_sa:hydraulic_engine_recipe")
+    {
+        let iner_1 = "create_sa:incomplete_hydraulic_engine"
+        e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:copper_sheet", [
+            e.recipes.create.deploying(iner_1, [iner_1, "create:cogwheel"]),
+            e.recipes.create.deploying(iner_1, [iner_1, "#forge:spring/below_500"]),
+        e.recipes.create.deploying(iner_1, [iner_1, "create:electron_tube"]),
+            e.recipes.create.filling(iner_1, [iner_1, Fluid.water(100)])
+        ]
+        )
+            .loops(3)
+            .transitionalItem(iner_1)
+            .id("create_sa:hydraulic_engine_recipe_2")
+    }
     let iner_2 = "create_sa:incomplete_heat_engine"
     e.recipes.create.sequenced_assembly("create_sa:heat_engine", "create_sa:hydraulic_engine", [
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_andesite", 450)]),
@@ -42,30 +55,30 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem(iner_3)
         .id("create_sa:steam_engine_recipe")
-    e.recipes.create.mechanical_crafting(
-        "create_sa:brass_jetpack_chestplate", [
-        "ABA",
-        "ACA",
-        "ADA"
-    ], {
-        A: "create:brass_sheet",
-        B: "create_sa:copper_jetpack_chestplate",
-        C: "create_sa:steam_engine",
-        D: "create_sa:andesite_jetpack_chestplate"
-    }
-    ).id("create_sa:brass_jetpack_recipe")
-    e.recipes.create.mechanical_crafting(
-        "create_sa:brass_exoskeleton_chestplate", [
-        "ABA",
-        "ACA",
-        "ADA"
-    ], {
-        A: "create:brass_sheet",
-        B: "create_sa:copper_exoskeleton_chestplate",
-        C: "create_sa:steam_engine",
-        D: "create_sa:andesite_exoskeleton_chestplate"
-    }
-    ).id("create_sa:brass_exoskeleton_recipe")
+    // e.recipes.create.mechanical_crafting(
+    //     "create_sa:brass_jetpack_chestplate", [
+    //     "ABA",
+    //     "ACA",
+    //     "ADA"
+    // ], {
+    //     A: "create:brass_sheet",
+    //     B: "create_sa:copper_jetpack_chestplate",
+    //     C: "create_sa:steam_engine",
+    //     D: "create_sa:andesite_jetpack_chestplate"
+    // }
+    // ).id("create_sa:brass_jetpack_recipe")
+    // e.recipes.create.mechanical_crafting(
+    //     "create_sa:brass_exoskeleton_chestplate", [
+    //     "ABA",
+    //     "ACA",
+    //     "ADA"
+    // ], {
+    //     A: "create:brass_sheet",
+    //     B: "create_sa:copper_exoskeleton_chestplate",
+    //     C: "create_sa:steam_engine",
+    //     D: "create_sa:andesite_exoskeleton_chestplate"
+    // }
+    // ).id("create_sa:brass_exoskeleton_recipe")
     e.recipes.create.mechanical_crafting(
         "create_sa:andesite_exoskeleton_chestplate",
         [
