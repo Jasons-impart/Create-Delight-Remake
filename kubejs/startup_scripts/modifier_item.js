@@ -373,7 +373,6 @@ ItemEvents.modification(e => {
     green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)
     green_tea_effect('farmersrespite:strong_green_tea', 30, 2, 30, 30)
     green_tea_effect('collectorsreap:lime_green_tea', 45, 0, 45, 20)
-    green_tea_effect('alexcaves_delight:tree_star_tea', 45, 0, 45, 20)
     green_tea_effect('fruitsdelight:mangosteen_tea', 45, 0, 45, 20)
     green_tea_effect('trailandtales_delight:pitcher_plant_tea', 45, 0, 45, 20)
     green_tea_effect('fruitsdelight:lychee_cherry_tea', 45, 0, 45, 20)

@@ -298,13 +298,6 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "alexcaves_delight:cleaverofheavybone_knife", 
-                        "count": 1
-                    }
-				},
-				{
-					"type": "gateways:stack",
-					"stack": {
                         "item": "alexscaves:tremorsaurus_egg", 
                         "count": 1
                     }
