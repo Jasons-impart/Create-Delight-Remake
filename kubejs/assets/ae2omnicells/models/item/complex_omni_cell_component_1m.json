@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ae2omnicells:item/complex_omni_cell_component_1m"
+  }
+}
