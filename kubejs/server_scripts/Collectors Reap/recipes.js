@@ -303,4 +303,14 @@ ServerEvents.recipes(e => {
             "#neapolitan:mint_leaves"
         ], "createdelight:mint_limeade", "collectorsreap:mint_limeade"
     )
+    //清爽土豆饼
+    farmersdelight.cooking(
+        [
+            "createdelight:raw_potato_pancake",
+            "#forge:fruits/lime",
+            "#forge:fruits/lime",
+            "#festival_delicacies:onion"
+        ], 'collectorsreap:potato_fritters',
+        1.0, 200
+    ).id("collectorsreap:food/potato_fritters")
 })

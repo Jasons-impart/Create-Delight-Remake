@@ -258,6 +258,16 @@ StartupEvents.registry("item", e => {
                 .saturation(0.7)
                 .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
+    // 生土豆饼
+    e.create("createdelight:raw_potato_pancake")
+        .translationKey("item.createdelight.raw_potato_pancake")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+        })
+    // 威化面团
+    e.create("createdelight:wafer_dough")
+        .translationKey("item.createdelight.wafer_dough")
     // 繁茂果冻
     e.create("createdelight:lush_confiture_jello_item")
         .food(food => {
