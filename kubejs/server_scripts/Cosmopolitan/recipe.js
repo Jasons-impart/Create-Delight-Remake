@@ -1,16 +1,11 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "cosmopolitan:general/wafer",
         "cosmopolitan:create/pressing/wafer_cone",
         "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying",
         "cosmopolitan:farmersdelight/cutting/fern",
         "cosmopolitan:lush_confiture_bottle_from_glass_bottle"
     ])
     const {kubejs, create, create_new_age, farmersdelight} = e.recipes
-    kubejs.shapeless("cosmopolitan:wafer", [
-        "farmersdelight:wheat_dough",
-        "ratatouille:cocoa_powder"
-    ]).id("cosmopolitan:general/wafer")
     e.replaceInput({mod: "cosmopolitan"}, "#forge:crops/wheat", "#forge:flour")
     e.replaceOutput({mod: "cosmopolitan"}, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     create.filling("cosmopolitan:cream_bun", ["#forge:bread", Fluid.of("cosmopolitan:cream", 250)])
@@ -256,4 +251,24 @@ ServerEvents.recipes(e => {
             A:'cosmopolitan:wafer'
         }
     ).id("alexscaves:wafer_cookie_block")
+    create.pressing(
+        'createdelight:raw_potato_pancake',
+        'minecraft:potato'
+    ).id("createdelight:pressing/raw_potato_pancake")
+    kubejs.shapeless(
+        'createdelight:wafer_dough',
+        [
+            "farmersdelight:wheat_dough",
+            "ratatouille:cocoa_powder"
+        ]
+    ).id("cosmopolitan:general/wafer")
+    baking(e, 'createdelight:wafer_dough', 'cosmopolitan:wafer', 1.0, "food", 100)
+    farmersdelight.cooking(
+        [
+            '#fruitsdelight:jello',
+            "minecraft:sugar",
+            "#forge:salad_ingredients"
+        ], 'cosmopolitan:jello_salad',
+        1.0, 200, "minecraft:bowl"
+    ).id("cosmopolitan:farmersdelight/cooking/jello_salad")
 })
