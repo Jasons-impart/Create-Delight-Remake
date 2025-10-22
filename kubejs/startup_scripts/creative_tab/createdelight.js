@@ -49,7 +49,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_calamari',
     'createdelight:raw_ghast_calamari',
     'createdelight:raw_cheese_pizza',
-    'createdelight:raw_potato_pancake'
+    'createdelight:raw_potato_pancake',
     // 食物
     'createdelight:wrapped_fries_ghasta',
     'createdelight:oat_bread',
