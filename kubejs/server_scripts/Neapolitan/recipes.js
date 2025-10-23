@@ -2,7 +2,9 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "neapolitan:adzuki/adzuki_crate",
         "neapolitan:milk/milk_bottles_from_bucket",
-        "neapolitan:adzuki/adzuki_crate_uncompress"
+        "neapolitan:adzuki/adzuki_crate_uncompress",
+        "neapolitan:vanilla/vanilla_fudge",
+        "create_central_kitchen:mixing/vanilla_fudge"
     ])
     remove_recipes_output(e, [
         "neapolitan:chocolate_strawberries",
