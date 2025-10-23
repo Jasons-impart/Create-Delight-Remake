@@ -282,6 +282,49 @@ ItemEvents.modification(e => {
     food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
+        //软糖效果
+    e.modify('collectorsreap:lime_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("collectorsreap:corrosion")
+            food.effect("collectorsreap:corrosion", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:pomegranate_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("collectorsreap:volatility")
+            food.effect("collectorsreap:volatility", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:apple_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("farmersdelight:comfort")
+            food.effect("cosmopolitan:exuberant", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:glow_berry_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:glowing")
+            food.effect("cosmopolitan:tracer", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:melon_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:absorption")
+            food.effect("minecraft:regeneration", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:vanilla_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("neapolitan:vanilla_scent")
+            food.effect("neapolitan:vanilla_scent", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:adzuki_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("neapolitan:harmony")
+            food.effect("neapolitan:harmony", 200, 2, 1)
+        }
+    })
         
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)

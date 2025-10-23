@@ -7,7 +7,9 @@ ServerEvents.recipes(e => {
     ])
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 
-        "collectorsreap:food/pomegranate_smoothie"
+        "collectorsreap:food/pomegranate_smoothie",
+        "collectorsreap:gummy/glow_berries",
+        "collectorsreap:gummy/sweet_berries",
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
@@ -78,17 +80,53 @@ ServerEvents.recipes(e => {
         ], "collectorsreap:portobello_quiche", 1.0, 200
     ).id("collectorsreap:food/portobello_quiche")
     //软糖
-    create.mixing(
-       '9x collectorsreap:glow_berry_gummy',
-       [
-            "minecraft:kelp",
-            "minecraft:glow_berries",
-            "minecraft:sugar",
-            "minecraft:honey_block"
-       ] 
-    ).id("collectorsreap:integration/create/mixing/gummy/glow_berries")
-    e.replaceInput({id: "collectorsreap:integration/create/mixing/gummy/coffee"}, "farmersrespite:coffee_beans", "createcafe:coffee_grounds")
-    e.replaceInput({id: "collectorsreap:gummy/coffee"}, "farmersrespite:coffee_beans", "createcafe:coffee_grounds")
+    let gummies = [
+        ['chocolate', "create:bar_of_chocolate"],
+        ['lime', "#forge:fruits/lime"],
+        ['pomegranate', "#forge:fruits/pomegranate"],
+        ['apple', "minecraft:apple"],
+        ['glow_berry', "minecraft:glow_berries"],
+        ['melon', "minecraft:melon_slice"],
+        ['strawberry', "neapolitan:strawberries"],
+        ['banana', "neapolitan:banana"],
+        ['vanilla', "neapolitan:dried_vanilla_pods"],
+        ['mint', "neapolitan:mint_leaves"],
+        ['adzuki', "neapolitan:roasted_adzuki_beans"],
+        ['pumpkin', "seasonals:pumpkin_puree"],
+        ['sweet_berry', "minecraft:sweet_berries"],
+        ['beetroot', "#forge:vegetables/beetroot"],
+        ['green_tea', "farmersrespite:green_tea_leaves"],
+        ['yellow_tea', "farmersrespite:yellow_tea_leaves"],
+        ['black_tea', "farmersrespite:black_tea_leaves"],
+        ['coffee', "createcafe:coffee_grounds"],
+    ]
+    gummies.forEach(gummy => {
+        create.mixing(
+            "8x collectorsreap:" + gummy[0] + "_gummy",
+            [
+                Fluid.of("createdelightcore:slime", 810),
+                FluidIngredients("forge:honey", 1000),
+                gummy[1]
+            ]
+        ).id("collectorsreap:integration/create/mixing/gummy/" + gummy[0])
+        create.mixing(
+            "8x collectorsreap:" + gummy[0] + "_gummy",
+            [
+                Fluid.of("createdelightcore:slime", 810),
+                Fluid.of("createdelight:base_syrup", 1000),
+                gummy[1]
+            ]
+        ).id("collectorsreap:mixing/" + gummy[0] + "_gummy")
+        farmersdelight.cooking(
+            [
+                gummy[1],
+                "minecraft:honey_bottle",
+                "minecraft:slime_ball"
+            ], 
+            "collectorsreap:" + gummy[0] + "_gummy",
+            1.0, 200
+        ).id("collectorsreap:gummy/" + gummy[0])
+    })
 
     //果饮
     kubejs.shapeless(

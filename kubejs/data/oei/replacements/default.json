@@ -291,5 +291,17 @@
             "vintagedelight:glow_berry_mason_jar"
         ],
         "resultItems": "fruitsdelight:glowberry_jelly"
+    },
+    {
+        "matchItems": [
+            "brewinandchewin:cocoa_fudge"
+        ],
+        "resultItems": "collectorsreap:chocolate_gummy"
+    },
+    {
+        "matchItems": [
+            "neapolitan:vanilla_fudge"
+        ],
+        "resultItems": "collectorsreap:vanilla_gummy"
     }
 ]

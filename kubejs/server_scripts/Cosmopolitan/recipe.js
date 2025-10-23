@@ -14,14 +14,17 @@ ServerEvents.recipes(e => {
     .id("cosmopolitan:deploying/cream_bun")
     create.mixing("cosmopolitan:gulime", [
         Fluid.of("createdelightcore:slime", 270),
-        FluidIngredients("forge:honey", 250),
-        "minecraft:pumpkin"
-    ])
-    .id("cosmopolitan:mixing/gulime")
-    create.filling("cosmopolitan:cream", ["minecraft:bowl", Fluid.of("cosmopolitan:cream", 250)])
-    .id("cosmopolitan:filling/cream")
-    create.filling("cosmopolitan:cream_bucket", ["minecraft:bucket", Fluid.of("cosmopolitan:cream", 1000)])
-    .id("cosmopolitan:filling/cream_bucket")
+        "minecraft:carved_pumpkin"
+    ]).id("cosmopolitan:mixing/gulime")
+    kubejs.shapeless(
+        "cosmopolitan:gulime",
+        [
+            "minecraft:carved_pumpkin",
+            "minecraft:slime_block"
+        ]
+    ).id("cosmopolitan:general/gulime")
+    create.filling("cosmopolitan:cream", ["minecraft:bowl", Fluid.of("cosmopolitan:cream", 250)]).id("cosmopolitan:filling/cream")
+    create.filling("cosmopolitan:cream_bucket", ["minecraft:bucket", Fluid.of("cosmopolitan:cream", 1000)]).id("cosmopolitan:filling/cream_bucket")
     create.mixing(Fluid.of("cosmopolitan:berry_syrup", 250), [
         "4x #forge:berries",
         Fluid.of("createdelight:base_syrup", 500)
