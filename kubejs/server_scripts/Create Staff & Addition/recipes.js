@@ -28,8 +28,8 @@ ServerEvents.recipes(e => {
         let iner_1 = "create_sa:incomplete_hydraulic_engine"
         e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:copper_sheet", [
             e.recipes.create.deploying(iner_1, [iner_1, "create:cogwheel"]),
+            e.recipes.create.deploying(iner_1, [iner_1, "create:large_cogwheel"]),
             e.recipes.create.deploying(iner_1, [iner_1, "#forge:spring/below_500"]),
-        e.recipes.create.deploying(iner_1, [iner_1, "create:electron_tube"]),
             e.recipes.create.filling(iner_1, [iner_1, Fluid.water(100)])
         ]
         )
