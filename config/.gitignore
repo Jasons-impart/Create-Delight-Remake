@@ -3,6 +3,7 @@
 # 反选不忽略的文件夹和文件
 
 !/.gitignore
+!/acceleratedrendering-client.toml
 !/alexsmobs
 !/attributeslib.cfg
 !/fancymenu
