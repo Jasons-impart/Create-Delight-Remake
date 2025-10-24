@@ -84,6 +84,7 @@
 				tag: { }
 			}
 			id: "4EC043194AF40AC4"
+			min_required_tasks: 1
 			subtitle: "其实我更习惯叫磁盘"
 			tasks: [
 				{
