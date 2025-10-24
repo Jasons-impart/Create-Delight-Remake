@@ -38,22 +38,6 @@
       27724,
       4.753436
     ],
-    "alexscaves_torpedoes:azure_axe": [
-      26766,
-      2.1880474
-    ],
-    "alexscaves_torpedoes:azure_sword": [
-      26841,
-      2.0892968
-    ],
-    "alexscaves_torpedoes:scarlet_axe": [
-      26766,
-      2.1880474
-    ],
-    "alexscaves_torpedoes:scarlet_sword": [
-      26841,
-      2.0892968
-    ],
     "alexsmobs:skelewag_sword": [
       27852,
       0.7804518
@@ -426,14 +410,6 @@
       5139,
       0.0387
     ],
-    "alexscaves_torpedoes:ferrousslime_boots": [
-      4511,
-      1.1012076
-    ],
-    "alexscaves_torpedoes:tectonic_boots": [
-      31,
-      10.645845
-    ],
     "alexsmobs:flying_fish_boots": [
       0,
       0.0
@@ -675,10 +651,6 @@
     "alexscaves:primordial_pants": [
       4747,
       0.7791448
-    ],
-    "alexscaves_torpedoes:tectonic_leggings": [
-      17,
-      10.645845
     ],
     "alexsmobs:centipede_leggings": [
       0,
@@ -957,10 +929,6 @@
     "alexscaves:primordial_tunic": [
       4778,
       0.7568712
-    ],
-    "alexscaves_torpedoes:tectonic_chestplate": [
-      31,
-      10.645845
     ],
     "alexsmobs:crocodile_chestplate": [
       0,
@@ -1303,14 +1271,6 @@
     "alexscaves:primordial_helmet": [
       4733,
       0.7974141
-    ],
-    "alexscaves_torpedoes:magnetic_helmet": [
-      4364,
-      1.2718761
-    ],
-    "alexscaves_torpedoes:tectonic_helmet": [
-      17,
-      10.645845
     ],
     "alexsmobs:fedora": [
       0,
