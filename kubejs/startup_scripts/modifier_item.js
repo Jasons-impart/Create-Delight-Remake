@@ -229,6 +229,8 @@ ItemEvents.modification(e => {
     food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
 
     // 食物效果修改
+    food_effects("corn_delight:classic_corn_dog", "minecraft:resistance", 10)
+    food_effects("corn_delight:classic_corn_dog", "minecraft:fire_resistance", 10)
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
     e.modify("culturaldelights:glow_squid", item => {

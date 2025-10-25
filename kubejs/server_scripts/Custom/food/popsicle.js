@@ -31,7 +31,7 @@ ServerEvents.recipes(e => {
         ['cosmopolitan:berry_popsicle', Fluid.of("cosmopolitan:berry_syrup", 100)],
         ['youkaishomecoming:milk_popsicle', FluidIngredients("forge:milk", 100)],
         ['fruitsdelight:hamimelon_popsicle', Fluid.of("fruitsdelight:hamimelon_juice", 100)],
-        ['collectorsreap:lime_popsicle', Fluid.of("createdelight:limeade", 100)],
+        ['collectorsreap:lime_popsicle', Fluid.of("create_central_kitchen:limeade", 100)],
         ['fruitsdelight:kiwi_popsicle', Fluid.of("fruitsdelight:kiwi_juice", 100)],
         ['casualness_delight:green_tongue', Fluid.of("createdelightcore:slime")],
     ]
