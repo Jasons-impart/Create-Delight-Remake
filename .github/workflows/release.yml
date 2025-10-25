@@ -116,7 +116,9 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
-          sed -i "4s/.*/  "placeholder": "\\n§l§4§n\(勿删本行\) 版本: $MODPACK_VERSION",/" ${{ github.workspace }}/config/GeneralFeedback/default.json
+          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' ${{ github.workspace }}/config/GeneralFeedback/default.json > default.json.tmp
+          mv default.json.tmp ${{ github.workspace }}/config/GeneralFeedback/default.json
+          
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
           grep 'placeholder' ${{ github.workspace }}/config/GeneralFeedback/default.json
@@ -321,7 +323,8 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION (patch)/" kubejs/config/client.properties
-          sed -i "4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 版本: $MODPACK_VERSION",/" config/GeneralFeedback/default.json
+          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
+          mv default.json.tmp config/GeneralFeedback/default.json
           grep 'modpack' config/bcc-common.toml
           grep 'title' kubejs/config/client.properties
           grep 'placeholder' config/GeneralFeedback/default.json
