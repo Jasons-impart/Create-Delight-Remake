@@ -116,9 +116,10 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
-          sed -i '4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 整合包版本: $MODPACK_VERSION",/' ${{ github.workspace }}/config/GeneralFeedback/default.json
+          sed -i "4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 版本: $MODPACK_VERSION",/" ${{ github.workspace }}/config/GeneralFeedback/default.json
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
+          grep 'placeholder' ${{ github.workspace }}/config/GeneralFeedback/default.json
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
         # fancymenu格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
         # |||
@@ -320,8 +321,11 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION (patch)/" kubejs/config/client.properties
-          sed -i '4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 整合包版本: $MODPACK_VERSION",/' config/GeneralFeedback/default.json
+          sed -i "4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 版本: $MODPACK_VERSION",/" config/GeneralFeedback/default.json
           grep 'modpack' config/bcc-common.toml
+          grep 'title' kubejs/config/client.properties
+          grep 'placeholder' config/GeneralFeedback/default.json
+
       - name: 准备补丁文件
         run: |
           # 生成完整差异报告
