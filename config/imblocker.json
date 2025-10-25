@@ -5,7 +5,6 @@
       "net.mehvahdjukaar.supplementaries.client.screens.TextHolderEditScreen",
       "net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen",
       "dev.ftb.mods.ftblibrary.ui.ScreenWrapper",
-
       "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
       "net.minecraft.client.gui.screens.inventory.HangingSignEditScreen",
       "journeymap.client.ui.waypoint.WaypointEditor",
@@ -13,13 +12,8 @@
       "minecraft:net.minecraft.client.gui.screens.ChatScreen"
       "com.sighs.generalfeedback.client.FeedbackScreen"
     ],
-    "enableScreenRecovering": true,
+    "enableScreenRecovering": false,
     "recoveredScreens": [
-      "com.mrcrayfish.catalogue.client.screen.CatalogueModListScreen",
-      "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
-      "net.minecraft.client.gui.screens.PauseScreen",
-      "net.minecraftforge.client.gui.ModListScreen",
-      ""
     ],
     "englishStateImpl": "CONVERSION_STATUS",
     "primaryEnglishState": "CJK"
