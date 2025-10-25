@@ -4,17 +4,20 @@
       "net.minecraft.client.gui.screens.inventory.BookEditScreen",
       "net.mehvahdjukaar.supplementaries.client.screens.TextHolderEditScreen",
       "net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen",
-      "dev.ftb.mods.ftblibrary.ui.ScreenWrapper"
+      "dev.ftb.mods.ftblibrary.ui.ScreenWrapper",
+      "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
+      "net.minecraft.client.gui.screens.inventory.HangingSignEditScreen",
+      "journeymap.client.ui.waypoint.WaypointEditor",
+      "com.ldtteam.blockout.BOScreen",
+      "minecraft:net.minecraft.client.gui.screens.ChatScreen"
     ],
-    "enableScreenRecovering": false,
+    "enableScreenRecovering": true,
     "recoveredScreens": [
       "com.mrcrayfish.catalogue.client.screen.CatalogueModListScreen",
-      "net.minecraft.client.gui.screens.inventory.InventoryScreen",
-      "net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen",
+      "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
       "net.minecraft.client.gui.screens.PauseScreen",
-      "dev.ftb.mods.ftblibrary.ui.ScreenWrapper",
-      "net.minecraft.client.gui.screens.OptionsScreen",
-      "net.minecraftforge.client.gui.ModListScreen"
+      "net.minecraftforge.client.gui.ModListScreen",
+      ""
     ],
     "englishStateImpl": "CONVERSION_STATUS",
     "primaryEnglishState": "CJK"
