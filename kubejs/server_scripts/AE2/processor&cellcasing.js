@@ -498,7 +498,7 @@ ServerEvents.recipes((event) => {
   kubejs.shapeless("createdelight:initial_processing_of_quantum_omni_cell_housing", [
     "createdelight:quantum_omni_cell_housing_blank",
     "3x #forge:dusts/ender_pearl",
-    "ae2omnicells:multidimensional_expansion_circuit_processor",
+    "ae2omnicells:multidimensional_expansion_processor",
   ]);
 
   kubejs
@@ -643,7 +643,7 @@ ServerEvents.recipes((event) => {
         ]),
         create.deploying("createdelight:complex_omni_cell_housing_blank", [
           "createdelight:complex_omni_cell_housing_blank",
-          "ae2omnicells:multidimensional_expansion_circuit_processor",
+          "ae2omnicells:multidimensional_expansion_processor",
         ]),
       ]
     )
@@ -679,10 +679,10 @@ ServerEvents.recipes((event) => {
     "#forge:dusts/ender_pearl",
     "ae2omnicells:complex_link_processor",
   ]);
-  vintageimprovements.vacuumizing("createdelight:initial_processing_of_quantum_omni_fluid_cell_housing", [
+  vintageimprovements.vacuumizing("createdelight:initial_processing_of_quantum_omni_cell_housing", [
     "createdelight:quantum_omni_cell_housing_blank",
     "#forge:dusts/ender_pearl",
-    "ae2omnicells:multidimensional_expansion_circuit_processor",
+    "ae2omnicells:multidimensional_expansion_processor",
   ]);
 
   // 未成型的元件外壳
