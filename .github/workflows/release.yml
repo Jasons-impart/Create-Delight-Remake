@@ -116,6 +116,7 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
+          sed -i '4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 整合包版本: $MODPACK_VERSION",/' ${{ github.workspace }}/config/GeneralFeedback/default.json
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
@@ -314,11 +315,12 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
-      - name: 【版本】根据pack.toml的整合包版本替换标题 和 更好地兼容检测配置
+      - name: 【版本】根据pack.toml的整合包版本替换标题 和 更好地兼容检测配置 和 反馈配置
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION (patch)/" kubejs/config/client.properties
+          sed -i '4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 整合包版本: $MODPACK_VERSION",/' config/GeneralFeedback/default.json
           grep 'modpack' config/bcc-common.toml
       - name: 准备补丁文件
         run: |
@@ -367,6 +369,8 @@ jobs:
           # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
+          # 更新反馈配置
+          cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
 
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
