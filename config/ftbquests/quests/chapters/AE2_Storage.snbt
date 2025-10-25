@@ -123,15 +123,6 @@
 					}
 					type: "item"
 				}
-				{
-					id: "02232CF6E8D19A80"
-					item: {
-						Count: 1
-						id: "ae2things:disk_drive_1k"
-						tag: { }
-					}
-					type: "item"
-				}
 			]
 			title: "各类存储元件"
 			x: 2.5d
@@ -164,8 +155,18 @@
 					type: "item"
 				}
 				{
-					id: "334C1816694BA433"
-					item: "ae2things:disk_housing"
+					id: "018E5ED1C60BD308"
+					item: "ae2omnicells:omni_cell_housing"
+					type: "item"
+				}
+				{
+					id: "79D6349A99C2BB88"
+					item: "ae2omnicells:complex_omni_cell_housing"
+					type: "item"
+				}
+				{
+					id: "5613F687C0C65019"
+					item: "ae2omnicells:quantum_omni_cell_housing"
 					type: "item"
 				}
 			]

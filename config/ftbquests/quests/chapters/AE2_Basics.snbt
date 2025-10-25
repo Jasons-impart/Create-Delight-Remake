@@ -170,14 +170,14 @@
 			id: "6575B9B559D65549"
 			shape: "square"
 			size: 1.5d
-			subtitle: "可用于&e所有压印操作&r的模板，需要使用五种模板合成。"
+			subtitle: "可用于&e一系列压印操作&r的模板，需要使用五种模板合成。"
 			tasks: [{
 				id: "45C1258D2F8952A7"
 				item: "createdelight:universal_press"
 				type: "item"
 			}]
-			x: 3.75d
-			y: 6.5d
+			x: 0.0d
+			y: 10.5d
 		}
 		{
 			dependencies: [
@@ -191,8 +191,8 @@
 				item: "ae2:printed_logic_processor"
 				type: "item"
 			}]
-			x: 4.75d
-			y: 4.5d
+			x: -2.0d
+			y: 12.0d
 		}
 		{
 			dependencies: [
@@ -206,8 +206,8 @@
 				item: "ae2:printed_calculation_processor"
 				type: "item"
 			}]
-			x: 5.25d
-			y: 7.5d
+			x: 1.0d
+			y: 12.5d
 		}
 		{
 			dependencies: [
@@ -221,8 +221,8 @@
 				item: "megacells:printed_accumulation_processor"
 				type: "item"
 			}]
-			x: 5.75d
-			y: 6.5d
+			x: 0.0d
+			y: 13.0d
 		}
 		{
 			dependencies: [
@@ -236,8 +236,8 @@
 				item: "ae2:printed_engineering_processor"
 				type: "item"
 			}]
-			x: 5.25d
-			y: 5.5d
+			x: -1.0d
+			y: 12.5d
 		}
 		{
 			dependencies: [
@@ -251,8 +251,8 @@
 				item: "ae2:printed_silicon"
 				type: "item"
 			}]
-			x: 4.75d
-			y: 8.5d
+			x: 2.0d
+			y: 12.0d
 		}
 		{
 			dependencies: ["6575B9B559D65549"]
@@ -263,8 +263,8 @@
 			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
 			title: "使用机械动力"
-			x: 3.75d
-			y: 9.75d
+			x: -3.75d
+			y: 10.5d
 		}
 		{
 			dependencies: [
@@ -725,8 +725,8 @@
 				item: "ae2:calculation_processor_press"
 				type: "item"
 			}]
-			x: 2.25d
-			y: 7.5d
+			x: -1.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -736,8 +736,8 @@
 				item: "ae2:engineering_processor_press"
 				type: "item"
 			}]
-			x: 2.25d
-			y: 5.5d
+			x: 1.0d
+			y: 8.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -747,8 +747,8 @@
 				item: "ae2:logic_processor_press"
 				type: "item"
 			}]
-			x: 2.75d
-			y: 4.5d
+			x: 2.0d
+			y: 9.0d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -758,8 +758,8 @@
 				item: "ae2:silicon_press"
 				type: "item"
 			}]
-			x: 2.75d
-			y: 8.5d
+			x: -2.0d
+			y: 9.0d
 		}
 		{
 			dependencies: [
@@ -773,8 +773,8 @@
 				item: "megacells:accumulation_processor_press"
 				type: "item"
 			}]
-			x: 1.75d
-			y: 6.5d
+			x: 0.0d
+			y: 8.0d
 		}
 		{
 			dependencies: [
@@ -824,6 +824,88 @@
 			]
 			x: 5.0d
 			y: 0.0d
+		}
+		{
+			dependencies: [
+				"610709B3259086A0"
+				"45E3E8F3CFF60673"
+				"2F8162DD1400E793"
+				"6575B9B559D65549"
+			]
+			id: "6F6D4D1925B4F3BE"
+			shape: "square"
+			size: 2.0d
+			subtitle: "可用于&e所有压印操作&r的模板，需要使用通用与全能压印模板合成。"
+			tasks: [{
+				id: "537177CE51D95A02"
+				item: "createdelight:ultimate_universal_press"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 10.5d
+		}
+		{
+			id: "2F8162DD1400E793"
+			tasks: [{
+				id: "5F7E386744DEC2BB"
+				item: "ae2omnicells:omni_link_print_press"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 9.0d
+		}
+		{
+			id: "610709B3259086A0"
+			tasks: [{
+				id: "69D5E9B5DE7536FF"
+				item: "ae2omnicells:complex_link_print_press"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 10.5d
+		}
+		{
+			id: "45E3E8F3CFF60673"
+			tasks: [{
+				id: "5D1BD5CCE71165F7"
+				item: "ae2omnicells:multidimensional_expansion_print_press"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["2F8162DD1400E793"]
+			id: "625A1447DB9A4EB3"
+			tasks: [{
+				id: "2D408C632135D6C2"
+				item: "ae2omnicells:omni_link_circuit_print"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["610709B3259086A0"]
+			id: "69966325DE80E6B1"
+			tasks: [{
+				id: "4989A553BE12A9AF"
+				item: "ae2omnicells:complex_link_circuit_print"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["45E3E8F3CFF60673"]
+			id: "5E52BDAA668D70D0"
+			tasks: [{
+				id: "7EF613B2D0C31F6C"
+				item: "ae2omnicells:multidimensional_expansion_circuit_print"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 13.0d
 		}
 	]
 	title: "&b异星科技"
