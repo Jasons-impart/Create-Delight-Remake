@@ -8,7 +8,7 @@
     ],
     "fluid": {
       "amount": 250,
-      "fluid": "create_bic_bit:ketchup",
+      "fluid": "create_central_kitchen:tomato_sauce",
       "nbt": {}
     },
     "result": {
