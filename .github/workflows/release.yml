@@ -111,12 +111,12 @@ jobs:
         run: |
           mv .hmclversion.cfg hmclversion.cfg
           mv .options.txt options.txt
-      - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件
+      - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件 & 反馈配置
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
-          sed -i "4s/.*/  "placeholder": "\\n§l§4§n(勿删本行) 版本: $MODPACK_VERSION",/" ${{ github.workspace }}/config/GeneralFeedback/default.json
+          sed -i "4s/.*/  "placeholder": "\\n§l§4§n\(勿删本行\) 版本: $MODPACK_VERSION",/" ${{ github.workspace }}/config/GeneralFeedback/default.json
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
           grep 'placeholder' ${{ github.workspace }}/config/GeneralFeedback/default.json
