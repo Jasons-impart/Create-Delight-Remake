@@ -1010,15 +1010,6 @@
 					type: "item"
 				}
 				{
-					id: "39598CB7F2D4E4E4"
-					item: {
-						Count: 1
-						id: "ae2things:disk_drive_1k"
-						tag: { }
-					}
-					type: "item"
-				}
-				{
 					id: "2F00C25E7A1862FA"
 					item: {
 						Count: 1

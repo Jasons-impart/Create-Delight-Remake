@@ -1,9 +1,12 @@
 /** @format */
 
 ServerEvents.tags("item", (e) => {
+  e.add("ae2:inscriber_presses", [
+    'ae2omnicells:omni_link_print_press', 
+    'ae2omnicells:complex_link_print_press', 
+    'ae2omnicells:multidimensional_expansion_print_press', 
+    'megacells:accumulation_processor_press'])
   e.add("vintageimprovements:curving_heads", [
-    "megacells:accumulation_processor_press",
-    "megacells:mega_item_cell_housing",
     "#ae2:inscriber_presses",
   ]);
   e.add("create:upright_on_belt", [
@@ -20,7 +23,7 @@ ServerEvents.tags("item", (e) => {
 });
 
 ServerEvents.tags("block", e => {
-  e.add("ae2:growth_acceleratable", 
+  e.add("ae2:growth_acceleratable",
     "farmersrespite:tea_bush",
     "farmersrespite:small_tea_bush",
     "neapolitan:vanilla_vine",
@@ -29,14 +32,14 @@ ServerEvents.tags("block", e => {
     "neapolitan:banana_frond",
     "neapolitan:large_banana_frond",
     "neapolitan:mint",
-    "farmersdelight:brown_mushroom_colony", 
-    "farmersdelight:red_mushroom_colony", 
-    "mynethersdelight:crimson_fungus_colony", 
-    "mynethersdelight:warped_fungus_colony", 
+    "farmersdelight:brown_mushroom_colony",
+    "farmersdelight:red_mushroom_colony",
+    "mynethersdelight:crimson_fungus_colony",
+    "mynethersdelight:warped_fungus_colony",
     "collectorsreap:portobello_colony",
-    "minecraft:brown_mushroom", 
-    "minecraft:red_mushroom", 
-    "collectorsreap:portobello", 
+    "minecraft:brown_mushroom",
+    "minecraft:red_mushroom",
+    "collectorsreap:portobello",
     "minecraft:crimson_fungus",
     "minecraft:warped_fungus",
     "mynethersdelight:powdery_cannon",

@@ -279,7 +279,7 @@ ServerEvents.recipes((event) => {
   event.replaceInput({ id: "expatternprovider:wireless_connector" }, "ae2:sky_dust", "createutilities:void_casing")
   event.replaceInput({ id: "expatternprovider:wireless_connector" }, "ae2:engineering_processor", "ae2:controller")
   //电路切片机
-  event.replaceInput({id: "expatternprovider:circuit_cutter"}, "#ae2:inscriber_presses", "createdelight:universal_press")
+  event.replaceInput({id: "expatternprovider:circuit_cutter"}, "#ae2:inscriber_presses", "createdelight:ultimate_universal_press")
 
   // 压印器
   create

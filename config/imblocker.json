@@ -5,11 +5,13 @@
       "net.mehvahdjukaar.supplementaries.client.screens.TextHolderEditScreen",
       "net.minecraft.client.gui.screens.inventory.AbstractSignEditScreen",
       "dev.ftb.mods.ftblibrary.ui.ScreenWrapper",
+
       "com.simibubi.create.content.equipment.clipboard.ClipboardScreen",
       "net.minecraft.client.gui.screens.inventory.HangingSignEditScreen",
       "journeymap.client.ui.waypoint.WaypointEditor",
       "com.ldtteam.blockout.BOScreen",
       "minecraft:net.minecraft.client.gui.screens.ChatScreen"
+      "com.sighs.generalfeedback.client.FeedbackScreen"
     ],
     "enableScreenRecovering": true,
     "recoveredScreens": [

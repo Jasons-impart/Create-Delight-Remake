@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ae2omnicells:item/led/portable_cell_screen",
+    "layer1": "ae2omnicells:item/led/portable_cell_led",
+    "layer2": "ae2omnicells:item/portable_cell_quantum_housing",
+    "layer3": "ae2:item/portable_cell_side_1k",
+    "layer4": "ae2omnicells:item/quantum_effect"
+  }
+}

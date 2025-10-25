@@ -162,32 +162,6 @@ StartupEvents.registry("fluid", e => {
     ].forEach(list => {
         simpleFluid(`createdelight:${list[0]}`, list[1], list[2], false, false)
     })
-
-    //奶昔流体
-    let icecream_list = [
-        ["vanilla", 0xfceeca],
-        ["chocolate", 0xefa385],
-        ["strawberry", 0xf4bcea],
-        ["banana", 0xfce285],
-        ["mint", 0x8bf1ac],
-        ["adzuki", 0xfcc4b3],
-        ["lime", 0xd4f4aa],
-        ["pomegranate", 0xf9a8af],
-        ["sweetberry", 0xe97285],
-        ["pumpkin", 0xfcb976],
-        ["beetroot", 0x960003],
-        ["apple", 0xf4d89b],
-        ["carrot", 0xfac88c],
-        ["glow_berry", 0xef8c33],
-        ["enhanced_fruit", 0xe9e55e]
-    ]
-    icecream_list.forEach((list) => {
-        e.create(`createdelight:${list[0]}_milkshake`)
-            .noBlock()
-            .noBucket()
-            .thinTexture(list[1])
-            .translationKey(`fluid.createdelight.${list[0]}_milkshake`)
-    })
     //咖啡流体
     let coffee_fluid = [
         ['espresso', 0x8D5528],
