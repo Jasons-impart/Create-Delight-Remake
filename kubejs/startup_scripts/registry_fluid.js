@@ -71,8 +71,6 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:unfermented_paper_pulp", 0xF0FFFF, false)
     simpleFluid("createdelight:nut_milk", 0xf5e7c2, true, false)
         .tag("forge:milk")
-    simpleFluid("createdelight:tree_star_tea", 0x6ca30e, true, false, false)
-    simpleFluid("createdelight:jellyfish_soda", 0x85d5f0, true, false, false)
     simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
     simpleFluid("createdelight:vinegar", 0x570000, true, false)
     simpleFluid("createdelight:radon", 0XA0FFDA, true, false)
@@ -106,7 +104,14 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:cake_batter")
     textureFluid("createdelight:egg_yolk")
     textureFluid("createdelight:artificial_egg_yolk")
-    textureFluid("createdelight:lush_confiture", false, false)
+    textureFluid("createdelight:lush_confiture_jelly", false, false)
+    textureFluid("createdelight:lush_confiture_jello", false, false)
+    textureFluid("createdelight:base_syrup", false, false)
+    textureFluid("createdelight:strawberry_syrup", false, false)
+    textureFluid("createdelight:vanilla_syrup", false, false)
+    textureFluid("createdelight:mint_syrup", false, false)
+    textureFluid("createdelight:banana_syrup", false, false)
+    textureFluid("createdelight:filling", false, false)
 
     let bloods = [
         "fire_dragon",
@@ -156,32 +161,6 @@ StartupEvents.registry("fluid", e => {
         ["nether_fizz", 0x915a8f]
     ].forEach(list => {
         simpleFluid(`createdelight:${list[0]}`, list[1], list[2], false, false)
-    })
-
-    //奶昔流体
-    let icecream_list = [
-        ["vanilla", 0xfceeca],
-        ["chocolate", 0xefa385],
-        ["strawberry", 0xf4bcea],
-        ["banana", 0xfce285],
-        ["mint", 0x8bf1ac],
-        ["adzuki", 0xfcc4b3],
-        ["lime", 0xd4f4aa],
-        ["pomegranate", 0xf9a8af],
-        ["sweetberry", 0xe97285],
-        ["pumpkin", 0xfcb976],
-        ["beetroot", 0x960003],
-        ["apple", 0xf4d89b],
-        ["carrot", 0xfac88c],
-        ["glow_berry", 0xef8c33],
-        ["enhanced_fruit", 0xe9e55e]
-    ]
-    icecream_list.forEach((list) => {
-        e.create(`createdelight:${list[0]}_milkshake`)
-            .noBlock()
-            .noBucket()
-            .thinTexture(list[1])
-            .translationKey(`fluid.createdelight.${list[0]}_milkshake`)
     })
     //咖啡流体
     let coffee_fluid = [

@@ -267,5 +267,41 @@
             "collectorsreap:pomegranate_smoothie"
         ],
         "resultItems": "collectorsreap:pomegranate_milkshake"
+    },
+    {
+        "matchItems": [
+            "cosmopolitan:lush_confiture_bottle"
+        ],
+        "resultItems": "createdelightcore:lush_confiture_jelly_bottle"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:apple_sauce_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:apple_jelly"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:sweet_berry_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:sweetberry_jelly"
+    },
+    {
+        "matchItems": [
+            "vintagedelight:glow_berry_mason_jar"
+        ],
+        "resultItems": "fruitsdelight:glowberry_jelly"
+    },
+    {
+        "matchItems": [
+            "brewinandchewin:cocoa_fudge"
+        ],
+        "resultItems": "collectorsreap:chocolate_gummy"
+    },
+    {
+        "matchItems": [
+            "neapolitan:vanilla_fudge"
+        ],
+        "resultItems": "collectorsreap:vanilla_gummy"
     }
 ]

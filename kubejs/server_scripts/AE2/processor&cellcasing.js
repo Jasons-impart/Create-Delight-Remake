@@ -327,7 +327,7 @@ ServerEvents.recipes((event) => {
 
   // 奇点
   create
-    .crushing("ae2:singularity", "#forge:assets/create/crushing_wheels")
+    .crushing("ae2:singularity", "create:crushing_wheel")
     .id("createdelight:singularity_2");
   create.mechanical_crafting("ae2:singularity", [
     "AAAAAAAAA",

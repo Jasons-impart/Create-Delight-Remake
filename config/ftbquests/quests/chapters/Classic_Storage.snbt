@@ -770,6 +770,7 @@
 			dependencies: ["52A034C9BC79BD54"]
 			dependency_requirement: "one_started"
 			id: "1C774B6F6F594D44"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "77051DC239F680E4"
@@ -988,6 +989,7 @@
 			dependencies: ["1C774B6F6F594D44"]
 			dependency_requirement: "one_started"
 			id: "1E2D3B6373DCB6D9"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "5AE0AF3C09BD88D4"

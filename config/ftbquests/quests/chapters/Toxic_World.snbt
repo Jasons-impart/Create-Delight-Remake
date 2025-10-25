@@ -447,24 +447,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["0A46E5009997FC46"]
-			id: "49A5B0BB85819A62"
-			rewards: [{
-				id: "0B349C285237C50A"
-				item: "alexcaves_delight:tremorzillaamlette"
-				random_bonus: 2
-				type: "item"
-			}]
-			subtitle: "多么独特的味道！"
-			tasks: [{
-				id: "4810853931890E99"
-				item: "alexcaves_delight:tremorzillaamlette"
-				type: "item"
-			}]
-			x: 7.0d
-			y: -1.5d
-		}
-		{
 			dependencies: ["178CC854157FCC93"]
 			id: "733FE417E7F179DE"
 			rewards: [{

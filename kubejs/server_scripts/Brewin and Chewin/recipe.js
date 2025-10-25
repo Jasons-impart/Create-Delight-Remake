@@ -25,7 +25,8 @@ ServerEvents.recipes(e => {
         "brewinandchewin:emptying/create/milk_bottle",
         "brewinandchewin:emptying/create/milk_bucket",
         "brewinandchewin:filling/create/milk_bottle",
-        "cosmopolitan:brewinandchewin/fermenting/root_beer"
+        "cosmopolitan:brewinandchewin/fermenting/root_beer",
+        "brewinandchewin:fermenting/cocoa_fudge"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",

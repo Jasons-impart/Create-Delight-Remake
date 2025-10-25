@@ -135,7 +135,6 @@ ServerEvents.tags("item", e => {
         'createdelight:board_noodles', 
         'createdelight:vermicelli', 
         'createdelight:raw_cheese_pizza', 
-        'alexcaves_delight:pearldust', 
         'bakeries:sweet_dough', 
         'bakeries:whole_wheat_dough', 
         'bakeries:bagel_dough', 

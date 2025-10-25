@@ -118,7 +118,7 @@ ServerEvents.recipes(e => {
   ]).id("vintageimprovements:vacuumizing/glistering_honey_crystal")
 
   e.recipes.vintageimprovements.pressurizing([
-    Fluid.of("createcafe:melted_sugar", 25), Fluid.water(500)],
+    Fluid.of("createdelight:base_syrup", 25), Fluid.water(500)],
     Fluid.of("the_bumblezone:sugar_water_still", 500))
     .secondaryFluidOutput(1)
     .processingTime(100)

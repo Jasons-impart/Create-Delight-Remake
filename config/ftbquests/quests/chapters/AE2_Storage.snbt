@@ -84,6 +84,7 @@
 				tag: { }
 			}
 			id: "4EC043194AF40AC4"
+			min_required_tasks: 1
 			subtitle: "其实我更习惯叫磁盘"
 			tasks: [
 				{
@@ -137,6 +138,7 @@
 			y: 0.0d
 		}
 		{
+			dependency_requirement: "one_completed"
 			description: ["{ \"text\": \"点此查看元件外壳的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			id: "7777519D3A23C2C7"
 			min_required_tasks: 1
@@ -614,6 +616,7 @@
 		{
 			dependency_requirement: "one_completed"
 			id: "6B3F181B4E31BCE2"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "112370E121DD6375"

@@ -19,6 +19,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     // 面团及其直接产物
     'createdelight:dry_yeast',
     'createdelight:oil_dough',
+    'createdelight:wafer_dough',
     'createdelight:puff_pastry',
     'createdelight:board_noodles',
     'createdelight:vermicelli',
@@ -48,6 +49,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_calamari',
     'createdelight:raw_ghast_calamari',
     'createdelight:raw_cheese_pizza',
+    'createdelight:raw_potato_pancake',
     // 食物
     'createdelight:wrapped_fries_ghasta',
     'createdelight:oat_bread',
