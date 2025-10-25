@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ae2omnicells:item/quantum_omni_cell_component_4m",
+    "layer1": "ae2omnicells:item/quantum_effect"
+  }
+}

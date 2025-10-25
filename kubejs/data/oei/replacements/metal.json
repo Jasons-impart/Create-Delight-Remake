@@ -77,5 +77,23 @@
             "create_sa:zinc_handle"
         ],
         "resultItems": "vintageimprovements:zinc_rod"
+    },
+    {
+        "matchItems": [
+            "createaddition:electrum_block"
+        ],
+        "resultItems": "createdelightcore:electrum_block"
+    },
+    {
+        "matchItems": [
+            "ae2omnicells:ender_ingot_block"
+        ],
+        "resultItems": "createutilities:void_steel_block"
+    },
+    {
+        "matchItems": [
+            "ae2omnicells:ender_ingot"
+        ],
+        "resultItems": "createutilities:void_steel_ingot"
     }
 ]
