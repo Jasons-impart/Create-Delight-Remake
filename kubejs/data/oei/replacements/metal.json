@@ -80,12 +80,6 @@
     },
     {
         "matchItems": [
-            "createaddition:electrum_block"
-        ],
-        "resultItems": "createdelightcore:electrum_block"
-    },
-    {
-        "matchItems": [
             "ae2omnicells:ender_ingot_block"
         ],
         "resultItems": "createutilities:void_steel_block"
