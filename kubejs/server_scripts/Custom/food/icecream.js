@@ -112,7 +112,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:carrot_milkshake", "createdelightcore:carrot_ice_cream_scoop",
         "cosmopolitan:carrot_ice_cream", "cosmopolitan:carrot_milkshake", "cosmopolitan:carrot_ice_cream_block")
     make_ice_cream(e, "quark:ancient_fruit", "cosmopolitan:enchanted_fruit_ice_cream",
-        "createdelightcore:enchanted_fruit_milkshake", "createdelightcore:enhanced_fruit_ice_cream_scoop",
+        "createdelightcore:enchanted_fruit_milkshake", "createdelightcore:enchanted_fruit_ice_cream_scoop",
         "cosmopolitan:enchanted_fruit_ice_cream", "cosmopolitan:enchanted_fruit_milkshake", "cosmopolitan:enchanted_fruit_ice_cream_block")
     make_ice_cream(e, "#forge:fruits/glow_berries", "cosmopolitan:glow_berry_ice_cream",
         "createdelightcore:glow_berry_milkshake", "createdelightcore:glow_berry_ice_cream_scoop",
