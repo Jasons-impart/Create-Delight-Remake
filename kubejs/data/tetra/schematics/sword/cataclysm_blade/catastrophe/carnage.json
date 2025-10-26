@@ -45,7 +45,7 @@
     "outcomes": [
         {
             "material": {
-                "items":[ "alexcaves_delight:cleaverofheavybone_knife"],
+                "items":[ "alexscaves:heavy_bone"],
                 "count": 1
             },
             "experienceCost": 15,

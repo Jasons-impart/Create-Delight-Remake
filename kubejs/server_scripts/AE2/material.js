@@ -71,19 +71,34 @@ ServerEvents.recipes((event) => {
 
   // 破坏核心
   kubejs.shaped(
+    "2x ae2:annihilation_core",
+    [
+      "AAA",
+      "BCD",
+      "AAA"
+    ], {
+    A: "#forge:plates/iron",
+    B: "#forge:gems/quartz",
+    C: "#forge:dusts/fluix",
+    D: "ae2:logic_processor",
+  })
+  .id("createdelight:annihilation_core")
+  
+  kubejs.shaped(
     "ae2:annihilation_core",
     [
       "AAA",
       "BCD",
       "AAA"
     ], {
-    A: "#forge:nuggets/iron",
+    A: "#forge:nuggets/steel",
     B: "#forge:gems/quartz",
     C: "#forge:dusts/fluix",
     D: "ae2:logic_processor",
   })
+  .id("createdelight:annihilation_core_2")
   let iner = "createdelight:incomplete_annihilation_core"
-  create.sequenced_assembly("ae2:annihilation_core", "minecraft:iron_nugget", [
+  create.sequenced_assembly("ae2:annihilation_core", "ad_astra:steel_nugget", [
     create.deploying(iner, [iner, "#forge:gems/quartz"]),
     create.deploying(iner, [iner, "ae2:logic_processor"]),
     create.deploying(iner, [iner, "#forge:dusts/fluix"]),
@@ -93,14 +108,23 @@ ServerEvents.recipes((event) => {
     .id("createdelight:annihilation_core_1")
 
   // 成型核心
-  kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
-    A: "#forge:nuggets/iron",
+  kubejs.shaped("2x ae2:formation_core", ["AAA", "BCD", "AAA"], {
+    A: "#forge:plates/iron",
     B: "#forge:gems/certus_quartz",
     C: "#forge:dusts/fluix",
     D: "ae2:logic_processor",
   })
+  .id("createdelight:formation_cor")
+  
+  kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
+    A: "#forge:nuggets/steel",
+    B: "#forge:gems/certus_quartz",
+    C: "#forge:dusts/fluix",
+    D: "ae2:logic_processor",
+  })
+  .id("createdelight:formation_core_2")
   let iner_2 = "createdelight:incomplete_formation_core"
-  create.sequenced_assembly("ae2:formation_core", "minecraft:iron_nugget", [
+  create.sequenced_assembly("ae2:formation_core", "ad_astra:steel_nugget", [
     create.deploying(iner_2, [iner_2, "#forge:gems/certus_quartz"]),
     create.deploying(iner_2, [iner_2, "ae2:logic_processor"]),
     create.deploying(iner_2, [iner_2, "#forge:dusts/fluix"]),

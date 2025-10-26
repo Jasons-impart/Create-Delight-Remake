@@ -11,6 +11,7 @@ StartupEvents.modifyCreativeTab("create_bic_bit:tabs", e => {
     'create_bic_bit:aged_cheese_wedge',
     'create_bic_bit:crystallised_oil',
     'create_bic_bit:frying_oil_bottle',
-    'create_bic_bit:frying_oil_bucket'
+    'create_bic_bit:frying_oil_bucket',
+    'create_bic_bit:ketchup_bucket'
   ])
 })

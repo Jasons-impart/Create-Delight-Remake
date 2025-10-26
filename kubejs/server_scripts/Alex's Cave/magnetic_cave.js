@@ -192,7 +192,7 @@ ServerEvents.recipes(e => {
             '#forge:dusts/iron'
         ]
     ).id("alexscaves:mixing/ferrouslime_ball")
-    //富铁粘液（暂未注册，注册后可使用）
+    //富铁粘液
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:ferrouslime", 90),
         [
@@ -200,6 +200,14 @@ ServerEvents.recipes(e => {
             '#forge:dusts/iron'
         ]
     ).id("alexscaves:mixing/ferrouslime")
+    //紫颂黏液
+    e.recipes.create.mixing(
+        Fluid.of("createdelightcore:chorusslime", 90),
+        [
+            Fluid.of("createdelightcore:slime", 90),
+            '#forge:chorus_fruits'
+        ]
+    ).id("createdelight:mixing/chorusslime")
     e.recipes.create.compacting(
         'alexscaves:ferrouslime_ball',
         Fluid.of("createdelightcore:ferrouslime", 90)

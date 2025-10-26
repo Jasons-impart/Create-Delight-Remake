@@ -1304,7 +1304,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_beast"
 				icon: "iceandfire:spawn_egg_dread_beast"
@@ -1325,7 +1325,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_ghoul"
 				icon: "iceandfire:spawn_egg_dread_ghoul"
@@ -1346,7 +1346,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_horse"
 				icon: "iceandfire:spawn_egg_dread_horse"
@@ -1367,7 +1367,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_knight"
 				icon: "iceandfire:spawn_egg_dread_knight"
@@ -1388,7 +1388,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_lich"
 				icon: "iceandfire:spawn_egg_lich"
@@ -1409,7 +1409,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "悚怖生物只会于悚陵中生成"
+			subtitle: "悚怖生物只会于悚陵(dread Citadel)中生成"
 			tasks: [{
 				entity: "iceandfire:dread_scuttler"
 				icon: "iceandfire:spawn_egg_dread_scuttler"

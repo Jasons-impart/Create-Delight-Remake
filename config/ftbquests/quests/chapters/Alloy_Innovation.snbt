@@ -552,6 +552,7 @@
 				"18946F125B654A46"
 				"3BC1BB77B76F6873"
 				"0C68C84949B2A986"
+				"78203F15896283E8"
 			]
 			dependency_requirement: "one_completed"
 			id: "4B6A896ECC72EA02"
@@ -862,6 +863,7 @@
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
+			icon: "create:mechanical_mixer"
 			id: "3BC1BB77B76F6873"
 			size: 1.0d
 			subtitle: "直接用普通&e搅拌器&r融合"
@@ -1331,6 +1333,56 @@
 			title: "超级燃烧"
 			x: 4.5d
 			y: 14.0d
+		}
+		{
+			dependencies: ["0C68C84949B2A986"]
+			description: [
+				"制作一个蓝图桌打开 &e&lbrass_casting.nbt&r&r 看看吧"
+				""
+				"运行前请检查两侧熔铸盆是否有&n&l向中间工作盆的开口&r&r"
+				"如果没有，手持&d&l扳手右键&r&r以开口"
+				"两个木桶是&b输入&r，最低的工作盆是&a输出&r"
+				"建议先将输出导出到&e流体抽屉或流体储罐&r，然后再导出到铸造盆/台"
+				""
+				"另：使用 &n抽屉&r 配合 &n抽入/输出升级&r 能够简化产线，留作作业"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						3
+						4
+						2
+					]
+					Deployed: 0b
+					File: "brass_casting.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "CLOCKWISE_90"
+				}
+			}
+			id: "78203F15896283E8"
+			ignore_reward_blocking: true
+			rewards: [{
+				id: "48764440418E6DD8"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "这条路也许并没有那么困难"
+			tasks: [{
+				id: "449AABEC68E07A59"
+				type: "checkmark"
+			}]
+			title: "&e黄铜熔铸器蓝图&r"
+			x: 7.0d
+			y: 10.0d
 		}
 	]
 	title: "&9体系渐成 "

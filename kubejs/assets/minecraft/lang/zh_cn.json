@@ -1,3 +1,6 @@
 {
-  "generator.minecraft.flat": "不平坦的超平坦"
+  "generator.minecraft.flat": "不平坦的超平坦",
+  "item.minecraft.potato": "土豆",
+  "item.minecraft.poisonous_potato": "毒土豆",
+  "item.minecraft.baked_potato": "烤土豆"
 }

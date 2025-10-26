@@ -636,6 +636,13 @@ ServerEvents.recipes(e => {
     )
         .mode(2)
         .id("vintageimprovements:curving/mould_pound_cake")
+    kubejs.shaped('4x bakeries:paper_cup', [
+        "   ",
+        "A A",
+        " A "
+    ], {
+        A: "bakeries:silicone_paper"
+    }).id("bakeries:paper_cup")
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')

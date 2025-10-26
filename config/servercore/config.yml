@@ -26,7 +26,7 @@ features:
 # Automatically modifies dynamic settings based on the server performance.
 dynamic:
   # Enables dynamic performance checks.
-  enabled: true
+  enabled: false
   # The average MSPT to target.
   target-mspt: 35
   # The settings that will be decreased when the server is overloaded, in the specified order.

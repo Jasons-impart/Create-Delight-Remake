@@ -28,6 +28,14 @@ StartupEvents.modifyCreativeTab("createcafe:create_cafe_fluids", e => {
     "createcafe:starfruit_tea_bucket",
     "createcafe:tamarind_tea_bucket",
     "createcafe:yucca_tea_bucket",
+    'createcafe:melted_sugar_bucket',
+    'createcafe:strawberry_syrup_bucket',
+    'createcafe:vanilla_syrup_bucket',
+    'createcafe:mint_syrup_bucket',
+    'createcafe:banana_syrup_bucket',
+    'createcafe:filling_bucket',
+    'createcafe:coffee_bucket',
+    'createcafe:filling_bucket'
   ]) 
 })
 StartupEvents.modifyCreativeTab("createcafe:create_cafe_items", e => {

@@ -19,6 +19,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     // 面团及其直接产物
     'createdelight:dry_yeast',
     'createdelight:oil_dough',
+    'createdelight:wafer_dough',
     'createdelight:puff_pastry',
     'createdelight:board_noodles',
     'createdelight:vermicelli',
@@ -48,6 +49,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_calamari',
     'createdelight:raw_ghast_calamari',
     'createdelight:raw_cheese_pizza',
+    'createdelight:raw_potato_pancake',
     // 食物
     'createdelight:wrapped_fries_ghasta',
     'createdelight:oat_bread',
@@ -171,22 +173,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:nut_milk_bucket',
     'createdelight:vinegar_bucket',
     'createdelight:yeast_bucket',
-    // 奶昔及对应冰激凌
-    'createdelight:vanilla_milkshake_bucket',
-    'createdelight:chocolate_milkshake_bucket',
-    'createdelight:strawberry_milkshake_bucket',
-    'createdelight:banana_milkshake_bucket',
-    'createdelight:mint_milkshake_bucket',
-    'createdelight:adzuki_milkshake_bucket',
-    'createdelight:lime_milkshake_bucket',
-    'createdelight:pomegranate_milkshake_bucket',
-    'createdelight:sweetberry_milkshake_bucket',
-    'createdelight:pumpkin_milkshake_bucket',
-    'createdelight:beetroot_milkshake_bucket',
-    'createdelight:apple_milkshake_bucket',
-    'createdelight:carrot_milkshake_bucket',
-    'createdelight:glow_berry_milkshake_bucket',
-    'createdelight:enhanced_fruit_milkshake_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])

@@ -183,6 +183,7 @@ ItemEvents.modification(e => {
     maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
+    maxStackSize_change('createdelightcore:lush_confiture_jelly_bottle', 16)
 
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
@@ -222,8 +223,14 @@ ItemEvents.modification(e => {
     food_hungers("oceanic_delight:shrimp_chips", 4, 5.5)
     food_hungers("create:sweet_roll", 8, 6)
     food_hungers("alexscaves:fiddlehead", 1, 0.5)
+    food_hungers("createcafe:oreo_half", 5, 5)
+    food_hungers("createcafe:oreo_crashed", 5, 2.5)
+    food_hungers("createcafe:oreo", 12, 18)
+    food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
 
     // 食物效果修改
+    food_effects("corn_delight:classic_corn_dog", "minecraft:resistance", 10)
+    food_effects("corn_delight:classic_corn_dog", "minecraft:fire_resistance", 10)
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
     e.modify("culturaldelights:glow_squid", item => {
@@ -250,6 +257,8 @@ ItemEvents.modification(e => {
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
     food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
+    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:tracer", 30)
+    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
         //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
@@ -275,6 +284,49 @@ ItemEvents.modification(e => {
     food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
+        //软糖效果
+    e.modify('collectorsreap:lime_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("collectorsreap:corrosion")
+            food.effect("collectorsreap:corrosion", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:pomegranate_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("collectorsreap:volatility")
+            food.effect("collectorsreap:volatility", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:apple_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("farmersdelight:comfort")
+            food.effect("cosmopolitan:exuberant", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:glow_berry_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:glowing")
+            food.effect("cosmopolitan:tracer", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:melon_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("minecraft:absorption")
+            food.effect("minecraft:regeneration", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:vanilla_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("neapolitan:vanilla_scent")
+            food.effect("neapolitan:vanilla_scent", 200, 2, 1)
+        }
+    })
+    e.modify('collectorsreap:adzuki_gummy', item => {
+        item.foodProperties = food => {
+            food.removeEffect("neapolitan:harmony")
+            food.effect("neapolitan:harmony", 200, 2, 1)
+        }
+    })
         
         //鱼籽效果
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
@@ -366,7 +418,6 @@ ItemEvents.modification(e => {
     green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)
     green_tea_effect('farmersrespite:strong_green_tea', 30, 2, 30, 30)
     green_tea_effect('collectorsreap:lime_green_tea', 45, 0, 45, 20)
-    green_tea_effect('alexcaves_delight:tree_star_tea', 45, 0, 45, 20)
     green_tea_effect('fruitsdelight:mangosteen_tea', 45, 0, 45, 20)
     green_tea_effect('trailandtales_delight:pitcher_plant_tea', 45, 0, 45, 20)
     green_tea_effect('fruitsdelight:lychee_cherry_tea', 45, 0, 45, 20)

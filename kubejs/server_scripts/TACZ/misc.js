@@ -15,7 +15,7 @@ PlayerEvents.tick(e => {
         let iGun = $IGun.getIGunOrNull(gun)
         let id = iGun.getGunId(gun)
         if (id == "applied_armorer:moritz_mg_emg_prototype" || id == "applied_armorer:moritz_mg_hmg22") {
-            let index = $TimelessAPI.getClientGunIndex(id)
+            let index = $TimelessAPI.getCommonGunIndex(id)
             if (index.present) {
                 let maxAmmo = $AttachmentDataUtils.getAmmoCountWithAttachment(gun, index.get().gunData)
                 let multipler = index.get().gunData.getAmmoAmount() / maxAmmo * 4

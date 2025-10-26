@@ -125,6 +125,7 @@ ServerEvents.recipes(e => {
         .outputItems("butchercraft:tripe")
         .outputItems("6x butchercraft:sinew")
         .outputItems("5x butchercraft:fat")
+        .outputItems("6x minecraft:feather")
         .outputItems("butchercraft:chicken_head_item")
         .outputFluids(Fluid.of("butchercraft:blood_fluid", 500))
         .id("createdelight:butcher/chicken")
