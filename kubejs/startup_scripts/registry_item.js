@@ -735,6 +735,11 @@ StartupEvents.registry("item", e => {
         e.create(`createdelight:${q}_genetic_seed`)
             .translationKey(`item.createdelight.${q}_genetic_seed`)
     })
+
+    e.create("createdelight:order")
+            .translationKey("item.createdelight.order")
+    e.create("createdelight:unopened_order")
+            .translationKey("item.createdelight.unopened_order")
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")

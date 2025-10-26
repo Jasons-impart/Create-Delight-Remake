@@ -214,11 +214,7 @@ MBDMachineEvents.onTick("createdelight:fission_fuel_assembly", e => {
         }
     }
 })
-MBDMachineEvents.onOpenUI("createdelight:fission_reactor", e => {
-    let event = e.event
-    const { machine } = event
 
-})
 MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
     let event = e.event
     const { machine, root } = event

@@ -2,6 +2,9 @@ MBDMachineEvents.onTick("createdelight:dryer", e => {
     let event = e.event
     const {machine} = event
     const {pos, level} = machine
+    
+    if (level.time % 60 != 0)
+        return
     let hl = -1
     let rl = 0
     /**
