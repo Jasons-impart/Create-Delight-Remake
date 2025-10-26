@@ -25,8 +25,8 @@ ItemEvents.tooltip(e => {
         let reward = global.Order.customerProperties[type].reward
         if (reward == null)
             reward = [`createdelight:orders/${info.type}`, 1]
-        let rewardType = global.Order.customerProperties[type].reward[0]
-        let rewardAmount = global.Order.customerProperties[type].reward[1]
+        let rewardType = reward[0]
+        let rewardAmount = reward[1] * entries.length
 
         // 标题
         text.add(Text.translate("tooltip.createdelight.order.title",

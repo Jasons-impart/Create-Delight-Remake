@@ -52,7 +52,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                                 reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
                             let list = Utils.newList()
 
-                            for (let i = 0; i < nums[0] * reward[1]; i++) {
+                            for (let i = 0; i < nums[0] * reward[1] * o.entries.length; i++) {
                                 let rewardItems = LootUtils.getLootItems(reward[0], level)
                                 rewardItems.forEach(item => {
                                     list.add(item)
