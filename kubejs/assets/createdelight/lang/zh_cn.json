@@ -609,6 +609,7 @@
     "createdelight.tip.sulfur_obtain": "关于最初始的硫磺获取, 可以考虑查看硫粉的获取方式。",
     "createdelight.tip.tacz_gun": "tacz的默认枪械已被移除, 取而代之的是机动军械师和应用军械师枪械包的枪械。",
     "createdelight.tip.void_stuff": "虚空系列物品提供了远程传输流体, 电力, 应力的方案。",
+    "createdelight.tip.lumisene": "高燃液体类似现实中的流体流动形式, 难以回收且无法装入流体抽屉, 请谨慎使用",
 
     "createdelight.effect.charge.name": "充能",
     "createdelight.effect.charge.tooltip": "攻击伤害增加§e%s§r, 当且仅当消耗了武器中§e%s§r点电量",

@@ -20,7 +20,9 @@ ServerEvents.recipes(e => {
         "quark:building/crafting/compressed/gunpowder_sack_uncompress",
         "quark:mobs/smelting/cooked_crab_leg",
         "quark:mobs/smoking/cooked_crab_leg",
-        "quark:mobs/campfire/cooked_crab_leg"
+        "quark:mobs/campfire/cooked_crab_leg",
+        "quark:tweaks/crafting/utility/chests/mixed_chest_wood",
+        "quark:building/crafting/chests/mixed_chest"
     ])
     e.replaceInput({id: "quark:automation/crafting/feeding_trough"}, "minecraft:wheat", "farmersdelight:straw")
     e.recipes.create.mixing(

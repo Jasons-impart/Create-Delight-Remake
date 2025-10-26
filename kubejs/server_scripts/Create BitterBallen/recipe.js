@@ -301,6 +301,8 @@ ServerEvents.tags("minecraft:item", e => {
 LootJS.modifiers(e => {
     e.addBlockLootModifier("minecraft:dead_bush")
         .removeLoot('create_deepfried:yuca')
+    e.addBlockLootModifier("minecraft:sunflower")
+        .removeLoot("create_bic_bit:sunflower_seeds")
 })
 ServerEvents.tags("minecraft:item", e => {
     e.add("forge:mayonnaise", [
