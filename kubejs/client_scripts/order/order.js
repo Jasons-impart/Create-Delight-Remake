@@ -22,8 +22,11 @@ ItemEvents.tooltip(e => {
 
         let entries = info.entries
         let type = info.type
-        let rewardType = global.Order.customerProperties[type].reward
-        let rewardAmount = 5 // 这里你也可以从 NBT 里取
+        let reward = global.Order.customerProperties[type].reward
+        if (reward == null)
+            reward = [`createdelight:orders/${info.type}`, 1]
+        let rewardType = global.Order.customerProperties[type].reward[0]
+        let rewardAmount = global.Order.customerProperties[type].reward[1]
 
         // 标题
         text.add(Text.translate("tooltip.createdelight.order.title",
@@ -51,7 +54,7 @@ ItemEvents.tooltip(e => {
         text.add(Text.translate(
             "tooltip.createdelight.order.reward.entry",
             rewardAmount.toFixed(),
-            Text.translate("tooltip.createdelight.order.reward." + rewardType)
+            Text.translate("tooltip.createdelight.order.reward." + rewardType.split(":")[1])
         ))
     })
 

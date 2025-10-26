@@ -2,6 +2,7 @@ const $FoodInstance = Java.loadClass("com.tarinoita.solsweetpotato.tracking.Food
 const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
 const $AuctionTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.auction.tradedata.AuctionTradeData")
 const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity")
+
 //订单系统
 //玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
 //设计的意义是为整合包中大量食物等物品寻求用途
@@ -221,10 +222,6 @@ Order.checkAllPackages = function (orders, items) {
     return results;
 };
 
-
-
-
-
 /**
  * 
  * @param {Internal.Player} player 
@@ -237,8 +234,8 @@ Order.getPlayerRank = function (player) {
 Order.getPlayerRankLevel = function (player) {
     let rank = this.getPlayerRank(player)
     let level = 0
-    for (let index = 0; index < Order.rankThreshold.length; index++) {
-        if (rank < Order.rankThreshold[index])
+    for (let index = 0; index < Order.reputation.threshold.length; index++) {
+        if (rank < Order.reputation.threshold[index])
             break
         level = index + 1
     }
@@ -311,6 +308,10 @@ Order.reputation.getRawValue = function(player) {
     return player.persistentData.getInt("order_reputation")
 }
 
+Order.reputation.threshold = [0, 10, 20, 40, 60, 100]
+
+
+
 /**
  * 
  * @param {Internal.Player} player 
@@ -326,11 +327,18 @@ Order.reputation.getLevel = function(player) {
     }
     return level
 }
-
 ServerEvents.tick(e => {    
-    if (e.server.getLevel("minecraft:overworld").dayTime() % 24000 == 1000) {
+    if (e.server.getLevel("minecraft:overworld").dayTime() % 12000 == 0) {
         let count = Utils.random.nextInt(0, 4)
         for (let i = 0; i < count; i++)
             Order.addOrderToAuction()
     }
 })
+
+// ItemEvents.rightClicked("minecraft:stick", e => {
+//     const {player, level} = e
+//     let param = new $LootParams$Builder(level).create($LootContextParamSets.EMPTY)
+    
+//     Utils.server.lootData.getLootTable("createdelight:orders/random_hatbag").getRandomItems(param).forEach(item => player.give(item))
+//     player.tell(123)
+// })
