@@ -2,7 +2,7 @@
 	"block.create_central_kitchen.blaze_stove": "烈焰人炉灶",
 	"block.create_central_kitchen.sap": "枫树树液",
 	"block.create_central_kitchen.syrup": "枫糖浆",
-	"block.create_central_kitchen.tomato_sauce": "番茄汁",
+	"block.create_central_kitchen.tomato_sauce": "番茄酱",
 
 	"fluid.create_central_kitchen.apple_cider": "苹果酒",
 	"fluid.create_central_kitchen.chorus_flower_tea": "紫颂花茶",
@@ -17,7 +17,7 @@
 	"fluid.create_central_kitchen.melon_juice": "西瓜汁",
 	"fluid.create_central_kitchen.sap": "枫树树液",
 	"fluid.create_central_kitchen.syrup": "枫糖浆",
-	"fluid.create_central_kitchen.tomato_sauce": "番茄汁",
+	"fluid.create_central_kitchen.tomato_sauce": "番茄酱",
 
 	"item.create_central_kitchen.aloe_cake_slice": "芦荟蛋糕切片",
 	"item.create_central_kitchen.cherry_pie_slice": "樱桃派切片",
@@ -45,7 +45,7 @@
 	"item.create_central_kitchen.pumpkin_pie_slice": "南瓜派切片",
 	"item.create_central_kitchen.sap_bucket": "枫树树液桶",
 	"item.create_central_kitchen.sweet_berry_cake_slice": "甜浆果蛋糕切片",
-	"item.create_central_kitchen.tomato_sauce_bucket": "番茄汁桶",
+	"item.create_central_kitchen.tomato_sauce_bucket": "番茄酱桶",
 	"item.create_central_kitchen.truffle_pie_slice": "松露派切片",
 	"item.create_central_kitchen.yucca_cake_slice": "丝兰蛋糕切片",
 	"item.create_central_kitchen.syrup_bucket": "枫糖浆桶",

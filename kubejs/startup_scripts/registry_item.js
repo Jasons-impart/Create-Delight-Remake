@@ -320,19 +320,19 @@ StartupEvents.registry("item", e => {
         })
     // 玉米热狗相关
     e.create("createdelight:mayo_corn_dog")
+        .food(food => {
+            food.hunger(8)
+                .saturation(0.6)
+                .effect("minecraft:resistance", 200, 0, 1.0)
+        })
         .translationKey("item.createdelight.mayo_corn_dog")
-        .food(food => {
-            food.hunger(8)
-                .saturation(0.6)
-                .effect("minecraft:resistance", 200, 1, 1.0)
-        })
     e.create("createdelight:ketchup_corn_dog")
-        .translationKey("item.createdelight.ketchup_corn_dog")
         .food(food => {
             food.hunger(8)
                 .saturation(0.6)
-                .effect("minecraft:fire_resistance", 200, 1, 1.0)
+                .effect("minecraft:fire_resistance", 200, 0, 1.0)
         })
+        .translationKey("item.createdelight.ketchup_corn_dog")
     //空饭团
     e.create("createdelight:empty_riceball")
         .food(food => {
@@ -735,6 +735,11 @@ StartupEvents.registry("item", e => {
         e.create(`createdelight:${q}_genetic_seed`)
             .translationKey(`item.createdelight.${q}_genetic_seed`)
     })
+
+    e.create("createdelight:order")
+            .translationKey("item.createdelight.order")
+    e.create("createdelight:unopened_order")
+            .translationKey("item.createdelight.unopened_order")
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")

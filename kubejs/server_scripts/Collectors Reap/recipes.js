@@ -138,7 +138,7 @@ ServerEvents.recipes(e => {
         ]
     ).id("collectorsreap:food/limeade")
     create.mixing(
-        Fluid.of("createdelight:limeade", 500),
+        Fluid.of("create_central_kitchen:limeade", 500),
         [
             "#forge:fruits/lime",
             "minecraft:sugar"
@@ -147,7 +147,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:mixing/limeade")
     create.emptying(
         [
-            Fluid.of("createdelight:limeade", 250),
+            Fluid.of("create_central_kitchen:limeade", 250),
             "minecraft:glass_bottle"
         ],
         "collectorsreap:limeade"
@@ -156,7 +156,7 @@ ServerEvents.recipes(e => {
     create.filling(
         "collectorsreap:limeade",
         [
-            Fluid.of("createdelight:limeade", 250),
+            Fluid.of("create_central_kitchen:limeade", 250),
             "minecraft:glass_bottle"
         ]
     )
@@ -165,7 +165,7 @@ ServerEvents.recipes(e => {
         [
             "#forge:fruits/lime",
             "minecraft:sugar"
-        ], "createdelight:limeade", "collectorsreap:limeade"
+        ], "create_central_kitchen:limeade", "collectorsreap:limeade"
     )
 
     kubejs.shapeless(
@@ -187,7 +187,7 @@ ServerEvents.recipes(e => {
     )
         .id("collectorsreap:food/berry_limeade")
     create.mixing(
-        Fluid.of("createdelight:berry_limeade", 500),
+        Fluid.of("create_central_kitchen:berry_limeade", 500),
         [
             "#forge:fruits/lime",
             "#forge:berries",
@@ -196,16 +196,16 @@ ServerEvents.recipes(e => {
     )
         .id("createdelight:mixing/berry_limeade")
     create.mixing(
-        Fluid.of("createdelight:berry_limeade", 500),
+        Fluid.of("create_central_kitchen:berry_limeade", 500),
         [
             "#forge:berries", 
-            Fluid.of("createdelight:limeade", 500)
+            Fluid.of("create_central_kitchen:limeade", 500)
         ]
     )
         .id("createdelight:mixing/berry_limeade_2")
     create.emptying(
         [
-            Fluid.of("createdelight:berry_limeade", 250),
+            Fluid.of("create_central_kitchen:berry_limeade", 250),
             "minecraft:glass_bottle"
         ],
         "collectorsreap:berry_limeade"
@@ -214,16 +214,16 @@ ServerEvents.recipes(e => {
     create.filling(
         "collectorsreap:berry_limeade", 
         [
-            Fluid.of("createdelight:berry_limeade", 250),
+            Fluid.of("create_central_kitchen:berry_limeade", 250),
             "minecraft:glass_bottle"
         ]
     )
         .id("collectorsreap:filling/berry_limeade")
-    brewing(e, "createdelight:limeade", 
+    brewing(e, "create_central_kitchen:limeade", 
         [
             '#forge:berries',
             '#forge:berries'
-        ], "createdelight:berry_limeade", "collectorsreap:berry_limeade"
+        ], "create_central_kitchen:berry_limeade", "collectorsreap:berry_limeade"
     )
 
     kubejs.shapeless(
@@ -245,7 +245,7 @@ ServerEvents.recipes(e => {
     )
         .id("collectorsreap:food/pink_limeade")
     create.mixing(
-        Fluid.of("createdelight:pink_limeade", 500),
+        Fluid.of("create_central_kitchen:pink_limeade", 500),
         [
             "#forge:fruits/lime",
             "#forge:fruits/pomegranate",
@@ -254,16 +254,16 @@ ServerEvents.recipes(e => {
     )
         .id("createdelight:mixing/pink_limeade")
     create.mixing(
-        Fluid.of("createdelight:pink_limeade", 500),
+        Fluid.of("create_central_kitchen:pink_limeade", 500),
         [
             "#forge:fruits/pomegranate",
-            Fluid.of("createdelight:limeade", 500)
+            Fluid.of("create_central_kitchen:limeade", 500)
         ]
     )
         .id("createdelight:mixing/pink_limeade_2")
     create.emptying(
         [
-            Fluid.of("createdelight:pink_limeade", 250),
+            Fluid.of("create_central_kitchen:pink_limeade", 250),
             "minecraft:glass_bottle"
         ],
         "collectorsreap:pink_limeade"
@@ -272,16 +272,16 @@ ServerEvents.recipes(e => {
     create.filling(
         "collectorsreap:pink_limeade",
         [
-            Fluid.of("createdelight:pink_limeade", 250),
+            Fluid.of("create_central_kitchen:pink_limeade", 250),
             "minecraft:glass_bottle"
         ]
     )
         .id("collectorsreap:filling/pink_limeade")
-    brewing(e, "createdelight:limeade", 
+    brewing(e, "create_central_kitchen:limeade", 
         [
             '#forge:fruits/pomegranate',
             '#forge:fruits/pomegranate'
-        ], "createdelight:pink_limeade", "collectorsreap:pink_limeade"
+        ], "create_central_kitchen:pink_limeade", "collectorsreap:pink_limeade"
     )
 
     kubejs.shapeless(
@@ -303,7 +303,7 @@ ServerEvents.recipes(e => {
     )
         .id("collectorsreap:food/mint_limeade")
     create.mixing(
-        Fluid.of("createdelight:mint_limeade", 500),
+        Fluid.of("create_central_kitchen:mint_limeade", 500),
         [
             "#forge:fruits/lime",
             "#neapolitan:mint_leaves",
@@ -312,16 +312,16 @@ ServerEvents.recipes(e => {
     )
         .id("createdelight:mixing/mint_limeade")
     create.mixing(
-        Fluid.of("createdelight:mint_limeade", 500),
+        Fluid.of("create_central_kitchen:mint_limeade", 500),
         [
             "#neapolitan:mint_leaves",
-            Fluid.of("createdelight:limeade", 500)
+            Fluid.of("create_central_kitchen:limeade", 500)
         ]
     )
         .id("createdelight:mixing/mint_limeade_2")
     create.emptying(
         [
-            Fluid.of("createdelight:mint_limeade", 250),
+            Fluid.of("create_central_kitchen:mint_limeade", 250),
             "minecraft:glass_bottle"
         ],
         "collectorsreap:mint_limeade"
@@ -330,16 +330,16 @@ ServerEvents.recipes(e => {
     create.filling(
         "collectorsreap:mint_limeade",
         [
-            Fluid.of("createdelight:mint_limeade", 250),
+            Fluid.of("create_central_kitchen:mint_limeade", 250),
             "minecraft:glass_bottle"
         ]
     )
         .id("collectorsreap:filling/mint_limeade")
-    brewing(e, "createdelight:limeade",
+    brewing(e, "create_central_kitchen:limeade",
         [
             "#neapolitan:mint_leaves",
             "#neapolitan:mint_leaves"
-        ], "createdelight:mint_limeade", "collectorsreap:mint_limeade"
+        ], "create_central_kitchen:mint_limeade", "collectorsreap:mint_limeade"
     )
     //清爽土豆饼
     farmersdelight.cooking(
