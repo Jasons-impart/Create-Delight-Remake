@@ -1211,9 +1211,10 @@ ServerEvents.tags("minecraft:item", e => {
 
 ServerEvents.tags("minecraft:item", e => {
 })
+//订单原料的质量等级划分
 Order.orderProperties = {
     food: {
-        diversity: [1, 2, 3, 4],
+        diversity: [1, 2, 3, 4], //默认的质量计算是根据多样性的。当食物大于第n-1个数小于第n个数时该食物的质量等级即为n
         base_count: 32 //base_count最终会*4
     },
     burger: {
@@ -1382,19 +1383,19 @@ Order.orderProperties = {
         base_count: 64
     },
 }
-
+//订单顾客的设定
 Order.customerProperties = {// ===================== 矮人组织 =====================
     dwarven_bakery: {
         entries: {
-            bread: [3, 2], //权重，最低品质
+            bread: [3, 2], //权重，最低品质需求
             sausage: [2, 1],
             meat_dish: [2, 2]
         },
-        max_count: 3,
-        base_continue_rate: 0.4,
-        rarity: "COMMON",
-        chance: 0.9,
-        reward: ["createdelight:orders/random_hatbag", 3] //战利品表，基础份数
+        max_count: 3, //单个订单的最大要求数
+        base_continue_rate: 0.4, //生成一个要求后再次生成的概率
+        rarity: "COMMON", //稀有度
+        chance: 0.9, //生成概率
+        reward: ["createdelight:orders/random_hatbag", 3] //战利品表，奖励的基础份数
     },
 
     dwarven_brewery: {
