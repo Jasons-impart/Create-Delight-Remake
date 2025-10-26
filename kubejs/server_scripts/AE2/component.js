@@ -16,7 +16,7 @@ ServerEvents.recipes((event) => {
     });
   });
 
-
+  event.replaceInput({mod: "ae2omnicells"}, "ae2:quartz_glass", "#createdelight:quartz_glass")
   const { create, vintageimprovements } = event.recipes;
   let i1k = "ae2:cell_component_1k";
   let i4k = "ae2:cell_component_4k";

@@ -59,6 +59,7 @@ ServerEvents.tags("block", e => {
         }
     })
     e.add("createdelight:quality_crops",
+        "#farmersdelight:wild_crops",
         "neapolitan:vanilla_vine",
         "neapolitan:strawberry_bush",
         "neapolitan:small_banana_frond",
