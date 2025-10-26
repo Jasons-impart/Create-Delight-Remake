@@ -142,4 +142,24 @@ ServerEvents.recipes(e => {
       "create:metal_girder"
     ]
   ).id("createdieselgenerators:crafting/andesite_girder")
+  e.recipes.kubejs.shaped(
+    "minecraft:chest",
+    [
+      "AAA",
+      "A A",
+      "AAA"
+    ], {
+      A: "createdieselgenerators:chip_wood_block"
+    }
+  ).id("createdieselgenerators:crafting/chip_wood_chest_manual_only")
+  e.recipes.kubejs.shaped(
+    "4x minecraft:chest",
+    [
+      "AAA",
+      "A A",
+      "AAA"
+    ], {
+      A: "createdieselgenerators:chip_wood_beam"
+    }
+  ).id("createdieselgenerators:crafting/chip_wood_chest_4x_manual_only")
 })
