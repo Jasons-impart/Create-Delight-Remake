@@ -1,0 +1,20 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:group",
+          "children": [
+            {
+              "type": "minecraft:tag",
+              "name": "kaleidoscope_doll:all_dolls",
+              "expand": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "functions": []
+}

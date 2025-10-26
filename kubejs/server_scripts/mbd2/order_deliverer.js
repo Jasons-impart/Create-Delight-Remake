@@ -47,14 +47,20 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                             let o = find.nbt.createdelightOrderInfo
                             console.log(packages.serializeNBT())
                             let nums = Order.checkAllPackages([o], packages)
-                            let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
-                            console.log(order)
-                            console.log(nums)
+                            let reward = Order.customerProperties[o.type].reward
+                            if (reward == null)
+                                reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
                             let list = Utils.newList()
-                            list.add(reward)
+
+                            for (let i = 0; i < nums[0] * reward[1] * o.entries.length; i++) {
+                                let rewardItems = LootUtils.getLootItems(reward[0], level)
+                                rewardItems.forEach(item => {
+                                    list.add(item)
+                                })
+                            }
+                            // let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
                             let p = $PackageItem.containing(list)
                             end = index - 1
-                            console.log(start, end)
                             for (let j = start; j <= end; j++) {
                                 /**@type {Internal.TableClothBlockEntity} */
                                 let be = level.getBlockEntity(pos[funcs[i]](j).above(), "create:table_cloth").get()
@@ -87,10 +93,17 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                 if (order != null) {
                     let o = order.nbt.createdelightOrderInfo
                     let nums = Order.checkAllPackages([o], packages)
-                    let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
-
+                    let reward = Order.customerProperties[o.type].reward
+                    if (reward == null)
+                        reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
                     let list = Utils.newList()
-                    list.add(reward)
+
+                    for (let i = 0; i < nums[0] * reward[1]; i++) {
+                        let rewardItems = LootUtils.getLootItems(reward[0], level)
+                        rewardItems.forEach(item => {
+                            list.add(item)
+                        })
+                    }
                     let p = $PackageItem.containing(list)
 
                     for (let j = start; j <= lastIndex; j++) {

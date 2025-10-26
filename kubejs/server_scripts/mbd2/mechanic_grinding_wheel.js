@@ -19,6 +19,8 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
         if (ret.is("air")) {
             if (quality.level() > 0) {
                 item.nbt.remove($QualityUtils.QUALITY_TAG)
+                if (item.nbt.empty)
+                    item.removeTag()
             }
             ItemTransferHelper.insertItemStacked(output, item, false)
             input.extractItem(index, item.count, false, false)
