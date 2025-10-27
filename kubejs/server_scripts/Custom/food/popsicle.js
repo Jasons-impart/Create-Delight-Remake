@@ -38,8 +38,8 @@ ServerEvents.recipes(e => {
     popsicle_recipe_list.forEach(popsicle => {
         let iner = "ratatouille:popsicle_mold"
         e.recipes.create.sequenced_assembly(`createdelight:${popsicle[0].split(":")[1]}_mold_filled`, iner, [
-            e.recipes.create.filling(iner, [iner, popsicle[1]]),
-            e.recipes.create.deploying(iner, [iner, "minecraft:stick"])
+            e.recipes.create.deploying(iner, [iner, "minecraft:stick"]),
+            e.recipes.create.filling(iner, [iner, popsicle[1]])
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -54,8 +54,8 @@ ServerEvents.recipes(e => {
     popsicle_recipe_list_2.forEach(popsicle => {
         let iner = "ratatouille:popsicle_mold"
         e.recipes.create.sequenced_assembly(`createdelight:${popsicle[0].split(":")[1]}_mold_filled`, iner, [
-            e.recipes.create.deploying(iner, [iner, popsicle[1]]),
-            e.recipes.create.deploying(iner, [iner, "minecraft:stick"])
+            e.recipes.create.deploying(iner, [iner, "minecraft:stick"]),
+            e.recipes.create.deploying(iner, [iner, popsicle[1]])
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -66,8 +66,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "ratatouille:popsicle_mold"
         e.recipes.create.sequenced_assembly('ratatouille:melon_popsicle_mold_filled', iner, [
-            e.recipes.create.filling(iner, [iner, Fluid.of("create_central_kitchen:melon_juice")]),
-            e.recipes.create.deploying(iner, [iner, "minecraft:stick"])
+            e.recipes.create.deploying(iner, [iner, "minecraft:stick"]),
+            e.recipes.create.filling(iner, [iner, Fluid.of("create_central_kitchen:melon_juice")])
         ])
             .loops(1)
             .transitionalItem(iner)
