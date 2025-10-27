@@ -183,6 +183,7 @@ ItemEvents.modification(e => {
     maxStackSize_change('ends_delight:chorus_fruit_popsicle', 64)
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
+    maxStackSize_change('createdelightcore:lush_confiture_jelly_bottle', 16)
 
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
@@ -225,6 +226,7 @@ ItemEvents.modification(e => {
     food_hungers("createcafe:oreo_half", 5, 5)
     food_hungers("createcafe:oreo_crashed", 5, 2.5)
     food_hungers("createcafe:oreo", 12, 18)
+    food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
 
     // 食物效果修改
     food_effects("corn_delight:classic_corn_dog", "minecraft:resistance", 10)
@@ -255,6 +257,8 @@ ItemEvents.modification(e => {
     food_effects("alexscaves:small_peppermint", "neapolitan:berserking", 45)
     food_effects("alexscaves:large_peppermint", "neapolitan:berserking", 120)
     food_effects("alexscaves:fiddlehead", "minecraft:poison", 5, 0, 0.2)
+    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:tracer", 30)
+    food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
         //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)

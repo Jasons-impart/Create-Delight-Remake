@@ -1,0 +1,17 @@
+{
+    "type": "some_assembly_required:sandwich_spouting",
+    "conditions": [
+      {
+        "type": "forge:mod_loaded",
+        "modid": "createdelightcore"
+      }
+    ],
+    "fluid": {
+      "amount": 125,
+      "fluid": "createdelight:lush_confiture_jelly",
+      "nbt": {}
+    },
+    "result": {
+      "item": "createdelightcore:lush_confiture_jelly_bottle"
+    }
+  }
