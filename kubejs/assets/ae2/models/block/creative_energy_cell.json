@@ -4,7 +4,7 @@
 	 "front": "ae2:block/creative_energy_cell",
 	 "top": "ae2:block/creative_energy_cell_top",
 	 "side": "ae2:block/creative_energy_cell_side",
-	 "bottom": "ae2:block/creative_energy_bottom"
+	 "bottom": "ae2:block/creative_energy_cell_bottom"
 	}
 	
 }
