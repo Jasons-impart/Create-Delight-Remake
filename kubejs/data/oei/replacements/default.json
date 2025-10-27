@@ -270,12 +270,6 @@
     },
     {
         "matchItems": [
-            "cosmopolitan:lush_confiture_bottle"
-        ],
-        "resultItems": "createdelightcore:lush_confiture_jelly_bottle"
-    },
-    {
-        "matchItems": [
             "vintagedelight:apple_sauce_mason_jar"
         ],
         "resultItems": "fruitsdelight:apple_jelly"

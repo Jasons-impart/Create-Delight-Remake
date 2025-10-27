@@ -104,6 +104,9 @@ ServerEvents.tags("item", e => {
         'createdelightcore:pomegranate_ice_cream_scoop',
         'createdelightcore:lime_ice_cream_scoop',
     ])
+    e.add("curios:belt", [
+        'alexscaves:sack_of_sating',
+    ])
     e.removeAll("alexscaves:restricted_biome_locators")
     e.remove("alexscaves:ferns", [
         'alexscaves:fiddlehead'
