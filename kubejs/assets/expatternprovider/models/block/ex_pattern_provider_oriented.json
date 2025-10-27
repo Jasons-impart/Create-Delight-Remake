@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "expatternprovider:block/ex_pattern_provider",
+    "down": "expatternprovider:block/ex_pattern_provider_alternate",
+    "up": "expatternprovider:block/ex_pattern_provider_alternate_front",
+    "north": "expatternprovider:block/ex_pattern_provider_alternate_arrow",
+    "south": "expatternprovider:block/ex_pattern_provider_alternate_arrow",
+    "east": "expatternprovider:block/ex_pattern_provider_alternate_arrow",
+    "west": "expatternprovider:block/ex_pattern_provider_alternate_arrow"
+  }
+}
