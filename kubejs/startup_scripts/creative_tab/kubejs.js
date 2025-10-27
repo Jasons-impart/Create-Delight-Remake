@@ -274,7 +274,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:big_popsicle_mold_solid',
         'createdelight:green_tongue_mold_filled',
         'createdelight:green_tongue_mold_solid',
-        'createdelight:lush_confiture_jello_item',
         'createdelight:wafer_dough',
         'createdelight:raw_potato_pancake'
     ])

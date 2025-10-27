@@ -3,7 +3,6 @@ ServerEvents.recipes(e => {
         "cosmopolitan:create/pressing/wafer_cone",
         "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying",
         "cosmopolitan:farmersdelight/cutting/fern",
-        "cosmopolitan:lush_confiture_bottle_from_glass_bottle"
     ])
     const {kubejs, create, create_new_age, farmersdelight} = e.recipes
     e.replaceInput({mod: "cosmopolitan"}, "#forge:crops/wheat", "#forge:flour")
@@ -50,54 +49,8 @@ ServerEvents.recipes(e => {
             'cosmopolitan:arbutus_berries'
         ]
     ).heated().id("cosmopolitan:mixing/lush_confiture")
-    create.filling('createdelightcore:lush_confiture_jelly_bottle',[Fluid.of("createdelight:lush_confiture_jelly", 125),"minecraft:glass_bottle"]).id("cosmopolitan:filling/lush_confiture_jelly_bottle")
-    create.emptying([Fluid.of("createdelight:lush_confiture_jelly", 125),"minecraft:glass_bottle"], 'createdelightcore:lush_confiture_jelly_bottle').id("cosmopolitan:emptying/lush_confiture_jelly_bottle")
-    create.filling('createdelight:lush_confiture_jello_item',[Fluid.of("createdelight:lush_confiture_jello", 125),"minecraft:bowl"]).id("cosmopolitan:filling/lush_confiture_jello_item")
-    farmersdelight.cooking(
-        [
-            "2x minecraft:glow_berries",
-            '2x cosmopolitan:arbutus_berries',
-            "minecraft:sugar"
-        ], 'cosmopolitan:lush_confiture_bottle', 
-        0.5, 600, "minecraft:glass_bottle"
-    ).id("cosmopolitan:farmersdelight/cooking/lush_confiture_bottle")
-    kubejs.shapeless(
-        'createdelightcore:lush_confiture_jelly',
-        '8x createdelightcore:lush_confiture_jelly_bottle'
-    ).replaceIngredient("createdelightcore:lush_confiture_jelly_bottle", "minecraft:glass_bottle").id("createdelightcore:lush_confiture_jelly_block_manual_only")
-    kubejs.shapeless(
-        '8x createdelightcore:lush_confiture_jelly_bottle',
-        [
-            'createdelightcore:lush_confiture_jelly',
-            "8x minecraft:glass_bottle"
-        ]
-    ).id("createdelightcore:lush_confiture_jelly_manual_only")
-    create.compacting(
-        'createdelightcore:lush_confiture_jelly',
-        Fluid.of("createdelight:lush_confiture_jelly", 1000)
-    ).id("cosmopolitan:compacting/lush_confiture_jelly")
-    kubejs.shapeless(
-        'createdelightcore:lush_confiture_jello',
-        '8x createdelight:lush_confiture_jello_item'
-    ).replaceIngredient("createdelight:lush_confiture_jello_item", "minecraft:bowl").id("createdelightcore:lush_confiture_jello_block_manual_only")
-    kubejs.shapeless(
-        '8x createdelight:lush_confiture_jello_item',
-        [
-            'createdelightcore:lush_confiture_jello',
-            "8x minecraft:bowl"
-        ]
-    ).id("createdelightcore:lush_confiture_jello_manual_only")
-    create.compacting(
-        'createdelightcore:lush_confiture_jello',
-        Fluid.of("createdelight:lush_confiture_jello", 1000)
-    ).id("cosmopolitan:compacting/lush_confiture_jello")
-    create.mixing(
-        Fluid.of("createdelight:lush_confiture_jello", 125),
-        [
-            '#forge:gelatin',
-            Fluid.of("createdelight:lush_confiture_jelly", 125)
-        ]
-    ).heated().id("cosmopolitan:mixing/lush_confiture_jello")
+    create.filling('cosmopolitan:lush_confiture_bottle',[Fluid.of("createdelight:lush_confiture_jelly", 125),"minecraft:glass_bottle"]).id("cosmopolitan:filling/lush_confiture_jelly_bottle")
+    create.emptying([Fluid.of("createdelight:lush_confiture_jelly", 125),"minecraft:glass_bottle"], 'cosmopolitan:lush_confiture_bottle').id("cosmopolitan:emptying/lush_confiture_jelly_bottle")
     create.mixing(
         Fluid.of("createdelight:spring_soda", 250),
         [
