@@ -222,4 +222,17 @@ ServerEvents.recipes(e => {
     })
     .id("createdelight:order_deliverer")
     e.recipes.kubejs.shapeless("createdelight:contract_executor", "createdelight:order_deliverer")
+
+    e.recipes.create.mechanical_crafting("createdelight:mechanical_craft_encoder", [
+        "AABAA",
+        "ABCBA",
+        "BCDCB",
+        "ABCBA",
+        "AABAA"
+    ], {
+        A: "create:brass_sheet",
+        B: "ae2:molecular_assembler",
+        C: "create:brass_casing",
+        D: "create:factory_gauge"
+    }).id("createdelight:mechanical_crafting/mechanical_craft_encoder")
 })

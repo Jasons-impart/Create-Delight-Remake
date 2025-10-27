@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "mbd2:block/mechanical_craft_encoder_bottom",
+    "particle": "mbd2:block/mechanical_craft_encoder_side",
+    "side": "mbd2:block/mechanical_craft_encoder_side",
+    "top": "mbd2:block/mechanical_craft_encoder_top"
+  }
+}
