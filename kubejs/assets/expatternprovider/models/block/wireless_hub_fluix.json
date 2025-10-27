@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "expatternprovider:block/wireless_hub_fluix"
+  }
+}

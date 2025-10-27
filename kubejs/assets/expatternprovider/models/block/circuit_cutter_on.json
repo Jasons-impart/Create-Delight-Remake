@@ -1,0 +1,6 @@
+{
+  "parent": "expatternprovider:block/circuit_cutter_off",
+  "textures": {
+    "1": "expatternprovider:block/circuit_cutter/saw_on"
+  }
+}
