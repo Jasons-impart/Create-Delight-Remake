@@ -57,7 +57,7 @@ ServerEvents.recipes(e => {
             B: "kinetic_pixel:barrel",
             C: "create_sa:heat_engine",
             D: "#minecraft:logs",
-            E: "createdeco:andesite_sheet",
+            E: "vintageimprovements:andesite_sheet",
             F: "kinetic_pixel:ammunitionbox",
             G: "kinetic_pixel:pistonexciter"
         })
@@ -182,7 +182,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: "create:precision_mechanism"
         }
     )
@@ -196,7 +196,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}').strongNBT()
         }
     )
@@ -210,7 +210,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "crystal_clear:brass_glass_casing",
+            B: "createprism:brass_glass_casing",
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}').strongNBT()
         }
     ).id("create_armorer:scope_telephoto")
@@ -265,7 +265,7 @@ ServerEvents.recipes(e => {
             "ADA"
         ],
         {
-            A: "createdeco:andesite_sheet",
+            A: "vintageimprovements:andesite_sheet",
             B: "create_sa:heat_engine",
             C: "create:andesite_alloy",
             D: "kinetic_pixel:ammunitionbox"

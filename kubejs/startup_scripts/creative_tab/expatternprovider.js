@@ -6,7 +6,6 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "alexscaves:purple_soda",
     "ratatouille:cocoa_liquor",
     "createdelight:egg_yolk",
-    "createcafe:melted_sugar",
     "create:honey",
     "createdelight:vinegar",
     "createmetallurgy:molten_iron",

@@ -3,6 +3,7 @@
 # 反选不忽略的文件夹和文件
 
 !/.gitignore
+!/acceleratedrendering-client.toml
 !/alexsmobs
 !/attributeslib.cfg
 !/fancymenu
@@ -72,3 +73,4 @@ xaerominimap_entities.json
 !/iris_shader_folder.properties
 !/advancements_tracker-client.toml
 !/kaleidoscope_doll-common.toml
+!/GeneralFeedback

@@ -100,8 +100,8 @@ jobs:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: Jasons-impart/packwiz
-          run-id: 16468484150
+          repository: packwiz/packwiz
+          run-id: 17407879187
       - name: 挪动packwiz到根目录
         run: |
           # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
@@ -111,13 +111,17 @@ jobs:
         run: |
           mv .hmclversion.cfg hmclversion.cfg
           mv .options.txt options.txt
-      - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件
+      - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件 & 反馈配置
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
+          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' ${{ github.workspace }}/config/GeneralFeedback/default.json > default.json.tmp
+          mv default.json.tmp ${{ github.workspace }}/config/GeneralFeedback/default.json
+          
           grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
           grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
+          grep 'placeholder' ${{ github.workspace }}/config/GeneralFeedback/default.json
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
         # fancymenu格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
         # |||
@@ -288,8 +292,8 @@ jobs:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: Jasons-impart/packwiz
-          run-id: 16468484150
+          repository: packwiz/packwiz
+          run-id: 17407879187
       - name: 挪动packwiz到根目录
         run: |
           # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
@@ -314,12 +318,17 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
-      - name: 【版本】根据pack.toml的整合包版本替换标题 和 更好地兼容检测配置
+      - name: 【版本】根据pack.toml的整合包版本替换标题 和 更好地兼容检测配置 和 反馈配置
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION (patch)/" kubejs/config/client.properties
+          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
+          mv default.json.tmp config/GeneralFeedback/default.json
           grep 'modpack' config/bcc-common.toml
+          grep 'title' kubejs/config/client.properties
+          grep 'placeholder' config/GeneralFeedback/default.json
+
       - name: 准备补丁文件
         run: |
           # 生成完整差异报告
@@ -367,6 +376,8 @@ jobs:
           # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
+          # 更新反馈配置
+          cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
 
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"

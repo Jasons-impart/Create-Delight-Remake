@@ -76,6 +76,25 @@ ServerEvents.tags("minecraft:item", e => {
     ])
     e.add("forge:coffee_grounds", "createcafe:coffee_grounds")
     e.add("forge:fruits/pomegranate", "collectorsreap:pomegranate_seeds")
+    e.add("forge:syrup_block", [
+        'createdelightcore:base_syrup',
+        'createdelightcore:strawberry_syrup',
+        'createdelightcore:vanilla_syrup',
+        'createdelightcore:mint_syrup',
+        'createdelightcore:banana_syrup',
+        'cosmopolitan:berry_syrup_block'
+    ])
+})
+
+ServerEvents.tags("minecraft:fluid", e => {
+    e.add("forge:syrup", [
+        'createdelight:base_syrup',
+        'createdelight:strawberry_syrup',
+        'createdelight:vanilla_syrup',
+        'createdelight:mint_syrup',
+        'createdelight:banana_syrup',
+        'cosmopolitan:berry_syrup'
+    ])
 })
 
 ServerEvents.tags("minecraft:block", e => {

@@ -88,8 +88,8 @@ StartupEvents.registry("item", e => {
     // 注册挂面
     e.create("createdelight:vermicelli")
         .translationKey("item.createdelight.vermicelli")
-    
-    
+
+
     // 注册曲奇面团
     let CookieDough = [
         "persimmon",
@@ -154,12 +154,12 @@ StartupEvents.registry("item", e => {
             .tag("forge:popsicle_mold_solid")
             .translationKey(`item.createdelight.${popsicle}_popsicle_mold_solid`)
     })
-        e.create("createdelight:green_tongue_mold_filled")
-            .tag("forge:popsicle_mold_filled")
-            .translationKey("item.createdelight.green_tongue_mold_filled")
-        e.create("createdelight:green_tongue_mold_solid")
-            .tag("forge:popsicle_mold_solid")
-            .translationKey("item.createdelight.green_tongue_mold_solid")
+    e.create("createdelight:green_tongue_mold_filled")
+        .tag("forge:popsicle_mold_filled")
+        .translationKey("item.createdelight.green_tongue_mold_filled")
+    e.create("createdelight:green_tongue_mold_solid")
+        .tag("forge:popsicle_mold_solid")
+        .translationKey("item.createdelight.green_tongue_mold_solid")
 
     // 开酥相关
     e.create("createdelight:butter")
@@ -258,6 +258,16 @@ StartupEvents.registry("item", e => {
                 .saturation(0.7)
                 .effect("farmersdelight:nourishment", 600, 1, 1.0)
         })
+    // 生土豆饼
+    e.create("createdelight:raw_potato_pancake")
+        .translationKey("item.createdelight.raw_potato_pancake")
+        .food(food => {
+            food.hunger(2)
+                .saturation(0.5)
+        })
+    // 威化面团
+    e.create("createdelight:wafer_dough")
+        .translationKey("item.createdelight.wafer_dough")
     // 九转大肠
     e.create("createdelight:braised_intestines_in_brown_sauce")
         .rarity("epic")
@@ -268,8 +278,8 @@ StartupEvents.registry("item", e => {
                 .effect("farmersdelight:nourishment", 6000, 1, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
-                        if(!ea.player.isCreative()) {
-                            if(!ea.player.getInventory().add('minecraft:bowl')) {
+                        if (!ea.player.isCreative()) {
+                            if (!ea.player.getInventory().add('minecraft:bowl')) {
                                 ea.player.drop('minecraft:bowl', false)
                             }
                         }
@@ -289,8 +299,8 @@ StartupEvents.registry("item", e => {
                 .effect("farmersdelight:nourishment", 3000, 1, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
-                        if(!ea.player.isCreative()) {
-                            if(!ea.player.getInventory().add('minecraft:bowl')) {
+                        if (!ea.player.isCreative()) {
+                            if (!ea.player.getInventory().add('minecraft:bowl')) {
                                 ea.player.drop('minecraft:bowl', false)
                             }
                         }
@@ -299,19 +309,19 @@ StartupEvents.registry("item", e => {
         })
     // 玉米热狗相关
     e.create("createdelight:mayo_corn_dog")
+        .food(food => {
+            food.hunger(8)
+                .saturation(0.6)
+                .effect("minecraft:resistance", 200, 0, 1.0)
+        })
         .translationKey("item.createdelight.mayo_corn_dog")
-        .food(food => {
-            food.hunger(8)
-                .saturation(0.6)
-                .effect("minecraft:resistance", 200, 1, 1.0)
-        })
     e.create("createdelight:ketchup_corn_dog")
-        .translationKey("item.createdelight.ketchup_corn_dog")
         .food(food => {
             food.hunger(8)
                 .saturation(0.6)
-                .effect("minecraft:fire_resistance", 200, 1, 1.0)
+                .effect("minecraft:fire_resistance", 200, 0, 1.0)
         })
+        .translationKey("item.createdelight.ketchup_corn_dog")
     //空饭团
     e.create("createdelight:empty_riceball")
         .food(food => {
@@ -326,8 +336,8 @@ StartupEvents.registry("item", e => {
                 .saturation(0.6)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
-                        if(!ea.player.isCreative()) {
-                            if(!ea.player.getInventory().add('create_bic_bit:dirty_paper')) {
+                        if (!ea.player.isCreative()) {
+                            if (!ea.player.getInventory().add('create_bic_bit:dirty_paper')) {
                                 ea.player.drop('create_bic_bit:dirty_paper', false)
                             }
                         }
@@ -419,8 +429,8 @@ StartupEvents.registry("item", e => {
                 .eaten(ea => {
                     ea.player.setTicksFrozen(ea.player.getTicksFrozen() + 200)
                     ea.server.scheduleInTicks(1, func => {
-                        if(!ea.player.isCreative()) {
-                            if(!ea.player.getInventory().add("minecraft:bowl")) {
+                        if (!ea.player.isCreative()) {
+                            if (!ea.player.getInventory().add("minecraft:bowl")) {
                                 ea.player.drop("minecraft:bowl", false)
                             }
                         }
@@ -459,6 +469,11 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:universal_press")
         .tag("vintageimprovements:curving_heads")
         .translationKey("item.createdelight.universal_press")
+
+    // 终极通用压印模板
+    e.create("createdelight:ultimate_universal_press")
+        .tag("vintageimprovements:curving_heads")
+        .translationKey("item.createdelight.ultimate_universal_press")
     // 红石膏
     e.create("createdelight:redstone_paste")
         .maxDamage(64)
@@ -474,52 +489,25 @@ StartupEvents.registry("item", e => {
         .maxDamage(64)
         .translationKey("item.createdelight.sky_stone_paste")
         .tag("createdelight:sky_stone")
-    // 初加工的电路板
-    e.create("createdelight:initial_processing_of_printed_engineering_processor")
-        .translationKey("item.createdelight.initial_processing_of_printed_engineering_processor")
-    e.create("createdelight:initial_processing_of_printed_calculation_processor")
-        .translationKey("item.createdelight.initial_processing_of_printed_calculation_processor")
-    e.create("createdelight:initial_processing_of_printed_logic_processor")
-        .translationKey("item.createdelight.initial_processing_of_printed_logic_processor")
-    e.create("createdelight:initial_processing_of_printed_accumulation_processor")
-        .translationKey("item.createdelight.initial_processing_of_printed_accumulation_processor")
-    // 待压印的处理器
-    e.create("createdelight:engineering_processor_inscribed")
-        .translationKey("item.createdelight.engineering_processor_inscribed")
-    e.create("createdelight:calculation_processor_inscribed")
-        .translationKey("item.createdelight.calculation_processor_inscribed")
-    e.create("createdelight:logic_processor_inscribed")
-        .translationKey("item.createdelight.logic_processor_inscribed")
-    e.create("createdelight:accumulation_processor_inscribed")
-        .translationKey("item.createdelight.accumulation_processor_inscribed")
+    let processorNames = ["engineering", "calculation", "logic", "accumulation", "omni_link", "complex_link", "multidimensional_expansion"];
+    processorNames.forEach(name => {
+        // 初加工的电路板
+        e.create(`createdelight:initial_processing_of_printed_${name}_processor`)
+            .translationKey(`item.createdelight.initial_processing_of_printed_${name}_processor`);
+        // 待压印的处理器
+        e.create(`createdelight:${name}_processor_inscribed`)
+            .translationKey(`item.createdelight.${name}_processor_inscribed`);
+    });
+    let housingTypes = ["item", "fluid", "mega_item", "mega_fluid", "omni", "complex_omni", "quantum_omni"];
 
-    // 元件外壳坯件
-    e.create("createdelight:item_cell_housing_blank")
-        .translationKey("item.createdelight.item_cell_housing_blank")
-    e.create("createdelight:fluid_cell_housing_blank")
-        .translationKey("item.createdelight.fluid_cell_housing_blank")
-    e.create("createdelight:mega_item_cell_housing_blank")
-        .translationKey("item.createdelight.mega_item_cell_housing_blank")
-    e.create("createdelight:mega_fluid_cell_housing_blank")
-        .translationKey("item.createdelight.mega_fluid_cell_housing_blank")
-    // 初处理的元件外壳
-    e.create("createdelight:initial_processing_of_item_cell_housing")
-        .translationKey("item.createdelight.initial_processing_of_item_cell_housing")
-    e.create("createdelight:initial_processing_of_fluid_cell_housing")
-        .translationKey("item.createdelight.initial_processing_of_fluid_cell_housing")
-    e.create("createdelight:initial_processing_of_mega_item_cell_housing")
-        .translationKey("item.createdelight.initial_processing_of_mega_item_cell_housing")
-    e.create("createdelight:initial_processing_of_mega_fluid_cell_housing")
-        .translationKey("item.createdelight.initial_processing_of_mega_fluid_cell_housing")
-    // 未成型的元件外壳
-    e.create("createdelight:unformed_item_cell_housing")
-        .translationKey("item.createdelight.unformed_item_cell_housing")
-    e.create("createdelight:unformed_fluid_cell_housing")
-        .translationKey("item.createdelight.unformed_fluid_cell_housing")
-    e.create("createdelight:unformed_mega_item_cell_housing")
-        .translationKey("item.createdelight.unformed_mega_item_cell_housing")
-    e.create("createdelight:unformed_mega_fluid_cell_housing")
-        .translationKey("item.createdelight.unformed_mega_fluid_cell_housing")
+    housingTypes.forEach(type => {
+        e.create(`createdelight:initial_processing_of_${type}_cell_housing`)
+            .translationKey(`item.createdelight.initial_processing_of_${type}_cell_housing`)
+        e.create(`createdelight:${type}_cell_housing_blank`)
+            .translationKey(`item.createdelight.${type}_cell_housing_blank`)
+        e.create(`createdelight:unformed_${type}_cell_housing`)
+            .translationKey(`item.createdelight.unformed_${type}_cell_housing`)
+    });
     // 石英玻璃部件
     e.create("createdelight:quartz_glass_parts")
         .translationKey("item.createdelight.quartz_glass_parts")
@@ -719,23 +707,28 @@ StartupEvents.registry("item", e => {
         .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-    
+
     //采血器
     e.create("createdelight:blood_collection_device")
-    .translationKey("item.createdelight.blood_collection_device")
+        .translationKey("item.createdelight.blood_collection_device")
     //针
     e.create("createdelight:needle")
         .translationKey("item.createdelight.needle")
     e.create("createdelight:quality_absorber")
         .useDuration(item => 20)
         .translationKey("item.createdelight.quality_absorber")
-    
+
     //基因种子
     let seed_quality = ["inferior", "normal", "refined", "pure", "flawless"]
     seed_quality.forEach(q => {
         e.create(`createdelight:${q}_genetic_seed`)
             .translationKey(`item.createdelight.${q}_genetic_seed`)
     })
+
+    e.create("createdelight:order")
+            .translationKey("item.createdelight.order")
+    e.create("createdelight:unopened_order")
+            .translationKey("item.createdelight.unopened_order")
     //悚怖之心
     e.create("createdelight:dread_heart")
         .rarity("epic")
@@ -750,11 +743,11 @@ StartupEvents.registry("item", e => {
     //恶魔典籍
     e.create("createdelight:demonic_codex")
         .rarity("epic")
-        .translationKey("item.createdelight.demonic_codex") 
+        .translationKey("item.createdelight.demonic_codex")
     //悚怖锻造模板
     let dread_upgrade = e.create("createdelight:dread_upgrade_smithing_template", "smithing_template")
-    .armorIcons()
-    .ingotIcon()
+        .armorIcons()
+        .ingotIcon()
     dread_upgrade.appliesToText = Text.translate("item.createdelight.smithing_template.dread_upgrade.applies_to").blue()
     dread_upgrade.ingredientsText = Text.translate("item.createdelight.smithing_template.dread_upgrade.ingredients").blue()
     dread_upgrade.appliesToSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.base_slot_description").blue()

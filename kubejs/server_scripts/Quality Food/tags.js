@@ -59,6 +59,7 @@ ServerEvents.tags("block", e => {
         }
     })
     e.add("createdelight:quality_crops",
+        "#farmersdelight:wild_crops",
         "neapolitan:vanilla_vine",
         "neapolitan:strawberry_bush",
         "neapolitan:small_banana_frond",
@@ -135,7 +136,6 @@ ServerEvents.tags("item", e => {
         'createdelight:board_noodles', 
         'createdelight:vermicelli', 
         'createdelight:raw_cheese_pizza', 
-        'alexcaves_delight:pearldust', 
         'bakeries:sweet_dough', 
         'bakeries:whole_wheat_dough', 
         'bakeries:bagel_dough', 

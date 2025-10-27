@@ -61,7 +61,7 @@ ServerEvents.recipes(e => {
     create.compacting(Fluid.of("createdelight:unrefined_sugar", 500),
      ["3x alexscaves:licoroot_vine", Fluid.water(250)])
     .id("createdelight:compacting/unrefined_sugar_from_licoroot_vine")
-    vintageimprovements.pressurizing([Fluid.of("createcafe:melted_sugar", 100), Fluid.water(100)], Fluid.of("createdelight:unrefined_sugar", 200))
+    vintageimprovements.pressurizing([Fluid.of("createdelight:base_syrup", 100), Fluid.water(100)], Fluid.of("createdelight:unrefined_sugar", 200))
     .secondaryFluidOutput(1)
     .heated()
     .id("createdelight:pressurizing/melted_sugar")

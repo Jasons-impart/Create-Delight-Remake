@@ -2034,16 +2034,6 @@
             },
             "unitWorth": 2700
         },
-        "cashier_obj_fried_eggplant_pasta": {
-            "type": "item",
-            "rarity": "RARE",
-            "content": "culturaldelights:fried_eggplant_pasta",
-            "amount": {
-                "min": 1,
-                "max": 3
-            },
-            "unitWorth": 2800
-        },
         "cashier_obj_smoked_ham": {
             "type": "item",
             "rarity": "RARE",
@@ -3117,7 +3107,7 @@
         "cashier_obj_magma_cake": {
             "type": "item",
             "rarity": "LEGENDARY",
-            "content": "mynethersdelight:magma_cake",
+            "content": "mynethersdelight:magma_cake_block",
             "amount": {
                 "min": 1,
                 "max": 2

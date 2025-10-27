@@ -94,12 +94,6 @@
     },
     {
         "matchItems": [
-            "neapolitan:banana_crate"
-        ],
-        "resultItems": "cratedelight:banana_crate"
-    },
-    {
-        "matchItems": [
             "youkaishomecoming:redbean_bag"
         ],
         "resultItems": "neapolitan:adzuki_crate"

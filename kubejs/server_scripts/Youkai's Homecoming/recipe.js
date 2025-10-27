@@ -48,7 +48,12 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:black_grape_crate",
         "youkaishomecoming:black_grape_from_black_grape_crate",
         "youkaishomecoming:coffee_powder",
-        "youkaishomecoming:straw_from_wheat_drying"
+        "youkaishomecoming:straw_from_wheat_drying",
+        "youkaishomecoming:doughnut",
+        "youkaishomecoming:sake_bottle_from_glass_stonecutting",
+        "youkaishomecoming:white_grape_juice",
+        "youkaishomecoming:black_grape_juice",
+        "youkaishomecoming:red_grape_juice",
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",

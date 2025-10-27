@@ -139,7 +139,7 @@ centrifugation(event, "expatternprovider:fishbig", "minecraft:pufferfish")
       ]),
       create.deploying("createdelight:incomplete_basic_card", [
         "createdelight:incomplete_basic_card",
-        "#forge:ingots/iron",
+        "#forge:ingots/steel",
       ]),
       create.deploying("createdelight:incomplete_basic_card", [
         "createdelight:incomplete_basic_card",
@@ -171,7 +171,7 @@ centrifugation(event, "expatternprovider:fishbig", "minecraft:pufferfish")
       ]),
       create.deploying("createdelight:incomplete_advanced_card", [
         "createdelight:incomplete_advanced_card",
-        "#forge:ingots/iron",
+        "#forge:ingots/steel",
       ]),
       create.deploying("createdelight:incomplete_advanced_card", [
         "createdelight:incomplete_advanced_card",

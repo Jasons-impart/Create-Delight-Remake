@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    const { kubejs, create } = e.recipes
     remove_recipes_id(e, [
         "create_bic_bit:mixing/mayonnaise_recipe",
         "create_bic_bit:mixing/sunflower_seeds_recipe",
@@ -28,7 +29,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:mixing/mayonnaise",
         "create:empty_youkaishomecoming_mayonnaise_bottle_of_youkaishomecoming_flowing_mayonnaise",
         "create_deepfried:deep_frying/donut",
-        "create_deepfried:compat/farmersdelight/deep_frying/arancini"
+        "create_deepfried:compat/farmersdelight/deep_frying/arancini",
+        "create_bic_bit:compat/farmersdelight/ketchup",
+        "create_bic_bit:mixing/frying_oil"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 
@@ -60,7 +63,7 @@ ServerEvents.recipes(e => {
     
     )
     e.replaceInput({}, Fluid.of("create_bic_bit:frying_oil"), Fluid.of("createdieselgenerators:plant_oil"))
-    e.recipes.create.mixing(
+    create.mixing(
         'create_bic_bit:raw_churros',
         [
             "bakeries:flour",
@@ -68,22 +71,31 @@ ServerEvents.recipes(e => {
             Fluid.water(100)
         ]
     ).id("create_bic_bit:mixing/raw_churros")
-    e.recipes.create.mixing(Fluid.of("create_bic_bit:ketchup", 250), [
-        Fluid.of("create_central_kitchen:tomato_sauce", 250),
-        "create_bic_bit:crushed_nether_wart",
-        "minecraft:sugar"
-    ]).id("create:mixing/ketchup_from_tomato_sauce")
-    e.recipes.create.mixing(Fluid.of("create_bic_bit:mayonnaise", 250), [
+    create.filling(
+        'create_bic_bit:ketchup_bottle',
+        [
+            Fluid.of("create_central_kitchen:tomato_sauce", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("create_bic_bit:filling/ketchup_bottle")
+    create.emptying(
+        [
+            Fluid.of("create_central_kitchen:tomato_sauce", 250),
+            "minecraft:glass_bottle"
+        ],
+        'create_bic_bit:ketchup_bottle'
+    ).id("create_bic_bit:emptying/ketchup")
+    create.mixing(Fluid.of("create_bic_bit:mayonnaise", 250), [
             FluidIngredients("forge:egg_yolk", 100),
         Fluid.of("createdieselgenerators:plant_oil", 250)
     ]).id("create_bic_bit:mixing/mayonnaise_recipe")
-    e.recipes.create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
+    create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
         Fluid.of("createdelight:vinegar", 250),
         Fluid.of("minecraft:milk", 1000),
         "createdelight:dry_yeast"
     ]).heated()
     .id("create_bic_bit:mixing/curdled_milk")
-    e.recipes.create.compacting(
+    create.compacting(
         "vintagedelight:cheese_curds",
         Fluid.of("create_bic_bit:curdled_milk", 250)
     ).id("create_bic_bit:compacting/cheese_curds")
@@ -91,9 +103,9 @@ ServerEvents.recipes(e => {
         "create_bic_bit:sunflower_seeds",
         Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)
     ], 200)
-    e.recipes.create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "2x create_bic_bit:crushed_sunflower_seeds")
+    create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "2x create_bic_bit:crushed_sunflower_seeds")
     .id("create_bic_bit:compacting/plant_oil_from_crushed_sunflower_seeds")
-    e.recipes.create.mixing(
+    create.mixing(
         Fluid.of("create_bic_bit:stamppot", 250),
         [
             '4x minecraft:baked_potato',
@@ -101,7 +113,7 @@ ServerEvents.recipes(e => {
             'some_assembly_required:sliced_onion'
         ]
     ).id("create_bic_bit:compat/farmersdelight/stamppot_recipe2")
-    e.recipes.create.mixing(
+    create.mixing(
         'create_bic_bit:raw_cheese_souffle',
         [
             "#forge:cheese",
@@ -109,14 +121,14 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/raw_cheese_souffle")
-    e.recipes.create.mixing(
+    create.mixing(
         "create_bic_bit:sweet_dough",
         [
             Fluid.of("create:honey", 100),
             "farmersdelight:wheat_dough"
         ]
     ).id("create_bic_bit:compat/farmersdelight/sweet_dough_recipe2")
-    e.recipes.create.mixing(
+    create.mixing(
         'create_bic_bit:raw_frikandel',
         [
             '#forge:meat/processed/raw',
@@ -124,7 +136,7 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/frikandel_recipe")
-    e.recipes.create.mixing(
+    create.mixing(
         'create_bic_bit:raw_kroket',
         [
             '#forge:meat/processed/raw',
@@ -133,7 +145,7 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/kroket_recipe")
-    e.recipes.create.mixing(
+    create.mixing(
         '2x create_bic_bit:raw_bitterballen',
         [
             '#forge:meat/processed/raw',
@@ -142,7 +154,7 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("create_bic_bit:mixing/bitterballen_recipe")
-    e.recipes.create.mixing(
+    create.mixing(
         'create_bic_bit:raw_eggball',
         [
             'mynethersdelight:boiled_egg',
@@ -152,7 +164,7 @@ ServerEvents.recipes(e => {
     ).id("create_bic_bit:mixing/raw_eggball")
 
     //deepfried
-    e.recipes.create.mixing(
+    create.mixing(
         "create_deepfried:raw_tempura",
         [
             'bakeries:flour',
@@ -160,7 +172,7 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:compat/farmersdelight/mixing/raw_tempura")
-    e.recipes.create.mixing(
+    create.mixing(
         "createdelightcore:unfried_calamari",
         [
             'bakeries:flour',
@@ -168,7 +180,7 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:mixing/unfried_calamari")
-    e.recipes.create.mixing(
+    create.mixing(
         "create_deepfried:raw_tempura",
         [
             'bakeries:flour',
@@ -176,7 +188,7 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:mixing/raw_tempura")
-    e.recipes.create.mixing(
+    create.mixing(
         'create_deepfried:raw_onion_rings',
         [
             'some_assembly_required:sliced_onion',
@@ -184,43 +196,85 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ]
     ).id("create_deepfried:compat/farmersdelight/mixing/raw_onion_rings2")
-    e.recipes.create.filling(
+    create.filling(
         'createdelight:ketchup_corn_dog',
         [
             'create_deepfried:corn_dog',
-            Fluid.of("create_bic_bit:ketchup", 250)
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
     ).id("create_deepfried:filling/ketchup_corn_dog")
-    e.recipes.create.filling(
+    create.filling(
         'createdelight:mayo_corn_dog',
         [
             'create_deepfried:corn_dog',
             Fluid.of("create_bic_bit:mayonnaise", 250)
         ]
     ).id("create_deepfried:filling/mayo_corn_dog")
-    e.recipes.create.filling(
+    create.filling(
         'corn_delight:classic_corn_dog',
         [
             "createdelight:ketchup_corn_dog",
             Fluid.of("create_bic_bit:mayonnaise", 250)
         ]
     ).id("create_deepfried:filling/classic_corn_dog_from_ketchup_corn_dog")
-    e.recipes.create.filling(
+    create.filling(
         'corn_delight:classic_corn_dog',
         [
             "createdelight:mayo_corn_dog",
-            Fluid.of("create_bic_bit:ketchup", 250)
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
     ).id("create_deepfried:filling/classic_corn_dog_from_mayo_corn_dog")
+    create.filling(
+        'create_bic_bit:ketchup_topped_kroket_sandwich',
+        [
+            'create_bic_bit:kroket_sandwich',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/ketchup_kroket_sandwich")
+    create.filling(
+        'create_bic_bit:mayonnaise_ketchup_topped_kroket_sandwich',
+        [
+            'create_bic_bit:mayonnaise_topped_kroket_sandwich',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/mayonnaise_ketchup_kroket_sandwich")
+    create.filling(
+        'create_bic_bit:ketchup_topped_frikandel_sandwich',
+        [
+            'create_bic_bit:frikandel_sandwich',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/ketchup_frikandel_sandwich")
+    create.filling(
+        'create_bic_bit:mayonnaise_ketchup_topped_frikandel_sandwich',
+        [
+            'create_bic_bit:mayonnaise_topped_frikandel_sandwich',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/mayonnaise_ketchup_frikandel_sandwich")
+    create.filling(
+        'create_bic_bit:wrapped_ketchup_topped_fries',
+        [
+            'create_bic_bit:wrapped_fries',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/wrapped_ketchup_fries")
+    create.filling(
+        'create_bic_bit:wrapped_mayonnaise_ketchup_topped_fries',
+        [
+            'create_bic_bit:wrapped_mayonnaise_topped_fries',
+            Fluid.of("create_central_kitchen:tomato_sauce", 250)
+        ]
+    ).id("create_bic_bit:filling/wrapped_mayonnaise_ketchup_fries")
 
-    e.recipes.kubejs.shaped("create_bic_bit:wrapped_coated_churros",
+    kubejs.shaped("create_bic_bit:wrapped_coated_churros",
         [["minecraft:air", "create_bic_bit:coated_churros"],
         ["minecraft:air", "minecraft:paper"]])
         .id("create_bic_bit:crafting/wrapped_coated_churros")
-    e.recipes.create.deploying("create_bic_bit:wrapped_coated_churros",
+    create.deploying("create_bic_bit:wrapped_coated_churros",
         ["create_bic_bit:coated_churros", "minecraft:paper"])
         .id("create_bic_bit:deploying/wrapped_coated_churros")
-    e.recipes.create.deploying(
+    create.deploying(
         'create_deepfried:raw_donut',
         [
             'farmersdelight:wheat_dough',
@@ -247,6 +301,8 @@ ServerEvents.tags("minecraft:item", e => {
 LootJS.modifiers(e => {
     e.addBlockLootModifier("minecraft:dead_bush")
         .removeLoot('create_deepfried:yuca')
+    e.addBlockLootModifier("minecraft:sunflower")
+        .removeLoot("create_bic_bit:sunflower_seeds")
 })
 ServerEvents.tags("minecraft:item", e => {
     e.add("forge:mayonnaise", [

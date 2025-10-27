@@ -7,9 +7,9 @@
 	dynamicGuiUseOldSimpleGUIVisual = false
 	#Delay in ticks before sending a new image of a gui to other clients, 10 = twice a second, 0 = no delay, 20 = once a second, more frequent might affect performance and network load
 	#Range: > 5
-	dynamicGuiTickSendRateOfGUIUpdates = 10
+	dynamicGuiTickSendRateOfGUIUpdates = 60
 	#If enabled, only sends the initial image of a players gui, does not constantly update after it's been opened.
-	dynamicGuiDontSendConstantGUIUpdates = false
+	dynamicGuiDontSendConstantGUIUpdates = true
 	#Blur is used to prevent nasty aliasing/flicker artifacts at the cost of clarity
 	#Range: 0 ~ 2
 	dynamicGuiBlurLevel = 1
@@ -24,7 +24,7 @@
 	showItemsBeingTransferredBetweenPlayerAndContainer = true
 	#How close another player has to be to another player to see what they're doing in GUI, item transferring, mouse movement, etc
 	#Range: > 0
-	distanceRequiredToShowGUIInfo = 10
+	distanceRequiredToShowGUIInfo = 5
 	#Enables or disables idle visual in the server player list tab screen
 	showIdleStatesInPlayerList = true
 	#Enables or disables idle visual above player head

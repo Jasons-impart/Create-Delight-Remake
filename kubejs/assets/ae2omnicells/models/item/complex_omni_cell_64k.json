@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "ae2omnicells:item/complex_omni_cell_64k",
+    "layer1": "ae2omnicells:item/led/storage_cell_led"
+  }
+}
