@@ -1,3 +1,6 @@
+// priority: 1000
+
+
 const $FoodInstance = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodInstance")
 const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
 const $AuctionTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.auction.tradedata.AuctionTradeData")

@@ -29,3 +29,10 @@ ServerEvents.recipes(e => {
         'createdeco:zinc_coinstack'
     ])
 })
+
+ServerEvents.recipes(e => {
+    //对于createdeco的特殊处理
+    e.replaceInput({}, "#createdeco:internal/plates/zinc_plates", "createaddition:zinc_sheet")
+    e.replaceInput({}, "#createdeco:internal/plates/andesite_plates", "vintageimprovements:andesite_sheet")
+    e.replaceInput({}, "#createdeco:internal/plates/netherite_plates", "vintageimprovements:netherite_sheet")
+})
