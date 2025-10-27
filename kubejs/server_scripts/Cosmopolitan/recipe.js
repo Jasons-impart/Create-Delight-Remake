@@ -147,7 +147,9 @@ ServerEvents.recipes(e => {
             "bakeries:cut_cake_base",
             "cosmopolitan:berry_syrup_bottle"
         ]
-    ).id("cosmopolitan:farmersdelight/jelly_roll").replaceIngredient("cosmopolitan:berry_syrup", "minecraft:glass_bottle")
+    )
+    .replaceIngredient("cosmopolitan:berry_syrup_bottle", "minecraft:glass_bottle")
+    .id("cosmopolitan:farmersdelight/jelly_roll")
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
