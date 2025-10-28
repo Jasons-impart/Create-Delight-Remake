@@ -111,11 +111,12 @@ jobs:
         run: |
           mv .hmclversion.cfg hmclversion.cfg
           mv .options.txt options.txt
-      - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件 & 反馈配置
+      - name: 【版本】根据pack.toml的整合包和forge版本替换 游戏标题名称 & 更好地兼容检测配置文件 & 反馈配置 & 启动脚本
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
           sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
+
           jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' ${{ github.workspace }}/config/GeneralFeedback/default.json > default.json.tmp
           mv default.json.tmp ${{ github.workspace }}/config/GeneralFeedback/default.json
           
@@ -236,10 +237,12 @@ jobs:
           FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
           echo "$FORGE_URL"
           curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
-      - name: 服务端启动bat脚本改为CRLF
+      - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           sudo apt-get install dos2unix
           unix2dos ${{ github.workspace }}/start.bat
+          sed -i "s/!MC_VERSION!/$MC_VERSION/" ${{ github.workspace }}/start.bat
+          sed -i "s/!FORGE_VERSION!/$FORGE_VERSION/" ${{ github.workspace }}/start.bat
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}

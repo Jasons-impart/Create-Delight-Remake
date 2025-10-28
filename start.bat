@@ -80,8 +80,9 @@ if not exist server.properties (
 )
 
 @REM launch server
+@REM MC_VERSION & FORGE_VERSION will be replaced by github action
 echo Launching server...
-%JAVA% @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.20.1-47.4.10/win_args.txt %*
+%JAVA% @user_jvm_args.txt @libraries/net/minecraftforge/forge/!MC_VERSION!-!FORGE_VERSION!/win_args.txt %*
 pause
 
 endlocal
