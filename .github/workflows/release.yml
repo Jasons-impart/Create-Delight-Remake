@@ -338,7 +338,9 @@ jobs:
             mkdir -p "patch/$(dirname "$file")"
             cp "$file" "patch/$file"
           done < added_files.txt
-
+      - name: 移除服务端不需要的文件
+        run: |
+          set -euo pipefail
           # 移除客户端only的mod
           mapfile -t prefixes < .clientonlymodlist
           for prefix in "${prefixes[@]}"; do
@@ -351,7 +353,9 @@ jobs:
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
                 patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
                 patch/index.toml patch/client_jvm_args.example.txt
-
+      - name: 更新配置文件
+        run: |
+          set -euo pipefail
           mkdir -p patch/config/
           cp config/bcc-common.toml patch/config/
           # 更新mc游戏窗口标题配置
