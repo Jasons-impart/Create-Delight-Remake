@@ -4,7 +4,7 @@ run-name: 正在发布新版本🚀
 on:
   push:
     branches:
-      - release        # 匹配主发布分支
+      - release*       # 匹配主发布分支
       - test-*         # 匹配所有 test- 开头的分支（通配符）
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
@@ -81,7 +81,7 @@ jobs:
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client') ||
       startsWith(github.ref_name, 'test-patch')
@@ -135,11 +135,14 @@ jobs:
         # MIT License Copyright (c) 2025 JSI Production Team
         # |||
         run: |
-          echo "|||" > $VERSION_FILE_PATH
-          echo "$MODPACK_NAME $MODPACK_VERSION" >> $VERSION_FILE_PATH
-          echo "MIT License Copyright (c) 2025 JSI Production Team" >> $VERSION_FILE_PATH
-          echo "|||" >> $VERSION_FILE_PATH
-          cat $VERSION_FILE_PATH
+          set -euo pipefail
+          cat << EOF > "$VERSION_FILE_PATH"
+          |||
+          $MODPACK_NAME $MODPACK_VERSION
+          MIT License Copyright (c) 2025 JSI Production Team
+          |||
+          EOF
+          cat "$VERSION_FILE_PATH"
       - name: 更新文件索引
         run: |
           ./packwiz refresh
@@ -195,7 +198,7 @@ jobs:
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-server')
     steps:
@@ -234,19 +237,18 @@ jobs:
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           grep 'modpack' config/bcc-common.toml
       - name: 下载forge与ServerStarterJar
-        env:
-          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-          FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
+          set -euo pipefail
+          FORGE_URL="${{ env.FORGE_DOWNLOAD_URL_PREFIX }}/${MC_VERSION}-${FORGE_VERSION}/forge-${MC_VERSION}-${FORGE_VERSION}-installer.jar"
           echo "$FORGE_URL"
-          curl -L -o "forge.jar" "$FORGE_URL"
+          curl -L --retry 3 --retry-connrefused -o "forge.jar" "$FORGE_URL"
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
-          sudo apt-get install dos2unix
-          unix2dos start.bat
-          sed -i "s/!MC_VERSION!/$MC_VERSION/" start.bat
-          sed -i "s/!FORGE_VERSION!/$FORGE_VERSION/" start.bat
+          set -euo pipefail
+          sudo apt-get -y update && sudo apt-get -y install dos2unix
+          unix2dos "start.bat"
+          sed -i "s|!MC_VERSION!|${MC_VERSION}|" "start.bat"
+          sed -i "s|!FORGE_VERSION!|${FORGE_VERSION}|" "start.bat"
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}
@@ -275,7 +277,7 @@ jobs:
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-patch')
     steps:
@@ -295,20 +297,12 @@ jobs:
       - *move_packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
-          # 获取当前 commit 的 hash
-          current_commit=$(git rev-parse HEAD)
-          # 获取当前 commit 关联的 tag
-          current_commit_tags=$(git tag --points-at $current_commit)
-          if [ -z "$current_commit_tags" ]; then
-            # 当前 commit 没有关联 tag，取HEAD所处分支上最新 tag
-            latest_tag=$(git tag --merged HEAD --sort=-creatordate | head -n 1)
+          set -euo pipefail
+          # 若 HEAD 有 tag，则取上一提交的最近 tag；否则取 HEAD 的最近 tag
+          if git describe --tags --exact-match >/dev/null 2>&1; then
+            latest_tag=$(git describe --tags --abbrev=0 HEAD^)
           else
-            # 当前 commit 有关联 tag，过滤掉这些 tag 后取HEAD所处分支上最新 tag
-            latest_tag=$(git tag --merged HEAD --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
-          fi
-          if [ -z "$latest_tag" ]; then
-            echo "No suitable tag found. Exiting."
-            exit 1
+            latest_tag=$(git describe --tags --abbrev=0)
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
@@ -326,7 +320,7 @@ jobs:
       - name: 准备补丁文件
         run: |
           set -euo pipefail
-          git diff --name-status ${{ env.LATEST_TAG }} HEAD > diff_report.txt
+          git diff --name-status "${LATEST_TAG}" HEAD > diff_report.txt
           cat diff_report.txt
           
           # 解析差异报告
@@ -354,32 +348,28 @@ jobs:
             fi
           done
 
-          # 移除无用文件
-          rm -f patch/ModList0.4a.md
-          rm -f patch/README.md
-          rm -f patch/TODOlist.md
-          rm -f patch/KubeJSStyleGuide.md
-          rm -f patch/DevGuide.md
-          rm -f patch/pack.toml
-          rm -f patch/index.toml
-          rm -f patch/client_jvm_args.example.txt
+          rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
+                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
+                patch/index.toml patch/client_jvm_args.example.txt
 
-          # 更新更好的兼容检测配置
           mkdir -p patch/config/
           cp config/bcc-common.toml patch/config/
           # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
           # 更新反馈配置
+          mkdir -p patch/config/GeneralFeedback/
           cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
 
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
-          echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "$MODPACK_NAME $MODPACK_VERSION (patch)" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
+          # 更新版本文件
+          cat << EOF > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          |||
+          $MODPACK_NAME $MODPACK_VERSION (patch)
+          MIT License Copyright (c) 2025 JSI Production Team
+          |||
+          EOF
 
       - name: 生成linux脚本
         run: |
