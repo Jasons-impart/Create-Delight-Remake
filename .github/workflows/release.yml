@@ -324,19 +324,24 @@ jobs:
           cat diff_report.txt
           
           # 解析差异报告
-          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt
-          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt
-          grep -E '^[AM]' diff_report.txt | cut -f2 > added_files.txt
-          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt
-          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt
+          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt || true
+          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt || true
+          grep -E '^[AM]' diff_report.txt | cut -f2 > added_files.txt || true
+          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt || true
+          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt || true
 
           # 创建补丁目录
           mkdir -p patch
 
           # 复制新增/修改文件
           while IFS= read -r file; do
-            mkdir -p "patch/$(dirname "$file")"
-            cp "$file" "patch/$file"
+            [ -z "$file" ] && continue
+            if [ -f "$file" ]; then
+              mkdir -p "patch/$(dirname "$file")"
+              cp "$file" "patch/$file"
+            else
+              echo "Warn: $file not found at HEAD" >&2
+            fi
           done < added_files.txt
       - name: 移除服务端不需要的文件
         run: |
