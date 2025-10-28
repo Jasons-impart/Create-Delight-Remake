@@ -1,0 +1,16 @@
+{
+  // Whether Fey Flowers particles should spawn.
+  "flower_particles": true,
+  
+  // Whether Glow Layers for the Shroomling and Blacksmith should be used: Optifine Users should always disable this!
+  "mob_glow": true,
+  
+  // This determines how many chars should appear each tick when displaying the quest text, 1 being very slow - 5 being very fast.
+  "quest_text_speed": 3,
+  
+  // Whether Feywild should replace the main menu and the creative music in game.
+  "replace_menu": false,
+  
+  // Whether tree particles should spawn.
+  "tree_particles": true
+}
