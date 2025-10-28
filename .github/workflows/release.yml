@@ -320,7 +320,7 @@ jobs:
       - name: 准备补丁文件
         run: |
           set -euo pipefail
-          git diff --name-status "${LATEST_TAG}" HEAD > diff_report.txt
+          git diff --name-status "${{ env.LATEST_TAG }}" HEAD > diff_report.txt
           cat diff_report.txt
           
           # 解析差异报告
