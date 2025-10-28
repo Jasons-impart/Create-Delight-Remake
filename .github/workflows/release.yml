@@ -27,9 +27,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          sparse-checkout-cone: false
-          sparse-checkout: |
-            pack.toml
+          sparse-checkout: 'pack.toml'
       - name: 读取整合包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
