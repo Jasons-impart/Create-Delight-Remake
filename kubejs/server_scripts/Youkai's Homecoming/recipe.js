@@ -253,25 +253,13 @@ ServerEvents.recipes(e => {
             "createcafe:coffee_grounds"
         ]
     ).id("youkaishomecoming:deploying/ristretto")
-
-    e.custom({
-        type: "create:filling",
-        ingredients: [
-            {
-                item: "youkaishomecoming:espresso"
-            },
-            {
-                amount: 250,
-                fluidTag: "forge:milk"
-            }
-        ],
-        results: [
-            {
-                item: "youkaishomecoming:latte",
-                count: 1
-            }
+    create.filling(
+        "youkaishomecoming:latte",
+        [
+            "youkaishomecoming:espresso",
+            FluidIngredients("forge:milk", 250)
         ]
-    }).id("youkaishomecoming:filling/latte")
+    ).id("youkaishomecoming:filling/latte")
 
     create.filling(
         "youkaishomecoming:con_panna",
@@ -450,6 +438,13 @@ ServerEvents.recipes(e => {
             "youkaishomecoming:white_tea_leaves",
         ]
     ).id("youkaishomecoming:mixing/white_tea")
+    create.mixing(
+        Fluid.of("createdelight:espresso_fluid", 1000),
+        [
+            Fluid.of("createdelight:americano_fluid", 1000),
+            "createcafe:coffee_grounds"
+        ]
+    ).heated().id("youkaishomecoming:mixing/espresso_fluid")
     create.crushing(
         [
             '3x youkaishomecoming:ice_cube',
