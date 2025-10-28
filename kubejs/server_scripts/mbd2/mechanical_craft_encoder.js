@@ -1,5 +1,4 @@
 const $BigItemStack = Java.loadClass("com.simibubi.create.content.logistics.BigItemStack")
-const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
 const $PackageOrderWithCrafts = Java.loadClass("com.simibubi.create.content.logistics.stockTicker.PackageOrderWithCrafts")
 const $MechanicalCraftingRecipe = Java.loadClass("com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe")
 
@@ -14,10 +13,6 @@ MBDMachineEvents.onLoad("createdelight:mechanical_craft_encoder", e => {
     input.setOnContentsChanged(() => {
         customData.putInt("handle_countdown", 30)
     })
-
-
-
-
 })
 
 /**
