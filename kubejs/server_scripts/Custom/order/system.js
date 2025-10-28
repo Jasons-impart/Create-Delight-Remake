@@ -19,7 +19,7 @@ global.Order = Order
  */
 Order.create = function (player) {
     let order = { entries: [] };
-    let level = this.getPlayerRankLevel(player);
+    let level = this.reputation.getLevel(player);
     let selected;
 
     // --- 根据 chance 加权随机选择客户类型 ---
@@ -225,25 +225,6 @@ Order.checkAllPackages = function (orders, items) {
     return results;
 };
 
-/**
- * 
- * @param {Internal.Player} player 
- * @returns {number}
- */
-Order.getPlayerRank = function (player) {
-    return player.persistentData.getInt("order_rank")
-}
-
-Order.getPlayerRankLevel = function (player) {
-    let rank = this.getPlayerRank(player)
-    let level = 0
-    for (let index = 0; index < Order.reputation.threshold.length; index++) {
-        if (rank < Order.reputation.threshold[index])
-            break
-        level = index + 1
-    }
-    return level
-}
 /**
  * 
  * @param {Internal.ItemStack} item 
