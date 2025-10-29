@@ -4,8 +4,14 @@ run-name: 正在发布新版本🚀
 on:
   push:
     branches:
-      - release        # 匹配主发布分支
+      - release*       # 匹配主发布分支
       - test-*         # 匹配所有 test- 开头的分支（通配符）
+env:
+  VERSION_FILE_PATH: config/fancymenu/assets/version.md
+  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
+  JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
+  FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
+  VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
 
 jobs:
   # 公共步骤（所有分支都需要执行的前置操作）
@@ -17,33 +23,34 @@ jobs:
       mc_version: ${{ steps.read-minecraft.outputs.value }}
       forge_version: ${{ steps.read-forge.outputs.value }}
     steps:
-      - name: 检出代码
+      - name: 仅检出需要的文件
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # 只取最新提交，加速
+          fetch-depth: 1
+          sparse-checkout: 'pack.toml'
       - name: 读取整合包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
         with:
-          file: ${{ github.workspace }}/pack.toml
+          file: pack.toml
           field: 'name'
       - name: 读取整合包版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-version
         with:
-          file: ${{ github.workspace }}/pack.toml
+          file: pack.toml
           field: 'version'
       - name: 读取mc版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-minecraft
         with:
-          file: ${{ github.workspace }}/pack.toml
+          file: pack.toml
           field: 'versions.minecraft'
       - name: 读取forge版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-forge
         with:
-          file: ${{ github.workspace }}/pack.toml
+          file: pack.toml
           field: 'versions.forge'
       - name: 生成整合包带测试后缀版本号
         id: generate_modpack_version
@@ -73,11 +80,8 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
-      VERSION_FILE_PATH: ${{ github.workspace }}/config/fancymenu/assets/version.md
-      HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
-      JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client') ||
       startsWith(github.ref_name, 'test-patch')
@@ -93,19 +97,20 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1 # 只取最新提交，加速
-      - name: 安装 Packwiz 打包软件
+      - &install_packwiz
+        name: 安装 Packwiz 打包软件
         id: download-artifact
         uses: actions/download-artifact@v4
         with:
           pattern: "Linux 64-bit x86"
           path: ${{ github.workspace }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: Jasons-impart/packwiz
-          run-id: 16468484150
-      - name: 挪动packwiz到根目录
+          repository: packwiz/packwiz
+          run-id: 17407879187
+      - &move_packwiz
+        name: 挪动packwiz到根目录
         run: |
-          # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
+          mv "Linux 64-bit x86/packwiz" ./packwiz
           chmod +x ./packwiz
       - name: 重命名HMCL配置和options
         run: |
@@ -113,11 +118,16 @@ jobs:
           mv .options.txt options.txt
       - name: 【版本】根据pack.toml的整合包版本替换 游戏标题名称 & 更好地兼容检测配置文件
         run: |
-          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
-          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
-          sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" ${{ github.workspace }}/kubejs/config/client.properties
-          grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
-          grep 'title' ${{ github.workspace }}/kubejs/config/client.properties
+          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
+          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
+          sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" kubejs/config/client.properties
+
+          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
+          mv default.json.tmp config/GeneralFeedback/default.json
+          
+          grep 'modpack' config/bcc-common.toml
+          grep 'title' kubejs/config/client.properties
+          grep 'placeholder' config/GeneralFeedback/default.json
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
         # fancymenu格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
         # |||
@@ -125,11 +135,14 @@ jobs:
         # MIT License Copyright (c) 2025 JSI Production Team
         # |||
         run: |
-          echo "|||" > $VERSION_FILE_PATH
-          echo "$MODPACK_NAME $MODPACK_VERSION" >> $VERSION_FILE_PATH
-          echo "MIT License Copyright (c) 2025 JSI Production Team" >> $VERSION_FILE_PATH
-          echo "|||" >> $VERSION_FILE_PATH
-          cat $VERSION_FILE_PATH
+          set -euo pipefail
+          cat << EOF > "$VERSION_FILE_PATH"
+          |||
+          $MODPACK_NAME $MODPACK_VERSION
+          MIT License Copyright (c) 2025 JSI Production Team
+          |||
+          EOF
+          cat "$VERSION_FILE_PATH"
       - name: 更新文件索引
         run: |
           ./packwiz refresh
@@ -184,9 +197,8 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
-      FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-server')
     steps:
@@ -196,50 +208,51 @@ jobs:
           fetch-depth: 1 # 只取最新提交，加速
       - name: 删除与服务端无关的文件
         run: |
-            # mapfile -t prefixes < ${{ github.workspace }}/.packwizignore
+            # mapfile -t prefixes < .packwizignore
             # for prefix in "${prefixes[@]}"; do
             #   echo "Deleting files with prefix: $prefix"
             #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
             # done
-            rm -rf ${{ github.workspace }}/resourcepacks
-            rm -rf ${{ github.workspace }}/shaderpacks
-            rm -f ${{ github.workspace }}/ModList0.4a.md
-            rm -f ${{ github.workspace }}/README.md
-            rm -f ${{ github.workspace }}/TODOlist.md
-            rm -f ${{ github.workspace }}/KubeJSStyleGuide.md
-            rm -f ${{ github.workspace }}/DevGuide.md
-            rm -f ${{ github.workspace }}/pack.toml
-            rm -f ${{ github.workspace }}/index.toml
-            rm -f ${{ github.workspace }}/client_jvm_args.example.txt
+            rm -rf resourcepacks
+            rm -rf shaderpacks
+            rm -f ModList0.4a.md
+            rm -f README.md
+            rm -f TODOlist.md
+            rm -f KubeJSStyleGuide.md
+            rm -f DevGuide.md
+            rm -f pack.toml
+            rm -f index.toml
+            rm -f client_jvm_args.example.txt
 
       - name: 删除客户端only模组
         run: |
-            mapfile -t prefixes < ${{ github.workspace }}/.clientonlymodlist
+            mapfile -t prefixes < .clientonlymodlist
             for prefix in "${prefixes[@]}"; do
               echo "Deleting files with prefix: $prefix"
-              find ${{ github.workspace }}/mods -name "${prefix}*" -exec rm {} +
+              find mods -name "${prefix}*" -exec rm {} +
             done
       - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
         run: |
-          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" ${{ github.workspace }}/config/bcc-common.toml
-          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" ${{ github.workspace }}/config/bcc-common.toml
-          grep 'modpack' ${{ github.workspace }}/config/bcc-common.toml
+          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
+          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
+          grep 'modpack' config/bcc-common.toml
       - name: 下载forge与ServerStarterJar
-        env:
-          MINECRAFT: ${{ steps.read-minecraft.outputs.value }}
-          FORGE: ${{ steps.read-forge.outputs.value }}
         run: |
-          FORGE_URL="$FORGE_DOWNLOAD_URL_PREFIX/$MC_VERSION-$FORGE_VERSION/forge-$MC_VERSION-$FORGE_VERSION-installer.jar"
+          set -euo pipefail
+          FORGE_URL="${{ env.FORGE_DOWNLOAD_URL_PREFIX }}/${MC_VERSION}-${FORGE_VERSION}/forge-${MC_VERSION}-${FORGE_VERSION}-installer.jar"
           echo "$FORGE_URL"
-          curl -L -o "${{ github.workspace }}/forge.jar" "$FORGE_URL"
-      - name: 服务端启动bat脚本改为CRLF
+          curl -L --retry 3 --retry-connrefused -o "forge.jar" "$FORGE_URL"
+      - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
-          sudo apt-get install dos2unix
-          unix2dos ${{ github.workspace }}/start.bat
+          set -euo pipefail
+          sudo apt-get -y update && sudo apt-get -y install dos2unix
+          unix2dos "start.bat"
+          sed -i "s|!MC_VERSION!|${MC_VERSION}|" "start.bat"
+          sed -i "s|!FORGE_VERSION!|${FORGE_VERSION}|" "start.bat"
       - name: list remained files & mods
         run: |
           ls ${{ github.workspace }}
-          ls ${{ github.workspace }}/mods
+          ls mods
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
@@ -263,9 +276,8 @@ jobs:
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
       FORGE_VERSION: ${{ needs.common-steps.outputs.forge_version }}
-      VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
     if: >
-      github.ref_name == 'release' || 
+      startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-patch')
     steps:
@@ -281,36 +293,16 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-      - name: 安装 Packwiz 打包软件
-        id: download-artifact
-        uses: actions/download-artifact@v4
-        with:
-          pattern: "Linux 64-bit x86"
-          path: ${{ github.workspace }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: packwiz/packwiz
-          run-id: 17407879187
-      - name: 挪动packwiz到根目录
-        run: |
-          # ls ${{ github.workspace }}/Linux\ 64-bit\ x86
-          mv ${{ github.workspace }}/Linux\ 64-bit\ x86/packwiz ./packwiz
-          chmod +x ./packwiz
+      - *install_packwiz
+      - *move_packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
-          # 获取当前 commit 的 hash
-          current_commit=$(git rev-parse HEAD)
-          # 获取当前 commit 关联的 tag
-          current_commit_tags=$(git tag --points-at $current_commit)
-          if [ -z "$current_commit_tags" ]; then
-            # 当前 commit 没有关联 tag，取HEAD所处分支上最新 tag
-            latest_tag=$(git tag --merged HEAD --sort=-creatordate | head -n 1)
+          set -euo pipefail
+          # 若 HEAD 有 tag，则取上一提交的最近 tag；否则取 HEAD 的最近 tag
+          if git describe --tags --exact-match >/dev/null 2>&1; then
+            latest_tag=$(git describe --tags --abbrev=0 HEAD^)
           else
-            # 当前 commit 有关联 tag，过滤掉这些 tag 后取HEAD所处分支上最新 tag
-            latest_tag=$(git tag --merged HEAD --sort=-creatordate | grep -v "$current_commit_tags" | head -n 1)
-          fi
-          if [ -z "$latest_tag" ]; then
-            echo "No suitable tag found. Exiting."
-            exit 1
+            latest_tag=$(git describe --tags --abbrev=0)
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
@@ -322,26 +314,33 @@ jobs:
           grep 'modpack' config/bcc-common.toml
       - name: 准备补丁文件
         run: |
-          # 生成完整差异报告
-          git diff --name-status ${{ env.LATEST_TAG }} HEAD > diff_report.txt
+          set -euo pipefail
+          git diff --name-status "${{ env.LATEST_TAG }}" HEAD > diff_report.txt
           cat diff_report.txt
           
           # 解析差异报告
-          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt
-          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt
-          grep -E '^[A|M]' diff_report.txt | cut -f2 > added_files.txt
-          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt
-          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt
+          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt || true
+          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt || true
+          grep -E '^[AM]' diff_report.txt | cut -f2 > added_files.txt || true
+          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt || true
+          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt || true
 
           # 创建补丁目录
           mkdir -p patch
 
           # 复制新增/修改文件
           while IFS= read -r file; do
-            mkdir -p "patch/$(dirname "$file")"
-            cp "$file" "patch/$file"
+            [ -z "$file" ] && continue
+            if [ -f "$file" ]; then
+              mkdir -p "patch/$(dirname "$file")"
+              cp "$file" "patch/$file"
+            else
+              echo "Warn: $file not found at HEAD" >&2
+            fi
           done < added_files.txt
-
+      - name: 移除服务端不需要的文件
+        run: |
+          set -euo pipefail
           # 移除客户端only的mod
           mapfile -t prefixes < .clientonlymodlist
           for prefix in "${prefixes[@]}"; do
@@ -351,30 +350,30 @@ jobs:
             fi
           done
 
-          # 移除无用文件
-          rm -f patch/ModList0.4a.md
-          rm -f patch/README.md
-          rm -f patch/TODOlist.md
-          rm -f patch/KubeJSStyleGuide.md
-          rm -f patch/DevGuide.md
-          rm -f patch/pack.toml
-          rm -f patch/index.toml
-          rm -f patch/client_jvm_args.example.txt
-
-          # 更新更好的兼容检测配置
+          rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
+                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
+                patch/index.toml patch/client_jvm_args.example.txt
+      - name: 更新配置文件
+        run: |
+          set -euo pipefail
           mkdir -p patch/config/
           cp config/bcc-common.toml patch/config/
           # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
+          # 更新反馈配置
+          mkdir -p patch/config/GeneralFeedback/
+          cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
 
           # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
-          echo "|||" > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "$MODPACK_NAME $MODPACK_VERSION (patch)" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "MIT License Copyright (c) 2025 JSI Production Team" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          echo "|||" >> "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
-          cat patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md
+          # 更新版本文件
+          cat << EOF > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
+          |||
+          $MODPACK_NAME $MODPACK_VERSION (patch)
+          MIT License Copyright (c) 2025 JSI Production Team
+          |||
+          EOF
 
       - name: 生成linux脚本
         run: |
