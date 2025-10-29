@@ -25,7 +25,8 @@ ItemEvents.tooltip(e => {
         'vintagedelight:cheese_curds',
         'bakeries:cream_cake',
         'bakeries:tiramisu',
-        'bakeries:cake_roll'
+        'bakeries:cake_roll',
+        'createdelight:unactivated_crystalline_flower'
     ])
     clearAddCtrlTooltip(e, [
         
@@ -36,6 +37,7 @@ ItemEvents.tooltip(e => {
         'createdelight:order_deliverer',
         'createdelight:contract_executor',
         'createdelight:sell_bin',
+        'createdelight:mechanical_craft_encoder',
         'vintagedelight:cheese_mold',
         'createdelight:fuel_hotcream',
         'createdelight:blood_collection_device',
@@ -49,7 +51,6 @@ ItemEvents.tooltip(e => {
         'eclipticseasons:autumn_greenhouse_core',
         'eclipticseasons:winter_greenhouse_core',
         'kinetic_pixel:graycottonseed',
-        'createdelight:mechanical_craft_encoder'
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg'

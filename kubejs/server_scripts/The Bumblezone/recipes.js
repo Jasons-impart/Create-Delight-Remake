@@ -112,10 +112,10 @@ ServerEvents.recipes(e => {
   // 产蜂蜜结晶
   e.recipes.vintageimprovements.vacuumizing(
     "5x the_bumblezone:glistering_honey_crystal"
-  , [
-    Fluid.of("create_enchantment_industry:experience", 30),
-    "the_bumblezone:glistering_honey_crystal"
-  ]).id("vintageimprovements:vacuumizing/glistering_honey_crystal")
+    , [
+      Fluid.of("create_enchantment_industry:experience", 30),
+      "the_bumblezone:glistering_honey_crystal"
+    ]).id("vintageimprovements:vacuumizing/glistering_honey_crystal")
 
   e.recipes.vintageimprovements.pressurizing([
     Fluid.of("createdelight:base_syrup", 25), Fluid.water(500)],
@@ -124,6 +124,15 @@ ServerEvents.recipes(e => {
     .processingTime(100)
     .heated()
     .id("vintageimprovements:pressurizing/sugar_water_still")
+  {
+    let iner = "createdelight:unactivated_crystalline_flower"
+    e.recipes.create.sequenced_assembly("the_bumblezone:crystalline_flower", iner, [
+      e.recipes.create.filling(iner, [iner, Fluid.of("create_enchantment_industry:experience", 1000)])
+    ])
+    .transitionalItem(iner)
+    .loops(8)
+    .id("the_bumblezone:sequenced_assembly/crystalline_flower_activate")
+  }
   e.recipes.create.filling(
     "the_bumblezone:sugar_water_bottle",
     ["minecraft:glass_bottle", Fluid.of("the_bumblezone:sugar_water_still", 250)])
