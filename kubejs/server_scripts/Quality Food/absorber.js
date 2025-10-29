@@ -9,6 +9,8 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
         if (quality.level() > 0) {
             amount += Math.pow(2, quality.level() - 1) * item.count
             item.nbt.remove($QualityUtils.QUALITY_TAG)
+            if (item.nbt.empty)
+                item.removeTag()
         }
     })
     if (amount == 0)

@@ -736,6 +736,12 @@ StartupEvents.registry("item", e => {
             .translationKey(`item.createdelight.${q}_genetic_seed`)
     })
 
+    e.create("createdelight:unactivated_crystalline_flower")
+        .parentModel("the_bumblezone:item/crystalline_flower")
+        .color((item, num) => Color.GRAY)
+        .translationKey("item.createdelight.unactivated_crystalline_flower")
+
+
     e.create("createdelight:order")
             .translationKey("item.createdelight.order")
     e.create("createdelight:unopened_order")
