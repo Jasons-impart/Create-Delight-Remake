@@ -9,7 +9,8 @@ ServerEvents.recipes(e => {
         "vintageimprovements:craft/sulfur_block_to_items",
         "vintageimprovements:craft/sulfur_items_to_block",
         "vintageimprovements:craft/sulfur_nuggets_to_item",
-        
+        "vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust",
+        "vintageimprovements:pressurizing/sulfuric_acid"
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements
@@ -174,6 +175,31 @@ ServerEvents.recipes(e => {
         "alexscaves:sulfur_cluster"
     ], "vintageimprovements:sulfuric_acid", 50)
 
+    e.recipes.vintageimprovements.pressurizing(
+        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
+        "alexscaves:sulfur_dust"
+    )
+    .processingTime(100)
+    .secondaryFluidOutput(0)
+    .heated()
+    .id("vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust")
+
+    e.recipes.vintageimprovements.pressurizing(
+        Fluid.of("vintageimprovements:sulfuric_acid", 500),
+        [Fluid.water(500), Fluid.of("vintageimprovements:sulfur_trioxide", 500)]
+    )
+    .processingTime(100)
+    .secondaryFluidInput(0)
+    .id("vintageimprovements:pressurizing/sulfuric_acid")
+
+    e.recipes.vintageimprovements.pressurizing(
+        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
+        ["alexscaves:sulfur_dust", "ad_astra:ostrum_nugget"]
+    )
+    .secondaryFluidOutput(0)
+    .processingTime(40)
+    .heated()
+    .id("vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust_using_ostrum_nugget")
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
         "27x alexscaves:toxic_paste",
