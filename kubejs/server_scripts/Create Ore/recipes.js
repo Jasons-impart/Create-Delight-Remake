@@ -142,14 +142,17 @@ ServerEvents.recipes(e => {
     //月球矿簇
     e.recipes.create.crushing([
         Item.of("create:crushed_raw_iron"),
-        Item.of("createdelight:crushed_raw_desh").withChance(0.25)
+        Item.of("createdelight:crushed_raw_desh").withChance(0.25),
+        Item.of("ad_astra:ice_shard")
     ],
         ["createdelight:moon_ore_cluster"])
         .id("create:crushing/crushed_raw_ore_from_moon_ore_cluster")
     e.recipes.vintageimprovements.vibrating([
         Item.of("ad_astra:raw_desh").withChance(0.5),
         Item.of("minecraft:raw_iron").withChance(0.5),
-        Item.of("ad_astra:cheese").withChance(0.4)
+        Item.of("ad_astra:cheese").withChance(0.4),
+        Item.of("ad_astra:ice_shard").withChance(0.5)
+        
     ],
         ["createdelight:moon_ore_cluster"])
         .id("vintageimprovements:vibrating/raw_ore_from_moon_ore_cluster")
@@ -157,13 +160,15 @@ ServerEvents.recipes(e => {
     //火星矿簇
     e.recipes.create.crushing([
         Item.of("create:crushed_raw_iron"),
-        Item.of("createdelight:crushed_raw_ostrum").withChance(0.25)
+        Item.of("createdelight:crushed_raw_ostrum").withChance(0.25),
+        Item.of("ad_astra:ice_shard", 2)
     ],
         ["createdelight:mars_ore_cluster"])
         .id("create:crushing/crushed_raw_ore_from_mars_ore_cluster")
     e.recipes.vintageimprovements.vibrating([
         Item.of("ad_astra:raw_ostrum").withChance(0.5),
-        Item.of("minecraft:raw_iron").withChance(0.5)
+        Item.of("minecraft:raw_iron").withChance(0.5),
+        Item.of("ad_astra:ice_shard")
     ],
         ["createdelight:mars_ore_cluster"])
         .id("vintageimprovements:vibrating/raw_ore_from_mars_ore_cluster")
@@ -215,7 +220,8 @@ ServerEvents.recipes(e => {
         Item.of("minecraft:coal"),
         Item.of("create:crushed_raw_iron", 2),
         Item.of("create:crushed_raw_copper", 3),
-        Item.of("minecraft:lapis_lazuli", 6)
+        Item.of("minecraft:lapis_lazuli", 6),
+        Item.of("ad_astra:ice_shard", 4)
     ],
         ["createdelight:glacio_ore_cluster"])
         .id("create:crushing/crushed_raw_ore_from_glacio_ore_cluster")
@@ -223,7 +229,8 @@ ServerEvents.recipes(e => {
         Item.of("minecraft:coal"),
         Item.of("minecraft:raw_iron", 2),
         Item.of("minecraft:raw_copper", 3),
-        Item.of("minecraft:lapis_lazuli", 6)
+        Item.of("minecraft:lapis_lazuli", 6),
+        Item.of("ad_astra:ice_shard", 2)
     ],
         ["createdelight:glacio_ore_cluster"])
         .id("vintageimprovements:vibrating/raw_ore_from_glacio_ore_cluster")

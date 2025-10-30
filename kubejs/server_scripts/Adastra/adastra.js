@@ -198,4 +198,6 @@ ServerEvents.recipes(e => {
     .id("ad_astra:crushing/aeronos_mushroom")
     e.recipes.create.crushing(Item.of("ad_astra:strophar_mushroom").withChance(0.2), "#ad_astra:strophar_caps")
     .id("ad_astra:crushing/strophar_mushroom")
+    e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), "ad_astra:ice_shard"])
+    .id("createdelight:mixing/ice_lubricating_oil")
 })
