@@ -5,7 +5,7 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "farmersdelight:cutting/sculk_mayo_block"
     ])
-    const {create} = e.recipes
+    const {create, ratatouille} = e.recipes
     create.filling("dungeonsdelight:soft_serve_sniffer_egg",
          ["trailandtales_delight:cooked_sniffer_egg_block", Fluid.of("cosmopolitan:adzuki_ice_cream", 1000)])
          .id("dungeonsdelight:filling/soft_serve_sniffer_egg")
@@ -19,4 +19,12 @@ ServerEvents.recipes(e => {
         ],
         "dungeonsdelight:gunk", 400
     ).id("dungeonsdelight:threshing/gunk")
+    ratatouille.squeezing(
+        "dungeonsdelight:snifferwurst",
+        [
+            "ratatouille:sausage_casing",
+            Fluid.of("createdelightcore:slime", 250),
+            'dungeonsdelight:sniffer_shank'
+        ]
+    ).id("dungeonsdelight:monster_cooking/misc/snifferwurst")
 })

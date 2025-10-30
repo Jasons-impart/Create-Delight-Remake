@@ -24,3 +24,20 @@ function threshing(event, input, outputs, time) {
   event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", [first, second])
     .id(`farmersdelight:cutting/${input.split(":")[1]}`)
 }
+/**
+ * 
+ * @param { Internal.RecipesEventJS } event
+ * @param { OutputItem_ } output 输出香肠
+ * @param { InputItem_ } ingredient 单个输入item
+ */
+function addSausageRecipe(event, output, ingredient) {
+  event.recipes.ratatouille.squeezing(
+    output,
+    [
+      "ratatouille:sausage_casing",
+      ingredient,
+      Fluid.of("luncheonmeatsdelight:flesh_mud", 250)
+    ]
+  ).id(`ratatouille:squeezing/${output.split(":")[1]}`)
+}
+
