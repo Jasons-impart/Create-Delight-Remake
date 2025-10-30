@@ -60,8 +60,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 100),
-            Fluid.of("createdelight:ethylene_fluid", 50),
-            Item.of("vintageimprovements:vanadium_nugget").withChance(0.9)
+            Fluid.of("createdelight:ethylene_fluid", 50)
         ],
         [
             Fluid.of("createdieselgenerators:crude_oil", 100),
@@ -173,7 +172,7 @@ ServerEvents.recipes(e => {
         "alexscaves:sulfur_bud_medium",
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster"
-    ], "alexscaves:acid", 50)
+    ], "vintageimprovements:sulfuric_acid", 50)
 
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
@@ -283,14 +282,27 @@ ServerEvents.recipes(e => {
     //氡气相关
     e.recipes.vintageimprovements.pressurizing(
         [
-            Fluid.of("createdelight:radon", 100),
-            Fluid.of("vintageimprovements:sulfuric_acid", 100)
+            Fluid.of("createdelight:radon", 25),
+            Fluid.of("vintageimprovements:sulfuric_acid", 25)
         ],
-        Fluid.of("alexscaves:acid", 200)
+        Fluid.of("alexscaves:acid", 50)
     )
         .secondaryFluidOutput(0)
         .heated()
-        .id("alexscaves:pressurizing/radon")
+        .id("alexscaves:pressurizing/sulfuric_acid")
+    e.recipes.vintageimprovements.pressurizing(
+        [
+            Fluid.of("createdelight:radon", 250),
+            Fluid.of("vintageimprovements:sulfuric_acid", 250)
+        ],
+        [
+            Fluid.of("alexscaves:acid", 500),
+            "ad_astra:ostrum_nugget"
+        ]
+    )
+        .secondaryFluidOutput(0)
+        .heated()
+        .id("alexscaves:pressurizing/sulfuric_acid_using_ostrum")
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
         .id("alexscaves:filling/radon_bottle")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)], "alexscaves:radon_bottle")
