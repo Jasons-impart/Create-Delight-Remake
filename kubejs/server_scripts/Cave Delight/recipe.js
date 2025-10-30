@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
-        "cavedelight:tectonic_cheesecake"
+        "cavedelight:tectonic_cheesecake",
+        "farmersrespite:filling/water_cup"
     ])
     remove_recipes_output(e, [
         "cavedelight:fiddlehead_tea"
@@ -31,4 +32,11 @@ ServerEvents.recipes(e => {
        ],
        "cavedelight:fiddlehead_tea"
     ).id("cavedelight:emptying/fiddlehead_tea")
+    e.recipes.create.filling(
+        "minecraft:copper_ingot",
+        [
+            'miners_delight:copper_cup',
+            Fluid.of("minecraft:lava", 1000)
+        ]
+    ).id("cavedelight:filling/copper_ingot_from_copper_cup")
 })

@@ -30,4 +30,13 @@ ServerEvents.recipes(e => {
         'createdelight:artemisia_argyi_seed',
         Item.of('createdelight:artemisia_argyi_seed').withChance(0.5)
     ], 200)
+    e.recipes.farmersdelight.cooking(
+        [
+            'festival_delicacies:artemisia_argyi',
+            'festival_delicacies:red_bean_paste',
+            'farmersdelight:rice'
+        ],
+        'festival_delicacies:qingtuan',
+        1.0, 200,
+    ).id("festival_delicacies:farmersdelight/qingtuan")
 })
