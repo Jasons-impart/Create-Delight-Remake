@@ -103,7 +103,7 @@ ServerEvents.recipes((event) => {
   drilling("createdelight:overworld_metal_ore_cluster", "kubejs:overworld_metal_ore_cluster_ore", Fluid.water(500), 1024, 3000, 1)
   drilling("createdelight:overworld_noble_metal_ore_cluster", "kubejs:overworld_noble_metal_ore_cluster_ore", Fluid.water(500), 1536, 4000, 1)
   drilling("createdelight:nether_ore_cluster", "kubejs:nether_ore_cluster", Fluid.lava(500), 2048, 5000, 1)
-  drilling("createdelight:moon_ore_cluster", "kubejs:moon_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1024, 2000, 2)
+  drilling("createdelight:moon_ore_cluster", "kubejs:moon_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1024, 2000, 1)
   drilling("createdelight:mars_ore_cluster", "kubejs:mars_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1536, 2000, 2)
   drilling("createdelight:mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 2048, 2000, 2)
   drilling("createdelight:mercury_ore_cluster", "kubejs:mercury_ore_cluster_ore", Fluid.lava(1000), 2048, 1000, 3)
