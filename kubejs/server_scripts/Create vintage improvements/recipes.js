@@ -12,11 +12,22 @@ ServerEvents.recipes(e => {
         "vintageimprovements:crushing/scoria_recycling"
     ])
     vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_trioxide", 1000),
+        Fluid.of("vintageimprovements:sulfur_trioxide", 500),
     [
-        Fluid.of("vintageimprovements:sulfur_dioxide", 1000),
+        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
+        "ad_astra:ostrum_nugget"
+    ])
+    .processingTime(20)
+    .secondaryFluidOutput(0)
+    .superheated()
+    .id("vintageimprovements:pressurizing/sulfur_trioxide_from_ostrum_nugget")
+    vintageimprovements.pressurizing(
+        Fluid.of("vintageimprovements:sulfur_trioxide", 500),
+    [
+        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
         "vintageimprovements:vanadium_nugget"
     ])
+    .processingTime(200)
     .secondaryFluidOutput(0)
     .superheated()
     .id("vintageimprovements:pressurizing/sulfur_trioxide")
