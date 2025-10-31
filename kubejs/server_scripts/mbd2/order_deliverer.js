@@ -154,3 +154,18 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
         }
     }
 })
+BlockEvents.rightClicked("create:white_table_cloth", e => {
+    const { player, block, item } = e
+    if (player.mainHandItem.is("createdelight:order_deliverer_item")) {
+        block.set("createdelight:order_deliverer")
+        if (!player.isCreative()) {
+            item.count--
+        }
+        e.cancel()
+    }
+})
+LootJS.modifiers(e => {
+    e.addBlockLootModifier("createdelight:order_deliverer")
+        .addLoot("create:white_table_cloth")
+        .addLoot("createdelight:order_deliverer_item")
+})

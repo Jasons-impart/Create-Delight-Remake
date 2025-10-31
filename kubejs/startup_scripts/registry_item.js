@@ -462,7 +462,9 @@ StartupEvents.registry("item", e => {
         .texture("create:item/copper_sheet")
         .translationKey("item.createdelight.incomplete_gas_pistol_ammo")
 
-
+    // 订单交付器
+    e.create("createdelight:order_deliverer_item")
+        .translationKey("item.createdelight.order_deliverer_item")
     // 测试剑
     // e.create("createdelight:sigma_man_sword", "sword")
     //     .tier("netherite")
