@@ -31,7 +31,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                 let end = 1
                 let lastIndex = 1
                 for (let index = 1; index <= count; index++) {
-                    let position = pos[funcs[i]](index).above()
+                    let position = pos[funcs[i]](index)
                     let obe = level.getBlockEntity(position, "create:table_cloth")
                     if (!obe.isPresent()) {
                         break
@@ -67,13 +67,13 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                             end = index - 1
                             for (let j = start; j <= end; j++) {
                                 /**@type {Internal.TableClothBlockEntity} */
-                                let be = level.getBlockEntity(pos[funcs[i]](j).above(), "create:table_cloth").get()
+                                let be = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
                                 be.manuallyAddedItems.clear()
                                 be.notifyUpdate()
                             }
 
                             /**@type {Internal.TableClothBlockEntity} */
-                            let startBe = level.getBlockEntity(pos[funcs[i]](start).above(), "create:table_cloth").get()
+                            let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
                             if (pList.length != 0) {
                                 for (let index = 0; index < pList.length; index++) {
                                     let element = pList[index];
@@ -117,13 +117,13 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
 
                     for (let j = start; j <= lastIndex; j++) {
                         /**@type {Internal.TableClothBlockEntity} */
-                        let be2 = level.getBlockEntity(pos[funcs[i]](j).above(), "create:table_cloth").get()
+                        let be2 = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
                         be2.manuallyAddedItems.clear()
                         be2.notifyUpdate()
                     }
 
                     /**@type {Internal.TableClothBlockEntity} */
-                    let startBe = level.getBlockEntity(pos[funcs[i]](start).above(), "create:table_cloth").get()
+                    let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
                     if (pList.length != 0) {
                         for (let index = 0; index < pList.length; index++) {
                             let element = pList[index];
