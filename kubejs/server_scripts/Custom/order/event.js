@@ -6,9 +6,9 @@ CreateDelight.goodsMap = Utils.newMap()
 
 global.CreateDelight = CreateDelight
 
-//计算订单货物属性事件
+
 /**
- * 
+ * 计算订单货物属性事件
  * @param {string} id 
  * @param {(item: Internal.ItemStack) => number} itemFunc
  */

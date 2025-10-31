@@ -31,7 +31,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                 let end = 1
                 let lastIndex = 1
                 for (let index = 1; index <= count; index++) {
-                    let position = pos[funcs[i]](index).above()
+                    let position = pos[funcs[i]](index)
                     let obe = level.getBlockEntity(position, "create:table_cloth")
                     if (!obe.isPresent()) {
                         break
@@ -59,26 +59,32 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                                 })
                             }
                             // let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
-                            let p = $PackageItem.containing(list)
+
+                            let pList = []
+                            for (let i = 0; i < list.length; i += 9) {
+                                pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))
+                            }
                             end = index - 1
                             for (let j = start; j <= end; j++) {
                                 /**@type {Internal.TableClothBlockEntity} */
-                                let be = level.getBlockEntity(pos[funcs[i]](j).above(), "create:table_cloth").get()
+                                let be = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
                                 be.manuallyAddedItems.clear()
                                 be.notifyUpdate()
                             }
 
                             /**@type {Internal.TableClothBlockEntity} */
-                            let startBe = level.getBlockEntity(pos[funcs[i]](start).above(), "create:table_cloth").get()
-                            if (!list.empty)
-                                if (startBe.manuallyAddedItems.size() == 4) {
-                                    $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), p)
+                            let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
+                            if (pList.length != 0) {
+                                for (let index = 0; index < pList.length; index++) {
+                                    let element = pList[index];
+                                    if (startBe.manuallyAddedItems.size() == 4) {
+                                        $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), element)
+                                    } else {
+                                        startBe.manuallyAddedItems.push(element)
+                                        startBe.notifyUpdate()
+                                    }
                                 }
-                                else {
-                                    startBe.manuallyAddedItems.push(p)
-                                    startBe.notifyUpdate()
-                                }
-
+                            }
                             start = index
                             packages = new ItemStackTransfer()
                             packages.setSize(64)
@@ -104,23 +110,29 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                             list.add(item)
                         })
                     }
-                    let p = $PackageItem.containing(list)
+                    let pList = []
+                    for (let i = 0; i < list.length; i += 9) {
+                        pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))
+                    }
 
                     for (let j = start; j <= lastIndex; j++) {
                         /**@type {Internal.TableClothBlockEntity} */
-                        let be2 = level.getBlockEntity(pos[funcs[i]](j).above(), "create:table_cloth").get()
+                        let be2 = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
                         be2.manuallyAddedItems.clear()
                         be2.notifyUpdate()
                     }
 
                     /**@type {Internal.TableClothBlockEntity} */
-                    let startBe = level.getBlockEntity(pos[funcs[i]](start).above(), "create:table_cloth").get()
-                    if (!list.empty) {
-                        if (startBe.manuallyAddedItems.size() == 4) {
-                            $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), p)
-                        } else {
-                            startBe.manuallyAddedItems.push(p)
-                            startBe.notifyUpdate()
+                    let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
+                    if (pList.length != 0) {
+                        for (let index = 0; index < pList.length; index++) {
+                            let element = pList[index];
+                            if (startBe.manuallyAddedItems.size() == 4) {
+                                $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), element)
+                            } else {
+                                startBe.manuallyAddedItems.push(element)
+                                startBe.notifyUpdate()
+                            }
                         }
                     }
                 }
