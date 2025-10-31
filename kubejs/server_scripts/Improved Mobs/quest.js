@@ -8,11 +8,13 @@ const $CrossPlatformStuff = Java.loadClass("io.github.flemmli97.improvedmobs.pla
  * @param {number} value 
  */
 function UpdateRank(player, value) {
+    value = parseInt(value)
     let diffData = $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
     if (!diffData || player.persistentData.getBoolean("disableRankChange"))
         return
-    value = (GetPlayerDifficulty(player) + value) < 0 ? -GetPlayerDifficulty(player) : value
-    player.getServer().runCommandSilent(`/improvedmobs difficulty player ${player.username} add ${value}`)
+    value = (Difficulty.getPlayerRawValue(player) + value) < 0 ? -Difficulty.getPlayerRawValue(player) : value
+    // Client.tell(`${typeof value}, ${typeof Difficulty.getPlayerRawValue(player)}`)
+    Difficulty.setPlayerRawValue(player, parseInt(Difficulty.getPlayerRawValue(player)) + parseInt(value))
     if (value < 0)
         player.tell(`难度降低了${-value}！`)
     else
