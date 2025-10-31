@@ -1990,77 +1990,14 @@
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
-			id: "7A275EC3F322D435"
-			tasks: [{
-				id: "282A60D5860AB234"
-				item: "hotdog_delight:cod_sausage"
-				type: "item"
-			}]
-			x: -9.0d
-			y: 14.5d
-		}
-		{
-			dependencies: ["435539859AD4B53A"]
-			id: "4A51552941C49493"
-			tasks: [{
-				id: "1A25F2CE763D2624"
-				item: "hotdog_delight:salmon_sausage"
-				type: "item"
-			}]
-			x: -8.5d
-			y: 15.5d
-		}
-		{
-			dependencies: ["435539859AD4B53A"]
-			id: "360A879F7B48F457"
-			tasks: [{
-				id: "547DD61E90F690C1"
-				item: "hotdog_delight:pork_sausage"
-				type: "item"
-			}]
-			x: -7.5d
-			y: 16.0d
-		}
-		{
-			dependencies: ["435539859AD4B53A"]
-			id: "3E728738156211E2"
-			tasks: [
-				{
-					id: "2B172AE1A54CC920"
-					item: "hotdog_delight:squid_ink_sausage"
-					type: "item"
-				}
-				{
-					id: "1A8E6D40033C0A2B"
-					item: "hotdog_delight:glow_squid_ink_sausage"
-					type: "item"
-				}
-			]
-			x: -8.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["435539859AD4B53A"]
-			id: "65442CDD93E533C3"
-			tasks: [{
-				id: "0BF5CDB75986A39A"
-				item: "hotdog_delight:pumpkin_sausage"
-				type: "item"
-			}]
-			title: "素食主义者！"
-			x: -6.5d
-			y: 13.5d
-		}
-		{
-			dependencies: ["435539859AD4B53A"]
 			id: "6C2C2AB54095982B"
 			tasks: [{
 				id: "69A4DB94F6BF37E9"
 				item: "butchercraft:blood_sausage"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 14.5d
+			x: -9.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["435539859AD4B53A"]
@@ -2070,8 +2007,8 @@
 				item: "ratatouille:raw_sausage"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 15.5d
+			x: -7.5d
+			y: 16.0d
 		}
 		{
 			dependencies: ["6C2C2AB54095982B"]
@@ -2081,8 +2018,8 @@
 				item: "butchercraft:cooked_blood_sausage"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 14.5d
+			x: -6.0d
+			y: 15.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2092,8 +2029,8 @@
 				item: "ratatouille:sausage"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 15.5d
+			x: -8.5d
+			y: 17.0d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2103,41 +2040,8 @@
 				item: "createdelight:salami"
 				type: "item"
 			}]
-			x: -5.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["360A879F7B48F457"]
-			id: "6CF9B4042EB0DDDE"
-			tasks: [{
-				id: "3EFE72A66285B557"
-				item: "hotdog_delight:cooked_pork_sausage"
-				type: "item"
-			}]
-			x: -7.5d
+			x: -6.5d
 			y: 17.0d
-		}
-		{
-			dependencies: ["4A51552941C49493"]
-			id: "65DD56DD013ED8A2"
-			tasks: [{
-				id: "076582EFBFD28A91"
-				item: "hotdog_delight:cooked_salmon_sausage"
-				type: "item"
-			}]
-			x: -9.5d
-			y: 16.5d
-		}
-		{
-			dependencies: ["7A275EC3F322D435"]
-			id: "7F056820211CFB72"
-			tasks: [{
-				id: "2449E9260EB1A28E"
-				item: "hotdog_delight:cooked_cod_sausage"
-				type: "item"
-			}]
-			x: -10.0d
-			y: 14.5d
 		}
 		{
 			dependencies: ["091A81917B17827D"]

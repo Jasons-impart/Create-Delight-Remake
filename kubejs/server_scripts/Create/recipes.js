@@ -437,4 +437,8 @@ ServerEvents.recipes(e => {
         'ad_astra:venus_sand',
         'ad_astra:venus_stone'
     ).id("create:crushing/venus_sand_to_venus_stone")
+    e.recipes.create.cutting(
+        "2x ratatouille:sausage_casing",
+        "minecraft:slime_ball"
+    ).id("create:cutting/sausage")
 })
