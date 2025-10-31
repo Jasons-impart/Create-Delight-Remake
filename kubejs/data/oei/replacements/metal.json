@@ -19,21 +19,9 @@
     },
     {
         "matchItems": [
-            "createbigcannons:molten_bronze_bucket"
-        ],
-        "resultItems": "createmetallurgy:molten_bronze_bucket"
-    },
-    {
-        "matchItems": [
             "iceandfire:copper_nugget"
         ],
         "resultItems": "create:copper_nugget"
-    },
-    {
-        "matchItems": [
-            "createbigcannons:molten_steel_bucket"
-        ],
-        "resultItems": "createmetallurgy:molten_steel_bucket"
     },
     {
         "matchItems": [

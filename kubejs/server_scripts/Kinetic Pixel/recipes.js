@@ -4,8 +4,6 @@ ServerEvents.recipes(e => {
         "kinetic_pixel:endercsloot",
         "kinetic_pixel:tableloot",
         "kinetic_pixel:shellloot",
-        "createbigcannons:cutting/autocannon_cartridge_sheet_copper",
-        "createbigcannons:cutting/autocannon_cartridge_sheet_gold"
     ])
     remove_recipes_output(e,
         [
@@ -23,6 +21,41 @@ ServerEvents.recipes(e => {
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
 
     const { create, vintageimprovements, kubejs, minecraft, createmetallurgy } = e.recipes
+
+    create.mixing(
+        "4x createdelight:guncotton",
+        [
+            FluidIngredients("forge:acid", 100),
+            "minecraft:gunpowder",
+            "minecraft:paper"
+        ]
+    ).id("createdelight:mixing/guncotton_paper_gunpowder")
+    create.mixing(
+        "4x createdelight:guncotton",
+        [
+            FluidIngredients("forge:acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "minecraft:paper"
+        ]
+    ).id("createdelight:mixing/guncotton_paper_lumisene")
+
+    create.mixing(
+        "16x createdelight:guncotton",
+        [
+            FluidIngredients("forge:acid", 100),
+            "minecraft:gunpowder",
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createdelight:mixing/guncotton_graycotton_gunpowder")
+    create.mixing(
+        "16x createdelight:guncotton",
+        [
+            FluidIngredients("forge:acid", 100),
+            Fluid.of("supplementaries:lumisene", 100),
+            "kinetic_pixel:graycotton"
+        ]
+    ).id("createdelight:mixing/guncotton_graycotton_lumisene")
+
     vintageimprovements.turning(
         'kinetic_pixel:barrel',
         'createmetallurgy:steel_ingot'
@@ -305,7 +338,7 @@ ServerEvents.recipes(e => {
         [
             create.cutting(iner, iner),
             create.pressing(iner, iner),
-            create.deploying(iner, [iner, 'createbigcannons:guncotton']),
+            create.deploying(iner, [iner, 'createdelight:guncotton']),
             create.deploying(iner, [iner, 'createmetallurgy:tungsten_nugget'])
         ]
     )
@@ -318,7 +351,7 @@ ServerEvents.recipes(e => {
         [
             // vintageimprovements.polishing(iner_1, iner_1, 50, 2, true),
             createmetallurgy.grinding(iner_1, iner_1),
-            create.deploying(iner_1, [iner_1, 'createbigcannons:guncotton']),
+            create.deploying(iner_1, [iner_1, 'createdelight:guncotton']),
             create.deploying(iner_1, [iner_1, 'createmetallurgy:tungsten_nugget']),
             create.pressing(iner, iner)
         ]
@@ -332,7 +365,7 @@ ServerEvents.recipes(e => {
         [
             create.cutting(iner, iner),
             create.pressing(iner, iner),
-            create.deploying(iner_3, [iner_3, 'createbigcannons:guncotton']),
+            create.deploying(iner_3, [iner_3, 'createdelight:guncotton']),
             create.deploying(iner_3, [iner_3, '#forge:nuggets/bronze'])
         ]
     )
@@ -345,7 +378,7 @@ ServerEvents.recipes(e => {
         [
             create.cutting(iner, iner),
             create.pressing(iner, iner),
-            create.deploying(iner_4, [iner_4, 'createbigcannons:guncotton']),
+            create.deploying(iner_4, [iner_4, 'createdelight:guncotton']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
             create.deploying(iner_4, [iner_4, '#forge:nuggets']),
             create.pressing(iner_4, iner_4)

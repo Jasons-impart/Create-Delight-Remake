@@ -82,7 +82,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:alloying/brass"
     ])
 
-    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createbigcannons:cast_iron_ingot")
+    e.replaceInput({ mod: "createmetallurgy", not: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
     e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
     kubejs.shapeless("createmetallurgy:refractory_mortar", ["minecraft:water_bucket", "6x #minecraft:sand", "2x minecraft:clay_ball"])

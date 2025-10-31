@@ -13,7 +13,8 @@ ServerEvents.recipes(e => {
         "createdeco:pressing/coins/copper_coin",
         "createdeco:pressing/coins/iron_coin",
         "createdeco:pressing/coins/gold_coin",
-        "createdeco:pressing/coins/netherite_coin"
+        "createdeco:pressing/coins/netherite_coin",
+        "createdeco:industrial_iron_ingot_from_industrial_iron_block"
     ])
     remove_recipes_output(e, [
         'createdeco:netherite_nugget',
@@ -28,11 +29,17 @@ ServerEvents.recipes(e => {
         'createdeco:zinc_coin',
         'createdeco:zinc_coinstack'
     ])
-})
-
-ServerEvents.recipes(e => {
-    //对于createdeco的特殊处理
     e.replaceInput({}, "#createdeco:internal/plates/zinc_plates", "createaddition:zinc_sheet")
     e.replaceInput({}, "#createdeco:internal/plates/andesite_plates", "vintageimprovements:andesite_sheet")
     e.replaceInput({}, "#createdeco:internal/plates/netherite_plates", "vintageimprovements:netherite_sheet")
+    const {create, minecraft} = e.recipes
+    create.compacting(
+        'createdeco:industrial_iron_ingot',
+        "minecraft:iron_ingot"
+    ).heated().id("createdeco:compacting/industrial_iron_ingot")
+    minecraft.stonecutting(
+        "2x create:industrial_iron_block",
+        "createdeco:industrial_iron_ingot"
+    ).id("create:industrial_iron_block_from_ingots_iron_stonecutting")
 })
+

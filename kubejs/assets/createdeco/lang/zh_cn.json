@@ -410,5 +410,11 @@
   "item.createdeco.netherite_sheet": "下界合金板",
   "item.createdeco.zinc_coin": "锌币",
   "item.createdeco.zinc_coinstack": "锌币堆",
-  "item.createdeco.zinc_sheet": "锌板"
+  "item.createdeco.zinc_sheet": "锌板",
+  "block.createdeco.andesite_facade": "安山岩饰板",
+  "block.createdeco.brass_facade": "黄铜饰板",
+  "block.createdeco.copper_facade": "铜饰板",
+  "block.createdeco.industrial_iron_facade": "工业铁饰板",
+  "block.createdeco.iron_facade": "铁饰板",
+  "block.createdeco.zinc_facade": "锌饰板"
 }

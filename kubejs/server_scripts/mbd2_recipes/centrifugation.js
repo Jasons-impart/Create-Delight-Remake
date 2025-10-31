@@ -52,7 +52,6 @@ ServerEvents.recipes(e => {
       [["createmetallurgy:molten_brass", 180], ["createmetallurgy:molten_copper", 90], ["createmetallurgy:molten_zinc", 90]],
       [["createmetallurgy:molten_bronze", 360], ["createmetallurgy:molten_tin", 90], ["createmetallurgy:molten_copper", 270]],
       [["createmetallurgy:molten_electrum", 180], ["createmetallurgy:molten_silver", 90], ["createmetallurgy:molten_gold", 90]],
-      [["createbigcannons:molten_nethersteel", 540], ["createmetallurgy:molten_steel", 90], ["createmetallurgy:molten_netherite", 90]]
     ]
     fluidSeparation_2_fluids.forEach(fluid => {
       e.recipes.createdelight.big_centrifugation()
