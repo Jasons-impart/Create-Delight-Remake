@@ -183,5 +183,6 @@ StartupEvents.registry("creative_mode_tab", e => {
     .icon(() => Item.of("createdelight:electrolyzer"))
     .content(() => [
       'mbd2:mbd_gadgets',
+      'createdelight:order_deliverer_item'
     ])
 })

@@ -210,18 +210,24 @@ ServerEvents.recipes(e => {
         D: "ae2:logic_processor",
         E: "vintageimprovements:redstone_module"
     }).id("createdelight:mechanical_crafting/fission_reactor")
-    e.recipes.kubejs.shaped("createdelight:order_deliverer", [
-        " A ",
-        "BCB",
-        " D "
+    e.recipes.kubejs.shaped(
+        "createdelight:order_deliverer_item",
+        [
+        "AB ",
+        "BC "
     ], {
         A: "createdelight:unopened_order",
         B: "lightmanscurrency:trading_core",
-        C: "#forge:chests",
-        D: "#create:table_cloths"
+        C: "#forge:chests"
     })
-    .id("createdelight:order_deliverer")
-    e.recipes.kubejs.shapeless("createdelight:contract_executor", "createdelight:order_deliverer")
+    .id("createdelight:order_deliverer_item")
+    e.recipes.kubejs.shapeless(
+        "createdelight:contract_executor", 
+        [
+            "createdelight:order_deliverer_item",
+            "#create:table_cloths"
+        ]
+    ).id("createdelight:contract_executor")
 
     e.recipes.create.mechanical_crafting("createdelight:mechanical_craft_encoder", [
         "AABAA",
