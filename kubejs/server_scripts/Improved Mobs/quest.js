@@ -30,7 +30,7 @@ function GetPlayerDifficulty(player) {
 }
 
 FTBQuestsEvents.customReward(e => {
-    
+
     e.reward.tags.forEach(s => {
         if (s.split("_")[0] == "rank") {
             UpdateRank(e.player, s.split("_")[1])

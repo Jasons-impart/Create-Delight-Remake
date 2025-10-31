@@ -7,11 +7,11 @@ const improvedMobs$CapabilityProvider = Java.loadClass("io.github.flemmli97.impr
  * @param {Internal.LocalPlayer} player
  * @returns {number}
  */
-Difficulty.getPlayerRawValue = function() {
+Difficulty.getPlayerRawValue = function () {
     return global.difficultyCache
 }
 
-Difficulty.getPlayerTier = function() {
+Difficulty.getPlayerTier = function () {
     for (let index = 0; index < this.tierThreshold.length; index++) {
         if (this.getPlayerRawValue() <= this.tierThreshold[index])
             return index
@@ -19,7 +19,7 @@ Difficulty.getPlayerTier = function() {
     return this.tierThreshold.length
 }
 
-Difficulty.getPlayerCurrentProcess = function() {
+Difficulty.getPlayerCurrentProcess = function () {
     let tier = Difficulty.getPlayerTier()
     let rawValue = Difficulty.getPlayerRawValue()
     if (tier != this.tierThreshold.length) {
@@ -29,7 +29,7 @@ Difficulty.getPlayerCurrentProcess = function() {
         return 1
 }
 
-Difficulty.tierThreshold = [0, 75, 150, 350, 450, 500]
+Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
 
 RenderJSEvents.onGuiPreRender(e => {
     let location = "createdelight:textures/gui/difficulty_progress_bar"

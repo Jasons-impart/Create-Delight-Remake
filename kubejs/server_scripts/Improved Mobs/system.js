@@ -41,8 +41,16 @@ Difficulty.setPlayerCurrentProcess = function(player, process) {
     }
 }
 
+Difficulty.getPlayerCurrentProcessValue = function (player, process) {
+    let tier = Difficulty.getPlayerTier(player)
+    if (tier != this.tierThreshold.length)
+        return this.tierThreshold[tier - 1] + (this.tierThreshold[tier] - this.tierThreshold[tier - 1]) * process
+    else
+        return this.tierThreshold[tier - 1]
+}
+
 PlayerEvents.loggedIn(e => {
     global.difficultyCache = Difficulty.getPlayerRawValue(e.player)
 })
 
-Difficulty.tierThreshold = [0, 75, 150, 350, 450, 500]
+Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
