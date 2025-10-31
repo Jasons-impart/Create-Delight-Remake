@@ -172,8 +172,6 @@ key_ponder.keyinfo.ponder:key.keyboard.w
 key_key.curios.open.desc:key.keyboard.unknown
 key_key.jetpack.toggle_active.description:key.keyboard.g
 key_key.jetpack.toggle_hover.description:key.keyboard.h
-key_key.createbigcannons.pitch_mode:key.keyboard.c
-key_key.createbigcannons.fire_controlled_cannon:key.mouse.left
 key_key.jei.clearSearchBar:key.mouse.right
 key_key.jei.showUses2:key.mouse.right
 key_key.jei.previousSearch:key.keyboard.up

@@ -52,12 +52,6 @@ ServerEvents.recipes(e => {
         .outputItems("minecraft:netherite_ingot")
         .inputFE(3000)
         .id("create_delight:alloy_electric_furnace/netherite")
-    //下界钢锭
-    e.recipes.createdelight.alloy_electric_furnace()
-        .inputItems("minecraft:netherite_ingot", "createmetallurgy:steel_ingot")
-        .outputItems("2x createbigcannons:nethersteel_ingot")
-        .inputFE(4000)
-        .id("create_delight:alloy_electric_furnace/nethersteel")
     //坚钢锭
     e.recipes.createdelight.alloy_electric_furnace()
         .inputItems('3x #forge:ingots/steel', '2x #forge:ingots/tungsten')

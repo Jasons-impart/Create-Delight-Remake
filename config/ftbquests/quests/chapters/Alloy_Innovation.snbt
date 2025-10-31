@@ -45,7 +45,7 @@
 			id: "16E85851D21CB6A3"
 			rewards: [{
 				id: "0B563C2077A17709"
-				item: "createbigcannons:cast_iron_ingot"
+				item: "createdeco:industrial_iron_ingot"
 				random_bonus: 7
 				type: "item"
 			}]
@@ -54,7 +54,7 @@
 			subtitle: "你步入&e合金世界&r的&4第一块&r金属！"
 			tasks: [{
 				id: "611B7E2C375DC0F4"
-				item: "createbigcannons:cast_iron_ingot"
+				item: "createdeco:industrial_iron_ingot"
 				type: "item"
 			}]
 			title: "这是？&e匠魂动力&r？"

@@ -109,6 +109,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:blood_collection_device',
       'createdelight:needle',
       'createdelight:dread_upgrade_smithing_template',
+      "createdelight:guncotton",
       // 构件
       'createdelight:magnetic_mechanism',
       //火箭部件

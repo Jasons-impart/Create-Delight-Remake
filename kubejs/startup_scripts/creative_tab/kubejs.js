@@ -277,6 +277,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:lush_confiture_jello_item',
         'createdelight:wafer_dough',
         'createdelight:raw_potato_pancake',
-        'createdelight:order_deliverer_item'
+        'createdelight:order_deliverer_item',
+        "createdelight:guncotton",
     ])
 });  

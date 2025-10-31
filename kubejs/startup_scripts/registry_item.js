@@ -461,6 +461,8 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_gas_pistol_ammo", "create:sequenced_assembly")
         .texture("create:item/copper_sheet")
         .translationKey("item.createdelight.incomplete_gas_pistol_ammo")
+    e.create("createdelight:guncotton")
+        .translationKey("item.createdelight.guncotton")
 
     // 订单交付器
     e.create("createdelight:order_deliverer_item")

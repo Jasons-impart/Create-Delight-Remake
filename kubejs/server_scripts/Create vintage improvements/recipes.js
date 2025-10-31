@@ -71,10 +71,6 @@ ServerEvents.recipes(e => {
         "2x vintageimprovements:netherite_rod").id("vintageimprovements:rolling/netherite_ingot")
     e.recipes.createaddition.rolling("vintageimprovements:netherite_sheet", 
         "2x vintageimprovements:netherite_wire").id("vintageimprovements:rolling/netherite_sheet")
-    e.recipes.createaddition.rolling("createbigcannons:nethersteel_ingot", 
-        "2x vintageimprovements:nethersteel_rod").id("vintageimprovements:rolling/nethersteel_ingot")
-    e.recipes.createaddition.rolling("vintageimprovements:nethersteel_sheet", 
-        "2x vintageimprovements:nethersteel_wire").id("vintageimprovements:rolling/nethersteel_sheet")
 
     e.replaceInput({ mod: "vintageimprovements" }, "vintageimprovements:iron_spring", "#forge:spring/between_500_2_1000")
     e.replaceInput({ id: "vintageimprovements:pressurizing/sulfur_dioxide"}, "vintageimprovements:sulfur", "alexscaves:sulfur_dust")
@@ -88,6 +84,6 @@ ServerEvents.recipes(e => {
         A: "#forge:spring/below_500",
         B: "create:copper_casing",
         C: "minecraft:dried_kelp",
-        D: "#createbigcannons:sheet_iron"
+        D: "create:iron_sheet"
     }).id("create_enchantment_industry:crafting/printer")
 })
