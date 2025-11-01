@@ -361,7 +361,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "最大输入输出均为10K FE/t，导线长度最大为32格"
+			subtitle: "摸这个会被电吗？"
 			tasks: [
 				{
 					id: "343572112DFCFA1C"
