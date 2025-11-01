@@ -7,7 +7,12 @@
 	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
-	quest_links: [ ]
+	quest_links: [{
+		id: "20C58B9D0B7090D6"
+		linked_quest: "24CF527B4E34E599"
+		x: 15.5d
+		y: 6.0d
+	}]
 	quests: [
 		{
 			dependencies: ["39AF291933E03F4C"]
@@ -1839,6 +1844,68 @@
 			}]
 			x: 15.0d
 			y: -2.5d
+		}
+		{
+			dependencies: [
+				"24CF527B4E34E599"
+				"64BDB4FEDC5142AF"
+			]
+			description: [
+				"使用蓝图桌打开 &l&ebread_maker.nbt&r&r"
+				"&b顶端抽屉&r放入&a小麦&r"
+				"&b中层抽屉&r放入&a草杆&r，使用配置工具&e锁定&r，再插入抽入升级&e抽取上&r方脱粒机"
+				"&b鼓风机&r前&e倒水&r，后面的水车&e倒水&r让鼓风机&n慢速吹&r风"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						2
+						6
+					]
+					Deployed: 0b
+					File: "speed_controller.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "621C29458FCFE7A0"
+			rewards: [{
+				id: "6D48B144BF23EE7A"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			size: 1.0d
+			subtitle: "村民还得感谢我帮他们清理麦垛呢"
+			tasks: [{
+				id: "5E7B6853EE5BFCE2"
+				type: "checkmark"
+			}]
+			title: "面包制作机"
+			x: 15.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_started"
+			id: "64BDB4FEDC5142AF"
+			subtitle: "一个格子，能存2048个物品"
+			tasks: [{
+				id: "5DDFE1CB80AEDE27"
+				item: "functionalstorage:oak_1"
+				type: "item"
+			}]
+			x: 17.0d
+			y: 6.0d
 		}
 	]
 	title: "&2初识机械"
