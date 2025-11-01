@@ -537,7 +537,7 @@ _version = 3
 		#  outside the vanilla render distance? 
 		# Depending on the generator mode, this will import existing chunks 
 		# and/or generating missing chunks.
-		enableDistantGeneration = true
+		enableDistantGeneration = false
 		#
 		# How detailed should LODs be generated outside the vanilla render distance? 
 		# 
