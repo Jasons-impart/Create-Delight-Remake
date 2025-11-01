@@ -57,6 +57,19 @@ ItemEvents.modification(e => {
             }
         })
     }
+// 食物效果移除
+    /**
+     * 
+     * @param {Internal.Ingredient_} food 
+     * @param {Special.MobEffect} effect 
+     */
+    let remove_effects = function(food, effect) {
+        e.modify(food, item => {
+            item.foodProperties = food => {
+                food.removeEffect(effect)
+            }
+        })
+    }
 // 最大耐久度修改,物品id,最大耐久度
     /**
      * 
@@ -234,12 +247,6 @@ ItemEvents.modification(e => {
     food_effects("corn_delight:classic_corn_dog", "minecraft:fire_resistance", 10)
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)
     food_effects("culturaldelights:squid", "minecraft:darkness", 6, 1)
-    e.modify("culturaldelights:glow_squid", item => {
-        item.foodProperties = food => {
-            food.removeEffect("minecraft:glowing")
-            food.effect("minecraft:glowing", 120, 1, 1)
-        }
-    })
     food_effects("mynethersdelight:ghast_dough", "minecraft:levitation", 6, 1)
     food_effects("culturaldelights:pickle", "farmersdelight:nourishment", 10, 1)
     food_effects("culturaldelights:cut_pickle", "farmersdelight:nourishment", 15, 1)
@@ -287,67 +294,53 @@ ItemEvents.modification(e => {
     food_effects('cosmopolitan:berry_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:chorus_fruit_popsicle_double', "minecraft:fire_resistance", 20)
     food_effects('cosmopolitan:lime_popsicle_double', "minecraft:fire_resistance", 20)
+        // 发光鱿鱼效果修改
+    remove_effects("culturaldelights:glow_squid", "minecraft:glowing")
+    food_effects("culturaldelights:glow_squid", "minecraft:glowing", 6, 1, 1)
         //软糖效果
-    e.modify('collectorsreap:lime_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("collectorsreap:corrosion")
-            food.effect("collectorsreap:corrosion", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:pomegranate_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("collectorsreap:volatility")
-            food.effect("collectorsreap:volatility", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:apple_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("farmersdelight:comfort")
-            food.effect("cosmopolitan:exuberant", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:glow_berry_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("minecraft:glowing")
-            food.effect("cosmopolitan:tracer", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:melon_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("minecraft:absorption")
-            food.effect("minecraft:regeneration", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:vanilla_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("neapolitan:vanilla_scent")
-            food.effect("neapolitan:vanilla_scent", 200, 2, 1)
-        }
-    })
-    e.modify('collectorsreap:adzuki_gummy', item => {
-        item.foodProperties = food => {
-            food.removeEffect("neapolitan:harmony")
-            food.effect("neapolitan:harmony", 200, 2, 1)
-        }
-    })
-        
+    remove_effects("collectorsreap:lime_gummy", "collectorsreap:corrosion")
+    food_effects('collectorsreap:lime_gummy', "collectorsreap:corrosion", 10, 2, 1)
+    remove_effects("collectorsreap:pomegranate_gummy", "collectorsreap:volatility")
+    food_effects("collectorsreap:pomegranate_gummy", "collectorsreap:volatility", 10, 2, 1)
+    remove_effects("collectorsreap:apple_gummy", "farmersdelight:comfort")
+    food_effects("collectorsreap:apple_gummy", "cosmopolitan:exuberant", 10, 2, 1)
+    remove_effects("collectorsreap:glow_berry_gummy", "minecraft:glowing")
+    food_effects("collectorsreap:glow_berry_gummy", "cosmopolitan:tracer", 10, 2, 1)
+    remove_effects("collectorsreap:melon_gummy", "minecraft:absorption")
+    food_effects("collectorsreap:melon_gummy", "minecraft:regeneration", 10, 2, 1)
+    remove_effects("collectorsreap:vanilla_gummy", "neapolitan:vanilla_scent")  
+    food_effects("collectorsreap:vanilla_gummy", "neapolitan:vanilla_scent", 10, 2, 1)
+    remove_effects("collectorsreap:adzuki_gummy", "neapolitan:harmony")
+    food_effects("collectorsreap:adzuki_gummy", "neapolitan:harmony", 10, 2, 1)
+    remove_effects("collectorsreap:pumpkin_gummy", "minecraft:saturation")
         //鱼籽效果
+    remove_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power")
     food_effects('oceanic_delight:salmon_eggs', "minecraft:conduit_power", 10, 0, 0.3)
-    e.modify('oceanic_delight:salmon_eggs', item => {
-        item.foodProperties = food => {
-            food.removeEffect("minecraft:conduit_power")
-        }
-    })
         //奥利奥效果
-    e.modify('createcafe:oreo', item => {
-        item.foodProperties = food => {
-            food.effect("minecraft:speed", 400, 1, 1)
-            food.effect("minecraft:regeneration", 400, 1, 1)
-            food.effect("minecraft:resistance", 400, 1, 1)
-            food.effect("minecraft:fire_resistance", 400, 1, 1)
-            food.effect("minecraft:absorption", 400, 1, 1)
-        }
-    })
+    food_effects("createcafe:oreo", "minecraft:speed", 20, 1, 1)
+    food_effects("createcafe:oreo", "minecraft:regeneration", 20, 1, 1)
+    food_effects("createcafe:oreo", "minecraft:resistance", 20, 1, 1)
+    food_effects("createcafe:oreo", "minecraft:fire_resistance", 20, 1, 1)
+    food_effects("createcafe:oreo", "minecraft:absorption", 20, 1, 1)
+        //逆天饱和效果修改
+    remove_effects("bakeries:whole_wheat_bagel", "minecraft:saturation")
+    remove_effects("cosmopolitan:mashed_potato", "minecraft:saturation")
+    food_effects('cosmopolitan:mashed_potato', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('cosmopolitan:mashed_potato_cone', "minecraft:saturation")
+    food_effects('cosmopolitan:mashed_potato_cone', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:shinnko_maki', "minecraft:saturation")
+    food_effects('youkaishomecoming:shinnko_maki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:kappa_maki', "minecraft:saturation")
+    food_effects('youkaishomecoming:kappa_maki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:tekka_maki', "minecraft:saturation")
+    food_effects('youkaishomecoming:tekka_maki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:egg_futomaki', "minecraft:saturation")
+    food_effects('youkaishomecoming:egg_futomaki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:salmon_futomaki', "minecraft:saturation")
+    food_effects('youkaishomecoming:salmon_futomaki', "farmersdelight:nourishment", 30, 0, 1)
+    remove_effects('youkaishomecoming:rainbow_futomaki', "minecraft:saturation")
+    food_effects('youkaishomecoming:rainbow_futomaki', "farmersdelight:nourishment", 30, 0, 1)
+
     //咖啡效果
     coffee_effect('createcafe:strawberry_iced_coffee', 600, 0, 600)
     coffee_effect('createcafe:vanilla_iced_coffee', 600, 0, 600)

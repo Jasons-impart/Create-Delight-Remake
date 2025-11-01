@@ -377,7 +377,7 @@ StartupEvents.registry("item", e => {
         .food(f => {
             f.hunger(6)
                 .saturation(1.2)
-                .effect("minecraft:saturation", 600, 0, 1.0)
+                .effect("minecraft:saturation", 20, 0, 1.0)
                 .effect("farmersdelight:nourishment", 3600, 0, 1.0)
         })
         .glow(true)
