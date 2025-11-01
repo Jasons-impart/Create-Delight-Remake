@@ -125,7 +125,7 @@
 			]
 			title: "手动应力"
 			x: 8.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
@@ -152,8 +152,8 @@
 				type: "item"
 			}]
 			title: "小水车吱呀吱悠悠地转"
-			x: 5.5d
-			y: 4.5d
+			x: 5.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
@@ -181,8 +181,8 @@
 				type: "item"
 			}]
 			title: "更慢！但是更强！"
-			x: 7.5d
-			y: 4.5d
+			x: 8.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -235,7 +235,7 @@
 				type: "item"
 			}]
 			x: 5.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -760,7 +760,7 @@
 			}]
 			title: "&e汽笛轰鸣！"
 			x: 6.5d
-			y: 5.5d
+			y: 6.75d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -1135,7 +1135,7 @@
 				type: "item"
 			}]
 			title: "简单装饰一下我的齿轮组们~"
-			x: 5.0d
+			x: 7.5d
 			y: -1.0d
 		}
 		{
@@ -1161,7 +1161,7 @@
 				type: "item"
 			}]
 			title: "超有工业风的齿轮组！"
-			x: 5.0d
+			x: 7.5d
 			y: 1.0d
 		}
 		{
@@ -1257,7 +1257,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1282,7 +1282,7 @@
 				}
 			]
 			x: 12.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1300,7 +1300,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1317,7 +1317,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1342,7 +1342,7 @@
 				type: "item"
 			}]
 			x: 13.5d
-			y: -4.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["621E3093612F5D2C"]
@@ -1368,7 +1368,7 @@
 				type: "item"
 			}]
 			x: 13.5d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1386,7 +1386,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: -5.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1404,7 +1404,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: -5.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["223ACB0E32376155"]
@@ -1425,7 +1425,7 @@
 				type: "checkmark"
 			}]
 			x: 14.0d
-			y: -7.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -1769,6 +1769,76 @@
 			title: "最丐机械动力刷铁机"
 			x: 16.0d
 			y: 4.5d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			dependency_requirement: "all_started"
+			description: ["可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"]
+			id: "5CBAD075435316D8"
+			subtitle: "流体哗啦啦"
+			tasks: [{
+				id: "765A305554397F18"
+				item: "fluid:copper_tap"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"28CB30AB88780BC7"
+				"29130F650B256E20"
+			]
+			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
+			id: "3DBEC3D3BC6BAD1A"
+			secret: true
+			shape: "gear"
+			size: 1.5d
+			subtitle: "单格自行应力产出应力源！"
+			tasks: [{
+				id: "0FB315EB44E1CE8F"
+				item: "create_fantasizing:compact_hydraulic_engine"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"28CB30AB88780BC7"
+				"517B61DF9D117879"
+			]
+			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
+			hide_until_deps_complete: true
+			id: "08571011E558AC3E"
+			secret: true
+			shape: "gear"
+			size: 1.5d
+			subtitle: "单格自行应力产出应力源！"
+			tasks: [{
+				id: "29261BA684BCF813"
+				item: "create_fantasizing:compact_wind_engine"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 5.25d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			description: [
+				"流体接口可以放置在任意的流体容器（如流体储罐）上"
+				"手持类似于玻璃瓶或者桶的容器与流体接口交互，可以便捷地向相连的流体容器输入或输出流体"
+				"流体接口可以被指定为动力移液器的交互点，以实现动力移液器与流体储罐之间的流体交互"
+			]
+			id: "2F5D9025D3185A43"
+			subtitle: "一个交互接口！"
+			tasks: [{
+				id: "5FA1FCE1BEF4FE13"
+				item: "fluid:fluid_interface"
+				type: "item"
+			}]
+			x: 15.0d
+			y: -2.5d
 		}
 	]
 	title: "&2初识机械"

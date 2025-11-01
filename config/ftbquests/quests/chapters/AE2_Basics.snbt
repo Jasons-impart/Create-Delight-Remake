@@ -907,6 +907,18 @@
 			x: 4.5d
 			y: 13.0d
 		}
+		{
+			dependencies: ["03BBFC33D603A287"]
+			id: "517B61DF9D117879"
+			subtitle: "似乎可以做更厉害的东西"
+			tasks: [{
+				id: "3E104388EF0A035C"
+				item: "create_fantasizing:sturdy_heavy_core"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 3.0d
+		}
 	]
 	title: "&b异星科技"
 }

@@ -95,7 +95,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["41C38AC7AA97CFAD"]
 			description: [
 				"本包对该mod进行了一些优化："
 				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
@@ -105,7 +105,7 @@
 			id: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "进行&5虚空采矿&r吧！"
+			subtitle: "{ \"text\": \"在小小的矿脉上挖呀挖呀挖\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
 			tasks: [{
 				id: "1D7AB28B86CF3039"
 				title: "矿物再生！"

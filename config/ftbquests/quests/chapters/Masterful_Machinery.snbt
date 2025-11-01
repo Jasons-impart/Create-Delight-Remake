@@ -636,7 +636,7 @@
 			y: 4.75d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["41C38AC7AA97CFAD"]
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"
 			rewards: [
@@ -751,6 +751,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"打枪biubiu！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"168836201ED24533\" } }"
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"

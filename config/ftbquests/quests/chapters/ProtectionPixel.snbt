@@ -1298,7 +1298,7 @@
 			y: 15.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["601E073214DCC16C"]
 			icon: "protection_pixel:armorloadplatform"
 			id: "0B2B86FAF7742C2F"
 			rewards: [
