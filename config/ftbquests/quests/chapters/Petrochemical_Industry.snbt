@@ -323,6 +323,89 @@
 			x: -13.5d
 			y: 2.5d
 		}
+		{
+			dependencies: ["43B45F9D2DC4BD3E"]
+			description: ["打开蓝图桌搜索&epumpjack.nbt&r"]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						6
+						16
+					]
+					Deployed: 0b
+					File: "pumpjack.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "1C15411E37F6A896"
+			rewards: [{
+				id: "105CA8D198D47B3C"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0705391803740AC7"
+				type: "checkmark"
+			}]
+			title: "抽油机蓝图"
+			x: -11.5d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"24FAD19B32A0FEBE"
+				"16E31AE06BF8CE13"
+			]
+			description: [
+				"打开蓝图桌搜索&eoil_refinery.nbt&r"
+				"插分馏塔控制器，往抽屉里加石油，让烈焰人干活（无需超燃），加应力，完事。"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						6
+						16
+					]
+					Deployed: 0b
+					File: "pumpjack.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "7CE7C533E8A267F0"
+			rewards: [{
+				id: "777F432BA2F1A054"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			subtitle: "你甚至可以把它藏进工厂夹层！"
+			tasks: [{
+				id: "147879D962784545"
+				type: "checkmark"
+			}]
+			title: "最丐单片石油精炼厂蓝图"
+			x: -7.5d
+			y: 5.5d
+		}
 	]
 	title: "&5石油化工"
 }

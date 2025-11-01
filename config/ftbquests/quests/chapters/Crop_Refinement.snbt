@@ -245,6 +245,7 @@
 			y: 1.0d
 		}
 		{
+			dependencies: ["5C40F5E0F477394B"]
 			icon: "ratatouille:thresher"
 			id: "24CF527B4E34E599"
 			rewards: [{

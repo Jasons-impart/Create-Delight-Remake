@@ -1488,7 +1488,7 @@
 				type: "item"
 			}]
 			x: 19.5d
-			y: 12.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1509,7 +1509,7 @@
 				type: "item"
 			}]
 			x: 17.5d
-			y: 12.0d
+			y: 12.5d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1522,8 +1522,8 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 19.0d
-			y: 13.5d
+			x: 18.5d
+			y: 11.5d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1547,7 +1547,7 @@
 				item: "fluid:baton"
 				type: "item"
 			}]
-			x: 17.5d
+			x: 18.5d
 			y: 13.5d
 		}
 		{
@@ -1801,6 +1801,50 @@
 			]
 			x: 24.5d
 			y: 15.0d
+		}
+		{
+			dependencies: ["58FB0865EB045B8C"]
+			description: [
+				"制作一个蓝图桌打开 &e&ltree_farm.nbt&r&r 看看吧"
+				""
+				"倒水，加树苗，溜槽设定为=64，开启动力轴承，完事。"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						3
+						4
+						2
+					]
+					Deployed: 0b
+					File: "brass_casting.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "CLOCKWISE_90"
+				}
+			}
+			id: "7731CD649279916F"
+			ignore_reward_blocking: true
+			rewards: [{
+				id: "052FB8C27C4B1B1C"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			tasks: [{
+				id: "27343050F01D4966"
+				type: "checkmark"
+			}]
+			title: "树场蓝图"
+			x: 13.0d
+			y: 16.5d
 		}
 	]
 	title: "&9体系渐成 "
