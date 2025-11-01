@@ -58,11 +58,11 @@ ServerEvents.recipes(e => {
     Fluid.of("ratatouille:compost_tea", 30),
     Fluid.of("ratatouille:bio_gas", 10)
   ], Fluid.of("ratatouille:compost_fluid", 100))
+  .processingTime(100)
   .heatRequirement("heated")
   .id("ratatouille:distillation/compost_fluid")
+  
   create.compacting(Fluid.of("ratatouille:compost_fluid", 100), "createaddition:biomass")
   .superheated()
   .id("ratatouille:compacting/compost_fluid")
-  // 上面删除催熟素生产的相关配方，改为骨粉+生物质合成催熟素
-  // e.shapeless('ratatouille:ripen_matter', ['minecraft:bone_meal', 'createaddition:biomass'])
 })
