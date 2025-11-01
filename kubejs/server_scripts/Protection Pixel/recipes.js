@@ -1,5 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
+        "protection_pixel:platformloot",
         "protection_pixel:plagueloot",
         "protection_pixel:lancerloot",
         "protection_pixel:hammerloot",
@@ -28,6 +29,22 @@ ServerEvents.recipes(e => {
         '2x protection_pixel:smallnetheritesheet',
         "#forge:plates/netherite"
     ).id("protection_pixel:smallnetheritesheetloot")
+    e.recipes.create.mechanical_crafting("protection_pixel:armorloadplatform",
+        [
+            "AB BA",
+            "AB BA",
+            "AD DA",
+            " CEC ",
+        ],
+        {
+            A: "create:andesite_alloy",
+            B: "create:cogwheel",
+            C: "create:brass_casing",
+            D: "create:fluid_tank",
+            E: "create_sa:heat_engine"
+        }
+    )
+    .id("protection_pixel:platformloot")
     e.recipes.create.mechanical_crafting("protection_pixel:plague_helmet",
         [
             " ABA ",

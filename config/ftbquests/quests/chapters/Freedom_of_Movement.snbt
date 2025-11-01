@@ -347,7 +347,7 @@
 				item: "butchercraft:cooked_beef_roast"
 				type: "item"
 			}]
-			subtitle: "每公里油耗仅为1块&e牛又"
+			subtitle: "可以手搓，每公里油耗仅为1块&e牛又"
 			tasks: [{
 				id: "0FDC15B013EEFC92"
 				item: "immersive_aircraft:gyrodyne"
@@ -567,9 +567,12 @@
 			y: -7.0d
 		}
 		{
+			dependencies: ["41C38AC7AA97CFAD"]
+			icon: "man_of_many_planes:economy_plane"
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"启动飞行模式！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DED9A87C6CB80F0\" } }"
 			tasks: [{
 				id: "7DE6E5BD8D3D1A81"
 				title: "准备起飞！"
@@ -774,21 +777,6 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["1DAD17F55E0D4B85"]
-			id: "394328A77D6D76F9"
-			invisible: true
-			invisible_until_tasks: 1
-			subtitle: "最最最最经典的列车轨道，是我童年的记忆！"
-			tasks: [{
-				id: "06922F817A561FC9"
-				item: "create:track"
-				type: "item"
-			}]
-			title: "经典而又优雅"
-			x: 12.0d
-			y: -1.5d
-		}
-		{
 			dependencies: ["40DE31F53D2C424C"]
 			id: "49DDEA93CFD2BAA5"
 			subtitle: "手动操作列车（记得切&4第三人称视角&r）"
@@ -815,12 +803,16 @@
 			y: -4.5d
 		}
 		{
+			dependencies: ["6EB96008F21DAFBF"]
+			description: ["最最最最经典的列车轨道，是我童年的记忆！"]
+			icon: "create:track"
 			id: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"汽笛轰鸣\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DED9A87C6CB80F0\" } }"
 			tasks: [{
-				id: "526E95872BBA363C"
-				item: "create:sturdy_sheet"
+				id: "26A805D9752BC8C9"
+				item: "create:track"
 				type: "item"
 			}]
 			title: "轨道交通！"
