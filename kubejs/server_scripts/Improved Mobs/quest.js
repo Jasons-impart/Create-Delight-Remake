@@ -1,7 +1,8 @@
 //想用任务增加难度系数的，在奖励里加一个自定义，然后加上标签：rank_难度等级，比如rank_1就会增加一级
 
 const $CrossPlatformStuff = Java.loadClass("io.github.flemmli97.improvedmobs.platform.CrossPlatformStuff")
-
+const $Quest = Java.loadClass("dev.ftb.mods.ftbquests.quest.Quest")
+const $ProgressChange = Java.loadClass("dev.ftb.mods.ftbquests.util.ProgressChange")
 /**
  * 
  * @param {Internal.Player} player 
@@ -27,25 +28,45 @@ function GetPlayerDifficulty(player) {
     return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
 }
 
+FTBQuestsEvents.completed(e => {
+    const { object, data, server } = e
+    if (object instanceof $Quest) {
+        /**@type {Internal.Quest} */
+        let quest = object
+        if (quest.getRewards().find(reward => reward.tags.find(s => {
+            let res = s.split("_")[0]
+            return res == "rank" || res == "unrank"
+        }) != null) != null) {
+            server.scheduleInTicks(1, () => {
+                data.changeProgress(quest, pc => pc.setReset(true))
+            })
+        }
+    }
+    // if ()
+    // data.changeProgress(object.id, progressChange => {
+    //     progressChange.reset()
+    // })
+})
+
 FTBQuestsEvents.customReward(e => {
-    
-    e.reward.tags.forEach(s => {
+    const { player, reward } = e
+    reward.tags.forEach(s => {
         if (s.split("_")[0] == "rank") {
-            UpdateRank(e.player, s.split("_")[1])
+            UpdateRank(player, s.split("_")[1])
         }
         else if (s.split("_")[0] == "unrank") {
-            UpdateRank(e.player, -s.split("_")[1])
+            UpdateRank(player, -s.split("_")[1])
         }
         else if (s == "change_rank_change_state") {
-            let disableRankChange = e.player.persistentData.getBoolean("disableRankChange")
+            let disableRankChange = player.persistentData.getBoolean("disableRankChange")
             if (disableRankChange == null)
-                e.player.persistentData.putBoolean("disableRankChange", true)
+                player.persistentData.putBoolean("disableRankChange", true)
             else
-                e.player.persistentData.putBoolean("disableRankChange", !disableRankChange)
+                player.persistentData.putBoolean("disableRankChange", !disableRankChange)
             if (!disableRankChange)
-                e.player.tell("已关闭难度变化！")
+                player.tell("已关闭难度变化！")
             else
-                e.player.tell("已开启难度变化！")
+                player.tell("已开启难度变化！")
         }
     })
 })
