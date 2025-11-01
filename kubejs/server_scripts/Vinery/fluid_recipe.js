@@ -16,11 +16,11 @@ ServerEvents.recipes(e => {
         let fluidId = ""
         let prefix = fluid[0]
         if (fluid[1] == "general") {
-            prefix = "doaddonfluids:" + fluid[0]
+            prefix = "createdelightcore:" + fluid[0]
             fluidId = prefix + "_grapejuice"
         }
         else if (fluid[1] == "warped" || fluid[1] == "crimson") {
-            prefix = "doaddonfluids:" + fluid[1]
+            prefix = "createdelightcore:" + fluid[1]
             fluidId = prefix + "_grapejuice"
         }
         else if (fluid[0] == "apple") {
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         }
         else if (fluid[1]) {
             prefix = `${fluid[1]}_${prefix}`
-            prefix = "doaddonfluids:" + prefix
+            prefix = "createdelightcore:" + prefix
             fluidId = prefix + "_grapejuice"
         }
         let ingrs = [Fluid.of(fluidId, 1000)]
