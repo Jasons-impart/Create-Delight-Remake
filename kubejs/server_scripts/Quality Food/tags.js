@@ -43,6 +43,7 @@ ServerEvents.tags("block", e => {
         "@culturaldelights",
         "@fruitsdelight",
         "@collectorsreap",
+        "@cratedelight",
         "@neapolitan",
         "@mynethersdelight",
         "@oceanic_delight",
