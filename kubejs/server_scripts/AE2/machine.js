@@ -377,6 +377,12 @@ ServerEvents.recipes((event) => {
     .transitionalItem("createdelight:incomplete_mega_energy_cell")
     .loops(4)
     .id("createdelight:mega_energy_cell");
+  
+  event.recipes.create_new_age.energising(
+    "megacells:mega_energy_cell",
+    Item.of('megacells:mega_energy_cell', { internalCurrentPower: 12800000 }).weakNBT(),
+    25600000
+  ).id("create:energising/mega_energy_cell")
 
   // 水晶修复器
   create
