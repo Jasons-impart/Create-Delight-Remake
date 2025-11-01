@@ -14,8 +14,7 @@
       "com.sighs.generalfeedback.client.FeedbackScreen"
     ],
     "enableScreenRecovering": false,
-    "recoveredScreens": [
-    ],
+    "recoveredScreens": [],
     "englishStateImpl": "CONVERSION_STATUS",
     "primaryEnglishState": "CJK"
   },
