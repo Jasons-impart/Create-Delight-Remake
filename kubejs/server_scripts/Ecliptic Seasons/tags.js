@@ -83,4 +83,10 @@ ServerEvents.tags("minecraft:item", e => {
         "vinery:jungle_grape_seeds_red",
         "youkaishomecoming:mandrake_root"
     )
+    e.add("eclipticseasons:crops/arid_average",
+        "minecraft:crimson_fungus",
+        "minecraft:warped_fungus",
+        "mynethersdelight:crimson_fungus_colony",
+        "mynethersdelight:warped_fungus_colony"
+    )
 })
