@@ -349,7 +349,7 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 12.5d
+			x: 12.0d
 			y: 12.0d
 		}
 		{
@@ -371,7 +371,7 @@
 				}
 				type: "item"
 			}]
-			x: 11.5d
+			x: 11.0d
 			y: 12.5d
 		}
 		{
@@ -381,7 +381,7 @@
 				item: "create:rose_quartz"
 				type: "item"
 			}]
-			x: 11.5d
+			x: 11.0d
 			y: 11.5d
 		}
 		{
@@ -1535,7 +1535,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 13.0d
+			y: 11.25d
 		}
 		{
 			dependencies: ["1F34610FBFE53749"]
@@ -1845,6 +1845,19 @@
 			title: "树场蓝图"
 			x: 13.0d
 			y: 16.5d
+		}
+		{
+			dependencies: ["2CBBADBE62382C1B"]
+			description: ["需要与被筛选的有混合流体的容器&l&e直接接触&r&r才能正确过滤。"]
+			id: "4F7F4970E26CBD75"
+			subtitle: "凑合用吧，难不成依赖工作盆自动输出吗"
+			tasks: [{
+				id: "723CC1057C8C01BE"
+				item: "create:smart_fluid_pipe"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 12.75d
 		}
 	]
 	title: "&9体系渐成 "
