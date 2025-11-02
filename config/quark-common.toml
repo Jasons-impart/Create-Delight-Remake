@@ -114,7 +114,7 @@
 	"Framed Glass" = true
 	"Glass Item Frame" = true
 	"Gold Bars" = true
-	Grate = true
+	Grate = false
 	Hedges = true
 	"Hollow Logs" = true
 	"Industrial Palette" = true
