@@ -11,48 +11,48 @@
 		{
 			id: "23F7CDA2CF32FD87"
 			linked_quest: "630FA0478B7DAAAA"
-			x: 4.5d
-			y: 9.0d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
 			id: "7D4B174BC4A98DC9"
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
 			size: 2.0d
-			x: 19.5d
-			y: 8.0d
+			x: 18.0d
+			y: -7.0d
 		}
 		{
 			id: "7A11CD1763458CD5"
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"
 			size: 2.0d
-			x: 23.0d
-			y: 9.0d
+			x: 21.5d
+			y: -6.0d
 		}
 		{
 			id: "30F40F6C2AA7B4B8"
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			x: 23.0d
-			y: 12.0d
+			x: 21.5d
+			y: -3.0d
 		}
 		{
 			id: "604FBA64277A68B6"
 			linked_quest: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
-			x: 24.5d
-			y: 10.5d
+			x: 23.0d
+			y: -4.5d
 		}
 		{
 			id: "79CEAA3C78A71263"
 			linked_quest: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
-			x: 2.5d
-			y: 16.5d
+			x: 26.5d
+			y: 2.0d
 		}
 	]
 	quests: [
@@ -74,8 +74,8 @@
 				type: "item"
 			}]
 			title: "这是？&e匠魂动力&r？"
-			x: -2.5d
-			y: 10.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -100,8 +100,8 @@
 				type: "item"
 			}]
 			title: "获得烈焰人燃烧室！"
-			x: -6.0d
-			y: 10.5d
+			x: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -118,8 +118,8 @@
 				item: "create:empty_blaze_burner"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 9.0d
+			x: -2.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -137,8 +137,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: 16.0d
-			y: 8.0d
+			x: 17.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -163,8 +163,8 @@
 				}
 				type: "item"
 			}]
-			x: 13.0d
-			y: 8.0d
+			x: 17.5d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -189,7 +189,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -210,7 +210,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -229,8 +229,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 16.0d
-			y: 7.0d
+			x: 16.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -248,7 +248,7 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 12.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["35B43C124186578F"]
@@ -291,7 +291,7 @@
 			]
 			title: "鼓风机触媒们"
 			x: 8.0d
-			y: 13.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -306,7 +306,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["271924B430C340EC"]
@@ -328,8 +328,8 @@
 				}
 			]
 			title: "直接制作烈焰人燃烧室"
-			x: -10.5d
-			y: 9.0d
+			x: -4.0d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -350,7 +350,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: 12.0d
+			y: 1.5d
 		}
 		{
 			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
@@ -372,7 +372,7 @@
 				type: "item"
 			}]
 			x: 11.0d
-			y: 12.5d
+			y: 2.0d
 		}
 		{
 			id: "2B3F1B42F03F00F3"
@@ -382,7 +382,7 @@
 				type: "item"
 			}]
 			x: 11.0d
-			y: 11.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -411,8 +411,8 @@
 				to_observe: "minecraft:blaze"
 				type: "observation"
 			}]
-			x: -8.5d
-			y: 12.0d
+			x: -2.5d
+			y: 1.0d
 		}
 		{
 			id: "10D661738D4296E5"
@@ -429,8 +429,8 @@
 				title: "&4下地狱喽！"
 				type: "dimension"
 			}]
-			x: -10.5d
-			y: 12.0d
+			x: -4.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -457,11 +457,11 @@
 				}
 			]
 			title: "融化流体！"
-			x: 1.0d
-			y: 12.0d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
+			dependencies: ["45DE7575C6D8284E"]
 			icon: "createmetallurgy:casting_basin"
 			id: "0C68C84949B2A986"
 			rewards: [{
@@ -469,8 +469,6 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "gear"
-			size: 2.0d
 			subtitle: "&e慢慢注佢&r~&4慢慢凝佢&r~"
 			tasks: [
 				{
@@ -483,17 +481,25 @@
 					item: "createmetallurgy:casting_table"
 					type: "item"
 				}
+				{
+					id: "2EC4C5B1864C6108"
+					item: {
+						Count: 1
+						id: "itemfilters:tag"
+						tag: {
+							value: "forge:graphite_molds"
+						}
+					}
+					title: "任意模具"
+					type: "item"
+				}
 			]
 			title: "浇铸流体！"
-			x: 4.5d
-			y: 10.5d
+			x: 6.0d
+			y: 0.0d
 		}
 		{
-			dependencies: [
-				"45DE7575C6D8284E"
-				"2D030C52645E7DDD"
-				"16E85851D21CB6A3"
-			]
+			dependencies: ["2D030C52645E7DDD"]
 			icon: "createmetallurgy:foundry_mixer"
 			id: "5A8FA422166974A0"
 			rewards: [{
@@ -517,33 +523,8 @@
 				}
 			]
 			title: "融合流体！"
-			x: 1.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["0C68C84949B2A986"]
-			id: "2DF1F636B2080322"
-			rewards: [{
-				id: "57A0C723673FAAA7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "想要&e浇筑&r至少得&4有个模具吧&r？"
-			tasks: [{
-				id: "59448D4FFAE04EE9"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:graphite_molds"
-					}
-				}
-				title: "任意模具"
-				type: "item"
-			}]
-			title: "浇筑模具"
-			x: 3.5d
-			y: 9.0d
+			x: 22.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -560,8 +541,8 @@
 				type: "checkmark"
 			}]
 			title: "&e什么&r？&4世界浇筑&r？"
-			x: 5.5d
-			y: 9.0d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -586,7 +567,7 @@
 				type: "item"
 			}]
 			x: 9.0d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
 			id: "18946F125B654A46"
@@ -600,7 +581,7 @@
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
 			x: 9.0d
-			y: 8.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -618,7 +599,7 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
@@ -638,7 +619,7 @@
 				type: "item"
 			}]
 			x: 14.5d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -657,7 +638,7 @@
 				value: 1
 			}]
 			x: 14.5d
-			y: 14.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["783AE5D1F35263E1"]
@@ -684,8 +665,8 @@
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: 14.5d
-			y: 8.0d
+			x: 16.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -703,7 +684,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 14.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -721,7 +702,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 15.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -739,7 +720,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 15.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["7B7258CB2FDF4243"]
@@ -757,7 +738,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 17.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -775,7 +756,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 15.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -793,7 +774,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 15.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -811,7 +792,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 14.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["307171D52C77BC74"]
@@ -823,7 +804,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 17.0d
+			y: 6.5d
 		}
 		{
 			id: "1CD1D60A28A20E6A"
@@ -839,12 +820,11 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 6.0d
+			x: 19.5d
+			y: -1.0d
 		}
 		{
-			dependencies: ["10D661738D4296E5"]
-			description: [""]
+			description: ["先试试 &e&l粉碎→震动&r&r 处理吧"]
 			hide_dependency_lines: true
 			id: "1746BAF63124A53E"
 			rewards: [{
@@ -859,13 +839,14 @@
 				item: "createmetallurgy:raw_wolframite"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 6.0d
+			x: 20.5d
+			y: -1.0d
 		}
 		{
 			dependencies: [
 				"1CD1D60A28A20E6A"
 				"1746BAF63124A53E"
+				"1B63ED5F68D71F24"
 			]
 			id: "2D030C52645E7DDD"
 			subtitle: "专用&e熔炼搅拌器"
@@ -874,8 +855,8 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 7.0d
+			x: 20.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -889,12 +870,13 @@
 				type: "checkmark"
 			}]
 			title: "或者你也可以先跳过&4熔融搅拌器"
-			x: 7.0d
-			y: 11.0d
+			x: 7.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["6EB96008F21DAFBF"]
 			description: [""]
+			hide_dependency_lines: true
 			id: "580C77852E71B685"
 			rewards: [{
 				id: "60817BEBA961EA29"
@@ -909,8 +891,8 @@
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 6.5d
-			y: 16.5d
+			x: 11.5d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -927,7 +909,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 15.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["0C0CD2BD5935D4CC"]
@@ -943,7 +925,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 17.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["6EB96008F21DAFBF"]
@@ -965,8 +947,8 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 18.0d
+			x: 28.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
@@ -986,8 +968,8 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 19.5d
+			x: 29.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1006,8 +988,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 21.0d
+			x: 31.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1024,8 +1006,8 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 19.5d
+			x: 29.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1042,10 +1024,14 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 21.0d
+			x: 31.0d
+			y: 1.5d
 		}
 		{
+			dependencies: [
+				"70B8B43D6B542EEC"
+				"5A8FA422166974A0"
+			]
 			id: "6EB96008F21DAFBF"
 			rewards: [{
 				id: "2C30E3F28E8F7CB7"
@@ -1061,8 +1047,8 @@
 				type: "item"
 			}]
 			title: "大炼钢铁！"
-			x: 4.5d
-			y: 16.5d
+			x: 26.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5A16AE172A0C7772"]
@@ -1081,8 +1067,8 @@
 				}
 				type: "item"
 			}]
-			x: 17.5d
-			y: 7.0d
+			x: 16.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["31418813B6B9A004"]
@@ -1101,10 +1087,10 @@
 			]
 			title: "别忘了垫上！"
 			x: 17.5d
-			y: 8.0d
+			y: -2.5d
 		}
 		{
-			dependencies: ["6A2214FC1B93B320"]
+			dependencies: ["5A8FA422166974A0"]
 			icon: "createdieselgenerators:diesel_engine"
 			id: "20B3A29ADFDF1D4A"
 			min_required_tasks: 1
@@ -1123,11 +1109,11 @@
 				type: "item"
 			}]
 			title: "&e燃料&r！&4动力&r！"
-			x: 6.0d
-			y: 14.0d
+			x: 24.0d
+			y: -2.0d
 		}
 		{
-			dependencies: ["6A2214FC1B93B320"]
+			dependencies: ["5A8FA422166974A0"]
 			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
 			rewards: [{
@@ -1145,8 +1131,8 @@
 				type: "item"
 			}]
 			title: "步入&5电力时代&r！"
-			x: 3.0d
-			y: 14.0d
+			x: 24.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1175,32 +1161,8 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 14.5d
-			y: 6.5d
-		}
-		{
-			dependencies: [
-				"0C68C84949B2A986"
-				"6EB96008F21DAFBF"
-			]
-			id: "6A2214FC1B93B320"
-			shape: "square"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "ftbquests:custom_icon"
-					tag: {
-						Icon: "createmetallurgy:item/sturdy_whisk"
-					}
-				}
-				id: "5405A067E0489038"
-				stat: "minecraft:play_time"
-				title: "各种合金！"
-				type: "stat"
-				value: 1
-			}]
-			x: 4.5d
-			y: 12.5d
+			x: 18.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1210,8 +1172,8 @@
 				item: "vintageimprovements:laser_item"
 				type: "item"
 			}]
-			x: 16.0d
-			y: 9.0d
+			x: 18.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["194089B776A6A461"]
@@ -1221,8 +1183,8 @@
 				item: "vintageimprovements:laser"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 9.0d
+			x: 18.5d
+			y: -2.5d
 		}
 		{
 			dependencies: [
@@ -1238,8 +1200,8 @@
 				type: "item"
 			}]
 			title: "生物柴油！"
-			x: -2.5d
-			y: 16.5d
+			x: 2.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -1258,8 +1220,8 @@
 				item: "createdieselgenerators:basin_lid"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 13.5d
+			x: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1270,8 +1232,8 @@
 				item: "createdieselgenerators:ethanol_bucket"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 15.0d
+			x: 2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1282,8 +1244,8 @@
 				item: "createdieselgenerators:plant_oil_bucket"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 15.0d
+			x: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1294,8 +1256,8 @@
 				item: "createdieselgenerators:bulk_fermenter"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 13.5d
+			x: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1306,8 +1268,8 @@
 				item: "functionalstorage:ender_drawer"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 21.0d
+			x: 31.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -1330,11 +1292,10 @@
 				type: "item"
 			}]
 			title: "woc！铁活板门"
-			x: -1.5d
-			y: 12.0d
+			x: 3.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
 			id: "70B8B43D6B542EEC"
 			subtitle: "烈焰蛋糕可在系统商店购买"
 			tasks: [
@@ -1350,8 +1311,8 @@
 				}
 			]
 			title: "超级燃烧"
-			x: 4.5d
-			y: 14.0d
+			x: 26.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -1400,8 +1361,8 @@
 				type: "checkmark"
 			}]
 			title: "&e黄铜熔铸器蓝图&r"
-			x: 7.0d
-			y: 10.0d
+			x: 7.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["01CAAE3178150432"]
@@ -1420,8 +1381,8 @@
 					type: "item"
 				}
 			]
-			x: -5.5d
-			y: 15.0d
+			x: 3.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["601E073214DCC16C"]
@@ -1438,8 +1399,8 @@
 				item: "create_sa:steam_engine"
 				type: "item"
 			}]
-			x: 21.5d
-			y: 10.5d
+			x: 20.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1456,8 +1417,8 @@
 				item: "create_sa:heat_engine"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 10.5d
+			x: 18.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["783AE5D1F35263E1"]
@@ -1474,8 +1435,8 @@
 				item: "create_sa:hydraulic_engine"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 10.5d
+			x: 16.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["601E073214DCC16C"]
@@ -1487,8 +1448,8 @@
 				item: "create_fantasizing:transporter"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 12.5d
+			x: 18.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1508,8 +1469,8 @@
 				item: "fluid:pipette"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 12.5d
+			x: 16.0d
+			y: -6.5d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1522,8 +1483,8 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 18.5d
-			y: 11.5d
+			x: 17.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1535,7 +1496,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 11.25d
+			y: 0.75d
 		}
 		{
 			dependencies: ["1F34610FBFE53749"]
@@ -1547,8 +1508,8 @@
 				item: "fluid:baton"
 				type: "item"
 			}]
-			x: 18.5d
-			y: 13.5d
+			x: 16.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -1566,7 +1527,7 @@
 				type: "checkmark"
 			}]
 			x: 18.0d
-			y: 15.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1EB02B56E6F91CF6"]
@@ -1579,7 +1540,7 @@
 				type: "item"
 			}]
 			x: 20.0d
-			y: 15.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["6A911EDD3374BC98"]
@@ -1602,7 +1563,7 @@
 				type: "item"
 			}]
 			x: 20.0d
-			y: 16.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["4104912EFDD49E14"]
@@ -1627,7 +1588,7 @@
 				}
 			]
 			x: 20.0d
-			y: 18.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["6A911EDD3374BC98"]
@@ -1654,7 +1615,7 @@
 			]
 			title: "智能化系统的大脑"
 			x: 21.5d
-			y: 15.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["6A911EDD3374BC98"]
@@ -1671,7 +1632,7 @@
 			}]
 			title: "叮咚！快递要上门咯"
 			x: 20.0d
-			y: 13.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
@@ -1685,7 +1646,7 @@
 			}]
 			title: "我需要一个管理员"
 			x: 21.5d
-			y: 16.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["34A55F959743EAC4"]
@@ -1705,7 +1666,7 @@
 			]
 			title: "物品分类"
 			x: 21.5d
-			y: 18.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
@@ -1718,7 +1679,7 @@
 				type: "item"
 			}]
 			x: 23.0d
-			y: 13.5d
+			y: 7.0d
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
@@ -1731,7 +1692,7 @@
 				type: "item"
 			}]
 			x: 23.0d
-			y: 16.5d
+			y: 5.5d
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
@@ -1744,7 +1705,7 @@
 				type: "item"
 			}]
 			x: 21.5d
-			y: 13.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
@@ -1761,7 +1722,7 @@
 				type: "item"
 			}]
 			x: 23.0d
-			y: 15.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["0760820BC6C59342"]
@@ -1800,7 +1761,7 @@
 				}
 			]
 			x: 24.5d
-			y: 15.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["58FB0865EB045B8C"]
@@ -1844,7 +1805,7 @@
 			}]
 			title: "树场蓝图"
 			x: 13.0d
-			y: 16.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1857,7 +1818,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 12.75d
+			y: 2.25d
 		}
 	]
 	title: "&9体系渐成 "
