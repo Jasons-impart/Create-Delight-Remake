@@ -1778,7 +1778,10 @@
 		{
 			dependencies: ["0DC2E7BC4657D633"]
 			dependency_requirement: "all_started"
-			description: ["可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"]
+			description: [
+				"可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"
+				"注液效率远超注液器。"
+			]
 			id: "5CBAD075435316D8"
 			subtitle: "流体哗啦啦"
 			tasks: [{
