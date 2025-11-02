@@ -265,6 +265,11 @@ ServerEvents.recipes((event) => {
     }
   }
 
+  // 硅压印板需要单独写复制配方
+  vintageimprovements
+    .curving("ae2:silicon_press", "#forge:storage_blocks/iron")
+    .head("ae2:silicon_press")
+    .id(`createdelight:curving/silicon_press_duplicate`)
   process_processor([
     "#forge:gems/diamond",
     "ae2:printed_engineering_processor",
