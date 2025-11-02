@@ -1,7 +1,7 @@
 const $BigItemStack = Java.loadClass("com.simibubi.create.content.logistics.BigItemStack")
 const $PackageOrderWithCrafts = Java.loadClass("com.simibubi.create.content.logistics.stockTicker.PackageOrderWithCrafts")
 const $MechanicalCraftingRecipe = Java.loadClass("com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe")
-
+const $ItemStackHandler = Java.loadClass("net.minecraftforge.items.ItemStackHandler")
 MBDMachineEvents.onLoad("createdelight:mechanical_craft_encoder", e => {
     let event = e.event
     const { machine } = event
@@ -89,7 +89,6 @@ function handleChanged(machine, level) {
 
 
     if (recipelist.length !== 0) {
-        console.log(input.serializeNBT())
         // 获取recipe的宽度和高度
         let width = recipelist[0].width;
         let height = recipelist[0].height;
@@ -102,7 +101,8 @@ function handleChanged(machine, level) {
         let minWidth = machine.customData.getInt("width") || 3; // 你可以替换成动态输入的宽度
         let gridWidth = Math.max(minWidth, width);  // 如果设定的宽度小于配方的宽度，取配方的宽度
 
-        let list = Utils.newList();
+        let resultItemHandler = new $ItemStackHandler()
+        resultItemHandler.setSize(81)
         // 按照设定的宽度填充craftingIngredients
         for (let i = 0; i < height; i++) {
             for (let j = 0; j < gridWidth; j++) {
@@ -117,7 +117,7 @@ function handleChanged(machine, level) {
                             let inputStack = input.getStackInSlot(k);
                             if (!inputStack.empty && ingredient.test(inputStack)) {
                                 craftingIngredient = inputStack.copyWithCount(1);  // 复制食材
-                                list.push(craftingIngredient)
+                                resultItemHandler.insertItem(craftingIngredient, false)
                                 inputStack.shrink(1);  // 从input中消耗该物品
                                 break;
                             }
@@ -151,9 +151,7 @@ function handleChanged(machine, level) {
         //         }
         //     }
         // });
-
-        // 后续的代码使用list，按需求继续操作
-        let pack = $PackageItem.containing(list);
+        let pack = $PackageItem["containing(net.minecraftforge.items.ItemStackHandler)"](resultItemHandler);
         pack.nbt.put("Fragment", { OrderContext: order.write() });
         ItemTransferHelper.insertItemStacked(output, pack, false);
     }
@@ -179,7 +177,7 @@ MBDMachineEvents.onTick("createdelight:mechanical_craft_encoder", e => {
 })
 
 MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
-    
+
     let event = e.event
     const { machine, root } = event
     /**@type {TextFieldWidget} */
@@ -189,5 +187,5 @@ MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
     text.setTextResponder(str => {
         machine.customData.putInt("width", parseInt(str))
     })
-    
+
 })
