@@ -82,6 +82,7 @@ ServerEvents.recipes(e => {
 
     e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
+        .processingTime(200)
         .id(`ratatouille:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
     })
 
@@ -117,7 +118,9 @@ ServerEvents.recipes(e => {
     ratatouille.baking(
         "trailandtales_delight:dried_cherry_petal",
         "trailandtales_delight:cherry_petal"
-    ).id("youkaishomecoming:baking/dried_cherry_petal")
+    )
+    .processingTime(200)
+    .id("youkaishomecoming:baking/dried_cherry_petal")
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
         .id("youkaishomecoming:pressing/clay_saucer")
 
