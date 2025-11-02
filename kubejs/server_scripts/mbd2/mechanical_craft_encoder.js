@@ -171,11 +171,20 @@ MBDMachineEvents.onTick("createdelight:mechanical_craft_encoder", e => {
     // if (customData.getInt("handle_countdown") > 0) {
     //     customData.putInt("handle_countdown", customData.getInt("handle_countdown") - 1)
     // }
-
-    if (level.time % 30 == 0)
+    
+    if (level.time % 30 == 0 && level.hasNeighborSignal(machine.pos))
         handleChanged(machine, level)
 })
 
+
+MBDMachineEvents.onNeighborChanged("createdelight:mechanical_craft_encoder", e => {
+    
+    let event = e.event
+    const { machine } = event
+    const { level, customData } = machine
+    if (level.hasNeighborSignal(machine.pos))
+        handleChanged(machine, level)
+})
 MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
 
     let event = e.event
