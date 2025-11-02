@@ -118,6 +118,8 @@
   - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
 - Krypton Reforged
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
+- Biomespy
+  - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
 
 # 考虑中的实用模组
 - 卓越火炬
@@ -146,9 +148,6 @@
   - 让拿起物品的怪物也会消失 https://www.mcmod.cn/class/7415.html
 - Nolijium
   - 调整各种效果 https://www.mcmod.cn/class/18050.html
-- **有问题且停更，不加** Async Locator
-  - locate指令异步执行减轻卡顿 https://www.mcmod.cn/class/8544.html
-  - 测试过会导致locate不返回结果
 
 # 考虑中的内容模组
 - 拾光定影
