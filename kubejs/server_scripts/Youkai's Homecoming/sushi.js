@@ -40,7 +40,7 @@ SushiTable.addBulk = function(id, path, ingredient, parts) {
 
 // const {HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT} = $TableItemManager
 // let rolls = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
-// SushiTable.addBulk("cucumber", "ingredient/cucumber", "#oceanic_delight:squid_tentacles", rolls);
+// SushiTable.addBulk("squid_tentacles", "ingredient/squid_tentacles", "#oceanic_delight:squid_tentacles", rolls);
 ServerEvents.recipes(e => {
   const{youkaishomecoming} = e.recipes
   youkaishomecoming.cuisine_mixed(
