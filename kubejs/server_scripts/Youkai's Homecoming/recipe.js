@@ -455,4 +455,12 @@ ServerEvents.recipes(e => {
         ],
         "minecraft:ice"
     ).id("create:crushing/compat/neapolitan/ice")
+    create.compacting(
+        'youkaishomecoming:tamagoyaki',
+        [
+            Fluid.of("createdelight:egg_yolk", 500),
+            FluidIngredients("forge:milk", 250),
+            "minecraft:sugar"
+        ]
+    ).heated().id("youkaishomecoming:compacting/tamagoyaki")
 })

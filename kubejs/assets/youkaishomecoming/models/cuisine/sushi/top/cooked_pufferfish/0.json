@@ -1,0 +1,7 @@
+{
+  "parent": "youkaishomecoming:table/sushi/top_0",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "top": "youkaishomecoming:block/table/sushi/top/cooked_pufferfish"
+  }
+}

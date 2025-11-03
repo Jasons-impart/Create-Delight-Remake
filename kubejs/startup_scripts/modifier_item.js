@@ -241,8 +241,16 @@ ItemEvents.modification(e => {
     food_hungers("createcafe:oreo_crashed", 5, 2.5)
     food_hungers("createcafe:oreo", 12, 18)
     food_hungers("createdelightcore:lush_confiture_jelly_bottle", 4, 3)
+    food_hungers('createdelight:fugu_roll', 10, 10)
+    food_hungers('silentsdelight:sculk_sensor_tendril_roll', 12, 9.8)
+    food_hungers('farmersdelight:kelp_roll', 12, 9.8)
+    food_hungers('silentsdelight:sculk_sensor_tendril_roll_slice', 6, 4.8)
+    food_hungers('farmersdelight:kelp_roll_slice', 6, 4.8)
 
     // 食物效果修改
+    food_effects('silentsdelight:sculk_sensor_tendril_roll', "farmersdelight:nourishment", 30)
+    food_effects('farmersdelight:kelp_roll', "farmersdelight:nourishment", 30)
+    food_effects('createdelight:fugu_roll', "farmersdelight:nourishment", 60)
     food_effects("corn_delight:classic_corn_dog", "minecraft:resistance", 10)
     food_effects("corn_delight:classic_corn_dog", "minecraft:fire_resistance", 10)
     food_effects("vintagedelight:surstromming", "minecraft:nausea", 60, 2)

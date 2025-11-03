@@ -303,5 +303,17 @@
             "neapolitan:vanilla_fudge"
         ],
         "resultItems": "collectorsreap:vanilla_gummy"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:egg_roll"
+        ],
+        "resultItems": "youkaishomecoming:egg_nigiri"
+    },
+    {
+        "matchItems": [
+            "oceanic_delight:fish_egg_roll_slice"
+        ],
+        "resultItems": "youkaishomecoming:tobiko_gunkan"
     }
 ]
