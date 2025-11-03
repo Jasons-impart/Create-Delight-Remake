@@ -135,6 +135,7 @@ ServerEvents.tags("item", e => {
         'createdelight:corn_flour', 
         'bakeries:foamed_cream',
         'createdelight:board_noodles', 
+        'createdelight:wafer_dough',
         'createdelight:vermicelli', 
         'createdelight:raw_cheese_pizza', 
         'bakeries:sweet_dough', 
