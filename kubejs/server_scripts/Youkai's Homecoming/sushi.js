@@ -1,5 +1,5 @@
 const $TableItemManager = Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.item.TableItemManager")
-
+const $FoodModelHelper = Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.food.FoodModelHelper")
 const {SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE, HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT, GUNKAN_TOP, SUSHI_TOP, CAL_COVER, COMPLETE_HOSOMAKI} = $TableItemManager
 // 酱汁
 let sauces = [SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE]
@@ -29,12 +29,18 @@ SushiTable.addBulk = function(id, path, ingredient, parts) {
     SushiTable.addMappingFromIngredient(part, id, ingredient).tex(`youkaishomecoming:block/table/${path}`)
   })
 }
+
+
 // 用例
 // SushiTable.addMappingFromIngredient($TableItemManager.SUSHI_TOP, "sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril") 
 
 // const {HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT} = $TableItemManager
 // let rolls = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
 // SushiTable.addBulk("squid_tentacles", "ingredient/squid_tentacles", "#oceanic_delight:squid_tentacles", rolls);
+
+//$FoodModelHelper用例
+// let model = $FoodModelHelper.hosomaki("sculk_sensor_tendril_roll") //取物品id的path
+// $FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", model)
 ServerEvents.recipes(e => {
   remove_recipes_id(e, [
     "farmersdelight:salmon_roll",
