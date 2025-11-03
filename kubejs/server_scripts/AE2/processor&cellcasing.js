@@ -151,6 +151,12 @@ ServerEvents.recipes((event) => {
     .id("createdelight:curving/printed_silicon_from_universal_press");
   vintageimprovements
     .curving("ae2:printed_silicon", "ae2:silicon")
+    .head("createdelight:ultimate_universal_press")
+    .id("createdelight:curving/printed_silicon_from_ultimate_universal_press");
+  custom_inscribe("ae2:printed_silicon", "createdelight:ultimate_universal_press", "ae2:silicon", null, "inscribe")
+  custom_inscribe("ae2:printed_silicon", "createdelight:universal_press", "ae2:silicon", null, "inscribe")
+  vintageimprovements
+    .curving("ae2:printed_silicon", "ae2:silicon")
     .head("ae2:silicon_press")
     .id("createdelight:curving/printed_silicon");
   vintageimprovements
@@ -161,8 +167,8 @@ ServerEvents.recipes((event) => {
     .curving("createdelight:ultimate_universal_press", "ae2omnicells:singularity_block")
     .head("createdelight:ultimate_universal_press")
     .id("createdelight:curving/ultimate_universal_press_duplicate");
-  custom_inscribe("createdelight:universal_press", "createdelight:universal_press", "#forge:storage_blocks/iron")
-  custom_inscribe("createdelight:ultimate_universal_press", "createdelight:ultimate_universal_press", "ae2omnicells:singularity_block")
+  custom_inscribe("createdelight:universal_press", "createdelight:universal_press", "#forge:storage_blocks/iron", null, "inscribe")
+  custom_inscribe("createdelight:ultimate_universal_press", "createdelight:ultimate_universal_press", "ae2omnicells:singularity_block", null, "inscribe")
 
   // 通用压印模板的配方
   transform_fluid("5x createdelight:universal_press", "minecraft:water", [
@@ -206,13 +212,13 @@ ServerEvents.recipes((event) => {
         .curving(items[1], items[0])
         .head("createdelight:ultimate_universal_press")
         .id(`createdelight:curving/${items[1].split(":")[1]}_from_ultimate_universal_press`)
-      custom_inscribe(items[1], "createdelight:ultimate_universal_press", items[0])
+      custom_inscribe(items[1], "createdelight:ultimate_universal_press", items[0], null, "inscribe")
       if (press_level > 1) {
         vintageimprovements
           .curving(items[1], items[0])
           .head("createdelight:universal_press")
           .id(`createdelight:curving/${items[1].split(":")[1]}_from_universal_press`)
-        custom_inscribe(items[1], "createdelight:universal_press", items[0])
+        custom_inscribe(items[1], "createdelight:universal_press", items[0], null, "inscribe")
       }
     }
     kubejs.shapeless(items[2], [
