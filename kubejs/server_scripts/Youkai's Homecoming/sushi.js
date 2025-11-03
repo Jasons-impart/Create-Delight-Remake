@@ -15,10 +15,10 @@ let SushiTable = {}
 
 /**
  * 
- * @param {Internal.VariantModelPart} part 
+ * @param {Internal.VariantModelPart} part  来自$TableItemManager
  * @param {string} id 
  * @param {Internal.Ingredient_} ingrdient 
- * @returns {Internal.VariantModelPart$Entry} 来自$TableItemManager
+ * @returns {Internal.VariantModelPart$Entry}
  */
 SushiTable.addMappingFromIngredient = function(part, id, ingrdient) {
   return part["addMapping(java.lang.String,java.util.function.Supplier)"](id, () => Ingredient.of(ingrdient))
@@ -28,7 +28,7 @@ SushiTable.addMappingFromIngredient = function(part, id, ingrdient) {
  * @param {string} id 
  * @param {string} path 
  * @param {Internal.Ingredient_} ingredient 
- * @param {VariantModelPart[]} parts 
+ * @param {VariantModelPart[]} parts  来自$TableItemManager
  */
 SushiTable.addBulk = function(id, path, ingredient, parts) {
   parts.forEach(part => {
