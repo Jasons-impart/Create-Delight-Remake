@@ -23,8 +23,24 @@ let SushiTable = {}
 SushiTable.addMappingFromIngredient = function(part, id, ingrdient) {
   return part["addMapping(java.lang.String,java.util.function.Supplier)"](id, () => Ingredient.of(ingrdient))
 }
+/**
+ * 
+ * @param {string} id 
+ * @param {string} path 
+ * @param {Internal.Ingredient_} ingredient 
+ * @param {VariantModelPart[]} parts 
+ */
+SushiTable.addBulk = function(id, path, ingredient, parts) {
+  parts.forEach(part => {
+    SushiTable.addMappingFromIngredient(part, id, ingredient).tex(`youkaishomecoming:block/table/${path}`)
+  })
+}
+// 用例
+// SushiTable.addMappingFromIngredient($TableItemManager.SUSHI_TOP, "sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril") 
 
-// SushiTable.addMappingFromIngredient($TableItemManager.SUSHI_TOP, "sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril") //用例
+// const {HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT} = $TableItemManager
+// let rolls = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
+// SushiTable.addBulk("cucumber", "ingredient/cucumber", "#oceanic_delight:squid_tentacles", rolls);
 ServerEvents.recipes(e => {
   const{youkaishomecoming} = e.recipes
   youkaishomecoming.cuisine_mixed(
