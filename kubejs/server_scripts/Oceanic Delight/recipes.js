@@ -3,27 +3,13 @@ ServerEvents.recipes(e => {
         "oceanic_delight:egg_roll",
         "oceanic_delight:fried_shrimp",
         "tetracelium:shrimp_cutting",
-        "oceanic_delight:shrimp_cutting"
+        "oceanic_delight:shrimp_cutting",
+        "oceanic_delight:fish_egg_roll",
+        "oceanic_delight:fish_egg_roll_slice",
+        "oceanic_delight:shrimp_roll",
+        "oceanic_delight:sea_pickle_roll"
     ])
     e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
-    // 炙烤河豚寿司
-    e.shapeless(
-        "2x createdelight:fugu_roll",
-        [
-            "createdelight:empty_riceball",
-            "2x crabbersdelight:cooked_pufferfish_slice"
-        ]
-    )
-        .id("createdelight:food/fugu_roll")
-    // 河豚寿司
-    e.shapeless(
-        "2x culturaldelights:pufferfish_roll",
-        [
-            "2x crabbersdelight:pufferfish_slice",
-            "createdelight:empty_riceball",
-        ]
-    )
-        .id("culturaldelights:pufferfish_roll")
     // 河豚水饺
     dumpling(e, [
         "crabbersdelight:pufferfish_slice",

@@ -10,6 +10,8 @@ ServerEvents.recipes(e => {
         "collectorsreap:food/pomegranate_smoothie",
         "collectorsreap:gummy/glow_berries",
         "collectorsreap:gummy/sweet_berries",
+        "collectorsreap:food/uni_roll",
+        "collectorsreap:food/clam_roll"
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")

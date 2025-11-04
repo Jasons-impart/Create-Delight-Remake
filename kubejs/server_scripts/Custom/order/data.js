@@ -685,7 +685,6 @@ ServerEvents.tags("minecraft:item", e => {
     )
     e.add("createdelight:order/sushi",
         "createdelight:fugu_roll",
-        "culturaldelights:egg_roll",
         "alexscaves:deep_sea_sushi_roll",
         "culturaldelights:pufferfish_roll",
         "culturaldelights:chicken_roll_slice",
@@ -697,7 +696,6 @@ ServerEvents.tags("minecraft:item", e => {
         "farmersdelight:kelp_roll_slice",
         "oceanic_delight:shrimp_roll",
         "oceanic_delight:sea_pickle_roll_slice",
-        "oceanic_delight:fish_egg_roll_slice",
         "silentsdelight:sculk_sensor_tendril_roll",
         "silentsdelight:sculk_sensor_tendril_roll_slice",
         "collectorsreap:uni_roll",
@@ -709,8 +707,6 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:flesh_roll",
         "oceanic_delight:sea_pickle_roll_slice",
         "oceanic_delight:sea_pickle_roll",
-        "oceanic_delight:fish_egg_roll",
-        "oceanic_delight:fish_egg_roll_slice",
         "youkaishomecoming:shinnko_maki",
         "youkaishomecoming:shinnko_maki_slice",
         "youkaishomecoming:kappa_maki",
@@ -740,7 +736,7 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:midori_roll",
         "culturaldelights:midori_roll_slice",
         "culturaldelights:chicken_roll",
-
+        "createdelight:deep_sea_sushi_roll_slice",
 
 
     )

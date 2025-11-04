@@ -455,4 +455,24 @@ ServerEvents.recipes(e => {
         ],
         "minecraft:ice"
     ).id("create:crushing/compat/neapolitan/ice")
+    create.compacting(
+        'youkaishomecoming:tamagoyaki',
+        [
+            Fluid.of("createdelight:egg_yolk", 500),
+            FluidIngredients("forge:milk", 250),
+            "minecraft:sugar"
+        ]
+    ).heated().id("youkaishomecoming:compacting/tamagoyaki")
+    farmersdelight.cutting(
+        "youkaishomecoming:salmon_futomaki",
+        "#forge:tools/knives",
+        "3x youkaishomecoming:salmon_futomaki_slice"
+    ).id("youkaishomecoming:salmon_futomaki_cutting")
+    farmersdelight.cutting('youkaishomecoming:california_roll', "#forge:tools/knives", "3x youkaishomecoming:california_roll_slice").id("youkaishomecoming:california_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:volcano_roll', "#forge:tools/knives", "3x youkaishomecoming:volcano_roll_slice").id("youkaishomecoming:volcano_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:roe_california_roll', "#forge:tools/knives", "3x youkaishomecoming:roe_california_roll_slice").id("youkaishomecoming:roe_california_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:salmon_lover_roll', "#forge:tools/knives", "3x youkaishomecoming:salmon_lover_roll_slice").id("youkaishomecoming:salmon_lover_roll_cutting")
+    farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("youkaishomecoming:rainbow_roll_cutting")
+    farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("youkaishomecoming:egg_futomaki_cutting")
+    farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("youkaishomecoming:rainbow_futomaki_cutting")
 })

@@ -1,0 +1,62 @@
+{
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"3": "youkaishomecoming:block/table/rice",
+		"4": "youkaishomecoming:block/table/kelp",
+		"particle": "youkaishomecoming:block/table/kelp"
+	},
+	"elements": [
+		{
+			"name": "ta_nori",
+			"from": [2.5, 9.01, 4.5],
+			"to": [13.5, 9.01, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [7, 8, 7]},
+			"faces": {
+				"north": {"uv": [0, 0, 0, 0], "texture": "#4"},
+				"east": {"uv": [0, 0, 0, 0], "texture": "#4"},
+				"south": {"uv": [0, 0, 0, 0], "texture": "#4"},
+				"west": {"uv": [0, 0, 0, 0], "texture": "#4"},
+				"up": {"uv": [2, 3, 13, 10], "texture": "#4"},
+				"down": {"uv": [0, 0, 0, 0], "texture": "#4"}
+			}
+		},
+		{
+			"name": "ta_sushi_rice",
+			"from": [2.5, 8, 4],
+			"to": [13.5, 9, 12],
+			"rotation": {"angle": 0, "axis": "y", "origin": [2.5, 8, 4]},
+			"faces": {
+				"north": {"uv": [2, 11, 13, 12], "texture": "#3"},
+				"east": {"uv": [5, 12, 13, 13], "texture": "#3"},
+				"south": {"uv": [2, 11, 13, 12], "texture": "#3"},
+				"west": {"uv": [5, 12, 13, 13], "texture": "#3"},
+				"up": {"uv": [2, 3, 13, 11], "texture": "#3"},
+				"down": {"uv": [2, 3, 13, 11], "texture": "#3"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, -135, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [30, -135, 0]
+		}
+	}
+}

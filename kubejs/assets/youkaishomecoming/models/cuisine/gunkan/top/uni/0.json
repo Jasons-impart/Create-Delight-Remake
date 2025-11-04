@@ -1,0 +1,7 @@
+{
+  "parent": "youkaishomecoming:table/gunkan/top_0",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "top": "youkaishomecoming:block/table/gunkan/top/uni"
+  }
+}
