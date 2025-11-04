@@ -257,6 +257,7 @@ ItemEvents.modification(e => {
     food_hungers('youkaishomecoming:rainbow_roll_slice', 10, 13)
 
     // 食物效果修改
+    food_effects('culturaldelights:pufferfish_roll', "minecraft:poison", 10)
     food_effects('culturaldelights:chicken_roll', "farmersdelight:nourishment", 30)
     food_effects('culturaldelights:midori_roll', "farmersdelight:nourishment", 30)
     food_effects('oceanic_delight:sea_pickle_roll', "farmersdelight:nourishment", 30)

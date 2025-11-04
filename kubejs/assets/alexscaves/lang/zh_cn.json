@@ -6,5 +6,6 @@
   "effect.alexscaves.bubbled.description": "用泡泡将玩家包裹起来，造成窒息",
   "effect.alexscaves.deepsight.description": "能够在深渊水域看的更远",
   "effect.alexscaves.darkness_incarnate.description": "获得在黑暗区域飞行的能力",
-  "effect.alexscaves.sugar_rush.description": "减慢时间，提升速度，减慢时间流动"
+  "effect.alexscaves.sugar_rush.description": "减慢时间，提升速度，减慢时间流动",
+  "item.alexscaves.deep_sea_sushi_roll": "深海太卷"
 }

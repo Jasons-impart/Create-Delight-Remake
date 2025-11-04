@@ -80,17 +80,25 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.potato_stew_beef")
     // 河豚寿司
     e.create("createdelight:fugu_roll")
-        .translationKey("item.createdelight.fugu_roll")
         .food(food => {
             food.hunger(7)
                 .saturation(1)
         })
+        .translationKey("item.createdelight.fugu_roll")
+    e.create("createdelight:radgill_sushi")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .effect("alexscaves:irradiated", 1200, 2, 1.0)
+                .effect("minecraft:saturation", 1200, 0, 1.0)
+        })
+        .translationKey("item.createdelight.radgill_sushi")
     // 深海寿司卷切片
     e.create("createdelight:deep_sea_sushi_roll_slice")
         .food(food => {
             food.hunger(7)
                 .saturation(1)
-                .effect("alexscaves:deepsight", 60, 0, 1.0)
+                .effect("alexscaves:deepsight", 1200, 0, 1.0)
         })
         .translationKey("item.createdelight.deep_sea_sushi_roll_slice")
     // 注册挂面
