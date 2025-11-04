@@ -134,6 +134,14 @@ ServerEvents.recipes(e => {
   ).id("youkaishomecoming:trilocaris_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "trilocaris", 'cavedelight:raw_trilocaris_slice')
   youkaishomecoming.cuisine_ordered(
+    "2x createdelight:radgill_sushi",
+    "youkaishomecoming:sushi",
+    [
+      "alexscaves:radgill"
+    ]
+  ).id("createdelight:radgill_sushi")
+  SushiTable.addMappingFromIngredient(SUSHI_TOP, "radgill", "alexscaves:radgill")
+  youkaishomecoming.cuisine_ordered(
     'farmersdelight:kelp_roll',
     "youkaishomecoming:hosomaki",
     [

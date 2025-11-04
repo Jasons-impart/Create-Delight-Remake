@@ -685,6 +685,7 @@ ServerEvents.tags("minecraft:item", e => {
     )
     e.add("createdelight:order/sushi",
         "createdelight:fugu_roll",
+        "createdelight:radgill_sushi",
         "alexscaves:deep_sea_sushi_roll",
         "culturaldelights:pufferfish_roll",
         "culturaldelights:chicken_roll_slice",

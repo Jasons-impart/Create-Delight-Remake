@@ -57,6 +57,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:mayo_corn_dog',
     'createdelight:salami',
     'createdelight:fugu_roll',
+    "createdelight:radgill_sushi",
     'createdelight:empty_riceball',
     'createdelight:yorkshire_pudding_and_beef',
     'createdelight:boiling_water_cabbage',

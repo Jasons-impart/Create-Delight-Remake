@@ -126,6 +126,7 @@ ServerEvents.recipes(e => {
     sushi("#forge:raw_fishes/tuna", "2x youkaishomecoming:tuna_nigiri")
     sushi("youkaishomecoming:otoro", "2x youkaishomecoming:otoro_nigiri")
     sushi("#forge:tropical", "2x culturaldelights:tropical_roll")
+    sushi("alexscaves:radgill", "2x createdelight:radgill_sushi")
 
     gunkan("collectorsreap:uni", "2x collectorsreap:uni_roll")
     gunkan("#forge:roe", "2x youkaishomecoming:tobiko_gunkan")

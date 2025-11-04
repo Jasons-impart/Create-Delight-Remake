@@ -284,5 +284,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         "createdelight:incomplete_hosomaki",
         "createdelight:incomplete_futomaki",
         "createdelight:incomplete_california",
+        "createdelight:radgill_sushi",
     ])
 });  
