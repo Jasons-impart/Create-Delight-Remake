@@ -134,12 +134,89 @@ ServerEvents.recipes(e => {
   ).id("youkaishomecoming:trilocaris_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "trilocaris", 'cavedelight:raw_trilocaris_slice')
   youkaishomecoming.cuisine_ordered(
+    'farmersdelight:kelp_roll',
+    "youkaishomecoming:hosomaki",
+    [
+      'youkaishomecoming:soy_sauce_bottle',
+      "minecraft:carrot"
+    ]
+  ).id("youkaishomecoming:kelp_roll")
+  youkaishomecoming.cuisine_ordered(
     'silentsdelight:sculk_sensor_tendril_roll',
     "youkaishomecoming:hosomaki",
     [
-      "silentsdelight:sculk_sensor_tendril",
+      'youkaishomecoming:soy_sauce_bottle',
+      "silentsdelight:sculk_sensor_tendril"
     ]
   ).id("youkaishomecoming:sculk_sensor_tendril_roll")
-  SushiTable.addMappingFromIngredient(HOSOMAKI_INGREDIENT, "tendril", "silentsdelight:sculk_sensor_tendril")
-  // SushiTable.addMappingFromIngredient(COMPLETE_HOSOMAKI, "sculk_sensor_tendril_roll", "silentsdelight:sculk_sensor_tendril_roll")
+  SushiTable.addBulk("tendril", "ingredient/tendril", "silentsdelight:sculk_sensor_tendril", rools)
+  $FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", $FoodModelHelper.hosomaki("sculk_sensor_tendril_roll"))
+  youkaishomecoming.cuisine_mixed(
+    'oceanic_delight:sea_pickle_roll',
+    "youkaishomecoming:futomaki",
+    'youkaishomecoming:soy_sauce_bottle',
+    [
+      '#oceanic_delight:squid_tentacles',
+      '#oceanic_delight:squid_tentacles',
+      "#forge:sea_pickles",
+      "#forge:sea_pickles"
+    ]
+  ).id("youkaishomecoming:sea_pickle_roll")
+  SushiTable.addBulk("sea_pickle", "ingredient/sea_pickle", "#forge:sea_pickles", rools)
+  SushiTable.addBulk("squid", "ingredient/squid", "#oceanic_delight:squid_tentacles", rools)
+  $FoodModelHelper.map("oceanic_delight:sea_pickle_roll", $FoodModelHelper.futomaki("sea_pickle_roll"))
+  youkaishomecoming.cuisine_mixed(
+    'culturaldelights:midori_roll',
+    "youkaishomecoming:futomaki",
+    'youkaishomecoming:soy_sauce_bottle',
+    [
+      'youkaishomecoming:cucumber_slice',
+      'youkaishomecoming:cucumber_slice',
+      'culturaldelights:cut_avocado',
+      'culturaldelights:cut_avocado'
+    ]
+  ).id("youkaishomecoming:midori_roll")
+  SushiTable.addBulk("avocado", "ingredient/avocado", "culturaldelights:cut_avocado", rools)
+  $FoodModelHelper.map("culturaldelights:midori_roll", $FoodModelHelper.futomaki("midori_roll"))
+  youkaishomecoming.cuisine_mixed(
+    'culturaldelights:chicken_roll',
+    "youkaishomecoming:futomaki",
+    'youkaishomecoming:soy_sauce_bottle',
+    [
+      [
+        "minecraft:carrot",
+        "minecraft:beetroot"
+      ],
+      [
+        "minecraft:carrot",
+        "minecraft:beetroot"
+      ],      
+      '#forge:cooked_chicken',
+      '#forge:cooked_chicken',
+    ]
+  ).id("youkaishomecoming:chicken_roll")
+  SushiTable.addBulk("chicken", "ingredient/chicken", '#forge:cooked_chicken', rools)
+  $FoodModelHelper.map("culturaldelights:chicken_roll", $FoodModelHelper.futomaki("chicken_roll"))
+  youkaishomecoming.cuisine_mixed(
+    'alexscaves:deep_sea_sushi_roll',
+    "youkaishomecoming:futomaki",
+    'youkaishomecoming:soy_sauce_bottle',
+    [
+      'alexscaves:tripodfish',
+      'alexscaves:sea_pig',
+      'alexscaves:lanternfish',
+      'youkaishomecoming:cucumber_slice',
+    ]
+  ).id("youkaishomecoming:deep_sea_sushi_roll")
+  SushiTable.addBulk("tripodfish", "ingredient/tripodfish", 'alexscaves:tripodfish', rools)
+  SushiTable.addBulk("sea_pig", "ingredient/sea_pig", 'alexscaves:sea_pig', rools)
+  SushiTable.addBulk("lanternfish", "ingredient/lanternfish", 'alexscaves:lanternfish', rools)
+  $FoodModelHelper.map("alexscaves:deep_sea_sushi_roll", $FoodModelHelper.futomaki("deep_sea_roll"))
+  youkaishomecoming.cuisine_ordered(
+    "youkaishomecoming:roe_california_roll",
+    "youkaishomecoming:california_roll",
+    [
+      "#forge:roe"
+    ]
+  ).id("youkaishomecoming:roe_california_roll")
 })

@@ -12,7 +12,9 @@ ServerEvents.recipes(e => {
         "culturaldelights:egg_roll",
         "culturaldelights:pufferfish_roll",
         "culturaldelights:tropical_roll",
-        "culturaldelights:calamari_roll"
+        "culturaldelights:calamari_roll",
+        "culturaldelights:midori_roll",
+        "culturaldelights:chicken_roll"
     ])
     e.replaceInput({id: "culturaldelights:cooking/eggplant_parmesan"}, "#forge:milk", "#forge:cheese")
     e.recipes.kubejs.shapeless(

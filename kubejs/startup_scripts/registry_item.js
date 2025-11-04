@@ -85,6 +85,14 @@ StartupEvents.registry("item", e => {
             food.hunger(7)
                 .saturation(1)
         })
+    // 深海寿司卷切片
+    e.create("createdelight:deep_sea_sushi_roll_slice")
+        .food(food => {
+            food.hunger(7)
+                .saturation(1)
+                .effect("alexscaves:deepsight", 60, 0, 1.0)
+        })
+        .translationKey("item.createdelight.deep_sea_sushi_roll_slice")
     // 注册挂面
     e.create("createdelight:vermicelli")
         .translationKey("item.createdelight.vermicelli")
@@ -399,8 +407,19 @@ StartupEvents.registry("item", e => {
         .tag("create:blaze_burner_fuel/special")
         .translationKey("item.createdelight.fuel_hotcream")
     //未完成的寿司
-    e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
-        .translationKey("item.createdelight.sushi_unrolledroll")
+    // e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
+    //     .translationKey("item.createdelight.sushi_unrolledroll")
+    e.create("createdelight:incomplete_gunkan", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_gunkan")
+    e.create("createdelight:incomplete_nigiri", "create:sequenced_assembly")
+        .texture("createdelight:item/empty_riceball")
+        .translationKey("item.createdelight.incomplete_nigiri")
+    e.create("createdelight:incomplete_hosomaki", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_hosomaki")
+    e.create("createdelight:incomplete_futomaki", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_futomaki")
+    e.create("createdelight:incomplete_california", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_california")
 
     // 未完成相关
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")

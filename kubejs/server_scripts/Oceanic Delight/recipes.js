@@ -6,7 +6,8 @@ ServerEvents.recipes(e => {
         "oceanic_delight:shrimp_cutting",
         "oceanic_delight:fish_egg_roll",
         "oceanic_delight:fish_egg_roll_slice",
-        "oceanic_delight:shrimp_roll"
+        "oceanic_delight:shrimp_roll",
+        "oceanic_delight:sea_pickle_roll"
     ])
     e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
     // 河豚水饺

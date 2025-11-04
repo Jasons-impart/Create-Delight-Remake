@@ -279,5 +279,10 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:raw_potato_pancake',
         'createdelight:order_deliverer_item',
         "createdelight:guncotton",
+        "createdelight:incomplete_gunkan",
+        "createdelight:incomplete_nigiri",
+        "createdelight:incomplete_hosomaki",
+        "createdelight:incomplete_futomaki",
+        "createdelight:incomplete_california",
     ])
 });  

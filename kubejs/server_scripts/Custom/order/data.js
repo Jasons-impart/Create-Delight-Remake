@@ -736,7 +736,7 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:midori_roll",
         "culturaldelights:midori_roll_slice",
         "culturaldelights:chicken_roll",
-
+        "createdelight:deep_sea_sushi_roll_slice",
 
 
     )
