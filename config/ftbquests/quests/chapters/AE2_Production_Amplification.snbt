@@ -797,7 +797,7 @@
 				type: "item"
 			}]
 			title: "样板供应器"
-			x: 3.0d
+			x: 2.5d
 			y: 10.0d
 		}
 		{
@@ -817,7 +817,7 @@
 				item: "ae2:blank_pattern"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 3.5d
 			y: 10.0d
 		}
 		{
@@ -964,7 +964,7 @@
 				type: "item"
 			}]
 			title: "CPU"
-			x: 2.0d
+			x: 1.5d
 			y: 10.0d
 		}
 		{
@@ -981,7 +981,7 @@
 				title: "与ME接口的特殊行为"
 				type: "checkmark"
 			}]
-			x: 3.0d
+			x: 2.5d
 			y: 8.0d
 		}
 		{
@@ -1031,6 +1031,22 @@
 			title: "使用元件外壳封头冲压"
 			x: 3.0d
 			y: 4.5d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"其&e内部&r可放入一个&e写好的样板&r，此时其会&e根据输入的物品进行自动合成&r。"
+				"当然分子装配室的主要用途是&e与样板供应器搭配&r，进行一系列合成的自动化。只要在分子装配室贴着&e样板供应器&r且样板供应器内有&e合成样板&r，在合成对应物品时样板供应器便会将物品&e自动发送到分子装配室&r中。分子装配室随后会将物品&e送回所贴样板供应器&r。"
+			]
+			id: "1499DD7E2925CBAA"
+			subtitle: "自动化工作台/动力锯/锻造台配方"
+			tasks: [{
+				id: "340DE43666B60F94"
+				item: "ae2:molecular_assembler"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 10.0d
 		}
 	]
 	subtitle: ["AE2的机械动力合成"]
