@@ -37,9 +37,5 @@ ServerEvents.recipes(e => {
         'createdeco:industrial_iron_ingot',
         "minecraft:iron_ingot"
     ).heated().id("createdeco:compacting/industrial_iron_ingot")
-    minecraft.stonecutting(
-        "2x create:industrial_iron_block",
-        "createdeco:industrial_iron_ingot"
-    ).id("create:industrial_iron_block_from_ingots_iron_stonecutting")
 })
 
