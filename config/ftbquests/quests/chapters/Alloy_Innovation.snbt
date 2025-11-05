@@ -19,7 +19,7 @@
 			linked_quest: "0B2B86FAF7742C2F"
 			shape: "hexagon"
 			size: 2.0d
-			x: 18.0d
+			x: 18.5d
 			y: -7.0d
 		}
 		{
@@ -27,7 +27,7 @@
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"
 			size: 2.0d
-			x: 21.5d
+			x: 22.0d
 			y: -6.0d
 		}
 		{
@@ -35,7 +35,7 @@
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			x: 21.5d
+			x: 22.0d
 			y: -3.0d
 		}
 		{
@@ -43,7 +43,7 @@
 			linked_quest: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
-			x: 23.0d
+			x: 23.5d
 			y: -4.5d
 		}
 		{
@@ -51,7 +51,7 @@
 			linked_quest: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
-			x: 26.5d
+			x: 28.5d
 			y: 2.0d
 		}
 	]
@@ -163,8 +163,8 @@
 				}
 				type: "item"
 			}]
-			x: 17.5d
-			y: 1.5d
+			x: 16.5d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -523,7 +523,7 @@
 				}
 			]
 			title: "融合流体！"
-			x: 22.5d
+			x: 24.5d
 			y: 0.0d
 		}
 		{
@@ -820,7 +820,7 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: 19.5d
+			x: 21.5d
 			y: -1.0d
 		}
 		{
@@ -839,7 +839,7 @@
 				item: "createmetallurgy:raw_wolframite"
 				type: "item"
 			}]
-			x: 20.5d
+			x: 22.5d
 			y: -1.0d
 		}
 		{
@@ -855,7 +855,7 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: 20.0d
+			x: 22.0d
 			y: 0.0d
 		}
 		{
@@ -947,7 +947,7 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 28.0d
+			x: 30.0d
 			y: 0.0d
 		}
 		{
@@ -968,7 +968,7 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 29.5d
+			x: 31.5d
 			y: 0.0d
 		}
 		{
@@ -988,7 +988,7 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 31.0d
+			x: 33.0d
 			y: -1.5d
 		}
 		{
@@ -1006,7 +1006,7 @@
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 29.5d
+			x: 31.5d
 			y: 1.5d
 		}
 		{
@@ -1024,7 +1024,7 @@
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 31.0d
+			x: 33.0d
 			y: 1.5d
 		}
 		{
@@ -1047,7 +1047,7 @@
 				type: "item"
 			}]
 			title: "大炼钢铁！"
-			x: 26.5d
+			x: 28.5d
 			y: 0.0d
 		}
 		{
@@ -1109,7 +1109,7 @@
 				type: "item"
 			}]
 			title: "&e燃料&r！&4动力&r！"
-			x: 24.0d
+			x: 26.0d
 			y: -2.0d
 		}
 		{
@@ -1131,7 +1131,7 @@
 				type: "item"
 			}]
 			title: "步入&5电力时代&r！"
-			x: 24.0d
+			x: 26.0d
 			y: 2.0d
 		}
 		{
@@ -1161,7 +1161,7 @@
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 18.5d
+			x: 20.0d
 			y: 0.0d
 		}
 		{
@@ -1268,7 +1268,7 @@
 				item: "functionalstorage:ender_drawer"
 				type: "item"
 			}]
-			x: 31.0d
+			x: 33.0d
 			y: 0.0d
 		}
 		{
@@ -1311,7 +1311,7 @@
 				}
 			]
 			title: "超级燃烧"
-			x: 26.5d
+			x: 28.5d
 			y: -1.5d
 		}
 		{
@@ -1399,7 +1399,7 @@
 				item: "create_sa:steam_engine"
 				type: "item"
 			}]
-			x: 20.0d
+			x: 20.5d
 			y: -4.5d
 		}
 		{
@@ -1417,7 +1417,7 @@
 				item: "create_sa:heat_engine"
 				type: "item"
 			}]
-			x: 18.0d
+			x: 18.5d
 			y: -4.5d
 		}
 		{
@@ -1435,7 +1435,7 @@
 				item: "create_sa:hydraulic_engine"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 16.5d
 			y: -4.5d
 		}
 		{
@@ -1448,7 +1448,7 @@
 				item: "create_fantasizing:transporter"
 				type: "item"
 			}]
-			x: 18.0d
+			x: 18.5d
 			y: -3.5d
 		}
 		{
@@ -1469,7 +1469,7 @@
 				item: "fluid:pipette"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 16.5d
 			y: -6.5d
 		}
 		{
@@ -1483,7 +1483,7 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 17.0d
+			x: 17.5d
 			y: -5.5d
 		}
 		{
@@ -1508,7 +1508,7 @@
 				item: "fluid:baton"
 				type: "item"
 			}]
-			x: 16.0d
+			x: 16.5d
 			y: -8.0d
 		}
 		{
@@ -1526,7 +1526,7 @@
 				title: "6.0新物流"
 				type: "checkmark"
 			}]
-			x: 18.0d
+			x: 18.5d
 			y: 4.0d
 		}
 		{
@@ -1614,7 +1614,7 @@
 				}
 			]
 			title: "智能化系统的大脑"
-			x: 21.5d
+			x: 22.0d
 			y: 4.0d
 		}
 		{
@@ -1645,7 +1645,7 @@
 				type: "item"
 			}]
 			title: "我需要一个管理员"
-			x: 21.5d
+			x: 22.0d
 			y: 5.5d
 		}
 		{
@@ -1665,7 +1665,7 @@
 				}
 			]
 			title: "物品分类"
-			x: 21.5d
+			x: 22.0d
 			y: 7.0d
 		}
 		{
@@ -1678,7 +1678,7 @@
 				item: "create:redstone_requester"
 				type: "item"
 			}]
-			x: 23.0d
+			x: 24.0d
 			y: 7.0d
 		}
 		{
@@ -1691,7 +1691,7 @@
 				item: "create:repackager"
 				type: "item"
 			}]
-			x: 23.0d
+			x: 24.0d
 			y: 5.5d
 		}
 		{
@@ -1704,7 +1704,7 @@
 				item: "createstockbridge:ae_bridge"
 				type: "item"
 			}]
-			x: 21.5d
+			x: 22.0d
 			y: 2.5d
 		}
 		{
@@ -1721,7 +1721,7 @@
 				item: "create:factory_gauge"
 				type: "item"
 			}]
-			x: 23.0d
+			x: 24.0d
 			y: 4.0d
 		}
 		{
@@ -1760,7 +1760,7 @@
 					type: "item"
 				}
 			]
-			x: 24.5d
+			x: 25.5d
 			y: 4.0d
 		}
 		{
@@ -1819,6 +1819,21 @@
 			}]
 			x: 13.0d
 			y: 2.25d
+		}
+		{
+			dependencies: [
+				"3EB042CCCB8D54FA"
+				"1499DD7E2925CBAA"
+			]
+			id: "57CA7AEC66490057"
+			subtitle: "更轻松的动力合成自动化！"
+			tasks: [{
+				id: "2B144BFEE5BEF708"
+				item: "createdelight:mechanical_craft_encoder"
+				type: "item"
+			}]
+			x: 18.5d
+			y: 1.0d
 		}
 	]
 	title: "&9体系渐成 "
