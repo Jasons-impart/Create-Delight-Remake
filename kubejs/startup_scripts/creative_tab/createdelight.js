@@ -56,6 +56,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:ketchup_corn_dog',
     'createdelight:mayo_corn_dog',
     'createdelight:salami',
+    'createdelight:deep_sea_sushi_roll_slice',
     'createdelight:fugu_roll',
     "createdelight:radgill_sushi",
     'createdelight:empty_riceball',
