@@ -100,7 +100,7 @@ jobs:
           fetch-depth: 1 # 只取最新提交，加速
       - name: 安装 Packwiz 打包软件
         run: |
-          curl -o packwiz.exe -L $PACKWIZ_DOWNLOAD_URL
+          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
           chmod +x ./packwiz
       - name: 重命名HMCL配置和options
         run: |
@@ -285,7 +285,7 @@ jobs:
           fetch-tags: true
       - name: 安装 Packwiz 打包软件
         run: |
-          curl -o packwiz.exe -L $PACKWIZ_DOWNLOAD_URL
+          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
           chmod +x ./packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
