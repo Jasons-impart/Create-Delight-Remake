@@ -20,7 +20,11 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/hammer",
     "createdieselgenerators:crafting/huge_diesel_engine",
     "createdieselgenerators:crafting/large_diesel_engine",
-    "createdieselgenerators:crushing/wood_chip_logs"
+    "createdieselgenerators:crushing/wood_chip_logs",
+    "createdieselgenerators:mechanical_crafting/chemcial_sprayer",
+    "createdieselgenerators:deploying/chemical_sprayer_lighter",
+    "createdieselgenerators:crafting/chemical_turret",
+    "createdieselgenerators:crafting/chemical_turret_lighter",
   ]);
   create.crushing(["31x createdieselgenerators:wood_chip",
       Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
