@@ -17,3 +17,14 @@ NetworkEvents.dataReceived("openholo", e => {
     Client.setScreen(gui)
     gui.onShow()
 })
+
+// 发送玩家是否按下了Alt键，用于 批量套壳 server_scripts/Custom/encase.js
+let playerAltDown = false
+let playerAltDown1 = false
+PlayerEvents.tick(event => {
+    playerAltDown = Client.isAltDown()
+    if (playerAltDown1 != playerAltDown) {
+        event.player.sendData("isPlayerAltDown", { "Alt": playerAltDown })
+        playerAltDown1 = playerAltDown
+    }
+})
