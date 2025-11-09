@@ -28,34 +28,18 @@ function GetPlayerDifficulty(player) {
     return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
 }
 
-FTBQuestsEvents.completed(e => {
-    const { object, data, server } = e
-    if (object instanceof $Quest) {
-        /**@type {Internal.Quest} */
-        let quest = object
-        if (quest.getRewards().find(reward => reward.tags.find(s => {
-            let res = s.split("_")[0]
-            return res == "rank" || res == "unrank"
-        }) != null) != null) {
-            server.scheduleInTicks(1, () => {
-                data.changeProgress(quest, pc => pc.setReset(true))
-            })
-        }
-    }
-    // if ()
-    // data.changeProgress(object.id, progressChange => {
-    //     progressChange.reset()
-    // })
-})
-
 FTBQuestsEvents.customReward(e => {
-    const { player, reward } = e
+    const { player, reward, server } = e
     reward.tags.forEach(s => {
-        if (s.split("_")[0] == "rank") {
-            UpdateRank(player, s.split("_")[1])
+        let strings = s.split("_")
+        let start = strings[0]
+        let mid = strings[1]
+        let end = strings[strings.length - 1]
+        if (start == "rank") {
+            UpdateRank(player, end)
         }
-        else if (s.split("_")[0] == "unrank") {
-            UpdateRank(player, -s.split("_")[1])
+        else if (start == "unrank") {
+            UpdateRank(player, -end)
         }
         else if (s == "change_rank_change_state") {
             let disableRankChange = player.persistentData.getBoolean("disableRankChange")
@@ -68,5 +52,10 @@ FTBQuestsEvents.customReward(e => {
             else
                 player.tell("已开启难度变化！")
         }
+        if (mid != "unrepeatable") {
+            // Client.tell(`${player.uuid}, ${reward.quest}`)
+            server.runCommand(`/execute as ${player.uuid} run ftbquests change_progress @s reset ${reward.quest}`)
+        }
     })
+    
 })
