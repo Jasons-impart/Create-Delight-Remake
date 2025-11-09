@@ -2280,6 +2280,40 @@
 			x: -2.5d
 			y: -4.5d
 		}
+		{
+			description: [
+				"由此，介绍本包一个比较重量级的系统——&e订单系统&r。"
+				"首先，你要制作一个&e订单交付器&r，并将其放置在&e白色桌布&r上。然后，沿着本方块的&e东南西北四个方向放置桌布（最多可延申8格）&r，如下图所示。"
+				""
+				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
+				"{@pagebreak}"
+				"如何执行一个订单："
+				"首先将一个未开封的订单打开（未开封的订单目前从拍卖行获取）。放置一个&e开封后的订单&r在一个桌布上。此时其&e所在以及后方任意格桌布&r都可以&e放置任意数量&r的包裹。其会将其本体以及后方的所有桌布上的&e包裹的内容作为订单交付的物品&r，直到遇上&e另一个含有订单&r的桌布。"
+				"如果没有看懂的话，可以看下面的图："
+				""
+				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
+				""
+				"上图列举了几种&e划分订单所用包裹&r的行为。"
+				"{@pagebreak}"
+				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
+			]
+			id: "39D4A49A986967B6"
+			rewards: [{
+				id: "5178A2824F345FCC"
+				item: "createdelight:unopened_order"
+				type: "item"
+			}]
+			shape: "gear"
+			size: 3.0d
+			subtitle: "可以批发食物了！"
+			tasks: [{
+				id: "04169D558BAE9E68"
+				item: "createdelight:order_deliverer_item"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 9.0d
+		}
 	]
 	title: "&e精加工！"
 }
