@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "minecraft:nether_star"]),
         create.deploying(incomplete, [incomplete, "iceandfire:witherbone"]),
-        create.deploying(incomplete, [incomplete, "art_of_forging:sigil_of_eden"]),
+        create.deploying(incomplete, [incomplete, "art_of_forging:sigil_of_eden"]).keepHeldItem(),
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/piercing_withering_trial")
