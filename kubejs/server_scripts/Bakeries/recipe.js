@@ -80,7 +80,7 @@ ServerEvents.recipes(e => {
     // 模具
     vintageimprovements.curving(
         'bakeries:mould',
-        'vintageimprovements:cast_iron_sheet'
+        'createdeco:industrial_iron_sheet'
     ).mode(4).id("bakeries:mould")
     // 粗盐块
     kubejs.shapeless(

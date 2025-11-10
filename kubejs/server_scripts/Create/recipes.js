@@ -11,7 +11,6 @@ ServerEvents.recipes(e => {
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot",
         "create:filling/compat/neapolitan/milk_bottle",
-        "create:industrial_iron_block_from_ingots_iron_stonecutting",
     ])
     remove_recipes_output(e, [
         "create:pulp"
@@ -277,9 +276,14 @@ ServerEvents.recipes(e => {
         "ABA",
         " A "
     ], {
-        A: "#forge:plates/cast_iron",
+        A: "createdeco:industrial_iron_sheet",
         B: "minecraft:netherrack"
     }).id("create:empty_blaze_burner_from_cast_iron")
+    
+    e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
+        .id("create:industrial_iron_block_from_steel_ingot")
+    e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
+        .id("create:weathered_iron_block_from_steel_ingot")
     // 甜甜圈
     e.recipes.create.filling(
         "create:sweet_roll",
