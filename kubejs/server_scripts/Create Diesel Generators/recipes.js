@@ -32,7 +32,7 @@ ServerEvents.recipes(e => {
   "#minecraft:logs")
   .id("createdieselgenerators:crushing/wood_chip_logs/with_bark")
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
-  e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/cast_iron")
+  e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
   e.replaceInput({ id: "createdieselgenerators:basin_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ id: "createdieselgenerators:bulk_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ mod: "createdieselgenerators" }, "create:propeller", "ad_astra:fan")

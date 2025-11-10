@@ -7,7 +7,6 @@ ServerEvents.tags("item", e => {
         "vintageimprovements:bronze_spring",
         "vintageimprovements:andesite_spring",
         "vintageimprovements:zinc_spring",
-        "vintageimprovements:cast_iron_spring",
         "vintageimprovements:copper_spring",
         "vintageimprovements:vanadium_spring",
         "vintageimprovements:silver_spring"

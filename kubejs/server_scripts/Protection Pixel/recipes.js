@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
         "protection_pixel:nightdemonloot",
         "protection_pixel:chestplatelingingloot",
     ])
-    e.replaceInput({output: "protection_pixel:steelcorecannonshell"}, "create:andesite_alloy", "#forge:ingots/cast_iron")
+    e.replaceInput({output: "protection_pixel:steelcorecannonshell"}, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
     e.recipes.create.cutting(
         '2x protection_pixel:smallnetheritesheet',
         "#forge:plates/netherite"

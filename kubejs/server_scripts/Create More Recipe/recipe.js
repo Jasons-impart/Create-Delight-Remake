@@ -18,7 +18,7 @@ ServerEvents.recipes(e => {
         "ABA",
         " A "
     ], {
-        A: "#forge:plates/cast_iron",
+        A: "createdeco:industrial_iron_sheet",
         B: "minecraft:snow_block"
     }).id("cmr:empty_snowman_cooler_from_cast_iron")
 })
