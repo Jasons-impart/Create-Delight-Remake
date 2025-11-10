@@ -101,8 +101,6 @@
   - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
 - FerriteCore
   - 内存占用优化 https://www.mcmod.cn/class/3888.html
-- Noisium
-  - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
 - fastboot
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
 - Saturn
