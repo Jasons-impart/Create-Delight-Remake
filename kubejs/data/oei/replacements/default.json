@@ -315,5 +315,23 @@
             "oceanic_delight:fish_egg_roll_slice"
         ],
         "resultItems": "youkaishomecoming:tobiko_gunkan"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:green_coffee_bean"
+        ],
+        "resultItems": "createcafe:coffee_beans"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_beans"
+        ],
+        "resultItems": "createcafe:roasted_coffee_beans"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:wood_basin"
+        ],
+        "resultItems": "vinery:grapevine_pot"
     }
 ]

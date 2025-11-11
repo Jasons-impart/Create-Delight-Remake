@@ -1,0 +1,43 @@
+{
+  "parent": "integrated_villages:integrated_villages_root",
+  "display": {
+    "icon": {
+      "item": "minecraft:emerald"
+    },
+    "title": {
+      "translate": "integrated_villages.advancements.marketstead_village.title"
+    },
+    "description": {
+      "translate": "integrated_villages.advancements.marketstead_village.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "criteria": {
+    "in_marketstead_village": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "integrated_villages:marketstead_village"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_marketstead_village"
+    ]
+  ]
+}

@@ -1,0 +1,35 @@
+{
+    "parent": "totw_modded:root",
+    "display": {
+        "icon": {
+            "item": "minecraft:diamond_sword"
+        },
+        "title": {
+            "translate": "totw_modded.advancement.regular_tower.title"
+        },
+        "description": {
+            "translate": "totw_modded.advancement.regular_tower.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "regular": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structure": "totw_modded:regular"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "regular"
+        ]
+    ]
+}

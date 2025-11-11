@@ -1,0 +1,38 @@
+{
+  "parent": "lightmanscurrency:currency/iron_coin",
+  "criteria": {
+    "copper_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelightcore:copper_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.lightmanscurrency.copper_coin.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelightcore:copper_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.lightmanscurrency.copper_coin.title"
+    }
+  },
+  "requirements": [
+    [
+      "copper_coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -6,11 +6,6 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("create:cogwheel", [
         'create:cogwheel',
         'create:large_cogwheel',
-        'petrolsparts:coaxial_gear',
-        'petrolsparts:large_coaxial_gear',
-        'petrolsparts:differential',
-        'petrolsparts:planetary_gearset',
-        'petrolsparts:colossal_cogwheel'        
     ])
     e.add("create_bs:vaults", [
         'create:item_vault',

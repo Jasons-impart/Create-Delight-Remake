@@ -1,0 +1,53 @@
+{
+  "parent": "eclipticseasons:main/green_house",
+  "criteria": {
+    "sprinkler": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelight:sprinkler"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dryer": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelight:dryer"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.eclipticseasons.humidity_control.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelight:sprinkler"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.eclipticseasons.humidity_control"
+    }
+  },
+  "requirements": [
+    [
+      "dryer"
+    ],
+    [
+      "sprinkler"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

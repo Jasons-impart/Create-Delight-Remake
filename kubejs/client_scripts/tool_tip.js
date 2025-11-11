@@ -46,10 +46,6 @@ ItemEvents.tooltip(e => {
         'bakeries:mould_toast',
         'bakeries:mould_cheese_cocoa_toast',
         'bakeries:mould_pound_cake',
-        'eclipticseasons:spring_greenhouse_core',
-        'eclipticseasons:summer_greenhouse_core',
-        'eclipticseasons:autumn_greenhouse_core',
-        'eclipticseasons:winter_greenhouse_core',
         'kinetic_pixel:graycottonseed',
     ])
     clearAddShiftCtrlTooltip(e, [
