@@ -289,11 +289,6 @@ key_key.tacz.open_config.desc:key.keyboard.t:ALT
 key_create.keyinfo.toolmenu:key.keyboard.left.alt
 key_create.keyinfo.toolbelt:key.keyboard.left.alt
 key_create.keyinfo.rotate_menu:key.keyboard.unknown
-key_petrolpark.key.tube.build:key.keyboard.unknown
-key_petrolpark.key.tube.delete_control_point:key.keyboard.unknown
-key_petrolpark.key.tube.add_control_point_after:key.keyboard.unknown
-key_petrolpark.key.tube.add_control_point_before:key.keyboard.unknown
-key_petrolpark.key.tube.cancel:key.keyboard.unknown
 key_key.configured.open_mod_list:key.keyboard.unknown
 key_key.guideme.guide:key.keyboard.g
 key_key.endergetic.booflo_slam:key.keyboard.x
