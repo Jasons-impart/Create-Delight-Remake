@@ -1,0 +1,40 @@
+{
+  "parent": "endergetic:end/find_eetle_nest",
+  "criteria": {
+    "killed_brood_eetle": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "endergetic:brood_eetle"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:player_killed_entity"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.endergetic.end.kill_brood_eetle.description"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "endergetic:eetle_egg"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.endergetic.end.kill_brood_eetle.title"
+    }
+  },
+  "requirements": [
+    [
+      "killed_brood_eetle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,35 @@
+{
+    "parent": "totw_modded:root",
+    "display": {
+        "icon": {
+            "item": "minecraft:vine"
+        },
+        "title": {
+            "translate": "totw_modded.advancement.jungle_tower.title"
+        },
+        "description": {
+            "translate": "totw_modded.advancement.jungle_tower.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "jungle": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structure": "totw_modded:jungle"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "jungle"
+        ]
+    ]
+}

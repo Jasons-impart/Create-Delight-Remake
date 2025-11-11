@@ -1,0 +1,27 @@
+{
+  "weight": 10,
+  "glowing": true,
+  "color": 16755200,
+  "climate": "#eclipticseasons:all",
+  "award": [
+    {
+      "id": "eclipticseasons:autumn_greenhouse_essence",
+      "Count": 1
+    }
+  ],
+  "tittle": {
+    "translate": "season_quest.eclipticseasons.autumn_core"
+  },
+  "end": "beginning_of_winter",
+  "start": "autumnal_equinox",
+  "need": [
+    {
+      "items": "youkaishomecoming:soybean",
+      "count": 32
+    },
+    {
+      "items": "culturaldelights:corn_kernels",
+      "count": 32
+    }
+  ]
+}

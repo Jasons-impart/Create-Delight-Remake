@@ -111,13 +111,20 @@
 		}
 		{
 			dependencies: ["23BC02E012D1552A"]
+			description: [
+				"任务持续时间："
+				"&a春季&r任务：&a春分&r—&e立夏&r"
+				"&e夏季&r任务：&e夏至&r—&6立秋&r"
+				"&6秋季&r任务：&6秋分&r—&b立冬&r"
+				"&9冬季&r任务：&b冬至&r—&a立春&r"
+			]
 			id: "1CA8EA85843EF28C"
 			rewards: [{
 				id: "270759CF327E9F1C"
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "右键&e悬挂告示牌&r以生成&e季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r（季节交替时可能出现任务不会刷新）"
+			subtitle: "右键&e悬挂告示牌&r以生成&e季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r"
 			tasks: [{
 				id: "09705BF93C951999"
 				item: "eclipticseasons:seasonal_prayer_scroll"

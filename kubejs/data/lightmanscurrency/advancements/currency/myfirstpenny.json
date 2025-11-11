@@ -1,0 +1,36 @@
+{
+  "parent": "lightmanscurrency:currency/root",
+  "criteria": {
+    "coin": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "lightmanscurrency:coins"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.lightmanscurrency.myfirstpenny.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelightcore:iron_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.lightmanscurrency.myfirstpenny.title"
+    }
+  },
+  "requirements": [
+    [
+      "coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

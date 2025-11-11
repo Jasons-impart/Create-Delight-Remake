@@ -1,5 +1,5 @@
-ItemEvents.rightClicked("createdelight:debug_reload_tool", (event) => {
-  const { server, player } = event;
+ItemEvents.rightClicked("createdelight:debug_reload_tool", e => {
+  const { server, player } = e;
   if (player.isCrouching()) {
     player.swing()
     server.tell("§6[成功]已经重载server脚本（不包括配方）");
@@ -12,7 +12,12 @@ ItemEvents.rightClicked("createdelight:debug_reload_tool", (event) => {
   return;
 });
 
-ItemEvents.rightClicked("createdelight:debug_info_tool", (event) => {
-  const { server, player, target } = event;
-  player.swing()
+ItemEvents.rightClicked("createdelight:debug_info_tool", e => {
+  const { level, player, server } = e;
+  if (player.isCrouching()) {
+    player.swing()
+  } else {
+    player.swing()
+  }
+  return;
 });
