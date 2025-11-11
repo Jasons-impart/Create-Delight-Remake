@@ -102,8 +102,6 @@
   - 优化各种原版机制计算方法 https://www.mcmod.cn/class/5580.html
 - moestweaks
   - 关闭配方书 https://www.mcmod.cn/class/17039.html
-- Noisium
-  - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
 - C2ME - forge
   - 优化区块生成、I/O、加载 https://www.mcmod.cn/class/21774.html
 - FerriteCore
