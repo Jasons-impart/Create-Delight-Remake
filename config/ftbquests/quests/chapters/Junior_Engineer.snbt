@@ -73,7 +73,6 @@
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
-			description: [""]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true

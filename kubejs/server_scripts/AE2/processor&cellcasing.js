@@ -170,6 +170,17 @@ ServerEvents.recipes((event) => {
   custom_inscribe("createdelight:universal_press", "createdelight:universal_press", "#forge:storage_blocks/iron", null, "inscribe")
   custom_inscribe("createdelight:ultimate_universal_press", "createdelight:ultimate_universal_press", "ae2omnicells:singularity_block", null, "inscribe")
 
+  // 膏合成
+  create
+    .mixing("createdelight:redstone_paste", ["32x #forge:dusts/redstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:glowstone_paste", ["32x #forge:dusts/glowstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:sky_stone_paste", ["32x ae2:sky_dust", "#forge:plates/iron"])
+    .heated();
+
   // 通用压印模板的配方
   transform_fluid("5x createdelight:universal_press", "minecraft:water", [
     "ae2:silicon_press",

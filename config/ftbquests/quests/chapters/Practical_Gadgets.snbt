@@ -111,40 +111,6 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["05D6B228BA11656D"]
-			description: [
-				"esc选项-控制界面。搜索“将动物装上车”来绑定自己喜欢的快捷键。"
-				"骑马或本体接近马车后，按下快捷键拖走马车。"
-			]
-			id: "11584A30A7E1004D"
-			rewards: [
-				{
-					id: "32D5ED5DAAF30976"
-					item: {
-						Count: 1
-						id: "supplementaries:slingshot"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "387C85143272CD6D"
-					item: "createdelightcore:copper_coin"
-					type: "item"
-				}
-			]
-			subtitle: "开了光影非常惬意！"
-			tasks: [{
-				id: "13DC070521D92E6E"
-				item: "astikorcarts:supply_cart"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -2.5d
-		}
-		{
 			id: "6EA2CC5B89935877"
 			rewards: [{
 				id: "7EE41CB3B2AE365D"

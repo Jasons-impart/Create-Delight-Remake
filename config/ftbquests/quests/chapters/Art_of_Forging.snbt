@@ -862,7 +862,7 @@
 			description: ["魔改暂未完成，敬请期待"]
 			icon: "art_of_forging:demonic_axe"
 			id: "61CAC1C2E3248C4A"
-			subtitle: "使用单头工具改造"
+			subtitle: "使用双头工具改造"
 			tasks: [{
 				id: "6853EB1D8CEB011F"
 				item: "art_of_forging:demonic_axe"
