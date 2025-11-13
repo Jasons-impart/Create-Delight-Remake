@@ -211,7 +211,7 @@
 	#Allowed Values: BLACKLIST, WHITELIST
 	stage_filter_type = "WHITELIST"
 	#You can configure the entity filter by this list.
-	#Entity filter will use this list and the filter type to determine if a entity can pass the filter.
+	#Entity filter will use this list and the filter type to determine if an entity can pass the filter.
 	entity_filter_values = []
 	#You can configure the block entity filter by this list.
 	#Block entity filter will use this list and the filter type to determine if a block entity can pass the filter.
@@ -223,6 +223,17 @@
 	#Custom rendering stage filter will use this list and the filter type to determine if a custom rendering stage can pass the filter.
 	#It's not recommend to modify this list unless other mods adds their own custom rendering stages.
 	stage_filter_values = ["after_entities", "after_block_entities"]
+	#- DISABLED: Menu filter will be disabled and geometries in all container GUI will be accelerated.
+	#- ENABLED: Menu filter will test if geometries in specific container GUI should be accelerated when rendering based on the filter values and the filter type.
+	#Allowed Values: DISABLED, ENABLED
+	menu_filter = "ENABLED"
+	#- BLACKLIST: Container GUIs that are not in the filter values can pass the filter and be accelerated when rendering.
+	#- WHITELIST: Container GUIs that are in the filter values can pass the filter and be accelerated when rendering.
+	#Allowed Values: BLACKLIST, WHITELIST
+	menu_filter_type = "WHITELIST"
+	#You can configure the menu filter by this list.
+	#Menu filter will use this list and the filter type to determine if a container GUI can pass the filter.
+	menu_filter_values = ["minecraft:.*"]
 
 #Iris Compatibility Settings
 #Iris Compatibility Settings allows Accelerated Rendering to work correctly with Iris.

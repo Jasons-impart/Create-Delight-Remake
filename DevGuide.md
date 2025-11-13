@@ -88,10 +88,14 @@
   - 渲染优化 https://www.mcmod.cn/class/5312.html
 - Vanillin
   - 飞轮实体渲染优化 https://www.mcmod.cn/class/19260.html
+- Accelerated Rendering
+  - 大量实体或拥有大量顶点的复杂Mod实体的渲染性能优化 https://www.mcmod.cn/class/21060.html
 - Colorwheel
   - 使得飞轮优化可以兼容光影 https://www.mcmod.cn/class/20111.html
 - Create Better FPS
   - 机械动力在光影下的优化 https://www.mcmod.cn/class/18864.html
+- Entity Culling
+  - 实体渲染机制优化 https://www.mcmod.cn/class/3629.html
 - CullLessLeaves Reforged
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
