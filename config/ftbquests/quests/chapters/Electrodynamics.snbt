@@ -270,7 +270,7 @@
 			}]
 			shape: "circle"
 			size: 1.0d
-			subtitle: "最大发电量1666.5 FE/t，最大应力消耗量8192(256rpm时)"
+			subtitle: "这个是无刷电机吗？"
 			tasks: [{
 				id: "3A4510150979636D"
 				item: "createaddition:alternator"
