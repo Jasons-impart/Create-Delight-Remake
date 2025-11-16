@@ -25,7 +25,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -72,7 +72,7 @@
 				}
 			],
 			"max_wave_time": 1400,
-			"setup_time": 300
+			"setup_time": 100
 		},
 		{
 			"entities": [
@@ -97,7 +97,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.20
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -107,7 +107,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.60
+					"value": 0.80
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -143,7 +143,7 @@
 			],
 			
 			"max_wave_time": 1600,
-			"setup_time": 300
+			"setup_time": 100
 		},
 		{
 			"entities": [
@@ -168,7 +168,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.20
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -178,7 +178,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.60
+					"value": 0.80
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -213,7 +213,7 @@
 				}
 			],
 			"max_wave_time": 1600,
-			"setup_time": 300
+			"setup_time": 100
 		},
         {
             "entities": [
@@ -242,7 +242,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.40
+					"value": 4.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -282,7 +282,7 @@
 				}
 			],
             "max_wave_time": 1800,
-			"setup_time": 300
+			"setup_time": 100
         },
 		{
             "entities": [
@@ -295,7 +295,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 7.5
+					"value": 24.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -305,7 +305,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.80
+					"value": 3.5
 				},
 				{
 					"attribute": "generic.knockback_resistance",
