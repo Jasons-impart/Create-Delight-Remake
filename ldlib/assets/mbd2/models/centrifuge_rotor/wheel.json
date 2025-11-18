@@ -1,0 +1,6 @@
+{
+	"parent": "mbd2:centrifuge_rotor/textures",
+	"loader": "forge:obj",
+	"flip_v": true,
+	"model": "mbd2:models/centrifuge_rotor/centrifuge_rotor.obj"
+}

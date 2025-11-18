@@ -502,6 +502,7 @@
     "createdelight.small_centrifugation": "小型离心机",
     "createdelight.fission_react": "裂变反应堆",
     "createdelight.electrolyzer": "电解",
+
     "message.kubejs.chainedcasing": "按住§6Alt§r将启动§2连锁装壳",
     "message.kubejs.chaineduncasing": "按住§6Alt§r将启动§2连锁拆壳",
     "message.tacz.ammo_extracted_notification": "%s%%弹匣能量已从能量单元里得到补充",
@@ -526,6 +527,7 @@
     "message.createdelight.sell_bin_hint": "你出售了出货箱(位于(%s))中的内容, 你获得了%s",
     "message.createdelight.first_summon_end_dragon": "§4PS:末影龙召唤过程中摧毁水晶会中止召唤进程,  末影龙的初始召唤如果被中止末地传送门也不会开启",
     "message.createdelight.pipe": "流体管道至少需要两个开口！",
+
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r\n",
     "tooltip.createdelight.hold_ctrl_to_see_more_info": "§r§8按住 [§r§7Ctrl§r§8] 查看如何使用§r",
@@ -580,6 +582,7 @@
     "tooltip.createdelight.ctrl_order_deliverer_item": "§7放置于桌布上，沿着其东南西北四个方向放置§b桌布§7（最多可延申8格），然后在桌布上放置§b机械动力的包裹与订单§7",
     "tooltip.createdelight.ctrl_contract_executor": "§7在临近四格放置§b烈焰人燃烧室§7以执行配方，§b热量越高效率越高§7",
     "tooltip.createdelight.ctrl_graycottonseed": "§7需种植在§b砂土§7上",
+
     "createdelight.tip.advanced_alloy": "部分合金在初始阶段只能使用熔铸搅拌器合成, 例如钢。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成(当然除了玩家)",
     "createdelight.tip.andesite_bucket": "安山桶可以直接将容器中的流体打出来, 并直接送到另一个容器中。在处理液体相关的配方时非常好用！",
