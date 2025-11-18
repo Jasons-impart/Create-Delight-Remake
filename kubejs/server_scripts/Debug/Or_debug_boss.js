@@ -31,7 +31,32 @@ ItemEvents.rightClicked("createdelight:debug_info_tool", e => {
       }
     }
   } else {
-    player.swing()
+    e.cancel()
   }
   return;
 });
+BlockEvents.rightClicked(e => {
+  const { block, level, player } = e;
+  if(player.mainHandItem.id == "createdelight:debug_info_tool"){
+    let blockpos = block.pos;
+    try {
+      let blockEntityID = block.getEntityId();
+      let beOptional = level.getBlockEntity(blockpos, blockEntityID);
+      let blockEntityNBT = beOptional.get().serializeNBT();
+      player.swing();
+      player.tell("BlockEntityNBT:");
+      let keys = blockEntityNBT.getAllKeys().toArray();
+      for (let i = 0; i < keys.length; i++) {
+        let key = keys[i];
+        let valueTag = blockEntityNBT.get(key);
+        let valueStr = String(valueTag); // Tag 转为可读字符串
+        let line = `${key}: ${valueStr}`;
+        let message = Component.of(`§7- §e${key}§7: §a${valueStr}`)
+          .clickCopy(line)
+          .hover(`NBT ${key} (Click to Copy)`);
+        player.tell(message);
+      }
+    } catch (error) { }
+    e.cancel()
+  }
+})
