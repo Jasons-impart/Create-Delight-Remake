@@ -4,14 +4,14 @@ ServerEvents.recipes(e => {
     .id("createdelightcore:forge_steel_casing")
     create.item_application("createdelightcore:steel_casing", ["create:andesite_casing", "#forge:ingots/steel"])
     .id("createdelightcore:steel_casing")
-    kubejs.shaped(
+    kubejs.shapeless(
         'createdelightcore:steel_glass_casing',
         [
             'createdelightcore:steel_casing',
             "create:framed_glass"
         ]
     ).id("createdelightcore:shaped/steel_glass_casing")
-    kubejs.shaped(
+    kubejs.shapeless(
         'createdelightcore:steel_clear_glass_casing',
         [
             'createdelightcore:steel_glass_casing',
