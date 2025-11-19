@@ -17,7 +17,7 @@ ItemEvents.tooltip(e => {
             text.add(comp)
     })
     e.addAdvanced("createdelight:order", (item, advanced, text) => {
-        let info = item.nbt.createdelightOrderInfo
+        let info = item?.nbt?.createdelightOrderInfo
         if (!info) return
 
         let entries = info.entries
