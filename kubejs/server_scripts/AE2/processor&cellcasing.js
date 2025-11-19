@@ -122,24 +122,15 @@ ServerEvents.recipes((event) => {
   transform_explosion("ae2omnicells:omni_link_print_press", [
     "createdelight:universal_press",
     "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
     "ae2omnicells:charged_ender_ingot"
   ])
   transform_explosion("ae2omnicells:complex_link_print_press", [
     "createdelight:universal_press",
     "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
     "ae2omnicells:charged_ender_ingot"
   ])
   transform_explosion("ae2omnicells:multidimensional_expansion_print_press", [
     "createdelight:universal_press",
-    "ae2:singularity",
-    "ae2:singularity",
-    "ae2:singularity",
     "ae2:singularity",
     "ae2omnicells:charged_ender_ingot"
   ])
