@@ -4,7 +4,7 @@ MBDMachineEvents.onStructureFormed("createdelight:alloy_electric_furnace", e => 
     /**@type {ItemStackTransfer} */
     let input = machine.getTraitByName("forged_steel_import_item_slot").storage
     input.setFilter(item => {
-        console.log(item)
+        // console.log(item)
         let hasItem = false
         let canStack = false
 
@@ -16,7 +16,7 @@ MBDMachineEvents.onStructureFormed("createdelight:alloy_electric_furnace", e => 
                     canStack = true
             }
         }
-        console.log(hasItem, canStack)
+        // console.log(hasItem, canStack)
         // 返回条件：如果没有该物品或该物品能堆叠，则允许；否则阻止
         return !hasItem || (hasItem && canStack)
     })
