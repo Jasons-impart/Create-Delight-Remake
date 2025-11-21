@@ -50,6 +50,9 @@ MBDMachineEvents.onStructureFormed("createdelight:fission_reactor", e => {
     if(!customData.getDouble("degree_of_damage")) {
         customData.putDouble("degree_of_damage", 0)
     }
+    if(!customData.getDouble("multiplier")) {
+        customData.putDouble("multiplier", 0)
+    }
 })
 
 //升温逻辑及代码判断
@@ -59,9 +62,10 @@ MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
 
     let temp = customData.getDouble("temperature")
     let degree_of_damage = customData.getDouble("degree_of_damage")
+    let multiplier = machine.customData.getDouble("multiplier")
+    let assembly_count = customData.getInt("assembly_count")
     let ambientCooling = 0.05 + (temp - 298.15) * 0.0001
 
-    const fuelCount = customData.getInt("assembly_count")
     const isActive = !!(machine.recipeLogic && machine.recipeLogic.fuelTime > 0)
     const controlRodsOut = !!customData.getBoolean("reactor_switch")
     const BASE_HEAT_RATE = 0.08         // 基础发热率
@@ -73,9 +77,8 @@ MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
     let heatProduced = 0
     if (isActive && controlRodsOut) {
         let tempEfficiency = 1.0 - (temp - 298.15) * TEMP_MULTIPLIER
-        heatProduced = BASE_HEAT_RATE * fuelCount * Math.max(0.3, tempEfficiency)
+        heatProduced = BASE_HEAT_RATE * assembly_count * Math.max(0.3, tempEfficiency)
     }
-
     let cooling = 0
     let damageReducecd = 0
     let fluidCap = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
@@ -85,62 +88,58 @@ MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
             let fluid = fluidCap.getFluidInTank(0)
             if (fluid.fluid.getFluidType().toString() == "minecraft:water") coolantEfficiency = 1.0
             else if (fluid.fluid.getFluidType().toString() == "netherexp:ectoplasm") coolantEfficiency = 1.5
-            damageReducecd = coolantEfficiency * 0.005 * fuelCount
-            cooling = BASE_COOL_RATE * coolantEfficiency * fuelCount * 0.3 
+            damageReducecd = coolantEfficiency * 0.005 * assembly_count
+            cooling = BASE_COOL_RATE * coolantEfficiency * assembly_count * 0.3 
         }
     }
-
-
     let newTemp = Math.max(298.15, temp + heatProduced - cooling - ambientCooling)
-
     let damageProduced = 0
     if (newTemp >= CRITICAL_TEMP) {
-        damageProduced = 0.01 * fuelCount
+        damageProduced = 0.01 * assembly_count
     }
+    customData.putDouble("temperature", newTemp)
+
 
     let newDamage = Math.max(0, degree_of_damage + damageProduced - damageReducecd)
-
     if(newDamage != degree_of_damage){customData.putDouble("degree_of_damage", newDamage)}
     if (newTemp >= MELTDOWN_TEMP) {Bombbbb(machine)}
-    if (degree_of_damage > 50) {
-        const center = machine.pos.center
-        const radius = 64.0
-        const box = new $AABB(
-            center.x - radius, center.y - radius, center.z - radius,
-            center.x + radius, center.y + radius, center.z + radius
-        )
-        const conditions = $TargetingConditions.forNonCombat()
-        machine.level.getNearbyPlayers(conditions, null, box).forEach(player => {
-            if (!player.isCreative() && !player.isSpectator()) {
-                player.sendData("kubejs_player_playsound", { soundEvent: "alexscaves:nuclear_siren" })
-            }
-        })
-    }
+    // if (degree_of_damage > 50) {
+    //     let center = machine.pos.center
+    //     let radius = 64.0
+    //     let box = new $AABB(
+    //         center.x - radius, center.y - radius, center.z - radius,
+    //         center.x + radius, center.y + radius, center.z + radius
+    //     )
+    //     let conditions = $TargetingConditions.forNonCombat()
+    //     machine.level.getNearbyPlayers(conditions, null, box).forEach(player => {
+    //         if (!player.isCreative() && !player.isSpectator()) {
+    //             player.sendData("kubejs_player_playsound", { soundEvent: "alexscaves:nuclear_siren" })
+    //         }
+    //     })
+    // }
     if (degree_of_damage >= 100) {Bombbbb(machine)}
 
-    customData.putDouble("temperature", newTemp)
+
+    if (temp < 1000) {
+        multiplier = 0
+    } else if (temp >= 1000 && temp <= 1500) {
+        multiplier = 1 + 2 * (temp - 1000) / 500
+    } else {
+        multiplier = 3
+    }
+    customData.putDouble("multiplier", multiplier)
+
     // machine.level.tell(`damageProduced:${damageProduced}, damageReducecd:${damageReducecd}, newDamage:${newDamage}, boolean:${newTemp >= CRITICAL_TEMP}`)
 })
 //温度对于产电的调节
 MBDMachineEvents.onAfterRecipeModify("createdelight:fission_reactor", e => {
     const { machine, recipe } = e.event
-    let temp = machine.customData.getDouble("temperature")
-    let multiplier = 0
+    let multiplier = machine.customData.getDouble("multiplier")
     
-    // 温度低于1000K时不产电
-    if (temp < 1000) {
+    if(multiplier != 0) {
+        e.event.setRecipe(recipe.copy(ContentModifier.multiplier(multiplier), false, "both"))
+    } else {
         e.event.setRecipe(recipe.copy(ContentModifier.multiplier(0), false, "out"))
-    }
-    // 温度在1000K到1500K之间，产电倍率从1线性增加到3
-    else if (temp >= 1000 && temp <= 1500) {
-        // 线性插值公式: multiplier = 1 + (3-1) * (temp-1000)/(1500-1000)
-        multiplier = 1 + 2 * (temp - 1000) / 500
-        e.event.setRecipe(recipe.copy(ContentModifier.multiplier(multiplier), false, "both"))
-    }
-    // 温度超过1500K时，产电倍率固定为3
-    else {
-        multiplier = 3
-        e.event.setRecipe(recipe.copy(ContentModifier.multiplier(multiplier), false, "both"))
     }
 })
 
@@ -150,6 +149,8 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     
     if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
         let recipeLogic = machine.recipeLogic
+        let multiplier = machine.customData.getDouble("multiplier")
+        let assembly_count = customData.getInt("assembly_count")
         let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
         let energy = machine.getCapability(ForgeCapabilities.ENERGY).orElse(null)
         let maxEnergyOutput = 0
@@ -167,8 +168,10 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
             })
         })
 
+        let minFluid = 20 * multiplier * Math.pow(1.0415, assembly_count)
         //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty
+            && fluid.getFluidInTank(0).amount <= minFluid
             && fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1)
             && energy.getEnergyStored() + maxEnergyOutput <= energy.getMaxEnergyStored()
             ) {
