@@ -26,7 +26,8 @@ ItemEvents.tooltip(e => {
         'bakeries:cream_cake',
         'bakeries:tiramisu',
         'bakeries:cake_roll',
-        'createdelight:unactivated_crystalline_flower'
+        'createdelight:unactivated_crystalline_flower',
+        "createdelight:fission_reactor",
     ])
     clearAddCtrlTooltip(e, [
         
