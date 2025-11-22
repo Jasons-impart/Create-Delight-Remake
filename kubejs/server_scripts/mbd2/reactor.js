@@ -231,23 +231,23 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
     })
     title.setTextProvider(() => Component.translate("block.createdelight.fission_reactor"))
     damage.setTextProvider(() => 
-        Component.translate("message.createdelight.degree_of_damage", Math.round(machine.customData.getDouble("degree_of_damage") * 100) / 100)
+        Component.translate("message.createdelight.fission_reactor.degree_of_damage", Math.round(machine.customData.getDouble("degree_of_damage") * 100) / 100)
     )
     temperature.setTextProvider(() => 
-        Component.translate("message.createdelight.temperature", Math.round(machine.customData.getDouble("temperature") * 100) / 100)
+        Component.translate("message.createdelight.fission_reactor.temperature", Math.round(machine.customData.getDouble("temperature") * 100) / 100)
     )
     reactor_switch.setTextProvider(() => 
-        Component.translate("message.createdelight.switch").append(
+        Component.translate("message.createdelight.fission_reactor.switch").append(
             machine.customData.getDouble("temperature") >= 1500 
                 ? Component.translate(
                     machine.customData.getDouble("temperature") >= 2000 
-                        ? "message.createdelight.meltdown_temp" 
-                        : "message.createdelight.critical_temp"
+                        ? "message.createdelight.fission_reactor.meltdown_temp" 
+                        : "message.createdelight.fission_reactor.critical_temp"
                 )
                 : Component.translate(
                     machine.customData.getBoolean("reactor_switch") 
-                        ? "message.createdelight.switch_on" 
-                        : "message.createdelight.switch_off"
+                        ? "message.createdelight.fission_reactor.switch_on" 
+                        : "message.createdelight.fission_reactor.switch_off"
                 )
         )
     )
@@ -270,7 +270,7 @@ MBDRecipeTypeEvents.onRecipeUI("createdelight:fission_react", e => {
     let cooling_efficiency = root.getFirstWidgetById("cooling_efficiency")
     cooling_efficiency.setTextProvider(() => 
         Component.translate(
-            "message.createdelight.cooling_efficiency",
+            "message.createdelight.fission_reactor.cooling_efficiency",
             e.event.getRecipe().getId() = "createdelight:fission_react/ectoplasm_cooling"
                 ? 1.5 : 1.0
         )
