@@ -4,6 +4,7 @@ const $FluidRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capabil
 const $SwitchWidget = Java.loadClass("com.lowdragmc.lowdraglib.gui.widget.SwitchWidget")
 const $AABB = Java.loadClass("net.minecraft.world.phys.AABB")
 const $TargetingConditions = Java.loadClass("net.minecraft.world.entity.ai.targeting.TargetingConditions")
+const $SoundSource = Java.loadClass("net.minecraft.sounds.SoundSource")
 
 /**
  * 在机器处创造核爆
@@ -12,7 +13,7 @@ const $TargetingConditions = Java.loadClass("net.minecraft.world.entity.ai.targe
 function Bombbbb(machine) {
     let assembly_count = machine.customData.getInt("assembly_count")
     /**
-     * @type {Internal.NuclearBombEntity}
+     * @type {Internal.NuclearExplosionEntity}
      */
     let Bombbbb = $ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(machine.level)
     Bombbbb.setPos(machine.pos.center)
@@ -96,28 +97,16 @@ MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
     let damageProduced = 0
     if (newTemp >= CRITICAL_TEMP) {
         damageProduced = 0.01 * assembly_count
+        if(degree_of_damage > 50) {
+            machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "alexscaves:nuclear_siren", $SoundSource.BLOCKS, 1, 1)
+        }
     }
     customData.putDouble("temperature", newTemp)
 
 
     let newDamage = Math.max(0, degree_of_damage + damageProduced - damageReducecd)
-    if(newDamage != degree_of_damage){customData.putDouble("degree_of_damage", newDamage)}
-    if (newTemp >= MELTDOWN_TEMP) {Bombbbb(machine)}
-    // if (degree_of_damage > 50) {
-    //     let center = machine.pos.center
-    //     let radius = 64.0
-    //     let box = new $AABB(
-    //         center.x - radius, center.y - radius, center.z - radius,
-    //         center.x + radius, center.y + radius, center.z + radius
-    //     )
-    //     let conditions = $TargetingConditions.forNonCombat()
-    //     machine.level.getNearbyPlayers(conditions, null, box).forEach(player => {
-    //         if (!player.isCreative() && !player.isSpectator()) {
-    //             player.sendData("kubejs_player_playsound", { soundEvent: "alexscaves:nuclear_siren" })
-    //         }
-    //     })
-    // }
     if (degree_of_damage >= 100) {Bombbbb(machine)}
+    if (newTemp >= MELTDOWN_TEMP) {Bombbbb(machine)}
 
 
     if (temp < 1000) {
@@ -128,6 +117,7 @@ MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
         multiplier = 3
     }
     customData.putDouble("multiplier", multiplier)
+    if (newDamage != degree_of_damage) {customData.putDouble("degree_of_damage", newDamage)}
 
     // machine.level.tell(`damageProduced:${damageProduced}, damageReducecd:${damageReducecd}, newDamage:${newDamage}, boolean:${newTemp >= CRITICAL_TEMP}`)
 })
@@ -150,7 +140,7 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
         let recipeLogic = machine.recipeLogic
         let multiplier = machine.customData.getDouble("multiplier")
-        let assembly_count = customData.getInt("assembly_count")
+        let assembly_count = machine.customData.getInt("assembly_count")
         let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
         let energy = machine.getCapability(ForgeCapabilities.ENERGY).orElse(null)
         let maxEnergyOutput = 0
@@ -167,11 +157,10 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
                     maxFluidOutput = con.getContent().getAmount()
             })
         })
-
         let minFluid = 20 * multiplier * Math.pow(1.0415, assembly_count)
         //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty
-            && fluid.getFluidInTank(0).amount <= minFluid
+            && fluid.getFluidInTank(0).amount >= minFluid
             && fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1)
             && energy.getEnergyStored() + maxEnergyOutput <= energy.getMaxEnergyStored()
             ) {
