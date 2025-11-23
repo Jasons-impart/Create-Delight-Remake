@@ -191,7 +191,7 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
             reactor_on.setPressed(false)
             customData.putDouble("burning_rate", 0)
         }
-        if(!p.isRemote && reactor_off.pressed && reactor_off.isPressed()) {
+        if(!p.isRemote && !reactor_off.pressed) {
             reactor_off.setPressed(true)
         }
         return
@@ -202,7 +202,7 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
             reactor_off.setPressed(false)
             customData.putDouble("burning_rate", 1)
         }
-        if(!p.isRemote && reactor_on.pressed && reactor_on.isPressed()) {
+        if(!p.isRemote && !reactor_on.pressed) {
             reactor_on.setPressed(true)
         }
         return
@@ -318,6 +318,39 @@ MBDMachineEvents.onFuelRecipeModify("createdelight:fission_reactor", e => {
     }
 })
 
+
+//自动化逻辑
+    //UI实现
+MBDMachineEvents.onUI("createdelight:fission_reactor_controller", e => {
+    const { machine, root } = e.event
+    /**@type {SwitchWidget} */
+    let button_1 = root.getFirstWidgetById("off")
+    /**@type {SwitchWidget} */
+    let button_2 = root.getFirstWidgetById("on")
+    /**@type {SwitchWidget} */
+    let button_3 = root.getFirstWidgetById("high_temp")
+    /**@type {SwitchWidget} */
+    let button_4 = root.getFirstWidgetById("output_fluid_choke")
+    /**@type {SwitchWidget} */
+    let button_5 = root.getFirstWidgetById("lack_of_fuel")
+    /**@type {SwitchWidget} */
+    let button_6 = root.getFirstWidgetById("critical_damage")
+    const buttons = [button_1, button_2, button_3, button_4, button_5, button_6]
+    buttons.forEach((btn) => {
+        btn.setOnPressCallback(p => {
+            if (!p.isRemote) {
+                if (btn.pressed) {
+                    buttons.forEach(b => b.setPressed(false))
+                }
+                if (!btn.pressed) {
+                    btn.setPressed(true)
+                }
+            }
+            return
+        })
+    })
+
+})
 
 
 
