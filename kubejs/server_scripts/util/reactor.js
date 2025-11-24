@@ -18,11 +18,12 @@ ReactorUtil.Bombbbb = function(machine) {
 /**
  * 计算核反应堆产热
  * @param {Internal.MBDMachine} machine 
- * @param {number} temp 
- * @param {number} assembly_count 
  * @returns {number}
  */
-ReactorUtil.heatProduced = function (machine, temp, assembly_count) {
+ReactorUtil.heatProduced = function (machine) {
+  let temp = machine.customData.getDouble("temperature")
+  let burning_rate = machine.customData.getDouble("burning_rate")
+  let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
   let heatProduced = 0
   const isActive = machine.recipeLogic && machine.recipeLogic.fuelTime > 0
   const controlRodsOut = machine.customData.getDouble("burning_rate") != 0
@@ -36,12 +37,13 @@ ReactorUtil.heatProduced = function (machine, temp, assembly_count) {
 /**
  * 计算核反应堆液冷散热及损坏度降低
  * @param {Internal.MBDMachine} machine 
- * @param {number} assembly_count 
  * @returns {number[]} [0]散热，[1]损坏度降低
  */
-ReactorUtil.cooling = function(machine, assembly_count) {
+ReactorUtil.cooling = function(machine) {
   let cooling = 0
   let damageReducecd = 0
+  let burning_rate = machine.customData.getDouble("burning_rate")
+  let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
   let fluidCap = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
   if (fluidCap) {
     let coolantEfficiency = 0
@@ -59,11 +61,12 @@ ReactorUtil.cooling = function(machine, assembly_count) {
 /**
  * 计算核反应堆当前须输入流体
  * @param {Internal.MBDMachine} machine 
- * @param {number} assembly_count 
- * @param {number} multiplier 
  * @returns {number}
  */
-ReactorUtil.inputFluid = function(machine, assembly_count, multiplier) {
+ReactorUtil.inputFluid = function(machine) {
+  let multiplier = machine.customData.getDouble("multiplier")
+  let burning_rate = machine.customData.getDouble("burning_rate")
+  let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
   const isActive = machine.recipeLogic && machine.recipeLogic.fuelTime > 0
   const controlRodsOut = machine.customData.getDouble("burning_rate") != 0
   let inputFluid = 0
@@ -76,11 +79,12 @@ ReactorUtil.inputFluid = function(machine, assembly_count, multiplier) {
 /**
  * 计算核反应堆当前须输出流体
  * @param {Internal.MBDMachine} machine 
- * @param {number} assembly_count 
- * @param {number} multiplier 
  * @returns {number}
  */
-ReactorUtil.outputFluid = function(machine, assembly_count, multiplier) {
+ReactorUtil.outputFluid = function(machine) {
+  let multiplier = machine.customData.getDouble("multiplier")
+  let burning_rate = machine.customData.getDouble("burning_rate")
+  let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
   const isActive = machine.recipeLogic && machine.recipeLogic.fuelTime > 0
   const controlRodsOut = machine.customData.getDouble("burning_rate") != 0
   let outputFluid = 0
@@ -93,11 +97,12 @@ ReactorUtil.outputFluid = function(machine, assembly_count, multiplier) {
 /**
  * 计算核反应堆当前产出能量
  * @param {Internal.MBDMachine} machine 
- * @param {number} assembly_count 
- * @param {number} multiplier 
  * @returns {number}
  */
-ReactorUtil.outputEnergy = function(machine, assembly_count, multiplier) {
+ReactorUtil.outputEnergy = function(machine) {
+  let multiplier = machine.customData.getDouble("multiplier")
+  let burning_rate = machine.customData.getDouble("burning_rate")
+  let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
   const isActive = machine.recipeLogic && machine.recipeLogic.fuelTime > 0
   const controlRodsOut = machine.customData.getDouble("burning_rate") != 0
   let outputEnergy = 0
@@ -105,4 +110,14 @@ ReactorUtil.outputEnergy = function(machine, assembly_count, multiplier) {
     outputEnergy = 40960 * multiplier * Math.pow(1.0415, assembly_count)
   }
   return outputEnergy
+}
+
+/**
+ * 
+ * @param {Internal.MBDMachine} machine 
+ * @param {number} power 
+ */
+ReactorUtil.outputSignal = function(machine, power) {
+  machine.setOutputSignal(power, machine.getFrontFacing().get())
+  machine.updateSignal()
 }

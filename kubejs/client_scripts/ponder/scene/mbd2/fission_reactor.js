@@ -17,7 +17,7 @@ Ponder.registry(event => {
                 scene.idle(20)
                 scene.text(40, "先让我们快速的搭建一下基础结构").attachKeyFrame()
                 scene.idle(40)
-                for (let i = 0; i < 12; i++) {
+                for (let i = 0; i < 11; i++) {
                     scene.world.showSection([2, i + 1, 2, 10, i + 1, 11], Direction.DOWN)
                     scene.idle(10)
                 }
@@ -72,7 +72,7 @@ Ponder.registry(event => {
                 scene.world.hideSection([3, 2, 10, 9, 7, 10], Direction.SOUTH)
                 scene.world.hideSection([4, 3, 9, 4, 5, 9], Direction.SOUTH)
                 scene.world.hideSection([8, 3, 9, 8, 5, 9], Direction.SOUTH)
-                scene.world.hideSection([3, 6, 3, 9, 11, 9], Direction.UP)
+                scene.world.hideSection([3, 6, 3, 9, 10, 9], Direction.UP)
                 scene.world.hideSection([3, 3, 3, 3, 5, 3], Direction.UP)
                 scene.world.hideSection([3, 3, 9, 3, 5, 9], Direction.UP)
                 scene.world.hideSection([9, 3, 3, 9, 5, 3], Direction.UP)
@@ -114,7 +114,7 @@ Ponder.registry(event => {
                 scene.world.showSection([3, 2, 10, 9, 8, 10], Direction.NORTH)
                 scene.world.showSection([4, 3, 9, 4, 6, 9], Direction.NORTH)
                 scene.world.showSection([8, 3, 9, 8, 6, 9], Direction.NORTH)
-                scene.world.showSection([3, 7, 3, 9, 12, 9], Direction.DOWN)
+                scene.world.showSection([3, 7, 3, 9, 10, 9], Direction.DOWN)
                 scene.world.showSection([3, 3, 3, 3, 6, 3], Direction.DOWN)
                 scene.world.showSection([3, 3, 9, 3, 6, 9], Direction.DOWN)
                 scene.world.showSection([9, 3, 3, 9, 6, 3], Direction.DOWN)
@@ -134,7 +134,7 @@ Ponder.registry(event => {
                     scene.effects.simpleParticleEmitter($ACParticleRegistry.MUSHROOM_CLOUD.get(), [0, 0, 0]), 1, 1
                 )
                 scene.idle(10)
-                scene.world.replaceBlocks([0, 1, 0, 12, 12, 12], Block.id("minecraft:air").blockState, true)
+                scene.world.replaceBlocks([0, 1, 0, 13, 10, 13], Block.id("minecraft:air").blockState, true)
                 scene.idleSeconds(6)
                 scene.markAsFinished()
             })

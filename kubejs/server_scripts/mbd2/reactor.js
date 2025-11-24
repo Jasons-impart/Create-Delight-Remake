@@ -44,26 +44,31 @@ const MELTDOWN_TEMP = 2500.0        //融毁温度，超出后直接爆炸
 MBDMachineEvents.onTick("createdelight:fission_reactor", e => {
     const { machine } = e.event
     const customData = machine.customData
+    if (machine.level.time % 3 != 0) return
 
     let temp = customData.getDouble("temperature")
     let degree_of_damage = customData.getDouble("degree_of_damage")
     let multiplier = machine.customData.getDouble("multiplier")
-    let burning_rate = customData.getDouble("burning_rate")
-    let assembly_count = customData.getInt("assembly_count") * burning_rate
+
+    // 缓存冷却与发热，避免重复调用造成开销
+    const heatProduced = ReactorUtil.heatProduced(machine)
+    const cooling = ReactorUtil.cooling(machine)
+    const coolingTemp = cooling[0]
+    const coolingDamage = cooling[1]
 
     let ambientCooling = 0.05 + (temp - 298.15) * 0.0001
-    let newTemp = Math.max(298.15, temp + ReactorUtil.heatProduced(machine, temp, assembly_count) - ReactorUtil.cooling(machine, assembly_count)[0] - ambientCooling)
+    let newTemp = Math.max(298.15, temp + heatProduced * 3 - coolingTemp * 3 - ambientCooling * 3)
     customData.putDouble("temperature", newTemp)
 
     let damageProduced = 0
     if (newTemp >= CRITICAL_TEMP) {
-        damageProduced = 0.01 * customData.getInt("assembly_count")
+        damageProduced = 0.01 * customData.getInt("assembly_count") * 3
         if(degree_of_damage > 50) {
             machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "alexscaves:nuclear_siren", "blocks", 1, 1)
         }
     }
 
-    let newDamage = Math.max(0, degree_of_damage + damageProduced - ReactorUtil.cooling(machine, assembly_count)[1])
+    let newDamage = Math.max(0, degree_of_damage + damageProduced - coolingDamage * 3)
     if (newDamage != degree_of_damage) {customData.putDouble("degree_of_damage", newDamage)}
     
     if (temp < 1000) { multiplier = 0 }
@@ -99,29 +104,31 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
     
     if (recipe.id && recipe.id == "createdelight:fission_react/empty") {
         let recipeLogic = machine.recipeLogic
-        let multiplier = machine.customData.getDouble("multiplier")
-        let burning_rate = machine.customData.getDouble("burning_rate")
-        let assembly_count = machine.customData.getInt("assembly_count") * burning_rate
         let fluid = machine.getCapability(ForgeCapabilities.FLUID_HANDLER).orElse(null)
         let energy = machine.getCapability(ForgeCapabilities.ENERGY).orElse(null)
-        let maxEnergyOutput = 0
-        let maxFluidOutput = 0
-        machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
-            let mbdRecipe = machine.getModifiedRecipe(r)
-            mbdRecipe.getOutputContents($ForgeEnergyRecipeCapability.CAP).forEach(con => {
-                if (maxEnergyOutput < con.getContent())
-                    maxEnergyOutput = con.getContent()
-            })
+        let maxFluidInput = ReactorUtil.inputFluid(machine)
+        let maxEnergyOutput = ReactorUtil.outputEnergy(machine)
+        let maxFluidOutput = ReactorUtil.outputFluid(machine)
+        // machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
+        //     let mbdRecipe = machine.getModifiedRecipe(r)
+        //     mbdRecipe.getOutputContents($ForgeEnergyRecipeCapability.CAP).forEach(con => {
+        //         if (maxEnergyOutput < con.getContent())
+        //             maxEnergyOutput = con.getContent()
+        //     })
 
-            mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
-                if (maxFluidOutput < con.getContent().getAmount())
-                    maxFluidOutput = con.getContent().getAmount()
-            })
-        })
-        let inputFluid = 20 * (multiplier == 0 ? 1 : multiplier) * Math.pow(1.0415, assembly_count)
+        //     mbdRecipe.getOutputContents($FluidRecipeCapability.CAP).forEach(con => {
+        //         if (maxFluidOutput < con.getContent().getAmount())
+        //             maxFluidOutput = con.getContent().getAmount()
+        //     })
+
+        //     mbdRecipe.getInputContents($FluidRecipeCapability.CAP).forEach(con => {
+        //         if(maxFluidInput < con.getContent().getAmount())
+        //             maxFluidInput = con.getContent().getAmount()
+        //     })
+        // })
         //输入槽位有流体且输出槽位可接受配方产出时，使连续工作的空配方失效
         if (!fluid.getFluidInTank(0).empty
-            && fluid.getFluidInTank(0).amount >= inputFluid
+            && fluid.getFluidInTank(0).amount >= maxFluidInput
             && fluid.getFluidInTank(1).amount + maxFluidOutput <= fluid.getTankCapacity(1)
             && energy.getEnergyStored() + maxEnergyOutput <= energy.getMaxEnergyStored()
             ) {
@@ -225,7 +232,7 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
                         : "message.createdelight.fission_reactor.critical_temp"
                 )
                 : Component.translate(
-                    burning_rate != 0 
+                    customData.getDouble("burning_rate") != 0
                         ? "message.createdelight.fission_reactor.switch_on" 
                         : "message.createdelight.fission_reactor.switch_off"
                 )
@@ -246,22 +253,11 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
     })
 
     heatProduced.setTextProvider(() =>
-        Component.translate("message.createdelight.fission_reactor.heat_produced",
-            Math.round(ReactorUtil.heatProduced(
-                machine,
-                customData.getDouble("temperature"),
-                customData.getInt("assembly_count") * customData.getDouble("burning_rate")
-            ) * 100) / 100
-        )
+        Component.translate("message.createdelight.fission_reactor.heat_produced", Math.round(ReactorUtil.heatProduced(machine) * 100) / 100)
     )
 
     cooling.setTextProvider(() =>
-        Component.translate("message.createdelight.fission_reactor.fluid_cooling",
-            Math.round(ReactorUtil.cooling(
-                machine, 
-                customData.getInt("assembly_count") * customData.getDouble("burning_rate")
-            )[0] * 100) / 100
-        )
+        Component.translate("message.createdelight.fission_reactor.fluid_cooling", Math.round(ReactorUtil.cooling(machine)[0] * 100) / 100)
     )
 
     ambientCooling.setTextProvider(() =>
@@ -271,33 +267,15 @@ MBDMachineEvents.onUI("createdelight:fission_reactor", e => {
     )
 
     inputFluid.setTextProvider(() =>
-        Component.translate("message.createdelight.fission_reactor.input_fluid", 
-            Math.round(ReactorUtil.inputFluid(
-                machine,
-                customData.getInt("assembly_count") * customData.getDouble("burning_rate"),
-                customData.getDouble("multiplier")
-            ) * 100) / 100
-        )
+        Component.translate("message.createdelight.fission_reactor.input_fluid", Math.round(ReactorUtil.inputFluid(machine,) * 100) / 100)
     )
 
     outputFluid.setTextProvider(() =>
-        Component.translate("message.createdelight.fission_reactor.output_fluid", 
-            Math.round(ReactorUtil.outputFluid(
-                machine,
-                customData.getInt("assembly_count") * customData.getDouble("burning_rate"),
-                customData.getDouble("multiplier")
-            ) * 100) / 100
-        )
+        Component.translate("message.createdelight.fission_reactor.output_fluid", Math.round(ReactorUtil.outputFluid(machine) * 100) / 100)
     )
 
     outputEnergy.setTextProvider(() =>
-        Component.translate("message.createdelight.fission_reactor.output_energy", 
-            Math.round(ReactorUtil.outputEnergy(
-                machine,
-                customData.getInt("assembly_count") * customData.getDouble("burning_rate"),
-                customData.getDouble("multiplier")
-            )) / 1000
-        )
+        Component.translate("message.createdelight.fission_reactor.output_energy", Math.round(ReactorUtil.outputEnergy(machine)) / 1000)
     )
 
     burningRate.setTextProvider(() =>
@@ -318,39 +296,6 @@ MBDMachineEvents.onFuelRecipeModify("createdelight:fission_reactor", e => {
     }
 })
 
-
-//自动化逻辑
-    //UI实现
-MBDMachineEvents.onUI("createdelight:fission_reactor_controller", e => {
-    const { machine, root } = e.event
-    /**@type {SwitchWidget} */
-    let button_1 = root.getFirstWidgetById("off")
-    /**@type {SwitchWidget} */
-    let button_2 = root.getFirstWidgetById("on")
-    /**@type {SwitchWidget} */
-    let button_3 = root.getFirstWidgetById("high_temp")
-    /**@type {SwitchWidget} */
-    let button_4 = root.getFirstWidgetById("output_fluid_choke")
-    /**@type {SwitchWidget} */
-    let button_5 = root.getFirstWidgetById("lack_of_fuel")
-    /**@type {SwitchWidget} */
-    let button_6 = root.getFirstWidgetById("critical_damage")
-    const buttons = [button_1, button_2, button_3, button_4, button_5, button_6]
-    buttons.forEach((btn) => {
-        btn.setOnPressCallback(p => {
-            if (!p.isRemote) {
-                if (btn.pressed) {
-                    buttons.forEach(b => b.setPressed(false))
-                }
-                if (!btn.pressed) {
-                    btn.setPressed(true)
-                }
-            }
-            return
-        })
-    })
-
-})
 
 
 
