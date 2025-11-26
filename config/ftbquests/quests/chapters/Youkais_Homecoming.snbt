@@ -3401,74 +3401,6 @@
 			y: 15.0d
 		}
 		{
-			can_repeat: true
-			dependencies: ["7D27625C61712AD0"]
-			icon: "miners_delight:bat_wing"
-			id: "7CC89113577F9BC9"
-			rewards: [{
-				command: "/summon youkaishomecoming:remilia_scarlet"
-				id: "5AA39D5B81B134AF"
-				title: "召唤蕾米莉亚・斯卡雷特"
-				type: "command"
-			}]
-			shape: "square"
-			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
-			tasks: [
-				{
-					entity: "minecraft:bat"
-					id: "03F8B0643833C763"
-					type: "kill"
-					value: 4L
-				}
-				{
-					consume_items: true
-					count: 12L
-					id: "78518220EA93506B"
-					item: { Count: 12, id: "youkaishomecoming:scarlet_devil_cake" }
-					type: "item"
-				}
-			]
-			title: "浓雾的吸血鬼"
-			x: 15.0d
-			y: 12.5d
-		}
-		{
-			can_repeat: true
-			dependencies: ["2FA400CBF51BEF6F"]
-			icon: "minecraft:nether_star"
-			id: "21CB42610F849B52"
-			rewards: [{
-				command: "/summon youkaishomecoming:clownpiece"
-				id: "2580220D33238CCA"
-				title: "召唤克劳恩皮丝"
-				type: "command"
-			}]
-			shape: "square"
-			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
-			tasks: [
-				{
-					entity: "youkaishomecoming:fairy"
-					id: "00C658F151CEA55F"
-					type: "kill"
-					value: 12L
-				}
-				{
-					dimension: "minecraft:the_nether"
-					id: "622A13060BDF17EC"
-					title: "访问维度：下界（The Nether）"
-					type: "dimension"
-				}
-				{
-					id: "0DA3F02C485243BC"
-					title: "确认召唤克劳恩皮丝"
-					type: "checkmark"
-				}
-			]
-			title: "星条旗的小丑"
-			x: 4.0d
-			y: 15.0d
-		}
-		{
 			dependencies: [
 				"480ED2CC514C6B62"
 				"2265CBB2249941E0"
@@ -3512,6 +3444,37 @@
 			title: "月下三妖精！"
 			x: -1.0d
 			y: 15.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["0775224EAD50E581"]
+			description: ["         因为本整合包没有加车万女仆，所以一些生物无法在生存正常召唤，只能通过这种方式来暂时代为召唤。"]
+			icon: "youkaishomecoming:spell_reimu"
+			id: "624102AD1251A51D"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "718FC79CAD8CF598"
+				table_id: 4393864153606541467L
+				type: "choice"
+			}]
+			shape: "square"
+			subtitle: "召唤生物"
+			tasks: [
+				{
+					id: "4C52622665587273"
+					title: "随机妖精"
+					type: "checkmark"
+				}
+				{
+					consume_items: true
+					id: "11BDF01CD928DD15"
+					item: "youkaishomecoming:spell_reimu"
+					type: "item"
+				}
+			]
+			title: "悠然女仆（bushi）"
+			x: 11.5d
+			y: 8.0d
 		}
 	]
 	title: "&e东方幻想乡"
