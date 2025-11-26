@@ -550,7 +550,9 @@
     "message.createdelight.fission_reactor.burning_rate": "当前燃烧速率: %s％",
     "message.createdelight.fission_reactor.recipe": "单个燃料组件配方",
     
-    "message.createdelight.sell_bin_hint": "你出售了出货箱(位于(%s))中的内容, 你获得了%s",
+    "message.createdelight.sell_bin_hint": "昨日盈利",
+    "message.createdelight.sell_bin_total": "§7总计: %s",
+
     "message.createdelight.first_summon_end_dragon": "§4PS:末影龙召唤过程中摧毁水晶会中止召唤进程,  末影龙的初始召唤如果被中止末地传送门也不会开启",
     "message.createdelight.pipe": "流体管道至少需要两个开口!",
 
@@ -562,6 +564,8 @@
     "tooltip.createdelight.quality_crop_grow": "§8带有品质的作物能够一定程度的§7无视湿度和季节§8, 品质越高无视的程度越大",
     "tooltip.createdelight.quality_food_eaten": "§8带有品质的食物能补充更高的§7饱和度和饥饿值§8, 其给予的效果§7时间更长, 等级更高§7",
     "tooltip.createdelight.quality_sell": "§8带有品质的物品如果可出售则§7能在出货箱中卖出更高的价格",
+    "tooltip.createdelight.single_price": "§7单价:%s",
+    "tooltip.createdelight.total_price": "§7总价:%s",
     "tooltip.createdelight.shift_frozen_block": "§7可§b冷却§7周围§b一格以内§7的物品",
     "tooltip.createdelight.shift_unactivated_crystalline_flower": "§7需要激活才能使用",
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§r§7, 但是会将模具存储在§b机器内部",

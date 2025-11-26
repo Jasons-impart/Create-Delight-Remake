@@ -101,3 +101,58 @@ ItemEvents.tooltip(e => {
     //     }
     // })
 })
+
+// ItemEvents.tooltip(e => {
+//     allTrades.forEach(trade => {
+//         e.addAdvanced(trade[0],(item, advanced, text) => {
+//             if (!e.shift) {
+//                 text.add(Component.translate("tooltip.createdelight.single_price", trade[1].toString()))
+//             } else {
+//                 text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(trade[1] * item.count)))
+//             }
+//         })
+//     })
+// })
+const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
+const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
+
+ItemEvents.tooltip(e => {
+    let baseNutrition = 6
+    let baseSaturationModifier = 0.6
+    /**@type {Internal.ItemStack[]} */
+    let itemStacks = []
+    Ingredient.all.itemIds.forEach(id => {
+        itemStacks.push(Item.of(`${id}`))
+    })
+    itemStacks.forEach(itemStack => {
+        let value = 0
+        let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
+        let i = allTrades.findIndex(item => item[0] == itemStack.id)
+        if(i != -1) {
+            let Quality = $QualityUtils.getQuality(itemStack)
+            let Qlevel = Quality.level()
+            let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
+            value = multiplier * allTrades[i][1]
+        } else {
+            if(itemStack.item.getFoodProperties() == null) return
+            let prop = itemStack.item.getFoodProperties()
+            let { nutrition, saturationModifier, effects } = prop
+            value = nutrition / baseNutrition * saturationModifier / baseSaturationModifier
+        }
+        e.addAdvanced(itemStack,(item, advanced, text) => {
+                if (!e.shift) {
+                    if(value < 1) {
+                        text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString() + "\uAA01"))
+                    } else {
+                        text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
+                    }
+                } else {
+                    if(value * item.count < 1) {
+                        text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString() + "\uAA01"))
+                    } else {
+                        text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * item.count)))
+                    }
+                }
+        })
+    })
+})
