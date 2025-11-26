@@ -12,7 +12,8 @@ ServerEvents.recipes(e => {
         "create_sa:experience_sword_recipe",
         "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
         "create_sa:zinc_handle_recipe",
-        "create_sa:block_picker_recipe"
+        "create_sa:block_picker_recipe",
+        "create_sa:flamethrower_recipe"
     ])
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:precision_mechanism", [
