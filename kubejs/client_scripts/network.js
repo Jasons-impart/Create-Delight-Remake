@@ -6,10 +6,9 @@ NetworkEvents.dataReceived("kubejs_player_playsound", e => {
 })
 
 NetworkEvents.dataReceived("spawn_create_particle", e => {
-    const {fluid, x, y, z, vx, vy, vz} = e.data
-    let particle = $FluidFX.getFluidParticle(Fluid.of(fluid).fluid)
-    
-    e.player.level.addParticle(particle, x, y, z, vx, vy, vz)
+    const {fluid, x, y, z, vx, vy, vz, count, speed} = e.data
+    let particle = $FluidFX.getFluidParticle(Fluid.of(fluid).fluidStack)
+    e.player.level.spawnParticles(particle, true, x, y, z, vx, vy, vz, count, speed)
 })
 
 NetworkEvents.dataReceived("openholo", e => {
