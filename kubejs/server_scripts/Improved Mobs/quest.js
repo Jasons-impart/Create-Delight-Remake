@@ -19,14 +19,6 @@ function UpdateRank(player, value) {
     else
         player.tell(`难度提升了${value}！`)
 }
-/**
- * 
- * @param {Internal.ServerPlayer} player
- * @returns {number}
- */
-function GetPlayerDifficulty(player) {
-    return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
-}
 
 FTBQuestsEvents.customReward(e => {
     const { player, reward, server } = e
