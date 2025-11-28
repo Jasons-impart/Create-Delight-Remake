@@ -41,6 +41,13 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:egg_yolk", 100)
         ]
     ).id("createdelightcore:unfried_shrimp")
+    // 鲑鱼搅拌得到鲑鱼籽
+    e.recipes.create.mixing(
+        'oceanic_delight:salmon_eggs',
+        [
+            'minecraft:salmon'
+        ]
+    ).id("createdelight:mixing/salmon_eggs")
 })
 
 ServerEvents.tags("item", e => {
