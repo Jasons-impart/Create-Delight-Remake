@@ -147,7 +147,7 @@
 			subtitle: "线圈越多并行数越高！"
 			tasks: [{
 				id: "66FB6BAD80FCAEAF"
-				item: "createdelightcore:copper_coil"
+				item: "createdelight:copper_coil"
 				type: "item"
 			}]
 			x: -15.5d

@@ -1,6 +1,7 @@
 
 const $FluidFX = Java.loadClass("com.simibubi.create.content.fluids.FluidFX")
 const $HoloGui = Java.loadClass("se.mickelus.tetra.items.modular.impl.holo.gui.HoloGui")
+
 NetworkEvents.dataReceived("kubejs_player_playsound", e => {
     e.player.playSound(e.data.get("soundEvent").getAsString())
 })
