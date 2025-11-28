@@ -46,6 +46,7 @@ leftClickFastDismantle = true
 removeCooldown = true
 enchancedRotationMenu = false
 [misc]
+removeMechanicalArmLimit = false
 preventSelectionDiscard = true
 infEditBoxLength = false
 removeCardboardOverlay = true
