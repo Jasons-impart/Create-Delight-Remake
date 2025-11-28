@@ -47,7 +47,7 @@ ServerEvents.recipes(e => {
         [
             'minecraft:salmon'
         ]
-    ).id("createdelight:/mixing/salmon_eggs")
+    ).id("createdelight:mixing/salmon_eggs")
 })
 
 ServerEvents.tags("item", e => {
