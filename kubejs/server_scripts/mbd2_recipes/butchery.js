@@ -5,7 +5,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(500)
+        .duration(200)
         .outputItems("10x butchercraft:goat_chop")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -32,7 +32,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(500)
+        .duration(200)
         .outputItems("10x minecraft:mutton")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(500)
+        .duration(200)
         .outputItems("64x minecraft:beef")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -87,7 +87,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(500)
+        .duration(200)
         .outputItems("12x minecraft:porkchop")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -135,7 +135,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -155,7 +155,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -175,7 +175,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -195,7 +195,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -215,7 +215,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")
@@ -235,7 +235,7 @@ ServerEvents.recipes(e => {
         .perTick(builder => builder
             .inputStress(1024)
         )
-        .duration(200)
+        .duration(100)
         .outputItems("minecraft:rabbit")
         .outputItems("butchercraft:heart")
         .outputItems("2x butchercraft:lung")

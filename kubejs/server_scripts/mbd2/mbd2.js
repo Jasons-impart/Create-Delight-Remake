@@ -221,13 +221,13 @@ ServerEvents.recipes(e => {
         C: "#forge:chests"
     })
     .id("createdelight:order_deliverer_item")
-    e.recipes.kubejs.shapeless(
-        "createdelight:contract_executor", 
-        [
-            "createdelight:order_deliverer_item",
-            "#create:table_cloths"
-        ]
-    ).id("createdelight:contract_executor")
+    // e.recipes.kubejs.shapeless(
+    //     "createdelight:contract_executor", 
+    //     [
+    //         "createdelight:order_deliverer_item",
+    //         "#create:table_cloths"
+    //     ]
+    // ).id("createdelight:contract_executor")
 
     e.recipes.create.mechanical_crafting("createdelight:mechanical_craft_encoder", [
         "AABAA",

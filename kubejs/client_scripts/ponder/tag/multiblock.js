@@ -1,7 +1,7 @@
 Ponder.tags(event => {
     event.createTag(
         "createdelight:multiblock",
-        "createdelightcore:steel_casing",
+        "createdelight:centrifuge_rotor",
         "多方块机器",
         "整合包自制的多方块机器",
         [
