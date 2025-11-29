@@ -9,12 +9,12 @@ net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen {
 net.minecraft.client.gui.screens.TitleScreen {
 }
 
-net.minecraft.client.gui.screens.PauseScreen {
-}
-
 net.minecraft.client.gui.screens.OptionsScreen {
 }
 
 com.github.alexthe666.iceandfire.client.gui.IceAndFireMainMenu {
+}
+
+net.minecraft.client.gui.screens.PauseScreen {
 }
 
