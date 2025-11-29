@@ -122,6 +122,8 @@
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
 - Biomespy
   - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
+- DSBG
+  - 关闭setblock in far chunk警告，本包里adastra等模组在生成时会频繁触发这个警报，有卡服风险。 https://www.mcmod.cn/class/14239.html
 
 # 考虑中的实用模组
 - 卓越火炬
