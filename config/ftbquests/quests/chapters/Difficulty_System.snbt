@@ -1894,7 +1894,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0DA94722AEFA2190"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
