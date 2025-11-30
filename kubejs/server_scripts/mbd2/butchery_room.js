@@ -2,8 +2,23 @@ const $ItemRecipeCapability = Java.loadClass("com.lowdragmc.mbd2.common.capabili
 const $MeatHookBlockEntity = Java.loadClass("com.lance5057.butchercraft.workstations.hook.MeatHookBlockEntity")
 const $ButcherBlockBlockEntity = Java.loadClass("com.lance5057.butchercraft.workstations.butcherblock.ButcherBlockBlockEntity")
 
+function cleanString(str) {
+  return String(str)
+    .trim() // 移除空白
+    .replace(/^["']+/, '') // 移除开头的引号和单引号
+    .replace(/["']+$/, '') // 移除结尾的引号和单引号
+    .replace(/[^\w:]+$/, ''); // 移除末尾的任何非单词字符（除了冒号）
+}
+
+let carcass_data = [
+  ["butchercraft:pig_carcass", 5],
+  ["butchercraft:cow_carcass", 6],
+  ["butchercraft:sheep_carcass", 4],
+  ["butchercraft:goat_carcass", 4],
+]
 MBDMachineEvents.onTick("createdelight:butchery_room", e => {
   const {machine} = e.event
+  if (machine.level.time % 20 != 0) return
   let pos = machine.pos
   let facing = machine.getFrontFacing().get()
   /**@type {Internal.MeatHookBlockEntity}*/
@@ -11,7 +26,7 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
   /**@type {Internal.ButcherBlockBlockEntity} */
   let butcherBlock = machine.level.getBlockEntity(pos.relative(facing.opposite).above())
   if(machine.machineStateName != "working") {
-    if (machine.level.time % 10 == 0  && (meatHook.insertedItem != [] || butcherBlock.insertedItem != [])) {
+    if (meatHook.insertedItem != [] || butcherBlock.insertedItem != []) {
       machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "minecraft:block.slime_block.fall", "blocks", 1, 1)
       meatHook.finishRecipe()
       butcherBlock.finishRecipe()
@@ -21,14 +36,22 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
     /**@type {String} */
     let itemIds
     machine.recipeLogic.getLastRecipe().getInputContents($ItemRecipeCapability.CAP).forEach(con => {
-      itemIds = con.getContent().toJson().get("ingredient").get("item")
+      itemIds = cleanString(con.getContent().toJson().get("ingredient").get("item"))
     })
-    machine.level.tell(itemIds)
     if(Item.of(itemIds).hasTag("butchercraft:big_carcass")) {
-      if (machine.level.time % 20 != 0) return
+      let maxStage = carcass_data[carcass_data.findIndex(data => data[0] == itemIds)][1]
+      if(meatHook.insertedItem == []){
+        meatHook.insertItem(Item.of(itemIds))
+        meatHook.stage = 0
+      }
+      if(meatHook.insertedItem.id != itemIds || (meatHook.stage == maxStage && meatHook.insertedItem.id == itemIds)){
+        meatHook.finishRecipe()
+        meatHook.insertItem(Item.of(itemIds))
+        meatHook.stage = 0
+      }
       machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "minecraft:block.slime_block.fall", "blocks", 1, 1)
       if (machine.level.time % 40 != 0) return
-      if (meatHook.stage < 5) {
+      if (meatHook.stage <= maxStage - 1) {
         meatHook.insertItem(Item.of(itemIds))
         meatHook.stage++
       }
@@ -36,7 +59,7 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
       if (machine.level.time % 20 != 0) return
       machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "minecraft:block.slime_block.fall", "blocks", 1, 1)
       if (machine.level.time % 40 != 0) return
-      if (butcherBlock.stage < 5) {
+      if (butcherBlock.stage < maxStage - 1) {
         butcherBlock.insertItem(Item.of(itemIds))
         butcherBlock.stage++
       }
