@@ -62,10 +62,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"50711781910527C4"
-				"5EB3B636A6FEA921"
-			]
+			dependencies: ["50711781910527C4"]
 			dependency_requirement: "one_completed"
 			id: "62C31EFDB74E7053"
 			shape: "square"

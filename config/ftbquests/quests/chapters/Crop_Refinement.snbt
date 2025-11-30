@@ -245,7 +245,10 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["5C40F5E0F477394B"]
+			dependencies: [
+				"5C40F5E0F477394B"
+				"67A7A1B0700FFCA3"
+			]
 			icon: "ratatouille:thresher"
 			id: "24CF527B4E34E599"
 			rewards: [{
@@ -255,15 +258,15 @@
 			}]
 			shape: "gear"
 			size: 3.0d
-			subtitle: "获得面粉的第一步~"
+			subtitle: "获得精细加工产品的第一步~"
 			tasks: [{
 				id: "001ACC6FC0329554"
 				item: "ratatouille:thresher"
 				type: "item"
 			}]
 			title: "精加工！"
-			x: -3.5d
-			y: -10.0d
+			x: -21.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6E73DDAFB4DFC98C"]
@@ -1069,115 +1072,6 @@
 			y: 4.75d
 		}
 		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "049795F88F833F83"
-			rewards: [{
-				id: "54D12588E87373A8"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "也许可以用来冷却什么东西？"
-			tasks: [{
-				id: "0CDFE5084CDD7DAE"
-				item: "ratatouille:frozen_block"
-				type: "item"
-			}]
-			title: ">_<好冷啊"
-			x: -6.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["24CF527B4E34E599"]
-			icon: "create:cogwheel"
-			id: "491266302FA9FE5D"
-			rewards: [{
-				id: "41DC63E4F682B533"
-				type: "xp"
-				xp: 100
-			}]
-			shape: "rsquare"
-			size: 1.5d
-			subtitle: "开启你的精制谷物生活吧！"
-			tasks: [{
-				id: "40A0AC868B1E3044"
-				title: "机械动力农业化发展"
-				type: "checkmark"
-			}]
-			title: "农业科技！！！"
-			x: -3.5d
-			y: -7.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "662557EEE3B061E9"
-			rewards: [{
-				id: "4400DF5693B92126"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "用它来精制谷物！"
-			tasks: [{
-				id: "5729314983387862"
-				item: "ratatouille:thresher"
-				type: "item"
-			}]
-			x: -5.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "3A122009CACF7BFE"
-			rewards: [{
-				id: "7CC346ECD91F1111"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "脱模后记得从脱模机中取出模具！"
-			tasks: [{
-				id: "69B5F5A818546FB5"
-				item: "ratatouille:mechanical_demolder"
-				type: "item"
-			}]
-			title: "脱模！！！"
-			x: -1.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "00ACA87F51B9F575"
-			rewards: [{
-				id: "4BBA63ABBACE1BE5"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "加上分散网效果更佳"
-			tasks: [{
-				id: "11F91CE4793C581E"
-				item: "ratatouille:spreader"
-				type: "item"
-			}]
-			title: "骨粉漫天飞舞~"
-			x: -1.5d
-			y: -5.0d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "0D514862CB51DDCE"
-			rewards: [{
-				id: "053E798BF7E80688"
-				type: "xp"
-				xp: 100
-			}]
-			subtitle: "额，这玩意的食品安全可以得到保障吗？"
-			tasks: [{
-				id: "137738B2C76D555B"
-				item: "ratatouille:squeeze_basin"
-				type: "item"
-			}]
-			x: -3.5d
-			y: -4.5d
-		}
-		{
 			dependencies: ["52B972C68D42A749"]
 			id: "41FC5B76E9352D7F"
 			tasks: [{
@@ -1939,11 +1833,9 @@
 			size: 1.5d
 			subtitle: "斯哈斯哈"
 			tasks: [{
-				icon: "ratatouille:raw_sausage"
-				id: "126326AD58F167C3"
-				stat: "minecraft:play_time"
-				type: "stat"
-				value: 1
+				id: "7C10101286E84991"
+				title: "香肠香肠"
+				type: "checkmark"
 			}]
 			title: "香肠！我的最爱！"
 			x: -7.5d
@@ -2008,8 +1900,8 @@
 				item: "ratatouille:raw_sausage"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 16.0d
+			x: -6.5d
+			y: 15.5d
 		}
 		{
 			dependencies: ["6C2C2AB54095982B"]
@@ -2019,8 +1911,8 @@
 				item: "butchercraft:cooked_blood_sausage"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 15.5d
+			x: -9.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2030,8 +1922,8 @@
 				item: "ratatouille:sausage"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 17.0d
+			x: -7.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["78621A06A5DC01BA"]
@@ -2041,8 +1933,8 @@
 				item: "createdelight:salami"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 17.0d
+			x: -6.0d
+			y: 16.5d
 		}
 		{
 			dependencies: ["091A81917B17827D"]
@@ -2257,62 +2149,6 @@
 			}]
 			x: 7.0d
 			y: 16.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "2D408762276FD883"
-			tasks: [{
-				id: "167359D62F31BDDE"
-				item: "ratatouille:oven_fan"
-				type: "item"
-			}]
-			x: -4.5d
-			y: -4.5d
-		}
-		{
-			dependencies: ["491266302FA9FE5D"]
-			id: "2D06FF672ED6DE2E"
-			tasks: [{
-				id: "0E5D99CF214F9ACD"
-				item: "ratatouille:oven"
-				type: "item"
-			}]
-			x: -2.5d
-			y: -4.5d
-		}
-		{
-			description: [
-				"由此，介绍本包一个比较重量级的系统——&e订单系统&r。"
-				"首先，你要制作一个&e订单交付器&r，并将其放置在&e白色桌布&r上。然后，沿着本方块的&e东南西北四个方向放置桌布（最多可延申8格）&r，如下图所示。"
-				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
-				"{@pagebreak}"
-				"如何执行一个订单："
-				"首先将一个未开封的订单打开（未开封的订单目前从拍卖行获取）。放置一个&e开封后的订单&r在一个桌布上。此时其&e所在以及后方任意格桌布&r都可以&e放置任意数量&r的包裹。其会将其本体以及后方的所有桌布上的&e包裹的内容作为订单交付的物品&r，直到遇上&e另一个含有订单&r的桌布。"
-				"如果没有看懂的话，可以看下面的图："
-				""
-				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
-				""
-				"上图列举了几种&e划分订单所用包裹&r的行为。"
-				"{@pagebreak}"
-				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
-			]
-			id: "39D4A49A986967B6"
-			rewards: [{
-				id: "5178A2824F345FCC"
-				item: "createdelight:unopened_order"
-				type: "item"
-			}]
-			shape: "gear"
-			size: 3.0d
-			subtitle: "可以批发食物了！"
-			tasks: [{
-				id: "04169D558BAE9E68"
-				item: "createdelight:order_deliverer_item"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 9.0d
 		}
 	]
 	title: "&e精加工！"
