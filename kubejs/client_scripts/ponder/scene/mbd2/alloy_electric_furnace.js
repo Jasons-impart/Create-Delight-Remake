@@ -3,7 +3,7 @@ const $BlockStateProperties = Java.loadClass('net.minecraft.world.level.block.st
 Ponder.registry(e => {
     e.create([
         "createdelight:alloy_electric_furnace",
-        "createdelightcore:copper_coil"
+        "createdelight:copper_coil"
     ])
         .scene(
             "createdelight:alloy_electric_furnace",

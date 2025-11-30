@@ -27,7 +27,7 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
         }
     }
 })
-
+//打磨武器
 MBDMachineEvents.onRightClick("createdelight:mechanic_grinding_wheel", e => {
     let event = e.event
     const { heldItem, player, hand, machine } = event
@@ -35,6 +35,7 @@ MBDMachineEvents.onRightClick("createdelight:mechanic_grinding_wheel", e => {
     if (heldItem.damageableItem) {
         let damage = Math.floor(Math.sqrt(Math.abs(holder.speed)) / 4 + 0.5)
         player.playSound("minecraft:block.grindstone.use")
+        player.swing()
         let itemClass = TetraUtil.getItem(heldItem)
         if (itemClass != null) {
             if (!itemClass.isBroken(heldItem)) {
