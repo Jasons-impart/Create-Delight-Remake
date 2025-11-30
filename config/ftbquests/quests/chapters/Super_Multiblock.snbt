@@ -62,10 +62,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"50711781910527C4"
-				"5EB3B636A6FEA921"
-			]
+			dependencies: ["50711781910527C4"]
 			dependency_requirement: "one_completed"
 			description: [
 				"&a&o&l如何使用&r：整合包自带&e对应机器蓝图&r，可以使用&e蓝图大炮&r&4搭建&r；或使用&eJEI查看多方块结构&r"

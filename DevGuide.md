@@ -102,8 +102,8 @@
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
-- Radium Reforged
-  - 优化各种原版机制计算方法 https://www.mcmod.cn/class/5580.html
+- Canary
+  - 锂的forge移植，优化各种原版机制计算方法 https://www.mcmod.cn/class/7598.html
 - moestweaks
   - 关闭配方书 https://www.mcmod.cn/class/17039.html
 - C2ME - forge
@@ -122,6 +122,8 @@
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
 - Biomespy
   - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
+- DSBG
+  - 关闭setblock in far chunk警告，本包里adastra等模组在生成时会频繁触发这个警报，有卡服风险。 https://www.mcmod.cn/class/14239.html
 
 # 考虑中的实用模组
 - 卓越火炬
