@@ -1,0 +1,2326 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Mouse_Chef"
+	group: "7D0A1432AAAD0EBA"
+	icon: "oceanic_delight:takoyaki"
+	id: "546D1BAE985F9945"
+	images: [
+		{
+			height: 15.5d
+			image: "neapolitan:block/adzuki_cake_top"
+			order: 1
+			rotation: 0.0d
+			width: 15.5d
+			x: -33.0d
+			y: -15.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -33.0d
+			y: -15.0d
+		}
+		{
+			height: 16.0d
+			image: "some_assembly_required:item/bread_slice"
+			order: 1
+			rotation: 0.0d
+			width: 16.0d
+			x: -12.0d
+			y: -15.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -12.0d
+			y: -15.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: 9.0d
+			y: -15.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -33.0d
+			y: 4.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -12.0d
+			y: 4.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: 9.0d
+			y: 4.0d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -33.0d
+			y: 23.5d
+		}
+		{
+			height: 16.0d
+			image: "collectorsreap:item/prawn_noodles"
+			order: 1
+			rotation: 0.0d
+			width: 16.0d
+			x: 9.0d
+			y: -15.5d
+		}
+		{
+			height: 16.5d
+			image: "brewinandchewin:item/beer"
+			rotation: 0.0d
+			width: 16.5d
+			x: -33.0d
+			y: 4.0d
+		}
+		{
+			height: 15.0d
+			image: "vinery:item/vinery_standard"
+			rotation: 0.0d
+			width: 15.0d
+			x: -11.5d
+			y: 4.0d
+		}
+		{
+			height: 15.5d
+			image: "youkaishomecoming:block/bags/tea_leaf_bag_top"
+			rotation: 0.0d
+			width: 15.5d
+			x: 9.0d
+			y: 4.0d
+		}
+		{
+			height: 15.5d
+			image: "farmersrespite:block/coffee_sack_top"
+			rotation: 0.0d
+			width: 15.5d
+			x: -33.0d
+			y: 23.5d
+		}
+	]
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			icon: "minecraft:cake"
+			id: "4E3082C7AC773F5B"
+			rewards: [{
+				id: "3B6C8CAE7005D6A1"
+				item: "createdelightcore:netherite_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 4.0d
+			subtitle: "你已经是一个合格的蛋糕大师了（赞赏脸）"
+			tasks: [{
+				id: "18DAABFD59ED4197"
+				title: "蛋糕大师"
+				type: "checkmark"
+			}]
+			x: -40.0d
+			y: -22.0d
+		}
+		{
+			id: "690FB96658B4BB38"
+			size: 2.0d
+			tasks: [{
+				id: "601BF3ACBDEF8288"
+				item: "minecraft:cake"
+				type: "item"
+			}]
+			x: -37.5d
+			y: -20.25d
+		}
+		{
+			id: "196039D48E64CCC0"
+			size: 1.75d
+			tasks: [{
+				id: "04821AB2C09101F3"
+				item: "farmersrespite:coffee_cake"
+				type: "item"
+			}]
+			x: -30.0d
+			y: -15.0d
+		}
+		{
+			id: "0AF1F566204AE4B0"
+			size: 1.75d
+			tasks: [{
+				id: "3B03B3F304E48F61"
+				item: "seasonals:pumpkin_cake"
+				type: "item"
+			}]
+			x: -28.5d
+			y: -17.5d
+		}
+		{
+			id: "1541DE2CFE9A1ABB"
+			size: 1.75d
+			tasks: [{
+				id: "7678FEA4C5710DAC"
+				item: "seasonals:sweet_berry_cake"
+				type: "item"
+			}]
+			x: -37.5d
+			y: -17.5d
+		}
+		{
+			id: "50AD608C64782ED9"
+			size: 2.0d
+			tasks: [{
+				id: "2330023A6870D0A3"
+				item: "seasonals:beetroot_cake"
+				type: "item"
+			}]
+			x: -28.5d
+			y: -20.25d
+		}
+		{
+			id: "1C6F5702E4739366"
+			size: 1.75d
+			tasks: [{
+				id: "6DCADDE25FA8CB0B"
+				item: "oceanic_delight:sponge_cake"
+				type: "item"
+			}]
+			x: -30.0d
+			y: -12.5d
+		}
+		{
+			id: "08C29059C1A419D3"
+			size: 1.75d
+			tasks: [{
+				id: "1579E85D81583222"
+				item: "seasonals:red_velvet_cupcake"
+				type: "item"
+			}]
+			x: -30.0d
+			y: -10.0d
+		}
+		{
+			id: "1DED6F54AFBC85AF"
+			size: 1.75d
+			tasks: [{
+				id: "36C9D9D05A5C79AF"
+				item: "youkaishomecoming:red_velvet_cake"
+				type: "item"
+			}]
+			x: -36.0d
+			y: -17.5d
+		}
+		{
+			id: "56AC2FC4F60B98CB"
+			size: 1.75d
+			tasks: [{
+				id: "5F7A1228CAF5A598"
+				item: "cavedelight:tectonic_cheesecake"
+				type: "item"
+			}]
+			x: -28.5d
+			y: -12.5d
+		}
+		{
+			id: "1D31026B30494798"
+			size: 2.0d
+			tasks: [{
+				id: "3B5C194DC975371B"
+				item: "cmr:frozen_cake"
+				type: "item"
+			}]
+			x: -31.5d
+			y: -20.25d
+		}
+		{
+			id: "2577BBEDED4B6BFD"
+			size: 1.75d
+			tasks: [{
+				id: "0FCFE3B0DCEE2C7F"
+				item: {
+					Count: 1
+					id: "bakeries:cake_roll"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -28.5d
+			y: -10.0d
+		}
+		{
+			id: "514DCF743EAD663D"
+			size: 1.75d
+			tasks: [{
+				id: "329FCB238992A124"
+				item: "bakeries:pound_cake"
+				type: "item"
+			}]
+			x: -31.5d
+			y: -10.0d
+		}
+		{
+			id: "04A79354DDBD8649"
+			size: 1.75d
+			tasks: [{
+				id: "29AD83514C210CC6"
+				item: "bakeries:cream_cake"
+				type: "item"
+			}]
+			x: -31.5d
+			y: -17.5d
+		}
+		{
+			id: "1BD0E31DD4D2E554"
+			size: 1.75d
+			tasks: [{
+				id: "42D5705E1BE7626E"
+				item: "mynethersdelight:magma_cake_block"
+				type: "item"
+			}]
+			x: -36.0d
+			y: -12.5d
+		}
+		{
+			id: "09FA793E44AADA04"
+			size: 1.75d
+			tasks: [{
+				id: "47567D80E0BE51CB"
+				item: "createaddition:honey_cake"
+				type: "item"
+			}]
+			x: -37.5d
+			y: -12.5d
+		}
+		{
+			id: "1D2FDD12B208C5DF"
+			size: 1.75d
+			tasks: [{
+				id: "2DACA1FFD46DCA82"
+				item: "neapolitan:vanilla_cake"
+				type: "item"
+			}]
+			x: -34.5d
+			y: -17.5d
+		}
+		{
+			id: "67E1EA2F2C985376"
+			size: 1.75d
+			tasks: [{
+				id: "6EA6C41A7C342F2C"
+				item: "collectorsreap:lime_cake"
+				type: "item"
+			}]
+			x: -37.5d
+			y: -15.0d
+		}
+		{
+			id: "4791D37A90F0E3AB"
+			size: 1.75d
+			tasks: [{
+				id: "10EC2F0FEC836A1A"
+				item: "collectorsreap:pomegranate_cake"
+				type: "item"
+			}]
+			x: -36.0d
+			y: -15.0d
+		}
+		{
+			id: "07BE8073C148A35C"
+			size: 1.75d
+			subtitle: "看上去卖相不错？"
+			tasks: [{
+				id: "1EF118681142AFBE"
+				item: "dungeonsdelight:monster_cake"
+				type: "item"
+			}]
+			x: -28.5d
+			y: -15.0d
+		}
+		{
+			id: "718126785B3C02D1"
+			size: 1.75d
+			tasks: [{
+				id: "0C82B381BE052AF1"
+				item: "trailandtales_delight:cherry_cake"
+				type: "item"
+			}]
+			x: -31.5d
+			y: -15.0d
+		}
+		{
+			id: "0B6B9764BAC3269A"
+			size: 1.75d
+			tasks: [{
+				id: "51959C793BA17DD1"
+				item: "neapolitan:strawberry_cake"
+				type: "item"
+			}]
+			x: -34.5d
+			y: -15.0d
+		}
+		{
+			id: "3D4BBC56EB35F2C9"
+			size: 1.75d
+			subtitle: "不拿拿！"
+			tasks: [{
+				id: "65CF309E7EA9D974"
+				item: "neapolitan:banana_cake"
+				type: "item"
+			}]
+			x: -33.0d
+			y: -15.0d
+		}
+		{
+			id: "78D61A0794423146"
+			size: 1.75d
+			tasks: [{
+				id: "2CF573F36BB81B1E"
+				item: "neapolitan:adzuki_cake"
+				type: "item"
+			}]
+			x: -30.0d
+			y: -17.5d
+		}
+		{
+			id: "2CDB59A99484800E"
+			size: 1.75d
+			tasks: [{
+				id: "5DA2728A4416E86F"
+				item: "neapolitan:mint_cake"
+				type: "item"
+			}]
+			x: -33.0d
+			y: -17.5d
+		}
+		{
+			id: "4F3E18DE4E479F90"
+			size: 2.0d
+			subtitle: "什么叫做你也是蛋糕（雾）"
+			tasks: [{
+				id: "641EDB9AEA00E24D"
+				item: "create:blaze_cake"
+				type: "item"
+			}]
+			x: -34.5d
+			y: -20.25d
+		}
+		{
+			id: "3220FB9156090953"
+			size: 1.75d
+			tasks: [{
+				id: "3F45B26851489A8F"
+				item: "alexscaves:spelunkie"
+				type: "item"
+			}]
+			x: -33.0d
+			y: -10.0d
+		}
+		{
+			id: "75E4AA738EF67A13"
+			size: 1.75d
+			tasks: [{
+				id: "5414B0D17C3AB86E"
+				item: "cosmopolitan:jelly_roll"
+				type: "item"
+			}]
+			x: -37.5d
+			y: -10.0d
+		}
+		{
+			id: "7D344B904405AAB0"
+			size: 1.75d
+			tasks: [{
+				id: "7A55484A57498854"
+				item: "cosmopolitan:chocolate_roll"
+				type: "item"
+			}]
+			x: -36.0d
+			y: -10.0d
+		}
+		{
+			id: "59178D72BF810FDA"
+			size: 1.75d
+			tasks: [{
+				id: "4CAF690FB58F6E81"
+				item: "cosmopolitan:ink_roll"
+				type: "item"
+			}]
+			x: -34.5d
+			y: -10.0d
+		}
+		{
+			id: "7B2E8AD7FF8D0C1A"
+			size: 1.75d
+			tasks: [{
+				id: "3834C7CDDF0E464A"
+				item: "cosmopolitan:berry_cheesecake_bar"
+				type: "item"
+			}]
+			x: -31.5d
+			y: -12.5d
+		}
+		{
+			id: "282C4AD17C262A9D"
+			size: 1.75d
+			tasks: [{
+				id: "0B2A8690466B2D0F"
+				item: "cosmopolitan:wheatgrass_cubecake"
+				type: "item"
+			}]
+			x: -34.5d
+			y: -12.5d
+		}
+		{
+			id: "42D67451C6A6FF13"
+			size: 1.75d
+			tasks: [{
+				id: "351FFA9A0A3B4AE6"
+				item: "cosmopolitan:glow_berry_cubecake"
+				type: "item"
+			}]
+			x: -33.0d
+			y: -12.5d
+		}
+		{
+			id: "57C9241B6B6660A0"
+			shape: "rsquare"
+			size: 4.0d
+			subtitle: "据说有个人靠卖面包成为了首富"
+			tasks: [{
+				id: "4C76D1D9EF318CEE"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			title: "面包大亨"
+			x: -19.0d
+			y: -22.0d
+		}
+		{
+			id: "0283C30D178E71CF"
+			size: 1.75d
+			tasks: [{
+				id: "12E40AC09902F8A0"
+				item: "oceanic_delight:pasta_with_eyeball"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -13.0d
+		}
+		{
+			id: "6B1B6398509B8761"
+			size: 1.75d
+			tasks: [{
+				id: "1891ED83CA95EF03"
+				item: "cavedelight:dino_chop_pasta"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -14.5d
+		}
+		{
+			id: "4B1C11B93C72DF32"
+			size: 1.75d
+			tasks: [{
+				id: "28A21BB76AD4C748"
+				item: "cavedelight:tectonic_pasta"
+				type: "item"
+			}]
+			x: 14.0d
+			y: -14.5d
+		}
+		{
+			id: "54047FC310E0FC48"
+			size: 1.75d
+			tasks: [{
+				id: "6E776D61F54FF109"
+				item: "miners_delight:pasta_with_veggieballs"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -16.0d
+		}
+		{
+			id: "10F6ACCC600FFC29"
+			size: 1.75d
+			tasks: [{
+				id: "706766F3DF32E815"
+				item: "miners_delight:glow_ink_pasta"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -14.5d
+		}
+		{
+			id: "3DF6C318A78BBF03"
+			size: 1.75d
+			tasks: [{
+				id: "3E880D0495C35153"
+				item: "mynethersdelight:twisted_ghasta"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -13.0d
+		}
+		{
+			id: "3D1DF6953497C89A"
+			size: 1.75d
+			tasks: [{
+				id: "5F2D77AB33DCD914"
+				item: "mynethersdelight:fries_ghasta"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -14.5d
+		}
+		{
+			id: "7836AAF7B6F93DBB"
+			size: 1.75d
+			tasks: [{
+				id: "5C3D170D6437316C"
+				item: "mynethersdelight:plate_of_ghasta_with_cream"
+				type: "item"
+			}]
+			x: 8.5d
+			y: -19.0d
+		}
+		{
+			id: "0175986A49EFD1E3"
+			size: 1.75d
+			tasks: [{
+				id: "74EF3B00C8A6AA15"
+				item: "vintagedelight:cheese_pasta"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -11.5d
+		}
+		{
+			id: "55A2BB383E0462AC"
+			size: 1.75d
+			tasks: [{
+				id: "78C82703ABDC08A4"
+				item: "createdelight:wrapped_fries_ghasta"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -14.5d
+		}
+		{
+			id: "6C4C9261B49BAAB0"
+			size: 1.75d
+			tasks: [{
+				id: "10288806CF7484DF"
+				item: "farmersdelight:pasta_with_meatballs"
+				type: "item"
+			}]
+			x: 6.0d
+			y: -11.5d
+		}
+		{
+			id: "335F1572D3891B18"
+			size: 1.75d
+			tasks: [{
+				id: "1E0010EA4309A695"
+				item: "farmersdelight:pasta_with_mutton_chop"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -16.0d
+		}
+		{
+			id: "132E7D5D842A9162"
+			size: 1.75d
+			tasks: [{
+				id: "2CC11E0D289804BA"
+				item: "collectorsreap:portobello_pasta"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -17.5d
+		}
+		{
+			id: "0D508749DB7477E4"
+			size: 1.75d
+			tasks: [{
+				id: "4C57850B0E81FDC2"
+				item: "collectorsreap:clam_pasta"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -16.0d
+		}
+		{
+			id: "06A473BC52C56F4A"
+			size: 1.75d
+			tasks: [{
+				id: "4ADEEA6D631E27C3"
+				item: "alexsdelight:lobster_pasta"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -17.5d
+		}
+		{
+			id: "444FB281301A56A9"
+			size: 1.75d
+			tasks: [{
+				id: "27870DBE68F94FB1"
+				item: "alexsdelight:kangaroo_pasta"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -17.5d
+		}
+		{
+			id: "037EE8D06FF240D4"
+			size: 1.75d
+			tasks: [{
+				id: "1A9BCE7B4E8ED826"
+				item: "dungeonsdelight:chloropasta"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -19.0d
+		}
+		{
+			id: "07514A4FE4141512"
+			size: 1.75d
+			tasks: [{
+				id: "600846E8E488E8FD"
+				item: "cuisinedelight:mixed_pasta"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -16.0d
+		}
+		{
+			id: "0191D896A7AB8840"
+			size: 1.75d
+			tasks: [{
+				id: "4DC52B81F3A0E35B"
+				item: "cuisinedelight:fried_pasta"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -13.0d
+		}
+		{
+			id: "3DE09E52F730F74C"
+			size: 1.75d
+			tasks: [{
+				id: "2AEF87A165519F64"
+				item: "cuisinedelight:meat_pasta"
+				type: "item"
+			}]
+			x: 14.0d
+			y: -13.0d
+		}
+		{
+			id: "61B7B82D33B3B422"
+			size: 1.75d
+			tasks: [{
+				id: "55699CBCE6FAE757"
+				item: "cuisinedelight:seafood_pasta"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -13.0d
+		}
+		{
+			id: "0DEE09AA0B812A20"
+			size: 1.75d
+			tasks: [{
+				id: "1265789CBA60A7D0"
+				item: "cosmopolitan:green_pasta"
+				type: "item"
+			}]
+			x: 14.0d
+			y: -16.0d
+		}
+		{
+			id: "3DA2B8E5EEA68667"
+			size: 2.0d
+			tasks: [{
+				id: "3ADABFF09F7E4B88"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			x: -15.0d
+			y: -20.25d
+		}
+		{
+			id: "23ACC6023B7AD5BF"
+			size: 2.0d
+			tasks: [{
+				id: "406CBF53AB9FD2CF"
+				item: "mynethersdelight:bread_loaf"
+				type: "item"
+			}]
+			x: -17.0d
+			y: -19.0d
+		}
+		{
+			id: "1257B8437F5DD9C6"
+			size: 2.0d
+			tasks: [{
+				id: "51DB608C80F2EA16"
+				item: {
+					Count: 1
+					id: "bakeries:cheese_cream_bread"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -15.0d
+			y: -17.25d
+		}
+		{
+			id: "4BAEC5B0F551F4BF"
+			size: 2.0d
+			tasks: [{
+				id: "2A340ADE8A316D39"
+				item: {
+					Count: 1
+					id: "bakeries:ciabatta"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -15.0d
+			y: -15.25d
+		}
+		{
+			id: "4A3BB3FD5B93D3D3"
+			size: 2.0d
+			tasks: [{
+				id: "16D78470A2A63786"
+				item: {
+					Count: 1
+					id: "bakeries:focaccia"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.5d
+			y: -13.75d
+		}
+		{
+			id: "3F93ACB51222F2FF"
+			size: 2.0d
+			tasks: [{
+				id: "6E6829F5D67C01FD"
+				item: "alexsdelight:gongylidia_bruschetta"
+				type: "item"
+			}]
+			x: -15.0d
+			y: -11.75d
+		}
+		{
+			id: "7A1E582BD1DDBA34"
+			size: 2.0d
+			tasks: [{
+				id: "2258803053620597"
+				item: "neapolitan:banana_bread"
+				type: "item"
+			}]
+			x: -13.0d
+			y: -11.75d
+		}
+		{
+			id: "1DEF59E01D59D494"
+			size: 2.0d
+			tasks: [{
+				id: "73BF207F40EA97B5"
+				item: "bakeries:country_bread"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -13.75d
+		}
+		{
+			id: "2BAAB71933159C65"
+			size: 2.0d
+			tasks: [{
+				id: "11FC96583290CF3B"
+				item: "some_assembly_required:bread_slice"
+				type: "item"
+			}]
+			x: -10.5d
+			y: -11.75d
+		}
+		{
+			id: "44843C213D06BCDF"
+			size: 2.0d
+			tasks: [{
+				id: "6619AC97BE98301E"
+				item: "some_assembly_required:toasted_bread_slice"
+				type: "item"
+			}]
+			x: -8.5d
+			y: -11.75d
+		}
+		{
+			id: "56262A05296A0A3B"
+			size: 2.0d
+			tasks: [{
+				id: "2E0199C7282F6614"
+				item: "corn_delight:cornbread"
+				type: "item"
+			}]
+			x: -9.0d
+			y: -15.25d
+		}
+		{
+			id: "762B503674701CCC"
+			size: 2.0d
+			tasks: [{
+				id: "7909F2011C160CA9"
+				item: "the_bumblezone:bee_bread"
+				type: "item"
+			}]
+			x: -12.0d
+			y: -15.25d
+		}
+		{
+			id: "474648735E08E431"
+			size: 2.0d
+			tasks: [{
+				id: "2D0705ECBB10AF62"
+				item: {
+					Count: 1
+					id: "bakeries:round_bread"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -11.0d
+			y: -17.25d
+		}
+		{
+			id: "3457C1BFAF5AE3EF"
+			size: 2.0d
+			tasks: [{
+				id: "034352CD394C7E6B"
+				item: {
+					Count: 1
+					id: "bakeries:meat_floss_bread_roll"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -13.0d
+			y: -17.25d
+		}
+		{
+			id: "58C9B96A7957F16F"
+			size: 2.0d
+			tasks: [{
+				id: "40B833B8732E7FED"
+				item: {
+					Count: 1
+					id: "fruitsdelight:jelly_bread"
+					tag: {
+						JellyEffectRoot: ["APPLE"]
+					}
+				}
+				type: "item"
+			}]
+			x: -13.0d
+			y: -19.25d
+		}
+		{
+			id: "6415C5952575C32E"
+			size: 2.0d
+			tasks: [{
+				id: "5F8D4D789FFBE974"
+				item: "bakeries:honey_butter_spread_country_bread"
+				type: "item"
+			}]
+			x: -11.0d
+			y: -19.25d
+		}
+		{
+			id: "505F5E054729D977"
+			size: 2.0d
+			tasks: [{
+				id: "494448926718318F"
+				item: "createdelight:oat_bread"
+				type: "item"
+			}]
+			x: -9.0d
+			y: -20.25d
+		}
+		{
+			id: "6F100B1EC7202A2B"
+			size: 2.0d
+			tasks: [{
+				id: "16FE382B292B57AC"
+				item: "farmersrespite:nether_wart_sourdough"
+				type: "item"
+			}]
+			x: -7.0d
+			y: -19.0d
+		}
+		{
+			id: "1E54E00E8D439455"
+			size: 2.0d
+			tasks: [{
+				id: "68A1A870D8968E5A"
+				item: {
+					Count: 1
+					id: "bakeries:berry_bread"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: -17.25d
+		}
+		{
+			icon: "brewinandchewin:beer"
+			id: "12C2F5B552417684"
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				id: "683B0437B36B0D68"
+				title: "豪饮！"
+				type: "checkmark"
+			}]
+			x: -40.0d
+			y: -2.0d
+		}
+		{
+			id: "2BF573219E30E73D"
+			rewards: [{
+				count: 3
+				id: "02270136674ED190"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "597BBEF510CA244C"
+				item: "brewinandchewin:beer"
+				type: "item"
+			}]
+			x: -36.0d
+			y: -1.0d
+		}
+		{
+			id: "6A596EE496C145BB"
+			rewards: [{
+				count: 3
+				id: "4F36D1F84470979A"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "10928E20321A8650"
+				item: "brewinandchewin:strongroot_ale"
+				type: "item"
+			}]
+			x: -33.0d
+			y: -1.0d
+		}
+		{
+			id: "1D749FE98E0AE76E"
+			rewards: [{
+				count: 3
+				id: "4696F06F22F454D6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "6868476CF1A4C0CF"
+				item: "brewinandchewin:bloody_mary"
+				type: "item"
+			}]
+			x: -35.0d
+			y: 5.0d
+		}
+		{
+			id: "05B1F67579EF1D85"
+			rewards: [{
+				count: 3
+				id: "5DE4708017BCD83F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "43642FE61CCD89D9"
+				item: "brewinandchewin:vodka"
+				type: "item"
+			}]
+			x: -29.0d
+			y: 3.0d
+		}
+		{
+			id: "499C73281498CD3B"
+			rewards: [{
+				count: 3
+				id: "6F2897DF6A7143F4"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "3BA6D43EE62B838E"
+				item: "brewinandchewin:salty_folly"
+				type: "item"
+			}]
+			x: -37.0d
+			y: 9.0d
+		}
+		{
+			id: "7C296230771577BA"
+			rewards: [{
+				count: 3
+				id: "61941F5E156A2E64"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "39382CD95F63BC68"
+				item: "brewinandchewin:withering_dross"
+				type: "item"
+			}]
+			x: -32.0d
+			y: 5.0d
+		}
+		{
+			id: "04A7C6CAE05F2752"
+			rewards: [{
+				count: 3
+				id: "6C1B6C19D136FA07"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "56038534EB0B5DE1"
+				item: "brewinandchewin:steel_toe_stout"
+				type: "item"
+			}]
+			x: -30.0d
+			y: -1.0d
+		}
+		{
+			id: "008FE0692DB25A7F"
+			rewards: [{
+				count: 3
+				id: "64B8196F3F1A5F96"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "5E0A0A30F6FCDAEA"
+				item: "brewinandchewin:red_rum"
+				type: "item"
+			}]
+			x: -38.0d
+			y: 1.0d
+		}
+		{
+			id: "2FB743B6BEBE021D"
+			rewards: [{
+				count: 3
+				id: "6F5E04DEA1AB51A9"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "037F636D9BDF56BC"
+				item: "brewinandchewin:glittering_grenadine"
+				type: "item"
+			}]
+			x: -38.0d
+			y: 6.0d
+		}
+		{
+			id: "3B953BE8E4088CB2"
+			rewards: [{
+				count: 3
+				id: "4859BB631E405E8E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "0711B2ABEDE5BDDA"
+				item: "brewinandchewin:rice_wine"
+				type: "item"
+			}]
+			x: -35.0d
+			y: 2.0d
+		}
+		{
+			id: "2DE5BAB75093DCBC"
+			rewards: [{
+				count: 3
+				id: "11BD0A83B6ABE519"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "1CFFA171736D2CDE"
+				item: "brewinandchewin:egg_grog"
+				type: "item"
+			}]
+			x: -33.0d
+			y: 9.0d
+		}
+		{
+			id: "52BADBCCD60DCA15"
+			rewards: [{
+				count: 3
+				id: "260D39D59CA39862"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "4D572418FB6E1666"
+				item: "brewinandchewin:mead"
+				type: "item"
+			}]
+			x: -32.0d
+			y: 2.0d
+		}
+		{
+			id: "5F6893369DF79566"
+			rewards: [{
+				count: 3
+				id: "4C40C91623C3DE6E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "20F9BE9DCE1D140C"
+				item: "brewinandchewin:saccharine_rum"
+				type: "item"
+			}]
+			x: -38.0d
+			y: 3.0d
+		}
+		{
+			id: "7583BEC35C575E73"
+			rewards: [{
+				count: 3
+				id: "16FE5B4F05CF738F"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "53AC6981E615429D"
+				item: "brewinandchewin:dread_nog"
+				type: "item"
+			}]
+			x: -29.0d
+			y: 6.0d
+		}
+		{
+			id: "4F4EE2C2F5B313AE"
+			rewards: [{
+				count: 3
+				id: "5E24130C89650180"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "3AF8B54E5D638C6C"
+				item: "brewinandchewin:pale_jane"
+				type: "item"
+			}]
+			x: -29.0d
+			y: 1.0d
+		}
+		{
+			id: "4025343972302BA7"
+			rewards: [{
+				count: 3
+				id: "410BCEECB7B1DE12"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "6EA267EBAA1B246A"
+				item: "brewinandchewin:kombucha"
+				type: "item"
+			}]
+			x: -30.0d
+			y: 9.0d
+		}
+		{
+			icon: {
+				Count: 1
+				id: "vinery:glowing_wine"
+				tag: { }
+			}
+			id: "6E1FD913939810BE"
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				id: "2F578D7628A0F8AD"
+				title: "葡萄酒大亨"
+				type: "checkmark"
+			}]
+			x: -18.0d
+			y: -2.0d
+		}
+		{
+			id: "7D091FCE87ABDF61"
+			size: 1.75d
+			tasks: [{
+				id: "79B3BBA735C7DF9B"
+				item: {
+					Count: 1
+					id: "vinery:red_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 10.0d
+		}
+		{
+			id: "5EB015015D42201B"
+			size: 1.75d
+			tasks: [{
+				id: "0B90C876AD24584E"
+				item: {
+					Count: 1
+					id: "vinery:cristel_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: -1.5d
+		}
+		{
+			id: "6CEE24AE2B63DD0E"
+			size: 1.75d
+			tasks: [{
+				id: "0A80654B65278EBF"
+				item: {
+					Count: 1
+					id: "vinery:stal_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 0.5d
+		}
+		{
+			id: "75234F83B005E621"
+			size: 1.75d
+			tasks: [{
+				id: "72CBBC20A4645EF3"
+				item: {
+					Count: 1
+					id: "vinery:magnetic_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 0.5d
+		}
+		{
+			id: "70F2C6FFB3F8F758"
+			size: 1.75d
+			tasks: [{
+				id: "1F858C7543826192"
+				item: {
+					Count: 1
+					id: "vinery:mellohi_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 2.5d
+		}
+		{
+			id: "5CA6085C248E006A"
+			size: 1.75d
+			tasks: [{
+				id: "057A9A39DD4B9807"
+				item: {
+					Count: 1
+					id: "vinery:jellie_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 2.5d
+		}
+		{
+			id: "32FBD6F087D6DD2A"
+			size: 1.75d
+			tasks: [{
+				id: "257ECA9DEC2A8BD4"
+				item: {
+					Count: 1
+					id: "vinery:aegis_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 4.5d
+		}
+		{
+			id: "17F78B636675F969"
+			size: 1.75d
+			tasks: [{
+				id: "74B818955EFABC21"
+				item: {
+					Count: 1
+					id: "vinery:kelp_cider"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 4.5d
+		}
+		{
+			id: "647BD6CA0B34E120"
+			size: 1.75d
+			tasks: [{
+				id: "710DA8BB2970E700"
+				item: {
+					Count: 1
+					id: "nethervinery:ghastly_grenache"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 10.0d
+		}
+		{
+			id: "28DC3E35142BECBC"
+			size: 1.75d
+			tasks: [{
+				id: "590F6219D7B3590E"
+				item: {
+					Count: 1
+					id: "nethervinery:nether_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 8.5d
+		}
+		{
+			id: "061483F826F4CF2A"
+			size: 1.75d
+			tasks: [{
+				id: "6BDFE514770FDF94"
+				item: {
+					Count: 1
+					id: "nethervinery:improved_nether_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 8.5d
+		}
+		{
+			id: "2DCC0025E078C410"
+			size: 1.75d
+			tasks: [{
+				id: "326D5358C7119688"
+				item: {
+					Count: 1
+					id: "vinery:mead"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 6.5d
+		}
+		{
+			id: "18067343BCB7DA05"
+			size: 1.75d
+			tasks: [{
+				id: "555296FFC4F55707"
+				item: {
+					Count: 1
+					id: "vinery:apple_cider"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 10.0d
+		}
+		{
+			id: "2B26FB0C965B8FF7"
+			size: 1.75d
+			tasks: [{
+				id: "0755F263E02E7418"
+				item: {
+					Count: 1
+					id: "nethervinery:lava_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 8.5d
+		}
+		{
+			id: "5AE4D6D323AF23AD"
+			size: 1.75d
+			tasks: [{
+				id: "61D771BFDD5724B2"
+				item: {
+					Count: 1
+					id: "nethervinery:improved_lava_fizz"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 8.5d
+		}
+		{
+			id: "0A845942AC4DC6B1"
+			size: 1.75d
+			tasks: [{
+				id: "52AC2CD186886938"
+				item: {
+					Count: 1
+					id: "vinery:apple_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 4.5d
+		}
+		{
+			id: "03132398E8C34B75"
+			size: 1.75d
+			tasks: [{
+				id: "69881CCAB27CF418"
+				item: {
+					Count: 1
+					id: "nethervinery:blazewine_pinot"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 4.5d
+		}
+		{
+			id: "057AE7CBBA8FFC8F"
+			size: 1.75d
+			tasks: [{
+				id: "7B1938452F5F134D"
+				item: {
+					Count: 1
+					id: "nethervinery:netherite_nectar"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 4.5d
+		}
+		{
+			id: "5909FA5A0B8F1C8C"
+			size: 1.75d
+			tasks: [{
+				id: "07792033B16E7765"
+				item: {
+					Count: 1
+					id: "vinery:creepers_crush"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 2.5d
+		}
+		{
+			id: "056AF1DFD9E05EF8"
+			size: 1.75d
+			tasks: [{
+				id: "3797A93CCF779E00"
+				item: {
+					Count: 1
+					id: "vinery:villagers_fright"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 2.5d
+		}
+		{
+			id: "0FB50BB0A7A51558"
+			size: 1.75d
+			tasks: [{
+				id: "31804F5E31E8A624"
+				item: {
+					Count: 1
+					id: "vinery:eiswein"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 2.5d
+		}
+		{
+			id: "2F2B18572F57CC51"
+			size: 1.75d
+			tasks: [{
+				id: "7E34A28D42F27799"
+				item: {
+					Count: 1
+					id: "vinery:clark_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 10.0d
+		}
+		{
+			id: "19705984037A35D0"
+			size: 1.75d
+			tasks: [{
+				id: "52388A9C66A3BD3E"
+				item: {
+					Count: 1
+					id: "vinery:solaris_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 6.5d
+		}
+		{
+			id: "3FE0534391D42280"
+			size: 1.75d
+			tasks: [{
+				id: "3E4221170167D2FD"
+				item: {
+					Count: 1
+					id: "vinery:bolvar_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 8.5d
+		}
+		{
+			id: "78939573616A2606"
+			size: 1.75d
+			tasks: [{
+				id: "2B8C81F22C1C4764"
+				item: {
+					Count: 1
+					id: "vinery:lilitu_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -14.0d
+			y: 6.5d
+		}
+		{
+			id: "73CB35650B23DD8A"
+			size: 1.75d
+			tasks: [{
+				id: "74C2BDAE2D6E6CD9"
+				item: {
+					Count: 1
+					id: "vinery:noir_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 6.5d
+		}
+		{
+			id: "0C449F56722A3917"
+			size: 1.75d
+			tasks: [{
+				id: "57D9F3FC24754701"
+				item: {
+					Count: 1
+					id: "vinery:bottle_mojang_noir"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -16.5d
+			y: 6.5d
+		}
+		{
+			id: "5D3CDA2F7E36689D"
+			size: 1.75d
+			tasks: [{
+				id: "50315CB7550913B2"
+				item: {
+					Count: 1
+					id: "vinery:cherry_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: -1.5d
+		}
+		{
+			id: "456F54E29419E04D"
+			size: 1.75d
+			tasks: [{
+				id: "19A698D95B000937"
+				item: {
+					Count: 1
+					id: "vinery:jo_special_mixture"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -9.0d
+			y: 0.5d
+		}
+		{
+			id: "0FC3BDE05D0311E8"
+			size: 1.75d
+			tasks: [{
+				id: "312957FC8AC1699C"
+				item: {
+					Count: 1
+					id: "vinery:strad_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: -1.5d
+		}
+		{
+			id: "13B8D3C7AE16966A"
+			size: 1.75d
+			tasks: [{
+				id: "27BBA43D6736AC9C"
+				item: {
+					Count: 1
+					id: "vinery:chorus_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -6.5d
+			y: 0.5d
+		}
+		{
+			id: "64FE80CC1F6B1EE8"
+			size: 1.75d
+			tasks: [{
+				id: "1C8D341DF155513E"
+				item: {
+					Count: 1
+					id: "vinery:chenet_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: -1.5d
+		}
+		{
+			id: "21F8DF61A0BAD3C3"
+			size: 1.75d
+			tasks: [{
+				id: "4AA9DED381C4118C"
+				item: {
+					Count: 1
+					id: "vinery:glowing_wine"
+					tag: {
+						Year: 0
+					}
+				}
+				type: "item"
+			}]
+			x: -11.5d
+			y: 0.5d
+		}
+		{
+			icon: "farmersrespite:green_tea"
+			id: "5885AB5ADC9823EC"
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				id: "32809DE076EDCCA3"
+				title: "茶香四溢"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			id: "03321767C7214148"
+			size: 2.0d
+			tasks: [{
+				id: "672B679507553966"
+				item: "farmersrespite:black_tea"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 1.5d
+		}
+		{
+			id: "2D3B3F996379AEFF"
+			size: 2.0d
+			tasks: [{
+				id: "35EAE74212C69425"
+				item: "farmersrespite:long_black_tea"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 1.5d
+		}
+		{
+			id: "2653E3EBEB44EA76"
+			size: 2.0d
+			tasks: [{
+				id: "6A019191009E5CBE"
+				item: "farmersrespite:strong_black_tea"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 1.5d
+		}
+		{
+			id: "526F8D74062F28E6"
+			size: 2.0d
+			tasks: [{
+				id: "12566BF204E3D62E"
+				item: "youkaishomecoming:saidi_tea"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 4.0d
+		}
+		{
+			id: "054F7B992E6D7205"
+			size: 2.0d
+			tasks: [{
+				id: "695BC9818E133CC1"
+				item: "fruitsdelight:mango_tea"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 6.5d
+		}
+		{
+			id: "780C98AF47EA6C05"
+			size: 2.0d
+			tasks: [{
+				id: "736F219A02A12F02"
+				item: "youkaishomecoming:tea_mocha"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 6.5d
+		}
+		{
+			id: "2BF12C2A5F7CBE96"
+			size: 2.0d
+			tasks: [{
+				id: "1CBCD9E935B92CC4"
+				item: "youkaishomecoming:lemon_black_tea"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.5d
+		}
+		{
+			id: "4A793D8D35E3A344"
+			size: 2.0d
+			tasks: [{
+				id: "78177BD20AB8CFF2"
+				item: "farmersrespite:green_tea"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 4.0d
+		}
+		{
+			id: "27A5B3AE9C21AFE6"
+			size: 2.0d
+			tasks: [{
+				id: "3616EC3D617AC284"
+				item: "cavedelight:fiddlehead_tea"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 8.5d
+		}
+		{
+			id: "10A6D1B808B067B7"
+			size: 2.0d
+			tasks: [{
+				id: "410C99FED99E8A86"
+				item: "fruitsdelight:lychee_cherry_tea"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 8.5d
+		}
+		{
+			id: "5CF5A625C6131DB7"
+			size: 2.0d
+			tasks: [{
+				id: "7F2DF5118FA3D23C"
+				item: "youkaishomecoming:genmai_tea"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 6.5d
+		}
+		{
+			id: "741C0EF251C139F6"
+			size: 2.0d
+			tasks: [{
+				id: "50EEDD4593428401"
+				item: "fruitsdelight:mangosteen_tea"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 6.5d
+		}
+		{
+			id: "1A31F3D2EFE5A933"
+			size: 2.0d
+			tasks: [{
+				id: "4AC039B17F575B32"
+				item: "trailandtales_delight:pitcher_plant_tea"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 6.5d
+		}
+		{
+			id: "7417044C014A0204"
+			size: 2.0d
+			tasks: [{
+				id: "5EB782F2D28AC70A"
+				item: "farmersrespite:long_green_tea"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 4.0d
+		}
+		{
+			id: "39F9DE1C7BA49DCB"
+			size: 2.0d
+			tasks: [{
+				id: "58AE5CA45FC21876"
+				item: "farmersrespite:strong_green_tea"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 4.0d
+		}
+		{
+			id: "47309E49747AD449"
+			size: 2.0d
+			tasks: [{
+				id: "1A8064232834548E"
+				item: "fruitsdelight:hawberry_tea"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 4.0d
+		}
+		{
+			id: "6BDF5A9B93315A77"
+			size: 2.0d
+			tasks: [{
+				id: "079FE4FFCF0A3B78"
+				item: "trailandtales_delight:cherry_petal_tea"
+				type: "item"
+			}]
+			x: 14.5d
+			y: 1.5d
+		}
+		{
+			id: "15BE5C12DA50F2DE"
+			size: 2.0d
+			tasks: [{
+				id: "6C91869028EB2CEB"
+				item: "fruitsdelight:peach_tea"
+				type: "item"
+			}]
+			x: 14.5d
+			y: -0.5d
+		}
+		{
+			id: "7206C9AECA205069"
+			size: 2.0d
+			subtitle: "你也是？"
+			tasks: [{
+				id: "39DE9C16E9F865CF"
+				item: "farmersrespite:yellow_tea"
+				type: "item"
+			}]
+			x: 7.0d
+			y: -0.5d
+		}
+		{
+			id: "1AE5385260941043"
+			size: 2.0d
+			subtitle: "你是黄茶"
+			tasks: [{
+				id: "79DB29E542411875"
+				item: "farmersrespite:strong_yellow_tea"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -0.5d
+		}
+		{
+			id: "2D5D87E96FB2FEB4"
+			size: 2.0d
+			subtitle: "我也是?"
+			tasks: [{
+				id: "6F015FD8F29BD542"
+				item: "farmersrespite:long_yellow_tea"
+				type: "item"
+			}]
+			x: 9.5d
+			y: -0.5d
+		}
+		{
+			id: "139A7E9B0C6AC244"
+			size: 2.0d
+			tasks: [{
+				id: "3604396128BC80BF"
+				item: "trailandtales_delight:torchflower_tea"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -0.5d
+		}
+		{
+			icon: "youkaishomecoming:cappuccino"
+			id: "5FA93ABF1F7A3D6F"
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				id: "4536A744DCF980B2"
+				title: "SCA咖啡大师！"
+				type: "checkmark"
+			}]
+			x: -40.0d
+			y: 16.0d
+		}
+		{
+			id: "6F5BEC703EBBBFA8"
+			size: 2.0d
+			tasks: [{
+				id: "3FD09149D979126A"
+				item: "youkaishomecoming:latte"
+				type: "item"
+			}]
+			x: -31.5d
+			y: 20.0d
+		}
+		{
+			id: "056A5311F04A37FB"
+			size: 2.0d
+			tasks: [{
+				id: "11AFBBB0ACC6C8B6"
+				item: "youkaishomecoming:espresso"
+				type: "item"
+			}]
+			x: -33.0d
+			y: 22.0d
+		}
+		{
+			id: "6DFFF94E3B1C5C12"
+			size: 2.0d
+			tasks: [{
+				id: "55128C5B97C3009D"
+				item: "youkaishomecoming:affogato"
+				type: "item"
+			}]
+			x: -29.5d
+			y: 20.0d
+		}
+		{
+			id: "58C24F9773E34FEA"
+			size: 2.0d
+			tasks: [{
+				id: "1AB1336DFF217558"
+				item: "youkaishomecoming:macchiato"
+				type: "item"
+			}]
+			x: -34.0d
+			y: 20.0d
+		}
+		{
+			id: "64BCCFC239848926"
+			size: 2.0d
+			tasks: [{
+				id: "5075055206BCF672"
+				item: "youkaishomecoming:ristretto"
+				type: "item"
+			}]
+			x: -36.5d
+			y: 20.0d
+		}
+		{
+			id: "142257F0E8765E06"
+			size: 2.0d
+			tasks: [{
+				id: "249F249482535605"
+				item: "youkaishomecoming:cappuccino"
+				type: "item"
+			}]
+			x: -38.0d
+			y: 22.0d
+		}
+		{
+			id: "788B4A4C1919AF06"
+			size: 2.0d
+			tasks: [{
+				id: "67C299DA5C766678"
+				item: "youkaishomecoming:con_panna"
+				type: "item"
+			}]
+			x: -28.0d
+			y: 22.0d
+		}
+		{
+			id: "3E19B2B32296CBCE"
+			size: 2.0d
+			tasks: [{
+				id: "32BCC27334BFE57D"
+				item: "youkaishomecoming:mocha"
+				type: "item"
+			}]
+			x: -30.5d
+			y: 22.0d
+		}
+		{
+			id: "640917EEDCC90DAA"
+			size: 2.0d
+			tasks: [{
+				id: "713DE816E8E0C7D9"
+				item: "youkaishomecoming:americano"
+				type: "item"
+			}]
+			x: -35.5d
+			y: 22.0d
+		}
+		{
+			id: "11D65F4D487B3B30"
+			size: 2.0d
+			tasks: [{
+				id: "071C2F6D1242968D"
+				item: "createcafe:iced_coffee"
+				type: "item"
+			}]
+			x: -38.0d
+			y: 25.0d
+		}
+		{
+			id: "4F9741DC76D43801"
+			size: 2.0d
+			tasks: [{
+				id: "472DB31B353683AF"
+				item: "createcafe:caramel_iced_coffee"
+				type: "item"
+			}]
+			x: -35.5d
+			y: 25.0d
+		}
+		{
+			id: "124FCDA482380516"
+			size: 2.0d
+			tasks: [{
+				id: "0A0F0733FCF3AF67"
+				item: "createcafe:mint_iced_coffee"
+				type: "item"
+			}]
+			x: -33.0d
+			y: 25.0d
+		}
+		{
+			id: "12B98BB2669572D8"
+			size: 2.0d
+			tasks: [{
+				id: "000FD9B963BDD041"
+				item: "createcafe:iced_coffee_milk"
+				type: "item"
+			}]
+			x: -30.5d
+			y: 25.0d
+		}
+		{
+			id: "219DB5DCAA4CE78F"
+			size: 2.0d
+			tasks: [{
+				id: "5E2A22C6B0118B38"
+				item: "createcafe:strawberry_iced_coffee"
+				type: "item"
+			}]
+			x: -28.0d
+			y: 25.0d
+		}
+		{
+			id: "1E6489AA745ABC6B"
+			size: 2.0d
+			tasks: [{
+				id: "52954013C6C79889"
+				item: "createcafe:vanilla_iced_coffee"
+				type: "item"
+			}]
+			x: -34.5d
+			y: 27.0d
+		}
+		{
+			id: "618553D7B3CD94E1"
+			size: 2.0d
+			tasks: [{
+				id: "2473E943AF31BA09"
+				item: "createcafe:banana_iced_coffee"
+				type: "item"
+			}]
+			x: -31.5d
+			y: 27.0d
+		}
+		{
+			icon: "cuisinedelight:meat_pasta"
+			id: "47FE2A112C8DFF02"
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				id: "58272BA2749DEEBF"
+				title: "意面大厨"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: -22.0d
+		}
+	]
+	title: "&e料理“鼠”王！"
+}
