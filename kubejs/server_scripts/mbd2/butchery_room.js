@@ -15,6 +15,24 @@ let carcass_data = [
   ["butchercraft:cow_carcass", 6],
   ["butchercraft:sheep_carcass", 4],
   ["butchercraft:goat_carcass", 4],
+  ["butchercraft:white_rabbit_carcass", 4],
+  ["butchercraft:black_rabbit_carcass", 4],
+  ["butchercraft:brown_rabbit_carcass", 4],
+  ["butchercraft:splotched_rabbit_carcass", 4],
+  ["butchercraft:gold_rabbit_carcass", 4],
+  ["butchercraft:salt_rabbit_carcass", 4],
+  ["butchercraft:cow_head_item", 0],
+  ["butchercraft:sheep_head_item", 0],
+  ["butchercraft:pig_head_item", 0],
+  ["butchercraft:goat_head_item", 0],
+  ["butchercraft:chicken_head_item", 0],
+  ["butchercraft:rabbit_brown_head_item", 0],
+  ["butchercraft:rabbit_gold_head_item", 0],
+  ["butchercraft:rabbit_salt_head_item", 0],
+  ["butchercraft:rabbit_splotched_head_item", 0],
+  ["butchercraft:rabbit_white_head_item", 0],
+  ["butchercraft:rabbit_black_head_item", 0],
+  ["butchercraft:chicken_carcass", 0]
 ]
 MBDMachineEvents.onTick("createdelight:butchery_room", e => {
   const {machine} = e.event
@@ -38,8 +56,8 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
     machine.recipeLogic.getLastRecipe().getInputContents($ItemRecipeCapability.CAP).forEach(con => {
       itemIds = cleanString(con.getContent().toJson().get("ingredient").get("item"))
     })
+    let maxStage = carcass_data[carcass_data.findIndex(data => data[0] == itemIds)][1]
     if(Item.of(itemIds).hasTag("butchercraft:big_carcass")) {
-      let maxStage = carcass_data[carcass_data.findIndex(data => data[0] == itemIds)][1]
       if(meatHook.insertedItem == []){
         meatHook.insertItem(Item.of(itemIds))
         meatHook.stage = 0
@@ -56,12 +74,25 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
         meatHook.stage++
       }
     }else{
-      if (machine.level.time % 20 != 0) return
+      if(butcherBlock.insertedItem == []){
+        butcherBlock.insertItem(Item.of(itemIds))
+        butcherBlock.stage = 0
+      }
+      if(butcherBlock.insertedItem.id != itemIds || (butcherBlock.stage == maxStage && butcherBlock.insertedItem.id == itemIds)){
+        butcherBlock.finishRecipe()
+        butcherBlock.insertItem(Item.of(itemIds))
+        butcherBlock.stage = 0
+      }
       machine.level.playSound(null, machine.pos.x, machine.pos.y, machine.pos.z, "minecraft:block.slime_block.fall", "blocks", 1, 1)
       if (machine.level.time % 40 != 0) return
       if (butcherBlock.stage < maxStage - 1) {
         butcherBlock.insertItem(Item.of(itemIds))
         butcherBlock.stage++
+        machine.level.tell(butcherBlock.stage)
+      }
+      if(itemIds == "butchercraft:chicken_carcass" && butcherBlock.stage < 5) {
+        butcherBlock.insertItem(Item.of(itemIds))
+        butcherBlock.stage = butcherBlock.stage + 4
       }
     }
   }

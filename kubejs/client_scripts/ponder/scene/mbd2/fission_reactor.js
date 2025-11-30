@@ -3,7 +3,8 @@ Ponder.registry(event => {
 
     event.create([
         "createdelight:fission_fuel_assembly",
-        "createdelight:fission_reactor"
+        "createdelight:fission_reactor",
+        "createdelight:fission_reactor_controller"
     ])
         .scene(
             "createdelight:fission_reactor",
@@ -30,17 +31,17 @@ Ponder.registry(event => {
                 scene.idle(40)
                 scene.rotateCameraY(-90)
                 scene.idle(40)
-                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替", [2, 2.5, 6.5]).attachKeyFrame()
+                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替, 也可以替换成逻辑端口来进行控制", [2, 2.5, 6.5]).attachKeyFrame()
                 scene.world.replaceBlocks([2, 1, 6], Block.id("createdelight:forged_steel_export_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.WEST), true)
                 scene.world.replaceBlocks([2, 2, 6], Block.id("createdelight:forged_steel_export_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.WEST), true)
                 scene.idle(40)
                 scene.rotateCameraY(90)
-                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替", [11, 2.5, 6.5])
+                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替, 也可以替换成逻辑端口来进行控制", [11, 2.5, 6.5])
                 scene.world.replaceBlocks([10, 1, 6], Block.id("createdelight:forged_steel_import_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.EAST), true)
                 scene.world.replaceBlocks([10, 2, 6], Block.id("createdelight:forged_steel_import_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.EAST), true)
                 scene.idle(40)
                 scene.rotateCameraY(-180)
-                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替", [6.5, 2.5, 11])
+                scene.text(40, "在这个多方块结构中, 所有的锻造钢机壳都可以被锻造钢输入/输出总线代替, 也可以替换成逻辑端口来进行控制", [6.5, 2.5, 11])
                 scene.world.replaceBlocks([6, 1, 10], Block.id("createdelight:forged_steel_import_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.SOUTH), true)
                 scene.world.replaceBlocks([6, 2, 10], Block.id("createdelight:forged_steel_import_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.SOUTH), true)
                 scene.idle(40)
