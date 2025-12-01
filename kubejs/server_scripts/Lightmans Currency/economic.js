@@ -1,22 +1,6 @@
 ServerEvents.recipes(e => {
     e.replaceInput({id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1"}, "minecraft:ender_pearl", "create_sa:copper_magnet")
     e.replaceInput({id: "lightmanscurrency:upgrades/network_upgrade"}, "minecraft:ender_eye", 'ae2:singularity')
-    e.recipes.minecraft.crafting_shapeless(
-        "9x createdelightcore:iron_coin",
-        ["createdelightcore:copper_coin"]
-    ).id("createdelight:copper_2_iron")
-    e.recipes.minecraft.crafting_shapeless(
-        "9x createdelightcore:copper_coin",
-        ["createdelightcore:gold_coin"]
-    ).id("createdelight:gold_2_copper")
-    e.recipes.minecraft.crafting_shapeless(
-        "9x createdelightcore:gold_coin",
-        ["createdelightcore:emerald_coin"]
-    ).id("createdelight:emerald_2_gold")
-    e.recipes.minecraft.crafting_shapeless(
-        "9x createdelightcore:emerald_coin",
-        ["createdelightcore:netherite_coin"]
-    ).id("createdelight:netherite_2_emerald")
     e.recipes.kubejs.shaped(
         'lightmanscurrency:trading_core',
         [
