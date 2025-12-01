@@ -25,7 +25,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             let Quality = $QualityUtils.getQuality(itemSlot)
             let Qlevel = Quality.level()
             let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            slotValue = itemSlot.count / 64 * multiplier * allTrades[i][1]
+            slotValue = itemSlot.count * multiplier * allTrades[i][1]
             trade = Component.of(itemSlot.hoverName)
             switch(Qlevel) {
                 case 1:
@@ -58,11 +58,11 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             tradeList.push(trade)
             itemSlot.shrink(itemSlot.count)
         } 
-        else if(slotValue != 0) {
-            trade.append(" <1\uAA01")
-            tradeList.push(trade)
-            itemSlot.shrink(itemSlot.count)
-        }
+        // else if(slotValue != 0) {
+        //     trade.append(" <1\uAA01")
+        //     tradeList.push(trade)
+        //     itemSlot.shrink(itemSlot.count)
+        // }
     })
     let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
     if (!coinValue.empty) {
