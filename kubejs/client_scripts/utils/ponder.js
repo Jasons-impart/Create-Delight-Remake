@@ -129,6 +129,38 @@ PonderUtil.modifyDeployer = function(scene, position, heldItem, mode) {
 /**
  * 
  * @param { Internal.CreateSceneBuilder } scene 
+ * @param { BlockPos } position //挂肉钩坐标
+ * @param { Internal.ItemStack } insertItem //挂肉钩内含物品
+ * @param { number } stage //挂肉钩操作阶段
+ */
+PonderUtil.modifyMeatHook = function(scene, position, insertItem, stage) {
+    scene.world.modifyBlockEntityNBT(position, nbt =>
+        nbt.merge({
+            inventory: {Items:[{Count:1,Slot:0,id:insertItem}]},
+            stage: stage,
+        })
+    )
+}
+
+/**
+ * 
+ * @param { Internal.CreateSceneBuilder } scene 
+ * @param { BlockPos } position //案板坐标
+ * @param { Internal.ItemStack } insertItem //案板内含物品
+ * @param { number } stage //案板操作阶段
+ */
+PonderUtil.modifyButcherBlock = function(scene, position, insertItem, stage) {
+    scene.world.modifyBlockEntityNBT(position, nbt =>
+        nbt.merge({
+            inventory: {Items:[{Count:1,Slot:0,id:insertItem}]},
+            stage: stage,
+        })
+    )
+}
+
+/**
+ * 
+ * @param { Internal.CreateSceneBuilder } scene 
  * @param { BlockPos } position //机械手坐标
  * @param { "USE"|"ATTACK" } mode //机械手模式
  */

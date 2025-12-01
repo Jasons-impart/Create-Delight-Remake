@@ -88,7 +88,6 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
       if (butcherBlock.stage < maxStage - 1) {
         butcherBlock.insertItem(Item.of(itemIds))
         butcherBlock.stage++
-        machine.level.tell(butcherBlock.stage)
       }
       if(itemIds == "butchercraft:chicken_carcass" && butcherBlock.stage < 5) {
         butcherBlock.insertItem(Item.of(itemIds))
