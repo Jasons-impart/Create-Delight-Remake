@@ -1,5 +1,4 @@
 name: 发布版本
-run-name: 版本：${{ github.event.head_commit.short_message }}
 
 on:
   push:
