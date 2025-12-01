@@ -1,25 +1,73 @@
-// Ponder.registry(event => {
-//     event.create("createdelight:butchery_room")
-//         .scene(
-//             "createdelight:butchery_room",
-//             "屠宰室",
-//             "createdelight:ponder_butchery_room",
-            
-//             (builder, util) => {
-//                 let scene = new $CreateSceneBuilder(builder)
-//                 scene.showBasePlate()
-//                 scene.idle(20)
-//                 for (let i = 0; i < 4; i++) {
-//                     scene.world.showSection([1, i + 1, 0, 5, i + 1, 4], "down")
-//                     scene.idle(20)
-//                 }
-//                 scene.idle(40)
-//                 scene.text(60, "在这个多方块结构中，安山机壳可以被安山输入/输出总线、安山（通透）玻璃机壳，应力输入总线代替").attachKeyFrame()
-//                 scene.world.setBlocks([4, 3, 0, 2, 2, 0], true, "createprism:andesite_clear_glass_casing")
-//                 scene.idle(10)
-//                 scene.world.setBlocks([5, 3, 1, 5, 3, 2], true, "createprism:andesite_clear_glass_casing")
-//                 scene.idle(10)
-//                 scene.world.setBlocks([1, 3, 1, 1, 3, 2], true, "createprism:andesite_clear_glass_casing")
-//                 scene.idle(60)
-//             })
-// })
+Ponder.registry(event => {
+  event.create([
+    "createdelight:butchery_room",
+    'butchercraft:butcher_block_block_item',
+    'butchercraft:meat_hook_item'
+  ])
+  .scene(
+    "createdelight:butchery_room",
+    "屠宰室的搭建与使用",
+    "createdelight:ponder_butchery_room",
+    
+    (builder, util) => {
+      let scene = new $CreateSceneBuilder(builder)
+      scene.showBasePlate()
+      scene.idle(20)
+      scene.text(40, "先让我们快速的搭建一下基础结构").attachKeyFrame()
+      scene.idle(40)
+      for (let i = 0; i < 5; i++) {
+          scene.world.showSection([2, i + 1, 3, 6, i + 1, 5], Direction.DOWN)
+          scene.idle(10)
+      }
+      scene.text(40, "OK,搭建完毕!").attachKeyFrame()
+      scene.idle(40)
+      scene.text(80, "现在让我们看看全貌")
+      scene.rotateCameraY(90)
+      scene.idle(40)
+      scene.rotateCameraY(-90)
+      scene.idle(40)
+      scene.overlay.showOutline("green", {}, [2, 1, 3, 6, 1, 5], 80)
+      scene.overlay.showOutline("green", {}, [2, 5, 3, 6, 5, 5], 80)
+      scene.text(40, "在这个多方块结构中, 这两层的安山机壳可以被安山输入/输出总线/应力输入总线代替", [4.5, 5.5, 3]).attachKeyFrame()
+      scene.world.replaceBlocks([5, 1, 3], Block.id("createdelight:andesite_export_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.NORTH), true)
+      scene.world.replaceBlocks([3, 1, 3], Block.id("createdelight:andesite_import_bus").blockState.trySetValue($BlockStateProperties.FACING, Direction.NORTH), true)
+      scene.world.replaceBlocks([4, 5, 3], Block.id("createdelight:create_in").blockState.trySetValue($BlockStateProperties.FACING, Direction.NORTH), true)
+      scene.idle(40)
+      scene.idle(40)
+      scene.text(40, "屠宰室会在运行过程中会自动播放动画").attachKeyFrame()
+      scene.world.hideSection([2, 5, 3, 6, 5, 5], Direction.UP)
+      scene.world.hideSection([2, 2, 3, 5, 4, 3], Direction.NORTH)
+      scene.world.hideSection([2, 2, 4, 2, 4, 4], Direction.NORTH)
+      scene.idle(40)
+      scene.text(120, "如果是大型尸体将会在挂肉钩上播放动画", [3, 5, 4.5]).attachKeyFrame()
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "butchercraft:pig_carcass", 0)
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "butchercraft:pig_carcass", 2)
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "butchercraft:pig_carcass", 3)
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "butchercraft:pig_carcass", 4)
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "butchercraft:pig_carcass", 5)
+      scene.idle(20)
+      PonderUtil.modifyMeatHook(scene, [3, 4, 4], "air", 0)
+      scene.idle(20)
+      scene.text(100, "如果是小型尸体将会在案板上播放动画", [4, 3, 4]).attachKeyFrame()
+      scene.idle(20)
+      PonderUtil.modifyButcherBlock(scene, [4, 2, 4], "butchercraft:white_rabbit_carcass", 0)
+      scene.idle(20)
+      PonderUtil.modifyButcherBlock(scene, [4, 2, 4], "butchercraft:white_rabbit_carcass", 1)
+      scene.idle(20)
+      PonderUtil.modifyButcherBlock(scene, [4, 2, 4], "butchercraft:white_rabbit_carcass", 2)
+      scene.idle(20)
+      PonderUtil.modifyButcherBlock(scene, [4, 2, 4], "butchercraft:white_rabbit_carcass", 3)
+      scene.idle(20)
+      PonderUtil.modifyButcherBlock(scene, [4, 2, 4], "air", 0)
+      scene.world.showSection([2, 5, 3, 6, 5, 5], Direction.DOWN)
+      scene.world.showSection([2, 2, 3, 5, 4, 3], Direction.SOUTH)
+      scene.world.showSection([2, 2, 4, 2, 4, 4], Direction.SOUTH)
+      scene.idle(20)
+      scene.markAsFinished()
+  })
+})
