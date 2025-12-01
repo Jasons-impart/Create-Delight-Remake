@@ -24,9 +24,3 @@ ServerEvents.tags("minecraft:fluid", e => {
         "the_bumblezone:sugar_water_still"
     ])
 })
-
-ServerEvents.tags("minecraft:block", e => {
-    e.add("create:wrench_pickup", [
-        "createdelight:andesite_export_bus"
-    ])
-})
