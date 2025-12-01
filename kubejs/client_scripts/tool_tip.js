@@ -125,21 +125,21 @@ ItemEvents.tooltip(e => {
         itemStacks.push(Item.of(`${id}`))
     })
     itemStacks.forEach(itemStack => {
-        let value = 0
-        let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
-        let i = allTrades.findIndex(item => item[0] == itemStack.id)
-        if(i != -1) {
-            let Quality = $QualityUtils.getQuality(itemStack)
-            let Qlevel = Quality.level()
-            let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            value = multiplier * allTrades[i][1]
-        } else {
-            if(itemStack.item.getFoodProperties() == null) return
-            let prop = itemStack.item.getFoodProperties()
-            let { nutrition, saturationModifier, effects } = prop
-            value = nutrition / baseNutrition * saturationModifier / baseSaturationModifier
-        }
         e.addAdvanced(itemStack,(item, advanced, text) => {
+                let value = 0
+                let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
+                let i = allTrades.findIndex(trade => trade[0] == item.id)
+                if(i != -1) {
+                    let Quality = $QualityUtils.getQuality(item)
+                    let Qlevel = Quality.level()
+                    let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
+                    value = multiplier * allTrades[i][1]
+                } else {
+                    if(item.item.getFoodProperties() == null) return
+                    let prop = item.item.getFoodProperties()
+                    let { nutrition, saturationModifier, effects } = prop
+                    value = nutrition / baseNutrition * saturationModifier / baseSaturationModifier
+                }
                 if (!e.shift) {
                     if(value < 1) {
                         text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString() + "\uAA01"))
