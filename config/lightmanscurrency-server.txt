@@ -423,7 +423,7 @@
 		
 		#The price per claim chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		#Default: "coin;1-createdelightcore:gold_coin,2-createdelightcore:copper_coin,1-createdelightcore:iron_coin"
+		#Default: "coin;1-createdelightcore:gold_coin"
 		claimPrice="coin;1-createdelightcore:copper_coin"
 		
 		#The maximum number of extra claim chunks allowed to be purchased with this command.
@@ -438,7 +438,7 @@
 		
 		#The price per forceload chunk purchased.
 		#See the wiki for Money Value format: https://github.com/Lightman314/LightmansCurrency/wiki/Money-Value-Arguments
-		#Default: "coin;152-createdelightcore:netherite_coin,3-createdelightcore:emerald_coin,6-createdelightcore:gold_coin,6-createdelightcore:copper_coin,1-createdelightcore:iron_coin"
+		#Default: "coin;100-createdelightcore:netherite_coin"
 		forceloadPrice="coin;1000-createdelightcore:netherite_coin"
 		
 		#The maximum number of extra forceload chunks allowed to be purchased with this command.
