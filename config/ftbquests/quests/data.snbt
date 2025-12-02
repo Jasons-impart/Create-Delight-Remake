@@ -10,6 +10,7 @@
 	drop_loot_crates: false
 	emergency_items_cooldown: 300
 	grid_scale: 0.5d
+	hide_excluded_quests: false
 	icon: {
 		Count: 1
 		id: "ftbquests:custom_icon"

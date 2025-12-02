@@ -48,6 +48,13 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:americano_fluid", 250)
         ]
     ).id("createcafe:filling/coffee/iced_coffee_filling")
+    //焙烧咖啡豆
+    blast_and_smelting(e, 'createcafe:coffee_beans', 'createcafe:roasted_coffee_beans', 0.7, 100)
+    e.recipes.ratatouille.baking(
+        "createcafe:roasted_coffee_beans",
+        "createcafe:coffee_beans",
+        200
+    ).id("createcafe:baking/roasted_coffee_beans")
 })
 
 BlockEvents.rightClicked( e => {
