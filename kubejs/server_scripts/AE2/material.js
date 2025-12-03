@@ -42,14 +42,14 @@ ServerEvents.recipes((event) => {
     .id("createdelight:mmd_diamond_1");
 
   // β-正交晶系六方铁 相变铁
-  // let iron_blocks_26 = ["mynethersdelight:bullet_pepper"];
-  // for (let i = 0; i < 16; i++) {
-  //   iron_blocks_26.push("#forge:storage_blocks/iron");
-  // }
+  let iron_blocks_26 = ["mynethersdelight:bullet_pepper"];
+  for (let i = 0; i < 16; i++) {
+    iron_blocks_26.push("#forge:storage_blocks/iron");
+  }
 
-  // vintageimprovements
-  //   .pressurizing("createdelight:phase_transition_iron", iron_blocks_26)
-  //   .id("createdelight:phase_transition_iron_1");
+  vintageimprovements
+    .pressurizing("createdelight:phase_transition_iron", iron_blocks_26)
+    .id("createdelight:phase_transition_iron_1");
 
   // let iron_blocks_26_ = [];
   // for (let i = 0; i < 16; i++) {
