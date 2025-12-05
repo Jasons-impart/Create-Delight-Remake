@@ -94,6 +94,15 @@
 	"item.createaddition.gold_wire": "金线",
 	"item.createaddition.gold_rod": "金棒",
 
+  "item.createaddition.superconducting_spool": "超导线轴",
+  "item.createaddition.superconducting_spool.tooltip": "线轴",
+  "item.createaddition.superconducting_spool.tooltip.behaviour1": "连接_超导连接器_。",
+  "item.createaddition.superconducting_spool.tooltip.behaviour2": "在此之间建立一个线缆连接，并返还一个_空线轴_。",
+  "item.createaddition.superconducting_spool.tooltip.condition1": "超导电流",
+  "item.createaddition.superconducting_spool.tooltip.condition2": "右击两个连接器时",
+  "item.createaddition.superconducting_spool.tooltip.summary": "用以储存导线",
+  "item.createaddition.superconducting_wire": "超导金属线",
+
 	"item.createaddition.electrum_ingot": "琥珀金锭",
 	"item.createaddition.electrum_nugget": "琥珀金粒",
 	"item.createaddition.electrum_sheet": "琥珀金板",
@@ -150,6 +159,7 @@
 	"statusbar.createaddition.wire.no_connection": "这里没有线缆连接",
 	"statusbar.createaddition.wire.invalid": "无效连接",
 	"statusbar.createaddition.wire.requires_high_current": "需要高电流线缆连接",
+  "statusbar.createaddition.wire.requires_superconducting": "需要超导线缆连接",
 
 	"block.createaddition.electric_motor": "电动马达",
 
@@ -193,6 +203,15 @@
 	"block.createaddition.large_connector.tooltip.condition3": "手持扳手右击时",
 	"block.createaddition.large_connector.tooltip.behaviour3": "在_输入_，_输出_，与_无_模式中切换",
 
+  "block.createaddition.superconducting_connector": "超导连接器",
+  "block.createaddition.superconducting_connector.tooltip": "连接器",
+  "block.createaddition.superconducting_connector.tooltip.behaviour1": "与_超导线缆_连接。",
+  "block.createaddition.superconducting_connector.tooltip.behaviour2": "手持_超导线轴_时，可与最多 16 个其他_超导连接器_建立_线缆连接_。",
+  "block.createaddition.superconducting_connector.tooltip.behaviour3": "在_输入_，_输出_，与_无_模式中切换",
+  "block.createaddition.superconducting_connector.tooltip.condition1": "超导电流",
+  "block.createaddition.superconducting_connector.tooltip.condition2": "右击时",
+  "block.createaddition.superconducting_connector.tooltip.condition3": "手持扳手右击时",
+  "block.createaddition.superconducting_connector.tooltip.summary": "用_线缆_连接电力元件来传输 _FE_。",
 
 	"block.createaddition.redstone_relay": "红石继电器",
 	"block.createaddition.redstone_relay.tooltip": "红石继电器",
