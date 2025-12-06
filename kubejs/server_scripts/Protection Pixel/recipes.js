@@ -280,17 +280,18 @@ ServerEvents.recipes(e => {
     e.recipes.create.mechanical_crafting("protection_pixel:hellsnake_chestplate",
         [
             "ABABA",
-            "DAEAD",
+            "DHEHD",
             "FGCGF"
         ],
         {
             A: "create:brass_ingot",
             B: "create:fluid_pipe",
-            C: "create_sa:flamethrower",
+            C: "createdieselgenerators:lighter",
             D: "create:cogwheel",
             E: "create_sa:brass_exoskeleton_chestplate",
             F: "ad_astra:fan",
-            G: "create:mechanical_pump"
+            G: "create:mechanical_pump",
+            H: "create_sa:small_fueling_tank"
         }
     )
         .id("protection_pixel:hellsnakeloot")

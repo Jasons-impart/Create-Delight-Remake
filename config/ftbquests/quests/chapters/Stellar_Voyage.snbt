@@ -1699,6 +1699,23 @@
 			x: 6.0d
 			y: 1.5d
 		}
+		{
+			dependencies: ["461E14E713E9D376"]
+			id: "222731CDB4D2C0DE"
+			rewards: [{
+				id: "34682FB5FA59EBDD"
+				item: "youkaishomecoming:espresso"
+				type: "item"
+			}]
+			subtitle: "咖啡为啥能防止反胃啊？"
+			tasks: [{
+				id: "602C0218F7D11D53"
+				item: "youkaishomecoming:espresso"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -3.0d
+		}
 	]
 	title: "&4群星之旅"
 }
