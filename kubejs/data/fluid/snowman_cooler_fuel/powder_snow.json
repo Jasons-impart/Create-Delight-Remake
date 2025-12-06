@@ -1,0 +1,6 @@
+{
+    "fluid": "fluid:powder_snow",
+    "burnTime": 10,
+    "freezing": false,
+    "amountConsumedPerTick": 1
+}
