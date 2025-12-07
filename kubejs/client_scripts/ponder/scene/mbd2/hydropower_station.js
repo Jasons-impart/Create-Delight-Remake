@@ -1,7 +1,10 @@
 Ponder.registry(event => {
     event.create([
         "createdelight:hydropower_station",
-        "createdelight:hydropower_station_fan",
+        "createdelight:wooden_fan",
+        "createdelight:steel_fan",
+        "createdelight:forge_steel_fan",
+        "createdelight:dragon_steel_fan",
         "createdelight:hydropower_amplifier"
     ])
         .scene(

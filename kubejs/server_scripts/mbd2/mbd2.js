@@ -93,7 +93,7 @@ ServerEvents.recipes(e => {
     })
         .id("createdelight:mechanical_crafting/hydropower_station")
 
-    e.recipes.create.mechanical_crafting("createdelight:hydropower_station_fan", [
+    e.recipes.create.mechanical_crafting("createdelight:steel_fan", [
         " A A ",
         "ABBBA",
         " BCB ",
@@ -104,7 +104,7 @@ ServerEvents.recipes(e => {
         B: "ae2:sky_dust",
         C: "create:shaft"
     })
-        .id("createdelight:mechanical_crafting/hydropower_station_fan")
+        .id("createdelight:mechanical_crafting/steel_fan")
 
     //合金电炉
     e.recipes.create.mechanical_crafting("createdelight:alloy_electric_furnace", [

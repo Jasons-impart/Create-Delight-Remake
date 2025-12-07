@@ -276,11 +276,28 @@
 			dependencies: ["0CF2923758C50BDC"]
 			id: "60E34448540FBA8F"
 			subtitle: "应力输出组件！"
-			tasks: [{
-				id: "5BF7329724D2C7FA"
-				item: "createdelight:hydropower_station_fan"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "73760982D6287942"
+					item: "createdelight:wooden_fan"
+					type: "item"
+				}
+				{
+					id: "6AEE399BC757610F"
+					item: "createdelight:steel_fan"
+					type: "item"
+				}
+				{
+					id: "4FAB92CF0F4A0939"
+					item: "createdelight:forge_steel_fan"
+					type: "item"
+				}
+				{
+					id: "1D3CE9EC1540B58B"
+					item: "createdelight:dragon_steel_fan"
+					type: "item"
+				}
+			]
 			x: -4.0d
 			y: 1.5d
 		}
