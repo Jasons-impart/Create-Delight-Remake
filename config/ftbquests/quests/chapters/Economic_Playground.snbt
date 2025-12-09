@@ -10,7 +10,7 @@
 	quest_links: [ ]
 	quests: [
 		{
-			icon: "createdelightcore:netherite_coin"
+			icon: "lightmanscurrency:portable_gem_terminal"
 			id: "34C9A7E928820147"
 			rewards: [{
 				id: "37D071E6074B572D"
@@ -19,7 +19,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "由于LightmansCurrency的内容很多且都复杂，所以有必要写个教程让玩家能充分感觉到这个模组的强大"
+			subtitle: "本包的系统商店都位于交易终端里（就是送你的那个项链）"
 			tasks: [{
 				id: "51D48262326B5EB4"
 				item: "lightmanscurrency:portable_gem_terminal"
@@ -49,27 +49,6 @@
 			title: "绿宝石？村民才不要！"
 			x: -3.0d
 			y: 0.0d
-		}
-		{
-			dependencies: ["34C9A7E928820147"]
-			icon: "lightmanscurrency:portable_terminal"
-			id: "094F21648BAEEA35"
-			rewards: [{
-				id: "1A5A9552A5792E1B"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			shape: "square"
-			size: 1.5d
-			subtitle: "本包的系统商店都位于交易终端里（就是送你的那个项链）"
-			tasks: [{
-				id: "2A768CD10BC73E74"
-				title: "收到"
-				type: "checkmark"
-			}]
-			title: "本包的交易系统呢？"
-			x: -3.0d
-			y: 3.0d
 		}
 		{
 			dependencies: ["34C9A7E928820147"]
@@ -698,6 +677,21 @@
 			title: "扭蛋机"
 			x: 1.0d
 			y: -7.0d
+		}
+		{
+			dependencies: ["34C9A7E928820147"]
+			description: ["&n注：设计为不支持自动化（如溜槽）输入&r"]
+			id: "291FBEC1BF0BE4CF"
+			shape: "square"
+			size: 1.5d
+			subtitle: "食物可以通过出货箱售卖，游戏次日结算收益"
+			tasks: [{
+				id: "133D5C0AD992BA3C"
+				item: "createdelight:sell_bin"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 3.0d
 		}
 	]
 	title: "&e玩转经济！"

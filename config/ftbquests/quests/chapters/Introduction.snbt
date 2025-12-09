@@ -617,7 +617,16 @@
 		}
 		{
 			dependencies: ["55C42BCE0E399B3D"]
-			description: ["游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，同样可以&e售卖以获取钱币&r\\n同样可以在&4服务器内&r搭建属于你自己的&e商店系统&r，该模组的具体内容可以查看&e玩转经济&r章节"]
+			description: [
+				"游戏内添加了&e货币系统&r，并配备&4默认交易&r，可以通过默认交易获得一部分&4特殊物品&r，也可通过&e售卖以获取钱币&r"
+				"你甚至可以在&4服务器内&r搭建属于你自己的&e商店系统&r"
+				""
+				"本整合包的货币分为五类：&7铁币 &c铜币 &e金币 &2绿宝石币 &8下届合金币"
+				"你&4无法&r将低级货币合成高级货币，但&a可以&r可逆向分解"
+				"需要注意的是：售卖科技相关物品的商店只能在完成对应任务后才能解锁。"
+				""
+				"（具体内容可以查看&e玩转经济&r章节）"
+			]
 			icon: {
 				Count: 1
 				id: "lightmanscurrency:wallet_netherite"
@@ -674,25 +683,6 @@
 			title: "熔炼相关"
 			x: 4.0d
 			y: 4.0d
-		}
-		{
-			dependencies: ["7429D7F92D04A8BB"]
-			description: [
-				"本整合包的货币分为五类：&7铁币 &c铜币 &e金币 &2绿宝石币 &8下届合金币"
-				"你&4无法&r将低级货币合成高级货币，但&a可以&r可逆向分解（为什么呢？"
-				"需要注意的是：售卖科技相关物品的商店只能在完成对应任务后才能解锁。"
-			]
-			id: "360AB2F07EC4E939"
-			shape: "hexagon"
-			size: 2.0d
-			tasks: [{
-				id: "197EB50F53658370"
-				item: "createdelightcore:gold_coin"
-				type: "item"
-			}]
-			title: "- &c这是...一枚货币!&r-"
-			x: -6.0d
-			y: 6.0d
 		}
 		{
 			dependencies: ["64B9CFE4337A3EAA"]
@@ -760,7 +750,7 @@
 			}]
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "{ \"text\": \"屠宰系统\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"546D1BAE985F9945\" } }"
+			subtitle: "{ \"text\": \"磨刀霍霍\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2A0C295CDBE6C743\" } }"
 			tasks: [{
 				id: "001C8E2506E3E190"
 				title: "动物不掉落正常肉类？"
@@ -955,6 +945,44 @@
 			title: "食物多样性"
 			x: -3.0d
 			y: 1.0d
+		}
+		{
+			dependencies: [
+				"34C9A7E928820147"
+				"7429D7F92D04A8BB"
+			]
+			description: [
+				"在此介绍本包编写的&e订单系统&r。"
+				"首先，你要制作一个&e订单交付器&r，并将其放置在&e白色桌布&r上。然后，沿着本方块的&e东南西北四个方向放置桌布（最多可延申8格）&r，如下图所示。"
+				""
+				"{image:createdelight:textures/gui/order_deliverer_usage_1.png width:256 height:133 align:center}"
+				"{@pagebreak}"
+				"如何执行一个订单："
+				"首先将一个未开封的订单打开（未开封的订单目前从拍卖行获取）。放置一个&e开封后的订单&r在一个桌布上。此时其&e所在以及后方任意格桌布&r都可以&e放置任意数量&r的包裹。其会将其本体以及后方的所有桌布上的&e包裹的内容作为订单交付的物品&r，直到遇上&e另一个含有订单&r的桌布。"
+				"如果没有看懂的话，可以看下面的图："
+				""
+				"{image:createdelight:textures/gui/order_deliverer_usage_2.png width:256 height:133 align:center}"
+				""
+				"上图列举了几种&e划分订单所用包裹&r的行为。"
+				"{@pagebreak}"
+				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
+			]
+			id: "2397448B73CC8363"
+			rewards: [{
+				id: "71DEA704D4AD9CC2"
+				item: "createdelight:unopened_order"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "可以批发食物赚钱了"
+			tasks: [{
+				id: "5E11D8D40492013B"
+				item: "createdelight:order_deliverer_item"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 6.0d
 		}
 	]
 	title: "介绍"
