@@ -89,5 +89,7 @@
 	// Try to guess and apply a preset for items without weapon attributes data file
 	"fallback_compatibility_enabled": true,
 	// Allow printing the content of weapon attributes registry
-	"weapon_registry_logging": false
+	"weapon_registry_logging": false,
+	// Compress the weapon attributes registry for transmission
+	"weapon_registry_compression": true
 }
