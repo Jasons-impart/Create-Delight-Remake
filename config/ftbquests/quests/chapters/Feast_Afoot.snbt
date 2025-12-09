@@ -626,6 +626,11 @@
 				}
 			}
 			id: "2A0C295CDBE6C743"
+			rewards: [{
+				id: "1D9CCC95824EBA67"
+				item: "butchercraft:chicken_carcass"
+				type: "item"
+			}]
 			tasks: [{
 				id: "1DC44E9A91548F05"
 				title: "磨刀霍霍"
@@ -639,17 +644,6 @@
 			id: "6B61BD46E3916253"
 			subtitle: "欲成其事必先利其器"
 			tasks: [
-				{
-					id: "2DF089D5B0B1EDDD"
-					item: {
-						Count: 1
-						id: "butchercraft:butcher_knife"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
 				{
 					id: "09975E0F0CB4884F"
 					item: {
@@ -690,7 +684,10 @@
 		}
 		{
 			dependencies: ["2A0C295CDBE6C743"]
-			description: ["&e挂肉勾&r用于&e大型牲畜&r，&e案板&r用于&e小型牲畜&r及&e肉类深加工&r"]
+			description: [
+				"&e挂肉勾&r用于&e大型牲畜&r，&e案板&r用于&e小型牲畜&r及&e肉类深加工&r"
+				"注意：挂肉钩建议离地3格"
+			]
 			id: "2660ABEA79C209F4"
 			rewards: [{
 				id: "60E2826CE45AFC6A"

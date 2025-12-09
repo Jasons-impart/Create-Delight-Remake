@@ -306,12 +306,12 @@
 					type: "item"
 				}
 				{
-					id: "6C8AD2540108F3C3"
+					id: "2A73EB28223CFDD0"
 					item: {
 						Count: 1
 						id: "gateways:gate_pearl"
 						tag: {
-							gateway: "gateways:basic/slime"
+							gateway: "gateways:basic/blaze"
 						}
 					}
 					type: "item"
