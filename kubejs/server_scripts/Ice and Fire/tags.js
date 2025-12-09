@@ -12,3 +12,11 @@ ServerEvents.tags("item", e => {
 ServerEvents.tags("block", e => {
     e.add("minecraft:logs", "iceandfire:dreadwood_log")
 })
+
+ServerEvents.tags("fluid", e => {
+    e.add("createdelight:molten_dragon_steel", [
+        "createdelightcore:molten_fire_steel",
+        "createdelightcore:molten_ice_steel",
+        "createdelightcore:molten_lightning_steel"
+    ])
+})

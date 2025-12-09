@@ -92,7 +92,19 @@ ServerEvents.recipes(e => {
         D: "vintageimprovements:redstone_module"
     })
         .id("createdelight:mechanical_crafting/hydropower_station")
-
+    // 涡轮转子
+    e.recipes.create.mechanical_crafting("createdelight:wooden_fan", [
+        " A A ",
+        "ABBBA",
+        " BCB ",
+        "ABBBA",
+        " A A "
+    ], {
+        A: "#minecraft:wooden_slabs",
+        B: "#minecraft:logs",
+        C: "create:large_water_wheel"
+    })
+        .id("createdelight:mechanical_crafting/wooden_fan")
     e.recipes.create.mechanical_crafting("createdelight:steel_fan", [
         " A A ",
         "ABBBA",
@@ -102,9 +114,31 @@ ServerEvents.recipes(e => {
     ], {
         A: "ad_astra:steel_plate",
         B: "ae2:sky_dust",
-        C: "create:shaft"
+        C: "createdelight:wooden_fan"
     })
         .id("createdelight:mechanical_crafting/steel_fan")
+    {
+        let iner = 'createdelight:steel_fan'
+        e.recipes.create.sequenced_assembly('createdelight:dragon_steel_fan', iner, [
+            e.recipes.create.deploying(iner, [iner, 'ae2:sky_dust']),
+            e.recipes.create.filling(iner, [iner, Fluid.of("createdelightcore:molten_forged_steel", 90)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .transitionalItem(iner)
+            .loops(4)
+            .id("createdelight:sequenced_assembly/forge_steel_fan")
+    }
+    {
+        let iner = 'createdelight:forge_steel_fan'
+        e.recipes.create.sequenced_assembly('createdelight:dragon_steel_fan', iner, [
+            e.recipes.create.deploying(iner, [iner, 'ae2:sky_dust']),
+            e.recipes.create.filling(iner, [iner, FluidIngredients("createdelight:molten_dragon_steel", 90)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .transitionalItem(iner)
+            .loops(4)
+            .id("createdelight:sequenced_assembly/dragon_steel_fan")
+    }
 
     //合金电炉
     e.recipes.create.mechanical_crafting("createdelight:alloy_electric_furnace", [
