@@ -112,7 +112,7 @@ ServerEvents.recipes(e => {
         create.cutting(incomplete, incomplete),
         create.pressing(incomplete,incomplete),
         create.deploying(incomplete, [incomplete, "alexscaves:fissile_core"]),
-        create.deploying(incomplete, [incomplete, "alexscaves:nuclear_bomb"]).keepHeldItem,
+        create.deploying(incomplete, [incomplete, "alexscaves:nuclear_bomb"]).keepHeldItem(),
         create.deploying(incomplete, [incomplete, "alexscaves:tremorzilla_egg"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/a_place_of_melting")
