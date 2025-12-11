@@ -52,3 +52,28 @@ MoneyUtil.convertBaseValueToString = function(values) {
     })
     return component
 }
+
+/**
+ * 
+ * @param {Internal.ItemStack} itemStack 
+ * @returns 
+ */
+MoneyUtil.calculateFoodValue = function(itemStack) {
+    let baseNutrition = 6
+    let baseSaturationModifier = 0.6
+    if (itemStack.getFoodProperties(null) == null) return -1
+    let prop = itemStack.getFoodProperties(null)
+    let { nutrition, saturationModifier, effects } = prop
+    
+    let num = 1
+    effects.forEach(eff => {
+        let effect = eff.first.get()
+        num = num + 2 + effect.amplifier
+        // Client.tell(`Effect: ${effect} Amp: ${effect.amplifier} Num: ${num}`)
+    })
+    let effMultipler = Math.sqrt(num)   
+    nutrition = Math.max(nutrition, 1)
+    saturationModifier = Math.max(saturationModifier, 0.1)
+    return nutrition / baseNutrition * saturationModifier / baseSaturationModifier * 5 * effMultipler //以面包单价为参考
+}
+

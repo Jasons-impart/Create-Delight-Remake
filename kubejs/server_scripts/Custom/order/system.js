@@ -224,6 +224,36 @@ Order.checkAllPackages = function (orders, items) {
 
     return results;
 };
+/**
+ * 
+ * @param {{type: string, entries: [{ id: string, count: number, minQuality: number }]}} order 
+ */
+Order.calculateMoneyReward = function(order) {
+    let origin = this.customerProperties[order.type]
+    let rarityBonus = 1
+    switch (origin.rarity) {
+        case "UNCOMMON":
+            rarityBonus = 1.25
+            break;
+        case "RARE":
+            rarityBonus = 1.5
+            break;
+        case "EPIC":
+            rarityBonus = 2
+            break;
+        default:
+            rarityBonus = 1
+            break;
+    }
+    let chanceBonus = 1 / origin.chance
+    let goodsBonus = 0
+    order.entries.forEach(entry => {
+        let qualityMultiplier = 1 + 0.2 * (entry.minQuality - 1)
+        goodsBonus += qualityMultiplier * entry.count / this.orderProperties[entry.id].base_count
+    })
+    goodsBonus = goodsBonus / order.entries.length
+    return rarityBonus * chanceBonus * goodsBonus
+}
 
 /**
  * 
@@ -258,7 +288,7 @@ ItemEvents.rightClicked("createdelight:unopened_order", e => {
     e.player.give(Item.of("createdelight:order", 1, { createdelightOrderInfo: ret }))
 })
 /**
- * 
+ * @deprecated
  * @param {string} type 
  * @param {number} count 
  * @returns {Internal.ItemStack}
@@ -274,8 +304,8 @@ Order.getRewardContract = function (type, count) {
 Order.addOrderToAuction = function() {
     let data = new $AuctionTradeData({})
     data.auctionItems.add(Item.of("createdelight:unopened_order"))
-    data.setMinBidDifferent($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
-    data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:emerald_coin", 1).multiplyValue(Utils.random.nextFloat(0.25, 5)))
+    data.setMinBidDifferent($CoinValue.fromItemOrValue("createdeco:copper_coin", 1))
+    data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
     TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, null, false)
 }
