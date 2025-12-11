@@ -30,7 +30,7 @@ ItemEvents.tooltip(e => {
         "createdelight:fission_reactor",
     ])
     clearAddCtrlTooltip(e, [
-        
+
     ])
     addCtrlTooltip(e, [
         "createdelight:sprinkler",
@@ -115,44 +115,33 @@ ItemEvents.tooltip(e => {
 // })
 const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
 const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
-
 ItemEvents.tooltip(e => {
-    let baseNutrition = 6
-    let baseSaturationModifier = 0.6
-    /**@type {Internal.ItemStack[]} */
-    let itemStacks = []
-    Ingredient.all.itemIds.forEach(id => {
-        itemStacks.push(Item.of(`${id}`))
-    })
-    itemStacks.forEach(itemStack => {
-        e.addAdvanced(itemStack,(item, advanced, text) => {
-                let value = 0
-                let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
-                let i = allTrades.findIndex(trade => trade[0] == item.id)
-                if(i != -1) {
-                    let Quality = $QualityUtils.getQuality(item)
-                    let Qlevel = Quality.level()
-                    let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-                    value = multiplier * allTrades[i][1]
+    e.addAdvancedToAll((item, advanced, text) => {
+        let value = 0
+        let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
+        let i = allTrades.findIndex(trade => trade[0] == item.id)
+        if (i != -1) {
+            let Quality = $QualityUtils.getQuality(item)
+            let Qlevel = Quality.level()
+            let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
+            value = multiplier * allTrades[i][1]
+        } else {
+            value = MoneyUtil.calculateFoodValue(item)
+        }
+        if (value > 0) {
+            if (!e.shift) {
+                if (value < 1) {
+                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString() + "\uAA01"))
                 } else {
-                    if(item.item.getFoodProperties() == null) return
-                    let prop = item.item.getFoodProperties()
-                    let { nutrition, saturationModifier, effects } = prop
-                    value = nutrition / baseNutrition * saturationModifier / baseSaturationModifier
+                    text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
                 }
-                if (!e.shift) {
-                    if(value < 1) {
-                        text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString() + "\uAA01"))
-                    } else {
-                        text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
-                    }
+            } else {
+                if (value * item.count < 1) {
+                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString() + "\uAA01"))
                 } else {
-                    if(value * item.count < 1) {
-                        text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString() + "\uAA01"))
-                    } else {
-                        text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * item.count)))
-                    }
+                    text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * item.count)))
                 }
-        })
+            }
+        }
     })
 })

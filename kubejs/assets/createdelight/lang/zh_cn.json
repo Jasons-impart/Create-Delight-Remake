@@ -615,7 +615,7 @@
     "tooltip.createdelight.ctrl_mould_cheese_cocoa_toast": "§7放置后§b右键§7取出§b奶酪可可吐司",
     "tooltip.createdelight.ctrl_mould_pound_cake": "§7放置后§b右键§7取出§b磅蛋糕",
     "tooltip.createdelight.ctrl_keg": "§7在周围§b两格§7内放置§b热源§7和§b冷源§7以调整温度",
-    "tooltip.createdelight.ctrl_order_deliverer_item": "§7放置于桌布上, 沿着其东南西北四个方向放置§b桌布§7(最多可延申8格), 然后在桌布上放置§b机械动力的包裹与订单§7",
+    "tooltip.createdelight.ctrl_order_deliverer_item": "§7放置于§b白色桌布§7上（将其转化为另一个方块）, 沿着其东南西北四个方向放置§b桌布§7(最多可延申8格), 然后在桌布上放置§b机械动力的包裹与订单§7",
     "tooltip.createdelight.ctrl_contract_executor": "§7在临近四格放置§b烈焰人燃烧室§7以执行配方, §b热量越高效率越高§7",
     "tooltip.createdelight.ctrl_graycottonseed": "§7需种植在§b砂土§7上",
 
@@ -823,8 +823,9 @@
     "tooltip.createdelight.order.title": "§6◆ %s §6◆", 
     "tooltip.createdelight.order.require.title": "§a✦ 需求",
     "tooltip.createdelight.order.require.entry": "  §7- %s ×%s (最低: %s)",
-    "tooltip.createdelight.order.reward.title": "§6✦ 奖励",
-    "tooltip.createdelight.order.reward.entry": "  §b×%s %s(基础数量)",
+    "tooltip.createdelight.order.require.entry_shift": "  §7- %s ×%s (最低: %s) §8-- %s x %s",
+    "tooltip.createdelight.order.reward.title": "§6✦ 奖励(基础数量)",
+    "tooltip.createdelight.order.reward.entry": "  §b×%s %s",
     "tooltip.createdelight.order.reward.orders/random_hatbag": "随机帽子抽奖袋",
     "tooltip.createdelight.order.reward.orders/random_doll": "随机玩偶",
 

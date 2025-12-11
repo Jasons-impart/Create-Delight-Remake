@@ -13,8 +13,6 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     let roasts = global.RoastTrade
     let vegetables = global.VegatablesTrade
     let allTrades = materials.concat(meats).concat(roasts).concat(vegetables)
-    let baseNutrition = 6
-    let baseSaturationModifier = 0.6
     let values = 0
     let tradeList = []
     itemSlots.allItems.forEach(itemSlot => {
@@ -40,15 +38,13 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             }
         } else {
             if(itemSlot.item.getFoodProperties() != null) {
-                let prop = itemSlot.getFoodProperties(player)
-                let { nutrition, saturationModifier, effects } = prop
                 // let num = 1
                 // effects.forEach(eff => {
                 //     let effect = eff.first
                 //     num = num + 2 + effect.amplifier
                 // })
                 // let effMultipler = Math.sqrt(num)
-                slotValue = itemSlot.count * nutrition / baseNutrition * saturationModifier / baseSaturationModifier
+                slotValue = itemSlot.count * MoneyUtil.calculateFoodValue(itemSlot)
                 trade = Component.of(itemSlot.hoverName)
             }
         }
@@ -68,7 +64,6 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     if (!coinValue.empty) {
         if (player != null) {
             if (player instanceof $ServerPlayer) {
-                /**@type {Internal.ServerPlayer} */
                 let severPlayer = player
                 severPlayer.connection.send(new $ClientboundSetTitleTextPacket(Component.translate("message.createdelight.sell_bin_hint").color(Color.GOLD)))
                 severPlayer.connection.send(new $ClientboundSetSubtitleTextPacket( MoneyUtil.convertBaseValueToString(values).color(Color.GOLD)))
