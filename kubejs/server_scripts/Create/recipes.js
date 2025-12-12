@@ -23,6 +23,15 @@ ServerEvents.recipes(e => {
             'minecraft:quartz'
         ]
     ).id("create:mixing/diorite")
+    // 方解石压块塑形配方
+    e.recipes.create.compacting(
+        'minecraft:calcite',
+        [
+            'minecraft:flint', 
+            'minecraft:bone_block', 
+            Fluid.of('minecraft:lava', 100)
+        ]
+    ).id("createdelight:compacting/calcite")
     // 黑曜石粉末粉碎
     e.recipes.create.milling(
         Item.of("create:powdered_obsidian").withChance(0.3),
@@ -444,4 +453,14 @@ ServerEvents.recipes(e => {
         "2x ratatouille:sausage_casing",
         "minecraft:slime_ball"
     ).id("create:cutting/sausage")
+
+    // 海绵压块塑形配方
+    e.recipes.create.compacting(
+        '2x minecraft:sponge',
+        [
+            'minecraft:sponge',
+            '4x alexscaves:ping_pong_sponge',
+            Fluid.of("minecraft:water",50),
+        ]
+    ).id("createdelight:compacting/sponge")
 })
