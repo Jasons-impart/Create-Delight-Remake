@@ -462,5 +462,7 @@ ServerEvents.recipes(e => {
             '4x alexscaves:ping_pong_sponge',
             Fluid.of("minecraft:water",50),
         ]
-    ).id("createdelight:compacting/sponge")
+    )
+    .heated()
+    .id("createdelight:compacting/sponge")
 })
