@@ -34,6 +34,7 @@
 		}
 		{
 			dependencies: ["50711781910527C4"]
+			description: ["要搭建结构，可参考整合包内自带蓝图 &ealloy_electric_furnace.nbt&r"]
 			id: "4750F90745C1AC83"
 			shape: "square"
 			size: 1.5d
@@ -48,7 +49,7 @@
 		}
 		{
 			dependencies: ["50711781910527C4"]
-			description: [""]
+			description: ["要搭建结构，可参考整合包内自带蓝图 &ebig_centrifuge.nbt&r"]
 			id: "795B3440D2A059C0"
 			shape: "square"
 			size: 1.5d
@@ -65,7 +66,7 @@
 			dependencies: ["50711781910527C4"]
 			dependency_requirement: "one_completed"
 			description: [
-				"&a&o&l如何使用&r：整合包自带&e对应机器蓝图&r，可以使用&e蓝图大炮&r&4搭建&r；或使用&eJEI查看多方块结构&r"
+				"&a&o&l如何使用&r：整合包自带对应机器蓝图 &ebutchery_room.nbt&r，可以使用&e蓝图大炮&r&4搭建&r；或使用&eJEI查看多方块结构&r"
 				"&a&o&l注意事项&r：所有的&e多方块结构&r均需要&e输入输出口&r，&e输入输出口&r可以替换&e的部位为&4最上/最下&r两层&r，注意&e每个输入输出口&r只能代理&4一种物品/流体&r"
 			]
 			id: "62C31EFDB74E7053"
