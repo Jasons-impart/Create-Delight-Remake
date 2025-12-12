@@ -618,6 +618,7 @@
     "tooltip.createdelight.ctrl_order_deliverer_item": "§7放置于§b白色桌布§7上（将其转化为另一个方块）, 沿着其东南西北四个方向放置§b桌布§7(最多可延申8格), 然后在桌布上放置§b机械动力的包裹与订单§7",
     "tooltip.createdelight.ctrl_contract_executor": "§7在临近四格放置§b烈焰人燃烧室§7以执行配方, §b热量越高效率越高§7",
     "tooltip.createdelight.ctrl_graycottonseed": "§7需种植在§b砂土§7上",
+    "tooltip.createdelight.shift_encoded_canister": "可于tetra§e锻造遗迹内锻造容器§7获取",
 
     "createdelight.tip.advanced_alloy": "部分合金在初始阶段只能使用熔铸搅拌器合成, 例如钢。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成(当然除了玩家)",

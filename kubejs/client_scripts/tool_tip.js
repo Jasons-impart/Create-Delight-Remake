@@ -5,6 +5,7 @@ ItemEvents.tooltip(e => {
         'dreadsteel:kit_white',
         'dreadsteel:kit_black',
         'dreadsteel:kit_bronze',
+        'art_of_forging:encoded_canister',
     ])
     addShiftTooltip(e, [
         "ratatouille:frozen_block",
