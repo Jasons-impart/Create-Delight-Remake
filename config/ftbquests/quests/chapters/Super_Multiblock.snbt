@@ -6,7 +6,7 @@
 	group: "14CFC96B5B37F10B"
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
-	order_index: 8
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
@@ -33,7 +33,10 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"0C0CD2BD5935D4CC"
+			]
 			description: ["要搭建结构，可参考整合包内自带蓝图 &ealloy_electric_furnace.nbt&r"]
 			id: "4750F90745C1AC83"
 			shape: "square"
@@ -48,7 +51,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"26DADC947426CD52"
+			]
 			description: ["要搭建结构，可参考整合包内自带蓝图 &ebig_centrifuge.nbt&r"]
 			id: "795B3440D2A059C0"
 			shape: "square"
@@ -63,7 +69,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"2660ABEA79C209F4"
+			]
 			dependency_requirement: "one_completed"
 			description: [
 				"&a&o&l如何使用&r：整合包自带对应机器蓝图 &ebutchery_room.nbt&r，可以使用&e蓝图大炮&r&4搭建&r；或使用&eJEI查看多方块结构&r"
@@ -82,7 +91,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"2F0B3291F14AAA89"
+			]
 			description: [
 				"&6- 热管理机制&r"
 				"&7 # 控制棒拔出时产热：燃料组件(2-74) × 基础发热率(不可调) × 温度效率(随温度升高而增强)&r"
@@ -113,7 +125,7 @@
 			}]
 			shape: "square"
 			size: 1.5d
-			subtitle: "吼吼！会爆炸的！产电池超多的！"
+			subtitle: "吼吼！会爆炸的！产电超多的！"
 			tasks: [{
 				id: "04009BDC26E0C6C0"
 				item: "createdelight:fission_reactor"
@@ -123,7 +135,10 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"724FF9E032B4B134"
+			]
 			description: ["&9水&r和&9灵质&r均可推动&e水坝扇叶&r！&e多个串联&r以达到&4最大应力输出&r！"]
 			id: "0CF2923758C50BDC"
 			shape: "square"

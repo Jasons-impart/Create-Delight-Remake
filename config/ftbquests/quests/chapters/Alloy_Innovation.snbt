@@ -51,8 +51,16 @@
 			linked_quest: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
-			x: 28.5d
-			y: 2.0d
+			x: 26.0d
+			y: -2.0d
+		}
+		{
+			id: "5D356CD73BB7727E"
+			linked_quest: "4750F90745C1AC83"
+			shape: "hexagon"
+			size: 2.0d
+			x: 10.0d
+			y: 7.0d
 		}
 	]
 	quests: [
@@ -892,17 +900,18 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: [
 				"580C77852E71B685"
 				"043C01E333AD7139"
+				"20972AEC6EE6D9F8"
 			]
 			description: ["可以容纳&e多种流体&r，安装&e熔铸炉组件&r以转变为&e熔铸炉&r\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
 			id: "0C0CD2BD5935D4CC"
 			shape: "square"
-			subtitle: "&e可拓展&r的&4大型冶金设施"
+			subtitle: "&e可拓展&4可合成合金&r的&4大型冶金设施"
 			tasks: [{
 				id: "757E747FAED0BFE1"
 				item: "createmetallurgy:industrial_crucible"
@@ -912,11 +921,12 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["0C0CD2BD5935D4CC"]
+			dependencies: ["6EB96008F21DAFBF"]
 			description: [
 				"&l&n&a热量机制&r：&e普通燃烧&r为&41TU&r，&9超级燃烧&r为是&42TU&r"
 				"&l&n&a执行配方&r：可以直接执行&e熔融配方&r、&e合金配方&r以及&4生物熔炼&r，但&e热量&r需要&4满足条件&r"
 			]
+			hide_dependency_lines: true
 			id: "20972AEC6EE6D9F8"
 			subtitle: "&4更大！更快！更高效！"
 			tasks: [{
@@ -924,8 +934,8 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 6.5d
+			x: 11.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6EB96008F21DAFBF"]
@@ -1090,48 +1100,18 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["5A8FA422166974A0"]
-			icon: "createdieselgenerators:diesel_engine"
-			id: "20B3A29ADFDF1D4A"
-			min_required_tasks: 1
-			rewards: [{
-				id: "4A10FBD8D0716968"
-				item: "createdelightcore:bronze_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			shape: "hexagon"
-			size: 2.0d
-			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
-			tasks: [{
-				id: "29B2C475B43E3FAC"
-				item: "createdelightcore:bronze_ingot"
-				type: "item"
-			}]
-			title: "&e燃料&r！&4动力&r！"
-			x: 26.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["5A8FA422166974A0"]
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"35F33D9F772B4551"
+				"6DBEF23BA8608F4B"
+			]
 			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
-			rewards: [{
-				id: "18254A296BFA1213"
-				item: "createaddition:electrum_ingot"
-				random_bonus: 11
-				type: "item"
-			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
-			tasks: [{
-				id: "0D7814DAE3E5E1E1"
-				item: "createaddition:electrum_ingot"
-				type: "item"
-			}]
-			title: "步入&5电力时代&r！"
-			x: 26.0d
+			subtitle: "{ \"text\": \"跳转石油电力\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"54356C1067ECB809\"} }"
+			title: "步入&5石油电力&r！"
+			x: 28.5d
 			y: 2.0d
 		}
 		{
@@ -1314,7 +1294,7 @@
 			]
 			title: "超级燃烧"
 			x: 28.5d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -1483,8 +1463,8 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 17.5d
-			y: -5.5d
+			x: 15.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1526,7 +1506,7 @@
 				title: "6.0新物流"
 				type: "checkmark"
 			}]
-			x: 18.5d
+			x: 18.0d
 			y: 4.0d
 		}
 		{
@@ -1833,6 +1813,42 @@
 			}]
 			x: 18.5d
 			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			id: "35F33D9F772B4551"
+			rewards: [{
+				id: "0C695142A1B9227A"
+				item: "createaddition:electrum_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			tasks: [{
+				id: "0D8A9B9D985989A9"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			title: "良好通电导体！"
+			x: 26.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			id: "6DBEF23BA8608F4B"
+			rewards: [{
+				id: "2266BDDD9C5EF7E2"
+				item: "createdelightcore:bronze_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F7A2C2685AFB49E"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "优秀应力载体！"
+			x: 26.5d
+			y: 2.0d
 		}
 	]
 	title: "&9体系渐成 "

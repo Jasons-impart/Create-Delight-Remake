@@ -14,26 +14,28 @@
 		x: -0.5d
 		y: 3.5d
 	}]
-	order_index: 0
+	order_index: 1
 	quest_links: [
 		{
 			id: "329928ACABC57A87"
 			linked_quest: "62C31EFDB74E7053"
-			x: 8.0d
-			y: 6.0d
+			shape: "hexagon"
+			size: 2.0d
+			x: 7.0d
+			y: 5.0d
 		}
 		{
-			id: "15BFEDE53A676E67"
-			linked_quest: "24CF527B4E34E599"
-			shape: "gear"
-			size: 2.0d
-			x: -0.5d
-			y: 6.5d
+			id: "4933E4FC82754690"
+			linked_quest: "7E2BA55431C4D882"
+			x: 2.5d
+			y: -4.0d
 		}
 	]
 	quests: [
 		{
 			id: "67A7A1B0700FFCA3"
+			shape: "hexagon"
+			size: 2.0d
 			tasks: [{
 				id: "11C5B170D1E55485"
 				title: "在开始享受盛宴前的前期准备"
@@ -46,6 +48,7 @@
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
 			id: "2AD38E54F361CFD2"
+			shape: "rsquare"
 			tasks: [{
 				id: "723AEC0D38887C6D"
 				item: {
@@ -55,12 +58,12 @@
 						value: "minecraft:hoes"
 					}
 				}
-				title: "Any #minecraft:hoes"
+				title: "任意稿"
 				type: "item"
 			}]
-			title: "从土壤里收获"
+			title: "终极奉献"
 			x: -0.5d
-			y: -1.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["2AD38E54F361CFD2"]
@@ -79,8 +82,8 @@
 				type: "checkmark"
 			}]
 			title: "季节更迭"
-			x: -4.0d
-			y: -3.0d
+			x: -2.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -102,8 +105,8 @@
 				}
 				type: "item"
 			}]
-			x: -5.5d
-			y: -2.0d
+			x: -1.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -119,8 +122,8 @@
 				item: "eclipticseasons:growth_detector"
 				type: "item"
 			}]
-			x: -5.5d
-			y: -3.0d
+			x: -4.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -147,8 +150,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -6.5d
-			y: -5.0d
+			x: -4.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -182,8 +185,8 @@
 				value: 1
 			}]
 			title: "季节系统"
-			x: -4.0d
-			y: -5.0d
+			x: -2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["2AA39C8B473231E0"]
@@ -224,8 +227,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -1.5d
-			y: -5.0d
+			x: -1.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["0F16A415E991AC8E"]
@@ -241,8 +244,8 @@
 				item: "eclipticseasons:calendar"
 				type: "item"
 			}]
-			x: -3.0d
-			y: -6.5d
+			x: -2.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["0F16A415E991AC8E"]
@@ -258,8 +261,8 @@
 				item: "eclipticseasons:seasonal_prayer_scroll"
 				type: "item"
 			}]
-			x: -5.0d
-			y: -6.5d
+			x: -3.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["7AC491B4D20A3909"]
@@ -275,8 +278,8 @@
 				item: "eclipticseasons:hygrometer"
 				type: "item"
 			}]
-			x: -6.5d
-			y: -6.5d
+			x: -4.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["1453031D685ED650"]
@@ -301,8 +304,8 @@
 				}
 			]
 			title: "湿度调节"
-			x: -4.5d
-			y: -10.0d
+			x: -4.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["6BC7D3231848B305"]
@@ -313,8 +316,8 @@
 				item: "createdelight:sell_bin"
 				type: "item"
 			}]
-			x: -1.5d
-			y: -6.5d
+			x: -1.0d
+			y: -4.0d
 		}
 		{
 			dependencies: [
@@ -345,8 +348,8 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -4.5d
-			y: -8.25d
+			x: -2.5d
+			y: -5.5d
 		}
 		{
 			dependencies: [
@@ -374,8 +377,8 @@
 				type: "item"
 			}]
 			title: "季节调节"
-			x: 0.0d
-			y: -10.0d
+			x: -1.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -391,8 +394,8 @@
 				item: "eclipticseasons:spring_greenhouse_essence"
 				type: "item"
 			}]
-			x: -2.5d
-			y: -12.0d
+			x: -3.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -408,8 +411,8 @@
 				item: "eclipticseasons:summer_greenhouse_essence"
 				type: "item"
 			}]
-			x: -1.0d
-			y: -12.0d
+			x: -2.5d
+			y: -9.0d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -425,8 +428,8 @@
 				item: "eclipticseasons:autumn_greenhouse_essence"
 				type: "item"
 			}]
-			x: 1.0d
-			y: -12.0d
+			x: 0.5d
+			y: -9.0d
 		}
 		{
 			dependencies: ["2F5888A5C4047E87"]
@@ -446,8 +449,8 @@
 				to_observe: "eclipticseasons:spring_greenhouse_core"
 				type: "observation"
 			}]
-			x: -2.5d
-			y: -13.5d
+			x: -4.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["3B6F81873856912B"]
@@ -467,8 +470,8 @@
 				to_observe: "eclipticseasons:summer_greenhouse_core"
 				type: "observation"
 			}]
-			x: -1.0d
-			y: -13.5d
+			x: -4.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["2834AC4EEB6F9992"]
@@ -488,8 +491,8 @@
 				to_observe: "eclipticseasons:autumn_greenhouse_core"
 				type: "observation"
 			}]
-			x: 1.0d
-			y: -13.5d
+			x: 2.0d
+			y: -9.0d
 		}
 		{
 			dependencies: ["2F7B2AE556D0109D"]
@@ -510,7 +513,7 @@
 				type: "observation"
 			}]
 			x: 2.5d
-			y: -13.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["2AD38E54F361CFD2"]
@@ -521,8 +524,8 @@
 				title: "肥沃的土壤可以收获硕果"
 				type: "checkmark"
 			}]
-			x: 3.0d
-			y: -3.0d
+			x: 1.0d
+			y: -1.0d
 		}
 		{
 			dependencies: ["77B0B6EA73D69804"]
@@ -533,8 +536,8 @@
 				item: "farmersdelight:rich_soil"
 				type: "item"
 			}]
-			x: 1.5d
-			y: -7.5d
+			x: 0.0d
+			y: -5.5d
 		}
 		{
 			dependencies: ["771664DD2542ABFA"]
@@ -551,11 +554,11 @@
 				item: "mynethersdelight:resurgent_soil"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -7.5d
+			x: 1.0d
+			y: -5.5d
 		}
 		{
-			dependencies: ["262086A7E16B1720"]
+			dependencies: ["7E2BA55431C4D882"]
 			id: "758A7944757826A8"
 			subtitle: "注意只能在月球上使用哦"
 			tasks: [{
@@ -563,8 +566,8 @@
 				item: "createdelightcore:luna_soil"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -7.5d
+			x: 2.5d
+			y: -5.5d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -574,8 +577,8 @@
 				item: "farmersdelight:organic_compost"
 				type: "item"
 			}]
-			x: 1.5d
-			y: -6.0d
+			x: 0.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -585,19 +588,8 @@
 				item: "mynethersdelight:letios_compost"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -6.0d
-		}
-		{
-			dependencies: ["4FC5D1EC503E6579"]
-			id: "262086A7E16B1720"
-			tasks: [{
-				id: "2CABF5439DB64CD8"
-				item: "createdelightcore:phantom_compost"
-				type: "item"
-			}]
-			x: 4.5d
-			y: -6.0d
+			x: 1.0d
+			y: -4.0d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -613,11 +605,11 @@
 				item: "eclipticseasons:winter_greenhouse_essence"
 				type: "item"
 			}]
-			x: 2.5d
-			y: -12.0d
+			x: 1.0d
+			y: -7.5d
 		}
 		{
-			dependencies: ["67A7A1B0700FFCA3"]
+			dependencies: ["6B41CA0DD006F78C"]
 			icon: {
 				Count: 1
 				id: "butchercraft:butcher_knife"
@@ -631,13 +623,14 @@
 				item: "butchercraft:chicken_carcass"
 				type: "item"
 			}]
+			shape: "rsquare"
 			tasks: [{
 				id: "1DC44E9A91548F05"
 				title: "磨刀霍霍"
 				type: "checkmark"
 			}]
-			x: 3.0d
-			y: 6.0d
+			x: 3.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["2A0C295CDBE6C743"]
@@ -679,8 +672,8 @@
 				}
 			]
 			title: "趁手工具"
-			x: 6.0d
-			y: 7.5d
+			x: 4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["2A0C295CDBE6C743"]
@@ -708,8 +701,8 @@
 				}
 			]
 			title: "屠户!"
-			x: 6.0d
-			y: 4.5d
+			x: 5.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["6B61BD46E3916253"]
@@ -796,8 +789,8 @@
 				}
 			]
 			title: "首领帽子"
-			x: 8.0d
-			y: 8.5d
+			x: 4.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["6B61BD46E3916253"]
@@ -874,8 +867,8 @@
 				}
 			]
 			title: "屠夫套装"
-			x: 8.0d
-			y: 7.5d
+			x: 5.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["2A0C295CDBE6C743"]
@@ -885,8 +878,8 @@
 				item: "quark:feeding_trough"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 6.0d
+			x: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["2660ABEA79C209F4"]
@@ -960,14 +953,11 @@
 				}
 			]
 			title: "尸体派对"
-			x: 8.0d
-			y: 4.5d
+			x: 5.5d
+			y: 4.0d
 		}
 		{
-			dependencies: [
-				"67A7A1B0700FFCA3"
-				"3852CC3D93CAB13C"
-			]
+			dependencies: ["67A7A1B0700FFCA3"]
 			dependency_requirement: "one_completed"
 			id: "756A97F28B4129C1"
 			subtitle: "酿酒流（确信）"
@@ -981,71 +971,37 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["5EBD03E9C7D773DE"]
+			dependencies: ["67A7A1B0700FFCA3"]
 			id: "42C2C74659AA5140"
+			shape: "rsquare"
 			tasks: [{
 				id: "5D78AE12D482B123"
 				item: "crabbersdelight:crab_trap"
 				type: "item"
 			}]
-			x: 4.0d
+			x: 0.5d
 			y: 2.0d
 		}
 		{
-			dependencies: ["67A7A1B0700FFCA3"]
-			id: "5EBD03E9C7D773DE"
-			tasks: [{
-				id: "5EA04A548BAF18BB"
-				item: {
-					Count: 1
-					id: "oceanic_delight:fishing_net"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			title: "来自海洋的馈赠！"
-			x: 1.5d
-			y: 1.5d
-		}
-		{
 			dependencies: ["18DF6CDFF018EE5C"]
-			description: [
-				"使用刀击杀生物后可掉落&e特殊物品&r"
-				"斩切刀&e伤害更高&r且&4必定&r掉落&e特殊物品"
-			]
+			description: ["使用&4小刀&r击杀生物后可掉落&e特殊物品&r, &4斩切刀&r&e伤害更高&r且&4必定&r掉落&e特殊物品"]
 			id: "30732771A11E3164"
 			subtitle: "食神要有一把好刀"
-			tasks: [
-				{
-					id: "3D437719181F2072"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "dungeonsdelight:cleavers"
-						}
+			tasks: [{
+				id: "037EC4D432734C19"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "farmersdelight:straw_harvesters"
 					}
-					title: "斩切刀"
-					type: "item"
 				}
-				{
-					id: "037EC4D432734C19"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "farmersdelight:straw_harvesters"
-						}
-					}
-					title: "Any #farmersdelight:straw_harvesters"
-					type: "item"
-				}
-			]
+				title: "任意刀具"
+				type: "item"
+			}]
 			title: "大厨的神兵利器"
-			x: -1.5d
-			y: 0.0d
+			x: 7.5d
+			y: 3.5d
 		}
 		{
 			id: "3B22EE550A58193D"
@@ -1063,8 +1019,8 @@
 				type: "item"
 			}]
 			title: "我要成为&e酿酒大师&r吖！"
-			x: -7.5d
-			y: 1.5d
+			x: -7.0d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1075,8 +1031,8 @@
 				item: "brewinandchewin:heating_cask"
 				type: "item"
 			}]
-			x: -9.5d
-			y: 1.0d
+			x: -8.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1092,8 +1048,8 @@
 				item: "vinery:apple_press"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 3.0d
+			x: -8.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1104,7 +1060,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "&4舟批狂喜啊属于是"
+			subtitle: "&4呃啊, 有股子味"
 			tasks: [{
 				id: "248D00A978C120D5"
 				item: {
@@ -1118,8 +1074,8 @@
 				type: "item"
 			}]
 			title: "少女脚踩葡萄？"
-			x: -9.5d
-			y: 2.0d
+			x: -8.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1149,7 +1105,7 @@
 			]
 			title: "储藏酒的好东西"
 			x: -6.0d
-			y: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1160,8 +1116,8 @@
 				item: "brewinandchewin:ice_crate"
 				type: "item"
 			}]
-			x: -9.0d
-			y: 0.0d
+			x: -8.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1178,8 +1134,8 @@
 				type: "item"
 			}]
 			title: "珍藏你的名酒！"
-			x: -7.0d
-			y: 0.0d
+			x: -6.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1245,7 +1201,7 @@
 			]
 			title: "酿酒师"
 			x: -5.0d
-			y: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1256,8 +1212,8 @@
 				item: "brewinandchewin:coaster"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 0.0d
+			x: -4.5d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -1265,6 +1221,7 @@
 				"3B22EE550A58193D"
 			]
 			id: "7B285A5A3B2FD565"
+			shape: "rsquare"
 			tasks: [
 				{
 					id: "492AB1368EDBF086"
@@ -1278,7 +1235,7 @@
 				}
 			]
 			x: -5.5d
-			y: 1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["756A97F28B4129C1"]
@@ -1300,7 +1257,7 @@
 					xp: 100
 				}
 			]
-			shape: "circle"
+			shape: "rsquare"
 			size: 1.0d
 			subtitle: "&4三点几嚟，饮茶先啦！"
 			tasks: [{
@@ -1310,7 +1267,7 @@
 			}]
 			title: "农夫暇事"
 			x: -5.5d
-			y: 6.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["6DCD56C34775CF84"]
@@ -1320,8 +1277,8 @@
 				item: "createcafe:iced_coffee_cup"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 4.5d
+			x: -6.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["6DCD56C34775CF84"]
@@ -1331,29 +1288,8 @@
 				item: "createcafe:empty_boba_cup"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 7.5d
-		}
-		{
-			can_repeat: false
-			dependencies: ["040CA96F08E46896"]
-			hide_dependency_lines: false
-			icon: "farmersrespite:coffee_beans_sack"
-			id: "28DE87457568AE05"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "76E5017A7F7BFEF8"
-				table_id: 8375300527209900268L
-				type: "random"
-			}]
-			size: 1.0d
-			tasks: [{
-				id: "7DD47E4B959883E2"
-				type: "checkmark"
-			}]
-			title: "&6COFFEE！！！"
-			x: -9.0d
-			y: 4.5d
+			x: -6.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6DCD56C34775CF84"]
@@ -1363,11 +1299,11 @@
 				item: "minecraft:glass_bottle"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 6.0d
+			x: -7.0d
+			y: 5.0d
 		}
 		{
-			dependencies: ["5EBD03E9C7D773DE"]
+			dependencies: ["67A7A1B0700FFCA3"]
 			id: "3CA964B6CCE41A2D"
 			rewards: [{
 				id: "47E8500509FF179C"
@@ -1383,6 +1319,7 @@
 				}
 				type: "item"
 			}]
+			shape: "rsquare"
 			subtitle: "钓鱼佬永不空军啊，混蛋"
 			tasks: [{
 				id: "3480AC7D39A2E958"
@@ -1395,149 +1332,21 @@
 				}
 				type: "item"
 			}]
-			x: 4.0d
-			y: 0.5d
+			x: -1.5d
+			y: 2.0d
 		}
 		{
-			dependencies: ["314958A92C1D6DF5"]
-			id: "01BB3E43ADA698DF"
-			rewards: [{
-				id: "3BAE850CB7701083"
-				item: "farmersrespite:tea_seeds"
-				type: "item"
-			}]
-			subtitle: "生成于&e繁花森林、草甸、樱花树林、雪林&r，相对&6常见"
-			tasks: [{
-				icon: "youkaishomecoming:wild_tea"
-				id: "5944C54FD349D5A5"
-				observe_type: 0
-				timer: 0L
-				title: "耐造的野生茶树！"
-				to_observe: "youkaishomecoming:wild_tea"
-				type: "observation"
-			}]
-			x: -10.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["314958A92C1D6DF5"]
-			id: "2C29206895A03FC8"
-			rewards: [{
-				id: "5CD97794F85274A9"
-				item: "farmersrespite:tea_seeds"
-				type: "item"
-			}]
-			subtitle: "生成于&e沼泽&r，极度&6稀有"
-			tasks: [{
-				icon: "farmersrespite:wild_tea_bush"
-				id: "2823A716A6AB26C8"
-				observe_type: 0
-				timer: 0L
-				title: "娇贵的野生茶树！"
-				to_observe: "farmersrespite:wild_tea_bush"
-				type: "observation"
-			}]
-			x: -10.5d
-			y: 7.5d
-		}
-		{
-			dependencies: [
-				"679F7F3D2B0181EE"
-				"5D78E30556658825"
-			]
-			dependency_requirement: "one_completed"
-			icon: "farmersrespite:green_tea_leaves_sack"
-			id: "314958A92C1D6DF5"
-			rewards: [{
-				exclude_from_claim_all: true
-				id: "6344B9C930089500"
-				table_id: 519386821949235519L
-				type: "random"
-			}]
-			shape: "circle"
-			size: 1.0d
-			tasks: [{
-				id: "0A7F6E50C597CAEC"
-				type: "checkmark"
-			}]
-			title: "&aTEA！！！"
-			x: -9.0d
-			y: 6.5d
-		}
-		{
-			dependencies: [
-				"2C29206895A03FC8"
-				"01BB3E43ADA698DF"
-			]
+			dependencies: ["756A97F28B4129C1"]
 			id: "68FB637A0E00F057"
-			size: 1.5d
+			shape: "rsquare"
+			size: 1.0d
 			tasks: [{
 				id: "5C89BE8DA3941435"
 				item: "youkaishomecoming:drying_rack"
 				type: "item"
 			}]
-			x: -12.0d
-			y: 6.75d
-		}
-		{
-			dependencies: ["28DE87457568AE05"]
-			id: "362F139D85B9B3B2"
-			rewards: [
-				{
-					count: 3
-					id: "436C0C3A69726EFF"
-					item: "createcafe:coffee_beans"
-					type: "item"
-				}
-				{
-					id: "3E28EA6566F0EBC8"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "破坏&a草丛&r即可掉落"
-			tasks: [{
-				id: "2600F7611648728D"
-				item: "createcafe:coffee_beans"
-				type: "item"
-			}]
-			title: "主世界咖啡"
-			x: -10.5d
+			x: -5.5d
 			y: 3.5d
-		}
-		{
-			dependencies: ["28DE87457568AE05"]
-			description: [
-				"&a&n&l生长环境&r：种植在&e玄武岩&r，&e磨制玄武岩&r，&e平滑玄武岩&r和&e岩浆块&r上"
-				"&a&n&l生长条件&r：&4下界&r正常生长；&4主世界&r种植时会使以&e咖啡树&r为中心&45×5×2&r范围内的农作物转变为&0凋零根须&r，每株作物能使咖啡树&e生长一个阶段&r"
-				"&a&n&l如何收获&r：咖啡树最高可&e生长到3格&r（&4需要4格空间&r），总共会长出&e3根&r&4可结果的树枝&r，&e右键成熟的树枝&r即&r可收获&4咖啡浆果&r"
-			]
-			id: "30A14EB9603B029A"
-			rewards: [
-				{
-					id: "60643EC45B04CB5E"
-					item: "farmersrespite:gamblers_tea"
-					type: "item"
-				}
-				{
-					id: "41C9271151D7728E"
-					type: "xp"
-					xp: 100
-				}
-			]
-			subtitle: "下界咖啡树生长于&4下界&r的&e玄武岩三角洲"
-			tasks: [{
-				icon: "farmersrespite:wild_coffee_bush"
-				id: "1BC76B8096106A0F"
-				observe_type: 0
-				timer: 0L
-				title: "野生咖啡丛"
-				to_observe: "farmersrespite:wild_coffee_bush"
-				type: "observation"
-			}]
-			title: "下界咖啡"
-			x: -10.5d
-			y: 5.0d
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
@@ -1575,7 +1384,7 @@
 					xp: 100
 				}
 			]
-			shape: "circle"
+			shape: "rsquare"
 			size: 1.0d
 			subtitle: "炒菜五分钟，备菜两小时（心累）"
 			tasks: [{
@@ -1584,8 +1393,8 @@
 				type: "item"
 			}]
 			title: "砧板！"
-			x: -1.5d
-			y: 1.5d
+			x: 3.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1FAE95DDB868B787"]
@@ -1609,8 +1418,8 @@
 				item: "farmersdelight:straw"
 				type: "item"
 			}]
-			x: 3.0d
-			y: -4.5d
+			x: 1.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["4FC5D1EC503E6579"]
@@ -1640,8 +1449,8 @@
 				item: "farmersdelight:rope"
 				type: "item"
 			}]
-			x: 4.5d
-			y: -4.5d
+			x: 2.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["4466CFB87B81D79F"]
@@ -1666,35 +1475,24 @@
 				item: "farmersdelight:safety_net"
 				type: "item"
 			}]
-			x: 6.0d
-			y: -4.5d
+			x: 2.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
 			id: "2D31949080435F1A"
+			shape: "rsquare"
 			subtitle: "我们来腌制点东西"
 			tasks: [{
 				id: "4F662D4E067C9C1B"
 				item: "vintagedelight:fermenting_jar"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 3.5d
+			x: 0.5d
+			y: 5.0d
 		}
 		{
-			dependencies: ["2D31949080435F1A"]
-			id: "0C5B481161CAB478"
-			subtitle: "撒撒撒"
-			tasks: [{
-				id: "1597ACF091AB222F"
-				item: "vintagedelight:salt_dust"
-				type: "item"
-			}]
-			x: 3.0d
-			y: 3.5d
-		}
-		{
-			dependencies: ["24CF527B4E34E599"]
+			dependencies: ["67A7A1B0700FFCA3"]
 			icon: "create:cogwheel"
 			id: "22C967F22899C478"
 			rewards: [{
@@ -1703,7 +1501,7 @@
 				xp: 100
 			}]
 			shape: "rsquare"
-			size: 1.5d
+			size: 1.0d
 			subtitle: "开启你的精制谷物生活吧！"
 			tasks: [{
 				id: "56DAB98B82C1072B"
@@ -1712,7 +1510,7 @@
 			}]
 			title: "农业科技！！！"
 			x: -0.5d
-			y: 9.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1729,8 +1527,8 @@
 				type: "item"
 			}]
 			title: ">_<好冷啊"
-			x: -2.5d
-			y: 10.0d
+			x: -2.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1746,8 +1544,8 @@
 				item: "ratatouille:thresher"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 11.0d
+			x: -2.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1758,8 +1556,8 @@
 				item: "ratatouille:oven_fan"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 11.5d
+			x: -1.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1775,8 +1573,8 @@
 				item: "ratatouille:squeeze_basin"
 				type: "item"
 			}]
-			x: -0.5d
-			y: 11.5d
+			x: 1.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1787,11 +1585,14 @@
 				item: "ratatouille:oven"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 11.5d
+			x: 0.0d
+			y: 7.5d
 		}
 		{
-			dependencies: ["22C967F22899C478"]
+			dependencies: [
+				"22C967F22899C478"
+				"1A486FCA2637D099"
+			]
 			id: "618BFEEC3A253778"
 			rewards: [{
 				id: "2FAF87F7538C18CA"
@@ -1805,8 +1606,8 @@
 				type: "item"
 			}]
 			title: "骨粉漫天飞舞~"
-			x: 1.5d
-			y: 11.0d
+			x: 1.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["22C967F22899C478"]
@@ -1823,66 +1624,10 @@
 				type: "item"
 			}]
 			title: "脱模！！！"
-			x: 1.5d
-			y: 10.0d
+			x: -0.5d
+			y: 8.5d
 		}
 		{
-			dependencies: ["514B354CE00E2C0A"]
-			id: "7198344A67BDD017"
-			tasks: [{
-				id: "0CA8358C2430C7B0"
-				item: "ratatouille:popsicle_mold"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 10.0d
-		}
-		{
-			dependencies: ["2BA53576141562AD"]
-			id: "588FAC82437DD774"
-			tasks: [{
-				id: "1618EA191A15F55B"
-				item: "ratatouille:wheat_kernels"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 11.5d
-		}
-		{
-			dependencies: ["2BA53576141562AD"]
-			id: "1DA7B76EBA4F287E"
-			tasks: [{
-				id: "1EB267E5E749E601"
-				item: "culturaldelights:corn_kernels"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 12.5d
-		}
-		{
-			dependencies: ["1C2346BFDB6EF9C1"]
-			id: "5E04D66D2B82296A"
-			tasks: [{
-				id: "106A0C4875473700"
-				item: "createdelight:vermicelli"
-				type: "item"
-			}]
-			x: -1.0d
-			y: 13.0d
-		}
-		{
-			dependencies: ["1C2346BFDB6EF9C1"]
-			id: "646990916B546C8A"
-			tasks: [{
-				id: "0A43F4B350D8F000"
-				item: "farmersdelight:raw_pasta"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 13.0d
-		}
-		{
-			dependencies: ["618BFEEC3A253778"]
 			id: "1A486FCA2637D099"
 			tasks: [{
 				id: "4D294E91011D7A12"
@@ -1890,7 +1635,7 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 12.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["2D27A964EECC5842"]
@@ -1900,7 +1645,7 @@
 				item: "ratatouille:chocolate_mold"
 				type: "item"
 			}]
-			x: 3.0d
+			x: -1.5d
 			y: 9.0d
 		}
 		{
@@ -1911,8 +1656,8 @@
 				item: "ratatouille:cake_mold"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 10.0d
+			x: 0.5d
+			y: 9.0d
 		}
 		{
 			dependencies: ["2D27A964EECC5842"]
@@ -1922,9 +1667,257 @@
 				item: "ratatouille:popsicle_mold"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 11.0d
+			x: -0.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			dependency_requirement: "one_completed"
+			id: "34636258CDA46423"
+			rewards: [{
+				id: "6A671470DFF558AA"
+				item: "createdieselgenerators:plant_oil_bucket"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.0d
+			tasks: [{
+				id: "4E9779290CECD38D"
+				item: "create_bic_bit:mechanical_fryer"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6B41CA0DD006F78C"]
+			id: "10FDC3EC0D8AF9CD"
+			rewards: [
+				{
+					id: "5204510662D1D925"
+					item: "farmersdelight:cooked_rice"
+					type: "item"
+				}
+				{
+					id: "1683A1A3F7617528"
+					type: "xp"
+					xp: 100
+				}
+			]
+			shape: "rsquare"
+			size: 1.0d
+			subtitle: "可以用来简易的烹饪一些食物"
+			tasks: [{
+				id: "7AFAD68AE8B9F58B"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			title: "点起火焰"
+			x: 3.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["10FDC3EC0D8AF9CD"]
+			id: "26A2FB68B86C5DCF"
+			tasks: [{
+				id: "353BA4ADFAB2AF58"
+				item: "farmersdelight:stove"
+				type: "item"
+			}]
+			x: 5.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["10FDC3EC0D8AF9CD"]
+			description: ["&e普通厨锅&r可以在地牢炉灶上使用，怪物锅&e则相反，只能在&a地牢炉灶&r上使用"]
+			id: "33AF38A91D39C6EF"
+			subtitle: "迷宫饭！"
+			tasks: [{
+				id: "0D3ACC2E7E5ABFF2"
+				item: "dungeonsdelight:dungeon_stove"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["26A2FB68B86C5DCF"]
+			id: "08E4891C042519EC"
+			subtitle: "不同皮肤的炉灶"
+			tasks: [
+				{
+					id: "6AEFAB126650CD37"
+					item: "mynethersdelight:nether_bricks_stove"
+					type: "item"
+				}
+				{
+					id: "1A4F6DEE72606C00"
+					item: "ends_delight:end_stove"
+					type: "item"
+				}
+				{
+					id: "46A0D26725F8803C"
+					item: "trailandtales_delight:mud_stove"
+					type: "item"
+				}
+			]
+			title: "多样炉灶"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["10FDC3EC0D8AF9CD"]
+			id: "27D86F382B609666"
+			subtitle: "是不是很熟悉"
+			tasks: [{
+				id: "2DFCC597A5CC1BDE"
+				item: "festival_delicacies:stove"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["26A2FB68B86C5DCF"]
+			description: ["需要另一只手&a拿着食物&r，在炉灶前&a长按右键&r"]
+			id: "05D66C67A0F18F66"
+			subtitle: "大厨颠锅"
+			tasks: [{
+				id: "060D86D0586B9976"
+				item: {
+					Count: 1
+					id: "farmersdelight:skillet"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 6.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["05D66C67A0F18F66"]
+			id: "7F49D3F72AC85F8D"
+			subtitle: "开始炒菜"
+			tasks: [
+				{
+					id: "267C85618A48735F"
+					item: {
+						Count: 1
+						id: "cuisinedelight:cuisine_skillet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4A589D438DEB91CD"
+					item: "cuisinedelight:spatula"
+					type: "item"
+				}
+			]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["33AF38A91D39C6EF"]
+			description: ["怪物的触须在锅里咕噜噜"]
+			id: "7B766B7184A66717"
+			subtitle: "来烹饪怪物"
+			tasks: [{
+				id: "1045131D1DECE53D"
+				item: "dungeonsdelight:monster_pot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "2F0787C85F3B604F"
+			subtitle: "咕噜噜炖煮"
+			tasks: [{
+				id: "3209B30BF9B54FA1"
+				item: "farmersdelight:cooking_pot"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "7CAE0FBFCD8E0DD9"
+			subtitle: "厨锅的青春版"
+			tasks: [{
+				id: "017A907CB65F3C17"
+				item: "trailandtales_delight:pottery_cooking_pot"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "1D6F96A0BFC33915"
+			subtitle: "小小锅"
+			tasks: [{
+				id: "6A39FE991392A03D"
+				item: "miners_delight:copper_pot"
+				type: "item"
+			}]
+			x: 9.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["27D86F382B609666"]
+			id: "1DE4151D6F27DAB5"
+			size: 1.0d
+			subtitle: "可以用来做饺子"
+			tasks: [{
+				id: "3189277D9CC88F33"
+				item: "festival_delicacies:pot"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["7F49D3F72AC85F8D"]
+			id: "69946FFCA797BB79"
+			subtitle: "热气腾腾"
+			tasks: [
+				{
+					id: "0F0BDE3053436CAB"
+					item: "youkaishomecoming:steamer_pot"
+					type: "item"
+				}
+				{
+					id: "60E42CD488C3C001"
+					item: "youkaishomecoming:steamer_rack"
+					type: "item"
+				}
+				{
+					id: "28587D6BB0C30772"
+					item: "youkaishomecoming:steamer_lid"
+					type: "item"
+				}
+			]
+			x: 8.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			id: "6B41CA0DD006F78C"
+			tasks: [{
+				id: "69E68AC8530D80BC"
+				title: "家常小炒!"
+				type: "checkmark"
+			}]
+			x: 2.0d
+			y: 3.5d
 		}
 	]
-	title: "&e盛宴准备时！"
+	title: "&5盛宴准备时！"
 }

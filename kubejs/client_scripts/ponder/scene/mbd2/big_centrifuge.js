@@ -96,7 +96,7 @@ Ponder.registry(event => {
                 scene.idle(20)
                 scene.world.showSection([3, 3, 2, 5, 7, 2], Direction.SOUTH)
                 scene.world.showSection([2, 3, 3, 2, 7, 5], Direction.EAST)
-                scene.world.showSection([3, 6, 3, 5, 7, 5], Direction.DOWN)
+                scene.world.showSection([3, 3, 3, 5, 7, 5], Direction.DOWN)
                 scene.idle(20)
                 scene.markAsFinished()
             })
