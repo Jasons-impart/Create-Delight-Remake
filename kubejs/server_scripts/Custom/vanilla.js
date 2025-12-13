@@ -75,6 +75,7 @@ ServerEvents.recipes(e => {
     .id("vintageimprovements:vacuumizing/blaze_rod")
 
     e.replaceInput({ id: "minecraft:sticky_piston" }, "minecraft:slime_ball", "#forge:slimeballs")
+    
 })
 
 ServerEvents.tags("minecraft:item", e => {

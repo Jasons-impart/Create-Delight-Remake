@@ -554,7 +554,7 @@
 			dependency_requirement: "one_completed"
 			icon: "createdelight:spent_liquor_bucket"
 			id: "67C09A75769D6D7A"
-			min_required_tasks: 1
+			min_required_tasks: 3
 			subtitle: "陨石废液可用于赛特斯石英的再生"
 			tasks: [
 				{
@@ -571,6 +571,10 @@
 					id: "6FE0AE939362F44C"
 					item: "minecraft:glowstone_dust"
 					type: "item"
+				}
+				{
+					id: "3F0DE13516298841"
+					type: "checkmark"
 				}
 			]
 			title: "陨石废液"
@@ -870,6 +874,7 @@
 		{
 			dependencies: ["67C09A75769D6D7A"]
 			id: "049DC0B2D7585CEB"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "45D73313853B186E"
@@ -891,7 +896,13 @@
 					item: "ae2:quartz_cluster"
 					type: "item"
 				}
+				{
+					id: "54FD45534732A744"
+					title: "勾选这个可以完成任务"
+					type: "checkmark"
+				}
 			]
+			title: "赛特斯石英的生长"
 			x: 3.5d
 			y: -3.0d
 		}
