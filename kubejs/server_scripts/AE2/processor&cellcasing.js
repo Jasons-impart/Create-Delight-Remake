@@ -307,7 +307,7 @@ ServerEvents.recipes((event) => {
         i === 0 ? cfg.first_dust : "minecraft:redstone",
         cfg.processor,
         i === 0 ? cfg.first_input : `${cfg.prefix}${OMNI_CELL_TIERS[i - 1]}`,
-        i === 0 ? "ae2:cell_component_1k" : "createdelight:quartz_glass_parts"
+        i === 0 ? "ae2:cell_component_1k" : "#createdelight:quartz_glass"
       )
     }
   }
