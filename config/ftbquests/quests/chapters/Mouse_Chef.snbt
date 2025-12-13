@@ -226,6 +226,11 @@
 			shape: "rsquare"
 			size: 4.0d
 			subtitle: "你已经是一个合格的蛋糕大师了（赞赏脸）"
+			tasks: [{
+				id: "2BDDC2B78E5D9DAC"
+				type: "checkmark"
+			}]
+			title: "cakeeeeeeee"
 			x: -40.0d
 			y: -22.0d
 		}
@@ -464,6 +469,10 @@
 			shape: "rsquare"
 			size: 4.0d
 			subtitle: "据说有个人靠卖面包成为了首富"
+			tasks: [{
+				id: "0258981F68098DDE"
+				type: "checkmark"
+			}]
 			title: "面包大亨"
 			x: -19.0d
 			y: -22.0d
@@ -988,6 +997,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "7AD47B5878CFF645"
+				type: "checkmark"
+			}]
 			title: "豪饮!"
 			x: -40.0d
 			y: -2.0d
@@ -1317,6 +1330,10 @@
 			]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "65F338DF4FA3783A"
+				type: "checkmark"
+			}]
 			title: "葡萄酒大师！"
 			x: -19.0d
 			y: -2.0d
@@ -1917,6 +1934,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "715F77656237F3C8"
+				type: "checkmark"
+			}]
 			title: "茶香四溢"
 			x: 2.0d
 			y: -2.0d
@@ -2195,6 +2216,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "0B77DCF2E9748CE4"
+				type: "checkmark"
+			}]
 			title: "SCA咖啡大赛冠军！"
 			x: -40.0d
 			y: 16.0d
@@ -3482,6 +3507,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "350C8ADE1078FECE"
+				type: "checkmark"
+			}]
 			title: "美味油炸！"
 			x: -19.0d
 			y: 16.0d
@@ -3822,6 +3851,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "6CECBD30B3EE8CEC"
+				type: "checkmark"
+			}]
 			title: "节日佳肴！"
 			x: 2.0d
 			y: 16.0d
@@ -4102,6 +4135,10 @@
 			}]
 			shape: "rsquare"
 			size: 4.0d
+			tasks: [{
+				id: "4449A9B63EBDABA6"
+				type: "checkmark"
+			}]
 			title: "腌渍的美味"
 			x: -30.0d
 			y: 36.0d
@@ -4333,14 +4370,20 @@
 				"4EDA1F6B95A13C2C"
 			]
 			hide_dependency_lines: true
+			icon: "farmersdelight:melon_popsicle"
 			id: "07B9873B270439D0"
+			rewards: [{
+				id: "15653AB8CA0B703C"
+				item: "createdelightcore:netherite_coin"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 4.0d
 			tasks: [{
-				id: "262D30E3C00D35AD"
-				item: "ratatouille:melon_popsicle_mold_solid"
-				type: "item"
+				id: "0FA12E85C8B2B5E3"
+				type: "checkmark"
 			}]
+			title: "现在我有冰棍"
 			x: -8.0d
 			y: 36.0d
 		}

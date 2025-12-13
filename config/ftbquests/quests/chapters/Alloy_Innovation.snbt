@@ -1110,6 +1110,11 @@
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "{ \"text\": \"跳转石油电力\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"54356C1067ECB809\"} }"
+			tasks: [{
+				elapsedTime: 1L
+				id: "102A7E43F92501AB"
+				type: "questsadditions:time"
+			}]
 			title: "步入&5石油电力&r！"
 			x: 28.5d
 			y: 2.0d

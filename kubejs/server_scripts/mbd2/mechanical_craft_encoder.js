@@ -37,6 +37,7 @@ function handleChanged(machine, level) {
     if (outputFull)
         return
 
+    let minWidth = machine.customData.getInt("width") || 3
 
     /**@type {Internal.MechanicalCraftingRecipe[]} */
     let recipelist = level.recipeManager.getAllRecipesFor("create:mechanical_crafting")
@@ -86,6 +87,13 @@ function handleChanged(machine, level) {
             input.restoreFromSnapshot(snapshot);
             return allIngredientsConsumed;  // 如果所有食材都已成功消耗，返回true
         })
+    recipelist
+    .filter(recipe => {
+        return recipe.width <= minWidth
+    })
+    .sort((a, b) => {
+        return Math.abs(a.width - minWidth) - Math.abs(b.width - minWidth) //越接近所设置宽度值的越在前面
+    })
 
 
     if (recipelist.length !== 0) {
@@ -171,14 +179,14 @@ MBDMachineEvents.onTick("createdelight:mechanical_craft_encoder", e => {
     // if (customData.getInt("handle_countdown") > 0) {
     //     customData.putInt("handle_countdown", customData.getInt("handle_countdown") - 1)
     // }
-    
+
     if (level.time % 30 == 0 && level.hasNeighborSignal(machine.pos))
         handleChanged(machine, level)
 })
 
 
 MBDMachineEvents.onNeighborChanged("createdelight:mechanical_craft_encoder", e => {
-    
+
     let event = e.event
     const { machine } = event
     const { level, customData } = machine
