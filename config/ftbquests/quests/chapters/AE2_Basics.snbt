@@ -11,15 +11,7 @@
 			image: "ae2:block/small_quartz_bud"
 			rotation: 0.0d
 			width: 1.0d
-			x: 1.5d
-			y: -2.9d
-		}
-		{
-			height: 0.25d
-			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
-			rotation: 0.0d
-			width: 0.5d
-			x: 2.25d
+			x: 12.5d
 			y: -2.0d
 		}
 		{
@@ -27,72 +19,80 @@
 			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
 			rotation: 0.0d
 			width: 0.5d
-			x: 3.75d
-			y: -2.0d
+			x: 13.25d
+			y: -1.0999999999999996d
 		}
 		{
 			height: 0.25d
 			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
 			rotation: 0.0d
 			width: 0.5d
-			x: 5.25d
-			y: -2.0d
+			x: 14.75d
+			y: -1.0999999999999996d
+		}
+		{
+			height: 0.25d
+			image: "jei:textures/jei/atlas/gui/recipe_arrow_filled.png"
+			rotation: 0.0d
+			width: 0.5d
+			x: 16.25d
+			y: -1.0999999999999996d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/medium_quartz_bud"
 			rotation: 0.0d
 			width: 1.0d
-			x: 3.0d
-			y: -2.9d
+			x: 14.0d
+			y: -2.0d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/large_quartz_bud"
 			rotation: 0.0d
 			width: 1.0d
-			x: 4.5d
-			y: -2.9d
+			x: 15.5d
+			y: -2.0d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/quartz_cluster"
 			rotation: 0.0d
 			width: 1.0d
-			x: 6.0d
-			y: -2.9d
+			x: 17.0d
+			y: -2.0d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/flawed_budding_quartz"
 			rotation: 0.0d
 			width: 1.0d
-			x: 1.5d
-			y: -2.0d
+			x: 12.5d
+			y: -1.0999999999999996d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/chipped_budding_quartz"
 			rotation: 0.0d
 			width: 1.0d
-			x: 3.0d
-			y: -2.0d
+			x: 14.0d
+			y: -1.0999999999999996d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/damaged_budding_quartz"
 			rotation: 0.0d
 			width: 1.0d
-			x: 4.5d
-			y: -2.0d
+			x: 15.5d
+			y: -1.0999999999999996d
 		}
 		{
 			height: 1.0d
 			image: "ae2:block/quartz_block"
 			rotation: 0.0d
 			width: 1.0d
-			x: 6.0d
-			y: -2.0d
+			x: 17.0d
+			y: -1.0999999999999996d
 		}
 	]
 	order_index: 0
@@ -120,8 +120,8 @@
 				type: "checkmark"
 			}]
 			title: "应用能源的开始"
-			x: 0.0d
-			y: 0.0d
+			x: -1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3066F516B382ED92"]
@@ -137,14 +137,14 @@
 				type: "item"
 			}]
 			x: 2.0d
-			y: 0.0d
+			y: 2.0d
 		}
 		{
-			dependencies: ["3066F516B382ED92"]
+			dependencies: ["5D34BFD68D039806"]
 			dependency_requirement: "one_started"
 			id: "5F76D0BDF2B71728"
-			shape: "gear"
-			size: 2.0d
+			shape: "square"
+			size: 1.5d
 			subtitle: "陨石内会有一个&e神秘方块&r，将其破坏就会获得四种&e压印模板&r。"
 			tasks: [{
 				icon: "ae2:mysterious_cube"
@@ -156,8 +156,8 @@
 				type: "observation"
 			}]
 			title: "借由他人，寻找自我"
-			x: 0.0d
-			y: 6.5d
+			x: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -176,8 +176,8 @@
 				item: "createdelight:universal_press"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 10.5d
+			x: 8.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -191,8 +191,8 @@
 				item: "ae2:printed_logic_processor"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 12.0d
+			x: 10.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -206,8 +206,8 @@
 				item: "ae2:printed_calculation_processor"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 12.5d
+			x: 10.0d
+			y: 4.5d
 		}
 		{
 			dependencies: [
@@ -221,8 +221,8 @@
 				item: "megacells:printed_accumulation_processor"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 13.0d
+			x: 10.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -236,8 +236,8 @@
 				item: "ae2:printed_engineering_processor"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 12.5d
+			x: 10.0d
+			y: 2.5d
 		}
 		{
 			dependencies: [
@@ -251,8 +251,8 @@
 				item: "ae2:printed_silicon"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 12.0d
+			x: 10.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["6575B9B559D65549"]
@@ -263,35 +263,24 @@
 			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
 			title: "使用机械动力"
-			x: -3.75d
-			y: 10.5d
+			x: 8.0d
+			y: 6.5d
 		}
 		{
-			dependencies: [
-				"5D34BFD68D039806"
-				"3066F516B382ED92"
-			]
+			dependencies: ["5D34BFD68D039806"]
 			dependency_requirement: "one_started"
 			description: [
-				"每个母岩都有其损坏程度，使用非精准采集镐子会使母岩的损坏程度降低一级。而无暇母岩无论如何都会降一级。"
-				"无暇母岩请使用矿车装配站或空间塔搬运。"
-				""
-				"也可用同级母岩手动操作逐步升级到无暇母岩。"
+				"整合包对于&9母岩&r制作了&6升级机制&r："
+				"1.&b赛特斯石英块&r对母岩右键&4有概率转变为更高等级&r"
+				"2.&9赛特斯石英母岩&r将&4不会&r被你&6不小心挖掘&r下来"
 			]
 			icon: "ae2:flawless_budding_quartz"
 			id: "550924A31C631172"
 			min_required_tasks: 1
-			subtitle: "欧非检测器"
+			shape: "square"
+			size: 1.5d
+			subtitle: "使用非精准采集镐子挖掘时会损坏母岩, 且无暇母岩无论如何都会被损坏"
 			tasks: [
-				{
-					icon: "ae2:quartz_block"
-					id: "694173139F49120F"
-					observe_type: 0
-					timer: 0L
-					title: "观察赛特斯石英块"
-					to_observe: "ae2:quartz_block"
-					type: "observation"
-				}
 				{
 					icon: "ae2:damaged_budding_quartz"
 					id: "1DC8C57284446B78"
@@ -329,8 +318,8 @@
 					type: "observation"
 				}
 			]
-			title: "无暇的赛特斯石英母岩"
-			x: 3.5d
+			title: "赛特斯石英母岩!"
+			x: 4.0d
 			y: 0.0d
 		}
 		{
@@ -345,7 +334,7 @@
 				item: "ae2:growth_accelerator"
 				type: "item"
 			}]
-			x: 13.5d
+			x: 12.5d
 			y: 0.0d
 		}
 		{
@@ -384,26 +373,34 @@
 				type: "item"
 			}]
 			title: "用于充能的机器"
-			x: 9.0d
+			x: 7.5d
 			y: -1.5d
 		}
 		{
-			dependencies: ["550924A31C631172"]
+			dependencies: [
+				"550924A31C631172"
+				"049DC0B2D7585CEB"
+			]
+			dependency_requirement: "one_completed"
 			icon: "ae2:certus_quartz_crystal"
 			id: "5C874A3DDFE9A50A"
 			min_required_tasks: 1
-			size: 1.5d
+			size: 1.0d
 			subtitle: "通过挖掘母岩上的赛特斯石英簇获取，如果赛特斯石英未长成则会获取到赛特斯石英粉"
 			tasks: [{
 				id: "41B3A0DC3C8769BB"
 				item: "ae2:certus_quartz_crystal"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["5C874A3DDFE9A50A"]
+			dependencies: [
+				"5C874A3DDFE9A50A"
+				"049DC0B2D7585CEB"
+			]
+			dependency_requirement: "one_completed"
 			description: [
 				"对其持续的注入陨石废液，可使其生长。需要注意的是只有&e最顶级的赛特斯石英簇&r才能用粉碎轮制成&e赛特斯石英粉&r。"
 				"将&e赛特斯石英粉&r与&e充能赛特斯石英&r丢入水中即可获取&e两个赛特斯石英&r。"
@@ -415,8 +412,8 @@
 				item: "ae2:certus_quartz_dust"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 1.5d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["36598C420C3FA43F"]
@@ -426,8 +423,8 @@
 				item: "ae2:quartz_glass"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 3.0d
+			x: 5.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["1A01875DBBF93B00"]
@@ -437,8 +434,8 @@
 				item: "ae2:quartz_vibrant_glass"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 4.5d
+			x: 5.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["1A01875DBBF93B00"]
@@ -455,8 +452,8 @@
 				item: "createdelight:quartz_glass_parts"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 3.0d
+			x: 6.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["43FCBDCC68F16282"]
@@ -473,8 +470,8 @@
 				item: "createdelight:quartz_vibrant_glass_parts"
 				type: "item"
 			}]
-			x: 8.5d
-			y: 4.5d
+			x: 6.5d
+			y: -4.5d
 		}
 		{
 			dependencies: [
@@ -482,16 +479,16 @@
 				"550924A31C631172"
 			]
 			dependency_requirement: "one_started"
-			description: ["一个陨石可粉碎出多个陨石粉，而一个陨石粉就能烧制成陨石。"]
+			description: [""]
 			id: "26F96B707CE8F3DE"
-			subtitle: "可再生"
+			subtitle: "这是?无限再生!(粉碎->烧制->再粉碎->再烧制......)"
 			tasks: [{
 				id: "1E5F2D966ACFC486"
 				item: "ae2:sky_stone_block"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 1.5d
+			x: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -504,7 +501,7 @@
 				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 8.0d
 			y: 0.0d
 		}
 		{
@@ -517,8 +514,8 @@
 				item: "megacells:sky_steel_ingot"
 				type: "item"
 			}]
-			x: 9.0d
-			y: 1.5d
+			x: 8.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["26F96B707CE8F3DE"]
@@ -529,8 +526,8 @@
 				item: "ae2:sky_dust"
 				type: "item"
 			}]
-			x: 3.5d
-			y: 3.0d
+			x: 2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["391BA5D92F977F17"]
@@ -549,8 +546,8 @@
 					type: "checkmark"
 				}
 			]
-			x: 5.0d
-			y: 3.0d
+			x: 2.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["096D32604AED77C9"]
@@ -577,8 +574,8 @@
 				}
 			]
 			title: "陨石废液"
-			x: 5.0d
-			y: 1.5d
+			x: 3.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["29D71BA5F51B8710"]
@@ -590,7 +587,7 @@
 				item: "ae2:fluix_crystal"
 				type: "item"
 			}]
-			x: 10.5d
+			x: 9.5d
 			y: 0.0d
 		}
 		{
@@ -607,7 +604,7 @@
 				title: "关于线缆的选择"
 				type: "checkmark"
 			}]
-			x: 12.0d
+			x: 11.0d
 			y: 0.0d
 		}
 		{
@@ -628,8 +625,8 @@
 				type: "item"
 			}]
 			title: "ME玻璃线缆"
-			x: 12.0d
-			y: 1.5d
+			x: 11.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["489072B7A17F349C"]
@@ -649,8 +646,8 @@
 				type: "item"
 			}]
 			title: "ME包层线缆"
-			x: 12.0d
-			y: 3.0d
+			x: 11.0d
+			y: -3.0d
 		}
 		{
 			dependencies: ["38D93D6E4F62BE49"]
@@ -683,8 +680,8 @@
 				}
 			]
 			title: "致密线缆"
-			x: 11.5d
-			y: 4.5d
+			x: 10.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["3D10F05BC919CC4F"]
@@ -695,8 +692,8 @@
 				item: "ae2:fluix_dust"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 1.5d
+			x: 9.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["38D93D6E4F62BE49"]
@@ -714,8 +711,8 @@
 				type: "item"
 			}]
 			title: "智能线缆"
-			x: 12.5d
-			y: 4.5d
+			x: 11.5d
+			y: -4.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -725,8 +722,8 @@
 				item: "ae2:calculation_processor_press"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 8.5d
+			x: 6.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -736,8 +733,8 @@
 				item: "ae2:engineering_processor_press"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 8.5d
+			x: 6.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -747,8 +744,8 @@
 				item: "ae2:logic_processor_press"
 				type: "item"
 			}]
-			x: 2.0d
-			y: 9.0d
+			x: 6.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["5F76D0BDF2B71728"]
@@ -758,8 +755,8 @@
 				item: "ae2:silicon_press"
 				type: "item"
 			}]
-			x: -2.0d
-			y: 9.0d
+			x: 6.0d
+			y: 5.5d
 		}
 		{
 			dependencies: [
@@ -773,57 +770,8 @@
 				item: "megacells:accumulation_processor_press"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 8.0d
-		}
-		{
-			dependencies: [
-				"67C09A75769D6D7A"
-				"36598C420C3FA43F"
-			]
-			dependency_requirement: "one_completed"
-			icon: "ae2:quartz_cluster"
-			id: "2605D36AED802BDB"
-			tasks: [
-				{
-					icon: "ae2:small_quartz_bud"
-					id: "3B07A38533F38D89"
-					observe_type: 0
-					timer: 0L
-					title: "观察小型赛特斯石英芽"
-					to_observe: "ae2:small_quartz_bud"
-					type: "observation"
-				}
-				{
-					icon: "ae2:medium_quartz_bud"
-					id: "7CEACDF8E07BA6EF"
-					observe_type: 0
-					timer: 0L
-					title: "观察中型赛特斯石英芽"
-					to_observe: "ae2:medium_quartz_bud"
-					type: "observation"
-				}
-				{
-					icon: "ae2:large_quartz_bud"
-					id: "6D890FBCF6A13540"
-					observe_type: 0
-					timer: 0L
-					title: "观察大型赛特斯石英芽"
-					to_observe: "ae2:large_quartz_bud"
-					type: "observation"
-				}
-				{
-					icon: "ae2:quartz_cluster"
-					id: "09A62BCE57F03A6A"
-					observe_type: 0
-					timer: 0L
-					title: "观察赛特斯石英簇"
-					to_observe: "ae2:quartz_cluster"
-					type: "observation"
-				}
-			]
-			x: 5.0d
-			y: 0.0d
+			x: 6.0d
+			y: 3.5d
 		}
 		{
 			dependencies: [
@@ -834,15 +782,15 @@
 			]
 			id: "6F6D4D1925B4F3BE"
 			shape: "square"
-			size: 2.0d
+			size: 1.5d
 			subtitle: "可用于&e所有压印操作&r的模板，需要使用通用与全能压印模板合成。"
 			tasks: [{
 				id: "537177CE51D95A02"
 				item: "createdelight:ultimate_universal_press"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 10.5d
+			x: 12.5d
+			y: 3.5d
 		}
 		{
 			id: "2F8162DD1400E793"
@@ -851,8 +799,8 @@
 				item: "ae2omnicells:omni_link_print_press"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 9.0d
+			x: 14.5d
+			y: 2.5d
 		}
 		{
 			id: "610709B3259086A0"
@@ -861,8 +809,8 @@
 				item: "ae2omnicells:complex_link_print_press"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 10.5d
+			x: 14.5d
+			y: 3.5d
 		}
 		{
 			id: "45E3E8F3CFF60673"
@@ -871,8 +819,8 @@
 				item: "ae2omnicells:multidimensional_expansion_print_press"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 12.0d
+			x: 14.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["2F8162DD1400E793"]
@@ -882,8 +830,8 @@
 				item: "ae2omnicells:omni_link_circuit_print"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 8.0d
+			x: 16.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["610709B3259086A0"]
@@ -893,8 +841,8 @@
 				item: "ae2omnicells:complex_link_circuit_print"
 				type: "item"
 			}]
-			x: 7.0d
-			y: 10.5d
+			x: 16.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["45E3E8F3CFF60673"]
@@ -904,8 +852,8 @@
 				item: "ae2omnicells:multidimensional_expansion_circuit_print"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 13.0d
+			x: 16.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["03BBFC33D603A287"]
@@ -916,8 +864,36 @@
 				item: "create_fantasizing:sturdy_heavy_core"
 				type: "item"
 			}]
-			x: 10.5d
-			y: 3.0d
+			x: 8.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["67C09A75769D6D7A"]
+			id: "049DC0B2D7585CEB"
+			tasks: [
+				{
+					id: "45D73313853B186E"
+					item: "ae2:small_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "5556CF52CDB522CD"
+					item: "ae2:medium_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "2E99678CBCA1D525"
+					item: "ae2:large_quartz_bud"
+					type: "item"
+				}
+				{
+					id: "15C79184DF80A8E3"
+					item: "ae2:quartz_cluster"
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: -3.0d
 		}
 	]
 	title: "&b异星科技"

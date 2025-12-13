@@ -1,26 +1,53 @@
 {
-	autofocus_id: "22D01ADAD4616F68"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "Petrochemical_Industry"
+	filename: "54356C1067ECB809"
 	group: "14CFC96B5B37F10B"
-	icon: "createdieselgenerators:engine_turbocharger"
-	id: "507D13CF7AF6ECB1"
+	icon: "create_new_age:generator_coil"
+	id: "54356C1067ECB809"
 	order_index: 2
 	quest_links: [
 		{
 			id: "22D01ADAD4616F68"
 			linked_quest: "6EB96008F21DAFBF"
-			size: 2.0d
-			x: -16.0d
+			shape: "circle"
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			id: "0180D3A673FAA934"
+			linked_quest: "4458E27C5252B296"
+			x: 0.0d
 			y: 4.0d
 		}
 		{
-			id: "01AC440633233AC2"
-			linked_quest: "20B3A29ADFDF1D4A"
+			id: "2A9CBAC961B413BC"
+			linked_quest: "35F33D9F772B4551"
+			shape: "circle"
+			x: -4.0d
+			y: 5.5d
+		}
+		{
+			id: "04B1E039517A83A4"
+			linked_quest: "6DBEF23BA8608F4B"
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			id: "436EA6738DF1DFE8"
+			linked_quest: "2CC8B87D086B3275"
+			shape: "hexagon"
 			size: 2.0d
-			x: -16.0d
-			y: 8.0d
+			x: -7.0d
+			y: 3.0d
+		}
+		{
+			id: "35D0EEE249C353CB"
+			linked_quest: "002D0D42090AF488"
+			shape: "hexagon"
+			size: 2.0d
+			x: 4.5d
+			y: 4.0d
 		}
 	]
 	quests: [
@@ -35,8 +62,8 @@
 				type: "item"
 			}]
 			title: "寻找原油！然后开发！"
-			x: -13.5d
-			y: 4.0d
+			x: -1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1ADBDFB31928124D"]
@@ -81,8 +108,8 @@
 				}
 			]
 			title: "石油大亨的第一步！"
-			x: -11.5d
-			y: 4.0d
+			x: 0.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["1ADBDFB31928124D"]
@@ -100,8 +127,8 @@
 				item: "createdieselgenerators:distillation_controller"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 5.5d
+			x: 0.0d
+			y: -0.5d
 		}
 		{
 			dependencies: ["1A10B417B7C082DF"]
@@ -113,8 +140,8 @@
 				item: "createdieselgenerators:diesel_engine"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 8.5d
+			x: 0.0d
+			y: 0.5d
 		}
 		{
 			dependencies: [
@@ -135,11 +162,15 @@
 				item: "createdieselgenerators:large_diesel_engine"
 				type: "item"
 			}]
-			x: -10.5d
-			y: 7.5d
+			x: 0.0d
+			y: 1.5d
 		}
 		{
-			dependencies: ["1A10B417B7C082DF"]
+			dependencies: [
+				"692E9718A4E1F811"
+				"1AAA21CD44B36815"
+				"081AEF9714B8960E"
+			]
 			hide_until_deps_visible: true
 			id: "0C33D433CB5C97E5"
 			rewards: [{
@@ -154,8 +185,8 @@
 				item: "createdieselgenerators:engine_silencer"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 9.0d
+			x: 1.5d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -187,13 +218,14 @@
 				value: 1
 			}]
 			title: "石油炼化工艺！"
-			x: -9.5d
-			y: 4.0d
+			x: 1.5d
+			y: -1.5d
 		}
 		{
 			dependencies: [
-				"20B3A29ADFDF1D4A"
 				"6EB96008F21DAFBF"
+				"6DBEF23BA8608F4B"
+				"1ADBDFB31928124D"
 			]
 			id: "1A10B417B7C082DF"
 			shape: "square"
@@ -206,11 +238,15 @@
 				type: "stat"
 				value: 1
 			}]
-			x: -13.5d
-			y: 8.0d
+			x: -1.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["1A10B417B7C082DF"]
+			dependencies: [
+				"1AAA21CD44B36815"
+				"081AEF9714B8960E"
+				"692E9718A4E1F811"
+			]
 			id: "1CD3AA0F0A453C62"
 			subtitle: "&e涡轮增压&r！我是&4超级改车王&r！"
 			tasks: [{
@@ -218,8 +254,8 @@
 				item: "createdieselgenerators:engine_turbocharger"
 				type: "item"
 			}]
-			x: -11.5d
-			y: 7.0d
+			x: 1.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["61A945984843E55A"]
@@ -230,8 +266,8 @@
 				item: "createdieselgenerators:crude_oil_bucket"
 				type: "item"
 			}]
-			x: -7.5d
-			y: 4.0d
+			x: 3.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["24FAD19B32A0FEBE"]
@@ -242,8 +278,8 @@
 				item: "createdelight:light_crude_oil_bucket"
 				type: "item"
 			}]
-			x: -6.0d
-			y: 4.0d
+			x: 4.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["5EB7ED288E82C023"]
@@ -253,8 +289,8 @@
 				item: "createdelight:ethylene_fluid_bucket"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 3.5d
+			x: 5.5d
+			y: -2.0d
 		}
 		{
 			dependencies: [
@@ -268,8 +304,8 @@
 				item: "createdieselgenerators:diesel_bucket"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 2.5d
+			x: 5.5d
+			y: -3.0d
 		}
 		{
 			dependencies: [
@@ -283,8 +319,8 @@
 				item: "createdieselgenerators:gasoline_bucket"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 5.5d
+			x: 5.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["5EB7ED288E82C023"]
@@ -294,8 +330,8 @@
 				item: "createdelight:lubricating_oil_bucket"
 				type: "item"
 			}]
-			x: -5.0d
-			y: 4.5d
+			x: 5.5d
+			y: -1.0d
 		}
 		{
 			dependencies: [
@@ -308,11 +344,11 @@
 				item: "createdelight:fuel_mixtures_bucket"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 4.0d
+			x: 6.5d
+			y: -1.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["61A945984843E55A"]
 			id: "530B929865B8E11B"
 			subtitle: "油料存进可以&e防爆&r！&e豪用&r！"
 			tasks: [{
@@ -320,8 +356,8 @@
 				item: "createdieselgenerators:oil_barrel"
 				type: "item"
 			}]
-			x: -13.5d
-			y: 2.5d
+			x: 1.5d
+			y: -0.5d
 		}
 		{
 			dependencies: ["43B45F9D2DC4BD3E"]
@@ -358,14 +394,11 @@
 				type: "checkmark"
 			}]
 			title: "抽油机蓝图"
-			x: -11.5d
-			y: 2.5d
+			x: 0.0d
+			y: -2.5d
 		}
 		{
-			dependencies: [
-				"24FAD19B32A0FEBE"
-				"16E31AE06BF8CE13"
-			]
+			dependencies: ["24FAD19B32A0FEBE"]
 			description: [
 				"打开蓝图桌搜索&eoil_refinery.nbt&r"
 				"插分馏塔控制器，往抽屉里加石油，让烈焰人干活（无需超燃），加应力，完事。"
@@ -403,9 +436,341 @@
 				type: "checkmark"
 			}]
 			title: "最丐单片石油精炼厂蓝图"
-			x: -7.5d
-			y: 5.5d
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "5E075B9E7A889DF2"
+			secret: true
+			size: 1.0d
+			tasks: [
+				{
+					id: "778BDFA2C9308649"
+					item: "alexscaves:block_of_scarlet_neodymium"
+					type: "item"
+				}
+				{
+					id: "3D5C30DC1309147F"
+					item: "alexscaves:block_of_azure_neodymium"
+					type: "item"
+				}
+			]
+			title: "磁铁维度的特殊产物"
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"2034DC15562715B2"
+				"7BA43E50785D2492"
+			]
+			id: "5586CC958FF191C5"
+			size: 1.0d
+			subtitle: "减速！增大扭矩！"
+			tasks: [{
+				id: "755BB9E2B8990342"
+				item: "createdelight:planet_gear"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["7BA43E50785D2492"]
+			id: "2034DC15562715B2"
+			shape: "circle"
+			size: 1.0d
+			subtitle: "比电动马达转化效率更高！应力更强！"
+			tasks: [{
+				id: "28BEB553111D0273"
+				item: "create_new_age:basic_motor"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"3CB8FDF09F47FD4F"
+				"007A93F26730F6F0"
+			]
+			id: "36E5C4C6A8E9DAB5"
+			shape: "circle"
+			size: 1.0d
+			subtitle: "采用尖端放电进行充能"
+			tasks: [{
+				id: "706355E893B4CE8C"
+				item: "create_new_age:energiser_t1"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2034DC15562715B2"]
+			id: "657B0199F1F6BC9A"
+			size: 1.0d
+			tasks: [{
+				id: "010E4549CE7BA651"
+				item: "create_new_age:advanced_motor"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["657B0199F1F6BC9A"]
+			id: "183ED0CEDF627017"
+			size: 1.0d
+			tasks: [{
+				id: "3FC4E3A01DE47555"
+				item: "create_new_age:reinforced_motor"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["36E5C4C6A8E9DAB5"]
+			id: "40D0657E9DDB5663"
+			size: 1.0d
+			subtitle: "激光激发！"
+			tasks: [{
+				id: "2CD1A33502541B2A"
+				item: "create_new_age:energiser_t2"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["40D0657E9DDB5663"]
+			id: "7D7F82D2E50E2CDF"
+			size: 1.0d
+			subtitle: "钻石充能！"
+			tasks: [{
+				id: "7BA290D7428578CF"
+				item: "create_new_age:energiser_t3"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5586CC958FF191C5"]
+			id: "037F074C7A3AACF5"
+			size: 1.0d
+			subtitle: "超频！400%人类感谢！"
+			tasks: [{
+				id: "0029A7C17CA33063"
+				item: "create_new_age:basic_motor_extension"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["037F074C7A3AACF5"]
+			id: "4346D9DC0525D683"
+			size: 1.0d
+			subtitle: "超到冒烟！1000%的人类感谢！"
+			tasks: [{
+				id: "0232BB698CCD4636"
+				item: "create_new_age:advanced_motor_extension"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["35F33D9F772B4551"]
+			id: "007A93F26730F6F0"
+			rewards: [{
+				id: "4988ECBB3745E4E2"
+				item: "ad_astra:etrionic_core"
+				random_bonus: 3
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "电力器械的核心部件"
+			tasks: [{
+				id: "719EEDF319631604"
+				item: "ad_astra:etrionic_core"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"007A93F26730F6F0"
+				"35F33D9F772B4551"
+			]
+			id: "3CB8FDF09F47FD4F"
+			rewards: [{
+				count: 3
+				id: "1ED7940863577832"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "你的第一个电力源!"
+			tasks: [{
+				id: "3A4510150979636D"
+				item: "createaddition:alternator"
+				type: "item"
+			}]
+			title: "旋转起来！"
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "2F0B3291F14AAA89"
+			rewards: [{
+				id: "22635BC82C9D788A"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.0d
+			subtitle: "强大, 但是有点卡?"
+			tasks: [
+				{
+					id: "2DB6DCE9C9F2B5CB"
+					item: "create_new_age:generator_coil"
+					type: "item"
+				}
+				{
+					id: "12A42D34B94B6B30"
+					item: "create_new_age:carbon_brushes"
+					type: "item"
+				}
+			]
+			title: "感谢法拉第！"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"3CB8FDF09F47FD4F"
+				"007A93F26730F6F0"
+			]
+			dependency_requirement: "one_completed"
+			hide_until_deps_visible: true
+			id: "7506866B743A60C1"
+			rewards: [{
+				count: 3
+				id: "1AFD7DF6F50AD16C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "摸这个会被电吗？"
+			tasks: [{
+				id: "343572112DFCFA1C"
+				item: "createaddition:connector"
+				type: "item"
+			}]
+			title: "小型连接器"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			id: "7DA3417CB0E6E7DB"
+			rewards: [{
+				id: "7204F07714B3B84B"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			size: 1.0d
+			tasks: [{
+				id: "48FA24AEF202F105"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"7DA3417CB0E6E7DB"
+				"007A93F26730F6F0"
+			]
+			id: "39D218E0652E1CE0"
+			rewards: [{
+				count: 3
+				id: "1D79BA603CCD9485"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "超超超超大的蓄电池"
+			tasks: [{
+				id: "362F55100242D671"
+				item: "createaddition:modular_accumulator"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["007A93F26730F6F0"]
+			id: "7BA43E50785D2492"
+			rewards: [{
+				count: 3
+				id: "72F0D811DB91CBC6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "一半的损耗（应力->电力->应力）"
+			tasks: [{
+				id: "43BEA6B93B6CA71A"
+				item: "createaddition:electric_motor"
+				type: "item"
+			}]
+			title: "电生磁磁生电"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["1A10B417B7C082DF"]
+			id: "081AEF9714B8960E"
+			tasks: [{
+				id: "3A1F87D199AE297D"
+				item: "createdieselgenerators:huge_diesel_engine"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7506866B743A60C1"]
+			id: "462CF1F71BC69A50"
+			tasks: [{
+				id: "6BDA2FCB3031E5EE"
+				item: "createaddition:large_connector"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["462CF1F71BC69A50"]
+			id: "5A8B370796F17329"
+			tasks: [{
+				id: "4DAEEEC60F692F61"
+				item: "createaddition:superconducting_connector"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
 		}
 	]
-	title: "&5石油化工"
+	title: "&5石油电力"
 }

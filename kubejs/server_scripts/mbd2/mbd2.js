@@ -151,7 +151,7 @@ ServerEvents.recipes(e => {
         A: "#forge:plates/steel",
         B: "#forge:plates/bronze",
         C: "#forge:plates/bronze",
-        D: "minecraft:blast_furnace",
+        D: "createmetallurgy:industrial_crucible",
         E: "vintageimprovements:redstone_module",
         F: "create:sturdy_sheet"
     })
