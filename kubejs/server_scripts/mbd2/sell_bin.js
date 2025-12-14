@@ -12,18 +12,16 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     let meats = global.MeatTrade
     let roasts = global.RoastTrade
     let vegetables = global.VegatablesTrade
-    let allTrades = materials.concat(meats).concat(roasts).concat(vegetables)
     let values = 0
     let tradeList = []
     itemSlots.allItems.forEach(itemSlot => {
-        let i = allTrades.findIndex(item => item[0] == itemSlot.id)
         let slotValue = 0
         let trade = Component.of("")
-        if(i != -1) {
+        if(global.TradeData[itemSlot.id] != undefined) {
             let Quality = $QualityUtils.getQuality(itemSlot)
             let Qlevel = Quality.level()
             let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            slotValue = itemSlot.count * multiplier * allTrades[i][1]
+            slotValue = itemSlot.count * multiplier * global.TradeData[itemSlot.id]
             trade = Component.of(itemSlot.hoverName)
             switch(Qlevel) {
                 case 1:

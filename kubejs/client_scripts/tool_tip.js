@@ -119,13 +119,11 @@ const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityCo
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
         let value = 0
-        let allTrades = global.MaterialTrade.concat(global.MeatTrade).concat(global.RoastTrade).concat(global.VegatablesTrade)
-        let i = allTrades.findIndex(trade => trade[0] == item.id)
-        if (i != -1) {
+        if (global.TradeData[item.id] != undefined) {
             let Quality = $QualityUtils.getQuality(item)
             let Qlevel = Quality.level()
             let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            value = multiplier * allTrades[i][1]
+            value = multiplier * global.TradeData[item.id]
         } else {
             value = MoneyUtil.calculateFoodValue(item)
         }
