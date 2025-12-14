@@ -119,7 +119,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:mechanical_crafting/steel_fan")
     {
         let iner = 'createdelight:steel_fan'
-        e.recipes.create.sequenced_assembly('createdelight:dragon_steel_fan', iner, [
+        e.recipes.create.sequenced_assembly('createdelight:forge_steel_fan', iner, [
             e.recipes.create.deploying(iner, [iner, 'ae2:sky_dust']),
             e.recipes.create.filling(iner, [iner, Fluid.of("createdelightcore:molten_forged_steel", 90)]),
             e.recipes.create.pressing(iner, iner)

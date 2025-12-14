@@ -1,11 +1,5 @@
-let CreateDelight = {}
-/**
- * @type {Internal.Map<string, (item: Internal.ItemStack) => number}
- */
-CreateDelight.goodsMap = Utils.newMap()
 
-global.CreateDelight = CreateDelight
-
+let CreateDelight = global.CreateDelight
 
 /**
  * 计算订单货物属性事件
