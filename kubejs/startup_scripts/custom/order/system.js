@@ -8,6 +8,7 @@ const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.enti
 const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
 const $FoodList = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList")
 const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
+const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")
 //订单系统
 //玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
 //设计的意义是为整合包中大量食物等物品寻求用途
@@ -299,7 +300,7 @@ Order.addOrderToAuction = function() {
     data.setMinBidDifferent($CoinValue.fromItemOrValue("createdeco:copper_coin", 1))
     data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
-    TradeUtil.getTradeAPI().GetTrader(false, 0).addTrade(data, null, false)
+    $TraderAPI.API.GetTrader(false, 0).addTrade(data, null, false)
 }
 
 Order.reputation = {}

@@ -80,13 +80,13 @@ maxWireLength = 16
 	basicMotorExtensionMultiplier = 4.0
 	#Power Multiplier of a basic motor extension
 	#Range: 1.0 ~ 1.7976931348623157E308
-	advancedMotorExtensionMultiplier = 10.0
+	advancedMotorExtensionMultiplier = 20.0
 	#Extra energy capacity of a basic motor extension
 	#Range: > 1
 	basicMotorExtensionExtraCapacity = 640000
 	#Extra energy capacity of an advanced motor extension
 	#Range: > 1
-	advancedMotorExtensionExtraCapacity = 2560000
+	advancedMotorExtensionExtraCapacity = 5120000
 	#Basic motor extension scroll step
 	#Range: > 1
 	basicMotorExtensionScrollStep = 1
