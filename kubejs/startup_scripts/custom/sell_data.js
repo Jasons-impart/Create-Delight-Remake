@@ -1,0 +1,32 @@
+let TradeData = {
+  "mincraft:carrot": 2, "minecraft:potato": 2, "minecraft:beetroot": 2, "createcafe:cassava_root": 2, "farmersdelight:cabbage": 2, "farmersdelight:tomato": 2,
+  "farmersdelight:onion": 2, "culturaldelights:eggplant": 2, "festival_delicacies:chinese_cabbage": 2, "festival_delicacies:greenonion": 2, "festival_delicacies:eggplant": 2,
+  "festival_delicacies:garlic_chive": 2, "vintagedelight:peanut": 2, "vintagedelight:ghost_pepper": 2, "vintagedelight:cucumber": 2, "minecraft:wheat": 2, "neapolitan:banana": 2,
+  "culturaldelights:avocado": 2, "culturaldelights:corn_cob": 2, "mynethersdelight:bullet_pepper": 2, "vintagedelight:gearo_berry": 2, "youkaishomecoming:udumbara_flower": 18,
+  "nethervinery:crimson_grape": 2, "nethervinery:warped_grape": 2, "vinery:cherry": 2, "vinery:red_grape": 2, "vinery:white_grape": 2, "vinery:savanna_grapes_red": 2,
+  "vinery:savanna_grapes_white": 2, "vinery:taiga_grapes_red": 2, "vinery:taiga_grapes_white": 2, "vinery:jungle_grapes_red": 2, "vinery:jungle_grapes_white": 2,
+  "fruitsdelight:pear": 2, "fruitsdelight:hawberry": 2, "fruitsdelight:lychee": 2, "fruitsdelight:mango": 2, "fruitsdelight:persimmon": 2, "fruitsdelight:peach": 2,
+  "fruitsdelight:orange": 2, "fruitsdelight:mangosteen": 2, "fruitsdelight:bayberry": 2, "fruitsdelight:kiwi": 2, "fruitsdelight:fig": 2, "fruitsdelight:blueberry": 2,
+  "fruitsdelight:lemon": 2, "fruitsdelight:cranberry": 2, "fruitsdelight:pineapple": 2, "oceanic_delight:sea_grape": 2, "farmersrespite:green_tea_leaves": 2,
+  "farmersrespite:yellow_tea_leaves": 2, "farmersrespite:black_tea_leaves": 2, "frycooks_delight:canola": 2, "youkaishomecoming:pods": 2, "neapolitan:mint_leaves": 2,
+  "neapolitan:vanilla_pods": 2, "neapolitan:strawberries": 2, "collectorsreap:pomegranate_slice": 2, "collectorsreap:lime": 2, "mynethersdelight:powdery_cannon": 2,
+  "minecraft:crimson_fungus": 2, "minecraft:warped_fungus": 2, "minecraft:brown_mushroom": 2, "minecraft:red_mushroom": 2, "collectorsreap:portobello": 2,
+  "youkaishomecoming:mandrake_root": 2, "youkaishomecoming:mandrake_flower": 2, "minecraft:beef": 4, "minecraft:chicken": 8, "minecraft:mutton": 8, "minecraft:rabbit": 8, "alexsdelight:raw_bison": 8, "alexsdelight:raw_bunfungus": 8,
+  "alexsmobs:kangaroo_meat": 4, "butchercraft:tripe": 4, "butchercraft:stomach": 4, "butchercraft:lung": 4, "butchercraft:liver": 4, "butchercraft:kidney": 4,
+  "butchercraft:heart": 4, "butchercraft:brain": 4, "butchercraft:leather_scrap": 1, "butchercraft:sinew": 1, "butchercraft:fat": 1, "minecraft:cod": 4,
+  "minecraft:salmon": 4, "minecraft:tropical_fish": 4, "culturaldelights:squid": 4, "culturaldelights:glow_squid": 4, "collectorsreap:tiger_prawn": 8,
+  "collectorsreap:urchin": 8, "collectorsreap:platinum_bass": 8, "collectorsreap:clam": 8, "crabbersdelight:clam": 4, "youkaishomecoming:raw_lamprey": 4,
+  "collectorsreap:chieftain_crab_meat": 8, "crabbersdelight:crab": 8, "minecraft:cooked_porkchop": 6, "minecraft:cooked_mutton": 6, "minecraft:cooked_chicken": 10, "minecraft:cooked_rabbit": 10, "minecraft:cooked_cod": 6,
+  "minecraft:cooked_salmon": 6, "alexsdelight:cooked_bison": 6, "alexsdelight:cooked_bunfungus": 16, "alexsmobs:cooked_moose_ribs": 16, "alexsmobs:boiled_emu_egg": 8,
+  "alexsmobs:cooked_kangaroo_meat": 10, "alexsmobs:cooked_catfish": 10, "crabbersdelight:cooked_tropical_fish": 10, "culturaldelights:cooked_squid": 8,
+  "mynethersdelight:cooked_loin": 5, "culturaldelights:popcorn": 5, "minecraft:bread": 5, "fruitsdelight:dried_persimmon": 4, "vintagedelight:roasted_peanut": 2,
+  "fruitsdelight:baked_durian": 4, "minecraft:dried_kelp": 2, "fruitsdelight:baked_pear": 4, "culturaldelights:smoked_eggplant": 2,
+  "ratatouille:cocoa_butter": 4, "ratatouille:cocoa_solids": 4, "ratatouille:cocoa_powder": 4, "createcafe:coffee_grounds": 1, "vintagedelight:raw_oats": 2,
+  "vintagedelight:oat_dough": 4, "ratatouille:wheat_kernels": 3, "create:wheat_flour": 2, "bakeries:flour": 3, "create:dough": 4, "bakeries:whole_wheat_dough": 3,
+  "ratatouille:salty_dough": 8, "createdelight:oil_dough": 8, "mynethersdelight:ghast_dough": 16, "culturaldelights:corn_kernels": 3, "createdelight:corn_flour": 2,
+  "culturaldelights:corn_dough": 3, "corn_delight:tortilla_raw": 4, "culturaldelights:tortilla_chips": 3, "minecraft:cocoa_beans": 2, "ratatouille:dried_cocoa_beans": 3,
+  "ratatouille:dried_cocoa_nibs": 2, "farmersdelight:raw_pasta": 3, "createdelight:puff_pastry": 2, "farmersdelight:pie_crust": 3, "createcafe:oreo_dough": 32,
+  "createcafe:oreo": 64, "createcafe:oreo_crushed": 32, "createcafe:tapioca_flour": 1, "createcafe:raw_boba": 1, "createcafe:boba": 2
+}
+
+global.TradeData = TradeData
