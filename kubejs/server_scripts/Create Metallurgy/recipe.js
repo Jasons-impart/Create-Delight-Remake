@@ -3,6 +3,7 @@ ServerEvents.recipes(e => {
         "vintageimprovements:craft/grinder_belt",
         "vintageimprovements:craft/belt_grinder"
     ])
+    e.replaceInput({id: "createmetallurgy:crafting/materials/tungsten_wire_spool"}, "minecraft:stick", "createaddition:spool")
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
     kubejs.shaped(
         'createmetallurgy:sandpaper_belt',

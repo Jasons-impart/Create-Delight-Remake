@@ -81,4 +81,33 @@ ServerEvents.recipes(e => {
             "createaddition:copper_spool"
         ]
     ).id("createaddition:crafting/portable_energy_interface")
+
+    e.recipes.kubejs.shapeless(
+        "createaddition:superconducting_connector",
+        [
+            "ae2:singularity",
+            "createaddition:large_connector",
+            "vvaddon:mine_ingot"
+        ]
+    ).id("createaddition:crafting/superconducting_connector")
+    e.recipes.createaddition.rolling(
+        "vvaddon:mine_ingot",
+        "2x createaddition:superconducting_wire"
+    )
+    .id("createaddition:rolling/superconducting_wire")
+    e.recipes.kubejs.shaped(
+        "createaddition:superconducting_spool",
+        [
+            " A ",
+            "ABA",
+            " A "
+        ],
+        {
+            A: "createaddition:superconducting_wire",
+            B: "createaddition:spool"
+        }
+    ).id("createaddition:crafting/superconducting_spool")
+
+    e.recipes.vintageimprovements.turning("8x createaddition:spool", "#forge:ingots/iron")
+    .id("createaddition:turning/spool")
 })
