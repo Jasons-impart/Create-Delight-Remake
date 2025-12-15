@@ -171,8 +171,8 @@
 				}
 			]
 			title: "ME元件外壳"
-			x: 2.0d
-			y: -1.5d
+			x: 2.5d
+			y: 1.5d
 		}
 		{
 			id: "328FC706631222E9"
@@ -670,7 +670,7 @@
 					type: "item"
 				}
 			]
-			x: 3.0d
+			x: 2.5d
 			y: -1.5d
 		}
 		{
@@ -1228,6 +1228,168 @@
 			}]
 			x: 0.0d
 			y: -2.25d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			id: "1AE78824AE3CE5F5"
+			min_required_tasks: 1
+			subtitle: "所谓“全能”，就是能够存储所有种类的东西（本包中可以存储物品和流体）"
+			tasks: [
+				{
+					id: "1393B14ABBC98120"
+					item: "ae2omnicells:omni_cell_component_1k"
+					type: "item"
+				}
+				{
+					id: "4E15E40244356367"
+					item: "ae2omnicells:omni_cell_component_4k"
+					type: "item"
+				}
+				{
+					id: "53FB3169035EDF95"
+					item: "ae2omnicells:omni_cell_component_16k"
+					type: "item"
+				}
+				{
+					id: "6F79E70473EBDBFE"
+					item: "ae2omnicells:omni_cell_component_64k"
+					type: "item"
+				}
+				{
+					id: "584827F37B1F991A"
+					item: "ae2omnicells:complex_omni_cell_component_256k"
+					type: "item"
+				}
+				{
+					id: "50585BC09EE61C7C"
+					item: "ae2omnicells:omni_cell_component_1m"
+					type: "item"
+				}
+				{
+					id: "3AC17668C367BDB4"
+					item: "ae2omnicells:omni_cell_component_4m"
+					type: "item"
+				}
+				{
+					id: "261BB53603592CAB"
+					item: "ae2omnicells:omni_cell_component_16m"
+					type: "item"
+				}
+				{
+					id: "0992F81FB068F180"
+					item: "ae2omnicells:omni_cell_component_64m"
+					type: "item"
+				}
+				{
+					id: "5D1F5EFC8242037D"
+					item: "ae2omnicells:omni_cell_component_256m"
+					type: "item"
+				}
+			]
+			title: "全能存储组件"
+			x: 1.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			description: ["耗电公式：2*n^2（n为组件等级）"]
+			id: "0FEDB6580A3661C6"
+			min_required_tasks: 1
+			subtitle: "与全能类似，但是字节越高，种类量越大"
+			tasks: [
+				{
+					id: "6FC018908EE799FD"
+					item: "ae2omnicells:complex_omni_cell_component_1k"
+					type: "item"
+				}
+				{
+					id: "56A9AA2E4FCE946A"
+					item: "ae2omnicells:complex_omni_cell_component_4k"
+					type: "item"
+				}
+				{
+					id: "6A486FC6F8E3DC86"
+					item: "ae2omnicells:complex_omni_cell_component_16k"
+					type: "item"
+				}
+				{
+					id: "18B73B76DD2C6F26"
+					item: "ae2omnicells:complex_omni_cell_component_64k"
+					type: "item"
+				}
+				{
+					id: "65E390C347BCFC54"
+					item: "ae2omnicells:complex_omni_cell_component_256k"
+					type: "item"
+				}
+				{
+					id: "1E4A57BD796D6406"
+					item: "ae2omnicells:complex_omni_cell_component_1m"
+					type: "item"
+				}
+				{
+					id: "0398B5ED6045F7EF"
+					item: "ae2omnicells:complex_omni_cell_component_4m"
+					type: "item"
+				}
+				{
+					id: "24B055528C0A9919"
+					item: "ae2omnicells:complex_omni_cell_component_16m"
+					type: "item"
+				}
+				{
+					id: "7C78F6770785499F"
+					item: "ae2omnicells:complex_omni_cell_component_64m"
+					type: "item"
+				}
+				{
+					id: "593DFA30DFB7D780"
+					item: "ae2omnicells:complex_omni_cell_component_256m"
+					type: "item"
+				}
+			]
+			title: "复杂全能存储组件"
+			x: 2.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			description: ["耗电计算公式：2*n^3（n为组件的等级）"]
+			id: "06850FB3D640CCA5"
+			min_required_tasks: 1
+			subtitle: "无限种类的全能组件！但是高等级的组件耗电量非常大"
+			tasks: [{
+				id: "300BFFB33D67A28A"
+				item: "ae2omnicells:quantum_omni_cell_component_1k"
+				type: "item"
+			}]
+			title: "量子存储组件"
+			x: 3.5d
+			y: -2.5d
+		}
+		{
+			id: "00C814CDA34573FF"
+			rewards: [{
+				id: "71434A19CB5917F8"
+				item: "ae2omnicells:omni_cell_component_1k"
+				type: "item"
+			}]
+			tasks: [{
+				id: "42F00ACD91E61C70"
+				title: "制作全能元件可以看看动力合成配方"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -3.5d
 		}
 	]
 	title: "&b储存与合成"
