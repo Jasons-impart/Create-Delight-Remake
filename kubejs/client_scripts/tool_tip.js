@@ -130,13 +130,13 @@ ItemEvents.tooltip(e => {
         if (value > 0) {
             if (!e.shift) {
                 if (value < 1) {
-                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString() + "\uAA01"))
+                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
                 } else {
                     text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
                 }
             } else {
                 if (value * item.count < 1) {
-                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString() + "\uAA01"))
+                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
                 } else {
                     text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * item.count)))
                 }
