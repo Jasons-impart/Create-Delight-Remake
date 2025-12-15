@@ -31,25 +31,28 @@ MoneyUtil.convertBaseValueToItems = function(value) {
  */
 MoneyUtil.convertBaseValueToString = function(values) {
     let component = Component.of("")
-    MoneyUtil.convertBaseValueToItems(values).forEach(item => {
-        switch(item.id) {
-            case "createdelightcore:iron_coin":
-                component.append(item.count.toString()).append("§f\uAA01§r").append(" ")
-                break
-            case "createdelightcore:copper_coin":
-                component.append(item.count.toString()).append("§f\uAA02§r").append(" ")
-                break
-            case "createdelightcore:gold_coin":
-                component.append(item.count.toString()).append("§f\uAA03§r").append(" ")
-                break
-            case "createdelightcore:emerald_coin":
-                component.append(item.count.toString()).append("§f\uAA04§r").append(" ")
-                break
-            case "createdelightcore:netherite_coin":
-                component.append(item.count.toString()).append("§f\uAA05§r").append(" ")
-                break
-        }
-    })
+    if (values > 0)
+        MoneyUtil.convertBaseValueToItems(values).forEach(item => {
+            switch(item.id) {
+                case "createdelightcore:iron_coin":
+                    component.append(item.count.toString()).append(Component.of("§f\uAA01§r").font("createdelight:coin_font")).append(" ")
+                    break
+                case "createdelightcore:copper_coin":
+                    component.append(item.count.toString()).append(Component.of("§f\uAA02§r").font("createdelight:coin_font")).append(" ")
+                    break
+                case "createdelightcore:gold_coin":
+                    component.append(item.count.toString()).append(Component.of("§f\uAA03§r").font("createdelight:coin_font")).append(" ")
+                    break
+                case "createdelightcore:emerald_coin":
+                    component.append(item.count.toString()).append(Component.of("§f\uAA04§r").font("createdelight:coin_font")).append(" ")
+                    break
+                case "createdelightcore:netherite_coin":
+                    component.append(item.count.toString()).append(Component.of("§f\uAA05§r").font("createdelight:coin_font")).append(" ")
+                    break
+            }
+        })
+    else
+        component = Component.of("§f\uAA01§r").font("createdelight:coin_font")
     return component
 }
 

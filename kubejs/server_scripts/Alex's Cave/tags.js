@@ -139,3 +139,10 @@ ServerEvents.tags("minecraft:block", e => {
         'collectorsreap:pomegranate_ice_cream_block',
     ])
 })
+
+ServerEvents.tags("minecraft:fluid", e => {
+    e.add("forge:molten_neodymium", 
+        "createdelightcore:molten_scarlet_neodymium",
+        "createdelightcore:molten_azure_neodymium"
+    )
+})
