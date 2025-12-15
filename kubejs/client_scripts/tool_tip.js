@@ -38,7 +38,6 @@ ItemEvents.tooltip(e => {
         'createdelight:dryer',
         'createdelight:order_deliverer_item',
         'createdelight:contract_executor',
-        'createdelight:sell_bin',
         'createdelight:mechanical_craft_encoder',
         'vintagedelight:cheese_mold',
         'createdelight:fuel_hotcream',
@@ -142,5 +141,13 @@ ItemEvents.tooltip(e => {
                 }
             }
         }
+    })
+    e.addAdvanced("createdelight:sell_bin", (item, advanced, text) => {
+            if (!e.ctrl) {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
+            } else {
+                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
+                text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
+            }
     })
 })
