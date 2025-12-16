@@ -680,7 +680,10 @@
 		}
 		{
 			dependencies: ["34C9A7E928820147"]
-			description: ["&n注：设计为不支持自动化（如溜槽）输入&r"]
+			description: [
+				"如果没有货币，可以通过悬赏或村民交易获取"
+				"&n注：设计为不支持自动化（如溜槽）输入&r"
+			]
 			id: "291FBEC1BF0BE4CF"
 			shape: "square"
 			size: 1.5d
