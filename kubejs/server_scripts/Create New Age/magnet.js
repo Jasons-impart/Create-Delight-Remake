@@ -53,7 +53,7 @@ ServerEvents.recipes(e => {
     .secondaryFluidInput(0)
     .heated()
     .id("create_new_age:fluxuated_magnetite")
-    // 下届合金磁铁
+    // 下界合金磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:netherite_magnet",
         [
