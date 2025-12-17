@@ -975,7 +975,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "可以批发食物赚钱了"
+			subtitle: "JEI启动！搜索甜点！制作！交付！赚钱！"
 			tasks: [{
 				id: "5E11D8D40492013B"
 				item: "createdelight:order_deliverer_item"
