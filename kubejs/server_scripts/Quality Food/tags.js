@@ -95,7 +95,12 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:peach_leaves',
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
-        'fruitsdelight:mangosteen_leaves'
+        'fruitsdelight:mangosteen_leaves',
+        'farmersdelight:brown_mushroom_colony',
+        'farmersdelight:red_mushroom_colony',
+        'mynethersdelight:crimson_fungus_colony',
+        'mynethersdelight:warped_fungus_colony',
+        'collectorsreap:portobello_colony'
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops",
