@@ -12,13 +12,15 @@
   ],
   "entityWhitelist": [
     "botania:mana_burst",
-    "drg_flares:drg_flares"
+    "drg_flares:drg_flares",
+    "youkaishomecoming:item_danmaku",
+    "youkaishomecoming:item_laser"
   ],
   "tracingDistance": 32,
   "debugMode": false,
   "sleepDelay": 10,
   "hitboxLimit": 50,
-  "skipMarkerArmorStands": true,
+  "captureRate": 5,
   "tickCulling": true,
   "tickCullingWhitelist": [
     "alexscaves:gum_worm",
@@ -58,5 +60,6 @@
   ],
   "disableF3": false,
   "skipEntityCulling": false,
-  "skipBlockEntityCulling": true
+  "skipBlockEntityCulling": true,
+  "blockEntityFrustumCulling": true
 }
