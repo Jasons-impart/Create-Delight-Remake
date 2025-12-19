@@ -11,6 +11,7 @@ ServerEvents.recipes(e => {
         "vintageimprovements:rolling/andesite_plate",
         "vintageimprovements:crushing/scoria_recycling",
         "vintageimprovements:pressurizing/sulfur_dioxide",
+        "vintageimprovements:craft/spring_coiling_machine",
     ])
     vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_trioxide", 500),
@@ -74,7 +75,19 @@ ServerEvents.recipes(e => {
         "2x vintageimprovements:netherite_wire").id("vintageimprovements:rolling/netherite_sheet")
 
     e.replaceInput({ mod: "vintageimprovements" }, "vintageimprovements:iron_spring", "#forge:spring/between_500_2_1000")
-    
+
+    e.recipes.kubejs.shaped(
+        "vintageimprovements:spring_coiling_machine", [
+        "CA ",
+        "ABD",
+        "CA "
+    ], {
+        A: "create:iron_sheet",
+        B: "vintageimprovements:spring_coiling_machine_wheel",
+        C: "create:andesite_casing",
+        D: "createaddition:iron_rod"
+    }).id("vintageimprovements:craft/spring_coiling_machine")
+
     e.recipes.kubejs.shaped(
         "create_enchantment_industry:printer", [
         "ABA",

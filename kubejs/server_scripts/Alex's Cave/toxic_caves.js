@@ -126,31 +126,6 @@ ServerEvents.recipes(e => {
     )
         .heated()
         .id("alexscaves:polymer_plate")
-    //石墨粉
-    e.recipes.create.crushing(
-        [
-            'createdelight:carbon_dust',
-            Item.of('createdelight:carbon_dust').withChance(0.25)
-        ],
-        'createmetallurgy:graphite',
-    ).id("createdelight:crushing/carbon_dust")
-    //石墨板合成
-    e.recipes.create.filling(
-        'createdelight:carbon_plate',
-        [
-            'createdelight:carbon_dust',
-            Fluid.of('createdelight:ethylene_fluid', 100)
-        ]
-    ).id("createdelight:filling/carbon_plate")
-    e.recipes.vintageimprovements.pressurizing(
-        "createdelight:carbon_plate",
-        [
-            "createdelight:carbon_dust",
-            Fluid.of('createdelight:ethylene_fluid', 10)
-        ], 200
-    )
-        .heated()
-        .id("createdelight:pressurizing/carbon_plate")
     //核燃料棒合成
     {
         let iner = "create_new_age:incomplete_fuel"
