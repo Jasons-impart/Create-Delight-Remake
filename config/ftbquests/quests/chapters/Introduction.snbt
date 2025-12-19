@@ -583,7 +583,7 @@
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"34D9D292CE6F683E\" } }"
+			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1E7A476EE0C13AD1\" } }"
 			tasks: [{
 				id: "731BA1C9CD625DBF"
 				title: "开始你的农耕生活吧！"
