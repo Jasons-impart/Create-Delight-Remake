@@ -1,5 +1,5 @@
 {
-	autofocus_id: "4E3082C7AC773F5B"
+	autofocus_id: "6E1FD913939810BE"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "Mouse_Chef"
@@ -189,6 +189,23 @@
 			width: 15.0d
 			x: -12.0d
 			y: 23.5d
+		}
+		{
+			height: 17.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 17.0d
+			x: -44.0d
+			y: 43.0d
+		}
+		{
+			height: 15.0d
+			image: "neapolitan:item/neapolitan_ice_cream"
+			order: 1
+			rotation: 0.0d
+			width: 15.0d
+			x: -44.0d
+			y: 43.0d
 		}
 	]
 	order_index: 2
@@ -4386,6 +4403,478 @@
 			title: "现在我有冰棍"
 			x: -8.0d
 			y: 36.0d
+		}
+		{
+			dependencies: [
+				"51D95358197350B2"
+				"5E5FA22D88B8EFEB"
+				"56FB66EA6B959A27"
+				"6F4BA4A10A204849"
+				"3365B1E0556FA62E"
+				"71E8EEBA87258C10"
+				"73217EF7E2EEE151"
+				"7AEDB672D45DEDC8"
+				"5E0A131EC636B0C8"
+				"0366886DC82B288A"
+				"62EE918D942B58C3"
+				"59248AB16E5C04E6"
+				"00FDC9814538F4D5"
+				"266C88FBC350AFB1"
+				"4A01F6AF692722F1"
+				"2284BBAFA72C283C"
+				"45A0DE224F813A1F"
+				"47B0628B08ABAF8E"
+			]
+			hide_dependency_lines: true
+			icon: "neapolitan:neapolitan_ice_cream"
+			id: "473F48570E933391"
+			rewards: [{
+				id: "7407D0FCB803D137"
+				item: "createdelightcore:netherite_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 4.0d
+			tasks: [{
+				elapsedTime: 1L
+				id: "56B8B490D0493CFB"
+				type: "questsadditions:time"
+			}]
+			title: "不止那不勒斯！"
+			x: -52.0d
+			y: 36.0d
+		}
+		{
+			id: "59248AB16E5C04E6"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "2F1267D45C1C1347"
+					item: "collectorsreap:lime_ice_cream"
+					type: "item"
+				}
+				{
+					id: "6F20B40DDF119419"
+					item: "cosmopolitan:lime_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "271F2817EE365FEE"
+					item: "collectorsreap:lime_milkshake"
+					type: "item"
+				}
+			]
+			title: "青柠"
+			x: -48.0d
+			y: 40.0d
+		}
+		{
+			id: "3365B1E0556FA62E"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "6FC75B5510325AAD"
+					item: "collectorsreap:pomegranate_ice_cream"
+					type: "item"
+				}
+				{
+					id: "4744F981AC518D91"
+					item: "cosmopolitan:pomegranate_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "3049DE61CB06423B"
+					item: "collectorsreap:pomegranate_milkshake"
+					type: "item"
+				}
+			]
+			title: "石榴"
+			x: -40.0d
+			y: 40.0d
+		}
+		{
+			id: "2284BBAFA72C283C"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "6B18C3442E1D256B"
+					item: "neapolitan:vanilla_ice_cream"
+					type: "item"
+				}
+				{
+					id: "58D96AD46F6D3A81"
+					item: "cosmopolitan:vanilla_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "30F9793D08AE121B"
+					item: "neapolitan:vanilla_milkshake"
+					type: "item"
+				}
+			]
+			title: "香草"
+			x: -49.0d
+			y: 42.0d
+		}
+		{
+			id: "47B0628B08ABAF8E"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "040B8BACCC321F3E"
+					item: "neapolitan:chocolate_ice_cream"
+					type: "item"
+				}
+				{
+					id: "195FC2A7360A5551"
+					item: "cosmopolitan:chocolate_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "594404830E12AF49"
+					item: "neapolitan:chocolate_milkshake"
+					type: "item"
+				}
+			]
+			title: "巧克力"
+			x: -47.0d
+			y: 42.0d
+		}
+		{
+			id: "5E0A131EC636B0C8"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "5D015C3F16365D5C"
+					item: "neapolitan:strawberry_ice_cream"
+					type: "item"
+				}
+				{
+					id: "5F59E6962ABFBC2A"
+					item: "cosmopolitan:strawberry_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "0FD763682FDFAE2B"
+					item: "neapolitan:strawberry_milkshake"
+					type: "item"
+				}
+			]
+			title: "草莓"
+			x: -45.0d
+			y: 42.0d
+		}
+		{
+			id: "4A01F6AF692722F1"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "712816ACA95855C4"
+					item: "neapolitan:banana_ice_cream"
+					type: "item"
+				}
+				{
+					id: "7ECDC649112873E6"
+					item: "cosmopolitan:banana_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "1E7B416B27344CD3"
+					item: "neapolitan:banana_milkshake"
+					type: "item"
+				}
+			]
+			title: "香蕉"
+			x: -43.0d
+			y: 42.0d
+		}
+		{
+			id: "51D95358197350B2"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "157300492D14133E"
+					item: "neapolitan:mint_ice_cream"
+					type: "item"
+				}
+				{
+					id: "038C4319E4FF6DF1"
+					item: "cosmopolitan:mint_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "1728E88CE8043B51"
+					item: "neapolitan:mint_milkshake"
+					type: "item"
+				}
+			]
+			title: "薄荷"
+			x: -41.0d
+			y: 42.0d
+		}
+		{
+			id: "266C88FBC350AFB1"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "5CE1EDC4662640E5"
+					item: "neapolitan:adzuki_ice_cream"
+					type: "item"
+				}
+				{
+					id: "361F59A85D9FBDEE"
+					item: "cosmopolitan:adzuki_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "1AA934FAAC964EA4"
+					item: "neapolitan:adzuki_milkshake"
+					type: "item"
+				}
+			]
+			title: "红豆"
+			x: -39.0d
+			y: 42.0d
+		}
+		{
+			id: "00FDC9814538F4D5"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "6EF9EA74D099C21A"
+					item: "neapolitan:neapolitan_ice_cream"
+					type: "item"
+				}
+				{
+					id: "03505255F0EA42FE"
+					item: "cosmopolitan:neapolitan_ice_cream_sandwich"
+					type: "item"
+				}
+			]
+			x: -48.0d
+			y: 46.0d
+		}
+		{
+			id: "7AEDB672D45DEDC8"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "48245D9D7FEA32B2"
+					item: "cosmopolitan:apple_ice_cream"
+					type: "item"
+				}
+				{
+					id: "4C731E67580870FE"
+					item: "cosmopolitan:apple_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "0838F0F70E9C98DF"
+					item: "cosmopolitan:apple_milkshake"
+					type: "item"
+				}
+			]
+			title: "苹果"
+			x: -49.0d
+			y: 44.0d
+		}
+		{
+			id: "5E5FA22D88B8EFEB"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "0F024618F57B3D4C"
+					item: "cosmopolitan:carrot_ice_cream"
+					type: "item"
+				}
+				{
+					id: "651343F7D827EB74"
+					item: "cosmopolitan:carrot_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "014A13DF45CA95D1"
+					item: "cosmopolitan:carrot_milkshake"
+					type: "item"
+				}
+			]
+			title: "胡萝卜"
+			x: -47.0d
+			y: 44.0d
+		}
+		{
+			id: "62EE918D942B58C3"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "3F827D1E8CE600F7"
+					item: "cosmopolitan:glow_berry_ice_cream"
+					type: "item"
+				}
+				{
+					id: "3EF2AC8D3564E1B4"
+					item: "cosmopolitan:glow_berry_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "0DF65BA8E8782B71"
+					item: "cosmopolitan:glow_berry_milkshake"
+					type: "item"
+				}
+			]
+			title: "发光浆果"
+			x: -45.0d
+			y: 44.0d
+		}
+		{
+			id: "56FB66EA6B959A27"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "18DCBDCA21C96282"
+					item: "cosmopolitan:enchanted_fruit_ice_cream"
+					type: "item"
+				}
+				{
+					id: "7813427356BE279E"
+					item: "cosmopolitan:enchanted_fruit_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "73ACF16C3845A75B"
+					item: "cosmopolitan:enchanted_fruit_milkshake"
+					type: "item"
+				}
+			]
+			title: "附魔之果"
+			x: -44.0d
+			y: 40.0d
+		}
+		{
+			id: "73217EF7E2EEE151"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "1D543C1E5A001CBA"
+					item: "seasonals:pumpkin_ice_cream"
+					type: "item"
+				}
+				{
+					id: "54097BE8693EC3D4"
+					item: "cosmopolitan:pumpkin_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "03A6EA5F1E6A6CCC"
+					item: "seasonals:pumpkin_milkshake"
+					type: "item"
+				}
+			]
+			title: "南瓜"
+			x: -43.0d
+			y: 44.0d
+		}
+		{
+			id: "0366886DC82B288A"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "69714D8360DC80D6"
+					item: "seasonals:sweet_berry_ice_cream"
+					type: "item"
+				}
+				{
+					id: "707F46937FAA1BDD"
+					item: "cosmopolitan:sweet_berry_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "1D75174E200B773B"
+					item: "seasonals:sweet_berry_milkshake"
+					type: "item"
+				}
+			]
+			title: "甜浆果"
+			x: -41.0d
+			y: 44.0d
+		}
+		{
+			id: "45A0DE224F813A1F"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "45774247B362B74F"
+					item: "seasonals:beetroot_ice_cream"
+					type: "item"
+				}
+				{
+					id: "51DA69019A1276E8"
+					item: "cosmopolitan:beetroot_ice_cream_cone"
+					type: "item"
+				}
+				{
+					id: "226C10400FD9EBFA"
+					item: "seasonals:beetroot_milkshake"
+					type: "item"
+				}
+			]
+			title: "甜菜"
+			x: -39.0d
+			y: 44.0d
+		}
+		{
+			id: "71E8EEBA87258C10"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "6C86575AA4B42B0D"
+					item: "cosmopolitan:classic_ice_cream"
+					type: "item"
+				}
+				{
+					id: "0EAF1DF5492831F3"
+					item: "cosmopolitan:classic_ice_cream_sandwich"
+					type: "item"
+				}
+			]
+			x: -44.0d
+			y: 46.0d
+		}
+		{
+			id: "6F4BA4A10A204849"
+			min_required_tasks: 1
+			size: 2.0d
+			tasks: [
+				{
+					id: "0CCFF26BF62A8D07"
+					item: "cosmopolitan:seasonal_ice_cream"
+					type: "item"
+				}
+				{
+					id: "18A08A18C7E9DA62"
+					item: "cosmopolitan:seasonal_ice_cream_sandwich"
+					type: "item"
+				}
+			]
+			x: -40.0d
+			y: 46.0d
 		}
 	]
 	title: "&6料理\"鼠\"王！"
