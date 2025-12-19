@@ -45,8 +45,6 @@ ServerEvents.recipes(e => {
         e.recipes.vintageimprovements.curving(iner, iner, 1),
         e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),
         e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
-        e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
-        e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_core"]),
         e.recipes.create.deploying(iner, [iner, "create:brass_sheet"])
     ])
         .transitionalItem(iner)
@@ -54,23 +52,23 @@ ServerEvents.recipes(e => {
         .id("createaddition:crafting/modular_accumulator_electrum")
     // 发电机
     let iner_3 = "createdelight:incomplete_alternator"
-    e.recipes.create.sequenced_assembly("createaddition:alternator", "create:shaft", [
-        e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:steel_plate"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_spool"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:etrionic_core"]),
+    e.recipes.create.sequenced_assembly("createaddition:alternator", "createaddition:copper_spool", [
+        e.recipes.create.deploying(iner_3, [iner_3, "create_sa:copper_magnet"]),
+        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:iron_rod"]),
+        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_wire"]),
     ])
         .transitionalItem(iner_3)
-        .loops(4)
+        .loops(2)
         .id("createaddition:mechanical_crafting/alternator")
     // 电动机
     let iner_4 = "createdelight:incomplete_electric_motor"
-    e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create:shaft", [
-        e.recipes.create.deploying(iner_4, [iner_4, "create:brass_sheet"]),
+    e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create_sa:copper_magnet", [
         e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
-        e.recipes.create.deploying(iner_4, [iner_4, "ad_astra:etrionic_core"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "createaddition:iron_rod"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_wire"]),
     ])
         .transitionalItem(iner_4)
-        .loops(4)
+        .loops(2)
         .id("createaddition:mechanical_crafting/electric_motor")
     // 移动式能量接口
     e.recipes.kubejs.shapeless(
