@@ -102,7 +102,7 @@
 				type: "item"
 			}]
 			x: -71.5d
-			y: -7.0d
+			y: -9.0d
 		}
 		{
 			id: "4CF89D6E0EAA6191"
@@ -125,28 +125,6 @@
 				type: "item"
 			}]
 			x: -69.5d
-			y: -9.0d
-		}
-		{
-			id: "7C0AC70F0902A25C"
-			subtitle: "无敌西瓜"
-			tasks: [{
-				id: "115D9F03D4D1C1BB"
-				item: "minecraft:melon_slice"
-				type: "item"
-			}]
-			x: -71.5d
-			y: -9.0d
-		}
-		{
-			id: "6E2C20701735E2A7"
-			subtitle: "美丽蜜瓜"
-			tasks: [{
-				id: "69F949445BFBFFFF"
-				item: "fruitsdelight:hamimelon_slice"
-				type: "item"
-			}]
-			x: -72.5d
 			y: -9.0d
 		}
 		{
@@ -205,8 +183,8 @@
 				type: "item"
 			}]
 			title: "任意白葡萄"
-			x: -72.5d
-			y: -8.0d
+			x: -73.5d
+			y: -19.0d
 		}
 		{
 			id: "35CFE29C0207239D"
@@ -223,8 +201,8 @@
 				type: "item"
 			}]
 			title: "任意红葡萄"
-			x: -71.5d
-			y: -8.0d
+			x: -73.5d
+			y: -17.0d
 		}
 		{
 			id: "19860C2F6F52152F"
@@ -233,8 +211,8 @@
 				item: "nethervinery:crimson_grape"
 				type: "item"
 			}]
-			x: -70.5d
-			y: -7.0d
+			x: -73.5d
+			y: -16.0d
 		}
 		{
 			id: "50A3C86BF8510F27"
@@ -244,7 +222,7 @@
 				type: "item"
 			}]
 			x: -73.5d
-			y: -7.0d
+			y: -20.0d
 		}
 		{
 			description: ["必须种在静止的水下方的泥土/草方块/沃土上，共有四个生长阶段，但只有上方一格处为空气时才能长成第三/四阶段，成熟后两格高，收割第二格掉落稻米穗。"]
@@ -502,7 +480,7 @@
 				item: "vintagedelight:gearo_berry"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -18.0d
 		}
 		{
@@ -513,7 +491,7 @@
 				item: "minecraft:glow_berries"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -17.0d
 		}
 		{
@@ -530,7 +508,7 @@
 				item: "fruitsdelight:blueberry"
 				type: "item"
 			}]
-			x: -78.0d
+			x: -78.5d
 			y: -17.0d
 		}
 		{
@@ -546,7 +524,7 @@
 				item: "minecraft:sweet_berries"
 				type: "item"
 			}]
-			x: -74.0d
+			x: -74.5d
 			y: -18.0d
 		}
 		{
@@ -563,7 +541,7 @@
 				item: "fruitsdelight:cranberry"
 				type: "item"
 			}]
-			x: -75.0d
+			x: -75.5d
 			y: -18.0d
 		}
 		{
@@ -580,7 +558,7 @@
 				item: "fruitsdelight:hawberry"
 				type: "item"
 			}]
-			x: -76.0d
+			x: -76.5d
 			y: -18.0d
 		}
 		{
@@ -591,7 +569,7 @@
 				item: "collectorsreap:pomegranate"
 				type: "item"
 			}]
-			x: -74.0d
+			x: -74.5d
 			y: -16.0d
 		}
 		{
@@ -604,7 +582,7 @@
 				item: "collectorsreap:stygian_pomegranate"
 				type: "item"
 			}]
-			x: -75.0d
+			x: -74.5d
 			y: -15.0d
 		}
 		{
@@ -616,7 +594,7 @@
 				item: "quark:ancient_fruit"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -15.0d
 		}
 		{
@@ -632,7 +610,7 @@
 				item: "fruitsdelight:hamimelon_slice"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -16.0d
 		}
 		{
@@ -648,7 +626,7 @@
 				item: "minecraft:melon_slice"
 				type: "item"
 			}]
-			x: -78.0d
+			x: -78.5d
 			y: -16.0d
 		}
 		{
@@ -664,7 +642,7 @@
 				item: "minecraft:apple"
 				type: "item"
 			}]
-			x: -74.0d
+			x: -74.5d
 			y: -17.0d
 		}
 		{
@@ -681,7 +659,7 @@
 				item: "fruitsdelight:orange"
 				type: "item"
 			}]
-			x: -75.0d
+			x: -75.5d
 			y: -17.0d
 		}
 		{
@@ -697,7 +675,7 @@
 				item: "fruitsdelight:persimmon"
 				type: "item"
 			}]
-			x: -76.0d
+			x: -76.5d
 			y: -17.0d
 		}
 		{
@@ -713,7 +691,7 @@
 				item: "fruitsdelight:pear"
 				type: "item"
 			}]
-			x: -78.0d
+			x: -78.5d
 			y: -20.0d
 		}
 		{
@@ -729,7 +707,7 @@
 				item: "fruitsdelight:peach"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -20.0d
 		}
 		{
@@ -746,7 +724,7 @@
 				item: "fruitsdelight:durian"
 				type: "item"
 			}]
-			x: -76.0d
+			x: -76.5d
 			y: -20.0d
 		}
 		{
@@ -763,7 +741,7 @@
 					type: "item"
 				}
 			]
-			x: -75.0d
+			x: -75.5d
 			y: -16.0d
 		}
 		{
@@ -780,7 +758,7 @@
 				item: "fruitsdelight:pineapple"
 				type: "item"
 			}]
-			x: -75.0d
+			x: -75.5d
 			y: -20.0d
 		}
 		{
@@ -796,7 +774,7 @@
 				item: "fruitsdelight:mango"
 				type: "item"
 			}]
-			x: -74.0d
+			x: -74.5d
 			y: -20.0d
 		}
 		{
@@ -812,7 +790,7 @@
 				item: "fruitsdelight:lychee"
 				type: "item"
 			}]
-			x: -78.0d
+			x: -78.5d
 			y: -19.0d
 		}
 		{
@@ -828,7 +806,7 @@
 				item: "fruitsdelight:lemon"
 				type: "item"
 			}]
-			x: -77.0d
+			x: -77.5d
 			y: -19.0d
 		}
 		{
@@ -839,7 +817,7 @@
 				item: "collectorsreap:lime"
 				type: "item"
 			}]
-			x: -76.0d
+			x: -76.5d
 			y: -19.0d
 		}
 		{
@@ -850,8 +828,8 @@
 				item: "minecraft:chorus_fruit"
 				type: "item"
 			}]
-			x: -76.0d
-			y: -15.0d
+			x: -73.5d
+			y: -18.0d
 		}
 		{
 			id: "7C53FFA4AC6FEDC3"
@@ -866,7 +844,7 @@
 				item: "fruitsdelight:fig"
 				type: "item"
 			}]
-			x: -75.0d
+			x: -75.5d
 			y: -19.0d
 		}
 		{
@@ -882,7 +860,7 @@
 				item: "fruitsdelight:mangosteen"
 				type: "item"
 			}]
-			x: -74.0d
+			x: -74.5d
 			y: -19.0d
 		}
 		{
@@ -893,7 +871,7 @@
 				item: "culturaldelights:avocado"
 				type: "item"
 			}]
-			x: -78.0d
+			x: -78.5d
 			y: -18.0d
 		}
 		{
@@ -1054,7 +1032,7 @@
 				type: "item"
 			}]
 			x: -72.5d
-			y: -7.0d
+			y: -9.0d
 		}
 		{
 			id: "26F22F8298BE5703"
@@ -1074,7 +1052,7 @@
 				item: "cosmopolitan:arbutus_berries"
 				type: "item"
 			}]
-			x: -76.0d
+			x: -76.5d
 			y: -16.0d
 		}
 		{
@@ -1292,6 +1270,91 @@
 			}]
 			x: -66.0d
 			y: -20.0d
+		}
+		{
+			id: "3FB24F70796A5923"
+			tasks: [{
+				id: "588180204D39D4B6"
+				item: "youkaishomecoming:udumbara_flower"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -8.0d
+		}
+		{
+			id: "7216A5DD93CD16FE"
+			tasks: [
+				{
+					id: "5A5624BC3FF969CD"
+					item: "youkaishomecoming:mandrake_root"
+					type: "item"
+				}
+				{
+					id: "0BB831B620F2EA09"
+					item: "youkaishomecoming:mandrake_flower"
+					type: "item"
+				}
+			]
+			x: -71.5d
+			y: -8.0d
+		}
+		{
+			id: "73B8BB960DE1A575"
+			tasks: [{
+				id: "05BA1B40B3BDDE0B"
+				item: "youkaishomecoming:soybean"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -7.0d
+		}
+		{
+			id: "3E63BAD5F2C0AFEB"
+			tasks: [{
+				id: "231C8F36D70A6D3C"
+				item: "createdelight:adzuki_beans_seed"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -7.0d
+		}
+		{
+			id: "368552762EC9FE42"
+			min_required_tasks: 1
+			tasks: [
+				{
+					id: "66FA7A51564A1261"
+					item: "culturaldelights:corn_kernels"
+					type: "item"
+				}
+				{
+					id: "6D663BBE2DF0E1C6"
+					item: "culturaldelights:corn_cob"
+					type: "item"
+				}
+			]
+			x: -72.5d
+			y: -7.0d
+		}
+		{
+			id: "7D2C2A6FBEE79381"
+			tasks: [{
+				id: "35585369A12E0899"
+				item: "trailandtales_delight:pitcher_taro"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -7.0d
+		}
+		{
+			id: "5167C57FF05E882C"
+			tasks: [{
+				id: "0458A4966A1DA017"
+				item: "trailandtales_delight:lantern_fruit"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -15.0d
 		}
 	]
 	title: "&b食材本味"
