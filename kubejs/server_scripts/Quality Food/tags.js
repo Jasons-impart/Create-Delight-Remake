@@ -95,15 +95,12 @@ ServerEvents.tags("block", e => {
         'fruitsdelight:peach_leaves',
         'fruitsdelight:orange_leaves', 
         'fruitsdelight:apple_leaves',
-        'fruitsdelight:mangosteen_leaves'
-    )
-    e.add("quality_food:quality_blocks", 
-        "#createdelight:quality_crops",
-        "minecraft:sea_pickle",
-        "minecraft:moss_block",
-        'mynethersdelight:powdery_cane',
-        'mynethersdelight:powdery_cannon',
-        'mynethersdelight:bullet_pepper',
+        'fruitsdelight:mangosteen_leaves',
+        'farmersdelight:brown_mushroom_colony',
+        'farmersdelight:red_mushroom_colony',
+        'mynethersdelight:crimson_fungus_colony',
+        'mynethersdelight:warped_fungus_colony',
+        'collectorsreap:portobello_colony',
         'minecraft:sweet_berry_bush',
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
@@ -111,7 +108,15 @@ ServerEvents.tags("block", e => {
         "collectorsreap:lime_bush",
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
-        "fruitsdelight:cranberry_bush"
+        "fruitsdelight:cranberry_bush",
+        'mynethersdelight:powdery_cane',
+        'mynethersdelight:powdery_cannon',
+        'mynethersdelight:bullet_pepper'
+    )
+    e.add("quality_food:quality_blocks", 
+        "#createdelight:quality_crops",
+        "minecraft:sea_pickle",
+        "minecraft:moss_block"
     )
 })
 
