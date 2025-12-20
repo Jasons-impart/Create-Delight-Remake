@@ -101,6 +101,7 @@ key_key.pickItem:key.mouse.middle
 key_key.command:key.keyboard.slash
 key_key.socialInteractions:key.keyboard.p
 key_key.screenshot:key.keyboard.f2
+key_gui.xaero_pac_key_open_menu:key.keyboard.n
 key_key.togglePerspective:key.keyboard.f5
 key_key.smoothCamera:key.keyboard.unknown
 key_key.fullscreen:key.keyboard.f11
