@@ -619,7 +619,8 @@
     "tooltip.createdelight.ctrl_contract_executor": "§7在临近四格放置§b烈焰人燃烧室§7以执行配方, §b热量越高效率越高§7",
     "tooltip.createdelight.ctrl_graycottonseed": "§7需种植在§b砂土§7上",
     "tooltip.createdelight.shift_encoded_canister": "可于tetra§e锻造遗迹内锻造容器§7获取",
-
+    "tooltip.createdelight.sequenced_assembly_explanation": "注意： 如果本物品的序列组装的组装进度显示有误，请无视，并继续按照你想要做的东西的步骤做下去\n如果按照上述方法仍然无法做出，请向制作组反馈bug",
+    "tooltip.createdelight.difficulty_loot": "%s在%s难度以上会掉落",
     "createdelight.tip.advanced_alloy": "部分合金在初始阶段只能使用熔铸搅拌器合成, 例如钢。",
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成(当然除了玩家)",
     "createdelight.tip.andesite_bucket": "安山桶可以直接将容器中的流体打出来, 并直接送到另一个容器中。在处理液体相关的配方时非常好用!",
