@@ -409,13 +409,15 @@
 		#Arrow stacks that can fit inside a quiver. Requires reboot
 		#Range: 1 ~ 9
 		slots = 6
-		#Increase this number to alter the probability for a Skeleton with quiver to spawn. Note that this also depends on local difficulty so you wont ever see them on easy and very rarely on normal. Similar logic to equipment
+		#Increase this number to alter the probability for a Skeleton with quiver to spawn.
 		#Range: 0.0 ~ 1.0
 		quiver_skeleton_spawn_chance = 0.06
 		#Allows quiver to only be used when in offhand or in curio slot
 		only_works_in_curio = true
 		#Arrows you pickup will try to go in a quiver if available provided it has some arrow of the same type
 		quiver_pickup = true
+		#If the chance for a skeleton to spawn with a quiver will be affected by local difficulty. If true, you wont ever see them on easy and very rarely on normal. Similar logic to equipment
+		quiver_skeleton_spawn_affected_by_local_difficulty = true
 
 	[tools.slice_map]
 		enabled = true
@@ -664,8 +666,6 @@
 		enabled = false
 		#Allow slimeballs to be thrown
 		throwable_slimeballs = false
-		#Show a slime overlay when you hit an entity with a slimeball
-		overlay = true
 		#Thrown slimeballs will shortly nerf the player jump height. Disable if you don't want this effect as it can be quite powerful
 		#Allowed Values: NEVER, ALWAYS, NORMAL_DIFFICULTY, HARD_DIFFICULTY
 		hinders_jump = "NEVER"

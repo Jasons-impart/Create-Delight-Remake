@@ -157,6 +157,8 @@
 	test3 = 0.0
 	#Disable incompatible mods warning screen
 	no_incompatible_mods_screen = false
+	#I am very boring
+	unfunny = false
 
 #Game tweaks
 [tweaks]
@@ -185,6 +187,8 @@
 	projectile_weapon_overlay = true
 	#Makes enderman heads use vanilla texture. Enable for texture pack support
 	enderman_head_texture_pack_support = true
+	#Show a slime overlay when you hit an entity with a slimeball
+	overlay = true
 
 	[tweaks.colored_maps]
 		#Needs the server config with same name on. If on here it will ignore the server one and keep vanilla colors
