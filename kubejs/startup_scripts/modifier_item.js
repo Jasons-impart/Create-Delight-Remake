@@ -197,7 +197,12 @@ ItemEvents.modification(e => {
     maxStackSize_change('youkaishomecoming:milk_popsicle', 64)
     maxStackSize_change('youkaishomecoming:big_popsicle', 64)
     maxStackSize_change('createdelightcore:lush_confiture_jelly_bottle', 16)
-
+    Ingredient.of("#neapolitan:ice_cream")
+    .subtract(Ingredient.of("#cosmopolitan:ice_cream_cones"))
+    .subtract(['cosmopolitan:neapolitan_ice_cream_sandwich', 'cosmopolitan:classic_ice_cream_sandwich', 'cosmopolitan:seasonal_ice_cream_sandwich'])
+    .itemIds.forEach(item => {
+        maxStackSize_change(item, 16)
+    })
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
     fire_resistance("createmetallurgy:wolframite_ore")
