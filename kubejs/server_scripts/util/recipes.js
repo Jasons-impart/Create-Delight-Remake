@@ -86,7 +86,7 @@ function blast_and_smelting(event, input, output, xp, time) {
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
- * @param { any[] } outputs 
+ * @param { [Internal.ItemStack_, number, number][] } outputs 格式：[[id, count, chance], ...]
  */
 function cutting(event, input, outputs) {
     let recipe = {
