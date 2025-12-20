@@ -9,4 +9,10 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("minecraft:planks", [
         "vintagedelight:vine_tile"
     ])
+    e.add("forge:seeds",
+        "vintagedelight:oat_seeds",
+        "vintagedelight:peanut",
+        "vintagedelight:cucumber_seeds",
+        "vintagedelight:ghost_pepper_seeds")
+    e.add("vintagedelight:sweet_jam_bottles", "#fruitsdelight:jelly")
 })
