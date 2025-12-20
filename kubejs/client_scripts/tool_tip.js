@@ -1,4 +1,6 @@
 
+const $SequencedAssemblyItem = Java.loadClass("com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem")
+
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
@@ -115,6 +117,8 @@ ItemEvents.tooltip(e => {
 // })
 const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
 const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
+
+let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
         let value = 0
@@ -150,4 +154,18 @@ ItemEvents.tooltip(e => {
                 text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
             }
     })
+    e.addAdvancedToAll((item, advanced, text) => {
+        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof $SequencedAssemblyItem)) {
+            text.add(Text.translatable("tooltip.createdelight.sequenced_assembly_explanation"))
+        }
+    })
+        for (const key in difficultyLoots) {
+        let element = difficultyLoots[key]
+        element.forEach(val => {
+            let entitys = val.entity.split(":")
+            e.addAdvanced(key, (item, advanced, text) => {
+                text.add(Text.translatable("tooltip.createdelight.difficulty_loot", Text.translatable(`entity.${entitys[0]}.${entitys[1]}`), val.difficulty.toFixed()))
+            })
+        })
+    }
 })
