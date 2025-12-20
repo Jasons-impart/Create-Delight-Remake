@@ -8,6 +8,13 @@ _version = 3
 	[client.advanced]
 
 		[client.advanced.graphics]
+			#
+			# If true some vanilla graphics settings will be automatically changed 
+			# during DH setup to provide a better experience. 
+			#  
+			# IE disabling vanilla clouds (which render on top of DH LODs), 
+			#    and chunk fading (DH already fades MC chunks)
+			overrideVanillaGraphicsSettings = true
 
 			[client.advanced.graphics.quality]
 				#
@@ -59,7 +66,7 @@ _version = 3
 				# False: skipped blocks will not change color of surface below them.
 				tintWithAvoidedBlocks = true
 				#
-				# What the value should vanilla Minecraft's texture LodBias be? 
+				# What value should vanilla Minecraft's texture LodBias be? 
 				# If set to 0 the mod wont overwrite vanilla's default (which so happens to also be 0)
 				lodBias = "0.0"
 				#
@@ -111,6 +118,10 @@ _version = 3
 				#     '1' equals to Vanilla Biome Blending of '3x3', 
 				#     '2' equals to Vanilla Biome Blending of '5x5'...
 				lodBiomeBlending = 3
+				#
+				# Should DH fade out before reaching the far clip plane? 
+				# This is helpful to prevent DH clouds from cutting off in the distance.
+				dhFadeFarClipPlane = true
 
 			[client.advanced.graphics.ssao]
 				#
@@ -138,6 +149,10 @@ _version = 3
 				# The radius, measured in pixels, that blurring is calculated for the SSAO. 
 				# Higher numbers will reduce banding at the cost of GPU performance.
 				blurRadius = 2
+				#
+				# The distance in blocks from the camera where the SSAO will fade out to. 
+				# This is done to prevent banding and noise at extreme distances.
+				fadeDistanceInBlocks = 1600
 
 			[client.advanced.graphics.genericRendering]
 				#
@@ -342,7 +357,12 @@ _version = 3
 				#
 				# A comma separated list of block resource locations that won't be rendered by DH. 
 				# Air is always included in this list. 
-				# Requires a restart to change.
+				# Requires a restart to change. 
+				# 
+				# Note:
+				# If you see gaps, or holes you may have to change
+				# worldCompression to [MERGE_SAME_BLOCKS] and re-generate the LODs.
+				# Black spots may happen occur to block lighting being zero for covered blocks.
 				ignoredRenderBlockCsv = "minecraft:barrier,minecraft:structure_void,minecraft:light,minecraft:tripwire,minecraft:brown_mushroom"
 				#
 				# A comma separated list of block resource locations that shouldn't be rendered 
@@ -365,6 +385,12 @@ _version = 3
 				# and the max value is 5000. Any values outside this range 
 				# will be set to 0 (disabled).
 				earthCurveRatio = 0
+				#
+				# For internal testing:
+				# Skips loading adjacent LODs to significantly reduce load times (~5x)
+				# but causes lighting on LOD borders to appear as full-bright
+				# and other graphical bugs.
+				onlyLoadCenterLods = false
 
 		[client.advanced.multiplayer]
 			#
@@ -491,6 +517,9 @@ _version = 3
 				# Massively reduces FPS. 
 				# Should only be used if mysterious EXCEPTION_ACCESS_VIOLATION crashes are happening in DH's rendering code for troubleshooting.
 				validateBufferIdsBeforeRendering = false
+				#
+				# 
+				glUploadMode = "AUTO"
 
 			[client.advanced.debugging.f3Screen]
 				#
@@ -581,6 +610,20 @@ _version = 3
 		# are being generated. 
 		# This can be useful for troubleshooting performance.
 		generationProgressIncludeChunksPerSecond = true
+		#
+		# The center X chunk position that the world gen max radius is centered around.
+		generationCenterChunkX = 0
+		#
+		# The center Z chunk position that the world gen max radius is centered around.
+		generationCenterChunkZ = 0
+		#
+		# The max radius in chunks around the central point where world generation is allowed. 
+		# If this value is set to 0, generation bounds are disabled and the render distance will be used. 
+		# 
+		# This should only be set if you have a pre-generated world that has a very limited size. 
+		# Setting this on a normal MC world will prevent the world generator from filling 
+		# out your render distance.
+		generationMaxChunkRadius = 0
 
 	[common.lodBuilding]
 		#
@@ -689,7 +732,7 @@ _version = 3
 	[common.multiThreading]
 		#
 		# How many threads should be used by Distant Horizons?
-		numberOfThreads = 8
+		numberOfThreads = 16
 		#
 		# A value between 1.0 and 0.0 that represents the percentage 
 		# of time each thread can run before going idle. 
@@ -698,6 +741,12 @@ _version = 3
 		# is already set to 1 for the given option, or more finely 
 		# tune CPU performance.
 		threadRunTimeRatio = "1.0"
+		#
+		# What Java thread priority should DH's primary thread pools run with? 
+		# 
+		# You probably don't need to change this unless you are also 
+		# running C2ME and are seeing thread starvation in either C2ME or DH.
+		threadPriority = 5
 
 	[common.logging]
 		#
@@ -724,6 +773,36 @@ _version = 3
 		# If enabled, the mod will log information about network operations. 
 		# This can be useful for debugging.
 		logNetworkEvent = "LOG_ERROR_TO_CHAT_AND_WARNING_TO_FILE"
+		#
+		# 
+		globalFileMaxLevel = "INFO"
+		#
+		# 
+		globalChatMaxLevel = "ERROR"
+		#
+		# If enabled, the mod will log information about the world generation process. 
+		# This can be useful for debugging.
+		logWorldGenEventToFile = "INFO"
+		#
+		# If enabled, the mod will log information about the world generation process. 
+		# This can be useful for debugging.
+		logWorldGenChunkLoadEventToFile = "INFO"
+		#
+		# If enabled, the mod will log information about the renderer setup, cleanup, and any issues it may encounter. 
+		# This can be useful for debugging.
+		logRendererEventToFile = "INFO"
+		#
+		# If enabled, the mod will log information about the renderer OpenGL process. 
+		# This can be useful for debugging.
+		logRendererGLEventToFile = "INFO"
+		#
+		# If enabled, the mod will log information about the renderer OpenGL process. 
+		# This can be useful for debugging.
+		logRendererGLEventToChat = "ERROR"
+		#
+		# If enabled, the mod will log information about network operations. 
+		# This can be useful for debugging.
+		logNetworkEventToFile = "INFO"
 
 		[common.logging.warning]
 			#
@@ -750,6 +829,15 @@ _version = 3
 			# If enabled, a chat message will be displayed when a potentially problematic 
 			# mod is installed alongside DH.
 			showModCompatibilityWarningsOnStartup = true
+			#
+			# If enabled, a chat message will be displayed when DH has too many chunks 
+			# queued for updating.
+			showSlowWorldGenSettingWarnings = true
+			#
+			# If enabled, a message will be logged if the garbage 
+			# collector Java is currently using is known 
+			# to cause stutters and/or issues.
+			logGarbageCollectorWarning = true
 
 [server]
 	#
@@ -808,6 +896,17 @@ _version = 3
 	# If true, DH will automatically adjust transfer rate to minimize connection lag.
 	# If false, transfer speed will remain fixed.
 	enableAdaptiveTransferSpeed = false
+	#
+	# DO NOT CHANGE UNLESS YOU KNOW WHAT YOU'RE DOING.
+	# Autogenerated ID used to prevent multiple independent servers from accidentally
+	# writing over each other's LODs when the same serverKey is set on both.
+	serverId = 1113731787
+	#
+	# Custom server key used which can be used to always reuse the same LOD data folder,
+	# for cases when the server doesn't have a static IP for some reason.
+	# If this value is empty, the client itself decides which folder name to use.
+	# Requires rejoining the server to apply after changing.
+	serverKey = ""
 
 	[server.experimental]
 		#

@@ -157,9 +157,13 @@
   "distanthorizons.config.client.advanced.graphics.quality.vanillaFadeMode":
     "原版淡出模式",
   "distanthorizons.config.client.advanced.graphics.quality.vanillaFadeMode.@tooltip":
-    "原版的Minecraft应该如何淡出遥远地平线的LOD？\n\nNONE：最快，DH和MC渲染之间会有明显的边界。\nSINGLE.PASS：在原版MC通过后会淡出，水下不透明的块不会淡出。\nDOUBLE_PASS：最慢，在MC的不透明和透明过程后都会淡出，提供最平滑的过渡。",
+    "原版游戏应该如何淡出遥远地平线的LOD？\n\nNONE：最快，DH和MC渲染之间会有明显的边界。\nSINGLE.PASS：在原版MC通过后会淡出，水下不透明的块不会淡出。\nDOUBLE_PASS：最慢，在MC的不透明和透明过程后都会淡出，提供最平滑的过渡。",
   "distanthorizons.config.client.advanced.graphics.quality.brightnessMultiplier":
     "亮度倍增器",
+  "distanthorizons.config.client.advanced.graphics.quality.dhFadeFarClipPlane":
+    "远裁剪面前淡出",
+  "distanthorizons.config.client.advanced.graphics.quality.dhFadeFarClipPlane.@tooltip":
+    "是否在到达远裁剪面之前让 DH 逐渐淡出？\n这有助于防止 DH 云层在远处被突然裁切。",
   "distanthorizons.config.client.advanced.graphics.quality.brightnessMultiplier.@tooltip":
     "LOD颜色亮度。\n\n0=黑色\n1=正常\n2=接近白色",
   "distanthorizons.config.client.advanced.graphics.quality.saturationMultiplier":
@@ -381,7 +385,10 @@
     "忽略的洞穴块CSV列表",
   "distanthorizons.config.client.advanced.graphics.culling.ignoredRenderCaveBlockCsv.@tooltip":
     "方块资源位置列表，以逗号分隔，如果它们位于光照为 0 的地下区域，则不应渲染这些位置。注意：空气始终包含在此列表中。",
-
+  "distanthorizons.config.client.advanced.graphics.overrideVanillaGraphicsSettings":
+    "覆盖原版图形设置",
+  "distanthorizons.config.client.advanced.graphics.overrideVanillaGraphicsSettings.@tooltip":
+    "启用后，在DH设置过程中将自动修改部分原版图形设置，以提供更好的体验。\n\n例如：禁用原版云层(其渲染在DH LOD之上)，以及区块淡入淡出效果(DH已自行处理原版MC区块的淡出)。",
 
 
   "distanthorizons.config.client.advanced.graphics.experimental":
@@ -392,6 +399,11 @@
   "distanthorizons.config.client.advanced.graphics.experimental.earthCurveRatio.@tooltip":
     "值为1相当于现实生活中地球的曲率。 \n接受的最小值为50，最大值为5000。 \n1到49之间的所有内容都将四舍五入为50。",
 
+
+  "distanthorizons.config.client.advanced.graphics.experimental.onlyLoadCenterLods":
+    "仅加载中心 LOD",
+  "distanthorizons.config.client.advanced.graphics.experimental.onlyLoadCenterLods.@tooltip":
+    "跳过相邻 LOD 的加载，可显著缩短加载时间(约5倍)。\n但会导致 LOD 边界处的光照亮度达到最高，\n以及其他图形异常。",
 
 
   "distanthorizons.config.client.advanced.autoUpdater":
@@ -502,6 +514,11 @@
     "这会大幅降低FPS。\n只有在DH的渲染代码中发生谜之EXCEPION_ACCESS_VIOLATION崩溃错误并且您试图对其进行故障排除时才应使用。",
 
 
+  "distanthorizons.config.client.advanced.debugging.openGl.glUploadMode":
+    "上传模式",
+  "distanthorizons.config.client.advanced.debugging.openGl.glUploadMode.@tooltip":
+    "仅用于调试",
+
   "distanthorizons.config.client.advanced.debugging.columnBuilderDebugging":
     "渲染队列",
 
@@ -586,7 +603,7 @@
     "普通",
 
 
-  "distanthorizons.config.client.common.worldGenerator":
+  "distanthorizons.config.common.worldGenerator":
     "世界生成器",
     
   "distanthorizons.config.common.worldGenerator.enableDistantGeneration":
@@ -596,7 +613,7 @@
   "distanthorizons.config.common.worldGenerator.distantGeneratorMode":
     "远景生成器模式",
   "distanthorizons.config.common.worldGenerator.distantGeneratorMode.@tooltip":
-    "在原版渲染距离之外生成 LOD 时，生成的复杂程度。\n\n§6§6快:§r 仅限生物群系\n§6最佳质量:§r 特征 (建议)",
+    "在原版渲染距离之外生成 LOD 时，生成的复杂程度。",
   "distanthorizons.config.common.worldGenerator.showGenerationProgress":
     "显示生成进度",
   "distanthorizons.config.common.worldGenerator.showGenerationProgress.@tooltip":
@@ -663,7 +680,10 @@
     "DH使用的线程数量",
   "distanthorizons.config.common.multiThreading.threadRunTimeRatio":
     "线程运行时百分比",
-  
+   "distanthorizons.config.common.multiThreading.threadPriority":
+    "线程优先级",
+  "distanthorizons.config.common.multiThreading.threadPriority.@tooltip":
+    "DH的主要线程池应使用哪种Java线程优先级运行？\n\n除非你同时运行了C2ME模组，\n并且在C2ME或DH中遇到了线程饥饿问题，否则通常不需要更改此项。",
  
 
   "distanthorizons.config.common.logging":
@@ -671,20 +691,26 @@
   "distanthorizons.config.common.logging.@tooltip":
     "控制应如何处理日志记录。",
     
-  "distanthorizons.config.common.logging.logWorldGenEvent":
-    "世界活动",
-  "distanthorizons.config.common.logging.logWorldGenPerformance":
-    "世界生成性能",
-  "distanthorizons.config.common.logging.logWorldGenLoadEvent":
-    "世界生成加载事件",
-  "distanthorizons.config.common.logging.logLodBuilderEvent":
-    "LOD构建活动",
-  "distanthorizons.config.common.logging.logRendererBufferEvent":
-    "渲染缓冲区事件",
-  "distanthorizons.config.common.logging.logRendererGLEvent":
-    "OpenGL事件",
-  "distanthorizons.config.common.logging.logNetworkEvent":
-    "网络事件",
+  "distanthorizons.config.common.logging.globalFileMaxLevel":
+  "全局文件日志等级",
+  "distanthorizons.config.common.logging.globalChatMaxLevel":
+  "全局聊天日志等级",
+
+  "distanthorizons.config.common.logging.logWorldGenEventToFile":
+  "世界生成事件 - 文件",
+  "distanthorizons.config.common.logging.logWorldGenPerformanceToFile":
+  "世界生成性能 - 文件",
+  "distanthorizons.config.common.logging.logWorldGenChunkLoadEventToFile":
+  "区块加载事件 - 文件",
+  "distanthorizons.config.common.logging.logRendererEventToFile":
+  "渲染器事件 - 文件",
+  "distanthorizons.config.common.logging.logRendererGLEventToFile":
+  "OpenGL 事件 - 文件",
+  "distanthorizons.config.common.logging.logRendererGLEventToChat":
+  "OpenGL 事件 - 聊天",
+  "distanthorizons.config.common.logging.logNetworkEventToFile":
+  "网络事件 - 文件",
+
 
   "distanthorizons.config.common.logging.warning":
     "警告",
@@ -700,8 +726,13 @@
     "显示Replay模组警告",
   "distanthorizons.config.common.logging.warning.showUpdateQueueOverloadedChatWarning":
     "显示更新队列过载警告",
+  "distanthorizons.config.common.logging.warning.showSlowWorldGenSettingWarnings":
+    "显示世界生成缓速警告",
   "distanthorizons.config.common.logging.warning.showModCompatibilityWarningsOnStartup":
-    "显示模组兼容性警告",  
+    "显示模组兼容性警告",
+  "distanthorizons.config.common.logging.warning.logGarbageCollectorWarning":
+    "记录垃圾回收警告",
+
     
     
 
@@ -930,19 +961,19 @@
     "始终",
     
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.NONE":
-    "仅现有地形",
+    "1.仅现有地形",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.PRE_EXISTING_ONLY":
-    "仅预生成区块",
+    "2.仅预生成区块",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.BIOME_ONLY":
-    "仅生物群系",
+    "3.仅生物群系",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.BIOME_ONLY_SIMULATE_HEIGHT":
-    "仅生物群系(模拟高度)",
+    "4.仅生物群系(模拟高度)",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.SURFACE":
-    "地表地形",
+    "5.地表地形",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.FEATURES":
-    "特征生成",
+    "6.特征生成",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.INTERNAL_SERVER":
-    "完整生成(保留真实区块)",
+    "7.完整生成(保留真实区块)",
   
   "distanthorizons.config.enum.EDhApiDistantGeneratorProgressDisplayLocation.OVERLAY":
     "显示窗口",
@@ -954,13 +985,16 @@
     "禁用",
 
   "distanthorizons.config.enum.EDhApiDataCompressionMode.UNCOMPRESSED":
-    "解压",
+    "未压缩(原始数据)",
   "distanthorizons.config.enum.EDhApiDataCompressionMode.LZ4":
-    "快速/大 - LZ4",
-  "distanthorizons.config.enum.EDhApiDataCompressionMode.Z_STD":
-    "快速/小 - Z_STD",
+    "最快/大-LZ4",
+  "distanthorizons.config.enum.EDhApiDataCompressionMode.Z_STD_BLOCK":
+    "最快/小-Z_STD-块式",
+  "distanthorizons.config.enum.EDhApiDataCompressionMode.Z_STD_STREAM":
+    "快/小-Z_STD-流式",
   "distanthorizons.config.enum.EDhApiDataCompressionMode.LZMA2":
-    "慢速/小 - LZMA2",
+    "慢/最小-LZMA2",
+
     
   "distanthorizons.config.enum.EDhApiWorldCompressionMode.MERGE_SAME_BLOCKS":
     "1. 合并相同方块",
@@ -1017,35 +1051,19 @@
   "distanthorizons.config.enum.EDhApiGlProfileMode.ANY":
     "任意",
     
-  "distanthorizons.config.enum.EDhApiLoggerMode.DISABLED":
-    "禁用",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ALL_TO_FILE":
-    "文件: 全部，聊天: 关闭",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ERROR_TO_CHAT":
-    "文件: 全部，聊天: 错误",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_WARNING_TO_CHAT":
-    "文件: 全部，聊天: 警告",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_INFO_TO_CHAT":
-    "文件: 全部，聊天: 信息",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_DEBUG_TO_CHAT":
-    "文件: 全部，聊天: 调试",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ALL_TO_CHAT":
-    "文件: 全部，聊天: 全部",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ERROR_TO_CHAT_AND_FILE":
-    "文件: 错误，聊天: 错误",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_WARNING_TO_CHAT_AND_FILE":
-    "文件: 警告，聊天: 警告",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_INFO_TO_CHAT_AND_FILE":
-    "文件: 信息，聊天: 信息",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_DEBUG_TO_CHAT_AND_FILE":
-    "文件: 调试，聊天: 调试",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_WARNING_TO_CHAT_AND_INFO_TO_FILE":
-    "文件: 信息，聊天: 警告",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE":
-    "文件: 信息，聊天: 错误",
-  "distanthorizons.config.enum.EDhApiLoggerMode.LOG_ERROR_TO_CHAT_AND_WARNING_TO_FILE":
-    "文件：警告，聊天：错误",
- 
+  "distanthorizons.config.enum.EDhApiLoggerLevel.ALL":
+  "1. 全部",
+  "distanthorizons.config.enum.EDhApiLoggerLevel.DEBUG":
+  "2. 调试",
+  "distanthorizons.config.enum.EDhApiLoggerLevel.INFO":
+  "3. 信息",
+  "distanthorizons.config.enum.EDhApiLoggerLevel.WARN":
+  "4. 警告",
+  "distanthorizons.config.enum.EDhApiLoggerLevel.ERROR":
+  "5. 错误",
+  "distanthorizons.config.enum.EDhApiLoggerLevel.DISABLED":
+  "6. 禁用",
+
   "distanthorizons.config.enum.EDhApiGpuUploadMethod.AUTO":
     "自动",
   "distanthorizons.config.enum.EDhApiGpuUploadMethod.BUFFER_STORAGE":
