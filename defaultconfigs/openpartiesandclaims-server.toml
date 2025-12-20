@@ -1,7 +1,7 @@
 
 [serverConfig]
 	#The default language used for server-side localization for players that don't have the mod installed.
-	defaultLanguage = "zh_cn"
+	defaultLanguage = "en_us"
 	#How often to auto-save modified data, e.g. parties, claims, player configs (in minutes).
 	#Range: > 1
 	autosaveInterval = 10

@@ -146,10 +146,9 @@
 		{
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
-				"本整合包使用FTB chunks模组来认领区块并实现区块强加载。"
-				"可用&4N&r打开相关地图进行&e区块认领和强加载&r等相关工作。"
-				"使用&e指令&r也可以查看自己目前&4认领的区块数量和位置&r。"
-				"相关指令详见FTB chunks的百科页面"
+				"本整合包使用[OPAC]Open Parties and Claims模组来认领区块并实现区块强加载。"
+				"可直接在世界地图（默认&eM&r键）上右键来进行&e区块认领和强加载&r等相关工作。"
+				"也可以使用&eN&r键呼出OPAC的菜单做更多的配置。"
 			]
 			icon: "minecraft:cartography_table"
 			id: "1DC437E50E6AC1FC"
