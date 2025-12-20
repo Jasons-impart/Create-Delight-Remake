@@ -318,18 +318,6 @@
 			y: 1.5d
 		}
 		{
-			dependencies: ["0CF2923758C50BDC"]
-			id: "170B8EF83381788A"
-			subtitle: "替换控制器上方的陨石砖以增加应力输出与转速！"
-			tasks: [{
-				id: "0141C4FF1D0AB2E2"
-				item: "createdelight:hydropower_amplifier"
-				type: "item"
-			}]
-			x: -3.0d
-			y: 1.5d
-		}
-		{
 			dependencies: ["62C31EFDB74E7053"]
 			id: "645BF6F786D3728C"
 			tasks: [{
@@ -388,8 +376,8 @@
 					type: "item"
 				}
 			]
-			x: -3.5d
-			y: 2.5d
+			x: -3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["002D0D42090AF488"]
