@@ -11,7 +11,7 @@
 	#The permission system to use for everything that requires permission checks (e.g. permission_api, ftb_ranks, luck_perms, prometheus). Non-built-in permission systems can be registered through the API with an addon.
 	permissionSystem = "prometheus"
 	#The player party system to prefer and use for anything that can't support multiple systems (e.g. default, ftb_teams, argonauts, argonauts_guilds). Non-built-in party systems can be registered through the API with an addon.
-	primaryPartySystem = "argonauts_guilds"
+	primaryPartySystem = "ftb_teams"
 	#A list of options in the player config that individual players can reconfigure. If an option is in neither of the configurable option lists,
 	#then the value in the default player config is used across the server. Check the default player config .toml file for the option names.
 	playerConfigurablePlayerConfigOptions = ["claims.protectClaimedChunks", "claims.forceload.enabled", "claims.name", "claims.color", "claims.protection.fromParty", "claims.protection.fromAllyParties", "claims.protection.buttonsFromProjectiles", "claims.protection.targetsFromProjectiles", "claims.protection.platesFromPlayers", "claims.protection.platesFromMobs", "claims.protection.platesFromOther", "claims.protection.tripwireFromPlayers", "claims.protection.tripwireFromMobs", "claims.protection.tripwireFromOther", "claims.protection.cropTrample", "claims.protection.playerLightning", "claims.protection.fromFrostWalking", "claims.protection.entitiesFromPlayers", "claims.protection.entitiesFromMobs", "claims.protection.entitiesFromOther", "claims.protection.entitiesRedirect", "claims.protection.entitiesFromExplosions", "claims.protection.entitiesFromFire", "claims.protection.netherPortalsPlayers", "claims.protection.netherPortalsMobs", "claims.protection.netherPortalsOther", "claims.protection.fluidBarrier", "claims.protection.dispenserBarrier", "claims.protection.pistonBarrier", "claims.protection.itemTossPlayers", "claims.protection.itemTossMobs", "claims.protection.itemTossOther", "claims.protection.itemTossRedirect", "claims.protection.mobLoot", "claims.protection.playerDeathLoot", "claims.protection.itemPickupPlayers", "claims.protection.itemPickupMobs", "claims.protection.itemPickupRedirect", "claims.protection.xpPickup", "claims.protection.raids", "claims.protection.naturalSpawnHostile", "claims.protection.naturalSpawnFriendly", "claims.protection.spawnersHostile", "claims.protection.spawnersFriendly", "claims.protection.projectileHitHostileSpawn", "claims.protection.projectileHitFriendlySpawn", "parties.name", "parties.shareLocationWithParty", "parties.shareLocationWithMutualAllyParties", "parties.receiveLocationsFromParty", "parties.receiveLocationsFromMutualAllyParties", "claims.protection.exceptionGroups.block.interact.Controls", "claims.protection.exceptionGroups.block.interact.Doors", "claims.protection.exceptionGroups.block.interact.Chests", "claims.protection.exceptionGroups.block.interact.Barrels", "claims.protection.exceptionGroups.block.interact.Ender_Chests", "claims.protection.exceptionGroups.block.interact.Shulker_Boxes", "claims.protection.exceptionGroups.block.interact.Furnaces", "claims.protection.exceptionGroups.block.interact.Hoppers", "claims.protection.exceptionGroups.block.interact.Dispenser-like", "claims.protection.exceptionGroups.block.interact.Anvils", "claims.protection.exceptionGroups.block.interact.Beds", "claims.protection.exceptionGroups.block.interact.Beacons", "claims.protection.exceptionGroups.block.interact.Enchanting_Tables", "claims.protection.exceptionGroups.block.break.Crops", "claims.protection.exceptionGroups.entity.interact.Traders", "claims.protection.exceptionGroups.entity.handInteract.Item_Frames", "claims.protection.exceptionGroups.entity.interact.Armor_Stands", "claims.protection.exceptionGroups.entity.break.Livestock", "claims.protection.exceptionGroups.entity.blockAccess.Villagers", "claims.protection.exceptionGroups.entity.entityAccess.Zombies", "claims.protection.exceptionGroups.entity.droppedItemAccess.Villagers", "claims.protection.exceptionGroups.entity.droppedItemAccess.Piglins", "claims.protection.exceptionGroups.entity.droppedItemAccess.Foxes", "claims.protection.exceptionGroups.item.interact.Books", "claims.protection.exceptionGroups.entity.barrier.Ender_Pearls", "/*remove comment to enable*/claims.protection.exceptionGroups.entity.barrier.Players"]
@@ -45,7 +45,7 @@
 		enabled = true
 		#For how long a player can stay completely inactive on the server until their claims are expired (in hours). This improves performance for servers running for years.
 		#Range: > 1
-		playerClaimsExpirationTime = 720
+		playerClaimsExpirationTime = 1440
 		#How often to check for expired player chunk claims in order to remove them (in minutes). The interval is effectively rounded up to a multiple of 10 minutes.
 		#Range: > 10
 		playerClaimsExpirationCheckInterval = 360
@@ -93,12 +93,12 @@
 		[serverConfig.claims.protection]
 			#The type of the list defined in "friendlyChunkProtectedEntityList". ONLY - include only the listed entities. ALL_BUT - include all but the listed entities.
 			#Allowed Values: ONLY, ALL_BUT
-			friendlyChunkProtectedEntityListType = "ALL_BUT"
+			friendlyChunkProtectedEntityListType = "ONLY"
 			#Friendly entities to fully include/exclude in chunk protection, depending on the list type in "friendlyChunkProtectedEntityListType". Supports entity type tags.
 			#Supports patterns with special characters *, (, ) and |, where * matches anything, ( ) are used for grouping and | means OR.
 			#For example ["*:villager", "minecraft:m(ule|ooshroom)", "#minecraft:axolotl_hunt_targets"].
 			#By default the list is empty with the type set to ALL_BUT, which means that all friendly entities are included.
-			friendlyChunkProtectedEntityList = ["minecraft:boat"]
+			friendlyChunkProtectedEntityList = []
 			#The type of the list defined in "hostileChunkProtectedEntityList". ONLY - include only the listed entities. ALL_BUT - include all but the listed entities.
 			#Allowed Values: ONLY, ALL_BUT
 			hostileChunkProtectedEntityListType = "ONLY"
