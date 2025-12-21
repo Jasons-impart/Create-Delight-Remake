@@ -1191,6 +1191,23 @@
           }
         },
         {
+          "TradeType": "SALE",
+          "SellItem": {
+            "ID": "industrial_platform:fluid_pool",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:gold_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
           "TradeType": "BARTER",
           "SellItem": {
             "ID": "lightmanscurrency:wallet_copper",
