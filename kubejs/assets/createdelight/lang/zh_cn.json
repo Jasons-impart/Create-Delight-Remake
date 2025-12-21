@@ -572,6 +572,7 @@
     "tooltip.createdelight.single_price": "§7单价:%s",
     "tooltip.createdelight.total_price": "§7总价:%s",
     "tooltip.createdelight.shift_frozen_block": "§7可§b冷却§7周围§b一格以内§7的物品",
+    "tooltip.createdelight.shift_growth_detector": "§7手持时每隔3秒，在玩家周围的作物上方生成粒子效果，用于指示周围作物的生长状态；\n生长速度由慢到快，对应的粒子颜色由红色逐渐过渡为绿色。",
     "tooltip.createdelight.shift_unactivated_crystalline_flower": "§7需要激活才能使用",
     "tooltip.createdelight.shift_mechanical_demolder": "§7使用时类似§b辊压机§r§7, 但是会将模具存储在§b机器内部",
     "tooltip.createdelight.shift_distillation_controller": "§b每个§7储罐都需要一个",
