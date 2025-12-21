@@ -31,6 +31,7 @@ ItemEvents.tooltip(e => {
         'bakeries:cake_roll',
         'createdelight:unactivated_crystalline_flower',
         "createdelight:fission_reactor",
+        'eclipticseasons:growth_detector'
     ])
     clearAddCtrlTooltip(e, [
 

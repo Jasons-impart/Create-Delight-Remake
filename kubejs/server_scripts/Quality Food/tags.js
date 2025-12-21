@@ -83,6 +83,7 @@ ServerEvents.tags("block", e => {
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
         "minecraft:cocoa",
+        "farmersdelight:budding_tomatoes",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',
         'fruitsdelight:fig_leaves',
