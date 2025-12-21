@@ -91,7 +91,7 @@
 				"1999728E6F67F8EF"
 			]
 			dependency_requirement: "one_completed"
-			description: ["也可直接通入&e液体燃料&r来进行&4加热&r，&l&n&4JEI查看&r"]
+			description: ["可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -399,7 +399,7 @@
 				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
-					Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+					Icon: "minecraft:block/fire_1"
 				}
 			}
 			id: "1999728E6F67F8EF"
@@ -409,7 +409,7 @@
 					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
-						Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+						Icon: "minecraft:block/fire_1"
 					}
 				}
 				id: "30833998091D4372"
@@ -1859,6 +1859,24 @@
 			title: "优秀应力载体！"
 			x: 26.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			icon: "industrial_platform:fluid_pool"
+			id: "36CB35E2A940093B"
+			rewards: [{
+				id: "181A0753075BD670"
+				item: "industrial_platform:fluid_pool"
+				type: "item"
+			}]
+			subtitle: "商店五金一个，这下不用自己挖无限流体池了"
+			tasks: [{
+				id: "704995CF5CF30FEB"
+				type: "checkmark"
+			}]
+			title: "流体池"
+			x: -0.5d
+			y: -2.5d
 		}
 	]
 	title: "&9体系渐成 "
