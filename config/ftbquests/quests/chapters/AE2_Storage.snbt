@@ -998,7 +998,7 @@
 				title: "自动合成"
 				type: "checkmark"
 			}]
-			x: 3.5d
+			x: 6.5d
 			y: 6.0d
 		}
 		{
@@ -1025,7 +1025,7 @@
 				type: "item"
 			}]
 			title: "样板供应器"
-			x: 3.5d
+			x: 5.5d
 			y: 8.0d
 		}
 		{
@@ -1045,7 +1045,7 @@
 				item: "ae2:blank_pattern"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 6.5d
 			y: 8.0d
 		}
 		{
@@ -1068,7 +1068,7 @@
 				item: "ae2:me_p2p_tunnel"
 				type: "item"
 			}]
-			x: 8.5d
+			x: 12.5d
 			y: 6.0d
 		}
 		{
@@ -1081,7 +1081,7 @@
 				title: "调谐"
 				type: "checkmark"
 			}]
-			x: 8.5d
+			x: 12.5d
 			y: 8.0d
 		}
 		{
@@ -1094,7 +1094,7 @@
 				item: "ae2:redstone_p2p_tunnel"
 				type: "item"
 			}]
-			x: 6.0d
+			x: 11.0d
 			y: 9.5d
 		}
 		{
@@ -1110,7 +1110,7 @@
 				item: "ae2:me_p2p_tunnel"
 				type: "item"
 			}]
-			x: 7.0d
+			x: 12.0d
 			y: 9.5d
 		}
 		{
@@ -1123,7 +1123,7 @@
 				item: "ae2:item_p2p_tunnel"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 10.0d
 			y: 9.5d
 		}
 		{
@@ -1136,7 +1136,7 @@
 				item: "ae2:fluid_p2p_tunnel"
 				type: "item"
 			}]
-			x: 9.0d
+			x: 13.0d
 			y: 9.5d
 		}
 		{
@@ -1149,7 +1149,7 @@
 				item: "ae2:fe_p2p_tunnel"
 				type: "item"
 			}]
-			x: 10.0d
+			x: 14.0d
 			y: 9.5d
 		}
 		{
@@ -1162,7 +1162,7 @@
 				item: "ae2:light_p2p_tunnel"
 				type: "item"
 			}]
-			x: 11.0d
+			x: 15.0d
 			y: 9.5d
 		}
 		{
@@ -1175,14 +1175,14 @@
 				type: "item"
 			}]
 			title: "CPU"
-			x: 2.5d
+			x: 4.5d
 			y: 8.0d
 		}
 		{
 			dependencies: ["0E63C201EF1FC4FB"]
 			description: [
 				"将ME接口贴着样板供应器，会拥有一个特殊的行为。此时样板供应器将会直接将&e原料输出到ME接口所在网络&r。"
-				"此时配合&e存储总线&r，即可非常轻易的做到将物品送至任意位置的任意容器中。"
+				"此时配合&e存储总线&r，以及存储总线&e优先级&r，即可非常轻易的做到将物品送至任意位置的任意容器中。"
 			]
 			icon: "ae2:interface"
 			id: "24DCD6EE3AEBA742"
@@ -1192,7 +1192,7 @@
 				title: "与ME接口的特殊行为"
 				type: "checkmark"
 			}]
-			x: 3.5d
+			x: 5.0d
 			y: 9.5d
 		}
 		{
@@ -1208,7 +1208,7 @@
 				item: "ae2:molecular_assembler"
 				type: "item"
 			}]
-			x: 5.5d
+			x: 7.5d
 			y: 8.0d
 		}
 		{
@@ -1390,6 +1390,48 @@
 			}]
 			x: 2.5d
 			y: -3.5d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"输入某&e动力合成配方&r所需物品后，可输出一个能直接使用打包机输入给动力合成器的包裹"
+				"可用过滤槽指定要制作的物品，需要于 GUI 中设定匹配的动力合成器大小"
+				"需要给予&e红石信号&r才能工作"
+			]
+			id: "3D6C40BE99155C18"
+			subtitle: "你会爱上这个的"
+			tasks: [{
+				id: "090DEFD0C59DE4E8"
+				item: "createdelight:mechanical_craft_encoder"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1499DD7E2925CBAA"]
+			id: "1542CE335F6CD739"
+			subtitle: "更快！"
+			tasks: [{
+				id: "00A93D76DCE3DA43"
+				item: "expatternprovider:ex_molecular_assembler"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["0E63C201EF1FC4FB"]
+			dependency_requirement: "all_started"
+			id: "2A6BB98CEDADA532"
+			subtitle: "更大！"
+			tasks: [{
+				id: "5D89FBBA7696CEA2"
+				item: "expatternprovider:ex_pattern_provider"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 9.5d
 		}
 	]
 	title: "&b储存与合成"
