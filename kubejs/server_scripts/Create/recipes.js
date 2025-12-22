@@ -187,15 +187,15 @@ ServerEvents.recipes(e => {
     e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_block', input: 'create:rose_quartz' })
     e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_tiles', input: 'create:polished_rose_quartz' })
     e.remove({ type: 'minecraft:stonecutting', output: 'create:small_rose_quartz_tiles', input: 'create:polished_rose_quartz' })
-    // 玫瑰石英块/砖 4合1配方
-    e.shaped('create:rose_quartz_block', [
+    // 玫瑰石英块/砖
+    e.shaped('8x create:rose_quartz_block', [
         'AA',
         'AA'
     ], {
         A: 'create:rose_quartz'
     }).id('create:crafting/rose_quartz_block')
     
-    e.shaped('create:rose_quartz_tiles', [
+    e.shaped('8x create:rose_quartz_tiles', [
         'AA',
         'AA'
     ], {
