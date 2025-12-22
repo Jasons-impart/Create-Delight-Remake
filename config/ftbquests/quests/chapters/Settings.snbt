@@ -124,7 +124,7 @@
 			y: 1.5d
 		}
 		{
-			description: ["如果战斗时你的武器经常打不中怪物而是挖方块，可使用按键 &l[  ， ] &r来开关武器破坏方块。"]
+			description: ["如果战斗时你的武器经常打不中怪物而是挖方块，可使用按键 &l[   。] &r来开关武器破坏方块。"]
 			icon: {
 				Count: 1
 				id: "minecraft:diamond_sword"
@@ -134,7 +134,7 @@
 			}
 			id: "18BC9A9DF55EC929"
 			shape: "square"
-			subtitle: "按下，开启战斗模式！"
+			subtitle: "按下。开启战斗模式！"
 			tasks: [{
 				id: "00B1159B0BB046DA"
 				type: "checkmark"
