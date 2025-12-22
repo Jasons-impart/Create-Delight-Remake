@@ -992,7 +992,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨维度&r）"
 			tasks: [{
 				id: "7E8F512707C3D437"
 				item: "createutilities:void_motor"
@@ -1010,7 +1010,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨维度&r）"
 			tasks: [{
 				id: "3A8416116E24A115"
 				item: "createutilities:void_tank"
@@ -1028,7 +1028,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨维度&r）"
 			tasks: [{
 				id: "68E0A2128888812E"
 				item: "createutilities:void_battery"
@@ -1247,7 +1247,7 @@
 		{
 			dependencies: ["07C28031281E5458"]
 			id: "46E16005AA8F9C8A"
-			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨维度&r）"
 			tasks: [{
 				id: "5DEF9B1874E79A03"
 				item: "functionalstorage:ender_drawer"
