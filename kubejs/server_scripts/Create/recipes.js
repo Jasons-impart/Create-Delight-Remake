@@ -57,6 +57,24 @@ ServerEvents.recipes(e => {
         "create:polished_rose_quartz",
         "create:rose_quartz"
     ).id("create:cutting/polished_rose_quartz")
+    // 解决玫瑰石英配方冲突
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_block', input: 'create:rose_quartz' })
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_tiles', input: 'create:polished_rose_quartz' })
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:small_rose_quartz_tiles', input: 'create:polished_rose_quartz' })
+    // 玫瑰石英块/砖
+    e.shaped('8x create:rose_quartz_block', [
+        'AA',
+        'AA'
+    ], {
+        A: 'create:rose_quartz'
+    }).id('create:crafting/rose_quartz_block')
+    
+    e.shaped('8x create:rose_quartz_tiles', [
+        'AA',
+        'AA'
+    ], {
+        A: 'create:polished_rose_quartz'
+    }).id('create:crafting/rose_quartz_tiles')
     // 动力锯切割：磨制紫水晶
     e.recipes.create.cutting(
         'createutilities:polished_amethyst',
