@@ -1,0 +1,75 @@
+{
+  "parent": "youkaishomecoming:main/tea",
+  "criteria": {
+    "farmersrespite:black_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "farmersrespite:black_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "farmersrespite:green_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "farmersrespite:green_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "farmersrespite:yellow_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "farmersrespite:yellow_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    },
+    "youkaishomecoming:white_tea": {
+      "conditions": {
+        "item": {
+          "items": [
+            "youkaishomecoming:white_tea"
+          ]
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.youkaishomecoming.advancements.main.tea_master.description"
+    },
+    "frame": "goal",
+    "hidden": false,
+    "icon": {
+      "item": "youkaishomecoming:white_tea"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.youkaishomecoming.advancements.main.tea_master.title"
+    }
+  },
+  "requirements": [
+    [
+      "youkaishomecoming:white_tea"
+    ],
+    [
+      "farmersrespite:yellow_tea"
+    ],
+    [
+      "farmersrespite:green_tea"
+    ],
+    [
+      "farmersrespite:black_tea"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

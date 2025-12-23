@@ -1894,7 +1894,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0DA94722AEFA2190"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1911,7 +1911,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "481922F2036E7126"
-				tags: ["rank_15"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1928,7 +1928,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "04C85D72724876C5"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1945,7 +1945,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1E1E72FB7DB5C653"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1962,7 +1962,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6709ED07E49B701E"
-				tags: ["rank_15"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1979,7 +1979,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7C305A4302758618"
-				tags: ["rank_15"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1996,7 +1996,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3AD07B0BFEE8AEBD"
-				tags: ["rank_20"]
+				tags: ["rank_unrepeatable_20"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2013,7 +2013,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "518BA77B732B168C"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2030,7 +2030,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "08CEF4AC12B4CBDC"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2047,7 +2047,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "56B39890976B6D14"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2064,7 +2064,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "64916FE2121C3DCE"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2081,7 +2081,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2995B82DBD88454A"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2098,7 +2098,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "75004E4133FD5E49"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -2115,7 +2115,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "24FB76C5C2144549"
-				tags: ["rank_10"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{

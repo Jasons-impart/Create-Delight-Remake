@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "waystones:mossy_waystone"
+        },
+        "title": {
+            "translate": "totw_modded.advancement.root.title"
+        },
+        "description": {
+            "translate": "totw_modded.advancement.root.description"
+        },
+        "frame": "task",
+        "show_toast": false,
+        "announce_to_chat": false,
+        "hidden": false,
+        "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+    },
+    "criteria": {
+        "sample_trigger": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:crafting_table"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "sample_trigger"
+        ]
+    ]
+}

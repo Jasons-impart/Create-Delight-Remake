@@ -1,10 +1,3 @@
-ServerEvents.tags("item", e => {
-    //腌渍乐事种子添加种子tag
-    e.add("forge:seeds", "vintagedelight:oat_seeds")
-    e.add("forge:seeds", "vintagedelight:peanut")
-    e.add("forge:seeds", "vintagedelight:cucumber_seeds")
-    e.add("forge:seeds", "vintagedelight:ghost_pepper_seeds")
-})
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "vintagedelight:cutting/cucumber_cutting",

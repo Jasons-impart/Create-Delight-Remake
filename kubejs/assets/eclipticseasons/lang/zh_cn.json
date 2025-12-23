@@ -1,0 +1,16 @@
+{
+  "advancement.eclipticseasons.autumn_pumpkin_pie": "制作南瓜派",
+  "advancement.eclipticseasons.autumn_pumpkin_pie.desc": "是派，不是π(获得秋季心髓)",
+  "advancement.eclipticseasons.spring_bread": "制作面包",
+  "advancement.eclipticseasons.spring_bread.desc": "辛苦之后，来饱餐一顿吧~(获得春季心髓)",
+  "advancement.eclipticseasons.summer_harvest": "夏日收获",
+  "advancement.eclipticseasons.summer_harvest.desc": "炎炎夏天，西瓜清凉(获得夏季心髓)",
+  "advancement.eclipticseasons.summer_start": "夏季任务",
+  "advancement.eclipticseasons.summer_start.desc": "盛夏可以准备吃西瓜了~",
+  "advancement.eclipticseasons.winter_campfire": "冬夜暖火",
+  "advancement.eclipticseasons.winter_campfire.desc": "雪夜，暖火，与我(获得冬季心髓)",
+  "advancement.eclipticseasons.winter_start": "冬季任务",
+  "advancement.eclipticseasons.winter_start.desc": "准备拿起扫帚扫雪吧~",
+  "advancement.eclipticseasons.humidity_control": "湿度控制",
+  "advancement.eclipticseasons.humidity_control.desc": "使用加湿器与除湿器以控制环境湿度"
+}

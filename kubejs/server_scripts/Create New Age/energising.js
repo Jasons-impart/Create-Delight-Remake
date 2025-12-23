@@ -31,8 +31,8 @@ ServerEvents.recipes(e => {
             "BCB",
             " D "
         ], {
-            A: 'create:shaft',
-            B: '#forge:ingots/iron',
+            A: 'createaddition:capacitor',
+            B: 'createaddition:copper_wire',
             C: "create:andesite_casing",
             D: "minecraft:lightning_rod"
         }

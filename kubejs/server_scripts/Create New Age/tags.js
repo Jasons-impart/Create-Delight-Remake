@@ -20,3 +20,8 @@ ServerEvents.tags("minecraft:item", e => {
         'createaddition:electrum_spool'
     ])
 })
+ServerEvents.tags("block", e => {
+    e.add("create_new_age:stops_radiation", [
+        "createdelightcore:forge_steel_casing"
+    ])
+})

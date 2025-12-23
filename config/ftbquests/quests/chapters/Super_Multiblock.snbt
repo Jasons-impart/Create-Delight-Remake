@@ -6,19 +6,19 @@
 	group: "14CFC96B5B37F10B"
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
-	order_index: 8
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
-				"&a&o&l如何使用&r：背包内有&e足够物品&r时，可以使用&e多方块搭建器&r&4右键搭建&r；或使用&eJEI查看多方块结构&r"
-				"&a&o&l注意事项&r：所有的&e多方块结构&r均需要&e输入输出口&r，&e输入输出口&r可以替换&e结构外壳&r中&4任意部位&r，注意&e每个输入输出口&r只能代理&4一种物品/流体&r"
-				"&a&o&l如何美化&r：&e多方块结构外壳&r可替换为对应&e玻璃机壳/通透玻璃机壳&r"
+				"&a&o&l如何使用&r：整合包自带&e对应机器蓝图&r，可以使用&e蓝图大炮&r&4搭建&r；或使用&eJEI查看多方块结构&r"
+				"&a&o&l注意事项&r：所有的&e多方块结构&r均需要&e输入输出口&r，&e输入输出口&r可以替换&e的部位详见思索&r，注意&e每个输入输出口&r只能代理&4一种物品/流体&r"
+				"&a&o&l如何美化&r：&e多方块结构外壳&r可替换为对应&e玻璃机壳/通透玻璃机壳&r，可替换&e的部位详见思索&r"
 			]
 			id: "50711781910527C4"
 			rewards: [{
-				id: "0769F728C3D12548"
-				item: "mbd2:mbd_gadgets"
+				id: "6B4835F64188AC0A"
+				item: "create:empty_schematic"
 				type: "item"
 			}]
 			shape: "hexagon"
@@ -33,11 +33,15 @@
 			y: -3.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"0C0CD2BD5935D4CC"
+			]
+			description: ["要搭建结构，可参考整合包内自带蓝图 &ealloy_elec\\ntric_furnace&r"]
 			id: "4750F90745C1AC83"
 			shape: "square"
 			size: 1.5d
-			subtitle: "直接煅烧粉末成锭！"
+			subtitle: "直接煅烧粉末成锭！也可以直接锻造合金！"
 			tasks: [{
 				id: "5121E13D78144256"
 				item: "createdelight:alloy_electric_furnace"
@@ -47,12 +51,15 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
-			description: ["&4贴图暂未完工&r"]
+			dependencies: [
+				"50711781910527C4"
+				"26DADC947426CD52"
+			]
+			description: ["要搭建结构，可参考整合包内自带蓝图 &ebig_centrif\\nuge&r"]
 			id: "795B3440D2A059C0"
 			shape: "square"
 			size: 1.5d
-			subtitle: "终于有大型的离心机了o(╥﹏╥)o"
+			subtitle: "超大型超豪华离心机！（就是产出概率有点感人）"
 			tasks: [{
 				id: "1521E518C159F84C"
 				item: "createdelight:big_centrifuge"
@@ -64,9 +71,10 @@
 		{
 			dependencies: [
 				"50711781910527C4"
-				"5EB3B636A6FEA921"
+				"2660ABEA79C209F4"
 			]
 			dependency_requirement: "one_completed"
+			description: ["要搭建结构，可参考整合包内自带蓝图 &ebutchery_\\nroom&r"]
 			id: "62C31EFDB74E7053"
 			shape: "square"
 			size: 1.5d
@@ -80,12 +88,31 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
+			dependencies: [
+				"50711781910527C4"
+				"2F0B3291F14AAA89"
+			]
 			description: [
-				"&4注意&r如果不用&e核反应堆玻璃&r或&e核反应堆砖块&r完全封闭核反应堆&4会导致核泄漏&r；"
-				"反应过程中&4不要拆除核反应堆&r！否则将会&4导致爆炸&r！"
-				"反应中&9冷却剂（水）&r不足会导致&4核反应堆损坏度增加&r，并最终&4到达100时爆炸&r，通入&9冷却剂（水）&r可以&2减少核反应堆损坏度&r"
-				"反应堆内发电&4超出内部存电上限&r，导致溢出后同样会&4增加损毁度&r。建议接&e能量垃圾桶&r以保证过量电量会被导出销毁。"
+				"&6- 热管理机制&r"
+				"&7 # 控制棒拔出时产热：燃料组件(2-74) × 基础发热率(不可调) × 温度效率(随温度升高而增强)&r"
+				"&7 # 环境散热：基础散热(随温度升高而降低) + 温度相关散热&r"
+				"&7 # 主动冷却：使用冷却剂进行强制散热, 效率取决于冷却剂类型(水, 灵质)&r"
+				"&e # 温度需≥1000K才能发电, 产出倍率随温度升高而增加r"
+				"&4 # 温度超过1500K开始积累损坏, 超过2500K或损坏100%爆炸&r"
+				"&9 ○ 控制棒拔出时开始反应&r"
+				"&9 ○ 控制棒完全插入时终止反应, 依靠环境散热降温&r"
+				"&4 ✗ 爆炸条件：损坏100%或温度≥2500K或运行中结构被破坏&r"
+				""
+				"&6- 运行要求&r"
+				"&e ○ 强烈建议使用水或灵质作为冷却剂"
+				"&4 ○ 必须保持结构完整"
+				"&9 ○ 必须输入核反应燃料"
+				""
+				"{@pagebreak}"
+				""
+				"这里给出一下最大产能："
+				"使用&9水&r作为冷却剂时大约为&4200KFE/t&r"
+				"使用&b灵质&r作为冷却剂时大约为&42MKFE/t&r"
 			]
 			id: "002D0D42090AF488"
 			rewards: [{
@@ -95,7 +122,7 @@
 			}]
 			shape: "square"
 			size: 1.5d
-			subtitle: "吼吼！会爆炸的！产电池超多的！"
+			subtitle: "吼吼！会爆炸的！产电超多的！"
 			tasks: [{
 				id: "04009BDC26E0C6C0"
 				item: "createdelight:fission_reactor"
@@ -105,8 +132,14 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["50711781910527C4"]
-			description: ["&9水&r和&9灵质&r均可推动&e水坝扇叶&r！&e多个串联&r以达到&4最大应力输出&r！"]
+			dependencies: [
+				"50711781910527C4"
+				"724FF9E032B4B134"
+			]
+			description: [
+				"&9水&r和&9灵质&r均可推动&e水坝扇叶&r！&e多个串联&r以达到&4最大应力输出&r！"
+				"&o&l&a蓝图使用方法&r: 使用两个&ehydropower_station_\\nside&r包夹&ehydropower_station_middle&r即可, 注意要放置&4大坝方块&r和&9水&r"
+			]
 			id: "0CF2923758C50BDC"
 			shape: "square"
 			size: 1.5d
@@ -144,10 +177,10 @@
 		{
 			dependencies: ["4750F90745C1AC83"]
 			id: "76997548D7399476"
-			subtitle: "线圈越多并行数越高！"
+			subtitle: "这是神魔？还会&6发光&r！我去！"
 			tasks: [{
 				id: "66FB6BAD80FCAEAF"
-				item: "createdelightcore:copper_coil"
+				item: "createdelight:copper_coil"
 				type: "item"
 			}]
 			x: -15.5d
@@ -177,9 +210,9 @@
 		}
 		{
 			dependencies: ["795B3440D2A059C0"]
-			description: ["&4贴图暂未完工&r"]
+			description: [""]
 			id: "5A33083E2AE4CD8E"
-			subtitle: "转子越多离心速度越快！并行数越高！"
+			subtitle: "好炫酷！让我们感谢鱼鱼！"
 			tasks: [{
 				id: "24CBF657B4926D41"
 				item: "createdelight:centrifuge_rotor"
@@ -196,7 +229,7 @@
 				item: "createdelight:andesite_export_bus"
 				type: "item"
 			}]
-			x: -10.5d
+			x: -11.0d
 			y: 1.5d
 		}
 		{
@@ -207,7 +240,7 @@
 				item: "createdelight:andesite_import_bus"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -8.0d
 			y: 1.5d
 		}
 		{
@@ -259,24 +292,29 @@
 			dependencies: ["0CF2923758C50BDC"]
 			id: "60E34448540FBA8F"
 			subtitle: "应力输出组件！"
-			tasks: [{
-				id: "5BF7329724D2C7FA"
-				item: "createdelight:hydropower_station_fan"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "73760982D6287942"
+					item: "createdelight:wooden_fan"
+					type: "item"
+				}
+				{
+					id: "6AEE399BC757610F"
+					item: "createdelight:steel_fan"
+					type: "item"
+				}
+				{
+					id: "4FAB92CF0F4A0939"
+					item: "createdelight:forge_steel_fan"
+					type: "item"
+				}
+				{
+					id: "1D3CE9EC1540B58B"
+					item: "createdelight:dragon_steel_fan"
+					type: "item"
+				}
+			]
 			x: -4.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["0CF2923758C50BDC"]
-			id: "170B8EF83381788A"
-			subtitle: "替换控制器上方的陨石砖以增加应力输出与转速！"
-			tasks: [{
-				id: "0141C4FF1D0AB2E2"
-				item: "createdelight:hydropower_amplifier"
-				type: "item"
-			}]
-			x: -3.0d
 			y: 1.5d
 		}
 		{
@@ -287,7 +325,7 @@
 				item: "create:item_drain"
 				type: "item"
 			}]
-			x: -10.0d
+			x: -10.5d
 			y: 2.5d
 		}
 		{
@@ -298,7 +336,7 @@
 				item: "create:mechanical_mixer"
 				type: "item"
 			}]
-			x: -9.0d
+			x: -8.5d
 			y: 2.5d
 		}
 		{
@@ -309,7 +347,7 @@
 				item: "butchercraft:butcher_block_block_item"
 				type: "item"
 			}]
-			x: -9.5d
+			x: -10.0d
 			y: 3.5d
 		}
 		{
@@ -338,8 +376,8 @@
 					type: "item"
 				}
 			]
-			x: -3.5d
-			y: 2.5d
+			x: -3.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["002D0D42090AF488"]
@@ -358,6 +396,37 @@
 			]
 			x: -5.5d
 			y: 2.5d
+		}
+		{
+			dependencies: ["002D0D42090AF488"]
+			description: [
+				"1号按钮：&4关闭逻辑端口所有功能&r"
+				"2号按钮：&4每&r接收到一次红石信号可&e切换核反应堆开/关&r"
+				"3号按钮：当反应堆&4热量超过1500K&r时发出红石信号"
+				"4号按钮：当反应堆&4废液无法输出&r时发出红石信号"
+				"5号按钮：当反应堆&4能量无法输出&r时发出红石信号"
+				"6号按钮：当反应堆&4缺乏燃料&r时发出红石信号"
+			]
+			id: "061C2C3866FEFC13"
+			subtitle: "什么？你问我怎么用？"
+			tasks: [{
+				id: "69D4984946544A8F"
+				item: "createdelight:fission_reactor_controller"
+				type: "item"
+			}]
+			x: -6.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["62C31EFDB74E7053"]
+			id: "3C2690F4D829BAAC"
+			tasks: [{
+				id: "6E5699F0EB546472"
+				item: "createdelight:create_in"
+				type: "item"
+			}]
+			x: -9.0d
+			y: 3.5d
 		}
 	]
 	title: "&6超级多方块"

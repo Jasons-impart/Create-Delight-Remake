@@ -7,12 +7,24 @@
 	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
-	quest_links: [{
-		id: "20C58B9D0B7090D6"
-		linked_quest: "24CF527B4E34E599"
-		x: 15.5d
-		y: 6.0d
-	}]
+	quest_links: [
+		{
+			id: "745E5251953BF9CF"
+			linked_quest: "795B3440D2A059C0"
+			shape: "hexagon"
+			size: 2.0d
+			x: 24.5d
+			y: 1.5d
+		}
+		{
+			id: "07940233B5E305CA"
+			linked_quest: "0CF2923758C50BDC"
+			shape: "hexagon"
+			size: 2.0d
+			x: 10.0d
+			y: 5.5d
+		}
+	]
 	quests: [
 		{
 			dependencies: ["39AF291933E03F4C"]
@@ -73,7 +85,6 @@
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
-			description: [""]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -1848,10 +1859,7 @@
 			y: -2.5d
 		}
 		{
-			dependencies: [
-				"24CF527B4E34E599"
-				"64BDB4FEDC5142AF"
-			]
+			dependencies: ["64BDB4FEDC5142AF"]
 			description: [
 				"使用蓝图桌打开 &l&ebread_maker.nbt&r&r"
 				"&b顶端抽屉&r放入&a小麦&r"

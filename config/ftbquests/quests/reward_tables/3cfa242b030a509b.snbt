@@ -1,0 +1,52 @@
+{
+	id: "3CFA242B030A509B"
+	loot_size: 1
+	order_index: 30
+	rewards: [
+		{
+			command: "/summon youkaishomecoming:yukari ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:kochiya_sanae ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:kirisame_marisa ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:komeiji_koishi ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:remilia_scarlet ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:mystia_lorelei ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:sunny_milk ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:clownpiece ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:eternity_larva ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:luna_child ~ ~ ~"
+			type: "command"
+		}
+		{
+			command: "/summon youkaishomecoming:star_sapphire ~ ~ ~"
+			type: "command"
+		}
+	]
+	title: "妖怪们的归家 无法召唤的生物"
+}

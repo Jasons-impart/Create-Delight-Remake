@@ -1,0 +1,33 @@
+{
+	id: "18AC3290C255142F"
+	loot_size: 1
+	order_index: 29
+	rewards: [
+		{ count: 4, item: "minecraft:enchanted_golden_apple", random_bonus: 8 }
+		{ count: 4, item: "youkaishomecoming:con_panna", random_bonus: 8 }
+		{ count: 2, item: "ends_delight:fried_dragon_egg", random_bonus: 2 }
+		{
+			count: 4
+			item: {
+				Count: 1
+				id: "minecraft:potion"
+				tag: {
+					Potion: "minecraft:long_night_vision"
+				}
+			}
+			random_bonus: 8
+		}
+		{
+			count: 4
+			item: {
+				Count: 1
+				id: "minecraft:potion"
+				tag: {
+					Potion: "alexsmobs:strong_knockback_resistance"
+				}
+			}
+			random_bonus: 8
+		}
+	]
+	title: "战斗补给"
+}

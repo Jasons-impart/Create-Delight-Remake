@@ -45,4 +45,14 @@ ServerEvents.recipes(e => {
             'ends_delight:half_dragon_egg_shell'
         ]
     ).id("ends_delight:cutting/dragon_egg_manual_only")
+    
+    e.recipes.vintageimprovements.pressurizing("ends_delight:ender_pearl_grain", [
+        Fluid.of("create_central_kitchen:dragon_breath", 5),
+        "createcafe:raw_boba"
+    ])
+    .id("ends_delight:pressurizing/ender_pearl_grain")
+    e.recipes.create.cutting("4x ends_delight:ender_pearl_grain", "minecraft:ender_pearl")
+    .id("ends_delight:cutting/ender_pearl_grain")
+    e.recipes.create.compacting("minecraft:ender_pearl", ["4x ends_delight:ender_pearl_grain"])
+    .id("ends_delight:compacting/ender_pearl")
 })

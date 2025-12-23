@@ -1,0 +1,8 @@
+{
+  "machine.fission_reactor": {
+    "sounds": [
+      "createdelight:fission_reactor"
+    ],
+    "subtitle": "sound_event.createdelight.machine.fission_reactor"
+  }
+}

@@ -6,11 +6,6 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("create:cogwheel", [
         'create:cogwheel',
         'create:large_cogwheel',
-        'petrolsparts:coaxial_gear',
-        'petrolsparts:large_coaxial_gear',
-        'petrolsparts:differential',
-        'petrolsparts:planetary_gearset',
-        'petrolsparts:colossal_cogwheel'        
     ])
     e.add("create_bs:vaults", [
         'create:item_vault',
@@ -27,11 +22,5 @@ ServerEvents.tags("minecraft:fluid", e => {
         "#forge:molten_materials",
         "netherexp:ectoplasm",
         "the_bumblezone:sugar_water_still"
-    ])
-})
-
-ServerEvents.tags("minecraft:block", e => {
-    e.add("create:wrench_pickup", [
-        "createdelight:andesite_export_bus"
     ])
 })

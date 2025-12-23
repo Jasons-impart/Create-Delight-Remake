@@ -1,0 +1,192 @@
+
+[youkaifying_effect]
+	#Chance for flesh food to add Youkaifying effect for the first time
+	#Range: 0.0 ~ 1.0
+	youkaifyingChance = 0.2
+	#Confusion time when flesh food to add Youkaifying effect for the first time
+	#Range: 0 ~ 1000000
+	youkaifyingConfusionTime = 200
+	#Time for flesh food to add Youkaifying effect
+	#Range: 0 ~ 1000000
+	youkaifyingTime = 1200
+	#Threshold for Youkaifying effect to turn into Youkaified effect
+	#Range: 0 ~ 1000000
+	youkaifyingThreshold = 6000
+	#Youkaified duration once reached
+	#Range: 0 ~ 1000000
+	youkaifiedDuration = 24000
+	#Time for flesh food to add Youkaified effect
+	#Range: 0 ~ 1000000
+	youkaifiedProlongation = 6000
+
+[food_effect]
+	#Smoothing Healing Factor
+	#Range: 1.0 ~ 100.0
+	smoothingHealingFactor = 1.5
+	#Tea Healing Interval
+	#Range: 0 ~ 10000
+	teaHealingPeriod = 60
+	#Udumbara effect Healing Interval
+	#Range: 0 ~ 10000
+	udumbaraHealingPeriod = 60
+	#Udumbara flowering duration
+	#Range: 0 ~ 100000
+	udumbaraDuration = 200
+	#Udumbara full moon damage reduction
+	#Range: 0 ~ 100
+	udumbaraFullMoonReduction = 4
+	#Higi Healing Interval
+	#Range: 0 ~ 10000
+	higiHealingPeriod = 60
+	#Fairy Healing Factor
+	#Range: 1.0 ~ 100.0
+	fairyHealingFactor = 2.0
+
+[suwako_hat]
+	#Number of raiders with different types frogs need to eat in front of villager to drop Suwako hat
+	#Range: 1 ~ 10
+	frogEatCountForHat = 3
+	#Range for villagers with direct sight when frog eat raiders
+	#Range: 1 ~ 64
+	frogEatRaiderVillagerSightRange = 20
+	#Range for villagers without direct sight when frog eat raiders
+	#Range: 1 ~ 64
+	frogEatRaiderVillagerNoSightRange = 10
+
+[koishi_attack]
+	#Enable koishi attack when player has youkaifying or youkaified effect
+	koishiAttackEnable = true
+	#Time in ticks for minimum time between koishi attacks
+	#Range: 1 ~ 1000000
+	koishiAttackCoolDown = 6000
+	#Chance every tick to do koishi attack
+	#Range: 0.0 ~ 1.0
+	koishiAttackChance = 0.001
+	#Koishi attack damage
+	#Range: 0 ~ 100000000
+	koishiAttackDamage = 100
+	#Number of times player needs to consecutively block Koishi attack to get hat
+	#Range: 0 ~ 100
+	koishiAttackBlockCount = 3
+
+[danmaku_battle]
+	#Minimum damage youkai danmaku will deal against non-player
+	#Range: 0.0 ~ 1.0
+	danmakuMinPHPDamage = 0.02
+	#Minimum damage youkai danmaku will deal against player
+	#Range: 0.0 ~ 1.0
+	danmakuPlayerPHPDamage = 0.1
+	#When danmaku hits target, heal youkai health by percentage of max health
+	#Range: 0.0 ~ 1.0
+	danmakuHealOnHitTarget = 0.2
+	#Player item cooldown for using danmaku
+	#Range: 5 ~ 1000
+	playerDanmakuCooldown = 5
+	#Player item cooldown for using laser
+	#Range: 5 ~ 1000
+	playerLaserCooldown = 20
+	#Player item cooldown for using spellcard
+	#Range: 5 ~ 1000
+	playerSpellCooldown = 40
+	#Player laser duration
+	#Range: 5 ~ 1000
+	playerLaserDuration = 100
+	#Enable danmaku damage invulnerability frame against non-player non-youkai mobs.
+	#It's always enabled against player and youkais
+	invulFrameForDanmaku = true
+	#Max resource obtainable from danmaku battle
+	#Range: 4 ~ 20
+	danmakuMaxResource = 10
+	#Max Power player can obtain from grazing
+	#Range: 1 ~ 20
+	danmakuMaxPower = 4
+	#Danmaku damage each level of power increase
+	#Range: 0.0 ~ 1.0
+	danmakuPowerBonus = 0.25
+	#Multiplier for grazing
+	#Range: 0.0 ~ 10.0
+	grazeEffectiveness = 1.0
+	#Danmaku invulnerability and disabled time when you take a hit
+	#Range: 10 ~ 100
+	missInvulTime = 100
+	#Danmaku invulnerability and disabled time when you use a bomb
+	#Range: 10 ~ 100
+	bombInvulTime = 30
+	#Maximum loss of power when you take a hit
+	#Range: 0.0 ~ 10.0
+	maxPowerLossOnMiss = 1.0
+	#Initial life and bomb when you initiate a danmaku battle
+	#Also is the amount of bomb you get when you lose a life
+	#Range: 0 ~ 10
+	initialResource = 2
+	#Initial power when you initiate a danmaku battle
+	#Range: 0 ~ 10
+	initialPower = 1
+
+[rumia]
+	#If Rumia would spawn naturally around her nest if the first one goes too far. Does not affect structure spawn
+	rumiaNaturalSpawn = true
+	#Enable Ex Rumia conversion when Rumia takes too high damage in one hit
+	exRumiaConversion = true
+	#Allow Rumia to cap incoming damage at a factor of max health
+	rumiaDamageCap = true
+	#Enable Rumia healing when having no target
+	rumiaNoTargetHealing = true
+	#Enable Ex Rumia hairband drop
+	rumiaHairbandDrop = true
+
+[reimu]
+	#Summon Reimu when player eats flesh in front of villagers
+	reimuSummonFlesh = true
+	#Summon Reimu when player with youkaified/fying effect kills villager in front of other villagers
+	reimuSummonKill = true
+	#Summon Reimu when player throws emerald or gold into donation box
+	reimuSummonMoney = true
+	#Cost of emerald/gold to summon Reimu
+	#Range: 1 ~ 100000
+	reimuSummonCost = 8
+	#Enable creative flight on Reimu hairband
+	reimuHairbandFlightEnable = true
+	#Enable non-danmaku extra damage cooldown on Reimu
+	reimuExtraDamageCoolDown = true
+	#Enable non-danmaku damage reduction on Reimu
+	reimuDamageReduction = true
+	#If Reimu can be teleported to other dimension
+	canReimuTeleportToOtherDimension = false
+
+[cirno]
+	#Toggle for Cirno natural spawns
+	cirnoSpawn = true
+	#Chance for fairy ice crystal to drop
+	#Range: 0.0 ~ 1.0
+	cirnoFairyDrop = 0.03
+	#Fairies will actively attack players with youkaifying/ed effects
+	fairyAttackYoukaified = true
+	#Chance for fairies to summon other fairies when killed by non-danmaku damage
+	#Range: 0.0 ~ 1.0
+	fairySummonReinforcement = 0.5
+
+[custom_spell]
+	#Max duration of custom spell allowed
+	#Range: 60 ~ 1000
+	customSpellMaxDuration = 60
+	#Ring Spell: Max number of bullet allowed per item cost
+	#Range: 1 ~ 1024
+	ringSpellDanmakuPerItemCost = 32
+	#Homing Spell: Max number of bullet allowed per item cost
+	#Range: 1 ~ 1024
+	homingSpellDanmakuPerItemCost = 8
+
+[touhou_little_maid]
+	#Replace Fairies from Touhou Little Maid with a neutral fairy
+	smallFairyReplacement = false
+	#Chance for small fairies to summon other fairies when killed by non-danmaku damage
+	#Range: 0.0 ~ 1.0
+	smallFairySummonReinforcement = 0.25
+	#Chance for small fairies to summon stronger fairies when they are set to summon reinforcements
+	#Range: 0.0 ~ 1.0
+	smallFairySummonStrongFairy = 0.1
+	#Small Fairy spellcard strength
+	#Range: 0 ~ 4
+	smallFairyStrength = 2
+

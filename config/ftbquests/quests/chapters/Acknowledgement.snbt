@@ -390,7 +390,7 @@
 		}
 		{
 			height: 2.0d
-			image: "crystal_clear:block/andesite_glass_casing"
+			image: "createprism:block/andesite_glass_casing"
 			rotation: 0.0d
 			width: 2.0d
 			x: 17.5d

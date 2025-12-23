@@ -607,7 +607,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 10.0d
-			y: 23.5d
+			y: 24.0d
 		}
 		{
 			height: 3.0d
@@ -628,7 +628,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 11.5d
-			y: 25.5d
+			y: 26.0d
 		}
 		{
 			height: 2.0d
@@ -678,7 +678,7 @@
 			rotation: 0.0d
 			width: 3.0d
 			x: 8.5d
-			y: 25.5d
+			y: 26.0d
 		}
 		{
 			height: 2.0d
@@ -809,7 +809,7 @@
 			y: -15.5d
 		}
 	]
-	order_index: 8
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -2178,6 +2178,7 @@
 			]
 			icon: "youkaishomecoming:red_circle_danmaku"
 			id: "69AAC8A157DAD845"
+			optional: true
 			rewards: [
 				{
 					count: 16
@@ -2236,6 +2237,7 @@
 				}
 			}
 			id: "10067A20519BC920"
+			optional: true
 			rewards: [
 				{
 					count: 32
@@ -2357,6 +2359,7 @@
 			]
 			icon: "youkaishomecoming:spell_reimu"
 			id: "190A9A7EDC051CAF"
+			optional: true
 			rewards: [
 				{
 					exclude_from_claim_all: true
@@ -2769,6 +2772,7 @@
 			]
 			icon: "youkaishomecoming:spell_koishi"
 			id: "545E2B7AF3B7EAB9"
+			optional: true
 			rewards: [
 				{
 					id: "31740283E150974D"
@@ -2828,6 +2832,7 @@
 			]
 			icon: "youkaishomecoming:spell_marisa"
 			id: "2D91D568EEFA33A7"
+			optional: true
 			rewards: [
 				{
 					id: "318BE6CC309DD746"
@@ -2865,7 +2870,7 @@
 			]
 			title: "「普通的魔法使」——雾雨魔理沙"
 			x: 10.0d
-			y: 23.5d
+			y: 24.0d
 		}
 		{
 			dependencies: ["6DBEECC86C2FCFD0"]
@@ -2893,6 +2898,7 @@
 			]
 			icon: "youkaishomecoming:spell_yukari_butterfly"
 			id: "45538B3ACB6A3CC4"
+			optional: true
 			rewards: [
 				{
 					id: "49FC785F1B976515"
@@ -2947,7 +2953,7 @@
 			]
 			title: "「境界的妖怪」——八云紫"
 			x: 11.5d
-			y: 25.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["3D7F0A98AE45B0B0"]
@@ -3062,6 +3068,7 @@
 			hide_dependency_lines: true
 			icon: "youkaishomecoming:spell_marisa"
 			id: "198964DA9E2EBFAB"
+			optional: true
 			rewards: [
 				{
 					id: "1DB6660FC55DCB47"
@@ -3117,6 +3124,7 @@
 			]
 			icon: "youkaishomecoming:spell_sanae"
 			id: "45610D3C4B007ED5"
+			optional: true
 			rewards: [
 				{
 					id: "548FE58E03FA18C7"
@@ -3154,7 +3162,7 @@
 			]
 			title: "「山上的新人神明」——东风谷早苗 "
 			x: 8.5d
-			y: 25.5d
+			y: 26.0d
 		}
 		{
 			dependencies: ["2FA400CBF51BEF6F"]
@@ -3306,6 +3314,7 @@
 			]
 			icon: "youkaishomecoming:spell_remilia"
 			id: "51FD4F2ACBF93F98"
+			optional: true
 			rewards: [
 				{
 					id: "468BD5E79D229163"
@@ -3401,74 +3410,6 @@
 			y: 15.0d
 		}
 		{
-			can_repeat: true
-			dependencies: ["7D27625C61712AD0"]
-			icon: "miners_delight:bat_wing"
-			id: "7CC89113577F9BC9"
-			rewards: [{
-				command: "/summon youkaishomecoming:remilia_scarlet"
-				id: "5AA39D5B81B134AF"
-				title: "召唤蕾米莉亚・斯卡雷特"
-				type: "command"
-			}]
-			shape: "square"
-			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
-			tasks: [
-				{
-					entity: "minecraft:bat"
-					id: "03F8B0643833C763"
-					type: "kill"
-					value: 4L
-				}
-				{
-					consume_items: true
-					count: 12L
-					id: "78518220EA93506B"
-					item: { Count: 12, id: "youkaishomecoming:scarlet_devil_cake" }
-					type: "item"
-				}
-			]
-			title: "浓雾的吸血鬼"
-			x: 15.0d
-			y: 12.5d
-		}
-		{
-			can_repeat: true
-			dependencies: ["2FA400CBF51BEF6F"]
-			icon: "minecraft:nether_star"
-			id: "21CB42610F849B52"
-			rewards: [{
-				command: "/summon youkaishomecoming:clownpiece"
-				id: "2580220D33238CCA"
-				title: "召唤克劳恩皮丝"
-				type: "command"
-			}]
-			shape: "square"
-			subtitle: "因为本整合包未加入车万女仆，所以暂时使用这种召唤方式"
-			tasks: [
-				{
-					entity: "youkaishomecoming:fairy"
-					id: "00C658F151CEA55F"
-					type: "kill"
-					value: 12L
-				}
-				{
-					dimension: "minecraft:the_nether"
-					id: "622A13060BDF17EC"
-					title: "访问维度：下界（The Nether）"
-					type: "dimension"
-				}
-				{
-					id: "0DA3F02C485243BC"
-					title: "确认召唤克劳恩皮丝"
-					type: "checkmark"
-				}
-			]
-			title: "星条旗的小丑"
-			x: 4.0d
-			y: 15.0d
-		}
-		{
 			dependencies: [
 				"480ED2CC514C6B62"
 				"2265CBB2249941E0"
@@ -3512,6 +3453,54 @@
 			title: "月下三妖精！"
 			x: -1.0d
 			y: 15.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["0775224EAD50E581"]
+			description: ["         因为本整合包没有加车万女仆，所以一些生物无法在生存正常召唤，只能通过这种方式来暂时代为召唤。"]
+			icon: "youkaishomecoming:spell_reimu"
+			id: "624102AD1251A51D"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "718FC79CAD8CF598"
+				table_id: 4393864153606541467L
+				type: "choice"
+			}]
+			shape: "square"
+			subtitle: "召唤生物"
+			tasks: [
+				{
+					id: "4C52622665587273"
+					title: "随机妖精"
+					type: "checkmark"
+				}
+				{
+					consume_items: true
+					id: "11BDF01CD928DD15"
+					item: "youkaishomecoming:spell_reimu"
+					type: "item"
+				}
+			]
+			title: "悠然女仆（bushi）"
+			x: 11.5d
+			y: 8.0d
+		}
+		{
+			description: [
+				"妖怪归家的boss们的弹幕都是&e穿透护甲&r的。所以比较推荐&e增加最大血量&r以及准备有&e生命回复&r效果的东西。"
+				"使用&e非弹幕伤害一次只能造成非常少量的伤害&r，所以建议准备了足够多的弹幕或者拥有无限发射某弹幕的装备后再考虑打这些boss。"
+				"当然，本包没有任何主线相关的任务要求必须打败妖怪归家的boss。"
+			]
+			id: "10C17347E0737D62"
+			size: 6.0d
+			subtitle: "机制怪"
+			tasks: [{
+				id: "7E594F7C676DFEAD"
+				title: "打妖怪归家的boss你必须知道的"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: 20.0d
 		}
 	]
 	title: "&e东方幻想乡"

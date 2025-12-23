@@ -1,0 +1,1361 @@
+{
+	autofocus_id: "66D065B43FA2BF50"
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "Ingredient_Essence"
+	group: "7D0A1432AAAD0EBA"
+	icon: "minecraft:wheat"
+	id: "6F878A6424801E5E"
+	images: [
+		{
+			height: 8.0d
+			image: "minecraft:item/pufferfish"
+			order: 1
+			rotation: 0.0d
+			width: 8.0d
+			x: -67.5d
+			y: -17.5d
+		}
+		{
+			height: 8.0d
+			image: "collectorsreap:item/stygian_pomegranate"
+			order: 1
+			rotation: 0.0d
+			width: 8.0d
+			x: -76.0d
+			y: -17.5d
+		}
+		{
+			height: 8.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 8.0d
+			x: -76.0d
+			y: -17.5d
+		}
+		{
+			height: 8.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 8.0d
+			x: -67.5d
+			y: -17.5d
+		}
+		{
+			height: 8.0d
+			image: "minecraft:block/glow_item_frame"
+			rotation: 0.0d
+			width: 8.0d
+			x: -72.0d
+			y: -9.5d
+		}
+		{
+			height: 8.0d
+			image: "minecraft:item/netherite_hoe"
+			rotation: 0.0d
+			width: 8.0d
+			x: -72.0d
+			y: -9.5d
+		}
+	]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "1E6358D568EF8155"
+			size: 1.0d
+			subtitle: "用来榨油呦"
+			tasks: [{
+				id: "378187419BC6084B"
+				item: "vintagedelight:peanut"
+				type: "item"
+			}]
+			x: -70.5d
+			y: -9.0d
+		}
+		{
+			id: "6105AFADE6997A68"
+			size: 1.0d
+			tasks: [{
+				id: "25AC93BDD4C337E0"
+				item: "minecraft:potato"
+				type: "item"
+			}]
+			x: -70.5d
+			y: -12.0d
+		}
+		{
+			id: "2C8A0A4D40645A38"
+			tasks: [{
+				id: "4EFED1532CBC6E4B"
+				item: "minecraft:carrot"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -12.0d
+		}
+		{
+			id: "4DA3084BF7FB8BCD"
+			tasks: [{
+				id: "1D98990887BA507F"
+				item: "minecraft:sugar_cane"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -9.0d
+		}
+		{
+			id: "4CF89D6E0EAA6191"
+			tasks: [{
+				id: "5EB5864DC9A9413E"
+				item: "minecraft:wheat"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -12.0d
+		}
+		{
+			dependencies: ["1E6358D568EF8155"]
+			description: ["种下后长出后，将会把下方的方块转换成&c繁茂草方块&r，&e挖掘后掉落沃土&r"]
+			id: "31A717CF38C46FFC"
+			subtitle: "批量获得沃土？"
+			tasks: [{
+				id: "532CC174A857421D"
+				item: "vintagedelight:magic_peanut"
+				type: "item"
+			}]
+			x: -69.5d
+			y: -9.0d
+		}
+		{
+			id: "4CA1ABF5ED0150F4"
+			subtitle: "恐怖南瓜"
+			tasks: [{
+				id: "361897B59EB82809"
+				item: "minecraft:pumpkin"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -9.0d
+		}
+		{
+			id: "67DE065B095778C4"
+			tasks: [{
+				id: "34E5FCC276FD932C"
+				item: "frycooks_delight:canola"
+				type: "item"
+			}]
+			x: -70.5d
+			y: -8.0d
+		}
+		{
+			id: "105CB7DAFC6CCF85"
+			tasks: [{
+				id: "04A5F99450D74437"
+				item: "festival_delicacies:chinese_cabbage"
+				type: "item"
+			}]
+			x: -69.5d
+			y: -10.0d
+		}
+		{
+			id: "3D72F2D5A1DE9A58"
+			tasks: [{
+				id: "6157CDA4E28A8EAB"
+				item: "festival_delicacies:eggplant"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -10.0d
+		}
+		{
+			id: "3E63AA1AAFDE43A0"
+			tasks: [{
+				id: "32553D21388CEE0D"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "vinery:white_grape"
+					}
+				}
+				title: "Any #vinery:white_grape"
+				type: "item"
+			}]
+			title: "任意白葡萄"
+			x: -73.5d
+			y: -19.0d
+		}
+		{
+			id: "35CFE29C0207239D"
+			tasks: [{
+				id: "59C16038D45F59AF"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "vinery:red_grape"
+					}
+				}
+				title: "Any #vinery:red_grape"
+				type: "item"
+			}]
+			title: "任意红葡萄"
+			x: -73.5d
+			y: -17.0d
+		}
+		{
+			id: "19860C2F6F52152F"
+			tasks: [{
+				id: "775EAE430021927E"
+				item: "nethervinery:crimson_grape"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -16.0d
+		}
+		{
+			id: "50A3C86BF8510F27"
+			tasks: [{
+				id: "36D52E213D6F90AA"
+				item: "nethervinery:warped_grape"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -20.0d
+		}
+		{
+			description: ["必须种在静止的水下方的泥土/草方块/沃土上，共有四个生长阶段，但只有上方一格处为空气时才能长成第三/四阶段，成熟后两格高，收割第二格掉落稻米穗。"]
+			id: "1D1CBC7F0738036B"
+			rewards: [
+				{
+					count: 3
+					id: "381267CFF42D8FF4"
+					item: "farmersdelight:rice_panicle"
+					type: "item"
+				}
+				{
+					id: "423FEB9BF4715A10"
+					type: "xp"
+					xp: 100
+				}
+			]
+			size: 1.0d
+			tasks: [{
+				id: "75F52F23C5ACE681"
+				item: "farmersdelight:rice_panicle"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -12.0d
+		}
+		{
+			id: "1B20A484A5FC9B57"
+			tasks: [{
+				id: "6F0ECE50AD718AAD"
+				item: "festival_delicacies:garlic_chive"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -10.0d
+		}
+		{
+			id: "7844869F89AA50F4"
+			tasks: [{
+				id: "55833F81A366694E"
+				item: "festival_delicacies:greenonion"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -11.0d
+		}
+		{
+			id: "7BF93719AD8A448C"
+			tasks: [{
+				id: "2C64A841B0E319D0"
+				item: "createcafe:cassava_root"
+				type: "item"
+			}]
+			title: "可以做奶茶啦！"
+			x: -69.5d
+			y: -12.0d
+		}
+		{
+			description: [""]
+			id: "06F725765BD4E479"
+			rewards: [
+				{
+					count: 3
+					id: "1F677F8BF638D2C1"
+					item: "farmersdelight:onion"
+					type: "item"
+				}
+				{
+					id: "59042338196E9693"
+					type: "xp"
+					xp: 100
+				}
+			]
+			subtitle: "有点辣眼睛说实话"
+			tasks: [{
+				id: "39E2FCF08429D67F"
+				item: "farmersdelight:onion"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -10.0d
+		}
+		{
+			id: "745E03012C0A03A9"
+			tasks: [{
+				id: "78F7C7EDF77F3858"
+				item: "vintagedelight:ghost_pepper"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -11.0d
+		}
+		{
+			id: "7AECA2A6C18C2F7F"
+			rewards: [
+				{
+					count: 3
+					id: "2F0CFF527C92596B"
+					item: "minecraft:beetroot_seeds"
+					type: "item"
+				}
+				{
+					id: "5E10A7CE4487193E"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "725C505C02C717F4"
+				item: "minecraft:beetroot"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -11.0d
+		}
+		{
+			id: "0C4F87ACA5C4D6D9"
+			rewards: [
+				{
+					count: 3
+					id: "012DC84B62CFCE34"
+					item: "farmersdelight:cabbage_seeds"
+					type: "item"
+				}
+				{
+					id: "1AEBEED5D4E7F083"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "2380A1138DEA5FFE"
+				item: "farmersdelight:cabbage"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -9.0d
+		}
+		{
+			description: [
+				"菌落现在可以在任何亮度下生长，而目生长速度有所增加:"
+				"菌落现在可以被骨粉催熟。但是注意一定要等到蘑菇进入菌落阶段才能使用骨粉催熟。(直接催熟未进入菌落阶段的蘑菇则会生成蘑菇树)"
+			]
+			id: "363BC04C1FDE411C"
+			rewards: [
+				{
+					count: 3
+					id: "1D3830098CA2E770"
+					item: "minecraft:brown_mushroom"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "187084F4E5FF95A8"
+					item: "minecraft:red_mushroom"
+					type: "item"
+				}
+				{
+					id: "660887504E5FC0D2"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [
+				{
+					id: "50D3A87A3D4ACCB6"
+					item: "minecraft:brown_mushroom"
+					type: "item"
+				}
+				{
+					id: "0C1159BB38E3917D"
+					item: "minecraft:red_mushroom"
+					type: "item"
+				}
+			]
+			x: -74.5d
+			y: -8.0d
+		}
+		{
+			id: "468B3D8EE192C5B2"
+			subtitle: "会&4爆炸&r的辣椒！"
+			tasks: [{
+				id: "760D9518F83C2890"
+				item: "mynethersdelight:bullet_pepper"
+				type: "item"
+			}]
+			x: -70.5d
+			y: -11.0d
+		}
+		{
+			id: "722C511B0AA86ECD"
+			tasks: [{
+				id: "451FC9F0ECBE0EA9"
+				item: "festival_delicacies:garlic"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -11.0d
+		}
+		{
+			id: "31CA5B28794F4C00"
+			tasks: [{
+				id: "2E1A263C34FD4552"
+				item: "festival_delicacies:fennel"
+				type: "item"
+			}]
+			x: -69.5d
+			y: -11.0d
+		}
+		{
+			id: "49425FF8BFE2D564"
+			tasks: [{
+				id: "2D21D37324E9D242"
+				item: "culturaldelights:eggplant"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -10.0d
+		}
+		{
+			id: "52D3BDA7B642C045"
+			tasks: [{
+				id: "701CE61CF232F8FA"
+				item: "vintagedelight:cucumber"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -8.0d
+		}
+		{
+			id: "13AB0B4F1DC4D460"
+			tasks: [{
+				id: "5B44915FB25D786A"
+				item: "farmersdelight:tomato"
+				type: "item"
+			}]
+			x: -70.5d
+			y: -10.0d
+		}
+		{
+			id: "1FAB5DB4D7BD1C14"
+			tasks: [{
+				id: "28462952F475CD4E"
+				item: "vintagedelight:oat"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -12.0d
+		}
+		{
+			id: "6FAEFDA0867E48CA"
+			subtitle: "黯紫浆果丛生成于&e黑森林&r"
+			tasks: [{
+				id: "6A2E55D520C849F1"
+				item: "vintagedelight:gearo_berry"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -18.0d
+		}
+		{
+			id: "4E91F3B0C9186CF4"
+			subtitle: "发光浆果生成于&e繁茂洞穴&r中"
+			tasks: [{
+				id: "17F02FBF9F2F0281"
+				item: "minecraft:glow_berries"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -17.0d
+		}
+		{
+			description: [""]
+			id: "0127B9E281D268BF"
+			rewards: [{
+				id: "7687C54875C4BD7D"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "蓝莓自然生成于&e针叶林、原始云杉针叶林、原始松木针叶林、积雪的针叶林、雪林、沼泽、红树林沼泽、风袭丘陵、风袭森林群系&r"
+			tasks: [{
+				id: "28DFB858D2E0617D"
+				item: "fruitsdelight:blueberry"
+				type: "item"
+			}]
+			x: -78.5d
+			y: -17.0d
+		}
+		{
+			id: "550FA243BA7B736F"
+			rewards: [{
+				id: "0610CCCF2A566067"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "甜浆果丛生成于所有&e针叶林生物群系变种"
+			tasks: [{
+				id: "4AD04521009A25BE"
+				item: "minecraft:sweet_berries"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -18.0d
+		}
+		{
+			description: [""]
+			id: "25C77A4F65494D2A"
+			rewards: [{
+				id: "5C2DB668B57C47CA"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "蔓越莓丛生成于&e丛林&r、&e沼泽&r、&e红树林沼泽&r和&e黑森林&r"
+			tasks: [{
+				id: "43FDEB3499F228C4"
+				item: "fruitsdelight:cranberry"
+				type: "item"
+			}]
+			x: -75.5d
+			y: -18.0d
+		}
+		{
+			description: [""]
+			id: "0063494FD35EF1DE"
+			rewards: [{
+				id: "79A270158A99D91C"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "山楂树生成于&e针叶林&r、&e原始云杉针叶林&r和&e原始松木针叶林&r"
+			tasks: [{
+				id: "6768F71743BA80F1"
+				item: "fruitsdelight:hawberry"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -18.0d
+		}
+		{
+			id: "0BC1A48C5F7E4AD0"
+			subtitle: "石榴生长于下界的&9诡异森林&r中"
+			tasks: [{
+				id: "1F41CD8451A6EB11"
+				item: "collectorsreap:pomegranate"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -16.0d
+		}
+		{
+			dependencies: ["0BC1A48C5F7E4AD0"]
+			id: "1ABB1CC7C1D6566E"
+			secret: true
+			subtitle: "种植于&9复生沃土&r上产生的特殊产物"
+			tasks: [{
+				id: "0AE3C77C5837336D"
+				item: "collectorsreap:stygian_pomegranate"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -15.0d
+		}
+		{
+			id: "27F5863D1F72F4D5"
+			secret: true
+			subtitle: "&2不是哥们？这也能产出经验？"
+			tasks: [{
+				id: "0C149DAED122A8B3"
+				item: "quark:ancient_fruit"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -15.0d
+		}
+		{
+			id: "2532FCB37BA9E159"
+			rewards: [{
+				id: "7A5C76F29A4633D0"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "哈密瓜生成于&e沙漠&r，破坏后可获得&e哈密瓜片"
+			tasks: [{
+				id: "59F56E1A2A4A486F"
+				item: "fruitsdelight:hamimelon_slice"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -16.0d
+		}
+		{
+			id: "326F31C128FA35F7"
+			rewards: [{
+				id: "4E14B7C590A11635"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "西瓜生成于&e丛林&r，破坏后可获得&e西瓜片"
+			tasks: [{
+				id: "491F6CC83D8A0BA8"
+				item: "minecraft:melon_slice"
+				type: "item"
+			}]
+			x: -78.5d
+			y: -16.0d
+		}
+		{
+			id: "43D20AFE4D13389F"
+			rewards: [{
+				id: "3891A6A378174A4A"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "苹果树生成于&e森林&r与&e繁花森林&r，或&e橡树树叶&r概率掉落"
+			tasks: [{
+				id: "7F92331C061AFCFC"
+				item: "minecraft:apple"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -17.0d
+		}
+		{
+			description: [""]
+			id: "7EE6074FA3805A00"
+			rewards: [{
+				id: "07AF948CDD5E253E"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "橘子树自然生成于&e森林&r和&e繁花森林&r"
+			tasks: [{
+				id: "358377D636EA4E59"
+				item: "fruitsdelight:orange"
+				type: "item"
+			}]
+			x: -75.5d
+			y: -17.0d
+		}
+		{
+			id: "3848C15C02538184"
+			rewards: [{
+				id: "244445E783401118"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "柿子树生成于&e积雪的针叶林&r和&e雪林&r"
+			tasks: [{
+				id: "3C4D413AFF543E18"
+				item: "fruitsdelight:persimmon"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -17.0d
+		}
+		{
+			id: "60A76054159A37F7"
+			rewards: [{
+				id: "2770636513A8A92E"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "梨树生成于&e桦木森林&r与&e原始桦木森林&r"
+			tasks: [{
+				id: "53A69FA2DB5CF273"
+				item: "fruitsdelight:pear"
+				type: "item"
+			}]
+			x: -78.5d
+			y: -20.0d
+		}
+		{
+			id: "07886F18ABB7C8D1"
+			rewards: [{
+				id: "5D751EDC1FEC5A6A"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "水蜜桃树生成于&e稀疏丛林&r。"
+			tasks: [{
+				id: "72564063541AAF49"
+				item: "fruitsdelight:peach"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -20.0d
+		}
+		{
+			description: ["&e重力方块&r，不可直接食用，榴莲&e成熟后&r会&4从树叶上掉落&r并造成&4伤害"]
+			id: "1C4EA0FC584EFC28"
+			rewards: [{
+				id: "136C5E6002FA454F"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "榴莲树极其少量自然生成于&e沼泽&r、&e红树林沼泽&r、&e丛林&r、&e竹林&r和&e稀疏的丛林"
+			tasks: [{
+				id: "29B15EDEB93F3CCC"
+				item: "fruitsdelight:durian"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -20.0d
+		}
+		{
+			id: "44BEB5F11CE04C38"
+			tasks: [
+				{
+					id: "0F5D35C51DA740B2"
+					item: "trailandtales_delight:pitcher_plant"
+					type: "item"
+				}
+				{
+					id: "5902A4FB8EB1520E"
+					item: "minecraft:pitcher_pod"
+					type: "item"
+				}
+			]
+			x: -75.5d
+			y: -16.0d
+		}
+		{
+			description: ["别想了，不能&e喂狼"]
+			id: "59A6B34D8607FD6A"
+			rewards: [{
+				id: "39DB6648D8B9C2AA"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "菠萝生成于&e沙滩&r"
+			tasks: [{
+				id: "6136E372191F2637"
+				item: "fruitsdelight:pineapple"
+				type: "item"
+			}]
+			x: -75.5d
+			y: -20.0d
+		}
+		{
+			id: "1F65F7E3A19CA174"
+			rewards: [{
+				id: "6EBBB71D8AB9DD96"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "芒果树生成于&e丛林&r和&e竹林&r"
+			tasks: [{
+				id: "753AA597E2E60D62"
+				item: "fruitsdelight:mango"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -20.0d
+		}
+		{
+			id: "6CB6E1848E1C721A"
+			rewards: [{
+				id: "072E1365A9CABEEC"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "荔枝树生成于&e丛林&r和&e竹林&r。"
+			tasks: [{
+				id: "5A0D0FCBD4D6CF9B"
+				item: "fruitsdelight:lychee"
+				type: "item"
+			}]
+			x: -78.5d
+			y: -19.0d
+		}
+		{
+			id: "0D00E629D80816CF"
+			rewards: [{
+				id: "2938225EE0D9ED91"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "黄柠檬生成于&e平原&r"
+			tasks: [{
+				id: "6C28EBAFF66B91FC"
+				item: "fruitsdelight:lemon"
+				type: "item"
+			}]
+			x: -77.5d
+			y: -19.0d
+		}
+		{
+			id: "665D3BAA652CF952"
+			subtitle: "青柠生成于&e繁花森林"
+			tasks: [{
+				id: "23874BA4D63CB64E"
+				item: "collectorsreap:lime"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -19.0d
+		}
+		{
+			id: "057212DC8E0B9AF9"
+			subtitle: "紫颂果生成于&5末地外岛"
+			tasks: [{
+				id: "6EA7A323D0907869"
+				item: "minecraft:chorus_fruit"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -18.0d
+		}
+		{
+			id: "7C53FFA4AC6FEDC3"
+			rewards: [{
+				id: "319DC16FACB503A5"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "无花果树生成于&e森林&r和&e繁花森林"
+			tasks: [{
+				id: "2D59E5F67E424863"
+				item: "fruitsdelight:fig"
+				type: "item"
+			}]
+			x: -75.5d
+			y: -19.0d
+		}
+		{
+			id: "1CD404F45F375D7E"
+			rewards: [{
+				id: "3B4ED88E290DE0FF"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "山竹树生成于&e丛林&r、&e沼泽&r和&e红树林沼泽&r"
+			tasks: [{
+				id: "0C0BF2464140BE06"
+				item: "fruitsdelight:mangosteen"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -19.0d
+		}
+		{
+			id: "6470CEFC832AE325"
+			subtitle: "牛油果树生成于&e稀疏丛林"
+			tasks: [{
+				id: "72C427233D498F45"
+				item: "culturaldelights:avocado"
+				type: "item"
+			}]
+			x: -78.5d
+			y: -18.0d
+		}
+		{
+			id: "0DEAA38692CAC333"
+			rewards: [{
+				id: "4EBC827A829C08DD"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7FF7C2264F4295B9"
+				item: "minecraft:nautilus_shell"
+				type: "item"
+			}]
+			x: -68.5d
+			y: -15.0d
+		}
+		{
+			dependencies: ["0DEAA38692CAC333"]
+			id: "5CA3F160913BD18D"
+			rewards: [{
+				id: "7291D5D7AA82AD5F"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "612BA6D324FC0397"
+				item: "crabbersdelight:stuffed_nautilus_shell"
+				type: "item"
+			}]
+			x: -67.5d
+			y: -15.0d
+		}
+		{
+			id: "2F7BE3A06FA611D6"
+			rewards: [{
+				id: "7210AFC23B361092"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "4142A0656A970633"
+				item: "crabbersdelight:clam"
+				type: "item"
+			}]
+			x: -65.5d
+			y: -16.0d
+		}
+		{
+			dependencies: ["2F7BE3A06FA611D6"]
+			id: "798FED2BBC13BE23"
+			rewards: [{
+				id: "41DABEC629D7A010"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "09AF4948EE8D4B73"
+				item: "crabbersdelight:raw_clam_meat"
+				type: "item"
+			}]
+			x: -66.5d
+			y: -15.0d
+		}
+		{
+			id: "437DDAAF6F64D0E0"
+			rewards: [{
+				id: "7917F0AA643E86E6"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "碰到就会气鼓鼓的"
+			tasks: [{
+				id: "56D7B88E3DA1FC70"
+				item: "minecraft:pufferfish"
+				type: "item"
+			}]
+			x: -66.0d
+			y: -18.0d
+		}
+		{
+			id: "20220744AEF253DA"
+			rewards: [{
+				id: "4BDA38F82CEE019A"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7411C8D02D848550"
+				item: "culturaldelights:squid"
+				type: "item"
+			}]
+			x: -70.0d
+			y: -17.0d
+		}
+		{
+			id: "2911C4E82D85C333"
+			subtitle: "有的地区会叫田鸡"
+			tasks: [{
+				id: "75845C63335F6E02"
+				item: "crabbersdelight:raw_frog_leg"
+				type: "item"
+			}]
+			x: -65.0d
+			y: -18.0d
+		}
+		{
+			id: "4C5DB06DC3540875"
+			rewards: [{
+				id: "1D20E8AD723B0624"
+				type: "xp"
+				xp: 100
+			}]
+			subtitle: "宵夜摊常客"
+			tasks: [{
+				id: "750974F04BDE483F"
+				item: "crabbersdelight:clawster"
+				type: "item"
+			}]
+			x: -67.5d
+			y: -16.0d
+		}
+		{
+			id: "7AA98D07FF5E4B1D"
+			rewards: [{
+				id: "4E837B105946E004"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "2850018EFD6045C7"
+				item: "crabbersdelight:crab"
+				type: "item"
+			}]
+			x: -68.0d
+			y: -17.0d
+		}
+		{
+			id: "284F00D6766657E8"
+			rewards: [{
+				id: "0DDB6202A55C9771"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "7A8A44EC2C9CF1D6"
+				item: "crabbersdelight:shrimp"
+				type: "item"
+			}]
+			x: -67.0d
+			y: -17.0d
+		}
+		{
+			id: "26B5D1D5BFD13C23"
+			tasks: [{
+				id: "29FE7B9E0C4CD5D4"
+				item: "festival_delicacies:artemisia_argyi"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -9.0d
+		}
+		{
+			id: "26F22F8298BE5703"
+			tasks: [{
+				id: "05EED7FB0067DCD4"
+				item: "minecraft:sunflower"
+				type: "item"
+			}]
+			x: -69.5d
+			y: -8.0d
+		}
+		{
+			id: "34B6F55EF4870370"
+			subtitle: "杜鹃莓由&e杜鹃树叶&r掉落"
+			tasks: [{
+				id: "79F332103CC03CF4"
+				item: "cosmopolitan:arbutus_berries"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -16.0d
+		}
+		{
+			id: "764710C3DCB2C8D5"
+			tasks: [{
+				id: "0886B73F644A11E3"
+				item: "culturaldelights:glow_squid"
+				type: "item"
+			}]
+			x: -69.0d
+			y: -17.0d
+		}
+		{
+			id: "22389E9F1F3C9808"
+			tasks: [{
+				id: "27EC2674EC78E7BC"
+				item: "alexsmobs:cosmic_cod"
+				type: "item"
+			}]
+			x: -65.5d
+			y: -19.0d
+		}
+		{
+			id: "6299163251FDC3BE"
+			tasks: [{
+				id: "10A17533CF913537"
+				item: "minecraft:cod"
+				type: "item"
+			}]
+			x: -70.0d
+			y: -18.0d
+		}
+		{
+			id: "5CBA00B2B32D6EC8"
+			tasks: [{
+				id: "32CADD9D571B34A3"
+				item: "minecraft:salmon"
+				type: "item"
+			}]
+			x: -69.0d
+			y: -18.0d
+		}
+		{
+			id: "4588324DE4ADA440"
+			tasks: [{
+				id: "6F4A5EE0ACCDBC56"
+				item: "minecraft:tropical_fish"
+				type: "item"
+			}]
+			x: -68.0d
+			y: -18.0d
+		}
+		{
+			id: "6C35ED9C90ADDB54"
+			tasks: [{
+				id: "7DC8FB1C6397C1B5"
+				item: "alexscaves:radgill"
+				type: "item"
+			}]
+			x: -67.0d
+			y: -18.0d
+		}
+		{
+			id: "2FFDBD19DD91942B"
+			tasks: [{
+				id: "2A01FF9254CAF0D5"
+				item: "alexscaves:lanternfish"
+				type: "item"
+			}]
+			x: -65.0d
+			y: -20.0d
+		}
+		{
+			id: "511DA716AF8B3F7F"
+			tasks: [{
+				id: "1274EFA1A9E972DA"
+				item: "alexscaves:tripodfish"
+				type: "item"
+			}]
+			x: -69.5d
+			y: -19.0d
+		}
+		{
+			id: "24D0817E053333FA"
+			tasks: [{
+				id: "6AC3F1D6B68F1307"
+				item: "alexsmobs:blobfish"
+				type: "item"
+			}]
+			x: -68.5d
+			y: -19.0d
+		}
+		{
+			id: "03001757BEE321E5"
+			tasks: [{
+				id: "67F685EC0D2DEBC5"
+				item: "alexsmobs:flying_fish"
+				type: "item"
+			}]
+			x: -67.5d
+			y: -19.0d
+		}
+		{
+			id: "44064FE76E5F9BE5"
+			tasks: [{
+				id: "698A0625F3C8A976"
+				item: "create_bic_bit:raw_herring"
+				type: "item"
+			}]
+			x: -66.5d
+			y: -19.0d
+		}
+		{
+			id: "1DCFE492DB7E7B6F"
+			tasks: [{
+				id: "0B4A69A289C60902"
+				item: "collectorsreap:platinum_bass"
+				type: "item"
+			}]
+			x: -70.0d
+			y: -20.0d
+		}
+		{
+			id: "0F8874777A3934D4"
+			tasks: [{
+				id: "4C7768846BBFF39F"
+				item: "youkaishomecoming:raw_lamprey"
+				type: "item"
+			}]
+			x: -69.0d
+			y: -20.0d
+		}
+		{
+			id: "1BB9E6B567C04C47"
+			tasks: [{
+				id: "3B6CB46103AD975F"
+				item: "alexscaves:trilocaris_tail"
+				type: "item"
+			}]
+			x: -66.0d
+			y: -17.0d
+		}
+		{
+			id: "791FDFAD89CBD414"
+			tasks: [{
+				id: "630B418EEFAED863"
+				item: "collectorsreap:tiger_prawn"
+				type: "item"
+			}]
+			x: -65.0d
+			y: -17.0d
+		}
+		{
+			id: "6748C3803B272710"
+			tasks: [{
+				id: "24D663D5D1CF9035"
+				item: "collectorsreap:urchin"
+				type: "item"
+			}]
+			x: -68.5d
+			y: -16.0d
+		}
+		{
+			id: "5A8C2AA05BF2A603"
+			tasks: [{
+				id: "4F21AF8BB6B1EEB6"
+				item: {
+					Count: 1
+					id: "collectorsreap:chieftain_crab_bucket"
+					tag: {
+						Health: 25.0f
+					}
+				}
+				type: "item"
+			}]
+			x: -69.5d
+			y: -16.0d
+		}
+		{
+			id: "25425115FD2F6424"
+			tasks: [{
+				id: "32B5108F76C8766F"
+				item: "collectorsreap:clam"
+				type: "item"
+			}]
+			x: -66.5d
+			y: -16.0d
+		}
+		{
+			id: "609F6EAFD3834FA9"
+			tasks: [{
+				id: "1162BEBEBE3E2884"
+				item: "youkaishomecoming:raw_tuna"
+				type: "item"
+			}]
+			x: -68.0d
+			y: -20.0d
+		}
+		{
+			id: "02E3F7F8ABF7176A"
+			tasks: [{
+				id: "0EA3C14098F12BFF"
+				item: "youkaishomecoming:otoro"
+				type: "item"
+			}]
+			x: -67.0d
+			y: -20.0d
+		}
+		{
+			id: "19E7F23AF6D603FC"
+			tasks: [{
+				id: "5A77C01F63548332"
+				item: "alexsmobs:raw_catfish"
+				type: "item"
+			}]
+			x: -66.0d
+			y: -20.0d
+		}
+		{
+			id: "3FB24F70796A5923"
+			tasks: [{
+				id: "588180204D39D4B6"
+				item: "youkaishomecoming:udumbara_flower"
+				type: "item"
+			}]
+			x: -72.5d
+			y: -8.0d
+		}
+		{
+			id: "7216A5DD93CD16FE"
+			tasks: [
+				{
+					id: "5A5624BC3FF969CD"
+					item: "youkaishomecoming:mandrake_root"
+					type: "item"
+				}
+				{
+					id: "0BB831B620F2EA09"
+					item: "youkaishomecoming:mandrake_flower"
+					type: "item"
+				}
+			]
+			x: -71.5d
+			y: -8.0d
+		}
+		{
+			id: "73B8BB960DE1A575"
+			tasks: [{
+				id: "05BA1B40B3BDDE0B"
+				item: "youkaishomecoming:soybean"
+				type: "item"
+			}]
+			x: -74.5d
+			y: -7.0d
+		}
+		{
+			id: "3E63BAD5F2C0AFEB"
+			tasks: [{
+				id: "231C8F36D70A6D3C"
+				item: "createdelight:adzuki_beans_seed"
+				type: "item"
+			}]
+			x: -73.5d
+			y: -7.0d
+		}
+		{
+			id: "368552762EC9FE42"
+			min_required_tasks: 1
+			tasks: [
+				{
+					id: "66FA7A51564A1261"
+					item: "culturaldelights:corn_kernels"
+					type: "item"
+				}
+				{
+					id: "6D663BBE2DF0E1C6"
+					item: "culturaldelights:corn_cob"
+					type: "item"
+				}
+			]
+			x: -72.5d
+			y: -7.0d
+		}
+		{
+			id: "7D2C2A6FBEE79381"
+			tasks: [{
+				id: "35585369A12E0899"
+				item: "trailandtales_delight:pitcher_taro"
+				type: "item"
+			}]
+			x: -71.5d
+			y: -7.0d
+		}
+		{
+			id: "5167C57FF05E882C"
+			tasks: [{
+				id: "0458A4966A1DA017"
+				item: "trailandtales_delight:lantern_fruit"
+				type: "item"
+			}]
+			x: -76.5d
+			y: -15.0d
+		}
+	]
+	title: "&b食材本味"
+}

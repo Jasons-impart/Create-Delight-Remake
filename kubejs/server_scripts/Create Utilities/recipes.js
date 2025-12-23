@@ -51,18 +51,17 @@ ServerEvents.recipes(e => {
         ]
     ).id("createutilities:shaped/void_tank")
     e.recipes.create.item_application(
-        "createutilities:void_motor",
-        [
-            "createutilities:void_casing",
-            "createutilities:graviton_tube"
-        ]
-    ).id("createutilities:shaped/void_motor")
-    e.recipes.create.item_application(
         "functionalstorage:ender_drawer",
         [
             "#functionalstorage:drawer",
             "createutilities:graviton_tube"
         ]
     ).id("functionalstorage:ender_drawer")
-
+    e.recipes.create.deploying(
+        "createutilities:void_motor",
+        [
+            "createutilities:void_casing",
+            "createutilities:graviton_tube"
+        ]
+    ).id("createutilities:void_motor")
 })

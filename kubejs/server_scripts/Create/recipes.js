@@ -11,11 +11,134 @@ ServerEvents.recipes(e => {
         "create:splashing/iceandfire/crushed_raw_silver",
         "create:mixing/brass_ingot",
         "create:filling/compat/neapolitan/milk_bottle",
-        "create:industrial_iron_block_from_ingots_iron_stonecutting",
+        "create:crafting/kinetics/empty_blaze_burner",
+        "create:crafting/schematics/schematicannon",
+        "create:crafting/logistics/andesite_tunnel",
+        "create:crafting/logistics/andesite_funnel",
+        "create:crafting/logistics/packager",
+        "create:crafting/kinetics/mechanical_harvester",
+        "minecraft:chain",
+        "create:crafting/appliances/chain_from_zinc",
+        "create:crafting/logistics/package_frogport",
+        "create:crafting/materials/transmitter",
+        "create:crafting/logistics/stock_link",
     ])
     remove_recipes_output(e, [
         "create:pulp"
     ])
+    e.recipes.create.milling(
+        [
+            'createdelight:carbon_dust'
+        ],
+        'createmetallurgy:graphite',
+    ).id("createdelight:milling/carbon_dust")
+    e.recipes.vintageimprovements.pressurizing(
+        "createdelight:carbon_plate",
+        [
+            "createdelight:carbon_dust"
+        ], 200
+    )
+        .heated()
+        .id("createdelight:pressurizing/carbon_plate")
+    e.shaped("create:stock_link",
+        [
+            "A",
+            "B",
+            "C"
+        ], {
+            A: "create:transmitter",
+            B: "create:item_vault",
+            C: "create:brass_casing",
+        }
+    )
+    .id("create:crafting/logistics/stock_link")
+    e.shaped("create:transmitter",
+        [
+            "A",
+            "B",
+            "C"
+        ], {
+            A: "minecraft:lightning_rod",
+            B: "createaddition:copper_spool",
+            C: "minecraft:redstone",
+        }
+    )
+    .id("create:crafting/materials/transmitter")
+    e.shaped("create:package_frogport",
+        [
+            "A",
+            "B",
+            "C"
+        ], {
+            A: "iceandfire:chain_sticky",
+            B: "create:item_vault",
+            C: "create:andesite_casing",
+        }
+    )
+    .id("create:crafting/logistics/package_frogport")
+    e.shaped("minecraft:chain",
+        [
+            "B",
+            "A",
+            "B"
+        ], {
+            A: "createaddition:iron_rod",
+            B: "minecraft:iron_nugget"
+        }
+    )
+    .id("minecraft:chain")
+    e.shaped("minecraft:chain",
+        [
+            "B",
+            "A",
+            "B"
+        ], {
+            A: "vintageimprovements:zinc_rod",
+            B: "create:zinc_nugget"
+        }
+    )
+    .id("create:crafting/appliances/chain_from_zinc")
+    e.shaped("create:mechanical_harvester",
+        [
+            "ABA",
+            "ABA",
+            " C "
+        ], {
+            A: "create:iron_sheet",
+            B: "createaddition:iron_rod",
+            C: "create:andesite_casing",
+        }
+    )
+    .id("create:crafting/kinetics/mechanical_harvester")
+    e.shaped("create:packager",
+        [
+            " A ",
+            "ABA",
+            "CAC",
+        ], {
+            A: "create:iron_sheet",
+            B: "create:cardboard_block",
+            C: "minecraft:redstone",
+        }
+    ).id("create:crafting/logistics/packager")
+    e.shaped("create:andesite_tunnel",
+        [
+            "AA",
+            "BB"
+        ], {
+            A: "createdeco:andesite_sheet",
+            B: "minecraft:dried_kelp",
+        }
+    ).id("create:crafting/logistics/andesite_tunnel")
+    e.shaped("create:andesite_funnel",
+        [
+            "A",
+            "B"
+        ], {
+            A: "createdeco:andesite_sheet",
+            B: "minecraft:dried_kelp",
+        }
+    ).id("create:crafting/logistics/andesite_funnel")
     // 闪长岩合成配方优化
     e.recipes.create.mixing(
         'minecraft:diorite',
@@ -24,11 +147,22 @@ ServerEvents.recipes(e => {
             'minecraft:quartz'
         ]
     ).id("create:mixing/diorite")
-    // 黑曜石粉末粉碎
-    e.recipes.create.milling(
-        Item.of("create:powdered_obsidian").withChance(0.3),
-        'minecraft:obsidian'
-    ).id("create:milling/powdered_obsidian")
+    // 方解石压块塑形配方
+    e.recipes.create.compacting(
+        'minecraft:calcite',
+        [
+            'minecraft:flint', 
+            'minecraft:bone_block', 
+            Fluid.of('minecraft:lava', 100)
+        ]
+    ).id("createdelight:compacting/calcite")
+    // 早期 纸板低效率合成配方
+    e.recipes.create.compacting(
+        'create:cardboard',
+        [
+            '3x minecraft:paper',
+        ]
+    ).id("createdelight:compacting/cardboard")
     // 新增配方：粗锌块烧成锌块
     e.recipes.minecraft.blasting("create:zinc_block", "create:raw_zinc_block")
     e.recipes.minecraft.smelting("create:zinc_block", "create:raw_zinc_block")
@@ -49,6 +183,24 @@ ServerEvents.recipes(e => {
         "create:polished_rose_quartz",
         "create:rose_quartz"
     ).id("create:cutting/polished_rose_quartz")
+    // 解决玫瑰石英配方冲突
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_block', input: 'create:rose_quartz' })
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:rose_quartz_tiles', input: 'create:polished_rose_quartz' })
+    e.remove({ type: 'minecraft:stonecutting', output: 'create:small_rose_quartz_tiles', input: 'create:polished_rose_quartz' })
+    // 玫瑰石英块/砖
+    e.shaped('8x create:rose_quartz_block', [
+        'AA',
+        'AA'
+    ], {
+        A: 'create:rose_quartz'
+    }).id('create:crafting/rose_quartz_block')
+    
+    e.shaped('8x create:rose_quartz_tiles', [
+        'AA',
+        'AA'
+    ], {
+        A: 'create:polished_rose_quartz'
+    }).id('create:crafting/rose_quartz_tiles')
     // 动力锯切割：磨制紫水晶
     e.recipes.create.cutting(
         'createutilities:polished_amethyst',
@@ -83,11 +235,24 @@ ServerEvents.recipes(e => {
         "ABA",
         " C "
     ], {
-        A: "#forge:spring/below_500",
+        A: "create:copper_sheet",
         B: "create:copper_casing",
         C: "minecraft:dried_kelp"
     }
     ).id("create:crafting/kinetics/spout")
+
+    e.recipes.kubejs.shaped( "create:schematicannon",
+    [
+        "D D",
+        "CAC",
+        "BBB"
+    ], {
+        A: "minecraft:dispenser",
+        B: "minecraft:smooth_stone",
+        C: "#minecraft:logs",
+        D: "create:iron_sheet"
+    }
+    ).id("create:crafting/schematics/schematicannon")
     e.recipes.kubejs.shaped(
         "2x create:steam_engine", [
         " A ",
@@ -272,14 +437,19 @@ ServerEvents.recipes(e => {
         .loops(2)
         .id("create:sequenced_assembly/tiny_tnt")
 
-    e.recipes.kubejs.shaped("2x create:empty_blaze_burner", [
+    e.recipes.kubejs.shaped("create:empty_blaze_burner", [
         " A ",
         "ABA",
         " A "
     ], {
-        A: "#forge:plates/cast_iron",
+        A: "createaddition:iron_rod",
         B: "minecraft:netherrack"
-    }).id("create:empty_blaze_burner_from_cast_iron")
+    }).id("create:empty_blaze_burner_from_iron_rods")
+    
+    e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
+        .id("create:industrial_iron_block_from_steel_ingot")
+    e.recipes.minecraft.stonecutting("6x create:industrial_iron_block", "createmetallurgy:steel_ingot")
+        .id("create:weathered_iron_block_from_steel_ingot")
     // 甜甜圈
     e.recipes.create.filling(
         "create:sweet_roll",
@@ -406,7 +576,7 @@ ServerEvents.recipes(e => {
     })
     e.recipes.create.mixing(
         "create:pulp", 
-        Fluid.of("createdelight:paper_pulp", 250))
+        Fluid.of("createdelight:paper_pulp", 50))
         .heated()
         .id("createdelight:mixing/pulp")
     let stone_milling = [
@@ -440,4 +610,16 @@ ServerEvents.recipes(e => {
         "2x ratatouille:sausage_casing",
         "minecraft:slime_ball"
     ).id("create:cutting/sausage")
+
+    // 海绵压块塑形配方
+    e.recipes.create.compacting(
+        '2x minecraft:sponge',
+        [
+            'minecraft:sponge',
+            '4x alexscaves:ping_pong_sponge',
+            Fluid.of("minecraft:water",50),
+        ]
+    )
+    .heated()
+    .id("createdelight:compacting/sponge")
 })

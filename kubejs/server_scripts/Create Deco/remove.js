@@ -14,7 +14,8 @@ ServerEvents.recipes(e => {
         "createdeco:pressing/coins/iron_coin",
         "createdeco:pressing/coins/gold_coin",
         "createdeco:pressing/coins/netherite_coin",
-        "createdeco:industrial_iron_ingot_from_industrial_iron_block"
+        "createdeco:industrial_iron_ingot_from_industrial_iron_block",
+        "createdeco:industrial_iron_block"
     ])
     remove_recipes_output(e, [
         'createdeco:netherite_nugget',

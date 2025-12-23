@@ -20,7 +20,12 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/hammer",
     "createdieselgenerators:crafting/huge_diesel_engine",
     "createdieselgenerators:crafting/large_diesel_engine",
-    "createdieselgenerators:crushing/wood_chip_logs"
+    "createdieselgenerators:crushing/wood_chip_logs",
+    "createdieselgenerators:mechanical_crafting/chemcial_sprayer",
+    "createdieselgenerators:deploying/chemical_sprayer_lighter",
+    "createdieselgenerators:crafting/chemical_turret",
+    "createdieselgenerators:crafting/chemical_turret_lighter",
+    "createdieselgenerators:crushing/wood_chip_casings"
   ]);
   create.crushing(["31x createdieselgenerators:wood_chip",
       Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
@@ -28,7 +33,7 @@ ServerEvents.recipes(e => {
   "#minecraft:logs")
   .id("createdieselgenerators:crushing/wood_chip_logs/with_bark")
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
-  e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/cast_iron")
+  e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
   e.replaceInput({ id: "createdieselgenerators:basin_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ id: "createdieselgenerators:bulk_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ mod: "createdieselgenerators" }, "create:propeller", "ad_astra:fan")

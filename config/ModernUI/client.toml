@@ -12,6 +12,9 @@
 	#Add Gaussian blur effect to GUI background when opened.
 	#Disable this if you run into a problem or are on low-end PCs
 	blurEffect = false
+	#This option means that blur effect only applies to GUI screens with a background.
+	#Similar to Minecraft 1.20.6. Enable this for better optimization & compatibility.
+	blurWithBackground = true
 	#The kernel radius for gaussian convolution blur effect, 0 = disable.
 	#samples per pixel = ((radius * 2) + 1) * 2, sigma = radius / 2.
 	#Range: 0 ~ 18
@@ -34,16 +37,13 @@
 	#This value will be no greater than master volume inactive.
 	#Range: 0.0 ~ 1.0
 	masterVolumeMinimized = 0.25
-	#This option means that blur effect only applies to GUI screens with a background.
-	#Similar to Minecraft 1.20.6. Enable this for better optimization & compatibility.
-	blurWithBackground = true
 
 #Tooltip Config
 [tooltip]
 	#Whether to enable Modern UI enhanced tooltip, or back to vanilla default.
-	enable = true
+	enable = false
 	#Whether to use rounded tooltip shapes, or to use vanilla style.
-	roundedShape = false
+	roundedShape = true
 	#True to center the tooltip title if rendering an item's tooltip.
 	#Following lines are not affected by this option.
 	centerTitle = true
@@ -51,33 +51,33 @@
 	#TitleBreak and CenterTitle will work/appear at the same time.
 	titleBreak = true
 	#True to exactly position tooltip to pixel grid, smoother movement.
-	exactPositioning = false
+	exactPositioning = true
 	#The tooltip background color in #RRGGBB or #AARRGGBB format. Default: #E6000000
 	#Can be one to four values representing top left, top right, bottom right and bottom left color.
 	#Multiple values produce a gradient effect, whereas one value produces a solid color.
 	#If less than 4 are provided, repeat the last value.
-	colorFill = ["#D4000000"]
+	colorFill = ["#E6000000"]
 	#The tooltip border color in #RRGGBB or #AARRGGBB format. Default: #F0AADCF0, #F0DAD0F4, #F0FFC3F7 and #F0DAD0F4
 	#Can be one to four values representing top left, top right, bottom right and bottom left color.
 	#Multiple values produce a gradient effect, whereas one value produces a solid color.
 	#If less than 4 are provided, repeat the last value.
-	colorStroke = ["#F0AADCF0", "#F0DAD0F4", "#F0FFC3F7", "#F0DAD0F4"]
+	colorStroke = ["#FFC2D0D6", "#FFE7DAE5", "#FFCCDAC8", "#FFC8B9AC"]
 	#The cycle time of tooltip border color in milliseconds. (0 = OFF)
 	#Range: 0 ~ 5000
 	borderCycleTime = 1000
 	#The width of tooltip border, if rounded, in GUI Scale Independent Pixels.
 	#Range: 0.5 ~ 2.5
-	borderWidth = 1.3300000429153442
+	borderWidth = 1.3333333333333333
+	#The corner radius of tooltip border, if rounded, in GUI Scale Independent Pixels.
+	#Range: 0.0 ~ 8.0
+	cornerRadius = 4.0
 	#The shadow radius of tooltip, if rounded, in GUI Scale Independent Pixels.
 	#No impact on performance.
 	#Range: 0.0 ~ 32.0
 	shadowRadius = 10.0
-	#The corner radius of tooltip border, if rounded, in GUI Scale Independent Pixels.
-	#Range: 0.0 ~ 8.0
-	cornerRadius = 3.0
 	#The shadow opacity of tooltip, if rounded. No impact on performance.
 	#Range: 0.0 ~ 1.0
-	shadowOpacity = 0.3499999940395355
+	shadowOpacity = 0.25
 	#When true, tooltip border colors adapt to item's name and rarity.
 	adaptiveColors = true
 	#Amount to scroll the tooltip in response to a arrow key pressed event.
@@ -90,7 +90,7 @@
 	ding = true
 	#Press 'C' key (by default) to zoom 4x, the same as OptiFine's.
 	#This is auto disabled when OptiFine is installed.
-	zoom = false
+	zoom = true
 	#Control the window mode, normal mode does nothing.
 	#Allowed Values: NORMAL, FULLSCREEN, FULLSCREEN_BORDERLESS, MAXIMIZED, MAXIMIZED_BORDERLESS, WINDOWED, WINDOWED_BORDERLESS
 	windowMode = "NORMAL"
@@ -171,10 +171,7 @@
 	#Note that for TTC/OTC font, you should register it and select one of font families.
 	#Otherwise, only the first font family from the TrueType/OpenType Collection will be used.
 	#This is only read once when the game is loaded, you can reload via in-game GUI.
-	fallbackFontFamilyList = ["Noto Sans", "Segoe UI", "San Francisco", "Open Sans", "SimHei", "STHeiti", "Segoe UI Variable", "mui-i18n-compat"]
-	#Whether to use Google Noto Color Emoji, otherwise grayscale emoji (faster).
-	#See Unicode 15.0 specification for details on how this affects text layout.
-	useColorEmoji = true
+	fallbackFontFamilyList = ["Noto Sans", "Segoe UI Variable", "Segoe UI", "San Francisco", "Open Sans", "SimHei", "STHeiti", "Segoe UI Symbol", "mui-i18n-compat"]
 	#A set of additional font files (or directories) to register.
 	#For TrueType/OpenType Collections, all contained font families will be registered.
 	#Registered fonts can be referenced in Modern UI and Minecraft (Modern Text Engine).
@@ -182,6 +179,9 @@
 	#System requires random access to these files, you should not remove them while running.
 	#This is only read once when the game is loaded, i.e. registration.
 	fontRegistrationList = []
+	#Whether to use Google Noto Color Emoji, otherwise grayscale emoji (faster).
+	#See Unicode 15.0 specification for details on how this affects text layout.
+	useColorEmoji = true
 	#When enabled, text layout uses fractional metrics with no font hinting and applies sub-pixel positioning.
 	#When disabled, text layout uses integer metrics with full font hinting.
 	linearMetrics = true

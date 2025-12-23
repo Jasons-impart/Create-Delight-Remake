@@ -21,6 +21,7 @@
 !/.packwizignore
 !/.hmclversion.cfg
 !/.clientonlymodlist
+!/.serveronlymodlist
 !/.options.txt
 !/DevGuide.md
 !/client_jvm_args.example.txt

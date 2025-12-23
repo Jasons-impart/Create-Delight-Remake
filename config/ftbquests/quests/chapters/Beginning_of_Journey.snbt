@@ -306,12 +306,12 @@
 					type: "item"
 				}
 				{
-					id: "6C8AD2540108F3C3"
+					id: "2A73EB28223CFDD0"
 					item: {
 						Count: 1
 						id: "gateways:gate_pearl"
 						tag: {
-							gateway: "gateways:basic/slime"
+							gateway: "gateways:basic/blaze"
 						}
 					}
 					type: "item"
@@ -431,7 +431,7 @@
 		}
 		{
 			dependencies: ["4321131AB2437B04"]
-			description: ["         下界要塞（Nether Fortress）是一种自然生成于下界的结构，由许多桥梁、走廊与塔楼组成。但是实际上这些怪物并非来自于下届要塞，它们更加强大，令人恐惧。这让我们意识到，也许在某处，存在着不同于这个世界的结构，而裂隙正是两个世界或维度之间联系的桥梁。"]
+			description: ["         下界要塞（Nether Fortress）是一种自然生成于下界的结构，由许多桥梁、走廊与塔楼组成。但是实际上这些怪物并非来自于下界要塞，它们更加强大，令人恐惧。这让我们意识到，也许在某处，存在着不同于这个世界的结构，而裂隙正是两个世界或维度之间联系的桥梁。"]
 			id: "14BAD5E84CB36736"
 			rewards: [
 				{

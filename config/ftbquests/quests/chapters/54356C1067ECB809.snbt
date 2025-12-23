@@ -1,0 +1,776 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "54356C1067ECB809"
+	group: "14CFC96B5B37F10B"
+	icon: "create_new_age:generator_coil"
+	id: "54356C1067ECB809"
+	order_index: 2
+	quest_links: [
+		{
+			id: "22D01ADAD4616F68"
+			linked_quest: "6EB96008F21DAFBF"
+			shape: "circle"
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			id: "0180D3A673FAA934"
+			linked_quest: "4458E27C5252B296"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			id: "2A9CBAC961B413BC"
+			linked_quest: "35F33D9F772B4551"
+			shape: "circle"
+			x: -4.0d
+			y: 5.5d
+		}
+		{
+			id: "04B1E039517A83A4"
+			linked_quest: "6DBEF23BA8608F4B"
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			id: "436EA6738DF1DFE8"
+			linked_quest: "2CC8B87D086B3275"
+			shape: "hexagon"
+			size: 2.0d
+			x: -7.0d
+			y: 3.0d
+		}
+		{
+			id: "35D0EEE249C353CB"
+			linked_quest: "002D0D42090AF488"
+			shape: "hexagon"
+			size: 2.0d
+			x: 4.5d
+			y: 4.0d
+		}
+	]
+	quests: [
+		{
+			dependencies: ["6EB96008F21DAFBF"]
+			id: "1ADBDFB31928124D"
+			shape: "square"
+			subtitle: "记得管道要连接到&4基岩&r上！"
+			tasks: [{
+				id: "3AC97109BB7FD888"
+				item: "createdieselgenerators:oil_scanner"
+				type: "item"
+			}]
+			title: "寻找原油！然后开发！"
+			x: -1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["1ADBDFB31928124D"]
+			description: [
+				"组装方式可看：https://www.bilibili.com/video/BV1z1421Z7ax "
+				"抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装完毕"
+			]
+			hide_until_deps_visible: true
+			icon: "createdieselgenerators:pumpjack_crank"
+			id: "43B45F9D2DC4BD3E"
+			rewards: [{
+				id: "4013E54D1442DFC7"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			subtitle: "非常难做的抽油机，强烈建议对照思索建造"
+			tasks: [
+				{
+					id: "21730CD203A63AFB"
+					item: "createdieselgenerators:pumpjack_bearing"
+					type: "item"
+				}
+				{
+					id: "7166F10AFA1A094F"
+					item: "createdieselgenerators:pumpjack_head"
+					type: "item"
+				}
+				{
+					id: "5FC6CE5E5190C4B9"
+					item: "createdieselgenerators:pumpjack_hole"
+					type: "item"
+				}
+				{
+					id: "3F59BADB72CC0EA3"
+					item: "createdieselgenerators:pumpjack_crank"
+					type: "item"
+				}
+				{
+					id: "4140E609BECE9455"
+					item: "create:fluid_pipe"
+					type: "item"
+				}
+			]
+			title: "石油大亨的第一步！"
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["1ADBDFB31928124D"]
+			description: [""]
+			id: "16E31AE06BF8CE13"
+			rewards: [{
+				count: 9
+				id: "3864CCE25D855EC8"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			subtitle: "搭建&e分馏塔&r，从而开启&5石油炼化&r！"
+			tasks: [{
+				id: "10CD9BD0B5F80CE7"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			dependencies: ["1A10B417B7C082DF"]
+			id: "692E9718A4E1F811"
+			size: 1.0d
+			subtitle: "吼吼吼！"
+			tasks: [{
+				id: "15E6D868014AB3E1"
+				item: "createdieselgenerators:diesel_engine"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.5d
+		}
+		{
+			dependencies: [
+				"692E9718A4E1F811"
+				"1A10B417B7C082DF"
+			]
+			id: "1AAA21CD44B36815"
+			rewards: [{
+				id: "3C70F5DD03156E31"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.0d
+			subtitle: "单位空间下极致的应力效率"
+			tasks: [{
+				id: "4903E879E49DC3F7"
+				item: "createdieselgenerators:large_diesel_engine"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"692E9718A4E1F811"
+				"1AAA21CD44B36815"
+				"081AEF9714B8960E"
+			]
+			hide_until_deps_visible: true
+			id: "0C33D433CB5C97E5"
+			rewards: [{
+				count: 3
+				id: "7248F08CB9202DB7"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "&e太吵了&r！实在是&4太吵了&r！"
+			tasks: [{
+				id: "79DC39D870E2C4AF"
+				item: "createdieselgenerators:engine_silencer"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"43B45F9D2DC4BD3E"
+				"16E31AE06BF8CE13"
+			]
+			icon: "createdieselgenerators:crude_oil_bucket"
+			id: "61A945984843E55A"
+			rewards: [{
+				id: "7D4A6E933F19184E"
+				item: {
+					Count: 1
+					id: "minecraft:flint_and_steel"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "&4警告！！！\\n&r一切柴油机燃料接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r都可能会&4爆炸&r！！！"
+			tasks: [{
+				icon: "createdieselgenerators:crude_oil_bucket"
+				id: "3EC3BC0630EC3A9C"
+				stat: "minecraft:play_time"
+				title: "开始石油时代"
+				type: "stat"
+				value: 1
+			}]
+			title: "石油炼化工艺！"
+			x: 1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"6DBEF23BA8608F4B"
+				"1ADBDFB31928124D"
+			]
+			id: "1A10B417B7C082DF"
+			shape: "square"
+			subtitle: "&4毋庸置疑&r的&e魅力&r！"
+			tasks: [{
+				icon: "createdieselgenerators:engine_turbocharger"
+				id: "623600AC495BEF51"
+				stat: "minecraft:play_time"
+				title: "内燃机！"
+				type: "stat"
+				value: 1
+			}]
+			x: -1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"1AAA21CD44B36815"
+				"081AEF9714B8960E"
+				"692E9718A4E1F811"
+			]
+			id: "1CD3AA0F0A453C62"
+			subtitle: "&e涡轮增压&r！我是&4超级改车王&r！"
+			tasks: [{
+				id: "3B1A79A5F2B4910D"
+				item: "createdieselgenerators:engine_turbocharger"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["61A945984843E55A"]
+			id: "24FAD19B32A0FEBE"
+			subtitle: "&e直接分馏&r或者&4加工后分馏"
+			tasks: [{
+				id: "2F33D51054EC7BB5"
+				item: "createdieselgenerators:crude_oil_bucket"
+				type: "item"
+			}]
+			x: 3.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["24FAD19B32A0FEBE"]
+			id: "5EB7ED288E82C023"
+			subtitle: "更&e彻底&r的应用原油！更&e快速&r的应用原油！"
+			tasks: [{
+				id: "341DDD982810CEBD"
+				item: "createdelight:light_crude_oil_bucket"
+				type: "item"
+			}]
+			x: 4.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["5EB7ED288E82C023"]
+			id: "65602AA94EEB3AA3"
+			tasks: [{
+				id: "611B55784533271A"
+				item: "createdelight:ethylene_fluid_bucket"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"5EB7ED288E82C023"
+				"24FAD19B32A0FEBE"
+			]
+			dependency_requirement: "one_completed"
+			id: "4E1668942F94DB7C"
+			tasks: [{
+				id: "506FFBD96BCD07CE"
+				item: "createdieselgenerators:diesel_bucket"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"5EB7ED288E82C023"
+				"24FAD19B32A0FEBE"
+			]
+			dependency_requirement: "one_completed"
+			id: "1033CA5B5B983290"
+			tasks: [{
+				id: "038B8611A3020142"
+				item: "createdieselgenerators:gasoline_bucket"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5EB7ED288E82C023"]
+			id: "1568A6972CBA1592"
+			tasks: [{
+				id: "6ECE4DE5113C2789"
+				item: "createdelight:lubricating_oil_bucket"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"1033CA5B5B983290"
+				"4E1668942F94DB7C"
+			]
+			id: "59E1D11E91310AA3"
+			tasks: [{
+				id: "2DCB222EABDB4D1B"
+				item: "createdelight:fuel_mixtures_bucket"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["61A945984843E55A"]
+			id: "530B929865B8E11B"
+			subtitle: "油料存进可以&e防爆&r！&e豪用&r！"
+			tasks: [{
+				id: "485D76DD3071845C"
+				item: "createdieselgenerators:oil_barrel"
+				type: "item"
+			}]
+			x: 1.5d
+			y: -0.5d
+		}
+		{
+			dependencies: ["43B45F9D2DC4BD3E"]
+			description: ["打开蓝图桌搜索&epumpjack.nbt&r"]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						6
+						16
+					]
+					Deployed: 0b
+					File: "pumpjack.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "1C15411E37F6A896"
+			rewards: [{
+				id: "105CA8D198D47B3C"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			tasks: [{
+				id: "0705391803740AC7"
+				type: "checkmark"
+			}]
+			title: "抽油机蓝图"
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["24FAD19B32A0FEBE"]
+			description: [
+				"打开蓝图桌搜索&eoil_refinery.nbt&r"
+				"插分馏塔控制器，往抽屉里加石油，让烈焰人干活（无需超燃），加应力，完事。"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						6
+						16
+					]
+					Deployed: 0b
+					File: "pumpjack.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "7CE7C533E8A267F0"
+			rewards: [{
+				id: "777F432BA2F1A054"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			subtitle: "你甚至可以把它藏进工厂夹层！"
+			tasks: [{
+				id: "147879D962784545"
+				type: "checkmark"
+			}]
+			title: "最丐单片石油精炼厂蓝图"
+			x: 3.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "5E075B9E7A889DF2"
+			secret: true
+			size: 1.0d
+			tasks: [
+				{
+					id: "778BDFA2C9308649"
+					item: "alexscaves:block_of_scarlet_neodymium"
+					type: "item"
+				}
+				{
+					id: "3D5C30DC1309147F"
+					item: "alexscaves:block_of_azure_neodymium"
+					type: "item"
+				}
+			]
+			title: "磁铁维度的特殊产物"
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"2034DC15562715B2"
+				"7BA43E50785D2492"
+			]
+			id: "5586CC958FF191C5"
+			size: 1.0d
+			subtitle: "减速！增大扭矩！"
+			tasks: [{
+				id: "755BB9E2B8990342"
+				item: "createdelight:planet_gear"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["7BA43E50785D2492"]
+			id: "2034DC15562715B2"
+			shape: "circle"
+			size: 1.0d
+			subtitle: "比电动马达转化效率更高！应力更强！"
+			tasks: [{
+				id: "28BEB553111D0273"
+				item: "create_new_age:basic_motor"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"3CB8FDF09F47FD4F"
+				"007A93F26730F6F0"
+			]
+			id: "36E5C4C6A8E9DAB5"
+			shape: "circle"
+			size: 1.0d
+			subtitle: "采用尖端放电进行充能"
+			tasks: [{
+				id: "706355E893B4CE8C"
+				item: "create_new_age:energiser_t1"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2034DC15562715B2"]
+			id: "657B0199F1F6BC9A"
+			size: 1.0d
+			tasks: [{
+				id: "010E4549CE7BA651"
+				item: "create_new_age:advanced_motor"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["657B0199F1F6BC9A"]
+			id: "183ED0CEDF627017"
+			size: 1.0d
+			tasks: [{
+				id: "3FC4E3A01DE47555"
+				item: "create_new_age:reinforced_motor"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["36E5C4C6A8E9DAB5"]
+			id: "40D0657E9DDB5663"
+			size: 1.0d
+			subtitle: "激光激发！"
+			tasks: [{
+				id: "2CD1A33502541B2A"
+				item: "create_new_age:energiser_t2"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["40D0657E9DDB5663"]
+			id: "7D7F82D2E50E2CDF"
+			size: 1.0d
+			subtitle: "钻石充能！"
+			tasks: [{
+				id: "7BA290D7428578CF"
+				item: "create_new_age:energiser_t3"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5586CC958FF191C5"]
+			id: "037F074C7A3AACF5"
+			size: 1.0d
+			subtitle: "超频！400%人类感谢！"
+			tasks: [{
+				id: "0029A7C17CA33063"
+				item: "create_new_age:basic_motor_extension"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["037F074C7A3AACF5"]
+			id: "4346D9DC0525D683"
+			size: 1.0d
+			subtitle: "超到冒烟！1000%的人类感谢！"
+			tasks: [{
+				id: "0232BB698CCD4636"
+				item: "create_new_age:advanced_motor_extension"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["35F33D9F772B4551"]
+			id: "007A93F26730F6F0"
+			rewards: [{
+				id: "4988ECBB3745E4E2"
+				item: "ad_astra:etrionic_core"
+				random_bonus: 3
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "电力器械的核心部件"
+			tasks: [{
+				id: "719EEDF319631604"
+				item: "ad_astra:etrionic_core"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"007A93F26730F6F0"
+				"35F33D9F772B4551"
+			]
+			id: "3CB8FDF09F47FD4F"
+			rewards: [{
+				count: 3
+				id: "1ED7940863577832"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.0d
+			subtitle: "你的第一个电力源!"
+			tasks: [{
+				id: "3A4510150979636D"
+				item: "createaddition:alternator"
+				type: "item"
+			}]
+			title: "旋转起来！"
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["4458E27C5252B296"]
+			id: "2F0B3291F14AAA89"
+			rewards: [{
+				id: "22635BC82C9D788A"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			shape: "circle"
+			size: 1.0d
+			subtitle: "强大, 但是有点卡?"
+			tasks: [
+				{
+					id: "2DB6DCE9C9F2B5CB"
+					item: "create_new_age:generator_coil"
+					type: "item"
+				}
+				{
+					id: "12A42D34B94B6B30"
+					item: "create_new_age:carbon_brushes"
+					type: "item"
+				}
+			]
+			title: "感谢法拉第！"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"3CB8FDF09F47FD4F"
+				"007A93F26730F6F0"
+			]
+			dependency_requirement: "one_completed"
+			hide_until_deps_visible: true
+			id: "7506866B743A60C1"
+			rewards: [{
+				count: 3
+				id: "1AFD7DF6F50AD16C"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "摸这个会被电吗？"
+			tasks: [{
+				id: "343572112DFCFA1C"
+				item: "createaddition:connector"
+				type: "item"
+			}]
+			title: "小型连接器"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			id: "7DA3417CB0E6E7DB"
+			rewards: [{
+				id: "7204F07714B3B84B"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			size: 1.0d
+			tasks: [{
+				id: "48FA24AEF202F105"
+				item: "createaddition:capacitor"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"7DA3417CB0E6E7DB"
+				"007A93F26730F6F0"
+			]
+			id: "39D218E0652E1CE0"
+			rewards: [{
+				count: 3
+				id: "1D79BA603CCD9485"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "超超超超大的蓄电池"
+			tasks: [{
+				id: "362F55100242D671"
+				item: "createaddition:modular_accumulator"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["007A93F26730F6F0"]
+			id: "7BA43E50785D2492"
+			rewards: [{
+				count: 3
+				id: "72F0D811DB91CBC6"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "一半的损耗（应力->电力->应力）"
+			tasks: [{
+				id: "43BEA6B93B6CA71A"
+				item: "createaddition:electric_motor"
+				type: "item"
+			}]
+			title: "电生磁磁生电"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["1A10B417B7C082DF"]
+			id: "081AEF9714B8960E"
+			tasks: [{
+				id: "3A1F87D199AE297D"
+				item: "createdieselgenerators:huge_diesel_engine"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["7506866B743A60C1"]
+			id: "462CF1F71BC69A50"
+			tasks: [{
+				id: "6BDA2FCB3031E5EE"
+				item: "createaddition:large_connector"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["462CF1F71BC69A50"]
+			id: "5A8B370796F17329"
+			tasks: [{
+				id: "4DAEEEC60F692F61"
+				item: "createaddition:superconducting_connector"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 5.0d
+		}
+	]
+	title: "&5石油电力"
+}

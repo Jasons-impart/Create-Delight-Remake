@@ -1,5 +1,4 @@
 name: 发布版本
-run-name: 正在发布新版本🚀
 
 on:
   push:
@@ -133,6 +132,13 @@ jobs:
           |||
           EOF
           cat "$VERSION_FILE_PATH"
+      # - name: 删除仅服务端模组
+      #   run: |
+      #       mapfile -t prefixes < .serveronlymodlist
+      #       for prefix in "${prefixes[@]}"; do
+      #         echo "Deleting files with prefix: $prefix"
+      #         find mods -name "${prefix}*" -exec rm {} +
+      #       done
       - name: 更新文件索引
         run: |
           ./packwiz refresh
@@ -213,7 +219,13 @@ jobs:
             rm -f pack.toml
             rm -f index.toml
             rm -f client_jvm_args.example.txt
-
+      - name: 安装服务端only模组
+        run: |
+            # 从.serveronlymodlist中读取模组URL
+            mapfile -t urls < .serveronlymodlist
+            for url in "${urls[@]}"; do
+              curl -O -L "$url" --output-dir "mods"
+            done
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < .clientonlymodlist

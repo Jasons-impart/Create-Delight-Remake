@@ -12,8 +12,20 @@ ServerEvents.recipes(e => {
         "create_sa:experience_sword_recipe",
         "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
         "create_sa:zinc_handle_recipe",
-        "create_sa:block_picker_recipe"
+        "create_sa:block_picker_recipe",
+        "create_sa:flamethrower_recipe",
+        "create_sa:copper_magnet_recipe",
     ])
+    e.shaped("create_sa:copper_magnet",
+        [
+            "AAA",
+            "ABA",
+            "AAA"
+        ], {
+            A: "create:copper_sheet",
+            B: "create_new_age:magnetite_block",
+        }
+    ).id("create_sa:copper_magnet_recipe")
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:precision_mechanism", [
         e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_copper", 450)]),

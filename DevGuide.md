@@ -20,6 +20,7 @@
 - 以新配方替换原配方时，最好用相同的配方 id 直接覆盖。
 - 小刀的配方应当使用cutting_2函数增加，其会将tetra的模块化刀的配方一并加入。
 - 需要加入离心机的配方时请考虑使用centrifugation函数，其会加入三种离心机（vintageimprovement，小型，大型）的配方。
+- 序列组装配方在编写时要格外留意冲突问题，从相同初始物开始：未注册中间产物的情况下，N步配方的最后一步不能和其他的配方的第N步完全相同；有中间产物情况下则第一步不能和其他配方第一步相同
 
 ### commit规范
 - 可以参考https://www.conventionalcommits.org/zh-hans/v1.0.0/#%e7%ba%a6%e5%ae%9a%e5%bc%8f%e6%8f%90%e4%ba%a4%e8%a7%84%e8%8c%83
@@ -88,22 +89,24 @@
   - 渲染优化 https://www.mcmod.cn/class/5312.html
 - Vanillin
   - 飞轮实体渲染优化 https://www.mcmod.cn/class/19260.html
+- Accelerated Rendering
+  - 大量实体或拥有大量顶点的复杂Mod实体的渲染性能优化 https://www.mcmod.cn/class/21060.html
 - Colorwheel
   - 使得飞轮优化可以兼容光影 https://www.mcmod.cn/class/20111.html
 - Create Better FPS
   - 机械动力在光影下的优化 https://www.mcmod.cn/class/18864.html
+- Entity Culling
+  - 实体渲染机制优化 https://www.mcmod.cn/class/3629.html
 - CullLessLeaves Reforged
   - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
 - Flerovium
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
-- Radium Reforged
-  - 优化各种原版机制计算方法 https://www.mcmod.cn/class/5580.html
+- Canary
+  - 锂的forge移植，优化各种原版机制计算方法 https://www.mcmod.cn/class/7598.html
 - moestweaks
   - 关闭配方书 https://www.mcmod.cn/class/17039.html
-- Noisium
-  - 区块生成性能优化 https://www.mcmod.cn/class/12724.html
 - C2ME - forge
   - 优化区块生成、I/O、加载 https://www.mcmod.cn/class/21774.html
 - FerriteCore
@@ -112,14 +115,16 @@
   - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
 - fastboot
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
-- AllTheLeaks (Memory Leak Fix)
-  - 修复内存泄漏 https://www.mcmod.cn/class/17405.html
 - Create: Fast Schematic Cannon
   - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
 - Krypton Reforged
   - 优化MC的网络堆栈 https://www.mcmod.cn/class/5146.html
 - Biomespy
   - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
+- DSBG
+  - 关闭setblock in far chunk警告，本包里adastra等模组在生成时会频繁触发这个警报，有卡服风险。 https://www.mcmod.cn/class/14239.html
+- Create: LazyTick
+  - 优化机械动力机器的性能 https://www.curseforge.com/minecraft/mc-mods/create-lazytick
 
 # 考虑中的实用模组
 - 卓越火炬

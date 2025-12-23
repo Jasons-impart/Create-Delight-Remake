@@ -12,7 +12,7 @@
 		}
 	}
 	id: "4410FF62709D6209"
-	order_index: 6
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -812,6 +812,7 @@
 		}
 		{
 			dependencies: ["200082B554934FD9"]
+			description: ["如果你发现穿上这个胸甲后手臂上是紫黑块而不是装甲，这是机素防护mod本身的问题，属于已知bug，无需再次反馈给制作组。"]
 			id: "645028C3AFF23ABD"
 			rewards: [{
 				id: "21F57B45131A0421"

@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "minecraft:nether_star"]),
         create.deploying(incomplete, [incomplete, "iceandfire:witherbone"]),
-        create.deploying(incomplete, [incomplete, "art_of_forging:sigil_of_eden"]),
+        create.deploying(incomplete, [incomplete, "art_of_forging:sigil_of_eden"]).keepHeldItem(),
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/piercing_withering_trial")
@@ -112,7 +112,7 @@ ServerEvents.recipes(e => {
         create.cutting(incomplete, incomplete),
         create.pressing(incomplete,incomplete),
         create.deploying(incomplete, [incomplete, "alexscaves:fissile_core"]),
-        create.deploying(incomplete, [incomplete, "alexscaves:nuclear_bomb"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:nuclear_bomb"]).keepHeldItem(),
         create.deploying(incomplete, [incomplete, "alexscaves:tremorzilla_egg"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/a_place_of_melting")
@@ -134,9 +134,9 @@ ServerEvents.recipes(e => {
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:gazing_pearl"]),
         create.pressing(incomplete,incomplete),
+        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
         vintageimprovements.vibrating(incomplete, incomplete),
-        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
-        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:immortal_embryo"]),
         create.deploying(incomplete, [incomplete, "alexscaves:magic_conch"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/the_legacy_of_the_abyss")

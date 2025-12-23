@@ -1,0 +1,52 @@
+{
+  "parent": "eclipticseasons:quests/summer_start",
+  "criteria": {
+    "core_require": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:melon"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "parent_need": {
+      "conditions": {
+        "parent": "eclipticseasons:quests/summer_start"
+      },
+      "trigger": "eclipticseasons:parent"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.eclipticseasons.summer_harvest.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:melon"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.eclipticseasons.summer_harvest"
+    }
+  },
+  "requirements": [
+    [
+      "parent_need"
+    ],
+    [
+      "core_require"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "eclipticseasons:gifts/summer_greenhouse_essence"
+    ]
+  },
+  "sends_telemetry_event": true
+}

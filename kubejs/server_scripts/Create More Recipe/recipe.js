@@ -18,7 +18,13 @@ ServerEvents.recipes(e => {
         "ABA",
         " A "
     ], {
-        A: "#forge:plates/cast_iron",
+        A: "createdeco:industrial_iron_sheet",
         B: "minecraft:snow_block"
     }).id("cmr:empty_snowman_cooler_from_cast_iron")
+})
+
+ServerEvents.tags("item", e => {
+    e.remove("cmr:snowman_cooler_fuel/regular", [
+        'minecraft:powder_snow_bucket'
+    ])
 })

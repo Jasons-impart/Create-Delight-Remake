@@ -1,6 +1,7 @@
 
 const $TableClothBlockEntity = Java.loadClass("com.simibubi.create.content.logistics.tableCloth.TableClothBlockEntity")
 const $PackageEntity = Java.loadClass("com.simibubi.create.content.logistics.box.PackageEntity")
+let Order = global.Order
 MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
     let event = e.event
     const { machine } = event
@@ -45,11 +46,12 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                     if (find != null) {
                         if (order != null) {
                             let o = find.nbt.createdelightOrderInfo
-                            console.log(packages.serializeNBT())
+                            // console.log(packages.serializeNBT())
                             let nums = Order.checkAllPackages([o], packages)
-                            let reward = Order.customerProperties[o.type].reward
+                            let customer = Order.customerProperties[o.type]
+                            let reward = customer.reward
                             if (reward == null)
-                                reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
+                                reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么则为以类型为名的战利品表
                             let list = Utils.newList()
 
                             for (let i = 0; i < nums[0] * reward[1] * o.entries.length; i++) {
@@ -59,7 +61,10 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                                 })
                             }
                             // let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
-
+                            let money = Order.calculateMoneyReward(o) * nums[0] * customer.reward_money
+                            MoneyUtil.convertBaseValueToItems(money).forEach(item => {
+                                list.add(item)
+                            })
                             let pList = []
                             for (let i = 0; i < list.length; i += 9) {
                                 pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))
@@ -99,7 +104,8 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                 if (order != null) {
                     let o = order.nbt.createdelightOrderInfo
                     let nums = Order.checkAllPackages([o], packages)
-                    let reward = Order.customerProperties[o.type].reward
+                    let customer = Order.customerProperties[o.type]
+                    let reward = customer.reward
                     if (reward == null)
                         reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
                     let list = Utils.newList()
@@ -110,6 +116,10 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                             list.add(item)
                         })
                     }
+                    let money = Order.calculateMoneyReward(o) * nums[0] * customer.reward_money
+                    MoneyUtil.convertBaseValueToItems(money).forEach(item => {
+                        list.add(item)
+                    })
                     let pList = []
                     for (let i = 0; i < list.length; i += 9) {
                         pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))

@@ -18,7 +18,7 @@ ServerEvents.tags("minecraft:item", e => {
     ])
     e.removeAllTagsFrom([
         'collectorsreap:tiger_prawn_roe',
-        'collectorsreap:platinum_bass_roe'
+        'collectorsreap:platinum_bass_roe',
     ])
     e.add("minecraft:fishes", [
         'youkaishomecoming:roasted_lamprey',
@@ -54,5 +54,10 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("forge:pufferfish", [
         'minecraft:pufferfish',
         'crabbersdelight:pufferfish_slice'
+    ])
+})
+ServerEvents.tags("block", e => {
+    e.removeAllTagsFrom([
+        'youkaishomecoming:coffea',
     ])
 })

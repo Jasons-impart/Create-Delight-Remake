@@ -241,10 +241,11 @@ ServerEvents.recipes(e => {
     {
         let iner = "createaddition:electrum_ingot"
         create.sequenced_assembly("vvaddon:mine_ingot", "createaddition:electrum_ingot", [
-            create.deploying(iner, [iner, "vintageimprovements:redstone_module"]),
+            create.deploying(iner, [iner, "ae2:charged_certus_quartz_crystal"]),
             create.deploying(iner, [iner, "createdelight:bleak_electron_tube"]),
-            create.deploying(iner, [iner, "ad_astra:etrionic_capacitor"]),
-            vintageimprovements.vacuumizing(iner, [iner, Fluid.of("createdelight:sky_solution", 1000)])
+            create.deploying(iner, [iner, "createaddition:capacitor"]),
+            create_new_age.energising(iner, iner, 100000),
+            create.filling(iner, [iner, Fluid.of("createdelight:sky_solution", 1000)])
         ])
             .loops(1)
             .transitionalItem(iner)

@@ -63,14 +63,14 @@ let res_list = [
 ]
 tech_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, 10, v[1])
+        unlockTraderTrade(e, 7, v[1])
         $TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })
 
 res_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
-        unlockTraderTrade(e, 14, v[1])
+        unlockTraderTrade(e, 10, v[1])
         $TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })

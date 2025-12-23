@@ -51,8 +51,16 @@
 			linked_quest: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
-			x: 28.5d
-			y: 2.0d
+			x: 26.0d
+			y: -2.0d
+		}
+		{
+			id: "5D356CD73BB7727E"
+			linked_quest: "4750F90745C1AC83"
+			shape: "hexagon"
+			size: 2.0d
+			x: 10.0d
+			y: 7.0d
 		}
 	]
 	quests: [
@@ -83,7 +91,7 @@
 				"1999728E6F67F8EF"
 			]
 			dependency_requirement: "one_completed"
-			description: ["也可直接通入&e液体燃料&r来进行&4加热&r，&l&n&4JEI查看&r"]
+			description: ["可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -391,7 +399,7 @@
 				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
-					Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+					Icon: "minecraft:block/fire_1"
 				}
 			}
 			id: "1999728E6F67F8EF"
@@ -401,7 +409,7 @@
 					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
-						Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+						Icon: "minecraft:block/fire_1"
 					}
 				}
 				id: "30833998091D4372"
@@ -892,17 +900,18 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: [
 				"580C77852E71B685"
 				"043C01E333AD7139"
+				"20972AEC6EE6D9F8"
 			]
 			description: ["可以容纳&e多种流体&r，安装&e熔铸炉组件&r以转变为&e熔铸炉&r\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
 			id: "0C0CD2BD5935D4CC"
 			shape: "square"
-			subtitle: "&e可拓展&r的&4大型冶金设施"
+			subtitle: "&e可拓展&4可合成合金&r的&4大型冶金设施"
 			tasks: [{
 				id: "757E747FAED0BFE1"
 				item: "createmetallurgy:industrial_crucible"
@@ -912,11 +921,12 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["0C0CD2BD5935D4CC"]
+			dependencies: ["6EB96008F21DAFBF"]
 			description: [
 				"&l&n&a热量机制&r：&e普通燃烧&r为&41TU&r，&9超级燃烧&r为是&42TU&r"
 				"&l&n&a执行配方&r：可以直接执行&e熔融配方&r、&e合金配方&r以及&4生物熔炼&r，但&e热量&r需要&4满足条件&r"
 			]
+			hide_dependency_lines: true
 			id: "20972AEC6EE6D9F8"
 			subtitle: "&4更大！更快！更高效！"
 			tasks: [{
@@ -924,8 +934,8 @@
 				item: "createmetallurgy:foundry_unit"
 				type: "item"
 			}]
-			x: 10.0d
-			y: 6.5d
+			x: 11.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["6EB96008F21DAFBF"]
@@ -982,7 +992,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨维度&r）"
 			tasks: [{
 				id: "7E8F512707C3D437"
 				item: "createutilities:void_motor"
@@ -1000,7 +1010,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨维度&r）"
 			tasks: [{
 				id: "3A8416116E24A115"
 				item: "createutilities:void_tank"
@@ -1018,7 +1028,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨维度&r）"
 			tasks: [{
 				id: "68E0A2128888812E"
 				item: "createutilities:void_battery"
@@ -1090,48 +1100,23 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["5A8FA422166974A0"]
-			icon: "createdieselgenerators:diesel_engine"
-			id: "20B3A29ADFDF1D4A"
-			min_required_tasks: 1
-			rewards: [{
-				id: "4A10FBD8D0716968"
-				item: "createdelightcore:bronze_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			shape: "hexagon"
-			size: 2.0d
-			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
-			tasks: [{
-				id: "29B2C475B43E3FAC"
-				item: "createdelightcore:bronze_ingot"
-				type: "item"
-			}]
-			title: "&e燃料&r！&4动力&r！"
-			x: 26.0d
-			y: -2.0d
-		}
-		{
-			dependencies: ["5A8FA422166974A0"]
+			dependencies: [
+				"6EB96008F21DAFBF"
+				"35F33D9F772B4551"
+				"6DBEF23BA8608F4B"
+			]
 			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
-			rewards: [{
-				id: "18254A296BFA1213"
-				item: "createaddition:electrum_ingot"
-				random_bonus: 11
-				type: "item"
-			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
+			subtitle: "{ \"text\": \"跳转石油电力\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"54356C1067ECB809\"} }"
 			tasks: [{
-				id: "0D7814DAE3E5E1E1"
-				item: "createaddition:electrum_ingot"
-				type: "item"
+				elapsedTime: 1L
+				id: "102A7E43F92501AB"
+				type: "questsadditions:time"
 			}]
-			title: "步入&5电力时代&r！"
-			x: 26.0d
+			title: "步入&5石油电力&r！"
+			x: 28.5d
 			y: 2.0d
 		}
 		{
@@ -1262,7 +1247,7 @@
 		{
 			dependencies: ["07C28031281E5458"]
 			id: "46E16005AA8F9C8A"
-			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨维度&r）"
 			tasks: [{
 				id: "5DEF9B1874E79A03"
 				item: "functionalstorage:ender_drawer"
@@ -1296,7 +1281,9 @@
 			y: 1.5d
 		}
 		{
+			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
 			id: "70B8B43D6B542EEC"
+			min_required_tasks: 1
 			subtitle: "烈焰蛋糕可在系统商店购买"
 			tasks: [
 				{
@@ -1312,7 +1299,7 @@
 			]
 			title: "超级燃烧"
 			x: 28.5d
-			y: -1.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -1481,8 +1468,8 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 17.5d
-			y: -5.5d
+			x: 15.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1524,7 +1511,7 @@
 				title: "6.0新物流"
 				type: "checkmark"
 			}]
-			x: 18.5d
+			x: 18.0d
 			y: 4.0d
 		}
 		{
@@ -1694,7 +1681,12 @@
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
-			description: ["AE仓储桥接器可以让&2机械动力&r的仓储系统与&2AE&r相连，AE可以通过“&c自动合成&r”请求物品，机械动力&c可以请求AE系统&r中的物品"]
+			description: [
+				"AE仓储桥接器可以让&2机械动力&r的仓储系统与&2AE&r相连。"
+				"首先使用其右键机动网络的一个元件将其&c绑定至某机动网络&r，其次将其&c放置&r于世界中并将其&c连入AE网络&r，最后放置一个贴着它的&2打包机&r。"
+				"AE可以通过“&2自动合成&r”（即通过AE的“&2下单&r”）请求物品，此时由机动仓储网络发出的包裹的地址是&2仓储桥接器内所记录的地址&r。这个功能需保证AE网络中有CPU才能运作。对于未登上太空而无法造出样板供应器者，可以考虑使用这个机制来实现物品的下单。"
+				"同样的，机械动力&2可以请求AE系统&r中的物品。"
+			]
 			id: "53525848D094C800"
 			subtitle: "{ \"text\": \"是的，我们之间有个孩子（）\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3066F516B382ED92\" } }"
 			tasks: [{
@@ -1831,6 +1823,60 @@
 			}]
 			x: 18.5d
 			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			id: "35F33D9F772B4551"
+			rewards: [{
+				id: "0C695142A1B9227A"
+				item: "createaddition:electrum_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			tasks: [{
+				id: "0D8A9B9D985989A9"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			title: "良好通电导体！"
+			x: 26.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			id: "6DBEF23BA8608F4B"
+			rewards: [{
+				id: "2266BDDD9C5EF7E2"
+				item: "createdelightcore:bronze_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F7A2C2685AFB49E"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "优秀应力载体！"
+			x: 26.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			icon: "industrial_platform:fluid_pool"
+			id: "36CB35E2A940093B"
+			rewards: [{
+				id: "181A0753075BD670"
+				item: "industrial_platform:fluid_pool"
+				type: "item"
+			}]
+			subtitle: "商店五金一个，这下不用自己挖无限流体池了"
+			tasks: [{
+				id: "704995CF5CF30FEB"
+				type: "checkmark"
+			}]
+			title: "流体池"
+			x: -0.5d
+			y: -2.5d
 		}
 	]
 	title: "&9体系渐成 "

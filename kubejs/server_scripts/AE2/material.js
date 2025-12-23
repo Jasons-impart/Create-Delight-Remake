@@ -51,23 +51,23 @@ ServerEvents.recipes((event) => {
     .pressurizing("createdelight:phase_transition_iron", iron_blocks_26)
     .id("createdelight:phase_transition_iron_1");
 
-  let iron_blocks_26_ = [];
-  for (let i = 0; i < 16; i++) {
-    iron_blocks_26_.push({ item: "minecraft:iron_block" });
-  }
-  event
-    .custom({
-      type: "lychee:item_exploding",
-      item_in: iron_blocks_26_,
+  // let iron_blocks_26_ = [];
+  // for (let i = 0; i < 16; i++) {
+  //   iron_blocks_26_.push({ item: "minecraft:iron_block" });
+  // }
+  // event
+  //   .custom({
+  //     type: "lychee:item_exploding",
+  //     item_in: iron_blocks_26_,
 
-      post: [
-        {
-          type: "drop_item",
-          item: "createdelight:phase_transition_iron",
-        },
-      ],
-    })
-    .id("createdelight:phase_transition_iron_2");
+  //     post: [
+  //       {
+  //         type: "drop_item",
+  //         item: "createdelight:phase_transition_iron",
+  //       },
+  //     ],
+  //   })
+  //   .id("createdelight:phase_transition_iron_2");
 
   // 破坏核心
   kubejs.shaped(

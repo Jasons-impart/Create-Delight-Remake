@@ -183,7 +183,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
 StartupEvents.registry("creative_mode_tab", e => {
   e.create("createdelight:machine")
     .translationKey("itemGroup.createdelight.machine")
-    .icon(() => Item.of("createdelight:electrolyzer"))
+    .icon(() => Item.of("createdelight:centrifuge_rotor"))
     .content(() => [
       'mbd2:mbd_gadgets',
       'createdelight:order_deliverer_item'

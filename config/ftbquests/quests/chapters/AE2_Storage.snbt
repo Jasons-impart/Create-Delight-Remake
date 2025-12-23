@@ -171,8 +171,8 @@
 				}
 			]
 			title: "ME元件外壳"
-			x: 2.0d
-			y: -1.5d
+			x: 2.5d
+			y: 1.5d
 		}
 		{
 			id: "328FC706631222E9"
@@ -670,7 +670,7 @@
 					type: "item"
 				}
 			]
-			x: 3.0d
+			x: 2.5d
 			y: -1.5d
 		}
 		{
@@ -832,6 +832,565 @@
 			x: -2.0d
 			y: 3.5d
 		}
+		{
+			id: "62AA7E83D24E4093"
+			size: 1.5d
+			tasks: [{
+				id: "47C2E0FD61305C41"
+				title: "物流与世界交互元件"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			description: [
+				"它有两个功能：放置方块与投掷掉落物。"
+				"为放置方块模式时，当它所标记的物品&e被输入（例如使用输入总线）到网络&r里时，它便会&e放置&r那输入进网络里的方块。"
+				"为投掷掉落物模式时，当它所标记的物品被输入到网络里时，它便会将物品转为掉落物形式&e投掷&r出去。"
+				"如果觉得这个规则太麻烦了，可以直接使用&e主动ME成型面板&r。它可以&e直接&r将其过滤物品从网络里放置或者投掷出去。"
+			]
+			id: "34C42CE03FCE8705"
+			min_required_tasks: 1
+			subtitle: "放置与投掷"
+			tasks: [
+				{
+					id: "1FE33F6D5F80AAEB"
+					item: "ae2:formation_plane"
+					type: "item"
+				}
+				{
+					id: "1D962F69A8203BAD"
+					item: "expatternprovider:active_formation_plane"
+					type: "item"
+				}
+			]
+			x: 1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			description: [
+				"它拥有两个功能：破坏方块或者收集掉落物。"
+				"破坏方块模式时，它会将它前方的方块&e破坏并直接送到自身所在网络&r。"
+				"收集掉落物模式时，它会将它&e前方的掉落物收集到自身所在网络&r。"
+				"如果&e物品没法存储到自身网络&r时，破坏面板将不会工作。"
+				"可以利用这一点，配合&e存储总线的过滤&r来实现使破坏面板破坏&e特定&r的方块或者收集&e特定&r的掉落物。"
+			]
+			id: "771CFF6FC24EDCD6"
+			subtitle: "破坏与收集"
+			tasks: [{
+				id: "3AC83368D8A5C874"
+				item: "ae2:annihilation_plane"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			description: ["输入总线，顾名思义是将物品输入到网络中。使其&e贴住容器&r后它便会将容器里的物品输入至网络中。"]
+			id: "5E712745894090A8"
+			subtitle: "将外界容器的物品输入进网络"
+			tasks: [{
+				id: "69C92EB34CB4E405"
+				item: "ae2:import_bus"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			id: "68313FFEE76C5EC8"
+			subtitle: "将网络的物品输出至外界容器中"
+			tasks: [{
+				id: "790C2923FF598472"
+				item: "ae2:export_bus"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			description: [
+				"首先需要明确的一点：它并没有&e直接的输入或者输出物品&r的能力。它只是能够将外界存储整合到AE存储中。"
+				"当你向网络中输入物品时，网络同时也会考虑将物品输入到存储总线所贴的容器中。这在自动合成中会起到重要的作用，具体使用方式后面会描述。"
+			]
+			id: "3AD20853381BE07D"
+			subtitle: "将外界的存储整合进AE存储"
+			tasks: [{
+				id: "2B4AE13EC6F499DC"
+				item: "ae2:storage_bus"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			description: [
+				"ME接口是网络的&e交互接口&r，你可以将网络内的物品直接暴露出来，以便于使用其他mod（或者原版）的物流方式&e将物料导出&r，也可以使用的物流将物料&e送入AE网络&r。"
+				"对于导出，你需要在ME接口中设置过滤，这样ME接口便会被&e无时无刻的都被所过滤物料填满&r。"
+			]
+			id: "629F5A2C1CAB5FEE"
+			subtitle: "网络的交互口"
+			tasks: [{
+				id: "67706A4F2B5240E8"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:interface"
+					}
+				}
+				title: "Any #ae2:interface"
+				type: "item"
+			}]
+			title: "ME接口"
+			x: 1.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["05D7688036D40AE4"]
+			description: [
+				"AE的存储优先级是很重要的一个概念。"
+				"当你将物品存入AE时，AE会&e遍历所有网络中的存储&r（ME驱动器，组件坞，存储总线等），然后根据他们的优先级排序，会&e优先存入优先级高的&r存储。当需要取出物品时，会&e优先取出优先级更低&r的存储里的物品。"
+			]
+			icon: "ae2:drive"
+			id: "387C22C99791E5FE"
+			tasks: [{
+				id: "1D91A34323C34AB8"
+				title: "存储的优先级"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"3AD20853381BE07D"
+				"629F5A2C1CAB5FEE"
+			]
+			description: [
+				"将&eME接口&r与&e存储总线&r相贴，便会达成一个特殊行为：子网。其中ME接口那端是子网，存储总线是总网。相当于是用一个网络的存储总线来访问其他网络的ME接口。"
+				"关于这个“子网”，可以理解成&e主网能访问子网&r的内容，而&e子网无法访问主网&r的内容。如果有物品输入至存储总线的请求，则会将物品输入到存储总线所贴的ME接口所在的网络中。"
+				"AE的子网并不仅仅局限于上述概念，如果对子网的定义有兴趣的话可以考虑直接在网络上寻找相关教程。"
+			]
+			id: "6FE549E0ABDCA79E"
+			subtitle: "将存储总线与ME接口相贴"
+			tasks: [{
+				id: "01DD2C6396128F39"
+				title: "递归建网"
+				type: "checkmark"
+			}]
+			x: 0.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["62AA7E83D24E4093"]
+			id: "79C92A2E1542C1A7"
+			size: 1.5d
+			tasks: [{
+				id: "4619D04FF9B6674D"
+				title: "自动合成"
+				type: "checkmark"
+			}]
+			x: 3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"样板供应器是实现自动合成的重要物件，它可负责提供原料和接收成品。"
+				"当用户提交自动合成请求时，它会将该样板的&e所有原料依照样板所记载的顺序&r送到&e临近的容器&r中。"
+				"可以使用扳手右击样板供应器，此时的朝向会变为&e扳手点击时&r的方向。"
+				"它拥有一个“成品返回栏”，这代表着可以&e直接将成品送入其中&r以完成一次合成。"
+				"它可以打开阻挡模式，此时，当它连接的容器内&e有一份原材料&r，它便不会继续发送物品。这能够很好的&e解决合成配方冲突&r的问题。"
+			]
+			id: "0E63C201EF1FC4FB"
+			subtitle: "自动合成之基础"
+			tasks: [{
+				id: "7B3F7199EDE33A91"
+				item: {
+					Count: 1
+					id: "itemfilters:tag"
+					tag: {
+						value: "ae2:pattern_provider"
+					}
+				}
+				title: "Any #ae2:pattern_provider"
+				type: "item"
+			}]
+			title: "样板供应器"
+			x: 3.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"要使用自动合成，你必须将你的配方写入样板。编写样板需要使用样板编码终端，写完一个样板后需要将其放入样板供应器。"
+				"编写样板的界面拥有类似合成台的界面，左边为输入，右边为输出。你可以&e将物品/流体放在对应格子&r以标记那个格子，也可以&e直接从jei&r中将物品/流体拖入格子中。在打开样板编码终端时，你使用&ejei的自动填入物品功能会直接将物品填入样板&r，不过部分的自动填入配方可能有问题，需要手动处理（比如序列组装的循环次数，所有与流体有关的配方）。"
+				"对于非处理样板（也就是使用分子装配室），只需将样板放入样板供应器，然后再贴着样板供应器放置分子装配室即可。"
+				"{@pagebreak}"
+				"而处理样板则有些不同。这里稍微提及一点点关于自动合成的机制：每当你下一个订单（自动合成请求），AE网络中的原料都会&e送往样板供应器&r，然后由样板供应器&e送入临近的容器&r，且输出物品的顺序是：从样板的&e左上到右下&r。使用扳手右键样板供应器可以使其只往某个方向输出物品。"
+				"比如自动化序列组装，如果只使用机械动力不使用AE的物流的话我这里有一个建议是用好“动力臂自带轮询调度”与“样板供应器送出的物品是有序的”这两个特性。更详细的例子请参考其他地方的AE教程。"
+			]
+			id: "170FFDD0A797062B"
+			subtitle: "在其中写入配方"
+			tasks: [{
+				id: "024C544E2640A514"
+				item: "ae2:blank_pattern"
+				type: "item"
+			}]
+			x: 4.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"&eP2P&r一直是AE2的一大特色，同时也是难倒许多萌新的复杂机制。"
+				"简而言之就是，P2P是&e成对（或者说一对多）使用&r的，它可以将&e输入端&r（或者说&e源头端&r）的&e面板所连接&r的东西扩展到&e输出端&r（或者说&e地址端&r），使输出端变为输入端的&e代行&r。"
+				"它叫P2P（点对点）的原因也是，它本身&e并没有输入或者输出&r任何物；它只是将输入端所接入的东西给&e直接呈现到&r了输出端，此时&e你对输出端的面板的操作就等同于对输入端的面板所接的东西的操作&r（当然，反之亦成立）。"
+				"&4注意P2P并不能跨网络，且一系列P2P通道都需要接入同一个网络。&r"
+				"{@pagebreak}"
+				"拿本整合包的具体物品举例子的话，就是类似于functional storage的存储控制器与控制器扩展器的机制。扩展器相当于输出端，控制器相当于输入端。"
+				"P2P输入与输出的连接需要用到&e内存卡&r。shift+右键P2P通道以&e创建新频道&r，右键P2P通道将内存卡的频道&e应用&r于P2P。"
+				"一个输入端可以有&e多个&r输出端，一个输出端只能有&e一个&r输入端。"
+			]
+			id: "51D17CDCB592067D"
+			size: 1.5d
+			subtitle: "AE的一个非常强力的机制"
+			tasks: [{
+				id: "015F1D00C4784035"
+				item: "ae2:me_p2p_tunnel"
+				type: "item"
+			}]
+			x: 8.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["51D17CDCB592067D"]
+			description: ["如果想获得某种P2P频道，则需要使用对应的物品点击P2P通道。对应的物品在JEI中有显示。"]
+			id: "3C9E15524517317A"
+			subtitle: "将ME P2P转化为其他的P2P"
+			tasks: [{
+				id: "3F735CBED7A782FE"
+				title: "调谐"
+				type: "checkmark"
+			}]
+			x: 8.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: ["与其他P2P通道类似，此处不再赘述。"]
+			id: "4CDF583196DFCFEC"
+			subtitle: "传输红石信号源"
+			tasks: [{
+				id: "156C9B86890D35D2"
+				item: "ae2:redstone_p2p_tunnel"
+				type: "item"
+			}]
+			x: 6.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: [
+				"将ME-P2P通道的面板的输入端接入带有频道的网络时，输出端的面板则会共享输入端所接的面板的频道。"
+				"ME-P2P主要用于解决频道数量不足。其最典型的一个例子就是直接输入端面板贴ME控制器的面，然后输出端便拥有了32频道。&e记住ME P2P无法嵌套（即P2P输出端面板后再次连接P2P）！&r"
+			]
+			id: "157F26DF8C8B0B29"
+			subtitle: "传输频道源"
+			tasks: [{
+				id: "78B8A406AFB43539"
+				item: "ae2:me_p2p_tunnel"
+				type: "item"
+			}]
+			x: 7.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: ["一个具体的例子就是：输入端处的面板接入一个箱子，然后如果往输出端接一个漏斗&e往面板输入物品&r，那么输入端处的面板所接箱子内&e会出现漏斗输入的物品&r；如果使用漏斗&e从输出端提取物品&r，那么箱子内的物品则&e会被提取出来&r。"]
+			id: "6C8DDA49FF55BAA1"
+			subtitle: "传输物品源"
+			tasks: [{
+				id: "71DF3D3617190F92"
+				item: "ae2:item_p2p_tunnel"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: ["一个具体的例子就是：输入端处的面板接入一个流体储罐，然后如果往输出端接一个动力泵&e往面板输入流体&r，那么输入端处的面板所接流体储罐内&e会出现动力泵输入的流体&r；如果使用动力泵&e从输出端提取流体&r，那么流体储罐内的流体则&e会被提取出来&r。"]
+			id: "50C8AC8386E3EF9C"
+			subtitle: "传输流体源"
+			tasks: [{
+				id: "5FDF7129043C6521"
+				item: "ae2:fluid_p2p_tunnel"
+				type: "item"
+			}]
+			x: 9.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: ["与物品和流体类似，此处不再赘述。需要注意能源p2p有5%的能量损耗（从网络中扣除）。"]
+			id: "772919645004D87B"
+			subtitle: "传输能源源（？"
+			tasks: [{
+				id: "5864667788D8A2FF"
+				item: "ae2:fe_p2p_tunnel"
+				type: "item"
+			}]
+			x: 10.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["3C9E15524517317A"]
+			description: ["与其他P2P通道类似，此处不再赘述。"]
+			id: "7E5E6D786E71CC56"
+			subtitle: "传输光源"
+			tasks: [{
+				id: "64B85F5348C5416F"
+				item: "ae2:light_p2p_tunnel"
+				type: "item"
+			}]
+			x: 11.0d
+			y: 9.5d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			id: "0CDB09C088830F26"
+			subtitle: "控制合成的逻辑处理器"
+			tasks: [{
+				id: "726AD139DC01E4F5"
+				item: "ae2:crafting_unit"
+				type: "item"
+			}]
+			title: "CPU"
+			x: 2.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["0E63C201EF1FC4FB"]
+			description: [
+				"将ME接口贴着样板供应器，会拥有一个特殊的行为。此时样板供应器将会直接将&e原料输出到ME接口所在网络&r。"
+				"此时配合&e存储总线&r，即可非常轻易的做到将物品送至任意位置的任意容器中。"
+			]
+			icon: "ae2:interface"
+			id: "24DCD6EE3AEBA742"
+			subtitle: "直接送达"
+			tasks: [{
+				id: "101D3FC9738E2E1B"
+				title: "与ME接口的特殊行为"
+				type: "checkmark"
+			}]
+			x: 3.5d
+			y: 9.5d
+		}
+		{
+			dependencies: ["79C92A2E1542C1A7"]
+			description: [
+				"其&e内部&r可放入一个&e写好的样板&r，此时其会&e根据输入的物品进行自动合成&r。"
+				"当然分子装配室的主要用途是&e与样板供应器搭配&r，进行一系列合成的自动化。只要在分子装配室贴着&e样板供应器&r且样板供应器内有&e合成样板&r，在合成对应物品时样板供应器便会将物品&e自动发送到分子装配室&r中。分子装配室随后会将物品&e送回所贴样板供应器&r。"
+			]
+			id: "1499DD7E2925CBAA"
+			subtitle: "自动化工作台/动力锯/锻造台配方"
+			tasks: [{
+				id: "340DE43666B60F94"
+				item: "ae2:molecular_assembler"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["05D7688036D40AE4"]
+			description: ["shift+右键机器可以保存AE的各种元件与机器的配置，右键机器将应用内存卡中的配置。"]
+			id: "701D1095A0E85BAC"
+			size: 1.5d
+			subtitle: "快捷配置"
+			tasks: [{
+				id: "0C5C80C591A163D8"
+				item: {
+					Count: 1
+					id: "ae2:memory_card"
+					tag: { }
+				}
+				type: "item"
+			}]
+			x: 0.0d
+			y: -2.25d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			id: "1AE78824AE3CE5F5"
+			min_required_tasks: 1
+			subtitle: "所谓“全能”，就是能够存储所有种类的东西（本包中可以存储物品和流体）"
+			tasks: [
+				{
+					id: "1393B14ABBC98120"
+					item: "ae2omnicells:omni_cell_component_1k"
+					type: "item"
+				}
+				{
+					id: "4E15E40244356367"
+					item: "ae2omnicells:omni_cell_component_4k"
+					type: "item"
+				}
+				{
+					id: "53FB3169035EDF95"
+					item: "ae2omnicells:omni_cell_component_16k"
+					type: "item"
+				}
+				{
+					id: "6F79E70473EBDBFE"
+					item: "ae2omnicells:omni_cell_component_64k"
+					type: "item"
+				}
+				{
+					id: "584827F37B1F991A"
+					item: "ae2omnicells:complex_omni_cell_component_256k"
+					type: "item"
+				}
+				{
+					id: "50585BC09EE61C7C"
+					item: "ae2omnicells:omni_cell_component_1m"
+					type: "item"
+				}
+				{
+					id: "3AC17668C367BDB4"
+					item: "ae2omnicells:omni_cell_component_4m"
+					type: "item"
+				}
+				{
+					id: "261BB53603592CAB"
+					item: "ae2omnicells:omni_cell_component_16m"
+					type: "item"
+				}
+				{
+					id: "0992F81FB068F180"
+					item: "ae2omnicells:omni_cell_component_64m"
+					type: "item"
+				}
+				{
+					id: "5D1F5EFC8242037D"
+					item: "ae2omnicells:omni_cell_component_256m"
+					type: "item"
+				}
+			]
+			title: "全能存储组件"
+			x: 1.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			description: ["耗电公式：2*n^2（n为组件等级）"]
+			id: "0FEDB6580A3661C6"
+			min_required_tasks: 1
+			subtitle: "与全能类似，但是字节越高，种类量越大"
+			tasks: [
+				{
+					id: "6FC018908EE799FD"
+					item: "ae2omnicells:complex_omni_cell_component_1k"
+					type: "item"
+				}
+				{
+					id: "56A9AA2E4FCE946A"
+					item: "ae2omnicells:complex_omni_cell_component_4k"
+					type: "item"
+				}
+				{
+					id: "6A486FC6F8E3DC86"
+					item: "ae2omnicells:complex_omni_cell_component_16k"
+					type: "item"
+				}
+				{
+					id: "18B73B76DD2C6F26"
+					item: "ae2omnicells:complex_omni_cell_component_64k"
+					type: "item"
+				}
+				{
+					id: "65E390C347BCFC54"
+					item: "ae2omnicells:complex_omni_cell_component_256k"
+					type: "item"
+				}
+				{
+					id: "1E4A57BD796D6406"
+					item: "ae2omnicells:complex_omni_cell_component_1m"
+					type: "item"
+				}
+				{
+					id: "0398B5ED6045F7EF"
+					item: "ae2omnicells:complex_omni_cell_component_4m"
+					type: "item"
+				}
+				{
+					id: "24B055528C0A9919"
+					item: "ae2omnicells:complex_omni_cell_component_16m"
+					type: "item"
+				}
+				{
+					id: "7C78F6770785499F"
+					item: "ae2omnicells:complex_omni_cell_component_64m"
+					type: "item"
+				}
+				{
+					id: "593DFA30DFB7D780"
+					item: "ae2omnicells:complex_omni_cell_component_256m"
+					type: "item"
+				}
+			]
+			title: "复杂全能存储组件"
+			x: 2.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"6B3F181B4E31BCE2"
+				"00C814CDA34573FF"
+			]
+			description: ["耗电计算公式：2*n^3（n为组件的等级）"]
+			id: "06850FB3D640CCA5"
+			min_required_tasks: 1
+			subtitle: "无限种类的全能组件！但是高等级的组件耗电量非常大"
+			tasks: [{
+				id: "300BFFB33D67A28A"
+				item: "ae2omnicells:quantum_omni_cell_component_1k"
+				type: "item"
+			}]
+			title: "量子存储组件"
+			x: 3.5d
+			y: -2.5d
+		}
+		{
+			id: "00C814CDA34573FF"
+			rewards: [{
+				id: "71434A19CB5917F8"
+				item: "ae2omnicells:omni_cell_component_1k"
+				type: "item"
+			}]
+			tasks: [{
+				id: "42F00ACD91E61C70"
+				title: "制作全能元件可以看看动力合成配方"
+				type: "checkmark"
+			}]
+			x: 2.5d
+			y: -3.5d
+		}
 	]
-	title: "&b储存篇章"
+	title: "&b储存与合成"
 }

@@ -122,24 +122,15 @@ ServerEvents.recipes((event) => {
   transform_explosion("ae2omnicells:omni_link_print_press", [
     "createdelight:universal_press",
     "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
-    "createutilities:void_steel_ingot",
     "ae2omnicells:charged_ender_ingot"
   ])
   transform_explosion("ae2omnicells:complex_link_print_press", [
     "createdelight:universal_press",
     "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
-    "minecraft:netherite_scrap",
     "ae2omnicells:charged_ender_ingot"
   ])
   transform_explosion("ae2omnicells:multidimensional_expansion_print_press", [
     "createdelight:universal_press",
-    "ae2:singularity",
-    "ae2:singularity",
-    "ae2:singularity",
     "ae2:singularity",
     "ae2omnicells:charged_ender_ingot"
   ])
@@ -170,6 +161,17 @@ ServerEvents.recipes((event) => {
   custom_inscribe("createdelight:universal_press", "createdelight:universal_press", "#forge:storage_blocks/iron", null, "inscribe")
   custom_inscribe("createdelight:ultimate_universal_press", "createdelight:ultimate_universal_press", "ae2omnicells:singularity_block", null, "inscribe")
 
+  // 膏合成
+  create
+    .mixing("createdelight:redstone_paste", ["32x #forge:dusts/redstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:glowstone_paste", ["32x #forge:dusts/glowstone", "#forge:plates/iron"])
+    .heated();
+  create
+    .mixing("createdelight:sky_stone_paste", ["32x ae2:sky_dust", "#forge:plates/iron"])
+    .heated();
+
   // 通用压印模板的配方
   transform_fluid("5x createdelight:universal_press", "minecraft:water", [
     "ae2:silicon_press",
@@ -183,7 +185,7 @@ ServerEvents.recipes((event) => {
     "ae2omnicells:omni_link_print_press",
     "ae2omnicells:complex_link_print_press",
     "ae2omnicells:multidimensional_expansion_print_press",
-    ["iceandfire:dragonsteel_fire_block", "iceandfire:dragonsteel_ice_block", "iceandfire:dragonsteel_lightning_block"],  
+    ["iceandfire:dragonsteel_fire_block", "iceandfire:dragonsteel_ice_block", "iceandfire:dragonsteel_lightning_block"],
     "createdelight:universal_press"
   ])
     .id("ultimate_universal_press_transform_recipe")
@@ -271,6 +273,68 @@ ServerEvents.recipes((event) => {
     }
   }
 
+  /**
+   * 
+   * @param {OutputItem_} result 
+   * @param {InputItem_} A 
+   * @param {InputItem_} B 
+   * @param {InputItem_} C 
+   * @param {InputItem_} D 
+   */
+  function make_omnicell_component(result, A, B, C, D) {
+    create.mechanical_crafting(Item.of(result, 27), [
+      "AAAAAAAAA",
+      "AAAAAAAAA",
+      "BBBBBBBBB",
+      "CCCCCCCCC",
+      "DDDDDDDDD",
+      "CCCCCCCCC",
+      "BBBBBBBBB",
+      "AAAAAAAAA",
+      "AAAAAAAAA"
+    ], {
+      A: A,
+      B: B,
+      C: C,
+      D: D
+    }).id(`createdelight:mechanical_crafting/${result.split(":")[1]}`)
+  }
+  const OMNI_CELL_TIERS = ["1k", "4k", "16k", "64k", "256k", "1m", "4m", "16m", "64m", "256m"]
+  function make_omni_cell_component_chain(cfg) {
+    for (let i = 0; i < OMNI_CELL_TIERS.length; i++) {
+      make_omnicell_component(
+        `${cfg.prefix}${OMNI_CELL_TIERS[i]}`,
+        i === 0 ? cfg.first_dust : "minecraft:redstone",
+        cfg.processor,
+        i === 0 ? cfg.first_input : `${cfg.prefix}${OMNI_CELL_TIERS[i - 1]}`,
+        i === 0 ? "ae2:cell_component_1k" : "#createdelight:quartz_glass"
+      )
+    }
+  }
+
+  make_omni_cell_component_chain({
+    prefix: "ae2omnicells:omni_cell_component_",
+    processor: "ae2omnicells:omni_link_processor",
+    first_dust: "minecraft:redstone",
+    first_input: "createutilities:void_steel_ingot"
+  })
+
+  make_omni_cell_component_chain({
+    prefix: "ae2omnicells:complex_omni_cell_component_",
+    processor: "ae2omnicells:complex_link_processor",
+    first_dust: "minecraft:glowstone_dust",
+    first_input: "ae2omnicells:charged_ender_ingot"
+  })
+
+  make_omni_cell_component_chain({
+    prefix: "ae2omnicells:quantum_omni_cell_component_",
+    processor: "ae2omnicells:multidimensional_expansion_processor",
+    first_dust: "ae2:ender_dust",
+    first_input: "ae2omnicells:charged_ender_ingot"
+  })
+
+
+
   // 硅压印板需要单独写复制配方
   vintageimprovements
     .curving("ae2:silicon_press", "#forge:storage_blocks/iron")
@@ -353,7 +417,7 @@ ServerEvents.recipes((event) => {
   ], {
     A: "ae2:matter_ball"
   })
-  .id("createdelight:mechanical_crafting/singularity")
+    .id("createdelight:mechanical_crafting/singularity")
 
   // 陨石再生
   create.milling("4x ae2:sky_dust", "ae2:sky_stone_block").id("createdelight:sky_dust_1");
