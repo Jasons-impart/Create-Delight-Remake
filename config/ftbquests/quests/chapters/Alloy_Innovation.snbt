@@ -611,6 +611,7 @@
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
+			description:["注意：声明区块后，&c不要&r将机械手放在&e区块边缘&r处，请至少离开边缘&e一格&r放置。"]
 			id: "783AE5D1F35263E1"
 			rewards: [{
 				count: 3
