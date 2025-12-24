@@ -1,0 +1,55 @@
+#Whether Obscure Tooltips should be active at all.
+enabled = true
+#Whether Obscure Tooltips should display the second line in the tooltip header.
+labelsEnabled = true
+#Whether Obscure Tooltips should display drop shadows.
+shadowsEnabled = true
+#The opacity of the drop shadows.
+#Range: 0.0 ~ 1.0
+shadowOpacity = 0.3
+#The margin (in pixels) between the tooltip frame and its content.
+#Range: 0 ~ 16
+contentMargin = 2
+#Whether to show a hint about enabling the built-in Vibrant Tooltips resource pack on game start.
+#Automatically disabled after being shown once.
+showVibrantTooltipsHint = false
+#List of item IDs that should be ignored by Obscure Tooltips.
+ignoredItems = ["quality_equipment:reforge_gui_button"]
+
+[Sounds]
+	#Whether Obscure Tooltips should play sound effects.
+	soundsEnabled = true
+	#The volume multiplier for tooltip sound effects.
+	#Range: 0.0 ~ 4.0
+	soundVolume = 1.0
+
+[AutoWrapping]
+	#Whether Obscure Tooltips should wrap lines in tooltips.
+	autoWrappingEnabled = true
+
+[Scrolling]
+	#Whether long tooltips should become scrollable when they exceed the screen height.
+	scrollEnabled = true
+	#How fast the tooltip scrolls when using the mouse wheel.
+	#Range: 1 ~ 64
+	scrollSpeed = 5
+	#Extra spacing (in pixels) above and below tooltip when scrolling is enabled.
+	#Range: 0 ~ 64
+	scrollMargin = 10
+
+[ArmorPreview]
+	#Whether Obscure Tooltips should display 3D armor previews.
+	armorPreviewEnabled = true
+	#List of item IDs that should always display a 3D armor preview.
+	armorPreviewWhitelist = []
+	#List of item IDs that should never display a 3D armor preview.
+	armorPreviewBlacklist = []
+
+[ToolPreview]
+	#Whether Obscure Tooltips should display 3D tool/weapon previews.
+	toolPreviewEnabled = false
+	#List of item IDs that should always display a 3D tool/weapon preview.
+	toolPreviewWhitelist = ["minecraft:trident", "minecraft:bow", "minecraft:crossbow"]
+	#List of item IDs that should never display a 3D tool/weapon preview.
+	toolPreviewBlacklist = []
+
