@@ -254,7 +254,6 @@ Order.calculateMoneyReward = function(order) {
         let qualityMultiplier = 1 + 0.2 * (entry.minQuality - 1)
         goodsBonus += qualityMultiplier * entry.count / this.orderProperties[entry.id].base_count
     })
-    goodsBonus = goodsBonus / order.entries.length
     return rarityBonus * chanceBonus * goodsBonus
 }
 
