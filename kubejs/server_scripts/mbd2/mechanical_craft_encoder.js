@@ -2,6 +2,7 @@ const $BigItemStack = Java.loadClass("com.simibubi.create.content.logistics.BigI
 const $PackageOrderWithCrafts = Java.loadClass("com.simibubi.create.content.logistics.stockTicker.PackageOrderWithCrafts")
 const $MechanicalCraftingRecipe = Java.loadClass("com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe")
 const $ItemStackHandler = Java.loadClass("net.minecraftforge.items.ItemStackHandler")
+const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
 MBDMachineEvents.onLoad("createdelight:mechanical_craft_encoder", e => {
     let event = e.event
     const { machine } = event
