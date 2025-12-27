@@ -618,7 +618,7 @@ _version = 3
 		# When logging generation progress also include the rate at which chunks 
 		# are being generated. 
 		# This can be useful for troubleshooting performance.
-		generationProgressIncludeChunksPerSecond = true
+		generationProgressIncludeChunksPerSecond = false
 		#
 		# The center X chunk position that the world gen max radius is centered around.
 		generationCenterChunkX = 0
@@ -761,49 +761,49 @@ _version = 3
 		#
 		# If enabled, the mod will log information about the world generation process. 
 		# This can be useful for debugging.
-		logWorldGenEvent = "LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE"
+		logWorldGenEvent = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# If enabled, the mod will log performance about the world generation process. 
 		# This can be useful for debugging.
-		logWorldGenPerformance = "LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE"
+		logWorldGenPerformance = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# If enabled, the mod will log information about the world generation process. 
 		# This can be useful for debugging.
-		logWorldGenLoadEvent = "LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE"
+		logWorldGenLoadEvent = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# If enabled, the mod will log information about the renderer buffer process. 
 		# This can be useful for debugging.
-		logRendererBufferEvent = "LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE"
+		logRendererBufferEvent = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# If enabled, the mod will log information about the renderer OpenGL process. 
 		# This can be useful for debugging.
-		logRendererGLEvent = "LOG_ERROR_TO_CHAT_AND_INFO_TO_FILE"
+		logRendererGLEvent = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# If enabled, the mod will log information about network operations. 
 		# This can be useful for debugging.
-		logNetworkEvent = "LOG_ERROR_TO_CHAT_AND_WARNING_TO_FILE"
+		logNetworkEvent = "LOG_ERROR_TO_CHAT_AND_WARN_TO_FILE"
 		#
 		# 
-		globalFileMaxLevel = "INFO"
+		globalFileMaxLevel = "WARN"
 		#
 		# 
 		globalChatMaxLevel = "ERROR"
 		#
 		# If enabled, the mod will log information about the world generation process. 
 		# This can be useful for debugging.
-		logWorldGenEventToFile = "INFO"
+		logWorldGenEventToFile = "WARN"
 		#
 		# If enabled, the mod will log information about the world generation process. 
 		# This can be useful for debugging.
-		logWorldGenChunkLoadEventToFile = "INFO"
+		logWorldGenChunkLoadEventToFile = "WARN"
 		#
 		# If enabled, the mod will log information about the renderer setup, cleanup, and any issues it may encounter. 
 		# This can be useful for debugging.
-		logRendererEventToFile = "INFO"
+		logRendererEventToFile = "WARN"
 		#
 		# If enabled, the mod will log information about the renderer OpenGL process. 
 		# This can be useful for debugging.
-		logRendererGLEventToFile = "INFO"
+		logRendererGLEventToFile = "WARN"
 		#
 		# If enabled, the mod will log information about the renderer OpenGL process. 
 		# This can be useful for debugging.
@@ -811,7 +811,7 @@ _version = 3
 		#
 		# If enabled, the mod will log information about network operations. 
 		# This can be useful for debugging.
-		logNetworkEventToFile = "INFO"
+		logNetworkEventToFile = "WARN"
 		#
 		# If enabled, config changes sent by the server will be logged.
 		logConnectionConfigChangesToFile = "WARN"
