@@ -417,6 +417,23 @@
         {
           "TradeType": "SALE",
           "SellItem": {
+            "ID": "createdelight:artemisia_argyi_seed",
+            "Count": 1
+          },
+          "Price": {
+            "Value": [
+              {
+                "Coin": "createdelightcore:copper_coin",
+                "Amount": 5
+              }
+            ],
+            "Chain": "main",
+            "type": "lightmanscurrency:coins"
+          }
+        },
+        {
+          "TradeType": "SALE",
+          "SellItem": {
             "ID": "fruitsdelight:pear_sapling",
             "Count": 1
           },
