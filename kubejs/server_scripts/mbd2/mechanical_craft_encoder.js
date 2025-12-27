@@ -37,8 +37,7 @@ function handleChanged(machine, level) {
     }
     if (outputFull)
         return
-
-    let minWidth = machine.customData.getInt("width") || 3
+    let minWidth = machine.customData.getInt("width") || 5
 
     /**@type {Internal.MechanicalCraftingRecipe[]} */
     let recipelist = level.recipeManager.getAllRecipesFor("create:mechanical_crafting")
@@ -107,7 +106,6 @@ function handleChanged(machine, level) {
         let craftingIngredients = Utils.newList();
 
         // 获取设定的最小宽度（确保它至少等于配方的宽度）
-        let minWidth = machine.customData.getInt("width") || 3; // 你可以替换成动态输入的宽度
         let gridWidth = Math.max(minWidth, width);  // 如果设定的宽度小于配方的宽度，取配方的宽度
 
         let resultItemHandler = new $ItemStackHandler()
@@ -195,7 +193,6 @@ MBDMachineEvents.onNeighborChanged("createdelight:mechanical_craft_encoder", e =
         handleChanged(machine, level)
 })
 MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
-
     let event = e.event
     const { machine, root } = event
     /**@type {TextFieldWidget} */
