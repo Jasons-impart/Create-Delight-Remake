@@ -381,7 +381,7 @@ _version = 3
 				# 100 = 1 to 100 (63,710 blocks) 
 				# 10000 = 1 to 10000 (637.1 blocks) 
 				# 
-				# Note: Due to current limitations, the min value is 50 
+				# Note: Due to current limitations, the min value is [50] 
 				# and the max value is 5000. Any values outside this range 
 				# will be set to 0 (disabled).
 				earthCurveRatio = 0
@@ -391,6 +391,15 @@ _version = 3
 				# but causes lighting on LOD borders to appear as full-bright
 				# and other graphical bugs.
 				onlyLoadCenterLods = false
+				#
+				# A comma separated list of dimension resource locations where DH won't render. 
+				# 
+				# Example: "minecraft:the_nether,minecraft:the_end"
+				# 
+				# Note:
+				# Some DH settings will be disabled and/or changed to improve 
+				# visuals when DH rendering is disabled.
+				ignoredDimensionCsv = ""
 
 		[client.advanced.multiplayer]
 			#
@@ -803,6 +812,9 @@ _version = 3
 		# If enabled, the mod will log information about network operations. 
 		# This can be useful for debugging.
 		logNetworkEventToFile = "INFO"
+		#
+		# If enabled, config changes sent by the server will be logged.
+		logConnectionConfigChangesToFile = "WARN"
 
 		[common.logging.warning]
 			#
