@@ -1298,7 +1298,7 @@
 				"6B3F181B4E31BCE2"
 				"00C814CDA34573FF"
 			]
-			description: ["耗电公式：2*n^2（n为组件等级）"]
+			description: ["1k的耗电量为4，之后组件每高一级耗电量翻倍。"]
 			id: "0FEDB6580A3661C6"
 			min_required_tasks: 1
 			subtitle: "与全能类似，但是字节越高，种类量越大"
@@ -1363,7 +1363,7 @@
 				"6B3F181B4E31BCE2"
 				"00C814CDA34573FF"
 			]
-			description: ["耗电计算公式：2*n^3（n为组件的等级）"]
+			description: ["1k的耗电量为6，之后组件每高一级，耗电量变为上一级的3倍。"]
 			id: "06850FB3D640CCA5"
 			min_required_tasks: 1
 			subtitle: "无限种类的全能组件！但是高等级的组件耗电量非常大"
