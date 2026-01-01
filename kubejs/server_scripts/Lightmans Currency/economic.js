@@ -2,17 +2,6 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1"}, "minecraft:ender_pearl", "create_sa:copper_magnet")
     e.replaceInput({id: "lightmanscurrency:upgrades/network_upgrade"}, "minecraft:ender_eye", 'ae2:singularity')
     e.recipes.kubejs.shaped(
-        'lightmanscurrency:trading_core',
-        [
-            "AAA",
-            "ABA",
-            "AAA"
-        ], {
-            A: "createdelightcore:iron_coin",
-            B: "createdelightcore:gold_coin"
-        }
-    ).id("lightmanscurrency:trading_core")
-    e.recipes.kubejs.shaped(
         'lightmanscurrency:atm',
         [
             "ABA",
