@@ -1918,6 +1918,31 @@
 			x: 2.0d
 			y: 3.5d
 		}
+		{
+			dependencies: ["6BC7D3231848B305"]
+			description: [
+				"当你在某些情况下不想要品质物品时，可以使用这些物品来&e移除物品的品质&r。"
+				"前者使用后能&e移除物品栏内所有带有品质物品的品质&r，并且返还一些钱币，后者向其中&e输入带有品质的物品&r并通入应力即可消除物品的品质。"
+			]
+			id: "4F7E45FFFC164354"
+			min_required_tasks: 1
+			subtitle: "玩家移除与自动化移除"
+			tasks: [
+				{
+					id: "4F9904ABB52639B5"
+					item: "createdelight:quality_absorber"
+					type: "item"
+				}
+				{
+					id: "48244CF929F728C9"
+					item: "createdelight:mechanic_grinding_wheel"
+					type: "item"
+				}
+			]
+			title: "移除物品的品质"
+			x: 0.0d
+			y: -2.5d
+		}
 	]
 	title: "&5盛宴准备时！"
 }

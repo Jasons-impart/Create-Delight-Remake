@@ -12,11 +12,18 @@
 		{
 			icon: "lightmanscurrency:portable_gem_terminal"
 			id: "34C9A7E928820147"
-			rewards: [{
-				id: "37D071E6074B572D"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "37D071E6074B572D"
+					item: "createdelightcore:copper_coin"
+					type: "item"
+				}
+				{
+					id: "64207D20667D070A"
+					item: "lightmanscurrency:portable_atm"
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "本包的系统商店都位于交易终端里（就是送你的那个项链）"
