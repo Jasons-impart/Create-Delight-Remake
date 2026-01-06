@@ -504,7 +504,7 @@
 		}
 		{
 			id: "37602625EB8C5460"
-			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
+			subtitle: "让粉碎轮自己处理自己，这会产生&e悖论奇点"
 			tasks: [{
 				id: "3B6DDCAEE96D070F"
 				item: "ae2:singularity"

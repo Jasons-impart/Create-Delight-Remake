@@ -626,7 +626,7 @@
     "createdelight.tip.alexscaves_dimension_spawn": "alex洞穴的维度禁止了所有非alex洞穴生物的生成(当然除了玩家)",
     "createdelight.tip.andesite_bucket": "安山桶可以直接将容器中的流体打出来, 并直接送到另一个容器中。在处理液体相关的配方时非常好用!",
     "createdelight.tip.arbutus_berries": "不知道怎么获取杜鹃莓? 试试破坏杜鹃树叶吧!",
-    "createdelight.tip.bettercombat.mine_with_weapons_switch": "使用武器攻击怪物时总会挖掘方块？默认键位配置下, 可使用[, ]开关武器挖掘方块的能力",
+    "createdelight.tip.bettercombat.mine_with_weapons_switch": "使用武器攻击怪物时总会挖掘方块？默认键位配置下, 可使用[。]开关武器挖掘方块的能力",
     "createdelight.tip.bettercombat_tweak": "本包的bettercombat已去掉前摇, 且攻击范围增加了一倍, 请放心使用。",
     "createdelight.tip.blaze_burner_use_fluid": "本包的烈焰人可以无需吸管, 直接通入流体燃料。",
     "createdelight.tip.brass": "本包的最初的黄铜配方已被修改, 你需要先使用熔铸盆融化金属后才能进行合金。当然你也可以选择使用粒来合成。",
