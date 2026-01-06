@@ -23,9 +23,11 @@ ServerEvents.tags("fluid", e => {
 })
 ServerEvents.tags("block", e => {
     e.add("minecraft:mineable/pickaxe", [
-        'createaddition:electrum_block'
+        'createaddition:electrum_block',
+        'createaddition:superconducting_connector'
     ])
     e.add("minecraft:needs_iron_tool", [
-        'createaddition:electrum_block'
+        'createaddition:electrum_block',
+        'createaddition:superconducting_connector'
     ])
 })
