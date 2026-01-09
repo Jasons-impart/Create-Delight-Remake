@@ -161,18 +161,11 @@
 			]
 			icon: "eclipticseasons:seasonal_prayer_scroll"
 			id: "0F16A415E991AC8E"
-			rewards: [
-				{
-					id: "478BF1F41AF92E9D"
-					item: "eclipticseasons:seasonal_prayer_scroll"
-					type: "item"
-				}
-				{
-					id: "2453A5042E83594E"
-					item: "eclipticseasons:calendar"
-					type: "item"
-				}
-			]
+			rewards: [{
+				id: "478BF1F41AF92E9D"
+				item: "eclipticseasons:seasonal_prayer_scroll"
+				type: "item"
+			}]
 			shape: "rsquare"
 			size: 1.0d
 			subtitle: "&a春雨惊春清谷天&r，&e夏满芒夏暑相连&r；&6秋处露秋寒霜降&r，&9冬雪雪冬小大寒&r。"
