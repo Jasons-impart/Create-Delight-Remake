@@ -1217,6 +1217,179 @@
 			x: 68.5d
 			y: 4.5d
 		}
+		# AUTO_CONTRIBUTORS_START
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: -5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: -5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 0.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 0.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 10.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 10.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 15.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 15.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 20.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 20.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 25.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 25.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 30.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 30.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 35.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 35.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 40.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 40.0d
+			y: -13.5d
+		}
+		# AUTO_CONTRIBUTORS_END
+
 	]
 	order_index: 2
 	quest_links: [ ]
