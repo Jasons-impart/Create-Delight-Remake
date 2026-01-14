@@ -1,9 +1,5 @@
 ServerEvents.tags("block", e => {
     e.add("quality_food:quality_blocks",
-        "minecraft:grass",
-        "minecraft:tall_grass",
-        "minecraft:fern",
-        "minecraft:large_fern", 
         'brewinandchewin:flaxen_cheese_wheel',
         'vintagedelight:cheese_pizza', 
         'vintagedelight:meat_pizza', 
@@ -61,17 +57,12 @@ ServerEvents.tags("block", e => {
         }
     })
     e.add("createdelight:quality_crops",
-        "#farmersdelight:wild_crops",
         "neapolitan:vanilla_vine",
         "neapolitan:strawberry_bush",
         "neapolitan:small_banana_frond",
         "neapolitan:banana_frond",
         "neapolitan:large_banana_frond",
         "neapolitan:mint",
-        "minecraft:grass",
-        "minecraft:tall_grass",
-        "minecraft:fern",
-        "minecraft:large_fern",
         "vinery:red_grape_bush",
         "vinery:white_grape_bush",
         "vinery:savanna_grape_bush_red",
@@ -116,12 +107,17 @@ ServerEvents.tags("block", e => {
     )
     e.add("quality_food:quality_blocks", 
         "#createdelight:quality_crops",
-        "minecraft:sea_pickle",
-        "minecraft:moss_block"
+        "minecraft:sea_pickle"
+    )
+    e.remove("quality_food:quality_blocks", 
+        "#farmersdelight:wild_crops",
     )
 })
 
 ServerEvents.tags("item", e => {
+    e.remove("quality_food:material_whitelist", 
+        "#farmersdelight:wild_crops"
+    )
     e.add("quality_food:material_whitelist", [
         'farmersdelight:brown_mushroom_colony',
         'farmersrespite:coffee_beans',
