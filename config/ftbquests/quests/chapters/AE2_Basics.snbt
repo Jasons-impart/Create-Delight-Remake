@@ -255,16 +255,25 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["6575B9B559D65549"]
+			dependencies: [
+				"3066F516B382ED92"
+				"4B575DDD058557C7"
+			]
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
 			icon: "create:brass_hand"
 			id: "638505D6DDD35EF8"
 			shape: "square"
 			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
+			tasks: [{
+				disable_toast: true
+				elapsedTime: 1L
+				id: "7B5A817D9EC55D1F"
+				type: "questsadditions:time"
+			}]
 			title: "使用机械动力"
-			x: 8.0d
-			y: 6.5d
+			x: -1.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["5D34BFD68D039806"]

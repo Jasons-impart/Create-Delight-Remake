@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Feast_Afoot"
 	group: "7D0A1432AAAD0EBA"
+	hide_quest_until_deps_complete: true
 	icon: "vintagedelight:white_chefs_hat"
 	id: "1E7A476EE0C13AD1"
 	images: [{
@@ -14,7 +15,7 @@
 		x: -0.5d
 		y: 3.5d
 	}]
-	order_index: 1
+	order_index: 0
 	quest_links: [
 		{
 			id: "329928ACABC57A87"
@@ -49,6 +50,7 @@
 			dependencies: ["67A7A1B0700FFCA3"]
 			id: "2AD38E54F361CFD2"
 			shape: "rsquare"
+			subtitle: "至此踏入本包种田之旅"
 			tasks: [{
 				id: "723AEC0D38887C6D"
 				item: {
@@ -512,6 +514,7 @@
 			dependencies: ["2AD38E54F361CFD2"]
 			icon: "farmersdelight:rich_soil"
 			id: "1FAE95DDB868B787"
+			subtitle: "使用各种沃土可产出高品质作物"
 			tasks: [{
 				id: "5ECF80D957FB01D6"
 				title: "肥沃的土壤可以收获硕果"
@@ -997,6 +1000,8 @@
 			y: 3.5d
 		}
 		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			hide_dependency_lines: true
 			id: "3B22EE550A58193D"
 			rewards: [{
 				id: "6600397956CD6210"
@@ -1586,6 +1591,8 @@
 				"22C967F22899C478"
 				"1A486FCA2637D099"
 			]
+			hide_until_deps_complete: false
+			hide_until_deps_visible: true
 			id: "618BFEEC3A253778"
 			rewards: [{
 				id: "2FAF87F7538C18CA"
@@ -1621,6 +1628,8 @@
 			y: 8.5d
 		}
 		{
+			dependencies: ["67A7A1B0700FFCA3"]
+			hide_dependency_lines: true
 			id: "1A486FCA2637D099"
 			tasks: [{
 				id: "4D294E91011D7A12"

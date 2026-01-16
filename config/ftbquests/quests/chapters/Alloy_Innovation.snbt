@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Alloy_Innovation"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "create:mechanical_arm"
 	id: "7DDE0F8620589E02"
 	order_index: 1
@@ -340,11 +341,9 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"2B3F1B42F03F00F3"
-				"0F1F1C12B4CCEB7F"
-			]
+			dependencies: ["10D661738D4296E5"]
 			dependency_requirement: "one_completed"
+			hide_dependency_lines: true
 			id: "49A6C50C6A8821CE"
 			rewards: [{
 				id: "427A150424D14904"
@@ -359,38 +358,6 @@
 			}]
 			x: 12.0d
 			y: 1.5d
-		}
-		{
-			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
-			id: "0F1F1C12B4CCEB7F"
-			rewards: [{
-				id: "60A0FA2F1B7736D8"
-				item: "createmetallurgy:sandpaper_belt"
-				type: "item"
-			}]
-			tasks: [{
-				id: "57B5AF31B472642F"
-				item: {
-					Count: 1
-					id: "create:sand_paper"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 11.0d
-			y: 2.0d
-		}
-		{
-			id: "2B3F1B42F03F00F3"
-			tasks: [{
-				id: "13B50D3DE9C50346"
-				item: "create:rose_quartz"
-				type: "item"
-			}]
-			x: 11.0d
-			y: 1.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -578,6 +545,8 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["10D661738D4296E5"]
+			hide_dependency_lines: true
 			id: "18946F125B654A46"
 			shape: "square"
 			size: 2.0d
@@ -1043,6 +1012,7 @@
 				"70B8B43D6B542EEC"
 				"5A8FA422166974A0"
 			]
+			hide_until_deps_complete: true
 			id: "6EB96008F21DAFBF"
 			rewards: [{
 				id: "2C30E3F28E8F7CB7"
@@ -1282,7 +1252,10 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["5A8FA422166974A0"]
 			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
 			id: "70B8B43D6B542EEC"
 			min_required_tasks: 1
 			subtitle: "烈焰蛋糕可在系统商店购买"
@@ -1518,6 +1491,7 @@
 		{
 			dependencies: ["1EB02B56E6F91CF6"]
 			description: ["将打包机&c贴合容器&r放置，用&n&e红石信号激活&r&r后，可以一次性打包&n&3至多九格九组&r&r的物品变成包裹，包裹可以被捡起也可以被运输，如果&e没有红石信号激活&r则变成解包机，包裹进入会&e被拆解&r，你也可以用&a动力锯&r拆开它"]
+			hide_until_deps_complete: true
 			id: "6A911EDD3374BC98"
 			subtitle: "物流的起点物品"
 			tasks: [{
@@ -1827,6 +1801,7 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: true
 			id: "35F33D9F772B4551"
 			rewards: [{
 				id: "0C695142A1B9227A"
@@ -1845,6 +1820,7 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: true
 			id: "6DBEF23BA8608F4B"
 			rewards: [{
 				id: "2266BDDD9C5EF7E2"

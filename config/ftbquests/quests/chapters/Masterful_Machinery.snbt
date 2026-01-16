@@ -637,6 +637,7 @@
 		}
 		{
 			dependencies: ["41C38AC7AA97CFAD"]
+			hide_until_deps_complete: true
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"
 			rewards: [

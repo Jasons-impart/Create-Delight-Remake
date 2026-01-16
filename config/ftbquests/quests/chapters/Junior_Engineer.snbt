@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Junior_Engineer"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
@@ -1231,7 +1232,10 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["510B2EE25982FD73"]
+			dependencies: [
+				"510B2EE25982FD73"
+				"10D661738D4296E5"
+			]
 			description: [
 				"&e安山桶&r可以从机器中&4取出至多2000mB的流体&r"
 				"&e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r"
