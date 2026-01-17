@@ -390,6 +390,7 @@
 			y: 1.0d
 		}
 		{
+			description: ["去获取烈焰人燃烧室必须要下地狱。"]
 			id: "10D661738D4296E5"
 			tasks: [{
 				dimension: "minecraft:the_nether"

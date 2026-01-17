@@ -60,7 +60,7 @@
 						value: "minecraft:hoes"
 					}
 				}
-				title: "任意稿"
+				title: "任意锄"
 				type: "item"
 			}]
 			title: "终极奉献"
@@ -179,7 +179,7 @@
 				type: "stat"
 				value: 1
 			}]
-			title: "季节系统"
+			title: "季节系统与地区"
 			x: -2.5d
 			y: -2.5d
 		}
@@ -353,6 +353,7 @@
 				"5C38150F9B133FBF"
 				"758A7944757826A8"
 			]
+			dependency_requirement: "one_completed"
 			description: [
 				"要获取最初的几个温室之心的话，可以看看节气的进度系统。"
 				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
@@ -1000,8 +1001,7 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["67A7A1B0700FFCA3"]
-			hide_dependency_lines: true
+			dependencies: ["756A97F28B4129C1"]
 			id: "3B22EE550A58193D"
 			rewards: [{
 				id: "6600397956CD6210"
@@ -1017,7 +1017,7 @@
 				type: "item"
 			}]
 			title: "我要成为&e酿酒大师&r吖！"
-			x: -7.0d
+			x: -5.5d
 			y: 2.0d
 		}
 		{
@@ -1029,7 +1029,7 @@
 				item: "brewinandchewin:heating_cask"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -7.0d
 			y: 1.5d
 		}
 		{
@@ -1046,7 +1046,7 @@
 				item: "vinery:apple_press"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -6.5d
 			y: 3.5d
 		}
 		{
@@ -1072,7 +1072,7 @@
 				type: "item"
 			}]
 			title: "少女脚踩葡萄？"
-			x: -8.5d
+			x: -7.0d
 			y: 2.5d
 		}
 		{
@@ -1102,8 +1102,8 @@
 				}
 			]
 			title: "储藏酒的好东西"
-			x: -6.0d
-			y: 0.0d
+			x: -9.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1114,7 +1114,7 @@
 				item: "brewinandchewin:ice_crate"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -6.5d
 			y: 0.5d
 		}
 		{
@@ -1132,8 +1132,8 @@
 				type: "item"
 			}]
 			title: "珍藏你的名酒！"
-			x: -6.5d
-			y: 1.0d
+			x: -10.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1198,8 +1198,8 @@
 				}
 			]
 			title: "酿酒师"
-			x: -5.0d
-			y: 0.0d
+			x: -10.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1210,14 +1210,11 @@
 				item: "brewinandchewin:coaster"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 1.0d
+			x: -9.0d
+			y: 3.5d
 		}
 		{
-			dependencies: [
-				"756A97F28B4129C1"
-				"3B22EE550A58193D"
-			]
+			dependencies: ["3B22EE550A58193D"]
 			id: "7B285A5A3B2FD565"
 			shape: "rsquare"
 			tasks: [
@@ -1232,7 +1229,7 @@
 					type: "item"
 				}
 			]
-			x: -5.5d
+			x: -8.5d
 			y: 2.0d
 		}
 		{
@@ -1275,8 +1272,8 @@
 				item: "createcafe:iced_coffee_cup"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 4.0d
+			x: -4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6DCD56C34775CF84"]
@@ -1297,8 +1294,8 @@
 				item: "minecraft:glass_bottle"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 5.0d
+			x: -5.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
@@ -1587,12 +1584,8 @@
 			y: 7.5d
 		}
 		{
-			dependencies: [
-				"22C967F22899C478"
-				"1A486FCA2637D099"
-			]
-			hide_until_deps_complete: false
-			hide_until_deps_visible: true
+			dependencies: ["22C967F22899C478"]
+			description: ["需要使用催熟素或者催情素。前者用于作物，后者用于动物。"]
 			id: "618BFEEC3A253778"
 			rewards: [{
 				id: "2FAF87F7538C18CA"
@@ -1625,18 +1618,6 @@
 			}]
 			title: "脱模！！！"
 			x: -0.5d
-			y: 8.5d
-		}
-		{
-			dependencies: ["67A7A1B0700FFCA3"]
-			hide_dependency_lines: true
-			id: "1A486FCA2637D099"
-			tasks: [{
-				id: "4D294E91011D7A12"
-				item: "ratatouille:ripen_matter"
-				type: "item"
-			}]
-			x: 2.0d
 			y: 8.5d
 		}
 		{

@@ -1615,7 +1615,7 @@
 			min_required_tasks: 1
 			shape: "square"
 			size: 1.25d
-			subtitle: "找不到安山岩？"
+			subtitle: "机动从安山岩开始"
 			tasks: [
 				{
 					id: "1F97BB75E7CEED51"
