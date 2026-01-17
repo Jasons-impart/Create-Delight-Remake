@@ -1,9 +1,9 @@
 
 [air]
 	#Range: > 1
-	uses_per_tank = 36000
+	seconds_per_tank = 450
 	#Range: > 1
-	uses_per_tank_hover = 72000
+	seconds_per_tank_hover = 900
 
 [speed]
 	#Range: 0.01 ~ 100.0

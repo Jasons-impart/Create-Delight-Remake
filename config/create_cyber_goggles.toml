@@ -47,6 +47,7 @@ removeCooldown = true
 enchancedRotationMenu = false
 [misc]
 removeMechanicalArmLimit = false
+removeRequestLimit = true
 preventSelectionDiscard = true
 infEditBoxLength = false
 removeCardboardOverlay = true

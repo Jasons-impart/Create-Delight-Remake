@@ -23,7 +23,7 @@ overheatingMultiplier = 1.0
 #Multiplier for how much heat pipes obtain from passive heat sources like Lava or even Boilers.
 #Range: 0.0 ~ 1.7976931348623157E308
 passiveHeatSourceMultiplier = 1.0
-#How much heat do pipes loose per second.
+#How much heat do pipes lose per second.
 #Range: 0.0 ~ 1.7976931348623157E308
 passivePipeHeatLoss = 1.0
 #Multiplier for how much heat a boiler needs.
@@ -32,7 +32,7 @@ boilerRequiredHeatMultiplier = 1.0
 #How much heat per tick a nuclear reactor rod generate.
 #Range: 0.0 ~ 1.7976931348623157E308
 ReactorRodHeat = 30.0
-#How much heat per tick a nuclear reactor rod looses above the 16000*overheatingMultiplier.
+#How much heat per tick a nuclear reactor rod loses above the 16000*overheatingMultiplier.
 #Range: 0.0 ~ 1.7976931348623157E308
 ReactorRodHeatLoss = 25.0
 #Multiplier for how much heat solar panels output.
