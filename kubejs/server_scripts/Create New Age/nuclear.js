@@ -1,6 +1,9 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "create_new_age:thorium_multiplication"
+        "create_new_age:thorium_multiplication",
+        "create_new_age:sequenced_assembly/reactor_casing",
+        "create_new_age:shaped/reactor_glass",
+        "create_new_age:sequenced_assembly/nuclear_fuel"
     ])
     //核反应堆材料
     let iner_1 = "create_new_age:incomplete_casing"
@@ -12,7 +15,9 @@ ServerEvents.recipes(e => {
     .loops(1)
     .transitionalItem(iner_1)
     .id("create_new_age:reactor/reactor_casing")
-    
+
+    e.recipes.create.item_application("create_new_age:reactor_glass", ["create_new_age:reactor_casing", "#forge:glass"])
+    .id("create_new_age:item_application/reactor_glass")
     //钍再生减少水的消耗
     e.recipes.create.mixing("2x create_new_age:thorium", [
         Fluid.water(500),
