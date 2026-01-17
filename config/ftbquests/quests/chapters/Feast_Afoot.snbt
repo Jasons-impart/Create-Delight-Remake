@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Feast_Afoot"
 	group: "7D0A1432AAAD0EBA"
+	hide_quest_until_deps_complete: true
 	icon: "vintagedelight:white_chefs_hat"
 	id: "1E7A476EE0C13AD1"
 	images: [{
@@ -14,7 +15,7 @@
 		x: -0.5d
 		y: 3.5d
 	}]
-	order_index: 1
+	order_index: 0
 	quest_links: [
 		{
 			id: "329928ACABC57A87"
@@ -49,6 +50,7 @@
 			dependencies: ["67A7A1B0700FFCA3"]
 			id: "2AD38E54F361CFD2"
 			shape: "rsquare"
+			subtitle: "至此踏入本包种田之旅"
 			tasks: [{
 				id: "723AEC0D38887C6D"
 				item: {
@@ -58,7 +60,7 @@
 						value: "minecraft:hoes"
 					}
 				}
-				title: "任意稿"
+				title: "任意锄"
 				type: "item"
 			}]
 			title: "终极奉献"
@@ -177,7 +179,7 @@
 				type: "stat"
 				value: 1
 			}]
-			title: "季节系统"
+			title: "季节系统与地区"
 			x: -2.5d
 			y: -2.5d
 		}
@@ -185,9 +187,9 @@
 			dependencies: ["2AA39C8B473231E0"]
 			description: [
 				"&e品质系统&r是本整合包对于&e食物等阶的划分系统&r，品质越高，食物提供的&e饱食度&r和&e效果强度&r&4越高&r、&e效果持续时间&r也会&4延长&r"
-				"&a&n&l如何制作品质食物&r：需要&e对应品质&r的食物原料进行制作，&4仅可手工制作&r，所有&4非手动操作的量产化配方均不可产生品质&r"
-				"&a&n&l如何生产品质食物原料&r：只有&4沃土（以及各种变种）&r种植作物可有&e概率产出高一级品质种子&r，种植后可产出对应品质作物。需要注意的是：作物生长速度越快，产出高品质的作物概率越高。作物的生长速度使用生长检测器查看。"
-				"&a&n&l关于品质的作物&r：每一个级别都能够一定程度的无视季节与湿度的影响。如果要量化的话，铁的效果是1，金的效果是2，钻石的效果是4。"
+				"&a&n&l如何制作品质食物&r：需要&e对应品质&r的食物原料进行制作。所用的平均品质越高，产出的食物品质也会越高。"
+				"&a&n&l如何生产品质食物原料&r：只有&4沃土（以及各种变种）&r种植作物可有&e概率产出高一级品质种子&r，种植后可产出对应品质作物。作物生长速度越快，使用的沃土越高级，产出高品质的作物概率越高。作物的生长速度使用生长检测器查看。需要注意的是：&4仅可手工&r收割，所有&4非手动操作的收割均不可产生品质。"
+				"&r&a&n&l关于品质的作物&r：每一个级别都能够一定程度的无视季节与湿度的影响。如果要量化的话，铁的效果是1，金的效果是2，钻石的效果是4。"
 			]
 			id: "6BC7D3231848B305"
 			rewards: [{
@@ -351,6 +353,7 @@
 				"5C38150F9B133FBF"
 				"758A7944757826A8"
 			]
+			dependency_requirement: "one_completed"
 			description: [
 				"要获取最初的几个温室之心的话，可以看看节气的进度系统。"
 				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
@@ -512,6 +515,7 @@
 			dependencies: ["2AD38E54F361CFD2"]
 			icon: "farmersdelight:rich_soil"
 			id: "1FAE95DDB868B787"
+			subtitle: "使用各种沃土可产出高品质作物"
 			tasks: [{
 				id: "5ECF80D957FB01D6"
 				title: "肥沃的土壤可以收获硕果"
@@ -997,6 +1001,7 @@
 			y: 3.5d
 		}
 		{
+			dependencies: ["756A97F28B4129C1"]
 			id: "3B22EE550A58193D"
 			rewards: [{
 				id: "6600397956CD6210"
@@ -1012,7 +1017,7 @@
 				type: "item"
 			}]
 			title: "我要成为&e酿酒大师&r吖！"
-			x: -7.0d
+			x: -5.5d
 			y: 2.0d
 		}
 		{
@@ -1024,7 +1029,7 @@
 				item: "brewinandchewin:heating_cask"
 				type: "item"
 			}]
-			x: -8.5d
+			x: -7.0d
 			y: 1.5d
 		}
 		{
@@ -1041,7 +1046,7 @@
 				item: "vinery:apple_press"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -6.5d
 			y: 3.5d
 		}
 		{
@@ -1067,7 +1072,7 @@
 				type: "item"
 			}]
 			title: "少女脚踩葡萄？"
-			x: -8.5d
+			x: -7.0d
 			y: 2.5d
 		}
 		{
@@ -1097,8 +1102,8 @@
 				}
 			]
 			title: "储藏酒的好东西"
-			x: -6.0d
-			y: 0.0d
+			x: -9.0d
+			y: 0.5d
 		}
 		{
 			dependencies: ["3B22EE550A58193D"]
@@ -1109,7 +1114,7 @@
 				item: "brewinandchewin:ice_crate"
 				type: "item"
 			}]
-			x: -8.0d
+			x: -6.5d
 			y: 0.5d
 		}
 		{
@@ -1127,8 +1132,8 @@
 				type: "item"
 			}]
 			title: "珍藏你的名酒！"
-			x: -6.5d
-			y: 1.0d
+			x: -10.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1193,8 +1198,8 @@
 				}
 			]
 			title: "酿酒师"
-			x: -5.0d
-			y: 0.0d
+			x: -10.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["7B285A5A3B2FD565"]
@@ -1205,14 +1210,11 @@
 				item: "brewinandchewin:coaster"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 1.0d
+			x: -9.0d
+			y: 3.5d
 		}
 		{
-			dependencies: [
-				"756A97F28B4129C1"
-				"3B22EE550A58193D"
-			]
+			dependencies: ["3B22EE550A58193D"]
 			id: "7B285A5A3B2FD565"
 			shape: "rsquare"
 			tasks: [
@@ -1227,7 +1229,7 @@
 					type: "item"
 				}
 			]
-			x: -5.5d
+			x: -8.5d
 			y: 2.0d
 		}
 		{
@@ -1270,8 +1272,8 @@
 				item: "createcafe:iced_coffee_cup"
 				type: "item"
 			}]
-			x: -6.5d
-			y: 4.0d
+			x: -4.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6DCD56C34775CF84"]
@@ -1292,8 +1294,8 @@
 				item: "minecraft:glass_bottle"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 5.0d
+			x: -5.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["67A7A1B0700FFCA3"]
@@ -1582,10 +1584,8 @@
 			y: 7.5d
 		}
 		{
-			dependencies: [
-				"22C967F22899C478"
-				"1A486FCA2637D099"
-			]
+			dependencies: ["22C967F22899C478"]
+			description: ["需要使用催熟素或者催情素。前者用于作物，后者用于动物。"]
 			id: "618BFEEC3A253778"
 			rewards: [{
 				id: "2FAF87F7538C18CA"
@@ -1618,16 +1618,6 @@
 			}]
 			title: "脱模！！！"
 			x: -0.5d
-			y: 8.5d
-		}
-		{
-			id: "1A486FCA2637D099"
-			tasks: [{
-				id: "4D294E91011D7A12"
-				item: "ratatouille:ripen_matter"
-				type: "item"
-			}]
-			x: 2.0d
 			y: 8.5d
 		}
 		{

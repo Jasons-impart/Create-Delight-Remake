@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Stellar_Voyage"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: {
 		Count: 1
 		id: "ad_astra:tier_3_rocket"
@@ -961,6 +962,8 @@
 			y: 9.0d
 		}
 		{
+			dependencies: ["6EB96008F21DAFBF"]
+			hide_dependency_lines: true
 			id: "37ACACC4F00E1811"
 			tasks: [{
 				id: "73672501A08F3EAE"
@@ -1102,6 +1105,8 @@
 			y: 9.0d
 		}
 		{
+			dependencies: ["6EB96008F21DAFBF"]
+			hide_dependency_lines: true
 			id: "036F26ACC5571523"
 			subtitle: "{ \"text\": \"点此进入应用能源章节\", \"underlined\": \"true\",\"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7AF08EA4FB3D9A15\" } }"
 			tasks: [
@@ -1692,6 +1697,7 @@
 				"36ADB91429D6B418"
 				"4FC5D1EC503E6579"
 			]
+			hide_until_deps_complete: true
 			id: "7E2BA55431C4D882"
 			subtitle: "放置的方块形式只能在外星发酵"
 			tasks: [{

@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Super_Multiblock"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
 	order_index: 7
@@ -23,7 +24,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "注意使用方法哦！"
+			subtitle: "注意使用方法哦！随着任务解锁下面显示的多方块会越来越多"
 			tasks: [{
 				id: "1052B5570115F20F"
 				title: "各类多方块"

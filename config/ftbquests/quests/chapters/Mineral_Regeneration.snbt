@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Mineral_Regeneration"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_visible: true
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
 	order_index: 4
@@ -101,6 +102,7 @@
 				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
 				"2.将单独的矿脉整合为某类型的矿簇，玩家不再需要再找很多的矿脉。"
 			]
+			hide_until_deps_complete: true
 			icon: "minecraft:diamond_ore"
 			id: "00AF35D832509CB8"
 			shape: "hexagon"

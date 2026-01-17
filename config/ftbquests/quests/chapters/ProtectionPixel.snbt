@@ -1300,6 +1300,7 @@
 		}
 		{
 			dependencies: ["601E073214DCC16C"]
+			hide_until_deps_complete: true
 			icon: "protection_pixel:armorloadplatform"
 			id: "0B2B86FAF7742C2F"
 			rewards: [

@@ -96,7 +96,12 @@
 		}
 	]
 	order_index: 0
-	quest_links: [ ]
+	quest_links: [{
+		id: "3C87EAE5E13E4802"
+		linked_quest: "05D7688036D40AE4"
+		x: 12.5d
+		y: 1.5d
+	}]
 	quests: [
 		{
 			description: [
@@ -128,14 +133,36 @@
 			description: [
 				"为了获取AE中的重要物品：&e压印模板&r与&e赛特斯石英母岩&r，你需要使用&e陨石罗盘&r寻找陨石。"
 				"区块内有陨石时，陨石罗盘会高速旋转；大范围内都没有陨石则会低速旋转。"
+				"当然陨石本身也是一个结构，因此可以使用探险家指南针寻找。"
 			]
+			icon: "ae2:meteorite_compass"
 			id: "5D34BFD68D039806"
+			min_required_tasks: 1
 			subtitle: "使用陨石罗盘可以寻找到最近的陨石"
-			tasks: [{
-				id: "3BF26ED48DB88553"
-				item: "ae2:meteorite_compass"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "3BF26ED48DB88553"
+					item: "ae2:meteorite_compass"
+					type: "item"
+				}
+				{
+					id: "56BF8345A4A42027"
+					item: {
+						Count: 1
+						id: "explorerscompass:explorerscompass"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					icon: "ae2:sky_stone_block"
+					id: "20C518F6E3533F29"
+					observe_type: 0
+					timer: 0L
+					to_observe: "ae2:sky_stone_block"
+					type: "observation"
+				}
+			]
 			x: 2.0d
 			y: 2.0d
 		}
@@ -255,16 +282,23 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["6575B9B559D65549"]
+			dependencies: ["3066F516B382ED92"]
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
+			hide_until_deps_complete: true
 			icon: "create:brass_hand"
 			id: "638505D6DDD35EF8"
 			shape: "square"
 			size: 1.5d
 			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
+			tasks: [{
+				disable_toast: true
+				elapsedTime: 1L
+				id: "7B5A817D9EC55D1F"
+				type: "questsadditions:time"
+			}]
 			title: "使用机械动力"
-			x: 8.0d
-			y: 6.5d
+			x: -1.5d
+			y: 6.0d
 		}
 		{
 			dependencies: ["5D34BFD68D039806"]
