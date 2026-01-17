@@ -580,7 +580,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["4B575DDD058557C7"]
+			dependencies: ["638505D6DDD35EF8"]
 			description: [
 				"你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。&e按照你想要做的东西的序列组装的步骤组装&r即可。"
 				"&4反正记住一点：步骤越复杂的合成方式消耗的材料越少。&r"
@@ -644,24 +644,6 @@
 			title: "使用元件外壳封头冲压"
 			x: 3.0d
 			y: 4.5d
-		}
-		{
-			dependencies: ["3066F516B382ED92"]
-			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
-			icon: "create:brass_hand"
-			id: "4B575DDD058557C7"
-			shape: "square"
-			size: 1.5d
-			subtitle: "{ \"text\": \"转入下一章节\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"
-			tasks: [{
-				disable_toast: true
-				elapsedTime: 1L
-				id: "6D7092CD00C30097"
-				type: "questsadditions:time"
-			}]
-			title: "使用机械动力"
-			x: -6.5d
-			y: 1.5d
 		}
 	]
 	subtitle: ["AE2的机械动力合成"]

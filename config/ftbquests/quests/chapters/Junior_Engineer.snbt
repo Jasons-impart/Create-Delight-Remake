@@ -1609,6 +1609,7 @@
 			description: [
 				"整合包地形模组调整了安山岩的生成群系，请寻找 安山岩洞穴 群系。"
 				"可使用&4自然罗盘&r，或在有权限的情况下直接使用locate指令搜索terralith:cave/andesite_caves"
+				"注意：随着任务的进行，更多的章节会显现出来。"
 			]
 			icon: "minecraft:andesite"
 			id: "39AF291933E03F4C"

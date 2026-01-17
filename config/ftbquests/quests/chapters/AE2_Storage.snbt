@@ -40,6 +40,8 @@
 				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
 				""
 			]
+			hide_until_deps_complete: false
+			hide_until_deps_visible: false
 			id: "05D7688036D40AE4"
 			rewards: [{
 				exclude_from_claim_all: true
