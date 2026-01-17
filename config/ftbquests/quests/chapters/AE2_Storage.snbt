@@ -4,16 +4,19 @@
 	default_quest_shape: ""
 	filename: "AE2_Storage"
 	group: "0E8A6F1771B90E2E"
+	hide_quest_until_deps_complete: true
 	icon: "ae2:drive"
 	id: "467649501F6EE065"
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["05D7688036D40AE4"]
 			description: [
 				"需要供能。多个me控制器放在一起时会相连。为AE网络供能并提供频道。"
 				"不过此章节你更多只会用它作为合成材料。"
 			]
+			hide_dependency_lines: true
 			id: "15B8BBCFE27CD2D0"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -32,10 +35,13 @@
 			y: -3.75d
 		}
 		{
+			dependencies: ["6894705A95F46440"]
 			description: [
 				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
 				""
 			]
+			hide_until_deps_complete: false
+			hide_until_deps_visible: false
 			id: "05D7688036D40AE4"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -54,6 +60,8 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "2EAA35BF40FB182A"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -129,6 +137,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			dependency_requirement: "one_completed"
 			description: ["{ \"text\": \"点此查看元件外壳的具体合成方式\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2CAE49FE48790F23\" } }"]
 			id: "7777519D3A23C2C7"
@@ -175,6 +184,8 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "328FC706631222E9"
 			subtitle: "合成普通的照明面板即可"
 			tasks: [{
@@ -411,6 +422,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			id: "67C0556009A49A92"
 			tasks: [{
 				id: "7E1850B9B927EEB7"
@@ -503,8 +515,10 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "37602625EB8C5460"
-			subtitle: "让机械动力的机器自己处理自己，这会产生&e悖论奇点"
+			subtitle: "让粉碎轮自己处理自己，这会产生&e悖论奇点"
 			tasks: [{
 				id: "3B6DDCAEE96D070F"
 				item: "ae2:singularity"
@@ -514,10 +528,12 @@
 			y: -3.0d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			description: [
 				"用于&4加载所在ME网络经过的所有区块及维度&r。可以配合量子网桥使用。"
 				"若一个ME网络经过主世界和下界两个维度，则你需要在主世界和下界分别放置一个与该网络相连的空间锚，才能确保这个网络在两个维度所经过的区块都被加载。"
 			]
+			hide_dependency_lines: true
 			id: "548ACB7AEFD5E1DE"
 			rewards: [
 				{
@@ -566,6 +582,7 @@
 			y: 2.25d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			description: [
 				"消耗染色球（或染料、雪球）与能量，给方块染色，类似于IC刷子。"
 				""
@@ -575,6 +592,7 @@
 				""
 				"shift + 鼠标滚轮 切换当前使用的颜色（限于染色器内包含的染色球颜色）。"
 			]
+			hide_dependency_lines: true
 			id: "5B1FE048249D6374"
 			tasks: [{
 				id: "1697AD17CA5104EA"
@@ -589,7 +607,9 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			description: ["储电量200000AE，每使用一次消耗1600AE能量，故充满电后最多处理125个方块。"]
+			hide_dependency_lines: true
 			id: "2D2D6BFD75BBCDB6"
 			tasks: [{
 				id: "502716273B28DA96"
@@ -600,11 +620,13 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			description: [
 				"使用电能的武器，攻击力为3心，能储存8000ae，每次攻击用掉300ae。通过本模组的充能器充电，或者其它模组能够给物品充电的机械也行。"
 				""
 				"攻击时，可无视护甲防御。"
 			]
+			hide_dependency_lines: true
 			id: "03E528F58B572D48"
 			tasks: [{
 				id: "6704F40DCD791E08"
@@ -615,7 +637,9 @@
 			y: -3.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
 			dependency_requirement: "one_completed"
+			hide_dependency_lines: true
 			id: "6B3F181B4E31BCE2"
 			min_required_tasks: 1
 			tasks: [
@@ -674,6 +698,8 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "589EED2DA50DE0F1"
 			subtitle: "序列组装配方更省材料"
 			tasks: [{
@@ -833,6 +859,8 @@
 			y: 3.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "62AA7E83D24E4093"
 			size: 1.5d
 			tasks: [{
@@ -1298,7 +1326,7 @@
 				"6B3F181B4E31BCE2"
 				"00C814CDA34573FF"
 			]
-			description: ["耗电公式：2*n^2（n为组件等级）"]
+			description: ["1k的耗电量为4，之后组件每高一级耗电量翻倍。"]
 			id: "0FEDB6580A3661C6"
 			min_required_tasks: 1
 			subtitle: "与全能类似，但是字节越高，种类量越大"
@@ -1363,7 +1391,7 @@
 				"6B3F181B4E31BCE2"
 				"00C814CDA34573FF"
 			]
-			description: ["耗电计算公式：2*n^3（n为组件的等级）"]
+			description: ["1k的耗电量为6，之后组件每高一级，耗电量变为上一级的3倍。"]
 			id: "06850FB3D640CCA5"
 			min_required_tasks: 1
 			subtitle: "无限种类的全能组件！但是高等级的组件耗电量非常大"
@@ -1377,6 +1405,8 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["05D7688036D40AE4"]
+			hide_dependency_lines: true
 			id: "00C814CDA34573FF"
 			rewards: [{
 				id: "71434A19CB5917F8"

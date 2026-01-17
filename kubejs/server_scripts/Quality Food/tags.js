@@ -1,9 +1,5 @@
 ServerEvents.tags("block", e => {
     e.add("quality_food:quality_blocks",
-        "minecraft:grass",
-        "minecraft:tall_grass",
-        "minecraft:fern",
-        "minecraft:large_fern", 
         'brewinandchewin:flaxen_cheese_wheel',
         'vintagedelight:cheese_pizza', 
         'vintagedelight:meat_pizza', 
@@ -61,17 +57,12 @@ ServerEvents.tags("block", e => {
         }
     })
     e.add("createdelight:quality_crops",
-        "#farmersdelight:wild_crops",
         "neapolitan:vanilla_vine",
         "neapolitan:strawberry_bush",
         "neapolitan:small_banana_frond",
         "neapolitan:banana_frond",
         "neapolitan:large_banana_frond",
         "neapolitan:mint",
-        "minecraft:grass",
-        "minecraft:tall_grass",
-        "minecraft:fern",
-        "minecraft:large_fern",
         "vinery:red_grape_bush",
         "vinery:white_grape_bush",
         "vinery:savanna_grape_bush_red",
@@ -83,6 +74,7 @@ ServerEvents.tags("block", e => {
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
         "minecraft:cocoa",
+        "farmersdelight:budding_tomatoes",
         'fruitsdelight:bayberry_leaves',
         'fruitsdelight:kiwi_leaves',
         'fruitsdelight:fig_leaves',
@@ -100,15 +92,7 @@ ServerEvents.tags("block", e => {
         'farmersdelight:red_mushroom_colony',
         'mynethersdelight:crimson_fungus_colony',
         'mynethersdelight:warped_fungus_colony',
-        'collectorsreap:portobello_colony'
-    )
-    e.add("quality_food:quality_blocks", 
-        "#createdelight:quality_crops",
-        "minecraft:sea_pickle",
-        "minecraft:moss_block",
-        'mynethersdelight:powdery_cane',
-        'mynethersdelight:powdery_cannon',
-        'mynethersdelight:bullet_pepper',
+        'collectorsreap:portobello_colony',
         'minecraft:sweet_berry_bush',
         "nethervinery:crimson_grape_bush",
         "nethervinery:warped_grape_bush",
@@ -116,11 +100,24 @@ ServerEvents.tags("block", e => {
         "collectorsreap:lime_bush",
         "fruitsdelight:lemon_tree",
         "fruitsdelight:blueberry_bush",
-        "fruitsdelight:cranberry_bush"
+        "fruitsdelight:cranberry_bush",
+        'mynethersdelight:powdery_cane',
+        'mynethersdelight:powdery_cannon',
+        'mynethersdelight:bullet_pepper'
+    )
+    e.add("quality_food:quality_blocks", 
+        "#createdelight:quality_crops",
+        "minecraft:sea_pickle"
+    )
+    e.remove("quality_food:quality_blocks", 
+        "#farmersdelight:wild_crops",
     )
 })
 
 ServerEvents.tags("item", e => {
+    e.remove("quality_food:material_whitelist", 
+        "#farmersdelight:wild_crops"
+    )
     e.add("quality_food:material_whitelist", [
         'farmersdelight:brown_mushroom_colony',
         'farmersrespite:coffee_beans',

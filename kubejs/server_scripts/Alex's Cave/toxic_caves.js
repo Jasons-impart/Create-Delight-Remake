@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:pressurizing/ethylene_fluid_from_ethanol")
     //润滑油合成
     e.recipes.vintageimprovements.pressurizing(
-       Fluid.of("createdelight:lubricating_oil", 100), 
+       Fluid.of("createdelight:lubricating_oil", 250), 
        [
             Fluid.of("vintageimprovements:sulfuric_acid", 100),
             Fluid.of("createdelight:ethylene_fluid", 250),

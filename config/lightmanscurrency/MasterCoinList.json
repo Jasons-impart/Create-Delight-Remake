@@ -188,7 +188,7 @@
             "x": 12,
             "y": 74,
             "width": 38,
-            "command": "exchangeDown-createdelightcore:iron_coin",
+            "command": "exchangeDown-createdelightcore:copper_coin",
             "icons": [
               {
                 "type": "lightmanscurrency:item",

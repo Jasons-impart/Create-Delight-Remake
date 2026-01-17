@@ -101,6 +101,7 @@ key_key.pickItem:key.mouse.middle
 key_key.command:key.keyboard.slash
 key_key.socialInteractions:key.keyboard.p
 key_key.screenshot:key.keyboard.f2
+key_gui.xaero_pac_key_open_menu:key.keyboard.n
 key_key.togglePerspective:key.keyboard.f5
 key_key.smoothCamera:key.keyboard.unknown
 key_key.fullscreen:key.keyboard.f11
@@ -218,7 +219,7 @@ key_key.lightmanscurrency.open_wallet:key.keyboard.v
 key_key.lightmanscurrency.portable_terminal:key.keyboard.backslash
 key_key.lightmanscurrency.portable_atm:key.keyboard.unknown
 key_keybinds.bettercombat.feint:key.keyboard.unknown
-key_keybinds.bettercombat.toggle_mine_with_weapons:key.keyboard.comma
+key_keybinds.bettercombat.toggle_mine_with_weapons:key.keyboard.period
 key_gui.xaero_minimap_settings:key.keyboard.y
 key_gui.xaero_zoom_in:key.keyboard.unknown
 key_gui.xaero_zoom_out:key.keyboard.unknown

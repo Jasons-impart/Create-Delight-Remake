@@ -1,7 +1,4 @@
 ServerEvents.recipes(e => {
-    remove_recipes_id(e, [
-        "mbd2:mbd_gadgets"
-    ])
     //安山总线
     e.recipes.create.item_application(
         "createdelight:andesite_import_bus",

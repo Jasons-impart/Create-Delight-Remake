@@ -10,6 +10,7 @@ MBDMachineEvents.onStructureFormed("createdelight:hydropower_station", e => {
     fan_poses.push(fan_pos)
     /** @type {Internal.MBDKineticMachineBlockEntity} */
     let fan = part.machineHolder
+    fan.stopWorking()
     fan.scheduleWorkingRPM(-32, false)
   })
   machine.customData.putInt("fan_count", fan_poses.length)

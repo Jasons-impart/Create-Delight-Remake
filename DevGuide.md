@@ -115,8 +115,6 @@
   - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
 - fastboot
   - 启动性能优化，延迟DFU的编译时间 https://www.mcmod.cn/class/15103.html
-- AllTheLeaks (Memory Leak Fix)
-  - 修复内存泄漏 https://www.mcmod.cn/class/17405.html
 - Create: Fast Schematic Cannon
   - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
 - Krypton Reforged
@@ -125,6 +123,8 @@
   - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
 - DSBG
   - 关闭setblock in far chunk警告，本包里adastra等模组在生成时会频繁触发这个警报，有卡服风险。 https://www.mcmod.cn/class/14239.html
+- Create: LazyTick
+  - 优化机械动力机器的性能 https://www.curseforge.com/minecraft/mc-mods/create-lazytick
 
 # 考虑中的实用模组
 - 卓越火炬

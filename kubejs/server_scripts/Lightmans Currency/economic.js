@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
-    e.replaceInput({id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1"}, "minecraft:ender_pearl", "create_sa:copper_magnet")
-    e.replaceInput({id: "lightmanscurrency:upgrades/network_upgrade"}, "minecraft:ender_eye", 'ae2:singularity')
+    e.replaceInput({ id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1" }, "minecraft:ender_pearl", "create_sa:copper_magnet")
+    e.replaceInput({ id: "lightmanscurrency:upgrades/network_upgrade" }, "minecraft:ender_eye", 'ae2:singularity')
     e.recipes.kubejs.shaped(
         'lightmanscurrency:trading_core',
         [
@@ -8,9 +8,9 @@ ServerEvents.recipes(e => {
             "ABA",
             "AAA"
         ], {
-            A: "createdelightcore:iron_coin",
-            B: "createdelightcore:gold_coin"
-        }
+        A: "createdelightcore:iron_coin",
+        B: "createdelightcore:gold_coin"
+    }
     ).id("lightmanscurrency:trading_core")
     e.recipes.kubejs.shaped(
         'lightmanscurrency:atm',
@@ -19,14 +19,14 @@ ServerEvents.recipes(e => {
             "ACA",
             "AAA"
         ], {
-            A: "#forge:ingots/iron",
-            B: "#forge:glass_panes",
-            C: "lightmanscurrency:trading_core"
-        }
+        A: "#forge:ingots/iron",
+        B: "#forge:glass_panes",
+        C: "lightmanscurrency:trading_core"
+    }
     ).id("lightmanscurrency:atm")
-    e.replaceInput({id: "lightmanscurrency:cash_register"}, "minecraft:ender_pearl", "lightmanscurrency:trading_core")
-    e.replaceInput({id: "lightmanscurrency:terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
-    e.replaceInput({id: "lightmanscurrency:gem_terminal"}, "minecraft:ender_eye", "lightmanscurrency:trading_core")
+    e.replaceInput({ id: "lightmanscurrency:cash_register" }, "minecraft:ender_pearl", "lightmanscurrency:trading_core")
+    e.replaceInput({ id: "lightmanscurrency:terminal" }, "minecraft:ender_eye", "lightmanscurrency:trading_core")
+    e.replaceInput({ id: "lightmanscurrency:gem_terminal" }, "minecraft:ender_eye", "lightmanscurrency:trading_core")
     e.recipes.kubejs.shapeless(
         'lightmanscurrency:wallet_ender_dragon',
         [

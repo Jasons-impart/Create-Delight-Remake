@@ -26,17 +26,26 @@ ServerEvents.recipes(e => {
     .id("create_mechanical_spawner:emptying/normal_genetic_seed")
 
     create.emptying([
-        Fluid.of("create_mechanical_spawner:spawn_fluid_random", 50),
+        Fluid.of("create_mechanical_spawner:spawn_fluid_random", 100),
         Item.of("createdelight:refined_genetic_seed").withChance(0.4)],
         'createdelight:normal_genetic_seed')
     .id("create_mechanical_spawner:emptying/refined_genetic_seed")
     
     create.emptying([
-        Fluid.of("create_mechanical_spawner:spawn_fluid_random", 50),
+        Fluid.of("create_mechanical_spawner:spawn_fluid_random", 200),
         Item.of("createdelight:pure_genetic_seed").withChance(0.4)],
         'createdelight:refined_genetic_seed')
     .id("create_mechanical_spawner:emptying/pure_genetic_seed")
 
+
+    create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 50), "createdelight:inferior_genetic_seed")
+    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_inferior_genetic_seed")
+    create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 100), "createdelight:normal_genetic_seed")
+    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_normal_genetic_seed")
+    create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 200), "createdelight:refined_genetic_seed")
+    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_refined_genetic_seed")
+    create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 400), "createdelight:pure_genetic_seed")
+    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_pure_genetic_seed")
     /**
      * 
      * @param {Internal.RecipesEventJS} e 

@@ -26,6 +26,7 @@
 !/curios-client.toml
 !/curios-common.toml
 !/eclipticseasons-common.toml
+!/endertrigon-common.toml
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
@@ -78,3 +79,4 @@ xaerominimap_entities.json
 !/create_cyber_goggles.toml
 !/canary.properties
 !/tab
+!/Obscuria

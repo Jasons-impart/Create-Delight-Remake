@@ -11,7 +11,7 @@
 	backgroundColor = ["#99000000"]
 	#Add Gaussian blur effect to GUI background when opened.
 	#Disable this if you run into a problem or are on low-end PCs
-	blurEffect = true
+	blurEffect = false
 	#This option means that blur effect only applies to GUI screens with a background.
 	#Similar to Minecraft 1.20.6. Enable this for better optimization & compatibility.
 	blurWithBackground = true

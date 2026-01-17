@@ -3,6 +3,7 @@
 	default_quest_shape: ""
 	filename: "54356C1067ECB809"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "create_new_age:generator_coil"
 	id: "54356C1067ECB809"
 	order_index: 2
@@ -681,6 +682,8 @@
 			y: 5.0d
 		}
 		{
+			dependencies: ["2CC8B87D086B3275"]
+			hide_dependency_lines: true
 			id: "7DA3417CB0E6E7DB"
 			rewards: [{
 				id: "7204F07714B3B84B"

@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "AE2_Production_Amplification"
 	group: "0E8A6F1771B90E2E"
-	hide_quest_until_deps_visible: true
 	icon: {
 		Count: 1
 		id: "createdelight:sky_stone_paste"
@@ -137,7 +136,12 @@
 			y: -2.5d
 		}
 		{
-			hide_until_deps_visible: false
+			dependencies: [
+				"638505D6DDD35EF8"
+				"3F2537B88B8517A7"
+			]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
 			id: "05D52AC3EBD5ACF6"
 			tasks: [{
 				id: "111FE5AC3C0B14DC"
@@ -186,6 +190,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
+			hide_until_deps_complete: true
 			hide_until_deps_visible: false
 			icon: "createdelight:universal_press"
 			id: "23844625502BCC3B"
@@ -228,6 +233,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
+			hide_until_deps_complete: true
 			hide_until_deps_visible: false
 			icon: "createdelight:cell_housing_curving_head"
 			id: "6F8DB4C688CDE79B"
@@ -429,6 +435,7 @@
 		}
 		{
 			dependencies: ["3F2537B88B8517A7"]
+			hide_until_deps_complete: true
 			hide_until_deps_visible: false
 			id: "34D57250C41B9518"
 			tasks: [
@@ -573,6 +580,7 @@
 			y: 4.5d
 		}
 		{
+			dependencies: ["638505D6DDD35EF8"]
 			description: [
 				"你可能会遇上组装步骤与你想要的东西的组装步骤不一致的情况，不用担心，这是正常的。&e按照你想要做的东西的序列组装的步骤组装&r即可。"
 				"&4反正记住一点：步骤越复杂的合成方式消耗的材料越少。&r"

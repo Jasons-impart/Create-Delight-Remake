@@ -568,6 +568,7 @@
 		}
 		{
 			dependencies: ["41C38AC7AA97CFAD"]
+			hide_until_deps_complete: true
 			icon: "man_of_many_planes:economy_plane"
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"

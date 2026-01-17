@@ -4,6 +4,7 @@
 	default_quest_shape: ""
 	filename: "Alloy_Innovation"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
 	icon: "create:mechanical_arm"
 	id: "7DDE0F8620589E02"
 	order_index: 1
@@ -91,7 +92,7 @@
 				"1999728E6F67F8EF"
 			]
 			dependency_requirement: "one_completed"
-			description: ["也可直接通入&e液体燃料&r来进行&4加热&r，&l&n&4JEI查看&r"]
+			description: ["可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -340,11 +341,9 @@
 			y: -1.0d
 		}
 		{
-			dependencies: [
-				"2B3F1B42F03F00F3"
-				"0F1F1C12B4CCEB7F"
-			]
+			dependencies: ["10D661738D4296E5"]
 			dependency_requirement: "one_completed"
+			hide_dependency_lines: true
 			id: "49A6C50C6A8821CE"
 			rewards: [{
 				id: "427A150424D14904"
@@ -361,45 +360,13 @@
 			y: 1.5d
 		}
 		{
-			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
-			id: "0F1F1C12B4CCEB7F"
-			rewards: [{
-				id: "60A0FA2F1B7736D8"
-				item: "createmetallurgy:sandpaper_belt"
-				type: "item"
-			}]
-			tasks: [{
-				id: "57B5AF31B472642F"
-				item: {
-					Count: 1
-					id: "create:sand_paper"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 11.0d
-			y: 2.0d
-		}
-		{
-			id: "2B3F1B42F03F00F3"
-			tasks: [{
-				id: "13B50D3DE9C50346"
-				item: "create:rose_quartz"
-				type: "item"
-			}]
-			x: 11.0d
-			y: 1.0d
-		}
-		{
 			dependencies: ["10D661738D4296E5"]
 			description: ["好吧，寻找&4下界要塞&r其实有个&e简单方法&r：击杀&b下界灵魂沙峡谷&r中的&e游魂&r，使用其掉落的&b魂珠&r，它会飞向&4最近的要塞&r"]
 			icon: {
 				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
-					Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+					Icon: "minecraft:block/fire_1"
 				}
 			}
 			id: "1999728E6F67F8EF"
@@ -409,7 +376,7 @@
 					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
-						Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+						Icon: "minecraft:block/fire_1"
 					}
 				}
 				id: "30833998091D4372"
@@ -423,6 +390,7 @@
 			y: 1.0d
 		}
 		{
+			description: ["去获取烈焰人燃烧室必须要下地狱。"]
 			id: "10D661738D4296E5"
 			tasks: [{
 				dimension: "minecraft:the_nether"
@@ -578,6 +546,8 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["10D661738D4296E5"]
+			hide_dependency_lines: true
 			id: "18946F125B654A46"
 			shape: "square"
 			size: 2.0d
@@ -611,6 +581,7 @@
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
+			description: ["注意：声明区块后，&c不要&r将机械手放在&e区块边缘&r处，请至少离开边缘&e一格&r放置。"]
 			id: "783AE5D1F35263E1"
 			rewards: [{
 				count: 3
@@ -992,7 +963,7 @@
 				type: "item"
 			}]
 			size: 1.0d
-			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e应力&r（&4不可跨维度&r）"
 			tasks: [{
 				id: "7E8F512707C3D437"
 				item: "createutilities:void_motor"
@@ -1010,7 +981,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨维度&r）"
 			tasks: [{
 				id: "3A8416116E24A115"
 				item: "createutilities:void_tank"
@@ -1028,7 +999,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨维度&r）"
 			tasks: [{
 				id: "68E0A2128888812E"
 				item: "createutilities:void_battery"
@@ -1042,6 +1013,7 @@
 				"70B8B43D6B542EEC"
 				"5A8FA422166974A0"
 			]
+			hide_until_deps_complete: true
 			id: "6EB96008F21DAFBF"
 			rewards: [{
 				id: "2C30E3F28E8F7CB7"
@@ -1247,7 +1219,7 @@
 		{
 			dependencies: ["07C28031281E5458"]
 			id: "46E16005AA8F9C8A"
-			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨维度&r）"
 			tasks: [{
 				id: "5DEF9B1874E79A03"
 				item: "functionalstorage:ender_drawer"
@@ -1281,7 +1253,10 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["5A8FA422166974A0"]
 			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
+			hide_dependency_lines: true
+			hide_until_deps_complete: true
 			id: "70B8B43D6B542EEC"
 			min_required_tasks: 1
 			subtitle: "烈焰蛋糕可在系统商店购买"
@@ -1517,6 +1492,7 @@
 		{
 			dependencies: ["1EB02B56E6F91CF6"]
 			description: ["将打包机&c贴合容器&r放置，用&n&e红石信号激活&r&r后，可以一次性打包&n&3至多九格九组&r&r的物品变成包裹，包裹可以被捡起也可以被运输，如果&e没有红石信号激活&r则变成解包机，包裹进入会&e被拆解&r，你也可以用&a动力锯&r拆开它"]
+			hide_until_deps_complete: true
 			id: "6A911EDD3374BC98"
 			subtitle: "物流的起点物品"
 			tasks: [{
@@ -1681,7 +1657,12 @@
 		}
 		{
 			dependencies: ["30563CA84C86D361"]
-			description: ["AE仓储桥接器可以让&2机械动力&r的仓储系统与&2AE&r相连，AE可以通过“&c自动合成&r”请求物品，机械动力&c可以请求AE系统&r中的物品"]
+			description: [
+				"AE仓储桥接器可以让&2机械动力&r的仓储系统与&2AE&r相连。"
+				"首先使用其右键机动网络的一个元件将其&c绑定至某机动网络&r，其次将其&c放置&r于世界中并将其&c连入AE网络&r，最后放置一个贴着它的&2打包机&r。"
+				"AE可以通过“&2自动合成&r”（即通过AE的“&2下单&r”）请求物品，此时由机动仓储网络发出的包裹的地址是&2仓储桥接器内所记录的地址&r。这个功能需保证AE网络中有CPU才能运作。对于未登上太空而无法造出样板供应器者，可以考虑使用这个机制来实现物品的下单。"
+				"同样的，机械动力&2可以请求AE系统&r中的物品。"
+			]
 			id: "53525848D094C800"
 			subtitle: "{ \"text\": \"是的，我们之间有个孩子（）\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3066F516B382ED92\" } }"
 			tasks: [{
@@ -1821,6 +1802,7 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: true
 			id: "35F33D9F772B4551"
 			rewards: [{
 				id: "0C695142A1B9227A"
@@ -1839,6 +1821,7 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: true
 			id: "6DBEF23BA8608F4B"
 			rewards: [{
 				id: "2266BDDD9C5EF7E2"
@@ -1854,6 +1837,24 @@
 			title: "优秀应力载体！"
 			x: 26.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			icon: "industrial_platform:fluid_pool"
+			id: "36CB35E2A940093B"
+			rewards: [{
+				id: "181A0753075BD670"
+				item: "industrial_platform:fluid_pool"
+				type: "item"
+			}]
+			subtitle: "商店五金一个，这下不用自己挖无限流体池了"
+			tasks: [{
+				id: "704995CF5CF30FEB"
+				type: "checkmark"
+			}]
+			title: "流体池"
+			x: -0.5d
+			y: -2.5d
 		}
 	]
 	title: "&9体系渐成 "
