@@ -21,3 +21,22 @@ StartupEvents.modifyCreativeTab("ae2:main", e => {
     'createdelight:cell_housing_curving_head',
   ])
 })
+
+StartupEvents.modifyCreativeTab("extendedae_plus:main", e => {
+  e.remove([
+    'extendedae_plus:infinity_core', 
+    'extendedae_plus:infinity_biginteger_cell', 
+    'extendedae_plus:assembler_matrix_upload_core', 
+    'extendedae_plus:assembler_matrix_speed_plus', 
+    'extendedae_plus:assembler_matrix_crafter_plus', 
+    'extendedae_plus:assembler_matrix_pattern_plus', 
+    'extendedae_plus:entity_speed_ticker', 
+    Item.of('extendedae_plus:entity_speed_card', '{"EAS:mult":2}'), 
+    Item.of('extendedae_plus:entity_speed_card', '{"EAS:mult":4}'), 
+    Item.of('extendedae_plus:entity_speed_card', '{"EAS:mult":8}'), 
+    Item.of('extendedae_plus:entity_speed_card', '{"EAS:mult":16}'), 
+    'extendedae_plus:oblivion_singularity', 
+    'extendedae_plus:basic_core', 
+    'extendedae_plus:storage_core', 
+    'extendedae_plus:spatial_core'])
+})
