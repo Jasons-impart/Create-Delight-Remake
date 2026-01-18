@@ -6,8 +6,8 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({id: "create_new_age:shaped/basic_motor_extension"}, "create_new_age:copper_circuit", "ae2:logic_processor")
     e.replaceInput({id: "create_new_age:shaped/basic_motor_extension"}, "create_new_age:overcharged_iron", "createmetallurgy:steel_ingot")
-    e.replaceInput({id: "create_new_age:advanced_motor_extension"}, "create_new_age:overcharged_iron_sheet", "vvaddon:mine_ingot")
-    e.replaceInput({id: "create_new_age:advanced_motor_extension"}, "create_new_age:copper_circuit", "ae2omnicells:multidimensional_expansion_processor")
+    e.replaceInput({id: "create_new_age:mechanical_crafting/advanced_motor_extension"}, "create_new_age:overcharged_iron_sheet", "vvaddon:mine_ingot")
+    e.replaceInput({id: "create_new_age:mechanical_crafting/advanced_motor_extension"}, "create_new_age:copper_circuit", "ae2omnicells:multidimensional_expansion_processor")
     //基础电机
     let iner = "createdelight:incomplete_basic_motor"
     e.recipes.create.sequenced_assembly("2x create_new_age:basic_motor", "createaddition:electric_motor",

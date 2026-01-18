@@ -387,15 +387,15 @@
 						items: [
 							{
 								Count: 1b
-								id: "create_new_age:energiser_t1"
+								id: "create_new_age:basic_energiser"
 							}
 							{
 								Count: 1b
-								id: "create_new_age:energiser_t2"
+								id: "create_new_age:advanced_energiser"
 							}
 							{
 								Count: 1b
-								id: "create_new_age:energiser_t3"
+								id: "create_new_age:reinforced_energiser"
 							}
 							{
 								Count: 1b

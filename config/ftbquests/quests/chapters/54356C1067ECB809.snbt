@@ -502,7 +502,7 @@
 			subtitle: "采用尖端放电进行充能"
 			tasks: [{
 				id: "706355E893B4CE8C"
-				item: "create_new_age:energiser_t1"
+				item: "create_new_age:basic_energiser"
 				type: "item"
 			}]
 			x: 0.0d
@@ -539,7 +539,7 @@
 			subtitle: "激光激发！"
 			tasks: [{
 				id: "2CD1A33502541B2A"
-				item: "create_new_age:energiser_t2"
+				item: "create_new_age:advanced_energiser"
 				type: "item"
 			}]
 			x: 1.5d
@@ -552,7 +552,7 @@
 			subtitle: "钻石充能！"
 			tasks: [{
 				id: "7BA290D7428578CF"
-				item: "create_new_age:energiser_t3"
+				item: "create_new_age:reinforced_energiser"
 				type: "item"
 			}]
 			x: 3.0d
