@@ -1,5 +1,4 @@
-// 基础食材列表，默认食材价值为1
-global.DefaultFoodIngredientValue = 1;
+// 基础食材列表
 global.FoodIngredientList = [
     "minecraft:carrot",
     "minecraft:potato",
@@ -116,6 +115,8 @@ global.FoodIngredientList = [
     "alexsmobs:kangaroo_meat",
     "alexsmobs:raw_catfish",
 
+    "alexscaves:candy_cane",
+
     "butchercraft:tripe",
     "butchercraft:stomach",
     "butchercraft:lung",
@@ -138,6 +139,8 @@ global.FoodIngredientList = [
     "createdelight:dry_yeast",
     "createdelight:butter"
 ];
+// 默认食材价值，如果希望是其他值，加入Dict
+global.DefaultFoodIngredientValue = 1;
 let FoodIngredientValueDict = {
     "minecraft:beef": 2,
     "minecraft:cod": 2,
@@ -183,6 +186,16 @@ let FoodIngredientValueDict = {
     "ratatouille:cocoa_butter": 2,
     "ratatouille:cocoa_solids": 2,
 
+    "alexscaves:candy_cane": 10,
+
     "createdelight:butter": 2
+
 }
 global.FoodIngredientValueDict = new Map(Object.entries(FoodIngredientValueDict));
+
+// 默认配方价值倍率，如果希望是其他值，加入Dict
+global.DefaultRecipeValueMultiplier = 2;
+let RecipeValueMultiplierDict = {
+    // "crafting": 10
+}
+global.RecipeValueMultiplierDict = new Map(Object.entries(RecipeValueMultiplierDict));

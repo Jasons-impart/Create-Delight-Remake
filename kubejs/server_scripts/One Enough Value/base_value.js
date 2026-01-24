@@ -1,8 +1,6 @@
 OEVEvents.addItemValue(event => {
     global.FoodIngredientList.forEach(Ingredient => {
-        // console.log(global.DefaultFoodIngredientValue);
         let value = global.FoodIngredientValueDict.get(Ingredient) ?? global.DefaultFoodIngredientValue;
-        // console.log(Ingredient, value);
         event.addBaseItemValue(Ingredient, value);
     });
 
