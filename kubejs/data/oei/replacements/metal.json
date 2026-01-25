@@ -77,5 +77,41 @@
             "ae2omnicells:ender_ingot"
         ],
         "resultItems": "createutilities:void_steel_ingot"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_block"
+        ],
+        "resultItems": "createmetallurgy:tungsten_block"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_ingot"
+        ],
+        "resultItems": "createmetallurgy:tungsten_ingot"
+    },
+    {
+        "matchItems": [
+            "northstar:raw_tungsten_ore"
+        ],
+        "resultItems": "createmetallurgy:raw_tungsten"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_nugget"
+        ],
+        "resultItems": "createmetallurgy:tungsten_nugget"
+    },
+    {
+        "matchItems": [
+            "northstar:crushed_raw_tungsten"
+        ],
+        "resultItems": "createmetallurgy:crushed_raw_tungsten"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_sheet"
+        ],
+        "resultItems": "createmetallurgy:tungsten_sheet"
     }
 ]

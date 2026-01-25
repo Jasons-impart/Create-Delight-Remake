@@ -6,14 +6,25 @@ ServerEvents.recipes(e => {
         "northstar:sequenced_assembly/titanium",
         "northstar:crushing/limestone",
         "northstar:crushing/sand",
-        "northstar:crushing/basalt"
+        "northstar:crushing/basalt",
+        "northstar:mixing/brine",
+        "northstar:compacting/brine_to_salt"
     ])
     remove_recipes_output(e, [
         "northstar:circuit",
         "northstar:advanced_circuit",
-        "northstar:targeting_computer"
+        "northstar:targeting_computer",
+        "northstar:electrolysis_machine",
+        "northstar:solar_panel",
+        "northstar:circuit_engraver"
     ])
-    const { create, vintageimprovements } = e.recipes
+    const { create, vintageimprovements, create_new_age } = e.recipes
+    e.remove({type: "northstar:electrolysis"})
+    e.remove({type: "northstar:engraving"})
+
+    create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
+    .id("northstar:energising/enriched_glowstone_ore")
+
     e.replaceInput({
         output: [
             "northstar:jet_engine",
@@ -31,10 +42,10 @@ ServerEvents.recipes(e => {
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
     e.replaceInput("*", "northstar:hardened_precision_mechanism", "create_sa:heat_engine")
-
+    e.replaceOutput({id: "northstar:splashing/crushed_raw_tungsten"}, "minecraft:quartz", "minecraft:gold_nugget")
 
     create.crushing(Item.of("northstar:rutile_concentrate").withChance(0.1),
-     ["northstar:moon_sand", "northstar:mars_sand"])
+     [["northstar:moon_sand", "northstar:mars_sand"]])
     .id("northstar:crushing/rutile_concentrate_from_sand")
     vintageimprovements.vacuumizing(Fluid.of("northstar:titanium_tetrachloride", 250), [
         Fluid.of("northstar:chlorine", 25),

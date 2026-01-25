@@ -20,7 +20,8 @@
     {
         "matchItems": [
             "ratatouille:salt",
-            "bakeries:salt"
+            "bakeries:salt",
+            "northstar:salt"
         ],
         "resultItems": "vintagedelight:salt_dust"
     },
