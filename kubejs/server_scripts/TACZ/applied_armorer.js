@@ -81,7 +81,7 @@ ServerEvents.recipes(e => {
             "AAA"
         ], {
         A: "#forge:ingots/iron",
-        B: "protection_pixel:reinforcedfiber"
+        B: "northstar:durable_fabric"
     }).id("applied_armorer:bracelet_niklas")
     custom_inscribe(
         Item.of('tacz:attachment', '{AttachmentId:"applied_armorer:bracelet_aerial_wristband"}'),

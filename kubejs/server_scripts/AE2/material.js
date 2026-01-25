@@ -214,12 +214,14 @@ ServerEvents.recipes((event) => {
   );
 
   //包层线缆使用强化纤维制作
-  kubejs.shaped("2x ae2:fluix_covered_cable", [
-    "ABA"
+  kubejs.shaped("4x ae2:fluix_covered_cable", [
+    " A ",
+    "ABA",
+    " A "
   ],
     {
       A: "ae2:fluix_glass_cable",
-      B: "protection_pixel:reinforcedfiber"
+      B: "northstar:durable_fabric"
     })
   .id("createdelight:fluix_covered_cable_from_reinforcedfiber")
   create.splashing("ae2:fluix_covered_cable", Ingredient.of("#ae2:covered_cable").subtract("ae2:fluix_covered_cable"))

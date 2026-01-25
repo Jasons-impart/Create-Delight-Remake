@@ -1,0 +1,24 @@
+ServerEvents.tags("minecraft:block", e => {
+    e.removeAll("northstar:tier_1_heat_resistance")
+    e.removeAll("northstar:tier_2_heat_resistance")
+    e.removeAll("northstar:tier_3_heat_resistance")
+    e.add("northstar:tier_1_heat_resistance",
+        [
+            'northstar:tungsten_block',
+            'northstar:tungsten_sheetmetal',
+            'northstar:tungsten_plating',
+            'northstar:tungsten_pillar'])
+    e.add("northstar:tier_2_heat_resistance",
+        [
+            'northstar:titanium_sheetmetal',
+            'northstar:titanium_plating',
+            'northstar:titanium_pillar'])
+    e.add("northstar:tier_3_heat_resistance",
+        [
+            'northstar:martian_steel_sheetmetal',
+            'northstar:martian_steel_plating',
+            'northstar:martian_steel_pillar',
+            'northstar:martian_steel_blue_lamp',
+            'northstar:martian_steel_lamp',
+            'northstar:martian_steel_large_plating'])
+})

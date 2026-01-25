@@ -200,7 +200,7 @@ ServerEvents.recipes(e => {
         Fluid.of("create:potion", 1000, { Bottle: "REGULAR", Potion: "minecraft:healing" }),
         "tetra:dragon_sinew",
         "tetra:dragon_sinew",
-        "protection_pixel:reinforcedfiber"
+        "northstar:durable_fabric"
     ])
 
     kubejs.shaped("art_of_forging:rending_scissor_red", [
@@ -264,7 +264,7 @@ ServerEvents.recipes(e => {
         [
             ["alexscaves:shadow_silk",
                 "art_of_forging:life_fiber",
-                "protection_pixel:reinforcedfiber"],
+                "northstar:durable_fabric"],
             ["minecraft:air",
                 "createdelight:otherworld_note",
                 "minecraft:air"],
