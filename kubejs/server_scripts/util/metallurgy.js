@@ -249,6 +249,7 @@ byProductMap.set("createdelight:silver_dust", ["vintageimprovements:sulfur_chunk
 byProductMap.set("createdelight:desh_dust", ["ad_astra:cheese", 0.2])
 byProductMap.set("createdelight:ostrum_dust", ["iceandfire:myrmex_desert_resin", 0.2])
 byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2])
+byProductMap.set("createdelight:titanium_dust", ["createmetallurgy:iron_dust", 0.2])
 /**
  * 
  * @param { Internal.RecipesEventJS_ } event 

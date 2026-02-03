@@ -84,18 +84,21 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:carbon_plate',
       'createdelight:aviation_fibers_sheet',
       // 粉碎粗金属
+      'createdelight:crushed_raw_titanium',
       'createdelight:crushed_raw_desh',
       'createdelight:crushed_raw_ostrum',
       'createdelight:crushed_raw_calorite',
       // 污浊粉末
       'createdelight:dirty_tin_dust',
       'createdelight:dirty_silver_dust',
+      'createdelight:dirty_titanium_dust',
       'createdelight:dirty_desh_dust',
       'createdelight:dirty_ostrum_dust',
       'createdelight:dirty_calorite_dust',
       // 洁净粉末
       'createdelight:tin_dust',
       'createdelight:silver_dust',
+      'createdelight:titanium_dust',
       'createdelight:desh_dust',
       'createdelight:ostrum_dust',
       'createdelight:calorite_dust',
