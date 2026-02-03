@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
         "ABBBA"
     ], {
         A: "createmetallurgy:steel_block",
-        B: "ad_astra:steel_plate",
+        B: "createdelight:steel_sheet",
         C: "create:mechanical_pump",
         D: "create:electron_tube",
         E: "create:hose_pulley",
@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
         "ABBBA"
     ], {
         A: "createmetallurgy:steel_block",
-        B: "ad_astra:steel_plate",
+        B: "createdelight:steel_sheet",
         C: "create:mechanical_pump",
         D: "create:electron_tube",
         E: "create:spout",

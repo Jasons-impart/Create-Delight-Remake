@@ -44,7 +44,7 @@
 			id: "5C9FA20C255A3BFC"
 			tasks: [{
 				id: "009523844DA486BD"
-				item: "ad_astra:steel_plate"
+				item: "createdelight:steel_sheet"
 				type: "item"
 			}]
 			x: -2.0d

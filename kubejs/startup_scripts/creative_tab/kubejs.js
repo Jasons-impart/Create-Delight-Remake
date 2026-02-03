@@ -60,6 +60,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:potato_stew_beef',
         'createdelight:sushi_unrolledroll',
         'createdelight:forged_steel_sheet',
+        'createdelight:steel_sheet',
         'createdelight:andesite_alloy_nugget',
         'createdelight:crushed_raw_desh',
         'createdelight:crushed_raw_ostrum',

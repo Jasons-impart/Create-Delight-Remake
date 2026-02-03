@@ -78,7 +78,7 @@ ServerEvents.recipes(e => {
             D: "createmetallurgy:steel_ingot",
             E: "minecraft:glass_pane",
             F: "create_sa:brass_helmet",
-            G: "ad_astra:steel_plate"
+            G: "createdelight:steel_sheet"
         }
     )
         .id("protection_pixel:lancerloot")
@@ -92,7 +92,7 @@ ServerEvents.recipes(e => {
         {
             A: "create:brass_sheet",
             B: "create:brass_ingot",
-            C: "ad_astra:steel_plate",
+            C: "createdelight:steel_sheet",
             D: "create_sa:brass_helmet",
             E: "minecraft:glass_pane"
         }
@@ -106,7 +106,7 @@ ServerEvents.recipes(e => {
             " FGF "
         ],
         {
-            A: "ad_astra:steel_plate",
+            A: "createdelight:steel_sheet",
             B: "create_sa:hydraulic_engine",
             C: "minecraft:glass_pane",
             D: "createmetallurgy:steel_ingot",
@@ -128,7 +128,7 @@ ServerEvents.recipes(e => {
             C: "create:brass_ingot",
             D: "minecraft:glass_pane",
             E: "create:fluid_pipe",
-            F: "ad_astra:steel_plate",
+            F: "createdelight:steel_sheet",
             G: "create:fluid_valve"
         }
     )
@@ -146,7 +146,7 @@ ServerEvents.recipes(e => {
             C: "create:brass_sheet",
             D: "vintageimprovements:laser_item",
             E: "create_sa:brass_helmet",
-            F: "ad_astra:steel_plate"
+            F: "createdelight:steel_sheet"
         }
     )
         .id("protection_pixel:hunterloot")
@@ -233,7 +233,7 @@ ServerEvents.recipes(e => {
             E: "createmetallurgy:steel_ingot",
             F: "#forge:spring/between_500_2_1000",
             G: "create_sa:brass_exoskeleton_chestplate",
-            H: "ad_astra:steel_plate",
+            H: "createdelight:steel_sheet",
             I: "create:brass_hand"
         }
     )
@@ -459,10 +459,10 @@ ServerEvents.recipes(e => {
         "create:precision_mechanism",
         'create_sa:brass_jetpack_chestplate'
     )
-    let iner_1 = "ad_astra:steel_plate"
+    let iner_1 = "createdelight:steel_sheet"
     e.recipes.create.sequenced_assembly("protection_pixel:alloyarmorplate", iner_1, [
         e.recipes.create.deploying(iner_1, [iner_1, "protection_pixel:smallnetheritesheet"]),
-        e.recipes.create.deploying(iner_1, [iner_1, "ad_astra:steel_plate"]),
+        e.recipes.create.deploying(iner_1, [iner_1, "createdelight:steel_sheet"]),
         e.recipes.vintageimprovements.hammering(iner_1, iner_1)
     ])
         .loops(1)

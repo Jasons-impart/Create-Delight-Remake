@@ -129,7 +129,7 @@ ServerEvents.recipes(e => {
     //核燃料棒合成
     {
         let iner = "create_new_age:incomplete_fuel"
-        e.recipes.create.sequenced_assembly('create_new_age:nuclear_fuel', "ad_astra:steel_plate", [
+        e.recipes.create.sequenced_assembly('create_new_age:nuclear_fuel', "createdelight:steel_sheet", [
             e.recipes.vintageimprovements.curving(iner, iner, 1),
             e.recipes.create.deploying(iner, [iner, 'createdelight:carbon_plate']),
             e.recipes.create.deploying(iner, [iner, '#createdelight:fisson_fuel']),
@@ -273,7 +273,7 @@ ServerEvents.recipes(e => {
         "ABBBBBA",
         "AAAAAAA"
     ], {
-        A: "ad_astra:steel_plate",
+        A: "createdelight:steel_sheet",
         B: "minecraft:tnt",
         C: "alexscaves:block_of_uranium",
         D: "alexscaves:fissile_core"

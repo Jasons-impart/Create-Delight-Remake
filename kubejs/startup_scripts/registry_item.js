@@ -749,7 +749,10 @@ StartupEvents.registry("item", e => {
         .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
+    e.create("createdelight:steel_sheet")
+        .tag("forge:plates")
+        .tag("forge:plates/steel")
+        .translationKey("item.createdelight.steel_sheet")
     //采血器
     e.create("createdelight:blood_collection_device")
         .translationKey("item.createdelight.blood_collection_device")

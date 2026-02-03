@@ -163,7 +163,7 @@ ServerEvents.recipes(e => {
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
     e.recipes.create.pressing(
-        'ad_astra:steel_plate',
+        'createdelight:steel_sheet',
         'createmetallurgy:steel_ingot'
     ).id("create:pressing/steel_ingot")
     e.recipes.create.pressing(
@@ -171,7 +171,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:tungsten_ingot"
     ).id("create:pressing/tungsten_sheet")
     e.recipes.createmetallurgy.casting_in_table(
-        'ad_astra:steel_plate',
+        'createdelight:steel_sheet',
         [
             Fluid.of("createmetallurgy:molten_steel", 90),
             "createmetallurgy:graphite_plate_mold"

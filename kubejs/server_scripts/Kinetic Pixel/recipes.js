@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
             'kinetic_pixel:nitropropellant'
         ]
     )
-    e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "ad_astra:steel_plate")
+    e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "createdelight:steel_sheet")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:iron_nugget", "ad_astra:steel_nugget")
     e.replaceInput({ mod: "kinetic_pixel" }, "kinetic_pixel:specialsteelingot", "createmetallurgy:steel_ingot")
     e.replaceInput({ mod: "kinetic_pixel" }, "create:precision_mechanism", "vintageimprovements:steel_spring")
@@ -105,7 +105,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "ad_astra:steel_plate",
+            B: "createdelight:steel_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
             E: "create_sa:steam_engine",
@@ -125,7 +125,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "ad_astra:steel_plate",
+            B: "createdelight:steel_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
             E: "create_sa:steam_engine",
@@ -143,7 +143,7 @@ ServerEvents.recipes(e => {
             "     G"
         ],
         {
-            A: "ad_astra:steel_plate",
+            A: "createdelight:steel_sheet",
             B: "create:brass_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
@@ -163,7 +163,7 @@ ServerEvents.recipes(e => {
         {
             A: "create:brass_sheet",
             B: "kinetic_pixel:ammunitionbox",
-            C: "ad_astra:steel_plate",
+            C: "createdelight:steel_sheet",
             D: "kinetic_pixel:barrel",
             E: "create_sa:steam_engine",
             F: "vintageimprovements:steel_rod",

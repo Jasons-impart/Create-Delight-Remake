@@ -78,6 +78,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:sky_copper_ingot',
       // 金属板
       'createdelight:forged_steel_sheet',
+      'createdelight:steel_sheet',
       'createdelight:andesite_alloy_nugget',
       // 板材
       'createdelight:carbon_plate',

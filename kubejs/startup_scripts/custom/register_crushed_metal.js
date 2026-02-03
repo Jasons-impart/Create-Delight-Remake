@@ -3,6 +3,7 @@ StartupEvents.registry("item", e => {
         "desh",
         "ostrum",
         "calorite",
+        "titanium",
     ]
 
     metals.forEach(metal => {

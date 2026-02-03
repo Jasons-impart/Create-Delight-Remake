@@ -4,7 +4,8 @@ StartupEvents.registry("item", e => {
         "silver",
         "desh",
         "ostrum",
-        "calorite"
+        "calorite",
+        "titanium",
     ]
     metals.forEach(metal => {
         e.create(`createdelight:${metal}_dust`)

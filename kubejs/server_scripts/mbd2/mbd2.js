@@ -109,7 +109,7 @@ ServerEvents.recipes(e => {
         "ABBBA",
         " A A "
     ], {
-        A: "ad_astra:steel_plate",
+        A: "createdelight:steel_sheet",
         B: "ae2:sky_dust",
         C: "createdelight:wooden_fan"
     })
