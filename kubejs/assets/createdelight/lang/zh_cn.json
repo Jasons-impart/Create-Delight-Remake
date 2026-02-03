@@ -353,7 +353,7 @@
     "item.createdelight.incomplete_wireless_pattern_encoding_terminal": "未完成的无线样板编码终端",
     "item.createdelight.incomplete_wireless_terminal": "未完成的无线终端",
     "item.createdelight.incompleted_modular_accumulator": "未完成的蓄电池",
-    "item.createdelight.incomplete_gunkan" :"未完成的军舰寿司",
+    "item.createdelight.incomplete_gunkan": "未完成的军舰寿司",
     "item.createdelight.incomplete_nigiri": "未完成的手握寿司",
     "item.createdelight.incomplete_hosomaki": "未完成的细卷",
     "item.createdelight.incomplete_futomaki": "未完成的太卷",
@@ -511,11 +511,10 @@
     "createdelight.small_centrifugation": "小型离心机",
     "createdelight.fission_react": "裂变反应堆",
     "createdelight.electrolyzer": "电解",
-
     "message.kubejs.chainedcasing": "按住§6Alt§r将启动§2连锁装壳",
     "message.kubejs.chaineduncasing": "按住§6Alt§r将启动§2连锁拆壳",
     "message.tacz.ammo_extracted_notification": "%s%%弹匣能量已从能量单元里得到补充",
-    "message.createdelight.show_bettercombat_mine_key": "注意:你按下了切换武器挖掘方块的功能按键(默认为“,”), 此时拥有攻击动作的物品(例如斧子)将无法挖掘方块。\n如果要恢复原状则再次按下本按键即可。本信息不会出现第二次。",
+    "message.createdelight.show_bettercombat_mine_key": "注意:你按下了切换武器挖掘方块的功能按键(默认为“。”), 此时拥有攻击动作的物品(例如斧子)将无法挖掘方块。\n如果要恢复原状则再次按下本按键即可。本信息不会出现第二次。",
     "message.createdelight.budding_quartz": "石英母岩在使用§4非精准采集§r稿子破坏时会§4受损§r(§4无暇无论如何都会受损§r)\n§6如果想要破坏的话请蹲下挖掘",
     "message.createdelight.conventcommand": "§6潜行+右键§r获取物品ID\n输入§6-kli§r删除所有掉落物\n输入§6-efg§r获得[夜视 力量 抗性]buff\n输入§6-efc§r清除自身所有buff",
     "message.createdelight.debug": "§4验证开发者用户信息中§r\n§a身份正确§r\n§4欢迎回来!%s§r",
@@ -532,7 +531,6 @@
     "message.createdelight.underfoot": ", §2就在你脚下",
     "message.createdelight.at": ", 位于§e%s方§r§e%s§r米",
     "message.createdelight.blaze_burner_count": "数量：%s",
-
     "message.createdelight.fission_reactor.degree_of_damage": "损坏: %s％",
     "message.createdelight.fission_reactor.temperature": "温度: %sK",
     "message.createdelight.fission_reactor.switch": "状态: ",
@@ -558,13 +556,10 @@
     "message.createdelight.fission_reactor.output_energy": "能量产出: %s KFE/t",
     "message.createdelight.fission_reactor.burning_rate": "当前燃烧速率: %s％",
     "message.createdelight.fission_reactor.recipe": "单个燃料组件配方",
-    
     "message.createdelight.sell_bin_hint": "昨日盈利",
     "message.createdelight.sell_bin_total": "§7总计: %s",
-
     "message.createdelight.first_summon_end_dragon": "§4PS:末影龙召唤过程中摧毁水晶会中止召唤进程,  末影龙的初始召唤如果被中止末地传送门也不会开启",
     "message.createdelight.pipe": "流体管道至少需要两个开口!",
-
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
     "tooltip.createdelight.hold_shift": "§r§8按住 [§r§rShift§8] 查看更多信息§r",
     "tooltip.createdelight.hold_ctrl_to_see_more_info": "§r§8按住 [§r§7Ctrl§r§8] 查看如何使用§r",
@@ -673,7 +668,6 @@
     "createdelight.tip.tacz_gun": "tacz的默认枪械已被移除, 取而代之的是机动军械师和应用军械师枪械包的枪械。",
     "createdelight.tip.void_stuff": "虚空系列物品提供了远程传输流体, 电力, 应力的方案。",
     "createdelight.tip.lumisene": "高燃液体类似现实中的流体流动形式, 难以回收且无法装入流体抽屉, 请谨慎使用",
-
     "createdelight.effect.charge.name": "充能",
     "createdelight.effect.charge.tooltip": "攻击伤害增加§e%s§r, 当且仅当消耗了武器中§e%s§r点电量",
     "createdelight.effect.fiber_proliferation.name": "生命增殖",
@@ -784,7 +778,6 @@
     "tetra/schematic/sword/katana/infinity_edge.description": "使用虚空蠕虫大颚将你的武器打造成无尽之刃, 极大幅度强化武器的暴击能力",
     "tetra/schematic/sword/katana/infinity_edge.name": "无尽之刃",
     "tetra/schematic/sword/katana/infinity_edge.slot1": "虚空蠕虫大颚",
-
     "tooltip.createdelight.order.entries.food": "食物",
     "tooltip.createdelight.order.entries.fast_food": "快餐",
     "tooltip.createdelight.order.entries.burger": "汉堡",
@@ -827,7 +820,7 @@
     "tooltip.createdelight.order.entries.juice": "果汁",
     "tooltip.createdelight.order.entries.sausage": "香肠",
     "tooltip.createdelight.order.entries.milkshake": "奶昔",
-    "tooltip.createdelight.order.title": "§6◆ %s §6◆", 
+    "tooltip.createdelight.order.title": "§6◆ %s §6◆",
     "tooltip.createdelight.order.require.title": "§a✦ 需求",
     "tooltip.createdelight.order.require.entry": "  §7- %s ×%s (最低: %s)",
     "tooltip.createdelight.order.require.entry_shift": "  §7- %s ×%s (最低: %s) §8-- %s x %s",
@@ -835,27 +828,22 @@
     "tooltip.createdelight.order.reward.entry": "  §b×%s %s",
     "tooltip.createdelight.order.reward.orders/random_hatbag": "随机帽子抽奖袋",
     "tooltip.createdelight.order.reward.orders/random_doll": "随机玩偶",
-
     "tooltip.createdelight.order.customer.dwarven_bakery": "矮人面包坊",
     "tooltip.createdelight.order.customer.dwarven_brewery": "矮人工坊酒馆",
     "tooltip.createdelight.order.customer.dwarven_snack_hall": "矮人零食堂",
     "tooltip.createdelight.order.customer.dwarven_feast_hall": "矮人盛宴厅",
-
     "tooltip.createdelight.order.customer.elven_tea_house": "精灵茶馆",
     "tooltip.createdelight.order.customer.elven_patisserie": "精灵甜点坊",
     "tooltip.createdelight.order.customer.elven_sushi_bar": "精灵寿司屋",
     "tooltip.createdelight.order.customer.elven_juice_corner": "精灵果饮角",
-
     "tooltip.createdelight.order.customer.monster_feast_hall": "怪物盛宴厅",
     "tooltip.createdelight.order.customer.monster_lab": "怪物实验坊",
     "tooltip.createdelight.order.customer.monster_canteen": "怪物食堂",
     "tooltip.createdelight.order.customer.monster_grill": "怪物烧烤屋",
-
     "tooltip.createdelight.order.customer.human_cafe": "人类咖啡馆",
     "tooltip.createdelight.order.customer.human_fast_food": "人类快餐店",
     "tooltip.createdelight.order.customer.human_bakery": "人类面包坊",
     "tooltip.createdelight.order.customer.human_tea_house": "人类茶馆",
-
     "tooltip.createdelight.order.tier.1": "§a一般质量",
     "tooltip.createdelight.order.tier.2": "§e中质量",
     "tooltip.createdelight.order.tier.3": "§c高质量"

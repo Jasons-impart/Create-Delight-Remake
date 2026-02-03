@@ -334,7 +334,7 @@
 			id: "4B9D884F5275A795"
 			tasks: [{
 				id: "3FEDCEF4C8210C17"
-				item: "create:mechanical_mixer"
+				item: "create:deployer"
 				type: "item"
 			}]
 			x: -8.5d
