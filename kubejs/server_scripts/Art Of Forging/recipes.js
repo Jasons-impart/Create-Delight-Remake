@@ -25,9 +25,9 @@ ServerEvents.recipes(e => {
         [
             ["", "create:electron_tube", ""],
             [
-                "ad_astra:etrionic_core",
+                "createaddition:capacitor",
                 Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT(),
-                "ad_astra:etrionic_capacitor"],
+                "createaddition:capacitor"],
             ["", "vintageimprovements:redstone_module", ""]
         ]
     ).id("tetra:murasama_scroll")

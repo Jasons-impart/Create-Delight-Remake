@@ -110,38 +110,6 @@
             },
             "unitWorth": 1500
         },
-        "blacksmith_raw_desh": {
-            "type": "item",
-            "content": "ad_astra:raw_desh",
-            "rarity": "RARE",
-            "amount": {
-                "min": 1,
-                "max": 24
-            },
-            "unitWorth": 2000
-        },
-        "blacksmith_raw_ostrum": {
-            "type": "item",
-            "content": "ad_astra:raw_ostrum",
-            "rarity": "RARE",
-            "weightMult": 0.75,
-            "amount": {
-                "min": 1,
-                "max": 24
-            },
-            "unitWorth": 3500
-        },
-        "blacksmith_raw_calorite": {
-            "type": "item",
-            "content": "ad_astra:raw_calorite",
-            "rarity": "RARE",
-            "weightMult": 0.5,
-            "amount": {
-                "min": 1,
-                "max": 16
-            },
-            "unitWorth": 5000
-        },
         "blacksmith_bronze_ingot": {
             "type": "item",
             "content": "createdelightcore:bronze_ingot",
@@ -152,17 +120,6 @@
                 "max": 8
             },
             "unitWorth": 4000
-        },
-        "blacksmith_raw_calorite_epic": {
-            "type": "item",
-            "content": "ad_astra:raw_calorite",
-            "rarity": "EPIC",
-            "weightMult": 0.25,
-            "amount": {
-                "min": 16,
-                "max": 32
-            },
-            "unitWorth": 5000
         },
         "blacksmith_diamond": {
             "type": "item",

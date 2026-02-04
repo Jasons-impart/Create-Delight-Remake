@@ -148,8 +148,8 @@ ServerEvents.recipes(e => {
         .id("alexscaves:telecore")
 
     //扫描机兵零件
-    let iner_5 = "ad_astra:steel_nugget"
-    e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", "ad_astra:steel_nugget",
+    let iner_5 = "createdelight:steel_sheet"
+    e.recipes.create.sequenced_assembly("alexscaves:notor_gizmo", "createdelight:steel_sheet",
         [
             e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_azure_neodymium"]),
             e.recipes.create.deploying(iner_5, [iner_5, "alexscaves:raw_scarlet_neodymium"])

@@ -56,9 +56,9 @@ ServerEvents.recipes(e => {
             A: "create:brass_sheet",
             B: "create_sa:steam_engine",
             C: "createmetallurgy:steel_ingot",
-            D: "ad_astra:fan",
+            D: "create:propeller",
             E: "create_sa:brass_helmet",
-            F: "ad_astra:steel_nugget",
+            F: "iron_nugget",
             G: "minecraft:glass_pane",
             H: "create:brass_ingot"
         }
@@ -289,7 +289,7 @@ ServerEvents.recipes(e => {
             C: "createdieselgenerators:lighter",
             D: "create:cogwheel",
             E: "create_sa:brass_exoskeleton_chestplate",
-            F: "ad_astra:fan",
+            F: "create:propeller",
             G: "create:mechanical_pump",
             H: "create_sa:small_fueling_tank"
         }
@@ -393,7 +393,7 @@ ServerEvents.recipes(e => {
             C: "create:fluid_pipe",
             D: "createmetallurgy:steel_ingot",
             E: "protection_pixel:leggingslining",
-            F: "ad_astra:fan",
+            F: "create:propeller",
             G: "create_sa:brass_leggings",
             H: "create:brass_ingot"
         }
@@ -445,11 +445,7 @@ ServerEvents.recipes(e => {
     )
     e.replaceInput({ mod: "protection_pixel", output: "#curios:motorinterface" },
         "create:propeller",
-        "ad_astra:fan"
-    )
-    e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:oxyloot" },
-        "create:fluid_tank",
-        "ad_astra_giselle_addon:oxygen_can"
+        "create:propeller"
     )
     e.replaceInput({ mod: "protection_pixel", id: "protection_pixel:boosterloot" },
         "create:precision_mechanism",

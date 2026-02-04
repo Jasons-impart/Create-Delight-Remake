@@ -17,16 +17,6 @@ ServerEvents.recipes(e => {
         Fluid.of("vintageimprovements:sulfur_trioxide", 500),
     [
         Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        "ad_astra:ostrum_nugget"
-    ])
-    .processingTime(20)
-    .secondaryFluidOutput(0)
-    .superheated()
-    .id("vintageimprovements:pressurizing/sulfur_trioxide_from_ostrum_nugget")
-    vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_trioxide", 500),
-    [
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
         "vintageimprovements:vanadium_nugget"
     ])
     .processingTime(200)

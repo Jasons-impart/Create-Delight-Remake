@@ -34,22 +34,22 @@ ServerEvents.recipes(e => {
         
     kubejs.shapeless("createdelightcore:phantom_compost", [
         "2x vintagedelight:organic_mash",
-        "ad_astra:moon_sand",
-        "ad_astra:cheese",
-        ["ad_astra:cheese", "farmersdelight:straw"],
+        "northstar:moon_sand",
+        "trailandtales_delight:cheese_slice",
+        ["trailandtales_delight:cheese_slice", "farmersdelight:straw"],
         "4x minecraft:bone_meal"
     ])
     .id("createdelightcore:phantom_compost_from_organic_mash")
     kubejs.shapeless("createdelightcore:phantom_compost", [
-        "ad_astra:moon_sand",
+        "northstar:moon_sand",
         "2x minecraft:rotten_flesh",
-        "2x ad_astra:cheese",
+        "2x trailandtales_delight:cheese_slice",
         "4x minecraft:bone_meal"
     ])
     .id("createdelightcore:phantom_compost")
     fermenting(e, "createdelightcore:luna_soil", [
         "createdelightcore:phantom_compost", 
-        ["ad_astra:strophar_mushroom", "ad_astra:aeronos_mushroom"], 
+        "northstar:enriched_glowstone_ore", 
         Fluid.of("netherexp:ectoplasm", 100)], 600)
     kubejs.shaped("createdelight:quality_absorber", [
         "ABA",

@@ -22,3 +22,54 @@ ServerEvents.tags("minecraft:block", e => {
             'northstar:martian_steel_lamp',
             'northstar:martian_steel_large_plating'])
 })
+
+
+ServerEvents.tags("entity_type", e => {
+    e.add("northstar:can_survive_cold",
+        "#createdelight:can_survive_northstar"
+    )
+    e.add("northstar:can_survive_heat",
+        "#createdelight:can_survive_northstar"
+    )
+    e.add("northstar:doesnt_require_oxygen",
+        "#createdelight:can_survive_northstar"
+    )
+    e.add("createdelight:can_survive_northstar", [
+        "iceandfire:mob_skull",
+        "iceandfire:cyclops",
+        "minecraft:sheep",     
+        "minecraft:chicken",
+        "iceandfire:gorgon",
+        "iceandfire:deathworm",
+        "iceandfire:cockatrice",
+        "iceandfire:myrmex_egg",
+        "iceandfire:myrmex_queen",
+        "iceandfire:myrmex_royal",
+        "iceandfire:myrmex_sentinel",
+        "iceandfire:myrmex_soldier",
+        "iceandfire:myrmex_swarmer",
+        "iceandfire:myrmex_worker",
+        "iceandfire:dragon_egg",
+        "iceandfire:dragon_skull",
+        "iceandfire:fire_dragon",
+        "iceandfire:ice_dragon",
+        "iceandfire:lightning_dragon",
+        "iceandfire:stymphalian_bird",
+        "iceandfire:amphithere",
+        "iceandfire:hydra",
+        "iceandfire:lightning_dragon",
+        "alexsmobs:cosmic_cod",
+        "alexscaves:teletor",
+        "alexscaves:magnetron",
+        "alexscaves:boundroid",
+        "alexscaves:boundroid_winch",
+        "alexscaves:ferrouslime",
+        "alexscaves:notor",
+        "alexscaves:nucleeper",
+        "alexscaves:radgill",
+        "alexscaves:brainiac",
+        "alexscaves:raycat",
+        "alexscaves:gammaroach",
+        "alexscaves:tremorzilla"
+    ])
+})

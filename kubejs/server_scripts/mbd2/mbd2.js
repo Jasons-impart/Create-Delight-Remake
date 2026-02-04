@@ -153,21 +153,6 @@ ServerEvents.recipes(e => {
         F: "create:sturdy_sheet"
     })
         .id("createdelight:mechanical_crafting/alloy_electric_furnace")
-
-    e.recipes.create.mechanical_crafting("createdelight:hydropower_amplifier", [
-        "AABAA",
-        "ACDCA",
-        "BDEDB",
-        "ACDCA",
-        "AABAA"
-    ], {
-        A: "createdelight:sky_steel_casing",
-        B: "ad_astra:fan",
-        C: "createdelight:forged_steel_sheet",
-        D: "ad_astra:steel_engine",
-        E: "createdelightcore:forged_steel_block"
-    })
-        .id("createdelight:mechanical_crafting/hydropower_amplifier")
     e.recipes.kubejs.shaped("createdelight:dryer", [
         "ABA",
         "ACA",

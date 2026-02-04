@@ -164,15 +164,6 @@ ServerEvents.recipes(e => {
     .processingTime(100)
     .secondaryFluidInput(0)
     .id("vintageimprovements:pressurizing/sulfuric_acid")
-
-    e.recipes.vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        ["alexscaves:sulfur_dust", "ad_astra:ostrum_nugget"]
-    )
-    .secondaryFluidOutput(0)
-    .processingTime(40)
-    .heated()
-    .id("vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust_using_ostrum_nugget")
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
         "27x alexscaves:toxic_paste",
@@ -292,16 +283,17 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:radon", 250),
-            Fluid.of("vintageimprovements:sulfuric_acid", 250)
+            Fluid.of("vintageimprovements:sulfuric_acid", 250),
+            "northstar:raw_glowstone_ore"
         ],
         [
             Fluid.of("alexscaves:acid", 500),
-            "ad_astra:ostrum_nugget"
+            "northstar:enriched_glowstone_ore"
         ]
     )
         .secondaryFluidOutput(0)
         .heated()
-        .id("alexscaves:pressurizing/sulfuric_acid_using_ostrum")
+        .id("alexscaves:pressurizing/sulfuric_acid_using_glowstone")
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
         .id("alexscaves:filling/radon_bottle")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)], "alexscaves:radon_bottle")

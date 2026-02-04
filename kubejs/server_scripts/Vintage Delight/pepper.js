@@ -13,7 +13,7 @@ ServerEvents.recipes(e => {
             "farmersdelight:beef_patty",
             "#forge:vegetables/cabbage",
             "#forge:vegetables/tomato",
-            "ad_astra:cheese",
+            "trailandtales_delight:cheese_slice",
             "#mynethersdelight:hot_spice"
         ]
     ).id("vintagedelight:stuffed_burrito")

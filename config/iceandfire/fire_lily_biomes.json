@@ -18,13 +18,6 @@
       {
         "type": "REGISTRY_NAME",
         "negate": false,
-        "value": "ad_astra:mercury_deltas"
-      }
-    ],
-    [
-      {
-        "type": "REGISTRY_NAME",
-        "negate": false,
         "value": "byg:firecracker_shrubland"
       }
     ]

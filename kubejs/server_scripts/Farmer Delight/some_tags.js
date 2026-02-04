@@ -125,7 +125,7 @@ ServerEvents.tags("item", e => {
     ])
     // 奶酪
     e.add("forge:cheese", [
-        "ad_astra:cheese"
+        "trailandtales_delight:cheese_slice"
     ])
     // 黄瓜
     e.add("culturaldelights:cucumbers", [

@@ -100,7 +100,7 @@ ServerEvents.recipes((event) => {
   ], {
     A: "#forge:plates/iron",
     B: "ae2:annihilation_core",
-    C: "#createdelight:plates/ad_astra",
+    C: "#forge:plates/titanium",
     D: "create:factory_gauge",
     E: "ae2:formation_core"
   })
@@ -111,7 +111,7 @@ ServerEvents.recipes((event) => {
     create.deploying(iner_4, [iner_4, "create:factory_gauge"]),
     create.deploying(iner_4, [iner_4, "ae2:annihilation_core"]),
     create.deploying(iner_4, [iner_4, "ae2:formation_core"]),
-    create.deploying(iner_4, [iner_4, "#createdelight:plates/ad_astra"]),
+    create.deploying(iner_4, [iner_4, "#forge:plates/titanium"]),
   ])
     .loops(1)
     .transitionalItem(iner_4)

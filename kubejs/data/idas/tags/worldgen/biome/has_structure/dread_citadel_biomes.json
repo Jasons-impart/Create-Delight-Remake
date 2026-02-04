@@ -2,11 +2,7 @@
   "replace": true,
   "values": [
     {
-      "id": "ad_astra:glacio_ice_peaks",
-      "required": false
-    },
-    {
-      "id": "ad_astra:glacio_snowy_barrens",
+      "id": "northstar:martian_peaks",
       "required": false
     }
   ]

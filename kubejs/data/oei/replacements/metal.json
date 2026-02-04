@@ -1,18 +1,6 @@
 [
     {
         "matchItems": [
-            "ad_astra:iron_plate"
-        ],
-        "resultItems": "create:iron_sheet"
-    },
-    {
-        "matchItems": [
-            "ad_astra:iron_rod"
-        ],
-        "resultItems": "createaddition:iron_rod"
-    },
-    {
-        "matchItems": [
             "create_new_age:copper_wire"
         ],
         "resultItems": "createaddition:copper_wire" 
@@ -22,24 +10,6 @@
             "iceandfire:copper_nugget"
         ],
         "resultItems": "create:copper_nugget"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_ingot"
-        ],
-        "resultItems": "createmetallurgy:steel_ingot"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_block"
-        ],
-        "resultItems": "createmetallurgy:steel_block"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_rod"
-        ],
-        "resultItems": "vintageimprovements:steel_rod"
     },
     {
         "matchItems": [

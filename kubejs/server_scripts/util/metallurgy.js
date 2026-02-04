@@ -246,9 +246,6 @@ byProductMap.set("createmetallurgy:gold_dust", ["minecraft:quartz", 0.5])
 byProductMap.set("createmetallurgy:wolframite_dust", ["2x minecraft:gold_nugget", 0.5])
 byProductMap.set("createdelight:tin_dust", ["minecraft:glowstone_dust", 0.5])
 byProductMap.set("createdelight:silver_dust", ["vintageimprovements:sulfur_chunk", 0.5])
-byProductMap.set("createdelight:desh_dust", ["ad_astra:cheese", 0.2])
-byProductMap.set("createdelight:ostrum_dust", ["iceandfire:myrmex_desert_resin", 0.2])
-byProductMap.set("createdelight:calorite_dust", ["iceandfire:deathworm_egg", 0.2])
 byProductMap.set("createdelight:titanium_dust", ["createmetallurgy:iron_dust", 0.2])
 /**
  * 

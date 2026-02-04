@@ -32,8 +32,7 @@ ServerEvents.tags("block", e => {
         'oceanic_delight:sponge_cake', 
         'oceanic_delight:stuffed_pufferfish', 
         'oceanic_delight:paella_plate', 
-        'silentsdelight:sculk_catalyst_pie',
-        'ad_astra:cheese_block'
+        'silentsdelight:sculk_catalyst_pie'
     )
     Ingredient.of([
         "@vintagedelight",

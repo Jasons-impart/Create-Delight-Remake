@@ -23,7 +23,6 @@ ItemEvents.modification(e => {
     modify("createdieselgenerators:gasoline_bucket", 40000, "minecraft:bucket")
     modify("createdelight:ethylene_fluid_bucket", 25000, "minecraft:bucket")
     modify("createdelight:fuel_mixtures_bucket", 50000, "minecraft:bucket")
-    modify("ad_astra:cryo_fuel_bucket", 30000, "minecraft:bucket")
     modify("createmetallurgy:coke_block", 18000)
     modify('createaddition:biomass_pellet', 0)
     modify('createaddition:biomass_pellet_block', 0)

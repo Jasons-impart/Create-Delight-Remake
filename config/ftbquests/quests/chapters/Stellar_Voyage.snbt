@@ -602,7 +602,7 @@
 			subtitle: "咦？这都有奶酪可以吃的哦"
 			tasks: [{
 				id: "0781E583DB22C39D"
-				item: "ad_astra:cheese"
+				item: "trailandtales_delight:cheese_slice"
 				type: "item"
 			}]
 			x: 3.0d

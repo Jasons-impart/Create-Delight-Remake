@@ -4026,7 +4026,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "6AA0F8085F16E89D"
-				item: "ad_astra:cheese"
+				item: "trailandtales_delight:cheese_slice"
 				type: "item"
 			}]
 			title: "豪吃！😋"

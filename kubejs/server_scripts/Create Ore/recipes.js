@@ -244,24 +244,4 @@ ServerEvents.recipes(e => {
         ["createdelight:mercury_ore_cluster"])
         .id("vintageimprovements:vibrating/raw_ore_from_mercury_ore_cluster")
     
-    // //霜原星矿簇
-    // e.recipes.create.crushing([
-    //     Item.of("minecraft:coal"),
-    //     Item.of("create:crushed_raw_iron", 2),
-    //     Item.of("create:crushed_raw_copper", 3),
-    //     Item.of("minecraft:lapis_lazuli", 6),
-    //     Item.of("ad_astra:ice_shard", 4)
-    // ],
-    //     ["createdelight:glacio_ore_cluster"])
-    //     .id("create:crushing/crushed_raw_ore_from_glacio_ore_cluster")
-    // e.recipes.vintageimprovements.vibrating([
-    //     Item.of("minecraft:coal"),
-    //     Item.of("minecraft:raw_iron", 2),
-    //     Item.of("minecraft:raw_copper", 3),
-    //     Item.of("minecraft:lapis_lazuli", 6),
-    //     Item.of("ad_astra:ice_shard", 2)
-    // ],
-    //     ["createdelight:glacio_ore_cluster"])
-    //     .id("vintageimprovements:vibrating/raw_ore_from_glacio_ore_cluster")
-    
 })

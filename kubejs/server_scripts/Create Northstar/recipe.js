@@ -155,4 +155,26 @@ ServerEvents.recipes(e => {
     .heatRequirement("superheated")
     .processingTime(100)
     .id("createmetallurgy:alloying/martian_steel")
+
+    // 混合燃料
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:fuel_mixtures", 100),
+        [
+            Fluid.of("createdieselgenerators:gasoline", 50),
+            Fluid.of("createdieselgenerators:diesel", 50)
+        ]
+    ).id("createdelight:recipes/fuel_mixtures")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:fuel_mixtures", 200),
+        [
+            Fluid.of("createdieselgenerators:gasoline", 50),
+            Fluid.of("createdieselgenerators:biodiesel", 75)
+        ]
+    ).id("createdelight:sub_recipes/fuel_mixtures")
+    
+    e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), "northstar:enriched_glowstone_ore"])
+    .heatRequirement("frozen")
+    .id("createdelight:mixing/ice_lubricating_oil")
+    e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), Fluid.of("createdelight:ice_dragon_blood", 25)])
+    .id("createdelight:mixing/ice_lubricating_oil_from_ice_dragon_blood")
 })
