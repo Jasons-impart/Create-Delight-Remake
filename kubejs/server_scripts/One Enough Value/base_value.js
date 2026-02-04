@@ -1,4 +1,7 @@
 OEVEvents.addItemValue(event => {
+    // 清空OEV自带的基础价值表
+    event.getValueManager().baseValueMap.clear()
+
     global.FoodIngredientList.forEach(Ingredient => {
         let value = global.FoodIngredientValueDict.get(Ingredient) ?? global.DefaultFoodIngredientValue;
         event.addBaseItemValue(Ingredient, value);
