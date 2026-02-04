@@ -14,4 +14,26 @@ ServerEvents.tags("minecraft:worldgen/biome", e => {
         "ad_astra:glacio_snowy_barrens",
         "ad_astra:glacio_ice_peaks"
     ])
+
+    e.add("northstar:venus_biomes",
+        "northstar:venus_fungal_caverns",
+        "northstar:venus_fungal_forest",
+        "northstar:venus_lava_caves",
+        "northstar:venus_sulfuric_caverns",
+        "northstar:venusian_plains",
+        "northstar:venusian_wastes"
+    )
+    e.add("northstar:mars_biomes",
+        "northstar:martian_crimsite_caverns",
+        "northstar:martian_dunes",
+        "northstar:martian_highlands",
+        "northstar:martian_magmatic_caves",
+        "northstar:martian_overgrown_caverns",
+        "northstar:martian_peaks"
+    )
+    e.add("northstar:mercury_biomes",
+        "northstar:mercury_basins",
+        "northstar:mercury_hills",
+        "northstar:mercury_icy_caverns",
+        "northstar:mercury_magmatic_caverns")
 })

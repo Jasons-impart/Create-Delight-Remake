@@ -32,42 +32,42 @@ ServerEvents.recipes((event) => {
   event.recipes.createoreexcavation
     .vein('{"text": "月球矿簇"}', "createdelight:moon_ore_cluster")
     .placement(64, 8, 114514)
-    .biomeWhitelist("createdelight:is_moon")
+    .biomeWhitelist("northstar:moon_biomes")
     .id("kubejs:moon_ore_cluster_ore");
 
   //火星矿簇
   event.recipes.createoreexcavation
     .vein('{"text": "火星矿簇"}', "createdelight:mars_ore_cluster")
     .placement(64, 8, 114514)
-    .biomeWhitelist("createdelight:is_mars")
+    .biomeWhitelist("northstar:mars_biomes")
     .id("kubejs:mars_ore_cluster_ore");
 
   //火星宝石矿簇
-  event.recipes.createoreexcavation
-    .vein('{"text": "火星宝石矿簇"}', "createdelight:mars_gemstone_cluster")
-    .placement(128, 16, 721)
-    .biomeWhitelist("createdelight:is_mars")
-    .id("kubejs:mars_gemstone_cluster_ore");
+  // event.recipes.createoreexcavation
+  //   .vein('{"text": "火星宝石矿簇"}', "createdelight:mars_gemstone_cluster")
+  //   .placement(128, 16, 721)
+  //   .biomeWhitelist("createdelight:is_mars")
+  //   .id("kubejs:mars_gemstone_cluster_ore");
 
   //水星矿簇
   event.recipes.createoreexcavation
     .vein('{"text": "水星矿簇"}', "createdelight:mercury_ore_cluster")
     .placement(64, 8, 114514)
-    .biomeWhitelist("createdelight:is_mercury")
+    .biomeWhitelist("northstar:mercury_biomes")
     .id("kubejs:mercury_ore_cluster_ore");
 
   //金星矿簇
   event.recipes.createoreexcavation
     .vein('{"text": "金星矿簇"}', "createdelight:venus_ore_cluster")
     .placement(128, 16, 721)
-    .biomeWhitelist("createdelight:is_venus")
+    .biomeWhitelist("northstar:venus_biomes")
     .id("kubejs:venus_ore_cluster_ore")
   //霜原星矿簇
-  event.recipes.createoreexcavation
-    .vein('{"text": "霜原星矿簇"}', "createdelight:glacio_ore_cluster")
-    .placement(128, 16, 721)
-    .biomeWhitelist("createdelight:is_glacio")
-    .id("kubejs:glacio_ore_cluster_ore");
+  // event.recipes.createoreexcavation
+  //   .vein('{"text": "霜原星矿簇"}', "createdelight:glacio_ore_cluster")
+  //   .placement(128, 16, 721)
+  //   .biomeWhitelist("createdelight:is_glacio")
+  //   .id("kubejs:glacio_ore_cluster_ore");
   /**
    * 
    * @param {OutputItem_|OutputItem_[]} output //矿脉产出
@@ -105,8 +105,8 @@ ServerEvents.recipes((event) => {
   drilling("createdelight:nether_ore_cluster", "kubejs:nether_ore_cluster", Fluid.lava(500), 2048, 12000, 1)
   drilling("createdelight:moon_ore_cluster", "kubejs:moon_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1024, 4000, 1)
   drilling("createdelight:mars_ore_cluster", "kubejs:mars_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1536, 4000, 2)
-  drilling("createdelight:mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 2048, 4000, 2)
+  // drilling("createdelight:mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 2048, 4000, 2)
   drilling("createdelight:mercury_ore_cluster", "kubejs:mercury_ore_cluster_ore", Fluid.lava(1000), 2048, 2000, 3)
   drilling("createdelight:venus_ore_cluster", "kubejs:venus_ore_cluster_ore", Fluid.lava(500), 2048, 8000, 3)
-  drilling("createdelight:glacio_ore_cluster", "kubejs:glacio_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 1000), 2048, 2000, 3)
+  // drilling("createdelight:glacio_ore_cluster", "kubejs:glacio_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 1000), 2048, 2000, 3)
 });

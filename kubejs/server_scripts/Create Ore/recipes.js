@@ -202,9 +202,9 @@ ServerEvents.recipes(e => {
         Item.of("minecraft:quartz", 3),
         Item.of("create:crushed_raw_iron", 3).withChance(0.6),
         Item.of("createdelight:crushed_raw_titanium"),
+        Item.of("create:crushed_raw_gold", 2).withChance(0.75),
         Item.of("create:crushed_raw_zinc").withChance(0.5),
         Item.of("minecraft:redstone").withChance(0.5),
-        Item.of("create:crushed_raw_gold").withChance(0.25),
         Item.of("minecraft:diamond").withChance(0.1)
     ],
         ["createdelight:venus_ore_cluster"])
@@ -213,9 +213,9 @@ ServerEvents.recipes(e => {
         Item.of("minecraft:quartz"),
         Item.of("minecraft:raw_iron"),
         Item.of("northstar:raw_titanium_ore"),
+        Item.of("minecraft:raw_gold"),
         Item.of("create:raw_zinc").withChance(0.5),
         Item.of("createoreexcavation:raw_redstone").withChance(0.25),
-        Item.of("minecraft:raw_gold").withChance(0.4),
         Item.of("createoreexcavation:raw_diamond").withChance(0.1)
     ],
         ["createdelight:venus_ore_cluster"])

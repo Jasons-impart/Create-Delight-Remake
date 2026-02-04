@@ -2,9 +2,9 @@
   "biomes": [
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_TAG",
         "negate": false,
-        "value": "ad_astra:venus_wastelands"
+        "value": "northstar:venus_biomes"
       }
     ],
     [

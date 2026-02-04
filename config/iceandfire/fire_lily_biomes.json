@@ -2,9 +2,16 @@
   "biomes": [
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_TAG",
         "negate": false,
-        "value": "ad_astra:martian_wastelands"
+        "value": "northstar:mars_biomes"
+      }
+    ],
+    [
+      {
+        "type": "BIOME_TAG",
+        "negate": false,
+        "value": "northstar:mercury_biomes"
       }
     ],
     [
