@@ -191,10 +191,11 @@ let FoodIngredientValueDict = {
     "createdelight:butter": 2
 
 }
+// TODO: 把list里的所有项都加入这个dict，统一从这个dict获取价值
 global.FoodIngredientValueDict = new Map(Object.entries(FoodIngredientValueDict));
 
-// 默认配方价值倍率，如果希望是其他值，加入Dict
-global.DefaultRecipeValueMultiplier = 2;
+// 默认配方价值倍率，如果希望是其他值，加入Dict。如果值过大可能会上溢导致kjs加载失败。
+global.DefaultRecipeValueMultiplier = 4;
 let RecipeValueMultiplierDict = {
     // "crafting": 10
 }
