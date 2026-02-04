@@ -1,0 +1,175 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.2,
+  "has_precipitation": true,
+  "effects": {
+    "ambient_sound": "alexscaves:forlorn_hollows_ambience",
+    "additions_sound": {
+      "sound": "alexscaves:forlorn_hollows_ambience_additions",
+      "tick_chance": 0.0111
+    },
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "alexscaves:forlorn_hollows_ambience_mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "alexscaves:forlorn_hollows_music"
+    },
+    "particle": {
+      "options": {
+        "type": "alexscaves:falling_guano"
+      },
+      "probability": 0.005
+    },
+    "fog_color": 2103829,
+    "sky_color": 2629914,
+    "water_color": 6122116,
+    "water_fog_color": 27552
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
+    [
+      "alexscaves:forlorn_posts"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [],
+    [
+      "alexscaves:thornwood_tree_with_branches"
+    ],
+    [
+      "alexscaves:dirt_replace_packed_mud",
+      "alexscaves:coprolith_coal_ore",
+      "alexscaves:guanostone_redstone_ore",
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper_large",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "alexscaves:peering_coprolith"
+    ],
+    [
+      "alexscaves:forlorn_ruins",
+      "alexscaves:guano_pile"
+    ],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava"
+    ],
+    [
+      "alexscaves:underweed",
+      "alexscaves:thornwood_roots",
+      "alexscaves:forlorn_hollows_brown_mushroom",
+      "minecraft:glow_lichen",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:trees_plains",
+      "minecraft:flower_plains",
+      "minecraft:patch_grass_plain",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "precipitation": "rain",
+  "spawn_costs": {
+    "alexscaves:underzealot": {
+      "charge": 0.4,
+      "energy_budget": 0.1
+    },
+    "alexscaves:corrodent": {
+      "charge": 0.4,
+      "energy_budget": 0.1
+    },
+    "alexscaves:vesper": {
+      "charge": 0.25,
+      "energy_budget": 0.1
+    }
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "alexscaves:gloomoth",
+        "maxCount": 4,
+        "minCount": 4,
+        "weight": 20
+      },
+      {
+        "type": "minecraft:bat",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 10
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "alexscaves:underzealot",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 100
+      },
+      {
+        "type": "alexscaves:corrodent",
+        "maxCount": 4,
+        "minCount": 3,
+        "weight": 90
+      },
+      {
+        "type": "alexscaves:vesper",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 60
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.7
+}

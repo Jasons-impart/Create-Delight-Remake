@@ -1,0 +1,153 @@
+{
+  "type": "northstar:venus",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "northstar:venus",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "northstar:venusian_plains",
+          "parameters": {
+            "temperature": [
+              0.55,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -1,
+              -0.375
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.7666
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:venusian_wastes",
+          "parameters": {
+            "temperature": [
+              1.5,
+              1.7
+            ],
+            "humidity": [
+              -1,
+              -0.65
+            ],
+            "continentalness": [
+              -0.5,
+              -0.1
+            ],
+            "erosion": [
+              -2,
+              2
+            ],
+            "weirdness": [
+              -1,
+              -0.125
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:venus_lava_caves",
+          "parameters": {
+            "temperature": [
+              2,
+              2
+            ],
+            "humidity": [
+              0,
+              1
+            ],
+            "continentalness": 0,
+            "erosion": [
+              -2,
+              0
+            ],
+            "weirdness": [
+              -1,
+              1
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:venus_sulfuric_caverns",
+          "parameters": {
+            "temperature": [
+              1,
+              2
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              -2,
+              -1.5
+            ],
+            "erosion": [
+              1,
+              2
+            ],
+            "weirdness": [
+              -0.4,
+              2
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:venus_fungal_caverns",
+          "parameters": {
+            "temperature": [
+              -2,
+              -1.1
+            ],
+            "humidity": [
+              0,
+              1
+            ],
+            "continentalness": [
+              0,
+              1
+            ],
+            "erosion": [
+              0,
+              0
+            ],
+            "weirdness": [
+              -1,
+              0
+            ],
+            "depth": [
+              1.7,
+              2
+            ],
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

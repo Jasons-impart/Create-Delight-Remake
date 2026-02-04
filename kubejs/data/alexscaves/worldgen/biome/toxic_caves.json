@@ -1,0 +1,158 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.4,
+  "has_precipitation": true,
+  "effects": {
+    "ambient_sound": "alexscaves:toxic_caves_ambience",
+    "additions_sound": {
+      "sound": "alexscaves:toxic_caves_ambience_additions",
+      "tick_chance": 0.0111
+    },
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "alexscaves:toxic_caves_ambience_mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "alexscaves:toxic_caves_music"
+    },
+    "particle": {
+      "options": {
+        "type": "alexscaves:fallout"
+      },
+      "probability": 0.001
+    },
+    "fog_color": 8781312,
+    "sky_color": 582913,
+    "water_color": 4944498,
+    "water_fog_color": 4944498
+  },
+  "features": [
+    [
+    ],
+    [
+      "alexscaves:acid_lake",
+      "alexscaves:toxic_ruins"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [
+      "alexscaves:metal_swarf_replace_mud",
+      "alexscaves:unrefined_waste_replace_mud",
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper_large",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "alexscaves:radrock_uranium_ore"
+    ],
+    [
+    ],
+    [
+      "alexscaves:spring_acid",
+      "alexscaves:acid_vent"
+    ],
+    [
+      "alexscaves:underweed",
+      "minecraft:glow_lichen",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:trees_plains",
+      "minecraft:flower_plains",
+      "minecraft:patch_grass_plain",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin"
+    ],
+    [
+      "alexscaves:sulfur_stack",
+      "alexscaves:nuclear_siren",
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "precipitation": "rain",
+  "spawn_costs": {
+  },
+  "creature_spawn_probability": 0.01,
+  "spawners": {
+    "ambient": [
+      {
+        "type": "alexscaves:gammaroach",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 55
+      }
+    ],
+    "axolotls": [],
+    "alexscaves:cave_creature": [
+      {
+        "type": "alexscaves:raycat",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 10
+      }
+    ],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "alexscaves:brainiac",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 160
+      },
+      {
+        "type": "alexscaves:nucleeper",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 45
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [
+      {
+        "type": "alexscaves:radgill",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
+      }
+    ],
+    "water_creature": []
+  },
+  "temperature": 0.5
+}

@@ -6,6 +6,13 @@
         "negate": false,
         "value": "northstar:martian_peaks"
       }
+    ],
+    [
+      {
+        "type": "REGISTRY_NAME",
+        "negate": false,
+        "value": "northstar:martian_highlands"
+      }
     ]
   ]
 }

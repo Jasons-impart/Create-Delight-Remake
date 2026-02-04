@@ -29,12 +29,11 @@ ServerEvents.recipes(e => {
         output: [
             "northstar:jet_engine",
             "northstar:rocket_combustion_chamber",
-            "northstar:interplanetary_navigator",
             "northstar:rocket_controls",
             "northstar:rocket_station",
             "northstar:atmospheric_concentrator"
         ]
-    }, "northstar:titanium_sheet", "createdelight:steel_sheet") //TODO: 移除AD后替换
+    }, "northstar:titanium_sheet", "createdelight:steel_sheet")
     e.replaceInput({
         output: [
             "northstar:interplanetary_navigator",
