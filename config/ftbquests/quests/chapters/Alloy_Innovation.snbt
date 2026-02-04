@@ -815,7 +815,7 @@
 			subtitle: "&4地狱&r特产的&e坚硬金属&r！"
 			tasks: [{
 				id: "69B87436B6F93D9C"
-				item: "createmetallurgy:raw_wolframite"
+				item: "createmetallurgy:raw_tungsten"
 				type: "item"
 			}]
 			x: 22.5d
@@ -1854,6 +1854,19 @@
 			}]
 			title: "流体池"
 			x: -0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4B6A896ECC72EA02"]
+			id: "40BDFCC7A3B77F26"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "36F860A6EEADDEBA"
+				item: "northstar:telescope"
+				type: "item"
+			}]
+			x: 11.5d
 			y: -2.5d
 		}
 	]

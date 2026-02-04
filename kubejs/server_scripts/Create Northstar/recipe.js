@@ -32,7 +32,8 @@ ServerEvents.recipes(e => {
             "northstar:rocket_combustion_chamber",
             "northstar:rocket_controls",
             "northstar:rocket_station",
-            "northstar:atmospheric_concentrator"
+            "northstar:atmospheric_concentrator",
+            "northstar:oxygen_filler"
         ]
     }, "northstar:titanium_sheet", "createdelight:steel_sheet")
     e.replaceInput({
@@ -100,7 +101,7 @@ ServerEvents.recipes(e => {
     }
     {
         let iner = "northstar:unfinished_targeting_computer"
-        create.sequenced_assembly("northstar:targeting_computer", "northstar:titanium_sheet", [
+        create.sequenced_assembly("northstar:targeting_computer", "createdelight:steel_sheet", [
             create.deploying(iner, [iner, "northstar:polished_diamond"]),
             create.deploying(iner, [iner, "northstar:circuit"]),
             create.deploying(iner, [iner, "create_sa:heat_engine"]),
