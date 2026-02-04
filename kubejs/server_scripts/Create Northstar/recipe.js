@@ -18,7 +18,8 @@ ServerEvents.recipes(e => {
         "northstar:electrolysis_machine",
         "northstar:solar_panel",
         "northstar:circuit_engraver",
-        "northstar:titanium_block"
+        "northstar:titanium_block",
+        "northstar:hardened_precision_mechanism"
     ])
     const { create, vintageimprovements, create_new_age, createmetallurgy } = e.recipes
     e.remove({ type: "northstar:electrolysis" })
@@ -36,8 +37,15 @@ ServerEvents.recipes(e => {
     }, "northstar:titanium_sheet", "createdelight:steel_sheet")
     e.replaceInput({
         output: [
-            "northstar:interplanetary_navigator",
-            "northstar:rocket_station",
+            "northstar:iron_space_suit_boots",
+            "northstar:iron_space_suit_leggings",
+            "northstar:iron_space_suit_chestplate",
+            "northstar:iron_space_suit_helmet"
+        ],
+    }, "create:iron_sheet", "createdelight:steel_sheet")
+    e.replaceInput({
+        output: [
+            "northstar:rocket_station"
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
     e.replaceInput("*", "northstar:hardened_precision_mechanism", "create_sa:heat_engine")
@@ -92,7 +100,7 @@ ServerEvents.recipes(e => {
     }
     {
         let iner = "northstar:unfinished_targeting_computer"
-        create.sequenced_assembly("northstar:targeting_computer", "createdelight:steel_sheet", [
+        create.sequenced_assembly("northstar:targeting_computer", "northstar:titanium_sheet", [
             create.deploying(iner, [iner, "northstar:polished_diamond"]),
             create.deploying(iner, [iner, "northstar:circuit"]),
             create.deploying(iner, [iner, "create_sa:heat_engine"]),

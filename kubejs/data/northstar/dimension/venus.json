@@ -146,6 +146,36 @@
             ],
             "offset": 0
           }
+        },
+        {
+          "biome": "alexscaves:toxic_caves",
+          "parameters": {
+            "temperature": [
+              0.5,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.5
+            ],
+            "continentalness": [
+              1.5,
+              2
+            ],
+            "erosion": [
+              0,
+              2
+            ],
+            "weirdness": [
+              -1,
+              1
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
         }
       ]
     }

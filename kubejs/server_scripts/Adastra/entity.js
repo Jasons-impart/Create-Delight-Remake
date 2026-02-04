@@ -41,7 +41,13 @@ ServerEvents.tags("entity_type", e => {
         "alexscaves:boundroid",
         "alexscaves:boundroid_winch",
         "alexscaves:ferrouslime",
-        "alexscaves:notor"
+        "alexscaves:notor",
+        "alexscaves:nucleeper",
+        "alexscaves:radgill",
+        "alexscaves:brainiac",
+        "alexscaves:raycat",
+        "alexscaves:gammaroach",
+        "alexscaves:tremorzilla"
     ])
 })
 

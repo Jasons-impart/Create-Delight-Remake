@@ -50,18 +50,16 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 50),
-            Fluid.of("createdelight:ethylene_fluid", 20),
             'createmetallurgy:coke'
         ],
-        Fluid.of("createdieselgenerators:crude_oil", 100), 60, 1
-    )
+        Fluid.of("createdieselgenerators:crude_oil", 100), 60)
         .superheated()
         .id("createdelight:pyrolysis/crude_oil")
     //石油催化裂解
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 100),
-            Fluid.of("createdelight:ethylene_fluid", 50)
+            Fluid.of("northstar:carbon", 250)
         ],
         [
             Fluid.of("createdieselgenerators:crude_oil", 100),
@@ -121,7 +119,7 @@ ServerEvents.recipes(e => {
         'alexscaves:polymer_plate',
         [
             Fluid.of("createdelight:ethylene_fluid", 100),
-            Fluid.of("vintageimprovements:sulfuric_acid", 100)
+            Fluid.of("northstar:oxygen", 100)
         ]
     )
         .heated()
