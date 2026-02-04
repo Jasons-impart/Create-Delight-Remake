@@ -82,7 +82,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:andesite_alloy_nugget',
       // 板材
       'createdelight:carbon_plate',
-      'createdelight:aviation_fibers_sheet',
       // 粉碎粗金属
       'createdelight:crushed_raw_titanium',
       // 污浊粉末
@@ -109,19 +108,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       "createdelight:guncotton",
       // 构件
       'createdelight:magnetic_mechanism',
-      //火箭部件
-      'createdelight:basic_panel',
-      'createdelight:advanced_panel',
-      'createdelight:explorer_panel',
-      'createdelight:flare_panel',
-      'createdelight:basic_cabin',
-      'createdelight:advanced_cabin',
-      'createdelight:explorer_cabin',
-      'createdelight:flare_cabin',
-      'createdelight:basic_crystal_panel',
-      'createdelight:advanced_crystal_panel',
-      'createdelight:holographic_interface_panel',
-      'createdelight:quantum_field_panel',
       //外壳
       'createdelight:iron_casing',
       'createdelight:space_casing',
