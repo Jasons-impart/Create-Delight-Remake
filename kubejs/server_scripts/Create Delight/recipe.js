@@ -35,15 +35,15 @@ ServerEvents.recipes(e => {
     kubejs.shapeless("createdelightcore:phantom_compost", [
         "2x vintagedelight:organic_mash",
         "northstar:moon_sand",
-        "trailandtales_delight:cheese_slice",
-        ["trailandtales_delight:cheese_slice", "farmersdelight:straw"],
+        "northstar:raw_glowstone_ore",
+        ["northstar:raw_glowstone_ore", "farmersdelight:straw"],
         "4x minecraft:bone_meal"
     ])
     .id("createdelightcore:phantom_compost_from_organic_mash")
     kubejs.shapeless("createdelightcore:phantom_compost", [
         "northstar:moon_sand",
         "2x minecraft:rotten_flesh",
-        "2x trailandtales_delight:cheese_slice",
+        "2x northstar:raw_glowstone_ore",
         "4x minecraft:bone_meal"
     ])
     .id("createdelightcore:phantom_compost")

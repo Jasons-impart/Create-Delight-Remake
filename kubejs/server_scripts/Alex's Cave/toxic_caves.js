@@ -74,7 +74,8 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:lubricating_oil", 20),
             Fluid.of("createdieselgenerators:diesel", 50),
             Fluid.of("createdieselgenerators:gasoline", 50),
-            Fluid.of("createdelight:ethylene_fluid", 20)
+            Fluid.of("createdelight:ethylene_fluid", 20),
+            Fluid.of("northstar:methane", 20)
         ],
         Fluid.of("createdelight:light_crude_oil", 100), 20
     )

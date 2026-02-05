@@ -9,7 +9,11 @@ ServerEvents.recipes(e => {
         "northstar:crushing/basalt",
         "northstar:mixing/brine",
         "northstar:compacting/brine_to_salt",
-        "northstar:compacting/martian_steel_ingot"
+        "northstar:compacting/martian_steel_ingot",
+        "northstar:compacting/biofuel_from_dried_kelp",
+        "northstar:compacting/biofuel_from_dry_plant_fiber",
+        "northstar:mixing/hydrocarbon_from_carbon",
+        "northstar:mixing/hydrocarbon_from_sodium"
     ])
     remove_recipes_output(e, [
         "northstar:circuit",
@@ -19,9 +23,16 @@ ServerEvents.recipes(e => {
         "northstar:solar_panel",
         "northstar:circuit_engraver",
         "northstar:titanium_block",
-        "northstar:hardened_precision_mechanism"
+        "northstar:hardened_precision_mechanism",
+        'northstar:vanilla_ice_cream', 
+        'northstar:chocolate_ice_cream', 
+        'northstar:strawberry_ice_cream', 
+        'northstar:raw_ice_cream_cone',
+        'northstar:ice_cream_cone',
+        "northstar:sodium_catalyst",
+        "northstar:dry_plant_fiber"
     ])
-    const { create, vintageimprovements, create_new_age, createmetallurgy } = e.recipes
+    const {kubejs, create, vintageimprovements, create_new_age, createmetallurgy } = e.recipes
     e.remove({ type: "northstar:electrolysis" })
     e.remove({ type: "northstar:engraving" })
     e.remove({ output: "northstar:titanium_ingot", type: "blasting"})
@@ -49,9 +60,21 @@ ServerEvents.recipes(e => {
             "northstar:rocket_station"
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
+    e.replaceInput({output: "northstar:atmospheric_concentrator"}, "northstar:circuit", "create_sa:heat_engine")
     e.replaceInput("*", "northstar:hardened_precision_mechanism", "create_sa:heat_engine")
     e.replaceOutput({ id: "northstar:splashing/crushed_raw_tungsten" }, "minecraft:quartz", "minecraft:gold_nugget")
     e.replaceOutput("*", "northstar:raw_titanium_ore", "createdelight:crushed_raw_titanium")
+    kubejs.shaped('createdelight:electrolyzer', [
+        "AEA",
+        "BCB",
+        "ADA"
+    ], {
+        A: "#forge:plates/steel",
+        B: "createdieselgenerators:oil_barrel",
+        C: '#forge:graphite',
+        D: "createaddition:modular_accumulator",
+        E: "northstar:lunar_sapphire_crystal"
+    }).id("createdelight:electrolyzer")
 
     create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
         .id("northstar:energising/enriched_glowstone_ore")

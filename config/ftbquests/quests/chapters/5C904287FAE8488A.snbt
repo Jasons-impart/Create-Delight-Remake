@@ -3,8 +3,10 @@
 	default_quest_shape: ""
 	filename: "5C904287FAE8488A"
 	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
+	icon: "northstar:telescope"
 	id: "5C904287FAE8488A"
-	order_index: 8
+	order_index: 3
 	quest_links: [
 		{
 			id: "61B11949A60B9885"
@@ -18,7 +20,7 @@
 			id: "74C003BD7D88167E"
 			linked_quest: "24CCC43BD4994237"
 			x: 22.5d
-			y: -2.0d
+			y: -2.5d
 		}
 		{
 			id: "4C0C1A274518BAD5"
@@ -26,22 +28,32 @@
 			x: 10.5d
 			y: -2.5d
 		}
+		{
+			id: "3B00CF36900B15CF"
+			linked_quest: "4A2A62D77A29284F"
+			x: 5.5d
+			y: 4.5d
+		}
 	]
 	quests: [
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["需要注意的是，每个记录之间的距离需要大于30，否则无法组成星图。"]
 			id: "5D413834648E277E"
+			subtitle: "使用它合并三张记录。"
 			tasks: [{
 				id: "43CDABE68393929D"
 				item: "northstar:astronomy_table"
 				type: "item"
 			}]
 			x: 2.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
 			id: "49759BA2FFD9ED2D"
+			subtitle: "记录一个星球的坐标"
 			tasks: [{
 				id: "361B8B8E75482FFF"
 				item: "northstar:astronomical_reading"
@@ -55,7 +67,9 @@
 				"49759BA2FFD9ED2D"
 				"5D413834648E277E"
 			]
+			description: ["目前为止你只能前往月球，因为没有星际导航仪。"]
 			id: "1F75964D5DF64594"
+			subtitle: "记录一个星球的坐标"
 			tasks: [{
 				id: "05EEF2BA49205DC1"
 				item: "northstar:star_map"
@@ -67,6 +81,7 @@
 		{
 			dependencies: ["1F75964D5DF64594"]
 			id: "298DCE38C0E0D5B9"
+			subtitle: "在它的界面中放入星图和组装火箭"
 			tasks: [{
 				id: "21D7DEFD42EBACF7"
 				item: "northstar:rocket_station"
@@ -77,7 +92,9 @@
 		}
 		{
 			dependencies: ["1F75964D5DF64594"]
+			description: ["&4注意，到另一个星球后一定要右键选中控制台，否则无法降速！&r"]
 			id: "1DD55129A6C4D355"
+			subtitle: "需要右键它来操纵动态结构"
 			tasks: [{
 				id: "16F0AC2789780655"
 				item: "northstar:rocket_controls"
@@ -89,6 +106,7 @@
 		{
 			dependencies: ["1F75964D5DF64594"]
 			id: "0A974EE1B5462D2A"
+			subtitle: "火箭的必备物"
 			tasks: [{
 				id: "638F884BA21A6BD9"
 				item: "northstar:jet_engine"
@@ -185,7 +203,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: 1.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -205,6 +223,7 @@
 		{
 			dependencies: ["54954EA4980915B0"]
 			id: "77DBDCB991847E35"
+			subtitle: "前往火星"
 			tasks: [{
 				advancement: "northstar:one_giant_leap"
 				criterion: ""
@@ -239,8 +258,7 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["40BDFCC7A3B77F26"]
-			hide_dependency_lines: true
+			dependencies: ["36DA8FF6E4A847A7"]
 			id: "3AB22C937A6B1E8C"
 			subtitle: "你需要电解盐水来获取钠和氯气"
 			tasks: [{
@@ -257,8 +275,17 @@
 				"298DCE38C0E0D5B9"
 				"1DD55129A6C4D355"
 			]
+			description: [
+				"北极星的火箭是需求玩家自己搭建的，形状并不固定，但前往其他星球需要注意以下几点："
+				"1.必须要有火箭核心，火箭控制器以及若干火箭引擎与耐热壳体。"
+				"2.火箭本身需要满足前往该星球的几个参数。"
+				"3.跨行星飞行需要使用星际导航仪，否则只能前往所在星球的卫星。"
+				"火箭的几项参数是：耐热度，燃料量以及火箭引擎数。"
+				"耐热度由本模组的几种金属的装饰方块（钨，钛，火星钢）提供，越高级的材料提供的越多。而燃料量由各种燃料提供，详情查看jei。"
+				"&4注意，到另一个星球后一定要右键选中控制台，否则无法降速！&r"
+			]
 			id: "119E0BF4CFAA0B5F"
-			subtitle: "待补充"
+			subtitle: "动态结构式火箭"
 			tasks: [{
 				id: "2DA834973EBF90E4"
 				item: {
@@ -344,8 +371,7 @@
 			y: 2.0d
 		}
 		{
-			dependencies: ["40BDFCC7A3B77F26"]
-			hide_dependency_lines: true
+			dependencies: ["0B4050EA824CAB43"]
 			id: "615F08354B8D9B00"
 			subtitle: "使用该物品为宇航服充氧气"
 			tasks: [{
@@ -367,7 +393,7 @@
 				item: "northstar:atmospheric_concentrator"
 				type: "item"
 			}]
-			x: 8.0d
+			x: 10.5d
 			y: 3.5d
 		}
 		{
@@ -423,7 +449,7 @@
 		}
 		{
 			dependencies: ["40BDFCC7A3B77F26"]
-			description: ["简单来说就是：火箭中需要有足够的\"耐热方块\"，否则无法前往特定星球。而不同的金属装饰材料耐热的程度不同。"]
+			description: ["简单来说就是：火箭中需要有足够的\"耐热方块\"，否则无法前往特定星球。而不同的金属装饰方块耐热的程度也不同。"]
 			id: "5171DC10561530DE"
 			subtitle: "使用下列材料制成的装饰方块的各种属性"
 			tasks: [{
@@ -436,6 +462,7 @@
 		}
 		{
 			dependencies: ["0A78650F17E1E069"]
+			description: ["前往金星要求火箭拥有非常高的耐热值，建议使用高级的材料制作火箭的壳体。"]
 			id: "3A2218D2A3F89F9E"
 			subtitle: "有它你才能前往金星和水星"
 			tasks: [
@@ -490,6 +517,7 @@
 		{
 			dependencies: ["3A2218D2A3F89F9E"]
 			id: "0BAC02A069A5B123"
+			subtitle: "金星需要非常高的耐热值，建议使用高级的材料制作火箭的壳体"
 			tasks: [{
 				dimension: "northstar:venus"
 				icon: "northstar:venus_gravel"
@@ -508,8 +536,47 @@
 				item: "northstar:temperature_regulator"
 				type: "item"
 			}]
-			x: 19.0d
+			x: 20.5d
 			y: 2.0d
+		}
+		{
+			dependencies: ["0A838A84677688BA"]
+			id: "36DA8FF6E4A847A7"
+			tasks: [{
+				id: "091E00CDE081CDFD"
+				item: "createdelight:electrolyzer"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"40BDFCC7A3B77F26"
+				"4A2A62D77A29284F"
+			]
+			id: "0B4050EA824CAB43"
+			tasks: [{
+				id: "49908A1EE870CB73"
+				item: "northstar:circuit"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"0B4050EA824CAB43"
+				"0A78650F17E1E069"
+			]
+			id: "332AE84038DFCBC9"
+			tasks: [{
+				id: "6BE1734051F19438"
+				item: "northstar:advanced_circuit"
+				type: "item"
+			}]
+			x: 19.0d
+			y: 4.5d
 		}
 	]
 	title: "群星之旅"

@@ -16,22 +16,14 @@
 		y: 3.5d
 	}]
 	order_index: 0
-	quest_links: [
-		{
-			id: "329928ACABC57A87"
-			linked_quest: "62C31EFDB74E7053"
-			shape: "hexagon"
-			size: 2.0d
-			x: 7.0d
-			y: 5.0d
-		}
-		{
-			id: "4933E4FC82754690"
-			linked_quest: "7E2BA55431C4D882"
-			x: 2.5d
-			y: -4.0d
-		}
-	]
+	quest_links: [{
+		id: "329928ACABC57A87"
+		linked_quest: "62C31EFDB74E7053"
+		shape: "hexagon"
+		size: 2.0d
+		x: 7.0d
+		y: 5.0d
+	}]
 	quests: [
 		{
 			id: "67A7A1B0700FFCA3"
@@ -555,7 +547,6 @@
 			y: -5.5d
 		}
 		{
-			dependencies: ["7E2BA55431C4D882"]
 			id: "758A7944757826A8"
 			subtitle: "注意只能在月球上使用哦"
 			tasks: [{

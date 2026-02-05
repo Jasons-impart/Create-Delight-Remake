@@ -457,18 +457,6 @@
 					item: "createmetallurgy:casting_table"
 					type: "item"
 				}
-				{
-					id: "2EC4C5B1864C6108"
-					item: {
-						Count: 1
-						id: "itemfilters:tag"
-						tag: {
-							value: "forge:graphite_molds"
-						}
-					}
-					title: "任意模具"
-					type: "item"
-				}
 			]
 			title: "浇铸流体！"
 			x: 6.0d
@@ -1346,6 +1334,7 @@
 		}
 		{
 			dependencies: ["601E073214DCC16C"]
+			hide_until_deps_complete: false
 			id: "41C38AC7AA97CFAD"
 			rewards: [{
 				count: 3
@@ -1364,6 +1353,8 @@
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
+			description: ["太空相关物品很多都会用到热力引擎。"]
+			hide_until_deps_complete: false
 			id: "601E073214DCC16C"
 			rewards: [{
 				count: 3
@@ -1858,9 +1849,11 @@
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
+			description: ["在夜晚就可以通过它来看星星。"]
 			id: "40BDFCC7A3B77F26"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "可以着手准备太空相关了"
 			tasks: [{
 				id: "36F860A6EEADDEBA"
 				item: "northstar:telescope"

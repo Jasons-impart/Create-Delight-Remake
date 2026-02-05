@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
         "vintageimprovements:rolling/nethersteel_rod",
         "vintageimprovements:rolling/nethersteel_plate",
         "vintageimprovements:rolling/andesite_plate",
-        "vintageimprovements:crushing/scoria_recycling",
+        "vintageimprovements:crushing/scoria",
         "vintageimprovements:pressurizing/sulfur_dioxide",
         "vintageimprovements:craft/spring_coiling_machine",
     ])

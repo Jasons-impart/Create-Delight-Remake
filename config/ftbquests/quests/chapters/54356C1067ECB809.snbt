@@ -345,7 +345,7 @@
 				item: "createdelight:fuel_mixtures_bucket"
 				type: "item"
 			}]
-			x: 6.5d
+			x: 8.5d
 			y: -1.5d
 		}
 		{
@@ -773,6 +773,17 @@
 			}]
 			x: 3.0d
 			y: 5.0d
+		}
+		{
+			dependencies: ["65602AA94EEB3AA3"]
+			id: "4A2A62D77A29284F"
+			tasks: [{
+				id: "2602A962F988CE72"
+				item: "alexscaves:polymer_plate"
+				type: "item"
+			}]
+			x: 6.5d
+			y: -2.0d
 		}
 	]
 	title: "&5石油电力"
