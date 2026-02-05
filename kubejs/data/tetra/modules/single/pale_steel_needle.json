@@ -1,0 +1,45 @@
+{
+    "replace": true,
+    "type": "tetra:basic_major_module",
+    "slots": [ "single/head" ],
+    "improvements": [
+        "tetra:single/shared_head/",
+        "tetra:single/head/shared/",
+        "tetra:single/shared/",
+        "tetra:shared/"
+    ],
+    "variants": [
+        {
+            "key": "pale_steel_needle/pale_steel_needle",
+            "integrity": -1,
+            "attributes": {
+                "generic.attack_damage": 25,
+                "generic.attack_speed": -0.5
+            },
+            "aspects": {
+                "edged_weapon": 2,
+                "breakable": 2
+            },
+            "effects": {
+                "lunge": 160 ,
+                "art_of_forging:life_steal": [ 5, 50 ],
+                "armorPenetration": 60,
+                "criticalStrike": [ 50, 1.5 ],
+                "skewering": [ 5, 10 ],
+                "stabilizing": 10 
+            },
+            "magicCapacity": 300,
+            "glyph": {
+                "tint": "FFFAFA",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 176,
+                "textureY": 0
+            },
+            "models": [
+                {
+                    "location": "tetra:item/module/single/head/pale_steel_needle/pale_steel_needle"
+                }
+            ]
+        }
+    ]
+}

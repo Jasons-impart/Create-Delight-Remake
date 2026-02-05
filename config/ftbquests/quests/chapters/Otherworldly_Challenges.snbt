@@ -295,6 +295,39 @@
 			x: 2.0d
 			y: -6.5d
 		}
+		{
+			height: 3.0d
+			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
+			rotation: -180.0d
+			width: 3.0d
+			x: 14.0d
+			y: 4.0d
+		}
+		{
+			height: 4.0d
+			image: "tetra:item/module/single/head/pale_steel_needle/pale_steel_needle"
+			rotation: 0.0d
+			width: 4.0d
+			x: 13.0d
+			y: 3.0d
+		}
+		{
+			height: 3.0d
+			image: "tetra:item/module/modles/pale_steel_needle/pale_steel_needle"
+			rotation: 0.0d
+			width: 3.0d
+			x: 11.5d
+			y: 2.5d
+		}
+		{
+			height: 3.0d
+			image: "alexsmobs:item/void_worm_eye"
+			order: -1
+			rotation: 0.0d
+			width: 3.0d
+			x: 13.0d
+			y: 3.0d
+		}
 	]
 	order_index: 9
 	quest_links: [ ]
@@ -800,8 +833,8 @@
 		{
 			dependencies: ["1DAA7B2A273EF5C1"]
 			description: [
-				"         糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。这里曾因永恒的甜蜜庆典而繁荣，又因未知的魔法而变得荒芜。如今，这些魔法蔓延进入主世界，糖果女巫的力量将这里改造为类似于糖果洞穴的环境，我们必须将他们击退，维护我们赖以生存的世界！"
-				"         注意！：gateway判定苦力怕爆炸为非正常死亡，会直接结束试炼，本试炼降低了苦力怕的血量和移动速度，增强了伤害，建议拉扯一下，一般使用带有冰冻词条武器可以稳定过，没有的话建议打一个击退或者喝一瓶迅捷药水之类的。记得在第二波之前拉开一些距离！（本试炼除了这个没有任何难点ovo）"
+				"    糖果龋洞能存在于这个世界上，功劳非甘草女巫莫属。这里曾因永恒的甜蜜庆典而繁荣，又因未知的魔法而变得荒芜。如今，这些魔法蔓延进入主世界，糖果女巫的力量将这里改造为类似于糖果洞穴的环境，我们必须将他们击退，维护我们赖以生存的世界！"
+				"    注意！：gateway判定苦力怕爆炸为非正常死亡，会直接结束试炼，本试炼降低了苦力怕的血量和移动速度，增强了伤害，建议拉扯一下，一般使用带有冰冻词条武器可以稳定过，没有的话建议打一个击退或者喝一瓶迅捷药水之类的。记得在第二波之前拉开一些距离！（本试炼除了这个没有任何难点ovo）"
 			]
 			id: "604734C6B3F31B97"
 			rewards: [
@@ -1855,7 +1888,7 @@
 			y: -2.5d
 		}
 		{
-			description: ["         原始世界以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"]
+			description: ["    原始世界以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"]
 			icon: {
 				Count: 1
 				id: "alexscaves:cave_codex"
@@ -2380,6 +2413,125 @@
 			title: "研究：渊海之下"
 			x: 15.0d
 			y: -1.0d
+		}
+		{
+			dependencies: ["604734C6B3F31B97"]
+			description: [
+				"    试炼者需踏入这片被虫潮笼罩的战场，没有退路，唯有迎战。异常的感染让虫子们失去意识，仅能战斗，坚持到最后一刻，即使敌人无穷无尽！"
+				"    (虽然叫做不再有梦，但是最后给的织针......这八年咋过来的，此任务致敬传奇游戏空洞骑士及其续作丝之歌，如有问题，立刻改正)"
+				"    提示：本试炼怪物种类复杂且多，建议使用吸血+裁决的搭配，最后的boos和蚊鬼需要使用远程，建议有了外骨骼再挑战"
+			]
+			id: "0E2D578692E751C0"
+			rewards: [
+				{
+					id: "0999C4C13B2C5AB6"
+					item: "tetra:pale_steel_needle"
+					type: "item"
+				}
+				{
+					id: "71FA486FF6AE8060"
+					item: "dungeonsdelight:monster_cake"
+					type: "item"
+				}
+				{
+					id: "02E41FEBCAE27FAB"
+					item: {
+						Count: 1
+						id: "gateways:gate_pearl"
+						tag: {
+							gateway: "createdelight:dream_no_more"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "square"
+			subtitle: "活了这么久，知道的却这么少，或许我应该心怀感激？我忘记了所有悲剧，所见皆是奇迹。"
+			tasks: [{
+				id: "0F7F13945EFAF2D5"
+				item: {
+					Count: 1
+					id: "gateways:gate_pearl"
+					tag: {
+						gateway: "createdelight:dream_no_more"
+					}
+				}
+				type: "item"
+			}]
+			x: 13.0d
+			y: 3.0d
+		}
+		{
+			can_repeat: true
+			dependencies: [
+				"4245E55901A10324"
+				"0E2D578692E751C0"
+			]
+			description: [
+				"    感染最初在梦中显现，利用种种欲望，在虫子的脑海中植入虚假的希望。最终，感染将主导他们的思想，破坏其精神，控制其意志。因此&k辐光&r能够控制完全被感染的虫子，让它们成为统一的一员。于是，它们回归只有原始本能的状态，变得疯狂，更加无畏和具有攻击性。进一步，他们还可能失去自我保护意识。"
+				"                      ——空洞骑士 丝之歌中文维基"
+			]
+			icon: "tetra:pale_steel_needle"
+			id: "20439C425BDC1CB3"
+			rewards: [{
+				count: 6
+				id: "5B2B30BABE4B5CE5"
+				item: "createdelight:otherworld_note"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [
+				{
+					id: "66C1CDB3BC7294EA"
+					item: {
+						Count: 1
+						id: "alexsmobs:centipede_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "0C4B1A98A30FEB3E"
+					item: {
+						Count: 1
+						id: "iceandfire:deathworm_gauntlet_yellow"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "3D11A86A14DC6C49"
+					item: {
+						Count: 1
+						id: "alexsmobs:hemolymph_blaster"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "05CA54052737A37A"
+					item: "tetra:pale_steel_needle"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "1E3C5DB10983375A"
+					item: "iceandfire:deathworm_egg_giant"
+					type: "item"
+				}
+			]
+			title: "You are the Vessel"
+			x: 13.0d
+			y: 0.5d
 		}
 	]
 	subtitle: ["泪如灰落，绣如星宿"]

@@ -9,3 +9,9 @@ StartupEvents.modifyCreativeTab("tetra:default", e => {
     custom_scroll([1, 1, 4, 5], 1, "bow/stave/remembrance_stave", 1, ["tetra:bow/stave/remembrance_stave"], "c10000")
   ])
 })
+//添加tetra部件
+StartupEvents.modifyCreativeTab("createdelight:tetra_modul", e => {
+  e.add([
+    'createdelight:pale_steel_needle',
+  ])
+})

@@ -1,0 +1,408 @@
+{
+	"size": "large",
+	"color": "#FFA500",
+	"waves": [
+		{
+			"entities": [
+				{
+					"entity": "minecraft:silverfish",
+					"count": 16
+				},
+				{
+					"entity": "minecraft:endermite",
+					"count": 16
+				}
+			],
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 5.5
+				},
+				{
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecraft:silverfish",
+					"rolls": 12
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "ends_delight:raw_ender_mite_meat", 
+                        "count": 24
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "dungeonsdelight:silverfish_and_chips_block", 
+                        "count": 1
+					    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "dungeonsdelight:silverfish_fried_rice", 
+                        "count": 1
+					    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexsmobs:crimson_mosquito",
+					"count": 12
+				},
+				{
+					"entity": "alexsmobs:warped_mosco",
+					"count": 2
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 5.5
+				},
+                {
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -1.2
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexsmobs:crimson_mosquito",
+					"rolls": 16
+                },
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexsmobs:warped_mosco",
+					"rolls": 8
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexsmobs:mosquito_repellent_stew", 
+                        "count": 4
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexsmobs:hemolymph_blaster", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 2400,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "minecraft:spider",
+					"count": 18
+				},
+				{
+					"entity": "minecraft:cave_spider",
+					"count": 18
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 6.5
+				},
+                {
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+								{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 1.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "minecraft:spider",
+					"rolls": 24
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "dungeonsdelight:monster_cake", 
+                        "count": 1
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "dungeonsdelight:spider_salmagundi", 
+                        "count": 1
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "dungeonsdelight:spider_tanghulu", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexscaves:gum_worm",
+					"count": 1
+				},
+				{
+					"entity": "iceandfire:deathworm",
+					"count": 4
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 5.5
+				},
+                {
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.5
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexsmobs:centipede_head",
+					"rolls": 12
+                },
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexscaves:gum_worm",
+					"rolls": 12
+                },
+				{
+					"type": "gateways:entity_loot",
+					"entity": "iceandfire:deathworm",
+					"rolls": 12
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "alexsmobs:centipede_leggings", 
+                        "count": 1
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "iceandfire:deathworm_gauntlet_yellow", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 2400,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "the_bumblezone:honey_slime",
+					"count": 16
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 9.5
+				},
+                {
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 0.4
+				},
+				{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 3.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "the_bumblezone:honey_slime",
+					"rolls": 12
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "minecraft:honey_bottle", 
+                        "count": 6
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "vinery:mead", 
+                        "count": 4
+                    }
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+					    "item":"create_deepfried:glow_berry_honey_glazed_donut", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 1200,
+			"setup_time": 100
+		},
+		{
+			"entities": [
+				{
+					"entity": "alexsmobs:void_worm",
+					"count": 1
+				}
+			],
+       
+			"modifiers": [
+				{
+					"attribute": "generic.max_health",
+					"operation": "MULTIPLY_TOTAL",
+					"value": 14.0
+				},
+                {
+					"attribute": "generic.armor",
+					"operation": "ADDITION",
+					"value": 12
+				},
+				{
+					"attribute": "generic.knockback_resistance",
+					"operation": "ADDITION",
+					"value": 0.8
+				},
+				{
+					"attribute": "generic.movement_speed",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -0.4
+				},
+								{
+					"attribute": "generic.attack_damage",
+					"operation": "MULTIPLY_TOTAL",
+					"value": -1.0
+				}
+			],
+			"rewards": [
+				{
+					"type": "gateways:entity_loot",
+					"entity": "alexsmobs:void_worm",
+					"rolls": 4
+                },
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "gateways:gate_pearl", 
+                        "count": 2,
+                        "nbt" : {"gateway":"createdelight:dream_no_more"}}
+				},
+				{
+					"type": "gateways:stack",
+					"stack": {
+                        "item": "tetra:pale_steel_needle", 
+                        "count": 1
+                    }
+				}
+			],
+			"max_wave_time": 12000,
+			"setup_time": 100
+		}
+    ],
+	"failures": [
+        {
+        "type": "gateways:explosion",
+        "strength": 5,
+        "fire": true,
+        "block_damage": false
+    }]
+}

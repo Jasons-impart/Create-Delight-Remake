@@ -2891,5 +2891,19 @@
   "tetra/schematic/toolbelt/strap/strap_4.slot1": "皮带材质",
   "tetra/schematic/toolbelt/suspender.description": "稍作加工将一个悬浮器固定在腰带上，就可以从附近的信标或管道汲取能量，使腰带穿戴者能在空中悬停。",
   "tetra/schematic/toolbelt/suspender.name": "悬浮器",
-  "tetra/schematic/toolbelt/suspender.slot1": "稳定器"
+  "tetra/schematic/toolbelt/suspender.slot1": "稳定器",
+
+  "tetra/schematic/single/pale_steel_needle.name": "苍白蜂钢织针",
+  "tetra/schematic/single/pale_steel_needle/pale_steel_needle.name": "苍白蜂钢织针",
+  "tetra/schematic/single/pale_steel_needle/pale_steel_needle.slot1": "苍白蜂钢织针",
+  "tetra.variant.pale_steel_needle/pale_steel_needle": "苍白蜂钢织针",
+  "tetra.module.single/pale_steel_needle.item_name": "苍白蜂钢织针",
+  "tetra.module.single/pale_steel_needle.name": "苍白蜂钢织针",
+  "tetra/schematic/single/pale_steel_needle.slot": "苍白蜂钢织针",
+  "tetra/schematic/single/pale_steel_needle.slot1": "苍白蜂钢织针",
+  "tetra/schematic/single/pale_steel_needle.description": "为战斗设计的特制长针，原为纺织工具。蜂钢刃身经过极致打磨，已达到了最终形态。",
+
+  "item_group.meng.createdelight_tetra_module": "齿轮盛宴：tetra部件",
+
+  "item.tetra.pale_steel_needle": "苍白蜂钢"
 }
