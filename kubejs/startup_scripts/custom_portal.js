@@ -1,21 +1,6 @@
 const $CustomPortalBuilder = Java.loadClass("net.kyrptonaught.customportalapi.api.CustomPortalBuilder")
 
 StartupEvents.postInit(e => {
-    $CustomPortalBuilder
-        .beginPortal() //开始构建自定义传送门
-        ["frameBlock(net.minecraft.resources.ResourceLocation)"]("create_new_age:magnetite_block")
-        .destDimID("createdelight:magnetic_caves_dimension") //传送维度
-        .lightWithItem("create_new_age:overcharged_diamond")
-        .tintColor(49, 44, 55) // 传送门的RGB颜色
-        .registerPortal(); //注册自定义传送门
-
-    $CustomPortalBuilder
-        .beginPortal() //开始构建自定义传送门
-        ["frameBlock(net.minecraft.resources.ResourceLocation)"]("alexscaves:sulfur") //传送门的框架方块
-        .destDimID("createdelight:toxic_caves_dimension") //传送维度
-        .lightWithItem("alexscaves:sulfur_dust")
-        .tintColor(0, 252, 0) // 传送门的RGB颜色
-        .registerPortal(); //注册自定义传送门
 
     $CustomPortalBuilder
         .beginPortal() //开始构建自定义传送门
