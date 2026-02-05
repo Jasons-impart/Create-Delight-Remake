@@ -30,7 +30,14 @@ ServerEvents.recipes(e => {
   create.crushing(["31x createdieselgenerators:wood_chip",
       Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
       Item.of("farmersdelight:tree_bark", 1).withChance(0.75)],
-  "#minecraft:logs")
+  Ingredient.of(['#minecraft:logs', 
+      'iceandfire:dreadwood_log', 
+      'netherexp:cerebrage_claret_stem'])
+    .subtract(['/.*_wood.*/', 
+      '/.*stripped_.*/', 
+      '/.*_hyphae.*/', 
+      'cosmopolitan:sappy_birch_log', 
+      'vintagedelight:magic_vine_block']))
   .id("createdieselgenerators:crushing/wood_chip_logs/with_bark")
   e.replaceInput({ mod: "createdieselgenerators", not: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "#forge:ingots/steel")
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
