@@ -140,4 +140,16 @@ ServerEvents.recipes(e => {
         create.deploying(incomplete, [incomplete, "alexscaves:magic_conch"]).keepHeldItem()
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/the_legacy_of_the_abyss")
+        ////添加配方：不再有梦合成
+    create.sequenced_assembly([
+        Item.of(Item.of('gateways:gate_pearl', '{gateway:"createdelight:dream_no_more"}'))
+    ], "minecraft:ender_pearl", [
+        create.deploying(incomplete, [incomplete, "alexscaves:sweet_tooth"]),
+        create.pressing(incomplete,incomplete),
+        create.deploying(incomplete, [incomplete, "art_of_forging:nano_insectoid"]),
+        vintageimprovements.vibrating(incomplete, incomplete),
+        create.deploying(incomplete, [incomplete, "alexsmobs:void_worm_eye"]),
+        create.deploying(incomplete, [incomplete, "dungeonsdelight:monster_cake"]).keepHeldItem()
+    ]).transitionalItem(incomplete).loops(6)
+    .id("createdelight:sequenced_assembly/dream_no_more")
 })

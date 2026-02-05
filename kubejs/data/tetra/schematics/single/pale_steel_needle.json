@@ -1,0 +1,27 @@
+{
+    "replace": true,
+    "slots": [ "single/head" ],
+    "materialSlotCount": 1,
+    "materialRevealSlot": 0,
+    "rarity": "temporary",
+    "displayType": "major",
+    "glyph":{
+                "tint": "FFFAFA",
+                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureX": 176,
+                "textureY": 0
+            },
+    "outcomes": [
+        {
+            "material": {
+                "items": [ "tetra:pale_steel_needle" ]
+            },
+            "experienceCost": 10,
+            "requiredTools": {
+                "hammer_dig": "minecraft:diamond"
+            },
+            "moduleKey": "single/pale_steel_needle",
+            "moduleVariant": "pale_steel_needle/pale_steel_needle"
+        }
+    ]
+}

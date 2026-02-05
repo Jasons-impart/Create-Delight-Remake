@@ -1,0 +1,14 @@
+{
+  "Version": 1.0,
+  "attributemap": {
+    "single/head": {
+      "single/pale_steel_needle": {
+        "config": {
+          "attributes": {
+            "parent": "bettercombat:rapier"
+          }
+        }
+      }
+    }
+  }
+}
