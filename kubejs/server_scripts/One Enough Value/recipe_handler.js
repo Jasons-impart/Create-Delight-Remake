@@ -38,14 +38,17 @@ OEVEvents.addRecipeHandler(event => {
             event.defaultRecipeExtraValueGetter,
             // event.defaultRecipeValueSetter
             (recipe, stacks, totalValue, setter) => {
+                let currentTotalValue = totalValue * multiplier;
+
                 // 兼容机械动力的概率产出，计算每个产物期望数量并分别设置价值
                 if (recipe.getRollableResults) {
                     let results = recipe.getRollableResults();
                     let itemCountMap = {};
-                    let totalCnt = 0.0;
+                    let totalUndefinedCnt = 0.0;
+                    let consumedValue = 0.0;
 
                     // console.log(recipe)
-                    // 计算每种产物期望数量
+                    // 第一遍遍历：统计期望数量和已消耗的价值
                     results.forEach(output => {
                         let itemStack = output.getStack();
                         let count = itemStack.getCount();
@@ -54,24 +57,76 @@ OEVEvents.addRecipeHandler(event => {
                         // console.log(String(itemStack) + " " + String(chance));
 
                         if (!itemStack.isEmpty() && count > 0) {
-                            itemCountMap[itemId] = (itemCountMap[itemId] || 0.0) + count * chance;
-                            totalCnt += itemCountMap[itemId];
+                            let expectedCount = count * chance;
+                            itemCountMap[itemId] = (itemCountMap[itemId] || 0.0) + expectedCount;
+
+                            let definedValue = global.FoodIngredientValueDict.get(itemId);
+                            if (definedValue !== undefined) {
+                                consumedValue += definedValue * expectedCount;
+                            } else {
+                                totalUndefinedCnt += expectedCount;
+                            }
                         }
                     })
                     // console.log(itemCountMap);
 
-                    // 每个产物均分价值
+                    // 计算剩余价值分配给未定义物品
+                    let remainingValue = currentTotalValue - consumedValue;
+
+                    // 计算未定义物品的单价，最差为 1
+                    let valuePerUndefinedUnit = 1;
+                    if (totalUndefinedCnt > 0) {
+                        valuePerUndefinedUnit = Math.max(1, remainingValue / totalUndefinedCnt);
+                    }
+
+                    // 第二遍遍历：设置价值
                     Object.keys(itemCountMap).forEach(itemId => {
-                        let expectedCount = itemCountMap[itemId];
-                        // console.log(String(recipe) + " " + itemId + " " + String(totalValue * multiplier * expectedCount / totalCnt));
-                        setter.set(recipe, Item.of(itemId), totalValue * multiplier / totalCnt);
+                        // 只设置未定义基础价值的物品
+                        if (global.FoodIngredientValueDict.get(itemId) === undefined) {
+                            // Item.of(itemId) 默认为 1 个物品，因此直接设置单价即可
+                            // console.log(String(recipe) + " " + itemId + " " + String(valuePerUndefinedUnit));
+                            setter.set(recipe, Item.of(itemId), valuePerUndefinedUnit);
+                        }
                     })
                 }
                 else {
+                    let consumedValue = 0.0;
+                    let totalUndefinedCnt = 0.0;
+
+                    // 第一遍：统计
                     stacks.forEach(stack => {
                         if (!stack.isEmpty() && stack.getCount() > 0) {
-                            // console.log(String(recipe) + " " + String(stack) + " " + String(totalValue * multiplier));
-                            setter.set(recipe, stack, totalValue * multiplier);
+                            let itemId = stack.getItem().getId();
+                            let count = stack.getCount();
+
+                            let definedValue = global.FoodIngredientValueDict.get(itemId);
+                            if (definedValue !== undefined) {
+                                consumedValue += definedValue * count;
+                            } else {
+                                totalUndefinedCnt += count;
+                            }
+                        }
+                    });
+
+                    let remainingValue = currentTotalValue - consumedValue;
+
+                    // 计算未定义物品的单价，最差为 1
+                    let valuePerUndefinedUnit = 1;
+                    if (totalUndefinedCnt > 0) {
+                        valuePerUndefinedUnit = Math.max(1, remainingValue / totalUndefinedCnt);
+                    }
+
+                    // 第二遍：设置
+                    stacks.forEach(stack => {
+                        if (!stack.isEmpty() && stack.getCount() > 0) {
+                            let itemId = stack.getItem().getId();
+                            if (global.FoodIngredientValueDict.get(itemId) === undefined) {
+                                // setter 逻辑: 如果 itemStack 有多个，单价 = value / count
+                                // 因此这里我们需要传入 单价 * 数量
+                                let stackValue = valuePerUndefinedUnit * stack.getCount();
+                                // console.log(String(recipe) + " " + String(stack) + " " + String(stackValue));
+                                setter.set(recipe, stack, stackValue);
+                            }
                         }
                     })
                 }
