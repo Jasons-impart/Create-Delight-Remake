@@ -64,7 +64,7 @@ OEVEvents.addRecipeHandler(event => {
                     Object.keys(itemCountMap).forEach(itemId => {
                         let expectedCount = itemCountMap[itemId];
                         // console.log(String(recipe) + " " + itemId + " " + String(totalValue * multiplier * expectedCount / totalCnt));
-                        setter.set(recipe, Item.of(itemId), totalValue * multiplier * expectedCount / totalCnt);
+                        setter.set(recipe, Item.of(itemId), totalValue * multiplier / totalCnt);
                     })
                 }
                 else {
