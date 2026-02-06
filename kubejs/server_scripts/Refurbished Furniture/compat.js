@@ -16,7 +16,7 @@ ServerEvents.recipes(e => {
     ])
     combination(e, [
         'some_assembly_required:bread_slice',
-        'ad_astra:cheese',
+        'trailandtales_delight:cheese_slice',
         'some_assembly_required:bread_slice'
     ], 'refurbished_furniture:cheese_sandwich', 1)
     combination(e, [

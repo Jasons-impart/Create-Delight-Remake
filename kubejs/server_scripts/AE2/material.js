@@ -71,7 +71,7 @@ ServerEvents.recipes((event) => {
 
   // 破坏核心
   kubejs.shaped(
-    "2x ae2:annihilation_core",
+    "ae2:annihilation_core",
     [
       "AAA",
       "BCD",
@@ -85,7 +85,7 @@ ServerEvents.recipes((event) => {
   .id("createdelight:annihilation_core")
   
   kubejs.shaped(
-    "ae2:annihilation_core",
+    "4x ae2:annihilation_core",
     [
       "AAA",
       "BCD",
@@ -98,7 +98,7 @@ ServerEvents.recipes((event) => {
   })
   .id("createdelight:annihilation_core_2")
   let iner = "createdelight:incomplete_annihilation_core"
-  create.sequenced_assembly("ae2:annihilation_core", "ad_astra:steel_nugget", [
+  create.sequenced_assembly("4x ae2:annihilation_core", "createdelight:steel_sheet", [
     create.deploying(iner, [iner, "#forge:gems/quartz"]),
     create.deploying(iner, [iner, "ae2:logic_processor"]),
     create.deploying(iner, [iner, "#forge:dusts/fluix"]),
@@ -108,7 +108,7 @@ ServerEvents.recipes((event) => {
     .id("createdelight:annihilation_core_1")
 
   // 成型核心
-  kubejs.shaped("2x ae2:formation_core", ["AAA", "BCD", "AAA"], {
+  kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
     A: "#forge:plates/iron",
     B: "#forge:gems/certus_quartz",
     C: "#forge:dusts/fluix",
@@ -116,7 +116,7 @@ ServerEvents.recipes((event) => {
   })
   .id("createdelight:formation_cor")
   
-  kubejs.shaped("ae2:formation_core", ["AAA", "BCD", "AAA"], {
+  kubejs.shaped("4x ae2:formation_core", ["AAA", "BCD", "AAA"], {
     A: "#forge:nuggets/steel",
     B: "#forge:gems/certus_quartz",
     C: "#forge:dusts/fluix",
@@ -124,7 +124,7 @@ ServerEvents.recipes((event) => {
   })
   .id("createdelight:formation_core_2")
   let iner_2 = "createdelight:incomplete_formation_core"
-  create.sequenced_assembly("ae2:formation_core", "ad_astra:steel_nugget", [
+  create.sequenced_assembly("4x ae2:formation_core", "createdelight:steel_sheet", [
     create.deploying(iner_2, [iner_2, "#forge:gems/certus_quartz"]),
     create.deploying(iner_2, [iner_2, "ae2:logic_processor"]),
     create.deploying(iner_2, [iner_2, "#forge:dusts/fluix"]),
@@ -214,12 +214,14 @@ ServerEvents.recipes((event) => {
   );
 
   //包层线缆使用强化纤维制作
-  kubejs.shaped("2x ae2:fluix_covered_cable", [
-    "ABA"
+  kubejs.shaped("4x ae2:fluix_covered_cable", [
+    " A ",
+    "ABA",
+    " A "
   ],
     {
       A: "ae2:fluix_glass_cable",
-      B: "protection_pixel:reinforcedfiber"
+      B: "northstar:durable_fabric"
     })
   .id("createdelight:fluix_covered_cable_from_reinforcedfiber")
   create.splashing("ae2:fluix_covered_cable", Ingredient.of("#ae2:covered_cable").subtract("ae2:fluix_covered_cable"))

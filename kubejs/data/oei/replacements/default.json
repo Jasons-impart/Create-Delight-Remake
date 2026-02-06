@@ -20,7 +20,8 @@
     {
         "matchItems": [
             "ratatouille:salt",
-            "bakeries:salt"
+            "bakeries:salt",
+            "northstar:salt"
         ],
         "resultItems": "vintagedelight:salt_dust"
     },
@@ -28,10 +29,9 @@
         "matchItems": [
             "brewinandchewin:flaxen_cheese_wedge",
             "casualness_delight:cheese_wheel_slice",
-            "vintagedelight:cheese_slice",
-            "trailandtales_delight:cheese_slice"
+            "vintagedelight:cheese_slice"
         ],
-        "resultItems": "ad_astra:cheese"
+        "resultItems": "trailandtales_delight:cheese_slice"
     },
     {
         "matchItems": [

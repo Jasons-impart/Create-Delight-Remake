@@ -1,6 +1,0 @@
-{
-    "fluid": "ad_astra:cryo_fuel",
-    "burnTime": 30,
-    "freezing": true,
-    "amountConsumedPerTick": 1
-}

@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
     combination(e, [
         "create:dough",
-        "ad_astra:cheese",
+        "trailandtales_delight:cheese_slice",
         "minecraft:carrot",
         "minecraft:beetroot",
         "minecraft:potato"
@@ -55,10 +55,10 @@ ServerEvents.recipes(e => {
     ], "refurbished_furniture:raw_meatlovers_pizza", 1)
     combination(e, [
         "create:dough",
-        "ad_astra:cheese",
-        "ad_astra:cheese",
-        "ad_astra:cheese",
-        "ad_astra:cheese"
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice"
     ], "createdelight:raw_cheese_pizza", 1)
     baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 300)
     e.recipes.farmersdelight.cooking([
@@ -84,7 +84,7 @@ BlockEvents.rightClicked(e => {
             }
             else
                 block.set("air")
-            block.popItem("ad_astra:cheese")
+            block.popItem("trailandtales_delight:cheese_slice")
             e.cancel()
         }
     }

@@ -54,7 +54,7 @@ ServerEvents.recipes(e => {
             "BCB",
             " D "
         ], {
-        A: 'ad_astra:etrionic_core',
+        A: 'createaddition:capacitor',
         B: "create_new_age:overcharged_golden_sheet",
         C: "create_new_age:basic_energiser",
         D: "vintageimprovements:laser_item"
@@ -66,7 +66,7 @@ ServerEvents.recipes(e => {
         'create_new_age:advanced_energiser',
         [
             e.recipes.create.deploying(iner, [iner, 'create_new_age:overcharged_diamond']),
-            e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_capacitor"]),
+            e.recipes.create.deploying(iner, [iner, "createdelight:bleak_electron_tube"]),
             e.recipes.create.deploying(iner, [iner, "alexscaves:tesla_bulb"])
         ]
     )

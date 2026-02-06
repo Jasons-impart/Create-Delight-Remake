@@ -1,18 +1,6 @@
 [
     {
         "matchItems": [
-            "ad_astra:iron_plate"
-        ],
-        "resultItems": "create:iron_sheet"
-    },
-    {
-        "matchItems": [
-            "ad_astra:iron_rod"
-        ],
-        "resultItems": "createaddition:iron_rod"
-    },
-    {
-        "matchItems": [
             "create_new_age:copper_wire"
         ],
         "resultItems": "createaddition:copper_wire" 
@@ -22,24 +10,6 @@
             "iceandfire:copper_nugget"
         ],
         "resultItems": "create:copper_nugget"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_ingot"
-        ],
-        "resultItems": "createmetallurgy:steel_ingot"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_block"
-        ],
-        "resultItems": "createmetallurgy:steel_block"
-    },
-    {
-        "matchItems": [
-            "ad_astra:steel_rod"
-        ],
-        "resultItems": "vintageimprovements:steel_rod"
     },
     {
         "matchItems": [
@@ -77,5 +47,41 @@
             "ae2omnicells:ender_ingot"
         ],
         "resultItems": "createutilities:void_steel_ingot"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_block"
+        ],
+        "resultItems": "createmetallurgy:tungsten_block"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_ingot"
+        ],
+        "resultItems": "createmetallurgy:tungsten_ingot"
+    },
+    {
+        "matchItems": [
+            "northstar:raw_tungsten_ore"
+        ],
+        "resultItems": "createmetallurgy:raw_tungsten"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_nugget"
+        ],
+        "resultItems": "createmetallurgy:tungsten_nugget"
+    },
+    {
+        "matchItems": [
+            "northstar:crushed_raw_tungsten"
+        ],
+        "resultItems": "createmetallurgy:crushed_raw_tungsten"
+    },
+    {
+        "matchItems": [
+            "northstar:tungsten_sheet"
+        ],
+        "resultItems": "createmetallurgy:tungsten_sheet"
     }
 ]

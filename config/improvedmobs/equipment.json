@@ -382,18 +382,6 @@
     ]
   },
   "FEET": {
-    "ad_astra:jet_suit_boots": [
-      2691,
-      5.086568
-    ],
-    "ad_astra:netherite_space_boots": [
-      3524,
-      2.3839326
-    ],
-    "ad_astra:space_boots": [
-      4337,
-      1.3245949
-    ],
     "alexscaves:diving_boots": [
       4498,
       1.1178746
@@ -624,18 +612,6 @@
     ]
   },
   "LEGS": {
-    "ad_astra:jet_suit_pants": [
-      1624,
-      9.199434
-    ],
-    "ad_astra:netherite_space_pants": [
-      2450,
-      7.1634674
-    ],
-    "ad_astra:space_pants": [
-      4266,
-      1.397999
-    ],
     "alexscaves:diving_leggings": [
       4456,
       1.1537791
@@ -898,18 +874,6 @@
     ]
   },
   "CHEST": {
-    "ad_astra:jet_suit": [
-      1675,
-      9.120687
-    ],
-    "ad_astra:netherite_space_suit": [
-      2500,
-      6.9321704
-    ],
-    "ad_astra:space_suit": [
-      4314,
-      1.3541976
-    ],
     "alexscaves:cloak_of_darkness": [
       4823,
       0.6972618
@@ -1240,18 +1204,6 @@
     ]
   },
   "HEAD": {
-    "ad_astra:jet_suit_helmet": [
-      1579,
-      9.294949
-    ],
-    "ad_astra:netherite_space_helmet": [
-      2419,
-      7.295891
-    ],
-    "ad_astra:space_helmet": [
-      4236,
-      1.4366896
-    ],
     "alexscaves:diving_helmet": [
       4441,
       1.173019

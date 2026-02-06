@@ -582,11 +582,6 @@ ServerEvents.recipes(e => {
     let stone_milling = [
         ['minecraft:cobbled_deepslate', 'minecraft:deepslate'],
         ['minecraft:cobblestone', 'minecraft:stone'],
-        ['ad_astra:moon_cobblestone', 'ad_astra:moon_stone'],
-        ['ad_astra:mars_cobblestone', 'ad_astra:mars_stone'],
-        ['ad_astra:venus_cobblestone', 'ad_astra:venus_stone'],
-        ['ad_astra:mercury_cobblestone', 'ad_astra:mercury_stone'],
-        ['ad_astra:glacio_cobblestone', 'ad_astra:glacio_stone'],
     ]
     stone_milling.forEach(stone => {
         e.recipes.create.milling(
@@ -594,18 +589,6 @@ ServerEvents.recipes(e => {
             stone[1]
         ).id(`create:milling/${stone[1].split(":")[1]}_to_${stone[0].split(":")[1]}`)
     })
-    e.recipes.create.crushing(
-        'ad_astra:moon_sand',
-        'ad_astra:moon_stone'
-    ).id("create:crushing/moon_sand_to_moon_stone")
-    e.recipes.create.crushing(
-        'ad_astra:mars_sand',
-        'ad_astra:mars_stone'
-    ).id("create:crushing/mars_sand_to_mars_stone")
-    e.recipes.create.crushing(
-        'ad_astra:venus_sand',
-        'ad_astra:venus_stone'
-    ).id("create:crushing/venus_sand_to_venus_stone")
     e.recipes.create.cutting(
         "2x ratatouille:sausage_casing",
         "minecraft:slime_ball"

@@ -57,24 +57,6 @@ ServerEvents.recipes(e => {
         "create:crushed_raw_silver",
         "iceandfire:raw_silver",
         "iceandfire:silver_nugget"])
-    metal_production_line_5(e, [
-        "createdelight:dirty_desh_dust",
-        "createdelight:desh_dust",
-        "createdelight:crushed_raw_desh",
-        "ad_astra:raw_desh",
-        "ad_astra:desh_nugget"])
-    metal_production_line_5(e, [
-        "createdelight:dirty_ostrum_dust",
-        "createdelight:ostrum_dust",
-        "createdelight:crushed_raw_ostrum",
-        "ad_astra:raw_ostrum",
-        "ad_astra:ostrum_nugget"])
-    metal_production_line_5(e, [
-        "createdelight:dirty_calorite_dust",
-        "createdelight:calorite_dust",
-        "createdelight:crushed_raw_calorite",
-        "ad_astra:raw_calorite",
-        "ad_astra:calorite_nugget"])
 
     remove_recipes_id(e, [
         "createmetallurgy:alloying/netherite",
@@ -163,7 +145,7 @@ ServerEvents.recipes(e => {
         ], 50, "heated"
     ).id("createmetallurgy:mixing/andesite_alloyed_from_zinc")
     e.recipes.create.pressing(
-        'ad_astra:steel_plate',
+        'createdelight:steel_sheet',
         'createmetallurgy:steel_ingot'
     ).id("create:pressing/steel_ingot")
     e.recipes.create.pressing(
@@ -171,7 +153,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:tungsten_ingot"
     ).id("create:pressing/tungsten_sheet")
     e.recipes.createmetallurgy.casting_in_table(
-        'ad_astra:steel_plate',
+        'createdelight:steel_sheet',
         [
             Fluid.of("createmetallurgy:molten_steel", 90),
             "createmetallurgy:graphite_plate_mold"

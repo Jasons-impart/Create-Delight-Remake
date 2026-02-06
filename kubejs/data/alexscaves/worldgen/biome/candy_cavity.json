@@ -1,0 +1,189 @@
+{
+  "carvers": {},
+  "downfall": 0.0,
+  "has_precipitation": false,
+  "effects": {
+    "ambient_sound": "alexscaves:candy_cavity_ambience",
+    "additions_sound": {
+      "sound": "alexscaves:candy_cavity_ambience_additions",
+      "tick_chance": 0.0111
+    },
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "alexscaves:candy_cavity_ambience_mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "alexscaves:candy_cavity_music"
+    },
+    "particle": {
+      "options": {
+        "type": "alexscaves:sugar_flake"
+      },
+      "probability": 0.0015
+    },
+    "sky_color": 15696819,
+    "fog_color": 16171727,
+    "water_color": 16402936,
+    "water_fog_color": 16402936,
+    "grass_color": 16748219,
+    "foliage_color": 15877048
+  },
+  "features": [
+    [],
+    [],
+    [
+      "alexscaves:candy_ruins",
+      "alexscaves:gobstopper_geode"
+    ],
+    [],
+    [
+      "alexscaves:chocolate_ice_cream_scoop",
+      "alexscaves:vanilla_ice_cream_scoop",
+      "alexscaves:sweetberry_ice_cream_scoop",
+      "alexscaves:ceiling_ice_cream_cone"
+    ],
+    [
+      "alexscaves:cookie_shelf",
+      "alexscaves:lollipop",
+      "alexscaves:licoroot_tree_with_sprouts",
+      "alexscaves:floating_gummy_ring"
+    ],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper_large",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "alexscaves:peppermint_patch",
+      "alexscaves:sprinkles_pile",
+      "alexscaves:sweet_puff",
+      "alexscaves:sundrop_patch"
+    ],
+    [
+    ],
+    [
+    ],
+    [
+      "alexscaves:candy_cane",
+      "alexscaves:encrusted_peppermint",
+      "alexscaves:spilled_ice_cream_cone",
+      "minecraft:patch_tall_grass_2",
+      "minecraft:trees_plains",
+      "minecraft:flower_plains",
+      "minecraft:patch_grass_plain",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin"
+    ],
+    [
+      "alexscaves:ceiling_frostmint",
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "precipitation": "rain",
+  "spawn_costs": {
+    "alexscaves:caniac": {
+      "charge": 1.1,
+      "energy_budget": 0.3
+    },
+    "alexscaves:gumbeeper": {
+      "charge": 1.0,
+      "energy_budget": 0.3
+    },
+    "alexscaves:gum_worm": {
+      "charge": 1.2,
+      "energy_budget": 0.2
+    },
+    "alexscaves:caramel_cube": {
+      "charge": 0.9,
+      "energy_budget": 0.15
+    }
+  },
+  "creature_spawn_probability": 0.04,
+  "spawners": {
+    "ambient": [],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "alexscaves:caniac",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 100
+      },
+      {
+        "type": "alexscaves:gumbeeper",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 100
+      },
+      {
+        "type": "alexscaves:gum_worm",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 80
+      },
+      {
+        "type": "alexscaves:caramel_cube",
+        "maxCount": 3,
+        "minCount": 2,
+        "weight": 40
+      }
+    ],
+    "underground_water_creature": [],
+    "water_ambient": [
+      {
+        "type": "alexscaves:sweetish_fish",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 10
+      }
+    ],
+    "water_creature": [],
+    "alexscaves:cave_creature": [
+      {
+        "type": "alexscaves:candicorn",
+        "maxCount": 6,
+        "minCount": 4,
+        "weight": 100
+      },
+      {
+        "type": "alexscaves:gummy_bear",
+        "maxCount": 3,
+        "minCount": 1,
+        "weight": 100
+      }
+    ]
+  },
+  "temperature": 0.7
+}

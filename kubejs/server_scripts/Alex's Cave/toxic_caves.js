@@ -50,18 +50,16 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 50),
-            Fluid.of("createdelight:ethylene_fluid", 20),
             'createmetallurgy:coke'
         ],
-        Fluid.of("createdieselgenerators:crude_oil", 100), 60, 1
-    )
+        Fluid.of("createdieselgenerators:crude_oil", 100), 60)
         .superheated()
         .id("createdelight:pyrolysis/crude_oil")
     //石油催化裂解
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:light_crude_oil", 100),
-            Fluid.of("createdelight:ethylene_fluid", 50)
+            Fluid.of("northstar:carbon", 250)
         ],
         [
             Fluid.of("createdieselgenerators:crude_oil", 100),
@@ -76,7 +74,8 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:lubricating_oil", 20),
             Fluid.of("createdieselgenerators:diesel", 50),
             Fluid.of("createdieselgenerators:gasoline", 50),
-            Fluid.of("createdelight:ethylene_fluid", 20)
+            Fluid.of("createdelight:ethylene_fluid", 20),
+            Fluid.of("northstar:methane", 20)
         ],
         Fluid.of("createdelight:light_crude_oil", 100), 20
     )
@@ -121,7 +120,7 @@ ServerEvents.recipes(e => {
         'alexscaves:polymer_plate',
         [
             Fluid.of("createdelight:ethylene_fluid", 100),
-            Fluid.of("vintageimprovements:sulfuric_acid", 100)
+            Fluid.of("northstar:oxygen", 100)
         ]
     )
         .heated()
@@ -129,7 +128,7 @@ ServerEvents.recipes(e => {
     //核燃料棒合成
     {
         let iner = "create_new_age:incomplete_fuel"
-        e.recipes.create.sequenced_assembly('create_new_age:nuclear_fuel', "ad_astra:steel_plate", [
+        e.recipes.create.sequenced_assembly('create_new_age:nuclear_fuel', "createdelight:steel_sheet", [
             e.recipes.vintageimprovements.curving(iner, iner, 1),
             e.recipes.create.deploying(iner, [iner, 'createdelight:carbon_plate']),
             e.recipes.create.deploying(iner, [iner, '#createdelight:fisson_fuel']),
@@ -166,15 +165,6 @@ ServerEvents.recipes(e => {
     .processingTime(100)
     .secondaryFluidInput(0)
     .id("vintageimprovements:pressurizing/sulfuric_acid")
-
-    e.recipes.vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        ["alexscaves:sulfur_dust", "ad_astra:ostrum_nugget"]
-    )
-    .secondaryFluidOutput(0)
-    .processingTime(40)
-    .heated()
-    .id("vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust_using_ostrum_nugget")
     //烂泥再生
     e.recipes.vintageimprovements.pressurizing(
         "27x alexscaves:toxic_paste",
@@ -273,7 +263,7 @@ ServerEvents.recipes(e => {
         "ABBBBBA",
         "AAAAAAA"
     ], {
-        A: "ad_astra:steel_plate",
+        A: "createdelight:steel_sheet",
         B: "minecraft:tnt",
         C: "alexscaves:block_of_uranium",
         D: "alexscaves:fissile_core"
@@ -294,16 +284,17 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         [
             Fluid.of("createdelight:radon", 250),
-            Fluid.of("vintageimprovements:sulfuric_acid", 250)
+            Fluid.of("vintageimprovements:sulfuric_acid", 250),
+            "northstar:raw_glowstone_ore"
         ],
         [
             Fluid.of("alexscaves:acid", 500),
-            "ad_astra:ostrum_nugget"
+            "northstar:enriched_glowstone_ore"
         ]
     )
         .secondaryFluidOutput(0)
         .heated()
-        .id("alexscaves:pressurizing/sulfuric_acid_using_ostrum")
+        .id("alexscaves:pressurizing/sulfuric_acid_using_glowstone")
     e.recipes.create.filling("alexscaves:radon_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)])
         .id("alexscaves:filling/radon_bottle")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:radon").withAmount(250)], "alexscaves:radon_bottle")

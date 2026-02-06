@@ -53,7 +53,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.sequenced_assembly("create_sa:heat_engine", "create_sa:hydraulic_engine", [
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_andesite", 450)]),
         e.recipes.create.deploying(iner_2, [iner_2, "#forge:spring/between_500_2_1000"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "createmetallurgy:coke"])
+        e.recipes.create.deploying(iner_2, [iner_2, "#forge:nuggets/tungsten"])
     ])
         .loops(1)
         .transitionalItem(iner_2)

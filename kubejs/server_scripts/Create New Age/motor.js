@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
     //     "BCDEA",
     //     "AAAAA"
     // ], {
-    //     A: "ad_astra:steel_plate",
+    //     A: "createdelight:steel_sheet",
     //     B: "create:shaft",
     //     C: "create:precision_mechanism",
     //     D: "createdelight:planet_gear",

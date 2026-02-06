@@ -1,0 +1,152 @@
+{
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "downfall": 0.4,
+  "has_precipitation": true,
+  "effects": {
+    "ambient_sound": "alexscaves:magnetic_caves_ambience",
+    "additions_sound": {
+      "sound": "alexscaves:magnetic_caves_ambience_additions",
+      "tick_chance": 0.0111
+    },
+    "mood_sound": {
+      "block_search_extent": 8,
+      "offset": 2.0,
+      "sound": "alexscaves:magnetic_caves_ambience_mood",
+      "tick_delay": 6000
+    },
+    "music": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "alexscaves:magnetic_caves_music"
+    },
+    "particle": {
+      "options": {
+        "type": "alexscaves:magnetic_caves_ambient"
+      },
+      "probability": 0.0005
+    },
+    "fog_color": 1315096,
+    "sky_color": 5063513,
+    "water_color": 6320065,
+    "water_fog_color": 4811680
+  },
+  "features": [
+    [
+    ],
+    [],
+    [],
+    [
+      "alexscaves:magnetic_ruins"
+    ],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper_large",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel",
+      "alexscaves:galena_iron_ore",
+      "alexscaves:metal_swarf"
+    ],
+    [
+    ],
+    [
+      "alexscaves:scarlet_magnetic_node",
+      "alexscaves:azure_magnetic_node"
+    ],
+    [
+      "alexscaves:tesla_bulb"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "precipitation": "rain",
+  "spawn_costs": {
+    "alexscaves:magnetron": {
+      "charge": 1.0,
+      "energy_budget": 0.1
+    }
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "alexscaves:notor",
+        "maxCount": 4,
+        "minCount": 1,
+        "weight": 20
+      },
+      {
+        "type": "minecraft:bat",
+        "maxCount": 8,
+        "minCount": 8,
+        "weight": 10
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
+    "monster": [
+      {
+        "type": "alexscaves:magnetron",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 80
+      },
+      {
+        "type": "alexscaves:teletor",
+        "maxCount": 1,
+        "minCount": 1,
+        "weight": 225
+      },
+      {
+        "type": "alexscaves:boundroid",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 350
+      },
+      {
+        "type": "alexscaves:ferrouslime",
+        "maxCount": 2,
+        "minCount": 1,
+        "weight": 200
+      }
+    ],
+    "underground_water_creature": [
+    ],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "temperature": 0.6
+}

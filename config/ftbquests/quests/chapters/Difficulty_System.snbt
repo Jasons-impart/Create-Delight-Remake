@@ -175,150 +175,6 @@
 			y: 3.5d
 		}
 		{
-			id: "7026F96FF4A2090D"
-			rewards: [{
-				auto: "no_toast"
-				id: "3DCD02CC68142CA5"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:corrupted_lunarian"
-				id: "384B6BEE631C92EB"
-				type: "kill"
-				value: 15L
-			}]
-			x: 3.5d
-			y: -0.5d
-		}
-		{
-			id: "439C88556A06BC1A"
-			rewards: [{
-				auto: "no_toast"
-				id: "7C7476ABAE52EDFB"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:martian_raptor"
-				id: "0DBEEB9433CE814C"
-				type: "kill"
-				value: 15L
-			}]
-			x: 3.5d
-			y: 0.5d
-		}
-		{
-			id: "17030F34FB47F625"
-			rewards: [{
-				auto: "no_toast"
-				id: "4113B491539654F9"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:mogler"
-				id: "34CD4405D800C187"
-				type: "kill"
-				value: 10L
-			}]
-			x: 3.5d
-			y: 1.5d
-		}
-		{
-			id: "60BBC80F6D531538"
-			rewards: [{
-				auto: "no_toast"
-				id: "219544A7D3188814"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:pygro_brute"
-				id: "167BBA76240CB24F"
-				type: "kill"
-				value: 10L
-			}]
-			x: 3.5d
-			y: 2.5d
-		}
-		{
-			id: "00A1AF448FDB99AF"
-			rewards: [{
-				auto: "no_toast"
-				id: "56FBA71FB0E5287E"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:star_crawler"
-				id: "36C7FAE835E2FAA8"
-				type: "kill"
-				value: 10L
-			}]
-			x: 3.5d
-			y: 3.5d
-		}
-		{
-			id: "4C1025D9F32E07D0"
-			rewards: [{
-				auto: "no_toast"
-				id: "6507E892172DA915"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:sulfur_creeper"
-				id: "68342DE31CA3BA15"
-				type: "kill"
-				value: 10L
-			}]
-			x: 3.5d
-			y: 4.5d
-		}
-		{
-			id: "79F63BDE5586B4C3"
-			rewards: [{
-				auto: "no_toast"
-				id: "5837EFF3734C86F4"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:zombified_mogler"
-				id: "383E4ED0782CDF8A"
-				type: "kill"
-				value: 10L
-			}]
-			x: 3.5d
-			y: 5.5d
-		}
-		{
-			id: "5514737146A23355"
-			rewards: [{
-				auto: "no_toast"
-				id: "12FC2DCD102471A2"
-				tags: ["rank_1"]
-				type: "custom"
-			}]
-			tasks: [{
-				disable_toast: true
-				entity: "ad_astra:zombified_pygro"
-				id: "16F1FC453F67F1BE"
-				type: "kill"
-				value: 20L
-			}]
-			x: 3.5d
-			y: 6.5d
-		}
-		{
 			id: "45D19B68221BE30C"
 			rewards: [{
 				auto: "no_toast"
@@ -669,17 +525,6 @@
 				type: "checkmark"
 			}]
 			x: 4.5d
-			y: -1.5d
-		}
-		{
-			can_repeat: false
-			id: "2036E765F669976F"
-			tasks: [{
-				id: "07F05820F5CC5C40"
-				title: "adastra"
-				type: "checkmark"
-			}]
-			x: 3.5d
 			y: -1.5d
 		}
 		{
@@ -1885,7 +1730,7 @@
 				title: "前往维度"
 				type: "checkmark"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: -1.5d
 		}
 		{
@@ -1902,7 +1747,7 @@
 				id: "512E507326460AAA"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: -0.5d
 		}
 		{
@@ -1919,7 +1764,7 @@
 				id: "31AA2E5B2E4863BD"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: 0.5d
 		}
 		{
@@ -1932,11 +1777,11 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "ad_astra:moon"
+				dimension: "northstar:moon"
 				id: "153B4C7C18331BE4"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: 1.5d
 		}
 		{
@@ -1949,11 +1794,11 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "ad_astra:mars"
+				dimension: "northstar:mars"
 				id: "45F249D085BD1F9A"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: 2.5d
 		}
 		{
@@ -1966,11 +1811,11 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "ad_astra:venus"
+				dimension: "northstar:venus"
 				id: "18271CA69E5E4542"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: 3.5d
 		}
 		{
@@ -1983,29 +1828,12 @@
 				type: "custom"
 			}]
 			tasks: [{
-				dimension: "ad_astra:mercury"
+				dimension: "northstar:mercury"
 				id: "58FF754464282364"
 				type: "dimension"
 			}]
-			x: 2.5d
+			x: 3.5d
 			y: 4.5d
-		}
-		{
-			can_repeat: false
-			id: "04076AD658A0CDA2"
-			rewards: [{
-				auto: "no_toast"
-				id: "3AD07B0BFEE8AEBD"
-				tags: ["rank_unrepeatable_20"]
-				type: "custom"
-			}]
-			tasks: [{
-				dimension: "ad_astra:glacio"
-				id: "3ECE1826BD2A8101"
-				type: "dimension"
-			}]
-			x: 2.5d
-			y: 5.5d
 		}
 		{
 			can_repeat: false
@@ -2021,8 +1849,8 @@
 				id: "0ABAFDDE3718F8B8"
 				type: "dimension"
 			}]
-			x: 2.5d
-			y: 6.5d
+			x: 3.5d
+			y: 5.5d
 		}
 		{
 			can_repeat: false
@@ -2038,8 +1866,8 @@
 				id: "253D73D5DF86F700"
 				type: "dimension"
 			}]
-			x: 2.5d
-			y: 7.5d
+			x: 3.5d
+			y: 6.5d
 		}
 		{
 			can_repeat: false
@@ -2055,25 +1883,8 @@
 				id: "69FA9C531CABE582"
 				type: "dimension"
 			}]
-			x: 2.5d
-			y: 8.5d
-		}
-		{
-			can_repeat: false
-			id: "56368693D5E17355"
-			rewards: [{
-				auto: "no_toast"
-				id: "64916FE2121C3DCE"
-				tags: ["rank_unrepeatable_10"]
-				type: "custom"
-			}]
-			tasks: [{
-				dimension: "createdelight:magnetic_caves_dimension"
-				id: "05D930F96870C735"
-				type: "dimension"
-			}]
-			x: 2.5d
-			y: 9.5d
+			x: 3.5d
+			y: 7.5d
 		}
 		{
 			can_repeat: false
@@ -2089,25 +1900,8 @@
 				id: "790A922C98A787A7"
 				type: "dimension"
 			}]
-			x: 2.5d
-			y: 10.5d
-		}
-		{
-			can_repeat: false
-			id: "6BAB2267F7D6D0D7"
-			rewards: [{
-				auto: "no_toast"
-				id: "75004E4133FD5E49"
-				tags: ["rank_unrepeatable_10"]
-				type: "custom"
-			}]
-			tasks: [{
-				dimension: "createdelight:toxic_caves_dimension"
-				id: "41485D4FC4B403F8"
-				type: "dimension"
-			}]
-			x: 2.5d
-			y: 11.5d
+			x: 3.5d
+			y: 8.5d
 		}
 		{
 			can_repeat: false
@@ -2123,8 +1917,8 @@
 				id: "26802E04183218E8"
 				type: "dimension"
 			}]
-			x: 2.5d
-			y: 12.5d
+			x: 3.5d
+			y: 9.5d
 		}
 		{
 			can_repeat: false

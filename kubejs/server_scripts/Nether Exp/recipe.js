@@ -23,7 +23,7 @@ ServerEvents.recipes(e => {
 
     combination(e, [
         "create:dough",
-        "ad_astra:cheese",
+        "trailandtales_delight:cheese_slice",
         "mynethersdelight:hoglin_loin",
         "netherexp:warped_wart",
         "minecraft:nether_wart"

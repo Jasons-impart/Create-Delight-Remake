@@ -1,55 +1,4 @@
 StartupEvents.registry("item", e => {
-    // 注册火箭相关物品
-    let rocket_tier = [
-        ["basic", "common"],
-        ["advanced", "uncommon"],
-        ["explorer", "rare"],
-        ["flare", "epic"]
-    ]
-    rocket_tier.forEach(tier => {
-        // 舱体
-        e.create(`createdelight:${tier[0]}_cabin`)
-            .rarity(tier[1])
-            .unstackable()
-            .translationKey(`item.createdelight.${tier[0]}_cabin`)
-            .tag(`createdelight:cabins`)
-            .tag(`createdelight:cabins/${tier[0]}`)
-            .fireResistant()
-
-        // 舱板
-        e.create(`createdelight:${tier[0]}_panel`)
-            .rarity(tier[1])
-            .maxStackSize(16)
-            .translationKey(`item.createdelight.${tier[0]}_panel`)
-            .tag(`createdelight:panels`)
-            .tag(`createdelight:panels/${tier[0]}`)
-            .fireResistant()
-        e.create(`createdelight:incomplete_${tier[0]}_panel`, "create:sequenced_assembly")
-            .rarity(tier[1])
-            .translationKey(`item.createdelight.incomplete_${tier[0]}_panel`)
-            .fireResistant()
-    })
-    // 火箭面板
-    e.create("createdelight:basic_crystal_panel")
-        .rarity("common")
-        .unstackable()
-        .translationKey("item.createdelight.basic_crystal_panel")
-        .fireResistant()
-    e.create("createdelight:advanced_crystal_panel")
-        .rarity("uncommon")
-        .unstackable()
-        .translationKey("item.createdelight.advanced_crystal_panel")
-        .fireResistant()
-    e.create("createdelight:holographic_interface_panel")
-        .rarity("rare")
-        .unstackable()
-        .translationKey("item.createdelight.holographic_interface_panel")
-        .fireResistant()
-    e.create("createdelight:quantum_field_panel")
-        .rarity("epic")
-        .unstackable()
-        .translationKey("item.createdelight.quantum_field_panel")
-        .fireResistant()
     // 注册碳粉
     e.create("createdelight:carbon_dust")
         .translationKey("item.createdelight.carbon_dust")
@@ -60,12 +9,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.carbon_plate")
         .tag("forge:plates")
         .tag("forge:plates/carbon")
-    // 航空纤维板
-    e.create("createdelight:aviation_fibers_sheet")
-        .translationKey("item.createdelight.aviation_fibers_sheet")
-        .tag("forge:plates")
-        .tag("forge:plates/aviation_fibers")
-        .fireResistant()
     // 安山合金粒
     e.create("createdelight:andesite_alloy_nugget")
         .translationKey("item.createdelight.andesite_alloy_nugget")
@@ -749,7 +692,10 @@ StartupEvents.registry("item", e => {
         .rarity("uncommon")
         .tag("protection_pixel:plates")
         .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
+    e.create("createdelight:steel_sheet")
+        .tag("forge:plates")
+        .tag("forge:plates/steel")
+        .translationKey("item.createdelight.steel_sheet")
     //采血器
     e.create("createdelight:blood_collection_device")
         .translationKey("item.createdelight.blood_collection_device")

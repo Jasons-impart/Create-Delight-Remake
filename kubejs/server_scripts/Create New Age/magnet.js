@@ -8,7 +8,10 @@ ServerEvents.recipes(e => {
         "create_new_age:shaped/heat_pipe_mirror",
         "create_new_age:shaped/stirling_engine",
         "create_new_age:shaped/basic_solar_plate",
-        "create_new_age:shaped/advanced_solar_plate"
+        "create_new_age:shaped/advanced_solar_plate",
+        "create_new_age:shaped/fluxuated_magnetite",
+        "create_new_age:shaped/generator_coil"
+
     ])
     // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
@@ -42,7 +45,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:fluxuated_magnetite",
         [
-            Fluid.of("alexscaves:acid", 250),
+            FluidIngredients("forge:acid", 250),
             'create_new_age:overcharged_diamond',
             'create_new_age:overcharged_diamond',
             "create_new_age:layered_magnet",
@@ -82,4 +85,17 @@ ServerEvents.recipes(e => {
         .loops(1)
         .transitionalItem(iner_4)
         .id("create_new_age:shaped/carbon_brushes")
+    // 发电机
+    e.recipes.create.mechanical_crafting("create_new_age:generator_coil", [
+        " A A ",
+        "ABCBA",
+        " CDC ",
+        "ABCBA",
+        " A A "
+    ], {
+        A: "createdeco:andesite_sheet",
+        B: "createaddition:copper_spool",
+        C: "minecraft:copper_block",
+        D: "createaddition:alternator"
+    }).id("create_new_age:mechanical_crafting/generator_coil")
 })

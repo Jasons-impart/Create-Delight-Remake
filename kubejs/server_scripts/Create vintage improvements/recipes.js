@@ -9,20 +9,10 @@ ServerEvents.recipes(e => {
         "vintageimprovements:rolling/nethersteel_rod",
         "vintageimprovements:rolling/nethersteel_plate",
         "vintageimprovements:rolling/andesite_plate",
-        "vintageimprovements:crushing/scoria_recycling",
+        "vintageimprovements:crushing/scoria",
         "vintageimprovements:pressurizing/sulfur_dioxide",
         "vintageimprovements:craft/spring_coiling_machine",
     ])
-    vintageimprovements.pressurizing(
-        Fluid.of("vintageimprovements:sulfur_trioxide", 500),
-    [
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        "ad_astra:ostrum_nugget"
-    ])
-    .processingTime(20)
-    .secondaryFluidOutput(0)
-    .superheated()
-    .id("vintageimprovements:pressurizing/sulfur_trioxide_from_ostrum_nugget")
     vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_trioxide", 500),
     [

@@ -109,7 +109,7 @@ ServerEvents.recipes(e => {
         "ABBBA",
         " A A "
     ], {
-        A: "ad_astra:steel_plate",
+        A: "createdelight:steel_sheet",
         B: "ae2:sky_dust",
         C: "createdelight:wooden_fan"
     })
@@ -147,27 +147,12 @@ ServerEvents.recipes(e => {
     ], {
         A: "#forge:plates/steel",
         B: "#forge:plates/bronze",
-        C: "#forge:plates/bronze",
+        C: "northstar:circuit",
         D: "createmetallurgy:industrial_crucible",
         E: "vintageimprovements:redstone_module",
         F: "create:sturdy_sheet"
     })
         .id("createdelight:mechanical_crafting/alloy_electric_furnace")
-
-    e.recipes.create.mechanical_crafting("createdelight:hydropower_amplifier", [
-        "AABAA",
-        "ACDCA",
-        "BDEDB",
-        "ACDCA",
-        "AABAA"
-    ], {
-        A: "createdelight:sky_steel_casing",
-        B: "ad_astra:fan",
-        C: "createdelight:forged_steel_sheet",
-        D: "ad_astra:steel_engine",
-        E: "createdelightcore:forged_steel_block"
-    })
-        .id("createdelight:mechanical_crafting/hydropower_amplifier")
     e.recipes.kubejs.shaped("createdelight:dryer", [
         "ABA",
         "ACA",
@@ -200,7 +185,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mechanical_crafting("createdelight:big_centrifuge", [
         "AABAA",
         "ACCDA",
-        "BCEDA",
+        "FCEDF",
         "ACDDA",
         "AABAA"
     ], {
@@ -208,7 +193,8 @@ ServerEvents.recipes(e => {
         B: "createdelight:magnetic_mechanism",
         C: "alexscaves:azure_neodymium_ingot",
         D: "alexscaves:scarlet_neodymium_ingot",
-        E: "alexscaves:heart_of_iron"
+        E: "alexscaves:heart_of_iron",
+        F: "northstar:circuit"
     }).id("createdelight:mechanical_crafting/big_centrifuge")
     e.recipes.create.mechanical_crafting("createdelight:centrifuge_rotor", [
         " A A ",
@@ -239,9 +225,9 @@ ServerEvents.recipes(e => {
         "AAAAA"
     ], {
         A: "create_new_age:reactor_casing",
-        B: "ae2:engineering_processor",
+        B: "northstar:circuit",
         C: "alexscaves:fissile_core",
-        D: "ae2:logic_processor",
+        D: "northstar:advanced_circuit",
         E: "vintageimprovements:redstone_module"
     }).id("createdelight:mechanical_crafting/fission_reactor")
     e.recipes.kubejs.shaped(

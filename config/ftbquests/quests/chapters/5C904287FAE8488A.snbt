@@ -1,0 +1,583 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "5C904287FAE8488A"
+	group: "14CFC96B5B37F10B"
+	hide_quest_until_deps_complete: true
+	icon: "northstar:telescope"
+	id: "5C904287FAE8488A"
+	order_index: 3
+	quest_links: [
+		{
+			id: "61B11949A60B9885"
+			linked_quest: "40BDFCC7A3B77F26"
+			shape: "hexagon"
+			size: 2.0d
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "74C003BD7D88167E"
+			linked_quest: "24CCC43BD4994237"
+			x: 22.5d
+			y: -2.5d
+		}
+		{
+			id: "4C0C1A274518BAD5"
+			linked_quest: "3D02EA3A30EE1933"
+			x: 10.5d
+			y: -2.5d
+		}
+		{
+			id: "3B00CF36900B15CF"
+			linked_quest: "4A2A62D77A29284F"
+			x: 5.5d
+			y: 4.5d
+		}
+	]
+	quests: [
+		{
+			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["需要注意的是，每个记录之间的距离需要大于30，否则无法组成星图。"]
+			id: "5D413834648E277E"
+			subtitle: "使用它合并三张记录。"
+			tasks: [{
+				id: "43CDABE68393929D"
+				item: "northstar:astronomy_table"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			id: "49759BA2FFD9ED2D"
+			subtitle: "记录一个星球的坐标"
+			tasks: [{
+				id: "361B8B8E75482FFF"
+				item: "northstar:astronomical_reading"
+				type: "item"
+			}]
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"49759BA2FFD9ED2D"
+				"5D413834648E277E"
+			]
+			description: ["目前为止你只能前往月球，因为没有星际导航仪。"]
+			id: "1F75964D5DF64594"
+			subtitle: "记录一个星球的坐标"
+			tasks: [{
+				id: "05EEF2BA49205DC1"
+				item: "northstar:star_map"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1F75964D5DF64594"]
+			id: "298DCE38C0E0D5B9"
+			subtitle: "在它的界面中放入星图和组装火箭"
+			tasks: [{
+				id: "21D7DEFD42EBACF7"
+				item: "northstar:rocket_station"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1F75964D5DF64594"]
+			description: ["&4注意，到另一个星球后一定要右键选中控制台，否则无法降速！&r"]
+			id: "1DD55129A6C4D355"
+			subtitle: "需要右键它来操纵动态结构"
+			tasks: [{
+				id: "16F0AC2789780655"
+				item: "northstar:rocket_controls"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["1F75964D5DF64594"]
+			id: "0A974EE1B5462D2A"
+			subtitle: "火箭的必备物"
+			tasks: [{
+				id: "638F884BA21A6BD9"
+				item: "northstar:jet_engine"
+				type: "item"
+			}]
+			x: 5.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"119E0BF4CFAA0B5F"
+				"25377BD23842CC96"
+			]
+			id: "089E81F7DCA47A98"
+			subtitle: "前往月球"
+			tasks: [{
+				advancement: "northstar:one_small_step"
+				criterion: ""
+				id: "00682A403F82D3BF"
+				type: "advancement"
+			}]
+			x: 10.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6E1FA3004CE9768C"
+				"089E81F7DCA47A98"
+			]
+			id: "53F8AADD69D02613"
+			tasks: [{
+				id: "4A0B3550BF43FA98"
+				item: "northstar:titanium_ingot"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"08C745BBD482DFE1"
+				"3AB22C937A6B1E8C"
+			]
+			icon: "northstar:titanium_tetrachloride_bucket"
+			id: "2E6B5F41CF4AA9BC"
+			tasks: [
+				{
+					id: "03647EC8926C208F"
+					item: "northstar:titanium_tetrachloride_bucket"
+					type: "item"
+				}
+				{
+					id: "0BFCA2DB3C2E68AC"
+					type: "checkmark"
+				}
+			]
+			x: 12.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			hide_dependency_lines: true
+			id: "08C745BBD482DFE1"
+			subtitle: "粉碎月沙获取"
+			tasks: [{
+				id: "49F9E599DDA4FE2E"
+				item: "northstar:rutile_concentrate"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -4.0d
+		}
+		{
+			dependencies: [
+				"2E6B5F41CF4AA9BC"
+				"3AB22C937A6B1E8C"
+			]
+			id: "6E1FA3004CE9768C"
+			tasks: [{
+				id: "5F879AB9186E94AF"
+				item: "createdelight:titanium_dust"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			id: "0A838A84677688BA"
+			subtitle: "月球地下有类似紫晶洞的蓝晶洞"
+			tasks: [{
+				id: "6E16BCDDD0EAA6E6"
+				item: "northstar:polished_lunar_sapphire"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"53F8AADD69D02613"
+				"0A838A84677688BA"
+			]
+			id: "54954EA4980915B0"
+			subtitle: "拥有星系导航仪后才能跨行星飞行"
+			tasks: [{
+				id: "13AFACBA70E3AA15"
+				item: "northstar:interplanetary_navigator"
+				type: "item"
+			}]
+			x: 13.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["54954EA4980915B0"]
+			id: "77DBDCB991847E35"
+			subtitle: "前往火星"
+			tasks: [{
+				advancement: "northstar:one_giant_leap"
+				criterion: ""
+				id: "596E02BC4409566D"
+				type: "advancement"
+			}]
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["77DBDCB991847E35"]
+			id: "2322C47E80F706AA"
+			tasks: [{
+				id: "08F14997892AB57F"
+				item: "northstar:raw_martian_iron_ore"
+				type: "item"
+			}]
+			x: 17.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2322C47E80F706AA"]
+			description: ["接下来可以前往金星和水星。金星需要高额的耐热值，虽然使用低级的金属装饰方块仍然能达到目标，但还是推荐使用高级的金属装饰方块。"]
+			id: "0A78650F17E1E069"
+			subtitle: "用于制作二级宇航服和更高级的金属装饰方块"
+			tasks: [{
+				id: "74C650668673026E"
+				item: "northstar:martian_steel"
+				type: "item"
+			}]
+			x: 19.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["36DA8FF6E4A847A7"]
+			id: "3AB22C937A6B1E8C"
+			subtitle: "你需要电解盐水来获取钠和氯气"
+			tasks: [{
+				id: "502C2B46DFA51F45"
+				item: "bakeries:salt_water_bucket"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"0A974EE1B5462D2A"
+				"298DCE38C0E0D5B9"
+				"1DD55129A6C4D355"
+			]
+			description: [
+				"北极星的火箭是需求玩家自己搭建的，形状并不固定，但前往其他星球需要注意以下几点："
+				"1.必须要有火箭核心，火箭控制器以及若干火箭引擎与耐热壳体。"
+				"2.火箭本身需要满足前往该星球的几个参数。"
+				"3.跨行星飞行需要使用星际导航仪，否则只能前往所在星球的卫星。"
+				"火箭的几项参数是：耐热度，燃料量以及火箭引擎数。"
+				"耐热度由本模组的几种金属的装饰方块（钨，钛，火星钢）提供，越高级的材料提供的越多。而燃料量由各种燃料提供，详情查看jei。"
+				"&4注意，到另一个星球后一定要右键选中控制台，否则无法降速！&r"
+			]
+			id: "119E0BF4CFAA0B5F"
+			subtitle: "动态结构式火箭"
+			tasks: [{
+				id: "2DA834973EBF90E4"
+				item: {
+					Count: 1
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "northstar:tungsten_sheetmetal"
+							}
+							{
+								Count: 1b
+								id: "northstar:tungsten_plating"
+							}
+							{
+								Count: 1b
+								id: "northstar:tungsten_pillar"
+							}
+						]
+					}
+				}
+				title: "钨装饰方块"
+				type: "item"
+			}]
+			title: "搭建火箭"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"615F08354B8D9B00"
+				"3C1CBC4F971804DF"
+			]
+			id: "25377BD23842CC96"
+			tasks: [
+				{
+					id: "6CDA56C913CAFDF9"
+					item: {
+						Count: 1
+						id: "northstar:iron_space_suit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "25B0D54FE4BCDD85"
+					item: {
+						Count: 1
+						id: "northstar:iron_space_suit_chestpiece"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5B10C5D1B271D24F"
+					item: {
+						Count: 1
+						id: "northstar:iron_space_suit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "7D2BA98D2909AA5A"
+					item: {
+						Count: 1
+						id: "northstar:iron_space_suit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 10.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0B4050EA824CAB43"]
+			id: "615F08354B8D9B00"
+			subtitle: "使用该物品为宇航服充氧气"
+			tasks: [{
+				id: "2DABB6DC54F56730"
+				item: "northstar:oxygen_filler"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["在主世界产生的是氧气"]
+			hide_dependency_lines: true
+			id: "3C1CBC4F971804DF"
+			subtitle: "通入应力后便可在当前星球收集气体"
+			tasks: [{
+				id: "0813B5CCB8B8A1A1"
+				item: "northstar:atmospheric_concentrator"
+				type: "item"
+			}]
+			x: 10.5d
+			y: 3.5d
+		}
+		{
+			dependencies: ["5171DC10561530DE"]
+			id: "4500AE5CD0F890A9"
+			size: 2.0d
+			subtitle: "3点耐热值，且更重"
+			tasks: [{
+				elapsedTime: 1L
+				icon: "createmetallurgy:tungsten_ingot"
+				id: "4662AB6B450F042D"
+				title: "钨"
+				type: "questsadditions:time"
+			}]
+			x: 0.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"4500AE5CD0F890A9"
+				"53F8AADD69D02613"
+			]
+			id: "1EBBAD136C725820"
+			size: 2.0d
+			subtitle: "8点耐热值"
+			tasks: [{
+				elapsedTime: 1L
+				icon: "northstar:titanium_ingot"
+				id: "26005FACA6FD8E3A"
+				title: "钛"
+				type: "questsadditions:time"
+			}]
+			x: 12.0d
+			y: -6.0d
+		}
+		{
+			dependencies: [
+				"1EBBAD136C725820"
+				"0A78650F17E1E069"
+			]
+			id: "53F2234B38B8E4A0"
+			size: 2.0d
+			subtitle: "20点耐热值"
+			tasks: [{
+				elapsedTime: 1L
+				icon: "northstar:martian_steel"
+				id: "628CB1DFBE55A98A"
+				title: "火星钢"
+				type: "questsadditions:time"
+			}]
+			x: 19.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["40BDFCC7A3B77F26"]
+			description: ["简单来说就是：火箭中需要有足够的\"耐热方块\"，否则无法前往特定星球。而不同的金属装饰方块耐热的程度也不同。"]
+			id: "5171DC10561530DE"
+			subtitle: "使用下列材料制成的装饰方块的各种属性"
+			tasks: [{
+				id: "72134E9277697011"
+				title: "火箭舱体板材的属性"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["0A78650F17E1E069"]
+			description: ["前往金星要求火箭拥有非常高的耐热值，建议使用高级的材料制作火箭的壳体。"]
+			id: "3A2218D2A3F89F9E"
+			subtitle: "有它你才能前往金星和水星"
+			tasks: [
+				{
+					id: "6E3078D44DA889E8"
+					item: {
+						Count: 1
+						id: "northstar:martian_steel_space_suit_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "320A8CCBD3080974"
+					item: {
+						Count: 1
+						id: "northstar:martian_steel_space_suit_chestpiece"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "657A1186F9CE802D"
+					item: {
+						Count: 1
+						id: "northstar:martian_steel_space_suit_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1ED93496A9C8E91C"
+					item: {
+						Count: 1
+						id: "northstar:martian_steel_space_suit_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 20.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3A2218D2A3F89F9E"]
+			id: "0BAC02A069A5B123"
+			subtitle: "金星需要非常高的耐热值，建议使用高级的材料制作火箭的壳体"
+			tasks: [{
+				dimension: "northstar:venus"
+				icon: "northstar:venus_gravel"
+				id: "1590D41C581B6D75"
+				title: "前往金星"
+				type: "dimension"
+			}]
+			x: 22.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0A78650F17E1E069"]
+			id: "61CF86B008BB4737"
+			tasks: [{
+				id: "0FD89652BF8CDC3A"
+				item: "northstar:temperature_regulator"
+				type: "item"
+			}]
+			x: 20.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["0A838A84677688BA"]
+			id: "36DA8FF6E4A847A7"
+			tasks: [{
+				id: "091E00CDE081CDFD"
+				item: "createdelight:electrolyzer"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"40BDFCC7A3B77F26"
+				"4A2A62D77A29284F"
+			]
+			id: "0B4050EA824CAB43"
+			tasks: [{
+				id: "49908A1EE870CB73"
+				item: "northstar:circuit"
+				type: "item"
+			}]
+			x: 8.0d
+			y: 4.5d
+		}
+		{
+			dependencies: [
+				"0B4050EA824CAB43"
+				"0A78650F17E1E069"
+			]
+			id: "332AE84038DFCBC9"
+			tasks: [{
+				id: "6BE1734051F19438"
+				item: "northstar:advanced_circuit"
+				type: "item"
+			}]
+			x: 19.0d
+			y: 4.5d
+		}
+	]
+	title: "群星之旅"
+}

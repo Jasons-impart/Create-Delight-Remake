@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
     ], "silentsdelight:heartburger", 1)
     combination(e, [
         "some_assembly_required:burger_bun",
-        "ad_astra:cheese",
+        "trailandtales_delight:cheese_slice",
         "farmersdelight:beef_patty",
         "#forge:salad_ingredients",
         "#forge:vegetables/tomato",
@@ -52,7 +52,7 @@ ServerEvents.recipes(e => {
         "#forge:salad_ingredients",
         "#forge:vegetables/tomato",
         "#forge:vegetables/onion",
-        "ad_astra:cheese",
+        "trailandtales_delight:cheese_slice",
         "#forge:cooked_eggs"
     ], "vintagedelight:deluxe_burger", 1)
     combination(e, [

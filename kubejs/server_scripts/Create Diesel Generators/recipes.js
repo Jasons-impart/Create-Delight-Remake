@@ -43,7 +43,6 @@ ServerEvents.recipes(e => {
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
   e.replaceInput({ id: "createdieselgenerators:basin_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ id: "createdieselgenerators:bulk_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
-  e.replaceInput({ mod: "createdieselgenerators" }, "create:propeller", "ad_astra:fan")
   fermenting(e,
     Fluid.of("createdieselgenerators:ethanol", 250),
     [

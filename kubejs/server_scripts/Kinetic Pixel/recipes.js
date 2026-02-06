@@ -14,8 +14,7 @@ ServerEvents.recipes(e => {
             'kinetic_pixel:nitropropellant'
         ]
     )
-    e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "ad_astra:steel_plate")
-    e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:iron_nugget", "ad_astra:steel_nugget")
+    e.replaceInput({ mod: "kinetic_pixel" }, "create:iron_sheet", "createdelight:steel_sheet")
     e.replaceInput({ mod: "kinetic_pixel" }, "kinetic_pixel:specialsteelingot", "createmetallurgy:steel_ingot")
     e.replaceInput({ mod: "kinetic_pixel" }, "create:precision_mechanism", "vintageimprovements:steel_spring")
     e.replaceInput({ mod: "kinetic_pixel" }, "minecraft:redstone", "vintageimprovements:redstone_module")
@@ -105,7 +104,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "ad_astra:steel_plate",
+            B: "createdelight:steel_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
             E: "create_sa:steam_engine",
@@ -125,7 +124,7 @@ ServerEvents.recipes(e => {
         ],
         {
             A: "create:brass_sheet",
-            B: "ad_astra:steel_plate",
+            B: "createdelight:steel_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
             E: "create_sa:steam_engine",
@@ -143,7 +142,7 @@ ServerEvents.recipes(e => {
             "     G"
         ],
         {
-            A: "ad_astra:steel_plate",
+            A: "createdelight:steel_sheet",
             B: "create:brass_sheet",
             C: "kinetic_pixel:barrel",
             D: "kinetic_pixel:ammunitionbox",
@@ -163,7 +162,7 @@ ServerEvents.recipes(e => {
         {
             A: "create:brass_sheet",
             B: "kinetic_pixel:ammunitionbox",
-            C: "ad_astra:steel_plate",
+            C: "createdelight:steel_sheet",
             D: "kinetic_pixel:barrel",
             E: "create_sa:steam_engine",
             F: "vintageimprovements:steel_rod",
@@ -279,7 +278,7 @@ ServerEvents.recipes(e => {
             A: "createaddition:brass_rod"
         }
     ).id("create_armorer:muzzle_refit_brass_retractor")
-    let iner_2 = 'ad_astra:steel_tank'
+    let iner_2 = 'vintageimprovements:steel_rod'
     create.sequenced_assembly(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_lava_perfusion_bottle"}'),
         iner_2,
@@ -389,7 +388,7 @@ ServerEvents.recipes(e => {
         .id("tacz:12g")
     
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
-        create.deploying("create:fluid_pipe", ["create:fluid_pipe", "ad_astra:gas_tank"])
+        create.deploying("create:fluid_pipe", ["create:fluid_pipe", "create_sa:small_fueling_tank"])
     )
     .loops(2)
     .transitionalItem("create:fluid_pipe")

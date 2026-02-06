@@ -162,8 +162,6 @@ key_cos.key.opencosarmorinventory:key.keyboard.unknown
 key_iris.keybind.reload:key.keyboard.unknown
 key_iris.keybind.toggleShaders:key.keyboard.unknown
 key_iris.keybind.shaderPackSelection:key.keyboard.unknown
-key_key.ad_astra.toggle_suit_flight:key.keyboard.unknown
-key_key.ad_astra.open_radio:key.keyboard.unknown
 key_keybind.sophisticatedcore.item_highlight:key.keyboard.semicolon
 key_keybind.sophisticatedcore.sort:key.mouse.middle
 key_keybind.sophisticatedcore.deposit_item:key.keyboard.apostrophe

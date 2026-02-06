@@ -355,7 +355,7 @@ ServerEvents.recipes(e => {
         "bakeries:mould_cheese_cocoa_toast_dough",
         [
             "bakeries:mould_toast_dough",
-            "3x ad_astra:cheese",
+            "3x trailandtales_delight:cheese_slice",
             "3x ratatouille:cocoa_powder"
         ]
     ).id("bakeries:cheese_cocoa_toast_dough_manual_only")
@@ -364,7 +364,7 @@ ServerEvents.recipes(e => {
         create.sequenced_assembly("bakeries:mould_cheese_cocoa_toast_dough", iner,
             [
                 create.deploying(iner, [iner, "bakeries:round_bread_dough"]),
-                create.deploying(iner, [iner, "ad_astra:cheese"]),
+                create.deploying(iner, [iner, "trailandtales_delight:cheese_slice"]),
                 create.deploying(iner, [iner, "ratatouille:cocoa_powder"])
             ]
         )
@@ -376,7 +376,7 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:mould_toast_dough"
         create.sequenced_assembly("bakeries:mould_cheese_cocoa_toast_dough", iner,
             [
-                create.deploying(iner, [iner, "ad_astra:cheese"]),
+                create.deploying(iner, [iner, "trailandtales_delight:cheese_slice"]),
                 create.deploying(iner, [iner, "ratatouille:cocoa_powder"])
             ]
         )
