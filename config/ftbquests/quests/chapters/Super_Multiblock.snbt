@@ -7,7 +7,7 @@
 	hide_quest_until_deps_complete: true
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
-	order_index: 7
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{

@@ -674,24 +674,6 @@ StartupEvents.registry("item", e => {
     // ["charged_staff", "entropy_manipulator", "blank_pattern"]
     // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")
     // 
-    //龙炎钢插板
-    e.create("createdelight:fire_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.fire_dragonsteel_armorplate")
-    //龙霜钢插板
-    e.create("createdelight:ice_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.ice_dragonsteel_armorplate")
-    //龙霆钢插板
-    e.create("createdelight:lightning_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
     e.create("createdelight:steel_sheet")
         .tag("forge:plates")
         .tag("forge:plates/steel")

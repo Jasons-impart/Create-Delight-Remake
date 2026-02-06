@@ -517,7 +517,7 @@ ServerEvents.recipes(e => {
     transform_fluid(Item.of('tacz:ammo', '{AmmoId:"applied_armorer:fluix_infused_grenade"}'), "createdelight:spent_liquor", [
         "#forge:dusts/ender_pearl",
         "#forge:dusts/certus_quartz",
-        Item.of("protection_pixel:pneumaticgrenade")
+        Item.of("ae2:tiny_tnt")
     ]).id("applied_armorer:fluix_infused_grenade")
     transform_fluid(Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"applied_armorer:niklas_pistol_semi_union",HasBulletInBarrel:0b}'), "createdelight:spent_liquor", [
         "#forge:storage_blocks/sky_steel",
