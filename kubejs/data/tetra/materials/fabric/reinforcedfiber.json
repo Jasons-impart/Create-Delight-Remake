@@ -1,5 +1,5 @@
 {
-  "key": "reinforcedfiber",
+  "key": "northstar:durable_fabric",
   "category": "fabric",
   "primary": 5.0,
   "secondary": 3.2,
@@ -19,7 +19,7 @@
     "default"
   ],
   "material": {
-    "items": [ "protection_pixel:reinforcedfiber" ]
+    "items": [ "northstar:durable_fabric" ]
   },
   "requiredTools": {
     "cut": "minecraft:stone"

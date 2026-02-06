@@ -199,7 +199,7 @@
 #Configs regarding mobs spawning with equipment
 [equipment]
 	#Blacklist items from whole mods. Add modid to prevent items from that mod being equipped. (For individual items use the equipment.json)
-	"Item Blacklist" = ["protection_pixel"]
+	"Item Blacklist" = []
 	#Use blacklist as whitelist
 	"Item Whitelist" = false
 	#Blacklist for items mobs should never be able to use.

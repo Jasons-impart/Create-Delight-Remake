@@ -152,6 +152,7 @@
 			]
 			icon: "northstar:titanium_tetrachloride_bucket"
 			id: "2E6B5F41CF4AA9BC"
+			min_required_tasks: 1
 			tasks: [
 				{
 					id: "03647EC8926C208F"

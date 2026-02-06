@@ -267,9 +267,6 @@ key_gui.xaero_map_zoom_in:key.keyboard.unknown
 key_gui.xaero_map_zoom_out:key.keyboard.unknown
 key_gui.xaero_quick_confirm:key.keyboard.unknown
 key_gui.xaero_toggle_dimension:key.keyboard.unknown
-key_key.protection_pixel.armortabletrigger:key.keyboard.right.shift
-key_key.protection_pixel.wingfly:key.keyboard.space
-key_key.protection_pixel.flyfoward:key.keyboard.w
 key_key.ftbultimine:key.keyboard.grave.accent
 key_key.ftbteams.open_gui:key.keyboard.unknown
 key_key.ftbchunks.map:key.keyboard.n

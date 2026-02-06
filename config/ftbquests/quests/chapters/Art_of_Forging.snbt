@@ -1201,7 +1201,7 @@
 			tasks: [
 				{
 					id: "6BE62B09E3B7D77F"
-					item: "protection_pixel:reinforcedfiber"
+					item: "northstar:durable_fabric"
 					type: "item"
 				}
 				{
