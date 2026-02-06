@@ -1,147 +1,7 @@
-// 基础食材列表
-global.FoodIngredientList = [
-    "minecraft:carrot",
-    "minecraft:potato",
-    "minecraft:beetroot",
-    "minecraft:wheat",
-    "minecraft:crimson_fungus",
-    "minecraft:warped_fungus",
-    "minecraft:brown_mushroom",
-    "minecraft:red_mushroom",
-    "minecraft:kelp",
-    "minecraft:cocoa_beans",
-    "minecraft:beef",
-    "minecraft:cod",
-    "minecraft:salmon",
-    "minecraft:tropical_fish",
-    "minecraft:chicken",
-    "minecraft:mutton",
-    "minecraft:rabbit",
-
-    "createcafe:cassava_root",
-
-    "farmersdelight:cabbage",
-    "farmersdelight:tomato",
-    "farmersdelight:onion",
-    "farmersdelight:pie_crust",
-
-    "culturaldelights:eggplant",
-    "culturaldelights:avocado",
-    "culturaldelights:corn_cob",
-    "culturaldelights:squid",
-
-    "festival_delicacies:chinese_cabbage",
-    "festival_delicacies:greenonion",
-    "festival_delicacies:eggplant",
-    "festival_delicacies:garlic_chive",
-
-    "vintagedelight:peanut",
-    "vintagedelight:ghost_pepper",
-    "vintagedelight:cucumber",
-    "vintagedelight:gearo_berry",
-    "vintagedelight:oats",
-    "vintagedelight:salt_dust",
-
-    "neapolitan:banana",
-    "neapolitan:mint_leaves",
-    "neapolitan:vanilla_pods",
-    "neapolitan:strawberries",
-
-    "mynethersdelight:bullet_pepper",
-    "mynethersdelight:powder_cannon",
-    "mynethersdelight:hoglin_loin",
-    "mynethersdelight:ghasmati",
-
-    "youkaishomecoming:udumbara_flower",
-    "youkaishomecoming:pods",
-    "youkaishomecoming:mandrake_root",
-    "youkaishomecoming:mandrake_flower",
-    "youkaishomecoming:raw_lamprey",
-
-    "nethervinery:crimson_grape",
-    "nethervinery:warped_grape",
-
-    "vinery:cherry",
-    "vinery:red_grape",
-    "vinery:white_grape",
-    "vinery:savanna_grapes_red",
-    "vinery:savanna_grapes_white",
-    "vinery:taiga_grapes_red",
-    "vinery:taiga_grapes_white",
-    "vinery:jungle_grapes_red",
-    "vinery:jungle_grapes_white",
-
-    "fruitsdelight:pear",
-    "fruitsdelight:hawberry",
-    "fruitsdelight:lychee",
-    "fruitsdelight:mango",
-    "fruitsdelight:persimmon",
-    "fruitsdelight:peach",
-    "fruitsdelight:orange",
-    "fruitsdelight:mangosteen",
-    "fruitsdelight:bayberry",
-    "fruitsdelight:kiwi",
-    "fruitsdelight:fig",
-    "fruitsdelight:blueberry",
-    "fruitsdelight:lemon",
-    "fruitsdelight:cranberry",
-    "fruitsdelight:pineapple",
-    "fruitsdelight:durian",
-
-    "oceanic_delight:sea_grape",
-
-    "farmersrespite:green_tea_leaves",
-    "farmersrespite:yellow_tea_leaves",
-    "farmersrespite:black_tea_leaves",
-
-    "frycooks_delight:canola",
-
-    "collectorsreap:pomegranate",
-    "collectorsreap:stygian_pomegranate",
-    "collectorsreap:lime",
-    "collectorsreap:portobello_colony",
-    "collectorsreap:tiger_prawn",
-    "collectorsreap:urchin",
-    "collectorsreap:platinum_bass",
-    "collectorsreap:clam",
-    "collectorsreap:chieftain_crab_bucket",
-
-    "alexsdelight:raw_bison",
-    "alexsdelight:raw_bunfungus",
-
-    "alexsmobs:kangaroo_meat",
-    "alexsmobs:moose_ribs",
-    "alexsmobs:emu_egg",
-    "alexsmobs:kangaroo_meat",
-    "alexsmobs:raw_catfish",
-
-    "alexscaves:candy_cane",
-
-    "butchercraft:tripe",
-    "butchercraft:stomach",
-    "butchercraft:lung",
-    "butchercraft:liver",
-    "butchercraft:kidney",
-    "butchercraft:heart",
-    "butchercraft:brain",
-    "butchercraft:leather_scrap",
-    "butchercraft:sinew",
-    "butchercraft:fat",
-
-    "crabbersdelight:clam",
-    "crabbersdelight:crab",
-
-    "ratatouille:cocoa_butter",
-    "ratatouille:cocoa_solids",
-
-    "bakeries:flour",
-
-    "createdelight:dry_yeast",
-    "createdelight:butter"
-];
 // 默认食材价值，如果希望是其他值，加入Dict
-global.DefaultFoodIngredientValue = 1;
+const DefaultFoodIngredientValue = 1;
 let FoodIngredientValueDict = {
+    // 其他价值的食材
     "minecraft:beef": 2,
     "minecraft:cod": 2,
     "minecraft:salmon": 2,
@@ -169,8 +29,9 @@ let FoodIngredientValueDict = {
     "alexsmobs:kangaroo_meat": 2,
     "alexsmobs:moose_ribs": 2,
     "alexsmobs:emu_egg": 2,
-    "alexsmobs:kangaroo_meat": 2,
     "alexsmobs:raw_catfish": 2,
+
+    "alexscaves:candy_cane": 10,
 
     "butchercraft:tripe": 2,
     "butchercraft:stomach": 2,
@@ -186,12 +47,109 @@ let FoodIngredientValueDict = {
     "ratatouille:cocoa_butter": 2,
     "ratatouille:cocoa_solids": 2,
 
-    "alexscaves:candy_cane": 10,
+    "createdelight:butter": 2,
 
-    "createdelight:butter": 2
+    // 默认价值的食材
+    "minecraft:carrot": DefaultFoodIngredientValue,
+    "minecraft:potato": DefaultFoodIngredientValue,
+    "minecraft:beetroot": DefaultFoodIngredientValue,
+    "minecraft:wheat": DefaultFoodIngredientValue,
+    "minecraft:crimson_fungus": DefaultFoodIngredientValue,
+    "minecraft:warped_fungus": DefaultFoodIngredientValue,
+    "minecraft:brown_mushroom": DefaultFoodIngredientValue,
+    "minecraft:red_mushroom": DefaultFoodIngredientValue,
+    "minecraft:kelp": DefaultFoodIngredientValue,
+    "minecraft:cocoa_beans": DefaultFoodIngredientValue,
+
+    "createcafe:cassava_root": DefaultFoodIngredientValue,
+
+    "farmersdelight:cabbage": DefaultFoodIngredientValue,
+    "farmersdelight:tomato": DefaultFoodIngredientValue,
+    "farmersdelight:onion": DefaultFoodIngredientValue,
+    "farmersdelight:pie_crust": DefaultFoodIngredientValue,
+
+    "culturaldelights:eggplant": DefaultFoodIngredientValue,
+    "culturaldelights:avocado": DefaultFoodIngredientValue,
+    "culturaldelights:corn_cob": DefaultFoodIngredientValue,
+
+    "festival_delicacies:chinese_cabbage": DefaultFoodIngredientValue,
+    "festival_delicacies:greenonion": DefaultFoodIngredientValue,
+    "festival_delicacies:eggplant": DefaultFoodIngredientValue,
+    "festival_delicacies:garlic_chive": DefaultFoodIngredientValue,
+
+    "vintagedelight:peanut": DefaultFoodIngredientValue,
+    "vintagedelight:ghost_pepper": DefaultFoodIngredientValue,
+    "vintagedelight:cucumber": DefaultFoodIngredientValue,
+    "vintagedelight:gearo_berry": DefaultFoodIngredientValue,
+    "vintagedelight:oats": DefaultFoodIngredientValue,
+    "vintagedelight:salt_dust": DefaultFoodIngredientValue,
+
+    "neapolitan:banana": DefaultFoodIngredientValue,
+    "neapolitan:mint_leaves": DefaultFoodIngredientValue,
+    "neapolitan:vanilla_pods": DefaultFoodIngredientValue,
+    "neapolitan:strawberries": DefaultFoodIngredientValue,
+
+    "mynethersdelight:bullet_pepper": DefaultFoodIngredientValue,
+    "mynethersdelight:powder_cannon": DefaultFoodIngredientValue,
+    "mynethersdelight:ghasmati": DefaultFoodIngredientValue,
+
+    "youkaishomecoming:pods": DefaultFoodIngredientValue,
+    "youkaishomecoming:mandrake_root": DefaultFoodIngredientValue,
+    "youkaishomecoming:mandrake_flower": DefaultFoodIngredientValue,
+    "youkaishomecoming:raw_lamprey": DefaultFoodIngredientValue,
+
+    "nethervinery:crimson_grape": DefaultFoodIngredientValue,
+    "nethervinery:warped_grape": DefaultFoodIngredientValue,
+
+    "vinery:cherry": DefaultFoodIngredientValue,
+    "vinery:red_grape": DefaultFoodIngredientValue,
+    "vinery:white_grape": DefaultFoodIngredientValue,
+    "vinery:savanna_grapes_red": DefaultFoodIngredientValue,
+    "vinery:savanna_grapes_white": DefaultFoodIngredientValue,
+    "vinery:taiga_grapes_red": DefaultFoodIngredientValue,
+    "vinery:taiga_grapes_white": DefaultFoodIngredientValue,
+    "vinery:jungle_grapes_red": DefaultFoodIngredientValue,
+    "vinery:jungle_grapes_white": DefaultFoodIngredientValue,
+
+    "fruitsdelight:pear": DefaultFoodIngredientValue,
+    "fruitsdelight:hawberry": DefaultFoodIngredientValue,
+    "fruitsdelight:lychee": DefaultFoodIngredientValue,
+    "fruitsdelight:mango": DefaultFoodIngredientValue,
+    "fruitsdelight:persimmon": DefaultFoodIngredientValue,
+    "fruitsdelight:peach": DefaultFoodIngredientValue,
+    "fruitsdelight:orange": DefaultFoodIngredientValue,
+    "fruitsdelight:mangosteen": DefaultFoodIngredientValue,
+    "fruitsdelight:bayberry": DefaultFoodIngredientValue,
+    "fruitsdelight:kiwi": DefaultFoodIngredientValue,
+    "fruitsdelight:fig": DefaultFoodIngredientValue,
+    "fruitsdelight:blueberry": DefaultFoodIngredientValue,
+    "fruitsdelight:lemon": DefaultFoodIngredientValue,
+    "fruitsdelight:cranberry": DefaultFoodIngredientValue,
+    "fruitsdelight:pineapple": DefaultFoodIngredientValue,
+    "fruitsdelight:durian": DefaultFoodIngredientValue,
+
+    "oceanic_delight:sea_grape": DefaultFoodIngredientValue,
+
+    "farmersrespite:green_tea_leaves": DefaultFoodIngredientValue,
+    "farmersrespite:yellow_tea_leaves": DefaultFoodIngredientValue,
+    "farmersrespite:black_tea_leaves": DefaultFoodIngredientValue,
+
+    "frycooks_delight:canola": DefaultFoodIngredientValue,
+
+    "collectorsreap:pomegranate": DefaultFoodIngredientValue,
+    "collectorsreap:lime": DefaultFoodIngredientValue,
+    "collectorsreap:portobello_colony": DefaultFoodIngredientValue,
+
+    "butchercraft:leather_scrap": DefaultFoodIngredientValue,
+    "butchercraft:sinew": DefaultFoodIngredientValue,
+    "butchercraft:fat": DefaultFoodIngredientValue,
+
+    "bakeries:flour": DefaultFoodIngredientValue,
+
+    "createdelight:dry_yeast": DefaultFoodIngredientValue,
 
 }
-// TODO: 把list里的所有项都加入这个dict，统一从这个dict获取价值
+// 从这一Dict获取价值
 global.FoodIngredientValueDict = new Map(Object.entries(FoodIngredientValueDict));
 
 // 默认配方价值倍率，如果希望是其他值，加入Dict。如果值过大可能会上溢导致kjs加载失败。
