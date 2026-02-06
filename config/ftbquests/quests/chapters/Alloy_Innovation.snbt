@@ -16,14 +16,6 @@
 			y: 1.5d
 		}
 		{
-			id: "7D4B174BC4A98DC9"
-			linked_quest: "0B2B86FAF7742C2F"
-			shape: "hexagon"
-			size: 2.0d
-			x: 18.5d
-			y: -7.0d
-		}
-		{
 			id: "7A11CD1763458CD5"
 			linked_quest: "168836201ED24533"
 			shape: "hexagon"

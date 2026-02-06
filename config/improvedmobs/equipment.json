@@ -594,10 +594,6 @@
       2391,
       7.9030676
     ],
-    "protection_pixel:socks_boots": [
-      4560,
-      1.0383878
-    ],
     "the_bumblezone:carpenter_bee_boots_1": [
       4971,
       0.4779939
@@ -835,30 +831,6 @@
     "minecraft:netherite_leggings": [
       2877,
       5.9030676
-    ],
-    "protection_pixel:anchorpoint_leggings": [
-      4545,
-      1.03967
-    ],
-    "protection_pixel:anchorpointas_leggings": [
-      4325,
-      1.3220218
-    ],
-    "protection_pixel:buoyancy_leggings": [
-      4738,
-      0.79089624
-    ],
-    "protection_pixel:buoyancyas_leggings": [
-      4588,
-      0.98451304
-    ],
-    "protection_pixel:slingshot_leggings": [
-      4738,
-      0.79089624
-    ],
-    "protection_pixel:slingshotas_leggings": [
-      4588,
-      0.98451304
     ],
     "the_bumblezone:honey_bee_leggings_1": [
       4957,
@@ -1125,58 +1097,6 @@
     "minecraft:netherite_chestplate": [
       2891,
       5.9030676
-    ],
-    "protection_pixel:breaker_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:breakeras_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:floatshield_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:hellsnake_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:hellsnakeas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:magneticstorm_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:magneticstormas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:pioneer_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:pioneeras_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:wingsofprism_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:wingsofprismas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:workerhornet_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:workerhornetas_chestplate": [
-      4699,
-      0.85967726
     ],
     "quark:backpack": [
       0,
@@ -1503,54 +1423,6 @@
     "minecraft:turtle_helmet": [
       4616,
       0.948558
-    ],
-    "protection_pixel:bloodprisoner_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:bloodprisoneras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:closed_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:closedas_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:hammer_helmet": [
-      4322,
-      1.3258815
-    ],
-    "protection_pixel:hammeras_helmet": [
-      4118,
-      1.589282
-    ],
-    "protection_pixel:hunter_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:hunteras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:lancer_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:lanceras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:plague_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:plagueas_helmet": [
-      4248,
-      1.4212085
     ],
     "quark:forgotten_hat": [
       5268,
