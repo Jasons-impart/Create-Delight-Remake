@@ -17,6 +17,8 @@ ServerEvents.recipes((event) => {
     "expatternprovider:assembler_matrix_pattern",
     "expatternprovider:assembler_matrix_speed",
     "expatternprovider:assembler_matrix_wall",
+    "expatternprovider:epp",
+    "expatternprovider:epp_upgrade",
     "ae2:network/blocks/pattern_providers_interface"
   ])
 
@@ -100,7 +102,7 @@ ServerEvents.recipes((event) => {
   ], {
     A: "#forge:plates/iron",
     B: "ae2:annihilation_core",
-    C: "#forge:plates/titanium",
+    C: "#forge:plates/obdurium",
     D: "create:factory_gauge",
     E: "ae2:formation_core"
   })
@@ -116,7 +118,29 @@ ServerEvents.recipes((event) => {
     .loops(1)
     .transitionalItem(iner_4)
     .id("createdelight:pattern_provider_1")
+  //扩展ME样板供应器
+  kubejs.shaped("expatternprovider:ex_pattern_provider", [
+    "ABA",
+    "CAC",
+    "DAD"
+  ], {
+    A: "ae2:pattern_provider",
+    B: "ae2:engineering_processor",
+    C: "northstar:titanium_sheet",
+    D: "ae2:capacity_card"
+  }).id("createdelight:ex_pattern_provider")
 
+  
+  kubejs.shaped("expatternprovider:pattern_provider_upgrade", [
+    "ABA",
+    "C C",
+    "DAD"
+  ], {
+    A: "ae2:pattern_provider",
+    B: "ae2:engineering_processor",
+    C: "northstar:titanium_sheet",
+    D: "ae2:capacity_card"
+  }).id("createdelight:pattern_provider_upgrade")
   // 分子装配室
   let iner_5 = "createdelight:incomplete_molecular_assembler"
   create.sequenced_assembly("2x ae2:molecular_assembler", "createdelight:iron_casing", [
