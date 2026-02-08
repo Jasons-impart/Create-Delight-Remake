@@ -37,6 +37,6 @@ ServerEvents.recipes(e => {
     create.compacting(
         'createdeco:industrial_iron_ingot',
         "minecraft:iron_ingot"
-    ).heated().id("createdeco:compacting/industrial_iron_ingot")
+    ).heated().id("createdelightdeco:compacting/industrial_iron_ingot")
 })
 

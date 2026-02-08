@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
                 "createaddition:capacitor"],
             ["", "vintageimprovements:redstone_module", ""]
         ]
-    ).id("tetra:murasama_scroll")
+    ).id("createdelight:murasama_scroll")
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,7,9,2],intricate:0b,key:"tetra/crucible_blade",material:2,ribbon:"ff1e00",schematics:["tetra:sword/crucible_blade"]}]}}'),
         [
@@ -45,7 +45,7 @@ ServerEvents.recipes(e => {
             D: "minecraft:beacon"
         }
     )
-        .id("tetra:crucible_scroll")
+        .id("createdelight:crucible_scroll")
 
     e.replaceInput({ mod: "tetra" }, "minecraft:writable_book", "createdelight:otherworld_note")
     e.replaceInput([{ id: "art_of_forging:forged_platform" }, { id: "art_of_forging:forged_pillar" }], "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet")
@@ -65,7 +65,7 @@ ServerEvents.recipes(e => {
         ["#forge:plates/iron", "createdelight:otherworld_note", "#forge:rods/iron"],
         ["", "#forge:ingots/iron", ""]
     ])
-        .id("tetra:katana_scroll")
+        .id("createdelight:katana_scroll")
 
     kubejs.shaped(
         Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"otherworldly",glyphs:[I;7,8,14,13],intricate:1b,key:"sword/thousand_cold_nights",material:2,ribbon:"5c7c80",schematics:["tetra:sword/katana/murasama_blade","tetra:sword/thousand_cold_nights"]}]}}'), [
@@ -78,14 +78,14 @@ ServerEvents.recipes(e => {
             B: "art_of_forging:shards_of_malice",
             C: Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;5,10,13,2],intricate:0b,key:"sword/katana/katana_blade",material:2,ribbon:"dbff10",schematics:["tetra:sword/katana/katana_blade","tetra:sword/tsuba_guard"]}]}}').strongNBT()
         })
-        .id("tetra:thousand_cold_night_scroll")
+        .id("createdelight:thousand_cold_night_scroll")
 
     metal_production_line_3(e,
         ["createdelightcore:forged_steel_block", "art_of_forging:forged_steel_ingot", "createdelight:forged_steel_sheet", "createdelightcore:molten_forged_steel"], "superheated", 160)
     kubejs.shapeless("createdelightcore:forged_steel_block", "9x art_of_forging:forged_steel_ingot")
-        .id("art_of_forging:forged_steel_ingot_from_forged_steel_block")
+        .id("createdelight:forged_steel_ingot_from_forged_steel_block")
     kubejs.shapeless("9x art_of_forging:forged_steel_ingot", "createdelightcore:forged_steel_block")
-        .id("art_of_forging:forged_steel_block")
+        .id("createdelight:forged_steel_block")
     createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360), [
         "tetra:metal_scrap",
         "tetra:metal_scrap",
@@ -95,9 +95,9 @@ ServerEvents.recipes(e => {
         Fluid.of("createmetallurgy:molten_netherite", 30)
     ])
         .heatRequirement("superheated")
-        .id("art_of_forging:alloying/molten_forged_steel")
+        .id("createdelight:alloying/molten_forged_steel")
     create.pressing("createdelight:forged_steel_sheet", "art_of_forging:forged_steel_ingot")
-        .id("art_of_forging:pressing/forged_steel_sheet")
+        .id("createdelight:pressing/forged_steel_sheet")
     {
         let iner = "art_of_forging:forged_steel_ingot"
         create.sequenced_assembly("dreadsteel:dreadsteel_ingot", "art_of_forging:forged_steel_ingot", [
@@ -120,10 +120,10 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/vobrivium_ingot")
+            .id("createdelight:sequenced_assembly/vobrivium_ingot")
     }
     create_new_age.energising("art_of_forging:vobrite_crystal", "2x art_of_forging:vobrite_crystal", 2000000)
-        .id("art_of_forging:energising/vobrite_crystal")
+        .id("createdelight:energising/vobrite_crystal")
 
     {
         let iner = "art_of_forging:vobrivium_ingot"
@@ -136,7 +136,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/endsteel_ingot")
+            .id("createdelight:sequenced_assembly/endsteel_ingot")
     }
 
     vintageimprovements.vacuumizing(Fluid.of("createdelight:malice_solution", 1000), [
@@ -144,7 +144,7 @@ ServerEvents.recipes(e => {
         "art_of_forging:shards_of_malice",
         "art_of_forging:soul_ember"
     ])
-        .id("art_of_forging:vacuumizing/malice_solution")
+        .id("createdelight:vacuumizing/malice_solution")
 
     {
         let iner = "art_of_forging:ancient_blade"
@@ -156,7 +156,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/demonic_blade")
+            .id("createdelight:sequenced_assembly/demonic_blade")
     }
     {
         let iner = "art_of_forging:ancient_axe"
@@ -168,7 +168,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/demonic_axe")
+            .id("createdelight:sequenced_assembly/demonic_axe")
     }
     {
         let iner = "art_of_forging:ancient_flail"
@@ -182,7 +182,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/demonic_flail")
+            .id("createdelight:sequenced_assembly/demonic_flail")
     }
     {
         let iner = "art_of_forging:shards_of_malice"
@@ -194,7 +194,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(4)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/sigil_of_eden")
+            .id("createdelight:sequenced_assembly/sigil_of_eden")
     }
     vintageimprovements.vacuumizing("2x art_of_forging:life_fiber", [
         Fluid.of("create:potion", 1000, { Bottle: "REGULAR", Potion: "minecraft:healing" }),
@@ -213,7 +213,7 @@ ServerEvents.recipes(e => {
         C: "farmersdelight:diamond_knife",
         D: "minecraft:blaze_rod"
     })
-        .id("art_of_forging:rending_scissor_red")
+        .id("createdelight:rending_scissor_red")
 
     kubejs.shaped("art_of_forging:rending_scissor_purple", [
         " AB",
@@ -225,7 +225,7 @@ ServerEvents.recipes(e => {
         C: "farmersdelight:diamond_knife",
         D: "minecraft:blaze_rod"
     })
-        .id("art_of_forging:rending_scissor_purple")
+        .id("createdelight:rending_scissor_purple")
 
     {
         let iner = "netherexp:banshee_rod"
@@ -236,7 +236,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/rending_scissor_complete")
+            .id("createdelight:sequenced_assembly/rending_scissor_complete")
     }
     {
         let iner = "createaddition:electrum_ingot"
@@ -249,7 +249,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:sequenced_assembly/mine_ingot")
+            .id("createdelight:sequenced_assembly/mine_ingot")
     }
     kubejs.shaped(Item.of('tetra:scroll_rolled',
         '{BlockEntityTag:{data:[{glyphs:[1.0d,1.0d,4.0d,5.0d],intricate:1.0d,key:"bow/stave/remembrance_stave",material:1.0d,ribbon:"c10000",schematics:["tetra:bow/stave/remembrance_stave"]}]}}'),
@@ -258,7 +258,7 @@ ServerEvents.recipes(e => {
             [Item.of('tetra:scroll_rolled', '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;8,1,9,5],intricate:0b,key:"bow/stave/dreadnought_stave",material:1,ribbon:"f3b31f",schematics:["tetra:bow/stave/dreadnought_stave","tetra:bow/stave/dreadnought_cross_stave"]}]}}').strongNBT()],
             ["iceandfire:dragonbone_bow"]
         ]
-    ).id("art_of_forging:remembrance_shave")
+    ).id("createdelight:remembrance_shave")
     kubejs.shaped(Item.of('tetra:scroll_rolled',
         '{BlockEntityTag:{data:[{details:"art_of_forging",glyphs:[I;15,13,12,14],intricate:0b,key:"bow/string/compound_string",material:1,ribbon:"19e588",schematics:["tetra:bow/string/compound_string","tetra:crossbow/string/compound_cross_string"]}]}}'),
         [
@@ -285,6 +285,6 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("art_of_forging:encoded_canister")
+            .id("createdelight:encoded_canister")
     }
 })

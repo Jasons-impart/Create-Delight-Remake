@@ -19,7 +19,7 @@ function combination(event, inputs, output, count) {
     //增加机动兼容
     if (inputs.length == 2)
         event.recipes.create.deploying(output, inputs)
-            .id(`create:deploying/${output.split(":")[1]}`)
+            .id(`createdelight:deploying/${output.split(":")[1]}`)
     else if (inputs.length > 2) {
         let deploy_list = []
         for (let index = 1; index < inputs.length; index++) {
@@ -32,7 +32,7 @@ function combination(event, inputs, output, count) {
         event.recipes.create.sequenced_assembly(output, inputs[0], deploy_list)
         .loops(1)
         .transitionalItem(trans)
-        .id(`create:sequenced_assembly/${output.split(":")[1]}`)
+        .id(`createdelight:sequenced_assembly/${output.split(":")[1]}`)
     }
         
 }
@@ -47,10 +47,10 @@ function combination(event, inputs, output, count) {
  */
 function baking(event, input, output, count, category, time) {
     event.custom({ type: "refurbished_furniture:oven_baking", category: category, ingredient: { item: input }, result: { count: count, item: output }, time: time })
-        .id(`refurbished_furniture:baking/${output.split(":")[1]}`)
+        .id(`createdelight:baking/${output.split(":")[1]}_from_${input.split(":")[1]}`)
     event.recipes.ratatouille.baking(Item.of(output, count), input)
         .processingTime(time || 200)
-        .id(`ratatouille:baking/${output.split(":")[1]}`)
+        .id(`createdelight:baking/${output.split(":")[1]}`)
 }
 
 /**
@@ -62,5 +62,5 @@ function baking(event, input, output, count, category, time) {
  */
 function toasting(event, input, output, category, time) {
     event.custom({ type: "refurbished_furniture:toaster_heating", category: category, ingredient: { item: input }, result: output, time: time })
-        .id(`refurbished_furniture:toasting/${output.split(":")[1]}`)
+        .id(`createdelight:toasting/${output.split(":")[1]}`)
 }

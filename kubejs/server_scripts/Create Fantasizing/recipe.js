@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         B: "create_sa:hydraulic_engine",
         C: "create:sturdy_sheet"
     })
-        .id("create_fantasizing:sturdy_conduit")
+        .id("createdelight:sturdy_conduit")
 
     kubejs.shaped("create_fantasizing:sturdy_heavy_core", [
         "A",
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         B: "create_sa:heat_engine",
         C: "create:sturdy_sheet"
     })
-        .id("create_fantasizing:sturdy_heavy_core")
+        .id("createdelight:sturdy_heavy_core")
 
     kubejs.shaped("create_fantasizing:transporter", [
         "A",
@@ -39,7 +39,7 @@ ServerEvents.recipes(e => {
         B: "create_sa:heat_engine",
         C: "create:brass_funnel"
     })
-        .id("create_fantasizing:transporter")
+        .id("createdelight:transporter")
     {
         let iner = "create_fantasizing:incomplete_compact_hydraulic_engine"
         create.sequenced_assembly("create_fantasizing:compact_hydraulic_engine", "create_fantasizing:sturdy_conduit", [
@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(8)
             .transitionalItem(iner)
-            .id("create_fantasizing:compact_hydraulic_engine")
+            .id("createdelight:compact_hydraulic_engine")
     }
 
     {
@@ -59,6 +59,6 @@ ServerEvents.recipes(e => {
         ])
             .loops(8)
             .transitionalItem(iner)
-            .id("create_fantasizing:compact_wind_engine")
+            .id("createdelight:compact_wind_engine")
     }
 })

@@ -21,7 +21,7 @@ ServerEvents.recipes(e => {
 
     vintageimprovements.pressurizing(["minecraft:deepslate"], [Fluid.lava(50), "#forge:cobblestone"])
     .heated()
-    .id("vintageimprovements:pressurizing/deepslate")
+    .id("createdelight:pressurizing/deepslate")
     create.sequenced_assembly([
         Item.of("minecraft:budding_amethyst").withChance(0.1), 
         Item.of("minecraft:amethyst_block").withChance(0.9)
@@ -32,7 +32,7 @@ ServerEvents.recipes(e => {
     ])
     .transitionalItem("minecraft:amethyst_block")
     .loops(1)
-    .id("create:sequenced_assembly/budding_amethyst_from_amethyst_block")
+    .id("createdelight:sequenced_assembly/budding_amethyst_from_amethyst_block")
 
     make_growing_cluster(e, [
         "minecraft:amethyst_shard",
@@ -72,7 +72,7 @@ ServerEvents.recipes(e => {
         "minecraft:blaze_powder",
         "minecraft:blaze_powder", 
         "minecraft:stick"])
-    .id("vintageimprovements:vacuumizing/blaze_rod")
+    .id("createdelight:vacuumizing/blaze_rod")
 
     e.replaceInput({ id: "minecraft:sticky_piston" }, "minecraft:slime_ball", "#forge:slimeballs")
     

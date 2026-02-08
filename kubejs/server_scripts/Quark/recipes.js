@@ -30,5 +30,5 @@ ServerEvents.recipes(e => {
         'quark:ancient_fruit'
     )
     .heated()
-    .id("create_enchantment_industry:experience_from_ancient_fruit")
+    .id("createdelight:experience_from_ancient_fruit")
 })

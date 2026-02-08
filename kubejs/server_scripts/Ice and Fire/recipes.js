@@ -25,19 +25,19 @@ ServerEvents.recipes(e => {
     ])
     create.filling("ends_delight:raw_dragon_meat", ["#createdelight:dragon_flesh", Fluid.of("create_central_kitchen:dragon_breath", 250)])
     e.replaceInput({ id: "iceandfire:dragon_meal" }, "#iceandfire:dragon_food_meat", "#forge:meat/raw")
-    create.haunting(Item.of("iceandfire:rotten_egg").withChance(0.25), "minecraft:egg").id("iceandfire:haunting/rotten_egg")
+    create.haunting(Item.of("iceandfire:rotten_egg").withChance(0.25), "minecraft:egg").id("createdelight:haunting/rotten_egg")
     iceandfire.dragonforge(
         "minecraft:dragon_breath",
         "ends_delight:dried_chorus_flower", "minecraft:glass_bottle", "fire", 400)
-        .id("iceandfire:dragonforge/dragon_breath_fire")
+        .id("createdelight:dragonforge/dragon_breath_fire")
     iceandfire.dragonforge(
         "minecraft:dragon_breath",
         "ends_delight:dried_chorus_flower", "minecraft:glass_bottle", "ice", 400)
-        .id("iceandfire:dragonforge/dragon_breath_ice")
+        .id("createdelight:dragonforge/dragon_breath_ice")
     iceandfire.dragonforge(
         "minecraft:dragon_breath",
         "ends_delight:dried_chorus_flower", "minecraft:glass_bottle", "lightning", 400)
-        .id("iceandfire:dragonforge/dragon_breath_lightning")
+        .id("createdelight:dragonforge/dragon_breath_lightning")
     let armor = [
         "iceandfire:dragonsteel_fire_helmet",
         "iceandfire:dragonsteel_fire_leggings",
@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
         else
             res = "dreadsteel:dreadsteel_boots"
         minecraft.smithing_transform(res, "createdelight:dread_upgrade_smithing_template", item, "dreadsteel:dreadsteel_ingot")
-            .id(`dreadsteel:smithing_transform/${res.split(':')[1]}_from_${item.split(':')[1]}`)
+            .id(`createdelight:smithing_transform/${res.split(':')[1]}_from_${item.split(':')[1]}`)
     })
     ifl.forEach(text => {
         let ingot = `iceandfire:dragonsteel_${text}_ingot`
@@ -75,7 +75,7 @@ ServerEvents.recipes(e => {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
             C: "art_of_forging:nano_insectoid"
-        }).id(`iceandfire:dragonsteel_${text}_helmet`)
+        }).id(`createdelight:dragonsteel_${text}_helmet`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_chestplate`, [
             "B B",
             "ACA",
@@ -84,7 +84,7 @@ ServerEvents.recipes(e => {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
             C: "art_of_forging:nano_insectoid"
-        }).id(`iceandfire:dragonsteel_${text}_chestplate`)
+        }).id(`createdelight:dragonsteel_${text}_chestplate`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_leggings`, [
             "ACA",
             "A A",
@@ -93,7 +93,7 @@ ServerEvents.recipes(e => {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
             C: "art_of_forging:nano_insectoid"
-        }).id(`iceandfire:dragonsteel_${text}_leggings`)
+        }).id(`createdelight:dragonsteel_${text}_leggings`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_boots`, [
             "   ",
             "A A",
@@ -102,7 +102,7 @@ ServerEvents.recipes(e => {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
             C: "art_of_forging:nano_insectoid"
-        }).id(`iceandfire:dragonsteel_${text}_boots`)
+        }).id(`createdelight:dragonsteel_${text}_boots`)
     })
     kubejs.shaped("2x createdelight:dread_upgrade_smithing_template", [
         "ABA",
@@ -124,12 +124,12 @@ ServerEvents.recipes(e => {
         ])
         .loops(1)
         .transitionalItem(iner)
-        .id("iceandfire:sequenced_assembly/dread_key")
+        .id("createdelight:sequenced_assembly/dread_key")
     }
     kubejs.shapeless(
         'iceandfire:copper_pile',
         [
             "2x create:copper_nugget"
         ]
-    ).id("iceandfire:shapeless/copper_pile_manual_only")
+    ).id("createdelight:shapeless/copper_pile_manual_only")
 })

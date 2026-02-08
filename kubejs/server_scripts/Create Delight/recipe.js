@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
         Item.of("create:experience_nugget").withChance(0.75)
     ],
         "createdelightcore:deepslate_tin_ore")
-        .id("create:crushing/crushed_deepslate_tin_ore")
+        .id("createdelight:crushing/crushed_deepslate_tin_ore")
         
     kubejs.shapeless("createdelightcore:phantom_compost", [
         "2x vintagedelight:organic_mash",

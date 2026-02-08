@@ -13,13 +13,13 @@ ServerEvents.recipes(e => {
     cutting(e, "netherexp:hogham", [['mynethersdelight:hoglin_loin', 2], ['minecraft:bone', 1]])
     cutting(e, "netherexp:cooked_hogham", [['mynethersdelight:cooked_loin', 2], ['minecraft:bone', 1]])
     create.crushing(["3x netherexp:banshee_powder", Item.of("netherexp:banshee_powder", 3).withChance(0.5)], "netherexp:banshee_rod")
-    .id("netherexp:crushing/banshee_rod")
+    .id("createdelight:crushing/banshee_rod")
     kubejs.shapeless("netherexp:wither_bone_block", "9x iceandfire:wither_shard")
-    .id("netherexp:wither_bone_block")
+    .id("createdelight:wither_bone_block")
     kubejs.shapeless("9x iceandfire:wither_shard", "netherexp:wither_bone_block")
-    .id("netherexp:compat/wither_shard")
+    .id("createdelight:compat/wither_shard")
     create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), ["2x #netherexp:glowspores", Fluid.of("minecraft:milk", 1000)])
-    .id("netherexp:compat/curdled_milk")
+    .id("createdelight:compat/curdled_milk")
 
     combination(e, [
         "create:dough",
@@ -32,12 +32,12 @@ ServerEvents.recipes(e => {
     cutting_2(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
 
     farmersdelight.cooking(["netherexp:cerebrage", "warped_fungus", "#netherexp:cooked_hogham"], "netherexp:roasted_bone", 5.0, 200, "minecraft:bone")
-    .id("netherexp:cooking/roasted_bone")
+    .id("createdelight:cooking/roasted_bone")
 
     create.compacting(Fluid.of("netherexp:ectoplasm", 200), "netherexp:wraithing_flesh")
-    .id("netherexp:compating/wraithing_flesh")
+    .id("createdelight:compating/wraithing_flesh")
     centrifugation(e, ["minecraft:rotten_flesh", Fluid.of("netherexp:ectoplasm", 100)], "netherexp:wraithing_flesh")
-    .id("netherexp:centrifugation/wraithing_flesh")
+    .id("createdelight:centrifugation/wraithing_flesh")
     centrifugation(e, ["minecraft:pumpkin", Fluid.of("netherexp:ectoplasm", 500)], "netherexp:sorrowsquash")
-    .id("netherexp:centrifugation/sorrowsquash")
+    .id("createdelight:centrifugation/sorrowsquash")
 })

@@ -33,7 +33,7 @@ function brewing(event, base, inputs, fluid, output, amount) {
             })
         }
     });
-    event.custom(brewing_receipe).id(`farmersrespite:brewing/${output.split(":")[1]}_from_${base.split(":")[1]}`)
+    event.custom(brewing_receipe).id(`createdelight:brewing/${output.split(":")[1]}_from_${base.split(":")[1]}`)
     event.custom({
         "type": "farmersrespite:kettle_pouring",
         "amount": 250,
@@ -44,7 +44,7 @@ function brewing(event, base, inputs, fluid, output, amount) {
         "output": {
             "item": output
         }
-    }).id(`farmersrespite:pouring/${output.split(":")[1]}`)
+    }).id(`createdelight:pouring/${output.split(":")[1]}`)
 }
 
 /**
@@ -83,7 +83,7 @@ function brewing_2(event, base, inputs, fluid, output, amount) {
             })
         }
     });
-    event.custom(brewing_receipe).id(`farmersrespite:brewing/${output.split(":")[1]}_from_${base.split(":")[1]}`)
+    event.custom(brewing_receipe).id(`createdelight:brewing/${output.split(":")[1]}_from_${base.split(":")[1]}`)
 }
 /**
  * 
@@ -104,7 +104,7 @@ function pouring(event, input, fluid, container, amount) {
         "container": c,
         "fluid": fluid,
         "output": ingr
-    }).id(`farmersrespite:pouring/${ingr.getFirst().getId().split(":")[1]}`)
+    }).id(`createdelight:pouring/${ingr.getFirst().getId().split(":")[1]}`)
 
     event.custom({
         "type": "brewinandchewin:keg_pouring",

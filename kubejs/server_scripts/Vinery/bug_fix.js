@@ -9,7 +9,7 @@ ServerEvents.recipes(e => {
         e.recipes.create.cutting(
             log[1],
             log[0]
-        ).id("create:cutting/" + log[0].split(":")[1])
+        ).id("createdelight:cutting/" + log[0].split(":")[1])
         e.custom({
             type: "farmersdelight:cutting",
             ingredients: [{item: log[0]}],
@@ -22,7 +22,7 @@ ServerEvents.recipes(e => {
                 type: "farmersdelight:tool_action",
                 action: "axe_strip"
             }
-        }).id("farmersdelight:cutting/" + log[0].split(":")[1])
+        }).id("createdelight:cutting/" + log[0].split(":")[1] + "_fd")
     });
 })
 BlockEvents.rightClicked('vinery:fermentation_barrel', e => {

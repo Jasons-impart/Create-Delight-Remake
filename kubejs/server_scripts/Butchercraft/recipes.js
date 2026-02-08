@@ -7,7 +7,7 @@ ServerEvents.recipes((e) => {
       Item.of("minecraft:slime_ball").withChance(0.1)
     ],
     '#forge:gelatin'
-  ).id("butchercraft:splashing/gelatin")
+  ).id("createdelight:splashing/gelatin")
   // 机械动力兼容相关
   const big_anms = [
     "beef",
@@ -29,27 +29,27 @@ ServerEvents.recipes((e) => {
     e.recipes.create.milling(
       `butchercraft:ground_${big_anm}`,
       `butchercraft:${big_anm}_stewmeat`
-    ).id(`create:milling/${big_anm}_stewmeat`)
+    ).id(`createdelight:milling/${big_anm}_stewmeat`)
     e.recipes.create.milling(
       `2x butchercraft:ground_${big_anm}`,
       `butchercraft:cubed_${big_anm}`
-    ).id(`create:milling/cubed_${big_anm}`)
+    ).id(`createdelight:milling/cubed_${big_anm}`)
     e.recipes.create.milling(
       `4x butchercraft:ground_${big_anm}`,
       `butchercraft:${big_anm}_scraps`
-    ).id(`create:milling/${big_anm}_scraps`)
+    ).id(`createdelight:milling/${big_anm}_scraps`)
     e.recipes.create.milling(
       `butchercraft:cooked_ground_${big_anm}`,
       `butchercraft:cooked_${big_anm}_stewmeat`
-    ).id(`create:milling/cooked_${big_anm}_stewmeat`)
+    ).id(`createdelight:milling/cooked_${big_anm}_stewmeat`)
     e.recipes.create.milling(
       `2x butchercraft:cooked_ground_${big_anm}`,
       `butchercraft:cooked_cubed_${big_anm}`
-    ).id(`create:milling/cooked_cubed_${big_anm}`)
+    ).id(`createdelight:milling/cooked_cubed_${big_anm}`)
     e.recipes.create.milling(
       `4x butchercraft:cooked_ground_${big_anm}`,
       `butchercraft:cooked_${big_anm}_scraps`
-    ).id(`create:milling/cooked_${big_anm}_scraps`)
+    ).id(`createdelight:milling/cooked_${big_anm}_scraps`)
   });
   const small_anms = [
     "chicken",
@@ -61,27 +61,27 @@ ServerEvents.recipes((e) => {
     e.recipes.create.milling(
       `butchercraft:ground_${small_anm}`,
       `butchercraft:${small_anm}_stewmeat`
-    ).id(`create:milling/${small_anm}_stewmeat`)
+    ).id(`createdelight:milling/${small_anm}_stewmeat`)
     e.recipes.create.milling(
       `2x butchercraft:ground_${small_anm}`,
       `butchercraft:cubed_${small_anm}`
-    ).id(`create:milling/cubed_${small_anm}`)
+    ).id(`createdelight:milling/cubed_${small_anm}`)
     e.recipes.create.milling(
       `4x butchercraft:ground_${small_anm}`,
       `butchercraft:${small_anm}_scraps`
-    ).id(`create:milling/${small_anm}_scraps`)
+    ).id(`createdelight:milling/${small_anm}_scraps`)
     e.recipes.create.milling(
       `butchercraft:cooked_ground_${small_anm}`,
       `butchercraft:cooked_${small_anm}_stewmeat`
-    ).id(`create:milling/cooked_${small_anm}_stewmeat`)
+    ).id(`createdelight:milling/cooked_${small_anm}_stewmeat`)
     e.recipes.create.milling(
       `2x butchercraft:cooked_ground_${small_anm}`,
       `butchercraft:cooked_cubed_${small_anm}`
-    ).id(`create:milling/cooked_cubed_${small_anm}`)
+    ).id(`createdelight:milling/cooked_cubed_${small_anm}`)
     e.recipes.create.milling(
       `4x butchercraft:cooked_ground_${small_anm}`,
       `butchercraft:cooked_${small_anm}_scraps`
-    ).id(`create:milling/cooked_${small_anm}_scraps`)
+    ).id(`createdelight:milling/cooked_${small_anm}_scraps`)
   });
   // 牛肉
   farmersdelight.cutting( 'butchercraft:beef_roast', 'butchercraft:butcher_knife', ['4x minecraft:beef'])
@@ -91,19 +91,19 @@ ServerEvents.recipes((e) => {
   e.recipes.create.cutting(
     "4x minecraft:beef",
     'butchercraft:beef_roast'
-  ).id("create:cutting/beef_roast")
+  ).id("createdelight:cutting/beef_roast")
   e.recipes.create.cutting(
     "4x minecraft:cooked_beef",
     'butchercraft:cooked_beef_roast'
-  ).id("create:cutting/cooked_beef_roast")
+  ).id("createdelight:cutting/cooked_beef_roast")
   e.recipes.create.milling(
     "4x butchercraft:ground_beef",
     "minecraft:beef"
-  ).id("create:milling/beef")
+  ).id("createdelight:milling/beef")
   e.recipes.create.milling(
     "4x butchercraft:cooked_ground_beef",
     "minecraft:cooked_beef"
-  ).id("create:milling/cooked_beef")
+  ).id("createdelight:milling/cooked_beef")
   // 猪肉
   farmersdelight.cutting('butchercraft:pork_roast', 'butchercraft:butcher_knife', ['4x minecraft:porkchop'])
   farmersdelight.cutting('butchercraft:cooked_pork_roast', 'butchercraft:butcher_knife', ['4x minecraft:cooked_porkchop'])
@@ -112,19 +112,19 @@ ServerEvents.recipes((e) => {
   e.recipes.create.cutting(
     "4x minecraft:porkchop",
     'butchercraft:pork_roast'
-  ).id("create:cutting/pork_roast")
+  ).id("createdelight:cutting/pork_roast")
   e.recipes.create.cutting(
     "4x minecraft:cooked_porkchop",
     'butchercraft:cooked_pork_roast'
-  ).id("create:cutting/cooked_pork_roast")
+  ).id("createdelight:cutting/cooked_pork_roast")
   e.recipes.create.milling(
     "4x butchercraft:ground_pork",
     "minecraft:porkchop"
-  ).id("create:milling/porkchop")
+  ).id("createdelight:milling/porkchop")
   e.recipes.create.milling(
     "4x butchercraft:cooked_ground_pork",
     "minecraft:cooked_porkchop"
-  ).id("create:milling/cooked_porkchop")
+  ).id("createdelight:milling/cooked_porkchop")
   // 羊肉
   farmersdelight.cutting('butchercraft:lamb_roast', 'butchercraft:butcher_knife', ['4x minecraft:mutton'])
   farmersdelight.cutting('butchercraft:cooked_lamb_roast', 'butchercraft:butcher_knife', ['4x minecraft:cooked_mutton'])
@@ -133,19 +133,19 @@ ServerEvents.recipes((e) => {
   e.recipes.create.cutting(
     "4x minecraft:mutton",
     'butchercraft:lamb_roast'
-  ).id("create:cutting/lamb_roast")
+  ).id("createdelight:cutting/lamb_roast")
   e.recipes.create.cutting(
     "4x minecraft:cooked_mutton",
     'butchercraft:cooked_lamb_roast'
-  ).id("create:cutting/cooked_lamb_roast")
+  ).id("createdelight:cutting/cooked_lamb_roast")
   e.recipes.create.milling(
     "4x butchercraft:ground_lamb",
     "minecraft:mutton"
-  ).id("create:milling/mutton")
+  ).id("createdelight:milling/mutton")
   e.recipes.create.milling(
     "4x butchercraft:cooked_ground_lamb",
     "minecraft:cooked_mutton"
-  ).id("create:milling/cooked_mutton")
+  ).id("createdelight:milling/cooked_mutton")
   // 山羊肉
   farmersdelight.cutting('butchercraft:goat_roast', 'butchercraft:butcher_knife', ['4x butchercraft:goat_chop'])
   farmersdelight.cutting('butchercraft:cooked_goat_roast', 'butchercraft:butcher_knife', ['4x butchercraft:cooked_goat_chop'])
@@ -154,19 +154,19 @@ ServerEvents.recipes((e) => {
   e.recipes.create.cutting(
     "4x butchercraft:goat_chop",
     'butchercraft:goat_roast'
-  ).id("create:cutting/goat_roast")
+  ).id("createdelight:cutting/goat_roast")
   e.recipes.create.cutting(
     "4x butchercraft:cooked_goat_chop",
     'butchercraft:cooked_goat_roast'
-  ).id("create:cutting/cooked_goat_roast")
+  ).id("createdelight:cutting/cooked_goat_roast")
   e.recipes.create.milling(
     "4x butchercraft:ground_goat",
     "butchercraft:goat_chop"
-  ).id("create:milling/goat_chop")
+  ).id("createdelight:milling/goat_chop")
   e.recipes.create.milling(
     "4x butchercraft:cooked_ground_goat",
     "butchercraft:cooked_goat_chop"
-  ).id("create:milling/cooked_goat_chop")
+  ).id("createdelight:milling/cooked_goat_chop")
   // 鸡肉
   cutting(e, 'butchercraft:chicken_breast', [['butchercraft:cubed_chicken', 2]])
   cutting(e, 'butchercraft:chicken_leg', [
@@ -216,18 +216,18 @@ ServerEvents.recipes((e) => {
 
   e.recipes.kubejs
     .shapeless("minecraft:slime_ball", ["minecraft:water_bucket", "#forge:gelatin"])
-    .id("butchercraft:gelatin_to_slime_ball");
+    .id("createdelight:gelatin_to_slime_ball");
   e.recipes.create
     .mixing("minecraft:slime_ball", [Fluid.of("water", 250), "#forge:gelatin"])
-    .id("butchercraft:mixing/gelatin_to_slime_ball");
+    .id("createdelight:mixing/gelatin_to_slime_ball");
   e.recipes.create.cutting("8x minecraft:leather", "butchercraft:cow_hide")
-  .id("butchercraft:cutting/cow_hide")
+  .id("createdelight:cutting/cow_hide_create")
   e.recipes.create.cutting("6x minecraft:leather", "butchercraft:pig_hide")
-  .id("butchercraft:cutting/pig_hide")
+  .id("createdelight:cutting/pig_hide_create")
   e.recipes.create.cutting("6x minecraft:leather", "butchercraft:sheep_hide")
-  .id("butchercraft:cutting/sheep_hide")
+  .id("createdelight:cutting/sheep_hide_create")
   e.recipes.create.cutting("6x minecraft:leather", "butchercraft:goat_hide")
-  .id("butchercraft:cutting/goat_hide")
+  .id("createdelight:cutting/goat_hide_create")
   cutting(e, "butchercraft:cow_hide", [["minecraft:leather", 8]])
   cutting(e, "butchercraft:pig_hide", [["minecraft:leather", 6]])
   cutting(e, "butchercraft:sheep_hide", [["minecraft:leather", 6]])
@@ -235,11 +235,11 @@ ServerEvents.recipes((e) => {
   e.recipes.create.crushing(["4x minecraft:bone_meal",
     Item.of("minecraft:bone_meal", 4).withChance(0.25)], 
     [['butchercraft:cow_skull_head_item', 'butchercraft:sheep_skull_head_item', 'butchercraft:pig_skull_head_item', 'butchercraft:goat_skull_head_item']])
-    .id("butchercraft:crushing/large_skull_head")
+    .id("createdelight:crushing/large_skull_head")
     e.recipes.create.crushing(["3x minecraft:bone_meal",
       Item.of("minecraft:bone_meal", 2).withChance(0.25)], 
       [['butchercraft:chicken_skull_head_item', 'butchercraft:rabbit_skull_head_item']])
-      .id("butchercraft:crushing/small_skull_head")
+      .id("createdelight:crushing/small_skull_head")
   // 血肠混合料
   e.custom({
     type: "minecraft:crafting_shapeless",
@@ -276,7 +276,7 @@ ServerEvents.recipes((e) => {
       count: 8,
       item: "butchercraft:blood_sausage_mix",
     },
-  }).id("butchercraft:blood_sausage_mix");
+  }).id("createdelight:blood_sausage_mix");
 
   e.recipes.create
     .mixing("8x butchercraft:blood_sausage_mix", [
@@ -285,7 +285,7 @@ ServerEvents.recipes((e) => {
       "butchercraft:fat",
       "ratatouille:wheat_kernels",
     ])
-    .id("butchercraft:mixing/blood_sausage_mix");
+    .id("createdelight:mixing/blood_sausage_mix");
   // e.recipes.create.compacting(Fluid.of("ratatouille:mince_meat", 250), [
   //   "butchercraft:blood_sausage_mix",
   //   "#forge:salt",

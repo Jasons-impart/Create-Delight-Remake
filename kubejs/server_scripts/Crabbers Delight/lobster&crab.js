@@ -69,10 +69,10 @@ ServerEvents.recipes(e => {
             "farmersdelight:rice",
             "#forge:cooked_pork"
         ], "crabbersdelight:seafood_gumbo", 1.0, 200, "bowl"
-    ).id("farmersdelight:cooking/seafood_gumbo")
+    ).id("createdelight:cooking/seafood_gumbo")
     e.recipes.farmersdelight.cooking(
         "alexsmobs:lobster_tail",
         'alexsmobs:cooked_lobster_tail',
         1.0, 200
-    ).id("alexsmobs:cooked_lobster_tail")
+    ).id("createdelight:cooked_lobster_tail")
 })

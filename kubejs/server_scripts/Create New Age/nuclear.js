@@ -14,10 +14,10 @@ ServerEvents.recipes(e => {
     ])
     .loops(1)
     .transitionalItem(iner_1)
-    .id("create_new_age:reactor/reactor_casing")
+    .id("createdelight:reactor/reactor_casing")
 
     e.recipes.create.item_application("create_new_age:reactor_glass", ["create_new_age:reactor_casing", "#forge:glass"])
-    .id("create_new_age:item_application/reactor_glass")
+    .id("createdelight:item_application/reactor_glass")
     //钍再生减少水的消耗
     e.recipes.create.mixing("2x create_new_age:thorium", [
         Fluid.water(500),
@@ -25,16 +25,16 @@ ServerEvents.recipes(e => {
         "minecraft:clay",
         "create_new_age:thorium"
     ])
-    .id("create_new_age:thorium_multiplication")
+    .id("createdelight:thorium_multiplication")
     e.recipes.vintageimprovements.pressurizing("create_new_age:radioactive_thorium", [
         Fluid.of("createdelightcore:nuclear_waste", 1000),
         "create_new_age:thorium"
     ])
     .superheated()
-    .id("create_new_age:pressurizing/radioactive_thorium")
+    .id("createdelight:pressurizing/radioactive_thorium")
     e.recipes.vintageimprovements.vacuumizing("alexscaves:unrefined_waste", Fluid.of("createdelightcore:nuclear_waste", 500))
     .superheated()
-    .id("alexscaves:vacuumizing/unrefined_waste")
+    .id("createdelight:vacuumizing/unrefined_waste")
 })
 
 ServerEvents.tags("minecraft:block", e => {

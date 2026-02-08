@@ -16,7 +16,7 @@ function make_growing_cluster(e, transitionItems, fluid, amount) {
       ])
       .loops(4)
       .transitionalItem(lastItem)
-      .id(`${item.split(":")[0]}:compat/filling/${item.split(":")[1]}`);
+      .id(`createdelight:filling/${item.split(":")[1]}`);
   }
 }
 
@@ -1007,7 +1007,7 @@ ServerEvents.recipes((event) => {
       ["4x ae2:certus_quartz_dust", Item.of("ae2:certus_quartz_dust", 4).withChance(0.25)],
       "ae2:quartz_cluster"
     )
-    .id("create:compat/crushing/certus_quartz_dust");
+    .id("createdelight:compat/crushing/certus_quartz_dust");
 
   create
     .mixing("16x ae2:certus_quartz_crystal", [
@@ -1015,7 +1015,7 @@ ServerEvents.recipes((event) => {
       "8x ae2:certus_quartz_dust",
       "8x ae2:charged_certus_quartz_crystal",
     ])
-    .id("create:compat/mixing/certus_quartz_crystal");
+    .id("createdelight:compat/mixing/certus_quartz_crystal");
   create
     .mixing("16x ae2:fluix_crystal", [
       Fluid.water(500),
@@ -1023,7 +1023,7 @@ ServerEvents.recipes((event) => {
       "8x ae2:charged_certus_quartz_crystal",
       "8x minecraft:quartz"
     ])
-    .id("create:mixing/compat/ae2/fluix_crystal");
+    .id("createdelight:mixing/compat/ae2/fluix_crystal");
   // 使用赛特斯石英直接产磨制玫瑰石英
   vintageimprovements
     .pressurizing(
@@ -1032,7 +1032,7 @@ ServerEvents.recipes((event) => {
       "ae2:certus_quartz_crystal"
     ]
     ).secondaryFluidInput(0)
-    .id("vintageimprovements:pressurizing/polished_rose_quartz")
+    .id("createdelight:pressurizing/polished_rose_quartz")
   // 荧石再生
   vintageimprovements
     .pressurizing(

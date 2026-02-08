@@ -37,20 +37,20 @@ ServerEvents.recipes(e => {
         [
             "neapolitan:strawberries",
             Fluid.of("create:chocolate", 250)
-        ]).id("neapolitan:filling/chocolate_strawberries")
+        ]).id("createdelight:filling/chocolate_strawberries")
     e.recipes.create.filling(
         "neapolitan:vanilla_chocolate_fingers",
         [
             "neapolitan:dried_vanilla_pods",
             Fluid.of("create:chocolate", 250)
-        ]).id("neapolitan:filling/vanilla_chocolate_fingers")
+        ]).id("createdelight:filling/vanilla_chocolate_fingers")
     e.recipes.create.filling(
         "neapolitan:chocolate_spider_eye",
         [
             "minecraft:spider_eye",
             Fluid.of("create:chocolate", 125)
-        ]).id("neapolitan:filling/chocolate_spider_eye")
-    e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("neapolitan:haunting/white_strawberries")
+        ]).id("createdelight:filling/chocolate_spider_eye")
+    e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("createdelight:haunting/white_strawberries")
     
     
     cutting_2(e, "neapolitan:banana_bunch", [
@@ -68,7 +68,7 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/carrot",
         "#forge:mushrooms"
     ], "neapolitan:adzuki_stew", 10.0, 200, "minecraft:bowl")
-    .id("neapolitan:cooking/adzuki_stew")
+    .id("createdelight:cooking/adzuki_stew")
 
     e.recipes.farmersdelight.cooking([
         "createdelight:adzuki_beans_seed",
@@ -76,7 +76,7 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/carrot",
         "#forge:pumpkins"
     ], "neapolitan:adzuki_curry", 10.0, 200, "minecraft:bowl")
-    .id("neapolitan:cooking/adzuki_curry")
+    .id("createdelight:cooking/adzuki_curry")
     
     e.recipes.create.deploying([
         "neapolitan:banana_bundle", 
@@ -86,5 +86,5 @@ ServerEvents.recipes(e => {
             "neapolitan:chimpanzee_head"
         ])
         .keepHeldItem()
-        .id("neapolitan:deploying/banana")
+        .id("createdelight:deploying/banana")
 })

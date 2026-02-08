@@ -113,7 +113,7 @@ ServerEvents.recipes((event) => {
     create.deploying(iner_4, [iner_4, "create:factory_gauge"]),
     create.deploying(iner_4, [iner_4, "ae2:annihilation_core"]),
     create.deploying(iner_4, [iner_4, "ae2:formation_core"]),
-    create.deploying(iner_4, [iner_4, "#forge:plates/titanium"]),
+    create.deploying(iner_4, [iner_4, "#forge:plates/obdurium"]),
   ])
     .loops(1)
     .transitionalItem(iner_4)
@@ -187,7 +187,7 @@ ServerEvents.recipes((event) => {
     B: "create:iron_sheet",
     C: "ae2:engineering_processor",
     D: "#forge:gems/fluix",
-  }).id("ae2:shaped/me_p2p_tunnel")
+  }).id("createdelight:shaped/me_p2p_tunnel")
 
   // 空间IO端口
   create.item_application(
@@ -203,7 +203,7 @@ ServerEvents.recipes((event) => {
     [
       "createdelight:iron_casing",
       "minecraft:copper_ingot"
-    ]).id("ae2:item_application/charger")
+    ]).id("createdelight:item_application/charger")
   event.replaceInput({ id: "ae2:network/blocks/crystal_processing_charger" }, "#forge:ingots/iron", "#forge:plates/iron")
 
   // ME控制器
@@ -226,7 +226,7 @@ ServerEvents.recipes((event) => {
     [
       "createdelight:iron_casing",
       "trashcans:ultimate_trash_can",
-    ]).id("ae2:item_application/condenser")
+    ]).id("createdelight:item_application/condenser")
 
 
 
@@ -377,7 +377,7 @@ ServerEvents.recipes((event) => {
     "ae2:energy_cell",
     Item.of('ae2:energy_cell', { internalCurrentPower: 200000 }).weakNBT(),
     400000
-  ).id("create:energising/energy_cell")
+  ).id("createdelight:energising/energy_cell")
 
   // 致密能源元件
   create
@@ -396,7 +396,7 @@ ServerEvents.recipes((event) => {
     "ae2:dense_energy_cell",
     Item.of('ae2:dense_energy_cell', { internalCurrentPower: 1600000 }).weakNBT(),
     3200000
-  ).id("create:energising/dense_energy_cell")
+  ).id("createdelight:energising/dense_energy_cell")
 
   // 超密能源元件
   create
@@ -416,7 +416,7 @@ ServerEvents.recipes((event) => {
     "megacells:mega_energy_cell",
     Item.of('megacells:mega_energy_cell', { internalCurrentPower: 12800000 }).weakNBT(),
     25600000
-  ).id("create:energising/mega_energy_cell")
+  ).id("createdelight:energising/mega_energy_cell")
 
   // 水晶修复器
   create
@@ -452,7 +452,7 @@ ServerEvents.recipes((event) => {
   create
     .item_application("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"])
     .id("createdelight:sky_stone_tank");
-  kubejs.shapeless("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"]).id("ae2:misc/tank_sky_stone");
+  kubejs.shapeless("ae2:sky_stone_tank", ["ae2:quartz_glass", "ae2:sky_stone_block"]).id("createdelight:misc/tank_sky_stone");
 
   // 原料缓存器
   create

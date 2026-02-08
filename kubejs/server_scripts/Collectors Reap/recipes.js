@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
             "createdelight:empty_riceball",
             "createdelight:empty_riceball"
         ]
-    ).id("collectorsreap:food/big_rice_ball")
+    ).id("createdelight:food/big_rice_ball")
     //蛤蜊肉
     farmersdelight.cutting(
         'collectorsreap:clam',
@@ -39,13 +39,13 @@ ServerEvents.recipes(e => {
             'collectorsreap:clam_meat',
             Item.of("collectorsreap:lunar_pearl").withChance(0.1)
         ]
-    ).id("collectorsreap:cutting/clam_1")
+    ).id("createdelight:cutting/clam_1")
     e.custom({
         type: "farmersdelight:cutting",
         ingredients: [{ item: "collectorsreap:clam" }],
         result: [{ item: "collectorsreap:clam_meat" }, { item: "collectorsreap:lunar_pearl", chance: 0.1 }],
         tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("collectorsreap:cutting/clam_2")
+    }).id("createdelight:cutting/clam_2")
     //蜜饯
     create.filling(
         'collectorsreap:candied_lime',
@@ -53,13 +53,13 @@ ServerEvents.recipes(e => {
             Fluid.of("create:honey", 250),
             'collectorsreap:lime_slice'
         ]
-    ).id("collectorsreap:filling/candied_lime")
+    ).id("createdelight:filling/candied_lime")
     farmersdelight.cooking(
         [
             "minecraft:honey_bottle",
             "collectorsreap:lime_slice"
         ], "collectorsreap:candied_lime", 1.0, 200
-    ).id("collectorsreap:food/candied_lime")
+    ).id("createdelight:food/candied_lime")
     //派
     farmersdelight.cooking(
         [
@@ -70,7 +70,7 @@ ServerEvents.recipes(e => {
             "farmersdelight:pie_crust",
             "#forge:eggs"
         ], "collectorsreap:lime_pie", 1.0, 200
-    ).id("collectorsreap:food/lime_pie")
+    ).id("createdelight:food/lime_pie")
     farmersdelight.cooking(
         [
             "collectorsreap:portobello",
@@ -80,7 +80,7 @@ ServerEvents.recipes(e => {
             "farmersdelight:pie_crust",
             "#forge:eggs"
         ], "collectorsreap:portobello_quiche", 1.0, 200
-    ).id("collectorsreap:food/portobello_quiche")
+    ).id("createdelight:food/portobello_quiche")
     //软糖
     let gummies = [
         ['chocolate', "create:bar_of_chocolate"],
@@ -110,7 +110,7 @@ ServerEvents.recipes(e => {
                 FluidIngredients("forge:honey", 1000),
                 gummy[1]
             ]
-        ).id("collectorsreap:integration/create/mixing/gummy/" + gummy[0])
+        ).id("createdelight:integration/create/mixing/gummy/" + gummy[0])
         create.mixing(
             "8x collectorsreap:" + gummy[0] + "_gummy",
             [
@@ -118,7 +118,7 @@ ServerEvents.recipes(e => {
                 Fluid.of("createdelight:base_syrup", 1000),
                 gummy[1]
             ]
-        ).id("collectorsreap:mixing/" + gummy[0] + "_gummy")
+        ).id("createdelight:mixing/" + gummy[0] + "_gummy")
         farmersdelight.cooking(
             [
                 gummy[1],
@@ -127,7 +127,7 @@ ServerEvents.recipes(e => {
             ], 
             "collectorsreap:" + gummy[0] + "_gummy",
             1.0, 200
-        ).id("collectorsreap:gummy/" + gummy[0])
+        ).id("createdelight:gummy/" + gummy[0])
     })
 
     //果饮
@@ -138,7 +138,7 @@ ServerEvents.recipes(e => {
             "minecraft:sugar",
             "minecraft:glass_bottle"
         ]
-    ).id("collectorsreap:food/limeade")
+    ).id("createdelight:food/limeade")
     create.mixing(
         Fluid.of("create_central_kitchen:limeade", 500),
         [
@@ -162,7 +162,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ]
     )
-        .id("collectorsreap:filling/limeade")
+        .id("createdelight:filling/limeade")
     brewing(e, "minecraft:water",
         [
             "#forge:fruits/lime",
@@ -177,7 +177,7 @@ ServerEvents.recipes(e => {
             "#forge:berries",
         ]
     )
-        .id("collectorsreap:food/berry_limeade_from_limeade"),
+        .id("createdelight:food/berry_limeade_from_limeade"),
     kubejs.shapeless(
         'collectorsreap:berry_limeade',
         [
@@ -187,7 +187,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ] 
     )
-        .id("collectorsreap:food/berry_limeade")
+        .id("createdelight:food/berry_limeade")
     create.mixing(
         Fluid.of("create_central_kitchen:berry_limeade", 500),
         [
@@ -220,7 +220,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ]
     )
-        .id("collectorsreap:filling/berry_limeade")
+        .id("createdelight:filling/berry_limeade")
     brewing(e, "create_central_kitchen:limeade", 
         [
             '#forge:berries',
@@ -235,7 +235,7 @@ ServerEvents.recipes(e => {
             "#forge:fruits/pomegranate"
         ] 
     )
-        .id("collectorsreap:food/pink_limeade_from_limeade")
+        .id("createdelight:food/pink_limeade_from_limeade")
     kubejs.shapeless(
         'collectorsreap:pink_limeade',
         [
@@ -245,7 +245,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ] 
     )
-        .id("collectorsreap:food/pink_limeade")
+        .id("createdelight:food/pink_limeade")
     create.mixing(
         Fluid.of("create_central_kitchen:pink_limeade", 500),
         [
@@ -278,7 +278,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ]
     )
-        .id("collectorsreap:filling/pink_limeade")
+        .id("createdelight:filling/pink_limeade")
     brewing(e, "create_central_kitchen:limeade", 
         [
             '#forge:fruits/pomegranate',
@@ -293,7 +293,7 @@ ServerEvents.recipes(e => {
             "#neapolitan:mint_leaves"
         ] 
     )
-        .id("collectorsreap:food/mint_limeade_from_limeade")
+        .id("createdelight:food/mint_limeade_from_limeade")
     kubejs.shapeless(
         'collectorsreap:mint_limeade',
         [
@@ -303,7 +303,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ] 
     )
-        .id("collectorsreap:food/mint_limeade")
+        .id("createdelight:food/mint_limeade")
     create.mixing(
         Fluid.of("create_central_kitchen:mint_limeade", 500),
         [
@@ -336,7 +336,7 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ]
     )
-        .id("collectorsreap:filling/mint_limeade")
+        .id("createdelight:filling/mint_limeade")
     brewing(e, "create_central_kitchen:limeade",
         [
             "#neapolitan:mint_leaves",
@@ -352,5 +352,5 @@ ServerEvents.recipes(e => {
             "#festival_delicacies:onion"
         ], 'collectorsreap:potato_fritters',
         1.0, 200
-    ).id("collectorsreap:food/potato_fritters")
+    ).id("createdelight:food/potato_fritters")
 })

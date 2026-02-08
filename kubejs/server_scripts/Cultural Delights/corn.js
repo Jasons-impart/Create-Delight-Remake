@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "9x culturaldelights:corn_kernels",
         "corn_delight:corn_kernel_bag"
-    ).id("corn_delight:corn_kernels")
+    ).id("createdelight:corn_kernels")
     threshing(e,
         "culturaldelights:corn_cob",
         [
@@ -71,11 +71,11 @@ ServerEvents.recipes(e => {
             Item.of("corn_delight:tortilla_raw").withChance(0.5)
         ],
         "culturaldelights:corn_dough"
-    ).id("corn_delight:pressing/tortilla_raw")
+    ).id("createdelight:pressing/tortilla_raw")
     e.recipes.kubejs.shapeless(
         "corn_delight:tortilla_raw",
         "culturaldelights:corn_dough"
-    ).id("corn_delight:crafting/tortilla_raw")
+    ).id("createdelight:crafting/tortilla_raw")
     e.recipes.farmersdelight.cooking(
         [
             "corn_delight:cornbread",
@@ -83,5 +83,5 @@ ServerEvents.recipes(e => {
             "#forge:sausage",
             "#forge:vegetables/onion"
         ], "corn_delight:cornbread_stuffing", 1.0, 200, "minecraft:bowl"
-    ).id("corn_delight:cooking/cornbread_stuffing")
+    ).id("createdelight:cooking/cornbread_stuffing")
 })

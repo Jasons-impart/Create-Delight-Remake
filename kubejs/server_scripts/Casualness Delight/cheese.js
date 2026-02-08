@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
             "#forge:cheese",
             "#forge:milk"
         ], "2x casualness_delight:phantom_puff", 1.0, 200
-    ).id("casualness_delight:cooking/phantom_puff")
+    ).id("createdelight:cooking/phantom_puff")
     // 奶酪相关
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
         "farmersdelight:pie_crust",
         "#forge:cheese",
     ], "farmersdelight:sweet_berry_cheesecake", 1.0, 200)
-        .id("farmersdelight:sweet_berry_cheesecake")
+        .id("createdelight:sweet_berry_cheesecake")
 })
 
 BlockEvents.rightClicked(e => {

@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         "vinery:apple_bag"
     ])
     e.recipes.kubejs.shapeless("9x nethervinery:warped_grape", "nethervinery:warped_grape_crate")
-    .id("nethervinery:warped_grape_from_crate")
+    .id("createdelight:warped_grape_from_crate")
     e.recipes.kubejs.shapeless("9x nethervinery:crimson_grape", "nethervinery:crimson_grape_crate")
-    .id("nethervinery:crimson_grape_from_crate")
+    .id("createdelight:crimson_grape_from_crate")
 })

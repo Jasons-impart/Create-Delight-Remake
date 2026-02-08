@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
         B: "create:copper_sheet",
         C: "#forge:spring/below_500",
         D: "minecraft:dried_kelp",
-    }).id("fluid:copper_tap")
+    }).id("createdelight:copper_tap")
     kubejs.shaped("fluid:pipette", [
         "AAB",
         "AC ",
@@ -26,5 +26,5 @@ ServerEvents.recipes(e => {
         C: "#forge:spring/between_500_2_1000",
         D: "create_sa:hydraulic_engine",
         E: "create:brass_casing"
-    }).id("fluid:mechanical_pipette")
+    }).id("createdelight:mechanical_pipette")
 })

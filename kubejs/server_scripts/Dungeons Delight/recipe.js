@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
     const {create, ratatouille} = e.recipes
     create.filling("dungeonsdelight:soft_serve_sniffer_egg",
          ["trailandtales_delight:cooked_sniffer_egg_block", Fluid.of("cosmopolitan:adzuki_ice_cream", 1000)])
-         .id("dungeonsdelight:filling/soft_serve_sniffer_egg")
+         .id("createdelight:filling/soft_serve_sniffer_egg")
     cutting_2(e, "dungeonsdelight:ghast_calamari", [["mynethersdelight:ghasta"]])
     e.recipes.ratatouille.threshing(
         [
@@ -18,7 +18,7 @@ ServerEvents.recipes(e => {
             "2x farmersdelight:straw"
         ],
         "dungeonsdelight:gunk", 400
-    ).id("dungeonsdelight:threshing/gunk")
+    ).id("createdelight:threshing/gunk")
     ratatouille.squeezing(
         "dungeonsdelight:snifferwurst",
         [
@@ -26,5 +26,5 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelightcore:slime", 250),
             'dungeonsdelight:sniffer_shank'
         ]
-    ).id("dungeonsdelight:monster_cooking/misc/snifferwurst")
+    ).id("createdelight:monster_cooking/misc/snifferwurst")
 })

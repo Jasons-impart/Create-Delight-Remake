@@ -2,7 +2,7 @@ ServerEvents.recipes(e => {
     const { create, farmersdelight, youkaishomecoming, kubejs, ratatouille } = e.recipes
     create.compacting('supplementaries:ash', 'create:limestone')
         .heated()
-        .id("create:compacting/ash")
+        .id("createdelight:compacting/ash")
     remove_recipes_output(e, [
         'youkaishomecoming:tofu',
         'youkaishomecoming:tea_leaf_bag',
@@ -83,7 +83,7 @@ ServerEvents.recipes(e => {
     e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
         .processingTime(200)
-        .id(`ratatouille:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
+        .id(`createdelight:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
     })
 
     //饭团
@@ -94,7 +94,7 @@ ServerEvents.recipes(e => {
             "2x createdelight:empty_riceball",
             "#forge:vegetables",
         ]
-    ).id("youkaishomecoming:onigili")
+    ).id("createdelight:onigili")
     farmersdelight.cooking(
         [
             "createdelight:empty_riceball",
@@ -102,7 +102,7 @@ ServerEvents.recipes(e => {
             '#forge:meat/processed/raw/pork',
         ], '2x youkaishomecoming:pork_rice_ball',
         1.0, 200
-    ).id("youkaishomecoming:pork_rice_ball")
+    ).id("createdelight:pork_rice_ball")
     //豆浆
     create.compacting(
         Fluid.of("createdelight:soya_milk", 250),
@@ -114,15 +114,15 @@ ServerEvents.recipes(e => {
     youkaishomecoming.drying_rack(
         "trailandtales_delight:dried_cherry_petal",
         "trailandtales_delight:cherry_petal"
-    ).id("youkaishomecoming:dried_cherry_petal_drying")
+    ).id("createdelight:dried_cherry_petal_drying")
     ratatouille.baking(
         "trailandtales_delight:dried_cherry_petal",
         "trailandtales_delight:cherry_petal"
     )
     .processingTime(200)
-    .id("youkaishomecoming:baking/dried_cherry_petal")
+    .id("createdelight:baking/dried_cherry_petal")
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
-        .id("youkaishomecoming:pressing/clay_saucer")
+        .id("createdelight:pressing/clay_saucer")
 
     create.sequenced_assembly("youkaishomecoming:red_velvet_cake", "ratatouille:cake_base", 
         [
@@ -132,7 +132,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem("ratatouille:cake_base")
-        .id("youkaishomecoming:sequenced_assembly/red_velvet_cake")
+        .id("createdelight:sequenced_assembly/red_velvet_cake")
     threshing(e, 'youkaishomecoming:pods', ['youkaishomecoming:soybean', Item.of('youkaishomecoming:soybean').withChance(0.5)], 200)
     farmersdelight.cooking(
         [
@@ -141,13 +141,13 @@ ServerEvents.recipes(e => {
             '#forge:salt'],
         'youkaishomecoming:tofu',
         1.0, 200)
-        .id('youkaishomecoming:tofu')
+        .id('createdelight:tofu')
     create.mixing('youkaishomecoming:tofu', 
         [
             Fluid.of("createdelight:soya_milk", 250),
             Fluid.of("bakeries:salt_water", 10)
         ]
-    ).id('youkaishomecoming:compacting/tofu')
+    ).id('createdelight:compacting/tofu')
     cutting_2(e, "youkaishomecoming:mandrake_root", [["youkaishomecoming:stripped_mandrake_root", 1]])
     cutting_2(e, "youkaishomecoming:raw_lamprey", [["youkaishomecoming:raw_lamprey_fillet", 1]])
     cutting_2(e, "youkaishomecoming:red_velvet_cake", [["youkaishomecoming:red_velvet_cake_slice", 7]])
@@ -218,7 +218,7 @@ ServerEvents.recipes(e => {
         Fluid.of("youkaishomecoming:mio", 1000)
     ], 1800)
     create.milling("youkaishomecoming:matcha", "#forge:tea_leaves/green")
-        .id("youkaishomecoming:milling/matcha")
+        .id("createdelight:milling/matcha")
 
     fermenting(e,
         Fluid.of("youkaishomecoming:mio", 1000),
@@ -247,7 +247,7 @@ ServerEvents.recipes(e => {
             "youkaishomecoming:espresso",
             Fluid.water(250)
         ]
-    ).id("youkaishomecoming:filling/americano")
+    ).id("createdelight:filling/americano")
 
     create.deploying(
         "youkaishomecoming:ristretto",
@@ -255,14 +255,14 @@ ServerEvents.recipes(e => {
             "youkaishomecoming:espresso",
             "createcafe:coffee_grounds"
         ]
-    ).id("youkaishomecoming:deploying/ristretto")
+    ).id("createdelight:deploying/ristretto")
     create.filling(
         "youkaishomecoming:latte",
         [
             "youkaishomecoming:espresso",
             FluidIngredients("forge:milk", 250)
         ]
-    ).id("youkaishomecoming:filling/latte")
+    ).id("createdelight:filling/latte")
 
     create.filling(
         "youkaishomecoming:con_panna",
@@ -270,28 +270,28 @@ ServerEvents.recipes(e => {
             "youkaishomecoming:ristretto",
             Fluid.of("cosmopolitan:cream", 250)
         ]
-    ).id("youkaishomecoming:filling/con_panna")
+    ).id("createdelight:filling/con_panna")
     create.filling(
         "youkaishomecoming:macchiato",
         [
             "youkaishomecoming:espresso",
             Fluid.of("cosmopolitan:cream", 250)
         ]
-    ).id("youkaishomecoming:filling/macchiato")
+    ).id("createdelight:filling/macchiato")
     create.filling(
         "youkaishomecoming:cappuccino",
         [
             "youkaishomecoming:latte",
             Fluid.of("cosmopolitan:cream", 250)
         ]
-    ).id("youkaishomecoming:filling/cappuccino")
+    ).id("createdelight:filling/cappuccino")
     create.deploying(
         "youkaishomecoming:mocha",
         [
             "youkaishomecoming:latte",
             "ratatouille:cocoa_powder"
         ]
-    ).id("youkaishomecoming:filling/mocha")
+    ).id("createdelight:filling/mocha")
 
     let coffee_list = [
         'espresso',
@@ -305,9 +305,9 @@ ServerEvents.recipes(e => {
         'mocha']
     coffee_list.forEach(coffee => {
         create.filling(`youkaishomecoming:${coffee}`, ["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)])
-            .id(`youkaishomecoming:filling/${coffee}_from_fluid`)
+            .id(`createdelight:filling/${coffee}_from_fluid`)
         create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${coffee}_fluid`, 250)], `youkaishomecoming:${coffee}`)
-            .id(`youkaishomecoming:emptying/${coffee}_fluid_from_bottle`)
+            .id(`createdelight:emptying/${coffee}_fluid_from_bottle`)
     })
     let tea_list = [
         "scarlet_tea",
@@ -322,9 +322,9 @@ ServerEvents.recipes(e => {
     ]
     tea_list.forEach(tea => {
         create.filling(`youkaishomecoming:${tea}`, ["minecraft:glass_bottle", Fluid.of(`createdelight:${tea}`, 250)])
-            .id(`youkaishomecoming:filling/${tea}`)
+            .id(`createdelight:filling/${tea}`)
         create.emptying(["minecraft:glass_bottle", Fluid.of(`createdelight:${tea}`, 250)], `youkaishomecoming:${tea}`)
-            .id(`youkaishomecoming:emptying/${tea}`) 
+            .id(`createdelight:emptying/${tea}`) 
     })
 
     pouring(e, Item.of('minecraft:potion', '{Potion:"minecraft:water"}').strongNBT(), "minecraft:water")
@@ -364,7 +364,7 @@ ServerEvents.recipes(e => {
             Fluid.of("butchercraft:blood_fluid", 1000),
             "farmersrespite:black_tea_leaves"
         ]
-    ).id("youkaishomecoming:mixing/scarlet_tea")
+    ).id("createdelight:mixing/scarlet_tea")
     create.mixing(
         Fluid.of("createdelight:lemon_black_tea", 1000),
         [
@@ -372,7 +372,7 @@ ServerEvents.recipes(e => {
             "fruitsdelight:lemon_slice",
             "minecraft:sugar"
         ]
-    ).id("youkaishomecoming:mixing/lemon_black_tea")
+    ).id("createdelight:mixing/lemon_black_tea")
     // e.custom({
     //     type: "create:mixing",
     //     heatRequirement: "heated",
@@ -396,7 +396,7 @@ ServerEvents.recipes(e => {
     //             fluid: "createdelight:tea_mocha"
     //         }
     //     ]
-    // }).id("youkaishomecoming:mixing/tea_mocha")
+    // }).id("createdelight:mixing/tea_mocha")
     create.mixing(
         Fluid.of("createdelight:saidi_tea", 1000),
         [
@@ -404,14 +404,14 @@ ServerEvents.recipes(e => {
             "minecraft:sugar",
             "minecraft:sugar"
         ]
-    ).id("youkaishomecoming:mixing/saidi_tea")
+    ).id("createdelight:mixing/saidi_tea")
     create.mixing(
         Fluid.of("createdelight:cornflower_tea", 500),
         [
             Fluid.of("minecraft:water", 500),
             "minecraft:cornflower"
         ]
-    ).id("youkaishomecoming:mixing/cornflower_tea")
+    ).id("createdelight:mixing/cornflower_tea")
     create.mixing(
         Fluid.of("createdelight:sakura_honey_tea", 500),
         [
@@ -419,42 +419,42 @@ ServerEvents.recipes(e => {
             Fluid.of("create:honey", 250),
             "trailandtales_delight:dried_cherry_petal"
         ] 
-    ).id("youkaishomecoming:mixing/sakura_honey_tea")
+    ).id("createdelight:mixing/sakura_honey_tea")
     create.mixing(
         Fluid.of("createdelight:genmai_tea", 500),
         [
             Fluid.of("farmersrespite:green_tea", 500),
             "#forge:crops/rice",
         ] 
-    ).id("youkaishomecoming:mixing/genmai_tea")
+    ).id("createdelight:mixing/genmai_tea")
     create.mixing(
         Fluid.of("createdelight:green_water", 500),
         [
             Fluid.of("minecraft:water", 500),
             "#forge:salad_ingredients/cabbage",
         ]
-    ).id("youkaishomecoming:mixing/green_water")
+    ).id("createdelight:mixing/green_water")
     create.mixing(
         Fluid.of("createdelight:white_tea", 500),
         [
             Fluid.of("minecraft:water", 500),
             "youkaishomecoming:white_tea_leaves",
         ]
-    ).id("youkaishomecoming:mixing/white_tea")
+    ).id("createdelight:mixing/white_tea")
     create.mixing(
         Fluid.of("createdelight:espresso_fluid", 1000),
         [
             Fluid.of("createdelight:americano_fluid", 1000),
             "createcafe:coffee_grounds"
         ]
-    ).heated().id("youkaishomecoming:mixing/espresso_fluid")
+    ).heated().id("createdelight:mixing/espresso_fluid")
     create.crushing(
         [
             '3x youkaishomecoming:ice_cube',
             Item.of('3x youkaishomecoming:ice_cube').withChance(0.25)
         ],
         "minecraft:ice"
-    ).id("create:crushing/compat/neapolitan/ice")
+    ).id("createdelight:crushing/compat/neapolitan/ice")
     create.compacting(
         'youkaishomecoming:tamagoyaki',
         [
@@ -462,17 +462,17 @@ ServerEvents.recipes(e => {
             FluidIngredients("forge:milk", 250),
             "minecraft:sugar"
         ]
-    ).heated().id("youkaishomecoming:compacting/tamagoyaki")
+    ).heated().id("createdelight:compacting/tamagoyaki")
     farmersdelight.cutting(
         "youkaishomecoming:salmon_futomaki",
         "#forge:tools/knives",
         "3x youkaishomecoming:salmon_futomaki_slice"
-    ).id("youkaishomecoming:salmon_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:california_roll', "#forge:tools/knives", "3x youkaishomecoming:california_roll_slice").id("youkaishomecoming:california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:volcano_roll', "#forge:tools/knives", "3x youkaishomecoming:volcano_roll_slice").id("youkaishomecoming:volcano_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:roe_california_roll', "#forge:tools/knives", "3x youkaishomecoming:roe_california_roll_slice").id("youkaishomecoming:roe_california_roll_cutting")
-    farmersdelight.cutting('youkaishomecoming:salmon_lover_roll', "#forge:tools/knives", "3x youkaishomecoming:salmon_lover_roll_slice").id("youkaishomecoming:salmon_lover_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("youkaishomecoming:rainbow_roll_cutting")
-    farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("youkaishomecoming:egg_futomaki_cutting")
-    farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("youkaishomecoming:rainbow_futomaki_cutting")
+    ).id("createdelight:salmon_futomaki_cutting")
+    farmersdelight.cutting('youkaishomecoming:california_roll', "#forge:tools/knives", "3x youkaishomecoming:california_roll_slice").id("createdelight:california_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:volcano_roll', "#forge:tools/knives", "3x youkaishomecoming:volcano_roll_slice").id("createdelight:volcano_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:roe_california_roll', "#forge:tools/knives", "3x youkaishomecoming:roe_california_roll_slice").id("createdelight:roe_california_roll_cutting")
+    farmersdelight.cutting('youkaishomecoming:salmon_lover_roll', "#forge:tools/knives", "3x youkaishomecoming:salmon_lover_roll_slice").id("createdelight:salmon_lover_roll_cutting")
+    farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("createdelight:rainbow_roll_cutting")
+    farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("createdelight:egg_futomaki_cutting")
+    farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("createdelight:rainbow_futomaki_cutting")
 })

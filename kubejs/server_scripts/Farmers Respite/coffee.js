@@ -22,44 +22,44 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("createcafe:mixing/coffee/coffee_mixing")
+        .id("createdelight:mixing/coffee/coffee_mixing")
     // 袋装咖啡豆
     e.recipes.minecraft.crafting_shapeless(
         "farmersrespite:coffee_beans_sack",
         ["9x createcafe:roasted_coffee_beans"]
     )
-        .id("farmersrespite:coffee_beans_sack")
+        .id("createdelight:coffee_beans_sack")
     e.recipes.minecraft.crafting_shapeless(
         "9x createcafe:roasted_coffee_beans",
         ["farmersrespite:coffee_beans_sack"]
     )
-        .id("farmersrespite:coffee_beans")
+        .id("createdelight:coffee_beans")
     // 咖啡豆粉碎
     e.recipes.create.milling(
         [
             "createcafe:coffee_grounds",
             Item.of("2x createcafe:coffee_grounds").withChance(0.25)
         ], "farmersrespite:coffee_beans"
-    ).id("farmersrespite:milling/coffee_beans")
+    ).id("createdelight:milling/coffee_grounds")
     e.recipes.create.filling(
         "createcafe:iced_coffee",
         [
             "createcafe:iced_coffee_cup_ice",
             Fluid.of("createdelight:americano_fluid", 250)
         ]
-    ).id("createcafe:filling/coffee/iced_coffee_filling")
+    ).id("createdelight:filling/coffee/iced_coffee_filling")
     //焙烧咖啡豆
     blast_and_smelting(e, 'createcafe:coffee_beans', 'createcafe:roasted_coffee_beans', 0.7, 100)
     e.recipes.ratatouille.baking(
         "createcafe:roasted_coffee_beans",
         "createcafe:coffee_beans",
         200
-    ).id("createcafe:baking/roasted_coffee_beans")
+    ).id("createdelight:baking/roasted_coffee_beans")
     e.recipes.create.milling([
         "createcafe:coffee_beans",
         Item.of("createcafe:coffee_beans").withChance(0.5),
         Item.of("createcafe:coffee_beans").withChance(0.25)
-    ], 'createcafe:coffee_fruit').id("createcafe:milling/coffee_beans")
+    ], 'createcafe:coffee_fruit').id("createdelight:milling/coffee_beans")
     cutting(e, "createcafe:coffee_fruit", [
         ["createcafe:coffee_beans"],
         ["createcafe:coffee_beans", 1, 0.5],

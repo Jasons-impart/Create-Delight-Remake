@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
       "#forge:salad_ingredients",
       'bakeries:sliced_toast',
     ]
-  ).id("luncheonmeatsdelight:cooking/luncheon_meat_sandwich")
+  ).id("createdelight:cooking/luncheon_meat_sandwich")
   create.cutting(
     '2x bakeries:sliced_toast',
     'luncheonmeatsdelight:small_toast'
@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
       "createdelight:empty_riceball",
       "luncheonmeatsdelight:luncheon_meat"
     ]
-  ).id("luncheonmeatsdelight:luncheon_meat_rice_ball")
+  ).id("createdelight:luncheon_meat_rice_ball")
 })
 
 BlockEvents.rightClicked("luncheonmeatsdelight:small_toast", e => {

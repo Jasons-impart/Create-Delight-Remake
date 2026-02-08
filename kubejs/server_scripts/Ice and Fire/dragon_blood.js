@@ -26,14 +26,14 @@ ServerEvents.recipes(e => {
             'iceandfire:dragonbone_sword',
             Fluid.of("createdelight:fire_dragon_blood", 250)
         ]
-    ).id("iceandfire:dragonbone_sword_fire")
+    ).id("createdelight:dragonbone_sword_fire")
     e.recipes.create.filling(
         'iceandfire:fire_dragon_blood',
         [
             'minecraft:glass_bottle',
             Fluid.of("createdelight:fire_dragon_blood", 250)
         ]
-    ).id("iceandfire:fire_dragon_blood")
+    ).id("createdelight:fire_dragon_blood")
     // 冰龙
     e.recipes.create.emptying([
         Fluid.of("createdelight:fire_dragon_blood", 250),
@@ -54,14 +54,14 @@ ServerEvents.recipes(e => {
             'iceandfire:dragonbone_sword',
             Fluid.of("createdelight:ice_dragon_blood", 250)
         ]
-    ).id("iceandfire:dragonbone_sword_ice")
+    ).id("createdelight:dragonbone_sword_ice")
     e.recipes.create.filling(
         'iceandfire:ice_dragon_blood',
         [
             'minecraft:glass_bottle',
             Fluid.of("createdelight:ice_dragon_blood", 250)
         ]
-    ).id("iceandfire:ice_dragon_blood")
+    ).id("createdelight:ice_dragon_blood")
     // 电龙
     e.recipes.create.emptying([
         Fluid.of("createdelight:ice_dragon_blood", 250),
@@ -87,14 +87,14 @@ ServerEvents.recipes(e => {
             'iceandfire:dragonbone_sword',
             Fluid.of("createdelight:lightning_dragon_blood", 250)
         ]
-    ).id("iceandfire:dragonbone_sword_lightning")
+    ).id("createdelight:dragonbone_sword_lightning")
     e.recipes.create.filling(
         'iceandfire:lightning_dragon_blood',
         [
             'minecraft:glass_bottle',
             Fluid.of("createdelight:lightning_dragon_blood", 250)
         ]
-    ).id("iceandfire:lightning_dragon_blood")
+    ).id("createdelight:lightning_dragon_blood")
     e.recipes.create.mixing(Fluid.of("createdelight:fire_dragon_blood", 500), [
         "iceandfire:fire_lily", 
         Fluid.of("createdelightcore:nuclear_waste", 100), 

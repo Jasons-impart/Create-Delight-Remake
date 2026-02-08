@@ -56,7 +56,7 @@ ServerEvents.recipes(e => {
       "youkaishomecoming:tamagoyaki_slice",
       "youkaishomecoming:imitation_crab"
     ]
-  ).id("youkaishomecoming:california_roll")
+  ).id("createdelight:california_roll")
   SushiTable.addBulk("mayonnaise", "sauce/mayonnaise", "create_bic_bit:mayonnaise_bottle", sauces)
   youkaishomecoming.cuisine_ordered(
     '2x youkaishomecoming:tobiko_gunkan',
@@ -64,7 +64,7 @@ ServerEvents.recipes(e => {
     [
       "#forge:roe"
     ]
-  ).id("youkaishomecoming:tobiko_gunkan")
+  ).id("createdelight:tobiko_gunkan")
   SushiTable.addMappingFromIngredient(CAL_COVER, "roe", "#forge:roe")
   SushiTable.addMappingFromIngredient(GUNKAN_TOP, "roe", "#forge:roe")
   youkaishomecoming.cuisine_ordered(
@@ -73,7 +73,7 @@ ServerEvents.recipes(e => {
     [
       "#forge:pufferfish",
     ]
-  ).id("youkaishomecoming:pufferfish_roll")
+  ).id("createdelight:pufferfish_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "pufferfish", "#forge:pufferfish")
   youkaishomecoming.cuisine_ordered(
     '2x createdelight:fugu_roll',
@@ -89,7 +89,7 @@ ServerEvents.recipes(e => {
     [
       'collectorsreap:uni'
     ]
-  ).id("collectorsreap:uni_roll")
+  ).id("createdelight:uni_roll")
   SushiTable.addMappingFromIngredient(GUNKAN_TOP, "uni", "collectorsreap:uni")
   youkaishomecoming.cuisine_ordered(
     '2x culturaldelights:tropical_roll',
@@ -97,7 +97,7 @@ ServerEvents.recipes(e => {
     [
       '#forge:tropical',
     ]
-  ).id("youkaishomecoming:tropical_roll")
+  ).id("createdelight:tropical_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "tropical", "#forge:tropical")
   youkaishomecoming.cuisine_ordered(
     "2x oceanic_delight:shrimp_roll",
@@ -106,7 +106,7 @@ ServerEvents.recipes(e => {
       "#forge:shrimps",
       "minecraft:dried_kelp"
     ]
-  ).id("youkaishomecoming:shrimp_roll")
+  ).id("createdelight:shrimp_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "shrimp", "#forge:shrimps")
   youkaishomecoming.cuisine_ordered(
     "2x culturaldelights:calamari_roll",
@@ -115,7 +115,7 @@ ServerEvents.recipes(e => {
       '#oceanic_delight:squid_tentacles',
       "minecraft:dried_kelp"
     ]
-  ).id("youkaishomecoming:calamari_roll")
+  ).id("createdelight:calamari_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "squid", '#oceanic_delight:squid_tentacles')
   youkaishomecoming.cuisine_ordered(
     "2x collectorsreap:clam_roll",
@@ -123,7 +123,7 @@ ServerEvents.recipes(e => {
     [
       "#forge:raw_clam"
     ]
-  ).id("youkaishomecoming:clam_roll")
+  ).id("createdelight:clam_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "clam", "#forge:raw_clam")
   youkaishomecoming.cuisine_ordered(
     '2x cavedelight:trilocaris_roll',
@@ -131,7 +131,7 @@ ServerEvents.recipes(e => {
     [
       'cavedelight:raw_trilocaris_slice'
     ]
-  ).id("youkaishomecoming:trilocaris_roll")
+  ).id("createdelight:trilocaris_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "trilocaris", 'cavedelight:raw_trilocaris_slice')
   youkaishomecoming.cuisine_ordered(
     "2x createdelight:radgill_sushi",
@@ -148,7 +148,7 @@ ServerEvents.recipes(e => {
       'youkaishomecoming:soy_sauce_bottle',
       "minecraft:carrot"
     ]
-  ).id("youkaishomecoming:kelp_roll")
+  ).id("createdelight:kelp_roll")
   youkaishomecoming.cuisine_ordered(
     'silentsdelight:sculk_sensor_tendril_roll',
     "youkaishomecoming:hosomaki",
@@ -156,7 +156,7 @@ ServerEvents.recipes(e => {
       'youkaishomecoming:soy_sauce_bottle',
       "silentsdelight:sculk_sensor_tendril"
     ]
-  ).id("youkaishomecoming:sculk_sensor_tendril_roll")
+  ).id("createdelight:sculk_sensor_tendril_roll")
   SushiTable.addBulk("tendril", "ingredient/tendril", "silentsdelight:sculk_sensor_tendril", rools)
   $FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", $FoodModelHelper.hosomaki("sculk_sensor_tendril_roll"))
   youkaishomecoming.cuisine_mixed(
@@ -169,7 +169,7 @@ ServerEvents.recipes(e => {
       "#forge:sea_pickles",
       "#forge:sea_pickles"
     ]
-  ).id("youkaishomecoming:sea_pickle_roll")
+  ).id("createdelight:sea_pickle_roll")
   SushiTable.addBulk("sea_pickle", "ingredient/sea_pickle", "#forge:sea_pickles", rools)
   SushiTable.addBulk("squid", "ingredient/squid", "#oceanic_delight:squid_tentacles", rools)
   $FoodModelHelper.map("oceanic_delight:sea_pickle_roll", $FoodModelHelper.futomaki("sea_pickle_roll"))
@@ -183,7 +183,7 @@ ServerEvents.recipes(e => {
       'culturaldelights:cut_avocado',
       'culturaldelights:cut_avocado'
     ]
-  ).id("youkaishomecoming:midori_roll")
+  ).id("createdelight:midori_roll")
   SushiTable.addBulk("avocado", "ingredient/avocado", "culturaldelights:cut_avocado", rools)
   $FoodModelHelper.map("culturaldelights:midori_roll", $FoodModelHelper.futomaki("midori_roll"))
   youkaishomecoming.cuisine_mixed(
@@ -202,7 +202,7 @@ ServerEvents.recipes(e => {
       '#forge:cooked_chicken',
       '#forge:cooked_chicken',
     ]
-  ).id("youkaishomecoming:chicken_roll")
+  ).id("createdelight:chicken_roll")
   SushiTable.addBulk("chicken", "ingredient/chicken", '#forge:cooked_chicken', rools)
   $FoodModelHelper.map("culturaldelights:chicken_roll", $FoodModelHelper.futomaki("chicken_roll"))
   youkaishomecoming.cuisine_mixed(
@@ -215,7 +215,7 @@ ServerEvents.recipes(e => {
       'alexscaves:lanternfish',
       'youkaishomecoming:cucumber_slice',
     ]
-  ).id("youkaishomecoming:deep_sea_sushi_roll")
+  ).id("createdelight:deep_sea_sushi_roll")
   SushiTable.addBulk("tripodfish", "ingredient/tripodfish", 'alexscaves:tripodfish', rools)
   SushiTable.addBulk("sea_pig", "ingredient/sea_pig", 'alexscaves:sea_pig', rools)
   SushiTable.addBulk("lanternfish", "ingredient/lanternfish", 'alexscaves:lanternfish', rools)
@@ -226,5 +226,5 @@ ServerEvents.recipes(e => {
     [
       "#forge:roe"
     ]
-  ).id("youkaishomecoming:roe_california_roll")
+  ).id("createdelight:roe_california_roll")
 })

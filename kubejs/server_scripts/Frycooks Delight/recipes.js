@@ -14,11 +14,11 @@ ServerEvents.recipes(e => {
     e.recipes.create.compacting(
         Fluid.of("createdieselgenerators:plant_oil", 500),
         "2x frycooks_delight:canola_seeds"
-    ).id("createdieselgenerators:compacting/plant_oil_from_canola_seeds")
+    ).id("createdelight:compacting/plant_oil_from_canola_seeds")
     e.recipes.create.compacting(
         Fluid.of("createdieselgenerators:plant_oil", 500),
         "2x vintagedelight:roasted_peanut"  
-    ).id("createdieselgenerators:compacting/plant_oil_from_peanut")
+    ).id("createdelight:compacting/plant_oil_from_peanut")
     threshing(e,
         "frycooks_delight:canola",
         [
@@ -33,7 +33,7 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("frycooks_delight:mixing/unfried_potato")
+    ).id("createdelight:mixing/unfried_potato")
     e.recipes.create.mixing(
         "createdelightcore:unfried_chicken_leg",
         [
@@ -41,9 +41,9 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("frycooks_delight:mixing/unfried_chicken_leg")
+    ).id("createdelight:mixing/unfried_chicken_leg")
     e.recipes.create.filling("frycooks_delight:canola_oil", ["minecraft:glass_bottle", Fluid.of("createdieselgenerators:plant_oil", 250)])
-    .id("frycooks_delight:filling/canola_oil")
+    .id("createdelight:filling/canola_oil")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdieselgenerators:plant_oil", 250)], "frycooks_delight:canola_oil")
-    .id("frycooks_delight:emptying/canola_oil")
+    .id("createdelight:emptying/canola_oil")
 })

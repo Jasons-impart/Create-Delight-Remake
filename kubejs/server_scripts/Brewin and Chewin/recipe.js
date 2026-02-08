@@ -32,23 +32,23 @@ ServerEvents.recipes(e => {
         "minecraft:honeycomb",
         Fluid.of("create_bic_bit:curdled_milk", 1000)
     ])
-    .id("brewinandchewin:filling/create/unripe_flaxen_cheese_wheel")
+    .id("createdelight:filling/create/unripe_flaxen_cheese_wheel")
     vintagedelight.fermenting("2x brewinandchewin:pickled_pickles",[
         "#forge:sea_pickles",
         "#forge:sea_pickles",
         "minecraft:honey_bottle"
     ], 2500)
-    .id("brewinandchewin:fermenting/pickled_pickles")
+    .id("createdelight:fermenting/pickled_pickles")
     vintagedelight.fermenting("2x brewinandchewin:kippers", [
         "#forge:raw_fishes",
         "#forge:raw_fishes",
         "minecraft:dried_kelp",
         "#forge:salt"
-    ]).id("brewinandchewin:fermenting/kippers")
+    ]).id("createdelight:fermenting/kippers")
     kubejs.shapeless(
         'brewinandchewin:scarlet_cheese_wheel',
         '4x brewinandchewin:scarlet_cheese_wedge'
-    ).id("brewinandchewin:scarlet_cheese_wheel_from_wedges")
+    ).id("createdelight:scarlet_cheese_wheel_from_wedges")
     frementing_3(e, "minecraft:water",
         [
             "ratatouille:wheat_kernels",
@@ -124,5 +124,5 @@ ServerEvents.recipes(e => {
         ],
         'brewinandchewin:creamy_onion_soup',
         1, 200, "minecraft:bowl"
-    ).id("brewinandchewin:cooking/creamy_onion_soup")
+    ).id("createdelight:cooking/creamy_onion_soup")
 })

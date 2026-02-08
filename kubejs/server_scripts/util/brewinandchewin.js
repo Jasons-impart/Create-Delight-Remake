@@ -40,7 +40,7 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
       })
     }
   });
-  event.custom(frementing_receipe).id(`brewinandchewin:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
+  event.custom(frementing_receipe).id(`createdelight:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
   event.custom({
     "type": "brewinandchewin:keg_pouring",
     "amount": 250,
@@ -53,7 +53,7 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
       "item": output
     },
     "strict": false
-  }).id(`brewinandchewin:pouring/${output.split(":")[1]}`)
+  }).id(`createdelight:pouring/${output.split(":")[1]}`)
 }
 
 /**
@@ -97,5 +97,5 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
       })
     }
   });
-  event.custom(frementing_receipe).id(`brewinandchewin:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
+  event.custom(frementing_receipe).id(`createdelight:fermenting/${output.split(":")[1]}_from_${base.split(":")[1]}`)
 }

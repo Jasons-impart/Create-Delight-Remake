@@ -3,5 +3,5 @@ ServerEvents.recipes(e => {
     "createutilities:void_steel_ingot",
     "ae2omnicells:charged_ender_ingot",
     3200
-  ).id("create:energising/charged_ender_ingot")
+  ).id("createdelight:energising/charged_ender_ingot")
 })

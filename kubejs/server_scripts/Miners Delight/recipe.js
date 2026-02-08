@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
     farmersdelight.cutting("miners_delight:gossypium", "#forge:shears", [
         "kinetic_pixel:graycotton", 
         Item.of("kinetic_pixel:graycotton").withChance(0.25)])
-        .id("miners_delight:cutting/graycotton")
+        .id("createdelight:cutting/graycotton_fd")
     kubejs.shapeless(
         'miners_delight:vegan_hamburger',
         [
@@ -25,6 +25,6 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/tomato",
             "#forge:vegetables/onion"
         ]
-    ).id("miners_delight:vegan_hamburger")
+    ).id("createdelight:vegan_hamburger")
         
 })

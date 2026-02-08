@@ -7,5 +7,5 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             Fluid.of("create:honey", 250)
         ]
-    ).id("create_confectionery:honey_candy_recipe")
+    ).id("createdelight:honey_candy_recipe")
 })

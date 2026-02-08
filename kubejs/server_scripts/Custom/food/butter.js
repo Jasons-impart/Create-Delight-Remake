@@ -60,5 +60,5 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner)
         .loops(1)
-        .id("createdelight:puff_pastry")
+        .id("createdelight:sequenced_assembly/puff_pastry")
 })

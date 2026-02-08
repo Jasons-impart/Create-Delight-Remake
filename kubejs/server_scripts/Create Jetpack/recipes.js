@@ -20,7 +20,7 @@ ServerEvents.recipes(e => {
         H: "create:propeller",
         I: "minecraft:elytra"
     })
-    .id("create_jetpack:jetpack")
+    .id("createdelight:jetpack")
     e.recipes.create.mechanical_crafting("create_jetpack:netherite_jetpack", [
         " ABA ",
         "ACDCA",
@@ -38,5 +38,5 @@ ServerEvents.recipes(e => {
         H: "create:propeller",
         I: "minecraft:elytra"
     })
-    .id("create_jetpack:netherite_jetpack")
+    .id("createdelight:netherite_jetpack")
 })

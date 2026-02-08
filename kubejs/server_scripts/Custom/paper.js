@@ -14,13 +14,13 @@ ServerEvents.recipes(e => {
         [
             'minecraft:bamboo',
             Fluid.of("minecraft:water", 1000)
-        ]).heated().id("create:mixing/unfermented_paper_pulp")
+        ]).heated().id("createdelight:mixing/unfermented_paper_pulp")
     e.recipes.create.mixing(
         Fluid.of("createdelight:unfermented_paper_pulp", 500),
         [
             "#forge:papers_raw_material",
             Fluid.of("minecraft:water", 500)
-        ]).id("create:mixing/unfermented_paper_pulp/papers_raw_material")
+        ]).id("createdelight:mixing/unfermented_paper_pulp/papers_raw_material")
     //纸浆
     e.custom({
         "type": "createdieselgenerators:basin_fermenting",
@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
           }
         ]
       })
-        .id("vintageimprovements:turning/paper_pulp")
+        .id("createdelight:turning/paper_pulp")
     //未完成的纸
     e.recipes.vintageimprovements.vacuumizing(
         [
@@ -46,11 +46,11 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 50)
         ],
         Fluid.of("createdelight:paper_pulp", 50)
-    ).secondaryFluidOutput(0).heated().id("create:vacuumizing/incomplete_paper")
+    ).secondaryFluidOutput(0).heated().id("createdelight:vacuumizing/incomplete_paper")
     //纸
     e.recipes.create.pressing(
         "minecraft:paper",
         "createdelight:incomplete_paper"
-    ).id("create:pressing/paper")
+    ).id("createdelight:pressing/paper")
 
 })

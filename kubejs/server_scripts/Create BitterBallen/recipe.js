@@ -70,41 +70,41 @@ ServerEvents.recipes(e => {
             "minecraft:sugar",
             Fluid.water(100)
         ]
-    ).id("create_bic_bit:mixing/raw_churros")
+    ).id("createdelight:mixing/raw_churros")
     create.filling(
         'create_bic_bit:ketchup_bottle',
         [
             Fluid.of("create_central_kitchen:tomato_sauce", 250),
             "minecraft:glass_bottle"
         ]
-    ).id("create_bic_bit:filling/ketchup_bottle")
+    ).id("createdelight:filling/ketchup_bottle")
     create.emptying(
         [
             Fluid.of("create_central_kitchen:tomato_sauce", 250),
             "minecraft:glass_bottle"
         ],
         'create_bic_bit:ketchup_bottle'
-    ).id("create_bic_bit:emptying/ketchup")
+    ).id("createdelight:emptying/ketchup")
     create.mixing(Fluid.of("create_bic_bit:mayonnaise", 250), [
             FluidIngredients("forge:egg_yolk", 100),
         Fluid.of("createdieselgenerators:plant_oil", 250)
-    ]).id("create_bic_bit:mixing/mayonnaise_recipe")
+    ]).id("createdelight:mixing/mayonnaise_recipe")
     create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), [
         Fluid.of("createdelight:vinegar", 250),
         Fluid.of("minecraft:milk", 1000),
         "createdelight:dry_yeast"
     ]).heated()
-    .id("create_bic_bit:mixing/curdled_milk")
+    .id("createdelight:mixing/curdled_milk")
     create.compacting(
         "vintagedelight:cheese_curds",
         Fluid.of("create_bic_bit:curdled_milk", 250)
-    ).id("create_bic_bit:compacting/cheese_curds")
+    ).id("createdelight:compacting/cheese_curds")
     threshing(e, "minecraft:sunflower", [
         "create_bic_bit:sunflower_seeds",
         Item.of("2x create_bic_bit:sunflower_seeds").withChance(0.5)
     ], 200)
     create.compacting(Fluid.of("createdieselgenerators:plant_oil", 500), "2x create_bic_bit:crushed_sunflower_seeds")
-    .id("create_bic_bit:compacting/plant_oil_from_crushed_sunflower_seeds")
+    .id("createdelight:compacting/plant_oil_from_crushed_sunflower_seeds")
     create.mixing(
         Fluid.of("create_bic_bit:stamppot", 250),
         [
@@ -112,7 +112,7 @@ ServerEvents.recipes(e => {
             '2x some_assembly_required:chopped_carrot',
             'some_assembly_required:sliced_onion'
         ]
-    ).id("create_bic_bit:compat/farmersdelight/stamppot_recipe2")
+    ).id("createdelight:compat/farmersdelight/stamppot_recipe2")
     create.mixing(
         'create_bic_bit:raw_cheese_souffle',
         [
@@ -120,14 +120,14 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             FluidIngredients("forge:egg_yolk", 100)
         ]
-    ).id("create_bic_bit:mixing/raw_cheese_souffle")
+    ).id("createdelight:mixing/raw_cheese_souffle")
     create.mixing(
         "create_bic_bit:sweet_dough",
         [
             Fluid.of("create:honey", 100),
             "farmersdelight:wheat_dough"
         ]
-    ).id("create_bic_bit:compat/farmersdelight/sweet_dough_recipe2")
+    ).id("createdelight:compat/farmersdelight/sweet_dough_recipe2")
     create.mixing(
         'create_bic_bit:raw_frikandel',
         [
@@ -135,7 +135,7 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             FluidIngredients("forge:egg_yolk", 100)
         ]
-    ).id("create_bic_bit:mixing/frikandel_recipe")
+    ).id("createdelight:mixing/frikandel_recipe")
     create.mixing(
         'create_bic_bit:raw_kroket',
         [
@@ -144,7 +144,7 @@ ServerEvents.recipes(e => {
             'createdelight:butter',
             FluidIngredients("forge:egg_yolk", 100)
         ]
-    ).id("create_bic_bit:mixing/kroket_recipe")
+    ).id("createdelight:mixing/kroket_recipe")
     create.mixing(
         '2x create_bic_bit:raw_bitterballen',
         [
@@ -153,7 +153,7 @@ ServerEvents.recipes(e => {
             'createdelight:butter',
             FluidIngredients("forge:egg_yolk", 100)
         ]
-    ).id("create_bic_bit:mixing/bitterballen_recipe")
+    ).id("createdelight:mixing/bitterballen_recipe")
     create.mixing(
         'create_bic_bit:raw_eggball',
         [
@@ -161,7 +161,7 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("create_bic_bit:mixing/raw_eggball")
+    ).id("createdelight:mixing/raw_eggball")
 
     //deepfried
     create.mixing(
@@ -171,7 +171,7 @@ ServerEvents.recipes(e => {
             "#forge:seafood",
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("create_deepfried:compat/farmersdelight/mixing/raw_tempura")
+    ).id("createdelight:compat/farmersdelight/mixing/raw_tempura")
     create.mixing(
         "createdelightcore:unfried_calamari",
         [
@@ -179,7 +179,7 @@ ServerEvents.recipes(e => {
             "createdelight:raw_calamari",
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("create_deepfried:mixing/unfried_calamari")
+    ).id("createdelight:mixing/unfried_calamari")
     create.mixing(
         "create_deepfried:raw_tempura",
         [
@@ -187,7 +187,7 @@ ServerEvents.recipes(e => {
             '3x #forge:vegetables',
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("create_deepfried:mixing/raw_tempura")
+    ).id("createdelight:mixing/raw_tempura")
     create.mixing(
         'create_deepfried:raw_onion_rings',
         [
@@ -195,92 +195,92 @@ ServerEvents.recipes(e => {
             'bakeries:flour',
             Fluid.of("minecraft:water", 50)
         ]
-    ).id("create_deepfried:compat/farmersdelight/mixing/raw_onion_rings2")
+    ).id("createdelight:compat/farmersdelight/mixing/raw_onion_rings2")
     create.filling(
         'createdelight:ketchup_corn_dog',
         [
             'create_deepfried:corn_dog',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_deepfried:filling/ketchup_corn_dog")
+    ).id("createdelight:filling/ketchup_corn_dog")
     create.filling(
         'createdelight:mayo_corn_dog',
         [
             'create_deepfried:corn_dog',
             Fluid.of("create_bic_bit:mayonnaise", 250)
         ]
-    ).id("create_deepfried:filling/mayo_corn_dog")
+    ).id("createdelight:filling/mayo_corn_dog")
     create.filling(
         'corn_delight:classic_corn_dog',
         [
             "createdelight:ketchup_corn_dog",
             Fluid.of("create_bic_bit:mayonnaise", 250)
         ]
-    ).id("create_deepfried:filling/classic_corn_dog_from_ketchup_corn_dog")
+    ).id("createdelight:filling/classic_corn_dog_from_ketchup_corn_dog")
     create.filling(
         'corn_delight:classic_corn_dog',
         [
             "createdelight:mayo_corn_dog",
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_deepfried:filling/classic_corn_dog_from_mayo_corn_dog")
+    ).id("createdelight:filling/classic_corn_dog_from_mayo_corn_dog")
     create.filling(
         'create_bic_bit:ketchup_topped_kroket_sandwich',
         [
             'create_bic_bit:kroket_sandwich',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/ketchup_kroket_sandwich")
+    ).id("createdelight:filling/ketchup_kroket_sandwich")
     create.filling(
         'create_bic_bit:mayonnaise_ketchup_topped_kroket_sandwich',
         [
             'create_bic_bit:mayonnaise_topped_kroket_sandwich',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/mayonnaise_ketchup_kroket_sandwich")
+    ).id("createdelight:filling/mayonnaise_ketchup_kroket_sandwich")
     create.filling(
         'create_bic_bit:ketchup_topped_frikandel_sandwich',
         [
             'create_bic_bit:frikandel_sandwich',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/ketchup_frikandel_sandwich")
+    ).id("createdelight:filling/ketchup_frikandel_sandwich")
     create.filling(
         'create_bic_bit:mayonnaise_ketchup_topped_frikandel_sandwich',
         [
             'create_bic_bit:mayonnaise_topped_frikandel_sandwich',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/mayonnaise_ketchup_frikandel_sandwich")
+    ).id("createdelight:filling/mayonnaise_ketchup_frikandel_sandwich")
     create.filling(
         'create_bic_bit:wrapped_ketchup_topped_fries',
         [
             'create_bic_bit:wrapped_fries',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/wrapped_ketchup_fries")
+    ).id("createdelight:filling/wrapped_ketchup_fries")
     create.filling(
         'create_bic_bit:wrapped_mayonnaise_ketchup_topped_fries',
         [
             'create_bic_bit:wrapped_mayonnaise_topped_fries',
             Fluid.of("create_central_kitchen:tomato_sauce", 250)
         ]
-    ).id("create_bic_bit:filling/wrapped_mayonnaise_ketchup_fries")
+    ).id("createdelight:filling/wrapped_mayonnaise_ketchup_fries")
 
     kubejs.shaped("create_bic_bit:wrapped_coated_churros",
         [["minecraft:air", "create_bic_bit:coated_churros"],
         ["minecraft:air", "minecraft:paper"]])
-        .id("create_bic_bit:crafting/wrapped_coated_churros")
+        .id("createdelight:crafting/wrapped_coated_churros")
     create.deploying("create_bic_bit:wrapped_coated_churros",
         ["create_bic_bit:coated_churros", "minecraft:paper"])
-        .id("create_bic_bit:deploying/wrapped_coated_churros")
+        .id("createdelight:deploying/wrapped_coated_churros")
     create.deploying(
         'create_deepfried:raw_donut',
         [
             'farmersdelight:wheat_dough',
             "minecraft:stick"
         ]
-    ).keepHeldItem().id("create_deepfried:deploying/raw_donut")
+    ).keepHeldItem().id("createdelight:deploying/raw_donut")
 })
 
 ServerEvents.tags("minecraft:item", e => {

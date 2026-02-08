@@ -6,7 +6,7 @@ ServerEvents.recipes(e => {
      */
     function cutting_roll(input, output) {
         e.recipes.create.cutting(Item.of(output, 3), input)
-            .id(`createdelight:cutting/${output.split(":")[1]}`)
+            .id(`createdelight:cutting/${output.split(":")[1]}_roll`)
     }
     /**
      * 
@@ -97,7 +97,7 @@ ServerEvents.recipes(e => {
         "alexscaves:deep_sea_sushi_roll",
         "#forge:tools/knives",
         "3x createdelight:deep_sea_sushi_roll_slice"
-    ).id("farmersdelight:cutting/deep_sea_sushi_roll_slice")
+    ).id("createdelight:cutting/deep_sea_sushi_roll_slice")
 
     cutting_roll("culturaldelights:midori_roll", "culturaldelights:midori_roll_slice")
     cutting_roll("culturaldelights:chicken_roll", "culturaldelights:chicken_roll_slice")
@@ -164,7 +164,7 @@ ServerEvents.recipes(e => {
         ])
             .transitionalItem(iner)
             .loops(1)
-            .id("youkaishomecoming:sequenced_assembly/california_roll")
+            .id("createdelight:sequenced_assembly/california_roll")
     }
     e.recipes.create.deploying(
         'youkaishomecoming:roe_california_roll',
@@ -172,7 +172,7 @@ ServerEvents.recipes(e => {
             'youkaishomecoming:california_roll',
             "#forge:roe"
         ]
-    ).id("youkaishomecoming:deploying/roe_california_roll")
+    ).id("createdelight:deploying/roe_california_roll")
     {
         let iner = "youkaishomecoming:california_roll"
         e.recipes.create.sequenced_assembly('youkaishomecoming:volcano_roll', iner, [
@@ -183,7 +183,7 @@ ServerEvents.recipes(e => {
         ])
             .transitionalItem(iner)
             .loops(1)
-            .id("youkaishomecoming:sequenced_assembly/volcano_roll")
+            .id("createdelight:sequenced_assembly/volcano_roll")
     }
     {
         let iner = "youkaishomecoming:roe_california_roll"
@@ -194,7 +194,7 @@ ServerEvents.recipes(e => {
         ])
             .transitionalItem(iner)
             .loops(1)
-            .id("youkaishomecoming:sequenced_assembly/rainbow_roll")
+            .id("createdelight:sequenced_assembly/rainbow_roll")
     }
     {
         let iner = "youkaishomecoming:roe_california_roll"
@@ -205,6 +205,6 @@ ServerEvents.recipes(e => {
         ])
             .transitionalItem(iner)
             .loops(1)
-            .id("youkaishomecoming:sequenced_assembly/salmon_lover_roll")
+            .id("createdelight:sequenced_assembly/salmon_lover_roll")
     }
 })
