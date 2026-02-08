@@ -11,14 +11,14 @@ ServerEvents.recipes(e => {
         'festival_delicacies:red_bean_paste',
         1.0, 200,
         "minecraft:bowl"
-    ).id("festival_delicacies:red_bean_paste")
+    ).id("createdelight:red_bean_paste")
     e.recipes.create.mixing(
         'festival_delicacies:red_bean_paste',
         [
             '2x neapolitan:roasted_adzuki_beans',
             "minecraft:bowl"
         ]
-    ).heated().id("festival_delicacies:mixing/red_bean_paste")
+    ).heated().id("createdelight:mixing/red_bean_paste")
     threshing(e, 'festival_delicacies:artemisia_argyi', [
         'createdelight:artemisia_argyi_seed',
         Item.of('createdelight:artemisia_argyi_seed').withChance(0.5)
@@ -31,5 +31,5 @@ ServerEvents.recipes(e => {
         ],
         'festival_delicacies:qingtuan',
         1.0, 200,
-    ).id("festival_delicacies:farmersdelight/qingtuan")
+    ).id("createdelight:farmersdelight/qingtuan")
 })

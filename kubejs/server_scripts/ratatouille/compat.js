@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         "ratatouille:chocolate_mold_solid"
     )
         .mode(2)
-        .id("vintageimprovements:curving/bar_of_chocolate")
+        .id("createdelight:curving/bar_of_chocolate")
     vintageimprovements.curving(
         [
             "ratatouille:chocolate_mold",
@@ -17,7 +17,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:black_chocolate_mold_solid"
     )
         .mode(2)
-        .id("vintageimprovements:curving/bar_of_black_chocolate")
+        .id("createdelight:curving/bar_of_black_chocolate")
     vintageimprovements.curving(
         [
             "ratatouille:chocolate_mold",
@@ -26,7 +26,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:white_chocolate_mold_solid"
     )
         .mode(2)
-        .id("vintageimprovements:curving/bar_of_white_chocolate")
+        .id("createdelight:curving/bar_of_white_chocolate")
     vintageimprovements.curving(
         [
             "ratatouille:chocolate_mold",
@@ -35,7 +35,7 @@ ServerEvents.recipes(e => {
         "createdelightcore:ruby_chocolate_mold_solid"
     )
         .mode(2)
-        .id("vintageimprovements:curving/bar_of_ruby_chocolate")
+        .id("createdelight:curving/bar_of_ruby_chocolate")
     vintageimprovements.curving(
         [
             "ratatouille:cake_mold",
@@ -44,7 +44,7 @@ ServerEvents.recipes(e => {
         "ratatouille:cake_mold_baked"
     )
         .mode(2)
-        .id("vintageimprovements:curving/cake_mold_baked")
+        .id("createdelight:curving/cake_mold_baked")
     create.mixing(
         "ratatouille:salty_dough",
         [
@@ -52,5 +52,5 @@ ServerEvents.recipes(e => {
             "vintagedelight:salt_dust",
             FluidIngredients("forge:egg_yolk", 50)
         ]
-    ).id("create:mixing/salty_dough")
+    ).id("createdelight:mixing/salty_dough")
 })

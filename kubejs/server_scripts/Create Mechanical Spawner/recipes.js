@@ -10,42 +10,42 @@ ServerEvents.recipes(e => {
     //     Fluid.of("netherexp:ectoplasm", 200),
     //     Fluid.of("create:potion", 50, {Potion: "minecraft:healing"})
     // ])
-    // .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed")
+    // .id("createdelight:vacuumizing/inferior_genetic_seed")
     let inferior_genetic_seed_input = []
     for (let index = 0; index < 8; index++) {
         inferior_genetic_seed_input.push("createaddition:biomass")
     }
     inferior_genetic_seed_input.push("ae2:singularity")
     vintageimprovements.vacuumizing('16x createdelight:inferior_genetic_seed', inferior_genetic_seed_input.concat(Fluid.of("netherexp:ectoplasm", 250)))
-    .id("create_mechanical_spawner:vacuumizing/inferior_genetic_seed_2")
+    .id("createdelight:vacuumizing/inferior_genetic_seed_2")
     
     create.emptying([
         Fluid.of("create_mechanical_spawner:spawn_fluid_random", 50),
         Item.of("createdelight:normal_genetic_seed").withChance(0.4)],
         'createdelight:inferior_genetic_seed')
-    .id("create_mechanical_spawner:emptying/normal_genetic_seed")
+    .id("createdelight:emptying/normal_genetic_seed")
 
     create.emptying([
         Fluid.of("create_mechanical_spawner:spawn_fluid_random", 100),
         Item.of("createdelight:refined_genetic_seed").withChance(0.4)],
         'createdelight:normal_genetic_seed')
-    .id("create_mechanical_spawner:emptying/refined_genetic_seed")
+    .id("createdelight:emptying/refined_genetic_seed")
     
     create.emptying([
         Fluid.of("create_mechanical_spawner:spawn_fluid_random", 200),
         Item.of("createdelight:pure_genetic_seed").withChance(0.4)],
         'createdelight:refined_genetic_seed')
-    .id("create_mechanical_spawner:emptying/pure_genetic_seed")
+    .id("createdelight:emptying/pure_genetic_seed")
 
 
     create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 50), "createdelight:inferior_genetic_seed")
-    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_inferior_genetic_seed")
+    .id("createdelight:emptying/spawn_fluid_random_from_inferior_genetic_seed")
     create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 100), "createdelight:normal_genetic_seed")
-    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_normal_genetic_seed")
+    .id("createdelight:emptying/spawn_fluid_random_from_normal_genetic_seed")
     create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 200), "createdelight:refined_genetic_seed")
-    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_refined_genetic_seed")
+    .id("createdelight:emptying/spawn_fluid_random_from_refined_genetic_seed")
     create.compacting(Fluid.of("create_mechanical_spawner:spawn_fluid_random", 400), "createdelight:pure_genetic_seed")
-    .id("create_mechanical_spawner:emptying/spawn_fluid_random_from_pure_genetic_seed")
+    .id("createdelight:emptying/spawn_fluid_random_from_pure_genetic_seed")
     /**
      * 
      * @param {Internal.RecipesEventJS} e 
@@ -59,31 +59,31 @@ ServerEvents.recipes(e => {
             e.recipes.create.mixing(
                 [Fluid.of(output, baseAmount), Item.of("createdelight:inferior_genetic_seed").withChance(0.5)],
                 input.concat(Item.of("createdelight:inferior_genetic_seed"), Fluid.of("create_mechanical_spawner:spawn_fluid_random", baseAmount)))
-            .id(`create_mechanical_spawner:${output.split(":")[1]}_from_inferior_genetic_seed`)
+            .id(`createdelight:${output.split(":")[1]}_from_inferior_genetic_seed`)
         }
         if (tier >= 4) {
             e.recipes.create.mixing(
                 [Fluid.of(output, baseAmount * 1.5), Item.of("createdelight:normal_genetic_seed").withChance(0.65)],
                 input.concat(Item.of("createdelight:normal_genetic_seed"), Fluid.of("create_mechanical_spawner:spawn_fluid_random", baseAmount * 1.5)))
-            .id(`create_mechanical_spawner:${output.split(":")[1]}_from_normal_genetic_seed`)
+            .id(`createdelight:${output.split(":")[1]}_from_normal_genetic_seed`)
         }
         if (tier >= 3) {
             e.recipes.create.mixing(
                 [Fluid.of(output, baseAmount * 2), Item.of("createdelight:refined_genetic_seed").withChance(0.8)],
                 input.concat(Item.of("createdelight:refined_genetic_seed"), Fluid.of("create_mechanical_spawner:spawn_fluid_random", baseAmount * 2)))
-            .id(`create_mechanical_spawner:${output.split(":")[1]}_from_refined_genetic_seed`)
+            .id(`createdelight:${output.split(":")[1]}_from_refined_genetic_seed`)
         }
         if (tier >= 2) {
             e.recipes.create.mixing(
                 [Fluid.of(output, baseAmount * 2.5), Item.of("createdelight:pure_genetic_seed").withChance(0.95)],
                 input.concat(Item.of("createdelight:pure_genetic_seed"), Fluid.of("create_mechanical_spawner:spawn_fluid_random", baseAmount * 2.5)))
-            .id(`create_mechanical_spawner:${output.split(":")[1]}_from_pure_genetic_seed`)
+            .id(`createdelight:${output.split(":")[1]}_from_pure_genetic_seed`)
         }
         if (tier >= 1) {
             e.recipes.create.mixing(
                 [Fluid.of(output, baseAmount * 4), Item.of("createdelight:flawless_genetic_seed")],
                 input.concat(Item.of("createdelight:flawless_genetic_seed"), Fluid.of("create_mechanical_spawner:spawn_fluid_random", baseAmount * 4)))
-            .id(`create_mechanical_spawner:${output.split(":")[1]}_from_flawless_genetic_seed`)
+            .id(`createdelight:${output.split(":")[1]}_from_flawless_genetic_seed`)
         }
     }
 

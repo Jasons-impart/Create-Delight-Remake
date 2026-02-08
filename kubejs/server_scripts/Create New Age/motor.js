@@ -19,7 +19,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner)
-        .id("create_new_age:sequenced_assembly/basic_motor")
+        .id("createdelight:sequenced_assembly/basic_motor")
     //高级电机
     let iner_1 = "createdelight:incomplete_advanced_motor"
     e.recipes.create.sequenced_assembly("2x create_new_age:advanced_motor", "create_new_age:basic_motor",
@@ -31,7 +31,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_1)
-        .id("create_new_age:sequenced_assembly/advanced_motor")
+        .id("createdelight:sequenced_assembly/advanced_motor")
     //超级电机
     let iner_2 = "createdelight:incomplete_reinforced_motor"
     e.recipes.create.sequenced_assembly("2x create_new_age:reinforced_motor", "create_new_age:advanced_motor",
@@ -43,7 +43,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_2)
-        .id("create_new_age:sequenced_assembly/reinforced_motor")
+        .id("createdelight:sequenced_assembly/reinforced_motor")
 
     // //行星齿轮
     // let iner_3 = "createdelight:incomplete_planet_gear"
@@ -70,7 +70,7 @@ ServerEvents.recipes(e => {
     //     D: "createdelight:planet_gear",
     //     E: "ae2:logic_processor"
     // })
-    // .id("create_new_age:shaped/basic_motor_extension")
+    // .id("createdelight:shaped/basic_motor_extension")
     // //超级电机超频器
     // let iner_4 = "create_new_age:basic_motor_extension"
     // e.recipes.create.sequenced_assembly("create_new_age:advanced_motor_extension", "create_new_age:basic_motor_extension",
@@ -84,5 +84,5 @@ ServerEvents.recipes(e => {
     // )
     //    .loops(1)
     //    .transitionalItem(iner_4)
-    //    .id("create_new_age:advanced_motor_extension")
+    //    .id("createdelight:advanced_motor_extension")
 })

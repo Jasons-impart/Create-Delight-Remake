@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
         let count = input.get("count").asDouble
         let output = r.getOriginalRecipeResult()
         e.recipes.create_new_age.energising(Ingredient.of(itemId, count), output, energy)
-            .id(`createaddition:energising/${output.getId().split(":")[1]}`)
+            .id(`createdelight:energising/${output.getId().split(":")[1]}`)
     })
     e.remove({ type: "createaddition:charging" })
     // 充能器
@@ -46,7 +46,7 @@ ServerEvents.recipes(e => {
         C: "create:andesite_casing",
         D: "minecraft:lightning_rod"
     }
-    ).id("create_new_age:shapeless/basic_energiser")
+    ).id("createdelight:shapeless/basic_energiser")
     e.recipes.kubejs.shaped(
         "create_new_age:advanced_energiser",
         [
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
         C: "create_new_age:basic_energiser",
         D: "vintageimprovements:laser_item"
     }
-    ).id("create_new_age:shaped/advanced_energiser")
+    ).id("createdelight:shaped/advanced_energiser")
     let iner = "create_new_age:advanced_energiser"
     e.recipes.create.sequenced_assembly(
         'create_new_age:reinforced_energiser',
@@ -71,11 +71,11 @@ ServerEvents.recipes(e => {
         ]
     )
         .loops(1)
-        .id("create_new_age:shaped/reinforced_energiser")
+        .id("createdelight:shaped/reinforced_energiser")
         .transitionalItem(iner)
     e.recipes.create_new_age.energising(
         'createdelight:mmd_diamond',
         'create_new_age:overcharged_diamond',
         10000
-    ).id("create_new_age:energising/mmd_diamond")
+    ).id("createdelight:energising/mmd_diamond")
 })

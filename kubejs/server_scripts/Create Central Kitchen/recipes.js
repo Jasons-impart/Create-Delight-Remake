@@ -40,7 +40,7 @@ ServerEvents.recipes(e => {
       '2x #forge:vegetables/tomato',
       "minecraft:sugar"
     ]
-  ).id("create_central_kitchen:mixing/tomato_sauce")
+  ).id("createdelight:mixing/tomato_sauce")
   create.mixing(
     Fluid.of("create_central_kitchen:creamy_corn_drink", 250),
     [
@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
       FluidIngredients("forge:milk", 250),
       "minecraft:sugar"
     ]
-  ).heated().id("create_central_kitchen:mixing/creamy_corn_drink")
+  ).heated().id("createdelight:mixing/creamy_corn_drink")
   create.mixing(
     Fluid.of("create_central_kitchen:creamy_corn_drink", 250),
     [
@@ -56,21 +56,21 @@ ServerEvents.recipes(e => {
       Fluid.of("cosmopolitan:cream", 250),
       "minecraft:sugar"
     ]
-  ).heated().id("create_central_kitchen:mixing/creamy_corn_drink_from_cream")
+  ).heated().id("createdelight:mixing/creamy_corn_drink_from_cream")
   create.filling(
     'corn_delight:creamy_corn_drink',
     [
       "minecraft:glass_bottle",
       Fluid.of("create_central_kitchen:creamy_corn_drink", 250)
     ]
-  ).id("create_central_kitchen:filling/creamy_corn_drink")
+  ).id("createdelight:filling/creamy_corn_drink")
   create.emptying(
     [
       "minecraft:glass_bottle",
       Fluid.of("create_central_kitchen:creamy_corn_drink", 250)
     ],
     'corn_delight:creamy_corn_drink'
-  ).id("create_central_kitchen:emptying/creamy_corn_drink")
+  ).id("createdelight:emptying/creamy_corn_drink")
 
   create.mixing(
     Fluid.of("create_central_kitchen:corn_soup", 250),
@@ -80,7 +80,7 @@ ServerEvents.recipes(e => {
       "#forge:salad_ingredients",
       "#brewinandchewin:raw_meats"
     ]
-  ).heated().id("create_central_kitchen:mixing/corn_soup")
+  ).heated().id("createdelight:mixing/corn_soup")
   create.mixing(
     Fluid.of("create_central_kitchen:corn_soup", 250),
     [
@@ -89,19 +89,19 @@ ServerEvents.recipes(e => {
       "#forge:salad_ingredients",
       "#brewinandchewin:raw_meats"
     ]
-  ).heated().id("create_central_kitchen:mixing/corn_soup_from_cream")
+  ).heated().id("createdelight:mixing/corn_soup_from_cream")
   create.filling(
     'corn_delight:corn_soup',
     [
       "minecraft:bowl",
       Fluid.of("create_central_kitchen:corn_soup", 250)
     ]
-  ).id("create_central_kitchen:filling/corn_soup")
+  ).id("createdelight:filling/corn_soup")
   create.emptying(
     [
       "minecraft:bowl",
       Fluid.of("create_central_kitchen:corn_soup", 250)
     ],
     'corn_delight:corn_soup'
-  ).id("create_central_kitchen:emptying/corn_soup")
+  ).id("createdelight:emptying/corn_soup")
 })

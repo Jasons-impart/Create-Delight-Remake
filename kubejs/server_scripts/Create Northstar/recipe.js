@@ -77,11 +77,11 @@ ServerEvents.recipes(e => {
     }).id("createdelight:electrolyzer")
 
     create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
-        .id("northstar:energising/enriched_glowstone_ore")
+        .id("createdelight:energising/enriched_glowstone_ore")
 
     create.crushing(Item.of("northstar:rutile_concentrate").withChance(0.1),
         [["northstar:moon_sand", "northstar:mars_sand"]])
-        .id("northstar:crushing/rutile_concentrate_from_sand")
+        .id("createdelight:crushing/rutile_concentrate_from_sand")
     vintageimprovements.vacuumizing(Fluid.of("northstar:titanium_tetrachloride", 250), [
         Fluid.of("northstar:chlorine", 25),
         Fluid.of("northstar:carbon", 250),
@@ -89,13 +89,13 @@ ServerEvents.recipes(e => {
     ])
         .secondaryFluidInput(0)
         .superheated()
-        .id("northstar:vacuumizing/titanium_tetrachloride")
+        .id("createdelight:vacuumizing/titanium_tetrachloride")
     vintageimprovements.vacuumizing(["createdelight:titanium_dust", "vintagedelight:salt_dust"], [
         Fluid.of("northstar:titanium_tetrachloride", 500),
         Fluid.of("northstar:sodium", 50)
     ])
         .superheated()
-        .id("northstar:vacuumizing/titanium_ingot")
+        .id("createdelight:vacuumizing/titanium_ingot")
 
 
     {
@@ -108,7 +108,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("northstar:sequenced_assembly/circuit")
+            .id("createdelight:sequenced_assembly/circuit")
     }
     {
         let iner = "northstar:unfinished_advanced_circuit"
@@ -120,7 +120,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("northstar:sequenced_assembly/advanced_circuit")
+            .id("createdelight:sequenced_assembly/advanced_circuit")
     }
     {
         let iner = "northstar:unfinished_targeting_computer"
@@ -132,7 +132,7 @@ ServerEvents.recipes(e => {
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("northstar:sequenced_assembly/targeting_computer")
+            .id("createdelight:sequenced_assembly/targeting_computer")
     }
     metal_production_line(e, [
         "northstar:titanium_block",
@@ -162,15 +162,15 @@ ServerEvents.recipes(e => {
     createmetallurgy.melting(Fluid.of("createdelightcore:molten_titanium", 90), "createdelight:titanium_dust")
         .heatRequirement("heated")
         .processingTime(30)
-        .id("createmetallurgy:melting/molten_titanium_from_titanium_dust")
+        .id("createdelight:melting/molten_titanium_from_titanium_dust")
     createmetallurgy.melting([Fluid.of("createdelightcore:molten_titanium", 90), Fluid.of("createmetallurgy:molten_slag", 30)], "createdelight:dirty_titanium_dust")
         .heatRequirement("heated")
         .processingTime(40)
-        .id("createmetallurgy:melting/molten_titanium_from_dirty_titanium_dust")
+        .id("createdelight:melting/molten_titanium_from_dirty_titanium_dust")
     createmetallurgy.melting([Fluid.of("createdelightcore:molten_titanium", 90), Fluid.of("createmetallurgy:molten_slag", 45)], "#forge:raw_materials/titanium")
         .heatRequirement("heated")
         .processingTime(40)
-        .id("createmetallurgy:melting/molten_titanium_from_raw_titanium")
+        .id("createdelight:melting/molten_titanium_from_raw_titanium")
 
     createmetallurgy.alloying(Fluid.of("createdelightcore:molten_martian_steel", 180), [
         Fluid.of("createdelightcore:molten_titanium", 90),
@@ -178,7 +178,7 @@ ServerEvents.recipes(e => {
     ])
     .heatRequirement("superheated")
     .processingTime(100)
-    .id("createmetallurgy:alloying/martian_steel")
+    .id("createdelight:alloying/martian_steel")
 
     // 混合燃料
     e.recipes.create.mixing(

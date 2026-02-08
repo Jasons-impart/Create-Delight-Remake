@@ -6,5 +6,5 @@ ServerEvents.recipes(e => {
         "tetra:pristine_lapis"
     ])
     .superheated()
-    .id("create_enchantment_industry:mixing/hyper_experience_2")
+    .id("createdelight:mixing/hyper_experience_2")
 })

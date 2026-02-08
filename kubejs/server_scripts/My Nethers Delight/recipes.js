@@ -13,7 +13,7 @@ ServerEvents.recipes(e => {
     create.milling(
         "minecraft:gunpowder", 
         "mynethersdelight:powder_cannon"
-    ).id("mynethersdelight:milling/powdery_cannon")
+    ).id("createdelight:milling/powdery_cannon")
     kubejs.shapeless("mynethersdelight:letios_compost", [
         "2x vintagedelight:organic_mash",
         ["minecraft:soul_sand", "minecraft:soul_soil"],
@@ -21,21 +21,21 @@ ServerEvents.recipes(e => {
         ["minecraft:crimson_roots", "minecraft:warped_roots", "farmersdelight:straw"],
         "4x minecraft:bone_meal"
     ])
-    .id("mynethersdelight:letios_compost_from_organic_mash")
+    .id("createdelight:letios_compost_from_organic_mash")
     kubejs.shapeless("mynethersdelight:letios_compost", [
         ["minecraft:soul_sand", "minecraft:soul_soil"],
         "2x vintagedelight:organic_mash",
         "2x #netherexp:glowspores",
         "4x minecraft:bone_meal"
     ])
-    .id("mynethersdelight:letios_compost_from_glowspores")
+    .id("createdelight:letios_compost_from_glowspores")
     kubejs.shapeless("mynethersdelight:letios_compost", [
         ["minecraft:soul_sand", "minecraft:soul_soil"],
         "2x minecraft:rotten_flesh",
         "2x #netherexp:glowspores",
         "4x minecraft:bone_meal"
     ])
-    .id("mynethersdelight:letios_compost_from_glowspores_2")
+    .id("createdelight:letios_compost_from_glowspores_2")
     kubejs.shaped(
         'createdelight:wrapped_fries_ghasta',
         [
@@ -45,12 +45,12 @@ ServerEvents.recipes(e => {
             A: "mynethersdelight:fries_ghasta",
             B: "minecraft:paper"
         }
-    ).id("mynethersdelight:crafting/wrapped_fries_ghasta")
+    ).id("createdelight:crafting/wrapped_fries_ghasta")
     e.recipes.farmersdelight.cooking(
         '#forge:eggs',
         'mynethersdelight:boiled_egg',
         1.0, 200
-    ).id("mynethersdelight:boiled_egg_from_campfire_cooking")
+    ).id("createdelight:boiled_egg_from_campfire_cooking")
     kubejs.shapeless(
         'mynethersdelight:nether_burger',
         [
@@ -60,7 +60,7 @@ ServerEvents.recipes(e => {
             "minecraft:crimson_fungus",
             "minecraft:warped_fungus"
         ]
-    ).id("mynethersdelight:crafting/nether_burger")
+    ).id("createdelight:crafting/nether_burger")
     farmersdelight.cooking(
         [
             "mynethersdelight:boiled_egg",
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
         ],
         '2x mynethersdelight:deviled_egg',
         1.0, 100
-    ).id("mynethersdelight:cooking/deviled_egg")
+    ).id("createdelight:cooking/deviled_egg")
     farmersdelight.cooking(
        [
         'create_bic_bit:eggball',
@@ -79,7 +79,7 @@ ServerEvents.recipes(e => {
         'mynethersdelight:scotch_eggs',
         1.0, 100,
         "minecraft:bowl"
-    ).id("mynethersdelight:cooking/scotch_eggs")
+    ).id("createdelight:cooking/scotch_eggs")
     farmersdelight.cooking(
        [
         "mynethersdelight:ghasmati",
@@ -90,7 +90,7 @@ ServerEvents.recipes(e => {
        'mynethersdelight:sizzling_pudding',
        1.0, 100,
        "minecraft:bowl"
-    ).id("mynethersdelight:crafting/sizzling_pudding")
+    ).id("createdelight:crafting/sizzling_pudding")
     cutting_2(e, "mynethersdelight:ghasta_with_cream", [
         ["mynethersdelight:ghasta_with_cream", 1, 0.9],
         ["mynethersdelight:ghasta", 1]
@@ -107,7 +107,7 @@ ServerEvents.recipes(e => {
     )
         .loops(4)
         .transitionalItem(iner)
-        .id("mynethersdelight:crafting/enchanted_golden_egg")
+        .id("createdelight:crafting/enchanted_golden_egg")
 }
 {
     let iner = 'minecraft:carrot'
@@ -136,14 +136,14 @@ ServerEvents.recipes(e => {
             "mynethersdelight:ghasta",
             Fluid.of("create:potion", 250, {Potion: "minecraft:healing"})
         ]
-    ).id("mynethersdelight:filling/ghasta")
+    ).id("createdelight:filling/ghasta")
     create.filling(
         "2x mynethersdelight:ghasmati",
         [
             "mynethersdelight:ghasmati",
             Fluid.of("create:potion", 250, {Potion: "minecraft:healing"})
         ]
-    ).id("mynethersdelight:filling/ghasmati")
+    ).id("createdelight:filling/ghasmati")
 
     create.emptying(
         [
@@ -152,16 +152,16 @@ ServerEvents.recipes(e => {
             "mynethersdelight:ghasta"
         ], 
         "mynethersdelight:plate_of_ghasta_with_cream"
-    ).id("mynethersdelight:emptying/ghasta")
+    ).id("createdelight:emptying/ghasta")
     create.mixing(
         'mynethersdelight:ghast_sourdough',
         [
             "mynethersdelight:ghast_dough",
             '3x bakeries:flour'
         ], 600, "heated"
-    ).id("mynethersdelight:crafting/ghast_sourdough")
+    ).id("createdelight:crafting/ghast_sourdough")
     create.cutting(
         '5x bakeries:sliced_toast',
         'mynethersdelight:bread_loaf'
-    ).id("mynethersdelight:crafting/sliced_toast")
+    ).id("createdelight:crafting/sliced_toast")
 })

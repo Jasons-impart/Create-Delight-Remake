@@ -17,26 +17,26 @@ ServerEvents.recipes(e => {
             Fluid.of("farmersrespite:green_tea", 500),
             "alexscaves:fiddlehead"
         ]
-    ).id("cavedelight:mixing/fiddlehead_tea")
+    ).id("createdelight:mixing/fiddlehead_tea")
     e.recipes.create.filling(
         "cavedelight:fiddlehead_tea",
         [
             Fluid.of("createdelight:fiddlehead_tea", 250),
             "minecraft:glass_bottle"
         ]
-    ).id("cavedelight:filling/fiddlehead_tea")
+    ).id("createdelight:filling/fiddlehead_tea")
     e.recipes.create.emptying(
        [
             Fluid.of("createdelight:fiddlehead_tea", 250),
             "minecraft:glass_bottle"
        ],
        "cavedelight:fiddlehead_tea"
-    ).id("cavedelight:emptying/fiddlehead_tea")
+    ).id("createdelight:emptying/fiddlehead_tea")
     e.recipes.create.filling(
         "minecraft:copper_ingot",
         [
             'miners_delight:copper_cup',
             Fluid.of("minecraft:lava", 1000)
         ]
-    ).id("cavedelight:filling/copper_ingot_from_copper_cup")
+    ).id("createdelight:filling/copper_ingot_from_copper_cup")
 })

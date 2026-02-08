@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         B: "createaddition:zinc_sheet",
         C: "createaddition:copper_rod"
     }
-    ).id("createaddition:crafting/capacitor")
+    ).id("createdelight:crafting/capacitor")
     // 连接器合成
     e.recipes.kubejs.shapeless(
         "2x createaddition:large_connector",
@@ -38,7 +38,7 @@ ServerEvents.recipes(e => {
             "create:andesite_alloy",
             "#forge:slimeballs"
         ]
-    ).id("createaddition:crafting/large_connector_electrum")
+    ).id("createdelight:crafting/large_connector_electrum")
     // 电池合成
     let iner = 'createdelight:incompleted_modular_accumulator'
     e.recipes.create.sequenced_assembly("createaddition:modular_accumulator", "create:brass_sheet", [
@@ -49,7 +49,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner)
         .loops(1)
-        .id("createaddition:crafting/modular_accumulator_electrum")
+        .id("createdelight:crafting/modular_accumulator_electrum")
     // 发电机
     let iner_3 = "createdelight:incomplete_alternator"
     e.recipes.create.sequenced_assembly("createaddition:alternator", "createaddition:copper_spool", [
@@ -59,7 +59,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner_3)
         .loops(2)
-        .id("createaddition:mechanical_crafting/alternator")
+        .id("createdelight:mechanical_crafting/alternator")
     // 电动机
     let iner_4 = "createdelight:incomplete_electric_motor"
     e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create_sa:copper_magnet", [
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner_4)
         .loops(2)
-        .id("createaddition:mechanical_crafting/electric_motor")
+        .id("createdelight:mechanical_crafting/electric_motor")
     // 移动式能量接口
     e.recipes.kubejs.shapeless(
         'createaddition:portable_energy_interface',
@@ -78,7 +78,7 @@ ServerEvents.recipes(e => {
             "create:brass_casing",
             "createaddition:copper_spool"
         ]
-    ).id("createaddition:crafting/portable_energy_interface")
+    ).id("createdelight:crafting/portable_energy_interface")
 
     e.recipes.kubejs.shapeless(
         "createaddition:superconducting_connector",
@@ -87,12 +87,12 @@ ServerEvents.recipes(e => {
             "createaddition:large_connector",
             "vvaddon:mine_ingot"
         ]
-    ).id("createaddition:crafting/superconducting_connector")
+    ).id("createdelight:crafting/superconducting_connector")
     e.recipes.createaddition.rolling(
         "vvaddon:mine_ingot",
         "2x createaddition:superconducting_wire"
     )
-    .id("createaddition:rolling/superconducting_wire")
+    .id("createdelight:rolling/superconducting_wire")
     e.recipes.kubejs.shaped(
         "createaddition:superconducting_spool",
         [
@@ -104,8 +104,8 @@ ServerEvents.recipes(e => {
             A: "createaddition:superconducting_wire",
             B: "createaddition:spool"
         }
-    ).id("createaddition:crafting/superconducting_spool")
+    ).id("createdelight:crafting/superconducting_spool")
 
     e.recipes.vintageimprovements.turning("8x createaddition:spool", "#forge:ingots/iron")
-    .id("createaddition:turning/spool")
+    .id("createdelight:turning/spool")
 })

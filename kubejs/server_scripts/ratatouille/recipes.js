@@ -40,7 +40,7 @@ ServerEvents.recipes(e => {
     ])
     .loops(1)
     .transitionalItem(iner)
-    .id("ratatouille:sequenced_assembly/mature_matter_fold")
+    .id("createdelight:sequenced_assembly/mature_matter_fold")
   }
   {
     let iner = "ratatouille:unprocessed_ripen_matter_fold"
@@ -50,7 +50,7 @@ ServerEvents.recipes(e => {
     ])
     .loops(1)
     .transitionalItem(iner)
-    .id("ratatouille:sequenced_assembly/ripen_matter_fold")
+    .id("createdelight:sequenced_assembly/ripen_matter_fold")
   }
 
   createdieselgenerators.distillation([
@@ -60,9 +60,9 @@ ServerEvents.recipes(e => {
   ], Fluid.of("ratatouille:compost_fluid", 100))
   .processingTime(100)
   .heatRequirement("heated")
-  .id("ratatouille:distillation/compost_fluid")
+  .id("createdelight:distillation/compost_fluid")
   
   create.compacting(Fluid.of("ratatouille:compost_fluid", 100), "createaddition:biomass")
   .superheated()
-  .id("ratatouille:compacting/compost_fluid")
+  .id("createdelight:compacting/compost_fluid")
 })

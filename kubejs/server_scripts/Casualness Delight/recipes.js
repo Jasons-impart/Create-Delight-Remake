@@ -13,7 +13,7 @@ ServerEvents.recipes(e => {
             "#forge:dough",
             Fluid.of("minecraft:water", 500)
         ]
-    ).id("casualness_delight:mixing/raw_gluten")
+    ).id("createdelight:mixing/raw_gluten")
     // 春卷
     e.recipes.kubejs.shapeless(
         'casualness_delight:raw_spring_roll',
@@ -22,5 +22,5 @@ ServerEvents.recipes(e => {
             "#forge:dough",
             "#forge:vegetables/cabbage"
         ]
-    ).id("casualness_delight:crafting_shaped/raw_spring_roll")
+    ).id("createdelight:crafting_shaped/raw_spring_roll")
 })

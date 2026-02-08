@@ -13,5 +13,5 @@ ServerEvents.recipes(e => {
             A: "minecraft:iron_ingot",
             B: 'dummmmmmy:target_dummy'
         }
-    ).id("tacz:target")
+    ).id("createdelight:target")
 })

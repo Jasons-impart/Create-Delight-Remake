@@ -14,10 +14,10 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:molten_andesite", 270),
         [Fluid.of("createmetallurgy:molten_iron", 20), "andesite"])
     .heatRequirement("heated")
-    .id("createmetallurgy:alloying/molten_andesite_1")
+    .id("createdelight:alloying/molten_andesite_1")
     e.recipes.createmetallurgy.alloying(
         Fluid.of("createdelightcore:molten_andesite", 270),
         [Fluid.of("createmetallurgy:molten_zinc", 20), "andesite"])
     .heatRequirement("heated")
-    .id("createmetallurgy:alloying/molten_andesite_2")
+    .id("createdelight:alloying/molten_andesite_2")
 })

@@ -32,7 +32,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create_central_kitchen:mixing/hot_cocoa")
+        .id("createdelight:mixing/hot_cocoa")
 
     e.custom({
         type: "farmersrespite:brewing",
@@ -54,7 +54,7 @@ ServerEvents.recipes(e => {
             count: 1000,
             fluid: "farmersrespite:hot_cocoa"
         }
-    }).id("farmersrespite:brewing/hot_cocoa_from_milk")
+    }).id("createdelight:brewing/hot_cocoa_from_milk")
     // 巧克力
     e.recipes.create.mixing(
         Fluid.of("create:chocolate", 250),
@@ -66,7 +66,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create:mixing/chocolate")
+        .id("createdelight:mixing/chocolate")
     // 黑巧
     e.recipes.create.mixing(
         Fluid.of("create_confectionery:black_chocolate", 250),
@@ -77,7 +77,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create_confectionery:black_chocolate_recipe")
+        .id("createdelight:black_chocolate_recipe")
     e.recipes.create.filling(
         "createdelightcore:black_chocolate_mold_filled",
         [
@@ -85,7 +85,7 @@ ServerEvents.recipes(e => {
             "ratatouille:chocolate_mold"
         ]
     )
-        .id("create:filling/black_chocolate_mold_filled")
+        .id("createdelight:filling/black_chocolate_mold_filled")
     e.custom({
         "type": "ratatouille:demolding",
         "ingredients": [
@@ -102,7 +102,7 @@ ServerEvents.recipes(e => {
             }
         ]
     })
-        .id("create_confectionery:bar_of_black_chocolate_recipe")
+        .id("createdelight:bar_of_black_chocolate_recipe")
     // 白巧
     e.recipes.create.mixing(
         Fluid.of("create_confectionery:white_chocolate", 250),
@@ -113,7 +113,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create_confectionery:white_chocolate_recipe")
+        .id("createdelight:white_chocolate_recipe")
     e.recipes.create.filling(
         "createdelightcore:white_chocolate_mold_filled",
         [
@@ -121,7 +121,7 @@ ServerEvents.recipes(e => {
             "ratatouille:chocolate_mold"
         ]
     )
-        .id("create:filling/white_chocolate_mold_filled")
+        .id("createdelight:filling/white_chocolate_mold_filled")
     e.custom({
         "type": "ratatouille:demolding",
         "ingredients": [
@@ -138,7 +138,7 @@ ServerEvents.recipes(e => {
             }
         ]
     })
-        .id("create_confectionery:bar_of_white_chocolate_recipe")
+        .id("createdelight:bar_of_white_chocolate_recipe")
     // 红宝石巧克力
     e.recipes.create.mixing(
         [
@@ -152,7 +152,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create_confectionery:ruby_chocolate_recipe")
+        .id("createdelight:ruby_chocolate_recipe")
     e.recipes.create.filling(
         "createdelightcore:ruby_chocolate_mold_filled",
         [
@@ -160,7 +160,7 @@ ServerEvents.recipes(e => {
             "ratatouille:chocolate_mold"
         ]
     )
-        .id("create:filling/ruby_chocolate_mold_filled")
+        .id("createdelight:filling/ruby_chocolate_mold_filled")
     e.custom({
         "type": "ratatouille:demolding",
         "ingredients": [
@@ -177,7 +177,7 @@ ServerEvents.recipes(e => {
             }
         ]
     })
-        .id("create_confectionery:bar_of_ruby_chocolate_recipe")
+        .id("createdelight:bar_of_ruby_chocolate_recipe")
     // 热巧克力
     e.recipes.create.mixing(
         Fluid.of("create_confectionery:hot_chocolate", 250),
@@ -188,7 +188,7 @@ ServerEvents.recipes(e => {
         ]
     )
         .heated()
-        .id("create_confectionery:hot_chocolate_recipe")
+        .id("createdelight:hot_chocolate_recipe")
     freezing(e, "ratatouille:chocolate_mold_filled", 'ratatouille:chocolate_mold_solid', 60)
     freezing(e, 'createdelightcore:black_chocolate_mold_filled', 'createdelightcore:black_chocolate_mold_solid', 60)
     freezing(e, 'createdelightcore:white_chocolate_mold_filled', 'createdelightcore:white_chocolate_mold_solid', 60)

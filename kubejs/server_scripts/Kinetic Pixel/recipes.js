@@ -75,7 +75,7 @@ ServerEvents.recipes(e => {
             E: "kinetic_pixel:ammunitionbox",
             F: "kinetic_pixel:pistonexciter"
         })
-        .id("create_armorer:pistol_revolver_torque")
+        .id("createdelight:pistol_revolver_torque")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:pistol_auto_stress",HasBulletInBarrel:1b}'),
         [
@@ -93,7 +93,7 @@ ServerEvents.recipes(e => {
             F: "kinetic_pixel:ammunitionbox",
             G: "kinetic_pixel:pistonexciter"
         })
-        .id("create_armorer:pistol_auto_stress")
+        .id("createdelight:pistol_auto_stress")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:sniper_semi_clockwork",HasBulletInBarrel:1b}'),
         [
@@ -113,7 +113,7 @@ ServerEvents.recipes(e => {
             H: "kinetic_pixel:strikerexciter",
             I: "#minecraft:logs"
         })
-        .id("create_armorer:sniper_semi_clockwork")
+        .id("createdelight:sniper_semi_clockwork")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"AUTO",GunId:"create_armorer:rifle_assult_crane",HasBulletInBarrel:1b}'),
         [
@@ -132,7 +132,7 @@ ServerEvents.recipes(e => {
             G: "kinetic_pixel:strikerexciter",
             H: "#minecraft:logs"
         })
-        .id("create_armorer:rifle_assult_crane")
+        .id("createdelight:rifle_assult_crane")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:shotgun_db_stone",HasBulletInBarrel:1b}'),
         [
@@ -150,7 +150,7 @@ ServerEvents.recipes(e => {
             F: "kinetic_pixel:strikerexciter",
             G: "#minecraft:logs"
         })
-        .id("create_armorer:shotgun_db_stone")
+        .id("createdelight:shotgun_db_stone")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"AUTO",GunId:"create_armorer:mg_platemag_flywheel",HasBulletInBarrel:1b}'),
         [
@@ -169,7 +169,7 @@ ServerEvents.recipes(e => {
             G: "kinetic_pixel:strikerexciter",
             H: "#minecraft:logs"
         })
-        .id("create_armorer:mg_platemag_flywheel")
+        .id("createdelight:mg_platemag_flywheel")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"SEMI",GunId:"create_armorer:shotgun_pump_bearing",HasBulletInBarrel:0b}'),
         [
@@ -185,7 +185,7 @@ ServerEvents.recipes(e => {
             E: "kinetic_pixel:strikerexciter",
             F: "#minecraft:logs"
         })
-        .id("create_armorer:shotgun_pump_bearing")
+        .id("createdelight:shotgun_pump_bearing")
     create.mechanical_crafting(
         Item.of('tacz:modern_kinetic_gun', '{GunCurrentAmmoCount:0,GunFireMode:"AUTO",GunId:"create_armorer:smg_auto_crank",HasBulletInBarrel:0b}'),
         [
@@ -204,7 +204,7 @@ ServerEvents.recipes(e => {
             G: "kinetic_pixel:strikerexciter",
             H: "#minecraft:logs"
         })
-        .id("create_armorer:smg_auto_crank")
+        .id("createdelight:smg_auto_crank")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}'),
         [
@@ -218,7 +218,7 @@ ServerEvents.recipes(e => {
             C: "create:precision_mechanism"
         }
     )
-    .id("create_armorer:sight_standard")
+    .id("createdelight:sight_standard")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}'),
         [
@@ -232,7 +232,7 @@ ServerEvents.recipes(e => {
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_standard"}').strongNBT()
         }
     )
-    .id("create_armorer:sight_medium_distance")
+    .id("createdelight:sight_medium_distance")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:scope_telephoto"}'),
         [
@@ -245,7 +245,7 @@ ServerEvents.recipes(e => {
             B: "createprism:brass_glass_casing",
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:sight_medium_distance"}').strongNBT()
         }
-    ).id("create_armorer:scope_telephoto")
+    ).id("createdelight_armorer:scope_telephoto")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:grip_gantry_shaft"}'),
         [
@@ -255,7 +255,7 @@ ServerEvents.recipes(e => {
         {
             A: "create:gantry_shaft"
         }
-    ).id("create_armorer:grip_gantry_shaft")
+    ).id("createdelight_armorer:grip_gantry_shaft")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:grip_wooden"}'),
         [
@@ -266,7 +266,7 @@ ServerEvents.recipes(e => {
             A: "create:andesite_alloy",
             B: '#minecraft:logs'
         }
-    ).id("create_armorer:grip_wooden")
+    ).id("createdelight_armorer:grip_wooden")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_brass_retractor"}'),
         [
@@ -277,7 +277,7 @@ ServerEvents.recipes(e => {
         {
             A: "createaddition:brass_rod"
         }
-    ).id("create_armorer:muzzle_refit_brass_retractor")
+    ).id("createdelight_armorer:muzzle_refit_brass_retractor")
     let iner_2 = 'vintageimprovements:steel_rod'
     create.sequenced_assembly(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_lava_perfusion_bottle"}'),
@@ -288,7 +288,7 @@ ServerEvents.recipes(e => {
     )
         .loops(2)
         .transitionalItem(iner_2)
-        .id("create_armorer:muzzle_refit_lava_perfusion_bottle")
+        .id("createdelight:muzzle_refit_lava_perfusion_bottle")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_1"}'),
         [
@@ -302,7 +302,7 @@ ServerEvents.recipes(e => {
             C: "create:andesite_alloy",
             D: "kinetic_pixel:ammunitionbox"
         }
-    ).id("create_armorer:extended_mag_ca_1")
+    ).id("createdelight_armorer:extended_mag_ca_1")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_2"}'),
         [
@@ -316,7 +316,7 @@ ServerEvents.recipes(e => {
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_1"}').strongNBT(),
             D: "kinetic_pixel:ammunitionbox"
         }
-    ).id("create_armorer:extended_mag_ca_2")
+    ).id("createdelight_armorer:extended_mag_ca_2")
     kubejs.shaped(
         Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_3"}'),
         [
@@ -330,7 +330,7 @@ ServerEvents.recipes(e => {
             C: Item.of('tacz:attachment', '{AttachmentId:"create_armorer:extended_mag_ca_2"}').strongNBT(),
             D: "kinetic_pixel:ammunitionbox"
         }
-    ).id("create_armorer:extended_mag_ca_3")
+    ).id("createdelight_armorer:extended_mag_ca_3")
 
     let iner = 'createdelight:incomplete_slap'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:slap"}').withCount(2), 'create:brass_sheet',
@@ -343,7 +343,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner)
-        .id("create_armorer:slap")
+        .id("createdelight:slap")
 
     let iner_1 = 'createdelight:incomplete_rbapb'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:rbapb"}'), 'create:brass_sheet',
@@ -357,7 +357,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_1)
-        .id("create_armorer:rbapb")
+        .id("createdelight:rbapb")
     
     let iner_3 = 'createdelight:incomplete_gas_pistol_ammo'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"create_armorer:gas_pistol_ammo"}'), 'create:copper_sheet',
@@ -370,7 +370,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_3)
-        .id("create_armorer:gas_pistol_ammo")
+        .id("createdelight:gas_pistol_ammo")
 
     let iner_4 = 'createdelight:incomplete_12g'
     create.sequenced_assembly(Item.of('tacz:ammo', '{AmmoId:"tacz:12g"}'), 'alexscaves:polymer_plate', 
@@ -385,28 +385,28 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_4)
-        .id("tacz:12g")
+        .id("createdelight:12g")
     
     create.sequenced_assembly(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_bigger_cylinder"}'), "create:fluid_pipe",
         create.deploying("create:fluid_pipe", ["create:fluid_pipe", "create_sa:small_fueling_tank"])
     )
     .loops(2)
     .transitionalItem("create:fluid_pipe")
-    .id("create_armorer:muzzle_refit_bigger_cylinder")
+    .id("createdelight:muzzle_refit_bigger_cylinder")
     
     create.filling(Item.of('tacz:modern_kinetic_gun', '{GunId:"create_armorer:special_melee_wrench"}'), [
         "create:wrench",
         Fluid.of("createdelight:malice_solution", 1000)
-    ]).id("create_armorer:special_melee_wrench")
+    ]).id("createdelight_armorer:special_melee_wrench")
 
     kubejs.shaped(Item.of('tacz:attachment', '{AttachmentId:"create_armorer:muzzle_refit_iron_spike"}'), [
         "AAA",
         "B  "
     ], {
         A: "#forge:plates/steel",
-        B: "#forge:nuggets/steel"
+        B: "#forge:nuggets/iron"
     })
-    .id("create_armorer:muzzle_refit_iron_spike")
+    .id("createdelight:muzzle_refit_iron_spike")
     threshing(e,  'kinetic_pixel:graycotton', [
         '2x minecraft:string',
         Item.of('2x minecraft:string').withChance(0.5),

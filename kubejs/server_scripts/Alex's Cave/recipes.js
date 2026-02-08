@@ -30,11 +30,11 @@ ServerEvents.recipes(e => {
     e.recipes.create.crushing([
         "3x alexscaves:sea_glass_shards",
         Item.of("alexscaves:sea_glass_shards", 3).withChance(0.5)], "alexscaves:pearl")
-        .id("alexscaves:crushing/pearl")
+        .id("createdelight:crushing/pearl")
     centrifugation(e,[
         "minecraft:mud",
         "alexscaves:sea_glass_shards"
     ],
         "alexscaves:muck"
-    ).id("alexscaves:centrifugation/muck")
+    ).id("createdelight:centrifugation/muck")
 })

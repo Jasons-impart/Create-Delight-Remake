@@ -91,7 +91,7 @@ ServerEvents.recipes((event) => {
       "BCD",
       "AAA"
     ], {
-    A: "#forge:nuggets/steel",
+    A: "#forge:plates/steel",
     B: "#forge:gems/quartz",
     C: "#forge:dusts/fluix",
     D: "ae2:logic_processor",
@@ -117,7 +117,7 @@ ServerEvents.recipes((event) => {
   .id("createdelight:formation_cor")
   
   kubejs.shaped("4x ae2:formation_core", ["AAA", "BCD", "AAA"], {
-    A: "#forge:nuggets/steel",
+    A: "#forge:plates/steel",
     B: "#forge:gems/certus_quartz",
     C: "#forge:dusts/fluix",
     D: "ae2:logic_processor",

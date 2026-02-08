@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
             "fruitsdelight:peach"
         ]
     )
-        .heated().id("fruitsdelight:mixing/flowing_peach_tea")
+        .heated().id("createdelight:mixing/flowing_peach_tea")
     brewing(e, "farmersrespite:yellow_tea",
         [
             "fruitsdelight:peach",
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
             "fruitsdelight:mango"
         ]
     )
-        .heated().id("fruitsdelight:mixing/flowing_mango_tea")
+        .heated().id("createdelight:mixing/flowing_mango_tea")
     brewing(e, "farmersrespite:black_tea",
         [
             "fruitsdelight:mango",
@@ -42,7 +42,7 @@ ServerEvents.recipes(e => {
             "fruitsdelight:mangosteen"
         ]
     )
-        .heated().id("fruitsdelight:mixing/flowing_mangosteen_tea")
+        .heated().id("createdelight:mixing/flowing_mangosteen_tea")
     brewing(e, "farmersrespite:green_tea",
         [
             "fruitsdelight:mangosteen",
@@ -57,7 +57,7 @@ ServerEvents.recipes(e => {
             "#forge:fruits/lychee"
         ]
     )
-        .heated().id("fruitsdelight:mixing/flowing_lychee_cherry_tea")
+        .heated().id("createdelight:mixing/flowing_lychee_cherry_tea")
     brewing(e, "farmersrespite:green_tea",
         [
             "#forge:fruits/lychee",
@@ -71,7 +71,7 @@ ServerEvents.recipes(e => {
             "fruitsdelight:hawberry"
         ]
     )
-        .heated().id("fruitsdelight:mixing/flowing_hawberry_tea")
+        .heated().id("createdelight:mixing/flowing_hawberry_tea")
     brewing(e, "farmersrespite:yellow_tea",
         [
             "fruitsdelight:hawberry",
@@ -84,7 +84,7 @@ ServerEvents.recipes(e => {
             Fluid.water(500),
             "ends_delight:dried_chorus_flower"
         ]
-    ).heated().id("create_central_kitchen:mixing/chorus_flower_tea")
+    ).heated().id("createdelight:mixing/chorus_flower_tea")
     brewing(e, "minecraft:water",
         [
             "ends_delight:dried_chorus_flower",
@@ -97,11 +97,11 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle",
             Fluid.of("create_central_kitchen:chorus_flower_tea", 250)
         ]
-    ).id("ends_delight:filling/chorus_flower_tea")
+    ).id("createdelight:filling/chorus_flower_tea")
     e.recipes.create.haunting("farmersrespite:yellow_tea_leaves", "farmersrespite:green_tea_leaves")
-    .id("farmersrespite:haunting/yellow_tea_leaves")
+    .id("createdelight:haunting/yellow_tea_leaves")
     e.recipes.create.haunting("farmersrespite:black_tea_leaves", "farmersrespite:yellow_tea_leaves")
-    .id("farmersrespite:haunting/black_tea_leaves")
+    .id("createdelight:haunting/black_tea_leaves")
     e.recipes.farmersdelight.cooking(
         [
             '#forge:cooked_fishes/cod',
@@ -109,5 +109,5 @@ ServerEvents.recipes(e => {
             '#festival_delicacies:cabbage',
             "createdelight:empty_riceball"
         ], 'farmersrespite:black_cod', 0.5, 200, "minecraft:bowl"
-    ).id('farmersrespite:black_cod')
+    ).id('createdelight:black_cod')
 })

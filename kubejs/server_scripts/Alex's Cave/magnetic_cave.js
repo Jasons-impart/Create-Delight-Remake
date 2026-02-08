@@ -7,7 +7,7 @@ ServerEvents.recipes(e => {
         Item.of('minecraft:iron_nugget').withChance(0.15),
         Item.of('vintageimprovements:vanadium_nugget').withChance(0.1)],
         'alexscaves:galena'
-    ).id("alexscaves:crushing/galena")
+    ).id("createdelight:crushing/galena")
 
     //方铅岩再生
     e.recipes.vintageimprovements.pressurizing(
@@ -20,7 +20,7 @@ ServerEvents.recipes(e => {
             "minecraft:deepslate",
             "minecraft:iron_nugget"
         ]
-    ).heatRequirement("heated").id("alexscaves:pressurizing/galena")
+    ).heatRequirement("heated").id("createdelight:pressurizing/galena")
     e.recipes.create.mixing(
         [
             "alexscaves:galena",
@@ -31,14 +31,14 @@ ServerEvents.recipes(e => {
             "minecraft:deepslate",
             "minecraft:iron_nugget"
         ], 5000
-    ).id("alexscaves:mixing/galena")
+    ).id("createdelight:mixing/galena")
 
     //方铅岩充能为充能方铅岩
     e.recipes.create_new_age.energising(
         "alexscaves:galena",
         "alexscaves:energized_galena_neutral",
         20000
-    ).id("alexscaves:energising/energized_galena_neutral")
+    ).id("createdelight:energising/energized_galena_neutral")
 
 
     //充能方铅岩离心成两种方铅岩
@@ -48,7 +48,7 @@ ServerEvents.recipes(e => {
             Item.of("alexscaves:energized_galena_azure").withChance(0.5)
         ],
         "alexscaves:energized_galena_neutral"
-    ).id("alexscaves:centrifugation/energized_galena_neutral")
+    ).id("createdelight:centrifugation/energized_galena_neutral")
 
     //三种方铅岩粉碎
     e.recipes.create.crushing([
@@ -56,14 +56,14 @@ ServerEvents.recipes(e => {
         Item.of("vintageimprovements:vanadium_nugget").withChance(0.2),
         Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.15)],
         "alexscaves:energized_galena_scarlet"
-    ).id("alexscaves:crushing/energized_galena_scarlet")
+    ).id("createdelight:crushing/energized_galena_scarlet")
 
     e.recipes.create.crushing([
         Item.of("minecraft:iron_nugget").withChance(0.2),
         Item.of("vintageimprovements:vanadium_nugget").withChance(0.2),
         Item.of("alexscaves:raw_azure_neodymium").withChance(0.15)],
         "alexscaves:energized_galena_azure"
-    ).id("alexscaves:crushing/energized_galena_azure")
+    ).id("createdelight:crushing/energized_galena_azure")
 
 
     e.recipes.create.crushing([
@@ -72,7 +72,7 @@ ServerEvents.recipes(e => {
         Item.of("alexscaves:raw_scarlet_neodymium").withChance(0.05),
         Item.of("alexscaves:raw_azure_neodymium").withChance(0.05)],
         "alexscaves:energized_galena_neutral"
-    ).id("alexscaves:crushing/energized_galena_neutral")
+    ).id("createdelight:crushing/energized_galena_neutral")
 
     //赤汝、青汝合金
     e.recipes.createmetallurgy.alloying(
@@ -119,7 +119,7 @@ ServerEvents.recipes(e => {
     )
         .transitionalItem(iner_3)
         .loops(1)
-        .id("alexscaves:heavyweight")
+        .id("createdelight:heavyweight")
 
     //机铁之心
     let iner_4 = "alexscaves:heart_of_iron"
@@ -131,7 +131,7 @@ ServerEvents.recipes(e => {
     )
         .transitionalItem(iner_4)
         .loops(1)
-        .id("alexscaves:heart_of_iron")
+        .id("createdelight:heart_of_iron")
 
     //磁流核
     e.recipes.kubejs.shaped("alexscaves:telecore", [
@@ -145,7 +145,7 @@ ServerEvents.recipes(e => {
             C: "alexscaves:raw_azure_neodymium",
             D: "create_new_age:overcharged_iron_sheet"
         })
-        .id("alexscaves:telecore")
+        .id("createdelight:telecore")
 
     //扫描机兵零件
     let iner_5 = "createdelight:steel_sheet"
@@ -157,7 +157,7 @@ ServerEvents.recipes(e => {
     )
         .transitionalItem(iner_5)
         .loops(1)
-        .id("alexscaves:notor_gizmo")
+        .id("createdelight:notor_gizmo")
     
     e.replaceInput({ id: "create_oppenheimered:deploying/electron_tube_from_notor_gizmo" }, "create:copper_nugget", "create:iron_sheet")
 
@@ -168,21 +168,21 @@ ServerEvents.recipes(e => {
             "minecraft:arrow",
             "alexscaves:scarlet_neodymium_ingot"
         ]
-    ).id("alexscaves:seeking_arrow")
+    ).id("createdelight:seeking_arrow")
     e.recipes.create.filling(
         'alexscaves:seeking_arrow',
         [
             'minecraft:arrow',
             Fluid.of("createdelightcore:molten_scarlet_neodymium", 10)
         ]
-    ).id("alexscaves:filling/seeking_arrow")
+    ).id("createdelight:filling/seeking_arrow")
     e.recipes.create.mixing(
         "alexscaves:seeking_arrow",
         [
             "minecraft:arrow",
             Fluid.of("createdelightcore:molten_scarlet_neodymium", 20)
         ]
-    ).id("alexscaves:mixing/seeking_arrow")
+    ).id("createdelight:mixing/seeking_arrow")
 
     //富铁粘液球
     e.recipes.create.mixing(
@@ -191,7 +191,7 @@ ServerEvents.recipes(e => {
             'minecraft:slime_ball',
             '#forge:dusts/iron'
         ]
-    ).id("alexscaves:mixing/ferrouslime_ball")
+    ).id("createdelight:mixing/ferrouslime_ball")
     //富铁粘液
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:ferrouslime", 90),
@@ -199,7 +199,7 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelightcore:slime", 90),
             '#forge:dusts/iron'
         ]
-    ).id("alexscaves:mixing/ferrouslime")
+    ).id("createdelight:mixing/ferrouslime")
     //紫颂黏液
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:chorusslime", 90),
@@ -211,11 +211,11 @@ ServerEvents.recipes(e => {
     e.recipes.create.compacting(
         'alexscaves:ferrouslime_ball',
         Fluid.of("createdelightcore:ferrouslime", 90)
-    ).id("alexscaves:compacting/ferrouslime")
+    ).id("createdelight:compacting/ferrouslime")
     e.recipes.create.mixing(
         Fluid.of("createdelightcore:ferrouslime", 90),
         'alexscaves:ferrouslime_ball'
-    ).heated().id("createdelight:mixing/ferrouslime")
+    ).heated().id("createdelight:mixing/ferrouslime_melting")
     //磁悬浮组件
     let iner_6 = "createdelight:incomplete_magnetic_mechanism"
     e.recipes.create.sequenced_assembly('createdelight:magnetic_mechanism', 'vintageimprovements:vanadium_sheet', [
@@ -226,5 +226,5 @@ ServerEvents.recipes(e => {
     ])
         .loops(1)
         .transitionalItem(iner_6)
-        .id("alexscaves:magnetic_mechanism")
+        .id("createdelight:magnetic_mechanism")
 })

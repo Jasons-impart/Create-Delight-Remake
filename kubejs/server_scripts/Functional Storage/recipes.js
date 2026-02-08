@@ -30,7 +30,7 @@ ServerEvents.recipes((event) => {
     ])
     .loops(1)
     .transitionalItem("createdelight:incomplete_fs_upgrade")
-    .id("functionalstorage:copper_upgrade_sequenced_assembly");
+    .id("createdelight:copper_upgrade_sequenced_assembly");
 
   fs_upgrade(
     "functionalstorage:copper_upgrade",

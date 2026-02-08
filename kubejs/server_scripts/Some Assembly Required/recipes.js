@@ -13,5 +13,5 @@ ServerEvents.recipes(e => {
     e.recipes.create.cutting(
         "2x some_assembly_required:bread_slice",
         "minecraft:bread"
-    ).id("some_assembly_required:cutting/create/bread_slice")
+    ).id("createdelight:cutting/create/bread_slice")
 })

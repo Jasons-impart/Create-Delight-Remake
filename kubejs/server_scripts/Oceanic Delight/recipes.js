@@ -31,7 +31,7 @@ ServerEvents.recipes(e => {
             '#crabbersdelight:shrimps',
             'casualness_delight:potato_chip'
         ]
-    ).heated().id("oceanic_delight:shrimp_chips")
+    ).heated().id("createdelight:shrimp_chips")
     // 炸虾仁系列
     e.recipes.create.mixing(
         "createdelightcore:unfried_shrimp",

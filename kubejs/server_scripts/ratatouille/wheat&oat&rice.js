@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
         ingredients: [{ item: "minecraft:wheat" }],
         result: [{ item: "ratatouille:wheat_kernels", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
         tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("tetracelium:cutting/wheat")
+    }).id("createdelightcelium:cutting/wheat")
     threshing(e, "vintagedelight:oat", [
         "2x vintagedelight:raw_oats",
         "farmersdelight:straw",
@@ -66,7 +66,7 @@ ServerEvents.recipes(e => {
         ingredients: [{ item: "vintagedelight:oat" }],
         result: [{ item: "vintagedelight:raw_oats", count: 2 }, { item: "farmersdelight:straw", count: 1 }],
         tool: { type: "farmersdelight:tool_action", action: "blade_cut" }
-    }).id("tetracelium:cutting/oat")
+    }).id("createdelightcelium:cutting/oat")
     threshing(e, "farmersdelight:rice_panicle", [
         "3x farmersdelight:rice",
         "farmersdelight:straw",
@@ -77,12 +77,12 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelight:egg_yolk", 250),
         "ratatouille:egg_shell"
     ], "#forge:eggs"
-    ).id("create:emptying/yolk")
+    ).id("createdelight:emptying/yolk")
     e.recipes.create.emptying([
         Fluid.of("createdelight:egg_yolk", 1000),
         "ratatouille:egg_shell"
     ], "#forge:bigger_eggs"
-    ).id("create:emptying/more_yolk")
+    ).id("createdelight:emptying/more_yolk")
     //人工蛋液适配
     e.recipes.create.mixing(
         Fluid.of("createdelight:artificial_egg_yolk", 250),
@@ -101,27 +101,27 @@ ServerEvents.recipes(e => {
             "mynethersdelight:ghasmati",
             "#forge:eggs"
         ]
-    ).id("mynethersdelight:crafting/ghast_dough_manual_only")
+    ).id("createdelight:crafting/ghast_dough_manual_only")
     e.recipes.create.mixing(
         "mynethersdelight:ghast_dough",
         [
             FluidIngredients("forge:egg_yolk", 100),
             "mynethersdelight:ghasmati"
         ]
-    ).id("mynethersdelight:mixing/ghast_dough")
+    ).id("createdelight:mixing/ghast_dough")
     // 燕麦面团
     e.recipes.create.mixing("vintagedelight:oat_dough", [
         FluidIngredients("forge:egg_yolk", 50),
         "vintagedelight:raw_oats"
-    ]).id("vintagedelight:mixing/oat_dough")
+    ]).id("createdelight:mixing/oat_dough")
     e.recipes.minecraft.smoking(
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
-    ).id("vintagedelight:bread_from_smoking")
+    ).id("createdelight:bread_from_smoking")
     e.recipes.minecraft.smelting(
         "createdelight:oat_bread",
         "vintagedelight:oat_dough"
-    ).id("vintagedelight:bread_from_smelting")
+    ).id("createdelight:bread_from_smelting")
     // 燕麦相关食物合成
     e.replaceInput({ id: "vintagedelight:fruity_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
     e.replaceInput({ id: "vintagedelight:deluxe_granola_bar" }, "vintagedelight:raw_oats", "vintagedelight:oat_dough")
@@ -138,5 +138,5 @@ ServerEvents.recipes(e => {
             "#forge:fruits/mangosteen"
         ], "fruitsdelight:mangosteen_cake", 1.0, 200
     )
-        .id("farmersdelight:cooking/mangosteen_cake")
+        .id("createdelight:cooking/mangosteen_cake")
 })
