@@ -299,7 +299,7 @@ Order.addOrderToAuction = function() {
     data.setMinBidDifferent($CoinValue.fromItemOrValue("createdeco:copper_coin", 1))
     data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
-    $TraderAPI.API.GetTrader(false, 0).addTrade(data, null, false)
+    $TraderAPI.getApi().GetTrader(false, 0).addTrade(data, null, false)
 }
 
 Order.reputation = {}
