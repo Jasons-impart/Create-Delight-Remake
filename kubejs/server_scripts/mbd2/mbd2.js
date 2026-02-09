@@ -261,4 +261,10 @@ ServerEvents.recipes(e => {
         C: "create:brass_casing",
         D: "create:factory_gauge"
     }).id("createdelight:mechanical_crafting/mechanical_craft_encoder")
+
+    e.recipes.create.item_application("createdelight:fission_reactor_controller", [
+        "createdelightcore:forge_steel_casing", 
+        "vintageimprovements:redstone_module"
+    ]).id("createdelight:fission_reactor_controller")
+
 })
