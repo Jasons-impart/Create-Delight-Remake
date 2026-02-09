@@ -1557,7 +1557,7 @@
 	"Buckets Show Inhabitants" = true
 	Camera = true
 	"Chest Searching" = true
-	"Elytra Indicator" = true
+	"Elytra Indicator" = false
 	"Greener Grass" = true
 	"Improved Tooltips" = true
 	"Long Range Pick Block" = true
