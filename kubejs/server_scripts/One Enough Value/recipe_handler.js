@@ -1,5 +1,6 @@
 let $RecipeType = Java.loadClass("net.minecraft.world.item.crafting.RecipeType");
 
+
 OEVEvents.addRecipeHandler(event => {
     // 第一个参数为RecipeType，你可以使用字符串来代表
     // 也可以去loadClass获取RecipeType实例
@@ -13,7 +14,32 @@ OEVEvents.addRecipeHandler(event => {
         let multiplier = global.RecipeValueMultiplierDict.get(typeName) ?? defaultMultiplier;
         // console.log(typeName + ":" + multiplier);
         event.addCustomRecipeHandler(RecipeType,
-            event.defaultRecipeInputGetter,
+            (recipe) => {
+                let ingredients = recipe.getIngredients();
+                let inputs = [];
+                ingredients.forEach(i => inputs.push(i));
+
+                // 序列组装配方
+                if (recipe.getSequence) {
+                    recipe.getSequence().forEach(step => {
+                        let stepRecipe = step.getRecipe();
+                        // 机械手配方不消耗手持物品时的特殊处理
+                        if (stepRecipe.shouldKeepHeldItem && stepRecipe.shouldKeepHeldItem()) return;
+
+                        let stepIngs = stepRecipe.getIngredients();
+                        if (stepIngs.size() > 1) {
+                            inputs.push(stepIngs.get(1));
+                        }
+                    });
+                }
+                // 机械手配方不消耗手持物品时的特殊处理：只保留被处理物品
+                else if (recipe.shouldKeepHeldItem && recipe.shouldKeepHeldItem()) {
+                    if (inputs.length > 0) {
+                        inputs = [inputs[0]];
+                    }
+                }
+                return inputs;
+            },
             (recipe, registryAccess) => {
                 if (recipe.getRollableResults) {
                     let results = recipe.getRollableResults();
