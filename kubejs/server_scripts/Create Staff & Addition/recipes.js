@@ -16,6 +16,11 @@ ServerEvents.recipes(e => {
         "create_sa:flamethrower_recipe",
         "create_sa:copper_magnet_recipe",
     ])
+    remove_recipes_output(e, [
+        "create_sa:heat_engine",
+        "create_sa:steam_engine",
+        "create_sa:hydraulic_engine"
+    ])
     e.shaped("create_sa:copper_magnet",
         [
             "AAA",

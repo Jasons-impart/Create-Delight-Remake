@@ -16,7 +16,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/slime.png"
+			image: "minecraft:item/slime_ball"
 			rotation: 0.0d
 			width: 2.0d
 			x: 0.5d
@@ -24,7 +24,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/enderman.png"
+			image: "quark:block/ender_watcher"
 			rotation: 0.0d
 			width: 2.0d
 			x: 3.0d
@@ -32,7 +32,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/blaze.png"
+			image: "quark:block/blaze_lantern"
 			rotation: 0.0d
 			width: 2.0d
 			x: -2.5d
@@ -40,7 +40,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/ghast.png"
+			image: "dungeonsdelight:item/ghastly_spirits"
 			rotation: 0.0d
 			width: 2.0d
 			x: -5.0d
@@ -73,36 +73,12 @@
 			y: 9.5d
 		}
 		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/wither_skeleton.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -2.5d
-			y: 8.5d
-		}
-		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/piglin_brute.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -1.5d
-			y: 9.5d
-		}
-		{
 			height: 2.0d
 			image: "minecraft:item/nether_star"
 			rotation: 0.0d
 			width: 2.0d
 			x: -2.55d
 			y: 10.0d
-		}
-		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/blaze.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -3.5d
-			y: 9.5d
 		}
 		{
 			height: 2.0d
@@ -122,7 +98,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ad_astra:textures/painting/moon.png"
+			image: "northstar:textures/environment/moon_close.png"
 			rotation: 0.0d
 			width: 2.0d
 			x: 8.0d

@@ -8,6 +8,7 @@ ServerEvents.recipes(e => {
   ])
   remove_recipes_id(e, [
     "createdieselgenerators:crafting/engine_piston_from_rods",
+    "createdieselgenerators:crafting/diesel_engine",
     "createdieselgenerators:compacting/plant_oil",
     "createdieselgenerators:basin_fermenting/dough",
     "createdieselgenerators:crafting/burner",
@@ -25,7 +26,9 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:deploying/chemical_sprayer_lighter",
     "createdieselgenerators:crafting/chemical_turret",
     "createdieselgenerators:crafting/chemical_turret_lighter",
-    "createdieselgenerators:crushing/wood_chip_casings"
+    "createdieselgenerators:crushing/wood_chip_casings",
+    "createdieselgenerators:crafting/distillation_controller",
+    "createdieselgenerators:crafting/andesite_girder"
   ]);
   create.crushing(["31x createdieselgenerators:wood_chip",
       Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
@@ -43,6 +46,7 @@ ServerEvents.recipes(e => {
   e.replaceInput({ id: "createdieselgenerators:crafting/basin_lid" }, "create:andesite_alloy", "createdeco:industrial_iron_ingot")
   e.replaceInput({ id: "createdieselgenerators:basin_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
   e.replaceInput({ id: "createdieselgenerators:bulk_fermenting/fermentable" }, "minecraft:bone_meal", "createdelight:dry_yeast")
+  e.replaceInput({id: "createdieselgenerators:crafting/oil_barrel"}, "create:iron_sheet", "createdelight:steel_sheet")
   fermenting(e,
     Fluid.of("createdieselgenerators:ethanol", 250),
     [
@@ -81,9 +85,7 @@ ServerEvents.recipes(e => {
   e.recipes.create.sequenced_assembly("createdieselgenerators:diesel_engine", "minecraft:polished_blackstone_slab",
       [
         e.recipes.create.deploying(iner, [iner, "#forge:storage_blocks/bronze"]),
-        e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
         e.recipes.create.deploying(iner, [iner, "createdieselgenerators:engine_piston"]),
-        e.recipes.create.deploying(iner, [iner, "minecraft:flint_and_steel"]),
         e.recipes.create.deploying(iner, [iner, "createdieselgenerators:engine_piston"]),
         e.recipes.create.deploying(iner, [iner, "create:shaft"]),
       ]
@@ -142,12 +144,12 @@ ServerEvents.recipes(e => {
     e.recipes.create.sequenced_assembly('createdieselgenerators:sheet_metal_panel', iner, [
       e.recipes.vintageimprovements.hammering(iner, iner)
     ])
-      .loops(3)
+      .loops(1)
       .transitionalItem(iner)
       .id("createdelight:crafting/sheet_metal_panel")
   }
   e.recipes.kubejs.shapeless(
-    'createdieselgenerators:andesite_girder',
+    '2x createdieselgenerators:andesite_girder',
     [
       "create:andesite_alloy",
       "create:metal_girder"

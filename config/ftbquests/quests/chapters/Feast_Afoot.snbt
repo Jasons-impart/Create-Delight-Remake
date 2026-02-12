@@ -547,8 +547,9 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["226DB249DC0C5959"]
 			id: "758A7944757826A8"
-			subtitle: "注意只能在月球上使用哦"
+			subtitle: "注意只有在外太空才能发挥催生效果"
 			tasks: [{
 				id: "0EF5F53EACC874DF"
 				item: "createdelightcore:luna_soil"
@@ -1916,6 +1917,18 @@
 			title: "移除物品的品质"
 			x: 0.0d
 			y: -2.5d
+		}
+		{
+			dependencies: ["4FC5D1EC503E6579"]
+			id: "226DB249DC0C5959"
+			subtitle: "需要在外太空发酵"
+			tasks: [{
+				id: "38D13604FF700A4A"
+				item: "createdelightcore:phantom_compost"
+				type: "item"
+			}]
+			x: 2.5d
+			y: -4.0d
 		}
 	]
 	title: "&5盛宴准备时！"
