@@ -1054,7 +1054,6 @@
 		{
 			dependencies: [
 				"6EB96008F21DAFBF"
-				"35F33D9F772B4551"
 				"6DBEF23BA8608F4B"
 			]
 			icon: "create_new_age:generator_coil"
@@ -1841,7 +1840,7 @@
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
-			description: ["在夜晚就可以通过它来看星星。"]
+			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
 			id: "40BDFCC7A3B77F26"
 			shape: "hexagon"
 			size: 2.0d

@@ -82,7 +82,6 @@
 		}
 		{
 			dependencies: ["00AF35D832509CB8"]
-			description: [""]
 			id: "7DC98E34AECFBB5C"
 			shape: "square"
 			subtitle: "使用&e探矿仪&r来寻找&4矿物痕迹"

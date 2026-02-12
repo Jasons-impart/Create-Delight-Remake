@@ -19,14 +19,14 @@
 			id: "0180D3A673FAA934"
 			linked_quest: "4458E27C5252B296"
 			x: 0.0d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
 			id: "2A9CBAC961B413BC"
 			linked_quest: "35F33D9F772B4551"
 			shape: "circle"
 			x: -4.0d
-			y: 5.5d
+			y: 7.0d
 		}
 		{
 			id: "04B1E039517A83A4"
@@ -48,7 +48,7 @@
 			shape: "hexagon"
 			size: 2.0d
 			x: 4.5d
-			y: 4.0d
+			y: 4.5d
 		}
 	]
 	quests: [
@@ -459,23 +459,7 @@
 			]
 			title: "磁铁维度的特殊产物"
 			x: 1.5d
-			y: 3.0d
-		}
-		{
-			dependencies: [
-				"2034DC15562715B2"
-				"7BA43E50785D2492"
-			]
-			id: "5586CC958FF191C5"
-			size: 1.0d
-			subtitle: "减速！增大扭矩！"
-			tasks: [{
-				id: "755BB9E2B8990342"
-				item: "createdelight:planet_gear"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 7.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["7BA43E50785D2492"]
@@ -488,14 +472,11 @@
 				item: "create_new_age:basic_motor"
 				type: "item"
 			}]
-			x: 1.5d
+			x: 0.0d
 			y: 8.5d
 		}
 		{
-			dependencies: [
-				"3CB8FDF09F47FD4F"
-				"007A93F26730F6F0"
-			]
+			dependencies: ["3CB8FDF09F47FD4F"]
 			id: "36E5C4C6A8E9DAB5"
 			shape: "circle"
 			size: 1.0d
@@ -506,7 +487,7 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["2034DC15562715B2"]
@@ -517,7 +498,7 @@
 				item: "create_new_age:advanced_motor"
 				type: "item"
 			}]
-			x: 3.0d
+			x: 1.5d
 			y: 8.5d
 		}
 		{
@@ -529,7 +510,7 @@
 				item: "create_new_age:reinforced_motor"
 				type: "item"
 			}]
-			x: 4.5d
+			x: 3.0d
 			y: 8.5d
 		}
 		{
@@ -543,7 +524,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["40D0657E9DDB5663"]
@@ -556,10 +537,10 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 6.0d
+			y: 6.5d
 		}
 		{
-			dependencies: ["5586CC958FF191C5"]
+			dependencies: ["2034DC15562715B2"]
 			id: "037F074C7A3AACF5"
 			size: 1.0d
 			subtitle: "超频！400%人类感谢！"
@@ -568,8 +549,8 @@
 				item: "create_new_age:basic_motor_extension"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 7.0d
+			x: 1.5d
+			y: 7.5d
 		}
 		{
 			dependencies: ["037F074C7A3AACF5"]
@@ -581,35 +562,11 @@
 				item: "create_new_age:advanced_motor_extension"
 				type: "item"
 			}]
-			x: 4.5d
-			y: 7.0d
+			x: 3.0d
+			y: 7.5d
 		}
 		{
-			dependencies: ["35F33D9F772B4551"]
-			id: "007A93F26730F6F0"
-			rewards: [{
-				id: "4988ECBB3745E4E2"
-				item: "ad_astra:etrionic_core"
-				random_bonus: 3
-				type: "item"
-			}]
-			shape: "square"
-			size: 1.0d
-			subtitle: "电力器械的核心部件"
-			tasks: [{
-				id: "719EEDF319631604"
-				item: "ad_astra:etrionic_core"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 7.0d
-		}
-		{
-			dependencies: [
-				"6EB96008F21DAFBF"
-				"007A93F26730F6F0"
-				"35F33D9F772B4551"
-			]
+			dependencies: ["2CC8B87D086B3275"]
 			id: "3CB8FDF09F47FD4F"
 			rewards: [{
 				count: 3
@@ -626,8 +583,8 @@
 				type: "item"
 			}]
 			title: "旋转起来！"
-			x: -1.5d
-			y: 4.0d
+			x: -4.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
@@ -654,13 +611,10 @@
 			]
 			title: "感谢法拉第！"
 			x: 1.5d
-			y: 4.0d
+			y: 4.5d
 		}
 		{
-			dependencies: [
-				"3CB8FDF09F47FD4F"
-				"007A93F26730F6F0"
-			]
+			dependencies: ["3CB8FDF09F47FD4F"]
 			dependency_requirement: "one_completed"
 			hide_until_deps_visible: true
 			id: "7506866B743A60C1"
@@ -679,7 +633,7 @@
 			}]
 			title: "小型连接器"
 			x: 0.0d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["2CC8B87D086B3275"]
@@ -696,13 +650,13 @@
 				item: "createaddition:capacitor"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 8.5d
+			x: -5.5d
+			y: 8.0d
 		}
 		{
 			dependencies: [
 				"7DA3417CB0E6E7DB"
-				"007A93F26730F6F0"
+				"35F33D9F772B4551"
 			]
 			id: "39D218E0652E1CE0"
 			rewards: [{
@@ -718,11 +672,11 @@
 				item: "createaddition:modular_accumulator"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 8.5d
+			x: -4.0d
+			y: 8.0d
 		}
 		{
-			dependencies: ["007A93F26730F6F0"]
+			dependencies: ["3CB8FDF09F47FD4F"]
 			id: "7BA43E50785D2492"
 			rewards: [{
 				count: 3
@@ -739,7 +693,7 @@
 			}]
 			title: "电生磁磁生电"
 			x: 0.0d
-			y: 7.0d
+			y: 7.5d
 		}
 		{
 			dependencies: ["1A10B417B7C082DF"]
@@ -761,7 +715,7 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["462CF1F71BC69A50"]
@@ -772,7 +726,7 @@
 				type: "item"
 			}]
 			x: 3.0d
-			y: 5.0d
+			y: 5.5d
 		}
 		{
 			dependencies: ["65602AA94EEB3AA3"]

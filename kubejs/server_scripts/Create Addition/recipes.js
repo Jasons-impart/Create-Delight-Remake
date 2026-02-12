@@ -13,7 +13,10 @@ ServerEvents.recipes(e => {
         "createaddition:crafting/biomass_pellet",
         "createaddition:crafting/biomass_pellet_block",
         "createaddition:mixing/electrum",
-        "createaddition:mechanical_crafting/tesla_coil"
+        "createaddition:mechanical_crafting/tesla_coil",
+        "createaddition:crafting/modular_accumulator_electrum",
+        "createaddition:mechanical_crafting/electric_motor",
+        "createaddition:mechanical_crafting/alternator"
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"
@@ -59,7 +62,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner_3)
         .loops(2)
-        .id("createdelight:mechanical_crafting/alternator")
+        .id("createdelight:sequenced_assembly/alternator")
     // 电动机
     let iner_4 = "createdelight:incomplete_electric_motor"
     e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create_sa:copper_magnet", [
@@ -69,7 +72,7 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner_4)
         .loops(2)
-        .id("createdelight:mechanical_crafting/electric_motor")
+        .id("createdelight:sequenced_assembly/electric_motor")
     // 移动式能量接口
     e.recipes.kubejs.shapeless(
         'createaddition:portable_energy_interface',
@@ -92,7 +95,7 @@ ServerEvents.recipes(e => {
         "vvaddon:mine_ingot",
         "2x createaddition:superconducting_wire"
     )
-    .id("createdelight:rolling/superconducting_wire")
+        .id("createdelight:rolling/superconducting_wire")
     e.recipes.kubejs.shaped(
         "createaddition:superconducting_spool",
         [
@@ -107,5 +110,26 @@ ServerEvents.recipes(e => {
     ).id("createdelight:crafting/superconducting_spool")
 
     e.recipes.vintageimprovements.turning("8x createaddition:spool", "#forge:ingots/iron")
-    .id("createdelight:turning/spool")
+        .id("createdelight:turning/spool")
+    let spoolList = [
+        [
+            'createaddition:copper_spool',
+            'createaddition:copper_wire'],
+        [
+            'createaddition:superconducting_spool',
+            'createaddition:superconducting_wire'],
+        [
+            'createaddition:gold_spool',
+            'createaddition:gold_wire'],
+        [
+            'createaddition:electrum_spool',
+            'createaddition:electrum_wire']].forEach(spool => {
+                e.recipes.create.sequenced_assembly(spool[0], 'createaddition:spool', [
+                    e.recipes.create.deploying("createaddition:spool", ["createaddition:spool", spool[1]])
+                ])
+                .loops(2)
+                .transitionalItem("createaddition:spool")
+                .id(`createdelight:sequenced_assembly/${spool[0].split(':')[1]}`)
+            })
+
 })

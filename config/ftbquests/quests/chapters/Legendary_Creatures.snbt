@@ -121,7 +121,7 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
-			icon: "ad_astra:moon_globe"
+			icon: "northstar:moon_sand"
 			id: "6AF0BCF34F1E3853"
 			size: 1.5d
 			tasks: [{
@@ -135,7 +135,7 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
-			icon: "ad_astra:mars_globe"
+			icon: "northstar:mars_sand"
 			id: "244B2CABBB89B269"
 			size: 1.5d
 			tasks: [{
@@ -163,7 +163,7 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
-			icon: "ad_astra:mercury_globe"
+			icon: "northstar:mercury_stone"
 			id: "0B2D858482173126"
 			size: 1.5d
 			tasks: [{
@@ -177,7 +177,7 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
-			icon: "ad_astra:venus_globe"
+			icon: "northstar:venus_gravel"
 			id: "5246A4941FE396AC"
 			size: 1.5d
 			tasks: [{
@@ -432,7 +432,7 @@
 		{
 			dependencies: ["2AE0738C43D5A42B"]
 			disable_toast: true
-			icon: "ad_astra:earth_globe"
+			icon: "minecraft:dirt"
 			id: "06E9305FCDABCD28"
 			size: 1.5d
 			tasks: [{
@@ -506,7 +506,6 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["1F4036E773E1E9F1"]
 			id: "1E07922289055F60"
 			tasks: [{
 				id: "6D5A5ED5D027F85A"

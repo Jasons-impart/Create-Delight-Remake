@@ -20,7 +20,13 @@ ServerEvents.recipes(e => {
         'create_new_age:overcharged_golden_wire_block',
         'create_new_age:overcharged_diamond_wire_block',
         'create_new_age:blank_circuit',
-        'create_new_age:copper_circuit'
+        'create_new_age:copper_circuit',
+        "create_new_age:basic_energiser",
+        "create_new_age:advanced_energiser",
+        "create_new_age:reinforced_energiser",
+        "create_new_age:redstone_magnet",
+        "create_new_age:layered_magnet",
+        "create_new_age:carbon_brushes"
     ])
 
     e.forEachRecipe({ type: "createaddition:charging", mod: "createaddition" }, r => {

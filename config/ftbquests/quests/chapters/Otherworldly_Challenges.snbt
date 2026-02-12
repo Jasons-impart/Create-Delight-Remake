@@ -7,14 +7,6 @@
 	id: "2F14272613261E70"
 	images: [
 		{
-			height: 9.0d
-			image: "ad_astra:textures/painting/the_milky_way.png"
-			rotation: 0.0d
-			width: 14.0d
-			x: 2.0d
-			y: -14.0d
-		}
-		{
 			height: 3.0d
 			image: "enhanced_boss_bars:textures/gui/boss_bars/wither_storm.png"
 			rotation: 0.0d
@@ -470,6 +462,7 @@
 		{
 			dependencies: ["4C520BFAB5B97C59"]
 			description: ["“真正的远方不在脚下，而在维度之间的裂隙之中。”"]
+			hide_until_deps_complete: true
 			icon: {
 				Count: 1
 				id: "explorerscompass:explorerscompass"
@@ -1422,10 +1415,7 @@
 		}
 		{
 			can_repeat: true
-			dependencies: [
-				"4245E55901A10324"
-				"14BAD5E84CB36736"
-			]
+			dependencies: ["4245E55901A10324"]
 			description: ["         刷怪笼啊......真是奇特，明明在各个世界都有出现却让人捉摸不透其中的原理。这种生生不息的力量总是让人感到恐惧，它就像是把自然生成的怪物定向转移&m（似乎是替换？）&r在这区域中，也许裂隙的原理与此相似......"]
 			id: "26DEC8F4AA322B38"
 			rewards: [{
@@ -1888,6 +1878,7 @@
 			y: -2.5d
 		}
 		{
+			dependencies: ["06B035939A77A146"]
 			description: ["    原始世界以各种史前生物为主题，此外这里还生长许多史前植物，两者一起在地下营造了这片广阔的原始世界。尽管这个原始世界位于地下，但日光琥珀为这个生物群系提供着良好的光照，这种照明强度使得整个生物群系拥有和地表白天时一样的亮度。"]
 			icon: {
 				Count: 1
@@ -1985,7 +1976,6 @@
 			dependencies: [
 				"5E6A8FA25EB811DB"
 				"1FB6A60AE6645FA6"
-				"17D22A4364052C8A"
 				"1DAA7B2A273EF5C1"
 				"45A66CCB979164B1"
 			]
@@ -2186,6 +2176,7 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["5981A5D70F26A7A5"]
 			icon: {
 				Count: 1
 				id: "alexscaves:cave_codex"

@@ -24,7 +24,15 @@ ServerEvents.recipes(e => {
         "create:crafting/logistics/stock_link",
     ])
     remove_recipes_output(e, [
-        "create:pulp"
+        "create:pulp",
+        "create:spout",
+        "create:portable_fluid_interface",
+        "create:portable_storage_interface",
+        "createaddition:portable_energy_interface",
+        "create:mechanical_arm",
+        "create:steam_engine",
+        "create:steam_whistle",
+        "create:weighted_ejector"
     ])
     e.recipes.create.milling(
         [
