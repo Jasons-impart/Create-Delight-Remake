@@ -95,7 +95,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["41C38AC7AA97CFAD"]
+			dependencies: ["601E073214DCC16C"]
 			description: [
 				"本包对该mod进行了一些优化："
 				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"

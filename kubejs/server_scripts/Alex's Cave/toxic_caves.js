@@ -10,7 +10,8 @@ ServerEvents.recipes(e => {
         "vintageimprovements:craft/sulfur_items_to_block",
         "vintageimprovements:craft/sulfur_nuggets_to_item",
         "vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust",
-        "vintageimprovements:pressurizing/sulfuric_acid"
+        "vintageimprovements:pressurizing/sulfuric_acid",
+        "alexscaves:spelunkie"
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements
@@ -192,12 +193,12 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:cut_cake_base"
         e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
             e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
-            e.recipes.create.pressing(iner, iner),
             e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
+            e.recipes.create.pressing(iner, iner)
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("alexcaves:sequenced_assembly/spelunkie_2")
+            .id("createdelight:sequenced_assembly/spelunkie_2")
     }
     e.recipes.kubejs.shapeless(
         "alexscaves:spelunkie",

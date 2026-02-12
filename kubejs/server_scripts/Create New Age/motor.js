@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
         [
             e.recipes.create.deploying(iner, [iner, "createaddition:copper_spool"]),
             e.recipes.create.deploying(iner, [iner, "create_sa:heat_engine"]),
-            e.recipes.create.filling(iner, [iner, Fluid.of("createmetallurgy:molten_steel", 360)]),
+            e.recipes.create.filling(iner, [iner, Fluid.of("createdelightcore:molten_andesite", 360)]),
         ]
     )
         .loops(1)
