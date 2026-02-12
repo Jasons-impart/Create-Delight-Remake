@@ -282,7 +282,7 @@ ServerEvents.recipes((event) => {
    * @param {InputItem_} D 
    */
   function make_omnicell_component(result, A, B, C, D) {
-    create.mechanical_crafting(Item.of(result, 27), [
+    create.mechanical_crafting(Item.of(result, 18), [
       "AAAAAAAAA",
       "AAAAAAAAA",
       "BBBBBBBBB",

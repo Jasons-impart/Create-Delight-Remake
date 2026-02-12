@@ -28,16 +28,16 @@
 			linked_quest: "00AF35D832509CB8"
 			shape: "hexagon"
 			size: 2.0d
-			x: 22.0d
-			y: -3.0d
+			x: 18.5d
+			y: -6.0d
 		}
 		{
 			id: "604FBA64277A68B6"
 			linked_quest: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
-			x: 23.5d
-			y: -4.5d
+			x: 22.0d
+			y: -3.0d
 		}
 		{
 			id: "79CEAA3C78A71263"
@@ -1412,7 +1412,7 @@
 				type: "item"
 			}]
 			x: 16.5d
-			y: -6.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
@@ -1425,8 +1425,8 @@
 				item: "fluid:centrifugal_pump"
 				type: "item"
 			}]
-			x: 15.0d
-			y: -4.5d
+			x: 16.5d
+			y: -3.5d
 		}
 		{
 			dependencies: ["2CBBADBE62382C1B"]
@@ -1451,7 +1451,7 @@
 				type: "item"
 			}]
 			x: 16.5d
-			y: -8.0d
+			y: -7.5d
 		}
 		{
 			dependencies: ["575185F2DB0AD44C"]
@@ -1852,6 +1852,26 @@
 			}]
 			x: 11.5d
 			y: -2.5d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			icon: "art_of_forging:nano_insectoid"
+			id: "52C424A4D57F21DE"
+			subtitle: "使用构件，木屑，熔融金属与纳米昆虫可以复制大部分机器，详情查看加压配方"
+			tasks: [
+				{
+					id: "64754F4501F21D0D"
+					title: "使用构件复制机器"
+					type: "checkmark"
+				}
+				{
+					id: "48C0592B3ED7BE3D"
+					item: "art_of_forging:nano_insectoid"
+					type: "item"
+				}
+			]
+			x: 14.5d
+			y: -4.5d
 		}
 	]
 	title: "&9体系渐成 "
