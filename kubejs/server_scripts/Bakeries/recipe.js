@@ -15,13 +15,13 @@ function multi_item(item, count) {
 
 ServerEvents.recipes(e => {
     const { create, createdieselgenerators, vintageimprovements, kubejs, createaddition } = e.recipes
-    remove_recipes_type(e, [
-        "bakeries:oven",
-        "bakeries:bread_knife",
-        "bakeries:coffee",
-        "bakeries:flour_sieve",
-        "bakeries:blender"
-    ])
+    // remove_recipes_type(e, [
+    //     "bakeries:oven",
+    //     "bakeries:bread_knife",
+    //     "bakeries:coffee",
+    //     "bakeries:flour_sieve",
+    //     "bakeries:blender"
+    // ])
     remove_recipes_id(e, [
         "farmersdelight:wheat_dough_from_eggs",
         "create:crafting/appliances/dough",

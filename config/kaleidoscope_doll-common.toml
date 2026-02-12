@@ -33,4 +33,7 @@
 	#幻翼附带玩偶的存在时间，设为 -1 则不会消失
 	#Range: > -1
 	PhantomDollExistTicks = 3600
+	#Whether to enable sponsored dolls
+	#是否启用赞助玩偶
+	EnableSponsoredDoll = true
 
