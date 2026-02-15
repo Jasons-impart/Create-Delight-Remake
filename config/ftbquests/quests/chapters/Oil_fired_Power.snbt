@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "54356C1067ECB809"
+	filename: "Oil_fired_Power"
 	group: "14CFC96B5B37F10B"
 	hide_quest_until_deps_complete: true
 	icon: "create_new_age:generator_coil"
