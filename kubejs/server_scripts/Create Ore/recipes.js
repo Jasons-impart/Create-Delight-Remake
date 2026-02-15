@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
         D: "create:electron_tube",
         E: "create:spout",
         F: "create:brass_casing",
-        G: "create_sa:steam_engine",
+        G: "create_sa:heat_engine",
         H: "create:mechanical_drill",
         I: "create:sturdy_sheet",
         J: "create:brass_tunnel"
