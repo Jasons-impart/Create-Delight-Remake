@@ -6,8 +6,14 @@ ServerEvents.recipes(e => {
         "create_fantasizing:compact_wind_engine",
         "create_fantasizing:sturdy_conduit",
         "create_fantasizing:sturdy_heavy_core",
-        "create_fantasizing:block_placer" //太卡了
+        "create_fantasizing:compacting/powder_snow_to_block",
+        "create_fantasizing:mixing/powder_snow",
+        "create_fantasizing:block_placer"//太卡了
     ])
+    create.emptying([Fluid.of("fluid:powder_snow"), "minecraft:bucket"], 
+        "minecraft:powder_snow_bucket")
+        .id("create:empty_minecraft_powder_snow_bucket_of_create_fantasizing_powder_snow")
+        //此处id是为了同名覆盖机械动力原版的硬编码id，后续维护namespace时不要动它
     kubejs.shaped("create_fantasizing:sturdy_conduit", [
         "A",
         "B",

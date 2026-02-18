@@ -22,6 +22,11 @@ ServerEvents.recipes(e => {
         "create:crafting/logistics/package_frogport",
         "create:crafting/materials/transmitter",
         "create:crafting/logistics/stock_link",
+        "create:sequenced_assembly/precision_mechanism",
+        "create_new_age:cutting/copper_wire",
+        "/^create:crushing\/raw_[A-Za-z0-9]+$/",
+        "create:compacting/blaze_cake",
+        "createutilities:sandpaper_polishing/polished_amethyst"
     ])
     remove_recipes_output(e, [
         "create:pulp",
