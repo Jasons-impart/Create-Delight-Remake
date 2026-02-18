@@ -10,8 +10,6 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 
         "collectorsreap:food/pomegranate_smoothie",
-        "collectorsreap:gummy/glow_berries",
-        "collectorsreap:gummy/sweet_berries",
         "collectorsreap:food/uni_roll",
         "collectorsreap:food/clam_roll",
         "collectorsreap:fermenting/cream_cheese_from_milk_and_salt"
@@ -20,6 +18,7 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
     e.replaceInput({}, "collectorsreap:cooked_tiger_prawn", "#forge:shrimps")
     e.replaceInput({id: "collectorsreap:food/prawn_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
+    e.remove({output: '#collectorsreap:gummies'})
     make_cake(e, "collectorsreap:lime", "collectorsreap:lime_cake")
     make_cake(e, "collectorsreap:pomegranate", "collectorsreap:pomegranate_cake")
     make_cake(e, "collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit_cake")
@@ -106,6 +105,10 @@ ServerEvents.recipes(e => {
         ['yellow_tea', "farmersrespite:yellow_tea_leaves"],
         ['black_tea', "farmersrespite:black_tea_leaves"],
         ['coffee', "createcafe:coffee_grounds"],
+        ['bullet_paper', "mynethersdelight:bullet_pepper"],
+        ['pink_dragon_fruit', "collectorsreap:pink_dragon_fruit"],
+        ['lucuma', "collectorsreap:lucuma"],
+        ['carrot', "#forge:vegetables/carrots"]
     ]
     gummies.forEach(gummy => {
         create.mixing(
