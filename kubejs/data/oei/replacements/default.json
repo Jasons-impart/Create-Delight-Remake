@@ -333,5 +333,11 @@
             "youkaishomecoming:wood_basin"
         ],
         "resultItems": "vinery:grapevine_pot"
+    },
+    {
+        "matchItems": [
+            "collectorsreap:cream_cheese"
+        ],
+        "resultItems": "bakeries:cheese_cream"
     }
 ]

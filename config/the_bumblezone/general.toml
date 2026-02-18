@@ -420,4 +420,40 @@
 	# Whether the Blue Arena in Sempiternal Sanctum has the moving bubble block mechanic.
 	#
 	blueArenaBubblesMechanic = true
+	#----------------------------
+	#
+	# How long in ticks the Blue Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	blueArenaTimeFrameInTicks = 10800
+	#----------------------------
+	#
+	# How long in ticks the Green Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	greenArenaTimeFrameInTicks = 6000
+	#----------------------------
+	#
+	# How long in ticks the Purple Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	purpleArenaTimeFrameInTicks = 5020
+	#----------------------------
+	#
+	# How long in ticks the Red Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	redArenaTimeFrameInTicks = 10800
+	#----------------------------
+	#
+	# How long in ticks the Yellow Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	yellowArenaTimeFrameInTicks = 6000
+	#----------------------------
+	#
+	# How long in ticks the White Arena in Sempiternal Sanctum will last.
+	#
+	#Range: 1 ~ 1000000
+	whiteArenaTimeFrameInTicks = 10000
 

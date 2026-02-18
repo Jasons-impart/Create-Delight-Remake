@@ -2,6 +2,13 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "vintagedelight:cutting/cucumber_cutting",
         "culturaldelights:cutting/cut_cucumber",
+        "vintagedelight:stuffed_burrito",
+        "vintagedelight:fermenting/pickle_from_fermenting",
+        "vintagedelight:salt_bucket_to_salt",
+        "vintagedelight:salt_from_smelting",
+        "vintagedelight:fermenting/century_egg_from_fermenting",
+        "vintagedelight:fermenting/kimchi_from_fermenting",
+        "vintagedelight:stuffed_burrito"
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")

@@ -39,4 +39,7 @@ blocks_unbreak = ["create:blaze_burner"]
 #Enable forbid message or not
 #当蓝图炮尝试破坏被禁止的方块时是否在控制台通知
 debug = true
+#Whether allow gunpowder blocks to refuel(Experiment Warn:This may cause lag for cannon)
+#是否允许使用其他模组的火药块(这可能导致蓝图炮占用提升)
+gunpowder_blocks_compat = false
 

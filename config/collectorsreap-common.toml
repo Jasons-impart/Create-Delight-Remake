@@ -1,5 +1,4 @@
 
-#Enabled items
 [Items]
 	adzuki_gummy = true
 	aloe_gummy = true
@@ -145,6 +144,118 @@
 	vanilla_gummy = true
 	yellow_tea_gummy = true
 	yucca_gummy = true
+	asparagus_aspic = true
+	bulbous_rose = true
+	bulbous_rose_seeds = true
+	bullet_pepper_gummy = true
+	bullet_pepper_popper = true
+	cannoli = true
+	carbonara_pasta = true
+	carrot_gummy = true
+	chiseled_lucuma_bookshelf = true
+	chocolate_cannoli = true
+	clam_meatball_stew_cup = true
+	coffee_cannoli = true
+	cream_cheese = true
+	damselflower = true
+	damselflower_seeds = true
+	deific_blood = true
+	dragon_bush = true
+	dragon_fruit_seeds = true
+	dragon_stew = true
+	dragon_stew_cup = true
+	dragons_passion = true
+	dried_pink_dragon_fruit = true
+	gilded_lucuma = true
+	gilded_lucuma_crate = true
+	heartpetals = true
+	heartpetals_seeds = true
+	heavens_cream = true
+	hemp_gummy = true
+	hermits_sour = true
+	large_lucuma_boat = true
+	limbo_brew = true
+	long_limbo_brew = true
+	long_sweet_recovery = true
+	lucuma = true
+	lucuma_beehive = true
+	lucuma_boards = true
+	lucuma_boat = true
+	lucuma_bookshelf = true
+	lucuma_bread = true
+	lucuma_button = true
+	lucuma_cabinet = true
+	lucuma_cake = true
+	lucuma_cake_slice = true
+	lucuma_cannoli = true
+	lucuma_chest = true
+	lucuma_chest_boat = true
+	lucuma_crate = true
+	lucuma_door = true
+	lucuma_fence = true
+	lucuma_fence_gate = true
+	lucuma_furnace_boat = true
+	lucuma_gazpacho = true
+	lucuma_gazpacho_cup = true
+	lucuma_gummy = true
+	lucuma_hanging_sign = true
+	lucuma_ice_cream = true
+	lucuma_ice_cream_block = true
+	lucuma_ladder = true
+	lucuma_leaf_pile = true
+	lucuma_leaves = true
+	lucuma_log = true
+	lucuma_milkshake = true
+	lucuma_planks = true
+	lucuma_pressure_plate = true
+	lucuma_pudding = true
+	lucuma_sapling = true
+	lucuma_sign = true
+	lucuma_slab = true
+	lucuma_stairs = true
+	lucuma_trapdoor = true
+	lucuma_wood = true
+	mint_cannoli = true
+	moontear = true
+	moontear_seeds = true
+	panettone = true
+	panettone_slice = true
+	peanut_gummy = true
+	pink_dragon_fruit = true
+	pink_dragon_fruit_cake = true
+	pink_dragon_fruit_cake_slice = true
+	pink_dragon_fruit_crate = true
+	pink_dragon_fruit_gummy = true
+	pink_dragon_fruit_ice_cream = true
+	pink_dragon_fruit_ice_cream_block = true
+	pink_dragon_fruit_milkshake = true
+	pink_noodles = true
+	platinum_bass_stew_cup = true
+	portobello_rice_soup_cup = true
+	prawn_spread = true
+	prawn_stew_cup = true
+	prickly_pear_gummy = true
+	reanimators_garden = true
+	rose_moon = true
+	skull_lily = true
+	skull_lily_seeds = true
+	straw_brush = true
+	strawberry_cannoli = true
+	stripped_lucuma_log = true
+	stripped_lucuma_wood = true
+	strong_limbo_brew = true
+	strong_limeade = true
+	strong_sweet_recovery = true
+	strong_vernal_purge = true
+	stuffed_pasta_shells = true
+	stygian_pomegranate_crate = true
+	sunny_ice_cream = true
+	sweet_recovery = true
+	trapped_lucuma_chest = true
+	tropical_shaved_ice = true
+	vanilla_cannoli = true
+	vernal_purge = true
+	wild_berry_gummy = true
 
 [Behavior]
 	#Whether Lime Bushes require Bee pollination to reach final growth stage.
@@ -153,4 +264,30 @@
 	pomegranate_pollination = false
 	#Whether bee pollination of bushes should occur much quicker (when Bee collides with it) rather than on Bee's AI scheduled timing. Use this if having issues with pollination.
 	fast_pollinate = false
+	#(1/x) Chance to pick a Stygian Pomegranate from a bush when all conditions are met.
+	#Range: 1 ~ 100
+	stygian_pomegranate_rarity = 10
+	#Maximum durability of the Straw Brush.
+	#Range: > 1
+	straw_brush_durability = 8
+	#Amount of times a Pollen Covered Straw Brush will perform a Bone Meal action on a growable.
+	#Range: 1 ~ 100
+	straw_brush_bone_meals = 2
+
+[Effects]
+	#Length in seconds of effect gained by eating Panettone.
+	#Range: > 0
+	panettone_duration = 20
+	#Attack damage multiplier gained from Surge I.
+	#Range: 1.0 ~ 10.0
+	surge_zero_multiplier = 1.2
+	#Attack damage multiplier gained from Surge II.
+	#Range: 1.0 ~ 10.0
+	surge_one_multiplier = 1.4
+	#Attack damage multiplier gained from Surge III.
+	#Range: 1.0 ~ 10.0
+	surge_two_multiplier = 1.6
+	#Chance to regain health with Rebound
+	#Range: 0.01 ~ 1.0
+	rebound_chance = 0.15
 
