@@ -26,7 +26,8 @@ ServerEvents.recipes(e => {
         "brewinandchewin:emptying/create/milk_bucket",
         "brewinandchewin:filling/create/milk_bottle",
         "cosmopolitan:brewinandchewin/fermenting/root_beer",
-        "brewinandchewin:fermenting/cocoa_fudge"
+        "brewinandchewin:fermenting/cocoa_fudge",
+        "brewinandchewin:fermenting/pickled_pickles"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",
@@ -45,10 +46,6 @@ ServerEvents.recipes(e => {
         "minecraft:dried_kelp",
         "#forge:salt"
     ]).id("createdelight:fermenting/kippers")
-    kubejs.shapeless(
-        'brewinandchewin:scarlet_cheese_wheel',
-        '4x brewinandchewin:scarlet_cheese_wedge'
-    ).id("createdelight:scarlet_cheese_wheel_from_wedges")
     frementing_3(e, "minecraft:water",
         [
             "ratatouille:wheat_kernels",

@@ -48,11 +48,13 @@ ServerEvents.recipes(e => {
         "bakeries:focaccia",
         "bakeries:drink_cup",
         "bakeries:soak_coffee_cut_cake_base",
-        "bakeries:mould_two",
         "bakeries:coffee_table",
         "bakeries:sofa",
         "bakeries:sofa_light_gray",
         "bakeries:sofa_red",
+        "bakeries:integration/create/mixing/cheese_cream",
+        "bakeries:bagel_filled_sauce",
+        "bakeries:mould_cake_paste"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -72,7 +74,7 @@ ServerEvents.recipes(e => {
 
     //展示框
     e.replaceInput({ id: "bakeries:menu_blcok" }, "minecraft:gray_wool", "minecraft:item_frame")
-    
+
     e.replaceInput({}, "bakeries:bottle_cream", "bakeries:foamed_cream")
     e.replaceInput({}, "bakeries:cake_paste_bucket", "createdelight:cake_batter_bucket")
     create.mixing("4x bakeries:honey_butter", [FluidIngredients("forge:honey", 250), "2x createdelight:butter"])
@@ -538,7 +540,7 @@ ServerEvents.recipes(e => {
         ]
     ).id("createdelight:cream_pumpkin_pie_dough")
     baking(e, 'bakeries:cream_pumpkin_pie_dough', 'bakeries:cream_pumpkin_pie', 1, "food", 100)
-    cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake',4]])
+    cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake', 4]])
     e.custom({
         "type": "bakeries:dough_crafting_table",
         "count": 8,
@@ -554,11 +556,11 @@ ServerEvents.recipes(e => {
             create.filling(iner, [iner, Fluid.of("createdelight:cake_batter", 500)]),
             create.deploying(iner, [iner, "#forge:animal_oil"])
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("createdelight:sequence_assembly/mould_pound_cake_paste")
+            .loops(1)
+            .transitionalItem(iner)
+            .id("createdelight:sequence_assembly/mould_pound_cake_paste")
     }
-    
+
     baking(e, "bakeries:mould_pound_cake_paste", "bakeries:mould_pound_cake", 1, "food", 100)
     {
         let iner = 'bakeries:cut_cake_base'
@@ -607,7 +609,7 @@ ServerEvents.recipes(e => {
     //     .transitionalItem(iner)
     //     .id("createdelight:sequence_assembly/mould_carrot_cake_paste")
     // }
-    
+
     // baking(e, "bakeries:mould_carrot_cake_paste", "bakeries:mould_carrot_cake", 1, "food", 100)
     vintageimprovements.curving(
         [
@@ -643,6 +645,35 @@ ServerEvents.recipes(e => {
     ], {
         A: "bakeries:silicone_paper"
     }).id("createdelight:paper_cup")
+    
+    create.filling("bakeries:bagel_filled_sauce", [
+        Fluid.of("create_bic_bit:mayonnaise", 250),
+        "bakeries:bagel"
+    ]).id("createdelight:filling/bagel_filled_sauce")
+    create.compacting("bakeries:flat_croissant", "bakeries:croissant")
+        .id("createdelight:compacting/flat_croissant")
+    create.sequenced_assembly("bakeries:mould_basque_cake_paste", "bakeries:mould_two", [
+        create.filling("bakeries:mould_basque_cake_paste", ["bakeries:mould_two", Fluid.of("createdelight:cake_batter", 500)]),
+        create.deploying("bakeries:mould_basque_cake_paste", ["bakeries:mould_two", "#forge:cheese"])
+    ])
+        .loops(1)
+        .transitionalItem("bakeries:mould_two")
+        .id("createdelight:sequence_assembly/mould_basque_cake_paste")
+    baking(e, "bakeries:mould_basque_cake_paste", "bakeries:mould_basque_cake", 1, "food", 100)
+    baking(e, "bakeries:raw_yuntui_mooncake", "bakeries:yuntui_mooncake", 1, "food", 100)
+    baking(e, "bakeries:rice_bread_dough", "bakeries:rice_bread", 1, "food", 100)
+    vintageimprovements.curving(
+        [
+            'bakeries:mould_two',
+            'bakeries:basque_cake'
+        ],
+        'bakeries:mould_basque_cake'
+    )
+        .mode(2)
+        .id("createdelight:curving/mould_basque_cake")
+    vintageimprovements.curving("3x bakeries:egg_tart_shell", "createdelight:puff_pastry").mode(1).id("createdelight:curving/egg_tart_shell")
+
+
 })
 ServerEvents.tags("item", e => {
     e.removeAllTagsFrom('bakeries:cheese_cube')

@@ -3,7 +3,9 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "collectorsreap:lime_cake",
         "collectorsreap:pomegranate_cake",
-        "collectorsreap:lime_cookie"
+        "collectorsreap:lime_cookie",
+        "collectorsreap:pink_dragon_fruit_cake",
+        "collectorsreap:lucuma_cake",
     ])
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 
@@ -11,7 +13,8 @@ ServerEvents.recipes(e => {
         "collectorsreap:gummy/glow_berries",
         "collectorsreap:gummy/sweet_berries",
         "collectorsreap:food/uni_roll",
-        "collectorsreap:food/clam_roll"
+        "collectorsreap:food/clam_roll",
+        "collectorsreap:fermenting/cream_cheese_from_milk_and_salt"
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
@@ -19,6 +22,8 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "collectorsreap:food/prawn_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
     make_cake(e, "collectorsreap:lime", "collectorsreap:lime_cake")
     make_cake(e, "collectorsreap:pomegranate", "collectorsreap:pomegranate_cake")
+    make_cake(e, "collectorsreap:pink_dragon_fruit", "collectorsreap:pink_dragon_fruit_cake")
+    make_cake(e, "collectorsreap:lucuma", "collectorsreap:lucuma_cake")
     //虎虾剥壳
     cutting(e, 'collectorsreap:cooked_tiger_prawn', [['oceanic_delight:shrimp_slices']])
     //大饭团
