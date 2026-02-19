@@ -105,7 +105,7 @@ ServerEvents.recipes(e => {
         ['yellow_tea', "farmersrespite:yellow_tea_leaves"],
         ['black_tea', "farmersrespite:black_tea_leaves"],
         ['coffee', "createcafe:coffee_grounds"],
-        ['bullet_paper', "mynethersdelight:bullet_pepper"],
+        ['bullet_pepper', "mynethersdelight:bullet_pepper"],
         ['pink_dragon_fruit', "collectorsreap:pink_dragon_fruit"],
         ['lucuma', "collectorsreap:lucuma"],
         ['carrot', "#forge:vegetables/carrots"]
