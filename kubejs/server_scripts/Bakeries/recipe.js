@@ -15,13 +15,13 @@ function multi_item(item, count) {
 
 ServerEvents.recipes(e => {
     const { create, createdieselgenerators, vintageimprovements, kubejs, createaddition } = e.recipes
-    // remove_recipes_type(e, [
-    //     "bakeries:oven",
-    //     "bakeries:bread_knife",
-    //     "bakeries:coffee",
-    //     "bakeries:flour_sieve",
-    //     "bakeries:blender"
-    // ])
+    remove_recipes_type(e, [
+        "bakeries:oven",
+        "bakeries:bread_knife",
+        "bakeries:coffee",
+        "bakeries:flour_sieve",
+        "bakeries:blender"
+    ])
     remove_recipes_id(e, [
         "farmersdelight:wheat_dough_from_eggs",
         "create:crafting/appliances/dough",
@@ -54,7 +54,9 @@ ServerEvents.recipes(e => {
         "bakeries:sofa_red",
         "bakeries:integration/create/mixing/cheese_cream",
         "bakeries:bagel_filled_sauce",
-        "bakeries:mould_cake_paste"
+        "bakeries:mould_cake_paste",
+        "bakeries:cream_pumpkin_pie_dough",
+        "bakeries:integration/create/mixing/crispy_dough"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -77,6 +79,7 @@ ServerEvents.recipes(e => {
 
     e.replaceInput({}, "bakeries:bottle_cream", "bakeries:foamed_cream")
     e.replaceInput({}, "bakeries:cake_paste_bucket", "createdelight:cake_batter_bucket")
+    e.replaceInput({id: "bakeries:compat/raw_yuntui_mooncake"}, "bakeries:crispy_dough", "createdelight:oil_dough")
     create.mixing("4x bakeries:honey_butter", [FluidIngredients("forge:honey", 250), "2x createdelight:butter"])
         .id("createdelight:mixing/honey_butter")
     // 模具
