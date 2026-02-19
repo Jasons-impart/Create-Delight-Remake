@@ -81,6 +81,8 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "youkaishomecoming:longevity_noodles"}, "#forge:pasta", 'createdelight:vermicelli')
 
     e.forEachRecipe({type: "youkaishomecoming:drying_rack"}, recipe => {
+        if (recipe.getOriginalRecipeResult().is("brewinandchewin:jerky"))
+            return
         ratatouille.baking(recipe.getOriginalRecipeResult(), recipe.getOriginalRecipeIngredients())
         .processingTime(200)
         .id(`createdelight:baking/${recipe.getOriginalRecipeResult().getId().split(":")[1]}`)
