@@ -6,25 +6,13 @@ const DefaultFoodIngredientValue = 1;
 let DefaultFoodIngredientList = [
     "#quality_food:material_whitelist",
 
-    "createcafe:cassava_root",
-
-    "farmersdelight:cabbage",
-    "farmersdelight:tomato",
-    "farmersdelight:onion",
     "farmersdelight:pie_crust",
 
-    "culturaldelights:eggplant",
-    "culturaldelights:avocado",
-    "culturaldelights:corn_cob",
-
-    "festival_delicacies:chinese_cabbage",
     "festival_delicacies:greenonion",
     "festival_delicacies:eggplant",
     "festival_delicacies:garlic_chive",
 
-    "vintagedelight:peanut",
     "vintagedelight:ghost_pepper",
-    "vintagedelight:cucumber",
     "vintagedelight:gearo_berry",
     "vintagedelight:oats",
     "vintagedelight:salt_dust",
@@ -77,15 +65,11 @@ let DefaultFoodIngredientList = [
     "farmersrespite:yellow_tea_leaves",
     "farmersrespite:black_tea_leaves",
 
-    "frycooks_delight:canola",
-
     "collectorsreap:lime",
 
     "butchercraft:leather_scrap",
     "butchercraft:sinew",
     "butchercraft:fat",
-
-    "bakeries:flour",
 
     "createdelight:dry_yeast",
 ]
