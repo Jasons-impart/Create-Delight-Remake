@@ -132,13 +132,6 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:soybean"
       ])
   ).id("createdelight:compacting/plant_oil")
-  e.recipes.kubejs.shaped(
-    'createdieselgenerators:bulk_fermenter',
-    [
-      'createdieselgenerators:basin_lid',
-      'create:basin'
-    ]
-  ).id("createdelight:crafting/bulk_fermenter")
   {
     let iner = "create:iron_sheet"
     e.recipes.create.sequenced_assembly('createdieselgenerators:sheet_metal_panel', iner, [

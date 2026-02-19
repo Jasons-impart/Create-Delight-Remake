@@ -16,10 +16,13 @@ ServerEvents.recipes(e => {
         "createaddition:mechanical_crafting/tesla_coil",
         "createaddition:crafting/modular_accumulator_electrum",
         "createaddition:mechanical_crafting/electric_motor",
-        "createaddition:mechanical_crafting/alternator"
+        "createaddition:mechanical_crafting/alternator",
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"
+    ])
+    remove_recipes_output(e, [
+        "createaddition:biomass"
     ])
     // 电容合成
     e.recipes.minecraft.crafting_shaped("2x createaddition:capacitor", [
