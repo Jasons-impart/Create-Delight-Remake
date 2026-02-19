@@ -1,7 +1,7 @@
 OEVEvents.addItemValue(event => {
     // 清空OEV自带的基础价值表
     event.getValueManager().baseValueMap.clear()
-
+    event.addBaseItemValue("#quality_food:material_whitelist", 1)
     global.FoodIngredientValueDict.forEach((value, Ingredient) => {
         event.addBaseItemValue(Ingredient, value);
     });

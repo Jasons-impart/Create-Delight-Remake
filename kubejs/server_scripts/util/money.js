@@ -61,6 +61,8 @@ MoneyUtil.convertBaseValueToString = function(values) {
  * @returns 
  */
 MoneyUtil.calculateFoodValue = function(itemStack) {
+    if (OEV$ItemValueManager.getValue(itemStack) > 0)
+        return OEV$ItemValueManager.getValue(itemStack)
     let baseNutrition = 6
     let baseSaturationModifier = 0.6
     if (itemStack.getFoodProperties(null) == null) return -1

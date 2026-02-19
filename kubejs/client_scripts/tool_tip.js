@@ -123,13 +123,14 @@ let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
         let value = 0
-        if (global.TradeData[item.id] != undefined) {
-            let Quality = $QualityUtils.getQuality(item)
-            let Qlevel = Quality.level()
-            let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
+        
+        let Quality = $QualityUtils.getQuality(item)
+        let Qlevel = Quality.level()
+        let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
+        if (global.TradeData[item.id] != undefined && OEV$ItemValueManager.getValue(item) == 0) {
             value = multiplier * global.TradeData[item.id]
         } else {
-            value = MoneyUtil.calculateFoodValue(item)
+            value = multiplier * MoneyUtil.calculateFoodValue(item)
         }
         if (value > 0) {
             if (!e.shift) {
