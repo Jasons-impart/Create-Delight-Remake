@@ -82,9 +82,6 @@ OEVEvents.addRecipeHandler(event => {
                         let chance = output.getChance();
                         // console.log(String(itemStack) + " " + String(chance));
 
-                        // 跳过黑名单物品
-                        if (global.ValueBlackList.has(itemId)) return;
-
                         if (!itemStack.isEmpty() && count > 0) {
                             let expectedCount = count * chance;
                             itemCountMap[itemId] = (itemCountMap[itemId] || 0.0) + expectedCount;
@@ -128,9 +125,6 @@ OEVEvents.addRecipeHandler(event => {
                             let itemId = stack.getItem().getId();
                             let count = stack.getCount();
 
-                            // 跳过黑名单物品
-                            if (global.ValueBlackList.has(itemId)) return;
-
                             let definedValue = global.FoodIngredientValueDict.get(itemId);
                             if (definedValue !== undefined) {
                                 consumedValue += definedValue * count;
@@ -152,9 +146,6 @@ OEVEvents.addRecipeHandler(event => {
                     stacks.forEach(stack => {
                         if (!stack.isEmpty() && stack.getCount() > 0) {
                             let itemId = stack.getItem().getId();
-
-                            // 跳过黑名单物品
-                            if (global.ValueBlackList.has(itemId)) return;
 
                             if (global.FoodIngredientValueDict.get(itemId) === undefined) {
                                 // setter 逻辑: 如果 itemStack 有多个，单价 = value / count
