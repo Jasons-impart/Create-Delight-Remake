@@ -14,13 +14,17 @@ ServerEvents.tags("minecraft:item", e => {
 })
 
 ServerEvents.tags("minecraft:fluid", e => {
+    e.remove("create:bottomless/deny", [
+        "/.*molten_.*/"
+    ])
     e.add("create:bottomless/allow", [
         "ratatouille:cocoa_liquor",
         "createdelight:egg_yolk",
         "create:honey",
         "createdelight:vinegar",
-        "#forge:molten_materials",
+        "/.*molten_.*/",
         "netherexp:ectoplasm",
-        "the_bumblezone:sugar_water_still"
+        "the_bumblezone:sugar_water_still",
+        "minecraft:lava"
     ])
 })
