@@ -79,9 +79,4 @@ ServerEvents.recipes(e => {
         .loops(1)
         .id("createdelight:shaped/reinforced_energiser")
         .transitionalItem(iner)
-    e.recipes.create_new_age.energising(
-        'createdelight:mmd_diamond',
-        'create_new_age:overcharged_diamond',
-        10000
-    ).id("createdelight:energising/mmd_diamond")
 })

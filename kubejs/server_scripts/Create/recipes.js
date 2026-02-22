@@ -27,7 +27,8 @@ ServerEvents.recipes(e => {
         "/^create:crushing\/raw_[A-Za-z0-9]+$/",
         "create:compacting/blaze_cake",
         "createutilities:sandpaper_polishing/polished_amethyst",
-        "create_new_age:mixing/thorium"
+        "create_new_age:mixing/thorium",
+        "createaddition:crafting/large_connector_electrum"
     ])
     remove_recipes_output(e, [
         "create:pulp",
