@@ -17,7 +17,9 @@ ServerEvents.recipes(e => {
         "create_oppenheimered:compacting/layer_cake",
         "create_oppenheimered:mixing/chocolate_heating",
         "cavedelight:trilocaris_roll",
-        "alexscaves:deep_sea_sushi_roll"
+        "alexscaves:deep_sea_sushi_roll",
+        "alexscaves:uranium_from_block",
+        "alexscaves:block_of_uranium"
     ])
     remove_recipes_output(e, [
         "alexscaves:cave_map"

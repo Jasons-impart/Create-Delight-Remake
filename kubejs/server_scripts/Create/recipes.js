@@ -28,6 +28,7 @@ ServerEvents.recipes(e => {
         "create:compacting/blaze_cake",
         "createutilities:sandpaper_polishing/polished_amethyst",
         "create_new_age:mixing/thorium",
+        "create_new_age:crushing/radioactive_thorium",
         "createaddition:crafting/large_connector_electrum"
     ])
     remove_recipes_output(e, [

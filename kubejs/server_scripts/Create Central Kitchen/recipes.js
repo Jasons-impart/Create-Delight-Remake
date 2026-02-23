@@ -104,4 +104,11 @@ ServerEvents.recipes(e => {
     ],
     'corn_delight:corn_soup'
   ).id("createdelight:emptying/corn_soup")
+  create.filling(
+    'ends_delight:dragon_breath_soda',
+    [
+      "minecraft:glass_bottle",
+      Fluid.of("create_central_kitchen:dragon_breath_soda", 250)
+    ]
+  ).id("createdelight:filling/dragon_breath_soda")
 })
