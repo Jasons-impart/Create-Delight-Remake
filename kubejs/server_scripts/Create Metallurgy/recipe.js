@@ -5,6 +5,7 @@ ServerEvents.recipes(e => {
         "createmetallurgy:sequenced_assembly/industrial_crucible"
     ])
     e.replaceInput({id: "createmetallurgy:crafting/materials/tungsten_wire_spool"}, "minecraft:stick", "createaddition:spool")
+    e.replaceInput({id: "createmetallurgy:crafting/materials/graphite" }, "minecraft:coal", "#minecraft:coals")
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
     kubejs.shaped(
         'createmetallurgy:sandpaper_belt',
