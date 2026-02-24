@@ -123,14 +123,17 @@ let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
         let value = 0
-        
         let Quality = $QualityUtils.getQuality(item)
         let Qlevel = Quality.level()
         let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-        if (global.TradeData[item.id] != undefined && OEV$ItemValueManager.getValue(item) == 0) {
-            value = multiplier * global.TradeData[item.id]
-        } else {
-            value = multiplier * MoneyUtil.calculateFoodValue(item)
+
+        let baseValue = OEV$ItemValueManager.getValue(item)
+        if (baseValue <= 0 && item.getFoodProperties() != null) {
+            baseValue = MoneyUtil.calculateFoodValue(item)
+        }
+
+        if (baseValue > 0) {
+            value = multiplier * baseValue
         }
         if (value > 0) {
             if (!e.shift) {
@@ -149,19 +152,19 @@ ItemEvents.tooltip(e => {
         }
     })
     e.addAdvanced("createdelight:sell_bin", (item, advanced, text) => {
-            if (!e.ctrl) {
-                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
-            } else {
-                text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
-                text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
-            }
+        if (!e.ctrl) {
+            text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
+        } else {
+            text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
+            text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
+        }
     })
     e.addAdvancedToAll((item, advanced, text) => {
         if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof $SequencedAssemblyItem)) {
             text.add(Text.translatable("tooltip.createdelight.sequenced_assembly_explanation"))
         }
     })
-        for (const key in difficultyLoots) {
+    for (const key in difficultyLoots) {
         let element = difficultyLoots[key]
         element.forEach(val => {
             let entitys = val.entity.split(":")

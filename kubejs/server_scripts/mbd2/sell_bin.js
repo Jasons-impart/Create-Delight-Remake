@@ -8,20 +8,22 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     let player = machine.level.getPlayerByUUID(machine.customData.getUUID("owner"))
     if (player == null) return
     let itemSlots = machine.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
-    let materials = global.MaterialTrade
-    let meats = global.MeatTrade
-    let roasts = global.RoastTrade
-    let vegetables = global.VegatablesTrade
     let values = 0
     let tradeList = []
     itemSlots.allItems.forEach(itemSlot => {
         let slotValue = 0
         let trade = Component.of("")
-        if(global.TradeData[itemSlot.id] != undefined) {
+        
+        let baseValue = OEV$ItemValueManager.getValue(itemSlot)
+        if (baseValue <= 0 && itemSlot.item.getFoodProperties() != null) {
+            baseValue = MoneyUtil.calculateFoodValue(itemSlot)
+        }
+
+        if (baseValue > 0) {
             let Quality = $QualityUtils.getQuality(itemSlot)
             let Qlevel = Quality.level()
             let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            slotValue = itemSlot.count * multiplier * global.TradeData[itemSlot.id]
+            slotValue = itemSlot.count * multiplier * baseValue
             trade = Component.of(itemSlot.hoverName)
             switch(Qlevel) {
                 case 1:
@@ -33,17 +35,6 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
                 case 3:
                     trade.append(" ★★★ ")
                     break
-            }
-        } else {
-            if(itemSlot.item.getFoodProperties() != null) {
-                // let num = 1
-                // effects.forEach(eff => {
-                //     let effect = eff.first
-                //     num = num + 2 + effect.amplifier
-                // })
-                // let effMultipler = Math.sqrt(num)
-                slotValue = itemSlot.count * MoneyUtil.calculateFoodValue(itemSlot)
-                trade = Component.of(itemSlot.hoverName)
             }
         }
         values = values + slotValue
