@@ -100,9 +100,9 @@
             },
             "unitWorth": 750
         },
-        "blacksmith_raw_wolframite": {
+        "blacksmith_raw_tungsten": {
             "type": "item",
-            "content": "createmetallurgy:raw_wolframite",
+            "content": "createmetallurgy:raw_tungsten",
             "rarity": "UNCOMMON",
             "amount": {
                 "min": 1,
