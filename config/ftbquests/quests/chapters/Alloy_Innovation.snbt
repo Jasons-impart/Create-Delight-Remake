@@ -788,7 +788,7 @@
 			id: "1746BAF63124A53E"
 			rewards: [{
 				id: "78F1436063A09F50"
-				item: "createmetallurgy:raw_wolframite"
+				item: "createmetallurgy:raw_tungsten"
 				random_bonus: 4
 				type: "item"
 			}]

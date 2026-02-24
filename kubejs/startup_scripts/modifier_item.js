@@ -227,9 +227,9 @@ ItemEvents.modification(e => {
     //抗火
     fire_resistance("createmetallurgy:raw_wolframite_block")
     fire_resistance("createmetallurgy:wolframite_ore")
-    fire_resistance("createmetallurgy:raw_wolframite")
-    fire_resistance("createmetallurgy:crushed_raw_wolframite")
-    fire_resistance("createmetallurgy:dirty_wolframite_dust")
+    fire_resistance("createmetallurgy:raw_tungsten")
+    fire_resistance("createmetallurgy:crushed_raw_tungsten")
+    fire_resistance("createmetallurgy:dirty_tungsten_dust")
     fire_resistance("createmetallurgy:wolframite_dust")
 
     // 食物修改为快速食用

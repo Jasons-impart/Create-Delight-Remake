@@ -47,7 +47,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "createmetallurgy:raw_wolframite"
+              "name": "createmetallurgy:raw_tungsten"
             }
           ]
         }
