@@ -71,7 +71,7 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:unfermented_paper_pulp", 0xF0FFFF, false)
     simpleFluid("createdelight:nut_milk", 0xf5e7c2, true, false)
         .tag("forge:milk")
-    simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
+    //simpleFluid("createdelight:dragon_breath_soda", 0xdb9bc3, true, false, false)
     simpleFluid("createdelight:vinegar", 0x570000, true, false)
     simpleFluid("createdelight:radon", 0XA0FFDA, true, false)
     simpleFluid("createdelight:unrefined_sugar", 0XBCB998)
