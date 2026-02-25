@@ -6,6 +6,16 @@ const DefaultFoodIngredientValue = 1;
 let DefaultFoodIngredientList = [
     "#quality_food:material_whitelist",
 
+    "minecraft:sunflower",
+
+    "alexscaves:pine_nuts",
+    "alexscaves:trilocaris_tail",
+    "alexscaves:tree_star",
+
+    "crabbersdelight:clawster",
+    "crabbersdelight:raw_frog_leg",
+    "crabbersdelight:shrimp",
+
     "farmersdelight:pie_crust",
 
     "festival_delicacies:greenonion",
@@ -86,6 +96,8 @@ let FoodIngredientValueDict = {
 
     "culturaldelights:squid": 2,
 
+    "brewinandchewin:flaxen_cheese_wheel": 64,
+
     "mynethersdelight:hoglin_loin": 5,
 
     "youkaishomecoming:udumbara_flower": 9,
@@ -122,6 +134,8 @@ let FoodIngredientValueDict = {
     "ratatouille:cocoa_solids": 2,
 
     "createdelight:butter": 2,
+
+    "miners_delight:wild_cave_carrots": 4,
 }
 
 // 价值黑名单，加入黑名单的物品在计算价值时会被忽略
