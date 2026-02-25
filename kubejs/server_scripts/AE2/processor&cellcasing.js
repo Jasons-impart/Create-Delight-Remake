@@ -1028,7 +1028,7 @@ ServerEvents.recipes((event) => {
   vintageimprovements
     .pressurizing(
       "create:polished_rose_quartz", [
-      FluidIngredients("forge:molten_iron", 90),
+      Fluid.of("createmetallurgy:molten_iron", 90),
       "ae2:certus_quartz_crystal"
     ]
     ).secondaryFluidInput(0)

@@ -29,7 +29,8 @@ ServerEvents.recipes(e => {
         "createutilities:sandpaper_polishing/polished_amethyst",
         "create_new_age:mixing/thorium",
         "create_new_age:crushing/radioactive_thorium",
-        "createaddition:crafting/large_connector_electrum"
+        "createaddition:crafting/large_connector_electrum",
+        "create_oppenheimered:filling/gingerbread_sweet_roll"
     ])
     remove_recipes_output(e, [
         "create:pulp",
