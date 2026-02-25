@@ -205,7 +205,7 @@
 	#Set custom snow-line altitudes for biomes (e.g., ["#c:is_cold", 200]).
 	BiomeSnowLines = []
 	#Track snow based on exact world coordinates (allows for localized snow clearing).
-	SnowInWorld = false
+	SnowInWorld = true
 	#(SnowInWorld) Sync chunk snow overlay states immediately when they are loaded.
 	ForceSnowyChunkUpdate = true
 	#(SnowInWorld) Render snow overlays on the sides of blocks located beneath a snow layer block.
