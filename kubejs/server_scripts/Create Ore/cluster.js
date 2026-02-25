@@ -96,17 +96,17 @@ ServerEvents.recipes((event) => {
         .fluid(fluid)
         .drill(drill[index])
         .stress(baseStress * stressMulti[index])
-        .id(`kubejs:${output.split(":")[1]}_using_${fluid.id.split(":")[1]}`)
+        .id(`createdelight:${output.split(":")[1]}_using_${fluid.id.split(":")[1]}`)
     }
   }
 
-  drilling("createdelight:overworld_metal_ore_cluster", "kubejs:overworld_metal_ore_cluster_ore", Fluid.water(500), 1024, 8000, 1)
-  drilling("createdelight:overworld_noble_metal_ore_cluster", "kubejs:overworld_noble_metal_ore_cluster_ore", Fluid.water(500), 1536, 10000, 1)
-  drilling("createdelight:nether_ore_cluster", "kubejs:nether_ore_cluster", Fluid.lava(500), 2048, 12000, 1)
-  drilling("createdelight:moon_ore_cluster", "kubejs:moon_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1024, 4000, 1)
-  drilling("createdelight:mars_ore_cluster", "kubejs:mars_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1536, 4000, 2)
-  // drilling("createdelight:mars_gemstone_cluster", "kubejs:mars_gemstone_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 2048, 4000, 2)
-  drilling("createdelight:mercury_ore_cluster", "kubejs:mercury_ore_cluster_ore", Fluid.lava(1000), 2048, 2000, 3)
-  drilling("createdelight:venus_ore_cluster", "kubejs:venus_ore_cluster_ore", Fluid.lava(500), 2048, 8000, 3)
-  // drilling("createdelight:glacio_ore_cluster", "kubejs:glacio_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 1000), 2048, 2000, 3)
+  drilling("createdelight:overworld_metal_ore_cluster", "createdelight:overworld_metal_ore_cluster_ore", Fluid.water(500), 1024, 8000, 1)
+  drilling("createdelight:overworld_noble_metal_ore_cluster", "createdelight:overworld_noble_metal_ore_cluster_ore", Fluid.water(500), 1536, 10000, 1)
+  drilling("createdelight:nether_ore_cluster", "createdelight:nether_ore_cluster", Fluid.lava(500), 2048, 12000, 1)
+  drilling("createdelight:moon_ore_cluster", "createdelight:moon_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1024, 4000, 1)
+  drilling("createdelight:mars_ore_cluster", "createdelight:mars_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 1536, 4000, 2)
+  // drilling("createdelight:mars_gemstone_cluster", "createdelight:mars_gemstone_cluster_ore", Fluid.of("netherexp:ectoplasm", 500), 2048, 4000, 2)
+  drilling("createdelight:mercury_ore_cluster", "createdelight:mercury_ore_cluster_ore", Fluid.lava(1000), 2048, 2000, 3)
+  drilling("createdelight:venus_ore_cluster", "createdelight:venus_ore_cluster_ore", Fluid.lava(500), 2048, 8000, 3)
+  // drilling("createdelight:glacio_ore_cluster", "createdelight:glacio_ore_cluster_ore", Fluid.of("netherexp:ectoplasm", 1000), 2048, 2000, 3)
 });
