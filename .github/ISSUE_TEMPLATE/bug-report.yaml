@@ -24,6 +24,7 @@ body:
       value: |
         # 确认是否有修改整合包 Make sure you or server holder haven't modify the modpack
         - 请确认自己是否对整合包内的mod、kubejs脚本、mbd2文件等做了增删，整合包本体已经有大量的适配和兼容bug需要修复，制作组无法保证有额外精力解决玩家自行修改整合包后的报错和反馈。
+        - 请填写遇到问题时的整合包状态，自己尝试排除问题时的修改如果未恢复，请不要填在这里，而应该在额外信息中说明。
         - 如果是服务器游玩中的问题，请先联系服务器服主，确认服主是否正确安装了整合包，或是否对整合包服务端做了修改。
   - type: input
     id: modifications
