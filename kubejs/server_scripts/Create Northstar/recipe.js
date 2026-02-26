@@ -76,6 +76,17 @@ ServerEvents.recipes(e => {
         E: "northstar:lunar_sapphire_crystal"
     }).id("createdelight:electrolyzer")
 
+    kubejs.shaped('createdelight:oxygen_tank', [
+        "AAA",
+        "BCB",
+        "DDD"
+    ], {
+        A: "#minecraft:wool",
+        B: "create_sa:small_filling_tank",
+        C: "northstar:moon_sand",
+        D: "createmetallurgy:tungsten_sheet"
+    }).id("createdelight:oxygen_tank")
+
     create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
         .id("createdelight:energising/enriched_glowstone_ore")
 
