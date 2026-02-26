@@ -10,7 +10,7 @@ const COIN_CHAIN_MAIN_VALUE = "main"
  * @returns {io.github.lightman314.lightmanscurrency.api.money.coins.data.ChainData}
  */
 MoneyUtil.getMainChainData = function() {
-    return $CoinAPI.API.ChainData(COIN_CHAIN_MAIN_VALUE)
+    return $CoinAPI.getApi().ChainData(COIN_CHAIN_MAIN_VALUE)
 }
 /**
  * 将数字的值转化为含有货币的列表
