@@ -1,6 +1,3 @@
-// 与 config/curios-common.toml 的 slots 配置保持同步
-const CURIOS_SLOT_IDS = ["back", "belt", "body", "bracelet", "charm", "head", "hands", "ring", "necklace", "feet", "band"]
-
 StartupEvents.registry("item", e => {
     // 注册碳粉
     e.create("createdelight:carbon_dust")
@@ -734,13 +731,14 @@ StartupEvents.registry("item", e => {
     dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
 
     //注册氧气罐
-    let oxygenTank = e.create("createdelight:oxygen_tank")
+    e.create("createdelight:oxygen_tank")
         .translationKey("item.createdelight.oxygen_tank")
         .tag("northstar:oxygen_sources")
         .tag("northstar:oxygen_sealing")
+        .tag("curios:back")
+        .tag("curios:body")
         .tooltip("§b放在饰品槽中，为你提供氧气")
         .texture("createdelight:item/oxygen_tank")
         .unstackable()
-    CURIOS_SLOT_IDS.forEach(slot => oxygenTank.tag(`curios:${slot}`))
 })
 
