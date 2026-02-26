@@ -15,7 +15,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         let trade = Component.of("")
         
         let baseValue = OEV$ItemValueManager.getValue(itemSlot)
-        if (baseValue <= 0 && itemSlot.item.getFoodProperties() != null) {
+        if (baseValue <= 0 && itemSlot.getFoodProperties(player) != null) {
             baseValue = MoneyUtil.calculateFoodValue(itemSlot)
         }
 
@@ -66,7 +66,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             let total = Component.translate("message.createdelight.sell_bin_total", MoneyUtil.convertBaseValueToString(values))
             player.tell(total)
             player.tell(Component.of("§e-----------------------"))
-            $MoneyAPI.API.GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
+            $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
         } else {
             MoneyUtil.convertBaseValueToItems(values).forEach(coin => {
                 itemSlots.insertItem(coin, false)
@@ -188,7 +188,7 @@ MBDMachineEvents.onPlaced("createdelight:sell_bin", e => {
 //     let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
 //     if (!coinValue.empty)
 //         player.tell(Component.translate("message.createdelight.sell_bin_hint", machine.pos.toShortString(), coinValue.getText().getString()))
-//     $MoneyAPI.API.GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
+//     $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
 
 // })
 
