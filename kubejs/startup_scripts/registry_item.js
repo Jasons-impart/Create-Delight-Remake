@@ -730,5 +730,15 @@ StartupEvents.registry("item", e => {
     dread_upgrade.ingredientSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.additions_slot_description").blue()
     dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
 
+    //注册氧气罐
+    e.create("createdelight:oxygen_tank")
+        .translationKey("item.createdelight.oxygen_tank")
+        .tag("northstar:oxygen_sources")
+        .tag("northstar:oxygen_sealing")
+        .tag("curios:back")
+        .tag("curios:body")
+        .tooltip("§b放在饰品槽中，为你提供氧气")
+        .texture("createdelight:item/oxygen_tank")
+        .unstackable()
 })
 
