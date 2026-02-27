@@ -122,13 +122,18 @@ const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityCo
 let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((itemStack, advanced, text) => {
+        const isFood = itemStack.getFoodProperties(null) != null
+        if (!isFood) {
+            return
+        }
+
         let value = 0
         let Quality = $QualityUtils.getQuality(itemStack)
         let Qlevel = Quality.level()
         let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
 
         let baseValue = OEV$ItemValueManager.getValue(itemStack)
-        if (baseValue <= 0 && itemStack.getFoodProperties(null) != null) {
+        if (baseValue <= 0) {
             baseValue = MoneyUtil.calculateFoodValue(itemStack)
         }
 
