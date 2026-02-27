@@ -132,10 +132,7 @@ ItemEvents.tooltip(e => {
         let Qlevel = Quality.level()
         let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
 
-        let baseValue = OEV$ItemValueManager.getValue(itemStack)
-        if (baseValue <= 0) {
-            baseValue = MoneyUtil.calculateFoodValue(itemStack)
-        }
+        let baseValue = MoneyUtil.calculateFoodValue(itemStack)
 
         if (baseValue > 0) {
             value = multiplier * baseValue
