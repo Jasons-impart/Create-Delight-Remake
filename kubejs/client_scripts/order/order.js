@@ -1,4 +1,5 @@
 const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity")
+let MoneyUtil = global.MoneyUtil
 let Order = global.Order
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
@@ -41,9 +42,9 @@ ItemEvents.tooltip(e => {
 
         // 需求
         text.add(Text.translate("tooltip.createdelight.order.require.title"))
-        if (e.shift) 
+        if (e.shift)
             entries.forEach(value => {
-            let good = Order.orderProperties[value.id]
+                let good = Order.orderProperties[value.id]
                 text.add(Text.translate(
                     "tooltip.createdelight.order.require.entry_shift",
                     Text.translate("tooltip.createdelight.order.entries." + value.id),
@@ -54,7 +55,7 @@ ItemEvents.tooltip(e => {
                 ))
             })
         else
-            entries.forEach(value => {    
+            entries.forEach(value => {
                 text.add(Text.translate(
                     "tooltip.createdelight.order.require.entry",
                     Text.translate("tooltip.createdelight.order.entries." + value.id),
@@ -64,7 +65,7 @@ ItemEvents.tooltip(e => {
             })
 
         text.add("")
-        
+
         // 奖励
         text.add(Text.translate("tooltip.createdelight.order.reward.title"))
         text.add(Text.translate(

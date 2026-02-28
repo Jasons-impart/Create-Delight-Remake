@@ -1,6 +1,7 @@
 
 const $ClientboundSetTitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket")
 const $ClientboundSetSubtitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket")
+let MoneyUtil = global.MoneyUtil
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     const {machine} = e.event
@@ -16,16 +17,12 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         let slotValue = 0
         let trade = Component.of("")
         
-        let baseValue = OEV$ItemValueManager.getValue(itemSlot)
-        if (baseValue <= 0 && itemSlot.getFoodProperties(player) != null) {
-            baseValue = MoneyUtil.calculateFoodValue(itemSlot)
-        }
+        let baseValue = MoneyUtil.calculateFoodValue(itemSlot)
 
         if (baseValue > 0) {
             let Quality = $QualityUtils.getQuality(itemSlot)
             let Qlevel = Quality.level()
-            let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-            slotValue = itemSlot.count * multiplier * baseValue
+            slotValue = itemSlot.count * baseValue
             trade = Component.of(itemSlot.hoverName)
             switch(Qlevel) {
                 case 1:

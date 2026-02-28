@@ -6,6 +6,7 @@ const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.P
 const $AuctionTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.auction.tradedata.AuctionTradeData")
 const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity")
 const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
+const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
 const $FoodList = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList")
 const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
 const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")

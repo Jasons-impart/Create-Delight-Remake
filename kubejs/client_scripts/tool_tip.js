@@ -1,6 +1,8 @@
 
 const $SequencedAssemblyItem = Java.loadClass("com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem")
 
+let MoneyUtil = global.MoneyUtil
+
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
@@ -126,16 +128,7 @@ ItemEvents.tooltip(e => {
             return
         }
 
-        let value = 0
-        let Quality = $QualityUtils.getQuality(itemStack)
-        let Qlevel = Quality.level()
-        let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
-
-        let baseValue = MoneyUtil.calculateFoodValue(itemStack)
-
-        if (baseValue > 0) {
-            value = multiplier * baseValue
-        }
+        let value = global.MoneyUtil.calculateFoodValue(itemStack)
         if (value > 0) {
             if (!e.shift) {
                 if (value < 1) {

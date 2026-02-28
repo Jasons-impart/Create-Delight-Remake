@@ -2,6 +2,7 @@
 const $TableClothBlockEntity = Java.loadClass("com.simibubi.create.content.logistics.tableCloth.TableClothBlockEntity")
 const $PackageEntity = Java.loadClass("com.simibubi.create.content.logistics.box.PackageEntity")
 let Order = global.Order
+let MoneyUtil = global.MoneyUtil
 MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
     let event = e.event
     const { machine } = event
