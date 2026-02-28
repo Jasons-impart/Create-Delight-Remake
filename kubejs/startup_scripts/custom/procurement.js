@@ -6,5 +6,5 @@
  * @return {boolean}
  */
 global.isAcceptableToSellBin = function (itemStack) {
-    return itemStack.getFoodProperties(null) != null;
+    return itemStack.isEdible();
 }
