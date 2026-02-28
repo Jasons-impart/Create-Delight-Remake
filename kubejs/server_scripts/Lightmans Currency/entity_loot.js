@@ -1,5 +1,6 @@
 const $Mob = Java.loadClass("net.minecraft.world.entity.Mob")
 const $MobSpawnType = Java.loadClass("net.minecraft.world.entity.MobSpawnType")
+let MoneyUtil = global.MoneyUtil
 EntityEvents.drops(e => {
     const { entity, source } = e
     let player = source.player
