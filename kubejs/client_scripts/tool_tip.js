@@ -121,16 +121,17 @@ const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityCo
 
 let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
-    e.addAdvancedToAll((item, advanced, text) => {
+    e.addAdvancedToAll((itemStack, advanced, text) => {
+        if (!global.isAcceptableToSellBin(itemStack)) {
+            return
+        }
+
         let value = 0
-        let Quality = $QualityUtils.getQuality(item)
+        let Quality = $QualityUtils.getQuality(itemStack)
         let Qlevel = Quality.level()
         let multiplier = Math.round(Math.sqrt(2 / (Qlevel != 0 ? $QualityConfig.getChance(Quality) : 1)))
 
-        let baseValue = OEV$ItemValueManager.getValue(item)
-        if (baseValue <= 0 && item.getFoodProperties(null) != null) {
-            baseValue = MoneyUtil.calculateFoodValue(item)
-        }
+        let baseValue = MoneyUtil.calculateFoodValue(itemStack)
 
         if (baseValue > 0) {
             value = multiplier * baseValue
@@ -143,10 +144,10 @@ ItemEvents.tooltip(e => {
                     text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
                 }
             } else {
-                if (value * item.count < 1) {
-                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * item.count * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
+                if (value * itemStack.count < 1) {
+                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * itemStack.count * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
                 } else {
-                    text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * item.count)))
+                    text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * itemStack.count)))
                 }
             }
         }
