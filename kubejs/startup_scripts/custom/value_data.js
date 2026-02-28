@@ -139,21 +139,22 @@ let FoodIngredientValueDict = {
 }
 
 // 价值黑名单，加入黑名单的物品在计算价值时会被忽略
+// 不能把这些物品基础价值置为0，因为0价值物品会让他们作为输入物品参与的配方能够计算产物价值
 let ValueBlackList = [
     "fruitsdelight:durian_shell",
     "fruitsdelight:durian_helmet",
 ]
 
 // 保证默认价值的物品在Map中先出现，这样特殊价值的设定就可以覆盖默认价值设定
-// 最后放入黑名单物品（价值为0），优先级最高
 global.FoodIngredientValueDict = new Map(
     DefaultFoodIngredientList.map(item => [item, DefaultFoodIngredientValue])
         .concat(Object.entries(FoodIngredientValueDict))
-        .concat(ValueBlackList.map(item => [item, 0]))
 );
 
+global.ValueBlackList = ValueBlackList;
+
 // 默认配方价值倍率，如果希望是其他值，加入Dict。如果值过大可能会上溢导致kjs加载失败。
-global.DefaultRecipeValueMultiplier = 4;
+global.DefaultRecipeValueMultiplier = 1;
 let RecipeValueMultiplierDict = {
     // "crafting": 10
 }

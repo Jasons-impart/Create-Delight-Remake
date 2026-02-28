@@ -47,7 +47,7 @@ OEVEvents.addRecipeHandler(event => {
                     results.forEach(output => {
                         let itemStack = output.getStack();
                         let count = itemStack.getCount();
-                        let itemId = itemStack.getItem().getId(); // 获取 ID (如 minecraft:gravel)
+                        let itemId = String(itemStack.getItem().getId()); // 获取 ID (如 minecraft:gravel)
                         if (!itemStack.isEmpty() && count > 0 && !uniqueItemMap[itemId]) {
                             uniqueItemMap[itemId] = Item.of(itemId);
                         }
@@ -78,9 +78,12 @@ OEVEvents.addRecipeHandler(event => {
                     results.forEach(output => {
                         let itemStack = output.getStack();
                         let count = itemStack.getCount();
-                        let itemId = itemStack.getItem().getId(); // 获取 ID (如 minecraft:gravel)
+                        let itemId = String(itemStack.getItem().getId()); // 获取 ID (如 minecraft:gravel)
                         let chance = output.getChance();
                         // console.log(String(itemStack) + " " + String(chance));
+
+                        // 黑名单内的物品不参与价值分配
+                        if (global.ValueBlackList.indexOf(itemId) !== -1) return;
 
                         if (!itemStack.isEmpty() && count > 0) {
                             let expectedCount = count * chance;
@@ -122,7 +125,11 @@ OEVEvents.addRecipeHandler(event => {
                     // 第一遍：统计
                     stacks.forEach(stack => {
                         if (!stack.isEmpty() && stack.getCount() > 0) {
-                            let itemId = stack.getItem().getId();
+                            let itemId = String(stack.getItem().getId());
+
+                            // 黑名单内的物品不参与价值分配
+                            if (global.ValueBlackList.indexOf(itemId) !== -1) return;
+
                             let count = stack.getCount();
 
                             let definedValue = global.FoodIngredientValueDict.get(itemId);
@@ -145,7 +152,8 @@ OEVEvents.addRecipeHandler(event => {
                     // 第二遍：设置
                     stacks.forEach(stack => {
                         if (!stack.isEmpty() && stack.getCount() > 0) {
-                            let itemId = stack.getItem().getId();
+                            let itemId = String(stack.getItem().getId());
+                            if (global.ValueBlackList.indexOf(itemId) !== -1) return;
 
                             if (global.FoodIngredientValueDict.get(itemId) === undefined) {
                                 // setter 逻辑: 如果 itemStack 有多个，单价 = value / count
