@@ -10,7 +10,9 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     let itemSlots = machine.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let values = 0
     let tradeList = []
-    itemSlots.allItems.forEach(itemSlot => {
+    itemSlots.allItems
+        .filter(global.isAcceptableToSellBin)
+        .forEach(itemSlot => {
         let slotValue = 0
         let trade = Component.of("")
         
