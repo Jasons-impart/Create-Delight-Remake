@@ -766,10 +766,10 @@
 		"Smelt Raw Ore Blocks" = true
 
 [world]
-	"Ancient Wood" = true
-	"Azalea Wood" = true
+	"Ancient Wood" = false
+	"Azalea Wood" = false
 	"Big Stone Clusters" = true
-	"Blossom Trees" = true
+	"Blossom Trees" = false
 	"Chorus Vegetation" = false
 	Corundum = true
 	"Fairy Rings" = true
