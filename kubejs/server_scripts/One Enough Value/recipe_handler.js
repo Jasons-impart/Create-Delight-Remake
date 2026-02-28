@@ -99,6 +99,9 @@ OEVEvents.addRecipeHandler(event => {
                     })
                     // console.log(itemCountMap);
 
+                    // 如果原材料总价值为0，则不设置产物价值
+                    if (currentTotalValue === 0) return;
+
                     // 计算剩余价值分配给未定价物品
                     let remainingValue = currentTotalValue - consumedValue;
 
@@ -140,6 +143,9 @@ OEVEvents.addRecipeHandler(event => {
                             }
                         }
                     });
+
+                    // 如果原材料总价值为0，则不设置产物价值
+                    if (currentTotalValue === 0) return;
 
                     let remainingValue = currentTotalValue - consumedValue;
 
