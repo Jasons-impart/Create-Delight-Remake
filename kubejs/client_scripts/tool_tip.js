@@ -122,8 +122,7 @@ const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityCo
 let difficultyLoots = global.difficultyLoots
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((itemStack, advanced, text) => {
-        const isFood = itemStack.getFoodProperties(null) != null
-        if (!isFood) {
+        if (!global.isAcceptableToSellBin(itemStack)) {
             return
         }
 
