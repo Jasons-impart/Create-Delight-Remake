@@ -132,6 +132,10 @@ jobs:
           |||
           EOF
           cat "$VERSION_FILE_PATH"
+      - name: 【鸣谢】更新鸣谢名单及头像
+        run: |
+          pip install requests
+          python .github/workflows/scripts/update_credits.py --mode real --download-images
       # - name: 删除仅服务端模组
       #   run: |
       #       mapfile -t prefixes < .serveronlymodlist
@@ -244,6 +248,10 @@ jobs:
           FORGE_URL="${{ env.FORGE_DOWNLOAD_URL_PREFIX }}/${MC_VERSION}-${FORGE_VERSION}/forge-${MC_VERSION}-${FORGE_VERSION}-installer.jar"
           echo "$FORGE_URL"
           curl -L --retry 3 --retry-connrefused -o "forge.jar" "$FORGE_URL"
+      - name: 【鸣谢】更新鸣谢名单 (无头像)
+        run: |
+          pip install requests
+          python .github/workflows/scripts/update_credits.py --mode real
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           set -euo pipefail
