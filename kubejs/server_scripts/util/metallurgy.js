@@ -256,7 +256,7 @@ function metal_production_line_5(event, metal) {
     let byProduct = byProductMap.get(metal[1])
     event.recipes.vintageimprovements.pressurizing(
         [Item.of(metal[0], 2), Item.of(metal[0], 1).withChance(0.66)], [
-        Fluid.of("vintageimprovements:sulfuric_acid", 100),
+        FluidIngredients("forge:sulfuric_acid", 100),
         metal[3]
     ])
         .superheated()

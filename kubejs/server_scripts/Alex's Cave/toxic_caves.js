@@ -99,7 +99,7 @@ ServerEvents.recipes(e => {
             Fluid.of("createdelight:ethylene_fluid", 250),
             Fluid.water(250)
         ], [
-            Fluid.of("vintageimprovements:sulfuric_acid", 50),
+            FluidIngredients("forge:sulfuric_acid", 50),
             Fluid.of("createdieselgenerators:ethanol", 250)
         ]
     )
@@ -110,7 +110,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
        Fluid.of("createdelight:lubricating_oil", 250), 
        [
-            Fluid.of("vintageimprovements:sulfuric_acid", 100),
+            FluidIngredients("forge:sulfuric_acid", 100),
             Fluid.of("createdelight:ethylene_fluid", 250),
             'vintageimprovements:vanadium_nugget',
 
@@ -148,7 +148,7 @@ ServerEvents.recipes(e => {
         "alexscaves:sulfur_bud_medium",
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster"
-    ], "vintageimprovements:sulfuric_acid", 50)
+    ], "#forge:sulfuric_acid", 50)
 
     e.recipes.vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_dioxide", 500),
