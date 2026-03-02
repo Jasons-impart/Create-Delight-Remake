@@ -22,23 +22,28 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:water", 500)
         ]).id("createdelight:mixing/unfermented_paper_pulp/papers_raw_material")
     //纸浆
-    e.custom({
-        "type": "createdieselgenerators:basin_fermenting",
-        "ingredients": [
-          {
-            "fluid": "createdelight:unfermented_paper_pulp",
-            "amount": 1000
-          }
-        ],
-        "processingTime": 200,
-        "results": [
-          {
-            "fluid": "createdelight:paper_pulp",
-            "amount": 1000
-          }
-        ]
-      })
-        .id("createdelight:turning/paper_pulp")
+    fermenting(e, 
+        Fluid.of("createdelight:paper_pulp", 1000),
+        Fluid.of("createdelight:unfermented_paper_pulp", 1000),
+        200
+    )
+    // e.custom({
+    //     "type": "createdieselgenerators:basin_fermenting",
+    //     "ingredients": [
+    //       {
+    //         "fluid": "createdelight:unfermented_paper_pulp",
+    //         "amount": 1000
+    //       }
+    //     ],
+    //     "processingTime": 200,
+    //     "results": [
+    //       {
+    //         "fluid": "createdelight:paper_pulp",
+    //         "amount": 1000
+    //       }
+    //     ]
+    //   })
+    //     .id("createdelight:turning/paper_pulp")
     //未完成的纸
     e.recipes.vintageimprovements.vacuumizing(
         [
