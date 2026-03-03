@@ -203,7 +203,7 @@ ServerEvents.recipes(e => {
         "ABABA",
         " A A "
     ], {
-        A: "#forge:plates/aviation_fibers",
+        A: "northstar:titanium_sheet",
         B: "#forge:spring/over_1000",
         C: "vintageimprovements:centrifuge"
     }).id("createdelight:mechanical_crafting/centrifuge_rotor")

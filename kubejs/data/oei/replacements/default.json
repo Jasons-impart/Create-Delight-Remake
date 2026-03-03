@@ -339,5 +339,11 @@
             "collectorsreap:cream_cheese"
         ],
         "resultItems": "bakeries:cheese_cream"
+    },
+    {
+        "matchItems": [
+            "northstar:sulfuric_acid_bucket"
+        ],
+        "resultItems": "vintageimprovements:sulfuric_acid_bucket"
     }
 ]

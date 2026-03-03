@@ -7,12 +7,27 @@
  */
 
 function make_growing_cluster(e, transitionItems, fluid, amount) {
+  let fluidIngredient;
+  if (typeof fluid === "string") {
+    if (fluid.startsWith("#")) {
+      fluidIngredient = {
+        fluidTag: fluid.substring(1),
+        amount: amount,
+        tag: {}
+      };
+    } else {
+      fluidIngredient = Fluid.of(fluid, amount);
+    }
+  } else {
+    fluidIngredient = fluid;
+  }
+
   for (let index = 1; index < transitionItems.length; index++) {
     let item = transitionItems[index];
     let lastItem = transitionItems[index - 1];
     e.recipes.create
       .sequenced_assembly(item, lastItem, [
-        e.recipes.create.filling(lastItem, [lastItem, Fluid.of(fluid, amount)]),
+        e.recipes.create.filling(lastItem, [lastItem, fluidIngredient]),
       ])
       .loops(4)
       .transitionalItem(lastItem)
