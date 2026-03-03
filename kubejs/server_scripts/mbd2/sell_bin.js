@@ -1,6 +1,7 @@
 
 const $ClientboundSetTitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket")
 const $ClientboundSetSubtitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket")
+const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
 let MoneyUtil = global.MoneyUtil
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
@@ -48,7 +49,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         //     itemSlot.shrink(itemSlot.count)
         // }
     })
-    let coinValue = $CoinValue["fromNumber(java.lang.String,long)"](COIN_CHAIN_MAIN_VALUE, values)
+    let coinValue = $CoinValue["fromNumber(java.lang.String,long)"]("main", values)
     if (!coinValue.empty) {
         if (player != null) {
             if (player instanceof $ServerPlayer) {
