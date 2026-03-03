@@ -740,5 +740,16 @@ StartupEvents.registry("item", e => {
         .tooltip("§b放在饰品槽中，为你提供氧气")
         .texture("createdelight:item/oxygen_tank")
         .unstackable()
+
+    //注册坚固氧气罐
+    e.create("createdelight:sturdy_oxygen_tank")
+        .translationKey("item.createdelight.sturdy_oxygen_tank")
+        .tag("northstar:oxygen_sources_2")
+        .tag("northstar:oxygen_sealing")
+        .tag("curios:back")
+        .tag("curios:body")
+        .tooltip("§b放在饰品槽中，为你提供更多氧气")
+        .texture("createdelight:item/sturdy_oxygen_tank")
+        .unstackable()
 })
 

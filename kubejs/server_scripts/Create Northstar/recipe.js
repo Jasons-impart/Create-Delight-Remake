@@ -87,6 +87,17 @@ ServerEvents.recipes(e => {
         D: "createmetallurgy:tungsten_sheet"
     }).id("createdelight:oxygen_tank")
 
+    kubejs.shaped('createdelight:sturdy_oxygen_tank', [
+        "AAA",
+        "BCB",
+        "DDD"
+    ], {
+        A: "#minecraft:wool",
+        B: "create_sa:medium_fueling_tank",
+        C: 'northstar:mars_sand',
+        D: "northstar:martian_steel_sheet"
+    }).id("createdelight:sturdy_oxygen_tank")
+
     create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
         .id("createdelight:energising/enriched_glowstone_ore")
 
