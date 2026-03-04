@@ -1,11 +1,10 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "vintageimprovements:craft/grinder_belt",
-        "vintageimprovements:craft/belt_grinder",
-        "createmetallurgy:sequenced_assembly/industrial_crucible"
+        "createmetallurgy:sequenced_assembly/industrial_crucible",
+        "createmetallurgy:crafting/materials/sandpaper_belt",
     ])
-    e.replaceInput({id: "createmetallurgy:crafting/materials/tungsten_wire_spool"}, "minecraft:stick", "createaddition:spool")
-    e.replaceInput({id: "createmetallurgy:crafting/materials/graphite" }, "minecraft:coal", "#minecraft:coals")
+    e.replaceInput({ id: "createmetallurgy:crafting/materials/tungsten_wire_spool" }, "minecraft:stick", "createaddition:spool")
+    e.replaceInput({ id: "createmetallurgy:crafting/materials/graphite" }, "minecraft:coal", "#minecraft:coals")
     const { createmetallurgy, create, minecraft, vintageimprovements, kubejs } = e.recipes
     kubejs.shaped(
         'createmetallurgy:sandpaper_belt',
@@ -71,8 +70,8 @@ ServerEvents.recipes(e => {
     e.replaceInput({ id: "createmetallurgy:alloying/obdurium" }, "create:andesite_alloy", "createmetallurgy:steel_ingot")
     e.replaceInput({ output: "createmetallurgy:coke" }, "#forge:ores/coal", "#minecraft:coals")
     kubejs.shapeless("createmetallurgy:refractory_mortar", ["minecraft:water_bucket", "6x #minecraft:sand", "2x minecraft:clay_ball"])
-    .replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
-    .id("createdelight:refractory_mortar")
+        .replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
+        .id("createdelight:refractory_mortar")
     createmetallurgy.alloying(Fluid.of("createmetallurgy:molten_netherite", 30),
         [
             Fluid.of("createmetallurgy:molten_gold", 90),
@@ -166,8 +165,8 @@ ServerEvents.recipes(e => {
         "#forge:coal_coke",
         "minecraft:clay_ball"
     ])
-    .superheated()
-    .id("createdelight:pressurizing/graphite")
+        .superheated()
+        .id("createdelight:pressurizing/graphite")
     {
         let iner = "createmetallurgy:incomplete_industrial_crucible"
         e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'createfluidstuffs:multi_fluid_tank', [
