@@ -345,5 +345,11 @@
             "northstar:sulfuric_acid_bucket"
         ],
         "resultItems": "vintageimprovements:sulfuric_acid_bucket"
+    },
+    {
+        "matchItems": [
+            "northstar:polished_amethyst"
+        ],
+        "resultItems": "createutilities:polished_amethyst"
     }
 ]

@@ -13,7 +13,9 @@ ServerEvents.recipes(e => {
         "northstar:compacting/biofuel_from_dried_kelp",
         "northstar:compacting/biofuel_from_dry_plant_fiber",
         "northstar:mixing/hydrocarbon_from_carbon",
-        "northstar:mixing/hydrocarbon_from_sodium"
+        "northstar:mixing/hydrocarbon_from_sodium",
+        "northstar:sandpaper_polishing/amethyst_shard",
+        "northstar:sandpaper_polishing/amethyst_shard_using_deployer",
     ])
     remove_recipes_output(e, [
         "northstar:circuit",
@@ -24,19 +26,19 @@ ServerEvents.recipes(e => {
         "northstar:circuit_engraver",
         "northstar:titanium_block",
         "northstar:hardened_precision_mechanism",
-        'northstar:vanilla_ice_cream', 
-        'northstar:chocolate_ice_cream', 
-        'northstar:strawberry_ice_cream', 
+        'northstar:vanilla_ice_cream',
+        'northstar:chocolate_ice_cream',
+        'northstar:strawberry_ice_cream',
         'northstar:raw_ice_cream_cone',
         'northstar:ice_cream_cone',
         "northstar:sodium_catalyst",
         "northstar:dry_plant_fiber"
     ])
-    const {kubejs, create, vintageimprovements, create_new_age, createmetallurgy } = e.recipes
+    const { kubejs, create, vintageimprovements, create_new_age, createmetallurgy } = e.recipes
     e.remove({ type: "northstar:electrolysis" })
     e.remove({ type: "northstar:engraving" })
-    e.remove({ output: "northstar:titanium_ingot", type: "blasting"})
-    e.remove({ output: "northstar:titanium_ingot", type: "smelting"})
+    e.remove({ output: "northstar:titanium_ingot", type: "blasting" })
+    e.remove({ output: "northstar:titanium_ingot", type: "smelting" })
     e.replaceInput({
         output: [
             "northstar:jet_engine",
@@ -60,7 +62,7 @@ ServerEvents.recipes(e => {
             "northstar:rocket_station"
         ]
     }, "northstar:titanium_ingot", "createmetallurgy:steel_ingot")
-    e.replaceInput({output: "northstar:atmospheric_concentrator"}, "northstar:circuit", "create_sa:heat_engine")
+    e.replaceInput({ output: "northstar:atmospheric_concentrator" }, "northstar:circuit", "create_sa:heat_engine")
     e.replaceInput("*", "northstar:hardened_precision_mechanism", "create_sa:heat_engine")
     e.replaceOutput({ id: "northstar:splashing/crushed_raw_tungsten" }, "minecraft:quartz", "minecraft:gold_nugget")
     e.replaceOutput("*", "northstar:raw_titanium_ore", "createdelight:crushed_raw_titanium")
@@ -198,9 +200,9 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:molten_titanium", 90),
         "northstar:raw_martian_iron_ore"
     ])
-    .heatRequirement("superheated")
-    .processingTime(100)
-    .id("createdelight:alloying/martian_steel")
+        .heatRequirement("superheated")
+        .processingTime(100)
+        .id("createdelight:alloying/martian_steel")
 
     // 混合燃料
     e.recipes.create.mixing(
@@ -217,10 +219,10 @@ ServerEvents.recipes(e => {
             Fluid.of("createdieselgenerators:biodiesel", 75)
         ]
     ).id("createdelight:sub_recipes/fuel_mixtures")
-    
+
     e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), "northstar:enriched_glowstone_ore"])
-    .heatRequirement("frozen")
-    .id("createdelight:mixing/ice_lubricating_oil")
+        .heatRequirement("frozen")
+        .id("createdelight:mixing/ice_lubricating_oil")
     e.recipes.create.mixing(Fluid.of("createdelight:ice_lubricating_oil", 500), [Fluid.of("createdelight:lubricating_oil", 250), Fluid.of("createdelight:ice_dragon_blood", 25)])
-    .id("createdelight:mixing/ice_lubricating_oil_from_ice_dragon_blood")
+        .id("createdelight:mixing/ice_lubricating_oil_from_ice_dragon_blood")
 })

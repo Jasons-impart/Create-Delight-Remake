@@ -1,7 +1,7 @@
 ServerEvents.recipes(e => {
-    const {vintageimprovements, create, createmetallurgy} = e.recipes
+    const { vintageimprovements, create, createmetallurgy } = e.recipes
 
-    e.remove({output: '#vintageimprovements:small_springs'})
+    e.remove({ output: '#vintageimprovements:small_springs' })
     remove_recipes_id(e, [
         "vintageimprovements:pressurizing/sulfur_trioxide",
         "vintageimprovements:rolling/netherite_rod",
@@ -12,17 +12,18 @@ ServerEvents.recipes(e => {
         "vintageimprovements:crushing/scoria",
         "vintageimprovements:pressurizing/sulfur_dioxide",
         "vintageimprovements:craft/spring_coiling_machine",
+        "vintageimprovements:grinder_polishing/rose_quartz"
     ])
     vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_trioxide", 500),
-    [
-        Fluid.of("vintageimprovements:sulfur_dioxide", 500),
-        "vintageimprovements:vanadium_nugget"
-    ])
-    .processingTime(200)
-    .secondaryFluidOutput(0)
-    .superheated()
-    .id("createdelight:pressurizing/sulfur_trioxide")
+        [
+            Fluid.of("vintageimprovements:sulfur_dioxide", 500),
+            "vintageimprovements:vanadium_nugget"
+        ])
+        .processingTime(200)
+        .secondaryFluidOutput(0)
+        .superheated()
+        .id("createdelight:pressurizing/sulfur_trioxide")
     e.recipes.createmetallurgy.grinding(
         [
             '2x create:polished_rose_quartz',
@@ -42,7 +43,7 @@ ServerEvents.recipes(e => {
         [
             '2x createutilities:polished_amethyst',
             Item.of('createutilities:polished_amethyst').withChance(0.5)
-        ] ,
+        ],
         'minecraft:amethyst_shard'
     ).id("createdelight:sandpaper_polishing/polished_amethyst")
     {
@@ -59,9 +60,9 @@ ServerEvents.recipes(e => {
             .id("createdelight:sequenced_assembly/recipe_card")
     }
     // 下界合金相关配方调整，以避免与熔融搭配后无限增产
-    e.recipes.createaddition.rolling("minecraft:netherite_ingot", 
+    e.recipes.createaddition.rolling("minecraft:netherite_ingot",
         "2x vintageimprovements:netherite_rod").id("createdelight:rolling/netherite_ingot")
-    e.recipes.createaddition.rolling("vintageimprovements:netherite_sheet", 
+    e.recipes.createaddition.rolling("vintageimprovements:netherite_sheet",
         "2x vintageimprovements:netherite_wire").id("createdelight:rolling/netherite_sheet")
 
     e.replaceInput({ mod: "vintageimprovements" }, "vintageimprovements:iron_spring", "#forge:spring/between_500_2_1000")
