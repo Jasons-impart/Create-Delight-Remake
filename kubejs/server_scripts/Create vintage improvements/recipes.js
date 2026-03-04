@@ -3,6 +3,8 @@ ServerEvents.recipes(e => {
 
     e.remove({ output: '#vintageimprovements:small_springs' })
     remove_recipes_id(e, [
+        "vintageimprovements:craft/grinder_belt",
+        "vintageimprovements:craft/belt_grinder",
         "vintageimprovements:pressurizing/sulfur_trioxide",
         "vintageimprovements:rolling/netherite_rod",
         "vintageimprovements:rolling/netherite_plate",
