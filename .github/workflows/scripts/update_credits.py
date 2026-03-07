@@ -171,14 +171,34 @@ def update_snbt(snippet):
     with open(SNBT_PATH, 'r', encoding='utf-8') as f:
         content = f.read()
         
-    start_marker = "\t\t# AUTO_CONTRIBUTORS_START\n"
-    end_marker = "\t\t# AUTO_CONTRIBUTORS_END\n"
+    start_marker = """		{
+			height: 0.0d
+			hover: ["AUTO_CONTRIBUTORS_START"]
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 0.0d
+			x: 0.0d
+			y: 0.0d
+		}
+    """
+    end_marker = """		{
+			height: 0.0d
+			hover: ["AUTO_CONTRIBUTORS_END"]
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 0.0d
+			x: 0.0d
+			y: 0.0d
+		}
+    """
     
-    pattern = re.compile(r'(\t\t# AUTO_CONTRIBUTORS_START\n.*?\t\t# AUTO_CONTRIBUTORS_END\n)', re.DOTALL)
+    start_pattern = r'\{\s*[^{}]*hover:\s*\["AUTO_CONTRIBUTORS_START"\][^{}]*\}'
+    end_pattern = r'\{\s*[^{}]*hover:\s*\["AUTO_CONTRIBUTORS_END"\][^{}]*\}'
+    pattern = re.compile(f'({start_pattern})(.*?)({end_pattern})', re.DOTALL)
     
     if pattern.search(content):
         parts = pattern.split(content)
-        new_content = parts[0] + start_marker + snippet + end_marker + parts[2]
+        new_content = parts[0] + parts[1] + "\n" + snippet + parts[3] + parts[4]
     else:
         target_str = """		{
 			height: 4.0d
