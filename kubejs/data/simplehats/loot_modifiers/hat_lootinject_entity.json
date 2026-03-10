@@ -1,0 +1,107 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/blaze"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/cave_spider"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/creeper"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/drowned"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/enderman"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/evoker"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/ghast"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/guardian"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/husk"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/illusioner"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/phantom"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/piglin_brute"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/pillager"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/skeleton"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/spider"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/stray"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/vindicator"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/witch"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/wither_skeleton"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/zoglin"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/zombie"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/zombie_villager"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:entities/zombified_piglin"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ]
+    }
+  ],
+  "type": "simplehats:hat_lootinject_entity"
+}
