@@ -102,8 +102,8 @@
   - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
 - ServerCore
   - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
-- Canary
-  - 锂的forge移植，优化各种原版机制计算方法 https://www.mcmod.cn/class/7598.html
+- Harium
+  - 锂的forge移植，优化各种原版机制计算方法 https://www.curseforge.com/minecraft/mc-mods/harium
 - moestweaks
   - 关闭配方书 https://www.mcmod.cn/class/17039.html
 - FerriteCore
