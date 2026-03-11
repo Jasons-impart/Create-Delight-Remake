@@ -30,7 +30,7 @@ ServerEvents.recipes(e => {
       'alexscaves:sprinkles',
       'alexscaves:peppermint_powder'
     ]
-  ).id("createdelight_oppenheimered:mixing/purple_honey_soda")
+  ).id("createdelight:mixing/purple_honey_soda")
   e.recipes.create.filling(
     'alexscaves:purple_soda_bottle',
     [
@@ -86,7 +86,7 @@ ServerEvents.recipes(e => {
       Fluid.of("cosmopolitan:cream", 250),
       'create_deepfried:berliner'
     ]
-  ).id("createdelight_oppenheimered:mixing/sweet_puff_spinning")
+  ).id("createdelight:mixing/sweet_puff_spinning")
   //巧克力块系列
   e.recipes.create.compacting(
    'alexscaves:block_of_chocolate',
