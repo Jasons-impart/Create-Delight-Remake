@@ -253,7 +253,7 @@ ServerEvents.recipes(e => {
         A: 'create:iron_sheet',
         B: 'createdelight:bleak_electron_tube',
         C: 'createdelight:enriched_uraniumdust'
-    }).id("createdelight_oppenheimered:compacting/nuclear_fissile_core")
+    }).id("createdelight:compacting/nuclear_fissile_core")
     //核弹
     e.recipes.create.mechanical_crafting("alexscaves:nuclear_bomb", [
         "AAAAAAA",

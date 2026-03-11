@@ -41,7 +41,8 @@ ServerEvents.recipes(e => {
         "create:mechanical_arm",
         "create:steam_engine",
         "create:steam_whistle",
-        "create:weighted_ejector"
+        "create:weighted_ejector",
+        "railways:portable_fuel_interface"
     ])
     e.recipes.create.milling(
         [
@@ -481,16 +482,16 @@ ServerEvents.recipes(e => {
             "alexscaves:gingerbread_crumbs",
             FluidIngredients("forge:milk", 250)
         ]
-    ).id("createdelight_oppenheimered:filling/gingerbread_sweet_roll")
+    ).id("createdelight:filling/gingerbread_sweet_roll")
     // 移动燃料接口
-    // e.recipes.kubejs.shapeless(
-    //     'railways:portable_fuel_interface',
-    //     [
-    //         "#forge:spring/between_500_2_1000",
-    //         "create:railway_casing",
-    //         "create:chute"
-    //     ]
-    // ).id("railways:crafting/portable_fuel_interface")
+    e.recipes.kubejs.shapeless(
+        'railways:portable_fuel_interface',
+        [
+            "#forge:spring/between_500_2_1000",
+            "create:railway_casing",
+            "create:chute"
+        ]
+    ).id("createdelight:crafting/portable_fuel_interface")
     // 精密构件
     e.recipes.create.deploying(
         "2x create:precision_mechanism",
@@ -498,7 +499,7 @@ ServerEvents.recipes(e => {
             "create:brass_sheet",
             "alexscaves:telecore"
         ]
-    ).id("createdelight_oppenheimered:deploying/precision_mechanism_from_telecore")
+    ).id("createdelight:deploying/precision_mechanism_from_telecore")
     e.recipes.kubejs.shaped("create:blaze_burner", [
         "AAA",
         "BCB",
