@@ -25,6 +25,16 @@ ServerEvents.recipes(e => {
         "createcafe:filling/raspberry_tea_filling",
         "createcafe:filling/yucca_tea_filling",
         "createcafe:filling/plum_tea_filling",
+        "createcafe:filling/coffee/banana_iced_coffee_filling",
+        "createcafe:filling/coffee/caramel_iced_coffee_filling",
+        "createcafe:filling/coffee/mint_iced_coffee_filling",
+        "createcafe:filling/coffee/vanilla_iced_coffee_filling",
+        "createcafe:filling/coffee/strawberry_iced_coffee_filling",
+        "createcafe:sequenced_assembly/oreo_assembling",
+        "createcafe:milling/oreo_milling",
+        "createcafe:crushing/oreo_crushing",
+        "createcafe:mixing/raw_boba_to_boba_mixing",
+        
     ])
     create.mixing(Fluid.of("createdelight:base_syrup", 125), "minecraft:sugar")
     .heated()
