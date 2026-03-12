@@ -46,7 +46,6 @@ B:layout_editor_grid_snapping = 'true';
 B:anchor_overlay_change_anchor_on_area_hover = 'true';
 B:show_layout_editor_grid = 'true';
 S:anchor_overlay_color_base_override = '';
-B:enable_element_rotation_controls = 'true';
 F:anchor_overlay_opacity_normal = '0.5';
 F:anchor_overlay_opacity_busy = '0.7';
 D:anchor_overlay_hover_charging_time_seconds = '2.0';
@@ -58,7 +57,6 @@ I:layout_editor_grid_size = '10';
 B:invert_anchor_overlay_color = 'false';
 B:enable_buddy = 'true';
 S:anchor_overlay_color_border_override = '';
-B:enable_element_tilting_controls = 'true';
 
 
 ##[ui]
