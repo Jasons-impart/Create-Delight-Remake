@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
         "vintageimprovements:craft/sulfur_nuggets_to_item",
         "vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust",
         "vintageimprovements:pressurizing/sulfuric_acid",
-        "alexscaves:spelunkie"
+        "alexscaves:spelunkie",
+        "alexscaves:polymer_plate"
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements

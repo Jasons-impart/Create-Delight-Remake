@@ -6,6 +6,9 @@ ServerEvents.recipes(e => {
    "create_oppenheimered:mixing/ice_cream_licoroot",
    "create_oppenheimered:mixing/ice_cream_chocolate",
    "create_oppenheimered:mixing/ice_cream_sweetberry",
+   "alexscaves:caramel_apple",
+   "alexscaves:purple_soda_bottle_rocket",
+   "alexscaves:frostmint"
   ])
   //焦糖苹果
   e.recipes.kubejs.shapeless(
