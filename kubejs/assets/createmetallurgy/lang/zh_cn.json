@@ -230,6 +230,8 @@
   "createmetallurgy.recipe.foundry.min_size": "%1$sx%2$s",
   "createmetallurgy.recipe.foundry.min_size.text": "需最小冶金炉尺寸！",
   "death.attack.createmetallurgy.crucible": "%1$s见识了真正的工业级冶金炉...",
+  "item.createmetallurgy.gauge_attachment": "仪表组件",
+  "item.createmetallurgy.gauge_attachment.tooltip.summary": "一种可以_放置_在不同机器上以_显示补充信息_的仪表！",
   "death.attack.createmetallurgy.crucible.player": "%2$s觉得%1$s会是优质合金原料",
   "death.attack.createmetallurgy.molten_fluid": "%1$s试图像蘸火锅一样浸泡在熔融金属中...",
   "fluid.createmetallurgy.molten_obdurium": "熔融坚刚",
