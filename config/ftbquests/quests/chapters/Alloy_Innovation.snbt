@@ -882,7 +882,7 @@
 			subtitle: "&4更大！更快！更高效！"
 			tasks: [{
 				id: "7FBA9B1076F350D6"
-				item: "createmetallurgy:foundry_unit"
+				item: "createmetallurgy:gauge_attachment"
 				type: "item"
 			}]
 			x: 11.5d
