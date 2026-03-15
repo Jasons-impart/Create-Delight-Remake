@@ -859,7 +859,7 @@
 				"043C01E333AD7139"
 				"20972AEC6EE6D9F8"
 			]
-			description: ["可以容纳&e多种流体&r，安装&e熔铸炉组件&r以转变为&e熔铸炉&r\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
+			description: ["可以容纳&e多种流体&r，安装&e仪表组件&r以显示更多信息\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
 			id: "0C0CD2BD5935D4CC"
 			shape: "square"
 			subtitle: "&e可拓展&4可合成合金&r的&4大型冶金设施"
@@ -882,7 +882,7 @@
 			subtitle: "&4更大！更快！更高效！"
 			tasks: [{
 				id: "7FBA9B1076F350D6"
-				item: "createmetallurgy:foundry_unit"
+				item: "createmetallurgy:gauge_attachment"
 				type: "item"
 			}]
 			x: 11.5d
