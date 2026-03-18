@@ -66,8 +66,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "ratatouille:popsicle_mold"
         e.recipes.create.sequenced_assembly('ratatouille:melon_popsicle_mold_filled', iner, [
+            e.recipes.create.filling(iner, [iner, Fluid.of("create_central_kitchen:melon_juice")]),
             e.recipes.create.deploying(iner, [iner, "minecraft:stick"]),
-            e.recipes.create.filling(iner, [iner, Fluid.of("create_central_kitchen:melon_juice")])
         ])
             .loops(1)
             .transitionalItem(iner)
