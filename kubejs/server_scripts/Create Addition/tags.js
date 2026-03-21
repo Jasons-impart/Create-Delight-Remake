@@ -17,6 +17,9 @@ ServerEvents.tags("item", e => {
     e.add("curios:bracelet", [
         'createaddition:electrum_amulet'
     ])
+    e.add("forge:storage_blocks", [
+        'createaddition:electrum_block'
+    ])
 })
 ServerEvents.tags("fluid", e => {
     e.removeAllTagsFrom("createaddition:seed_oil")
