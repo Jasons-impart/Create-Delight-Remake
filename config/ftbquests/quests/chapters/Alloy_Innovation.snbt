@@ -773,7 +773,6 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			subtitle: "现在的&e石磨&r可以&e磨碎黑曜石&r哦！（就是&4概率感人&r）"
 			tasks: [{
 				id: "3F3848CAF70CDF4E"
 				item: "create:sturdy_sheet"
