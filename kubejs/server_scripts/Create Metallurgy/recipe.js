@@ -2,6 +2,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "createmetallurgy:sequenced_assembly/industrial_crucible",
         "createmetallurgy:crafting/materials/sandpaper_belt",
+        "createmetallurgy:alloying/necromium",
+        "create:fill_minecraft_bucket_with_createmetallurgy_molten_necromium"
     ])
     e.replaceInput({ id: "createmetallurgy:crafting/materials/tungsten_wire_spool" }, "minecraft:stick", "createaddition:spool")
     e.replaceInput({ id: "createmetallurgy:crafting/materials/graphite" }, "minecraft:coal", "#minecraft:coals")
