@@ -8,7 +8,7 @@ ServerEvents.recipes(e => {
         "create_fantasizing:sturdy_heavy_core",
         "create_fantasizing:compacting/powder_snow_to_block",
         "create_fantasizing:mixing/powder_snow",
-        "create_fantasizing:block_placer"//太卡了
+        "create_fantasizing:mechanical_crafting/block_placer"//太卡了
     ])
     create.emptying([Fluid.of("fluid:powder_snow"), "minecraft:bucket"], 
         "minecraft:powder_snow_bucket")
