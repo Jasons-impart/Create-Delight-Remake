@@ -257,7 +257,7 @@ ServerEvents.recipes(e => {
         "AABAA"
     ], {
         A: "create:brass_sheet",
-        B: "minecraft:crafting_table",
+        B: "quark:crafter",
         C: "create:brass_casing",
         D: "create:factory_gauge"
     }).id("createdelight:mechanical_crafting/mechanical_craft_encoder")
