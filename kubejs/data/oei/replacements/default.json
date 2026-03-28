@@ -351,11 +351,5 @@
             "northstar:polished_amethyst"
         ],
         "resultItems": "createutilities:polished_amethyst"
-    },
-    {
-        "matchItems": [
-            "createfluidstuffs:multi_fluid_tank"
-        ],
-        "resultItems": "fluidlogistics:multi_fluid_tank"
     }
 ]
