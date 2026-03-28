@@ -53,7 +53,7 @@
 [automation]
 	"Chains Connect Blocks" = false
 	Chute = false
-	Crafter = false
+	Crafter = true
 	"Dispensers Place Blocks" = false
 	"Ender Watcher" = true
 	"Feeding Trough" = true
