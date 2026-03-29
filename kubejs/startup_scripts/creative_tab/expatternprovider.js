@@ -28,6 +28,8 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "createdelightcore:molten_ice_steel",
     "createdelightcore:molten_lightning_steel",
     "createdelightcore:molten_forged_steel",
+    "netherexp:ectoplasm",
+    "the_bumblezone:sugar_water_still"
   ];
   Inf_Fluid.forEach((f) => {
   e.add(Item.of("expatternprovider:infinity_cell", `{record:{"#c":"ae2:f",id:"${f}"}}`))
