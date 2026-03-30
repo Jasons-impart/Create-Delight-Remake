@@ -5,13 +5,11 @@ This project includes these third party parts:
 - Minecraft-Mod-Language-Package: Attribution-NonCommercial-ShareAlike 4.0 International
   - Copyright (c) CFPAOrg
   - [license detail](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package?tab=License-1-ov-file)
-  - 引用的模组汉化文件：72个
+  - 引用的模组汉化文件：70个
   - <details>
     <summary>点击展开索引（Minecraft-Mod-Language-Package）</summary>
 
     - kubejs/assets/abnormals_delight/lang/zh_cn.json
-    - kubejs/assets/ad_astra/lang/zh_cn.json
-    - kubejs/assets/ad_astra_giselle_addon/lang/zh_cn.json
     - kubejs/assets/ae2wtlib/lang/zh_cn.json
     - kubejs/assets/alexsdelight/lang/zh_cn.json
     - kubejs/assets/ali/lang/zh_cn.json
