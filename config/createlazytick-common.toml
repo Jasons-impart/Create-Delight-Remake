@@ -70,8 +70,7 @@
 	#
 	#--------------------------------------------------------------------------
 	#Whether to enable item drain lazy tick
-	#DISABLED by CDC fix - 基因种子跳级问题修复
-	enable_lazy_item_drain = false
+	enable_lazy_item_drain = true
 	#
 	#--------------------------------------------------------------------------
 	#max delay tick if something stuck on the item drain
