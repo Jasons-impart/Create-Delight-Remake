@@ -35,6 +35,7 @@ S:customgameintroskiptext = '';
 S:customwindowtitle = 'Delight: New Horizon';
 [A minecraft restart is required after changing this value.]
 B:customwindowicon = 'true';
+S:customwindowiconpath = 'config/fancymenu/icon.png';
 
 
 ##[world_loading_screen]
