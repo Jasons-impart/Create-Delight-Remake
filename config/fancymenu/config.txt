@@ -32,9 +32,9 @@ S:customgameintroskiptext = '';
 ##[minecraftwindow]
 
 [A minecraft restart is required after changing this value.]
-S:customwindowtitle = '';
+S:customwindowtitle = 'Delight: New Horizon';
 [A minecraft restart is required after changing this value.]
-B:customwindowicon = 'false';
+B:customwindowicon = 'true';
 
 
 ##[world_loading_screen]
