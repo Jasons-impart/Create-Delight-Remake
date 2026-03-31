@@ -1,51 +1,18 @@
-const $ArrayList = Java.loadClass('java.util.ArrayList')
-const $Minecraft = Java.loadClass('net.minecraft.client.Minecraft')
-const $VanillaTypes = Java.loadClass('mezz.jei.api.constants.VanillaTypes')
-const $CreateConnectedJEI = Java.loadClass('com.hlysine.create_connected.compat.CreateConnectedJEI')
+const $FeatureToggle = Java.loadClass('com.hlysine.create_connected.config.FeatureToggle')
+const $ResourceLocation = Java.loadClass('net.minecraft.resources.ResourceLocation')
 
 const forcedJeiItems = [
   'create_connected:fan_freezing_catalyst'
 ]
 
-function syncForcedJeiItems() {
-  const manager = $CreateConnectedJEI.MANAGER
-  if (manager == null) return false
-
-  const stacks = new $ArrayList()
-  forcedJeiItems.forEach(id => stacks.add(Item.of(id)))
-
-  manager.removeIngredientsAtRuntime($VanillaTypes.ITEM_STACK, stacks)
-  manager.addIngredientsAtRuntime($VanillaTypes.ITEM_STACK, stacks)
-  return true
-}
+// Create Connected 给该触媒加了兼容模组条件，进入世界后刷新可见性时会把它判成 disabled。
+// 当前整合包并没有这些兼容模组，直接移除条件即可避免 JEI 和创造搜索被再次过滤。
+forcedJeiItems.forEach(id => {
+  $FeatureToggle.FEATURE_CONDITIONS.remove(new $ResourceLocation(id))
+})
 
 JEIEvents.addItems(e => {
   e.add(forcedJeiItems)
-})
-
-let jeiSyncCooldown = 0
-let jeiSyncDone = false
-let jeiLastLevel = null
-
-ClientEvents.tick(() => {
-  const level = $Minecraft.getInstance().level
-
-  if (level !== jeiLastLevel) {
-    jeiLastLevel = level
-    jeiSyncDone = false
-    jeiSyncCooldown = level == null ? 0 : 20
-  }
-
-  if (level == null || jeiSyncDone) return
-
-  if (jeiSyncCooldown > 0) {
-    jeiSyncCooldown--
-    return
-  }
-
-  // 每次进存档后重新补一次；JEI runtime 未就绪时短周期重试，成功后停止。
-  jeiSyncDone = syncForcedJeiItems()
-  jeiSyncCooldown = jeiSyncDone ? 0 : 20
 })
 
 JEIEvents.addFluids(e => {
