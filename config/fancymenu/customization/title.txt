@@ -544,7 +544,7 @@ vanilla_button {
   sticky_anchor = false
   anchor_point = element
   anchor_point_element = mc_titlescreen_singleplayer_button
-  advanced_posy = {"placeholder":"calc","values":{"expression":"{"placeholder":"elementposy","values":{"id":"400418"}} + {"placeholder":"elementheight","values":{"id":"400418"}} + 4","decimal":"false"}}
+  advanced_posy = {"placeholder":"calc","values":{"expression":"{"placeholder":"elementposy","values":{"id":"forge_titlescreen_mods_button"}} + {"placeholder":"elementheight","values":{"id":"forge_titlescreen_mods_button"}} + 4","decimal":"false"}}
   advanced_width = {"placeholder":"calc","values":{"expression":"{"placeholder":"guiwidth"} / 5","decimal":"false"}}
   x = 0
   y = 141

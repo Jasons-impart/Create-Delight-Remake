@@ -24,10 +24,10 @@ B:game_intro_fade_out = 'true';
 ##[window]
 
 B:show_custom_window_icon = 'true';
-S:custom_window_icon_macos = '[source:local]/config/fancymenu/assets/window_icon.png';
-S:custom_window_icon_32 = '[source:local]/config/fancymenu/assets/window_icon.png';
+S:custom_window_icon_macos = '';
+S:custom_window_icon_32 = '/config/fancymenu/assets/window_icon.png';
 S:custom_window_title = '盛宴：新视野 Delight: New Horizon';
-S:custom_window_icon_16 = '[source:local]/config/fancymenu/assets/window_icon.png';
+S:custom_window_icon_16 = '';
 
 
 ##[multiplayer_screen]
