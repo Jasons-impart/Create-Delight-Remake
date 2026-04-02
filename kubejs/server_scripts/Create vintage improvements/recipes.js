@@ -14,7 +14,9 @@ ServerEvents.recipes(e => {
         "vintageimprovements:crushing/scoria",
         "vintageimprovements:pressurizing/sulfur_dioxide",
         "vintageimprovements:craft/spring_coiling_machine",
-        "vintageimprovements:grinder_polishing/rose_quartz"
+        "vintageimprovements:grinder_polishing/rose_quartz",
+        "vintageimprovements:sequenced_assembly/recipe_card",
+        "vintageimprovements:pressurizing/sulfur_trioxide_alt"
     ])
     vintageimprovements.pressurizing(
         Fluid.of("vintageimprovements:sulfur_trioxide", 500),
