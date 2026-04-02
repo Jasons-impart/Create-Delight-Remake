@@ -6,7 +6,7 @@ ServerEvents.recipes((e) => {
       'minecraft:slime_ball',
       Item.of("minecraft:slime_ball").withChance(0.1)
     ],
-    '#forge:gelatin'
+    Ingredient.of("#forge:gelatin").subtract("minecraft:slime_ball")
   ).id("createdelight:splashing/gelatin")
   // 机械动力兼容相关
   const big_anms = [
@@ -215,10 +215,10 @@ ServerEvents.recipes((e) => {
   ])
 
   e.recipes.kubejs
-    .shapeless("minecraft:slime_ball", ["minecraft:water_bucket", "#forge:gelatin"])
+    .shapeless("minecraft:slime_ball", ["minecraft:water_bucket", Ingredient.of("#forge:gelatin").subtract("minecraft:slime_ball")])
     .id("createdelight:gelatin_to_slime_ball");
   e.recipes.create
-    .mixing("minecraft:slime_ball", [Fluid.of("water", 250), "#forge:gelatin"])
+    .mixing("minecraft:slime_ball", [Fluid.of("water", 250), Ingredient.of("#forge:gelatin").subtract("minecraft:slime_ball")])
     .id("createdelight:mixing/gelatin_to_slime_ball");
   e.recipes.create.cutting("8x minecraft:leather", "butchercraft:cow_hide")
   .id("createdelight:cutting/cow_hide_create")
