@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "supplementaries:soap"
+    ])
     e.recipes.minecraft.crafting_shapeless(
         "supplementaries:soap",
         [

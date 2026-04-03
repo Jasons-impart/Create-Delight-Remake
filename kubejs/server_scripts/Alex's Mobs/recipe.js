@@ -21,6 +21,8 @@ ServerEvents.recipes(e => {
   ).id("createdelight:kangaroo_burger")
   remove_recipes_id(e, [
     "alexsmobs:banana_crate",
-    "alexsmobs:bananas"
+    "alexsmobs:bananas",
+    "alexsmobs:mosquito_repellent_stew",
+    "alexsmobs:kangaroo_burger"
   ])
 })
