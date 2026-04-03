@@ -3,7 +3,11 @@ ServerEvents.recipes(e => {
         "cosmopolitan:create/pressing/wafer_cone",
         "cosmopolitan:farmersdelight/frying/potato_pancakes_from_deep_frying",
         "cosmopolitan:farmersdelight/cutting/fern",
-        "cosmopolitan:lush_confiture_bottle_from_glass_bottle"
+        "cosmopolitan:lush_confiture_bottle_from_glass_bottle",
+        "cosmopolitan:general/gulime",
+        "cosmopolitan:farmersdelight/jelly_roll",
+        "cosmopolitan:farmersdelight/chocolate_roll_from_chocolate",
+        "cosmopolitan:farmersdelight/ink_roll",
     ])
 
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes

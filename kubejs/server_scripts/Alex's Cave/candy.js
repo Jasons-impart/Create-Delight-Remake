@@ -8,7 +8,13 @@ ServerEvents.recipes(e => {
    "create_oppenheimered:mixing/ice_cream_sweetberry",
    "alexscaves:caramel_apple",
    "alexscaves:purple_soda_bottle_rocket",
-   "alexscaves:frostmint"
+   "alexscaves:frostmint",
+   "alexscaves:block_of_vanilla_frosting",
+   "create_oppenheimered:mixing/purple_honey_soda",
+   "neapolitan:mint/mint_candies",
+   "create_oppenheimered:mixing/sweet_puff_spinning",
+   "alexscaves:block_of_frosting",
+   "alexscaves:cake_from_cake_layer",
   ])
   //焦糖苹果
   e.recipes.kubejs.shapeless(
@@ -89,7 +95,7 @@ ServerEvents.recipes(e => {
       Fluid.of("cosmopolitan:cream", 250),
       'create_deepfried:berliner'
     ]
-  ).id("createdelight:mixing/sweet_puff_spinning")
+  ).id("createdelight:filling/sweet_puff_spinning")
   //巧克力块系列
   e.recipes.create.compacting(
    'alexscaves:block_of_chocolate',

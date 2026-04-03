@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "casualness_delight:crafting_shaped/raw_spring_roll"
+    ])
     // 牛排配约克郡布丁
     e.recipes.kubejs.shapeless("createdelight:yorkshire_pudding_and_beef", [
         "#forge:cooked_beef",

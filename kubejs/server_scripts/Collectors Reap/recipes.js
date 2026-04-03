@@ -12,7 +12,15 @@ ServerEvents.recipes(e => {
         "collectorsreap:food/pomegranate_smoothie",
         "collectorsreap:food/uni_roll",
         "collectorsreap:food/clam_roll",
-        "collectorsreap:fermenting/cream_cheese_from_milk_and_salt"
+        "collectorsreap:fermenting/cream_cheese_from_milk_and_salt",
+        "collectorsreap:food/big_rice_ball",
+        "collectorsreap:food/lime_pie",
+        "collectorsreap:food/candied_lime",
+        "collectorsreap:food/portobello_quiche",
+        "collectorsreap:food/berry_limeade",
+        "collectorsreap:food/pink_limeade",
+        "collectorsreap:food/limeade",
+        "collectorsreap:food/mint_limeade",
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")

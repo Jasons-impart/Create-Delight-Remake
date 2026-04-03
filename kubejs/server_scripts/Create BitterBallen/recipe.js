@@ -31,7 +31,24 @@ ServerEvents.recipes(e => {
         "create_deepfried:deep_frying/donut",
         "create_deepfried:compat/farmersdelight/deep_frying/arancini",
         "create_bic_bit:compat/farmersdelight/ketchup",
-        "create_bic_bit:mixing/frying_oil"
+        "create_bic_bit:mixing/frying_oil",
+        "create_bic_bit:filling/ketchup_bottle",
+        "create_bic_bit:emptying/ketchup",
+        "create_bic_bit:mixing/raw_churros",
+        "create_bic_bit:mixing/raw_cheese_souffle",
+        "create_bic_bit:filling/ketchup_kroket_sandwich",
+        "create_bic_bit:filling/mayonnaise_ketchup_kroket_sandwich",
+        "create_bic_bit:mixing/raw_eggball",
+        "create_bic_bit:mixing/raw_kroket",
+        "create_bic_bit:compat/farmersdelight/kroket",
+        "create_bic_bit:mixing/raw_eggball",
+        "create_bic_bit:mixing/raw_frikandel",
+        "create_bic_bit:compat/farmersdelight/frikandel",
+        "create_bic_bit:filling/ketchup_frikandel_sandwich",
+        "create_bic_bit:filling/mayonnaise_ketchup_frikandel_sandwich",
+        "create_bic_bit:filling/wrapped_ketchup_fries",
+        "create_bic_bit:filling/wrapped_mayonnaise_ketchup_fries",
+        "create_bic_bit:deep_frying/enderball"
     ])
     remove_recipes_output(e, [
         'create_bic_bit:cheese_souffle', 

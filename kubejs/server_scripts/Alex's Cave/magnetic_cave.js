@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        
+        "alexscaves:seeking_arrow"
     ])
     //粉碎方铅岩获取铁粒和钒粒
     e.recipes.create.crushing([
