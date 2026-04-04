@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
   remove_recipes_id(e, [
-    "luncheonmeatsdelight:luncheon_meat_can_raw"
+    "luncheonmeatsdelight:luncheon_meat_can_raw",
+    "luncheonmeatsdelight:luncheon_meat_rice_ball"
   ])
   const { kubejs, create } = e.recipes
   kubejs.shapeless(

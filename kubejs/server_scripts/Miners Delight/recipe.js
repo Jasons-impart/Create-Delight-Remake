@@ -11,6 +11,7 @@ ServerEvents.recipes(e => {
         "miners_delight:baked_tentacles_campfire",
         "miners_delight:baked_tentacles_smoking",
         "miners_delight:cutting/baked_squid",
+        "miners_delight:vegan_hamburger"
     ])
     farmersdelight.cutting("miners_delight:gossypium", "#forge:shears", [
         "kinetic_pixel:graycotton", 

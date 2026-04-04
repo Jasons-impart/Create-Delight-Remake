@@ -5,6 +5,8 @@ ServerEvents.recipes(e => {
         "farmersdelight:cooking/mangosteen_tea",
         "farmersdelight:cooking/lychee_cherry_tea",
         "farmersdelight:cooking/hawberry_tea",
+        "farmersrespite:filling/water_cup",
+        "farmersrespite:emptying/water_cup",
         "ends_delight:food/chorus_flower_tea"
     ])
     e.recipes.create.mixing(

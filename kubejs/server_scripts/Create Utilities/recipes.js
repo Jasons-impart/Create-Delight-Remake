@@ -2,6 +2,9 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "createutilities:shaped/gearcube",
         "createutilities:shaped/void_chest",
+        "createutilities:shaped/void_tank",
+        "createutilities:shaped/void_battery",
+        "createutilities:shaped/graviton_tube",
         "createmetallurgy:alloying/void_steel",
         "createutilities:mixing/void_steel_ingot",
         "functionalstorage:ender_drawer"

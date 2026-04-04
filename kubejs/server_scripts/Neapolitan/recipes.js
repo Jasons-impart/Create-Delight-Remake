@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "neapolitan:milk/milk_bottles_from_bucket",
         "neapolitan:adzuki/adzuki_crate_uncompress",
         "neapolitan:vanilla/vanilla_fudge",
+        "neapolitan:banana/banana_bread",
         "create_central_kitchen:mixing/vanilla_fudge"
     ])
     remove_recipes_output(e, [

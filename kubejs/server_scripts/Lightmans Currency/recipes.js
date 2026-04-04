@@ -13,7 +13,9 @@ ServerEvents.recipes(e => {
         "lctech:battery_large"
     ])
     remove_recipes_id(e, [
+        "lightmanscurrency:atm",
         "lightmanscurrency:coinmint",
+        "lightmanscurrency:trading_core",
         "lightmanscurrency:coins/coin_copper_from_pile",
         "lightmanscurrency:coins/coinpile_copper_from_coin",
         "lightmanscurrency:coins/coinpile_copper_from_block",

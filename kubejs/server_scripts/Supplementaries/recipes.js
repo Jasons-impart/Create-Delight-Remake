@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    remove_recipes_id(e, [
+        "supplementaries:lumisene_bottle"
+    ])
     remove_recipes_output(e, [
         "supplementaries:sugar_cube"
     ])

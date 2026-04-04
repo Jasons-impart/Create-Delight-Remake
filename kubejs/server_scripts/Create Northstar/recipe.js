@@ -16,6 +16,15 @@ ServerEvents.recipes(e => {
         "northstar:mixing/hydrocarbon_from_sodium",
         "northstar:sandpaper_polishing/amethyst_shard",
         "northstar:sandpaper_polishing/amethyst_shard_using_deployer",
+        "northstar:crafting/tungsten_block_from_ingot",
+        "northstar:crafting/tungsten_ingot_from_nuggets",
+        "northstar:crafting/tungsten_ingot_from_block",
+        "northstar:pressing/tungsten_ingot",
+        "northstar:crafting/tungsten_nugget_from_ingot",
+        "northstar:crafting/titanium_ingot_from_block",
+        "northstar:crafting/titanium_nugget_from_ingot",
+        "northstar:crafting/titanium_ingot_from_nuggets",
+        "northstar:splashing/crushed_raw_tungsten"
     ])
     remove_recipes_output(e, [
         "northstar:circuit",
@@ -102,6 +111,16 @@ ServerEvents.recipes(e => {
 
     create_new_age.energising("northstar:raw_glowstone_ore", "northstar:enriched_glowstone_ore", 10000)
         .id("createdelight:energising/enriched_glowstone_ore")
+
+    create.mechanical_crafting(
+        "northstar:titanium_ingot", [
+        "AAA",
+        "AAA",
+        "AAA"
+    ], {
+        A: "northstar:titanium_nugget"
+    }
+    ).id("createdelight:mechanical_crafting/titanium_ingot_from_nuggets")
 
     create.crushing(Item.of("northstar:rutile_concentrate").withChance(0.1),
         [["northstar:moon_sand", "northstar:mars_sand"]])

@@ -34,20 +34,6 @@ ServerEvents.recipes(e => {
         ["farmersrespite:coffee_beans_sack"]
     )
         .id("createdelight:coffee_beans")
-    // 咖啡豆粉碎
-    e.recipes.create.milling(
-        [
-            "createcafe:coffee_grounds",
-            Item.of("2x createcafe:coffee_grounds").withChance(0.25)
-        ], "farmersrespite:coffee_beans"
-    ).id("createdelight:milling/coffee_grounds")
-    e.recipes.create.filling(
-        "createcafe:iced_coffee",
-        [
-            "createcafe:iced_coffee_cup_ice",
-            Fluid.of("createdelight:americano_fluid", 250)
-        ]
-    ).id("createdelight:filling/coffee/iced_coffee_filling")
     //焙烧咖啡豆
     blast_and_smelting(e, 'createcafe:coffee_beans', 'createcafe:roasted_coffee_beans', 0.7, 100)
     e.recipes.ratatouille.baking(
