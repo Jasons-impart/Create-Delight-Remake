@@ -1,6 +1,5 @@
 // 默认食材价值，如果希望是其他值，加入Dict
 const DefaultFoodIngredientValue = 1;
-
 // 默认价值列表
 // 如果是食材，建议考虑统一添加#quality_food:material_whitelist标签，而不是加入这个列表
 let DefaultFoodIngredientList = [
