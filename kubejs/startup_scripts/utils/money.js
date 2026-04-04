@@ -5,7 +5,6 @@ const $ChainData = Java.loadClass("io.github.lightman314.lightmanscurrency.api.m
 
 let MoneyUtil = {}
 
-const COIN_CHAIN_MAIN_VALUE = "main"
 /**
  * 将数字的值转化为含有货币的列表
  * @param {number} value 价值，以基础钱币（铁币）为基础
@@ -13,7 +12,7 @@ const COIN_CHAIN_MAIN_VALUE = "main"
  */
 MoneyUtil.convertBaseValueToItems = function (value) {
     /** @type {Internal.CoinValue} */
-    let coinValue = $CoinValue.fromNumber(COIN_CHAIN_MAIN_VALUE, value)
+    let coinValue = $CoinValue.fromNumber("main", value)
     if (coinValue.getAsItemList)
         return coinValue.getAsItemList()
     return ["minecraft:air"]
