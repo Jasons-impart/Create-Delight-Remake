@@ -29,6 +29,7 @@ ServerEvents.recipes(e => {
         "brewinandchewin:fermenting/cocoa_fudge",
         "brewinandchewin:fermenting/pickled_pickles",
         "brewinandchewin:emptying/create/potion",
+        "/brewinandchewin:emptying\/create\/farmersrespite\/.*/"
     ])
     create.filling("brewinandchewin:unripe_flaxen_cheese_wheel", [
         "minecraft:honeycomb",

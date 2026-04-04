@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "tacz:gunpowder",
-        "tacz:gun_smith_table"
+        "tacz:gun_smith_table",
+        "tacz:target"
     ])
     e.recipes.kubejs.shaped(
         'tacz:target',

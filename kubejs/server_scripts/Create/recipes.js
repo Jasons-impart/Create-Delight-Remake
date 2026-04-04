@@ -25,6 +25,7 @@ ServerEvents.recipes(e => {
         "create:sequenced_assembly/precision_mechanism",
         "create_new_age:cutting/copper_wire",
         "/^create:crushing\/raw_[A-Za-z0-9]+$/",
+        "/create:splashing\/crushed_raw.*/",
         "create:compacting/blaze_cake",
         "createutilities:sandpaper_polishing/polished_amethyst",
         "create_new_age:mixing/thorium",

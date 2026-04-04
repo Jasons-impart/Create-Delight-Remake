@@ -230,7 +230,7 @@ ItemEvents.modification(e => {
     fire_resistance("createmetallurgy:raw_tungsten")
     fire_resistance("createmetallurgy:crushed_raw_tungsten")
     fire_resistance("createmetallurgy:dirty_tungsten_dust")
-    fire_resistance("createmetallurgy:wolframite_dust")
+    fire_resistance("createmetallurgy:tungsten_dust")
 
     // 食物修改为快速食用
     food_fastToEat("ends_delight:chorus_fruit_popsicle")

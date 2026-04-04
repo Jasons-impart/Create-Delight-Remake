@@ -2,8 +2,11 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "createmetallurgy:sequenced_assembly/industrial_crucible",
         "createmetallurgy:crafting/materials/sandpaper_belt",
+        "createmetallurgy:crushing/raw_wolframite",
+        "createmetallurgy:crushing/raw_tungsten", //防御性写法，以防哪天冶金学作者心血来潮改id
         "createmetallurgy:alloying/necromium",
-        "create:fill_minecraft_bucket_with_createmetallurgy_molten_necromium"
+        "create:fill_minecraft_bucket_with_createmetallurgy_molten_necromium",
+        "/createmetallurgy:splashing\/dirty_.*/"
     ])
     e.replaceInput({ id: "createmetallurgy:crafting/materials/tungsten_wire_spool" }, "minecraft:stick", "createaddition:spool")
     e.replaceInput({ id: "createmetallurgy:crafting/materials/graphite" }, "minecraft:coal", "#minecraft:coals")
@@ -37,10 +40,10 @@ ServerEvents.recipes(e => {
         "minecraft:raw_gold",
         "minecraft:gold_nugget"])
     metal_production_line_5(e, [
-        "createmetallurgy:dirty_wolframite_dust",
-        "createmetallurgy:wolframite_dust",
-        "createmetallurgy:crushed_raw_wolframite",
-        "createmetallurgy:raw_wolframite",
+        "createmetallurgy:dirty_tungsten_dust",
+        "createmetallurgy:tungsten_dust",
+        "createmetallurgy:crushed_raw_tungsten",
+        "createmetallurgy:raw_tungsten",
         "createmetallurgy:tungsten_nugget"])
     metal_production_line_5(e, [
         "createmetallurgy:dirty_zinc_dust",

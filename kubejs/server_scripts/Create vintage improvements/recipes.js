@@ -12,6 +12,7 @@ ServerEvents.recipes(e => {
         "vintageimprovements:rolling/nethersteel_plate",
         "vintageimprovements:rolling/andesite_plate",
         "vintageimprovements:crushing/scoria",
+        "vintageimprovements:crushing/basalt",
         "vintageimprovements:pressurizing/sulfur_dioxide",
         "vintageimprovements:craft/spring_coiling_machine",
         "vintageimprovements:grinder_polishing/rose_quartz",

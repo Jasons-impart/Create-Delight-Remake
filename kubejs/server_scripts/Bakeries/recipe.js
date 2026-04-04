@@ -59,7 +59,8 @@ ServerEvents.recipes(e => {
         "bakeries:integration/create/mixing/crispy_dough",
         "bakeries:integration/create/mixing/foamed_cream",
         "bakeries:integration/create/mixing/butter_cube",
-        "bakeries:paper_cup"
+        "bakeries:paper_cup",
+        "bakeries:integration/create/milling/flour"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",

@@ -11,6 +11,7 @@ ServerEvents.recipes(e => {
         "immersive_aircraft:propeller",
         "immersive_aircraft:industrial_gears",
         "immersive_aircraft:improved_landing_gear",
+        "immersive_aircraft:rotary_cannon"
     ])
     // 旋转炮
     e.shaped(

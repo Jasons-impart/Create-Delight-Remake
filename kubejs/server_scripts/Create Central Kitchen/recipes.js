@@ -33,6 +33,11 @@ ServerEvents.recipes(e => {
     "create_central_kitchen:emptying/banana_milkshake",
     "create_central_kitchen:emptying/mint_milkshake",
     "create_central_kitchen:emptying/adzuki_milkshake",
+    "create_central_kitchen:mixing/tomato_sauce",
+    "create_central_kitchen:haunting/white_strawberries",
+    "create_central_kitchen:crafting/strawberry_scones_from_dough",
+    "create_central_kitchen:crafting/adzuki_bun_from_dough",
+    "/create_central_kitchen:filling\/.*milkshake/"
   ])
   create.mixing(
     Fluid.of("create_central_kitchen:tomato_sauce", 250),

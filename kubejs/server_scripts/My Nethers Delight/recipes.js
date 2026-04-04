@@ -3,10 +3,14 @@ ServerEvents.recipes(e => {
         "mynethersdelight:boiled_egg_from_smoking",
         "mynethersdelight:boiled_egg_cooking",
         "mynethersdelight:cooking/fries_ghasta",
+        "mynethersdelight:cooking/fried_hoglin_chop",
+        "mynethersdelight:cooking/deviled_egg",
+        "mynethersdelight:cooking/scotch_eggs",
         "mynethersdelight:toast_from_smoking",
         "mynethersdelight:toast_cooking",
         "mynethersdelight:toast_from_campfire_cooking",
-        "mynethersdelight:crafting/sugar_alt"
+        "mynethersdelight:crafting/sugar_alt",
+        "mynethersdelight:crafting/nether_burger"
     ])
     const {create, kubejs, farmersdelight, create_new_age} = e.recipes
     e.replaceInput({mod:"mynethersdelight"}, "mynethersdelight:roasted_sausage", "#forge:sausage/cooked")

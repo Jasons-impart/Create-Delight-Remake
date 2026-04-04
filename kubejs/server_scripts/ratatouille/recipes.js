@@ -2,7 +2,9 @@ ServerEvents.recipes(e => {
   remove_recipes_id(e, [
     "create:mixing/compost_test",
     "create:mixing/salt",
+    "create:mixing/mince_meat",
     "ratatouille:threshing/boil_stone",
+    "ratatouille:squeezing/raw_sausage",
     "create:sequenced_assembly/unprocessed_mature_matter",
     "create:sequenced_assembly/unprocessed_ripen_matter",
     "ratatouille:composting/composting"

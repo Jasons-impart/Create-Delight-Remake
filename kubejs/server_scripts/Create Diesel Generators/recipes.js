@@ -28,7 +28,9 @@ ServerEvents.recipes(e => {
     "createdieselgenerators:crafting/chemical_turret_lighter",
     "createdieselgenerators:crushing/wood_chip_casings",
     "createdieselgenerators:crafting/distillation_controller",
-    "createdieselgenerators:crafting/andesite_girder"
+    "createdieselgenerators:crafting/andesite_girder",
+    "createdieselgenerators:distillation/crude_oil",
+    "createdieselgenerators:distillation/superheated_crude_oil"
   ]);
   create.crushing(["31x createdieselgenerators:wood_chip",
       Item.of("createdieselgenerators:wood_chip", 1).withChance(0.5),
