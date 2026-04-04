@@ -175,6 +175,9 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
             //     }
             // }
         }
+        else if (level.dayTime() % 24000 > 1000 + 5 * 20 && entity != null && !entity.isRemoved()) {
+            entity.discard()
+        }
     }
 })
 BlockEvents.rightClicked("create:white_table_cloth", e => {
