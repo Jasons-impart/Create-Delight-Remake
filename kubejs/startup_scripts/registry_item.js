@@ -232,8 +232,8 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(1)
                 .saturation(0.5)
-                .effect("cosmopolitan:tracer", 600, 1, 1.0)
-                .effect("cosmopolitan:phototaxis", 600, 1, 1.0)
+                .effect("cosmopolitan:tracer", 600, 0, 1.0)
+                .effect("cosmopolitan:phototaxis", 600, 0, 1.0)
         })
         .tag("fruitsdelight:jello")
         .tag("diet:sugars")
@@ -245,7 +245,7 @@ StartupEvents.registry("item", e => {
         .food(f => {
             f.hunger(20)
                 .saturation(1)
-                .effect("farmersdelight:nourishment", 6000, 1, 1.0)
+                .effect("farmersdelight:nourishment", 6000, 0, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
                         if (!ea.player.isCreative()) {
@@ -261,12 +261,11 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:boiling_water_cabbage")
         .rarity("uncommon")
         .unstackable()
-        .translationKey("item.createdelight.boiling_water_cabbage")
         .food(food => {
             food.hunger(8)
                 .saturation(0.6)
-                .effect("minecraft:resistance", 500, 2, 1.0)
-                .effect("farmersdelight:nourishment", 3000, 1, 1.0)
+                .effect("minecraft:resistance", 400, 1, 0.5)
+                .effect("farmersdelight:nourishment", 3000, 0, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
                         if (!ea.player.isCreative()) {
@@ -277,6 +276,7 @@ StartupEvents.registry("item", e => {
                     })
                 })
         })
+        .translationKey("item.createdelight.boiling_water_cabbage")
     // 玉米热狗相关
     e.create("createdelight:mayo_corn_dog")
         .food(food => {
