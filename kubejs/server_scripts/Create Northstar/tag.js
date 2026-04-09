@@ -23,6 +23,25 @@ ServerEvents.tags("minecraft:block", e => {
             'northstar:martian_steel_large_plating'])
 })
 
+ServerEvents.tags("minecraft:item", e => {
+    e.add("northstar:heat_resistant",
+        [
+            'minecraft:netherite_helmet',
+            'minecraft:netherite_chestplate',
+            'minecraft:netherite_boots',
+            'create_jetpack:netherite_jetpack',
+            'create_sa:netherite_jetpack_chestplate',
+            'iceandfire:dragonsteel_ice_helmet',
+            'iceandfire:dragonsteel_ice_chestplate',
+            'iceandfire:dragonsteel_ice_leggings',
+            'iceandfire:dragonsteel_ice_boots'])
+    e.add("northstar:insulating",
+        [
+            'iceandfire:dragonsteel_fire_helmet',
+            'iceandfire:dragonsteel_fire_chestplate',
+            'iceandfire:dragonsteel_fire_leggings',
+            'iceandfire:dragonsteel_fire_boots'])
+})
 
 ServerEvents.tags("entity_type", e => {
     e.add("northstar:can_survive_cold",

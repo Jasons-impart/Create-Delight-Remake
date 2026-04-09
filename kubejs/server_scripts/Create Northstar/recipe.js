@@ -95,7 +95,7 @@ ServerEvents.recipes(e => {
         A: "#minecraft:wool",
         B: "create_sa:small_filling_tank",
         C: "northstar:moon_sand",
-        D: "createmetallurgy:tungsten_sheet"
+        D: "northstar:titanium_sheet"
     }).id("createdelight:oxygen_tank")
 
     kubejs.shaped('createdelight:sturdy_oxygen_tank', [
