@@ -7,7 +7,7 @@ on:
       - test-*         # 匹配所有 test- 开头的分支（通配符）
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
-  PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/download/init/packwiz
+  PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
   HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
