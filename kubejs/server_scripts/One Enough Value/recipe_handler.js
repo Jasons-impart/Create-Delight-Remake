@@ -64,7 +64,11 @@ OEVEvents.addRecipeHandler(event => {
             event.defaultRecipeExtraValueGetter,
             // event.defaultRecipeValueSetter
             (recipe, stacks, totalValue, setter) => {
-                let currentTotalValue = totalValue * multiplier;
+                let m = multiplier
+                if (recipe.type == "minecraft:crafting_shaped" || recipe.type == "minecraft:crafting_shapeless") {
+                    m = 1
+                }
+                let currentTotalValue = totalValue * m;
 
                 // 兼容机械动力的概率产出，计算每个产物期望数量并分别设置价值
                 if (recipe.getRollableResults) {
