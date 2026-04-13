@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "AE2_Storage"
 	group: "0E8A6F1771B90E2E"
-	hide_quest_until_deps_complete: true
 	icon: "ae2:drive"
 	id: "467649501F6EE065"
 	order_index: 2
@@ -40,7 +39,7 @@
 				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
 				""
 			]
-			hide_until_deps_complete: false
+			hide_until_deps_complete: true
 			hide_until_deps_visible: false
 			id: "05D7688036D40AE4"
 			rewards: [{

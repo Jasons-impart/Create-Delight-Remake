@@ -284,7 +284,7 @@
 		{
 			dependencies: ["3066F516B382ED92"]
 			description: ["使用机械动力的合成方式能获得越多收益！对于多种合成方式，越复杂的成本越低！"]
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			icon: "create:brass_hand"
 			id: "638505D6DDD35EF8"
 			shape: "square"
@@ -939,6 +939,31 @@
 			title: "赛特斯石英的生长"
 			x: 3.5d
 			y: -3.0d
+		}
+		{
+			dependencies: ["6894705A95F46440"]
+			description: [
+				"用于插入各种&eME存储/储存元件&r，甚至可以插入便携元件。里面有元件后玩家便可使用终端来访问AE网络里的存储。"
+				""
+			]
+			hide_until_deps_complete: true
+			hide_until_deps_visible: false
+			id: "06D6ED5A2F8C7965"
+			rewards: [{
+				exclude_from_claim_all: true
+				id: "7A02CED65D0EB709"
+				table_id: 367842927525151968L
+				type: "random"
+			}]
+			shape: "square"
+			size: 2.0d
+			tasks: [{
+				id: "2B721C73F71C5C24"
+				item: "ae2:drive"
+				type: "item"
+			}]
+			x: 14.0d
+			y: 1.0d
 		}
 	]
 	title: "&b异星科技"

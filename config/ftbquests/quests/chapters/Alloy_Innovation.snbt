@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "Alloy_Innovation"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: "create:mechanical_arm"
 	id: "7DDE0F8620589E02"
 	order_index: 1
@@ -14,22 +13,6 @@
 			linked_quest: "630FA0478B7DAAAA"
 			x: 6.0d
 			y: 1.5d
-		}
-		{
-			id: "7A11CD1763458CD5"
-			linked_quest: "168836201ED24533"
-			shape: "hexagon"
-			size: 2.0d
-			x: 22.0d
-			y: -6.0d
-		}
-		{
-			id: "30F40F6C2AA7B4B8"
-			linked_quest: "00AF35D832509CB8"
-			shape: "hexagon"
-			size: 2.0d
-			x: 18.5d
-			y: -6.0d
 		}
 		{
 			id: "604FBA64277A68B6"
@@ -253,7 +236,7 @@
 		}
 		{
 			dependencies: ["35B43C124186578F"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7EBD14D46E6E2CF1"
 			rewards: [{
 				id: "262332588DA18160"
@@ -832,7 +815,6 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
 			description: [""]
 			hide_dependency_lines: true
 			id: "580C77852E71B685"
@@ -871,7 +853,6 @@
 			y: 5.0d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
 			description: [
 				"&l&n&a热量机制&r：&e普通燃烧&r为&41TU&r，&9超级燃烧&r为是&42TU&r"
 				"&l&n&a执行配方&r：可以直接执行&e熔融配方&r、&e合金配方&r以及&4生物熔炼&r，但&e热量&r需要&4满足条件&r"
@@ -888,7 +869,7 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["3A9275459C333CF8"]
 			dependency_requirement: "one_completed"
 			description: [""]
 			id: "55E42ECE1CE4E99F"
@@ -912,7 +893,7 @@
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "07C28031281E5458"
 			rewards: [{
 				id: "61144D017386312F"
@@ -988,30 +969,6 @@
 			y: 1.5d
 		}
 		{
-			dependencies: [
-				"70B8B43D6B542EEC"
-				"5A8FA422166974A0"
-			]
-			hide_until_deps_complete: true
-			id: "6EB96008F21DAFBF"
-			rewards: [{
-				id: "2C30E3F28E8F7CB7"
-				item: "createmetallurgy:steel_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			size: 1.0d
-			subtitle: "&e工业核心金属&r！&4钢铁&r！"
-			tasks: [{
-				id: "09380FFFDF782703"
-				item: "createmetallurgy:steel_ingot"
-				type: "item"
-			}]
-			title: "大炼钢铁！"
-			x: 28.5d
-			y: 0.0d
-		}
-		{
 			dependencies: ["5A16AE172A0C7772"]
 			id: "7648C9537805FC1F"
 			subtitle: "对我使用&4G-code&r吧！"
@@ -1052,8 +1009,8 @@
 		}
 		{
 			dependencies: [
-				"6EB96008F21DAFBF"
 				"6DBEF23BA8608F4B"
+				"3A9275459C333CF8"
 			]
 			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
@@ -1140,7 +1097,7 @@
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "0C49A6D118E480B4"
 			rewards: [{
 				id: "6211CFB60DEB1F1E"
@@ -1234,7 +1191,7 @@
 			dependencies: ["5A8FA422166974A0"]
 			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			id: "70B8B43D6B542EEC"
 			min_required_tasks: 1
 			subtitle: "烈焰蛋糕可在系统商店购买"
@@ -1473,7 +1430,7 @@
 		{
 			dependencies: ["1EB02B56E6F91CF6"]
 			description: ["将打包机&c贴合容器&r放置，用&n&e红石信号激活&r&r后，可以一次性打包&n&3至多九格九组&r&r的物品变成包裹，包裹可以被捡起也可以被运输，如果&e没有红石信号激活&r则变成解包机，包裹进入会&e被拆解&r，你也可以用&a动力锯&r拆开它"]
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			id: "6A911EDD3374BC98"
 			subtitle: "物流的起点物品"
 			tasks: [{
@@ -1785,12 +1742,13 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			id: "35F33D9F772B4551"
 			rewards: [{
-				id: "0C695142A1B9227A"
+				count: 6
+				id: "07078D581C2D4C07"
 				item: "createaddition:electrum_ingot"
-				random_bonus: 11
+				random_bonus: 6
 				type: "item"
 			}]
 			tasks: [{
@@ -1804,7 +1762,7 @@
 		}
 		{
 			dependencies: ["5A8FA422166974A0"]
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			id: "6DBEF23BA8608F4B"
 			rewards: [{
 				id: "2266BDDD9C5EF7E2"
@@ -1873,6 +1831,177 @@
 			]
 			x: 14.5d
 			y: -4.5d
+		}
+		{
+			dependencies: [
+				"70B8B43D6B542EEC"
+				"5A8FA422166974A0"
+			]
+			hide_until_deps_complete: false
+			id: "3A9275459C333CF8"
+			rewards: [{
+				id: "57C3112489CE6675"
+				item: "createmetallurgy:steel_ingot"
+				random_bonus: 7
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "&e工业核心金属&r！&4钢铁&r！"
+			tasks: [{
+				id: "31E76E07195018A3"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			title: "大炼钢铁！"
+			x: 28.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["601E073214DCC16C"]
+			description: [
+				"本包对该mod进行了一些优化："
+				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
+				"2.将单独的矿脉整合为某类型的矿簇，玩家不再需要再找很多的矿脉。"
+			]
+			icon: "minecraft:diamond_ore"
+			id: "3BBBADC1B0766B77"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"在小小的矿脉上挖呀挖呀挖\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
+			tasks: [{
+				id: "6D0F5AA38B753248"
+				title: "矿物再生！"
+				type: "checkmark"
+			}]
+			title: "虚空采矿"
+			x: 18.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["41C38AC7AA97CFAD"]
+			icon: "tacz:gun_smith_table"
+			id: "44751C952966AE58"
+			rewards: [
+				{
+					count: 10
+					id: "0BFF6F4EBB116A94"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:slap"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "21CA6A19740043B4"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "tacz:12g"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "19676FBB3CF111DC"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:rbapb"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "6E3C6EAE19674C32"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:gas_pistol_ammo"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "50D7D2A9451D3747"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:hard_core_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "72A8395465126620"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:etched_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "1A53BFF9213EB5AE"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_infused_grenade"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "31A3E10163B8C995"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_battery"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "7589E4017AFDA53B"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:cluster_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"打枪biubiu！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"168836201ED24533\" } }"
+			tasks: [{
+				id: "286A0330DDB18F1D"
+				title: "强力枪械！"
+				type: "checkmark"
+			}]
+			title: "枪械制作！"
+			x: 22.0d
+			y: -6.0d
 		}
 	]
 	title: "&9体系渐成 "

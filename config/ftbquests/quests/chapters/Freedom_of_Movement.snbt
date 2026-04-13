@@ -550,7 +550,6 @@
 		}
 		{
 			dependencies: ["41C38AC7AA97CFAD"]
-			hide_until_deps_complete: true
 			icon: "man_of_many_planes:economy_plane"
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"
@@ -788,7 +787,7 @@
 			y: -4.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["5A8FA422166974A0"]
 			description: ["最最最最经典的列车轨道，是我童年的记忆！"]
 			icon: "create:track"
 			id: "1DAD17F55E0D4B85"
@@ -955,6 +954,7 @@
 				"7DED9A87C6CB80F0"
 				"07C28031281E5458"
 			]
+			hide_until_deps_complete: true
 			id: "6D20D47B7F514221"
 			subtitle: "寻找群系与结构的位置"
 			tasks: [

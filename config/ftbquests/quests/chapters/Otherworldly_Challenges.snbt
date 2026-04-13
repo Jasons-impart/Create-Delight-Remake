@@ -717,7 +717,7 @@
 				"         虽然不知道你觉得我的关卡如何，但是我还是很开心你能全程体验下来。随着时间的积累，感觉身边的人越来越多，仿佛我加入制作组还是昨天啊......回头想来，我还是那么没用啊，很多东西都学不会，执行力如此低下，学习也是如此吧，和他人的交往也有些让我身心俱疲......不管怎么说吧，继续加油了，我或许还有时间去继续忙碌，去和朋友们打好关系，做出更好的挑战！再见了，陌生人，之后再见ヾ(￣▽￣)Bye~Bye~！-from cawyyds"
 			]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			icon: "alexsmobs:void_worm_eye"
 			id: "1DD9F7C0F4BD2170"
 			rewards: [

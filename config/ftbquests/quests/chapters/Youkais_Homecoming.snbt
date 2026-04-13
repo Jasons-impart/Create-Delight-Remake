@@ -1567,7 +1567,7 @@
 				"16172E647A9E34D4"
 			]
 			hide_dependency_lines: true
-			hide_until_deps_complete: true
+			hide_until_deps_complete: false
 			id: "247D25DE94D4A024"
 			rewards: [
 				{

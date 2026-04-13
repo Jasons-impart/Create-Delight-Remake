@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "Super_Multiblock"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: "createdelight:fission_reactor"
 	id: "3A4DFF0EE24A58EE"
 	order_index: 6
@@ -76,6 +75,7 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["要搭建结构，可参考整合包内自带蓝图 &ebutchery_\\nroom&r"]
+			hide_until_deps_complete: true
 			id: "62C31EFDB74E7053"
 			shape: "square"
 			size: 1.5d

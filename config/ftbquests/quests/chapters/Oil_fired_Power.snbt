@@ -7,53 +7,16 @@
 	icon: "create_new_age:generator_coil"
 	id: "54356C1067ECB809"
 	order_index: 2
-	quest_links: [
-		{
-			id: "22D01ADAD4616F68"
-			linked_quest: "6EB96008F21DAFBF"
-			shape: "circle"
-			x: -4.0d
-			y: 0.0d
-		}
-		{
-			id: "0180D3A673FAA934"
-			linked_quest: "4458E27C5252B296"
-			x: 0.0d
-			y: 4.5d
-		}
-		{
-			id: "2A9CBAC961B413BC"
-			linked_quest: "35F33D9F772B4551"
-			shape: "circle"
-			x: -4.0d
-			y: 7.0d
-		}
-		{
-			id: "04B1E039517A83A4"
-			linked_quest: "6DBEF23BA8608F4B"
-			x: -4.0d
-			y: 3.0d
-		}
-		{
-			id: "436EA6738DF1DFE8"
-			linked_quest: "2CC8B87D086B3275"
-			shape: "hexagon"
-			size: 2.0d
-			x: -7.0d
-			y: 3.0d
-		}
-		{
-			id: "35D0EEE249C353CB"
-			linked_quest: "002D0D42090AF488"
-			shape: "hexagon"
-			size: 2.0d
-			x: 4.5d
-			y: 4.5d
-		}
-	]
+	quest_links: [{
+		id: "0180D3A673FAA934"
+		linked_quest: "4458E27C5252B296"
+		x: 0.0d
+		y: 4.5d
+	}]
 	quests: [
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["3C02610297BB8C09"]
+			hide_until_deps_complete: true
 			id: "1ADBDFB31928124D"
 			shape: "square"
 			subtitle: "记得管道要连接到&4基岩&r上！"
@@ -72,7 +35,7 @@
 				"组装方式可看：https://www.bilibili.com/video/BV1z1421Z7ax "
 				"抽油的过程为，先用&e探测器&r找到有油&4的位置，往下挖到&4基岩&r，从这里放管道一直放到地表，最顶上摆上抽油泵（显示没链接到基岩可以用扳手调节下），然后&4按思索里的方式摆好抽油机&r（驴头要在抽油泵正上方，周围的工业铁块都是装饰），尾巴的轴承用扳手右击，中间的空手右击任意一个，如果驴头出来一条黑线和泵相连，就说明组装完毕"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			icon: "createdieselgenerators:pumpjack_crank"
 			id: "43B45F9D2DC4BD3E"
 			rewards: [{
@@ -172,7 +135,7 @@
 				"1AAA21CD44B36815"
 				"081AEF9714B8960E"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "0C33D433CB5C97E5"
 			rewards: [{
 				count: 3
@@ -224,10 +187,12 @@
 		}
 		{
 			dependencies: [
-				"6EB96008F21DAFBF"
 				"6DBEF23BA8608F4B"
 				"1ADBDFB31928124D"
+				"3C02610297BB8C09"
+				"1D724B9AB0915D18"
 			]
+			hide_until_deps_complete: true
 			id: "1A10B417B7C082DF"
 			shape: "square"
 			subtitle: "&4毋庸置疑&r的&e魅力&r！"
@@ -442,6 +407,7 @@
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
+			hide_until_deps_complete: true
 			id: "5E075B9E7A889DF2"
 			secret: true
 			size: 1.0d
@@ -566,7 +532,7 @@
 			y: 7.5d
 		}
 		{
-			dependencies: ["2CC8B87D086B3275"]
+			dependencies: ["38E346D9F782E7BC"]
 			id: "3CB8FDF09F47FD4F"
 			rewards: [{
 				count: 3
@@ -588,6 +554,7 @@
 		}
 		{
 			dependencies: ["4458E27C5252B296"]
+			hide_until_deps_complete: true
 			id: "2F0B3291F14AAA89"
 			rewards: [{
 				id: "22635BC82C9D788A"
@@ -616,7 +583,7 @@
 		{
 			dependencies: ["3CB8FDF09F47FD4F"]
 			dependency_requirement: "one_completed"
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7506866B743A60C1"
 			rewards: [{
 				count: 3
@@ -636,8 +603,9 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["2CC8B87D086B3275"]
+			dependencies: ["38E346D9F782E7BC"]
 			hide_dependency_lines: true
+			hide_until_deps_complete: true
 			id: "7DA3417CB0E6E7DB"
 			rewards: [{
 				id: "7204F07714B3B84B"
@@ -658,6 +626,7 @@
 				"7DA3417CB0E6E7DB"
 				"35F33D9F772B4551"
 			]
+			hide_until_deps_complete: true
 			id: "39D218E0652E1CE0"
 			rewards: [{
 				count: 3
@@ -729,7 +698,10 @@
 			y: 5.5d
 		}
 		{
-			dependencies: ["65602AA94EEB3AA3"]
+			dependencies: [
+				"65602AA94EEB3AA3"
+				"3C1CBC4F971804DF"
+			]
 			id: "4A2A62D77A29284F"
 			tasks: [{
 				id: "2602A962F988CE72"
@@ -738,6 +710,121 @@
 			}]
 			x: 6.5d
 			y: -2.0d
+		}
+		{
+			dependencies: ["2CC8B87D086B3275"]
+			icon: "create_new_age:generator_coil"
+			id: "38E346D9F782E7BC"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"跳转石油电力\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"54356C1067ECB809\"} }"
+			tasks: [{
+				elapsedTime: 1L
+				id: "751CDAB9B19BDBD6"
+				type: "questsadditions:time"
+			}]
+			title: "步入&5石油电力&r！"
+			x: -7.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"70B8B43D6B542EEC"
+				"5A8FA422166974A0"
+				"38E346D9F782E7BC"
+			]
+			id: "3C02610297BB8C09"
+			size: 1.0d
+			subtitle: "&e工业核心金属&r！&4钢铁&r！"
+			tasks: [{
+				id: "2A746506F606C0CA"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			title: "大炼钢铁！"
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"5A8FA422166974A0"
+				"38E346D9F782E7BC"
+			]
+			id: "1D724B9AB0915D18"
+			tasks: [{
+				id: "5BEC0EA27248CE26"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "优秀应力载体！"
+			x: -4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"5A8FA422166974A0"
+				"38E346D9F782E7BC"
+			]
+			id: "318E6868ED07188E"
+			rewards: [{
+				count: 6
+				id: "67C7F9B2BAAFEFF6"
+				item: "createaddition:electrum_ingot"
+				random_bonus: 6
+				type: "item"
+			}]
+			tasks: [{
+				id: "2D279E549523227A"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			title: "良好通电导体！"
+			x: -4.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"50711781910527C4"
+				"2F0B3291F14AAA89"
+			]
+			description: [
+				"&6- 热管理机制&r"
+				"&7 # 控制棒拔出时产热：燃料组件(2-74) × 基础发热率(不可调) × 温度效率(随温度升高而增强)&r"
+				"&7 # 环境散热：基础散热(随温度升高而降低) + 温度相关散热&r"
+				"&7 # 主动冷却：使用冷却剂进行强制散热, 效率取决于冷却剂类型(水, 灵质)&r"
+				"&e # 温度需≥1000K才能发电, 产出倍率随温度升高而增加r"
+				"&4 # 温度超过1500K开始积累损坏, 超过2500K或损坏100%爆炸&r"
+				"&9 ○ 控制棒拔出时开始反应&r"
+				"&9 ○ 控制棒完全插入时终止反应, 依靠环境散热降温&r"
+				"&4 ✗ 爆炸条件：损坏100%或温度≥2500K或运行中结构被破坏&r"
+				""
+				"&6- 运行要求&r"
+				"&e ○ 强烈建议使用水或灵质作为冷却剂"
+				"&4 ○ 必须保持结构完整"
+				"&9 ○ 必须输入核反应燃料"
+				""
+				"{@pagebreak}"
+				""
+				"这里给出一下最大产能："
+				"使用&9水&r作为冷却剂时大约为&4200KFE/t&r"
+				"使用&b灵质&r作为冷却剂时大约为&42MKFE/t&r"
+			]
+			id: "2E60B3BAD25E14CA"
+			rewards: [{
+				id: "2732B3DFAEF1E64A"
+				item: "trashcans:energy_trash_can"
+				type: "item"
+			}]
+			shape: "square"
+			size: 1.5d
+			subtitle: "吼吼！会爆炸的！产电超多的！"
+			tasks: [{
+				id: "3442A1B8EC9CE32E"
+				item: "createdelight:fission_reactor"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 4.5d
 		}
 	]
 	title: "&5石油电力"

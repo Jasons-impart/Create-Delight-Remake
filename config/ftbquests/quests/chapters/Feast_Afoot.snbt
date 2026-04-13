@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "Feast_Afoot"
 	group: "7D0A1432AAAD0EBA"
-	hide_quest_until_deps_complete: true
 	icon: "vintagedelight:white_chefs_hat"
 	id: "1E7A476EE0C13AD1"
 	images: [{
