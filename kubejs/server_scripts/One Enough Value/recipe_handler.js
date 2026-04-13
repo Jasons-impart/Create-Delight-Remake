@@ -13,6 +13,9 @@ OEVEvents.addRecipeHandler(event => {
         let typeName = String(RecipeType.toString());
         let multiplier = global.RecipeValueMultiplierDict.get(typeName) ?? defaultMultiplier;
         // console.log(typeName + ":" + multiplier);
+        
+        // 这里选择了所有配方一起处理，在传入的函数里根据配方类型判断是否需要特殊处理
+        // 后续如果有需要，可能根据配方类型RecipeType，每个RecipeType单独注册addCustomRecipeHandler可读性更高
         event.addCustomRecipeHandler(RecipeType,
             (recipe) => {
                 let ingredients = recipe.getIngredients();
@@ -21,78 +24,59 @@ OEVEvents.addRecipeHandler(event => {
 
                 // 序列组装配方
                 if (recipe.getSequence) {
+                    // 添加起始原料，注意这里的方法和上面不是同一个（少个s）
+                    let startIngredient = recipe.getIngredient();
+                    inputs.push(startIngredient);
                     recipe.getSequence().forEach(step => {
                         let stepRecipe = step.getRecipe();
                         // 机械手配方不消耗手持物品时的特殊处理
                         if (stepRecipe.shouldKeepHeldItem && stepRecipe.shouldKeepHeldItem()) return;
 
                         let stepIngs = stepRecipe.getIngredients();
-                        if (stepIngs.size() > 1) {
+                        if (stepIngs.size() == 2) {
                             inputs.push(stepIngs.get(1));
                         }
                     });
                 }
-                // 机械手配方不消耗手持物品时的特殊处理：只保留被处理物品
-                else if (recipe.shouldKeepHeldItem && recipe.shouldKeepHeldItem()) {
-                    if (inputs.length > 0) {
-                        inputs = [inputs[0]];
-                    }
-                }
                 return inputs;
             },
             (recipe, registryAccess) => {
-                if (recipe.getRollableResults) {
-                    let results = recipe.getRollableResults();
-                    let uniqueItemMap = {}; // 用于去重产物
-                    results.forEach(output => {
-                        let itemStack = output.getStack();
-                        let count = itemStack.getCount();
-                        let itemId = String(itemStack.getItem().getId()); // 获取 ID (如 minecraft:gravel)
-                        if (!itemStack.isEmpty() && count > 0 && !uniqueItemMap[itemId]) {
-                            uniqueItemMap[itemId] = Item.of(itemId);
-                        }
-                    })
-                    // console.log(Object.keys(uniqueItemMap));
-                    return Object.values(uniqueItemMap);
-                }
-                else {
-                    let stack = recipe.getResultItem(registryAccess);
-                    if (stack.isEmpty() || stack.getCount() === 0) return [];
-                    return [stack];
-                }
+                let stack = recipe.getResultItem(registryAccess);
+                if (stack.isEmpty() || stack.getCount() === 0) return [];
+                return [stack];
             },
             event.defaultRecipeExtraValueGetter,
             // event.defaultRecipeValueSetter
             (recipe, stacks, totalValue, setter) => {
-                let m = multiplier
-                if (recipe.type == "minecraft:crafting_shaped" || recipe.type == "minecraft:crafting_shapeless") {
-                    m = 1
-                }
-                let currentTotalValue = totalValue * m;
-
-                // 兼容机械动力的概率产出，计算每个产物期望数量并分别设置价值
-                if (recipe.getRollableResults) {
-                    let results = recipe.getRollableResults();
-                    let itemCountMap = {};
-                    let totalUnpricedCnt = 0.0;
-                    let consumedValue = 0.0;
-
-                    // console.log(recipe)
-                    // 第一遍遍历：统计期望数量和已消耗的价值
-                    results.forEach(output => {
-                        let itemStack = output.getStack();
-                        let count = itemStack.getCount();
-                        let itemId = String(itemStack.getItem().getId()); // 获取 ID (如 minecraft:gravel)
-                        let chance = output.getChance();
-                        // console.log(String(itemStack) + " " + String(chance));
-
+                let currentTotalValue = totalValue * multiplier;
+                
+                // 统一处理逻辑：计算未定价物品的价值分配
+                function calculateValueDistribution(items, itemCountMap, totalUnpricedCnt, consumedValue) {
+                    // 统计数量和已消耗的价值
+                    items.forEach(item => {
+                        let itemStack, count, chance = 1.0;
+                        
+                        // 自动判断输入类型
+                        if (item.getStack && item.getChance) {
+                            // 处理 序列组装的产出物
+                            itemStack = item.getStack();
+                            count = itemStack.getCount();
+                            chance = item.getChance();
+                        } else {
+                            // 处理普通物品栈
+                            itemStack = item;
+                            count = itemStack.getCount();
+                        }
+                        
+                        let itemId = String(itemStack.getItem().getId());
+                        
                         // 黑名单内的物品不参与价值分配
                         if (global.ValueBlackList.indexOf(itemId) !== -1) return;
-
+                        
                         if (!itemStack.isEmpty() && count > 0) {
                             let expectedCount = count * chance;
                             itemCountMap[itemId] = (itemCountMap[itemId] || 0.0) + expectedCount;
-
+                            
                             let definedValue = global.FoodIngredientValueDict.get(itemId);
                             if (definedValue !== undefined) {
                                 consumedValue += definedValue * expectedCount;
@@ -100,80 +84,80 @@ OEVEvents.addRecipeHandler(event => {
                                 totalUnpricedCnt += expectedCount;
                             }
                         }
-                    })
-                    // console.log(itemCountMap);
-
-                    // 如果原材料总价值为0，则不设置产物价值
-                    if (currentTotalValue === 0) return;
-
-                    // 计算剩余价值分配给未定价物品
-                    let remainingValue = currentTotalValue - consumedValue;
-
-                    // 计算未定价物品的单价，最差为 1
-                    let valuePerUnpricedUnit = 1;
-                    if (totalUnpricedCnt > 0) {
-                        valuePerUnpricedUnit = Math.max(1, remainingValue / totalUnpricedCnt);
-                    }
-
-                    // 第二遍遍历：设置价值
-                    Object.keys(itemCountMap).forEach(itemId => {
-                        // 只设置未定价物品
-                        if (global.FoodIngredientValueDict.get(itemId) === undefined) {
-                            // Item.of(itemId) 默认为 1 个物品，因此直接设置单价即可
-                            // console.log(String(recipe) + " " + itemId + " " + String(valuePerUnpricedUnit));
-                            setter.set(recipe, Item.of(itemId), valuePerUnpricedUnit);
-                        }
-                    })
+                    });
+                    
+                    // 修复：确保返回对象的语法正确
+                    return {
+                        itemCountMap: itemCountMap,
+                        totalUnpricedCnt: totalUnpricedCnt,
+                        consumedValue: consumedValue
+                    };
                 }
-                else {
-                    let consumedValue = 0.0;
-                    let totalUnpricedCnt = 0.0;
-
-                    // 第一遍：统计
-                    stacks.forEach(stack => {
-                        if (!stack.isEmpty() && stack.getCount() > 0) {
-                            let itemId = String(stack.getItem().getId());
-
-                            // 黑名单内的物品不参与价值分配
-                            if (global.ValueBlackList.indexOf(itemId) !== -1) return;
-
-                            let count = stack.getCount();
-
-                            let definedValue = global.FoodIngredientValueDict.get(itemId);
-                            if (definedValue !== undefined) {
-                                consumedValue += definedValue * count;
-                            } else {
-                                totalUnpricedCnt += count;
+                
+                // 1. 初始化变量
+                let itemCountMap = {};
+                let totalUnpricedCnt = 0.0;
+                let consumedValue = 0.0;
+                
+                // 2. 先计算 stacks 中的物品价值分配
+                let stacksResult = calculateValueDistribution(stacks, itemCountMap, totalUnpricedCnt, consumedValue);
+                itemCountMap = stacksResult.itemCountMap;
+                totalUnpricedCnt = stacksResult.totalUnpricedCnt;
+                consumedValue = stacksResult.consumedValue;
+                
+                // 3. 如果是机械动力概率产出，补充计算 序列组装的产出物 中的物品价值分配
+                if (recipe.getRollableResults) {
+                    let rollableResults = recipe.getRollableResults();
+                    let rollableResult = calculateValueDistribution(rollableResults, itemCountMap, totalUnpricedCnt, consumedValue);
+                    itemCountMap = rollableResult.itemCountMap;
+                    totalUnpricedCnt = rollableResult.totalUnpricedCnt;
+                    consumedValue = rollableResult.consumedValue;
+                }
+                
+                // 4. 计算未定价物品的单价
+                let valuePerUnpricedUnit = 1;
+                if (currentTotalValue > 0 && totalUnpricedCnt > 0) {
+                    let remainingValue = currentTotalValue - consumedValue;
+                    valuePerUnpricedUnit = Math.max(1, remainingValue / totalUnpricedCnt);
+                }
+                
+                // 5. 统一设置价值
+                // 设置 stacks 中的物品价值
+                stacks.forEach(stack => {
+                    if (!stack.isEmpty() && stack.getCount() > 0) {
+                        let itemId = String(stack.getItem().getId());
+                        if (global.ValueBlackList.indexOf(itemId) !== -1) return;
+                        
+                        if (global.FoodIngredientValueDict.get(itemId) === undefined) {
+                            let stackValue = valuePerUnpricedUnit * stack.getCount();
+                            setter.set(recipe, stack, stackValue);
+                        }
+                    }
+                });
+                
+                // 设置 rollableResults 中的物品价值
+                if (recipe.getRollableResults) {
+                    let rollableResults = recipe.getRollableResults();
+                    rollableResults.forEach(result => {
+                        let itemStack = result.getStack();
+                        let itemId = String(itemStack.getItem().getId());
+                        
+                        // 黑名单内的物品不参与价值分配
+                        if (global.ValueBlackList.indexOf(itemId) !== -1) return;
+                        
+                        if (!itemStack.isEmpty() && itemStack.getCount() > 0) {
+                            if (global.FoodIngredientValueDict.get(itemId) === undefined) {
+                                // 检查该物品是否已经在 stacks 中处理过
+                                let isProcessed = stacks.some(stack => 
+                                    !stack.isEmpty() && 
+                                    String(stack.getItem().getId()) === itemId
+                                );
+                                if (!isProcessed) {
+                                    setter.set(recipe, Item.of(itemId), valuePerUnpricedUnit);
+                                }
                             }
                         }
                     });
-
-                    // 如果原材料总价值为0，则不设置产物价值
-                    if (currentTotalValue === 0) return;
-
-                    let remainingValue = currentTotalValue - consumedValue;
-
-                    // 计算未定价物品的单价，最差为 1
-                    let valuePerUnpricedUnit = 1;
-                    if (totalUnpricedCnt > 0) {
-                        valuePerUnpricedUnit = Math.max(1, remainingValue / totalUnpricedCnt);
-                    }
-
-                    // 第二遍：设置
-                    stacks.forEach(stack => {
-                        if (!stack.isEmpty() && stack.getCount() > 0) {
-                            let itemId = String(stack.getItem().getId());
-                            if (global.ValueBlackList.indexOf(itemId) !== -1) return;
-
-                            if (global.FoodIngredientValueDict.get(itemId) === undefined) {
-                                // setter 逻辑: 如果 itemStack 有多个，单价 = value / count
-                                // 因此这里我们需要传入 单价 * 数量
-                                let stackValue = valuePerUnpricedUnit * stack.getCount();
-                                // console.log(String(recipe) + " " + String(stack) + " " + String(stackValue));
-                                setter.set(recipe, stack, stackValue);
-                            }
-                        }
-                    })
                 }
             }
         );

@@ -364,6 +364,6 @@ global.ValueBlackList = ValueBlackList;
 // 默认配方价值倍率，如果希望是其他值，加入Dict。如果值过大可能会上溢导致kjs加载失败。
 global.DefaultRecipeValueMultiplier = 2;
 let RecipeValueMultiplierDict = {
-    // "crafting": 10
+    "crafting": 1
 }
 global.RecipeValueMultiplierDict = new Map(Object.entries(RecipeValueMultiplierDict));
