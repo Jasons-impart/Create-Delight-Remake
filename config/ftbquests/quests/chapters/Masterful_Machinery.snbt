@@ -636,7 +636,10 @@
 			y: 4.75d
 		}
 		{
-			dependencies: ["41C38AC7AA97CFAD"]
+			dependencies: [
+				"41C38AC7AA97CFAD"
+				"44751C952966AE58"
+			]
 			hide_until_deps_complete: true
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"

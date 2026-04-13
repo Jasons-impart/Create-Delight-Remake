@@ -953,6 +953,7 @@
 				"{@pagebreak}"
 				"在每天的某个时间点，订单会被交付，并在&e订单所在桌布处生成一个包括奖励的包裹&r，同时&4清除所有用于交付订单的包裹&r。"
 			]
+			hide_until_deps_complete: true
 			id: "2397448B73CC8363"
 			rewards: [{
 				id: "71DEA704D4AD9CC2"

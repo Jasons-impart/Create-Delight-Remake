@@ -4,7 +4,6 @@
 	default_quest_shape: ""
 	filename: "Junior_Engineer"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_complete: true
 	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
@@ -115,7 +114,7 @@
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			description: ["右键以产生应力，按住shift可使其反转。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "183724705FA6D24C"
 			rewards: [{
 				id: "7CAFF2E087DBE011"
@@ -147,7 +146,7 @@
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			hide_dependent_lines: true
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "1336C212F2B86468"
 			rewards: [
 				{
@@ -177,7 +176,7 @@
 				"28CB30AB88780BC7"
 				"1336C212F2B86468"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "724FF9E032B4B134"
 			rewards: [
 				{
@@ -230,7 +229,7 @@
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "4D7BB97AA55ACE20"
 			rewards: [
 				{
@@ -316,7 +315,7 @@
 		{
 			dependencies: ["1CED61E7F780F38C"]
 			description: ["用于砍伐&e木质物品&r，且自带连锁。朝上摆放时可进行切割配方。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "372234CE950277CE"
 			rewards: [{
 				id: "35EB2DA3B772BB8F"
@@ -334,7 +333,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5C40F5E0F477394B"
 			rewards: [{
 				id: "07A9F6E2C93527CF"
@@ -376,7 +375,7 @@
 				"火焰-批量烟熏-烟熏炉"
 				"灵魂火-批量缠魂-无原版对应"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "762CD49FCDC889E2"
 			rewards: [{
 				id: "6F32C73249450B34"
@@ -441,7 +440,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "3ACA3A7FE20E59D2"
 			rewards: [{
 				id: "12EA67E196A1A5D4"
@@ -459,7 +458,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5EF1F883F44263FA"
 			rewards: [{
 				id: "47435421A7DC8956"
@@ -500,7 +499,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "47ABE0A581C1E40E"
 			rewards: [{
 				id: "00B9BCEC0A5BF89D"
@@ -525,7 +524,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "21E81C4A8E9C95A0"
 			rewards: [{
 				id: "2BA0D31E66D169D2"
@@ -567,7 +566,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "54FEEB508185B5C2"
 			rewards: [{
 				id: "5A2358CCCA90F26C"
@@ -591,7 +590,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2E62FA558BE57A48"
 			rewards: [{
 				id: "7D0AF1C691647766"
@@ -615,7 +614,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "0436BA03D9EB8AA8"
 			rewards: [{
 				id: "733A27B9128C1D0B"
@@ -638,7 +637,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "11A126AA8CC38620"
 			rewards: [{
 				id: "4D02F9F45E5388B1"
@@ -760,7 +759,7 @@
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			description: ["暂时还做不了，需要做出右边的弹簧哦。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
 				id: "0FEE3BFF887C19B1"
@@ -950,7 +949,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "6DB08E176433BF12"
 			rewards: [{
 				id: "087B96C25EB63A50"
@@ -974,7 +973,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "1BABF924FE8F0225"
 			rewards: [{
 				id: "56F3D6012C926CB0"
@@ -998,7 +997,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "175196C8D23715B3"
 			rewards: [{
 				id: "3E9FB9E96024F6B7"
@@ -1022,7 +1021,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "6BF8E6F5FE6983F7"
 			rewards: [{
 				id: "021C79434EA9BDD3"
@@ -1049,7 +1048,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "65CDCB9357D9BB71"
 			rewards: [{
 				id: "73E6C7CEF8085B9F"
@@ -1078,7 +1077,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "40C5A484EAF7283C"
 			rewards: [{
 				id: "4F0C2A98B6CAAAA7"
@@ -1102,7 +1101,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5B1CD6F67D035B28"
 			rewards: [{
 				id: "1ED244CFBB901CF0"
@@ -1242,6 +1241,7 @@
 				""
 				"使用安山桶喂烈焰人燃烧室燃料时需要进入&e潜行状态&r再右键。"
 			]
+			hide_until_deps_complete: true
 			id: "630FA0478B7DAAAA"
 			size: 1.0d
 			subtitle: "简化和机械动力流体容器的交互"
@@ -1813,6 +1813,7 @@
 				"29130F650B256E20"
 			]
 			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
+			hide_until_deps_complete: true
 			id: "3DBEC3D3BC6BAD1A"
 			secret: true
 			shape: "gear"
@@ -1912,7 +1913,8 @@
 		}
 		{
 			dependencies: ["262E66AD49F385AC"]
-			dependency_requirement: "one_started"
+			dependency_requirement: "one_completed"
+			hide_until_deps_complete: true
 			id: "64BDB4FEDC5142AF"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{

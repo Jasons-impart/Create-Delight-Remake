@@ -4,48 +4,10 @@
 	default_quest_shape: ""
 	filename: "Mineral_Regeneration"
 	group: "14CFC96B5B37F10B"
-	hide_quest_until_deps_visible: true
 	icon: "createoreexcavation:drilling_machine"
 	id: "37C42029C3527BCD"
 	order_index: 4
-	quest_links: [
-		{
-			id: "2506A27C0B0452A8"
-			linked_quest: "1B63ED5F68D71F24"
-			x: -5.0d
-			y: 3.5d
-		}
-		{
-			id: "10E2EED3156B3D14"
-			linked_quest: "1B63ED5F68D71F24"
-			x: -6.5d
-			y: 3.5d
-		}
-		{
-			id: "1EB5DEA6D19CE798"
-			linked_quest: "762CD49FCDC889E2"
-			x: -8.0d
-			y: 3.5d
-		}
-		{
-			id: "5501FC4C7445761C"
-			linked_quest: "762CD49FCDC889E2"
-			x: -6.5d
-			y: 1.5d
-		}
-		{
-			id: "5F089DEDC62DC317"
-			linked_quest: "78396753AA774D5F"
-			x: -7.0d
-			y: 5.5d
-		}
-		{
-			id: "73EACFDD6452B3C1"
-			linked_quest: "26DADC947426CD52"
-			x: -6.0d
-			y: 5.5d
-		}
-	]
+	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["00AF35D832509CB8"]
@@ -95,7 +57,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["601E073214DCC16C"]
+			dependencies: ["3BBBADC1B0766B77"]
 			description: [
 				"本包对该mod进行了一些优化："
 				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
@@ -108,9 +70,9 @@
 			size: 2.0d
 			subtitle: "{ \"text\": \"在小小的矿脉上挖呀挖呀挖\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
 			tasks: [{
-				id: "1D7AB28B86CF3039"
-				title: "矿物再生！"
-				type: "checkmark"
+				elapsedTime: 1L
+				id: "0DEAA77D3812342B"
+				type: "questsadditions:time"
 			}]
 			title: "虚空采矿"
 			x: 1.0d
@@ -337,10 +299,7 @@
 			y: 2.5d
 		}
 		{
-			dependencies: [
-				"17BE6A19EF732F33"
-				"1B63ED5F68D71F24"
-			]
+			dependencies: ["17BE6A19EF732F33"]
 			id: "5AF371516B6F9605"
 			tasks: [{
 				id: "3EF87E2098BB0BB1"
@@ -355,6 +314,7 @@
 				"5AF371516B6F9605"
 				"1B63ED5F68D71F24"
 			]
+			hide_until_deps_complete: true
 			id: "390B290FDE3760CB"
 			tasks: [{
 				id: "7941D85240ED3724"
@@ -369,6 +329,7 @@
 				"390B290FDE3760CB"
 				"762CD49FCDC889E2"
 			]
+			hide_until_deps_complete: true
 			id: "678722D7C6137C3A"
 			tasks: [{
 				id: "5FAB7A5A3EA5BDF4"
@@ -384,6 +345,7 @@
 				"78396753AA774D5F"
 				"26DADC947426CD52"
 			]
+			hide_until_deps_complete: true
 			id: "22AE46F2DB5C872F"
 			tasks: [{
 				id: "769B9EE81969BE88"
@@ -409,6 +371,7 @@
 				"7E99FE558038EE94"
 				"762CD49FCDC889E2"
 			]
+			hide_until_deps_complete: true
 			id: "7397600556B17895"
 			tasks: [{
 				id: "11310A533C6A6D10"

@@ -3669,6 +3669,7 @@
 				"当然你也可以试试万能的 "
 				"{ \"text\": \"探险家指南针\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1CB33EA048068637\" } }"
 			]
+			hide_until_deps_complete: true
 			icon: "tetra:forged_wall"
 			id: "01FC78875A324DE3"
 			subtitle: "锻造遗迹"

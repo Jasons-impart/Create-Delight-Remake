@@ -57,7 +57,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2D498ED418390340"
 			tasks: [{
 				elapsedTime: 1L
@@ -71,7 +71,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "6D40B019C49B2AF0"
 			tasks: [{
 				disable_toast: true
@@ -86,7 +86,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "3406C96937AFB360"
 			tasks: [{
 				disable_toast: true
@@ -101,7 +101,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2CE5C6337A66E546"
 			tasks: [{
 				disable_toast: true
@@ -116,7 +116,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "479251A439D11CC8"
 			tasks: [{
 				disable_toast: true
@@ -131,7 +131,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2139307D0FFD9E7E"
 			tasks: [{
 				disable_toast: true
@@ -2683,7 +2683,7 @@
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2FA1DDD66F69F506"
 			invisible: true
 			tasks: [{
@@ -2698,7 +2698,7 @@
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7C03FBDCD77655A6"
 			invisible: true
 			tasks: [{
@@ -2713,7 +2713,7 @@
 		}
 		{
 			dependencies: ["72BA8A6D655609B8"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "3F57397F4636474E"
 			invisible: true
 			tasks: [{
@@ -3600,7 +3600,7 @@
 				"37A9508D29A5D25C"
 			]
 			description: ["远程武器，对着生物按下攻击键（默认为鼠标左键）可以进行长距离攻击，并同时最多攻击3个生物。单次攻击的最大伤害为5点"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "11DA4560F059DAE2"
 			rewards: [{
 				id: "563F3ACB24362BFB"
@@ -4091,7 +4091,7 @@
 				""
 				"召唤虚空蠕虫会达成目标&e【以魂换魂】&r，使虚空蠕虫分成两段会达成进度&e【吾应先攻敌首级】&r，击败虚空蠕虫会完成挑战&e【蠕虫危机】&r。"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7C0A47296C1C91B4"
 			rewards: [
 				{
@@ -4926,7 +4926,7 @@
 		}
 		{
 			dependencies: ["2D43C89747A7B7EA"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "1B36D2B9486430FD"
 			tasks: [{
 				disable_toast: true
