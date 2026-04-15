@@ -4,3 +4,7 @@
 #default: 16
 #Range: 0 ~ 256
 surfaceDepthLimit = 16
+#Sandpaper polishing recipe IDs to block from the Belt Grinder.
+#Example: ["createdelight:sandpaper_polishing/rose_quartz"]
+beltGrinderBlockedSandpaperRecipes = ["createdelight:sandpaper_polishing/rose_quartz"]
+
