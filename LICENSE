@@ -5,7 +5,7 @@ This project includes these third party parts:
 - Minecraft-Mod-Language-Package: Attribution-NonCommercial-ShareAlike 4.0 International
   - Copyright (c) CFPAOrg
   - [license detail](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package?tab=License-1-ov-file)
-  - 引用的模组汉化文件：70个
+  - 引用的模组汉化文件：69个
   - <details>
     <summary>点击展开索引（Minecraft-Mod-Language-Package）</summary>
 
@@ -64,7 +64,6 @@ This project includes these third party parts:
     - kubejs/assets/naturescompass/lang/zh_cn.json
     - kubejs/assets/observable/lang/zh_cn.json
     - kubejs/assets/oceanic_delight/lang/zh_cn.json
-    - kubejs/assets/openpartiesandclaims/lang/zh_cn.json
     - kubejs/assets/placebo/lang/zh_cn.json
     - kubejs/assets/polymorph/lang/zh_cn.json
     - kubejs/assets/seasonals/lang/zh_cn.json
@@ -91,9 +90,6 @@ This project includes these third party parts:
   - Copyright (c) Confectionary
   - [license detail](https://modrinth.com/resourcepack/distant-horizons-zh)
   - 对应kubejs/assets/distanthorizons/lang/zh_cn.json文件
-- OPAC Language Pack:
-  - Copyright (c) [粗糙构件](https://center.mcmod.cn/971338/)
-  - 如有任何版权问题，可联系制作组删除
 - Minecraft-Java-Flags:
   - Copyright (c) 2022 - 2023 brucethemoose
   - Copyright (c) 2023 - 2024 Mukul Kedia
@@ -117,7 +113,7 @@ copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+FITINESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
