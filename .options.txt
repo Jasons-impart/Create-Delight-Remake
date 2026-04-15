@@ -101,7 +101,6 @@ key_key.pickItem:key.mouse.middle
 key_key.command:key.keyboard.slash
 key_key.socialInteractions:key.keyboard.p
 key_key.screenshot:key.keyboard.f2
-key_gui.xaero_pac_key_open_menu:key.keyboard.n
 key_key.togglePerspective:key.keyboard.f5
 key_key.smoothCamera:key.keyboard.unknown
 key_key.fullscreen:key.keyboard.f11
@@ -162,6 +161,8 @@ key_cos.key.opencosarmorinventory:key.keyboard.unknown
 key_iris.keybind.reload:key.keyboard.unknown
 key_iris.keybind.toggleShaders:key.keyboard.unknown
 key_iris.keybind.shaderPackSelection:key.keyboard.unknown
+key_key.ad_astra.toggle_suit_flight:key.keyboard.unknown
+key_key.ad_astra.open_radio:key.keyboard.unknown
 key_keybind.sophisticatedcore.item_highlight:key.keyboard.semicolon
 key_keybind.sophisticatedcore.sort:key.mouse.middle
 key_keybind.sophisticatedcore.deposit_item:key.keyboard.apostrophe
@@ -267,6 +268,9 @@ key_gui.xaero_map_zoom_in:key.keyboard.unknown
 key_gui.xaero_map_zoom_out:key.keyboard.unknown
 key_gui.xaero_quick_confirm:key.keyboard.unknown
 key_gui.xaero_toggle_dimension:key.keyboard.unknown
+key_key.protection_pixel.armortabletrigger:key.keyboard.right.shift
+key_key.protection_pixel.wingfly:key.keyboard.space
+key_key.protection_pixel.flyfoward:key.keyboard.w
 key_key.ftbultimine:key.keyboard.grave.accent
 key_key.ftbteams.open_gui:key.keyboard.unknown
 key_key.ftbchunks.map:key.keyboard.n
