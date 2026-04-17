@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "vintagedelight:salt_from_smelting",
         "vintagedelight:fermenting/century_egg_from_fermenting",
         "vintagedelight:fermenting/kimchi_from_fermenting",
-        "vintagedelight:stuffed_burrito"
+        "vintagedelight:stuffed_burrito",
+        "vintagedelight:fermenting/frost_fermenta"
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
@@ -157,25 +158,30 @@ ServerEvents.recipes(e => {
             "#forge:salt"
         ], 72000
     ).id("createdelight:fermenting/century_egg_from_emu_egg")
-    e.custom({
-        "type": "vintagedelight:fermenting",
-        "processingTime": 5000,
-        "ingredients": [
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "forge:salt" },
-            { "tag": "forge:chilipepper" }
+    e.recipes.vintagedelight.fermenting(
+        "4x vintagedelight:kimchi",
+        [
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#forge:salt",
+            "#forge:chilipepper"
         ],
-        "output": {
-            "count": 4,
-            "item": "vintagedelight:kimchi"
-        },
-        "secondaryOutput": {
-            "item": "vintagedelight:pickled_pepper"
-        }
-    }).id("createdelight:fermenting/kimchi_from_fermenting")
+        5000
+    ).secondaryOutput("vintagedelight:pickled_pepper").id("createdelight:fermenting/kimchi_from_fermenting")
+
+    e.recipes.vintagedelight.fermenting(
+        Item.of("minecraft:potion", '{Potion:"minecraft:water",CustomPotionEffects:[{Id:12,Amplifier:0,Duration:3600},{Id:2,Amplifier:0,Duration:3600}],CustomPotionColor:3937500,display:{Name:\'{"text":"Frost Fermenta","italic":false}\'}}'),
+        [
+            "vintagedelight:ghost_pepper_seeds",
+            "farmersdelight:rotten_tomato",
+            "farmersdelight:milk_bottle",
+            "minecraft:snowball",
+            "minecraft:kelp"
+        ],
+        600
+    ).id("vintagedelight:fermenting/frost_fermenta")
     // 花生奶兼容
     e.recipes.create.emptying(
         [
@@ -254,14 +260,6 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:slime", 810),
         "#forge:dusts/glowstone",
         "minecraft:glow_berries",
-        "vintagedelight:salt_block",
-        Fluid.of("createdelight:vinegar", 250)
-    ])
-    
-    fermenting(e,"2x minecraft:pearlescent_froglight", [
-        Fluid.of("createdelightcore:slime", 810),
-        "minecraft:prismarine_crystal",
-        "minecraft:sea_pickle",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
     ])

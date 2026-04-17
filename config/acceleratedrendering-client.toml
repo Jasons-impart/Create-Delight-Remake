@@ -56,6 +56,11 @@
 	#- OPENGL: Viewport settings that will be modified by other mods will be recorded and restored using OpenGL to work correctly with them even if they don't set viewport using Mojang's GLStateManager, which is slower but has most compatibility.
 	#Allowed Values: IGNORED, MOJANG, OPENGL
 	viewport_binding_state = "IGNORED"
+	#- IGNORED: Scissor settings that will be modified by other mods will not be restored after the acceleration, which is faster but reduces compatibility with them.
+	#- MOJANG: Scissor settings that will be modified by other mods will be recorded and restored using Mojang's GuiGraphics to work correctly with them.
+	#- OPENGL: Scissor settings that will be modified by other mods will be recorded and restored using OpenGL to work correctly with them even if they don't set viewport using Mojang's GuiGraphics, which is slower but has most compatibility.
+	#Allowed Values: IGNORED, MOJANG, OPENGL
+	scissor_binding_state = "MOJANG"
 
 	#Block Buffer Restoring Settings
 	#A few mods and shader packs will use their on block buffers when rendering, which may introduce conflicts when working with Accelerated Rendering that also uses block buffers.
@@ -134,10 +139,14 @@
 	#- ENABLED: Accelerated Rendering will still accelerate item models that are marked as "too small to make up the cost of acceleration" when rendering it in a container GUI unless mods explicitly disable it temporarily when rendering their own item models, which may slightly reduce the FPS but accelerate vanilla-like modded item models with large amount of vertices.
 	#Allowed Values: DISABLED, ENABLED
 	gui_acceleration = "ENABLED"
-	#- DISABLED: Items in the container GUI will be rendered as per item per batch if the GUI Acceleration is enabled, which is inefficient and may cause slight reduction in FPS, but it has better compatibility in modded container GUI.
+	#- DISABLED: Items in the container GUI will be rendered as per item per batch if the GUI Acceleration is enabled, which is inefficient and may cause reduction in FPS, but it has better compatibility in modded container GUI.
 	#- ENABLED: Items in the container will be rendered together in a single batch if the GUI Acceleration is enabled, which is much more efficient but has little compatibility in modded container GUI.
 	#Allowed Values: DISABLED, ENABLED
 	gui_item_batching = "ENABLED"
+	#- DISABLED: Items rendered in background and slots will be separated into two batches when accelerate container GUI, which is inefficient any may cause slight reduction in FPS, but it has better compatibility in modded container GUI.
+	#- ENABLED: Items rendered in background and slots will be merged into a single batch when accelerate container GUI, which is much more efficient but has less compatibility in modded container GUI.
+	#Allowed Values: DISABLED, ENABLED
+	merge_gui_item_batching = "ENABLED"
 
 #Accelerated Text Rendering Settings
 #Accelerated Text Rendering uses GPU to cache and transform vertices while rendering text through BakedGlyph, instead of generating and transforming vertices every time the text are rendered in CPU.

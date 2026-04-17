@@ -198,7 +198,7 @@ ServerEvents.tags("item", e => {
         'festival_delicacies:uncooked_sweet_zongzi', 
         'festival_delicacies:uncooked_meat_zongzi', 
         'festival_delicacies:bamboo_leaf', 
-        'festival_delicacies:artemisia_argyi', 
+        'festival_delicacies:mugwort', 
         'cavedelight:fiddlehead_tea', 
         'trailandtales_delight:cherry_petal', 
         'trailandtales_delight:dried_cherry_petal', 

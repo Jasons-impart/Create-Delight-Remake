@@ -279,7 +279,7 @@ let MaterialWhitelistValueDict = {
     "festival_delicacies:uncooked_sweet_zongzi": 4,
     "festival_delicacies:uncooked_meat_zongzi": 6,
     "festival_delicacies:bamboo_leaf": 1,
-    "festival_delicacies:artemisia_argyi": 2,
+    "festival_delicacies:mugwort": 2,
     "cavedelight:fiddlehead_tea": 4,
     "trailandtales_delight:cherry_petal": 1,
     "trailandtales_delight:dried_cherry_petal": 2,

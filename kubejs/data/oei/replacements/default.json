@@ -68,6 +68,48 @@
     },
     {
         "matchItems": [
+            "dumplings_delight:chinese_cabbage"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:chinese_cabbage_leaf"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage_leaf"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:eggplant"
+        ],
+        "resultItems": "festival_delicacies:eggplant"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:fennel"
+        ],
+        "resultItems": "festival_delicacies:fennel"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic_chive"
+        ],
+        "resultItems": "festival_delicacies:garlic_chive"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic"
+        ],
+        "resultItems": "festival_delicacies:garlic"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:greenonion"
+        ],
+        "resultItems": "festival_delicacies:greenonion"
+    },
+    {
+        "matchItems": [
             "neapolitan:adzuki_beans",
             "youkaishomecoming:redbean",
             "festival_delicacies:red_bean"
@@ -85,6 +127,30 @@
             "culturaldelights:cucumber_seeds"
         ],
         "resultItems": "vintagedelight:cucumber_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:chinese_cabbage_seeds"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:eggplant_seeds"
+        ],
+        "resultItems": "festival_delicacies:eggplant_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:fennel_seeds"
+        ],
+        "resultItems": "festival_delicacies:fennel_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic_chive_seeds"
+        ],
+        "resultItems": "festival_delicacies:garlic_chive_seeds"
     },
     {
         "matchItems": [
