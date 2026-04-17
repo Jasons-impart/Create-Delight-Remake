@@ -56,6 +56,8 @@
 	#Adjusts the recession speed of atmospheric snow overlays during warmer periods.
 	#Range: 0.0 ~ 20.0
 	SnowMeltSpeedMultiplier = 1.0
+	#Force initialize snow states for extreme cold biomes when the mod or world is first loaded.
+	ShouldInitSnowDepthForExtremeColdBiomes = true
 
 #This module governs how seasonal temperature shifts affect the physical world and the player.
 [Temperature]
@@ -113,6 +115,8 @@
 	#The duration required for the Prayer Ritual (relative to one Solar Term).
 	#Range: 1.0E-5 ~ 5000.0
 	SeasonalPrayerRitualTimeCost = 2.0
+	#Apply patch withering code for crop leave blocks if tick failed.
+	CropLeavesPatch = true
 
 [Animal]
 	#Limit animal breeding to their natural, compatible seasons.
@@ -170,6 +174,9 @@
 	NoSnowyUnderLight0 = false
 	#Allow snow overlays to cover light-emitting blocks.
 	SnowOverlayGlowingBlock = false
+	#Force using server synchronized config when joining a multiplayer server.
+	#If disabled, client keeps its own local config when exit.
+	ForceServerConfig = true
 
 [Map]
 	#Synchronize map colors to reflect atmospheric snow overlays.

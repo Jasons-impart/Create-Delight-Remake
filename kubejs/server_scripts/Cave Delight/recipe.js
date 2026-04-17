@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    e.remove({ id: "cavedelight:cutting/tectonic_pie" })
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
         "cavedelight:tectonic_cheesecake",
@@ -9,6 +10,11 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "ratatouille:wheat_kernels")
     cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
+    e.recipes.farmersdelight.cutting(
+        "cavedelight:tectonic_cheesecake",
+        "#forge:tools/knives",
+        ["4x cavedelight:slice_of_tectonic_cheesecake"]
+    ).id("cavedelight:cutting/tectonic_pie")
     cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
     brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
     e.recipes.create.mixing(

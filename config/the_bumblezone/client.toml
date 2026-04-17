@@ -169,3 +169,21 @@ disableEssenceBlockShaders = false
 	#
 	useBackupModelForVariantBee = false
 
+["Silly Stuff configs"]
+	#----------------------------
+	#
+	# For when you want the joy of bees always!
+	showBeesOnGuiAllYearRound = false
+	#----------------------------
+	#
+	# Gui Bees On April Fools!
+	showBeesOnGuiOnAprilFools = true
+	#----------------------------
+	#
+	# Show the Gui Bees only when player is in Bumblezone Dimension
+	restrictBeesOnGuiToBzDimension = false
+	#----------------------------
+	#
+	# 10000 bees for your GUIs!
+	maximumBeesOnGui = false
+

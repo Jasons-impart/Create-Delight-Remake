@@ -516,7 +516,7 @@ ServerEvents.recipes(e => {
     e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_iron", 360), "minecraft:iron_trapdoor")
         .heatRequirement("heated").processingTime(180)
     // 下界合金活板门可熔融回收下界合金
-    e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_netherite", 360), "minecraft:netherite_trapdoor")
+    e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_netherite", 360), "supplementaries:netherite_trapdoor")
         .heatRequirement("superheated").processingTime(240)
     let andesiteOutputList = [
         '5x create:andesite_funnel',

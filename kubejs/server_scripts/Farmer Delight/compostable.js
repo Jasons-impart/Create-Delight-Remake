@@ -10,7 +10,7 @@ ServerEvents.compostableRecipes(e => {
      ['festival_delicacies:garlic_chive', 0.65],
      ['festival_delicacies:fennel', 0.65],
      ['festival_delicacies:eggplant', 0.65],
-     ['festival_delicacies:artemisia_argyi', 0.5],
+     ['festival_delicacies:mugwort', 0.5],
      ['festival_delicacies:garlic', 0.5],
      ['festival_delicacies:greenonion', 0.5],
      ['festival_delicacies:chinese_cabbage_leaf', 0.5],

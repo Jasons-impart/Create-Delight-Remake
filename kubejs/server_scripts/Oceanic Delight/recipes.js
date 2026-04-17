@@ -15,7 +15,7 @@ ServerEvents.recipes(e => {
         "crabbersdelight:pufferfish_slice",
         "#forge:dough",
         "#forge:vegetables/onion"
-    ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
+    ], "2x dumplings_delight:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
     cutting_2(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
     cutting_2(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])

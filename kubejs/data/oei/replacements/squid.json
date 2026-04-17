@@ -21,7 +21,8 @@
         "matchItems": [
             "miners_delight:tentacles",
             "crabbersdelight:raw_squid_tentacles",
-            "culturaldelights:raw_calamari"
+            "culturaldelights:raw_calamari",
+            "dumplings_delight:calamari"
         ],
         "resultItems": "oceanic_delight:squid_tentacles"
     },
