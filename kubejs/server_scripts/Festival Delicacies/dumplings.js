@@ -200,6 +200,11 @@ ServerEvents.recipes(e => {
         "minecraft:brown_mushroom",
         "#forge:vegetables/onion"
     ], "2x dumplings_delight:calamari_boiled_dumpling", 1.0, 200)
+    dumpling(e, [
+        "crabbersdelight:pufferfish_slice",
+        "#forge:dough",
+        "#forge:vegetables/onion"
+    ], "2x dumplings_delight:pufferfish_boiled_dumpling", 1.0, 200)
     // dumpling(e, [
     //     "create:dough",
     //     "butchercraft:pork_stewmeat",

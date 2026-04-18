@@ -10,12 +10,6 @@ ServerEvents.recipes(e => {
         "oceanic_delight:sea_pickle_roll"
     ])
     e.replaceInput({id: "oceanic_delight:fish_egg_noodle_soup"}, "#forge:pasta", 'createdelight:vermicelli')
-    // 河豚水饺
-    dumpling(e, [
-        "crabbersdelight:pufferfish_slice",
-        "#forge:dough",
-        "#forge:vegetables/onion"
-    ], "2x festival_delicacies:pufferfish_boiled_dumpling", 1.0, 200)
     // 鱿鱼须相关
     cutting_2(e, "oceanic_delight:squid_tentacles", [["createdelight:raw_calamari", 3]])
     cutting_2(e, "oceanic_delight:glow_squid_tentacles", [["createdelight:raw_calamari", 3]])
