@@ -96,6 +96,7 @@ StartupEvents.registry("fluid", e => {
     simpleFluid("createdelight:summer_cordial", 0xf4b12e, true, false, false)
     simpleFluid("createdelight:autumn_tea", 0xf46d44, true, false, false)
     simpleFluid("createdelight:winter_glogg", 0xa9275e, true, false, false)
+    simpleFluid("createdelight:cryo_fuel", 0x87CEFA)
     textureFluid("createdelight:lubricating_oil")
     textureFluid("createdelight:ice_lubricating_oil")
     textureFluid("createdelight:cake_batter")
