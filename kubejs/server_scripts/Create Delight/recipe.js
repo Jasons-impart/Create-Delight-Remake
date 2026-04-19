@@ -64,4 +64,8 @@ ServerEvents.recipes(e => {
     cutting(e, "createdelightcore:fire_lily_cluster", [["iceandfire:fire_lily", 4]])
     cutting(e, "createdelightcore:frost_lily_cluster", [["iceandfire:frost_lily", 4]])
     cutting(e, "createdelightcore:lightning_lily_cluster", [["iceandfire:lightning_lily", 4]])
+
+    vintageimprovements.pressurizing(Fluid.of("createdelight:cryo_fuel", 100), [Fluid.of("northstar:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
+    .secondaryFluidInput(0)
+    .id("createdelight:pressurizing/cryo_fuel")
 })
