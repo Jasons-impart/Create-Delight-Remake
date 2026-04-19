@@ -24,5 +24,19 @@
   "integrated_villages.advancements.swamp_village.title": "沼泽村落",
   "integrated_villages.advancements.swamp_village.description": "在静水之上构筑生活",
   "integrated_villages.advancements.tavern_village.title": "酒馆村落",
-  "integrated_villages.advancements.tavern_village.description": "御风而居的村民们"
+  "integrated_villages.advancements.tavern_village.description": "御风而居的村民们",
+  "structure.integrated_villages.airship_village": "飞艇村落",
+  "structure.integrated_villages.cabin_village": "林间木屋村落",
+  "structure.integrated_villages.clockwork_village": "发条村落",
+  "structure.integrated_villages.kutcha_village": "陋居村落",
+  "structure.integrated_villages.marketstead_village": "市集聚落",
+  "structure.integrated_villages.mediterranean_village": "地中海村落",
+  "structure.integrated_villages.minka_village": "民家村落",
+  "structure.integrated_villages.mossy_mounds": "苔藓丘陵",
+  "structure.integrated_villages.oasis_village": "绿洲村落",
+  "structure.integrated_villages.pirate_village": "海盗村落",
+  "structure.integrated_villages.sunken_village": "沉没村落",
+  "structure.integrated_villages.swamp_village": "沼泽村落",
+  "structure.integrated_villages.tavern_village": "酒馆村落",
+  "structure.integrated_villages.village": "整合村庄"
 }
