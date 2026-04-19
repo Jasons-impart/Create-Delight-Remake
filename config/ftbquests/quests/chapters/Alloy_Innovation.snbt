@@ -67,7 +67,11 @@
 				"1999728E6F67F8EF"
 			]
 			dependency_requirement: "one_completed"
-			description: ["可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"]
+			description: [
+				"可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"
+				""
+				"对于需要持续运行的产线，&n不建议&r使用机械手喂液体燃料桶，可能导致超级燃烧状态&4丢失&r。"
+			]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -279,14 +283,14 @@
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
-			description: [""]
+			icon: "createfluidstuffs:multi_fluid_tank"
 			id: "043C01E333AD7139"
 			shape: "gear"
 			size: 2.0d
 			subtitle: "&4超级超级超级好用&r的多流体储存罐！（最多八种流体）"
 			tasks: [{
 				id: "3F3576DB3D33FC4B"
-				item: "fluidlogistics:multi_fluid_tank"
+				item: "createfluidstuffs:multi_fluid_tank"
 				type: "item"
 			}]
 			x: 10.0d
