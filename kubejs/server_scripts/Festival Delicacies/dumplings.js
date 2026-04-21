@@ -191,7 +191,7 @@ ServerEvents.recipes(e => {
     dumpling(e, [
         "create:dough",
         "2x butchercraft:beef_stewmeat",
-        "#forge:salad_ingredients/tomato",
+        "some_assembly_required:tomato_slices",
         "#forge:vegetables/onion"
     ], "2x dumplings_delight:beef_tomato_boiled_dumpling", 1.0, 200)
     dumpling(e, [
@@ -213,7 +213,7 @@ ServerEvents.recipes(e => {
     // ], "2x dumplings_delight:pork_celery_boiled_dumpling", 1.0, 200)
     dumpling(e, [
         "create:dough",
-        "#forge:salad_ingredients/tomato",
+        "some_assembly_required:tomato_slices",
         "minecraft:egg",
         "#forge:vegetables/onion"
     ], "2x dumplings_delight:tomato_egg_boiled_dumpling", 1.0, 200)
