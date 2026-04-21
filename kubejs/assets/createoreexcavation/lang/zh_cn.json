@@ -106,6 +106,6 @@
   "tooltip.coe.finiteVeins": "有限的矿脉尺寸：%s - %s",
   "tooltip.coe.infiniteVeins": "该矿脉可无限开采",
   "tooltip.coe.page": "页数：%s/%s",
-  "tooltip.coe.processTime": "花费 %s 刻",
+  "tooltip.coe.processTime": "§e30RPM§r时 花费 %s 刻",
   "tooltip.coe.variableImpact": "该倍率是变化的"
 }
