@@ -149,7 +149,7 @@
 		}
 		{
 			height: 15.0d
-			image: "festival_delicacies:item/rabbit_meat_boiled_dumpling"
+			image: "dumplings_delight:item/rabbit_meat_boiled_dumpling"
 			order: 1
 			rotation: 0.0d
 			width: 15.0d
@@ -3859,7 +3859,7 @@
 				"4EF516C8BBDABC9C"
 			]
 			hide_dependency_lines: true
-			icon: "festival_delicacies:pork_cabbage_boiled_dumpling"
+			icon: "dumplings_delight:pork_cabbage_boiled_dumpling"
 			id: "02E768658104AABF"
 			rewards: [{
 				id: "1876A711B5A9D779"
@@ -3892,7 +3892,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "3F4320F2BCB04AF9"
-				item: "festival_delicacies:pork_cabbage_boiled_dumpling"
+				item: "dumplings_delight:pork_cabbage_boiled_dumpling"
 				type: "item"
 			}]
 			x: 8.0d
@@ -3903,7 +3903,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "1EC2B040BCED904C"
-				item: "festival_delicacies:pork_kelp_boiled_dumpling"
+				item: "dumplings_delight:pork_kelp_boiled_dumpling"
 				type: "item"
 			}]
 			x: 10.0d
@@ -3914,7 +3914,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "32E5A22FB2DB8C20"
-				item: "festival_delicacies:pork_potato_boiled_dumpling"
+				item: "dumplings_delight:pork_potato_boiled_dumpling"
 				type: "item"
 			}]
 			x: 12.0d
@@ -3925,7 +3925,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "520598DD50FB4F5C"
-				item: "festival_delicacies:pork_fennel_boiled_dumpling"
+				item: "dumplings_delight:pork_fennel_boiled_dumpling"
 				type: "item"
 			}]
 			x: 14.0d
@@ -3936,7 +3936,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "222AF03541CE4136"
-				item: "festival_delicacies:mutton_boiled_dumpling"
+				item: "dumplings_delight:mutton_boiled_dumpling"
 				type: "item"
 			}]
 			x: 4.0d
@@ -3947,7 +3947,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "7DEA6E1F2EE93991"
-				item: "festival_delicacies:chicken_mushroom_boiled_dumpling"
+				item: "dumplings_delight:chicken_mushroom_boiled_dumpling"
 				type: "item"
 			}]
 			x: 6.0d
@@ -3958,7 +3958,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "0BAACA1B9FBF4211"
-				item: "festival_delicacies:cod_boiled_dumpling"
+				item: "dumplings_delight:cod_boiled_dumpling"
 				type: "item"
 			}]
 			x: 8.0d
@@ -3969,7 +3969,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "7DE9A63CFB5BA843"
-				item: "festival_delicacies:salmon_boiled_dumpling"
+				item: "dumplings_delight:salmon_boiled_dumpling"
 				type: "item"
 			}]
 			x: 10.0d
@@ -3980,7 +3980,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "5DFBCFB92C2CBC96"
-				item: "festival_delicacies:eggplant_egg_boiled_dumpling"
+				item: "dumplings_delight:eggplant_egg_boiled_dumpling"
 				type: "item"
 			}]
 			x: 12.0d
@@ -3991,7 +3991,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "490CB6807F1A2E32"
-				item: "festival_delicacies:mushroom_boiled_dumpling"
+				item: "dumplings_delight:mushroom_boiled_dumpling"
 				type: "item"
 			}]
 			x: 14.0d
@@ -4002,7 +4002,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "75BFC8F31AF4020A"
-				item: "festival_delicacies:fungus_boiled_dumpling"
+				item: "dumplings_delight:fungus_boiled_dumpling"
 				type: "item"
 			}]
 			x: 4.0d
@@ -4013,7 +4013,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "62BDB09AD971915C"
-				item: "festival_delicacies:garlic_chive_egg_boiled_dumpling"
+				item: "dumplings_delight:garlic_chive_egg_boiled_dumpling"
 				type: "item"
 			}]
 			x: 6.0d
@@ -4024,7 +4024,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "733E0355423C28A8"
-				item: "festival_delicacies:dandelion_leaf_boiled_dumpling"
+				item: "dumplings_delight:dandelion_leaf_boiled_dumpling"
 				type: "item"
 			}]
 			x: 8.0d
@@ -4035,7 +4035,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "7A9BA196C89A93D7"
-				item: "festival_delicacies:pufferfish_boiled_dumpling"
+				item: "dumplings_delight:pufferfish_boiled_dumpling"
 				type: "item"
 			}]
 			x: 10.0d
@@ -4046,7 +4046,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "7D4E5D299B12CEB6"
-				item: "festival_delicacies:rabbit_meat_boiled_dumpling"
+				item: "dumplings_delight:rabbit_meat_boiled_dumpling"
 				type: "item"
 			}]
 			x: 12.0d
@@ -4079,7 +4079,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "23B78AA35AA76632"
-				item: "festival_delicacies:pork_mushroom_wonton"
+				item: "dumplings_delight:pork_mushroom_wonton"
 				type: "item"
 			}]
 			x: 7.0d
@@ -4090,7 +4090,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "7A58D0F9C476AB81"
-				item: "festival_delicacies:pork_cabbage_wonton"
+				item: "dumplings_delight:pork_cabbage_wonton"
 				type: "item"
 			}]
 			x: 9.0d
@@ -4101,7 +4101,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "23F35CC51324C22C"
-				item: "festival_delicacies:pork_carrot_wonton"
+				item: "dumplings_delight:pork_carrot_wonton"
 				type: "item"
 			}]
 			x: 11.0d

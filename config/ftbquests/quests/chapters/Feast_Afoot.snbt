@@ -1864,19 +1864,6 @@
 			y: 2.5d
 		}
 		{
-			dependencies: ["27D86F382B609666"]
-			id: "1DE4151D6F27DAB5"
-			size: 1.0d
-			subtitle: "可以用来做饺子"
-			tasks: [{
-				id: "3189277D9CC88F33"
-				item: "festival_delicacies:pot"
-				type: "item"
-			}]
-			x: 6.0d
-			y: 1.0d
-		}
-		{
 			dependencies: ["7F49D3F72AC85F8D"]
 			id: "69946FFCA797BB79"
 			subtitle: "热气腾腾"
