@@ -1,0 +1,10 @@
+ServerEvents.recipes(e => {
+    e.replaceOutput({id: "tetracelium:cutting/cod"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/cooked_cod"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/salmon"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/cooked_salmon"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/cod_using_deployer"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/cooked_cod_using_deployer"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/salmon_using_deployer"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+    e.replaceOutput({id: "tetracelium:cutting/cooked_salmon_using_deployer"}, "minecraft:bone_meal", "crabbersdelight:fish_bones")
+})

@@ -14,7 +14,8 @@
     {
         "matchItems": [
             "createdeco:zinc_sheet",
-            "vintageimprovements:zinc_sheet"
+            "vintageimprovements:zinc_sheet",
+            "createfisheryindustry:zinc_sheet"
         ],
         "resultItems": "createaddition:zinc_sheet"
     },
