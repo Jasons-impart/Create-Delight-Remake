@@ -417,5 +417,17 @@
             "northstar:polished_amethyst"
         ],
         "resultItems": "createutilities:polished_amethyst"
+    },
+    {
+        "matchItems": [
+            "createfisheryindustry:raw_lobster"
+        ],
+        "resultItems": "crabbersdelight:clawster"
+    },
+    {
+        "matchItems": [
+            "createfisheryindustry:cooked_lobster"
+        ],
+        "resultItems": "crabbersdelight:cooked_clawster"
     }
 ]

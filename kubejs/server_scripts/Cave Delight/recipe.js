@@ -1,5 +1,7 @@
 ServerEvents.recipes(e => {
     e.remove({ id: "cavedelight:cutting/tectonic_pie" })
+    e.remove({ id: "cavedelight:cutting/radgill" })
+    e.remove({ id: "cavedelight:cutting/radgill_using_deployer" })
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
         "cavedelight:tectonic_cheesecake",
@@ -16,6 +18,7 @@ ServerEvents.recipes(e => {
         ["4x cavedelight:slice_of_tectonic_cheesecake"]
     ).id("cavedelight:cutting/tectonic_pie")
     cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
+    cutting_2(e, "alexscaves:radgill", [["cavedelight:radgill_slice", 2], ["crabbersdelight:fish_bones", 1]])
     brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
     e.recipes.create.mixing(
         Fluid.of("createdelight:fiddlehead_tea", 500),

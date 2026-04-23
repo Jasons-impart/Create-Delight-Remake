@@ -31,6 +31,7 @@ ServerEvents.tags("minecraft:item", e => {
             'minecraft:netherite_boots',
             'create_jetpack:netherite_jetpack',
             'create_sa:netherite_jetpack_chestplate',
+            'createfisheryindustry:netherite_diving_leggings',
             'iceandfire:dragonsteel_ice_helmet',
             'iceandfire:dragonsteel_ice_chestplate',
             'iceandfire:dragonsteel_ice_leggings',
