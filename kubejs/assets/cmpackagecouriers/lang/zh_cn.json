@@ -1,0 +1,61 @@
+{
+  "item.cmpackagecouriers.cardboard_plane_parts": "纸壳飞机零件",
+  "item.cmpackagecouriers.cardboard_plane": "纸壳飞机",
+  "entity.cmpackagecouriers.cardboard_plane": "纸壳飞机",
+
+  "tooltip.cmpackagecouriers.cardboard_plane.preopened": "[送达玩家时自动拆解包裹]",
+
+  "cmpackagecouriers.ponder.sending_planes.header": "发送飞机",
+  "cmpackagecouriers.ponder.sending_planes.text_1": "包裹飞机可由包裹制作而来",
+  "cmpackagecouriers.ponder.sending_planes.text_2": "……也可用机械手自动组装",
+  "cmpackagecouriers.ponder.sending_planes.text_3": "飞机需要用弹射置物台发射",
+  "cmpackagecouriers.ponder.sending_planes.text_4": "也可以在手持飞机时长按右键来手动发射",
+
+  "cmpackagecouriers.ponder.receiving_planes.header": "接收飞机与设定地址",
+  "cmpackagecouriers.ponder.receiving_planes.text_1": "飞机会投递到名字和包裹地址相符的玩家",
+  "cmpackagecouriers.ponder.receiving_planes.text_2": "→ 李华_机械动力",
+  "cmpackagecouriers.ponder.receiving_planes.text_3": "飞机能跨越未加载区块和不同维度",
+  "cmpackagecouriers.ponder.receiving_planes.text_4": "李华_机械动力",
+  "cmpackagecouriers.ponder.receiving_planes.text_5": "假装这是个玩家",
+  "cmpackagecouriers.ponder.receiving_planes.text_6": "玩家需携带定位器才能成为飞机的目标",
+  "cmpackagecouriers.ponder.receiving_planes.text_7": "若告示牌上的字和地址相符，飞机也能自动投递到置物台上",
+  "cmpackagecouriers.ponder.receiving_planes.text_8": "→ 前哨",
+  "cmpackagecouriers.ponder.receiving_planes.text_9": "这种投递方式需要加载目的地所在区块",
+  "cmpackagecouriers.ponder.receiving_planes.text_10": "前哨",
+  "cmpackagecouriers.ponder.receiving_planes.text_11": "如果找不到目标，飞机就会像一般物品一样被弹射",
+
+  "cmpackagecouriers.ponder.special_crafting_interactions.header": "特殊交互加工",
+  "cmpackagecouriers.ponder.special_crafting_interactions.text_1": "你可以用动力锯切去飞机的翅膀",
+  "cmpackagecouriers.ponder.special_crafting_interactions.text_2": "你可以用拿着剪刀的机械手将飞机内部的包裹预开启",
+  "cmpackagecouriers.ponder.special_crafting_interactions.text_3": "预开启的包裹会在送达后立即被打开",
+
+  "cmpackagecouriers.ponder.address_interactions.header": "额外地址",
+  "cmpackagecouriers.ponder.address_interactions.text_1": "地址中的\"<>\"内部文本会在飞机起飞时（暂时的）覆盖地址信息",
+  "cmpackagecouriers.ponder.address_interactions.text_2": "→ <前哨> 农场",
+  "cmpackagecouriers.ponder.address_interactions.text_3": "飞往\"前哨\"",
+  "cmpackagecouriers.ponder.address_interactions.text_4": "这允许在进行复杂的路线规划时拥有更多的灵活性",
+  "cmpackagecouriers.ponder.address_interactions.text_5": "桌布交易内容中的地址中的\"<>\"内部会自动被买家的名字填充",
+  "cmpackagecouriers.ponder.address_interactions.text_6": "→ 出售 <>",
+  "cmpackagecouriers.ponder.address_interactions.text_7": "→ 出售 <李华_机械动力>",
+
+  "cmpackagecouriers.message.inbound": "包裹即将到达",
+  "cmpackagecouriers.message.no_address": "找不到有效目标",
+
+  "item.cmpackagecouriers.portable_stock_ticker": "便携式仓库管理器",
+  "item.cmpackagecouriers.portable_stock_ticker.screen_title": "便携式仓库管理器",
+  "item.cmpackagecouriers.portable_stock_ticker.not_linked": "未连接到物流网络",
+  "item.cmpackagecouriers.portable_stock_ticker.tooltip.summary": "一个可以被随身携带的仓库管理员",
+  "item.cmpackagecouriers.portable_stock_ticker.tooltip.condition1": "潜行并右键仓储链接站或仓储发报机时",
+  "item.cmpackagecouriers.portable_stock_ticker.tooltip.behaviour1": "仓库管理器将会绑定到对应的物流网络",
+  "item.cmpackagecouriers.portable_stock_ticker.tooltip.condition2": "使用时",
+  "item.cmpackagecouriers.portable_stock_ticker.tooltip.behaviour2": "仓库管理器将会打开一个仓库管理界面",
+
+  "item.cmpackagecouriers.location_transmitter": "定位器",
+  "item.cmpackagecouriers.location_transmitter.status": "状态",
+  "item.cmpackagecouriers.location_transmitter.enabled": "启用",
+  "item.cmpackagecouriers.location_transmitter.disabled": "禁用",
+  "item.cmpackagecouriers.location_transmitter.activated": "定位器已启用",
+  "item.cmpackagecouriers.location_transmitter.deactivated": "定位器已禁用",
+  "item.cmpackagecouriers.location_transmitter.tooltip": "右键以开关",
+  "item.cmpackagecouriers.location_transmitter.server_config": "向玩家投递需要启用定位器"
+}
