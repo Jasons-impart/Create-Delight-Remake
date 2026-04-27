@@ -123,7 +123,7 @@ ServerEvents.tags("minecraft:block", e => {
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
-    e.add("create_new_age:magnets/strength_16", [
+    e.add("create_new_age:magnet/force_4", [
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
