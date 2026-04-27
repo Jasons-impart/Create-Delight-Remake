@@ -2,37 +2,12 @@
   "type": "minecraft:chest",
   "pools": [
     {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "name": "lightmanscurrency:loot_addons/chest/tier3"
-        }
-      ]
-    },
-    {
       "rolls": {
         "type": "minecraft:uniform",
         "min": 2,
         "max": 4
       },
       "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:emerald",
-          "weight": 10,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 4
-              },
-              "add": false
-            }
-          ]
-        },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_ingot",
@@ -75,7 +50,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
+                "max": 6
               },
               "add": false
             }
@@ -107,7 +82,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 3
+                "max": 4
               },
               "add": false
             }
@@ -139,7 +114,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 2
+                "max": 3
               },
               "add": false
             }
@@ -155,23 +130,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 3
-              },
-              "add": false
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "create_new_age:copper_circuit",
-          "weight": 6,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
+                "max": 5
               },
               "add": false
             }
@@ -260,23 +219,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 4
-              },
-              "add": false
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "create_new_age:copper_circuit",
-          "weight": 8,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
+                "max": 5
               },
               "add": false
             }
@@ -292,7 +235,7 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 1,
-                "max": 3
+                "max": 4
               },
               "add": false
             }
@@ -334,22 +277,6 @@
                 "type": "minecraft:uniform",
                 "min": 1,
                 "max": 1
-              },
-              "add": false
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "name": "minecraft:diamond",
-          "weight": 4,
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "type": "minecraft:uniform",
-                "min": 1,
-                "max": 2
               },
               "add": false
             }
