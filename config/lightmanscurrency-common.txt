@@ -248,7 +248,7 @@ debugLevel=0
 	[loot.chests]
 		#Whether coins can spawn in chests.
 		#Default: true
-		enabled=false
+		enabled=true
 		#Chest Spawn Lists
 		[loot.chests.lists]
 			#List of Loot Tables that will also spawn loot from the "lightmanscurrency:loot_addons/chest/tier1" loot table.
