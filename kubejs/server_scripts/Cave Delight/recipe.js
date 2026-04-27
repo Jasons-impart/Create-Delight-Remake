@@ -1,4 +1,7 @@
 ServerEvents.recipes(e => {
+    e.remove({ id: "cavedelight:cutting/tectonic_pie" })
+    e.remove({ id: "cavedelight:cutting/radgill" })
+    e.remove({ id: "cavedelight:cutting/radgill_using_deployer" })
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
         "cavedelight:tectonic_cheesecake",
@@ -9,7 +12,13 @@ ServerEvents.recipes(e => {
     ])
     e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "ratatouille:wheat_kernels")
     cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
+    e.recipes.farmersdelight.cutting(
+        "cavedelight:tectonic_cheesecake",
+        "#forge:tools/knives",
+        ["4x cavedelight:slice_of_tectonic_cheesecake"]
+    ).id("cavedelight:cutting/tectonic_pie")
     cutting_2(e, "cavedelight:pinenut_pie", [["cavedelight:slice_of_pinenut_pie", 4]])
+    cutting_2(e, "alexscaves:radgill", [["cavedelight:radgill_slice", 2], ["crabbersdelight:fish_bones", 1]])
     brewing(e, 'farmersrespite:green_tea', ['alexscaves:fiddlehead', 'alexscaves:fiddlehead'], 'createdelight:fiddlehead_tea', 'cavedelight:fiddlehead_tea')
     e.recipes.create.mixing(
         Fluid.of("createdelight:fiddlehead_tea", 500),
@@ -17,26 +26,26 @@ ServerEvents.recipes(e => {
             Fluid.of("farmersrespite:green_tea", 500),
             "alexscaves:fiddlehead"
         ]
-    ).id("cavedelight:mixing/fiddlehead_tea")
+    ).id("createdelight:mixing/fiddlehead_tea")
     e.recipes.create.filling(
         "cavedelight:fiddlehead_tea",
         [
             Fluid.of("createdelight:fiddlehead_tea", 250),
             "minecraft:glass_bottle"
         ]
-    ).id("cavedelight:filling/fiddlehead_tea")
+    ).id("createdelight:filling/fiddlehead_tea")
     e.recipes.create.emptying(
        [
             Fluid.of("createdelight:fiddlehead_tea", 250),
             "minecraft:glass_bottle"
        ],
        "cavedelight:fiddlehead_tea"
-    ).id("cavedelight:emptying/fiddlehead_tea")
+    ).id("createdelight:emptying/fiddlehead_tea")
     e.recipes.create.filling(
         "minecraft:copper_ingot",
         [
             'miners_delight:copper_cup',
             Fluid.of("minecraft:lava", 1000)
         ]
-    ).id("cavedelight:filling/copper_ingot_from_copper_cup")
+    ).id("createdelight:filling/copper_ingot_from_copper_cup")
 })

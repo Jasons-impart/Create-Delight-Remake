@@ -14,5 +14,5 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:milk", 250),
             "glass_bottle"
         ]
-    ).id("create:filling/compat/farmersdelight/milk_bottle")
+    ).id("createdelight:filling/compat/farmersdelight/milk_bottle")
 })

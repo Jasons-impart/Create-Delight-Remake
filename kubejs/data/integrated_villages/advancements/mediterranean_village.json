@@ -1,0 +1,43 @@
+{
+  "parent": "integrated_villages:integrated_villages_root",
+  "display": {
+    "icon": {
+      "item": "minecraft:acacia_planks"
+    },
+    "title": {
+      "translate": "integrated_villages.advancements.mediterranean_village.title"
+    },
+    "description": {
+      "translate": "integrated_villages.advancements.mediterranean_village.description"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "rewards": {
+    "experience": 100
+  },
+  "criteria": {
+    "in_mediterranean_village": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "integrated_villages:mediterranean_village"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_mediterranean_village"
+    ]
+  ]
+}

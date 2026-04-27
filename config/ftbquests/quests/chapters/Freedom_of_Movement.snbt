@@ -321,6 +321,8 @@
 			y: 4.5d
 		}
 		{
+			dependencies: ["7DED9A87C6CB80F0"]
+			hide_dependency_lines: true
 			id: "1DE10E0714BFF778"
 			rewards: [{
 				id: "382B52C3658DBA01"
@@ -347,7 +349,7 @@
 				item: "butchercraft:cooked_beef_roast"
 				type: "item"
 			}]
-			subtitle: "每公里油耗仅为1块&e牛又"
+			subtitle: "可以手搓，每公里油耗仅为1块&e牛又"
 			tasks: [{
 				id: "0FDC15B013EEFC92"
 				item: "immersive_aircraft:gyrodyne"
@@ -547,29 +549,12 @@
 			y: -5.5d
 		}
 		{
-			dependencies: [
-				"1D36D13A35180A3E"
-				"6FC1C0839095AC2D"
-			]
-			id: "44A395E2CFE81B74"
-			tasks: [{
-				id: "0F2403327055AF5C"
-				item: {
-					Count: 1
-					id: "alexsmobs:tarantula_hawk_elytra"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: -2.0d
-			y: -7.0d
-		}
-		{
+			dependencies: ["41C38AC7AA97CFAD"]
+			icon: "man_of_many_planes:economy_plane"
 			id: "7DED9A87C6CB80F0"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"启动飞行模式！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DED9A87C6CB80F0\" } }"
 			tasks: [{
 				id: "7DE6E5BD8D3D1A81"
 				title: "准备起飞！"
@@ -623,6 +608,8 @@
 			y: 1.5d
 		}
 		{
+			dependencies: ["7DED9A87C6CB80F0"]
+			hide_dependency_lines: true
 			id: "2053C8AC43D015A0"
 			subtitle: "对着水右键就可以取水了，但是这玩意是只貔貅（只进不出）..."
 			tasks: [{
@@ -774,21 +761,6 @@
 			y: 3.5d
 		}
 		{
-			dependencies: ["1DAD17F55E0D4B85"]
-			id: "394328A77D6D76F9"
-			invisible: true
-			invisible_until_tasks: 1
-			subtitle: "最最最最经典的列车轨道，是我童年的记忆！"
-			tasks: [{
-				id: "06922F817A561FC9"
-				item: "create:track"
-				type: "item"
-			}]
-			title: "经典而又优雅"
-			x: 12.0d
-			y: -1.5d
-		}
-		{
 			dependencies: ["40DE31F53D2C424C"]
 			id: "49DDEA93CFD2BAA5"
 			subtitle: "手动操作列车（记得切&4第三人称视角&r）"
@@ -815,12 +787,16 @@
 			y: -4.5d
 		}
 		{
+			dependencies: ["5A8FA422166974A0"]
+			description: ["最最最最经典的列车轨道，是我童年的记忆！"]
+			icon: "create:track"
 			id: "1DAD17F55E0D4B85"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"汽笛轰鸣\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"7DED9A87C6CB80F0\" } }"
 			tasks: [{
-				id: "526E95872BBA363C"
-				item: "create:sturdy_sheet"
+				id: "26A805D9752BC8C9"
+				item: "create:track"
 				type: "item"
 			}]
 			title: "轨道交通！"
@@ -978,6 +954,7 @@
 				"7DED9A87C6CB80F0"
 				"07C28031281E5458"
 			]
+			hide_until_deps_complete: true
 			id: "6D20D47B7F514221"
 			subtitle: "寻找群系与结构的位置"
 			tasks: [

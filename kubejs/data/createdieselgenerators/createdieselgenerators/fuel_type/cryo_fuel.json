@@ -1,5 +1,5 @@
 {
-  "fluid": "ad_astra:cryo_fuel",
+  "fluid": "createdelight:cryo_fuel",
   "sound_pitch": 0.9,
   "normal": {
     "speed": 128.0,

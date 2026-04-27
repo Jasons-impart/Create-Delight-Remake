@@ -390,7 +390,7 @@
 		}
 		{
 			height: 2.0d
-			image: "crystal_clear:block/andesite_glass_casing"
+			image: "createprism:block/andesite_glass_casing"
 			rotation: 0.0d
 			width: 2.0d
 			x: 17.5d
@@ -646,15 +646,6 @@
 		}
 		{
 			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 15.0d
-		}
-		{
-			height: 1.5d
 			image: "ae2:block/io_port_side"
 			order: 3
 			rotation: 0.0d
@@ -677,141 +668,6 @@
 			width: 1.5d
 			x: 5.5d
 			y: 12.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 14.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 14.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 13.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 13.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 12.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 12.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 12.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 12.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 13.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 13.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 14.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 14.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 15.0d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 2
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.0d
-			y: 11.5d
-		}
-		{
-			height: 1.5d
-			image: "createbigcannons:item/machine_gun_round"
-			order: 1
-			rotation: 0.0d
-			width: 1.5d
-			x: 0.5d
-			y: 11.5d
 		}
 		{
 			height: 1.5d
@@ -1096,15 +952,6 @@
 			y: -2.0d
 		}
 		{
-			height: 3.0d
-			image: "hamsters:item/hamster_peaches_and_cream"
-			order: 4
-			rotation: 0.0d
-			width: 3.0d
-			x: 10.0d
-			y: 15.5d
-		}
-		{
 			height: 4.6d
 			image: "vintageimprovements:block/andesite_frame"
 			order: 2
@@ -1369,6 +1216,194 @@
 			width: 4.0d
 			x: 68.5d
 			y: 4.5d
+		}
+		{
+			height: 0.0d
+			hover: ["AUTO_CONTRIBUTORS_START"]
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 0.0d
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: -5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: -5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 0.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 0.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 5.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 10.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 10.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 15.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 15.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 20.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 20.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 25.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 25.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 30.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 30.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 35.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 35.0d
+			y: -13.5d
+		}
+		{
+			height: 4.0d
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 4.0d
+			x: 40.0d
+			y: -13.5d
+		}
+		{
+			height: 4.6d
+			hover: ["Placeholder - dev版本占位"]
+			image: "vintageimprovements:block/andesite_frame"
+			rotation: 0.0d
+			width: 4.6d
+			x: 40.0d
+			y: -13.5d
+		}
+		{
+			height: 0.0d
+			hover: ["AUTO_CONTRIBUTORS_END"]
+			image: "createdelight:textures/gui/qd_windy.png"
+			rotation: 0.0d
+			width: 0.0d
+			x: 0.0d
+			y: 0.0d
 		}
 	]
 	order_index: 2
@@ -2021,25 +2056,8 @@
 				"代表作：海上机械师，重度机械症"
 				"技术支持内容：整合包优化"
 			]
-			icon: {
-				Count: 1
-				id: "hamsters:hamster"
-				tag: {
-					Variant: 0
-				}
-			}
+			icon: "simplehats:digger"
 			id: "77102957237A4BAE"
-			rewards: [{
-				id: "1049BA2B84EEF2DC"
-				item: {
-					Count: 1
-					id: "hamsters:hamster"
-					tag: {
-						Variant: 0
-					}
-				}
-				type: "item"
-			}]
 			shape: "square"
 			subtitle: "老鼠就是神！"
 			tasks: [{

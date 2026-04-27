@@ -382,18 +382,6 @@
     ]
   },
   "FEET": {
-    "ad_astra:jet_suit_boots": [
-      2691,
-      5.086568
-    ],
-    "ad_astra:netherite_space_boots": [
-      3524,
-      2.3839326
-    ],
-    "ad_astra:space_boots": [
-      4337,
-      1.3245949
-    ],
     "alexscaves:diving_boots": [
       4498,
       1.1178746
@@ -606,10 +594,6 @@
       2391,
       7.9030676
     ],
-    "protection_pixel:socks_boots": [
-      4560,
-      1.0383878
-    ],
     "the_bumblezone:carpenter_bee_boots_1": [
       4971,
       0.4779939
@@ -624,18 +608,6 @@
     ]
   },
   "LEGS": {
-    "ad_astra:jet_suit_pants": [
-      1624,
-      9.199434
-    ],
-    "ad_astra:netherite_space_pants": [
-      2450,
-      7.1634674
-    ],
-    "ad_astra:space_pants": [
-      4266,
-      1.397999
-    ],
     "alexscaves:diving_leggings": [
       4456,
       1.1537791
@@ -860,30 +832,6 @@
       2877,
       5.9030676
     ],
-    "protection_pixel:anchorpoint_leggings": [
-      4545,
-      1.03967
-    ],
-    "protection_pixel:anchorpointas_leggings": [
-      4325,
-      1.3220218
-    ],
-    "protection_pixel:buoyancy_leggings": [
-      4738,
-      0.79089624
-    ],
-    "protection_pixel:buoyancyas_leggings": [
-      4588,
-      0.98451304
-    ],
-    "protection_pixel:slingshot_leggings": [
-      4738,
-      0.79089624
-    ],
-    "protection_pixel:slingshotas_leggings": [
-      4588,
-      0.98451304
-    ],
     "the_bumblezone:honey_bee_leggings_1": [
       4957,
       0.4779939
@@ -898,18 +846,6 @@
     ]
   },
   "CHEST": {
-    "ad_astra:jet_suit": [
-      1675,
-      9.120687
-    ],
-    "ad_astra:netherite_space_suit": [
-      2500,
-      6.9321704
-    ],
-    "ad_astra:space_suit": [
-      4314,
-      1.3541976
-    ],
     "alexscaves:cloak_of_darkness": [
       4823,
       0.6972618
@@ -1162,58 +1098,6 @@
       2891,
       5.9030676
     ],
-    "protection_pixel:breaker_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:breakeras_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:floatshield_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:hellsnake_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:hellsnakeas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:magneticstorm_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:magneticstormas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:pioneer_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:pioneeras_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:wingsofprism_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:wingsofprismas_chestplate": [
-      4699,
-      0.85967726
-    ],
-    "protection_pixel:workerhornet_chestplate": [
-      4836,
-      0.67980134
-    ],
-    "protection_pixel:workerhornetas_chestplate": [
-      4699,
-      0.85967726
-    ],
     "quark:backpack": [
       0,
       0.0
@@ -1240,18 +1124,6 @@
     ]
   },
   "HEAD": {
-    "ad_astra:jet_suit_helmet": [
-      1579,
-      9.294949
-    ],
-    "ad_astra:netherite_space_helmet": [
-      2419,
-      7.295891
-    ],
-    "ad_astra:space_helmet": [
-      4236,
-      1.4366896
-    ],
     "alexscaves:diving_helmet": [
       4441,
       1.173019
@@ -1552,121 +1424,9 @@
       4616,
       0.948558
     ],
-    "protection_pixel:bloodprisoner_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:bloodprisoneras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:closed_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:closedas_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:hammer_helmet": [
-      4322,
-      1.3258815
-    ],
-    "protection_pixel:hammeras_helmet": [
-      4118,
-      1.589282
-    ],
-    "protection_pixel:hunter_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:hunteras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:lancer_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:lanceras_helmet": [
-      4248,
-      1.4212085
-    ],
-    "protection_pixel:plague_helmet": [
-      4438,
-      1.1768677
-    ],
-    "protection_pixel:plagueas_helmet": [
-      4248,
-      1.4212085
-    ],
     "quark:forgotten_hat": [
       5268,
       0.0244
-    ],
-    "railways:black_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:blue_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:brown_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:cyan_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:gray_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:green_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:light_blue_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:light_gray_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:lime_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:magenta_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:orange_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:pink_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:purple_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:red_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:white_conductor_cap": [
-      0,
-      0.0
-    ],
-    "railways:yellow_conductor_cap": [
-      0,
-      0.0
     ],
     "the_bumblezone:flower_headwear": [
       0,

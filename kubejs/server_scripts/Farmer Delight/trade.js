@@ -17,7 +17,6 @@ MoreJSEvents.villagerTrades(e => {
     [['16x festival_delicacies:greenonion'], "createdelightcore:copper_coin"],
     [['16x vintagedelight:ghost_pepper'], "createdelightcore:copper_coin"],
     [["createdelightcore:copper_coin"], '8x minecraft:bread'],
-    [["createdelightcore:gold_coin"], 'hotbath:bath_herb'],
   ], 1)
   TradeUtil.addVillageTradeIndex(e, "minecraft:farmer", [
     [['16x festival_delicacies:chinese_cabbage'], "createdelightcore:copper_coin"],

@@ -4,5 +4,7 @@
   "tetra.material.feature.dragonfire": "dragonfire",
   "tetra.material.feature.dragonfire.tooltip": "",
   "tetra.material.feature.chillingfire": "chillingfire",
-  "tetra.material.feature.chillingfire.tooltip": ""
+  "tetra.material.feature.chillingfire.tooltip": "",
+  "message.createdelight.order_reputation_gain": "Order reputation +%s  Completion bonus +%s  Current: %s  Level: %s",
+  "message.createdelight.order_reputation_level_up": "Order reputation reached level %s!"
 }

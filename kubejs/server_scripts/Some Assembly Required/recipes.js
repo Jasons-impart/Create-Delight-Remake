@@ -2,7 +2,8 @@ ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "some_assembly_required:crafting_shapeless/burger_bun",
         "tetracelium:cutting/farmersdelight/bread_slice",
-        "some_assembly_required:cutting/farmersdelight/bread_slice"
+        "some_assembly_required:cutting/farmersdelight/bread_slice",
+        "some_assembly_required:cutting/create/bread_slice"
     ])
     remove_recipes_output(e, [
         "some_assembly_required:toasted_bread_slice"
@@ -13,5 +14,5 @@ ServerEvents.recipes(e => {
     e.recipes.create.cutting(
         "2x some_assembly_required:bread_slice",
         "minecraft:bread"
-    ).id("some_assembly_required:cutting/create/bread_slice")
+    ).id("createdelight:cutting/create/bread_slice")
 })

@@ -11,7 +11,7 @@ ServerEvents.recipes(e => {
   )
     .loops(1)
     .transitionalItem(iner)
-    .id("eclipticseasons:spring_greenhouse_essence")
+    .id("createdelight:spring_greenhouse_essence")
 }
 {
   let iner = 'eclipticseasons:summer_greenhouse_essence'
@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
   )
     .loops(1)
     .transitionalItem(iner)
-    .id("eclipticseasons:summer_greenhouse_essence")
+    .id("createdelight:summer_greenhouse_essence")
 }
 {
   let iner = 'eclipticseasons:autumn_greenhouse_essence'
@@ -37,7 +37,7 @@ ServerEvents.recipes(e => {
   )
     .loops(1)
     .transitionalItem(iner)
-    .id("eclipticseasons:autumn_greenhouse_essence")
+    .id("createdelight:autumn_greenhouse_essence")
 }
 {
   let iner = 'eclipticseasons:winter_greenhouse_essence'
@@ -50,6 +50,6 @@ ServerEvents.recipes(e => {
   )
     .loops(1)
     .transitionalItem(iner)
-    .id("eclipticseasons:winter_greenhouse_essence")
+    .id("createdelight:winter_greenhouse_essence")
 }
 })

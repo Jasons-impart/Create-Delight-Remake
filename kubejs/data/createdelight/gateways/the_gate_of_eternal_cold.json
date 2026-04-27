@@ -29,7 +29,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.4
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -102,7 +102,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.40
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -182,7 +182,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.60
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -270,7 +270,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.80
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -365,7 +365,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 2.0
+					"value": 2.4
 				},
 				{
 					"attribute": "generic.armor",

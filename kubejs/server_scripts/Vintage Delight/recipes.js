@@ -1,24 +1,25 @@
-ServerEvents.tags("item", e => {
-    //腌渍乐事种子添加种子tag
-    e.add("forge:seeds", "vintagedelight:oat_seeds")
-    e.add("forge:seeds", "vintagedelight:peanut")
-    e.add("forge:seeds", "vintagedelight:cucumber_seeds")
-    e.add("forge:seeds", "vintagedelight:ghost_pepper_seeds")
-})
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "vintagedelight:cutting/cucumber_cutting",
         "culturaldelights:cutting/cut_cucumber",
+        "vintagedelight:stuffed_burrito",
+        "vintagedelight:fermenting/pickle_from_fermenting",
+        "vintagedelight:salt_bucket_to_salt",
+        "vintagedelight:salt_from_smelting",
+        "vintagedelight:fermenting/century_egg_from_fermenting",
+        "vintagedelight:fermenting/kimchi_from_fermenting",
+        "vintagedelight:stuffed_burrito",
+        "vintagedelight:fermenting/frost_fermenta"
     ])
     e.replaceOutput({id: "vintagedelight:fermenting/fermented_spider_eye_from_fermenting"}, "vintagedelight:pickle", "minecraft:fermented_spider_eye")
     e.replaceInput({}, 'farmersdelight:raw_pasta', "#forge:pasta")
     e.replaceInput({id: "vintagedelight:cooking/pad_thai"}, "#forge:pasta", 'createdelight:vermicelli')
-    cutting_2(e, "brewinandchewin:flaxen_cheese_wheel", [["ad_astra:cheese", 4]])
+    cutting_2(e, "brewinandchewin:flaxen_cheese_wheel", [["trailandtales_delight:cheese_slice", 4]])
     // 燕麦磨粉
     e.recipes.create.milling(
         Item.of("bakeries:flour").withChance(0.5),
         'vintagedelight:raw_oats'
-    ).id("vintagedelight:integration/bakeries/milling/flour")
+    ).id("createdelight:integration/bakeries/milling/flour")
     // 腊肠
     e.recipes.vintagedelight.fermenting(
         "5x createdelight:salami",
@@ -30,7 +31,7 @@ ServerEvents.recipes(e => {
             "ratatouille:raw_sausage",
             "#forge:salt"
         ], 5000
-    ).id("vintagedelight:fermenting/salami")
+    ).id("createdelight:fermenting/salami")
     // 黄瓜
     remove_recipes_id(e, [
         "culturaldelights:cucumber_crate",
@@ -39,7 +40,7 @@ ServerEvents.recipes(e => {
     e.recipes.kubejs.shapeless(
         "vintagedelight:cucumber_crate",
         "9x vintagedelight:cucumber"
-    ).id("vintagedelight:cucumber_crate")
+    ).id("createdelight:cucumber_crate")
     e.recipes.vintagedelight.fermenting(
         "5x culturaldelights:pickle",
         [
@@ -50,7 +51,7 @@ ServerEvents.recipes(e => {
             "vintagedelight:cucumber",
             "#forge:salt"
         ], 6000
-    ).id("vintagedelight:fermenting/pickle_from_fermenting")
+    ).id("createdelight:fermenting/pickle_from_fermenting")
     e.recipes.vintagedelight.fermenting(
         "5x culturaldelights:cut_pickle",
         [
@@ -61,7 +62,7 @@ ServerEvents.recipes(e => {
             "culturaldelights:cut_cucumber",
             "#forge:salt"
         ], 3000
-    ).id("vintagedelight:fermenting/cut_pickle_from_fermenting")
+    ).id("createdelight:fermenting/cut_pickle_from_fermenting")
     cutting(e, "culturaldelights:cut_cucumber", [["vintagedelight:cucumber_noodles"]])
     // 盐
     e.recipes.create.mixing(
@@ -71,23 +72,23 @@ ServerEvents.recipes(e => {
             "vintagedelight:salt_dust"
         ]
     )
-        .id("vintagedelight:salt_dust")
+        .id("createdelight:salt_dust")
     e.recipes.create.mixing(
         "vintagedelight:salt_dust",
         Fluid.of("bakeries:salt_water", 250)
     )
         .heated()
-        .id("vintagedelight:salt_water2salt_dust")
+        .id("createdelight:salt_water2salt_dust")
     e.recipes.minecraft.smelting(
         "vintagedelight:salt_bucket",
         'bakeries:salt_water_bucket',
         0.7,
         200
-    ).id("vintagedelight:salt_from_smelting")
+    ).id("createdelight:salt_from_smelting")
     e.recipes.kubejs.shapeless(
         "4x vintagedelight:salt_dust",
         "vintagedelight:salt_bucket"
-    ).id("vintagedelight:salt_bucket_to_salt")
+    ).id("createdelight:salt_bucket_to_salt")
     // 腌制
     e.recipes.vintagedelight.fermenting(
         "5x vintagedelight:surstromming",
@@ -99,7 +100,7 @@ ServerEvents.recipes(e => {
             'create_bic_bit:raw_herring',
             "#forge:salt"
         ], 2500
-    ).id("vintagedelight:fermenting/surstromming_from_fermenting")
+    ).id("createdelight:fermenting/surstromming_from_fermenting")
     e.recipes.vintagedelight.fermenting(
         "5x vintagedelight:salted_cod",
         [
@@ -110,7 +111,7 @@ ServerEvents.recipes(e => {
             'minecraft:cod',
             "#forge:salt"
         ], 2500
-    ).id("vintagedelight:salted_cod")
+    ).id("createdelight:salted_cod")
     e.recipes.vintagedelight.fermenting(
         "5x vintagedelight:salted_salmon",
         [
@@ -121,7 +122,7 @@ ServerEvents.recipes(e => {
             'minecraft:salmon',
             "#forge:salt"
         ], 2500
-    ).id("vintagedelight:salted_salmon")
+    ).id("createdelight:salted_salmon")
     e.recipes.vintagedelight.fermenting(
         "5x festival_delicacies:preserved_meat",
         [
@@ -132,7 +133,7 @@ ServerEvents.recipes(e => {
             "#forge:raw_pork",
             "#forge:salt"
         ], 5000
-    ).id("vintagedelight:fermenting/preserved_meat")
+    ).id("createdelight:fermenting/preserved_meat")
     e.recipes.vintagedelight.fermenting(
         "vintagedelight:century_egg",
         [
@@ -140,7 +141,7 @@ ServerEvents.recipes(e => {
             "#forge:ash",
             "#forge:salt"
         ], 72000
-    ).id("vintagedelight:fermenting/century_egg_from_fermenting")
+    ).id("createdelight:fermenting/century_egg_from_fermenting")
     e.recipes.vintagedelight.fermenting(
         "vintagedelight:century_egg",
         [
@@ -148,7 +149,7 @@ ServerEvents.recipes(e => {
             "#forge:ash",
             "#forge:salt"
         ], 72000
-    ).id("vintagedelight:fermenting/century_egg_from_dragonegg")
+    ).id("createdelight:fermenting/century_egg_from_dragonegg")
     e.recipes.vintagedelight.fermenting(
         "vintagedelight:century_egg",
         [
@@ -156,26 +157,31 @@ ServerEvents.recipes(e => {
             "#forge:ash",
             "#forge:salt"
         ], 72000
-    ).id("vintagedelight:fermenting/century_egg_from_emu_egg")
-    e.custom({
-        "type": "vintagedelight:fermenting",
-        "processingTime": 5000,
-        "ingredients": [
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "createdelight:cabbage_leaves" },
-            { "tag": "forge:salt" },
-            { "tag": "forge:chilipepper" }
+    ).id("createdelight:fermenting/century_egg_from_emu_egg")
+    e.recipes.vintagedelight.fermenting(
+        "4x vintagedelight:kimchi",
+        [
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#createdelight:cabbage_leaves",
+            "#forge:salt",
+            "#forge:chilipepper"
         ],
-        "output": {
-            "count": 4,
-            "item": "vintagedelight:kimchi"
-        },
-        "secondaryOutput": {
-            "item": "vintagedelight:pickled_pepper"
-        }
-    }).id("vintagedelight:fermenting/kimchi_from_fermenting")
+        5000
+    ).secondaryOutput("vintagedelight:pickled_pepper").id("createdelight:fermenting/kimchi_from_fermenting")
+
+    e.recipes.vintagedelight.fermenting(
+        Item.of("minecraft:potion", '{Potion:"minecraft:water",CustomPotionEffects:[{Id:12,Amplifier:0,Duration:3600},{Id:2,Amplifier:0,Duration:3600}],CustomPotionColor:3937500,display:{Name:\'{"text":"Frost Fermenta","italic":false}\'}}'),
+        [
+            "vintagedelight:ghost_pepper_seeds",
+            "farmersdelight:rotten_tomato",
+            "farmersdelight:milk_bottle",
+            "minecraft:snowball",
+            "minecraft:kelp"
+        ],
+        600
+    ).id("vintagedelight:fermenting/frost_fermenta")
     // 花生奶兼容
     e.recipes.create.emptying(
         [
@@ -183,44 +189,44 @@ ServerEvents.recipes(e => {
             "minecraft:glass_bottle"
         ], 
         "vintagedelight:nut_milk_bottle"
-    ).id("create:emptying/compat/vintagedelight/nut_milk_bottle")
+    ).id("createdelight:emptying/compat/vintagedelight/nut_milk_bottle")
     e.recipes.create.filling(
         "vintagedelight:nut_milk_bottle",
         [
             Fluid.of("createdelight:nut_milk", 250),
             "minecraft:glass_bottle"
         ]
-    ).id("create:filling/compat/vintagedelight/nut_milk_bottle")
+    ).id("createdelight:filling/compat/vintagedelight/nut_milk_bottle")
     e.recipes.kubejs.shapeless(
         'createdelight:nut_milk_bucket',
         [
             "4x vintagedelight:nut_milk_bottle",
             "minecraft:bucket"
         ]
-    ).id("vintagedelight:nut_milk_bucket_from_bottles").replaceIngredient("vintagedelight:nut_milk_bottle", "minecraft:glass_bottle")
+    ).id("createdelight:nut_milk_bucket_from_bottles").replaceIngredient("vintagedelight:nut_milk_bottle", "minecraft:glass_bottle")
     e.recipes.kubejs.shapeless(
         "4x vintagedelight:nut_milk_bottle",
         [
             'createdelight:nut_milk_bucket',
             "4x minecraft:glass_bottle"
         ]
-    ).id("vintagedelight:nut_milk_bottle").replaceIngredient("createdelight:nut_milk_bucket", "minecraft:bucket")
+    ).id("createdelight:nut_milk_bottle").replaceIngredient("createdelight:nut_milk_bucket", "minecraft:bucket")
     e.recipes.create.mixing(
         Fluid.of("createdelight:nut_milk", 250),
         [
             "2x vintagedelight:peanut",
             "minecraft:sugar"
         ]
-    ).heated().id("vintagedelight:mixing/nut_milk")
+    ).heated().id("createdelight:mixing/nut_milk")
 
     e.recipes.create.filling("vintagedelight:vinegar_bottle", ["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)])
-    .id("create:filling/compat/vintagedelight/vinegar_bottle")
+    .id("createdelight:filling/compat/vintagedelight/vinegar_bottle")
     e.recipes.create.filling("vintagedelight:vinegar_mason_jar", ["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)])
-    .id("create:filling/compat/vintagedelight/vinegar_jar")
+    .id("createdelight:filling/compat/vintagedelight/vinegar_jar")
     e.recipes.create.emptying(["minecraft:glass_bottle", Fluid.of("createdelight:vinegar", 250)], "vintagedelight:vinegar_bottle")
-    .id("create:filling/emptying/vintagedelight/vinegar_bottle")
+    .id("createdelight:filling/emptying/vintagedelight/vinegar_bottle")
     e.recipes.create.emptying(["vintagedelight:mason_jar", Fluid.of("createdelight:vinegar", 750)], "vintagedelight:vinegar_mason_jar")
-    .id("create:filling/emptying/vintagedelight/vinegar_jar")
+    .id("createdelight:filling/emptying/vintagedelight/vinegar_jar")
 
         
     e.recipes.vintagedelight.fermenting("3x alexscaves:carmine_froglight", [
@@ -233,7 +239,7 @@ ServerEvents.recipes(e => {
     ])
     .secondaryOutput("minecraft:glass_bottle")
     .processingTime(2400)
-    .id("vintagedelight:fermenting/carmine_froglight_from_fermenting")
+    .id("createdelight:fermenting/carmine_froglight_from_fermenting")
     fermenting(e,"2x minecraft:ochre_froglight", [
         Fluid.of("createdelightcore:slime", 810),
         "minecraft:blaze_powder",
@@ -254,14 +260,6 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:slime", 810),
         "#forge:dusts/glowstone",
         "minecraft:glow_berries",
-        "vintagedelight:salt_block",
-        Fluid.of("createdelight:vinegar", 250)
-    ])
-    
-    fermenting(e,"2x minecraft:pearlescent_froglight", [
-        Fluid.of("createdelightcore:slime", 810),
-        "minecraft:prismarine_crystal",
-        "minecraft:sea_pickle",
         "vintagedelight:salt_block",
         Fluid.of("createdelight:vinegar", 250)
     ])

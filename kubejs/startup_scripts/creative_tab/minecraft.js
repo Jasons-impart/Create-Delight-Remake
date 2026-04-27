@@ -24,8 +24,3 @@ StartupEvents.modifyCreativeTab("minecraft:functional_blocks", e => {
     "quark:iron_ladder",
   ]) 
 })
-StartupEvents.modifyCreativeTab("minecraft:building_blocks", e => {
-  e.remove([
-    'protection_pixel:openedmaneuveringwing',
-  ])
-})

@@ -18,6 +18,9 @@ ServerEvents.tags("minecraft:item", e => {
         'iceandfire:myrmex_jungle_egg',
         'endertrigon:baby_dragon_egg',
     ])
+    e.remove("forge:moss", [
+        'minecraft:moss_carpet'
+    ])
     e.remove("forge:eggs", [
         'iceandfire:deathworm_egg_giant',
         'alexscaves:tremorsaurus_egg',

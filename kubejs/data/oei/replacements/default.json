@@ -20,7 +20,8 @@
     {
         "matchItems": [
             "ratatouille:salt",
-            "bakeries:salt"
+            "bakeries:salt",
+            "northstar:salt"
         ],
         "resultItems": "vintagedelight:salt_dust"
     },
@@ -28,10 +29,9 @@
         "matchItems": [
             "brewinandchewin:flaxen_cheese_wedge",
             "casualness_delight:cheese_wheel_slice",
-            "vintagedelight:cheese_slice",
-            "trailandtales_delight:cheese_slice"
+            "vintagedelight:cheese_slice"
         ],
-        "resultItems": "ad_astra:cheese"
+        "resultItems": "trailandtales_delight:cheese_slice"
     },
     {
         "matchItems": [
@@ -45,7 +45,7 @@
         "matchItems": [
             "quark:crab_leg"
         ],
-        "resultItems": "crabbersdelight:crab"
+        "resultItems": "crabbersdelight:crab_legs"
     },
     {
         "matchItems": [
@@ -68,6 +68,48 @@
     },
     {
         "matchItems": [
+            "dumplings_delight:chinese_cabbage"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:chinese_cabbage_leaf"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage_leaf"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:eggplant"
+        ],
+        "resultItems": "festival_delicacies:eggplant"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:fennel"
+        ],
+        "resultItems": "festival_delicacies:fennel"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic_chive"
+        ],
+        "resultItems": "festival_delicacies:garlic_chive"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic"
+        ],
+        "resultItems": "festival_delicacies:garlic"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:greenonion"
+        ],
+        "resultItems": "festival_delicacies:greenonion"
+    },
+    {
+        "matchItems": [
             "neapolitan:adzuki_beans",
             "youkaishomecoming:redbean",
             "festival_delicacies:red_bean"
@@ -85,6 +127,30 @@
             "culturaldelights:cucumber_seeds"
         ],
         "resultItems": "vintagedelight:cucumber_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:chinese_cabbage_seeds"
+        ],
+        "resultItems": "festival_delicacies:chinese_cabbage_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:eggplant_seeds"
+        ],
+        "resultItems": "festival_delicacies:eggplant_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:fennel_seeds"
+        ],
+        "resultItems": "festival_delicacies:fennel_seeds"
+    },
+    {
+        "matchItems": [
+            "dumplings_delight:garlic_chive_seeds"
+        ],
+        "resultItems": "festival_delicacies:garlic_chive_seeds"
     },
     {
         "matchItems": [
@@ -303,5 +369,65 @@
             "neapolitan:vanilla_fudge"
         ],
         "resultItems": "collectorsreap:vanilla_gummy"
+    },
+    {
+        "matchItems": [
+            "culturaldelights:egg_roll"
+        ],
+        "resultItems": "youkaishomecoming:egg_nigiri"
+    },
+    {
+        "matchItems": [
+            "oceanic_delight:fish_egg_roll_slice"
+        ],
+        "resultItems": "youkaishomecoming:tobiko_gunkan"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:green_coffee_bean"
+        ],
+        "resultItems": "createcafe:coffee_beans"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:coffee_beans"
+        ],
+        "resultItems": "createcafe:roasted_coffee_beans"
+    },
+    {
+        "matchItems": [
+            "youkaishomecoming:wood_basin"
+        ],
+        "resultItems": "vinery:grapevine_pot"
+    },
+    {
+        "matchItems": [
+            "collectorsreap:cream_cheese"
+        ],
+        "resultItems": "bakeries:cheese_cream"
+    },
+    {
+        "matchItems": [
+            "northstar:sulfuric_acid_bucket"
+        ],
+        "resultItems": "vintageimprovements:sulfuric_acid_bucket"
+    },
+    {
+        "matchItems": [
+            "northstar:polished_amethyst"
+        ],
+        "resultItems": "createutilities:polished_amethyst"
+    },
+    {
+        "matchItems": [
+            "createfisheryindustry:raw_lobster"
+        ],
+        "resultItems": "crabbersdelight:clawster"
+    },
+    {
+        "matchItems": [
+            "createfisheryindustry:cooked_lobster"
+        ],
+        "resultItems": "crabbersdelight:cooked_clawster"
     }
 ]

@@ -1,0 +1,35 @@
+{
+    "parent": "totw_modded:root",
+    "display": {
+        "icon": {
+            "item": "minecraft:mossy_cobblestone"
+        },
+        "title": {
+            "translate": "totw_modded.advancement.derelict_grass_tower.title"
+        },
+        "description": {
+            "translate": "totw_modded.advancement.derelict_grass_tower.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "derelict_grass": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structure": "totw_modded:derelict_grass"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "derelict_grass"
+        ]
+    ]
+}

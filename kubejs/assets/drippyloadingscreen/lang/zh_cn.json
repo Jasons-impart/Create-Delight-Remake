@@ -1,0 +1,5 @@
+{
+  "drippyloadingscreen.edit_loading_screen.desc": "自定义加载屏幕",
+  "drippyloadingscreen.placeholders.general.loading_progress_percent": "加载进度 [Percent]",
+  "drippyloadingscreen.placeholders.general.loading_progress_percent.desc": "获取当前游戏加载\n的进度百分比。"
+}

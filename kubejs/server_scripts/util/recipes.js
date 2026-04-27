@@ -86,7 +86,7 @@ function blast_and_smelting(event, input, output, xp, time) {
 /**
  * @param { Internal.RecipesEventJS } event 
  * @param { InputItem_ } input 
- * @param { any[] } outputs 
+ * @param { [Internal.ItemStack_, number, number][] } outputs 格式：[[id, count, chance], ...]
  */
 function cutting(event, input, outputs) {
     let recipe = {
@@ -107,7 +107,7 @@ function cutting(event, input, outputs) {
         })
         result.push(Item.of(`${count}x ${id}`).withChance(chance))
     });
-    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`farmersdelight:cutting/${input.split(":")[1]}`)
+    event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", result).id(`createdelight:cutting/${input.split(":")[1]}`)
     event.custom(recipe).id(`tetracelium:cutting/${input.split(":")[1]}`)
 }
 /**

@@ -34,13 +34,20 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:raw_egg_yolk', 
    'bakeries:fresh_cheese_cube', 
    'bakeries:cake_base',
-   'bakeries:mould_two',
    'bakeries:carrot_cake',
    'bakeries:matcha_latte',
    'bakeries:coffee_table',
    'bakeries:sofa',
    'bakeries:sofa_light_gray',
-   'bakeries:sofa_red'
+   'bakeries:sofa_red',
+   'bakeries:red_velvet_cake', 
+   'bakeries:red_velvet_cake_base', 
+   'bakeries:mould_red_velvet_cake_paste',
+   'bakeries:bearnaise', 
+   'bakeries:raw_custom_pizza', 
+   'bakeries:pizza_flatbread',
+   'bakeries:raw_pizza',
+   'bakeries:matcha_parfait'
   ])
   e.add([
    'bakeries:mould_toast',

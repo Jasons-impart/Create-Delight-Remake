@@ -6,10 +6,8 @@
  * @param { number } time 
  */
 function dumpling(event, inputs, output, exp, time) {
-    event.recipes.festival_delicacies.stove(inputs, output, exp, time, true)
+    event.recipes.festival_delicacies.stove(inputs, output, exp, time, "default")
         .id(`createdelight:stove/${output.split(":")[1]}`)
-    event.recipes.farmersdelight.cooking(inputs, output, exp, time)
-        .id(`createdelight:cooking/${output.split(":")[1]}`)
 }
 
 /**
@@ -20,8 +18,6 @@ function dumpling(event, inputs, output, exp, time) {
  * @param { number } time 
  */
 function wonton(event, inputs, output, exp, time) {
-    event.recipes.festival_delicacies.stove(inputs, output, exp, time, true, "minecraft:bowl")
+    event.recipes.festival_delicacies.stove(inputs, output, exp, time, "default", "minecraft:bowl")
         .id(`createdelight:stove/${output.split(":")[1]}`)
-    event.recipes.farmersdelight.cooking(inputs, output, exp, time, "minecraft:bowl")
-        .id(`createdelight:cooking/${output.split(":")[1]}`)
 }

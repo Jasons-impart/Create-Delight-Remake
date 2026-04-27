@@ -1,0 +1,52 @@
+{
+  "parent": "eclipticseasons:quests/spring_start",
+  "criteria": {
+    "core_require": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:bread"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "parent_need": {
+      "conditions": {
+        "parent": "eclipticseasons:quests/spring_start"
+      },
+      "trigger": "eclipticseasons:parent"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.eclipticseasons.spring_bread.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:bread"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancement.eclipticseasons.spring_bread"
+    }
+  },
+  "requirements": [
+    [
+      "parent_need"
+    ],
+    [
+      "core_require"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "eclipticseasons:gifts/spring_greenhouse_essence"
+    ]
+  },
+  "sends_telemetry_event": true
+}

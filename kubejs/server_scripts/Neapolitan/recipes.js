@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "neapolitan:milk/milk_bottles_from_bucket",
         "neapolitan:adzuki/adzuki_crate_uncompress",
         "neapolitan:vanilla/vanilla_fudge",
+        "neapolitan:banana/banana_bread",
         "create_central_kitchen:mixing/vanilla_fudge"
     ])
     remove_recipes_output(e, [
@@ -37,20 +38,20 @@ ServerEvents.recipes(e => {
         [
             "neapolitan:strawberries",
             Fluid.of("create:chocolate", 250)
-        ]).id("neapolitan:filling/chocolate_strawberries")
+        ]).id("createdelight:filling/chocolate_strawberries")
     e.recipes.create.filling(
         "neapolitan:vanilla_chocolate_fingers",
         [
             "neapolitan:dried_vanilla_pods",
             Fluid.of("create:chocolate", 250)
-        ]).id("neapolitan:filling/vanilla_chocolate_fingers")
+        ]).id("createdelight:filling/vanilla_chocolate_fingers")
     e.recipes.create.filling(
         "neapolitan:chocolate_spider_eye",
         [
             "minecraft:spider_eye",
             Fluid.of("create:chocolate", 125)
-        ]).id("neapolitan:filling/chocolate_spider_eye")
-    e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("neapolitan:haunting/white_strawberries")
+        ]).id("createdelight:filling/chocolate_spider_eye")
+    e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("createdelight:haunting/white_strawberries")
     
     
     cutting_2(e, "neapolitan:banana_bunch", [
@@ -59,7 +60,7 @@ ServerEvents.recipes(e => {
         ["neapolitan:banana", 1, 0.25]
     ])
     cutting_2(e, "neapolitan:banana_bundle", [
-        ["neapolitan:banana", 9]
+        ["neapolitan:banana_bunch", 9]
     ])
 
     e.recipes.farmersdelight.cooking([
@@ -68,7 +69,7 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/carrot",
         "#forge:mushrooms"
     ], "neapolitan:adzuki_stew", 10.0, 200, "minecraft:bowl")
-    .id("neapolitan:cooking/adzuki_stew")
+    .id("createdelight:cooking/adzuki_stew")
 
     e.recipes.farmersdelight.cooking([
         "createdelight:adzuki_beans_seed",
@@ -76,6 +77,15 @@ ServerEvents.recipes(e => {
         "#forge:vegetables/carrot",
         "#forge:pumpkins"
     ], "neapolitan:adzuki_curry", 10.0, 200, "minecraft:bowl")
-    .id("neapolitan:cooking/adzuki_curry")
-
+    .id("createdelight:cooking/adzuki_curry")
+    
+    e.recipes.create.deploying([
+        "neapolitan:banana_bundle", 
+        Item.of("neapolitan:banana").withChance(0.05), 
+        Item.of("neapolitan:banana_bunch").withChance(0.02)], [
+            "neapolitan:banana_bundle",
+            "neapolitan:chimpanzee_head"
+        ])
+        .keepHeldItem()
+        .id("createdelight:deploying/banana")
 })

@@ -1,0 +1,175 @@
+{
+  "multipart": [
+    {
+      "when": { "AND": [{ "facing": "down", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 0, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "up", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 180, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "north", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 90, "y": 180
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "south", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 90, "y": 0
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "west", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 90, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "east", "mode": "none" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/none",
+        "x": 90, "y": 270
+      }
+    },
+
+    {
+      "when": { "AND": [{ "facing": "down", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 0, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "up", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 180, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "north", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 90, "y": 180
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "south", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 90, "y": 0
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "west", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 90, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "east", "mode": "push" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/push",
+        "x": 90, "y": 270
+      }
+    },
+
+    {
+      "when": { "AND": [{ "facing": "down", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 0, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "up", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 180, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "north", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 90, "y": 180
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "south", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 90, "y": 0
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "west", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 90, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "east", "mode": "pull" }] },
+      "apply": {
+        "model": "createaddition:block/connector/superconducting/pull",
+        "x": 90, "y": 270
+      }
+    },
+
+    {
+      "when": { "AND": [{ "facing": "down", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 0, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "up", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 180, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "north", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 90, "y": 180
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "south", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 90, "y": 0
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "west", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 90, "y": 90
+      }
+    },
+    {
+      "when": { "AND": [{ "facing": "east", "variant": "girder" }] },
+      "apply": {
+        "model": "createaddition:block/connector/girder_base",
+        "x": 90, "y": 270
+      }
+    }
+  ]
+}

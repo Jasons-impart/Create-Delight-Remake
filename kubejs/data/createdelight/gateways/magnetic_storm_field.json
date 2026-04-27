@@ -13,12 +13,12 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.8
+					"value": 2.5
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.8
+					"value": 1.0
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -52,14 +52,14 @@
 			"entities": [
 				{
 					"entity": "alexscaves:ferrouslime",
-					"count": 8
+					"count": 12
 				}
 			],
 			"modifiers": [
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.8
+					"value": 2.0
 				},
 				{
 					"attribute": "generic.armor",
@@ -79,7 +79,7 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.3
+					"value": 0.1
 				}
 			],
 			"rewards": [
@@ -121,12 +121,12 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.8
+					"value": 3.0
 				},
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.5
+					"value": 0.8
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -136,7 +136,7 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.2 
+					"value": -0.6 
 				}
 			],
 			"rewards": [
@@ -179,7 +179,7 @@
                 {
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.8
+					"value": 2.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -194,7 +194,7 @@
 				{
 					"attribute": "generic.movement_speed",
 					"operation": "MULTIPLY_TOTAL",
-					"value": -0.2 
+					"value": 0.2 
 				}
 			],
 			"rewards": [
@@ -235,7 +235,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 10.0
+					"value": 24.0
 				},
 				{
 					"attribute": "generic.attack_damage",

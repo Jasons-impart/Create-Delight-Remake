@@ -1,8 +1,6 @@
 StartupEvents.registry("item", e => {
     let metals = [
-        "desh",
-        "ostrum",
-        "calorite",
+        "titanium",
     ]
 
     metals.forEach(metal => {

@@ -18,7 +18,7 @@
 	baselineShift = 7.0
 	#Control the text shadow offset for vanilla text rendering, in GUI scaled pixels.
 	#Range: 0.20000000298023224 ~ 2.0
-	shadowOffset = 0.8
+	shadowOffset = 0.5
 	#Control the text outline offset for vanilla text rendering, in GUI scaled pixels.
 	#Range: 0.20000000298023224 ~ 2.0
 	outlineOffset = 0.5
@@ -43,7 +43,14 @@
 	#Only Include: Only include providers that specified by defaultFontRuleSet.
 	#Only Exclude: Only exclude providers that specified by defaultFontRuleSet.
 	#Allowed Values: IGNORE_ALL, KEEP_ASCII, KEEP_OTHER, KEEP_ALL, ONLY_INCLUDE, ONLY_EXCLUDE
-	defaultFontBehavior = "IGNORE_ALL"
+	defaultFontBehavior = "KEEP_ALL"
+	#Used when defaultFontBehavior is either ONLY_INCLUDE or ONLY_EXCLUDE.
+	#This specifies a set of regular expressions to match the glyph provider name.
+	#For bitmap providers, this is the texture path without 'textures/'.
+	#For TTF providers, this is the TTF file path without 'font/'.
+	#For space providers, this is "font_name / minecraft:space",
+	#where font_name is font definition path without 'font/'.
+	defaultFontRuleSet = ["^minecraft:font\\/(nonlatin_european|accented|ascii|element_ideographs|cjk_punctuations|ellipsis|2em_dash)\\.png$", "^minecraft:include\\/space \\/ minecraft:space$", "^minecraft:font\\/(mcsans|emoji)_05_00\\d.png$"]
 	#Whether to use text component object as hash key to lookup in layout cache.
 	#If you find that Modern UI text rendering is not compatible with some mods,
 	#you can disable this option for compatibility, but this will decrease performance a bit.
@@ -71,13 +78,8 @@
 	#Otherwise, it uses nearest-neighbor or bilinear sampling based on texel density.
 	#This option only applies to TrueType fonts.
 	allowSDFTextIn2D = true
-	#Used when defaultFontBehavior is either ONLY_INCLUDE or ONLY_EXCLUDE.
-	#This specifies a set of regular expressions to match the glyph provider name.
-	#For bitmap providers, this is the texture path without 'textures/'.
-	#For TTF providers, this is the TTF file path without 'font/'.
-	#For space providers, this is "font_name / minecraft:space",
-	#where font_name is font definition path without 'font/'.
-	defaultFontRuleSet = ["^minecraft:font\\/(nonlatin_european|accented|ascii|element_ideographs|cjk_punctuations|ellipsis|2em_dash)\\.png$", "^minecraft:default \\/ minecraft:space$"]
+	#When enabled, the outline of the experience level text will be tweaked.
+	tweakExperienceText = true
 	#Control the anti-aliasing of raw glyph rasterization.
 	antiAliasing = true
 	#When enabled, text layout uses fractional metrics with no font hinting.
@@ -89,8 +91,6 @@
 	#Recommend setting a higher value on high-res monitor and powerful PC hardware.
 	#Range: 4 ~ 10
 	minPixelDensityForSDF = 4
-	#When enabled, the outline of the experience level text will be tweaked.
-	tweakExperienceText = true
 	#Enable linear sampling for A8 font atlases with mipmaps, mag filter will be always
 	#NEAREST. We prefer computeDeviceFontSize and allowSDFTextIn2D, then setting this to
 	#false can improve performance. If either of the above two is false or Shaders are active,

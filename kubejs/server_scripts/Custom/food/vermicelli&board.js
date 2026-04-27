@@ -3,7 +3,7 @@ ServerEvents.recipes(e => {
     // 挂面合成
     e.recipes.ratatouille.squeezing(
         "createdelight:vermicelli", "bakeries:whole_wheat_dough"
-    ).id("ratatouille:squeezing/vermicelli")
+    ).id("createdelight:squeezing/vermicelli")
     // 挂面相关
     e.recipes.farmersdelight.cooking(
         [
@@ -14,7 +14,7 @@ ServerEvents.recipes(e => {
             "#forge:vegetables"
         ], "farmersdelight:vegetable_noodles", 1.0, 200
     )
-        .id("farmersdelight:cooking/vegetable_noodles")
+        .id("createdelight:cooking/vegetable_noodles")
         .container("bowl")
     e.recipes.farmersdelight.cooking(
         [
@@ -24,7 +24,7 @@ ServerEvents.recipes(e => {
             "forge:raw_pork"
         ], "farmersdelight:noodle_soup", 1.0, 200
     )
-        .id("farmersdelight:cooking/noodle_soup")
+        .id("createdelight:cooking/noodle_soup")
         .container("bowl")
     e.recipes.farmersdelight.cooking(
         [
@@ -36,7 +36,7 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/onion"
         ], "casualness_delight:beef_noodles", 1.0, 200
     )
-        .id("casualness_delight:cooking/beef_noodles")
+        .id("createdelight:cooking/beef_noodles")
         .container("bowl")
     // 板面相关
     e.recipes.create.sequenced_assembly("4x createdelight:board_noodles", "bakeries:whole_wheat_dough", [

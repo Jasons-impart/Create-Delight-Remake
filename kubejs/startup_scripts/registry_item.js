@@ -1,55 +1,4 @@
 StartupEvents.registry("item", e => {
-    // 注册火箭相关物品
-    let rocket_tier = [
-        ["basic", "common"],
-        ["advanced", "uncommon"],
-        ["explorer", "rare"],
-        ["flare", "epic"]
-    ]
-    rocket_tier.forEach(tier => {
-        // 舱体
-        e.create(`createdelight:${tier[0]}_cabin`)
-            .rarity(tier[1])
-            .unstackable()
-            .translationKey(`item.createdelight.${tier[0]}_cabin`)
-            .tag(`createdelight:cabins`)
-            .tag(`createdelight:cabins/${tier[0]}`)
-            .fireResistant()
-
-        // 舱板
-        e.create(`createdelight:${tier[0]}_panel`)
-            .rarity(tier[1])
-            .maxStackSize(16)
-            .translationKey(`item.createdelight.${tier[0]}_panel`)
-            .tag(`createdelight:panels`)
-            .tag(`createdelight:panels/${tier[0]}`)
-            .fireResistant()
-        e.create(`createdelight:incomplete_${tier[0]}_panel`, "create:sequenced_assembly")
-            .rarity(tier[1])
-            .translationKey(`item.createdelight.incomplete_${tier[0]}_panel`)
-            .fireResistant()
-    })
-    // 火箭面板
-    e.create("createdelight:basic_crystal_panel")
-        .rarity("common")
-        .unstackable()
-        .translationKey("item.createdelight.basic_crystal_panel")
-        .fireResistant()
-    e.create("createdelight:advanced_crystal_panel")
-        .rarity("uncommon")
-        .unstackable()
-        .translationKey("item.createdelight.advanced_crystal_panel")
-        .fireResistant()
-    e.create("createdelight:holographic_interface_panel")
-        .rarity("rare")
-        .unstackable()
-        .translationKey("item.createdelight.holographic_interface_panel")
-        .fireResistant()
-    e.create("createdelight:quantum_field_panel")
-        .rarity("epic")
-        .unstackable()
-        .translationKey("item.createdelight.quantum_field_panel")
-        .fireResistant()
     // 注册碳粉
     e.create("createdelight:carbon_dust")
         .translationKey("item.createdelight.carbon_dust")
@@ -60,12 +9,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.carbon_plate")
         .tag("forge:plates")
         .tag("forge:plates/carbon")
-    // 航空纤维板
-    e.create("createdelight:aviation_fibers_sheet")
-        .translationKey("item.createdelight.aviation_fibers_sheet")
-        .tag("forge:plates")
-        .tag("forge:plates/aviation_fibers")
-        .fireResistant()
     // 安山合金粒
     e.create("createdelight:andesite_alloy_nugget")
         .translationKey("item.createdelight.andesite_alloy_nugget")
@@ -80,11 +23,27 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.potato_stew_beef")
     // 河豚寿司
     e.create("createdelight:fugu_roll")
-        .translationKey("item.createdelight.fugu_roll")
         .food(food => {
             food.hunger(7)
                 .saturation(1)
         })
+        .translationKey("item.createdelight.fugu_roll")
+    e.create("createdelight:radgill_sushi")
+        .food(food => {
+            food.hunger(1)
+                .saturation(1)
+                .effect("alexscaves:irradiated", 1200, 2, 1.0)
+                .effect("minecraft:saturation", 1200, 0, 1.0)
+        })
+        .translationKey("item.createdelight.radgill_sushi")
+    // 深海寿司卷切片
+    e.create("createdelight:deep_sea_sushi_roll_slice")
+        .food(food => {
+            food.hunger(7)
+                .saturation(1)
+                .effect("alexscaves:deepsight", 1200, 0, 1.0)
+        })
+        .translationKey("item.createdelight.deep_sea_sushi_roll_slice")
     // 注册挂面
     e.create("createdelight:vermicelli")
         .translationKey("item.createdelight.vermicelli")
@@ -273,8 +232,8 @@ StartupEvents.registry("item", e => {
         .food(food => {
             food.hunger(1)
                 .saturation(0.5)
-                .effect("cosmopolitan:tracer", 600, 1, 1.0)
-                .effect("cosmopolitan:phototaxis", 600, 1, 1.0)
+                .effect("cosmopolitan:tracer", 600, 0, 1.0)
+                .effect("cosmopolitan:phototaxis", 600, 0, 1.0)
         })
         .tag("fruitsdelight:jello")
         .tag("diet:sugars")
@@ -286,7 +245,7 @@ StartupEvents.registry("item", e => {
         .food(f => {
             f.hunger(20)
                 .saturation(1)
-                .effect("farmersdelight:nourishment", 6000, 1, 1.0)
+                .effect("farmersdelight:nourishment", 6000, 0, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
                         if (!ea.player.isCreative()) {
@@ -302,12 +261,11 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:boiling_water_cabbage")
         .rarity("uncommon")
         .unstackable()
-        .translationKey("item.createdelight.boiling_water_cabbage")
         .food(food => {
             food.hunger(8)
                 .saturation(0.6)
-                .effect("minecraft:resistance", 500, 2, 1.0)
-                .effect("farmersdelight:nourishment", 3000, 1, 1.0)
+                .effect("minecraft:resistance", 400, 1, 0.5)
+                .effect("farmersdelight:nourishment", 3000, 0, 1.0)
                 .eaten(ea => {
                     ea.server.scheduleInTicks(1, func => {
                         if (!ea.player.isCreative()) {
@@ -318,6 +276,7 @@ StartupEvents.registry("item", e => {
                     })
                 })
         })
+        .translationKey("item.createdelight.boiling_water_cabbage")
     // 玉米热狗相关
     e.create("createdelight:mayo_corn_dog")
         .food(food => {
@@ -377,7 +336,7 @@ StartupEvents.registry("item", e => {
         .food(f => {
             f.hunger(6)
                 .saturation(1.2)
-                .effect("minecraft:saturation", 600, 0, 1.0)
+                .effect("minecraft:saturation", 20, 0, 1.0)
                 .effect("farmersdelight:nourishment", 3600, 0, 1.0)
         })
         .glow(true)
@@ -399,8 +358,19 @@ StartupEvents.registry("item", e => {
         .tag("create:blaze_burner_fuel/special")
         .translationKey("item.createdelight.fuel_hotcream")
     //未完成的寿司
-    e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
-        .translationKey("item.createdelight.sushi_unrolledroll")
+    // e.create("createdelight:sushi_unrolledroll", "create:sequenced_assembly")
+    //     .translationKey("item.createdelight.sushi_unrolledroll")
+    e.create("createdelight:incomplete_gunkan", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_gunkan")
+    e.create("createdelight:incomplete_nigiri", "create:sequenced_assembly")
+        .texture("createdelight:item/empty_riceball")
+        .translationKey("item.createdelight.incomplete_nigiri")
+    e.create("createdelight:incomplete_hosomaki", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_hosomaki")
+    e.create("createdelight:incomplete_futomaki", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_futomaki")
+    e.create("createdelight:incomplete_california", "create:sequenced_assembly")
+        .translationKey("item.createdelight.incomplete_california")
 
     // 未完成相关
     e.create("createdelight:incomplete_layered_magnet", "create:sequenced_assembly")
@@ -461,8 +431,12 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:incomplete_gas_pistol_ammo", "create:sequenced_assembly")
         .texture("create:item/copper_sheet")
         .translationKey("item.createdelight.incomplete_gas_pistol_ammo")
+    e.create("createdelight:guncotton")
+        .translationKey("item.createdelight.guncotton")
 
-
+    // 订单交付器
+    e.create("createdelight:order_deliverer_item")
+        .translationKey("item.createdelight.order_deliverer_item")
     // 测试剑
     // e.create("createdelight:sigma_man_sword", "sword")
     //     .tier("netherite")
@@ -700,25 +674,10 @@ StartupEvents.registry("item", e => {
     // ["charged_staff", "entropy_manipulator", "blank_pattern"]
     // e.create("createdelight:incomplete_", "create:sequenced_assembly").translationKey("item.createdelight.incomplete_").texture("ae2:item/")
     // 
-    //龙炎钢插板
-    e.create("createdelight:fire_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.fire_dragonsteel_armorplate")
-    //龙霜钢插板
-    e.create("createdelight:ice_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.ice_dragonsteel_armorplate")
-    //龙霆钢插板
-    e.create("createdelight:lightning_dragonsteel_armorplate")
-        .maxDamage(3000)
-        .rarity("uncommon")
-        .tag("protection_pixel:plates")
-        .translationKey("item.createdelight.lightning_dragonsteel_armorplate")
-
+    e.create("createdelight:steel_sheet")
+        .tag("forge:plates")
+        .tag("forge:plates/steel")
+        .translationKey("item.createdelight.steel_sheet")
     //采血器
     e.create("createdelight:blood_collection_device")
         .translationKey("item.createdelight.blood_collection_device")
@@ -771,5 +730,31 @@ StartupEvents.registry("item", e => {
     dread_upgrade.ingredientSlotDescriptionText = Text.translate("item.createdelight.smithing_template.dread_upgrade.additions_slot_description").blue()
     dread_upgrade.displayName(Component.translate("item.createdelight.dread_upgrade_smithing_template").blue())
 
+    //注册氧气罐
+    e.create("createdelight:oxygen_tank")
+        .translationKey("item.createdelight.oxygen_tank")
+        .tag("northstar:oxygen_sources")
+        .tag("northstar:oxygen_sealing")
+        .tag("northstar:insulating")
+        .tag("curios:back")
+        .tag("curios:body")
+        .tooltip("§b放在饰品栏中，为你提供氧气")
+        .tooltip("§e可提供些许保暖效果")
+        .texture("createdelight:item/oxygen_tank")
+        .unstackable()
+
+    //注册坚固氧气罐
+    e.create("createdelight:sturdy_oxygen_tank")
+        .translationKey("item.createdelight.sturdy_oxygen_tank")
+        .tag("northstar:oxygen_sources_2")
+        .tag("northstar:oxygen_sealing")
+        .tag("northstar:insulating_2")
+        .tag("northstar:heat_resistant_2")
+        .tag("curios:back")
+        .tag("curios:body")
+        .tooltip("§b放在饰品栏中，为你提供更多氧气")
+        .tooltip("§e可提供不错的保暖和耐热效果")
+        .texture("createdelight:item/sturdy_oxygen_tank")
+        .unstackable()
 })
 

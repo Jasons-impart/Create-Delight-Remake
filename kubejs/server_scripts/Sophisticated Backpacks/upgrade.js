@@ -30,7 +30,7 @@ ServerEvents.recipes((e) => {
   }).id("sophisticatedbackpacks:stack_upgrade_tier_4");
   // 替换配方：喂食升级
   e.shaped("sophisticatedbackpacks:feeding_upgrade", ["ABA", "CDE", "AFA"], {
-    A: "ad_astra:cheese",
+    A: "trailandtales_delight:cheese_slice",
     B: "minecraft:golden_carrot",
     C: "minecraft:golden_apple",
     D: "sophisticatedbackpacks:upgrade_base",

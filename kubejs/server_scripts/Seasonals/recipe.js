@@ -20,7 +20,7 @@ ServerEvents.recipes(e => {
         "neapolitan:chocolate_cake",
         '#alexscaves:sweet_berries'
     ])
-        .id("neapolitan:deploying/sweet_berry_cake")
+        .id("createdelight:deploying/sweet_berry_cake")
     
     create.filling("seasonals:glazed_sweet_berries", ["minecraft:sweet_berries", FluidIngredients("forge:honey", 50)])
     .id("seasonals:filling/glazed_sweet_berries")

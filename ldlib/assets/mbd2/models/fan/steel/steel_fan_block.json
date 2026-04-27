@@ -1,0 +1,7 @@
+{
+    "parent": "mbd2:fan/fan_block",
+    "textures": {
+        "texture": "mbd2:block/steel_fan",
+        "particle": "mbd2:block/steel_fan"
+    }
+}

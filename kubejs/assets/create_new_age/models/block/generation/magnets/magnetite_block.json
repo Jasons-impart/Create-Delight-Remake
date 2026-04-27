@@ -1,6 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "create_new_age:block/magnetite_block"
-  }
-}

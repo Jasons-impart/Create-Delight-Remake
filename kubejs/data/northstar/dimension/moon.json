@@ -1,0 +1,243 @@
+{
+  "type": "northstar:moon",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "northstar:moon",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "northstar:lunar_plains",
+          "parameters": {
+            "temperature": [
+              0.55,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -1,
+              -0.375
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.7666
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_hills",
+          "parameters": {
+            "temperature": [
+              -2,
+              -1
+            ],
+            "humidity": [
+              -0.1,
+              0.1
+            ],
+            "continentalness": [
+              -0.11,
+              1
+            ],
+            "erosion": [
+              -1,
+              -0.7799
+            ],
+            "weirdness": [
+              -1,
+              -0.9333
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_crater_fields",
+          "parameters": {
+            "temperature": [
+              0.5,
+              2
+            ],
+            "humidity": [
+              -0.35,
+              -0.1
+            ],
+            "continentalness": [
+              -0.11,
+              1
+            ],
+            "erosion": [
+              0.55,
+              1
+            ],
+            "weirdness": [
+              -1,
+              -0.9333
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_ice_caves",
+          "parameters": {
+            "temperature": [
+              -2,
+              0
+            ],
+            "humidity": [
+              -2,
+              0
+            ],
+            "continentalness": [
+              2,
+              2
+            ],
+            "erosion": [
+              -1,
+              1
+            ],
+            "weirdness": [
+              1,
+              2
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_asurine_caves",
+          "parameters": {
+            "temperature": [
+              -1,
+              1
+            ],
+            "humidity": [
+              -1,
+              1
+            ],
+            "continentalness": [
+              -2,
+              -1.9
+            ],
+            "erosion": [
+              -2,
+              -0.3
+            ],
+            "weirdness": [
+              -2,
+              -0.5
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_glowstone_cavern",
+          "parameters": {
+            "temperature": [
+              -2,
+              2
+            ],
+            "humidity": [
+              0.8,
+              1.4
+            ],
+            "continentalness": [
+              1,
+              1.5
+            ],
+            "erosion": [
+              -1.5,
+              -1
+            ],
+            "weirdness": [
+              1.5,
+              2
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:lunar_cooled_lava_cave",
+          "parameters": {
+            "temperature": [
+              -2,
+              -1
+            ],
+            "humidity": [
+              -2,
+              -1
+            ],
+            "continentalness": [
+              1.7,
+              2
+            ],
+            "erosion": [
+              -1.6,
+              1
+            ],
+            "weirdness": [
+              -2,
+              2
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "alexscaves:magnetic_caves",
+          "parameters": {
+            "temperature": [
+              -1,
+              -0.5
+            ],
+            "humidity": [
+              -1,
+              -0.5
+            ],
+            "continentalness": [
+              2,
+              2
+            ],
+            "erosion": [
+              0,
+              2
+            ],
+            "weirdness": [
+              -1,
+              1
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

@@ -11,5 +11,5 @@ ServerEvents.recipes(e => {
         "conditional:create/mixing/white_savanna_grape_juice_mixing"
     ])
 
-    create.haunting("vinery:rotten_cherry", "vinery:cherry").id("vinery:haunting/rotten_cherry")
+    create.haunting("vinery:rotten_cherry", "vinery:cherry").id("createdelight:haunting/rotten_cherry")
 })

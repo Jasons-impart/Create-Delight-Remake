@@ -1,0 +1,151 @@
+#Whether Obscure Tooltips should be active at all.
+enabled = true
+#Whether Obscure Tooltips should display the second line in the tooltip header.
+labelsEnabled = true
+#Whether Obscure Tooltips should display drop shadows.
+shadowsEnabled = true
+#The opacity of the drop shadows.
+#Range: 0.0 ~ 1.0
+shadowOpacity = 0.3
+#The margin (in pixels) between the tooltip frame and its content.
+#Range: 0 ~ 16
+contentMargin = 2
+#Whether to show a hint about enabling the built-in Vibrant Tooltips resource pack on game start.
+#Automatically disabled after being shown once.
+showVibrantTooltipsHint = false
+#List of item IDs that should be ignored by Obscure Tooltips.
+ignoredItems = ["quality_equipment:reforge_gui_button"]
+
+[Sounds]
+	#Whether Obscure Tooltips should play sound effects.
+	soundsEnabled = true
+	#The volume multiplier for tooltip sound effects.
+	#Range: 0.0 ~ 4.0
+	soundVolume = 1.0
+
+[Scrolling-and-Wrapping]
+	#Whether Obscure Tooltips should wrap lines in tooltips.
+	autoWrapEnabled = true
+	#Whether long tooltips should become scrollable when they exceed the screen height.
+	scrollEnabled = true
+	#How fast the tooltip scrolls when using the mouse wheel.
+	#Range: 1 ~ 64
+	scrollSpeed = 5
+	#Extra spacing (in pixels) above and below tooltip when scrolling is enabled.
+	#Range: 0 ~ 64
+	scrollMargin = 10
+
+[Model-Preview]
+	#Whether Obscure Tooltips should display 3D armor previews.
+	armorPreviewEnabled = true
+	#Width of the 3D armor preview in pixels.
+	#Range: 16 ~ 128
+	armorPreviewWidth = 40
+	#List of item IDs that should always display a 3D armor preview.
+	armorPreviewWhitelist = []
+	#List of item IDs that should never display a 3D armor preview.
+	armorPreviewBlacklist = []
+	#Whether Obscure Tooltips should display 3D tool/weapon previews.
+	toolPreviewEnabled = true
+	#Width of the 3D tool/weapon preview in pixels.
+	#Range: 16 ~ 128
+	toolPreviewWidth = 30
+	#List of item IDs that should always display a 3D tool/weapon preview.
+	toolPreviewWhitelist = ["minecraft:trident", "minecraft:bow", "minecraft:crossbow"]
+	#List of item IDs that should never display a 3D tool/weapon preview.
+	toolPreviewBlacklist = []
+
+[Styles]
+
+	[Styles.1-Default]
+		#Color in #AARRGGBB format.
+		defaultPanelBackgroundTop = "#F0100010"
+		#Color in #AARRGGBB format.
+		defaultPanelBackgroundBottom = "#F0100010"
+		#Color in #AARRGGBB format.
+		defaultPanelBorderTop = "#505000FF"
+		#Color in #AARRGGBB format.
+		defaultPanelBorderBottom = "#5028007F"
+
+	[Styles.2-Uncommon-Items]
+		#Whether Obscure Tooltips should display a unique style for uncommon items.
+		uncommonStyleEnabled = true
+		#Color in #AARRGGBB format.
+		uncommonPanelBackgroundTop = "#F0100010"
+		#Color in #AARRGGBB format.
+		uncommonPanelBackgroundBottom = "#F0100010"
+		#Color in #AARRGGBB format.
+		uncommonPanelBorderTop = "#80FF9019"
+		#Color in #AARRGGBB format.
+		uncommonPanelBorderBottom = "#6075350B"
+
+	[Styles.3-Rare-Items]
+		#Whether Obscure Tooltips should display a unique style for rare items.
+		rareStyleEnabled = true
+		#Color in #AARRGGBB format.
+		rarePanelBackgroundTop = "#F0100010"
+		#Color in #AARRGGBB format.
+		rarePanelBackgroundBottom = "#F0100010"
+		#Color in #AARRGGBB format.
+		rarePanelBorderTop = "#80BBBBCC"
+		#Color in #AARRGGBB format.
+		rarePanelBorderBottom = "#60606070"
+
+	[Styles.4-Epic-Items]
+		#Whether Obscure Tooltips should display a unique style for epic items.
+		epicStyleEnabled = true
+		#Color in #AARRGGBB format.
+		epicPanelBackgroundTop = "#F0100010"
+		#Color in #AARRGGBB format.
+		epicPanelBackgroundBottom = "#F0100010"
+		#Color in #AARRGGBB format.
+		epicPanelBorderTop = "#80FFBB00"
+		#Color in #AARRGGBB format.
+		epicPanelBorderBottom = "#60AA5000"
+		#Color in #AARRGGBB format.
+		epicRayGlowPrimary = "#FFF00FFF"
+		#Color in #AARRGGBB format.
+		epicRayGlowSecondary = "#FFFF5E0F"
+		#Color in #AARRGGBB format.
+		epicShimmerInner = "#30F00FFF"
+		#Color in #AARRGGBB format.
+		epicShimmerOuter = "#00FF00FF"
+		#Color in #AARRGGBB format.
+		epicShimmerAccent = "#BBF88FFF"
+
+	[Styles.5-Enchanted-Items]
+		#Whether Obscure Tooltips should display a unique style for enchanted items.
+		enchantedStyleEnabled = true
+		#Color in #AARRGGBB format.
+		enchantedParticleCenter = "#80FF80FF"
+		#Color in #AARRGGBB format.
+		enchantedParticleEdge = "#00AA40AA"
+		#Color in #AARRGGBB format.
+		enchantedGlintPrimaryWave = "#60FABF16"
+		#Color in #AARRGGBB format.
+		enchantedGlintPrimaryWaveGlow = "#40FA9F16"
+		#Color in #AARRGGBB format.
+		enchantedGlintSecondaryWave = "#50D816FA"
+		#Color in #AARRGGBB format.
+		enchantedGlintSecondaryWaveGlow = "#30D816FA"
+		#Color in #AARRGGBB format.
+		enchantedGlintRing = "#50FFAAFF"
+
+	[Styles.6-Cursed-Items]
+		#Whether Obscure Tooltips should display a unique style for cursed items.
+		cursedStyleEnabled = true
+		#Color in #AARRGGBB format.
+		cursedParticleCenter = "#80FF2080"
+		#Color in #AARRGGBB format.
+		cursedParticleEdge = "#00AA2040"
+		#Color in #AARRGGBB format.
+		cursedGlintPrimaryWave = "#60FA1693"
+		#Color in #AARRGGBB format.
+		cursedGlintPrimaryWaveGlow = "#40FA1679"
+		#Color in #AARRGGBB format.
+		cursedGlintSecondaryWave = "#50E23131"
+		#Color in #AARRGGBB format.
+		cursedGlintSecondaryWaveGlow = "#30E23131"
+		#Color in #AARRGGBB format.
+		cursedGlintRing = "#50FFABAA"
+

@@ -1,0 +1,7 @@
+{
+  "parent": "youkaishomecoming:table/open_futomaki/ingredient_2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "ingredient": "youkaishomecoming:block/table/ingredient/sea_pickle"
+  }
+}

@@ -16,7 +16,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/slime.png"
+			image: "minecraft:item/slime_ball"
 			rotation: 0.0d
 			width: 2.0d
 			x: 0.5d
@@ -24,7 +24,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/enderman.png"
+			image: "quark:block/ender_watcher"
 			rotation: 0.0d
 			width: 2.0d
 			x: 3.0d
@@ -32,7 +32,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/blaze.png"
+			image: "quark:block/blaze_lantern"
 			rotation: 0.0d
 			width: 2.0d
 			x: -2.5d
@@ -40,7 +40,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ftbchunks:textures/faces/minecraft/ghast.png"
+			image: "dungeonsdelight:item/ghastly_spirits"
 			rotation: 0.0d
 			width: 2.0d
 			x: -5.0d
@@ -73,36 +73,12 @@
 			y: 9.5d
 		}
 		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/wither_skeleton.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -2.5d
-			y: 8.5d
-		}
-		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/piglin_brute.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -1.5d
-			y: 9.5d
-		}
-		{
 			height: 2.0d
 			image: "minecraft:item/nether_star"
 			rotation: 0.0d
 			width: 2.0d
 			x: -2.55d
 			y: 10.0d
-		}
-		{
-			height: 1.0d
-			image: "ftbchunks:textures/faces/minecraft/blaze.png"
-			rotation: 0.0d
-			width: 1.0d
-			x: -3.5d
-			y: 9.5d
 		}
 		{
 			height: 2.0d
@@ -122,7 +98,7 @@
 		}
 		{
 			height: 2.0d
-			image: "ad_astra:textures/painting/moon.png"
+			image: "northstar:textures/environment/moon_close.png"
 			rotation: 0.0d
 			width: 2.0d
 			x: 8.0d
@@ -306,12 +282,12 @@
 					type: "item"
 				}
 				{
-					id: "6C8AD2540108F3C3"
+					id: "2A73EB28223CFDD0"
 					item: {
 						Count: 1
 						id: "gateways:gate_pearl"
 						tag: {
-							gateway: "gateways:basic/slime"
+							gateway: "gateways:basic/blaze"
 						}
 					}
 					type: "item"
@@ -431,7 +407,7 @@
 		}
 		{
 			dependencies: ["4321131AB2437B04"]
-			description: ["         下界要塞（Nether Fortress）是一种自然生成于下界的结构，由许多桥梁、走廊与塔楼组成。但是实际上这些怪物并非来自于下届要塞，它们更加强大，令人恐惧。这让我们意识到，也许在某处，存在着不同于这个世界的结构，而裂隙正是两个世界或维度之间联系的桥梁。"]
+			description: ["         下界要塞（Nether Fortress）是一种自然生成于下界的结构，由许多桥梁、走廊与塔楼组成。但是实际上这些怪物并非来自于下界要塞，它们更加强大，令人恐惧。这让我们意识到，也许在某处，存在着不同于这个世界的结构，而裂隙正是两个世界或维度之间联系的桥梁。"]
 			id: "14BAD5E84CB36736"
 			rewards: [
 				{

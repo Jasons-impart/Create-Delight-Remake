@@ -33,16 +33,16 @@ ServerEvents.recipes(e => {
             "#forge:cheese",
             "#forge:milk"
         ], "2x casualness_delight:phantom_puff", 1.0, 200
-    ).id("casualness_delight:cooking/phantom_puff")
+    ).id("createdelight:cooking/phantom_puff")
     // 奶酪相关
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
     combination(e, [
         "create:dough",
+        "trailandtales_delight:cheese_slice",
         "minecraft:carrot",
         "minecraft:beetroot",
-        "minecraft:potato",
-        "ad_astra:cheese"
+        "minecraft:potato"
     ], "refurbished_furniture:raw_vegetable_pizza", 1)
     cutting(e, "refurbished_furniture:cooked_meatlovers_pizza", [["refurbished_furniture:meatlovers_pizza_slice", 4]])
     cutting(e, "refurbished_furniture:cooked_vegetable_pizza", [["refurbished_furniture:vegetable_pizza_slice", 4]])
@@ -55,10 +55,10 @@ ServerEvents.recipes(e => {
     ], "refurbished_furniture:raw_meatlovers_pizza", 1)
     combination(e, [
         "create:dough",
-        "ad_astra:cheese",
-        "ad_astra:cheese",
-        "ad_astra:cheese",
-        "ad_astra:cheese"
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice",
+        "trailandtales_delight:cheese_slice"
     ], "createdelight:raw_cheese_pizza", 1)
     baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 300)
     e.recipes.farmersdelight.cooking([
@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
         "farmersdelight:pie_crust",
         "#forge:cheese",
     ], "farmersdelight:sweet_berry_cheesecake", 1.0, 200)
-        .id("farmersdelight:sweet_berry_cheesecake")
+        .id("createdelight:sweet_berry_cheesecake")
 })
 
 BlockEvents.rightClicked(e => {
@@ -84,7 +84,7 @@ BlockEvents.rightClicked(e => {
             }
             else
                 block.set("air")
-            block.popItem("ad_astra:cheese")
+            block.popItem("trailandtales_delight:cheese_slice")
             e.cancel()
         }
     }

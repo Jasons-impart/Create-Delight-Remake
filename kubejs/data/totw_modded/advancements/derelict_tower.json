@@ -1,0 +1,35 @@
+{
+    "parent": "totw_modded:root",
+    "display": {
+        "icon": {
+            "item": "minecraft:cracked_deepslate_bricks"
+        },
+        "title": {
+            "translate": "totw_modded.advancement.derelict_tower.title"
+        },
+        "description": {
+            "translate": "totw_modded.advancement.derelict_tower.description"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "derelict": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "player": {
+                    "location": {
+                        "structure": "totw_modded:derelict"
+                    }
+                }
+            }
+        }
+    },
+    "requirements": [
+        [
+            "derelict"
+        ]
+    ]
+}

@@ -17,10 +17,10 @@ ServerEvents.recipes(e => {
         E: "create_sa:large_fueling_tank",
         F: "create_sa:brass_jetpack_chestplate",
         G: "create_sa:large_filling_tank",
-        H: "ad_astra:fan",
+        H: "create:propeller",
         I: "minecraft:elytra"
     })
-    .id("create_jetpack:jetpack")
+    .id("createdelight:jetpack")
     e.recipes.create.mechanical_crafting("create_jetpack:netherite_jetpack", [
         " ABA ",
         "ACDCA",
@@ -35,8 +35,8 @@ ServerEvents.recipes(e => {
         E: "create_sa:large_fueling_tank",
         F: "create_sa:brass_jetpack_chestplate",
         G: "create_sa:large_filling_tank",
-        H: "ad_astra:fan",
+        H: "create:propeller",
         I: "minecraft:elytra"
     })
-    .id("create_jetpack:netherite_jetpack")
+    .id("createdelight:netherite_jetpack")
 })

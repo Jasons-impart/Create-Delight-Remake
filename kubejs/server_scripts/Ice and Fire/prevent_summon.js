@@ -11,7 +11,7 @@ EntityEvents.spawned(e => {
     ]
     // 悚怖怪生成
     if (dread_monster.indexOf(e.entity.type) != -1) {
-        if (e.level.dimension != "ad_astra:glacio") {
+        if (e.level.dimension != "northstar:mars") {
             e.cancel()
         }
     }

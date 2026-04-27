@@ -1,0 +1,169 @@
+{
+  "type": "northstar:mars",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "northstar:mars",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "northstar:martian_dunes",
+          "parameters": {
+            "temperature": [
+              0.55,
+              1
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              -0.19,
+              -0.11
+            ],
+            "erosion": [
+              -1,
+              -0.375
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.7666
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:martian_peaks",
+          "parameters": {
+            "temperature": [
+              -1,
+              -0.45
+            ],
+            "humidity": [
+              0,
+              2
+            ],
+            "continentalness": [
+              0.4,
+              1
+            ],
+            "erosion": [
+              -1,
+              -0.7699
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.9166
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:martian_magmatic_caves",
+          "parameters": {
+            "temperature": -1,
+            "humidity": 0,
+            "continentalness": [
+              0,
+              1
+            ],
+            "erosion": [
+              -1,
+              0
+            ],
+            "weirdness": -1.5,
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:martian_crimsite_caverns",
+          "parameters": {
+            "temperature": 1.4,
+            "humidity": -0.3,
+            "continentalness": [
+              0.5,
+              1
+            ],
+            "erosion": [
+              -1,
+              0
+            ],
+            "weirdness": [
+              -1.5,
+              -1.25
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:martian_highlands",
+          "parameters": {
+            "temperature": [
+              -1,
+              -0.75
+            ],
+            "humidity": [
+              -1,
+              -0.35
+            ],
+            "continentalness": [
+              0.3,
+              1
+            ],
+            "erosion": [
+              -1,
+              -0.475
+            ],
+            "weirdness": [
+              -0.9333,
+              -0.7666
+            ],
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "northstar:martian_overgrown_caverns",
+          "parameters": {
+            "temperature": [
+              -2,
+              1
+            ],
+            "humidity": [
+              -1,
+              2
+            ],
+            "continentalness": [
+              -2,
+              -1.7
+            ],
+            "erosion": [
+              0.5,
+              2
+            ],
+            "weirdness": [
+              0,
+              1
+            ],
+            "depth": [
+              1.5,
+              2
+            ],
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}
+

@@ -76,7 +76,7 @@ ServerEvents.recipes(e => {
             'minecraft:cookie',
             Fluid.of("cosmopolitan:birch_sap", 250)
         ]
-    ).id("cosmopolitan:general/birch_cookie")
+    ).id("createdelight:general/birch_cookie")
 })
     // 白桦曲奇清除挖掘疲劳
     ItemEvents.foodEaten("cosmopolitan:birch_cookie", e => {

@@ -12,8 +12,25 @@ ServerEvents.recipes(e => {
         "create_sa:experience_sword_recipe",
         "create_enchantment_industry:compat/create_sa/disenchanting/experience_heap",
         "create_sa:zinc_handle_recipe",
-        "create_sa:block_picker_recipe"
+        "create_sa:block_picker_recipe",
+        "create_sa:flamethrower_recipe",
+        "create_sa:copper_magnet_recipe",
     ])
+    remove_recipes_output(e, [
+        "create_sa:heat_engine",
+        "create_sa:steam_engine",
+        "create_sa:hydraulic_engine"
+    ])
+    e.shaped("create_sa:copper_magnet",
+        [
+            "AAA",
+            "ABA",
+            "AAA"
+        ], {
+            A: "create:copper_sheet",
+            B: "create_new_age:magnetite_block",
+        }
+    ).id("createdelight_sa:copper_magnet_recipe")
     let iner_1 = "create_sa:incomplete_hydraulic_engine"
     e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:precision_mechanism", [
         e.recipes.create.filling(iner_1, [iner_1, Fluid.of("createmetallurgy:molten_copper", 450)]),
@@ -23,7 +40,7 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_1)
-        .id("create_sa:hydraulic_engine_recipe")
+        .id("createdelight:hydraulic_engine_recipe")
     {
         let iner_1 = "create_sa:incomplete_hydraulic_engine"
         e.recipes.create.sequenced_assembly("create_sa:hydraulic_engine", "create:copper_sheet", [
@@ -35,17 +52,17 @@ ServerEvents.recipes(e => {
         )
             .loops(3)
             .transitionalItem(iner_1)
-            .id("create_sa:hydraulic_engine_recipe_2")
+            .id("createdelight:hydraulic_engine_recipe_2")
     }
     let iner_2 = "create_sa:incomplete_heat_engine"
     e.recipes.create.sequenced_assembly("create_sa:heat_engine", "create_sa:hydraulic_engine", [
         e.recipes.create.filling(iner_2, [iner_2, Fluid.of("createdelightcore:molten_andesite", 450)]),
         e.recipes.create.deploying(iner_2, [iner_2, "#forge:spring/between_500_2_1000"]),
-        e.recipes.create.deploying(iner_2, [iner_2, "createmetallurgy:coke"])
+        e.recipes.create.deploying(iner_2, [iner_2, "#forge:nuggets/tungsten"])
     ])
         .loops(1)
         .transitionalItem(iner_2)
-        .id("create_sa:heat_engine_recipe")
+        .id("createdelight:heat_engine_recipe")
     let iner_3 = "create_sa:incomplete_steam_engine"
     e.recipes.create.sequenced_assembly("create_sa:steam_engine", "create_sa:heat_engine", [
         e.recipes.create.filling(iner_3, [iner_3, Fluid.of("createmetallurgy:molten_brass", 450)]),
@@ -54,7 +71,7 @@ ServerEvents.recipes(e => {
     ])
         .loops(1)
         .transitionalItem(iner_3)
-        .id("create_sa:steam_engine_recipe")
+        .id("createdelight:steam_engine_recipe")
     // e.recipes.create.mechanical_crafting(
     //     "create_sa:brass_jetpack_chestplate", [
     //     "ABA",
@@ -66,7 +83,7 @@ ServerEvents.recipes(e => {
     //     C: "create_sa:steam_engine",
     //     D: "create_sa:andesite_jetpack_chestplate"
     // }
-    // ).id("create_sa:brass_jetpack_recipe")
+    // ).id("createdelight_sa:brass_jetpack_recipe")
     // e.recipes.create.mechanical_crafting(
     //     "create_sa:brass_exoskeleton_chestplate", [
     //     "ABA",
@@ -78,7 +95,7 @@ ServerEvents.recipes(e => {
     //     C: "create_sa:steam_engine",
     //     D: "create_sa:andesite_exoskeleton_chestplate"
     // }
-    // ).id("create_sa:brass_exoskeleton_recipe")
+    // ).id("createdelight_sa:brass_exoskeleton_recipe")
     e.recipes.create.mechanical_crafting(
         "create_sa:andesite_exoskeleton_chestplate",
         [
@@ -93,5 +110,5 @@ ServerEvents.recipes(e => {
         E: "#forge:ingots/zinc",
         F: "#forge:stone"
     }
-    ).id("create_sa:mechanical_crafting/andesite_exoskeleton_recipe")
+    ).id("createdelight_sa:mechanical_crafting/andesite_exoskeleton_recipe")
 })

@@ -1,4 +1,9 @@
 {
   "item.youkaishomecoming.onigili": "蔬菜饭团",
-  "block.youkaishomecoming.wild_black_grape": "野生针叶林红葡萄"
+  "block.youkaishomecoming.wild_black_grape": "野生针叶林红葡萄",
+  "item.youkaishomecoming.flesh_roll": "怪肉手握寿司",
+  "advancements.youkaishomecoming.advancements.main.coffea.description": "种植咖啡树",
+  "advancements.youkaishomecoming.advancements.main.coffea.title": "种植咖啡树",
+  "advancements.youkaishomecoming.advancements.main.redbean.description": "在砂土上种植红豆",
+  "advancements.youkaishomecoming.advancements.main.redbean.title": "耐瘠薄赤小豆"
 }

@@ -124,7 +124,7 @@ ServerEvents.recipes(e => {
             "#forge:cheese"
        ],
        'cavedelight:tectonic_cheesecake', 4.0, 200
-    ).id("cavedelight:tectonic_cheesecake")
+    ).id("createdelight:tectonic_cheesecake")
     e.recipes.farmersdelight.cooking(
         [
             "trailandtales_delight:cherry_petal",
@@ -135,7 +135,7 @@ ServerEvents.recipes(e => {
             "#forge:cheese"
        ],
        'trailandtales_delight:cherry_cheese_pie', 4.0, 200
-    ).id("trailandtales_delight:cherry_cheese_pie")
+    ).id("createdelight:cherry_cheese_pie")
     e.recipes.farmersdelight.cooking(
         [
             'trailandtales_delight:cherry_cheese_slice',
@@ -143,7 +143,7 @@ ServerEvents.recipes(e => {
             'trailandtales_delight:cherry_cheese_slice'
         ],
         'trailandtales_delight:cherry_cheese_pie', 1.0, 200
-    ).id("trailandtales_delight:cherry_cheese_pie_2")
+    ).id("createdelight:cherry_cheese_pie_2")
     e.recipes.farmersdelight.cooking(
         [
             'alexscaves:pine_nuts',
@@ -154,7 +154,7 @@ ServerEvents.recipes(e => {
             "#forge:cheese"
        ],
        'cavedelight:pinenut_pie', 4.0, 200
-    ).id("cavedelight:pinenut_pie")
+    ).id("createdelight:pinenut_pie")
     e.recipes.farmersdelight.cooking(
         [
             'minecraft:cornflower',
@@ -165,5 +165,5 @@ ServerEvents.recipes(e => {
             '#forge:eggs'
        ],
        'youkaishomecoming:tarte_lune', 4.0, 200
-    ).id("youkaishomecoming:tarte_lune")
+    ).id("createdelight:tarte_lune")
 })

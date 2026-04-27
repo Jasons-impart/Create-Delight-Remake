@@ -22,12 +22,12 @@ ServerEvents.recipes(e => {
             Fluid.of("luncheonmeatsdelight:flesh_mud", 250),
             'minecraft:sugar'
         ]
-    ).id("ratatouille:squeezing/raw_sausage")
+    ).id("createdelight:squeezing/raw_sausage")
     e.recipes.kubejs.shapeless(
         "mynethersdelight:hotdog",
         [
             "#forge:sausage/cooked",
             "#forge:bread"
         ]
-    ).id("mynethersdelight:hotdog")
+    ).id("createdelight:hotdog")
 })

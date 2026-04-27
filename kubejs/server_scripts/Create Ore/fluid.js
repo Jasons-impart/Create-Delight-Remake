@@ -21,7 +21,6 @@ ServerEvents.recipes(e => {
 })
 
 ServerEvents.tags("minecraft:worldgen/biome", e => {
-    e.add("createdelight:has_cryo_fuel", "ad_astra:glacio_ice_peaks")
     e.add("createdelight:has_cocoa_liquor", ["alexscaves:candy_cavity"])
     e.add("createdelight:has_honey",
         [

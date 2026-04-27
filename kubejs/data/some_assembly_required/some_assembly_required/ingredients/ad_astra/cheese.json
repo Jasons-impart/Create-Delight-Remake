@@ -2,7 +2,7 @@
     "conditions": [
         {
             "type": "forge:mod_loaded",
-            "modid": "ad_astra"
+            "modid": "trailandtales_delight"
         }
     ],
     "displayItem": {
@@ -11,6 +11,6 @@
             "Color": 15576613
         }
     },
-    "item": "ad_astra:cheese",
+    "item": "trailandtales_delight:cheese_slice",
     "soundEvent": "some_assembly_required:block.sandwich.add_item.moist"
 }

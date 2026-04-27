@@ -13,5 +13,5 @@ ServerEvents.recipes(e => {
             "#forge:mushrooms",
             "createdelight:vermicelli"
         ], "ends_delight:ender_noodle", 1.0, 200
-    ).id("ends_delight:food/ender_noodle")
+    ).id("createdelight:food/ender_noodle")
 })

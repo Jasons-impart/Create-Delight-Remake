@@ -13,69 +13,61 @@ Ponder.registry((event) => {
         scene.showBasePlate();
 
         // 设置转速(不设置默认256)
-        scene.world.setKineticSpeed(util.select.everywhere(), 32);
-        scene.world.setKineticSpeed(util.grid.at(1, 0, 0), -32);
+        PonderUtil.setKineticSpeed(scene, util.select.everywhere(), 64);
+        PonderUtil.setKineticSpeed(scene, [1, 0, 0], -64);
 
         // 开始bb
         scene.idle(20);
-        scene.world.showSection(util.select.fromTo(1, 1, 0, 4, 1, 1), Direction.up);
-        scene.world.showSection(util.select.fromTo(4, 1, 2, 4, 3, 1), Direction.up);
-        scene.world.showSection(util.select.fromTo(1, 3, 1, 3, 3, 1), Direction.up);
-        scene.overlay.showOutline("green", {}, util.select.fromTo(3, 3, 1, 1, 3, 1), 100);
+        scene.world.showSection([1, 1, 0, 4, 1, 1], Direction.up);
+        scene.world.showSection([4, 1, 2, 4, 3, 1], Direction.up);
+        scene.world.showSection([1, 3, 1, 3, 3, 1], Direction.up);
+        scene.overlay.showOutline("green", {}, [3, 3, 1, 1, 3, 1], 40);
         scene.text(
-          100,
+          40,
           "按照配方搭建序列装配装置（啊好烦Jason自己完善说明吧）",
-          util.grid.at(2, 3, 1)
+          [2, 3, 1]
         );
-        scene.idle(100);
+        scene.idle(40);
 
         // 物品参数
         let materials = [
           {
-            position2: util.grid.at(3, 3, 1),
-            position: util.grid.at(3, 5, 1),
-            type: "create:cogwheel",
+            position2: [3, 3, 1],
+            position: [3.5, 6, 1.5],
+            type: Item.of("64x create:cogwheel"),
           },
           {
-            position2: util.grid.at(2, 3, 1),
-            position: util.grid.at(2, 5, 1),
-            type: "create:large_cogwheel",
+            position2: [2, 3, 1],
+            position: [2.5, 6, 1.5],
+            type: Item.of("64x create:large_cogwheel"),
           },
           {
-            position2: util.grid.at(1, 3, 1),
-            position: util.grid.at(1, 5, 1),
-            type: "minecraft:iron_nugget",
+            position2: [1, 3, 1],
+            position: [1.5, 6, 1.5],
+            type: Item.of("64x minecraft:iron_nugget"),
           },
         ];
 
         // 开始bb
-        scene.world.showSection(util.select.fromTo(3, 4, 1, 1, 4, 1), Direction.down);
-        scene.overlay.showOutline("green", {}, util.select.fromTo(3, 3, 1, 1, 3, 1), 100);
-        scene.text(100, "给机械手放材料（啊好烦Jason自己完善说明吧）", util.grid.at(2, 3, 1));
-        scene.idle(100);
+        scene.world.showSection([3, 4, 1, 1, 4, 1], Direction.down);
+        scene.overlay.showOutline("green", {}, [3, 3, 1, 1, 3, 1], 40);
+        scene.text(40, "给机械手放材料（啊好烦Jason自己完善说明吧）", [2, 3, 1]);
+        scene.idle(40);
 
         // 材料
         materials.forEach((material) => {
-          let i_k = scene.world.createItemEntity(material.position, Direction.up, material.type);
+          let i_k = scene.world.createItemEntity(material.position, [0, 0, 0], material.type);
           scene.idle(5);
-          scene.world.modifyEntity(i_k, (e) => {
-            e.kill();
-          });
-          scene.world.modifyBlockEntityNBT(material.position2, (nbt) =>
-            nbt.merge({
-              HeldItem: { Count: 64, id: material.type },
-              Inventory: [{ Count: 64, Slot: 0, id: material.type }],
-              Mode: "USE",
-            })
-          );
+          PonderUtil.removeEntity(scene, i_k)
+          PonderUtil.modifyDeployer(scene, material.position2, material.type, "USE")
         });
         scene.addKeyframe();
 
         scene.idle(40);
 
         // 开始bb
-        scene.overlay.showOutline("green", {}, util.grid.at(4, 1, 1), 100);
-        scene.text(100, "起点处放入输入材料（啊好烦Jason自己完善说明吧）", util.grid.at(4, 1, 1));
+        scene.overlay.showOutline("green", {}, [4, 1, 1], 40);
+        scene.text(40, "起点处放入输入材料（啊好烦Jason自己完善说明吧）", [4, 1, 1]);
         scene.idle(60);
 
         // 创建金板然后5刻后落到传送带上kill掉
@@ -85,91 +77,78 @@ Ponder.registry((event) => {
           "create:golden_sheet"
         );
         scene.idle(5);
-        scene.world.modifyEntity(item_1, (e) => {
-          e.kill();
-        });
+        PonderUtil.removeEntity(scene, item_1)
 
         // 创建在传送带上的金板
-        scene.world.createItemOnBeltLike(
-          util.grid.at(4, 1, 1),
-          Direction.down,
-          "create:golden_sheet"
-        );
+        let stall1 = PonderUtil.createItemOnBelt(scene, [4, 1, 1], Direction.down, "create:golden_sheet")
 
         // 开始加工
-        scene.idle(20);
-        scene.world.moveDeployer(util.grid.at(3, 3, 1), 1, 10);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(3, 3, 1), -1, 10);
-        scene.world.removeItemsFromBelt(util.grid.at(3, 1, 1));
-        let stall1 = scene.world.createItemOnBelt(
-          util.grid.at(3, 1, 1),
-          Direction.up,
-          "create:incomplete_precision_mechanism"
-        );
-        scene.world.stallBeltItem(stall1, false);
+        scene.idle(10);
+        PonderUtil.moveDeployer(scene, [3, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [3.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [3, 3, 1], -1, 10);
+        PonderUtil.changeBeltItemTo(scene, stall1, new Item.of("create:incomplete_precision_mechanism"))
+        PonderUtil.stallBeltItem(scene, stall1, false);
 
-        scene.world.moveDeployer(util.grid.at(2, 3, 1), 1, 25);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(2, 3, 1), -1, 25);
-        scene.world.stallBeltItem(stall1, false);
+        PonderUtil.moveDeployer(scene, [2, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [2.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [2, 3, 1], -1, 10);
+        PonderUtil.stallBeltItem(scene, stall1, false);
 
-        scene.world.moveDeployer(util.grid.at(1, 3, 1), 1, 25);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(1, 3, 1), -1, 25);
-        scene.world.stallBeltItem(stall1, true);
+        PonderUtil.moveDeployer(scene, [1, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [1.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [1, 3, 1], -1, 10);
+        PonderUtil.stallBeltItem(scene, stall1, true);
+        PonderUtil.stallBeltItem(scene, stall1, false);
 
-        scene.world.removeItemsFromBelt(util.grid.at(1, 1, 1));
-        scene.world.flapFunnel(util.grid.at(1, 2, 1), true);
         scene.idle(5);
 
         scene.addKeyframe();
 
-        scene.text(100, "如果为循环装配配方的话搭建个循环装置（待完善）");
-        scene.world.showSection(util.select.fromTo(1, 2, 1, 3, 2, 2), Direction.east);
-        scene.idle(100);
+        scene.text(40, "如果为循环装配配方的话搭建个循环装置（待完善）");
+        
+        scene.world.showSection([1, 2, 1, 3, 2, 2], Direction.east);
+        scene.idle(40);
 
-        scene.world.flapFunnel(util.grid.at(3, 2, 1), true);
+        PonderUtil.flapFunnel(scene, [3, 2, 1], true);
+        PonderUtil.flapFunnel(scene, [1, 2, 1], true);
 
-        let stall2 = scene.world.createItemOnBelt(
-          util.grid.at(3, 1, 1),
-          Direction.up,
-          "create:incomplete_precision_mechanism"
-        );
+        let stall2 = PonderUtil.createItemOnBelt(scene, [3, 1, 1], Direction.up, "create:incomplete_precision_mechanism");
 
         scene.idle(5);
-        scene.world.moveDeployer(util.grid.at(3, 3, 1), 1, 10);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(3, 3, 1), -1, 10);
-        scene.world.stallBeltItem(stall2, false);
+        PonderUtil.moveDeployer(scene, [3, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [3.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [3, 3, 1], -1, 10);
+        PonderUtil.stallBeltItem(scene, stall2, false);
 
-        scene.world.moveDeployer(util.grid.at(2, 3, 1), 1, 25);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(2, 3, 1), -1, 25);
-        scene.world.stallBeltItem(stall2, false);
+        PonderUtil.moveDeployer(scene, [2, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [2.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [2, 3, 1], -1, 10);
+        PonderUtil.stallBeltItem(scene, stall2, false);
 
-        scene.world.moveDeployer(util.grid.at(1, 3, 1), 1, 25);
-        scene.idle(40);
-        scene.world.moveDeployer(util.grid.at(1, 3, 1), -1, 25);
+        PonderUtil.moveDeployer(scene, [1, 3, 1], 1, 10);
+        scene.idle(10);
+        PonderUtil.spawnItemParticles(scene, [1.5, 1, 1.5], [0, 0, 0], Item.of("create:incomplete_precision_mechanism"), 5, 1)
+        PonderUtil.moveDeployer(scene, [1, 3, 1], -1, 10);
         scene.addKeyframe();
 
-        scene.world.removeItemsFromBelt(util.grid.at(1, 1, 1));
-        let stall3 = scene.world.createItemOnBelt(
-          util.grid.at(1, 1, 1),
-          Direction.up,
-          "create:precision_mechanism"
-        );
-        scene.world.setBlock(util.grid.at(0, 1, 1), "create:depot", false);
-        scene.world.showSection(util.grid.at(0, 1, 1), Direction.up);
-        scene.world.stallBeltItem(stall3, false);
+        PonderUtil.changeBeltItemTo(scene, stall2, new Item.of("create:precision_mechanism"))
+        scene.world.setBlock([0, 1, 1], "create:depot", false);
+        scene.world.showSection([0, 1, 1], Direction.up);
+        PonderUtil.stallBeltItem(scene, stall2, false);
 
         scene.idle(5);
 
         // 咕咕咕
 
-        scene.overlay.showOutline("white", {}, util.grid.at(0, 1, 1), 100);
+        scene.overlay.showOutline("white", {}, util.grid.at(0, 1, 1), 40);
         scene.text(
-          100,
+          40,
           "牛魔的这东西真的需要教吗\n西米不必不写思索，一定是西米不必干的！",
           util.grid.at(0, 1, 1)
         );

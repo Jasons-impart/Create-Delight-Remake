@@ -26,6 +26,7 @@
 !/curios-client.toml
 !/curios-common.toml
 !/eclipticseasons-common.toml
+!/endertrigon-common.toml
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
@@ -49,12 +50,12 @@
 !/vintageimprovements-client.toml
 xaerominimap_entities.json
 !/world-gen.json
+!/youkaishomecoming-common.toml
 !/ad_astra*
 !/chat_heads.json5
 !/xbob.json
 !/the_bumblezone
 !/farmersrespite-common.toml
-!/biomemusic.json
 !/colorfulhearts.toml
 !/alexscaves-client.toml
 !/DistantHorizons.toml
@@ -74,3 +75,9 @@ xaerominimap_entities.json
 !/advancements_tracker-client.toml
 !/kaleidoscope_doll-common.toml
 !/GeneralFeedback
+!/generalfeedback-common.toml
+!/create_cyber_goggles.toml
+!/tab
+!/Obscuria
+!/createlazytick-common.toml
+!/MouseTweaks.cfg

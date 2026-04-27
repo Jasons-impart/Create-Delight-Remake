@@ -13,10 +13,10 @@ ServerEvents.recipes(e => {
             "farmersdelight:beef_patty",
             "#forge:vegetables/cabbage",
             "#forge:vegetables/tomato",
-            "ad_astra:cheese",
+            "trailandtales_delight:cheese_slice",
             "#mynethersdelight:hot_spice"
         ]
-    ).id("vintagedelight:stuffed_burrito")
+    ).id("createdelight:stuffed_burrito")
     e.recipes.kubejs.shapeless(
         "mynethersdelight:spicy_skewer",
         [
@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
             "minecraft:blaze_rod",
             "vintagedelight:ghost_pepper"
         ]
-    ).id("mynethersdelight:crafting/spicy_skewer_2")
+    ).id("createdelight:crafting/spicy_skewer_2")
     e.recipes.farmersdelight.cooking(
         [
             "minecraft:blaze_powder",
@@ -34,5 +34,5 @@ ServerEvents.recipes(e => {
             "butchercraft:beef_stewmeat"
         ],
         "farmersrespite:blazing_chili", 1.0, 200, "minecraft:bowl"
-    ).id("mynethersdelight:cooking/blazing_chili")
+    ).id("createdelight:cooking/blazing_chili")
 })

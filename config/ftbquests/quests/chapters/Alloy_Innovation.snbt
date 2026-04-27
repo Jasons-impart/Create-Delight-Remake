@@ -11,32 +11,32 @@
 		{
 			id: "23F7CDA2CF32FD87"
 			linked_quest: "630FA0478B7DAAAA"
-			x: 4.5d
-			y: 9.0d
-		}
-		{
-			id: "7D4B174BC4A98DC9"
-			linked_quest: "0B2B86FAF7742C2F"
-			shape: "hexagon"
-			size: 2.0d
-			x: 3.0d
-			y: 17.5d
-		}
-		{
-			id: "7A11CD1763458CD5"
-			linked_quest: "168836201ED24533"
-			shape: "hexagon"
-			size: 2.0d
-			x: 4.5d
-			y: 19.0d
-		}
-		{
-			id: "30F40F6C2AA7B4B8"
-			linked_quest: "00AF35D832509CB8"
-			shape: "hexagon"
-			size: 2.0d
 			x: 6.0d
-			y: 17.5d
+			y: 1.5d
+		}
+		{
+			id: "604FBA64277A68B6"
+			linked_quest: "7DED9A87C6CB80F0"
+			shape: "hexagon"
+			size: 2.0d
+			x: 22.0d
+			y: -3.0d
+		}
+		{
+			id: "79CEAA3C78A71263"
+			linked_quest: "1DAD17F55E0D4B85"
+			shape: "hexagon"
+			size: 2.0d
+			x: 26.0d
+			y: -2.0d
+		}
+		{
+			id: "5D356CD73BB7727E"
+			linked_quest: "4750F90745C1AC83"
+			shape: "hexagon"
+			size: 2.0d
+			x: 10.0d
+			y: 7.0d
 		}
 	]
 	quests: [
@@ -45,7 +45,7 @@
 			id: "16E85851D21CB6A3"
 			rewards: [{
 				id: "0B563C2077A17709"
-				item: "createbigcannons:cast_iron_ingot"
+				item: "createdeco:industrial_iron_ingot"
 				random_bonus: 7
 				type: "item"
 			}]
@@ -54,12 +54,12 @@
 			subtitle: "你步入&e合金世界&r的&4第一块&r金属！"
 			tasks: [{
 				id: "611B7E2C375DC0F4"
-				item: "createbigcannons:cast_iron_ingot"
+				item: "createdeco:industrial_iron_ingot"
 				type: "item"
 			}]
 			title: "这是？&e匠魂动力&r？"
-			x: -2.5d
-			y: 10.5d
+			x: 2.0d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -67,7 +67,11 @@
 				"1999728E6F67F8EF"
 			]
 			dependency_requirement: "one_completed"
-			description: ["也可直接通入&e液体燃料&r来进行&4加热&r，&l&n&4JEI查看&r"]
+			description: [
+				"可直接通入&e液体燃料&r来进行&4加热&r，&n无需使用吸管&r"
+				""
+				"对于需要持续运行的产线，&n不建议&r使用机械手喂液体燃料桶，可能导致超级燃烧状态&4丢失&r。"
+			]
 			id: "467AE0EF8AF5ACAF"
 			rewards: [{
 				id: "3CF78ADD5C4D6540"
@@ -84,8 +88,8 @@
 				type: "item"
 			}]
 			title: "获得烈焰人燃烧室！"
-			x: -6.0d
-			y: 10.5d
+			x: -0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -102,8 +106,8 @@
 				item: "create:empty_blaze_burner"
 				type: "item"
 			}]
-			x: -8.5d
-			y: 9.0d
+			x: -2.5d
+			y: -1.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -121,8 +125,8 @@
 				item: "vintageimprovements:helve_hammer"
 				type: "item"
 			}]
-			x: 19.5d
-			y: 12.0d
+			x: 17.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -147,8 +151,8 @@
 				}
 				type: "item"
 			}]
-			x: 18.5d
-			y: 12.0d
+			x: 16.5d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -173,7 +177,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: [
@@ -194,7 +198,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -213,8 +217,8 @@
 				item: "vintageimprovements:lathe"
 				type: "item"
 			}]
-			x: 17.5d
-			y: 12.0d
+			x: 16.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -232,11 +236,11 @@
 				type: "item"
 			}]
 			x: 8.0d
-			y: 12.0d
+			y: 2.5d
 		}
 		{
 			dependencies: ["35B43C124186578F"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "7EBD14D46E6E2CF1"
 			rewards: [{
 				id: "262332588DA18160"
@@ -275,11 +279,11 @@
 			]
 			title: "鼓风机触媒们"
 			x: 8.0d
-			y: 13.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
-			description: [""]
+			icon: "createfluidstuffs:multi_fluid_tank"
 			id: "043C01E333AD7139"
 			shape: "gear"
 			size: 2.0d
@@ -290,7 +294,7 @@
 				type: "item"
 			}]
 			x: 10.0d
-			y: 13.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["271924B430C340EC"]
@@ -312,15 +316,13 @@
 				}
 			]
 			title: "直接制作烈焰人燃烧室"
-			x: -10.5d
-			y: 9.0d
+			x: -4.0d
+			y: -1.0d
 		}
 		{
-			dependencies: [
-				"2B3F1B42F03F00F3"
-				"0F1F1C12B4CCEB7F"
-			]
+			dependencies: ["10D661738D4296E5"]
 			dependency_requirement: "one_completed"
+			hide_dependency_lines: true
 			id: "49A6C50C6A8821CE"
 			rewards: [{
 				id: "427A150424D14904"
@@ -333,40 +335,8 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 12.5d
-			y: 12.0d
-		}
-		{
-			description: ["虽然确实可以手动打磨，但使用对应机器产量会更高。"]
-			id: "0F1F1C12B4CCEB7F"
-			rewards: [{
-				id: "60A0FA2F1B7736D8"
-				item: "createmetallurgy:sandpaper_belt"
-				type: "item"
-			}]
-			tasks: [{
-				id: "57B5AF31B472642F"
-				item: {
-					Count: 1
-					id: "create:sand_paper"
-					tag: {
-						Damage: 0
-					}
-				}
-				type: "item"
-			}]
-			x: 11.5d
-			y: 12.5d
-		}
-		{
-			id: "2B3F1B42F03F00F3"
-			tasks: [{
-				id: "13B50D3DE9C50346"
-				item: "create:rose_quartz"
-				type: "item"
-			}]
-			x: 11.5d
-			y: 11.5d
+			x: 12.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -375,7 +345,7 @@
 				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
-					Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+					Icon: "minecraft:block/fire_1"
 				}
 			}
 			id: "1999728E6F67F8EF"
@@ -385,7 +355,7 @@
 					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
-						Icon: "ftbchunks:textures/faces/minecraft/blaze.png"
+						Icon: "minecraft:block/fire_1"
 					}
 				}
 				id: "30833998091D4372"
@@ -395,10 +365,11 @@
 				to_observe: "minecraft:blaze"
 				type: "observation"
 			}]
-			x: -8.5d
-			y: 12.0d
+			x: -2.5d
+			y: 1.0d
 		}
 		{
+			description: ["去获取烈焰人燃烧室必须要下地狱。"]
 			id: "10D661738D4296E5"
 			tasks: [{
 				dimension: "minecraft:the_nether"
@@ -413,8 +384,8 @@
 				title: "&4下地狱喽！"
 				type: "dimension"
 			}]
-			x: -10.5d
-			y: 12.0d
+			x: -4.0d
+			y: 1.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -441,11 +412,11 @@
 				}
 			]
 			title: "融化流体！"
-			x: 1.0d
-			y: 12.0d
+			x: 4.0d
+			y: 0.0d
 		}
 		{
-			dependencies: ["16E85851D21CB6A3"]
+			dependencies: ["45DE7575C6D8284E"]
 			icon: "createmetallurgy:casting_basin"
 			id: "0C68C84949B2A986"
 			rewards: [{
@@ -453,8 +424,6 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			shape: "gear"
-			size: 2.0d
 			subtitle: "&e慢慢注佢&r~&4慢慢凝佢&r~"
 			tasks: [
 				{
@@ -469,15 +438,11 @@
 				}
 			]
 			title: "浇铸流体！"
-			x: 4.5d
-			y: 10.5d
+			x: 6.0d
+			y: 0.0d
 		}
 		{
-			dependencies: [
-				"45DE7575C6D8284E"
-				"2D030C52645E7DDD"
-				"16E85851D21CB6A3"
-			]
+			dependencies: ["2D030C52645E7DDD"]
 			icon: "createmetallurgy:foundry_mixer"
 			id: "5A8FA422166974A0"
 			rewards: [{
@@ -501,33 +466,8 @@
 				}
 			]
 			title: "融合流体！"
-			x: 1.0d
-			y: 9.0d
-		}
-		{
-			dependencies: ["0C68C84949B2A986"]
-			id: "2DF1F636B2080322"
-			rewards: [{
-				id: "57A0C723673FAAA7"
-				item: "createdelightcore:copper_coin"
-				type: "item"
-			}]
-			subtitle: "想要&e浇筑&r至少得&4有个模具吧&r？"
-			tasks: [{
-				id: "59448D4FFAE04EE9"
-				item: {
-					Count: 1
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:graphite_molds"
-					}
-				}
-				title: "任意模具"
-				type: "item"
-			}]
-			title: "浇筑模具"
-			x: 3.5d
-			y: 9.0d
+			x: 24.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -544,8 +484,8 @@
 				type: "checkmark"
 			}]
 			title: "&e什么&r？&4世界浇筑&r？"
-			x: 5.5d
-			y: 9.0d
+			x: 6.0d
+			y: -1.5d
 		}
 		{
 			dependencies: [
@@ -570,9 +510,11 @@
 				type: "item"
 			}]
 			x: 9.0d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
+			dependencies: ["10D661738D4296E5"]
+			hide_dependency_lines: true
 			id: "18946F125B654A46"
 			shape: "square"
 			size: 2.0d
@@ -584,7 +526,7 @@
 			}]
 			title: "&e不想搓熔融流体产线？看这里！"
 			x: 9.0d
-			y: 8.0d
+			y: -2.5d
 		}
 		{
 			dependencies: ["4B6A896ECC72EA02"]
@@ -602,10 +544,11 @@
 				type: "item"
 			}]
 			x: 11.5d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["25AE94411E8AD415"]
+			description: ["注意：声明区块后，&c不要&r将机械手放在&e区块边缘&r处，请至少离开边缘&e一格&r放置。"]
 			id: "783AE5D1F35263E1"
 			rewards: [{
 				count: 3
@@ -622,7 +565,7 @@
 				type: "item"
 			}]
 			x: 14.5d
-			y: 10.5d
+			y: 0.0d
 		}
 		{
 			dependencies: [
@@ -641,7 +584,7 @@
 				value: 1
 			}]
 			x: 14.5d
-			y: 13.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["783AE5D1F35263E1"]
@@ -661,15 +604,15 @@
 				}
 			]
 			shape: "gear"
-			size: 2.0d
+			size: 1.0d
 			subtitle: "从此开始&4动力合成&r！"
 			tasks: [{
 				id: "295AC43B4113918F"
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: 19.0d
-			y: 10.5d
+			x: 16.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -687,7 +630,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 13.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -705,7 +648,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 15.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -723,7 +666,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 15.0d
+			y: 5.0d
 		}
 		{
 			dependencies: ["7B7258CB2FDF4243"]
@@ -741,7 +684,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: 16.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -759,7 +702,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: 14.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -777,7 +720,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 14.5d
+			y: 4.5d
 		}
 		{
 			dependencies: ["1617656D855B84E9"]
@@ -795,7 +738,7 @@
 				type: "item"
 			}]
 			x: 16.0d
-			y: 13.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["307171D52C77BC74"]
@@ -807,7 +750,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: 16.5d
+			y: 6.5d
 		}
 		{
 			id: "1CD1D60A28A20E6A"
@@ -817,39 +760,38 @@
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			subtitle: "现在的&e石磨&r可以&e磨碎黑曜石&r哦！（就是&4概率感人&r）"
 			tasks: [{
 				id: "3F3848CAF70CDF4E"
 				item: "create:sturdy_sheet"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 5.5d
+			x: 21.5d
+			y: -1.0d
 		}
 		{
-			dependencies: ["10D661738D4296E5"]
-			description: [""]
+			description: ["先试试 &e&l粉碎→震动&r&r 处理吧"]
 			hide_dependency_lines: true
 			id: "1746BAF63124A53E"
 			rewards: [{
 				id: "78F1436063A09F50"
-				item: "createmetallurgy:raw_wolframite"
+				item: "createmetallurgy:raw_tungsten"
 				random_bonus: 4
 				type: "item"
 			}]
 			subtitle: "&4地狱&r特产的&e坚硬金属&r！"
 			tasks: [{
 				id: "69B87436B6F93D9C"
-				item: "createmetallurgy:raw_wolframite"
+				item: "createmetallurgy:raw_tungsten"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 5.5d
+			x: 22.5d
+			y: -1.0d
 		}
 		{
 			dependencies: [
 				"1CD1D60A28A20E6A"
 				"1746BAF63124A53E"
+				"1B63ED5F68D71F24"
 			]
 			id: "2D030C52645E7DDD"
 			subtitle: "专用&e熔炼搅拌器"
@@ -858,8 +800,8 @@
 				item: "createmetallurgy:sturdy_whisk"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 7.0d
+			x: 22.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
@@ -873,12 +815,12 @@
 				type: "checkmark"
 			}]
 			title: "或者你也可以先跳过&4熔融搅拌器"
-			x: 7.0d
-			y: 11.0d
+			x: 7.5d
+			y: 1.0d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
 			description: [""]
+			hide_dependency_lines: true
 			id: "580C77852E71B685"
 			rewards: [{
 				id: "60817BEBA961EA29"
@@ -893,41 +835,45 @@
 				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
-			x: 6.0d
-			y: 15.5d
+			x: 11.5d
+			y: 5.5d
 		}
 		{
-			dependencies: ["580C77852E71B685"]
-			description: ["可以容纳&e多种流体&r，安装&e熔铸炉组件&r以转变为&e熔铸炉&r\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
+			dependencies: [
+				"580C77852E71B685"
+				"043C01E333AD7139"
+				"20972AEC6EE6D9F8"
+			]
+			description: ["可以容纳&e多种流体&r，安装&e仪表组件&r以显示更多信息\\n&4最大为5*5*4&r，&e扳手右键&r可调整&4透明度&r"]
 			id: "0C0CD2BD5935D4CC"
 			shape: "square"
-			subtitle: "&e可拓展&r的&4大型冶金设施"
+			subtitle: "&e可拓展&4可合成合金&r的&4大型冶金设施"
 			tasks: [{
 				id: "757E747FAED0BFE1"
 				item: "createmetallurgy:industrial_crucible"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 16.5d
+			x: 10.0d
+			y: 5.0d
 		}
 		{
-			dependencies: ["0C0CD2BD5935D4CC"]
 			description: [
 				"&l&n&a热量机制&r：&e普通燃烧&r为&41TU&r，&9超级燃烧&r为是&42TU&r"
 				"&l&n&a执行配方&r：可以直接执行&e熔融配方&r、&e合金配方&r以及&4生物熔炼&r，但&e热量&r需要&4满足条件&r"
 			]
+			hide_dependency_lines: true
 			id: "20972AEC6EE6D9F8"
 			subtitle: "&4更大！更快！更高效！"
 			tasks: [{
 				id: "7FBA9B1076F350D6"
-				item: "createmetallurgy:foundry_unit"
+				item: "createmetallurgy:gauge_attachment"
 				type: "item"
 			}]
-			x: 7.5d
-			y: 18.0d
+			x: 11.5d
+			y: 4.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["3A9275459C333CF8"]
 			dependency_requirement: "one_completed"
 			description: [""]
 			id: "55E42ECE1CE4E99F"
@@ -946,12 +892,12 @@
 				item: "createutilities:void_steel_ingot"
 				type: "item"
 			}]
-			x: 3.0d
-			y: 15.5d
+			x: 30.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["55E42ECE1CE4E99F"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "07C28031281E5458"
 			rewards: [{
 				id: "61144D017386312F"
@@ -967,11 +913,12 @@
 				item: "createutilities:graviton_tube"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 16.5d
+			x: 31.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
+			description: ["&m因为应力传送的复杂性，变成掉落物是家常便饭&r"]
 			id: "6E72DE4840B74D26"
 			rewards: [{
 				count: 2
@@ -986,8 +933,8 @@
 				item: "createutilities:void_motor"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 18.0d
+			x: 33.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -998,14 +945,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e流体&r（&2可跨维度&r）"
 			tasks: [{
 				id: "3A8416116E24A115"
 				item: "createutilities:void_tank"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 18.0d
+			x: 31.5d
+			y: 1.5d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
@@ -1016,33 +963,14 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e电量&r（&2可跨维度&r）"
 			tasks: [{
 				id: "68E0A2128888812E"
 				item: "createutilities:void_battery"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 16.5d
-		}
-		{
-			id: "6EB96008F21DAFBF"
-			rewards: [{
-				id: "2C30E3F28E8F7CB7"
-				item: "createmetallurgy:steel_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			size: 1.0d
-			subtitle: "&e工业核心金属&r！&4钢铁&r！"
-			tasks: [{
-				id: "09380FFFDF782703"
-				item: "createmetallurgy:steel_ingot"
-				type: "item"
-			}]
-			title: "大炼钢铁！"
-			x: 4.5d
-			y: 15.5d
+			x: 33.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["5A16AE172A0C7772"]
@@ -1061,8 +989,8 @@
 				}
 				type: "item"
 			}]
-			x: 17.5d
-			y: 13.5d
+			x: 16.5d
+			y: -2.5d
 		}
 		{
 			dependencies: ["31418813B6B9A004"]
@@ -1080,54 +1008,27 @@
 				}
 			]
 			title: "别忘了垫上！"
-			x: 19.5d
-			y: 13.5d
+			x: 17.5d
+			y: -2.5d
 		}
 		{
-			dependencies: ["6A2214FC1B93B320"]
-			description: [""]
-			icon: "createdieselgenerators:diesel_engine"
-			id: "20B3A29ADFDF1D4A"
-			min_required_tasks: 1
-			rewards: [{
-				id: "4A10FBD8D0716968"
-				item: "createdelightcore:bronze_ingot"
-				random_bonus: 7
-				type: "item"
-			}]
-			shape: "hexagon"
-			size: 2.0d
-			subtitle: "{ \"text\": \"跳转石油化工\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"507D13CF7AF6ECB1\"} }"
-			tasks: [{
-				id: "29B2C475B43E3FAC"
-				item: "createdelightcore:bronze_ingot"
-				type: "item"
-			}]
-			title: "&e燃料&r！&4动力&r！"
-			x: 6.0d
-			y: 14.0d
-		}
-		{
-			dependencies: ["6A2214FC1B93B320"]
+			dependencies: [
+				"6DBEF23BA8608F4B"
+				"3A9275459C333CF8"
+			]
 			icon: "create_new_age:generator_coil"
 			id: "2CC8B87D086B3275"
-			rewards: [{
-				id: "18254A296BFA1213"
-				item: "createaddition:electrum_ingot"
-				random_bonus: 11
-				type: "item"
-			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"跳转电力时代\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"166D72966DCC8AED\"} }"
+			subtitle: "{ \"text\": \"跳转石油电力\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"54356C1067ECB809\"} }"
 			tasks: [{
-				id: "0D7814DAE3E5E1E1"
-				item: "createaddition:electrum_ingot"
-				type: "item"
+				elapsedTime: 1L
+				id: "102A7E43F92501AB"
+				type: "questsadditions:time"
 			}]
-			title: "步入&5电力时代&r！"
-			x: 3.0d
-			y: 14.0d
+			title: "步入&5石油电力&r！"
+			x: 28.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1149,39 +1050,15 @@
 				}
 			]
 			shape: "gear"
-			size: 2.0d
+			size: 1.5d
 			subtitle: "&e别丢错了东西哦！"
 			tasks: [{
 				id: "24A700BB34D9D347"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: 22.5d
-			y: 10.5d
-		}
-		{
-			dependencies: [
-				"0C68C84949B2A986"
-				"6EB96008F21DAFBF"
-			]
-			id: "6A2214FC1B93B320"
-			shape: "square"
-			tasks: [{
-				icon: {
-					Count: 1
-					id: "ftbquests:custom_icon"
-					tag: {
-						Icon: "createmetallurgy:item/sturdy_whisk"
-					}
-				}
-				id: "5405A067E0489038"
-				stat: "minecraft:play_time"
-				title: "各种合金！"
-				type: "stat"
-				value: 1
-			}]
-			x: 4.5d
-			y: 12.5d
+			x: 20.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3EB042CCCB8D54FA"]
@@ -1191,8 +1068,8 @@
 				item: "vintageimprovements:laser_item"
 				type: "item"
 			}]
-			x: 20.5d
-			y: 12.0d
+			x: 18.5d
+			y: -1.5d
 		}
 		{
 			dependencies: ["194089B776A6A461"]
@@ -1202,8 +1079,8 @@
 				item: "vintageimprovements:laser"
 				type: "item"
 			}]
-			x: 20.5d
-			y: 13.5d
+			x: 18.5d
+			y: -2.5d
 		}
 		{
 			dependencies: [
@@ -1219,12 +1096,12 @@
 				type: "item"
 			}]
 			title: "生物柴油！"
-			x: -2.5d
-			y: 16.5d
+			x: 2.0d
+			y: 4.5d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "0C49A6D118E480B4"
 			rewards: [{
 				id: "6211CFB60DEB1F1E"
@@ -1239,8 +1116,8 @@
 				item: "createdieselgenerators:basin_lid"
 				type: "item"
 			}]
-			x: -2.5d
-			y: 13.5d
+			x: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1251,8 +1128,8 @@
 				item: "createdieselgenerators:ethanol_bucket"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 15.0d
+			x: 2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1263,8 +1140,8 @@
 				item: "createdieselgenerators:plant_oil_bucket"
 				type: "item"
 			}]
-			x: -3.5d
-			y: 15.0d
+			x: 1.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["0C49A6D118E480B4"]
@@ -1275,20 +1152,20 @@
 				item: "createdieselgenerators:bulk_fermenter"
 				type: "item"
 			}]
-			x: -4.5d
-			y: 13.5d
+			x: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["07C28031281E5458"]
 			id: "46E16005AA8F9C8A"
-			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨纬度&r）"
+			subtitle: "借由&1虚空&r传输&e物品&r（&2可跨维度&r）"
 			tasks: [{
 				id: "5DEF9B1874E79A03"
 				item: "functionalstorage:ender_drawer"
 				type: "item"
 			}]
-			x: 0.0d
-			y: 15.0d
+			x: 33.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["16E85851D21CB6A3"]
@@ -1311,12 +1188,16 @@
 				type: "item"
 			}]
 			title: "woc！铁活板门"
-			x: -1.5d
-			y: 12.0d
+			x: 3.5d
+			y: 1.5d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: ["5A8FA422166974A0"]
+			description: ["更多可超燃的燃料可JEI查询烈焰人燃烧室用法获取"]
+			hide_dependency_lines: true
+			hide_until_deps_complete: false
 			id: "70B8B43D6B542EEC"
+			min_required_tasks: 1
 			subtitle: "烈焰蛋糕可在系统商店购买"
 			tasks: [
 				{
@@ -1331,20 +1212,18 @@
 				}
 			]
 			title: "超级燃烧"
-			x: 4.5d
-			y: 14.0d
+			x: 28.5d
+			y: -2.0d
 		}
 		{
 			dependencies: ["0C68C84949B2A986"]
 			description: [
 				"制作一个蓝图桌打开 &e&lbrass_casting.nbt&r&r 看看吧"
-				""
 				"运行前请检查两侧熔铸盆是否有&n&l向中间工作盆的开口&r&r"
 				"如果没有，手持&d&l扳手右键&r&r以开口"
-				"两个木桶是&b输入&r，最低的工作盆是&a输出&r"
+				"两个置物台是&b输入&r，最低的工作盆是&a输出&r"
 				"建议先将输出导出到&e流体抽屉或流体储罐&r，然后再导出到铸造盆/台"
-				""
-				"另：使用 &n抽屉&r 配合 &n抽入/输出升级&r 能够简化产线，留作作业"
+				"另：使用 &n抽屉&r 配合 &n抽入/输出升级&r 能够简化产线"
 			]
 			icon: {
 				Count: 1
@@ -1381,8 +1260,752 @@
 				type: "checkmark"
 			}]
 			title: "&e黄铜熔铸器蓝图&r"
-			x: 7.0d
-			y: 10.0d
+			x: 7.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["01CAAE3178150432"]
+			description: ["将未发酵的纸浆放到&2发酵罐&r里将会得到纸浆"]
+			id: "3055619851D1FEE2"
+			subtitle: "神秘小支线"
+			tasks: [
+				{
+					id: "62EC2CC1B6672AAA"
+					item: "createdelight:unfermented_paper_pulp_bucket"
+					type: "item"
+				}
+				{
+					id: "16BC1CEA83CFF471"
+					item: "createdelight:paper_pulp_bucket"
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["601E073214DCC16C"]
+			hide_until_deps_complete: false
+			id: "41C38AC7AA97CFAD"
+			rewards: [{
+				count: 3
+				id: "57AD39163A2D720B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "蒸汽启动！"
+			tasks: [{
+				id: "5E9E3019C70D11AC"
+				item: "create_sa:steam_engine"
+				type: "item"
+			}]
+			x: 20.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			description: ["太空相关物品很多都会用到热力引擎。"]
+			hide_until_deps_complete: false
+			id: "601E073214DCC16C"
+			rewards: [{
+				count: 3
+				id: "0C48CDD2F058F22B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "再次升级！"
+			tasks: [{
+				id: "6D998CDD0DCC9015"
+				item: "create_sa:heat_engine"
+				type: "item"
+			}]
+			x: 18.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["783AE5D1F35263E1"]
+			id: "32AAEC0414A9ECA6"
+			rewards: [{
+				count: 3
+				id: "1B5D310B937F9112"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "是时候对流体处理做一次升级了"
+			tasks: [{
+				id: "2E7EF6C284681B8F"
+				item: "create_sa:hydraulic_engine"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -4.5d
+		}
+		{
+			dependencies: ["601E073214DCC16C"]
+			description: [""]
+			id: "5AC294F788C1D1E8"
+			subtitle: "什么，可以横向运输，我怎么会做这种梦"
+			tasks: [{
+				id: "01BB00D45FB01183"
+				item: "create_fantasizing:transporter"
+				type: "item"
+			}]
+			x: 18.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			description: [
+				"动力移液器可以通过与动力臂相似的配置方法设定&c流体交互点&r（例如工作盆）以进行&e流体转移&r功能"
+				"除了&c常规流体容器&r，动力移液器还可以与一些&c特殊方块&r交互，例如：直接从蜂箱中移液出&e蜂蜜&r流体"
+				"将&e熔岩流体移液至熄灭的烈焰人燃烧室中&r，使其进入一般燃烧状态"
+				"动力移液器不能直接对流体储罐等流体容器中的流体直接进行移液，需要在其上放置&c流体接口&r来辅助交互"
+				"动力移液器可以通过绑定&c智能流体接口&r来实现流体的智能分液"
+				"动力移液器可以如注液器一般使用其暂存的流体对物品进行&e注液&r"
+			]
+			id: "1F34610FBFE53749"
+			size: 1.5d
+			subtitle: "动力臂的流体版"
+			tasks: [{
+				id: "1FE1F198D1A25F7F"
+				item: "fluid:pipette"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			dependency_requirement: "all_started"
+			description: ["相较于动力泵，离心泵的泵液功率&e更高&r、输送液体距离&e更远&r，同时造价&e更昂贵&r、消耗应力&e更高&r"]
+			id: "17EC64B407A44FD5"
+			subtitle: "更快更给力"
+			tasks: [{
+				id: "711D23BE2CB19160"
+				item: "fluid:centrifugal_pump"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -3.5d
+		}
+		{
+			dependencies: ["2CBBADBE62382C1B"]
+			id: "50BA4C5ABE721F8D"
+			ignore_reward_blocking: true
+			tasks: [{
+				id: "412E52F97F923C3B"
+				item: "fluid:smart_fluid_interface"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 0.75d
+		}
+		{
+			dependencies: ["1F34610FBFE53749"]
+			description: ["用于便捷配置&c动力臂&r、&c动力移液器&r与&c弹射置物台&r的工具&c"]
+			id: "2FFD64E4EE3366FA"
+			subtitle: "挥舞指挥棒"
+			tasks: [{
+				id: "3CD0D11EE867369E"
+				item: "fluid:baton"
+				type: "item"
+			}]
+			x: 16.5d
+			y: -7.5d
+		}
+		{
+			dependencies: ["575185F2DB0AD44C"]
+			icon: {
+				Count: 1
+				id: "create:cardboard_package_12x12"
+				tag: { }
+			}
+			id: "1EB02B56E6F91CF6"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "6D86147DEB06D1F6"
+				title: "6.0新物流"
+				type: "checkmark"
+			}]
+			x: 18.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["1EB02B56E6F91CF6"]
+			description: ["将打包机&c贴合容器&r放置，用&n&e红石信号激活&r&r后，可以一次性打包&n&3至多九格九组&r&r的物品变成包裹，包裹可以被捡起也可以被运输，如果&e没有红石信号激活&r则变成解包机，包裹进入会&e被拆解&r，你也可以用&a动力锯&r拆开它"]
+			hide_until_deps_complete: false
+			id: "6A911EDD3374BC98"
+			subtitle: "物流的起点物品"
+			tasks: [{
+				id: "784A31BC34F0AF7C"
+				item: "create:packager"
+				type: "item"
+			}]
+			x: 20.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A911EDD3374BC98"]
+			description: [
+				"打包好包裹后，我们可以使用货物蛙港进行&c中远距离传输&r，蛙港网络依托于锁链传动轮进行工作，右键锁链即可放置一处蛙港节点，&e蛙港可切换接收模式&r，可以向锁链发送或者从锁链接受包裹，如包裹没有可接收的蛙港，包裹会在锁链上一直转圈"
+				"蛙港可以直接将包裹存储到下方的容器（打包机也可）中"
+				"&c&c注意&r：&r不要放置&e没有命名接收地址&r的蛙港，蛙港会将不是它接收地址的包裹放到锁链上，注意做缓存整流"
+			]
+			id: "4104912EFDD49E14"
+			rewards: [{
+				count: 3
+				id: "45C21EE1708A9B3B"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "这真的不会吃掉包裹的！"
+			tasks: [{
+				id: "03D5F7E13EBC9D54"
+				item: "create:package_frogport"
+				type: "item"
+			}]
+			x: 20.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["4104912EFDD49E14"]
+			description: [
+				"在传动轮上面或者下面&2接入应力&r后，可以&2使用锁链&r将两个不同位置的传动轮链接在一块传递应力，"
+				"还可以用扳手右键锁链在上面移动,是一个不错的&2传递应力&r的方式"
+				"同时，它也是蛙港运输网络中不可或缺的部分，包裹可以被&e蛙港放置在锁链上传输&r"
+			]
+			id: "454F321000481F67"
+			subtitle: "是的，这是机动6.0版本全新添加神秘妙妙传动元件，使用这个你就可以大胆“飞”线啦（bushi"
+			tasks: [
+				{
+					id: "13658AD24D0481A1"
+					item: "create:chain_conveyor"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "57393E78EFA0A2A2"
+					item: "minecraft:chain"
+					type: "item"
+				}
+			]
+			x: 20.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["6A911EDD3374BC98"]
+			description: ["先将仓储发报机放置好，创建网络，&2手持仓持链接站右击仓储发报机链接网络&r，此时手持的所有仓储链接站将都&e链接上同一网络&r，将仓储链接站&2放置在打包器上&r，此时就可以使用仓储发报机打开仓储网络请求物品了，且发报机可以发送包含配方的包裹，配方包裹可以用打包机解包到合成器上"]
+			id: "30563CA84C86D361"
+			rewards: [{
+				count: 3
+				id: "1FFDAFA0911551E8"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "众所周知，ae被称为小机动（"
+			tasks: [
+				{
+					id: "75233D8333E0BF63"
+					item: "create:stock_link"
+					type: "item"
+				}
+				{
+					id: "7ED228E2EFFF9AED"
+					item: "create:stock_ticker"
+					type: "item"
+				}
+			]
+			title: "智能化系统的大脑"
+			x: 22.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6A911EDD3374BC98"]
+			description: [
+				"&n&c在打包机上贴上牌子&r&r，可以为包裹附上&3牌子上的文字&r，这将充当这个包裹的“&e&n地址信息&r&r”"
+				"&r使用包裹过滤器，它可以过滤&3去哪里的地址的包裹&r，可以放在黄铜隧道和黄铜漏斗上"
+			]
+			id: "42676322C20485A5"
+			subtitle: "快递要填好地址！"
+			tasks: [{
+				id: "5E20C76E5ED56F4F"
+				item: "create:package_filter"
+				type: "item"
+			}]
+			title: "叮咚！快递要上门咯"
+			x: 20.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["30563CA84C86D361"]
+			description: ["在仓储发报机旁需要一个&c管理员&r才可以使用仓储网络。你可以使用&e烈焰人燃烧室&r或者&e坐在坐垫上的动物&r"]
+			id: "34A55F959743EAC4"
+			subtitle: "是的，又是烈焰人（黑奴）"
+			tasks: [{
+				id: "5BDC3356DDA57C47"
+				item: "create:blaze_burner"
+				type: "item"
+			}]
+			title: "我需要一个管理员"
+			x: 22.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["34A55F959743EAC4"]
+			description: ["使用&e列表或者属性过滤器&r，可以将仓储网络的东西分类"]
+			id: "1ABCEF1F39620DE5"
+			tasks: [
+				{
+					id: "53F55EB66C21A2E4"
+					item: "create:filter"
+					type: "item"
+				}
+				{
+					id: "7C986AF9FBF84DEF"
+					item: "create:attribute_filter"
+					type: "item"
+				}
+			]
+			title: "物品分类"
+			x: 22.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["30563CA84C86D361"]
+			description: ["红石请求器会在&c受到红石信号&r时向网络发送一次请求"]
+			id: "68E8BE2E6EB5A7DD"
+			subtitle: "被红石信号触发的请求"
+			tasks: [{
+				id: "066FD89DCC199052"
+				item: "create:redstone_requester"
+				type: "item"
+			}]
+			x: 24.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["30563CA84C86D361"]
+			description: ["理包器可以将同一请求的所有包裹整合成一个大包裹"]
+			id: "166274B13799B8F0"
+			subtitle: "那一天的货物整合起来"
+			tasks: [{
+				id: "33CAF055CBD75F71"
+				item: "create:repackager"
+				type: "item"
+			}]
+			x: 24.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["30563CA84C86D361"]
+			description: [
+				"AE仓储桥接器可以让&2机械动力&r的仓储系统与&2AE&r相连。"
+				"首先使用其右键机动网络的一个元件将其&c绑定至某机动网络&r，其次将其&c放置&r于世界中并将其&c连入AE网络&r，最后放置一个贴着它的&2打包机&r。"
+				"AE可以通过“&2自动合成&r”（即通过AE的“&2下单&r”）请求物品，此时由机动仓储网络发出的包裹的地址是&2仓储桥接器内所记录的地址&r。这个功能需保证AE网络中有CPU才能运作。对于未登上太空而无法造出样板供应器者，可以考虑使用这个机制来实现物品的下单。"
+				"同样的，机械动力&2可以请求AE系统&r中的物品。"
+			]
+			id: "53525848D094C800"
+			subtitle: "{ \"text\": \"是的，我们之间有个孩子（）\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"3066F516B382ED92\" } }"
+			tasks: [{
+				id: "772354D6EF0DE0A1"
+				item: "createstockbridge:ae_bridge"
+				type: "item"
+			}]
+			x: 22.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["30563CA84C86D361"]
+			description: [
+				"工厂仪表分为两种模式，&e补货&r和&e配方&r&n"
+				"当工厂仪表（&c需要右键绑定到已经创建好的网络里&r）依附在打包机上，将会进入&e补货模式&r，在仪表里添加物品，将会监控打包机所连接的容器内目标物品的库存数量，右键可进行配置，设置好会向网络请求物品，直到达到数量"
+				"&r当放置在其他方块上，将会进入&e配方模式&r，将会检测整个网络中某个物品的数量，可以根据想要合成的配方使多个仪表连接起来组成配方树，&c配方支持9x9&r"
+			]
+			id: "0760820BC6C59342"
+			subtitle: "物流网络里的显示表！"
+			tasks: [{
+				id: "2D80462D2CF03E5F"
+				item: "create:factory_gauge"
+				type: "item"
+			}]
+			x: 24.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["0760820BC6C59342"]
+			id: "478E2A33D0721AEE"
+			subtitle: "附属添加的额外仪表"
+			tasks: [
+				{
+					id: "60896EAA8E2EE2A8"
+					item: "extra_gauges:logic_gauge"
+					type: "item"
+				}
+				{
+					id: "6D2F67219CF2220C"
+					item: "extra_gauges:integer_gauge"
+					type: "item"
+				}
+				{
+					id: "0513C120785C0AFA"
+					item: "extra_gauges:comparator_gauge"
+					type: "item"
+				}
+				{
+					id: "3578838C602F196D"
+					item: "extra_gauges:counter_gauge"
+					type: "item"
+				}
+				{
+					id: "68051D29EB33E1BC"
+					item: "extra_gauges:passive_gauge"
+					type: "item"
+				}
+				{
+					id: "2AF30EF8D57597F0"
+					item: "extra_gauges:string_gauge"
+					type: "item"
+				}
+			]
+			x: 25.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["58FB0865EB045B8C"]
+			description: [
+				"制作一个蓝图桌打开 &e&ltree_farm.nbt&r&r 看看吧"
+				"倒水，加树苗，溜槽设定为=64，开启动力轴承，完事。"
+				""
+				"PS：有时候因为蓝图打印的问题，可能需要把机械手拆了重放，否则机械手不工作。"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						3
+						4
+						2
+					]
+					Deployed: 0b
+					File: "brass_casting.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "CLOCKWISE_90"
+				}
+			}
+			id: "7731CD649279916F"
+			ignore_reward_blocking: true
+			rewards: [{
+				id: "052FB8C27C4B1B1C"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			tasks: [{
+				id: "27343050F01D4966"
+				type: "checkmark"
+			}]
+			title: "树场蓝图"
+			x: 13.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2CBBADBE62382C1B"]
+			description: ["需要与被筛选的有混合流体的容器&l&e直接接触&r&r才能正确过滤。"]
+			id: "4F7F4970E26CBD75"
+			subtitle: "凑合用吧，难不成依赖工作盆自动输出吗"
+			tasks: [{
+				id: "723CC1057C8C01BE"
+				item: "create:smart_fluid_pipe"
+				type: "item"
+			}]
+			x: 13.0d
+			y: 2.25d
+		}
+		{
+			dependencies: [
+				"3EB042CCCB8D54FA"
+				"1499DD7E2925CBAA"
+			]
+			id: "57CA7AEC66490057"
+			subtitle: "更轻松的动力合成自动化！"
+			tasks: [{
+				id: "2B144BFEE5BEF708"
+				item: "createdelight:mechanical_craft_encoder"
+				type: "item"
+			}]
+			x: 18.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: false
+			id: "35F33D9F772B4551"
+			rewards: [{
+				count: 6
+				id: "07078D581C2D4C07"
+				item: "createaddition:electrum_ingot"
+				random_bonus: 6
+				type: "item"
+			}]
+			tasks: [{
+				id: "0D8A9B9D985989A9"
+				item: "createaddition:electrum_ingot"
+				type: "item"
+			}]
+			title: "良好通电导体！"
+			x: 26.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["5A8FA422166974A0"]
+			hide_until_deps_complete: false
+			id: "6DBEF23BA8608F4B"
+			rewards: [{
+				id: "2266BDDD9C5EF7E2"
+				item: "createdelightcore:bronze_ingot"
+				random_bonus: 11
+				type: "item"
+			}]
+			tasks: [{
+				id: "3F7A2C2685AFB49E"
+				item: "createdelightcore:bronze_ingot"
+				type: "item"
+			}]
+			title: "优秀应力载体！"
+			x: 26.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["467AE0EF8AF5ACAF"]
+			icon: "industrial_platform:fluid_pool"
+			id: "36CB35E2A940093B"
+			rewards: [{
+				id: "181A0753075BD670"
+				item: "industrial_platform:fluid_pool"
+				type: "item"
+			}]
+			subtitle: "商店五金一个，这下不用自己挖无限流体池了"
+			tasks: [{
+				id: "704995CF5CF30FEB"
+				type: "checkmark"
+			}]
+			title: "流体池"
+			x: -0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["4B6A896ECC72EA02"]
+			description: ["在夜晚就可以通过它来看星星。左键点击某个望远镜视野内的星球，然后点击左侧的+号就可以制作一张记录。"]
+			id: "40BDFCC7A3B77F26"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "可以着手准备太空相关了"
+			tasks: [{
+				id: "36F860A6EEADDEBA"
+				item: "northstar:telescope"
+				type: "item"
+			}]
+			x: 11.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			icon: "art_of_forging:nano_insectoid"
+			id: "52C424A4D57F21DE"
+			subtitle: "使用构件，木屑，熔融金属与纳米昆虫可以复制大部分机器，详情查看加压配方"
+			tasks: [
+				{
+					id: "64754F4501F21D0D"
+					title: "使用构件复制机器"
+					type: "checkmark"
+				}
+				{
+					id: "48C0592B3ED7BE3D"
+					item: "art_of_forging:nano_insectoid"
+					type: "item"
+				}
+			]
+			x: 14.5d
+			y: -4.5d
+		}
+		{
+			dependencies: [
+				"70B8B43D6B542EEC"
+				"5A8FA422166974A0"
+			]
+			hide_until_deps_complete: false
+			id: "3A9275459C333CF8"
+			rewards: [{
+				id: "57C3112489CE6675"
+				item: "createmetallurgy:steel_ingot"
+				random_bonus: 7
+				type: "item"
+			}]
+			size: 1.0d
+			subtitle: "&e工业核心金属&r！&4钢铁&r！"
+			tasks: [{
+				id: "31E76E07195018A3"
+				item: "createmetallurgy:steel_ingot"
+				type: "item"
+			}]
+			title: "大炼钢铁！"
+			x: 28.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["601E073214DCC16C"]
+			description: [
+				"本包对该mod进行了一些优化："
+				"1.自制了一个探矿仪器，无cd且可以直接显示探矿仪的方位。"
+				"2.将单独的矿脉整合为某类型的矿簇，玩家不再需要再找很多的矿脉。"
+			]
+			icon: "minecraft:diamond_ore"
+			id: "3BBBADC1B0766B77"
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"在小小的矿脉上挖呀挖呀挖\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"00AF35D832509CB8\" } }"
+			tasks: [{
+				id: "6D0F5AA38B753248"
+				title: "矿物再生！"
+				type: "checkmark"
+			}]
+			title: "虚空采矿"
+			x: 18.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["41C38AC7AA97CFAD"]
+			icon: "tacz:gun_smith_table"
+			id: "44751C952966AE58"
+			rewards: [
+				{
+					count: 10
+					id: "0BFF6F4EBB116A94"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:slap"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "21CA6A19740043B4"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "tacz:12g"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "19676FBB3CF111DC"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:rbapb"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "6E3C6EAE19674C32"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "create_armorer:gas_pistol_ammo"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "50D7D2A9451D3747"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:hard_core_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "72A8395465126620"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:etched_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "1A53BFF9213EB5AE"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_infused_grenade"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "31A3E10163B8C995"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:fluix_battery"
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 10
+					id: "7589E4017AFDA53B"
+					item: {
+						Count: 1
+						id: "tacz:ammo"
+						tag: {
+							AmmoId: "applied_armorer:cluster_quartz_bullet"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "{ \"text\": \"打枪biubiu！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"168836201ED24533\" } }"
+			tasks: [{
+				id: "286A0330DDB18F1D"
+				title: "强力枪械！"
+				type: "checkmark"
+			}]
+			title: "枪械制作！"
+			x: 22.0d
+			y: -6.0d
 		}
 	]
 	title: "&9体系渐成 "

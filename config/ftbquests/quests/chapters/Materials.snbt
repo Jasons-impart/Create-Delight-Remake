@@ -12,7 +12,7 @@
 			dependencies: ["73F6088E76969E13"]
 			id: "38CD78E43A6497DC"
 			size: 1.0d
-			subtitle: "在沉船或水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
+			subtitle: "在水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
 			tasks: [{
 				id: "41507FB3303D2212"
 				item: "art_of_forging:vobrite_crystal"
@@ -65,7 +65,7 @@
 				}
 				{
 					id: "629A1ADD49658201"
-					item: "iceandfire:dragonsteel_ice_ingot"
+					item: "iceandfire:dragonsteel_lightning_ingot"
 					type: "item"
 				}
 			]

@@ -18,7 +18,7 @@
 				{
 					"attribute": "generic.attack_damage",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
+					"value": 0.1
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -77,17 +77,12 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 1.4
+					"value": 1.2
 				},
 				{
 					"attribute": "generic.armor",
 					"operation": "ADDITION",
 					"value": 10
-				},
-				{
-					"attribute": "generic.attack_damage",
-					"operation": "MULTIPLY_TOTAL",
-					"value": 0.2
 				},
 				{
 					"attribute": "generic.knockback_resistance",
@@ -147,7 +142,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 4.2
+					"value": 5.5
 				},
 				{
 					"attribute": "generic.attack_damage",
@@ -208,7 +203,7 @@
 				{
 					"attribute": "generic.max_health",
 					"operation": "MULTIPLY_TOTAL",
-					"value": 14.0
+					"value": 16.0
 				},
 				{
 					"attribute": "generic.attack_damage",

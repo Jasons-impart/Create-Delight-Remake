@@ -1,0 +1,95 @@
+announce-command-usage: |-
+  用法: /tab announce <种类> <名称> <长度>
+  当前支持种类: &lbar, scoreboard
+bossbar-feature-not-enabled: '&c想使用此指令，必须先开启bossbar功能'
+bossbar-announce-command-usage: '用法: /tab announce bar <bar name> <length>'
+bossbar-not-found: '&c拥有此名称的bossbar未找到 "%name%"'
+bossbar-already-announced: '&c这条bossbar已被广播'
+group-data-removed: '&3[TAB] 组 &e%group% &3中的全部数据已清除'
+group-value-assigned: '&3[TAB] %property% ''&r%value%&r&3'' 已被添加至组 &e%group%'
+group-value-removed: '&3[TAB] %property% 已被从组 &e%group% &3中移除'
+user-data-removed: '&3[TAB] 玩家 &e%player% &3的全部数据已清除'
+user-value-assigned: '&3[TAB] %property% ''&r%value%&r&3'' 已被添加至玩家 &e%player%'
+user-value-removed: '&3[TAB] %property% 已被从玩家 &e%player% &3中移除'
+parse-command-usage: '用法: /tab parse <玩家> <placeholder>'
+send-command-usage: |-
+  用法: /tab send <种类> <玩家> <bar name> <length>
+  当前支持种类: &lbar
+send-bar-command-usage: '用法: /tab send bar <玩家> <bar name> <length>'
+team-feature-required: '&4想使用此指令，必须先开启计分板功能'
+collision-command-ussage: '用法: /tab setcollision <玩家> <true/false>'
+no-permission: '&c你没有权限'
+command-only-from-game: '&c只能在游戏里执行此指令'
+player-not-online: '&c此玩家不存在或不在线 "%player%"'
+unlimited-nametag-mode-not-enabled: '&c[TAB] 若要实现此功能，你必须在config中启用 unlimited-nametag-mode '
+invalid-number: '"%input%" 不是一个合法数字'
+scoreboard-feature-not-enabled: '&4想使用此指令，必须先开启计分板功能'
+scoreboard-announce-command-usage: '用法: /tab announce scoreboard <scoreboard name>
+  <length>'
+scoreboard-not-found: '&c拥有此名称的计分板未找到 "%name%"'
+nametag-preview-on: '&7预览模式 &a开启&7.'
+nametag-preview-of: '&7预览模式 &3关闭&7.'
+reload-success: '&3[TAB] 插件已重载 '
+reload-fail-file: '&3[TAB] &4插件重载失败，配置文件 %file% 配置不正确，请查看控制台获得更多信息'
+scoreboard-toggle-on: '&2计分板开启'
+scoreboard-toggle-off: '&7计分板关闭'
+bossbar-toggle-on: '&2Bossbar 当前可见'
+bossbar-toggle-off: '&7Bossbar 当前不可见'
+scoreboard-show-usage: '用法: /tab scoreboard show <scoreboard> [player]'
+bossbar-not-marked-as-announcement: '&c现在bossbar将作为公告栏常驻 (若有条件，将显示内容)'
+bossbar-announcement-success: '&a已将bossbar内容 &6%bossbar% &a向全服广播 %length% 秒'
+bossbar-send-success: '&a已将bossbar内容 &6%bossbar% &a向玩家 &6%player% &a广播 %length% 秒'
+armorstands-disabled-cannot-use-preview: '&c盔甲架已禁用, 将无法使用预览功能'
+help-menu:
+- '&m                                                                                '
+- ' &8>> &3&l/tab reload'
+- '      - &7重载插件'
+- ' &8>> &3&l/tab &9group&3/&9player &3<name> &9<property> &3<value...>'
+- '      - &7请输入 &8/tab group/player &7查看配置方法'
+- ' &8>> &3&l/tab ntpreview'
+- '      - &7显示自己的名称前后缀'
+- ' &8>> &3&l/tab announce bar &3<name> &9<seconds>'
+- '      - &7向全服广播bossbar消息'
+- ' &8>> &3&l/tab parse <player> <placeholder> '
+- '      - &7测试某个变量是否可用'
+- ' &8>> &3&l/tab debug [player]'
+- '      - &7显示关于玩家的debug消息'
+- ' &8>> &3&l/tab cpu'
+- '      - &7显示插件的CPU占用'
+- ' &8>> &3&l/tab group/player <name> remove'
+- '      - &7清除关于玩家/组的全部配置'
+- '&m                                                                                '
+mysql-help-menu:
+- '&6/tab mysql upload - 从文件上传数据至 mysql'
+- '&6/tab mysql download - 从 mysql 下载数据至文件'
+mysql-fail-not-enabled: '&c无法从MySQL传输数据, 因为MySQL已禁用'
+mysql-fail-error: MySQL 数据下载出现错误，请查看控制台获得更多信息
+mysql-download-success: '&aMySQL 数据下载成功'
+mysql-upload-success: '&aMySQL 数据上传成功'
+nametag-help-menu:
+- /tab nametag preview - 切换盔甲架预览模式
+- /tab nametag toggle - 切换所有玩家的名称前后缀显示（对于指令使用者来说）
+nametag-feature-not-enabled: '&c此指令需要先开启名称前后缀功能'
+nametags-hidden: '&a所有玩家的名称前后缀对于你不可见'
+nametags-shown: '&a所有玩家的名称前后缀对于你可见'
+collision-command-usage: 'Usage: /tab setcollision <player> <true/false>'
+scoreboard-help-menu:
+- /tab scoreboard [on/off/toggle] [player] [options]
+- /tab scoreboard show <name> [player]
+- /tab scoreboard announce <name> <length>
+bossbar-help-menu:
+- /tab bossbar [on/off/toggle] [player] [options]
+- /tab bossbar send <name> [player]
+- /tab bossbar announce <name> <length>
+nametag:
+  help-menu:
+  - /tab nametag <show/hide/toggle> [player] [-s] - Toggles nametag of specified player
+  - /tab nametag <showview/hideview/toggleview> [player] [viewer] [-s] - Toggles nametag
+    VIEW of specified player on other player(s)
+  feature-not-enabled: '&cThis command requires nametag feature to be enabled.'
+  view-hidden: '&aNametags of all players were hidden to you'
+  view-shown: '&aNametags of all players were shown to you'
+  player-hidden: '&aYour nametag was hidden'
+  player-shown: '&aYour nametag was shown'
+  no-arg-from-console: '&cYou need to specify player if running this command from
+    the console'

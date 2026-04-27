@@ -13,10 +13,16 @@ ServerEvents.recipes(e => {
         "createaddition:crafting/biomass_pellet",
         "createaddition:crafting/biomass_pellet_block",
         "createaddition:mixing/electrum",
-        "createaddition:mechanical_crafting/tesla_coil"
+        "createaddition:mechanical_crafting/tesla_coil",
+        "createaddition:crafting/modular_accumulator_electrum",
+        "createaddition:mechanical_crafting/electric_motor",
+        "createaddition:mechanical_crafting/alternator",
     ])
     remove_recipes_input(e, [
         "createaddition:cake_base_baked"
+    ])
+    remove_recipes_output(e, [
+        "createaddition:biomass"
     ])
     // 电容合成
     e.recipes.minecraft.crafting_shaped("2x createaddition:capacitor", [
@@ -28,7 +34,7 @@ ServerEvents.recipes(e => {
         B: "createaddition:zinc_sheet",
         C: "createaddition:copper_rod"
     }
-    ).id("createaddition:crafting/capacitor")
+    ).id("createdelight:crafting/capacitor")
     // 连接器合成
     e.recipes.kubejs.shapeless(
         "2x createaddition:large_connector",
@@ -38,40 +44,38 @@ ServerEvents.recipes(e => {
             "create:andesite_alloy",
             "#forge:slimeballs"
         ]
-    ).id("createaddition:crafting/large_connector_electrum")
+    ).id("createdelight:crafting/large_connector_electrum")
     // 电池合成
     let iner = 'createdelight:incompleted_modular_accumulator'
     e.recipes.create.sequenced_assembly("createaddition:modular_accumulator", "create:brass_sheet", [
         e.recipes.vintageimprovements.curving(iner, iner, 1),
         e.recipes.create.deploying(iner, [iner, "#forge:wires/electric"]),
         e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
-        e.recipes.create.deploying(iner, [iner, "createaddition:capacitor"]),
-        e.recipes.create.deploying(iner, [iner, "ad_astra:etrionic_core"]),
         e.recipes.create.deploying(iner, [iner, "create:brass_sheet"])
     ])
         .transitionalItem(iner)
         .loops(1)
-        .id("createaddition:crafting/modular_accumulator_electrum")
+        .id("createdelight:crafting/modular_accumulator_electrum")
     // 发电机
     let iner_3 = "createdelight:incomplete_alternator"
-    e.recipes.create.sequenced_assembly("createaddition:alternator", "create:shaft", [
-        e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:steel_plate"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_spool"]),
-        e.recipes.create.deploying(iner_3, [iner_3, "ad_astra:etrionic_core"]),
+    e.recipes.create.sequenced_assembly("createaddition:alternator", "createaddition:copper_spool", [
+        e.recipes.create.deploying(iner_3, [iner_3, "create_sa:copper_magnet"]),
+        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:iron_rod"]),
+        e.recipes.create.deploying(iner_3, [iner_3, "createaddition:copper_wire"]),
     ])
         .transitionalItem(iner_3)
-        .loops(4)
-        .id("createaddition:mechanical_crafting/alternator")
+        .loops(2)
+        .id("createdelight:sequenced_assembly/alternator")
     // 电动机
     let iner_4 = "createdelight:incomplete_electric_motor"
-    e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create:shaft", [
-        e.recipes.create.deploying(iner_4, [iner_4, "create:brass_sheet"]),
+    e.recipes.create.sequenced_assembly("createaddition:electric_motor", "create_sa:copper_magnet", [
         e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_spool"]),
-        e.recipes.create.deploying(iner_4, [iner_4, "ad_astra:etrionic_core"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "createaddition:iron_rod"]),
+        e.recipes.create.deploying(iner_4, [iner_4, "createaddition:copper_wire"]),
     ])
         .transitionalItem(iner_4)
-        .loops(4)
-        .id("createaddition:mechanical_crafting/electric_motor")
+        .loops(2)
+        .id("createdelight:sequenced_assembly/electric_motor")
     // 移动式能量接口
     e.recipes.kubejs.shapeless(
         'createaddition:portable_energy_interface',
@@ -80,5 +84,55 @@ ServerEvents.recipes(e => {
             "create:brass_casing",
             "createaddition:copper_spool"
         ]
-    ).id("createaddition:crafting/portable_energy_interface")
+    ).id("createdelight:crafting/portable_energy_interface")
+
+    e.recipes.kubejs.shapeless(
+        "createaddition:superconducting_connector",
+        [
+            "ae2:singularity",
+            "createaddition:large_connector",
+            "vvaddon:mine_ingot"
+        ]
+    ).id("createdelight:crafting/superconducting_connector")
+    e.recipes.createaddition.rolling(
+        "vvaddon:mine_ingot",
+        "2x createaddition:superconducting_wire"
+    )
+        .id("createdelight:rolling/superconducting_wire")
+    e.recipes.kubejs.shaped(
+        "createaddition:superconducting_spool",
+        [
+            " A ",
+            "ABA",
+            " A "
+        ],
+        {
+            A: "createaddition:superconducting_wire",
+            B: "createaddition:spool"
+        }
+    ).id("createdelight:crafting/superconducting_spool")
+
+    e.recipes.vintageimprovements.turning("8x createaddition:spool", "#forge:ingots/iron")
+        .id("createdelight:turning/spool")
+    let spoolList = [
+        [
+            'createaddition:copper_spool',
+            'createaddition:copper_wire'],
+        [
+            'createaddition:superconducting_spool',
+            'createaddition:superconducting_wire'],
+        [
+            'createaddition:gold_spool',
+            'createaddition:gold_wire'],
+        [
+            'createaddition:electrum_spool',
+            'createaddition:electrum_wire']].forEach(spool => {
+                e.recipes.create.sequenced_assembly(spool[0], 'createaddition:spool', [
+                    e.recipes.create.deploying("createaddition:spool", ["createaddition:spool", spool[1]])
+                ])
+                .loops(2)
+                .transitionalItem("createaddition:spool")
+                .id(`createdelight:sequenced_assembly/${spool[0].split(':')[1]}`)
+            })
+
 })

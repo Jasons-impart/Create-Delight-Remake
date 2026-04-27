@@ -112,7 +112,7 @@
 		},
 		"hunter_obj_death_worm": {
 			"type": "entity",
-			"content": "iceandfire:death_worm",
+			"content": "iceandfire:deathworm",
             "rarity": "RARE",
 			"amount": {
 				"min": 1,

@@ -25,7 +25,7 @@ ServerEvents.recipes(e => {
             "#forge:salt",
             "bakeries:flour"
         ]
-    ).id("create:mixing/mince_meat")
+    ).id("createdelight:mixing/mince_meat")
 
     // 蛋糕相关
     e.recipes.create.mixing(
@@ -36,14 +36,14 @@ ServerEvents.recipes(e => {
             '2x bakeries:flour',
             "minecraft:sugar"
         ]
-    ).id("create:mixing/cake_batter")
+    ).id("createdelight:mixing/cake_batter")
     e.recipes.create.filling(
         'ratatouille:cake_mold_filled',
         [
             "ratatouille:cake_mold",
             Fluid.of("createdelight:cake_batter", 500)
         ]
-    ).id("create:filling/cake_mold_filled")
+    ).id("createdelight:filling/cake_mold_filled")
 
     e.recipes.create.filling(
         "neapolitan:chocolate_cake",
@@ -51,14 +51,14 @@ ServerEvents.recipes(e => {
             "ratatouille:cake_base",
             Fluid.of("create:chocolate", 1000)
         ]
-    ).id("create:filling/chocolate_cake")
+    ).id("createdelight:filling/chocolate_cake")
     e.recipes.create.sequenced_assembly("farmersrespite:coffee_cake", "ratatouille:cake_base", [
         e.recipes.create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("createdelight:espresso_fluid", 1000)]),
         e.recipes.create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "createcafe:roasted_coffee_beans"])
     ])
         .transitionalItem("ratatouille:cake_base")
         .loops(1)
-        .id("create:sequenced_assembly/coffee_cake")
+        .id("createdelight:sequenced_assembly/coffee_cake")
     let iner = "ratatouille:cake_base"
     e.recipes.create.sequenced_assembly("mynethersdelight:magma_cake_block", "ratatouille:cake_base", [
         e.recipes.create.filling(iner, [iner, Fluid.lava(250)]),
@@ -68,9 +68,9 @@ ServerEvents.recipes(e => {
     ])
         .transitionalItem(iner)
         .loops(1)
-        .id("mynethersdelight:crafting/magma_cake")
+        .id("createdelight:crafting/magma_cake")
     e.recipes.create.compacting("4x create:blaze_cake_base", [
         Fluid.of("createdelight:cake_batter", 1000),
         "2x create:cinder_flour"
-    ]).id("create:compacting/blaze_cake")
+    ]).id("createdelight:compacting/blaze_cake")
 })

@@ -15,7 +15,7 @@
 		}
 	}
 	id: "55F5367DDD56CDDE"
-	order_index: 7
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -636,7 +636,11 @@
 			y: 4.75d
 		}
 		{
-			dependencies: ["6EB96008F21DAFBF"]
+			dependencies: [
+				"41C38AC7AA97CFAD"
+				"44751C952966AE58"
+			]
+			hide_until_deps_complete: true
 			icon: "tacz:gun_smith_table"
 			id: "168836201ED24533"
 			rewards: [
@@ -751,6 +755,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "{ \"text\": \"打枪biubiu！\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"168836201ED24533\" } }"
 			tasks: [{
 				id: "6ADDA443115B6852"
 				title: "强力枪械！"

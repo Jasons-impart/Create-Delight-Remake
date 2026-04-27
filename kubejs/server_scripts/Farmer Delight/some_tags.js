@@ -43,7 +43,6 @@ ServerEvents.tags("item", e => {
     e.add("forge:meat/raw", [
         "farmersdelight:chicken_cuts",
         "farmersdelight:mutton_chops",
-        "farmersdelight:bacon",
         "mynethersdelight:hoglin_loin",
         "minecraft:beef",
         "minecraft:mutton",
@@ -115,12 +114,6 @@ ServerEvents.tags("item", e => {
     ])
     e.add("mynethersdelight:curry_meats", [
         "ratatouille:raw_sausage",
-        'hotdog_delight:cod_sausage',
-        'hotdog_delight:salmon_sausage',
-        'hotdog_delight:pork_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage',
-        'hotdog_delight:pumpkin_sausage'
     ])
     e.add("forge:beef/cooked", [
         'minecraft:cooked_beef',
@@ -132,7 +125,7 @@ ServerEvents.tags("item", e => {
     ])
     // 奶酪
     e.add("forge:cheese", [
-        "ad_astra:cheese"
+        "trailandtales_delight:cheese_slice"
     ])
     // 黄瓜
     e.add("culturaldelights:cucumbers", [
@@ -158,23 +151,11 @@ ServerEvents.tags("item", e => {
     e.add("forge:sausage/cooked", [
         "ratatouille:sausage",
         "createdelight:salami",
-        'hotdog_delight:cooked_pork_sausage',
-        'hotdog_delight:cooked_salmon_sausage',
-        'hotdog_delight:cooked_cod_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage',
-        'hotdog_delight:pumpkin_sausage',
         'butchercraft:cooked_blood_sausage',
         'dungeonsdelight:cooked_snifferwurst',
     ])
     e.add("forge:sausage/raw", [
         "ratatouille:raw_sausage",
-        'hotdog_delight:cod_sausage',
-        'hotdog_delight:salmon_sausage',
-        'hotdog_delight:pork_sausage',
-        'hotdog_delight:squid_ink_sausage',
-        'hotdog_delight:glow_squid_ink_sausage',
-        'hotdog_delight:pumpkin_sausage',
         'butchercraft:blood_sausage',
         'dungeonsdelight:snifferwurst'
     ])

@@ -11,5 +11,5 @@ ServerEvents.recipes(e => {
         "ratatouille:cocoa_powder",
         Fluid.water(250)
     ])
-    .id("createcafe:mixing/oreo_dough_mixing")
+    .id("createdelight:mixing/oreo_dough_mixing")
 })

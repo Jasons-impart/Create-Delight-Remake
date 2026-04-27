@@ -15,8 +15,8 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     })
     if (amount == 0)
         return
-    let money = $CoinValue.fromNumber(COIN_CHAIN_MAIN_VALUE, amount)
-    $MoneyAPI.API.GetPlayersMoneyHandler(player).insertMoney(money, false)
+    let money = $CoinValue.fromNumber("main", amount)
+    $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(money, false)
     player.tell(Component.of("将物品栏中的所有品质去除物品，并将其转化为了").append(money.getText()))
 
 })

@@ -1,0 +1,1062 @@
+{
+  "parent": "kaleidoscope_doll:doll/root",
+  "criteria": {
+    "doll_10": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_10"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_11": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_11"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_12": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_12"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_13": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_13"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_14": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_14"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_15": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_15"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_16": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_16"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_17": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_17"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_18": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_18"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_19": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_19"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_2": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_2"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_20": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_20"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_21": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_21"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_22": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_22"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_23": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_23"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_24": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_24"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_25": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_25"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_26": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_26"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_27": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_27"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_28": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_28"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_29": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_29"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_3": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_3"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_30": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_30"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_31": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_31"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_32": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_32"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_326": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_326"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_327": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_327"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_328": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_328"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_329": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_329"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_33": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_33"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_34": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_34"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_35": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_35"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_36": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_36"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_37": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_37"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_38": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_38"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_39": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_39"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_4": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_4"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_40": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_40"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_41": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_41"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_42": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_42"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_43": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_43"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_44": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_44"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_45": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_45"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_46": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_46"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_47": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_47"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_48": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_48"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_49": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_49"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_5": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_5"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_50": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_50"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_51": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_51"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_52": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_52"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_53": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_53"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_54": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_54"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_55": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_55"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_56": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_56"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_57": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_57"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_58": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_58"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_59": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_59"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_6": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_6"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_60": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_60"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_61": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_61"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_62": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_62"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_63": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_63"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_64": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_64"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_65": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_65"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_66": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_66"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_7": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_7"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_8": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_8"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "doll_9": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "kaleidoscope_doll:doll_9"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "kaleidoscope_doll:textures/advancement/background.png",
+    "description": {
+      "translate": "advancements.kaleidoscope_doll.doll.full_collection.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "kaleidoscope_doll:doll_5"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.kaleidoscope_doll.doll.full_collection.title"
+    }
+  },
+  "requirements": [
+    [
+      "doll_2"
+    ],
+    [
+      "doll_3"
+    ],
+    [
+      "doll_4"
+    ],
+    [
+      "doll_5"
+    ],
+    [
+      "doll_6"
+    ],
+    [
+      "doll_7"
+    ],
+    [
+      "doll_8"
+    ],
+    [
+      "doll_9"
+    ],
+    [
+      "doll_10"
+    ],
+    [
+      "doll_11"
+    ],
+    [
+      "doll_12"
+    ],
+    [
+      "doll_13"
+    ],
+    [
+      "doll_14"
+    ],
+    [
+      "doll_15"
+    ],
+    [
+      "doll_16"
+    ],
+    [
+      "doll_17"
+    ],
+    [
+      "doll_18"
+    ],
+    [
+      "doll_19"
+    ],
+    [
+      "doll_20"
+    ],
+    [
+      "doll_21"
+    ],
+    [
+      "doll_22"
+    ],
+    [
+      "doll_23"
+    ],
+    [
+      "doll_24"
+    ],
+    [
+      "doll_25"
+    ],
+    [
+      "doll_26"
+    ],
+    [
+      "doll_27"
+    ],
+    [
+      "doll_28"
+    ],
+    [
+      "doll_29"
+    ],
+    [
+      "doll_30"
+    ],
+    [
+      "doll_31"
+    ],
+    [
+      "doll_32"
+    ],
+    [
+      "doll_33"
+    ],
+    [
+      "doll_34"
+    ],
+    [
+      "doll_35"
+    ],
+    [
+      "doll_36"
+    ],
+    [
+      "doll_37"
+    ],
+    [
+      "doll_38"
+    ],
+    [
+      "doll_39"
+    ],
+    [
+      "doll_40"
+    ],
+    [
+      "doll_41"
+    ],
+    [
+      "doll_42"
+    ],
+    [
+      "doll_43"
+    ],
+    [
+      "doll_44"
+    ],
+    [
+      "doll_45"
+    ],
+    [
+      "doll_46"
+    ],
+    [
+      "doll_47"
+    ],
+    [
+      "doll_48"
+    ],
+    [
+      "doll_49"
+    ],
+    [
+      "doll_50"
+    ],
+    [
+      "doll_51"
+    ],
+    [
+      "doll_52"
+    ],
+    [
+      "doll_53"
+    ],
+    [
+      "doll_54"
+    ],
+    [
+      "doll_55"
+    ],
+    [
+      "doll_56"
+    ],
+    [
+      "doll_57"
+    ],
+    [
+      "doll_58"
+    ],
+    [
+      "doll_59"
+    ],
+    [
+      "doll_60"
+    ],
+    [
+      "doll_61"
+    ],
+    [
+      "doll_62"
+    ],
+    [
+      "doll_63"
+    ],
+    [
+      "doll_64"
+    ],
+    [
+      "doll_65"
+    ],
+    [
+      "doll_66"
+    ],
+    [
+      "doll_326"
+    ],
+    [
+      "doll_327"
+    ],
+    [
+      "doll_328"
+    ],
+    [
+      "doll_329"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}

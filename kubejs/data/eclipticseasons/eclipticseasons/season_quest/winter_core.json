@@ -1,0 +1,27 @@
+{
+  "weight": 10,
+  "glowing": true,
+  "color": 5592575,
+  "climate": "#eclipticseasons:all",
+  "award": [
+    {
+      "id": "eclipticseasons:winter_greenhouse_essence",
+      "Count": 1
+    }
+  ],
+  "tittle": {
+    "translate": "season_quest.eclipticseasons.winter_core"
+  },
+  "end": "beginning_of_spring",
+  "start": "winter_solstice",
+  "need": [
+    {
+      "items": "createcafe:coffee_fruit",
+      "count": 32
+    },
+    {
+      "items": "farmersdelight:cabbage",
+      "count": 32
+    }
+  ]
+}

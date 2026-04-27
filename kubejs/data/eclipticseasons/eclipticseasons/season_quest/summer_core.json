@@ -1,0 +1,23 @@
+{
+  "weight": 10,
+  "glowing": true,
+  "color": 16733525,
+  "climate": "#eclipticseasons:all",
+  "award": [
+    {
+      "id": "eclipticseasons:summer_greenhouse_essence",
+      "Count": 1
+    }
+  ],
+  "tittle": {
+    "translate": "season_quest.eclipticseasons.summer_core"
+  },
+  "end": "beginning_of_autumn",
+  "start": "summer_solstice",
+  "need": [
+    {
+      "items": "farmersdelight:tomato",
+      "count": 64
+    }
+  ]
+}

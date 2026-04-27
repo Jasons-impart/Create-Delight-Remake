@@ -56,7 +56,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:ketchup_corn_dog',
     'createdelight:mayo_corn_dog',
     'createdelight:salami',
+    'createdelight:deep_sea_sushi_roll_slice',
     'createdelight:fugu_roll',
+    "createdelight:radgill_sushi",
     'createdelight:empty_riceball',
     'createdelight:yorkshire_pudding_and_beef',
     'createdelight:boiling_water_cabbage',
@@ -76,26 +78,20 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:sky_copper_ingot',
       // 金属板
       'createdelight:forged_steel_sheet',
+      'createdelight:steel_sheet',
       'createdelight:andesite_alloy_nugget',
       // 板材
       'createdelight:carbon_plate',
-      'createdelight:aviation_fibers_sheet',
       // 粉碎粗金属
-      'createdelight:crushed_raw_desh',
-      'createdelight:crushed_raw_ostrum',
-      'createdelight:crushed_raw_calorite',
+      'createdelight:crushed_raw_titanium',
       // 污浊粉末
       'createdelight:dirty_tin_dust',
       'createdelight:dirty_silver_dust',
-      'createdelight:dirty_desh_dust',
-      'createdelight:dirty_ostrum_dust',
-      'createdelight:dirty_calorite_dust',
+      'createdelight:dirty_titanium_dust',
       // 洁净粉末
       'createdelight:tin_dust',
       'createdelight:silver_dust',
-      'createdelight:desh_dust',
-      'createdelight:ostrum_dust',
-      'createdelight:calorite_dust',
+      'createdelight:titanium_dust',
       // 铀
       "createdelight:uranium_dust",
       "createdelight:enriched_uraniumdust",
@@ -109,21 +105,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
       'createdelight:blood_collection_device',
       'createdelight:needle',
       'createdelight:dread_upgrade_smithing_template',
+      "createdelight:guncotton",
       // 构件
       'createdelight:magnetic_mechanism',
-      //火箭部件
-      'createdelight:basic_panel',
-      'createdelight:advanced_panel',
-      'createdelight:explorer_panel',
-      'createdelight:flare_panel',
-      'createdelight:basic_cabin',
-      'createdelight:advanced_cabin',
-      'createdelight:explorer_cabin',
-      'createdelight:flare_cabin',
-      'createdelight:basic_crystal_panel',
-      'createdelight:advanced_crystal_panel',
-      'createdelight:holographic_interface_panel',
-      'createdelight:quantum_field_panel',
       //外壳
       'createdelight:iron_casing',
       'createdelight:space_casing',
@@ -180,8 +164,9 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
 StartupEvents.registry("creative_mode_tab", e => {
   e.create("createdelight:machine")
     .translationKey("itemGroup.createdelight.machine")
-    .icon(() => Item.of("createdelight:electrolyzer"))
+    .icon(() => Item.of("createdelight:centrifuge_rotor"))
     .content(() => [
       'mbd2:mbd_gadgets',
+      'createdelight:order_deliverer_item'
     ])
 })

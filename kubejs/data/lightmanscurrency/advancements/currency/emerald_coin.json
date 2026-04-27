@@ -1,0 +1,38 @@
+{
+  "parent": "lightmanscurrency:currency/gold_coin",
+  "criteria": {
+    "emerald_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelightcore:emerald_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.lightmanscurrency.emerald_coin.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelightcore:emerald_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.lightmanscurrency.emerald_coin.title"
+    }
+  },
+  "requirements": [
+    [
+      "emerald_coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

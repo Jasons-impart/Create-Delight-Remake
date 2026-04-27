@@ -2,9 +2,10 @@
   "effect.alexscaves.magnetizing.description": "使玩家不穿金属盔甲也可以被磁力吸引和排斥",
   "effect.alexscaves.stunned.description": "禁止玩家移动和攻击，并左右晃动屏幕。",
   "effect.alexscaves.rage.description": "剩余血量越低，攻击伤害越高，但具有该效果的生物会无差别攻击附近生物",
-  "effect.alexscaves.irradiated.description": "禁用自然回血，且等级超过V级时会不断造成伤害",
+  "effect.alexscaves.irradiated.description": "禁用自然回血，且高等级时会不断造成伤害",
   "effect.alexscaves.bubbled.description": "用泡泡将玩家包裹起来，造成窒息",
   "effect.alexscaves.deepsight.description": "能够在深渊水域看的更远",
   "effect.alexscaves.darkness_incarnate.description": "获得在黑暗区域飞行的能力",
-  "effect.alexscaves.sugar_rush.description": "减慢时间，提升速度，减慢时间流动"
+  "effect.alexscaves.sugar_rush.description": "减慢时间，提升速度，减慢时间流动",
+  "item.alexscaves.deep_sea_sushi_roll": "深海太卷"
 }

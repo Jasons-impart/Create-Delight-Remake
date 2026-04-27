@@ -1,0 +1,29 @@
+{
+    "colorwheel.fallback_mode": "降级模式",
+    "colorwheel.fallback_mode.enable": "启用降级模式",
+
+    "colorwheel.alert.ask_disable": "关闭此警告",
+
+    "colorwheel.alert.incompatible_pack": "着色器包 %1$s 是§e§l不兼容§r§r的",
+    "colorwheel.alert.incompatible_pack.patch_available": "您可以在着色器包菜单中选择 %1$s",
+    "colorwheel.alert.incompatible_pack.ask_fallback_mode": "您可以请求着色器包开发者支持。您也可以启用 %1$s 以让ColorWheel尝试自动支持。自动支持可能导致§e§l渲染问题§r，且ColorWheel不会提供进一步支持。",
+    "colorwheel.alert.incompatible_pack.disable": "关闭不兼容着色器包警告",
+
+    "colorwheel.alert.broken_pack": "当前着色器包包含损坏的着色器，可能导致§e§l渲染问题§r",
+    "colorwheel.alert.broken_pack.disable": "关闭损坏着色器包警告",
+
+    "command.colorwheel.alert_incompatible_pack.get.on": "不兼容着色器包警告已§e§l开启§r",
+    "command.colorwheel.alert_incompatible_pack.get.off": "不兼容着色器包警告已§e§l关闭§r",
+    "command.colorwheel.alert_incompatible_pack.set.on": "不兼容着色器包警告已§e§l开启§r",
+    "command.colorwheel.alert_incompatible_pack.set.off": "不兼容着色器包警告已§e§l关闭§r",
+
+    "command.colorwheel.alert_broken_pack.get.on": "损坏着色器包警告已§e§l开启§r",
+    "command.colorwheel.alert_broken_pack.get.off": "损坏着色器包警告已§e§l关闭§r",
+    "command.colorwheel.alert_broken_pack.set.on": "损坏着色器包警告已§e§l开启§r",
+    "command.colorwheel.alert_broken_pack.set.off": "损坏着色器包警告已§e§l关闭§r",
+
+    "command.colorwheel.fallback_mode.get.on": "降级模式已§e§l开启§r",
+    "command.colorwheel.fallback_mode.get.off": "降级模式已§e§l关闭§r",
+    "command.colorwheel.fallback_mode.set.on": "降级模式已§e§l开启§r。可能引发问题！",
+    "command.colorwheel.fallback_mode.set.off": "降级模式已§e§l关闭§r"
+}

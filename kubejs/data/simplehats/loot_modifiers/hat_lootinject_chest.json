@@ -1,0 +1,58 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/bastion_treasure"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/buried_treasure"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/desert_pyramid"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/end_city_treasure"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/jungle_temple"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/pillager_outpost"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/shipwreck_treasure"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/simple_dungeon"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/spawn_bonus_chest"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/stronghold_library"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/woodland_mansion"
+        }
+      ]
+    }
+  ],
+  "type": "simplehats:hat_lootinject_chest"
+}

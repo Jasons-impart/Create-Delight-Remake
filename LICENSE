@@ -5,13 +5,111 @@ This project includes these third party parts:
 - Minecraft-Mod-Language-Package: Attribution-NonCommercial-ShareAlike 4.0 International
   - Copyright (c) CFPAOrg
   - [license detail](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package?tab=License-1-ov-file)
+  - 引用的模组汉化文件：69个
+  - <details>
+    <summary>点击展开索引（Minecraft-Mod-Language-Package）</summary>
+
+    - kubejs/assets/abnormals_delight/lang/zh_cn.json
+    - kubejs/assets/ae2wtlib/lang/zh_cn.json
+    - kubejs/assets/alexsdelight/lang/zh_cn.json
+    - kubejs/assets/ali/lang/zh_cn.json
+    - kubejs/assets/art_of_forging/lang/zh_cn.json
+    - kubejs/assets/blueprint/lang/zh_cn.json
+    - kubejs/assets/bookshelf/lang/zh_cn.json
+    - kubejs/assets/bountiful/lang/zh_cn.json
+    - kubejs/assets/brewinandchewin/lang/zh_cn.json
+    - kubejs/assets/caelus/lang/zh_cn.json
+    - kubejs/assets/carryon/lang/zh_cn.json
+    - kubejs/assets/catalogue/lang/zh_cn.json
+    - kubejs/assets/cavedelight/lang/zh_cn.json
+    - kubejs/assets/chefsdelight/lang/zh_cn.json
+    - kubejs/assets/citadel/lang/zh_cn.json
+    - kubejs/assets/cloth-config2/lang/zh_cn.json
+    - kubejs/assets/cobblefordays/lang/zh_cn.json
+    - kubejs/assets/configured/lang/zh_cn.json
+    - kubejs/assets/constructionwand/lang/zh_cn.json
+    - kubejs/assets/controlling/lang/zh_cn.json
+    - kubejs/assets/cosmeticarmorreworked/lang/zh_cn.json
+    - kubejs/assets/crabbersdelight/lang/zh_cn.json
+    - kubejs/assets/create_confectionery/lang/zh_cn.json
+    - kubejs/assets/create_sa/lang/zh_cn.json
+    - kubejs/assets/createcafe/lang/zh_cn.json
+    - kubejs/assets/createstockbridge/lang/zh_cn.json
+    - kubejs/assets/creeperoverhaul/lang/zh_cn.json
+    - kubejs/assets/culturaldelights/lang/zh_cn.json
+    - kubejs/assets/curios/lang/zh_cn.json
+    - kubejs/assets/dramaticdoors/lang/zh_cn.json
+    - kubejs/assets/drippyloadingscreen/lang/zh_cn.json
+    - kubejs/assets/embeddium/lang/zh_cn.json
+    - kubejs/assets/enchdesc/lang/zh_cn.json
+    - kubejs/assets/endergetic/lang/zh_cn.json
+    - kubejs/assets/endertrigon/lang/zh_cn.json
+    - kubejs/assets/explorerscompass/lang/zh_cn.json
+    - kubejs/assets/farmersrespite/lang/zh_cn.json
+    - kubejs/assets/ftbessentials/lang/zh_cn.json
+    - kubejs/assets/ftblibrary/lang/zh_cn.json
+    - kubejs/assets/ftbteams/lang/zh_cn.json
+    - kubejs/assets/ftbultimine/lang/zh_cn.json
+    - kubejs/assets/improvedmobs/lang/zh_cn.json
+    - kubejs/assets/iris/lang/zh_cn.json
+    - kubejs/assets/itemfilters/lang/zh_cn.json
+    - kubejs/assets/jeed/lang/zh_cn.json
+    - kubejs/assets/jei/lang/zh_cn.json
+    - kubejs/assets/justenoughbreeding/lang/zh_cn.json
+    - kubejs/assets/lootr/lang/zh_cn.json
+    - kubejs/assets/man_of_many_planes/lang/zh_cn.json
+    - kubejs/assets/megacells/lang/zh_cn.json
+    - kubejs/assets/menu/lang/zh_cn.json
+    - kubejs/assets/miners_delight/lang/zh_cn.json
+    - kubejs/assets/naturescompass/lang/zh_cn.json
+    - kubejs/assets/observable/lang/zh_cn.json
+    - kubejs/assets/oceanic_delight/lang/zh_cn.json
+    - kubejs/assets/placebo/lang/zh_cn.json
+    - kubejs/assets/polymorph/lang/zh_cn.json
+    - kubejs/assets/seasonals/lang/zh_cn.json
+    - kubejs/assets/sodium/lang/zh_cn.json
+    - kubejs/assets/solapplepie/lang/zh_cn.json
+    - kubejs/assets/solcarrot/lang/zh_cn.json
+    - kubejs/assets/tetra/lang/zh_cn.json
+    - kubejs/assets/tipsmod/lang/zh_cn.json
+    - kubejs/assets/titanium/lang/zh_cn.json
+    - kubejs/assets/torchmaster/lang/zh_cn.json
+    - kubejs/assets/trashslot/lang/zh_cn.json
+    - kubejs/assets/travelerstitles/lang/zh_cn.json
+    - kubejs/assets/vintagedelight/lang/zh_cn.json
+    - kubejs/assets/xaerobetterpvp/lang/zh_cn.json
+
+    </details>
+- Xaero 地图汉化文件（作者授权提供）:
+  - 来源作者：https://github.com/duckgun13476
+  - 对应文件：
+    - kubejs/assets/xaerominimap/lang/zh_cn.json
+    - kubejs/assets/xaeroworldmap/lang/zh_cn.json
+  - 如有任何版权问题，可联系制作组删除
 - Distant Horizon Language Pack: CC-BY-NC-SA-4.0
   - Copyright (c) Confectionary
   - [license detail](https://modrinth.com/resourcepack/distant-horizons-zh)
+  - 对应kubejs/assets/distanthorizons/lang/zh_cn.json文件
 - Minecraft-Java-Flags:
   - Copyright (c) 2022 - 2023 brucethemoose
   - Copyright (c) 2023 - 2024 Mukul Kedia
   - [license detail](https://github.com/Mukul1127/Minecraft-Java-Flags/blob/main/LICENSE)
+- Terralith 生物群系中文翻译
+  - 翻译来源：Pixelmon 汉化组 (MC百科)
+  - 原帖: https://bbs.mcmod.cn/thread-22135-1-1.html
+  - 作者: 惯宣 (QQ酱985266)
+  - 发布日期: 2025-08-15
+  - 对应文件：
+    - kubejs/assets/terralith/lang/zh_cn.json
+  - 如有任何版权问题，可联系制作组删除
+- Create More: Package Couriers中文翻译
+  - 翻译来源：LYF4310 (Bilibili)
+  - 原视频: https://www.bilibili.com/video/av116469882951597/
+  - 作者: LYF4310
+  - 发布日期: 2026-04-26
+  - 对应文件：
+    - kubejs/assets/cmpackagecouriers/lang/zh_cn.json
+  - 如有任何版权问题，可联系制作组删除
 
 Codes of this project defaults to MIT license:
 
@@ -31,7 +129,7 @@ copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+FITINESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE

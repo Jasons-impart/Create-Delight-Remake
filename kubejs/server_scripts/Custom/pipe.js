@@ -25,20 +25,3 @@ BlockEvents.rightClicked("create:fluid_pipe", event => {
   }
   event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? $Boolean.FALSE : $Boolean.TRUE))
 })
-//右键切换管道箱开口，shift切换对面
-BlockEvents.rightClicked("create:encased_fluid_pipe", event => {
-  if (event.item.id != "minecraft:air" || event.hand != "MAIN_HAND") { return }
-  let BlockStates = event.block.blockState
-  let Pos = event.block.pos
-  //动画和音效
-  event.entity.swing()
-  event.block.level.playSound(null, event.block.x, event.block.y, event.block.z, "minecraft:block.copper.place", "blocks", 0.6, 1.2)
-  //功能实现
-  let Face = event.facing.toString().toUpperCase()
-  if (event.player.shiftKeyDown) {
-    Face = inversedDirectionUpper[Face]
-  }
-  let Bool = BlockStates.getValue(BlockProperties[Face])
-  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? $Boolean.FALSE : $Boolean.TRUE))
-
-})

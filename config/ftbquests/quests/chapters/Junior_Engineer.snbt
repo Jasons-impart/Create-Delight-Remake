@@ -7,7 +7,24 @@
 	icon: "create:wrench"
 	id: "53A4CA1D97DBDC3F"
 	order_index: 0
-	quest_links: [ ]
+	quest_links: [
+		{
+			id: "745E5251953BF9CF"
+			linked_quest: "795B3440D2A059C0"
+			shape: "hexagon"
+			size: 2.0d
+			x: 24.5d
+			y: 1.5d
+		}
+		{
+			id: "07940233B5E305CA"
+			linked_quest: "0CF2923758C50BDC"
+			shape: "hexagon"
+			size: 2.0d
+			x: 10.0d
+			y: 5.5d
+		}
+	]
 	quests: [
 		{
 			dependencies: ["39AF291933E03F4C"]
@@ -68,7 +85,6 @@
 		}
 		{
 			dependencies: ["45A853738625FCFD"]
-			description: [""]
 			id: "1AAB7454C767D9DB"
 			rewards: [{
 				exclude_from_claim_all: true
@@ -98,7 +114,7 @@
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			description: ["右键以产生应力，按住shift可使其反转。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "183724705FA6D24C"
 			rewards: [{
 				id: "7CAFF2E087DBE011"
@@ -125,12 +141,12 @@
 			]
 			title: "手动应力"
 			x: 8.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			hide_dependent_lines: true
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "1336C212F2B86468"
 			rewards: [
 				{
@@ -152,15 +168,15 @@
 				type: "item"
 			}]
 			title: "小水车吱呀吱悠悠地转"
-			x: 5.5d
-			y: 4.5d
+			x: 5.0d
+			y: 4.0d
 		}
 		{
 			dependencies: [
 				"28CB30AB88780BC7"
 				"1336C212F2B86468"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "724FF9E032B4B134"
 			rewards: [
 				{
@@ -181,8 +197,8 @@
 				type: "item"
 			}]
 			title: "更慢！但是更强！"
-			x: 7.5d
-			y: 4.5d
+			x: 8.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["1AAB7454C767D9DB"]
@@ -213,7 +229,7 @@
 		}
 		{
 			dependencies: ["28CB30AB88780BC7"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "4D7BB97AA55ACE20"
 			rewards: [
 				{
@@ -235,7 +251,7 @@
 				type: "item"
 			}]
 			x: 5.0d
-			y: 3.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -299,7 +315,7 @@
 		{
 			dependencies: ["1CED61E7F780F38C"]
 			description: ["用于砍伐&e木质物品&r，且自带连锁。朝上摆放时可进行切割配方。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "372234CE950277CE"
 			rewards: [{
 				id: "35EB2DA3B772BB8F"
@@ -317,7 +333,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5C40F5E0F477394B"
 			rewards: [{
 				id: "07A9F6E2C93527CF"
@@ -359,7 +375,7 @@
 				"火焰-批量烟熏-烟熏炉"
 				"灵魂火-批量缠魂-无原版对应"
 			]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "762CD49FCDC889E2"
 			rewards: [{
 				id: "6F32C73249450B34"
@@ -424,7 +440,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "3ACA3A7FE20E59D2"
 			rewards: [{
 				id: "12EA67E196A1A5D4"
@@ -442,7 +458,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5EF1F883F44263FA"
 			rewards: [{
 				id: "47435421A7DC8956"
@@ -483,7 +499,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "47ABE0A581C1E40E"
 			rewards: [{
 				id: "00B9BCEC0A5BF89D"
@@ -508,7 +524,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "21E81C4A8E9C95A0"
 			rewards: [{
 				id: "2BA0D31E66D169D2"
@@ -550,7 +566,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "54FEEB508185B5C2"
 			rewards: [{
 				id: "5A2358CCCA90F26C"
@@ -574,7 +590,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "2E62FA558BE57A48"
 			rewards: [{
 				id: "7D0AF1C691647766"
@@ -598,7 +614,7 @@
 		}
 		{
 			dependencies: ["52E82ABD2EA30418"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "0436BA03D9EB8AA8"
 			rewards: [{
 				id: "733A27B9128C1D0B"
@@ -621,7 +637,7 @@
 		}
 		{
 			dependencies: ["1CED61E7F780F38C"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "11A126AA8CC38620"
 			rewards: [{
 				id: "4D02F9F45E5388B1"
@@ -743,7 +759,7 @@
 		{
 			dependencies: ["28CB30AB88780BC7"]
 			description: ["暂时还做不了，需要做出右边的弹簧哦。"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "61FEE1B1ACE8ABC8"
 			rewards: [{
 				id: "0FEE3BFF887C19B1"
@@ -760,7 +776,7 @@
 			}]
 			title: "&e汽笛轰鸣！"
 			x: 6.5d
-			y: 5.5d
+			y: 6.75d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -933,7 +949,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "6DB08E176433BF12"
 			rewards: [{
 				id: "087B96C25EB63A50"
@@ -957,7 +973,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "1BABF924FE8F0225"
 			rewards: [{
 				id: "56F3D6012C926CB0"
@@ -981,7 +997,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "175196C8D23715B3"
 			rewards: [{
 				id: "3E9FB9E96024F6B7"
@@ -1005,7 +1021,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "6BF8E6F5FE6983F7"
 			rewards: [{
 				id: "021C79434EA9BDD3"
@@ -1032,7 +1048,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "65CDCB9357D9BB71"
 			rewards: [{
 				id: "73E6C7CEF8085B9F"
@@ -1061,7 +1077,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "40C5A484EAF7283C"
 			rewards: [{
 				id: "4F0C2A98B6CAAAA7"
@@ -1085,7 +1101,7 @@
 		}
 		{
 			dependencies: ["1197EF9B84E242DE"]
-			hide_until_deps_visible: true
+			hide_until_deps_visible: false
 			id: "5B1CD6F67D035B28"
 			rewards: [{
 				id: "1ED244CFBB901CF0"
@@ -1135,7 +1151,7 @@
 				type: "item"
 			}]
 			title: "简单装饰一下我的齿轮组们~"
-			x: 5.0d
+			x: 7.5d
 			y: -1.0d
 		}
 		{
@@ -1161,7 +1177,7 @@
 				type: "item"
 			}]
 			title: "超有工业风的齿轮组！"
-			x: 5.0d
+			x: 7.5d
 			y: 1.0d
 		}
 		{
@@ -1215,13 +1231,17 @@
 			y: -2.5d
 		}
 		{
-			dependencies: ["510B2EE25982FD73"]
+			dependencies: [
+				"510B2EE25982FD73"
+				"10D661738D4296E5"
+			]
 			description: [
 				"&e安山桶&r可以从机器中&4取出至多2000mB的流体&r"
 				"&e安山罐&r可以&4取出10mB流体&r以进行&e过滤标记 &r"
 				""
 				"使用安山桶喂烈焰人燃烧室燃料时需要进入&e潜行状态&r再右键。"
 			]
+			hide_until_deps_complete: true
 			id: "630FA0478B7DAAAA"
 			size: 1.0d
 			subtitle: "简化和机械动力流体容器的交互"
@@ -1257,7 +1277,7 @@
 				type: "item"
 			}]
 			x: 12.0d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1282,7 +1302,7 @@
 				}
 			]
 			x: 12.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1300,7 +1320,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: -3.0d
+			y: -3.5d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1317,7 +1337,7 @@
 				type: "item"
 			}]
 			x: 15.0d
-			y: -4.5d
+			y: -5.0d
 		}
 		{
 			dependencies: ["0DC2E7BC4657D633"]
@@ -1342,7 +1362,7 @@
 				type: "item"
 			}]
 			x: 13.5d
-			y: -4.0d
+			y: -4.5d
 		}
 		{
 			dependencies: ["621E3093612F5D2C"]
@@ -1368,7 +1388,7 @@
 				type: "item"
 			}]
 			x: 13.5d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1386,7 +1406,7 @@
 				type: "item"
 			}]
 			x: 13.0d
-			y: -5.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1404,7 +1424,7 @@
 				type: "item"
 			}]
 			x: 14.0d
-			y: -5.5d
+			y: -6.5d
 		}
 		{
 			dependencies: ["223ACB0E32376155"]
@@ -1425,7 +1445,7 @@
 				type: "checkmark"
 			}]
 			x: 14.0d
-			y: -7.0d
+			y: -8.0d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -1589,13 +1609,14 @@
 			description: [
 				"整合包地形模组调整了安山岩的生成群系，请寻找 安山岩洞穴 群系。"
 				"可使用&4自然罗盘&r，或在有权限的情况下直接使用locate指令搜索terralith:cave/andesite_caves"
+				"注意：随着任务的进行，更多的章节会显现出来。"
 			]
 			icon: "minecraft:andesite"
 			id: "39AF291933E03F4C"
 			min_required_tasks: 1
 			shape: "square"
 			size: 1.25d
-			subtitle: "找不到安山岩？"
+			subtitle: "机动从安山岩开始"
 			tasks: [
 				{
 					id: "1F97BB75E7CEED51"
@@ -1727,9 +1748,8 @@
 			description: [
 				"不知道怎么做机械动力的刷铁机？"
 				"使用蓝图桌打开 &l&ebasic_iron_farming.nbt&r&r"
-				"打印后，让&b水车&r转起来使得&b鼓风机&r&n&e吹&r&r风，鼓风机前&a倒一格水&r"
-				"刷石机末端&a倒一桶岩浆&r作为垃圾桶，再给&b石磨&r接上满速应力。"
-				"等到水洗砂砾产出铁粒后放入&b压缩抽屉&r，&l&n超丐&r&r刷铁机就完成了。"
+				"打印后，让&b水车&r转起来使得&b鼓风机&r&n&e吹&r风，在树叶处&a倒一格水&r"
+				"在抽屉内放入&n&l铁粒&r以及&n&l燧石&r后，&l&n超丐&r刷铁机就完成了。"
 				"PS：善用抽屉可以极大程度地简化你的产线，务必了解一下，b站搜索：16mapzhEg3"
 			]
 			icon: {
@@ -1769,6 +1789,141 @@
 			title: "最丐机械动力刷铁机"
 			x: 16.0d
 			y: 4.5d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			dependency_requirement: "all_started"
+			description: [
+				"可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"
+				"注液效率远超注液器。"
+			]
+			id: "5CBAD075435316D8"
+			subtitle: "流体哗啦啦"
+			tasks: [{
+				id: "765A305554397F18"
+				item: "fluid:copper_tap"
+				type: "item"
+			}]
+			x: 12.0d
+			y: -2.5d
+		}
+		{
+			dependencies: [
+				"28CB30AB88780BC7"
+				"29130F650B256E20"
+			]
+			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
+			hide_until_deps_complete: true
+			id: "3DBEC3D3BC6BAD1A"
+			secret: true
+			shape: "gear"
+			size: 1.5d
+			subtitle: "单格自行应力产出应力源！"
+			tasks: [{
+				id: "0FB315EB44E1CE8F"
+				item: "create_fantasizing:compact_hydraulic_engine"
+				type: "item"
+			}]
+			x: 7.5d
+			y: 5.25d
+		}
+		{
+			dependencies: [
+				"28CB30AB88780BC7"
+				"517B61DF9D117879"
+			]
+			description: ["无需额外应力接入，&2自行生产&r应力，应力总量&e一个满级风车&r"]
+			hide_until_deps_complete: true
+			id: "08571011E558AC3E"
+			secret: true
+			shape: "gear"
+			size: 1.5d
+			subtitle: "单格自行应力产出应力源！"
+			tasks: [{
+				id: "29261BA684BCF813"
+				item: "create_fantasizing:compact_wind_engine"
+				type: "item"
+			}]
+			x: 5.5d
+			y: 5.25d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			description: [
+				"流体接口可以放置在任意的流体容器（如流体储罐）上"
+				"手持类似于玻璃瓶或者桶的容器与流体接口交互，可以便捷地向相连的流体容器输入或输出流体"
+				"流体接口可以被指定为动力移液器的交互点，以实现动力移液器与流体储罐之间的流体交互"
+			]
+			id: "2F5D9025D3185A43"
+			subtitle: "一个交互接口！"
+			tasks: [{
+				id: "5FA1FCE1BEF4FE13"
+				item: "fluid:fluid_interface"
+				type: "item"
+			}]
+			x: 15.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["64BDB4FEDC5142AF"]
+			description: [
+				"使用蓝图桌打开 &l&ebread_maker.nbt&r&r"
+				"&b顶端抽屉&r放入&a小麦&r"
+				"&b中层抽屉&r放入&a草杆&r，使用&a抽入升级&r从脱粒机&e抽出&r草杆，利用抽屉过滤特性避免影响小麦籽的输出。"
+				"往&b鼓风机&r前的大齿轮&e倒水&r，后面的水车&e倒水&r让鼓风机&n慢速吹&r风"
+				"&b底层抽屉&r先空着&e使用&a配置工具&e锁定&r，等有烤制好的面包产出后&e手动放入&r抽屉。"
+			]
+			icon: {
+				Count: 1
+				id: "create:schematic"
+				tag: {
+					Anchor: {
+						X: 0
+						Y: 0
+						Z: 0
+					}
+					Bounds: [
+						2
+						2
+						6
+					]
+					Deployed: 0b
+					File: "speed_controller.nbt"
+					Mirror: "NONE"
+					Owner: "AzureCrab"
+					Rotation: "NONE"
+				}
+			}
+			id: "621C29458FCFE7A0"
+			rewards: [{
+				id: "6D48B144BF23EE7A"
+				item: "create:empty_schematic"
+				type: "item"
+			}]
+			shape: "gear"
+			size: 1.0d
+			subtitle: "村民还得感谢我帮他们清理麦垛呢"
+			tasks: [{
+				id: "5E7B6853EE5BFCE2"
+				type: "checkmark"
+			}]
+			title: "面包制作机"
+			x: 15.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["262E66AD49F385AC"]
+			dependency_requirement: "one_completed"
+			hide_until_deps_complete: true
+			id: "64BDB4FEDC5142AF"
+			subtitle: "一个格子，能存2048个物品"
+			tasks: [{
+				id: "5DDFE1CB80AEDE27"
+				item: "functionalstorage:oak_1"
+				type: "item"
+			}]
+			x: 17.0d
+			y: 6.0d
 		}
 	]
 	title: "&2初识机械"

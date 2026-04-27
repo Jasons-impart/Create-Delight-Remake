@@ -89,19 +89,53 @@ ServerEvents.recipes(e => {
         D: "vintageimprovements:redstone_module"
     })
         .id("createdelight:mechanical_crafting/hydropower_station")
-
-    e.recipes.create.mechanical_crafting("createdelight:hydropower_station_fan", [
+    // 涡轮转子
+    e.recipes.create.mechanical_crafting("createdelight:wooden_fan", [
         " A A ",
         "ABBBA",
         " BCB ",
         "ABBBA",
         " A A "
     ], {
-        A: "ad_astra:steel_plate",
-        B: "ae2:sky_dust",
-        C: "create:shaft"
+        A: "#minecraft:wooden_slabs",
+        B: "#minecraft:logs",
+        C: "create:large_water_wheel"
     })
-        .id("createdelight:mechanical_crafting/hydropower_station_fan")
+        .id("createdelight:mechanical_crafting/wooden_fan")
+    e.recipes.create.mechanical_crafting("createdelight:steel_fan", [
+        " A A ",
+        "ABBBA",
+        " BCB ",
+        "ABBBA",
+        " A A "
+    ], {
+        A: "createdelight:steel_sheet",
+        B: "ae2:sky_dust",
+        C: "createdelight:wooden_fan"
+    })
+        .id("createdelight:mechanical_crafting/steel_fan")
+    {
+        let iner = 'createdelight:steel_fan'
+        e.recipes.create.sequenced_assembly('createdelight:forge_steel_fan', iner, [
+            e.recipes.create.deploying(iner, [iner, 'ae2:sky_dust']),
+            e.recipes.create.filling(iner, [iner, Fluid.of("createdelightcore:molten_forged_steel", 90)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .transitionalItem(iner)
+            .loops(4)
+            .id("createdelight:sequenced_assembly/forge_steel_fan")
+    }
+    {
+        let iner = 'createdelight:forge_steel_fan'
+        e.recipes.create.sequenced_assembly('createdelight:dragon_steel_fan', iner, [
+            e.recipes.create.deploying(iner, [iner, 'ae2:sky_dust']),
+            e.recipes.create.filling(iner, [iner, FluidIngredients("createdelight:molten_dragon_steel", 90)]),
+            e.recipes.create.pressing(iner, iner)
+        ])
+            .transitionalItem(iner)
+            .loops(4)
+            .id("createdelight:sequenced_assembly/dragon_steel_fan")
+    }
 
     //合金电炉
     e.recipes.create.mechanical_crafting("createdelight:alloy_electric_furnace", [
@@ -113,27 +147,12 @@ ServerEvents.recipes(e => {
     ], {
         A: "#forge:plates/steel",
         B: "#forge:plates/bronze",
-        C: "#forge:plates/bronze",
-        D: "minecraft:blast_furnace",
+        C: "northstar:circuit",
+        D: "createmetallurgy:industrial_crucible",
         E: "vintageimprovements:redstone_module",
         F: "create:sturdy_sheet"
     })
         .id("createdelight:mechanical_crafting/alloy_electric_furnace")
-
-    e.recipes.create.mechanical_crafting("createdelight:hydropower_amplifier", [
-        "AABAA",
-        "ACDCA",
-        "BDEDB",
-        "ACDCA",
-        "AABAA"
-    ], {
-        A: "createdelight:sky_steel_casing",
-        B: "ad_astra:fan",
-        C: "createdelight:forged_steel_sheet",
-        D: "ad_astra:steel_engine",
-        E: "createdelightcore:forged_steel_block"
-    })
-        .id("createdelight:mechanical_crafting/hydropower_amplifier")
     e.recipes.kubejs.shaped("createdelight:dryer", [
         "ABA",
         "ACA",
@@ -166,7 +185,7 @@ ServerEvents.recipes(e => {
     e.recipes.create.mechanical_crafting("createdelight:big_centrifuge", [
         "AABAA",
         "ACCDA",
-        "BCEDA",
+        "FCEDF",
         "ACDDA",
         "AABAA"
     ], {
@@ -174,7 +193,8 @@ ServerEvents.recipes(e => {
         B: "createdelight:magnetic_mechanism",
         C: "alexscaves:azure_neodymium_ingot",
         D: "alexscaves:scarlet_neodymium_ingot",
-        E: "alexscaves:heart_of_iron"
+        E: "alexscaves:heart_of_iron",
+        F: "northstar:circuit"
     }).id("createdelight:mechanical_crafting/big_centrifuge")
     e.recipes.create.mechanical_crafting("createdelight:centrifuge_rotor", [
         " A A ",
@@ -183,7 +203,7 @@ ServerEvents.recipes(e => {
         "ABABA",
         " A A "
     ], {
-        A: "#forge:plates/aviation_fibers",
+        A: "northstar:titanium_sheet",
         B: "#forge:spring/over_1000",
         C: "vintageimprovements:centrifuge"
     }).id("createdelight:mechanical_crafting/centrifuge_rotor")
@@ -205,23 +225,29 @@ ServerEvents.recipes(e => {
         "AAAAA"
     ], {
         A: "create_new_age:reactor_casing",
-        B: "ae2:engineering_processor",
+        B: "northstar:circuit",
         C: "alexscaves:fissile_core",
-        D: "ae2:logic_processor",
+        D: "northstar:advanced_circuit",
         E: "vintageimprovements:redstone_module"
     }).id("createdelight:mechanical_crafting/fission_reactor")
-    e.recipes.kubejs.shaped("createdelight:order_deliverer", [
-        " A ",
-        "BCB",
-        " D "
+    e.recipes.kubejs.shaped(
+        "createdelight:order_deliverer_item",
+        [
+        "AB ",
+        "BC "
     ], {
         A: "createdelight:unopened_order",
         B: "lightmanscurrency:trading_core",
-        C: "#forge:chests",
-        D: "#create:table_cloths"
+        C: "#forge:chests"
     })
-    .id("createdelight:order_deliverer")
-    e.recipes.kubejs.shapeless("createdelight:contract_executor", "createdelight:order_deliverer")
+    .id("createdelight:order_deliverer_item")
+    // e.recipes.kubejs.shapeless(
+    //     "createdelight:contract_executor", 
+    //     [
+    //         "createdelight:order_deliverer_item",
+    //         "#create:table_cloths"
+    //     ]
+    // ).id("createdelight:contract_executor")
 
     e.recipes.create.mechanical_crafting("createdelight:mechanical_craft_encoder", [
         "AABAA",
@@ -231,8 +257,14 @@ ServerEvents.recipes(e => {
         "AABAA"
     ], {
         A: "create:brass_sheet",
-        B: "ae2:molecular_assembler",
+        B: "quark:crafter",
         C: "create:brass_casing",
         D: "create:factory_gauge"
     }).id("createdelight:mechanical_crafting/mechanical_craft_encoder")
+
+    e.recipes.create.item_application("createdelight:fission_reactor_controller", [
+        "createdelightcore:forge_steel_casing", 
+        "vintageimprovements:redstone_module"
+    ]).id("createdelight:fission_reactor_controller")
+
 })

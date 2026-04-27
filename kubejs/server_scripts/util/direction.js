@@ -1,3 +1,44 @@
+let DirectionUtil = {}
+
+/**
+ * 返回旋转90°后的方向
+ * @param {Internal.Direction} direction 
+ */
+DirectionUtil.rotation90Direction = function(direction) {
+    if (direction == Direction.NORTH) {
+        return Direction.EAST
+    }
+    if (direction == Direction.SOUTH) {
+        return Direction.WEST
+    }
+    if (direction == Direction.EAST) {
+        return Direction.SOUTH
+    }
+    if (direction == Direction.WEST) {
+        return Direction.NORTH
+    }
+}
+
+/**
+ * 返回旋转270°后的方向
+ * @param {Internal.Direction} direction 
+ */
+DirectionUtil.rotation270Direction = function(direction) {
+    if (direction == Direction.NORTH) {
+        return Direction.WEST
+    }
+    if (direction == Direction.SOUTH) {
+        return Direction.EAST
+    }
+    if (direction == Direction.EAST) {
+        return Direction.NORTH
+    }
+    if (direction == Direction.WEST) {
+        return Direction.SOUTH
+    }
+}
+
+
 /**
  * 根据两个坐标点计算方向，并返回对应方向的翻译文本（通过Text.translate函数获取）
  * 

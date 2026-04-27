@@ -1,0 +1,12 @@
+{
+  "providers": [
+    {"type": "reference", "id": "minecraft:include/space"},
+    {"type": "reference", "id": "minecraft:include/default"},
+    {"type": "reference", "id": "minecraft:include/unifont"},
+    {"type": "bitmap","file": "createdelight:gui/iron_coin.png", "ascent": 8,"height": 10,"chars": ["\uAA01"]},
+    {"type": "bitmap","file": "createdelight:gui/copper_coin.png", "ascent": 8,"height": 10,"chars": ["\uAA02"]},
+    {"type": "bitmap","file": "createdelight:gui/gold_coin.png", "ascent": 8,"height": 10,"chars": ["\uAA03"]},
+    {"type": "bitmap","file": "createdelight:gui/emerald_coin.png", "ascent": 9,"height": 10,"chars": ["\uAA04"]},
+    {"type": "bitmap","file": "createdelight:gui/netherite_coin.png", "ascent": 8,"height": 10,"chars": ["\uAA05"]}
+  ]
+}

@@ -4,6 +4,4 @@
 !/bsl-shaders.pw.toml
 !/bliss-shader.pw.toml
 !/complementary-unbound.pw.toml
-
-# 仅为了这些文件能被删掉而保留，后续会清理
-!/ComplementaryUnbound_r5.6.zip
+!/photon-shader.pw.toml

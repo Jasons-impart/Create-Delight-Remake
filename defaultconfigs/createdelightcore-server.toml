@@ -1,0 +1,10 @@
+#The depth limit from surface for carving and noise cave start generating.
+#Carving and noise cave generation will be restricted to this many blocks below the surface.
+#Set to 0 to disable this feature.
+#default: 16
+#Range: 0 ~ 256
+surfaceDepthLimit = 16
+#Sandpaper polishing recipe IDs to block from the Belt Grinder.
+#Example: ["createdelight:sandpaper_polishing/rose_quartz"]
+beltGrinderBlockedSandpaperRecipes = ["createdelight:sandpaper_polishing/rose_quartz"]
+

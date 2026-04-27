@@ -8,7 +8,13 @@ ServerEvents.recipes(e => {
         "culturaldelights:cutting/corn_kernels",
         "culturaldelights:smelting/cooked_calamari",
         "culturaldelights:smelting/cooked_calamari_from_campfire",
-        "culturaldelights:smelting/cooked_calamari_from_smoking"
+        "culturaldelights:smelting/cooked_calamari_from_smoking",
+        "culturaldelights:egg_roll",
+        "culturaldelights:pufferfish_roll",
+        "culturaldelights:tropical_roll",
+        "culturaldelights:calamari_roll",
+        "culturaldelights:midori_roll",
+        "culturaldelights:chicken_roll"
     ])
     e.replaceInput({id: "culturaldelights:cooking/eggplant_parmesan"}, "#forge:milk", "#forge:cheese")
     e.recipes.kubejs.shapeless(
@@ -20,14 +26,6 @@ ServerEvents.recipes(e => {
             "#forge:vegetables/onion"
         ]
     ).id("culturaldelights:cooking/empanada")
-    e.recipes.kubejs.shapeless(
-        "2x culturaldelights:egg_roll",
-        [
-            '2x #forge:cooked_eggs',
-            'createdelight:empty_riceball',
-            "minecraft:dried_kelp"
-        ]
-    ).id("culturaldelights:egg_roll")
     cutting_2(e, 'vintagedelight:cucumber',[
         ['culturaldelights:cut_cucumber', 2]
     ])
@@ -56,15 +54,6 @@ ServerEvents.recipes(e => {
             "minecraft:green_dye"
         ]
     ).id("culturaldelights:cutting/wild_cucumbers_2")
-    // 热带鱼寿司
-    e.shapeless(
-        "2x culturaldelights:tropical_roll",
-        [
-            "minecraft:dried_kelp",
-            "createdelight:empty_riceball",
-            "2x crabbersdelight:tropical_fish_slice"
-        ]
-    ).id("culturaldelights:tropical_roll")
     //饭团
     e.recipes.kubejs.shapeless(
         "2x culturaldelights:rice_ball",

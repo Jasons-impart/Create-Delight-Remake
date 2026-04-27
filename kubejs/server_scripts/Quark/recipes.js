@@ -25,10 +25,11 @@ ServerEvents.recipes(e => {
         "quark:building/crafting/chests/mixed_chest"
     ])
     e.replaceInput({id: "quark:automation/crafting/feeding_trough"}, "minecraft:wheat", "farmersdelight:straw")
+    e.replaceInput({id: "quark:automation/crafting/crafter"}, "minecraft:iron_ingot", "create:brass_sheet")
     e.recipes.create.mixing(
         Fluid.of("create_enchantment_industry:experience", 10),
         'quark:ancient_fruit'
     )
     .heated()
-    .id("create_enchantment_industry:experience_from_ancient_fruit")
+    .id("createdelight:experience_from_ancient_fruit")
 })

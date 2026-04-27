@@ -20,7 +20,24 @@ function freezing(event, ingredients, results, time) {
 function threshing(event, input, outputs, time) {
   const [first, second] = outputs
   event.recipes.ratatouille.threshing(outputs, input)
-    .id(`ratatouille:threshing/${input.split(":")[1]}`).processingTime(time)
+    .id(`createdelight:threshing/${input.split(":")[1]}`).processingTime(time)
   event.recipes.farmersdelight.cutting(input, "#forge:tools/knives", [first, second])
-    .id(`farmersdelight:cutting/${input.split(":")[1]}`)
+    .id(`createdelight:cutting/${input.split(":")[1]}`)
 }
+/**
+ * 
+ * @param { Internal.RecipesEventJS } event
+ * @param { OutputItem_ } output 输出香肠
+ * @param { InputItem_ } ingredient 单个输入item
+ */
+function addSausageRecipe(event, output, ingredient) {
+  event.recipes.ratatouille.squeezing(
+    output,
+    [
+      "ratatouille:sausage_casing",
+      ingredient,
+      Fluid.of("luncheonmeatsdelight:flesh_mud", 250)
+    ]
+  ).id(`createdelight:squeezing/${output.split(":")[1]}`)
+}
+

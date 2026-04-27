@@ -16,11 +16,11 @@ ServerEvents.recipes(e => {
         let fluidId = ""
         let prefix = fluid[0]
         if (fluid[1] == "general") {
-            prefix = "doaddonfluids:" + fluid[0]
+            prefix = "createdelightcore:" + fluid[0]
             fluidId = prefix + "_grapejuice"
         }
         else if (fluid[1] == "warped" || fluid[1] == "crimson") {
-            prefix = "doaddonfluids:" + fluid[1]
+            prefix = "createdelightcore:" + fluid[1]
             fluidId = prefix + "_grapejuice"
         }
         else if (fluid[0] == "apple") {
@@ -28,7 +28,7 @@ ServerEvents.recipes(e => {
         }
         else if (fluid[1]) {
             prefix = `${fluid[1]}_${prefix}`
-            prefix = "doaddonfluids:" + prefix
+            prefix = "createdelightcore:" + prefix
             fluidId = prefix + "_grapejuice"
         }
         let ingrs = [Fluid.of(fluidId, 1000)]
@@ -47,7 +47,7 @@ ServerEvents.recipes(e => {
             })
         })
         brewinandchewin_fermenting(e, resFluid, originIngrs, Fluid.of(fluidId, 1000))
-        .id(`brewinandchewin:fermenting/${res.id.toString().split(":")[1]}`)
+        .id(`createdelight:fermenting/${res.id.toString().split(":")[1]}`)
         r.remove()
         if (res.is("vinery:bottle_mojang_noir") || res.is("vinery:jellie_wine") || res.is("vinery:apple_wine"))
             return
@@ -56,12 +56,12 @@ ServerEvents.recipes(e => {
         // console.log(`ingr: ${recipe.ingredients.get(0).stacks.toString()}`)
     })
     e.recipes.create.pressing("vinery:apple_mash", "minecraft:apple")
-        .id("vinery:pressing/apple_mash")
+        .id("createdelight:pressing/apple_mash")
     e.recipes.create.compacting(Fluid.of("createdelight:apple_juice", 250), "vinery:apple_mash")
         .id("createdelight:compacting/apple_juice")
     e.recipes.create.filling("vinery:apple_juice", ["vinery:wine_bottle", Fluid.of("createdelight:apple_juice", 250)])
-        .id("vinery:filling/apple_juice")
+        .id("createdelight:filling/apple_juice")
     e.recipes.create.emptying(["vinery:wine_bottle", Fluid.of("createdelight:apple_juice", 250)], "vinery:apple_juice")
-        .id("vinery:emptying/apple_juice")
+        .id("createdelight:emptying/apple_juice")
     pouring(e, 'vinery:apple_juice', "createdelight:apple_juice", "vinery:wine_bottle", 250)
 })

@@ -3,6 +3,8 @@
  * @param {Internal.LivingHurtEvent} e 
  */
 global.TetraOverwhelmAttackEffect = function (e) {
+    if (e.source.indirect)
+        return
     let player = e.getSource().getPlayer()
     let entity = e.getEntity()
     if (player == null || !player.isPlayer())

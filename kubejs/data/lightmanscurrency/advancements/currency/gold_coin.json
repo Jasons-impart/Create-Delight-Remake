@@ -1,0 +1,38 @@
+{
+  "parent": "lightmanscurrency:currency/copper_coin",
+  "criteria": {
+    "gold_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelightcore:gold_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.lightmanscurrency.gold_coin.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelightcore:gold_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.lightmanscurrency.gold_coin.title"
+    }
+  },
+  "requirements": [
+    [
+      "gold_coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

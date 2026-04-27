@@ -548,6 +548,18 @@
 			x: 0.0d
 			y: 8.0d
 		}
+		{
+			dependencies: ["6064CB76A7832C2A"]
+			id: "29130F650B256E20"
+			subtitle: "似乎可以做更厉害的东西"
+			tasks: [{
+				id: "605A5C244AD55689"
+				item: "create_fantasizing:sturdy_conduit"
+				type: "item"
+			}]
+			x: 2.0d
+			y: 10.5d
+		}
 	]
 	title: "&1渊海陷窟"
 }

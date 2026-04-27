@@ -37,7 +37,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
     <br />
-    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在CurseForge上下载整合包上一个大版本v0.3 »</strong></a>
+    <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake"><strong>在CurseForge上下载整合包 »</strong></a>
     <br />
     <br />
     <a href="https://b23.tv/BV1zvNozWECh">观看宣传视频</a>
@@ -53,7 +53,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 > [!IMPORTANT]
 > 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们[反馈问题](https://xr5r5e86lk.feishu.cn/share/base/form/shrcnIDUxvX4oOvWSQaddJUht9b)！感激不尽！
-> PS：目前CF上1201最新版仍不可下载，请参考信息汇总文档的下载方式下载最新版本
 
 欢迎来到齿轮盛宴的世界。
 
@@ -102,7 +101,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 魔改了**超 5000+配方**
 
-机械动力：齿轮盛宴 将各种 ***机械动力***、***农夫乐事***、***Ad_Astra***、***Alex洞穴***深度融合，创造出一个值得探索与建造的奇妙世界！
+机械动力：齿轮盛宴 将各种 ***机械动力***、***农夫乐事***、***机械动力：北极星***、***Alex洞穴***深度融合，创造出一个值得探索与建造的奇妙世界！
 
 ### 核心模组
 #### 科技
@@ -226,13 +225,14 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 
 - **其余成员**
 
-| 成员          | 贡献       |
+| 成员           | 贡献       |
 | ------------- | ---------- |
 | ikoi03        | ***美工*** |
 | Maruyama_Ayaa | ***任务书编写*** |
 | XinJinIris    | ***任务书编写*** |
-| 史莱姆li       | ***提供工业平台及管道开口代码*** |
+| 史莱姆li       | ***提供管道开口与批量装壳代码*** |
 | Qi-Month      | ***提供开发者模式代码*** |
+| 以及更多其他帮助我们的同学！ | ...... |
 
 ---
 
@@ -250,7 +250,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 [stars-shield]: https://img.shields.io/github/stars/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
 [stars-url]: https://github.com/Jasons-impart/Create-Delight-Remake/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/Jasons-impart/Create-Delight-Remake.svg
+[issues-url]: https://github.com/Jasons-impart/Create-Delight-Remake/issues
 [qqpd-shield]: https://img.shields.io/badge/QQ频道-pd06113710-12B7F3?style=flat-square
 [release-version-shield]: https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?label=%E6%AD%A3%E5%BC%8F%E7%89%88%E6%9C%AC&color=2CB3A8
 [test-version-shield]: https://img.shields.io/github/v/release/Jasons-impart/Create-Delight-Remake?include_prereleases&label=%E6%B5%8B%E8%AF%95%E7%89%88%E6%9C%AC&color=yellow

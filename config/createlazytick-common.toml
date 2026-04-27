@@ -1,0 +1,145 @@
+
+#Global Settings
+[general]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable lazy tick mixin
+	enable_lazy_tick = true
+
+#Fluid Pipe Settings
+[fluids]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable fluid pipe lazy tick
+	enable_lazy_fluid = true
+
+#Logistics Blocks Settings
+[logistics]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable funnel lazy tick
+	enable_lazy_funnel = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if funnel is rest
+	#Range: > 20
+	funnel_delay_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable chute lazy tick
+	enable_lazy_chute = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if chute is rest
+	#Range: > 20
+	chute_delay_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable belt lazy tick
+	enable_lazy_belt = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if belt is rest
+	#Range: > 20
+	belt_delay_max = 60
+
+#Processing Blocks Settings
+[processing]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable depot lazy tick
+	enable_lazy_depot = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if depot is rest
+	#Range: > 20
+	depot_delay_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable saw cache to improve efficiency of finding recipes
+	enable_cache_saw = true
+	#
+	#--------------------------------------------------------------------------
+	#max cache count for each saw
+	#Range: > 1
+	saw_cache_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable basin lazy tick by cached recipes(Influence on mechanical mixer and mechanical press)
+	enable_lazy_basin = true
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable item drain lazy tick
+	enable_lazy_item_drain = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if something stuck on the item drain
+	#Range: > 20
+	item_drain_delay_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable deployer cache to improve efficiency
+	enable_cache_deployer = false
+
+#Crafter Settings
+[crafter]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable crafter cache to improve efficiency of finding recipes
+	enable_cache_crafter = true
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable crafter debugger to show cache stats.
+	enable_cache_crafter_debugger = false
+	#
+	#--------------------------------------------------------------------------
+	#max cache count for global crafter
+	#Range: > 10
+	crafter_global_cache_max = 500
+	#
+	#--------------------------------------------------------------------------
+	#Delay time (in seconds) for crafter cache to start recording again after a server reload.
+	#This setting prevents abnormal recipes from being recorded in the global cache due to unstable recipes after a reload.
+	#Warning: A lower value carries higher risks. Please consider carefully before changing this setting.
+	#Range: 0 ~ 600
+	crafter_cache_record_delay = 40
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable crafter redstone lazy tick.
+	#Note: When this option is enabled, if you attempt to activate a mechanical crafter in a lazy-loaded state via redstone,
+	#you must ensure that the duration of the changed redstone signal is longer than the lazy-loading interval.
+	#A mechanical crafter in an active state can respond immediately without requiring the above conditions.
+	enable_lazy_crafter_redstone = true
+	#
+	#--------------------------------------------------------------------------
+	#The maximum delay for activating a mechanical crafter via redstone after it has been inactive for a period of time.
+	#Range: > 0
+	crafter_redstone_delay_max = 60
+
+#Mechanical Arm Settings
+[arm]
+	#
+	#--------------------------------------------------------------------------
+	#Whether to enable mechanical arm lazy tick
+	enable_lazy_arm = true
+	#
+	#--------------------------------------------------------------------------
+	#max delay tick if arm is searching for items/targets
+	#Range: > 1
+	arm_delay_max = 60
+	#
+	#--------------------------------------------------------------------------
+	#List of blocks that force the arm to work at full speed (Disable Lazy Tick).
+	#Use this for fast-moving inputs like belts.
+	arm_ignore_lazytick_list = ["create:belt"]
+	#
+	#--------------------------------------------------------------------------
+	#List of blocks that allow lazy ticking but with a reduced max delay (Weak Lazy).
+	#Use this for time-sensitive outputs like blaze burners.
+	arm_weak_lazytick_list = ["create:blaze_burner"]
+	#
+	#--------------------------------------------------------------------------
+	#The max delay tick for blocks in the 'Weak Lazy' list.
+	#Range: > 1
+	arm_weak_delay_max = 10
+

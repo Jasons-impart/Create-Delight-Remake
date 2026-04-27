@@ -8,7 +8,18 @@ ServerEvents.tags("minecraft:item", e => {
     e.add('forge:tea_leaves/oolong', "farmersrespite:yellow_tea_leaves")
     e.add('forge:tea_leaves/black', "farmersrespite:black_tea_leaves")
     e.add("minecraft:ice", "youkaishomecoming:ice_cube")
-    e.add("forge:roe", 'oceanic_delight:salmon_eggs')
+    e.add("forge:roe", [
+        'oceanic_delight:salmon_eggs',
+        'oceanic_delight:ancient_fish_eggs'
+    ])
+    e.add("forge:tropical", [
+        'minecraft:tropical_fish',
+        'crabbersdelight:tropical_fish_slice'
+    ])
+    e.removeAllTagsFrom([
+        'collectorsreap:tiger_prawn_roe',
+        'collectorsreap:platinum_bass_roe',
+    ])
     e.add("minecraft:fishes", [
         'youkaishomecoming:roasted_lamprey',
         'youkaishomecoming:raw_lamprey_fillet',
@@ -39,5 +50,14 @@ ServerEvents.tags("minecraft:item", e => {
         'alexsmobs:flying_fish',
         'alexscaves:tripodfish',
         'alexscaves:lanternfish'
+    ])
+    e.add("forge:pufferfish", [
+        'minecraft:pufferfish',
+        'crabbersdelight:pufferfish_slice'
+    ])
+})
+ServerEvents.tags("block", e => {
+    e.removeAllTagsFrom([
+        'youkaishomecoming:coffea',
     ])
 })

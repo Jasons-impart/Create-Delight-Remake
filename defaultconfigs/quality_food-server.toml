@@ -60,10 +60,10 @@ farmland_config = [
 	duration_multiplier = 1.5
 	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
 	#Range: 0.0 ~ 1.0
-	probability_addition = 0.10000000149011612
+	probability_addition = 0.3
 	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
 	#Range: 0 ~ 255
-	amplifier_addition = 1
+	amplifier_addition = 0
 	#By how much the nutrition will get multiplied for
 	#Range: 1.0 ~ 100.0
 	nutrition_multiplier = 1.5
@@ -91,13 +91,13 @@ farmland_config = [
 	seed_multiplier = 0.8999999761581421
 	#By how much the duration of the effect will get multiplied (beneficial) or divided (harmful) for
 	#Range: 1.0 ~ 100.0
-	duration_multiplier = 2.0
+	duration_multiplier = 1.5
 	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
 	#Range: 0.0 ~ 1.0
-	probability_addition = 0.20000000298023224
+	probability_addition = 0.4
 	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
 	#Range: 0 ~ 255
-	amplifier_addition = 2
+	amplifier_addition = 1
 	#By how much the nutrition will get multiplied for
 	#Range: 1.0 ~ 100.0
 	nutrition_multiplier = 2.0
@@ -125,13 +125,13 @@ farmland_config = [
 	seed_multiplier = 0.75
 	#By how much the duration of the effect will get multiplied (beneficial) or divided (harmful) for
 	#Range: 1.0 ~ 100.0
-	duration_multiplier = 2.5
+	duration_multiplier = 3.0
 	#The addition (beneficial) or subtraction (harmful) for the probability (chance for the effect to apply)
 	#Range: 0.0 ~ 1.0
-	probability_addition = 0.30000001192092896
+	probability_addition = 0.5
 	#The addition (beneficial) or subtraction (harmful) for the amplifier (level of the effect)
 	#Range: 0 ~ 255
-	amplifier_addition = 3
+	amplifier_addition = 2
 	#By how much the nutrition will get multiplied for
 	#Range: 1.0 ~ 100.0
 	nutrition_multiplier = 2.5

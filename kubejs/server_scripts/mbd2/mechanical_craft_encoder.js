@@ -1,7 +1,8 @@
 const $BigItemStack = Java.loadClass("com.simibubi.create.content.logistics.BigItemStack")
 const $PackageOrderWithCrafts = Java.loadClass("com.simibubi.create.content.logistics.stockTicker.PackageOrderWithCrafts")
 const $MechanicalCraftingRecipe = Java.loadClass("com.simibubi.create.content.kinetics.crafter.MechanicalCraftingRecipe")
-
+const $ItemStackHandler = Java.loadClass("net.minecraftforge.items.ItemStackHandler")
+const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
 MBDMachineEvents.onLoad("createdelight:mechanical_craft_encoder", e => {
     let event = e.event
     const { machine } = event
@@ -36,7 +37,7 @@ function handleChanged(machine, level) {
     }
     if (outputFull)
         return
-
+    let minWidth = machine.customData.getInt("width") || 5
 
     /**@type {Internal.MechanicalCraftingRecipe[]} */
     let recipelist = level.recipeManager.getAllRecipesFor("create:mechanical_crafting")
@@ -86,10 +87,16 @@ function handleChanged(machine, level) {
             input.restoreFromSnapshot(snapshot);
             return allIngredientsConsumed;  // 如果所有食材都已成功消耗，返回true
         })
+    recipelist
+    .filter(recipe => {
+        return recipe.width <= minWidth
+    })
+    .sort((a, b) => {
+        return Math.abs(a.width - minWidth) - Math.abs(b.width - minWidth) //越接近所设置宽度值的越在前面
+    })
 
 
     if (recipelist.length !== 0) {
-        console.log(input.serializeNBT())
         // 获取recipe的宽度和高度
         let width = recipelist[0].width;
         let height = recipelist[0].height;
@@ -99,10 +106,10 @@ function handleChanged(machine, level) {
         let craftingIngredients = Utils.newList();
 
         // 获取设定的最小宽度（确保它至少等于配方的宽度）
-        let minWidth = machine.customData.getInt("width") || 3; // 你可以替换成动态输入的宽度
         let gridWidth = Math.max(minWidth, width);  // 如果设定的宽度小于配方的宽度，取配方的宽度
 
-        let list = Utils.newList();
+        let resultItemHandler = new $ItemStackHandler()
+        resultItemHandler.setSize(81)
         // 按照设定的宽度填充craftingIngredients
         for (let i = 0; i < height; i++) {
             for (let j = 0; j < gridWidth; j++) {
@@ -117,7 +124,7 @@ function handleChanged(machine, level) {
                             let inputStack = input.getStackInSlot(k);
                             if (!inputStack.empty && ingredient.test(inputStack)) {
                                 craftingIngredient = inputStack.copyWithCount(1);  // 复制食材
-                                list.push(craftingIngredient)
+                                resultItemHandler.insertItem(craftingIngredient, false)
                                 inputStack.shrink(1);  // 从input中消耗该物品
                                 break;
                             }
@@ -151,9 +158,7 @@ function handleChanged(machine, level) {
         //         }
         //     }
         // });
-
-        // 后续的代码使用list，按需求继续操作
-        let pack = $PackageItem.containing(list);
+        let pack = $PackageItem["containing(net.minecraftforge.items.ItemStackHandler)"](resultItemHandler);
         pack.nbt.put("Fragment", { OrderContext: order.write() });
         ItemTransferHelper.insertItemStacked(output, pack, false);
     }
@@ -174,12 +179,20 @@ MBDMachineEvents.onTick("createdelight:mechanical_craft_encoder", e => {
     //     customData.putInt("handle_countdown", customData.getInt("handle_countdown") - 1)
     // }
 
-    if (level.time % 30 == 0)
+    if (level.time % 30 == 0 && level.hasNeighborSignal(machine.pos))
         handleChanged(machine, level)
 })
 
+
+MBDMachineEvents.onNeighborChanged("createdelight:mechanical_craft_encoder", e => {
+
+    let event = e.event
+    const { machine } = event
+    const { level, customData } = machine
+    if (level.hasNeighborSignal(machine.pos))
+        handleChanged(machine, level)
+})
 MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
-    
     let event = e.event
     const { machine, root } = event
     /**@type {TextFieldWidget} */
@@ -189,5 +202,5 @@ MBDMachineEvents.onUI("createdelight:mechanical_craft_encoder", e => {
     text.setTextResponder(str => {
         machine.customData.putInt("width", parseInt(str))
     })
-    
+
 })

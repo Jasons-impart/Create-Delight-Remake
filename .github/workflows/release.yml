@@ -1,5 +1,4 @@
 name: 发布版本
-run-name: 正在发布新版本🚀
 
 on:
   push:
@@ -8,7 +7,8 @@ on:
       - test-*         # 匹配所有 test- 开头的分支（通配符）
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
-  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.6.12/HMCL-3.6.12.jar
+  PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
+  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
   VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
@@ -97,20 +97,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1 # 只取最新提交，加速
-      - &install_packwiz
-        name: 安装 Packwiz 打包软件
-        id: download-artifact
-        uses: actions/download-artifact@v4
-        with:
-          pattern: "Linux 64-bit x86"
-          path: ${{ github.workspace }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: packwiz/packwiz
-          run-id: 17407879187
-      - &move_packwiz
-        name: 挪动packwiz到根目录
+      - name: 安装 Packwiz 打包软件
         run: |
-          mv "Linux 64-bit x86/packwiz" ./packwiz
+          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
           chmod +x ./packwiz
       - name: 重命名HMCL配置和options
         run: |
@@ -143,6 +132,17 @@ jobs:
           |||
           EOF
           cat "$VERSION_FILE_PATH"
+      - name: 【鸣谢】更新鸣谢名单及头像
+        run: |
+          pip install requests
+          python .github/workflows/scripts/update_credits.py --mode real --download-images
+      # - name: 删除仅服务端模组
+      #   run: |
+      #       mapfile -t prefixes < .serveronlymodlist
+      #       for prefix in "${prefixes[@]}"; do
+      #         echo "Deleting files with prefix: $prefix"
+      #         find mods -name "${prefix}*" -exec rm {} +
+      #       done
       - name: 更新文件索引
         run: |
           ./packwiz refresh
@@ -223,7 +223,13 @@ jobs:
             rm -f pack.toml
             rm -f index.toml
             rm -f client_jvm_args.example.txt
-
+      - name: 安装服务端only模组
+        run: |
+            # 从.serveronlymodlist中读取模组URL
+            mapfile -t urls < .serveronlymodlist
+            for url in "${urls[@]}"; do
+              curl -O -L "$url" --output-dir "mods"
+            done
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < .clientonlymodlist
@@ -242,6 +248,10 @@ jobs:
           FORGE_URL="${{ env.FORGE_DOWNLOAD_URL_PREFIX }}/${MC_VERSION}-${FORGE_VERSION}/forge-${MC_VERSION}-${FORGE_VERSION}-installer.jar"
           echo "$FORGE_URL"
           curl -L --retry 3 --retry-connrefused -o "forge.jar" "$FORGE_URL"
+      - name: 【鸣谢】更新鸣谢名单 (无头像)
+        run: |
+          pip install requests
+          python .github/workflows/scripts/update_credits.py --mode real
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           set -euo pipefail
@@ -293,8 +303,10 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
-      - *install_packwiz
-      - *move_packwiz
+      - name: 安装 Packwiz 打包软件
+        run: |
+          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
+          chmod +x ./packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
           set -euo pipefail

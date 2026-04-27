@@ -1,2 +1,3 @@
-let CreateDelightServerEvent = {}
+// priority: 100
 
+let CreateDelightServerEvent = {}

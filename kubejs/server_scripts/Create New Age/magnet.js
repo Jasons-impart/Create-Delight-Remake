@@ -8,7 +8,10 @@ ServerEvents.recipes(e => {
         "create_new_age:shaped/heat_pipe_mirror",
         "create_new_age:shaped/stirling_engine",
         "create_new_age:shaped/basic_solar_plate",
-        "create_new_age:shaped/advanced_solar_plate"
+        "create_new_age:shaped/advanced_solar_plate",
+        "create_new_age:shaped/fluxuated_magnetite",
+        "create_new_age:shaped/generator_coil"
+
     ])
     // 磁铁块
     let ingr_1 = ["minecraft:iron_block"]
@@ -18,7 +21,7 @@ ServerEvents.recipes(e => {
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:magnetite_block", 
         ingr_1
-    ).heated().id("create_new_age:pressurizing/magnetite_block")
+    ).heated().id("createdelight:pressurizing/magnetite_block")
     // 红石磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:redstone_magnet",
@@ -26,7 +29,7 @@ ServerEvents.recipes(e => {
             "create_new_age:magnetite_block",
             'minecraft:redstone'
         ]
-    ).heated().id("create_new_age:shaped/redstone_magnet")
+    ).heated().id("createdelight:shaped/redstone_magnet")
     // 铁金介质磁铁
     let iner_3 = "createdelight:incomplete_layered_magnet"
     e.recipes.create.sequenced_assembly("create_new_age:layered_magnet", "create_new_age:redstone_magnet", 
@@ -37,12 +40,12 @@ ServerEvents.recipes(e => {
     )
         .loops(3)
         .transitionalItem(iner_3)
-        .id("create_new_age:shaped/layered_magnet")
+        .id("createdelight:shaped/layered_magnet")
     // 钻石磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:fluxuated_magnetite",
         [
-            Fluid.of("alexscaves:acid", 250),
+            FluidIngredients("forge:acid", 250),
             'create_new_age:overcharged_diamond',
             'create_new_age:overcharged_diamond',
             "create_new_age:layered_magnet",
@@ -52,8 +55,8 @@ ServerEvents.recipes(e => {
     )
     .secondaryFluidInput(0)
     .heated()
-    .id("create_new_age:fluxuated_magnetite")
-    // 下届合金磁铁
+    .id("createdelight:fluxuated_magnetite")
+    // 下界合金磁铁
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:netherite_magnet",
         [
@@ -61,7 +64,7 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_netherite", 180),
             Fluid.of("createdelightcore:molten_azure_neodymium", 180)
         ]
-    ).heated().id("create_new_age:shaped/netherite_magnet_1")
+    ).heated().id("createdelight:shaped/netherite_magnet_1")
     e.recipes.vintageimprovements.pressurizing(
         "create_new_age:netherite_magnet",
         [
@@ -69,7 +72,7 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_netherite", 180),
             Fluid.of("createdelightcore:molten_scarlet_neodymium", 180),
         ]
-    ).heated().id("create_new_age:shaped/netherite_magnet_2")
+    ).heated().id("createdelight:shaped/netherite_magnet_2")
     // 碳刷
     let iner_4 = "createdelight:incomplete_carbon_brushes"
     e.recipes.create.sequenced_assembly('create_new_age:carbon_brushes', 'create:shaft',
@@ -81,5 +84,18 @@ ServerEvents.recipes(e => {
     )
         .loops(1)
         .transitionalItem(iner_4)
-        .id("create_new_age:shaped/carbon_brushes")
+        .id("createdelight:shaped/carbon_brushes")
+    // 发电机
+    e.recipes.create.mechanical_crafting("create_new_age:generator_coil", [
+        " A A ",
+        "ABCBA",
+        " CDC ",
+        "ABCBA",
+        " A A "
+    ], {
+        A: "createdeco:andesite_sheet",
+        B: "createaddition:copper_spool",
+        C: "minecraft:copper_block",
+        D: "createaddition:alternator"
+    }).id("createdelight:mechanical_crafting/generator_coil")
 })

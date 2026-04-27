@@ -44,6 +44,7 @@
 			]
 			dependency_requirement: "one_completed"
 			description: ["当你解锁本章的时候，你已经迈出了成为新的锻造大师的第一步，本章会引导你打造出整合包中最强大的几把武器。"]
+			hide_until_deps_complete: true
 			icon: {
 				Count: 1
 				id: "tetra:modular_double"

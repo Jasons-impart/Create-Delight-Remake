@@ -1,0 +1,38 @@
+{
+  "parent": "lightmanscurrency:currency/emerald_coin",
+  "criteria": {
+    "netherite_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "createdelightcore:netherite_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.lightmanscurrency.netherite_coin.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "createdelightcore:netherite_coin"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.lightmanscurrency.netherite_coin.title"
+    }
+  },
+  "requirements": [
+    [
+      "netherite_coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

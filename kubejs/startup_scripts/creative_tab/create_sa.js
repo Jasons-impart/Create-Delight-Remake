@@ -10,6 +10,7 @@ StartupEvents.modifyCreativeTab("create_sa:create_stuff_additions_tab", e => {
     'create_sa:experience_pickaxe',
     'create_sa:experience_axe',
     'create_sa:experience_sword',
-    'create_sa:experience_shovel'
+    'create_sa:experience_shovel',
+    'create_sa:flamethrower'
   ])
 })

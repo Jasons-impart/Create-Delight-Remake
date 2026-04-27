@@ -9,9 +9,9 @@
     ],
     [
       {
-        "type": "REGISTRY_NAME",
+        "type": "BIOME_TAG",
         "negate": false,
-        "value": "ad_astra:lunar_wastelands"
+        "value": "northstar:moon_biomes"
       }
     ]
   ]
