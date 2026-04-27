@@ -557,6 +557,8 @@
     "message.createdelight.fission_reactor.recipe": "单个燃料组件配方",
     "message.createdelight.sell_bin_hint": "昨日盈利",
     "message.createdelight.sell_bin_total": "§7总计: %s",
+    "message.createdelight.order_reputation_gain": "§6订单声望 +%s§r  §a完成加成 +%s§r  §7当前: %s  等级: %s",
+    "message.createdelight.order_reputation_level_up": "§a订单声望等级提升至 %s 级！",
     "message.createdelight.first_summon_end_dragon": "§4PS:末影龙召唤过程中摧毁水晶会中止召唤进程,  末影龙的初始召唤如果被中止末地传送门也不会开启",
     "message.createdelight.pipe": "流体管道至少需要两个开口!",
     "tooltip.createdelight.hold_shift_to_see_more_info": "§r§8按住 [§r§7Shift§r§8] 查看更多信息§r",
