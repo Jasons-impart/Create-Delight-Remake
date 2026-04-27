@@ -662,6 +662,16 @@ function buildNorthstarSpacePools(tableId) {
                 ["northstar:titanium_nugget", 22, [2, 6]],
             ],
         },
+        {
+            name: "space_ae_salvage",
+            rolls: tableId.indexOf("seed_chest") !== -1 ? [0, 1] : [1, 1],
+            entries: [
+                ["ae2:certus_quartz_crystal", 18, [1, 4]],
+                ["ae2:fluix_crystal", 12, [1, 3]],
+                ["ae2:sky_dust", 10, [1, 4]],
+                ["ae2:silicon", 14, [1, 3]],
+            ],
+        },
     ]
 
     if (tableId.indexOf("martian_base") !== -1) {
@@ -671,6 +681,19 @@ function buildNorthstarSpacePools(tableId) {
             entries: [
                 ["northstar:martian_steel", 20],
                 ["northstar:advanced_circuit", 8],
+            ],
+        })
+    }
+
+    if (tableId.indexOf("martian_base_chest") !== -1) {
+        spacePools.push({
+            name: "space_ae_processors",
+            rolls: [0, 1],
+            entries: [
+                ["ae2:charged_certus_quartz_crystal", 14, [1, 3]],
+                ["ae2:logic_processor", 8],
+                ["ae2:calculation_processor", 5],
+                ["ae2:engineering_processor", 3],
             ],
         })
     }
