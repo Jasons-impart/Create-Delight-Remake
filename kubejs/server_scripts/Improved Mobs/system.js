@@ -11,7 +11,7 @@ Difficulty.getPlayerRawValue = function(player) {
 }
 
 Difficulty.setPlayerRawValue = function(player, number) {
-    Client.tell(number)
+    // Client.tell(number)
     global.difficultyCache = number
     return $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().setDifficultyLevel(number)
 }

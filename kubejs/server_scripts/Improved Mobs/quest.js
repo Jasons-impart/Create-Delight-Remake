@@ -23,10 +23,6 @@ function UpdateRank(player, value) {
 }
 
 FTBQuestsEvents.customReward(e => {
-
-    e.reward.tags.forEach(s => {
-        if (s.split("_")[0] == "rank") {
-            UpdateRank(e.player, s.split("_")[1])
     const { player, reward, server } = e
     reward.tags.forEach(s => {
         let strings = s.split("_")
