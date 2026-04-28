@@ -37,10 +37,15 @@ RenderJSEvents.onGuiPreRender(e => {
     let windowWidth = e.window.guiScaledWidth
     let windowHeight = e.window.guiScaledHeight
     let tierColor = [[173, 216, 230], [204, 255, 204], [255, 204, 77], [255, 153, 153], [255, 128, 128]]
+    let tierTextColor = [[200, 200, 200], [173, 216, 230], [204, 255, 204], [255, 204, 77], [255, 153, 153], [255, 128, 128], [200, 70, 70]]
     let tier = Difficulty.getPlayerTier()
     let process = Difficulty.getPlayerCurrentProcess()
     let rawValue = Difficulty.getPlayerRawValue()
-    // Client.tell(`${tier}, ${process}, ${rawValue}`)
+
+    let tierName = Text.translatable(`difficulty.createdelight.tier.${tier}`)
+    let colorArr = tierTextColor[Math.min(tier, tierTextColor.length - 1)]
+    let textColor = (colorArr[0] << 16) | (colorArr[1] << 8) | colorArr[2]
+    e.drawString(tierName, windowWidth * 0.02 + 14, windowHeight * 0.5 - 10, textColor)
 
     e.translate(windowWidth * 0.02, windowHeight * 0.5)
     e.mulPose(new Quaternionf().rotateZ(JavaMath.PI))

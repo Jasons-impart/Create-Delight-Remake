@@ -847,5 +847,15 @@
     "tooltip.createdelight.order.customer.human_tea_house": "人类茶馆",
     "tooltip.createdelight.order.tier.1": "§a一般质量",
     "tooltip.createdelight.order.tier.2": "§e中质量",
-    "tooltip.createdelight.order.tier.3": "§c高质量"
+    "tooltip.createdelight.order.tier.3": "§c高质量",
+    "difficulty.createdelight.tier.0": "风平浪静",
+    "difficulty.createdelight.tier.1": "暗流涌动",
+    "difficulty.createdelight.tier.2": "危机四伏",
+    "difficulty.createdelight.tier.3": "险象环生",
+    "difficulty.createdelight.tier.4": "生灵涂炭",
+    "difficulty.createdelight.tier.5": "末日降临",
+    "difficulty.createdelight.tier.6": "诸神黄昏",
+    "difficulty.createdelight.tier_up_subtitle": "世界变得更加危险...",
+    "difficulty.createdelight.tier_down_subtitle": "威胁暂时消退...",
+    "difficulty.createdelight.death_penalty": "你感到了一丝虚弱..."
 }

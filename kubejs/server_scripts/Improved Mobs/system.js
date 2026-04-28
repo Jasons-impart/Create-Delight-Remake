@@ -54,3 +54,21 @@ PlayerEvents.loggedIn(e => {
 })
 
 Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
+
+Difficulty.tierLangKeys = [
+    "difficulty.createdelight.tier.0",
+    "difficulty.createdelight.tier.1",
+    "difficulty.createdelight.tier.2",
+    "difficulty.createdelight.tier.3",
+    "difficulty.createdelight.tier.4",
+    "difficulty.createdelight.tier.5",
+    "difficulty.createdelight.tier.6"
+]
+
+Difficulty.getTierFromValue = function(value) {
+    for (let index = 0; index < this.tierThreshold.length; index++) {
+        if (value <= this.tierThreshold[index])
+            return index
+    }
+    return this.tierThreshold.length
+}

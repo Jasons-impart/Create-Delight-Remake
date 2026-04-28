@@ -1329,7 +1329,7 @@
 			}]
 			shape: "pentagon"
 			size: 1.5d
-			subtitle: "100难度以上击杀凋灵骷髅可获得，任意难度下击杀凋灵也可获得"
+			subtitle: "暗流涌动及以上难度击杀凋灵骷髅可获得，任意难度下击杀凋灵也可获得"
 			tasks: [{
 				id: "6D425F3222F1226F"
 				item: "art_of_forging:fragment_of_eden"
