@@ -15,7 +15,7 @@
 			rewards: [{
 				auto: "enabled"
 				id: "7A666E84666AE366"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				team_reward: false
 				type: "custom"
 			}]
@@ -35,7 +35,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "55146A03C4C37D89"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -53,7 +53,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2467236918A20505"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -71,7 +71,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "222C4CF8A5E19852"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -89,7 +89,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1C0F9583E2E23EDD"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -107,7 +107,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7C6589EDD0A57189"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -125,7 +125,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7B3290D16FA34698"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -143,7 +143,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "00F0F7AE0C5526C4"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -161,7 +161,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7483B292D4329F7C"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -179,7 +179,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1938BF2EF7AD0A5F"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -197,7 +197,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0EBC73F50C5AD359"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -215,7 +215,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "5D4E1FC6867DEC44"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -233,7 +233,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "10DFD6F8DB4C18FA"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -251,7 +251,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "47EA380A237B6B32"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -269,7 +269,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3A6B82D3A00565B8"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -287,7 +287,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6F390810E6BE9C3B"
-				tags: ["rank_medium"]
+				tags: ["rank_3"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -305,7 +305,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1074E5684150E023"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -323,7 +323,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7D44DEEA105F5C72"
-				tags: ["rank_medium"]
+				tags: ["rank_3"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -341,7 +341,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "529D9B26B02AC4CD"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -359,7 +359,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "66279C90696C0DB7"
-				tags: ["rank_medium"]
+				tags: ["rank_3"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -377,7 +377,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4DCF5DC22F66FA0C"
-				tags: ["rank_large"]
+				tags: ["rank_5"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -395,7 +395,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "041D8051DAEFE712"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -413,7 +413,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7C0CD662CD2A0F00"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -431,7 +431,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "57BD148565760858"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -449,7 +449,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0382BE34F9DBEC8A"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -467,7 +467,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "318D8BFD2CF57C8E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -485,7 +485,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0ECE3759FB9066E6"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -503,7 +503,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "5AE31AC5173110F1"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -543,7 +543,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3F51CCFAE2C5A01E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -561,7 +561,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2CB382B20C3799B0"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -579,7 +579,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "786D304306C70BCB"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -597,7 +597,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "73536B82ADFFB9F5"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -615,7 +615,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "093B8D8759CCDD8D"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -633,7 +633,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3DFF0987337EC849"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -651,7 +651,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "223E6F05391D07C2"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -669,7 +669,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "08994A5BDD11805E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -687,7 +687,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "084116A0678665B6"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -705,7 +705,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "38D1EF1AE0370EB6"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -723,7 +723,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "59EAC6A5EDE93BFE"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -741,7 +741,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6078BFA6FE82EEF5"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -759,7 +759,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2B61208153A3BBBA"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -777,7 +777,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3B2483F046B82A12"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -795,7 +795,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "37D806BF134F911E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -824,7 +824,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2605450AE62163B3"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -842,7 +842,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1D8E1E80FB1C6594"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -860,10 +860,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "502D399FE0149710"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "暗流涌动及以上难度时击杀掉落鸡蛇之眼的概率更高"
+			subtitle: "危机四伏及以上难度时玩家击杀掉落鸡蛇之眼的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:cockatrice"
@@ -879,7 +879,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "10D0F8498F63DA64"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -908,7 +908,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "253DE66D01AC5F39"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -926,7 +926,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "12C9659655A4DEF3"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -944,10 +944,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4820011B13315DE0"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "危机四伏及以上难度时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_ghoul"
@@ -963,10 +963,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "506BA9323A9D1C0C"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "危机四伏及以上难度时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_knight"
@@ -982,10 +982,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "11532A2140A7B514"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "危机四伏及以上难度时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_lich"
@@ -1000,7 +1000,7 @@
 			id: "2A61258CE450C5FF"
 			rewards: [{
 				id: "18403FC3B25080E6"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1018,10 +1018,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "40674D5B4EB50DD1"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "危机四伏及以上难度时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_thrall"
@@ -1037,7 +1037,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "5CF1618EDB6FBCD1"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1055,7 +1055,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4173D320BFF51F4E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1073,7 +1073,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "29C4B90FD9DF81E9"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1091,7 +1091,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6E66CAF4E9ED5460"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1109,7 +1109,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1194FE87DC2573DF"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1127,7 +1127,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "313D58DDDA6CFC57"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1145,7 +1145,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "24C23B1B83D324CA"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1163,7 +1163,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1AB82D708A90A8DE"
-				tags: ["rank_medium"]
+				tags: ["rank_3"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1181,7 +1181,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "04B792AA575DDA33"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1199,7 +1199,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "5BEA3BFACB30558E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1217,7 +1217,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "63CD4730A099152F"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1235,7 +1235,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "131D22DCDD1DC4D1"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1253,7 +1253,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3BC3587A70ADA6A8"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1271,7 +1271,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "45B6E1E58ECF4D7D"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1289,7 +1289,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "15FC6846EE6D54F2"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1307,7 +1307,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "61A596B8EF8B3490"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1325,7 +1325,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0EE9665B3D75B510"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1343,7 +1343,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3DAF501811781F52"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1372,7 +1372,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7BC79A7ADF1A815B"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1390,7 +1390,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4DE5B1FAC2D3D0EF"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1408,7 +1408,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6661CA2C52DD234B"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1426,7 +1426,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "154D9F266AAC6CF1"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1444,7 +1444,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1D66595B9A14C449"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1462,7 +1462,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4B0791EA00BCE9DA"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1480,7 +1480,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6A3B7323D0CC89A2"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1498,7 +1498,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6EC4A444B03C0705"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1516,7 +1516,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "61F9F04A1655BE71"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1534,7 +1534,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6E53B828BD66F82E"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1553,7 +1553,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4C76D876E253E9A5"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1571,7 +1571,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "4AD56DF86BD8CE91"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1589,10 +1589,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "32DDFF5DDE94B5FF"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "暗流涌动及以上难度时击杀有概率掉落伊甸碎片"
+			subtitle: "危机四伏及以上难度时玩家击杀有概率掉落伊甸碎片"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither_skeleton"
@@ -1608,7 +1608,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "755E170406E785DE"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1626,7 +1626,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2205E246497CAEAC"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1644,10 +1644,10 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "57CC799792BBAACF"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "暗流涌动及以上难度时击杀有概率掉落伊甸图腾"
+			subtitle: "危机四伏及以上难度时玩家击杀掉落伊甸图腾的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither"
@@ -1663,7 +1663,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "22EFE867AE3F050B"
-				tags: ["rank_medium"]
+				tags: ["rank_3"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1681,7 +1681,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "3740153259508E61"
-				tags: ["rank_large"]
+				tags: ["rank_5"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1709,7 +1709,7 @@
 			id: "665657DBF829E67E"
 			rewards: [{
 				id: "4F034A398BE51F56"
-				tags: ["rank_small"]
+				tags: ["rank_1"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1739,7 +1739,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "0DA94722AEFA2190"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1756,7 +1756,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "481922F2036E7126"
-				tags: ["rank_unrepeatable_enormous"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1773,7 +1773,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "04C85D72724876C5"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1790,7 +1790,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "1E1E72FB7DB5C653"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1807,7 +1807,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "6709ED07E49B701E"
-				tags: ["rank_unrepeatable_enormous"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1824,7 +1824,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "7C305A4302758618"
-				tags: ["rank_unrepeatable_enormous"]
+				tags: ["rank_unrepeatable_15"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1841,7 +1841,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "518BA77B732B168C"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1858,7 +1858,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "08CEF4AC12B4CBDC"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1875,7 +1875,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "56B39890976B6D14"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1892,7 +1892,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "2995B82DBD88454A"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1909,7 +1909,7 @@
 			rewards: [{
 				auto: "no_toast"
 				id: "24FB76C5C2144549"
-				tags: ["rank_unrepeatable_massive"]
+				tags: ["rank_unrepeatable_10"]
 				type: "custom"
 			}]
 			tasks: [{
@@ -1935,10 +1935,10 @@
 			id: "56CE633A8A8DE8AB"
 			rewards: [{
 				id: "4A69624C154FCC12"
-				tags: ["rank_massive"]
+				tags: ["rank_10"]
 				type: "custom"
 			}]
-			subtitle: "交付这些物品就可以大幅提升难度！"
+			subtitle: "交付这些物品就可以提高10点难度值！"
 			tasks: [{
 				consume_items: true
 				count: 8L
@@ -1965,10 +1965,10 @@
 			id: "5CDA9A91051633A4"
 			rewards: [{
 				id: "5132D1EFBB7446BD"
-				tags: ["unrank_massive"]
+				tags: ["unrank_10"]
 				type: "custom"
 			}]
-			subtitle: "交付这些物品就可以大幅降低难度！"
+			subtitle: "交付这些物品就可以降低10点难度值！"
 			tasks: [{
 				consume_items: true
 				id: "154772CE9D75B183"
@@ -1984,7 +1984,7 @@
 				"如果你是第一次领取这个任务的奖励，则你的难度将不再发生变化&4（交付物品的任务与玩家死亡也不会变化）&r。"
 				"此后的重复完成任务，领取奖励则是切换难度是否要变化。"
 				"此任务是为了解决&e不想要难度系统的玩家&r的难度焦虑，同时也是为因死亡难以保持难度的&e较高难度的玩家&r服务。"
-				"实际上，经过我们包的各种削弱，我们整合包的难度系统在暗流涌动等级以下都是较为安全的。"
+				"实际上，经过我们包的各种削弱，我们整合包的难度系统在保持在暗流涌动时都是较为安全的。"
 			]
 			id: "4CA7F329E5D39D5B"
 			rewards: [{
@@ -1993,14 +1993,36 @@
 				type: "custom"
 			}]
 			size: 2.0d
-			subtitle: "难度是否要提升或者降低"
+			subtitle: "切换是否允许难度值发生变化"
 			tasks: [{
 				id: "4156F5EFC8ADAA2B"
-				title: "切换难度升降状态"
+				title: "切换难度变化开关"
 				type: "checkmark"
 			}]
 			x: 15.0d
 			y: -1.0d
+		}
+		{
+			description: [
+				"本整合包的难度是独立于原版和平/简单/普通/困难之外的一套数值系统。"
+				"难度值为0时是&e风平浪静&r；1~100为&e暗流涌动&r；101~200为&e危机四伏&r；201~300为&e险象环生&r；301~450为&e生灵涂炭&r；451~600为&e末日降临&r；600以上为&e诸神黄昏&r。"
+				"本章节中的击杀任务与维度任务会提高难度值，其中部分维度任务只会在首次完成时提供一次性奖励。"
+				"右侧两个交付任务可以手动增加或减少10点难度值；如果你不想让难度继续变化，也可以在右侧切换难度变化开关。"
+				"死亡不会直接清空总难度，而是扣除你当前档位内约35%的进度，并按5点向上取整；如果你刚进入新档位不久，则可能掉回上一档的后段。"
+				"屏幕左侧会显示你当前所处的难度档位与本档进度，部分怪物的额外掉落也会要求达到对应难度及以上。"
+				"&etips:也可以使用/improvedmobs查看当前难度值。&r"
+			]
+			icon: "art_of_forging:sigil_of_eden"
+			id: "23815A088A715478"
+			size: 2.5d
+			subtitle: "独立于原版难度的数值分档系统"
+			tasks: [{
+				id: "5CF4EFDC992F2581"
+				title: "难度系统概述"
+				type: "checkmark"
+			}]
+			x: 12.0d
+			y: 2.0d
 		}
 	]
 	title: "难度索引"
