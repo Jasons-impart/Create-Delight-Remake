@@ -6,5 +6,15 @@
   "tetra.material.feature.chillingfire": "chillingfire",
   "tetra.material.feature.chillingfire.tooltip": "",
   "message.createdelight.order_reputation_gain": "Order reputation +%s  Completion bonus +%s  Current: %s  Level: %s",
-  "message.createdelight.order_reputation_level_up": "Order reputation reached level %s!"
+  "message.createdelight.order_reputation_level_up": "Order reputation reached level %s!",
+  "difficulty.createdelight.tier.0": "Calm Seas",
+  "difficulty.createdelight.tier.1": "Undercurrent",
+  "difficulty.createdelight.tier.2": "Danger Lurks",
+  "difficulty.createdelight.tier.3": "Perilous",
+  "difficulty.createdelight.tier.4": "Ravaged",
+  "difficulty.createdelight.tier.5": "Apocalypse",
+  "difficulty.createdelight.tier.6": "Ragnarök",
+  "difficulty.createdelight.tier_up_subtitle": "The world grows more dangerous...",
+  "difficulty.createdelight.tier_down_subtitle": "The threat recedes...",
+  "difficulty.createdelight.death_penalty": "You feel a wave of weakness..."
 }

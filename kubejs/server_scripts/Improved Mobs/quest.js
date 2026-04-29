@@ -1,23 +1,84 @@
-//想用任务增加难度系数的，在奖励里加一个自定义，然后加上标签：rank_难度等级，比如rank_1就会增加一级
+//想用任务增加难度系数的，在奖励里加一个自定义，然后加上标签：rank_small / rank_medium / rank_large / rank_massive / rank_enormous
 
 const $CrossPlatformStuff = Java.loadClass("io.github.flemmli97.improvedmobs.platform.CrossPlatformStuff")
 const $Quest = Java.loadClass("dev.ftb.mods.ftbquests.quest.Quest")
 const $ProgressChange = Java.loadClass("dev.ftb.mods.ftbquests.util.ProgressChange")
+
+const rankValueMap = {
+    "small": 1,
+    "medium": 3,
+    "large": 5,
+    "massive": 10,
+    "enormous": 15
+}
+
+function getProgressBar(rawValue) {
+    let tier = Difficulty.getTierFromValue(rawValue)
+    let process
+    if (tier == 0) {
+        process = 0
+    } else if (tier < Difficulty.tierThreshold.length) {
+        process = (rawValue - Difficulty.tierThreshold[tier - 1]) / (Difficulty.tierThreshold[tier] - Difficulty.tierThreshold[tier - 1])
+    } else {
+        process = 1
+    }
+    process = Math.max(0, Math.min(1, process))
+    let filled = Math.round(process * 10)
+    let bar = ""
+    for (let i = 0; i < 10; i++) {
+        if (i < filled) bar += "§a■"
+        else bar += "§8■"
+    }
+    return bar
+}
+
 /**
  * 
  * @param {Internal.Player} player 
  * @param {number} value 
+ * @param {string} [source] - "death" for death penalty, undefined otherwise
  */
-function UpdateRank(player, value) {
+function UpdateRank(player, value, source) {
+    value = parseInt(value)
     let diffData = $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
     if (!diffData || player.persistentData.getBoolean("disableRankChange"))
         return
-    value = (GetPlayerDifficulty(player) + value) < 0 ? -GetPlayerDifficulty(player) : value
-    player.getServer().runCommandSilent(`/improvedmobs difficulty player ${player.username} add ${value}`)
-    if (value < 0)
-        player.tell(`难度降低了${-value}！`)
-    else
-        player.tell(`难度提升了${value}！`)
+    value = (Difficulty.getPlayerRawValue(player) + value) < 0 ? -Difficulty.getPlayerRawValue(player) : value
+
+    let oldTier = Difficulty.getPlayerTier(player)
+    Difficulty.setPlayerRawValue(player, parseInt(Difficulty.getPlayerRawValue(player)) + parseInt(value))
+    let newTier = Difficulty.getPlayerTier(player)
+    let newRaw = Difficulty.getPlayerRawValue(player)
+    let bar = getProgressBar(newRaw)
+    let tierKey = Difficulty.tierLangKeys[newTier]
+
+    if (value > 0) {
+        if (newTier > oldTier) {
+            player.server.runCommandSilent(`title ${player.username} title {"translate":"${tierKey}","color":"gold","bold":true}`)
+            player.server.runCommandSilent(`title ${player.username} subtitle {"translate":"difficulty.createdelight.tier_up_subtitle","color":"gray"}`)
+            player.playSound("minecraft:ui.toast.challenge_complete")
+        } else {
+            player.playSound("minecraft:entity.experience_orb.pickup")
+        }
+        let msg = Text.of("§a▲ ").append(Text.translatable(tierKey)).append(Text.of(` §8[${bar}§8]`))
+        player.displayClientMessage(msg, true)
+    } else {
+        if (source == "death") {
+            let msg = Text.translatable("difficulty.createdelight.death_penalty").append(Text.of(" §7→ ")).append(Text.translatable(tierKey)).append(Text.of(` §8[${bar}§8]`))
+            player.displayClientMessage(msg, true)
+            if (newTier < oldTier) {
+                player.server.runCommandSilent(`title ${player.username} subtitle {"translate":"difficulty.createdelight.tier_down_subtitle","color":"dark_red"}`)
+                player.playSound("minecraft:entity.wither.spawn")
+            }
+        } else {
+            let msg = Text.of("§c▼ ").append(Text.translatable(tierKey)).append(Text.of(` §8[${bar}§8]`))
+            player.displayClientMessage(msg, true)
+            if (newTier < oldTier) {
+                player.server.runCommandSilent(`title ${player.username} subtitle {"translate":"difficulty.createdelight.tier_down_subtitle","color":"dark_red"}`)
+                player.playSound("minecraft:entity.wither.spawn")
+            }
+        }
+    }
 }
 
 FTBQuestsEvents.customReward(e => {
@@ -28,10 +89,16 @@ FTBQuestsEvents.customReward(e => {
         let mid = strings[1]
         let end = strings[strings.length - 1]
         if (start == "rank") {
-            UpdateRank(player, end)
+            let value = rankValueMap[end]
+            if (value == null) value = parseInt(end)
+            if (isNaN(value)) return
+            UpdateRank(player, value)
         }
         else if (start == "unrank") {
-            UpdateRank(player, -end)
+            let value = rankValueMap[end]
+            if (value == null) value = parseInt(end)
+            if (isNaN(value)) return
+            UpdateRank(player, -value)
         }
         else if (s == "change_rank_change_state") {
             let disableRankChange = player.persistentData.getBoolean("disableRankChange")

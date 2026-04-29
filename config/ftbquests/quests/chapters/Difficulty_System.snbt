@@ -863,7 +863,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "100难度以上时击杀掉落鸡蛇之眼的概率更高"
+			subtitle: "危机四伏及以上难度时玩家击杀掉落鸡蛇之眼的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:cockatrice"
@@ -947,7 +947,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_ghoul"
@@ -966,7 +966,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_knight"
@@ -985,7 +985,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_lich"
@@ -1021,7 +1021,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "150难度以上时击杀有概率掉落龙霜钢"
+			subtitle: "险象环生及以上难度时玩家击杀有概率掉落龙霜钢"
 			tasks: [{
 				disable_toast: true
 				entity: "iceandfire:dread_thrall"
@@ -1592,7 +1592,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "100难度以上时玩家击杀有概率掉落伊甸碎片"
+			subtitle: "危机四伏及以上难度时玩家击杀有概率掉落伊甸碎片"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither_skeleton"
@@ -1647,7 +1647,7 @@
 				tags: ["rank_1"]
 				type: "custom"
 			}]
-			subtitle: "100难度以上时击杀掉落伊甸图腾的概率更高"
+			subtitle: "危机四伏及以上难度时玩家击杀掉落伊甸图腾的概率更高"
 			tasks: [{
 				disable_toast: true
 				entity: "minecraft:wither"
@@ -1938,7 +1938,7 @@
 				tags: ["rank_10"]
 				type: "custom"
 			}]
-			subtitle: "交付这些物品就可以提升十级难度！"
+			subtitle: "交付这些物品就可以提高10点难度值！"
 			tasks: [{
 				consume_items: true
 				count: 8L
@@ -1968,7 +1968,7 @@
 				tags: ["unrank_10"]
 				type: "custom"
 			}]
-			subtitle: "交付这些物品就可以下降十级难度！"
+			subtitle: "交付这些物品就可以降低10点难度值！"
 			tasks: [{
 				consume_items: true
 				id: "154772CE9D75B183"
@@ -1984,7 +1984,7 @@
 				"如果你是第一次领取这个任务的奖励，则你的难度将不再发生变化&4（交付物品的任务与玩家死亡也不会变化）&r。"
 				"此后的重复完成任务，领取奖励则是切换难度是否要变化。"
 				"此任务是为了解决&e不想要难度系统的玩家&r的难度焦虑，同时也是为因死亡难以保持难度的&e较高难度的玩家&r服务。"
-				"实际上，经过我们包的各种削弱，我们整合包的难度系统在100难度以下都是较为安全的。"
+				"实际上，经过我们包的各种削弱，我们整合包的难度系统在保持在暗流涌动时都是较为安全的。"
 			]
 			id: "4CA7F329E5D39D5B"
 			rewards: [{
@@ -1993,14 +1993,36 @@
 				type: "custom"
 			}]
 			size: 2.0d
-			subtitle: "难度是否要提升或者降低"
+			subtitle: "切换是否允许难度值发生变化"
 			tasks: [{
 				id: "4156F5EFC8ADAA2B"
-				title: "切换难度升降状态"
+				title: "切换难度变化开关"
 				type: "checkmark"
 			}]
 			x: 15.0d
 			y: -1.0d
+		}
+		{
+			description: [
+				"本整合包的难度是独立于原版和平/简单/普通/困难之外的一套数值系统。"
+				"难度值为0时是&e风平浪静&r；1~100为&e暗流涌动&r；101~200为&e危机四伏&r；201~300为&e险象环生&r；301~450为&e生灵涂炭&r；451~600为&e末日降临&r；600以上为&e诸神黄昏&r。"
+				"本章节中的击杀任务与维度任务会提高难度值，其中部分维度任务只会在首次完成时提供一次性奖励。"
+				"右侧两个交付任务可以手动增加或减少10点难度值；如果你不想让难度继续变化，也可以在右侧切换难度变化开关。"
+				"死亡不会直接清空总难度，而是扣除你当前档位内约35%的进度，并按5点向上取整；如果你刚进入新档位不久，则可能掉回上一档的后段。"
+				"屏幕左侧会显示你当前所处的难度档位与本档进度，部分怪物的额外掉落也会要求达到对应难度及以上。"
+				"&etips:也可以使用/improvedmobs查看当前难度值。&r"
+			]
+			icon: "art_of_forging:sigil_of_eden"
+			id: "23815A088A715478"
+			size: 2.5d
+			subtitle: "独立于原版难度的数值分档系统"
+			tasks: [{
+				id: "5CF4EFDC992F2581"
+				title: "难度系统概述"
+				type: "checkmark"
+			}]
+			x: 12.0d
+			y: 2.0d
 		}
 	]
 	title: "难度索引"
