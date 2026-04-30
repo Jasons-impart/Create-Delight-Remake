@@ -172,6 +172,16 @@ ServerEvents.recipes(e => {
         A: "create:fluid_pipe",
         B: "create:fluid_tank"
     }).id("createdelight:sprinkler")
+    e.recipes.kubejs.shaped("createdelight:greenhouse_builder", [
+        "ABA",
+        "CDC",
+        "ABA"
+    ], {
+        A: "#forge:glass/colorless",
+        B: "create:iron_sheet",
+        C: "create:andesite_casing",
+        D: "create:schematicannon"
+    }).id("createdelight:greenhouse_builder")
     e.recipes.kubejs.shaped("createdelight:sell_bin", [
         "ABA",
         "ACA",

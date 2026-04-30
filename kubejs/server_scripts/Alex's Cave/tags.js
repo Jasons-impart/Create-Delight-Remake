@@ -119,11 +119,11 @@ ServerEvents.tags("item", e => {
 
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:logs", ["alexscaves:licoroot"])
-    e.add("create_new_age:custom_magnet", [
+    e.add("create_new_age:magnet", [
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
-    e.add("create_new_age:magnet/force_4", [
+    e.add("create_new_age:magnet/force_16", [
         "alexscaves:block_of_scarlet_neodymium",
         "alexscaves:block_of_azure_neodymium"
     ])
