@@ -241,7 +241,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "右键&e悬挂告示牌&r以生成&e季节任务告示&r，通过提交季节&e对应作物&r（&4需全部放在物品栏中&r）&r来&e获得心髓&r（季节交替时可能出现任务不会刷新）"
+			subtitle: "右键&e悬挂告示牌&r可生成&e季节任务告示&r，提交季节&e对应作物&r（&4需全部放在物品栏中&r）可&e获得心髓&r；右键&e温室之心室&r则会启动季节仪式"
 			tasks: [{
 				id: "19B401FDD97EE863"
 				item: "eclipticseasons:seasonal_prayer_scroll"
@@ -313,8 +313,10 @@
 			]
 			description: [
 				"&l&b搭建要求&r：任意&e完整方块&r构成的完全&e封闭&r空间（不可超过&c32*32&r，高度不可超过&c10&r）"
+				"&l&b快速搭建&r：可使用&e温室搭建机&r快速搭建空心长方体温室外壳，机器只会在&4空气位置&r放置方块，不会替换现有方块"
 				"&l&b生效条件&r：只有在&e温室&r中湿度调节与季节调节才会生效"
-				"&l&b季节调节&r：使用&e温室之心&r模拟对应季节，作用范围以温室之心为中心半径&e16格&r以内的&c方形&r空间"
+				"&l&b季节仪式&r：使用&e祈年令&r右键&e温室之心室&r会按所在地&6实际农业季节&r启动仪式，&4仪式不能在室内进行&r"
+				"&l&b季节调节&r：使用&e已完成的温室之心&r模拟对应季节，作用范围以温室之心为中心半径&e16格&r以内的&c方形&r空间"
 				"&l&b湿度调节&r：使用&e加湿器&r或&e除湿机&r进行加湿或除湿，作用范围以加湿器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
 			]
 			id: "1453031D685ED650"
@@ -338,6 +340,31 @@
 			y: -5.5d
 		}
 		{
+			dependencies: ["1453031D685ED650"]
+			description: [
+				"在界面中输入&e长、宽、高&r后，点击按钮即可按设定尺寸搭建一个&e空心长方体&r温室外壳。"
+				"机器会读取材料槽中的方块类型，并消耗&4相邻容器&r中的同类材料进行建造。"
+				"它只会在&4空气&r位置放置方块，不会替换已经存在的方块，因此也适合在已有地形上补壳。"
+			]
+			icon: "createdelight:greenhouse_builder"
+			id: "54DFA5E94BA07D31"
+			rewards: [{
+				id: "6B627AD0B6E54A12"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "快速搭建&e空心温室外壳&r的工具机，可直接省掉手搓火柴盒的过程"
+			tasks: [{
+				id: "3E04A42F79D9C8B1"
+				item: "createdelight:greenhouse_builder"
+				type: "item"
+			}]
+			title: "温室搭建机"
+			x: -5.0d
+			y: -7.0d
+		}
+		{
 			dependencies: [
 				"1453031D685ED650"
 				"7E3A8228E83D17A2"
@@ -346,7 +373,9 @@
 			]
 			dependency_requirement: "one_completed"
 			description: [
-				"要获取最初的几个温室之心的话，可以看看节气的进度系统。"
+				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统。"
+				"温室之心室是&e祈年令&r与&e温室心髓&r的承载容器，也是后续季节调节系统的核心入口。"
+				"若直接对温室之心室使用对应&e心髓&r，则会跳过仪式，直接得到完成态温室之心。"
 				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
 			]
 			id: "020BFCFD744B65AE"
@@ -357,7 +386,7 @@
 			}]
 			shape: "square"
 			size: 2.0d
-			subtitle: "&e温室之心髓&r的&4承载容器&r，&4反季节种植&r的必须物品，通过放置对应&e心髓&4模拟对应季节&r以满足对应作物需求"
+			subtitle: "&e祈年令&r与&e温室心髓&r的承载容器，既可启动仪式，也可直接生成完成态温室之心"
 			tasks: [{
 				id: "3AC8F22AAFC49470"
 				item: "eclipticseasons:greenhouse_core_container"
@@ -366,6 +395,36 @@
 			title: "季节调节"
 			x: -1.0d
 			y: -7.5d
+		}
+		{
+			dependencies: ["020BFCFD744B65AE"]
+			description: [
+				"对&e温室之心室&r使用&e祈年令&r会按所在地&6实际农业季节&r启动仪式，并转化为对应季节的&4未完成温室之心&r。"
+				"&4仪式不能在室内进行&r；只有在季节匹配、上方不被遮挡时，祈愿进度才会继续增长。"
+				"仪式共分&c3个阶段&r，完成后的温室之心再放进温室里，才会作为季节调节核心生效，并给范围内对应季作物提供加成。"
+				"如果直接对温室之心室使用对应&e温室心髓&r，则会跳过仪式，直接得到完成态温室之心。"
+			]
+			icon: "eclipticseasons:seasonal_prayer_scroll"
+			id: "6EAAF2D14B642C01"
+			rewards: [{
+				id: "0E847D7A8B3C4D5E"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "&e祈年令&r会启动&4室外季节仪式&r，使用这种方法也可以获取温室之心"
+			tasks: [{
+				icon: "eclipticseasons:seasonal_prayer_scroll"
+				id: "7AC4B2D18EF90123"
+				stat: "minecraft:play_time"
+				title: "祈年仪式"
+				type: "stat"
+				value: 1
+			}]
+			title: "祈年仪式"
+			x: -1.0d
+			y: -10.5d
 		}
 		{
 			dependencies: ["020BFCFD744B65AE"]
@@ -426,7 +485,7 @@
 				item: "eclipticseasons:spring_greenhouse_core"
 				type: "item"
 			}]
-			subtitle: "使用&a春季温室心髓&r右键&4温室之心室"
+			subtitle: "使用&a春季温室心髓&r右键&4温室之心室&r，可直接获得完成态温室之心"
 			tasks: [{
 				icon: "eclipticseasons:spring_greenhouse_core"
 				id: "1706FCD47038D222"
@@ -447,7 +506,7 @@
 				item: "eclipticseasons:summer_greenhouse_core"
 				type: "item"
 			}]
-			subtitle: "使用&e夏季温室心髓&r右键&4温室之心室"
+			subtitle: "使用&e夏季温室心髓&r右键&4温室之心室&r，可直接获得完成态温室之心"
 			tasks: [{
 				icon: "eclipticseasons:summer_greenhouse_core"
 				id: "70331463DE605A24"
@@ -468,7 +527,7 @@
 				item: "eclipticseasons:autumn_greenhouse_core"
 				type: "item"
 			}]
-			subtitle: "使用&6秋季温室心髓&r右键&4温室之心室"
+			subtitle: "使用&6秋季温室心髓&r右键&4温室之心室&r，可直接获得完成态温室之心"
 			tasks: [{
 				icon: "eclipticseasons:autumn_greenhouse_core"
 				id: "31447867470FB4C1"
@@ -489,7 +548,7 @@
 				item: "eclipticseasons:winter_greenhouse_core"
 				type: "item"
 			}]
-			subtitle: "使用&9冬季温室心髓&r右键&4温室之心室"
+			subtitle: "使用&9冬季温室心髓&r右键&4温室之心室&r，可直接获得完成态温室之心"
 			tasks: [{
 				icon: "eclipticseasons:winter_greenhouse_core"
 				id: "6FBCAEE4F59792F7"

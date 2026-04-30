@@ -1,10 +1,18 @@
 {
   "item.createdelight.unbaked_red_velvet_cupcake": "Unbaked Red Velvet Muffin",
+  "block.createdelight.greenhouse_builder": "Greenhouse Builder",
 
   "tetra.material.feature.dragonfire": "dragonfire",
   "tetra.material.feature.dragonfire.tooltip": "",
   "tetra.material.feature.chillingfire": "chillingfire",
   "tetra.material.feature.chillingfire.tooltip": "",
   "message.createdelight.order_reputation_gain": "Order reputation +%s  Completion bonus +%s  Current: %s  Level: %s",
-  "message.createdelight.order_reputation_level_up": "Order reputation reached level %s!"
+  "message.createdelight.order_reputation_level_up": "Order reputation reached level %s!",
+  "message.createdelight.greenhouse_builder.no_material": "Greenhouse build cancelled: put a block item into the material slot first.",
+  "message.createdelight.greenhouse_builder.invalid_material": "Greenhouse build cancelled: the material slot must contain a placeable block item.",
+  "message.createdelight.greenhouse_builder.no_inventory": "Greenhouse build cancelled: no adjacent inventory was found.",
+  "message.createdelight.greenhouse_builder.no_air": "Greenhouse build skipped: there are no air blocks to place into. Existing blocks skipped: %s.",
+  "message.createdelight.greenhouse_builder.not_enough_material": "Greenhouse build cancelled: need %s x %s, but adjacent inventories only provide %s.",
+  "message.createdelight.greenhouse_builder.extract_failed": "Greenhouse build cancelled: failed while extracting materials from adjacent inventories.",
+  "message.createdelight.greenhouse_builder.success": "Greenhouse built: placed %s blocks, skipped %s existing blocks."
 }
