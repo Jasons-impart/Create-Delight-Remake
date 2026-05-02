@@ -216,7 +216,7 @@ element {
 
 element {
   interactable = false
-  source = [source:web]https://gist.githubusercontent.com/JasonQ1123/14894447c0cf3254e307a1793efcefa4/raw/version_file.md
+  source = [source:web]https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/docs/announcement.md
   source_mode = resource
   shadow = true
   scale = 0.75
