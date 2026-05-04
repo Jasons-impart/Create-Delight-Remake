@@ -17,14 +17,18 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
 <br />
 
 <p align="center">
-  
   <a href="https://www.curseforge.com/minecraft/modpacks/create-delight-remake">
     <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="1013" height="174">
   </a>
-  <br />
-  <a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a>
+</p>
 
-  <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
+<table align="center"><tr>
+  <td><a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a></td>
+  <td><a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a></td>
+  <td><a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a></td>
+</tr></table>
+
+<h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
   <p align="center">
     <br />
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/actions"><strong>在GitHub上下载整合包最新测试版 »</strong></a>
@@ -40,8 +44,6 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     ·
     <a href="https://github.com/Jasons-impart/Create-Delight-Remake/issues">提出新特性</a>
   </p>
-
-</p>
 
 > [!IMPORTANT]
 > 整合包仍在**加急开发中**！如果你遇到任何问题，请为我们[反馈问题](https://xr5r5e86lk.feishu.cn/share/base/form/shrcnIDUxvX4oOvWSQaddJUht9b)！感激不尽！
