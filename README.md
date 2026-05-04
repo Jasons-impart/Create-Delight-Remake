@@ -22,9 +22,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
     <img src="kubejs/assets/createdelight/textures/images_for_readme/title.png" alt="Logo" width="1013" height="174">
   </a>
   <br />
-  <a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a>
-  <a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a>
-  <a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a>
+  <a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a>
 
   <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
   <p align="center">
