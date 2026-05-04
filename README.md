@@ -22,7 +22,7 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
   </a>
 </p>
 
-<table align="center"><tr>
+<table align="center" border="0" cellpadding="0" cellspacing="0"><tr>
   <td><a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a></td>
   <td><a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a></td>
   <td><a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a></td>
