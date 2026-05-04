@@ -105,6 +105,10 @@
 				"整合包安装了zstdnet来实现带宽压缩，官方服务器实测能将带宽-90%"
 				"为了使带宽压缩生效，你需要&e&l&n关闭正版验证&r&r&r"
 				"如果你需要阻止离线玩家登录你的服务器，可使用整合包内的TrueUUID。"
+				""
+				"&e&l局域网联机注意事项&r&r"
+				"/zstdport game <端口> 配置局域网联机生成的随机端口"
+				"让联机玩家连接35565端口即可"
 			]
 			icon: "sophisticatedbackpacks:advanced_deposit_upgrade"
 			id: "52F8FFE2BB54EEB8"
