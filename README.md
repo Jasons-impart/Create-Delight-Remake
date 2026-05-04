@@ -22,10 +22,10 @@ A Minecraft 1.20.1 Forge Create & Farmer's Delight modpack
   </a>
 </p>
 
-<table align="center" border="0" cellpadding="0" cellspacing="0"><tr>
-  <td><a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a></td>
-  <td><a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a></td>
-  <td><a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a></td>
+<table align="center" style="border: none; border-collapse: collapse;"><tr style="border: none;">
+  <td style="border: none; padding: 0 8px;"><a href="https://github.com/JasonQ1123"><img src="https://avatars.githubusercontent.com/u/154645632?v=4" alt="Logo" width="80" height="80"></a></td>
+  <td style="border: none; padding: 0 8px;"><a href="https://github.com/SSWTLZZ69"><img src="https://avatars.githubusercontent.com/u/191679837?v=4" alt="Logo" width="80" height="80"></a></td>
+  <td style="border: none; padding: 0 8px;"><a href="https://github.com/wanquanw"><img src="https://avatars.githubusercontent.com/u/54640492?v=4" alt="Logo" width="80" height="80"></a></td>
 </tr></table>
 
 <h3 align="center">大型深度魔改向1.20.1Forge机械动力整合包</h3>
