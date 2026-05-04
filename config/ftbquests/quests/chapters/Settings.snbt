@@ -102,29 +102,27 @@
 		}
 		{
 			description: [
-				"为使其他玩家能操作你认领区块里的方块和物品，需要使用FTB teams组队。"
+				"整合包安装了zstdnet来实现带宽压缩，官方服务器实测能将带宽-90%"
+				"为了使带宽压缩生效，你需要&e&l&n关闭正版验证&r&r&r"
+				"如果你需要阻止离线玩家登录你的服务器，可使用整合包内的TrueUUID。"
 				""
-				"&e&l未开启离线模式&r&r联机的情况下，可直接通过物品栏界面左上角的组队图标进入相关组队配置。"
-				"&e&l离线模式&r&r时，需要使用指令："
-				"/ftbteams party invite <player> 邀请玩家xxx加入自己的队伍"
-				"/ftbteams party leave 离开当前队伍"
-				"/ftbteams party allies add  <player> 设置玩家xxx为盟友"
-				""
-				"更多内容请看FTB Teams的百科界面。"
+				"&e&l局域网联机注意事项&r&r"
+				"/zstdport game <端口> 配置局域网联机生成的随机端口"
+				"让联机玩家连接35565端口即可"
 			]
-			icon: "itemfilters:id_regex"
+			icon: "sophisticatedbackpacks:advanced_deposit_upgrade"
 			id: "52F8FFE2BB54EEB8"
 			shape: "square"
 			tasks: [{
 				id: "2E2A54AABF31A237"
 				type: "checkmark"
 			}]
-			title: "组队"
+			title: "带宽消耗太快？开启zstd压缩"
 			x: 1.5d
 			y: 1.5d
 		}
 		{
-			description: ["如果战斗时你的武器经常打不中怪物而是挖方块，可使用按键 &l[   。] &r来开关武器破坏方块。"]
+			description: ["如果战斗时你的武器经常打不中怪物而是挖方块，可使用按键 &l[  。 ] &r来开关武器破坏方块。"]
 			icon: {
 				Count: 1
 				id: "minecraft:diamond_sword"
@@ -204,7 +202,7 @@
 				type: "checkmark"
 			}]
 			title: "地图"
-			x: 0.75d
+			x: 0.0d
 			y: 3.0d
 		}
 		{
@@ -220,7 +218,30 @@
 				id: "266A26FD317370C8"
 				type: "checkmark"
 			}]
-			x: 2.5d
+			x: 3.0d
+			y: 3.0d
+		}
+		{
+			description: [
+				"为使其他玩家能操作你认领区块里的方块和物品，需要使用FTB teams组队。"
+				""
+				"&e&l未开启离线模式&r&r联机的情况下，可直接通过物品栏界面左上角的组队图标进入相关组队配置。"
+				"&e&l离线模式&r&r时，需要使用指令："
+				"/ftbteams party invite <player> 邀请玩家xxx加入自己的队伍"
+				"/ftbteams party leave 离开当前队伍"
+				"/ftbteams party allies add  <player> 设置玩家xxx为盟友"
+				""
+				"更多内容请看FTB Teams的百科界面。"
+			]
+			icon: "itemfilters:id_regex"
+			id: "682E85347D06AFF2"
+			shape: "square"
+			tasks: [{
+				id: "57C82F42E2039DDD"
+				type: "checkmark"
+			}]
+			title: "组队"
+			x: 1.5d
 			y: 3.0d
 		}
 	]
