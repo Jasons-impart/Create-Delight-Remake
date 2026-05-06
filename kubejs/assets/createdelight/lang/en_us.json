@@ -15,4 +15,14 @@
   "message.createdelight.greenhouse_builder.not_enough_material": "Greenhouse build cancelled: need %s x %s, but adjacent inventories only provide %s.",
   "message.createdelight.greenhouse_builder.extract_failed": "Greenhouse build cancelled: failed while extracting materials from adjacent inventories.",
   "message.createdelight.greenhouse_builder.success": "Greenhouse built: placed %s blocks, skipped %s existing blocks."
+  "difficulty.createdelight.tier.0": "Calm Seas",
+  "difficulty.createdelight.tier.1": "Undercurrent",
+  "difficulty.createdelight.tier.2": "Danger Lurks",
+  "difficulty.createdelight.tier.3": "Perilous",
+  "difficulty.createdelight.tier.4": "Ravaged",
+  "difficulty.createdelight.tier.5": "Apocalypse",
+  "difficulty.createdelight.tier.6": "Ragnarök",
+  "difficulty.createdelight.tier_up_subtitle": "The world grows more dangerous...",
+  "difficulty.createdelight.tier_down_subtitle": "The threat recedes...",
+  "difficulty.createdelight.death_penalty": "You feel a wave of weakness..."
 }

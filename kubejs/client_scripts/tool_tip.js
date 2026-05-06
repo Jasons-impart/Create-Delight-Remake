@@ -122,6 +122,9 @@ const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils
 const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
 
 let difficultyLoots = global.difficultyLoots
+function getDifficultyTierName(tierIndex) {
+    return Text.translatable(`difficulty.createdelight.tier.${tierIndex}`)
+}
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((itemStack, advanced, text) => {
         if (!global.isAcceptableToSellBin(itemStack)) {
@@ -163,7 +166,7 @@ ItemEvents.tooltip(e => {
         element.forEach(val => {
             let entitys = val.entity.split(":")
             e.addAdvanced(key, (item, advanced, text) => {
-                text.add(Text.translatable("tooltip.createdelight.difficulty_loot", Text.translatable(`entity.${entitys[0]}.${entitys[1]}`), val.difficulty.toFixed()))
+                text.add(Text.translatable("tooltip.createdelight.difficulty_loot", Text.translatable(`entity.${entitys[0]}.${entitys[1]}`), getDifficultyTierName(val.tier)))
             })
         })
     }
