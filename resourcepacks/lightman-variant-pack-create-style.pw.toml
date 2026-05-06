@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "5159b70e4568584bc6c3607137ce28ec36cb2916"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/6597/119/LCVP_CreateStyle_v1.7.zip"
 
 [update]
 [update.curseforge]

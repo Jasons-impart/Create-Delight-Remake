@@ -158,8 +158,6 @@
 	#This represents the weighted threshold required to trigger a specific weather condition.
 	#Range: 0.0 ~ 1.0
 	WeatherVotePercent = 0.5
-	#Enables winter-themed Level of Detail (LOD) textures for Distant Horizons to ensure visual consistency at long distances.
-	DistantHorizonsWinterLOD = true
 
 [Debug]
 	#Log errors when internal functions are used incorrectly.
