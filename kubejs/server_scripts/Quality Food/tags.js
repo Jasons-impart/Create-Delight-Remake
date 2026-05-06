@@ -118,6 +118,7 @@ ServerEvents.tags("item", e => {
         "#farmersdelight:wild_crops"
     )
     e.add("quality_food:material_whitelist", [
+        'create:dough',
         'farmersdelight:brown_mushroom_colony',
         'farmersrespite:coffee_beans',
         'farmersdelight:red_mushroom_colony', 

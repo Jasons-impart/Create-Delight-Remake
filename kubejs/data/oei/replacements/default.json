@@ -429,5 +429,17 @@
             "createfisheryindustry:cooked_lobster"
         ],
         "resultItems": "crabbersdelight:cooked_clawster"
+    },
+    {
+        "matchItems": [
+            "festival_delicacies:peanut"
+        ],
+        "resultItems": "vintagedelight:peanut"
+    },
+    {
+        "matchItems": [
+            "festival_delicacies:tangerine"
+        ],
+        "resultItems": "fruitsdelight:orange"
     }
 ]

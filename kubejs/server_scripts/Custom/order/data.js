@@ -1033,7 +1033,7 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:tutu_congee",
         "fruitsdelight:bowl_of_pineapple_fried_rice",
         "cavedelight:dino_cut_rice",
-        "luncheonmeatsdelight:luncheon_meat_rice_ball",
+        "youkaishomecoming:pork_rice_ball",
         "farmersrespite:tea_curry",
         "farmersrespite:black_cod",
         "mynethersdelight:dried_ghast_with_milk",
