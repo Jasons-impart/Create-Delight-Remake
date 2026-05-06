@@ -7,3 +7,16 @@ start.bat
 start.sh
 variables.txt
 server-icon.png
+sync-packwiz-assets.bat
+scripts
+.cache
+packwiz-installer.jar
+mods/L_Enders_Cataclysm-*.jar
+resourcepacks/LCVP_CreateStyle_v1.7.zip
+resourcepacks/Torchmaster Remaster.zip
+resourcepacks/Squareful v3.15forMC1.20.1.zip
+resourcepacks/XK Highlight Block.zip
+shaderpacks/Bliss_v2.1.1_(Chocapic13_Shaders_edit).zip
+shaderpacks/BSL_v10.0.zip
+shaderpacks/ComplementaryUnbound_r5.7.1.zip
+shaderpacks/photon_v1.2a.zip

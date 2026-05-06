@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "27b1682e4c81adaab68bf71cad40bb340091775a"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/4893/379/Torchmaster%20Remaster.zip"
 
 [update]
 [update.curseforge]
