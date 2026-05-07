@@ -1,0 +1,72 @@
+#显示所有稀有度的原理图属性。
+#Display schematic properties for all rarities.
+holoShowAllRarity = true
+#忽略全息球物品需求。
+#ignoring holo item requirements.
+ignoreHoloItem = true
+#修改全息球显示材料行数
+#midify material line in holo
+holoMaterialLine = 2
+#修改全息球显示模块行数
+#midify module line in holo
+holoModuleLine = 2
+#修改改进间距。
+#Modify Improvement spacing.
+modify_improvement_spacing = 28
+#是否启用statbar显示控制
+enableStatBarShowControl = false
+#在材料页面显示sorter和filter的数量
+showFilterAndSorterElements = 10
+
+[Tooltip]
+	#是否启用添加材料Tooltip-修改此配置需重启生效
+	enableMaterialTooltip = true
+	#是否需要在打开高级物品提示的时候才显示tooltip-修改此配置需重启生效
+	showNeedAdvancedTooltip = true
+	#是否在tooltip里面提示需求工具等级
+	showRequiredTool = true
+	#是否在tooltip里面提示材料基础耐久度
+	showDurability = true
+	#是否在tooltip里面提示材料来源文件
+	showSource = false
+	#是否在tooltip里面提示材料类型
+	showCategory = true
+	#是否在tooltip里提示材料三维
+	showBasic = true
+	#是否在tooltip里提示经验消耗
+	showXpCost = true
+	#是否在tooltip里面提示材料自带effects
+	showEffects = true
+	#是否在tooltip里面提示材料自带attributes
+	showAttributes = true
+	#是否在tooltip里面提示材料自带aspects
+	showAspects = true
+	#是否在tooltip里面提示材料自带improvements
+	showImprovements = true
+	#是否在tooltip里面提示材料工具等级及其效率
+	showToolLevel = true
+	#是否在tooltip里面提示材料完整度奖励与花费
+	showIntegrityInfo = true
+	#是否启用添加卷轴Tooltip-修改此配置需重启生效
+	enableScrollTooltip = true
+	#是否启用添加特殊材料Tooltip-修改此配置需重启生效
+	enableSpecialMaterialTooltip = true
+	#按material的key隐藏tooltip
+	hideMaterialKeys = []
+
+	[Tooltip.ProgressBar]
+		#设置进度条的长度
+		progressBarSize = 30
+		#设置进度条的显示时间
+		progressShowTick = 50
+		#设置进度条的样式,单个字符
+		progressStyle = "|"
+
+	[Tooltip.Color]
+		#设置颜色，需重启生效，为0则使用预设颜色
+		color1 = 0
+		color2 = 0
+		color3 = 0
+		colorGood = 0
+		colorBad = 0
+
