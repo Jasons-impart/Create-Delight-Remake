@@ -418,6 +418,118 @@ const MID_TIER_KEYS = [
     "library", "blacksmith", "create", "castle", "mines", "temple", "ruins", "tower",
 ]
 
+// Currency follows a straight 1:10 denomination chain:
+// iron -> copper -> gold -> emerald -> netherite.
+function currencyTierForTable(id, baseTier) {
+    if (
+        id.indexOf("vault") !== -1 ||
+        id.indexOf("throne") !== -1 ||
+        id.indexOf("museum_space") !== -1 ||
+        id.indexOf("martian_base_chest") !== -1
+    ) {
+        return 4
+    }
+
+    if (id.indexOf("seed_chest") !== -1) {
+        return Math.max(2, baseTier)
+    }
+
+    return baseTier
+}
+
+function buildCurrencyPools(tableId, baseTier) {
+    const tier = currencyTierForTable(tableId, baseTier)
+
+    if (tier >= 4) {
+        return [
+            {
+                name: "currency_hoard",
+                rolls: [1, 1],
+                entries: [
+                    ["createdelightcore:emerald_coin", 15, [1, 2]],
+                    ["createdelightcore:gold_coin", 6, [4, 8]],
+                    ["createdelightcore:copper_coin", 2, [8, 16]],
+                ],
+            },
+            {
+                name: "currency_hoard_bonus",
+                rolls: [0, 1],
+                entries: [
+                    ["createdelightcore:emerald_coin", 10, [1, 3]],
+                    ["createdelightcore:gold_coin", 4, [3, 6]],
+                    ["createdelightcore:netherite_coin", 1],
+                ],
+            },
+        ]
+    }
+
+    if (tier === 3) {
+        return [
+            {
+                name: "currency_cache",
+                rolls: [1, 1],
+                entries: [
+                    ["createdelightcore:gold_coin", 18, [1, 3]],
+                    ["createdelightcore:copper_coin", 7, [4, 10]],
+                    ["createdelightcore:emerald_coin", 4],
+                    ["createdelightcore:iron_coin", 2, [20, 40]],
+                ],
+            },
+            {
+                name: "currency_cache_bonus",
+                rolls: [0, 1],
+                entries: [
+                    ["createdelightcore:gold_coin", 12, [2, 4]],
+                    ["createdelightcore:emerald_coin", 5],
+                    ["createdelightcore:copper_coin", 3, [6, 12]],
+                ],
+            },
+        ]
+    }
+
+    if (tier === 2) {
+        return [
+            {
+                name: "currency_pouch",
+                rolls: [1, 1],
+                entries: [
+                    ["createdelightcore:copper_coin", 18, [1, 3]],
+                    ["createdelightcore:iron_coin", 8, [10, 20]],
+                    ["createdelightcore:gold_coin", 5],
+                ],
+            },
+            {
+                name: "currency_pouch_bonus",
+                rolls: [0, 1],
+                entries: [
+                    ["createdelightcore:copper_coin", 14, [2, 4]],
+                    ["createdelightcore:gold_coin", 6],
+                    ["createdelightcore:iron_coin", 4, [12, 24]],
+                ],
+            },
+        ]
+    }
+
+    return [
+        {
+            name: "currency_loose_change",
+            rolls: [1, 1],
+            entries: [
+                ["createdelightcore:iron_coin", 16, [4, 12]],
+                ["createdelightcore:copper_coin", 7, [1, 2]],
+            ],
+        },
+        {
+            name: "currency_loose_change_bonus",
+            rolls: [0, 1],
+            entries: [
+                ["createdelightcore:iron_coin", 12, [2, 8]],
+                ["createdelightcore:copper_coin", 4],
+            ],
+        },
+    ]
+}
+
 function normalizeRolls(rolls) {
     if (Array.isArray(rolls)) {
         const minRolls = Math.max(0, Math.floor(rolls[0] || 0))
@@ -746,7 +858,10 @@ function buildVillageCropPools(tableId, crops) {
 function applyIdasLoot(event) {
     IDAS_CHEST_TABLES.forEach(id => {
         const tier = tierForTable(id)
-        addLootPools(event, id, buildTechPools(id, tier))
+        addLootPools(event, id, combinePools(
+            buildTechPools(id, tier),
+            buildCurrencyPools(id, tier)
+        ))
     })
 }
 
@@ -756,7 +871,11 @@ function applyIntegratedVillageLoot(event) {
     Object.keys(INTEGRATED_VILLAGE_TABLES_BY_THEME).forEach(theme => {
         const crops = INTEGRATED_VILLAGE_THEMES[theme].crops
         INTEGRATED_VILLAGE_TABLES_BY_THEME[theme].forEach(id => {
-            addLootPools(event, id, buildVillageCropPools(id, crops))
+            const tier = tierForTable(id)
+            addLootPools(event, id, combinePools(
+                buildVillageCropPools(id, crops),
+                buildCurrencyPools(id, tier)
+            ))
             integratedCropTableCount += 1
         })
     })
@@ -770,9 +889,11 @@ function applyIntegratedVillageLoot(event) {
 
 function applyNorthstarLoot(event) {
     NORTHSTAR_CHEST_TABLES.forEach(id => {
+        const tier = Math.max(2, tierForTable(id))
         addLootPools(event, id, combinePools(
-            buildTechPools(id, 2),
-            buildNorthstarSpacePools(id)
+            buildTechPools(id, tier),
+            buildNorthstarSpacePools(id),
+            buildCurrencyPools(id, tier)
         ))
     })
 
@@ -785,12 +906,16 @@ function applyLegacyDungeonLoot(event) {
     // Existing extra targets kept to preserve prior unified-loot behavior.
     INTEGRATED_STRONGHOLD_TABLES.forEach(id => {
         const tier = Math.max(2, tierForTable(id))
-        addLootPools(event, id, buildTechPools(id, tier))
+        addLootPools(event, id, combinePools(
+            buildTechPools(id, tier),
+            buildCurrencyPools(id, tier)
+        ))
     })
 
     KAISYN_TABLES
         .filter(id => id.indexOf("/outpost/") !== -1)
         .forEach(id => {
+            const tier = Math.max(1, tierForTable(id))
             addLootPools(event, id, combinePools(
                 [
                 {
@@ -803,7 +928,8 @@ function applyLegacyDungeonLoot(event) {
                         ["minecraft:crossbow", 2],
                     ],
                 },
-                ]
+                ],
+                buildCurrencyPools(id, tier)
             ))
         })
 }
