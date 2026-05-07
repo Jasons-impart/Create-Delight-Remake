@@ -5,6 +5,7 @@
 !/.gitignore
 !/acceleratedrendering-client.toml
 !/alexsmobs
+!/apotheosis
 !/attributeslib.cfg
 !/fancymenu
 !/iceandfire
@@ -27,6 +28,7 @@
 !/curios-common.toml
 !/eclipticseasons-common.toml
 !/endertrigon-common.toml
+!/extraholopage-client.toml
 !/ftbquests
 !/netherexp-common.toml
 !/refurbished_furniture.server.toml
