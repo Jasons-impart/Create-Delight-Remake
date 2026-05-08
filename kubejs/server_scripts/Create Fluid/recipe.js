@@ -2,10 +2,15 @@ ServerEvents.recipes(e => {
     const {create, kubejs} = e.recipes
     e.replaceInput({id: "fluid:centrifugal_pump"}, "create:propeller", "create_sa:hydraulic_engine")
     e.replaceInput({id: "fluid:mechanical_pipette"}, "create:precision_mechanism", "create_sa:hydraulic_engine")
+    e.replaceInput({id: "fluid:can_filler"}, "minecraft:copper_ingot", "create:copper_sheet")
     remove_recipes_id(e, [
         "fluid:mechanical_pipette",
         "fluid:copper_tap",
-        "fluid:copper_sink"
+        "fluid:copper_sink",
+        "fluid:compacting/slime_ball_from_slime_fluid",
+        "fluid:mixing/slime_fluid_from_slime_ball",
+        "fluid:communicating_vessel",
+        "fluid:fluid_atomizer"
     ])
     kubejs.shaped("2x fluid:copper_tap", [
         " A ",
@@ -37,4 +42,28 @@ ServerEvents.recipes(e => {
         B: "minecraft:water_bucket"
     }).replaceIngredient("minecraft:water_bucket", "minecraft:bucket")
     .id("createdelight:copper_sink")
+    kubejs.shaped("fluid:fluid_atomizer", [
+        " A ",
+        " B ",
+        " C "
+    ], {
+        A: "create_connected:empty_fan_catalyst",
+        B: "create:encased_fan",
+        C: "createprism:copper_clear_glass_casing"
+    }).id("createdelight:fluid_atomizer")
+    kubejs.shaped("fluid:communicating_vessel", [
+        "   ",
+        "ABA",
+        "   "
+    ], {
+        A: "createdeco:andesite_sheet",
+        B: "create:fluid_pipe"
+    }).id("createdelight:communicating_vessel")
+    create.mixing(
+        Fluid.of("fluid:slime_fluid", 1000),
+        [
+            Fluid.of("createdelightcore:slime", 500),
+            Fluid.water(500)
+        ]
+    ).id("createdelight:mixing/slime_fluid")
 })
