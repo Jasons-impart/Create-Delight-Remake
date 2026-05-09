@@ -1,5 +1,5 @@
 ServerEvents.recipes((event) => {
-  const { kubejs, vintageimprovements, create, minecraft, createdelightcore } = event.recipes;
+  const { kubejs, vintageimprovements, create, minecraft, createdelightcore, fluid } = event.recipes;
 
   // 石英玻璃部件
   vintageimprovements
@@ -245,5 +245,16 @@ ServerEvents.recipes((event) => {
   .id("createdelight:fan_freezing/fluix_smart_cable")
   createdelightcore.fan_freezing("ae2:fluix_smart_dense_cable", Ingredient.of("#ae2:smart_dense_cable").subtract("ae2:fluix_smart_dense_cable"))
   .id("createdelight:fan_freezing/smart_dense_cable")
+
+  fluid.freezing("ae2:fluix_covered_cable", Ingredient.of("#ae2:covered_cable").subtract("ae2:fluix_covered_cable"))
+  .id("createdelight:fluid_freezing/fluix_covered_cable")
+  fluid.freezing("ae2:fluix_glass_cable", Ingredient.of("#ae2:glass_cable").subtract("ae2:fluix_glass_cable"))
+  .id("createdelight:fluid_freezing/fluix_glass_cable")
+  fluid.freezing("ae2:fluix_covered_dense_cable", Ingredient.of("#ae2:covered_dense_cable").subtract("ae2:fluix_covered_dense_cable"))
+  .id("createdelight:fluid_freezing/fluix_covered_dense_cable")
+  fluid.freezing("ae2:fluix_smart_cable", Ingredient.of("#ae2:smart_cable").subtract("ae2:fluix_smart_cable"))
+  .id("createdelight:fluid_freezing/fluix_smart_cable")
+  fluid.freezing("ae2:fluix_smart_dense_cable", Ingredient.of("#ae2:smart_dense_cable").subtract("ae2:fluix_smart_dense_cable"))
+  .id("createdelight:fluid_freezing/smart_dense_cable")
 
 });
