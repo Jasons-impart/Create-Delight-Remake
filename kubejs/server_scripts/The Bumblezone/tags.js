@@ -17,4 +17,7 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("the_bumblezone:crystalline_flower/xp_2_when_consumed", [
         "create:experience_nugget"
     ])
+    e.add("the_bumblezone:crystalline_flower/xp_5_when_consumed", [
+        "create:experience_block"
+    ])
 }) 

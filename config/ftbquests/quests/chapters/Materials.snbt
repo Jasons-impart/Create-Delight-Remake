@@ -281,7 +281,7 @@
 			dependencies: ["63B03A277D459A65"]
 			id: "1ABE35B8CAAB3F83"
 			size: 1.0d
-			subtitle: "100难度下击杀凋灵骷髅可获得，直接击杀凋零也可获得"
+			subtitle: "危机四伏及以上难度下击杀凋灵骷髅可获得，任意难度下击杀凋零也可获得"
 			tasks: [{
 				id: "45F7301C7F8A7598"
 				item: "art_of_forging:fragment_of_eden"

@@ -52,6 +52,15 @@
 - packwiz https://packwiz.infra.link/tutorials/creating/getting-started/
 - 因为原始repo的发布文件已经过期，使用了个人fork的版本：https://github.com/wanquanw/packwiz-build
 
+# 直接克隆仓库后的资源同步
+- 如果是直接 `git clone` 本仓库，而不是下载发布包，请先在仓库根目录双击 `sync-packwiz-assets.bat`
+- 该脚本会扫描 `mods/`、`resourcepacks/`、`shaderpacks/` 下已经提交的 `*.pw.toml` 文件
+- 首次运行时会自动下载 `packwiz.exe` 和 `packwiz-installer-bootstrap.jar`，缓存到 `.cache/packwiz-sync/`
+- 随后会自动执行 `packwiz refresh`、`packwiz serve` 和 `packwiz-installer`，把缺失的 mod / 资源包 / 光影包同步到本地
+- 运行前需要准备好 Java 17，并确保能够访问 CurseForge 或对应 CDN
+- 如果不想双击批处理，也可以在终端手动执行：`powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1`
+- 这个同步流程只会处理 `*.pw.toml` 描述的外部文件，不会覆盖仓库里已经被 Git 跟踪的普通文件
+
 # 修改整合包内的默认配置
 - 直接修改整合包内的.options.txt文件即可，发包时会将这个作为整合包的默认配置
 - 包括但不限于：键位设置、加载的资源包和加载顺序

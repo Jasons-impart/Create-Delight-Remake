@@ -3,6 +3,84 @@ const $TableClothBlockEntity = Java.loadClass("com.simibubi.create.content.logis
 const $PackageEntity = Java.loadClass("com.simibubi.create.content.logistics.box.PackageEntity")
 let Order = global.Order
 let MoneyUtil = global.MoneyUtil
+
+function buildOrderRewardPackages(level, orderInfo, qualityScore) {
+    let customer = Order.customerProperties[orderInfo.type]
+    let reward = customer.reward
+    if (reward == null)
+        reward = [`createdelight:orders/${orderInfo.type}`, 1]
+
+    let list = Utils.newList()
+    for (let i = 0; i < qualityScore * reward[1] * orderInfo.entries.length; i++) {
+        let rewardItems = LootUtils.getLootItems(reward[0], level)
+        rewardItems.forEach(item => {
+            list.add(item)
+        })
+    }
+
+    let money = Order.calculateMoneyReward(orderInfo) * qualityScore * customer.reward_money
+    MoneyUtil.convertBaseValueToItems(money).forEach(item => {
+        list.add(item)
+    })
+
+    let rewardPackages = []
+    for (let i = 0; i < list.length; i += 9) {
+        rewardPackages.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length))))
+    }
+    return rewardPackages
+}
+
+function placeRewardPackages(level, pos, direction, start, rewardPackages) {
+    /**@type {Internal.TableClothBlockEntity} */
+    let startBe = level.getBlockEntity(pos[direction](start), "create:table_cloth").get()
+    if (rewardPackages.length == 0)
+        return
+    for (let index = 0; index < rewardPackages.length; index++) {
+        let element = rewardPackages[index]
+        if (startBe.manuallyAddedItems.size() == 4) {
+            $PackageEntity.fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
+        } else {
+            startBe.manuallyAddedItems.push(element)
+            startBe.notifyUpdate()
+        }
+    }
+}
+
+function clearOrderSegment(level, pos, direction, start, end) {
+    for (let index = start; index <= end; index++) {
+        /**@type {Internal.TableClothBlockEntity} */
+        let be = level.getBlockEntity(pos[direction](index), "create:table_cloth").get()
+        be.manuallyAddedItems.clear()
+        be.notifyUpdate()
+    }
+}
+
+function notifyOrderReputation(level, orderInfo, qualityScore) {
+    let result = Order.reputation.awardForOrder(level, orderInfo, qualityScore)
+    if (result == null)
+        return
+    result.player.tell(Component.translate("message.createdelight.order_reputation_gain", result.gain, result.value, result.level))
+    if (result.leveledUp)
+        result.player.tell(Component.translate("message.createdelight.order_reputation_level_up", result.level))
+}
+
+function settleOrderSegment(level, pos, direction, start, end, orderStack, packages) {
+    if (orderStack == null)
+        return false
+
+    let orderInfo = orderStack.nbt.createdelightOrderInfo
+    let nums = Order.checkAllPackages([orderInfo], packages)
+    let qualityScore = nums[0]
+    if (qualityScore <= 0)
+        return false
+
+    let rewardPackages = buildOrderRewardPackages(level, orderInfo, qualityScore)
+    clearOrderSegment(level, pos, direction, start, end)
+    placeRewardPackages(level, pos, direction, start, rewardPackages)
+    notifyOrderReputation(level, orderInfo, qualityScore)
+    return true
+}
+
 MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
     let event = e.event
     const { machine } = event
@@ -46,51 +124,8 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
 
                     if (find != null) {
                         if (order != null) {
-                            let o = find.nbt.createdelightOrderInfo
-                            // console.log(packages.serializeNBT())
-                            let nums = Order.checkAllPackages([o], packages)
-                            let customer = Order.customerProperties[o.type]
-                            let reward = customer.reward
-                            if (reward == null)
-                                reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么则为以类型为名的战利品表
-                            let list = Utils.newList()
-
-                            for (let i = 0; i < nums[0] * reward[1] * o.entries.length; i++) {
-                                let rewardItems = LootUtils.getLootItems(reward[0], level)
-                                rewardItems.forEach(item => {
-                                    list.add(item)
-                                })
-                            }
-                            // let reward = Order.getRewardContract(Order.customerProperties[o.type].reward, nums[0] * 5)
-                            let money = Order.calculateMoneyReward(o) * nums[0] * customer.reward_money
-                            MoneyUtil.convertBaseValueToItems(money).forEach(item => {
-                                list.add(item)
-                            })
-                            let pList = []
-                            for (let i = 0; i < list.length; i += 9) {
-                                pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))
-                            }
                             end = index - 1
-                            for (let j = start; j <= end; j++) {
-                                /**@type {Internal.TableClothBlockEntity} */
-                                let be = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
-                                be.manuallyAddedItems.clear()
-                                be.notifyUpdate()
-                            }
-
-                            /**@type {Internal.TableClothBlockEntity} */
-                            let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
-                            if (pList.length != 0) {
-                                for (let index = 0; index < pList.length; index++) {
-                                    let element = pList[index];
-                                    if (startBe.manuallyAddedItems.size() == 4) {
-                                        $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), element)
-                                    } else {
-                                        startBe.manuallyAddedItems.push(element)
-                                        startBe.notifyUpdate()
-                                    }
-                                }
-                            }
+                            settleOrderSegment(level, pos, funcs[i], start, end, order, packages)
                             start = index
                             packages = new ItemStackTransfer()
                             packages.setSize(64)
@@ -103,49 +138,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
                     lastIndex = index
                 }
                 if (order != null) {
-                    let o = order.nbt.createdelightOrderInfo
-                    let nums = Order.checkAllPackages([o], packages)
-                    let customer = Order.customerProperties[o.type]
-                    let reward = customer.reward
-                    if (reward == null)
-                        reward = [`createdelight:orders/${o.type}`, 1] //如果没有写reward那么以类型为名的战利品表
-                    let list = Utils.newList()
-
-                    for (let i = 0; i < nums[0] * reward[1] * o.entries.length; i++) {
-                        let rewardItems = LootUtils.getLootItems(reward[0], level)
-                        rewardItems.forEach(item => {
-                            list.add(item)
-                        })
-                    }
-                    let money = Order.calculateMoneyReward(o) * nums[0] * customer.reward_money
-                    MoneyUtil.convertBaseValueToItems(money).forEach(item => {
-                        list.add(item)
-                    })
-                    let pList = []
-                    for (let i = 0; i < list.length; i += 9) {
-                        pList.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length - 1))))
-                    }
-
-                    for (let j = start; j <= lastIndex; j++) {
-                        /**@type {Internal.TableClothBlockEntity} */
-                        let be2 = level.getBlockEntity(pos[funcs[i]](j), "create:table_cloth").get()
-                        be2.manuallyAddedItems.clear()
-                        be2.notifyUpdate()
-                    }
-
-                    /**@type {Internal.TableClothBlockEntity} */
-                    let startBe = level.getBlockEntity(pos[funcs[i]](start), "create:table_cloth").get()
-                    if (pList.length != 0) {
-                        for (let index = 0; index < pList.length; index++) {
-                            let element = pList[index];
-                            if (startBe.manuallyAddedItems.size() == 4) {
-                                $PackageEntity.fromItemStack(level, pos[funcs[i]](start).offset(0.5, 1, 0.5), element)
-                            } else {
-                                startBe.manuallyAddedItems.push(element)
-                                startBe.notifyUpdate()
-                            }
-                        }
-                    }
+                    settleOrderSegment(level, pos, funcs[i], start, lastIndex, order, packages)
                 }
             }
 
