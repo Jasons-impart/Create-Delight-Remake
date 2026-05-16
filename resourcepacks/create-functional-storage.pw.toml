@@ -1,0 +1,13 @@
+name = "Create Functional Storage"
+filename = "【1.20.1】§l§n§a§oCreate Functional Storage §c§lv1.0.0.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c07892fbbc762c373feb68a9addbe3fbcdd8d3b5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8094407
+project-id = 1543940
