@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
-        "supplementaries:lumisene_bottle"
+        "supplementaries:lumisene_bottle",
+        "supplementaries:netherite_trapdoor"
     ])
     remove_recipes_output(e, [
         "supplementaries:sugar_cube"
@@ -103,4 +104,11 @@ ServerEvents.recipes(e => {
             Fluid.of("createdieselgenerators:ethanol", 100)
         ]
     ).id("createdelight:mixing/lumisene_5")
+    // 下界合金活板门
+    e.shaped("supplementaries:netherite_trapdoor", [
+        "AA",
+        "AA"
+    ], {
+        A: "minecraft:netherite_ingot"
+    }).id("createdelight:shaped/netherite_trapdoor")
 })
