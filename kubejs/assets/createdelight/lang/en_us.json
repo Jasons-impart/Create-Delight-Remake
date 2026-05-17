@@ -14,7 +14,7 @@
   "message.createdelight.greenhouse_builder.no_air": "Greenhouse build skipped: there are no air blocks to place into. Existing blocks skipped: %s.",
   "message.createdelight.greenhouse_builder.not_enough_material": "Greenhouse build cancelled: need %s x %s, but adjacent inventories only provide %s.",
   "message.createdelight.greenhouse_builder.extract_failed": "Greenhouse build cancelled: failed while extracting materials from adjacent inventories.",
-  "message.createdelight.greenhouse_builder.success": "Greenhouse built: placed %s blocks, skipped %s existing blocks."
+  "message.createdelight.greenhouse_builder.success": "Greenhouse built: placed %s blocks, skipped %s existing blocks.",
   "difficulty.createdelight.tier.0": "Calm Seas",
   "difficulty.createdelight.tier.1": "Undercurrent",
   "difficulty.createdelight.tier.2": "Danger Lurks",
