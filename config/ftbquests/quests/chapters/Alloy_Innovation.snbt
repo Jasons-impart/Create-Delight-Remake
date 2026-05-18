@@ -1354,66 +1354,6 @@
 			y: -3.5d
 		}
 		{
-			dependencies: ["32AAEC0414A9ECA6"]
-			description: [
-				"动力移液器可以通过与动力臂相似的配置方法设定&c流体交互点&r（例如工作盆）以进行&e流体转移&r功能"
-				"除了&c常规流体容器&r，动力移液器还可以与一些&c特殊方块&r交互，例如：直接从蜂箱中移液出&e蜂蜜&r流体"
-				"将&e熔岩流体移液至熄灭的烈焰人燃烧室中&r，使其进入一般燃烧状态"
-				"动力移液器不能直接对流体储罐等流体容器中的流体直接进行移液，需要在其上放置&c流体接口&r来辅助交互"
-				"动力移液器可以通过绑定&c智能流体接口&r来实现流体的智能分液"
-				"动力移液器可以如注液器一般使用其暂存的流体对物品进行&e注液&r"
-			]
-			id: "1F34610FBFE53749"
-			size: 1.5d
-			subtitle: "动力臂的流体版"
-			tasks: [{
-				id: "1FE1F198D1A25F7F"
-				item: "fluid:pipette"
-				type: "item"
-			}]
-			x: 16.5d
-			y: -6.0d
-		}
-		{
-			dependencies: ["32AAEC0414A9ECA6"]
-			dependency_requirement: "all_started"
-			description: ["相较于动力泵，离心泵的泵液功率&e更高&r、输送液体距离&e更远&r，同时造价&e更昂贵&r、消耗应力&e更高&r"]
-			id: "17EC64B407A44FD5"
-			subtitle: "更快更给力"
-			tasks: [{
-				id: "711D23BE2CB19160"
-				item: "fluid:centrifugal_pump"
-				type: "item"
-			}]
-			x: 16.5d
-			y: -3.5d
-		}
-		{
-			dependencies: ["2CBBADBE62382C1B"]
-			id: "50BA4C5ABE721F8D"
-			ignore_reward_blocking: true
-			tasks: [{
-				id: "412E52F97F923C3B"
-				item: "fluid:smart_fluid_interface"
-				type: "item"
-			}]
-			x: 13.0d
-			y: 0.75d
-		}
-		{
-			dependencies: ["1F34610FBFE53749"]
-			description: ["用于便捷配置&c动力臂&r、&c动力移液器&r与&c弹射置物台&r的工具&c"]
-			id: "2FFD64E4EE3366FA"
-			subtitle: "挥舞指挥棒"
-			tasks: [{
-				id: "3CD0D11EE867369E"
-				item: "fluid:baton"
-				type: "item"
-			}]
-			x: 16.5d
-			y: -7.5d
-		}
-		{
 			dependencies: ["575185F2DB0AD44C"]
 			icon: {
 				Count: 1
