@@ -37,6 +37,7 @@
 !/packwiz-files
 !/packwiz-files/**
 !/sync-packwiz-assets.bat
+!/update-packwiz-meta.bat
 /mods/*.jar
 /packwiz-installer.jar
 /resourcepacks/LCVP_CreateStyle_v1.7.zip
