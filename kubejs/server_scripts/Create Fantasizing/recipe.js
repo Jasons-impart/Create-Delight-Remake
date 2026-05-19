@@ -6,8 +6,6 @@ ServerEvents.recipes(e => {
         "create_fantasizing:compact_wind_engine",
         "create_fantasizing:sturdy_conduit",
         "create_fantasizing:sturdy_heavy_core",
-        "create_fantasizing:compacting/powder_snow_to_block",
-        "create_fantasizing:mixing/powder_snow",
         "create_fantasizing:mechanical_crafting/block_placer"//太卡了
     ])
     kubejs.shaped("create_fantasizing:sturdy_conduit", [
