@@ -202,11 +202,7 @@
 			size: 1.0d
 			tasks: [{
 				id: "48B5B9F5166ABCFC"
-				item: {
-					Count: 1
-					id: "ad_astra:etrionic_capacitor"
-					tag: { }
-				}
+				item: "createaddition:capacitor"
 				type: "item"
 			}]
 			x: 13.0d
@@ -271,7 +267,7 @@
 			size: 1.0d
 			tasks: [{
 				id: "417975C36DDA120A"
-				item: "ad_astra:calorite_ingot"
+				item: "createdelightcore:molten_martian_steel_bucket"
 				type: "item"
 			}]
 			x: 9.5d
