@@ -1,0 +1,8 @@
+name = "Luncheon Meat 'S Delight"
+filename = "luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/luncheon-meat-s-delight-1.0.3-forge-1.20.1.jar"
+hash-format = "sha256"
+hash = "6904a478705566e67577cea4175918583f30bae548bceb6331b165683af7d777"

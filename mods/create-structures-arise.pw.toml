@@ -1,0 +1,8 @@
+name = "Create: Structures Arise"
+filename = "create_structures_arise-174.47.46 Release-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/create_structures_arise-174.47.46%20Release-forge-1.20.1.jar"
+hash-format = "sha256"
+hash = "5b1e50e48936c9d2147d917301848ada6d445be1c5ef0e0809913ecdc2949be4"

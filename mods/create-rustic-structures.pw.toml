@@ -1,0 +1,13 @@
+name = "Create: Rustic Structures"
+filename = "create_rustic_structures-1.0.0-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "591ffb312ba9da52a8554ef7f9377b49432db7f0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6372206
+project-id = 1232975

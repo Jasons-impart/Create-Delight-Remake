@@ -1,0 +1,13 @@
+name = "CullLessLeaves Reforged (Unofficial)"
+filename = "CullLessLeaves-Reforged-1.20.1-1.0.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "71b1603071461e036a3ba2aaeeb52cc10fa3d348"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4917082
+project-id = 840788

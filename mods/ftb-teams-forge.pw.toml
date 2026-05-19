@@ -1,0 +1,13 @@
+name = "FTB Teams (NeoForge)"
+filename = "ftb-teams-forge-2001.3.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c49023f5d471aa1ba7fc624d2565fe9e82b7117e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7499810
+project-id = 404468

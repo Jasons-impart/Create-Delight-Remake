@@ -1,0 +1,13 @@
+name = "Rhino"
+filename = "rhino-forge-2001.2.3-build.10.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c83c9b719a6bab33fbd2b3f2f680eb3adbfc1aa1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6186971
+project-id = 416294

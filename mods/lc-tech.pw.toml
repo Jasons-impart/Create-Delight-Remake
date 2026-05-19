@@ -1,0 +1,13 @@
+name = "Lightman's Currency Tech"
+filename = "lctech-1.20.1-0.2.2.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "17ae4cf7eee68eb3afa49450d492ac4f22310ab0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7405697
+project-id = 548152

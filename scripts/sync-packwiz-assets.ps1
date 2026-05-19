@@ -2,7 +2,7 @@
 param(
     [string[]]$MetadataRoots = @("mods", "resourcepacks", "shaderpacks"),
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
-    [string]$BootstrapUrl = "https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar"
+    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar"
 )
 
 Set-StrictMode -Version Latest
@@ -14,10 +14,12 @@ $WorkRoot = Join-Path $RepoRoot ".cache\packwiz-sync"
 $ToolsRoot = Join-Path $WorkRoot "tools"
 $PackRoot = Join-Path $WorkRoot "pack"
 $PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
-$BootstrapJar = Join-Path $ToolsRoot "packwiz-installer-bootstrap.jar"
-$InstallerJarPath = Join-Path $RepoRoot "packwiz-installer.jar"
+$InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
 $ServeLog = Join-Path $WorkRoot "serve.log"
 $ServeErrLog = Join-Path $WorkRoot "serve.err.log"
+$PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
+$PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
+$StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
 $ServeProcess = $null
 
 function Write-Status {
@@ -56,6 +58,23 @@ function Resolve-JavaCommand {
     }
 
     throw "Java 17 was not found. Set JAVA_HOME, install java on PATH, or update variables.txt."
+}
+
+function Resolve-PythonCommand {
+    $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+    if ($pythonCmd) {
+        return $pythonCmd.Source
+    }
+
+    $pythonLauncher = Get-Command py -ErrorAction SilentlyContinue
+    if ($pythonLauncher) {
+        $resolvedPython = & $pythonLauncher.Source -3 -c "import sys; print(sys.executable)"
+        if ($LASTEXITCODE -eq 0 -and $resolvedPython) {
+            return $resolvedPython.Trim()
+        }
+    }
+
+    throw "Python was not found. Install Python so the local static server can run."
 }
 
 function Get-FreePort {
@@ -100,6 +119,16 @@ function Ensure-Tool {
     Invoke-WebRequest -Uri $Url -OutFile $Destination -UseBasicParsing
 }
 
+function Write-Utf8NoBomFile {
+    param(
+        [string]$Path,
+        [string]$Content
+    )
+
+    $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+    [System.IO.File]::WriteAllText($Path, $Content, $utf8NoBom)
+}
+
 try {
     Set-Location $RepoRoot
 
@@ -119,21 +148,40 @@ try {
 
     $javaCommand = Resolve-JavaCommand
     Ensure-Tool -Url $PackwizUrl -Destination $PackwizExe
-    Ensure-Tool -Url $BootstrapUrl -Destination $BootstrapJar
+    Ensure-Tool -Url $InstallerUrl -Destination $InstallerJarPath
 
     if (Test-Path $PackRoot) {
         Remove-Item $PackRoot -Recurse -Force
     }
     New-Item -ItemType Directory -Force -Path $PackRoot | Out-Null
     Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $PackRoot "pack.toml") -Force
+    $packwizIgnorePath = Join-Path $RepoRoot ".packwizignore"
+    if (Test-Path $packwizIgnorePath) {
+        Copy-Item $packwizIgnorePath (Join-Path $PackRoot ".packwizignore") -Force
+    }
     New-Item -ItemType File -Force -Path (Join-Path $PackRoot "index.toml") | Out-Null
 
+    $copiedMetadataPaths = @()
     foreach ($metadataFile in $metadataFiles) {
         $relativePath = Get-RelativeUnixPath -Root $RepoRoot -Path $metadataFile.FullName
         $destinationPath = Join-Path $PackRoot $relativePath
         $destinationDir = Split-Path $destinationPath -Parent
         New-Item -ItemType Directory -Force -Path $destinationDir | Out-Null
         Copy-Item $metadataFile.FullName $destinationPath -Force
+        $copiedMetadataPaths += $destinationPath
+    }
+
+    if (Test-Path $PackwizFilesRoot) {
+        Copy-Item $PackwizFilesRoot (Join-Path $PackRoot "packwiz-files") -Recurse -Force
+    }
+
+    $port = Get-FreePort
+    $localPackwizFilesPrefix = "http://127.0.0.1:$port/packwiz-files/"
+    foreach ($metadataPath in $copiedMetadataPaths) {
+        $content = Get-Content $metadataPath -Raw
+        if ($content.Contains($PackwizFilesRawPrefix)) {
+            Write-Utf8NoBomFile -Path $metadataPath -Content ($content.Replace($PackwizFilesRawPrefix, $localPackwizFilesPrefix))
+        }
     }
 
     Write-Status ("Building temporary packwiz pack from {0} metadata file(s)..." -f $metadataFiles.Count)
@@ -148,10 +196,11 @@ try {
         Pop-Location
     }
 
-    $port = Get-FreePort
     Remove-Item $ServeLog, $ServeErrLog -Force -ErrorAction SilentlyContinue
-    Write-Status ("Starting local packwiz server on port {0}..." -f $port)
-    $ServeProcess = Start-Process -FilePath $PackwizExe -ArgumentList @("serve", "-p", $port.ToString()) -WorkingDirectory $PackRoot -WindowStyle Hidden -RedirectStandardOutput $ServeLog -RedirectStandardError $ServeErrLog -PassThru
+    $pythonExe = Resolve-PythonCommand
+    $pythonArgs = @($StaticServerScript, $port.ToString(), $PackRoot)
+    Write-Status ("Starting local static server on port {0}..." -f $port)
+    $ServeProcess = Start-Process -FilePath $pythonExe -ArgumentList $pythonArgs -WorkingDirectory $PackRoot -WindowStyle Hidden -RedirectStandardOutput $ServeLog -RedirectStandardError $ServeErrLog -PassThru
 
     $packUrl = "http://127.0.0.1:$port/pack.toml"
     $serverReady = $false
@@ -169,9 +218,8 @@ try {
         throw "Local packwiz server did not start in time. Check $ServeErrLog."
     }
 
-    Remove-Item $InstallerJarPath -Force -ErrorAction SilentlyContinue
     Write-Status "Running packwiz-installer..."
-    & $javaCommand -jar $BootstrapJar -g $packUrl
+    & $javaCommand -cp $InstallerJarPath "link.infra.packwiz.installer.Main" "--bootstrap-no-update" "-g" $packUrl
     if ($LASTEXITCODE -ne 0) {
         throw "packwiz-installer exited with code $LASTEXITCODE."
     }
@@ -182,6 +230,4 @@ finally {
     if ($ServeProcess -and -not $ServeProcess.HasExited) {
         Stop-Process -Id $ServeProcess.Id -Force -ErrorAction SilentlyContinue
     }
-
-    Remove-Item $InstallerJarPath -Force -ErrorAction SilentlyContinue
 }

@@ -1,0 +1,13 @@
+name = "Create: Enhanced Schematicannon"
+filename = "create_enhanced_schematicannon-1.0.3-6.0+.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5db9949f43c3806b294d2a8eb1cd656b7c856d89"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7587778
+project-id = 1408767

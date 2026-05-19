@@ -1,0 +1,13 @@
+name = "Advancements Tracker and  Overview"
+filename = "advancements_tracker_1.20.1-6.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e90766d6f449c4c62a92a74b1871bee77bcc6dde"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5293185
+project-id = 453074

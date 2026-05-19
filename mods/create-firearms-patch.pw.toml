@@ -1,0 +1,8 @@
+name = "Create Firearms Patch (kinetic pixel)"
+filename = "kinetic_pixel-1.0.3-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/kinetic_pixel-1.0.3-forge-1.20.1.jar"
+hash-format = "sha256"
+hash = "fab2d28565e514dd8c05a7c1b3dd01f5e39dc8e6d4b3f73a3aa84e49ee0c3fc2"

@@ -1,0 +1,13 @@
+name = "In-Game Account Switcher"
+filename = "IAS-Forge-1.20.1-9.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e28ee7039a28bc008e55316bd490ebf42e9d2d17"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5457030
+project-id = 232676

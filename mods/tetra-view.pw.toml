@@ -1,0 +1,13 @@
+name = "Tetra View"
+filename = "Tetra View-6.9.0-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "98fac11beb9b278f882e5e0bade0caaa430bb5ca"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7311455
+project-id = 1329530

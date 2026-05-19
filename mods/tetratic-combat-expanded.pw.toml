@@ -1,0 +1,13 @@
+name = "Tetratic Combat Expanded"
+filename = "tetratic-combat-expanded-1.20-2.8.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "03c61eac3c09aca508806ead0294c5b575d1ab6a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6764394
+project-id = 953635

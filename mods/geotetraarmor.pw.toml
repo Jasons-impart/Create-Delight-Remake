@@ -1,0 +1,13 @@
+name = "GeoTetraArmor"
+filename = "GeoTetraArmor-6.9.0-1.0.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "847cb2eb7e3dc98bd08e0aa3a81a10b473e4c531"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7400683
+project-id = 1368880

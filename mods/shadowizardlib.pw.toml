@@ -1,0 +1,13 @@
+name = "ShadowizardLib"
+filename = "shadowizardlib-1.20.1-1.3.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fc5507e00f1018ee6a17544723436962cdcfae1d"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7119809
+project-id = 887125

@@ -1,0 +1,13 @@
+name = "Ecliptic Seasons"
+filename = "EclipticSeasons-1.20.1-forge-0.12.18.9.1-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5d9eb62af7b033946cfa11559094d2b2b427d8e5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7908374
+project-id = 1118306

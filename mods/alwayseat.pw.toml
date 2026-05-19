@@ -1,0 +1,13 @@
+name = "AlwaysEat"
+filename = "AlwaysEat-5.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "250cafb62c3f73cce919a56899ebd94424036735"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3930804
+project-id = 318749

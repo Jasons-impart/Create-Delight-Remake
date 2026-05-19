@@ -1,0 +1,13 @@
+name = "Industrial Platform"
+filename = "Industrial Platform-1.20.1-1.7.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9669b129c39e5bb3a872ef07b5738f05c4c32a6f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7608169
+project-id = 1350900

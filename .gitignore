@@ -34,8 +34,10 @@
 !/PCL
 !/docs
 !/scripts
+!/packwiz-files
+!/packwiz-files/**
 !/sync-packwiz-assets.bat
-/mods/L_Enders_Cataclysm-*.jar
+/mods/*.jar
 /packwiz-installer.jar
 /resourcepacks/LCVP_CreateStyle_v1.7.zip
 /resourcepacks/Torchmaster Remaster.zip

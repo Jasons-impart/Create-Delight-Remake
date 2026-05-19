@@ -1,0 +1,13 @@
+name = "FTB Ranks (NeoForge)"
+filename = "ftb-ranks-forge-2001.1.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1ef101b4c5991cc239d9b56a95500e3b404228f7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6522073
+project-id = 314905

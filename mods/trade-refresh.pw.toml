@@ -1,0 +1,13 @@
+name = "Trade Refresh"
+filename = "traderefresh-2.5.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8345a604a21d76c745970df9b0c8cd69014bd17b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7862094
+project-id = 821729
