@@ -22061,8 +22061,8 @@ file = "mods/Icterine-forge-1.20.0-1-1.3.0.jar"
 hash = "5f3d366c74d2f5b9a30268f5fa7b41de711069752b4d328899752d037c146ff3"
 
 [[files]]
-file = "mods/Industrial Platform-1.20.1-1.7.0.jar"
-hash = "59f7d4f29a5bbe602c9667d8c8b19f44c7d9e610b940d00e0a28110dc0249219"
+file = "mods/Industrial Platform-1.20.1-1.7.1.jar"
+hash = "65d4b90b77895d5af8fae7e3172ba1b98a564b012fed41a19127f5ccc981d1a7"
 
 [[files]]
 file = "mods/ItemBorders-1.20.1-forge-1.2.2.jar"
@@ -23788,7 +23788,7 @@ metafile = true
 
 [[files]]
 file = "mods/industrial-platform.pw.toml"
-hash = "9f12246652fb4154938fff0bfe292136c535c4c09a82ded4ad235e8e3f882eca"
+hash = "5e5d3694c3cc86e0e897e3e8449b73a8a70ed5b3ef12cce3aae7bd8005cf4ea3"
 metafile = true
 
 [[files]]
@@ -29796,7 +29796,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/complementary-unbound-r56-clrwl.pw.toml"
-hash = "9ca88be610017a88c9f8f8c65aea5639f99c053048c317b2c7007e4e1d4aa1ce"
+hash = "dcb2291660ca0acc4c5a66de03747109fd0f1ff38b5abe0aadb4641af930be61"
 metafile = true
 
 [[files]]

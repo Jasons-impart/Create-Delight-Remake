@@ -252,7 +252,27 @@ try {
 
             $pwTomlPath = Join-Path $catDir "${slug}.pw.toml"
             if (Test-Path $pwTomlPath) {
-                Write-Warn "  ! Skipping ${jname}: ${slug}.pw.toml already exists (name collision)"
+                $existingData = Parse-PwToml -Path $pwTomlPath
+                $existingFname = Get-TomlVal -D $existingData -K 'Filename'
+                $existingBase = Derive-BaseName -Filename $existingFname
+                $newBase = Derive-BaseName -Filename $jname
+
+                if ($existingBase -eq $newBase -and $existingFname -ne $jname) {
+                    $isUrl = Get-TomlVal -D $existingData -K 'IsUrlType'
+                    $modName = Get-TomlVal -D $existingData -K 'Name'
+                    if ($isUrl) {
+                        Update-UrlToml -PwTomlPath $pwTomlPath -OldFilename $existingFname -NewFilename $jname -NewUrl $rawUrl
+                        $updatedCount++
+                    }
+                    else {
+                        ConvertTo-UrlToml -PwTomlPath $pwTomlPath -ModName $modName -NewFilename $jname -NewUrl $rawUrl
+                        $convertedCount++
+                    }
+                    $processedJars += $jname
+                }
+                else {
+                    Write-Warn "  ! Skipping ${jname}: ${slug}.pw.toml already exists (name collision)"
+                }
                 continue
             }
             New-UrlToml -OutPath $pwTomlPath -ModName $displayName -Filename $jname -DownloadUrl $rawUrl
