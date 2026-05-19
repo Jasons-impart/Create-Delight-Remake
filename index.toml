@@ -22742,12 +22742,12 @@ metafile = true
 
 [[files]]
 file = "mods/corn-delight.pw.toml"
-hash = "c819d16483e4d029feee1b799a75cbea606ef759c6dfd67e91b5b2ed45907d29"
+hash = "a8f0e6dc7bf3959ec611378da861ba257b0d8aa3a064d7ee225b2706fb075f02"
 metafile = true
 
 [[files]]
-file = "mods/corn_delight-1.1.9-1.20.1.jar"
-hash = "c6ff0c1e684ef367bac6b3478ce6bfe2c1d6cd5d95ea5e07b2114d89768ed998"
+file = "mods/corn_delight-1.2.10-1.20.1.jar"
+hash = "99e1903862e8ddb7081fb320bf4236d3e8fa6a5047c1418815aa78e7d1e0c7de"
 
 [[files]]
 file = "mods/coroutil-forge-1.20.1-1.3.7.jar"
@@ -25190,7 +25190,7 @@ hash = "e407c13ec37b0f770072a4a7c5d3158cf33f1ebef2900ad269ce11713d18da9a"
 
 [[files]]
 file = "packwiz.json"
-hash = "068b0abff73d2b2f8b2d20c1dbcfef01bd0f053cef11ae0289586165f70f0a9f"
+hash = "e60a40eca30f28dc7d092aec8337c58bd9785ab5facbeb34c66e013dc293aa15"
 
 [[files]]
 file = "resourcepacks/.gitignore"
@@ -25232,6 +25232,16 @@ metafile = true
 [[files]]
 file = "resourcepacks/lightman-variant-pack-create-style.pw.toml"
 hash = "51693d8b8c6e9de339de427dd8232fd66aadc1ba977a484d833388de2584e9ba"
+metafile = true
+
+[[files]]
+file = "resourcepacks/quark-programmer-art.pw.toml"
+hash = "47fc8ae2b8abfbca46ff9a86d2ddd766140d523efd6b4e96e98c90b1811017fa"
+metafile = true
+
+[[files]]
+file = "resourcepacks/squareful-create-delight-remake.pw.toml"
+hash = "45591e4f25f980609a67a2329dd0a41fa7a599897b5a58d6159cde8ce83ebc10"
 metafile = true
 
 [[files]]
@@ -29775,8 +29785,18 @@ hash = "1d07a18414f061dc3c88d998cd0f73d301575e2269dbd7fb35e8ecf968118565"
 metafile = true
 
 [[files]]
+file = "shaderpacks/bliss.pw.toml"
+hash = "4ef46308c66aa8edbf085d0498b29517867bb367145af1eff3371fdf05a2ec92"
+metafile = true
+
+[[files]]
 file = "shaderpacks/bsl-shaders.pw.toml"
 hash = "6d9bbd7b23c083646f95290fdb247e84aa8c2ec96a23e625e73d504587a87547"
+metafile = true
+
+[[files]]
+file = "shaderpacks/complementary-unbound-r56-clrwl.pw.toml"
+hash = "9ca88be610017a88c9f8f8c65aea5639f99c053048c317b2c7007e4e1d4aa1ce"
 metafile = true
 
 [[files]]
@@ -29791,6 +29811,11 @@ hash = "8c51ea4826d9d222c84d129a6d9ad82443e8317a3a628ddfacc98029e295a9f1"
 [[files]]
 file = "shaderpacks/photon-shader.pw.toml"
 hash = "2ab6fb8086b0184bab6f0e756409ae59caaa22f0d1fe1fb25629854ce78f1bec"
+metafile = true
+
+[[files]]
+file = "shaderpacks/photon.pw.toml"
+hash = "fee7724064750ab1b82931c1fa97908abb2e4f0c0a6e4b705a9219279f808128"
 metafile = true
 
 [[files]]

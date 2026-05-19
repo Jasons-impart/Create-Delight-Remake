@@ -195,7 +195,7 @@ try {
             foreach ($orp in $orphaned) {
                 $fn = Get-TomlVal -D $pwData[$orp.FullName] -K 'Filename'
                 $base = Derive-BaseName -Filename $fn
-                if ($base) { $orphanBases[$base] = $orp }
+                if ($base) { $orphanBases[$base] = $orp.FullName }
             }
             $jarBases = @{}
             foreach ($jname in $newJars.Keys) {
@@ -210,10 +210,10 @@ try {
         }
 
         $processedJars = @()
-        foreach ($orpPath in $matched.Keys) {
-            $newJarName = $matched[$orpPath]
+        foreach ($orpFullName in $matched.Keys) {
+            $newJarName = $matched[$orpFullName]
             $newJarPath = $allJars[$newJarName]
-            $oldData = $pwData[$orpPath]
+            $oldData = $pwData[$orpFullName]
             $oldFname = Get-TomlVal -D $oldData -K 'Filename'
             $modName  = Get-TomlVal -D $oldData -K 'Name'
             $isUrl    = Get-TomlVal -D $oldData -K 'IsUrlType'
@@ -225,12 +225,12 @@ try {
 
             if ($isUrl) {
                 Copy-Item $newJarPath $pfDestPath -Force
-                Update-UrlToml -PwTomlPath $orpPath -OldFilename $oldFname -NewFilename $newJarName -NewUrl $rawUrl
+                Update-UrlToml -PwTomlPath $orpFullName -OldFilename $oldFname -NewFilename $newJarName -NewUrl $rawUrl
                 $updatedCount++
             }
             else {
                 Copy-Item $newJarPath $pfDestPath -Force
-                ConvertTo-UrlToml -PwTomlPath $orpPath -ModName $modName -NewFilename $newJarName -NewUrl $rawUrl
+                ConvertTo-UrlToml -PwTomlPath $orpFullName -ModName $modName -NewFilename $newJarName -NewUrl $rawUrl
                 $convertedCount++
             }
             $processedJars += $newJarName
