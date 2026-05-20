@@ -1,0 +1,13 @@
+name = "MoesTweaks"
+filename = "moestweaks-forge-1.20.1-1.1.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b5bc9f5d1511dd9ed977b68d6a52c4f04c2408a3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6885821
+project-id = 1128438

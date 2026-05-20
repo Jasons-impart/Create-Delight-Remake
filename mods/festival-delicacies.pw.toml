@@ -1,0 +1,13 @@
+name = "Festival Delicacies"
+filename = "festival_delicacies-2.0.0-beta+forge.1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8c8ecdb6f3d31ac6cde89bb6dc649baf8bbb0b21"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7618167
+project-id = 1461231

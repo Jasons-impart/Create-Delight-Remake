@@ -1,0 +1,13 @@
+name = "OMNI Cells"
+filename = "ae2omnicells-1.20.1-forge-1.1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a90a13cff671e569d6197125dfa4541a23de16a5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7723637
+project-id = 1359517

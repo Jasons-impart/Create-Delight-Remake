@@ -1,0 +1,8 @@
+name = "Krypton Reno"
+filename = "Krypton FNP-forge-1.20.1-0.2.28.2-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Krypton%20FNP-forge-1.20.1-0.2.28.2-1.20.1.jar"
+hash-format = "sha256"
+hash = "4a3ee9c1fceff4c480024c78b9b3626a50b6839ee977aa0ff9095242cc4fcf0e"

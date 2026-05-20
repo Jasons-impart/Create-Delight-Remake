@@ -1,0 +1,13 @@
+name = "Create: Extra Gauges"
+filename = "extra_gauges-2.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "6f3331cc877bfaf15bb58723ff3129fc3207d296"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7058464
+project-id = 1263228

@@ -1,0 +1,13 @@
+name = "Xaero's Minimap & World Map - Waystones Compatibility [Forge & NeoForge]"
+filename = "xaeros_waystones_compatibility-1.1 - 1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d88355bcf6d731c067ed49146a090758356bd028"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7786445
+project-id = 887484

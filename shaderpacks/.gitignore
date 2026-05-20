@@ -1,7 +1,7 @@
-/*
+*
 !/.gitignore
-!/complementary_glowing_ores.txt
-!/bsl-shaders.pw.toml
 !/bliss-shader.pw.toml
+!/bsl-shaders.pw.toml
 !/complementary-unbound.pw.toml
 !/photon-shader.pw.toml
+!/complementary_glowing_ores.txt

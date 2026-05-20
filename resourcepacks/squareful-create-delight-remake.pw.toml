@@ -1,0 +1,8 @@
+name = "Squareful Create Delight Remake"
+filename = "Squareful-Create_Delight_Remake.zip"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/resourcepacks/Squareful-Create_Delight_Remake.zip"
+hash-format = "sha256"
+hash = "12d994db9a3fc53db97866537d2f749ae6fd6cdd62fa68de4230d6737ac6231a"

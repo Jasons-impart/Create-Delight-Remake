@@ -1,4 +1,4 @@
-name = "L_Ender's Cataclysm"
+name = "L_Ender 's Cataclysm"
 filename = "L_Enders_Cataclysm-3.16.jar"
 side = "both"
 
@@ -9,5 +9,5 @@ mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-project-id = 551586
 file-id = 6906993
+project-id = 551586

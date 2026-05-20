@@ -1,0 +1,8 @@
+name = "Skin Layers 3D"
+filename = "skinlayers3d-forge-1.11.1-mc1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/skinlayers3d-forge-1.11.1-mc1.20.1.jar"
+hash-format = "sha256"
+hash = "acedcb6d850a669f7f8e17919a36e87ff6d95461da32098cec730bc293e79d10"

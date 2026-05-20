@@ -1,0 +1,13 @@
+name = "Tetra Compat"
+filename = "tetracompat-1.0.0-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "52d2edc0b12c6f27f22f364ada866ae2cd36db29"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6635564
+project-id = 1248348

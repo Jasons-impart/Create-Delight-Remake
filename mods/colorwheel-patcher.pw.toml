@@ -1,0 +1,13 @@
+name = "Colorwheel Patcher"
+filename = "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a8ae8241362d7de40fd8909f942c3b1362779bd6"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7397574
+project-id = 1285475

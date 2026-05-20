@@ -1,0 +1,13 @@
+name = "Net Music"
+filename = "netmusic-1.4.0-forge+mc1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a51680a0e5c43d6d02c2a53e9a2bded2667c9aab"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7930279
+project-id = 978569

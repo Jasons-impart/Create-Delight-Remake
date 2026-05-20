@@ -1,0 +1,13 @@
+name = "YoukaisHomeComingCurios"
+filename = "youkaishomecoming_curios-0.03.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3529fad5f425d2437099d9a6558c018ed0ba91f2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7767393
+project-id = 1394947

@@ -1,0 +1,13 @@
+name = "Create Better FPS"
+filename = "createbetterfps-1.20.1-1.1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "519f436f67c316db546cbab54a03fdbfd17fe9f1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6716449
+project-id = 1217518
