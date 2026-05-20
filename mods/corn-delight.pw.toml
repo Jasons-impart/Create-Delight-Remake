@@ -3,6 +3,11 @@ filename = "corn_delight-1.2.10-1.20.1.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/corn_delight-1.2.10-1.20.1.jar"
-hash-format = "sha256"
-hash = ""
+hash-format = "sha1"
+hash = "f310d9710ab68897bd9b2b56158f85b2b4e770aa"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8021866
+project-id = 577805

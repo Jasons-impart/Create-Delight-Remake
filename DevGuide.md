@@ -55,11 +55,25 @@
 # 直接克隆仓库后的资源同步
 - 如果是直接 `git clone` 本仓库，而不是下载发布包，请先在仓库根目录双击 `sync-packwiz-assets.bat`
 - 该脚本会扫描 `mods/`、`resourcepacks/`、`shaderpacks/` 下已经提交的 `*.pw.toml` 文件
-- 首次运行时会自动下载 `packwiz.exe` 和 `packwiz-installer-bootstrap.jar`，缓存到 `.cache/packwiz-sync/`
-- 随后会自动执行 `packwiz refresh`、`packwiz serve` 和 `packwiz-installer`，把缺失的 mod / 资源包 / 光影包同步到本地
+- 首次运行时会自动下载 `packwiz.exe` 和 `packwiz-installer.jar`，缓存到 `.cache/packwiz-sync/`
+- 随后会自动执行 `packwiz refresh`、启动本地静态文件服务，并调用 `packwiz-installer`，把缺失的 mod / 资源包 / 光影包同步到本地
 - 运行前需要准备好 Java 17，并确保能够访问 CurseForge 或对应 CDN
 - 如果不想双击批处理，也可以在终端手动执行：`powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1`
 - 这个同步流程只会处理 `*.pw.toml` 描述的外部文件，不会覆盖仓库里已经被 Git 跟踪的普通文件
+
+# 手动更新/加入mod后的同步
+- 当前仓库不再追踪 `mods/*.jar`；`mods/` 目录只提交 `*.pw.toml`，本地实际 jar 默认忽略。根目录和各子目录采用“默认忽略，按需白名单”的 `.gitignore` 方案。
+- 无论是手动更新一个已有模组，还是直接往 `mods/` 里放入一个新的 jar，都可以先执行根目录下的 `update-packwiz-meta.bat`
+- 也可以手动运行：`powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\update-packwiz-meta.ps1`
+- 对于已经存在 `*.pw.toml` 的 CurseForge 模组，脚本会根据本地新 jar 与旧 `filename` 的差异，尝试执行 `packwiz update <slug> --yes`；更新后还会再次验证对应 CurseForge 文件是否允许第三方下载
+- 对于新加入但还没有 `*.pw.toml` 的模组，脚本会优先使用 `packwiz curseforge detect` 对本地 jar 做指纹识别；只有 detect 失败时才会再用文件名和 jar 内元数据搜索 CurseForge
+- 当脚本拿到候选 CurseForge 文件后，会额外构造一个最小临时 pack，实际跑一次 `packwiz-installer` 探测该 `project-id + file-id` 是否允许第三方下载，并把结果缓存到 `.cache/packwiz-sync/cf-downloadability-cache.json`
+- 如果新模组无法被稳定识别为 CurseForge 文件、识别结果落到了错误版本，或者 CurseForge 标记为必须手动下载，脚本会自动把该 jar 复制到 `packwiz-files/mods/`，并在 `mods/` 下生成或保留一个指向 raw GitHub 地址的本地 `pw.toml`
+- 对于已经存在的本地 `packwiz-files` 模组，如果你手动替换成了新 jar，脚本会先尝试迁移到可第三方下载的 CurseForge；只有不能安全迁移时，才会复用原来的 `pw.toml`，并更新 `filename`、下载地址和 `hash`
+- 如果你手动删除了一个模组的 jar，且没有检测到同 basename 的替代文件，脚本会把对应的 `mods/*.pw.toml` 一并删除；如果它是本地 `packwiz-files` 模组，还会删除对应的 `packwiz-files/mods/...jar`
+- 如果脚本发现缺失的模组数量异常多，会认为你当前本地 `mods/` 目录可能还没同步完整，此时会跳过自动删除并给出警告，避免误删整包元数据
+- 无论走的是 CurseForge 还是 `packwiz-files`，脚本最后都会自动执行 `packwiz refresh`
+- 更新完成后，正常需要检查并提交对应的 `mods/*.pw.toml`、`index.toml`、`pack.toml`，以及本轮产生的 `packwiz-files/` 变更；不要重新提交 `mods/*.jar`
 
 # 修改整合包内的默认配置
 - 直接修改整合包内的.options.txt文件即可，发包时会将这个作为整合包的默认配置

@@ -3,6 +3,11 @@ filename = "Industrial Platform-1.20.1-1.7.1.jar"
 side = "both"
 
 [download]
-url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Industrial Platform-1.20.1-1.7.1.jar"
-hash-format = "sha256"
-hash = ""
+hash-format = "sha1"
+hash = "46c019989dad9c5c6780a732a07a12c4e40b9f4c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7941075
+project-id = 1350900
