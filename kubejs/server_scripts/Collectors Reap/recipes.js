@@ -72,27 +72,6 @@ ServerEvents.recipes(e => {
             "collectorsreap:lime_slice"
         ], "collectorsreap:candied_lime", 1.0, 200
     ).id("createdelight:food/candied_lime")
-    //派
-    farmersdelight.cooking(
-        [
-            "#forge:fruits/lime",
-            "#forge:fruits/lime",
-            "#forge:fruits/lime",
-            "minecraft:sugar",
-            "farmersdelight:pie_crust",
-            "#forge:eggs"
-        ], "collectorsreap:lime_pie", 1.0, 200
-    ).id("createdelight:food/lime_pie")
-    farmersdelight.cooking(
-        [
-            "collectorsreap:portobello",
-            "#forge:cheese",
-            "#forge:vegetables/onion",
-            "#forge:eggs",
-            "farmersdelight:pie_crust",
-            "#forge:eggs"
-        ], "collectorsreap:portobello_quiche", 1.0, 200
-    ).id("createdelight:food/portobello_quiche")
     //软糖
     let gummies = [
         ['chocolate', "create:bar_of_chocolate"],

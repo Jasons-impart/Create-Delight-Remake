@@ -62,5 +62,5 @@ function baking(event, input, output, count, category, time) {
  */
 function toasting(event, input, output, category, time) {
     event.custom({ type: "refurbished_furniture:toaster_heating", category: category, ingredient: { item: input }, result: output, time: time })
-        .id(`createdelight:toasting/${output.split(":")[1]}`)
+        .id(`createdelight:toasting/${input.split(":")[1]}_2_${output.split(":")[1]}`)
 }

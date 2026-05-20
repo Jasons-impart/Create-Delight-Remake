@@ -41,13 +41,13 @@ StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
    'bakeries:sofa_light_gray',
    'bakeries:sofa_red',
    'bakeries:red_velvet_cake', 
-   'bakeries:red_velvet_cake_base', 
-   'bakeries:mould_red_velvet_cake_paste',
+  //  'bakeries:red_velvet_cake_base', 
    'bakeries:bearnaise', 
    'bakeries:raw_custom_pizza', 
    'bakeries:pizza_flatbread',
    'bakeries:raw_pizza',
-   'bakeries:matcha_parfait'
+   'bakeries:matcha_parfait',
+   'bakeries:bake_sliced_toast'
   ])
   e.add([
    'bakeries:mould_toast',
@@ -65,6 +65,13 @@ StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab",
     'bakeries:foamed_protein_bucket', 
     'bakeries:mould_cake_paste',
     'bakeries:mould_carrot_cake_paste',
-    'bakeries:crispy_dough'
+    'bakeries:crispy_dough',
+    "bakeries:mould_red_velvet_cake_paste"
+  ])
+})
+StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
+  e.remove([
+    'bakeries:garlic_flavored_baguette',
+    'bakeries:orange_american'
   ])
 })

@@ -10,6 +10,7 @@ ServerEvents.recipes(e => {
     ])
     baking(e, "createdelight:oil_dough", "some_assembly_required:burger_bun", 1, "food", 100)
     toasting(e, "some_assembly_required:bread_slice", "some_assembly_required:toasted_bread_slice", "food", 300)
+    toasting(e, "bakeries:sliced_toast", "some_assembly_required:toasted_bread_slice", "food", 100)
     cutting_2(e, "minecraft:bread", [['some_assembly_required:bread_slice', 2]])
     e.recipes.create.cutting(
         "2x some_assembly_required:bread_slice",

@@ -829,6 +829,7 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:fig_pudding_slice",
         "fruitsdelight:hawberry_roll",
         "fruitsdelight:hawberry_sheet",
+        'bakeries:egg_tart',
         "fruitsdelight:lemon_tart",
         "fruitsdelight:fig_tart",
         "mynethersdelight:sizzling_pudding",
