@@ -516,7 +516,11 @@ function Get-CurseForgeDownloadability {
         Remove-Item $workspace.ServeLog, $workspace.ServeErrLog -Force -ErrorAction SilentlyContinue
         $port = Get-FreePort
         $packUrl = "http://127.0.0.1:$port/pack.toml"
-        $pythonArgs = @($StaticServerScript, $port.ToString(), $workspace.PackRoot)
+        $pythonArgs = @(
+            ('"{0}"' -f $StaticServerScript),
+            $port.ToString(),
+            ('"{0}"' -f $workspace.PackRoot)
+        )
         $serveProcess = Start-Process -FilePath $tools.PythonCommand -ArgumentList $pythonArgs -WorkingDirectory $workspace.PackRoot -WindowStyle Hidden -RedirectStandardOutput $workspace.ServeLog -RedirectStandardError $workspace.ServeErrLog -PassThru
 
         $serverReady = $false
