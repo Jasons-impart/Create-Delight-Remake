@@ -257,7 +257,7 @@ jobs:
           done
           # 5. 下载并运行 packwiz-installer-bootstrap（bootstrap会自动下载installer）
           curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
-          java -jar packwiz-installer-bootstrap.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
+          java -jar packwiz-installer-bootstrap.jar -g "http://127.0.0.1:$PORT/pack.toml"
           # 6. 清理
           kill $SERVER_PID 2>/dev/null || true
           rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
@@ -579,7 +579,7 @@ jobs:
             sleep 0.2
           done
           curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
-          java -jar packwiz-installer-bootstrap.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
+          java -jar packwiz-installer-bootstrap.jar -g "http://127.0.0.1:$PORT/pack.toml"
           kill $SERVER_PID 2>/dev/null || true
           rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
           # detect 生成 manifest.json（给客户端补丁用，CF mod 以引用形式记录）
