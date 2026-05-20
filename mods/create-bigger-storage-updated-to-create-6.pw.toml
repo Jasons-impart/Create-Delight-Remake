@@ -1,0 +1,13 @@
+name = "Create: Bigger Storage Updated to Create 6"
+filename = "createbiggerstoragetocreate6-1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a522778fea454b93c20888876118baf6156c7fb3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7200997
+project-id = 1277726

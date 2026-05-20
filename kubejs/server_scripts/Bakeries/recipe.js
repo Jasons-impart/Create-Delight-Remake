@@ -732,7 +732,8 @@ ServerEvents.recipes(e => {
     )
         .mode(2)
         .id("createdelight:curving/mould_basque_cake")
-    baking(e, "bakeries:sliced_toast", "some_assembly_required:toasted_bread_slice", 1, "food", 100)
+    vintageimprovements.curving("3x bakeries:egg_tart_shell", "createdelight:puff_pastry").mode(1).id("createdelight:curving/egg_tart_shell")
+    baking(e, "bakeries:raw_egg_tart", "bakeries:egg_tart", 1, "food", 100)
 
 })
 ServerEvents.tags("item", e => {

@@ -1,7 +1,6 @@
 ServerEvents.recipes(e => {
   remove_recipes_id(e, [
-    "luncheonmeatsdelight:luncheon_meat_can_raw",
-    "luncheonmeatsdelight:luncheon_meat_rice_ball"
+    "luncheonmeatsdelight:luncheon_meat_can_raw"
   ])
   const { kubejs, create } = e.recipes
   kubejs.shapeless(
@@ -17,16 +16,7 @@ ServerEvents.recipes(e => {
     '2x bakeries:sliced_toast',
     'luncheonmeatsdelight:small_toast'
   )
-  //饭团
-  e.recipes.kubejs.shapeless(
-    '2x luncheonmeatsdelight:luncheon_meat_rice_ball',
-    [
-      "minecraft:dried_kelp",
-      "createdelight:empty_riceball",
-      "createdelight:empty_riceball",
-      "luncheonmeatsdelight:luncheon_meat"
-    ]
-  ).id("createdelight:luncheon_meat_rice_ball")
+
 })
 
 BlockEvents.rightClicked("luncheonmeatsdelight:small_toast", e => {

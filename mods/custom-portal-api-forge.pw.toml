@@ -1,0 +1,13 @@
+name = "Custom Portal API [Forge]"
+filename = "customportalapi-0.0.1-forge-1.20.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "33c57c442da3b64d09fd7df827815f023dbfd5fe"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4704980
+project-id = 621463

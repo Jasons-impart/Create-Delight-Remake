@@ -1,0 +1,8 @@
+name = "VVAddon"
+filename = "vvaddon-1.20.1-alpha3.0.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/vvaddon-1.20.1-alpha3.0.1.jar"
+hash-format = "sha256"
+hash = "4aa599b93438aee9c2dcb5dc908eca153c5f3c931088e822599507472bf2d66f"

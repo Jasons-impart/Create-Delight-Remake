@@ -1,9 +1,51 @@
-ModList0.4a.md
-README.md
-TODOlist.md
-KubeJSStyleGuide.md
-DevGuide.md
-start.bat
-start.sh
-variables.txt
-server-icon.png
+# ═══════════════════════════════════════════════════
+# 反选模式 (whitelist): 先忽略全部，再逐个放开
+# ═══════════════════════════════════════════════════
+
+# 先忽略一切
+*
+
+# ═══ 整合包核心文件 ═══
+!/pack.toml
+!/index.toml
+!/.packwizignore
+!/pack.mcmeta
+!/packwiz.json
+!/icon.png
+!/LICENSE
+!/README.en.md
+!/README.zh-CN.md
+
+# ═══ Mod 元数据 ═══
+!/mods
+!/mods/*.pw.toml
+
+# ═══ 配置文件 ═══
+!/config
+!/config/**
+!/defaultconfigs
+!/defaultconfigs/**
+
+# ═══ KubeJS 脚本 ═══
+!/kubejs
+!/kubejs/**
+
+# ═══ 资源包 / 着色器 ═══
+!/resourcepacks
+!/resourcepacks/**
+!/shaderpacks
+!/shaderpacks/**
+
+# ═══ 模组附属数据 ═══
+!/schematics
+!/schematics/**
+!/tacz
+!/tacz/**
+
+# ═══ 开发/文档 ═══
+!.github
+!.github/**
+!.vscode
+!.vscode/**
+!/docs
+!/docs/**

@@ -17,13 +17,34 @@ const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.t
 let Order = {}
 global.Order = Order
 
+Order.customerUnlockLevels = {
+    COMMON: 1,
+    UNCOMMON: 2,
+    RARE: 4,
+    EPIC: 6
+}
+
+Order.getCustomerUnlockLevel = function (customer) {
+    if (customer == null || customer.rarity == null)
+        return 1
+    let unlockLevel = this.customerUnlockLevels[customer.rarity]
+    if (unlockLevel == null)
+        return 1
+    return unlockLevel
+}
+
 /**
  * 根据玩家来生成订单
  * @param {Internal.Player} player 
  */
 Order.create = function (player) {
-    let order = { entries: [] };
     let level = this.reputation.getLevel(player);
+    let order = {
+        entries: [],
+        generatedReputationLevel: level,
+        ownerName: `${player.username}`,
+        ownerUUID: `${player.uuid}`
+    };
     let selected;
 
     // --- 根据 chance 加权随机选择客户类型 ---
@@ -33,7 +54,9 @@ Order.create = function (player) {
     for (let key in Order.customerProperties) {
         if (!Object.prototype.hasOwnProperty.call(Order.customerProperties, key)) continue;
         let element = Order.customerProperties[key];
-        let weight = Math.sqrt(level) / Math.sqrt(5) * 0.8 * element.chance;
+        let unlockLevel = Order.getCustomerUnlockLevel(element);
+        if (level < unlockLevel) continue;
+        let weight = element.chance * (1 + Math.max(0, level - unlockLevel) * 0.15);
         if (weight > 0) {
             let entry = { key: key, element: element, weight: weight };
             weightedList.push(entry);
@@ -100,7 +123,8 @@ Order.create = function (player) {
         });
 
         count++;
-        if (Utils.random.nextFloat() >= selected.base_continue_rate * bonus) canceled = true;
+        let continueRate = Math.min(0.95, selected.base_continue_rate * bonus);
+        if (Utils.random.nextFloat() >= continueRate) canceled = true;
     }
 
     return order;
@@ -305,34 +329,128 @@ Order.addOrderToAuction = function() {
 
 Order.reputation = {}
 
+Order.reputation.key = "order_reputation"
+
 /**
  * 
  * @param {Internal.Player} player 
  */
 Order.reputation.getRawValue = function(player) {
-    if (player.persistentData.getInt("order_reputation") == 0)
-        player.persistentData.putInt("order_reputation", 0)
-    return player.persistentData.getInt("order_reputation")
+    let value = player.persistentData.getInt(this.key)
+    if (value < 0) {
+        player.persistentData.putInt(this.key, 0)
+        return 0
+    }
+    return value
+}
+
+Order.reputation.setRawValue = function(player, value) {
+    let safeValue = Math.max(0, Math.floor(value))
+    player.persistentData.putInt(this.key, safeValue)
+    return safeValue
+}
+
+Order.reputation.addValue = function(player, value) {
+    if (player == null)
+        return 0
+    return this.setRawValue(player, this.getRawValue(player) + value)
 }
 
 Order.reputation.threshold = [0, 10, 20, 40, 60, 100]
 
+Order.reputation.getLevelByValue = function(value) {
+    for (let index = this.threshold.length - 1; index >= 0; index--) {
+        if (value >= this.threshold[index])
+            return index + 1
+    }
+    return 1
+}
 
+Order.reputation.getCompletionBonus = function(order, qualityScore) {
+    let completionScore = Math.max(0, qualityScore - 1)
+    if (completionScore <= 0)
+        return 0
+    let entryFactor = 0.75 + order.entries.length * 0.5
+    return Math.max(0, Math.min(6, Math.round(completionScore * entryFactor)))
+}
+
+Order.reputation.getOrderGainDetails = function(order, qualityScore) {
+    let customer = Order.customerProperties[order.type]
+    let rarityBonus = 0
+    switch (customer != null ? customer.rarity : "COMMON") {
+        case "UNCOMMON":
+            rarityBonus = 1
+            break;
+        case "RARE":
+            rarityBonus = 2
+            break;
+        case "EPIC":
+            rarityBonus = 3
+            break;
+        default:
+            rarityBonus = 0
+            break;
+    }
+    let entryBonus = Math.max(1, Math.round(order.entries.length * 0.5))
+    let completionBonus = this.getCompletionBonus(order, qualityScore)
+    let gain = Math.max(1, entryBonus + rarityBonus + completionBonus)
+    return {
+        gain: gain,
+        rarityBonus: rarityBonus,
+        entryBonus: entryBonus,
+        completionBonus: completionBonus
+    }
+}
+
+Order.reputation.getOrderGain = function(order, qualityScore) {
+    return this.getOrderGainDetails(order, qualityScore).gain
+}
+
+Order.reputation.getPlayer = function(level, order) {
+    if (level == null || order == null)
+        return null
+    let players = level.getPlayers()
+    let found = null
+    players.forEach(player => {
+        if (found != null)
+            return
+        if (order.ownerUUID != null && `${player.uuid}` == `${order.ownerUUID}`) {
+            found = player
+            return
+        }
+        if (order.ownerName != null && `${player.username}` == `${order.ownerName}`) {
+            found = player
+        }
+    })
+    return found
+}
+
+Order.reputation.awardForOrder = function(level, order, qualityScore) {
+    let player = this.getPlayer(level, order)
+    if (player == null)
+        return null
+    let details = this.getOrderGainDetails(order, qualityScore)
+    let beforeLevel = this.getLevel(player)
+    let value = this.addValue(player, details.gain)
+    let afterLevel = this.getLevel(player)
+    return {
+        player: player,
+        gain: details.gain,
+        completionBonus: details.completionBonus,
+        rarityBonus: details.rarityBonus,
+        entryBonus: details.entryBonus,
+        value: value,
+        level: afterLevel,
+        leveledUp: afterLevel > beforeLevel
+    }
+}
 
 /**
  * 
  * @param {Internal.Player} player 
  */
 Order.reputation.getLevel = function(player) {
-    let value = this.getRawValue(player)
-    let level = 0
-    for (let index = 0; index < this.threshold.length; index++) {
-        let element = this.threshold[index]
-        level ++
-        if (value >= element)
-            break
-    }
-    return level
+    return this.getLevelByValue(this.getRawValue(player))
 }
 
 // ItemEvents.rightClicked("minecraft:stick", e => {

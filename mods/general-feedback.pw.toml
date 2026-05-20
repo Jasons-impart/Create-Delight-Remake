@@ -1,0 +1,13 @@
+name = "General Feedback"
+filename = "GeneralFeedback-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d420abc3bb530a8d055cc259619ed51714db3758"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7197872
+project-id = 1371560

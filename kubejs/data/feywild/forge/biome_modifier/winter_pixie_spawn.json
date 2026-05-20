@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#kubejs:feywild/winter_pixie_spawns",
+  "spawners": {
+    "type": "feywild:winter_pixie",
+    "maxCount": 1,
+    "minCount": 1,
+    "weight": 1
+  }
+}

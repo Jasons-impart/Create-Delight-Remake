@@ -1,0 +1,13 @@
+name = "JEI Tetra"
+filename = "JEI Tetra-6.9.0-1.2.0-fix.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "494997fd415c96f76c1e02cb8359b76d527fbf02"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7406647
+project-id = 1324872

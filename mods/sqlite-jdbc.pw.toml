@@ -1,0 +1,13 @@
+name = "SQLite JDBC (Fabric/Forge)"
+filename = "sqlite-jdbc-3.36.0.3+20211227-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5be2c4338202b73722a4bc5bc96a22c6d35c4b57"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 3582173
+project-id = 560832

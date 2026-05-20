@@ -1,0 +1,13 @@
+name = "Create:Fluid Stuffs"
+filename = "createfluidstuffs-1.2.1-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "678a36614cc92cb13031964b2770a1c32bd015f7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8062995
+project-id = 1168401

@@ -1,0 +1,13 @@
+name = "Caelus API"
+filename = "caelus-forge-3.2.0+1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fa834f140bf7dce7b67c29b46cb531f4309d3209"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5281700
+project-id = 308989

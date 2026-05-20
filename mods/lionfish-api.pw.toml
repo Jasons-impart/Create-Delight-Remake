@@ -1,0 +1,13 @@
+name = "Lionfish API"
+filename = "lionfishapi-2.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "73d64e7acbea5934617172a5210c1d2a53443812"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7923140
+project-id = 1001614

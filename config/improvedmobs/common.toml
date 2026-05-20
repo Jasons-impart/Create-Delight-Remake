@@ -217,10 +217,10 @@
 	"Equipment Chance" = 0.01
 	#Base chance for each additional armor pieces
 	#Range: 0.0 ~ 1.0
-	"Additional Equipment Chance" = 0.25
+	"Additional Equipment Chance" = 0.125
 	#Adds additional x*difficulty% to base equip chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Equipment Addition" = 0.25
+	"Equipment Addition" = 0.125
 	#Chance for an equipment to have a random armor trim
 	#Range: 0.0 ~ 1.0
 	"Armor Trim Chance" = 0.05
@@ -229,15 +229,15 @@
 	"Weapon Chance" = 0.01
 	#Adds additional x*difficulty% to base weapon chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Weapon Chance Add" = 0.3
+	"Weapon Chance Add" = 0.15
 	#Base chance for each armor pieces to get enchanted
 	#Range: 0.0 ~ 1.0
 	"Enchanting Chance" = 0.01
 	#Adds additional x*difficulty% to base enchanting chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Enchanting Addition" = 0.3
+	"Enchanting Addition" = 0.15
 	#Specify min and max enchanting levels according to difficulty. difficulty-minLevel-maxLevel
-	"Enchanting Calc" = ["0.0-0-5", "100.0-5-15", "150-15-25", "200.0-25-35", "250.0-30-40"]
+	"Enchanting Calc" = ["0.0-0-5", "100.0-5-15", "200-15-25", "300.0-25-35", "450.0-30-40", "600.0-40-60"]
 	#Blacklist enchantments from being applied to equipments
 	"Enchanting Blacklist" = []
 	#Turn the enchant blacklist to a whitelist
@@ -247,7 +247,7 @@
 	"Item Equip Chance" = 0.01
 	#Adds additional x*difficulty% to base item chance
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Item Chance add" = 0.1
+	"Item Chance add" = 0.05
 	#Should mobs drop the armor equipped through this mod? Will not change drops if the mob obtained the armor through other means (e.g. vanilla)
 	"Should drop equipment" = false
 
@@ -255,19 +255,19 @@
 [attributes]
 	#Health will be multiplied by 1 + difficulty*0.016*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Health Increase Multiplier" = 1.0
+	"Health Increase Multiplier" = 1.25
 	#Health will be multiplied by at maximum this. Set to 0 means no limit
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Max Health Increase" = 5.0
+	"Max Health Increase" = 10.0
 	#Round health to the nearest x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Round HP" = 0.5
 	#Damage will be multiplied by 1 + difficulty*0.008*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Damage Increase Multiplier" = 1.0
+	"Damage Increase Multiplier" = 1
 	#Damage will be multiplied by at maximum this. Set to 0 means no limit
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Max Damage Increase" = 2.0
+	"Max Damage Increase" = 4.0
 	#Speed will be increased by difficulty*0.0008*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
 	"Speed Increase" = 1.0
@@ -276,26 +276,26 @@
 	"Max Speed" = 0.1
 	#Knockback will be increased by difficulty*0.002*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Knockback Increase" = 1.0
+	"Knockback Increase" = 1
 	#Maximum increase in knockback
 	#Range: 0.0 ~ 1.0
 	"Max Knockback" = 0.5
 	#Magic resistance will be increased by difficulty*0.0016*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Magic Resistance Increase" = 1.0
+	"Magic Resistance Increase" = 1
 	#Maximum increase in magic resistance. Magic reduction is percentage
 	#Range: 0.0 ~ 1.0
-	"Max Magic Resistance" = 0.4000000059604645
+	"Max Magic Resistance" = 0.8
 	#Projectile Damage will be multiplied by 1 + difficulty*0.008*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Projectile Damage Increase" = 1.0
+	"Projectile Damage Increase" = 0.5
 	#Projectile damage will be multiplied by maximum of this
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Max Projectile Damage" = 2.0
+	"Max Projectile Damage" = 4.0
 	#Explosion Damage will be multiplied by 1 + difficulty*0.003*x. Set to 0 to disable
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Explosion Damage Increase" = 1.0
+	"Explosion Damage Increase" = 0.5
 	#Explosion damage will be multiplied by maximum of this
 	#Range: 0.0 ~ 1.7976931348623157E308
-	"Max Explosion Damage" = 1.75
+	"Max Explosion Damage" = 3
 

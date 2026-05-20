@@ -1,0 +1,13 @@
+name = "KubeJS Iron's Spells"
+filename = "irons_spells_js-1.20.1-6.5-3.14-r2-release.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d4ae87daa0003861d2fc949962b3e9a1c488e7b3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7763475
+project-id = 980834

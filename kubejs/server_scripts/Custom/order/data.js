@@ -11,7 +11,9 @@ ServerEvents.tags("minecraft:item", e => {
         'collectorsreap:portobello_burger',
         'miners_delight:vegan_hamburger',
         'collectorsreap:land_and_sea_burger',
-        'casualness_delight:donkey_burger'])
+        'casualness_delight:donkey_burger',
+        'cavedelight:slam_burger',
+        'dungeonsdelight:monster_burger'])
 
     e.add("createdelight:order/fast_food",
         "#createdelight:order/burger",
@@ -41,6 +43,7 @@ ServerEvents.tags("minecraft:item", e => {
         'brewinandchewin:ham_and_cheese_sandwich',
         'cosmopolitan:woodland_sub',
         'cosmopolitan:travelers_panini',
+        'bakeries:salmon_sandwich',
         "create_bic_bit:kroket_sandwich",
         "create_bic_bit:ketchup_topped_kroket_sandwich",
         "create_bic_bit:mayonnaise_topped_kroket_sandwich",
@@ -69,6 +72,14 @@ ServerEvents.tags("minecraft:item", e => {
         "cosmopolitan:birch_cookie",
         "cosmopolitan:paw_cookie",
         "cosmopolitan:herbal_cookie",
+        "abnormals_delight:cherry_cookie",
+        "abnormals_delight:maple_cookie",
+        "abnormals_delight:mulberry_cookie",
+        "create_bic_bit:speculaas",
+        "create_bic_bit:stroopwafel",
+        "create_bic_bit:chocolate_glazed_stroopwafel",
+        "create_bic_bit:wrapped_stroopwafel",
+        "create_bic_bit:wrapped_chocolate_glazed_stroopwafel",
 
     )
     e.add("createdelight:order/ice_cream",
@@ -103,9 +114,54 @@ ServerEvents.tags("minecraft:item", e => {
         "cosmopolitan:beetroot_ice_cream_cone",
         "cosmopolitan:enchanted_fruit_ice_cream_cone",
         "cosmopolitan:glow_berry_ice_cream_cone",
+        "cosmopolitan:aloe_ice_cream_cone",
+        "cosmopolitan:aurora_ice_cream_cone",
+        "cosmopolitan:azure_berry_ice_cream_cone",
+        "cosmopolitan:black_tea_ice_cream_cone",
+        "cosmopolitan:cherry_ice_cream_cone",
+        "cosmopolitan:chorus_fruit_ice_cream_cone",
+        "cosmopolitan:coffee_ice_cream_cone",
+        "cosmopolitan:flavored_ice_cream_cone",
+        "cosmopolitan:glacier_ice_cream_cone",
+        "cosmopolitan:glowy_ice_cream_cone",
+        "cosmopolitan:green_tea_ice_cream_cone",
+        "cosmopolitan:ice_cream_float",
+        "cosmopolitan:jelly_ring_ice_cream_cone",
+        "cosmopolitan:kabloom_ice_cream",
+        "cosmopolitan:kabloom_ice_cream_cone",
+        "cosmopolitan:matcha_ice_cream_cone",
+        "cosmopolitan:midnight_ice_cream_cone",
+        "cosmopolitan:passion_fruit_ice_cream_cone",
+        "cosmopolitan:peculiar_ice_cream",
+        "cosmopolitan:phytochemical_ice_cream_cone",
+        "cosmopolitan:salmonberry_ice_cream_cone",
+        "cosmopolitan:source_berry_ice_cream",
+        "cosmopolitan:source_berry_ice_cream_cone",
+        "cosmopolitan:starcloud_ice_cream_cone",
+        "cosmopolitan:torchberry_ice_cream_cone",
+        "cosmopolitan:warzipan_ice_cream_cone",
+        "cosmopolitan:yellow_tea_ice_cream_cone",
+        "cosmopolitan:yucca_ice_cream_cone",
         "fruitsdelight:hamimelon_shaved_ice",
         "neapolitan:strawberry_banana_smoothie",
-        "collectorsreap:pomegranate_smoothie"
+        "collectorsreap:pomegranate_smoothie",
+        "collectorsreap:lucuma_ice_cream",
+        "collectorsreap:pink_dragon_fruit_ice_cream",
+        "collectorsreap:sunny_ice_cream",
+        "collectorsreap:tropical_shaved_ice",
+        "dungeonsdelight:aurora_ice_cream",
+        "cosmopolitan:blisterberry_sorbet",
+        "cosmopolitan:droopfruit_sorbet",
+        "cosmopolitan:wandering_gelato",
+        "cosmopolitan:classic_ice_cream_sandwich",
+        "cosmopolitan:neapolitan_ice_cream_sandwich",
+        "cosmopolitan:peculiar_ice_cream_sandwich",
+        "cosmopolitan:rainbow_ice_cream_sandwich",
+        "cosmopolitan:refreshing_ice_cream_sandwich",
+        "cosmopolitan:respiteful_ice_cream_sandwich",
+        "cosmopolitan:seasonal_ice_cream_sandwich",
+        "cosmopolitan:tricolored_ice_cream_sandwich",
+        "cosmopolitan:twilight_ice_cream_sandwich"
 
 
     )
@@ -157,8 +213,13 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:genmai_tea",
         "youkaishomecoming:green_water",
         "youkaishomecoming:lemon_black_tea",
+        "youkaishomecoming:black_tea",
+        "youkaishomecoming:green_tea",
+        "youkaishomecoming:oolong_tea",
+        "youkaishomecoming:scarlet_tea",
         "collectorsreap:pomegranate_black_tea",
         "collectorsreap:lime_green_tea",
+        "bakeries:matcha_latte",
 
 
     )
@@ -203,6 +264,25 @@ ServerEvents.tags("minecraft:item", e => {
         "nethervinery:nether_fizz",
         "nethervinery:improved_nether_fizz",
         "nethervinery:improved_lava_fizz",
+        "farmersdelight:apple_cider",
+        "farmersrespite:long_apple_cider",
+        "ends_delight:chorus_fruit_wine",
+        "youkaishomecoming:burgundy",
+        "youkaishomecoming:champagne",
+        "youkaishomecoming:red_wine",
+        "youkaishomecoming:white_wine",
+        "brewinandchewin:beer",
+        "brewinandchewin:bloody_mary",
+        "brewinandchewin:dread_nog",
+        "brewinandchewin:egg_grog",
+        "brewinandchewin:mead",
+        "brewinandchewin:pale_jane",
+        "brewinandchewin:red_rum",
+        "brewinandchewin:saccharine_rum",
+        "brewinandchewin:salty_folly",
+        "brewinandchewin:steel_toe_stout",
+        "brewinandchewin:strongroot_ale",
+        "brewinandchewin:vodka",
 
     )
     e.add("createdelight:order/wrap",
@@ -223,6 +303,7 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:beef_burrito",
         "culturaldelights:pork_wrap",
         "culturaldelights:fish_taco",
+        "corn_delight:taco",
         "collectorsreap:portobello_wrap",
         "collectorsreap:sea_wrap",
 
@@ -240,7 +321,8 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:dassai",
         "youkaishomecoming:tengu_tango",
         "youkaishomecoming:full_moons_eve",
-        "youkaishomecoming:wind_priestesses"
+        "youkaishomecoming:wind_priestesses",
+        "brewinandchewin:rice_wine"
 
     )
     e.add("createdelight:order/fried_food",
@@ -300,6 +382,22 @@ ServerEvents.tags("minecraft:item", e => {
         "create_bic_bit:coated_oliebollen",
         "create_bic_bit:kruidnoten",
         "culturaldelights:empanada",
+        "create_deepfried:fish_and_chips",
+        "create_deepfried:chicken_nuggets",
+        "culturaldelights:tortilla_chips",
+        "frycooks_delight:fried_onion_ring",
+        "corn_delight:corn_dog",
+        "trailandtales_delight:fried_sniffer_egg",
+        "ends_delight:fried_dragon_egg",
+        "dungeonsdelight:fried_bug_chops",
+        "cavedelight:fried_slam_rice",
+        "casualness_delight:bowl_of_fried_dumpling",
+        "farmersdelight:fried_egg",
+        "create_deepfried:arancini",
+        "create_deepfried:springroll",
+        "collectorsreap:bullet_pepper_popper",
+        "oceanic_delight:egg_roll",
+        "oceanic_delight:fish_egg_roll",
 
 
     )
@@ -338,26 +436,49 @@ ServerEvents.tags("minecraft:item", e => {
         "cosmopolitan:chocolate_banana_cream_bun",
         "culturaldelights:avocado_toast",
         "alexsdelight:gongylidia_bruschetta",
+        "collectorsreap:lucuma_bread",
+        "neapolitan:banana_bread",
+        "luncheonmeatsdelight:sliced_toast",
+        "fruitsdelight:jelly_bread",
+        "bakeries:cheese_cream_bread",
+        "bakeries:bake_sliced_toast",
+        "bakeries:flat_croissant",
+        "bakeries:garlic_flavored_baguette",
+        "bakeries:meat_floss_bread_roll",
+        "bakeries:rice_bread",
+        "mynethersdelight:slices_of_bread",
+        "mynethersdelight:toasts",
 
 
     )
     e.add("createdelight:order/pie",
-        'collectorsreap:portobello_quiche_slice',
-        'farmersdelight:chocolate_pie_slice',
-        'casualness_delight:stargazy_pie_slice',
-        'casualness_delight:quiche_lorraine_slice',
-        'farmersdelight:apple_pie_slice',
-        'farmersdelight:sweet_berry_cheesecake_slice',
-        'farmersrespite:rose_hip_pie_slice',
-        'oceanic_delight:sponge_cake_slice',
-        'cavedelight:slice_of_pinenut_pie',
-        'collectorsreap:lime_pie_slice',
-        'cosmopolitan:water_pie_slice',
-        'dungeonsdelight:sculk_tart_slice',
-        'dungeonsdelight:spider_pie_slice',
-        'youkaishomecoming:tarte_lune_slice',
-        'trailandtales_delight:cherry_cheese_pie_slice',
-        'cavedelight:slice_of_tectonic_cheesecake',
+        "casualness_delight:quiche_lorraine",
+        "casualness_delight:quiche_lorraine_slice",
+        "ends_delight:chorus_fruit_pie_slice",
+        "youkaishomecoming:tarte_lune_slice",
+        "fruitsdelight:pineapple_pie",
+        "fruitsdelight:durian_pie",
+        "trailandtales_delight:cherry_cheese_pie_slice",
+        "farmersrespite:rose_hip_pie_slice",
+        "silentsdelight:sculk_catalyst_pie_slice",
+        "cosmopolitan:water_pie_slice",
+        "farmersdelight:sweet_berry_cheesecake_slice",
+        "farmersdelight:apple_pie_slice",
+        "farmersdelight:chocolate_pie_slice",
+        "collectorsreap:portobello_quiche_slice",
+        "collectorsreap:lime_pie_slice",
+        "farmersdelight:shepherds_pie",
+        "cavedelight:slice_of_pinenut_pie",
+        "bakeries:egg_tart",
+        "brewinandchewin:quiche_slice",
+        "brewinandchewin:pizza_slice",
+        "cosmopolitan:blisterberry_tart",
+        "cosmopolitan:mendosteen_tart",
+        "cosmopolitan:water_pie",
+        "create_central_kitchen:mulberry_pie_slice",
+        "create_central_kitchen:pumpkin_pie_slice",
+        "vintagedelight:meat_pizza_slice"
+
     )
     e.add("createdelight:order/cake",
         "fruitsdelight:mangosteen_cake",
@@ -382,6 +503,24 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:pomegranate_cake_slice",
         "create_central_kitchen:honey_cake_slice",
         "seasonals:red_velvet_cupcake",
+        "cavedelight:slice_of_spelunkie_cake",
+        "cavedelight:slice_of_tectonic_cheesecake",
+        "cosmopolitan:raindroop_cake",
+        "festival_delicacies:five_nuts_mooncake",
+        "festival_delicacies:hawthorn_with_jujube_paste_mooncake",
+        "festival_delicacies:lotus_seed_paste_with_salted_yolk_mooncake",
+        "festival_delicacies:preserved_meat_mooncake",
+        "create_central_kitchen:aloe_cake_slice",
+        "create_central_kitchen:chocolate_cake_slice",
+        "create_central_kitchen:passion_fruit_cake_slice",
+        "create_central_kitchen:pumpkin_cake_slice",
+        "create_central_kitchen:sweet_berry_cake_slice",
+        "create_central_kitchen:yucca_cake_slice",
+        "abnormals_delight:yucca_gateau_slice",
+        "collectorsreap:lucuma_cake_slice",
+        "collectorsreap:pink_dragon_fruit_cake_slice",
+        "bakeries:cream_cake_cube",
+        "bakeries:yuntui_mooncake",
 
 
 
@@ -424,7 +563,25 @@ ServerEvents.tags("minecraft:item", e => {
         "neapolitan:dried_banana",
         "neapolitan:banana",
         "neapolitan:white_strawberries",
-        "collectorsreap:lime_slice"
+        "collectorsreap:lime_slice",
+        "youkaishomecoming:black_grape",
+        "youkaishomecoming:red_grape",
+        "youkaishomecoming:white_grape",
+        "youkaishomecoming:raisin",
+        "collectorsreap:lucuma",
+        "collectorsreap:pink_dragon_fruit",
+        "festival_delicacies:apricot",
+        "festival_delicacies:hawthorn",
+        "festival_delicacies:jujube",
+        "festival_delicacies:peach",
+        "festival_delicacies:persimmon",
+        "cosmopolitan:arbutus_berries",
+        "cosmopolitan:golden_arbutus_berries",
+        "cosmopolitan:wildberry",
+        "trailandtales_delight:lantern_fruit",
+        "trailandtales_delight:golden_lantern_fruit",
+        "createcafe:blood_orange",
+        "createcafe:mana_berries"
 
     )
     e.add("createdelight:order/juice",
@@ -441,6 +598,24 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:berry_limeade",
         "collectorsreap:pink_limeade",
         "collectorsreap:mint_limeade",
+        "abnormals_delight:pickerelweed_juice",
+        "vinery:apple_juice",
+        "vinery:red_grapejuice",
+        "vinery:red_jungle_grapejuice",
+        "vinery:red_savanna_grapejuice",
+        "vinery:red_taiga_grapejuice",
+        "vinery:white_grapejuice",
+        "vinery:white_jungle_grapejuice",
+        "vinery:white_savanna_grapejuice",
+        "vinery:white_taiga_grapejuice",
+        "nethervinery:crimson_grapejuice",
+        "nethervinery:warped_grapejuice",
+        "oceanic_delight:sea_grape_juice",
+        "youkaishomecoming:black_grape_juice",
+        "youkaishomecoming:red_grape_juice",
+        "youkaishomecoming:white_grape_juice",
+        "collectorsreap:strong_limeade",
+        "cosmopolitan:wildberry_punch",
 
     )
     e.add("createdelight:order/vegetable",
@@ -465,6 +640,8 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:cucumber",
         "cosmopolitan:fiddlehead",
         "miners_delight:cave_carrot",
+        "youkaishomecoming:cucumber",
+        "youkaishomecoming:cucumber_slice",
     )
     e.add("createdelight:order/crop",
         "festival_delicacies:garlic_chive",
@@ -507,6 +684,9 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:udumbara_flower",
         "youkaishomecoming:udumbara_seeds",
         "youkaishomecoming:mandrake_flower",
+        "corn_delight:corn",
+        "farmersrespite:coffee_berries",
+        "vintagedelight:raw_oats",
 
     )
     e.add("createdelight:order/jam",
@@ -518,15 +698,22 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:gearo_berry_jam_bottle",
         "vintagedelight:sweet_berry_jam_bottle",
         "vintagedelight:glow_berry_jam_bottle",
+        "brewinandchewin:glow_berry_marmalade",
+        "brewinandchewin:sweet_berry_jam",
+        "festival_delicacies:jujube_paste",
+        "festival_delicacies:red_bean_paste",
+        "festival_delicacies:sweetened_lotus_seed_paste",
 
     )
     e.add("createdelight:order/jello",
-        "#fruitsdelight:jello"
+        "#fruitsdelight:jello",
+        "brewinandchewin:apple_jelly"
     )
     e.add("createdelight:order/gummy",
         "#collectorsreap:gummies"
     )
     e.add("createdelight:order/coffee",
+        "#createdelight:cafe",
         "createcafe:iced_coffee",
         "createcafe:iced_coffee_milk",
         "createcafe:strawberry_iced_coffee",
@@ -543,7 +730,15 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:cappuccino",
         "youkaishomecoming:macchiato",
         "youkaishomecoming:mocha",
-        "trailandtales_delight:ancient_coffee"
+        "trailandtales_delight:ancient_coffee",
+        "farmersrespite:coffee",
+        "farmersrespite:long_coffee",
+        "farmersrespite:strong_coffee",
+        "bakeries:brown_sugar_latte",
+        "bakeries:cream_bingle_coffee",
+        "bakeries:iced_american",
+        "bakeries:iced_latte",
+        "bakeries:orange_american",
     )
     e.add("createdelight:order/wine",
         ''
@@ -561,6 +756,16 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:blueberry_custard",
         "farmersrespite:strong_hot_cocoa",
         "collectorsreap:pomegranate_custard",
+        "abnormals_delight:cherry_cream_soda",
+        "cosmopolitan:spring_soda",
+        "farmersdelight:glow_berry_custard",
+        "create_confectionery:soothing_hot_chocolate",
+        "brewinandchewin:kombucha",
+        "cosmopolitan:black_cow",
+        "cosmopolitan:root_beer",
+        "cosmopolitan:summer_cordial",
+        "cosmopolitan:winter_glogg",
+        "cavedelight:radpop",
 
 
 
@@ -660,7 +865,32 @@ ServerEvents.tags("minecraft:item", e => {
         "cosmopolitan:ink_roll",
         "cosmopolitan:ink_roll_slice",
         "collectorsreap:candied_lime",
-        "collectorsreap:chocolate_arils"
+        "collectorsreap:chocolate_arils",
+        "collectorsreap:chocolate_cannoli",
+        "collectorsreap:coffee_cannoli",
+        "collectorsreap:lucuma_pudding",
+        "create_confectionery:candy_cane",
+        "create_confectionery:dark_chocolate_candy",
+        "create_confectionery:dark_chocolate_glazed_berries",
+        "create_confectionery:full_black_chocolate_bar",
+        "create_confectionery:full_chocolate_bar",
+        "create_confectionery:full_ruby_chocolate_bar",
+        "create_confectionery:full_white_chocolate_bar",
+        "create_confectionery:ruby_chocolate_glazed_berries",
+        "crabbersdelight:coconut_pudding",
+        "neapolitan:chocolate_bar",
+        "neapolitan:vanilla_chocolate_fingers",
+        "cavedelight:spelunkie_pudding",
+        "youkaishomecoming:doughnut",
+        "collectorsreap:cannoli",
+        "collectorsreap:lucuma_cannoli",
+        "collectorsreap:mint_cannoli",
+        "collectorsreap:strawberry_cannoli",
+        "collectorsreap:vanilla_cannoli",
+        "collectorsreap:panettone_slice",
+        "bakeries:matcha_parfait",
+        "festival_delicacies:qingtuan",
+        "youkaishomecoming:seven_colored_yokan"
 
 
 
@@ -686,6 +916,13 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:chocolate_nut_granola_bar",
         "vintagedelight:fruity_granola_bar",
         "vintagedelight:deluxe_granola_bar",
+        "corn_delight:popcorn",
+        "culturaldelights:popcorn",
+        "create_bic_bit:roasted_sunflower_seeds",
+        "festival_delicacies:candied_tangerine",
+        "festival_delicacies:dried_persimmon",
+        "vintagedelight:roasted_peanut",
+        "vintagedelight:honey_roasted_peanut",
 
     )
     e.add("createdelight:order/sushi",
@@ -743,6 +980,7 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:midori_roll_slice",
         "culturaldelights:chicken_roll",
         "createdelight:deep_sea_sushi_roll_slice",
+        "cavedelight:radgill_roll",
 
 
     )
@@ -757,10 +995,13 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:big_popsicle",
         "cosmopolitan:berry_popsicle",
         "cosmopolitan:berry_popsicle_double",
+        "cosmopolitan:blisterberry_popsicle",
+        "cosmopolitan:blisterberry_popsicle_double",
         "cosmopolitan:chorus_fruit_popsicle_double",
         "cosmopolitan:chorus_fruit_popsicle",
         "cosmopolitan:lime_popsicle_double",
-        "casualness_delight:green_tongue"
+        "casualness_delight:green_tongue",
+        "mynethersdelight:tear_popsicle"
     )
     e.add("createdelight:order/noodle",
         "alexcaves_delight:pastawithtrilocaristail",
@@ -777,6 +1018,9 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:portobello_pasta",
         "collectorsreap:prawn_noodles",
         "collectorsreap:crab_noodles",
+        "collectorsreap:carbonara_pasta",
+        "collectorsreap:pink_noodles",
+        "collectorsreap:stuffed_pasta_shells",
         "cavedelight:dino_chop_pasta",
         "cavedelight:tectonic_pasta",
         "cavedelight:trilocaris_noodles",
@@ -796,6 +1040,14 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:eggplant_parmesan",
         "alexsdelight:kangaroo_pasta",
         "alexsdelight:lobster_pasta",
+        "abnormals_delight:duck_noodles",
+        "cavedelight:gamma_spaghetti",
+        "vintagedelight:cucumber_noodles",
+        "cuisinedelight:fried_pasta",
+        "cuisinedelight:meat_pasta",
+        "cuisinedelight:mixed_pasta",
+        "cuisinedelight:seafood_pasta",
+        "cuisinedelight:vegetable_pasta",
 
 
     )
@@ -854,6 +1106,15 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:salmon_tartare",
         "collectorsreap:buttered_legs",
         "collectorsreap:chieftain_claw",
+        "abnormals_delight:dune_platter",
+        "abnormals_delight:escargot",
+        "abnormals_delight:maple_glazed_bacon",
+        "abnormals_delight:passion_fruit_glazed_duck",
+        "abnormals_delight:perch_with_mushrooms",
+        "abnormals_delight:pike_with_beetroot",
+        "abnormals_delight:seared_venison",
+        "abnormals_delight:slabdish",
+        "abnormals_delight:venison_with_bamboo_shoots",
 
 
 
@@ -885,12 +1146,23 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:spicy_grenadine_jelly",
         "collectorsreap:strawberry_jam_bun",
         "collectorsreap:pomegranate_bean_salad",
+        "youkaishomecoming:tamagoyaki",
+        "youkaishomecoming:tamagoyaki_slice",
+        "youkaishomecoming:tofu",
+        "corn_delight:boiled_corn",
+        "corn_delight:grilled_corn",
+        "corn_delight:creamed_corn",
+        "culturaldelights:elote",
+        "culturaldelights:smoked_corn",
 
 
 
     )
     e.add("createdelight:order/sausage",
-        "#forge:sausage"
+        "#forge:sausage",
+        "ends_delight:ender_sausage",
+        "mynethersdelight:hoglin_sausage",
+        "dungeonsdelight:blazing_blood_sausage"
     )
     e.add("createdelight:order/mixed_dish",
         "brewinandchewin:scarlet_pierogi",
@@ -936,6 +1208,18 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:salmon_wrapped_prawn",
         "collectorsreap:platinum_bass_stew",
         "collectorsreap:fish_mix",
+        "create_bic_bit:stamppot_bowl",
+        "cavedelight:slam_breakfast",
+        "mynethersdelight:sausage_and_potatoes",
+        "cuisinedelight:fried_meat_and_melon",
+        "cuisinedelight:fried_mushroom",
+        "cuisinedelight:meat_platter",
+        "cuisinedelight:meat_with_seafood",
+        "cuisinedelight:meat_with_vegetables",
+        "cuisinedelight:scrambled_egg_and_tomato",
+        "cuisinedelight:seafood_platter",
+        "cuisinedelight:seafood_with_vegetables",
+        "cuisinedelight:vegetable_platter",
 
 
 
@@ -951,10 +1235,14 @@ ServerEvents.tags("minecraft:item", e => {
         "crabbersdelight:kelp_shake",
         "collectorsreap:lime_milkshake",
         "collectorsreap:pomegranate_milkshake",
+        "collectorsreap:lucuma_milkshake",
+        "collectorsreap:pink_dragon_fruit_milkshake",
         "cosmopolitan:apple_milkshake",
         "cosmopolitan:carrot_milkshake",
         "cosmopolitan:glow_berry_milkshake",
         "cosmopolitan:enchanted_fruit_milkshake",
+        "cosmopolitan:kabloom_milkshake",
+        "cosmopolitan:source_berry_milkshake",
         "seasonals:pumpkin_milkshake",
         "seasonals:sweet_berry_milkshake",
         "seasonals:beetroot_milkshake",
@@ -996,7 +1284,45 @@ ServerEvents.tags("minecraft:item", e => {
         "farmersdelight:vegetable_soup",
         "farmersdelight:pumpkin_soup",
         "collectorsreap:portobello_rice_soup",
-        "alexsdelight:acacia_blossom_soup"
+        "alexsdelight:acacia_blossom_soup",
+        "farmersdelight:beef_stew",
+        "ends_delight:dragon_meat_stew",
+        "ends_delight:enderman_gristle_stew",
+        "cavedelight:radgill_stew",
+        "cavedelight:toxic_soup",
+        "trailandtales_delight:sniffer_egg_soup",
+        "fruitsdelight:fig_chicken_stew",
+        "collectorsreap:clam_meatball_stew_cup",
+        "collectorsreap:dragon_stew",
+        "collectorsreap:dragon_stew_cup",
+        "collectorsreap:platinum_bass_stew_cup",
+        "collectorsreap:portobello_rice_soup_cup",
+        "collectorsreap:prawn_stew_cup",
+        "miners_delight:baked_cod_stew_cup",
+        "miners_delight:bat_soup_cup",
+        "miners_delight:beef_stew_cup",
+        "miners_delight:beetroot_soup_cup",
+        "miners_delight:bone_broth_cup",
+        "miners_delight:cave_soup_cup",
+        "miners_delight:chicken_soup_cup",
+        "miners_delight:fish_stew_cup",
+        "miners_delight:insect_stew_cup",
+        "miners_delight:mushroom_stew_cup",
+        "miners_delight:noodle_soup_cup",
+        "miners_delight:pumpkin_soup_cup",
+        "miners_delight:rabbit_stew_cup",
+        "miners_delight:vegetable_soup_cup",
+        "collectorsreap:lucuma_gazpacho",
+        "collectorsreap:lucuma_gazpacho_cup",
+        "cosmopolitan:green_cream_stew",
+        "cosmopolitan:green_cream_stew_cup",
+        "cosmopolitan:lush_stew",
+        "cosmopolitan:lush_stew_cup",
+        "miners_delight:egg_soup_cup",
+        "miners_delight:rock_soup_cup",
+        "miners_delight:spicy_hoglin_stew_cup",
+        "miners_delight:spicy_noodle_soup_cup",
+        "miners_delight:strider_stew_cup"
 
 
     )
@@ -1008,6 +1334,8 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:bun",
         "youkaishomecoming:mantou",
         "youkaishomecoming:oyaki",
+        "festival_delicacies:mantou",
+        "festival_delicacies:baozi",
         "vintagedelight:oatmeal",
         "vintagedelight:overnight_oats",
         "vintagedelight:cheese_pizza_slice",
@@ -1034,10 +1362,12 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:tutu_congee",
         "fruitsdelight:bowl_of_pineapple_fried_rice",
         "cavedelight:dino_cut_rice",
-        "luncheonmeatsdelight:luncheon_meat_rice_ball",
+        "cavedelight:prehistoric_egg_rice",
+        "youkaishomecoming:pork_rice_ball",
         "farmersrespite:tea_curry",
         "farmersrespite:black_cod",
         "mynethersdelight:dried_ghast_with_milk",
+        "mynethersdelight:spicy_curry",
         "miners_delight:bowl_of_stuffed_squid",
         "oceanic_delight:globular_rice",
         "oceanic_delight:shrimp_rice",
@@ -1056,6 +1386,18 @@ ServerEvents.tags("minecraft:item", e => {
         "culturaldelights:rice_ball",
         "collectorsreap:portobello_risotto",
         "collectorsreap:big_rice_ball",
+        "casualness_delight:bowl_of_sweet_rice",
+        "dungeonsdelight:scaly_fiddlehead_risotto",
+        "cosmopolitan:wild_risotto",
+        "festival_delicacies:meat_zongzi",
+        "festival_delicacies:sweet_zongzi",
+        "cavedelight:musubi",
+        "cuisinedelight:fried_rice",
+        "cuisinedelight:ham_fried_rice",
+        "cuisinedelight:meat_fried_rice",
+        "cuisinedelight:mixed_fried_rice",
+        "cuisinedelight:seafood_fried_rice",
+        "cuisinedelight:vegetable_fried_rice",
 
 
 
@@ -1080,7 +1422,14 @@ ServerEvents.tags("minecraft:item", e => {
         "dumplings_delight:pork_carrot_wonton",
         "dumplings_delight:pork_mushroom_wonton",
         "dumplings_delight:pork_cabbage_wonton",
-        "farmersdelight:dumplings"
+        "farmersdelight:dumplings",
+        "dumplings_delight:beef_tomato_boiled_dumpling",
+        "dumplings_delight:calamari_boiled_dumpling",
+        "dumplings_delight:pork_celery_boiled_dumpling",
+        "dumplings_delight:tomato_egg_boiled_dumpling",
+        "festival_delicacies:boiled_dumpling",
+        "festival_delicacies:steamed_dumpling",
+        "festival_delicacies:wonton"
     )
     e.add("createdelight:order/monster",
         "dungeonsdelight:ghast_roll",
@@ -1153,6 +1502,13 @@ ServerEvents.tags("minecraft:item", e => {
         "youkaishomecoming:red_velvet_cake_slice",
         "mynethersdelight:hot_cream",
         "mynethersdelight:hot_cream_cone",
+        "ends_delight:roasted_dragon_steak",
+        "ends_delight:stir_fried_shulker_meat",
+        "youkaishomecoming:canned_flesh",
+        "youkaishomecoming:cooked_flesh",
+        "youkaishomecoming:cooked_flesh_slice",
+        "youkaishomecoming:flesh",
+        "youkaishomecoming:flesh_slice",
 
 
     )
@@ -1167,6 +1523,11 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:nut_mash_bottle",
         "vintagedelight:relish_bottle",
         "vintagedelight:pepper_jam_bottle",
+        "farmersdelight:tomato_sauce",
+        "youkaishomecoming:mayonnaise_bottle",
+        "youkaishomecoming:soy_sauce_bottle",
+        "cosmopolitan:green_sauce",
+        "collectorsreap:prawn_spread",
 
 
     )
@@ -1186,7 +1547,10 @@ ServerEvents.tags("minecraft:item", e => {
         "farmersdelight:nether_salad",
         "culturaldelights:hearty_salad",
         "collectorsreap:deluxe_salad",
-        "alexsdelight:maggot_salad"
+        "alexsdelight:maggot_salad",
+        "cosmopolitan:classic_fruit_salad",
+        "cosmopolitan:jello_salad",
+        "cosmopolitan:jello_salad_cup"
 
 
     )
@@ -1205,7 +1569,12 @@ ServerEvents.tags("minecraft:item", e => {
         "crabbersdelight:squid_kebob",
         "crabbersdelight:frog_leg_kebob",
         "farmersdelight:barbecue_stick",
-        "culturaldelights:chicken_taco"
+        "culturaldelights:chicken_taco",
+        "casualness_delight:gluten_skewer",
+        "cavedelight:slam_on_a_stick",
+        "silentsdelight:warden_ear_on_a_stick",
+        "cavedelight:shish_kebab",
+        "ends_delight:smoked_dragon_leg"
 
 
     )

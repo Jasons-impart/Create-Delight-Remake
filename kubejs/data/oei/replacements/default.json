@@ -420,14 +420,14 @@
     },
     {
         "matchItems": [
-            "createfisheryindustry:raw_lobster"
+            "festival_delicacies:peanut"
         ],
-        "resultItems": "crabbersdelight:clawster"
+        "resultItems": "vintagedelight:peanut"
     },
     {
         "matchItems": [
-            "createfisheryindustry:cooked_lobster"
+            "festival_delicacies:tangerine"
         ],
-        "resultItems": "crabbersdelight:cooked_clawster"
+        "resultItems": "fruitsdelight:orange"
     }
 ]

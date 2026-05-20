@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#kubejs:feywild/autumn_pixie_spawns",
+  "spawners": [
+    {
+      "type": "feywild:autumn_pixie",
+      "maxCount": 1,
+      "minCount": 1,
+      "weight": 1
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+name = "One Enough Value"
+filename = "OneEnoughValue-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9cad0f36b2613c973e7b80aa27f76c33d786e134"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7672263
+project-id = 1413802

@@ -1,0 +1,13 @@
+name = "ExtraHoloPage"
+filename = "ExtraHoloPage-6.9.0-1.2.13.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "b9d212061639aa3cd0ae59a10bfaa9e76a79fc21"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7433460
+project-id = 1301292

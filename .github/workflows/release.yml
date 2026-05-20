@@ -5,9 +5,13 @@ on:
     branches:
       - release*       # 匹配主发布分支
       - test-*         # 匹配所有 test- 开头的分支（通配符）
+    tags:
+      - 'v*'           # 匹配版本标签触发
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
   PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
+  PACKWIZ_INSTALLER_BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
+  PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/
   HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
@@ -56,7 +60,11 @@ jobs:
         id: generate_modpack_version
         run: |
           BRANCH_NAME="${{ github.ref_name }}"
-          if [[ "$BRANCH_NAME" == *test* ]]; then
+          if [[ "$BRANCH_NAME" == v* ]]; then
+            # Tag-triggered: use version from pack.toml directly
+            VERSION="${{ steps.read-version.outputs.value }}"
+            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          elif [[ "$BRANCH_NAME" == *test* ]]; then
             VERSION="${{ steps.read-version.outputs.value }}-test-build-${{ github.run_number }}"
             echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
           else
@@ -84,7 +92,8 @@ jobs:
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
       startsWith(github.ref_name, 'test-client') ||
-      startsWith(github.ref_name, 'test-patch')
+      startsWith(github.ref_name, 'test-patch') ||
+      startsWith(github.ref_name, 'v')
     steps:
       - name: 测试环境变量
         run: |
@@ -167,7 +176,7 @@ jobs:
         run: |
           ./packwiz curseforge export
           mv *.zip ../lite-release.zip
-          unzip ../lite-release.zip -d ../lite-release
+          unzip -o ../lite-release.zip -d ../lite-release
           ls ..
       - name: Workaround actions/upload-artifact#176
         run: |
@@ -200,29 +209,66 @@ jobs:
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
-      startsWith(github.ref_name, 'test-server')
+      startsWith(github.ref_name, 'test-server') ||
+      startsWith(github.ref_name, 'v')
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
         with:
           fetch-depth: 1 # 只取最新提交，加速
-      - name: 删除与服务端无关的文件
+      - name: 安装 Packwiz
         run: |
-            # mapfile -t prefixes < .packwizignore
-            # for prefix in "${prefixes[@]}"; do
-            #   echo "Deleting files with prefix: $prefix"
-            #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
-            # done
-            rm -rf resourcepacks
-            rm -rf shaderpacks
-            rm -f ModList0.4a.md
-            rm -f README.md
-            rm -f TODOlist.md
-            rm -f KubeJSStyleGuide.md
-            rm -f DevGuide.md
-            rm -f pack.toml
-            rm -f index.toml
-            rm -f client_jvm_args.example.txt
+          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
+          chmod +x ./packwiz
+      - name: 更新文件索引
+        run: |
+          ./packwiz refresh
+      - name: 下载所有mod本体（packwiz-installer）
+        run: |
+          set -euo pipefail
+          # 参考脚本: scripts/sync-packwiz-assets.ps1
+          # 1. 创建临时 pack 目录，复制元数据和 packwiz-files/
+          PACK_DIR=$(mktemp -d)
+          cp pack.toml "$PACK_DIR/"
+          cp .packwizignore "$PACK_DIR/" 2>/dev/null || true
+          touch "$PACK_DIR/index.toml"
+          # 复制 .pw.toml 元数据
+          find mods resourcepacks shaderpacks -name '*.pw.toml' 2>/dev/null | while read -r f; do
+            mkdir -p "$PACK_DIR/$(dirname "$f")"
+            cp "$f" "$PACK_DIR/$f"
+          done
+          # 复制 packwiz-files/（CF受限 mod/资源包/光影包本体）
+          if [ -d "packwiz-files" ]; then
+            cp -r packwiz-files "$PACK_DIR/"
+          fi
+          # 2. 将 .pw.toml 中的 GitHub raw URL 替换为 localhost
+          PORT=8080
+          LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
+          find "$PACK_DIR" -name '*.pw.toml' -exec sed -i "s|${PACKWIZ_FILES_RAW_PREFIX}|${LOCAL_PREFIX}|g" {} +
+          # 3. 在临时目录中 refresh 生成索引
+          (cd "$PACK_DIR" && "$OLDPWD/packwiz" refresh)
+          # 4. 启动 Python 静态服务器
+          python3 -m http.server $PORT --directory "$PACK_DIR" &
+          SERVER_PID=$!
+          # 等待服务器就绪
+          for i in $(seq 1 25); do
+            if curl -s -o /dev/null "http://127.0.0.1:$PORT/pack.toml"; then break; fi
+            sleep 0.2
+          done
+          # 5. 下载并运行 packwiz-installer-bootstrap（bootstrap会自动下载installer）
+          curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
+          java -jar packwiz-installer-bootstrap.jar -g "http://127.0.0.1:$PORT/pack.toml"
+          # 6. 清理
+          kill $SERVER_PID 2>/dev/null || true
+          rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
+      - name: 删除客户端only模组
+        run: |
+            mapfile -t prefixes < .clientonlymodlist
+            for prefix in "${prefixes[@]}"; do
+              echo "Deleting files with prefix: $prefix"
+              find mods -name "${prefix}*" -exec rm {} +
+              find packwiz-files/mods -name "${prefix}*" -exec rm {} +
+            done
       - name: 安装服务端only模组
         run: |
             # 从.serveronlymodlist中读取模组URL
@@ -230,13 +276,21 @@ jobs:
             for url in "${urls[@]}"; do
               curl -O -L "$url" --output-dir "mods"
             done
-      - name: 删除客户端only模组
+      - name: 删除与服务端无关的文件
         run: |
-            mapfile -t prefixes < .clientonlymodlist
-            for prefix in "${prefixes[@]}"; do
-              echo "Deleting files with prefix: $prefix"
-              find mods -name "${prefix}*" -exec rm {} +
-            done
+            # packwiz-installer 已将所有 mod JAR 下载到 mods/，packwiz-files/ 不再需要
+            rm -rf resourcepacks
+            rm -rf shaderpacks
+            rm -rf packwiz-files
+            rm -f ModList0.4a.md
+            rm -f README.md
+            rm -f TODOlist.md
+            rm -f KubeJSStyleGuide.md
+            rm -f DevGuide.md
+            rm -f client_jvm_args.example.txt
+            # 清理 packwiz 元数据
+            find mods -name "*.pw.toml" -exec rm {} +
+            rm -f pack.toml index.toml .packwizignore packwiz
       - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
         run: |
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
@@ -289,7 +343,8 @@ jobs:
     if: >
       startsWith(github.ref_name, 'release') || 
       startsWith(github.ref_name, 'test-release') ||
-      startsWith(github.ref_name, 'test-patch')
+      startsWith(github.ref_name, 'test-patch') ||
+      startsWith(github.ref_name, 'v')
     steps:
       - name: 测试环境变量
         run: |
@@ -365,11 +420,28 @@ jobs:
             if [ -d "patch/mods" ]; then
               find patch/mods -name "${prefix}*" -exec rm {} +
             fi
+            if [ -d "patch/packwiz-files/mods" ]; then
+              find patch/packwiz-files/mods -name "${prefix}*" -exec rm {} +
+            fi
           done
 
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
                 patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
                 patch/index.toml patch/client_jvm_args.example.txt
+
+          # 将 patch/packwiz-files/ 中的文件移到标准目录，然后删除 packwiz-files
+          if [ -d "patch/packwiz-files/mods" ]; then
+            mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
+          fi
+          if [ -d "patch/packwiz-files/resourcepacks" ]; then
+            mkdir -p patch/resourcepacks
+            mv patch/packwiz-files/resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
+          fi
+          if [ -d "patch/packwiz-files/shaderpacks" ]; then
+            mkdir -p patch/shaderpacks
+            mv patch/packwiz-files/shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
+          fi
+          rm -rf patch/packwiz-files
       - name: 更新配置文件
         run: |
           set -euo pipefail
@@ -482,11 +554,36 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
-      - name: 检测并生成mods meta信息（packwiz将会自动移除cf可下载mod）
+      - name: 下载所有mod本体（packwiz-installer）& 生成manifest
         run: |
+          set -euo pipefail
+          PACK_DIR=$(mktemp -d)
+          cp pack.toml "$PACK_DIR/"
+          cp .packwizignore "$PACK_DIR/" 2>/dev/null || true
+          touch "$PACK_DIR/index.toml"
+          find mods resourcepacks shaderpacks -name '*.pw.toml' 2>/dev/null | while read -r f; do
+            mkdir -p "$PACK_DIR/$(dirname "$f")"
+            cp "$f" "$PACK_DIR/$f"
+          done
+          if [ -d "packwiz-files" ]; then
+            cp -r packwiz-files "$PACK_DIR/"
+          fi
+          PORT=8081
+          LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
+          find "$PACK_DIR" -name '*.pw.toml' -exec sed -i "s|${PACKWIZ_FILES_RAW_PREFIX}|${LOCAL_PREFIX}|g" {} +
+          (cd "$PACK_DIR" && "$OLDPWD/packwiz" refresh)
+          python3 -m http.server $PORT --directory "$PACK_DIR" &
+          SERVER_PID=$!
+          for i in $(seq 1 25); do
+            if curl -s -o /dev/null "http://127.0.0.1:$PORT/pack.toml"; then break; fi
+            sleep 0.2
+          done
+          curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
+          java -jar packwiz-installer-bootstrap.jar -g "http://127.0.0.1:$PORT/pack.toml"
+          kill $SERVER_PID 2>/dev/null || true
+          rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
+          # detect 生成 manifest.json（给客户端补丁用，CF mod 以引用形式记录）
           ./packwiz curseforge detect
-      - name: 更新index
-        run: |
           ./packwiz refresh
       - name: 下载manifest.json
         uses: actions/download-artifact@v4
@@ -497,6 +594,17 @@ jobs:
           rm -rf patch/mods
           mv mods patch
           rm -rf patch/mods/*.pw.toml
+          # packwiz-installer 已将 resourcepacks/shaderpacks 下载到标准目录
+          if [ -d "resourcepacks" ]; then
+            mkdir -p patch/resourcepacks
+            mv resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
+          fi
+          if [ -d "shaderpacks" ]; then
+            mkdir -p patch/shaderpacks
+            mv shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
+          fi
+          # 删除残留的 packwiz-files（JAR 已通过 installer 下载到标准目录）
+          rm -rf patch/packwiz-files
           mv manifest.json patch
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4

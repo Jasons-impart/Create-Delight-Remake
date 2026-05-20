@@ -557,9 +557,7 @@ ServerEvents.recipes(e => {
         '2x create:mechanical_arm', 
         '5x create:brass_funnel',
         '2x create:deployer',
-        '2x fluid:pipette',
         '3x create_fantasizing:transporter',
-        '3x fluid:smart_fluid_interface',
         '5x createaddition:portable_energy_interface',
         '2x create_bic_bit:mechanical_fryer'
     ].forEach(res => {
@@ -579,10 +577,7 @@ ServerEvents.recipes(e => {
     let copperOutputList = [
         '3x create:item_drain', 
         '3x create:spout', 
-        '3x create:portable_fluid_interface',
-        '2x fluid:centrifugal_pump', 
-        '3x fluid:copper_tap', 
-        '3x fluid:fluid_interface'
+        '3x create:portable_fluid_interface'
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
             res,

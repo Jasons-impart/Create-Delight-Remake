@@ -574,22 +574,26 @@
 		}
 		{
 			dependencies: ["46F1F92929FC8F9F"]
-			icon: "minecraft:wheat"
+			description: [
+				"传送石碑可以用来在各地的石碑间传送。"
+				"如果你觉得使用指令归家是一种作弊，可以用它回家。"
+			]
+			icon: "waystones:waystone"
 			id: "64FB1FEC4F9721B7"
 			rewards: [{
-				id: "306A1996A10BFBA9"
-				item: "createdelightcore:copper_coin"
+				id: "2EAC4A265C962364"
+				item: "waystones:waystone"
 				type: "item"
 			}]
 			shape: "pentagon"
 			size: 2.0d
-			subtitle: "{ \"text\": \"一分耕耘，一分收获\", \"underlined\": \"true\", \"color\":\"blue\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"1E7A476EE0C13AD1\" } }"
+			subtitle: "气候适宜的地方定居会让种地更简单"
 			tasks: [{
-				id: "731BA1C9CD625DBF"
-				title: "开始你的农耕生活吧！"
-				type: "checkmark"
+				id: "7FAA96F6669BE9D7"
+				item: "eclipticseasons:hygrometer"
+				type: "item"
 			}]
-			title: "刀耕火种"
+			title: "定居"
 			x: 6.0d
 			y: -6.0d
 		}
