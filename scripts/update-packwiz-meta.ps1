@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [string[]]$Categories = @("mods", "resourcepacks", "shaderpacks"),
+    [string]$Category = "mods",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe"
 )
 
@@ -8,8 +8,6 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = Split-Path -Parent $PSScriptRoot
-$PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
-$PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
 $ToolsRoot = Join-Path $RepoRoot ".cache\packwiz-sync\tools"
 $PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
 
@@ -18,299 +16,209 @@ function Write-Warn   { param([string]$M) Write-Host "[warn] $M" -ForegroundColo
 
 function Get-ToolEnsured {
     param([string]$Url, [string]$Path)
+
     if (Test-Path $Path) { return }
+
     New-Item -ItemType Directory -Force -Path (Split-Path $Path -Parent) | Out-Null
     Write-Status ("Downloading {0}..." -f (Split-Path $Path -Leaf))
     Invoke-WebRequest -Uri $Url -OutFile $Path -UseBasicParsing
 }
 
+function Get-AssetFiles {
+    param([string]$Directory)
+
+    $files = @{}
+    if (-not (Test-Path $Directory)) { return $files }
+
+    Get-ChildItem -LiteralPath $Directory -File |
+        Where-Object { $_.Extension -match '^\.(jar|zip)$' } |
+        ForEach-Object {
+            $files[$_.Name] = $_.FullName
+        }
+
+    return $files
+}
+
 function Derive-BaseName {
     param([string]$Filename)
+
     if (-not $Filename) { return "" }
+
     $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
     $parts = $name -split '[-_]'
     $baseParts = @()
+
     foreach ($p in $parts) {
         if ($p -match '^v?\d') { break }
         if ($p -match '^(forge|fabric|neoforge|quilt|mc\d|release|alpha|beta|for|neo)$') { continue }
         $baseParts += $p
     }
+
     if (-not $baseParts) { return $name.ToLowerInvariant() }
     return ($baseParts -join '_').ToLowerInvariant()
 }
 
-function Derive-DisplayName {
-    param([string]$Filename)
-    if (-not $Filename) { return "" }
-    $name = [IO.Path]::GetFileNameWithoutExtension($Filename)
-    $parts = $name -split '[-_]'
-    $displayParts = @()
-    foreach ($p in $parts) {
-        if ($p -match '^v?\d') { break }
-        if ($p -match '^(forge|fabric|neoforge|quilt|mc\d|release|alpha|beta|for|neo)$') { continue }
-        $words = [regex]::Split($p, '(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])')
-        foreach ($w in $words) {
-            if ($w.Length -gt 0 -and $w -notmatch '^(forge|fabric|neoforge|quilt|mc|release|alpha|beta|for|neo)$') {
-                $displayParts += [Globalization.CultureInfo]::CurrentCulture.TextInfo.ToTitleCase($w.ToLower())
-            }
-        }
-    }
-    if (-not $displayParts) { return $name }
-    return ($displayParts -join ' ')
+function Get-NaturalSortKey {
+    param([string]$Value)
+
+    if (-not $Value) { return "" }
+
+    return [regex]::Replace($Value.ToLowerInvariant(), '\d+', {
+        param($Match)
+        $Match.Value.PadLeft(20, '0')
+    })
 }
 
-function Get-DisplaySlug {
-    param([string]$DisplayName)
-    $slug = $DisplayName.ToLowerInvariant() -replace '[^a-z0-9\s-]', '' -replace '\s+', '-' -replace '-+', '-'
-    return $slug.Trim('-')
+function Get-PreferredFilename {
+    param([string[]]$Filenames)
+
+    $candidates = @($Filenames | Where-Object { -not [string]::IsNullOrWhiteSpace($_) } | Select-Object -Unique)
+    if ($candidates.Count -eq 0) { return $null }
+
+    $sortedCandidates = @($candidates | Sort-Object { Get-NaturalSortKey -Value $_ })
+    return $sortedCandidates[-1]
 }
 
 function Write-Utf8NoBomFile {
     param([string]$Path, [string]$Content)
+
     $enc = [Text.UTF8Encoding]::new($false)
     [IO.File]::WriteAllText($Path, $Content, $enc)
 }
 
-function New-UrlToml {
-    param([string]$OutPath, [string]$ModName, [string]$Filename, [string]$DownloadUrl)
-    $c = @"
-name = "$ModName"
-filename = "$Filename"
-side = "both"
-
-[download]
-url = "$DownloadUrl"
-hash-format = "sha256"
-hash = ""
-"@
-    Write-Utf8NoBomFile -Path $OutPath -Content $c
-    Write-Status "  + Created: $(Split-Path $OutPath -Leaf)"
-}
-
-function ConvertTo-UrlToml {
-    param([string]$PwTomlPath, [string]$ModName, [string]$NewFilename, [string]$NewUrl)
-    $c = @"
-name = "$ModName"
-filename = "$NewFilename"
-side = "both"
-
-[download]
-url = "$NewUrl"
-hash-format = "sha256"
-hash = ""
-"@
-    Write-Utf8NoBomFile -Path $PwTomlPath -Content $c
-    Write-Status "  ~ Converted: $(Split-Path $PwTomlPath -Leaf) -> $NewFilename"
-}
-
-function Update-UrlToml {
-    param([string]$PwTomlPath, [string]$OldFilename, [string]$NewFilename, [string]$NewUrl)
-    $content = Get-Content $PwTomlPath -Raw
-    $newContent = $content -replace [regex]::Escape("filename = `"$OldFilename`""), "filename = `"$NewFilename`""
-    $newContent = $newContent -replace '(?m)^url\s*=\s*".*"$', "url = `"$NewUrl`""
-    Write-Utf8NoBomFile -Path $PwTomlPath -Content $newContent
-    Write-Status "  ~ Updated: $(Split-Path $PwTomlPath -Leaf) ($OldFilename -> $NewFilename)"
-}
-
 function Parse-PwToml {
     param([string]$Path)
-    $content = Get-Content $Path -Raw
-    $r = @{}
-    if ($content -match '(?m)^name\s*=\s*"(.+)"')              { $r['Name'] = $Matches[1] }
-    if ($content -match '(?m)^filename\s*=\s*"(.+)"')           { $r['Filename'] = $Matches[1] }
-    if ($content -match '(?m)^\s*url\s*=\s*"(.+)"')             { $r['Url'] = $Matches[1] }
-    if ($content -match 'mode\s*=\s*"metadata:(\w+)"')           { $r['Mode'] = $Matches[1] }
-    $hasCfOrMr = ($content -match '\[update\.(curseforge|modrinth)\]')
-    $r['IsUrlType'] = ($r.ContainsKey('Url') -and -not $r.ContainsKey('Mode') -and -not $hasCfOrMr)
-    $r['IsManaged'] = ($r.ContainsKey('Mode') -or $hasCfOrMr)
-    return $r
+
+    $content = Get-Content -LiteralPath $Path -Raw
+    $result = @{}
+
+    if ($content -match '(?m)^name\s*=\s*"(.+)"')      { $result['Name'] = $Matches[1] }
+    if ($content -match '(?m)^filename\s*=\s*"(.+)"')  { $result['Filename'] = $Matches[1] }
+
+    $hasMetadataMode = $content -match 'mode\s*=\s*"metadata:(curseforge|modrinth)"'
+    $hasUpdateBlock = $content -match '\[update\.(curseforge|modrinth)\]'
+    $result['IsManaged'] = ($hasMetadataMode -or $hasUpdateBlock)
+
+    return $result
 }
 
 function Get-TomlVal {
-    param([hashtable]$D, [string]$K)
-    if ($D -and $D.ContainsKey($K)) { return $D[$K] } else { return $null }
+    param([hashtable]$Data, [string]$Key)
+
+    if ($Data -and $Data.ContainsKey($Key)) { return $Data[$Key] }
+    return $null
+}
+
+function Invoke-PackwizCommand {
+    param([string[]]$Arguments)
+
+    Push-Location $RepoRoot
+    try {
+        & $PackwizExe @Arguments 2>&1 | Out-Null
+        return $LASTEXITCODE
+    }
+    finally {
+        Pop-Location
+    }
 }
 
 try {
-    Set-Location $RepoRoot
+    if ($Category -ne "mods") {
+        throw "This script currently only supports the 'mods' category."
+    }
+
     Get-ToolEnsured -Url $PackwizUrl -Path $PackwizExe
 
-    $createdCount = 0
-    $updatedCount = 0
-    $convertedCount = 0
-
-    foreach ($category in $Categories) {
-        $catDir  = Join-Path $RepoRoot $category
-        $pfDir   = Join-Path $PackwizFilesRoot $category
-
-        Write-Status "Scanning category: $category"
-
-        $allJars = @{}
-        if (Test-Path $catDir) {
-            Get-ChildItem $catDir -File | Where-Object { $_.Extension -match '\.(jar|zip)$' } | ForEach-Object {
-                $allJars[$_.Name] = $_.FullName
-            }
-        }
-        if (Test-Path $pfDir) {
-            Get-ChildItem $pfDir -File | Where-Object { $_.Extension -match '\.(jar|zip)$' } | ForEach-Object {
-                if (-not $allJars.ContainsKey($_.Name)) {
-                    $allJars[$_.Name] = $_.FullName
-                }
-            }
-        }
-
-        $pwTomls = @()
-        if (Test-Path $catDir) {
-            $pwTomls = @(Get-ChildItem $catDir -Filter *.pw.toml -File)
-        }
-
-        $pwData = @{}
-        $fnameToPwPath = @{}
-        foreach ($pt in $pwTomls) {
-            $d = Parse-PwToml -Path $pt.FullName
-            $pwData[$pt.FullName] = $d
-            $fn = Get-TomlVal -D $d -K 'Filename'
-            if ($fn) { $fnameToPwPath[$fn] = $pt.FullName }
-        }
-
-        $newJars = @{}
-        foreach ($jarName in $allJars.Keys) {
-            if (-not $fnameToPwPath.ContainsKey($jarName)) {
-                $newJars[$jarName] = $allJars[$jarName]
-            }
-        }
-
-        $orphaned = @()
-        foreach ($pt in $pwTomls) {
-            $d = $pwData[$pt.FullName]
-            $fn = Get-TomlVal -D $d -K 'Filename'
-            if ($fn -and -not $allJars.ContainsKey($fn)) {
-                $orphaned += $pt
-            }
-        }
-
-        $matched = @{}
-        if ($orphaned.Count -gt 0 -and $newJars.Count -gt 0) {
-            $orphanBases = @{}
-            foreach ($orp in $orphaned) {
-                $fn = Get-TomlVal -D $pwData[$orp.FullName] -K 'Filename'
-                $base = Derive-BaseName -Filename $fn
-                if ($base) { $orphanBases[$base] = $orp.FullName }
-            }
-            $jarBases = @{}
-            foreach ($jname in $newJars.Keys) {
-                $base = Derive-BaseName -Filename $jname
-                if ($base) { $jarBases[$base] = $jname }
-            }
-            foreach ($base in $orphanBases.Keys) {
-                if ($jarBases.ContainsKey($base)) {
-                    $matched[$orphanBases[$base]] = $jarBases[$base]
-                }
-            }
-        }
-
-        $processedJars = @()
-        foreach ($orpFullName in $matched.Keys) {
-            $newJarName = $matched[$orpFullName]
-            $newJarPath = $allJars[$newJarName]
-            $oldData = $pwData[$orpFullName]
-            $oldFname = Get-TomlVal -D $oldData -K 'Filename'
-            $modName  = Get-TomlVal -D $oldData -K 'Name'
-            $isUrl    = Get-TomlVal -D $oldData -K 'IsUrlType'
-
-            $pfDestDir = Join-Path $PackwizFilesRoot $category
-            New-Item -ItemType Directory -Force -Path $pfDestDir | Out-Null
-            $pfDestPath = Join-Path $pfDestDir $newJarName
-            $rawUrl = "${PackwizFilesRawPrefix}${category}/$newJarName"
-
-            if ($isUrl) {
-                Copy-Item $newJarPath $pfDestPath -Force
-                Update-UrlToml -PwTomlPath $orpFullName -OldFilename $oldFname -NewFilename $newJarName -NewUrl $rawUrl
-                $updatedCount++
-            }
-            else {
-                Copy-Item $newJarPath $pfDestPath -Force
-                ConvertTo-UrlToml -PwTomlPath $orpFullName -ModName $modName -NewFilename $newJarName -NewUrl $rawUrl
-                $convertedCount++
-            }
-            $processedJars += $newJarName
-        }
-
-        foreach ($jname in $newJars.Keys) {
-            if ($processedJars -contains $jname) { continue }
-            $jpath = $allJars[$jname]
-            $displayName = Derive-DisplayName -Filename $jname
-            $slug = Get-DisplaySlug -DisplayName $displayName
-
-            $pfDestDir = Join-Path $PackwizFilesRoot $category
-            New-Item -ItemType Directory -Force -Path $pfDestDir | Out-Null
-            $pfDestPath = Join-Path $pfDestDir $jname
-            if ($jpath -ne $pfDestPath) {
-                Copy-Item $jpath $pfDestPath -Force
-            }
-            $rawUrl = "${PackwizFilesRawPrefix}${category}/$jname"
-
-            $pwTomlPath = Join-Path $catDir "${slug}.pw.toml"
-            if (Test-Path $pwTomlPath) {
-                $existingData = Parse-PwToml -Path $pwTomlPath
-                $existingFname = Get-TomlVal -D $existingData -K 'Filename'
-                $existingBase = Derive-BaseName -Filename $existingFname
-                $newBase = Derive-BaseName -Filename $jname
-
-                if ($existingBase -eq $newBase -and $existingFname -ne $jname) {
-                    $isUrl = Get-TomlVal -D $existingData -K 'IsUrlType'
-                    $modName = Get-TomlVal -D $existingData -K 'Name'
-                    if ($isUrl) {
-                        Update-UrlToml -PwTomlPath $pwTomlPath -OldFilename $existingFname -NewFilename $jname -NewUrl $rawUrl
-                        $updatedCount++
-                    }
-                    else {
-                        ConvertTo-UrlToml -PwTomlPath $pwTomlPath -ModName $modName -NewFilename $jname -NewUrl $rawUrl
-                        $convertedCount++
-                    }
-                    $processedJars += $jname
-                }
-                else {
-                    Write-Warn "  ! Skipping ${jname}: ${slug}.pw.toml already exists (name collision)"
-                }
-                continue
-            }
-            New-UrlToml -OutPath $pwTomlPath -ModName $displayName -Filename $jname -DownloadUrl $rawUrl
-            $createdCount++
-        }
-    }
-
-    foreach ($category in $Categories) {
-        $catDir = Join-Path $RepoRoot $category
-        $pfDir  = Join-Path $PackwizFilesRoot $category
-        if (-not (Test-Path $catDir)) { continue }
-        $pts = @(Get-ChildItem $catDir -Filter *.pw.toml -File)
-        foreach ($pt in $pts) {
-            $d = Parse-PwToml -Path $pt.FullName
-            $fn = Get-TomlVal -D $d -K 'Filename'
-            if (-not $fn) { continue }
-            $inCategory = Test-Path (Join-Path $catDir $fn)
-            $inPf      = Test-Path (Join-Path $pfDir $fn)
-            if (-not $inCategory -and -not $inPf) {
-                Write-Warn "  ? Orphaned: $($pt.Name) references missing $fn"
-            }
-        }
-    }
-
-    $total = $createdCount + $updatedCount + $convertedCount
-    if ($total -eq 0) {
-        Write-Status "No changes detected. Nothing to refresh."
+    $modsDir = Join-Path $RepoRoot $Category
+    if (-not (Test-Path $modsDir)) {
+        Write-Status "No '$Category' directory found."
         exit 0
     }
 
-    Write-Status "Created: $createdCount, Updated: $updatedCount, Converted: $convertedCount"
-    Write-Status "Running packwiz refresh..."
+    Write-Status "Scanning category: $Category"
 
-    & $PackwizExe refresh
-    if ($LASTEXITCODE -ne 0) {
-        throw "packwiz refresh exited with code $LASTEXITCODE."
+    $sourceFiles = Get-AssetFiles -Directory $modsDir
+    $pwTomls = @(Get-ChildItem -LiteralPath $modsDir -Filter *.pw.toml -File)
+
+    $pwData = @{}
+    $newFilesByBase = @{}
+    foreach ($sourceName in $sourceFiles.Keys) {
+        $base = Derive-BaseName -Filename $sourceName
+        if (-not $base) { continue }
+        if (-not $newFilesByBase.ContainsKey($base)) {
+            $newFilesByBase[$base] = @()
+        }
+        $newFilesByBase[$base] += $sourceName
     }
 
-    Write-Status "Done. Metadata updated and index refreshed."
+    $updates = @()
+    foreach ($pwToml in $pwTomls) {
+        $data = Parse-PwToml -Path $pwToml.FullName
+        $pwData[$pwToml.FullName] = $data
+
+        if (-not (Get-TomlVal -Data $data -Key 'IsManaged')) { continue }
+
+        $currentFilename = Get-TomlVal -Data $data -Key 'Filename'
+        if (-not $currentFilename) { continue }
+        if ($sourceFiles.ContainsKey($currentFilename)) { continue }
+
+        $base = Derive-BaseName -Filename $currentFilename
+        if (-not $base) { continue }
+        if (-not $newFilesByBase.ContainsKey($base)) { continue }
+
+        $newFilename = Get-PreferredFilename -Filenames $newFilesByBase[$base]
+        if (-not $newFilename) { continue }
+
+        $updates += [pscustomobject]@{
+            PwTomlPath = $pwToml.FullName
+            Slug = [IO.Path]::GetFileNameWithoutExtension($pwToml.Name) -replace '\.pw$'
+            OldFilename = $currentFilename
+            NewFilename = $newFilename
+        }
+    }
+
+    if ($updates.Count -eq 0) {
+        Write-Status "No CurseForge metadata changes detected."
+        exit 0
+    }
+
+    $updatedCount = 0
+    foreach ($update in $updates) {
+        $originalContent = Get-Content -LiteralPath $update.PwTomlPath -Raw
+
+        Write-Status "  ~ packwiz update: $($update.Slug)"
+        $exitCode = Invoke-PackwizCommand -Arguments @("update", $update.Slug, "--yes")
+        if ($exitCode -ne 0) {
+            Write-Utf8NoBomFile -Path $update.PwTomlPath -Content $originalContent
+            Write-Warn "  ! packwiz update failed for $($update.Slug)"
+            continue
+        }
+
+        $updatedData = Parse-PwToml -Path $update.PwTomlPath
+        $updatedFilename = Get-TomlVal -Data $updatedData -Key 'Filename'
+        if ($updatedFilename -ne $update.NewFilename) {
+            Write-Utf8NoBomFile -Path $update.PwTomlPath -Content $originalContent
+            Write-Warn "  ! packwiz update for $($update.Slug) resolved to '$updatedFilename', expected '$($update.NewFilename)'"
+            continue
+        }
+
+        Write-Status "  ~ Updated (CurseForge): $($updatedData['Name'])"
+        $updatedCount++
+    }
+
+    if ($updatedCount -eq 0) {
+        Write-Status "No CurseForge metadata changes detected."
+        exit 0
+    }
+
+    Write-Status "Updated: $updatedCount"
+    Write-Status "Running packwiz refresh..."
+
+    $refreshExitCode = Invoke-PackwizCommand -Arguments @("refresh")
+    if ($refreshExitCode -ne 0) {
+        throw "packwiz refresh exited with code $refreshExitCode."
+    }
+
+    Write-Status "Done. Mod pw.toml files refreshed from CurseForge metadata."
 }
 finally {}

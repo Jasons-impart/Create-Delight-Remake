@@ -1,0 +1,8 @@
+name = "Quark Programmer Art"
+filename = "Quark Programmer Art.zip"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/resourcepacks/Quark Programmer Art.zip"
+hash-format = "sha256"
+hash = "41cb720cf256a12ea247b2f38068b363aa5b1675470c4b5aa66850701a78bc4d"

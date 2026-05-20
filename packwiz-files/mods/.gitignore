@@ -1,3 +1,4 @@
 *
 !/.gitignore
-!*.pw.toml
+!*.jar
+!*.zip
