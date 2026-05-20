@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdelight:item/red_velvet_cake_batter_bucket"
+    }
+  }

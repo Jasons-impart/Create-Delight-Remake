@@ -4,6 +4,7 @@ ServerEvents.recipes(e => {
         "kinetic_pixel:endercsloot",
         "kinetic_pixel:tableloot",
         "kinetic_pixel:shellloot",
+        "kinetic_pixel:barrelreuse"
     ])
     remove_recipes_output(e,
         [

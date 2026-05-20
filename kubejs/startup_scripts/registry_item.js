@@ -48,6 +48,32 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:vermicelli")
         .translationKey("item.createdelight.vermicelli")
 
+    // 注册未烤制的派
+    let UnbakedPie = [
+        "chorus_fruit_pie",
+        "apple_pie",
+        "sweet_berry_cheesecake",
+        "chocolate_pie",
+        "rose_hip_pie",
+        "lime_pie",
+        "pinenut_pie",
+        "cherry_cheese_pie",
+        "tarte_lune",
+        "spider_pie",
+        "sculk_tart",
+        "pineapple_pie",
+        "durian_pie",
+        "tectonic_cheesecake",
+        "water_pie",
+        "stargazy_pie",
+        "portobello_quiche",
+        "quiche_lorraine",
+    ]
+    UnbakedPie.forEach(pie => {
+        e.create(`createdelight:unbake_${pie}`)
+            .tag("createdelight:unbake_pie")
+            .translationKey(`item.createdelight.unbake_${pie}`)
+    })
 
     // 注册曲奇面团
     let CookieDough = [
@@ -148,6 +174,9 @@ StartupEvents.registry("item", e => {
                 .effect("minecraft:hunger", 200, 1, 1.0)
                 .effect("minecraft:nausea", 200, 1, 1.0)
         })
+    e.create("createdelight:raw_pie_crust")
+        .translationKey("item.createdelight.raw_pie_crust")
+
     e.create("createdelight:yorkshire_pudding_and_beef")
         .translationKey("item.createdelight.yorkshire_pudding_and_beef")
         .food(food => {
@@ -756,5 +785,10 @@ StartupEvents.registry("item", e => {
         .tooltip("§e可提供不错的保暖和耐热效果")
         .texture("createdelight:item/sturdy_oxygen_tank")
         .unstackable()
+    //注册红丝绒蛋糕相关
+    e.create("createdelight:red_velvet_cake_mold_filled")
+        .translationKey("item.createdelight.red_velvet_cake_mold_filled")
+    e.create("createdelight:red_velvet_cake_mold_baked")
+        .translationKey("item.createdelight.red_velvet_cake_mold_baked")
 })
 
