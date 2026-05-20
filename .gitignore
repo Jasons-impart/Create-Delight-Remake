@@ -25,6 +25,7 @@
 !/variables.nix.txt
 
 # Root directories that manage their own allowlists.
+!/.agents/
 !/.github/
 !/PCL/
 !/config/
@@ -41,3 +42,7 @@
 !/scripts/
 !/shaderpacks/
 !/tacz/
+
+# Agent knowledge base (compatible with OpenCode + Codex)
+!/AGENTS.md
+!/lessons-learned.md
