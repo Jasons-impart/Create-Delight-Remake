@@ -10,7 +10,7 @@ on:
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
   PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
-  PACKWIZ_INSTALLER_URL: https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar
+  PACKWIZ_INSTALLER_BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
   PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/
   HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
@@ -176,7 +176,7 @@ jobs:
         run: |
           ./packwiz curseforge export
           mv *.zip ../lite-release.zip
-          unzip ../lite-release.zip -d ../lite-release
+          unzip -o ../lite-release.zip -d ../lite-release
           ls ..
       - name: Workaround actions/upload-artifact#176
         run: |
@@ -255,12 +255,12 @@ jobs:
             if curl -s -o /dev/null "http://127.0.0.1:$PORT/pack.toml"; then break; fi
             sleep 0.2
           done
-          # 5. 下载并运行 packwiz-installer
-          curl -o packwiz-installer.jar -L $PACKWIZ_INSTALLER_URL
-          java -jar packwiz-installer.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
+          # 5. 下载并运行 packwiz-installer-bootstrap（bootstrap会自动下载installer）
+          curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
+          java -jar packwiz-installer-bootstrap.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
           # 6. 清理
           kill $SERVER_PID 2>/dev/null || true
-          rm -rf "$PACK_DIR" packwiz-installer.jar
+          rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
       - name: 删除客户端only模组
         run: |
             mapfile -t prefixes < .clientonlymodlist
@@ -578,10 +578,10 @@ jobs:
             if curl -s -o /dev/null "http://127.0.0.1:$PORT/pack.toml"; then break; fi
             sleep 0.2
           done
-          curl -o packwiz-installer.jar -L $PACKWIZ_INSTALLER_URL
-          java -jar packwiz-installer.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
+          curl -o packwiz-installer-bootstrap.jar -L $PACKWIZ_INSTALLER_BOOTSTRAP_URL
+          java -jar packwiz-installer-bootstrap.jar --bootstrap-no-update -g "http://127.0.0.1:$PORT/pack.toml"
           kill $SERVER_PID 2>/dev/null || true
-          rm -rf "$PACK_DIR" packwiz-installer.jar
+          rm -rf "$PACK_DIR" packwiz-installer-bootstrap.jar
           # detect 生成 manifest.json（给客户端补丁用，CF mod 以引用形式记录）
           ./packwiz curseforge detect
           ./packwiz refresh
