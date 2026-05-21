@@ -19,6 +19,8 @@
   请授权我清理本次搭建残留目录，并允许联网下载/克隆 Create-Delight-Remake 来搭建环境。
   ```
 - 未获得授权前，不执行 `git clone`、目录清理、联网下载或资源同步。
+- 如果 `git clone`、联网下载或写入工作区因沙箱、代理、权限失败，立即请求用户批准提升权限后重试；不要改用未授权的绕过方式。
+- 如果目标目录已有失败残留，先让用户授权清理该目录，或让用户指定新的空目录。
 - 先克隆仓库：
   ```powershell
   git clone --depth 1 https://github.com/Jasons-impart/Create-Delight-Remake.git
@@ -30,7 +32,8 @@
   java -version
   python --version
   ```
-- 如果 Java 17 不在 PATH，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径；脚本也会优先读取 `JAVA_HOME`。
+- 如果 `java -version` 不是 Java 17，但 `JAVA_HOME` 指向 Java 17，可继续；同步脚本会优先读取 `JAVA_HOME`。
+- 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 下载HMCL启动器：
   ```powershell
   Invoke-WebRequest -Uri "https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar" -OutFile ".\HMCL.jar"
