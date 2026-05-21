@@ -198,7 +198,11 @@ try {
 
     Remove-Item $ServeLog, $ServeErrLog -Force -ErrorAction SilentlyContinue
     $pythonExe = Resolve-PythonCommand
-    $pythonArgs = @($StaticServerScript, $port.ToString(), $PackRoot)
+    $pythonArgs = @(
+        ('"{0}"' -f $StaticServerScript),
+        $port.ToString(),
+        ('"{0}"' -f $PackRoot)
+    )
     Write-Status ("Starting local static server on port {0}..." -f $port)
     $ServeProcess = Start-Process -FilePath $pythonExe -ArgumentList $pythonArgs -WorkingDirectory $PackRoot -WindowStyle Hidden -RedirectStandardOutput $ServeLog -RedirectStandardError $ServeErrLog -PassThru
 
