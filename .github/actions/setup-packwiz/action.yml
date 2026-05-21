@@ -1,0 +1,11 @@
+name: 'Setup Packwiz'
+description: 'Download and install Packwiz from GitHub releases'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Packwiz
+      shell: bash
+      run: |
+        curl -o packwiz -L ${{ env.PACKWIZ_DOWNLOAD_URL }}
+        chmod +x ./packwiz

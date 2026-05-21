@@ -1,0 +1,50 @@
+name: 'Update Modpack Config'
+description: 'Update BCC config, client properties, feedback config, and version file with modpack version info'
+
+inputs:
+  modpack_name:
+    description: 'Modpack name (e.g. Create-Delight-Remake)'
+    required: true
+  modpack_version:
+    description: 'Modpack version string (e.g. v0.4.8.8)'
+    required: true
+  mode:
+    description: 'Config update mode: client, server, or patch'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Update BCC compatibility config
+      shell: bash
+      run: |
+        sed -i "s/modpackName =.*/modpackName=\"${{ inputs.modpack_name }}\"/" config/bcc-common.toml
+        sed -i "s/modpackVersion =.*/modpackVersion=\"${{ inputs.modpack_version }}\"/" config/bcc-common.toml
+        grep 'modpack' config/bcc-common.toml
+
+    - name: Update client display config
+      if: inputs.mode == 'client' || inputs.mode == 'patch'
+      shell: bash
+      run: |
+        if [ "${{ inputs.mode }}" = "patch" ]; then
+          sed -i "s/^title=\(.*\)/title=\1 | 版本${{ inputs.modpack_version }} (patch)/" kubejs/config/client.properties
+        else
+          sed -i "s/^title=\(.*\)/title=\1 | 版本${{ inputs.modpack_version }}/" kubejs/config/client.properties
+        fi
+        jq --arg v "${{ inputs.modpack_version }}" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
+        mv default.json.tmp config/GeneralFeedback/default.json
+        grep 'title' kubejs/config/client.properties
+        grep 'placeholder' config/GeneralFeedback/default.json
+
+    - name: Write fancymenu version file
+      if: inputs.mode == 'client'
+      shell: bash
+      run: |
+        set -euo pipefail
+        cat << EOF > "${{ env.VERSION_FILE_PATH }}"
+        |||
+        ${{ inputs.modpack_name }} ${{ inputs.modpack_version }}
+        MIT License Copyright (c) 2025 JSI Production Team
+        |||
+        EOF
+        cat "${{ env.VERSION_FILE_PATH }}"
