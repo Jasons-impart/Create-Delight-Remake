@@ -26,6 +26,7 @@
 
 # Root directories that manage their own allowlists.
 !/.agents/
+!/.codex/
 !/.github/
 !/PCL/
 !/config/

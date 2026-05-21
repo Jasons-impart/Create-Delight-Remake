@@ -21,6 +21,8 @@ CD-master-dev/
 ├── mods/             # Packwiz metadata (*.pw.toml), NOT mod JARs
 ├── packwiz-files/    # Manually-managed mod JARs (CF-restricted, custom)
 ├── scripts/          # Utility scripts (sync, update-packwiz-meta)
+├── .codex/           # Codex project hooks
+├── docs/             # Project documentation and analysis notes
 ├── .github/          # CI/CD workflows
 └── pack.toml         # Pack metadata (ONLY version source)
 ```
@@ -38,6 +40,8 @@ CD-master-dev/
 | FTB Quests | `config/ftbquests/quests/` | .snbt format |
 | Java mod dev | `CDC-mod-src/src/main/java/` | Forge mod project |
 | Version info | `pack.toml` | ONLY source - don't duplicate |
+| Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
+| Historical pitfalls | `lessons-learned.md` | Do not duplicate in AGENTS |
 
 ## GLOSSARY
 
@@ -49,7 +53,7 @@ CD-master-dev/
 | **分液池** | `create:item_drain` (ItemDrainBlockEntity) |
 | **AE2** | Applied Energistics 2 |
 | **BCC** | Better Compatibility Checker |
-| **OEI** | One Enough Item (config: `kubejs/data/oei/replacements/`) |
+| **OEI** | One Enough Item |
 | **DH** | Distant Horizons |
 
 ## CONVENTIONS
@@ -79,6 +83,7 @@ CD-master-dev/
 - ❌ Overwrite `index.toml`, `ModList*.md`
 - ❌ `e.remove()` or `e.removeById()` - use `remove_recipes_id(e, [...])`
 - ❌ Duplicate version in other files
+- ❌ Treat runtime dirs (`logs/`, `crash-reports/`, `saves/`, `screenshots/`, `simplebackups/`, `tmp-*`) as source
 
 ## COMMANDS
 
@@ -103,8 +108,6 @@ cd CDC-mod-src && ./gradlew build --no-daemon
 # Output: build/libs/CDC-mod-src-*.jar (use non-all version)
 ```
 
-**发布流程**: Use `/release` skill for version bump, tag, and GitHub release workflow.
-
 ## KNOWLEDGE BASE MAINTENANCE
 
 These rules ensure this knowledge base stays effective. Violating them degrades agent performance.
@@ -118,12 +121,12 @@ These rules ensure this knowledge base stays effective. Violating them degrades 
 - **Iterate, don't upfront** — Add rules only when agent makes a repeated mistake. Remove rules agent always follows correctly
 - **Lessons go to `lessons-learned.md`** — Never inline long historical entries in AGENTS.md
 - **After fixing a non-obvious bug** — Add entry to `lessons-learned.md` (use `/knowledge-check` skill for guidance)
+- **Validation** — Codex `Stop` hook runs `scripts/validate-knowledge-base.ps1` to catch line-limit and stale-path failures
 
 ## NOTES
 
 - **AGENTS.md 是本地开发知识库，已加入 .gitignore，不需要推送到远程仓库**
 - **`.agents/skills/` 存放技能文件，OpenCode 和 Codex 都能自动发现**
-- `pack.toml` is the ONLY version source - CI auto-updates other configs
 - Client-only mods → add to `.clientonlymodlist` (server startup required)
 - Server-only mods → add to `.serveronlymodlist`
 - Language files validated by `.vscode/probe.lang-schema.json`
