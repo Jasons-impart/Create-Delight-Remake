@@ -12,7 +12,7 @@ env:
   PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
   PACKWIZ_INSTALLER_BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
   PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/
-  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
+  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/v3.7.3/HMCL-3.7.3.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
   VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
