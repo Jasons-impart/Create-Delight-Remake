@@ -120,3 +120,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 ### 规则
 
 > **CI 中获取 mod JAR 必须用 `packwiz-installer`，不能依赖 `detect` 或 `export`。Release 产物中不得包含 `packwiz-files/` 目录，所有 JAR/资源包/光影必须在标准目录（`mods/`、`resourcepacks/`、`shaderpacks/`）中。**
+
+## Packwiz-files 发布前需净化 CurseForge metadata
+
+**日期**: 2026-05-21
+
+- **Problem**: `packwiz-files` 可兜底第三方下载受限文件，但 CurseForge 上已有的文件若以 direct URL/override 发布会被判定为应使用 manifest 引用。
+- **Fix/Lesson**: 客户端 CurseForge 包和补丁包发布前先用本地 `packwiz-files` payload 跑 `packwiz curseforge detect`，能识别为 CF metadata 的文件只进入 manifest，无法识别的自定义/非 CF 文件才作为实际 payload 保留。

@@ -103,24 +103,17 @@ jobs:
           python .github/workflows/scripts/update_credits.py --mode real --download-images
       - name: 更新文件索引并生成带mod本体的包
         run: |
-          ./packwiz refresh
-          ./packwiz curseforge export
           mkdir ../click_to_run_release
-          mv *.zip ../click_to_run_release/modpack.zip
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../click_to_run_release/modpack.zip 8082
       - name: 下载HMCL启动器与jdk环境
         run: |
           curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
           curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
           mv HMCL.jar ../click_to_run_release
           mv jdk17.msi ../click_to_run_release
-      - name: 检测mods meta并更新索引
-        run: |
-          ./packwiz curseforge detect
-          ./packwiz refresh
       - name: 生成不带mod本体的包
         run: |
-          ./packwiz curseforge export
-          mv *.zip ../lite-release.zip
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
           unzip -o ../lite-release.zip -d ../lite-release
           ls ..
       - name: Workaround actions/upload-artifact#176
@@ -310,6 +303,12 @@ jobs:
         run: |
           cp .github/workflows/scripts/deploy-patch.sh deploy-patch.sh
           cp .github/workflows/scripts/deploy-patch.bat deploy-patch.bat
+      - name: 净化补丁用 CurseForge 元数据
+        run: |
+          bash .github/workflows/scripts/download_mods.sh 8081
+          ./packwiz -y curseforge detect
+          ./packwiz refresh
+          bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
@@ -319,28 +318,13 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
-      - name: 下载所有mod本体（packwiz-installer）& 生成manifest
-        run: |
-          bash .github/workflows/scripts/download_mods.sh 8081
-          ./packwiz curseforge detect
-          ./packwiz refresh
       - name: 下载manifest.json
         uses: actions/download-artifact@v4
         with:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
         run: |
-          rm -rf patch/mods
-          mv mods patch
-          rm -rf patch/mods/*.pw.toml
-          if [ -d "resourcepacks" ]; then
-            mkdir -p patch/resourcepacks
-            mv resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
-          fi
-          if [ -d "shaderpacks" ]; then
-            mkdir -p patch/shaderpacks
-            mv shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
-          fi
+          bash .github/workflows/scripts/copy_non_curseforge_payloads.sh patch
           rm -rf patch/packwiz-files
           mv manifest.json patch
       - name: 上传客户端补丁
