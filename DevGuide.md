@@ -48,11 +48,12 @@
 - 告诉用户新建或选择一个实例，实例名可自定。
 - 告诉用户安装 Minecraft `1.20.1` 和 Forge `47.4.10`。
 - 告诉用户开启版本隔离，并确认实例目录位于 `.minecraft/versions/{实例名}/`。
-- 告诉用户将当前 repo 连同 `.git/` 放到该实例目录，或确认当前 repo 已经在该实例目录中。
 - 告诉用户完成后回复实例名和实例目录。
+- 收到实例目录后，agent 将当前 repo 连同 `.git/` 移动到该实例目录；如果当前 repo 已经在该实例目录中，则直接确认。
 
 ## Agent 收尾检查
 - 根据用户提供的实例名和实例目录，确认 `{实例名}.json`、`{实例名}.jar`、`pack.toml`、`kubejs/`、`config/`、`mods/` 存在。
+- 如果当前 repo 不在实例目录，移动前先确认目标目录是 `.minecraft/versions/{实例名}/`，再移动整个 repo 目录并保留 `.git/`。
 - 在实例目录执行：
   ```powershell
   if (-not (Test-Path .\hmclversion.cfg)) { Copy-Item .\.hmclversion.cfg .\hmclversion.cfg }
