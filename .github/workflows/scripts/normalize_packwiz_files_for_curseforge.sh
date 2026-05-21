@@ -85,7 +85,9 @@ copy_packwiz_file_mods_for_detection
 
 if [ -s "$copied_list" ]; then
   echo "Detecting CurseForge metadata for packwiz-files-backed mods..."
-  ./packwiz -y curseforge detect
+  if ! ./packwiz -y curseforge detect; then
+    echo "::warning::CurseForge detection failed or found no usable matches; leaving unmatched packwiz-files entries as direct payloads."
+  fi
   remove_shadowed_direct_metadata
 else
   echo "No packwiz-files-backed mod JARs found for CurseForge detection."
