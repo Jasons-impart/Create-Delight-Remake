@@ -48,7 +48,7 @@
 - 告诉用户新建或选择一个实例，实例名可自定。
 - 告诉用户安装 Minecraft `1.20.1` 和 Forge `47.4.10`。
 - 告诉用户开启版本隔离，并确认实例目录位于 `.minecraft/versions/{实例名}/`。
-- 告诉用户将当前 repo 放到该实例目录，或确认当前 repo 已经在该实例目录中。
+- 告诉用户将当前 repo 连同 `.git/` 放到该实例目录，或确认当前 repo 已经在该实例目录中。
 - 告诉用户完成后回复实例名和实例目录。
 
 ## Agent 收尾检查
@@ -75,11 +75,13 @@
 - 用户在 HMCL 中新建实例，实例名可自定。
 - 用户安装 Minecraft `1.20.1` 和 Forge `47.4.10`。
 - 用户开启版本隔离，使实例目录位于 `.minecraft/versions/{实例名}/`。
-- Agent 或用户将本 repo 放入 `.minecraft/versions/{实例名}/`，目录形态应为：
+- Agent 或用户将本 repo 目录整体移动到 `.minecraft/versions/{实例名}/`，保留 `.git/`，不要只复制工作区文件。
+- 实例目录本身必须成为 Git 仓库根目录，目录形态应为：
   ```text
   .minecraft/
   └── versions/
       └── {实例名}/
+          ├── .git/
           ├── {实例名}.json
           ├── {实例名}.jar
           ├── hmclversion.cfg
@@ -92,6 +94,7 @@
           ├── shaderpacks/
           └── pack.toml
   ```
+- 如果 agent 需要搬迁仓库，必须移动整个仓库目录或复制包含 `.git/` 的完整目录；不要排除 `.git/`、不要把仓库内容复制到另一个非仓库实例目录。
 - 如果缺少 `{实例名}.json` 或 `{实例名}.jar`，用户回到 HMCL 为该实例重新安装 Minecraft `1.20.1` + Forge `47.4.10`。
 - Agent 执行“Agent 收尾检查”。
 - 用户在 HMCL 中选择该实例启动。
