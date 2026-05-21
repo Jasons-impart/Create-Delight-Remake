@@ -314,7 +314,6 @@
 				"5AF371516B6F9605"
 				"1B63ED5F68D71F24"
 			]
-			hide_until_deps_complete: true
 			id: "390B290FDE3760CB"
 			tasks: [{
 				id: "7941D85240ED3724"
@@ -329,7 +328,6 @@
 				"390B290FDE3760CB"
 				"762CD49FCDC889E2"
 			]
-			hide_until_deps_complete: true
 			id: "678722D7C6137C3A"
 			tasks: [{
 				id: "5FAB7A5A3EA5BDF4"
@@ -345,7 +343,6 @@
 				"78396753AA774D5F"
 				"26DADC947426CD52"
 			]
-			hide_until_deps_complete: true
 			id: "22AE46F2DB5C872F"
 			tasks: [{
 				id: "769B9EE81969BE88"
@@ -371,7 +368,6 @@
 				"7E99FE558038EE94"
 				"762CD49FCDC889E2"
 			]
-			hide_until_deps_complete: true
 			id: "7397600556B17895"
 			tasks: [{
 				id: "11310A533C6A6D10"

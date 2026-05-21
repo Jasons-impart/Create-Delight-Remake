@@ -1542,7 +1542,7 @@ hash = "c2abcfb9337904ec7b66b414ea33cf5d9ff291cbd0575ce3a1c2afa0e4ca1b51"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Mineral_Regeneration.snbt"
-hash = "6976d4bdded897d138565c57b5a01598ad1449c1eea9e3b46f7417d6286b1866"
+hash = "2bb5a3342f2a97257e5a7277ad782d40325192de610586ff4f662eaf7ac92ed1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Mouse_Chef.snbt"
@@ -2094,7 +2094,7 @@ hash = "2b9ec058994b0166a3283b7a8aec9dbfd1b40d7c14ad6537a1080293bf1fcc50"
 
 [[files]]
 file = "config/jei/world/local/______6/lookupHistory.ini"
-hash = "27accbd0a17132a510d4e91c1517d22a07b047a813028d4b1cc291043ee7dd80"
+hash = "54f66c3ab9183120b6cb1e01ca9d68100f0177c071a6d866ab462f0a144006c2"
 
 [[files]]
 file = "config/jei/world/local/bookmarks.ini"
@@ -2326,7 +2326,7 @@ hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
 
 [[files]]
 file = "config/oculus.properties"
-hash = "5848bc19fafc6ac2eae5c06365e69b8ee05bac76564d083769d704bc6ef858aa"
+hash = "155b5d5f5d981d600dbabfa42769ab498ad2797bbb18236bfb1f7d877a48af59"
 
 [[files]]
 file = "config/oei/common.json"
@@ -2350,7 +2350,7 @@ hash = "e019488eb143812fe4d2872c8ae955fda154974d727ab74c4d84deec780a5aa3"
 
 [[files]]
 file = "config/packetfixer.properties"
-hash = "511e56f342f1d32637be356ddfc6a08d7c804ed4aef410c18a0cd9153e7f2286"
+hash = "08f673fa98fd290c566111144eafe58f333f2428a8d5593ac602e4e40efc179a"
 
 [[files]]
 file = "config/patchouli-client.toml"
@@ -20474,7 +20474,7 @@ hash = "e6ef991923b0f607429a8fc2d499212ce3a728013799e3f241caf05bdfad4287"
 
 [[files]]
 file = "kubejs/server_scripts/Bakeries/recipe.js"
-hash = "9fc2ffd4ed08a2e4e4b3aa6b1374c7677047deee8ac6699aff389bd55fad3412"
+hash = "c662b1dbf111af6562dbfabcf6b6f61f33b4d36e260ade6ba0900f11793fd6b6"
 
 [[files]]
 file = "kubejs/server_scripts/Bakeries/tags.js"
@@ -22942,7 +22942,7 @@ metafile = true
 
 [[files]]
 file = "mods/corn-delight.pw.toml"
-hash = "c819d16483e4d029feee1b799a75cbea606ef759c6dfd67e91b5b2ed45907d29"
+hash = "75c1d24a1a26c90aef582b5ce35e25350e9bddb045e4e04fb35125b42d87b1df"
 metafile = true
 
 [[files]]
@@ -24433,6 +24433,15 @@ metafile = true
 [[files]]
 file = "mods/moonlight-1.20-2.16.27-forge.jar"
 hash = "5c6006a66542706e0dcf841cf411154e963a377ec5d2af4879007e1a3b4ff5c5"
+
+[[files]]
+file = "mods/more-mod-tetra.pw.toml"
+hash = "e0b8d520c7af0cc22310491bdebab91a7075af0927af520c46e3fb64493308db"
+metafile = true
+
+[[files]]
+file = "mods/more_mod_tetra-2.3.01-all.jar"
+hash = "ff1fa8b7cf007079257b07ebe1ad36230994d9660d34978807bf9ed0dfac55c8"
 
 [[files]]
 file = "mods/morejs-forge-1.20.1-0.10.1.jar"
