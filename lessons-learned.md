@@ -127,3 +127,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `packwiz-files` 可兜底第三方下载受限文件，但 CurseForge 上已有的文件若以 direct URL/override 发布会被判定为应使用 manifest 引用。
 - **Fix/Lesson**: 客户端 CurseForge 包和补丁包发布前先用本地 `packwiz-files` payload 跑 `packwiz curseforge detect`，能识别为 CF metadata 的文件只进入 manifest，无法识别的自定义/非 CF 文件才作为实际 payload 保留。
+
+## PowerShell helper 函数不要使用 `$Args` 作为参数名
+
+**日期**: 2026-05-21
+
+- **Problem**: `write-knowledge-candidate-report.ps1` 使用 `[string[]]$Args` 作为 helper 参数名后，调用 `Invoke-Git -Args ...` 时 git 文件发现结果为空，候选报告误判为无改动。
+- **Fix/Lesson**: helper 参数改名为 `$GitArgs` 并用 `-GitArgs` 调用；项目脚本避免把 PowerShell 自动变量名当作自定义参数名。
