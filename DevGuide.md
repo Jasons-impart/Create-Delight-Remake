@@ -33,7 +33,7 @@
 - 如果 `java -version` 和 `JAVA_HOME` 都不是 Java 17，修改 `variables.txt` 的 `JAVA=` 为本机 Java 17 的完整路径。
 - 下载HMCL启动器：
   ```powershell
-  Invoke-WebRequest -Uri "https://github.com/HMCL-dev/HMCL/releases/download/v3.7.3/HMCL-3.7.3.jar" -OutFile ".\HMCL.jar"
+  Invoke-WebRequest -Uri "https://github.com/HMCL-dev/HMCL/releases/download/v3.13.2/HMCL-3.13.2.jar" -OutFile ".\HMCL.jar"
   ```
 - 同步本地开发所需的 mod / 资源包 / 光影包：
   ```powershell
