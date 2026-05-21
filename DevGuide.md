@@ -17,11 +17,12 @@
 - 不要在 Codex 自动审批模式下执行本流程；使用会弹出权限请求、允许用户批准联网和文件写入的模式。
 - 如果 `git clone`、联网下载或写入工作区因沙箱、代理、权限失败，切换到可手动审批权限请求的模式后重试。
 - 如果目标目录已有失败残留，先让用户授权清理该目录，或让用户指定新的空目录。
-- 先克隆仓库：
+- 先浅拷贝仓库；必须使用 `--depth 1`，不要普通 `git clone`：
   ```powershell
   git clone --depth 1 https://github.com/Jasons-impart/Create-Delight-Remake.git
   cd Create-Delight-Remake
   ```
+- 如果已经普通克隆完成，不要删除重来，继续后续步骤。
 - 在仓库根目录执行依赖检查：
   ```powershell
   git --version
