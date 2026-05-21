@@ -122,6 +122,9 @@ These rules ensure this knowledge base stays effective. Violating them degrades 
 - **Lessons go to `lessons-learned.md`** — Never inline long historical entries in AGENTS.md
 - **After fixing a non-obvious bug** — Add entry to `lessons-learned.md` (use `/knowledge-check` skill for guidance)
 - **Validation** — Codex `Stop` hook runs `scripts/validate-knowledge-base.ps1` to catch line-limit and stale-path failures
+- **Candidate report** — Codex `Stop` hook writes `tmp-opencode/knowledge-candidate-report.md`; it is advisory only and never edits knowledge files
+- **Process notes** — When a task hits a non-obvious failure or workaround, append a temporary note with `scripts/add-knowledge-note.ps1`; the candidate report routes it for `/knowledge-check`
+- **Candidate decision** — Apply/reject candidate reports with `scripts/resolve-knowledge-candidate.ps1`; process-note candidates need user acceptance unless knowledge maintenance was explicitly requested
 
 ## NOTES
 

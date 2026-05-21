@@ -1,9 +1,13 @@
 param(
-    [string]$Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path,
+    [string]$Root = "",
     [switch]$StrictWarnings
 )
 
 $ErrorActionPreference = "Stop"
+
+if ([string]::IsNullOrWhiteSpace($Root)) {
+    $Root = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
+}
 
 $failures = New-Object System.Collections.Generic.List[string]
 $warnings = New-Object System.Collections.Generic.List[string]

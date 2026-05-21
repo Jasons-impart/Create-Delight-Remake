@@ -25,6 +25,8 @@ Do NOT invoke for:
 
 Ask: "Did I learn anything new about THIS PROJECT that future sessions would benefit from?"
 
+If `tmp-opencode/knowledge-candidate-report.md` exists, read it before deciding; process notes require user acceptance unless the current task explicitly asked to maintain the knowledge base.
+
 Categories of worth-recording knowledge:
 - **Bug/pitfall discovered** → `lessons-learned.md`
 - **New convention or pattern** → Relevant `AGENTS.md` (root, `kubejs/`, or `CDC-mod-src/`)
@@ -62,6 +64,8 @@ Categories of worth-recording knowledge:
 - ❌ Git operations
 
 ### Step 4: Output Summary
+
+If applying or rejecting a candidate report, run `scripts/resolve-knowledge-candidate.ps1 -Status applied|rejected` after the decision so temporary process notes do not repeat.
 
 Output this block at the end:
 
