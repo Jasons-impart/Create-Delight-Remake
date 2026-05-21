@@ -123,21 +123,23 @@ jobs:
           mv *.zip ../lite-release.zip
           unzip -o ../lite-release.zip -d ../lite-release
           ls ..
+      - name: Workaround actions/upload-artifact#176
+        run: echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
           name: "[Client][ClickToUse]-${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
-          path: ../click_to_run_release/
+          path: ${{ env.artifacts_path }}/click_to_run_release/
       - name: 上传不带mod包
         uses: actions/upload-artifact@v4
         with:
           name: "[Client]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}"
-          path: ../lite-release/
+          path: ${{ env.artifacts_path }}/lite-release/
       - name: 上传manifest.json用于客户端补丁
         uses: actions/upload-artifact@v4
         with:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
-          path: ../lite-release/manifest.json
+          path: ${{ env.artifacts_path }}/lite-release/manifest.json
 
   # 服务端相关任务（并行执行）
   server-tasks:
