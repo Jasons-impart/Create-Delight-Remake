@@ -14,6 +14,11 @@
 - 能访问 CurseForge、GitHub raw 和对应 CDN；如果网络失败，先配置代理后重试。
 
 ## Agent 执行步骤
+- 开始前先要求用户明确授权：
+  ```text
+  请授权我清理本次搭建残留目录，并允许联网下载/克隆 Create-Delight-Remake 来搭建环境。
+  ```
+- 未获得授权前，不执行 `git clone`、目录清理、联网下载或资源同步。
 - 先克隆仓库：
   ```powershell
   git clone --depth 1 https://github.com/Jasons-impart/Create-Delight-Remake.git
