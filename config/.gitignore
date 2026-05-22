@@ -21,6 +21,9 @@
 !/alexsmobs.toml
 !/alexscaves_biome_generation
 !/dynamiccrosshair.json5
+!/euphoria_patcher
+/euphoria_patcher/*
+!/euphoria_patcher/settings.toml
 !/c2me.toml
 !/carryon-common.toml
 !/collectorsreap-common.toml
