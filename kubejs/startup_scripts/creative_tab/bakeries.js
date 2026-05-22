@@ -69,9 +69,11 @@ StartupEvents.modifyCreativeTab("bakeries:bakery_semi_manufactured_product_tab",
     "bakeries:mould_red_velvet_cake_paste"
   ])
 })
-StartupEvents.modifyCreativeTab("bakeries:bakeries_tab", e => {
+StartupEvents.modifyCreativeTab("bakeries:bakery_compat_tab", e => {
   e.remove([
-    'bakeries:garlic_flavored_baguette',
-    'bakeries:orange_american'
+    'bakeries:yuntui_mooncake',
+    'bakeries:raw_yuntui_mooncake',
+    'bakeries:tray_yuntui_mooncake',
+    Item.of('bakeries:orange_american', '{Damage:0}')
   ])
 })

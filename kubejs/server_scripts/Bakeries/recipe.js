@@ -72,7 +72,10 @@ ServerEvents.recipes(e => {
         "bakeries:integration/create/mixing/butter_flour_sand",
         "bakeries:integration/create/mixing/honey_butter",
         "bakeries:pineapple_oil",
-        "bakeries:dough_crafting_table/scone_dough"
+        "bakeries:dough_crafting_table/scone_dough",
+        "bakeries:tray_yuntui_mooncake",
+        "bakeries:compat/raw_yuntui_mooncake",
+        "bakeries:yuntui_mooncake",
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -721,7 +724,6 @@ ServerEvents.recipes(e => {
         .transitionalItem("bakeries:mould_two")
         .id("createdelight:sequence_assembly/mould_basque_cake_paste")
     baking(e, "bakeries:mould_basque_cake_paste", "bakeries:mould_basque_cake", 1, "food", 100)
-    baking(e, "bakeries:raw_yuntui_mooncake", "bakeries:yuntui_mooncake", 1, "food", 100)
     baking(e, "bakeries:rice_bread_dough", "bakeries:rice_bread", 1, "food", 100)
     vintageimprovements.curving(
         [
