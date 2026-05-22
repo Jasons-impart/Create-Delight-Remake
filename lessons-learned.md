@@ -134,3 +134,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `write-knowledge-candidate-report.ps1` 使用 `[string[]]$Args` 作为 helper 参数名后，调用 `Invoke-Git -Args ...` 时 git 文件发现结果为空，候选报告误判为无改动。
 - **Fix/Lesson**: helper 参数改名为 `$GitArgs` 并用 `-GitArgs` 调用；项目脚本避免把 PowerShell 自动变量名当作自定义参数名。
+
+## PR 前不要在原始运行目录直接全量 `packwiz refresh`
+
+**日期**: 2026-05-23
+
+- **Problem**: 在原始游戏运行目录为普通 `config/` 或 `kubejs/assets/` 改动直接执行 `packwiz refresh`，会重算大量无关 `index.toml` 条目并让 PR 带入数千行噪音。
+- **Fix/Lesson**: PR 前只对 mod JAR / `.pw.toml` / `packwiz-files` 变更运行 `scripts/update-packwiz-meta.ps1`；非 mod 元数据改动不要用全量 `packwiz refresh` 制造无关索引差异。
