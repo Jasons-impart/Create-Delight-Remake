@@ -3,7 +3,7 @@
 #Note: All debug messages will still be sent debug.log regardless of settings.
 #Range: 0 -> 3
 #Default: 0
-debugLevel=0
+debugLevel=1
 #Crafting Settings
 #/reload required for any changes made to take effect.
 [crafting]
