@@ -1831,7 +1831,10 @@
 			y: 5.25d
 		}
 		{
-			dependencies: ["64BDB4FEDC5142AF"]
+			dependencies: [
+				"64BDB4FEDC5142AF"
+				"0997F69434CC0BEE"
+			]
 			description: [
 				"使用蓝图桌打开 &l&ebread_maker.nbt&r&r"
 				"&b顶端抽屉&r放入&a小麦&r"
@@ -1880,7 +1883,6 @@
 		{
 			dependencies: ["262E66AD49F385AC"]
 			dependency_requirement: "one_completed"
-			hide_until_deps_complete: true
 			id: "64BDB4FEDC5142AF"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{
@@ -1889,6 +1891,17 @@
 				type: "item"
 			}]
 			x: 17.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5C40F5E0F477394B"]
+			id: "0997F69434CC0BEE"
+			tasks: [{
+				id: "682EC268C53AD361"
+				item: "ratatouille:thresher"
+				type: "item"
+			}]
+			x: 15.5d
 			y: 6.0d
 		}
 	]
