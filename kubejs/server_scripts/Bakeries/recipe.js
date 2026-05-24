@@ -679,16 +679,24 @@ ServerEvents.recipes(e => {
     ]).id("createdelight:filling/bagel_filled_sauce")
     create.pressing("bakeries:flat_croissant", "bakeries:croissant")
         .id("createdelight:pressing/flat_croissant")
+    kubejs.shapeless(
+        "bakeries:dirty_choco_croissant",
+        [
+            "bakeries:croissant",
+            "#forge:cream",
+            "ratatouille:cocoa_powder"
+        ]
+    ).id("createdelight:shapeless/dirty_choco_croissant_manual_only")
     create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
         create.deploying("bakeries:croissant", ["bakeries:croissant", "#forge:cream"]),
-        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "ratatouille:cocoa_powder"])
     ])
         .loops(1)
         .transitionalItem("bakeries:croissant")
         .id("createdelight:sequence_assembly/dirty_choco_croissant")
     create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
         create.filling("bakeries:croissant", ["bakeries:croissant", Fluid.of("cosmopolitan:cream", 250)]),
-        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "ratatouille:cocoa_powder"])
     ])
         .loops(1)
         .transitionalItem("bakeries:croissant")
