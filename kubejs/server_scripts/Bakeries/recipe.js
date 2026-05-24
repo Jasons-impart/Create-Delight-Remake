@@ -76,6 +76,7 @@ ServerEvents.recipes(e => {
         "bakeries:tray_yuntui_mooncake",
         "bakeries:compat/raw_yuntui_mooncake",
         "bakeries:yuntui_mooncake",
+        "bakeries:dough_crafting_table/pizza_flatbread"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -563,6 +564,19 @@ ServerEvents.recipes(e => {
         },
         "result": "bakeries:scone_dough"
     }).id("createdelight:dough_crafting_table/scone_dough")
+    e.custom({
+        "type": "bakeries:dough_crafting_table",
+        "count": 1,
+        "ingredient":
+        {
+            "item": "ratatouille:salty_dough"
+        },
+        "result": "bakeries:pizza_flatbread"
+    }).id("createdelight:dough_crafting_table/pizza_flatbread")
+    create.pressing(
+        '2x bakeries:pizza_flatbread',
+        'ratatouille:salty_dough',
+    ).id("createdelight:pressing/pizza_flatbread")
     {
         let iner = "bakeries:mould"
         create.sequenced_assembly("bakeries:mould_pound_cake_paste", "bakeries:mould", [
