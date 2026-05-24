@@ -6,6 +6,7 @@ StartupEvents.modifyCreativeTab("brewinandchewin:brewinandchewin", e => {
     'brewinandchewin:quiche_slice',
     'brewinandchewin:sweet_berry_jam',
     'brewinandchewin:glow_berry_marmalade',
-    'brewinandchewin:apple_jelly'
+    'brewinandchewin:apple_jelly',
+    'brewinandchewin:pizza',
   ])
 })

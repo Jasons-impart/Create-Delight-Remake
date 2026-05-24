@@ -1,6 +1,17 @@
 ServerEvents.tags("minecraft:block", e => {
     e.add("minecraft:dirt", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
     e.add("minecraft:mushroom_grow_block", ['createdelightcore:luna_soil', 'createdelightcore:phantom_compost'])
+    e.add("createdelightcore:phantom_compost_activators",[
+        'createdelightcore:luna_soil',
+        'createdelightcore:luna_soil_farmland',
+        'createdelightcore:phantom_compost',
+        'createdelightcore:fire_lily_cluster',
+        'iceandfire:fire_lily',
+        'createdelightcore:frost_lily_cluster',
+        'iceandfire:frost_lily',
+        'createdelightcore:lightning_lily_cluster',
+        'iceandfire:lightning_lily',
+    ])
 })
 
 ServerEvents.tags("minecraft:item", e => {
