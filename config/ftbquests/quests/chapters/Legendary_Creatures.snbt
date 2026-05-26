@@ -149,7 +149,13 @@
 		}
 		{
 			dependencies: ["2AE0738C43D5A42B"]
-			icon: "ad_astra:glacio_globe"
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "northstar:textures/environment/mars_far_sky.png"
+				}
+			}
 			id: "1BEE7AD2537F2428"
 			size: 1.5d
 			tasks: [{
@@ -157,7 +163,7 @@
 				id: "5F61EA66AEFBD9B5"
 				type: "dimension"
 			}]
-			title: "霜原星"
+			title: "火星"
 			x: 2.5d
 			y: 2.5d
 		}
@@ -1021,8 +1027,8 @@
 					type: "item"
 				}
 			]
-			x: 2.5d
-			y: 8.5d
+			x: 2.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["33AEA40FA5FE2CE3"]
@@ -1306,17 +1312,6 @@
 		}
 		{
 			dependencies: ["46059198877920C4"]
-			id: "24D09DB42B69A7E8"
-			tasks: [{
-				id: "4AC4A45EDC44A229"
-				item: "ad_astra:glacian_planks"
-				type: "item"
-			}]
-			x: 0.5d
-			y: 8.5d
-		}
-		{
-			dependencies: ["46059198877920C4"]
 			id: "1E7A7D06ACE02244"
 			subtitle: "真是令人不寒而栗"
 			tasks: [{
@@ -1324,8 +1319,8 @@
 				item: "iceandfire:dread_shard"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 8.5d
+			x: 1.0d
+			y: 8.0d
 		}
 		{
 			dependencies: ["4CE42E34D9931CA1"]
