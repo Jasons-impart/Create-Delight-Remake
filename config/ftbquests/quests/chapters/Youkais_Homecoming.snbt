@@ -195,7 +195,7 @@
 			click: "#7A8D79BA13378DAA"
 			height: 2.0d
 			hover: ["点击图片跳转到“幻昙华”Buff介绍"]
-			image: "ad_astra:textures/painting/moon.png"
+			image: "supplementaries:item/globes/globe_moon"
 			rotation: 0.0d
 			width: 2.0d
 			x: -4.5d
