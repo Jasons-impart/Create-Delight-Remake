@@ -1,0 +1,13 @@
+name = "Create: Cyber Goggles"
+filename = "CreateCyberGoggles-1.20.1-7.2.2-Forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "77de5346fd2f619523995232d4b0fd45fa05dfbf"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7826445
+project-id = 1233804

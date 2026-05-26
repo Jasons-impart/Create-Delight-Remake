@@ -1791,23 +1791,6 @@
 			y: 4.5d
 		}
 		{
-			dependencies: ["0DC2E7BC4657D633"]
-			dependency_requirement: "all_started"
-			description: [
-				"可以从身后的容器中&c输出液体&r到炼药锅、工作盆中，可以实现注液配方，但无法&c输入液体&r到容器中"
-				"注液效率远超注液器。"
-			]
-			id: "5CBAD075435316D8"
-			subtitle: "流体哗啦啦"
-			tasks: [{
-				id: "765A305554397F18"
-				item: "fluid:copper_tap"
-				type: "item"
-			}]
-			x: 12.0d
-			y: -2.5d
-		}
-		{
 			dependencies: [
 				"28CB30AB88780BC7"
 				"29130F650B256E20"
@@ -1848,24 +1831,10 @@
 			y: 5.25d
 		}
 		{
-			dependencies: ["0DC2E7BC4657D633"]
-			description: [
-				"流体接口可以放置在任意的流体容器（如流体储罐）上"
-				"手持类似于玻璃瓶或者桶的容器与流体接口交互，可以便捷地向相连的流体容器输入或输出流体"
-				"流体接口可以被指定为动力移液器的交互点，以实现动力移液器与流体储罐之间的流体交互"
+			dependencies: [
+				"64BDB4FEDC5142AF"
+				"0997F69434CC0BEE"
 			]
-			id: "2F5D9025D3185A43"
-			subtitle: "一个交互接口！"
-			tasks: [{
-				id: "5FA1FCE1BEF4FE13"
-				item: "fluid:fluid_interface"
-				type: "item"
-			}]
-			x: 15.0d
-			y: -2.5d
-		}
-		{
-			dependencies: ["64BDB4FEDC5142AF"]
 			description: [
 				"使用蓝图桌打开 &l&ebread_maker.nbt&r&r"
 				"&b顶端抽屉&r放入&a小麦&r"
@@ -1914,7 +1883,6 @@
 		{
 			dependencies: ["262E66AD49F385AC"]
 			dependency_requirement: "one_completed"
-			hide_until_deps_complete: true
 			id: "64BDB4FEDC5142AF"
 			subtitle: "一个格子，能存2048个物品"
 			tasks: [{
@@ -1923,6 +1891,17 @@
 				type: "item"
 			}]
 			x: 17.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5C40F5E0F477394B"]
+			id: "0997F69434CC0BEE"
+			tasks: [{
+				id: "682EC268C53AD361"
+				item: "ratatouille:thresher"
+				type: "item"
+			}]
+			x: 15.5d
 			y: 6.0d
 		}
 	]

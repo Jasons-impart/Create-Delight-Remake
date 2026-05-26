@@ -1,0 +1,13 @@
+name = "Just Enough Couriers"
+filename = "just_enough_couriers-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "88b4ef790d3517b0e645d8f83d47af14e234a3a0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7776156
+project-id = 1487011

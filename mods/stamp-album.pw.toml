@@ -1,0 +1,13 @@
+name = "Stamp Album"
+filename = "Stamp Album-1.20.1-forge-1.1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fd8fa21d9e2d7ab44b838fd8c104349b7b4245ad"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7934810
+project-id = 1515506

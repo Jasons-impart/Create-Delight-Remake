@@ -1,0 +1,13 @@
+name = "Create: Pattern Schematics"
+filename = "create_pattern_schematics-1.3.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "54ad9320a644dbcde87118e82a6dfcc81cd4757b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7207725
+project-id = 1072349

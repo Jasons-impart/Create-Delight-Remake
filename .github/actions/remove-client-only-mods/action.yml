@@ -1,0 +1,26 @@
+name: 'Remove Client-Only Mods'
+description: 'Read .clientonlymodlist and delete matching mod files from the specified base directory'
+
+inputs:
+  base_dir:
+    description: 'Base directory to search for mod files (default: .)'
+    required: false
+    default: '.'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Remove client-only mods
+      shell: bash
+      run: |
+        set -euo pipefail
+        mapfile -t prefixes < .clientonlymodlist
+        for prefix in "${prefixes[@]}"; do
+          echo "Deleting files with prefix: $prefix"
+          if [ -d "${{ inputs.base_dir }}/mods" ]; then
+            find ${{ inputs.base_dir }}/mods -name "${prefix}*" -exec rm {} +
+          fi
+          if [ -d "${{ inputs.base_dir }}/packwiz-files/mods" ]; then
+            find ${{ inputs.base_dir }}/packwiz-files/mods -name "${prefix}*" -exec rm {} +
+          fi
+        done

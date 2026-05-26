@@ -1,0 +1,8 @@
+name = "Entity Culling Fabric/Forge"
+filename = "entityculling-forge-1.10.1-mc1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/entityculling-forge-1.10.1-mc1.20.1.jar"
+hash-format = "sha256"
+hash = "1231bb17e3db1a7d4e98800bb070ec1e7e7c016b934e1eb11c1cc63d11d0aa2d"

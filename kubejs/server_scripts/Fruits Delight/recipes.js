@@ -14,6 +14,7 @@ ServerEvents.recipes(e => {
         "vintagedelight:jam/gearo_berry_jam_jar_deconstruct",
         "vintagedelight:jam/gearo_berry_jam_jar",
         "vintagedelight:cooking/gearo_berry_jam_jar",
+        "farmersdelight:cooking/mangosteen_cake"
     ])
     e.replaceInput({ mod: "fruitsdelight", input: "minecraft:slime_ball" }, "minecraft:slime_ball", "#forge:gelatin")
     e.recipes.create.mixing(

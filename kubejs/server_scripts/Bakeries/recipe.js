@@ -60,7 +60,23 @@ ServerEvents.recipes(e => {
         "bakeries:integration/create/mixing/foamed_cream",
         "bakeries:integration/create/mixing/butter_cube",
         "bakeries:paper_cup",
-        "bakeries:integration/create/milling/flour"
+        "bakeries:integration/create/milling/flour",
+        "bakeries:dirty_choco_croissant",
+        "bakeries:stone_kiln/ciabatta",
+        "bakeries:stone_kiln/country_bread",
+        "bakeries:stone_kiln/baguette",
+        "bakeries:stone_kiln/focaccia",
+        "bakeries:honey_butter_spread_toast",
+        "bakeries:integration/farmersdelight/luncheon_meat_sandwich",
+        "bakeries:bake_sliced_toast",
+        "bakeries:integration/create/mixing/butter_flour_sand",
+        "bakeries:integration/create/mixing/honey_butter",
+        "bakeries:pineapple_oil",
+        "bakeries:dough_crafting_table/scone_dough",
+        "bakeries:tray_yuntui_mooncake",
+        "bakeries:compat/raw_yuntui_mooncake",
+        "bakeries:yuntui_mooncake",
+        "bakeries:dough_crafting_table/pizza_flatbread"
     ])
     remove_recipes_output(e, [
         "vintagedelight:oat_dough",
@@ -538,15 +554,6 @@ ServerEvents.recipes(e => {
     //     .id("createdelight:filling/crispy_dough")
     create.cutting("8x bakeries:scone_dough", 'createdelight:puff_pastry')
         .id("createdelight:cutting/scone_dough")
-    kubejs.shapeless(
-        "bakeries:cream_pumpkin_pie_dough",
-        [
-            "createdelight:puff_pastry",
-            "farmersdelight:pumpkin_slice",
-            "bakeries:foamed_cream"
-        ]
-    ).id("createdelight:cream_pumpkin_pie_dough")
-    baking(e, 'bakeries:cream_pumpkin_pie_dough', 'bakeries:cream_pumpkin_pie', 1, "food", 100)
     cutting(e, 'bakeries:pound_cake', [['bakeries:sliced_pound_cake', 4]])
     e.custom({
         "type": "bakeries:dough_crafting_table",
@@ -557,6 +564,19 @@ ServerEvents.recipes(e => {
         },
         "result": "bakeries:scone_dough"
     }).id("createdelight:dough_crafting_table/scone_dough")
+    e.custom({
+        "type": "bakeries:dough_crafting_table",
+        "count": 1,
+        "ingredient":
+        {
+            "item": "ratatouille:salty_dough"
+        },
+        "result": "bakeries:pizza_flatbread"
+    }).id("createdelight:dough_crafting_table/pizza_flatbread")
+    create.pressing(
+        '2x bakeries:pizza_flatbread',
+        'ratatouille:salty_dough',
+    ).id("createdelight:pressing/pizza_flatbread")
     {
         let iner = "bakeries:mould"
         create.sequenced_assembly("bakeries:mould_pound_cake_paste", "bakeries:mould", [
@@ -657,8 +677,59 @@ ServerEvents.recipes(e => {
         Fluid.of("create_bic_bit:mayonnaise", 250),
         "bakeries:bagel"
     ]).id("createdelight:filling/bagel_filled_sauce")
-    create.compacting("bakeries:flat_croissant", "bakeries:croissant")
-        .id("createdelight:compacting/flat_croissant")
+    create.pressing("bakeries:flat_croissant", "bakeries:croissant")
+        .id("createdelight:pressing/flat_croissant")
+    create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "#forge:cream"]),
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+    ])
+        .loops(1)
+        .transitionalItem("bakeries:croissant")
+        .id("createdelight:sequence_assembly/dirty_choco_croissant")
+    create.sequenced_assembly("bakeries:dirty_choco_croissant", "bakeries:croissant", [
+        create.filling("bakeries:croissant", ["bakeries:croissant", Fluid.of("cosmopolitan:cream", 250)]),
+        create.deploying("bakeries:croissant", ["bakeries:croissant", "bakeries:cocoa_powder"])
+    ])
+        .loops(1)
+        .transitionalItem("bakeries:croissant")
+        .id("createdelight:sequence_assembly/dirty_choco_croissant_2")
+    create.sequenced_assembly("bakeries:pineapple_oil", "bakeries:pineapple_bun", [
+        create.cutting("bakeries:pineapple_bun", "bakeries:pineapple_bun"),
+        create.deploying("bakeries:pineapple_bun", ["bakeries:pineapple_bun", "createdelight:butter"])
+    ])
+        .loops(1)
+        .transitionalItem("bakeries:pineapple_bun")
+        .id("createdelight:sequence_assembly/pineapple_oil")
+    create.mixing(
+        Fluid.of("createdelight:red_velvet_cake_batter", 1000),
+        [
+            Fluid.of("butchercraft:blood_fluid", 1000),
+            "minecraft:sugar",
+            "2x bakeries:flour"
+        ]
+    ).id("createdelight:mixing/red_velvet_cake_batter")
+    create.mixing(
+        Fluid.of("createdelight:red_velvet_cake_batter", 1000),
+        [
+            Fluid.of("createdelight:cake_batter", 1000),
+            "2x some_assembly_required:chopped_beetroot"
+        ]
+    ).id("createdelight:mixing/red_velvet_cake_batter_2")
+    create.filling(
+        'createdelight:red_velvet_cake_mold_filled',
+        [
+            Fluid.of("createdelight:red_velvet_cake_batter", 1000),
+            'ratatouille:cake_mold'
+        ]
+    ).id("createdelight:filling/red_velvet_cake_mold_filled")
+    baking(e, "createdelight:red_velvet_cake_mold_filled", "createdelight:red_velvet_cake_mold_baked", 1, "food", 600)
+    e.recipes.ratatouille.demolding(
+        [
+            'bakeries:red_velvet_cake_base',
+            'ratatouille:cake_mold'
+        ],
+        'createdelight:red_velvet_cake_mold_baked'
+    ).id("createdelight:demolding/red_velvet_cake_mold_baked")
     create.sequenced_assembly("bakeries:mould_basque_cake_paste", "bakeries:mould_two", [
         create.filling("bakeries:mould_basque_cake_paste", ["bakeries:mould_two", Fluid.of("createdelight:cake_batter", 500)]),
         create.deploying("bakeries:mould_basque_cake_paste", ["bakeries:mould_two", "#forge:cheese"])
@@ -667,7 +738,6 @@ ServerEvents.recipes(e => {
         .transitionalItem("bakeries:mould_two")
         .id("createdelight:sequence_assembly/mould_basque_cake_paste")
     baking(e, "bakeries:mould_basque_cake_paste", "bakeries:mould_basque_cake", 1, "food", 100)
-    baking(e, "bakeries:raw_yuntui_mooncake", "bakeries:yuntui_mooncake", 1, "food", 100)
     baking(e, "bakeries:rice_bread_dough", "bakeries:rice_bread", 1, "food", 100)
     vintageimprovements.curving(
         [
@@ -678,8 +748,6 @@ ServerEvents.recipes(e => {
     )
         .mode(2)
         .id("createdelight:curving/mould_basque_cake")
-    vintageimprovements.curving("3x bakeries:egg_tart_shell", "createdelight:puff_pastry").mode(1).id("createdelight:curving/egg_tart_shell")
-    baking(e, "bakeries:raw_egg_tart", "bakeries:egg_tart", 1, "food", 100)
 
 })
 ServerEvents.tags("item", e => {

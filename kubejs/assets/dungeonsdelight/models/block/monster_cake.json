@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cake",
+  "textures": {
+    "particle": "dungeonsdelight:block/monster_cake_particle",
+    "bottom": "dungeonsdelight:block/monster_cake_bottom",
+    "top": "dungeonsdelight:block/monster_cake_top",
+    "side": "dungeonsdelight:block/monster_cake_side",
+    "inside": "dungeonsdelight:block/monster_cake_inner"
+  }
+}

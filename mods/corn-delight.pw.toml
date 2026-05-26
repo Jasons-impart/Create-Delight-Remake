@@ -1,0 +1,13 @@
+name = "Corn Delight[Forge]"
+filename = "corn_delight-1.1.9-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "896ac25f3cd3317662017a4a3f49e51eb86cf688"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6904187
+project-id = 577805

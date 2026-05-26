@@ -1,0 +1,13 @@
+name = "MoreRequirement"
+filename = "MoreRequirement-1.2.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "48ea7239ba4240763201d4096082135441c125a2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7266964
+project-id = 1368806

@@ -15,7 +15,8 @@ ServerEvents.recipes(e => {
         "neapolitan:cake",
         "ratatouille:smoking/solid_sugar_block",
         "luncheonmeatsdelight:integration/create/mixing/flesh_mud",
-        "luncheonmeatsdelight:integration/create/mixing/flesh_mud_2"
+        "luncheonmeatsdelight:integration/create/mixing/flesh_mud_2",
+        "ratatouille:smoking/cake_mold_baked",        
     ])
     // 肉酱配方修改
     e.recipes.create.mixing(
@@ -28,6 +29,7 @@ ServerEvents.recipes(e => {
     ).id("createdelight:mixing/mince_meat")
 
     // 蛋糕相关
+    baking(e, "ratatouille:cake_mold_filled", "ratatouille:cake_mold_baked", 1, "food", 600)
     e.recipes.create.mixing(
         Fluid.of("createdelight:cake_batter", 1000),
         [

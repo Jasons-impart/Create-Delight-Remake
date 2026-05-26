@@ -1,0 +1,13 @@
+name = "YUNG's Better Witch Huts (Forge/NeoForge)"
+filename = "YungsBetterWitchHuts-1.20-Forge-3.0.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "71fee574f920c6b05004f100ba07e9b8d5844169"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4769489
+project-id = 631401

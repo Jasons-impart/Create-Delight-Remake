@@ -1,0 +1,13 @@
+name = "Create More Recipes"
+filename = "Create More Recipes-1.20.1-1.2.1-fix1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2d9e267499261d1f3d0aaed965c96f8841dab79a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7159787
+project-id = 1103188

@@ -1,0 +1,13 @@
+name = "Neruina - Ticking Entity Fixer"
+filename = "neruina-3.2.2+1.20.1-forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "8155b7b81f829d33a4ccdcaa2158b3b64846c396"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7695429
+project-id = 851046

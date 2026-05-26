@@ -57,13 +57,13 @@ ServerEvents.recipes(e => {
       'fruitsdelight:blueberry'
     ]
   ).id("createdelight:unbaked_blueberry_muffin")
-  e.recipes.create.deploying(
+  e.recipes.create.filling(
     'createdelight:unbaked_red_velvet_cupcake',
     [
-      'bakeries:paper_cup_cake_paste',
-      'some_assembly_required:chopped_beetroot'
+      Fluid.of("createdelight:red_velvet_cake_batter", 250),
+      "bakeries:paper_cup"
     ]
-  ).id("createdelight:unbaked_red_velvet_cupcake")
+  ).id("createdelight:filling/unbaked_red_velvet_cupcake")
   {
     let iner = 'bakeries:paper_cup_cake_paste'
     e.recipes.create.sequenced_assembly('createdelight:unbaked_chocolate_pumpkin_muffin', 'bakeries:paper_cup_cake_paste', [

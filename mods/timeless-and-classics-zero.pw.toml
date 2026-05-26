@@ -1,0 +1,13 @@
+name = "[TaCZ] Timeless and Classics Zero Guns"
+filename = "tacz-1.20.1-1.1.4-hotfix-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2d6680433e2782082a3dd6f2c7cff1e8f5d4c645"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6069384
+project-id = 1028108

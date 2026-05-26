@@ -3,5 +3,12 @@ ServerEvents.recipes((event) => {
     "silentsdelight:sculk_sensor_tendril_roll",
     "farmersdelight:kelp_roll"
   ])
-  const { create } = event.recipes;
 });
+
+ServerEvents.tags("item", e => {
+  e.removeAllTagsFrom([
+    'silentsdelight:sculk_catalyst_pie',
+    'silentsdelight:sculk_catalyst_pie_slice',
+    'silentsdelight:sculk_catalyst_pie_crust'
+  ])
+})

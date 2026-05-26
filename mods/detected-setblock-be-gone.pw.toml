@@ -1,0 +1,8 @@
+name = "Detected setBlock Be Gone"
+filename = "dsbg-1.0-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/dsbg-1.0-1.20.1.jar"
+hash-format = "sha256"
+hash = "4a3ae0f780f68cfe776e82c99252238f277164e5a29772153f9bfe0af2bc3a2e"

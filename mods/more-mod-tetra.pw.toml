@@ -1,0 +1,13 @@
+name = "[MMT]More Materials Tetra New"
+filename = "more_mod_tetra-2.3.01-all.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e8826c25dcc878711d7db2e641236f228d8dae76"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8113470
+project-id = 1547763

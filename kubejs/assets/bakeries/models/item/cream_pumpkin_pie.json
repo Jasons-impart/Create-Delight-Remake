@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "bakeries:item/cream_pumpkin_pie"
+    }
+  }

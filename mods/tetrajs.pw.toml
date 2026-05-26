@@ -1,0 +1,13 @@
+name = "TetraJS"
+filename = "Tetra JS-2001-6.9.0-1.0.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c749b20b9ecbee1a7a30d81965cd4ccea498d5c1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7245651
+project-id = 1368799

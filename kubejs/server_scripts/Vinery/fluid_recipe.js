@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
         // console.log(`res: ${recipe.getResultItem(null).id}`)
         // console.log(`ingr: ${recipe.ingredients.get(0).stacks.toString()}`)
     })
-    e.recipes.create.pressing("vinery:apple_mash", "minecraft:apple")
+    e.recipes.create.pressing("2x vinery:apple_mash", "minecraft:apple")
         .id("createdelight:pressing/apple_mash")
     e.recipes.create.compacting(Fluid.of("createdelight:apple_juice", 250), "vinery:apple_mash")
         .id("createdelight:compacting/apple_juice")

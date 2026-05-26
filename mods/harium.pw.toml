@@ -1,0 +1,8 @@
+name = "Harium (Update 2.0)"
+filename = "Harium-mc1.20.1-1.0.0.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Harium-mc1.20.1-1.0.0.jar"
+hash-format = "sha256"
+hash = "f138eafd8c7814160c1c966363bc443d7d5b34a19a03828f8a67089a8b642e4b"

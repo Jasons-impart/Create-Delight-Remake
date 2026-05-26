@@ -1,0 +1,8 @@
+name = "ServerCore"
+filename = "servercore-forge-1.5.2+1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/servercore-forge-1.5.2%2B1.20.1.jar"
+hash-format = "sha256"
+hash = "d9ad4f456b6c36bac17a71cd12935fdccae69ca1e1fcd33857210758cb58e586"

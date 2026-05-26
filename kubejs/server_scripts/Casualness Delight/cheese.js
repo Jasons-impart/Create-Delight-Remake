@@ -61,15 +61,6 @@ ServerEvents.recipes(e => {
         "trailandtales_delight:cheese_slice"
     ], "createdelight:raw_cheese_pizza", 1)
     baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 300)
-    e.recipes.farmersdelight.cooking([
-        "minecraft:sweet_berries",
-        "minecraft:sweet_berries",
-        "minecraft:sweet_berries",
-        "#forge:cheese",
-        "farmersdelight:pie_crust",
-        "#forge:cheese",
-    ], "farmersdelight:sweet_berry_cheesecake", 1.0, 200)
-        .id("createdelight:sweet_berry_cheesecake")
 })
 
 BlockEvents.rightClicked(e => {

@@ -127,14 +127,14 @@ ServerEvents.recipes(e => {
     create.pressing("youkaishomecoming:clay_saucer", "minecraft:clay_ball")
         .id("createdelight:pressing/clay_saucer")
 
-    create.sequenced_assembly("youkaishomecoming:red_velvet_cake", "ratatouille:cake_base", 
+    create.sequenced_assembly("youkaishomecoming:red_velvet_cake", "bakeries:red_velvet_cake_base", 
         [
-            create.filling("ratatouille:cake_base", ["ratatouille:cake_base", Fluid.of("butchercraft:blood_fluid")]),
-            create.deploying("ratatouille:cake_base", ["ratatouille:cake_base", "youkaishomecoming:flesh"])
+            create.filling("bakeries:red_velvet_cake_base", ["bakeries:red_velvet_cake_base", Fluid.of("milk", 1000)]),
+            create.deploying("bakeries:red_velvet_cake_base", ["bakeries:red_velvet_cake_base", "youkaishomecoming:flesh"])
         ]
     )
         .loops(1)
-        .transitionalItem("ratatouille:cake_base")
+        .transitionalItem("bakeries:red_velvet_cake_base")
         .id("createdelight:sequenced_assembly/red_velvet_cake")
     threshing(e, 'youkaishomecoming:pods', ['youkaishomecoming:soybean', Item.of('youkaishomecoming:soybean').withChance(0.5)], 200)
     farmersdelight.cooking(

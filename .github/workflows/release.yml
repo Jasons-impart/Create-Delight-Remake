@@ -10,7 +10,9 @@ on:
 env:
   VERSION_FILE_PATH: config/fancymenu/assets/version.md
   PACKWIZ_DOWNLOAD_URL: https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz
-  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/release-3.7.3/HMCL-3.7.3.jar
+  PACKWIZ_INSTALLER_BOOTSTRAP_URL: https://github.com/packwiz/packwiz-installer-bootstrap/releases/latest/download/packwiz-installer-bootstrap.jar
+  PACKWIZ_FILES_RAW_PREFIX: https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/
+  HMCL_DOWNLOAD_URL: https://github.com/HMCL-dev/HMCL/releases/download/v3.13.2/HMCL-3.13.2.jar
   JAVA_DOWNLOAD_URL: https://download.oracle.com/java/17/archive/jdk-17.0.12_windows-x64_bin.msi
   FORGE_DOWNLOAD_URL_PREFIX: https://maven.minecraftforge.net/net/minecraftforge/forge
   VERSION_FILE_RELATIVE_DIR_PATH: config/fancymenu/assets/
@@ -54,34 +56,20 @@ jobs:
         with:
           file: pack.toml
           field: 'versions.forge'
-      - name: 生成整合包带测试后缀版本号
+      - name: 生成整合包版本号
         id: generate_modpack_version
         run: |
-          BRANCH_NAME="${{ github.ref_name }}"
-          if [[ "$BRANCH_NAME" == v* ]]; then
-            # Tag-triggered: use version from pack.toml directly
-            VERSION="${{ steps.read-version.outputs.value }}"
-            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-          elif [[ "$BRANCH_NAME" == *test* ]]; then
-            VERSION="${{ steps.read-version.outputs.value }}-test-build-${{ github.run_number }}"
-            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
-          else
-            VERSION="${{ steps.read-version.outputs.value }}"
-            echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+          VERSION="${{ steps.read-version.outputs.value }}"
+          if [[ "${{ github.ref_name }}" == *test* ]]; then
+            VERSION="$VERSION-test-build-${{ github.run_number }}"
           fi
-      - name: 输出读取的变量用作验证
-        run: |
-          echo "Modpack Name: ${{ steps.read-modpackname.outputs.value }}"
-          echo "Modpack Version: ${{ steps.read-version.outputs.value }}"
-          echo "Modpack Full Version: ${{ steps.generate_modpack_version.outputs.VERSION }}"
-          echo "Minecraft Version: ${{ steps.read-minecraft.outputs.value }}"
-          echo "Forge Version: ${{ steps.read-forge.outputs.value }}"
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
 
   # 客户端相关任务（并行执行）
   client-tasks:
-    needs: common-steps       # 依赖公共步骤完成
+    needs: common-steps
     runs-on: ubuntu-latest
-    env:  # Job 级环境变量（简化读取变量）
+    env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
@@ -93,92 +81,43 @@ jobs:
       startsWith(github.ref_name, 'test-patch') ||
       startsWith(github.ref_name, 'v')
     steps:
-      - name: 测试环境变量
-        run: |
-          echo "Modpack Name: $MODPACK_NAME"
-          echo "Modpack Version: $MODPACK_VERSION"
-          echo "Minecraft Version: $MC_VERSION"
-          echo "Forge Version: $FORGE_VERSION"
-          echo "Version File Path: $VERSION_FILE_PATH"
       - name: 检出代码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # 只取最新提交，加速
-      - name: 安装 Packwiz 打包软件
-        run: |
-          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
-          chmod +x ./packwiz
+          fetch-depth: 1
+      - name: 安装 Packwiz
+        uses: ./.github/actions/setup-packwiz
       - name: 重命名HMCL配置和options
         run: |
           mv .hmclversion.cfg hmclversion.cfg
           mv .options.txt options.txt
-      - name: 【版本】根据pack.toml的整合包和forge版本替换 游戏标题名称 & 更好地兼容检测配置文件 & 反馈配置 & 启动脚本
-        run: |
-          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
-          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
-          sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION/" kubejs/config/client.properties
-
-          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
-          mv default.json.tmp config/GeneralFeedback/default.json
-          
-          grep 'modpack' config/bcc-common.toml
-          grep 'title' kubejs/config/client.properties
-          grep 'placeholder' config/GeneralFeedback/default.json
-      - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
-        # fancymenu格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
-        # |||
-        # Create-Delight-Remake x.x.x.x xxxx
-        # MIT License Copyright (c) 2025 JSI Production Team
-        # |||
-        run: |
-          set -euo pipefail
-          cat << EOF > "$VERSION_FILE_PATH"
-          |||
-          $MODPACK_NAME $MODPACK_VERSION
-          MIT License Copyright (c) 2025 JSI Production Team
-          |||
-          EOF
-          cat "$VERSION_FILE_PATH"
+      - name: 更新整合包配置与版本信息
+        uses: ./.github/actions/update-modpack-config
+        with:
+          modpack_name: ${{ env.MODPACK_NAME }}
+          modpack_version: ${{ env.MODPACK_VERSION }}
+          mode: client
       - name: 【鸣谢】更新鸣谢名单及头像
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
-      # - name: 删除仅服务端模组
-      #   run: |
-      #       mapfile -t prefixes < .serveronlymodlist
-      #       for prefix in "${prefixes[@]}"; do
-      #         echo "Deleting files with prefix: $prefix"
-      #         find mods -name "${prefix}*" -exec rm {} +
-      #       done
-      - name: 更新文件索引
+      - name: 更新文件索引并生成带mod本体的包
         run: |
-          ./packwiz refresh
-      - name: 生成带mod本体的包 移动到workspace文件夹
-        run: |
-          ./packwiz curseforge export
           mkdir ../click_to_run_release
-          mv *.zip ../click_to_run_release/modpack.zip
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../click_to_run_release/modpack.zip 8082
       - name: 下载HMCL启动器与jdk环境
         run: |
           curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
           curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
           mv HMCL.jar ../click_to_run_release
           mv jdk17.msi ../click_to_run_release
-      - name: 检测并生成mods meta信息
-        run: |
-          ./packwiz curseforge detect
-      - name: 更新index
-        run: |
-          ./packwiz refresh
       - name: 生成不带mod本体的包
         run: |
-          ./packwiz curseforge export
-          mv *.zip ../lite-release.zip
-          unzip ../lite-release.zip -d ../lite-release
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
+          unzip -o ../lite-release.zip -d ../lite-release
           ls ..
       - name: Workaround actions/upload-artifact#176
-        run: |
-          echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
+        run: echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
       - name: 上传懒人包
         uses: actions/upload-artifact@v4
         with:
@@ -199,7 +138,7 @@ jobs:
   server-tasks:
     needs: common-steps
     runs-on: ubuntu-latest
-    env:  # Job 级环境变量（简化读取变量）
+    env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
@@ -213,44 +152,37 @@ jobs:
       - name: 检出代码
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1 # 只取最新提交，加速
-      - name: 删除与服务端无关的文件
+          fetch-depth: 1
+      - name: 安装 Packwiz
+        uses: ./.github/actions/setup-packwiz
+      - name: 更新文件索引
         run: |
-            # mapfile -t prefixes < .packwizignore
-            # for prefix in "${prefixes[@]}"; do
-            #   echo "Deleting files with prefix: $prefix"
-            #   find ${{ github.workspace }} -name "${prefix}*" -exec rm {} +
-            # done
-            rm -rf resourcepacks
-            rm -rf shaderpacks
-            rm -f ModList0.4a.md
-            rm -f README.md
-            rm -f TODOlist.md
-            rm -f KubeJSStyleGuide.md
-            rm -f DevGuide.md
-            rm -f pack.toml
-            rm -f index.toml
-            rm -f client_jvm_args.example.txt
+          ./packwiz refresh
+      - name: 下载所有mod本体（packwiz-installer）
+        run: bash .github/workflows/scripts/download_mods.sh 8080
+      - name: 删除客户端only模组
+        uses: ./.github/actions/remove-client-only-mods
+        with:
+          base_dir: .
       - name: 安装服务端only模组
         run: |
-            # 从.serveronlymodlist中读取模组URL
             mapfile -t urls < .serveronlymodlist
             for url in "${urls[@]}"; do
               curl -O -L "$url" --output-dir "mods"
             done
-      - name: 删除客户端only模组
+      - name: 删除与服务端无关的文件
         run: |
-            mapfile -t prefixes < .clientonlymodlist
-            for prefix in "${prefixes[@]}"; do
-              echo "Deleting files with prefix: $prefix"
-              find mods -name "${prefix}*" -exec rm {} +
-            done
-      - name: 根据pack.toml的整合包版本替换更好地兼容检测配置
-        run: |
-          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
-          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
-          grep 'modpack' config/bcc-common.toml
-      - name: 下载forge与ServerStarterJar
+            rm -rf resourcepacks shaderpacks packwiz-files
+            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md client_jvm_args.example.txt
+            find mods -name "*.pw.toml" -exec rm {} +
+            rm -f pack.toml index.toml .packwizignore packwiz
+      - name: 更新整合包配置与版本信息
+        uses: ./.github/actions/update-modpack-config
+        with:
+          modpack_name: ${{ env.MODPACK_NAME }}
+          modpack_version: ${{ env.MODPACK_VERSION }}
+          mode: server
+      - name: 下载forge安装器
         run: |
           set -euo pipefail
           FORGE_URL="${{ env.FORGE_DOWNLOAD_URL_PREFIX }}/${MC_VERSION}-${FORGE_VERSION}/forge-${MC_VERSION}-${FORGE_VERSION}-installer.jar"
@@ -267,10 +199,6 @@ jobs:
           unix2dos "start.bat"
           sed -i "s|!MC_VERSION!|${MC_VERSION}|" "start.bat"
           sed -i "s|!FORGE_VERSION!|${FORGE_VERSION}|" "start.bat"
-      - name: list remained files & mods
-        run: |
-          ls ${{ github.workspace }}
-          ls mods
       - name: 上传带mod包
         uses: actions/upload-artifact@v4
         with:
@@ -289,7 +217,7 @@ jobs:
   patch-tasks:
     needs: [common-steps, client-tasks]
     runs-on: ubuntu-latest
-    env:  # Job 级环境变量（简化读取变量）
+    env:
       MODPACK_NAME: ${{ needs.common-steps.outputs.modpack_name }}
       MODPACK_VERSION: ${{ needs.common-steps.outputs.modpack_ver }}
       MC_VERSION: ${{ needs.common-steps.outputs.mc_version }}
@@ -300,26 +228,16 @@ jobs:
       startsWith(github.ref_name, 'test-patch') ||
       startsWith(github.ref_name, 'v')
     steps:
-      - name: 测试环境变量
-        run: |
-          echo "Modpack Name: $MODPACK_NAME"
-          echo "Modpack Version: $MODPACK_VERSION"
-          echo "Minecraft Version: $MC_VERSION"
-          echo "Forge Version: $FORGE_VERSION"
-          echo "Version File Path: $VERSION_FILE_PATH"
       - name: 检出代码
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           fetch-tags: true
-      - name: 安装 Packwiz 打包软件
-        run: |
-          curl -o packwiz -L $PACKWIZ_DOWNLOAD_URL
-          chmod +x ./packwiz
+      - name: 安装 Packwiz
+        uses: ./.github/actions/setup-packwiz
       - name: 获取最近的tag并配置环境变量
         run: |
           set -euo pipefail
-          # 若 HEAD 有 tag，则取上一提交的最近 tag；否则取 HEAD 的最近 tag
           if git describe --tags --exact-match >/dev/null 2>&1; then
             latest_tag=$(git describe --tags --abbrev=0 HEAD^)
           else
@@ -327,43 +245,14 @@ jobs:
           fi
           echo "最近的tag是: $latest_tag"
           echo "LATEST_TAG=$latest_tag" >> $GITHUB_ENV
-      - name: 【版本】根据pack.toml的整合包版本替换标题 和 更好地兼容检测配置 和 反馈配置
-        run: |
-          sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
-          sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
-          sed -i "s/^title=\(.*\)/title=\1 | 版本$MODPACK_VERSION (patch)/" kubejs/config/client.properties
-          jq --arg v "$MODPACK_VERSION" '.placeholder = "\n§l§4§n(勿删本行) 版本: " + $v' config/GeneralFeedback/default.json > default.json.tmp
-          mv default.json.tmp config/GeneralFeedback/default.json
-          grep 'modpack' config/bcc-common.toml
-          grep 'title' kubejs/config/client.properties
-          grep 'placeholder' config/GeneralFeedback/default.json
-
+      - name: 更新整合包配置与版本信息
+        uses: ./.github/actions/update-modpack-config
+        with:
+          modpack_name: ${{ env.MODPACK_NAME }}
+          modpack_version: ${{ env.MODPACK_VERSION }}
+          mode: patch
       - name: 准备补丁文件
-        run: |
-          set -euo pipefail
-          git diff --name-status "${{ env.LATEST_TAG }}" HEAD > diff_report.txt
-          cat diff_report.txt
-          
-          # 解析差异报告
-          grep -E '^D' diff_report.txt | cut -f2 > deleted_files.txt || true
-          grep -E '^R' diff_report.txt | cut -f2 >> deleted_files.txt || true
-          grep -E '^[AM]' diff_report.txt | cut -f2 > added_files.txt || true
-          grep -E '^R' diff_report.txt | cut -f3 >> added_files.txt || true
-          grep -E '^C' diff_report.txt | cut -f3 >> added_files.txt || true
-
-          # 创建补丁目录
-          mkdir -p patch
-
-          # 复制新增/修改文件
-          while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            if [ -f "$file" ]; then
-              mkdir -p "patch/$(dirname "$file")"
-              cp "$file" "patch/$file"
-            else
-              echo "Warn: $file not found at HEAD" >&2
-            fi
-          done < added_files.txt
+        run: bash .github/workflows/scripts/prepare_patch_diff.sh "$LATEST_TAG"
       - name: 移除服务端不需要的文件
         run: |
           set -euo pipefail
@@ -374,114 +263,52 @@ jobs:
             if [ -d "patch/mods" ]; then
               find patch/mods -name "${prefix}*" -exec rm {} +
             fi
+            if [ -d "patch/packwiz-files/mods" ]; then
+              find patch/packwiz-files/mods -name "${prefix}*" -exec rm {} +
+            fi
           done
-
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
                 patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
                 patch/index.toml patch/client_jvm_args.example.txt
+          # 将 patch/packwiz-files/ 中的文件移到标准目录
+          if [ -d "patch/packwiz-files/mods" ]; then
+            mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
+          fi
+          if [ -d "patch/packwiz-files/resourcepacks" ]; then
+            mkdir -p patch/resourcepacks
+            mv patch/packwiz-files/resourcepacks/*.zip patch/resourcepacks/ 2>/dev/null || true
+          fi
+          if [ -d "patch/packwiz-files/shaderpacks" ]; then
+            mkdir -p patch/shaderpacks
+            mv patch/packwiz-files/shaderpacks/*.zip patch/shaderpacks/ 2>/dev/null || true
+          fi
+          rm -rf patch/packwiz-files
       - name: 更新配置文件
         run: |
           set -euo pipefail
           mkdir -p patch/config/
           cp config/bcc-common.toml patch/config/
-          # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
-          # 更新反馈配置
           mkdir -p patch/config/GeneralFeedback/
           cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
-
-          # 更新fancymenu版本文件
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"
-          # 更新版本文件
           cat << EOF > "patch/$VERSION_FILE_RELATIVE_DIR_PATH/version.md"
           |||
           $MODPACK_NAME $MODPACK_VERSION (patch)
           MIT License Copyright (c) 2025 JSI Production Team
           |||
           EOF
-
-      - name: 生成linux脚本
+      - name: 复制部署脚本
         run: |
-          cat << 'EOF' > deploy-patch.sh
-          #!/bin/bash
-          echo "Applying Patch..."
-          BASE_DIR=$(dirname "$(readlink -f "$0")")
-
-          # files to be deleted
-          if [ -f "$BASE_DIR/deleted_files.txt" ]; then
-            while IFS= read -r line; do
-              file_path="$BASE_DIR/$line"
-              if [ -f "$file_path" ]; then
-                rm -v "$file_path" || { echo "Error: Cannot delete $file_path"; exit 1; }
-              else
-                echo "Error: File $file_path not found for deletion"
-              fi
-            done < "$BASE_DIR/deleted_files.txt"
-          else
-            echo "Error: $BASE_DIR/deleted_files.txt not found"
-          fi
-
-          # move patched files to right place
-          if [ -d "patch" ]; then
-            cp -r "patch/." "." || { echo "Error: Failed to copy 'patch' directory"; exit 1; }
-          else
-            echo "Error: 'patch' directory not found"
-          fi
-
-          # remove patch folder
-          if [ -d "patch" ]; then
-            rm -rf "patch" || { echo "Error: Failed to remove 'patch' directory"; exit 1; }
-            rm -rf "deleted_files.txt" || { echo "Error: Failed to remove 'deleted_files.txt'"; exit 1; }
-          else
-            echo "Error: 'patch' directory not found for removal"
-          fi
-
-          echo -e "\nDone!"
-
-          EOF
-
-      - name: 生成windows脚本
+          cp .github/workflows/scripts/deploy-patch.sh deploy-patch.sh
+          cp .github/workflows/scripts/deploy-patch.bat deploy-patch.bat
+      - name: 净化补丁用 CurseForge 元数据
         run: |
-          cat << 'EOF' > deploy-patch.bat
-          @echo off
-          setlocal enabledelayedexpansion
-          chcp 65001
-
-          rem files to be deleted
-          set "pathFile=deleted_files.txt"
-
-          rem Check if the file exists
-          if not exist "%pathFile%" (
-              echo File %pathFile% doesn't exist.
-              exit /b 1
-          )
-
-          rem read line by line and remove files
-          for /f "usebackq delims=" %%a in ("%pathFile%") do (
-              rem Convert Linux-style to Windows-style path
-              set "path=%%a"
-              set "path=!path:/=\!"
-              
-              rem Check if file exists and delete it
-              if exist "!path!" (
-                  echo Deleting: !path!
-                  del "!path!"
-                  if errorlevel 1 (
-                      echo Error when delete !path!
-                  )
-              ) else (
-                  echo File !path! doesn't exist.
-              )
-          )
-
-          rem move patched files to right place
-          %SystemRoot%\System32\xcopy /E /I /Y "patch" "."
-          rd /S /Q "patch"
-          rd deleted_files.txt
-
-          endlocal
-          EOF
+          bash .github/workflows/scripts/download_mods.sh 8081
+          ./packwiz -y curseforge detect
+          ./packwiz refresh
+          bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
         with:
@@ -491,21 +318,14 @@ jobs:
             deploy-patch.sh
             deploy-patch.bat
             patch/
-      - name: 检测并生成mods meta信息（packwiz将会自动移除cf可下载mod）
-        run: |
-          ./packwiz curseforge detect
-      - name: 更新index
-        run: |
-          ./packwiz refresh
       - name: 下载manifest.json
         uses: actions/download-artifact@v4
         with:
           name: "[Dev]${{ env.MODPACK_NAME }}-${{ env.MODPACK_VERSION }}-manifest"
       - name: 更新patch中的mod，并加入manifest.json
         run: |
-          rm -rf patch/mods
-          mv mods patch
-          rm -rf patch/mods/*.pw.toml
+          bash .github/workflows/scripts/copy_non_curseforge_payloads.sh patch
+          rm -rf patch/packwiz-files
           mv manifest.json patch
       - name: 上传客户端补丁
         uses: actions/upload-artifact@v4

@@ -1,0 +1,13 @@
+name = "Frycook's Delight"
+filename = "frycooks_delight-1.20.1-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bf86c4f0679dffe23cfb2d50f5b0669c8427d1ed"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5630141
+project-id = 1081410

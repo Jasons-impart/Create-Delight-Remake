@@ -1,0 +1,8 @@
+name = "Nebulus better portals"
+filename = "nebulusbetterportals-1.0.8-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/nebulusbetterportals-1.0.8-forge-1.20.1.jar"
+hash-format = "sha256"
+hash = "2ac9e051d600fa797f63bc732d464e0fad0a722d3ae411ab40d76d1e55fc7e7a"

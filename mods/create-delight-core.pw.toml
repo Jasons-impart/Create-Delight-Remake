@@ -1,0 +1,13 @@
+name = "Create Delight Core"
+filename = "Create-Delight-Core-1.20.1-2.2.15.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5e538078b5b15f5e4ce77d4bd107cf8f411590c0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8135984
+project-id = 1062344

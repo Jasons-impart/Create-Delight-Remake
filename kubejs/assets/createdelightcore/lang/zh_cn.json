@@ -3,5 +3,6 @@
   "item.createdelightcore.copper_coin": "§e铜币",
   "item.createdelightcore.gold_coin": "§6金币",
   "item.createdelightcore.emerald_coin": "§2绿宝石币",
-  "item.createdelightcore.netherite_coin": "§5下界合金币"
+  "item.createdelightcore.netherite_coin": "§5下界合金币",
+  "jei.createdelightcore.phantomComposting.fluid": "周围有灵质时会加快"
 }

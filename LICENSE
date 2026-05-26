@@ -111,26 +111,54 @@ This project includes these third party parts:
     - kubejs/assets/cmpackagecouriers/lang/zh_cn.json
   - 如有任何版权问题，可联系制作组删除
 
-Codes of this project defaults to MIT license:
-
-MIT License
+Project License
 
 Copyright (c) 2024 Jasons impart
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Unless otherwise stated in the third-party notices above, this project uses the
+following license terms.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+## Code
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITINESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+For the purposes of this license, "code" means the human-readable source files,
+scripts, configuration files, data files, recipe definitions, build scripts,
+and other text-based implementation files created for this project, including
+but not limited to KubeJS scripts, Java source code, Packwiz metadata, JSON,
+TOML, SNBT, and similar project-maintained text files.
+
+"Code" does not include textures, models, images, audio, fonts, logos, branding
+materials, compiled binaries, mod JARs, resource packs, shader packs, or any
+third-party files governed by their own licenses.
+
+The source code of this project is made available for public viewing, learning,
+modification, and non-commercial redistribution.
+
+Commercial use of the project code, including but not limited to selling,
+licensing, paid distribution, paid hosting, commercial modpack integration,
+commercial derivative works, or use in any product or service for profit,
+requires prior written authorization from the copyright holder.
+
+If any intended use exceeds the non-commercial scope described above, or if
+there is any uncertainty about whether a use qualifies as commercial use,
+please contact the copyright holder for explicit authorization.
+
+When redistributing or modifying the project code under the permitted
+non-commercial scope, this copyright notice and license notice must be retained.
+
+## Textures and Models
+
+All textures, models, and related asset files created for this project are
+All Rights Reserved (ARR), unless a specific file or third-party notice states
+otherwise.
+
+No permission is granted to copy, modify, redistribute, sublicense, sell, or use
+these textures, models, or related asset files in other projects without prior
+written authorization from the copyright holder.
+
+## Disclaimer
+
+This project is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability, fitness
+for a particular purpose, and non-infringement. In no event shall the authors or
+copyright holders be liable for any claim, damages, or other liability arising
+from, out of, or in connection with this project or the use of this project.
