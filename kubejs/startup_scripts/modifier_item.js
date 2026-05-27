@@ -258,7 +258,6 @@ ItemEvents.modification(e => {
     food_fastToEat('fruitsdelight:lemon_tart')
 
     // 食物饱食度修改
-    food_hungers("vintagedelight:cheese_pizza_slice", 5, 3.5)
     food_hungers("ratatouille:cake_base", 7, 4.5)
     food_hungers("casualness_delight:cooked_donkey_meat", 6, 4.5)
     food_hungers("casualness_delight:donkey_burger", 10, 6)
@@ -320,6 +319,7 @@ ItemEvents.modification(e => {
     food_hungers('bakeries:egg_tart', 8, 4)
     food_hungers('fruitsdelight:fig_tart', 8.5, 4.5)
     food_hungers('fruitsdelight:lemon_tart', 8, 4)
+    food_hungers('createdelightcore:pizza_slice', 4, 3)
 
     // 食物效果修改
     food_effects('culturaldelights:pufferfish_roll', "minecraft:poison", 10)

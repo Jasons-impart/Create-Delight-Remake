@@ -18,7 +18,7 @@ hash = "f4b78ca5b4b287b4b708d763fbc1a6ad84585bf22d889c6323199de697188431"
 
 [[files]]
 file = ".github/workflows/release.yml"
-hash = "183140ffda99a325b002e47b3519ceb50e83a96226283cf55167f362da9d4f81"
+hash = "0e6cebb4ef03b14da9bafc76fb79b31ea97ef05aa2a42719433c33d64d636ecb"
 
 [[files]]
 file = ".github/workflows/scripts/copy_non_curseforge_payloads.sh"
@@ -106,7 +106,7 @@ hash = "651f29f02fec244a703b8de2748b697bb782c254a78c28ff0faf50e06591960b"
 
 [[files]]
 file = "config/.gitignore"
-hash = "5f061ac17591347cdbba981c6841c45dfbb3a0c3733448a77c6886041f72e198"
+hash = "143b4020097bdc5e4b4d8f00270a847853195745f8761d9729c1fb11ea1f6073"
 
 [[files]]
 file = "config/CoroUtil/General.toml"
@@ -206,7 +206,7 @@ hash = "f5f83e1a947aa156d652a1995f1eb40566f5dfac940ed83f294a110a90cb3d6f"
 
 [[files]]
 file = "config/alexscaves-client.toml"
-hash = "db5c9fddb7816fae75ecdb86e604c97408eca8626d785b9380a0b39d68b8bd58"
+hash = "522220765ae65e4dbeeceeaab4fa1877de7b85df622150676d38e2b900f2a8a3"
 
 [[files]]
 file = "config/alexscaves-general.toml"
@@ -1218,7 +1218,7 @@ hash = "22c116bcedca67a0ea85a1df4e538d4c4fd07cc44121ddf0560ebabac74c33bc"
 
 [[files]]
 file = "config/euphoria_patcher/settings.toml"
-hash = "de1b502601a37b92a5d545e818760a764817f81d1597a0617de33dc053ed38ab"
+hash = "ffb8755fd7286a9c624c932cf3c46be82b9bf278478e07ff7d6d2e75361329fb"
 
 [[files]]
 file = "config/everycomp-common.toml"
@@ -1526,7 +1526,7 @@ hash = "04ea82ffdfb1e4243fa5b98dca1705d946677b0b0aceba638f584ed98239b4a3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Beginning_of_Journey.snbt"
-hash = "72644be7024356ce7294a681f2abcb9e04b466d2cf80c761083878e2850475d9"
+hash = "79269ca5f7d6053f84835ff6c6e9aed77ce910d992136804747ec2b9baa1c536"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Bumble_Zone.snbt"
@@ -1570,7 +1570,7 @@ hash = "9e901e5e38e05a04b63939020be7d288a719126c3aed0d53bfcf219da8a7606f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Junior_Engineer.snbt"
-hash = "748a160dfd5fe1c4afc3aa959bda3d86bd1af826bc8ed842ff2a01b02879b6cb"
+hash = "efc85e44eb14ae0b2a9c5ba140b5e5b24431bb78877fefb4af1981d30d9b08eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/Legendary_Creatures.snbt"
@@ -2126,7 +2126,7 @@ hash = "326b4f9b813ca8183bfaeee184cf7248c7a75c4d85b59322e349c0e964c253f3"
 
 [[files]]
 file = "config/jei/recipe-category-sort-order.ini"
-hash = "3fb7f4245c0a1bfdca8cc3fb25516a60b27cf1ecb644d36f815ae815f641a86d"
+hash = "2da4fa064fb6e69a821246c78b97a49dd00b85d5d04d80b941df836067e3e439"
 
 [[files]]
 file = "config/jei/world/local/______1/bookmarks.ini"
@@ -2134,7 +2134,7 @@ hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "config/jei/world/local/______1/lookupHistory.ini"
-hash = "9b7292b5b7b7143156fe99edc6c4647780d8d6bb4951e845066adda8d684253f"
+hash = "bbc066488e2978556015025664cfc71e49d7e87f6bff4ca105a71f3e76f729e3"
 
 [[files]]
 file = "config/jei/world/local/bookmarks.ini"
@@ -2238,7 +2238,7 @@ hash = "5edffdd02ce2f211aece0558ba1c03ca4b08a8d599352fb12a699d6e19bb5a9a"
 
 [[files]]
 file = "config/lightmanscurrency-common.txt"
-hash = "7d6003e5ae705df947667a76c6a7344602a2cb0449fac19307c8f34238619f2e"
+hash = "c663ed3a0c5243f4fcad1e0327f0fd18236291e4d7fe4ca9a837730213e7da72"
 
 [[files]]
 file = "config/lightmanscurrency-server.txt"
@@ -2402,7 +2402,7 @@ hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
 
 [[files]]
 file = "config/oculus.properties"
-hash = "898c754a23c30df0fc480f64985d65f55d2c2b2a647d72a2ef34066084b24af1"
+hash = "091662e6ba3dc1a4cd9f91a4f3b411ae46abdeafdacaaa9158885edae5307628"
 
 [[files]]
 file = "config/oei/common.json"
@@ -2430,7 +2430,7 @@ hash = "e019488eb143812fe4d2872c8ae955fda154974d727ab74c4d84deec780a5aa3"
 
 [[files]]
 file = "config/packetfixer.properties"
-hash = "5e7480a520598e239dd97bf7640cde9552ef6ae84f9d504c03755d2373c647c1"
+hash = "3fe5b5a5bea4b862b28072ecf5d845c1d786ebaa2b19c88755ce86697d1d5072"
 
 [[files]]
 file = "config/patchouli-client.toml"
@@ -2642,7 +2642,7 @@ hash = "2368757891e8f0cf91b1e04ba794d3769696f618db6713eb890d93cee6256fdd"
 
 [[files]]
 file = "config/stampalbum/collection_data.json"
-hash = "79944bbbf897c9884bc29ca2f54d6c3032df7f6ad50c0539d08318757b2ee9e7"
+hash = "c054cad90cefd28df42368b64fac5cf60ceaa361823c43f4b9630de88bc856a4"
 
 [[files]]
 file = "config/stampalbum/layout_settings.json"
@@ -7154,11 +7154,11 @@ hash = "a81a5eefbd8aa3c546e425c3d7436bdb558de6b813ccd96be5a7b659417e2f07"
 
 [[files]]
 file = "kubejs/assets/bakeries/lang/en_us.json"
-hash = "a4cc2d636d3f444a450dfe99549262c7c8ea999e43d9a7087d5d6d2ad4cb0f1f"
+hash = "4e8a8341314cdd7c599ba9296e90490fa6af5cdc892f25e1e59d313df0e0e7f1"
 
 [[files]]
 file = "kubejs/assets/bakeries/lang/zh_cn.json"
-hash = "33ec59a3a58316f146ba0110fac79a13180492c338cd37f005801e957033b9b0"
+hash = "dd4243ab133fc63077d848dfa06299d055547cf9d6e17c0bababad6e51aaa835"
 
 [[files]]
 file = "kubejs/assets/bakeries/models/item/cream_pumpkin_pie.json"
@@ -7225,8 +7225,20 @@ file = "kubejs/assets/bakeries/textures/item/paper_cup_cake_paste.png"
 hash = "b1c3550facf93b8e38cf055546c0fca57731aa30924658605486e1635e749682"
 
 [[files]]
+file = "kubejs/assets/bakeries/textures/item/pizza.png"
+hash = "af5b98ea0efde6da3c305ef416d55617b130b8279b2b82b6ae5e39e81d1ef3ae"
+
+[[files]]
+file = "kubejs/assets/bakeries/textures/item/pizza_flatbread.png"
+hash = "d596b5527bdd5319d87feb1659b2e53f5d0142be214225b640c208386e40517a"
+
+[[files]]
 file = "kubejs/assets/bakeries/textures/item/raw_egg_tart.png"
 hash = "ba2618e2e99d88e0bbca342dcca52c41d1968e789e2adc29343f3754cff80fa3"
+
+[[files]]
+file = "kubejs/assets/bakeries/textures/item/raw_pizza.png"
+hash = "b7e464a9782f15615e4aa514c33c0db626aa7f7ab96265857e2b700588e18a2d"
 
 [[files]]
 file = "kubejs/assets/bakeries/textures/item/red_velvet_cake_base.png"
@@ -7251,6 +7263,14 @@ hash = "95bac0032805e41382ead23921a54ae2e0e8c2ac742ed7d26542c5b207cf92bf"
 [[files]]
 file = "kubejs/assets/bettercombat/lang/zh_cn.json"
 hash = "a50ce372b9e50d6bd7d1fd8ed35f5785cfc372622784fd2335b91449c8ac51ff"
+
+[[files]]
+file = "kubejs/assets/bits_n_bobs/models/block/chain_pulley/chain_rope_half_magnet.json"
+hash = "fee83c0033c9f37616f4744eeec862fa7ea72dcbba45ea8f2c047dcb6921537b"
+
+[[files]]
+file = "kubejs/assets/bits_n_bobs/textures/blocks/nixie_board/text_atlas.png"
+hash = "eeb56694f52fb9aeee07bcd88d8d21161164ecc29e2a760d9b6d145ce05e3c2b"
 
 [[files]]
 file = "kubejs/assets/blueprint/lang/zh_cn.json"
@@ -7435,6 +7455,10 @@ hash = "282dd213af451cc5527524fa45f65a605a77fdd09ac20815f2094c3d4972ed29"
 [[files]]
 file = "kubejs/assets/cosmopolitan/textures/item/water_pie.png"
 hash = "6d9f926bb30209cfde5bdc9ecafe20465bf61d4e87c7b5d24742e563bac93468"
+
+[[files]]
+file = "kubejs/assets/crabbersdelight/animations/crab.animation.json"
+hash = "e6b3dd63cbddb83e33d220cc84877d23cf113d5ea006e169c2e1c9e2b50e27b9"
 
 [[files]]
 file = "kubejs/assets/crabbersdelight/lang/zh_cn.json"
@@ -7858,11 +7882,11 @@ hash = "a0e23c93e24efad1d37ed79dc63558562723862f6465ab8c18458a4abb9720aa"
 
 [[files]]
 file = "kubejs/assets/createdelight/lang/en_us.json"
-hash = "8ac1ae57901e58df44eb0d852ad32a6d3f48d16840bce0ca9eca75105ed22526"
+hash = "7a09f233f308ced30e091c25ea4613177533a89744d17bd89c114e94f86d758b"
 
 [[files]]
 file = "kubejs/assets/createdelight/lang/zh_cn.json"
-hash = "05499af38c42a0ecd3757e164ac717fd52bd823a105ace59aad94f55c3107169"
+hash = "c34d0bd70572b952a28034144713909392a103e7df1fe79cae9e00a5ac32ba0e"
 
 [[files]]
 file = "kubejs/assets/createdelight/models/block/bronze_block.json"
@@ -9729,6 +9753,10 @@ file = "kubejs/assets/createdelight/textures/item/piercing_withering_trial.gif"
 hash = "643f306fe4dd8cfd26401e9c58e7b8fb4f6ac078e6bc9dba5345de4ab2f35c0b"
 
 [[files]]
+file = "kubejs/assets/createdelight/textures/item/pizza_slice.png"
+hash = "77bb6ff5ffcde665780cb4cf8baef88abd37c8e7fd4e0e727ad4e80d796a0fe0"
+
+[[files]]
 file = "kubejs/assets/createdelight/textures/item/planet_gear.png"
 hash = "c5b0662f32f9c18cff910afdbe9c8c6bae2918e5a7bdc8f30130fac3d2c01e5b"
 
@@ -9789,10 +9817,6 @@ file = "kubejs/assets/createdelight/textures/item/raw_calamari.png"
 hash = "b5bc86f06d4f73b00d9e857b3b888b37b641c3fbcd7eed60f273e0260b7aae01"
 
 [[files]]
-file = "kubejs/assets/createdelight/textures/item/raw_cheese_pizza.png"
-hash = "65020a5496edb7be11f860201697cf020263ec795f3ce323e685042ce6161e79"
-
-[[files]]
 file = "kubejs/assets/createdelight/textures/item/raw_chicken_chip.png"
 hash = "44c14bb9b4f781ae6da5dacf3bdd3708cd21b8fb9cd9c311d76dc553feb8d154"
 
@@ -9811,6 +9835,10 @@ hash = "8b1d2c794902b660b6a7ad5cc9416947950a5d91f25cfb32b5eba0b02f8f491d"
 [[files]]
 file = "kubejs/assets/createdelight/textures/item/raw_hoglin_chop.png"
 hash = "3874fc860234010a489ae33a1ac938f7de1e1e92abe00789715eebc0d0a83628"
+
+[[files]]
+file = "kubejs/assets/createdelight/textures/item/raw_nether_pizza.png"
+hash = "7f63804ba028c906dace851f34127370cc39e7122c1ab2dff8603cd4893e2957"
 
 [[files]]
 file = "kubejs/assets/createdelight/textures/item/raw_pie_crust.png"
@@ -10322,7 +10350,7 @@ hash = "ceff5550a16d7921db74c9c3b4cc8e4f35dd3a581cfeebb7dd2e9ac6cf864166"
 
 [[files]]
 file = "kubejs/assets/createdelightcore/lang/zh_cn.json"
-hash = "65056a80c1af925de4dc2b636175d9eee3758cea39a46c68c60c1bf042264c2b"
+hash = "e8142ad8ed38f50721f19391636e4e52ec674239a43ea200d9128d1dca7782f7"
 
 [[files]]
 file = "kubejs/assets/createdelightcore/optifine/cit/items/copper_coin_0.png"
@@ -10525,6 +10553,10 @@ file = "kubejs/assets/createtransmission/lang/zh_cn.json"
 hash = "27e541633a1f3f87a067895d9e9df12a62a2ec63a018a2a3c675f0f6dcff0b84"
 
 [[files]]
+file = "kubejs/assets/creeperoverhaul/animations/ocean.animation.json"
+hash = "04c56e2850e25dedb7eb04b88cdc87055e0a7ac04ad7e7ddd5f23d3d8fbd5e4f"
+
+[[files]]
 file = "kubejs/assets/creeperoverhaul/lang/zh_cn.json"
 hash = "f87705c11259ee263454ef5f50750e31c710056b6aaa2f38b7ff39dc051b9ec1"
 
@@ -10591,6 +10623,10 @@ hash = "2af4abfea0642fcd9912effbd25bd99b88fab33ffea6bd22186c4b53fd925d2d"
 [[files]]
 file = "kubejs/assets/dungeonsdelight/lang/zh_cn.json"
 hash = "0a09cd5f8028ee27a0a746fd414134a7e9dcd86db5c758f39cbd52da5e0fef1d"
+
+[[files]]
+file = "kubejs/assets/dungeonsdelight/models/block/monster_cake.json"
+hash = "d895ca521af2e955427abd501d5661fdf7e5b7858a431338fe3eeaddfd7951e6"
 
 [[files]]
 file = "kubejs/assets/eclipticseasons/lang/en_us.json"
@@ -11423,6 +11459,38 @@ hash = "79031c82821255e144165ebecb5891c050572cee9626a987f6e2c544df3dcf3e"
 [[files]]
 file = "kubejs/assets/gateways/lang/zh_cn.json"
 hash = "d71e128647c1eb0e96df5903be316a4a72c7e939cc0f94305adf8b300768ff6a"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/block/botarium.animation.json"
+hash = "49b70755ba66d8a324c0d613d658525952cc07c59547cced473db15414f744a5"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/block/fertilizer.animation.json"
+hash = "95603003995752904d807e9285764207a7f47b49dba00a5269e2c8eaed108a3b"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/cool_kid.animation.json"
+hash = "46e9e941cd8eb60203cb60601addc85b263f0d7df0fe37e08c55bdae9560e215"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/creeper.animation.json"
+hash = "afe9eb513b665cdac9b520bd75455469514e31906d0b43c518e25e87dbfef70b"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/gremlin.animation.json"
+hash = "19c8cdf4ac74bc90c84782c4d0b4892cd6254cb4a4cd405597be9382bc086a70"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/mutant_zombie.animation.json"
+hash = "7560d3eb3be9406fceca2f6e50d11bc27861f089bd27fddb3d09e8ae8d3df6fc"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/parasite.animation.json"
+hash = "85c859ef62570964f07c0cf0c0191086e91bdd471beaebf75518f6942b6c7409"
+
+[[files]]
+file = "kubejs/assets/geckolib/animations/entity/rocket.animation.json"
+hash = "4e32d03b277af201bcb488d116402595f33a3488b139c0a18f1ecde5bf04bade"
 
 [[files]]
 file = "kubejs/assets/hamsters/lang/zh_cn.json"
@@ -14449,6 +14517,14 @@ file = "kubejs/assets/iris/lang/zh_cn.json"
 hash = "1a5ded06ff9b1fae50a2c055c0a7bb063b87825b6a51fec0e4db45658261c6e0"
 
 [[files]]
+file = "kubejs/assets/irons_lib/animations/statue_poses.animation.json"
+hash = "01aab88a5e6924eb5034f97f51a24ff6bb442908925aa53e74388de6fe225d3d"
+
+[[files]]
+file = "kubejs/assets/irons_spellbooks/animations/wisp.animation.json"
+hash = "dbaa98575c1ccfb72022a309bf542a424bd9564ab859228ae32c908f4e346305"
+
+[[files]]
 file = "kubejs/assets/itemfilters/lang/zh_cn.json"
 hash = "8fb66afd6938f343bf74e6686fbaf240e07a923b595f752fad7cff0cdb533d5e"
 
@@ -14479,6 +14555,10 @@ hash = "ee53ece177a6aa5af2499fef5f6ff065cac908e341af7dd482c21e90e39c7afa"
 [[files]]
 file = "kubejs/assets/lctech/lang/zh_cn.json"
 hash = "d1ee95ff782f17d93c2fcb23bb6e3aaadf64ef1033af30e0555565d654fdeaad"
+
+[[files]]
+file = "kubejs/assets/lightman-invalid-card-display-filter.zip"
+hash = "1e24e4676c176f1be8dfe1f1d7cd062c1312ba67566a455ddbc0f60abca09320"
 
 [[files]]
 file = "kubejs/assets/lightmanscurrency/lang/en_us.json"
@@ -14957,6 +15037,10 @@ file = "kubejs/assets/mynethersdelight/lang/zh_cn.json"
 hash = "007bb71608bba28460e410863862fc158c35b53ee9561b514791f9fbf60bc187"
 
 [[files]]
+file = "kubejs/assets/mynethersdelight/models/block/magma_cake.json"
+hash = "b3bd82ce812b548035a5a76db1bdf86e68530bdf3016925fe8432333422babf3"
+
+[[files]]
 file = "kubejs/assets/mynethersdelight/textures/item/fries_ghasta.png"
 hash = "b5fbd313a46a4532e314459b3ce36fa6bdef5e5814160c1b0e76fb7904dd476a"
 
@@ -14975,6 +15059,34 @@ hash = "f0e6f0d29c43e31a205aae7ebe156d1b7bf7dc51e412983a8dc5226fb1efe5c0"
 [[files]]
 file = "kubejs/assets/nethervinery/lang/zh_cn.json"
 hash = "6a32f16782a0aafda5ff13c76c889b890004d9ac1e543ffd7ea9edfb8ddd294a"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/mars_cobra.animation.json"
+hash = "7c307c363c00e744f932d04548fe80ea2764822878e5e038acbe92804775d2c0"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/mars_moth.animation.json"
+hash = "0463cba42951aee8e3e9393f0f49a02423fc90d70347dc9bdc74ec1922b13c1f"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/moon_lunar_hydra.animation.json"
+hash = "d829170378a358b5b2d1de0aeed60fe29d37d8ee83667c02dcf6c30f8fd377fb"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/venus_bird.animation.json"
+hash = "faa933ac03df67cda84602bba8810a1cf66909e234dc55a68e3e92f063239cc3"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/venus_mimic.animation.json"
+hash = "ea9c28852f6c5fac6f2f7bae5be99c36597b556750578d82846a0e7d4749aff4"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/entity/venus_stone_bull.animation.json"
+hash = "9f438c46a8c74a741057b7bff9807bea9343791a822cda3cc67b54c428ad06db"
+
+[[files]]
+file = "kubejs/assets/northstar/animations/opabinia.animation.json"
+hash = "563cf676fa6392fac484893d26b75bf45078620bf88898b60d29fdbfc90a6f69"
 
 [[files]]
 file = "kubejs/assets/northstar/lang/zh_cn.json"
@@ -15063,6 +15175,30 @@ hash = "1396cc5b4a3896cd3441feb69337d76bd541835b2634378bfb73ccb06eec2d59"
 [[files]]
 file = "kubejs/assets/refurbished_furniture/lang/zh_cn.json"
 hash = "74dcdc2e65f8f2b51b331a45e344d4fa64e6549a00f13dd7f019810465e02621"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/cooked_meatlovers_pizza.png"
+hash = "03b45df60f007f11454d8da07bd53daa01aac04bc04a9261d3a2c90a26f1ad81"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/cooked_vegetable_pizza.png"
+hash = "dcc304926cc27d86823986a48ce2d9b5f9e1e231cede4e6faa4c203037c792c9"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/meatlovers_pizza_slice.png"
+hash = "800757e6f827f78387ea29cb8cc75c947f40a59645563c1732c88b95a2da1ce3"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/raw_meatlovers_pizza.png"
+hash = "22610f9a2a5a72c995e79cd21c0ea596e48cc4709d1bb371b0a4283048c39b87"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/raw_vegetable_pizza.png"
+hash = "a34e18abba2362719570a2d5bbe0f8989a513335efe8c2f92a966b670342e0df"
+
+[[files]]
+file = "kubejs/assets/refurbished_furniture/textures/item/vegetable_pizza_slice.png"
+hash = "f0d15af93b2eefc98c4eaabb9f123ca6a22453422a218604fae12470347842f8"
 
 [[files]]
 file = "kubejs/assets/runiclib/lang/zh_cn.json"
@@ -15341,6 +15477,14 @@ file = "kubejs/assets/travelerstitles/lang/zh_cn.json"
 hash = "13b891263e0c6d3100f22fbd690943c205205a93e4ec25fa6af39ad46a9bf9f1"
 
 [[files]]
+file = "kubejs/assets/traveloptics/animations/nightwarden_clone.animation.json"
+hash = "b07a4f1b3d339c210cfaeb78226fc161510bc0af0efe32c1e5bda66e90a6ba0d"
+
+[[files]]
+file = "kubejs/assets/traveloptics/animations/nightwarden_defeated.animation.json"
+hash = "a8650030485588df61388f295755c058c158c4950d4460f4c7155a8040c3652a"
+
+[[files]]
 file = "kubejs/assets/traveloptics/lang/zh_cn.json"
 hash = "5dc2d632f14090fdddcbf2f4fca0b7cc94294e4a6b0386eef8990a9d4fad3a46"
 
@@ -15355,14 +15499,6 @@ hash = "a495b67d7e94dde44080154e0e16bacfe063db873cf5bdaa92449f0fb2f9ffde"
 [[files]]
 file = "kubejs/assets/vintagedelight/models/block/gearo_berry_bag.json"
 hash = "babf03c395ad18ed39ccbb2b5d23d2458148b58314a2594686c37e9185e7f71f"
-
-[[files]]
-file = "kubejs/assets/vintagedelight/textures/item/cheese_pizza.png"
-hash = "29b49620b65e2e92968672470abca5b436ab64e25df3e6bc86c4d4edb2f8f038"
-
-[[files]]
-file = "kubejs/assets/vintagedelight/textures/item/cheese_pizza_slice.png"
-hash = "220be5e0a85634b5594e3b8bd779e15d3ad9dddc105c34cea91ae246ef834275"
 
 [[files]]
 file = "kubejs/assets/vintagedelight/textures/item/cheese_wheel.png"
@@ -18246,7 +18382,7 @@ hash = "97f8567387bd5d8f2e357d86586b9fd8537605eca7c61e906561df518a2644c2"
 
 [[files]]
 file = "kubejs/data/oei/replacements/default.json"
-hash = "0f16a043452621300ab66657eefe767616a390768dcf049cea4d65b58fc5eaa5"
+hash = "146b1a8cb50cfd5cffd784166af5289232c8aea4972cd05d4f6dfb5b351ca19a"
 
 [[files]]
 file = "kubejs/data/oei/replacements/metal.json"
@@ -20529,12 +20665,8 @@ file = "kubejs/server_scripts/Bakeries/misc.js"
 hash = "e6ef991923b0f607429a8fc2d499212ce3a728013799e3f241caf05bdfad4287"
 
 [[files]]
-file = "kubejs/server_scripts/Bakeries/pizza.js"
-hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
-[[files]]
 file = "kubejs/server_scripts/Bakeries/recipe.js"
-hash = "c8127b60810e824e8c1f8061908170f578bf8ebc7c030f3ecb0a9721537f1d4b"
+hash = "c74a02ae9856ddb69ad7a2bf96f472c0186f0a8fe343012bf4510979e86eec20"
 
 [[files]]
 file = "kubejs/server_scripts/Bakeries/tags.js"
@@ -20586,7 +20718,7 @@ hash = "f8c41713ccb92c519b16535f11e9577e31e1034175e81fd78a10f425a87d3867"
 
 [[files]]
 file = "kubejs/server_scripts/Casualness Delight/cheese.js"
-hash = "17bf0bbf5efbb34e0259dad4a78fe3793733d1f01bb317c4dc4905b5785c877d"
+hash = "708f563b97f711eae2f57dec0b97d65e64e613f8a21a506e2542953e4dba43b0"
 
 [[files]]
 file = "kubejs/server_scripts/Casualness Delight/frying.js"
@@ -20726,7 +20858,7 @@ hash = "523b21e80a21ee5e48edf7d749f5d620f405b5c32f92dc7c463393d1fff19640"
 
 [[files]]
 file = "kubejs/server_scripts/Create Delight/tag.js"
-hash = "11f5246f6afb61168b4d3cde2a4e750202540584c3c8910efe8f938531fa237f"
+hash = "ddee53421b7c4d4de50622f3b45d35c81e04fc5a111f148bc750fa89cc8cf960"
 
 [[files]]
 file = "kubejs/server_scripts/Create Diesel Generators/bug_fix.js"
@@ -20933,6 +21065,10 @@ file = "kubejs/server_scripts/Custom/food/muffin.js"
 hash = "1c3a9d3f9d42d858feba7fc145ef9bb5de3d03f89c830a24441b3588007e9797"
 
 [[files]]
+file = "kubejs/server_scripts/Custom/food/pizza.js"
+hash = "bbd42341b90363fdb45a712db2caf02b09e1335ff8dbf1137334428b6115dc92"
+
+[[files]]
 file = "kubejs/server_scripts/Custom/food/popsicle.js"
 hash = "05b7d6958500d6fd73ff6d228dd8929c173267aa6e61be7f67b0fe832a8e6252"
 
@@ -20974,7 +21110,7 @@ hash = "59675588a7651d6be13cc8a933e9301ad5937c2bb8348fea18ed996e813dfaf9"
 
 [[files]]
 file = "kubejs/server_scripts/Custom/order/data.js"
-hash = "5a4ca09ad3b47206fede7a06522951aae12b484f61d407bb97e2db8da023b1db"
+hash = "b99d025ea76e8f3aa4840fa28e7b2842e0fc9f37ca533afe1ad8fc9f3b708a41"
 
 [[files]]
 file = "kubejs/server_scripts/Custom/order/event.js"
@@ -21342,7 +21478,7 @@ hash = "71696f005151575f30456531ef371e226afab40d5ceee2b10f2b4f6fda8c5ac0"
 
 [[files]]
 file = "kubejs/server_scripts/Nether Exp/recipe.js"
-hash = "9ade35f1ff5bc0ec4727d023a1bc2a65425b7f3f7d4f5694dde447c3d4142418"
+hash = "449d31d307b06ef8c9662ac64fa4b33800b3dec7a9ce2f178c5aa9d2bfe3235e"
 
 [[files]]
 file = "kubejs/server_scripts/Nether Exp/tags.js"
@@ -21378,7 +21514,7 @@ hash = "3a3bdf74c04aaf375661f0b29adf1d5910fc9c0717034ff5109aaa423db978e0"
 
 [[files]]
 file = "kubejs/server_scripts/Quality Food/tags.js"
-hash = "c002d360534d315f86985f57e8b9d72313b45267fb7191e9c0e1133882c9ec3f"
+hash = "6aea40ec12cc2564959dea55612e4e84b7bbd70594eccf426fb471522b71fd64"
 
 [[files]]
 file = "kubejs/server_scripts/Quark/recipes.js"
@@ -21894,7 +22030,7 @@ hash = "4760a9ceecdaacab42b864484e90694a84ce1b494f44fa6f18c16bc42d834450"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/createdelight.js"
-hash = "62d0a7d1c7f6097918135235252c753dc6a88503bf1d441c80ef8c5ef4dfa6be"
+hash = "32a5089f95d6cd4a67d29e5569d3a6ef40c460ebca852d1304b5b9ed6870cd3e"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/createdelightcore.js"
@@ -21950,7 +22086,7 @@ hash = "62716e1d47a4b73c5c6056a8f075c703097e506d24dc6c80f5d2019bffa445db"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/kubejs.js"
-hash = "f780c003a9d7865e6b637f9fb49b756a090a388f7670b457b8b7503b5e50ac97"
+hash = "56da7c8d3aa402f236caab995d4752a76db70d5d04718567034fb22e0179676b"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/lightmanscurrency.js"
@@ -22018,7 +22154,7 @@ hash = "ae0ef1d6c2c570d21706e5a77466503faa3e7709f4a0c108f3f742bab0ae0f9a"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/vintagedelight.js"
-hash = "3ad7ba8b46cd4528513c11da5457c86acf9fba282bb08259df0e357b8076a66b"
+hash = "42a6ac8e7f9d4db8c41c05feb5e9f8f2bb68bb2272c3b3bfe5b987c378b6bf41"
 
 [[files]]
 file = "kubejs/startup_scripts/creative_tab/vintageimprovements.js"
@@ -22066,7 +22202,7 @@ hash = "cb8958b28b530bb34d5a58fb1edb3696908fb6c1eb31e2a156b94496586f7e14"
 
 [[files]]
 file = "kubejs/startup_scripts/custom/value_data.js"
-hash = "2b882b39dbe441daee46d7f99dbcc1f4da3e13d65e9077f5bd5786eb8cf0c98a"
+hash = "88c23c77d98499f406832705e08dcb8f08295f64a37df167c3ca6994a88db8bc"
 
 [[files]]
 file = "kubejs/startup_scripts/custom_portal.js"
@@ -22086,7 +22222,7 @@ hash = "f857267136c4c61d332362ca1434499b3dca920dcee0eab017ea07209bef9614"
 
 [[files]]
 file = "kubejs/startup_scripts/modifier_item.js"
-hash = "0cda50bbb0db6a587c270b8e6a7ba69e5f0aa95a37f326232ca61bd46ec1bb03"
+hash = "7bbdc9b4eb5667817bdb7ea8bf5a4b4921889e8ffe0af08280db97ea0ef56fc7"
 
 [[files]]
 file = "kubejs/startup_scripts/registery_mob_effect.js"
@@ -22106,7 +22242,7 @@ hash = "375fef76e9750b55110324f5e93ed637be321293664078abedf01dffd8157c46"
 
 [[files]]
 file = "kubejs/startup_scripts/registry_item.js"
-hash = "faba1844af47c222c3bd41a12d7c990bb736c4c306874b68f00c4bb5ae66f42a"
+hash = "5bb6388c81c168c31b3e1089ae64eea76a9d063027a338b6bea63f52f6caf088"
 
 [[files]]
 file = "kubejs/startup_scripts/registry_machine.js"
@@ -22213,8 +22349,8 @@ file = "mods/Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar"
 hash = "0ae969c7b0041989d2cdb1b0ae03e51d92b7b93cccff30077591bc5bd36bc5b2"
 
 [[files]]
-file = "mods/Create-Delight-Core-1.20.1-2.2.15.jar"
-hash = "ad36d4c39170aefc33f14d31d2292efec254191d952936b582fcfffcc867bd49"
+file = "mods/Create-Delight-Core-1.20.1-2.2.16.jar"
+hash = "0a4bc3d723128492e75a2f1efa71ccf1417a38acd20fd1e751cca23e7fb3d948"
 
 [[files]]
 file = "mods/Create-Utilities-J-1.20.1-0.3.3.jar"
@@ -23139,7 +23275,7 @@ metafile = true
 
 [[files]]
 file = "mods/create-delight-core.pw.toml"
-hash = "a0b871c5110c6f399995b5084daee62e77efe076f55adb42e05eec3189f15594"
+hash = "256d0bb8ad656468a6409cbef07082eeee9d9e9facff7648e594491ee0817989"
 metafile = true
 
 [[files]]

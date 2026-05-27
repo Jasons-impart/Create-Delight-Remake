@@ -44,7 +44,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:paw_cookie_dough',
         'createdelight:raw_empanada',
         'createdelight:raw_calamari',
-        'createdelight:raw_cheese_pizza',
         'createdelight:oat_bread',
         'createdelight:ketchup_corn_dog',
         'createdelight:mayo_corn_dog',

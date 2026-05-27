@@ -471,14 +471,15 @@ ServerEvents.tags("minecraft:item", e => {
         "cavedelight:slice_of_pinenut_pie",
         "bakeries:egg_tart",
         "brewinandchewin:quiche_slice",
-        "brewinandchewin:pizza_slice",
         "cosmopolitan:blisterberry_tart",
         "cosmopolitan:mendosteen_tart",
         "cosmopolitan:water_pie",
         "create_central_kitchen:mulberry_pie_slice",
         "create_central_kitchen:pumpkin_pie_slice",
-        "vintagedelight:meat_pizza_slice"
-
+        'createdelightcore:pizza_slice',
+        'refurbished_furniture:vegetable_pizza_slice',
+        'refurbished_furniture:meatlovers_pizza_slice',
+        'netherexp:nether_pizza_slice',
     )
     e.add("createdelight:order/cake",
         "fruitsdelight:mangosteen_cake",
@@ -1338,9 +1339,11 @@ ServerEvents.tags("minecraft:item", e => {
         "festival_delicacies:baozi",
         "vintagedelight:oatmeal",
         "vintagedelight:overnight_oats",
-        "vintagedelight:cheese_pizza_slice",
         "farmersdelight:stuffed_potato",
-
+        'createdelightcore:pizza_slice',
+        'refurbished_furniture:vegetable_pizza_slice',
+        'refurbished_furniture:meatlovers_pizza_slice',
+        'netherexp:nether_pizza_slice'
     )
     e.add("createdelight:order/rice",
         "ends_delight:ender_bamboo_rice",

@@ -226,7 +226,6 @@ let MaterialWhitelistValueDict = {
     "createdelight:board_noodles": 2,
     "createdelight:wafer_dough": 5,
     "createdelight:vermicelli": 2,
-    "createdelight:raw_cheese_pizza": 8,
     "bakeries:whole_wheat_dough": 3,
     "bakeries:bagel_dough": 4,
     "bakeries:whole_wheat_bagel_dough": 4,

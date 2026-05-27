@@ -1,8 +1,6 @@
 ServerEvents.tags("block", e => {
     e.add("quality_food:quality_blocks",
         'brewinandchewin:flaxen_cheese_wheel',
-        'vintagedelight:cheese_pizza', 
-        'vintagedelight:meat_pizza', 
         'youkaishomecoming:chest_of_heart_throbbing_surprise', 
         'youkaishomecoming:flesh_feast', 
         'youkaishomecoming:red_velvet_cake', 
@@ -119,6 +117,7 @@ ServerEvents.tags("item", e => {
     )
     e.add("quality_food:material_whitelist", [
         'create:dough',
+        'bakeries:pizza_flatbread',
         'farmersdelight:brown_mushroom_colony',
         'farmersrespite:coffee_beans',
         'farmersdelight:red_mushroom_colony', 
@@ -140,7 +139,6 @@ ServerEvents.tags("item", e => {
         'createdelight:board_noodles', 
         'createdelight:wafer_dough',
         'createdelight:vermicelli', 
-        'createdelight:raw_cheese_pizza', 
         'bakeries:sweet_dough', 
         'bakeries:whole_wheat_dough', 
         'bakeries:bagel_dough', 

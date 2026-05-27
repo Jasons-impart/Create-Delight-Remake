@@ -2,5 +2,6 @@
   "item.bakeries.paper_cup_cake_paste": "Unbaked Muffin",
   "item.bakeries.cup_cake": "Muffin",
   "effect.bakeries.soft.description": "Increases armor and knockback resistance, and bounces off attackers.",
-  "item.bakeries.cream_pumpkin_pie_dough": "Unbaked Pumpkin Pie"
+  "item.bakeries.cream_pumpkin_pie_dough": "Unbaked Pumpkin Pie",
+  "tip.bakeries.pizza_tomato": "You need to place the ketchup first"
 }

@@ -509,7 +509,7 @@
 				{
 					count: 2
 					id: "38D5ECC5AC68743F"
-					item: "refurbished_furniture:cooked_vegetable_pizza"
+					item: "createdelightcore:vegetable_pizza"
 					random_bonus: 2
 					type: "item"
 				}
