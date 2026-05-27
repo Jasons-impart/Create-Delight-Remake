@@ -591,6 +591,37 @@
 			x: 5.5d
 			y: 3.5d
 		}
+		{
+			dependencies: ["089E81F7DCA47A98"]
+			description: [
+				"为了让柴油引擎在星球上正常工作，你需要一个密封的&e有氧&r环境。"
+				"使用&b供氧机&r来提供氧气，使用&b大型风扇&r来扩充供氧机的填充范围。"
+				""
+				"另外，外太空里柴油引擎不能接链式传动箱，会因为bug导致应力消失。"
+			]
+			icon: "createdieselgenerators:diesel_engine"
+			id: "3F9754F899053D6F"
+			rewards: [{
+				id: "06119CA65526B84E"
+				item: "createdelightcore:gold_coin"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "66BD399E12832AF5"
+					item: "northstar:oxygen_sealer"
+					type: "item"
+				}
+				{
+					id: "2215AB693422A844"
+					item: "northstar:large_fan"
+					type: "item"
+				}
+			]
+			title: "柴油引擎需要氧气！"
+			x: 12.0d
+			y: 2.0d
+		}
 	]
 	title: "群星之旅"
 }
