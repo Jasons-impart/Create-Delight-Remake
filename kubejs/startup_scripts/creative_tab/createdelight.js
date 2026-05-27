@@ -68,7 +68,6 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:raw_empanada',
     'createdelight:raw_calamari',
     'createdelight:raw_ghast_calamari',
-    'createdelight:raw_cheese_pizza',
     'createdelight:raw_potato_pancake',
     // 红丝绒蛋糕相关
     'createdelight:red_velvet_cake_mold_filled',

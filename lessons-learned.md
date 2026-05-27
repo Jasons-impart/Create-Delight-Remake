@@ -141,3 +141,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: 在原始游戏运行目录为普通 `config/` 或 `kubejs/assets/` 改动直接执行 `packwiz refresh`，会重算大量无关 `index.toml` 条目并让 PR 带入数千行噪音。
 - **Fix/Lesson**: PR 前只对 mod JAR / `.pw.toml` / `packwiz-files` 变更运行 `scripts/update-packwiz-meta.ps1`；非 mod 元数据改动不要用全量 `packwiz refresh` 制造无关索引差异。
+
+## KubeJS BlockContainerJS property placement can reject custom states
+
+**Date**: 2026-05-25
+
+- **Problem**: `BlockContainerJS.set(id, props)` threw `No value present` when placing a custom KubeJS block with `facing`/`slice` properties from a right-click handler.
+- **Fix/Lesson**: For placement-first interactions, call `targetBlock.set(id)` and let the startup-registered default state apply; set custom state values later with native `BlockState.setValue` only when needed.

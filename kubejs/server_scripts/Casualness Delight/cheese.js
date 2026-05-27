@@ -37,30 +37,6 @@ ServerEvents.recipes(e => {
     // 奶酪相关
     e.replaceInput({ id: "culturaldelights:cooking/elote" }, "#forge:milk", "#forge:cheese")
     e.replaceInput({ id: "corn_delight:cooking/nachos_block" }, "#forge:milk", "#forge:cheese")
-    combination(e, [
-        "create:dough",
-        "trailandtales_delight:cheese_slice",
-        "minecraft:carrot",
-        "minecraft:beetroot",
-        "minecraft:potato"
-    ], "refurbished_furniture:raw_vegetable_pizza", 1)
-    cutting(e, "refurbished_furniture:cooked_meatlovers_pizza", [["refurbished_furniture:meatlovers_pizza_slice", 4]])
-    cutting(e, "refurbished_furniture:cooked_vegetable_pizza", [["refurbished_furniture:vegetable_pizza_slice", 4]])
-    cutting(e, "vintagedelight:cheese_pizza", [["vintagedelight:cheese_pizza_slice", 4]])
-    combination(e, [
-        "create:dough",
-        "butchercraft:cooked_cubed_beef",
-        "farmersdelight:cooked_chicken_cuts",
-        "butchercraft:cooked_cubed_pork",
-    ], "refurbished_furniture:raw_meatlovers_pizza", 1)
-    combination(e, [
-        "create:dough",
-        "trailandtales_delight:cheese_slice",
-        "trailandtales_delight:cheese_slice",
-        "trailandtales_delight:cheese_slice",
-        "trailandtales_delight:cheese_slice"
-    ], "createdelight:raw_cheese_pizza", 1)
-    baking(e, "createdelight:raw_cheese_pizza", "vintagedelight:cheese_pizza", 1, "food", 300)
 })
 
 BlockEvents.rightClicked(e => {

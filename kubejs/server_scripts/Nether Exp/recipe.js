@@ -21,15 +21,6 @@ ServerEvents.recipes(e => {
     create.mixing(Fluid.of("create_bic_bit:curdled_milk", 1000), ["2x #netherexp:glowspores", Fluid.of("minecraft:milk", 1000)])
     .id("createdelight:compat/curdled_milk")
 
-    combination(e, [
-        "create:dough",
-        "trailandtales_delight:cheese_slice",
-        "mynethersdelight:hoglin_loin",
-        "netherexp:warped_wart",
-        "minecraft:nether_wart"
-    ], "netherexp:nether_pizza", 1)
-
-    cutting_2(e, "netherexp:nether_pizza", [["netherexp:nether_pizza_slice", 4]])
 
     farmersdelight.cooking(["netherexp:cerebrage", "warped_fungus", "#netherexp:cooked_hogham"], "netherexp:roasted_bone", 5.0, 200, "minecraft:bone")
     .id("createdelight:cooking/roasted_bone")

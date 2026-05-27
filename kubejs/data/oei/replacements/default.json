@@ -429,5 +429,53 @@
             "festival_delicacies:tangerine"
         ],
         "resultItems": "fruitsdelight:orange"
+    },
+    {
+        "matchItems": [
+            "refurbished_furniture:raw_vegetable_pizza"
+        ],
+        "resultItems": "createdelightcore:raw_vegetable_pizza"
+    },
+    {
+        "matchItems": [
+            "refurbished_furniture:raw_meatlovers_pizza"
+        ],
+        "resultItems": "createdelightcore:raw_meatlovers_pizza"
+    },
+    {
+        "matchItems": [
+            "netherexp:nether_pizza"
+        ],
+        "resultItems": "createdelightcore:nether_pizza"
+    },
+    {
+        "matchItems": [
+            "refurbished_furniture:cooked_vegetable_pizza"
+        ],
+        "resultItems": "createdelightcore:vegetable_pizza"
+    },
+    {
+        "matchItems": [
+            "refurbished_furniture:cooked_meatlovers_pizza"
+        ],
+        "resultItems": "createdelightcore:meatlovers_pizza"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:vegetable_pizza_slice"
+        ],
+        "resultItems": "refurbished_furniture:vegetable_pizza_slice"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:meatlovers_pizza_slice"
+        ],
+        "resultItems": "refurbished_furniture:meatlovers_pizza_slice"
+    },
+    {
+        "matchItems": [
+            "createdelightcore:nether_pizza_slice"
+        ],
+        "resultItems": "netherexp:nether_pizza_slice"
     }
 ]

@@ -224,9 +224,6 @@ StartupEvents.registry("item", e => {
             food.hunger(4)
                 .saturation(0.25)
         })
-    // 生奶酪披萨
-    e.create("createdelight:raw_cheese_pizza")
-        .translationKey("item.createdelight.raw_cheese_pizza")
     // 燕麦面包
     e.create("createdelight:oat_bread")
         .translationKey("item.createdelight.oat_bread")
