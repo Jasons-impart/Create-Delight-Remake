@@ -1,0 +1,12 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "idle": { "animation_length": 0, "bones": {} },
+    "walk": { "animation_length": 0, "bones": {} },
+    "charge": { "animation_length": 0, "bones": {} },
+    "animation.venus_stone_bull.walk": { "animation_length": 0, "bones": {} },
+    "animation.venus_stone_bull.charge": { "animation_length": 0, "bones": {} },
+    "animation.venus_stone_bull.stop_charge": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

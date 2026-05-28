@@ -1,0 +1,10 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.crab.idle": { "animation_length": 0, "bones": {} },
+    "animation.crab.attack2click": { "animation_length": 0, "bones": {} },
+    "animation.crab.attack1click": { "animation_length": 0, "bones": {} },
+    "animation.crab.walk": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

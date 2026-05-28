@@ -1,0 +1,10 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "move.fly": { "animation_length": 0, "bones": {} },
+    "move.walk": { "animation_length": 0, "bones": {} },
+    "misc.idle": { "animation_length": 0, "bones": {} },
+    "misc.living": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}
