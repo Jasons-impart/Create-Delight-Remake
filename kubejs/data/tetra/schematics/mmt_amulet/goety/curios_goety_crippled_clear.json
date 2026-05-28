@@ -1,0 +1,59 @@
+{
+  "slots": [
+    "mmt_amulet/fill"
+  ],
+  "materialSlotCount": 1,
+  "rarity": "temporary",
+  "displayType": "improvement",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "goety"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "goety_revelation"
+          }
+        }
+      ]
+    }
+  ],
+  "requirement": {
+    "type": "tetra:and",
+    "requirements": [
+      {
+        "type": "tetra:module",
+        "module": "mmt_amulet/fill/fill_item"
+      },
+      {
+        "type": "tetra:not",
+        "requirement": {
+          "type": "tetra:improvement",
+          "improvement": "curios_goety_crippled_clear"
+        }
+      }
+    ]
+  },
+  "outcomes": [
+    {
+      "material": {
+        "items": [
+          "minecraft:bone"
+        ],
+        "count": 8
+      },
+      "improvements": {
+        "curios_goety_crippled_clear": 0
+      }
+    }
+  ]
+}

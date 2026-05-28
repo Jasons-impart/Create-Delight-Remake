@@ -1,0 +1,57 @@
+{
+  "slots": [
+    "mmt_ring/base_ring"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "conditions": [
+    {
+      "type": "forge:and",
+      "values": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "goety"
+        },
+        {
+          "type": "forge:not",
+          "value": {
+            "type": "forge:mod_loaded",
+            "modid": "goety_revelation"
+          }
+        }
+      ]
+    }
+  ],
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "goety:cooldown_discount": 3
+    },
+    "secondaryAttributes": {
+      "goety:cooldown_discount": 2
+    },
+    "tertiaryAttributes": {
+      "goety:cooldown_discount": 1
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_ring/base_ring/focus_cooldown_ring",
+      "moduleVariant": "focus_cooldown_ring/"
+    }
+  ]
+}
