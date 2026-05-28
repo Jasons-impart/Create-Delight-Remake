@@ -1,0 +1,11 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "misc.spawn": { "animation_length": 0, "bones": {} },
+    "misc.idle": { "animation_length": 0, "bones": {} },
+    "attack.strike": { "animation_length": 0, "bones": {} },
+    "move.swim": { "animation_length": 0, "bones": {} },
+    "move.walk": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

@@ -1,0 +1,10 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.creeper.swim": { "animation_length": 0, "bones": {} },
+    "animation.creeper.idle": { "animation_length": 0, "bones": {} },
+    "animation.creeper.flop": { "animation_length": 0, "bones": {} },
+    "animation.creeper.attack": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

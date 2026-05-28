@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "misc.idle": { "animation_length": 0, "bones": {} },
+    "pose.greatsword.right": { "animation_length": 0, "bones": {} },
+    "misc.sit": { "animation_length": 0, "bones": {} },
+    "move.walk": { "animation_length": 0, "bones": {} },
+    "move.sneak": { "animation_length": 0, "bones": {} },
+    "attack.block.left": { "animation_length": 0, "bones": {} },
+    "attack.block.right": { "animation_length": 0, "bones": {} },
+    "pose.spear.left": { "animation_length": 0, "bones": {} },
+    "pose.spear.right": { "animation_length": 0, "bones": {} },
+    "pose.greatsword.left": { "animation_length": 0, "bones": {} },
+    "misc.crossbow_reload.left": { "animation_length": 0, "bones": {} },
+    "misc.crossbow_reload.right": { "animation_length": 0, "bones": {} },
+    "pose.gun.left": { "animation_length": 0, "bones": {} },
+    "pose.gun.right": { "animation_length": 0, "bones": {} },
+    "pose.small_gun.left": { "animation_length": 0, "bones": {} },
+    "pose.small_gun.right": { "animation_length": 0, "bones": {} },
+    "misc.interact.left": { "animation_length": 0, "bones": {} },
+    "misc.interact.right": { "animation_length": 0, "bones": {} },
+    "attack.cast": { "animation_length": 0, "bones": {} },
+    "misc.spin_hands": { "animation_length": 0, "bones": {} },
+    "attack.greatsword": { "animation_length": 0, "bones": {} },
+    "attack.spear": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

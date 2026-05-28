@@ -1,0 +1,12 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "mimic_hide_idle": { "animation_length": 0, "bones": {} },
+    "mimic_bite": { "animation_length": 0, "bones": {} },
+    "mimic_idle": { "animation_length": 0, "bones": {} },
+    "mimic_run": { "animation_length": 0, "bones": {} },
+    "mimic_walk": { "animation_length": 0, "bones": {} },
+    "mimic_hide": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

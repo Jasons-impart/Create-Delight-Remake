@@ -1,0 +1,9 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "walk": { "animation_length": 0, "bones": {} },
+    "idle": { "animation_length": 0, "bones": {} },
+    "bite": { "animation_length": 0, "bones": {} }
+  },
+  "geckolib_format_version": 2
+}

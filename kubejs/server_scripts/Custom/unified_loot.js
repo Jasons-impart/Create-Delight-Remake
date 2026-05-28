@@ -682,9 +682,9 @@ function addLootPools(event, tableId, poolConfigs) {
         })(currentRollRange, currentWeightedItems))
 
         appliedPoolCount += 1
-        console.info(
-            `[unified_loot] pool applied: ${normalizedTableId}, pool=${currentPoolName}, entries=${currentWeightedItems.length}, rolls=${currentRollRange[0]}-${currentRollRange[1]}`
-        )
+        // console.info(
+        //     `[unified_loot] pool applied: ${normalizedTableId}, pool=${currentPoolName}, entries=${currentWeightedItems.length}, rolls=${currentRollRange[0]}-${currentRollRange[1]}`
+        // )
     }
 
     if (appliedPoolCount === 0) {
@@ -884,7 +884,7 @@ function applyIntegratedVillageLoot(event) {
         addLootPools(event, id, buildTechPools(id, 2))
     })
 
-    console.info(`[unified_loot] integrated village crop tables updated: ${integratedCropTableCount}`)
+    // console.info(`[unified_loot] integrated village crop tables updated: ${integratedCropTableCount}`)
 }
 
 function applyNorthstarLoot(event) {
@@ -935,9 +935,9 @@ function applyLegacyDungeonLoot(event) {
 }
 
 LootJS.modifiers(event => {
-    console.info(
-        `[unified_loot] verified chest tables: idas=${IDAS_CHEST_TABLES.length}, integrated_villages=${INTEGRATED_VILLAGE_TABLES.length}, northstar=${NORTHSTAR_CHEST_TABLES.length}`
-    )
+    // console.info(
+    //     `[unified_loot] verified chest tables: idas=${IDAS_CHEST_TABLES.length}, integrated_villages=${INTEGRATED_VILLAGE_TABLES.length}, northstar=${NORTHSTAR_CHEST_TABLES.length}`
+    // )
 
     applyIdasLoot(event)
     applyIntegratedVillageLoot(event)

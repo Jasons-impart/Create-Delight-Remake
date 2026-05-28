@@ -1,0 +1,10 @@
+{
+  "parent": "minecraft:block/cake",
+  "textures": {
+    "particle": "mynethersdelight:block/magma_cake_inner",
+    "bottom": "mynethersdelight:block/magma_cake",
+    "top": "mynethersdelight:block/magma_cake_top",
+    "side": "mynethersdelight:block/magma_cake_side",
+    "inside": "mynethersdelight:block/magma_cake_inner"
+  }
+}
