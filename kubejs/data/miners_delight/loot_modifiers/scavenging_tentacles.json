@@ -1,0 +1,9 @@
+{
+  "type": "quality_food:quality_loot_modifier",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "createdelight:disabled/miners_delight_scavenging_tentacles"
+    }
+  ]
+}

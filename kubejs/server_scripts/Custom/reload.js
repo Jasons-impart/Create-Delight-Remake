@@ -6,7 +6,7 @@ global._evil_global_has_reloaded = false;
 ServerEvents.loaded(event => {
     if (global._evil_global_has_reloaded) return;
 
-    console.log("Forcing reload to work around KubeJS bugs...")
+    // console.log("Forcing reload to work around KubeJS bugs...")
     Utils.server.runCommand("reload");  
     global._evil_global_has_reloaded = true;
 });

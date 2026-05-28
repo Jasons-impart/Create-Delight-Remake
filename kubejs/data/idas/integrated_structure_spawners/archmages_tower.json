@@ -1,0 +1,16 @@
+{
+  "mobs": [
+    {
+      "name": "minecraft:pillager",
+      "weight": 15
+    },
+    {
+      "name": "minecraft:illusioner",
+      "weight": 10
+    },
+    {
+      "name": "minecraft:vex",
+      "weight": 10
+    }
+  ]
+}
