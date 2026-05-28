@@ -40,18 +40,4 @@ ServerEvents.recipes(e => {
   cutting(e, "createdelightcore:vegetable_pizza", [["createdelightcore:vegetable_pizza_slice", 4]])
   cutting(e, "bakeries:pizza", [["createdelightcore:pizza_slice", 4]])
   cutting(e, "createdelightcore:nether_pizza", [["createdelightcore:nether_pizza_slice", 4]])
-  e.custom({
-    type: "refurbished_furniture:oven_baking",
-    category: "food",
-    ingredient: { item: "bakeries:raw_pizza" },
-    result: { count: 1, item: "bakeries:pizza" },
-    time: 40
-  }).id(`createdelight:baking/pizza`)
-  e.custom({
-    type: "refurbished_furniture:oven_baking",
-    category: "food",
-    ingredient: { item: "createdelightcore:raw_nether_pizza" },
-    result: { count: 1, item: "createdelightcore:nether_pizza" },
-    time: 40
-  }).id(`createdelight:baking/nether_pizza`)
 })
