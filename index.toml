@@ -25271,12 +25271,8 @@ file = "mods/traveloptics-6.3.0-1.20.1.jar"
 hash = "878a0fb5a2057de530698fd63091b9fa1c23af0139054af108e9d566840a0fa9"
 
 [[files]]
-file = "mods/trueuuid-1.0.8-forge1.20.1.jar"
-hash = "cad3c24be2606f28162c7964fbf5965db2450b6602443177e70be778f38bf51f"
-
-[[files]]
 file = "mods/trueuuid.pw.toml"
-hash = "16083ce52df87d2ec93987ac34cc333999b87f7082e55bb6c6a846511bb3e42c"
+hash = "5f5528d1eb52da92cd117602d816e017fc4f1cf1d20e3e351e0d8abf242f2152"
 metafile = true
 
 [[files]]
@@ -25445,12 +25441,8 @@ hash = "33b3083dc76d44b58f77ef9f40e99b486c365cd08dc3e77430aca5b7f950b9f9"
 metafile = true
 
 [[files]]
-file = "mods/zstdnet-1.20.1-forge-1.4.1.jar"
-hash = "7fe00d5b731e28d2d80930062f214c167eb186ceb4cb38551348c4d160ab8179"
-
-[[files]]
 file = "mods/zstdnet.pw.toml"
-hash = "93b42b955bd935601232dd2e6c643b25c60a28ba3dc190ee4a782009b715f8e6"
+hash = "d5961bf35b1e3c8855561cb72c9ff39ae9e9b207e08559ef0c31d3f722c87cdd"
 metafile = true
 
 [[files]]
