@@ -7,13 +7,13 @@
     "displayType": "major",
     "glyph": {
         "tint": "f10ac0",
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 208
     },
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:rending_scissor_purple" ]
+                "items": [ "blackknightarmor:black_magic_sword" ]
             },
             "requiredTools": {
                 "hammer_dig": "minecraft:diamond"

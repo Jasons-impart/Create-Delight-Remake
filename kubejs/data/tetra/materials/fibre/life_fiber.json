@@ -20,7 +20,7 @@
         "default"
     ],
     "material": {
-        "items": [ "art_of_forging:life_fiber" ]
+        "items": [ "tetra:dragon_sinew" ]
     },
     "requiredTools": {
         "cut": "minecraft:iron"

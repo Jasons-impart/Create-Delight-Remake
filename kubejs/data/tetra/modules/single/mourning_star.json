@@ -1,49 +1,51 @@
 {
-    "replace": true,
-    "type": "tetra:basic_major_module",
-    "slots": [ "single/head" ],
-    "improvements": [
-        "tetra:single/head/mourning_star/",
-        "tetra:single/shared_head/",
-        "tetra:single/head/shared/",
-        "tetra:single/shared/",
-        "tetra:shared/"
-    ],
-    "variants": [
+  "replace": true,
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "single/head"
+  ],
+  "improvements": [
+    "tetra:single/head/mourning_star/",
+    "tetra:single/shared_head/",
+    "tetra:single/head/shared/",
+    "tetra:single/shared/",
+    "tetra:shared/"
+  ],
+  "variants": [
+    {
+      "key": "mourning_star/mourning_star",
+      "integrity": -2,
+      "attributes": {
+        "generic.attack_damage": 15,
+        "generic.attack_speed": -2.2
+      },
+      "aspects": {
+        "edged_weapon": 2,
+        "breakable": 2
+      },
+      "effects": {
+        "throwable": [
+          0,
+          0.8
+        ],
+        "armorPenetration": 50
+      },
+      "magicCapacity": 300,
+      "glyph": {
+        "tint": "971020",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
+        "textureX": 208,
+        "textureY": 16
+      },
+      "models": [
         {
-            "key": "mourning_star/mourning_star",
-            "integrity": -2,
-            "attributes": {
-                "generic.attack_damage": 15,
-                "generic.attack_speed": -2.2
-            },
-            "aspects": {
-                "edged_weapon": 2,
-                "breakable": 2
-            },
-            "effects": {
-                "throwable": [0, 0.8],
-                "art_of_forging:devouring": [ 1, 5 ],
-                "art_of_forging:life_steal": [ 5, 50 ],
-                "art_of_forging:hubris": 50,
-                "armorPenetration": 50
-            },
-            "magicCapacity": 300,
-            "glyph": {
-                "tint": "971020",
-                "textureLocation": "tetra:textures/gui/aof_glyph.png",
-                "textureX": 208,
-                "textureY": 16
-            },
-            "models": [
-                {
-                    "location": "tetra:item/module/single/head/mourning_star/mourning_star"
-                },
-                {
-                    "location": "tetra:item/module/single/head/mourning_star/mourning_star_glow",
-                    "emission": 10
-                }
-            ]
+          "location": "tetra:item/module/single/head/mourning_star/mourning_star"
+        },
+        {
+          "location": "tetra:item/module/single/head/mourning_star/mourning_star_glow",
+          "emission": 10
         }
-    ]
+      ]
+    }
+  ]
 }

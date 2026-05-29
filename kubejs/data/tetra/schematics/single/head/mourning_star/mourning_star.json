@@ -7,14 +7,14 @@
     "displayType": "major",
     "glyph": {
         "tint": "971020",
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 208,
         "textureY": 16
     },
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:demonic_flail" ]
+                "items": [ "blackknightarmor:endless_anger" ]
             },
             "experienceCost": 10,
             "requiredTools": {

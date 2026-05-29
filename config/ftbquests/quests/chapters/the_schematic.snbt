@@ -265,7 +265,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									8
 									1
@@ -300,7 +300,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									0
 									1
@@ -335,7 +335,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									9
 									3
@@ -370,7 +370,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									8
 									1
@@ -408,7 +408,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									3
 									5
@@ -1264,7 +1264,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									15
 									13
@@ -1339,7 +1339,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									8
 									7
@@ -1413,7 +1413,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									5
 									10
@@ -1527,7 +1527,7 @@
 					tag: {
 						BlockEntityTag: {
 							data: [{
-								details: "art_of_forging"
+								details: "otherworldly"
 								glyphs: [I;
 									6
 									15

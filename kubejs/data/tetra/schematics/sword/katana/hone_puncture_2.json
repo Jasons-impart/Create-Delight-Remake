@@ -6,7 +6,7 @@
     "rarity": "hone",
     "displayType": "major",
     "glyph": {
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 208,
         "tint": "c52323"
     },

@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "Materials"
 	group: "57E934AC8166BC73"
-	icon: "art_of_forging:endsteel_ingot"
+	icon: "dreadsteel:dreadsteel_ingot"
 	id: "147FF9AE2E3A4650"
 	order_index: 4
 	quest_links: [ ]
@@ -15,7 +15,7 @@
 			subtitle: "在水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
 			tasks: [{
 				id: "41507FB3303D2212"
-				item: "art_of_forging:vobrite_crystal"
+				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
 			x: 4.5d
@@ -28,14 +28,14 @@
 			rewards: [{
 				count: 3
 				id: "5079660030621FF5"
-				item: "art_of_forging:vobrivium_ingot"
+				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
 				id: "36BD3E1BEBBF6A21"
-				item: "art_of_forging:vobrivium_ingot"
+				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
 			x: 4.5d
@@ -100,7 +100,7 @@
 			subtitle: "使用带有纳米融合效果的武器击杀凋灵骷髅获得，直接击杀凋零也可获得"
 			tasks: [{
 				id: "5B78C6B3E560AF87"
-				item: "art_of_forging:fragment_of_eden"
+				item: "alexscaves:immortal_embryo"
 				type: "item"
 			}]
 			x: 5.5d
@@ -116,7 +116,7 @@
 			id: "691FF0ECF3FDC2ED"
 			rewards: [{
 				id: "49116D48A89919DF"
-				item: "art_of_forging:endsteel_ingot"
+				item: "dreadsteel:dreadsteel_ingot"
 				type: "item"
 			}]
 			shape: "hexagon"
@@ -124,7 +124,7 @@
 			subtitle: "双头终末钢锤为八级锤"
 			tasks: [{
 				id: "27225645CA88DA29"
-				item: "art_of_forging:endsteel_ingot"
+				item: "dreadsteel:dreadsteel_ingot"
 				type: "item"
 			}]
 			title: "&5终末钢&r"
@@ -254,7 +254,7 @@
 			subtitle: "使用陨石废液，金属碎片，下界合金制作"
 			tasks: [{
 				id: "2A51FC7AAB387CD5"
-				item: "art_of_forging:forged_steel_ingot"
+				item: "northstar:martian_steel"
 				type: "item"
 			}]
 			x: 6.5d
@@ -280,7 +280,7 @@
 			subtitle: "危机四伏及以上难度下击杀凋灵骷髅可获得，任意难度下击杀凋零也可获得"
 			tasks: [{
 				id: "45F7301C7F8A7598"
-				item: "art_of_forging:fragment_of_eden"
+				item: "alexscaves:immortal_embryo"
 				type: "item"
 			}]
 			x: 7.5d
@@ -314,7 +314,7 @@
 			subtitle: "使用纳米融合的武器击杀末影人获得"
 			tasks: [{
 				id: "6A7EEC2A56BF04CB"
-				item: "art_of_forging:heart_of_ender"
+				item: "alexsmobs:void_worm_eye"
 				type: "item"
 			}]
 			x: 3.5d
@@ -431,7 +431,7 @@
 			id: "6BD5D68F02A01858"
 			tasks: [{
 				id: "3D9C0E05B90613AB"
-				item: "art_of_forging:forged_steel_ingot"
+				item: "northstar:martian_steel"
 				type: "item"
 			}]
 			title: "熔融锻造钢"

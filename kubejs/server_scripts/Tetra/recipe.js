@@ -95,19 +95,19 @@ ServerEvents.recipes(e => {
         "tetra:pristine_lapis")
         .id("createdelight:cutting/pristine_lapis")
 
-    create.deploying(["tetra:forged_mesh", Item.of("art_of_forging:nano_insectoid").withChance(0.1)], ["createdelight:forged_steel_sheet", "art_of_forging:nano_insectoid"])
+    create.deploying(["tetra:forged_mesh", Item.of("create:precision_mechanism").withChance(0.1)], ["createdelight:forged_steel_sheet", "create:precision_mechanism"])
     .keepHeldItem()
     .id("createdelight:deploying/forged_mesh")
-    createaddition.rolling("art_of_forging:forged_steel_ingot", "2x tetra:forged_beam")
+    createaddition.rolling("northstar:martian_steel", "2x tetra:forged_beam")
     .id("createdelight:rolling/forged_beam")
     create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
     .id("createdelight:deploying/forged_bolt")
     vintageimprovements.pressurizing([
-        Item.of("art_of_forging:nano_insectoid").withChance(0.95),
+        Item.of("create:precision_mechanism").withChance(0.95),
         "3x tetra:metal_scrap",
         Item.of("2x tetra:metal_scrap").withChance(0.5),
         Item.of("2x tetra:metal_scrap").withChance(0.25)], [
-            "art_of_forging:nano_insectoid",
-            "art_of_forging:forged_steel_ingot"
+            "create:precision_mechanism",
+            "northstar:martian_steel"
         ]).id("createdelight:pressurizing/metal_scrap")
 })

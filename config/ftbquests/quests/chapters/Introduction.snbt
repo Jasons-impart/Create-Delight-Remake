@@ -605,11 +605,11 @@
 				"&4(相关攻略可以任务书中查询)"
 				""
 			]
-			icon: "art_of_forging:sigil_of_eden"
+			icon: "alexscaves:immortal_embryo"
 			id: "1B04B860E2651AEF"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "Art of Forging"
+			subtitle: "Forge Heritage"
 			tasks: [{
 				id: "3340C7309B991317"
 				title: "锻造的艺术"
@@ -715,7 +715,7 @@
 				"另外需要注意的一点：&e目前同一ftb队伍下的玩家除了死亡，难度是同升降的。&r"
 				"&etips:如果要查看难度可以使用/improvedmob指令"
 			]
-			icon: "art_of_forging:shards_of_malice"
+			icon: "alexscaves:pure_darkness"
 			id: "28A38E3B4EE9EFEC"
 			shape: "pentagon"
 			size: 2.0d

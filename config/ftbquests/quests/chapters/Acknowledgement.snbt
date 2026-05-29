@@ -456,7 +456,7 @@
 		}
 		{
 			height: 1.8d
-			image: "art_of_forging:item/nano_insectoid"
+			image: "create:item/precision_mechanism"
 			order: 3
 			rotation: 0.0d
 			width: 1.8d

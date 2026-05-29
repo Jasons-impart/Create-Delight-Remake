@@ -28,12 +28,12 @@
                 "armorPenetration": 40,
                 "sweeping": 3,
                 "crushing": 10,
-                "art_of_forging:life_fiber_loss": [ 2, 10 ]
+                "tetra:dragon_sinew_loss": [ 2, 10 ]
             },
             "magicCapacity": 300,
             "glyph": {
                 "tint": "c91649",
-                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureLocation": "tetra:textures/gui/glyphs.png",
                 "textureX": 208
             },
             "models": [{ "location": "tetra:item/module/sword/blade/rending_scissor_complete/rending_scissor_complete" }]

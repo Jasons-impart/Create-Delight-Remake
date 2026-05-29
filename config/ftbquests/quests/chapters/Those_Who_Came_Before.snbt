@@ -3737,7 +3737,7 @@
 			size: 2.0d
 			tasks: [{
 				id: "172F2C142B0D0166"
-				item: "art_of_forging:forged_steel_ingot"
+				item: "northstar:martian_steel"
 				type: "item"
 			}]
 			title: "新纪元"

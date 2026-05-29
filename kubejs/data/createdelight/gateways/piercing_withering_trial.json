@@ -66,7 +66,7 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:fang_charm", 
+                        "item": "minecraft:totem_of_undying",
                         "count": 1
 					    }
 				}
@@ -207,7 +207,7 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:sigil_of_eden", 
+                        "item": "alexscaves:immortal_embryo",
                         "count": 1
 					    }
 				}
@@ -276,7 +276,7 @@
 				{
 					"type": "gateways:stack",
 					"stack": {
-                        "item": "art_of_forging:devils_soul_gem", 
+                        "item": "alexscaves:pure_darkness",
                         "count": 1
 					    }
 				}

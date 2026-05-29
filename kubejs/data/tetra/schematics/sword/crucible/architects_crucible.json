@@ -7,7 +7,7 @@
     "displayType": "improvement",
     "glyph":{
         "tint": "f71f02",
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 0
     },
     "requirement": {
@@ -26,7 +26,7 @@
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:enigmatic_construct" ]
+                "items": [ "alexscaves:enigmatic_engine" ]
             },
             "experienceCost": 30,
             "requiredTools": {

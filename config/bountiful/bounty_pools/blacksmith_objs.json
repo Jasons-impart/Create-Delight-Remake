@@ -134,7 +134,7 @@
         },
         "blacksmith_forged_steel_ingot": {
             "type": "item",
-            "content": "art_of_forging:forged_steel_ingot",
+            "content": "northstar:martian_steel",
             "rarity": "EPIC",
             "weightMult": 0.2,
             "amount": {
@@ -145,7 +145,7 @@
         },
         "blacksmith_vobrivium_ingot": {
             "type": "item",
-            "content": "art_of_forging:vobrivium_ingot",
+            "content": "createmetallurgy:obdurium_ingot",
             "rarity": "EPIC",
             "weightMult": 0.2,
             "amount": {
@@ -211,7 +211,7 @@
         },
         "blacksmith_endsteel_ingot": {
             "type": "item",
-            "content": "art_of_forging:endsteel_ingot",
+            "content": "dreadsteel:dreadsteel_ingot",
             "rarity": "LEGENDARY",
             "weightMult": 0.05,
             "amount": {

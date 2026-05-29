@@ -6,7 +6,7 @@
             "honed": 1
         },
         "effects": {
-                "art_of_forging:life_fiber_loss": [ 3, 10 ]
+                "tetra:dragon_sinew_loss": [ 3, 10 ]
         }
     }
 ]

@@ -142,7 +142,7 @@
         },
         "blacksmith_nano_insectoid": {
             "type": "item",
-            "content": "art_of_forging:nano_insectoid",
+            "content": "create:precision_mechanism",
             "rarity": "EPIC",
             "weightMult": 0.15,
             "amount": {
@@ -153,7 +153,7 @@
         },
         "blacksmith_encoded_canister": {
             "type": "item",
-            "content": "art_of_forging:encoded_canister",
+            "content": "createaddition:capacitor",
             "rarity": "EPIC",
             "weightMult": 0.15,
             "amount": {
@@ -164,7 +164,7 @@
         },
         "blacksmith_esoteric_codex": {
             "type": "item",
-            "content": "art_of_forging:esoteric_codex",
+            "content": "createdelight:demonic_codex",
             "rarity": "EPIC",
             "weightMult": 0.15,
             "amount": {
@@ -175,7 +175,7 @@
         },
         "blacksmith_curious_artifact": {
             "type": "item",
-            "content": "art_of_forging:curious_artifact",
+            "content": "minecraft:enchanted_book",
             "rarity": "EPIC",
             "weightMult": 0.075,
             "amount": {

@@ -1,32 +1,32 @@
 {
-    "key": "shadow_silk",
-    "category": "fibre",
-    "primary": 7.8,
-    "secondary": 4.5,
-    "tertiary": 7.2,
-    "durability": 1360,
-    "integrityCost": 2,
-    "integrityGain": 7,
-    "magicCapacity": 100,
-    "toolLevel": 0,
-    "toolEfficiency": 0,
-    "tints": {
-        "glyph": "000000",
-        "texture": "000000"
-    },
-     "attributes": {
-                    "tetra:draw_speed": -0.4
-   },
-    "textures": [
-        "default"
-    ],
-    "material": {
-        "items": [ "alexscaves:shadow_silk" ]
-    },
-    "requiredTools": {
-        "cut": "minecraft:iron"
-    },
-    "effects": {
-                "art_of_forging:devouring": [ -2, 5 ]
-    }
+  "key": "shadow_silk",
+  "category": "fibre",
+  "primary": 7.8,
+  "secondary": 4.5,
+  "tertiary": 7.2,
+  "durability": 1360,
+  "integrityCost": 2,
+  "integrityGain": 7,
+  "magicCapacity": 100,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "000000",
+    "texture": "000000"
+  },
+  "attributes": {
+    "tetra:draw_speed": -0.4
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "alexscaves:shadow_silk"
+    ]
+  },
+  "requiredTools": {
+    "cut": "minecraft:iron"
+  },
+  "effects": {}
 }

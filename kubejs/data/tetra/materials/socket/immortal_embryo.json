@@ -17,7 +17,7 @@
         "forge:attack_range": 1
     },
     "effects": {
-        "art_of_forging:life_fiber_loss":[1,0],
+        "tetra:dragon_sinew_loss":[1,0],
         "intuit": 5
     },
     "tints": {

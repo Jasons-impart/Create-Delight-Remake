@@ -436,7 +436,7 @@
 			id: "4B6E8A65F9C94BCC"
 			tasks: [{
 				id: "3A53FFD5D9ED284F"
-				item: "art_of_forging:sigil_of_eden"
+				item: "alexscaves:immortal_embryo"
 				type: "item"
 			}]
 			title: "伊甸图腾"
@@ -619,7 +619,7 @@
 				{
 					count: 8L
 					id: "28E1342C31A6FB09"
-					item: "art_of_forging:soul_ember"
+					item: "minecraft:soul_lantern"
 					type: "item"
 				}
 				{

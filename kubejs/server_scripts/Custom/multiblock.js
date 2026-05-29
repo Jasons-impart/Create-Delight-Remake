@@ -1,6 +1,6 @@
 ServerEvents.recipes(e => {
     const {kubejs, create} = e.recipes
-    create.item_application("createdelightcore:forge_steel_casing", ["northstar:tungsten_sheetmetal", "art_of_forging:forged_steel_ingot"])
+    create.item_application("createdelightcore:forge_steel_casing", ["northstar:tungsten_sheetmetal", "northstar:martian_steel"])
     .id("createdelightcore:forge_steel_casing")
     create.item_application("createdelightcore:steel_casing", ["create:andesite_casing", "#forge:ingots/steel"])
     .id("createdelightcore:steel_casing")

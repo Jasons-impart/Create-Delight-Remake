@@ -24,7 +24,7 @@
         "metal"
     ],
     "material": {
-        "items": [ "art_of_forging:endsteel_ingot" ]
+        "items": [ "dreadsteel:dreadsteel_ingot" ]
     },
     "requiredTools": {
         "hammer_dig": 8

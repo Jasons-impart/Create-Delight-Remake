@@ -7,7 +7,7 @@
     "displayType": "improvement",
     "glyph":{
         "tint": "ffffff",
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 192,
         "textureY": 16
     },

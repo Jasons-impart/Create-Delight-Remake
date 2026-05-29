@@ -62,7 +62,7 @@
                 "integrity": -1,
                 "magicCapacity": 1,
                 "glyph": {
-                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureLocation": "tetra:textures/gui/glyphs.png",
                     "textureX": 208
                 },
                 "availableTextures": [ "metal", "shiny", "grainy", "crude" ],
@@ -93,12 +93,12 @@
                 "abilityRevenge": 2,
                 "severing": [ 1, 15 ],
                 "abilityDefensive": 1,
-                "art_of_forging:life_fiber_loss": [ 1, 10 ]
+                "tetra:dragon_sinew_loss": [ 1, 10 ]
             },
             "magicCapacity": 850,
             "glyph": {
                 "tint": "c40808",
-                "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                "textureLocation": "tetra:textures/gui/glyphs.png",
                 "textureX": 208
             },
             "models": [{

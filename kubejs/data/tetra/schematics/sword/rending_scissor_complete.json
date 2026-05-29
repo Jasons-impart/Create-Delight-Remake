@@ -10,13 +10,13 @@
     "displayType": "major",
     "glyph": {
         "tint": "c91649",
-        "textureLocation": "tetra:textures/gui/aof_glyph.png",
+        "textureLocation": "tetra:textures/gui/glyphs.png",
         "textureX": 208
     },
     "outcomes": [
         {
             "material": {
-                "items": [ "art_of_forging:rending_scissor_complete" ]
+                "items": [ "blackknightarmor:candlelight_sword" ]
             },
             "requiredTools": {
                 "hammer_dig": 9

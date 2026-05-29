@@ -1758,7 +1758,7 @@
 		}
 		{
 			dependencies: ["32AAEC0414A9ECA6"]
-			icon: "art_of_forging:nano_insectoid"
+			icon: "create:precision_mechanism"
 			id: "52C424A4D57F21DE"
 			subtitle: "使用构件，木屑，熔融金属与纳米昆虫可以复制大部分机器，详情查看加压配方"
 			tasks: [
@@ -1769,7 +1769,7 @@
 				}
 				{
 					id: "48C0592B3ED7BE3D"
-					item: "art_of_forging:nano_insectoid"
+					item: "create:precision_mechanism"
 					type: "item"
 				}
 			]

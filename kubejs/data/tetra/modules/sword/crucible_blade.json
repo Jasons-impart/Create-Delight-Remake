@@ -56,7 +56,7 @@
 			"magicCapacity": 1,
 			"glyph": {
 				"tint": "f71f02",
-				"textureLocation": "tetra:textures/gui/aof_glyph.png",
+				"textureLocation": "tetra:textures/gui/glyphs.png",
 				"textureX": 0
 			},
 			"availableTextures": [ "metal", "shiny", "grainy", "crude" ],

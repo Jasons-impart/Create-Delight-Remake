@@ -1,13 +1,11 @@
 [
-    {
-        "key": "blade/conquering",
-        "level": 1,
-        "integrity": -1,
-        "aspects": {
-            "honed": 1
-        },
-        "effects": {
-            "art_of_forging:conquering": [ 1, 5 ]
-        }
-    }
+  {
+    "key": "blade/conquering",
+    "level": 1,
+    "integrity": -1,
+    "aspects": {
+      "honed": 1
+    },
+    "effects": {}
+  }
 ]

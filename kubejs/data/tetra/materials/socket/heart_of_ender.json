@@ -21,6 +21,6 @@
     "textures": ["default"],
     "experienceCost": 3,
     "material": {
-        "items": ["art_of_forging:heart_of_ender"]
+        "items": ["alexsmobs:void_worm_eye"]
     }
 }

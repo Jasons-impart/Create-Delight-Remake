@@ -74,7 +74,7 @@ ServerEvents.recipes(e => {
         ], {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            C: "create:precision_mechanism"
         }).id(`createdelight:dragonsteel_${text}_helmet`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_chestplate`, [
             "B B",
@@ -83,7 +83,7 @@ ServerEvents.recipes(e => {
         ], {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            C: "create:precision_mechanism"
         }).id(`createdelight:dragonsteel_${text}_chestplate`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_leggings`, [
             "ACA",
@@ -92,7 +92,7 @@ ServerEvents.recipes(e => {
         ], {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            C: "create:precision_mechanism"
         }).id(`createdelight:dragonsteel_${text}_leggings`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_boots`, [
             "   ",
@@ -101,7 +101,7 @@ ServerEvents.recipes(e => {
         ], {
             A: ingot,
             B: `#iceandfire:scales/dragon/${text}`,
-            C: "art_of_forging:nano_insectoid"
+            C: "create:precision_mechanism"
         }).id(`createdelight:dragonsteel_${text}_boots`)
     })
     kubejs.shaped("2x createdelight:dread_upgrade_smithing_template", [

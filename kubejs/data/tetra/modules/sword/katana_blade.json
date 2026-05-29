@@ -60,7 +60,7 @@
                 "integrity": -1,
                 "magicCapacity": 1.5,
                 "glyph": {
-                    "textureLocation": "tetra:textures/gui/aof_glyph.png",
+                    "textureLocation": "tetra:textures/gui/glyphs.png",
                     "textureX": 208
                 },
                 "availableTextures": [ "metal", "shiny", "grainy", "crude" ],
