@@ -19,6 +19,7 @@
 # ═══ Mod 元数据 ═══
 !/mods
 !/mods/*.pw.toml
+/mods/*.jar
 
 # ═══ 配置文件 ═══
 !/config
