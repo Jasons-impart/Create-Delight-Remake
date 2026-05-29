@@ -1,6 +1,28 @@
 ServerEvents.recipes(e => {
     //无暇宝石制作
     const {vintageimprovements, create, createaddition, createmetallurgy} = e.recipes
+    remove_recipes_id(e, [
+        "more_mod_tetra:arknights/attainment_point/attainment_point_1",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_2",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_3",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_4",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_5",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_6",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_7",
+        "more_mod_tetra:arknights/attainment_point/attainment_point_8",
+        "more_mod_tetra:arknights/win/proof_of_victory_frost_nova_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_frost_nova_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_gun_knight_patriot_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_gun_knight_patriot_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_patriot_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_patriot_2",
+        "more_mod_tetra:arknights/win/proof_of_victory_pursuer",
+        "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_1",
+        "more_mod_tetra:arknights/win/proof_of_victory_rosmontis_2",
+        "more_mod_tetra:cataclysm/monstrous_core",
+        "more_mod_tetra:iron/cloth/sound_magic_cloth",
+        "more_mod_tetra:iron/ingot/sound_arcane_ingot"
+    ])
     create.sequenced_assembly([Item.of("tetra:pristine_lapis").withChance(0.11), "minecraft:air"], "minecraft:lapis_lazuli", [
         vintageimprovements.laser_cutting("minecraft:lapis_lazuli", "minecraft:lapis_lazuli", 10000, 1000),
         // vintageimprovements.polishing("minecraft:lapis_lazuli", "minecraft:lapis_lazuli")
