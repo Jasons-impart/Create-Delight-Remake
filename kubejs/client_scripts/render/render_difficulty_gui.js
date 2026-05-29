@@ -8,7 +8,8 @@ const improvedMobs$CapabilityProvider = Java.loadClass("io.github.flemmli97.impr
  * @returns {number}
  */
 Difficulty.getPlayerRawValue = function () {
-    return global.difficultyCache
+    let value = global.difficultyCache
+    return typeof value == "number" ? value : 0
 }
 
 Difficulty.getPlayerTier = function () {
@@ -22,11 +23,11 @@ Difficulty.getPlayerTier = function () {
 Difficulty.getPlayerCurrentProcess = function () {
     let tier = Difficulty.getPlayerTier()
     let rawValue = Difficulty.getPlayerRawValue()
-    if (tier != this.tierThreshold.length) {
+    if (tier > 0 && tier != this.tierThreshold.length) {
         return (rawValue - this.tierThreshold[tier - 1]) / (this.tierThreshold[tier] - this.tierThreshold[tier - 1])
     }
     else
-        return 1
+        return tier == this.tierThreshold.length ? 1 : 0
 }
 
 Difficulty.tierThreshold = [0, 100, 200, 300, 450, 600]
@@ -59,7 +60,7 @@ RenderJSEvents.onGuiPreRender(e => {
         e.drawTexture(`${location}.png`, -textureWidth / 2, 0, textureWidth, textureHeight, 0, textureHeight, textureWidth, textureHeight)
         e.popPose()
     }
-    if (tier != Difficulty.tierThreshold.length) {
+    if (tier > 0 && tier != Difficulty.tierThreshold.length) {
         e.guiGraphics.setColor(tierColor[tier - 1][0] / 255, tierColor[tier - 1][1] / 255, tierColor[tier - 1][2] / 255, 1)
         e.pushPose()
         e.drawTexture(`${location}.png`, -textureWidth / 2, 0, textureWidth, textureHeight, 0, textureHeight, textureWidth, textureHeight * process)
