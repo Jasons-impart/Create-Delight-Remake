@@ -140,50 +140,6 @@
             },
             "unitWorth": 250
         },
-        "blacksmith_nano_insectoid": {
-            "type": "item",
-            "content": "create:precision_mechanism",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 6000
-        },
-        "blacksmith_encoded_canister": {
-            "type": "item",
-            "content": "createaddition:capacitor",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 12000
-        },
-        "blacksmith_esoteric_codex": {
-            "type": "item",
-            "content": "createdelight:demonic_codex",
-            "rarity": "EPIC",
-            "weightMult": 0.15,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 18000
-        },
-        "blacksmith_curious_artifact": {
-            "type": "item",
-            "content": "minecraft:enchanted_book",
-            "rarity": "EPIC",
-            "weightMult": 0.075,
-            "amount": {
-                "min": 1,
-                "max": 1
-            },
-            "unitWorth": 36000
-        },
         "blacksmith_metal_scrap_epic": {
             "type": "item",
             "content": "tetra:metal_scrap",

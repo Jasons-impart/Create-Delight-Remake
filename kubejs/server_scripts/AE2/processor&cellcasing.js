@@ -548,7 +548,7 @@ ServerEvents.recipes((event) => {
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:omni_cell_housing_blank_curving");
   vintageimprovements
-    .curving("4x createdelight:complex_omni_cell_housing_blank", "northstar:martian_steel")
+    .curving("4x createdelight:complex_omni_cell_housing_blank", "createdelight:forged_steel_ingot")
     .head("createdelight:cell_housing_curving_head")
     .id("createdelight:complex_omni_cell_housing_blank_curving");
   vintageimprovements

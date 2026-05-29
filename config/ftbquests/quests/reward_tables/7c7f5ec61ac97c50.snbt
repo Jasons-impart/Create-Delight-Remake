@@ -3,9 +3,33 @@
 	loot_size: 1
 	order_index: 16
 	rewards: [
-		{ item: "blackknightarmor:frost_beast_axe" }
-		{ item: "blackknightarmor:black_knight_sword" }
-		{ item: "blackknightarmor:lava_great_sword" }
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:frost_beast_axe"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:black_knight_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
+		{
+			item: {
+				Count: 1
+				id: "blackknightarmor:lava_great_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+		}
 	]
 	title: "远古恶意"
 }

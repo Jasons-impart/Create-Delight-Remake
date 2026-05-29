@@ -328,7 +328,7 @@
             }]
         }
     }, {
-        "materials": [ "tetra:metal/endsteel_ingot","tetra:metal/dreadsteel_ingot"],
+        "materials": [ "tetra:metal/end_dragon_ingot","tetra:metal/dreadsteel_ingot"],
         "key": "basic_hammer/",
         "attributes": {
             "generic.attack_speed": -1.1

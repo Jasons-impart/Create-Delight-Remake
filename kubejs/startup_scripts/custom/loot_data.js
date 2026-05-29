@@ -1,17 +1,4 @@
 let difficultyLoots = {
-    "alexscaves:immortal_embryo": [
-        {
-            entity: "minecraft:wither_skeleton",
-            tier: 2,
-            chance: 0.1
-        },
-        {
-            entity: "minecraft:wither",
-            tier: 2,
-            chance: 0.25
-        }
-    ],
-
     "iceandfire:cockatrice_eye": [
         {
             entity: "iceandfire:cockatrice",

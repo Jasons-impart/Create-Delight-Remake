@@ -23,7 +23,7 @@
         "metal"
     ],
     "material": {
-        "items": [ "northstar:martian_steel" ]
+        "items": [ "createdelight:forged_steel_ingot" ]
     },
     "requiredTools": {
         "hammer_dig": 7
