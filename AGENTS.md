@@ -75,6 +75,7 @@ CD-master-dev/
 - `.pw.toml` for packwiz-files assets reference GitHub raw URLs pointing to `packwiz-files/`
 - To add/update/remove mods: use `scripts/update-packwiz-meta.ps1` (NOT manual JAR placement)
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
+- Avoid full `packwiz refresh` in original runtime dirs; it can rewrite unrelated `index.toml` hashes (see `lessons-learned.md`)
 
 ## ANTI-PATTERNS
 
@@ -88,16 +89,15 @@ CD-master-dev/
 ## COMMANDS
 
 ```bash
-# Packwiz
-packwiz refresh                 # Update index
-packwiz curseforge export       # Build modpack
-
 # Update packwiz metadata after manually changing mod JARs
 ./update-packwiz-meta.bat       # Windows wrapper
 ./scripts/update-packwiz-meta.ps1 -Proxy "http://127.0.0.1:7890"  # Direct PS1
 
 # Sync all mod JARs locally for development
 ./scripts/sync-packwiz-assets.ps1
+
+# Build modpack when needed
+packwiz curseforge export
 
 # KubeJS hot reload (in-game)
 /kubejs reload server_scripts
