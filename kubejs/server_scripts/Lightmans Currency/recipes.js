@@ -47,19 +47,6 @@ ServerEvents.recipes(e => {
         "lightmanscurrency:wallet/wallet_nether_star",
         "lightmanscurrency:wallet/upgrade_wallet_copper_to_wallet_nether_star"
     ])
-    const quarkWoods = ["ancient", "azalea", "blossom"]
-    const cardColors = ["white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"]
-    quarkWoods.forEach(wood => {
-        remove_recipes_id(e, [
-            `lightmanscurrency:auction_stand/quark/${wood}`,
-            `lightmanscurrency:traders/bookshelf/quark/${wood}`,
-            `lightmanscurrency:traders/shelf/quark/${wood}`,
-            `lightmanscurrency:traders/shelf2/quark/${wood}`
-        ])
-        cardColors.forEach(color => {
-            e.remove({ id: `lightmanscurrency:traders/card_display/quark/${wood}/${color}` })
-        })
-    })
     e.replaceInput([
         {id: "lightmanscurrency:item_trader_interface"},
         {id: "lctech:fluid_trader_interface"},
