@@ -539,16 +539,16 @@ ServerEvents.recipes(e => {
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
             res,
-            'create:precision_mechanism'],
+            'alexscaves:enigmatic_engine'],
             [
                 Fluid.of("createdelightcore:molten_andesite", 450),
                 "create_sa:heat_engine",
-                "create:precision_mechanism",
+                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )
             .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_nano_insectoid`)
+            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
     })
     let brassOutputList = [
         '5x create:brass_tunnel', 
@@ -563,16 +563,16 @@ ServerEvents.recipes(e => {
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
             res,
-            'create:precision_mechanism'],
+            'alexscaves:enigmatic_engine'],
             [
                 Fluid.of("createmetallurgy:molten_brass", 450),
                 "create_sa:steam_engine",
-                "create:precision_mechanism",
+                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )
             .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_nano_insectoid`)
+            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
     })
     let copperOutputList = [
         '3x create:item_drain', 
@@ -581,16 +581,16 @@ ServerEvents.recipes(e => {
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
             res,
-            'create:precision_mechanism'],
+            'alexscaves:enigmatic_engine'],
             [
                 Fluid.of("createmetallurgy:molten_copper", 450),
                 "create_sa:hydraulic_engine",
-                "create:precision_mechanism",
+                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )
             .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_nano_insectoid`)
+            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
     })
     e.recipes.create.mixing(
         "create:pulp", 

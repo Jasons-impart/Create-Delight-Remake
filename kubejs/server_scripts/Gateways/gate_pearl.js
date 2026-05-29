@@ -146,7 +146,7 @@ ServerEvents.recipes(e => {
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:sweet_tooth"]),
         create.pressing(incomplete,incomplete),
-        create.deploying(incomplete, [incomplete, "create:precision_mechanism"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "alexsmobs:void_worm_eye"]),
         create.deploying(incomplete, [incomplete, "dungeonsdelight:monster_cake"]).keepHeldItem()

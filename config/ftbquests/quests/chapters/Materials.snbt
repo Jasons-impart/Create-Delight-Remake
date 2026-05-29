@@ -97,7 +97,7 @@
 			dependencies: ["47ADAC6620C3FF87"]
 			id: "37009649B2B8EC6C"
 			size: 1.0d
-			subtitle: "使用带有纳米融合效果的武器击杀凋灵骷髅获得，直接击杀凋零也可获得"
+			subtitle: "危机四伏及以上难度下击杀凋灵骷髅获得，直接击杀凋零也可获得"
 			tasks: [{
 				id: "5B78C6B3E560AF87"
 				item: "alexscaves:immortal_embryo"
@@ -173,7 +173,7 @@
 			dependencies: ["63B03A277D459A65"]
 			id: "141E662DB7E1864B"
 			size: 1.0d
-			subtitle: "使用带有纳米融合效果的武器击杀悚怖怪物获得"
+			subtitle: "击杀悚怖怪物或完成相关试炼获得"
 			tasks: [{
 				id: "156579804A25CEAF"
 				item: "createdelight:dread_heart"
@@ -311,7 +311,7 @@
 			dependencies: ["47ADAC6620C3FF87"]
 			id: "368633F5F14BEC91"
 			size: 1.0d
-			subtitle: "使用纳米融合的武器击杀末影人获得"
+			subtitle: "击杀虚空蠕虫或完成相关试炼获得"
 			tasks: [{
 				id: "6A7EEC2A56BF04CB"
 				item: "alexsmobs:void_worm_eye"

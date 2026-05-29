@@ -144,7 +144,6 @@
 					"sword/blade:blade/slashing": 1
 					"sword/blade:blade_hone/damage": 5
 					"sword/blade:blade_hone/speed": 5
-					"sword/blade:nano_fused": 1
 					"sword/blade:quality": 1
 					"sword/blade:settled": 1
 					"sword/blade:sword/murasama_imprv": 0
@@ -155,7 +154,6 @@
 					"sword/hilt:hilt/wrap/life_fiber": 0
 					"sword/hilt:hilt_hone/damage": 5
 					"sword/hilt:hilt_hone/speed": 5
-					"sword/hilt:nano_fused": 1
 					"sword/hilt:quality": 1
 					"sword/hilt:settled": 2
 					"sword/katana_blade_material": "katana_blade/mine_ingot"

@@ -24,7 +24,7 @@ ItemEvents.tooltip(e => {
         "alexscaves:immortal_embryo",
         "createdelight:dread_heart",
         "minecraft:soul_lantern",
-        "create:precision_mechanism",
+        "alexscaves:enigmatic_engine",
         'createdelight:dread_heart',
         'createdelight:prospector',
         'vintagedelight:cheese_curds',

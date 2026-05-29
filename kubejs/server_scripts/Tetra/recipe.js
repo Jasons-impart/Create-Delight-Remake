@@ -95,7 +95,7 @@ ServerEvents.recipes(e => {
         "tetra:pristine_lapis")
         .id("createdelight:cutting/pristine_lapis")
 
-    create.deploying(["tetra:forged_mesh", Item.of("create:precision_mechanism").withChance(0.1)], ["createdelight:forged_steel_sheet", "create:precision_mechanism"])
+    create.deploying(["tetra:forged_mesh", Item.of("alexscaves:enigmatic_engine").withChance(0.1)], ["createdelight:forged_steel_sheet", "alexscaves:enigmatic_engine"])
     .keepHeldItem()
     .id("createdelight:deploying/forged_mesh")
     createaddition.rolling("northstar:martian_steel", "2x tetra:forged_beam")
@@ -103,11 +103,11 @@ ServerEvents.recipes(e => {
     create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
     .id("createdelight:deploying/forged_bolt")
     vintageimprovements.pressurizing([
-        Item.of("create:precision_mechanism").withChance(0.95),
+        Item.of("alexscaves:enigmatic_engine").withChance(0.95),
         "3x tetra:metal_scrap",
         Item.of("2x tetra:metal_scrap").withChance(0.5),
         Item.of("2x tetra:metal_scrap").withChance(0.25)], [
-            "create:precision_mechanism",
+            "alexscaves:enigmatic_engine",
             "northstar:martian_steel"
         ]).id("createdelight:pressurizing/metal_scrap")
 })
