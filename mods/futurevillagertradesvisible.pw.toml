@@ -1,0 +1,13 @@
+name = "Future Villager Trades Visible"
+filename = "futurevillagertradesvisible-0.1.6+forge1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e3a9aebd8828ecbeb5a0c686fdfe10ed5fbc3b56"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7715489
+project-id = 1447702
