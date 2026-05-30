@@ -52,7 +52,7 @@ param(
     [switch]$WhatIf
 )
 
-$ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Continue"
 
 # --- State for cleanup ---
 $script:OriginalBranch = $null
@@ -108,19 +108,46 @@ function Test-Prerequisites {
             $errors += "gh CLI not authenticated. Run 'gh auth login' first."
         }
     }
+
+    # gh auth status must run before proxy env vars are set on Windows, but the
+    # remote checks below may still need the configured proxy.
+    if ($Proxy) {
+        $env:HTTPS_PROXY = $Proxy
+        $env:HTTP_PROXY = $Proxy
+        $env:ALL_PROXY = $Proxy
+    }
     
-    # Check TargetBranch exists on remote
-    $remoteBranch = git ls-remote --heads origin $TargetBranch 2>$null
+    # Check TargetBranch exists on remote. If GitHub has a transient TLS failure,
+    # fall back to the fetched remote-tracking ref so reruns can continue.
+    $remoteBranch = $null
+    try {
+        $remoteBranch = git ls-remote --heads origin $TargetBranch 2>$null
+    } catch {
+        $remoteBranch = $null
+    }
+    if (-not $remoteBranch) {
+        git show-ref --verify --quiet "refs/remotes/origin/$TargetBranch"
+        if ($LASTEXITCODE -eq 0) {
+            $remoteBranch = "refs/remotes/origin/$TargetBranch"
+            Write-Host "⚠️ Remote branch check used local origin/$TargetBranch fallback"
+        }
+    }
     if (-not $remoteBranch) {
         $errors += "Target branch '$TargetBranch' not found on remote"
     }
     
-    # Check no existing release for this version
+    # Check no existing published release for this version. Existing drafts are
+    # allowed so an interrupted upload can be resumed idempotently.
     if ($ghAvailable) {
         try {
-            $existingRelease = gh release view $Version --repo Jasons-impart/Create-Delight-Remake --json tagName 2>$null
+            $existingRelease = gh release view $Version --repo Jasons-impart/Create-Delight-Remake --json tagName,isDraft 2>$null
             if ($LASTEXITCODE -eq 0 -and $existingRelease) {
-                $errors += "Release '$Version' already exists on GitHub. Cannot recreate a release."
+                $existingReleaseObj = $existingRelease | ConvertFrom-Json -ErrorAction SilentlyContinue
+                if ($existingReleaseObj -and $existingReleaseObj.isDraft) {
+                    Write-Host "⚠️ Draft release '$Version' already exists; publish will resume uploads"
+                } else {
+                    $errors += "Release '$Version' already exists on GitHub. Cannot recreate a release."
+                }
             }
         } catch {
             # gh release view returns error for non-existent releases, which is expected
@@ -197,10 +224,11 @@ if ($WhatIf) {
     Write-Host "   C. Download artifacts (Client, Server$(if($ReleaseType -eq '正式'){', ClientPatch, ServerPatch'}))"
     Write-Host "   D. Compress and prepare for upload"
     Write-Host "   E. Generate release notes from $PreviousVersion..$Version"
-    Write-Host "   F. Create GitHub release as $(if($ReleaseType -eq '正式'){'stable'}else{'prerelease'})"
-    Write-Host "   G. Verify assets"
+    Write-Host "   F. Create draft GitHub release"
+    Write-Host "   G. Upload assets one by one with retries, then publish"
+    Write-Host "   H. Verify assets"
     if ($ReleaseType -eq "正式") {
-        Write-Host "   H. Create announcement PR to main"
+        Write-Host "   I. Create announcement PR to main"
     }
     exit 0
 }
@@ -244,9 +272,18 @@ if ($dirty) {
 git checkout $TargetBranch
 if ($LASTEXITCODE -ne 0) { Fail "Cannot checkout branch $TargetBranch" }
 
-# Pull latest
-git pull
-if ($LASTEXITCODE -ne 0) { Fail "git pull failed on $TargetBranch" }
+# Pull latest explicitly from the target branch to avoid user-level pull.rebase
+# settings changing release behavior.
+git pull --ff-only origin $TargetBranch
+if ($LASTEXITCODE -ne 0) {
+    $headShaAfterPullFailure = git rev-parse HEAD
+    $originShaAfterPullFailure = git rev-parse "origin/$TargetBranch"
+    if ($headShaAfterPullFailure -eq $originShaAfterPullFailure) {
+        Write-Host "⚠️ git pull failed, but HEAD already matches origin/$TargetBranch; continuing"
+    } else {
+        Fail "git pull failed on $TargetBranch"
+    }
+}
 
 # Pop stash after pull to avoid conflicts with incoming changes
 if ($script:Stashed) {
@@ -263,7 +300,12 @@ if ($LASTEXITCODE -ne 0) { Fail "Cannot determine HEAD commit SHA" }
 Write-Host "   Commit SHA: $commitSha"
 
 # Create tag (idempotent: skip if already exists on correct commit)
+# Missing tags are expected on the first run; do not let ErrorActionPreference=Stop
+# turn git's non-zero exit into a terminating NativeCommandError.
+$oldErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
 $existingTagCommit = git rev-list -n 1 $Version 2>$null
+$ErrorActionPreference = $oldErrorActionPreference
 if ($LASTEXITCODE -eq 0 -and $existingTagCommit) {
     if ($existingTagCommit -eq $commitSha) {
         Write-Host "   Tag $Version already exists on current commit, skipping tag creation"
@@ -320,7 +362,9 @@ $stopwatch.Restart()
 while ($stopwatch.Elapsed -lt $timeout) {
     $statusJson = gh run view $RunId --repo $repo --json status,conclusion 2>$null
     if ($LASTEXITCODE -ne 0) {
-        Fail "Cannot query CI run status"
+        Write-Host "   Cannot query CI run status, retrying..."
+        Start-Sleep -Seconds $CIPollIntervalSeconds
+        continue
     }
     $runStatus = $statusJson | ConvertFrom-Json -ErrorAction SilentlyContinue
     $status = $runStatus.status
@@ -362,8 +406,16 @@ $serverName = "Server-Create-Delight-Remake-$Version"
 $serverPatchName = "[ServerPatch]Create-Delight-Remake-$PreviousVersion-to-$Version"
 
 # List available artifacts and filter in PowerShell (avoids jq quoting issues)
-$artifactsResponse = gh api "repos/$repo/actions/runs/$RunId/artifacts" 2>$null
-if ($LASTEXITCODE -ne 0) {
+$artifactsResponse = $null
+for ($artifactListAttempt = 1; $artifactListAttempt -le 5; $artifactListAttempt++) {
+    $artifactsResponse = gh api "repos/$repo/actions/runs/$RunId/artifacts" 2>$null
+    if ($LASTEXITCODE -eq 0 -and $artifactsResponse) {
+        break
+    }
+    Write-Host "   Cannot list artifacts, retrying ($artifactListAttempt/5)..."
+    Start-Sleep -Seconds 10
+}
+if (-not $artifactsResponse) {
     Fail "Cannot list artifacts"
 }
 $artifactsObj = $artifactsResponse | ConvertFrom-Json -ErrorAction SilentlyContinue
@@ -391,27 +443,37 @@ function Download-Artifact {
     $zipFile = Join-Path $env:TEMP "opencode\$Version\artifacts\$Name.zip"
     New-Item -ItemType Directory -Path (Split-Path $zipFile) -Force | Out-Null
 
-    try {
-        # Use gh api to download the artifact zip directly
-        # This shows download progress via gh's built-in progress indicator
-        gh api "repos/$repo/actions/artifacts/$artifactId/zip" --output $zipFile 2>$null
-        if ($LASTEXITCODE -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
-            # Extract the zip to destination
-            Expand-Archive -Path $zipFile -DestinationPath $DestDir -Force
-            Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
-            Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
-        } else {
-            throw "gh api download returned empty or failed"
+    $downloaded = $false
+    for ($downloadAttempt = 1; $downloadAttempt -le 5; $downloadAttempt++) {
+        try {
+            # Use gh api to download the artifact zip directly
+            # This shows download progress via gh's built-in progress indicator
+            gh api "repos/$repo/actions/artifacts/$artifactId/zip" --output $zipFile 2>$null
+            if ($LASTEXITCODE -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
+                # Extract the zip to destination
+                Expand-Archive -Path $zipFile -DestinationPath $DestDir -Force
+                Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
+                Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
+                $downloaded = $true
+                break
+            } else {
+                throw "gh api download returned empty or failed"
+            }
+        } catch {
+            # Fallback to gh run download (no size display but reliable)
+            Write-Host "   ⚠️ Direct download failed, falling back to gh run download ($downloadAttempt/5)..."
+            if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
+            gh run download $RunId --repo $repo -n $Name -D $DestDir
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "   ✅ Downloaded $Name (via gh run download)"
+                $downloaded = $true
+                break
+            }
+            Start-Sleep -Seconds 10
         }
-    } catch {
-        # Fallback to gh run download (no size display but reliable)
-        Write-Host "   ⚠️ Direct download failed, falling back to gh run download..."
-        if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
-        gh run download $RunId --repo $repo -n $Name -D $DestDir
-        if ($LASTEXITCODE -ne 0) {
-            Fail "Failed to download artifact: $Name"
-        }
-        Write-Host "   ✅ Downloaded $Name (via gh run download)"
+    }
+    if (-not $downloaded) {
+        Fail "Failed to download artifact: $Name"
     }
 }
 
@@ -498,9 +560,12 @@ $isFirstStable = $false
 $summaryFilePath = ""
 
 if ($subVersionPrefix -and $ReleaseType -eq "正式") {
-    # Check if any existing tag with this sub-version prefix is a stable (non-prerelease) release
+    # Check if any existing tag with this sub-version prefix is a stable (non-prerelease) release.
+    # Fail closed: if GitHub cannot be queried reliably, do not prepend a broad
+    # sub-version summary to avoid publishing stale notes on later stable releases.
     $existingTags = git tag -l "$subVersionPrefix*" 2>$null
     $hasStableRelease = $false
+    $stableCheckHadUnknown = $false
     foreach ($tag in $existingTags) {
         if ($tag -eq $Version) { continue }  # Skip the tag we just created
         $releaseInfo = gh release view $tag --repo $repo --json isPrerelease 2>$null
@@ -511,9 +576,16 @@ if ($subVersionPrefix -and $ReleaseType -eq "正式") {
                 Write-Host "   Found existing stable release: $tag"
                 break
             }
+        } else {
+            $stableCheckHadUnknown = $true
+            Write-Host "   ⚠️ Cannot verify release status for $tag"
         }
     }
-    if (-not $hasStableRelease) {
+    if ($hasStableRelease) {
+        $isFirstStable = $false
+    } elseif ($stableCheckHadUnknown) {
+        Write-Host "   ⚠️ Could not verify all prior $subVersionPrefix releases; skipping first-stable summary"
+    } else {
         $isFirstStable = $true
         Write-Host "   🎉 This is the first stable release of $subVersionPrefix"
     }
@@ -528,15 +600,7 @@ if ($isFirstStable) {
         $summaryContent = Get-Content $summaryFilePath -Raw
         Write-Host "   📄 Found update summary: $summaryFilePath"
     } else {
-        # Try with sub-version prefix pattern: docs/update-summary-v0.4.8.*.md
-        $summaryCandidates = Get-ChildItem -Path "docs" -Filter "update-summary-$subVersionPrefix*.md" -ErrorAction SilentlyContinue
-        if ($summaryCandidates) {
-            $summaryFilePath = $summaryCandidates | Sort-Object Name -Descending | Select-Object -First 1
-            $summaryContent = Get-Content $summaryFilePath.FullName -Raw
-            Write-Host "   📄 Found update summary: $($summaryFilePath.FullName)"
-        } else {
-            Write-Host "   ⚠️ No update summary file found for $subVersionPrefix (expected docs/update-summary-$Version.md)"
-        }
+        Write-Host "   ⚠️ No exact update summary file found (expected docs/update-summary-$Version.md)"
     }
 }
 
@@ -642,31 +706,125 @@ Write-Host "🚀 Phase G: Creating GitHub Release"
 
 if ($ReleaseType -eq "正式") {
     $title = "$Version 正式版"
-    $notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
-    New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
-    [System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
-    gh release create $Version --repo $repo --title $title --notes-file $notesFile `
-        "$uploadClient" `
-        "$uploadClientPatch" `
-        "$uploadServer" `
-        "$uploadServerPatch"
-    Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+    $uploadAssets = @($uploadClient, $uploadClientPatch, $uploadServer, $uploadServerPatch)
 } else {
     $title = "$Version 测试版"
-    $notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
-    New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
-    [System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
-    gh release create $Version --repo $repo --title $title --prerelease --notes-file $notesFile `
-        "$uploadClient" `
-        "$uploadServer"
-    Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+    $uploadAssets = @($uploadClient, $uploadServer)
 }
 
+$notesFile = Join-Path $env:TEMP "opencode\release-notes-$Version.md"
+New-Item -ItemType Directory -Path (Split-Path $notesFile) -Force | Out-Null
+[System.IO.File]::WriteAllText($notesFile, $ReleaseNotes, [System.Text.UTF8Encoding]::new($false))
+
+# Create the release as a draft without assets, then upload assets one by one.
+# A single `gh release create <assets...>` can hang for large server zips and
+# leaves a partial draft that is harder to resume.
+$releaseViewJson = gh release view $Version --repo $repo --json isDraft 2>$null
+if ($LASTEXITCODE -eq 0 -and $releaseViewJson) {
+    $releaseViewForCreate = $releaseViewJson | ConvertFrom-Json -ErrorAction SilentlyContinue
+    if ($releaseViewForCreate -and -not $releaseViewForCreate.isDraft) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Release $Version already exists and is not a draft"
+    }
+    Write-Host "   Draft release $Version already exists, resuming uploads"
+    gh release edit $Version --repo $repo --title $title --notes-file $notesFile
+    if ($LASTEXITCODE -ne 0) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Failed to update draft release metadata"
+    }
+} else {
+    if ($ReleaseType -eq "正式") {
+        gh release create $Version --repo $repo --title $title --notes-file $notesFile --draft
+    } else {
+        gh release create $Version --repo $repo --title $title --prerelease --notes-file $notesFile --draft
+    }
+    if ($LASTEXITCODE -ne 0) {
+        Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+        Fail "Failed to create draft GitHub release"
+    }
+}
+
+Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
+Write-Host "✅ Draft release ready: $title"
+
+function Upload-ReleaseAsset {
+    param(
+        [Parameter(Mandatory=$true)][string]$AssetPath,
+        [int]$Attempts = 5,
+        [int]$TimeoutSeconds = 900
+    )
+
+    $assetName = Split-Path $AssetPath -Leaf
+    for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
+        Write-Host "   ⬆️ Uploading $assetName ($attempt/$Attempts)"
+
+        $safeName = $assetName -replace '[^\w.-]', '_'
+        $stdoutFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.out"
+        $stderrFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.err"
+        Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+
+        $args = @(
+            "release", "upload", $Version,
+            "--repo", $repo,
+            "--clobber",
+            $AssetPath
+        )
+        $proc = Start-Process -FilePath "gh" -ArgumentList $args -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
+        if (-not $proc.WaitForExit($TimeoutSeconds * 1000)) {
+            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+            Write-Host "   ⚠️ Upload timed out after $TimeoutSeconds seconds: $assetName"
+        } elseif ($proc.ExitCode -eq 0) {
+            Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+            Write-Host "   ✅ Uploaded $assetName"
+            return
+        } else {
+            $err = ""
+            if (Test-Path $stderrFile) {
+                $err = (Get-Content -LiteralPath $stderrFile -Raw -ErrorAction SilentlyContinue).Trim()
+            }
+            if ($err) {
+                Write-Host "   ⚠️ Upload failed: $err"
+            } else {
+                Write-Host "   ⚠️ Upload failed with exit code $($proc.ExitCode): $assetName"
+            }
+        }
+
+        Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+        Start-Sleep -Seconds 15
+    }
+
+    Fail "Failed to upload release asset after $Attempts attempts: $assetName"
+}
+
+foreach ($asset in $uploadAssets) {
+    $assetName = Split-Path $asset -Leaf
+    $uploadedBeforeRetry = @()
+    $assetViewJson = gh release view $Version --repo $repo --json assets 2>$null
+    if ($LASTEXITCODE -eq 0 -and $assetViewJson) {
+        $assetView = $assetViewJson | ConvertFrom-Json -ErrorAction SilentlyContinue
+        if ($assetView -and $assetView.assets) {
+            $uploadedBeforeRetry = @($assetView.assets | Where-Object { $_.state -eq "uploaded" } | ForEach-Object { $_.name })
+        }
+    }
+    if ($uploadedBeforeRetry -contains $assetName) {
+        Write-Host "   ✅ Asset already uploaded, skipping $assetName"
+        continue
+    }
+    Upload-ReleaseAsset -AssetPath $asset
+}
+
+Write-Host "✅ Release assets uploaded"
+
+if ($ReleaseType -eq "正式") {
+    gh release edit $Version --repo $repo --draft=false --prerelease=false
+} else {
+    gh release edit $Version --repo $repo --draft=false --prerelease=true
+}
 if ($LASTEXITCODE -ne 0) {
-    Fail "Failed to create GitHub release"
+    Fail "Failed to publish draft release"
 }
 
-Write-Host "✅ Release created: $title"
+Write-Host "✅ Release published: $title"
 
 # ============================================================
 # Phase H: Verify

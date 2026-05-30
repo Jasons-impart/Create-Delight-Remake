@@ -148,3 +148,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `BlockContainerJS.set(id, props)` threw `No value present` when placing a custom KubeJS block with `facing`/`slice` properties from a right-click handler.
 - **Fix/Lesson**: For placement-first interactions, call `targetBlock.set(id)` and let the startup-registered default state apply; set custom state values later with native `BlockState.setValue` only when needed.
+
+## Release publish script must tolerate transient GitHub failures
+
+**Date**: 2026-05-30
+
+- **Problem**: `release-publish.ps1` can abort after tag push when PowerShell treats expected native-command failures or transient GitHub EOF/TLS errors as terminating errors.
+- **Fix/Lesson**: Keep release steps idempotent, pass `-PreviousVersion`, use HTTP proxy only after `gh auth status`, create a draft release before uploading assets one-by-one with retries, and fail closed for first-stable summary detection so later stable releases do not reuse stale `docs/update-summary-*` content.

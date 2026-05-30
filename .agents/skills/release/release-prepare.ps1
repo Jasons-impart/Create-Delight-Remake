@@ -56,14 +56,15 @@ $env:GIT_PAGER = 'cat'
 $Stashed = $false
 $OriginalBranch = ""
 $script:PrepareSucceeded = $false
+$VersionBranch = "codex/release-$Version"
 
 function Restore-State {
     # Clean up version-bump branch if script failed after creating it
-    $versionBranch = git branch --list "release/$Version" 2>$null
-    if ($versionBranch -and -not $script:PrepareSucceeded) {
-        Write-Host "📦 Cleaning up local branch release/$Version"
+    $versionBranchExists = git branch --list $VersionBranch 2>$null
+    if ($versionBranchExists -and -not $script:PrepareSucceeded) {
+        Write-Host "📦 Cleaning up local branch $VersionBranch"
         git checkout $OriginalBranch 2>$null | Out-Null
-        git branch -D "release/$Version" 2>$null | Out-Null
+        git branch -D $VersionBranch 2>$null | Out-Null
     }
     if ($OriginalBranch) {
         Write-Host "📦 Restoring branch: $OriginalBranch"
@@ -100,6 +101,14 @@ function Test-Prerequisites {
         if ($LASTEXITCODE -ne 0) {
             $errors += "gh CLI not authenticated. Run 'gh auth login' first."
         }
+    }
+
+    # gh auth status must run before proxy env vars are set on Windows, but the
+    # remote checks below may still need the configured proxy.
+    if ($Proxy) {
+        $env:HTTPS_PROXY = $Proxy
+        $env:HTTP_PROXY = $Proxy
+        $env:ALL_PROXY = $Proxy
     }
     
     # Check TargetBranch exists on remote
@@ -145,7 +154,7 @@ if ($WhatIf) {
     Write-Host "   1. Update pack.toml version to $Version"
     Write-Host "   2. Update docs/announcement.md"
     Write-Host "   3. Auto-stage update-summary file (if present)"
-    Write-Host "   4. Create branch release/$Version from $TargetBranch"
+    Write-Host "   4. Create branch $VersionBranch from $TargetBranch"
     Write-Host "   5. Commit and push"
     Write-Host "   6. Create PR to $TargetBranch"
     exit 0
@@ -236,25 +245,25 @@ if ($LASTEXITCODE -ne 0) {
     Write-Host "⚠️ git fetch failed, continuing anyway"
 }
 
-Write-Host "📦 Creating branch release/$Version from $TargetBranch"
+Write-Host "📦 Creating branch $VersionBranch from $TargetBranch"
 
 # Check if branch already exists locally
-$existingBranch = git branch --list "release/$Version" 2>$null
+$existingBranch = git branch --list $VersionBranch 2>$null
 if ($existingBranch) {
-    Write-Host "⚠️ Branch release/$Version already exists locally, deleting"
-    git branch -D "release/$Version" 2>$null | Out-Null
+    Write-Host "⚠️ Branch $VersionBranch already exists locally, deleting"
+    git branch -D $VersionBranch 2>$null | Out-Null
 }
 
 # Check if branch already exists remotely
-$existingRemoteBranch = git ls-remote --heads origin "release/$Version" 2>$null
+$existingRemoteBranch = git ls-remote --heads origin $VersionBranch 2>$null
 if ($existingRemoteBranch) {
-    Write-Host "⚠️ Branch release/$Version already exists remotely, deleting"
-    git push origin --delete "release/$Version" 2>$null | Out-Null
+    Write-Host "⚠️ Branch $VersionBranch already exists remotely, deleting"
+    git push origin --delete $VersionBranch 2>$null | Out-Null
 }
 
-git checkout -b "release/$Version" $TargetBranch 2>$null
+git checkout -b $VersionBranch $TargetBranch 2>$null
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "Failed to create branch release/$Version"
+    Write-Error "Failed to create branch $VersionBranch"
     Restore-State
     exit 1
 }
@@ -291,9 +300,9 @@ Write-Host "✅ Committed"
 
 # Push
 Write-Host "📦 Pushing to origin"
-git push -u origin "release/$Version" 2>$null
+git push -u origin $VersionBranch 2>$null
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "Failed to push branch release/$Version"
+    Write-Error "Failed to push branch $VersionBranch"
     Restore-State
     exit 1
 }
@@ -303,7 +312,7 @@ Write-Host "✅ Pushed"
 Write-Host "📦 Creating PR"
 
 # Check if PR already exists
-$existingPr = gh pr list --repo Jasons-impart/Create-Delight-Remake --head "release/$Version" --base $TargetBranch --json url --jq '.[0].url' 2>$null
+$existingPr = gh pr list --repo Jasons-impart/Create-Delight-Remake --head $VersionBranch --base $TargetBranch --json url --jq '.[0].url' 2>$null
 if ($LASTEXITCODE -eq 0 -and $existingPr) {
     Write-Host "✅ PR already exists: $existingPr"
     $script:PrepareSucceeded = $true
@@ -318,7 +327,7 @@ $PrBody = "版本号更新: → $Version`n`n**更新内容**:`n- $($AnnText -joi
 $PrBodyFile = Join-Path $env:TEMP "opencode\pr-body-$Version.md"
 New-Item -ItemType Directory -Path (Split-Path $PrBodyFile) -Force | Out-Null
 [System.IO.File]::WriteAllText($PrBodyFile, $PrBody, $utf8NoBom)
-$PrUrl = gh pr create --base $TargetBranch --head "release/$Version" --title "[feat] $Version 版本更新" --body-file $PrBodyFile 2>$null
+$PrUrl = gh pr create --base $TargetBranch --head $VersionBranch --title "[feat] $Version 版本更新" --body-file $PrBodyFile 2>$null
 Remove-Item $PrBodyFile -Force -ErrorAction SilentlyContinue
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to create PR"
