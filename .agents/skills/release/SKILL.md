@@ -61,15 +61,17 @@ Summarize changes into **≤3 bullet points, each ≤20 characters**, separated 
 
 **For first stable of a sub-version**: Derive the 3 points from the update-summary file (`docs/update-summary-{Version}.md`), picking the 3 most impactful changes.
 
-**For other stable releases**: Extract from the latest git log or user input.
+**For other stable releases**: Determine `PreviousVersion` first, then extract from the full `PreviousVersion..TargetBranch` range or user input.
 
-If user doesn't specify, extract from latest git log.
+**Do not rely on the script's default announcement generation** when the release range contains multiple commits; pass `-Announcement` explicitly with the 1-3 most important range changes.
+
+Use the latest single commit only when the release range contains exactly one meaningful change.
 
 ### Decision 4: Update Summary (First Stable Release Only)
 
 When the sub-version's **first stable release** is being published (e.g. v0.4.8.9 is the first stable of 0.4.8.x, after v0.4.8.0-v0.4.8.8 were all pre-releases), the agent must generate an update summary markdown file **before** running release-publish.ps1.
 
-**Detection**: release-publish.ps1 automatically detects this by checking if no prior stable (non-prerelease) GitHub release exists for the sub-version prefix.
+**Detection**: release-publish.ps1 automatically detects this by checking if no prior stable (non-prerelease) GitHub release exists for the sub-version prefix. If GitHub release status cannot be verified, it must skip first-stable summary prepending instead of guessing.
 
 **Agent responsibility**: Before Phase 2 (publish), generate `docs/update-summary-{Version}.md` covering all changes from the previous sub-version to this one. The file must:
 - Use Chinese (简体中文)
@@ -78,7 +80,7 @@ When the sub-version's **first stable release** is being published (e.g. v0.4.8.
 - Start with a brief one-line summary of the update scope
 - End with an "升级须知" section recommending new saves
 
-**Release notes behavior**: release-publish.ps1 will automatically prepend the summary file content to the GitHub release body (above the per-commit auto-generated notes) when it detects a first stable release.
+**Release notes behavior**: release-publish.ps1 will automatically prepend the exact `docs/update-summary-{Version}.md` file content to the GitHub release body (above the per-commit auto-generated notes) when it detects a first stable release. Do not reuse a previous `update-summary` file for later stable releases.
 
 **Example**: For v0.4.8.9 (first stable of 0.4.8.x), generate `docs/update-summary-v0.4.8.9.md` summarizing all changes from v0.4.7.0 onward.
 
@@ -194,7 +196,7 @@ Copy-Item CDC-mod-src/build/libs/CDC-mod-src-*.jar mods/
 ## Important Notes
 
 - **PR merge**: Must wait for user to manually merge, cannot auto-merge
-- **Release notes**: Auto-generated from commit messages, appended with `(AI自动生成)`. For the first stable release of a sub-version, the update summary file (`docs/update-summary-{Version}.md`) is automatically prepended.
+- **Release notes**: Auto-generated from commit messages, appended with `(AI自动生成)`. For the first stable release of a sub-version, only the exact update summary file (`docs/update-summary-{Version}.md`) is automatically prepended.
 - **Announcement PR**: For stable releases, release-publish.ps1 automatically creates a PR to main with the updated `docs/announcement.md`. The agent only needs to inform the user about this PR — no need to wait for merge.
 - **`[]` in filenames**: Handled by release-publish.ps1 using `-LiteralPath` copy
 - **Proxy**: Pass `-Proxy` parameter if direct GitHub access is slow
