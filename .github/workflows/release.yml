@@ -163,8 +163,6 @@ jobs:
           ./packwiz refresh
       - name: 下载所有服务端文件本体（packwiz-installer）
         run: bash .github/workflows/scripts/download_mods.sh 8080 server
-      - name: 删除客户端only模组
-        run: python3 scripts/packwiz-side.py delete-payloads --metadata-base . --payload-base . --side client --verbose
       - name: 删除与服务端无关的文件
         run: |
             rm -rf resourcepacks shaderpacks packwiz-files
