@@ -250,6 +250,7 @@ function Parse-PwToml {
 
     if ($content -match '(?m)^name\s*=\s*"(.+)"')     { $result['Name'] = $Matches[1] }
     if ($content -match '(?m)^filename\s*=\s*"(.+)"') { $result['Filename'] = $Matches[1] }
+    if ($content -match '(?m)^side\s*=\s*"(.+)"')     { $result['Side'] = $Matches[1] }
     if ($content -match '(?m)^url\s*=\s*"(.+)"')      { $result['DownloadUrl'] = $Matches[1] }
 
     $hasMetadataMode = $content -match 'mode\s*=\s*"metadata:(curseforge|modrinth)"'
@@ -277,6 +278,7 @@ function Get-PwMetadataState {
             Slug = [IO.Path]::GetFileNameWithoutExtension($pwToml.Name) -replace '\.pw$'
             Filename = $currentFilename
             Name = $name
+            Side = Normalize-PwSide -Side (Get-TomlVal -Data $data -Key 'Side')
             Data = $data
             IsManaged = [bool](Get-TomlVal -Data $data -Key 'IsManaged')
         }
@@ -305,6 +307,31 @@ function Get-TomlVal {
 
     if ($Data -and $Data.ContainsKey($Key)) { return $Data[$Key] }
     return $null
+}
+
+function Normalize-PwSide {
+    param([string]$Side)
+
+    if ([string]::IsNullOrWhiteSpace($Side)) { return "both" }
+    $normalized = $Side.Trim().ToLowerInvariant()
+    if (@("both", "client", "server") -contains $normalized) { return $normalized }
+    return "both"
+}
+
+function Set-PwTomlSide {
+    param(
+        [string]$Content,
+        [string]$Side
+    )
+
+    $sideValue = Normalize-PwSide -Side $Side
+    if ($Content -match '(?m)^side\s*=\s*".*"$') {
+        return [regex]::Replace($Content, '(?m)^side\s*=\s*".*"$', "side = `"$sideValue`"", 1)
+    }
+    if ($Content -match '(?m)^filename\s*=') {
+        return [regex]::Replace($Content, '(?m)^(filename\s*=\s*".*"\s*)$', "`$1`nside = `"$sideValue`"", 1)
+    }
+    return "side = `"$sideValue`"`n$Content"
 }
 
 function Get-CurseForgeMetadataIdentity {
@@ -931,7 +958,8 @@ function Add-PackwizFilesMetadata {
         [hashtable]$JarMetadata,
         [string]$ModsDirectory,
         [string]$PwTomlPath = $null,
-        [string]$DisplayName = $null
+        [string]$DisplayName = $null,
+        [string]$Side = $null
     )
 
     New-Item -ItemType Directory -Force -Path $PackwizFilesModsRoot | Out-Null
@@ -951,11 +979,16 @@ function Add-PackwizFilesMetadata {
     $escapedName = Escape-TomlString -Value $DisplayName
     $escapedFilename = Escape-TomlString -Value $SourceFilename
     $url = $PackwizFilesRawPrefix + "mods/" + [Uri]::EscapeDataString($SourceFilename)
+    if (-not $Side -and $PwTomlPath -and (Test-Path $PwTomlPath)) {
+        $existingData = Parse-PwToml -Path $PwTomlPath
+        $Side = Get-TomlVal -Data $existingData -Key 'Side'
+    }
+    $sideValue = Normalize-PwSide -Side $Side
 
     $content = @"
 name = "$escapedName"
 filename = "$escapedFilename"
-side = "both"
+side = "$sideValue"
 
 [download]
 url = "$url"
@@ -1088,7 +1121,7 @@ try {
             continue
         }
 
-        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $cfMetadata.Content
+        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
 
         $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
         if ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
@@ -1195,6 +1228,9 @@ try {
             continue
         }
 
+        $updatedContentWithSide = Set-PwTomlSide -Content (Get-Content -LiteralPath $entry.PwTomlPath -Raw) -Side $entry.Side
+        Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $updatedContentWithSide
+
         $updatedData = Parse-PwToml -Path $entry.PwTomlPath
         $updatedFilename = Get-TomlVal -Data $updatedData -Key 'Filename'
         if ($updatedFilename -ne $update.NewFilename) {
@@ -1243,7 +1279,7 @@ try {
             $downloadability = Get-CurseForgeDownloadability -Content $cfMetadata.Content -MetaFileName $cfMetadata.MetaFileName -Name $cfMetadata.Name
             if ($downloadability.Status -eq "downloadable") {
                 Remove-PackwizFilesAssetIfOwned -Filename $update.OldFilename -FilenameOwners $filenameOwners
-                Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content $cfMetadata.Content
+                Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
                 Write-Status "  ~ Updated (CurseForge): $($cfMetadata.Name)"
                 $updatedCount++
                 continue
@@ -1306,7 +1342,7 @@ try {
 
             $metaName = Get-UniqueMetaName -PreferredName $preferredMetaName -Directory $modsDir
             $pwTomlPath = Join-Path $modsDir ($metaName + ".pw.toml")
-            Write-Utf8NoBomFile -Path $pwTomlPath -Content $cfMetadata.Content
+            Write-Utf8NoBomFile -Path $pwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side "both")
             Write-Status "  ~ Added (CurseForge): $($cfMetadata.Name)"
             $addedCurseForgeCount++
             continue

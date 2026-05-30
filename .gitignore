@@ -3,11 +3,9 @@
 
 # Root files we intentionally version.
 !/.gitignore
-!/.clientonlymodlist
 !/.hmclversion.cfg
 !/.options.txt
 !/.packwizignore
-!/.serveronlymodlist
 !/DevGuide.md
 !/LICENSE
 !/README.md

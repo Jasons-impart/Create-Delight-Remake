@@ -1,6 +1,6 @@
 name = "FastBoot"
 filename = "fastboot-1.20.x-1.2.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/fastboot-1.20.x-1.2.jar"

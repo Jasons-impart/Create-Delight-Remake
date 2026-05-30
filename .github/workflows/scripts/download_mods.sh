@@ -2,14 +2,21 @@
 set -euo pipefail
 
 # download_mods.sh - Download all mod JARs via packwiz-installer
-# Usage: download_mods.sh [PORT]
+# Usage: download_mods.sh [PORT] [SIDE]
 #   PORT: HTTP server port (default: 8080)
+#   SIDE: client, server, or all (default: client)
 #
 # Required env vars (from workflow-level env):
 #   PACKWIZ_FILES_RAW_PREFIX - GitHub raw URL prefix for packwiz-files/
 #   PACKWIZ_INSTALLER_BOOTSTRAP_URL - URL for packwiz-installer-bootstrap.jar
 
 PORT="${1:-8080}"
+SIDE="${2:-client}"
+
+if [ "$SIDE" != "client" ] && [ "$SIDE" != "server" ] && [ "$SIDE" != "all" ]; then
+  echo "Invalid SIDE '$SIDE'; expected client, server, or all" >&2
+  exit 1
+fi
 
 # 1. Create temp pack directory, copy metadata and packwiz-files/
 PACK_DIR=$(mktemp -d)
@@ -30,6 +37,10 @@ fi
 # 2. Replace GitHub raw URLs with localhost in .pw.toml files
 LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
 find "$PACK_DIR" -name '*.pw.toml' -exec sed -i "s|${PACKWIZ_FILES_RAW_PREFIX}|${LOCAL_PREFIX}|g" {} +
+
+if [ "$SIDE" != "all" ]; then
+  python3 scripts/packwiz-side.py prune-metadata --base "$PACK_DIR" --target "$SIDE"
+fi
 
 # 3. Refresh index in temp directory
 (cd "$PACK_DIR" && "$OLDPWD/packwiz" refresh)

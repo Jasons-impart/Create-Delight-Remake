@@ -1,6 +1,6 @@
 name = "Screenshot Viewer"
 filename = "screenshot_viewer-1.3.2-forge-mc1.20.1.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

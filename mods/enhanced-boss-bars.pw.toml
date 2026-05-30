@@ -1,6 +1,6 @@
 name = "Enhanced Boss Bars"
 filename = "enhanced_boss_bars-1.20.1-1.0.0.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/enhanced_boss_bars-1.20.1-1.0.0.jar"

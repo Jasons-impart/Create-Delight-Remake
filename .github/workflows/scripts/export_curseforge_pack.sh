@@ -11,6 +11,7 @@ port="${2:-8082}"
 raw_prefix="${PACKWIZ_FILES_RAW_PREFIX:?PACKWIZ_FILES_RAW_PREFIX is required}"
 local_prefix="http://127.0.0.1:${port}/packwiz-files/"
 server_pid=""
+side_backup=""
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "$script_dir/../../.." && pwd)"
@@ -27,11 +28,17 @@ cleanup() {
     wait "$server_pid" 2>/dev/null || true
   fi
   restore_urls
+  if [ -n "$side_backup" ] && [ -d "$side_backup" ]; then
+    python3 "$repo_root/scripts/packwiz-side.py" restore-metadata --base "$repo_root" --backup-dir "$side_backup" || true
+    rm -rf "$side_backup"
+  fi
   exit "$status"
 }
 trap cleanup EXIT
 
 python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
+side_backup="$(mktemp -d)"
+python3 "$repo_root/scripts/packwiz-side.py" prune-metadata --base "$repo_root" --target client --backup-dir "$side_backup"
 bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"

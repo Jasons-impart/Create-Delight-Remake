@@ -149,8 +149,9 @@
 - 正式版本和测试版本发布均使用 `.agents/skills/release/` 中的 release skill。
 - 对 AI 助手可直接提出“发布版本”“发布测试版”等请求；人工执行时查看 `.agents/skills/release/SKILL.md` 并运行其中的脚本。
 
-# 增加客户端mod
-- 为了方便生成服务端包，请在增加后更新.clientonlymodlist文件
+# 增加客户端/服务端专用 mod
+- 客户端专用 mod 在对应 `mods/*.pw.toml` 中设置 `side = "client"`；服务端专用 mod 设置 `side = "server"`。
+- 本地同步默认按客户端侧处理；服务端发布会按 `side` 过滤和删除 mod。
 
 # 发包使用的工具
 - packwiz https://packwiz.infra.link/tutorials/creating/getting-started/

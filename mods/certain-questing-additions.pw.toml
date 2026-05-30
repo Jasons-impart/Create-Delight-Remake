@@ -1,6 +1,6 @@
 name = "Certain Questing Additions"
 filename = "certain_questing_additions-forge-1.1.6+mc1.20.1.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

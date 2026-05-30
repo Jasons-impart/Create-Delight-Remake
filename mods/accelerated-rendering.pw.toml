@@ -1,6 +1,6 @@
 name = "Accelerated Rendering"
 filename = "acceleratedrendering-1.0.7-1.20.1-alpha.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
