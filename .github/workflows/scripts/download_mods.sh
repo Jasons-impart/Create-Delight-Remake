@@ -4,14 +4,14 @@ set -euo pipefail
 # download_mods.sh - Download all mod JARs via packwiz-installer
 # Usage: download_mods.sh [PORT] [SIDE]
 #   PORT: HTTP server port (default: 8080)
-#   SIDE: client, server, or all (default: client)
+#   SIDE: client, server, or all (default: all)
 #
 # Required env vars (from workflow-level env):
 #   PACKWIZ_FILES_RAW_PREFIX - GitHub raw URL prefix for packwiz-files/
 #   PACKWIZ_INSTALLER_BOOTSTRAP_URL - URL for packwiz-installer-bootstrap.jar
 
 PORT="${1:-8080}"
-SIDE="${2:-client}"
+SIDE="${2:-all}"
 
 if [ "$SIDE" != "client" ] && [ "$SIDE" != "server" ] && [ "$SIDE" != "all" ]; then
   echo "Invalid SIDE '$SIDE'; expected client, server, or all" >&2
