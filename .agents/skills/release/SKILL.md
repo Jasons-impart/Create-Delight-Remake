@@ -18,7 +18,7 @@ Automate the full release pipeline using two PowerShell scripts:
 ## When to use me
 
 - "发布版本" / "发布新版本" / "release"
-- Version-related tasks like bumping `pack.toml`
+- Version-related tasks like bumping `modpack.toml`
 - Creating GitHub releases
 
 ## Agent Decision Points
@@ -39,12 +39,12 @@ The agent only needs to make **5 decisions**; everything else is scripted:
 **Rules**:
 - User specifies → use specified version
 - User says "发布新版本" without specifying → auto-detect:
-  1. Check if `pack.toml` was modified in the latest commit (`git log -1 --name-only | grep pack.toml`)
-  2. If YES → the developer already bumped the version in pack.toml, use the current version from pack.toml
+  1. Check if `modpack.toml` was modified in the latest commit (`git log -1 --name-only | grep modpack.toml`)
+  2. If YES → the developer already bumped the version in modpack.toml, use the current version from modpack.toml
   3. If NO → increment the last digit of the latest version (e.g. v0.4.7.14 → v0.4.7.15). Find the latest version from the most recent git tag matching `v*`.
 
 ```bash
-git log -1 --name-only | grep pack.toml
+git log -1 --name-only | grep modpack.toml
 ```
 
 ### Decision 2: Release Type
@@ -140,7 +140,7 @@ Output: Release URL
 | `-Announcement` | ❌ | Comma-separated bullet points, e.g. "修复BUG,新增物品,优化性能". Auto-generated from git log if omitted |
 | `-Proxy` | ❌ | HTTPS proxy (e.g. "http://127.0.0.1:7890") |
 
-**What it does**: Update pack.toml → Update announcement.md → Auto-stage update-summary files → Create branch → Commit → Push → Create PR → Restore original branch
+**What it does**: Update modpack.toml → Update announcement.md → Auto-stage update-summary files → Create branch → Commit → Push → Create PR → Restore original branch
 
 ### release-publish.ps1
 
@@ -160,7 +160,7 @@ Output: Release URL
 
 Both scripts include:
 
-- **Pre-flight validation**: Checks prerequisites (pack.toml exists, version format, gh auth, TargetBranch exists on remote, no existing release) before any changes. Fails fast with clear error messages.
+- **Pre-flight validation**: Checks prerequisites (modpack.toml exists, version format, gh auth, TargetBranch exists on remote, no existing release) before any changes. Fails fast with clear error messages.
 - **Dry-run mode**: Pass `-WhatIf` to preview what the script would do without making any changes. Useful for validating parameters.
 - **Idempotency**: Scripts handle re-runs gracefully:
   - Existing tags on the correct commit → skipped

@@ -140,7 +140,7 @@ gh pr create --body '... `ad_astra:xxx` ...'
 **日期**: 2026-05-23
 
 - **Problem**: 在原始游戏运行目录为普通 `config/` 或 `kubejs/assets/` 改动直接执行 `packwiz refresh`，会重算大量无关 `index.toml` 条目并让 PR 带入数千行噪音。
-- **Fix/Lesson**: PR 前只对 mod JAR / `.pw.toml` / `packwiz-files` 变更运行 `scripts/update-packwiz-meta.ps1`；非 mod 元数据改动不要用全量 `packwiz refresh` 制造无关索引差异。
+- **Fix/Lesson**: `pack.toml`/`index.toml` 已改为由 `modpack.toml` 生成且不跟踪；PR 前仍只对 mod JAR / `.pw.toml` / `packwiz-files` 变更运行 `scripts/update-packwiz-meta.ps1`。
 
 ## KubeJS BlockContainerJS property placement can reject custom states
 

@@ -86,9 +86,9 @@ function Test-Prerequisites {
         $errors += "Version format invalid: '$Version'. Expected format: v0.4.8.10"
     }
     
-    # Check pack.toml exists
-    if (-not (Test-Path "pack.toml")) {
-        $errors += "pack.toml not found in current directory"
+    # Check modpack.toml exists
+    if (-not (Test-Path "modpack.toml")) {
+        $errors += "modpack.toml not found in current directory"
     }
     
     # Check gh CLI available

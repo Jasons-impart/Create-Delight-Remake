@@ -31,30 +31,30 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-          sparse-checkout: 'pack.toml'
+          sparse-checkout: 'modpack.toml'
       - name: 读取整合包名
         uses: SebRollen/toml-action@v1.2.0
         id: read-modpackname
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'name'
       - name: 读取整合包版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-version
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'version'
       - name: 读取mc版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-minecraft
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'versions.minecraft'
       - name: 读取forge版本号
         uses: SebRollen/toml-action@v1.2.0
         id: read-forge
         with:
-          file: pack.toml
+          file: modpack.toml
           field: 'versions.forge'
       - name: 生成整合包版本号
         id: generate_modpack_version
@@ -101,21 +101,23 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real --download-images
-      - name: 更新文件索引并生成带mod本体的包
+      - name: 生成不带mod本体的包
         run: |
-          mkdir ../click_to_run_release
-          bash .github/workflows/scripts/export_curseforge_pack.sh ../click_to_run_release/modpack.zip 8082
+          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
+          unzip -o ../lite-release.zip -d ../lite-release
+          ls ..
+          git checkout -- mods resourcepacks shaderpacks
+          git clean -fd -- mods resourcepacks shaderpacks
+      - name: 下载所有客户端文件本体
+        run: bash .github/workflows/scripts/download_mods.sh 8082
+      - name: 生成带mod本体的懒人包
+        run: bash .github/workflows/scripts/build_click_to_run_client.sh ../click_to_run_release
       - name: 下载HMCL启动器与jdk环境
         run: |
           curl -o HMCL.jar -L $HMCL_DOWNLOAD_URL
           curl -o jdk17.msi -L $JAVA_DOWNLOAD_URL
           mv HMCL.jar ../click_to_run_release
           mv jdk17.msi ../click_to_run_release
-      - name: 生成不带mod本体的包
-        run: |
-          bash .github/workflows/scripts/export_curseforge_pack.sh ../lite-release.zip 8083
-          unzip -o ../lite-release.zip -d ../lite-release
-          ls ..
       - name: Workaround actions/upload-artifact#176
         run: echo "artifacts_path=$(realpath ..)" >> $GITHUB_ENV
       - name: 上传懒人包
@@ -157,6 +159,7 @@ jobs:
         uses: ./.github/actions/setup-packwiz
       - name: 更新文件索引
         run: |
+          python3 scripts/generate-packwiz-files.py
           ./packwiz refresh
       - name: 下载所有mod本体（packwiz-installer）
         run: bash .github/workflows/scripts/download_mods.sh 8080
@@ -175,7 +178,7 @@ jobs:
             rm -rf resourcepacks shaderpacks packwiz-files
             rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md client_jvm_args.example.txt
             find mods -name "*.pw.toml" -exec rm {} +
-            rm -f pack.toml index.toml .packwizignore packwiz
+            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz
       - name: 更新整合包配置与版本信息
         uses: ./.github/actions/update-modpack-config
         with:
@@ -268,8 +271,8 @@ jobs:
             fi
           done
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
-                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/pack.toml \
-                patch/index.toml patch/client_jvm_args.example.txt
+                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/modpack.toml \
+                patch/pack.toml patch/index.toml patch/client_jvm_args.example.txt
           # 将 patch/packwiz-files/ 中的文件移到标准目录
           if [ -d "patch/packwiz-files/mods" ]; then
             mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
@@ -306,6 +309,7 @@ jobs:
       - name: 净化补丁用 CurseForge 元数据
         run: |
           bash .github/workflows/scripts/download_mods.sh 8081
+          python3 scripts/generate-packwiz-files.py
           ./packwiz -y curseforge detect
           ./packwiz refresh
           bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch

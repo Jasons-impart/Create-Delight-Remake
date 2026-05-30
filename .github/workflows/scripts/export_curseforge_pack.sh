@@ -13,6 +13,7 @@ local_prefix="http://127.0.0.1:${port}/packwiz-files/"
 server_pid=""
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd "$script_dir/../../.." && pwd)"
 
 restore_urls() {
   find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
@@ -30,6 +31,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
+python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
 bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"

@@ -13,9 +13,8 @@ PORT="${1:-8080}"
 
 # 1. Create temp pack directory, copy metadata and packwiz-files/
 PACK_DIR=$(mktemp -d)
-cp pack.toml "$PACK_DIR/"
 cp .packwizignore "$PACK_DIR/" 2>/dev/null || true
-touch "$PACK_DIR/index.toml"
+python3 scripts/generate-packwiz-files.py --source modpack.toml --output-dir "$PACK_DIR"
 
 # Copy .pw.toml metadata
 find mods resourcepacks shaderpacks -name '*.pw.toml' 2>/dev/null | while read -r f; do

@@ -24,7 +24,7 @@ CD-master-dev/
 ├── .codex/           # Codex project hooks
 ├── docs/             # Project documentation and analysis notes
 ├── .github/          # CI/CD workflows
-└── pack.toml         # Pack metadata (ONLY version source)
+└── modpack.toml      # Pack metadata (ONLY version source)
 ```
 
 ## WHERE TO LOOK
@@ -39,7 +39,7 @@ CD-master-dev/
 | Mod configs | `config/{mod-name}.toml` | 50+ files |
 | FTB Quests | `config/ftbquests/quests/` | .snbt format |
 | Java mod dev | `CDC-mod-src/src/main/java/` | Forge mod project |
-| Version info | `pack.toml` | ONLY source - don't duplicate |
+| Version info | `modpack.toml` | ONLY source - don't duplicate |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Historical pitfalls | `lessons-learned.md` | Do not duplicate in AGENTS |
 
@@ -65,7 +65,7 @@ CD-master-dev/
 - ❌ Never force push to main
 
 **Version Management**:
-- Version ONLY in `pack.toml` - CI auto-updates other configs
+- Version ONLY in `modpack.toml` - CI auto-updates other configs
 - Test builds: `test-*` branches → version appended with `-test-build-{n}`
 - Releases: `release*` branches
 
@@ -75,13 +75,13 @@ CD-master-dev/
 - `.pw.toml` for packwiz-files assets reference GitHub raw URLs pointing to `packwiz-files/`
 - To add/update/remove mods: use `scripts/update-packwiz-meta.ps1` (NOT manual JAR placement)
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
-- Avoid full `packwiz refresh` in original runtime dirs; it can rewrite unrelated `index.toml` hashes (see `lessons-learned.md`)
+- `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 
 ## ANTI-PATTERNS
 
 - ❌ `rm -rf`, `del /S /Q` on config/, kubejs/, mods/, hotai/, PCL/
 - ❌ Batch delete `*.json`, `*.snbt` in core dirs
-- ❌ Overwrite `index.toml`, `ModList*.md`
+- ❌ Overwrite `ModList*.md`
 - ❌ `e.remove()` or `e.removeById()` - use `remove_recipes_id(e, [...])`
 - ❌ Duplicate version in other files
 - ❌ Treat runtime dirs (`logs/`, `crash-reports/`, `saves/`, `screenshots/`, `simplebackups/`, `tmp-*`) as source

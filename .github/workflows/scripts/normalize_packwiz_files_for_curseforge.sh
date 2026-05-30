@@ -5,6 +5,9 @@ set -euo pipefail
 # can identify them. This keeps branch-local packwiz-files useful for dev while
 # avoiding CurseForge-hosted JARs in release artifacts.
 
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+repo_root="$(cd "$script_dir/../../.." && pwd)"
+
 copied_list="$(mktemp)"
 
 cleanup() {
@@ -16,6 +19,8 @@ cleanup() {
   fi
 }
 trap cleanup EXIT
+
+python3 "$repo_root/scripts/generate-packwiz-files.py" --source "$repo_root/modpack.toml" --output-dir "$repo_root"
 
 read_filename() {
   sed -nE 's/^filename = "(.+)"[[:space:]]*$/\1/p' "$1" | head -n 1
