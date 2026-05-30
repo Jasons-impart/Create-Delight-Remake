@@ -3,11 +3,6 @@ author = "JSI"
 version = "v0.4.8.8"
 pack-format = "packwiz:1.1.0"
 
-[index]
-file = "index.toml"
-hash-format = "sha256"
-hash = "7cb199c4711c1da4056a592a5e98591ae7f6cda04e354c0775e10944928afa8e"
-
 [versions]
 forge = "47.4.10"
 minecraft = "1.20.1"

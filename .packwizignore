@@ -11,7 +11,9 @@
 !/.packwizignore
 !/pack.mcmeta
 !/packwiz.json
+!/hmclversion.cfg
 !/icon.png
+!/options.txt
 !/LICENSE
 !/README.en.md
 !/README.zh-CN.md
@@ -42,6 +44,8 @@
 !/schematics/**
 !/tacz
 !/tacz/**
+!/PCL
+!/PCL/**
 
 # ═══ 开发/文档 ═══
 !.github

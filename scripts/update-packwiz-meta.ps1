@@ -17,6 +17,7 @@ $PackwizFilesModsRoot = Join-Path $RepoRoot "packwiz-files\mods"
 $PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
 $TempDetectRoot = Join-Path $RepoRoot ".cache\packwiz-sync\cf-add"
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
+$GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
 $CurseForgeProbeCachePath = Join-Path $RepoRoot ".cache\packwiz-sync\cf-downloadability-cache.json"
 $script:CurseForgeProbeCache = $null
 $script:CurseForgeProbeTools = $null
@@ -92,6 +93,16 @@ function Get-FreePort {
     }
     finally {
         $listener.Stop()
+    }
+}
+
+function Invoke-GeneratePackwizFiles {
+    param([string]$OutputDir = $RepoRoot)
+
+    $pythonExe = Resolve-PythonCommand
+    & $pythonExe $GeneratePackwizScript --source (Join-Path $RepoRoot "modpack.toml") --output-dir $OutputDir
+    if ($LASTEXITCODE -ne 0) {
+        throw "generate-packwiz-files.py exited with code $LASTEXITCODE."
     }
 }
 
@@ -430,14 +441,13 @@ function New-CurseForgeProbeWorkspace {
 
     New-Item -ItemType Directory -Force -Path $modsRoot | Out-Null
     New-Item -ItemType Directory -Force -Path $installRoot | Out-Null
-    Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $packRoot "pack.toml") -Force
 
     $packwizIgnorePath = Join-Path $RepoRoot ".packwizignore"
     if (Test-Path $packwizIgnorePath) {
         Copy-Item $packwizIgnorePath (Join-Path $packRoot ".packwizignore") -Force
     }
 
-    New-Item -ItemType File -Force -Path (Join-Path $packRoot "index.toml") | Out-Null
+    Invoke-GeneratePackwizFiles -OutputDir $packRoot
 
     return [pscustomobject]@{
         Root = $root
@@ -788,8 +798,7 @@ function Get-CurseForgeCandidates {
 function New-DetectionWorkspace {
     $workspace = Join-Path $TempDetectRoot ([guid]::NewGuid().Guid)
     New-Item -ItemType Directory -Force -Path (Join-Path $workspace "mods") | Out-Null
-    Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $workspace "pack.toml") -Force
-    New-Item -ItemType File -Force -Path (Join-Path $workspace "index.toml") | Out-Null
+    Invoke-GeneratePackwizFiles -OutputDir $workspace
     return $workspace
 }
 
@@ -1020,6 +1029,7 @@ try {
     }
 
     Get-ToolEnsured -Url $PackwizUrl -Path $PackwizExe
+    Invoke-GeneratePackwizFiles -OutputDir $RepoRoot
 
     $modsDir = Join-Path $RepoRoot $Category
     if (-not (Test-Path $modsDir)) {

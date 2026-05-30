@@ -20,6 +20,7 @@ $ServeErrLog = Join-Path $WorkRoot "serve.err.log"
 $PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
 $PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
+$GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
 $ServeProcess = $null
 
 function Write-Status {
@@ -129,6 +130,16 @@ function Write-Utf8NoBomFile {
     [System.IO.File]::WriteAllText($Path, $Content, $utf8NoBom)
 }
 
+function Invoke-GeneratePackwizFiles {
+    param([string]$OutputDir)
+
+    $pythonExe = Resolve-PythonCommand
+    & $pythonExe $GeneratePackwizScript --source (Join-Path $RepoRoot "modpack.toml") --output-dir $OutputDir
+    if ($LASTEXITCODE -ne 0) {
+        throw "generate-packwiz-files.py exited with code $LASTEXITCODE."
+    }
+}
+
 try {
     Set-Location $RepoRoot
 
@@ -154,12 +165,11 @@ try {
         Remove-Item $PackRoot -Recurse -Force
     }
     New-Item -ItemType Directory -Force -Path $PackRoot | Out-Null
-    Copy-Item (Join-Path $RepoRoot "pack.toml") (Join-Path $PackRoot "pack.toml") -Force
     $packwizIgnorePath = Join-Path $RepoRoot ".packwizignore"
     if (Test-Path $packwizIgnorePath) {
         Copy-Item $packwizIgnorePath (Join-Path $PackRoot ".packwizignore") -Force
     }
-    New-Item -ItemType File -Force -Path (Join-Path $PackRoot "index.toml") | Out-Null
+    Invoke-GeneratePackwizFiles -OutputDir $PackRoot
 
     $copiedMetadataPaths = @()
     foreach ($metadataFile in $metadataFiles) {

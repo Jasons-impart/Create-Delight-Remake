@@ -49,7 +49,7 @@ function ConvertTo-Target([string]$Path) {
     if ($normalized -eq "lessons-learned.md") { return "lessons-learned.md" }
     if ($normalized -like "kubejs/*") { return "kubejs/AGENTS.md" }
     if ($normalized -like "CDC-mod-src/*") { return "CDC-mod-src/AGENTS.md" }
-    if ($normalized -like ".github/*" -or $normalized -like "scripts/*" -or $normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "pack.toml") { return "AGENTS.md" }
+    if ($normalized -like ".github/*" -or $normalized -like "scripts/*" -or $normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "modpack.toml") { return "AGENTS.md" }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "lessons-learned.md" }
     return ""
 }
@@ -64,7 +64,7 @@ function ConvertTo-Reason([string]$Path) {
     if ($normalized -like "scripts/*") { return "Project automation changed; root knowledge may need a command or workflow note." }
     if ($normalized -like ".github/*") { return "CI/release workflow changed; root knowledge may need an update." }
     if ($normalized -like "config/*" -or $normalized -like "defaultconfigs/*") { return "Config behavior changed; record only non-obvious side effects." }
-    if ($normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "pack.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
+    if ($normalized -like "mods/*" -or $normalized -like "packwiz-files/*" -or $normalized -eq "modpack.toml") { return "Packwiz/modpack metadata changed; check version or mod-management rules." }
     if ($normalized -like "*AGENTS.md" -or $normalized -eq "lessons-learned.md") { return "Knowledge base changed; run validation and check for duplicate facts." }
     return "Changed file may encode a reusable project pattern."
 }

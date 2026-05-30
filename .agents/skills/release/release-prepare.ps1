@@ -3,7 +3,7 @@
     Create-Delight Remake modpack release prepare script (pre-merge phase).
 
 .DESCRIPTION
-    Updates pack.toml version, docs/announcement.md, creates a version-bump
+    Updates modpack.toml version, docs/announcement.md, creates a version-bump
     branch, commits, pushes, and opens a PR to the target branch.
 
 .PARAMETER Version
@@ -79,9 +79,9 @@ function Restore-State {
 function Test-Prerequisites {
     $errors = @()
     
-    # Check pack.toml exists
-    if (-not (Test-Path "pack.toml")) {
-        $errors += "pack.toml not found in current directory"
+    # Check modpack.toml exists
+    if (-not (Test-Path "modpack.toml")) {
+        $errors += "modpack.toml not found in current directory"
     }
     
     # Check Version format
@@ -151,7 +151,7 @@ if ($WhatIf) {
     Write-Host "   Proxy: $(if($Proxy){$Proxy}else{'(none)'})"
     Write-Host ""
     Write-Host "   Would:"
-    Write-Host "   1. Update pack.toml version to $Version"
+    Write-Host "   1. Update modpack.toml version to $Version"
     Write-Host "   2. Update docs/announcement.md"
     Write-Host "   3. Auto-stage update-summary file (if present)"
     Write-Host "   4. Create branch $VersionBranch from $TargetBranch"
@@ -187,20 +187,20 @@ if ($StatusOutput) {
     $Stashed = $true
 }
 
-# Update pack.toml
-Write-Host "📦 Updating pack.toml version to $Version"
+# Update modpack.toml
+Write-Host "📦 Updating modpack.toml version to $Version"
 try {
-    $Content = Get-Content "pack.toml" -Raw
+    $Content = Get-Content "modpack.toml" -Raw
     $NewContent = $Content -replace 'version = "v[\d.]+"', "version = `"$Version`""
     if ($NewContent -eq $Content) {
-        Write-Error "Failed to update version in pack.toml - pattern not matched"
+        Write-Error "Failed to update version in modpack.toml - pattern not matched"
         Restore-State
         exit 1
     }
-    [System.IO.File]::WriteAllText((Join-Path $PWD "pack.toml"), $NewContent, $utf8NoBom)
-    Write-Host "✅ pack.toml updated"
+    [System.IO.File]::WriteAllText((Join-Path $PWD "modpack.toml"), $NewContent, $utf8NoBom)
+    Write-Host "✅ modpack.toml updated"
 } catch {
-    Write-Error "Failed to update pack.toml: $_"
+    Write-Error "Failed to update modpack.toml: $_"
     Restore-State
     exit 1
 }
@@ -270,7 +270,7 @@ if ($LASTEXITCODE -ne 0) {
 
 # Stage and commit
 Write-Host "📦 Staging and committing"
-git add pack.toml $AnnPath
+git add modpack.toml $AnnPath
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to stage files"
     Restore-State

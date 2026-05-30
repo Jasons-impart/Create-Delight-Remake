@@ -74,7 +74,7 @@ $requiredPaths = @(
     "scripts/sync-packwiz-assets.ps1",
     "scripts/update-packwiz-meta.ps1",
     "kubejs/data/oei/replacements",
-    "pack.toml"
+    "modpack.toml"
 )
 
 foreach ($relativePath in $requiredPaths) {
@@ -86,8 +86,8 @@ foreach ($relativePath in $requiredPaths) {
 $allAgentsText = ($knowledgeFiles | ForEach-Object { Get-FileText $_.Path }) -join "`n"
 $duplicateChecks = @(
     @{
-        Name = "pack.toml version source";
-        Pattern = 'pack\.toml.*ONLY version source|Version ONLY in `pack\.toml`';
+        Name = "modpack.toml version source";
+        Pattern = 'modpack\.toml.*ONLY version source|Version ONLY in `modpack\.toml`';
         Max = 2
     },
     @{
