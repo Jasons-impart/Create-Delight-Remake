@@ -108,14 +108,6 @@ cd CDC-mod-src && ./gradlew build --no-daemon
 # Output: build/libs/CDC-mod-src-*.jar (use non-all version)
 ```
 
-## CC-CONNECT
-
-- cc-connect configs: `~/.cc-connect/config.toml` = OpenCode + Feishu; `~/.cc-connect/config.codex.toml` = Codex + Feishu, not simultaneous because both reuse the same Feishu app.
-- For scheduled requests, run `cc-connect cron add --cron "<min> <hour> <day> <month> <weekday>" --prompt "<task>" --desc "<label>"`.
-- `CC_PROJECT` and `CC_SESSION_KEY` are already set inside cc-connect sessions; do not pass `--project` or `--session-key` there.
-- Manage schedules with `cc-connect cron list`, `cc-connect cron info <job-id>`, `cc-connect cron edit <job-id> <field> <value>`, and `cc-connect cron del <job-id>`.
-- Use `cc-connect send --stdin` for multi-line replies to the current chat, or `cc-connect send -m "message"` for one-line replies.
-
 ## KNOWLEDGE BASE MAINTENANCE
 
 These rules ensure this knowledge base stays effective. Violating them degrades agent performance.
