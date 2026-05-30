@@ -1,6 +1,6 @@
 name = "Raw's Visual keybinder"
 filename = "visual_keybinder-1.20.1 - 0.1.12.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

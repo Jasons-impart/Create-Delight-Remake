@@ -1,6 +1,6 @@
 name = "Skin Layers 3D"
 filename = "skinlayers3d-forge-1.11.1-mc1.20.1.jar"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/skinlayers3d-forge-1.11.1-mc1.20.1.jar"

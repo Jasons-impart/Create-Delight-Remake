@@ -128,8 +128,9 @@ These rules ensure this knowledge base stays effective. Violating them degrades 
 
 ## NOTES
 
-- **AGENTS.md 是本地开发知识库，已加入 .gitignore，不需要推送到远程仓库**
+- **AGENTS.md 是项目开发知识库，需要随规则变更一起提交**
+- **AGENTS.local.md 存放个人/机器特有配置，默认忽略，不提交**
 - **`.agents/skills/` 存放技能文件，OpenCode 和 Codex 都能自动发现**
-- Client-only mods → add to `.clientonlymodlist` (server startup required)
-- Server-only mods → add to `.serveronlymodlist`
+- Client-only mods → set `side = "client"` in the corresponding `mods/*.pw.toml`
+- Server-only mods → set `side = "server"` in the corresponding `mods/*.pw.toml`
 - Language files validated by `.vscode/probe.lang-schema.json`

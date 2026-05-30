@@ -1,6 +1,6 @@
 name = "Colorwheel Patcher"
 filename = "colorwheel_patcher-forge-1.0.4+mc1.20.1.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

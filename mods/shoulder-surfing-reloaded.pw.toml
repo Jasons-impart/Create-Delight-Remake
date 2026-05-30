@@ -1,6 +1,6 @@
 name = "Shoulder Surfing Reloaded"
 filename = "ShoulderSurfing-Forge-1.20.1-4.22.5.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

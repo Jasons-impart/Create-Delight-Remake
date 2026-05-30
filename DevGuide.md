@@ -40,6 +40,8 @@
   powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1
   ```
 - 脚本会自动下载 `packwiz.exe` 和 `packwiz-installer.jar` 到 `.cache/packwiz-sync/tools/`，执行 `packwiz refresh`，并按 `mods/`、`resourcepacks/`、`shaderpacks/` 下的 `*.pw.toml` 同步实际文件。
+- 本地开发环境默认按客户端侧同步，只保留 `side = "both"` 和 `side = "client"` 的 mod；`side = "server"` 的服务端专用 mod 不会下载到客户端实例。
+- 如果需要调试服务端侧文件，可显式运行 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Side server`。
 - 同步成功后，要求用户按“用户操作步骤”完成 HMCL 图形界面配置。
 - 用户完成 HMCL 实例创建后，agent 继续执行“Agent 收尾检查”。
 
@@ -149,8 +151,9 @@
 - 正式版本和测试版本发布均使用 `.agents/skills/release/` 中的 release skill。
 - 对 AI 助手可直接提出“发布版本”“发布测试版”等请求；人工执行时查看 `.agents/skills/release/SKILL.md` 并运行其中的脚本。
 
-# 增加客户端mod
-- 为了方便生成服务端包，请在增加后更新.clientonlymodlist文件
+# 增加客户端/服务端专用 mod
+- 客户端专用 mod 在对应 `mods/*.pw.toml` 中设置 `side = "client"`；服务端专用 mod 设置 `side = "server"`。
+- 本地同步默认按客户端侧处理；服务端发布会按 `side` 过滤和删除 mod。
 
 # 发包使用的工具
 - packwiz https://packwiz.infra.link/tutorials/creating/getting-started/
@@ -161,8 +164,10 @@
 - 该脚本会扫描 `mods/`、`resourcepacks/`、`shaderpacks/` 下已经提交的 `*.pw.toml` 文件
 - 首次运行时会自动下载 `packwiz.exe` 和 `packwiz-installer.jar`，缓存到 `.cache/packwiz-sync/`
 - 随后会自动执行 `packwiz refresh`、启动本地静态文件服务，并调用 `packwiz-installer`，把缺失的 mod / 资源包 / 光影包同步到本地
+- 默认同步目标是客户端开发环境，只下载 `side = "both"` 和 `side = "client"`；服务端专用 mod 使用 `side = "server"` 标记，不会进入默认客户端实例
 - 运行前需要准备好 Java 17，并确保能够访问 CurseForge 或对应 CDN
 - 如果不想双击批处理，也可以在终端手动执行：`powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1`
+- 如果需要同步服务端侧文件，可手动执行：`powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\sync-packwiz-assets.ps1 -Side server`
 - 这个同步流程只会处理 `*.pw.toml` 描述的外部文件，不会覆盖仓库里已经被 Git 跟踪的普通文件
 
 # 手动更新/加入mod后的同步

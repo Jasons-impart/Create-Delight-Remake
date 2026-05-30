@@ -1,6 +1,8 @@
 [CmdletBinding()]
 param(
     [string[]]$MetadataRoots = @("mods", "resourcepacks", "shaderpacks"),
+    [ValidateSet("client", "server", "all")]
+    [string]$Side = "client",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
     [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar"
 )
@@ -21,6 +23,7 @@ $PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
 $PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
 $GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
+$PackwizSideScript = Join-Path $PSScriptRoot "packwiz-side.py"
 $ServeProcess = $null
 
 function Write-Status {
@@ -158,6 +161,7 @@ try {
     }
 
     $javaCommand = Resolve-JavaCommand
+    $pythonExe = Resolve-PythonCommand
     Ensure-Tool -Url $PackwizUrl -Destination $PackwizExe
     Ensure-Tool -Url $InstallerUrl -Destination $InstallerJarPath
 
@@ -191,6 +195,14 @@ try {
         $content = Get-Content $metadataPath -Raw
         if ($content.Contains($PackwizFilesRawPrefix)) {
             Write-Utf8NoBomFile -Path $metadataPath -Content ($content.Replace($PackwizFilesRawPrefix, $localPackwizFilesPrefix))
+        }
+    }
+
+    if ($Side -ne "all") {
+        Write-Status "Pruning temporary metadata for side: $Side"
+        & $pythonExe $PackwizSideScript prune-metadata --base $PackRoot --target $Side
+        if ($LASTEXITCODE -ne 0) {
+            throw "packwiz-side.py prune-metadata exited with code $LASTEXITCODE."
         }
     }
 

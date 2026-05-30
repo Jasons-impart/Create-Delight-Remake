@@ -109,7 +109,7 @@ jobs:
           git checkout -- mods resourcepacks shaderpacks
           git clean -fd -- mods resourcepacks shaderpacks
       - name: 下载所有客户端文件本体
-        run: bash .github/workflows/scripts/download_mods.sh 8082
+        run: bash .github/workflows/scripts/download_mods.sh 8082 client
       - name: 生成带mod本体的懒人包
         run: bash .github/workflows/scripts/build_click_to_run_client.sh ../click_to_run_release
       - name: 下载HMCL启动器与jdk环境
@@ -161,18 +161,8 @@ jobs:
         run: |
           python3 scripts/generate-packwiz-files.py
           ./packwiz refresh
-      - name: 下载所有mod本体（packwiz-installer）
-        run: bash .github/workflows/scripts/download_mods.sh 8080
-      - name: 删除客户端only模组
-        uses: ./.github/actions/remove-client-only-mods
-        with:
-          base_dir: .
-      - name: 安装服务端only模组
-        run: |
-            mapfile -t urls < .serveronlymodlist
-            for url in "${urls[@]}"; do
-              curl -O -L "$url" --output-dir "mods"
-            done
+      - name: 下载所有服务端文件本体（packwiz-installer）
+        run: bash .github/workflows/scripts/download_mods.sh 8080 server
       - name: 删除与服务端无关的文件
         run: |
             rm -rf resourcepacks shaderpacks packwiz-files
@@ -259,17 +249,8 @@ jobs:
       - name: 移除服务端不需要的文件
         run: |
           set -euo pipefail
-          # 移除客户端only的mod
-          mapfile -t prefixes < .clientonlymodlist
-          for prefix in "${prefixes[@]}"; do
-            echo "Deleting files with prefix: $prefix"
-            if [ -d "patch/mods" ]; then
-              find patch/mods -name "${prefix}*" -exec rm {} +
-            fi
-            if [ -d "patch/packwiz-files/mods" ]; then
-              find patch/packwiz-files/mods -name "${prefix}*" -exec rm {} +
-            fi
-          done
+          # 移除客户端 only 的 mod
+          python3 scripts/packwiz-side.py delete-payloads --metadata-base . --payload-base patch --side client --verbose
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
                 patch/KubeJSStyleGuide.md patch/DevGuide.md patch/modpack.toml \
                 patch/pack.toml patch/index.toml patch/client_jvm_args.example.txt
@@ -308,7 +289,7 @@ jobs:
           cp .github/workflows/scripts/deploy-patch.bat deploy-patch.bat
       - name: 净化补丁用 CurseForge 元数据
         run: |
-          bash .github/workflows/scripts/download_mods.sh 8081
+          bash .github/workflows/scripts/download_mods.sh 8081 server
           python3 scripts/generate-packwiz-files.py
           ./packwiz -y curseforge detect
           ./packwiz refresh

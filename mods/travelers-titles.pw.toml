@@ -1,6 +1,6 @@
 name = "Traveler's Titles (Forge/NeoForge)"
 filename = "TravelersTitles-1.20-Forge-4.0.2.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

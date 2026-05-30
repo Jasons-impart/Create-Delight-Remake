@@ -1,6 +1,6 @@
 name = "Dynamic Crosshair"
 filename = "dynamiccrosshair-9.10+1.20.1-forge.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

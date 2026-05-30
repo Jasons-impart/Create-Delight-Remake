@@ -1,6 +1,6 @@
 name = "IMBlocker"
 filename = "IMBlocker-5.5.0-forge+1.17-1.20.4.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
