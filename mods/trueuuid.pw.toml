@@ -1,13 +1,13 @@
 name = "trueuuid"
-filename = "trueuuid-1.0.8-forge1.20.1.jar"
+filename = "trueuuid-1.0.9-forge1.20.1.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "2b8d6cccd8796d299f94917ba50997b59d061126"
+hash = "3673e1f824d825cc09a363e3b29ffc48d136d3bb"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8099917
+file-id = 8152309
 project-id = 1539688
