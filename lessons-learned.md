@@ -162,3 +162,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `release-prepare.ps1 -ReleaseType 测试` updated `docs/announcement.md`, causing prerelease PRs to overwrite the stable announcement.
 - **Fix/Lesson**: Only stable prepare runs write `docs/announcement.md` or auto-stage `docs/update-summary-*.md`; test releases may use `-Announcement` only for the PR body.
+
+## Release artifact transfer needs measured proxy behavior on Windows
+
+**Date**: 2026-05-31
+
+- **Problem**: `gh run download` and `gh release upload` hung during v0.5.0.0, while proxied release upload was an order of magnitude slower than direct upload.
+- **Fix/Lesson**: Use authenticated `curl --config -` for large transfers, benchmark proxy vs direct routes when `-Proxy` is provided, and clear artifact extraction directories before retrying.

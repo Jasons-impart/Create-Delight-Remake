@@ -426,6 +426,114 @@ if ($artifactsObj -and $artifactsObj.artifacts) {
     })
 }
 
+function New-CurlConfigLine {
+    param(
+        [Parameter(Mandatory=$true)][string]$Name,
+        [Parameter(Mandatory=$true)][string]$Value
+    )
+
+    $escaped = $Value.Replace('\', '\\').Replace('"', '\"')
+    return "$Name = `"$escaped`""
+}
+
+function New-CurlHeaderConfig {
+    param([Parameter(Mandatory=$true)][string[]]$Headers)
+
+    $lines = @()
+    foreach ($header in $Headers) {
+        $lines += New-CurlConfigLine -Name "header" -Value $header
+    }
+    return ($lines -join "`n") + "`n"
+}
+
+function Invoke-CurlWithConfigStdin {
+    param(
+        [Parameter(Mandatory=$true)][string[]]$Arguments,
+        [Parameter(Mandatory=$true)][string]$Config
+    )
+
+    $psi = [System.Diagnostics.ProcessStartInfo]::new()
+    $psi.FileName = "curl.exe"
+    $psi.UseShellExecute = $false
+    $psi.RedirectStandardInput = $true
+    foreach ($arg in $Arguments) {
+        [void]$psi.ArgumentList.Add($arg)
+    }
+
+    $proc = [System.Diagnostics.Process]::Start($psi)
+    $proc.StandardInput.Write($Config)
+    if (-not $Config.EndsWith("`n")) {
+        $proc.StandardInput.WriteLine()
+    }
+    $proc.StandardInput.Close()
+    $proc.WaitForExit()
+    return $proc.ExitCode
+}
+
+function Get-CurlProxyArgs {
+    param([ValidateSet("direct","proxy")][string]$Mode)
+
+    if ($Mode -eq "proxy" -and $env:HTTPS_PROXY) {
+        return @("--proxy", $env:HTTPS_PROXY)
+    }
+    return @("--noproxy", "*")
+}
+
+function Get-FastestDownloadMode {
+    param(
+        [Parameter(Mandatory=$true)][string]$ArtifactId,
+        [Parameter(Mandatory=$true)][string]$Token
+    )
+
+    if (-not $env:HTTPS_PROXY) {
+        return "direct"
+    }
+
+    Write-Host "   🔍 Benchmarking artifact download route"
+    $config = New-CurlHeaderConfig -Headers @(
+        "Authorization: Bearer $Token",
+        "Accept: application/vnd.github+json"
+    )
+    $results = @()
+    foreach ($mode in @("proxy", "direct")) {
+        $benchFile = Join-Path $env:TEMP "opencode\$Version\download-benchmark-$ArtifactId-$mode.bin"
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+        $args = (Get-CurlProxyArgs -Mode $mode) + @(
+            "--config", "-",
+            "--fail",
+            "--location",
+            "--silent",
+            "--show-error",
+            "--range", "0-1048575",
+            "--connect-timeout", "15",
+            "--max-time", "90",
+            "-o", $benchFile,
+            "https://api.github.com/repos/$repo/actions/artifacts/$ArtifactId/zip"
+        )
+        $sw = [System.Diagnostics.Stopwatch]::StartNew()
+        $code = Invoke-CurlWithConfigStdin -Arguments $args -Config $config
+        $sw.Stop()
+        $bytes = if (Test-Path $benchFile) { (Get-Item $benchFile).Length } else { 0 }
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+        if ($code -eq 0 -and $bytes -gt 0) {
+            $results += [pscustomobject]@{ Mode = $mode; Seconds = $sw.Elapsed.TotalSeconds; Bytes = $bytes }
+            Write-Host "      ${mode}: $([math]::Round($bytes / 1MB, 2)) MB in $([math]::Round($sw.Elapsed.TotalSeconds, 2))s"
+        } else {
+            Write-Host "      ${mode}: failed"
+        }
+    }
+
+    $best = $results | Sort-Object Seconds | Select-Object -First 1
+    if (-not $best) {
+        Write-Host "   ⚠️ Download benchmark failed; using proxy because -Proxy was provided"
+        return "proxy"
+    }
+    Write-Host "   ✅ Download route selected: $($best.Mode)"
+    return $best.Mode
+}
+
+$script:DownloadProxyMode = $null
+
 # Download function with progress display
 function Download-Artifact {
     param([string]$Name, [string]$DestDir)
@@ -437,8 +545,13 @@ function Download-Artifact {
     $sizeMB = if ($sizeInBytes) { [math]::Round($sizeInBytes / 1MB, 1) } else { "?" }
 
     Write-Host "   📥 Downloading $Name ($sizeMB MB) -> $DestDir"
+    if (Test-Path $DestDir) {
+        Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+    } else {
+        New-Item -ItemType Directory -Path $DestDir -Force | Out-Null
+    }
 
-    # Download via gh api for progress, with fallback to gh run download
+    # Download via curl so GitHub's artifact redirect is followed reliably, with fallback to gh run download.
     $artifactId = $found.id
     $zipFile = Join-Path $env:TEMP "opencode\$Version\artifacts\$Name.zip"
     New-Item -ItemType Directory -Path (Split-Path $zipFile) -Force | Out-Null
@@ -446,28 +559,68 @@ function Download-Artifact {
     $downloaded = $false
     for ($downloadAttempt = 1; $downloadAttempt -le 5; $downloadAttempt++) {
         try {
-            # Use gh api to download the artifact zip directly
-            # This shows download progress via gh's built-in progress indicator
-            gh api "repos/$repo/actions/artifacts/$artifactId/zip" --output $zipFile 2>$null
-            if ($LASTEXITCODE -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+            if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
+
+            $curlConfig = New-CurlHeaderConfig -Headers @(
+                "Authorization: Bearer $token",
+                "Accept: application/vnd.github+json"
+            )
+
+            if (-not $script:DownloadProxyMode) {
+                $script:DownloadProxyMode = Get-FastestDownloadMode -ArtifactId $artifactId -Token $token
+            }
+
+            $curlArgs = (Get-CurlProxyArgs -Mode $script:DownloadProxyMode) + @(
+                "--config", "-",
+                "--fail",
+                "--location",
+                "--retry", "3",
+                "--retry-delay", "5",
+                "--connect-timeout", "30",
+                "--max-time", "900",
+                "-o", $zipFile,
+                "https://api.github.com/repos/$repo/actions/artifacts/$artifactId/zip"
+            )
+            $curlExitCode = Invoke-CurlWithConfigStdin -Arguments $curlArgs -Config $curlConfig
+
+            if ($curlExitCode -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
                 # Extract the zip to destination
-                Expand-Archive -Path $zipFile -DestinationPath $DestDir -Force
+                Expand-Archive -LiteralPath $zipFile -DestinationPath $DestDir -Force
                 Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
                 Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
                 $downloaded = $true
                 break
             } else {
-                throw "gh api download returned empty or failed"
+                throw "curl artifact download returned empty or failed"
             }
         } catch {
-            # Fallback to gh run download (no size display but reliable)
+            # Fallback to gh run download, guarded by a timeout because it can hang on Windows.
             Write-Host "   ⚠️ Direct download failed, falling back to gh run download ($downloadAttempt/5)..."
             if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
-            gh run download $RunId --repo $repo -n $Name -D $DestDir
-            if ($LASTEXITCODE -eq 0) {
+            if (Test-Path $DestDir) {
+                Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+            }
+            $stdoutFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.out"
+            $stderrFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.err"
+            $ghArgs = @("run", "download", $RunId, "--repo", $repo, "-n", $Name, "-D", $DestDir)
+            $proc = Start-Process -FilePath "gh" -ArgumentList $ghArgs -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
+            if (-not $proc.WaitForExit(900 * 1000)) {
+                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+                Write-Host "   ⚠️ gh run download timed out: $Name"
+            } elseif ($proc.ExitCode -eq 0) {
+                Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
                 Write-Host "   ✅ Downloaded $Name (via gh run download)"
                 $downloaded = $true
                 break
+            } else {
+                $stderr = Get-Content $stderrFile -Raw -ErrorAction SilentlyContinue
+                if ($stderr) {
+                    Write-Host "   ⚠️ gh run download failed: $stderr"
+                }
             }
             Start-Sleep -Seconds 10
         }
@@ -747,11 +900,115 @@ if ($LASTEXITCODE -eq 0 -and $releaseViewJson) {
 Remove-Item $notesFile -Force -ErrorAction SilentlyContinue
 Write-Host "✅ Draft release ready: $title"
 
+function Get-ReleaseForUpload {
+    $releaseListJson = gh api "repos/$repo/releases" --paginate 2>$null
+    if ($LASTEXITCODE -ne 0 -or -not $releaseListJson) {
+        throw "Cannot list releases"
+    }
+    $releaseForUpload = @($releaseListJson | ConvertFrom-Json -ErrorAction Stop) | Where-Object { $_.tag_name -eq $Version } | Select-Object -First 1
+    if (-not $releaseForUpload) {
+        throw "Cannot find draft release for $Version"
+    }
+    return $releaseForUpload
+}
+
+function Remove-ReleaseAssetByName {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$AssetName
+    )
+
+    $existingAssetsJson = gh api "repos/$repo/releases/$($Release.id)/assets" 2>$null
+    if ($LASTEXITCODE -eq 0 -and $existingAssetsJson) {
+        $existingAsset = @($existingAssetsJson | ConvertFrom-Json -ErrorAction SilentlyContinue) | Where-Object { $_.name -eq $AssetName } | Select-Object -First 1
+        if ($existingAsset) {
+            gh api -X DELETE "repos/$repo/releases/assets/$($existingAsset.id)" 2>$null | Out-Null
+        }
+    }
+}
+
+function Invoke-CurlReleaseAssetUpload {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$AssetPath,
+        [Parameter(Mandatory=$true)][string]$AssetName,
+        [Parameter(Mandatory=$true)][string]$Token,
+        [ValidateSet("direct","proxy")][string]$Mode,
+        [int]$TimeoutSeconds = 3600,
+        [string]$ContentType = "application/zip"
+    )
+
+    $curlConfig = New-CurlHeaderConfig -Headers @(
+        "Authorization: Bearer $Token",
+        "Accept: application/vnd.github+json",
+        "Content-Type: $ContentType"
+    )
+    $encodedName = [System.Uri]::EscapeDataString($AssetName)
+    $curlArgs = (Get-CurlProxyArgs -Mode $Mode) + @(
+        "--config", "-",
+        "--fail",
+        "--location",
+        "--retry", "3",
+        "--retry-delay", "5",
+        "--connect-timeout", "30",
+        "--max-time", "$TimeoutSeconds",
+        "--data-binary", "@$AssetPath",
+        "--output", "NUL",
+        "https://uploads.github.com/repos/$repo/releases/$($Release.id)/assets?name=$encodedName"
+    )
+    return Invoke-CurlWithConfigStdin -Arguments $curlArgs -Config $curlConfig
+}
+
+function Get-FastestUploadMode {
+    param(
+        [Parameter(Mandatory=$true)]$Release,
+        [Parameter(Mandatory=$true)][string]$Token
+    )
+
+    if (-not $env:HTTPS_PROXY) {
+        return "direct"
+    }
+
+    Write-Host "   🔍 Benchmarking release upload route"
+    $benchFile = Join-Path $env:TEMP "opencode\$Version\upload-benchmark.bin"
+    $bytes = New-Object byte[] (1MB)
+    [System.IO.File]::WriteAllBytes($benchFile, $bytes)
+    $results = @()
+    try {
+        foreach ($mode in @("direct", "proxy")) {
+            $assetName = "upload-benchmark-$Version-$mode.bin"
+            Remove-ReleaseAssetByName -Release $Release -AssetName $assetName
+            $sw = [System.Diagnostics.Stopwatch]::StartNew()
+            $code = Invoke-CurlReleaseAssetUpload -Release $Release -AssetPath $benchFile -AssetName $assetName -Token $Token -Mode $mode -TimeoutSeconds 120 -ContentType "application/octet-stream"
+            $sw.Stop()
+            if ($code -eq 0) {
+                $results += [pscustomobject]@{ Mode = $mode; Seconds = $sw.Elapsed.TotalSeconds }
+                Write-Host "      ${mode}: 1 MB in $([math]::Round($sw.Elapsed.TotalSeconds, 2))s"
+                Remove-ReleaseAssetByName -Release $Release -AssetName $assetName
+            } else {
+                Write-Host "      ${mode}: failed"
+            }
+        }
+    } finally {
+        Remove-Item $benchFile -Force -ErrorAction SilentlyContinue
+    }
+
+    $best = $results | Sort-Object Seconds | Select-Object -First 1
+    if (-not $best) {
+        Write-Host "   ⚠️ Upload benchmark failed; using direct upload"
+        return "direct"
+    }
+    Write-Host "   ✅ Upload route selected: $($best.Mode)"
+    return $best.Mode
+}
+
+$script:UploadProxyMode = $null
+
 function Upload-ReleaseAsset {
     param(
         [Parameter(Mandatory=$true)][string]$AssetPath,
         [int]$Attempts = 5,
-        [int]$TimeoutSeconds = 900
+        [int]$TimeoutSeconds = 3600
     )
 
     $assetName = Split-Path $AssetPath -Leaf
@@ -762,6 +1019,29 @@ function Upload-ReleaseAsset {
         $stdoutFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.out"
         $stderrFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.err"
         Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+
+        try {
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+
+            $releaseForUpload = Get-ReleaseForUpload
+
+            if (-not $script:UploadProxyMode) {
+                $script:UploadProxyMode = Get-FastestUploadMode -Release $releaseForUpload -Token $token
+            }
+
+            Remove-ReleaseAssetByName -Release $releaseForUpload -AssetName $assetName
+            $curlExitCode = Invoke-CurlReleaseAssetUpload -Release $releaseForUpload -AssetPath $AssetPath -AssetName $assetName -Token $token -Mode $script:UploadProxyMode -TimeoutSeconds $TimeoutSeconds
+            if ($curlExitCode -eq 0) {
+                Write-Host "   ✅ Uploaded $assetName"
+                return
+            }
+            throw "curl upload failed with exit code $curlExitCode"
+        } catch {
+            Write-Host "   ⚠️ curl upload failed, falling back to gh release upload: $_"
+        }
 
         $args = @(
             "release", "upload", $Version,
