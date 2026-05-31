@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_ring/inlay"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "irons_spellbooks:cooldown_reduction": 3,
+      "attributeslib:crit_chance": 0.01
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_ring/inlay/cooldown_gem",
+      "moduleVariant": "cooldown_gem/"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "irons_spellbooks"
+    }
+  ],
+  "replace": true
+}

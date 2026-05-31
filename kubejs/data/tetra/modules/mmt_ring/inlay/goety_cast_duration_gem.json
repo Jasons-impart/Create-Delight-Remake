@@ -1,0 +1,51 @@
+{
+  "type": "tetra:basic_major_module",
+  "replace": true,
+  "slots": [
+    "mmt_ring/inlay"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:gem/"
+      ],
+      "key": "goety_cast_duration_gem/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "primaryAttributes": {
+          "**goety_revelation:cast_duration": 0.01,
+          "attributeslib:crit_chance": 0.002
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_ring/inlay/cast_time_gem",
+            "renderLayer": "high"
+          }
+        ]
+      },
+      "availableTextures": [
+        ""
+      ],
+      "models": [
+        {
+          "location": "more_mod_tetra:item/module/mmt_ring/inlay/cast_time_gem_highlight",
+          "renderLayer": "high"
+        }
+      ],
+      "attributes": {
+        "attributeslib:crit_damage": 0.025
+      }
+    }
+  ]
+}

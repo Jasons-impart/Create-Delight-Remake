@@ -538,12 +538,10 @@ ServerEvents.recipes(e => {
         '8x create:gearbox',
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
-            res,
-            'alexscaves:enigmatic_engine'],
+            res],
             [
                 Fluid.of("createdelightcore:molten_andesite", 450),
                 "create_sa:heat_engine",
-                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )
@@ -562,12 +560,10 @@ ServerEvents.recipes(e => {
         '2x create_bic_bit:mechanical_fryer'
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
-            res,
-            'alexscaves:enigmatic_engine'],
+            res],
             [
                 Fluid.of("createmetallurgy:molten_brass", 450),
                 "create_sa:steam_engine",
-                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )
@@ -580,12 +576,10 @@ ServerEvents.recipes(e => {
         '3x create:portable_fluid_interface'
     ].forEach(res => {
         e.recipes.vintageimprovements.pressurizing([
-            res,
-            'alexscaves:enigmatic_engine'],
+            res],
             [
                 Fluid.of("createmetallurgy:molten_copper", 450),
                 "create_sa:hydraulic_engine",
-                "alexscaves:enigmatic_engine",
                 Item.of(res, 1)
             ].concat(multi_item("createdieselgenerators:wood_chip", 9))
         )

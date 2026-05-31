@@ -1,0 +1,49 @@
+{
+  "key": "goety_pure_blood",
+  "category": "fuller_material",
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 679,
+  "integrityCost": 0,
+  "integrityGain": 12,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "CC0000",
+    "texture": "CC0000"
+  },
+  "effects": {
+    "reaching": [
+      4,
+      0.96
+    ],
+    "armorPenetration": 60,
+    "backstab": 0.75
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "goety:unholy_blood"
+    ],
+    "nbt": "{\"Pure\":1b}"
+  },
+  "attributes": {
+    "**generic.attack_damage": 0.15,
+    "attributeslib:crit_chance": 0.25,
+    "attributeslib:crit_damage": 1.5
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "goety"
+    }
+  ],
+  "replace": true
+}

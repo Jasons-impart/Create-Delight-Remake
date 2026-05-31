@@ -1,0 +1,56 @@
+{
+  "key": "extrabotany_aerialite_ingot",
+  "category": "metal",
+  "primary": 5.4,
+  "secondary": 1.3,
+  "tertiary": 6.5,
+  "durability": 1850,
+  "integrityCost": 2,
+  "integrityGain": 6,
+  "magicCapacity": 800,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 8,
+  "tints": {
+    "glyph": "077EA1",
+    "texture": "077EA1"
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "effects": {
+    "more_mod_tetra:speed_force": 15,
+    "more_mod_tetra:mana_regeneration": 7,
+    "more_mod_tetra:mana_repair": 2
+  },
+  "attributes": {
+    "**generic.movement_speed": 0.05
+  },
+  "material": {
+    "items": [
+      "extrabotany:aerialite_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:stone"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "extrabotany"
+    }
+  ],
+  "contexts": {
+    "armor": {
+      "effects": {
+        "more_mod_tetra:mana_regeneration": 7,
+        "more_mod_tetra:mana_repair": 2
+      },
+      "attributes": {
+        "attributeslib:crit_chance": 0.02,
+        "attributeslib:crit_damage": 0.05
+      }
+    }
+  },
+  "replace": true
+}

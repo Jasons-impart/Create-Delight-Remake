@@ -1,0 +1,34 @@
+{
+  "slots": [
+    "mmt_ring/base_ring"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1,
+    "primaryAttributes": {
+      "attributeslib:crit_chance": 0.01
+    }
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_ring/base_ring/critical_strike_ring",
+      "moduleVariant": "critical_strike_ring/"
+    }
+  ],
+  "replace": true
+}

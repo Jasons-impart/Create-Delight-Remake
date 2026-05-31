@@ -1,0 +1,52 @@
+{
+  "type": "tetra:basic_major_module",
+  "replace": true,
+  "slots": [
+    "mmt_ring/base_ring"
+  ],
+  "improvements": [],
+  "variants": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "key": "critical_strike_ring/",
+      "integrity": 0,
+      "effects": {
+        "more_mod_tetra:curios_materials_effect_invalidation": 1
+      },
+      "extract": {
+        "glyph": {
+          "textureX": 176,
+          "textureY": 48
+        },
+        "availableTextures": [
+          ""
+        ],
+        "models": [
+          {
+            "location": "more_mod_tetra:item/module/mmt_ring/base_ring/critical_strike_ring"
+          }
+        ],
+        "primaryAttributes": {
+          "attributeslib:crit_chance": 0.005
+        }
+      },
+      "availableTextures": [
+        ""
+      ],
+      "models": [
+        {
+          "location": "more_mod_tetra:item/module/mmt_ring/base_ring/guard_ring_highlight"
+        }
+      ],
+      "attributes": {
+        "attributeslib:crit_damage": 0.0175
+      }
+    }
+  ]
+}

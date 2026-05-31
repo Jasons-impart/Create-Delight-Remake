@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_bracelet/base_bracelet"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1,
+    "primaryAttributes": {
+      "attributeslib:crit_chance": 0.01
+    },
+    "secondaryAttributes": {
+      "attributeslib:crit_chance": 0.01
+    }
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:bone/",
+        "tetra:metal/",
+        "tetra:stone/",
+        "tetra:wood/",
+        "tetra:gem/"
+      ],
+      "countFactor": 2,
+      "moduleKey": "mmt_bracelet/base_bracelet/protect_bracelet",
+      "moduleVariant": "protect_bracelet/"
+    }
+  ],
+  "replace": true
+}
