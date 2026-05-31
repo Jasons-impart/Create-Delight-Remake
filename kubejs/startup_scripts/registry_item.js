@@ -739,6 +739,11 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:devil_eye")
         .rarity("epic")
         .translationKey("item.createdelight.devil_eye")
+    //锻造钢锭
+    e.create("createdelight:forged_steel_ingot")
+        .tag("forge:ingots")
+        .tag("forge:ingots/forged_steel")
+        .translationKey("item.createdelight.forged_steel_ingot")
     //锻造钢板
     e.create("createdelight:forged_steel_sheet")
         .translationKey("item.createdelight.forged_steel_sheet")

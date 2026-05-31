@@ -58,6 +58,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:empty_popsicle',
         'createdelight:potato_stew_beef',
         'createdelight:sushi_unrolledroll',
+        'createdelight:forged_steel_ingot',
         'createdelight:forged_steel_sheet',
         'createdelight:steel_sheet',
         'createdelight:andesite_alloy_nugget',
@@ -287,4 +288,4 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:unbake_portobello_quiche',
         'createdelight:unbake_quiche_lorraine',
     ])
-});  
+});

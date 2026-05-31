@@ -93,14 +93,14 @@ ServerEvents.recipes(e => {
     e.recipes.create.mixing(
         Fluid.of("supplementaries:lumisene", 300),
         [
-            'art_of_forging:potent_mixture',
+            'minecraft:fire_charge',
             Fluid.of("createdieselgenerators:plant_oil", 100)
         ]
     ).id("createdelight:mixing/lumisene_4")
     e.recipes.create.mixing(
         Fluid.of("supplementaries:lumisene", 300),
         [
-            'art_of_forging:potent_mixture',
+            'minecraft:fire_charge',
             Fluid.of("createdieselgenerators:ethanol", 100)
         ]
     ).id("createdelight:mixing/lumisene_5")

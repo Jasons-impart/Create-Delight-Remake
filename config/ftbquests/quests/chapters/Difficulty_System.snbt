@@ -1943,7 +1943,7 @@
 				consume_items: true
 				count: 8L
 				id: "464B36CA12B5D392"
-				item: "art_of_forging:shards_of_malice"
+				item: "alexscaves:pure_darkness"
 				type: "item"
 			}]
 			title: "觉得难度太低了？"
@@ -2012,7 +2012,7 @@
 				"屏幕左侧会显示你当前所处的难度档位与本档进度，部分怪物的额外掉落也会要求达到对应难度及以上。"
 				"&etips:也可以使用/improvedmobs查看当前难度值。&r"
 			]
-			icon: "art_of_forging:sigil_of_eden"
+			icon: "alexscaves:immortal_embryo"
 			id: "23815A088A715478"
 			size: 2.5d
 			subtitle: "独立于原版难度的数值分档系统"

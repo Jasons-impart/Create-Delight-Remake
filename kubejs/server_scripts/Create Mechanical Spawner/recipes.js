@@ -97,7 +97,7 @@ ServerEvents.recipes(e => {
     create_spawn_fluid(e, ["minecraft:magma_cream"], "create_mechanical_spawner:spawn_fluid_magma_cube", 100, 4)
     create_spawn_fluid(e, ["minecraft:slime_ball"], "create_mechanical_spawner:spawn_fluid_slime", 100, 4)
     create_spawn_fluid(e, ["minecraft:spider_eye", "2x minecraft:string"], "create_mechanical_spawner:spawn_fluid_spider", 100, 4)
-    create_spawn_fluid(e, ["art_of_forging:shards_of_malice", "iceandfire:witherbone"], "create_mechanical_spawner:spawn_fluid_wither_skeleton", 100, 3)
+    create_spawn_fluid(e, ["alexscaves:pure_darkness", "iceandfire:witherbone"], "create_mechanical_spawner:spawn_fluid_wither_skeleton", 100, 3)
     create_spawn_fluid(e, ["createdelightcore:emerald_coin", Fluid.of("butchercraft:blood_fluid", 500)], "create_mechanical_spawner:spawn_fluid_evoker", 200, 2)
     create_spawn_fluid(e, ["minecraft:gold_block", Fluid.of("butchercraft:blood_fluid", 500)], "create_mechanical_spawner:spawn_fluid_pigling", 100, 2)
     create_spawn_fluid(e, ["minecraft:glowstone_dust", "minecraft:redstone"], "create_mechanical_spawner:spawn_fluid_witch", 100, 2)

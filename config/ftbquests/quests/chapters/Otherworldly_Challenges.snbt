@@ -415,17 +415,17 @@
 				{
 					count: 2
 					id: "0327A14ABFADFEA1"
-					item: "art_of_forging:devils_soul_gem"
+					item: "alexscaves:pure_darkness"
 					type: "item"
 				}
 				{
 					id: "581683A2875961F6"
-					item: "art_of_forging:sigil_of_eden"
+					item: "alexscaves:immortal_embryo"
 					type: "item"
 				}
 				{
 					id: "3F4407F7AB5982B9"
-					item: "art_of_forging:fang_charm"
+					item: "minecraft:totem_of_undying"
 					type: "item"
 				}
 			]
@@ -1297,7 +1297,7 @@
 				{
 					consume_items: true
 					id: "6D90B28B0E1E2BF9"
-					item: "art_of_forging:fang_charm"
+					item: "minecraft:totem_of_undying"
 					type: "item"
 				}
 				{
@@ -1309,13 +1309,13 @@
 				{
 					consume_items: true
 					id: "0FA3ADFAA1610A1A"
-					item: "art_of_forging:sigil_of_eden"
+					item: "alexscaves:immortal_embryo"
 					type: "item"
 				}
 				{
 					consume_items: true
 					id: "613AF56A73DBE820"
-					item: "art_of_forging:devils_soul_gem"
+					item: "alexscaves:pure_darkness"
 					type: "item"
 				}
 				{

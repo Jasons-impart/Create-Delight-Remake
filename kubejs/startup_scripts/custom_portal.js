@@ -22,7 +22,7 @@ StartupEvents.postInit(e => {
         .beginPortal() //开始构建自定义传送门
         ["frameBlock(net.minecraft.resources.ResourceLocation)"]("minecraft:packed_mud") //传送门的框架方块
         .destDimID("createdelight:forlorn_hollows_dimension") //传送维度
-        .lightWithItem("art_of_forging:shards_of_malice") //激活传送门的物品
+        .lightWithItem("alexscaves:pure_darkness") //激活传送门的物品
         .tintColor(174, 0, 0) // 传送门的RGB颜色
         .registerPortal(); //注册自定义传送门
 

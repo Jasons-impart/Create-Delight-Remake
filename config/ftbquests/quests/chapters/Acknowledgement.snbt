@@ -456,7 +456,7 @@
 		}
 		{
 			height: 1.8d
-			image: "art_of_forging:item/nano_insectoid"
+			image: "create:item/precision_mechanism"
 			order: 3
 			rotation: 0.0d
 			width: 1.8d
@@ -1679,7 +1679,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "被纳米甲虫折磨爆炸第一人！"
+			subtitle: "被谜之引擎折磨爆炸第一人！"
 			tasks: [{
 				id: "055BC3227061C5C3"
 				title: "y0-果霖橙"

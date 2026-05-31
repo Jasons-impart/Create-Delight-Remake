@@ -3,9 +3,9 @@
 	default_quest_shape: ""
 	filename: "Materials"
 	group: "57E934AC8166BC73"
-	icon: "art_of_forging:endsteel_ingot"
+	icon: "dreadsteel:dreadsteel_ingot"
 	id: "147FF9AE2E3A4650"
-	order_index: 4
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -15,7 +15,7 @@
 			subtitle: "在水下的溺尸遗迹中的箱子里可以找到，可通过充电再生"
 			tasks: [{
 				id: "41507FB3303D2212"
-				item: "art_of_forging:vobrite_crystal"
+				item: "ae2:charged_certus_quartz_crystal"
 				type: "item"
 			}]
 			x: 4.5d
@@ -28,14 +28,14 @@
 			rewards: [{
 				count: 3
 				id: "5079660030621FF5"
-				item: "art_of_forging:vobrivium_ingot"
+				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
 			tasks: [{
 				id: "36BD3E1BEBBF6A21"
-				item: "art_of_forging:vobrivium_ingot"
+				item: "createmetallurgy:obdurium_ingot"
 				type: "item"
 			}]
 			x: 4.5d
@@ -97,10 +97,10 @@
 			dependencies: ["47ADAC6620C3FF87"]
 			id: "37009649B2B8EC6C"
 			size: 1.0d
-			subtitle: "使用带有纳米融合效果的武器击杀凋灵骷髅获得，直接击杀凋零也可获得"
+			subtitle: "来自深渊裂谷的稀有生命材料"
 			tasks: [{
 				id: "5B78C6B3E560AF87"
-				item: "art_of_forging:fragment_of_eden"
+				item: "alexscaves:immortal_embryo"
 				type: "item"
 			}]
 			x: 5.5d
@@ -116,18 +116,18 @@
 			id: "691FF0ECF3FDC2ED"
 			rewards: [{
 				id: "49116D48A89919DF"
-				item: "art_of_forging:endsteel_ingot"
+				item: "blackknightarmor:end_dragon_ingot"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "双头终末钢锤为八级锤"
+			subtitle: "终结龙双头锤为八级锤"
 			tasks: [{
 				id: "27225645CA88DA29"
-				item: "art_of_forging:endsteel_ingot"
+				item: "blackknightarmor:end_dragon_ingot"
 				type: "item"
 			}]
-			title: "&5终末钢&r"
+			title: "&5终结龙锭&r"
 			x: 4.5d
 			y: 6.5d
 		}
@@ -173,7 +173,7 @@
 			dependencies: ["63B03A277D459A65"]
 			id: "141E662DB7E1864B"
 			size: 1.0d
-			subtitle: "使用带有纳米融合效果的武器击杀悚怖怪物获得"
+			subtitle: "击杀悚怖怪物或完成相关试炼获得"
 			tasks: [{
 				id: "156579804A25CEAF"
 				item: "createdelight:dread_heart"
@@ -254,7 +254,7 @@
 			subtitle: "使用陨石废液，金属碎片，下界合金制作"
 			tasks: [{
 				id: "2A51FC7AAB387CD5"
-				item: "art_of_forging:forged_steel_ingot"
+				item: "northstar:martian_steel"
 				type: "item"
 			}]
 			x: 6.5d
@@ -277,10 +277,10 @@
 			dependencies: ["63B03A277D459A65"]
 			id: "1ABE35B8CAAB3F83"
 			size: 1.0d
-			subtitle: "危机四伏及以上难度下击杀凋灵骷髅可获得，任意难度下击杀凋零也可获得"
+			subtitle: "来自深渊裂谷的稀有生命材料"
 			tasks: [{
 				id: "45F7301C7F8A7598"
-				item: "art_of_forging:fragment_of_eden"
+				item: "alexscaves:immortal_embryo"
 				type: "item"
 			}]
 			x: 7.5d
@@ -311,10 +311,10 @@
 			dependencies: ["47ADAC6620C3FF87"]
 			id: "368633F5F14BEC91"
 			size: 1.0d
-			subtitle: "使用纳米融合的武器击杀末影人获得"
+			subtitle: "击杀虚空蠕虫或完成相关试炼获得"
 			tasks: [{
 				id: "6A7EEC2A56BF04CB"
-				item: "art_of_forging:heart_of_ender"
+				item: "alexsmobs:void_worm_eye"
 				type: "item"
 			}]
 			x: 3.5d
@@ -365,7 +365,7 @@
 				"691FF0ECF3FDC2ED"
 				"19419665C1CD0351"
 			]
-			description: ["为&4双头&r&e终末钢/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤。"]
+			description: ["为&4双头&r&e终结龙/悚怖钢&r锤&4镶嵌纯粹黑暗&r可提升2级锤子等级，通过和下界合金锤相同的打磨方式可最高获得11级锤。"]
 			id: "268643C6AE454B9F"
 			rewards: [
 				{
@@ -400,7 +400,7 @@
 					HideFlags: 1
 					"double/basic_hammer_left_material": "basic_hammer/dreadsteel_ingot"
 					"double/basic_hammer_right_material": "basic_hammer/dreadsteel_ingot"
-					"double/basic_handle_material": "basic_handle/endsteel_ingot"
+					"double/basic_handle_material": "basic_handle/end_dragon_ingot"
 					"double/binding": "double/socket"
 					"double/handle": "double/basic_handle"
 					"double/handle:quality": 1
@@ -431,7 +431,7 @@
 			id: "6BD5D68F02A01858"
 			tasks: [{
 				id: "3D9C0E05B90613AB"
-				item: "art_of_forging:forged_steel_ingot"
+				item: "createdelight:forged_steel_ingot"
 				type: "item"
 			}]
 			title: "熔融锻造钢"

@@ -55,7 +55,7 @@ ServerEvents.recipes(e => {
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "minecraft:nether_star"]),
         create.deploying(incomplete, [incomplete, "iceandfire:witherbone"]),
-        create.deploying(incomplete, [incomplete, "art_of_forging:sigil_of_eden"]).keepHeldItem(),
+        create.deploying(incomplete, [incomplete, "alexscaves:immortal_embryo"]).keepHeldItem(),
         create.deploying(incomplete, [incomplete, "createdelight:otherworld_note"])
     ]).transitionalItem(incomplete).loops(4)
     .id("createdelight:sequenced_assembly/piercing_withering_trial")
@@ -146,7 +146,7 @@ ServerEvents.recipes(e => {
     ], "minecraft:ender_pearl", [
         create.deploying(incomplete, [incomplete, "alexscaves:sweet_tooth"]),
         create.pressing(incomplete,incomplete),
-        create.deploying(incomplete, [incomplete, "art_of_forging:nano_insectoid"]),
+        create.deploying(incomplete, [incomplete, "alexscaves:enigmatic_engine"]),
         vintageimprovements.vibrating(incomplete, incomplete),
         create.deploying(incomplete, [incomplete, "alexsmobs:void_worm_eye"]),
         create.deploying(incomplete, [incomplete, "dungeonsdelight:monster_cake"]).keepHeldItem()

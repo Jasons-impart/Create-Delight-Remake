@@ -1,26 +1,28 @@
 {
-    "key": "vobrite_crystal",
-    "hidden": true,
-    "category": "socket",
-    "primary": 0,
-    "secondary": 0,
-    "tertiary": 0,
-    "durability": 15,
-    "integrityCost": 1,
-    "integrityGain": 0,
-    "magicCapacity": 0,
-    "toolLevel": 0,
-    "toolEfficiency": 0,
-    "effects": {
-        "art_of_forging:stormcaller": [ 1, 5 ]
-    },
-    "tints": {
-        "glyph": "c8fafe",
-        "texture": "c8fafe"
-    },
-    "textures": [ "default" ],
-    "experienceCost": 2,
-    "material": {
-        "items": [ "art_of_forging:vobrite_crystal" ]
-    }
+  "key": "vobrite_crystal",
+  "hidden": true,
+  "category": "socket",
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 15,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "effects": {},
+  "tints": {
+    "glyph": "c8fafe",
+    "texture": "c8fafe"
+  },
+  "textures": [
+    "default"
+  ],
+  "experienceCost": 2,
+  "material": {
+    "items": [
+      "ae2:charged_certus_quartz_crystal"
+    ]
+  }
 }

@@ -1,20 +1,4 @@
 let difficultyLoots = {
-    "art_of_forging:fragment_of_eden": [
-        {
-            entity: "minecraft:wither_skeleton",
-            tier: 2,
-            chance: 0.1
-        }
-    ],
-
-    "art_of_forging:sigil_of_eden": [
-        {
-            entity: "minecraft:wither",
-            tier: 2,
-            chance: 0.25
-        }
-    ],
-
     "iceandfire:cockatrice_eye": [
         {
             entity: "iceandfire:cockatrice",

@@ -1,6 +1,6 @@
 {
     "replace": true,
-    "key": "endsteel_ingot",
+    "key": "end_dragon_ingot",
     "category": "metal",
     "primary": 14,
     "secondary": 4,
@@ -24,7 +24,7 @@
         "metal"
     ],
     "material": {
-        "items": [ "art_of_forging:endsteel_ingot" ]
+        "items": [ "blackknightarmor:end_dragon_ingot" ]
     },
     "requiredTools": {
         "hammer_dig": 8
