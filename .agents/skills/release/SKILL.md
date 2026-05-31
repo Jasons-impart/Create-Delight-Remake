@@ -50,9 +50,11 @@ git log -1 --name-only | grep modpack.toml
 ### Decision 2: Release Type
 
 - 正式版 → 4 artifacts (Client + ClientPatch + Server + ServerPatch)
-- 测试版 → 2 artifacts (Client + Server only, no patches)
+- 测试版 → 2 artifacts (Client + Server only, no patches), no `docs/announcement.md` update
 
-### Decision 3: Announcement Content
+### Decision 3: Announcement Content (Stable Only)
+
+测试版不更新 `docs/announcement.md`; `-Announcement` is only used in the prepare PR body for test releases.
 
 Summarize changes into **≤3 bullet points, each ≤20 characters**, separated by commas. Example:
 - "机械动力6.0升级,北极星太空探索,核反应堆实装"
@@ -137,10 +139,10 @@ Output: Release URL
 | `-Version` | ✅ | New version string (e.g. "v0.4.7.15") |
 | `-TargetBranch` | ✅ | Base branch for PR (e.g. "release-v047x") |
 | `-ReleaseType` | ❌ | "正式" (default) or "测试" |
-| `-Announcement` | ❌ | Comma-separated bullet points, e.g. "修复BUG,新增物品,优化性能". Auto-generated from git log if omitted |
+| `-Announcement` | ❌ | Comma-separated bullet points for stable `announcement.md` and PR body; for test releases, PR body only. Auto-generated from git log if omitted |
 | `-Proxy` | ❌ | HTTPS proxy (e.g. "http://127.0.0.1:7890") |
 
-**What it does**: Update modpack.toml → Update announcement.md → Auto-stage update-summary files → Create branch → Commit → Push → Create PR → Restore original branch
+**What it does**: Update modpack.toml → update announcement.md for stable releases only → auto-stage update-summary files for stable releases only → Create branch → Commit → Push → Create PR → Restore original branch
 
 ### release-publish.ps1
 
@@ -212,4 +214,4 @@ These bugs were discovered during releases. DO NOT reintroduce them:
 4. **Never use `--jq` with double quotes** — PowerShell's string interpolation breaks `contains("...")` etc. Use PowerShell's `ConvertFrom-Json` + `Where-Object` instead.
 5. **Set proxy AFTER Test-Prerequisites** — Setting `$env:HTTPS_PROXY` before `gh auth status` breaks keyring authentication on Windows. Always run prerequisite checks (which include gh auth) WITHOUT proxy env vars, then set proxy afterwards for actual network operations.
 6. **Set ALL_PROXY alongside HTTPS_PROXY/HTTP_PROXY** — Some tools (git, gh) respect ALL_PROXY more reliably. When `-Proxy` is provided, set all three env vars.
-7. **Auto-stage update-summary files** — release-prepare.ps1 must auto-detect and `git add` any `docs/update-summary-*.md` files in the working directory. Otherwise, the agent must manually add them to the PR branch after the script runs (error-prone).
+7. **Auto-stage update-summary files for stable releases** — release-prepare.ps1 must auto-detect and `git add` any `docs/update-summary-*.md` files in stable release PRs. Otherwise, the agent must manually add them to the PR branch after the script runs (error-prone).

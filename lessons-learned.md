@@ -155,3 +155,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `release-publish.ps1` can abort after tag push when PowerShell treats expected native-command failures or transient GitHub EOF/TLS errors as terminating errors.
 - **Fix/Lesson**: Keep release steps idempotent, pass `-PreviousVersion`, use HTTP proxy only after `gh auth status`, create a draft release before uploading assets one-by-one with retries, and fail closed for first-stable summary detection so later stable releases do not reuse stale `docs/update-summary-*` content.
+
+## Test release prepare must not update stable announcement files
+
+**Date**: 2026-05-31
+
+- **Problem**: `release-prepare.ps1 -ReleaseType 测试` updated `docs/announcement.md`, causing prerelease PRs to overwrite the stable announcement.
+- **Fix/Lesson**: Only stable prepare runs write `docs/announcement.md` or auto-stage `docs/update-summary-*.md`; test releases may use `-Announcement` only for the PR body.
