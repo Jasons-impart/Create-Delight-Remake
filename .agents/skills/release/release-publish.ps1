@@ -437,8 +437,13 @@ function Download-Artifact {
     $sizeMB = if ($sizeInBytes) { [math]::Round($sizeInBytes / 1MB, 1) } else { "?" }
 
     Write-Host "   📥 Downloading $Name ($sizeMB MB) -> $DestDir"
+    if (Test-Path $DestDir) {
+        Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+    } else {
+        New-Item -ItemType Directory -Path $DestDir -Force | Out-Null
+    }
 
-    # Download via gh api for progress, with fallback to gh run download
+    # Download via curl so GitHub's artifact redirect is followed reliably, with fallback to gh run download.
     $artifactId = $found.id
     $zipFile = Join-Path $env:TEMP "opencode\$Version\artifacts\$Name.zip"
     New-Item -ItemType Directory -Path (Split-Path $zipFile) -Force | Out-Null
@@ -446,28 +451,72 @@ function Download-Artifact {
     $downloaded = $false
     for ($downloadAttempt = 1; $downloadAttempt -le 5; $downloadAttempt++) {
         try {
-            # Use gh api to download the artifact zip directly
-            # This shows download progress via gh's built-in progress indicator
-            gh api "repos/$repo/actions/artifacts/$artifactId/zip" --output $zipFile 2>$null
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+            if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
+
+            $curlConfig = Join-Path $env:TEMP "opencode\$Version\curl-download-$artifactId.conf"
+            [System.IO.File]::WriteAllText($curlConfig, @"
+header = "Authorization: Bearer $token"
+header = "Accept: application/vnd.github+json"
+"@, [System.Text.UTF8Encoding]::new($false))
+
+            $curlArgs = @(
+                "--fail",
+                "--location",
+                "--retry", "3",
+                "--retry-delay", "5",
+                "--connect-timeout", "30",
+                "--max-time", "900",
+                "--config", $curlConfig,
+                "-o", $zipFile,
+                "https://api.github.com/repos/$repo/actions/artifacts/$artifactId/zip"
+            )
+            if ($env:HTTPS_PROXY) {
+                $curlArgs = @("--proxy", $env:HTTPS_PROXY) + $curlArgs
+            }
+            & curl.exe @curlArgs
+            Remove-Item $curlConfig -Force -ErrorAction SilentlyContinue
+
             if ($LASTEXITCODE -eq 0 -and (Test-Path $zipFile) -and ((Get-Item $zipFile).Length -gt 0)) {
                 # Extract the zip to destination
-                Expand-Archive -Path $zipFile -DestinationPath $DestDir -Force
+                Expand-Archive -LiteralPath $zipFile -DestinationPath $DestDir -Force
                 Remove-Item $zipFile -Force -ErrorAction SilentlyContinue
                 Write-Host "   ✅ Downloaded $Name ($sizeMB MB)"
                 $downloaded = $true
                 break
             } else {
-                throw "gh api download returned empty or failed"
+                throw "curl artifact download returned empty or failed"
             }
         } catch {
-            # Fallback to gh run download (no size display but reliable)
+            if ($curlConfig -and (Test-Path $curlConfig)) {
+                Remove-Item $curlConfig -Force -ErrorAction SilentlyContinue
+            }
+            # Fallback to gh run download, guarded by a timeout because it can hang on Windows.
             Write-Host "   ⚠️ Direct download failed, falling back to gh run download ($downloadAttempt/5)..."
             if (Test-Path $zipFile) { Remove-Item $zipFile -Force -ErrorAction SilentlyContinue }
-            gh run download $RunId --repo $repo -n $Name -D $DestDir
-            if ($LASTEXITCODE -eq 0) {
+            if (Test-Path $DestDir) {
+                Get-ChildItem -LiteralPath $DestDir -Force | Remove-Item -Recurse -Force
+            }
+            $stdoutFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.out"
+            $stderrFile = Join-Path $env:TEMP "opencode\$Version\gh-download-$artifactId.err"
+            $ghArgs = @("run", "download", $RunId, "--repo", $repo, "-n", $Name, "-D", $DestDir)
+            $proc = Start-Process -FilePath "gh" -ArgumentList $ghArgs -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
+            if (-not $proc.WaitForExit(900 * 1000)) {
+                Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
+                Write-Host "   ⚠️ gh run download timed out: $Name"
+            } elseif ($proc.ExitCode -eq 0) {
+                Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
                 Write-Host "   ✅ Downloaded $Name (via gh run download)"
                 $downloaded = $true
                 break
+            } else {
+                $stderr = Get-Content $stderrFile -Raw -ErrorAction SilentlyContinue
+                if ($stderr) {
+                    Write-Host "   ⚠️ gh run download failed: $stderr"
+                }
             }
             Start-Sleep -Seconds 10
         }
@@ -751,7 +800,7 @@ function Upload-ReleaseAsset {
     param(
         [Parameter(Mandatory=$true)][string]$AssetPath,
         [int]$Attempts = 5,
-        [int]$TimeoutSeconds = 900
+        [int]$TimeoutSeconds = 3600
     )
 
     $assetName = Split-Path $AssetPath -Leaf
@@ -762,6 +811,63 @@ function Upload-ReleaseAsset {
         $stdoutFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.out"
         $stderrFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.err"
         Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
+
+        try {
+            $token = gh auth token
+            if ($LASTEXITCODE -ne 0 -or -not $token) {
+                throw "Cannot get gh auth token"
+            }
+
+            $releaseListJson = gh api "repos/$repo/releases" --paginate 2>$null
+            if ($LASTEXITCODE -ne 0 -or -not $releaseListJson) {
+                throw "Cannot list releases"
+            }
+            $releaseForUpload = @($releaseListJson | ConvertFrom-Json -ErrorAction Stop) | Where-Object { $_.tag_name -eq $Version } | Select-Object -First 1
+            if (-not $releaseForUpload) {
+                throw "Cannot find draft release for $Version"
+            }
+
+            $existingAssetsJson = gh api "repos/$repo/releases/$($releaseForUpload.id)/assets" 2>$null
+            if ($LASTEXITCODE -eq 0 -and $existingAssetsJson) {
+                $existingAsset = @($existingAssetsJson | ConvertFrom-Json -ErrorAction SilentlyContinue) | Where-Object { $_.name -eq $assetName } | Select-Object -First 1
+                if ($existingAsset) {
+                    gh api -X DELETE "repos/$repo/releases/assets/$($existingAsset.id)" 2>$null | Out-Null
+                }
+            }
+
+            $curlConfig = Join-Path $env:TEMP "opencode\$Version\curl-upload-$safeName-$attempt.conf"
+            [System.IO.File]::WriteAllText($curlConfig, @"
+header = "Authorization: Bearer $token"
+header = "Accept: application/vnd.github+json"
+header = "Content-Type: application/zip"
+"@, [System.Text.UTF8Encoding]::new($false))
+
+            $encodedName = [System.Uri]::EscapeDataString($assetName)
+            $curlArgs = @(
+                "--noproxy", "*",
+                "--fail",
+                "--location",
+                "--retry", "3",
+                "--retry-delay", "5",
+                "--connect-timeout", "30",
+                "--max-time", "$TimeoutSeconds",
+                "--config", $curlConfig,
+                "--data-binary", "@$AssetPath",
+                "https://uploads.github.com/repos/$repo/releases/$($releaseForUpload.id)/assets?name=$encodedName"
+            )
+            & curl.exe @curlArgs
+            Remove-Item $curlConfig -Force -ErrorAction SilentlyContinue
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "   ✅ Uploaded $assetName"
+                return
+            }
+            throw "curl upload failed with exit code $LASTEXITCODE"
+        } catch {
+            if ($curlConfig -and (Test-Path $curlConfig)) {
+                Remove-Item $curlConfig -Force -ErrorAction SilentlyContinue
+            }
+            Write-Host "   ⚠️ curl upload failed, falling back to gh release upload: $_"
+        }
 
         $args = @(
             "release", "upload", $Version,
