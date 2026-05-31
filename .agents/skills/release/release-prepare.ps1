@@ -3,8 +3,9 @@
     Create-Delight Remake modpack release prepare script (pre-merge phase).
 
 .DESCRIPTION
-    Updates modpack.toml version, docs/announcement.md, creates a version-bump
-    branch, commits, pushes, and opens a PR to the target branch.
+    Updates modpack.toml version, updates docs/announcement.md for stable
+    releases, creates a version-bump branch, commits, pushes, and opens a PR
+    to the target branch.
 
 .PARAMETER Version
     The new version string, e.g. "v0.4.7.15".
@@ -13,8 +14,9 @@
     The base branch for the PR, e.g. "release-v047x" or "main".
 
 .PARAMETER Announcement
-    Comma-separated announcement bullet points, e.g. "修复BUG,新增物品,优化性能".
-    If omitted, generated from the latest git commit message.
+    Comma-separated release summary bullet points, e.g. "修复BUG,新增物品,优化性能".
+    Stable releases write these to docs/announcement.md; test releases use them
+    only in the PR body. If omitted, generated from the latest git commit message.
 
 .PARAMETER Proxy
     Optional HTTPS proxy, e.g. "http://127.0.0.1:7890".
@@ -152,8 +154,8 @@ if ($WhatIf) {
     Write-Host ""
     Write-Host "   Would:"
     Write-Host "   1. Update modpack.toml version to $Version"
-    Write-Host "   2. Update docs/announcement.md"
-    Write-Host "   3. Auto-stage update-summary file (if present)"
+    Write-Host "   2. $(if($ReleaseType -eq '正式'){'Update docs/announcement.md'}else{'Skip docs/announcement.md for test release'})"
+    Write-Host "   3. $(if($ReleaseType -eq '正式'){'Auto-stage update-summary file (if present)'}else{'Skip update-summary auto-stage for test release'})"
     Write-Host "   4. Create branch $VersionBranch from $TargetBranch"
     Write-Host "   5. Commit and push"
     Write-Host "   6. Create PR to $TargetBranch"
@@ -205,8 +207,8 @@ try {
     exit 1
 }
 
-# Build announcement content
-Write-Host "📦 Building announcement"
+# Build release summary content
+Write-Host "📦 Building release summary"
 $AnnLines = @()
 if ($Announcement -and $Announcement.Trim()) {
     # Split by comma (handles both "a,b,c" string and string[] array)
@@ -230,13 +232,17 @@ if ($AnnLines.Count -gt 0) {
     $AnnContent += "`n" + ($AnnLines -join "`n")
 }
 
-# Write announcement.md (use WriteAllText to avoid BOM)
 $AnnPath = "docs/announcement.md"
-if (-not (Test-Path "docs")) {
-    New-Item -ItemType Directory -Path "docs" | Out-Null
+if ($ReleaseType -eq '正式') {
+    # Write announcement.md (use WriteAllText to avoid BOM)
+    if (-not (Test-Path "docs")) {
+        New-Item -ItemType Directory -Path "docs" | Out-Null
+    }
+    [System.IO.File]::WriteAllText((Join-Path $PWD $AnnPath), $AnnContent, $utf8NoBom)
+    Write-Host "✅ announcement.md updated"
+} else {
+    Write-Host "ℹ️ Test release: skipping announcement.md update"
 }
-[System.IO.File]::WriteAllText((Join-Path $PWD $AnnPath), $AnnContent, $utf8NoBom)
-Write-Host "✅ announcement.md updated"
 
 # Create version-bump branch
 Write-Host "📦 Fetching remote branches"
@@ -270,24 +276,37 @@ if ($LASTEXITCODE -ne 0) {
 
 # Stage and commit
 Write-Host "📦 Staging and committing"
-git add modpack.toml $AnnPath
+git add modpack.toml
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to stage files"
     Restore-State
     exit 1
 }
 
-# Auto-stage update-summary file if present (needed for first stable release)
-$summaryFiles = Get-ChildItem -Path "docs" -Filter "update-summary-*.md" -ErrorAction SilentlyContinue
-if ($summaryFiles) {
-    foreach ($sf in $summaryFiles) {
-        $relPath = "docs/$($sf.Name)"
-        Write-Host "📦 Auto-staging update summary: $relPath"
-        git add $relPath 2>$null
-        if ($LASTEXITCODE -eq 0) {
-            Write-Host "✅ Staged $relPath"
+if ($ReleaseType -eq '正式') {
+    git add $AnnPath
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error "Failed to stage $AnnPath"
+        Restore-State
+        exit 1
+    }
+}
+
+if ($ReleaseType -eq '正式') {
+    # Auto-stage update-summary file if present (needed for first stable release)
+    $summaryFiles = Get-ChildItem -Path "docs" -Filter "update-summary-*.md" -ErrorAction SilentlyContinue
+    if ($summaryFiles) {
+        foreach ($sf in $summaryFiles) {
+            $relPath = "docs/$($sf.Name)"
+            Write-Host "📦 Auto-staging update summary: $relPath"
+            git add $relPath 2>$null
+            if ($LASTEXITCODE -eq 0) {
+                Write-Host "✅ Staged $relPath"
+            }
         }
     }
+} else {
+    Write-Host "ℹ️ Test release: skipping update-summary auto-stage"
 }
 
 git commit -m "[feat] $Version $(if($ReleaseType -eq '正式'){'正式版'}else{'测试版'})版本更新"
