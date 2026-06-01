@@ -53,10 +53,3 @@
 !/PCL
 !/PCL/**
 
-# ═══ 开发/文档 ═══
-!.github
-!.github/**
-!.vscode
-!.vscode/**
-!/docs
-!/docs/**
