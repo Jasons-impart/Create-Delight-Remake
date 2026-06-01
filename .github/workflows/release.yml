@@ -163,12 +163,6 @@ jobs:
           ./packwiz refresh
       - name: 下载所有服务端文件本体（packwiz-installer）
         run: bash .github/workflows/scripts/download_mods.sh 8080 server
-      - name: 删除与服务端无关的文件
-        run: |
-            rm -rf resourcepacks shaderpacks packwiz-files
-            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md client_jvm_args.example.txt
-            find mods -name "*.pw.toml" -exec rm {} +
-            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz
       - name: 更新整合包配置与版本信息
         uses: ./.github/actions/update-modpack-config
         with:
@@ -185,6 +179,14 @@ jobs:
         run: |
           pip install requests
           python .github/workflows/scripts/update_credits.py --mode real
+      - name: 删除服务端产物无关文件
+        run: |
+            rm -rf resourcepacks shaderpacks packwiz-files .agents .codex .github docs scripts
+            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md \
+                  client_jvm_args.example.txt AGENTS.md lessons-learned.md .gitignore \
+                  sync-packwiz-assets.bat update-packwiz-meta.bat
+            find mods -name "*.pw.toml" -exec rm {} +
+            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           set -euo pipefail
