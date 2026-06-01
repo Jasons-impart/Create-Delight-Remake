@@ -1030,11 +1030,6 @@ function Upload-ReleaseAsset {
     for ($attempt = 1; $attempt -le $Attempts; $attempt++) {
         Write-Host "   ⬆️ Uploading $assetName ($attempt/$Attempts)"
 
-        $safeName = $assetName -replace '[^\w.-]', '_'
-        $stdoutFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.out"
-        $stderrFile = Join-Path $env:TEMP "opencode\gh-upload-$Version-$safeName-$attempt.err"
-        Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
-
         try {
             $token = gh auth token
             if ($LASTEXITCODE -ne 0 -or -not $token) {
@@ -1055,36 +1050,9 @@ function Upload-ReleaseAsset {
             }
             throw "curl upload failed with exit code $curlExitCode"
         } catch {
-            Write-Host "   ⚠️ curl upload failed, falling back to gh release upload: $_"
+            Write-Host "   ⚠️ curl upload failed: $_"
         }
 
-        $args = @(
-            "release", "upload", $Version,
-            "--repo", $repo,
-            "--clobber",
-            $AssetPath
-        )
-        $proc = Start-Process -FilePath "gh" -ArgumentList $args -PassThru -WindowStyle Hidden -RedirectStandardOutput $stdoutFile -RedirectStandardError $stderrFile
-        if (-not $proc.WaitForExit($TimeoutSeconds * 1000)) {
-            Stop-Process -Id $proc.Id -Force -ErrorAction SilentlyContinue
-            Write-Host "   ⚠️ Upload timed out after $TimeoutSeconds seconds: $assetName"
-        } elseif ($proc.ExitCode -eq 0) {
-            Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
-            Write-Host "   ✅ Uploaded $assetName"
-            return
-        } else {
-            $err = ""
-            if (Test-Path $stderrFile) {
-                $err = (Get-Content -LiteralPath $stderrFile -Raw -ErrorAction SilentlyContinue).Trim()
-            }
-            if ($err) {
-                Write-Host "   ⚠️ Upload failed: $err"
-            } else {
-                Write-Host "   ⚠️ Upload failed with exit code $($proc.ExitCode): $assetName"
-            }
-        }
-
-        Remove-Item $stdoutFile, $stderrFile -Force -ErrorAction SilentlyContinue
         Start-Sleep -Seconds 15
     }
 
