@@ -642,6 +642,20 @@ if ($ReleaseType -eq "正式") {
 
 Write-Host "✅ All artifacts downloaded"
 
+function Compress-CleanArchive {
+    param(
+        [Parameter(Mandatory=$true)][string]$SourceGlob,
+        [Parameter(Mandatory=$true)][string]$DestinationPath
+    )
+
+    # Compress-Archive -Force can update an existing zip instead of rebuilding it;
+    # repeated release reruns then create duplicate central-directory entries.
+    if (Test-Path -LiteralPath $DestinationPath) {
+        Remove-Item -LiteralPath $DestinationPath -Force
+    }
+    Compress-Archive -Path $SourceGlob -DestinationPath $DestinationPath
+}
+
 # ============================================================
 # Phase D: Compress Artifacts
 # ============================================================
@@ -650,22 +664,22 @@ Write-Host "📦 Phase D: Compressing artifacts"
 # Client
 $clientZip = "$tmpDir\$clientName.zip"
 Write-Host "   📦 Compressing client -> $clientZip"
-Compress-Archive -Path "$tmpDir\client\*" -DestinationPath $clientZip -Force
+Compress-CleanArchive -SourceGlob "$tmpDir\client\*" -DestinationPath $clientZip
 
 # Server
 $serverZip = "$tmpDir\$serverName.zip"
 Write-Host "   📦 Compressing server -> $serverZip"
-Compress-Archive -Path "$tmpDir\server\*" -DestinationPath $serverZip -Force
+Compress-CleanArchive -SourceGlob "$tmpDir\server\*" -DestinationPath $serverZip
 
 # Patches (正式版 only)
 if ($ReleaseType -eq "正式") {
     $clientPatchZip = "$tmpDir\$clientPatchName.zip"
     Write-Host "   📦 Compressing clientpatch -> $clientPatchZip"
-    Compress-Archive -Path "$tmpDir\clientpatch\*" -DestinationPath $clientPatchZip -Force
+    Compress-CleanArchive -SourceGlob "$tmpDir\clientpatch\*" -DestinationPath $clientPatchZip
 
     $serverPatchZip = "$tmpDir\$serverPatchName.zip"
     Write-Host "   📦 Compressing serverpatch -> $serverPatchZip"
-    Compress-Archive -Path "$tmpDir\serverpatch\*" -DestinationPath $serverPatchZip -Force
+    Compress-CleanArchive -SourceGlob "$tmpDir\serverpatch\*" -DestinationPath $serverPatchZip
 }
 
 Write-Host "✅ All artifacts compressed"
@@ -677,23 +691,24 @@ Write-Host "📋 Phase E: Copying to bracket-free paths"
 
 $uploadDir = "$tmpDir\upload"
 New-Item -ItemType Directory -Path $uploadDir -Force | Out-Null
+Get-ChildItem -LiteralPath $uploadDir -Force | Remove-Item -Recurse -Force
 
 # Client: [Client]xxx -> Client-xxx
 $uploadClient = "$uploadDir\Client-Create-Delight-Remake-$Version.zip"
-Copy-Item -LiteralPath $clientZip -Destination $uploadClient
+Copy-Item -LiteralPath $clientZip -Destination $uploadClient -Force
 
 # Server: no brackets but copy for consistency
 $uploadServer = "$uploadDir\Server-Create-Delight-Remake-$Version.zip"
-Copy-Item -LiteralPath $serverZip -Destination $uploadServer
+Copy-Item -LiteralPath $serverZip -Destination $uploadServer -Force
 
 if ($ReleaseType -eq "正式") {
     # ClientPatch: [ClientPatch]xxx -> ClientPatch-xxx
     $uploadClientPatch = "$uploadDir\ClientPatch-Create-Delight-Remake-$PreviousVersion-to-$Version.zip"
-    Copy-Item -LiteralPath $clientPatchZip -Destination $uploadClientPatch
+    Copy-Item -LiteralPath $clientPatchZip -Destination $uploadClientPatch -Force
 
     # ServerPatch: [ServerPatch]xxx -> ServerPatch-xxx
     $uploadServerPatch = "$uploadDir\ServerPatch-Create-Delight-Remake-$PreviousVersion-to-$Version.zip"
-    Copy-Item -LiteralPath $serverPatchZip -Destination $uploadServerPatch
+    Copy-Item -LiteralPath $serverPatchZip -Destination $uploadServerPatch -Force
 }
 
 Write-Host "✅ Bracket-free copies created in $uploadDir"
