@@ -186,7 +186,8 @@ jobs:
                   client_jvm_args.example.txt AGENTS.md lessons-learned.md .gitignore \
                   sync-packwiz-assets.bat update-packwiz-meta.bat
             find mods -name "*.pw.toml" -exec rm {} +
-            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz
+            rm -f modpack.toml pack.toml index.toml .packwizignore packwiz \
+                  packwiz.json packwiz-installer.jar
       - name: 【版本】服务端启动bat脚本改为CRLF & 替换版本号
         run: |
           set -euo pipefail
