@@ -1,6 +1,6 @@
 name = "ExtraHoloPage"
 filename = "ExtraHoloPage-6.9.0-1.2.13.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

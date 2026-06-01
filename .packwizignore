@@ -40,6 +40,12 @@
 !/shaderpacks/**
 
 # ═══ 模组附属数据 ═══
+!/hotai
+!/hotai/**
+!/ldlib
+!/ldlib/**
+!/minemenu
+!/minemenu/**
 !/schematics
 !/schematics/**
 !/tacz
@@ -47,10 +53,3 @@
 !/PCL
 !/PCL/**
 
-# ═══ 开发/文档 ═══
-!.github
-!.github/**
-!.vscode
-!.vscode/**
-!/docs
-!/docs/**
