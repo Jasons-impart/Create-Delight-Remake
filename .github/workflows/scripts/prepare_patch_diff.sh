@@ -7,7 +7,23 @@ set -euo pipefail
 
 LATEST_TAG="${1:?Usage: prepare_patch_diff.sh <latest_tag>}"
 
-git diff --name-status "$LATEST_TAG" HEAD > diff_report.txt
+git diff --name-status "$LATEST_TAG" HEAD > diff_report.raw.txt
+awk -F '\t' '
+  function excluded(path) {
+    return path == ".gitmodules" || path == "CDC-mod-src" || path ~ /^CDC-mod-src\//
+  }
+  /^R/ {
+    if (!excluded($2) && !excluded($3)) print
+    next
+  }
+  /^C/ {
+    if (!excluded($3)) print
+    next
+  }
+  {
+    if (!excluded($2)) print
+  }
+' diff_report.raw.txt > diff_report.txt
 cat diff_report.txt
 
 # Parse diff report into added/deleted file lists

@@ -1,0 +1,3 @@
+[submodule "CDC-mod-src"]
+	path = CDC-mod-src
+	url = https://github.com/Jasons-impart/Create-Delight-Core
