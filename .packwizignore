@@ -5,10 +5,6 @@
 # 先忽略一切
 *
 
-# ═══ 开发源码（不进入发行包） ═══
-/CDC-mod-src
-/CDC-mod-src/**
-
 # ═══ 整合包核心文件 ═══
 !/pack.toml
 !/index.toml
