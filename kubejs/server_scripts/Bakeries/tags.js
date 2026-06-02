@@ -15,4 +15,5 @@ ServerEvents.tags("minecraft:item", e => {
         'bakeries:sliced_cheese_cocoa_toast',
         'bakeries:country_bread_slice'
     ])
+    e.add("forge:cheese/mild/cream", "bakeries:cheese_cream")
 })
