@@ -13,7 +13,7 @@ Create-Delight Remake (齿轮盛宴) - A deep-modded Minecraft 1.20.1 Forge modp
 ```
 CD-master-dev/
 ├── kubejs/           # KubeJS scripts - MAIN DEV AREA (see kubejs/AGENTS.md)
-├── CDC-mod-src/      # Custom Java mod (see CDC-mod-src/AGENTS.md)
+├── CDC-mod-src/      # Create Delight Core git submodule (Java mod source; not packaged)
 ├── config/           # 50+ mod configs
 ├── defaultconfigs/   # First-run defaults copied to config/
 ├── tacz/             # TACZ gun data: armorer packs & gun config
@@ -38,7 +38,7 @@ CD-master-dev/
 | Custom loot/functions | `kubejs/data/` | Datapack overlay |
 | Mod configs | `config/{mod-name}.toml` | 50+ files |
 | FTB Quests | `config/ftbquests/quests/` | .snbt format |
-| Java mod dev | `CDC-mod-src/src/main/java/` | Forge mod project |
+| Java mod dev | `CDC-mod-src/src/main/java/` | Git submodule; commit source changes in Create-Delight-Core |
 | Version info | `modpack.toml` | ONLY source - don't duplicate |
 | Release workflow | `.github/workflows/release.yml` | Use `/release` skill |
 | Historical pitfalls | `lessons-learned.md` | Do not duplicate in AGENTS |
@@ -76,6 +76,8 @@ CD-master-dev/
 - To add/update/remove mods: use `scripts/update-packwiz-meta.ps1` (NOT manual JAR placement)
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
+- `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
+- Keep `CDC-mod-src/` code version aligned with the shipped Create Delight Core jar in `mods/create-delight-core.pw.toml` to prevent source/debug drift from the shipped mod
 
 ## ANTI-PATTERNS
 
@@ -105,7 +107,7 @@ packwiz curseforge export
 
 # CDC mod build
 cd CDC-mod-src && ./gradlew build --no-daemon
-# Output: build/libs/CDC-mod-src-*.jar (use non-all version)
+# Output: build/libs/*.jar (use the non-all/non-sources jar)
 ```
 
 ## KNOWLEDGE BASE MAINTENANCE

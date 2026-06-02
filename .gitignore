@@ -3,6 +3,7 @@
 
 # Root files we intentionally version.
 !/.gitignore
+!/.gitmodules
 !/.hmclversion.cfg
 !/.options.txt
 !/.packwizignore
@@ -27,6 +28,7 @@
 !/.github/
 !/PCL/
 !/config/
+!/CDC-mod-src/
 !/defaultconfigs/
 !/docs/
 !/hotai/
