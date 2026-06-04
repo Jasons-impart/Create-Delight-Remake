@@ -22,6 +22,7 @@
 !/mods
 !/mods/*.pw.toml
 /mods/*.jar
+!/mods/Create-Delight-Core-1.20.1-dev.jar
 
 # ═══ 配置文件 ═══
 !/config

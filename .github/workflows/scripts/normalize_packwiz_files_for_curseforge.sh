@@ -7,6 +7,7 @@ set -euo pipefail
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo_root="$(cd "$script_dir/../../.." && pwd)"
+cdc_dev_jar="mods/Create-Delight-Core-1.20.1-dev.jar"
 
 copied_list="$(mktemp)"
 
@@ -88,14 +89,14 @@ remove_shadowed_direct_metadata() {
 
 copy_packwiz_file_mods_for_detection
 
-if [ -s "$copied_list" ]; then
-  echo "Detecting CurseForge metadata for packwiz-files-backed mods..."
+if [ -s "$copied_list" ] || [ -f "$cdc_dev_jar" ]; then
+  echo "Detecting CurseForge metadata for packwiz-files-backed mods and CDC dev jar..."
   if ! ./packwiz -y curseforge detect; then
-    echo "::warning::CurseForge detection failed or found no usable matches; leaving unmatched packwiz-files entries as direct payloads."
+    echo "::warning::CurseForge detection failed or found no usable matches; leaving unmatched packwiz-files entries and CDC dev jar as direct payloads."
   fi
   remove_shadowed_direct_metadata
 else
-  echo "No packwiz-files-backed mod JARs found for CurseForge detection."
+  echo "No packwiz-files-backed mod JARs or CDC dev jar found for CurseForge detection."
 fi
 
 ./packwiz refresh

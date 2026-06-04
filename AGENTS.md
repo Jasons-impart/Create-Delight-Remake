@@ -18,7 +18,7 @@ CD-master-dev/
 ├── defaultconfigs/   # First-run defaults copied to config/
 ├── tacz/             # TACZ gun data: armorer packs & gun config
 ├── hotai/            # HotAI mod data
-├── mods/             # Packwiz metadata (*.pw.toml), NOT mod JARs
+├── mods/             # Packwiz metadata (*.pw.toml); CDC dev JAR is the only JAR exception
 ├── packwiz-files/    # Manually-managed mod JARs (CF-restricted, custom)
 ├── scripts/          # Utility scripts (sync, update-packwiz-meta)
 ├── .codex/           # Codex project hooks
@@ -70,14 +70,14 @@ CD-master-dev/
 - Releases: `release*` branches
 
 **Mod Management (Packwiz)**:
-- `mods/`, `resourcepacks/`, `shaderpacks/` contain only `.pw.toml` metadata, NOT JARs/zip
+- `mods/`, `resourcepacks/`, `shaderpacks/` contain `.pw.toml` metadata; `mods/Create-Delight-Core-1.20.1-dev.jar` is the only tracked JAR exception
 - CF-restricted/custom JARs/zip live in `packwiz-files/{mods,resourcepacks,shaderpacks}/`
 - `.pw.toml` for packwiz-files assets reference GitHub raw URLs pointing to `packwiz-files/`
 - To add/update/remove mods: use `scripts/update-packwiz-meta.ps1` (NOT manual JAR placement)
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
-- Keep `CDC-mod-src/` code version aligned with the shipped Create Delight Core jar in `mods/create-delight-core.pw.toml` to prevent source/debug drift from the shipped mod
+- For CDC artifact updates, use matching CF metadata when published; otherwise commit `mods/Create-Delight-Core-1.20.1-dev.jar` and align the `CDC-mod-src/` submodule pointer because release scripts detect CF metadata when possible and otherwise ship the JAR body
 
 ## ANTI-PATTERNS
 

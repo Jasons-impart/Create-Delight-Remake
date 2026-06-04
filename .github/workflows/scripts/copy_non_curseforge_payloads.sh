@@ -7,6 +7,7 @@ set -euo pipefail
 
 dest="${1:?Usage: copy_non_curseforge_payloads.sh <dest-dir>}"
 mkdir -p "$dest"
+cdc_dev_jar="Create-Delight-Core-1.20.1-dev.jar"
 
 read_filename() {
   sed -nE 's/^filename = "(.+)"[[:space:]]*$/\1/p' "$1" | head -n 1
@@ -52,5 +53,11 @@ copy_for_dir() {
 }
 
 copy_for_dir mods
+
+if [ -f "mods/$cdc_dev_jar" ] && ! has_curseforge_metadata mods "$cdc_dev_jar"; then
+  mkdir -p "$dest/mods"
+  cp "mods/$cdc_dev_jar" "$dest/mods/"
+fi
+
 copy_for_dir resourcepacks
 copy_for_dir shaderpacks
