@@ -5,6 +5,7 @@ set -euo pipefail
 # packwiz metadata says that payload belongs in CurseForge manifest.json.
 
 patch_dir="${1:?Usage: remove_curseforge_payloads_from_patch.sh <patch-dir>}"
+cdc_dev_jar="Create-Delight-Core-1.20.1-dev.jar"
 
 read_filename() {
   sed -nE 's/^filename = "(.+)"[[:space:]]*$/\1/p' "$1" | head -n 1
@@ -20,6 +21,7 @@ remove_for_dir() {
     local filename
     filename="$(read_filename "$meta")"
     [ -n "$filename" ] || continue
+    [ "$dir" = "mods" ] && [ "$filename" = "$cdc_dev_jar" ] && continue
 
     local payload="${patch_dir}/${dir}/${filename}"
     if [ -f "$payload" ]; then

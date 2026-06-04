@@ -169,3 +169,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `gh run download` and `gh release upload` hung during v0.5.0.0, while proxied release upload was an order of magnitude slower than direct upload.
 - **Fix/Lesson**: Use authenticated `curl --config -` for large transfers, benchmark proxy vs direct routes when `-Proxy` is provided, and clear artifact extraction directories before retrying.
+
+## Functional Storage controller extensions must avoid blocking capability lookup
+
+**Date**: 2026-06-04
+
+- **Problem**: FTB Chunks login force-loading can deadlock when Lightman's Currency probes a Functional Storage controller extension and `getCapability()` resolves the controller through `Level#getBlockEntity`, which may enter `ServerChunkCache#getChunkBlocking`.
+- **Fix/Lesson**: CDC mixins should keep player/UI paths unchanged but redirect Functional Storage controller extension `getCapability()` to read only `ServerChunkCache#getChunkNow` + `LevelChunk.EntityCreationType.CHECK`, extending the same helper to `getStorage()`/`getOptional()` only if future stacks move there.
