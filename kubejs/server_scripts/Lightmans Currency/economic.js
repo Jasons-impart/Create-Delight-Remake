@@ -1,6 +1,7 @@
 ServerEvents.recipes(e => {
     e.replaceInput({ id: "lightmanscurrency:upgrades/coin_chest_magnet_upgrade_1" }, "minecraft:ender_pearl", "create_sa:copper_magnet")
     e.replaceInput({ id: "lightmanscurrency:upgrades/network_upgrade" }, "minecraft:ender_eye", 'ae2:singularity')
+    global.MoneyUtil.addCoreCoinDownExchangeRecipes(e)
     e.recipes.kubejs.shaped(
         'lightmanscurrency:trading_core',
         [
