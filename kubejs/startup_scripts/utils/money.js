@@ -1,9 +1,50 @@
-const $MoneyAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.MoneyAPI")
-const $CoinAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.coins.CoinAPI")
-const $ChainData = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.coins.data.ChainData")
-// QualityUtils、QualityConfig、CoinValue 已在system.js里引用
+// priority: 1050
 
+let LightmansCurrencyApi = global.CDLightmansCurrencyApi
 let MoneyUtil = {}
+
+MoneyUtil.getMoneyChain = function () {
+    return LightmansCurrencyApi.CDConfig.moneyChain
+}
+
+MoneyUtil.coinValueFromBase = function (value) {
+    return LightmansCurrencyApi.CoinValue["fromNumber(java.lang.String,long)"](MoneyUtil.getMoneyChain(), value)
+}
+
+MoneyUtil.coinValueFromItemOrValue = function (item, value) {
+    return LightmansCurrencyApi.CoinValue.fromItemOrValue(Item.of(item).item, value)
+}
+
+MoneyUtil.insertPlayerMoney = function (player, moneyValue) {
+    LightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(moneyValue, false)
+}
+
+MoneyUtil.getItemId = function (item) {
+    return LightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).toString()
+}
+
+MoneyUtil.getCoinName = function (item) {
+    return LightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).getPath().replace("_coin", "")
+}
+
+MoneyUtil.addCoreCoinDownExchangeRecipes = function (e) {
+    let chain = LightmansCurrencyApi.CoinAPI.getApi().ChainData(MoneyUtil.getMoneyChain())
+    if (chain == null) return
+
+    chain.getCoreChain().forEach(entry => {
+        let lowerExchange = entry.getLowerExchange()
+        if (lowerExchange == null) return
+
+        let input = entry.getCoin()
+        let output = lowerExchange.getFirst().getCoin()
+        let count = Number(lowerExchange.getSecond())
+
+        e.recipes.minecraft.crafting_shapeless(
+            Item.of(MoneyUtil.getItemId(output), count),
+            [MoneyUtil.getItemId(input)]
+        ).id(`createdelight:${MoneyUtil.getCoinName(input)}_2_${MoneyUtil.getCoinName(output)}`)
+    })
+}
 
 /**
  * 将数字的值转化为含有货币的列表
@@ -12,7 +53,7 @@ let MoneyUtil = {}
  */
 MoneyUtil.convertBaseValueToItems = function (value) {
     /** @type {Internal.CoinValue} */
-    let coinValue = $CoinValue.fromNumber("main", value)
+    let coinValue = MoneyUtil.coinValueFromBase(value)
     if (coinValue.getAsItemList)
         return coinValue.getAsItemList()
     return ["minecraft:air"]
