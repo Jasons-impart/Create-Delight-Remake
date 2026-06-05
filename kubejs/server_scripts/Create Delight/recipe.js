@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {vintageimprovements, kubejs, create} = e.recipes
+    const {vintageimprovements, kubejs, create, createmetallurgy} = e.recipes
 
     kubejs.shaped("createdelight:copper_coil", [
         "ABA",
@@ -68,4 +68,13 @@ ServerEvents.recipes(e => {
     vintageimprovements.pressurizing(Fluid.of("createdelight:cryo_fuel", 100), [Fluid.of("northstar:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
     .secondaryFluidInput(0)
     .id("createdelight:pressurizing/cryo_fuel")
+
+    createmetallurgy.alloying(Fluid.of("createdelight:molten_forged_steel", 360),
+        [
+            Fluid.of("createmetallurgy:molten_netherite", 30),
+            Fluid.of("createdelight:spent_liquor", 250),
+            "4x tetra:metal_scrap"
+        ])
+        .heatRequirement("superheated")
+        .id("createdelight:alloying/forged_steel")
 })
