@@ -1,0 +1,8 @@
+name = "Create Functional Storage"
+filename = "create-functional-storage-1.20.1-v1.0.0.zip"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/resourcepacks/create-functional-storage-1.20.1-v1.0.0.zip"
+hash-format = "sha256"
+hash = "34a35b044c0d5408fbbe0f3744b0a3a785f6d01500ac4a14acc7f801f6e3dfe3"
