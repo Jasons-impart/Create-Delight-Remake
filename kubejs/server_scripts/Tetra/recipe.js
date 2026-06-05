@@ -100,18 +100,6 @@ ServerEvents.recipes(e => {
     .id("createdelight:deploying/forged_mesh")
     createaddition.rolling("createdelight:forged_steel_ingot", "2x tetra:forged_beam")
     .id("createdelight:rolling/forged_beam")
-    create.pressing("createdelight:forged_steel_sheet", "createdelight:forged_steel_ingot")
-    .id("createdelight:pressing/forged_steel_sheet")
-    createmetallurgy.casting_in_table("createdelight:forged_steel_ingot", [
-        Fluid.of("createdelightcore:molten_forged_steel", 90),
-        "createmetallurgy:graphite_ingot_mold"
-    ])
-    .processingTime(80)
-    .id("createdelight:casting_in_table/forged_steel_ingot")
-    createmetallurgy.melting(Fluid.of("createdelightcore:molten_forged_steel", 90), "createdelight:forged_steel_ingot")
-    .heatRequirement("heated")
-    .processingTime(80)
-    .id("createdelight:melting/forged_steel_ingot")
     create.deploying("2x tetra:forged_bolt", ["tetra:forged_beam", "createdelight:forged_steel_sheet"])
     .id("createdelight:deploying/forged_bolt")
     vintageimprovements.pressurizing([

@@ -1,5 +1,5 @@
 ServerEvents.recipes(e => {
-    const {vintageimprovements, kubejs, create} = e.recipes
+    const {vintageimprovements, kubejs, create, createmetallurgy} = e.recipes
 
     kubejs.shaped("createdelight:copper_coil", [
         "ABA",
@@ -68,4 +68,35 @@ ServerEvents.recipes(e => {
     vintageimprovements.pressurizing(Fluid.of("createdelight:cryo_fuel", 100), [Fluid.of("northstar:hydrogen", 250), Fluid.of("netherexp:ectoplasm", 250)])
     .secondaryFluidInput(0)
     .id("createdelight:pressurizing/cryo_fuel")
+
+    createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360),
+        [
+            Fluid.of("createmetallurgy:molten_netherite", 30),
+            Fluid.of("createdelight:spent_liquor", 250),
+            "4x tetra:metal_scrap"
+        ])
+        .heatRequirement("superheated")
+        .id("createdelight:alloying/forged_steel")
+    
+     metal_production_line_3(e, [
+        "createdelightcore:forged_steel_block",
+        "createdelight:forged_steel_ingot",
+        "createdelight:forged_steel_sheet",
+        "createdelightcore:molten_forged_steel"
+    ], "superheated", 80)
+
+    kubejs.shaped("createdelightcore:forged_steel_block", [
+        "AAA",
+        "AAA",
+        "AAA"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    })
+    .id("createdelight:crafting/forged_steel_ingot_2_forged_steel_block")
+    
+    kubejs.shapeless("9x createdelight:forged_steel_ingot", "createdelightcore:forged_steel_block")
+    .id("createdelight:crafting/forged_steel_block_2_forged_steel_ingot")
+    
+    create.pressing("createdelight:forged_steel_sheet", "createdelight:forged_steel_ingot")
+    .id("createdelight:pressing/forged_steel_sheet")
 })
