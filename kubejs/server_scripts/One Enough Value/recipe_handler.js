@@ -139,7 +139,7 @@ OEVEvents.addRecipeHandler(event => {
                 if (recipe.getRollableResults) {
                     let rollableResults = recipe.getRollableResults();
                     rollableResults.forEach(result => {
-                        let itemStack = result.getStack();
+                        let itemStack = result.getStack ? result.getStack() : result;
                         let itemId = String(itemStack.getItem().getId());
                         
                         // 黑名单内的物品不参与价值分配
