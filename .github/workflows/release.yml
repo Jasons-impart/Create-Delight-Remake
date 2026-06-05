@@ -124,6 +124,15 @@ jobs:
           grep 'modpack' config/bcc-common.toml
           grep 'title' kubejs/config/client.properties
           grep 'placeholder' config/GeneralFeedback/default.json
+      - name: 【发布】关闭 ProbeJS 功能
+        run: |
+          set -euo pipefail
+          mkdir -p kubejs/config
+          probejs_config="kubejs/config/probejs.json"
+          [ -f "$probejs_config" ] || printf '{}\n' > "$probejs_config"
+          jq '.["Should ProbeJS be Generally Enabled"] = false' "$probejs_config" > "$probejs_config.tmp"
+          mv "$probejs_config.tmp" "$probejs_config"
+          jq '."Should ProbeJS be Generally Enabled"' "$probejs_config"
       - name: 【版本】写版本号 供fancymenu展现在游戏首页 & 游戏标题画面
         # fancymenu格式如下，为此需要用 > 覆盖写第一行，用 >> 追加写后续行
         # |||
@@ -250,6 +259,15 @@ jobs:
           sed -i "s/modpackName =.*/modpackName=\"$MODPACK_NAME\"/" config/bcc-common.toml
           sed -i "s/modpackVersion =.*/modpackVersion=\"$MODPACK_VERSION\"/" config/bcc-common.toml
           grep 'modpack' config/bcc-common.toml
+      - name: 【发布】关闭 ProbeJS 功能
+        run: |
+          set -euo pipefail
+          mkdir -p kubejs/config
+          probejs_config="kubejs/config/probejs.json"
+          [ -f "$probejs_config" ] || printf '{}\n' > "$probejs_config"
+          jq '.["Should ProbeJS be Generally Enabled"] = false' "$probejs_config" > "$probejs_config.tmp"
+          mv "$probejs_config.tmp" "$probejs_config"
+          jq '."Should ProbeJS be Generally Enabled"' "$probejs_config"
       - name: 下载forge与ServerStarterJar
         run: |
           set -euo pipefail
@@ -337,6 +355,15 @@ jobs:
           grep 'modpack' config/bcc-common.toml
           grep 'title' kubejs/config/client.properties
           grep 'placeholder' config/GeneralFeedback/default.json
+      - name: 【发布】关闭 ProbeJS 功能
+        run: |
+          set -euo pipefail
+          mkdir -p kubejs/config
+          probejs_config="kubejs/config/probejs.json"
+          [ -f "$probejs_config" ] || printf '{}\n' > "$probejs_config"
+          jq '.["Should ProbeJS be Generally Enabled"] = false' "$probejs_config" > "$probejs_config.tmp"
+          mv "$probejs_config.tmp" "$probejs_config"
+          jq '."Should ProbeJS be Generally Enabled"' "$probejs_config"
 
       - name: 准备补丁文件
         run: |
@@ -387,6 +414,7 @@ jobs:
           # 更新mc游戏窗口标题配置
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
+          cp kubejs/config/probejs.json patch/kubejs/config/
           # 更新反馈配置
           mkdir -p patch/config/GeneralFeedback/
           cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
