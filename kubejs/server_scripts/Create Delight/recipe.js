@@ -69,7 +69,7 @@ ServerEvents.recipes(e => {
     .secondaryFluidInput(0)
     .id("createdelight:pressurizing/cryo_fuel")
 
-    createmetallurgy.alloying(Fluid.of("createdelight:molten_forged_steel", 360),
+    createmetallurgy.alloying(Fluid.of("createdelightcore:molten_forged_steel", 360),
         [
             Fluid.of("createmetallurgy:molten_netherite", 30),
             Fluid.of("createdelight:spent_liquor", 250),
@@ -77,4 +77,26 @@ ServerEvents.recipes(e => {
         ])
         .heatRequirement("superheated")
         .id("createdelight:alloying/forged_steel")
+    
+     metal_production_line_3(e, [
+        "createdelightcore:forged_steel_block",
+        "createdelight:forged_steel_ingot",
+        "createdelight:forged_steel_sheet",
+        "createdelightcore:molten_forged_steel"
+    ], "superheated", 80)
+
+    kubejs.shaped("createdelightcore:forged_steel_block", [
+        "AAA",
+        "AAA",
+        "AAA"
+    ], {
+        A: "createdelight:forged_steel_ingot"
+    })
+    .id("createdelight:crafting/forged_steel_ingot_2_forged_steel_block")
+    
+    kubejs.shapeless("9x createdelight:forged_steel_ingot", "createdelightcore:forged_steel_block")
+    .id("createdelight:crafting/forged_steel_block_2_forged_steel_ingot")
+    
+    create.pressing("createdelight:forged_steel_sheet", "createdelight:forged_steel_ingot")
+    .id("createdelight:pressing/forged_steel_sheet")
 })
