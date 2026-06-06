@@ -176,3 +176,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: FTB Chunks login force-loading can deadlock when Lightman's Currency probes a Functional Storage controller extension and `getCapability()` resolves the controller through `Level#getBlockEntity`, which may enter `ServerChunkCache#getChunkBlocking`.
 - **Fix/Lesson**: CDC mixins should keep player/UI paths unchanged but redirect Functional Storage controller extension `getCapability()` to read only `ServerChunkCache#getChunkNow` + `LevelChunk.EntityCreationType.CHECK`, extending the same helper to `getStorage()`/`getOptional()` only if future stacks move there.
+
+## Release config edits need tracked source files
+
+**Date**: 2026-06-07
+
+- **Problem**: `update-modpack-config` can edit ignored KubeJS config files during release, but patch generation diffs only tracked `HEAD` paths and can miss generated-only files.
+- **Fix/Lesson**: Release-mutated config files such as `kubejs/config/probejs.json` must be committed as source files before workflows copy them into client/server/patch artifacts.
