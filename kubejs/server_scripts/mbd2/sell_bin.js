@@ -1,8 +1,6 @@
 
 const $ClientboundSetTitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket")
 const $ClientboundSetSubtitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket")
-const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
-const $MoneyAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.MoneyAPI")
 let MoneyUtil = global.MoneyUtil
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
@@ -50,7 +48,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         //     itemSlot.shrink(itemSlot.count)
         // }
     })
-    let coinValue = $CoinValue["fromNumber(java.lang.String,long)"]("main", values)
+    let coinValue = MoneyUtil.coinValueFromBase(values)
     if (!coinValue.empty) {
         if (player != null) {
             if (player instanceof $ServerPlayer) {
@@ -67,7 +65,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
             let total = Component.translate("message.createdelight.sell_bin_total", MoneyUtil.convertBaseValueToString(values))
             player.tell(total)
             player.tell(Component.of("§e-----------------------"))
-            $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(coinValue, false)
+            MoneyUtil.insertPlayerMoney(player, coinValue)
         } else {
             MoneyUtil.convertBaseValueToItems(values).forEach(coin => {
                 itemSlots.insertItem(coin, false)

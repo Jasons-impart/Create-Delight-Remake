@@ -1,5 +1,6 @@
 ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     const {player} = e
+    let MoneyUtil = global.MoneyUtil
     if (player == null || !player.isPlayer())
         return
     let items = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
@@ -15,8 +16,8 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     })
     if (amount == 0)
         return
-    let money = $CoinValue.fromNumber("main", amount)
-    $MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(money, false)
+    let money = MoneyUtil.coinValueFromBase(amount)
+    MoneyUtil.insertPlayerMoney(player, money)
     player.tell(Component.of("将物品栏中的所有品质去除物品，并将其转化为了").append(money.getText()))
 
 })

@@ -282,6 +282,7 @@ jobs:
           cp config/bcc-common.toml patch/config/
           mkdir -p patch/kubejs/config/
           cp kubejs/config/client.properties patch/kubejs/config/
+          cp kubejs/config/probejs.json patch/kubejs/config/
           mkdir -p patch/config/GeneralFeedback/
           cp config/GeneralFeedback/default.json patch/config/GeneralFeedback/
           mkdir -p "patch/$VERSION_FILE_RELATIVE_DIR_PATH"

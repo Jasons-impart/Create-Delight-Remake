@@ -183,3 +183,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: A helper declared as `function calculateValueDistribution(...)` inside a `try` block passed `node --check` but was `undefined` in-game under Rhino, causing OEV to skip thousands of recipe value setters.
 - **Fix/Lesson**: Keep reusable KubeJS helper functions at script top level or assign them before guarded blocks; use in-game reload logs as the source of truth for Rhino scoping behavior.
+
+## Release config edits need tracked source files
+
+**Date**: 2026-06-07
+
+- **Problem**: `update-modpack-config` can edit ignored KubeJS config files during release, but patch generation diffs only tracked `HEAD` paths and can miss generated-only files.
+- **Fix/Lesson**: Release-mutated config files such as `kubejs/config/probejs.json` must be committed as source files before workflows copy them into client/server/patch artifacts.

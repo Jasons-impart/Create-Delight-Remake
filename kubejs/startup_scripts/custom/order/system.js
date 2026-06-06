@@ -8,7 +8,6 @@ const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.enti
 const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
 const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
 const $FoodList = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList")
-const $CoinValue = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
 const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")
 //订单系统
 //玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
@@ -321,8 +320,8 @@ Order.getRewardContract = function (type, count) {
 Order.addOrderToAuction = function() {
     let data = new $AuctionTradeData({})
     data.auctionItems.add(Item.of("createdelight:unopened_order"))
-    data.setMinBidDifferent($CoinValue.fromItemOrValue("createdeco:copper_coin", 1))
-    data.setStartingBid($CoinValue.fromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
+    data.setMinBidDifferent(global.MoneyUtil.coinValueFromItemOrValue("createdeco:copper_coin", 1))
+    data.setStartingBid(global.MoneyUtil.coinValueFromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
     $TraderAPI.getApi().GetTrader(false, 0).addTrade(data, null, false)
 }
