@@ -1,0 +1,39 @@
+#Enables fluid transporter
+fluidTransporterEnabled = true
+#The maximum amount of fluid (in mB) a compressed tank can hold
+#Range: 1000 ~ 10000
+compressedTankCapacity = 10000
+#The maximum amount of fluid (in mB) a fluid package can hold
+#The effective maximum is limited by both 90000 mB and 9x the configured compressed tank capacity
+#Range: 1 ~ 90000
+fluidPackageCapacity = 10000
+#Enables smart faucet
+smartFaucetEnabled = true
+#Enables faucet
+faucetEnabled = true
+#Enables multi-fluid tank
+multiFluidTankEnabled = true
+#Enables horizontal multi-fluid tank
+horizontalMultiFluidTankEnabled = true
+#Enables multi-fluid access port
+multiFluidAccessPortEnabled = true
+#Enables smart hopper
+smartHopperEnabled = true
+#Enables fluid pump
+fluidPumpEnabled = true
+#The maximum distance a fluid pump can push or pull fluids on either side
+#Range: > 1
+fluidPumpRange = 24
+#Enables infinite fluid tank
+infiniteFluidTankEnabled = true
+#Enables water containing copper casing
+waterContainingCopperCasingEnabled = true
+#Enables copper basin
+copperBasinEnabled = true
+#Enables mechanical fluid gun
+mechanicalFluidGunEnabled = true
+#Enables hand pointer
+handPointerEnabled = true
+#Enables advanced logistics network integration (fluid packager, fluid packages, compressed tank, and Create logistics mixins)
+advancedLogisticsNetworkEnabled = false
+

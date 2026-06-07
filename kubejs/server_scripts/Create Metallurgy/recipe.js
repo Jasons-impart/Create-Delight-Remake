@@ -174,7 +174,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:pressurizing/graphite")
     {
         let iner = "createmetallurgy:incomplete_industrial_crucible"
-        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'createfluidstuffs:multi_fluid_tank', [
+        e.recipes.create.sequenced_assembly("createmetallurgy:industrial_crucible", 'fluidlogistics:multi_fluid_tank', [
             e.recipes.create.pressing(iner, iner),
             e.recipes.create.deploying(iner, [iner, "createmetallurgy:refractory_mortar"]),
             e.recipes.create.deploying(iner, [iner, "#forge:plates/obdurium"]),
