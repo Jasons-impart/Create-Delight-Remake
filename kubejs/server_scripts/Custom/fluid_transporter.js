@@ -8,4 +8,12 @@ ServerEvents.recipes(e => {
             Fluid.of("createmetallurgy:molten_brass", 270)
         ]
     ).id("createdelight:multi_fluid_tank")
+
+    e.recipes.create.filling(
+        'fluidlogistics:horizontal_multi_fluid_tank',
+        [
+            'create_connected:fluid_vessel',
+            Fluid.of("createmetallurgy:molten_brass", 270)
+        ]
+    ).id("createdelight:horizontal_multi_fluid_tank")
 })
