@@ -1,5 +1,5 @@
-StartupEvents.modifyCreativeTab("createfluidstuffs:main", e => {
-  e.remove([
-    'createfluidstuffs:multi_fluid_tank'
-  ])
+StartupEvents.modifyCreativeTab("createfluidstuffs:base", e => {
+    e.remove([
+      'createfluidstuffs:multi_fluid_tank'
+    ])
 })
