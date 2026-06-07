@@ -1,0 +1,131 @@
+
+[common]
+
+	[common.biome]
+		MixinBiome = true
+
+	[common.block]
+		MixinBeehiveBlockEntity = true
+		MixinBlockState = true
+		MixinBlockStateBase = true
+		MixinFireBlock = true
+		MixinIBlockExtension = true
+		MixinLayeredCauldronBlock = true
+		MixinLightningRodBlock = true
+		MixinFallingBlock = true
+
+	[common.chunk]
+		MixinChunkAccess = true
+		MixinImposterProtoChunk = true
+		MixinLevelChunk = true
+
+	[common.command]
+		MixinWeatherCommand = true
+
+	[common.entity]
+		MixinEntity = true
+		MixinLivingEntity = true
+
+		[common.entity.animal]
+
+			[common.entity.animal.bee]
+				MixinBee = true
+				MixinBee_BeePollinateGoal = true
+
+			[common.entity.animal.fox]
+				MixinFox = true
+				MixinFox_SeekShelterGoal = true
+
+			[common.entity.animal.pandas]
+				MixinPanda = true
+
+		[common.entity.monster]
+			MixinMonster = true
+
+		[common.entity.projectile]
+			MixinThrownTrident = true
+
+	[common.level]
+		MixinDimensionType = true
+		MixinHeightmap_Types = true
+		MixinLevel = true
+		MixinLevelReader = true
+		MixinLevelTimeAccess = true
+		MixinServerLevel = true
+
+	[common.loot]
+		MixinWeatherCheck = true
+
+	[common.wg]
+		MixinSurfaceSystem = true
+
+	[common.item]
+		MixinMapItem = true
+
+[data]
+	MixinsRegistriesDatapackGenerator = true
+	RegistrySetBuilderMixin = true
+
+[game]
+	MixinBee_BeePollinateGoal = true
+	MixinBeehiveBlockEntity = true
+	MixinBreedGoal = true
+	MixinCow = true
+	MixinFishingHook = true
+
+[client]
+	MixinClientClientLevel = true
+	MixinClientLevel = true
+	MixinMinecraftClient = true
+
+	[client.biome]
+		MixinBiomeColors = true
+		MixinClientBiome = true
+
+	[client.block]
+		MixinLeavesBlock = true
+		MixinLightningRodBlock = true
+
+	[client.entity]
+		MixinClientPanda = true
+
+	[client.model]
+		MixinModelBakery = true
+		MixinModelManager = true
+		MixinMultiPart = true
+		MixinSpriteLoader = true
+
+	[client.render]
+		MixinGameRenderer = true
+		MixinLevelRender = true
+
+		[client.render.chunk]
+			MixinBlockRenderVanilla = true
+			MixinChunkRenderDispatcher = true
+			MixinChunkSlice = true
+			MixinRenderRegionCache = true
+
+	[client.sound]
+		MixinLocalPlayer = true
+		MixinMusicManager = true
+
+[compat]
+
+	[compat.distanthorizons]
+		MixinClientLevel = true
+		MixinFullDataToRenderDataTransformer = false
+		MixinQuadTree = true
+		MixinTintWithoutLevelOverrider = true
+		MixinAbstractDhTintGetter = true
+
+	[compat.embeddium]
+		MixinBlockOcclusionCache = true
+		MixinBlockRender2 = true
+		MixinBlockRenderTask = true
+		MixinChunkSlice = true
+		MixinClonedChunkSection = true
+
+	[compat.oculus]
+		MixinBiomeUniforms = true
+		MixinIrisForgeHelpers = true
+
