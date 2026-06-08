@@ -36,4 +36,6 @@ mechanicalFluidGunEnabled = true
 handPointerEnabled = true
 #Enables advanced logistics network integration (fluid packager, fluid packages, compressed tank, and Create logistics mixins)
 advancedLogisticsNetworkEnabled = false
+#Enables fluid hatch
+fluidHatchEnabled = true
 
