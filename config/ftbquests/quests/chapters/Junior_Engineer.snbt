@@ -1405,8 +1405,8 @@
 				item: "create_enchantment_industry:printer"
 				type: "item"
 			}]
-			x: 13.0d
-			y: -6.5d
+			x: 12.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["3626C98B27069A0C"]
@@ -1423,8 +1423,8 @@
 				item: "create:hose_pulley"
 				type: "item"
 			}]
-			x: 14.0d
-			y: -6.5d
+			x: 14.5d
+			y: -6.0d
 		}
 		{
 			dependencies: ["223ACB0E32376155"]
@@ -1444,8 +1444,8 @@
 				title: "无限流体"
 				type: "checkmark"
 			}]
-			x: 14.0d
-			y: -8.0d
+			x: 14.5d
+			y: -7.5d
 		}
 		{
 			dependencies: ["7029D6C489D44144"]
@@ -1799,11 +1799,18 @@
 			]
 			id: "5CBAD075435316D8"
 			subtitle: "流体哗啦啦"
-			tasks: [{
-				id: "765A305554397F18"
-				item: "fluidlogistics:faucet"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "765A305554397F18"
+					item: "fluidlogistics:faucet"
+					type: "item"
+				}
+				{
+					id: "2DA4BEA4630CFF72"
+					item: "fluidlogistics:smart_faucet"
+					type: "item"
+				}
+			]
 			x: 12.0d
 			y: -2.5d
 		}
@@ -1926,7 +1933,7 @@
 			description: [
 				"流体舱口可以放置在任意的&e流体容器&r（如流体储罐）上"
 				""
-				"手持类似于&c玻璃瓶或者桶&r的容器与流体舱口交互，可以便捷地向相连的流体容器输入或输出流体"
+				"手持类似于&b玻璃瓶或者桶&r的容器与流体舱口交互，可以便捷地向相连的流体容器输入或输出流体"
 				""
 				"流体舱口可以被指定为&e动力注液枪&r的交互点，以实现动力注液枪与流体储罐之间的流体交互"
 			]
@@ -1937,8 +1944,33 @@
 				item: "fluidlogistics:fluid_hatch"
 				type: "item"
 			}]
-			x: 15.5d
+			x: 16.0d
 			y: -6.0d
+		}
+		{
+			dependencies: ["0DC2E7BC4657D633"]
+			id: "4F5CD040A9980A94"
+			subtitle: "肚量更大的工作盆"
+			tasks: [{
+				id: "6E099170716C4487"
+				item: "fluidlogistics:copper_basin"
+				type: "item"
+			}]
+			x: 15.0d
+			y: -2.5d
+		}
+		{
+			dependencies: ["3626C98B27069A0C"]
+			description: ["无限水的一种来源"]
+			id: "179C1F7DCE91C0B4"
+			subtitle: "这玩意我是不是在厨房见过类似的？"
+			tasks: [{
+				id: "664505470BEFB0CE"
+				item: "fluidlogistics:water_containing_copper_casing"
+				type: "item"
+			}]
+			x: 13.5d
+			y: -6.5d
 		}
 	]
 	title: "&2初识机械"

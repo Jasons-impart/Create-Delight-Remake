@@ -14,8 +14,9 @@ ServerEvents.recipes(e => {
     e.replaceInput({id: "fluidlogistics:copper_basin"}, "minecraft:copper_ingot", "create:copper_sheet")
     e.replaceInput({id: "fluidlogistics:fluid_pump"}, "create:cogwheel", "create:fluid_pipe")
     e.replaceInput({id: "fluidlogistics:fluid_transporter"}, "create:brass_ingot", "create:brass_sheet")
-    e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "minecraft:netherite_ingot", "northstar:martian_steel")
-    e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:railway_casing", "createdelight:space_casing")
+    e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "minecraft:netherite_ingot", "northstar:martian_steel_sheet")
+    e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:railway_casing", "ae2:spatial_io_port")
+    e.replaceInput({id: "fluidlogistics:mechanical_crafting/infinite_fluid_tank"}, "create:sturdy_sheet", "createdelight:space_casing")
     e.replaceInput({id: "fluidlogistics:smart_faucet"}, "minecraft:copper_ingot", "fluidlogistics:faucet")
 
     kubejs.shaped("fluidlogistics:mechanical_fluid_gun", [
