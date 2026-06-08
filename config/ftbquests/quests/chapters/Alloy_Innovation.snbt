@@ -335,8 +335,8 @@
 				item: "create:polished_rose_quartz"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 1.5d
+			x: 12.5d
+			y: 1.0d
 		}
 		{
 			dependencies: ["10D661738D4296E5"]
@@ -1344,7 +1344,7 @@
 			dependencies: ["601E073214DCC16C"]
 			description: [""]
 			id: "5AC294F788C1D1E8"
-			subtitle: "什么，可以横向运输，我怎么会做这种梦"
+			subtitle: "什么，可以横向运输，我怎么会做这种梦？"
 			tasks: [{
 				id: "01BB00D45FB01183"
 				item: "create_fantasizing:transporter"
@@ -1389,21 +1389,27 @@
 			y: -3.5d
 		}
 		{
-			dependencies: ["4F7F4970E26CBD75"]
+			dependencies: [
+				"4F7F4970E26CBD75"
+				"043C01E333AD7139"
+			]
 			description: [
-				"多流体存取端口可以放置在任意的流体容器（如流体储罐）上"
-				"多流体存取端口可以被指定为动力注液枪的交互点，以实现动力注液枪与流体储罐之间的流体交互"
+				"多流体存取端口可以放置在任意的&e流体容器&r（如多流体流体储罐）上，&b动力泵&r等器件可通过它与流体容器交互"
+				""
+				"手持类似于&b玻璃瓶或者桶&r的容器与多流体存取端口交互，可以便捷地向相连的流体容器输入或输出流体"
+				""
+				"多流体存取端口可以被指定为&e动力注液枪&r的交互点，以实现动力注液枪与流体储罐之间的流体交互"
 			]
 			id: "50BA4C5ABE721F8D"
 			ignore_reward_blocking: true
-			subtitle: "一个交互接口！"
+			subtitle: "一个三向的可过滤交互接口！"
 			tasks: [{
 				id: "412E52F97F923C3B"
 				item: "fluidlogistics:multi_fluid_access_port"
 				type: "item"
 			}]
-			x: 12.0d
-			y: 2.5d
+			x: 11.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["1F34610FBFE53749"]
@@ -2011,6 +2017,33 @@
 			title: "枪械制作！"
 			x: 22.0d
 			y: -6.0d
+		}
+		{
+			dependencies: ["32AAEC0414A9ECA6"]
+			id: "1FFDF5874BEEFB2F"
+			subtitle: "无应力运输流体吗？有点意思"
+			tasks: [{
+				id: "51FB8336B5955055"
+				item: "fluidlogistics:fluid_transporter"
+				type: "item"
+			}]
+			x: 17.5d
+			y: -3.5d
+		}
+		{
+			dependencies: [
+				"043C01E333AD7139"
+				"2CBBADBE62382C1B"
+			]
+			id: "6FB2DDB3AAB1E973"
+			subtitle: "固液双修这一块"
+			tasks: [{
+				id: "77FCEF3657440B04"
+				item: "fluidlogistics:smart_hopper"
+				type: "item"
+			}]
+			x: 11.5d
+			y: 2.0d
 		}
 	]
 	title: "&9体系渐成 "
