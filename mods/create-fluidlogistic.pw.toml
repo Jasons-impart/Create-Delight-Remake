@@ -1,13 +1,13 @@
 name = "Create：FluidLogistic"
-filename = "fluidlogistics-1.0.7.jar"
+filename = "fluidlogistics-1.0.8.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "7a9daf85e403ed13692ab5a2698ccd9750e87fae"
+hash = "e91c1f1eaf7981967c4f5d98d2557d8f86a04529"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8204423
+file-id = 8211660
 project-id = 1475079
