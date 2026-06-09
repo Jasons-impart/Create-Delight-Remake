@@ -622,6 +622,43 @@
 			x: 12.0d
 			y: 2.0d
 		}
+		{
+			dependencies: [
+				"089E81F7DCA47A98"
+				"53F8AADD69D02613"
+			]
+			description: [
+				"拥有&e1800mB&r的氧气容量,可提供&b1级抗寒&r（northstar:insulating）"
+				""
+				"注：本包的抗寒机制为，装备栏和饰品栏的抗寒级数总和&e≥4&r即可抵御太空的低温伤害"
+			]
+			id: "667FC8409A96DA4F"
+			subtitle: "提供氧气的妙妙工具"
+			tasks: [{
+				id: "7F5842B9A25AE1F4"
+				item: "createdelight:oxygen_tank"
+				type: "item"
+			}]
+			x: 12.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["0A78650F17E1E069"]
+			description: [
+				"拥有&e3600mB&r的氧气容量,可提供&b2级抗寒&r和&c2级耐热&r（northstar:insulating_2 \\& northstar:heat_resistant_2）"
+				""
+				"注：本包的耐热机制为，装备栏和饰品栏的耐热级数总和&e≥4&r即可抵御太空的高温伤害"
+			]
+			id: "2AD583E020458559"
+			subtitle: "更大更强的氧气罐"
+			tasks: [{
+				id: "1E5A5D75F507CCE2"
+				item: "createdelight:sturdy_oxygen_tank"
+				type: "item"
+			}]
+			x: 20.5d
+			y: 1.0d
+		}
 	]
 	title: "群星之旅"
 }
