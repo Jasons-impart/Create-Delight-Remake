@@ -1,0 +1,13 @@
+name = "Steadfast"
+filename = "Steadfast-0.8.0.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "87d32ae6d9fec75ec5e3bded069ebd761d3342ea"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8068010
+project-id = 1538836

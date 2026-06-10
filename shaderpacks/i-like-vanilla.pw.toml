@@ -1,0 +1,13 @@
+name = "I Like Vanilla"
+filename = "I Like Vanilla v1.4.1.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "7cf4f4e3c1f1f6716ffe03ce6afe2ccac6b2d1a1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8182023
+project-id = 995473
