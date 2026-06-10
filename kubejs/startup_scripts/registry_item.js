@@ -28,10 +28,12 @@ StartupEvents.registry("item", e => {
                 .saturation(1)
         })
         .translationKey("item.createdelight.fugu_roll")
+    //辐鳃鱼寿司
     e.create("createdelight:radgill_sushi")
+        .texture("cavedelight:item/radgill_roll")
         .food(food => {
-            food.hunger(1)
-                .saturation(1)
+            food.hunger(7)
+                .saturation(0.5)
                 .effect("alexscaves:irradiated", 1200, 2, 1.0)
                 .effect("minecraft:saturation", 1200, 0, 1.0)
         })

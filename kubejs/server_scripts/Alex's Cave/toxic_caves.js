@@ -12,7 +12,8 @@ ServerEvents.recipes(e => {
         "vintageimprovements:pressurizing/compat/sulfur_dioxide_from_dust",
         "vintageimprovements:pressurizing/sulfuric_acid",
         "alexscaves:spelunkie",
-        "alexscaves:polymer_plate"
+        "alexscaves:polymer_plate",
+        "cavedelight:cutting/slam",
     ])
   // 辐鳃鱼（和桶）量产
   vintageimprovements
@@ -183,23 +184,12 @@ ServerEvents.recipes(e => {
         let iner = "bakeries:cut_cake_base"
         e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
             e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
-            e.recipes.create.pressing(iner, iner),
-            e.recipes.create.deploying(iner, [iner, "#forge:cream"]),
-        ])
-            .loops(1)
-            .transitionalItem(iner)
-            .id("alexcaves:sequenced_assembly/spelunkie")
-    }
-    {
-        let iner = "bakeries:cut_cake_base"
-        e.recipes.create.sequenced_assembly('alexscaves:spelunkie', iner, [
-            e.recipes.create.deploying(iner, [iner, "alexscaves:sulfur_dust"]),
             e.recipes.create.filling(iner, [iner, Fluid.of("cosmopolitan:cream", 250)]),
             e.recipes.create.pressing(iner, iner)
         ])
             .loops(1)
             .transitionalItem(iner)
-            .id("createdelight:sequenced_assembly/spelunkie_2")
+            .id("createdelight:sequenced_assembly/spelunkie")
     }
     e.recipes.kubejs.shapeless(
         "alexscaves:spelunkie",
@@ -208,20 +198,7 @@ ServerEvents.recipes(e => {
             "#forge:cream",
             "alexscaves:sulfur_dust"
         ]
-    ).id("createdelight:spelunkie")
-    //猛汉午餐肉
-    {
-        let iner = 'luncheonmeatsdelight:luncheon_meat_can'
-        e.recipes.create.sequenced_assembly('alexscaves:slam', iner, 
-            [
-                e.recipes.create.deploying(iner, [iner, 'alexscaves:sulfur_dust']),
-                e.recipes.create.deploying(iner, [iner, 'minecraft:bone_meal'])
-            ] 
-        )
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:slam")
-    }
+    ).id("createdelight:spelunkie_manual_only")
     //铀块
     e.recipes.kubejs.shapeless(
         "alexscaves:block_of_uranium",
@@ -309,5 +286,5 @@ ServerEvents.recipes(e => {
     )
     .superheated()
     .id("createdelight:pressurizing/uranium_shard")
-    
+    cutting_2(e, "alexscaves:slam", [["cavedelight:slam_slice", 4], ['luncheonmeatsdelight:can_shell_abandon', 1]])
 })

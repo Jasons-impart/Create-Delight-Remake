@@ -1,7 +1,15 @@
 ServerEvents.recipes(e => {
-    e.remove({ id: "cavedelight:cutting/tectonic_pie" })
-    e.remove({ id: "cavedelight:cutting/radgill" })
-    e.remove({ id: "cavedelight:cutting/radgill_using_deployer" })
+    remove_recipes_id(e, [
+        "cavedelight:cutting/tectonic_pie",
+        "cavedelight:cutting/radgill",
+        "cavedelight:cutting/radgill_using_deployer",
+        "alexscaves:slam",
+        "cavedelight:musubi",
+        "luncheonmeatsdelight:fry_luncheon_meat",
+        "luncheonmeatsdelight:fry_luncheon_meat_smoking",
+        "luncheonmeatsdelight:fry_luncheon_meat_campfire",
+        "cavedelight:nutrient_bar",
+    ])
     remove_recipes_input(e, [
         "cavedelight:pinenut_pie",
         "cavedelight:tectonic_cheesecake",
@@ -10,8 +18,21 @@ ServerEvents.recipes(e => {
     remove_recipes_output(e, [
         "cavedelight:fiddlehead_tea"
     ])
-    e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "ratatouille:wheat_kernels")
+    e.replaceInput({id: "cavedelight:star_cookie"}, "minecraft:wheat", "bakeries:flour")
+    e.replaceInput({id: "luncheonmeatsdelight:cooking/fried_egg_luncheon_meat"}, "luncheonmeatsdelight:luncheon_meat", "cavedelight:cooked_slam_slice")
+    e.replaceInput({id: "cavedelight:slam_breakfast"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
+    e.replaceInput({id: "cavedelight:slam_burger"}, "#cavedelight:slam", "cavedelight:cooked_slam_slice")
     cutting_2(e, "cavedelight:tectonic_cheesecake", [["cavedelight:slice_of_tectonic_cheesecake", 4]])
+    e.recipes.create.compacting(
+        'cavedelight:nutrient_bar',
+        [
+            'bakeries:flour',
+            Fluid.of("createdelight:soya_milk", 50),
+            'alexscaves:sulfur_dust'
+        ]
+    )
+        .heated()
+        .id("createdelight:mixing/nutrient_bar")
     e.recipes.farmersdelight.cutting(
         "cavedelight:tectonic_cheesecake",
         "#forge:tools/knives",
@@ -48,4 +69,38 @@ ServerEvents.recipes(e => {
             Fluid.of("minecraft:lava", 1000)
         ]
     ).id("createdelight:filling/copper_ingot_from_copper_cup")
+    e.recipes.create.emptying(
+        [
+            Fluid.of("createdelight:green_soylent", 500),
+            'create:cardboard'
+        ],
+        'alexscaves:green_soylent'
+    ).id("createdelight:emptying/green_soylent")
+    e.recipes.create.filling(
+        'cavedelight:bottle_of_green_soylent',
+        [
+            Fluid.of("createdelight:green_soylent", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/bottle_of_green_soylent")
+    e.recipes.create.mixing(
+        Fluid.of("createdelight:radpop_fluid", 500),
+        [
+            Fluid.of("createdelight:green_soylent", 250),
+            Fluid.of("alexscaves:acid", 250),
+            "2x minecraft:sugar"
+        ]
+    ).id("createdelight:mixing/radpop_fluid")
+    e.recipes.create.filling(
+        "cavedelight:radpop",
+        [
+            Fluid.of("createdelight:radpop_fluid", 250),
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:filling/radpop")
+})
+ServerEvents.tags("item", e => {
+    e.remove('cavedelight:slam', [
+        'alexscaves:slam'
+    ])
 })

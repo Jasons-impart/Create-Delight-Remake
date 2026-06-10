@@ -118,6 +118,15 @@ ServerEvents.recipes(e => {
   ).id("createdelight:calamari_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "squid", '#oceanic_delight:squid_tentacles')
   youkaishomecoming.cuisine_ordered(
+    "2x cavedelight:musubi",
+    "youkaishomecoming:sushi",
+    [
+      '#cavedelight:slam',
+      "minecraft:dried_kelp"
+    ]
+  ).id("createdelight:musubi")
+  SushiTable.addMappingFromIngredient(SUSHI_TOP, "slam", "#cavedelight:slam")
+  youkaishomecoming.cuisine_ordered(
     "2x collectorsreap:clam_roll",
     "youkaishomecoming:sushi",
     [
@@ -137,10 +146,10 @@ ServerEvents.recipes(e => {
     "2x createdelight:radgill_sushi",
     "youkaishomecoming:sushi",
     [
-      "alexscaves:radgill"
+      "#createdelight:raw_radgill"
     ]
   ).id("createdelight:radgill_sushi")
-  SushiTable.addMappingFromIngredient(SUSHI_TOP, "radgill", "alexscaves:radgill")
+  SushiTable.addMappingFromIngredient(SUSHI_TOP, "radgill", "#createdelight:raw_radgill")
   youkaishomecoming.cuisine_ordered(
     'farmersdelight:kelp_roll',
     "youkaishomecoming:hosomaki",
