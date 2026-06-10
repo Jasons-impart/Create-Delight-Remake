@@ -122,7 +122,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:heavyweight")
 
     //机铁之心
-    let iner_4 = "alexscaves:heart_of_iron"
+    let iner_4 = "minecraft:iron_block"
     e.recipes.create.sequenced_assembly("alexscaves:heart_of_iron", "minecraft:iron_block",
         [
             e.recipes.vintageimprovements.turning(iner_4, iner_4),
