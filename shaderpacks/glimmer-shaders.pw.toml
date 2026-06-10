@@ -1,0 +1,13 @@
+name = "Glimmer Shaders"
+filename = "Glimmer-v1.5.2.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1ff8511a59ea09cbaf33e95bbad0030f8f3a27ef"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7673188
+project-id = 1167533
