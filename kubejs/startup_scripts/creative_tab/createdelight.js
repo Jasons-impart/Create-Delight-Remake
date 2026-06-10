@@ -182,6 +182,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:nut_milk_bucket',
     'createdelight:vinegar_bucket',
     'createdelight:yeast_bucket',
+    'createdelight:radpop_fluid_bucket',
+    'createdelight:green_soylent_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])

@@ -224,8 +224,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:jelly_roll', iner, [
-            create.pressing(iner, iner),
             create.filling(iner, [iner, Fluid.of("cosmopolitan:berry_syrup", 250)]),
+            create.pressing(iner, iner)
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -241,8 +241,8 @@ ServerEvents.recipes(e => {
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:chocolate_roll', iner, [
-            create.pressing(iner, iner),
             create.filling(iner, [iner, Fluid.of("create:chocolate", 250)]),
+            create.pressing(iner, iner)
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -254,13 +254,13 @@ ServerEvents.recipes(e => {
             "bakeries:cut_cake_base",
             "create:bar_of_chocolate"
         ]
-    ).id("createdelight:farmersdelight/chocolate_roll_from_chocolate")
+    ).id("createdelight:farmersdelight/chocolate_roll_from_chocolate_manual_only")
     {
         let iner = "bakeries:cut_cake_base"
         create.sequenced_assembly('cosmopolitan:ink_roll', iner, [
+            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:ink", 250)]),
             create.deploying(iner, [iner, "minecraft:glow_ink_sac"]),
             create.pressing(iner, iner),
-            create.filling(iner, [iner, Fluid.of("create_enchantment_industry:ink", 250)]),
         ])
             .loops(1)
             .transitionalItem(iner)
@@ -273,7 +273,7 @@ ServerEvents.recipes(e => {
             'minecraft:ink_sac',
             'minecraft:glow_ink_sac'
         ]
-    ).id("createdelight:farmersdelight/ink_roll")
+    ).id("createdelight:farmersdelight/ink_roll_manual_only")
     create.filling(
         'cosmopolitan:tuber_puree_with_confiture',
         [

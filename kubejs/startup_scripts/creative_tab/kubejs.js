@@ -287,5 +287,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:unbake_stargazy_pie',
         'createdelight:unbake_portobello_quiche',
         'createdelight:unbake_quiche_lorraine',
+        'createdelight:radpop_fluid_bucket',
+        'createdelight:green_soylent_bucket',
     ])
 });

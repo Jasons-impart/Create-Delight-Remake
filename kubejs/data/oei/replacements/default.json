@@ -477,5 +477,29 @@
             "createdelightcore:nether_pizza_slice"
         ],
         "resultItems": "netherexp:nether_pizza_slice"
+    },
+    {
+        "matchItems": [
+            "cavedelight:radgill_roll"
+        ],
+        "resultItems": "createdelight:radgill_sushi"
+    },
+    {
+        "matchItems": [
+            "luncheonmeatsdelight:luncheon_meat"
+        ],
+        "resultItems": "cavedelight:slam_slice"
+    },
+    {
+        "matchItems": [
+            "luncheonmeatsdelight:fry_luncheon_meat"
+        ],
+        "resultItems": "cavedelight:cooked_slam_slice"
+    },
+    {
+        "matchItems": [
+            "alexscaves:slam"
+        ],
+        "resultItems": "luncheonmeatsdelight:luncheon_meat_can"
     }
 ]

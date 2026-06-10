@@ -602,18 +602,6 @@ ServerEvents.recipes(e => {
             .id("createdelight:sequence_assembly/cream_cake")
     }
     {
-        let iner = 'bakeries:cut_cake_base'
-        create.sequenced_assembly('bakeries:cream_cake', iner, [
-            create.deploying(iner, [iner, '#forge:cream']),
-            create.deploying(iner, [iner, "bakeries:cut_cake_base"]),
-            create.deploying(iner, [iner, '#forge:cream']),
-            create.deploying(iner, [iner, "#alexscaves:sweet_berries"])
-        ])
-            .loops(1)
-            .transitionalItem(iner)
-            .id("createdelight:sequence_assembly/cream_cake_2")
-    }
-    {
         let iner = 'bakeries:soak_coffee_cut_cake_base'
         create.sequenced_assembly('bakeries:tiramisu', iner, [
             create.deploying(iner, [iner, 'bakeries:cheese_cream']),
