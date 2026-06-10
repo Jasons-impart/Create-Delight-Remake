@@ -1,0 +1,54 @@
+{
+  "key": "extrabotany_orichalcos_ingot",
+  "category": "metal",
+  "primary": 12.2,
+  "secondary": 3.5,
+  "tertiary": 0.5,
+  "durability": 5210,
+  "integrityCost": 1,
+  "integrityGain": 9,
+  "magicCapacity": 800,
+  "toolLevel": "minecraft:iron",
+  "toolEfficiency": 11,
+  "tints": {
+    "glyph": "7E23E0",
+    "texture": "7E23E0"
+  },
+  "textures": [
+    "metal",
+    "default"
+  ],
+  "effects": {
+    "more_mod_tetra:mana_force": 25,
+    "more_mod_tetra:will_of_gaia": 1,
+    "more_mod_tetra:mana_regeneration": 30,
+    "more_mod_tetra:mana_repair": 5
+  },
+  "material": {
+    "items": [
+      "extrabotany:orichalcos_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": "minecraft:iron"
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "extrabotany"
+    }
+  ],
+  "contexts": {
+    "armor": {
+      "effects": {
+        "more_mod_tetra:mana_regeneration": 30,
+        "more_mod_tetra:mana_repair": 5
+      },
+      "attributes": {
+        "attributeslib:crit_chance": 0.07,
+        "attributeslib:crit_damage": 0.12
+      }
+    }
+  },
+  "replace": true
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "key": "critical_strike_probability_up",
+    "level": 1,
+    "integrity": -1,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "attributeslib:crit_chance": 0.1,
+      "attributeslib:crit_damage": 0.2
+    }
+  },
+  {
+    "key": "critical_strike_probability_up",
+    "level": 2,
+    "integrity": -1,
+    "aspects": {
+      "honed": 2
+    },
+    "attributes": {
+      "attributeslib:crit_chance": 0.15,
+      "attributeslib:crit_damage": 0.3
+    }
+  },
+  {
+    "key": "critical_strike_probability_up",
+    "level": 3,
+    "integrity": -2,
+    "aspects": {
+      "honed": 3
+    },
+    "attributes": {
+      "attributeslib:crit_chance": 0.18,
+      "attributeslib:crit_damage": 0.4
+    }
+  },
+  {
+    "key": "critical_strike_probability_up",
+    "level": 4,
+    "integrity": -2,
+    "aspects": {
+      "honed": 4
+    },
+    "attributes": {
+      "attributeslib:crit_chance": 0.22,
+      "attributeslib:crit_damage": 0.45
+    }
+  },
+  {
+    "key": "critical_strike_probability_up",
+    "level": 5,
+    "integrity": -3,
+    "aspects": {
+      "honed": 5
+    },
+    "attributes": {
+      "attributeslib:crit_chance": 0.3,
+      "attributeslib:crit_damage": 0.5
+    }
+  }
+]

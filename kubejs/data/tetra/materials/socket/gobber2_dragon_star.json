@@ -1,0 +1,42 @@
+{
+  "key": "gobber2_dragon_star",
+  "hidden": false,
+  "category": "socket",
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 5000,
+  "integrityCost": 1,
+  "integrityGain": 0,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "3b007a",
+    "texture": "3b007a"
+  },
+  "textures": [
+    "perk_glow_0",
+    "perk_sided_0"
+  ],
+  "material": {
+    "items": [
+      "gobber2:dragon_star"
+    ]
+  },
+  "attributes": {
+    "**generic.attack_speed": 0.25,
+    "**generic.attack_damage": 0.25,
+    "**tetra:draw_speed": -0.25,
+    "**tetra:draw_strength": 0.25,
+    "attributeslib:crit_chance": 0.25,
+    "attributeslib:crit_damage": 3
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "gobber2"
+    }
+  ],
+  "replace": true
+}

@@ -1,0 +1,48 @@
+{
+  "key": "goety_unholy_blood",
+  "category": "fuller_material",
+  "primary": 0,
+  "secondary": 0,
+  "tertiary": 0,
+  "durability": 679,
+  "integrityCost": 0,
+  "integrityGain": 11,
+  "magicCapacity": 0,
+  "toolLevel": 0,
+  "toolEfficiency": 0,
+  "tints": {
+    "glyph": "660000",
+    "texture": "660000"
+  },
+  "effects": {
+    "reaching": [
+      4,
+      0.62
+    ],
+    "armorPenetration": 40,
+    "backstab": 0.5
+  },
+  "textures": [
+    "default"
+  ],
+  "material": {
+    "items": [
+      "goety:unholy_blood"
+    ]
+  },
+  "attributes": {
+    "**generic.attack_damage": 0.1,
+    "attributeslib:crit_chance": 0.18,
+    "attributeslib:crit_damage": 1.2
+  },
+  "requiredTools": {
+    "hammer_dig": 8
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "goety"
+    }
+  ],
+  "replace": true
+}

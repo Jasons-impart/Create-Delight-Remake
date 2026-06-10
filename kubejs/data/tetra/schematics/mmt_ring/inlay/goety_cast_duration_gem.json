@@ -1,0 +1,37 @@
+{
+  "slots": [
+    "mmt_ring/inlay"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "glyph": {
+    "textureX": 176,
+    "textureY": 48
+  },
+  "translation": {
+    "primaryAttributes": {
+      "goety_revelation:cast_duration": 3,
+      "attributeslib:crit_chance": 0.01
+    },
+    "durability": 1,
+    "integrity": 1,
+    "magicCapacity": 1
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:gem/"
+      ],
+      "countFactor": 1,
+      "moduleKey": "mmt_ring/inlay/goety_cast_duration_gem",
+      "moduleVariant": "goety_cast_duration_gem/"
+    }
+  ],
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "goety_revelation"
+    }
+  ],
+  "replace": true
+}
