@@ -66,10 +66,12 @@ function frementing_2(event, base, inputs, fluid, output, container, temperature
  * @param { number } [amount] 默认1000
  * @param { number } [time] 默认9600
  */
-function frementing_3(event, base, inputs, fluid, output, temperature, time, amount) {
+function frementing_3(event, base, inputs, fluid, output, temperature, time, amount, recipeBookTab, experience, conditions) {
   temperature = temperature || 3
   amount = amount || 1000
   time = time || 9600
+  recipeBookTab = recipeBookTab || "drinks"
+  experience = experience || 1.0
   let frementing_receipe = {
     "type": "brewinandchewin:fermenting",
     "basefluid": {
@@ -77,14 +79,17 @@ function frementing_3(event, base, inputs, fluid, output, temperature, time, amo
       "fluid": base
     },
     "fermentingtime": time,
-    "experience": 1.0,
+    "experience": experience,
     "ingredients": [],
     "result": {
       "count": amount,
       "fluid": fluid
     },
-    "recipe_book_tab": "drinks",
+    "recipe_book_tab": recipeBookTab,
     "temperature": temperature
+  }
+  if (conditions) {
+    frementing_receipe.conditions = conditions
   }
   inputs.forEach(input => {
     if (input[0] == "#") {
