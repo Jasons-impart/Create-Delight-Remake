@@ -1,0 +1,8 @@
+name = "Complementary Unbound R5.6 + Clrwl"
+filename = "ComplementaryUnbound_r5.6 + Clrwl_1.0.1.zip"
+side = "both"
+
+[download]
+url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/shaderpacks/ComplementaryUnbound_r5.6 + Clrwl_1.0.1.zip"
+hash-format = "sha256"
+hash = "9f10b02039a83f399b7d7c82f529513f9cd20560ad49ffa5cdd73c4e1a7dd2b6"

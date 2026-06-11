@@ -194,6 +194,12 @@ StartupEvents.registry("creative_mode_tab", e => {
     .icon(() => Item.of("createdelight:centrifuge_rotor"))
     .content(() => [
       'mbd2:mbd_gadgets',
+      'createdelight:andesite_structure_component',
+      'createdelight:copper_fluid_component',
+      'createdelight:brass_control_component',
+      'createdelight:kinetic_transmission_component',
+      'createdelight:sealed_joint_component',
+      'createdelight:logic_component',
       'createdelight:order_deliverer_item'
     ])
 })
