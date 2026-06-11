@@ -190,3 +190,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `update-modpack-config` can edit ignored KubeJS config files during release, but patch generation diffs only tracked `HEAD` paths and can miss generated-only files.
 - **Fix/Lesson**: Release-mutated config files such as `kubejs/config/probejs.json` must be committed as source files before workflows copy them into client/server/patch artifacts.
+
+## Butchercraft animal head blocks need KubeJS resource overlays
+
+**Date**: 2026-06-11
+
+- **Problem**: Butchercraft 2.4.1 registers animal head/skull floor and wall blocks without blockstates, and skull renderers look for `butchercraft:textures/entity/*.png` while the JAR stores those textures under `textures/block/entity/`.
+- **Fix/Lesson**: Add KubeJS `blockstates/*_head*.json` overlays using `minecraft:block/skull` and copy the six skull textures into `kubejs/assets/butchercraft/textures/entity/` so placed heads do not render as missing purple-black blocks.
