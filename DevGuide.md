@@ -66,6 +66,17 @@
 
 # 开发相关tips记录
 
+## 价值系统
+- 价值白名单集中维护在`kubejs/startup_scripts/custom/value_data.js`。
+- `DefaultFoodIngredientList`里的条目使用`DefaultFoodIngredientValue`默认值；需要单独定价时写入`MaterialWhitelistValueDict`或`FoodIngredientValueDict`。
+- 普通食材优先维护`quality_food:material_whitelist`标签；该标签在`kubejs/server_scripts/Quality Food/tags.js`中生成，也会影响出货箱可接受物品判定。
+- `global.FoodIngredientValueDict`按`DefaultFoodIngredientList`、`MaterialWhitelistValueDict`、`FoodIngredientValueDict`顺序合并，后面的显式定价会覆盖前面的默认值。
+- `ValueBlackList`用于让物品完全跳过价值分配；不要把应忽略物品的基础价值设为0，否则它们参与的配方仍可能反推产物价值。
+- `global.DefaultRecipeValueMultiplier`和`RecipeValueMultiplierDict`控制配方推导价值倍率，目前`crafting`倍率为1，其他配方默认倍率为2。
+- OEV基础价值注册入口是`kubejs/server_scripts/One Enough Value/base_value.js`；配方推导逻辑在`kubejs/server_scripts/One Enough Value/recipe_handler.js`。
+- 出货箱接受条件维护在`kubejs/startup_scripts/custom/procurement.js`，默认接受可食用物品或带`quality_food:material_whitelist`标签的物品。
+- 出售与显示侧通过`global.MoneyUtil.calculateFoodValue`读取OEV价值；无OEV值的可食用物会按营养、饱和和效果估算，并在有价值时叠加Quality Food品质倍率。客户端价格提示见`kubejs/client_scripts/tool_tip.js`，售卖方块见`kubejs/server_scripts/mbd2/sell_bin.js`。
+
 ## 环境配置
 - 推荐使用[VSCode](https://code.visualstudio.com/)或者[IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/download/?section=windows)开发
 - 如果想使用AI IDE，推荐[Trae CN](https://www.trae.cn/)
