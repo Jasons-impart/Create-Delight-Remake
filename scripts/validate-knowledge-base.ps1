@@ -111,7 +111,7 @@ foreach ($check in $duplicateChecks) {
 
 $antiPatterns = @(
     @{ Pattern = "e\.remove\(\) or e\.removeById\(\).*e\.remove\(\) or e\.removeById\(\)"; Message = "Recipe removal anti-pattern appears duplicated." },
-    @{ Pattern = "PowerShell.*反引号.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to lessons-learned.md." }
+    @{ Pattern = "PowerShell.*backtick.*AGENTS\.md"; Message = "Long historical lesson appears to be in AGENTS.md; move history to lessons-learned.md." }
 )
 
 foreach ($antiPattern in $antiPatterns) {
