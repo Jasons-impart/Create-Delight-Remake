@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "cmr:snowman_cooler",
+      "required": false
+    }
+  ]
+}
