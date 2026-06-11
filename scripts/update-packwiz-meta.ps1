@@ -1046,12 +1046,48 @@ file-id = $($releaseIdentity.FileId)
 "@
     }
 
+    $content = $content.TrimEnd() + "`n"
     Write-Utf8NoBomFile -Path $PwTomlPath -Content $content
 
     return [pscustomobject]@{
         Name = $DisplayName
         PwTomlPath = $PwTomlPath
     }
+}
+
+function Set-PackwizFilesReleaseCurseForgeHint {
+    param(
+        [string]$PwTomlPath,
+        [string]$ReleaseCurseForgeContent
+    )
+
+    $releaseIdentity = Get-CurseForgeMetadataIdentity -Content $ReleaseCurseForgeContent
+    if (-not $releaseIdentity) { return $false }
+    if (-not (Test-Path $PwTomlPath)) { return $false }
+
+    $content = Get-Content -LiteralPath $PwTomlPath -Raw
+    $existingIdentity = $null
+    if ($content -match '(?ms)\[release\.curseforge\].*') {
+        $existingIdentity = Get-CurseForgeMetadataIdentity -Content $Matches[0]
+    }
+    if ($existingIdentity -and
+        $existingIdentity.ProjectId -eq $releaseIdentity.ProjectId -and
+        $existingIdentity.FileId -eq $releaseIdentity.FileId) {
+        return $false
+    }
+
+    $trimmedContent = [regex]::Replace($content, '(?ms)\r?\n*\[release\.curseforge\]\s*project-id\s*=\s*\d+\s*file-id\s*=\s*\d+\s*$', '')
+    $newContent = $trimmedContent.TrimEnd() + @"
+
+
+[release.curseforge]
+project-id = $($releaseIdentity.ProjectId)
+file-id = $($releaseIdentity.FileId)
+"@
+    $newContent = $newContent.TrimEnd() + "`n"
+
+    Write-Utf8NoBomFile -Path $PwTomlPath -Content $newContent
+    return $true
 }
 
 function Remove-PackwizFilesAssetIfOwned {
@@ -1136,6 +1172,34 @@ try {
         $newFilesByBase[$base] += $sourceName
     }
 
+    $releaseHintCount = 0
+    foreach ($entry in $pwEntries) {
+        if ($entry.IsManaged) { continue }
+
+        $currentFilename = $entry.Filename
+        if (-not $currentFilename) { continue }
+
+        $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
+        if (-not ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase))) {
+            continue
+        }
+
+        $sourcePath = Get-LocalMetadataSourcePath -Entry $entry -SourceFiles $sourceFiles -PackwizFiles $packwizFiles
+        if (-not $sourcePath) { continue }
+
+        $jarMetadata = Get-JarMetadata -Path $sourcePath
+        $candidates = @(Get-CurseForgeCandidates -Filename $currentFilename -JarMetadata $jarMetadata)
+        if ($candidates.Count -eq 0) { continue }
+
+        $cfMetadata = Try-ResolveCurseForgeMetadata -SourcePath $sourcePath -SourceFilename $currentFilename -Candidates $candidates -Category $Category
+        if (-not ($cfMetadata -and $cfMetadata.IsExactMatch)) { continue }
+
+        if (Set-PackwizFilesReleaseCurseForgeHint -PwTomlPath $entry.PwTomlPath -ReleaseCurseForgeContent $cfMetadata.Content) {
+            Write-Status "  ~ Added release CurseForge hint: $($entry.Name)"
+            $releaseHintCount++
+        }
+    }
+
     $migratedToCurseForgeCount = 0
     if ($Category -eq "mods") {
         foreach ($entry in $pwEntries) {
@@ -1198,6 +1262,8 @@ try {
         $currentFilename = $entry.Filename
         if (-not $currentFilename) { continue }
         if ($sourceFiles.ContainsKey($currentFilename)) { continue }
+        if ($packwizFiles.ContainsKey($currentFilename)) { continue }
+        if ($entry.IsManaged) { continue }
 
         $base = Derive-BaseName -Filename $currentFilename
         if (-not $base) { continue }
@@ -1257,7 +1323,7 @@ try {
         $removals = @()
     }
 
-    if ($migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
+    if ($releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
         Write-Status "No CurseForge metadata changes detected."
         exit 0
     }
@@ -1435,6 +1501,9 @@ try {
     }
     if ($migratedToCurseForgeCount -gt 0) {
         Write-Status "Migrated to CurseForge: $migratedToCurseForgeCount"
+    }
+    if ($releaseHintCount -gt 0) {
+        Write-Status "Added release CurseForge hints: $releaseHintCount"
     }
     if ($addedCurseForgeCount -gt 0) {
         Write-Status "Added via CurseForge: $addedCurseForgeCount"
