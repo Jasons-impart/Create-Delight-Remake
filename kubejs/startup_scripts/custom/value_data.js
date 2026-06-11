@@ -104,6 +104,7 @@ let MaterialWhitelistValueDict = {
     "alexscaves:subterranodon_egg": 2,
     "alexscaves:vallumraptor_egg": 2,
     "alexscaves:grottoceratops_egg": 2,
+    "alexscaves:frosted_gingerbread_block": 2,
     "quark:egg_parrot_gray": 2,
     "quark:egg_parrot_yellow_blue": 2,
     "quark:egg_parrot_green": 2,
