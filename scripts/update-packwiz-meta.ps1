@@ -3,7 +3,9 @@ param(
     [ValidateSet("mods", "resourcepacks", "shaderpacks")]
     [string]$Category = "mods",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
-    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar"
+    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
+    [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
+    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX
 )
 
 Set-StrictMode -Version Latest
@@ -16,7 +18,7 @@ $PackwizExe = Join-Path $ToolsRoot "packwiz.exe"
 $InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
 $PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
 $PackwizFilesCategoryRoot = Join-Path $PackwizFilesRoot $Category
-$PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
+$PackwizFilesRawUrlPattern = 'https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/.+/packwiz-files/'
 $TempDetectRoot = Join-Path $RepoRoot ".cache\packwiz-sync\cf-add"
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
 $GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
@@ -26,6 +28,73 @@ $script:CurseForgeProbeTools = $null
 
 function Write-Status { param([string]$M) Write-Host "[meta] $M" -ForegroundColor Cyan }
 function Write-Warn   { param([string]$M) Write-Host "[warn] $M" -ForegroundColor Yellow }
+
+function Get-GitRefForPackwizFiles {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRef)) {
+        return $PackwizFilesRef.Trim()
+    }
+
+    $branch = $null
+    try {
+        $branch = (& git -C $RepoRoot branch --show-current 2>$null)
+        if ($LASTEXITCODE -ne 0) { $branch = $null }
+    }
+    catch {
+        $branch = $null
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($branch)) {
+        return $branch.Trim()
+    }
+
+    try {
+        $commit = (& git -C $RepoRoot rev-parse HEAD 2>$null)
+        if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($commit)) {
+            return $commit.Trim()
+        }
+    }
+    catch {}
+
+    return "main"
+}
+
+function Resolve-PackwizFilesRawPrefix {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRawPrefix)) {
+        return $PackwizFilesRawPrefix.TrimEnd('/') + '/'
+    }
+
+    $ref = Get-GitRefForPackwizFiles
+    $escapedRef = ([Uri]::EscapeDataString($ref)).Replace('%2F', '/')
+    return "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/$escapedRef/packwiz-files/"
+}
+
+function Test-PackwizFilesRawUrl {
+    param([string]$Url)
+
+    return -not [string]::IsNullOrWhiteSpace($Url) -and $Url -match $PackwizFilesRawUrlPattern
+}
+
+function Normalize-PackwizFilesRawPrefixInFile {
+    param([string]$Path)
+
+    $content = Get-Content -LiteralPath $Path -Raw
+    if ($content -notmatch $PackwizFilesRawUrlPattern) {
+        return $false
+    }
+
+    $newContent = [regex]::Replace($content, $PackwizFilesRawUrlPattern, {
+        param($Match)
+        return $PackwizFilesRawPrefix
+    })
+    if ($newContent -eq $content) {
+        return $false
+    }
+
+    Write-Utf8NoBomFile -Path $Path -Content $newContent
+    return $true
+}
+
+$PackwizFilesRawPrefix = Resolve-PackwizFilesRawPrefix
 
 function Get-ToolEnsured {
     param([string]$Url, [string]$Path)
@@ -1125,7 +1194,7 @@ function Get-LocalMetadataSourcePath {
     if (-not $filename) { return $null }
 
     $downloadUrl = Get-TomlVal -Data $Entry.Data -Key 'DownloadUrl'
-    if ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+    if (Test-PackwizFilesRawUrl -Url $downloadUrl) {
         if ($PackwizFiles.ContainsKey($filename)) {
             return $PackwizFiles[$filename]
         }
@@ -1163,6 +1232,19 @@ try {
     $referencedFilenames = $metadataState.ReferencedFilenames
     $newFilesByBase = @{}
 
+    $normalizedRawPrefixCount = 0
+    foreach ($pwToml in $metadataState.PwTomls) {
+        if (Normalize-PackwizFilesRawPrefixInFile -Path $pwToml.FullName) {
+            $normalizedRawPrefixCount++
+        }
+    }
+    if ($normalizedRawPrefixCount -gt 0) {
+        $metadataState = Get-PwMetadataState -ModsDirectory $modsDir
+        $pwEntries = @($metadataState.PwEntries)
+        $filenameOwners = $metadataState.FilenameOwners
+        $referencedFilenames = $metadataState.ReferencedFilenames
+    }
+
     foreach ($sourceName in $sourceFiles.Keys) {
         $base = Derive-BaseName -Filename $sourceName
         if (-not $base) { continue }
@@ -1180,7 +1262,7 @@ try {
         if (-not $currentFilename) { continue }
 
         $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
-        if (-not ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase))) {
+        if (-not (Test-PackwizFilesRawUrl -Url $downloadUrl)) {
             continue
         }
 
@@ -1236,7 +1318,7 @@ try {
             Write-Utf8NoBomFile -Path $entry.PwTomlPath -Content (Set-PwTomlSide -Content $cfMetadata.Content -Side $entry.Side)
 
             $downloadUrl = Get-TomlVal -Data $entry.Data -Key 'DownloadUrl'
-            if ($downloadUrl -and $downloadUrl.StartsWith($PackwizFilesRawPrefix, [System.StringComparison]::OrdinalIgnoreCase)) {
+            if (Test-PackwizFilesRawUrl -Url $downloadUrl) {
                 Remove-PackwizFilesAssetIfOwned -Filename $currentFilename -FilenameOwners $filenameOwners
                 if ($packwizFiles.ContainsKey($currentFilename)) {
                     $packwizFiles.Remove($currentFilename) | Out-Null
@@ -1323,7 +1405,7 @@ try {
         $removals = @()
     }
 
-    if ($releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
+    if ($normalizedRawPrefixCount -eq 0 -and $releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $managedUpdates.Count -eq 0 -and $localUpdates.Count -eq 0 -and $newSources.Count -eq 0 -and $removals.Count -eq 0) {
         Write-Status "No CurseForge metadata changes detected."
         exit 0
     }
@@ -1488,7 +1570,7 @@ try {
         $removedCount++
     }
 
-    if ($updatedCount -eq 0 -and $updatedLocalCount -eq 0 -and $addedCurseForgeCount -eq 0 -and $addedPackwizFilesCount -eq 0 -and $removedCount -eq 0) {
+    if ($normalizedRawPrefixCount -eq 0 -and $releaseHintCount -eq 0 -and $migratedToCurseForgeCount -eq 0 -and $updatedCount -eq 0 -and $updatedLocalCount -eq 0 -and $addedCurseForgeCount -eq 0 -and $addedPackwizFilesCount -eq 0 -and $removedCount -eq 0) {
         Write-Status "No CurseForge metadata changes detected."
         exit 0
     }
@@ -1501,6 +1583,9 @@ try {
     }
     if ($migratedToCurseForgeCount -gt 0) {
         Write-Status "Migrated to CurseForge: $migratedToCurseForgeCount"
+    }
+    if ($normalizedRawPrefixCount -gt 0) {
+        Write-Status "Normalized packwiz-files raw URLs: $normalizedRawPrefixCount"
     }
     if ($releaseHintCount -gt 0) {
         Write-Status "Added release CurseForge hints: $releaseHintCount"
