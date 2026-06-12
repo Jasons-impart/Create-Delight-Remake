@@ -2,7 +2,7 @@
 setlocal
 cd /d "%~dp0"
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\update-packwiz-meta.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\update-packwiz-meta.ps1" %*
 set "EXIT_CODE=%ERRORLEVEL%"
 
 echo.
