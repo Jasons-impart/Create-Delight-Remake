@@ -11,7 +11,8 @@ ServerEvents.recipes(e => {
     "ratatouille:squeezing/raw_sausage",
     "create:sequenced_assembly/unprocessed_mature_matter",
     "create:sequenced_assembly/unprocessed_ripen_matter",
-    "ratatouille:composting/composting"
+    "ratatouille:composting/composting",
+    "ratatouille:compost_tower",
   ])
   const { create, createdieselgenerators } = e.recipes
   // remove_recipes_input(e, [
