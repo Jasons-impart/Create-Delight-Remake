@@ -8,4 +8,8 @@ ServerEvents.tags("minecraft:item", e => {
     e.add("forge:crab_meat", [
         "collectorsreap:chieftain_claw",
         "collectorsreap:chieftain_leg"])
+    e.removeAllTagsFrom([
+        'collectorsreap:panettone',
+        'collectorsreap:panettone_slice',
+    ])
 })

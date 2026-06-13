@@ -13,7 +13,9 @@ ServerEvents.recipes(e => {
      */
     function make_ice_cream(e, ingredient, outputFluidIcecream, outputFluidMilkshake, icecreamscoop, icecream, milkshake, icecreamblock) {
         e.remove({output: icecream, type: "crafting_shapeless"})
+        e.remove({output: Fluid.of(outputFluidIcecream), type: "create:emptying"})
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:mixing"})
+        e.remove({output: milkshake, type: "create:filling"})
         e.recipes.createdelight.big_centrifugation()
             .inputFluids(Fluid.of(outputFluidMilkshake, 500))
             .outputFluids(Fluid.of("minecraft:milk", 250))
@@ -28,6 +30,13 @@ ServerEvents.recipes(e => {
                 Fluid.of("createdelight:base_syrup", 250)
             ]
         ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
+        create.emptying(
+            [
+                Fluid.of(outputFluidIcecream, 250),
+                "minecraft:bowl"
+            ],
+            icecream
+        ).id(`createdelight:emptying/${icecream.split(":")[1]}`)
         create.mixing(
             icecreamscoop,
             Fluid.of(outputFluidIcecream, 750)
@@ -64,6 +73,13 @@ ServerEvents.recipes(e => {
                 Fluid.of(outputFluidMilkshake, 250)
             ]
         ).id(`createdelight:filling/${milkshake.split(":")[1]}`)
+        create.filling(
+            milkshake,
+            [
+                "farmersdelight:milk_bottle",
+                Fluid.of(outputFluidIcecream, 250)
+            ]
+        ).id(`createdelight:filling/${milkshake.split(":")[1]}_form_milk`)
         create.emptying(
             [
                 Fluid.of(outputFluidMilkshake, 250),
@@ -120,7 +136,12 @@ ServerEvents.recipes(e => {
     make_ice_cream(e, "seasonals:roasted_beetroot", "cosmopolitan:beetroot_ice_cream",
         "createdelightcore:beetroot_milkshake", "createdelightcore:beetroot_ice_cream_scoop",
         "seasonals:beetroot_ice_cream", "seasonals:beetroot_milkshake", "seasonals:beetroot_ice_cream_block")
-
+    make_ice_cream(e, "collectorsreap:pink_dragon_fruit", "createdelight:pink_dragon_fruit_ice_cream",
+        "createdelightcore:pink_dragon_fruit_milkshake", "createdelightcore:pink_dragon_fruit_ice_cream_scoop",
+        "collectorsreap:pink_dragon_fruit_ice_cream", "collectorsreap:pink_dragon_fruit_milkshake", "collectorsreap:pink_dragon_fruit_ice_cream_block")
+    make_ice_cream(e, "collectorsreap:lucuma", "createdelight:lucuma_ice_cream",
+        "createdelightcore:lucuma_milkshake", "createdelightcore:lucuma_ice_cream_scoop",
+        "collectorsreap:lucuma_ice_cream", "collectorsreap:lucuma_milkshake", "collectorsreap:lucuma_ice_cream_block")
 })
 ItemEvents.rightClicked("createdelight:incomplete_neapolitan_ice_cream", e => {
     e.player.sendData("kubejs_player_playsound", {soundEvent: "neapolitan:item.ice_cream.eat"})
