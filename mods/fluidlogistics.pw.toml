@@ -1,0 +1,13 @@
+name = "Create锛欶luidLogistic"
+filename = "fluidlogistics-1.0.8.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e91c1f1eaf7981967c4f5d98d2557d8f86a04529"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8211660
+project-id = 1475079
