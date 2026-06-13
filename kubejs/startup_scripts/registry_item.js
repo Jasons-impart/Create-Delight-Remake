@@ -536,21 +536,6 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:cell_housing_curving_head")
         .translationKey("item.createdelight.cell_housing_curving_head")
         .tag("vintageimprovements:curving_heads")
-    // // 未完成火箭核心
-    // e.create("createdelight:incomplete_first_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_first_stage_rocket_core")
-    // e.create("createdelight:incomplete_second_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_second_stage_rocket_core")
-    // e.create("createdelight:incomplete_third_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_third_stage_rocket_core")
-    // e.create("createdelight:incomplete_fourth_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
-    // 行星齿轮
-    e.create("createdelight:incomplete_planet_gear", "create:sequenced_assembly")
-        .translationKey("item.createdelight.incomplete_planet_gear")
-    e.create("createdelight:planet_gear")
-        .translationKey("item.createdelight.planet_gear")
-        .rarity("uncommon")
     // 磁悬浮构件
     e.create("createdelight:magnetic_mechanism")
         .rarity("uncommon")

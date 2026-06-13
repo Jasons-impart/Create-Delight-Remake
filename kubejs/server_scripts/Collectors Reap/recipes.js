@@ -6,6 +6,10 @@ ServerEvents.recipes(e => {
         "collectorsreap:lime_cookie",
         "collectorsreap:pink_dragon_fruit_cake",
         "collectorsreap:lucuma_cake",
+        'collectorsreap:panettone',
+    ])
+    remove_recipes_input(e, [
+        'collectorsreap:panettone',
     ])
     remove_recipes_id(e, [
         "collectorsreap:cutting/clam", 

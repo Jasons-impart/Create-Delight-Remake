@@ -888,7 +888,6 @@ ServerEvents.tags("minecraft:item", e => {
         "collectorsreap:mint_cannoli",
         "collectorsreap:strawberry_cannoli",
         "collectorsreap:vanilla_cannoli",
-        "collectorsreap:panettone_slice",
         "bakeries:matcha_parfait",
         "festival_delicacies:qingtuan",
         "youkaishomecoming:seven_colored_yokan"
