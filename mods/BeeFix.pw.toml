@@ -6,3 +6,7 @@ side = "both"
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/BeeFix-1.20-1.0.7.jar"
 hash-format = "sha256"
 hash = "5fa50cfbd0ee3d0472ba8e9162d40e9556ea930a6bbcf93de2ab751365b58566"
+
+[release.curseforge]
+project-id = 547989
+file-id = 4618962

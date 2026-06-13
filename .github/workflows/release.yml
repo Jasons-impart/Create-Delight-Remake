@@ -299,9 +299,7 @@ jobs:
       - name: 净化补丁用 CurseForge 元数据
         run: |
           bash .github/workflows/scripts/download_mods.sh 8081 server
-          python3 scripts/generate-packwiz-files.py
-          ./packwiz -y curseforge detect
-          ./packwiz refresh
+          bash .github/workflows/scripts/normalize_packwiz_files_for_curseforge.sh
           bash .github/workflows/scripts/remove_curseforge_payloads_from_patch.sh patch
       - name: 上传服务器补丁
         uses: actions/upload-artifact@v4
