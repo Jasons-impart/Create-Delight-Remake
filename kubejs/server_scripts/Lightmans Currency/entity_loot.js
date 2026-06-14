@@ -1,6 +1,16 @@
 const $Mob = Java.loadClass("net.minecraft.world.entity.Mob")
 const $MobSpawnType = Java.loadClass("net.minecraft.world.entity.MobSpawnType")
 let MoneyUtil = global.MoneyUtil
+const DamageFallback = {
+    "minecraft:ender_dragon": 10,
+    "minecraft:wither": 8,
+}
+
+function getAttributeValue(mob, attribute, fallback) {
+    let instance = mob.getAttribute(attribute)
+    return instance == null ? fallback : instance.getValue()
+}
+
 EntityEvents.drops(e => {
     const { entity, source } = e
     let player = source.player
@@ -19,8 +29,9 @@ EntityEvents.drops(e => {
         let baseValue = 1
         let baseHealth = 20
         let baseDmg = 4.5
-        let dmg = mob.getAttribute("generic.attack_damage").getValue()
-        let armor = mob.getAttribute("generic.armor").getValue() / 2 + mob.getAttribute("generic.armor_toughness").getValue()
+        let damageFallback = DamageFallback[String(mob.type)]
+        let dmg = getAttributeValue(mob, "generic.attack_damage", damageFallback == null ? baseDmg : damageFallback)
+        let armor = getAttributeValue(mob, "generic.armor", 0) / 2 + getAttributeValue(mob, "generic.armor_toughness", 0)
         let maxhp = mob.maxHealth
         //血量乘算
         let multipler = Math.sqrt(maxhp / baseHealth)
