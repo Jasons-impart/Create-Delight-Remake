@@ -110,7 +110,6 @@ let MaterialWhitelistValueDict = {
     "quark:egg_parrot_green": 2,
     "quark:egg_parrot_blue": 2,
     "quark:egg_parrot_red_blue": 2,
-    "endertrigon:baby_dragon_egg": 8,
     "youkaishomecoming:soybean": 1,
     "youkaishomecoming:redbean": 1,
     "youkaishomecoming:tea_seeds": 1,
