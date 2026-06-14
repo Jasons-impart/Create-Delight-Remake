@@ -61,6 +61,7 @@ CD-master-dev/
 **Git Workflow**:
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
+- PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
@@ -77,6 +78,7 @@ CD-master-dev/
 - `.pw.toml` for packwiz-files assets reference GitHub raw URLs pointing to `packwiz-files/`
 - CF-hosted assets kept in `packwiz-files` may include `[release.curseforge]` so release workflows can emit manifest metadata while dev sync uses local payloads
 - To add/update/remove mods/resourcepacks/shaderpacks: use `scripts/update-packwiz-meta.ps1 -Category ...` (NOT manual asset placement)
+- On `main`, remove a mod by deleting `mods/*.pw.toml`, not synced runtime JARs, because JARs are local development payloads.
 - To sync all mod JARs locally for development: use `scripts/sync-packwiz-assets.ps1`
 - `pack.toml`/`index.toml` are generated from `modpack.toml`; don't commit them
 - `CDC-mod-src/` is a git submodule and must stay out of Packwiz artifacts because packages ship pack files, not Java source trees
