@@ -26,6 +26,8 @@ const Inf_Fluid = [
   "createmetallurgy:molten_bronze",
   "createmetallurgy:molten_void_steel",
   "createdelightcore:molten_andesite",
+  "createdelightcore:molten_titanium",
+  "createdelightcore:molten_martian_steel",
   "createdelightcore:molten_scarlet_neodymium",
   "createdelightcore:molten_azure_neodymium",
   "createdelightcore:molten_fire_steel",
