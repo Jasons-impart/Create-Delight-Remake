@@ -8,7 +8,8 @@ ServerEvents.recipes(e => {
         "fluidlogistics:faucet",
         "fluidlogistics:fluid_transporter",
         "fluidlogistics:multi_fluid_access_port_h",
-        "fluidlogistics:multi_fluid_access_port"
+        "fluidlogistics:multi_fluid_access_port",
+        "fluidlogistics:fluid_packager"
     ])
 
     e.replaceInput({id: "fluidlogistics:copper_basin"}, "minecraft:copper_ingot", "create:copper_sheet")
