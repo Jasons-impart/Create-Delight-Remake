@@ -15,6 +15,7 @@ StartupEvents.modifyCreativeTab("expatternprovider:tab_main", e => {
     "createmetallurgy:molten_brass",
     "createmetallurgy:molten_tungsten",
     "createmetallurgy:molten_steel",
+    "createmetallurgy:molten_obdurium",
     "createmetallurgy:molten_netherite",
     "createmetallurgy:molten_silver",
     "createmetallurgy:molten_tin",
