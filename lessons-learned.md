@@ -207,3 +207,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Butchercraft 2.4.1 registers animal head/skull floor and wall blocks without blockstates, and skull renderers look for `butchercraft:textures/entity/*.png` while the JAR stores those textures under `textures/block/entity/`.
 - **Fix/Lesson**: Add KubeJS `blockstates/*_head*.json` overlays using `minecraft:block/skull` and copy the six skull textures into `kubejs/assets/butchercraft/textures/entity/` so placed heads do not render as missing purple-black blocks.
 
+## Vintage Delight fermenting jar consumes duplicate ingredients from one slot
+
+**Date**: 2026-06-16
+
+- **Problem**: Vintage Delight 0.1.6 `FermentingJarBlockEntity#consumeIngredient` scans input slots from 0 for every `Ingredient`, so recipes with repeated matching ingredients consume multiple items from the first matching slot.
+- **Fix/Lesson**: CDC patches the jar with a pseudo mixin that tracks consumed input slots during `craftItem`, because the mod is not a compile dependency and repeated ingredients must be distributed across distinct matched slots.
+
