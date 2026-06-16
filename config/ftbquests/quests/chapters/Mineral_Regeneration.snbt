@@ -208,17 +208,6 @@
 		}
 		{
 			dependencies: ["13761553F15A2C1A"]
-			id: "0B8E43A62E09F76F"
-			tasks: [{
-				id: "486A257CE620CC92"
-				item: "createdelight:mars_gemstone_cluster"
-				type: "item"
-			}]
-			x: 7.0d
-			y: 0.5d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
 			id: "3AEB8D651511A188"
 			tasks: [{
 				id: "6BA3EE6BAA5328C8"
@@ -237,17 +226,6 @@
 				type: "item"
 			}]
 			x: 6.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["13761553F15A2C1A"]
-			id: "334A18AE324C3CD8"
-			tasks: [{
-				id: "65705B2A820A5B51"
-				item: "createdelight:glacio_ore_cluster"
-				type: "item"
-			}]
-			x: 7.0d
 			y: 1.5d
 		}
 		{
