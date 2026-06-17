@@ -228,3 +228,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: After migrating from Ad Astra to Northstar, FTB Quests and tips still pointed players to old `ad_astra:*` dimensions such as removed Glacio.
 - **Fix/Lesson**: When changing planet systems, search `config/ftbquests` and player-facing lang/tip files for old dimension IDs and planet names so quest gates remain reachable.
 
+## Restored recipes may be blocked by removal lists
+
+**Date**: 2026-06-17
+
+- **Problem**: ExtendedAE's `expatternprovider:ex_drive` recipe existed upstream but was hidden because `kubejs/server_scripts/AE2/machine.js` removed its recipe ID.
+- **Fix/Lesson**: Before adding replacement recipes, search KubeJS `remove_recipes_id` lists for the missing recipe ID so original mod recipes can be restored by removing stale deletes.
+
