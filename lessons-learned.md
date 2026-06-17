@@ -235,3 +235,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: ExtendedAE's `expatternprovider:ex_drive` recipe existed upstream but was hidden because `kubejs/server_scripts/AE2/machine.js` removed its recipe ID.
 - **Fix/Lesson**: Before adding replacement recipes, search KubeJS `remove_recipes_id` lists for the missing recipe ID so original mod recipes can be restored by removing stale deletes.
 
+## Quest dependencies must match actual crafting prerequisites
+
+**Date**: 2026-06-17
+
+- **Problem**: The mechanical craft encoder quest depended on the molecular assembler quest even though the encoder only needs earlier mechanical crafting progression.
+- **Fix/Lesson**: When editing FTB Quest dependencies, compare each dependency ID against the item's real recipe path so optional downstream machines do not gate unrelated tools.
+
