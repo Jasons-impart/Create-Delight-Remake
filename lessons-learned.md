@@ -214,3 +214,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Vintage Delight 0.1.6 `FermentingJarBlockEntity#consumeIngredient` scans input slots from 0 for every `Ingredient`, so recipes with repeated matching ingredients consume multiple items from the first matching slot.
 - **Fix/Lesson**: CDC patches the jar with a pseudo mixin that tracks consumed input slots during `craftItem`, because the mod is not a compile dependency and repeated ingredients must be distributed across distinct matched slots.
 
+## Create Addition spool recipes must match connector drop economics
+
+**Date**: 2026-06-17
+
+- **Problem**: `createaddition:*_spool` sequenced assembly at `.loops(2)` let players craft a spool with 2 wires, place/break connectors, and recover 4 wires through link drops.
+- **Fix/Lesson**: Keep spool sequenced assembly at `.loops(4)` so wire input matches connector-link recovery and cannot duplicate metals.
+

@@ -130,7 +130,7 @@ ServerEvents.recipes(e => {
                 e.recipes.create.sequenced_assembly(spool[0], 'createaddition:spool', [
                     e.recipes.create.deploying("createaddition:spool", ["createaddition:spool", spool[1]])
                 ])
-                .loops(2)
+                .loops(4)
                 .transitionalItem("createaddition:spool")
                 .id(`createdelight:sequenced_assembly/${spool[0].split(':')[1]}`)
             })
