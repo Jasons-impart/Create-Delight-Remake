@@ -221,3 +221,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `createaddition:*_spool` sequenced assembly at `.loops(2)` let players craft a spool with 2 wires, place/break connectors, and recover 4 wires through link drops.
 - **Fix/Lesson**: Keep spool sequenced assembly at `.loops(4)` so wire input matches connector-link recovery and cannot duplicate metals.
 
+## Planet migration must include quest dimension tasks
+
+**Date**: 2026-06-17
+
+- **Problem**: After migrating from Ad Astra to Northstar, FTB Quests and tips still pointed players to old `ad_astra:*` dimensions such as removed Glacio.
+- **Fix/Lesson**: When changing planet systems, search `config/ftbquests` and player-facing lang/tip files for old dimension IDs and planet names so quest gates remain reachable.
+
