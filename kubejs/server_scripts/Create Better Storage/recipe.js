@@ -97,7 +97,7 @@ ServerEvents.recipes(e => {
         "ABA"
     ], {
         A: "create_bs:crystal_item_vault",
-        B: "#forge:gems/diamond"
+        B: "minecraft:diamond"
     })
     .id("createdelight:crafting/alt_diamond_item_vault")
     
