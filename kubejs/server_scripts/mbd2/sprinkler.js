@@ -15,7 +15,7 @@ MBDMachineEvents.onTick("createdelight:sprinkler", e => {
         let solidBlockPos = [machine.pos.x, solidBlockPosY, machine.pos.z]
         let nearHumidityControlProvider = manager.queryHumidityControlProvider(solidBlockPos)
         if (nearHumidityControlProvider != null) {
-            if(nearHumidityControlProvider.getRemainTime <= 200) {
+            if (nearHumidityControlProvider.getRemainTime() <= 200) {
                 nearHumidityControlProvider.addRemainTime(100)
             }
         } else {

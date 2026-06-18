@@ -241,7 +241,7 @@
 				item: "createdelightcore:copper_coin"
 				type: "item"
 			}]
-			subtitle: "右键&e悬挂告示牌&r可生成&e季节任务告示&r，提交季节&e对应作物&r（&4需全部放在物品栏中&r）可&e获得心髓&r；右键&e温室之心室&r则会启动季节仪式"
+			subtitle: "查看&e季节任务告示&r并提交季节&e对应作物&r（&4需全部放在物品栏中&r）可&e获得心髓&r；右键&e温室之心室&r则会启动季节仪式"
 			tasks: [{
 				id: "19B401FDD97EE863"
 				item: "eclipticseasons:seasonal_prayer_scroll"
@@ -373,7 +373,7 @@
 			]
 			dependency_requirement: "one_completed"
 			description: [
-				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统。"
+				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统，或留意流浪商人的交易。"
 				"温室之心室是&e祈年令&r与&e温室心髓&r的承载容器，也是后续季节调节系统的核心入口。"
 				"若直接对温室之心室使用对应&e心髓&r，则会跳过仪式，直接得到完成态温室之心。"
 				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
@@ -434,7 +434,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&e祈年令&r中的&a春季任务&r获得"
+			subtitle: "通过完成&a春季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "7D568D13B23DB183"
 				item: "eclipticseasons:spring_greenhouse_essence"
@@ -451,7 +451,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&e夏季任务&r获得"
+			subtitle: "通过完成&e夏季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "28D31DB3E98AF6D5"
 				item: "eclipticseasons:summer_greenhouse_essence"
@@ -468,7 +468,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&6秋季任务&r获得"
+			subtitle: "通过完成&6秋季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "5305C83415E52A4C"
 				item: "eclipticseasons:autumn_greenhouse_essence"
@@ -646,7 +646,7 @@
 				item: "createdelightcore:gold_coin"
 				type: "item"
 			}]
-			subtitle: "通过完成&4祈年令&r中的&9冬季任务&r获得"
+			subtitle: "通过完成&9冬季任务&r或流浪商人交易获得"
 			tasks: [{
 				id: "41241F8E1A40B48D"
 				item: "eclipticseasons:winter_greenhouse_essence"
