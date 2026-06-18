@@ -1,6 +1,6 @@
 name = "Create Functional Storage"
 filename = "create-functional-storage-1.20.1-v1.0.0.zip"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
