@@ -234,6 +234,25 @@
 			y: -4.0d
 		}
 		{
+			dependencies: ["25007076169CFA2B"]
+			icon: "eclipticseasons:season_sensor"
+			id: "54E0D9D3F08A24C1"
+			rewards: [{
+				id: "63CB0A55E8DF3402"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			subtitle: "可检测&e自然季节&r或&e季节信号&r，并用红石输出检测结果"
+			tasks: [{
+				id: "3E2996530294A49D"
+				item: "eclipticseasons:season_sensor"
+				type: "item"
+			}]
+			title: "季节传感器"
+			x: -1.0d
+			y: -4.75d
+		}
+		{
 			dependencies: ["0F16A415E991AC8E"]
 			id: "3C2FF6382B5811F7"
 			rewards: [{
@@ -276,7 +295,7 @@
 				type: "item"
 			}]
 			shape: "square"
-			subtitle: "&e加湿器&r使用时&4消耗水增加&91级湿度\\n&e除湿机&r使用时&4消耗应力降低&91级湿度"
+			subtitle: "本包的&e加湿器&r消耗水增加&91级湿度\\n本包的&e除湿机&r消耗应力降低&91级湿度"
 			tasks: [
 				{
 					id: "28DF13DE7B5E6C83"
@@ -291,6 +310,37 @@
 			]
 			title: "湿度调节"
 			x: -4.0d
+			y: -5.5d
+		}
+		{
+			dependencies: ["1453031D685ED650"]
+			description: [
+				"&e恒湿水箱&r可提高温室湿度，&e温室除湿器&r悬挂时可降低温室湿度。"
+				"它们是节气自带的低门槛湿度方案；需要接入机械动力自动化时，再使用本包的&e加湿器&r与&e除湿机&r。"
+			]
+			icon: "eclipticseasons:humidity_tank"
+			id: "5A80D9503D63E5C7"
+			rewards: [{
+				id: "5F37AA7483AFD796"
+				item: "createdelightcore:copper_coin"
+				type: "item"
+			}]
+			shape: "square"
+			subtitle: "节气自带的温室湿度调节方块，可与本包机械路线共存"
+			tasks: [
+				{
+					id: "7514F7C26D00A559"
+					item: "eclipticseasons:humidity_tank"
+					type: "item"
+				}
+				{
+					id: "4C34B7E70638659D"
+					item: "eclipticseasons:dehumidifier"
+					type: "item"
+				}
+			]
+			title: "节气湿度方块"
+			x: -5.5d
 			y: -5.5d
 		}
 		{
@@ -317,7 +367,7 @@
 				"&l&b生效条件&r：只有在&e温室&r中湿度调节与季节调节才会生效"
 				"&l&b季节仪式&r：使用&e祈年令&r右键&e温室之心室&r会按所在地&6实际农业季节&r启动仪式，&4仪式不能在室内进行&r"
 				"&l&b季节调节&r：使用&e已完成的温室之心&r模拟对应季节，作用范围以温室之心为中心半径&e16格&r以内的&c方形&r空间"
-				"&l&b湿度调节&r：使用&e加湿器&r或&e除湿机&r进行加湿或除湿，作用范围以加湿器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
+				"&l&b湿度调节&r：节气的&e恒湿水箱&r/&e温室除湿器&r可直接调节湿度；本包的&e加湿器&r/&e除湿机&r则用于机械自动化，作用范围以机器&e下方&c非空气&r方块为中心半径&e4格&r以内的&c方形&r空间"
 			]
 			id: "1453031D685ED650"
 			rewards: [{
@@ -376,7 +426,7 @@
 				"要获取最初的几个温室心髓的话，可以看看节气的季节任务告示系统，或留意流浪商人的交易。"
 				"温室之心室是&e祈年令&r与&e温室心髓&r的承载容器，也是后续季节调节系统的核心入口。"
 				"若直接对温室之心室使用对应&e心髓&r，则会跳过仪式，直接得到完成态温室之心。"
-				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号。为什么叫实际季节？前文中对于地区的介绍有相关内容。"
+				"当温室之心所在地区&e处于对应的实际季节&r时，它会发出红石信号；需要更灵活地检测自然季节或季节信号时，可使用&e季节传感器&r。"
 			]
 			id: "020BFCFD744B65AE"
 			rewards: [{
