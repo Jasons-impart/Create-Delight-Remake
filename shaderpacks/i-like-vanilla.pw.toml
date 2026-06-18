@@ -1,6 +1,6 @@
 name = "I Like Vanilla"
 filename = "I Like Vanilla v1.4.1.zip"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/shaderpacks/I%20Like%20Vanilla%20v1.4.1.zip"

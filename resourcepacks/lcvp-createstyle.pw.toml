@@ -1,6 +1,6 @@
 name = "Create Style | Variant Pack for Lightman's Currency"
 filename = "LCVP_CreateStyle_v1.7.zip"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
