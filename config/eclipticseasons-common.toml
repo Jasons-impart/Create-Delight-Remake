@@ -60,10 +60,10 @@
 	NoRainInDeserts = false
 	#Adjust the overall frequency of rain.
 	#Range: 0 ~ 1000
-	RainChanceMultiplier = 40
+	RainChanceMultiplier = 120
 	#Adjust the overall frequency of thunder.
 	#Range: 0 ~ 1000
-	ThunderChanceMultiplier = 20
+	ThunderChanceMultiplier = 80
 
 #This module governs how seasonal temperature shifts affect the physical world and the player.
 [Temperature]
@@ -207,7 +207,7 @@
 	#Enforces original Vanilla temperature and precipitation settings to prevent other mods from creating extreme environmental values.
 	VanillaBiomeClimateSettings = true
 	#When enabled, rivers are no longer treated as ignored climate zones. This reduces performance overhead but may result in less natural weather transitions near riverbanks.
-	IndependentRiverWeather = false
+	IndependentRiverWeather = true
 
 #Snow overlays are visual, atmospheric effects and are distinct from physical snow blocks.
 [Snow]
