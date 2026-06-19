@@ -10,12 +10,14 @@
 		{
 			id: "74C003BD7D88167E"
 			linked_quest: "24CCC43BD4994237"
+			size: 2.0d
 			x: 22.5d
 			y: -2.5d
 		}
 		{
 			id: "4C0C1A274518BAD5"
 			linked_quest: "3D02EA3A30EE1933"
+			size: 2.0d
 			x: 10.5d
 			y: -2.5d
 		}
@@ -45,6 +47,58 @@
 				type: "item"
 			}]
 			x: 2.0d
+			y: -1.0d
+		}
+		{
+			can_repeat: true
+			dependencies: [
+				"49759BA2FFD9ED2D"
+				"5D413834648E277E"
+			]
+			description: [
+				"月球移动速度实在太慢，故开设此选项"
+				""
+				"提交一张月球天文观测记录，换取一份月球星图。"
+			]
+			hide_dependency_lines: true
+			icon: "northstar:star_map"
+			id: "6C6B2505ED53D1F2"
+			rewards: [{
+				id: "7F2F4D3C69B824EF"
+				item: {
+					Count: 1
+					id: "northstar:star_map"
+					tag: {
+						Planet: {
+							name: "moon"
+						}
+						display: {
+							Name: "{\"translate\":\"item.northstar.star_map_moon\",\"color\":\"aqua\",\"italic\":false}"
+						}
+					}
+				}
+				type: "item"
+			}]
+			subtitle: "慢！我看碍谁！"
+			tasks: [{
+				consume_items: true
+				id: "5D2B2E81F5C3A7D0"
+				item: {
+					Count: 1
+					id: "northstar:astronomical_reading"
+					tag: {
+						Planet: {
+							name: "earth_moon"
+						}
+					}
+				}
+				match_nbt: true
+				title: "月球天文观测记录"
+				type: "item"
+				weak_nbt_match: true
+			}]
+			title: "月球星图大甩卖"
+			x: 3.5d
 			y: -1.0d
 		}
 		{
@@ -644,6 +698,7 @@
 				""
 				"注：本包的抗寒机制为，装备栏和饰品栏的抗寒级数总和&e≥4&r即可抵御太空的低温伤害"
 			]
+			hide_dependency_lines: true
 			id: "667FC8409A96DA4F"
 			subtitle: "提供氧气的妙妙工具"
 			tasks: [{
