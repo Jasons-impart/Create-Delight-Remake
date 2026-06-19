@@ -35,7 +35,7 @@ ServerEvents.tags("item", e => {
     ])
     e.add("create:upright_on_belt", [
         "alexscaves:sulfur_bud_small",
-        "alexscaves:sulfur_bud_medium", 
+        "alexscaves:sulfur_bud_medium",
         "alexscaves:sulfur_bud_large",
         "alexscaves:sulfur_cluster",
     ])
@@ -158,7 +158,7 @@ ServerEvents.tags("minecraft:block", e => {
 })
 
 ServerEvents.tags("minecraft:fluid", e => {
-    e.add("forge:molten_neodymium", 
+    e.add("forge:molten_neodymium",
         "createdelightcore:molten_scarlet_neodymium",
         "createdelightcore:molten_azure_neodymium"
     )

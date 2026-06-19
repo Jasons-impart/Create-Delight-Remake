@@ -1,7 +1,5 @@
 let Difficulty = {}
 
-const improvedMobs$CapabilityProvider = Java.loadClass("io.github.flemmli97.improvedmobs.forge.capability.CapabilityProvider")
-
 /**
  * 
  * @param {Internal.LocalPlayer} player

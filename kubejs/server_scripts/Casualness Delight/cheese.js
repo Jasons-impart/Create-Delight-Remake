@@ -1,6 +1,3 @@
-const $PieBlock = Java.loadClass("vectorwing.farmersdelight.common.block.PieBlock")
-const $CheeseWheelBlock = Java.loadClass("umpaz.brewinandchewin.common.block.CheeseWheelBlock")
-const $Integer = Java.loadClass("java.lang.Integer")
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "refurbished_furniture:cheese",

@@ -1,5 +1,3 @@
-const $Ingredients = Java.loadClass("net.minecraft.world.item.crafting.Ingredient")
-const $FluidStackJS = Java.loadClass("dev.latvian.mods.kubejs.fluid.FluidStackJS")
 ServerEvents.recipes(e => {
   e.forEachRecipe(
     [{ type: "vintageimprovements:centrifugation" }], recipe => {

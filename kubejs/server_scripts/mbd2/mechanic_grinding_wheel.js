@@ -13,12 +13,12 @@ MBDMachineEvents.onTick("createdelight:mechanic_grinding_wheel", e => {
     let output = machine.getTraitByName("item_output_slot").storage
     for (let index = 0; index < input.slots; index++) {
         let item = input.getStackInSlot(index)
-        let quality = $QualityUtils.getQuality(item)
+        let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         let ret = ItemTransferHelper.insertItemStacked(output, item, true)
         // console.log(ret)
         if (ret.is("air")) {
             if (quality.level() > 0) {
-                item.nbt.remove($QualityUtils.QUALITY_TAG)
+                item.nbt.remove(global.CDServerJavaClasses.$QualityUtils.QUALITY_TAG)
                 if (item.nbt.empty)
                     item.removeTag()
             }

@@ -1,6 +1,3 @@
-const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity")
-let MoneyUtil = global.MoneyUtil
-let Order = global.Order
 ItemEvents.tooltip(e => {
     e.addAdvancedToAll((item, advanced, text) => {
         let comp = Component.empty()
@@ -12,7 +9,7 @@ ItemEvents.tooltip(e => {
                 let type = tag.location().path.split("/")[1]
                 comp.append(Text.translate("tooltip.createdelight.order.entries." + type))
                     .append('-')
-                    .append(Text.translate("tooltip.createdelight.order.tier." + Order.getGoodsOrderProperty(item, type)))
+                    .append(Text.translate("tooltip.createdelight.order.tier." + global.Order.getGoodsOrderProperty(item, type)))
                     .append(' ')
                 added = true
             })
@@ -25,7 +22,7 @@ ItemEvents.tooltip(e => {
 
         let entries = info.entries
         let type = info.type
-        let customer = Order.customerProperties[type]
+        let customer = global.Order.customerProperties[type]
         let reward = customer.reward
         if (reward == null)
             reward = [`createdelight:orders/${info.type}`, 1]
@@ -36,7 +33,7 @@ ItemEvents.tooltip(e => {
         text.add(Text.translate("tooltip.createdelight.order.title",
             Text.translate("tooltip.createdelight.order.customer." + type)
         ))
-        text.add(Text.translate(`rarity.${customer.rarity.toLowerCase()}`).color($Rarity[customer.rarity.toUpperCase()].color))
+        text.add(Text.translate(`rarity.${customer.rarity.toLowerCase()}`).color(global.CDClientJavaClasses.$Rarity[customer.rarity.toUpperCase()].color))
         // 空行
         text.add("")
 
@@ -44,7 +41,7 @@ ItemEvents.tooltip(e => {
         text.add(Text.translate("tooltip.createdelight.order.require.title"))
         if (e.shift)
             entries.forEach(value => {
-                let good = Order.orderProperties[value.id]
+                let good = global.Order.orderProperties[value.id]
                 text.add(Text.translate(
                     "tooltip.createdelight.order.require.entry_shift",
                     Text.translate("tooltip.createdelight.order.entries." + value.id),
@@ -73,7 +70,7 @@ ItemEvents.tooltip(e => {
             rewardAmount.toFixed(),
             Text.translate("tooltip.createdelight.order.reward." + rewardType.split(":")[1])
         ))
-        text.add(Component.of("  ").append(MoneyUtil.convertBaseValueToString(Order.calculateMoneyReward(info) * customer.reward_money)))
+        text.add(Component.of("  ").append(global.MoneyUtil.convertBaseValueToString(global.Order.calculateMoneyReward(info) * customer.reward_money)))
     })
 
 

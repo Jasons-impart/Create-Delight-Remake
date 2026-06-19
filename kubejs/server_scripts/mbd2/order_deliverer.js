@@ -1,11 +1,6 @@
 
-const $TableClothBlockEntity = Java.loadClass("com.simibubi.create.content.logistics.tableCloth.TableClothBlockEntity")
-const $PackageEntity = Java.loadClass("com.simibubi.create.content.logistics.box.PackageEntity")
-let Order = global.Order
-let MoneyUtil = global.MoneyUtil
-
-function buildOrderRewardPackages(level, orderInfo, qualityScore) {
-    let customer = Order.customerProperties[orderInfo.type]
+function buildOrderRewardBundles(level, orderInfo, qualityScore) {
+    let customer = global.Order.customerProperties[orderInfo.type]
     let reward = customer.reward
     if (reward == null)
         reward = [`createdelight:orders/${orderInfo.type}`, 1]
@@ -18,27 +13,27 @@ function buildOrderRewardPackages(level, orderInfo, qualityScore) {
         })
     }
 
-    let money = Order.calculateMoneyReward(orderInfo) * qualityScore * customer.reward_money
-    MoneyUtil.convertBaseValueToItems(money).forEach(item => {
+    let money = global.Order.calculateMoneyReward(orderInfo) * qualityScore * customer.reward_money
+    global.MoneyUtil.convertBaseValueToItems(money).forEach(item => {
         list.add(item)
     })
 
-    let rewardPackages = []
+    let rewardBundles = []
     for (let i = 0; i < list.length; i += 9) {
-        rewardPackages.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length))))
+        rewardBundles.push(global.CDServerJavaClasses.$PackageItem.containing(list.subList(i, Math.min(i + 9, list.length))))
     }
-    return rewardPackages
+    return rewardBundles
 }
 
-function placeRewardPackages(level, pos, direction, start, rewardPackages) {
+function placeRewardBundles(level, pos, direction, start, rewardBundles) {
     /**@type {Internal.TableClothBlockEntity} */
     let startBe = level.getBlockEntity(pos[direction](start), "create:table_cloth").get()
-    if (rewardPackages.length == 0)
+    if (rewardBundles.length == 0)
         return
-    for (let index = 0; index < rewardPackages.length; index++) {
-        let element = rewardPackages[index]
+    for (let index = 0; index < rewardBundles.length; index++) {
+        let element = rewardBundles[index]
         if (startBe.manuallyAddedItems.size() == 4) {
-            $PackageEntity.fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
+            global.CDServerJavaClasses.$PackageEntity.fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
         } else {
             startBe.manuallyAddedItems.push(element)
             startBe.notifyUpdate()
@@ -56,7 +51,7 @@ function clearOrderSegment(level, pos, direction, start, end) {
 }
 
 function notifyOrderReputation(level, orderInfo, qualityScore) {
-    let result = Order.reputation.awardForOrder(level, orderInfo, qualityScore)
+    let result = global.Order.reputation.awardForOrder(level, orderInfo, qualityScore)
     if (result == null)
         return
     result.player.tell(Component.translate("message.createdelight.order_reputation_gain", result.gain, result.value, result.level))
@@ -69,14 +64,14 @@ function settleOrderSegment(level, pos, direction, start, end, orderStack, packa
         return false
 
     let orderInfo = orderStack.nbt.createdelightOrderInfo
-    let nums = Order.checkAllPackages([orderInfo], packages)
+    let nums = global.Order.checkAllPackages([orderInfo], packages)
     let qualityScore = nums[0]
     if (qualityScore <= 0)
         return false
 
-    let rewardPackages = buildOrderRewardPackages(level, orderInfo, qualityScore)
+    let rewardBundles = buildOrderRewardBundles(level, orderInfo, qualityScore)
     clearOrderSegment(level, pos, direction, start, end)
-    placeRewardPackages(level, pos, direction, start, rewardPackages)
+    placeRewardBundles(level, pos, direction, start, rewardBundles)
     notifyOrderReputation(level, orderInfo, qualityScore)
     return true
 }
@@ -163,7 +158,7 @@ MBDMachineEvents.onTick("createdelight:order_deliverer", e => {
             //     if (element > 0) {
             //         // console.log(`index: ${index}, element: ${element}`)
             //         storage.extractItem(index, 1, false)
-            //         let reward = Order.getRewardContract(Order.customerProperties[orders[index].type].reward, element * 5)
+            //         let reward = global.Order.getRewardContract(global.Order.customerProperties[orders[index].type].reward, element * 5)
             //         ItemTransferHelper.insertItemStacked(outputStorage, reward, false)
             //     }
             // }

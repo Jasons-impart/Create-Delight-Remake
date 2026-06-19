@@ -5,7 +5,7 @@ Ponder.registry(event => {
             "AE的自动合成系统",
             "createdelight:ponder_ae_crafting_system",
         (builder, util) => {
-            let scene = new $CreateSceneBuilder(builder)
+            let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([2, 1, 1, 2, 1, 3], Direction.DOWN)

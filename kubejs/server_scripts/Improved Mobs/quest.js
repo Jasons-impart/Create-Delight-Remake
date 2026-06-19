@@ -1,9 +1,5 @@
 //想用任务增加难度系数的，在奖励里加一个自定义，然后加上标签：rank_small / rank_medium / rank_large / rank_massive / rank_enormous
 
-const $CrossPlatformStuff = Java.loadClass("io.github.flemmli97.improvedmobs.platform.CrossPlatformStuff")
-const $Quest = Java.loadClass("dev.ftb.mods.ftbquests.quest.Quest")
-const $ProgressChange = Java.loadClass("dev.ftb.mods.ftbquests.util.ProgressChange")
-
 const rankValueMap = {
     "small": 1,
     "medium": 3,
@@ -40,7 +36,7 @@ function getProgressBar(rawValue) {
  */
 function UpdateRank(player, value, source) {
     value = parseInt(value)
-    let diffData = $CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
+    let diffData = global.CDServerJavaClasses.$CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
     if (!diffData || player.persistentData.getBoolean("disableRankChange"))
         return
     value = (Difficulty.getPlayerRawValue(player) + value) < 0 ? -Difficulty.getPlayerRawValue(player) : value

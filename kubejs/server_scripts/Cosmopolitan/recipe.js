@@ -27,7 +27,7 @@ ServerEvents.recipes(e => {
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
     /**
-     * 
+     *
      * @param {Internal.RecipesEventJS} e
      * @param {Internal.ItemStack_} ice_cream_bowl
      * @param {Internal.ItemStack_} ice_cream_sandwich
@@ -88,7 +88,7 @@ ServerEvents.recipes(e => {
             ).id(`createdelight:shapeless/${ice_cream_sandwich.split(":")[1]}_from_bowl`).replaceIngredient(ice_cream_bowl, "minecraft:bowl")
     }
 
-    make_mixed_ice_cream(e, "cosmopolitan:classic_ice_cream", "cosmopolitan:classic_ice_cream_sandwich", 
+    make_mixed_ice_cream(e, "cosmopolitan:classic_ice_cream", "cosmopolitan:classic_ice_cream_sandwich",
         "createdelightcore:glow_berry_ice_cream_scoop", "createdelightcore:apple_ice_cream_scoop", "createdelightcore:carrot_ice_cream_scoop")
     make_mixed_ice_cream(e, "cosmopolitan:seasonal_ice_cream", 'cosmopolitan:seasonal_ice_cream_sandwich',
         "alexscaves:sweetberry_ice_cream_scoop", "createdelightcore:pumpkin_ice_cream_scoop", "createdelightcore:beetroot_ice_cream_scoop")

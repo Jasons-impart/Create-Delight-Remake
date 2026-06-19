@@ -14,7 +14,7 @@ ServerEvents.tags("minecraft:item", e => {
     ])
 })
 ServerEvents.tags("minecraft:block", e => {
-    e.add("minecraft:mineable/shovel", 
+    e.add("minecraft:mineable/shovel",
         "collectorsreap:lucuma_ice_cream_block"
     )
 })

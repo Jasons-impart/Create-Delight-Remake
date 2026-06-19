@@ -1,9 +1,3 @@
-const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")
-const $TraderData = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderData")
-const $ItemTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.item.tradedata.ItemTradeData")
-const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
-const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
-
 let TradeUtil = {}
 /**
  * 
@@ -36,7 +30,7 @@ TradeUtil.addVillageTradeIndex = function (e, villager, trades, index) {
  * @returns {Internal.TraderAPIImpl}
  */
 TradeUtil.getTradeAPI = function () {
-    return $TraderAPI.getApi()
+    return global.CDServerJavaClasses.$TraderAPI.getApi()
 }
 
 ItemEvents.rightClicked("minecraft:stick", e => {

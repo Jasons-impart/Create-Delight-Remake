@@ -242,6 +242,13 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: The mechanical craft encoder quest depended on the molecular assembler quest even though the encoder only needs earlier mechanical crafting progression.
 - **Fix/Lesson**: When editing FTB Quest dependencies, compare each dependency ID against the item's real recipe path so optional downstream machines do not gate unrelated tools.
 
+## KubeJS Java class governance needs explicit facade reads
+
+**Date**: 2026-06-19
+
+- **Problem**: Java-reference scans catch literal `Packages\.` substrings such as `rewardPackages`, and `order_deliverer.js` used `$PackageItem` through a cross-file top-level leak.
+- **Fix/Lesson**: Keep Java classes in `00_java_classes.js` facades, read needed classes explicitly in each script, and avoid `Packages` in KubeJS variable/function names used near governance scans.
+
 ## Moonlight soft fluid conversion must preserve original Forge fluid IDs
 
 **Date**: 2026-06-19

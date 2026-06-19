@@ -1,8 +1,7 @@
 //根据难度增加怪物掉落
-let difficultyLoots = global.difficultyLoots
 LootJS.modifiers(e => {
-    for (const key in difficultyLoots) {
-        let element = difficultyLoots[key]
+    for (const key in global.difficultyLoots) {
+        let element = global.difficultyLoots[key]
         element.forEach(val => {
             e.addEntityLootModifier(val.entity)
             .playerPredicate(player => Difficulty.getPlayerTier(player) >= val.tier)
@@ -25,4 +24,3 @@ EntityEvents.drops(e => {
         e.addDrop(item)
     })
 })
-

@@ -1,8 +1,4 @@
 // priority: 100
-const probejs$$RecipeSchema = Java.loadClass("dev.latvian.mods.kubejs.recipe.schema.RecipeSchema")
-const probejs$$RecipeComponentBuilder = Java.loadClass("dev.latvian.mods.kubejs.recipe.component.RecipeComponentBuilder")
-const probejs$$RegistryInfo = Java.loadClass("dev.latvian.mods.kubejs.registry.RegistryInfo")
-
 /**
  * @type {Schema[]}
  */
@@ -38,7 +34,7 @@ ComplexKey.prototype = {
 	 * @returns {Internal.RecipeComponentBuilder}
 	 */
 	build(map) {
-		let builder = new probejs$$RecipeComponentBuilder(this.keys.length)
+		let builder = new global.CDStartupJavaClasses.probejs$$RecipeComponentBuilder(this.keys.length)
 		for (let key of this.keys) {
 			let component = map.get(key[1])().key(key[0])
 			if (key[2] !== undefined) {
@@ -105,7 +101,7 @@ Schema.prototype = {
 	 */
 	register(event) {
 		// In case if the recipe serializer is not loaded, skip the registration
-		let serializers = probejs$$RegistryInfo.RECIPE_SERIALIZER.vanillaRegistry.keySet().map(v => v.toString())
+		let serializers = global.CDStartupJavaClasses.probejs$$RegistryInfo.RECIPE_SERIALIZER.vanillaRegistry.keySet().map(v => v.toString())
 		if (serializers.indexOf(this.recipeId) === -1) return
 		const keys = []
 		const components = event.components
@@ -123,11 +119,11 @@ Schema.prototype = {
 				key[2](complex)
 				component = complex.build(components)
 			} else {
-				component = key[0](components, probejs$$RecipeComponentBuilder)
+				component = key[0](components, global.CDStartupJavaClasses.probejs$$RecipeComponentBuilder)
 			}
 			keys.push(component)
 		}
-		event.register(this.recipeId, new probejs$$RecipeSchema(keys))
+		event.register(this.recipeId, new global.CDStartupJavaClasses.probejs$$RecipeSchema(keys))
 	}
 }
 
