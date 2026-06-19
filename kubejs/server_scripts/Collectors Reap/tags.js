@@ -13,3 +13,8 @@ ServerEvents.tags("minecraft:item", e => {
         'collectorsreap:panettone_slice',
     ])
 })
+ServerEvents.tags("minecraft:block", e => {
+    e.add("minecraft:mineable/shovel",
+        "collectorsreap:lucuma_ice_cream_block"
+    )
+})

@@ -249,3 +249,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Java-reference scans catch literal `Packages\.` substrings such as `rewardPackages`, and `order_deliverer.js` used `$PackageItem` through a cross-file top-level leak.
 - **Fix/Lesson**: Keep Java classes in `00_java_classes.js` facades, read needed classes explicitly in each script, and avoid `Packages` in KubeJS variable/function names used near governance scans.
 
+## Moonlight soft fluid conversion must preserve original Forge fluid IDs
+
+**Date**: 2026-06-19
+
+- **Problem**: Supplementaries faucets convert Forge `FluidStack`s through Moonlight `SoftFluidStack`; tag-equivalent fluids such as `createdelight:soya_milk` in `#forge:milk` can round-trip back as the soft fluid default `minecraft:milk`.
+- **Fix/Lesson**: CDC preserves the original Forge fluid id in the soft stack tag during Moonlight Forge conversion and restores it when converting back, because soft fluid `equivalent_fluids` mappings are many-to-one.
+

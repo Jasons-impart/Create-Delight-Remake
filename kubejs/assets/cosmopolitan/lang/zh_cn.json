@@ -3,5 +3,11 @@
   "item.cosmopolitan.cut_potatoes": "土豆块",
   "item.cosmopolitan.mashed_potato": "土豆泥",
   "item.cosmopolitan.mashed_potato_cone": "土豆泥筒",
-  "item.cosmopolitan.potato_pancakes": "炸土豆饼"
+  "item.cosmopolitan.potato_pancakes": "炸土豆饼",
+  "block.cosmopolitan.chiseled_vanilla_ice_cream_block": "雕纹香草味冰淇淋砖",
+  "block.cosmopolitan.chiseled_chocolate_ice_cream_block": "雕纹巧克力味冰淇淋砖",
+  "block.cosmopolitan.chiseled_strawberry_ice_cream_block": "雕纹草莓味冰淇淋砖",
+  "block.cosmopolitan.chiseled_adzuki_ice_cream_block": "雕纹红豆味冰淇淋砖",
+  "block.cosmopolitan.chiseled_banana_ice_cream_block": "雕纹香蕉味冰淇淋砖",
+  "block.cosmopolitan.chiseled_mint_ice_cream_block": "雕纹薄荷味冰淇淋砖"
 }

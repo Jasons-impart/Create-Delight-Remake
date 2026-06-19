@@ -528,7 +528,7 @@ ServerEvents.tags("minecraft:item", e => {
 
     )
     e.add("createdelight:order/fruit",
-        "forge:fruits/grape",
+        "#forge:fruits/grape",
         "minecraft:glow_berries",
         "minecraft:sweet_berries",
         "minecraft:apple",
@@ -560,10 +560,9 @@ ServerEvents.tags("minecraft:item", e => {
         "fruitsdelight:lemon_slice",
         "fruitsdelight:baked_pear",
         "fruitsdelight:dried_persimmon",
-        "neapolitan:strawberries",
+        "#forge:fruits/strawberry",
         "neapolitan:dried_banana",
         "neapolitan:banana",
-        "neapolitan:white_strawberries",
         "collectorsreap:lime_slice",
         "youkaishomecoming:black_grape",
         "youkaishomecoming:red_grape",
@@ -775,7 +774,7 @@ ServerEvents.tags("minecraft:item", e => {
         "#createdelight:order/fast_food",
         "#createdelight:order/cookie",
         "#createdelight:order/sandwich",
-        "createdelight:order/fried_food",
+        "#createdelight:order/fried_food",
         "#createdelight:order/bread"
     )
     e.add("createdelight:order/dessert",
