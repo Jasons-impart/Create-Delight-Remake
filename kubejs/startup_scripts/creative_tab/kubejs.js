@@ -219,7 +219,6 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:lubricating_oil_bucket',
         'createdelight:carbon_dust',
         'createdelight:carbon_plate',
-        'createdelight:incomplete_neapolitan_ice_cream',
         'createdelight:wrapped_fries_ghasta',
         'createdelight:enchanted_golden_lantern_fruit',
         'createdelight:enchanted_golden_carrot',
