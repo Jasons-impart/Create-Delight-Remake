@@ -6,7 +6,7 @@ MBDMachineEvents.onPlaced("createdelight:fission_reactor_controller", e => {
     machine.customData.putInt("state", 0)
   }
   if (!machine.customData.getInt("last_signal")) {
-    let facing = machine.level.getBlockState(machine.pos).getValue(global.CDServerJavaClasses["$BlockStateProperties"].HORIZONTAL_FACING)
+    let facing = machine.level.getBlockState(machine.pos).getValue(global.CDServerJavaClasses.$BlockStateProperties.HORIZONTAL_FACING)
     let blockPos = machine.pos.relative(facing)
     let blcokState = machine.level.getBlockState(blockPos)
     machine.customData.putInt("last_signal", blcokState.getSignal(machine.level, blockPos, facing))
@@ -66,7 +66,7 @@ MBDMachineEvents.onTick("createdelight:fission_reactor_controller", e => {
   switch(state) {
     case 1 : {
       ReactorUtil.outputSignal(machine, 0)
-      let facing = machine.level.getBlockState(machine.pos).getValue(global.CDServerJavaClasses["$BlockStateProperties"].HORIZONTAL_FACING)
+      let facing = machine.level.getBlockState(machine.pos).getValue(global.CDServerJavaClasses.$BlockStateProperties.HORIZONTAL_FACING)
       let blockPos = machine.pos.relative(facing)
       let blockState = machine.level.getBlockState(blockPos)
       let currentSignal = blockState.getSignal(machine.level, blockPos, facing)

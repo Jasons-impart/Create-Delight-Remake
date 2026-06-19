@@ -6,10 +6,10 @@ ItemEvents.rightClicked("createdelight:quality_absorber", e => {
     let items = player.getCapability(ForgeCapabilities.ITEM_HANDLER).orElse(null)
     let amount = 0
     items.allItems.forEach(item => {
-        let quality = global.CDServerJavaClasses["$QualityUtils"].getQuality(item)
+        let quality = global.CDServerJavaClasses.$QualityUtils.getQuality(item)
         if (quality.level() > 0) {
             amount += Math.pow(2, quality.level() - 1) * item.count
-            item.nbt.remove(global.CDServerJavaClasses["$QualityUtils"].QUALITY_TAG)
+            item.nbt.remove(global.CDServerJavaClasses.$QualityUtils.QUALITY_TAG)
             if (item.nbt.empty)
                 item.removeTag()
         }

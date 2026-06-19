@@ -5,5 +5,5 @@ let SOLUtil = {}
  * @returns {number}
  */
 SOLUtil.getFoodDiversity = function(player) {
-    return global.CDServerJavaClasses["$FoodList"].get(player).foodDiversity()
+    return global.CDServerJavaClasses.$FoodList.get(player).foodDiversity()
 }

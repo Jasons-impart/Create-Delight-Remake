@@ -8,7 +8,7 @@ PlayerEvents.tick(e => {
             /**@type {Internal.Stream<Internal.TagKey<Internal.Item>>} */
             let tags = block.item.getTags()
             if (!tags.anyMatch(tag => tag.location().toString().startsWith("eclipticseasons"))) return
-            let chance = global.CDServerJavaClasses["$GrowthDetectorItem"].getGrowChance(level, pos, block.blockState)
+            let chance = global.CDServerJavaClasses.$GrowthDetectorItem.getGrowChance(level, pos, block.blockState)
             let r, g
 
             if (chance <= 0.5) {

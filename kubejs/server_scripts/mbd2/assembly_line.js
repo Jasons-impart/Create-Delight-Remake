@@ -107,7 +107,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
                     changed = true
                 }
                 if (ingr.size() == 2) {
-                    if (pRecipe instanceof global.CDServerJavaClasses["$ItemApplicationRecipe"]) {
+                    if (pRecipe instanceof global.CDServerJavaClasses.$ItemApplicationRecipe) {
                         /**@type {Internal.ItemApplicationRecipe} */
                         let appRecipe = pRecipe
                         if (appRecipe.shouldKeepHeldItem())

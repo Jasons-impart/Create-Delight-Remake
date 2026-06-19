@@ -5,7 +5,7 @@ let CuriosUtil = {}
  * @returns {Internal.LazyOptional<Internal.ICuriosItemHandler>}
  */
 CuriosUtil.getCuriosInventory = function(entity) {
-    return global.CDServerJavaClasses["$CuriosApi"].getCuriosInventory(entity)
+    return global.CDServerJavaClasses.$CuriosApi.getCuriosInventory(entity)
 }
 /**
  * 

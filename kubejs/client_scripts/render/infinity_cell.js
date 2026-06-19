@@ -7,14 +7,14 @@ RenderJSEvents.RegisterItemDecorations(e => {
         c.pushPose()
         c.translate(c.xOffset + 8, c.yOffset + 7, 10)
         c.scale(0.65, 0.65)
-        global.CDClientJavaClasses["$Lighting"].setupForFlatItems()
+        global.CDClientJavaClasses.$Lighting.setupForFlatItems()
         if (type == "ae2:i") {
             c.renderGuiItem(Item.of(id), 0, 0)
         }
         else if (type == "ae2:f") {
             c.renderGuiItem(Fluid.of(id).fluid.bucket.defaultInstance, 0, 0)
         }
-        global.CDClientJavaClasses["$Lighting"].setupFor3DItems()
+        global.CDClientJavaClasses.$Lighting.setupFor3DItems()
         c.popPose()
     })
 })

@@ -5,12 +5,12 @@ NetworkEvents.dataReceived("kubejs_player_playsound", e => {
 
 NetworkEvents.dataReceived("spawn_create_particle", e => {
     const { fluid, x, y, z, vx, vy, vz, count, speed } = e.data
-    let particle = global.CDClientJavaClasses["$FluidFX"].getFluidParticle(Fluid.of(fluid).fluidStack)
+    let particle = global.CDClientJavaClasses.$FluidFX.getFluidParticle(Fluid.of(fluid).fluidStack)
     e.player.level.spawnParticles(particle, true, x, y, z, vx, vy, vz, count, speed)
 })
 
 NetworkEvents.dataReceived("openholo", e => {
-    let gui = global.CDClientJavaClasses["$HoloGui"].getInstance()
+    let gui = global.CDClientJavaClasses.$HoloGui.getInstance()
     Client.setScreen(gui)
     gui.onShow()
 })

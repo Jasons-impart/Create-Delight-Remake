@@ -6,18 +6,18 @@ PlayerEvents.tick(e => {
     const { player, level } = e
     if (level.time % 120 != 0)
         return
-    if (global.CDServerJavaClasses["$IGun"].mainhandHoldGun(player)) {
+    if (global.CDServerJavaClasses.$IGun.mainhandHoldGun(player)) {
         let gun = player.mainHandItem
-        let iGun = global.CDServerJavaClasses["$IGun"].getIGunOrNull(gun)
+        let iGun = global.CDServerJavaClasses.$IGun.getIGunOrNull(gun)
         let id = iGun.getGunId(gun)
         if (id == "applied_armorer:moritz_mg_emg_prototype" || id == "applied_armorer:moritz_mg_hmg22") {
-            let index = global.CDServerJavaClasses["$TimelessAPI"].getCommonGunIndex(id)
+            let index = global.CDServerJavaClasses.$TimelessAPI.getCommonGunIndex(id)
             if (index.present) {
-                let maxAmmo = global.CDServerJavaClasses["$AttachmentDataUtils"].getAmmoCountWithAttachment(gun, index.get().gunData)
+                let maxAmmo = global.CDServerJavaClasses.$AttachmentDataUtils.getAmmoCountWithAttachment(gun, index.get().gunData)
                 let multipler = index.get().gunData.getAmmoAmount() / maxAmmo * 4
                 let neededEnergy = (maxAmmo - iGun.getCurrentAmmoCount(gun)) * 4000 * multipler
                 let neededEnergyCopy = neededEnergy
-                let items = player.inventory.allItems.filter(item => item.item instanceof global.CDServerJavaClasses["$EnergyCellBlockItem"])
+                let items = player.inventory.allItems.filter(item => item.item instanceof global.CDServerJavaClasses.$EnergyCellBlockItem)
                 items.sort((a, b) => {
                         /**@type {Internal.EnergyCellBlockItem} */
                         let item = a.item

@@ -5,7 +5,7 @@ let SeasonUtil = {}
  * @returns 
  */
 SeasonUtil.getSaveData = function(level) {
-    return global.CDServerJavaClasses["$SolarHolder"].getSaveData(level)
+    return global.CDServerJavaClasses.$SolarHolder.getSaveData(level)
 }
 /**
  * 
@@ -14,7 +14,7 @@ SeasonUtil.getSaveData = function(level) {
  * @param {number} remainTime 存续时间
  */
 SeasonUtil.createHumidityControlProvider = function(level, range, remainTime) {
-    return new global.CDServerJavaClasses["$HumidityControlProvider"](level, range, remainTime)
+    return new global.CDServerJavaClasses.$HumidityControlProvider(level, range, remainTime)
 }
 
 /**

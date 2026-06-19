@@ -4,7 +4,7 @@ PlayerEvents.tick(e => {
         if (player == null)
             return
         let item = player.mainHandItem
-        if (item.item instanceof global.CDServerJavaClasses["$ModularItem"]) {
+        if (item.item instanceof global.CDServerJavaClasses.$ModularItem) {
             if (TetraUtil.itemHasEffect(item, "createdelight:irradiation")) {
                 let level = TetraUtil.getEffectLevel(item, "createdelight:irradiation")
                 let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:irradiation")

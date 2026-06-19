@@ -67,12 +67,12 @@ function getGreenhouseMaterialSlot(machine) {
 function getAdjacentItemHandlers(machine) {
     let handlers = []
     let adjacentDirections = [
-        global.CDServerJavaClasses["$Direction"].NORTH,
-        global.CDServerJavaClasses["$Direction"].SOUTH,
-        global.CDServerJavaClasses["$Direction"].WEST,
-        global.CDServerJavaClasses["$Direction"].EAST,
-        global.CDServerJavaClasses["$Direction"].UP,
-        global.CDServerJavaClasses["$Direction"].DOWN
+        global.CDServerJavaClasses.$Direction.NORTH,
+        global.CDServerJavaClasses.$Direction.SOUTH,
+        global.CDServerJavaClasses.$Direction.WEST,
+        global.CDServerJavaClasses.$Direction.EAST,
+        global.CDServerJavaClasses.$Direction.UP,
+        global.CDServerJavaClasses.$Direction.DOWN
     ]
 
     adjacentDirections.forEach(direction => {
@@ -203,7 +203,7 @@ function buildGreenhouse(machine, player, length, width, height) {
         tellGreenhouse(player, Component.translate("message.createdelight.greenhouse_builder.no_material"))
         return
     }
-    if (!(sampleStack.item instanceof global.CDServerJavaClasses["$BlockItem"])) {
+    if (!(sampleStack.item instanceof global.CDServerJavaClasses.$BlockItem)) {
         tellGreenhouse(player, Component.translate("message.createdelight.greenhouse_builder.invalid_material"))
         return
     }

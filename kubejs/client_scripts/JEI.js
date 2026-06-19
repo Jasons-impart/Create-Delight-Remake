@@ -5,7 +5,7 @@ const forcedJeiItems = [
 // Create Connected 给该触媒加了兼容模组条件，进入世界后刷新可见性时会把它判成 disabled。
 // 当前整合包并没有这些兼容模组，直接移除条件即可避免 JEI 和创造搜索被再次过滤。
 forcedJeiItems.forEach(id => {
-  global.CDClientJavaClasses["$FeatureToggle"].FEATURE_CONDITIONS.remove(new global.CDClientJavaClasses["$ResourceLocation"](id))
+  global.CDClientJavaClasses.$FeatureToggle.FEATURE_CONDITIONS.remove(new global.CDClientJavaClasses.$ResourceLocation(id))
 })
 
 JEIEvents.addItems(e => {

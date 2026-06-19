@@ -30,7 +30,7 @@ TradeUtil.addVillageTradeIndex = function (e, villager, trades, index) {
  * @returns {Internal.TraderAPIImpl}
  */
 TradeUtil.getTradeAPI = function () {
-    return global.CDServerJavaClasses["$TraderAPI"].getApi()
+    return global.CDServerJavaClasses.$TraderAPI.getApi()
 }
 
 ItemEvents.rightClicked("minecraft:stick", e => {

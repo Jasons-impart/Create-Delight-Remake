@@ -12,7 +12,7 @@ function unlockTraderTrade(e, id, item) {
     let player = e.player
     trader.tradeData.forEach(tradeData => {
         tradeData.rules.forEach(rule => {
-            if (rule instanceof global.CDServerJavaClasses["$PlayerListing"]) {
+            if (rule instanceof global.CDServerJavaClasses.$PlayerListing) {
                 /**
                  * @type {Internal.PlayerListing}
                  */
@@ -61,13 +61,13 @@ let res_list = [
 tech_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
         unlockTraderTrade(e, 7, v[1])
-        global.CDServerJavaClasses["$TraderDataCache"].TYPE.get(false).reloadPersistentTraders()
+        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })
 
 res_list.forEach(v => {
     FTBQuestsEvents.completed(v[0], e => {
         unlockTraderTrade(e, 10, v[1])
-        global.CDServerJavaClasses["$TraderDataCache"].TYPE.get(false).reloadPersistentTraders()
+        global.CDServerJavaClasses.$TraderDataCache.TYPE.get(false).reloadPersistentTraders()
     })
 })

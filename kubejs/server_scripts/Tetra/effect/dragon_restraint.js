@@ -8,7 +8,7 @@ global.TetraDragonRestraintEvent = function (e) {
         return
     let item = player.mainHandItem
 
-    if (item.item instanceof global.CDServerJavaClasses["$ModularItem"]) {
+    if (item.item instanceof global.CDServerJavaClasses.$ModularItem) {
         ["ice", "fire", "lightning"].forEach(dragonType => {
             if (TetraUtil.itemHasEffect(item, `createdelight:${dragonType}_dragon_restraint`)) {
                 let level = TetraUtil.getEffectLevel(item, `createdelight:${dragonType}_dragon_restraint`)

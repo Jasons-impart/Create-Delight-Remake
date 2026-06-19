@@ -12,7 +12,7 @@ let PonderUtil = {}
 PonderUtil.spawnItemParticles = function(scene, position, vec3d, item, count, age) {
     scene.effects.emitParticles(
         position,
-        scene.effects.particleEmitterWithinBlockSpace(new global.CDClientJavaClasses["$ItemParticleOption"](global.CDClientJavaClasses["$ParticleTypes"].ITEM, item), vec3d), count, age)
+        scene.effects.particleEmitterWithinBlockSpace(new global.CDClientJavaClasses.$ItemParticleOption(global.CDClientJavaClasses.$ParticleTypes.ITEM, item), vec3d), count, age)
 }
 /**
  * 

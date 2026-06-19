@@ -36,7 +36,7 @@ function getProgressBar(rawValue) {
  */
 function UpdateRank(player, value, source) {
     value = parseInt(value)
-    let diffData = global.CDServerJavaClasses["$CrossPlatformStuff"].INSTANCE.getPlayerDifficultyData(player).get()
+    let diffData = global.CDServerJavaClasses.$CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get()
     if (!diffData || player.persistentData.getBoolean("disableRankChange"))
         return
     value = (Difficulty.getPlayerRawValue(player) + value) < 0 ? -Difficulty.getPlayerRawValue(player) : value

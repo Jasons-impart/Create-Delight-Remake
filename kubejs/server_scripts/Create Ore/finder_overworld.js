@@ -8,7 +8,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
     let excludedVein = []
     player.inventory.allItems.forEach(item => {
         if (item.id == "createoreexcavation:vein_atlas" && item.nbt != null) {
-            let exclude = item.nbt[global.CDServerJavaClasses["$OreVeinAtlasItem"].EXCLUDE]
+            let exclude = item.nbt[global.CDServerJavaClasses.$OreVeinAtlasItem.EXCLUDE]
             // console.log(exclude)
             exclude.forEach(tag => {
                 excludedVein.push(tag.getAsString())
@@ -17,7 +17,7 @@ ItemEvents.rightClicked("createdelight:prospector", e => {
     })
     // console.log(excludedVein.toLocaleString())
     let blockPosition = player.blockPosition()
-    let {first : pos, second : info} = global.CDServerJavaClasses["$OreVeinGenerator"].getPicker(level).locate(
+    let {first : pos, second : info} = global.CDServerJavaClasses.$OreVeinGenerator.getPicker(level).locate(
         blockPosition,
         level,
         MAX_SEARCH_DIST_IN_BLOCK,

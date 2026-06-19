@@ -21,10 +21,10 @@ BlockEvents.rightClicked("create:belt", event => {
 
         let block = event.block
         let BlockStates = block.blockState
-        let part = BlockStates.getValue(global.CDServerJavaClasses["$BeltBlock"].PART).toString()
+        let part = BlockStates.getValue(global.CDServerJavaClasses.$BeltBlock.PART).toString()
 
-        let HorizontalFacing = BlockStates.getValue(global.CDServerJavaClasses["$BeltBlock"].HORIZONTAL_FACING).toString()
-        let Slope = BlockStates.getValue(global.CDServerJavaClasses["$BeltBlock"].SLOPE).toString()
+        let HorizontalFacing = BlockStates.getValue(global.CDServerJavaClasses.$BeltBlock.HORIZONTAL_FACING).toString()
+        let Slope = BlockStates.getValue(global.CDServerJavaClasses.$BeltBlock.SLOPE).toString()
         let YAxis = false//水平传送带还是斜传送带
         let YBelt = false//是否是垂直传送带
         let toEndblock = block
@@ -82,13 +82,13 @@ BlockEvents.rightClicked("create:belt", event => {
                 toEndPos[2] += toEndVec[2]
                 toEndblock = block.offset(toEndPos[0], toEndPos[1], toEndPos[2])
                 if (toEndblock.id != 'create:belt') { break }
-                if (toEndblock.entity instanceof global.CDServerJavaClasses["$BeltBlockEntity"]) {
+                if (toEndblock.entity instanceof global.CDServerJavaClasses.$BeltBlockEntity) {
                     toEndblock.entity.setCasingType(beltCasingType[event.item.id])
                 }
 
 
                 //是否继续
-                if (toEndBlockStates.getValue(global.CDServerJavaClasses["$BeltBlock"].PART).toString() == 'END') {
+                if (toEndBlockStates.getValue(global.CDServerJavaClasses.$BeltBlock.PART).toString() == 'END') {
                     break
                 }
             }
@@ -101,11 +101,11 @@ BlockEvents.rightClicked("create:belt", event => {
                 toStartPos[2] += toStartVec[2]
                 toStartblock = block.offset(toStartPos[0], toStartPos[1], toStartPos[2])
                 if (toStartblock.id != 'create:belt') { break }
-                if (toStartblock.entity instanceof global.CDServerJavaClasses["$BeltBlockEntity"]) {
+                if (toStartblock.entity instanceof global.CDServerJavaClasses.$BeltBlockEntity) {
                     toStartblock.entity.setCasingType(beltCasingType[event.item.id])
                 }
                 //是否继续
-                if (toStartBlockStates.getValue(global.CDServerJavaClasses["$BeltBlock"].PART).toString() == 'START') {
+                if (toStartBlockStates.getValue(global.CDServerJavaClasses.$BeltBlock.PART).toString() == 'START') {
                     break
                 }
             }
@@ -123,7 +123,7 @@ BlockEvents.rightClicked("create:shaft", event => {
 
         let block = event.block
         let BlockStates = block.blockState
-        let Axis = BlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString()
+        let Axis = BlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString()
 
         let toEndblock = block
         let toEndBlockStates = 0
@@ -157,7 +157,7 @@ BlockEvents.rightClicked("create:shaft", event => {
                 break
             }
             toEndBlockStates = toEndblock.blockState
-            if (toEndBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) {
+            if (toEndBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) {
                 break
             }
             event.level.runCommandSilent(`/setblock ${toEndblock.pos.x} ${toEndblock.pos.y} ${toEndblock.pos.z} ${shaftCasingType[event.item.id]}[axis=${Axis.toLowerCase()}]`)
@@ -171,7 +171,7 @@ BlockEvents.rightClicked("create:shaft", event => {
             toStartblock = block.offset(toStartPos[0], toStartPos[1], toStartPos[2])
             if (toStartblock.id != 'create:shaft' && toStartblock.id != shaftCasingType[event.item.id]) { break }
             toStartBlockStates = toStartblock.blockState
-            if (toStartBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) { break }
+            if (toStartBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) { break }
             event.level.runCommandSilent(`/setblock ${toStartblock.pos.x} ${toStartblock.pos.y} ${toStartblock.pos.z} ${shaftCasingType[event.item.id]}[axis=${Axis.toLowerCase()}]`)
         }
 
@@ -188,7 +188,7 @@ BlockEvents.rightClicked("create:brass_encased_shaft", event => {
 
     let block = event.block
     let BlockStates = block.blockState
-    let Axis = BlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString()
+    let Axis = BlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString()
 
     let toEndblock = block
     let toEndBlockStates = 0
@@ -222,7 +222,7 @@ BlockEvents.rightClicked("create:brass_encased_shaft", event => {
             break
         }
         toEndBlockStates = toEndblock.blockState
-        if (toEndBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) {
+        if (toEndBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) {
             break
         }
         event.level.runCommandSilent(`/setblock ${toEndblock.pos.x} ${toEndblock.pos.y} ${toEndblock.pos.z} create:shaft[axis=${Axis.toLowerCase()}]`)
@@ -235,7 +235,7 @@ BlockEvents.rightClicked("create:brass_encased_shaft", event => {
         toStartblock = block.offset(toStartPos[0], toStartPos[1], toStartPos[2])
         if (toStartblock.id != "create:brass_encased_shaft") { break }
         toStartBlockStates = toStartblock.blockState
-        if (toStartBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) { break }
+        if (toStartBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) { break }
         event.level.runCommandSilent(`/setblock ${toStartblock.pos.x} ${toStartblock.pos.y} ${toStartblock.pos.z} create:shaft[axis=${Axis.toLowerCase()}]`)
     }
 })
@@ -249,7 +249,7 @@ BlockEvents.rightClicked("create:andesite_encased_shaft", event => {
 
     let block = event.block
     let BlockStates = block.blockState
-    let Axis = BlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString()
+    let Axis = BlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString()
 
     let toEndblock = block
     let toEndBlockStates = 0
@@ -283,7 +283,7 @@ BlockEvents.rightClicked("create:andesite_encased_shaft", event => {
             break
         }
         toEndBlockStates = toEndblock.blockState
-        if (toEndBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) {
+        if (toEndBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) {
             break
         }
         event.level.runCommandSilent(`/setblock ${toEndblock.pos.x} ${toEndblock.pos.y} ${toEndblock.pos.z} create:shaft[axis=${Axis.toLowerCase()}]`)
@@ -296,7 +296,7 @@ BlockEvents.rightClicked("create:andesite_encased_shaft", event => {
         toStartblock = block.offset(toStartPos[0], toStartPos[1], toStartPos[2])
         if (toStartblock.id != "create:andesite_encased_shaft") { break }
         toStartBlockStates = toStartblock.blockState
-        if (toStartBlockStates.getValue(global.CDServerJavaClasses["$ShaftBlock"].AXIS).toString() != Axis) { break }
+        if (toStartBlockStates.getValue(global.CDServerJavaClasses.$ShaftBlock.AXIS).toString() != Axis) { break }
         event.level.runCommandSilent(`/setblock ${toStartblock.pos.x} ${toStartblock.pos.y} ${toStartblock.pos.z} create:shaft[axis=${Axis.toLowerCase()}]`)
     }
 })

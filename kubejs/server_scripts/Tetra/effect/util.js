@@ -6,7 +6,7 @@ let TetraUtil = {}
  */
 TetraUtil.getItem = function(itemStack) {
     let item = itemStack.item
-    if (!(item instanceof global.CDServerJavaClasses["$ModularItem"]))
+    if (!(item instanceof global.CDServerJavaClasses.$ModularItem))
         return null
     return item
 }
@@ -28,7 +28,7 @@ TetraUtil.getItemEffects = function(item) {
  */
 TetraUtil.itemHasEffect = function(item, effectKey) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffects(item).contains(global.CDServerJavaClasses["$ItemEffect"].get(effectKey))
+    return itemClass.getEffects(item).contains(global.CDServerJavaClasses.$ItemEffect.get(effectKey))
 }
 /**
  * 
@@ -36,7 +36,7 @@ TetraUtil.itemHasEffect = function(item, effectKey) {
  * @returns {Internal.ItemEffect}
  */
 TetraUtil.getEffectFromKey = function(key) {
-    return global.CDServerJavaClasses["$ItemEffect"].get(effect)
+    return global.CDServerJavaClasses.$ItemEffect.get(effect)
 }
 /**
  * 
@@ -46,7 +46,7 @@ TetraUtil.getEffectFromKey = function(key) {
  */
 TetraUtil.getEffectEfficiency = function(item, effect) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffectEfficiency(item, global.CDServerJavaClasses["$ItemEffect"].get(effect))
+    return itemClass.getEffectEfficiency(item, global.CDServerJavaClasses.$ItemEffect.get(effect))
 }
 /**
  * 
@@ -56,5 +56,5 @@ TetraUtil.getEffectEfficiency = function(item, effect) {
  */
 TetraUtil.getEffectLevel = function(item, effect) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffectLevel(item, global.CDServerJavaClasses["$ItemEffect"].get(effect))
+    return itemClass.getEffectLevel(item, global.CDServerJavaClasses.$ItemEffect.get(effect))
 }

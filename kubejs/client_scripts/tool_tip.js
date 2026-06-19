@@ -1,6 +1,4 @@
 
-let MoneyUtil = global.MoneyUtil
-
 ItemEvents.tooltip(e => {
     clearAddShiftTooltip(e, [
         'dreadsteel:kit_default',
@@ -122,7 +120,6 @@ ItemEvents.tooltip(e => {
 //         })
 //     })
 // })
-let difficultyLoots = global.difficultyLoots
 function getDifficultyTierName(tierIndex) {
     return Text.translatable(`difficulty.createdelight.tier.${tierIndex}`)
 }
@@ -136,15 +133,15 @@ ItemEvents.tooltip(e => {
         if (value > 0) {
             if (!e.shift) {
                 if (value < 1) {
-                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
+                    text.add(Component.translate("tooltip.createdelight.single_price", (Math.round(value * 10) / 10).toString()).append(global.MoneyUtil.convertBaseValueToString(-1)))
                 } else {
-                    text.add(Component.translate("tooltip.createdelight.single_price", MoneyUtil.convertBaseValueToString(value)))
+                    text.add(Component.translate("tooltip.createdelight.single_price", global.MoneyUtil.convertBaseValueToString(value)))
                 }
             } else {
                 if (value * itemStack.count < 1) {
-                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * itemStack.count * 10) / 10).toString()).append(MoneyUtil.convertBaseValueToString(-1)))
+                    text.add(Component.translate("tooltip.createdelight.total_price", (Math.round(value * itemStack.count * 10) / 10).toString()).append(global.MoneyUtil.convertBaseValueToString(-1)))
                 } else {
-                    text.add(Component.translate("tooltip.createdelight.total_price", MoneyUtil.convertBaseValueToString(value * itemStack.count)))
+                    text.add(Component.translate("tooltip.createdelight.total_price", global.MoneyUtil.convertBaseValueToString(value * itemStack.count)))
                 }
             }
         }
@@ -154,16 +151,16 @@ ItemEvents.tooltip(e => {
             text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl_to_see_more_info"))
         } else {
             text.add(1, Text.translatable("tooltip.createdelight.hold_ctrl"))
-            text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, MoneyUtil.convertBaseValueToString(1)))
+            text.add(2, Text.translatable(`tooltip.createdelight.ctrl_${item.getId().split(":")[1]}`, global.MoneyUtil.convertBaseValueToString(1)))
         }
     })
     e.addAdvancedToAll((item, advanced, text) => {
-        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof global.CDClientJavaClasses["$SequencedAssemblyItem"])) {
+        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof global.CDClientJavaClasses.$SequencedAssemblyItem)) {
             text.add(Text.translatable("tooltip.createdelight.sequenced_assembly_explanation"))
         }
     })
-    for (const key in difficultyLoots) {
-        let element = difficultyLoots[key]
+    for (const key in global.difficultyLoots) {
+        let element = global.difficultyLoots[key]
         element.forEach(val => {
             let entitys = val.entity.split(":")
             e.addAdvanced(key, (item, advanced, text) => {

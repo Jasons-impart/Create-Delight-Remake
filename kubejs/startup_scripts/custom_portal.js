@@ -1,6 +1,6 @@
 StartupEvents.postInit(e => {
 
-    global.CDStartupJavaClasses["$CustomPortalBuilder"]
+    global.CDStartupJavaClasses.$CustomPortalBuilder
         .beginPortal() //开始构建自定义传送门
         ["frameBlock(net.minecraft.resources.ResourceLocation)"]("minecraft:dark_prismarine") //传送门的框架方块
         .destDimID("createdelight:abyssal_chasm_dimension") //传送维度
@@ -8,7 +8,7 @@ StartupEvents.postInit(e => {
         .tintColor(26, 29, 35) // 传送门的RGB颜色
         .registerPortal(); //注册自定义传送门
 
-    global.CDStartupJavaClasses["$CustomPortalBuilder"]
+    global.CDStartupJavaClasses.$CustomPortalBuilder
         .beginPortal() //开始构建自定义传送门
         ["frameBlock(net.minecraft.resources.ResourceLocation)"]("create:limestone") //传送门的框架方块
         .destDimID("createdelight:primordial_caves_dimension") //传送维度
@@ -16,7 +16,7 @@ StartupEvents.postInit(e => {
         .tintColor(161, 119, 51) // 传送门的RGB颜色
         .registerPortal(); //注册自定义传送门
 
-    global.CDStartupJavaClasses["$CustomPortalBuilder"]
+    global.CDStartupJavaClasses.$CustomPortalBuilder
         .beginPortal() //开始构建自定义传送门
         ["frameBlock(net.minecraft.resources.ResourceLocation)"]("minecraft:packed_mud") //传送门的框架方块
         .destDimID("createdelight:forlorn_hollows_dimension") //传送维度
@@ -24,7 +24,7 @@ StartupEvents.postInit(e => {
         .tintColor(174, 0, 0) // 传送门的RGB颜色
         .registerPortal(); //注册自定义传送门
 
-    global.CDStartupJavaClasses["$CustomPortalBuilder"]
+    global.CDStartupJavaClasses.$CustomPortalBuilder
         .beginPortal() //开始构建自定义传送门
         ["frameBlock(net.minecraft.resources.ResourceLocation)"]("alexscaves:candy_cane_block") //传送门的框架方块
         .destDimID("createdelight:candy_cavity_dimension") //传送维度

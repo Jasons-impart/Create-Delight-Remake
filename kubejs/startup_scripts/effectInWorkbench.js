@@ -14,7 +14,7 @@ if (Platform.isClientEnvironment())
         let $TooltipGetterInteger = TetraWorkbenchStats["$TooltipGetterInteger"];
         let $HoloStatsGui = TetraWorkbenchStats["$HoloStatsGui"];
         let $GuiStatBar = TetraWorkbenchStats["$GuiStatBar"];
-        let $ItemEffect = global.CDStartupJavaClasses["$ItemEffect"];
+        let $ItemEffect = global.CDStartupJavaClasses.$ItemEffect;
 
         let simpleRegWorkbenchBar = (Name, barMax) => {
             let ItemEffect = $ItemEffect.get(Name)

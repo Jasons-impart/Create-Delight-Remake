@@ -10,7 +10,7 @@ Ponder.registry(event => {
             "AE中的线缆",
             "createdelight:ponder_cable",
             (builder, util) => {
-                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 4, 1, 1], Direction.DOWN)
@@ -36,7 +36,7 @@ Ponder.registry(event => {
             "玻璃线缆与包层线缆",
             "createdelight:ponder_small_cable",
             (builder, util) => {
-                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0], Direction.DOWN)
@@ -63,7 +63,7 @@ Ponder.registry(event => {
             "createdelight:ponder_covered_dense_cable",
             
             (builder, util) => {
-                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.world.showSection([0, 0, 0, 9, 0, 9], Direction.UP)
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 9, 1, 9], Direction.DOWN)

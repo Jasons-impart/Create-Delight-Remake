@@ -49,7 +49,7 @@ MBDMachineEvents.onTick("createdelight:butchery_room", e => {
   if(machine.machineStateName == "working") {
     /**@type {String} */
     let itemIds
-    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses["$ItemRecipeCapability"].CAP).forEach(con => {
+    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses.$ItemRecipeCapability.CAP).forEach(con => {
       itemIds = cleanString(con.getContent().toJson().get("ingredient").get("item"))
     })
     let maxStage = carcass_data[carcass_data.findIndex(data => data[0] == itemIds)][1]
@@ -117,7 +117,7 @@ MBDMachineEvents.onRecipeWorking("createdelight:butchery_room", e => {
   /**@type {String} */
   let itemIds
   if(meatHook.insertedItem == [] && butcherBlock.insertedItem == []) {
-    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses["$ItemRecipeCapability"].CAP).forEach(con => {
+    machine.recipeLogic.getLastRecipe().getInputContents(global.CDServerJavaClasses.$ItemRecipeCapability.CAP).forEach(con => {
       itemIds = con.getContent().toJson().get("ingredient").get("item")
     })
   }

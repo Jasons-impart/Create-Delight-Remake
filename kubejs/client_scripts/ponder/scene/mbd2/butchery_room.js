@@ -10,7 +10,7 @@ Ponder.registry(event => {
     "createdelight:ponder_butchery_room",
     
     (builder, util) => {
-      let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
+      let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
       scene.showBasePlate()
       scene.idle(20)
       scene.text(40, "先让我们快速的搭建一下基础结构").attachKeyFrame()
@@ -29,9 +29,9 @@ Ponder.registry(event => {
       scene.overlay.showOutline("green", {}, [2, 1, 3, 6, 1, 5], 80)
       scene.overlay.showOutline("green", {}, [2, 5, 3, 6, 5, 5], 80)
       scene.text(40, "在这个多方块结构中, 这两层的安山机壳可以被安山输入/输出总线/应力输入总线代替", [4.5, 5.5, 3]).attachKeyFrame()
-      scene.world.replaceBlocks([5, 1, 3], Block.id("createdelight:andesite_export_bus").blockState.trySetValue(global.CDClientJavaClasses["$BlockStateProperties"].FACING, Direction.NORTH), true)
-      scene.world.replaceBlocks([3, 1, 3], Block.id("createdelight:andesite_import_bus").blockState.trySetValue(global.CDClientJavaClasses["$BlockStateProperties"].FACING, Direction.NORTH), true)
-      scene.world.replaceBlocks([4, 5, 3], Block.id("createdelight:create_in").blockState.trySetValue(global.CDClientJavaClasses["$BlockStateProperties"].FACING, Direction.NORTH), true)
+      scene.world.replaceBlocks([5, 1, 3], Block.id("createdelight:andesite_export_bus").blockState.trySetValue(global.CDClientJavaClasses.$BlockStateProperties.FACING, Direction.NORTH), true)
+      scene.world.replaceBlocks([3, 1, 3], Block.id("createdelight:andesite_import_bus").blockState.trySetValue(global.CDClientJavaClasses.$BlockStateProperties.FACING, Direction.NORTH), true)
+      scene.world.replaceBlocks([4, 5, 3], Block.id("createdelight:create_in").blockState.trySetValue(global.CDClientJavaClasses.$BlockStateProperties.FACING, Direction.NORTH), true)
       scene.idle(40)
       scene.idle(40)
       scene.text(40, "屠宰室会在运行过程中会自动播放动画").attachKeyFrame()

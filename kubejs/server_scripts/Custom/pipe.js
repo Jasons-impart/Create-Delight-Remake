@@ -22,5 +22,5 @@ BlockEvents.rightClicked("create:fluid_pipe", event => {
     event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
     return
   }
-  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? global.CDServerJavaClasses["$Boolean"].FALSE : global.CDServerJavaClasses["$Boolean"].TRUE))
+  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? global.CDServerJavaClasses.$Boolean.FALSE : global.CDServerJavaClasses.$Boolean.TRUE))
 })

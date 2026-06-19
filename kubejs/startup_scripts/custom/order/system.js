@@ -134,7 +134,7 @@ Order.convertPackageToItemHandler = function (items) {
     for (let index = 0; index < items.getSlots(); index++) {
         let item = items.getStackInSlot(index)
         if (!item.is("air"))
-            global.CDStartupJavaClasses["$PackageItem"].getContents(item).allItems.forEach(i => {
+            global.CDStartupJavaClasses.$PackageItem.getContents(item).allItems.forEach(i => {
                 ItemTransferHelper.insertItemStacked(transfer, i, false)
             })
     }
@@ -282,8 +282,8 @@ Order.getGoodsOrderProperty = function (item, type) {
     let goodsMap = CreateDelight.goodsMap.get(type)
     if (goodsMap != null)
         return goodsMap(item)
-    let qualityLevel = global.CDStartupJavaClasses["$QualityUtils"].getQuality(item).level()
-    let complexity = global.CDStartupJavaClasses["$FoodList"].getComplexity(new global.CDStartupJavaClasses["$FoodInstance"](item.item))
+    let qualityLevel = global.CDStartupJavaClasses.$QualityUtils.getQuality(item).level()
+    let complexity = global.CDStartupJavaClasses.$FoodList.getComplexity(new global.CDStartupJavaClasses.$FoodInstance(item.item))
     if (!item.hasTag("createdelight:order/" + type))
         return
     let food = Order.orderProperties[type]
@@ -310,12 +310,12 @@ Order.getRewardContract = function (type, count) {
 }
 
 Order.addOrderToAuction = function() {
-    let data = new global.CDStartupJavaClasses["$AuctionTradeData"]({})
+    let data = new global.CDStartupJavaClasses.$AuctionTradeData({})
     data.auctionItems.add(Item.of("createdelight:unopened_order"))
     data.setMinBidDifferent(global.MoneyUtil.coinValueFromItemOrValue("createdeco:copper_coin", 1))
     data.setStartingBid(global.MoneyUtil.coinValueFromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
-    global.CDStartupJavaClasses["$TraderAPI"].getApi().GetTrader(false, 0).addTrade(data, null, false)
+    global.CDStartupJavaClasses.$TraderAPI.getApi().GetTrader(false, 0).addTrade(data, null, false)
 }
 
 Order.reputation = {}

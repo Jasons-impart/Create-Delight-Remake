@@ -6,5 +6,5 @@
  * @returns {number}
  */
 function GetPlayerDifficulty(player) {
-    return global.CDServerJavaClasses["$CrossPlatformStuff"].INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
+    return global.CDServerJavaClasses.$CrossPlatformStuff.INSTANCE.getPlayerDifficultyData(player).get().difficultyLevel
 }

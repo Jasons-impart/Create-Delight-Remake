@@ -103,7 +103,7 @@ function handleChanged(machine, level) {
         // 获取设定的最小宽度（确保它至少等于配方的宽度）
         let gridWidth = Math.max(minWidth, width);  // 如果设定的宽度小于配方的宽度，取配方的宽度
 
-        let resultItemHandler = new global.CDServerJavaClasses["$ItemStackHandler"]()
+        let resultItemHandler = new global.CDServerJavaClasses.$ItemStackHandler()
         resultItemHandler.setSize(81)
         // 按照设定的宽度填充craftingIngredients
         for (let i = 0; i < height; i++) {
@@ -125,20 +125,20 @@ function handleChanged(machine, level) {
                             }
                         }
                     }
-                    craftingIngredients.push(new global.CDServerJavaClasses["$BigItemStack"](craftingIngredient));
+                    craftingIngredients.push(new global.CDServerJavaClasses.$BigItemStack(craftingIngredient));
                 } else {
                     // 超过配方区域，填充空食材
-                    craftingIngredients.push(new global.CDServerJavaClasses["$BigItemStack"](emptyIngredient));
+                    craftingIngredients.push(new global.CDServerJavaClasses.$BigItemStack(emptyIngredient));
                 }
             }
         }
 
         // 保证craftingIngredients长度为9
         while (craftingIngredients.length < 9) {
-            craftingIngredients.push(new global.CDServerJavaClasses["$BigItemStack"](emptyIngredient));
+            craftingIngredients.push(new global.CDServerJavaClasses.$BigItemStack(emptyIngredient));
         }
 
-        let order = global.CDServerJavaClasses["$PackageOrderWithCrafts"].singleRecipe(craftingIngredients);
+        let order = global.CDServerJavaClasses.$PackageOrderWithCrafts.singleRecipe(craftingIngredients);
 
         // 移除input内的对应配方所应该消耗的内容
         // recipelist[0].ingredients.forEach((ingredient) => {
@@ -153,7 +153,7 @@ function handleChanged(machine, level) {
         //         }
         //     }
         // });
-        let pack = global.CDServerJavaClasses["$PackageItem"]["containing(net.minecraftforge.items.ItemStackHandler)"](resultItemHandler);
+        let pack = global.CDServerJavaClasses.$PackageItem["containing(net.minecraftforge.items.ItemStackHandler)"](resultItemHandler);
         pack.nbt.put("Fragment", { OrderContext: order.write() });
         ItemTransferHelper.insertItemStacked(output, pack, false);
     }

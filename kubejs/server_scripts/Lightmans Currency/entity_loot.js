@@ -1,4 +1,3 @@
-let MoneyUtil = global.MoneyUtil
 const DamageFallback = {
     "minecraft:ender_dragon": 10,
     "minecraft:wither": 8,
@@ -14,13 +13,13 @@ EntityEvents.drops(e => {
     let player = source.player
     if (player == null || !player.isPlayer() || player.isFake())
         return
-    // player.tell(`${entity instanceof global.CDServerJavaClasses["$Mob"]}`)
-    if (entity instanceof global.CDServerJavaClasses["$Mob"]) {
+    // player.tell(`${entity instanceof global.CDServerJavaClasses.$Mob}`)
+    if (entity instanceof global.CDServerJavaClasses.$Mob) {
         /**
          * @type {Internal.Mob}
          */
         let mob = entity
-        if (mob.spawnType == global.CDServerJavaClasses["$MobSpawnType"].SPAWNER)
+        if (mob.spawnType == global.CDServerJavaClasses.$MobSpawnType.SPAWNER)
             return
         if (!mob.monster && !mob.aggressive)
             return
@@ -39,11 +38,11 @@ EntityEvents.drops(e => {
         multipler *= Math.sqrt(armor + 1)
         multipler /= 2
         let itemStack = player.mainHandItem
-        if (itemStack.item instanceof global.CDServerJavaClasses["$ModularItem"] && TetraUtil.itemHasEffect(itemStack, "createdelight:greedy")) {
+        if (itemStack.item instanceof global.CDServerJavaClasses.$ModularItem && TetraUtil.itemHasEffect(itemStack, "createdelight:greedy")) {
             let level = TetraUtil.getEffectLevel(itemStack, "createdelight:greedy")
             multipler *= (1 + level / 100)
         }
-        let list = MoneyUtil.convertBaseValueToItems(baseValue * multipler)
+        let list = global.MoneyUtil.convertBaseValueToItems(baseValue * multipler)
         list.forEach(item => {
             e.addDrop(item)
         })

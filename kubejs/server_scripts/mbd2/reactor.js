@@ -105,17 +105,17 @@ MBDMachineEvents.onAfterRecipeWorking("createdelight:fission_reactor", e => {
         let maxFluidOutput = ReactorUtil.outputFluid(machine)
         // machine.level.recipeManager.getByType("createdelight:fission_react").forEach((id, r) => {
         //     let mbdRecipe = machine.getModifiedRecipe(r)
-        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses["$ForgeEnergyRecipeCapability"].CAP).forEach(con => {
+        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses.$ForgeEnergyRecipeCapability.CAP).forEach(con => {
         //         if (maxEnergyOutput < con.getContent())
         //             maxEnergyOutput = con.getContent()
         //     })
 
-        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses["$FluidRecipeCapability"].CAP).forEach(con => {
+        //     mbdRecipe.getOutputContents(global.CDServerJavaClasses.$FluidRecipeCapability.CAP).forEach(con => {
         //         if (maxFluidOutput < con.getContent().getAmount())
         //             maxFluidOutput = con.getContent().getAmount()
         //     })
 
-        //     mbdRecipe.getInputContents(global.CDServerJavaClasses["$FluidRecipeCapability"].CAP).forEach(con => {
+        //     mbdRecipe.getInputContents(global.CDServerJavaClasses.$FluidRecipeCapability.CAP).forEach(con => {
         //         if(maxFluidInput < con.getContent().getAmount())
         //             maxFluidInput = con.getContent().getAmount()
         //     })
