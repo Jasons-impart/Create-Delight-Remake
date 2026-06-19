@@ -1,0 +1,172 @@
+# 模组调研清单
+
+## 关于整合包已有的优化模组（供新增时参考）
+- Embeddium
+  - 渲染优化 https://www.mcmod.cn/class/12028.html
+- Sodium/Embeddium Extras
+  - 渲染优化 https://www.mcmod.cn/class/5312.html
+- Vanillin
+  - 飞轮实体渲染优化 https://www.mcmod.cn/class/19260.html
+- Accelerated Rendering
+  - 大量实体或拥有大量顶点的复杂 Mod 实体的渲染性能优化 https://www.mcmod.cn/class/21060.html
+- Colorwheel
+  - 使得飞轮优化可以兼容光影 https://www.mcmod.cn/class/20111.html
+- Create Better FPS
+  - 机械动力在光影下的优化 https://www.mcmod.cn/class/18864.html
+- Entity Culling
+  - 实体渲染机制优化 https://www.mcmod.cn/class/3629.html
+- CullLessLeaves Reforged
+  - 更好的树叶渲染优化 https://www.mcmod.cn/class/9810.html
+- Flerovium
+  - 物品、粒子渲染优化 https://www.mcmod.cn/class/17322.html
+- ServerCore
+  - 优化服务器运算、实体活动范围（可选启用）、动态性能检查、村民脑叶切除术、繁殖上限、区块活动距离 https://www.mcmod.cn/class/6542.html
+- Harium
+  - 锂的 forge 移植，优化各种原版机制计算方法 https://www.curseforge.com/minecraft/mc-mods/harium
+- moestweaks
+  - 关闭配方书 https://www.mcmod.cn/class/17039.html
+- FerriteCore
+  - 内存占用优化 https://www.mcmod.cn/class/3888.html
+- Placebo
+  - 合成配方加载、匹配优化 https://www.mcmod.cn/class/1023.html
+- fastboot
+  - 启动性能优化，延迟 DFU 的编译时间 https://www.mcmod.cn/class/15103.html
+- Create: Fast Schematic Cannon
+  - 蓝图炮优化 https://www.mcmod.cn/class/22205.html
+- Krypton Reforged
+  - 优化 MC 的网络堆栈 https://www.mcmod.cn/class/5146.html
+- Biomespy
+  - 大幅减少搜索群系所花时间 https://www.curseforge.com/minecraft/mc-mods/biomespy
+- DSBG
+  - 关闭 setblock in far chunk 警告，本包里 adastra 等模组在生成时会频繁触发这个警报，有卡服风险。 https://www.mcmod.cn/class/14239.html
+- Create: LazyTick
+  - 优化机械动力机器的性能 https://www.curseforge.com/minecraft/mc-mods/create-lazytick
+
+## 考虑中的实用模组
+- 卓越火炬
+  - 可配置的生物生成阻止火把 https://www.mcmod.cn/class/9896.html
+- Overflowing Bars（vs 已有的 Colorful Heart）
+  - 显示护甲/生命值了多少层 https://www.mcmod.cn/class/10074.html
+- Better ModList
+  - http://mcmod.cn/class/16643.html
+  - 已尝试，会弄乱标题画面，并且无法正确识别 mod 是否为前置。
+- Stack Refill
+  - https://www.mcmod.cn/class/7064.html
+  - 整合包当前使用已经会 refill，但丢弃的时候不会 refill，加入这个 mod 丢弃时会 refill。
+
+## 考虑中的优化模组
+- Chunk Sending
+  - 服务端区块数据包分发逻辑优化 https://www.mcmod.cn/class/10461.html
+- Acedium
+  - 使用 NV 专用 OpenGL 扩展提高 fps https://www.mcmod.cn/class/16808.html
+- Fast Paintings
+  - 优化画的渲染 https://www.mcmod.cn/class/10999.html
+- Mobtimizations - Entity Performance Fixes
+  - 服务器实体性能优化模组 https://www.mcmod.cn/class/13755.html
+- 修复 GPU 内存泄漏
+  - 和上面的 AllTheLeaks 不重合可以一起，https://www.mcmod.cn/class/11863.html
+- Let Me Despawn
+  - 让拿起物品的怪物也会消失 https://www.mcmod.cn/class/7415.html
+- Nolijium
+  - 调整各种效果 https://www.mcmod.cn/class/18050.html
+- C2ME - forge
+  - 优化区块生成、I/O、加载 https://www.mcmod.cn/class/21774.html
+  - 因为会引入较多问题被移除，如 Quark 板条箱内容消失，退出世界耗时大幅提升，小地图加载速度变慢等。
+
+## 考虑中的内容模组
+- 拾光定影
+  - 拍照 https://www.mcmod.cn/class/12905.html
+- Tide
+  - 潮汐 https://www.mcmod.cn/class/13540.html
+- Mmobs
+  - Mowzie 的生物 https://www.mcmod.cn/class/984.html
+- Rustic Engineer
+  - 机械风生物 https://www.mcmod.cn/class/15150.html
+- Aquamirae
+  - 海灵物语 https://www.mcmod.cn/class/5011.html
+- Bosses of Mass Destruction
+  - 添加 4 个 boss https://www.mcmod.cn/class/12887.html
+- 溺亡者之嚎
+  - 添加 1 个 boss https://www.mcmod.cn/class/16470.html
+- 生于混沌
+  - 体量太大，不一定好做兼容 https://www.mcmod.cn/class/8006.html
+- Ghosts
+  - https://www.mcmod.cn/class/8029.html
+- 灾变
+  - https://www.mcmod.cn/class/5214.html
+- Legendary Monsters
+  - https://www.mcmod.cn/class/12933.html
+- 迎战
+  - https://www.mcmod.cn/class/4204.html
+- 突变生物
+  - 拟与生物科技相联 https://www.mcmod.cn/class/10081.html
+- Mokels Bossfight: Kinora
+  - https://www.mcmod.cn/class/15496.html
+- Mokels The Shattered Goddess
+  - https://www.mcmod.cn/class/15290.html
+- Mutated Items / Items to Mobs
+  - https://www.mcmod.cn/class/10256.html
+- Mythic Mounts
+  - https://www.mcmod.cn/class/7192.html
+- ATi Structures
+  - https://www.mcmod.cn/class/17109.html
+- Species
+  - https://www.mcmod.cn/class/10307.html
+- It Takes a Pillage
+  - https://www.mcmod.cn/class/7622.html
+- [WAB]Wan's Ancient Beasts
+  - https://www.mcmod.cn/class/16975.html
+
+## 考虑中的外饰模组
+- Rainbows!
+  - 增加彩虹 https://www.mcmod.cn/class/16847.html
+- Beautify
+  - 添加装饰品 https://www.mcmod.cn/class/7263.html
+- Chimes
+  - 添加风铃 https://www.mcmod.cn/class/6988.html
+- Cluttered
+  - https://www.mcmod.cn/class/9330.html
+- Convenient Decor
+  - https://www.mcmod.cn/class/9143.html
+- Lucky's Cozy Home: Refurnished
+  - https://www.mcmod.cn/class/9931.html
+- Dark Paintings
+  - https://www.mcmod.cn/class/8079.html
+- Handcrafted
+  - https://www.mcmod.cn/class/9261.html
+- Macaw 的门
+  - https://www.mcmod.cn/class/2574.html
+- Macaw 的活板门
+  - https://www.mcmod.cn/class/2918.html
+- Macaw 的桥梁
+  - https://www.mcmod.cn/class/2040.html
+- Macaw's Stairs
+  - https://www.mcmod.cn/class/16896.html
+- Macaw 的栅栏与墙
+  - https://www.mcmod.cn/class/4795.html
+- Macaw 的窗户
+  - https://www.mcmod.cn/class/2565.html
+- Macaw 的画
+  - https://www.mcmod.cn/class/5498.html
+- Plushie Buddies
+  - 装饰性玩偶 https://www.mcmod.cn/class/15793.html
+- Serene Shrubbery
+  - 加 7 种花卉 https://www.mcmod.cn/class/8356.html
+- Simple hats
+  - https://www.mcmod.cn/class/8846.html
+- Tanuki Decor
+  - https://www.mcmod.cn/class/13280.html
+- 群青：重织
+  - https://www.mcmod.cn/class/13041.html
+- VerdantVibes
+  - https://www.mcmod.cn/class/13000.html
+- Lucky's Wardrobe
+  - https://www.mcmod.cn/class/15310.html
+- MrCrayfish 的家具
+  - https://www.mcmod.cn/class/15668.html
+- Fantasy 的家具
+  - https://www.mcmod.cn/class/6455.html
+- 添加一些毛绒玩具
+  - https://www.mcmod.cn/class/15185.html
+- [DF]Diagonal Fences
+  - https://www.mcmod.cn/class/6701.html

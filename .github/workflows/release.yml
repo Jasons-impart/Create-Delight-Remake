@@ -184,7 +184,7 @@ jobs:
       - name: 删除服务端产物无关文件
         run: |
             rm -rf resourcepacks shaderpacks packwiz-files CDC-mod-src .agents .codex .github docs scripts
-            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md DevGuide.md \
+            rm -f ModList0.4a.md README.md TODOlist.md KubeJSStyleGuide.md GettingStarted.md \
                   client_jvm_args.example.txt AGENTS.md lessons-learned.md .gitignore .gitmodules \
                   sync-packwiz-assets.bat update-packwiz-meta.bat
             find mods -name "*.pw.toml" -exec rm {} +
@@ -258,10 +258,10 @@ jobs:
           # 移除客户端 only 的 mod
           python3 scripts/packwiz-side.py delete-payloads --metadata-base . --payload-base patch --side client --verbose
           rm -f patch/ModList0.4a.md patch/README.md patch/TODOlist.md \
-                patch/KubeJSStyleGuide.md patch/DevGuide.md patch/modpack.toml \
+                patch/KubeJSStyleGuide.md patch/GettingStarted.md patch/modpack.toml \
                 patch/pack.toml patch/index.toml patch/client_jvm_args.example.txt \
                 patch/.gitmodules
-          rm -rf patch/CDC-mod-src
+          rm -rf patch/CDC-mod-src patch/docs
           # 将 patch/packwiz-files/ 中的文件移到标准目录
           if [ -d "patch/packwiz-files/mods" ]; then
             mv patch/packwiz-files/mods/*.jar patch/mods/ 2>/dev/null || true
