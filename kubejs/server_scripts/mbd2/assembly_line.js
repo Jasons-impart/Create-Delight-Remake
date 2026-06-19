@@ -1,8 +1,3 @@
-const $FluidIngredient = Java.loadClass("com.lowdragmc.mbd2.api.recipe.ingredient.FluidIngredient")
-const $SizedIngredient = Java.loadClass("com.lowdragmc.mbd2.api.recipe.ingredient.SizedIngredient")
-const $mbdFluidStack = Java.loadClass("com.lowdragmc.lowdraglib.side.fluid.FluidStack")
-const $ItemApplicationRecipe = Java.loadClass("com.simibubi.create.content.kinetics.deployer.ItemApplicationRecipe")
-
 MBDMachineEvents.onBeforeRecipeWorking("createdelight:assembly_line", e => {
 
     let event = e.event
@@ -112,7 +107,7 @@ MBDRecipeTypeEvents.onTransferProxyRecipe("createdelight:assembly_line", e => {
                     changed = true
                 }
                 if (ingr.size() == 2) {
-                    if (pRecipe instanceof $ItemApplicationRecipe) {
+                    if (pRecipe instanceof global.CDServerJavaClasses["$ItemApplicationRecipe"]) {
                         /**@type {Internal.ItemApplicationRecipe} */
                         let appRecipe = pRecipe
                         if (appRecipe.shouldKeepHeldItem())

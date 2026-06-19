@@ -3,16 +3,18 @@
 
 if (Platform.isClientEnvironment())
     ClientEvents.init(event => {
-        let $StatFormat = Java.loadClass("se.mickelus.tetra.gui.stats.getter.StatFormat");
-        let $StatGetterEffectEfficiency = Java.loadClass("se.mickelus.tetra.gui.stats.getter.StatGetterEffectEfficiency");
-        let $TooltipGetterMultiValue = Java.loadClass("se.mickelus.tetra.gui.stats.getter.TooltipGetterMultiValue");
-        let $WorkbenchStatsGui = Java.loadClass("se.mickelus.tetra.blocks.workbench.gui.WorkbenchStatsGui");
-        let $StatsHelper = Java.loadClass("se.mickelus.tetra.gui.stats.StatsHelper");
-        let $LabelGetterBasic = Java.loadClass("se.mickelus.tetra.gui.stats.getter.LabelGetterBasic");
-        let $StatGetterEffectLevel = Java.loadClass("se.mickelus.tetra.gui.stats.getter.StatGetterEffectLevel");
-        let $TooltipGetterInteger = Java.loadClass("se.mickelus.tetra.gui.stats.getter.TooltipGetterInteger");
-        let $HoloStatsGui = Java.loadClass("se.mickelus.tetra.items.modular.impl.holo.gui.craft.HoloStatsGui");
-        let $GuiStatBar = Java.loadClass("se.mickelus.tetra.gui.stats.bar.GuiStatBar");
+        let TetraWorkbenchStats = global.CDStartupJavaClasses.getTetraWorkbenchStats()
+        let $StatFormat = TetraWorkbenchStats["$StatFormat"];
+        let $StatGetterEffectEfficiency = TetraWorkbenchStats["$StatGetterEffectEfficiency"];
+        let $TooltipGetterMultiValue = TetraWorkbenchStats["$TooltipGetterMultiValue"];
+        let $WorkbenchStatsGui = TetraWorkbenchStats["$WorkbenchStatsGui"];
+        let $StatsHelper = TetraWorkbenchStats["$StatsHelper"];
+        let $LabelGetterBasic = TetraWorkbenchStats["$LabelGetterBasic"];
+        let $StatGetterEffectLevel = TetraWorkbenchStats["$StatGetterEffectLevel"];
+        let $TooltipGetterInteger = TetraWorkbenchStats["$TooltipGetterInteger"];
+        let $HoloStatsGui = TetraWorkbenchStats["$HoloStatsGui"];
+        let $GuiStatBar = TetraWorkbenchStats["$GuiStatBar"];
+        let $ItemEffect = global.CDStartupJavaClasses["$ItemEffect"];
 
         let simpleRegWorkbenchBar = (Name, barMax) => {
             let ItemEffect = $ItemEffect.get(Name)

@@ -5,7 +5,7 @@ Ponder.registry(event => {
             "createdelight:ponder_storage_bus",
             
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([1, 1, 1, 1, 1, 3], Direction.DOWN)
@@ -37,7 +37,7 @@ Ponder.registry(event => {
             "createdelight:ponder_storage_bus_interface_interaction",
             
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([1, 1, 1, 1, 1, 3], Direction.DOWN)

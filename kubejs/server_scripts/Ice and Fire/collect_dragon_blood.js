@@ -1,4 +1,3 @@
-const $EntityDragonBase = Java.loadClass("com.github.alexthe666.iceandfire.entity.EntityDragonBase")
 ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
     if (e.player.cooldowns.isOnCooldown("createdelight:blood_collection_device"))
         return
@@ -9,7 +8,7 @@ ItemEvents.entityInteracted("createdelight:blood_collection_device", e => {
     if (!(e.player.mainHandItem == "createdelight:blood_collection_device" && e.player.offHandItem == "minecraft:glass_bottle"))
         return
 
-    if (entity instanceof $EntityDragonBase) {
+    if (entity instanceof global.CDServerJavaClasses["$EntityDragonBase"]) {
         /**
          * @type {Internal.EntityDragonBase}
          */

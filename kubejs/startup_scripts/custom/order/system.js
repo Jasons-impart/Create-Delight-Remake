@@ -1,14 +1,6 @@
 // priority: 1000
 
 
-const $FoodInstance = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodInstance")
-const $PackageItem = Java.loadClass("com.simibubi.create.content.logistics.box.PackageItem")
-const $AuctionTradeData = Java.loadClass("io.github.lightman314.lightmanscurrency.common.traders.auction.tradedata.AuctionTradeData")
-const $BrassDroneEntity = Java.loadClass("net.mcreator.createstuffadditions.entity.BrassDroneEntity")
-const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
-const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
-const $FoodList = Java.loadClass("com.tarinoita.solsweetpotato.tracking.FoodList")
-const $TraderAPI = Java.loadClass("io.github.lightman314.lightmanscurrency.api.traders.TraderAPI")
 //订单系统
 //玩家通过某种方式获取到订单。订单通常包括多组方便量产的物品，完成订单后玩家会获取一定的报酬
 //设计的意义是为整合包中大量食物等物品寻求用途
@@ -142,7 +134,7 @@ Order.convertPackageToItemHandler = function (items) {
     for (let index = 0; index < items.getSlots(); index++) {
         let item = items.getStackInSlot(index)
         if (!item.is("air"))
-            $PackageItem.getContents(item).allItems.forEach(i => {
+            global.CDStartupJavaClasses["$PackageItem"].getContents(item).allItems.forEach(i => {
                 ItemTransferHelper.insertItemStacked(transfer, i, false)
             })
     }
@@ -290,8 +282,8 @@ Order.getGoodsOrderProperty = function (item, type) {
     let goodsMap = CreateDelight.goodsMap.get(type)
     if (goodsMap != null)
         return goodsMap(item)
-    let qualityLevel = $QualityUtils.getQuality(item).level()
-    let complexity = $FoodList.getComplexity(new $FoodInstance(item.item))
+    let qualityLevel = global.CDStartupJavaClasses["$QualityUtils"].getQuality(item).level()
+    let complexity = global.CDStartupJavaClasses["$FoodList"].getComplexity(new global.CDStartupJavaClasses["$FoodInstance"](item.item))
     if (!item.hasTag("createdelight:order/" + type))
         return
     let food = Order.orderProperties[type]
@@ -318,12 +310,12 @@ Order.getRewardContract = function (type, count) {
 }
 
 Order.addOrderToAuction = function() {
-    let data = new $AuctionTradeData({})
+    let data = new global.CDStartupJavaClasses["$AuctionTradeData"]({})
     data.auctionItems.add(Item.of("createdelight:unopened_order"))
     data.setMinBidDifferent(global.MoneyUtil.coinValueFromItemOrValue("createdeco:copper_coin", 1))
     data.setStartingBid(global.MoneyUtil.coinValueFromItemOrValue("createdelightcore:gold_coin", 1).multiplyValue(Utils.random.nextFloat(0.5, 2)))
     data.setDuration(1000 * 60 * 60 * 1)
-    $TraderAPI.getApi().GetTrader(false, 0).addTrade(data, null, false)
+    global.CDStartupJavaClasses["$TraderAPI"].getApi().GetTrader(false, 0).addTrade(data, null, false)
 }
 
 Order.reputation = {}

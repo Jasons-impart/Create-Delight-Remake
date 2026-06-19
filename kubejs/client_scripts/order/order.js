@@ -1,4 +1,3 @@
-const $Rarity = Java.loadClass("net.minecraft.world.item.Rarity")
 let MoneyUtil = global.MoneyUtil
 let Order = global.Order
 ItemEvents.tooltip(e => {
@@ -36,7 +35,7 @@ ItemEvents.tooltip(e => {
         text.add(Text.translate("tooltip.createdelight.order.title",
             Text.translate("tooltip.createdelight.order.customer." + type)
         ))
-        text.add(Text.translate(`rarity.${customer.rarity.toLowerCase()}`).color($Rarity[customer.rarity.toUpperCase()].color))
+        text.add(Text.translate(`rarity.${customer.rarity.toLowerCase()}`).color(global.CDClientJavaClasses["$Rarity"][customer.rarity.toUpperCase()].color))
         // 空行
         text.add("")
 

@@ -1,6 +1,3 @@
-const $Direction = Java.loadClass("net.minecraft.core.Direction")
-const $BlockItem = Java.loadClass("net.minecraft.world.item.BlockItem")
-
 const GREENHOUSE_DEFAULT_SIZE = 9
 const GREENHOUSE_MIN_SIZE = 3
 const GREENHOUSE_MAX_SIZE = 64
@@ -9,14 +6,6 @@ const GREENHOUSE_SIZE_KEYS = {
     width: "houseWidth",
     height: "houseHeight"
 }
-const ADJACENT_DIRECTIONS = [
-    $Direction.NORTH,
-    $Direction.SOUTH,
-    $Direction.WEST,
-    $Direction.EAST,
-    $Direction.UP,
-    $Direction.DOWN
-]
 
 /**
  * @param {Internal.MBDMachine} machine
@@ -77,8 +66,16 @@ function getGreenhouseMaterialSlot(machine) {
  */
 function getAdjacentItemHandlers(machine) {
     let handlers = []
+    let adjacentDirections = [
+        global.CDServerJavaClasses["$Direction"].NORTH,
+        global.CDServerJavaClasses["$Direction"].SOUTH,
+        global.CDServerJavaClasses["$Direction"].WEST,
+        global.CDServerJavaClasses["$Direction"].EAST,
+        global.CDServerJavaClasses["$Direction"].UP,
+        global.CDServerJavaClasses["$Direction"].DOWN
+    ]
 
-    ADJACENT_DIRECTIONS.forEach(direction => {
+    adjacentDirections.forEach(direction => {
         let neighbor = machine.level.getBlockEntity(machine.pos.relative(direction))
         if (neighbor == null) {
             return
@@ -206,7 +203,7 @@ function buildGreenhouse(machine, player, length, width, height) {
         tellGreenhouse(player, Component.translate("message.createdelight.greenhouse_builder.no_material"))
         return
     }
-    if (!(sampleStack.item instanceof $BlockItem)) {
+    if (!(sampleStack.item instanceof global.CDServerJavaClasses["$BlockItem"])) {
         tellGreenhouse(player, Component.translate("message.createdelight.greenhouse_builder.invalid_material"))
         return
     }

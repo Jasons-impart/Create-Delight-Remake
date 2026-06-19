@@ -1,5 +1,3 @@
-const $Mth = Java.loadClass("net.minecraft.util.Mth")
-
 MBDMachineEvents.onTick("createdelight:dryer", e => {
     const {machine} = e.event
     const {pos, level} = machine
@@ -40,6 +38,6 @@ MBDMachineEvents.onTick("createdelight:dryer", e => {
     let start = Vec3d.atCenterOf(pos).offsetRandom(level.random, 1)
     let motion = Vec3d.atCenterOf(pos).subtract(start)
         .normalize()
-        .scale($Mth.clamp(2, 0, 0.5))
+        .scale(global.CDServerJavaClasses["$Mth"].clamp(2, 0, 0.5))
     level.spawnParticles("minecraft:poof", true, start.x(), start.y(), start.z(), motion.x(), motion.y(), motion.z(), 3, 0.2)
 })

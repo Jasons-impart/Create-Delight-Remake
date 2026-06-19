@@ -1,4 +1,3 @@
-let $Boolean = Java.loadClass("java.lang.Boolean")
 const inversedDirectionUpper = { "WEST": "EAST", "SOUTH": "NORTH", "NORTH": "SOUTH", "EAST": "WEST", "UP": "DOWN", "DOWN": "UP" }
 //右键切换管道开口，shift切换对面
 BlockEvents.rightClicked("create:fluid_pipe", event => {
@@ -23,5 +22,5 @@ BlockEvents.rightClicked("create:fluid_pipe", event => {
     event.player.setStatusMessage(Component.translate("message.createdelight.pipe").color(Color.RED))
     return
   }
-  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? $Boolean.FALSE : $Boolean.TRUE))
+  event.level.setBlockAndUpdate(Pos, BlockStates.setValue(BlockProperties[Face], Bool ? global.CDServerJavaClasses["$Boolean"].FALSE : global.CDServerJavaClasses["$Boolean"].TRUE))
 })

@@ -123,9 +123,9 @@ MoneyUtil.calculateFoodValue = function (itemStack) {
 
     // 3. 统一处理所有有价值物品的品质（Quality）倍率修正
     if (baseValue > 0) {
-        let quality = $QualityUtils.getQuality(itemStack)
+        let quality = global.CDStartupJavaClasses["$QualityUtils"].getQuality(itemStack)
         if (quality.level() !== 0) {
-            let multiplier = Math.round(Math.sqrt(2 / $QualityConfig.getChance(quality)))
+            let multiplier = Math.round(Math.sqrt(2 / global.CDStartupJavaClasses["$QualityConfig"].getChance(quality)))
             return baseValue * multiplier
         }
     }

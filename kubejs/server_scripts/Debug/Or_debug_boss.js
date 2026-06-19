@@ -12,7 +12,6 @@ ItemEvents.rightClicked("createdelight:debug_reload_tool", e => {
   return;
 });
 
-const $Registries = Java.loadClass("net.minecraft.core.registries.Registries")
 ItemEvents.rightClicked("createdelight:debug_info_tool", e => {
   const { level, player } = e;
   let playerPos = player.block.pos
@@ -20,7 +19,7 @@ ItemEvents.rightClicked("createdelight:debug_info_tool", e => {
     player.swing()
     /** @type {Internal.Structure[]} */
     let structureArray = level.structureManager().getAllStructuresAt(playerPos).keySet().toArray()
-    let structureRegistry = level.registryAccess().registryOrThrow($Registries.STRUCTURE)
+    let structureRegistry = level.registryAccess().registryOrThrow(global.CDServerJavaClasses["$Registries"].STRUCTURE)
     for (let structure of structureArray) {
       let structureStart = level.structureManager().getStructureAt(playerPos, structure)
       if (structureStart.isValid()) {

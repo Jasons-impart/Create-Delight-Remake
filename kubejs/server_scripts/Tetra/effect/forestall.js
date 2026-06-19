@@ -1,7 +1,7 @@
 PlayerEvents.tick(e => {
     const { player } = e
     let item = player.mainHandItem
-    if (!(item.item instanceof $ModularItem))
+    if (!(item.item instanceof global.CDServerJavaClasses["$ModularItem"]))
         return
     if (!TetraUtil.itemHasEffect(item, "createdelight:forstall"))
         return
@@ -27,7 +27,7 @@ global.TetraForstallAttackEffect = function (e) {
         return
     let item = player.mainHandItem
 
-    if (item.item instanceof $ModularItem) {
+    if (item.item instanceof global.CDServerJavaClasses["$ModularItem"]) {
         if (TetraUtil.itemHasEffect(item, "createdelight:forstall")) {
             let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:forstall")
             let level = TetraUtil.getEffectLevel(item, "createdelight:forstall")

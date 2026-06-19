@@ -9,7 +9,7 @@ Ponder.registry((event) => {
       "createdelight:ponder_sequenced_assembly",
       
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses["$CreateSceneBuilder"](builder)
         scene.showBasePlate();
 
         // 设置转速(不设置默认256)

@@ -1,10 +1,8 @@
 
-const $TableClothBlockEntity = Java.loadClass("com.simibubi.create.content.logistics.tableCloth.TableClothBlockEntity")
-const $PackageEntity = Java.loadClass("com.simibubi.create.content.logistics.box.PackageEntity")
 let Order = global.Order
 let MoneyUtil = global.MoneyUtil
 
-function buildOrderRewardPackages(level, orderInfo, qualityScore) {
+function buildOrderRewardBundles(level, orderInfo, qualityScore) {
     let customer = Order.customerProperties[orderInfo.type]
     let reward = customer.reward
     if (reward == null)
@@ -23,22 +21,22 @@ function buildOrderRewardPackages(level, orderInfo, qualityScore) {
         list.add(item)
     })
 
-    let rewardPackages = []
+    let rewardBundles = []
     for (let i = 0; i < list.length; i += 9) {
-        rewardPackages.push($PackageItem.containing(list.subList(i, Math.min(i + 9, list.length))))
+        rewardBundles.push(global.CDServerJavaClasses["$PackageItem"].containing(list.subList(i, Math.min(i + 9, list.length))))
     }
-    return rewardPackages
+    return rewardBundles
 }
 
-function placeRewardPackages(level, pos, direction, start, rewardPackages) {
+function placeRewardBundles(level, pos, direction, start, rewardBundles) {
     /**@type {Internal.TableClothBlockEntity} */
     let startBe = level.getBlockEntity(pos[direction](start), "create:table_cloth").get()
-    if (rewardPackages.length == 0)
+    if (rewardBundles.length == 0)
         return
-    for (let index = 0; index < rewardPackages.length; index++) {
-        let element = rewardPackages[index]
+    for (let index = 0; index < rewardBundles.length; index++) {
+        let element = rewardBundles[index]
         if (startBe.manuallyAddedItems.size() == 4) {
-            $PackageEntity.fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
+            global.CDServerJavaClasses["$PackageEntity"].fromItemStack(level, pos[direction](start).offset(0.5, 1, 0.5), element)
         } else {
             startBe.manuallyAddedItems.push(element)
             startBe.notifyUpdate()
@@ -74,9 +72,9 @@ function settleOrderSegment(level, pos, direction, start, end, orderStack, packa
     if (qualityScore <= 0)
         return false
 
-    let rewardPackages = buildOrderRewardPackages(level, orderInfo, qualityScore)
+    let rewardBundles = buildOrderRewardBundles(level, orderInfo, qualityScore)
     clearOrderSegment(level, pos, direction, start, end)
-    placeRewardPackages(level, pos, direction, start, rewardPackages)
+    placeRewardBundles(level, pos, direction, start, rewardBundles)
     notifyOrderReputation(level, orderInfo, qualityScore)
     return true
 }

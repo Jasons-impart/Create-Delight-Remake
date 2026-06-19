@@ -15,7 +15,7 @@ EntityEvents.drops(e => {
 
     let mainhandItem = player.getMainHandItem()
     let item = TetraUtil.getItem(mainhandItem)
-    if (!(item instanceof $ModularItem) || !TetraUtil.itemHasEffect(mainhandItem, "createdelight:fiber_proliferation"))
+    if (!(item instanceof global.CDServerJavaClasses["$ModularItem"]) || !TetraUtil.itemHasEffect(mainhandItem, "createdelight:fiber_proliferation"))
         return
     let level = TetraUtil.getEffectLevel(mainhandItem, "createdelight:fiber_proliferation")
     let effciency = TetraUtil.getEffectEfficiency(mainhandItem, "createdelight:fiber_proliferation")

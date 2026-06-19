@@ -1,5 +1,3 @@
-const $Mob = Java.loadClass("net.minecraft.world.entity.Mob")
-const $MobSpawnType = Java.loadClass("net.minecraft.world.entity.MobSpawnType")
 let MoneyUtil = global.MoneyUtil
 const DamageFallback = {
     "minecraft:ender_dragon": 10,
@@ -16,13 +14,13 @@ EntityEvents.drops(e => {
     let player = source.player
     if (player == null || !player.isPlayer() || player.isFake())
         return
-    // player.tell(`${entity instanceof $Mob}`)
-    if (entity instanceof $Mob) {
+    // player.tell(`${entity instanceof global.CDServerJavaClasses["$Mob"]}`)
+    if (entity instanceof global.CDServerJavaClasses["$Mob"]) {
         /**
          * @type {Internal.Mob}
          */
         let mob = entity
-        if (mob.spawnType == $MobSpawnType.SPAWNER)
+        if (mob.spawnType == global.CDServerJavaClasses["$MobSpawnType"].SPAWNER)
             return
         if (!mob.monster && !mob.aggressive)
             return
@@ -41,7 +39,7 @@ EntityEvents.drops(e => {
         multipler *= Math.sqrt(armor + 1)
         multipler /= 2
         let itemStack = player.mainHandItem
-        if (itemStack.item instanceof $ModularItem && TetraUtil.itemHasEffect(itemStack, "createdelight:greedy")) {
+        if (itemStack.item instanceof global.CDServerJavaClasses["$ModularItem"] && TetraUtil.itemHasEffect(itemStack, "createdelight:greedy")) {
             let level = TetraUtil.getEffectLevel(itemStack, "createdelight:greedy")
             multipler *= (1 + level / 100)
         }

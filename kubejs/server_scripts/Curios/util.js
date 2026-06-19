@@ -1,6 +1,3 @@
-const $CuriosApi = Java.loadClass("top.theillusivec4.curios.api.CuriosApi")
-const $ICurioItem = Java.loadClass("top.theillusivec4.curios.api.type.capability.ICurioItem")
-
 let CuriosUtil = {}
 /**
  * 
@@ -8,7 +5,7 @@ let CuriosUtil = {}
  * @returns {Internal.LazyOptional<Internal.ICuriosItemHandler>}
  */
 CuriosUtil.getCuriosInventory = function(entity) {
-    return $CuriosApi.getCuriosInventory(entity)
+    return global.CDServerJavaClasses["$CuriosApi"].getCuriosInventory(entity)
 }
 /**
  * 

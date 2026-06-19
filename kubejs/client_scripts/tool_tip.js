@@ -1,6 +1,4 @@
 
-const $SequencedAssemblyItem = Java.loadClass("com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem")
-
 let MoneyUtil = global.MoneyUtil
 
 ItemEvents.tooltip(e => {
@@ -124,9 +122,6 @@ ItemEvents.tooltip(e => {
 //         })
 //     })
 // })
-const $QualityUtils = Java.loadClass("de.cadentem.quality_food.util.QualityUtils")
-const $QualityConfig = Java.loadClass("de.cadentem.quality_food.config.QualityConfig")
-
 let difficultyLoots = global.difficultyLoots
 function getDifficultyTierName(tierIndex) {
     return Text.translatable(`difficulty.createdelight.tier.${tierIndex}`)
@@ -163,7 +158,7 @@ ItemEvents.tooltip(e => {
         }
     })
     e.addAdvancedToAll((item, advanced, text) => {
-        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof $SequencedAssemblyItem)) {
+        if (item.hasNBT() && item.nbt.contains("SequencedAssembly") && !(item.item instanceof global.CDClientJavaClasses["$SequencedAssemblyItem"])) {
             text.add(Text.translatable("tooltip.createdelight.sequenced_assembly_explanation"))
         }
     })

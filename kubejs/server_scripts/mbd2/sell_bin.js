@@ -1,6 +1,4 @@
 
-const $ClientboundSetTitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetTitleTextPacket")
-const $ClientboundSetSubtitleTextPacket = Java.loadClass("net.minecraft.network.protocol.game.ClientboundSetSubtitleTextPacket")
 let MoneyUtil = global.MoneyUtil
 
 MBDMachineEvents.onTick("createdelight:sell_bin", e => {
@@ -20,7 +18,7 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
         let baseValue = MoneyUtil.calculateFoodValue(itemSlot)
 
         if (baseValue > 0) {
-            let Quality = $QualityUtils.getQuality(itemSlot)
+            let Quality = global.CDServerJavaClasses["$QualityUtils"].getQuality(itemSlot)
             let Qlevel = Quality.level()
             slotValue = itemSlot.count * baseValue
             trade = Component.of(itemSlot.hoverName)
@@ -51,10 +49,10 @@ MBDMachineEvents.onTick("createdelight:sell_bin", e => {
     let coinValue = MoneyUtil.coinValueFromBase(values)
     if (!coinValue.empty) {
         if (player != null) {
-            if (player instanceof $ServerPlayer) {
+            if (player instanceof global.CDServerJavaClasses["$ServerPlayer"]) {
                 let severPlayer = player
-                severPlayer.connection.send(new $ClientboundSetTitleTextPacket(Component.translate("message.createdelight.sell_bin_hint").color(Color.GOLD)))
-                severPlayer.connection.send(new $ClientboundSetSubtitleTextPacket( MoneyUtil.convertBaseValueToString(values).color(Color.GOLD)))
+                severPlayer.connection.send(new global.CDServerJavaClasses["$ClientboundSetTitleTextPacket"](Component.translate("message.createdelight.sell_bin_hint").color(Color.GOLD)))
+                severPlayer.connection.send(new global.CDServerJavaClasses["$ClientboundSetSubtitleTextPacket"]( MoneyUtil.convertBaseValueToString(values).color(Color.GOLD)))
             }
             player.sendData("kubejs_player_playsound", {soundEvent: "iceandfire:gold_pile_step"})
             player.tell(Component.of("§f             §6出货单  §r"));

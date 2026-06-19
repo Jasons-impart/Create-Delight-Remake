@@ -10,7 +10,7 @@ global.TetraChargeAttackEffect = function(e) {
     let item = player.mainHandItem
     if (item == null || item.empty)
         return
-    if (!(item.item instanceof $ModularItem) || !TetraUtil.itemHasEffect(item, "createdelight:charge"))
+    if (!(item.item instanceof global.CDServerJavaClasses["$ModularItem"]) || !TetraUtil.itemHasEffect(item, "createdelight:charge"))
         return
     let level = TetraUtil.getEffectLevel(item, "createdelight:charge")
     let efficiency = TetraUtil.getEffectEfficiency(item, "createdelight:charge")
