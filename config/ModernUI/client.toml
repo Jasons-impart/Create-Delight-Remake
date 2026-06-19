@@ -157,7 +157,7 @@
 #Font Config
 [font]
 	#The first font family to use. See fallbackFontFamilyList
-	firstFontFamily = "Source Han Sans CN Medium"
+	firstFontFamily = "Inter Frozen Medium"
 	#A set of fallback font families to determine the typeface to use.
 	#The order is first > fallbacks. TrueType & OpenType are supported.
 	#Each element can be one of the following two cases:
@@ -171,7 +171,7 @@
 	#Note that for TTC/OTC font, you should register it and select one of font families.
 	#Otherwise, only the first font family from the TrueType/OpenType Collection will be used.
 	#This is only read once when the game is loaded, you can reload via in-game GUI.
-	fallbackFontFamilyList = ["Noto Sans", "Segoe UI Variable", "Segoe UI", "San Francisco", "Open Sans", "SimHei", "STHeiti", "Segoe UI Symbol", "mui-i18n-compat"]
+	fallbackFontFamilyList = ["Source Han Sans CN Medium", "Noto Sans", "Segoe UI Variable", "Segoe UI", "San Francisco", "Open Sans", "SimHei", "STHeiti", "Segoe UI Symbol", "mui-i18n-compat"]
 	#A set of additional font files (or directories) to register.
 	#For TrueType/OpenType Collections, all contained font families will be registered.
 	#Registered fonts can be referenced in Modern UI and Minecraft (Modern Text Engine).
