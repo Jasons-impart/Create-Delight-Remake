@@ -256,3 +256,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Supplementaries faucets convert Forge `FluidStack`s through Moonlight `SoftFluidStack`; tag-equivalent fluids such as `createdelight:soya_milk` in `#forge:milk` can round-trip back as the soft fluid default `minecraft:milk`.
 - **Fix/Lesson**: CDC preserves the original Forge fluid id in the soft stack tag during Moonlight Forge conversion and restores it when converting back, because soft fluid `equivalent_fluids` mappings are many-to-one.
 
+## Ice and Fire missing Tabula models need classloader fallback
+
+**Date**: 2026-06-20
+
+- **Problem**: `iceandfire-2.1.13-1.20.1-beta-5` lacks `firedragon_swimming.tbl` and `firedragon_swim5.tbl`, causing client resource reload NPE stack traces just before the title screen.
+- **Fix/Lesson**: Patch CDC to redirect Ice and Fire `TabulaModelHandlerHelper` classloader resource lookups to existing firedragon model fallbacks, because KubeJS resource-pack assets do not satisfy `ClassLoader#getResourceAsStream`.
+

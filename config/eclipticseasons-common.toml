@@ -171,8 +171,6 @@
 	ModsWithoutSereneSeasonBasedHumidity = []
 	#Show crop growth diagnostics in Jade or TOP.
 	ShowCropGrowthInfoInProbe = true
-	#Enables winter-themed Level of Detail (LOD) textures for Distant Horizons to ensure visual consistency at long distances.
-	DistantHorizonsWinterLOD = false
 
 [Debug]
 	#Log errors when internal functions are used incorrectly.

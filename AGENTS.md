@@ -62,6 +62,7 @@ CD-master-dev/
 - Branch from `main`: `git checkout main && git pull && git checkout -b feat/xxx`
 - Commit format: `[类型] 描述 (#PR号)` - types: `fix`, `feat`, `mod`, `dev`, `conf`
 - PR title/body use Chinese by default because reviewers and release notes are Chinese-first.
+- For multiline PR bodies from PowerShell, use a here-string or `--body-file`; `\n` is literal and renders broken Markdown on GitHub.
 - ❌ Never commit on merged feature branches
 - ❌ Never force push to main
 
@@ -140,6 +141,7 @@ These rules ensure this knowledge base stays effective. Violating them degrades 
 - **AGENTS.md 是项目开发知识库，需要随规则变更一起提交**
 - **AGENTS.local.md 存放个人/机器特有配置，默认忽略，不提交**
 - **`.agents/skills/` 存放技能文件，OpenCode 和 Codex 都能自动发现**
+- Default client options source is `.options.txt`; release packaging renames it to `options.txt`, so do not rely on ignored runtime `options.txt` for pack defaults.
 - Client-only mods → set `side = "client"` in the corresponding `mods/*.pw.toml`
 - Server-only mods → set `side = "server"` in the corresponding `mods/*.pw.toml`
 - Language files validated by `.vscode/probe.lang-schema.json`
