@@ -8,57 +8,115 @@ ServerEvents.recipes(e => {
         "cosmopolitan:farmersdelight/jelly_roll",
         "cosmopolitan:farmersdelight/chocolate_roll_from_chocolate",
         "cosmopolitan:farmersdelight/ink_roll",
+        "cosmopolitan:neapolitan/classic_ice_cream_from_apple",
+        "cosmopolitan:neapolitan/classic_ice_cream",
+        "neapolitan:mixed/neapolitan_ice_cream",
+        "neapolitan:mixed/neapolitan_ice_cream_from_vanilla",
+        "collectorsreap:food/sunny_ice_cream_from_vanilla",
+        "collectorsreap:food/sunny_ice_cream",
+        "cosmopolitan:neapolitan/seasonals/seasonal_ice_cream",
+        "cosmopolitan:neapolitan/seasonals/seasonal_ice_cream_from_pumpkin",
+        "cosmopolitan:neapolitan/neapolitan_ice_cream_sandwich",
+        "cosmopolitan:neapolitan/classic_ice_cream_sandwich",
+        "cosmopolitan:neapolitan/seasonals/seasonal_ice_cream_sandwich",
+        "cosmopolitan:general/wafer"
     ])
 
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes
     e.replaceInput({ mod: "cosmopolitan" }, "#forge:crops/wheat", "#forge:flour")
     e.replaceOutput({ mod: "cosmopolitan" }, "cosmopolitan:chorus_fruit_popsicle", "ends_delight:chorus_fruit_popsicle")
     e.remove({ type: "create:sequenced_assembly", output: ['cosmopolitan:classic_ice_cream', 'cosmopolitan:seasonal_ice_cream', 'neapolitan:neapolitan_ice_cream'] })
-    {
+    /**
+     * 
+     * @param {Internal.RecipesEventJS} e
+     * @param {Internal.ItemStack_} ice_cream_bowl
+     * @param {Internal.ItemStack_} ice_cream_sandwich
+     * @param {Internal.ItemStack_} scoop_1
+     * @param {Internal.ItemStack_} scoop_2
+     * @param {Internal.ItemStack_} scoop_3
+     */
+    function make_mixed_ice_cream(e, ice_cream_bowl, ice_cream_sandwich, scoop_1, scoop_2, scoop_3) {
         let iner = "minecraft:bowl"
-        create.sequenced_assembly("cosmopolitan:classic_ice_cream", iner, [
-            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:glow_berry_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:carrot_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:apple_ice_cream", 250)])
+        e.recipes.create.sequenced_assembly(ice_cream_bowl, iner, [
+            e.recipes.create.deploying(iner, [iner, scoop_1]),
+            e.recipes.create.deploying(iner, [iner, scoop_2]),
+            e.recipes.create.deploying(iner, [iner, scoop_3])
         ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("createdelight:create/sequenced_assembly/classic_ice_cream")
-    }
-    {
-        let iner = "minecraft:bowl"
-        create.sequenced_assembly("cosmopolitan:seasonal_ice_cream", iner, [
-            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:sweet_berry_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:beetroot_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:pumpkin_ice_cream", 250)])
-        ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("createdelight:create/sequenced_assembly/seasonal_ice_cream")
-    }
-    {
-        let iner = "minecraft:bowl"
-        create.sequenced_assembly("neapolitan:neapolitan_ice_cream", iner, [
-            create.deploying(iner, [iner, 'youkaishomecoming:ice_cube']),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:chocolate_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:strawberry_ice_cream", 250)]),
-            create.filling(iner, [iner, Fluid.of("cosmopolitan:vanilla_ice_cream", 250)])
-        ])
-        .loops(1)
-        .transitionalItem(iner)
-        .id("createdelight:create/sequenced_assembly/neapolitan_ice_cream")
+            .loops(1)
+            .transitionalItem(iner)
+            .id(`createdelight:create/sequenced_assembly/${ice_cream_bowl.split(":")[1]}`)
+        e.recipes.kubejs.shapeless(
+            ice_cream_bowl,
+            [
+                "minecraft:bowl",
+                scoop_1,
+                scoop_2,
+                scoop_3,
+            ]
+        ).id(`createdelight:shapeless/${ice_cream_bowl.split(":")[1]}`)
+        let iner_1 = "cosmopolitan:wafer"
+            e.recipes.create.sequenced_assembly(`2x ${ice_cream_sandwich}`, iner_1, [
+                e.recipes.create.deploying(iner_1, [iner_1, scoop_1]),
+                e.recipes.create.deploying(iner_1, [iner_1, scoop_2]),
+                e.recipes.create.deploying(iner_1, [iner_1, scoop_3]),
+                e.recipes.create.deploying(iner_1, [iner_1, iner_1]),
+                e.recipes.create.cutting(iner_1, iner_1)
+            ])
+                .loops(1)
+                .transitionalItem(iner_1)
+                .id(`createdelight:create/sequenced_assembly/${ice_cream_sandwich.split(":")[1]}`)
+            e.recipes.kubejs.shaped(
+                ice_cream_sandwich,
+                [
+                    " A ",
+                    "BCD",
+                    " A "
+                ], {
+                    A: iner_1,
+                    B: scoop_1,
+                    C: scoop_2,
+                    D: scoop_3,
+                }
+            ).id(`createdelight:shapeless/${ice_cream_sandwich.split(":")[1]}`)
+            e.recipes.kubejs.shapeless(
+                ice_cream_sandwich,
+                [
+                    ice_cream_bowl,
+                    "cosmopolitan:wafer",
+                    "cosmopolitan:wafer"
+                ]
+            ).id(`createdelight:shapeless/${ice_cream_sandwich.split(":")[1]}_from_bowl`).replaceIngredient(ice_cream_bowl, "minecraft:bowl")
     }
 
-    create.filling("cosmopolitan:cream_bun", ["#forge:bread", Fluid.of("cosmopolitan:cream", 250)])
-        .id("createdelight:filling/cream_bun")
-    create.deploying("cosmopolitan:cream_bun", ["#forge:bread", "#forge:cream"])
-        .id("createdelight:deploying/cream_bun")
-    create.mixing("cosmopolitan:gulime", [
-        Fluid.of("createdelightcore:slime", 270),
-        "minecraft:carved_pumpkin"
-    ]).id("createdelight:mixing/gulime")
+    make_mixed_ice_cream(e, "cosmopolitan:classic_ice_cream", "cosmopolitan:classic_ice_cream_sandwich", 
+        "createdelightcore:glow_berry_ice_cream_scoop", "createdelightcore:apple_ice_cream_scoop", "createdelightcore:carrot_ice_cream_scoop")
+    make_mixed_ice_cream(e, "cosmopolitan:seasonal_ice_cream", 'cosmopolitan:seasonal_ice_cream_sandwich',
+        "alexscaves:sweetberry_ice_cream_scoop", "createdelightcore:pumpkin_ice_cream_scoop", "createdelightcore:beetroot_ice_cream_scoop")
+    make_mixed_ice_cream(e, "neapolitan:neapolitan_ice_cream", 'cosmopolitan:neapolitan_ice_cream_sandwich',
+        "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:chocolate_ice_cream_scoop")
+    make_mixed_ice_cream(e, "collectorsreap:sunny_ice_cream", 'createdelightcore:sunny_ice_cream_sandwich',
+        "createdelightcore:strawberry_ice_cream_scoop", "alexscaves:vanilla_ice_cream_scoop", "createdelightcore:lucuma_ice_cream_scoop")
+
+    create.filling("cosmopolitan:cream_bun",
+        [
+            "#forge:bread",
+            Fluid.of("cosmopolitan:cream", 250)
+        ]
+    ).id("createdelight:filling/cream_bun")
+    create.deploying(
+        "cosmopolitan:cream_bun",
+        [
+            "#forge:bread",
+            "#forge:cream"
+        ]
+    ).id("createdelight:deploying/cream_bun")
+    create.mixing(
+        "cosmopolitan:gulime",
+        [
+            Fluid.of("createdelightcore:slime", 270),
+            "minecraft:carved_pumpkin"
+        ]
+    ).id("createdelight:mixing/gulime")
     kubejs.shapeless(
         "cosmopolitan:gulime",
         [

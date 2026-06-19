@@ -363,6 +363,8 @@ ItemEvents.modification(e => {
     food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
     food_effects('farmersrespite:rose_hip_pie_slice', "minecraft:regeneration", 5)
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
+    food_effects('createdelightcore:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
+    food_effects('createdelightcore:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
