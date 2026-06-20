@@ -263,3 +263,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: `iceandfire-2.1.13-1.20.1-beta-5` lacks `firedragon_swimming.tbl` and `firedragon_swim5.tbl`, causing client resource reload NPE stack traces just before the title screen.
 - **Fix/Lesson**: Patch CDC to redirect Ice and Fire `TabulaModelHandlerHelper` classloader resource lookups to existing firedragon model fallbacks, because KubeJS resource-pack assets do not satisfy `ClassLoader#getResourceAsStream`.
 
+## Virtual fluid buckets need FluidType bucket mappings
+
+**Date**: 2026-06-20
+
+- **Problem**: Northstar virtual fluids could be inserted from custom buckets but empty buckets could not extract them from Forge-standard containers such as Functional Storage fluid drawers because the fluids had no native `FluidType#getBucket` result.
+- **Fix/Lesson**: Register plain CDC `BucketItem`s with `FluidEntry#getSource()` and patch `FluidType#getBucket` after normalizing flowing fluids to source; virtual fluids already cannot place in-world, and Create basin-specific fill patches stay separate because Create checks its own item-filling path.
+
