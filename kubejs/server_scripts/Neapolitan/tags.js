@@ -3,4 +3,7 @@ ServerEvents.tags("minecraft:item", e => {
     'northstar:martian_strawberry',
     'neapolitan:white_strawberries'
   ])
+  e.removeAllTagsFrom([
+    'neapolitan:chocolate_bar'
+  ])
 })
