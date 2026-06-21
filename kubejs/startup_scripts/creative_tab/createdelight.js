@@ -89,6 +89,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
     'createdelight:enchanted_golden_arbutus_berries',
+    'createdelight:enchanted_golden_lucuma',
   ])
 })
 StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {

@@ -381,6 +381,21 @@ StartupEvents.registry("item", e => {
         })
         .glow(true)
         .translationKey("item.createdelight.enchanted_golden_arbutus_berries")
+    //附魔金蛋黄果
+    e.create("createdelight:enchanted_golden_lucuma")
+        .texture("collectorsreap:item/gilded_lucuma")
+        .rarity("epic")
+        .food(f => {
+            f.hunger(4)
+                .saturation(1.25)
+                .effect("collectorsreap:rebound", 4800, 3, 1.0)
+                .effect("minecraft:fire_resistance", 6000, 0, 1.0)
+                .effect("minecraft:absorption", 3600, 3, 1.0)
+                .effect("minecraft:regeneration", 400, 2, 1.0)
+                .effect("minecraft:resistance", 3600, 0, 1.0)
+        })
+        .glow(true)
+        .translationKey("item.createdelight.enchanted_golden_lucuma")
 
     e.create("createdelight:fuel_hotcream")
         .tag("create:blaze_burner_fuel/special")

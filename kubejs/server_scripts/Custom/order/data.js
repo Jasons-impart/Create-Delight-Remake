@@ -878,7 +878,6 @@ ServerEvents.tags("minecraft:item", e => {
         "create_confectionery:full_white_chocolate_bar",
         "create_confectionery:ruby_chocolate_glazed_berries",
         "crabbersdelight:coconut_pudding",
-        "neapolitan:chocolate_bar",
         "neapolitan:vanilla_chocolate_fingers",
         "cavedelight:spelunkie_pudding",
         "youkaishomecoming:doughnut",
