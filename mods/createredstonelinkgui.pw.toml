@@ -1,13 +1,13 @@
 name = "Create: Redstone Link GUI [Unofficial Port]"
-filename = "createredstonelinkgui-1.20.1-1.8.2.jar"
+filename = "createredstonelinkgui-1.20.1-1.8.3.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "69824947ca3f04cd867eb763532e01348dceae52"
+hash = "dd78444c069ef23077a424aa380d86431bb11d8c"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8285733
+file-id = 8291501
 project-id = 1579457
