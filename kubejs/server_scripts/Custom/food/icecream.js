@@ -36,38 +36,87 @@ ServerEvents.recipes(e => {
      * @param {Internal.ItemStack_} icecreamblock 
      */
     function make_ice_cream(e, ingredient, outputFluidIcecream, outputFluidMilkshake, icecreamscoop, icecream, milkshake, icecreamcone, icecreamblock) {
-        e.remove({output: icecream, type: "crafting_shapeless"})
-        e.remove({output: icecreamcone, type: "crafting_shapeless"})
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:emptying"})
         e.remove({output: Fluid.of(outputFluidIcecream), type: "create:mixing"})
-        e.remove({output: milkshake, type: "crafting_shapeless"})
-        e.remove({output: milkshake, type: "create:filling"})
+
         e.remove({output: icecream, type: "create:filling"})
+        e.remove({output: icecream, type: "crafting_shapeless"})
+
         e.remove({output: icecreamcone, type: "create:filling"})
+        e.remove({output: icecreamcone, type: "crafting_shapeless"})
+
+        e.remove({output: milkshake, type: "create:filling"})
+        e.remove({output: milkshake, type: "crafting_shapeless"})
+
         e.remove({output: icecreamblock, type: "crafting_shaped"})
-        e.recipes.kubejs.shaped(
-            icecreamblock,
+
+        create.mixing(
+            Fluid.of(outputFluidIcecream, 750),
             [
-                "AA",
-                "AA"
-            ], {
-                A: icecreamscoop
-            }
-        ).id(`createdelight:shaped/${icecreamblock.split(":")[1]}`)
+                ingredient,
+                Fluid.of("cosmopolitan:cream", 500),
+                Fluid.of("createdelight:base_syrup", 250)
+            ]
+        ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
+        create.mixing(
+            [
+                Fluid.of(outputFluidIcecream, 250),
+                "minecraft:bowl"
+            ],
+            icecream
+        ).heated().id(`createdelight:empty_mixing/${icecream.split(":")[1]}`)
+        e.recipes.createdelight.big_centrifugation()
+            .inputFluids(Fluid.of(outputFluidMilkshake, 250))
+            .outputFluids(Fluid.of("minecraft:milk", 250))
+            .outputFluids(Fluid.of(outputFluidIcecream, 250))
+            .duration(100)
+            .id(`createdelight:big_centrifugation/separation/${outputFluidMilkshake.split(":")[1]}`)
+
+        create.mixing(
+            Fluid.of(outputFluidMilkshake, 250),
+            [
+                icecreamscoop,
+                Fluid.of("minecraft:milk", 250)
+            ]
+        ).id(`createdelight:mixing/${outputFluidMilkshake.split(":")[1]}`)
+        create.emptying(
+            [
+                Fluid.of(outputFluidMilkshake, 250),
+                "minecraft:glass_bottle"
+            ],
+            milkshake
+        ).id(`createdelight:emptying/${outputFluidMilkshake.split(":")[1]}`)
+
+        create.mixing(
+            icecreamscoop,
+            Fluid.of(outputFluidIcecream, 250)
+        ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
+        kubejs.shapeless(
+            icecreamscoop,
+            icecream
+        ).replaceIngredient(icecream, "minecraft:bowl").id(`createdelight:shapeless/${icecreamscoop.split(":")[1]}`)
         e.recipes.kubejs.shapeless(
-                `4x ${icecreamscoop}`,
+            `4x ${icecreamscoop}`,
             [
                 icecreamblock
             ]
         ).id(`createdelight:shapeless/${icecreamblock.split(":")[1]}`)
-        e.recipes.kubejs.shapeless(
-            milkshake,
+
+        create.deploying(
+            icecream,
             [
-                "minecraft:glass_bottle",
-                icecream,
-                "#forge:milk"
+                "minecraft:bowl",
+                icecreamscoop
             ]
-        ).id(`createdelight:shapeless/${milkshake.split(":")[1]}`).replaceIngredient(icecream, "minecraft:bowl")
+        ).id(`createdelight:deploying/${icecream.split(":")[1]}`)
+        kubejs.shapeless(
+            icecream,
+            [
+                "minecraft:bowl",
+                icecreamscoop
+            ]
+        ).id(`createdelight:shapeless/${icecream.split(":")[1]}`)
+
         e.recipes.create.deploying(
             icecreamcone,
             [
@@ -89,56 +138,15 @@ ServerEvents.recipes(e => {
                 icecream
             ]
         ).id(`createdelight:shapeless/${icecreamcone.split(":")[1]}_from_icecream`).replaceIngredient(icecream, "minecraft:bowl")
-        e.recipes.createdelight.big_centrifugation()
-            .inputFluids(Fluid.of(outputFluidMilkshake, 250))
-            .outputFluids(Fluid.of("minecraft:milk", 250))
-            .outputFluids(Fluid.of(outputFluidIcecream, 250))
-            .duration(100)
-        .id(`createdelight:big_centrifugation/separation/${outputFluidMilkshake.split(":")[1]}`)
-        create.mixing(
-            Fluid.of(outputFluidIcecream, 750),
+
+        e.recipes.kubejs.shapeless(
+            milkshake,
             [
-                ingredient,
-                Fluid.of("cosmopolitan:cream", 500),
-                Fluid.of("createdelight:base_syrup", 250)
+                "minecraft:glass_bottle",
+                icecream,
+                "#forge:milk"
             ]
-        ).heatRequirement("cooled").id(`createdelight:mixing/${outputFluidIcecream.split(":")[1]}`)
-        create.mixing(
-            [
-                Fluid.of(outputFluidIcecream, 250),
-                "minecraft:bowl"
-            ],
-            icecream
-        ).heated().id(`createdelight:empty_mixing/${icecream.split(":")[1]}`)
-        create.mixing(
-            icecreamscoop,
-            Fluid.of(outputFluidIcecream, 250)
-        ).heatRequirement("frozen").id(`createdelight:mixing/${icecreamscoop.split(":")[1]}`)
-        create.deploying(
-            icecream,
-            [
-                "minecraft:bowl",
-                icecreamscoop
-            ]
-        ).id(`createdelight:deploying/${icecream.split(":")[1]}`)
-        kubejs.shapeless(
-            icecream,
-            [
-                "minecraft:bowl",
-                icecreamscoop
-            ]
-        ).id(`createdelight:shapeless/${icecream.split(":")[1]}`)
-        kubejs.shapeless(
-            icecreamscoop,
-            icecream
-        ).replaceIngredient(icecream, "minecraft:bowl").id(`createdelight:shapeless/${icecreamscoop.split(":")[1]}`)
-        create.mixing(
-            Fluid.of(outputFluidMilkshake, 250),
-            [
-                icecreamscoop,
-                Fluid.of("minecraft:milk", 250)
-            ]
-        ).id(`createdelight:mixing/${outputFluidMilkshake.split(":")[1]}`)
+        ).id(`createdelight:shapeless/${milkshake.split(":")[1]}`).replaceIngredient(icecream, "minecraft:bowl")
         create.filling(
             milkshake,
             [
@@ -153,13 +161,16 @@ ServerEvents.recipes(e => {
                 icecreamscoop
             ]
         ).id(`createdelight:deploying/${milkshake.split(":")[1]}_form_milk`)
-        create.emptying(
+
+        e.recipes.kubejs.shaped(
+            icecreamblock,
             [
-                Fluid.of(outputFluidMilkshake, 250),
-                "minecraft:glass_bottle"
-            ],
-            milkshake
-        ).id(`createdelight:emptying/${outputFluidMilkshake.split(":")[1]}`)
+                "AA",
+                "AA"
+            ], {
+                A: icecreamscoop
+            }
+        ).id(`createdelight:shaped/${icecreamblock.split(":")[1]}`)
     }
     make_ice_cream(e, "#forge:bars/chocolate", "cosmopolitan:chocolate_ice_cream",
         "create_central_kitchen:chocolate_milkshake", 'alexscaves:chocolate_ice_cream_scoop',
