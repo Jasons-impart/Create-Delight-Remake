@@ -270,3 +270,10 @@ gh pr create --body '... `ad_astra:xxx` ...'
 - **Problem**: Northstar virtual fluids could be inserted from custom buckets but empty buckets could not extract them from Forge-standard containers such as Functional Storage fluid drawers because the fluids had no native `FluidType#getBucket` result.
 - **Fix/Lesson**: Register plain CDC `BucketItem`s with `FluidEntry#getSource()` and patch `FluidType#getBucket` after normalizing flowing fluids to source; virtual fluids already cannot place in-world, and Create basin-specific fill patches stay separate because Create checks its own item-filling path.
 
+## Ratatouille squeezing fluid matches need amount checks
+
+**Date**: 2026-06-21
+
+- **Problem**: Ratatouille 1.3.8 `SqueezingRecipe#matches` and `#match` call `FluidIngredient#test` without checking `getRequiredAmount`, so recipes like `createdelight:squeezing/raw_sausage` can run with 1 mB of a matching fluid.
+- **Fix/Lesson**: CDC patches both recipe matching entry points to require matching fluid type and amount before the press starts, because `process` drains the configured amount only after the recipe has already passed matching.
+
