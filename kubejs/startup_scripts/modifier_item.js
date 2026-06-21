@@ -320,6 +320,9 @@ ItemEvents.modification(e => {
     food_hungers('fruitsdelight:fig_tart', 8.5, 4.5)
     food_hungers('fruitsdelight:lemon_tart', 8, 4)
     food_hungers('createdelightcore:pizza_slice', 4, 3)
+    food_hungers('collectorsreap:tropical_shaved_ice', 3, 1)
+    food_hungers('fruitsdelight:hamimelon_shaved_ice', 3, 1)
+    food_hungers('neapolitan:strawberry_banana_smoothie', 3, 1)
 
     // 食物效果修改
     food_effects('culturaldelights:pufferfish_roll', "minecraft:poison", 10)
@@ -365,6 +368,7 @@ ItemEvents.modification(e => {
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
     food_effects('createdelightcore:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
     food_effects('createdelightcore:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
+    food_effects('blackknightarmor:mied_floral_flavor_ice_cream', "createdelight:dragon_breath_resistance", 60)
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)

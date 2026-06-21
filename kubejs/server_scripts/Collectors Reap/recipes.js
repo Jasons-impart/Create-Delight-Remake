@@ -25,6 +25,7 @@ ServerEvents.recipes(e => {
         "collectorsreap:food/pink_limeade",
         "collectorsreap:food/limeade",
         "collectorsreap:food/mint_limeade",
+        "collectorsreap:food/tropical_shaved_ice"
     ])
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "collectorsreap:chieftain_leg", "#forge:crab_leg")
     e.replaceInput({id: "collectorsreap:food/buttered_legs"}, "#forge:milk", "createdelight:butter")
@@ -352,4 +353,26 @@ ServerEvents.recipes(e => {
         ], 'collectorsreap:potato_fritters',
         1.0, 200
     ).id("createdelight:food/potato_fritters")
+    kubejs.shapeless(
+        'collectorsreap:tropical_shaved_ice',
+        [
+            "minecraft:bowl",
+            "youkaishomecoming:ice_cube",
+            "#forge:milk",
+            "#forge:fruits/strawberry",
+            "collectorsreap:pink_dragon_fruit"
+        ]
+    ).id("createdelight:shapeless/tropical_shaved_ice")
+    {
+        let iner = "minecraft:bowl"
+        create.sequenced_assembly('collectorsreap:tropical_shaved_ice', iner, [
+            create.deploying(iner, [iner, "#forge:fruits/strawberry"]),
+            create.deploying(iner, [iner, "collectorsreap:pink_dragon_fruit"]),
+            create.deploying(iner, [iner, "youkaishomecoming:ice_cube"]),
+            create.filling(iner, [iner, FluidIngredients("forge:milk", 250)]),
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/tropical_shaved_ice")
+    }
 })

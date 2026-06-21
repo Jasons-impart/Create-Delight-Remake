@@ -6,6 +6,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", e 
         global.TetraDragonRestraintEvent(e)
         global.TetraLifeDrainEffect(e)
         global.TetraChargeAttackEffect(e)
+        global.DragonBreathResistanceEffect(e)
     }catch(err){
         console.error(err)
     }

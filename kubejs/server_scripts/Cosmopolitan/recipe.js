@@ -19,7 +19,10 @@ ServerEvents.recipes(e => {
         "cosmopolitan:neapolitan/neapolitan_ice_cream_sandwich",
         "cosmopolitan:neapolitan/classic_ice_cream_sandwich",
         "cosmopolitan:neapolitan/seasonals/seasonal_ice_cream_sandwich",
-        "cosmopolitan:general/wafer"
+        "cosmopolitan:general/wafer",
+        "cosmopolitan:neapolitan/xfarmersdelight/ice_cream_float",
+        "cosmopolitan:filling/create/ice_cream_float",
+        "cosmopolitan:general/snow_cone"
     ])
 
     const { kubejs, create, create_new_age, farmersdelight } = e.recipes
@@ -375,4 +378,41 @@ ServerEvents.recipes(e => {
         ], 'cosmopolitan:jello_salad',
         1.0, 200, "minecraft:bowl"
     ).id("createdelight:farmersdelight/cooking/jello_salad")
+    kubejs.shapeless(
+        'cosmopolitan:ice_cream_float',
+        [
+            "neapolitan:vanilla_ice_cream",
+            "cosmopolitan:spring_soda",
+            "minecraft:glass_bottle"
+        ]
+    ).id("createdelight:shapeless/ice_cream_float")
+    create.deploying(
+        'cosmopolitan:ice_cream_float',
+        [
+            "cosmopolitan:spring_soda",
+            "alexscaves:vanilla_ice_cream_scoop"
+        ]
+    ).id("createdelight:filling/ice_cream_float")
+    kubejs.shapeless(
+        'cosmopolitan:snow_cone',
+        [
+            "cosmopolitan:wafer_cone",
+            "minecraft:snowball",
+            "minecraft:honey_bottle",
+            "#forge:dyes",
+            "#forge:dyes"
+        ]
+    ).id("createdelight:shapeless/snow_cone")
+    {
+        let iner = "cosmopolitan:wafer_cone"
+        create.sequenced_assembly("cosmopolitan:snow_cone", iner, [
+            create.deploying(iner, [iner, "minecraft:snowball"]),
+            create.filling(iner, [iner, Fluid.of("create:honey", 250)]),
+            create.deploying(iner, [iner, "#forge:dyes"]),
+            create.deploying(iner, [iner, "#forge:dyes"]),
+        ])
+            .loops(1)
+            .transitionalItem(iner)
+            .id("createdelight:sequenced_assembly/snow_cone")
+    }
 })
