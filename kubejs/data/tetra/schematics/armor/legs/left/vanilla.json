@@ -1,0 +1,41 @@
+{
+  "replace": true,
+  "slots": [
+    "legs/left"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 4
+    },
+    "secondaryAttributes": {
+      "generic.armor": 1,
+      "generic.armor_toughness": 2
+    },
+    "tertiaryAttributes": {
+      "generic.armor_toughness": 1
+    }
+  },
+  "glyph": {
+    "textureLocation": "geotetraarmor:textures/gui/gui_gta.png",
+    "textureX": 80,
+    "textureY": 0
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:gem/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:fabric/",
+        "tetra:fibre/",
+        "tetra:skin/",
+        "tetra:scale/"
+      ],
+      "moduleKey": "armor/legs/left/vanilla",
+      "moduleVariant": "vanilla_legs_left/"
+    }
+  ]
+}

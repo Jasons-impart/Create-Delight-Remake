@@ -7,7 +7,16 @@ let Difficulty = {}
  */
 Difficulty.getPlayerRawValue = function () {
     let value = global.difficultyCache
-    return typeof value == "number" ? value : 0
+    if (value == null)
+        return 0
+    if (typeof value == "number")
+        return value
+    if (value.getAsInt != null)
+        return value.getAsInt()
+    if (value.intValue != null)
+        return value.intValue()
+    value = Number(value)
+    return isNaN(value) ? 0 : value
 }
 
 Difficulty.getPlayerTier = function () {
