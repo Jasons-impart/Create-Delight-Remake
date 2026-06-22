@@ -24,7 +24,6 @@ global.CDStartupJavaClasses = {
     $QualityUtils: Java.loadClass("de.cadentem.quality_food.util.QualityUtils"),
 
     // Minecraft / Forge / CDC
-    $Blocks: Java.loadClass("net.minecraft.world.level.block.Blocks"),
     ForgeRegistries: Java.loadClass("net.minecraftforge.registries.ForgeRegistries"),
     CDConfig: Java.loadClass("io.github.jasonsimpart.createdelightcore.CDConfig"),
 
