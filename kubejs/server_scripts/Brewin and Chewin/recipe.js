@@ -213,7 +213,6 @@ ServerEvents.recipes(e => {
         'brewinandchewin:creamy_onion_soup',
         1, 200, "minecraft:bowl"
     ).id("createdelight:cooking/creamy_onion_soup")
-})
     ratatouille.baking(
         "brewinandchewin:jerky",
         "#forge:meat/cooked"
