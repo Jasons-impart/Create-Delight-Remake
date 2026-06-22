@@ -1,0 +1,50 @@
+{
+  "replace": true,
+  "key": "iceandfire_lightning_dragonsteel",
+  "category": "metal",
+  "primary": 10,
+  "secondary": 4,
+  "tertiary": 5,
+  "durability": 1500,
+  "integrityCost": 2,
+  "integrityGain": 8,
+  "magicCapacity": 120,
+  "toolLevel": "minecraft:netherite",
+  "toolEfficiency": 10,
+  "effects": {
+    "createdelight:shocking": 1,
+    "createdelight:ice_dragon_restraint": 2,
+    "createdelight:fire_dragon_restraint": 2,
+    "more_mod_tetra:lightning_dragonsteel_material": 20
+  },
+  "tints": {
+    "glyph": "5c069d",
+    "texture": "5c069d"
+  },
+  "textures": [
+    "heavy",
+    "metal"
+  ],
+  "material": {
+    "items": [
+      "iceandfire:dragonsteel_lightning_ingot"
+    ]
+  },
+  "requiredTools": {
+    "hammer_dig": 7
+  },
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "iceandfire"
+    }
+  ],
+  "contexts": {
+    "armor": {
+      "effects": {
+        "more_mod_tetra:lightning_thorns": 10,
+        "more_mod_tetra:armor_last_stand": 8
+      }
+    }
+  }
+}

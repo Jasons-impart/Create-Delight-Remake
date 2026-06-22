@@ -1,0 +1,19 @@
+[
+  {
+    "key": "the_legend_scroll_of_reason_titan_up",
+    "level": 0,
+    "aspects": {
+      "honed": 1
+    },
+    "attributes": {
+      "*generic.attack_speed": 0.05,
+      "*generic.attack_damage": 0.05,
+      "*tetra:draw_speed": -0.05,
+      "*tetra:draw_strength": 0.05
+    },
+    "effects": {
+      "more_mod_tetra:everything_is_in_everything": 400,
+      "more_mod_tetra:experience_edge": [25,50]
+    }
+  }
+]

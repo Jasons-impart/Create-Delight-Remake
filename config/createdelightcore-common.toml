@@ -16,4 +16,7 @@ teleportCost = 45
 #The chance for luna soil to boost crops grows.
 #Range: 0.0 ~ 1.0
 lunaSoilBoostChance = 0.5
+#Whether to log More Mod Tetra independent damage multipliers.
+#Useful for debugging MMT damage stacking; logs only when MMT reports at least one independent multiplier.
+logMoreModTetraIndependentDamageMultipliers = true
 

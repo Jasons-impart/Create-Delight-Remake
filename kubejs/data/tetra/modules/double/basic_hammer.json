@@ -291,7 +291,7 @@
             }]
         }
     }, {
-        "materials": [ "tetra:metal/dragonsteel_fire_ingot","tetra:metal/dragonsteel_ice_ingot","tetra:metal/dragonsteel_lightning_ingot"],
+        "materials": [ "tetra:metal/iceandfire_fire_dragonsteel","tetra:metal/iceandfire_ice_dragonsteel","tetra:metal/iceandfire_lightning_dragonsteel"],
         "key": "basic_hammer/",
         "attributes": {
             "generic.attack_speed": -1.1
