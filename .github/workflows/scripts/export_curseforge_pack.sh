@@ -9,6 +9,7 @@ output="${1:?Usage: export_curseforge_pack.sh <output.zip> [port]}"
 port="${2:-8082}"
 
 raw_prefix="${PACKWIZ_FILES_RAW_PREFIX:?PACKWIZ_FILES_RAW_PREFIX is required}"
+raw_prefix_regex='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/[^"[:space:]]*/packwiz-files/'
 local_prefix="http://127.0.0.1:${port}/packwiz-files/"
 server_pid=""
 side_backup=""
@@ -43,9 +44,9 @@ bash "$script_dir/normalize_packwiz_files_for_curseforge.sh"
 
 mkdir -p "$(dirname "$output")"
 
-if grep -RIl --include='*.pw.toml' "$raw_prefix" mods resourcepacks shaderpacks >/dev/null 2>&1; then
+if grep -RIlE --include='*.pw.toml' "$raw_prefix_regex" mods resourcepacks shaderpacks >/dev/null 2>&1; then
   find mods resourcepacks shaderpacks -name '*.pw.toml' -exec \
-    sed -i "s|${raw_prefix}|${local_prefix}|g" {} +
+    sed -E -i "s|${raw_prefix_regex}|${local_prefix}|g" {} +
 
   python3 -m http.server "$port" --directory "." &
   server_pid=$!

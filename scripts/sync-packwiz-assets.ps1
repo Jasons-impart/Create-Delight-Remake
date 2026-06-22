@@ -4,7 +4,9 @@ param(
     [ValidateSet("client", "server", "all")]
     [string]$Side = "client",
     [string]$PackwizUrl = "https://github.com/Jasons-impart/packwiz/releases/latest/download/packwiz.exe",
-    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar"
+    [string]$InstallerUrl = "https://github.com/packwiz/packwiz-installer/releases/latest/download/packwiz-installer.jar",
+    [string]$PackwizFilesRef = $env:PACKWIZ_FILES_REF,
+    [string]$PackwizFilesRawPrefix = $env:PACKWIZ_FILES_RAW_PREFIX
 )
 
 Set-StrictMode -Version Latest
@@ -20,7 +22,7 @@ $InstallerJarPath = Join-Path $ToolsRoot "packwiz-installer.jar"
 $ServeLog = Join-Path $WorkRoot "serve.log"
 $ServeErrLog = Join-Path $WorkRoot "serve.err.log"
 $PackwizFilesRoot = Join-Path $RepoRoot "packwiz-files"
-$PackwizFilesRawPrefix = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/"
+$PackwizFilesRawUrlPattern = 'https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/.+/packwiz-files/'
 $StaticServerScript = Join-Path $PSScriptRoot "packwiz-static-server.py"
 $GeneratePackwizScript = Join-Path $PSScriptRoot "generate-packwiz-files.py"
 $PackwizSideScript = Join-Path $PSScriptRoot "packwiz-side.py"
@@ -30,6 +32,59 @@ function Write-Status {
     param([string]$Message)
     Write-Host "[sync] $Message" -ForegroundColor Cyan
 }
+
+function Get-GitRefForPackwizFiles {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRef)) {
+        return $PackwizFilesRef.Trim()
+    }
+
+    $branch = $null
+    try {
+        $branch = (& git -C $RepoRoot branch --show-current 2>$null)
+        if ($LASTEXITCODE -ne 0) { $branch = $null }
+    }
+    catch {
+        $branch = $null
+    }
+
+    if (-not [string]::IsNullOrWhiteSpace($branch)) {
+        return $branch.Trim()
+    }
+
+    try {
+        $commit = (& git -C $RepoRoot rev-parse HEAD 2>$null)
+        if ($LASTEXITCODE -eq 0 -and -not [string]::IsNullOrWhiteSpace($commit)) {
+            return $commit.Trim()
+        }
+    }
+    catch {}
+
+    return "main"
+}
+
+function Resolve-PackwizFilesRawPrefix {
+    if (-not [string]::IsNullOrWhiteSpace($PackwizFilesRawPrefix)) {
+        return $PackwizFilesRawPrefix.TrimEnd('/') + '/'
+    }
+
+    $ref = Get-GitRefForPackwizFiles
+    $escapedRef = ([Uri]::EscapeDataString($ref)).Replace('%2F', '/')
+    return "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/$escapedRef/packwiz-files/"
+}
+
+function Replace-PackwizFilesRawUrls {
+    param(
+        [string]$Content,
+        [string]$Replacement
+    )
+
+    return [regex]::Replace($Content, $PackwizFilesRawUrlPattern, {
+        param($Match)
+        return $Replacement
+    })
+}
+
+$PackwizFilesRawPrefix = Resolve-PackwizFilesRawPrefix
 
 function Resolve-JavaCommand {
     $javaFromJavaHome = $null
@@ -193,8 +248,8 @@ try {
     $localPackwizFilesPrefix = "http://127.0.0.1:$port/packwiz-files/"
     foreach ($metadataPath in $copiedMetadataPaths) {
         $content = Get-Content $metadataPath -Raw
-        if ($content.Contains($PackwizFilesRawPrefix)) {
-            Write-Utf8NoBomFile -Path $metadataPath -Content ($content.Replace($PackwizFilesRawPrefix, $localPackwizFilesPrefix))
+        if ($content -match $PackwizFilesRawUrlPattern) {
+            Write-Utf8NoBomFile -Path $metadataPath -Content (Replace-PackwizFilesRawUrls -Content $content -Replacement $localPackwizFilesPrefix)
         }
     }
 
