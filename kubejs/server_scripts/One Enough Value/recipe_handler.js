@@ -1,6 +1,3 @@
-let $RecipeType = Java.loadClass("net.minecraft.world.item.crafting.RecipeType");
-
-
 function toArray(iterable) {
     let arr = [];
     if (!iterable) return arr;
@@ -146,7 +143,7 @@ function calculateValueDistribution(items, itemCountMap, totalUnpricedCnt, consu
 
 OEVEvents.addRecipeHandler(event => {
     // 第一个参数为RecipeType，你可以使用字符串来代表
-    // 也可以去loadClass获取RecipeType实例
+    // 也可以直接传入RecipeType实例
 
     let defaultMultiplier = global.DefaultRecipeValueMultiplier;
 

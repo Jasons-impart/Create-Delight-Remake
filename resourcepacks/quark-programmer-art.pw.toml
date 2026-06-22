@@ -1,6 +1,6 @@
 name = "Quark Programmer Art"
 filename = "Quark Programmer Art.zip"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/resourcepacks/Quark Programmer Art.zip"

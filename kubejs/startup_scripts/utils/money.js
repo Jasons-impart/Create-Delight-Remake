@@ -1,34 +1,33 @@
 // priority: 1050
 
-let LightmansCurrencyApi = global.CDLightmansCurrencyApi
 let MoneyUtil = {}
 
 MoneyUtil.getMoneyChain = function () {
-    return LightmansCurrencyApi.CDConfig.moneyChain
+    return global.CDLightmansCurrencyApi.CDConfig.moneyChain
 }
 
 MoneyUtil.coinValueFromBase = function (value) {
-    return LightmansCurrencyApi.CoinValue["fromNumber(java.lang.String,long)"](MoneyUtil.getMoneyChain(), value)
+    return global.CDLightmansCurrencyApi.CoinValue["fromNumber(java.lang.String,long)"](MoneyUtil.getMoneyChain(), value)
 }
 
 MoneyUtil.coinValueFromItemOrValue = function (item, value) {
-    return LightmansCurrencyApi.CoinValue.fromItemOrValue(Item.of(item).item, value)
+    return global.CDLightmansCurrencyApi.CoinValue.fromItemOrValue(Item.of(item).item, value)
 }
 
 MoneyUtil.insertPlayerMoney = function (player, moneyValue) {
-    LightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(moneyValue, false)
+    global.CDLightmansCurrencyApi.MoneyAPI.getApi().GetPlayersMoneyHandler(player).insertMoney(moneyValue, false)
 }
 
 MoneyUtil.getItemId = function (item) {
-    return LightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).toString()
+    return global.CDLightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).toString()
 }
 
 MoneyUtil.getCoinName = function (item) {
-    return LightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).getPath().replace("_coin", "")
+    return global.CDLightmansCurrencyApi.ForgeRegistries.ITEMS.getKey(item).getPath().replace("_coin", "")
 }
 
 MoneyUtil.addCoreCoinDownExchangeRecipes = function (e) {
-    let chain = LightmansCurrencyApi.CoinAPI.getApi().ChainData(MoneyUtil.getMoneyChain())
+    let chain = global.CDLightmansCurrencyApi.CoinAPI.getApi().ChainData(MoneyUtil.getMoneyChain())
     if (chain == null) return
 
     chain.getCoreChain().forEach(entry => {
@@ -123,9 +122,9 @@ MoneyUtil.calculateFoodValue = function (itemStack) {
 
     // 3. 统一处理所有有价值物品的品质（Quality）倍率修正
     if (baseValue > 0) {
-        let quality = $QualityUtils.getQuality(itemStack)
+        let quality = global.CDStartupJavaClasses.$QualityUtils.getQuality(itemStack)
         if (quality.level() !== 0) {
-            let multiplier = Math.round(Math.sqrt(2 / $QualityConfig.getChance(quality)))
+            let multiplier = Math.round(Math.sqrt(2 / global.CDStartupJavaClasses.$QualityConfig.getChance(quality)))
             return baseValue * multiplier
         }
     }

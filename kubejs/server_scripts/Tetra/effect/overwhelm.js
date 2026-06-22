@@ -10,7 +10,7 @@ global.TetraOverwhelmAttackEffect = function (e) {
     if (player == null || !player.isPlayer())
         return
     let item = player.mainHandItem
-    if (item.item instanceof $ModularItem) {
+    if (item.item instanceof global.CDServerJavaClasses.$ModularItem) {
         if (TetraUtil.itemHasEffect(item, "createdelight:overwhelm")) {
             let level = TetraUtil.getEffectLevel(item, "createdelight:overwhelm")
             let hp = entity.health

@@ -7,7 +7,6 @@ set -euo pipefail
 #   SIDE: client, server, or all (default: all)
 #
 # Required env vars (from workflow-level env):
-#   PACKWIZ_FILES_RAW_PREFIX - GitHub raw URL prefix for packwiz-files/
 #   PACKWIZ_INSTALLER_BOOTSTRAP_URL - URL for packwiz-installer-bootstrap.jar
 
 PORT="${1:-8080}"
@@ -36,7 +35,8 @@ fi
 
 # 2. Replace GitHub raw URLs with localhost in .pw.toml files
 LOCAL_PREFIX="http://127.0.0.1:$PORT/packwiz-files/"
-find "$PACK_DIR" -name '*.pw.toml' -exec sed -i "s|${PACKWIZ_FILES_RAW_PREFIX}|${LOCAL_PREFIX}|g" {} +
+RAW_PREFIX_REGEX='https://raw\.githubusercontent\.com/Jasons-impart/Create-Delight-Remake/[^"[:space:]]*/packwiz-files/'
+find "$PACK_DIR" -name '*.pw.toml' -exec sed -E -i "s|${RAW_PREFIX_REGEX}|${LOCAL_PREFIX}|g" {} +
 
 if [ "$SIDE" != "all" ]; then
   python3 scripts/packwiz-side.py prune-metadata --base "$PACK_DIR" --target "$SIDE"

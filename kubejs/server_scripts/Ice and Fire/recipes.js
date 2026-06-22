@@ -69,39 +69,35 @@ ServerEvents.recipes(e => {
     ifl.forEach(text => {
         let ingot = `iceandfire:dragonsteel_${text}_ingot`
         kubejs.shaped(`iceandfire:dragonsteel_${text}_helmet`, [
-            "ACA",
+            "AAA",
             "B B"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "create:precision_mechanism"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_helmet`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_chestplate`, [
             "B B",
-            "ACA",
+            "AAA",
             "AAA"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "create:precision_mechanism"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_chestplate`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_leggings`, [
-            "ACA",
+            "AAA",
             "A A",
             "B B"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "create:precision_mechanism"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_leggings`)
         kubejs.shaped(`iceandfire:dragonsteel_${text}_boots`, [
             "   ",
             "A A",
-            "BCB"
+            "BAB"
         ], {
             A: ingot,
-            B: `#iceandfire:scales/dragon/${text}`,
-            C: "create:precision_mechanism"
+            B: `#iceandfire:scales/dragon/${text}`
         }).id(`createdelight:dragonsteel_${text}_boots`)
     })
     kubejs.shaped("2x createdelight:dread_upgrade_smithing_template", [

@@ -1,5 +1,3 @@
-const $ACEntityRegistry = Java.loadClass("com.github.alexmodguy.alexscaves.server.entity.ACEntityRegistry")
-
 let ReactorUtil = {}
 
 /**
@@ -9,7 +7,7 @@ let ReactorUtil = {}
 ReactorUtil.Bombbbb = function(machine) {
   let assembly_count = machine.customData.getInt("assembly_count")
   /** @type {Internal.NuclearExplosionEntity} */
-  let Bombbbb = $ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(machine.level)
+  let Bombbbb = global.CDServerJavaClasses.$ACEntityRegistry.NUCLEAR_EXPLOSION.get().create(machine.level)
   Bombbbb.setPos(machine.pos.center)
   Bombbbb.setSize(Math.sqrt((assembly_count / 9 + 1)))
   machine.level.addFreshEntity(Bombbbb)

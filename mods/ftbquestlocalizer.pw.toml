@@ -6,3 +6,7 @@ side = "both"
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/ftbquestlocalizer-1.20.1-forge-3.2.3.jar"
 hash-format = "sha256"
 hash = "ec78d601aaf3d4fd35978b70b4a894c4a396ef5c2d11d35b4bcab05597915026"
+
+[release.curseforge]
+project-id = 1071737
+file-id = 7529230

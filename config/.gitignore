@@ -30,7 +30,6 @@
 !/curios-client.toml
 !/curios-common.toml
 !/eclipticseasons-common.toml
-!/endertrigon-common.toml
 !/extraholopage-client.toml
 !/ftbquests
 !/netherexp-common.toml
@@ -63,7 +62,6 @@ xaerominimap_entities.json
 !/farmersrespite-common.toml
 !/colorfulhearts.toml
 !/alexscaves-client.toml
-!/DistantHorizons.toml
 !/itemborders-common.toml
 !/supplementaries-common.toml
 !/supplementaries-client.toml
@@ -87,3 +85,4 @@ xaerominimap_entities.json
 !/createlazytick-common.toml
 !/MouseTweaks.cfg
 !/fluidlogistics-common.toml
+!/createredstonelinkgui-client.toml

@@ -54,7 +54,8 @@ ServerEvents.recipes(e => {
         "youkaishomecoming:white_grape_juice",
         "youkaishomecoming:black_grape_juice",
         "youkaishomecoming:red_grape_juice",
-        "youkaishomecoming:pork_rice_ball"
+        "youkaishomecoming:pork_rice_ball",
+        "youkaishomecoming:shaved_ice_over_rice"
     ])
     remove_recipes_type(e, [
         "youkaishomecoming:moka_pot",
@@ -478,4 +479,26 @@ ServerEvents.recipes(e => {
     farmersdelight.cutting("youkaishomecoming:rainbow_roll", "#forge:tools/knives", "3x youkaishomecoming:rainbow_roll_slice").id("createdelight:rainbow_roll_cutting")
     farmersdelight.cutting("youkaishomecoming:egg_futomaki", "#forge:tools/knives", "3x youkaishomecoming:egg_futomaki_slice").id("createdelight:egg_futomaki_cutting")
     farmersdelight.cutting('youkaishomecoming:rainbow_futomaki', "#forge:tools/knives", "3x youkaishomecoming:rainbow_futomaki_slice").id("createdelight:rainbow_futomaki_cutting")
+    kubejs.shapeless(
+        'youkaishomecoming:shaved_ice_over_rice',
+        [
+            "minecraft:glass_bottle",
+            "youkaishomecoming:ice_cube",
+            "#forge:crops/rice",
+            "createdelight:adzuki_beans_seed",
+            "farmersdelight:cod_roll"
+        ]
+    ).id("createdelight:shapeless/shaved_ice_over_rice")
+    {
+        let iner = "minecraft:glass_bottle"
+        create.sequenced_assembly("youkaishomecoming:shaved_ice_over_rice", iner, [
+            create.deploying(iner, [iner, "#forge:crops/rice"]),
+            create.deploying(iner, [iner, "createdelight:adzuki_beans_seed"]),
+            create.deploying(iner, [iner, "farmersdelight:cod_roll"]),
+            create.deploying(iner, [iner, "youkaishomecoming:ice_cube"]),
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/shaved_ice_over_rice")
+    }
 })

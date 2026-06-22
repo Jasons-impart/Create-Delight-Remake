@@ -1,6 +1,6 @@
 name = "Squareful Create Delight Remake"
 filename = "Squareful-Create_Delight_Remake.zip"
-side = "both"
+side = "client"
 
 [download]
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/resourcepacks/Squareful-Create_Delight_Remake.zip"

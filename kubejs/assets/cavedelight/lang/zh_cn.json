@@ -35,5 +35,27 @@
   "item.cavedelight.tectonic_pasta": "板块意面",
   "item.cavedelight.trilocaris_noodles": "三叶虾面条汤",
   "item.cavedelight.trilocaris_roll": "三叶虾寿司",
-  "item.cavedelight.volcanic_chop": "火山肉骨"
+  "item.cavedelight.volcanic_chop": "火山肉骨",
+
+"block.cavedelight.spelunkie_cake" : "洞穴探险蛋糕",
+
+"item.cavedelight.radpop" : "核子可乐",
+"item.cavedelight.spelunkie_pudding" : "洞穴探险布丁",
+"item.cavedelight.bottle_of_green_soylent" : "瓶装“绿色食品”",
+"item.cavedelight.nutrient_bar" : "营养棒",
+"item.cavedelight.slam_burger" : "午餐肉汉堡",
+"item.cavedelight.slam_slice" : "午餐肉",
+"item.cavedelight.cooked_slam_slice" : "烤午餐肉",
+"item.cavedelight.musubi" : "午餐肉寿司",
+"item.cavedelight.slam_on_a_stick" : "烤午餐肉串",
+"item.cavedelight.slam_breakfast" : "午餐肉早餐",
+"item.cavedelight.fried_slam_rice" : "午餐肉炒饭",
+"item.cavedelight.slam_ramen" : "午餐肉拉面",
+"item.cavedelight.radgill_slice" : "辐鳃鱼片",
+"item.cavedelight.cooked_radgill_slice" : "熟辐鳃鱼片",
+"item.cavedelight.radgill_roll" : "辐鳃鱼寿司卷",
+"item.cavedelight.gamma_spaghetti" : "伽马意面",
+"item.cavedelight.toxic_soup" : "剧毒汤",
+"item.cavedelight.radgill_stew" : "辐鳃鱼炖汤",
+"item.cavedelight.slice_of_spelunkie_cake" : "洞穴探险蛋糕片"
 }

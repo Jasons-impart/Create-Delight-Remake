@@ -75,12 +75,10 @@ ServerEvents.recipes(e => {
     e.shaped("create:transmitter",
         [
             "A",
-            "B",
-            "C"
+            "B"
         ], {
-            A: "minecraft:lightning_rod",
-            B: "createaddition:copper_spool",
-            C: "minecraft:redstone",
+            A: "minecraft:redstone_torch",
+            B: "createaddition:copper_spool"
         }
     )
     .id("createdelight:crafting/materials/transmitter")
@@ -518,74 +516,77 @@ ServerEvents.recipes(e => {
     // 下界合金活板门可熔融回收下界合金
     e.recipes.createmetallurgy.melting(Fluid.of("createmetallurgy:molten_netherite", 360), "supplementaries:netherite_trapdoor")
         .heatRequirement("superheated").processingTime(240)
-    let andesiteOutputList = [
-        '5x create:andesite_funnel',
-        '5x create:andesite_tunnel',
-        '5x create:depot',
-        '3x create:mechanical_plough',
-        '3x create:mechanical_harvester',
-        '5x create:portable_storage_interface',
-        '2x create:mechanical_mixer', 
-        '2x create:mechanical_press', 
-        '2x create:mechanical_saw', 
-        '2x create:mechanical_drill', 
-        '2x create:encased_fan',
-        '2x createaddition:rolling_mill',
-        '2x vintageimprovements:spring_coiling_machine', 
-        '2x vintageimprovements:vibrating_table', 
-        '2x vintageimprovements:centrifuge',
-        '2x vintageimprovements:curving_press',
-        '8x create:gearbox',
-    ].forEach(res => {
-        e.recipes.vintageimprovements.pressurizing([
-            res],
-            [
-                Fluid.of("createdelightcore:molten_andesite", 450),
-                "create_sa:heat_engine",
-                Item.of(res, 1)
-            ].concat(multi_item("createdieselgenerators:wood_chip", 9))
-        )
-            .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
-    })
-    let brassOutputList = [
-        '5x create:brass_tunnel', 
-        '2x create:mechanical_crafter', 
-        '2x create:rotation_speed_controller', 
-        '2x create:mechanical_arm', 
-        '5x create:brass_funnel',
-        '2x create:deployer',
-        '3x create_fantasizing:transporter',
-        '5x createaddition:portable_energy_interface',
-        '2x create_bic_bit:mechanical_fryer'
-    ].forEach(res => {
-        e.recipes.vintageimprovements.pressurizing([
-            res],
-            [
-                Fluid.of("createmetallurgy:molten_brass", 450),
-                "create_sa:steam_engine",
-                Item.of(res, 1)
-            ].concat(multi_item("createdieselgenerators:wood_chip", 9))
-        )
-            .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
-    })
-    let copperOutputList = [
-        '3x create:item_drain', 
-        '3x create:spout', 
-        '3x create:portable_fluid_interface'
-    ].forEach(res => {
-        e.recipes.vintageimprovements.pressurizing([
-            res],
-            [
-                Fluid.of("createmetallurgy:molten_copper", 450),
-                "create_sa:hydraulic_engine",
-                Item.of(res, 1)
-            ].concat(multi_item("createdieselgenerators:wood_chip", 9))
-        )
-            .secondaryFluidInput(0)
-            .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
-    })
+    const enableLegacyPressurizedMachineDuplication = false
+    if (enableLegacyPressurizedMachineDuplication) {
+        let andesiteOutputList = [
+            '5x create:andesite_funnel',
+            '5x create:andesite_tunnel',
+            '5x create:depot',
+            '3x create:mechanical_plough',
+            '3x create:mechanical_harvester',
+            '5x create:portable_storage_interface',
+            '2x create:mechanical_mixer', 
+            '2x create:mechanical_press', 
+            '2x create:mechanical_saw', 
+            '2x create:mechanical_drill', 
+            '2x create:encased_fan',
+            '2x createaddition:rolling_mill',
+            '2x vintageimprovements:spring_coiling_machine', 
+            '2x vintageimprovements:vibrating_table', 
+            '2x vintageimprovements:centrifuge',
+            '2x vintageimprovements:curving_press',
+            '8x create:gearbox',
+        ].forEach(res => {
+            e.recipes.vintageimprovements.pressurizing([
+                res],
+                [
+                    Fluid.of("createdelightcore:molten_andesite", 450),
+                    "create_sa:heat_engine",
+                    Item.of(res, 1)
+                ].concat(multi_item("createdieselgenerators:wood_chip", 9))
+            )
+                .secondaryFluidInput(0)
+                .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
+        })
+        let brassOutputList = [
+            '5x create:brass_tunnel', 
+            '2x create:mechanical_crafter', 
+            '2x create:rotation_speed_controller', 
+            '2x create:mechanical_arm', 
+            '5x create:brass_funnel',
+            '2x create:deployer',
+            '3x create_fantasizing:transporter',
+            '5x createaddition:portable_energy_interface',
+            '2x create_bic_bit:mechanical_fryer'
+        ].forEach(res => {
+            e.recipes.vintageimprovements.pressurizing([
+                res],
+                [
+                    Fluid.of("createmetallurgy:molten_brass", 450),
+                    "create_sa:steam_engine",
+                    Item.of(res, 1)
+                ].concat(multi_item("createdieselgenerators:wood_chip", 9))
+            )
+                .secondaryFluidInput(0)
+                .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
+        })
+        let copperOutputList = [
+            '3x create:item_drain', 
+            '3x create:spout', 
+            '3x create:portable_fluid_interface'
+        ].forEach(res => {
+            e.recipes.vintageimprovements.pressurizing([
+                res],
+                [
+                    Fluid.of("createmetallurgy:molten_copper", 450),
+                    "create_sa:hydraulic_engine",
+                    Item.of(res, 1)
+                ].concat(multi_item("createdieselgenerators:wood_chip", 9))
+            )
+                .secondaryFluidInput(0)
+                .id(`createdelight:pressurizing/${res.split(":")[1]}_from_enigmatic_engine`)
+        })
+    }
     e.recipes.create.mixing(
         "create:pulp", 
         Fluid.of("createdelight:paper_pulp", 50))

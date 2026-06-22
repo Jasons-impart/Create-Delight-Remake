@@ -1,0 +1,69 @@
+{
+  "replace": true,
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "head/base"
+  ],
+  "improvements": [
+    "tetra:armor/shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:gem/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:fabric/",
+        "tetra:fibre/",
+        "tetra:skin/",
+        "tetra:scale/"
+      ],
+      "key": "vanilla_head_base/",
+      "aspects": {
+        "armor": 2,
+        "armor_head": 2,
+        "wearable": 2,
+        "breakable": 2
+      },
+      "durability": 111,
+      "integrity": 1,
+      "contexts": [
+        "armor",
+        "armor_head"
+      ],
+      "extract": {
+        "primaryAttributes": {
+          "minecraft:generic.armor": 0.336134
+        },
+        "secondaryAttributes": {
+          "minecraft:generic.armor": 0.084034,
+          "minecraft:generic.armor_toughness": 0.188679
+        },
+        "tertiaryAttributes": {
+          "minecraft:generic.armor_toughness": 0.09434
+        },
+        "durability": 0.16,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureLocation": "geotetraarmor:textures/gui/gui_gta.png",
+          "textureX": 176,
+          "textureY": 0
+        },
+        "availableTextures": [
+          "base"
+        ],
+        "models": [
+          {
+            "type": "gecko",
+            "location": "geotetraarmor:item/armor/vanilla/"
+          },
+          {
+            "location": "geotetraarmor:item/module/armor/head/"
+          }
+        ]
+      }
+    }
+  ]
+}

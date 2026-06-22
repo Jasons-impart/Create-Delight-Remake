@@ -1,5 +1,3 @@
-const $SolarHolder = Java.loadClass("com.teamtea.eclipticseasons.common.core.SolarHolders")
-const $HumidityControlProvider = Java.loadClass("com.teamtea.eclipticseasons.common.core.crop.HumidityControlProvider")
 let SeasonUtil = {}
 /**
  * 
@@ -7,7 +5,7 @@ let SeasonUtil = {}
  * @returns 
  */
 SeasonUtil.getSaveData = function(level) {
-    return $SolarHolder.getSaveData(level)
+    return global.CDServerJavaClasses.$SolarHolder.getSaveData(level)
 }
 /**
  * 
@@ -16,7 +14,7 @@ SeasonUtil.getSaveData = function(level) {
  * @param {number} remainTime 存续时间
  */
 SeasonUtil.createHumidityControlProvider = function(level, range, remainTime) {
-    return new $HumidityControlProvider(level, range, remainTime)
+    return new global.CDServerJavaClasses.$HumidityControlProvider(level, range, remainTime)
 }
 
 /**

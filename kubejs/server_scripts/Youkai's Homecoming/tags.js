@@ -55,6 +55,10 @@ ServerEvents.tags("minecraft:item", e => {
         'minecraft:pufferfish',
         'crabbersdelight:pufferfish_slice'
     ])
+    e.add("createdelight:raw_radgill", [
+        'cavedelight:radgill_slice',
+        'alexscaves:radgill'
+    ])
 })
 ServerEvents.tags("block", e => {
     e.removeAllTagsFrom([

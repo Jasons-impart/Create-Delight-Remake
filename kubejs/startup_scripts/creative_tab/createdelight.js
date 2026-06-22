@@ -89,6 +89,7 @@ StartupEvents.modifyCreativeTab("createdelightcore:food", e => {
     'createdelight:enchanted_golden_lantern_fruit',
     'createdelight:enchanted_golden_carrot',
     'createdelight:enchanted_golden_arbutus_berries',
+    'createdelight:enchanted_golden_lucuma',
   ])
 })
 StartupEvents.modifyCreativeTab("createdelightcore:misc", e => {
@@ -182,6 +183,8 @@ StartupEvents.modifyCreativeTab("createdelightcore:fluid", e => {
     'createdelight:nut_milk_bucket',
     'createdelight:vinegar_bucket',
     'createdelight:yeast_bucket',
+    'createdelight:radpop_fluid_bucket',
+    'createdelight:green_soylent_bucket',
     // 特殊流体
     'createdelight:malice_solution_bucket',
   ])
@@ -192,6 +195,12 @@ StartupEvents.registry("creative_mode_tab", e => {
     .icon(() => Item.of("createdelight:centrifuge_rotor"))
     .content(() => [
       'mbd2:mbd_gadgets',
+      'createdelight:andesite_structure_component',
+      'createdelight:copper_fluid_component',
+      'createdelight:brass_control_component',
+      'createdelight:kinetic_transmission_component',
+      'createdelight:sealed_joint_component',
+      'createdelight:logic_component',
       'createdelight:order_deliverer_item'
     ])
 })

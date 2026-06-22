@@ -7,11 +7,11 @@ ServerEvents.recipes(e => {
     'luncheonmeatsdelight:luncheon_meat_sandwich',
     [
       'bakeries:sliced_toast',
-      '2x luncheonmeatsdelight:luncheon_meat',
+      '2x cavedelight:cooked_slam_slice',
       "#forge:salad_ingredients",
       'bakeries:sliced_toast',
     ]
-  ).id("createdelight:cooking/luncheon_meat_sandwich")
+  ).id("createdelight:cooking/luncheon_meat_sandwich_manual_only")
   create.cutting(
     '2x bakeries:sliced_toast',
     'luncheonmeatsdelight:small_toast'

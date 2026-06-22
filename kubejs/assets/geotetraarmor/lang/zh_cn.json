@@ -1,0 +1,46 @@
+{
+  "tetra/schematic/armor/head/base/vanilla.description": "香草风格的头盔。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/head/base/vanilla.description": "香草风格的头盔，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/head/base/heavy.description": "重型风格的头盔。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/head/base/heavy.description": "重型风格的头盔，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/chest/base/vanilla.description": "香草风格的胸甲。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/chest/base/vanilla.description": "香草风格的胸甲，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/chest/base/heavy.description": "重型风格的胸甲。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/chest/base/heavy.description": "重型风格的胸甲，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/chest/left/vanilla.description": "香草风格的肩甲。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/chest/left/vanilla.description": "香草风格的肩甲，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/chest/left/heavy.description": "重型风格的肩甲。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/chest/left/heavy.description": "重型风格的肩甲，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/chest/right/vanilla.description": "香草风格的肩甲。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/chest/right/vanilla.description": "香草风格的肩甲，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/chest/right/heavy.description": "重型风格的肩甲。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/chest/right/heavy.description": "重型风格的肩甲，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/legs/belt/vanilla.description": "香草风格的腰带。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/legs/belt/vanilla.description": "香草风格的腰带，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/legs/belt/heavy.description": "重型风格的腰带。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/legs/belt/heavy.description": "重型风格的腰带，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/legs/left/vanilla.description": "香草风格的腿甲。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/legs/left/vanilla.description": "香草风格的腿甲，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/legs/left/heavy.description": "重型风格的腿甲。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/legs/left/heavy.description": "重型风格的腿甲，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/legs/right/vanilla.description": "香草风格的腿甲。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/legs/right/vanilla.description": "香草风格的腿甲，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/legs/right/heavy.description": "重型风格的腿甲。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/legs/right/heavy.description": "重型风格的腿甲，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/feet/left/vanilla.description": "香草风格的鞋子。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/feet/left/vanilla.description": "香草风格的鞋子，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/feet/left/heavy.description": "重型风格的鞋子。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/feet/left/heavy.description": "重型风格的鞋子，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。",
+
+  "tetra/schematic/armor/feet/right/vanilla.description": "香草风格的鞋子。硬度主要提高护甲，密度少量提高护甲并提高韧性，韧性提高护甲韧性。",
+  "tetra.module.armor/feet/right/vanilla.description": "香草风格的鞋子，按普通权重从材料硬度、密度和韧性获得护甲与韧性。",
+  "tetra/schematic/armor/feet/right/heavy.description": "重型风格的鞋子。护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍；每个重型模块降低5%移动速度。",
+  "tetra.module.armor/feet/right/heavy.description": "重型风格的鞋子，护甲收益约为香草的1.2倍，韧性收益约为香草的1.5倍，但移动速度降低5%。"
+}

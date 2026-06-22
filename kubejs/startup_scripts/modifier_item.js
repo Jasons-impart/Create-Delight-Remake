@@ -320,6 +320,9 @@ ItemEvents.modification(e => {
     food_hungers('fruitsdelight:fig_tart', 8.5, 4.5)
     food_hungers('fruitsdelight:lemon_tart', 8, 4)
     food_hungers('createdelightcore:pizza_slice', 4, 3)
+    food_hungers('collectorsreap:tropical_shaved_ice', 3, 1)
+    food_hungers('fruitsdelight:hamimelon_shaved_ice', 3, 1)
+    food_hungers('neapolitan:strawberry_banana_smoothie', 3, 1)
 
     // 食物效果修改
     food_effects('culturaldelights:pufferfish_roll', "minecraft:poison", 10)
@@ -363,6 +366,9 @@ ItemEvents.modification(e => {
     food_effects("createdelightcore:lush_confiture_jelly_bottle", "cosmopolitan:phototaxis", 30)
     food_effects('farmersrespite:rose_hip_pie_slice', "minecraft:regeneration", 5)
     food_effects('trailandtales_delight:cherry_cheese_pie_slice', "minecraft:regeneration", 10)
+    food_effects('createdelightcore:sunny_ice_cream_sandwich', "collectorsreap:rebound", 80, 1)
+    food_effects('createdelightcore:sunny_ice_cream_sandwich', "neapolitan:vanilla_scent")
+    food_effects('blackknightarmor:mied_floral_flavor_ice_cream', "createdelight:dragon_breath_resistance", 60)
     //紫颂果食物传送效果
     food_effects("ends_delight:chorus_fruit_milk_tea", "fruitsdelight:chorus", 0.05)
     food_effects("ends_delight:bubble_tea", "fruitsdelight:chorus", 0.05)
@@ -459,6 +465,9 @@ ItemEvents.modification(e => {
     coffee_effect('createcafe:roasted_coffee_beans', 20, 0, 20)
     coffee_effect('createcafe:coffee_grounds', 30, 0, 30)
     coffee_effect('farmersrespite:coffee_cake_slice', 150, 0, 150)
+    coffee_effect('collectorsreap:limbo_brew', 150, 0, 150)
+    coffee_effect('collectorsreap:long_limbo_brew', 200, 0, 200)
+    coffee_effect('collectorsreap:strong_limbo_brew', 100, 1, 100)
 
     // 红茶效果
     red_tea_effect("farmersrespite:black_tea", 60, 0, 60, 30)
@@ -480,6 +489,8 @@ ItemEvents.modification(e => {
     red_tea_effect('createcafe:vanilla_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:oreo_milk_tea', 45, 0, 45, 20)
     red_tea_effect('createcafe:pomegranate_tea', 45, 0, 45, 20)
+    red_tea_effect('collectorsreap:vernal_purge', 45, 0, 45, 20)
+    red_tea_effect('collectorsreap:strong_vernal_purge', 30, 1, 30, 30)
     e.modify("farmersrespite:black_cod", item => {
         item.foodProperties = food => {
             food.removeEffect("farmersrespite:caffeinated")
@@ -502,7 +513,9 @@ ItemEvents.modification(e => {
     yellow_tea_effect('createcafe:persimmon_milk_tea', 45, 0, 45, 20)
     yellow_tea_effect('createcafe:durian_milk_tea', 45, 0, 45, 20)
     yellow_tea_effect("collectorsreap:yellow_tea_gummy", 20, 2, 20, 10)
-
+    yellow_tea_effect('collectorsreap:sweet_recovery', 60, 0, 60, 30)
+    yellow_tea_effect('collectorsreap:long_sweet_recovery', 90, 0, 90, 45)
+    yellow_tea_effect('collectorsreap:strong_sweet_recovery', 30, 1, 30, 30)
     // 绿茶效果
     green_tea_effect('farmersrespite:green_tea', 60, 1, 60, 30)
     green_tea_effect('farmersrespite:long_green_tea', 90, 1, 90, 45)

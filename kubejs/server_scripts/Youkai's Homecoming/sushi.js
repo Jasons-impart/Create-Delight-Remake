@@ -1,15 +1,7 @@
-const $TableItemManager = Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.item.TableItemManager")
-const $FoodModelHelper = Java.loadClass("dev.xkmc.youkaishomecoming.content.pot.table.food.FoodModelHelper")
-const {SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE, HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT, GUNKAN_TOP, SUSHI_TOP, CAL_COVER, COMPLETE_HOSOMAKI} = $TableItemManager
-// 酱汁
-let sauces = [SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE]
-// 寿司卷馅料
-let rools = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
-
 let SushiTable = {}
 /**
  * 
- * @param {Internal.VariantModelPart} part  来自$TableItemManager
+ * @param {Internal.VariantModelPart} part
  * @param {string} id 
  * @param {Internal.Ingredient_} ingrdient 
  * @returns {Internal.VariantModelPart$Entry}
@@ -22,7 +14,7 @@ SushiTable.addMappingFromIngredient = function(part, id, ingrdient) {
  * @param {string} id 
  * @param {string} path 
  * @param {Internal.Ingredient_} ingredient 
- * @param {VariantModelPart[]} parts  来自$TableItemManager
+ * @param {VariantModelPart[]} parts
  */
 SushiTable.addBulk = function(id, path, ingredient, parts) {
   parts.forEach(part => {
@@ -32,16 +24,22 @@ SushiTable.addBulk = function(id, path, ingredient, parts) {
 
 
 // 用例
-// SushiTable.addMappingFromIngredient($TableItemManager.SUSHI_TOP, "sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril") 
+// SushiTable.addMappingFromIngredient(global.CDServerJavaClasses.$TableItemManager.SUSHI_TOP, "sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril")
 
-// const {HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT} = $TableItemManager
+// const {HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT} = global.CDServerJavaClasses.$TableItemManager
 // let rolls = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
 // SushiTable.addBulk("squid_tentacles", "ingredient/squid_tentacles", "#oceanic_delight:squid_tentacles", rolls);
 
-//$FoodModelHelper用例
-// let model = $FoodModelHelper.hosomaki("sculk_sensor_tendril_roll") //取物品id的path
-// $FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", model)
+//global.CDServerJavaClasses.$FoodModelHelper用例
+// let model = global.CDServerJavaClasses.$FoodModelHelper.hosomaki("sculk_sensor_tendril_roll") //取物品id的path
+// global.CDServerJavaClasses.$FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", model)
 ServerEvents.recipes(e => {
+  const {SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE, HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT, GUNKAN_TOP, SUSHI_TOP, CAL_COVER} = global.CDServerJavaClasses.$TableItemManager
+  // 酱汁
+  let sauces = [SUSHI_SAUCE, HOSOMAKI_SAUCE, FUTOMAKI_SAUCE, CAL_SAUCE, CAL_TOP_SAUCE]
+  // 寿司卷馅料
+  let rools = [HOSOMAKI_INGREDIENT, FUTOMAKI_INGREDIENT, CAL_INGREDIENT]
+
   remove_recipes_id(e, [
     "farmersdelight:salmon_roll",
     "farmersdelight:cod_roll",
@@ -118,6 +116,15 @@ ServerEvents.recipes(e => {
   ).id("createdelight:calamari_roll")
   SushiTable.addMappingFromIngredient(SUSHI_TOP, "squid", '#oceanic_delight:squid_tentacles')
   youkaishomecoming.cuisine_ordered(
+    "2x cavedelight:musubi",
+    "youkaishomecoming:sushi",
+    [
+      '#cavedelight:slam',
+      "minecraft:dried_kelp"
+    ]
+  ).id("createdelight:musubi")
+  SushiTable.addMappingFromIngredient(SUSHI_TOP, "slam", "#cavedelight:slam")
+  youkaishomecoming.cuisine_ordered(
     "2x collectorsreap:clam_roll",
     "youkaishomecoming:sushi",
     [
@@ -137,10 +144,10 @@ ServerEvents.recipes(e => {
     "2x createdelight:radgill_sushi",
     "youkaishomecoming:sushi",
     [
-      "alexscaves:radgill"
+      "#createdelight:raw_radgill"
     ]
   ).id("createdelight:radgill_sushi")
-  SushiTable.addMappingFromIngredient(SUSHI_TOP, "radgill", "alexscaves:radgill")
+  SushiTable.addMappingFromIngredient(SUSHI_TOP, "radgill", "#createdelight:raw_radgill")
   youkaishomecoming.cuisine_ordered(
     'farmersdelight:kelp_roll',
     "youkaishomecoming:hosomaki",
@@ -158,7 +165,7 @@ ServerEvents.recipes(e => {
     ]
   ).id("createdelight:sculk_sensor_tendril_roll")
   SushiTable.addBulk("tendril", "ingredient/tendril", "silentsdelight:sculk_sensor_tendril", rools)
-  $FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", $FoodModelHelper.hosomaki("sculk_sensor_tendril_roll"))
+  global.CDServerJavaClasses.$FoodModelHelper.map("silentsdelight:sculk_sensor_tendril_roll", global.CDServerJavaClasses.$FoodModelHelper.hosomaki("sculk_sensor_tendril_roll"))
   youkaishomecoming.cuisine_mixed(
     'oceanic_delight:sea_pickle_roll',
     "youkaishomecoming:futomaki",
@@ -172,7 +179,7 @@ ServerEvents.recipes(e => {
   ).id("createdelight:sea_pickle_roll")
   SushiTable.addBulk("sea_pickle", "ingredient/sea_pickle", "#forge:sea_pickles", rools)
   SushiTable.addBulk("squid", "ingredient/squid", "#oceanic_delight:squid_tentacles", rools)
-  $FoodModelHelper.map("oceanic_delight:sea_pickle_roll", $FoodModelHelper.futomaki("sea_pickle_roll"))
+  global.CDServerJavaClasses.$FoodModelHelper.map("oceanic_delight:sea_pickle_roll", global.CDServerJavaClasses.$FoodModelHelper.futomaki("sea_pickle_roll"))
   youkaishomecoming.cuisine_mixed(
     'culturaldelights:midori_roll',
     "youkaishomecoming:futomaki",
@@ -185,7 +192,7 @@ ServerEvents.recipes(e => {
     ]
   ).id("createdelight:midori_roll")
   SushiTable.addBulk("avocado", "ingredient/avocado", "culturaldelights:cut_avocado", rools)
-  $FoodModelHelper.map("culturaldelights:midori_roll", $FoodModelHelper.futomaki("midori_roll"))
+  global.CDServerJavaClasses.$FoodModelHelper.map("culturaldelights:midori_roll", global.CDServerJavaClasses.$FoodModelHelper.futomaki("midori_roll"))
   youkaishomecoming.cuisine_mixed(
     'culturaldelights:chicken_roll',
     "youkaishomecoming:futomaki",
@@ -204,7 +211,7 @@ ServerEvents.recipes(e => {
     ]
   ).id("createdelight:chicken_roll")
   SushiTable.addBulk("chicken", "ingredient/chicken", '#forge:cooked_chicken', rools)
-  $FoodModelHelper.map("culturaldelights:chicken_roll", $FoodModelHelper.futomaki("chicken_roll"))
+  global.CDServerJavaClasses.$FoodModelHelper.map("culturaldelights:chicken_roll", global.CDServerJavaClasses.$FoodModelHelper.futomaki("chicken_roll"))
   youkaishomecoming.cuisine_mixed(
     'alexscaves:deep_sea_sushi_roll',
     "youkaishomecoming:futomaki",
@@ -219,7 +226,7 @@ ServerEvents.recipes(e => {
   SushiTable.addBulk("tripodfish", "ingredient/tripodfish", 'alexscaves:tripodfish', rools)
   SushiTable.addBulk("sea_pig", "ingredient/sea_pig", 'alexscaves:sea_pig', rools)
   SushiTable.addBulk("lanternfish", "ingredient/lanternfish", 'alexscaves:lanternfish', rools)
-  $FoodModelHelper.map("alexscaves:deep_sea_sushi_roll", $FoodModelHelper.futomaki("deep_sea_roll"))
+  global.CDServerJavaClasses.$FoodModelHelper.map("alexscaves:deep_sea_sushi_roll", global.CDServerJavaClasses.$FoodModelHelper.futomaki("deep_sea_roll"))
   youkaishomecoming.cuisine_ordered(
     "youkaishomecoming:roe_california_roll",
     "youkaishomecoming:california_roll",

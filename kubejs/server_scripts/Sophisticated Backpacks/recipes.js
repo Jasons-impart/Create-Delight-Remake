@@ -32,3 +32,15 @@ function hexToDecimal(hex) {
   hex = hex.replace(/^#/, "");
   return parseInt(hex, 16);
 }
+
+ServerEvents.recipes((e) => {
+  e.recipes.sophisticatedbackpacks.backpack_upgrade("sophisticatedbackpacks:diamond_backpack", [
+    "DDD",
+    "DBD",
+    "DDD",
+  ], {
+    B: "sophisticatedbackpacks:gold_backpack",
+    D: "minecraft:diamond",
+  })
+    .id("sophisticatedbackpacks:diamond_backpack");
+});

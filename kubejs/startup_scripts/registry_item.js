@@ -28,10 +28,12 @@ StartupEvents.registry("item", e => {
                 .saturation(1)
         })
         .translationKey("item.createdelight.fugu_roll")
+    //辐鳃鱼寿司
     e.create("createdelight:radgill_sushi")
+        .texture("cavedelight:item/radgill_roll")
         .food(food => {
-            food.hunger(1)
-                .saturation(1)
+            food.hunger(7)
+                .saturation(0.5)
                 .effect("alexscaves:irradiated", 1200, 2, 1.0)
                 .effect("minecraft:saturation", 1200, 0, 1.0)
         })
@@ -379,6 +381,21 @@ StartupEvents.registry("item", e => {
         })
         .glow(true)
         .translationKey("item.createdelight.enchanted_golden_arbutus_berries")
+    //附魔金蛋黄果
+    e.create("createdelight:enchanted_golden_lucuma")
+        .texture("collectorsreap:item/gilded_lucuma")
+        .rarity("epic")
+        .food(f => {
+            f.hunger(4)
+                .saturation(1.25)
+                .effect("collectorsreap:rebound", 4800, 3, 1.0)
+                .effect("minecraft:fire_resistance", 6000, 0, 1.0)
+                .effect("minecraft:absorption", 3600, 3, 1.0)
+                .effect("minecraft:regeneration", 400, 2, 1.0)
+                .effect("minecraft:resistance", 3600, 0, 1.0)
+        })
+        .glow(true)
+        .translationKey("item.createdelight.enchanted_golden_lucuma")
 
     e.create("createdelight:fuel_hotcream")
         .tag("create:blaze_burner_fuel/special")
@@ -429,23 +446,6 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.incomplete_fs_upgrade")
     e.create("createdelight:incomplete_graviton_tube", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_graviton_tube")
-    e.create("createdelight:incomplete_neapolitan_ice_cream", "create:sequenced_assembly")
-        .food(f => {
-            f.hunger(8)
-                .saturation(0.3)
-                .eaten(ea => {
-                    ea.player.setTicksFrozen(ea.player.getTicksFrozen() + 200)
-                    ea.server.scheduleInTicks(1, func => {
-                        if (!ea.player.isCreative()) {
-                            if (!ea.player.getInventory().add("minecraft:bowl")) {
-                                ea.player.drop("minecraft:bowl", false)
-                            }
-                        }
-                    })
-                })
-        })
-        .translationKey("item.createdelight.incomplete_neapolitan_ice_cream")
-        .tag("neapolitan:ice_cream")
     // 未完成的子弹
     e.create("createdelight:incomplete_12g", "create:sequenced_assembly")
         .translationKey("item.createdelight.incomplete_12g")
@@ -527,6 +527,18 @@ StartupEvents.registry("item", e => {
         .translationKey("item.createdelight.quartz_vibrant_glass_parts")
         .tag("createdelight:quartz_vibrant_glass")
     // 陨铜锭
+    e.create("createdelight:andesite_structure_component")
+        .translationKey("item.createdelight.andesite_structure_component")
+    e.create("createdelight:copper_fluid_component")
+        .translationKey("item.createdelight.copper_fluid_component")
+    e.create("createdelight:brass_control_component")
+        .translationKey("item.createdelight.brass_control_component")
+    e.create("createdelight:kinetic_transmission_component")
+        .translationKey("item.createdelight.kinetic_transmission_component")
+    e.create("createdelight:sealed_joint_component")
+        .translationKey("item.createdelight.sealed_joint_component")
+    e.create("createdelight:logic_component")
+        .translationKey("item.createdelight.logic_component")
     e.create("createdelight:sky_copper_ingot")
         .translationKey("item.createdelight.sky_copper_ingot")
         .fireResistant()
@@ -534,21 +546,6 @@ StartupEvents.registry("item", e => {
     e.create("createdelight:cell_housing_curving_head")
         .translationKey("item.createdelight.cell_housing_curving_head")
         .tag("vintageimprovements:curving_heads")
-    // // 未完成火箭核心
-    // e.create("createdelight:incomplete_first_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_first_stage_rocket_core")
-    // e.create("createdelight:incomplete_second_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_second_stage_rocket_core")
-    // e.create("createdelight:incomplete_third_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_third_stage_rocket_core")
-    // e.create("createdelight:incomplete_fourth_stage_rocket_core", "create:sequenced_assembly")
-    //     .translationKey("item.createdelight.incomplete_fourth_stage_rocket_core")
-    // 行星齿轮
-    e.create("createdelight:incomplete_planet_gear", "create:sequenced_assembly")
-        .translationKey("item.createdelight.incomplete_planet_gear")
-    e.create("createdelight:planet_gear")
-        .translationKey("item.createdelight.planet_gear")
-        .rarity("uncommon")
     // 磁悬浮构件
     e.create("createdelight:magnetic_mechanism")
         .rarity("uncommon")

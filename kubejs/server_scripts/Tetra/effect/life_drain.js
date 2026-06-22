@@ -8,7 +8,7 @@ global.TetraLifeDrainEffect = function (e) {
         return
     let item = player.mainHandItem
 
-    if (item.item instanceof $ModularItem) {
+    if (item.item instanceof global.CDServerJavaClasses.$ModularItem) {
         if (TetraUtil.itemHasEffect(item, "createdelight:life_drain")) {
             let level = TetraUtil.getEffectLevel(item, "createdelight:life_drain")
                 player.heal(level / 100 * e.amount)

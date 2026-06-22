@@ -34,7 +34,8 @@ ServerEvents.recipes(e => {
         "createcafe:milling/oreo_milling",
         "createcafe:crushing/oreo_crushing",
         "createcafe:mixing/raw_boba_to_boba_mixing",
-        
+        "createcafe:mixing/coffee/coffee_mixing",
+        "createcafe:filling/coffee/iced_coffee_filling"
     ])
     create.mixing(Fluid.of("createdelight:base_syrup", 125), "minecraft:sugar")
     .heated()
@@ -94,6 +95,13 @@ ServerEvents.recipes(e => {
             Fluid.of('cosmopolitan:cream', 250)
         ]
     ).heated().id("createdelight:mixing/oreo_filling_mixing_2")
+    create.filling(
+        'createcafe:iced_coffee',
+        [
+            'createcafe:iced_coffee_cup_ice',
+            Fluid.of("createdelight:americano_fluid", 500)
+        ]
+    ).id("createdelight:filling/iced_coffee")
     create.filling(
         'createcafe:vanilla_iced_coffee',
         [

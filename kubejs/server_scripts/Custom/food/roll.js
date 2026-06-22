@@ -126,7 +126,7 @@ ServerEvents.recipes(e => {
     sushi("#forge:raw_fishes/tuna", "2x youkaishomecoming:tuna_nigiri")
     sushi("youkaishomecoming:otoro", "2x youkaishomecoming:otoro_nigiri")
     sushi("#forge:tropical", "2x culturaldelights:tropical_roll")
-    sushi("alexscaves:radgill", "2x createdelight:radgill_sushi")
+    sushi("#createdelight:raw_radgill", "2x createdelight:radgill_sushi")
 
     gunkan("collectorsreap:uni", "2x collectorsreap:uni_roll")
     gunkan("#forge:roe", "2x youkaishomecoming:tobiko_gunkan")
@@ -138,6 +138,7 @@ ServerEvents.recipes(e => {
     nigiri("#oceanic_delight:squid_tentacles", "2x culturaldelights:calamari_roll")
     nigiri("youkaishomecoming:flesh", "2x youkaishomecoming:flesh_roll")
     nigiri("#forge:shrimps", "2x oceanic_delight:shrimp_roll")
+    nigiri("#cavedelight:slam", "2x cavedelight:musubi")
 
     hosomaki("minecraft:carrot", "farmersdelight:kelp_roll")
     hosomaki("silentsdelight:sculk_sensor_tendril", "silentsdelight:sculk_sensor_tendril_roll")

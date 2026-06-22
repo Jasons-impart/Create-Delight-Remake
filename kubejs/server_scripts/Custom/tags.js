@@ -16,7 +16,6 @@ ServerEvents.tags("minecraft:item", e => {
         'quark:egg_parrot_red_blue',
         'iceandfire:myrmex_desert_egg',
         'iceandfire:myrmex_jungle_egg',
-        'endertrigon:baby_dragon_egg',
     ])
     e.remove("forge:moss", [
         'minecraft:moss_carpet'

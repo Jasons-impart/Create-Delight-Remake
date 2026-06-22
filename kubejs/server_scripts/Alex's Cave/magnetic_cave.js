@@ -122,7 +122,7 @@ ServerEvents.recipes(e => {
         .id("createdelight:heavyweight")
 
     //机铁之心
-    let iner_4 = "alexscaves:heart_of_iron"
+    let iner_4 = "minecraft:iron_block"
     e.recipes.create.sequenced_assembly("alexscaves:heart_of_iron", "minecraft:iron_block",
         [
             e.recipes.vintageimprovements.turning(iner_4, iner_4),
@@ -189,7 +189,7 @@ ServerEvents.recipes(e => {
         'alexscaves:ferrouslime_ball',
         [
             'minecraft:slime_ball',
-            '#forge:dusts/iron'
+            '9x minecraft:iron_nugget'
         ]
     ).id("createdelight:mixing/ferrouslime_ball")
     //富铁粘液
@@ -197,7 +197,7 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:ferrouslime", 90),
         [
             Fluid.of("createdelightcore:slime", 90),
-            '#forge:dusts/iron'
+            '9x minecraft:iron_nugget'
         ]
     ).id("createdelight:mixing/ferrouslime")
     //紫颂黏液

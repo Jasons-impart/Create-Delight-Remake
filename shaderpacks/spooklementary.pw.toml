@@ -1,0 +1,13 @@
+name = "Spooklementary"
+filename = "Spooklementary_v2.0.4.zip"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "38651af0c334b9a5d454b903c982ccb24db0869a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7296591
+project-id = 921717

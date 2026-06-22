@@ -1,6 +1,6 @@
 name = "Squareful"
 filename = "Squareful v3.15forMC1.20.1.zip"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"
