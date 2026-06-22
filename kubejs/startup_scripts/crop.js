@@ -58,6 +58,7 @@ StartupEvents.registry("block", e => {
         })
         .growTick((tickevent) => 3)
         .bonemeal(info => info.random.nextInt(2))
+        .survive((state, level, pos) => level.getBlockState(pos.below()).is(global.CDStartupJavaClasses.$Blocks.COARSE_DIRT))
         .dropSeed(true)
         .crop("kinetic_pixel:graycotton", 1)
         .crop("kinetic_pixel:graycotton", 0.5)
