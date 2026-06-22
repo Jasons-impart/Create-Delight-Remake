@@ -74,7 +74,7 @@ ServerEvents.tags("minecraft:item", e => {
         "vintagedelight:oat_seeds",
         "trailandtales_delight:lantern_fruit_seeds",
         "youkaishomecoming:soybean",
-        "kinetic_pixel:graycottonseed"
+        "createdelight:graycotton_seed"
     )
     e.add("eclipticseasons:crops/dry_humid",
         "fruitsdelight:mango_leaves",

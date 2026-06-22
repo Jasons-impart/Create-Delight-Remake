@@ -411,6 +411,6 @@ ServerEvents.recipes(e => {
     threshing(e,  'kinetic_pixel:graycotton', [
         '2x minecraft:string',
         Item.of('2x minecraft:string').withChance(0.5),
-        'kinetic_pixel:graycottonseed'
+        'createdelight:graycotton_seed'
     ], 200)
 })

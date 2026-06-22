@@ -118,6 +118,12 @@
     },
     {
         "matchItems": [
+            "kinetic_pixel:graycottonseed"
+        ],
+        "resultItems": "createdelight:graycotton_seed"
+    },
+    {
+        "matchItems": [
             "neapolitan:ice_cubes"
         ],
         "resultItems": "youkaishomecoming:ice_cube"

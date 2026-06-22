@@ -159,6 +159,7 @@ let MaterialWhitelistValueDict = {
     "cosmopolitan:droopfruit_pips": 1,
     "createdelight:adzuki_beans_seed": 1,
     "createdelight:artemisia_argyi_seed": 1,
+    "createdelight:graycotton_seed": 1,
     "festival_delicacies:chinese_cabbage_seeds": 1,
     "festival_delicacies:eggplant_seeds": 1,
     "festival_delicacies:garlic_chive_seeds": 1,

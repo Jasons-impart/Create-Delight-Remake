@@ -135,6 +135,7 @@ StartupEvents.modifyCreativeTab("kubejs:tab", e => {
         'createdelight:incomplete_carbon_brushes',
         "createdelight:adzuki_beans_seed",
         "createdelight:artemisia_argyi_seed",
+        "createdelight:graycotton_seed",
         'createdelight:enriched_sky_stone_block',
         'createdelight:mmd_diamond',
         'createdelight:phase_transition_iron',

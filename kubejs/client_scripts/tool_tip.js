@@ -54,7 +54,7 @@ ItemEvents.tooltip(e => {
         'bakeries:mould_toast',
         'bakeries:mould_cheese_cocoa_toast',
         'bakeries:mould_pound_cake',
-        'kinetic_pixel:graycottonseed',
+        'createdelight:graycotton_seed',
     ])
     clearAddShiftCtrlTooltip(e, [
         'brewinandchewin:keg'
