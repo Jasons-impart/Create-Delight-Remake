@@ -1,0 +1,72 @@
+{
+  "replace": true,
+  "type": "tetra:basic_major_module",
+  "slots": [
+    "legs/belt"
+  ],
+  "improvements": [
+    "tetra:armor/shared/"
+  ],
+  "variants": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:gem/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:fabric/",
+        "tetra:fibre/",
+        "tetra:skin/",
+        "tetra:scale/"
+      ],
+      "key": "vanilla_legs_belt/",
+      "aspects": {
+        "armor": 2,
+        "armor_legs": 2,
+        "wearable": 2,
+        "breakable": 2
+      },
+      "durability": 7,
+      "integrity": 1,
+      "contexts": [
+        "armor",
+        "armor_legs"
+      ],
+      "extract": {
+        "primaryAttributes": {
+          "minecraft:generic.armor": 0.420168
+        },
+        "secondaryAttributes": {
+          "minecraft:generic.armor": 0.105042,
+          "minecraft:generic.armor_toughness": 0.09434
+        },
+        "tertiaryAttributes": {
+          "minecraft:generic.armor_toughness": 0.04717
+        },
+        "primaryEffects": {},
+        "secondaryEffects": {},
+        "tertiaryEffects": {},
+        "durability": 0.3,
+        "integrity": 1,
+        "magicCapacity": 1,
+        "glyph": {
+          "textureLocation": "geotetraarmor:textures/gui/gui_gta.png",
+          "textureX": 112,
+          "textureY": 0
+        },
+        "availableTextures": [
+          "base"
+        ],
+        "models": [
+          {
+            "type": "gecko",
+            "location": "geotetraarmor:item/armor/vanilla/"
+          },
+          {
+            "location": "geotetraarmor:item/module/armor/legs/"
+          }
+        ]
+      }
+    }
+  ]
+}

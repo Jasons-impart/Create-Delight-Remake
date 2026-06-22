@@ -1,0 +1,42 @@
+{
+  "replace": true,
+  "slots": [
+    "chest/base"
+  ],
+  "materialSlotCount": 1,
+  "displayType": "major",
+  "translation": {
+    "primaryAttributes": {
+      "generic.armor": 4
+    },
+    "secondaryAttributes": {
+      "generic.armor": 1,
+      "generic.armor_toughness": 2
+    },
+    "tertiaryAttributes": {
+      "generic.armor_toughness": 1
+    }
+  },
+  "glyph": {
+    "textureLocation": "geotetraarmor:textures/gui/gui_gta.png",
+    "textureX": 48,
+    "textureY": 0
+  },
+  "outcomes": [
+    {
+      "materials": [
+        "tetra:wood/",
+        "tetra:gem/",
+        "tetra:metal/",
+        "tetra:bone/",
+        "tetra:fabric/",
+        "tetra:fibre/",
+        "tetra:skin/",
+        "tetra:scale/"
+      ],
+      "countFactor": 3,
+      "moduleKey": "armor/chest/base/vanilla",
+      "moduleVariant": "vanilla_chest_base/"
+    }
+  ]
+}
