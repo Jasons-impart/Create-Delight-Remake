@@ -114,6 +114,8 @@ StartupEvents.registry("fluid", e => {
     textureFluid("createdelight:mint_syrup", false, false)
     textureFluid("createdelight:banana_syrup", false, false)
     textureFluid("createdelight:filling", false, false)
+    textureFluid("createdelight:lucuma_ice_cream", false, false)
+    textureFluid("createdelight:pink_dragon_fruit_ice_cream", false, false)
 
     let bloods = [
         "fire_dragon",

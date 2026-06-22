@@ -125,22 +125,29 @@
 		}
 		{
 			dependencies: ["59350A53C2738BD9"]
-			description: ["&4警告！！！&r柴油动力一切燃料都极度危险，请不要让燃料在任何情况下接触到&4任何爆炸&r或者&4任何化学喷雾器喷出的火焰&r！！！"]
-			icon: "createdieselgenerators:diesel_engine"
+			description: [
+				"本包添加了 &n机械动力：懒惰刻&r 以优化机械动力机器的计算开销。"
+				"但由于机械动力和其附属本身代码对性能优化不友好，部分机械动力机器动画可能会&e有延迟&r，或&e执行变慢&r。"
+				"如果介意它带来的问题，可以考虑&e&n禁用该mod&r&r。"
+				""
+				"懒惰刻模组还提供了&b懒惰刻时钟&r来调节机器的状态，可在保持模组启用状态下解决部分机器的问题。"
+			]
+			icon: "createlazytick:clock"
 			id: "20B3ECF56011C11A"
 			rewards: [{
-				id: "70152393AC9F25F1"
-				item: "createdelightcore:copper_coin"
+				id: "79B8C78DC66923FC"
+				item: "createlazytick:clock"
 				type: "item"
 			}]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "注意柴油动力里的燃料"
+			subtitle: "保产线还是保cpu？"
 			tasks: [{
 				id: "495948214572F723"
-				title: "柴油动力！"
+				title: "懒惰刻"
 				type: "checkmark"
 			}]
+			title: "懒惰刻优化"
 			x: 2.0d
 			y: -8.0d
 		}
@@ -902,8 +909,10 @@
 			dependencies: ["55C42BCE0E399B3D"]
 			description: [
 				"本包加入了生活调味料以鼓励你品尝更多样的食物："
-				"每吃下一种新的食物都会让你的血量上限向最高数值迈进一步（详见任务送的萝卜图案书）"
-				"保持食物的多样性可以让你获得永久的增益buff（详见任务送的土豆图案书）"
+				"每吃下一种新的食物都会让你的血量上限向最高数值靠近（详见任务送的&b萝卜图案书&r）"
+				"保持食物的多样性可以让你获得永久的增益buff（详见任务送的&b土豆图案书&r）"
+				""
+				"注：在JEI搜索&e\"#没尝过\"&r可以列出所有你&e还没吃&r过的食物，但刚吃完的食物&n不会立刻消失&r"
 			]
 			icon: "farmersdelight:roast_chicken_block"
 			id: "3DE7B60F0534BA9D"

@@ -125,7 +125,7 @@
 			id: "6AF0BCF34F1E3853"
 			size: 1.5d
 			tasks: [{
-				dimension: "ad_astra:moon"
+				dimension: "northstar:moon"
 				id: "034E20100DBC39D7"
 				type: "dimension"
 			}]
@@ -139,7 +139,7 @@
 			id: "244B2CABBB89B269"
 			size: 1.5d
 			tasks: [{
-				dimension: "ad_astra:mars"
+				dimension: "northstar:mars"
 				id: "6A87D73715BD6733"
 				type: "dimension"
 			}]
@@ -159,11 +159,11 @@
 			id: "1BEE7AD2537F2428"
 			size: 1.5d
 			tasks: [{
-				dimension: "ad_astra:glacio"
+				dimension: "northstar:mars"
 				id: "5F61EA66AEFBD9B5"
 				type: "dimension"
 			}]
-			title: "火星"
+			title: "火星山峰"
 			x: 2.5d
 			y: 2.5d
 		}
@@ -173,7 +173,7 @@
 			id: "0B2D858482173126"
 			size: 1.5d
 			tasks: [{
-				dimension: "ad_astra:mercury"
+				dimension: "northstar:mercury"
 				id: "3E2F7F0F21A35C3B"
 				type: "dimension"
 			}]
@@ -187,7 +187,7 @@
 			id: "5246A4941FE396AC"
 			size: 1.5d
 			tasks: [{
-				dimension: "ad_astra:venus"
+				dimension: "northstar:venus"
 				id: "24F96FC782F1BB94"
 				type: "dimension"
 			}]

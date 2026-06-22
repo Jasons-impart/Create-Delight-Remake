@@ -7,7 +7,7 @@
 !/.hmclversion.cfg
 !/.options.txt
 !/.packwizignore
-!/DevGuide.md
+!/GettingStarted.md
 !/LICENSE
 !/README.md
 !/client_jvm_args.example.txt

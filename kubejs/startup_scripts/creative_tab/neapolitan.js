@@ -7,6 +7,8 @@ StartupEvents.registry("minecraft:creative_mode_tab", e => {
     'neapolitan:frond_thatch', 
     'neapolitan:frond_thatch_stairs', 
     'neapolitan:frond_thatch_slab', 
+    'neapolitan:vanilla_ice_cream_block',
+    'neapolitan:chocolate_ice_cream_block',
     'neapolitan:strawberry_ice_cream_block', 
     'neapolitan:banana_ice_cream_block', 
     'neapolitan:mint_ice_cream_block', 

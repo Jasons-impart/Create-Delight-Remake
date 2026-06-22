@@ -1,4 +1,5 @@
 ServerEvents.recipes(e => {
+    const {create, kubejs, farmersdelight} = e.recipes
     remove_recipes_id(e, [
         "neapolitan:adzuki/adzuki_crate",
         "neapolitan:milk/milk_bottles_from_bucket",
@@ -19,7 +20,8 @@ ServerEvents.recipes(e => {
         "neapolitan:mint_cake",
         "neapolitan:adzuki_cake",
         "neapolitan:adzuki_curry",
-        "neapolitan:adzuki_stew"
+        "neapolitan:adzuki_stew",
+        "neapolitan:strawberry_banana_smoothie",
     ])
     e.replaceInput({ not: { output: ["minecraft:packed_ice", Fluid.water(), "neapolitan:ice_cubes"] } }, "minecraft:ice", "#forge:ice_cubes")
     e.replaceInput({}, "neapolitan:chocolate_bar", "create:bar_of_chocolate")
@@ -33,25 +35,25 @@ ServerEvents.recipes(e => {
     make_cake(e, "neapolitan:roasted_adzuki_beans", "neapolitan:adzuki_cake")
     package_item(e, 'createdelight:adzuki_beans_seed', 'neapolitan:adzuki_crate', 9)
 
-    e.recipes.create.filling(
+    create.filling(
         "neapolitan:chocolate_strawberries",
         [
             "neapolitan:strawberries",
             Fluid.of("create:chocolate", 250)
         ]).id("createdelight:filling/chocolate_strawberries")
-    e.recipes.create.filling(
+    create.filling(
         "neapolitan:vanilla_chocolate_fingers",
         [
             "neapolitan:dried_vanilla_pods",
             Fluid.of("create:chocolate", 250)
         ]).id("createdelight:filling/vanilla_chocolate_fingers")
-    e.recipes.create.filling(
+    create.filling(
         "neapolitan:chocolate_spider_eye",
         [
             "minecraft:spider_eye",
             Fluid.of("create:chocolate", 125)
         ]).id("createdelight:filling/chocolate_spider_eye")
-    e.recipes.create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("createdelight:haunting/white_strawberries")
+    create.haunting("neapolitan:white_strawberries", "neapolitan:strawberries").id("createdelight:haunting/white_strawberries")
     
     
     cutting_2(e, "neapolitan:banana_bunch", [
@@ -63,7 +65,7 @@ ServerEvents.recipes(e => {
         ["neapolitan:banana_bunch", 9]
     ])
 
-    e.recipes.farmersdelight.cooking([
+    farmersdelight.cooking([
         "2x createdelight:adzuki_beans_seed",
         "minecraft:beetroot",
         "#forge:vegetables/carrot",
@@ -71,7 +73,7 @@ ServerEvents.recipes(e => {
     ], "neapolitan:adzuki_stew", 10.0, 200, "minecraft:bowl")
     .id("createdelight:cooking/adzuki_stew")
 
-    e.recipes.farmersdelight.cooking([
+    farmersdelight.cooking([
         "createdelight:adzuki_beans_seed",
         "neapolitan:dried_banana",
         "#forge:vegetables/carrot",
@@ -79,7 +81,7 @@ ServerEvents.recipes(e => {
     ], "neapolitan:adzuki_curry", 10.0, 200, "minecraft:bowl")
     .id("createdelight:cooking/adzuki_curry")
     
-    e.recipes.create.deploying([
+    create.deploying([
         "neapolitan:banana_bundle", 
         Item.of("neapolitan:banana").withChance(0.05), 
         Item.of("neapolitan:banana_bunch").withChance(0.02)], [
@@ -88,4 +90,26 @@ ServerEvents.recipes(e => {
         ])
         .keepHeldItem()
         .id("createdelight:deploying/banana")
+    kubejs.shapeless(
+        'neapolitan:strawberry_banana_smoothie',
+        [
+            "minecraft:glass_bottle",
+            "youkaishomecoming:ice_cube",
+            "#forge:milk",
+            "#forge:fruits/banana",
+            "#forge:fruits/strawberry"
+        ]
+    ).id("createdelight:shapeless/strawberry_banana_smoothie")
+    {
+        let iner = "minecraft:glass_bottle"
+        create.sequenced_assembly("neapolitan:strawberry_banana_smoothie", iner, [
+            create.deploying(iner, [iner, "#forge:fruits/banana"]),
+            create.deploying(iner, [iner, "#forge:fruits/strawberry"]),
+            create.deploying(iner, [iner, "youkaishomecoming:ice_cube"]),
+            create.filling(iner, [iner, FluidIngredients("forge:milk", 250)]),
+        ])
+        .loops(1)
+        .transitionalItem(iner)
+        .id("createdelight:sequenced_assembly/strawberry_banana_smoothie")
+    }
 })

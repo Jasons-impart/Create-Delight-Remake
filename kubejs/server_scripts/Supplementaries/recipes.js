@@ -1,7 +1,8 @@
 ServerEvents.recipes(e => {
     remove_recipes_id(e, [
         "supplementaries:lumisene_bottle",
-        "supplementaries:netherite_trapdoor"
+        "supplementaries:netherite_trapdoor",
+        "supplementaries:pancake_fd"
     ])
     remove_recipes_output(e, [
         "supplementaries:sugar_cube"
@@ -111,4 +112,14 @@ ServerEvents.recipes(e => {
     ], {
         A: "minecraft:netherite_ingot"
     }).id("createdelight:shaped/netherite_trapdoor")
+    //煎饼
+    e.recipes.create.compacting(
+        'supplementaries:pancake',
+        Fluid.of("createdelight:cake_batter", 250)
+    ).heated().id("createdelight:compacting/pancake")
+    e.recipes.farmersdelight.cooking(
+        'createdelight:cake_batter_bucket',
+        '4x supplementaries:pancake',
+        1.0, 100
+    ).id("createdelight:cooking/pancake")
 })

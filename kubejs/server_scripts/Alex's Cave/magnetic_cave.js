@@ -189,7 +189,7 @@ ServerEvents.recipes(e => {
         'alexscaves:ferrouslime_ball',
         [
             'minecraft:slime_ball',
-            '#forge:dusts/iron'
+            '9x minecraft:iron_nugget'
         ]
     ).id("createdelight:mixing/ferrouslime_ball")
     //富铁粘液
@@ -197,7 +197,7 @@ ServerEvents.recipes(e => {
         Fluid.of("createdelightcore:ferrouslime", 90),
         [
             Fluid.of("createdelightcore:slime", 90),
-            '#forge:dusts/iron'
+            '9x minecraft:iron_nugget'
         ]
     ).id("createdelight:mixing/ferrouslime")
     //紫颂黏液

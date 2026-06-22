@@ -1,6 +1,6 @@
 name = "Spooklementary"
 filename = "Spooklementary_v2.0.4.zip"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

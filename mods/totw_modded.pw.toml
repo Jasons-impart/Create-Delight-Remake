@@ -6,3 +6,7 @@ side = "both"
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/totw_modded-forge-1.20.1-1.0.6.jar"
 hash-format = "sha256"
 hash = "d8473b6c3652fd2a3b1dedbed9e128920595157c1914da781cf34136efbba2ff"
+
+[release.curseforge]
+project-id = 859365
+file-id = 6353903

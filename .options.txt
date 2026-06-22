@@ -7,7 +7,7 @@ chatLinks:true
 chatLinksPrompt:true
 enableVsync:false
 entityShadows:true
-forceUnicodeFont:true
+forceUnicodeFont:false
 discrete_mouse_scroll:false
 invertYMouse:false
 realmsNotifications:true

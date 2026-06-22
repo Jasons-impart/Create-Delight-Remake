@@ -4,7 +4,7 @@ Ponder.registry(event => {
             "输入总线与输出总线的使用",
             "createdelight:ponder_import_export_bus",
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([4, 1, 3], Direction.DOWN)
@@ -84,7 +84,7 @@ Ponder.registry(event => {
             "createdelight:ponder_bus_transport",
             
             (builder, util) => {
-                let scene = new $CreateSceneBuilder(builder)
+                let scene = new global.CDClientJavaClasses.$CreateSceneBuilder(builder)
                 scene.showBasePlate()
                 scene.idle(20)
                 scene.world.showSection([0, 1, 0, 3, 1, 4], Direction.DOWN)

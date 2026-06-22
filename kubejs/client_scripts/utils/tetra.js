@@ -1,5 +1,3 @@
-const $ModularItem = Java.loadClass("se.mickelus.tetra.items.modular.ModularItem")
-const $ItemEffect = Java.loadClass("se.mickelus.tetra.effect.ItemEffect")
 let TetraUtil = {}
 /**
  * 
@@ -8,7 +6,7 @@ let TetraUtil = {}
  */
 TetraUtil.getItem = function(itemStack) {
     let item = itemStack.item
-    if (!(item instanceof $ModularItem))
+    if (!(item instanceof global.CDClientJavaClasses.$ModularItem))
         return null
     return item
 }
@@ -30,7 +28,7 @@ TetraUtil.getItemEffects = function(item) {
  */
 TetraUtil.itemHasEffect = function(item, effectKey) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffects(item).contains($ItemEffect.get(effectKey))
+    return itemClass.getEffects(item).contains(global.CDClientJavaClasses.$ItemEffect.get(effectKey))
 }
 /**
  * 
@@ -38,7 +36,7 @@ TetraUtil.itemHasEffect = function(item, effectKey) {
  * @returns {Internal.ItemEffect}
  */
 TetraUtil.getEffectFromKey = function(key) {
-    return $ItemEffect.get(effect)
+    return global.CDClientJavaClasses.$ItemEffect.get(effect)
 }
 /**
  * 
@@ -48,7 +46,7 @@ TetraUtil.getEffectFromKey = function(key) {
  */
 TetraUtil.getEffectEfficiency = function(item, effect) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffectEfficiency(item, $ItemEffect.get(effect))
+    return itemClass.getEffectEfficiency(item, global.CDClientJavaClasses.$ItemEffect.get(effect))
 }
 /**
  * 
@@ -58,6 +56,6 @@ TetraUtil.getEffectEfficiency = function(item, effect) {
  */
 TetraUtil.getEffectLevel = function(item, effect) {
     let itemClass = TetraUtil.getItem(item)
-    return itemClass.getEffectLevel(item, $ItemEffect.get(effect))
+    return itemClass.getEffectLevel(item, global.CDClientJavaClasses.$ItemEffect.get(effect))
 }
 

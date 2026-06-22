@@ -190,3 +190,90 @@ gh pr create --body '... `ad_astra:xxx` ...'
 
 - **Problem**: `update-modpack-config` can edit ignored KubeJS config files during release, but patch generation diffs only tracked `HEAD` paths and can miss generated-only files.
 - **Fix/Lesson**: Release-mutated config files such as `kubejs/config/probejs.json` must be committed as source files before workflows copy them into client/server/patch artifacts.
+
+
+## Use packwiz-files for CurseForge-restricted shaderpacks
+
+**Date**: 2026-06-11
+
+- **Problem**: `sync-packwiz-assets.ps1` failed when `I Like Vanilla` was excluded from the CurseForge API and required manual download.
+- **Fix/Lesson**: Shaderpacks blocked from CurseForge third-party download should use `packwiz-files/shaderpacks/` raw URL metadata with `[release.curseforge]`, while shaderpacks not on CurseForge omit the release hint and stay as payloads.
+
+## Butchercraft animal head blocks need KubeJS resource overlays
+
+**Date**: 2026-06-11
+
+
+- **Problem**: Butchercraft 2.4.1 registers animal head/skull floor and wall blocks without blockstates, and skull renderers look for `butchercraft:textures/entity/*.png` while the JAR stores those textures under `textures/block/entity/`.
+- **Fix/Lesson**: Add KubeJS `blockstates/*_head*.json` overlays using `minecraft:block/skull` and copy the six skull textures into `kubejs/assets/butchercraft/textures/entity/` so placed heads do not render as missing purple-black blocks.
+
+## Vintage Delight fermenting jar consumes duplicate ingredients from one slot
+
+**Date**: 2026-06-16
+
+- **Problem**: Vintage Delight 0.1.6 `FermentingJarBlockEntity#consumeIngredient` scans input slots from 0 for every `Ingredient`, so recipes with repeated matching ingredients consume multiple items from the first matching slot.
+- **Fix/Lesson**: CDC patches the jar with a pseudo mixin that tracks consumed input slots during `craftItem`, because the mod is not a compile dependency and repeated ingredients must be distributed across distinct matched slots.
+
+## Create Addition spool recipes must match connector drop economics
+
+**Date**: 2026-06-17
+
+- **Problem**: `createaddition:*_spool` sequenced assembly at `.loops(2)` let players craft a spool with 2 wires, place/break connectors, and recover 4 wires through link drops.
+- **Fix/Lesson**: Keep spool sequenced assembly at `.loops(4)` so wire input matches connector-link recovery and cannot duplicate metals.
+
+## Planet migration must include quest dimension tasks
+
+**Date**: 2026-06-17
+
+- **Problem**: After migrating from Ad Astra to Northstar, FTB Quests and tips still pointed players to old `ad_astra:*` dimensions such as removed Glacio.
+- **Fix/Lesson**: When changing planet systems, search `config/ftbquests` and player-facing lang/tip files for old dimension IDs and planet names so quest gates remain reachable.
+
+## Restored recipes may be blocked by removal lists
+
+**Date**: 2026-06-17
+
+- **Problem**: ExtendedAE's `expatternprovider:ex_drive` recipe existed upstream but was hidden because `kubejs/server_scripts/AE2/machine.js` removed its recipe ID.
+- **Fix/Lesson**: Before adding replacement recipes, search KubeJS `remove_recipes_id` lists for the missing recipe ID so original mod recipes can be restored by removing stale deletes.
+
+## Quest dependencies must match actual crafting prerequisites
+
+**Date**: 2026-06-17
+
+- **Problem**: The mechanical craft encoder quest depended on the molecular assembler quest even though the encoder only needs earlier mechanical crafting progression.
+- **Fix/Lesson**: When editing FTB Quest dependencies, compare each dependency ID against the item's real recipe path so optional downstream machines do not gate unrelated tools.
+
+## KubeJS Java class governance needs explicit facade reads
+
+**Date**: 2026-06-19
+
+- **Problem**: Java-reference scans catch literal `Packages\.` substrings such as `rewardPackages`, and `order_deliverer.js` used `$PackageItem` through a cross-file top-level leak.
+- **Fix/Lesson**: Keep Java classes in `00_java_classes.js` facades, read needed classes explicitly in each script, and avoid `Packages` in KubeJS variable/function names used near governance scans.
+
+## Moonlight soft fluid conversion must preserve original Forge fluid IDs
+
+**Date**: 2026-06-19
+
+- **Problem**: Supplementaries faucets convert Forge `FluidStack`s through Moonlight `SoftFluidStack`; tag-equivalent fluids such as `createdelight:soya_milk` in `#forge:milk` can round-trip back as the soft fluid default `minecraft:milk`.
+- **Fix/Lesson**: CDC preserves the original Forge fluid id in the soft stack tag during Moonlight Forge conversion and restores it when converting back, because soft fluid `equivalent_fluids` mappings are many-to-one.
+
+## Ice and Fire missing Tabula models need classloader fallback
+
+**Date**: 2026-06-20
+
+- **Problem**: `iceandfire-2.1.13-1.20.1-beta-5` lacks `firedragon_swimming.tbl` and `firedragon_swim5.tbl`, causing client resource reload NPE stack traces just before the title screen.
+- **Fix/Lesson**: Patch CDC to redirect Ice and Fire `TabulaModelHandlerHelper` classloader resource lookups to existing firedragon model fallbacks, because KubeJS resource-pack assets do not satisfy `ClassLoader#getResourceAsStream`.
+
+## Virtual fluid buckets need FluidType bucket mappings
+
+**Date**: 2026-06-20
+
+- **Problem**: Northstar virtual fluids could be inserted from custom buckets but empty buckets could not extract them from Forge-standard containers such as Functional Storage fluid drawers because the fluids had no native `FluidType#getBucket` result.
+- **Fix/Lesson**: Register plain CDC `BucketItem`s with `FluidEntry#getSource()` and patch `FluidType#getBucket` after normalizing flowing fluids to source; virtual fluids already cannot place in-world, and Create basin-specific fill patches stay separate because Create checks its own item-filling path.
+
+## Ratatouille squeezing fluid matches need amount checks
+
+**Date**: 2026-06-21
+
+- **Problem**: Ratatouille 1.3.8 `SqueezingRecipe#matches` and `#match` call `FluidIngredient#test` without checking `getRequiredAmount`, so recipes like `createdelight:squeezing/raw_sausage` can run with 1 mB of a matching fluid.
+- **Fix/Lesson**: CDC patches both recipe matching entry points to require matching fluid type and amount before the press starts, because `process` drains the configured amount only after the recipe has already passed matching.
+

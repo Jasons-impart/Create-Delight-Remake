@@ -1,6 +1,6 @@
 name = "Steadfast"
 filename = "Steadfast-0.8.0.zip"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

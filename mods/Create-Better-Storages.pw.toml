@@ -6,3 +6,7 @@ side = "both"
 url = "https://raw.githubusercontent.com/Jasons-impart/Create-Delight-Remake/main/packwiz-files/mods/Create-Better-Storages-Forge-1.20.1-1.0b.Release.jar"
 hash-format = "sha256"
 hash = "0ae969c7b0041989d2cdb1b0ae03e51d92b7b93cccff30077591bc5bd36bc5b2"
+
+[release.curseforge]
+project-id = 1200903
+file-id = 6217044

@@ -1,5 +1,3 @@
-const $OreDataCapability = Java.loadClass("com.tom.createores.OreDataCapability")
-
 BlockEvents.broken(e => {
     const {player, block} = e
 
@@ -20,7 +18,7 @@ BlockEvents.broken(e => {
         return
 
     let trunk = block.level.getChunk(block.pos)
-    let oreData = $OreDataCapability.getData(trunk)
+    let oreData = global.CDServerJavaClasses.$OreDataCapability.getData(trunk)
     if (oreData.getRecipe(block.level.getRecipeManager()) == null)
         return
 

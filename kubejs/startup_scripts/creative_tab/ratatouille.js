@@ -11,7 +11,9 @@ StartupEvents.modifyCreativeTab("ratatouille:base", e => {
     'ratatouille:bio_gas',
     'ratatouille:compost_tea',
     'ratatouille:compost_residue_fluid',
-    'ratatouille:mince_meat_bucket'
+    'ratatouille:mince_meat_bucket',
+    'ratatouille:compost_tower',
+    'ratatouille:fish_feed'
   ])
   e.add([
     'createdelight:empty_popsicle_mold_filled',
